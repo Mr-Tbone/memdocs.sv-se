@@ -16,6 +16,7 @@
 #### [Registrera Android-enheten](enroll-device-android-company-portal.md)  
 #### [Registrera med Android-arbetsprofilen](enroll-device-android-work-profile.md)
 #### [Registrera med Microsoft Intune-appen](enroll-device-android-microsoft-intune-app.md)
+### [Flytta till installation av ny enhetshantering](move-to-new-device-management-setup.md)
 ### [Använda hanterade appar på enheten](use-managed-apps-on-your-device-android.md)
 ### [Kryptera din enhet](encrypt-your-device-android.md)
 ### [Ange din PIN-kod eller ditt lösenord](set-your-pin-or-password-android.md)

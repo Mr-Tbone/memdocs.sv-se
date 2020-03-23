@@ -49,7 +49,9 @@
           href: device-rename.md
         - name: Skicka meddelanden
           href: custom-notifications.md
-        - name: Fjärrstyr mobila enheter
+        - name: Fjärrhjälp mobila enheter
+          href: remote-assist-mobile-devices.md
+        - name: Använda TeamViewer för fjärradministration
           href: teamviewer-support.md
         - name: Synkronisera enhet
           href: device-sync.md
