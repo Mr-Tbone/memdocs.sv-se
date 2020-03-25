@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic;seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a38664640b448d6770d4728a9a9918e251c37e3
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 93fba17973571a9981269eb0b9fc98dae20cb920
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79344707"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085864"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Felsöka enhetsregistrering i Microsoft Intune
 
@@ -47,8 +47,8 @@ Du kan också kontrollera att tid och datum på användarens enhet är inställt
 
 Användare av hanterade enheter kan samla in registrerings- och diagnostikloggar som du kan granska. Anvisningar för hur användare samlar in loggar finns i:
 
-- [Skicka Android-registreringsfel till IT-administratören](https://docs.microsoft.com/user-help/send-enrollment-errors-to-your-it-admin-android)
-- [Skicka iOS/iPadOS-fel till IT-administratören](https://docs.microsoft.com/user-help/send-errors-to-your-it-admin-ios)
+- [Skicka Android-registreringsfel till IT-administratören](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-using-cable-android)
+- [Skicka iOS/iPadOS-fel till IT-administratören](https://docs.microsoft.com/mem/intune/user-help/send-errors-to-your-it-admin-ios)
 
 
 ## <a name="general-enrollment-issues"></a>Allmänna registreringsproblem

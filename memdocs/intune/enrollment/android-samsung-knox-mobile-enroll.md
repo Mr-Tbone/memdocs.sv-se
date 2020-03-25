@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d7ec41361571647cc417dc34ad29522d50477eb
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: b530e4590d50190160695049e2b72f03a0384131
+ms.sourcegitcommit: 670c90a2e2d3106048f53580af76cabf40fd9197
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79339572"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233593"
 ---
 # <a name="automatically-enroll-android-devices-by-using-samsungs-knox-mobile-enrollment"></a>Registrera Android-enheter automatiskt med hjälp av från Samsung Knox Mobile-registrering
 
@@ -61,7 +61,7 @@ När ditt företag har registrerats kan du skapa din MDM-profil för Microsoft I
 - Om du vill skapa en Android MDM-profil väljer du **Enhetsadministratör** som profiltyp i Knox-portalen. 
 - Om du vill skapa en Android Enterprise MDM-profil väljer du **Enhetsägare** som profiltyp i Knox-portalen.  
 
-### <a name="for-android"></a>För Android
+### <a name="for-android-enterprise"></a>För Android Enterprise
 
 | Fält för MDM-profil| Obligatoriskt? | Värden | 
 |-------------------|-----------|-------| 
@@ -78,7 +78,7 @@ När ditt företag har registrerats kan du skapa din MDM-profil för Microsoft I
 
 \* Det här fältet är inte obligatoriskt när du ska skapa profiler i Knox-portalen. Intune kräver dock att du fyller i det här fältet så att profilen kan registrera enheten i Intune.
 
-### <a name="for-android-enterprise"></a>För Android Enterprise
+### <a name="for-android"></a>För Android
 
 Detaljerade anvisningar finns i [Installationsguiden för Samsung Create-profil](https://docs.samsungknox.com/KME-Getting-Started/Content/create-profiles.htm).
 

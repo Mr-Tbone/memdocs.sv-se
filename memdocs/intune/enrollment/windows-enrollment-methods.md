@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 06/25/2019
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: ''
-ms.openlocfilehash: eac0eff9167e46d73dffe1c74ce073ffa68c7070
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: a6b45cef3cc13357638753efd5b8179c5ce41f6c
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363206"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085696"
 ---
 # <a name="intune-enrollment-methods-for-windows-devices"></a>Intune-registreringsmetoder för Windows-enheter
 
@@ -36,7 +36,7 @@ Det finns två sätt att hämta enheter som registrerats i Intune:
 
 Användare kan själva registrera sina Windows-enheter med hjälp av någon av dessa metoder:
 
-- [BYOD (Bring Your Own Device)](https://docs.microsoft.com/user-help/enroll-windows-10-device): Användarna registrerar sina personligt ägda enheter genom att välja att ansluta ett **arbets- och skolkonto** från enhetens **inställningar**. Den här processen:
+- [BYOD (Bring Your Own Device)](https://docs.microsoft.com/mem/intune/user-help/enroll-windows-10-device): Användarna registrerar sina personligt ägda enheter genom att välja att ansluta ett **arbets- och skolkonto** från enhetens **inställningar**. Den här processen:
   - Registrerar enheten med Azure Active Directory för att få åtkomst till företagsresurser såsom e-post.
   - Registrerar enheten i Intune som en personligt ägd enhet (BYOD).
 Om en administratör har konfigurerat automatisk registrering (tillgängligt med Azure AD Premium-prenumerationer) behöver användaren bara ange sina autentiseringsuppgifter en gång. Annars behöver de registrera sig separat via registrering med endast MDM och ange autentiseringsuppgifterna på nytt.  

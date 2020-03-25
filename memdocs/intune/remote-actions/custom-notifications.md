@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79bcfe4adead40e8a38d7f84af52406af320a394
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 4b79c7a9cdc740984e1ace90b37bdea8dbdc70de
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79338246"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220259"
 ---
 # <a name="send-custom-notifications-in-intune"></a>Skicka anpassade meddelanden i Intune
 
@@ -73,7 +73,6 @@ Om du har företagsportalappen öppen på en Android-enhet liknar meddelandet f�
 - Om du vill skapa ett meddelande använder du ett konto som har tilldelats en Intune-roll som har rätt behörighet enligt beskrivningen i föregående avsnitt (*Behörigheter*). Information om hur du tilldelar behörigheter till en användare finns i [Rolltilldelningar](../fundamentals/role-based-access-control.md#role-assignments).
 - Anpassade meddelanden är begränsade till rubriker med högst 50 tecken och meddelanden med högst 500 tecken.  
 - Intune sparar inte text från anpassade meddelanden som skickats tidigare. Om du vill skicka ett meddelande igen måste du återskapa meddelandet.  
-- Du kan bara skicka upp till 25 meddelanden till grupper per timme. Den här begränsningen finns på klientnivån. Den här begränsningen gäller inte när du skickar meddelanden till enskilda enheter.
 - Du kan bara skicka upp till 25 meddelanden till grupper per timme. Den här begränsningen finns på klientnivån. Den här begränsningen gäller inte när du skickar meddelanden till enskilda användare.
 - När du skickar meddelanden till enskilda enheter kan du bara skicka upp till 10 meddelanden per timme till samma enhet.
 - Du kan skicka meddelanden till användare i grupper. När du skickar meddelanden till grupper kan varje meddelande vara direkt riktat till 25 grupper. Kapslade grupper räknas inte mot den här summan. När du skickar ett meddelande till en grupp riktas meddelandena endast till användarna i gruppen, och de skickas till alla iOS/iPadOS- eller Android-enheter som användaren har registrerat. Enheter i gruppen ignoreras.

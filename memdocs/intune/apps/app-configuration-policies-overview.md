@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7d58d2766444be924bd525b5aff20e17a302d56
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 8e5abdfe69d5553be420d96da60f34df93a6b2f4
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342523"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083678"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Appkonfigurationsprinciper för Microsoft Intune
 
@@ -93,7 +93,7 @@ Du kan verifiera appkonfigurationsprincipen med följande tre metoder:
 
 ### <a name="iosipados-configuration-on-unmanaged-devices"></a>iOS/iPadOS-konfiguration på ohanterade enheter
 
-Du kan verifiera iOS/iPadOS-konfigurationen med **Intune-diagnostikloggen** på ohanterade enheter för konfiguration av hanterade appar. Förutom stegen nedan så kan du få åtkomst till hanterade apploggar med hjälp av Microsoft Edge. Mer information finns i [Använda Microsoft Edge i iOS/iPadOS för att få åtkomst till loggar för hanterade appar](manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
+Du kan verifiera iOS/iPadOS-konfigurationen med **Intune-diagnostikloggen** på ohanterade enheter för konfiguration av hanterade appar. Förutom stegen nedan så kan du få åtkomst till hanterade apploggar med hjälp av Microsoft Edge. Mer information finns i [Använda Microsoft Edge i iOS/iPadOS för att få åtkomst till loggar för hanterade appar](manage-microsoft-edge.md#use-microsoft-edge-to-access-managed-app-logs).
 
 1. Om den inte redan är installerad på enheten laddar du ned och installerar **Microsoft Edge** från App Store. Mer information finns i [Microsoft Intune-skyddade appar](apps-supported-intune-apps.md).
 2. Starta **Microsoft Edge** och välj **Om** > **intunejälp** i navigeringsfältet.

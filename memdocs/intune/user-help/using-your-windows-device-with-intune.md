@@ -19,12 +19,12 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 89fdcaefebc7329959cc1e5d77a97034d038d5c2
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 3b3420dce8ea9d21b955e36506229817420cdbf0
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79346917"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084182"
 ---
 # <a name="using-your-windows-device-with-intune-company-portal"></a>Använda din Windows-enhet med Intune-företagsportalen
 
@@ -33,7 +33,7 @@ Det här avsnittet beskriver de uppgifter och den information som är specifik f
 ## <a name="how-to-get-company-portal"></a>Så här hämtar du företagsportalen
 Företagsportalen är tillgänglig i webbplatsversionen och som en appnedladdning. Logga in med dina autentiseringsuppgifter för arbetet eller skolan för att [komma åt webbplatsen för företagsportalen](https://go.microsoft.com/fwlink/?linkid=2010980).  
 
-Detaljerade steg och skärmbilder finns i [Logga in på företagsportalen](https://docs.microsoft.com/user-help/sign-in-to-the-company-portal).
+Detaljerade steg och skärmbilder finns i [Logga in på företagsportalen](https://docs.microsoft.com/mem/intune/user-help/sign-in-to-the-company-portal).
 
 ## <a name="supported-versions"></a>Versioner som stöds
 

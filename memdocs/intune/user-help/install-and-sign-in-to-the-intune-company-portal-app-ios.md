@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 66dafbeea3d5fa540a4306c811f784a4c6088c2c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: ad586baf79bb818ccdfc012c04a58e55d19d8cc8
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79347931"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084492"
 ---
 # <a name="install-and-sign-in-to-the-company-portal-app"></a>Installera och logga in i företagsportalappen
 
@@ -38,6 +38,6 @@ Installera företagsportalappen på din iOS-enhet för att få åtkomst till din
 
 3. Öppna företagsportalappen, ange din e-postadress och ditt lösenord för arbetet eller skolan och tryck sedan på **Logga in**.
 
-    När du loggar in i företagsportalappen för första gången, och ditt företag eller skola använder Intune, uppmanas du att registrera din enhet i Intune. För att registrera följer du stegen i [registrera din iOS-enhet i Intune](enroll-your-device-in-intune-ios.md). Du kan även [sign in using another device](https://docs.microsoft.com/user-help/sign-in-to-the-company-portal#sign-in-from-another-device) (logga in med en annan enhet).
+    När du loggar in i företagsportalappen för första gången, och ditt företag eller skola använder Intune, uppmanas du att registrera din enhet i Intune. För att registrera följer du stegen i [registrera din iOS-enhet i Intune](enroll-your-device-in-intune-ios.md). Du kan även [sign in using another device](https://docs.microsoft.com/mem/intune/user-help/sign-in-to-the-company-portal#sign-in-from-another-device) (logga in med en annan enhet).
 
 Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

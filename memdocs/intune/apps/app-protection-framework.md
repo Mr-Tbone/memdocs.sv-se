@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfb0012dfc2cedb72c64a54c16b567dffff84c9e
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: cd6956a9bdb19f25e39dd8cfb8e7e685d60f7b8c
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342302"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083545"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Dataskyddsramverk med appskyddsprinciper 
 
@@ -55,7 +55,7 @@ Som anges i tabellen ovan bör alla ändringar av appskyddsprinciper först utf�
 
 När du testar ändringar i en APP bör du vara medveten om [leveranstiming](app-protection-policy-delivery.md). Statusen för APP-leverans för en viss användare kan övervakas. Mer information finns i [Så här övervakar du appskyddsprinciper](app-protection-policies-monitor.md).
 
-Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp av Edge och URL:en *about:Intunehelp*. Mer information finns i [Granska loggarna för klientappskydd](app-protection-policy-settings-log.md) och [Hantera webbåtkomst med hjälp av Microsoft Edge med Microsoft Intune](manage-microsoft-edge.md#use-microsoft-edge-on-ios-to-access-managed-app-logs).
+Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp av Edge och URL:en *about:Intunehelp*. Mer information finns i [Granska loggarna för klientappskydd](app-protection-policy-settings-log.md) och [Hantera webbåtkomst med hjälp av Microsoft Edge med Microsoft Intune](manage-microsoft-edge.md#use-microsoft-edge-to-access-managed-app-logs).
 
 ## <a name="app-data-protection-framework-settings"></a>Inställningar för ramverket för APP-dataskydd
 

@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c2a32561f66f3170b41209cb4d324e368768878
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 1f4d51cbd5c8bc6c82822d5e26191c01d2e1bb1d
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79344434"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220157"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Konfigurera registrering av Windows-enheter
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Den här artikeln hjälper IT-administratörer att förenkla Windows-registrering för sina användare. När du har [konfigurerat Intune](../fundamentals/setup-steps.md) kan användarna registrera Windows-enheter genom att [logga in](https://docs.microsoft.com/user-help/enroll-your-device-in-intune-windows) med sina arbets- eller skolkonton.  
+Den här artikeln hjälper IT-administratörer att förenkla Windows-registrering för sina användare. När du har [konfigurerat Intune](../fundamentals/setup-steps.md) kan användarna registrera Windows-enheter genom att [logga in](https://docs.microsoft.com/mem/intune/user-help/windows-enrollment-company-portal) med sina arbets- eller skolkonton.  
 
 I egenskap av Intune-administratör kan du förenkla registreringen på följande sätt:
 
@@ -111,7 +111,7 @@ Berätta för användarna hur de ska registrera sina Windows-enheter och vad de 
 > [!NOTE]
 > Slutanvändare måste ansluta till webbplatsen för företagsportalen via Microsoft Edge för att se Windows-appar som du tilldelat för specifika Windows-versioner. Andra webbläsare, inklusive Google Chrome, Mozilla Firefox och Internet Explorer har inte stöd för den här typen av filtrering.
 
-Registreringsinstruktioner för slutanvändare finns i [Registrera din Windows-enhet i Intune](https://docs.microsoft.com/user-help/enroll-your-device-in-intune-windows). Du kan även be användarna granska [vad IT-administratören kan se på enheten](https://docs.microsoft.com/user-help/what-can-your-it-administrator-see-when-you-enroll-your-device-in-intune-windows).
+Registreringsinstruktioner för slutanvändare finns i [Registrera din Windows-enhet i Intune](../user-help/windows-enrollment-company-portal.md). Du kan även be användarna granska [vad IT-administratören kan se på enheten](../user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md).
 
 >[!IMPORTANT]
 > Om du inte har aktiverat automatisk MDM-registrering, men du har Windows 10-enheter som har anslutits till Azure AD, visas två poster i Intune-konsolen efter registreringen. Du kan stoppa detta genom att se till att användare med Azure AD-anslutna enheter går till **Konton** > **Åtkomst för arbete eller skola** och **Anslut** med samma konto. 

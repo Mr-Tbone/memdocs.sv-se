@@ -18,17 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b3927f09bb74f9058b19dad7f2f3b72f21a0d43
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 17b120faa0021a1fc044d7831b4b81ea88f404a7
+ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79351935"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79526588"
 ---
 # <a name="lookout-mobile-endpoint-security-connector-with-intune"></a>Lookout Mobile Endpoint Security-anslutningsprogram med Intune
 
 Du kan styra åtkomsten från mobila enheter till företagsresurser baserat på den riskbedömning som utförs av Lookout, en Mobile Threat Defense-lösning som är integrerad med Microsoft Intune. Risken bedöms utifrån telemetri som samlas in från enheter som använder Lookout-tjänsten och inkluderar:
-
 - Säkerhetsproblem med operativsystemversion
 - Installerade skadliga program
 - Skadliga nätverksprofiler

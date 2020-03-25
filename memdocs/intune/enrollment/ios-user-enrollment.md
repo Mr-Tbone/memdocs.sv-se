@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 842b262c2ae19a7a026d87600df5ffb0e80cf9b8
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 969dbcbe3fe1b1a155769bec6403b889b3d326bc
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79359241"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086109"
 ---
 # <a name="set-up-iosipados-and-ipados-user-enrollment-preview"></a>Konfigurera användarregistrering för iOS/iPadOS och iPadOS (förhandsversion)
 
@@ -59,7 +59,7 @@ En registreringsprofil definierar inställningarna som tillämpas på en grupp e
 
     - **Enhetsregistrering**: Alla användare i den här profilen kommer att använda enhetsregistrering.
     - **Användarregistrering**: Alla användare i den här profilen kommer att använda användarregistrering.
-    - **Bestäm baserat på användarens val**: Alla användare i den här gruppen får välja vilken typ av registrering som ska användas. När användarna registrerar sina enheter kan de välja mellan **Jag äger den här enheten** och **(Företaget) äger den här enheten**. Om de väljer det andra alternativet registreras enheten via Enhetsregistrering. Om användaren väljer **Jag äger den här enheten** måste han eller hon välja om hela enheten ska skyddas eller endast arbetsrelaterade appar och data. Vilket alternativ slutanvändaren väljer vad gäller ägarskap av enheten avgör endast vilken typ av registrering som implementeras på deras enheter. Det här användarvalet visas inte i attributet Ägarskap för enhet i Intune. Mer information om användarupplevelsen finns i [Konfigurera iOS/iPadOS-enhetsåtkomst till företagsresurser](https://docs.microsoft.com/user-help/enroll-your-device-in-intune-ios).
+    - **Bestäm baserat på användarens val**: Alla användare i den här gruppen får välja vilken typ av registrering som ska användas. När användarna registrerar sina enheter kan de välja mellan **Jag äger den här enheten** och **(Företaget) äger den här enheten**. Om de väljer det andra alternativet registreras enheten via Enhetsregistrering. Om användaren väljer **Jag äger den här enheten** måste han eller hon välja om hela enheten ska skyddas eller endast arbetsrelaterade appar och data. Vilket alternativ slutanvändaren väljer vad gäller ägarskap av enheten avgör endast vilken typ av registrering som implementeras på deras enheter. Det här användarvalet visas inte i attributet Ägarskap för enhet i Intune. Mer information om användarupplevelsen finns i [Konfigurera iOS/iPadOS-enhetsåtkomst till företagsresurser](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
     
 5. Välj **Nästa**.
 

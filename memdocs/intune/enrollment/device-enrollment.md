@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a81d0cad6e7fa985733675912ada6f446eb501d
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 4aaa8bcee3684c73fa5ec3d488fd3107585dfc61
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79359410"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086172"
 ---
 # <a name="what-is-device-enrollment"></a>Vad är enhetsregistrering?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -39,7 +39,7 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 |:---:|:---:|:---:|:---:|:---:|
 | | Enheter rensas under registreringen. | Kopplar varje enhet till en användare.| Det innebär att användarna inte kan avregistrera enheter. | |
 |**[BYOD](#bring-your-own-device)** | Nej| Ja | Nej | [Mer information](apple-mdm-push-certificate-get.md)|
-|**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej | [Mer information](device-enrollment-program-enroll-ios.md)|
+|**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej | [Mer information](device-enrollment-manager-enroll.md)|
 |**[DEP](#apple-device-enrollment-program)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-ios.md)|
 |**[USB-SA](#usb-sa)**| Ja | Valfri | Nej| [Mer information](apple-configurator-enroll-ios.md)|
 |**[USB-Direct](#usb-direct)**| Nej | Nej | Nej|[Mer information](apple-configurator-enroll-ios.md)|
@@ -67,7 +67,7 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 
 | **Personligt** | **Registreringsmetoder** | **Återställning krävs** | **Användartillhörighet** | **Låst** | **Information**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**Administratör för Android-enhet**|**Användarinitierat via företagsportalen** | Nej | Ja | Nej | [Mer information](https://docs.microsoft.com/user-help/enroll-device-android-company-portal)|
+|**Administratör för Android-enhet**|**Användarinitierat via företagsportalen** | Nej | Ja | Nej | [Mer information](https://docs.microsoft.com/mem/intune/user-help/enroll-device-android-company-portal)|
 |**Android Enterprise-arbetsprofil**|**Användarinitierat via företagsportalen**| Nej | Ja | Nej | [Mer information](android-work-profile-enroll.md)|
 
 

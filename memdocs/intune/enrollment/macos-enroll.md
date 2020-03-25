@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1066e2d86a2c3be4ad4d55a0fd2bbbac03066cc6
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 7538cce4b116098db21e89d491476e8e0cd7f4e5
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363492"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086077"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Konfigurera registrering för macOS-enheter i Intune
 
@@ -51,7 +51,7 @@ Du kan låta användarna registrera sina egna personliga enheter i Intune-hanter
 - gå till [webbplatsen för företagsportalen](https://portal.manage.microsoft.com) eller
 - ladda ned företagsportalappen för Mac på [aka.ms/EnrollMyMac](https://aka.ms/EnrollMyMac).
 
-Du kan även skicka dem en länk med anvisningar för registrering online: [Registrera din macOS-enhet i Intune](https://docs.microsoft.com/user-help/enroll-your-device-in-intune-macos).
+Du kan även skicka dem en länk med anvisningar för registrering online: [Registrera din macOS-enhet i Intune](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
 
 Information om andra slutanvändaraktiviteter finns i de här artiklarna:
 

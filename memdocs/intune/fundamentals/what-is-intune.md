@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c567cdeb6cd4e91d40068ba642be4f3838e41d3f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: c8fce5e8d7a92922d6061c33655bc4e83b3a1a95
+ms.sourcegitcommit: 670c90a2e2d3106048f53580af76cabf40fd9197
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354626"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233482"
 ---
 # <a name="microsoft-intune-is-an-mdm-and-mam-provider-for-your-devices"></a>Microsoft Intune är en MDM- och MAM-provider för dina enheter
 
@@ -107,7 +107,7 @@ Intune används i många branscher, bland annat [myndigheter](https://docs.micro
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Läs om några av de [vanligt förekommande affärsproblem som Intune hjälper till att lösa](https://docs.microsoft.com/intune/common-scenarios).
+- Läs om några av de [vanligt förekommande affärsproblem som Intune hjälper till att lösa](common-scenarios.md).
 - Börja med en [30-dagars kostnadsfri utvärderingsversion av Intune](free-trial-sign-up.md).
 - Planera din [migrering till Intune](migration-guide.md).
 - Använd din kostnadsfria utvärderingsversion eller prenumeration och gå igenom [Snabbstart: Skapa en e-postenhetsprofil för iOS](../configuration/quickstart-email-profile.md).

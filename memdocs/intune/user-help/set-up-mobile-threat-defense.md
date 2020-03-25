@@ -17,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 889c7ef6d45a51a4aed86bf1a76842feb6f6251a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: b5df63a14f27b657c585eb43e09b02368d969939
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79336114"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084404"
 ---
 # <a name="install-mobile-threat-defense"></a>Installera Skydd mot mobilhot   
 
@@ -79,9 +79,9 @@ Mer information om enhetsregistrering finns i [Registrera din personliga enhet i
 Kontakta din IT-support om installationen misslyckas. Gå till [Företagsportal-webbplatsen](https://go.microsoft.com/fwlink/?linkid=2010980) och leta upp din organisations kontaktuppgifter.  
 
 Du kan också skicka dina apploggar till IT-supporten för att ge dem mer sammanhang om installationen.  
-* Android-användare: [Ladda upp och skicka dina loggar via e-post](https://docs.microsoft.com/user-help/send-logs-to-your-it-admin-by-email-android) från företagsportalen.   
+* Android-användare: [Ladda upp och skicka dina loggar via e-post](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-by-email-android) från företagsportalen.   
 
-* iOS-enhetsanvändare: [Hämta och skicka dina loggar](https://docs.microsoft.com/intune/apps/manage-microsoft-edge#use-microsoft-edge-on-ios-to-access-managed-app-logs) från Microsoft Edge för iOS.  
+* iOS-enhetsanvändare: [Hämta och skicka dina loggar](https://docs.microsoft.com/intune/apps/manage-microsoft-edge#use-microsoft-edge-to-access-managed-app-logs) från Microsoft Edge för iOS.  
 
 ## <a name="resolve-a-threat"></a>Lösa ett hot  
 Om ett hot överskrider organisationens definierade hotnivå kommer din organisation antingen att:  

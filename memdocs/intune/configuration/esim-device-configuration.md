@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,18 +16,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f12282acebaa90d3afe868bb28743444d01001d
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: e4e9a37e2dbb725a06d304d345fd085dabbc5e14
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79343498"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086996"
 ---
 # <a name="configure-esim-cellular-profiles-in-intune---public-preview"></a>Konfigurera mobila eSIM-profiler i Intune – offentlig förhandsversion
 
 eSIM är ett inbäddat SIM-kort som du kan använda för att ansluta till Internet via en mobildataanslutning på en eSIM-kompatibel enhet, till exempel [Surface LTE Pro](https://www.microsoft.com/surface/business/surface-pro). Med ett eSIM behöver du inte skaffa ett SIM-kort från din mobiloperatör. Som global resenär kan du även växla mellan mobiloperatörer och dataabonnemang så att du alltid håller dig uppkopplad.
 
 Låt säga att du till exempel har ett mobildataabonnemang för arbete och ett annat dataabonnemang hos en annan mobiloperatör för personligt bruk. När du reser får du Internetåtkomst genom att hitta mobiloperatörer med dataabonnemang i det området.
+
+Den här funktionen gäller för:
+
+- Windows 10 och senare
 
 I Intune kan du importera engångskoder för aktivering som tillhandahålls av din mobiloperatör. För att konfigurera mobildataabonnemang på eSIM-modulen distribuerar du de här aktiveringskoderna till dina eSIM-kompatibla enheter. När Intune installerar aktiveringskoden använder eSIM-maskinvarumodulen data i aktiveringskoden för att kontakta mobiloperatören. När det är klart laddas eSIM-profilen ned på enheten och konfigureras för mobilaktivering.
 

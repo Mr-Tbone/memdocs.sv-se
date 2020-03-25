@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b01f9444cf70c447c916d3d0a550a8cf46efc28a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5cb4631b31d33e53b6ef172f142735d24a5c3cb6
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79356433"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220174"
 ---
 # <a name="role-based-access-control-rbac-with-microsoft-intune"></a>Rollbaserad åtkomstkontroll (RBAC) med Microsoft Intune
 
@@ -72,10 +72,6 @@ Du kan skapa egna roller med anpassade behörigheter. Mer information om anpassa
 
 > [!TIP]
 > Intune visar också tre tillägg för Azure Active Directory: **Användare**, **Grupper** och **Villkorlig åtkomst**, som kontrolleras med hjälp av Azure Active Directory RBAC. Dessutom kan den **Användarkontoadministratören** endast utför aktiviteter för AAD-användare/-grupp och har inte fullständig behörighet att utföra alla aktiviteter i Intune. Mer information finns i [RBAC med Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles).
-### <a name="roles-created-in-the-intune-classic-portal"></a>Roller som skapas i den klassiska Intune-portalen
-Endast Intunes **tjänstadministratörer** med fullständig behörighet migreras från den klassiska Intune-portalen till Intune i Azure-portalen. Du måste tilldela Intune **Service-administratörer** igen med åtkomsten ”skrivskyddad” eller ”supportavdelning” till Intune-roller i Azure-portalen och ta bort dem från den klassiska portalen.
-> [!IMPORTANT]
-> Du kan behöva behålla Intunes tjänstadministratörsåtkomst i den klassiska portalen om dina administratörer fortfarande behöver åtkomst till att hantera datorer med Intune.
 
 ## <a name="role-assignments"></a>Rolltilldelningar
 En rolltilldelning definierar:

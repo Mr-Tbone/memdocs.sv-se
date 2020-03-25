@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17fa979f9563eb0735a68d2cc0ed82d800f8816f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 0b2bb9a6220a599cc0e403e6c71f3b8907bbab0e
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354743"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085823"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>Nyheter i Microsoft Intune – föregående månader
 
@@ -255,7 +255,7 @@ Mer information om dessa förbättringar finns i [blogginlägget Kundframgång f
 ### <a name="app-management"></a>Apphantering
 
 #### <a name="managed-google-play-private-lob-apps---1464182----"></a>Privata LOB-appar för Hanterat Google Play-konto<!-- 1464182  -->'
-I Intune kan nu IT-administratörer publicera privata Android LOB-appar till Hanterat Google Play-konto via en iframe inbäddad i Intune-konsolen.  Tidigare behövde IT-administratörer publicera LOB-appar direkt till Googles Play-publiceringskonsol, vilket krävde flera steg och tog lång tid. Med den här nya funktionen kan du enkelt publicera LOB-appar med en minimal uppsättning steg, utan att behöva lämna Intune-konsolen.  Administratörer behöver inte längre manuellt registrera sig som utvecklare hos Google och behöver inte längre betala Google-registreringsavgiften på 25 USD.  Alla Android Enterprise-hanteringsscenarier som använder Hanterat Google Play-konto kan dra nytta av den här funktionen (arbetsprofilenheter och dedikerade, fullständigt hanterade samt icke-registrerade enheter). I Intune väljer du **Klientappar** > **Appar** > **Lägg till**. Välj sedan **Hanterat Google Play-konto** i listan **Apptyp**. Mer information om Managed Google Play-appar finns i [Lägga till Managed Google Play-appar till Android Enterprise-enheter med Intune](../apps/apps-add-android-for-work.md).
+Intune tillåter nu IT-administratörer att publicera privata Android LOB-appar till Hanterat Google Play-konto via en iframe inbäddad i Intune-konsolen.  Tidigare behövde IT-administratörer publicera LOB-appar direkt till Googles Play-publiceringskonsol, vilket krävde flera steg och tog lång tid. Med den här nya funktionen kan du enkelt publicera LOB-appar med en minimal uppsättning steg, utan att behöva lämna Intune-konsolen.  Administratörer behöver inte längre manuellt registrera sig som utvecklare hos Google och behöver inte längre betala Google-registreringsavgiften på 25 USD.  Alla Android Enterprise-hanteringsscenarier som använder Hanterat Google Play-konto kan dra nytta av den här funktionen (arbetsprofilenheter och dedikerade, fullständigt hanterade samt icke-registrerade enheter). I Intune väljer du **Klientappar** > **Appar** > **Lägg till**. Välj sedan **Hanterat Google Play-konto** i listan **Apptyp**. Mer information om Managed Google Play-appar finns i [Lägga till Managed Google Play-appar till Android Enterprise-enheter med Intune](../apps/apps-add-android-for-work.md).
 
 #### <a name="windows-company-portal-experience---1473353-3598357---"></a>Gränssnittet för Företagsportal i Windows<!-- 1473353, 3598357 -->
 Företagsportal i Windows uppdateras. Du kommer att kunna använda flera filter på sidan Appar i Företagsportal i Windows. Sidan Enhetsinformation uppdateras också med ett förbättrat användargränssnitt. Vi håller på att lansera dessa uppdateringar för alla kunder och förväntar oss att blir klara i slutet av nästa vecka.
@@ -294,7 +294,7 @@ Microsoft Intune-appen för Android har uppdaterats med följande förbättringa
 - Visning av anpassade push-meddelanden har lagts till, vilket ger appen samma stöd som nyligen lagts till i företagsportalappen för iOS och Android. Du hittar mer information i [Skicka anpassade meddelanden i Intune](../remote-actions/custom-notifications.md).
 ""
 #### <a name="for-ios-devices-customize-the-enrollment-process-privacy-screen-of-the-company-portal---4394993---"></a>För iOS-enheter anpassar du registreringsprocessens sekretessida i Företagsportal<!-- 4394993 -->
-Med Markdown kan du anpassa sekretessidan i Företagsportal som slutanvändare ser vid iOS-registrering. Mer specifikt kan du anpassa listan med saker som organisationen inte kan se eller göra på enheten. Mer information finns i [Så konfigurerar du appen Intune-företagsportal](../apps/company-portal-app.md#privacy-statement-customization).
+Med Markdown kan du anpassa sekretessidan i Företagsportal som slutanvändare ser vid iOS-registrering. Mer specifikt kan du anpassa listan med saker som organisationen inte kan se eller göra på enheten. Mer information finns i [Så konfigurerar du appen Intune-företagsportal](../apps/company-portal-app.md#configuration).
 
 
 
@@ -316,7 +316,7 @@ Gäller för:
 
 I Intune skapar du profiler för iOS- och macOS-enheter (**Enhetskonfiguration** > **Profiler** > **Skapa profil** > **iOS** eller **macOS** för plattform > **Enhetsfunktioner**, **Enhetsbegränsningar** eller **Tillägg** för profiltyp). 
 
-I den här uppdateringen kategoriseras de tillgängliga inställningarna i Intune-portalen efter den registreringstyp som de gäller för:
+I den här uppdateringen kategoriseras de tillgängliga inställningarna i Intune-portalen efter vilken registreringstyp de gäller för:
 
 - iOS
   - Användarregistrering""
@@ -1094,7 +1094,7 @@ Registreringsskärmarna och stegen för företagsportalen för iOS har uppdatera
 * Öppna inställningsappen för att installera hanteringsprofilen på enheten.
 * Gå tillbaka till företagsportalappen för att slutföra registreringen.  
 
-Uppdaterade steg och skärmar för registrering finns i avsnittet om att [registrera iOS-enhet i Intune](https://docs.microsoft.com/user-help/enroll-your-device-in-intune-ios).
+Uppdaterade steg och skärmar för registrering finns i avsnittet om att [registrera iOS-enhet i Intune](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-ios).
 
 #### <a name="openssl-encryption-for-android-app-protection-policies---3747362---"></a>OpenSSL-kryptering för Android-appskyddsprinciper<!-- 3747362 -->
 Intune-appskyddsprinciper (APP) på Android-enheter använder nu ett OpenSSL-krypteringsbibliotek som är kompatibelt med FIPS 140-2. Mer information finns i avsnittet för [kryptering](../apps/app-protection-policy-settings-android.md#encryption) i [Inställningar för Android-appskyddsprinciper i Microsoft Intune](../apps/app-protection-policy-settings-android.md).
@@ -1390,7 +1390,7 @@ Det finns nya felmeddelanden för appinstallationer som rör följande:
 I Intune väljer du **Klientappar** > **Appar** > ”appens namn” > **Installationsstatus för enhet**. Nya felmeddelanden kommer att finnas i kolumnen **Statusinformation**.
 
 #### <a name="new-app-categories-screen-in-the-company-portal-app-for-windows-10---3834780----"></a>Nya ny skärm för appkategorier i företagsportalappen för Windows 10<!-- 3834780  -->
-En ny skärm som heter **Appkategorier** har lagts till i syfte att förbättra upplevelsen för bläddring och val av appar i företagsportalen för Windows 10. Användarna ser nu sina appar sorterade i kategorier som **Aktuella**, **Utbildning** och **Produktivitet**. Den här ändringen finns i versioner 10.3.3451.0 och senare av företagsportalen. Om du vill se den nya skärmen går du till [Nyheter i användargränssnittet för appen](whats-new-app-ui.md). Mer information om appar i företagsportalen finns i [Installera och dela appar på din enhet](https://docs.microsoft.com/user-help/install-apps-cpapp-windows).  
+En ny skärm som heter **Appkategorier** har lagts till i syfte att förbättra upplevelsen för bläddring och val av appar i företagsportalen för Windows 10. Användarna ser nu sina appar sorterade i kategorier som **Aktuella**, **Utbildning** och **Produktivitet**. Den här ändringen finns i versioner 10.3.3451.0 och senare av företagsportalen. Om du vill se den nya skärmen går du till [Nyheter i användargränssnittet för appen](whats-new-app-ui.md). Mer information om appar i företagsportalen finns i [Installera och dela appar på din enhet](https://docs.microsoft.com/mem/intune/user-help/install-apps-cpapp-windows).  
 
 #### <a name="power-bi-compliance-app---1455231-doc-work-item---"></a>Power BI-efterlevnadsapp<!-- 1455231 doc-work-item -->
 Få åtkomst till ditt Intune-informationslager i Power BI Online med hjälp av [Intune-efterlevnadsappen (Data Warehouse)](https://aka.ms/intune/datawarehouseapi/getpowerbiapp). Med den här Power BI-appen kan du nu komma åt och dela i förväg skapade rapporter utan någon konfiguration och utan att lämna webbläsaren. Mer information finns i [Ändringslogg – Power BI-efterlevnadsapp](../developer/reports-changelog.md#power-bi-compliance-app).
@@ -2284,7 +2284,7 @@ Vi har lagt till nya funktioner på webbplatsen för Företagsportal baserat på
 - Förbättrad prestanda för stora app-kataloger
 - Bättre tillgänglighet för alla användare  
 
-[Dokumentationen till Intune-företagsportalens webbplats](https://docs.microsoft.com/user-help/using-the-intune-company-portal-website) har uppdaterats för att återspegla dessa ändringar. Om du vill se ett exempel på appförbättringarna kan du se [Uppdateringar i användargränssnittet för Intunes slutanvändarappar](whats-new-app-ui.md).  
+[Dokumentationen till Intune-företagsportalens webbplats](https://docs.microsoft.com/mem/intune/user-help/using-the-intune-company-portal-website) har uppdaterats för att återspegla dessa ändringar. Om du vill se ett exempel på appförbättringarna kan du se [Uppdateringar i användargränssnittet för Intunes slutanvändarappar](whats-new-app-ui.md).  
 
 ### <a name="monitor-and-troubleshoot"></a>Övervaka och felsöka
 
