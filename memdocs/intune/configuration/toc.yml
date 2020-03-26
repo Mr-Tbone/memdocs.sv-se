@@ -15,36 +15,20 @@
       href: tutorial-walkthrough-administrative-templates.md
 - name: Instruktionsguider
   items:
-    - name: Skapa en profil
+    - name: Översikt
       href: device-profile-create.md
-    - name: Administrativa mallar i Windows
-      items:
-        - name: Administrativa mallar i Windows
-          href: administrative-templates-windows.md
-        - name: Uppdatera Office med hjälp av administrativa mallar
-          href: administrative-templates-update-office.md
-      displayName: 'ADMX, GPO, group policy'
-    - name: Enhetsfunktioner i iOS/iPadOS och macOS
-      href: device-features-configure.md
+    - name: Anpassade enhetsinställningar
+      href: custom-settings-configure.md
+      displayName: oma-uri
     - name: Begränsa enhetsinställningar och funktioner
       href: device-restrictions-configure.md
-      displayName: Device restrictions
-    - name: Uppdatera Windows
-      href: delivery-optimization-windows.md
-      displayName: delivery optimization; updates
-    - name: BIOS-inställningar i Windows
-      href: device-firmware-configuration-interface-windows.md
-      displayName: 'DFCI, firmware'
-    - name: Domänanslutning i Windows
-      href: domain-join-configure.md
-    - name: Uppgradera Windows och S-läge
-      href: edition-upgrade-configure-windows-10.md
+      displayName: device restrictions
     - name: E-post
-      href: email-settings-configure.md
-    - name: Informationsdatorer och dedikerade enheter
-      href: kiosk-settings.md
-    - name: Delade enheter för flera användare
-      href: shared-user-device-settings.md
+      items:
+        - name: Konfigurera e-post
+          href: email-settings-configure.md
+        - name: Problem och lösningar
+          href: troubleshoot-email-profiles-in-microsoft-intune.md
     - name: VPN
       href: vpn-settings-configure.md
       items:
@@ -54,46 +38,82 @@
           href: vpn-setting-configure-per-app.md
     - name: Wi-Fi-nätverk
       href: wi-fi-settings-configure.md
-      displayName: wifi
+      displayName: 'wifi, wireless'
       items:
         - name: Wi-Fi med en i förväg delad nyckel
           href: wi-fi-profile-shared-key.md
+          displayName: 'psk, oma-uri, eap'
         - name: Felsöka Wi-Fi
           href: troubleshoot-wi-fi-profiles.md
+    - name: Administrativa mallar i Windows
+      displayName: 'admx, gpo, group policy'
+      items:
+        - name: Administrativa mallar
+          href: administrative-templates-windows.md
+        - name: Uppdatera Office med hjälp av administrativa mallar
+          href: administrative-templates-update-office.md
+    - name: BIOS-inställningar i Windows
+      href: device-firmware-configuration-interface-windows.md
+      displayName: 'dfci, firmware'
+    - name: Domänanslutning i Windows
+      href: domain-join-configure.md
+      displayName: 'enrollment, active directory, azure ad joined, join domain'
+    - name: Uppdatera Windows
+      href: delivery-optimization-windows.md
+      displayName: 'delivery optimization, windows updates'
+    - name: Uppgradera Windows och S-läge
+      href: edition-upgrade-configure-windows-10.md
+    - name: Enhetsfunktioner i iOS/iPadOS och macOS
+      href: device-features-configure.md
+      displayName: 'airprint, home screen, lock screen, sso, single sign-on'
     - name: Tillägg på macOS
       href: kernel-extensions-overview-macos.md
-    - name: Education – appen Gör ett prov
-      href: education-settings-configure.md
+      displayName: 'kernel extensions, system extensions'
+    - name: Inställningsfil på macOS
+      href: preference-file-settings-macos.md
+      displayName: 'property list files, plist'
     - name: Mobility Extensions på Zebra-enheter
-      href: android-zebra-mx-overview.md
-      displayName: mx
+      displayName: 'mx, android, stagenow'
+      items:
+        - name: MX på Android-enhetsadministratör
+          href: android-zebra-mx-overview.md
+        - name: StageNow-loggar och vanliga problem
+          href: android-zebra-mx-logs-troubleshoot.md
     - name: OEMConfig på Android Enterprise
       href: android-oem-configuration-overview.md
+      displayName: 'original equipment manufacturers, schema'
+    - name: Informationsdatorer och dedikerade enheter
+      href: kiosk-settings.md
+      displayName: 'single app, multi app'
+    - name: Delade enheter för flera användare
+      href: shared-user-device-settings.md
+      displayName: 'shared pc, education'
+    - name: Education – appen Gör ett prov
+      href: education-settings-configure.md
     - name: eSIM-mobilnät på Windows
       href: esim-device-configuration.md
+      displayName: embedded sim
     - name: Telekomkostnader på Android och iOS/iPadOS
       href: telecom-expenses-monitor.md
-    - name: Anpassade enhetsinställningar
-      href: custom-settings-configure.md
-    - name: Tilldela profiler
-      href: device-profile-assign.md
-    - name: Övervaka profiler
-      href: device-profile-monitor.md
+      displayName: saaswedo datalert
+    - name: Distribuera och övervaka
+      items:
+        - name: Tilldela profiler
+          href: device-profile-assign.md
+          displayName: 'deploy, push'
+        - name: Övervaka profiler
+          href: device-profile-monitor.md
     - name: Felsöka
       items:
         - name: Felsöka principer och profiler
           href: troubleshoot-policies-in-microsoft-intune.md
-        - name: 'E-postprofil: problem och lösningar'
-          href: troubleshoot-email-profiles-in-microsoft-intune.md
-        - name: StageNow-loggar och vanliga problem
-          href: android-zebra-mx-logs-troubleshoot.md
         - name: Vanliga frågor och svar
           href: device-profile-troubleshoot.md
 - name: Referens
   items:
     - name: Inställningar för konfigurationsprofil
       items:
-        - name: Android
+        - name: Android-enhetsadministratör
           items:
             - name: Enhetsbegränsningar
               href: device-restrictions-android.md
@@ -146,8 +166,6 @@
               href: ../protect/endpoint-protection-macos.md?toc=/intune/configuration/toc.json&bc=/intune/configuration/breadcrumb/toc.json
             - name: Tillägg
               href: kernel-extensions-settings-macos.md
-            - name: Inställningsfil
-              href: preference-file-settings-macos.md
             - name: VPN
               href: vpn-settings-macos.md
             - name: Wi-Fi

@@ -5,7 +5,7 @@
   items:
     - name: Översikt över registrering av enheter
       href: device-enrollment.md
-      displayName: COD; BYOD; DEM; DEP; USB-SA; USB-Direct; co-management; GPO
+      displayName: COD; BYOD; DEM; ADE; USB-SA; USB-Direct; co-management; GPO
     - name: Funktioner för hantering av registrerade enheter
       href: device-management-capabilities.md
     - name: Registreringsalternativ
@@ -20,7 +20,7 @@
   items:
     - name: Använda Autopilot till att registrera Windows-enheter
       href: tutorial-use-autopilot-enroll-devices.md
-    - name: Registrera iOS/iPadOS-enheter med DEP
+    - name: Registrera iOS-/iPadOS-enheter med ADE
       href: tutorial-use-device-enrollment-program-enroll-ios.md
 - name: Begrepp
   items:
