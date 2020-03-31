@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8c7c60b4d9d1831aaabb9886345865234ce6351
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 607e2303cbec9ec7fc069db602d51684b71e6575
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364623"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083834"
 ---
 # <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Felsök och se potentiella problem på Android Zebra-enheter i Microsoft Intune
 
@@ -57,7 +57,7 @@ Om du vill hämta loggar när profilen redan har distribuerats med Intune anslut
 På enheten sparas loggar i `/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
 
 ### <a name="get-logs-from-email"></a>Hämta loggar från e-post
-För att hämta loggar efter att profilen redan har distribuerats med Intune kan slutanvändare skicka loggarna till dig via e-post med hjälp av en e-postapp på enheten. På Zebra-enheten öppnar du företagsportalappen och [skickar loggarna](https://docs.microsoft.com/user-help/send-logs-to-your-it-admin-by-email-android). När du använder funktionen för att skicka loggar skapas även ett PowerLift-incident-ID som du kan hänvisa till om du kontaktar Microsoft-supporten.
+För att hämta loggar efter att profilen redan har distribuerats med Intune kan slutanvändare skicka loggarna till dig via e-post med hjälp av en e-postapp på enheten. På Zebra-enheten öppnar du företagsportalappen och [skickar loggarna](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-by-email-android). När du använder funktionen för att skicka loggar skapas även ett PowerLift-incident-ID som du kan hänvisa till om du kontaktar Microsoft-supporten.
 
 ## <a name="read-the-logs"></a>Läsa loggarna
 
@@ -139,7 +139,7 @@ När äldre enheter loggar in via företagsportalappen ser användarna kanske et
 
 Om Google Play-tjänsterna inte är tillgängliga tar det upp till åtta timmar att slutföra vissa uppgifter. [Begränsningar i Intune-företagsportalappen för Android](https://support.microsoft.com/help/3211588/limitations-of-intune-company-portal-app-for-android-in-china) (öppnar en annan Microsoft-webbplats) kan vara en bra resurs.
 
-### <a name="device-spoofing-suspected-shows-in-intune"></a>"Misstänkt enhetsförfalskning" visas i Intune
+### <a name="device-spoofing-suspected-shows-in-intune"></a>”Misstänkt enhetsförfalskning” visas i Intune
 
 Det här felet innebär att Intune misstänker att en icke-Zebra Android-enhet rapporterar sin modell och tillverkare som en zebra-enhet.
 

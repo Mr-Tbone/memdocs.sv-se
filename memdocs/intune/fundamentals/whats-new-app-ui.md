@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 02/07/2020
+ms.date: 03/05/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 767d3671d796299d802fe950d443a152d8e2d645
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: ba2b8e407b4c81f74df7c86e7101461b30a0d8e0
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354574"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80087151"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Uppdateringar i användargränssnittet för Intunes slutanvändarappar
 
@@ -32,10 +32,19 @@ Läs mer om de senaste uppdateringarna för Microsoft Intune-apparna. Vi lägger
 * Meddela studenter och anställda om förändringar i appen och registreringen.
 * Uppdatera organisationens dokumentation eller supportavdelningens procedurer.  
 
-Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](https://docs.microsoft.com/user-help/).  
+Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](https://docs.microsoft.com/mem/intune/user-help/use-managed-devices-to-get-work-done).  
 
-<!---End-user messaging for accounts 1573558, 1712; changes to be made for other platforms for 1801 Users of the Company Portal website, will be blocked from taking actions that require write access to your tenant. They will see appropriate error messaging explaining that their account is under maintenance. Similar changes are coming to the Company Portal apps for Android, iOS, macOS, and Windows soon. ![Error message that occurs during account move](./media/whats-new-app-ui/account-move-rom-iwp-user-1712.png)--->
 
+
+## <a name="week-of-march-2-2020"></a>Den vecka som börjar 2 mars 2020   
+### <a name="improved-sign-in-experience-in-company-portal-for-android"></a>Förbättrad inloggningsupplevelse i Företagsportal för Android   
+Vi har uppdaterat layouten för flera inloggningsskärmar i företagsportalappen för Android så att upplevelsen blir modernare, enklare och tydligare för användare. Om du vill se alla registreringsinstruktioner för Företagsportal för Android går du till [Registrera din Android-enhet](../user-help/enroll-device-android-company-portal.md) eller [Registrera med Android-arbetsprofil](../user-help/enroll-device-android-work-profile.md).   
+
+
+|Uppdaterad|Föregående|   
+|---|---|   
+|![Exempelbild på ny inloggningsskärm för Företagsportalen, inloggningsknapp.](./media/whats-new-app-ui/intune-company-portal-sign-in-2003.png)|![Exempelbild av föregående inloggningssida för Företagsportalen som visar rörligare design.](./media/whats-new-app-ui/intune-company-portal-sign-in-2002.png)| 
+|![Exempelbild av en ny skärm för inloggningsförlopp som visar en förloppsindikator.](./media/whats-new-app-ui/intune-company-portal-signing-in-2003.png)|![Exempelbild av föregående skärm för inloggningsförlopp som visar en rörligare design.](./media/whats-new-app-ui/intune-company-portal-signing-in-2002.png)|  
 ## <a name="week-of-february-3-2020"></a>Den vecka som börjar den 3 februari 2020
 
 ### <a name="screen-removed-from-company-portal-android-work-profile-enrollment---6103987---"></a>En skärm har tagits bort från registreringen av Android-arbetsprofiler i företagsportalen <!--6103987 -->
@@ -142,7 +151,7 @@ Registreringsskärmarna och stegen för företagsportalen för iOS har uppdatera
 * Öppna inställningsappen för att installera hanteringsprofilen på enheten.  
 * Gå tillbaka till företagsportalappen för att slutföra registreringen.  
 
-Uppdaterade steg och skärmar för registrering finns i avsnittet om att [registrera iOS-enhet i Intune](https://docs.microsoft.com/user-help/enroll-your-device-in-intune-ios).  
+Uppdaterade steg och skärmar för registrering finns i avsnittet om att [registrera iOS-enhet i Intune](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-ios).  
 
 ### <a name="user-experience-update-for-the-company-portal-app-for-ios----2536024---"></a>Uppdatering av användarupplevelsen för företagsportalappen för iOS <!-- 2536024 -->
 Startsidan för företagsportalappen för iOS-enheter har fått en ny design. Med den här ändringen följer startsidan mönstren för iOS-användargränssnitt på ett bättre sätt och gör dessutom appar och e-böcker mer lätthittade.  
@@ -166,7 +175,7 @@ Som Microsoft Intune-administratör kan du ladda upp en anpassad varumärkesbild
 ## <a name="week-of-august-27-2018"></a>Veckan 27 augusti 2018  
 
 ### <a name="new-user-experience-update-for-the-company-portal-website---2000968---"></a>Ny uppdatering av användarupplevelse för företagsportalens webbplats <!--2000968 -->  
-Vi har lagt till nya funktioner på företagsportalen baserat på våra kunders synpunkter. Du kommer att se tydliga förbättringar av befintliga funktioner och användbarheten för dina enheter. Specifika områden på webbplatsen, till exempel enhetsinformation, feedback och support samt enhetsöversikten, har nu en ny design som är modern och responsiv. [Dokumentationen till Intune-företagsportalens webbplats](https://docs.microsoft.com/user-help/using-the-intune-company-portal-website) har uppdaterats för att återspegla dessa ändringar.   
+Vi har lagt till nya funktioner på webbplatsen för Företagsportal baserat på våra kunders synpunkter. Du kommer att se tydliga förbättringar av befintliga funktioner och användbarheten för dina enheter. Specifika områden på webbplatsen, till exempel enhetsinformation, feedback och support samt enhetsöversikten, har nu en ny design som är modern och responsiv. [Dokumentationen till Intune-företagsportalens webbplats](https://docs.microsoft.com/mem/intune/user-help/using-the-intune-company-portal-website) har uppdaterats för att återspegla dessa ändringar.   
 
 Uppdateringar som du kan se är bland annat:  
 

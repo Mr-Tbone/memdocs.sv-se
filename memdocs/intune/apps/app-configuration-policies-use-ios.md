@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a110b268c31f4e1ee5dada6554215b648449f01
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 28ce4e7d80e79f752bded8f0cdf03494aa629e1b
+ms.sourcegitcommit: 670c90a2e2d3106048f53580af76cabf40fd9197
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342432"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233453"
 ---
 # <a name="add-app-configuration-policies-for-managed-iosipados-devices"></a>Lägg till konfigurationsprinciper för hanterade iOS/iPadOS-mobilappar
 
@@ -106,7 +106,7 @@ Tecknen \{\{ och \}\} används endast av tokentyper och får inte användas för
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Tillåt endast konfigurerade organisationskonton i appar med flera identiteter 
 
-Använd följande nyckel-/värdepar för iOS/iPadOS-enheter:
+Som Microsoft Intune-administratör kan du styra vilka användarkonton som läggs till i Microsoft-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. Använd följande nyckel-/värdepar för iOS/iPadOS-enheter:
 
 | **Nyckel** | **Värden** |
 |----|----|
@@ -114,7 +114,10 @@ Använd följande nyckel-/värdepar för iOS/iPadOS-enheter:
 | IntuneMAMUPN | <ul><li>UPN för det konto som tillåts att logga in på appen.</li><li> För Intune-registrerade enheter, kan <code>{{userprincipalname}}</code>-token användas för att representera det registrerade användarkontot.</li></ul>  |
 
    > [!NOTE]
-   > Du måste använda OneDrive för iOS 10.34 eller senare, Outlook för iOS 2.99.0 eller senare, eller Edge för iOS 44.8.7 eller senare. Appen måste vara riktad mot [Intunes appskyddsprinciper](app-protection-policy.md) när endast konfigurerade organisationskonton med flera identiteter tillåts.
+   > Följande appar bearbetar appkonfigurationen ovan och tillåter endast organisationskonton:
+   > - Edge för iOS (44.8.7 och senare)
+   > - OneDrive för iOS (10.34 och senare)
+   > - Outlook för (iOS 2.99.0 eller senare)
 
 ## <a name="enter-xml-data"></a>Ange XML-data
 

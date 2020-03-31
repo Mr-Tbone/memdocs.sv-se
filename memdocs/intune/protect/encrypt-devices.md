@@ -17,12 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: ab825416226ef0b395862ae26a934013136ca61b
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: ac81ceced473eacc32a3fca566f7c36eb7a262e2
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352273"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084885"
 ---
 # <a name="use-device-encryption-with-intune"></a>Använda enhetskryptering med Intune
 
@@ -97,7 +97,7 @@ När Intune har krypterat en macOS-enhet med FileVault kan du visa enhetens pers
 
 ### <a name="retrieve-personal-recovery-key-from-mem-encrypted-macos-devices"></a>Hämta personlig återställningsnyckel från MEM-krypterade macOS-enheter
 
-Slutanvändarna hämtar sin personliga återställningsnyckel (FileVault Key) med hjälp av iOS-företagsportalappen. Den enhet som har den personliga återställningsnyckeln måste registreras med Intune och krypteras med FileVault via Intune. Med hjälp av iOS-företagsportalappen kan slutanvändaren öppna en webbsida som innehåller den personliga återställningsnyckeln för FileVault. Du kan också hämta återställningsnyckeln från Intune genom att välja **Enheter** > *den krypterade och registrerade macOS-enheten* > **Hämta återställningsnyckel**. 
+Slutanvändare kan hämta sin personliga återställningsnyckel (FileVault Key) med hjälp av iOS-företagsportalappen, Android-företagsportalappen eller Android Intune-appen. Den enhet som har den personliga återställningsnyckeln måste registreras med Intune och krypteras med FileVault via Intune. Med hjälp av iOS-företagsportalappen, Android-företagsportalsappen, Android Intune-appen eller företagsportalwebbplatsen kan slutanvändaren se den **FileVault**-återställningsnyckel som krävs för att få åtkomst till deras Mac-enheter. Slutanvändare kan välja **Enheter** > *den krypterade och registrerade macOS-enheten* > **Hämta återställningsnyckel**. Webbläsaren visar webbföretagsportalen och visar återställningsnyckeln. 
 
 ## <a name="bitlocker-encryption-for-windows-10"></a>BitLocker-kryptering för Windows 10
 

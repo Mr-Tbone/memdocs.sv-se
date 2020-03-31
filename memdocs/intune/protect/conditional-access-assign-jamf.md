@@ -6,24 +6,24 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 3/13/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: c87fd2bd-7f53-4f1b-b985-c34f2d85a7bc
-ms.reviewer: elocholi
+ms.reviewer: arnab
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9760029effc873b510bf37b779c054c9a0574a20
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 6ab840653d7090ed925af0db08f410e236392234
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79353157"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80219851"
 ---
 # <a name="enforce-compliance-on-macs-managed-with-jamf-pro"></a>Tvinga fram efterlevnad på Mac-datorer som hanteras med Jamf Pro
 
@@ -41,7 +41,10 @@ Procedurerna i den här artikeln kräver åtkomst till både Intune- och Jamf Pr
 
 2. Välj **Enheter** > **Efterlevnadsprinciper**. Om du använder en princip som du skapat tidigare väljer du den principen i konsolen och går sedan vidare till nästa steg i proceduren. Skapa en ny princip genom att välja **Skapa princip** och ange sedan information för en princip med *plattformen***macOS**. Konfigurera *Inställningar* och *Åtgärder vid inkompatibilitet* enligt organisationens krav och spara principen genom att välja **Skapa**.
 
-3. Välj **Tilldelningar** i fönstret *Översikt* för principerna. Använd de tillgängliga alternativen och välj vilka Azure AD-användare (Azure Active Directory) och säkerhetsgrupper som principen ska tillämpas på. Jamf-integreringen med Intune stöder inte efterlevnadsprinciper som tillämpas på enhetsgrupper.
+3. Välj **Tilldelningar** i fönstret *Översikt* för principerna. Använd de tillgängliga alternativen och välj vilka Azure AD-användare (Azure Active Directory) och säkerhetsgrupper som principen ska tillämpas på. **Jamf-integreringen med Intune stöder inte efterlevnadsprinciper som tillämpas på enhetsgrupper.**
+
+> [!NOTE]
+> Jamf-integrering med Intune stöder bara AAD-användargrupper. Efterlevnadsprinciper för enheter som är riktade mot enhetsgrupper kommer inte att gälla.
 
 4. Principen distribueras till användarna när du väljer **Spara**.  
 

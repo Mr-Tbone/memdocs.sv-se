@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4d5fe8ed78aa5537552ecf3db12eabd2bb6fbde
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 79bb7e627043e439c7438c2fc4afcfdee5a44406
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79359293"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086120"
 ---
 # <a name="enroll-iosipados-devices-in-intune"></a>Registrera iOS/iPadOS-enheter i Intune
 
@@ -46,7 +46,7 @@ Du kan låta användare registrera sina personliga enheter för Intune-hantering
 - Enhetsregistrering är antagligen det du tänker på när du tänker på en typisk BYOD-registrering. Med Enhetsregistrering har administratörer tillgång till en rad olika hanteringsalternativ.
 - Användarregistrering är en enklare registreringsprocess som ger tillgång till en mindre uppsättning enhetshanteringsalternativ. Den här funktionen finns för närvarande som en förhandsversion. 
 
-När alla krav är uppfyllda och du har tilldelat licenser till användarna, kan de ladda ned företagsportalappen för Intune från App Store och följa instruktionerna för registrering i appen. Du kan anpassa sekretesspolicyn för Företagsportal på iOS/iPadOS-enheter enligt beskrivningen i [anpassning av sekretesspolicy](../apps/company-portal-app.md#privacy-statement-customization).
+När alla krav är uppfyllda och du har tilldelat licenser till användarna, kan de ladda ned företagsportalappen för Intune från App Store och följa instruktionerna för registrering i appen. Du kan anpassa företagsportalens sekretesspolicy på iOS/iPad-enheter enligt beskrivningen i [Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen](../apps/company-portal-app.md#configuration).
 
 ## <a name="company-owned-iosipados-devices"></a>Företagsägda iOS/iPadOS-enheter
 

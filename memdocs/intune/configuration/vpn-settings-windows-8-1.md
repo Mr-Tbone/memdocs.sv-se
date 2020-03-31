@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 03/19/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,20 +15,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76813e4634e55651b44712fb486e0b1babcfba09
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 2c80bf57b195d7e97308ba423c9e5b53f7e29c74
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79360411"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086474"
 ---
 # <a name="add-vpn-settings-on-windows-81-devices-in-microsoft-intune"></a>Lägga till VPN-inställningar för Windows 8.1-enheter i Microsoft Intune
-
-
 
 I den här artikeln beskrivs de Intune-inställningar som du kan använda för att konfigurera VPN-anslutningar på enheter som kör Windows 8.1.
 
 Beroende på vilka inställningar du väljer kan bara vissa värden i följande lista konfigureras.
+
+## <a name="before-you-begin"></a>Innan du börjar
+
+[Skapa en enhetskonfigurationsprofil](vpn-settings-configure.md).
 
 ## <a name="base-vpn-settings"></a>Grundläggande VPN-inställningar
 
@@ -48,7 +50,7 @@ Beroende på vilka inställningar du väljer kan bara vissa värden i följande 
   - **F5 Edge Client**
   - **Pulse Secure**
 
-<!--- **Fingerprint** (Check Point Capsule VPN only): Specify a string (for example, "Contoso Fingerprint Code") that will be used to verify that the VPN server can be trusted. A fingerprint can be sent to the client so it knows to trust any server that presents the same fingerprint when connecting. If the device doesn’t already have the fingerprint, it will prompt the user to trust the VPN server that they are connecting to while showing the fingerprint. (The user manually verifies the fingerprint and chooses **trust** to connect.) --->
+<!--- **Fingerprint** (Check Point Capsule VPN only): Specify a string (for example, "Contoso Fingerprint Code") that will be used to verify that the VPN server can be trusted. A fingerprint can be sent to the client so it knows to trust any server that presents the same fingerprint when connecting. If the device doesn't already have the fingerprint, it will prompt the user to trust the VPN server that they are connecting to while showing the fingerprint. (The user manually verifies the fingerprint and chooses **trust** to connect.) --->
 
 - **Inloggningsgrupp eller domän** (endast SonicWall Mobile Connect): Ange namnet för den inloggningsgrupp eller domän som du vill ansluta till.
 
@@ -83,6 +85,8 @@ Beroende på vilka inställningar du väljer kan bara vissa värden i följande 
   ```
 
   Mer information om hur du skriver anpassade XML-kommandon finns i tillverkarens VPN-dokumentation.
+
+- **Delade tunnlar**: **Aktivera** gör att enheterna kan bestämma vilken anslutning som ska användas beroende på trafiken. En användare på ett hotell kan till exempel använda VPN-anslutningen för att komma åt arbetsfiler, men använda hotellets standardnätverk för vanlig webbsurfning. Om du vill att all trafik ska att använda VPN-tunneln när VPN-anslutningen är aktiv väljer du **Inaktivera**.
 
 ## <a name="proxy-settings"></a>Proxyinställningar
 

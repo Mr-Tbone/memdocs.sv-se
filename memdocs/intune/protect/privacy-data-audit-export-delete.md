@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db3146bbaae3362e97c8c076823b58dbcd57c4af
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 6aa9195e8d0559a106be323108487579eb068b91
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79339078"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084816"
 ---
 # <a name="audit-export-or-delete-personal-data-in-intune"></a>Granska, exportera eller ta bort personliga data i Intune
 
@@ -66,7 +66,7 @@ För att en användares personliga data ska kunna tas bort från Intune måste e
 Återställning till fabriksinställningarna återställer alla företagsdata, personliga data och inställningar till de ursprungliga fabriksinställningarna. Det är användbart för att ge en enhet till en ny medarbetare. Användarfiler, användarinstallerade program och andra inställningar än standardinställningarna tas bort, och dessa data tas bort från Intune-tjänsten inom 30 dagar från borttagningsåtgärden.
 
 ### <a name="user-self-removal-from-intune-management"></a>Självborttagning av användare från Intune-hantering
-Användare kan ta bort sin personliga [Android-, Apple- eller Windows-enhet](https://docs.microsoft.com/user-help/unenroll-your-device-from-intune-android) från Intune-hantering utan hjälp från administratör.   
+Användare kan ta bort sin personliga [Android-, Apple- eller Windows-enhet](https://docs.microsoft.com/mem/intune/user-help/unenroll-your-device-from-intune-android) från Intune-hantering utan hjälp från administratör.   
 
 ### <a name="retire"></a>Pensionera
 Åtgärden **Dra tillbaka** tar bort Intune-etablerade data, till exempel företagsprogram, data om appar som Intune hanterar, principinställningar och e-postprofiler som etablerats via Intune. Med den här åtgärden lämnas användarens personliga data kvar på enheten.

@@ -1,11 +1,11 @@
 ---
-title: Anpassade inställningar – Windows Holographic for Business-enheter – Microsoft Intune
+title: Anpassade inställningar – Windows Holographic for Business-enheter – Microsoft Intune | Microsoft Docs
 description: Lägg till eller skapa en anpassad profil för att använda OMA-URI-inställningar för enheter som kör Windows Holographic for Business i Microsoft Intune, inklusive Microsoft Hololens. Du kan ange CSP-principinställningarna AllowFastReconnect, AllowVPN, AllowUpdateService, UpdateServiceURL, RequireUpdatesApproval, ApprovedUpdates och ApplicationLaunchRestrictions.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/18/2019
+ms.date: 03/19/2020
 ms.article: article
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e72995942ebbc9fbcd35697bc525c9af75e77d18
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 43199009740f259c6a6484e455b0205da76492ba
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361906"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084037"
 ---
 # <a name="use-custom-settings-for-windows-holographic-for-business-devices-in-intune"></a>Använda anpassade inställningar för Windows Holographic for Business-enheter i Intune
 
@@ -93,12 +93,12 @@ Följande inställningar är användbara för enheter som kör Windows Holograph
 > |---|---|
 > |./Vendor/MSFT/Policy/Config/Settings/AllowVPN|Heltal<br/>0 – inte tillåten<br/>1 – tillåten (standard)|
 
-### <a name="requireupdatesapproval"></a>[RequireUpdatesApproval](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-requireupdateapproval)
+### <a name="requireupdateapproval"></a>[RequireUpdateApproval](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-requireupdateapproval)
 
 > [!div class="mx-tableFixed"]
 > |OMA-URI|Datatyp|
 > |---|---|
-> |./Vendor/MSFT/Policy/Config/Update/RequireUpdateApproval|Heltal<br/>0 – Inte konfigurerat. Enheten installerar alla tillämpliga uppdateringar.<br/>1 – Enheten installerar endast uppdateringar som både är tillämpliga och finns i listan med godkända uppdateringar. Ställ in principen på 1 om IT-avdelningen vill styra distributionen av uppdateringar till enheter, till exempel när testning krävs före distributionen.|
+> |./Vendor/MSFT/Policy/Config/Update/RequireUpdateApproval|Den här inställningen är tillgänglig i RS5 (version 17763) och tidigare. Från och med 19H1 (version 18362) använder du [Windows Update för företag](../protect/windows-update-for-business-configure.md).<br/><br/>Heltal<br/>0 – Inte konfigurerat. Enheten installerar alla tillämpliga uppdateringar.<br/>1 – Enheten installerar endast uppdateringar som både är tillämpliga och finns i listan med godkända uppdateringar. Ställ in principen på 1 om IT-avdelningen vill styra distributionen av uppdateringar till enheter, till exempel när testning krävs före distributionen.|
 
 ### <a name="scheduledinstalltime"></a>[ScheduledInstallTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-scheduledinstalltime)
 
@@ -112,7 +112,7 @@ Följande inställningar är användbara för enheter som kör Windows Holograph
 > [!div class="mx-tableFixed"]
 > |OMA-URI|Datatyp|
 > |---|---|
-> |./Vendor/MSFT/Policy/Config/Update/UpdateServiceUrl|Sträng<br/>URL – Enheten söker efter uppdateringar från WSUS-servern med angiven URL.<br/>Inte konfigurerad – Enheten söker efter uppdateringar från Microsoft Update.|
+> |./Vendor/MSFT/Policy/Config/Update/UpdateServiceUrl|Den här inställningen är tillgänglig i RS5 (version 17763) och tidigare. Från och med 19H1 (version 18362) använder du [Windows Update för företag](../protect/windows-update-for-business-configure.md).<br/><br/>Sträng<br/>URL – Enheten söker efter uppdateringar från WSUS-servern med angiven URL.<br/>Inte konfigurerad – Enheten söker efter uppdateringar från Microsoft Update.|
 
 ### <a name="approvedupdates"></a>[ApprovedUpdates](https://docs.microsoft.com/windows/client-management/mdm/update-csp)
 

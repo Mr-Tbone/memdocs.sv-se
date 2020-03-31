@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/05/2020
+ms.date: 03/17/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98eba2cd2905a70157cfb50299bb9b11a6319fcc
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5acf0db721accf058a10dafcf8165abeddafe7c7
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342341"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083744"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>Vad är apphantering i Microsoft Intune?
 
@@ -118,7 +118,7 @@ Följande objekt i konsolen tillhandahåller apprelaterade funktioner:
 - **Windows-nycklar för separat inläsning**: Lägg till en Windows-nyckel för separat inläsning som kan användas för att installera en app direkt till enheter, i stället för att appen publiceras och hämtas från Windows Store. Mer information finns i [Separat inläsning av en Windows-app](app-sideload-windows.md).
 - **Apple VPP-token**: Tillämpa och visa dina licenser för iOS/iPadOS-volymköpsprogrammet (VPP). Mer information finns i [Volyminköpta iOS/iPadOS-appar](vpp-apps-ios.md).
 - **Hanterat Google Play**: Google Play för företag är Googles appbutik för företag och den enda källan till appar för Android Enterprise. Du hittar mer information i [Lägg till hanterade Google Play-appar till Android enterprise-enheter med Intune](apps-add-android-for-work.md).
-- **Varumärken och anpassning**: Anpassa företagsportalen efter ert varumärke. Mer information finns i [Konfiguration av Företagsportal](company-portal-app.md).
+- **Anpassning**: Anpassa företagsportalen efter ert varumärke. Mer information finns i [Konfiguration av Företagsportal](company-portal-app.md).
 
 ## <a name="next-steps"></a>Nästa steg
 

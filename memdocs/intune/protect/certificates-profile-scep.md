@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 03/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 387817dfcf929b985c0836779510e3d6c0f9795a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 10accc0c59dc0d97e2f3ac4739335dd1e2cd4cba
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79353625"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084970"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
@@ -35,28 +35,31 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
+2. Välj och gå till **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
 3. Ange följande egenskaper:
+   - **Plattform**: Välj plattform för dina enheter.
+   - **Profil**: Välj **SCEP-certifikat**
 
-4. Ange ett **namn** och en **beskrivning** för SCEP-certifikatprofilen.
+     För **Android Enterprise**-plattformen är *Profiltyp* indelad i två kategorier: *Endast enhetens ägare* och *Endast arbetsprofil*. Se till att välja rätt SCEP-certifikatprofil för de enheter du hanterar.  
 
-5. I listrutan **Plattform** väljer du en [enhetsplattform som stöds](certificates-configure.md#supported-platforms-and-certificate-profiles) för detta SCEP-certifikat.
+     SCEP-certifikatprofiler för profilen *Endast enhetens ägare* har följande begränsningar:
 
-6. I listrutan **Profil** väljer du **SCEP-certifikat**.  
+      1. Under Övervakning är inte certifikatsrapportering tillgängligt för SCEP-certifikatprofiler för enhetsägare.
 
-   För **Android Enterprise**-plattformen är *Profiltyp* indelad i två kategorier: *Endast enhetens ägare* och *Endast arbetsprofil*. Se till att välja rätt SCEP-certifikatprofil för de enheter du hanterar.  
+      2. Du kan inte använda Intune för att återkalla certifikat som etablerades av SCEP-certifikatprofiler för enhetsägare. Du kan hantera återkallning via en extern process eller direkt med certifikatutfärdaren.
 
-   SCEP-certifikatprofiler för profilen *Endast enhetens ägare* har följande begränsningar:
+      3. För dedikerade Android Enterprise-enheter stöds SCEP-certifikatprofiler endast för Wi-Fi-nätverksanslutning och -autentisering.  SCEP-certifikatprofiler på dedikerade Android Enterprise-enheter stöds inte för VPN- eller appautentisering.
 
-   1. Under Övervakning är inte certifikatsrapportering tillgängligt för SCEP-certifikatprofiler för enhetsägare.
+4. Välj **Skapa**.
 
-   2. Du kan inte använda Intune för att återkalla certifikat som etablerades av SCEP-certifikatprofiler för enhetsägare. Du kan hantera återkallning via en extern process eller direkt med certifikatutfärdaren. 
+5. Ange följande egenskaper i **Grundinställningar**:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är t.ex. *SCEP-profil för hela företaget*.
+   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
-   4. För dedikerade Android Enterprise-enheter stöds SCEP-certifikatprofiler endast för Wi-Fi-nätverksanslutning och -autentisering.  SCEP-certifikatprofiler på dedikerade Android Enterprise-enheter stöds inte för VPN- eller appautentisering.   
+6. Välj **Nästa**.
 
-   
-7. Välj **Inställningar** och slutför sedan följande konfigurationer:
+7. I **Konfigurationsinställningar**, slutför följande konfigurationer:
 
    - **Certifikattyp**:
 
@@ -209,7 +212,7 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
    - **Rotcertifikat**:
 
-     Välj den *betrodda certifikatprofil* som du tidigare konfigurerade och tilldelade till aktuella användare och enheter för den här SCEP-certifikatprofilen. Den betrodda certifikatprofilen används för att etablera användare och enheter med betrott rotcertifikatutfärdarcertifikat. Information om den betrodda certifikatprofilen finns i [Exportera det betrodda rotcertifikatutfärdarcertifikatet](certificates-configure.md#export-the-trusted-root-ca-certificate) och [Skapa betrodda certifikatprofiler](certificates-configure.md#create-trusted-certificate-profiles) i *Använda certifikat för autentisering i Intune*. Om du har en rotcertifikatutfärdare och en utfärdande certifikatutfärdare väljer du den profil för betrott rotcertifikat som är associerad med den utfärdande certifikatutfärdaren.
+     Välj den *betrodda certifikatprofil* som du tidigare konfigurerade och tilldelade till aktuella användare och enheter för den här SCEP-certifikatprofilen. Den betrodda certifikatprofilen används för att etablera användare och enheter med betrott rotcertifikatutfärdarcertifikat. Information om den betrodda certifikatprofilen finns i [Exportera det betrodda rotcertifikatutfärdarcertifikatet](certificates-configure.md#export-the-trusted-root-ca-certificate) och [Skapa betrodda certifikatprofiler](certificates-configure.md#create-trusted-certificate-profiles) i *Använda certifikat för autentisering i Intune*. Om du har en rotcertifikatutfärdare och en utfärdande certifikatutfärdare väljer du den profil för betrott rotcertifikat som validerar den utfärdande certifikatutfärdaren.
 
    - **Förbättrad nyckelanvändning**:
 
@@ -223,7 +226,21 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
      Ange en eller flera webbadresser för de NDES-servrar som utfärdar certifikat via SCEP. Ange till exempel något i stil med *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Du kan lägga till ytterligare SCEP-URL:er för belastningsutjämning vid behov eftersom URL:er slumpmässigt skickas till enheten med profilen. Om någon av SCEP-servrarna inte är tillgänglig misslyckas SCEP-begäran, och vid senare enhetsincheckningar är det möjligt att certifikatbegäran kan göras mot samma server som är nere.
 
-8. Välj **OK** och välj sedan **Skapa**. Profilen skapas och visas i listan *Enhetskonfiguration – Profiler*.
+8. Välj **Nästa**.
+
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+   Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. (*Gäller endast Windows 10*) I **Tillämplighetsregler** anger du tillämplighetsregler för att förfina tilldelningen av profilen. Du kan välja att tilldela eller inte tilldela profilen baserat på operativsystemversionen eller enhetsversionen.
+
+   Mer information finns i [Tillämplighetsregler](../configuration/device-profile-create.md#applicability-rules) i *Skapa en enhetsprofil i Microsoft Intune*.
+
+12. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ### <a name="avoid-certificate-signing-requests-with-escaped-special-characters"></a>Undvik förfrågningar om certifikatsignering med undantagna specialtecken
 

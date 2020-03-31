@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1fe46894a9905cba4267e8ff9baa949dde5709a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5bafd916ef31bea50dabb2de5012d693039ca741
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79351493"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084826"
 ---
 # <a name="network-access-control-nac-integration-with-intune"></a>Integrering av nätverksåtkomstkontroll (NAC) i Intune
 
@@ -65,36 +65,35 @@ Följande lista är en översikt över hur NAC-integrationen fungerar när du ha
 8. Om enheten är registrerad och kompatibel kan NAC-partnerlösningen verifiera tillståndet hos Intune.
 9. En anslutning upprättas och enheten får tillgång till företagets resurser.
 
-## <a name="use-nac-for-vpn-on-your-iosipados-devices"></a>Använda NAC för VPN på dina iOS-/-iPadOS-enheter  
+## <a name="use-nac-for-vpn-on-your-iosipados-devices"></a>Använda NAC för VPN på dina iOS-/-iPadOS-enheter
 
 NAC finns på följande VPN:er utan att aktivera NAC i VPN-profilen:
 
-  - NAC for Cisco Legacy AnyConnect
-  - F5 Access Legacy
-  - Citrix VPN
+- NAC for Cisco Legacy AnyConnect
+- F5 Access Legacy
+- Citrix VPN
 
-NAC stöds också i Cisco AnyConnect, Citrix SSO och F5 Access. 
+NAC stöds också i Cisco AnyConnect, Citrix SSO och F5 Access.
 
-### <a name="to-enable-nac-for-cisco-anyconnect-for-ios"></a>Så här aktiverar du NAC för Cisco AnyConnect för iOS:
+### <a name="to-enable-nac-for-cisco-anyconnect-for-ios"></a>Så här aktiverar du NAC för Cisco AnyConnect för iOS
 
-  - Integrera ISE med Intune för NAC enligt beskrivningen i länken nedan.
-  - Ange **Ja** för inställningen **Aktivera nätverksåtkomstkontroll** i VPN-profilen.
+- Integrera ISE med Intune för NAC enligt beskrivningen i länken nedan.
+- Ange **Ja** för inställningen **Aktivera nätverksåtkomstkontroll** i VPN-profilen.
 
-### <a name="to-enable-nac-for-citrix-sso"></a>Så här aktiverar du NAC för Citrix SSO:
+### <a name="to-enable-nac-for-citrix-sso"></a>Så här aktiverar du NAC för Citrix SSO
 
-  - Använd Citrix Gateway 12.0.59 eller senare.  
-  - Användare måste ha Citrix SSO 1.1.6 eller senare installerat.
-  - [Integrera NetScaler med Intune för NAC](https://docs.citrix.com/en-us/netscaler-gateway/12/microsoft-intune-integration/configuring-network-access-control-device-check-for-netscaler-gateway-virtual-server-for-single-factor-authentication-deployment.html) som beskrivs i produktdokumentationen för Citrix.
-  - I VPN-profilen väljer **Grundinställningar** > **Aktivera nätverksåtkomstkontroll (NAC)** > Välj **Jag godkänner**.
+- Använd Citrix Gateway 12.0.59 eller senare.  
+- Användare måste ha Citrix SSO 1.1.6 eller senare installerat.
+- [Integrera NetScaler med Intune för NAC](https://docs.citrix.com/en-us/netscaler-gateway/12/microsoft-intune-integration/configuring-network-access-control-device-check-for-netscaler-gateway-virtual-server-for-single-factor-authentication-deployment.html) som beskrivs i produktdokumentationen för Citrix.
+- I VPN-profilen väljer **Grundinställningar** > **Aktivera nätverksåtkomstkontroll (NAC)** > Välj **Jag godkänner**.
 
+### <a name="to-enable-nac-for-f5-access"></a>Så här aktiverar du NAC för F5 Access
 
-### <a name="to-enable-nac-for-f5-access"></a>Så här aktiverar du NAC för F5 Access:
+- Använd F5 BIG-IP 13.1.1.5 eller senare.
+- Integrera BIG-IP med Intune för NAC. I [Overview: Configuring APM for device posture checks with endpoint management systems](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) (Översikt: Konfigurera APM för enhetsstatuskontroller med slutpunktshanteringssystem) listar F5-guiden stegen.
+- I VPN-profilen väljer **Grundinställningar** > **Aktivera nätverksåtkomstkontroll (NAC)** > Välj **Jag godkänner**.
 
-  - Använd F5 BIG-IP 13.1.1.5. BIG-IP 14 stöds inte.
-  - Integrera BIG-IP med Intune för NAC. I [Overview: Configuring APM for device posture checks with endpoint management systems](https://support.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-client-configuration-7-1-6/6.html#guid-0bd12e12-8107-40ec-979d-c44779a8cc89) (Översikt: Konfigurera APM för enhetsstatuskontroller med slutpunktshanteringssystem) listar F5-guiden stegen.
-  - I VPN-profilen väljer **Grundinställningar** > **Aktivera nätverksåtkomstkontroll (NAC)** > Välj **Jag godkänner**.
-
-  Av säkerhetsskäl kopplas VPN-anslutningen från en gång per dygn. VPN-anslutningen kan omedelbart återanslutas.
+Av säkerhetsskäl kopplas VPN-anslutningen från en gång per dygn. VPN-anslutningen kan omedelbart återanslutas.
 
 Vi arbetar med våra partners för att släppa en NAC-lösning för dessa nyare klienter. När lösningarna är klara uppdateras den här artikeln med ytterligare information.
 

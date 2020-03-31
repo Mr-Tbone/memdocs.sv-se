@@ -1,12 +1,12 @@
 ---
 title: Konfigurera en tjänst för kostnadsuppföljning av telekommunikation i Microsoft Intune – Azure | Microsoft Docs
 titleSuffix: ''
-description: Integrera Microsoft Intune med Saaswedo-tjänsten för kostnadsuppföljning av telekommunikation för att övervaka dataanvändning och ange tröskelvärden eller begränsningar på Android-, iOS- och iPadOS-enheter.
+description: Integrera Microsoft Intune med Saaswedo-tjänsten för kostnadsuppföljning av telekommunikation, så att du kan övervaka dataanvändning och ange tröskelvärden eller begränsningar på Android-enhetsadministratör, iOS- och iPadOS-enheter.
 keywords: Saaswedo
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,22 +18,23 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a11151b874e34d12b71b3429f55603d5e6f2a11
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 62fe18a086630a768976220b8de7469f53f25cc4
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361542"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086949"
 ---
 # <a name="set-up-a-telecom-expense-management-service-in-intune"></a>Konfigurera tjänsten för kostnadsuppföljning av telekommunikation i Intune
 
 Med Intune kan du hantera telekomutgifter från dataanvändning på företagsägda mobilenheter. Intune kan integreras med Saaswedos [kostnadsuppföljningstjänst för telekommunikation Datalert](http://datalert.biz/get-started). Datalert är en programvara för kostnadsuppföljning av telekommunikation som låter dig hantera telekommunikationens dataanvändning. Den hjälper dig att undvika kostsam och oväntad överförbrukning av data och nätverksväxling för dina Intune-hanterade enheter.
 
-Med Datalert kan du konfigurera, övervaka och tillämpa gränser för nätverksväxling och lokal dataanvändning. Automatiserade aviseringar utlöses när gränserna överskrider definierade tröskelvärden. Du kan också konfigurera tjänsten så att olika åtgärder tillämpas på enskilda personer eller grupper med slutanvändare (t.ex. inaktivering av nätverksväxling eller när tröskelvärdet överskrids). Rapporter med information om övervakning och dataanvändning är tillgängliga från Datalerts hanteringskonsol.
+Med Datalert kan du konfigurera, övervaka och tillämpa gränser för nätverksväxling och lokal dataanvändning. Automatiserade aviseringar utlöses när gränserna överskrider tröskelvärdena. Du kan också konfigurera tjänsten så att olika åtgärder tillämpas på personer eller grupper, t.ex. inaktivering av nätverksväxling eller när tröskelvärdet överskrids. Rapporter med information om övervakning och dataanvändning är tillgängliga från Datalerts hanteringskonsol.
 
 Följande bild visar hur Intune integrerar med Datalert:
 
-  ![Diagram över Intunes integrering med Datalert](./media/telecom-expenses-monitor/tem-datalert-intune-solution-diagram.png)
+> [!div class="mx-imgBorder"]
+> ![Diagram över integrering av Intune och Datalert](./media/telecom-expenses-monitor/tem-datalert-intune-solution-diagram.png)
 
 Om du vill använda Datalert-tjänsten med Intune finns det vissa konfigurationsinställningar i Datalert och Intune. Den här artikeln visar hur du:
 
@@ -44,7 +45,7 @@ Om du vill använda Datalert-tjänsten med Intune finns det vissa konfigurations
 
 ## <a name="supported-platforms"></a>Plattformar som stöds
 
-- Android 4.4 och nyare enheter som är Knox-kompatibla (Samsung)
+- Android-enhetsadministratör 4.4 och nyare enheter som är Knox-kompatibla (Samsung)
 
   [Android-versioner som har stöd för Knox](https://seap.samsung.com/faq/what-versions-android-support-knox-standard-and-knox-premium-sdks-0) (öppnar Samsung webbplats) visar en lista över de Knox-versioner som stöds.
 
@@ -84,7 +85,8 @@ Intune kan integreras med följande leverantörer för kostnadsuppföljning av t
 
     Följande bild visar den gröna bockmarkeringen när anslutningen lyckas:
 
-      ![Datalert-sidan visar att anslutningen har lyckats](./media/telecom-expenses-monitor/tem-datalert-connection.png)
+      > [!div class="mx-imgBorder"]
+      > ![Datalert-sidan visar att anslutningen har lyckats](./media/telecom-expenses-monitor/tem-datalert-connection.png)
 
 7. I **Datalert App/ADAL Consent** (Datalert-app / ADAL-medgivande) växlar du inställningen till **På**. Välj **Godkänn** på Microsofts autentiseringssida.
 
@@ -92,7 +94,8 @@ Intune kan integreras med följande leverantörer för kostnadsuppföljning av t
 
     Följande bild visar den gröna bockmarkeringen när anslutningen lyckas:
 
-      ![Datalert-sidan visar att anslutningen har lyckats](./media/telecom-expenses-monitor/tem-datalert-adal-consent.png)
+      > [!div class="mx-imgBorder"]
+      > ![Datalert-sidan visar att anslutningen har lyckats](./media/telecom-expenses-monitor/tem-datalert-adal-consent.png)
 
 8. In **MDM Profiles management (optional)** , set the switch to **On**. Med den här inställningen kan Datalert läsa tillgängliga profiler i Intune för att hjälpa dig att konfigurera principer. 
 
@@ -102,7 +105,8 @@ Intune kan integreras med följande leverantörer för kostnadsuppföljning av t
 
     Följande bild visar den gröna bockmarkeringen när anslutningen lyckas:
 
-   ![Datalert-sidan visar att anslutningen har lyckats](./media/telecom-expenses-monitor/tem-datalert-mdm-profiles.png)
+    > [!div class="mx-imgBorder"]
+    > ![Datalert-sidan visar att anslutningen har lyckats](./media/telecom-expenses-monitor/tem-datalert-mdm-profiles.png)
 
 ### <a name="step-2-confirm-telecom-expense-management-is-active-in-intune"></a>Steg 2: Bekräfta att kostnadsuppföljning av telekommunikation är aktiv i Intune
 
@@ -112,7 +116,8 @@ När du har slutfört steg 1 aktiveras anslutningen automatiskt. I Intune visas 
 
 2. Välj **Administration av klientorganisation** > **Anslutning och token** > **Kostnadsuppföljning av telekommunikation**. Leta efter anslutningsstatusen **Aktiv**:
 
-   ![Intune-sidan visar att Datalerts anslutningsstatus är Aktiv](./media/telecom-expenses-monitor/tem-azure-portal-enable-service.png)
+    > [!div class="mx-imgBorder"]
+    > ![Intune-sidan visar att Datalerts anslutningsstatus är Aktiv](./media/telecom-expenses-monitor/tem-azure-portal-enable-service.png)
 
 ### <a name="step-3-deploy-the-datalert-app-to-devices"></a>Steg 3: Distribuera Datalert-appen till enheter
 
@@ -131,7 +136,8 @@ Information om att skapa enhetskategorier finns i [Mappa enheter till grupper](.
 
 Dessa kategorier visas för användare under registreringen ([registrera Android-enheter](../enrollment/android-enroll.md)). Beroende på vilken kategori användarna väljer flyttas den registrerade enheten till motsvarande enhetsgrupp.
 
-  ![Skärmbild av fönstret Lägg till en princip](./media/telecom-expenses-monitor/tem-dynamic-membership-rules.png)
+> [!div class="mx-imgBorder"]
+> ![Skärmbild av fönstret Lägg till en princip](./media/telecom-expenses-monitor/tem-dynamic-membership-rules.png)
 
 #### <a name="add-the-datalert-app-to-intune"></a>Lägg till Datalert-appen i Intune
 
@@ -145,11 +151,13 @@ Följande steg lägger till Datalert-appen. I detta exempel används iOS/iPadOS.
 
 4. Välj appen **Datalert** > **Välj**:
 
-   ![Lägg till Datalert-appen från App Store i Intune-klientprogram](./media/telecom-expenses-monitor/tem-select-app-from-apple-app-store.png)
+    > [!div class="mx-imgBorder"]
+    > ![Lägg till Datalert-appen från App Store i Intune-klientprogram](./media/telecom-expenses-monitor/tem-select-app-from-apple-app-store.png)
 
 5. Ange ytterligare egenskaper, till exempel information om appar och omfångstaggar:
 
-   ![Ange appens egenskaper, inklusive namn, beskrivning, operativsystem och andra inställningar för appen i Intune](./media/telecom-expenses-monitor/tem-steps-to-create-the-app.png)
+    > [!div class="mx-imgBorder"]
+    > ![Ange appens egenskaper, inklusive namn, beskrivning, operativsystem och andra inställningar för appen i Intune](./media/telecom-expenses-monitor/tem-steps-to-create-the-app.png)
 
 6. Klicka på **OK** > **Lägg till** för att spara ändringarna. Datalert-appen visas i listan.
 
@@ -161,15 +169,17 @@ Följande steg lägger till Datalert-appen. I detta exempel används iOS/iPadOS.
 
     I dessa steg får du välja om du vill att appinstallationen ska vara obligatorisk eller valfri för gruppen. I följande exempel visas att installationen krävs. När installationen krävs måste användarna installera Datalert-appen efter att de har registrerat sin enhet.
 
-   ![Skärmbild av fönstret Lägg till en princip](./media/telecom-expenses-monitor/tem-assign-datalert-app-to-device-group.png)
+    > [!div class="mx-imgBorder"]
+    > ![Skärmbild av fönstret Lägg till en princip](./media/telecom-expenses-monitor/tem-assign-datalert-app-to-device-group.png)
 
 ### <a name="step-4-add-organization-phone-lines-to-the-datalert-console"></a>Steg 4: Lägga till företagets telefonlinjer i Datalert-konsolen
 
-Intune- och Datalert-tjänsterna är nu konfigurerade så att de kommunicerar med varandra. Nu ska du lägga till organisationens betalda telefonlinjer i Datalert-konsolen. Och ange tröskelvärden och åtgärder för användning av mobildata eller minuter. Du kan lägga till företagets betalda telefonlinjer till Datalert-konsolen manuellt, eller låta dem läggas till automatiskt när enheten har registrerats i Intune.
+Intune- och Datalert-tjänsterna är nu konfigurerade så att de kommunicerar med varandra. Nu ska du lägga till organisationens betalda telefonlinjer i Datalert-konsolen. Ange tröskelvärden och åtgärder i samband med överträdelser i mobil- och roaminganvändning. Du kan lägga till företagets betalda telefonlinjer till Datalert-konsolen manuellt, eller låta dem läggas till automatiskt när enheten har registrerats i Intune.
 
 Om du vill ange dessa objekt går du till [Datalert-installation för Microsoft Intune](http://www.datalert.fr/microsoft-intune/intune-setup) (öppnar Datalert webbplats). Gå till fliken **Inställningar** och följ stegen i installationsguiden.
 
-  ![Skärmbild av fönstret Lägg till en princip](./media/telecom-expenses-monitor/tem-add-phone-lines-to-datalert-console.png)
+> [!div class="mx-imgBorder"]
+> ![Skärmbild av fönstret Lägg till en princip](./media/telecom-expenses-monitor/tem-add-phone-lines-to-datalert-console.png)
 
 Tjänsten Datalert är nu aktiv. Den börjar övervaka dataanvändningen och inaktiverar roaming- och mobildata på enheter som överskrider de konfigurerade användningsbegränsningarna.
 
@@ -177,8 +187,8 @@ Tjänsten Datalert är nu aktiv. Den börjar övervaka dataanvändningen och ina
 
 För slutanvändarupplevelsen kan följande artiklar vara användbara:
 
-- [Registrera iOS/iPadOS-enheten i kostnadshanteringsprogrammet för telekomtjänster](https://docs.microsoft.com/user-help/enroll-your-device-with-telecom-expense-management-ios)
-- [Registrera Android-enheten i kostnadsuppföljningen av telekommunikation](https://docs.microsoft.com/user-help/enroll-your-device-with-telecom-expense-management-android)
+- [Registrera iOS/iPadOS-enheten i kostnadshanteringsprogrammet för telekomtjänster](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-with-telecom-expense-management-ios)
+- [Registrera Android-enheten i kostnadsuppföljningen av telekommunikation](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-with-telecom-expense-management-android)
 
 ## <a name="turn-off-the-datalert-service"></a>Stänga av tjänsten Datalert
 
@@ -195,4 +205,4 @@ För slutanvändarupplevelsen kan följande artiklar vara användbara:
 
 ## <a name="next-steps"></a>Nästa steg
 
-Dataanvändningsrapporter är endast tillgängliga i Saaswedos Datalert-hanteringskonsol.
+Dataanvändningsrapporter är endast tillgängliga på Saaswedos Datalert-hanteringskonsol.

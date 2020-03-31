@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 03/23/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0546b280f6a04b6bc396b39a9a04031ee9800172
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: a3e6679e27e7d373243874ea40c2d028ff25d3e9
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361893"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220123"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -316,7 +316,7 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 - **Minsta lösenordslängd**: Ange det minsta antal tecken som användarens lösenord måste innehålla, från **4**-**16**.
 - **Maximalt antal minuter av inaktivitet innan arbetsprofilen låses**: Välj hur lång tid det ska ta innan arbetsprofilen låses. Därefter måste användaren ange sina autentiseringsuppgifter för att få åtkomst igen.
 - **Antal felaktiga inloggningar innan enheten rensas**: Anger hur många gånger ett felaktigt lösenord kan anges innan arbetsprofilen rensas från enheten.
-- **Lösenordets giltighetstid (dagar)** : Ange antal dagar innan slutanvändarens lösenord måste ändras (från **1**-**255**).
+- **Lösenordets giltighetstid (dagar)** : Ange antal dagar innan slutanvändarens lösenord måste ändras (från **1**-**365**).
 - **Lösenordstyp som krävs**: Välj den typ av lösenord som måste anges på enheten. Välj mellan:
   - **Standard för enheten**
   - **Låg säkerhetsbiometri**
@@ -337,7 +337,7 @@ Lösenordsinställningarna gäller för personliga profiler på enheter som anv�
 - **Minsta lösenordslängd**: Ange det minsta antal tecken som användarens lösenord måste innehålla, från **4**-**14**.
 - **Maximalt antal minuter av inaktivitet innan skärmen låses**: Välj hur lång tid det tar innan en inaktiv enhet låses automatiskt
 - **Antal felaktiga inloggningar innan enheten rensas**: Anger hur många gånger ett felaktigt lösenord kan anges innan arbetsprofilen rensas från enheten.
-- **Lösenordets giltighetstid (dagar)** : Ange antal dagar innan slutanvändarens lösenord måste ändras (från **1**-**255**)
+- **Lösenordets giltighetstid (dagar)** : Ange antal dagar innan slutanvändarens lösenord måste ändras (från **1**-**365**)
 - **Lösenordstyp som krävs**: Välj den typ av lösenord som måste anges på enheten. Välj mellan:
   - **Standard för enheten**
   - **Låg säkerhetsbiometri**

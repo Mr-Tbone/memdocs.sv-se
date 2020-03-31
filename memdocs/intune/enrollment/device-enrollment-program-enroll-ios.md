@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d40c4f352d3e7b94ef6e6c2f16a28d188c4e9ad1
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: af4dce0d2bb7ef150d5332a9c58357513425cf50
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79339390"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220208"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-device-enrollment-program"></a>Registrera iOS/iPadOS-enheter automatiskt med Apples DEP (Device Enrollment Program)
 
@@ -195,6 +195,9 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för DE
 
 11. Välj om du vill att enheter som använder den här profilen ska kunna **Synkronisera med datorer**. Om du väljer **Tillåt Apple Configurator efter certifikat** måste du välja ett certifikat under **Apple Configurator-certifikat**.
 
+     > [!NOTE]
+     > Om **Synkronisera med datorer** har angetts till **Neka alla**, är porten begränsad på iOS-och iPad-enheter. Porten kan bara användas för laddning och inget annat. Porten blockeras från att använda iTunes eller Apple Configurator.
+
 12. Om du väljer **Tillåt Apple Configurator efter certifikat** i föregående steg, väljer du ett Apple Configurator-certifikat att importera.
 
 13. Du kan ange ett namngivningsformat för enheter som tillämpas automatiskt när de registreras och vid varje incheckning. Om du vill skapa en namngivningsmall väljer du **Ja** under **Använd mall för enhetsnamn**. I rutan **Mall för enhetsnamn** anger du sedan den mall som ska användas för de namn som använder den här profilen. Du kan ange ett mallformat som innehåller enhetstyp och serienummer. 
@@ -278,6 +281,10 @@ Du har aktiverat hantering och synkronisering mellan Apple och Intune, och har t
 Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregistreringsprogrammet](../user-help/enroll-your-device-dep-ios.md).
 
 ## <a name="renew-a-dep-token"></a>Ladda upp en DEP-token  
+
+> [!NOTE]
+> Förutom att förnya ditt DEP-token varje år måste du också förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager eller om användaren lämnar din Apple Business Manager-organisation.
+
 1. Gå till deploy.apple.com.  
 2. Under **Hantera servrar**, väljer du din MDM-server som är associerad med den tokenfil som du vill förnya.
 3. Välj **Skapa ny Token**.

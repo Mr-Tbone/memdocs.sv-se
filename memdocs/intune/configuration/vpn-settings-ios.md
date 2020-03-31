@@ -1,11 +1,11 @@
 ---
 title: Konfigurera VPN-inställningar för iOS/iPadOS-enheter i Microsoft Intune – Azure | Microsoft Docs
-description: Lägg till eller skapa en VPN-konfigurationsprofil med hjälp av konfigurationsinställningar för virtuella privata nätverk (VPN), inklusive anslutningsinformation, autentiseringsmetoder och delade tunnlar i de grundläggande inställningarna. Visa även de anpassade VPN-inställningarna med identifieraren och nyckel-värdeparen. Det är även möjligt att visa VPN-inställningarna per app som inkluderar Safari-webbadresser och VPN-anslutningar på begäran med SSID- eller DNS-sökningsdomäner samt proxyinställningar för att inkludera ett konfigurationsskript, en IP- eller FQDN-adress och en TCP-port i Microsoft Intune på iOS/iPadOS-enheter.
+description: Lägg till eller skapa en VPN-konfigurationsprofil på iOS/iPadOS-enheter med inställningar för virtuellt privat nätverk (VPN). Konfigurera anslutningsinformation, autentiseringsmetoder, delade tunnlar, anpassade VPN-inställningarna med identifieraren, nyckel- och värdepar, VPN-inställningarna per app som inkluderar Safari-webbadresser och VPN-anslutningar på begäran med SSID- eller DNS-sökningsdomäner, proxyinställningar för att inkludera ett konfigurationsskript, en IP- eller FQDN-adress och en TCP-port i Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80ff24193c607003889c2246bb9199db795f1623
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 74e889419dcaaa75c2a31fe16931dddd84d1a967
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79360463"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086540"
 ---
 # <a name="add-vpn-settings-on-ios-and-ipados-devices-in-microsoft-intune"></a>Lägg till VPN-inställningar på iOS- och iPadOS-enheter i Microsoft Intune
 
@@ -82,10 +82,10 @@ De inställningar som visas i följande lista bestäms av den VPN-anslutningstyp
 
 - **Aktivera nätverksåtkomstkontroll (NAC)** (Cisco AnyConnect, Citrix SSO, F5 Access): När du väljer **Jag accepterar** tas det här enhets-ID:t med i VPN-profilen. Detta ID kan användas för VPN-autentisering för att tillåta eller förhindra nätverksåtkomst.
 
-    **Vid användning av Cisco AnyConnect med ISE** bör du se till att:
+  **Vid användning av Cisco AnyConnect med ISE** bör du se till att:
 
-    - Om du inte redan har gjort det integrerar du ISE med Intune för NAC enligt beskrivningen under **Konfigurera Microsoft Intune som en MDM-server** i [administratörsguiden för Cisco Identity Services Engine](https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_01000.html).
-    - Aktivera NAC i VPN-profilen.
+  - Om du inte redan har gjort det, integrerar du ISE med Intune för NAC enligt beskrivningen i **Konfigurera Microsoft Intune som en MDM-server** i [administratörsguiden för Cisco Identity Services Engine](https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_01000.html).
+  - Aktivera NAC i VPN-profilen.
 
   **När du använder Citrix SSO med Gateway** så var noga med att:
 
@@ -107,6 +107,34 @@ De inställningar som visas i följande lista bestäms av den VPN-anslutningstyp
 ## <a name="ikev2-settings"></a>IKEv2-inställningar
 
 Dessa inställningar gäller när du väljer **Anslutningstyp** > **IKEv2**.
+
+- **Konstant VPN-anslutning**: **Aktivera** konfigurerar en konstant VPN-klient som automatiskt ansluter och återansluter till VPN. VPN-anslutningar som alltid är aktiva är alltid anslutna eller ansluter direkt när användaren låser sin enhet, när enheten startas om eller när det trådlösa nätverket ändras. När inställt till **Inaktivera** (standard) är Always-on VPN för alla VPN-klienter inaktiverat. När läget är aktiverat konfigurerar du även:
+
+  - **Nätverksgränssnitt**: Alla IKEv2-inställningar gäller endast för det nätverksgränssnitt som du väljer. Alternativen är:
+    - **Wifi och mobilnät** (standard): IKEv2-inställningarna gäller för Wi-Fi-och mobilgränssnittet på enheten.
+    - **Mobilnät**: IKEv2-inställningarna gäller endast för mobilgränssnittet på enheten. Välj det här alternativet om du distribuerar till enheter där Wi-Fi-gränssnittet är inaktiverat eller borttaget.
+    - **Trådlöst**: IKEv2-inställningarna gäller endast för Wi-Fi-gränssnittet på enheten.
+  - **Användare ska inaktivera VPN-konfiguration**: **Aktivera** låter användare stänga av Always-on VPN. **Inaktivera** (standard) förhindrar att användare stänger av den. Standardvärdet för den här inställningen är det säkraste alternativet.
+  - **Röstbrevlåda**: Välj vad som händer med röstbrevlådans trafik när Always-on VPN är aktiverat. Alternativen är:
+    - **Tvinga nätverkstrafik via VPN** (standard): Den här inställningen är det säkraste alternativet.
+    - **Tillåt nätverkstrafik att passera utanför VPN**
+    - **Släpp nätverkstrafik**
+  - **AirPrint**: Välj vad som händer med AirPrint-trafik när Always-on VPN är aktiverat. Alternativen är:
+    - **Tvinga nätverkstrafik via VPN** (standard): Den här inställningen är det säkraste alternativet.
+    - **Tillåt nätverkstrafik att passera utanför VPN**
+    - **Släpp nätverkstrafik**
+  - **Mobiltjänster**: På iOS 13.0+, välj vad som händer med mobiltrafik när Always-on VPN är aktiverat. Alternativen är:
+    - **Tvinga nätverkstrafik via VPN** (standard): Den här inställningen är det säkraste alternativet.
+    - **Tillåt nätverkstrafik att passera utanför VPN**
+    - **Släpp nätverkstrafik**
+  - **Tillåt trafik från icke-inbyggda nätverksprogram att passera utanför VPN**: Ett inbyggt nätverk avser Wi-Fi-hotspots som vanligtvis finns på restauranger och hotell. Alternativen är:
+    - **Nej**: Tvingar all programtrafik för internt nätverk (CN) via VPN-tunneln.
+    - **Ja, alla appar**: Tillåter all CN-apptrafik att kringgå VPN.
+    - **Ja, särskilda appar**: **Lägg till** en lista över CN-appar vars trafik kan kringgå VPN-nätverket. Ange paketidentifierare för CN-appen. Ange till exempel `com.contoso.app.id.package`.
+
+  - **Trafik från Captive WebSheet-app som ska passera utanför VPN**: Captive WebSheet är en inbyggd webbläsare som hanterar intern inloggning. **Aktivera** tillåter att webbläsarappens trafik kringgår VPN. **Inaktivera** (standard) framtvingar en WebSheet-trafik att använda Always-on VPN. Standardvärdet är det säkraste alternativet.
+  - **Intervall för NAT (network address translation) KeepAlive (sekunder)** : För att vara ansluten till VPN-anslutningen skickar enheten nätverkspaket för att förbli aktiv. Ange ett värde i sekunder för hur ofta dessa paket skickas från 20-1440. Ange till exempel ett värde för `60` för att skicka nätverkspaketen till VPN var 60:e sekund. Det här värdet är inställt på `110` sekunder som standard.
+  - **Lasta av NAT KeepAlive till maskinvara när enheten är i viloläge**: När en enhet är i strömsparläge, **Aktivera** (standard) att NAT kontinuerligt skickar Keep Alive-paket så att enheten förblir ansluten till VPN. **Inaktivera** inaktiverar den här funktionen.
 
 - **Fjärridentifierare**: Ange nätverkets IP-adress, FQDN, UserFQDN eller ASN1DN för IKEv2-servern. Ange till exempel `10.0.0.3` eller `vpn.contoso.com`. Normalt anger du samma värde som [**Anslutningsnamnet**](#base-vpn-settings) (i den här artikeln). Men det beror på inställningarna för IKEv2-servern.
 
@@ -194,7 +222,7 @@ Dessa inställningar gäller när du väljer **Anslutningstyp** > **IKEv2**.
   - **URL-strängavsökning**: Valfritt. Ange en URL som regeln använder som ett test. Om enheten kommer åt den här URL:en utan omdirigering, startas VPN-anslutningen. Och enheten ansluter till mål-URL:en. Användaren ser inte URL-strängens avsökningsplats.
 
     En URL-strängavsökning är till exempel en URL för en granskningswebbserver som kontrollerar enhetens efterlevnad innan VPN-anslutningen görs. Eller så testar webbadressen VPN-nätverkets förmåga att ansluta till en plats innan enheten ansluter till målwebbadressen via VPN.
-.
+
   - **Domänåtgärd**: Välj något av följande objekt:
     - Anslut vid behov
     - Anslut aldrig

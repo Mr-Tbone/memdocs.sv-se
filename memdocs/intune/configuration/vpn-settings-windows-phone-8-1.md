@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 03/19/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,16 +15,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcaa3d4dc27f1791db77b70513968eeda51c668d
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: df05c4b1a7a5ee3f30d33e40620a8a116f508333
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363908"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086485"
 ---
 # <a name="add-vpn-settings-on-windows-phone-81-devices-in-microsoft-intune"></a>Lägga till VPN-inställningar för Windows Phone 8.1-enheter i Microsoft Intune
-
-
 
 I den här artikeln beskrivs de Intune-inställningar som du kan använda för att konfigurera VPN-anslutningar på enheter som kör Windows Phone 8.1. 
 
@@ -32,6 +30,10 @@ Beroende på vilka inställningar du väljer kan bara vissa värden i följande 
 
 >[!IMPORTANT]
 >VPN-profiler för Windows Phone 8.1 tillämpas även på Windows 10-enheter.
+
+## <a name="before-you-begin"></a>Innan du börjar
+
+[Skapa en VPN-enhetskonfigurationsprofil](vpn-settings-configure.md).
 
 ## <a name="base-vpn-settings"></a>Grundläggande VPN-inställningar
 
@@ -51,7 +53,7 @@ Beroende på vilka inställningar du väljer kan bara vissa värden i följande 
 - **Kringgå VPN i företagets trådlösa nätverk**: Aktivera det här alternativet om du vill ange att VPN-anslutningen inte ska användas när enheten är ansluten till företagets Wi-Fi-nätverk.
 - **Kringgå VPN i trådlöst hemnätverk**: Aktivera det här alternativet om du vill ange att VPN-anslutningen inte ska användas när enheten är ansluten till ett trådlöst hemnätverk.
 
-- **Anslutningstyp**: Välj VPN-anslutningstypen från följande leverantörslista:
+- **Anslutningstyp**: Välj VPN-anslutningstyp. Alternativen är:
   - **Check Point Capsule VPN**
   - **SonicWall Mobile Connect**
   - **F5 Edge Client**
@@ -91,7 +93,7 @@ Beroende på vilka inställningar du väljer kan bara vissa värden i följande 
 
   Mer information om hur du skriver anpassade XML-kommandon finns i tillverkarens VPN-dokumentation.
 
-- **Delade tunnlar**: **Aktivera** eller **Inaktivera** det här alternativet för att låta enheterna bestämma vilken anslutning som ska användas beroende på trafiken. En användare på ett hotell kan till exempel använda VPN-anslutningen för att komma åt arbetsfiler, men använda hotellets standardnätverk för vanlig webbsurfning.
+- **Delade tunnlar**: **Aktivera** gör att enheterna kan bestämma vilken anslutning som ska användas beroende på trafiken. En användare på ett hotell kan till exempel använda VPN-anslutningen för att komma åt arbetsfiler, men använda hotellets standardnätverk för vanlig webbsurfning. Om du vill att all trafik ska att använda VPN-tunneln när VPN-anslutningen är aktiv väljer du **Inaktivera**.
 
 ## <a name="proxy-settings"></a>Proxyinställningar
 

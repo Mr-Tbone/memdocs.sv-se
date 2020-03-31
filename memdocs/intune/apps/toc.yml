@@ -96,6 +96,8 @@
               href: apps-advanced-threat-protection-macos.md
         - name: PowerShell-skript
           href: intune-management-extension.md
+        - name: macOS-gränssnittsskript
+          href: macos-shell-scripts.md
     - name: Tilldela appar
       items:
         - name: Tilldela appar till grupper

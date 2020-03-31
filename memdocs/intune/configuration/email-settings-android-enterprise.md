@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/19/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ search.appverid: MET150
 ms.reviewer: maholdaa
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: befd2ba9894d8b5d4f7fac32a96d4ed4cae6337a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: ab544d285e49fd3914a8e9867c35ad9ed97f5fe8
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364259"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80087036"
 ---
 # <a name="android-enterprise-device-settings-to-configure-email-authentication-and-synchronization-in-intune"></a>Enhetsinställningar för Android Enterprise-enheter för att konfigurera e-post, autentisering och synkronisering i Intune
-
-
 
 Den här artikeln beskriver de olika e-postinställningar som du kan styra på Android Enterprise-enheter. Som en del av din lösning för hantering av mobilenheter kan du använda dessa inställningar till att konfigurera en e-postserver, använda SSL för att kryptera e-postmeddelanden och mycket mer.
 
@@ -35,16 +33,16 @@ Mer information om e-postprofiler i Intune finns i [Konfigurera e-postinställni
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-Skapa en [profil för enhetskonfiguration](email-settings-configure.md#create-a-device-profile) (välj arbetsprofil) eller skapa en [konfigurationsprincip för appar](../apps/app-configuration-policies-use-android.md).
+Skapa en [profil för enhetskonfiguration](email-settings-configure.md) (välj arbetsprofil) eller skapa en [konfigurationsprincip för appar](../apps/app-configuration-policies-use-android.md).
 
 ## <a name="android-enterprise"></a>Android enterprise
 
-- **E-postapp**: Välj antingen **Gmail** eller **Nine Work**
-- **E-postserver**: Värddatornamnet för din Exchange-server. Ange till exempel `outlook.office365.com`.
+- **E-postapp**: Välj **Gmail** eller **Nine Work**.
+- **E-postserver**: Ange värddatornamnet för din Exchange-server. Ange till exempel `outlook.office365.com`.
 - **Användarnamnattribut från AAD**: Namnet är det attribut som Intune hämtar från Azure Active Directory (Azure AD). Intune genererar användarnamnet som används av den här profilen. Alternativen är:
 
-  - **User Principal Name**: Hämtar namnet, till exempel `user1` eller `user1@contoso.com`
-  - **Användarnamn**: Hämtar enbart namnet, till exempel `user1`
+  - **User Principal Name**: Hämtar namnet, till exempel `user1` eller `user1@contoso.com`.
+  - **Användarnamn**: Hämtar enbart namnet, till exempel `user1`.
 
 - **E-postadressattribut från AAD**: Det här är det e-postattributet som Intune hämtar från Azure Active Directory. Intune genererar den e-postadress som används av den här profilen. Alternativen är:
   - **Användarens huvudnamn (UPN)** :  Använder det fullständiga huvudnamnet, till exempel `user1@contoso.com` eller `user1` som e-postadress.

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72e8f8a19ef27eee039090f146c46488ed1e1205
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 55660497751f1961c9c579ba1d800900189db782
+ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79350583"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79526469"
 ---
 # <a name="troubleshoot-device-to-ndes-server-communication-for-scep-certificate-profiles-in-microsoft-intune"></a>Felsök enhet för NDES-serverkommunikation för SCEP-certifikatsprofiler i Microsoft Intune
 
@@ -243,6 +243,19 @@ Om SCEP-programpoolen inte har startats, så kontrollera serverns programhändel
 
   ![IIS-behörigheter](../protect/media/troubleshoot-scep-certificate-device-to-ndes/iis-permissions.png)
 
+- **Orsak 4**: NDESPolicy-modulens certifikat har upphört att gälla.
+
+  I CAPI2-loggen (se Orsak 2) visas fel som rör det certifikat som refereras av ”HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Cryptography\MSCEP\Modules\NDESPolicy\NDESCertThumbprint” utanför certifikatets giltighetsperiod.
+
+  **Lösning**: Uppdatera referensen med tumavtrycket för ett giltigt certifikat.
+  1. Identifiera ett ersättningscertifikat:
+     - Förnya det befintliga certifikatet
+     - Välj ett annat certifikat med liknande egenskaper (ämne, EKU, nyckeltyp och längd osv.)
+     - Registrera ett nytt certifikat
+  2. Exportera `NDESPolicy`-registernyckeln för att säkerhetskopiera aktuella värden.
+  3. Ersätt data i `NDESCertThumbprint`-registervärdet med tumavtrycket för det nya certifikatet. Ta bort alla blanksteg och konvertera texten till gemener.
+  4. Starta om NDES IIS-programpooler eller kör `iisreset` från en upphöjd kommandotolk.
+
 #### <a name="gatewaytimeout"></a>GatewayTimeout
 
 När du bläddrar till SCEP-serverns URL får du följande felmeddelande:
@@ -289,7 +302,7 @@ Du har konfigurerat Azure-AD-programproxyn. När du bläddrar till SCEP-serverns
 
   **Lösning**: Använd standarddomänen för *yourtenant.msappproxy.net* för den externa SCEP-URL:en i programproxykonfigurationen.
 
-#### <a name="internal-server-error"></a>500 – Internt serverfel
+#### <a name="500---internal-server-error"></a><a name="internal-server-error"></a>500 – Internt serverfel
 
 När du bläddrar till SCEP-serverns URL får du följande felmeddelande:
 

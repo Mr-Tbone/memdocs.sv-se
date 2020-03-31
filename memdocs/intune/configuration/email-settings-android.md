@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/19/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31310accbaded1e048cb3c5b574557ffcef0335c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 36e17dc12622b3bb95c35a4472556f1c4f31ccd0
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364233"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80087015"
 ---
 # <a name="android-device-settings-to-configure-email-authentication-and-synchronization-in-intune"></a>Enhetsinställningar för Android-enheter för att konfigurera e-post, autentisering och synkronisering i Intune
 
@@ -32,28 +32,26 @@ Mer information om e-postprofiler i Intune finns i [Konfigurera e-postinställni
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-[Skapa en enhetskonfigurationsprofil](email-settings-configure.md#create-a-device-profile).
+[Skapa en enhetskonfigurationsprofil](email-settings-configure.md).
 
 ## <a name="android-samsung-knox"></a>Android (Samsung Knox)
 
 - **E-postserver**: Ange värddatornamnet för din Exchange-server. Ange till exempel `outlook.office365.com`.
 - **Kontonamn**: Ange visningsnamnet för e-postkontot. Namnet visas för användare på deras enheter.
 - **Användarnamnattribut från AAD**: Namnet är det attribut som Intune hämtar från Azure Active Directory (Azure AD). Intune genererar användarnamnet som används av den här profilen. Alternativen är:
-  - **User Principal Name**: Hämtar namnet, till exempel `user1` eller `user1@contoso.com`
-  - **Användarnamn**: Hämtar enbart namnet, till exempel `user1`
-  - **SAM-kontonamn**: Kräver domänen, till exempel `domain\user1`. sAM-kontonamnet används bara med Android-enheter.
-
-    Ange även:  
+  - **User Principal Name**: Hämtar namnet, till exempel `user1` eller `user1@contoso.com`.
+  - **Användarnamn**: Hämtar enbart namnet, till exempel `user1`.
+  - **SAM-kontonamn**: Kräver domänen, till exempel `domain\user1`. sAM-kontonamnet används bara med Android-enheter. Ange även:  
     - **Källa för användardomännamn**: Välj **AAD** (Azure Active Directory) eller **Anpassat**.
 
       När du väljer att hämta attributen från **AAD** anger du:
-      - **Attribut för användardomännamn från AAD**: Välj att hämta attributet **Fullständigt domännamn** eller **NetBIOS-namn** för användaren
+      - **Attribut för användardomännamn från AAD**: Välj att hämta attributet **Fullständigt domännamn** eller **NetBIOS-namn** för användaren.
 
       När du väljer att använda **anpassade** attribut anger du:
-      - **Anpassat domännamn som används**: Ange ett värde som Intune använder för domännamnet, till exempel `contoso.com` eller `contoso`
+      - **Anpassat domännamn som används**: Ange ett värde som Intune använder för domännamnet, exempelvis `contoso.com` eller `contoso`.
 
 - **E-postadressattribut från AAD**: Det här är det e-postattributet som Intune hämtar från Azure Active Directory. Intune genererar den e-postadress som används av den här profilen. Alternativen är:
-  - **Användarens huvudnamn (UPN)** :  Använder det fullständiga huvudnamnet, till exempel `user1@contoso.com` eller `user1` som e-postadress.
+  - **Användarens huvudnamn (UPN)** : Använder det fullständiga huvudnamnet, till exempel `user1@contoso.com` eller `user1` som e-postadress.
   - **Primär SMTP-adress**: Använder den primära SMTP-adressen, till exempel `user1@contoso.com`, för att logga in på Exchange.
 
 - **Autentiseringsmetod**: Välj antingen **Användarnamn och lösenord** eller **Certifikat** som den autentiseringsmetod som används av e-postprofilen.

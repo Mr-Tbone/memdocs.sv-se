@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/23/2020
 ms.topic: tutorial
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 936634a26dee315c7ad452ac408f9cc0eac00dfe
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5988da854eecd528119a7e2591fc083dcdbc29bf
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79343277"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220241"
 ---
 # <a name="tutorial-use-the-cloud-to-configure-group-policy-on-windows-10-devices-with-admx-templates-and-microsoft-intune"></a>Självstudie: Använd molnet för att konfigurera grupprinciper på Windows 10-enheter med ADMX-mallar och Microsoft Intune
 
@@ -101,7 +101,7 @@ Den här funktionen gäller för:
 ## <a name="open-the-endpoint-manager-admin-center"></a>Öppna administrationscentret för Endpoint Manager
 
 1. Öppna en Chromium-webbläsare, till exempel Microsoft Edge version 77 eller senare.
-2. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) (https://devicemanagement.microsoft.com). Logga in med följande konto:
+2. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Logga in med följande konto:
 
     **Användare**: Ange administratörskontot för din Microsoft 365-klientorganisationsprenumeration.  
     **Lösenord**: Ange dess lösenord.
@@ -123,7 +123,7 @@ Lokala principer tillämpas i LSDOU-ordningen (Local, Site, Domain, Organization
 
 I Intune tillämpas principer på användare och grupper som du skapar. Det finns ingen hierarki. Om två principer uppdaterar samma inställning visas inställningen som en konflikt. Om två efterlevnadsprinciper är i konflikt tillämpas den mest restriktiva principen. Om två konfigurationsprofiler är i konflikt tillämpas inte inställningen. Mer information finns i [Vanliga frågor, problem och lösningar med enhetsprinciper och profiler](device-profile-troubleshoot.md#if-multiple-policies-are-assigned-to-the-same-user-or-device-how-do-i-know-which-settings-gets-applied).
 
-I följande steg skapar du säkerhetsgrupper och lägger till användare i grupperna. Du kan lägga till en användare i flera grupper. Bland annat är det vanligt att en användare har flera enheter, till exempel en Surface Pro för arbete och en Android-mobilenhet för personligt bruk. Och det är vanligt att en person kommer åt organisationsresurser från dessa flera enheter.
+I följande steg kommer du att skapa säkerhetsgrupper och lägga till användare i grupperna. Du kan lägga till en användare i flera grupper. Bland annat är det vanligt att en användare har flera enheter, till exempel en Surface Pro för arbete och en Android-mobilenhet för personligt bruk. Och det är vanligt att en person kommer åt organisationsresurser från dessa flera enheter.
 
 1. I administrationscentret för Endpoint Manager väljer du **Grupper** > **Ny grupp**.
 
@@ -146,7 +146,7 @@ I följande steg skapar du säkerhetsgrupper och lägger till användare i grupp
     - **Grupptyp**: Välj **Säkerhet**.
     - **Gruppnamn:** Ange **Alla Windows-enheter**.
     - **Typ av medlemskap**: Välj **Dynamisk enhet**.
-    - **Dynamiska enhetsmedlemmar**: Konfigurera frågan:
+    - **Dynamiska enhetsmedlemmar**: Välj **Lägg till dynamisk fråga** och konfigurera din fråga:
 
         - **Egenskap**: Välj **deviceOSType**.
         - **Operator**: Välj **Lika med**.
@@ -166,7 +166,7 @@ I följande steg skapar du säkerhetsgrupper och lägger till användare i grupp
     - **Grupptyp**: Välj **Säkerhet**.
     - **Gruppnamn:** Ange **Alla lärare**.
     - **Typ av medlemskap**: Välj **Dynamisk användare**.
-    - **Dynamiska användarmedlemmar**: Konfigurera frågan:
+    - **Dynamiska användarmedlemmar**: Välj **Lägg till dynamisk fråga** och konfigurera din fråga:
 
       - **Egenskap**: Välj **avdelning**.
       - **Operator**: Välj **Lika med**.
@@ -225,12 +225,17 @@ I det här avsnittet skapar vi en administrativ mall i Intune, tittar på några
 1. I administrationscentret för Endpoint Manager väljer du **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 2. Ange följande egenskaper:
 
+    - **Plattform**: Välj **Windows 10 och senare**.
+    - **Profil**: Välj **Administrativa mallar**.
+
+3. Välj **Skapa**.
+4. Ange följande egenskaper i **Grundinställningar**:
+
     - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ange till exempel **Adminmall – Windows 10 Student-enheter**.
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Administrativa mallar**.
 
-3. Välj **Skapa**. I listrutan **Välj en kategori** väljer du **Alla produkter**. Alla inställningar visas. Observera följande egenskaper i de här inställningarna:
+5. Välj **Nästa**.
+6. Välj **Alla produkter** i listrutan **Konfigurationsinställningar**. Alla inställningar visas. Observera följande egenskaper i de här inställningarna:
 
     - **Sökvägen** till principen är samma som Grupprinciphantering eller GPEdit.
     - Inställningen gäller för användare eller enheter.
@@ -263,7 +268,7 @@ I det här avsnittet visar vi en princip i Intune och dess matchande princip i R
     > [!div class="mx-imgBorder"]
     > ![Se alternativen för inställningen för datorkonfiguration i grupprincip](./media/tutorial-walkthrough-administrative-templates/prevent-enabling-lock-screen-camera-admx-policy.png)
 
-5. I administrationscentret för enhetshantering gå du till din mall **Adminmall – Windows 10 Student-enheter**.
+5. Gå till mallen **Administrationsmall – Windows 10 Student-enheter** i Endpoint Manager-administratörscentret.
 6. Välj **Alla produkter** i listrutan och sök efter **anpassning**:
 
     > [!div class="mx-imgBorder"]
@@ -290,7 +295,7 @@ I det här avsnittet visar vi en princip i Intune och dess matchande princip i R
 
 #### <a name="compare-an-edge-policy"></a>Jämföra en Edge-princip
 
-1. I administrationscentret för enhetshantering gå du till din mall **Adminmall – Windows 10 Student-enheter**.
+1. Gå till mallen **Administrationsmall – Windows 10 Student-enheter** i Endpoint Manager-administratörscentret.
 2. Välj **Edge-version 77 och senare** i listrutan.
 3. Sök efter **start**. Observera de tillgängliga inställningarna.
 4. I Redigeraren Grupprinciphantering letar du upp följande enhetsinställningar:
@@ -338,17 +343,16 @@ I den här mallen konfigurerade vi några Internet Explorer-inställningar för 
 
 ### <a name="assign-your-template"></a>Tilldela din mall
 
-1. I mallen väljer du **Tilldelningar**. Du kan behöva stänga mallen och sedan välja den från listan **Enheter – Konfigurationsprofiler**:
+1. Välj **Tilldelningar** > **Välj grupper att ta med** i mallen:
 
     > [!div class="mx-imgBorder"]
     > ![Välj din profil för administrativ mall från listan Enhetskonfigurationsprofiler i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/filter-administrative-template-device-configuration-profiles-list.png)
 
-2. Välj **Välj de grupper som ska inkluderas**. En lista över befintliga användare och grupper visas.
-3. Välj gruppen **Alla Windows 10 Student-enheter** som du skapade tidigare > **Välj**.
+2. En lista över befintliga användare och grupper visas. Välj gruppen **Alla Windows 10 Student-enheter** som du skapade tidigare > **Välj**.
 
     Om du använder den här självstudien i en produktionsmiljö bör du lägga till grupper som är tomma. Målet är att öva på att tilldela din mall.
 
-4. **Spara** ändringarna.
+3. Gå till sidan **Granska och skapa** genom att välja **Nästa**. Spara ändringarna genom att välja **Skapa**.
 
 När profilen har sparats tillämpas den på enheterna när de checkar in med Intune. Om enheterna är anslutna till Internet kan det ske omedelbart. Mer information om uppdateringstider för principer finns i [Hur lång tid tar det innan principerna, profilerna eller apparna når enheterna efter att de har tilldelats?](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
 
@@ -366,14 +370,17 @@ I det här avsnittet skapar du en administrativ mall för OneDrive i Intune för
 
 2. Ange följande egenskaper:
 
-    - **Namn**: Ange **Adminmall – OneDrive-principer som gäller för alla Windows 10-användare**.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
     - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Administrativa mallar**.
+    - **Profil**: Välj **Administrativa mallar**.
 
 3. Välj **Skapa**.
-4. Välj **Office** i listrutan.
-5. **Aktivera** följande inställningar. Se till att klicka på **OK** för att spara ändringarna.
+4. Ange följande egenskaper i **Grundinställningar**:
+
+    - **Namn**: Ange **Adminmall – OneDrive-principer som gäller för alla Windows 10-användare**.
+    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
+
+5. Välj **Nästa**.
+6. Välj **Office** i listrutan **Konfigurationsinställningar**. **Aktivera** följande inställningar. Se till att klicka på **OK** för att spara ändringarna.
 
     - **Logga in användare i tyst läge till OneDrive-synkroniseringsklienten med deras Windows-autentiseringsuppgifter**
     - **Använd Filer på begäran i OneDrive**
@@ -388,13 +395,12 @@ Mer information om OneDrive-klientinställningar finns i [Använda grupprincip f
 
 ### <a name="assign-your-template"></a>Tilldela din mall
 
-1. I mallen väljer du **Tilldelningar**.
-2. Välj **Välj de grupper som ska inkluderas**. En lista över befintliga användare och grupper visas.
-3. Välj gruppen **Alla Windows-enheter** som du skapade tidigare > **Välj**.
+1. Välj **Tilldelningar** > **Välj grupper att ta med** i mallen
+2. En lista över befintliga användare och grupper visas. Välj gruppen **Alla Windows-enheter** som du skapade tidigare > **Välj**.
 
     Om du använder den här självstudien i en produktionsmiljö bör du lägga till grupper som är tomma. Målet är att öva på att tilldela din mall.
 
-4. **Spara** ändringarna.
+3. Gå till sidan **Granska och skapa** genom att välja **Nästa**. Spara ändringarna genom att välja **Skapa**.
 
 Nu har du skapat några administrativa mallar och tilldelat dem till grupper som du har skapat. Nästa steg är att skapa en administrativ mall med hjälp av Windows PowerShell och Microsoft Graph API för Intune.
 

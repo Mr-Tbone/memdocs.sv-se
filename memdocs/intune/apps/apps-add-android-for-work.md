@@ -1,12 +1,12 @@
 ---
-title: Tilldela Managed Google Play-appar till Android enterprise-enheter
+title: Lägg till och tilldela Managed Google Play-appar till Android Enterprise-enheter
 titleSuffix: Microsoft Intune
 description: Förstå hur du synkroniserar och tilldelar appar till Android enterprise-enheter från Managed Google Play Butik.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/22/2020
+ms.date: 03/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dec2b1ace9b9b8a5c27ef468969a52f05e1bdcca
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: b6dab926a59e69f5afb6c2f40ea7e315afed49f8
+ms.sourcegitcommit: e37d5d3f5bdb39a8f89ba0376b31c06aaf3c5d27
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79341457"
+ms.lasthandoff: 03/22/2020
+ms.locfileid: "80117283"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Lägg till Google Play för företag-appar till Android enterprise-enheter med Intune
 
@@ -33,7 +33,7 @@ Intune lägger automatiskt till fyra vanliga Android Enterprise-relaterade appar
 
 - **[Microsoft Intune](https://play.google.com/store/apps/details?id=com.microsoft.intune)** – Används för fullständigt hanterade Android Enterprise-scenarier. Den här appen installeras automatiskt till fullständigt hanterade enheter under registrerings processen för enheten.
 - **[Microsoft Authenticator](https://play.google.com/store/apps/details?id=com.azure.authenticator)** – Hjälper dig att logga in på dina konton om du använder tvåfaktorautentisering. Den här appen installeras automatiskt till fullständigt hanterade enheter under registrerings processen för enheten.
-- **[Intune-företagsportal](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)** – Används för appskyddsprinciper och scenarier med Android Enterprise-arbetsprofiler.
+- **[Intune-företagsportal](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal)** – Används för appskyddsprinciper och scenarier med Android Enterprise-arbetsprofiler. Den här appen installeras automatiskt till fullständigt hanterade enheter under registrerings processen för enheten.
 - **[Managed Home Screen](https://play.google.com/store/apps/details?id=com.microsoft.launcher.enterprise)** – Används för dedikerade/helskärmslägesscenarier i Android Enterprise. IT-administratörer bör skapa en tilldelning för att installera den här appen på dedikerade enheter som ska användas i kioskscenarier med flera appar.
 
 >[!NOTE]
@@ -183,7 +183,7 @@ Om du har godkänt en app från butiken men inte ser den i arbetsbelastningen **
 
 ## <a name="assigning-a-managed-google-play-app-to-android-enterprise-work-profile-devices"></a>Tilldela en hanterad Google Play-app för Android Enterprise-arbetsprofilenheter
 
-När appen visas i noden **Applicenser** i arbetsbelastningsfönstret **Appar** kan du [tilldela den på samma sätt som du gör med andra appar](/intune-azure/manage-apps/deploy-apps) genom att tilldela användargrupper appen.
+När appen visas i noden **Applicenser** i arbetsbelastningsfönstret **Appar** kan du [tilldela den på samma sätt som du gör med andra appar](/mem/intune/apps/apps-deploy) genom att tilldela användargrupper appen.
 
 När du har tilldelat appen installeras den (eller görs tillgänglig för installation) på de enheter vars användare du har som mål. Användaren av enheten behöver inte godkänna installationen. Mer information om Android Enterprise-arbetsprofilenheter finns i [Konfigurera registrering av Android Enterprise-arbetsprofilenheter](../enrollment/android-work-profile-enroll.md). 
 
@@ -197,7 +197,7 @@ När du har tilldelat appen installeras den (eller görs tillgänglig för insta
 Som standard tillåter en fullständigt hanterad Android-enhet inte att anställda installerar appar som inte har godkänts av organisationen. Dessutom kan de anställda inte ta bort några installerade appar i strid mot principen. Om du vill ge användare åtkomst till appar från hela Google Play-butiken istället för att bara ha åtkomst till godkända appar i Google Play för företag-butiker kan du ställa in **Tillåt åtkomst till alla appar i Google Play Store** på **Tillåt**. Med den här inställningen kan användaren komma åt alla appar i Google Play-butiken med sitt företagskonto men köp kan dock begränsas. Du kan ta bort inköpsbegränsningen genom att låta användare lägga till nya konton på enheten. Om du gör det får slutanvändare köpa appar från Google Play Store med hjälp av personliga konton, samt att genomföra köp i appen. Mer information finns i [Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune](../configuration/device-restrictions-android-for-work.md). 
 
 > [!NOTE]
-> Microsoft Intune-appen och Microsoft Authenticator-appen installeras som obligatoriska appar på alla fullständigt hanterade enheter under registreringen. Att de här apparna installeras automatiskt ger stöd för villkorlig åtkomst och Microsoft Intune App-användare kan se och lösa kompatibilitetsproblem. 
+> Microsoft Intune-appen, Microsoft Authenticator-appen och företagsportalappen installeras som obligatoriska appar på alla fullständigt hanterade enheter under registreringen. Att de här apparna installeras automatiskt ger stöd för villkorlig åtkomst och Microsoft Intune App-användare kan se och lösa kompatibilitetsproblem. 
 
 ## <a name="manage-android-enterprise-app-permissions"></a>Hantera behörigheter för Android Enterprise-app
 Android Enterprise kräver att du godkänner appar i den Managed Google Play-webbkonsolen innan du synkroniserar dem med Intune och tilldelar dem till användarna. Eftersom Android Enterprise låter dig distribuera dessa appar till användarnas enheter tyst och automatiskt måste du acceptera appens behörigheter för alla användare. Användare ser inga programbehörigheter när de installerar apparna, så det är viktigt att du har förstått dessa behörigheter.

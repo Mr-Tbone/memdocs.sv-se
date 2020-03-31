@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/27/2020
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f475f6f204225e00424e08afb8c69e20e21e815
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 4b8de67a77b2122c5db4dddbb82a4966c20e1936
+ms.sourcegitcommit: 670c90a2e2d3106048f53580af76cabf40fd9197
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342029"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233527"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Hur du skapar och tilldelar skyddsprinciper för appar
 
@@ -58,7 +58,7 @@ När du skapar en appskyddsprincip för iOS/iPad-appar och Android-appar följer
 
     Värdet för **Plattform** anges baserat på ditt val ovan.
 
-    ![Skärmbild av sidan Grundläggande i fönstret Skapa princip](/media/app-protection-policies/app-protection-add-policies-01.png)
+    ![Skärmbild av sidan Grundläggande i fönstret Skapa princip](./media/app-protection-policies/app-protection-add-policies-01.png)
 
 5. Klicka på **Nästa** för att visa sidan **Appar**.<br>
     På sidan **Appar** kan du välja hur du vill tillämpa den här principen på appar på olika enheter. Du måste lägga till minst en app.<p>
@@ -123,7 +123,7 @@ För att kunna se effekten av ändringarna direkt måste slutanvändaren logga u
     
     | Värde/alternativ | Beskrivning |
     |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Rikta till appar på alla enhetstyper | Använd det här alternativet om du vill att principen ska riktas mot appar på enheter i valfritt hanteringstillstånd. Välj **Nej** om du vill rikta till appar på specifika enhetstyper. Information finns i [Ange mål för appskyddsprinciper utifrån enhetens hanteringsstatus](#target-app-protection-policies-based-on-device-management-state) |
+    | Rikta till appar på alla enhetstyper | Använd det här alternativet om du vill att principen ska riktas mot appar på enheter i valfritt hanteringstillstånd. Välj **Nej** om du vill rikta till appar på specifika enhetstyper. Det kan krävas ytterligare appkonfiguration för den här inställningen. Mer information finns i [Target app protection policies based on device management state](#target-app-protection-policies-based-on-device-management-state) (Ange mål för appskyddsprinciper utifrån enhetens hanteringsstatus). |
     |     Enhetstyper | Använd det här alternativet för att ange huruvida den här principen gäller för MDM-hanterade enheter eller ohanterade enheter. När det gäller iOS/iPadOS APP-principer väljer du bland **Ohanterade** och **Hanterade** enheter. För Android APP-principer väljer du från **Ohanterade**, **Android-enhetsadministratör** och **Android Enterprise**.  |
     | Offentliga appar | Klicka på **Välj offentliga appar** för att välja de appar som ska vara mål. |
     | Anpassade appar | Klicka på **Välj anpassade appar** för att välja anpassade appar som mål baserat på ett paket-ID. |
@@ -178,10 +178,9 @@ Om du vill skapa de här principerna, så gå till **Appar** > **Appskyddsprinci
 - **Android-enhetsadministratör**: Intune-hanterade enheter som använder Androids enhetsadministrations-API.
 - **Android Enterprise**: Intune-hanterade enheter som använder Android Enterprise-arbetsprofiler eller Android Enterprise fullständig enhetshantering.
 
-> [!NOTE]
-> I Android-enheter uppmanas användarna att installera Intune-företagsportalappen oavsett vilken typ av enhet som valts. Om du till exempel väljer Android Enterprise kommer användare med ohanterade Android-enheter fortfarande att frågas.
+När det gäller Android så uppmanar Android-enheter användarna att installera Intune-företagsportalsappen oavsett vilken typ av enhet som valts. Om du till exempel väljer Android Enterprise kommer användare med ohanterade Android-enheter fortfarande att frågas.
 
-För iOS/iPadOS krävs ytterligare appkonfigurationsinställningar för att rikta in appinställningar (APP) till appar på Intune-registrerade enheter:
+Om valet av Enhetstyp ska framtvingas på ohanterade enheter i iOS/iPad så krävs ytterligare appkonfigurationsinställningar. De här konfigurationerna kommunicerar med APP-tjänsten om att en viss app hanteras och att appinställningarna inte gäller:
 
 - **IntuneMAMUPN** måste konfigureras för alla MDM-hanterade program. Mer information finns i [Hantera dataöverföring mellan iOS/iPadOS-appar med Microsoft Intune](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).
 - **IntuneMAMDeviceID** måste konfigureras för alla tredjeparts och verksamhetsspecifika MDM-hanterade program. **IntuneMAMDeviceID** ska konfigureras till enhetens ID-token. Exempelvis `key=IntuneMAMDeviceID, value={{deviceID}}`. Mer information finns i [Lägg till appkonfigurationsprinciper för hanterade iOS/iPadOS-enheter](app-configuration-policies-use-ios.md).

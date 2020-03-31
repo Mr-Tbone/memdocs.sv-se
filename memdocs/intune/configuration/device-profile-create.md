@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b706ea076ebcc239904a9ae918389ccafa287ec
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 462f9ca9618d16c0291792f86d00c46f641c6cc8
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79339962"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084065"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Skapa en enhetsprofil i Microsoft Intune
 
@@ -52,7 +52,7 @@ Den här artikeln:
    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
    - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
 
-       - **Android**
+       - **Android-enhetsadministratör**
        - **Android enterprise**
        - **iOS/iPadOS**
        - **macOS**
@@ -68,12 +68,14 @@ Den här artikeln:
        - [Leveransoptimering](delivery-optimization-windows.md)
        - [Enhetsfunktioner](device-features-configure.md)
        - [Enhetsbegränsningar](device-restrictions-configure.md)
+       - [Domänanslutning](domain-join-configure.md)
        - [Versionsuppgradering och lägesväxling](edition-upgrade-configure-windows-10.md)
        - [Utbildning](education-settings-configure.md)
        - [E-post](email-settings-configure.md)
        - [Slutpunktsskydd](../protect/endpoint-protection-configure.md)
        - [Identity Protection](../protect/identity-protection-configure.md)  
        - [Helskärmsläge](kiosk-settings.md)
+       - [Microsoft Defender ATP](../protect/advanced-threat-protection.md)
        - [PKCS-certifikat](../protect/certficates-pfx-configure.md)
        - [PKCS-importerat certifikat](../protect/certificates-imported-pfx-configure.md)
        - [Inställningsfil](preference-file-settings-macos.md)
@@ -82,12 +84,12 @@ Den här artikeln:
        - [Uppdateringsprinciper](../protect/software-updates-ios.md)
        - [VPN](vpn-settings-configure.md)
        - [Wi-Fi](wi-fi-settings-configure.md)
-       - [Microsoft Defender ATP](../protect/advanced-threat-protection.md)
        - [Windows informationsskydd](../protect/windows-information-protection-configure.md)
 
      Om du till exempel väljer **iOS/iPadOS** som plattform, ser alternativen för profiltypen ut ungefär så här:
 
-     ![Skapa iOS/iPadOS-profil i Intune](./media/device-profile-create/create-device-profile.png)
+     > [!div class="mx-imgBorder"]
+     > ![Skapa iOS/iPadOS-profil i Intune](./media/device-profile-create/create-device-profile.png)
 
 4. Välj **OK** > **Skapa** när du är klar för att spara dina ändringar. Profilen skapas och visas i listan.
 
@@ -138,7 +140,8 @@ När du tilldelar profilen till grupperna fungerar tillämplighetsreglerna som e
 
 1. Välj **Tillämpbarhetsregler**. Du kan välja **Regel**, **Egenskap** och **OS-utgåva**:
 
-    ![Lägg till en tillämplighetsregel till en enhetskonfigurationsprofil i Microsoft Intune](./media/device-profile-create/applicability-rules.png)
+    > [!div class="mx-imgBorder"]
+    > ![Lägg till en tillämplighetsregel till en enhetskonfigurationsprofil i Microsoft Intune](./media/device-profile-create/applicability-rules.png)
 
 2. I **Regel** väljer du om du vill inkludera eller exkludera användare eller grupper. Alternativen är:
 
@@ -184,7 +187,8 @@ När du skapar profiler bör du tänka på följande rekommendationer:
 
   Följande bild visar ett exempel på en inställning som kan gälla för användare och/eller tillämpas på enheter:
 
-  ![Intune-administratörsmall som tillämpas på användare och enheter](./media/device-profile-create/setting-applies-to-user-and-device.png)
+  > [!div class="mx-imgBorder"]
+  > ![Intune-administratörsmall som tillämpas på användare och enheter](./media/device-profile-create/setting-applies-to-user-and-device.png)
 
 - Varje gång du skapar en begränsad princip bör du informera användarna om detta. Om du till exempel vill ändra lösenordskravet från 4 tecken till 6 tecken, meddelar du användarna detta innan du tilldelar principen.
 

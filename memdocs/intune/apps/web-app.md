@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/22/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fc6b9fc427ab6e0dc0488061378e78060527676
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: b30d2a3ef7c85557222aa39740417a1a6fd463f1
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361984"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084136"
 ---
 # <a name="add-web-apps-to-microsoft-intune"></a>Lägga till webbappar i Microsoft Intune
 
@@ -37,9 +37,10 @@ Intune skapar en genväg till webbappen på användarens enhet. På iOS/iPadOS-e
 
 > [!Note]
 > En webbläsare måste vara installerad på användarens enhet för att det ska gå att starta webbappar. 
-
-> [!Note]
-> Information rörande Android Enterprise-enheter finns i [Webblänkar för hanterat Google Play-konto](apps-add-android-for-work.md#managed-google-play-web-links)
+> 
+> Information rörande Android Enterprise-enheter finns i [Webblänkar för hanterat Google Play-konto](apps-add-android-for-work.md#managed-google-play-web-links).
+> 
+> För iOS-enheter, öppnas nya webbklipp (fästa webbappar) i Microsoft Edge i stället för Intune Managed Browser om det behövs för att öppna i en skyddad webbläsare. För äldre iOS-webbklipp måste du omdirigera dessa webbklipp för att se till att de öppnas i Microsoft Edge i stället för Managed Browser.
 
 ## <a name="add-a-web-app-to-intune"></a>Lägg till en webbapp i Intune
 Om du vill lägga till en app i Intune som en genväg till en app på webben gör du så här:

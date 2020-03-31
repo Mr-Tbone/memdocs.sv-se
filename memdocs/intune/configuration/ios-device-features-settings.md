@@ -1,11 +1,11 @@
 ---
 title: Funktionsinställningar för iOS/iPadOS i Microsoft Intune – Azure | Microsoft Docs
-description: Se alla inställningar för att konfigurera iOS- och iPadOS-enheter för AirPrint, layout för startsidan, appmeddelanden, delad enhet, enkel inloggning och webbinnehållsfilter i Microsoft Intune.Se alla inställningar för att konfigurera iOS-enheter för AirPrint, layout för startsidan, appmeddelanden, delad enhet, enkel inloggning och webbinnehållsfilter i Microsoft Intune. Använd dessa inställningar i en enhetskonfigurationsprofil när du konfigurerar iOS- och iPadOS-enheter för att använda Apple-funktionerna i din organisation.
+description: Se alla inställningar för att konfigurera iOS- och iPadOS-enheter för AirPrint, layout för startsidan, appmeddelanden, delad enhet, enkel inloggning och webbinnehållsfilter i Microsoft Intune. Använd dessa inställningar i en enhetskonfigurationsprofil när du konfigurerar iOS- och iPadOS-enheter för att använda Apple-funktionerna i din organisation.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/09/2020
+ms.date: 03/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 351c6ade59d98ce620b939c5ff6238e650390a5f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: fafca25fb0e374d281f8ef593cb5fa7f35d82979
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361087"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086969"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
-Intune innehåller vissa inbyggda inställningar för att tillåta iOS- och iPadOS-användare att använda olika Apple-funktioner på sina enheter. Till exempel så kan administratörer styra hur iOS- och iPadOS-användare använder AirPrint-skrivare, lägga till appar och mappar till dockan och sidor på startskärmen, visa meddelanden i appen, visa information om tillgångstagg på låsskärmen, använda enkel inloggning och autentisera användare med certifikat.
+Intune innehåller vissa inbyggda inställningar för att tillåta iOS- och iPadOS-användare att använda olika Apple-funktioner på sina enheter. Du kan t.ex. styra AirPrint-skrivare, lägga till appar och mappar till dockan och startskärmens sidor, visa meddelanden i appen, visa information om tillgångstagg på låsskärmen, använda enkel inloggning och certifikatautentisering.
 
 Du kan använda dessa funktioner för att styra iOS- och iPadOS-enheter som en del av din MDM-lösning för hantering av mobilenheter.
 
@@ -48,7 +48,7 @@ I den här artikeln visas inställningarna, tillsammans med en beskrivning av va
 - **IP-adress**: Ange skrivarens IPv4- eller IPv6-adress. Om du använder värdnamn till att identifiera skrivare, kan du hämta IP-adressen genom att pinga skrivaren i terminalen. Det finns mer information i Hämta IP-adress och sökväg (i den här artikeln).
 - **Sökväg**: Sökvägen är vanligtvis `ipp/print` för skrivare i nätverket. Det finns mer information i Hämta IP-adress och sökväg (i den här artikeln).
 - **Port**: Ange lyssningsporten för AirPrint-målet. Om du lämnar den här egenskapen tom, kommer AirPrint att använda standardporten. Tillgängligt i iOS 11.0 och iPadOS 13.0 och senare.
-- **TLS**: Välj **Aktivera** för att skydda AirPrint-anslutningar med TLS (Transport Layer Security). Tillgängligt i iOS 11.0 och iPadOS 13.0 och senare.
+- **TLS**: **Aktivera** skyddar AirPrint-anslutningar med TLS (Transport Layer Security). Tillgängligt i iOS 11.0 och iPadOS 13.0 och senare.
 
 Om du vill lägga till AirPrint-servrar kan du:
 
@@ -81,7 +81,7 @@ Den här funktionen gäller för:
 
 ### <a name="dock"></a>Docka
 
-Använd inställningarna **Docka** för att lägga till upp till sex objekt eller mappar till dockan på iOS-/iPadOS-skärmen. Många enheter stöder färre objekt. Till exempel stöder iPhone-enheter upp till fyra objekt. I det här fallet visas endast de första fyra objekt som du har lagt till på enheten.
+Lägg till upp till sex objekt eller mappar till skärmens docka med hjälp av **Docka**-inställningarna. Många enheter stöder färre objekt. Till exempel stöder iPhone-enheter upp till fyra objekt. I det här fallet visas endast de första fyra objekt som du har lagt till på enheten.
 
 Du kan lägga till upp till **sex** objekt (appar och mappar som kombineras) för enhetens docka.
 
@@ -203,7 +203,7 @@ Den här funktionen gäller för:
   Enhetstoken kan också användas för att lägga till enhetsspecifik information i de här fälten. Ange till exempel `Serial Number: {{serialnumber}}` om du vill visa serienumret. På låsskärmen visas texten ungefär som `Serial Number 123456789ABC`. När du anger variabler ska du använda klammerparenteser `{{ }}`. [Token för appkonfiguration](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) innehåller en lista över variabler som kan användas. Du kan också använda `deviceName` eller andra enhetsspecifika värden.
 
   > [!NOTE]
-  > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` istället för `{{deviceid}}` visas litteralsträngen istället för enhetens unika ID. Se till att du anger rätt information.
+  > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` i stället för `{{deviceid}}` visas litteralsträngen i stället för enhetens unika ID. Se till att du anger rätt information.
 
 ## <a name="single-sign-on"></a>Enkel inloggning
 
@@ -283,8 +283,32 @@ Den här funktionen gäller för:
 - **Typ av SSO-apptillägg**: Välj typ av SSO-apptillägg. Alternativen är:
 
   - **Inte konfigurerad**: Apptilläggen används inte. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
-  - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill utföra SSO med moderna autentiseringsflöden. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
-  - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill utföra SSO med autentiseringsflöden med anrop och svar. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
+  - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
+
+    På iOS/iPad 13.0-enheter och senare kan du konfigurera **Microsoft Azure AD SSO-apptillägg** med den här typen av typ av SSO-apptillägg för omdirigering. Microsoft Azure AD-tillägget möjliggör enkel inloggning mellan Microsoft-appar och organisationsappar som använder Azure AD för autentisering. Azure AD-tillägget fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och slutanvändarupplevelse. Alla appar som tidigare hade en asynkron autentisering med Microsoft Authenticator-appen fortsätter att få SSO med SSO-tillägget. Azure AD SSO-tillägget stöder ännu inte webbläsar-SSO. Mer information om SSO och iOS/iPad Authentication Broker finns i [Konfigurera SSO på macOS och iOS/iPad](https://docs.microsoft.com/azure/active-directory/develop/single-sign-on-macos-ios).  
+
+    **Konfigurera iOS Microsoft Azure AD-tillägget:**
+
+    1. Ställ in **SSO-apptilläggstyp** på **Omdirigera**.
+    2. Ställ in **Tilläggs-ID** på `com.microsoft.azureauthenticator.ssoextension`.
+    3. Ställ in **Team-ID** på `SGGM6D27TK`.
+    4. Ange följande URL:er i inställningen **URL:er**:
+
+        - `https://login.microsoftonline.com`
+        - `https://login.windows.net`
+        - `https://login.microsoft.com`
+        - `https://sts.windows.net`
+        - `https://login.partner.microsoftonline.cn`
+        - `https://login.chinacloudapi.cn`
+        - `https://login.microsoftonline.de`
+        - `https://login.microsoftonline.us`
+        - `https://login.usgovcloudapi.net`
+        - `https://login-us.microsoftonline.com`
+
+    > [!IMPORTANT]
+    > Om du vill uppnå enkel inloggning med iOS/iPad Microsoft Azure AD-tillägget, så måste du först installera iOS/iPad Microsoft Authenticator-appen på enheten. Authenticator förser enheten med Azure AD-tillägget, och inställningarna för MDM SSO-apptillägget aktiverar Azure AD-tillägget. När Authenticator och SSO-apptilläggsprofilen har installerats på enheten, så måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen.
+
+  - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill använda SSO med autentiseringsflöden med anrop och svar. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
   - **Kerberos**: Använd Apples inbyggda Kerberos-tillägg som ingår i iOS 13.0 och iPadOS 13.0 eller senare. Det här alternativet är en Kerberos-specifik version av apptillägget **Autentiseringsuppgifter**.
 
   > [!TIP]
@@ -303,7 +327,7 @@ Den här funktionen gäller för:
   - Alla domäner i Intune-profiltilläggen för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken apptilläggsprofil för enkel inloggning som helst, även om du använder olika typer av SSO-apptillägg.
   - Dessa domäner är inte skiftlägeskänsliga.
 
-- **URL:er** (endast omdirigering): Ange URL-prefixen för dina identitetsprovidrar, å vilkas vägnar omdirigeringstillägget utför SSO. När en användare omdirigeras till dessa URL:er ingriper SSO-apptillägget att och framtvingar SSO.
+- **URL:er** (endast omdirigering): Ange URL-prefixen för dina identitetsprovidrar för vilkas räkning apptillägget för omdirigering använder SSO. När användarna omdirigeras till dessa URL:er ingriper SSO-apptillägget och framtvingar SSO.
 
   - Alla URL:er i Intune-apptilläggsprofilerna för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken SSO-apptilläggsprofil som helst, även om du använder olika typer av SSO-tillägg.
   - URL:erna måste inledas med http://eller https://.
@@ -320,7 +344,7 @@ Den här funktionen gäller för:
 
   - **Lägg till**: Välj om du vill lägga till dina konfigurationsnycklar.
 
-- **Användning av nyckelring** (endast Kerberos): Förhindra att lösenord sparas och lagras i nyckelringen genom att välja **Blockera**. Om den blockeras uppmanas inte användaren att spara sitt lösenord och behöver ange lösenordet på nytt när Kerberos-biljetten går ut. **Inte konfigurerad** (standard) tillåter att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
+- **Användning av nyckelring** (endast Kerberos): Förhindra att lösenord sparas och lagras i nyckelringen genom att välja **Blockera**. Om den blockeras uppmanas inte användarna att spara sina lösenord och de måste ange lösenordet på nytt när Kerberos-biljetten upphör att gälla. **Inte konfigurerad** (standard) tillåter att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
 - **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. **Inte konfigurerad** (standard) kräver inte att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
 - **Standardsfär** (endast Kerberos): Välj **Aktivera** om du vill ange det **Sfär**-värde som du angav som standardsfär. **Inte konfigurerad** (standard) anger inte någon standardsfär.
 

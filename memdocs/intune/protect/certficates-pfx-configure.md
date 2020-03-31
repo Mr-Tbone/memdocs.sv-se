@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/25/2020
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: caeeb332f4a7c8c124e40537041b8aef8d219240
-ms.sourcegitcommit: b5a9ce31de743879d2a6306cea76be3a093976bb
+ms.openlocfilehash: 94e170e01a1ede01a94b2ca3f09d8530f97335a3
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79372627"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085009"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>Konfigurera och använda PKCS-certifikat med Intune
 
@@ -175,27 +175,42 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
-
-   ![Navigera till Intune och skapa en ny profil för ett betrott certifikat](./media/certficates-pfx-configure/certificates-pfx-configure-profile-new.png)
+2. Välj och gå till **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
 3. Ange följande egenskaper:
+   - **Plattform**: Välj plattform för de enheter som ska få den här profilen.
+   - **Profil**: Välj **Betrott certifikat**.
+  
+4. Välj **Skapa**.
 
-    - **Namnet** på profilen
-    - Om du vill kan du ange en beskrivning
-    - **Plattform** att distribuera profilen till
-    - Ange **profiltypen** som **betrott certifikat**
+5. Ange följande egenskaper i **Grundinställningar**:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett exempel på ett bra profilnamn är *Trusted certificate profile for entire company* (Betrodd certifikatprofil för hela företaget).
+   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
-4. Välj **Inställningar** och ange .CER-filen för certifikatutfärdarens rotcertifikat som du exporterade tidigare.
+6. Välj **Nästa**.
+
+7. Välj **Konfigurationsinställningar** och ange .CER-filen för certifikatutfärdarens rotcertifikat som du exporterade tidigare.
 
    > [!NOTE]
-   > Beroende på vilken plattform du valde i **steg 2** kan du få alternativet att välja **målarkiv** för certifikatet.
+   > Beroende på vilken plattform du valde i **steg 3** kan du få alternativet att välja **målarkiv** för certifikatet.
 
    ![Skapa en profil och ladda upp ett betrott certifikat](./media/certficates-pfx-configure/certificates-pfx-configure-profile-fill.png)
 
-5. Välj **OK** > **Skapa** för att spara profilen.
+8. Välj **Nästa**.
 
-6. Om du vill tilldela den nya profilen till en eller flera enheter läser du [tilldela Microsoft Intune-enhetsprofiler](../configuration/device-profile-assign.md).
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+   Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. (*Gäller endast Windows 10*) I **Tillämplighetsregler** anger du tillämplighetsregler för att förfina tilldelningen av profilen. Du kan välja att tilldela eller inte tilldela profilen baserat på operativsystemversionen eller enhetsversionen.
+
+  Mer information finns i [Tillämplighetsregler](../configuration/device-profile-create.md#applicability-rules) i *Skapa en enhetsprofil i Microsoft Intune*.
+
+12. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="create-a-pkcs-certificate-profile"></a>Skapa en PKCS-certifikatprofil
 
@@ -204,13 +219,25 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 2. Välj och gå till **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
 3. Ange följande egenskaper:
+   - **Plattform**: Välj plattform för dina enheter. Alternativen är:
+     - Android-enhetsadministratör
+     - Android Enterprise > Endast enhetens ägare
+     - Android Enterprise > Endast arbetsprofil
+     - iOS/iPadOS
+     - macOS
+     - Windows 10 och senare
+   - **Profil**: Välj **PKCS-certifikat**
 
-    - **Namnet** på profilen
-    - Om du vill kan du ange en beskrivning
-    - **Plattform** att distribuera profilen till
-    - Ange **profiltypen** som **PKCS-certifikat**
+   > [!NOTE]
+   > På enheter med en Android Enterprise-profil syns inte certifikat som har installerats med en PKCS-certifikatprofil på enheten. Kontrollera statusen för profilen i Intune-konsolen för att bekräfta lyckad certifikatdistribution.
+4. Välj **Skapa**.
 
-4. Välj **Inställningar** och konfigurera de egenskaper som gäller för den plattform som du har valt:
+5. Ange följande egenskaper i **Grundinställningar**:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är t.ex. *PKCS-profil för hela företaget*.
+   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
+
+6. Välj **Nästa**.
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar: – Android-enhetsadministratör – Android Enterprise – iOS/iPad – Windows 10
    
    |Inställningen     | Plattform     | Information   |
    |------------|------------|------------|
@@ -227,12 +254,18 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
    |**Tillåt alla appar att komma åt privat nyckel** |<ul><li>macOS  |Ange till **Aktivera** för att ge appar som är konfigurerade för den associerade Mac-enheten åtkomst till den privata nyckeln för PKCS-certifikat. <br><br> Mer information om den här inställningen finns i *AllowAllAppsAccess* avsnittet Certifikatnyttolast i [referensen för konfigurationsprofil](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf) i Apple-utvecklardokumentationen. |
    |**Rotcertifikat**             |<ul><li>Android-enhetsadministratör </li><li>Android Enterprise (*Enhetsägare*, *Arbetsprofil*) |Välj en certifikatprofil för en rotcertifikatutfärdare som tidigare har tilldelats. |
 
-5. Välj **OK** > **Skapa** för att spara profilen.
+8. Välj **Nästa**.
 
-6. Om du vill tilldela den nya profilen till en eller flera enheter läser du [tilldela Microsoft Intune-enhetsprofiler](../configuration/device-profile-assign.md).
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
 
-   > [!NOTE]
-   > På enheter med en Android Enterprise-profil syns inte certifikat som har installerats med en PKCS-certifikatprofil på enheten. Kontrollera statusen för profilen i Intune-konsolen för att bekräfta lyckad certifikatdistribution.
+   Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
 
 ### <a name="subject-name-format"></a>Format för namn på certifikatmottagare
 

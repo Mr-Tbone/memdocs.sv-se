@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/28/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0733ac48aa39f611db43164137d129a3248f13d4
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 936dc5d4167252fcb2280ca3c9aa8b450a924a98
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342822"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083639"
 ---
 # <a name="manage-web-access-using-a-microsoft-intune-policy-protected-browser"></a>Hantera Internetåtkomst med hjälp av en Microsoft Intune-principskyddad webbläsare
 
@@ -88,6 +88,9 @@ Eftersom Managed Browser och Microsoft Edge inte hanteras av Intune har de inte 
 ## <a name="conditional-access-for-protected-browsers"></a>Villkorlig åtkomst för skyddade webbläsare
 
 Managed Browser är nu en godkänd klientapp för villkorlig åtkomst. Det innebär att du kan begränsa mobil webbläsaråtkomst till Azure AD-anslutna webbappar där användarna bara kan använda Managed Browser, vilket blockerar åtkomsten från andra oskyddade webbläsare som Safari eller Chrome. Det här skyddet kan tillämpas på Azure-resurser som Exchange Online och SharePoint Online, Administrationscenter för Microsoft 365 och även lokala platser som du exponerar för externa användare via [Azure AD-programproxyn](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started). 
+
+> [!NOTE]
+> Nya webbklipp (fästa webbappar) i iOS-enheter öppnas i Microsoft Edge i stället för Intune Managed Browser om det behövs för att öppna i en skyddad webbläsare. För äldre iOS-webbklipp måste du omdirigera dessa webbklipp för att se till att de öppnas i Microsoft Edge i stället för Managed Browser.
 
 Om du vill begränsa Azure AD-anslutna webbappars användning av Intune Managed Browser på mobila plattformar, kan du skapa en villkorsstyrd åtkomstprincip som kräver godkända klientprogram. 
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df00db079a7e6b73ba24dc612b5cb6b2250c3898
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 50c56cff5f6b58894ff1abb24dad397d7e6c2c1e
+ms.sourcegitcommit: cd2cbc23b8909df3a000d8ad4140e87052d6de5a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79338194"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79508482"
 ---
 # <a name="see-device-details-in-intune"></a>Visa enhetsinformation i Intune
 
@@ -36,7 +36,7 @@ Den här artikeln beskriver hur du visar alla dina enheter och deras egenskaper 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 3. Välj **Enheter** > **Alla enheter** > välj en av enheterna i listan för att öppna informationen:
 
-   - I **Översikt** visas namnet på enheten och några viktiga egenskaper, bland annat om det är en BYOD-enhet (Bring Your Own Device), när den checkades in och mycket mer. Du kan göra följande på enheten:
+   - I **Översikt** visas namnet på enheten och några viktiga egenskaper, bland annat om det är en personlig enhet eller företagsenhet, serienummer, primär användare och annat. Du kan göra följande på enheten:
       - [Pensionera](devices-wipe.md#retire)
       - [Rensning](devices-wipe.md#wipe)
       - [Ta bort](devices-wipe.md#delete-devices-from-the-intune-portal)

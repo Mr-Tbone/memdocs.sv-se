@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 951982f862bc4ba742d87af67f198d3c5114c546
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: ea0968d15572fa9c3bde1e4d133dcb8b4c980274
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361841"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80087054"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för iOS och iPadOS tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -43,19 +43,20 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Dela användningsdata**: Välj **Blockera** för att förhindra enheten från att skicka diagnostik- och användningsdata till Apple. **Inte konfigurerad** (standard) tillåter att dessa data skickas.
+- **Dela användningsdata**: **Blockera** förhindrar enheten från att skicka diagnostik- och användningsdata till Apple. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att dessa data skickas.
 
-- **Skärmdump**: Välj **Blockera** för att förhindra skärmbilder eller skärmdumpar på enheten. I iOS /iPadOS 9.0 och senare blockeras även skärminspelningar. **Inte konfigurerad** (standard) låter användaren spara skärminnehållet som en bild eller video.
+- **Skärmdump**: **Blockera** förhindrar skärmbilder eller skärmdumpar på enheten. I iOS /iPadOS 9.0 och senare blockeras även skärminspelningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användaren sparar skärminnehållet som en bild eller video.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Ej betrodda TLS-certifikat**: Välj**Blockera** om du vill stoppa ej betrodda TLS-certifikat på enheten. **Inte konfigurerad** (standard) tillåter TLS-certifikat.
-- **Blockera trådlösa PKI-uppdateringar**: **Blockera** hindrar användarna från att ta emot programuppdateringar om inte enheten är ansluten till en dator. **Inte konfigurerad** (standard): tillåter att en enhet tar emot programuppdateringar utan att vara ansluten till en dator.
-- **Begränsa reklamspårning**: Välj **Begränsa** om du vill inaktivera enhetens reklamidentifierare. **Inte konfigurerad** (standard) gör att den förblir aktiverad.
+- **Ej betrodda TLS-certifikat**: **Blockera** stoppar ej betrodda TLS-certifikat på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan om standard tillåta TLS-certifikat.
+- **Blockera trådlösa PKI-uppdateringar**: **Blockera** hindrar användarna från att ta emot programuppdateringar om inte enheten är ansluten till en dator. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att en enhet tar emot programuppdateringar utan att vara ansluten till en dator.
+- **Begränsa reklamspårning**: Välj **Begränsa** om du vill inaktivera enhetens reklamidentifierare. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta det vara aktiverat.
+- **Företagsappförtroende**: **Blockera** tar bort knappen **Lita på företagsutvecklare** i Inställningar > Allmänt > Profiler och enhetshantering på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användaren väljer att lita på appar som inte laddats ned från App Store.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Ändring av inställningar för att skicka diagnostik**: **Blockera** hindrar användaren från att ändra inställningarna för diagnostiköverföring och appanalys i **Diagnostik och användning** (enhetsinställningar). **Inte konfigurerad** (standard) tillåter att användaren ändrar dessa enhetsinställningar.
+- **Ändring av inställningar för att skicka diagnostik**: **Blockera** hindrar användarna från att ändra inställningarna för diagnostiköverföring och appanalys i **Diagnostik och användning** (enhetsinställningar). När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra dessa enhetsinställningar.
 
   Om du vill använda den här inställningen anger du inställningen **Dela användningsdata** till **Blockera**.
 
@@ -63,7 +64,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   - iOS 9.3.2 och senare
   - iPadOS 13.0 och senare
 
-- **Fjärrskärmsvisning via appen Klassrum**: Välj **Blockera** om du vill förhindra appen Klassrum från att visa skärmarna på fjärranslutna enheter. **Inte konfigurerad** (standard) tillåter appen Apple Klassrum att visa skärmen.
+- **Fjärrskärmsvisning via appen Klassrum**: **Blockera** förhindrar appen Klassrum från att visa skärmarna på fjärranslutna enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta appen Apple Klassrum att visa skärmen.
 
   Om du vill använda den här inställningen anger du inställningen **Skärmdump** till **Blockera**.
 
@@ -71,64 +72,62 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   - iOS 9.3 och senare
   - iPadOS 13.0 och senare
 
-- **Skärmvisning utan uppmaning via appen Klassrum**: Om det är inställt på **Tillåt** kan lärarna tyst övervaka skärmarna på elevernas iOS/iPadOS-enheter med hjälp av appen Klassrum utan att eleverna vet om det. Elevenheter som har registrerats i en klass med appen Classroom ger automatiskt behörighet till kursens lärare. **Inte konfigurerad** (standard) förhindrar den här funktionen.
+- **Skärmvisning utan uppmaning via appen Klassrum**: Om det är inställt på **Tillåt** kan lärarna tyst övervaka skärmarna på elevernas iOS/iPadOS-enheter med hjälp av appen Klassrum utan att eleverna vet om det. Elevenheter som har registrerats i en klass med appen Classroom ger automatiskt behörighet till kursens lärare. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra den här funktionen.
 
   Om du vill använda den här inställningen anger du inställningen **Skärmdump** till **Blockera**.
 
-- **Företagsappförtroende**: Välj **Blockera** om du vill ta bort knappen **Lita på företagsutvecklare** i Inställningar > Allmänt > Profiler och enhetshantering på enheten. **Inte konfigurerad** (standard) tillåter att användaren väljer att lita på appar som inte laddats ned från App Store.
-- **Kontoändring**: När det är inställt på **Blockera** kan användaren inte uppdatera enhetsspecifika inställningar från iOS/iPadOS-appens inställningar. Användaren kan t.ex. skapa nya enhetskonton eller ändra användarnamn eller lösenord. **Inte konfigurerad** (standard) tillåter användare att ändra dessa inställningar.
+- **Kontoändring**: När inställningen är **Blockera** kan användaren inte uppdatera enhetsspecifika inställningar från iOS/iPadOS-appens inställningar. Användarna kan t.ex. inte skapa nya enhetskonton eller ändra användarnamn eller lösenord. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra dessa inställningar.
 
   Den här funktionen gäller även för inställningar som kan nås från appen för iOS/iPadOS-inställningar, som E-post, Kontakter, Kalender, Facebook, Twitter med flera. Den här funktionen gäller inte för appar med kontoinställningar som inte konfigureras från appen för iOS/iPadOS-inställningar, som Microsoft Outlook-appen.
 
-- **Skärmtid**: Välj **Blockera** om du vill hindra användare från att ange sina egna begränsningar i Skärmtid (enhetsinställningar). **Inte konfigurerad** tillåter att användaren konfigurerar enhetsbegränsningar (till exempel kontrollfunktioner för föräldrar eller innehålls- och sekretessbegränsningar) på enheten.
+- **Skärmtid**: **Blockera** hindrar användare från att ange sina egna begränsningar vad gäller Skärmtid (enhetsinställningar). När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna konfigurerar enhetsbegränsningar (som kontrollfunktioner för föräldrar eller innehålls- och sekretessbegränsningar) på enheten.
 
   Den här inställningen har bytt namn från **Aktivera begränsningar i enhetsinställningarna**. Effekten av ändringen:  
   
-  - iOS 11.4.1 och senare: **Blockera** förhindrar slutanvändare att ange egna begränsningar i enhetsinställningarna. Beteendet är detsamma. Ingenting har ändrats för slutanvändarna.
-  - iOS 12.0 och senare: **Blockera** hindrar slutanvändarna från att ange sin egen **skärmtid** i enhetsinställningarna (Inställningar > Allmänt > Skärmtid), inklusive innehålls- och sekretessbegränsningar. På enheter som har uppgraderats till iOS 12.0 visas inte längre fliken Begränsningar i enhetsinställningarna (Inställningar > Allmänt > Enhetshantering > Hanteringsprofil > Begränsningar). Dessa inställningar finns i **Skärmtid**.
+  - iOS 11.4.1 och senare: **Blockera** förhindrar användarna att ange egna begränsningar i enhetsinställningarna. Beteendet är detsamma. Ingenting har ändrats för användarna.
+  - iOS 12.0 och senare: **Blockera** hindrar användarna från att ange sin egen **skärmtid** i enhetsinställningarna (Inställningar > Allmänt > Skärmtid), inklusive innehålls- och sekretessbegränsningar. På enheter som har uppgraderats till iOS 12.0 visas inte längre fliken Begränsningar i enhetsinställningarna (Inställningar > Allmänt > Enhetshantering > Hanteringsprofil > Begränsningar). Dessa inställningar finns i **Skärmtid**.
   
-- **Användning av alternativet Radera allt innehåll och inställningar på enheten**: Välj **Blockera** så att användarna inte kan alternativet att radera allt innehåll och inställningar på enheten. **Inte konfigurerad** (standard) ger användarna åtkomst till de här inställningarna.
-- **Ändra enhetsnamn**: Välj **Blockera** så att enhetsnamnet inte kan ändras. **Inte konfigurerad** (standard) tillåter användaren att ändra enhetens namn.
-- **Ändring av notisinställningar**: Välj **Blockera** så att meddelandeinställningarna inte kan ändras. **Inte konfigurerad** (standard) tillåter användaren att ändra enhetens meddelandeinställningar.
-- **Ändring av bakgrundsbild**: **Blockera** förhindrar att bakgrundsbilden ändras. **Inte konfigurerad** (standard) tillåter användaren att ändra enhetens bakgrundsbild.
-- **Ändringar av inställningar för att lita på företagsappar**: **Blockera** förhindrar användaren att ändra behörighetsinställningar i företagsappen på övervakade enheter. **Inte konfigurerad** (standard) tillåter användaren att lita på appar som inte laddats ned från App Store.
-- **Ändra konfigurationsprofil**: **Blockera** förhindrar ändringar av konfigurationsprofilen på enheten. **Inte konfigurerad** (standard) tillåter användaren att installera konfigurationsprofiler.
+- **Användning av alternativet Radera allt innehåll och inställningar på enheten**: Välj **Blockera** så att användarna inte kan alternativet att radera allt innehåll och inställningar på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard ge användarna åtkomst till dessa inställningar.
+- **Ändra enhetsnamn**: Välj **Blockera** så att enhetsnamnet inte kan ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra enhetens namn.
+- **Ändring av notisinställningar**: Välj **Blockera** så att meddelandeinställningarna inte kan ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra enhetsmeddelandeinställningarna.
+- **Ändring av bakgrundsbild**: **Blockera** förhindrar att bakgrundsbilden ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra enhetens bakgrund.
+- **Ändra konfigurationsprofil**: **Blockera** förhindrar ändringar av konfigurationsprofilen på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att installera konfigurationsprofiler.
 - **Aktiveringslås**: Välj **Tillåt** för att aktivera aktiveringslåset på övervakade iOS/iPadOS-enheter. Aktiveringslåset gör det svårare att återaktivera en förlorad eller stulen enhet.
-- **Blockera borttagning av app**: Välj **Blockera** för att förhindra att användarna tar bort appar. **Inte konfigurerad** (standard) tillåter användaren att ta bort appar från enheten.
-- **Tillåt USB-tillbehör när enheten är låst**: **Tillåt** låter USB-tillbehör utbyta data med en enhet som har varit låst i över en timme. **Inte konfigurerad** (standard) uppdaterar inte USB-begränsat läge på enheten och USB-tillbehören kommer att blockeras från att överföra data från enheten om den är låst i mer än en timme.
+- **Blockera borttagning av app**: **Blockera** förhindrar användarna från att ta bort appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ta bort appar från enheten.
+- **Tillåt USB-tillbehör när enheten är låst**: **Tillåt** låter USB-tillbehör utbyta data med en enhet som har varit låst i över en timme. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet uppdaterar kanske inte USB-begränsat läge som standard på enheten, och USB-tillbehören blockeras från att överföra data från enheten om den är låst i mer än en timma.
 - **Tvinga automatiskt datum och tid**: **Kräv** tvingar övervakade enheter att ange datum och tid automatiskt. Enhetens tidszon uppdateras när enheten har mobila anslutningar eller har aktiverats för Wi-Fi med platstjänster.
-- **Kräv att deltagarna begär tillstånd för att lämna Klassrumskursen**: **Kräv** tvingar elever som har registrerats i en ohanterad kurs med appen Klassrum att begära tillstånd från läraren om att lämna kursen. **Inte konfigurerad** (standard) tvingar inte eleven att be om behörighet.
+- **Kräv att deltagarna begär tillstånd för att lämna Klassrumskursen**: **Kräv** tvingar elever som har registrerats i en ohanterad kurs med appen Klassrum att begära tillstånd från läraren om att lämna kursen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet tvingar kanske inte som standard eleven att be om behörighet.
 
   Den här funktionen gäller för:  
   - iOS 11.3 och senare
   - iPadOS 13.0 och senare
 
-- **Tillåt Klassrum att låsa en app och låsa enheten utan att fråga**: **Aktivera** tillåter att lärare låser appar eller låser enheten med hjälp av Classroom-appen utan att fråga eleven. Applåsning innebär att enheten endast kan komma åt de appar som anges av läraren. **Inte konfigurerad** (standard) förhindrar att lärare låser appar eller enheter med hjälp av Classroom-appen utan att fråga eleven.
+- **Tillåt Klassrum att låsa en app och låsa enheten utan att fråga**: **Aktivera** tillåter att lärare låser appar eller låser enheten med hjälp av Classroom-appen utan att fråga eleven. Applåsning innebär att enheten endast kan komma åt de appar som anges av läraren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att lärare låser appar eller enheter med hjälp av Classroom-appen utan att fråga eleven.
 
   Den här funktionen gäller för:  
   - iOS 11.0 och senare
   - iPadOS 13.0 och senare
 
-- **Delta automatiskt i klassrumsklasser utan att fråga**: **Aktivera** tillåter automatiskt elever att ansluta till en klass i Classroom-appen utan att fråga läraren. **Inte konfigurerad** (standard) uppmärksammar lärare på att elever vill ansluta till en klass i Classroom-appen.
+- **Delta automatiskt i klassrumsklasser utan att fråga**: **Aktivera** tillåter automatiskt elever att ansluta till en klass i Classroom-appen utan att fråga läraren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard uppmärksamma läraren på att elever vill ansluta till en klass i Classroom-appen.
 
   Den här funktionen gäller för:  
   - iOS 11.0 och senare
   - iPadOS 13.0 och senare
 
-- **Blockera möjlighet att skapa VPN**: **Blockera** förhindrar användare från att skapa VPN-konfigurationsinställningar. **Inte konfigurerad** (standard) tillåter användare att skapa virtuella privata nätverk på enheten.
-- **Ändrar eSIM-inställningar**: **Blockera** hindrar användarna från att ta bort eller lägga till ett mobilabonnemang till eSIM på enheten. **Inte konfigurerad** (standard) tillåter användare att ändra dessa inställningar.
+- **Blockera möjlighet att skapa VPN**: **Blockera** förhindrar användare från att skapa VPN-konfigurationsinställningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att skapa virtuella privata nätverk på enheten.
+- **Ändrar eSIM-inställningar**: **Blockera** hindrar användarna från att ta bort eller lägga till ett mobilabonnemang till eSIM på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra dessa inställningar.
 
   Den här funktionen gäller för:  
   - iOS 12.1 och senare
   - iPadOS 13.0 och senare
 
-- **Skjut upp programuppdateringar**: När **Inte konfigurerad** (standard) används visas programuppdateringar på enheten när de ges ut av Apple. Om en iOS/iPadOS-uppdatering exempelvis släpps av Apple på ett specifikt datum, visas uppdateringen på enheten runt utgivningsdatumet.
+- **Skjut upp programuppdateringar**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa programuppdateringar på enheten när Apple släpper dem. Om en iOS/iPadOS-uppdatering exempelvis släpps av Apple på ett specifikt datum, visas uppdateringen på enheten runt utgivningsdatumet.
 
   **Aktivera** gör att du kan skjuta upp visningen av programuppdateringar på enheter i 0–90 dagar. Den här inställningen styr inte när uppdateringar installeras eller inte. 
 
   - **Fördröj visning av programuppdateringar**: Ange ett värde mellan 0–90 dagar. När fördröjningen upphör får användarna ett meddelande om att uppdatera till den tidigaste versionen av OS som var tillgänglig när fördröjningen utlöstes.
 
-    Om iOS 12.a exempelvis blir tillgänglig **den 1 januari** och **Fördröj synlighet** är inställt på **5 dagar**, visas inte iOS 12.som en tillgänglig uppdatering på slutanvändarnas enheter. På **den sjätte dagen** efter utgivningen är uppdateringen tillgänglig och slutanvändarna kan installera den.
+    Om iOS 12.a exempelvis blir tillgänglig **den 1 januari** och **Fördröj synlighet** är inställt på **5 dagar**, visas inte iOS 12.som en tillgänglig uppdatering på användarnas enheter. På **den sjätte dagen** efter utgivningen är uppdateringen tillgänglig och användarna kan installera den.
 
     Den här inställningen gäller för:  
     - iOS 11.3 och senare
@@ -138,7 +137,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Lösenord**: Slutanvändaren **måste** ange ett lösenord för att få åtkomst till enheten. **Inte konfigurerad** (standard) låter användare komma åt enheten utan att ange ett lösenord.
+- **Lösenord**: **Kräv** att användarna anger sina lösenord för att få åtkomst till enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan tillåta användarna få åtkomst till enheten utan att behöva ange något lösenord.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
@@ -151,7 +150,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 > - Enkla lösenord, till exempel `1111` eller `1234`, tillåts inte.
 > - En 6-siffrig PIN-kod krävs.
 
-- **Enkla lösenord**: Välj **Blockera** om du vill kräva mer avancerade lösenord. **Inte konfigurerad** tillåter enkla lösenord som `0000` och `1234`.
+- **Enkla lösenord**: **Blockera** kräver mer komplexa lösenord. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta enkla lösenord, som `0000` och `1234`.
 
 - **Lösenordstyp som krävs**: Välj den typ av lösenord som din organisation kräver. Alternativen är:
   - **Standard för enheten**
@@ -174,7 +173,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
   **iOS/iPad-alternativ**:  
 
-  - **Inte konfigurerat** (standard): Intune rör inte den här inställningen.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
   - **Omedelbart**: Skärmen låses efter 30 sekunders inaktivitet.
   - **1**: Skärmen låses efter 1 minuts inaktivitet.
   - **2**: Skärmen låses efter 2 minuters inaktivitet.
@@ -184,7 +183,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
   **iPad-alternativ**:  
 
-  - **Inte konfigurerat** (standard): Intune rör inte den här inställningen.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
   - **Omedelbart**: Skärmen låses efter 2 minuters inaktivitet.
   - **2**: Skärmen låses efter 2 minuters inaktivitet.
   - **5**: Skärmen låses efter 5 minuters inaktivitet.
@@ -198,7 +197,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 - **Lösenordets giltighetstid (dagar)** : Ange antalet dagar innan lösenordet måste ändras.
 - **Förhindra återanvändning av tidigare lösenord**: Ange hur många nya lösenord som måste ha använts innan ett gammalt kan återanvändas.
-- **Upplåsning av Touch ID och Face ID**: Välj **Blockera** om du vill förhindra att fingeravtryck eller ansikte används för att låsa upp enheten. **Inte konfigurerad** låter användare låsa upp enheten med dessa metoder.
+- **Upplåsning av Touch ID och Face ID**: **Blockera** förhindrar att fingeravtryck eller ansiktsigenkänning används för att låsa upp enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av dessa metoder.
 
   Om den här inställningen blockeras förhindrar det även användning av FaceID-autentisering för att låsa upp enheten.
 
@@ -208,56 +207,56 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Ändring av lösenord**: Välj **Blockera** om du vill förhindra att lösenkoden ändras, läggs till eller tas bort. Ändringar av lösenkodsbegränsningar ignoreras på övervakade enheter när den här funktionen har blockerats. **Inte konfigurerad** (standard) tillåter att lösenord läggs till, ändras eller tas bort.
+- **Ändring av lösenord**: **Blockera** förhindrar att lösenord ändras, läggs till eller tas bort. Ändringar av lösenkodsbegränsningar ignoreras på övervakade enheter när den här funktionen har blockerats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att lösenord läggs till, ändras eller tas bort.
 
-  - **Ändring av Touch ID och Face ID**: **Blockera** stoppar användaren från att ändra, lägga till eller ta bort TouchID-fingeravtryck och Face ID. **Inte konfigurerad** (standard) tillåter att användaren uppdaterar TouchID-fingeravtryck och Face ID på enheten.
+  - **Ändring av Touch ID och Face ID**: **Blockera** stoppar användarna från att ändra, lägga till eller ta bort TouchID-fingeravtryck och Face ID. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att uppdatera TouchID-fingeravtrycken och Face ID på enheten.
 
-    Om den här inställningen blockeras hindras användaren även från att ändra, lägga till eller ta bort FaceID-autentisering.
+    Om den här inställningen blockeras så hindras användarna även från att ändra, lägga till eller ta bort FaceID-autentisering.
 
     Face ID gäller för:  
     - iOS 11.0 och senare
     - iPadOS 13.0 och senare
 
-- **Blockera automatisk ifyllning av lösenord**: Förhindra användningen av funktionen för automatisk ifyllning av lösenord i iOS/iPadOS genom att välja **Blockera**. Inställningen **Blockera** har också följande effekt:
+- **Blockera automatisk ifyllning av lösenord**: **Blockera** förhindrar användningen av funktionen för automatisk ifyllning av lösenord i iOS/iPadOS. Inställningen **Blockera** har också följande effekt:
 
   - Användarna ombeds inte att använda ett sparat lösenord i Safari eller i någon app.
   - Automatisk starka lösenord inaktiveras och starka lösenord föreslås inte för användare.
 
-  **Inte konfigurerat** (standard) tillåter dessa funktioner.
+  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta de här funktionerna.
 
-- **Blockera förfrågningar om lösenordsnärhet**: Välj **Blockera** så att användarens enhet inte begär lösenord från enheter i närheten. **Inte konfigurerad** (standard) tillåter dessa lösenordsbegäranden.
-- **Blockera lösenordsdelning**: **Blockera** förhindrar att lösenord delas mellan enheter med hjälp av AirDrop. **Inte konfigurerad** (standard) tillåter att lösenord delas.
-- **Kräv autentisering via Touch ID eller Face ID för automatisk ifyllning av lösenord eller bankkortsuppgifter**: När inställningen **Kräv** används måste användare autentisera med hjälp av TouchID eller FaceID innan lösenord eller kreditkortsinformationen kan fyllas i automatiskt i Safari och andra appar. **Inte konfigurerad** (standard) gör att användarna kan styra den här funktionen i enhetsinställningarna.
+- **Blockera förfrågningar om lösenordsnärhet**: Välj **Blockera** så att användarens enhet inte begär lösenord från enheter i närheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta de här funktionerna.
+- **Blockera lösenordsdelning**: **Blockera** förhindrar att lösenord delas mellan enheter med hjälp av AirDrop. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att dessa data skickas.
+- **Kräv autentisering via Touch ID eller Face ID för automatisk ifyllning av lösenord eller bankkortsuppgifter**: När inställningen **Kräv** används måste användare autentisera med hjälp av TouchID eller FaceID innan lösenord eller kreditkortsinformationen kan fyllas i automatiskt i Safari och andra appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att kontrollera den här funktionen i enhetsinställningarna.
 
   Den här funktionen gäller för:  
   - iOS 11.0 och senare
   - iPadOS 13.0 och senare
   
-<sup>1</sup> När du konfigurerar **Max. antal minuters inaktivitet tills skärmen låses** och **Max. antal minuter efter skärmlås innan lösenord krävs** tillämpas de i följd. Om du t.ex. ställer in värdet för båda inställningarna till **5** minuter så stängs skärmen av automatiskt efter fem minuter. Enheten låses efter ytterligare fem minuter. Om användaren däremot stänger av skärmen manuellt så tillämpas den andra inställningen omedelbart. När användaren i det här exemplet har stängt av skärmen låses enheten fem minuter senare.
+<sup>1</sup> När du konfigurerar **Max. antal minuters inaktivitet tills skärmen låses** och **Max. antal minuter efter skärmlås innan lösenord krävs** tillämpas de i följd. Om du t.ex. ställer in värdet för båda inställningarna till **5** minuter så stängs skärmen av automatiskt efter fem minuter. Enheten låses efter ytterligare fem minuter. Om användarna däremot stänger av skärmen manuellt, så tillämpas den andra inställningen omedelbart. När användaren i det här exemplet har stängt av skärmen låses enheten fem minuter senare.
 
 ## <a name="locked-screen-experience"></a>Låsskärm
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Åtkomst till Kontrollcenter när enheten är låst**: Välj **Blockera** om du vill förhindra åtkomst till kontrollcenterappen när enheten är låst. **Inte konfigurerad** (standard) låter användare få åtkomst till kontrollcenterappen när enheten är låst.
-- **Meddelanden när enheten är låst**: **Blockera** förhindrar åtkomst till meddelanden när enheten är låst. **Inte konfigurerad** (standard) tillåter användaren att få åtkomst till aviseringsvyn utan att låsa upp enheten.
-- **Dagsvyn när enheten är låst**: **Blockera** förhindrar åtkomst till dagsvyn när enheten är låst. **Inte konfigurerad** (standard) tillåter användaren att se vyn Idag när enheten är låst.
+- **Åtkomst till Kontrollcenter när enheten är låst**: **Blockera** förhindrar åtkomst till Kontrollcenter-appen när enheten är låst. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta användarna få åtkomst till Kontrollcenter-appen när enheten är låst.
+- **Meddelanden när enheten är låst**: **Blockera** förhindrar åtkomst till meddelanden när enheten är låst. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta användarna få åtkomst till meddelandena utan att behöva låsa upp enheten.
+- **Dagsvyn när enheten är låst**: **Blockera** förhindrar åtkomst till dagsvyn när enheten är låst. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta användarna se Idag-appen när enheten är låst.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Wallet-notiser när enheten är låst**: **Blockera** förhindrar åtkomst till Wallet-appen när enheten är låst. **Inte konfigurerad** (standard) tillåter användare åtkomst till appen Plånbok när enheten är låst.
+- **Wallet-notiser när enheten är låst**: **Blockera** förhindrar åtkomst till Wallet-appen när enheten är låst. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta användarna få åtkomst till Plånbok-appen när enheten är låst.
 
 ## <a name="app-store-doc-viewing-gaming"></a>App Store, dokumentvisning, spel
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Visa företagsdokument i ohanterade appar**: **Blockera** förhindrar visning av företagsdokument i ohanterade appar. **Inte konfigurerad** (standard) tillåter visning av företagsdokument i vilken app som helst. Exempelvis vill du kanske förhindra användare från att spara filer från OneDrive-appen till Dropbox. Konfigurera den här inställningen som **Blockera**. När enheten har hämtat principen (t.ex. efter en omstart) kommer det inte längre att vara tillåtet att spara.
+- **Visa företagsdokument i ohanterade appar**: **Blockera** förhindrar visning av företagsdokument i ohanterade appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att företagsdokument visas i vilken app som helst. Exempelvis vill du kanske förhindra användare från att spara filer från OneDrive-appen till Dropbox. Konfigurera den här inställningen som **Blockera**. När enheten har hämtat principen (t.ex. efter en omstart) kommer det inte längre att vara tillåtet att spara.
 
 
   > [!NOTE]
   > När den här inställningen blockeras så blockeras även tangentbord från tredje part som är installerade från App Store.
 
-  - **Tillåt ohanterade appar att läsa från hanterade kontaktkonton**: När detta anges till **Tillåt** kan ohanterade appar, till exempel den inbyggda appen för iOS/iPadOS-kontakter, läsa och få åtkomst till kontaktinformation från hanterade appar, däribland Outlook-mobilappen. **Inte konfigurerad** (standard) förhindrar läsning, inklusive ta bort dubbletter, från den inbyggda appen Kontakter på enheter.  
+  - **Tillåt ohanterade appar att läsa från hanterade kontaktkonton**: När detta anges till **Tillåt** kan ohanterade appar, till exempel den inbyggda appen för iOS/iPadOS-kontakter, läsa och få åtkomst till kontaktinformation från hanterade appar, däribland Outlook-mobilappen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra läsning, inklusive borttagande av dubbletter, från den inbyggda appen Kontakter på enheten.  
   
     Den här inställningen tillåter eller förhindrar läsning av kontaktinformation. Den styr inte synkronisering av kontakter mellan apparna.
   
@@ -266,16 +265,16 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   Mer information om de här två inställningarna och deras inverkan på Outlook för synkronisering av iOS/iPadOS-kontaktexport finns i [Supporttips: Använd anpassade Intune-profilinställningar med den inbyggda appen för iOS/iPadOS-kontakter](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Use-Intune-custom-profile-settings-with-the-iOS/ba-p/298453).
 
 - **Behandla AirDrop som ohanterat mål**: **Kräv** tvingar fram att AirDrop betraktas som ett ohanterat släppmål. Det förhindrar hanterade appar från att skicka data med hjälp av Airdrop. 
-- **Visa dokument som inte gäller företag i företagsappar**: **Blockera** förhindrar visning av icke-företagsdokument i företagsappar. **Inte konfigurerad** (standard) tillåter visning av valfria dokument i företagshanterade appar.
+- **Visa dokument som inte gäller företag i företagsappar**: **Blockera** förhindrar visning av icke-företagsdokument i företagsappar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att vilket dokument som helst visas i företagshanterade appar.
 
-  Om detta anges till **Blockera** förhindrar det även synkroniseringen av kontaktexport i Outlook för iOS/iPadOS. Mer information finns i [Supporttips: Aktivera synkronisering av Outlook iOS/iPadOS-kontakter med iOS12 MDM-kontroller](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Enabling-Outlook-iOS-Contact-Sync-with-iOS12-MDM/ba-p/298453).
+  **Blockera** förhindrar även kontaktexportssynkronisering i Outlook för iOS/iPadOS. Mer information finns i [Supporttips: Aktivera synkronisering av Outlook iOS/iPadOS-kontakter med iOS12 MDM-kontroller](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Enabling-Outlook-iOS-Contact-Sync-with-iOS12-MDM/ba-p/298453).
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Kräv iTunes Store-lösenord för alla köp**: **Kräv** att användaren anger Apple ID-lösenordet för varje köp i app eller iTunes. **Inte konfigurerad** (standard) tillåter köp utan att ett lösenord begärs varje gång.
-- **Köp i app**: Välj **Blockera** om du vill förhindra att köp från butiken görs i appen. **Inte konfigurerad** (standard) tillåter köp i butiken från en app som körs.
-- **Ladda ned innehåll från iBook-butiken flaggat som ”erotik”** : Välj **Blockera** om du vill förhindra användare från att ladda ned mediainnehåll som klassificeras som erotik från iBook-butiken. **Inte konfigurerad** (standard) tillåter att användare laddar ned böcker i kategorin Erotik.
-- **Tillåt hanterade appar att skriva kontakter till ohanterade kontaktkonton**: När detta anges till **Tillåt** kan hanterade appar, till exempel Outlook-mobilappen, spara eller synkronisera kontaktinformation såsom affärs- och företagskontakter till den inbyggda appen för iOS/iPadOS-kontakter. När detta anges till **Inte konfigurerad** (standard) kan hanterade appar inte spara eller synkronisera kontaktinformation till den inbyggda appen för iOS/iPadOS-kontakter på enheten.
+- **Kräv iTunes Store-lösenord för alla köp**: **Kräv** att användarna anger Apple ID-lösenordet för varje köp som görs i en app eller i iTunes. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta köp utan krav på lösenord varje gång.
+- **Köp i app**: **Blockera** förhindrar att köp görs från butiken i appen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta köp från butiken i en app som körs.
+- **Ladda ned innehåll från iBook-butiken flaggat som ”erotik”** : **Blockera** förhindrar användarna från att ladda ned mediainnehåll som klassificeras som erotik från iBook-butiken. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna laddar ned böcker i kategorin Erotik.
+- **Tillåt hanterade appar att skriva kontakter till ohanterade kontaktkonton**: När detta anges till **Tillåt** kan hanterade appar, till exempel Outlook-mobilappen, spara eller synkronisera kontaktinformation såsom affärs- och företagskontakter till den inbyggda appen för iOS/iPadOS-kontakter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra hanterade appar från att spara eller synkronisera kontaktinformation till den inbyggda appen för iOS/iPadOS-kontakter på enheten.
   
   Om du vill använda inställningen ställer du in **Visa företagsdokument i ohanterade appar** på **Blockera**.
 
@@ -283,27 +282,27 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **App Store**: **Blockera** förhindrar åtkomst till App Store på övervakade enheter. **Inte konfigurerat** (standard) tillåter åtkomst.
+- **App Store**: **Blockera** förhindrar åtkomst till App Store på övervakade enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-  - **Installerar appar från App Store**: Välj **Blockera** för att blockera App Store från enhetens startskärm. Användarna kan fortsätta att använda iTunes eller Apple Configurator-verktyget för att installera appar. **Inte konfigurerad** (standard) tillåter att App Store visas på hemskärmen.
-  - **Automatisk nedladdning av appar**: Välj **Blockera** om du vill förhindra automatisk nedladdning av appar som har köpts på andra enheter. Det påverkar inte uppdateringar av befintliga appar. **Inte konfigurerad** (standard) tillåter att appar som har köpts på andra iOS/iPadOS-enheter laddas ned på enheten.
+  - **Installerar appar från App Store**: Välj **Blockera** för att blockera App Store från enhetens startskärm. Användarna kan fortsätta att använda iTunes eller Apple Configurator för att installera appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att App Store visas på hemskärmen.
+  - **Automatisk nedladdning av appar**: **Blockera** förhindrar automatisk nedladdning av appar som har köpts på andra enheter. Det påverkar inte uppdateringar av befintliga appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att appar som har köpts på andra iOS/iPadOS-enheter laddas ned på enheten.
 
-- **Stötande innehåll i iTunes-musik, podcast eller nyheter**: Välj **Blockera** om du vill stoppa explicit iTunes-musik, podcaster eller nyhetsinnehåll. **Inte konfigurerad** (standard) tillåter att enheten får åtkomst till sådant som är klassificerat som vuxet innehåll i butiken.
-
-  Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
-
-- **Lägga till Game Center-vänner**: **Blockera** förhindrar användare från att lägga till Game Center-vänner. **Inte konfigurerad** (standard) tillåter användaren att lägga till vänner i Game Center.
+- **Stötande innehåll i iTunes-musik, podcast eller nyheter**: **Blockera** förhindrar stötande innehåll i iTunes-musik, podcastsändningar eller nyheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten får åtkomst till sådant som är klassificerat som vuxet innehåll i butiken.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-- **Spelcenter**: **Blockera** förhindrar användning av Game Center-appen. **Inte konfigurerad** (standard) tillåter användning av Game Center-appen på enheten.
-- **Spel för flera personer**: Välj **Blockera** om du vill förhindra spel för flera personer. **Inte konfigurerad** (standard) tillåter användaren att spela spel för flera personer på enheten.
+- **Lägga till Game Center-vänner**: **Blockera** förhindrar användare från att lägga till Game Center-vänner. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att lägga till vänner i Game Center.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-- **Åtkomst till nätverksenhet i Files-appen**: Med hjälp av SMB-protokollet (Server Message Block) har enheter åtkomst till filer eller andra resurser på en nätverksserver. **Inaktivera** förhindrar åtkomst till filer på en SMB-nätverksenhet. **Inte konfigurerat** (standard) tillåter åtkomst.
+- **Spelcenter**: **Blockera** förhindrar användning av Game Center-appen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Game Center-appen används på enheten.
+- **Spel för flera personer**: **Blockera** förhindrar spel för flera personer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna spelar spel för flera användare på enheten.
+
+  Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
+
+- **Åtkomst till nätverksenhet i Files-appen**: Med hjälp av SMB-protokollet (Server Message Block) har enheter åtkomst till filer eller andra resurser på en nätverksserver. **Inaktivera** förhindrar åtkomst till filer på en SMB-nätverksenhet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst.
 
   Den här funktionen gäller för:  
   - iOS 13.0 och senare
@@ -313,14 +312,14 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Siri**: **Blockera** förhindrar åtkomst till Siri. **Inte konfigurerad** (standard) tillåter att röstassistenten Siri används på enheten.
-  - **Siri när enheten är låst**: Välj **Blockera** om du vill förhindra åtkomst till Siri när enheten är låst. **Inte konfigurerad** (standard) tillåter att röstassistenten Siri används på enheten när den när låst.
+- **Siri**: **Blockera** förhindrar åtkomst till Siri. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att röstassistenten Siri används på enheten.
+  - **Siri när enheten är låst**: **Blockera** förhindrar åtkomst till Siri när enheten är låst. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att röstassistenten Siri används på enheten när den är låst.
 
-- **Bedrägerivarningar i Safari**: **Kräv** att bedrägerivarningar ska visas i webbläsaren på enheten. **Inte konfigurerad** (standard) inaktiverar den här funktionen.
+- **Bedrägerivarningar i Safari**: **Kräv** att bedrägerivarningar ska visas i webbläsaren på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera den här funktionen.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Spotlight-sökning för att returnera resultat från Internet**: **Blockera** förhindrar Spotlight från att returnera resultat från sökningar på Internet. **Inte konfigurerad** (standard) tillåter att Spotlight-sökningar ansluter till Internet för att visa sökresultat.
+- **Spotlight-sökning för att returnera resultat från Internet**: **Blockera** förhindrar Spotlight från att returnera resultat från sökningar på Internet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Spotlight-sökningar ansluter till Internet för att visa sökresultat.
 
 - **Cookies i Safari**: Välj hur cookies ska hanteras på enheten. Alternativen är:
   - Tillåt
@@ -328,17 +327,17 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   - Tillåt cookies från besökta webbplatser
   - Tillåt cookies från aktuell webbplats
 
-- **Safari JavaScript**: **Blockera** förhindrar att Java-skript i webbläsaren körs på enheten. **Inte konfigurerad** (standard) tillåter JavaScript.
+- **Safari JavaScript**: **Blockera** förhindrar att Java-skript i webbläsaren körs på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta Java-skript.
 
-- **Popupfönster i Safari**: **Blockera** så att blockering av popup-fönster inaktiveras i webbläsaren. **Inte konfigurerad** (standard) tillåter popup-blockeraren.
+- **Popupfönster i Safari**: **Blockera** så att blockering av popup-fönster inaktiveras i webbläsaren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta blockering av popup-fönster.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Kamera**: Välj **Blockera** om du vill förhindra åtkomst till enhetens kamera. **Inte konfigurerad** (standard) ger åtkomst till enhetens kamera.
+- **Kamera**: **Blockera** förhindrar åtkomst till enhetens kamera. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till enhetens kamera.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-  - **FaceTime**: **Blockera** förhindrar åtkomst till FaceTime-appen. **Inte konfigurerad** (standard) tillåter åtkomst till FaceTime-appen på enheten.
+  - **FaceTime**: **Blockera** förhindrar åtkomst till FaceTime-appen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till FaceTime-appen på enheten.
 
     Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
@@ -346,45 +345,45 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
   Om du vill använda den här inställningen anger du inställningen **Siri** till **Blockera**.
 
-- **Siri för att söka användargenererat innehåll från Internet**: **Blockera** förhindrar Siri att komma åt webbplatser för att besvara frågor. **Inte konfigurerad** (standard) tillåter Siri att få åtkomst till användargenererat innehåll på Internet.
+- **Siri för att söka användargenererat innehåll från Internet**: **Blockera** förhindrar Siri att komma åt webbplatser för att besvara frågor. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta Siri att få åtkomst till användargenererat innehåll på Internet.
 
   Om du vill använda den här inställningen anger du inställningen **Siri** till **Blockera**.
 
-- **Apple News**: Välj **Blockera** om du vill förhindra åtkomst till Apple News-appen på enheten. **Inte konfigurerad** (standard) tillåter att Apple News-appen används.
-- **iBooks store**: **Blockera** förhindrar åtkomst till iBooks-butiken. **Inte konfigurerad** (standard) tillåter användare att söka efter och köpa böcker i iBooks Store.
-- **Appen Meddelanden på enheten**: **Blockera** förhindrar att användare använder appen Meddelanden för iMessage. Om enheten har stöd för SMS kan användaren fortfarande skicka och ta emot textmeddelanden via SMS. **Inte konfigurerad** (standard) tillåter användning av appen Meddelanden för att skicka och läsa meddelanden via Internet.
-- **Poddsändningar**: **Blockera** förhindrar användare från att använda appen Podcaster. **Inte konfigurerad** (standard) tillåter att Podcaster-appen används.
-- **Musiktjänst**: **Blockera** återställer appen Apple Music till klassiskt läge och inaktiverar tjänsten Musik. **Inte konfigurerad** (standard) tillåter att Apple Music-appen används.
-- **iTunes Radio-tjänst**: **Blockera** förhindrar användare från att använda appen iTunes Radio. **Inte konfigurerad** (standard) tillåter att iTunes Radio-appen används.
-- **iTunes Store**: **Inte konfigurerad** (standard) tillåter iTunes på enheterna. **Blockera** förhindrar användare från att använda iTunes på enheten. 
+- **Apple News**: **Blockera** förhindrar åtkomst till Apple News-appen på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Apple News-appen används.
+- **iBooks store**: **Blockera** förhindrar åtkomst till iBooks-butiken. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att söka efter och köpa böcker i iBooks Store.
+- **Appen Meddelanden på enheten**: **Blockera** förhindrar att användare använder appen Meddelanden för iMessage. Om enheten har stöd för SMS kan användarna fortfarande skicka och ta emot SMS-meddelanden. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att appen Meddelanden skickar och läser meddelanden via Internet.
+- **Poddsändningar**: **Blockera** förhindrar användare från att använda appen Podcaster. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Podcaster-appen används.
+- **Musiktjänst**: **Blockera** återställer appen Apple Music till klassiskt läge och inaktiverar tjänsten Musik. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Apple Music-appen används.
+- **iTunes Radio-tjänst**: **Blockera** förhindrar användare från att använda appen iTunes Radio. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att iTunes Radio-appen används.
+- **iTunes Store**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta iTunes på enheterna. **Blockera** förhindrar användare från att använda iTunes på enheten.
 
   Den här funktionen gäller för:  
   - iOS 4.0 och senare
   - iPadOS 13.0 och senare
 
-- **Hitta min iPhone**: **Inte konfigurerad** (standard) tillåter att den här Hitta min-funktionen används för att hämta enhetens ungefärliga plats. **Blockera** förhindrar den här funktionen i Hitta min-appen. 
+- **Hitta min iPhone**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att den här Hitta min-funktionen används för att hämta enhetens ungefärliga plats. **Blockera** förhindrar den här funktionen i Hitta min-appen. 
 
   Den här funktionen gäller för:  
   - iOS 13.0 och senare
   - iPadOS 13.0 och senare
 
-- **Hitta mina vänner**: **Inte konfigurerad** (standard) tillåter att den här Hitta min-funktionen används för att hitta släkt och vänner från en Apple-enhet eller iCloud.com. **Blockera** förhindrar den här funktionen i Hitta min-appen.
+- **Hitta mina vänner**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att den här Hitta min-funktionen används för att hitta släkt och vänner från en Apple-enhet eller iCloud.com. **Blockera** förhindrar den här funktionen i Hitta min-appen.
 
   Den här funktionen gäller för:  
   - iOS 13.0 och senare
   - iPadOS 13.0 och senare
 
-- **Ändringar av inställningarna för appen Hitta mina vänner**: **Blockera** förhindrar ändringar i Find My Friends-appinställningar. **Inte konfigurerad** (standard) tillåter att användaren ändrar inställningarna för appen Find My Friends.
+- **Ändringar av inställningarna för appen Hitta mina vänner**: **Blockera** förhindrar ändringar i Find My Friends-appinställningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna ändrar inställningarna för appen Hitta mina vänner.
 
-- **Spotlight-sökning för att returnera resultat från Internet**: **Blockera** förhindrar Spotlight från att returnera resultat från sökningar på Internet. **Inte konfigurerad** (standard) tillåter att Spotlight-sökningar ansluter till Internet för att visa sökresultat.
+- **Spotlight-sökning för att returnera resultat från Internet**: **Blockera** förhindrar Spotlight från att returnera resultat från sökningar på Internet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Spotlight-sökningar ansluter till Internet för att visa sökresultat.
 
-- **Blockera borttagning av systemappar från enheten**: Om du väljer **Blockera** inaktiverar du möjligheten att ta bort systemappar från enheten. **Inte konfigurerad** (standard) tillåter användarna att ta bort systemappar från enheten.
+- **Blockera borttagning av systemappar från enheten**: Om du väljer **Blockera** inaktiverar du möjligheten att ta bort systemappar från enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ta bort systemappar.
 
-- **Safari**: **Blockera** att webbläsaren Safari används på enheten. **Inte konfigurerad** (standard) tillåter användarna att använda webbläsaren Safari.
+- **Safari**: **Blockera** att webbläsaren Safari används på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att använda webbläsaren Safari.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-- **Autofyll i Safari**: **Blockera** inaktiverar funktionen Autofyll i Safari på enheten. **Inte konfigurerad** (standard) tillåter att användarna ändrar inställningarna för att komplettera automatiskt i webbläsaren.
+- **Autofyll i Safari**: **Blockera** inaktiverar funktionen Autofyll i Safari på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna ändrar inställningarna för automatisk komplettering i webbläsaren.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
@@ -394,7 +393,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 - **Lista över typer av begränsade appar**: Skapa en lista över appar som användarna inte får installera eller använda. Alternativen är:
 
-  - **Inte konfigurerat** (standard): Det finns inga begränsningar från Intune. Användare har åtkomst till appar som du tilldelar samt inbyggda appar.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Användare har åtkomst till appar som du tilldelar samt inbyggda appar.
   - **Otillåtna appar**: Appar som inte hanteras av Intune som du inte vill ha installerade på enheten. Användare hindras inte från att installera en förbjuden app. Men om en användare installerar en app från den här listan rapporteras det i Intune.
   - **Godkända appar**: Appar som användare tillåts att installera. Användarna får inte installera appar som inte finns med i listan. Appar som hanteras av Intune tillåts automatiskt. Användarna hindras inte från att installera en app som inte finns med i listan över godkända appar. Men om de gör det rapporteras det i Intune.
 
@@ -449,15 +448,15 @@ Om du vill lägga till appar kan du:
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
 Information som krävs för datanätverksväxling (tips eller viktig information för att hjälpa förvirrade kunder): Den här inställningen visas inte i målenhetens hanteringsprofil. Det beror på att den här inställningen behandlas som en fjärrenhetsåtgärd, och varje gång tillståndet för dataroaming ändras på enheten blockeras den igen av Intune-tjänsten. Även om den inte finns i hanteringsprofilen fungerar den om den visas som lyckad från rapporteringen i administratörskonsolen. 
-- **Datanätverksväxling**: Välj **Blockera** om du vill förhindra dataroaming över det mobila nätverket. **Inte konfigurerad** (standard) tillåter dataroaming när enheten är i ett mobilnät.
+- **Datanätverksväxling**: **Blockera** förhindrar dataroaming i mobilnätet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta dataroaming när enheten använder ett mobilnät.
 
   > [!IMPORTANT]
   > Den här inställningen behandlas som en fjärrenhetsåtgärd. Därför visas inte den här inställningen i hanteringsprofilen på enheten. Varje gång statusen för dataroaming ändras på enheten blockeras **Dataroaming** av Intune-tjänsten. Om rapporteringsstatusen i Intune visar att den lyckades vet du att den fungerar, även om inställningen inte visas i hanteringsprofilen på enheten.
 
-- **Hämtning av global bakgrund under nätverksväxling**: **Blockera** förhindrar att funktionen för global bakgrundssamling används under nätverksväxling i mobilnätverket. **Inte konfigurerad** (standard) tillåter att enheten hämtar data, till exempel e-post, när den nätverksväxlar i ett mobilnät.
-- **Röstsamtal**: Välj **Blockera** om du vil förhindra användare från att använda enhetens röstsamtalsfunktion. **Inte konfigurerad** (standard) tillåter röstsamtal på enheten.
-- **Röstnätverksväxling**: Välj **Blockera** om du vill förhindra röstroaming över det mobila nätverket. **Inte konfigurerad** (standard) tillåter röstroaming när enheten är i ett mobilnät.
-- **Internetdelning**: **Blockera** inaktiverar Internetdelning på användarnas enheter vid varje enhetssynkronisering. Den här inställningen kanske inte är kompatibel med vissa operatörer. **Inte konfigurerad** (standard) behåller användarens standardinställning för Internetdelning.
+- **Hämtning av global bakgrund under nätverksväxling**: **Blockera** förhindrar att funktionen för global bakgrundssamling används under nätverksväxling i mobilnätverket. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten hämtar data, t.ex. e-post, vid dataroaming i ett mobilnät.
+- **Röstsamtal**: **Blockera** förhindrar användare från att använda enhetens röstsamtalsfunktion. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta röstsamtal på enheten.
+- **Röstnätverksväxling**: **Blockera** förhindrar röstroaming i mobilnätet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta röstroaming när enheten använder ett mobilnät.
+- **Internetdelning**: **Blockera** inaktiverar Internetdelning på enheter vid varje enhetssynkronisering. Den här inställningen kanske inte är kompatibel med vissa operatörer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard behålla användarnas standardinställning för Internetdelning.
 
   > [!IMPORTANT]
   > Den här inställningen behandlas som en fjärrenhetsåtgärd. Därför visas inte den här inställningen i hanteringsprofilen på enheten. Varje gång statusen för personlig hotspot ändras på enheten blockeras **Personlig hotspot** av Intune-tjänsten. Om rapporteringsstatusen i Intune visar att den lyckades vet du att den fungerar, även om inställningen inte visas i hanteringsprofilen på enheten.
@@ -468,14 +467,14 @@ Information som krävs för datanätverksväxling (tips eller viktig information
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Ändringar av inställningar för mobildataanvändning**: Välj **Blockera** om du vill förhindra att inställningarna för användning av appmobildata ska kunna ändras. **Inte konfigurerad** (standard) tillåter att användaren bestämmer vilka appar som ska få använda mobildata.
-- **Ändringar av mobilabonnemangsinställningar**: **Blockera** hindrar användarna från att ändra inställningar i mobilabonnemanget. **Inte konfigurerad** (standard) tillåter att användarna gör ändringar.
+- **Ändringar av inställningar för mobildataanvändning**: **Blockera** förhindrar att inställningarna för användning av appmobildata ska kunna ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna bestämmer vilka appar som ska få använda mobildata.
+- **Ändringar av mobilabonnemangsinställningar**: **Blockera** hindrar användarna från att ändra inställningar i mobilabonnemanget. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att göra ändringar.
 
   Den här funktionen gäller för:  
   - iOS 11.0 och senare
   - iPadOS 13.0 och senare
 
-- **Användarändring av Internetdelning**: När detta anges till **Blockera** kan användaren inte ändra inställningen för internetdelning. **Inte konfigurerad** (standard) tillåter slutanvändare att aktivera eller inaktivera sin personliga hotspot.
+- **Användarändring av Internetdelning**: När inställningen är **Blockera** kan användarna inte ändra inställningen för Internetdelning. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna aktiverar eller inaktiverar sin Internetdelning.
 
   Om du blockerar den här inställningen och blockerar inställningen **Personlig hotspot** stängs personlig hotspot av.
 
@@ -483,13 +482,13 @@ Information som krävs för datanätverksväxling (tips eller viktig information
   - iOS 12.2 och senare
   - iPadOS 13.0 och senare
 
-- **Anslut till trådlösa nätverk med endast konfigurationsprofiler**: **Kräv** tvingar enheten att endast använda trådlösa nätverk som har konfigurerats med Intunes konfigurationsprofiler. **Inte konfigurerad** (standard) tillåter enheten att använda andra trådlösa nätverk.
+- **Anslut till trådlösa nätverk med endast konfigurationsprofiler**: **Kräv** tvingar enheten att endast använda trådlösa nätverk som har konfigurerats med Intunes konfigurationsprofiler. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten använder andra Wi-Fi-nätverk.
 
   När detta anges till **Kräv** bör du se till att enheten har en Wi-Fi-profil. Om du inte tilldelar en Wi-Fi-profil kan den här inställningen hindra enheten från att ansluta till Internet. Om den här profilen för enhetsbegränsningar tilldelas före en Wi-Fi-profil kan enheten alltså blockeras från att ansluta till Internet.
   
   Om den inte kan ansluta avregistrerar du enheten och registrerar den igen med en Wi-Fi-profil. Ange sedan den här inställningen till **Kräv** i en profil för enhetsbegränsningar och tilldela profilen till enheten.
 
-- **Wi-Fi är alltid aktiverat**: När detta anges till **Kräv** förblir Wi-Fi aktiverat i appen Inställningar. Den kan inte inaktiveras i Inställningar eller i Kontrollcenter, även när enheten är i flygplansläge. **Inte konfigurerad** (standard) tillåter att användaren kontrollerar aktivering eller inaktivering av Wi-Fi.
+- **Wi-Fi är alltid aktiverat**: När detta anges till **Kräv** förblir Wi-Fi aktiverat i appen Inställningar. Den kan inte inaktiveras i Inställningar eller i Kontrollcenter, även när enheten är i flygplansläge. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta användarna styra aktivering eller inaktivering av Wi-Fi.
 
   Konfiguration av den här inställningen hindrar inte användare från att välja ett Wi-Fi-nätverk.
 
@@ -505,25 +504,25 @@ Information som krävs för datanätverksväxling (tips eller viktig information
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Kräv parkopplingslösenord för utgående AirPlay-förfrågningar**: **Kräv** ett parkopplingslösenord när användaren använder AirPlay för att strömma innehåll till andra Apple-enheter. **Inte konfigurerad** (standard) tillåter att användaren strömmar innehåll med AirPlay utan att behöva ange något lösenord.
+- **Kräv parkopplingslösenord för utgående AirPlay-förfrågningar**: **Kräv** ett parkopplingslösenord när användarna använder AirPlay för att strömma innehåll till andra Apple-enheter. **Inte konfigurerad** (standard) tillåter att användarna strömmar innehåll med AirPlay utan att behöva ange något lösenord.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **AirDrop**: **Blockera** förhindrar att du använder AirDrop på enheten. **Inte konfigurerad** (standard) tillåter att funktionen AirDrop används för att utbyta innehåll med enheter i närheten.
-- **Apple Watch-parkoppling**: **Blockera** förhindrar att enheten parkopplas med en Apple Watch. **Inte konfigurerad** (standard) tillåter att enheten parkopplas med en Apple Watch.
-- **Bluetooth-ändring**: **Blockera** förhindrar att slutanvändaren från att ändra enhetens Bluetooth-inställningar. **Inte konfigurerad** (standard) tillåter att användaren ändrar dessa inställningar.
-- **Parkoppling av värd för att styra de enheter som en iOS/iPadOS-enhet kan parkopplas till**: **Inte konfigurerad** (standard) tillåter parkoppling så att administratören kan kontrollera vilka enheter som en iOS/iPadOS-enhet kan kopplas med. **Blockera** förhindrar parkoppling av värd.
-- **Blockera AirPrint**: Välj **Blockera** om du vill förhindra att AirPrint-funktionen används på enheten. **Inte konfigurerat** (standard) tillåter användaren att använda AirPrint.
-  - **Blockera lagring av AirPrint-autentiseringsuppgifter i nyckelringen**: **Blockera** förhindrar användning av nyckelring vid lagring av användarnamn och lösenord på enheten. **Inte konfigurerad** (standard) tillåter att AirPrint-användarnamnet och lösenordet lagras i nyckelringsappen.
+- **AirDrop**: **Blockera** förhindrar att du använder AirDrop på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att funktionen AirDrop används för att utbyta innehåll med enheter i närheten.
+- **Apple Watch-parkoppling**: **Blockera** förhindrar att enheten parkopplas med en Apple Watch. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten parkopplas med en Apple Watch.
+- **Bluetooth-ändring**: **Blockera** förhindrar användarna från att ändra enhetens Bluetooth-inställningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra dessa inställningar.
+- **Parkoppling av värd för att styra de enheter som en iOS/iPadOS-enhet kan parkopplas till**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta parkoppling så att administratören kan kontrollera vilka enheter som en iOS/iPadOS-enhet kan parkopplas med. **Blockera** förhindrar parkoppling av värd.
+- **Blockera AirPrint**: **Blockera** förhindrar att AirPrint-funktionen används på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att använda AirPrint.
+  - **Blockera lagring av AirPrint-autentiseringsuppgifter i nyckelringen**: **Blockera** förhindrar användning av nyckelring vid lagring av användarnamn och lösenord på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att AirPrint-användarnamnet och lösenordet lagras i nyckelringsappen.
   - **Kräv ett betrott TLS-certifikat för AirPrint**: **Kräv** tvingar enheten att använda betrodda certifikat för TLS-utskriftskommunikation.
-  - **Blockera iBeacon-identifiering av AirPrint-skrivare**: **Blockera** förhindrar skadliga AirPrint Bluetooth-sändare från att nätfiska nätverkstrafik. **Inte konfigurerad** (standard) tillåter reklam för AirPrint-skrivare på enheten.
-- **Blockera inställning av nya enheter i närheten**: **Blockera** inaktiverar uppmaningen om att konfigurera nya enheter som finns i närheten. **Inte konfigurerad** (standard) tillåter uppmaningar om att ansluta till andra Apple-enheter i närheten.
+  - **Blockera iBeacon-identifiering av AirPrint-skrivare**: **Blockera** förhindrar skadliga AirPrint Bluetooth-sändare från att nätfiska nätverkstrafik. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta reklam för AirPrint-skrivare på enheten.
+- **Blockera inställning av nya enheter i närheten**: **Blockera** inaktiverar uppmaningen om att konfigurera nya enheter som finns i närheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna uppmanas ansluta till andra Apple-enheter i närheten.
 
   Den här funktionen gäller för:  
   - iOS 11.0 och senare
   - iPadOS 13.0 och senare
 
-- **Åtkomst till filer på USB-enhet**: Enheter kan ansluta till och öppna filer på en USB-enhet. **Inaktivera** förhindrar enhetsåtkomst till USB-enheten i Files-appen när en USB-enhet är ansluten till enheten. Om den här funktionen inaktiveras blockeras även slutanvändare från att överföra filer till en USB-enhet som är ansluten till en iPad. **Inte konfigurerad** (standard) tillåter åtkomst till en USB-enhet i Files-appen.
+- **Åtkomst till filer på USB-enhet**: Enheter kan ansluta till och öppna filer på en USB-enhet. **Inaktivera** förhindrar enhetsåtkomst till USB-enheten i Files-appen när en USB-enhet är ansluten till enheten. Om den här funktionen inaktiveras blockeras även användarna från att överföra filer till en USB-enhet som är ansluten till en iPad. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till en USB-enhet i Files-appen.
 
   Den här funktionen gäller för:  
   - iOS 13.0 och senare
@@ -533,13 +532,13 @@ Information som krävs för datanätverksväxling (tips eller viktig information
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Slå upp definition av ord**: **Blockera** förhindrar användare från att markera ett ord och sedan söka upp dess definition på enheten. **Inte konfigurerad** (standard) ger åtkomst till definitionssökningsfunktionen.
-- **Tangentbord med förslag**: **Inte konfigurerad** (standard) tillåter tangentbord med förslag på ord som användaren kan ha nytta av. **Blockera** förhindrar den här funktionen.
-- **Automatisk korrigering**: **Inte konfigurerad** (standard) låter enheten automatiskt korrigera felstavade ord. **Blockera** förhindrar att autokorrigering används.
-- **Tangentbord med stavningskontroll**: **Inte konfigurerad** (standard) tillåter användning av stavningskontroll på enheten. **Blockera** tillåter stavningskontroll.
-- **Kortkommandon**: **Inte konfigurerad** (standard) tillåter att kortkommandon används på enheten. **Blockera** hindrar användaren från att använda kortkommandon.
-- **Diktering**: **Blockera** hindrar användaren från att använda röstindata för att ange text. **Inte konfigurerat** (standard) tillåter användaren att använda röstindata.
-- **QuickPath**: **Inte konfigurerad** (standard) gör att användare kan använda QuickPath, som möjliggör kontinuerlig inmatning på enhetens tangentbord. Användare kan skriva genom att svepa över tangenterna för att skapa ord. **Blockera** förhindrar användare från att använda QuickPath. 
+- **Slå upp definition av ord**: **Blockera** förhindrar användare från att markera ett ord och sedan söka upp dess definition på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard ge åtkomst till definitionssökningsfunktionen.
+- **Tangentbord med förslag**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta tangentbord med förslag på ord som användarna kan ha nytta av. **Blockera** förhindrar den här funktionen.
+- **Automatisk korrigering**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta enheten att automatiskt korrigera felstavade ord. **Blockera** förhindrar att autokorrigering används.
+- **Tangentbord med stavningskontroll**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att stavningskontroll används på enheten. **Blockera** tillåter stavningskontroll.
+- **Kortkommandon**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att kortkommandon används på enheten. **Blockera** hindrar användarna från att använda kortkommandon.
+- **Diktering**: **Blockera** hindrar användarna från att ange text med hjälp av röstindata. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att använda diktering.
+- **QuickPath**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna använder QuickPath, som möjliggör kontinuerlig inmatning på enhetens tangentbord. Användare kan skriva genom att svepa över tangenterna för att skapa ord. **Blockera** förhindrar användare från att använda QuickPath. 
 
   Den här funktionen gäller för:  
   - iOS 13.0 och senare
@@ -550,36 +549,36 @@ Information som krävs för datanätverksväxling (tips eller viktig information
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
 - **Krypterad säkerhetskopiering**: **Kräv** att säkerhetskopior av enheter måste vara krypterade.
-- **Synkronisering av hanterade appar till molnet**: **Inte konfigurerad** (standard) tillåter att appar som du hanterar med Intune synkroniserar data till användarens iCloud-konton. **Blockera** förhindrar denna datasynkronisering till iCloud.
-- **Blockera säkerhetskopiering av företagsbok**: Välj **Blockera** om du vill förhindra användarna från att säkerhetskopiera företagsböcker. **Inte konfigurerad** (standard) tillåter användarna att säkerhetskopiera dessa böcker.
-- **Blockera synkronisering av företagsboksmetadata (anteckningar och markeringar)** : **Blockera** förhindrar synkronising av anteckningar och markeringar i företagsböcker. **Inte konfigurerat** (standard) tillåter synkronisering.
+- **Synkronisering av hanterade appar till molnet**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att dina Intune-hanterade appar synkroniserar data med användarens iCloud-konto. **Blockera** förhindrar denna datasynkronisering till iCloud.
+- **Blockera säkerhetskopiering av företagsbok**: **Blockera** förhindrar användarna från att säkerhetskopiera företagsböcker. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att säkerhetskopiera dessa böcker.
+- **Blockera synkronisering av företagsboksmetadata (anteckningar och markeringar)** : **Blockera** förhindrar synkronising av anteckningar och markeringar i företagsböcker. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta synkronisering.
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Synkronisering av bildström till iCloud**: **Inte konfigurerad** (standard) låter användarna aktivera **My Photo Stream** på sina enheter och synkroniseras med iCloud och låta foton vara tillgängliga på användarens alla enheter. **Blockera** förhindrar bildströmssynkronisering till iCloud. Om den här funktionen blockeras kan det leda till dataförlust. 
-- **iCloud-bildbiblioteket**: Ställ in på **Blockera** om du vill inaktivera användning av iCloud-bildbiblioteket för att lagra foton och videoklipp i molnet. Alla bilder som inte har laddats ned till fullo från iCloud-bildbiblioteket till enheten tas bort från enheten. **Inte konfigurerad** (standard) tillåter att iCloud-bildbiblioteket används.
-- **Delad bildström**: Välj **Blockera** om du vill inaktivera **iCloud-bilddelning** på enheten. **Inte konfigurerad** (standard) tillåter delad bildström.
-- **Handoff**: **Inte konfigurerad** (standard) tillåter användare att påbörja arbete på en iOS/iPadOS-enhet och sedan fortsätta det arbete som de inledde på en annan iOS/iPadOS- eller macOS-enhet. **Blockera** förhindrar den här överlämningen.
+- **Synkronisering av bildström till iCloud**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard låta användarna aktivera **My Photo Stream** på sina enheter så att de kan synkronisera med iCloud och låta foton vara tillgängliga på alla sina enheter. **Blockera** förhindrar bildströmssynkronisering till iCloud. Om den här funktionen blockeras kan det leda till dataförlust. 
+- **iCloud-bildbiblioteket**: **Blockera** inaktiverar användning av iCloud-bildbiblioteket för att lagra foton och videoklipp i molnet. Alla bilder som inte har laddats ned till fullo från iCloud-bildbiblioteket till enheten tas bort från enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att iCloud-bildbiblioteket används.
+- **Delad bildström**: **Blockera** inaktiverar **iCloud-bilddelning** på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta delad direktuppspelning av bilder.
+- **Handoff**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att påbörja arbete på en iOS/iPadOS-enhet och sedan fortsätta det arbete som de inledde på en annan iOS/iPadOS- eller macOS-enhet. **Blockera** förhindrar den här överlämningen.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Säkerhetskopiera till iCloud**: **Inte konfigurerad** (standard) tillåter användaren att säkerhetskopiera enheten till iCloud. **Blockera** hindrar användaren från att säkerhetskopiera enheten till iCloud.
+- **Säkerhetskopiera till iCloud**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att säkerhetskopiera enheten till iCloud. **Blockera** hindrar användarna från att säkerhetskopiera enheten till iCloud.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-- **Blockera synkronisering av iCloud-dokument**: **Inte konfigurerad** (standard) tillåter synkronisering av dokument och nyckelvärden till ditt iCloud-lagringsutrymme. **Blockera** förhindrar iCloud från att synkronisera dokument och data.
+- **Blockera synkronisering av iCloud-dokument**: När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta synkronisering av dokument och nyckelvärden till ditt iCloud-lagringsutrymme. **Blockera** förhindrar iCloud från att synkronisera dokument och data.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-- **Blockera synkronisering av iCloud-nyckelring**: Välj **Blockera** om du vill inaktivera synkronisering av autentiseringsuppgifter som lagras i nyckelringen till iCloud. **Inte konfigurerad** (standard) tillåter användare att synkronisera dessa autentiseringsuppgifter.
+- **Blockera synkronisering av iCloud-nyckelring**: **Blockera** inaktiverar synkronisering till iCloud av autentiseringsuppgifter som lagras i nyckelringen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att synkronisera dessa autentiseringsuppgifter.
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
 ## <a name="autonomous-single-app-mode"></a>Autonomt enkelt appläge
 
-Använd inställningarna för att konfigurera iOS/iPadOS-enheter så att de kör specifika appar i autonomt enkelt appläge. När det här läget har konfigurerats och användaren startar någon av de konfigurerade apparna blir enheten låst till den appen. Det går inte att byta app/aktivitet förrän användaren avslutar den tillåtna appen.
+Använd inställningarna för att konfigurera iOS/iPadOS-enheter så att de kör specifika appar i autonomt enkelt appläge. När det här läget har konfigurerats och användaren startar någon av de konfigurerade apparna låses enheten till den appen. Det går inte att byta app/aktivitet förrän användaren avslutar den tillåtna appen.
 
-På en skola eller ett universitet kan du till exempel lägga till en app som gör att användarna kan skriva prov på enheten. Du kan också låsa enheten i företagsportalsappen tills användaren har autentiserats. När appens åtgärder har slutförts av användaren, eller om du tar bort principen, återgår enheten till sitt normala tillstånd.
+På en skola eller ett universitet kan du till exempel lägga till en app som gör att användarna kan skriva prov på enheten. Du kan också låsa enheten i företagsportalsappen tills användarna har autentiserats. När appens åtgärder har slutförts av användaren, eller om du tar bort principen, återgår enheten till sitt normala tillstånd.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
@@ -594,15 +593,15 @@ Du kan även **Importera** en CSV-fil med listan över appnamn och deras samling
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
 - **App som ska köras i helskärmsläge**: Välj den apptyp som du vill köra i helskärmsläge. Alternativen är:
-  - **Inte konfigurerat** (standard): Inställningar för helskärmsläge tillämpas inte. Enheten körs inte i helskärmsläge.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemets standardinställning kan vara att inte använda inställningarna för helskärmsläge. Enheten körs inte i helskärmsläge.
   - **Store App**: Ange webbadressen till en app i iTunes App Store.
   - **Hanterad app**: Välj en app som du lagt till i Intune.
   - **Inbyggd app**: Ange den inbyggda appens [samlings-ID](bundle-ids-built-in-ios-apps.md).
 
-- **AssistiveTouch**: **Kräv** att hjälpmedelsinställningen för AssistiveTouch ska finnas på enheten. Den här funktionen hjälper användarna med skärmgester som de behöver hjälp med. **Inte konfigurerad** kör eller aktiverar inte den här funktionen i helskärmsläge.
-- **Invertera färger**: **Kräv** att hjälpmedelsinställningen Invertera färger ska användas, så att användare med synsvårigheter kan anpassa skärmen. **Inte konfigurerad** kör eller aktiverar inte den här funktionen i helskärmsläge.
-- **Monoljud**: **Kräv** att hjälpmedelsinställningen för Monoljud ska finnas på enheten. **Inte konfigurerad** kör eller aktiverar inte den här funktionen i helskärmsläge.
-- **Röststyrning**: **Kräv** aktiverar röststyrning på enheten och gör det möjligt för användare att fullständigt styra operativsystemet med hjälp av Siri-kommandon. **Inte konfigurerad** inaktiverar röstkontroll på enheten.
+- **AssistiveTouch**: **Kräv** att hjälpmedelsinställningen för AssistiveTouch ska finnas på enheten. Den här funktionen hjälper användarna med skärmgester som de behöver hjälp med. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemets standardinställning kan vara att inte köra eller aktivera den här funktionen i helskärmsläge.
+- **Invertera färger**: **Kräv** att hjälpmedelsinställningen Invertera färger ska användas, så att användare med synsvårigheter kan anpassa skärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemets standardinställning kan vara att inte köra eller aktivera den här funktionen i helskärmsläge.
+- **Monoljud**: **Kräv** att hjälpmedelsinställningen för Monoljud ska finnas på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemets standardinställning kan vara att inte köra eller aktivera den här funktionen i helskärmsläge.
+- **Röststyrning**: **Kräv** aktiverar röststyrning på enheten och gör det möjligt för användare att fullständigt styra operativsystemet med hjälp av Siri-kommandon. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera röstkontroll på enheten.
 
   Den här inställningen gäller för:  
   - iOS 13.0 och senare
@@ -611,25 +610,25 @@ Du kan även **Importera** en CSV-fil med listan över appnamn och deras samling
   > [!TIP]
   > Om du har LOB-appar tillgängliga för din organisation och de inte är redo för **Röstkontroll** på dag 0 när iOS 13.0 lanseras rekommenderar vi att du låter den här inställningen vara **Inte konfigurerad**.
 
-- **VoiceOver**: **Kräv** att hjälpmedelsinställningen VoiceOver ska finnas på enheten så att text på skärmen kan läsas upp. **Inte konfigurerad** kör eller aktiverar inte den här funktionen i helskärmsläge.
-- **Zooma**: **Kräv** att zoominställningen ska finnas på enheten så att användarna kan använda pekskärmen för att zooma in på skärmen. **Inte konfigurerad** kör eller aktiverar inte den här funktionen i helskärmsläge.
-- **Autolås**: **Blockera** förhindrar automatisk låsning av enheten. **Inte konfigurerad** tillåter denna funktion.
-- **Ringsignalsknapp**: **Blockera** inaktiverar tyst läge på enheten. **Inte konfigurerad** tillåter denna funktion.
-- **Skärmrotation**: **Blockera** hindrar att skärmrotationen ändras när användaren roterar enheten. **Inte konfigurerad** tillåter denna funktion.
-- **Viloläge för skärm-knapp**: Välj **Blockera** om du vill inaktivera enhetens knapp för viloläge. **Inte konfigurerad** tillåter denna funktion.
-- **Touch**: **Blockera** inaktiverar enhetens pekskärm. **Inte konfigurerad** tillåter användaren att använda pekskärmen.
-- **Volymknappar**: **Blockera** förhindrar att enhetens volymknappar används. **Inte konfigurerad** tillåter volymknapparna.
-- **AssistiveTouch-knapp**: **Tillåt** låter användarna använda funktionen AssistiveTouch. **Inte konfigurerad** inaktiverar den här funktionen.
-- **Invertera färger-knapp**: **Tillåt** att inställningarna för att invertera färger kan justeras. **Inte konfigurerad** inaktiverar den här funktionen.
-- **Läs upp markerad text**: **Tillåt** att hjälpmedelsinställningen Läs upp markering finns på enheten. Den här funktionen läser upp text som användaren väljer. **Inte konfigurerad** inaktiverar den här funktionen.
-- **Ändring av röststyrning**: **Tillåt** användare att ändra tillståndet för röststyrning på sina enheter. **Inte konfigurerad** blockerar användare från att ändra tillståndet för röstkontroll på sina enheter.
+- **VoiceOver**: **Kräv** att hjälpmedelsinställningen VoiceOver ska finnas på enheten så att text på skärmen kan läsas upp. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemets standardinställning kan vara att inte köra eller aktivera den här funktionen i helskärmsläge.
+- **Zooma**: **Kräv** att zoominställningen ska finnas på enheten så att användarna kan använda pekskärmen för att zooma in på skärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemets standardinställning kan vara att inte köra eller aktivera den här funktionen i helskärmsläge.
+- **Autolås**: **Blockera** förhindrar automatisk låsning av enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta den här funktionen.
+- **Ringsignalsknapp**: **Blockera** inaktiverar tyst läge på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta den här funktionen.
+- **Skärmrotation**: **Blockera** förhindrar att skärmorienteringen ändras när användaren roterar enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta den här funktionen.
+- **Viloläge för skärm-knapp**: **Blockera** inaktiverar vila-/väckningsknappen på enhetens skärm. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta den här funktionen.
+- **Touch**: **Blockera** inaktiverar enhetens pekskärm. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att använda pekskärmen.
+- **Volymknappar**: **Blockera** förhindrar att enhetens volymknappar används. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta volymknapparna.
+- **AssistiveTouch-knapp**: **Tillåt** låter användarna använda funktionen AssistiveTouch. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera den här funktionen.
+- **Invertera färger-knapp**: **Tillåt** att inställningarna för att invertera färger kan justeras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera den här funktionen.
+- **Läs upp markerad text**: **Tillåt** att hjälpmedelsinställningen Läs upp markering finns på enheten. Den här funktionen läser upp den text som användaren väljer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera den här funktionen.
+- **Ändring av röststyrning**: **Tillåt** användare att ändra tillståndet för röststyrning på sina enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard blockera användarna från att ändra tillståndet för röstkontroll på sina enheter.
 
   Den här inställningen gäller för:  
   - iOS 13.0 och senare
   - iPadOS 13.0 och senare
 
-- **VoiceOver-knapp**: **Tillåt** VoiceOver-ändringar så att användarna kan uppdatera VoiceOver-funktionen, t.ex. när det gäller hur snabbt texten ska läsas upp. **Inte konfigurerad** förhindrar VoiceOver-ändringar.
-- **Zoomkontroll**: **Tillåt** att användaren kan ändra zoominställningarna. **Inte konfigurerad** förhindrar zoominställningar.
+- **VoiceOver-knapp**: **Tillåt** VoiceOver-ändringar så att användarna kan uppdatera VoiceOver-funktionen, t.ex. när det gäller hur snabbt texten ska läsas upp. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra VoiceOver-ändringar.
+- **Zoomkontroll**: **Tillåt** att användarna kan ändra zoominställningarna. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra zoomändringar.
 
 > [!NOTE]
 > Innan du kan konfigurera en iOS/iPadOS-enhet för helskärmsläge måste du använda Apple Configurator-verktyget eller Apple-programmet för enhetsregistrereing för att placera enheten i övervakat läge. Information om hur du använder Apple Configurator-verktyget finns i Apples guide.
@@ -639,7 +638,7 @@ Du kan även **Importera** en CSV-fil med listan över appnamn och deras samling
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Omarkerade e-postdomäner** > **Webbadress till e-postdomän**: Lägg till en eller flera webbadresser i listan. När slutanvändarna får ett e-postmeddelande från en annan domän än någon av de du har angett, så markeras e-postmeddelandet som ej betrott i iOS/iPadOS-e-postappen.
+- **Omarkerade e-postdomäner** > **Webbadress till e-postdomän**: Lägg till en eller flera webbadresser i listan. När användarna får ett e-postmeddelande från en annan domän än någon av de du har angett, så markeras e-postmeddelandet som ej betrott i iOS/iPadOS-e-postappen.
 
 - **Hanterade webbdomäner** > **Webbadress till webbdomän**: Lägg till en eller flera webbadresser i listan. Dokument som laddas ned från de domäner du anger här anses vara hanterade. Den här inställningen gäller enbart för dokument som hämtas i Safari-webbläsaren.
 
@@ -681,7 +680,6 @@ Du kan även **Importera** en CSV-fil med listan över appnamn och deras samling
 - Ändringar av lösenord 
 - Ändringar av enhetsnamn 
 - Automatisk nedladdning av appar 
-- Ändringar till förtroende för företagsapp 
 - Apple Music 
 - Mail Drop 
 - Koppla med Apple Watch 

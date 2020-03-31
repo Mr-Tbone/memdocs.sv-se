@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/22/2019
+ms.date: 03/20/2019
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 700e255c55db1f216d605f5c54aa0c474e7f48b5
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 2ab229e0ef0d2cdefe41f991efc8c45c988979db
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79353742"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085052"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Använda certifikat för autentisering i Microsoft Intune
 
@@ -38,7 +38,7 @@ Använd certifikat med Intune för att autentisera dina användare till program 
 
 Du distribuerar de här certifikaten genom att skapa och tilldela certifikatprofiler till enheter.
 
-Varje enskild certifikatprofil som du skapar stöder en enda plattform. Om du till exempel använder PKCS-certifikat skapar du en PKCS-certifikatprofil för Android och en separat PKCS-certifikatfil för iOS/iPadOS. Om du även använder SCEP-certifikat för dessa två plattformar skapar du en SCEP-certifikatprofil för Android och en annan för iOS/iPadOS.
+Varje enskild certifikatprofil som du skapar stöder en enda plattform. Om du till exempel använder PKCS-certifikat, skapar du en PKCS-certifikatprofil för Android och en separat PKCS-certifikatfil för iOS/iPadOS. Om du även använder SCEP-certifikat för dessa två plattformar, skapar du en SCEP-certifikatprofil för Android och en annan för iOS/iPadOS.
 
 ### <a name="general-considerations-when-you-use-a-microsoft-certification-authority"></a>Allmänna överväganden när du använder en Microsoft-certifikatutfärdare
 
@@ -107,31 +107,47 @@ Skapa en separat betrodd certifikatprofil för varje enhetsplattform som du vill
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
+2. Välj och gå till **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
-   ![Navigera till Intune och skapa en ny profil för ett betrott certifikat](./media/certficates-pfx-configure/certificates-pfx-configure-profile-new.png)
+   ![Navigera till Intune och skapa en ny profil för ett betrott certifikat](./media/certificates-configure/certificates-configure-profile-new.png)
 
 3. Ange följande egenskaper:
+   - **Plattform**: Välj plattform för de enheter som ska få den här profilen.
+   - **Profil**: Välj **Betrott certifikat**.
+  
+4. Välj **Skapa**.
 
-   - **Namnet** på profilen
-   - Om du vill kan du ange en **beskrivning**
-   - **Plattform** att distribuera profilen till
-   - Ange **profiltypen** som **betrott certifikat**
+5. Ange följande egenskaper i **Grundinställningar**:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett exempel på ett bra profilnamn är *Trusted certificate profile for entire company* (Betrodd certifikatprofil för hela företaget).
+   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
-4. Välj **Inställningar** och bläddra till den betrodda .CER-filen för rotcertifikatutfärdarens certifikat som du exporterade för användning med den här certifikatprofilen och välj sedan **OK**.
+6. Välj **Nästa**.
 
-5. För Windows 8.1- och Windows 10-enheter, väjer du **Målarkiv** för det betrodda certifikatet från:
+7. Välj **Konfigurationsinställningar** och ange .CER-filen för certifikatutfärdarens betrodda rotcertifikat som du exporterade tidigare. 
+
+   För Windows 8.1- och Windows 10-enheter, väjer du **Målarkiv** för det betrodda certifikatet från:
 
    - **Datorcertifikatarkiv – rot**
    - **Datorcertifikatarkiv – mellannivå**
    - **Användarcertifikatarkiv – mellannivå**
 
-6. När du är klar väljer du **OK**, går tillbaka till fönstret **Skapa profil** och väljer **Skapa**.
+   ![Skapa en profil och ladda upp ett betrott certifikat](./media/certificates-configure/certificates-configure-profile-fill.png)
 
-Profilen visas i listan med profiler i fönstret *Enheter – Konfigurationsprofiler*, med profiltypen **Betrott certifikat**. Se till att tilldela den här profilen till enheter som ska använda SCEP- eller PKCS-certifikat. Om du vill tilldela profilen till grupper kan du läsa [Tilldela enhetsprofiler](../configuration/device-profile-assign.md).
+8. Välj **Nästa**.
 
-> [!NOTE]
-> Android-enheter visar kanske ett meddelande om att en tredje part har installerat ett betrott certifikat.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+   Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. (*Gäller endast Windows 10*) I **Tillämplighetsregler** anger du tillämplighetsregler för att förfina tilldelningen av profilen. Du kan välja att tilldela eller inte tilldela profilen baserat på operativsystemversionen eller enhetsversionen.
+
+  Mer information finns i [Tillämplighetsregler](../configuration/device-profile-create.md#applicability-rules) i *Skapa en enhetsprofil i Microsoft Intune*.
+
+12. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="additional-resources"></a>Ytterligare resurser
 

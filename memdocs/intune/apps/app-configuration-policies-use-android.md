@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f49d1e419eb7199d2a7cf20f03959689a5f5fa44
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 691da0c74ceddb34a48bfdf01e19dadaed444e45
+ms.sourcegitcommit: 670c90a2e2d3106048f53580af76cabf40fd9197
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342497"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233463"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Lägg till konfigurationsprinciper för hanterade Android Enterprise-enheter
 
@@ -103,15 +103,18 @@ Du kan välja följande alternativ om du väljer variabel som värdetyp:
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Tillåt endast konfigurerade organisationskonton i appar med flera identiteter 
 
-Använd följande nyckel-/värdepar för Android-enheter:
+Som Microsoft Intune-administratör kan du styra vilka användarkonton som läggs till i Microsoft-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. Använd följande nyckel-/värdepar för Android-enheter:
 
 | **Nyckel** | com.microsoft.intune.mam.AllowedAccountUPNs |
 |---|---|
 | **Värden** | <ul><li>Ett eller flera <code>;</code>-avgränsade UPN-namn.</li><li>Endast tillåtna konton är de hanterade användarkonton som anges av den här nyckeln.</li><li> För Intune-registrerade enheter, kan <code>{{userprincipalname}}</code>-token användas för att representera det registrerade användarkontot.</li></ul> |
 
    > [!NOTE]
-   > Du måste använda Outlook för Android 2.2.222 och senare, Word, Excel, PowerPoint för Android 16.0.9327.1000 och senare, eller OneDrive för Android 5.28 och senare när du enbart tillåter konfigurerade organisationskonton med flera identiteter.<p></p>
-   > Som Microsoft Intune-administratör kan du styra vilka användarkonton som läggs till i Microsoft Office-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. De stödjande programmen bearbetar appkonfigurationen och tar bort och blockerar icke-godkända konton.<p></p>
+   > Följande appar bearbetar appkonfigurationen ovan och tillåter endast organisationskonton:
+   > - Edge för Android (42.0.4.4048 och senare)
+   > - Office, Word, Excel, PowerPoint för Android (16.0.9327.1000 och senare)
+   > - OneDrive för Android (5.28 och senare)
+   > - Outlook för Android (2.2.222 och senare)
 
 ## <a name="enter-json-data"></a>Ange JSON-data
 

@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cdd92948aed51eb37b4774d2521a1d28cd8245f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: fe5fce47d6a0480596bc09d82456c7636fe84d51
+ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79344616"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79526282"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av Windows-enheter i Microsoft Intune
 
@@ -321,6 +321,8 @@ Fel 0x80070774: Något gick fel. Bekräfta att du använder rätt inloggningsinf
 Det här problemet uppstår vanligtvis innan enheten startas om i ett scenario med en Hybrid Azure AD-pilot när enheten har nått sin första inloggningsskärm. Det innebär att domänkontrollanten inte kan hittas eller nås på grund av anslutningsproblem. Eller att enheten har hamnat i ett tillstånd som inte kan ansluta till domänen.
 
 **Orsak:** Den vanligaste orsaken är att Hybrid Azure AD-anslutning används och att funktionen Tilldela användare konfigureras i Autopilot-profilen. Om du använder funktionen Tilldela användare utförs en Azure AD-anslutning på enheten under den första inloggningsskärmen som placerar enheten i ett tillstånd där den inte kan ansluta till din lokala domän. Därför bör funktionen Tilldela användare bara användas i standardscenarier för Azure AD Join Autopilot.  Funktionen ska inte användas i scenarier med Hybrid Azure AD-anslutning.
+
+En annan möjlig orsak till det här felet är att autopilot-objektets associerade AzureAD-enhet har tagits bort. Lös detta genom att ta bort autopilot-objektet och importera hashen igen för att skapa en ny.
 
 #### <a name="resolution"></a>Lösning
 

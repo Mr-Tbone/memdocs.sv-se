@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/19/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,14 @@ search.appverid: MET150
 ms.reviewer: tycast
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26f2998c6b166e1f45c839d7006551867b8deb80
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 8d2f671e88b1221961e978d1945e28c7cec474cb
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364090"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086494"
 ---
 # <a name="windows-10-and-windows-holographic-device-settings-to-add-vpn-connections-using-intune"></a>Inställningar för Windows 10- och Windows Holographic-enheter för att lägga till VPN-anslutningar med Intune
-
-
 
 Du kan lägga till och konfigurera VPN-anslutningar för enheter med Microsoft Intune. Den här artikeln listar och beskriver vanliga inställningar och funktioner när virtuella privata nätverk (VPN) skapas. Dessa VPN-inställningar och -funktioner används i enhetskonfigurationsprofiler i Intune som skickas eller distribueras till enheter.
 
@@ -46,11 +44,11 @@ Beroende på vilka inställningar du väljer, kanske inte alla värden är konfi
 
 - **Anslutningens namn**: Ange ett namn på anslutningen. Slutanvändarna ser det här namnet när de bläddrar på enheten i listan över tillgängliga VPN-anslutningar.
 - **Servrar**: Lägg till en eller flera VPN-servrar som enheterna ska ansluta till. När du lägger till en server, anger du följande information:
-  - **Beskrivning**: Ange ett beskrivande namn för servern, som t.ex. **Contoso VPN-server**
-  - **IP-adress eller fullständigt domännamn**: Ange IP-adress eller fullständigt domännamn för den VPN-server som enheterna ska ansluta till, exempelvis **192.168.1.1** eller **vpn.contoso.com**
+  - **Beskrivning**: Ange ett beskrivande namn för servern, som t.ex. **Contoso VPN-server**.
+  - **IP-adress eller fullständigt domännamn**: Ange IP-adress eller fullständigt domännamn för den VPN-server som enheterna ska ansluta till, exempelvis **192.168.1.1** eller **vpn.contoso.com**.
   - **Standardserver**: Gör servern till den standardserver som enheterna använder för att upprätta anslutningen. Ange endast en server som standard.
   - **Importera**: Bläddra till en kommateckenavgränsad fil som innehåller en lista med servrar i formatet: beskrivning, IP-adress eller FQDN, samt standardserver. Välj **OK** för att importera dessa servrar till listan **Servrar**.
-  - **Exportera**: Exporterar listan med servrar till en kommateckenavgränsad fil (csv)
+  - **Exportera**: Exporterar listan med servrar till en kommateckenavgränsad fil (csv).
 
 - **Registrera IP-adresser med internt DNS**: Välj **Aktivera** om du vill konfigurera Windows 10 VPN-profilen för dynamisk registrering av IP-adresserna som tilldelats till VPN-gränssnittet med internt DNS. Välj **Inaktivera** om du inte vill registrera IP-adresserna dynamiskt.
 
@@ -68,10 +66,10 @@ Beroende på vilka inställningar du väljer, kanske inte alla värden är konfi
   - **PPTP**
 
   När du väljer en VPN-anslutningstyp, kan du också efterfrågas om följande inställningar:  
-  - **Alltid på**: Välj **Aktivera** för att automatiskt ansluta till VPN-anslutningen när följande händelser inträffar: 
+  - **Alltid på**: Välj **Aktivera** för att automatiskt ansluta till VPN-anslutningen när följande händelser inträffar:
     - Användarna loggar in på sina enheter
     - Nätverket på enheten ändras
-    - Skärmen på enheten sätts på efter att ha varit avstängd 
+    - Skärmen på enheten sätts på efter att ha varit avstängd
 
   - **Autentiseringsmetod**: Välj hur du vill att användarna ska autentiseras mot VPN-servern. Med hjälp av **certifikat** får du utökade funktioner, t.ex. zero-touch-upplevelse, VPN på begäran och VPN per app.
   - **Kom ihåg autentiseringsuppgifter vid varje inloggning**: Välj att cachelagra autentiseringsuppgifterna.

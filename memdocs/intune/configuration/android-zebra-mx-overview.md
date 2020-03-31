@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eaaa9095becbcac7840d5babc2a099e7ec84af03
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: dbb8e5644390c589756af5a69f2fdd5a829866a1
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79362023"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084010"
 ---
 # <a name="use-and-manage-zebra-devices-with-zebra-mobility-extensions-in-microsoft-intune"></a>Använda och hantera Zebra-enheter med Zebra Mobility Extensions i Microsoft Intune
-
-
 
 I Intune finns en omfattande uppsättning funktioner, bland annat för att hantera appar och konfigurera enhetsinställningar. Dessa inbyggda funktioner och inställningar används för att hantera Android-enheter som tillverkats av Zebra Technologies (även kallade ”Zebra-enheter”).
 
@@ -36,7 +34,9 @@ Den här artikeln visar hur du använder Zebra Mobility Extensions (MX) på Zebr
 
 Den här funktionen gäller för:
 
-- Android
+- Android-enhetsadministratör
+
+Använd [OEMConfig](android-oem-configuration-overview.md) för Android Enterprise-enheter.
 
 Företag kan använda Zebra-enheter till exempel inom detaljhandel och på fabriksgolvet. Anta att ditt företag är återförsäljare och har tusentals Zebra-mobilenheter som säljarna använder. Då kan Intune hjälpa dig att hantera dessa enheter som en del i din MDM-lösning (hantering av mobilenheter).
 
@@ -139,7 +139,7 @@ Skapa en enhetskonfigurationsprofil i Intune:
 
     - **Namn**: Ange ett beskrivande namn på den nya profilen.
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Android**.
+    - **Plattform**: Välj **Android-enhetsadministratör**.
     - **Profiltyp**: Välj **MX-profil (endast Zebra)** .
 
 4. I **MX-profil i .xml-format**  lägger du till XML-profilfilen [som du exporterade från StageNow](#step-4-create-a-device-management-profile-in-stagenow) (i den här artikeln).

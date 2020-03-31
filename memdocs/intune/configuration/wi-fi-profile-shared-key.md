@@ -12,17 +12,17 @@ ms.subservice: configuration
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: c6fd72a6-7dc8-48fc-9df1-db5627a51597
-ms.reviewer: karanda
+ms.reviewer: maholdaa
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 105a25e33e0f8f0a76934199d24060328d50c05f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: df5c33e1e8e589f430fe8265ee4762b4755f3618
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79360372"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086454"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key-in-intune"></a>Använd en anpassad enhetsprofil för att skapa en Wi-Fi-profil med en i förväg delad nyckel i Intune
 
@@ -52,7 +52,7 @@ Den här funktionen stöder:
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
-    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett exempel på ett bra principnamn är **Custom OMA-URI Wi-Fi profile settings for Android devices** (Anpassade inställningar för OMA-URI Wi-Fi-profil för Android-enheter).
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett exempel på ett bra principnamn är **Custom OMA-URI Wi-Fi profile settings for Android device administrator devices** (Anpassade inställningar för OMA-URI Wi-Fi-profil för Android-enhetens administratörsenheter).
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
     - **Plattform**: Välj din plattform.
     - **Profiltyp**: Välj **Anpassad**.
@@ -139,6 +139,7 @@ xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
 ```
 
 ### <a name="eap-based-wi-fi-profile-example"></a>Exempel på EAP-baserad Wi-Fi-profil
+
 Följande exempel på XML-koden för en EAP-baserad Wi-Fi-profil: Exemplet tillhandahålls för att visa rätt format och ge mer information. Det är bara ett exempel och är inte avsett som en rekommenderad konfiguration för din miljö.
 
 

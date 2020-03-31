@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7eb597aec20e8010d8694475d2af5d8033a809f0
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 9c8c78106125b45f52b45cb5fc6494b8e13b7a15
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352897"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084939"
 ---
 # <a name="what-are-common-ways-to-use-conditional-access-with-intune"></a>Hur används villkorlig åtkomst vanligtvis med Intune?
 
@@ -83,7 +83,7 @@ Villkorlig åtkomst för datorer har ungefär samma funktioner som för mobila e
 
 #### <a name="corporate-owned"></a>Företagsägd
 
-- **Lokalt domänansluten AD:** Det här alternativet används ofta av organisationer som är relativt nöjda med sitt sätt att hantera datorer via AD-grupprinciper eller Configuration Manager.
+- **Hybrid Azure AD-ansluten:** Det här alternativet används ofta av organisationer som är relativt nöjda med sitt sätt att hantera datorer via AD-grupprinciper eller Configuration Manager.
 
 - **Domänansluten Azure AD och Intune-hantering:** Det här scenariot är avsett för organisationer som vill vara delvis molnbaserade (som huvudsakligen använder molntjänster med målet för att minska användningen av en lokal infrastruktur) eller enbart molnbaserade (ingen lokal infrastruktur). Azure AD Join fungerar bra i en hybridmiljö, vilket ger åtkomst till såväl molnet som lokala appar och resurser. Enheten ansluter till Azure AD och registreras i Intune som kan användas som ett villkor för villkorlig åtkomst till företagsresurser.
 

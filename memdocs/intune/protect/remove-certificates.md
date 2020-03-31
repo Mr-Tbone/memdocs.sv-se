@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 03/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: lacranda
-ms.openlocfilehash: cba46d5b4b203cdbb67fb5f6b6b116a21ebacb32
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: b6303d7d98e718c2a4f54b199bf90a3bd0684bf8
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79338935"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084750"
 ---
 # <a name="remove-scep-and-pkcs-certificates-in-microsoft-intune"></a>Ta bort SCEP- och PKCS-certifikat i Microsoft Intune
 
@@ -91,7 +91,6 @@ PKCS-certifikat *bevaras* på enheten (certifikaten återkallas inte och tas int
 - En administratör tar bort användaren eller gruppen från Azure AD.
 - En administratör ändrar eller uppdaterar PKCS-profilen.
 - En certifikatprofil tas bort från grupptilldelningen.
-
 
 ## <a name="ios-devices"></a>iOS-enheter
 
@@ -190,8 +189,8 @@ Ett rotcertifikat tas bort när:
 - En administratör kör [tillbakadragningsåtgärden](../remote-actions/devices-wipe.md#retire).
 
 PKCS-certifikat *bevaras* på enheten (certifikaten återkallas inte och tas inte bort) när:
-- En användare förlorar sin Intune-licens.
 
+- En användare förlorar sin Intune-licens.
 - En administratör drar tillbaka Intune-licensen.
 - En administratör tar bort användaren eller gruppen från Azure AD.
 - En administratör ändrar eller uppdaterar PKCS-profilen.
@@ -228,7 +227,23 @@ SCEP-certifikat *bevaras* på enheten (certifikaten återkallas inte och tas int
 
 ### <a name="pkcs-certificates"></a>PKCS-certifikat
 
-PKCS-certifikat stöds inte på macOS.
+Ett PKCS-certifikat återkallas *och* tas bort när:
+
+- En användare avregistrerar sig.
+- En administratör kör [tillbakadragningsåtgärden](../remote-actions/devices-wipe.md#retire).
+
+Ett rotcertifikat tas bort när:
+
+- En användare avregistrerar sig.
+- En administratör kör [tillbakadragningsåtgärden](../remote-actions/devices-wipe.md#retire).
+
+PKCS-certifikat bevaras på enheten (certifikaten återkallas inte och tas inte bort) när:
+
+- En användare förlorar sin Intune-licens.
+- En administratör drar tillbaka Intune-licensen.
+- En certifikatprofil tas bort från grupptilldelningen. (Profilen tas bort.)
+- En administratör tar bort användaren eller gruppen från Azure AD.
+- En administratör ändrar eller uppdaterar PKCS-profilen.
 
 ## <a name="next-steps"></a>Nästa steg
 

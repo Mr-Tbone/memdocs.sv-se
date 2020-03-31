@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/08/2020
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17a3a3b38b28eda0e4bde9c353482d0234fa3329
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5a98b57fe8cc2d9d2af3c0095297eb676796029f
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354327"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085215"
 ---
 # <a name="automate-email-and-add-actions-for-noncompliant-devices-in-intune"></a>Automatisera e-post och lägga till åtgärder för inkompatibla enheter i Intune
 
@@ -40,7 +40,16 @@ Det finns flera typer av åtgärder:
 
 - **Markera enhet som inkompatibel**: Skapa ett schema (med antal dagar) varefter enheten markeras som inkompatibel. Du kan konfigurera åtgärden till att börja gälla omedelbart, eller ge användaren en respitperiod för att bli kompatibel.
 
-Den här artikeln visar hur du:
+- **Ta den icke-kompatibla enheten ur bruk**: Den här åtgärden tar bort alla företagets data från enheten och tar bort enheten från Intune-hanteringen. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst 30 dagar. Följande plattformar stöder den här åtgärden:
+  - Android
+  - iOS
+  - macOS
+  - Windows 10 Mobil
+  - Windows Phone 8.1 och senare
+
+  Läs mer om att [ta bort enheter](../remote-actions/devices-wipe.md#retire).
+  
+  Den här artikeln visar hur du:
 
 - Skapa en mall för meddelandeaviseringar
 - Skapa en åtgärd för inkompatibilitet. Du kan till exempel skicka ett e-postmeddelande eller fjärrlåsa en enhet
@@ -76,7 +85,7 @@ Om du vill skicka ett e-postmeddelande till användarna skapar du en mall för a
    - **E-postsidfot – Infoga företagets namn**
    - **E-postsidfot – Infoga kontaktinformation**
 
-   Den logotyp som du laddar upp som en del av varumärkesanpassningen av företagsportalen används för e-postmallar. Läs mer om varumärkesanpassning av företagsportalen i [Varumärkesanpassning för företagsidentitet](../apps/company-portal-app.md#company-identity-branding-customization).
+   Den logotyp som du laddar upp som en del av varumärkesanpassningen av företagsportalen används för e-postmallar. Läs mer om varumärkesanpassning av företagsportalen i [Varumärkesanpassning för företagsidentitet](../apps/company-portal-app.md#customizing-the-user-experience).
 
    ![Exempel på ett kompatibelt aviseringsmeddelande i Intune](./media/actions-for-noncompliance/actionsfornoncompliance-1.PNG)
 
@@ -112,11 +121,13 @@ Förutom standardåtgärden att markera enheter som icke-kompatibla, så kan du 
 
    - **Fjärrlåsa en icke-kompatibel enhet**: Lås enheten när den är inkompatibel. Den här åtgärden tvingar användaren att ange en PIN-kod eller ett lösenord för att låsa upp enheten.
 
-5. Konfigurera ett **schema**: Ange hur många dagar (0 till 365) efter en inkompatibilitet som åtgärden ska utlösas på användarnas enheter. Efter den här respittiden kan du tillämpa en [princip för villkorlig åtkomst](conditional-access-intune-common-ways-use.md). Om du anger **0** (noll) dagar tillämpas den villkorliga åtkomsten **omedelbart**. Om en enhet till exempel inte är kompatibel kan du använda villkorlig åtkomst för att blockera åtkomsten till e-post, SharePoint och andra organisationsresurser omedelbart.
+   - **Ta den icke-kompatibla enheten ur bruk**: Ta bort alla företagets data från enheten och ta bort enheten från Intune-hanteringen när den är inkompatibel. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst **30** dagar.
+
+5. Konfigurera ett **schema**: Ange hur många dagar (0 till 365) efter en inkompatibilitet som åtgärden ska utlösas på användarnas enheter. (*Ta icke-kompatibel enhet ur bruk* har stöd för minst 30 dagar.) Efter den här respittiden kan du tillämpa en [princip för villkorlig åtkomst](conditional-access-intune-common-ways-use.md). Om du anger **0** (noll) dagar tillämpas den villkorliga åtkomsten **omedelbart**. Om en enhet till exempel inte är kompatibel kan du använda villkorlig åtkomst för att blockera åtkomsten till e-post, SharePoint och andra organisationsresurser omedelbart.
 
    När du skapar en efterlevnadsprincip skapas automatiskt åtgärden **Markera enheten som inkompatibel**, och den ställs automatiskt in på **0** dagar (omedelbart). Med den här åtgärden bedöms enheten som icke-kompatibel direkt när den checkar in. Om du även använder villkorlig åtkomst träder den villkorliga åtkomsten i kraft direkt. Om du vill tillåta en respitperiod ändrar du **Schema** för åtgärden **Markera enheten som inkompatibel**.
 
-   I efterlevnadsprincipen kanske du även vill meddela användaren. Du kan lägga till åtgärden **Skicka e-post till slutanvändare**. I åtgärden **Skicka e-post** anger du 2 dagar för **Schema**. Om enheten eller slutanvändaren fortfarande bedöms som icke-kompatibel dag 2 skickas e-postmeddelandet dag 2. Om du vill skicka e-post till användaren på dag 5 i lägger du till en annan åtgärd och anger 5 dagar för **Schema**.
+  I efterlevnadsprincipen kanske du även vill meddela användaren. Du kan lägga till åtgärden **Skicka e-post till slutanvändare**. I åtgärden **Skicka e-post** anger du två dagar för **Schema**. Om enheten eller slutanvändaren fortfarande bedöms som icke-kompatibel dag två skickas e-postmeddelandet dag två. Om du vill skicka e-post till användaren på dag fem i lägger du till en annan åtgärd och anger fem dagar för **Schema**.
 
    Mer information om efterlevnad och de inbyggda åtgärderna finns i [översikt över efterlevnad](device-compliance-get-started.md).
 

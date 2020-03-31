@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/04/2020
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bdb45edb1bcd518b4e55da40f179fb87cefb07c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 7a49c71705755f82dcf33c63971ed6f11ffc849f
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79353677"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084977"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Konfigurera och använda importerade PKCS-certifikat med Intune
 
@@ -45,8 +45,8 @@ Intune stöder import av PFX-certifikat för följande plattformar:
 - Android – enhetsadministratör
 - Android Enterprise – fullständigt hanterad
 - Android Enterprise – arbetsprofil
-- iOS
-- Mac
+- iOS/iPadOS
+- macOS
 - Windows 10
 
 ## <a name="requirements"></a>Krav
@@ -213,28 +213,53 @@ När du har importerat certifikaten till Intune skapar du en profil för **PKCS-
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
+2. Välj och gå till **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
 3. Ange följande egenskaper:
+   - **Plattform**: Välj plattform för dina enheter.
+   - **Profil**: Välj **PKCS-importerat certifikat**
 
-   - **Namnet** på profilen
-   - Om du vill kan du ange en beskrivning
-   - **Plattform** att distribuera profilen till
-   - Ange **profiltypen** som **PKCS-importerat certifikat**
+4. Välj **Skapa**.
 
-4. Välj **Inställningar** och ange följande egenskaper:
+5. Ange följande egenskaper i **Grundinställningar**:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett exempel på ett bra profilnamn är *PKCS imported certificate profile for entire company* (PKCS-importerad certifikatprofil för hela företaget).
+   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
+
+6. Välj **Nästa**.
+
+7. Välj **Konfigurationsinställningar** och ange följande egenskaper:
 
    - **Avsett syfte**: Ange syftet med de certifikat som har importerats för den här profilen. Administratörer kan importera certifikat med olika syften (till exempel S/MIME-signering eller S/MIME-kryptering). Avsett syfte som valts i certifikatprofilen matchar certifikatprofilen med rätt importerade certifikat. Avsett syfte är en tagg för att gruppera importerade certifikat och garanterar inte att certifikat som importerats med den taggen uppfyller det avsedda syftet.  
-   - **Certifikatets giltighetsperiod**: Om giltighetsperioden inte har ändrats i certifikatmallen är standardinställningen för det här alternativet ett år.
+
+   <!-- Not in new UI:
+   - **Certificate validity period**: Unless the validity period was changed in the certificate template, this option defaults to one year.
+   -->
    - **Nyckellagringsprovider (KSP)** : För Windows väljer du var du vill lagra nycklarna på enheten.
 
-5. Välj **OK** > **Skapa** för att spara profilen.
+8. Välj **Nästa**.
+
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+   Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. (*Gäller endast Windows 10*) I **Tillämplighetsregler** anger du tillämplighetsregler för att förfina tilldelningen av profilen. Du kan välja att tilldela eller inte tilldela profilen baserat på operativsystemversionen eller enhetsversionen.
+
+    Mer information finns i [Tillämplighetsregler](../configuration/device-profile-create.md#applicability-rules) i *Skapa en enhetsprofil i Microsoft Intune*.
+
+    Välj **Nästa**.
+
+12. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="support-for-third-party-partners"></a>Support för partner från tredje part
 
 Följande partners erbjuder metoder och verktyg som du kan använda för att importera PFX-certifikat till Intune.
 
 ### <a name="digicert"></a>DigiCert
+
 Om du använder DigiCert PKI-plattformen kan du använda DigiCerts **importverktyg för Intune S/MIME-certifikat** när du importerar PFX-certifikat till Intune. Om du använder detta verktyg behöver du inte följa anvisningarna i avsnittet [Importera PFX-certifikat till Intune](#import-pfx-certificates-to-intune) tidigare i denna artikel.
 
 Mer information om DigiCert-importverktyget, inklusive hur du hämtar verktyget, finns på https://knowledge.digicert.com/tutorials/microsoft-intune.html i kunskapsbasen för DigiCert.

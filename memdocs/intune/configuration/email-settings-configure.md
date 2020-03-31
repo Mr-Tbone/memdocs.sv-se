@@ -1,12 +1,12 @@
 ---
 title: Konfigurera e-postinställningar i Microsoft Intune – Azure | Microsoft Docs
 titleSuffix: ''
-description: Skapa en e-postprofil i Microsoft Intune och distribuera profilen till Android Enterprise-, iOS-, iPadOS- och Windows-enheter. Använd en e-postprofil för att konfigurera vanliga e-postinställningar, inklusive en e-postserver och autentiseringsmetod metod för att ansluta till företagets e-post på enheter som du hanterar.
+description: Skapa en e-postprofil i Microsoft Intune och distribuera profilen till Android-enhetsadministratör-, Android Enterprise-, iOS-, iPadOS- och Windows-enheter. Använd e-postprofiler för att konfigurera vanliga e-postinställningar, inklusive en e-postserver och autentiseringsmetoder för att ansluta till företagets e-post på enheter som du hanterar.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3921da0032fdc0b28ff21812b99029d22fbbb27
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: fdf722acf463bf576b222e5f13da2dcaff64504e
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364246"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086972"
 ---
 # <a name="add-email-settings-to-devices-using-intune"></a>Lägg till e-postinställningar på enheter med Intune
 
@@ -29,7 +29,7 @@ Microsoft Intune innehåller olika e-postinställningar som du kan distribuera t
 
 Du kan använda e-postprofiler för att konfigurera de inbyggda e-postinställningarna för följande enheter:
 
-- Android Samsung Knox Standard 4.0 och senare
+- Android-enhetsadministratör på Samsung Knox Standard 4.0 och senare
 - Android enterprise
 - iOS 8.0 och senare
 - iPadOS 13.0 och senare
@@ -38,35 +38,48 @@ Du kan använda e-postprofiler för att konfigurera de inbyggda e-postinställni
 
 Den här artikeln visar hur du skapar en e-postprofil i Microsoft Intune. Den innehåller också länkar till de olika plattformarna för mer specifika inställningar.
 
-## <a name="create-a-device-profile"></a>Skapa en enhetsprofil
+## <a name="create-the-profile"></a>Skapa profilen
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
-    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett bra principnamn är till exempel **E-postinställningar för alla Windows-enheter**.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj plattform för dina enheter. Alternativen är:
+    - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
 
-        - **Android** (endast Samsung Android Knox Standard)
+        - **Android-enhetsadministratör**(endast Samsung Android Knox Standard)
         - **Android enterprise**
         - **iOS/iPadOS**
-        - **Windows Phone 8.1**
         - **Windows 10 och senare**
+        - **Windows Phone 8.1**
 
-    - **Profiltyp**: Välj **E-post**.
+    - **Profil**: Välj **E-post**.
 
-4. Vilka inställningar du kan konfigurera varierar beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
 
-    - [Inställningar för Android Samsung Knox Standard](email-settings-android.md)
-    - [Inställningar för Android Enterprise](email-settings-android-enterprise.md)
-    - [Inställningar för iOS/iPadOS](email-settings-ios.md)
-    - [Inställningar för Windows Phone 8.1](email-settings-windows-phone-8-1.md)
-    - [Inställningar för Windows 10](email-settings-windows-10.md)
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Exempel på ett bra principnamn: **Windows 10: E-postinställningar för alla Windows 10-enheter**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+6. Välj **Nästa**.
 
-När du har angett dina inställningar och skapar profilen, visas din profil i profillistan. Härnäst [tilldela profilen till vissa grupper](device-profile-assign.md).
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
+
+    - [Android-enhetsadministratör (Samsung Knox Standard)](email-settings-android.md)
+    - [Android enterprise](email-settings-android-enterprise.md)
+    - [iOS/iPadOS](email-settings-ios.md)
+    - [Windows 10](email-settings-windows-10.md)
+    - [Windows Phone 8.1](email-settings-windows-phone-8-1.md)
+
+8. Välj **Nästa**.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="remove-an-email-profile"></a>Ta bort en e-postprofil
 
@@ -104,4 +117,4 @@ Om du gör ändringar i en e-postprofil som du tidigare tilldelat, kan användar
 
 ## <a name="next-steps"></a>Nästa steg
 
-När profilen har skapats gör den ingenting ännu. Nu ska du [tilldela profilen](device-profile-assign.md).
+När profilen har skapats gör den ingenting ännu. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).

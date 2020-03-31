@@ -1,11 +1,11 @@
 ---
 title: Begränsa enhetsfunktioner med principer i Microsoft Intune – Azure | Microsoft Docs
-description: Lägga till en enhetsprofil för att begränsa funktioner i Android-, macOS-, iOS-, iPadOS-, Windows Phone- och Windows 10-enheter i Microsoft Intune
+description: Lägga till en enhetsprofil för att begränsa funktioner i Android-enhetsadministratörs-, Android Enterprise-, macOS-, iOS-, iPadOS-, Windows Phone- och Windows 10-enheter i Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/18/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,16 +15,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28cf0b8bffc06a0b5a56165c1e9eeab780c453c7
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 7f1e421a344122dbd4cf59a49ea56ef0ba2bb125
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361828"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80087073"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Konfigurera inställningar för enhetsbegränsningar i Microsoft Intune
-
-
 
 Intune innehåller principer för begränsning av enheter som hjälper administratörer att kontrollera Android-, iOS/iPadOS-, macOS-, och Windows-enheter. Med dessa begränsningar kan du kontrollera en mängd olika inställningar och funktioner för att skydda din organisations resurser. Administratörerna kan exempelvis:
 
@@ -48,7 +46,7 @@ Den här artikeln beskriver hur du skapar en enhetsbegränsningsprofil. Artikeln
     - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
     - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
 
-        - **Android**
+        - **Android-enhetsadministratör**
         - **Android enterprise**
         - **iOS/iPadOS**
         - **macOS**
@@ -62,7 +60,7 @@ Den här artikeln beskriver hur du skapar en enhetsbegränsningsprofil. Artikeln
 
 4. Vilka inställningar du kan konfigurera varierar beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
 
-    - [Inställningar för Android](device-restrictions-android.md)
+    - [Inställningar för Android-enhetsadministratör](device-restrictions-android.md)
     - [Inställningar för Android Enterprise](device-restrictions-android-for-work.md)
     - [Inställningar för iOS/iPadOS](device-restrictions-ios.md)
     - [Inställningar för macOS](device-restrictions-macos.md)

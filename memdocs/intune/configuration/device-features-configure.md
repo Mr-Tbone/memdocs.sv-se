@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/17/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48f890888d9bdb9d1df67596fb9125534e90a4d2
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: c0f1552d2edc6bfa5f6bdb255f156bcfb77a4990
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79350141"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084101"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -149,11 +149,11 @@ Gäller för:
 
 ## <a name="single-sign-on-app-extension"></a>Tillägg för enkel inloggning
 
-De här inställningarna konfigurerar ett apptillägg som möjliggör enkel inloggning (SSO) för iOS-, iPadOS-och macOS-enheter. De flesta verksamhetsspecifika appar och företagswebbplatser kräver någon nivå av säker användarautentisering. I många fall kräver den här autentiseringen att användaren anger samma autentiseringsuppgifter upprepade gånger. SSO ger användare åtkomst till appar och webbplatser när de har angett sina autentiseringsuppgifter en gång. När användarna har loggat in kan de komma åt appar och webbplatser automatiskt eller använda ansikts-ID, fingeravtryck eller Apple-lösenord för att få åtkomst.
+De här inställningarna konfigurerar ett apptillägg som möjliggör enkel inloggning (SSO) för iOS-, iPadOS-och macOS-enheter. De flesta verksamhetsspecifika appar och företagswebbplatser kräver någon nivå av säker användarautentisering. I många fall kräver den här autentiseringen att användaren anger samma autentiseringsuppgifter upprepade gånger. SSO ger användare åtkomst till appar och webbplatser när de har angett sina autentiseringsuppgifter en gång. SSO ger också bättre autentisering för användarna och minskar antalet upprepade förfrågningar om autentiseringsuppgifter.
 
-Använd de här inställningarna i Intune för att konfigurera ett apptillägg för enkel inloggning som har skapats av din organisation, identitetsprovider eller Apple. Tillägget för SSO-appen hanterar autentisering för dina användare. De här inställningarna konfigurerar apptillägg för enkel inloggning av omdirigerings- och inloggningsinformationstyp.
+Använd de här inställningarna i Intune för att konfigurera ett apptillägg för enkel inloggning som har skapats av din organisation, identitetsprovider, Microsoft eller Apple. Tillägget för SSO-appen hanterar autentisering för dina användare. De här inställningarna konfigurerar apptillägg för enkel inloggning av omdirigerings- och inloggningsinformationstyp.
 
-- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OAuth och SAML2.
+- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OAuth och SAML2. Microsoft har ett apptillägg för enkel inloggning av Azure AD-omdirigeringstyp för iOS/iPad som kan aktiv ras med inställningarna för apptillägget för enkel inloggning.
 - Inloggningsinformationstypen är utformad för autentiseringsflöden med anrop och svar. Du kan välja mellan ett Kerberos-specifikt tillägg för autentiseringsuppgifter från Apple och ett generiskt för autentiseringsuppgifter.
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [iOS/iPadOS SSO-apptillägg](ios-device-features-settings.md#single-sign-on-app-extension) och [macOS SSO-apptillägg](macos-device-features-settings.md#single-sign-on-app-extension).
@@ -167,7 +167,7 @@ Mer information om hur du utvecklar ett SSO-apptillägg finns i [Utökningsbar f
 >
 > - Inställningarna i **Apptillägg för enkel inloggning** definierar tillägg som används av identitetsproviders eller organisationer som vill tillhandahålla en sömlös företagsinloggning. Inställningarna i **Enkel inloggning** definierar Kerberos-kontoinformationen för när användare får åtkomst till servrar eller appar.
 >
-> - **Apptillägget enkel inloggning** använder Apples operativsystem för att autentisera. Det kan därför ge en slutanvändarna en upplevelse som är bättre än i **Enkel inloggning**.
+> - **Apptillägget enkel inloggning** använder Apples operativsystem för att autentisera. Det kan därför ge en slutanvändaren en upplevelse som är bättre än **enkel inloggning**.
 >
 > - Ur ett utvecklingsperspektiv kan du med **apptillägget för enkel inloggning** använda vilken typ av omdirigerings-SSO eller SSO-autentisering som helst. Med **enkel inloggning** kan du endast använda Kerberos SSO-autentisering.
 >
@@ -194,7 +194,7 @@ Gäller för:
 
 ## <a name="web-content-filter"></a>Webbinnehållsfilter
 
-De här inställningarna kan använda Apples inbyggda autofilteralgoritm för att utvärdera webbsidor och blockera vuxeninnehåll och vuxenspråk. Du kan också skapa en lista över tillåtna webblänkar och begränsade webblänkar. Du kan till exempel endast tillåta att `contoso`-webbplatser öppnas.
+De här inställningarna använder Apples inbyggda autofilteralgoritm för att utvärdera webbsidor och blockera vuxeninnehåll och vuxenspråk. Du kan också skapa en lista över tillåtna webblänkar och begränsade webblänkar. Du kan till exempel endast tillåta att `contoso`-webbplatser öppnas.
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [Webbinnehållsfilter i iOS/iPadOS](ios-device-features-settings.md#web-content-filter).
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/10/2020
+ms.date: 03/23/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8586e5c25ec3db4a736d84381e691ecebe6fae32
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 71e8b874e50fc1300124d748dfb70963acae089b
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361685"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80220106"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningar för Windows 10 (och senare) för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -898,6 +898,11 @@ De här inställningarna använder [CSP för Defender-princip](https://docs.micr
   [CSP för Defender/ThreatSeverityDefaultAction](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-threatseveritydefaultaction)
 
 ### <a name="microsoft-defender-antivirus-exclusions"></a>Microsoft Defender antivirusundantag
+
+Du kan undanta vissa filer från Microsoft Defender Antivirus-genomsökningar genom att ändra undantagslistorna. **Normalt behöver du inte tillämpa undantag**. Microsoft Defender Antivirus innehåller ett antal automatiska undantag baserat på kända OS-beteenden och vanliga hanteringsfiler, till exempel sådana som används vid företagshantering, databashantering och andra företagsscenarier och -situationer.
+
+> [!WARNING]
+> **Genom att definiera undantag sänker du skyddet som erbjuds av Microsoft Defender Antivirus**. Utvärdera alltid risker som är associerade med att genomdriva undantag. Undanta enbart filer som du vet inte är skadliga.
 
 - **Filer och mappar som ska undantas från genomsökningar och realtidsskydd**: Lägger till en eller flera filer och mappar som **C:\Sökväg** eller **%ProgramFiles%\Sökväg\filnamn.exe** i undantagslistan. Dessa filer och mappar tas inte med i realtidsgenomsökningar eller schemalagda genomsökningar.
 - **Filnamnstillägg som ska undantas från genomsökningar och realtidsskydd**: Lägg till ett eller flera filnamnstillägg som **jpg** eller **txt** i undantagslistan. Filer med dessa filnamnstillägg tas inte med i realtidsgenomsökningar eller schemalagda genomsökningar.

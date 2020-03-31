@@ -17,12 +17,12 @@ ms.reviewer: sumitp
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ec804aa200e35391c5b283d6e26ba87002e271f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 07aceda512163513632d124d3e17d1041069b229
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79359033"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085820"
 ---
 # <a name="use-the-troubleshooting-portal-to-help-users-at-your-company"></a>Använd felsökningsportalen för att hjälpa användare i ditt företag
 
@@ -65,7 +65,7 @@ Du kan använda fönstret **Felsökning** för att granska användarinformation.
 | ---  | ---  | ---         |
 | 1.   | Kontostatus  | Visar status för aktuell Intune-klient som **Aktiv** eller **Inaktiv**.       |
 | 2.   | Val av användare  | Namnet på den valda användaren. Välj en ny användare genom att klicka på **Ändra användare**.       |
-| 3.   | Användarstatus  | Visar status för användarens Intune-licens, antal enheter, varje enhetskompatibilitet, antalet appar och appkompatibilitet.       |
+| 3.   | Användarstatus  | Visar status för användarens Intune-licens, antal enheter och varje enhets efterlevnad.       |
 | 4.   | Användarinformation  | Använd listan för att välja information som du vill läsa i fönstret. <br>Du kan välja: <ul><li>Klientappar<li>Efterlevnadsprinciper<li> Konfigurationsprinciper<li>Appskyddsprinciper <li>Registreringsbegränsningar</ul>      |
 | 5.   | Gruppmedlemskap  | Visar de grupper som den valda användaren är medlem i.       |
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c30cc122931588149120efa10710627826c50e2c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 06d5e2163303b9766d41bcb0bd7581dc41bf6980
+ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79337973"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80219834"
 ---
 # <a name="find-the-primary-user-of-an-intune-device"></a>Hitta den primära användaren av en Intune-enhet
 
@@ -43,8 +43,11 @@ Den primära användaren av en enhet kan uppdateras för Windows 10-enheter som 
 3. Välj en ny användare och välj **Välj**.
 
 När den primära användaren har uppdaterats så uppdateras den även på Intune- och Azure AD-enhetsblad.
-
-Den primära användaren kan inte ändras på samhanterade Windows 10-enheter.
+>[!NOTE]
+>1. Det kan ta upp till 10 minuter innan uppdateringar av den primära användaren visas i Endpoint Manager och Azure AD.
+>2. Den primära användaren kan för närvarande inte ändras på samhanterade Windows 10-enheter. 
+>3. Ändring av enhetens primära användare medför inte att medlemskapet i lokala grupper ändras, som tillägg eller borttagning av användare från den lokala gruppen ”Administratörer”.
+>4. Om du ändrar den primära användaren ändras inte ”Registrerat av”-användaren. 
 
 
 ## <a name="what-is-the-primary-user"></a>Vad är en primär användare?

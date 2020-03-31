@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/19/2019
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 398737a89c302031cfbed87709d031077f90fb6a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: edc3bb23097a26753a9e54b0b520e6fc22be3a69
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354275"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80085202"
 ---
 # <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>Tvinga fram kompatibilitet för Microsoft Defender ATP med villkorlig åtkomst i Intune
 
@@ -100,7 +100,7 @@ Du behöver bara aktivera Defender ATP en gång per klientorganisation.
 > - Används av Intune MTD för att kräva att enheter registreras i Azure AD så att de har ett enhets-ID innan de kommunicerar med MTD-partners. ID:t krävs så att enheterna kan rapportera deras status till Intune.
 > - Har ingen påverkan på andra molnappar eller resurser.
 > - Är skilda från principer för villkorlig åtkomst som du kan skapa för att hantera MTD.
-> - Samverkar inte som standard med andra principer för villkorlig åtkomst som du använder för utvärdering.
+> - Samverkar inte som standard med andra principer för villkorsstyrd åtkomst som du använder för utvärdering.
 >
 > Du kan visa klassiska principer för villkorlig åtkomst genom att gå till **Azure Active Directory** > **Villkorlig åtkomst** > **Klassiska principer** i [Azure](https://portal.azure.com/#home).
 
@@ -136,14 +136,17 @@ När du upprättar anslutningen till Microsoft Defender ATP fick Intune ett konf
 
 Efterlevnadsprincipen bestämmer risknivån som du bedömer som lämplig för en enhet.
 
-### <a name="create-the-compliance-policy"></a>Skapa efterlevnadsprincipen
+Om du inte vet hur du skapar en efterlevnadsprincip, se proceduren [Skapa en princip](../protect/create-compliance-policy.md#create-the-policy) i artikeln *Skapa en efterlevnadsprincip i Microsoft Intune*. Följande information gäller konfigurering av Defender ATP som en del av en efterlevnadsprincip.
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Välj **Enheter** > **Efterlevnadsprinciper** > **Skapa princip**.
-3. Ange ett **Namn** och en **Beskrivning**.
-4. I **Plattform** väljer du **Windows 10 och senare**.
-5. Under **Inställningar** väljer du **Windows Defender ATP**.
-6. Ange **Kräv att enheten ska hållas vid eller under riskpoängen** till önskad nivå.
+
+2. Välj **Enheter** > **Efterlevnadsprinciper** > **Principer** > **Skapa princip**.
+
+3. För **Plattform** väljer du *Windows 10 och senare* och väljer sedan **Skapa** för att öppna konfigurationsfönstret **Skapa princip**.
+
+4. Ange ett **Namn** på fliken **Grundläggande information** som sedan kan hjälpa dig att identifiera detta. Du kan också välja att ange en **Beskrivning**.
+  
+5. På fliken **Efterlevnadsinställningar** utökar du gruppen **Microsoft Defender ATP** och anger **Kräv att enheten ska hållas vid eller under riskpoängen** till önskad nivå.
 
    Klassificeringar för hotnivå [bestäms av Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/alerts-queue).
 
@@ -152,8 +155,7 @@ Efterlevnadsprincipen bestämmer risknivån som du bedömer som lämplig för en
    - **Medel**: Enheten följer standard om hoten som hittas på enheten är låga eller medelhöga. Om hot på en högre nivå identifieras på enheten får den statusen icke-kompatibel.
    - **Hög**: Den här nivån är den minst säkra och tillåter alla hotnivåer. Så enheter med höga, medel eller låga risknivåer anses uppfylla kraven.
 
-7. Välj **OK** och **Skapa** för att spara ändringarna (och skapar profilen).
-8. [Tilldela enhetens efterlevnadsprincip](create-compliance-policy.md#assign-the-policy) till tillämpliga grupper.
+6. Slutför konfigurationen av principen, inklusive tilldelning av principen till tillämpliga grupper.
 
 ## <a name="create-a-conditional-access-policy"></a>Skapa en princip för villkorlig åtkomst
 

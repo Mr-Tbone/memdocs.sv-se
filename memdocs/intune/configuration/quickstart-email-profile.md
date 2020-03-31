@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/20/2020
 ms.topic: quickstart
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a6345afe4258ff7141228a7284932f083791c70
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 6bc170c5260dc099d0a2b4109ed119572e0dbaff
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361490"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086864"
 ---
 # <a name="quickstart-create-an-email-device-profile-for-iosipados"></a>Snabbstart: Skapa en e-postenhetsprofil för iOS/iPadOS
 
@@ -37,39 +37,47 @@ Logga in till [administrationscentret för Microsoft Endpoint Manager](https://g
 
 ## <a name="create-an-iosipados-email-profile"></a>Skapa en e-postprofil för iOS/iPadOS
 
-1. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
+2. Välj och gå till **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
    ![Skapa en e-postprofil för iOS/iPadOS i Intune](./media/quickstart-email-profile/ios-create-profile.png)
 
-2. Under **Namn** anger du ett beskrivande namn på den nya profilen. I det här exemplet anger du **iOS måste använda e-postadress**.
-3. Ange följande profilinformation:
-    - För **Beskrivning** anger du **iOS/iPadOS-enheter måste använda e-postadress**.
-    - Välj **iOS/iPadOS** som **Plattform**.
-    - För **Profiltyp** väljer du **e-post**.
+3. Ange följande egenskaper:
+   - **Plattform**: Välj **iOS/iPadOS**
+   - **Profil**: Välj **E-post**
+  
+4. Välj **Skapa**.
+
+5. Ange följande egenskaper i **Grundinställningar**:
+   - **Namn**: Ange ett beskrivande namn på den nya profilen. I det här exemplet anger du **iOS måste använda e-postadress**.
+   - **Beskrivning**: Ange **iOS/iPadOS-enheter måste använda e-postadressen för arbetet**
+
 
         ![Skapa en e-postprofil för användning med iOS/iPadOS-enheter i Intune](./media/quickstart-email-profile/ios-email-profile-name.png)
 
-4. Välj **inställningar** och ange följande inställningar (lämna standardinställningarna för alla andra inställningar):
+6. Välj **Nästa**.
+
+7. Välj **Konfigurationsinställningar** och ange följande inställningar (lämna standardinställningarna för alla andra inställningar):
    - **E-postserver**: I den här snabbstarten använder vi **outlook.office365.com**. Den här inställningen anger Exchange-platsen (URL) för e-postservern som iOS/iPadOS-e-postappen använder för att ansluta till e-post.
    - **Kontonamn**: Ange **Företagets e-postadress**.
    - **Användarnamnattribut från AAD**: Namnet är det attribut som Intune hämtar från Azure Active Directory (Azure AD). Intune genererar användarnamnet som används av den här profilen. I den här snabbstartsguiden kommer vi att anta att **User Principal Name** ska användas som användarnamn för profilen (till exempel user1@contoso.com).
    - **E-postadressattribut från AAD**: Den här inställningen är e-postadressen från Azure AD som används för att logga in på Exchange. I den här snabbstarten använder vi **User Principal Name**.
    - **Autentiseringsmetod**: I den här snabbstarten väljer vi **användarnamn och lösenord**. (Du kan också välja **Certifikat** om du redan har konfigurerat ett certifikat för Intune.)
 
-        ![Skapa en e-postprofil för iOS/iPadOS](./media/quickstart-email-profile/ios-email-profile.png)
+8. Välj **Nästa**.
 
-5. Välj **OK** > **Skapa**. Den nya profilen visas i profillistan med instrumentpanelen öppen så att du kan övervaka hur profilen har tilldelats till iOS/iPadOS-enheter och iOS/iPadOS-användare.
-6. Välj **Tilldelningar**.
-7. Välj fliken **inkludera** och välj sedan **Alla användare och Alla enheter**. 
-8. Välj **Spara**.
+9. För **Omfångstaggar** (valfritt) väljer du **Nästa**. Vi använder inte en omfångstagg för den här profilen.
+
+10. I **Tilldelningar**använder du listrutan för **Tilldela till** och väljer **Alla användare och alla enheter**.  Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. 
 
 ## <a name="clean-up-resources"></a>Rensa resurser
 
 Om du inte planerar att använda profilen du skapade för fler självstudier eller test bör du ta bort den nu.
 
-1. I Intune väljer du **Enhetskonfiguration** och sedan **Profiler**.
-2. Välj testprofilen som du skapade **iOS/iPadOS måste använda e-postadress**.
-3. Välj ellipserna ( **...** ) intill profilen och välj sedan **Ta bort**.
+1. I Intune väljer du**Enheter** > **Enhetskonfiguration**.
+2. Välj testprofilen som du skapade, **iOS/iPadOS-enheter måste använda e-postadressen för arbetet**, och välj sedan **Ta bort**. 
 
 ## <a name="next-steps"></a>Nästa steg
 

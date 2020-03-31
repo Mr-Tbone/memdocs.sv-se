@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/18/2019
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3724e425ab284d63dbe1e64dcd236509744abe10
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 50d32a76e638d88adc7a72d103c84e73544079cb
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352351"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80084896"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Använda härledda autentiseringsuppgifter i Microsoft Intune
 
@@ -106,7 +106,7 @@ Nedan visas viktiga överväganden för varje partner som stöds.  Bekanta dig m
 
 #### <a name="disa-purebred"></a>DISA Purebred
 
-Granska [användararbetsflödet för DISA Purebred](https://docs.microsoft.com/user-help/enroll-ios-device-disa-purebred). Viktiga krav för det här arbetsflödet är:
+Granska [användararbetsflödet för DISA Purebred](https://docs.microsoft.com/mem/intune/user-help/enroll-ios-device-disa-purebred). Viktiga krav för det här arbetsflödet är:
 
 - Användare behöver åtkomst till en dator eller KIOSK där de kan använda sina smartkort för att autentisera till utfärdaren.
 
@@ -122,7 +122,7 @@ Information om hur du hämtar och konfigurerar DISA Purebred-appen finns i [Dist
 
 #### <a name="entrust-datacard"></a>Entrust Datacard
 
-Granska [användararbetsflödet för Entrust Datacard](https://docs.microsoft.com/user-help/enroll-ios-device-entrust-datacard). Viktiga krav för det här arbetsflödet är:
+Granska [användararbetsflödet för Entrust Datacard](https://docs.microsoft.com/mem/intune/user-help/enroll-ios-device-entrust-datacard). Viktiga krav för det här arbetsflödet är:
 
 - Användare behöver åtkomst till en dator eller KIOSK där de kan använda sina smartkort för att autentisera till utfärdaren.
 
@@ -132,7 +132,7 @@ Granska [användararbetsflödet för Entrust Datacard](https://docs.microsoft.co
 
 #### <a name="intercede"></a>Intercede
 
-Granska [användararbetsflödet för Intercede](https://docs.microsoft.com/user-help/enroll-ios-device-intercede). Viktiga krav för det här arbetsflödet är:
+Granska [användararbetsflödet för Intercede](https://docs.microsoft.com/mem/intune/user-help/enroll-ios-device-intercede). Viktiga krav för det här arbetsflödet är:
 
 - Användare behöver åtkomst till en dator eller KIOSK där de kan använda sina smartkort för att autentisera till utfärdaren.
 
@@ -221,17 +221,34 @@ Du kan ange **Härledd autentiseringsuppgift** för följande profiltyper och sy
 Använd härledda autentiseringsuppgifter för certifikatbaserad autentisering till webbplatser och program. Så här använder du en härledd autentiseringsuppgift för appautentisering:
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
-3. Ange följande inställningar:
 
-    - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är till exempel **Härledd autentiseringsuppgift för iOS/iPadOS-enhetsprofil**.
-    - **Beskrivning**: Ange en beskrivning som ger en översikt över inställningen, samt annan viktig information.
-    - **Plattform**: Välj **iOS/iPadOS**.
-    - **Profiltyp**: Välj **Härledd autentiseringsuppgift**.
+3. Ange följande egenskaper:
+   - **Plattform**: Välj plattform för de enheter som ska få den här profilen.
+   - **Profil**: Välj **Härledd autentiseringsuppgift**
 
-4. Klicka på **OK** för att spara ändringarna.
-5. När du är klar väljer du **OK** > **Skapa** för att skapa Intune-profilen. När du är klar visas din profil i listan **Enhetskonfiguration – profiler**.
-6. Välj din nya profil > **Tilldelningar**. Välj de grupper som ska ta emot principen.
+4. Välj **Skapa**.
+
+5. Ange följande egenskaper i **Grundinställningar**:
+
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är till exempel **Härledd autentiseringsuppgift för iOS/iPadOS-enhetsprofil**.
+   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
+
+6. Välj **Nästa**.
+
+7. I **Konfigurationsinställningar** ställer du in **Använd en härledd autentiseringsuppgift för appautentisering** på **Ja** och väljer sedan **Nästa**.
+
+8. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+   Välj **Nästa**.
+
+9. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+10. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
  
 Användare får appen eller e-postaviseringen beroende på vilka inställningar du angav när du konfigurerade utfärdaren av härledda autentiseringsuppgifter. Meddelandet uppmanar användaren att starta Företagsportalen så att de härledda autentiseringsuppgifterna kan bearbetas.
 

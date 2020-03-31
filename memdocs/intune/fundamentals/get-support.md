@@ -6,24 +6,24 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/22/2019
+ms.date: 03/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 7fc95d17-098e-4da5-8a09-a96476569dd9
-ms.reviewer: srik
+ms.reviewer: crisk
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b746317ef15065af246cfd977f6e9d745ef4dea7
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: cf732907b9123dfe8cbd72970556ecfbb5380733
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79362686"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086028"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Ta reda på hur du kan få support för Microsoft Intune
 
@@ -35,7 +35,6 @@ Som Intune-administratör kan du använda alternativet **Hjälp och support** f�
 > Om du behöver teknisk support för produkter från tredje part som används med Intune (till exempel Saaswedo, Cisco eller Lookout) ska du först kontakta leverantören av produkten. Kontrollera att du har konfigurerat den andra produkten korrekt innan du öppnar ett ärende hos Intune-supporten.
 >
 > Information om hur du felsöker problem relaterade till Microsoft Intune finns i [felsökningsavsnittet](help-desk-operators.md) i Intune-dokumentationen.
-
 
 ## <a name="help-and-support-experience"></a>Nytt gränssnitt för hjälp och support
 
@@ -52,10 +51,9 @@ När du använder en nyligen skapad klient för Intune kan det hända att *Hjäl
 
 - *Ett okänt fel har inträffat. Uppdatera sidan. Om problemet kvarstår skapar du ett ärende genom [administrationscentret för M365](https://admin.microsoft.com) och hänvisar till det sessions-ID som ges.*
 
-Felinformationen innehåller ett *sessions-ID*, information om *tillägg* med mera. 
- 
-Det här problemet uppstår när du ännu inte har autentiserat ditt nya klientkonto via antingen **administrationscentret för M365** på https://admin.microsoft.com eller **Office 365-portalen** på https://portal.office.com. Lös problemet genom att välja länken för *administrationscentret för M365* i meddelandet eller gå till https://portal.office.com och logga in. Efter autentisering på någon av platserna blir *Hjälp och support* för Intune tillgängligt.
+Felinformationen innehåller ett *sessions-ID*, information om *tillägg* med mera.
 
+Det här problemet uppstår när du inte har autentiserat ditt nya klientkonto via antingen **administrationscentret för M365** på https://admin.microsoft.com eller **Office 365-portalen** på https://portal.office.com. Lös problemet genom att välja länken för *administrationscentret för M365* i meddelandet eller gå till https://portal.office.com och logga in. Efter autentisering på någon av platserna blir *Hjälp och support* för Intune tillgängligt.
 
 **Åtkomst till Hjälp och support**:
 
@@ -64,21 +62,31 @@ Det här problemet uppstår när du ännu inte har autentiserat ditt nya klientk
   - Välj **Hjälp och support** på valfritt blad eller valfri sida för Intune.
 
   > [!NOTE]  
-  > Om din Intune-instans värdhanteras i det privata molnet för myndigheter (ett nationellt moln som t.ex. Azure Government), kan du läsa om [Intune-stöd för privat moln för myndigheter](#intune-support-for-private-cloud-for-government) senare i den här artikeln. Upplevelsen *Hjälp och support* i Intune blir inte tillgänglig i det privata molnet för myndigheter förrän nästa år.
+  > Om din Intune-instans värdhanteras i det privata molnet för myndigheter (ett nationellt moln som t.ex. Azure Government), kan du läsa om [Intune-stöd för privat moln för myndigheter](#intune-support-for-private-cloud-for-government) senare i den här artikeln. Funktionen *Hjälp och support* i Intune blir inte tillgänglig i det privata molnet för myndigheter förrän nästa år.
 
 - **I administrationscentret för Microsoft Endpoint Manager**
-  - När du har valt ett funktionsområde för Intune väljer du alternativet för **Hjälp och support**.
-  - Från valfri nod i administrationscentret för Microsoft Endpoint Manager väljer du **?** - ikonen i det övre högra hörnet i portalen och använder sedan listrutan för att välja den tjänst du vill ha hjälp med. **?** - ikonen i administrationscentret för Microsoft Endpoint Manager stöder flera tjänster och du måste välja den specifika tjänst du vill ha hjälp med.  
 
-    ![Välj din tjänst](./media/get-support/select-a-service.png)
+  - Från valfri nod i administrationscentret för Microsoft Endpoint Manager väljer du **?** - ikonen i det övre högra hörnet i portalen och använder sedan listrutan för att välja den hanteringstyp som du vill ha hjälp med. Administrationscentret för Microsoft Endpoint Manager stöder följande hanteringstyper och du måste välja den som du vill ha hjälp med, som Intune:
 
-    När du har valt en tjänst visas sidan *Hjälp och support* för tjänsten. Där kan du ange information om det specifika problem som du vill [hitta lösningar](#find-solutions) för.
+    - Configuration Manager (inkluderar Desktop Analytics)
+    - Intune
+    - Samhantering  
 
-    Om resultaten för sökningen inte verkar matcha förväntningarna för tjänsten, kontrollerar du att rätt tjänst har valts. Den valda tjänsten visas precis efter *Hjälp och support*.  Om den rätta tjänsten inte har valts klickar du på *Välj en tjänst* för att återgå till listrutan för val av tjänst.
+    > [!div class="mx-imgBorder"]
+    > ![Välj hanteringstyp](./media/get-support/select-management-type.png)
 
-    ![Bekräfta tjänsten](./media/get-support/confirm-your-service-selection.png)
+    När du har valt en hanteringstyp visas sidan *Hjälp och support* där du kan ange information för att [hitta lösningar](#find-solutions) på ett specifikt problem. Informationen filtreras baserat på vilken typ av hantering som du väljer.
 
-###  <a name="the-support-experience"></a>Supportupplevelsen
+     Om rätt hanteringstyp inte har valts **(1)** klickar du på *Välj typ av hantering* **(2)** för att återgå till listrutan för val av hanteringstyp:
+
+    > [!div class="mx-imgBorder"]
+    > ![Bekräfta din hanteringstyp](./media/get-support/confirm-management-selection.png)
+
+  - Om du öppnar Hjälp och support från **Felsökning + support** > **Hjälp och support**, ser du inte den hanteringstyp som du valde i listan under *Hjälp och support*.
+
+  - Om du ökar detaljnivån i en annan nod som *Enheter*, *Appar*eller *Användare* och sedan väljer *Hjälp och support*, kan du inte välja en hanteringstyp och typen visas inte neller under *Hjälp och support*. I detta fall antas *Intune*. Om du inte vill att kontexten ska vara Intune, använder du **?** så att du kan välja en annan hanteringstyp.
+
+### <a name="the-support-experience"></a>Supportupplevelsen
 
   När du öppnar Hjälp och support visar portalen fönstret **Behöver du hjälp?** :
 
@@ -144,8 +152,7 @@ Om du väljer allvarlighetsgrad **A** eller **Kritiskt**, blir ärendet ett tele
 Du kan inte längre använda Azure-funktionen *Hjälp och support* för att få hjälp med Intune, såvida inte din prenumeration finns i ett privat moln för myndigheter.
 Om din instans av Intune inte körs i ett privat moln för myndigheter och du navigerar genom Azure *Hjälp + support* omdirigeras du till Intune-upplevelsen *Hjälp och support* för att skapa och hantera supportärenden:
 
-När du använder det vänstra navigeringsfönstret **Hjälp + support**, eller använder **?** - för att öppna fönstret *Hjälp* och sedan väljer **Hjälp + support**, öppnas Azure-sidan *Hjälp + support*. 
-
+När du använder det vänstra navigeringsfönstret **Hjälp + support**, eller använder **?** - för att öppna fönstret *Hjälp* och sedan väljer **Hjälp + support**, öppnas Azure-sidan *Hjälp + support*.
 
 På den här sidan väljer du **+ Ny supportbegäran** för att öppna fliken *Grundläggande* på sidan *Hjälp + support + Ny support förfrågan*.
 
@@ -160,7 +167,6 @@ På den här sidan:
   
   ![Ny supportbegäran](./media/get-support/new-request.png)
 
-
 ## <a name="intune-support-for-private-cloud-for-government"></a>Intune-stöd för privat moln för myndigheter
 
 När din Intune-prenumeration värdhanteras i det privata molnet för myndigheter (ett nationellt moln som t.ex. Azure Government), har du ännu inte åtkomst till den nyare Intune-funktionen Hjälp och support.  Använd istället följande information för att få support för Intune.
@@ -170,9 +176,9 @@ När din Intune-prenumeration värdhanteras i det privata molnet för myndighete
 >[!IMPORTANT]
 > När *Hjälp och support* flyttas till ett nytt system som ännu inte är tillgängligt för det privata molnet för myndigheter gäller att när du skapar ett supportärende så identifierar portalen ett supportärende som använder ett 15-siffrigt ID-nummer. När det 15-siffriga ärendet skapas en spegling av ärendet skapas för användning av Microsoft Support. Det här spegelärendet skapas i ett nytt supportsystem, använder ett 8-siffrigt ärende-ID och används av supporttjänster för att spåra allt arbete och kommunikation för ditt supportärende. Kort efter att det 15-siffriga ärendet har skapats får du ett e-postmeddelande som identifierar det 8-siffriga numret för det speglade supportärendet som används av supporttjänster.
 >
-> Ge support för personligt arbete och kommunicera från det 8-siffriga supportärendet och använd bara det 8-siffriga supportärendet till att logga kommunikation och spåra ärendeförloppet. Därför får du e-postuppdateringar från det 8-siffriga supportärendet som fungerar som ärendets register. Ingen information loggas i det 15-siffriga supportärendet. När supporten avslutas och det 8-siffriga supportärendet stängs speglas den statusen av det 15 siffriga supportärendet som du kan se via Azure Portal.  Inga andra uppdateringar eller statusändringar ska förväntas för det 15-siffriga supportärendet.
+> Ge support för personligt arbete och kommunicera från det 8-siffriga supportärendet och använd bara det 8-siffriga supportärendet till att logga kommunikation och spåra ärendeförloppet. Därför får du e-postuppdateringar från det 8-siffriga supportärendet som fungerar som spårningsunderlag för ditt ärende. Ingen information loggas i det 15-siffriga supportärendet. När supporten avslutas och det 8-siffriga supportärendet stängs speglas den statusen av det 15 siffriga supportärendet som du kan se via Azure Portal.  Inga andra uppdateringar eller statusändringar ska förväntas för det 15-siffriga supportärendet.
 >
-> När flytten mellan supportverktyg slutförs senare i år kommer supportgränssnittet med Intune som värd i molnet för myndigheter att likna det standardinställda *Hjälp och support*-gränssnittet som för närvarande är tillgängligt för Intune-prenumerationer som finns i det offentligt molnet.
+> När flytten mellan supportverktyg slutförs senare i år, kommer supportgränssnittet med Intune som värd i molnet för myndigheter att likna det standardinställda *Hjälp och support*-gränssnitt som för närvarande är tillgängligt för Intune-prenumerationer som finns i det offentligt molnet.
 
 1. Logga in på Azure Portal (<https://portal.azure.us>) med dina administratörsautentiseringsuppgifter för Intune och välj **?** i det övre högra hörnet i portalen. Välj sedan **Hjälp + support** för att gå till sidan [Azure Hjälp + support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 

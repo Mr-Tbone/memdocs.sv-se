@@ -1,12 +1,11 @@
 ---
-title: Per-app-anpassad VPN-profil för Android
-titleSuffix: Microsoft Intune
-description: Du kan skapa en VPN-profil per app för Android-enheter som hanteras av Microsoft Intune.
+title: Per-app-anpassad VPN-profil för Android i Microsoft Intune – Azure | Microsoft Docs
+description: Läs mer om att skapa en VPN-profil per app för Android-enhetsadministratörers enheter som hanteras av Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 03/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fbcf60d3707097a323a05bf36d2cfe3902d5214
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: d58ab666929e1e28cab4e19f2e2cec668f428452
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79340014"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083874"
 ---
 # <a name="use-a-microsoft-intune-custom-profile-to-create-a-per-app-vpn-profile-for-android-devices"></a>Använd en anpassad Microsoft Intune-profil för att skapa en VPN-profil per app för Android-enheter
 
@@ -32,7 +31,7 @@ Du kan skapa en VPN-profil per app för enheter som kör Android 5.0 och senare 
 > [!NOTE]
 > Om du vill använda VPN per app på Android Enterprise-enheter kan du också använda de här stegen. Men vi rekommenderar att du använder en [konfigurationsprincip för appar](../apps/app-configuration-policies-use-android.md) för VPN-klientprogramvaran.
 
-När du har tilldelat principen till din Android-enhet eller till användargrupper måste användarna starta Pulse Secure- eller Citrix VPN-klienten. VPN-klienten tillåter då endast trafik från de angivna apparna att använda den öppna VPN-anslutningen.
+När du har tilldelat principen till din Android-enhet eller till användargrupper måste användarna starta Pulse Secure- eller Citrix VPN-klienten. Därefter tillåter VPN-klienten endast trafik från de angivna apparna att använda den öppna VPN-anslutningen.
 
 > [!NOTE]
 >
@@ -44,14 +43,23 @@ När du har tilldelat principen till din Android-enhet eller till användargrupp
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
-    - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett exempel på ett bra profilnamn är **Android per-app VPN profile for entire company** (VPN-profil per Android-app för hela företaget).
+    - **Plattform**: Välj **Android-enhetsadministratör**.
+    - **Profil**: Välj **VPN**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
+    - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett exempel på ett bra profilnamn är t.ex. **Android device administrator per-app VPN profile for entire company** (VPN-profil per app för Android-enhetsadministratör för hela företaget).
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Android**.
-    - **Profiltyp**: Välj **VPN**.
 
-4. Välj **Inställningar** > **Konfigurera**. Konfigurera sedan VPN-profilen. Mer information finns i [Konfigurera VPN-inställningar](vpn-settings-configure.md) och [Intune VPN-inställningar för Android-enheter](vpn-settings-android.md).
+6. Välj **Nästa**.
+7. I **Konfigurationsinställningar**konfigurerar du de inställningar som du vill använda i profilen:
 
-Notera **anslutningens namn** , det vill säga det värde som du anger när du skapar VPN-profilen. Detta krävs i nästa steg. Till exempel **MyAppVpnProfile**.
+    - [VPN-inställningar för Android-enhetsadministratörs enheter](vpn-settings-android.md).
+
+    Notera **anslutningens namn** , det vill säga det värde som du anger när du skapar VPN-profilen. Detta namn krävs i nästa steg. I det här exemplet är anslutningsnamnet **MyAppVpnProfile**.
+
+8. Välj **Nästa** och fortsätt att skapa din profil. Mer information finns i [Skapa en VPN-profil](vpn-settings-configure.md#create-the-profile).
 
 ## <a name="step-2-create-a-custom-configuration-policy"></a>Steg 2: Skapa en anpassad konfigurationsprincip
 
@@ -61,7 +69,7 @@ Notera **anslutningens namn** , det vill säga det värde som du anger när du s
 
     - **Namn**: Ange ett beskrivande namn för den anpassade profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett exempel på ett bra profilnamn är **Custom OMA-URI Android VPN profile for entire company** (Anpassad OMA-URI VPN-profil för Android för hela företaget).
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Android**.
+    - **Plattform**: Välj **Android-enhetsadministratör**.
     - **Profiltyp**: Välj **Anpassad**.
 
 4. Välj **Inställningar** > **Konfigurera**.
@@ -72,7 +80,8 @@ Notera **anslutningens namn** , det vill säga det värde som du anger när du s
     - **Datatyp**: Ange **String**.
     - **Värde**: Ange en semikolonavgränsad lista med paket som ska associeras med profilen. Om du till exempel vill att Excel och webbläsaren Google Chrome ska använda VPN-anslutningen anger du `com.microsoft.office.excel;com.android.chrome`.
 
-![Exempel på VPN-anpassad princip per app för Android](./media/android-pulse-secure-per-app-vpn/android_per_app_vpn_oma_uri.png)
+    > [!div class="mx-imgBorder"]
+    >![Exempel på anpassad princip för VPN per app för Android-enhetsadministratör](./media/android-pulse-secure-per-app-vpn/android_per_app_vpn_oma_uri.png)
 
 ### <a name="set-your-app-list-to-blacklist-or-whitelist-optional"></a>Ange applistan som svartlistad eller vitlistad (valfritt)
 
@@ -87,3 +96,8 @@ Du kan ange en lista över appar som *inte* kan använda VPN-anslutningen med hj
 ## <a name="step-3-assign-both-policies"></a>Steg 3: Tilldela båda principerna
 
 [Tilldela båda enhetsprofilerna](device-profile-assign.md) till nödvändiga användare eller enheter.
+
+## <a name="next-steps"></a>Nästa steg
+
+- En lista över alla VPN-inställningar för Android-enhetsadministratörer finns i [Inställningar för Android-enhet för att konfigurera VPN](vpn-settings-android.md).
+- I dokumentationen om hur du [konfigurerar VPN-inställningar i Microsoft Intune](vpn-settings-configure.md) hittar du mer information om VPN-inställningar och Intune.

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4354d4b5aeb0957790d469a2a3fd5c6787aa93eb
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 367a632b082ad5d58221f33ca9a191fb229f8f66
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363778"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086338"
 ---
 # <a name="microsoft-intune-app-sdk-for-android-developer-guide"></a>Utvecklarhandbok för Microsoft Intune App SDK för Android
 
@@ -297,7 +297,7 @@ Förutom basklasserna har vissa klasser som din app kanske använder utan härle
 | android.preference.PreferenceActivity | MAMPreferenceActivity |
 | android.support.multidex.MultiDexApplication | MAMMultiDexApplication |
 | android.widget.TextView | MAMTextView |
-| android.widget.AutoCompleteTextView | MAMAutoCompleteTextView |
+| android.widget.AutoCompleteTextView |    MAMAutoCompleteTextView |
 | android.widget.CheckedTextView | MAMCheckedTextView |
 | android.widget.EditText | MAMEditText |
 | android.inputmethodservice.ExtractEditText | MAMExtractEditText |
@@ -324,7 +324,7 @@ Förutom basklasserna har vissa klasser som din app kanske använder utan härle
 |--|--|
 | android.support.v7.app.AlertDialog.Builder | MAMAlertDialogBuilder |
 | android.support.v7.app.AppCompatActivity | MAMAppCompatActivity |
-| android.support.v7.widget.AppCompatAutoCompleteTextView | MAMAppCompatAutoCompleteTextView |
+| android.support.v7.widget.AppCompatAutoCompleteTextView |    MAMAppCompatAutoCompleteTextView |
 | android.support.v7.widget.AppCompatCheckedTextView | MAMAppCompatCheckedTextView |
 | android.support.v7.widget.AppCompatEditText | MAMAppCompatEditText |
 | android.support.v7.widget.AppCompatMultiAutoCompleteTextView | MAMAppCompatMultiAutoCompleteTextView |
@@ -1079,7 +1079,7 @@ Metoden `getComplianceStatus()` returnerar resultatet av försöket till efterle
 | PENDING | Försöket till efterlevnadsåtgärd misslyckades eftersom statussvaret inte ännu hade tagits emot från tjänsten när tidsgränsen nåddes. Appen bör försöka sitt tokenförvärv igen senare. |
 | COMPANY_PORTAL_REQUIRED | Företagsportalen måste installeras på enheten för att efterlevnadsåtgärden ska lyckas.  Om företagsportalen redan är installerad på enheten behöver appen startas om.  I det här fallet visas en dialogruta där användaren uppmanas att starta om appen. |
 
-Om efterlevnadsstatusen är `MAMCAComplianceStatus.COMPLIANT` bör appen återinitiera sitt ursprungliga tokenförvärv (för dess egen resurs). Om försöket till efterlevnadsåtgärd misslyckades returnerar metoderna `getComplianceErrorTitle()` och `getComplianceErrorMessage()` lokaliserade strängar som appen kan visa för slutanvändaren om den väljer att göra det.  De flesta fall av fel kan inte åtgärdas av appen. För det allmänna fallet kan det därför vara bäst att misslyckas med kontoskapandet och låt användaren försöka igen senare.  Om ett fel är beständigt kan MAM-loggarna vara till hjälp för att ta reda på orsaken.  Slutanvändaren kan skicka loggarna med hjälp av de anvisningar som finns [här](https://docs.microsoft.com/user-help/send-logs-to-your-it-admin-by-email-android "Skicka loggar till företagets support via e-post").
+Om efterlevnadsstatusen är `MAMCAComplianceStatus.COMPLIANT` bör appen återinitiera sitt ursprungliga tokenförvärv (för dess egen resurs). Om försöket till efterlevnadsåtgärd misslyckades returnerar metoderna `getComplianceErrorTitle()` och `getComplianceErrorMessage()` lokaliserade strängar som appen kan visa för slutanvändaren om den väljer att göra det.  De flesta fall av fel kan inte åtgärdas av appen. För det allmänna fallet kan det därför vara bäst att misslyckas med kontoskapandet och låt användaren försöka igen senare.  Om ett fel är beständigt kan MAM-loggarna vara till hjälp för att ta reda på orsaken.  Slutanvändaren kan skicka loggarna med hjälp av de anvisningar som finns [här](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-by-email-android "Skicka loggar till företagets support via e-post").
 
 Eftersom `MAMComplianceNotification` utökar `MAMUserNotification` är identiteten för den användare som åtgärden försöktes för också tillgänglig.
 
@@ -1457,12 +1457,12 @@ public final class MAMFileProtectionManager {
     * this method will silently do nothing.
     *
     * @param identity
-    *       Identity to set.
+    *         Identity to set.
     * @param file
-    *       File to protect.
+    *         File to protect.
     *
     * @throws IOException
-    *       If the file cannot be protected.
+    *         If the file cannot be protected.
     */
    public static void protect(final File file, final String identity) throws IOException;
 
@@ -1864,7 +1864,7 @@ Intune SDK använder kontraktet som tillhandahålls av Android-API:et, även om 
 Intune App SDK för Android styr inte insamling av data från din app. Företagsportalprogrammet loggar systemgenererade data som standard. Dessa data skickas till Microsoft Intune. Enligt Microsofts policy samlar vi inte in några personliga data.
 
 > [!NOTE]
-> Om användare väljer att inte skicka dessa data så måste de inaktivera telemetri under inställningarna i företagsportalappen. Du kan läsa mer i [Inaktivera Microsofts insamling av användningsdata](https://docs.microsoft.com/user-help/turn-off-microsoft-usage-data-collection-android). 
+> Om användare väljer att inte skicka dessa data så måste de inaktivera telemetri under inställningarna i företagsportalappen. Du kan läsa mer i [Inaktivera Microsofts insamling av användningsdata](https://docs.microsoft.com/mem/intune/user-help/turn-off-microsoft-usage-data-collection-android). 
 
 ## <a name="recommended-android-best-practices"></a>Rekommenderade metoder för Android
 

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 03/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d3fbfa5ebd8e9ba54d5725cd650cba9c31b3537
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 9b8ffa656aa468b50569518aaff503fec1d21027
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79360294"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80086245"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune-informationslagersamlingar
 
@@ -222,6 +222,7 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | DeviceRegistrationState    | Nyckeln för attributet klientregistreringstillstånd för den här enheten.                                                                                                                      |
 | OwnerTypeKey               | Nyckeln för attributet ägartyp för den här enheten: företag, privat eller okänd.                                                                                                    |
 | EnrolledDateTime           | Datum och tid då enheten registrerades.                                                                                                                                         |
+| EthernetMacAddress           | Den unika nätverksidentifieraren för den här enheten.                                                                                                                                        |
 | LastSyncDateTime           | Senast kända incheckning på Intune.                                                                                                                                              |
 | ManagementAgentKey         | Nyckeln för den hanteringsagent som är kopplad till den här enheten.                                                                                                                             |
 | ManagementStateKey         | Nyckeln för det hanteringstillstånd som är kopplat till enheten och som visar det senaste tillståndet för en fjärråtgärd eller om den har brutits upp/rotats.                                                |
@@ -243,13 +244,16 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | MEID                       | MEID                                                                                                                                                                                   |
 | isSupervised               | Status för övervakad enhet                                                                                                                                                               |
 | FreeStorageSpaceInBytes    | Ledigt lagringsutrymme i byte.                                                                                                                                                                 |
-| TotalStorageSpaceInBytes   | Totalt lagringsutrymme i byte.                                                                                                                                                                |
+| TotalStorageSpaceInBytes   | Total lagringskapacitet i bytes.                                                                                                                                                                |
 | EncryptionState            | Krypteringstillstånd på enheten.                                                                                                                                                      |
 | SubscriberCarrier          | Abonnentens operatör på enheten                                                                                                                                                       |
 | PhoneNumber                | Enhetens telefonnummer                                                                                                                                                             |
 | IMEI                       | IMEI                                                                                                                                                                                   |
 | CellularTechnology         | Enhetens mobilteknik                                                                                                                                                    |
 | WiFiMacAddress             | Wi-Fi MAC                                                                                                                                                                              |
+| Modell                      | Enhetsmodellen.                                                                                                                                                                      |
+| Office365Version           | Den version av Office 365 som är installerad på enheten.                                                                                                                             |
+| PhysicalMemoryInBytes      | Fysiskt minne i bytes.                                                                                                                                                          |
 
 
 ## <a name="devicetypes"></a>deviceTypes

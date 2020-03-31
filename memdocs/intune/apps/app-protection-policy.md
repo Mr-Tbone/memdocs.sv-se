@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/06/2020
+ms.date: 03/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f12ea7e320e3334d1925c8ab04905cd84ed56c82
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: c57a201d71d3a8278499636c6ca794b437e11e9a
+ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79341665"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80083811"
 ---
 # <a name="app-protection-policies-overview"></a>Översikt över principer för appskydd
 
@@ -205,6 +205,9 @@ För ett exempel på ”privat” kontext, anta att en användare som startar et
 Anta som ett exempel på ett arbets- eller ”företagskontext” att en användare startar appen OneDrive med sitt arbetskonto. De kan inte flytta filerna till en personlig lagringsplats i ett arbetskontext. Om användaren senare använder OneDrive med ett personligt konto kan hen kopiera och flytta data från sin personliga OneDrive utan begränsningar.
 
 Outlook har en kombinerad e-postvy med såväl ”personlig” som ”företags-e-post”. I det här fallet begär Outlook-appen Intune-PIN-koden vid start.
+
+  >[!NOTE]
+  > Även om Edge är i kontexten ”företag” kan användaren avsiktligt flytta OneDrive-kontextfiler för ”företag” till en okänd personlig molnlagringsplats. För att undvika detta, se [Ange listor över tillåtna eller blockerade platser för Microsoft Edge](../apps/manage-microsoft-edge.md#specify-allowed-or-blocked-sites-list-for-microsoft-edge) och konfigurera listan över tillåtna/blockerade webbplatser för Edge.
 
 Mer information om flera identiteter i Intune finns i [MAM och flera identiteter](apps-supported-intune-apps.md).
 
