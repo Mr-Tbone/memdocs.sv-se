@@ -130,7 +130,7 @@ Det här avsnittet innehåller de här stegen.
 
 #### <a name="create-device-categories-and-device-groups-mapped-to-your-categories"></a>Skapa enhetskategorier och enhetsgrupper som hör till olika kategorier
 
-Depending on your organizational needs, create at least two device categories, such as Corporate and Personal. Skapa sedan dynamiska enhetsgrupper för varje kategori. Du kan skapa fler kategorier för din organisation om det behövs.
+Beroende på organisationens behov skapar du minst två enhetskategorier, till exempel Företag och Personlig. Skapa sedan dynamiska enhetsgrupper för varje kategori. Du kan skapa fler kategorier för din organisation om det behövs.
 
 Information om att skapa enhetskategorier finns i [Mappa enheter till grupper](../enrollment/device-group-mapping.md).
 
