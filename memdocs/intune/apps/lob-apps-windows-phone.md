@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50e0b724ae62a5400d6807525db157ad0fa19b8f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: c64d6dab674b75fd4e62638ac6a221cd2aca4a85
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79334294"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80323971"
 ---
 # <a name="add-a-windows-phone-line-of-business-app-to-microsoft-intune"></a>Lägg till en verksamhetsspecifik app för Windows Phone i Microsoft Intune
 
@@ -31,7 +31,7 @@ ms.locfileid: "79334294"
 
 Informationen i den här artikeln visar hur du lägger till en verksamhetsspecifik app för Windows Phone i Microsoft Intune. En verksamhetsspecifik app är en app som du lägger till i Intune från en appinstallationsfil. Den här typen av app skrivs vanligtvis inom företaget. Intune installerar den verksamhetsspecifika appen på användarens enhet. 
 
-## <a name="select-the-app-type"></a>Välj typ av app
+## <a name="select-the-app-type"></a>Välj apptyp
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Appar** > **Alla appar** > **Lägg till**.

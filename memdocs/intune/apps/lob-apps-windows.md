@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0e6120ecf44dd335c1b70f7db5d73997336ef79
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: eb9695db99b8c170978ed2a27800b7cfe6090168
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361282"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80323905"
 ---
 # <a name="add-a-windows-line-of-business-app-to-microsoft-intune"></a>Lägg till en verksamhetsspecifik app för Windows i Microsoft Intune
 
@@ -34,7 +34,7 @@ En verksamhetsspecifik app (LOB) är en app som du lägger till från en appinst
 > [!IMPORTANT]
 > När du distribuerar Win32-appar med hjälp av en installationsfil med tillägget .msi (som paketerats i en .intunewin-fil med verktyget för konvertering av innehåll) kan du överväga att använda [Intune-hanteringstillägget](../apps/intune-management-extension.md). Om du blandar installationen av Win32-appar och verksamhetsspecifika appar under autopilotregistreringen, kan det hända att appen inte kan installeras.  
 
-## <a name="select-the-app-type"></a>Välj typ av app
+## <a name="select-the-app-type"></a>Välj apptyp
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Appar** > **Alla appar** > **Lägg till**.

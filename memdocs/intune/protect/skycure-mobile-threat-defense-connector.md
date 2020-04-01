@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ccd17fee32331eb266fa49b2cd39c6f39740eed
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: d6f8f3cf9ced5b613323093ed2baafcf65667997
+ms.sourcegitcommit: fe7484e86ec8a109fa5f54fe9cceef8aac94bd9f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79350986"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80275092"
 ---
 # <a name="symantec-endpoint-protection-mobile-connector"></a>Symantec Endpoint Protection Mobile-anslutningsprogram
 
@@ -56,7 +56,7 @@ Du kan aktivera SEP Mobile-riskbedömning via Intunes efterlevnadsprinciper för
 
 - Symantec Endpoint Protection Mobile-prenumeration
 
-Mer information hittar du på [Symantecs webbplats](https://www.skycure.com/skycure-microsoft-integration/).
+Mer information hittar du på [Symantecs webbplats](https://help.symantec.com/cs/sep_mobile/SEPMOBILE/v131237277_v127904070/Integrating-Microsoft-Intune-with-Endpoint-Protection-Mobile?locale=EN_US).
 
 ## <a name="how-do-intune-and-sep-mobile-help-protect-your-company-resources"></a>Hur skyddar Intune och SEP Mobile företagets resurser?
 

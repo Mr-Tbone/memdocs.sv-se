@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e019024695e8aa29010cb8aa1f03573cb63f73da
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 433bea6442ef52cd970513213d1623faf8aae2ca
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79349101"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327485"
 ---
 # <a name="locate-lost-or-stolen-iosipados-devices-with-intune"></a>Hitta borttappade eller stulna iOS/iPadOS-enheter med Intune
 

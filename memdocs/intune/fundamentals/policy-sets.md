@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1598be8f5f54f1f509194aed0232730bd821624b
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 8583c625277735d653143f5cf87c56c350bdc1ff
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79357122"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326709"
 ---
 # <a name="use-policy-sets-to-group-collections-of-management-objects"></a>Använda principuppsättningar för att gruppera samlingar av hanteringsobjekt
 
@@ -63,7 +63,7 @@ När du skapar en principuppsättning skapar du en enskild tilldelningsenhet och
     - **Namn på principuppsättning** – ange ett namn för den här principuppsättningen.
     - **Beskrivning** – om du vill kan du ange en beskrivning av principuppsättningen.
    <p>
-   <img alt="Create policy set - Basics" src="/media/policy-sets/policy-sets-01.png">
+      <img alt="Create policy set - Basics" src="./media/policy-sets/policy-sets-01.png">
 
 4. Klicka på **Nästa: Programhantering**.<br>
    På sidan **Programhantering** kan du välja att [lägga till appar](../apps/apps-add.md), [appkonfigurationsprinciper](../apps/app-configuration-policies-overview.md) och [appskyddsprinciper](../apps/app-protection-policy.md) till principuppsättningen. Information om apphantering finns i [Vad är apphantering i Microsoft Intune?](../apps/app-management.md).

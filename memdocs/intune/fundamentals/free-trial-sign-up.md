@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83107121b05b2126e4c6b2b377baf57ee069f917
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 893981700ede9587a980faa0e4d6b0384c24e3d4
+ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79343992"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80401488"
 ---
 # <a name="quickstart-try-microsoft-intune-for-free"></a>Snabbstart: Prova Microsoft Intune utan kostnad
 
@@ -64,7 +64,7 @@ Du kan prova Intune utan kostnad i 30 dagar. Om du redan har ett arbets- eller s
 
 Om du inte redan har loggat in på portalen utför du följande steg:
 
-1. Öppna ett nytt webbläsarfönster och ange **https://devicemanagement.microsoft.com** i adressfältet. 
+1. Öppna ett nytt webbläsarfönster och ange **https://endpoint.microsoft.com** i adressfältet. 
 2. Använd det användar-ID som du angav i stegen ovan för att logga in ( *yourID@yourdomain* .onmicrosoft.com).
 
     ![Bild på inloggningssidan i portalen](./media/free-trial-sign-up/azure-portal-signin.png)
@@ -126,7 +126,7 @@ Om ditt företag har sin egen anpassade domän som du vill använda utan **.onmi
 ## <a name="admin-experiences"></a>Administratörsupplevelser
 
 Det finns två portaler som används oftast:
-- I administrationscentret för Microsoft Endpoint Manager ([https://devicemanagement.microsoft.com/](https://devicemanagement.microsoft.com/)) kan du utforska [funktionerna i Intune](what-is-intune.md). Det är här som administratören arbetar med Intune.
+- I administrationscentret för Microsoft Endpoint Manager ([https://endpoint.microsoft.com/](https://endpoint.microsoft.com/)) kan du utforska [funktionerna i Intune](what-is-intune.md). Det är här som administratören arbetar med Intune.
 - I administrationscentret för Microsoft 365 ([https://admin.microsoft.com](https://admin.microsoft.com)) kan du lägga till och hantera användare om du inte använder Azure Active Directory för detta. Du kan också hantera andra delar av ditt konto, inklusive fakturering och support.
 
 ## <a name="next-steps"></a>Nästa steg

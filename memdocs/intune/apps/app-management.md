@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5acf0db721accf058a10dafcf8165abeddafe7c7
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 185cfbf49c9a6623559a2b50f0184980286e03eb
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80083744"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80358716"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>Vad är apphantering i Microsoft Intune?
 
@@ -71,7 +71,7 @@ Intune erbjuder en mängd funktioner som hjälper dig att få de appar som du be
 <sup>1</sup> Överväg att använda [Windows informationsskydd](../protect/windows-information-protection-configure.md) för att skydda appar på enheter som kör Windows 10.<br>
 <sup>2</sup> Gäller enheter som hanteras av Intune endast.<br>
 <sup>3</sup> Intune har stöd för tillgängliga appar från Google Play Store för företag på Android Enterprise-enheter.<br>
-<sup>4</sup> Intune tillhandahåller inte installation av en genväg till en app som en webblänk på vanliga Android-Enterprise-enheter. Stöd för webblänkar finns dock för [dedikerade Android Enterprise-enheter med flera appar](../configuration/device-restrictions-android-for-work.md#dedicated-device-settings). 
+<sup>4</sup> Intune tillhandahåller inte installation av en genväg till en app som en webblänk på vanliga Android-Enterprise-enheter. Stöd för webblänkar finns dock för [dedikerade Android Enterprise-enheter med flera appar](../configuration/device-restrictions-android-for-work.md#dedicated-devices). 
 
 
 ## <a name="get-started"></a>Kom igång

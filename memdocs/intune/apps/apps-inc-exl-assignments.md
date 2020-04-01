@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5011e24064c4c546107f950925d12489ed9113c9
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 6095c079c6b5cb6f132d9963e3e7413e97180d70
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79340612"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80324590"
 ---
 # <a name="include-and-exclude-app-assignments-in-microsoft-intune"></a>Inkludera och exkludera apptilldelningar i Microsoft Intune
 
@@ -90,7 +90,7 @@ När du gör grupptilldelningar är grupper som redan har tilldelats inte tillg�
 
 För att redigera tilldelningar i app-listan **Tilldelningar** väljer du den rad som innehåller gruppen som du vill ändra. Du kan också ta bort en tilldelning genom att välja ellipsen ( **...** ) i slutet av en rad och sedan välja **Ta bort**. För att ändra vyn för listan **Tilldelningar** grupperar du efter **Tilldelningstyp** eller **Inkluderade/Exkluderade**.
 
-![Apptilldelningar i Intune – Slutförda](/media/apps-inc-exl-assignments/apps-inc-exl-05.png)
+![Apptilldelningar i Intune – Slutförda](./media/apps-inc-exl-assignments/apps-inc-exl-05.png)
 
 ## <a name="next-steps"></a>Nästa steg
 

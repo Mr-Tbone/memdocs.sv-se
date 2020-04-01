@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b2bb9a6220a599cc0e403e6c71f3b8907bbab0e
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: c047c0f54e64dbe17b6bd9e9082272e80fe7566c
+ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80085823"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80401478"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>Nyheter i Microsoft Intune – föregående månader
 
@@ -229,7 +229,7 @@ När du använder [Intune-Graph API](https://docs.microsoft.com/graph/api/resour
 ### <a name="microsoft-365-device-management"></a>Microsoft 365 Enhetshantering
 
 #### <a name="improved-administration-experience-in-microsoft-365-device-management---5551239---"></a>Förbättrad administrationsupplevelse i Microsoft 365 Enhetshantering<!-- 5551239 -->
-En uppdaterad och förbättrad administrationsupplevelse är nu allmänt tillgänglig i specialistarbetsytan för Microsoft 365 Enhetshantering på [https://devicemanagement.microsoft.com](https://devicemanagement.microsoft.com), inklusive:
+En uppdaterad och förbättrad administrationsupplevelse är nu allmänt tillgänglig i specialistarbetsytan för Microsoft 365 Enhetshantering på [https://endpoint.microsoft.com](https://endpoint.microsoft.com), inklusive:
 
 - **Uppdaterad navigering**: Du hittar en förenklad navigering på hög nivå som logiskt grupperar funktioner.
 - **Nya plattformsfilter**: Du kan välja en enda plattform som bara visar principer och appar för den valda plattformen på sidorna Enheter och Appar.
@@ -238,7 +238,7 @@ En uppdaterad och förbättrad administrationsupplevelse är nu allmänt tillgä
 
 #### <a name="introducing-endpoint-security-node-in-microsoft-365-device-management---5630102---"></a>Introduktion till noden för slutpunktssäkerhet i Microsoft 365 Enhetshantering<!-- 5630102 -->
 
-Noden **Slutpunktssäkerhet** finns nu allmänt tillgänglig i specialistarbetsytan för Microsoft 365 Enhetshantering på https://devicemanagement.microsoft.com, som grupperar funktionerna för att skydda slutpunkter som exempelvis:
+Noden **Slutpunktssäkerhet** finns nu allmänt tillgänglig i specialistarbetsytan för Microsoft 365 Enhetshantering på https://endpoint.microsoft.com, som grupperar funktionerna för att skydda slutpunkter som exempelvis:
 
 - Säkerhetsbaslinjer:  En förkonfigurerad grupp med inställningar som hjälper dig att tillämpa kända inställningsgrupper och standardvärden som rekommenderas av Microsoft.
 - Säkerhetsaktiviteter: Dra nytta av hot- och sårbarhetshanteringen i Microsoft Defender ATP och använd Intune till att åtgärda svagheter i slutpunkterna.
@@ -527,7 +527,7 @@ I den här uppdateringen läggs följande funktioner till:
 - **Dedikerade enheter** > **Multi-app**: **Kontroll av medievolym** gör att användare kan kontrollera enhetens medievolym med ett skjutreglage. 
 - **Dedikerade enheter** > **Multi-app**:  **Aktivera en skärmsläckare**, ladda upp en anpassad avbildning och kontrollera när skärmsläckaren visas.
 
-Om du vill se aktuella inställningar, går du till [Inställningar för Android Enterprise-enheter som tillåter eller begränsar funktioner med Intune](../configuration/device-restrictions-android-for-work.md#dedicated-device-settings).
+Om du vill se aktuella inställningar, går du till [Inställningar för Android Enterprise-enheter som tillåter eller begränsar funktioner med Intune](../configuration/device-restrictions-android-for-work.md#dedicated-devices).
 
 Gäller för:
 
@@ -1461,7 +1461,7 @@ Gäller för:
 #### <a name="kiosk-devices-are-now-called-dedicated-devices-on-android-enterprise-devices---3598402-----"></a>”Kioskenheter” kallas nu ”dedikerade enheter” på Android Enterprise-enheter<!-- 3598402   -->
 För att stämma överens med Android-terminologi ändras **kioskenheter** till **dedikerade enheter** för Android Enterprise-enheter (**Enhetskonfiguration** > **Profiler** > **Skapa profil** > ** Android Enterprise för plattform > **Endast enhetens ägare** > **Enhetsbegränsningar** > **Dedikerade enheter**).
 
-Om du vill se de tillgängliga inställningarna går du till [Enhetsinställningar för att tillåta eller begränsa funktioner](../configuration/device-restrictions-android-for-work.md#dedicated-device-settings).
+Om du vill se de tillgängliga inställningarna går du till [Enhetsinställningar för att tillåta eller begränsa funktioner](../configuration/device-restrictions-android-for-work.md#dedicated-devices).
 
 Gäller för:  
 Android enterprise
@@ -2106,7 +2106,7 @@ När Intune installerar Office på slutanvändarnas datorer får användarna aut
 ### <a name="monitor-and-troubleshoot"></a>Övervaka och felsöka
 
 #### <a name="new-intune-support-experience-in-the-microsoft-365-device-management-portal---3076965---"></a>Ny Intune Support-upplevelse i Microsoft 365-enhetshanteringsportalen<!-- 3076965 -->
-Vi lanserar en ny upplevelse för hjälp och support för Intune i [Microsoft 365-enhetshanteringsportalen]( https://devicemanagement.microsoft.com). Med den nya upplevelsen kan du beskriva problemet med egna ord och ta emot felsökningsinsikter och webbaserat åtgärdsinnehåll. De här lösningarna är tillgängliga via en regelbaserad maskininlärningsalgoritm som drivs av användarfrågor.  
+Vi lanserar en ny upplevelse för hjälp och support för Intune i [Microsoft 365-enhetshanteringsportalen]( https://endpoint.microsoft.com). Med den nya upplevelsen kan du beskriva problemet med egna ord och ta emot felsökningsinsikter och webbaserat åtgärdsinnehåll. De här lösningarna är tillgängliga via en regelbaserad maskininlärningsalgoritm som drivs av användarfrågor.  
 
 Utöver problemspecifika rekommendationer kan du också använda det nya arbetsflödet för att öppna ett supportärende via e-post eller telefon.  
 
@@ -2148,7 +2148,7 @@ Om du har någon av enheterna som anges nedan, eller om du vill registrera någo
 ### <a name="device-management"></a>Enhetshantering
 
 #### <a name="microsoft-365-device-management-administration-center---3078424---"></a>Administrationscenter för Microsoft 365-enhetshantering<!-- 3078424 -->
-En av löftena för Microsoft 365 är förenklad administration och under åren har vi integrerat Microsoft 365-tjänsterna i serverdelen så att de kan leverera scenarier från början till slut, till exempel Intune och Azure AD villkorsstyrd åtkomst. Den nya [Administrationscentret för Microsoft 365](https://devicemanagement.microsoft.com) låter dig konsolidera, förenkla och integrera administratörsupplevelsen. Specialist-arbetsytan för enhetshantering ger enkel åtkomst till all den enhets- och apphanteringsinformation och uppgifter som din organisation behöver. Vi förväntar oss att det här blir den primära molnarbetsytan för enterprise-slutanvändares databehandlingsteam.
+En av löftena för Microsoft 365 är förenklad administration och under åren har vi integrerat Microsoft 365-tjänsterna i serverdelen så att de kan leverera scenarier från början till slut, till exempel Intune och Azure AD villkorsstyrd åtkomst. Den nya [Administrationscentret för Microsoft 365](https://endpoint.microsoft.com) låter dig konsolidera, förenkla och integrera administratörsupplevelsen. Specialist-arbetsytan för enhetshantering ger enkel åtkomst till all den enhets- och apphanteringsinformation och uppgifter som din organisation behöver. Vi förväntar oss att det här blir den primära molnarbetsytan för enterprise-slutanvändares databehandlingsteam.
 
 
 <!-- ########################## -->

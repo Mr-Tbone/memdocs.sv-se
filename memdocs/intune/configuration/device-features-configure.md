@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/17/2020
+ms.date: 03/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0f1552d2edc6bfa5f6bdb255f156bcfb77a4990
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 30bf5ba078029e35988d3531ee510d9db6c6cdb8
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80084101"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359471"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -203,30 +203,45 @@ Gäller för:
 - iOS 7.0 och senare
 - iPadOS 13.0 och senare
 
-## <a name="create-a-device-profile"></a>Skapa en enhetsprofil
+## <a name="create-the-profile"></a>Skapa profilen
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
-    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Till exempel är ett användbart principnamn **macOS: Konfigurerar inloggningsskärmen**.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
     - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
+
         - **iOS/iPadOS**
         - **macOS**
-    - **Profiltyp**: Välj **Enhetsfunktioner**.
 
-4. Vilka inställningar du kan konfigurera varierar beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
+    - **Profil**: Välj **Enhetsfunktioner**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Till exempel är ett användbart principnamn **macOS: Konfigurerar inloggningsskärmen**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
+
+6. Välj **Nästa**.
+
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
 
     - [iOS/iPadOS](ios-device-features-settings.md)
     - [macOS](macos-device-features-settings.md)
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+8. Välj **Nästa**.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
 
-Profilen skapas och visas i profillistan. Kom ihåg att [tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="next-steps"></a>Nästa steg
 
-När profilen har skapats är den klar att tilldelas. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+Profilen skapas, men den kanske inte gör något än. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
 Visa alla enhetsfunktionsinställningar för [iOS/iPadOS](ios-device-features-settings.md)- och [macOS](macos-device-features-settings.md)-enheter.

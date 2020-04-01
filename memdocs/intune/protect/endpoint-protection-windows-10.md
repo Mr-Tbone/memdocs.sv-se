@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7817a747a01a137fd29ee8aae117cd604da233a5
-ms.sourcegitcommit: 4815f07c8c0399c077b71721c6e6b61047c75ae6
+ms.openlocfilehash: aaec456a5ff9864fedf5e95f317bc484ddfc4d82
+ms.sourcegitcommit: fe7484e86ec8a109fa5f54fe9cceef8aac94bd9f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79437111"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80275075"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Inställningar för Windows 10 (och senare) för att skydda delade enheter med Intune
 
@@ -798,7 +798,7 @@ Reglerna för minskning av attackytan förhindrar beteenden som ofta används ti
 
 - **Flagga stöld av inloggningsuppgifter från Windows Local Security Authority Subsystem**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera stöld av autentiseringsuppgifter från det lokala säkerhetsundersystemet i Windows (lsass.exe)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-credential-stealing-from-the-windows-local-security-authority-subsystem-lsassexe)
+  Regel: [Blockera stöld av autentiseringsuppgifter från det lokala säkerhetsundersystemet i Windows (lsass.exe)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-credential-stealing-from-the-windows-local-security-authority-subsystem)
 
   Hjälp till att förhindra åtgärder och appar som normalt används av skadlig kod som söker sårbarheter för att angripa datorer.  
 
