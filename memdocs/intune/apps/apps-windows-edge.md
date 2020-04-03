@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1ef0c2c4b7fdd7bb25fcb0237eb68485f1be701
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 687ef14791d1ae0df60d28802d27b99dd9547423
+ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79340183"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80401344"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>Lägga till Microsoft Edge för Windows 10 till Microsoft Intune
 
@@ -38,7 +38,7 @@ Innan du kan distribuera, konfigurera, övervaka eller skydda appar måste du l�
 
 ## <a name="prerequisites"></a>Krav
 
-- Windows 10 RS2 och senare krävs.
+- Windows 10 version 1703 eller senare.
 - En Edge-installation i systemkontexten skriver över förinstallerade versioner av Microsoft Edge *version 77 och senare* för alla kanaler som gjorts i användarkontexten.
 
 ## <a name="configure-the-app-in-intune"></a>Konfigurera appen i Intune

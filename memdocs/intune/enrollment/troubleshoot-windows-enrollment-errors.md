@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe5fce47d6a0480596bc09d82456c7636fe84d51
-ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
+ms.openlocfilehash: 04bc86ff697ed7083cacd552cbf9ebe5096a228c
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79526282"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326869"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av Windows-enheter i Microsoft Intune
 
@@ -41,7 +41,7 @@ Samla in följande information om problemet:
 - Hur många användare påverkas? Påverkas alla användare eller bara vissa av dem?
 - Hur många enheter påverkas? Påverkas alla enheter eller bara vissa av dem?
 - Vad är MDM-utfärdare?
-- Hur utförs registreringen? Är det "ta med din egen enhet" (BYOD) eller Apple-programmet för enhetsregistrering (DEP) med registreringsprofiler?
+- Hur utförs registreringen? Är det ”Bring your own device” (BYOD) eller Apple Automated Device Enrollment (ADE) med registreringsprofiler?
 
 ## <a name="error-messages"></a>Felmeddelanden
 
@@ -75,7 +75,7 @@ Det finns flera möjliga lösningar på det här problemet:
  
 
 ##### <a name="check-device-type-restrictions"></a>Kontrollera begränsningar för enhetstypen
-1. Logga in på [Administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) med ett globalt administratörskonto.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) med ett globalt administratörskonto.
 2. Gå till **Enheter** > **Registreringsbegränsningar** och välj sedan **Standardbegränsning** under **Regränsningar för enhetstyp**.    
 3. Välj **Plattformar** och välj sedan **Tillåt** för **Windows (MDM)** .
 
@@ -141,7 +141,7 @@ Tilldela användaren en giltig Intune-licens och registrera sedan enheten.
 Använd någon av följande metoder för att åtgärda problemet: 
  
 ##### <a name="assign-a-valid-license-to-the-user"></a>Tilldela användaren en giltig licens
-Gå till [Administrationscentret för Microsoft 365](https://portal.office.com/adminportal/home) och tilldela sedan antingen en Intune- eller Office 365-licens till användaren.
+Gå till [Administrationscentret för Microsoft 365](https://admin.microsoft.com) och tilldela sedan antingen en Intune- eller Office 365-licens till användaren.
 
 ##### <a name="correct-the-mdm-terms-of-use-url"></a>Korrigera MDM-villkor för användning för MDM
   1. Logga in på [Azure-portalen](https://portal.azure.com/) och välj sedan **Azure Active Directory**.    
@@ -201,7 +201,7 @@ Fel: "Ett problem inträffade. Din organisation har inte stöd för den här ver
 #### <a name="resolution"></a>Lösning
 Följ dessa steg om du vill åtgärda det här problemet i en fristående Intune-miljö: 
  
-1. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Registreringsbegränsningar** > välj en begränsning av enhetstyp.    
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Registreringsbegränsningar** > välj en begränsning av enhetstyp.    
 2. Välj **Egenskaper** > **Redigera** (intill **Plattformsinställningar**) > **Tillåt** **Windows (MDM)** .    
 3. Klicka på **Granska och spara**.    
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec131df32e06c1c43b8904dde732b4e6a17a91aa
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 3daf758ed93fb03ac63b062f604a457d033637dc
+ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79334203"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438756"
 ---
 # <a name="add-and-assign-the-windows-10-company-portal-app-for-autopilot-provisioned-devices"></a>Lägga till och tilldela företagsportalappen för Windows 10 för Autopilot-etablerade enheter
 
@@ -52,9 +52,9 @@ Företagsportal (offline) installeras med hjälp av anvisningarna nedan. Företa
 ## <a name="assign-the-company-portal-app"></a>Tilldela appen Företagsportal
 
 1. Logga in på  [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) med ditt administratörskonto. 
-2. Välj fliken **Appar** i det högra fönstret.
-3. Välj **Windows** under  **Per plattform**.
-4. Välj **Företagsportal (offline)** .
+2. Välj fliken**Appar**i det högra fönstret.
+3. Välj**Windows** under **Per plattform**.
+4. Välj**Företagsportal (offline)** .
 5. Du måste antingen vänta tills synkroniseringsschemat har slutförts eller göra en manuell synkronisering från administrationscentret för Microsoft Endpoint Manager.
 6. Tilldela företagsportalappen som en obligatorisk app till dina valda Autopilot-enhetsgrupper.
 

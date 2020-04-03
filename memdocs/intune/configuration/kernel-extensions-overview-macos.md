@@ -6,22 +6,23 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/25/2020
+ms.date: 03/24/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
+ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 191b2cdfa8fd99078bccee8edf99eb9b0cb275ee
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5937cd09a5224933004233b8d4efe8a0e47155f3
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79360970"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359379"
 ---
 # <a name="add-macos-kernel-extensions-in-intune"></a>Lägg till macOS kernel-tillägg i Intune
 
@@ -74,17 +75,31 @@ Den här artikeln beskriver hur du skapar en enhetskonfigurationsprofil med hjä
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
-    - **Namn**: Ange ett beskrivande namn på den nya profilen.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
     - **Plattform**: Välj **macOS**
-    - **Profiltyp**: Välj **Tillägg**.
-    - **Inställningar**: Ange vilka inställningar som du vill konfigurera. En lista med alla inställningar och vad de gör finns i:
+    - **Profil**: Välj **Tillägg**.
 
-        - [macOS](kernel-extensions-settings-macos.md)
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
 
-4. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Till exempel är ett användbart principnamn **macOS: Lägg till kerneltillägg på enheter**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
 
-Profilen skapas och visas i listan. Kom ihåg att [tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+6. Välj **Nästa**.
+
+7. I **Konfigurationsinställningar** konfigurerar du inställningarna:
+
+    - [macOS](kernel-extensions-settings-macos.md)
+
+8. Välj **Nästa**.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="next-steps"></a>Nästa steg
 

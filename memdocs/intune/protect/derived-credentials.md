@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50d32a76e638d88adc7a72d103c84e73544079cb
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: ebeb2c31b72ec10f4ce95b09e32b3e3c9accccfa
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80084896"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80323018"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Använda härledda autentiseringsuppgifter i Microsoft Intune
 
@@ -287,4 +287,4 @@ När du har tagit bort en utfärdare och sedan lägger till en ny måste enhetsa
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Skapa profiler för enhetskonfiguration](../configuration/device-profile-create.md).
+[Översikt över enhetskonfigurationsprofil](../configuration/device-profile-create.md)

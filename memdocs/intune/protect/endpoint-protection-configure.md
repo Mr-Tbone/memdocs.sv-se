@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 03/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 mr.reviewer: karthib
-ms.openlocfilehash: 64a11cf9dca110a4a802ddff3e9176ec1ce88345
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 4071614c7cb93194eef00f49aa2e1759ba1028f6
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352182"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359260"
 ---
 # <a name="add-endpoint-protection-settings-in-intune"></a>Lägga till inställningar för slutpunktsskydd i Intune
 
@@ -45,23 +45,38 @@ Innan du skapar en profil ska du läsa följande artiklar om de inställningar f
 
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
-3. Ange **Namn** och **Beskrivning** för slutpunktsskyddsprofilen.
+3. Ange följande egenskaper:
 
-4. Välj den enhetsplattform på vilken du vill tillämpa anpassade inställningar från listrutan **Plattform**. För närvarande kan du välja någon av följande plattformar för inställning av enhetsbegränsningar:
+    - **Plattform**: Välj plattform för dina enheter. Alternativen är:
 
-   - **macOS**
-   - **Windows 10 och senare**
+        - **macOS**
+        - **Windows 10 och senare**
 
-5. Välj **Endpoint Protection** i listrutan **Profiltyp**.
+    - **Profil**: Välj **Endpoint Protection**.
 
-6. Vilka inställningar du kan konfigurera varierar beroende på vilken plattform du väljer. Se:
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Till exempel är ett användbart principnamn **macOS: Endpoint Protection-profil som konfigurerar brandväggen för alla macOS-enheter**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
+
+6. Välj **Nästa**.
+
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
 
    - [Inställningar för macOS](endpoint-protection-macos.md)
    - [Inställningar för Windows 10](endpoint-protection-windows-10.md)
 
-7. När du har konfigurerat tillämpliga inställningar väljer du **Skapa** på sidan **Skapa profil**.
+8. Välj **Nästa**.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
 
-   Profilen skapas och visas på sidan med profillistan. Om du vill tilldela profilen till grupper kan du läsa [Tilldela enhetsprofiler](../configuration/device-profile-assign.md).
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="add-custom-firewall-rules-for-windows-10-devices"></a>Lägga till anpassade brandväggsregler för Windows 10-enheter
 
@@ -75,7 +90,7 @@ När du planerar profiler med anpassade brandväggsregler bör du tänka på fö
 
 - När en regel inte kan tillämpas rapporteras alla regler i profilen som misslyckade. Intune kan inte identifiera vilken enskild regel som misslyckades.  
 
-De brandväggsregler som Intune kan hantera beskrivs i avsnittet om [konfigurationstjänstprovidern (CSP) för Windows-brandväggen]( https://docs.microsoft.com/windows/client-management/mdm/firewall-csp). Om du vill granska listan med anpassade brandväggsinställningar för Windows 10-enheter som stöds av Intune läser du avsnittet om [anpassade brandväggsregler](endpoint-protection-windows-10.md#firewall-rules).
+De brandväggsregler som Intune kan hantera beskrivs i avsnittet om [konfigurationstjänstprovidern (CSP) för Windows-brandväggen](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp). Om du vill granska listan med anpassade brandväggsinställningar för Windows 10-enheter som stöds av Intune läser du avsnittet om [anpassade brandväggsregler](endpoint-protection-windows-10.md#firewall-rules).
 
 ### <a name="to-add-custom-firewall-rules-to-an-endpoint-protection-profile"></a>Så här lägger du till anpassade brandväggsregler i en profil för slutpunktsskydd
 
@@ -83,20 +98,22 @@ De brandväggsregler som Intune kan hantera beskrivs i avsnittet om [konfigurati
 
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
-3. För *Plattform* väljer du **Windows 10 och senare** och sedan *Slutpunktsskydd* för **Profiltyp**.
+3. För *Plattform* väljer du **Windows 10 och senare** och sedan *Slutpunktsskydd* för **Profil**.
 
-4. Välj **Microsoft Defender-brandväggen** för att öppna konfigurationssidan och välj sedan **Lägg till** för *Brandväggsregler* för att öppna sidan **Skapa regel**.
+    Välj **Skapa**.
 
-5. Ange inställningar för brandväggsregeln och välj sedan **OK** för att spara den. Information om vilka alternativ som finns tillgängliga för anpassade brandväggsregler finns i avsnittet om [anpassade brandväggsregler](endpoint-protection-windows-10.md#firewall-rules).
+4. Ange ett **namn** för profilen >**Nästa**.
+5. I **Konfigurationsinställningar** väljer du **Microsoft Defender-brandväggen**. För *Brandväggsregler* väljer du **Lägg till** för att öppna **sidan Skapa regel**.
 
-6. När du har sparat regeln visas den på sidan för *Microsoft Defender-brandväggen* i listan över regler.
+6. Ange inställningar för brandväggsregeln och välj sedan **OK** för att spara den. Information om vilka alternativ som finns tillgängliga för anpassade brandväggsregler finns i avsnittet om [anpassade brandväggsregler](endpoint-protection-windows-10.md#firewall-rules).
 
-7. Om du vill ändra en regel väljer du regeln i listan för att öppna sidan **Redigera regel**.
+    1. Regeln visas på sidan för *Microsoft Defender-brandväggen* i listan över regler.
+    2. Om du vill ändra en regel väljer du regeln i listan för att öppna sidan **Redigera regel**.
+    3. Om du vill ta bort en regel från en profil väljer du ellipsen **(...)** för regeln och väljer sedan **Ta bort**.
+    4. Om du vill ändra visningsordningen för regler väljer du ikonen för *uppil, nedpil* längst upp i regellistan.
 
-8. Om du vill ta bort en regel från en profil väljer du ellipsen **(...)** för regeln och väljer sedan **Ta bort**.
-
-9. Om du vill ändra visningsordningen för regler väljer du ikonen för *uppil, nedpil* längst upp i regellistan.
+7. Välj **Nästa** tills du kommer till **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Om du vill tilldela profilen till grupper kan du läsa mer i [Tilldela enhetsprofiler](../configuration/device-profile-assign.md).
+Profilen skapas, men den kanske inte gör något än. [Tilldela profilen](../configuration/device-profile-assign.md) och [övervaka dess status](../configuration/device-profile-monitor.md).

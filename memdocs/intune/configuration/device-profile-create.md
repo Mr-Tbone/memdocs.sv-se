@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2020
+ms.date: 03/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 462f9ca9618d16c0291792f86d00c46f641c6cc8
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: c2031ba23b49bda4890d2638272e3b808b4bf5a9
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80084065"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327444"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Skapa en enhetsprofil i Microsoft Intune
 
@@ -37,73 +37,64 @@ Den här artikeln:
 
 ## <a name="create-the-profile"></a>Skapa profilen
 
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+Profiler skapas i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). I det här administrationscentret väljer du **Enheter**. Du kan välja mellan följande alternativ:
 
-2. Välj **Enheter** > **Konfigurationsprofiler**. Du kan välja mellan följande alternativ:
+- **Översikt**: Visar status för dina profiler och ytterligare information om de profiler som du har tilldelat till användare och enheter.
+- **Övervaka**: Kontrollera status och visa loggar för dina profiler.
+- **Per plattform**: Skapa och visa principer och profiler för din plattform. Den här vyn kan också visa funktioner som är specifika för plattformen. Välj exempelvis **Windows**. Då visas Windows-specifika funktioner, till exempel **Windows 10-uppdateringsringar** och **PowerShell-skript**.
+- **Princip**: Skapa enhetsprofiler, ladda upp anpassade [PowerShell-skript](../apps/intune-management-extension.md) att köra på enheter och lägg till dataplaner för enheter med hjälp av [eSIM](esim-device-configuration.md).
 
-    - **Översikt**: Visar status för dina profiler och ytterligare information om de profiler som du har tilldelat till användare och enheter.
-    - **Hantera**: Skapa enhetsprofiler, ladda upp anpassade [PowerShell-skript](../apps/intune-management-extension.md) att köra i profilen och lägg till dataplaner för enheter med hjälp av [eSIM](esim-device-configuration.md).
-    - **Övervaka**: Kontrollera status för en profil och visa loggar för dina profiler.
-    - **Installation**: Lägg till en SCEP- eller PFX-certifikatutfärdare eller aktivera [Kostnadsuppföljning av telekommunikation](telecom-expenses-monitor.md) i profilen.
+När du skapar en profil (**konfigurationsprofiler** > **Skapa profil**) väljer du din plattform:
 
-3. Välj sedan **Skapa profil**. Ange följande egenskaper:
+- **Android-enhetsadministratör**
+- **Android enterprise**
+- **iOS/iPadOS**
+- **macOS**
+- **Windows 10 och senare**
+- **Windows 8.1 och senare**
+- **Windows Phone 8.1**
 
-   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är t.ex. **WP e-postprofil för hela företaget**.
-   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-   - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
+Välj sedan profiltyp. Vilka inställningar du kan konfigurera varierar beroende på vilken plattform du väljer. I följande artiklar beskrivs inställningarna för de olika profiltyperna:
 
-       - **Android-enhetsadministratör**
-       - **Android enterprise**
-       - **iOS/iPadOS**
-       - **macOS**
-       - **Windows Phone 8.1**
-       - **Windows 8.1 och senare**
-       - **Windows 10 och senare**
+- [Administrativa mallar (Windows)](administrative-templates-windows.md)
+- [Anpassad](custom-settings-configure.md)
+- [Leveransoptimering (Windows)](delivery-optimization-windows.md)
+- [Härledd autentiseringsuppgift (Android Enterprise, iOS, iPadOS)](../protect/derived-credentials.md)
+- [Enhetsfunktioner (macOS, iOS, iPadOS)](device-features-configure.md)
+- [Inbyggd programvara för enhet (Windows)](device-firmware-configuration-interface-windows.md)
+- [Enhetsbegränsningar](device-restrictions-configure.md)
+- [Domänanslutning (Windows)](domain-join-configure.md)
+- [Versionsuppgradering och lägesväxling (Windows)](edition-upgrade-configure-windows-10.md)
+- [Utbildning (iOS, iPadOS)](../fundamentals/education-settings-configure-ios.md)
+- [E-post](email-settings-configure.md)
+- [Slutpunktsskydd: (macOS, Windows)](../protect/endpoint-protection-configure.md)
+- [Tillägg: (macOS)](kernel-extensions-overview-macos.md)
+- [Identitetsskydd (Windows)](../protect/identity-protection-configure.md)
+- [Helskärmsläge](kiosk-settings.md)
+- [Microsoft Defender ATP (Windows)](../protect/advanced-threat-protection.md)
+- [Profil för Mobility Extensions (MX) (Android-enhetsadministratör)](android-zebra-mx-overview.md)
+- [OEMConfig (Android Enterprise)](android-oem-configuration-overview.md)
+- [PKCS-certifikat](../protect/certficates-pfx-configure.md)
+- [PKCS-importerat certifikat](../protect/certificates-imported-pfx-configure.md)
+- [Inställningsfil: (macOS)](preference-file-settings-macos.md)
+- [SCEP-certifikat](../protect/certificates-scep-configure.md)
+- [Säker utvärdering (utbildning) (Windows)](education-settings-configure.md)
+- [Delad enhet för flera användare (Windows)](shared-user-device-settings.md)
+- [Telekom-utgifter (Android-enhetsadministratör, iOS, iPadOS)](telecom-expenses-monitor.md)
+- [Betrott certifikat](../protect/certificates-configure.md)
+- [VPN](vpn-settings-configure.md)
+- [Wi-Fi](wi-fi-settings-configure.md)
 
-   - **Profiltyp**: Välj den typ av inställningar du vill skapa. Vilken lista som visas beror på vilken **plattform** du väljer.
-   - **Inställningar**: Läs en beskrivning av inställningarna för varje profiltyp i följande artiklar:
+Om du till exempel väljer **iOS/iPadOS** som plattform, ser alternativen för profiltypen ut ungefär så här:
 
-       - [Administrativa mallar](administrative-templates-windows.md)
-       - [Anpassad](custom-settings-configure.md)
-       - [Leveransoptimering](delivery-optimization-windows.md)
-       - [Enhetsfunktioner](device-features-configure.md)
-       - [Enhetsbegränsningar](device-restrictions-configure.md)
-       - [Domänanslutning](domain-join-configure.md)
-       - [Versionsuppgradering och lägesväxling](edition-upgrade-configure-windows-10.md)
-       - [Utbildning](education-settings-configure.md)
-       - [E-post](email-settings-configure.md)
-       - [Slutpunktsskydd](../protect/endpoint-protection-configure.md)
-       - [Identity Protection](../protect/identity-protection-configure.md)  
-       - [Helskärmsläge](kiosk-settings.md)
-       - [Microsoft Defender ATP](../protect/advanced-threat-protection.md)
-       - [PKCS-certifikat](../protect/certficates-pfx-configure.md)
-       - [PKCS-importerat certifikat](../protect/certificates-imported-pfx-configure.md)
-       - [Inställningsfil](preference-file-settings-macos.md)
-       - [SCEP-certifikat](../protect/certificates-scep-configure.md)
-       - [Betrott certifikat](../protect/certificates-configure.md)
-       - [Uppdateringsprinciper](../protect/software-updates-ios.md)
-       - [VPN](vpn-settings-configure.md)
-       - [Wi-Fi](wi-fi-settings-configure.md)
-       - [Windows informationsskydd](../protect/windows-information-protection-configure.md)
-
-     Om du till exempel väljer **iOS/iPadOS** som plattform, ser alternativen för profiltypen ut ungefär så här:
-
-     > [!div class="mx-imgBorder"]
-     > ![Skapa iOS/iPadOS-profil i Intune](./media/device-profile-create/create-device-profile.png)
-
-4. Välj **OK** > **Skapa** när du är klar för att spara dina ändringar. Profilen skapas och visas i listan.
+> [!div class="mx-imgBorder"]
+> ![Skapa iOS/iPadOS-profil i Intune](./media/device-profile-create/create-device-profile.png)
 
 ## <a name="scope-tags"></a>Omfångstaggar
 
-När du har lagt till inställningarna kan du också lägga till en omfångstagg i profilen. Omfångstaggar filtrerar profiler till vissa IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`.
+När du har lagt till inställningarna kan du också lägga till en omfångstagg i profilen. Omfångstaggar filtrerar profiler till vissa IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Och används i distribuerad IT.
 
 Mer information om omfångstaggar och vad du kan göra finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
-
-### <a name="add-a-scope-tag"></a>Lägga till en omfångstagg
-
-1. Välj **Omfång (taggar)** .
-2. Välj **Lägg till** för att skapa en ny omfångstagg. Eller välj en befintlig omfångstagg i listan.
-3. Klicka på **OK** för att spara ändringarna.
 
 ## <a name="applicability-rules"></a>Tillämpbarhetsregler
 

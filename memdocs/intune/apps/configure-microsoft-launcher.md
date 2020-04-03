@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/26/2020
+ms.date: 03/30/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6daf1b37517f33f004742d9550f04f79aa207b63
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 0711b407b185b3a9621ff80a371bd3aaa5032ead
+ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79334138"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80407738"
 ---
 # <a name="configure-microsoft-launcher"></a>Konfigurera Microsoft Launcher
 
@@ -33,7 +33,7 @@ På fullständigt hanterade Android Enterprise-enheter kan IT-företagsadministr
 
 ## <a name="how-to-configure-the-microsoft-launcher-app"></a>Så här konfigurerar du Microsoft Launcher-appen 
 
-Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Appar** > **Appkonfigurationsprinciper**. Lägg till en konfigurationsprincip för **Hanterade enheter** som kör **Android** och välj **Microsoft Launcher** som den tillhörande appen. Klicka på **Konfigurationsinställningar** för att konfigurera de olika tillgängliga inställningarna för Microsoft Launcher. 
+När Microsoft Launcher-programmet har [lagts till i Intune](../apps/apps-add.md) går du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och väljer **Appar** > **Appkonfigurationsprinciper**. Lägg till en konfigurationsprincip för **Hanterade enheter** som kör **Android** och välj **Microsoft Launcher** som den tillhörande appen. Klicka på **Konfigurationsinställningar** för att konfigurera de olika tillgängliga inställningarna för Microsoft Launcher. 
 
 ## <a name="choosing-a-configuration-settings-format"></a>Välja ett format för konfigurationsinställningar 
 
@@ -46,6 +46,9 @@ Det finns två metoder som du kan använda för att definiera konfigurationsinst
 Om du lägger till egenskaper med **Configuration Designer** kan du automatiskt konvertera egenskaperna till JSON genom att välja **Ange JSON-data** på listrutan **Format för konfigurationsinställningar** enligt nedan.
 
    ![Format för konfigurationsinställningar – Använd Configuration Designer](./media/configure-microsoft-launcher/configure-microsoft-launcher-01.png)
+
+   > [!NOTE]
+   > När egenskaperna har konfigurerats via Configuration Designer kommer JSON-data också att uppdateras så att de endast återspeglar dessa egenskaper. Om du vill lägga till ytterligare konfigurationsnycklar i JSON-data använder du exemplet med [JSON-skript](../apps/configure-microsoft-launcher.md#microsoft-launcher-configuration-example) för att kopiera de rader som behövs för varje konfigurationsnyckel. 
 
 ## <a name="using-configuration-designer"></a>Använda Configuration Designer
 
@@ -64,6 +67,10 @@ I följande tabell visas tillgängliga konfigurationsnycklar, värdetyper, stand
 |    Användarändring för att ange enhetens bakgrundsbild tillåts    |    Bool    |    Sant    |    Gör att du kan ange om inställningen för att ange enhetens bakgrundsbild kan ändras av slutanvändaren.<ul><li>Om den ställs in på **True** (Sant) tillämpas bara bakgrundsbilden i principen för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) tillämpas bakgrundsbilden vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Wallpaper.URL.UserChangeAllowed`        |
 |    Aktivera feed    |    Boolesk    |    Sant    |    Gör att du kan aktivera startfeeden på enheten när användaren sveper åt höger på startskärmen.<ul><li>Om den ställs in på **True** (Sant) aktiveras feeden.</li><li>Om den ställs in på **False** (Falskt) inaktiveras feeden.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Feed.Enabled`    |
 |    Användarändring för att aktivera feed tillåts    |    Boolesk    |    Sant    |     Gör att du kan ange om inställningen **Aktivera feed** kan ändras av slutanvändaren.<ul><li>Om den ställs in på **True** (Sant) tillämpas bara feeden för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) tillämpas feeden vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:`com.microsoft.launcher.Feed.Enabled.UserChangeAllowed`    |
+|    Placering av sökfältet   |    Sträng    |    Nedre    |  Gör att du kan ange **sökfältets placering** på startskärmen. <ul><li>Om värdet är inställt på **Nedre** finns sökfältet längst ned på startskärmen.</li><li>Om värdet är inställt på **Övre** finns sökfältet längst upp på startskärmen.</li><li>Om värdet är inställt på **Dölj** tas sökfältet bort från startskärmen.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Search.SearchBar.Placement`    |
+|    Användarändring för sökfältets placering tillåts   |    Bool    |    Sant    |  Gör att du kan ange om inställningen för **sökfältets placering** kan ändras av slutanvändaren. <ul><li>Om den ställs in på **True** (Sant) framtvingas sökfältets placering enbart för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) framtvingas sökfältets placering vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Search.SearchBar.Placement.UserChangeAllowed`    |
+|    Dockningsläge  |    Sträng    |    Visa    | Gör att du kan aktivera dockan på enheten när användaren sveper åt höger på startskärmen.<ul><li>Om den ställs in på **Visa** aktiveras dockan.</li><li>Om den ställs in på **Dölj** döljs dockan från startskärmen, men användaren kan visa den vid behov.</li><li>Om den ställs in på **Inaktiverad** inaktiveras dockan.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Dock.Mode`    |
+|   Användarändring för dockningsläge tillåts   |    Sträng    |    Sant    |  Gör att du kan ange om inställningen Dockningsläge kan ändras av slutanvändaren.<ul><li>Om den ställs in på **True** (Sant) framtvingas inställningen för dockningsläge bara för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) framtvingas inställningen för dockningsläge bara vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Dock.Mode.UserChangeAllowed`    |
 
 ## <a name="enter-json-data"></a>Ange JSON-data
 
@@ -76,7 +83,9 @@ Förutom listan över konfigurerbara inställningar som anges i Configuration De
 |    Konfigurationsnyckel    |    Värdetyp    |    Standardvärde    |    Beskrivning     |
 |----------------------------------------------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Ange tillåtna program<br>JSON-nyckel:`com.microsoft.launcher.HomeScreen.Applications`    |    BundleArray    | Se: [Ange tillåtna program](configure-microsoft-launcher.md#set-allow-listed-applications)</sup>    |    Gör att du kan definiera en uppsättning appar som ska visas på startskärmen bland apparna som är installerade på enheten. Du kan definiera appar genom att ange paketnamnet för de appar som du vill göra synliga. Till exempel skulle `com.android.settings` göra inställningar tillgängliga på startskärmen. Apparna som du godkänner i det här avsnittet bör vara installerade på enheten för att kunna visas på startskärmen.<p>Egenskaper:<ul><li>**Paket:** Namn på programpaketet</li><li>**Klass:** Programaktiviteten, som är specifik för en viss appsida. Den skulle använda standardappsidan om det här värdet är tomt.</li></ul>      |
-|    Appordning på startskärmen<br>JSON-nyckel: `com.microsoft.launcher.HomeScreen.AppOrder`    |    BundleArray    |    Se: [Appordning på startskärmen](configure-microsoft-launcher.md#home-screen-app-order)      |    Gör att du kan ange appordningen på startskärmen.<p>Egenskaper:<br><ul><li>**Typ:** Den enda typ som stöds är `application`.</li><li>**Position:** Programikonplatsen på startskärmen. Det här börjar från position 1 högst upp till vänster och går från vänster till höger, uppifrån och ned.</li><li>**Paket:** Namn på programpaketet.</li><li>**Klass:** Programaktiviteten, som är specifik för en viss appsida. Standardappsidan används om det här värdet är tomt.</li></ul>    |
+|    Appordning på startskärmen<br>JSON-nyckel: `com.microsoft.launcher.HomeScreen.AppOrder`    |    BundleArray    |    Se: [Appordning på startskärmen](configure-microsoft-launcher.md#home-screen-app-order)      |    Gör att du kan ange appordningen på startskärmen.<p>Egenskaper:<br><ul><li>**Typ:** Om du vill ange platser för appar är den enda typ som stöds `application`. Om du vill ange platser för webblänkar är typen `weblink`.</li><li>**Position:** Anger programikonens placering på startskärmen. Det här börjar från position 1 högst upp till vänster och går från vänster till höger, uppifrån och ned.</li><li>**Paket:** Det här är programpaketets namn, som används för att ange apparnas ordning.</li><li>**Klass:** Det här är programaktiviteten, som är specifik för en viss appsida. Standardappsidan används om det här värdet är tomt. Den här egenskapen används för appen.</li><li>**Etikett:** Det här är programaktiviteten, som är specifik för en viss appsida. Standardappsidan används om det här värdet är tomt. Den här egenskapen används för appen.</li><li>**Länk:** URL:en som ska startas efter att slutanvändaren har klickat på webblänkikonen. Den här egenskapen används för webblänken.</li></ul>    |
+|    Ställa in fästa webblänkar<br>JSON-nyckel: `com.microsoft.launcher.HomeScreen.WebLinks`    |    BundleArray    |    Se: [Ställa in fästa webblänkar](configure-microsoft-launcher.md#set-pinned-web-link)      |    Med den här nyckeln kan du fästa webbplatser på startskärmen som snabbstartsikoner. På så sätt kan du se till att slutanvändare får snabb och enkel åtkomst till viktiga webbplatser. Du kan ändra platsen för varje webblänkikon med inställningen ”Home Screen App Order” (appordning på startskärmen).<p>Egenskaper:<br><ul><li>**•  Etikett:** Webblänkrubriken som visas på startskärmen i MS Launcher.</li><li>**Länk:** URL:en som ska startas efter att slutanvändaren har klickat på webblänkikonen.</li></ul>    |
+
 
 ### <a name="set-allow-listed-applications"></a>Ange tillåtna program
 
@@ -131,6 +140,57 @@ Förutom listan över konfigurerbara inställningar som anges i Configuration De
     ]
 }
 ```
+
+### <a name="set-pinned-web-link"></a>Ställa in fästa webblänkar
+
+```JSON
+{ 
+    "key": "com.microsoft.launcher.HomeScreen.WebLinks",  
+    "valueBundleArray": [ 
+        { 
+            "managedProperty": [ 
+                { 
+                    "key": "label",
+                    "valueString": "" 
+                },  
+                { 
+                    "key": "link", 
+                    "valueString": "" 
+                } 
+            ] 
+        }
+    ] 
+},
+{ 
+    "key": "com.microsoft.launcher.HomeScreen.AppOrder",  
+    "valueBundleArray": [ 
+        { 
+            "managedProperty": [ 
+                { 
+                    "key": "type",  
+                    "valueString": "" 
+                },  
+                { 
+                    "key": "position",  
+                    "valueInteger": 
+                },  
+                { 
+                    "key": "label",  
+                    "valueString": "" 
+                },  
+                { 
+                    "key": "link",  
+                    "valueString": "" 
+                } 
+            ] 
+        }
+    ] 
+}
+```
+
+
+
+### <a name="microsoft-launcher-configuration-example"></a>Konfigurationsexempel för Microsoft Launcher
 
 Här följer ett exempel på ett JSON-skript med alla tillgängliga konfigurationsnycklar:
 
@@ -204,6 +264,23 @@ Här följer ett exempel på ett JSON-skript med alla tillgängliga konfiguratio
                 }
             ]
         }, 
+        { 
+            "key": "com.microsoft.launcher.HomeScreen.WebLinks",  
+            "valueBundleArray": [ 
+                { 
+                    "managedProperty": [ 
+                        { 
+                            "key": "label",
+                            "valueString": "News" 
+                        },  
+                        { 
+                            "key": "link", 
+                            "valueString": "https://www.bbc.com" 
+                        } 
+                    ] 
+                }
+            ] 
+        },
         {
             "key": "com.microsoft.launcher.HomeScreen.AppOrder.UserChangeAllowed", 
             "valueBool": false
@@ -270,11 +347,32 @@ Här följer ett exempel på ett JSON-skript med alla tillgängliga konfiguratio
                             "valueString": ""
                         }
                     ]
+                },
+                {
+                    "managedProperty": [
+                        {
+                            "key": "type", 
+                            "valueString": "weblink"
+                        }, 
+                        {
+                            "key": "position", 
+                            "valueInteger": 20
+                        }, 
+                        {
+                            "key": "label", 
+                            "valueString": "News"
+                        }, 
+                        {
+                            "key": "link", 
+                            "valueString": "https://www.bbc.com"
+                        }
+                    ]
                 }
             ]
         }
     ]
 }
+
 ```
 
 ## <a name="next-steps"></a>Nästa steg

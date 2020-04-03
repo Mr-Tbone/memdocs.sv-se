@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 03/25/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3cec45dae7e0596428b2d7ab5c925889c183d465
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 8ac931bf20140865e1185c4f401de0141273cdb3
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364597"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359417"
 ---
 # <a name="use-custom-settings-for-ios-and-ipados-devices-in-microsoft-intune"></a>Använd anpassade inställningar för iOS- och iPadOS-enheter i Microsoft Intune
 
@@ -38,7 +38,7 @@ Den här artikeln innehåller riktlinjer om hur man använder Apple Configurator
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-[Skapa profilen](device-profile-create.md).
+[Skapa profilen](custom-settings-configure.md).
 
 ## <a name="what-you-need-to-know"></a>Vad du behöver veta
 
@@ -57,14 +57,12 @@ Den här artikeln innehåller riktlinjer om hur man använder Apple Configurator
 ## <a name="custom-configuration-profile-settings"></a>Anpassade inställningar för konfigurationsprofil
 
 - **Anpassat namn på konfigurationsprofil**: Ange ett namn för principen. Det här namnet visas på enheten och i Intune-statusen.
-- **Konfigurationsprofilsfil**: Bläddra till den konfigurationsprofil som du skapade med Apple Configurator eller Apple Profile Manager. Den största filstorleken är 1000000 byte (precis under 1 MB). Filen som du importerade visas i området **Filinnehåll**.
+- **Konfigurationsprofilsfil**: Bläddra till den konfigurationsprofil som du skapade med Apple Configurator eller Apple Profile Manager. Den största filstorleken är `1000000` byte (precis under 1 MB). Filen som du importerade visas i området **Filinnehåll**.
 
   Du kan också lägga till enhetstoken i dina anpassade konfigurationsfiler. Enhetstoken används för att lägga till enhetsspecifik information. Ange till exempel `{{serialnumber}}` om du vill visa serienumret. På enheten visas texten på ungefär samma sätt som `123456789ABC`, som är unikt för varje enhet. När du anger variabler ska du använda klammerparenteser `{{ }}`. [Token för appkonfiguration](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) innehåller en lista över variabler som kan användas. Du kan också använda `deviceid` eller andra enhetsspecifika värden.
 
   > [!NOTE]
-  > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` istället för `{{deviceid}}` visas litteralsträngen istället för enhetens unika ID. Se till att du anger rätt information.
-
-Välj **OK** > **Skapa** för att spara ändringarna. Profilen skapas och visas i profillistan.
+  > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` i stället för `{{deviceid}}` visas litteralsträngen i stället för enhetens unika ID. Se till att du anger rätt information.
 
 ## <a name="next-steps"></a>Nästa steg
 

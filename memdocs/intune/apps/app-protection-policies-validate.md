@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/27/2020
+ms.date: 03/31/2020
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e7ed0aa1d45c66c5688cde07b385cf95081a3c3
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: d41dec48ff1f357733882ebe99bcad670e676675
+ms.sourcegitcommit: d601f4e08268d139028f720c0a96dadecc7496d5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342055"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80488009"
 ---
 # <a name="how-to-validate-your-app-protection-policy-setup-in-microsoft-intune"></a>Så här verifierar du konfigurationen av din appskyddsprincip i Microsoft Intune
 
@@ -44,7 +44,7 @@ Om testningen visar att appskyddsprincipen inte fungerar som förväntat, bör d
 
 ### <a name="user-app-protection-status"></a>Användarens appskyddstatus
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Välj **Appar** >  **Appskyddsstatus** och välj sedan ikonen **Tilldelade användare**. 
+3. Välj **Appar** > **Övervakare** >  **Appskyddsstatus**, och välj sedan panelen **Tilldelade användare**. 
 4. Ta fram en lista över användare och grupper genom att välja **Välj användare** på sidan **Apprapportering**. 
 5. Sök efter och välj en användare från listan. Välj sedan **Välj användare**. Högst upp i fönstret **Apprapportering** kan du se om användaren är licensierad för appskydd. Nedanför ser du också om användaren har någon licens för O365 och vilken appstatus användarens alla enheter har.
 

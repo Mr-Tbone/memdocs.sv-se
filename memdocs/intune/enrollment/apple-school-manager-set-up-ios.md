@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d201bb3b15c0debb724f974d519a77994aae8e7f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 19660a8b2dc6b804a1ee1a1eaf407261ca9af2b1
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79359553"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327243"
 ---
 # <a name="set-up-iosipados-device-enrollment-with-apple-school-manager"></a>Konfigurera registrering av iOS/iPadOS-enheter med Apple School Manager
 
@@ -31,7 +31,7 @@ ms.locfileid: "79359553"
 
 Du kan konfigurera Intune till att registrera iOS/iPadOS-enheter som köpts via [Apple School Manager](https://school.apple.com/)-programmet. Med hjälp av Intune med Apple School Manager kan du registrera många iOS/iPadOS-enheter utan att ens behöva röra dem. När en student eller en lärare sätter på enheten körs installationsassistenten med de konfigurerade inställningarna och enheten registreras i hanteringen.
 
-Om du vill aktivera Apple School Manager-registrering använder du både Intune-portalen och Apple School Manager-portalen. En lista med serienummer eller inköpsordernummer krävs så att du kan tilldela enheter till Intune för hantering. Du kan skapa DEP-registreringsprofiler som innehåller inställningar som verkställs på enheterna under registreringen.
+Om du vill aktivera Apple School Manager-registrering använder du både Intune-portalen och Apple School Manager-portalen. En lista med serienummer eller inköpsordernummer krävs så att du kan tilldela enheter till Intune för hantering. Du kan skapa registreringsprofiler för Automated Device Enrollment (ADE) som innehåller inställningar som verkställs på enheterna under registreringen.
 
 Apple School Manager-registrering kan inte användas med [Apples program för enhetsregistrering](device-enrollment-program-enroll-ios.md) eller [enhetsregistreringshanteraren](device-enrollment-manager-enroll.md).
 
@@ -48,7 +48,7 @@ Innan du kan registrera företagsägda iOS/iPadOS-enheter med Apple School Manag
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-an-apple-token"></a>Steg 1. Ladda ned certifikatet för den offentliga Intune-nyckel som krävs för att skapa en Apple-token
 
-1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheeter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > **Lägg till**.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > **Lägg till**.
 
    ![Hämta en registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/image01.png)
 
@@ -106,7 +106,7 @@ Nu när du har installerat din token, kan du skapa en registreringsprofil för A
     > Dessa stöds inte vid autentisering med Apples installationsassistent.
 
 6. Välj **Inställningar för enhetshantering** och välj om du vill att enheter som använder den här profilen ska övervakas.
-    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder DEP som mekanism för att aktivera övervakat läge, särskilt för organisationer som distribuerar större antal iOS/iPadOS-enheter.
+    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder ADE som mekanism för att aktivera övervakat läge, särskilt för organisationer som distribuerar större antal iOS/iPadOS-enheter.
 
     Användare meddelas att deras enheter är övervakade på två sätt:
 

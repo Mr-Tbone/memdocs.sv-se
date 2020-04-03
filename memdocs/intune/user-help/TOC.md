@@ -12,6 +12,7 @@
 
 ## Använda Android-enheten
 ### [Varför du bör registrera Android-enheten](why-enroll-android-device.md)
+### [Installera företagsportalappen i Kina](install-company-portal-android-china.md)
 ### Registrera enheten
 #### [Registrera Android-enheten](enroll-device-android-company-portal.md)  
 #### [Registrera med Android-arbetsprofilen](enroll-device-android-work-profile.md)

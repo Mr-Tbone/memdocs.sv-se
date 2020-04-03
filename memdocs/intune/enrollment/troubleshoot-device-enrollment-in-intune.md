@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic;seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93fba17973571a9981269eb0b9fc98dae20cb920
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: af60c91e52bcee643166729f3a3ac57ae232c4d9
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80085864"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326996"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Felsöka enhetsregistrering i Microsoft Intune
 
@@ -63,7 +63,7 @@ Dessa problem kan uppstå på alla enhetsplattformar.
 
 Kontrollera att användaren inte är tilldelad mer än det maximala antalet enheter genom att följa dessa steg:
 
-1. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Registreringsbegränsningar** > **Begränsningar för antal enheter**. Notera värdet i kolumnen **Enhetsgräns**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Registreringsbegränsningar** > **Begränsningar för antal enheter**. Notera värdet i kolumnen **Enhetsgräns**.
 
 2. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Användare** > **Alla användare** > välj användaren > **Enheter**. Notera antalet enheter.
 
@@ -286,9 +286,9 @@ För att åtgärda problemet måste användarna trycka på knappen **Konfigurera
 När de registrerats återgår enheterna till ett felfritt tillstånd och återfår åtkomst till företagets resurser.
 
 ### <a name="verify-ws-trust-13-is-enabled"></a>Kontrollera att WS-Trust 1.3 är aktiverat
-**Problem** Det går inte att registrera iOS/iPadOS-enheter med programmet för enhetsregistrering (DEP)
+**Problem** Det går inte att registrera iOS/iPadOS-enheter med Automated Device Enrollment (ADE)
 
-Registrering av DEP-enheter med användartillhörighet kräver att WS-Trust 1.3 användarnamn/kombinerad slutpunkt är aktiverat för att begära användartokens. Active Directory aktiverar den här slutpunkten som standard. Hämta en lista med aktiverade slutpunkter med hjälp av PowerShell-cmdleten Get-AdfsEndpoint och sök efter slutpunkten trust/13/UsernameMixed. Exempel:
+Registrering av ADE-enheter med användartillhörighet kräver att WS-Trust 1.3 användarnamn/kombinerad slutpunkt är aktiverat för att begära användartokens. Active Directory aktiverar den här slutpunkten som standard. Hämta en lista med aktiverade slutpunkter med hjälp av PowerShell-cmdleten Get-AdfsEndpoint och sök efter slutpunkten trust/13/UsernameMixed. Exempel:
 
       Get-AdfsEndpoint -AddressPath "/adfs/services/trust/13/UsernameMixed"
 
@@ -339,7 +339,7 @@ Det här problemet kan inträffa om:
 4. Säga till användaren att starta om registreringsprocessen.
 
 #### <a name="determine-if-theres-something-wrong-with-the-vpp-token"></a>Avgöra om det finns något fel med VPP-token
-1. Gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Profiler** > profilnamn > **Hantera** > **Egenskaper**.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Profiler** > profilnamn > **Hantera** > **Egenskaper**.
 2. Granska egenskaperna för att se om några fel som liknar följande visas:
     - Den här token har upphört att gälla.
     - Den här token ligger utanför Företagsportalens licenser.
@@ -349,13 +349,13 @@ Det här problemet kan inträffa om:
 3. Åtgärda problemen för token.
 
 #### <a name="identify-which-devices-are-blocked-by-the-vpp-token"></a>Identifiera vilka enheter som blockeras av VPP-token
-1. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Enheter**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Enheter**.
 2. Filtrera kolumnen **Profilstatus** efter **Blockerad**.
 3. Anteckna serienummer för alla enheter som är **Blockerade**.
 
 #### <a name="remotely-wipe-the-blocked-devices"></a>Fjärrensa de blockerade enheterna
 När du har åtgärdat problemen med VPP-token, måste du rensa enheterna som har blockerats.
-1. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Alla enheter** > **Kolumner** > **Serienummer** > **Använd**. 
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Alla enheter** > **Kolumner** > **Serienummer** > **Använd**. 
 2. För varje blockerade enhet, väljer du den från listan **Alla enheter** och väljer sedan **Rensa** > **Ja**.
 
 #### <a name="tell-the-users-to-restart-the-enrollment-process"></a>Säg till användarna att starta om registreringsprocessen
@@ -379,7 +379,7 @@ När du har rensat de blockerade enheterna kan du be användarna att starta om r
 - Om din organisation aktiverade registreringsbegränsningar som blockerar personliga macOS-enheter måste du manuellt [lägga till den personliga enhetens serienummer](corporate-identifiers-add.md#manually-enter-corporate-identifiers) till Intune.  
 - Om enheten fortfarande är tilldelad till en annan användare i Intune använde den tidigare ägaren inte företagsportalappen att ta bort eller återställa den. Så här rensar du den inaktuella enhetsposten från Intune:  
 
-    1. Logga in med din administratörsautentisering i [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+    1. Logga in med din administratörsautentisering i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
     2. Välj **Enheter** > **Alla enheter**.  
     3. Hitta enheten med registreringsproblemet. Sök efter enhetsnamn eller MAC/HW-adress för att begränsa resultaten.
     4. Välj enheten > **Ta bort**. Ta bort alla andra poster som hör till enheten.  
