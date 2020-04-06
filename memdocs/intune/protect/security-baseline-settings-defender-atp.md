@@ -5,623 +5,861 @@ description: Inställningar för säkerhetsbaslinjer som stöds av Intune för a
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/05/2019
+ms.date: 03/31/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: shpate
+ms.reviewer: aanavath
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ebea853ac536b182a9cfe35e8b291aea3a776f0
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 897b232e841c59fd85d132d1fa9b720c24ac1c9a
+ms.sourcegitcommit: d601f4e08268d139028f720c0a96dadecc7496d5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79351207"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80488022"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>Baslinjeinställningar för Intune för Microsoft Defender Avancerat skydd
 
-Visa baslinjeinställningarna för Microsoft Defender Avancerat skydd (tidigare Windows Defender Avancerat skydd) som stöds av Microsoft Intune. Standardinställningarna för ATP-baslinjen (Advanced Threat Protection) representerar den rekommenderade konfigurationen för ATP och kanske inte överensstämmer med baslinjens standardvärden för andra säkerhetsbaslinjer.  
+Visa baslinjeinställningarna för Microsoft Defender Avancerat skydd som stöds av Microsoft Intune. Standardinställningarna för ATP-baslinjen (Advanced Threat Protection) representerar den rekommenderade konfigurationen för ATP och kanske inte överensstämmer med baslinjens standardvärden för andra säkerhetsbaslinjer.
 
-Baslinjen för Microsoft Defender Advanced Threat Protection är tillgänglig när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites). 
+Informationen i den här artikeln gäller version 3 av Microsoft Defender Avancerat skydd-baslinjen, som gavs ut den 1 mars 2020.
+
+Baslinjen för Microsoft Defender Advanced Threat Protection är tillgänglig när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites).
 
 Baslinjen är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer. Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
 
-## <a name="application-guard"></a>Application Guard  
+## <a name="application-guard"></a>Application Guard
+
 Mer information finns i [WindowsDefenderApplicationGuard CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp) i Windows-dokumentationen.  
 
 När du använder Microsoft Edge Microsoft Defender Application Guard skyddas din miljö från webbplatser som inte är betrodda av din organisation. När användare besöker webbplatser som inte listas i din isolerade nätverksgräns, öppnas webbplatserna i en virtuell webbläsarsession i Hyper-V. Betrodda webbplatser definieras av en nätverksgräns.  
 
-- **Application Guard** - *Settings/AllowWindowsDefenderApplicationGuard*  
-  Välj *Ja* för att aktivera den här funktionen, som öppnar ej betrodda webbplatser i en virtualiserad Hyper-V-webbläsarcontainer. Då inställt till *Inte konfigurerad*, öppnas vilken plats (betrodd och ej betrodd) som helst på enheten och inte i en virtualiserad container.  
-
-  **Standard**: Ja
- 
-  - **Externt innehåll på företagswebbplatser** - *inställningar/BlockNonEnterpriseContent*  
-    Välj *Ja* för att blockera inläsning av innehåll från webbplatser som inte är godkända. Då inställt till *Inte konfigurerad* innebär det att icke-företagswebbplatser kan öppnas på enheten. 
- 
-    **Standard**: Ja
-
-  - **Funktionssätt för Urklipp** - *Inställningar/ClipboardSettings*  
-    Välj vilka åtgärder för kopiera och klistra in som tillåts mellan den lokala datorn och den virtuella Application Guard-webbläsaren.  Alternativen är:
-    - Inte konfigurerat  
-    - Blockera kopiera och klistra in mellan dator och webbläsare – Blockera båda. Data kan inte överföras mellan datorn och den virtuella webbläsaren.  
-    - Tillåt endast kopiering och inklistring från webbläsare till dator – data kan inte överföras från datorn till den virtuella webbläsaren.
-    - Tillåt endast kopiera och klistra in från dator till webbläsare – data kan inte överföras från den virtuella webbläsaren till värddatorn.
-    - Tillåt kopiera och klistra in mellan dator och webbläsare – Ingen blockering för innehåll finns.  
-
-    **Standard**: Blockera kopiera och klistra in mellan dator och webbläsare  
-
-- **Isoleringsprincip för Windows-nätverk – domännamn på företagsnätverk**  
-  Mer information finns i [CSP-princip – NetworkIsolation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-networkisolation) i Windows-dokumentationen.
+- **Aktivera Application Guard för Edge (alternativ)**  
+  CSP: [Settings/AllowWindowsDefenderApplicationGuard](https://go.microsoft.com/fwlink/?linkid=872350)
   
-  Ange en lista över Enterprise-resurser som domäner, IP-adressintervall och nätverksgränser som finns i molnet som Application Guard behandlar som företagswebbplatser.  
-
-  **Standard**: securitycenter.windows.com
-
-## <a name="application-reputation"></a>Klassificering  
-
-Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen) i Windows-dokumentationen.
-
-- **Block execution of unverified files** (Blockera körning av overifierade filer)  
-    Blockera användare från att köra overifierade filer. Då inställt till *Inte konfigurerat* kan medarbetare ignorera SmartScreen-varningar och köra skadliga filer. Inställt till *Ja* så att medarbetare inte kan ignorera SmartScreen-varningar och köra skadliga filer.  
+  - **Aktiverat för Edge** (*standard*) – Application Guard öppnar icke-godkända webbplatser i en Hyper-V-virtualiserad webbläsarcontainer.
+  - **Inte konfigurerat** – Alla webbplatser (betrodda och ej betrodda) öppnas på enheten och inte i en virtualiserad container.  
   
-    **Standard**: Ja
+  När du har angett *Aktivera för Edge* kan du konfigurera *Blockera externt innehåll från webbplatser som inte godkänts av företaget* och *Funktionssätt för Urklipp*.
 
-- **Require SmartScreen for apps and files** (Kräv SmartScreen för appar och filer)  
-  Inställt till *Ja* för att aktivera SmartScreen för Windows.  
+  - **Blockera externt innehåll från webbplatser som inte godkänts av företaget**  
+    CSP: [Settings/BlockNonEnterpriseContent](https://go.microsoft.com/fwlink/?linkid=872352)
 
-  **Standard**: Ja
+    - **Ja** (*standard*) – Blockera inläsning av innehåll från webbplatser som inte är godkända.
+    - **Inte konfigurerat** – Icke-företagswebbplatser kan öppnas på enheten
 
-## <a name="attack-surface-reduction"></a>Minska attackytan  
+  - **Funktionssätt för Urklipp**  
+    CSP: [Settings/ClipboardSettings](https://go.microsoft.com/fwlink/?linkid=872351)
 
-- **Office apps launch child process type** (Office-appar startar underordnad processtyp)  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Blockera*, kommer Office-appar inte att kunna skapa underordnade processer. Office-appar inkluderar Word, Excel, PowerPoint, OneNote och Access. Att skapa en underordnad process är ett typiskt beteende i skadlig kod, särskilt vid makrobaserade attacker som försöker använda Office-appar för att starta eller hämta skadliga körbara filer.  
+    Välj vilka åtgärder för kopiera och klistra in som tillåts mellan den lokala datorn och den virtuella Application Guard-webbläsaren. Alternativen är:
+    - **Inte konfigurerat**  
+    - **Blockera kopiera och klistra in mellan dator och webbläsare** (*standard*) – Blockerar båda. Data kan inte överföras mellan datorn och den virtuella webbläsaren.
+    - **Tillåt endast kopiera och klistra in från webbläsare till dator** – Data kan inte överföras från datorn till den virtuella webbläsaren.
+    - **Tillåt endast kopiera och klistra in från dator till webbläsare** – Data kan inte överföras från den virtuella webbläsaren till värddatorn.
+    - **Tillåt kopiera och klistra in mellan dator och webbläsare** – Ingen blockering för innehåll finns.
 
-  **Standard**: Blockera
+- **Princip för nätverksisolering i Windows**  
+  CSP: [Policy CSP – NetworkIsolation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-networkisolation)
 
-- **Script downloaded payload execution type** (Körningstyp för nedladdad nyttolast med skript)  
-  [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – Ange en identifieringsnivå för potentiellt oönskade program som laddar ned eller försöker att installera.  
+  Ange en lista över *Nätverksdomäner*, som är Enterprise-resurser som finns i molnet och som Application Guard behandlar som företagswebbplatser
+  - **Konfigurera** (*standard*)
+  - **Inte konfigurerat**
 
-  **Standard**: Blockera 
+  När du har angett *Konfigurera* kan du definiera *Nätverksdomäner*.
 
-- **Prevent credential stealing type** (Förhindra typ av stöld av autentiseringsuppgifter)  
-  Ställ in till *Aktivera* för att [Skydda härledda domänautentiseringsuppgifter med Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard). Microsoft Defender Credential Guard använder virtualiseringsbaserad säkerhet för att isolera hemligheter så att endast privilegierad programvara kan komma åt dem. Obehörig åtkomst till hemligheterna kan leda till stöld av autentiseringsuppgifter i form av Pass-the-Hash och Pass-The-Ticket. Microsoft Defender Credential Guard förhindrar dessa attacker genom att skydda NTLM-hashvärden för lösenord, biljettbeviljande Kerberos-biljetter och autentiseringsuppgifter som lagras av program som autentiseringsuppgifter för en domän.  
+  - **Nätverksdomäner**  
+    Välj **Lägg till** och ange domäner, IP-adressintervall och nätverksgränser. *securitycenter.windows.com* konfigureras som standard.
 
-  **Standard**: Aktivera
+## <a name="bitlocker"></a>BitLocker
 
-- **Körbara filer i e-postinnehåll**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Blockera* blockerar den här regeln följande filtyper från att köras eller startas från ett e-postmeddelande i Microsoft Outlook eller webbaserad e-post (till exempel Gmail.com eller Outlook.com):  
+Mer information finns i [BitLocker-grupprincipinställningar](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings) i Windows-dokumentationen.
 
-  - Körbara filer (till exempel .exe, .dll eller .scr)  
-  - Skriptfiler (till exempel en PowerShell .ps-, VisualBasic .vbs- eller JavaScript .js-fil)  
-  - Skript för arkivfiler  
+- **Kräv att lagringskort ska krypteras (endast mobil)**  
+  CSP: [RequireStorageCardEncryption](https://go.microsoft.com/fwlink/?linkid=872524)
 
-  **Standard**: Blockera
+  Den här inställningen gäller endast för Windows Mobile- och Mobile Enterprise SKU-enheter.
+  - **Ja** (*standard*) – Kryptering på minneskort krävs för mobila enheter.
+  - **Inte konfigurerat** – Inställningen återgår till operativsystemstandard, vilket är att inte kräva kryptering på lagringskort.
 
-- **Adobe Reader-start i en underordnad process**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – *Aktivera* den här regeln för att blockera Adobe Reader från att skapa en underordnad process. Via sociala tekniker eller kryphål kan skadlig kod ladda ned och starta ytterligare nyttolaster och bryta ut från Adobe Reader.  
+- **Aktivera fullständig diskkryptering för operativsystem och fasta dataenheter**  
+  CSP: [RequireDeviceEncryption](https://go.microsoft.com/fwlink/?linkid=872523)
 
-  **Standard**: Aktivera
+  Om enheten krypterades innan den här principen tillämpades vidtas ingen extra åtgärd. Om krypteringsmetoden och alternativen stämmer överens med den här principen ska konfigurationen returnera lyckat resultat. Om ett alternativ för BitLocker-konfiguration på plats inte matchar den här principen kommer konfigurationen troligen att returnera ett fel.
+  
+  Om du vill tillämpa den här principen på en disk som redan är krypterad dekrypterar du enheten och tillämpar MDM-principen igen. Windows standard är att inte kräva BitLocker-diskkryptering, men för Azure AD-anslutning och Microsoft Account (MSA)-registrering/-inloggning kan automatisk kryptering tillämpa aktivering av BitLocker på XTS-AES 128-bitars kryptering.
 
-- **Makrokod dold i skriptfiler**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Skadlig kod och andra hot kan försöka förvränga eller dölja skadlig kod i vissa skriptfiler. Den här regeln förhindrar att skript som verkar vara dolda körs.  
-    
-  **Standard**: Blockera
+  - **Ja** (*standard*) – Framtvinga användning av BitLocker.
+  - **Inte konfigurerat** – Ingen BitLocker-kryptering sker.
 
-- **Obetrodd USB-process**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Blockera*, kan osignerade eller ej betrodda körbara filer från flyttbara USB-enheter och SD-kort inte köras.
+- **Princip för BitLocker på systemenheter**  
+  [BitLocker-grupprincipinställningar](https://go.microsoft.com/fwlink/?linkid=2067025)
 
-  Körbara filer inkluderar:
-  - Körbara filer (till exempel .exe, .dll eller .scr)
-  - Skriptfiler (till exempel en PowerShell .ps-, VisualBasic .vbs- eller JavaScript .js-fil)  
+  - **Konfigurera** (*standard*)
+  - **Inte konfigurerat**
 
-  **Standard**: Blockera
+  När du har angett *Konfigurera* kan du konfigurera *Konfigurera krypteringsmetod för operativsystemenheter*.
 
-- **Annan processinmatning i Office-appar**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Blockera*, kan inte Office-appar, inklusive Word, Excel, PowerPoint och OneNote, mata in kod i andra processer. Kodinmatning används vanligtvis av skadlig kod för att köra skadlig kod i ett försök att dölja aktivitet från motorer för virusgenomsökning.  
+  - **Konfigurera krypteringsmetod för operativsystemenheter**  
+    CSP: [EncryptionMethodByDriveType](https://go.microsoft.com/fwlink/?linkid=872526)  
+    Den här inställningen är tillgänglig när *Princip för BitLocker på systemenheter* har angetts till *Konfigurera*.  
 
-  **Standard**: Blockera
+    Konfigurera krypteringsmetod och krypteringsgrad för systemenheter.  *XTS-AES 128-bitars* är Windows standardkrypteringsmetod och det rekommenderade värdet.
 
-- **Office-makrokod tillåter Win32-importer**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Blockera*, försöker den här regeln att blockera Office-filer som innehåller makrokod som kan importera Win32-DLL:er. Office-filer inkluderar Word, Excel, PowerPoint och OneNote. Skadlig kod kan använda makrokod i Office-filer för att importera och läsa in Win32-DLL:er, som sedan används för att göra API-anrop som leder till ytterligare infektion hela systemet.  
+    - **Ej konfigurerat** (*standard*)
+    - **AES 128-bitars CBC**
+    - **AES 256-bitars CBC**
+    - **AES 128-bitars XTS**
+    - **AES 256-bitars XTS**
 
-  **Standard**: Blockera
+- **Princip för BitLocker på fasta enheter**  
+  [BitLocker-grupprincipinställningar](https://go.microsoft.com/fwlink/?linkid=2067018)
 
-- **Office-kommunikationsappar startar i en underordnad process**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Aktivera*, förhindrar den här regeln att Outlook skapar underordnade processer. Genom att blockera skapandet av en underordnad process skyddar regeln mot sociala manipulationsangrepp och förhindrar att koden missbrukar en svaghet i Outlook.  
+  - **Konfigurera** (*standard*)
+  - **Inte konfigurerat**
 
-  **Standard**: Aktivera
+  När du har angett *Konfigurera* kan du konfigurera *Blockera skrivåtkomst till fasta dataenheter som inte skyddas av BitLocker* och *Konfigurera krypteringsmetod för fasta dataenheter*.
 
-- **Generering eller start för körbart innehåll i Office-appar**  
-  [Regel för minskning av attackytan](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#attack-surface-reduction-rules) – Då inställt till *Blockera*, kan inte Office-appar skapa körbart innehåll. Office-appar inkluderar Word, Excel, PowerPoint, OneNote och Access.  
+  - **Blockera skrivåtkomst till fasta dataenheter som inte skyddas av BitLocker**  
+    CSP: [FixedDrivesRequireEncryption](https://go.microsoft.com/fwlink/?linkid=872534)  
+    Den här inställningen är tillgänglig när *Princip för BitLocker på fasta enheter* har angetts till *Konfigurera*.
 
-  Den här regeln gäller typiska beteenden som används av misstänkta och skadliga tillägg och skript (tillägg) som skapar eller startar körbara filer. Det här är en vanlig teknik som används av skadlig kod. Tillägg hindras från att användas av Office-appar. De här tilläggen använder vanligtvis Windows Scripting Host (WSH-filer) för att köra skript som automatiserar vissa uppgifter eller tillhandahåller användargenererade tilläggsfunktioner.
+    - **Inte konfigurerat** (*standard*) – Data kan skrivas till icke-krypterade fasta enheter.
+    - **Ja** – Windows tillåter inte att data skrivs till fasta enheter som inte är BitLocker-skyddade. Om en fast enhet inte är krypterad måste användaren slutföra installationsguiden för BitLocker för enheten innan skrivåtkomst beviljas.
 
-  **Standard**: Blockera
+  - **Konfigurera krypteringsmetod för fasta dataenheter**  
+    CSP: [EncryptionMethodByDriveType](hhttps://go.microsoft.com/fwlink/?linkid=872526)  
+    Den här inställningen är tillgänglig när *Princip för BitLocker på fasta enheter* har angetts till *Konfigurera*.
 
-## <a name="bitlocker"></a>BitLocker  
+    Konfigurera krypteringsmetod och krypteringsgrad för fasta dataenhetsdiskar. *XTS-AES 128-bitars* är Windows standardkrypteringsmetod och det rekommenderade värdet.
 
-Mer information finns i [BitLocker-grupprincipinställningar](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings) i Windows-dokumentationen.  
+    - **Ej konfigurerat** (*standard*)
+    - **AES 128-bitars CBC**
+    - **AES 256-bitars CBC**
+    - **AES 128-bitars XTS**
+    - **AES 256-bitars XTS**
 
-- **Kryptera enheter**  
-  Välj *Ja* för att aktivera BitLocker-enhetskryptering. Beroende på enheternas maskinvara och version av Windows, kan användare av enheter uppmanas att bekräfta att det inte finns någon kryptering från tredje part på enheten. Att aktivera Windows-kryptering medan kryptering från tredje part är aktiv kommer att återge enheten som instabil.  
+- **Princip för BitLocker på flyttbara enheter**  
+  [BitLocker-grupprincipinställningar](https://go.microsoft.com/fwlink/?linkid=2067140)
 
-   **Standard**: Ja
+  - **Konfigurera** (*standard*)
+  - **Inte konfigurerat**
 
-- **Bit locker removable drive policy** (Princip för BitLocker på flyttbara enheter)  
-  Värdena för den här principen avgör krypteringsstyrkan som BitLocker använder för kryptering av borttagbara enheter. Företag styr krypteringsnivån för ökad säkerhet (AES-256 är starkare än AES-128). Om du väljer *Ja* för att aktivera den här inställningen kan du konfigurera en krypteringsalgoritm och krypteringsstyrkan för nycklar för fasta dataenheter, operativsystemenheter och flyttbara dataenheter separat. För fasta enheter och operativsystemenheter rekommenderar vi att du använder XTS-AES-algoritmen. För flyttbara dataenheter bör du använda AES-CBC 128-bitars eller AES-CBC 256-bitars om dataenheten används i andra enheter som inte kör Windows 10 version 1511 eller senare. Ändringar av krypteringsmetoden har ingen effekt om enheten redan har krypterats eller om kryptering pågår. I dessa fall ignoreras den här principinställningen. 
+  När du har angett *Konfigurera* kan du konfigurera *Konfigurera krypteringsmetod för flyttbara dataenheter* och *Blockera skrivåtkomst till flyttbara dataenheter som inte skyddas av BitLocker*.
 
-  Konfigurera följande inställningar för BitLockers princip för flyttbar enhet:
+  - **Konfigurera krypteringsmetod för flyttbara dataenheter**  
+    CSP: [EncryptionMethodByDriveType](https://go.microsoft.com/fwlink/?linkid=872526)  
+    Den här inställningen är tillgänglig när *Princip för BitLocker på flyttbara enheter* har angetts till *Konfigurera*.
 
-  - **Require encryption for write access** (Kräv kryptering för skrivåtkomst)  
-    **Standard**: Ja
+    Konfigurera krypteringsmetod och krypteringsgrad för flyttbara dataenhetsdiskar. *XTS-AES 128-bitars* är Windows standardkrypteringsmetod och det rekommenderade värdet.
 
-  - **Krypteringsmetod**  
-    **Standard**: AES 128bit CBC
+    - **Inte konfigurerat**
+    - **AES 128-bitars CBC**
+    - **AES 256-bitars CBC** (*standard*)
+    - **AES 128-bitars XTS**
+    - **AES 256-bitars XTS**
 
-- **Kryptera minneskort (endast mobil)** Välj *Ja* för att kryptera den mobila enhetens minneskort.  
+  - **Blockera skrivåtkomst till flyttbara dataenheter som inte skyddas av BitLocker**  
+    CSP: [RemovableDrivesRequireEncryption](https://go.microsoft.com/fwlink/?linkid=872540)  
+    Den här inställningen är tillgänglig när *Princip för BitLocker på flyttbara enheter* har angetts till *Konfigurera*.
 
-   **Standard**: Ja
+    - **Inte konfigurerat** (*standard*) – Data kan skrivas till icke-krypterade flyttbara enheter.  
+    - **Ja** – Windows tillåter inte att data skrivs till flyttbara enheter som inte är BitLocker-skyddade. Om en flyttbar enhet inte är krypterad måste användaren slutföra installationsguiden för BitLocker för enheten innan skrivåtkomst beviljas.
 
-- **Bit locker fixed drive policy** (Princip för BitLocker på fasta enheter)  
-  Värdena för den här principen avgör krypteringsstyrkan som BitLocker använder för kryptering av fasta enheter. Företag kan styra krypteringsnivån för ökad säkerhet (AES-256 är starkare än AES-128). Om du aktiverar den här inställningen kan du konfigurera en krypteringsalgoritm och krypteringsstyrkan för nycklar för fasta dataenheter, operativsystemenheter och flyttbara dataenheter separat. För fasta enheter och operativsystemenheter rekommenderar vi att du använder XTS-AES-algoritmen. För flyttbara dataenheter bör du använda AES-CBC 128-bitars eller AES-CBC 256-bitars om dataenheten används i andra enheter som inte kör Windows 10 version 1511 eller senare. Ändringar av krypteringsmetoden har ingen effekt om enheten redan har krypterats eller om kryptering pågår. I dessa fall ignoreras den här principinställningen.
+## <a name="browser"></a>Webbläsare
 
-  Konfigurera följande inställningar för BitLockers princip för fasta enhet:
+- **Require SmartScreen for Microsoft Edge** (Kräv SmartScreen för Microsoft Edge)  
+  CSP: [Browser/AllowSmartScreen](https://go.microsoft.com/fwlink/?linkid=2067029)
 
-  - **Require encryption for write access** (Kräv kryptering för skrivåtkomst)  
-    **Standard**: Ja
+  - **Ja** (*standard*) – Använd SmartScreen för att skydda användarna mot potentiella nätfiskeförsök och skadlig programvara.
+  - **Inte konfigurerat**
 
-  - **Krypteringsmetod**  
-    **Standard**: AES 128bit XTS
+- **Block malicious site access** (Blockera åtkomst till skadliga webbplatser)  
+  CSP: [Browser/PreventSmartScreenPromptOverride](https://go.microsoft.com/fwlink/?linkid=2067040)  
 
-- **Bit locker system drive policy** (Princip för BitLocker på systemenheter)  
-  Värdena för den här principen avgör krypteringsstyrkan som BitLocker använder för kryptering av systemenheten. Företag kanske vill styra krypteringsnivån för ökad säkerhet (AES-256 är starkare än AES-128). Om du aktiverar den här inställningen kan du konfigurera en krypteringsalgoritm och krypteringsstyrkan för nycklar för fasta dataenheter, operativsystemenheter och flyttbara dataenheter separat. För fasta enheter och operativsystemenheter rekommenderar vi att du använder XTS-AES-algoritmen. För flyttbara dataenheter bör du använda AES-CBC 128-bitars eller AES-CBC 256-bitars om dataenheten används i andra enheter som inte kör Windows 10 version 1511 eller senare. Ändringar av krypteringsmetoden har ingen effekt om enheten redan har krypterats eller om kryptering pågår. I dessa fall ignoreras den här principinställningen.  
+  - **Ja** (*standard*) – Blockera användare från att ignorera Microsoft Defender SmartScreen-filtervarningar och blockera dem från att gå till webbplatsen.
+  - **Inte konfigurerat**
 
-  Konfigurera följande inställningar för BitLockers princip för systemenhet:  
+- **Block unverified file download** (Blockera nedladdning av overifierade filer)  
+  CSP: [Browser/PreventSmartScreenPromptOverrideForFiles](https://go.microsoft.com/fwlink/?linkid=2067023)  
 
-  - **Krypteringsmetod**  
-    **Standard**: AES 128bit XTS
+  - **Ja** (*standard*) – Blockera användare från att ignorera Microsoft Defender SmartScreen-filtervarningar och blockera dem från att ladda ned overifierade filer.
+  - **Inte konfigurerat**
 
-## <a name="device-control"></a>Enhetskontroll  
-
-- **Sök igenom flyttbara drivrutiner vid fullständig genomsökning**  
-  [Defender/AllowFullScanRemovableDriveScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowfullscanremovabledrivescanning) – Om det är inställt på *Ja* söker Defender efter skadlig och oönskad programvara i flyttbara enheter, som flash-enheter, under en fullständig genomsökning. Defender Antivirus söker igenom alla filer på USB-enheter innan filerna på USB-enheten kan köras.
-
-  Relaterad inställning i den här listan: *Defender/AllowFullScanOnMappedNetworkDrives*  
-
-  **Standard**: Ja
-
-- **Uppräkning av externa enheter som är inkompatibla med Kernel DMA-skydd**  
-   Se *DmaGuard/DeviceEnumerationPolicy* i [CSP-princip – DmaGuard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
-
-  Den här principen ger ökad säkerhet mot externa DMA-kompatibla enheter. Det möjliggör större kontroll över uppräkning av externa DMA-kompatibla enheter som inte är kompatibla med minnesisolering och sandbox-miljö för DMA-enhet.
-
-  Den här principen börjar bara gälla när Kernel DMA-skydd stöds och aktiveras av datorns inbyggda programvara. Kernel DMA-skydd är en plattformsfunktion som inte kan styras av en princip eller av en enhets användare. Den måste stödjas av systemet vid tidpunkten för tillverkning. 
-
-  Om du vill kontrollera om systemet har stöd för Kernel DMA-skydd, kör MSINFO32.exe i systemet och granska fältet *Kernel DMA-skydd* på sammanfattningssidan.  
-
-  Alternativen är: 
-  - *Standard för enheten* – Efter inloggning eller när skärmen låsts upp, tillåts enheter med drivrutiner som är kompatibla med DMA-ommappning att räknas upp när som helst. Enheter med drivrutiner som är inkompatibla med DMA-ommappning kommer endast att uppräknas efter att användaren låser upp skärmen
-  - *Tillåt alla* – Alla externa DMA-kompatibla PCIe-enheter räknas upp när som helst
-  - *Blockera alla* – Enheter med drivrutiner som är kompatibla med DMA-ommappning tillåts att räkna upp när som helst. Enheter med drivrutiner som är inkompatibla för DMA-ommappning får aldrig starta och utföra DMA när som helst.
-
-  **Standard**: Standard för enheten
-
-- **Hardware device installation by device identifiers** (Installation av maskinvaruenheter efter enhets-ID)  
-  [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids) – Med denna princip anger du en lista med ID:n för Plug and Play-maskinvara och kompatibla ID:n för enheter som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen (inställd på *Blockera installation av maskinvaruenheter*), hindras Windows från att installera en enhet vars maskinvaru-ID eller kompatibla ID visas i listan som du skapar. Om du aktiverar den här principen på en fjärrskrivbordsserver påverkar principen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern. Om du inaktiverar eller inte konfigurerar den här principinställningen (inställd på *Tillåt installation av maskinvaruenheter*), kan enheter installera och uppdatera beroende på om de tillåts eller förhindras av andra principinställningar.  
-
-  **Standard**: Blockera installation av maskinvaruenheter  
-
-  När *Blockera installation av maskinvaruenheter* är valt, är följande inställningar tillgängliga.
-  - **Remove matching hardware devices** (Ta bort matchande maskinvaruenheter)  
-    Den här inställningen är endast tillgänglig när *Hardware device installation by device identifiers* (Installation av maskinvaruenheter efter enhets-ID) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter).  
-
-    **Standard**: Ja
-
-  - **Hardware device identifiers that are blocked** (ID:n för blockerade maskinvaruenheter)  
-    Den här inställningen är endast tillgänglig när *Hardware device installation by device identifiers* (Installation av maskinvaruenheter efter enhets-ID) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter). Expandera alternativet om du vill konfigurera den här inställningen, välj **+ Lägg till**, och ange sedan maskinvarans enhets-ID som du vill blockera.  
-
-    **Standard**: PCI\CC_0C0A
+## <a name="data-protection"></a>Dataskydd
 
 - **Block direct memory access** (Blockera direkt minnesåtkomst)  
-  [DataProtection/AllowDirectMemoryAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dataprotection#dataprotection-allowdirectmemoryaccess) – Använd den här principinställningen för att blockera direkt minnesåtkomst (DMA) för alla underordnade PCI-portar med hot plug-stöd tills en användare loggar in i Windows. När en användare loggar in räknar Windows upp PCI-enheterna som är anslutna till PCI-portarna med hot plug-stöd. Varje gång användaren låser datorn blockeras DMA på PCI-portarna med hot plug-stöd utan underordnade enheter tills användaren loggar in igen. Enheter som räknades upp när datorn var upplåst fortsätter att fungera tills de kopplas från. 
+  CSP: [DataProtection/AllowDirectMemoryAccess](https://go.microsoft.com/fwlink/?linkid=2067031)  
 
-  Den här principinställningen tillämpas endast när BitLocker- eller enhetskryptering är aktiverat.  
+  Den här principinställningen tillämpas endast när BitLocker- eller enhetskryptering är aktiverat.
 
-  **Standard**: Ja
+  - **Ja** (*standard*) – Blockera direkt minnesåtkomst (DMA) för alla underordnade PCI-portar med enhetsbyte vid drift tills en användare loggar in i Windows. När en användare har loggat in räknar Windows upp PCI-enheterna som är anslutna till PCI-portarna med hot plug-stöd. Varje gång användaren låser datorn blockeras DMA på PCI-portarna med hot plug-stöd utan underordnade enheter tills användaren loggar in igen. Enheter som räknades upp när datorn var upplåst fortsätter att fungera tills de kopplas från.
+  - **Inte konfigurerat**
 
+## <a name="device-guard"></a>Device Guard  
 
-- **Hardware device installation by setup classes** (Installation av maskinvaruenheter efter installationsklass)  
-  [DeviceInstallation/AllowInstallationOfMatchingDeviceSetupClasses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-allowinstallationofmatchingdevicesetupclasses) – Med den här principen kan du ange en lista med klass-GUID för enhetsinstallation för enhetsdrivrutiner som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen (inställd till *Blockera installation av maskinvaruenheter*), kan inte Windows installera eller uppdatera enhetsdrivrutiner vars klass-GUID för enhetsinstallation visas i listan du skapar. Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern. Om du inaktiverar eller inte konfigurerar den här principinställningen (inställd på *Tillåt installation av maskinvaruenheter*), kan Windows installera och uppdatera enheter beroende på om de tillåts eller förhindras av andra principinställningar.  
+- **Aktivera Credential Guard**  
+  CSP: [DeviceGuard/ConfigureSystemGuardLaunch](https://go.microsoft.com/fwlink/?linkid=872424)
 
-  **Standard**: Blockera installation av maskinvaruenheter
+  Credential Guard använder Windows Hypervisor för att tillhandahålla skydd, vilket kräver att funktionerna för säker start och DMA-skydd fungerar, vilket kräver att maskinvarukraven uppfylls.
 
-  När *Blockera installation av maskinvaruenheter* är valt, är följande inställningar tillgängliga.  
+  - **Inte konfigurerat** – Inaktivera användningen av Credential Guard, som är Windows-standard.
+  - **Aktivera med UEFI-lås** (*standard*) – Aktivera Credential Guard och tillåt inte att det inaktiveras via fjärranslutning, eftersom den kvarstående konfigurationen i UEFI måste rensas manuellt.
+  - **Aktivera utan UEFI-lås** – Aktivera Credential Guard och tillåt att det inaktiveras utan fysisk åtkomst till datorn.
 
-  - **Remove matching hardware devices** (Ta bort matchande maskinvaruenheter)  
-    Den här inställningen är endast tillgänglig när *Hardware device installation by setup classes* (Installation av maskinvaruenheter efter installationsklasser) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter).  
- 
-    **Standard**: Ja  
+## <a name="device-installation"></a>Enhetsinstallation
+
+- **Hardware device installation by device identifiers** (Installation av maskinvaruenheter efter enhets-ID)  
+  [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](hhttps://go.microsoft.com/fwlink/?linkid=2066794)  
+  
+  Med den här principinställningen kan du ange en lista med ID:n för Plug and Play-maskinvara och kompatibla ID:n för enheter som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet.  Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern.
+
+  - **Inte konfigurerat**
+  - **Tillåt installation av maskinvaruenheter** – Enheter kan installeras och uppdateras beroende på vad som tillåts eller förhindras av andra principinställningar.
+  - **Blockera installation av maskinvaruenheter** (*standard*) – Windows hindras från att installera en enhet vars maskinvaru-ID eller kompatibelt ID visas i listan som du definierar.
+
+  När du har angett *Blockera installation av maskinvaruenheter* kan du konfigurera *Ta bort matchande maskinvaruenheter* och *Maskinvaruenheters identifierare som har blockerats*.
+
+  - **Remove matching hardware devices** (Ta bort matchande maskinvaruenheter)
+
+    Den här inställningen är endast tillgänglig när *Hardware device installation by device identifiers* (Installation av maskinvaruenheter efter enhets-ID) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter).
+    - **Ja**
+    - **Inte konfigurerat**
 
   - **Hardware device identifiers that are blocked** (ID:n för blockerade maskinvaruenheter)  
-    Den här inställningen är endast tillgänglig när Installation av maskinvaruenheter efter installationsklasser har inställningen Blockera installation av maskinvaruenheter. Expandera alternativet om du vill konfigurera den här inställningen, välj **+ Lägg till**, och ange sedan maskinvarans enhets-ID som du vill blockera.  
- 
-    **Standard**: {d48179be-ec20-11d1-b6b8-00c04fa372a7}
+    
+    Den här inställningen är endast tillgänglig när *Hardware device installation by device identifiers* (Installation av maskinvaruenheter efter enhets-ID) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter).
 
-## <a name="endpoint-detection-and-response"></a>Slutpunktsidentifiering och svar  
-Mer information finns i [WindowsAdvancedThreatProtection CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) i Windows-dokumentationen.  
+    Välj **Lägg till** och ange sedan maskinvarans enhets-ID som du vill blockera.
 
-- **Skicka frekvensvärde för telemetrirapportering** - *Configuration/TelemetryReportingFrequency*
+- **Hardware device installation by setup classes** (Installation av maskinvaruenheter efter installationsklass)  
+  CSP: [DeviceInstallation/AllowInstallationOfMatchingDeviceSetupClasses](https://go.microsoft.com/fwlink/?linkid=2067048)  
+  
+  Med den här principinställningen kan du ange en lista med klass-GUID för enhetsinstallation för enhetsdrivrutiner som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern.
+
+  - **Inte konfigurerat**
+  - **Tillåt installation av maskinvaruenheter** – Windows kan installera och uppdatera enheter beroende på vad som tillåts eller förhindras av andra principinställningar.
+  - **Blockera installation av maskinvaruenheter** (*standard*) – Windows hindras från att installera en enhet vars klass-GUID för installation visas i en lista som du definierar.
+
+  När du har angett *Blockera installation av maskinvaruenheter* kan du konfigurera *Ta bort matchande maskinvaruenheter* och *ID:n för blockerade maskinvaruenheter*.
+
+  - **Remove matching hardware devices** (Ta bort matchande maskinvaruenheter)
+
+    Den här inställningen är endast tillgänglig när *Hardware device installation by device identifiers* (Installation av maskinvaruenheter efter enhets-ID) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter).
+    - **Ja**
+    - **Inte konfigurerat**
+
+  - **Hardware device identifiers that are blocked** (ID:n för blockerade maskinvaruenheter)
+
+    Den här inställningen är endast tillgänglig när *Hardware device installation by device identifiers* (Installation av maskinvaruenheter efter enhets-ID) har inställningen *Block hardware device installation* (Blockera installation av maskinvaruenheter).
+
+    Välj **Lägg till** och ange sedan maskinvarans enhets-ID som du vill blockera.
+
+## <a name="dma-guard"></a>DMA Guard
+
+- **Uppräkning av externa enheter som är inkompatibla med Kernel DMA-skydd**  
+  CSP: [DmaGuard/DeviceEnumerationPolicy](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
+
+  Den här principen kan ge ökad säkerhet mot externa DMA-kompatibla enheter. Det möjliggör större kontroll över uppräkning av externa DMA-kompatibla enheter som inte är kompatibla med minnesisolering och sandbox-miljö för DMA-mappning/-enhet.
+  
+  Den här principen börjar bara gälla när Kernel DMA-skydd stöds och aktiveras av datorns inbyggda programvara. Kernel DMA-skydd är en plattformsfunktion som måste kunna hanteras av systemet vid tidpunkten för tillverkningen. Om du vill kontrollera om systemet har stöd för kernel DMA-skydd kontrollerar du fältet Kernel DMA-skydd på sammanfattningssidan i MSINFO32.exe.
+
+  - **Inte konfigurerat** – (*standard*)
+  - **Blockera alla**
+  - **Tillåt alla**
+
+## <a name="endpoint-detection-and-response"></a>Slutpunktsidentifiering och svar
+
+Mer information om följande inställningar finns i [WindowsAdvancedThreatProtection](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) CSP i Windows-dokumentationen.
+
+- **Exempeldelning för alla filer**  
+  CSP: [Configuration/SampleSharing](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp)
+
+  Returnerar eller anger konfigurationsparametern för exempeldelning i Microsoft Defender Avancerat skydd.  
+  
+  - **Ja** (*standard*)
+  - **Inte konfigurerat**
+
+- **Skicka frekvensvärde för telemetrirapportering**  
+  CSP: [Configuration/TelemetryReportingFrequency](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp)
 
   Skicka frekvensvärde för telemetrirapportering för Microsoft Defender Avancerat skydd.  
 
-  **Standard**: Ja
+  - **Ja** (*standard*)
+  - **Inte konfigurerat**
 
-- **Exempeldelning för alla filer** - *Configuration/SampleSharing* 
+## <a name="firewall"></a>Brandvägg
 
-  Returnerar eller anger konfigurationsparametern för exempeldelning i Microsoft Defender Avancerat skydd.  
-
-  **Standard**: Ja
-
-## <a name="exploit-protection"></a>Sårbarhetsskydd  
-
-- **Exploit protection XML** (XML för sårbarhetsskydd)  
-  Mer information finns i [Importera, exportera och distribuera konfigurationer för sårbarhetsskydd](/windows/security/threat-protection/microsoft-defender-atp/import-export-exploit-protection-emet-xml) i Windows-dokumentationen.  
-
-  Gör det möjligt för IT-administratören att distribuera en konfiguration som representerar önskade system- och programskyddsalternativ till alla enheter i organisationen. Konfigurationen representeras av en XML-sträng. 
-
-  Sårbarhetsskydd hjälper dig att skydda enheter mot skadlig kod som utnyttjar kryphål för att spridas och infektera. Du kan använda Windows Security-appen eller PowerShell för att skapa en uppsättning skyddsåtgärder (kallas en konfiguration). Du kan exportera den här konfigurationen som en XML-fil och dela den med flera datorer i nätverket så att alla har samma uppsättning skyddsåtgärder.
- 
-  Du kan också konvertera och importera en befintlig EMET XML-konfigurationsfil till en XML-konfigurationsfil för sårbarhetsskydd.
-
-- **Blockera åsidosättning av sårbarhetsskydd**  
-  [WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsdefendersecuritycenter#windowsdefendersecuritycenter-disallowexploitprotectionoverride) – Inställt på *Ja* för att förhindra användare från att göra ändringar i inställningsområdet för sårbarhetsskydd i Microsoft Defender Security Center. Om du inaktiverar eller inte konfigurerar denna inställning kan lokala användare göra ändringar i inställningsområdet för sårbarhetsskydd.  
-  **Standard**: Ja  
-
-## <a name="microsoft-defender-antivirus"></a>Microsoft Defender Antivirus  
-
-Mer information finns i [CSP-princip – Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) i Windows-dokumentationen.
-
-- **Sök igenom skript som har lästs in via Microsoft-webbläsare**  
-  [Defender/AllowScriptScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscriptscanning) – Inställd på *Ja* för att tillåta Microsoft Defender-funktioner för skriptgenomsökning.  
-
-  **Standard**: Ja
-
-- **Scan incoming mail messages** (Sök igenom inkommande e-postmeddelanden)  
-  [Defender/AllowEmailScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowemailscanning) – Inställd på *Ja* för att tillåta Microsoft Defender att skanna e-post.  
-
-  **Standard**: Ja
-
-- **Medgivande i Defender för överföring av dataprover**  
-  [Defender/SubmitSamplesConsent](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-submitsamplesconsent) – Kontrollerar nivån för användarmedgivande i Microsoft Defender för att skicka data. Om nödvändigt godkännande redan har beviljats, skickar Microsoft Defender dem. Annars (och om användaren har valt att aldrig bli tillfrågad) startas användargränssnittet för att be om användarens medgivande (när *Molnlevererat skydd* är inställt på *Ja*) innan data skickas.  
-
-  **Standard**: Skicka säkra prover automatiskt
-
-- **kontrollsystem för nätverk (NIS)**  
-  [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection) – Blockera skadlig trafik som identifierats av signaturer i Kontrollsystem för nätverk (NIS).  
- 
-  **Standard**: Ja
-
-- **Intervall för signaturuppdatering (i timmar)**  
-  [Defender/SignatureUpdateInterval](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-signatureupdateinterval) – Ange i timmar hur ofta enheten söker efter nya uppdateringar för Defender-signatur.  
- 
-  **Standard**: 4
-
-- **Konfigurera låg CPU-prioritet för schemalagda genomsökningar**  
-  [Defender/EnableLowCPUPriority](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablelowcpupriority) – Då inställt till *Ja*, är processorprioritet för genomsökningar inställt till lågt. När *Inte konfigurerad*, gör inga ändringar till processorprioritet för schemalagda genomsökningar.  
-
-    **Standard**: Ja
-
-- **Defender-blockering på åtkomstskydd**  
-  [Defender/AllowOnAccessProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowonaccessprotection) – Då inställt till *Ja*, är Microsoft Defender på NAP aktiverat.  
-
-  **Standard**: Ja
-
-- **Typ av systemgenomsökning som ska utföras**  
-  [Defender/ScanParameter](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-scanparameter) – Defender genomsökningstyp.  
-
-  **Standard**: Snabbsökning
-
-- **Sök igenom alla hämtningar**  
-  [Defender/AllowIOAVProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowioavprotection) – Då inställt på *Ja*, söker Defender igenom alla hämtade filer och bifogade filer.  
-
-  **Standard**: Ja
-
-- **Dagar innan skadlig kod i karantän tas bort**  
-  [Defender/DaysToRetainCleanedMalware](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-daystoretaincleanedmalware) – Ange hur många dagar objekt ska hållas i karantän i systemet innan de automatiskt bort. Om värdet är noll, tas aldrig objekt i karantän bort automatiskt.  
-
-  **Standard**: 0
-
-- **Schemalagd starttid för genomsökning**  
-  [Defender/ScheduleScanTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescantime) – Schemalägga en tid på dagen då Defender söker igenom enheter. 
-  
-  Relaterat alternativ i den här listan: *Defender/ScheduleScanDay*   
-
-  **Standard**: 02.00
-
-- **Molnlevererat skydd**  
-  [Defender/AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection) – Då inställt till *Ja*, skickar Microsoft Defender information till Microsoft om något problem påträffas. Microsoft analyserar informationen, lär sig mer om problem som påverkar dig och andra kunder och erbjuder bättre lösningar.
-
-  När den här principen är inställd till *Ja*, kan du använda *Medgivandetyp för Defender-exempelsändning* för att ge användare kontroll över att skicka information från sina enheter.  
-
-  **Standard**: Ja
-
-- **Defender potentially unwanted app action** (Potentiellt oönskad appåtgärd i Defender)  
-  [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection) – i Microsoft Defender Antivirus kan identifiera och hindra *potentiellt oönskade program* från att hämtas och installeras på slutpunkter i ditt nätverk. 
- 
-  - Då inställt till *Blockera*, blockerar Microsoft Defender potentiellt oönskade program och visar dem i historiken tillsammans med andra hot.
-  - Då inställt till *Granskning*, identifierar Microsoft Defender potentiellt oönskade program men blockerar dem inte. Information om vilka program som Microsoft Defender skulle ha tagit åtgärder mot kan hittas genom att söka efter händelser som har skapats av Microsoft Defender i Loggboken.  
-  - Då inställt till *Enhetsstandard*, är skydd mot oönskade program inaktiverat.  
- 
-  **Standard**: Blockera
-
-- **Defender-molnet utökade tidsgränsen**  
-  [Defender/CloudExtendedTimeout](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout) – Ange den längsta tid som Microsoft Defender Antivirus ska blockera en fil under väntan på ett resultat från molnet. Den grundläggande mängd tid som Microsoft Defender väntar är 10 sekunder. Ytterligare tid som du anger här (upp till 50 sekunder) läggs till de 10 sekunderna. I de flesta fall går genomsökningen snabbare än maxvärdet. En utökning av tiden gör att molnet kan undersöka misstänkta filer noggrant.  
-
-  Som standard är utökat tidsvärde 0 (inaktiverad). Intune rekommenderar att du aktiverar den här inställningen och anger minst 20 ytterligare sekunder.  
- 
-  **Standard**: 0
-
-- **Sök igenom arkivfiler**  
-  [Defender/AllowArchiveScanning](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowarchivescanning) – Inställd på *Ja* för att Microsoft Defender ska söka igenom arkivfiler.  
-
-  **Standard**: Ja
-
-- **Genomsökningsschema för Defender-system**  
-  [Defender/ScheduleScanDay](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescanday) – Schemalägg vilken dag Defender söker igenom enheter. 
- 
-  Relaterat alternativ i den här listan: *Defender/ScheduleScanTime*
-
-  **Standard**: Användardefinierad
-
-- **Beteendeövervakning**  
-  [Defender/AllowBehaviorMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowbehaviormonitoring) – Inställd på *Ja* för att aktivera beteendeövervakning för Microsoft Defender-funktioner. Inbäddad i Windows 10, övervakar funktionssätt i Microsoft Defender och samlar in och bearbetar beteendesignaler från operativsystemet och skickar dessa sensordata till din privata, isolerade molninstans av Microsoft Defender ATP.  
-
-  **Standard**: Ja
-
-- **Sök igenom filer öppnade från nätverksmappar**  
-  [Defender/AllowScanningNetworkFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowscanningnetworkfiles) – Inställd till *Ja* för att Microsoft Defender ska söka igenom filer i nätverket. Användaren kan inte ta bort identifierad skadlig kod från skrivskyddade filer.  
-
-  **Standard**: Ja
-
-- **Defender cloud block level** (Molnblockeringsnivå i Defender)  
-  [Defender/CloudBlockLevel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel) – Använd den här principen för att avgöra hur aggressiva Microsoft Defender Antivirus är vid blockering och genomsökning av misstänkta filer. Alternativen är:
-
-  - Hög – aggressiv blockering av okända filer och samtidigt optimering av klientprestanda (större risk för falska positiva resultat)
-  - Hög plus – aggressiv blockering av okända filer och tillämpning av ytterligare skyddsåtgärder (kan påverka klientprestanda)
-  - Nolltolerans – blockerar alla okända körbara filer
-
-  **Standard**: Inte konfigurerat
-
-- **Realtidsövervakning**  
-  [Defender/AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring) – Inställd på *Ja* för att tillåta övervakning för Microsoft Defender i realtid.  
-
-  **Standard**: Ja
-
-- **Gräns för processoranvändning under genomsökning**  
-  [Defender/AvgCPULoadFactor](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-avgcpuloadfactor) – Ange den högsta genomsnittliga CPU-användning i procent som Microsoft Defender kan använda under en genomsökning.  
-
-  **Standard**: 50
-
-- **Sök igenom mappade nätverksdrivrutiner vid fullständig genomsökning**  
-  [Defender/AllowFullScanOnMappedNetworkDrives](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowfullscanonmappednetworkdrives) – Inställd på *Ja* för att Microsoft Defender ska söka igenom filer i nätverket. Användaren kan inte ta bort identifierad skadlig kod från skrivskyddade filer,
-
-  Relaterad inställning i den här listan: *Defender/AllowScanningNetworkFiles*
-
-  **Standard**: Ja
-
-- **Blockera användaråtkomst till Defender**  
-  [Defender/AllowUserUIAccess](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowuseruiaccess) – Inställd på *Ja* för att blockera slutanvändaråtkomst till Microsoft Defender-gränssnittet på enheten.  
-
-  **Standard**: Ja
-
-- **Snabbgenomsökning startades**  
-  [Defender/ScheduleQuickScanTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulequickscantime) – Schemalägger en tid på dagen då Defender kör en snabbgenomsökning.  
-
-  **Standard**: 02.00
-
-## <a name="microsoft-defender-firewall"></a>Microsoft Defender-brandväggen
 Mer information finns i [CSP-brandvägg](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp) i Windows-dokumentationen.
 
-- **Inaktiv tid för säkerhetsassociation före borttagning** - *MdmStore/Global/SaIdleTime*   
-  Säkerhetsassociationer tas bort om ingen nätverkstrafik har noterats för detta antal sekunder.  
-  **Standard**: 300
+- **Inaktivera tillståndskänsligt filöverföringsprotokoll (FTP)**  
+  CSP: [MdmStore/Global/DisableStatefulFtp](https://go.microsoft.com/fwlink/?linkid=872536)  
 
-- **Filöverföringsprotokoll** - *MdmStore/Global/DisableStatefulFtp*   
-  Blockera tillståndskänsligt filöverföringsprotokoll (FTP).  
-  **Standard**: Ja
+  - **Ja** (*standard*)
+  - **Inte konfigurerat** – Brandväggen använder FTP för att kontrollera och filtrera sekundära nätverksanslutningar, vilket kan göra att brandväggsreglerna ignoreras.
 
-- **Paketkö** - *MdmStore/Global/EnablePacketQueue*    
-  Ange hur skalning för programvara på mottagarsidan aktiveras för den krypterade mottagningen och rensa flyttning av text framåt för scenariot med IPsec-tunnelgatewayen. Detta säkerställer att paketordningen bevaras.  
-  **Standard**: Standard för enheten
+- **Antal sekunder som en säkerhetsassociation kan vara inaktiv innan den tas bort**  
+CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539)
 
-- **Brandvägg för profildomän** - *FirewallRules/FirewallRuleName/Profiles*  
-  Anger de profiler som regeln tillhör: Domän, Privat eller Allmän. Det här värdet representerar profilen för nätverk som är anslutna till domäner.  
+  Ange hur länge säkerhetsassociationerna ska sparas efter det att nätverkstrafiken inte längre visas. När det inte har konfigurerats tar systemet bort en säkerhetsassociation när den har varit inaktiv i *300* sekunder (standard).
+  
+  Antalet måste vara från **300** till **3 600** sekunder.
 
-  Tillgängliga inställningar:  
-  - **Unicast-svar på multicast-sändningar krävs**  
-    **Standard**: Ja
+- **Kodning för i förväg delad nyckel**  
+  CSP: [MdmStore/Global/PresharedKeyEncoding](https://go.microsoft.com/fwlink/?linkid=872541)
 
-  - **Auktoriserade programregler från sammanfogad grupprincip**  
-    **Standard**: Ja
+   Om du inte kräver UTF-8 kommer i förväg delade nycklar initialt att kodas med UTF-8. Efter det kan enhetsanvändare välja en annan kodningsmetod.
 
-  - **Inkommande meddelanden blockerade**  
-    **Standard**: Ja
+  - **Inte konfigurerat**
+  - **Inga**
+  - **UTF8-** (*standard*)
 
-  - **Globala portregler från sammanfogad grupprincip**  
-    **Standard**: Ja
+- **Kontroll av lista över återkallade certifikat**  
+  CSP: [MdmStore/Global/CRLcheck](https://go.microsoft.com/fwlink/?linkid=872548)
 
-  - **Dolt läge blockerat**  
-    **Standard**: Ja
+  Ange hur kontroll av listan över återkallade certifikat ska aktiveras.  
 
-  - **Brandväggen är aktiverad**  
-    **Standard**: Tillåts
+  - **Inte konfigurerat** (*standard*) – kontroll av listan över återkallade certifikat är inaktiverad.
+  - **Inga**
+  - **Försök**
+  - **Kräv**
 
-  - **Regler för anslutningssäkerhet från inte sammanfogad grupprincip**  
-    **Standard**: Ja
+- **Paketkö**  
+  CSP: [MdmStore/Global/EnablePacketQueue](https://go.microsoft.com/fwlink/?linkid=872551)
 
-  - **Principregler från inte sammanfogad grupprincip**  
-    **Standard**: Ja
+  Ange hur skalning för programvara på mottagarsidan aktiveras för den krypterade mottagningen och rensa flyttning av text framåt för scenariot med IPsec-tunnelgatewayen. Denna inställning säkerställer att paketordningen bevaras.
 
-- **Brandvägg för offentlig profil** - *FirewallRules/FirewallRuleName/Profiles*  
-  Anger de profiler som regeln tillhör: Domän, Privat eller Allmän. Det här värdet representerar profilen för offentliga nätverk. Dessa nätverk klassificeras som offentliga av administratörer i server-värden. Klassificeringen sker första gången värden ansluter till nätverket. Dessa nätverk är vanligtvis på flygplatser eller kaféer och andra offentliga platser där peer-datorer i nätverket eller nätverksadministratörer inte är betrodda.  
+  - **Inte konfigurerat** (*standard*) – Paketköer återgår till klientens standardvärde, vilket är inaktiverad.
+  - **Inaktiverad**
+  - **Kö inkommande**
+  - **Kö utgående**
+  - **Kö båda**
 
-  Tillgängliga inställningar:
+- **Privat brandväggsprofil**  
+  [2.2.2 FW_PROFILE_TYPE](https://go.microsoft.com/fwlink/?linkid=2067041)
 
-  - **Inkommande anslutningar blockerade**  
-    **Standard**: Ja 
+  - **Konfigurera** (*standard*)
+  - **Inte konfigurerat**
 
-  - **Unicast-svar på multicast-sändningar krävs**  
-    **Standard**: Ja  
-
-  - **Dolt läge krävs**  
-    **Standard**: Ja 
- 
-  - **Utgående anslutningar krävs**  
-    **Standard**: Ja  
-
-  - **Auktoriserade programregler från sammanfogad grupprincip**  
-    **Standard**: Ja  
-
-  - **Inkommande meddelanden blockerade**  
-    **Standard**: Ja  
-
-  - **Globala portregler från sammanfogad grupprincip**  
-    **Standard**: Ja
-
-  - **Dolt läge blockerat**  
-    **Standard**: Ja
-
-  - **Brandväggen är aktiverad**  
-    **Standard**: Tillåts  
-
-  - **Regler för anslutningssäkerhet från inte sammanfogad grupprincip**  
-    **Standard**: Ja  
-
-  - **Inkommande trafik krävs**  
-    **Standard**: Ja
-
-  - **Principregler från inte sammanfogad grupprincip**  
-    **Standard**: Ja  
-
-- **Brandvägg för privat profil** - *FirewallRules/FirewallRuleName/Profiles*  
-  Anger de profiler som regeln tillhör: Domän, Privat eller Allmän. Det här värdet representerar profilen för privata nätverk.  
-
-  Tillgängliga inställningar: 
+  När *Konfigurera* har angetts kan du konfigurera följande ytterligare inställningar.
 
   - **Inkommande anslutningar blockerade**  
-    **Standard**: Ja
+    CSP: [/DefaultInboundAction](https://go.microsoft.com/fwlink/?linkid=872564)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Unicast-svar på multicast-sändningar krävs**  
-    **Standard**: Ja
+    CSP: [/DisableUnicastResponsesToMulticastBroadcast](https://go.microsoft.com/fwlink/?linkid=872562)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Dolt läge krävs**  
-    **Standard**: Ja
+    CSP: [/DisableStealthMode](https://go.microsoft.com/fwlink/?linkid=872559)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Utgående anslutningar krävs**  
-    **Standard**: Ja
+    CSP: [/DefaultOutboundAction](https://aka.ms/intune-firewall-outboundaction)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Inkommande meddelanden blockerade**  
-    **Standard**: Ja
+    CSP: [/DisableInboundNotifications](https://go.microsoft.com/fwlink/?linkid=872563)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Globala portregler från sammanfogad grupprincip**  
-    **Standard**: Ja
+    CSP: [/GlobalPortsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872566)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Dolt läge blockerat**  
-    **Standard**: Ja  
+    CSP: [/DisableStealthMode](https://go.microsoft.com/fwlink/?linkid=872559)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Brandväggen är aktiverad**  
-    **Standard**: Tillåts
+    CSP: [/EnableFirewall](https://go.microsoft.com/fwlink/?linkid=872558)
+
+    - **Inte konfigurerat**
+    - **Blockerad**
+    - **Tillåtet** (*standard*)
 
   - **Auktoriserade programregler från inte sammanfogad grupprincip**  
-    **Standard**: Ja
+    CSP: [/AuthAppsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872565)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Regler för anslutningssäkerhet från inte sammanfogad grupprincip**  
-    **Standard**: Ja
+    CSP: [/AllowLocalIpsecPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872568)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Inkommande trafik krävs**  
-    **Standard**: Ja
+    CSP: [/Shielded](https://go.microsoft.com/fwlink/?linkid=872561)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
   - **Principregler från inte sammanfogad grupprincip**  
-    **Standard**: Ja  
+    CSP: [/AllowLocalPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872567)
 
-- **Kodningsmetod för i förväg delad nyckel för brandvägg**  
-  **Standard**: UTF8
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
-- **Verifiering av listan över återkallade certifikat**  
-  **Standard**: Standard för enheten
+- **Offentlig brandväggsprofil**  
+  [2.2.2 FW_PROFILE_TYPE](https://go.microsoft.com/fwlink/?linkid=2067143)
 
-## <a name="web--network-protection"></a>Webb- och nätverksskydd  
+  - **Konfigurera** (*standard*)
+  - **Inte konfigurerat**
 
-- **Network protection type** (Typ av nätverksskydd)  
-  [Defender/EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection)  – Med den här principen kan du aktivera eller inaktivera nätverksskydd i Microsoft Defender Exploit Guard. Nätverksskydd är en funktion i Microsoft Defender Exploit Guard som skyddar anställda som använder appar mot nätfiske, webbplatser som utnyttjar sårbarheter samt skadligt innehåll på Internet. Exempelvis hindras webbläsare från tredje part från att ansluta till farliga platser.  
+  När *Konfigurera* har angetts kan du konfigurera följande ytterligare inställningar.
 
-  Då inställd på antingen *Aktivera* eller *Granskningsläge* kan användare inte inaktivera nätverksskydd och du kan använda Microsoft Defender Security Center för att visa information om anslutningsförsök.  
- 
-  - *Aktivera* blockerar användare och appar från att ansluta till farliga domäner.  
-  - *Granskningsläge* blockerar inte användare och appar från att ansluta till farliga domäner.  
+  - **Inkommande anslutningar blockerade**  
+    CSP: [/DefaultInboundAction](https://go.microsoft.com/fwlink/?linkid=872564)
 
-  Då inställd till *Användardefinierad*, blockeras användare och appar inte från att ansluta till farliga domäner och information om anslutningar är inte tillgänglig i Microsoft Defender Security Center.  
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
-  **Standard**: Granskningsläge
+  - **Unicast-svar på multicast-sändningar krävs**  
+    CSP: [/DisableUnicastResponsesToMulticastBroadcast](https://go.microsoft.com/fwlink/?linkid=872562)
 
-- **Require SmartScreen for Microsoft Edge** (Kräv SmartScreen för Microsoft Edge)  
-  [Browser/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen) – Microsoft Edge använder som standard Microsoft Defender SmartScreen (aktiverat) för att skydda användarna mot potentiella nätfiskeförsök och skadlig programvara. Som standard är den här principen aktiverad (inställd på *Ja*), och då den är aktiverad förhindras användare från att stänga av Microsoft Defender SmartScreen.  När principen för en enhet inte är konfigurerad, kan användare inaktivera Microsoft Defender SmartScreen, vilket lämnar enheten oskyddad.  
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
 
-  **Standard**: Ja
+  - **Dolt läge krävs**  
+    CSP: [/DisableStealthMode](https://go.microsoft.com/fwlink/?linkid=872559)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Utgående anslutningar krävs**  
+    CSP: [/DefaultOutboundAction](https://aka.ms/intune-firewall-outboundaction)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Auktoriserade programregler från inte sammanfogad grupprincip**  
+    CSP: [/AuthAppsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872565)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Inkommande meddelanden blockerade**  
+    CSP: [/DisableInboundNotifications](https://go.microsoft.com/fwlink/?linkid=872563)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Globala portregler från sammanfogad grupprincip**  
+    CSP: [/GlobalPortsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872566)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Dolt läge blockerat**  
+    CSP: [/DisableStealthMode](https://go.microsoft.com/fwlink/?linkid=872559)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Brandväggen är aktiverad**  
+    CSP: [/EnableFirewall](https://go.microsoft.com/fwlink/?linkid=872558)
+
+    - **Inte konfigurerat**
+    - **Blockerad**
+    - **Tillåtet** (*standard*)
+
+  - **Regler för anslutningssäkerhet från inte sammanfogad grupprincip**  
+    CSP: [/AllowLocalIpsecPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872568)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Inkommande trafik krävs**  
+    CSP: [/Shielded](https://go.microsoft.com/fwlink/?linkid=872561)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Principregler från inte sammanfogad grupprincip**  
+    CSP: [/AllowLocalPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872567)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+- **Domän för brandväggsprofil**  
+  CSP: [2.2.2 FW_PROFILE_TYPE](https://go.microsoft.com/fwlink/?linkid=2066796)
+
+  - **Unicast-svar på multicast-sändningar krävs**  
+    CSP: [/DisableUnicastResponsesToMulticastBroadcast](https://go.microsoft.com/fwlink/?linkid=872562)
+
+  - **Auktoriserade programregler från inte sammanfogad grupprincip**  
+    CSP: [/AuthAppsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872565)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**  
+
+  - **Inkommande meddelanden blockerade**  
+    CSP: [/DisableInboundNotifications](https://go.microsoft.com/fwlink/?linkid=872563)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Globala portregler från sammanfogad grupprincip**  
+    CSP: [/GlobalPortsAllowUserPrefMerge](https://go.microsoft.com/fwlink/?linkid=872566)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Dolt läge blockerat**  
+    CSP: [/DisableStealthMode](https://go.microsoft.com/fwlink/?linkid=872559)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Brandväggen är aktiverad**  
+    CSP: [/EnableFirewall](https://go.microsoft.com/fwlink/?linkid=872558)
+
+    - **Inte konfigurerat**
+    - **Blockerad**
+    - **Tillåtet** (*standard*)
+
+  - **Regler för anslutningssäkerhet från inte sammanfogad grupprincip**  
+    CSP: [/AllowLocalIpsecPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872568)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+  - **Principregler från inte sammanfogad grupprincip**  
+    CSP: [/AllowLocalPolicyMerge](https://go.microsoft.com/fwlink/?linkid=872567)
+
+    - **Ja** (*standard*)
+    - **Inte konfigurerat**
+
+## <a name="microsoft-defender"></a>Microsoft Defender
+
+- **Kör daglig snabbsökning**  
+  CSP: [Defender/ScheduleQuickScanTime](https://go.microsoft.com/fwlink/?linkid=2114053&clcid=0x409)
   
-- **Block malicious site access** (Blockera åtkomst till skadliga webbplatser)  
-  [Browser/PreventSmartScreenPromptOverride](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride) – Som standard tillåter Microsoft Edge att användarna kringgår (ignorerar) Microsoft Defender SmartScreen-varningar om potentiellt skadliga webbplatser, så att användare kan fortsätta till webbplatsen. Med den här principen aktiverad (inställd till *Ja*) förhindrar Microsoft Edge användarna från att kringgå varningar och blockerar dem från att fortsätta till webbplatsen.  
+   Konfigurera när den dagliga snabbsökningen ska köras. Som standard är genomsökningen inställd på att köras **02:00**.
 
-  **Standard**: Ja
+- **Schemalagd starttid för genomsökning**  
+  
+  Som standard är det här värdet inställt på **02:00**.
 
-- **Block unverified file download** (Blockera nedladdning av overifierade filer)  
-  [Browser/PreventSmartScreenPromptOverrideForFiles](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles) – Som standard tillåter Microsoft Edge att användarna kringgår (ignorerar) Microsoft Defender SmartScreen-varningar om potentiellt skadliga filer så att de kan fortsätta hämta overifierade filer. Med den här principen aktiverad (inställd på *Ja*), förhindras användare från att kringgå varningar och det går inte att hämta overifierade filer.  
+- **Konfigurera låg CPU-prioritet för schemalagda genomsökningar**  
+  CSP: [Defender/EnableLowCPUPriority](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablelowcpupriority)  
 
-  **Standard**: Ja
+  -**Ja** (*standard*)
+  - **Inte konfigurerat**
 
-## <a name="windows-hello-for-business"></a>Windows Hello för företag  
+- **Blockera Office-kommunikationsprogram från att skapa underordnade processer**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=874499)  
+
+  Den här ASR-regeln styrs via följande GUID: 26190899-1602-49e8-8b27-eb1d0a1ce869.
+  - **Inte konfigurerat** – Windows standardvärde är återställt, att inte blockera skapandet av underordnade processer.
+  - **Användardefinierad**
+  - **Aktivera** (*standard*) – Office-kommunikationsprogram blockeras från att skapa underordnade processer.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera underordnade processer.
+
+- **Blockera Adobe Reader från att skapa underordnade processer**  
+  [Minska attackytan med regler för minskning av attackytan](https://go.microsoft.com/fwlink/?linkid=853979)  
+
+  - **Inte konfigurerat** – Windows standardvärde är återställt, att inte blockera skapandet av underordnade processer.
+  - **Användardefinierad**
+  - **Aktivera** (*standard*) – Adobe Reader är blockerat från att skapa underordnade processer.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera underordnade processer.
+
+- **Sök igenom inkommande e-postmeddelanden**  
+  CSP: [Defender/AllowEmailScanning](https://go.microsoft.com/fwlink/?linkid=2114052&clcid=0x409)
+
+  - **Ja** (*standard*) – E-postlåda och e-postfiler som PST, DBX, MNX, MIME och BINHEX genomsöks.
+  - **Inte konfigurerat** – Inställningen återgår till klientens standard att e-postfiler inte genomsöks.
+
+- **Starta realtidsskydd**  
+  CSP: [Defender/AllowRealtimeMonitoring](https://go.microsoft.com/fwlink/?linkid=2114050&clcid=0x409)
+
+  - **Ja** (*standard*) – Övervakning i realtid upprätthålls och användaren kan inte inaktivera den.
+  - **Inte konfigurerat** – Inställningen återgår till klientens standard, vilken är aktiverad, men användaren kan ändra den. Använd en anpassad URI för att inaktivera realtidsövervakning.
+
+- **Antal dagar (0–90) som skadlig kod ska bevaras i karantän**  
+  CSP: [Defender/DaysToRetainCleanedMalware](https://go.microsoft.com/fwlink/?linkid=2114055&clcid=0x409)
+
+  Konfigurera antalet dagar som objekt ska behållas i mappen karantän innan de tas bort. Standardvärdet är noll (**0**), vilket resulterar i att filer i karantän aldrig tas bort.
+
+- **Genomsökningsschema för Defender-system**  
+  CSP: [Defender/ScheduleScanDay](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescanday)
+
+  Schemalägg vilken dag Defender ska söka igenom enheter. Som standard är genomsökningen **användardefinierad**, men kan ställas in på *Varje dag*, valfri veckodag eller *Ingen schemalagd genomsökning*.
+
+- **Ytterligare utökad tid (0–50 sekunder) för tidsgränsen för molnskydd**  
+  CSP: [Defender/CloudExtendedTimeout](https://go.microsoft.com/fwlink/?linkid=2113940&clcid=0x409)
+
+  Defender Antivirus blockerar automatiskt misstänkta filer i 10 sekunder så att det kan genomsöka filerna i molnet för att kontrollera att de är säkra. Med den här inställningen kan du lägga till upp till 50 ytterligare sekunder till tidsgränsen.  Som standard anges tidsgränsen till noll (**0**).
+
+- **Sök igenom mappade nätverksdrivrutiner vid fullständig genomsökning**  
+  CSP: [Defender/AllowFullScanOnMappedNetworkDrives](https://go.microsoft.com/fwlink/?linkid=2113945&clcid=0x409)
+
+  - **Ja** (*standard*) – Under en fullständig genomsökning inkluderas mappade nätverksenheter.
+  - **Inte konfigurerat** – Klienten återgår till standardvärdet, vilket inaktiverar genomsökning på mappade nätverksenheter.
+
+- **Aktivera nätverksskydd**  
+  CSP: [Defender/EnableNetworkProtection](https://go.microsoft.com/fwlink/?linkid=2113939&clcid=0x409)
+  
+  - **Ja** (*standard*) – Blockera skadlig trafik som identifierats av signaturer i NIS (Network Inspection System).
+  - **Inte konfigurerat**
+
+- **Genomsök alla nedladdade filer och bifogade filer**  
+  CSP: [Defender/AllowIOAVProtection](https://go.microsoft.com/fwlink/?linkid=2113934&clcid=0x409)
+
+  - **Ja** (*standard*) – Alla nedladdade filer och bifogade filer söks igenom. Inställningen återgår till klientens standard, vilken är aktiverad, men användaren kan ändra den. Om du vill inaktivera den här inställningen använder du en anpassad URI.
+  - **Inte konfigurerat** – Inställningen återgår till klientens standard, vilken är aktiverad, men användaren kan ändra den. Om du vill inaktivera den här inställningen använder du en anpassad URI.
+
+- **Blockera åtkomstskydd**  
+  CSP: [Defender/AllowOnAccessProtection](https://go.microsoft.com/fwlink/?linkid=2113935&clcid=0x409)
+
+  - **Ja** (*standard*)
+  - **Inte konfigurerat**
+
+- **Genomsök webbläsarskript**  
+  CSP: [Defender/AllowScriptScanning](https://go.microsoft.com/fwlink/?linkid=2114054&clcid=0x409)
+
+  - **Ja** (*standard*) – Skriptgenomsökningsfunktionen i Microsoft Defender tillämpas och användaren kan inte inaktivera den.
+  - **Inte konfigurerat** – Inställningen återgår till klientens standardvärde, vilket är att aktivera skriptgenomsökning, men användaren kan inaktivera den.
+
+- **Blockera användaråtkomst till Microsoft Defender-app**  
+  CSP: [Defender/AllowUserUIAccess](https://go.microsoft.com/fwlink/?linkid=2114043&clcid=0x409)
+
+  - **Ja** (*standard*) – Användargränssnittet för Microsoft Defender är inte tillgängligt och aviseringar visas inte
+  - **Inte konfigurerat** – När det är inställt på Ja, är användargränssnittet för Windows Defender inte tillgängligt och aviseringar visas inte. När inställningen är Inte konfigurerat återgår inställningen till klientens standardvärde där gränssnitt och aviseringar tillåts
+
+- **Högsta tillåtna processoranvändning (0–100 procent) per genomsökning**  
+  CSP: [Defender/AvgCPULoadFactor](https://go.microsoft.com/fwlink/?linkid=2114046&clcid=0x409)
+
+  Ange i procent den maximala CPU-mängd som ska användas för en genomsökning. Standard är **50**.
+
+- **Skanningstyp**  
+  CSP: [Defender/ScanParameter](https://go.microsoft.com/fwlink/?linkid=2114045&clcid=0x409)
+
+  - **Användardefinierad**
+  - **Inaktiverad**
+  - **Snabbsökning** (*standard*)
+  - **Fullständig genomsökning**
+
+- **Ange hur ofta (0–24 timmar) sökning ska ske efter säkerhetsinsiktsuppdateringar**  
+  CSP: [Defender/SignatureUpdateInterval](https://go.microsoft.com/fwlink/?linkid=2113936&clcid=0x409)
+
+  Ange hur ofta du vill söka efter uppdaterade signaturer, i timmar. Med värdet 1 sker till exempel kontroll varje timme. Värdet 2 kommer att kontrollera varannan timme och så vidare.
+
+  Om inget värde har definierats använder enheterna klientstandarden på **8** timmar.
+
+- **Medgivande i Defender för överföring av dataprover**  
+  CSP: [Defender/SubmitSamplesConsent](https://go.microsoft.com/fwlink/?linkid=2067131)
+
+  Kontrollerar nivån för användarmedgivande i Microsoft Defender för överföring av data. Om nödvändigt godkännande redan har beviljats, skickar Microsoft Defender dem. Annars (och om användaren har valt att aldrig bli tillfrågad) startas användargränssnittet för att be om användarens medgivande (när *Molnlevererat skydd* är inställt på *Ja*) innan data skickas.
+
+  - **Skicka säkra exempel automatiskt** (*standard*)
+  - **Fråga alltid**
+  - **Skicka aldrig**
+  - **Skicka alla exempel automatiskt**
+
+- **Nivå för molnlevererat skydd**  
+  CSP: [CloudBlockLevel](https://go.microsoft.com/fwlink/?linkid=2113942)
+
+  Konfigurera hur aggressivt Defender Antivirus ska blockera och genomsöka misstänkta filer.
+  - **Inte konfigurerad** (*standard*) – Standardnivå för blockering i Defender.
+  - **Hög** – Aggressiv blockering av okända filer och optimering av klientprestanda, med större risk för falskt positiva resultat.
+  - **Hög plus** – Aggressiv blockering av okända filer och tillämpning av ytterligare skyddsåtgärder som kan påverka klientprestandan.
+  - **Nolltolerans** – Blockerar alla okända körbara filer.
+
+- **Sök igenom arkivfiler**  
+  CSP: [Defender/AllowArchiveScanning](https://go.microsoft.com/fwlink/?linkid=2114047&clcid=0x409)
+
+  - **Ja** (*standard*) – Genomsökning av arkivfiler som ZIP-eller CAB-filer tillämpas.
+  - **Inte konfigurerat** – Inställningen återgår till klientens standardvärde, som är att söka igenom arkiverade filer, men användaren kan inaktivera genomsökning.
+
+- **Aktivera beteendeövervakning**  
+  CSP: [Defender/AllowBehaviorMonitoring](https://go.microsoft.com/fwlink/?linkid=2114048&clcid=0x409)
+
+  - **Ja** (*standard*) – Övervakning av beteende upprätthålls och användaren kan inte inaktivera den.
+  - **Inte konfigurerat** – Inställningen återgår till klientens standard, vilken är aktiverad, men användaren kan ändra den. Använd en anpassad URI för att inaktivera realtidsövervakning.
+  
+- **Genomsök flyttbara enheter vid fullständig genomsökning**  
+  CSP: [Defender/AllowFullScanRemovableDriveScanning](https://go.microsoft.com/fwlink/?linkid=2113946&clcid=0x409)
+
+  - **Ja** (*standard*) – Under en fullständig genomsökning genomsöks flyttbara enheter (t.ex. USB-minnen).
+  - **Inte konfigurerat** – Inställningen återgår till klientens standardvärde, vilket är genomsökning av flyttbara enheter, men användaren kan inaktivera den här genomsökningen.
+  
+- **Genomsök nätverksfiler**  
+  CSP: [Defender/AllowScanningNetworkFiles](https://go.microsoft.com/fwlink/?linkid=2114049&clcid=0x409)
+
+  - **Ja** (*standard*) – Microsoft Defender genomsöker nätverksfiler.
+  - **Inte konfigurerat** – Klienten återgår till standardvärdet, vilket inaktiverar genomsökning av nätverksfiler.
+  
+- **Defender potentially unwanted app action** (Potentiellt oönskad appåtgärd i Defender)  
+  CSP: [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
+
+  Ange identifieringsnivå för potentiellt oönskade appar (PUA). Defender varnar användare när potentiellt oönskad programvara laddas ned eller försöker installeras på en enhet.
+  - **Standard för enheten**
+  - **Blockera** (*standard*) – Identifierade objekt blockeras och visas i historiken tillsammans med andra hot.
+  - **Granska** – Defender identifierar potentiellt oönskade program men vidtar inga åtgärder. Du kan läsa information om vilka program som Windows Defender skulle ha vidtagit åtgärder mot genom att söka efter händelser som har skapats av Defender i Loggboken.
+
+- **Aktivera molnlevererat skydd**  
+  CSP: [AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
+
+  Som standard skickar Defender på Windows 10 Desktop-enheter information till Microsoft om eventuella problem som identifieras. Microsoft analyserar informationen för att lära sig mer om problem som påverkar dig och andra kunder och erbjuda bättre lösningar.
+
+  - **Ja** (*standard*) – Molnlevererat skydd är aktiverat.  Enhetsanvändare kan inte ändra den här inställningen.
+  - **Inte konfigurerat** – Inställningen återställs till systemets standard.
+
+- **Blockera Office-program från att infoga kod i andra processer**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872974)
+
+  Den här ASR-regeln styrs via följande GUID: 75668C1F-73B5-4CF0-BB93-3ECF5CB7CC84
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Office-program blockeras från att infoga kod i andra processer.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+
+- **Blockera Office-program från att skapa körbart innehåll**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872975)
+
+  Den här ASR-regeln styrs via följande GUID: 3B576869-A4EC-4529-8536-B80A7769E899
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Office-program blockeras från att skapa körbart innehåll.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+  
+- **Blockera JavaScript eller VBScript från att starta nedladdat körbart innehåll**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872979)
+
+   Den här ASR-regeln styrs via följande GUID: D3E037E1-3EB8-44C8-A917-57927947596D
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Defender blockerar JavaScript- eller VBScript-filer som har laddats ned från Internet från att köras.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+  
+- **Aktivera nätverksskydd**  
+  CSP: [Defender/EnableNetworkProtection](https://go.microsoft.com/fwlink/?linkid=872618)
+
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Användardefinierad**
+  - **Aktivera** – Nätverksskydd är aktiverat för alla användare i systemet.
+  - **Gransknings läge** (*standard*) – Användare blockeras inte från farliga domäner och Windows-händelser höjs i stället.
+
+- **Blockera obetrodda och osignerade processer som körs via USB**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=874502)
+
+  Den här ASR-regeln styrs via följande GUID: b2b3f03d-6a65-4f7b-a9c7-1c7ef74a9ba4
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Obetrodda och osignerade processer som körs från en USB-enhet blockeras.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+
+- **Blockera stöld av autentiseringsuppgifter från det lokala säkerhetsundersystemet i Windows (lsass.exe)**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=874499)
+
+  Den här ASR-regeln styrs via följande GUID: 9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Användardefinierad**
+  - **Aktivera** (*standard*) – Försök att stjäla autentiseringsuppgifter via lsass.exe blockeras.
+  - **Gransknings läge** – Användare blockeras inte från farliga domäner och Windows-händelser höjs i stället.
+
+- **Blockera körbart innehåll från e-postklient och webbaserad e-post**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872980)
+
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Körbart innehåll från e-postklient och webbaserad e-post blockeras.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+
+- **Blockera Office-program från att skapa underordnade processer**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872976)
+
+  Den här ASR-regeln styrs via följande GUID: D4F940AB-401B-4EFC-AADC-AD5F3C50688A
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*)
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+
+- **Blockera körning av potentiellt dolda skript (js/vbs/ps)**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872978)
+
+  Den här ASR-regeln styrs via följande GUID: 5BEB7EFE-FD9A-4556-801D-275E5FFC04CC
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Defender blockerar körning av dolda skript.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+
+- **Blockera Win32-API-anrop från Office-makron**  
+  [Skydda enheter från angrepp](https://go.microsoft.com/fwlink/?linkid=872977)
+
+  Den här ASR-regeln styrs via följande GUID: 92E97FA1-2EDF-4476-BDD6-9DD0B4DDDC7B
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, som är inaktiverad.
+  - **Blockera** (*standard*) – Office-makron blockeras från att använda Win32 API-anrop.
+  - **Granskningsläge** – Windows-händelser höjs i stället för att blockera.
+
+## <a name="microsoft-defender-security-center"></a>Microsoft Defender Security Center
+
+- **Blockera användare från att redigera gränssnittet för Exploit Guard Protection**  
+  CSP: [WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride](https://go.microsoft.com/fwlink/?linkid=2067239)
+
+  - **Ja** (*standard*) – Förhindra användare från att göra ändringar i inställningsområdet för sårbarhetsskydd i Microsoft Defender Security Center.
+  - **Inte konfigurerat** – Lokala användare göra ändringar i inställningsområdet för sårbarhetsskydd.
+
+## <a name="smart-screen"></a>Smart skärm
+
+- **Blockera användare från att ignorera SmartScreen-varningar**  
+  CSP: [SmartScreen/PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
+
+   Den här inställningen kräver att inställningen för att framtvinga SmartScreen för appar och filer är aktiverad.
+  - **Ja** (*standard*) – SmartScreen visar inte ett alternativ för användaren att bortse från varningen och köra appen. Varningen visas, men användaren kan kringgå den.
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, vilket gör att användaren kan åsidosätta den.
+
+- **Kräv appar endast från Store**  
+
+  - **Ja** (*standard*)
+  - **Inte konfigurerat**
+
+- **Aktivera Windows SmartScreen**  
+  CSP: [SmartScreen/EnableSmartScreenInShell](https://go.microsoft.com/fwlink/?linkid=872784)
+
+  - **Ja** (*standard*) – Framtvinga användning av SmartScreen för alla användare.
+  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, vilket är att aktivera SmartScreen, men användare kan ändra inställningen. Om du vill inaktivera SmartScreen använder du en anpassad URI.
+
+## <a name="windows-hello-for-business"></a>Windows Hello för företag
 
 Mer information finns i [PassportForWork CSP](https://docs.microsoft.com/windows/client-management/mdm/passportforwork-csp) i Windows-dokumentationen.
 
-- **Konfigurera Windows Hello för företag** - *TenantId/principer/UsePassportForWork*    
-  Windows Hello för företag är en alternativ metod för att logga in till Windows genom att ersätta lösenord, smartkort och virtuella smartkort.  
+- **Blockera Windows Hello för företag**  
 
+   Windows Hello för företag är en alternativ metod för att logga in till Windows genom att ersätta lösenord, smartkort och virtuella smartkort.
 
-  > [!IMPORTANT]
-  > Alternativen blir felaktiga för den här inställningen (omvända). Värdet *Ja* aktiverar inte Windows Hello när inställningarna är omvända utan hanteras som *Inte konfigurerad*. När *Inte konfigurerad* har angetts aktiveras Windows Hello på enheter som får den här baslinjen.
-  >
-  > Följande beskrivningar har ändrats för att återspegla detta beteende. De omvända inställningarna kommer att åtgärdas i en framtida uppdatering av den här säkerhetsbaslinjen.
+  - **Inte konfigurerat** – Enheter etablerar Windows Hello för företag, som är Windows standardvärde.
+  - **Inaktiverad** (*standard*) – Enheter etablerar Windows Hello för företag.
+  - **Aktiverad** – Enheter etablerar inte Windows Hello för företag för någon användare.
 
-  - När *Inte konfigurerad* har angetts är Windows Hello aktiverat och enheten etablerar Windows Hello för företag.
-  - När *Ja* har angetts påverkar baslinjen inte principinställningen för enheten. Det innebär att om Windows Hello för företag är inaktiverat på en enhet förblir det inaktiverat. Och om det är aktiverat förblir det aktiverat.
-  <!-- expected behavior 
-  - When set to *Yes*, you  enable this policy and the device provisions Windows Hello for Business.  
-  - When set to *Not configured*, the baseline does not affect the policy setting of the device. This means that if Windows Hello for Business is disabled on a device, it remains disabled. If its enabled, it remains enabled. 
-  -->
+  När värdet är *Inaktiverad* kan du konfigurera följande inställningar:
 
-  Du kan inte inaktivera Windows Hello för företag via den här baslinjen. Du kan inaktivera Windows Hello för företag när du konfigurerar [Windows-registrering](windows-hello.md), eller som en del i enhetskonfigurationsprofilen för [identitetsskydd](identity-protection-configure.md).  
+  - **Gemener i PIN-kod**  
+    - **Inte tillåtet**
+    - **Obligatoriskt**
+    - **Tillåtet** (*standard*)
 
-Windows Hello för företag är en alternativ metod för att logga in till Windows genom att ersätta lösenord, smartkort och virtuella smartkort.  
+  - **Specialtecken i PIN-kod**
+    - **Inte tillåtet**
+    - **Obligatoriskt**
+    - **Tillåtet** (*standard*)
 
-  Om du aktiverar eller inte konfigurerar den här principinställningen etablerar enheten Windows Hello för företag. Om du inaktiverar den här principinställningen kan enheten inte etablera Windows Hello för företag för alla användare.
-
-  Intune stöder inte inaktivering av Windows Hello. I stället kan du konfigurera principen till att aktivera Windows Hello för företag (Ja) eller att inte konfigurera Windows Hello direkt (inte konfigurerad). Om den inte har konfigurerats, kan en enhet ta emot konfigurationen via andra principer som kan aktivera eller inaktivera den här funktionen.  
-
-  **Standard**: Ja  
-
-- **Kräv gemener i PIN-kod** - *TenantId/principer/PINComplexity/LowercaseLetters*  
-  **Standard**: Tillåts  
-
-- **Kräv specialtecken i PIN-kod** - *TenantId/principer/PINComplexity/SpecialCharacters*  
-  **Standard**: Tillåts  
-
-- **Kräv versaler i PIN-kod** - *TenantId/principer/PINComplexity/UppercaseLetters*   
-  **Standard**: Tillåts  
-
+  - **Versaler i PIN-kod**
+    - **Inte tillåtet**
+    - **Obligatoriskt**
+    - **Tillåtet** (*standard*)
