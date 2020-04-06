@@ -5,27 +5,27 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/09/2020
+ms.date: 03/25/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
-ms.reviewer: ''
+ms.reviewer: kakyker; annovich
 ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e143530c5e9965a3717c632c1af7fcbc28a664f
-ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
+ms.openlocfilehash: a4ed859078f7cc6be5a91b303de45f7247248203
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79526299"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359181"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>Funktionsinställningar för macOS-enheter i Intune
 
-I Intune finns vissa inbyggda inställningar för att anpassa funktioner i dina macOS-enheter. Administratörer kan exempelvis lägga till AirPrint-skrivare, välja hur användare ska logga in, konfigurera energikontrollerna, använda autentisering med enkel inloggning och mycket annat.
+I Intune finns inbyggda inställningar för att anpassa funktioner i dina macOS-enheter. Administratörer kan exempelvis lägga till AirPrint-skrivare, välja hur användare ska logga in, konfigurera energikontrollerna, använda autentisering med enkel inloggning och mycket annat.
 
 Du kan använda dessa funktioner för att styra macOS-enheter som en del av din MDM-lösning för hantering av mobilenheter.
 
@@ -40,7 +40,7 @@ I den här artikeln visas inställningarna, tillsammans med en beskrivning av va
 
 ## <a name="airprint"></a>AirPrint
 
-### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering och automatisk enhetsregistrering 
+### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering och automatisk enhetsregistrering
 
 - **IP-adress**: Ange skrivarens IPv4- eller IPv6-adress. Om du använder värdnamn till att identifiera skrivare, kan du hämta IP-adressen genom att pinga skrivaren i Terminal-appen. Det finns mer information i [Hämta IP-adress och sökväg](#get-the-ip-address-and-path) (i den här artikeln).
 - **Sökväg**: Ange sökvägen till skrivaren. Sökvägen är vanligtvis `ipp/print` för skrivare i nätverket. Det finns mer information i [Hämta IP-adress och sökväg](#get-the-ip-address-and-path) (i den här artikeln).
@@ -70,7 +70,7 @@ Om du vill lägga till AirPrinter-servrar, behöver du ha skrivarens IP-adress, 
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Filer, mappar och anpassade appar**: **Lägg till** sökvägen för en fil, mapp, anpassad app eller systemapp som ska öppnas när en användare loggar in på enheten. Systemappar eller appar som har skapats eller anpassats för din organisation finns vanligtvis i `Applications`-mappen, med en sökväg liknande `/Applications/AppName.app`. 
+- **Filer, mappar och anpassade appar**: **Lägg till** sökvägen för en fil, mapp, anpassad app eller systemapp som ska öppnas när användare loggar in på sina enheter. Systemappar eller appar som har skapats eller anpassats för din organisation finns vanligtvis i `Applications`-mappen, med en sökväg liknande `/Applications/AppName.app`. 
 
   Du kan lägga till många filer, mappar och appar. Ange till exempel:  
   
@@ -79,7 +79,9 @@ Om du vill lägga till AirPrinter-servrar, behöver du ha skrivarens IP-adress, 
   - `/Applications/Microsoft Office/root/Office16/winword.exe`
   - `/Users/UserName/music/itunes.app`
   
-  När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om en användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
+  När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
+
+- **Dölj från användarkonfiguration**: **Dölj** innebär att appen inte visas i listan Användare och grupper vid inloggning. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard visar operativsystemet objektet du startar vid inloggning i listan Användare och grupper med alternativet Dölj avmarkerat.
 
 ## <a name="login-window"></a>Inloggningsfönstret
 
@@ -87,37 +89,37 @@ Om du vill lägga till AirPrinter-servrar, behöver du ha skrivarens IP-adress, 
 
 #### <a name="window-layout"></a>Fönsterlayout
 
-- **Visa ytterligare information i menyfältet**: När du väljer tidsområdet på menyraden visas värdnamnet och macOS-versionen om **Tillåt** är valt. **Inte konfigurerad** (standard) innebär att den här informationen inte visas på menyraden.
-- **Banderoll**: Ange ett meddelande som visas på inloggningsskärmen på enheten. Du kan till exempel ange organisationsinformation, ett välkomstmeddelande eller information för Upphittat.
-- **Välj inloggningsformat**: Välj hur användare loggar in på enheten. Alternativen är:
+- **Visa ytterligare information i menyfältet**: När du väljer tidsområdet på menyraden visas värdnamnet och macOS-versionen om **Tillåt** är valt. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte visa den här informationen på menyraden.
+- **Banderoll**: Ange ett meddelande som visas på inloggningsskärmen på enheter. Du kan till exempel ange organisationsinformation, ett välkomstmeddelande eller information för Upphittat.
+- **Välj inloggningsformat**: Välj hur användare loggar in på enheter. Alternativen är:
   - **Fråga efter användarnamn och lösenord** (standard): Kräver att användarna anger ett användarnamn och lösenord.
   - **Lista alla användare, fråga efter lösenord**: Kräver att användarna väljer sitt användarnamn från en användarlista och sedan anger sitt lösenord. Konfigurera också:
 
-    - **Lokala användare**: Om du väljer **Dölj** visas inte lokala användarkonton i användarlistan, som kan innehålla standardkonton och administratörskonton. Endast nätverks- och systemanvändarkonton visas. **Inte konfigurerad** (standard) visar de lokala användarkontona i användarlistan.
-    - **Mobilkonton**: Om du väljer **Dölj** visas inte mobilkonton i användarlistan. **Inte konfigurerad** (standard) visar mobilkontona i användarlistan. Vissa mobilkonton kan visas som nätverksanvändare.
-    - **Nätverksanvändare**: Välj **Visa** om du vill visa nätverksanvändare i användarlistan. **Inte konfigurerad** (standard) visar nätverksanvändarkontona i användarlistan.
-    - **Administratörer**: Om du väljer **Dölj** visas inte administratörskonton i användarlistan. **Inte konfigurerad** (standard) visar administratörskontona i användarlistan.
-    - **Andra användare**: Välj **Visa** om du vill visa **Andra...** användare i användarlistan. **Inte konfigurerad** (standard) visar konton för andra användare i användarlistan.
+    - **Lokala användare**: Om du väljer **Dölj** visas inte lokala användarkonton i användarlistan, som kan innehålla standardkonton och administratörskonton. Endast nätverks- och systemanvändarkonton visas. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa de lokala användarkonton i användarlistan.
+    - **Mobilkonton**: Om du väljer **Dölj** visas inte mobilkonton i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa mobilkonton i användarlistan. Vissa mobilkonton kan visas som nätverksanvändare.
+    - **Nätverksanvändare**: Välj **Visa** om du vill visa nätverksanvändare i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa nätverksanvändarkonton i användarlistan.
+    - **Administratörer**: Om du väljer **Dölj** visas inte administratörskonton i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa administratörskonton i användarlistan.
+    - **Andra användare**: Välj **Visa** om du vill visa **Andra...** användare i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte visa andra användarkonton i användarlistan.
 
 #### <a name="login-screen-power-settings"></a>Strömsparinställningar på inloggningsskärmen
 
-- **Stäng av**: Om du väljer **Dölj** visas inte avstängningsknappen på inloggningsskärmen. **Inte konfigurerad** (standard) visar avstängningsknappen.
-- **Starta om**: Om du väljer **Dölj** visas inte omstartsknappen på inloggningsskärmen. **Inte konfigurerad** (standard) visar omstartsknappen.
-- **Vila**: Om du väljer **Dölj** visas inte Vila-knappen på inloggningsskärmen. **Inte konfigurerad** (standard) visar Vila-knappen.
+- **Stäng av**: Om du väljer **Dölj** visas inte avstängningsknappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa avstängningsknappen.
+- **Starta om**: Om du väljer **Dölj** visas inte omstartsknappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa omstartsknappen.
+- **Vila**: Om du väljer **Dölj** visas inte Vila-knappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa Vila-knappen.
 
 #### <a name="other"></a>Andra
 
-- **Inaktivera användarinloggning från konsol**: Om du väljer **Inaktivera** döljs macOS-kommandoraden som används för att logga in. Vanliga användare kan **inaktivera** den här inställningen. **Inte konfigurerad** (standard) gör att avancerade användare kan logga in med macOS-kommandoraden. För att gå till konsolläget anger användarna `>console` i fältet Användarnamn. Användarna måste sedan autentiseras i konsolfönstret.
+- **Inaktivera användarinloggning från konsol**: Om du väljer **Inaktivera** döljs macOS-kommandoraden som används för att logga in. Vanliga användare kan **inaktivera** den här inställningen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta avancerade användare att logga in med macOS-kommandoraden. För att gå till konsolläget anger användarna `>console` i fältet Användarnamn. Användarna måste sedan autentiseras i konsolfönstret.
 
 #### <a name="apple-menu"></a>Apple-menyn
 
 När användarna loggar in på enheterna påverkar följande inställningar vad de kan göra.
 
-- **Inaktivera Stäng av**: Om du väljer **Inaktivera** kan användarna inte använda alternativet **Stäng av** efter att de har loggat in. **Inte konfigurerad** (standard) tillåter användare att välja menyalternativet **Stäng av** på enheten.
-- **Inaktivera omstart** : Om du väljer **Inaktivera** kan användarna inte välja alternativet **Starta om** efter att de har loggat in. **Inte konfigurerad** (standard) tillåter användare att välja menyalternativet **Starta om** på enheten.
-- **Inaktivera Ström av**: Om du väljer **Inaktivera** kan användarna inte välja alternativet **Ström av** efter att de har loggat in. **Inte konfigurerad** (standard) tillåter användare att välja menyalternativet **Ström av** på enheten.
-- **Inaktivera Logga ut** (macOS 10.13 och senare): Om du väljer **Inaktivera** kan användarna inte välja alternativet **Logga ut** efter att de har loggat in. **Inte konfigurerad** (standard) tillåter användare att välja menyalternativet **Logga ut** på enheten.
-- **Inaktivera Lås skärm** (macOS 10.13 och senare): Om du väljer **Inaktivera** kan användarna inte välja alternativet **Lås skärm** efter att de har loggat in. **Inte konfigurerad** (standard) tillåter användare att välja menyalternativet **Lås skärm** på enheten.
+- **Inaktivera Stäng av**: Om du väljer **Inaktivera** kan användarna inte använda alternativet **Stäng av** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Stäng av** på enheter.
+- **Inaktivera omstart** : Om du väljer **Inaktivera** kan användarna inte välja alternativet **Starta om** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Starta om** på enheter.
+- **Inaktivera Ström av**: Om du väljer **Inaktivera** kan användarna inte välja alternativet **Ström av** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Ström av** på enheter.
+- **Inaktivera Logga ut** (macOS 10.13 och senare): Om du väljer **Inaktivera** kan användarna inte välja alternativet **Logga ut** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Logga ut** på enheter.
+- **Inaktivera Lås skärm** (macOS 10.13 och senare): Om du väljer **Inaktivera** kan användarna inte välja alternativet **Lås skärm** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Lås skärm** på enheter.
 
 ## <a name="single-sign-on-app-extension"></a>Tillägg för enkel inloggning
 
@@ -130,8 +132,8 @@ Den här funktionen gäller för:
 - **Typ av SSO-apptillägg**: Välj typ av inloggningsinformation för SSO-apptillägg. Alternativen är:
 
   - **Inte konfigurerad**: Apptilläggen används inte. Om du vill inaktivera ett apptillägg, så ändra SSO-apptilläggstypen till **Inte konfigurerad**.
-  - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill utföra SSO med moderna autentiseringsflöden. Försäkra dig om att du känner till tillägget och grupp-ID:t för din organisations apptillägg.
-  - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill utföra SSO med autentiseringsflöden med anrop och svar. Försäkra dig om att du känner till tilläggs-ID och grupp-ID för din organisations SSO-apptillägg.  
+  - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Försäkra dig om att du känner till tillägget och grupp-ID:t för din organisations apptillägg.
+  - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill använda SSO med autentiseringsflöden med anrop och svar. Försäkra dig om att du känner till tilläggs-ID och grupp-ID för din organisations SSO-apptillägg.  
   - **Kerberos**: Använd Apples inbyggda Kerberos-tillägg, som ingår i macOS Catalina 10.15 och senare. Det här alternativet är en Kerberos-specifik version av apptillägget **Autentiseringsuppgifter**.
 
   > [!TIP]
@@ -149,7 +151,7 @@ Den här funktionen gäller för:
   - Alla domäner i Intune-profiltilläggen för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken apptilläggsprofil för enkel inloggning som helst, även om du använder olika typer av SSO-apptillägg.
   - Dessa domäner är inte skiftlägeskänsliga.
 
-- **URL:er** (endast omdirigering): Ange URL-prefixen för dina identitetsprovidrar för vars räkning apptillägget för omdirigering utför SSO. När en användare omdirigeras till dessa URL:er ingriper SSO-apptillägget att och framtvingar SSO.
+- **URL:er** (endast omdirigering): Ange URL-prefixen för dina identitetsprovidrar för vilkas räkning apptillägget för omdirigering använder SSO. När användarna omdirigeras till dessa URL:er ingriper SSO-apptillägget och frågar efter SSO.
 
   - Alla URL:er i Intune-apptilläggsprofilerna för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken SSO-apptilläggsprofil som helst, även om du använder olika typer av SSO-tillägg.
   - URL:erna måste inledas med http://eller https://.
@@ -166,25 +168,25 @@ Den här funktionen gäller för:
   
   - **Lägg till**: Välj om du vill lägga till dina konfigurationsnycklar.
 
-- **Användning av nyckelring** (endast Kerberos): Förhindra att lösenord sparas och lagras i nyckelringen genom att välja **Blockera**. Om den blockeras uppmanas inte användaren att spara sitt lösenord och behöver ange lösenordet på nytt när Kerberos-biljetten går ut. **Inte konfigurerad** (standard) tillåter att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
-- **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. **Inte konfigurerad** (standard) kräver inte att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
-- **Standardsfär** (endast Kerberos): Välj **Aktivera** om du vill ange det **Sfär**-värde som du angav som standardsfär. **Inte konfigurerad** (standard) anger inte någon standardsfär.
+- **Användning av nyckelring** (endast Kerberos): Förhindra att lösenord sparas och lagras i nyckelringen genom att välja **Blockera**. Om den blockeras uppmanas inte användarna att spara sina lösenord och de måste ange lösenordet på nytt när Kerberos-biljetten upphör att gälla. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
+- **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske inte kräver att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten som standard. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
+- **Standardsfär** (endast Kerberos): Välj **Aktivera** om du vill ange det **Sfär**-värde som du angav som standardsfär. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte ange en standardsfär.
 
   > [!TIP]
   > - **Aktivera** den här inställningen om du konfigurerar flera Kerberos SSO-ap-tillägg i din organisation.
   > - **Aktivera** den här inställningen om du använder flera sfärer. Den anger det **Sfär**-värde som du angav som standardsfär.
   > - Om du bara har en sfär så låt inställningen vara **Inte konfigurerad** (standard).
 
-- **Identifiera automatiskt** (endast Kerberos): När värdet ställts in på **Blockera** använder Kerberos-tillägget inte LDAP eller DNS automatiskt för att fastställa Active Directory-platsens namn. **Inte konfigurerad** (standard) tillåter att tillägget automatiskt hittar Active Directory-platsens namn.
-- **Ändringar av lösenord** (endast Kerberos): **Blockera** förhindrar att användarna ändrar sina lösenord för inloggning på de domäner som du har angett. **Inte konfigurerad** (standard) tillåter att lösenord ändras.  
-- **Lösenordssynkronisering** (endast Kerberos): Välj **Aktivera** om du vill synkronisera dina användares lokala lösenord med Azure AD. **Inte konfigurerad** (standard) inaktiverar synkronisering av lösenord med Azure AD. Använd den här inställningen som alternativ till eller säkerhetskopia för SSO. Den här inställningen fungerar inte om användarna är inloggade med ett Apple-mobilkonto.
-- **Lösenordskomplexitet för Windows Server Active Directory** (endast Kerberos): Välj **Kräv** för att tvinga användarlösenorden att uppfylla komplexitetskraven för Active Directory-lösenord. Mer information finns i [Lösenord måste uppfylla komplexitetskraven](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) . **Inte konfigurerad** (standard) kräver inte att användarna uppfyller Active Directory-lösenordskraven.
-- **Minsta längd på lösenord (tecken)** (endast Kerberos): Ange det minsta antal tecken som användarens lösenord måste innehålla. **Inte konfigurerad** (standard) framtvingar inte någon minsta längd för användarens lösenord.
-- **Gräns för återanvändning av lösenord** (endast Kerberos): Ange det antal nya lösenord, från 1 till 24, som måste användas innan ett tidigare lösenord kan återanvändas på domänen. **Inte konfigurerad** (standard) framtivingar inte någon gräns för återanvändning av lösenord.
-- **Lägsta lösenordsålder** (endast Kerberos): Ange det antal dagar som ett lösenord måste användas på domänen innan användaren kan ändra det. **Inte konfigurerad** (standard) framtvingar inte någon lägsta ålder på lösenord innan de kan ändras.
-- **Meddelande om förfallodatum för lösenord** (endast Kerberos): Ange hur många dagar innan lösenordets förfallodatum som användaren ska få ett meddelande om detta. **Inte konfigurerad** (standard) använder `15` dagar.
-- **Lösenordets giltighetstid** (endast Kerberos): Ange antalet dagar innan lösenordet måste ändras. **Inte konfigurerat** (standard) innebär att användarlösenorden aldrig upphör att gälla.
-- **URL för lösenordsändring** (endast Kerberos): Ange den URL som startar när användaren initierar en ändring av Kerberos-lösenordet.
+- **Identifiera automatiskt** (endast Kerberos): När värdet ställts in på **Blockera** använder Kerberos-tillägget inte LDAP eller DNS automatiskt för att fastställa Active Directory-platsens namn. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att tillägget automatiskt hittar Active Directory-platsens namn.
+- **Ändringar av lösenord** (endast Kerberos): **Blockera** förhindrar att användarna ändrar sina lösenord för inloggning på de domäner som du har angett. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta ändringar av lösenord.  
+- **Lösenordssynkronisering** (endast Kerberos): Välj **Aktivera** om du vill synkronisera dina användares lokala lösenord med Azure AD. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera synkronisering av lösenord med Azure AD. Använd den här inställningen som alternativ till eller säkerhetskopia för SSO. Den här inställningen fungerar inte om användarna är inloggade med ett Apple-mobilkonto.
+- **Lösenordskomplexitet för Windows Server Active Directory** (endast Kerberos): Välj **Kräv** för att tvinga användarlösenorden att uppfylla komplexitetskraven för Active Directory-lösenord. Mer information finns i [Lösenord måste uppfylla komplexitetskraven](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements). När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte kräver att användarna uppfyller Active Directory-lösenordskraven.
+- **Minsta längd på lösenord (tecken)** (endast Kerberos): Ange det minsta antal tecken som användarnas lösenord måste innehålla. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte framtvingar någon minsta längd för användarens lösenord.
+- **Gräns för återanvändning av lösenord** (endast Kerberos): Ange det antal nya lösenord, från 1 till 24, som måste användas innan ett tidigare lösenord kan återanvändas på domänen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kräver kanske inte kräver en gräns för återanvändning av lösenord som standard.
+- **Lägsta lösenordsålder** (endast Kerberos): Ange det antal dagar som ett lösenord måste användas på domänen innan användare kan ändra det. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte framtvingar någon lägsta ålder på lösenord innan de kan ändras.
+- **Meddelande om förfallodatum för lösenord** (endast Kerberos): Ange hur många dagar innan lösenordets förfallodatum som användaren ska få ett meddelande om detta. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard använda `15` dagar.
+- **Lösenordets giltighetstid** (endast Kerberos): Ange antalet dagar innan lösenordet måste ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske lösenord aldrig upphör.
+- **URL för lösenordsändring** (endast Kerberos): Ange den URL som öppnas när användare startar en Kerberos-lösenordsändring.
 - **Huvudnamn** (endast Kerberos): Ange användarnamnet för Kerberos-huvudkontot. Du behöver inte inkludera sfärnamnet. I `user@contoso.com` är t.ex. `user` huvudkontots namn och `contoso.com` är sfärens namn.
 
   > [!TIP]
@@ -194,7 +196,7 @@ Den här funktionen gäller för:
 - **Active Directory-platskod** (endast Kerberos): Ange namnet på den Active Directory-plats som Kerberos-tillägget ska använda. Du kanske inte behöver ändra det här värdet eftersom Kerberos-tillägget kan hitta Active Directory-platskoden automatiskt.
 - **Cachenamn** (endast Kerberos): Ange GSS-namnet (Generic Security Services) för Kerberos-cachen. Du behöver förmodligen inte ange det här värdet.  
 - **Meddelande om lösenordskrav** (endast Kerberos): Ange en textversion av organisationens lösenordskrav som ska visas för användarna. Meddelandet visas om du inte har några krav på Active Directory-lösenordskomplexitet eller på minsta längd för lösenord.  
-- **Programpakets-ID:n** (endast Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. De här apparna beviljas åtkomst till en Kerberos Ticket Granting-biljett, autentiseringsbiljetten och autentiserar användarna till de tjänster för vilka de har åtkomstbehörighet.
+- **Programpakets-ID:n** (endast Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. Dessa appar beviljas åtkomst till den biljettbeviljande biljetten för Kerberos och autentiseringsbiljetten. Apparna autentiserar även användare för tjänster som de har behörighet till.
 - **Domänsfärsmappning** (endast Kerberos): **Lägg till** DNS-suffixen för den domän som ska mappas till din sfär. Använd den här inställningen när värdarnas DNS-namn inte matchar sfärnamnet. Du behöver förmodligen inte skapa den här anpassade domän-till-sfär-mappningen.
 - **PKINIT-certifikat** (endast Kerberos): **Välj** den kryptering för offentlig nyckel för inledande autentisering (PKINIT) som kan användas för Kerberos-autentisering. Du kan välja mellan [PKCS](../protect/certficates-pfx-configure.md)- eller [SCEP](../protect/certificates-scep-configure.md) -certifikat som du har lagt till i Intune. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
 
