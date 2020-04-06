@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/17/2020
+ms.date: 03/25/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fafca25fb0e374d281f8ef593cb5fa7f35d82979
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 69ca92125728ec8fdac27c229f8aacc5c0ef29c0
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80086969"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359387"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -33,7 +33,7 @@ I den här artikeln visas inställningarna, tillsammans med en beskrivning av va
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-[Skapa en iOS- och iPadOS-enhetskonfigurationsprofil](device-features-configure.md).
+[Skapa en iOS/iPadOS-enhetsfunktionsprofil](device-features-configure.md).
 
 > [!NOTE]
 > Dessa inställningar gäller för olika registreringstyper. Vissa inställningar gäller för alla registreringsalternativ. Mer information om de olika registreringstyperna finns i [iOS/iPadOS-registrering](../enrollment/ios-enroll.md).
@@ -81,11 +81,11 @@ Den här funktionen gäller för:
 
 ### <a name="dock"></a>Docka
 
-Lägg till upp till sex objekt eller mappar till skärmens docka med hjälp av **Docka**-inställningarna. Många enheter stöder färre objekt. Till exempel stöder iPhone-enheter upp till fyra objekt. I det här fallet visas endast de första fyra objekt som du har lagt till på enheten.
+Lägg till upp till sex objekt eller mappar till skärmens docka med hjälp av **Docka**-inställningarna. Många enheter stöder färre objekt. Till exempel stöder iPhone-enheter upp till fyra objekt. I det här fallet visas endast de första fyra objekten som du har lagt till på enheterna.
 
 Du kan lägga till upp till **sex** objekt (appar och mappar som kombineras) för enhetens docka.
 
-- **Lägg till**: Lägger till appar eller mappar till dockan på enheten.
+- **Lägg till**: Lägger till appar eller mappar i dockan på enheterna.
 - **Typ**: Lägger till en **app** eller en **mapp**:
 
   - **App**: Välj det här alternativet för att lägga till appar i dockan på skärmen. Ange:
@@ -113,11 +113,13 @@ Du kan lägga till upp till **sex** objekt (appar och mappar som kombineras) fö
 
 I följande exempel visar skärmen dock endast apparna Safari, Mail och Stocks. Mail-appen är markerad för att visa dess egenskaper:
 
-![Exempel på Inställningar för iOS/iPadOS dock](./media/ios-device-features-settings/FfFiUcP.png)
+> [!div class="mx-imgBorder"]
+> ![Exempel på inställningar för iOS/iPadOS-docka](./media/ios-device-features-settings/FfFiUcP.png)
 
 När du tilldelar principen till en iPhone liknar dockan följande bild:
 
-![Exempel på iOS-/iPadOS-dockningslayout i iPhone](./media/ios-device-features-settings/bAgCe8F.png)
+> [!div class="mx-imgBorder"]
+> ![Exempel på layout för iOS/iPadOS-docka på iPhone](./media/ios-device-features-settings/bAgCe8F.png)
 
 ### <a name="pages"></a>Sidor
 
@@ -134,7 +136,7 @@ Du kan lägga till upp till **40** sidor på en enhet.
 
   Du kan lägga till upp till **60** objekt (appar och mappar kombinerat) på en enhet.
 
-  - **Lägg till**: Lägger till appar eller mappar till dockan på enheten.
+  - **Lägg till**: Lägger till appar eller mappar på en sida på enheterna.
 
     - **Typ**: Lägger till en **app** eller en **mapp**:
 
@@ -147,7 +149,7 @@ Du kan lägga till upp till **40** sidor på en enhet.
 
         Apparna som du lägger till på en sida i en mapp ordnas från vänster till höger, och i samma ordning som i listan. Om du lägger till flera appar än vad som får plats på en sida, kommer apparna att flyttas till en annan sida.
 
-        - **Mappnamn**: Ange ett namn på mappen. Namnet visas för användare på enheten.
+        - **Mappnamn**: Ange ett namn på mappen. Namnet visas för användarna på enheterna.
         - **Lägg till**: Lägger till sidor i mappen. Ange även följande egenskaper:
 
           - **Sidnamn**: Ange ett namn för sidan. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på iOS-/iPadOS-enheten.
@@ -158,11 +160,13 @@ Du kan lägga till upp till **40** sidor på en enhet.
 
 I följande exempel har en ny sida med namnet **Contoso** lagts till. Sidan visar apparna Hitta vänner och Inställningar. Inställningsappen är markerad för att visa dess egenskaper:
 
-![Exempel på startskärmsinställningar för iOS-/iPadOS i Intune](./media/ios-device-features-settings/Jc2OxyX.png)
+> [!div class="mx-imgBorder"]
+> ![Exempel på startskärmsinställningar för iOS/iPadOS i Intune](./media/ios-device-features-settings/Jc2OxyX.png)
 
 När du tilldelar principen till en iPhone liknar sidan följande bild:
 
-![iOS-/iPadOS-enhet med modifierad startskärm i Intune](./media/ios-device-features-settings/Bd37PHa.png)
+> [!div class="mx-imgBorder"]
+> ![iOS/iPadOS-enhet med modifierad startskärm i Intune](./media/ios-device-features-settings/Bd37PHa.png)
 
 ## <a name="app-notifications"></a>Appmeddelanden
 
@@ -170,18 +174,19 @@ När du tilldelar principen till en iPhone liknar sidan följande bild:
 
 - **Lägg till**: Lägg till meddelanden för appar:
 
-    ![Lägg till appmeddelande i en iOS-/iPadOS-profil i Intune](./media/ios-device-features-settings/ios-macos-app-notifications.png)
+  > [!div class="mx-imgBorder"]
+  > ![Lägg till appmeddelande i iOS-/iPadOS-profil i Intune](./media/ios-device-features-settings/ios-macos-app-notifications.png)
 
   - **Appsamlings-ID**: Ange **Appsamlings-ID** för den app som du vill lägga till. Se [Samlings-ID för inbyggda iOS-/iPadOS-appar](bundle-ids-built-in-ios-apps.md) för några exempel.
-  - **Appnamn**: Ange namnet på appen som du vill lägga till. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på enheten.
-  - **Utgivare**: Ange utgivaren av den app som du vill lägga till. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på enheten.
-  - **Meddelanden**: **Aktivera** eller **inaktivera** att appen kan skicka meddelanden till enheten.
+  - **Appnamn**: Ange namnet på appen som du vill lägga till. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på enheter.
+  - **Utgivare**: Ange utgivaren av den app som du vill lägga till. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på enheter.
+  - **Meddelanden**: **Aktivera** eller **Inaktivera** att appen kan skicka meddelanden till enheter.
     - **Visa i meddelandecenter**: **Aktivera** tillåter appen att visa meddelanden i enhetens meddelandecenter. **Inaktivera** förhindrar att appen visar meddelanden i meddelandecentret.
-    - **Visa på Låsskärm**: Välj **Aktivera** för att visa aviseringar från appen på enhetens låsskärm. **Inaktivera** förhindrar att appen visar meddelanden på låsskärmen.
+    - **Visa på Låsskärm**: Med **Aktivera** visas appmeddelanden på enhetens låsskärm. **Inaktivera** förhindrar att appen visar meddelanden på låsskärmen.
     - **Typ av avisering**: När enheten är upplåst kan du välja hur meddelandet visas. Alternativen är:
       - **Inga**: Inga meddelanden visas.
       - **Banderoll**: En banderoll visas en kort stund med meddelandet.
-      - **Modal**: Meddelandet visas och användaren måste manuellt ta bort det innan hen fortsätter att använda enheten.
+      - **Modal**: Meddelandet visas och användarna måste manuellt ta bort det innan de fortsätter att använda enheten.
     - **Aktivitetsikon på appikon**: Välj **Aktivera** för att lägga till en aktivitetsikon på appikonen. Aktivitetsikonen innebär att appen skickat en avisering.
     - **Ljud**: Välj **Aktivera** för att spela upp ett ljud när en avisering tas emot.
 
@@ -213,11 +218,12 @@ Den här funktionen gäller för:
 
   - **Användarens huvudnamn (UPN)** : UPN parsas på följande sätt:
 
-    ![Attributet SSO för iOS-/iPadOS-användarnamn i Intune](./media/ios-device-features-settings/User-name-attribute.png)
+    > [!div class="mx-imgBorder"]
+    > ![Attributet SSO för iOS-/iPadOS-användarnamn i Intune](./media/ios-device-features-settings/User-name-attribute.png)
 
     Du kan också skriva över området med texten som du anger i textrutan **Område**.
 
-    Contoso har exempelvis flera regioner, inklusive Europa, Asien och Nordamerika. Contoso vill att Asien-användarna ska använda enkel inloggning och appen kräver UPN i `username@asia.contoso.com`-formatet. När du väljer **UPN**, tas sfären för varje användare från Azure Active Directory, som är `contoso.com`. För användare i Asien, markerar du **UPN** och anger `asia.contoso.com`. Nu blir slutanvändarens UPN `username@asia.contoso.com` i stället för `username@contoso.com`.
+    Contoso har exempelvis flera regioner, inklusive Europa, Asien och Nordamerika. Contoso vill att Asien-användarna ska använda enkel inloggning och appen kräver UPN i `username@asia.contoso.com`-formatet. När du väljer **UPN**, tas sfären för varje användare från Azure Active Directory, som är `contoso.com`. För användare i Asien, markerar du **UPN** och anger `asia.contoso.com`. Nu blir användarens UPN `username@asia.contoso.com` i stället för `username@contoso.com`.
 
   - **ID för Intune-enhet**: Intune väljer automatiskt ID:t för Intune-enheten.
 
@@ -240,13 +246,13 @@ Den här funktionen gäller för:
 
   Mönstren `http://.com` och `https://.com` matchar alla HTTP- respektive HTTPS-adresser.
 
-- **Appar som ska använda enkel inloggning**: **Lägg till** appar på slutanvändarnas enheter som kan använda enkel inloggning.
+- **Appar som ska använda enkel inloggning**: **Lägg till** appar på användarnas enheter som kan använda enkel inloggning.
 
   Matrisen `AppIdentifierMatches` måste innehålla strängar som matchar appsamlings-ID:n. Dessa strängar kan vara exakta matchningar, till exempel `com.contoso.myapp`, eller så anger du en prefixmatchning för paket-ID:t med jokertecknet \*. Jokertecknet måste komma efter en punkt (.), och får bara förekomma en gång, i slutet av strängen såsom `com.contoso.*`. När ett jokertecken används beviljas alla appar vars samlings-ID börjar med prefixet åtkomst till kontot.
 
   Använd **appnamn** för att ange ett användarvänligt namn som hjälper dig att identifiera paket-ID:t.
 
-- **Förnyelsecertifikat för autentiseringsuppgifter**: Om du använder certifikat för autentisering (inte lösenord), väljer du det befintliga SCEP- eller PFX-certifikatet som autentiseringscertifikat. Vanligtvis är det här certifikatet samma certifikat som distribueras till användaren för andra profiler, till exempel VPN, WiFi eller e-post.
+- **Förnyelsecertifikat för autentiseringsuppgifter**: Om du använder certifikat för autentisering (inte lösenord), väljer du det befintliga SCEP- eller PFX-certifikatet som autentiseringscertifikat. Vanligtvis är det här certifikatet samma certifikat som distribueras till användaren för andra profiler, till exempel VPN, Wi-Fi eller e-post.
 
 ## <a name="web-content-filter"></a>Webbinnehållsfilter
 
@@ -269,7 +275,7 @@ Den här funktionen gäller för:
     - **Bokmärkessökväg**: Apple ändrade den här inställningen. Alla bokmärken går till mappen **Godkända platser**. Bokmärken går inte in på sökvägen för bokmärket som du angav.
     - **Rubrik**: Ange en beskrivande rubrik för bokmärket.
 
-    Om du inte anger några URL:er kommer användarna inte att komma åt några webbplatser förutom för `microsoft.com`, `microsoft.net` och `apple.com`. Dessa URL:er tillåts automatiskt av Intune.
+    Om du inte anger några URL:er kommer användarna inte att komma åt några webbplatser förutom `microsoft.com`, `microsoft.net` och `apple.com`. Dessa URL:er tillåts automatiskt av Intune.
 
 ## <a name="single-sign-on-app-extension"></a>Tillägg för enkel inloggning
 
@@ -282,10 +288,10 @@ Den här funktionen gäller för:
 
 - **Typ av SSO-apptillägg**: Välj typ av SSO-apptillägg. Alternativen är:
 
-  - **Inte konfigurerad**: Apptilläggen används inte. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
+  - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard använder operativsystemet inte alltid apptillägg. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
   - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
 
-    På iOS/iPad 13.0-enheter och senare kan du konfigurera **Microsoft Azure AD SSO-apptillägg** med den här typen av typ av SSO-apptillägg för omdirigering. Microsoft Azure AD-tillägget möjliggör enkel inloggning mellan Microsoft-appar och organisationsappar som använder Azure AD för autentisering. Azure AD-tillägget fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och slutanvändarupplevelse. Alla appar som tidigare hade en asynkron autentisering med Microsoft Authenticator-appen fortsätter att få SSO med SSO-tillägget. Azure AD SSO-tillägget stöder ännu inte webbläsar-SSO. Mer information om SSO och iOS/iPad Authentication Broker finns i [Konfigurera SSO på macOS och iOS/iPad](https://docs.microsoft.com/azure/active-directory/develop/single-sign-on-macos-ios).  
+    På iOS/iPad 13.0-enheter och senare kan du konfigurera **Microsoft Azure AD SSO-apptillägg** med den här typen av typ av SSO-apptillägg för omdirigering. Microsoft Azure AD-tillägget möjliggör enkel inloggning mellan Microsoft-appar och organisationsappar som använder Azure AD för autentisering. Azure AD-tillägget fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som tidigare hade en asynkron autentisering med Microsoft Authenticator-appen fortsätter att få SSO med SSO-tillägget. Azure AD SSO-tillägget stöder ännu inte webbläsar-SSO. Mer information om SSO och iOS/iPad Authentication Broker finns i [Konfigurera SSO på macOS och iOS/iPad](https://docs.microsoft.com/azure/active-directory/develop/single-sign-on-macos-ios).  
 
     **Konfigurera iOS Microsoft Azure AD-tillägget:**
 
@@ -306,7 +312,7 @@ Den här funktionen gäller för:
         - `https://login-us.microsoftonline.com`
 
     > [!IMPORTANT]
-    > Om du vill uppnå enkel inloggning med iOS/iPad Microsoft Azure AD-tillägget, så måste du först installera iOS/iPad Microsoft Authenticator-appen på enheten. Authenticator förser enheten med Azure AD-tillägget, och inställningarna för MDM SSO-apptillägget aktiverar Azure AD-tillägget. När Authenticator och SSO-apptilläggsprofilen har installerats på enheten, så måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen.
+    > Om du vill uppnå enkel inloggning med iOS/iPad Microsoft Azure AD-tillägget, måste du först installera iOS/iPad Microsoft Authenticator-appen på enheterna. Authenticator förser enheterna med Azure AD-tillägget, och inställningarna för MDM SSO-apptillägget aktiverar Azure AD-tillägget. När Authenticator och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen.
 
   - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill använda SSO med autentiseringsflöden med anrop och svar. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
   - **Kerberos**: Använd Apples inbyggda Kerberos-tillägg som ingår i iOS 13.0 och iPadOS 13.0 eller senare. Det här alternativet är en Kerberos-specifik version av apptillägget **Autentiseringsuppgifter**.
@@ -344,9 +350,9 @@ Den här funktionen gäller för:
 
   - **Lägg till**: Välj om du vill lägga till dina konfigurationsnycklar.
 
-- **Användning av nyckelring** (endast Kerberos): Förhindra att lösenord sparas och lagras i nyckelringen genom att välja **Blockera**. Om den blockeras uppmanas inte användarna att spara sina lösenord och de måste ange lösenordet på nytt när Kerberos-biljetten upphör att gälla. **Inte konfigurerad** (standard) tillåter att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
-- **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. **Inte konfigurerad** (standard) kräver inte att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
-- **Standardsfär** (endast Kerberos): Välj **Aktivera** om du vill ange det **Sfär**-värde som du angav som standardsfär. **Inte konfigurerad** (standard) anger inte någon standardsfär.
+- **Användning av nyckelring** (endast Kerberos): **Blockera** förhindrar att lösenord sparas och lagras i nyckelringen. Om den blockeras uppmanas inte användarna att spara sina lösenord och de måste ange lösenordet på nytt när Kerberos-biljetten upphör att gälla. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
+- **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte kräver att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
+- **Standardsfär** (endast Kerberos): Med **Aktivera** anges det **Sfär**-värde du angav som standardsfär. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte anger en standardsfär.
 
   > [!TIP]
   > - **Aktivera** den här inställningen om du konfigurerar flera Kerberos SSO-ap-tillägg i din organisation.
@@ -371,8 +377,8 @@ Ett oväntat beteende kan uppstå när en profil utan bild tilldelas till enhete
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
-- **Plats för visning av bakgrundsbild**: Välj en plats på enheten för att visa bilden. Alternativen är:
-  - **Inte konfigurerad**: En anpassad bild inte har lagts till på enheten. Enheten använder standardoperativsystemet.
+- **Plats för visning av bakgrundsbild**: Välj en plats på enheterna för att visa bilden. Alternativen är:
+  - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. En anpassad bild har inte lagts till på enheterna. Operativsystemet kan som standard ange sin egen bild.
   - **Låsskärm**: Lägger till bilden till låsskärmen.
   - **Startsida**: Lägger till bilden till startsidan.
   - **Låsskärm och startskärm**: Använder samma bild på låsskärmen och startskärmen.

@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 03/23/2020
+ms.date: 03/30/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d8ff51b8b20c5f6505cb341f666ce043b086b3b
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: 677f85874ddf206b716e70a0cc6c659e10b99fef
+ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220191"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438817"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
-Läs mer om varje veckas nyheter i Microsoft Intune. Du kan också hitta [viktiga meddelanden](#notices), [tidigare versioner](whats-new-archive.md) och information om [hur uppdateringar av Intune-tjänsten släpps](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728). 
+Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Du kan också hitta [viktiga meddelanden](#notices), [tidigare versioner](whats-new-archive.md) och information om [hur uppdateringar av Intune-tjänsten släpps](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728). 
 
 > [!Note]
 > Varje [månadsuppdatering](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Microsoft-Intune-Service-Updates/ba-p/358728) kan ta upp till tre dagar att distribuera och sker i följande ordning:
@@ -55,6 +55,59 @@ Läs mer om varje veckas nyheter i Microsoft Intune. Du kan också hitta [viktig
 -->  
 
 <!-- ########################## -->
+## <a name="week-of-march-30-2020"></a>Den vecka som börjar 30 mars 2020
+
+### <a name="new-url-for-the-microsoft-endpoint-manager-admin-center---3704810---"></a>Ny URL för administrationscentret för Microsoft Endpoint Manager<!-- 3704810 -->
+För att anpassa efter tillkännagivandet om Microsoft Endpoint Manager på Ignite förra året har vi ändrat URL:en för administrationscentret för Microsoft Endpoint Manager (tidigare Microsoft 365-enhetshantering) till [https://endpoint.microsoft.com](https://endpoint.microsoft.com). Den gamla URL:en för administrationscentret ([https://devicemanagement.microsoft.com](https://devicemanagement.microsoft.com)) fortsätter att fungera, men vi rekommenderar att du börjar använda den nya URL:en för administrationscentret för Microsoft Endpoint Manager.
+
+Mer information finns i [Förenkla IT-uppgifter med hjälp av administrationscentret för Microsoft Endpoint Manager](what-is-device-management.md#simplify-it-tasks-using-the-device-management-admin-center).
+
+### <a name="app-management"></a>Apphantering
+
+#### <a name="script-support-for-macos-devices-public-preview---4280361-wnready---"></a>Skriptstöd för macOS-enheter (offentlig förhandsversion)<!-- 4280361 wnready -->
+Du kan lägga till och distribuera skript till macOS-enheter. Det här stödet utökar din möjlighet att konfigurera macOS-enheter utöver vad som är möjligt med hjälp av interna MDM-funktioner på macOS-enheter. Mer information finns i [Använda Shell-skript på macOS-enheter i Intune](../apps/macos-shell-scripts.md).
+
+<!-- ########################## -->
+## <a name="week-of-march-24-2020"></a>Den vecka som börjar 24 mars 2020
+
+### <a name="improved-user-interface-experience-when-creating-device-restrictions-profiles-on-android-and-android-enterprise-devices---5841361---"></a>Förbättrat användargränssnitt när vid skapande av enhetskonfigurationsprofiler på enheter med Android eller Android Enterprise<!-- 5841361 -->
+
+När du skapar en profil för enheter med Android eller Android Enterprise kommer upplevelsen i administrationscentret för slutpunktshantering att uppdateras. Den här ändringen påverkar följande enhetskonfigurationsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Android-enhetsadministratör** eller **Android Enterprise** för plattformen):
+
+- Enhetsbegränsningar: Android-enhetsadministratör
+- Enhetsbegränsningar: Android Enterprise-enhetsägare
+- Enhetsbegränsningar: Android Enterprise-arbetsprofil
+
+Mer information om enhetsbegränsningar som du kan konfigurera finns i [Android-enhetsadministratör](../configuration/device-restrictions-android.md) och [Android Enterprise](../configuration/device-restrictions-android-for-work.md).
+
+### <a name="improved-user-interface-experience-when-creating-configuration-profiles-on-iosipados-and-macos-devices---5569002-5568997---"></a>Förbättrat användargränssnitt när du skapar konfigurationsprofiler på iOS/iPadOS- och macOS-enheter<!-- 5569002 5568997 -->
+
+När du skapar en profil för iOS- eller macOS-enheter uppdateras funktionen i administrationscentret för slutpunktshantering. Den här ändringen påverkar följande enhetskonfigurationsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPadOS** eller **macOS** för plattformen):
+
+- Anpassad: iOS/iPadOS, macOS
+- Enhetsfunktioner: iOS/iPadOS, macOS
+- Enhetsbegränsningar: iOS/iPadOS, macOS
+- Slutpunktsskydd: macOS
+- Tillägg: macOS
+- Inställningsfil: macOS
+
+### <a name="hide-from-user-configuration-setting-in-device-features-on-macos-devices---6524869---"></a>Dölj från inställningen för användarkonfiguration i enhetsfunktionerna på macOS-enheter<!-- 6524869 -->
+
+När du skapar en konfigurationsprofil för enhetsfunktioner på macOS-enheter finns nu den nya inställningen **Dölj från användarkonfiguration** (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **macOS** för plattformen > **Enhetsfunktioner** för profilen > **Inloggningsalternativ**).
+
+Den här funktionen anger appens markering för dölj i listan **Användare och grupper** för inloggningsalternativ för appen på macOS-enheter. Befintliga profiler visar den här inställningen i listan som inte konfigurerad. Administratörer kan uppdatera befintliga profiler för att konfigurera den här inställningen.
+
+När inställningen är **Dölj** markeras kryssrutan Dölj för appen och användarna kan inte ändra den. Den döljer också appen från användare när användare har loggat in på sina enheter.
+
+> [!div class="mx-imgBorder"]
+> ![Dölj appar på macOS-enheter när användare loggar in på enheten i Microsoft Intune och Endpoint Manager](./media/whats-new/macos-hide-checkmark-users-groups-login-items-apps-list.png)
+
+Mer information om de inställningar som du kan konfigurera finns i [Funktionsinställningar för macOS-enheter](../configuration/macos-device-features-settings.md).
+
+Den här funktionen gäller för:
+
+- macOS
+
 ## <a name="week-of-march-16-2020-2003-service-release"></a>Veckan den 16 mars 2020 (2003 Service Release)
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -183,7 +236,7 @@ På dessa icke-kompatibla enheter kommer användare att på sidan **Uppdatera en
 2. Registrering i arbetsprofilhantering
 3. Lösa efterlevnadsproblem 
  
-Google minskar stödet för enhetsadministration i nya versioner av Android för att kunna övergå till en modern, mer omfattande och säkrare enhetshantering med Android Enterprise.  Intune kan endast erbjuda fullt stöd för enhetsadministratörshanterade Android-enheter som kör Android 10 och senare till och med andra kvartalet 2020. Enhetsadministratörshanterade enheter (förutom Samsung) som kör Android 10 eller senare efter denna tidpunkt kommer inte längre att kunna hanteras fullt ut. Det innebär exempelvis att berörda enheter inte får de nya lösenordskraven. Mer information finns i [det här meddelandet](#decreasing-support-for-android-device-administrator).
+Google minskar stödet för enhetsadministration i nya versioner av Android för att kunna övergå till en modern, mer omfattande och säkrare enhetshantering med Android Enterprise.  Intune kan endast erbjuda fullt stöd för enhetsadministratörshanterade Android-enheter som kör Android 10 och senare till och med andra kvartalet 2020. Enhetsadministratörshanterade enheter (förutom Samsung) som kör Android 10 eller senare efter denna tidpunkt kommer inte längre att kunna hanteras fullt ut. Det innebär exempelvis att berörda enheter inte får de nya lösenordskraven.
 
 Mer information om den här inställningen finns i [Flytta Android-enheter från enhetsadministratören till arbetsprofilhantering](../enrollment/android-move-device-admin-work-profile.md). 
 
@@ -295,7 +348,11 @@ Läs artikeln om [den tekniska förhandsversionen av Configuration Manager](http
 Nu kan du utfärda masskommandon för följande fjärråtgärder: starta om, byt namn på, autopilot-återställning, rensning och borttagning. Om du vill se de nya massåtgärderna går du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **Alla enheter** > **Massåtgärder**.
 
 #### <a name="all-devices-list-improved-search-sort-and-filter--6179023--"></a>Listan Alla enheter har förbättrad sökning, sortering och filtrering<!--6179023-->
-Prestanda, sökning, sortering och filtrering har förbättrats för listan Alla enheter. Mer information finns i [detta supporttips](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-changes-in-all-devices-list-and-reporting-in-intune/ba-p/1220946).
+Prestanda, sökning, sortering och filtrering har förbättrats för listan Alla enheter. Mer information finns i [detta supporttips](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-changes-in-all-devices-list-and-reporting-in-intune/ba-p/1220946).  
+
+### <a name="app-management"></a>Apphantering  
+####  <a name="improved-sign-in-experience-in-company-portal-for-android"></a>Förbättrad inloggningsupplevelse i Företagsportal för Android    
+Vi har uppdaterat layouten för flera inloggningsskärmar i företagsportalappen för Android så att upplevelsen blir modernare, enklare och tydligare för användare. En titt på förbättringarna finns i [Nyheter i användargränssnittet för appen](https://docs.microsoft.com/mem/intune/fundamentals/whats-new-app-ui).
 
 <!-- ########################## -->
 ## <a name="week-of-february-24-2020"></a>Den vecka som börjar den 24 februari 2020
@@ -405,7 +462,7 @@ Vi har ändrat namnet på det alternativ i administrationscentret för Microsoft
 ### <a name="role-based-access-control"></a>Rollbaserad åtkomstkontroll
 
 #### <a name="intune-roles-user-interface-changes-coming--5801612-----"></a>Användargränssnittsändringar i Intune-roller kommer<!--5801612   -->
-Användargränssnittet för [Microsoft Endpoint Manager-administrationscenter](https://go.microsoft.com/fwlink/?linkid=2109431) > **Innehavaradministratör** > **Roller** har fått en mer användarvänlig och intuitiv design. De här funktionerna tillhandahåller samma inställningar och information som du använder nu, men de nya funktionerna använder en guideliknande process.
+Användargränssnittet för [Microsoft Endpoint Manager-administrationscenter](https://go.microsoft.com/fwlink/?linkid=2109431) > **Administration av klientorganisation** > **Roller** har fått en mer användarvänlig och intuitiv design. De här funktionerna tillhandahåller samma inställningar och information som du använder nu, men de nya funktionerna använder en guideliknande process.
 
 <!-- ########################## -->
 ## <a name="week-of-february-17-2020"></a>Den vecka som börjar den 17 februari 2020
@@ -487,7 +544,7 @@ Gäller för:
 ### <a name="device-enrollment"></a>Enhetsregistrering
 
 #### <a name="block-android-enrollments-by-device-manufacturer--5197392----"></a>Blockera Android-registreringar efter enhetstillverkare<!--5197392  -->
-Du kan blockera enheter från att registreras baserat på deras tillverkare. Denna funktion gäller för Android-enhetsadministratörs- och Android Enterprise-arbetsprofilsenheter. Om du vill se registreringsbegränsningar, så gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **Registreringsbegränsningar**.
+Du kan blockera enheter från att registreras baserat på deras tillverkare. Denna funktion gäller för Android-enhetsadministratörs- och Android Enterprise-arbetsprofilsenheter. Om du vill se registreringsbegränsningar går du till [Administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **Registreringsbegränsningar**.
 
 #### <a name="improvements-to-the-iosipados-create-enrollment-type-profile-ui---6055005---"></a>Förbättringar av iOS/iPad-gränssnittet för att skapa registreringstypsprofil<!-- 6055005 -->
 För användarregistrering i iOS/iPad så har sidan **Skapa registreringstypsprofil** **Inställningar** anpassats för att förbättra processen att välja **Registreringstyp** samtidigt som du behåller samma funktioner. Om du vill se det nya användargränssnittet går du till sidan [Administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **iOS** > **iOS-registrering** > **Registreringstyper** > **Skapa profil** > **Inställningar**. Mer information finns i [Skapa en Användarregistreringsprofil i Intune](../enrollment/ios-user-enrollment.md#create-a-user-enrollment-profile-in-intune).

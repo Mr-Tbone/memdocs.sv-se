@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9921fb9e22b17a47c588dfcbfbf502e00ef2aadd
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 200bde56a4a1e77ce78678eddd35537c04dfa514
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79349881"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80325494"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-managed-devices"></a>Självstudie: Skydda e-post i Exchange Online på hanterade enheter
 
@@ -49,7 +49,7 @@ Innan du börjar måste du skapa en testenhetsprofil för iOS-enheter genom att 
 
 ## <a name="sign-in-to-intune"></a>Logga in i Intune
 
-Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) som [global administratör](../fundamentals/users-add.md#types-of-administrators) eller [Intune-tjänstadministratör](../fundamentals/users-add.md#types-of-administrators). Om du har skapat en prenumeration för en Intune-utvärdering, är det konto som du skapade prenumerationen med den globala administratören.
+Logga in till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) som [global administratör](../fundamentals/users-add.md#types-of-administrators) eller [Intune-tjänstadministratör](../fundamentals/users-add.md#types-of-administrators). Om du har skapat en prenumeration för en Intune-utvärdering, är det konto som du skapade prenumerationen med den globala administratören.
 
 ## <a name="create-the-ios-device-compliance-policy"></a>Skapa en efterlevnadsprincip för iOS-enheter
 

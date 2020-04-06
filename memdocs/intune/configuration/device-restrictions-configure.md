@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2020
+ms.date: 03/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,22 +15,22 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f1e421a344122dbd4cf59a49ea56ef0ba2bb125
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 470ca47aa92b30acacc8a251c6d7d1741513bdf1
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80087073"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359226"
 ---
 # <a name="configure-device-restriction-settings-in-microsoft-intune"></a>Konfigurera inställningar för enhetsbegränsningar i Microsoft Intune
 
 Intune innehåller principer för begränsning av enheter som hjälper administratörer att kontrollera Android-, iOS/iPadOS-, macOS-, och Windows-enheter. Med dessa begränsningar kan du kontrollera en mängd olika inställningar och funktioner för att skydda din organisations resurser. Administratörerna kan exempelvis:
 
-- Tillåt eller blockera enhetens kamera
-- Kontrollera åtkomst till Google Play, App Store, dokumentvisning och spel
-- Blockera inbyggda appar eller skapa en lista över appar som tillåts eller blockeras
-- Tillåt eller förhindra säkerhetskopiering av filer till moln- och lagringskonton
-- Ange minsta längd på lösenord och blockera enkla lösenord
+- Tillåt eller blockera enhetens kamera.
+- Kontrollera åtkomst till Google Play, App Store, dokumentvisning och spel.
+- Blockera inbyggda appar eller skapa en lista över appar som tillåts eller blockeras.
+- Tillåta eller förhindra säkerhetskopiering av filer till moln- och lagringskonton.
+- Ange minsta längd på lösenord och blockera enkla lösenord.
 
 Dessa funktioner är tillgängliga i Intune och kan konfigureras av administratören. Intune använder ”konfigurationsprofiler” till att skapa och anpassa inställningarna efter din organisations behov. När du har lagt till dessa funktioner i en profil, kan du skicka eller distribuera profilen till enheter i din organisation.
 
@@ -42,37 +42,50 @@ Den här artikeln beskriver hur du skapar en enhetsbegränsningsprofil. Artikeln
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
-    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett exempel på ett bra principnamn är **iOS/iPadOS: Blockera kameran på enheterna**.
-    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
     - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
 
         - **Android-enhetsadministratör**
         - **Android enterprise**
         - **iOS/iPadOS**
         - **macOS**
-        - **Windows Phone 8.1**
-        - **Windows 8.1 och senare**
         - **Windows 10 och senare**
+        - **Windows 8.1 och senare**
+        - **Windows Phone 8.1**
 
-    - **Profiltyp**: Välj **Enhetsbegränsningar**.
+    - **Profil**: Välj **Enhetsbegränsningar**.
 
         För att skapa en enhetsbegränsningsprofil för Windows 10 Team-enheter, som en Surface Hub, väljer du sedan **Enhetsbegränsningar (Windows 10 Team)** .
 
-4. Vilka inställningar du kan konfigurera varierar beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
 
-    - [Inställningar för Android-enhetsadministratör](device-restrictions-android.md)
-    - [Inställningar för Android Enterprise](device-restrictions-android-for-work.md)
-    - [Inställningar för iOS/iPadOS](device-restrictions-ios.md)
-    - [Inställningar för macOS](device-restrictions-macos.md)
-    - [Inställningar för Windows Phone 8.1](device-restrictions-windows-phone-8-1.md)
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett exempel på ett bra principnamn är **iOS/iPadOS: Blockera kameran på enheterna**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
+
+6. Välj **Nästa**.
+
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
+
+    - [Android-enhetsadministratör](device-restrictions-android.md)
+    - [Android enterprise](device-restrictions-android-for-work.md)
+    - [iOS/iPadOS](device-restrictions-ios.md)
+    - [macOS](device-restrictions-macos.md)
+    - [Windows Phone 8.1](device-restrictions-windows-phone-8-1.md)
     - [Windows 8.1](device-restrictions-windows-8-1.md)
-    - [Inställningar för Windows 10](device-restrictions-windows-10.md)
-    - [Inställningar för Windows 10 Team](device-restrictions-windows-10-teams.md)
-    - [Inställningar för Windows Holographic for Business](device-restrictions-windows-holographic.md)
+    - [Windows 10 och senare](device-restrictions-windows-10.md)
+    - [Windows 10-teamet](device-restrictions-windows-10-teams.md)
+    - [Windows Holographic for Business](device-restrictions-windows-holographic.md)
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+8. Välj **Nästa**.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
 
-Profilen skapas och visas i profillistan.
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1ec6d4ebe860a1c20ad1a11bd7e63086858a82c
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: e6a3152966dee507cde690d9be8f5a7e210c7945
+ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80084215"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80407759"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -45,7 +45,7 @@ I följande tabell visas anpassningsinformation för slutanvändarupplevelsen:
 | **Visa i sidhuvud** | Ange om slutanvändarupplevelsens sidhuvud ska visa **Företagslogotyp och företagsnamn**, **Endast företagslogotyp** eller **Endast företagsnamn**. I förhandsgranskningsrutorna nedan visas endast logotypen, inte namnet.  |
 | **Ladda upp logotypen för temafärgsbakgrund** | Ladda upp den logotyp som du vill visa ovanpå den valda temafärgen. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek:   750 KB<br>Filtyp: PNG, JPG eller JPEG |
 | **Ladda upp logotyp för vit eller ljus bakgrund** | Ladda upp logotypen som du vill visa ovanpå vita eller ljusa bakgrunder. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut mot en vit bakgrund i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek: 750 KB<br>Filtyp: PNG, JPG eller JPEG |
-| **Ladda upp varumärkesbild** | Ladda upp en bild av organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
+| **Ladda upp varumärkesbild** | Ladda upp en bild som återspeglar organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
 
 > [!NOTE]
 > När en användare installerar ett iOS/iPadOS-program från företagsportalen får de ett meddelande. Detta inträffar när iOS/iPadOS-appen är länkad till App Store, ett volymköpt program (VPP) eller en verksamhetsspecifik app (LOB). Användaren kan acceptera åtgärden eller tillåta hantering av appen. Meddelandet visar företagets namn. Om företagets namn inte är tillgängligt visas **företagsportalen**.
@@ -73,7 +73,7 @@ Det följande är ett exempel på den grafiska profilen i Intune-appen för Andr
 
 ## <a name="support-information"></a>Supportinformation
 
-Ange din organisations suppor information, så att anställda kan kontakta dig med frågor. Den här supportinformationen visas på sidorna **Support**, **Hjälp och support** och **Supportavdelningen** i slutanvändarupplevelsen.
+Ange din organisations supportinformation, så att anställda kan kontakta dig med frågor. Den här supportinformationen visas på sidorna **Support**, **Hjälp och support** och **Supportavdelningen** i slutanvändarupplevelsen.
 
 | Fältnamn | Maximal längd | Mer information |
 |------------------------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -107,7 +107,7 @@ Följande tabell tillhandahåller ytterligare konfigurationsinformation:
 |    Tillgängligt, inga prompter    |    Användaren kan registrera sig via statusen i enhetsinformationen för den aktuella enheten eller från appar som kräver registrering.    |    Nej    |    Nej    |    Ja    |    Ja    |
 |    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Nej    |    Nej    |    Nej<sup>(1)</sup>    |
 
-<sup>(1)</sup> **Känt ärende:** Om du konfigurerar appar till att kräva registrering vid installation och även anger enhetsregistreringen som "Ej tillgänglig", så kommer Företagsportal-appen på Android fortfarande att hjälpa användarna att registrera sig. Detta kommer att tas bort inom kort.
+<sup>(1)</sup> **Känt ärende:** Om du konfigurerar appar till att kräva registrering vid installation och även anger enhetsregistreringen som ”Ej tillgänglig”, så kommer Företagsportal-appen på Android fortfarande att hjälpa användarna att registrera sig. Detta kommer att tas bort inom kort.
 
 > [!NOTE]
 > Om du använder Azure Government har slutanvändarna tillgång till apploggar som hjälper dem att avgöra hur de ska dela när de inleder processen för att få hjälp med ett problem. Om du inte använder Azure Government skickar företagsportalen apploggar direkt till Microsoft när användaren initierar processen för att få hjälp med ett problem. När apploggarna skickas till Microsoft blir det enklare att felsöka och lösa problem.
@@ -193,4 +193,4 @@ Vissa plattformar och konfigurationer tillåter inte självbetjäning av enhets�
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Lägga till appen Företagsportal för Windows 10 manuellt med Microsoft Intune](company-portal-app.md)
+- [Lägga till appar](apps-add.md)

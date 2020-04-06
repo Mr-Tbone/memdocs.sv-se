@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: microsoft-intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0005136193048bac7d9d24311646bf3406a6c800
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 756d835a54a9b020be50a83d95d1925334fda8f1
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354665"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326650"
 ---
 # <a name="device-management-overview"></a>Översikt över enhetshantering
 
@@ -84,7 +84,7 @@ När du har konfigurerat Intune kan välja att enbart arbeta i Azure Portal, ell
 
 ## <a name="simplify-it-tasks-using-the-device-management-admin-center"></a>Förenkla IT-uppgifter med hjälp av vårt administrationscenter för enhetshantering
 
-I [administrationscentret för Microsoft Endpoint-enhetshantering](https://go.microsoft.com/fwlink/?linkid=2109431) kan du hantera och utföra alla åtgärder för dina mobilenheter. Arbetsytan innehåller de tjänster som används för hantering av enheter, t.ex. Intune och Azure Active Directory, och även för hantering av klientappar.
+I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) kan du hantera och utföra alla åtgärder för dina mobila enheter. Arbetsytan innehåller de tjänster som används för hantering av enheter, t.ex. Intune och Azure Active Directory, och även för hantering av klientappar.
 
 I administrationscentret för enhetshantering kan du:
 

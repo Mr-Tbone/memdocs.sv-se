@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2020
+ms.date: 03/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 420340e18eb4e638ed7bde049e6b548037c54f87
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 386e59fe3a7156a8bb74ed39a1b2fcad6ad91dad
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80087103"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359306"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler i Microsoft Intune
 
@@ -53,7 +53,7 @@ Den här funktionen stöder:
 
 [Certifikat](../protect/certificates-configure.md) konfigurerar betrodda certifikat, SCEP- och PKCS-certifikat som har tilldelats till enheter. De här certifikaten autentiserar Wi-Fi-, VPN- och e-postprofiler.
 
-Den här funktionen stöder: 
+Den här funktionen stöder:
 
 - Android-enhetsadministratör
 - Android enterprise
@@ -84,6 +84,15 @@ Använd inställningarna för att styra hur programuppdateringar laddas ned till
 Den här funktionen stöder:
 
 - Windows 10 och senare
+
+## <a name="derived-credential"></a>Härledd autentiseringsuppgift
+
+[Härledda autentiseringsuppgifter](../protect/derived-credentials.md) är certifikat på smartkort som kan autentisera, signera och kryptera. I Intune kan du skapa profiler med dessa autentiseringsuppgifter för användning i appar, e-postprofiler, anslutning till VPN, S/MIME och Wi-Fi.
+
+Den här funktionen stöder:
+
+- Android enterprise
+- iOS/iPadOS
 
 ## <a name="device-features"></a>Enhetsfunktioner
 
@@ -133,7 +142,7 @@ Den här funktionen stöder:
 
 ## <a name="education"></a>Utbildning
 
-Konfigurationsalternativen [Utbildningsinställningar – Windows 10](education-settings-configure.md) för [appen Windows Take a Test](https://education.microsoft.com/gettrained/win10takeatest). När du konfigurerar dessa alternativ kan inga andra appar köras på enheten förrän provet har slutförts.
+Konfigurationsalternativen [Utbildningsinställningar – Windows 10](education-settings-configure.md) för [appen Windows Take a Test](https://docs.microsoft.com/education/windows/take-tests-in-windows-10). När du konfigurerar dessa alternativ kan inga andra appar köras på enheten förrän provet har slutförts.
 
 I [Utbildningsinställningar – iOS/iPadOS](../fundamentals/education-settings-configure-ios-shared.md) används iOS/iPadOS-appen Classroom som hjälp för och stöd till elevernas enheter i klassrummet. Du kan konfigurera iPad-enheter så att många elever kan dela en enda enhet.
 
@@ -141,7 +150,7 @@ I [Utbildningsinställningar – iOS/iPadOS](../fundamentals/education-settings-
 
 I [E-postinställningar](email-settings-configure.md) skapas, tilldelas och övervakas Exchange ActiveSyncs e-postinställningar för enheterna. Med e-postprofiler uppnår du konsekvens, minskar supportsamtalen och ger slutanvändarna åtkomst till företagets e-post på sina personliga enheter, utan de behöver konfigurera något själva. 
 
-Den här funktionen stöder: 
+Den här funktionen stöder:
 
 - Android-enhetsadministratör
 - Android enterprise
@@ -151,12 +160,13 @@ Den här funktionen stöder:
 
 ## <a name="endpoint-protection"></a>Endpoint Protection
 
-Med [inställningarna för slutpunktsskydd för Windows 10](../protect/endpoint-protection-windows-10.md) kan du konfigurera BitLocker- och Microsoft Defender-inställningar för Windows 10-enheter.
+Med [slutpunktsskydd](../protect/endpoint-protection-configure.md) kan du konfigurera BitLocker- och Microsoft Defender-inställningar för Windows 10-enheter. Du kan även konfigurera brandvägg, gateway och andra resurser på macOS-enheter.
 
 Om du vill publicera Microsoft Defender Avancerat skydd (WDATP) med Microsoft Intune kan du läsa informationen om att [konfigurera slutpunkter med verktyg för hantering av mobilenheter (MDM)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-mdm).
 
 Den här funktionen stöder:
 
+- macOS
 - Windows 10 och senare
 
 ## <a name="esim-cellular---public-preview"></a>eSIM-mobilnät – offentlig förhandsversion
@@ -192,7 +202,15 @@ Den här funktionen stöder:
 
 - Windows 10 och senare
 
-Inställningar för helskärmsläge finns också som enhetsbegränsningar för [Android](device-restrictions-android.md#kiosk), [Android Enterprise](device-restrictions-android-for-work.md#dedicated-device-settings) och [iOS/iPadOS](device-restrictions-ios.md#kiosk).
+Inställningar för helskärmsläge finns också som enhetsbegränsningar för [Android](device-restrictions-android.md#kiosk), [Android Enterprise](device-restrictions-android-for-work.md#dedicated-devices) och [iOS/iPadOS](device-restrictions-ios.md#kiosk).
+
+## <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
+
+[Microsoft Defender Avancerat skydd](../protect/advanced-threat-protection.md) integreras med Intune för att övervaka och skydda enheter. Du anger risknivåer och bestämmer vad som ska hända om enheterna överskrider den nivån. I kombination med villkorsstyrd åtkomst kan du bidra till att förhindra skadlig aktivitet i din organisation.
+
+Den här funktionen stöder:
+
+- Windows 10 och senare
 
 ## <a name="oemconfig"></a>OEMConfig
 
@@ -206,11 +224,18 @@ Den här funktionen stöder:
 
 [PowerShell-skript på Windows 10-enheter](../apps/intune-management-extension.md) använder Intune Management-tillägget för att ladda upp dina PowerShell-skript i Intune och sedan köra dessa skript på dina enheter. Se även vad som krävs för att använda tillägget, hur du lägger till dem i Intune och annan viktig information.
 
-
 Den här funktionen stöder:
 
 - Windows 10 och senare
 - Windows 10 Holographic for Business
+
+## <a name="preference-file"></a>Inställningsfil
+
+[Inställningsfilerna](preference-file-settings-macos.md) på macOS-enheter innehåller information om appar. Du kan till exempel använda inställningsfiler för att styra webbläsarinställningar, anpassa appar med mera.
+
+Den här funktionen stöder:
+
+- macOS
 
 ## <a name="shared-multi-user-device"></a>Delad enhet för flera användare
 
@@ -260,14 +285,6 @@ Den här funktionen stöder:
 - iOS/iPadOS
 - macOS
 - Windows 8.1 (endast import)
-- Windows 10 och senare
-
-## <a name="windows-information-protection-profile"></a>Profil för Windows informationsskydd
-
-[Windows informationsskydd](../protect/windows-information-protection-configure.md) skyddar mot dataläckage utan att störa medarbetarnas användning. Det skyddar även företagsappar och företagsdata mot oavsiktliga dataläckage i företagsägda enheter och personliga enheter som medarbetarna använder på jobbet. Windows informationsskydd kräver inte några ändringar i din miljö eller i andra appar.
-
-Den här funktionen stöder:
-
 - Windows 10 och senare
 
 ## <a name="zebra-mobility-extensions-mx"></a>Zebra Mobility Extensions (MX)

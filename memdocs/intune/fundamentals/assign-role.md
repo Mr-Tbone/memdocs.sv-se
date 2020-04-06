@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4ea84b0b378030a02c73da20b4a59d0b65ca288
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: a679df157a2623012d19fab2370792cac73f6f2b
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363154"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326809"
 ---
 # <a name="assign-a-role-to-an-intune-user"></a>Tilldela en roll till en Intune-användare
 
@@ -32,7 +32,7 @@ För att kunna skapa, redigera eller tilldela roller måste ditt konto ha en av 
 - **Global administratör**
 - **Intune Service-administratör**
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) går du till **Klientadministratör** > **Roller** > **Alla roller**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Administration av klientorganisation** > **Roller** > **Alla roller**.
 
 2. På bladet **Intune-roller – Alla roller** väljer du den inbyggda roll som du vill tilldela > **Tilldelningar** > **Tilldela**.
 

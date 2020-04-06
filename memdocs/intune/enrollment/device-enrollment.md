@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4aaa8bcee3684c73fa5ec3d488fd3107585dfc61
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 8f91b71d96c936e9808973df145862654f0e516a
+ms.sourcegitcommit: 71f26a0756fd40c1a06f885f3d31e49734fe97fe
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80086172"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80256648"
 ---
 # <a name="what-is-device-enrollment"></a>Vad är enhetsregistrering?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -40,7 +40,7 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 | | Enheter rensas under registreringen. | Kopplar varje enhet till en användare.| Det innebär att användarna inte kan avregistrera enheter. | |
 |**[BYOD](#bring-your-own-device)** | Nej| Ja | Nej | [Mer information](apple-mdm-push-certificate-get.md)|
 |**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej | [Mer information](device-enrollment-manager-enroll.md)|
-|**[DEP](#apple-device-enrollment-program)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-ios.md)|
+|**[ADE](#apple-automated-device-enrollment)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-ios.md)|
 |**[USB-SA](#usb-sa)**| Ja | Valfri | Nej| [Mer information](apple-configurator-enroll-ios.md)|
 |**[USB-Direct](#usb-direct)**| Nej | Nej | Nej|[Mer information](apple-configurator-enroll-ios.md)|
 
@@ -49,7 +49,7 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 |:---:|:---:|:---:|:---:|:---:|
 |**[BYOD](#bring-your-own-device)** | Nej| Ja | Nej | [Mer information](macos-enroll.md)|
 |**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej  | [Mer information](device-enrollment-manager-enroll.md)|
-|**[DEP](#apple-device-enrollment-program)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-macos.md)|
+|**[ADE](#apple-automated-device-enrollment)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-macos.md)|
 
 ## <a name="windows-enrollment-methods"></a>Metoder för Windows-registrering
 
@@ -84,15 +84,15 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 BYOD (Bring Your Own Device) innefattar personligt ägda telefoner, surfplattor och datorer. Användarna installerar och kör appen Företagsportal för att registrera sina BYOD-enheter. Det här programmet låter användare komma åt företagsresurser som e-post.
 
 ## <a name="corporate-owned-device"></a>Företagsägd enhet
-[Företagsägda enheter (COD)](corporate-identifiers-add.md) omfattar telefoner, surfplattor och datorer som ägs av organisationen och distribueras till personalen. COD-registrering har stöd för hanteringsscenarier som automatisk registrering, delade enheter och förauktoriserade registreringskrav. Ett vanligt sätt att registrera COD-enheter är att en administratör eller chef använder enhetsregistreringshanteraren (DEM). iOS/iPadOS-enheter kan registreras direkt via verktygen för programmet för enhetsregistrering (DEP) som tillhandahålls av Apple. Enheter med ett IMEI-nummer kan också identifieras och taggas som företagsägda.
+[Företagsägda enheter (COD)](corporate-identifiers-add.md) omfattar telefoner, surfplattor och datorer som ägs av organisationen och distribueras till personalen. COD-registrering har stöd för hanteringsscenarier som automatisk registrering, delade enheter och förauktoriserade registreringskrav. Ett vanligt sätt att registrera COD-enheter är att en administratör eller chef använder enhetsregistreringshanteraren (DEM). iOS/iPadOS-enheter kan registreras direkt via de ADE-verktyg som tillhandahålls av Apple. Enheter med ett IMEI-nummer kan också identifieras och taggas som företagsägda.
 
 ### <a name="device-enrollment-manager"></a>Hanterare av enhetsregistrering
 Enhetsregistreringshanteraren (DEM) är ett särskilt användarkonto som används för att registrera och hantera flera företagsägda enheter. Cheferna kan installera företagsportalen och registrera flera användarlösa enheter. Dessa typer av enheter är till exempel bra för verktygs- eller kassaappar (Point-of-Sale), men inte för användare som behöver åtkomst till e-post eller företagsresurser. Läs mer om [DEM](device-enrollment-manager-enroll.md).
 
-### <a name="apple-device-enrollment-program"></a>Apples DEP (Device Enrollment Program)
-Med Apples program för enhetsregistrering kan du skapa och distribuera principen ”trådlöst” till iOS/iPadOS- och macOS-enheter som har köpts och hanteras med DEP. Enheten registreras första gången användaren sätter på enheten och kör installationsassistenten. Den här metoden har stöd för övervakat läge för iOS/iPadOS som gör det möjligt att konfigurera en enhet med specifika funktioner.
+### <a name="apple-automated-device-enrollment"></a>Automatisk enhetsregistrering för Apple
+Med Apples automatiserade enhetsregistrering (ADE) kan du skapa och distribuera principen ”trådlöst” till iOS/iPadOS- och macOS-enheter som har köpts och hanteras med ADE. Enheten registreras första gången användaren sätter på enheten och kör installationsassistenten. Den här metoden har stöd för övervakat läge för iOS/iPadOS som gör det möjligt att konfigurera en enhet med specifika funktioner.
 
-Läs mer om iOS/iPadOS DEP-registrering:
+Läs mer om iOS/iPadOS ADE-registrering:
 
 - [Välj hur du vill registrera iOS/iPadOS-enheter](ios-enroll.md)
 - [Registrera iOS/iPadOS-enheter med enhetsregistreringsprogrammet](device-enrollment-program-enroll-ios.md)

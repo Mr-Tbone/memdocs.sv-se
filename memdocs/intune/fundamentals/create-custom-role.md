@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54cb4028001f2e6b64cba639cb27c58b31db172f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 07c29f45c2d9356bda78e021d3baf9647aa03397
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79344161"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326797"
 ---
 # <a name="create-a-custom-role-in-intune"></a>Skapa en anpassad roll i Intune
 
@@ -34,7 +34,7 @@ För att kunna skapa, redigera eller tilldela roller måste ditt konto ha en av 
 
 ## <a name="to-create-a-custom-role"></a>Skapa en anpassad roll
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Innehavaradministratör** > **Roller** > **Alla roller** > **Skapa**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Administration av klientorganisation** > **Roller** > **Alla roller** > **Skapa**.
 
 2. På sidan **Grundläggande inställningar** anger du ett namn och en beskrivning för den nya rollen. Välj sedan **Nästa**.
 
@@ -48,7 +48,7 @@ För att kunna skapa, redigera eller tilldela roller måste ditt konto ha en av 
 
 Du kan även kopiera en befintlig roll.
 
-1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Innehavaradministratör** > **Roller** > **Alla roller** > markera kryssrutan för en roll i listan > **Duplicera**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Administration av klientorganisation** > **Roller** > **Alla roller** > markera kryssrutan för en roll i listan > **Duplicera**.
 
 2. Ange ett namn på sidan **Grundläggande inställningar**. Se till att du använder ett unikt namn.
 

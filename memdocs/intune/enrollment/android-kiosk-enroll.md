@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3ceb5c08e443bad42a0983b2b8257b997ca537c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: ae24c8cad5ccee06444ffec6a4cd8b39b3371b49
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79359709"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327295"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Konfigurera Intune-registrering av dedikerade Android Enterprise-enheter
 
@@ -69,7 +69,7 @@ Du måste skapa en registreringsprofil så att du kan registrera dina dedikerade
 
 Du kan rikta appar och principer till tilldelade eller dynamiska enhetsgrupper. Du kan konfigurera dynamiska AAD-enhetsgrupper att automatiskt fylla i enheter som har registrerats med den viss registreringsprofil med hjälp av följande steg:
 
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Grupper** > **Alla grupper** > **Ny grupp**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Grupper** > **Alla grupper** > **Ny grupp**.
 2. På bladet **Grupp** fyller du i de obligatoriska fälten så här:
     - **Grupptyp**: Säkerhet
     - **Gruppnamn:** Ange ett intuitivt namn (till exempel Fabrik 1-enheter)

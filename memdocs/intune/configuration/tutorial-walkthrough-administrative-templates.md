@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/23/2020
+ms.date: 03/31/2020
 ms.topic: tutorial
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5988da854eecd528119a7e2591fc083dcdbc29bf
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: 26576212f4df86681210956669320ed4b124025d
+ms.sourcegitcommit: d601f4e08268d139028f720c0a96dadecc7496d5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220241"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80488137"
 ---
 # <a name="tutorial-use-the-cloud-to-configure-group-policy-on-windows-10-devices-with-admx-templates-and-microsoft-intune"></a>Självstudie: Använd molnet för att konfigurera grupprinciper på Windows 10-enheter med ADMX-mallar och Microsoft Intune
 
@@ -39,7 +39,7 @@ ADMX-mallar är tillgängliga för följande tjänster:
 
 Mer information om ADMX-principer finns i [Förstå ADMX-stödda principer](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies).
 
-I Microsoft Intune är de här mallarna inbyggda i Intune-tjänsten och är tillgängliga som profiler med **administrativa mallar**. I den här profilen konfigurerar du de inställningar som du vill inkludera och ”tilldelar” sedan den här profilen till dina enheter.
+Dessa mallar är inbyggda i Microsoft Intune och är tillgängliga som profiler med **administrativa mallar**. I den här profilen konfigurerar du de inställningar som du vill inkludera och ”tilldelar” sedan den här profilen till dina enheter.
 
 I de här självstudierna får du:
 
@@ -68,7 +68,7 @@ Den här funktionen gäller för:
 
 - I en lokal Active Directory-domänkontrollant (DC):
 
-  1. Kopiera följande Office- och Microsoft Edge-mallar till [den centrala lagringsplatsen (SYSVOL-mappen)](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra):
+  1. Kopiera följande Office- och Microsoft Edge-mallar till [den centrala lagringsplatsen (sysvol-mappen)](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra):
 
       - [Administrativa mallar för Office](https://www.microsoft.com/download/details.aspx?id=49030)
       - [Administrativa mallar för Microsoft Edge > Principfil](https://www.microsoftedgeinsider.com/en-us/enterprise)
@@ -78,7 +78,9 @@ Den här funktionen gäller för:
       - Den grupprincip som vi skapade med dessa mallar kallas **OfficeandEdge**. Du ser det här namnet i bilderna.
       - Den Windows 10 Enterprise-administratörsdator som vi använder kallas **Admindator**.
 
-      I vissa organisationer har en domänadministratör två konton – ett vanligt domänarbetskonto och ett annat domänadministratörskonto som endast används för domänadministratörsuppgifter, till exempel grupprincip.
+      I vissa organisationer har en domänadministratör två konton:  
+        - Ett vanligt domänarbetskonto
+        - Ett annat domänadministratörskonto som endast används för domänadministratörsuppgifter, till exempel grupprincip
 
       Syftet med **Admindator** är att administratörer loggar in med sitt domänadministratörskonto och kommer åt verktyg som har utformats hantering av grupprinciper.
 
@@ -235,10 +237,20 @@ I det här avsnittet skapar vi en administrativ mall i Intune, tittar på några
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
 5. Välj **Nästa**.
-6. Välj **Alla produkter** i listrutan **Konfigurationsinställningar**. Alla inställningar visas. Observera följande egenskaper i de här inställningarna:
+6. I **Konfigurationsinställningar** finns inställningar som gäller för enheter (**datorkonfiguration**) och inställningar som gäller för användare **(användarkonfiguration**):
 
-    - **Sökvägen** till principen är samma som Grupprinciphantering eller GPEdit.
-    - Inställningen gäller för användare eller enheter.
+    > [!div class="mx-imgBorder"]
+    > ![Använd inställningar för ADMX-mallar för användare och enheter i Microsoft Intune Endpoint Manager](./media/tutorial-walkthrough-administrative-templates/administrative-templates-choose-computer-user-configuration.png)
+
+7. Expandera **Datorkonfiguration** > **Microsoft Edge** > välj **SmartScreen-inställningar**. Lägg märke till sökvägen till principen och alla tillgängliga inställningar:
+
+    > [!div class="mx-imgBorder"]
+    > ![Se inställningarna för Microsoft Edge SmartScreen-princip i ADMX-mallar i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/computer-configuration-microsoft-edge-smartscreen-path.png)
+
+8. I sökrutan anger du **ladda ned**. Observera att principinställningarna filtreras:
+
+    > [!div class="mx-imgBorder"]
+    > ![Filtrera inställningarna för Microsoft Edge SmartScreen-princip i ADMX-mallar för Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/computer-configuration-microsoft-edge-smartscreen-search-download.png)
 
 ### <a name="open-group-policy-management"></a>Öppna Grupprinciphantering
 
@@ -251,10 +263,10 @@ I det här avsnittet visar vi en princip i Intune och dess matchande princip i R
     Den här appen installeras med **RSAT: Verktyg för grupprinciphantering**, vilket är en valfri funktion som du installerar i Windows. I [Krav](#prerequisites) (i den här artikeln) visas de steg som behövs för att installera den.
 
 2. Expandera **Domäner** > välj din domän. Välj exempelvis **contoso.net**.
-3. Högerklicka på principen **OfficeandEdge** > **Redigera**. Då öppnas appen Redigeraren Grupprinciphantering.
+3. Högerklicka på principen **OfficeandEdge** > **Redigera**. Redigeraren Grupprinciphantering öppnas.
 
     > [!div class="mx-imgBorder"]
-    > ![Högerklicka på grupprincipen för Office och Edge ADMX och välj Redigera](./media/tutorial-walkthrough-administrative-templates/open-group-policy-management.png)
+    > ![Högerklicka på grupprincipen för Office och Microsoft Edge ADMX och välj Redigera](./media/tutorial-walkthrough-administrative-templates/open-group-policy-management.png)
 
     **OfficeandEdge** är en grupprincip som innehåller ADMX-mallar för Office och Microsoft Edge. Den här principen beskrivs i [Krav](#prerequisites) (i den här artikeln).
 
@@ -269,18 +281,18 @@ I det här avsnittet visar vi en princip i Intune och dess matchande princip i R
     > ![Se alternativen för inställningen för datorkonfiguration i grupprincip](./media/tutorial-walkthrough-administrative-templates/prevent-enabling-lock-screen-camera-admx-policy.png)
 
 5. Gå till mallen **Administrationsmall – Windows 10 Student-enheter** i Endpoint Manager-administratörscentret.
-6. Välj **Alla produkter** i listrutan och sök efter **anpassning**:
+6. Välj **Datorkonfiguration** > **Kontrollpanelen** > **Anpassning**. Observera de tillgängliga inställningarna:
 
     > [!div class="mx-imgBorder"]
-    > ![Sök efter anpassning i administrativ mall i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/search-personalization-administrative-template.png)
+    > ![Sökväg för anpassningsprincipinställningen i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/computer-configuration-control-panel-personalization-path.png)
 
-    Observera de tillgängliga inställningarna.
-
-    Den här inställningstypen är **Enhet** och sökvägen är **\Kontrollpanelen\Anpassning**. Den här sökvägen liknar det du just såg i Redigeraren Grupprinciphantering. Om du öppnade inställningen ser du samma alternativ för **Inte konfigurerad**, **Aktiverad** och **Inaktiverad** som finns i Redigeraren Grupprinciphantering.
+    Inställningstypen är **Enhet** och sökvägen är **\Kontrollpanelen\Anpassning**. Den här sökvägen liknar det du just såg i Redigeraren Grupprinciphantering. Om du öppnar inställningen **Förhindra aktivering av kamera på låsskärm** ser du samma alternativ för **Inte konfigurerad**, **Aktiverad** och **Inaktiverad** som finns i Redigeraren Grupprinciphantering.
 
 #### <a name="compare-a-user-policy"></a>Jämföra en användarprincip
 
-1. I din administrativa mall söker du efter **InPrivate-surfning**. Observera sökvägen och att inställningen gäller för användare och enheter.
+1. I din administratörsmall väljer du **Datorkonfiguration** > **Alla inställningar** och söker efter **InPrivate-surfning**. Lägg märke till sökvägen.
+
+    Gör samma sak för **Användarkonfiguration**. Välj **Alla inställningar** och sök efter **InPrivate-surfning**.
 
 2. I **Redigeraren Grupprinciphantering** letar du upp matchande användare och enhetsinställningar:
 
@@ -296,9 +308,11 @@ I det här avsnittet visar vi en princip i Intune och dess matchande princip i R
 #### <a name="compare-an-edge-policy"></a>Jämföra en Edge-princip
 
 1. Gå till mallen **Administrationsmall – Windows 10 Student-enheter** i Endpoint Manager-administratörscentret.
-2. Välj **Edge-version 77 och senare** i listrutan.
-3. Sök efter **start**. Observera de tillgängliga inställningarna.
-4. I Redigeraren Grupprinciphantering letar du upp följande enhetsinställningar:
+2. Expandera **Datorkonfiguration** > **Microsoft Edge** > **Start, startsida och ny fliksida**. Observera de tillgängliga inställningarna.
+
+    Gör samma sak för **Användarkonfiguration**.
+
+3. I Redigeraren Grupprinciphantering letar du upp följande enhetsinställningar:
 
     - Enhet: Expandera **Datorkonfiguration** > **Principer** > **Administrativa mallar** > **Microsoft Edge** > **Start, startsida och ny fliksida**.
     - Användare: Expandera **Användarkonfiguration** > **Principer** > **Administrativa mallar** > **Microsoft Edge** > **Start, startsida och ny fliksida**
@@ -311,12 +325,12 @@ Du skapade en administrativ mall i Intune. I den här mallen tittade vi på någ
 
 I den här mallen konfigurerade vi några Internet Explorer-inställningar för att låsa enheter som delas av flera studenter.
 
-1. I din mall **Adminmall – Windows 10 Student-enheter** söker du efter **Stäng av InPrivate-surfning** och väljer enhetsprincipen:
+1. I din **Adminmall – Windows 10 Student-enheter** expanderar du **Datorkonfiguration**, väljer **Alla inställningar** och söker efter **Inaktivera InPrivate-surfning**:
 
     > [!div class="mx-imgBorder"]
     > ![Stäng av enhetsprincip för InPrivate-surfning i administrativ mall i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/turn-off-inprivate-browsing-administrative-template.png)
 
-2. I det här fönstret finns en beskrivning samt de värden som du kan ange. De här alternativen liknar dem som finns i grupprincip.
+2. Välj inställningen **Inaktivera InPrivate-surfning**. I det här fönstret finns en beskrivning samt de värden som du kan ange. De här alternativen liknar dem som finns i grupprincip.
 3. Välj **Aktiverad** > **OK** för att spara ändringarna.
 4. Konfigurera även följande Internet Explorer-inställningar. Se till att klicka på **OK** för att spara ändringarna.
 
@@ -343,7 +357,7 @@ I den här mallen konfigurerade vi några Internet Explorer-inställningar för 
 
 ### <a name="assign-your-template"></a>Tilldela din mall
 
-1. Välj **Tilldelningar** > **Välj grupper att ta med** i mallen:
+1. I mallen väljer du **Nästa** tills du kommer till **Tilldelningar**. Välj **Välj grupper att ta med**:
 
     > [!div class="mx-imgBorder"]
     > ![Välj din profil för administrativ mall från listan Enhetskonfigurationsprofiler i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/filter-administrative-template-device-configuration-profiles-list.png)
@@ -352,7 +366,7 @@ I den här mallen konfigurerade vi några Internet Explorer-inställningar för 
 
     Om du använder den här självstudien i en produktionsmiljö bör du lägga till grupper som är tomma. Målet är att öva på att tilldela din mall.
 
-3. Gå till sidan **Granska och skapa** genom att välja **Nästa**. Spara ändringarna genom att välja **Skapa**.
+3. Välj **Nästa**. Under **Granska + skapa** väljer du **Skapa** för att spara dina ändringar.
 
 När profilen har sparats tillämpas den på enheterna när de checkar in med Intune. Om enheterna är anslutna till Internet kan det ske omedelbart. Mer information om uppdateringstider för principer finns i [Hur lång tid tar det innan principerna, profilerna eller apparna når enheterna efter att de har tilldelats?](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
 
@@ -380,11 +394,20 @@ I det här avsnittet skapar du en administrativ mall för OneDrive i Intune för
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
 5. Välj **Nästa**.
-6. Välj **Office** i listrutan **Konfigurationsinställningar**. **Aktivera** följande inställningar. Se till att klicka på **OK** för att spara ändringarna.
+6. I **Konfigurationsinställningar** konfigurerar du följande inställningar. Se till att välja **OK** för att spara ändringarna.
 
-    - **Logga in användare i tyst läge till OneDrive-synkroniseringsklienten med deras Windows-autentiseringsuppgifter**
-    - **Använd Filer på begäran i OneDrive**
-    - **Hindra användarna från att synkronisera personliga OneDrive-konton**
+    - **Dator konfiguration** > **Alla inställningar**:
+      - **Logga in användare i tyst läge till OneDrive-synkroniseringsklienten med deras Windows-autentiseringsuppgifter**
+        - **Typ**: Enhet
+        - **Värde**: Aktiverad
+      - **Använd Filer på begäran i OneDrive**
+        - **Typ**: Enhet
+        - **Värde**: Aktiverad
+
+    - **Användarkonfiguration** > **Alla inställningar**:
+      - **Hindra användarna från att synkronisera personliga OneDrive-konton**
+        - **Typ**: Användare
+        - **Värde**: Aktiverad
 
 Inställningarna ser ut ungefär som följande inställningar:
 
@@ -395,12 +418,12 @@ Mer information om OneDrive-klientinställningar finns i [Använda grupprincip f
 
 ### <a name="assign-your-template"></a>Tilldela din mall
 
-1. Välj **Tilldelningar** > **Välj grupper att ta med** i mallen
+1. I mallen väljer du **Nästa** tills du kommer till **Tilldelningar**. Välj **Välj grupper att ta med**:
 2. En lista över befintliga användare och grupper visas. Välj gruppen **Alla Windows-enheter** som du skapade tidigare > **Välj**.
 
     Om du använder den här självstudien i en produktionsmiljö bör du lägga till grupper som är tomma. Målet är att öva på att tilldela din mall.
 
-3. Gå till sidan **Granska och skapa** genom att välja **Nästa**. Spara ändringarna genom att välja **Skapa**.
+3. Välj **Nästa**. Under **Granska + skapa** väljer du **Skapa** för att spara dina ändringar.
 
 Nu har du skapat några administrativa mallar och tilldelat dem till grupper som du har skapat. Nästa steg är att skapa en administrativ mall med hjälp av Windows PowerShell och Microsoft Graph API för Intune.
 

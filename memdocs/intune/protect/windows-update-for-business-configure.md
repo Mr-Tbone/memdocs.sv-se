@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/29/2020
+ms.date: 03/31/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81bfa4d593f723aae46c2af63d550662e35b4017
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: c156e0d1b627d285c6654994d6114920f86b2bab
+ms.sourcegitcommit: d601f4e08268d139028f720c0a96dadecc7496d5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79349218"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80488072"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Hantera Windows 10-programuppdateringar i Intune
 
@@ -209,7 +209,7 @@ När en enhet tar emot en princip för Windows 10-funktionsuppdateringar:
 
 Följande krav måste uppfyllas för att Windows-uppdateringar för Windows 10 i Intune ska kunna användas.
 
-- Enheterna måste vara registrerade i Intune MDM och anslutna till Azure AD eller registrerade i Azure AD.
+- Enheterna måste vara registrerade i Intune MDM och hybridanslutna till AD, anslutna till Azure AD eller registrerade i Azure AD.
 - Om du vill använda principen för funktionsuppdateringar med Intune, så måste enheterna ha telemetri aktiverat, med minst inställningen [*Basic*](../configuration/device-restrictions-windows-10.md#reporting-and-telemetry). Du konfigurerar telemetri under *Rapportering och telemetri* som en del av en [enhetsbegränsningsprincip](../configuration/device-restrictions-configure.md).
   
   Enheter som tar emot principen för funktionsuppdateringar och som har telemetri inställt på *Inte konfigurerat*, vilket innebär att telemetrin är avstängd, kan installera en senare version av Windows än den som definieras i principen för funktionsuppdateringar. Förutsättningen för att kräva telemetri granskas medan den här funktionen flyttas till allmän tillgänglighet.

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff94f0b628fb20c063ef77ccb061f33eb0199195
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: b10d56e9eb915273d5be9a5b14ca4528a64a2057
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363687"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327107"
 ---
 # <a name="categorize-devices-into-groups"></a>Kategorisera enheter i grupper
 
@@ -45,7 +45,7 @@ Du kan skapa vilken typ av enhetskategori som du vill. Exempel:
 ## <a name="how-to-configure-device-categories"></a>Så här konfigurerar du enhetsinställningar
 
 ### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>Steg 1: Skapa enhetskategorier på Intune-bladet i Azure-portalen
-1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Enhetskategorier**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Enhetskategorier**.
 2. På sidan **Enhetskategorier** väljer du **Skapa** för att lägga till en ny kategori.
 3. På bladet **Skapa enhetskategori** anger du ett **Namn** på den nya kategorin och en valfri **Beskrivning**.
 4. När du är klar väljer du **Skapa**. Du kan se den nya kategorin i listan över kategorier.
@@ -63,7 +63,7 @@ När du har konfigurerat enhetsgrupper och användarna då registrerar sina enhe
 
 ### <a name="view-the-categories-of-devices-that-you-manage"></a>Visa kategorier av enheter som du hanterar
 
-1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Alla enheter**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Alla enheter**.
 
 2. I listan med enheter granskar du kolumnen **Enhetskategori**.
 
@@ -71,7 +71,7 @@ Om kolumnen **Enhetskategori** inte visas väljer du **Kolumner** > **Kategori**
 
 ### <a name="change-the-category-of-a-device"></a>Ändra kategori för en enhet
 
-1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **Alla enheter** > välj önskad enhet > **Egenskaper**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **Alla enheter** > välj önskad enhet > **Egenskaper**.
 2. På nästa blad kan du ändra **Enhetskategori** för den valda enheten till ett kategorinamn som du tidigare har konfigurerat.
 
 ## <a name="after-you-configure-device-groups"></a>När du har konfigurerat enhetsgrupper

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/02/2019
+ms.date: 03/24/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,16 +15,20 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ef60333b53e03b3a6a8d736817ef27df9a182f1
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5e857cdd7028851f14f607739ba7e37c744fa2f1
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352078"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359455"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>Inställningar av slutpunktsskydd för macOS i Intune  
 
 I den här artikeln visas inställningarna för slutpunktsskydd som du kan konfigurera för enheter som kör macOS. Du konfigurerar de här inställningarna med hjälp av en macOS-enhetskonfigurationsprofil för [slutpunktsskydd](endpoint-protection-configure.md) i Intune.  
+
+## <a name="before-you-begin"></a>Innan du börjar
+
+[Skapa en profil för slutpunktsskydd för macOS](endpoint-protection-configure.md).
 
 ## <a name="gatekeeper"></a>Gatekeeper  
 
@@ -97,7 +101,7 @@ Mer information om Apple FileVault-inställningarna finns i [FDEFileVault](https
     *Personliga* återställningsnycklar skapas för enheter. Konfigurera följande inställningar för den personliga nyckeln.  
 
     - **Plats för privat återställningsnyckel** – ange ett kort meddelande till användarna som förklarar hur och var de kan hämta sin personliga återställningsnyckel. Den här texten infogas i det meddelande som visas för användare på inloggningsskärmen när de uppmanas att ange sin personliga återställningsnyckel om de glömmer bort lösenordet.  
-      
+
     - **Rotering av privat återställningsnyckel** – ange hur ofta den privata återställningsnyckeln för en enhet ska rotera. Du kan välja standardinställningen **Inte konfigurerat** eller ett värde på **1** till **12** månader.  
 
   - **Inaktivera fråga vid utloggning**  
@@ -118,3 +122,8 @@ Mer information om Apple FileVault-inställningarna finns i [FDEFileVault](https
 
 Mer information om FileVault med Intune finns i [FileVault-återställningsnycklar](encryption-monitor.md#filevault-recovery-keys).
 
+## <a name="next-steps"></a>Nästa steg
+
+[Tilldela profilen](../configuration/device-profile-assign.md) och [övervaka dess status](../configuration/device-profile-monitor.md).
+
+Du kan också konfigurera slutpunktsskydd på [enheter med Windows 10 och senare](endpoint-protection-windows-10.md).

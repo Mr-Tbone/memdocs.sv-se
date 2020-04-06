@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26c30c947c6db1d44d8438aa63972fd5a3f663cd
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 37eff19d940ef02cec0d2d0204644c46ef0742a2
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363440"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326980"
 ---
 # <a name="terms-and-conditions-for-user-access"></a>Allmänna villkor för användaråtkomst
 
@@ -46,7 +46,7 @@ Om du inte vet vilken metod som passar bäst för dig rekommenderar vi att du l�
 ## <a name="create-terms-and-conditions"></a>Skapa allmänna villkor
 Slutför stegen nedan för att skapa allmänna villkor. Namn och beskrivning som visas är för administrativa syften, medan villkorsegenskaperna visas för användarna i företagsportalen.
 
-1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Administration av klientorganisation** > **Allmänna villkor**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Administration av klientorganisation** > **Allmänna villkor**.
 2. Välj **Skapa**.
 3. På sidan **Grundläggande** anger du följande information:
 
@@ -83,7 +83,7 @@ I följande exempel visas användarvillkoren i administratörskonsolen och före
 
 ## <a name="monitor-terms-and-conditions"></a>Övervaka användarvillkor
 
-1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Administration av klientorganisation** > **Allmänna villkor**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Administration av klientorganisation** > **Allmänna villkor**.
 2. I listan med allmänna villkor väljer du de villkor som du vill visa godkännande för > **Rapportering av godkännande**.
 
 ## <a name="work-with-multiple-versions-of-terms-and-conditions"></a>Arbeta med flera versioner av användarvillkor
@@ -93,7 +93,7 @@ Du kan redigera dina villkor och hantera deras versioner. Varje gång du gör en
 
 Behåll det nuvarande versionsnumret om du exempelvis korrigerar stavfel eller ändrar formateringen.
 
-1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Administration av klientorganisation** > **Allmänna villkor** > välj de villkor som du vill ändra > **Egenskaper**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Administration av klientorganisation** > **Allmänna villkor** > välj de villkor som du vill ändra > **Egenskaper**.
 
 2. I fönstret **Egenskaper** väljer du **Allmänna villkor**. Ändra sedan **Rubrik**, **Sammanfattning av villkoren** och **Allmänna villkor** efter behov. Om ändringarna gör det nödvändigt att användarna måste godkänna de nya villkoren igen, klickar du på **Kräv att användarna godkänner på nytt och öka versionsnumret till**
 

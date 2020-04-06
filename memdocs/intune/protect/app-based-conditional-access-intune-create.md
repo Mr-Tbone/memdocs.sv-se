@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2883add5a3dbba274201bfeebb7960a312e33da
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 73b471d7eefa8e696b17a949756ce1395530c5f7
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354236"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80323200"
 ---
 # <a name="set-up-app-based-conditional-access-policies-with-intune"></a>Konfigurera appbaserade villkorliga åtkomstprinciper med Intune
 
@@ -38,11 +38,11 @@ Konfigurera appbaserade principer för villkorlig åtkomst för appar som finns 
 
 Villkorsstyrd åtkomst är en Azure Active Directory-teknik (Azure AD). Noden för villkorlig åtkomst som du kommer åt från *Intune* är samma nod som du kommer åt från *Azure AD*. Eftersom det är samma nod behöver du inte växla mellan Intune och Azure AD för att konfigurera principer.
 
-Innan du kan skapa principer för villkorlig åtkomst från administrationscentret för Microsoft Endpoint Manager måste du ha en Azure AD Premium-licens.
+Innan du kan skapa principer för villkorsstyrd åtkomst från administrationscentret för Microsoft Endpoint Manager måste du ha en Azure AD Premium-licens.
 
 ### <a name="to-create-an-app-based-conditional-access-policy"></a>Så här skapar du en appbaserad princip för villkorlig åtkomst
 
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431)
+1. Logga in på [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431)
 
 2. Välj **Slutpunktssäkerhet** > **Villkorlig åtkomst** > **Ny princip**.
 

@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 03/21/2020
+ms.date: 03/30/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,14 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18b42dffc2c34adea1f70c4587b5eb5384d0a778
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: 2a807a90cdca18d79e7b92b4efeb56d341da2596
+ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220140"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438716"
 ---
-# <a name="in-development-for-microsoft-intune---march-2020"></a>Under utveckling för Microsoft Intune – mars 2020
+# <a name="in-development-for-microsoft-intune---april-2020"></a>Under utveckling för Microsoft Intune – april 2020
 
 För att hjälpa dig med förberedelser och planering innehåller den här sidan information om uppdateringar av och funktioner i användargränssnittet i Intune som är under utveckling, men som inte släppts än. Förutom informationen på den här sidan: 
 
@@ -58,11 +58,26 @@ För att hjälpa dig med förberedelser och planering innehåller den här sidan
 <!-- ***********************************************-->
 ## <a name="app-management"></a>Apphantering
 
-### <a name="company-portal-for-ios-to-support-landscape-mode--6048329----"></a>Företagsportal för iOS för att stödja liggande läge<!--6048329  -->
-Användare kommer att kunna registrera sina enheter, hitta appar och få IT-support med hjälp av valfri skärmorientering. Appen identifieras automatiskt och anpassar skärmen till stående eller liggande läge, såvida inte användaren låser skärmen i stående läge.
+### <a name="update-to-android-app-configuration-policies---6113334----"></a>Uppdatering av konfigurationsprinciper för Android-appar<!-- 6113334  -->
+Konfigurationsprinciperna för Android-appar kommer att uppdateras så att administratörer kan välja typ av enhetsregistrering innan de skapar konfigurationsprofiler för appar. Funktionen läggs till i kontot för certifikatprofiler som baseras på registreringstyp (arbetsprofil eller enhetsägare).  Vid lanseringen inträffar följande:
 
-### <a name="improved-sign-in-experience-in-company-portal-for-android---6103997----"></a>Förbättrad inloggningsupplevelse i Företagsportal för Android<!-- 6103997  -->
-Vi uppdaterar layouten för flera inloggningsskärmar i företagsportalappen för Android så att upplevelsen blir modernare, enklare och tydligare för användare.
+- För de befintliga principer som skapats före lanseringen av den här funktionen och som inte har några associerade certifikatprofiler, används som standard arbetsprofil och enhetsägarprofil som enhetsregistreringstyp.
+- För de befintliga principer som skapats före lanseringen av den här funktionen och som har associerade certifikatprofiler, används som standard endast arbetsprofil.
+- Om en ny profil skapas och arbetsprofil och enhetsägarprofil väljs som enhetsregistreringstyp kan du inte associera en certifikatprofil med appkonfigurationsprincipen.
+- Om en ny profil skapas och Endast arbetsprofil har valts kan de certifikatprinciper för arbetsprofil som skapats under Enhetskonfiguration användas.
+- Om en ny profil skapas och Endast enhetens ägare har valts kan de certifikatprinciper för enhetsägare som skapats under Enhetskonfiguration användas.
+
+Befintliga principer kan inte åtgärda eller utfärda nya certifikat.
+
+Vi har också lagt till e-postkonfigurationsprofiler för Gmail och Nine som fungerar för både registreringstypen Arbetsprofil och Enhetsägare. Detta innefattar användning av certifikatprofiler på båda e-postkonfigurationstyperna.  Alla Gmail- eller Nine-principer som du har skapat under Enhetskonfiguration för arbetsprofiler fortsätter att gälla för enheten och du behöver inte flytta dem till appkonfigurationsprinciper.
+
+I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) hittar du appkonfigurationsprinciperna genom att välja **Appar** > **Appkonfigurationsprinciper**. Mer information om appkonfigurationsprinciper finns i [Appkonfigurationsprinciper för Microsoft Intune](../apps/app-configuration-policies-overview.md).
+
+### <a name="microsoft-teams-is-now-included-in-the-office-365-suite-for-macos---5903936----"></a>Microsoft Teams ingår nu i Office 365-paketet för macOS<!-- 5903936  -->
+Användare som tilldelas Microsoft Office för macOS i Microsoft Endpoint Manager får förutom de vanliga Microsoft Office-apparna (Word, Excel, PowerPoint, Outlook och OneNote) nu även Microsoft Teams. Intune identifierar befintliga Mac-enheter som har andra Office för macOS-appar installerade och kommer att försöka installera Microsoft Teams nästa gång enheten checkar in med Intune. I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du hitta **Office 365-paketet** för macOS genom att välja **Appar** > **macOS** > **Lägg till**. Mer information finns i [Tilldela Office 365 till macOS-enheter med Microsoft Intune](../apps/apps-add-office365-macos.md).
+
+### <a name="group-targeting-support-for-customization-pane----4722837----"></a>Stöd för riktning till grupper i fönstret Anpassning <!-- 4722837  -->
+Du kommer att kunna rikta inställningarna i fönstret Anpassning till användargrupper. Välj **Klientappar** > **Anpassning** i Intune-portalen. Mer information finns i [Anpassa Intune-företagsportalens appar, företagsportalens webbplats och Intune-appen](company-portal-app.md].
 
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Enhetskonfiguration
@@ -83,14 +98,8 @@ När du skapar en profil för iOS/iPadOS- eller macOS-enheter uppdateras funktio
 - Tillägg: macOS
 - Inställningsfil: macOS
 
-### <a name="improved-user-interface-experience-when-creating-oemconfig-configuration-profiles-on-android-enterprise-devices---5568645-----"></a>Förbättrat användargränssnitt när du skapar OEMConfig-konfigurationsprofiler på Android Enterprise-enheter<!-- 5568645   -->
-När du skapar eller redigerar en OEMConfig-profil för Android Enterprise-enheter uppdateras funktionen i administrationscentret för slutpunktshantering. Den uppdaterade funktionen ger en snabb översikt över inställningar som du har konfigurerat. Den här ändringen påverkar OEMConfig-profilen för enhetskonfigurationen (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Android Enterprise** för plattformen > **OEMConfig** för profiltypen).
-
-Den här funktionen gäller för:
-- Android enterprise 
-
 ### <a name="device-configuration-profile-settings-and-values-will-be-updated-for-windows-platforms---4091122---"></a>Inställningar och värden för enhetskonfigurationsprofiler kommer att uppdateras för Windows-plattformar<!-- 4091122 -->
-När du skapar enhetskonfigurationsprofiler för Windows-plattformar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > valfritt **Windows**-alternativ för plattform) kommer vissa inställningar och deras värden att skilja sig från molnlösningsleverantören och kan vara svåra att förstå. Inställningarnas namn och värden kommer att uppdateras så att de blir tydligare.
+När du skapar enhetskonfigurationsprofiler för Windows-plattformar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > valfritt **Windows**-alternativ för plattform) kommer vissa inställningar och deras värden att skilja sig från molnlösningsleverantören och kan vara svåra att förstå. Inställningsnamn och deras värden kommer att uppdateras så att de blir tydligare.
 
 Gäller för:
 
@@ -98,15 +107,6 @@ Gäller för:
 - Enhetskonfigurationsprofiler för Windows Holographic for Business
 - Enhetskonfigurationsprofiler för Windows 8.1
 - Enhetskonfigurationsprofiler för Windows Phone 8.1
-
-### <a name="improved-user-interface-experience-when-creating-device-restrictions-profiles-on-android-and-android-enterprise-devices---5841361---"></a>Förbättrat användargränssnitt när vid skapande av enhetskonfigurationsprofiler på enheter med Android eller Android Enterprise<!-- 5841361 -->
-När du skapar en profil för enheter med Android eller Android Enterprise kommer upplevelsen i administrationscentret för slutpunktshantering att vara uppdaterad. Den här ändringen påverkar följande enhetskonfigurationsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Android-enhetsadministratör** eller **Android Enterprise** för plattformen):
-
-- Enhetsbegränsningar: Android-enhetsadministratör
-- Enhetsbegränsningar: Android Enterprise-enhetsägare
-- Enhetsbegränsningar: Android Enterprise-arbetsprofil
-
-Mer information om enhetsbegränsningar som du kan konfigurera finns i [Android-enhetsadministratör](../configuration/device-restrictions-android.md) och [Android Enterprise](../configuration/device-restrictions-android-for-work.md).
 
 ### <a name="configure-the-microsoft-defender-atp-app-for-macos-----5520115----"></a>Konfigurera Microsoft Defender ATP-appen för macOS  <!-- 5520115  -->
 Du kommer snart att kunna konfigurera [inställningar](../protect/endpoint-protection-macos.md) för Microsoft Defender ATP-appen för enheter som kör macOS som en del av en enhetskonfigurationsprofilen för slutpunktsskydd (**Enheter** > **Konfigurationsprofiler** > **Skapa profil**, välj **macOS** för *Plattform* och sedan **Slutpunktsskydd** för *Profiltyp*). Det kommer att finnas åtta inställningar för macOS-enhetskonfiguration. 
@@ -118,29 +118,46 @@ Vi lägger till en ny inställning i FileVault-kategorin i mallen [macOS-slutpun
 
 Den här inställningen kommer inte att vara tillgänglig i tidigare skapade principer. Du behöver återskapa FileVault-principer för att konfigurera den här inställningen och använda den. 
 
-### <a name="configure-delivery-optimization-agent-when-downloading-win32-app-content---5410945----"></a>Konfigurera leveransoptimeringsagent vid nedladdning av Win32-appinnehåll<!-- 5410945  -->
-Du kommer att kunna konfigurera leveransoptimeringsagenten att ladda ned Win32-appinnehåll antingen i bakgrunds- eller förgrundsläge baserat på tilldelning. För befintliga Win32-appar fortsätter innehållet att laddas ned i bakgrundsläge. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Appar** > **Alla appar** > *Win32-appen* > **Egenskaper**. Välj **Redigera** bredvid **Tilldelningar**.  Redigera tilldelningen genom att välja **Inkludera** under **Läge** i avsnittet **Krävs**.  Du hittar den nya inställningen i avsnittet **Appinställningar** när den blir tillgänglig. Mer information om leveransoptimering finns i [Win32-apphantering – Leveransoptimering](../apps/apps-win32-app-management.md#delivery-optimization).
+### <a name="send-push-notifications-as-an-action-for-non-compliance----1733150-----"></a>Skicka push-meddelanden som en åtgärd för inkompatibilitet <!-- 1733150   -->
+För iOS- och Android-plattformar lägger vi till en ny åtgärd för inkompatibilitet som innebär att ett push-meddelande skickas via företagsportalsappen. När en användare klickar på det här meddelandet startas företagsportalsappen, och i appen visas information om inkompatibilitetsorsaken. Administratörer kan konfigurera den nya åtgärden för inkompatibilitet i Microsoft Endpoint Manager admin center genom att gå till **Enheter** > **Kompatibilitetsprinciper** > **Skapa princip** och sedan välja *Åtgärd* för att skicka ett push-meddelande via app.
+
+### <a name="pre-release-testing-for-managed-google-play-apps---2681933----"></a>Förhandstestning för hanterade Google Play-appar<!-- 2681933  -->
+Organisationer som använder [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213) kommer att kunna hantera dessa kanaler med Intune. Du kommer att kunna selektivt tilldela verksamhetsspecifika appar (som publiceras på Google Plays förproduktionskanaler) till pilotgrupper för testning. I Intune kommer du också att kunna se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med AAD-användare eller -enheter. Den här funktionen är tillgänglig för alla våra aktuella Android Enterprise-scenarier (arbetsprofil, fullständigt hanterad, särskilt avsedd). I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du lägga till en hanterad Google Play-app genom att välja **Appar** > **Android** > **Lägg till**. Du hittar mer information i [Lägg till hanterade Google Play-appar till Android enterprise-enheter med Intune](../apps/apps-add-android-for-work.md).
+
+### <a name="manage-smime-settings-for-outlook-on-android---6517085-----"></a>Hantera S/MIME-inställningar för Outlook på Android<!-- 6517085   -->
+Du kommer att kunna använda appkonfigurationsprinciper för att hantera S/MIME-inställningen för Outlook på enheter som kör Android Enterprise. Du kommer också att kunna välja om enhetsanvändare ska kunna aktivera eller inaktivera S/MIME i Outlook-inställningarna eller inte. Om du vill använda appkonfigurationsprinciper för Android går du till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) och väljer **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade enheter**.
+
+### <a name="additional-options-in-sso-and-sso-app-extension-profiles-on-iosipados-devices---6504155----"></a>Ytterligare alternativ i SSO- och SSO-apptilläggsprofiler på iOS/iPadOS-enheter<!-- 6504155  -->
+På iOS/iPadOS-enheter kan du:
+
+- Ange SAM-kontonamnet (Hanteraren för kontosäkerhet) som Kerberos-huvudnamn i SSO-profiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPadOS** som plattform > **Enhetsfunktioner** som profil > **Enkel inloggning**). 
+- Konfigurera Microsoft Azure AD-tillägget för iOS/iPadOS med färre klick med hjälp av den nya SSO-apptilläggstypen i SSO-apptilläggsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPadOS** som plattform > **Enhetsfunktioner** som profil > **Tillägg för enkel inloggning**). Du kan aktivera Azure AD-tillägget för delade enheter och skicka tilläggsspecifika data till tillägget.
+
+Gäller för:
+- iOS/iPadOS 13.0+
+
+Mer information om hur du använder enkel inloggning på iOS/iPadOS-enheter finns i [Tilläggsöversikten för enkel inloggning](../configuration/device-features-configure.md#single-sign-on-app-extension) och [listan med inställningar för enkel inloggning](../configuration/ios-device-features-settings.md#single-sign-on-app-extension).
 
 <!-- ***********************************************-->
-<!--## Device enrollment-->
+## <a name="device-enrollment"></a>Enhetsregistrering
+
+### <a name="bring-your-own-devices-can-use-vpn-to-deploy--5015344---"></a>VPN kan användas för att distribuera egna enheter (BYOD, Bring Your Own Device)<!--5015344 -->
+Med den nya Autopilot-profilens **Hoppa över kontroll av domänanslutning**-växlingsknapp kan du distribuera Hybrid Azure AD-anslutna enheter utan åtkomst till ditt företagsnätverk med hjälp av din egen Win 32 VPN-tredjepartsklient. Om du vill se den nya växlingsknappen kan du gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter**  > **Windows** > **Windows-registrering** > **Distributionsprofiler** > **Skapa profil** > **Välkomstupplevelse (OOBE)** .
 
 <!-- ***********************************************-->
 ## <a name="device-management"></a>Enhetshantering
 
-### <a name="change-primary-user-for-windows-devices----3794742---"></a>Ändra primär användare för Windows-enheter <!-- 3794742 -->
-Du kommer att kunna ändra den primära användaren för Windows-hybridanslutna och Azure AD-anslutna enheter. Om du vill göra det går du till **Intune** > - **Enheter** > **Alla enheter** > väljer en enhet > **Egenskaper** > **Primär användare**.
-
 ### <a name="powershell-scripts-support-for-byod-devices---1862833----"></a>Stöd för PowerShell-skript för BYOD-enheter<!-- 1862833  -->
 PowerShell-skript kommer att stödja Azure AD-registrerade enheter i Intune. Mer information om PowerShell finns i [Använda PowerShell-skript på Windows 10-enheter i Intune](../apps/intune-management-extension.md). Den här funktionen stöder inte enheter som kör Windows 10 Home Edition.
 
-### <a name="new-information-in-device-details---5604099---"></a>Ny enhetsinformation<!-- 5604099 -->
-Följande information kommer att finnas på sidan **Översikt** för enheter:
-
-- Lagringskapacitet (mängden fysisk lagring på enheten)
-- Minneskapacitet (mängden fysiskt minne på enheten)
-
 ### <a name="script-support-for-macos-devices---4280361----"></a>Skriptstöd för macOS-enheter<!-- 4280361  -->
 Du kommer att kunna lägga till och distribuera skript till macOS-enheter. Det här stödet utökar din möjlighet att konfigurera macOS-enheter utöver vad som är möjligt med hjälp av interna MDM-funktioner på macOS-enheter.
+
+### <a name="log-analytics-will-include-device-details-log--6014987----"></a>Log Analytics innehåller enhetsinformationslogg<!--6014987  -->
+Loggar med Intune-enhetsinformation kommer att vara tillgängliga i **Rapporter** > **Logganalys**. Du kan korrelera enhetsinformationen för att bygga anpassade frågor och Azure-arbetsböcker.
+
+### <a name="push-notification-when-device-ownership-type-is-changed---5575875----"></a>Push-meddelande när ägarskapstypen för enheten ändras<!-- 5575875  -->
+Du kommer att kunna konfigurera ett push-meddelande till användarna av företagsportalsappen (både Android och iOS) när deras ägarskapstyp ändras från Personlig till Företag som en integritetsmeddelande. Den här inställningen hittar du i Microsoft Endpoint Manager genom att välja **Administration av klientorganisation** > **Anpassning**. Mer information om hur enhetsägarskapet påverkar slutanvändarna finns i [Ändra enhetsägande](../enrollment/corporate-identifiers-add.md#change-device-ownership).
 
 <!-- ***********************************************-->
 <!--## Intune apps-->
@@ -183,3 +200,6 @@ De inställningar som stöds med Intune ändras inte. Detta är endast en uppdat
 ## <a name="see-also"></a>Se även
 
 Mer information om den senaste utvecklingen finns i [Nyheter i Microsoft Intune](whats-new.md).
+
+
+

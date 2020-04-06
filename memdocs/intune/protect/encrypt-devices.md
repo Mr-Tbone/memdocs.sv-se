@@ -17,12 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: ac81ceced473eacc32a3fca566f7c36eb7a262e2
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: d79f97da88a939d95b68a9ef747da87cf3844598
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80084885"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80322475"
 ---
 # <a name="use-device-encryption-with-intune"></a>Använda enhetskryptering med Intune
 
@@ -43,7 +43,7 @@ Användargodkänd enhetsregistrering krävs för att FileVault ska fungera på e
 
 FileVault är ett program för kryptering av hela diskar som ingår i macOS. Du kan använda Intune för att konfigurera FileVault på enheter som kör **MacOS 10.13 eller senare**.
 
-Om du vill konfigurera FileVault skapar du en [enhetskonfigurationsprofil](../configuration/device-profile-create.md) för slutpunktsskydd för macOS-plattformen. FileVault-inställningar är en av de tillgängliga inställningskategorierna för macOS-slutpunktsskydd.
+Om du vill konfigurera FileVault skapar du en [enhetskonfigurationsprofil](endpoint-protection-configure.md) för slutpunktsskydd för macOS-plattformen. FileVault-inställningar är en av de tillgängliga inställningskategorierna för macOS-slutpunktsskydd.
 
 När du har skapat en princip för att kryptera enheter med FileVault tillämpas principen på enheter i två steg. Först förbereds enheten så att Intune kan hämta och säkerhetskopiera återställningsnyckeln. Den här åtgärden kallas deponering eller deposition. När nyckeln har deponerats kan diskkrypteringen starta.
 
@@ -105,7 +105,7 @@ Använd Intune för att konfigurera BitLocker-diskkryptering på enheter som kö
 
 BitLocker är tillgängligt på enheter som kör **Windows 10 eller senare**.
 
-Konfigurera BitLocker när du skapar en [enhetskonfigurationsprofil](../configuration/device-profile-create.md) för slutpunktsskydd för Windows 10-plattformen eller senare. BitLocker-inställningarna finns i kategorin med inställningar för Windows-kryptering för Windows 10-slutpunktsskydd.
+Konfigurera BitLocker när du skapar en [enhetskonfigurationsprofil](endpoint-protection-configure.md) för slutpunktsskydd för Windows 10-plattformen eller senare. BitLocker-inställningarna finns i kategorin med inställningar för Windows-kryptering för Windows 10-slutpunktsskydd.
 
 ![BitLocker-inställningar](./media/encrypt-devices/bitlocker-settings.png)
 

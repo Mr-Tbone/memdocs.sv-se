@@ -17,18 +17,18 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: c07fc8102504a9ca3ee5694e8cb9b1d5f8b568bc
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 81864c207cec560ca8b42041f9248560ebcf3b04
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352247"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80322440"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Övervaka enhetskryptering med Intune
 
 Krypteringsrapporten i Microsoft Intune är en central plats där du kan visa information om en enhets krypteringsstatus och se alternativ för hantering av enhetsåterställningsnycklar. Vilka alternativ för återställningsnycklar som är tillgängliga beror på vilken typ av enhet du visar.
 
-Logga in i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) om du vill leta reda på rapporten. Välj **Enheter** > **Övervaka** och välj **Krypteringsrapport** under *Konfiguration*.
+Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) om du vill leta reda på rapporten. Välj **Enheter** > **Övervaka** och välj **Krypteringsrapport** under *Konfiguration*.
 
 ## <a name="view-encryption-details"></a>Visa krypteringsinformation
 

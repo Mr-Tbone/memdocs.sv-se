@@ -18,37 +18,41 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af4dce0d2bb7ef150d5332a9c58357513425cf50
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: 82b9dd1db3bd625f21dcdbf2df375f5b8612e74a
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220208"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327228"
 ---
-# <a name="automatically-enroll-iosipados-devices-with-apples-device-enrollment-program"></a>Registrera iOS/iPadOS-enheter automatiskt med Apples DEP (Device Enrollment Program)
+# <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
-Du kan konfigurera Intune till att registrera iOS/iPadOS-enheter som köpts via Apples [program för enhetsregistrering (DEP)](https://deploy.apple.com). Med DEP kan du konfigurera ett stort antal enheter utan att behöva röra dem. Enheter som iPhones, iPads och MacBooks kan levereras direkt till användarna. När användaren sätter på enheten körs installationsassistenten, som innehåller vanliga funktioner för Apple-produkter, med de förkonfigurerade inställningarna och enheten registreras i hanteringen.
+> [!IMPORTANT]
+> Apple har nyligen slutat använda programmet för enhetsregistrering (DEP) och övergått till att använda automatisk enhetsregistrering (ADE). Intune-gränssnittet håller på att uppdateras för att återspegla detta. Till dess att vi har slutfört ändringarna kommer det att stå *Programmet för enhetsregistrering* i Intune-portalen. På alla platser där detta visas används nu automatisk enhetsregistrering.
 
-Om du vill aktivera DEP-registrering använder du både Intune-portalen samt Apple Business Manager (ABM)- eller Apple School Manager (ASM)-portalen. En lista med serienummer eller inköpsordernummer krävs för att du ska kunna tilldela enheter till Intune för hantering i ABM/ASM. Du kan skapa DEP-registreringsprofiler i Intune med inställningar som tillämpas på enheterna under registreringen. Observera DEP-registreringen kan inte användas med [enhetsregistreringshanterarens](device-enrollment-manager-enroll.md) konto.
+Du kan konfigurera Intune för att registrera iOS/iPadOS-enheter som köpts via [automatisk enhetsregistrering (ADE)](https://deploy.apple.com) (tidigare programmet för enhetsregistrering) från Apple. Med Automatisk enhetsregistrering kan du konfigurera ett stort antal enheter utan att behöva röra dem. Enheter som iPhones, iPads och MacBooks kan levereras direkt till användarna. När användaren sätter på enheten körs installationsassistenten, som innehåller vanliga funktioner för Apple-produkter, med de förkonfigurerade inställningarna och enheten registreras i hanteringen.
+
+Om du vill aktivera ADE använder du både Intune-portalen och [Apple Business Manager (ABM)](https://business.apple.com/)- eller [Apple School Manager (ASM)](https://school.apple.com/)-portalen. En lista med serienummer eller inköpsordernummer krävs för att du ska kunna tilldela enheter till Intune för hantering i någon av dessa Apple-portaler. Du kan skapa ADE-registreringsprofiler i Intune med inställningar som tillämpas på enheterna under registreringen. Observera att ADE inte kan användas med ett konto för [enhetsregistreringshanterare](device-enrollment-manager-enroll.md).
 
 > [!NOTE]
-> DEP ställer in enhetskonfigurationer som inte alltid kan tas bort av slutanvändaren. Innan [migreringen till DEP](../fundamentals/migration-guide-considerations.md) måste enheten därför rensas så att den återställs till dess ursprungliga tillstånd (fabriksinställningarna).
+> ADE ställer in enhetskonfigurationer som inte alltid kan tas bort av slutanvändaren. Enheten måste därför rensas före [migreringen till ADE](../fundamentals/migration-guide-considerations.md) så att den återställs till dess ursprungliga tillstånd (fabriksinställningarna).
 
-## <a name="dep-and-the-company-portal"></a>DEP och företagsportalen
+## <a name="automated-device-enrollment-and-the-company-portal"></a>Automatisk enhetsregistrering och företagsportalen
 
-DEP-registreringar är inte kompatibla med App Store-versionen av företagsportalappen. Du kan ge användarna åtkomst till företagsportalappen på en DEP-enhet. Du kanske vill ange åtkomsten så att användarna kan välja vilka företagsappar de vill använda på sin enhet, eller använda modern autentisering för att slutföra registreringsprocessen. 
+ADE-registreringar är inte kompatibla med App Store-versionen av företagsportalappen. Du kan ge användarna åtkomst till företagsportalappen på en ADE-enhet. Du kanske vill ange åtkomsten så att användarna kan välja vilka företagsappar de vill använda på sin enhet, eller använda modern autentisering för att slutföra registreringsprocessen. 
 
-Om du vill aktivera modern autentisering vid registreringen, skickar du appen till enheten med **Installera företagsportalen med VPP** (volyminköpsprogram) i DEP-profilen. Mer information finns i [Registrera iOS/-enheter automatiskt med Apples program för enhetsregistrering](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
+Om du vill aktivera modern autentisering vid registreringen, skickar du appen till enheten med **Installera företagsportalen med VPP** (volyminköpsprogram) i ADE-profilen. Mer information finns i [Registrera iOS/-enheter automatiskt med Apples ADE](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
 
-Om du vill att företagsportalen ska uppdateras automatiskt och erbjuda företagsportalappen på enheter som redan har registrerats med DEP, distribuerar du företagsportalappen via Intune som ett obligatoriskt volyminköpsprogram (VPP) med en [programkonfigurationsprincip](../apps/app-configuration-policies-use-ios.md).
+Om du vill att företagsportalen ska uppdateras automatiskt och erbjuda appen Företagsportal på enheter som redan har registrerats med ADE, distribuerar du företagsportalappen via Intune som ett obligatoriskt volyminköpsprogram (VPP) med en [programkonfigurationsprincip](../apps/app-configuration-policies-use-ios.md).
 
-Obs! Vid automatisk enhetsregistrering, när Företagsportal körs i enstaka appläge, visas ett felmeddelande när du klickar på länken ”Läs mer” på grund av läget. När registreringen är färdig kan du visa mer information i Företagsportal när enheten inte längre är i enstaka appläge. 
+> [!NOTE]
+> Vid automatisk enhetsregistrering, när Företagsportal körs i enstaka appläge, visas ett felmeddelande när du klickar på länken **Läs mer** på grund av läget. När registreringen är färdig kan du visa mer information i Företagsportal när enheten inte längre är i enstaka appläge. 
 
 ## <a name="what-is-supervised-mode"></a>Vad är övervakat läge?
 
-Apple införde övervakat läge i iOS/iPadOS 5. En iOS/iPadOS-enhet i övervakat läge kan hanteras med fler kontroller, exempelvis kontroller som blockerar skärmdumpar eller installation av appar från App Store. Det är därför användbart för företagsägda enheter. Intune har stöd för konfigurering av enheter för övervakat läge som en del av Apples program för enhetsregistrering (DEP).
+Apple införde övervakat läge i iOS/iPadOS 5. En iOS/iPadOS-enhet i övervakat läge kan hanteras med fler kontroller, exempelvis kontroller som blockerar skärmdumpar eller installation av appar från App Store. Det är därför användbart för företagsägda enheter. Intune har stöd för konfigurering av enheter för övervakat läge som en del av ADE.
 
-Stöd för ej kontrollerade DEP-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11 och senare bör DEP-konfigurerade enheter alltid övervakas. Flaggan DEP is_supervised ignoreras i en framtida iOS/iPadOS-version.
+Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11 och senare bör ADE-konfigurerade enheter alltid övervakas. Flaggan ADE *is_supervised* ignoreras i en framtida iOS/iPadOS-version.
 
 <!--
 **Steps to enable enrollment programs from Apple**
@@ -59,39 +63,39 @@ Stöd för ej kontrollerade DEP-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 
 5. [Distribute devices to users](#end-user-experience-with-managed-devices)
 -->
 ## <a name="prerequisites"></a>Krav
-- Enheter som köpts i [Apples enhetsregistreringsprogram](https://deploy.apple.com)
+- Enheter som köpts i [Apples ADE](https://deploy.apple.com)
 - [Utfärdare för hantering av mobil enhet (MDM)](../fundamentals/mdm-authority-set.md)
 - [Apple MDM-pushcertifikat](apple-mdm-push-certificate-get.md)
 
-## <a name="get-an-apple-dep-token"></a>Hämta en Apple DEP-token
+## <a name="get-an-apple-ade-token"></a>Hämta en Apple ADE-token
 
-Innan du kan registrera iOS/iPadOS-enheter med DEP behöver du en DEP-tokenfil (.p7m) från Apple. Med denna token kan Intune synkronisera information om DEP-enheter som ditt företag äger. Intune kan även överföra registreringsprofiler till Apple och tilldela enheter till dessa profiler.
+Innan du kan registrera iOS/iPadOS-enheter med ADE behöver du en ADE-tokenfil (.p7m) från Apple. Med denna token kan Intune synkronisera information om ADE-enheter som ditt företag äger. Intune kan även överföra registreringsprofiler till Apple och tilldela enheter till dessa profiler.
 
-Du kan använda Apple Business Manager- eller Apple School Manager-portalen till att skapa en token. Du kan också använda ABM/ASM-portalen för att tilldela enheter till Intune för hantering.
+Du kan också skapa en token med [Apple Business Manager (ABM)](https://business.apple.com/)- eller [Apple School Manager (ASM)](https://school.apple.com/)-portalen. Du kan också använda ABM/ASM-portalen för att tilldela enheter till Intune för hantering.
 
 > [!NOTE]
-> Om du tar bort denna token från den klassiska Intune-portalen innan du migrerar till Azure, kan Intune återställa en borttagen Apple DEP-token. Du kan ta bort DEP-token från Azure-portalen igen.
+> Om du tar bort denna token från den klassiska Intune-portalen innan du migrerar till Azure, kan Intune återställa en borttagen Apple ADE-token. Du kan ta bort ADE-token från Azure-portalen igen.
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>Steg 1. Ladda ned certifikatet för den offentliga Intune-nyckeln som krävs för att skapa token.
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > **Lägg till**.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > **Lägg till**.
 
     ![Hämta en registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/image01.png)
 
 2. Välj **Jag godkänner** för att ge Microsoft behörighet att skicka information om användare och enhet till Apple.
 
 > [!NOTE]
-> När du kommit förbi steg 2 och ska ladda ned certifikatet för den offentliga Intune-nyckeln, ska du inte stänga guiden eller navigera från sidan. Om du gör det ogiltigförklaras certifikatet du har laddat ned. I så fall måste du utföra den här processen på nytt. Då blir också knappen Skapa och fliken Granska + skapa nedtonad, och du kan inte slutföra processen.
+> När du kommit förbi steg 2 och ska ladda ned certifikatet för den offentliga Intune-nyckeln, ska du inte stänga guiden eller navigera från sidan. Om du gör det ogiltigförklaras certifikatet du har laddat ned. I så fall måste du utföra den här processen på nytt. Då blir också knappen **Skapa** och fliken **Granska + skapa** nedtonad, och du kan inte slutföra processen.
 
    ![Skärmbild av rutan Registreringsprogramtoken i arbetsytan för Apple-certifikat. Nedladdning av offentlig nyckel.](./media/device-enrollment-program-enroll-ios/add-enrollment-program-token-pane.png)
 
-3. Välj **Hämta den offentliga nyckeln** om du vill hämta och spara krypteringsnyckelfilen (.pem) lokalt. Filen .pem används för att begära ett förtroendecertifikat från portalen Apples DEP.
+3. Välj **Hämta den offentliga nyckeln** om du vill hämta och spara krypteringsnyckelfilen (.pem) lokalt. .pem-filen används för att begära ett förtroendecertifikat från Apple-portalen.
 
 
 ### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>Steg 2. Använd din nyckel för att hämta en token från Apple.
 
-1. Välj **Skapa en token för Apples enhetsregistreringsprogram** för att öppna Apples portal för distributionsprogram och logga in med ditt företags Apple-ID. Du måste använda detta Apple-ID för att kunna förnya DEP-token.
-2. Gå till Apples [portal för driftsättningsprogram](https://deploy.apple.com) och välj **Kom igång** för **Enhetsregistreringsprogram**.
+1. Välj **Skapa en token för Apples program för enhetsregistrering** för att öppna Apples företagsportal och logga in med ditt företags Apple-ID. Du kan använda detta Apple-ID när du behöver förnya din ADE-token.
+2. Gå till Apples [företagsportal](https://business.apple.com) och välj **Kom igång** för **Enhetsregistreringsprogram**.
 
 3. På sidan **Hantera servrar** väljer du **Lägg till MDM-server**.
 4. Ange **MDM-servernamnet** och välj **Nästa**. Servernamnet är för din egen referens och hjälper dig att identifiera MDM-servern (hantering av mobilenheter). Det är inte namnet eller URL-adressen för Microsoft Intune-servern.
@@ -112,7 +116,7 @@ Du kan använda Apple Business Manager- eller Apple School Manager-portalen till
 
 ### <a name="step-3-save-the-apple-id-used-to-create-this-token"></a>Steg 3. Spara det Apple-ID som användes för att skapa den här token.
 
-I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) anger du Apple-ID:t för framtida referens.
+I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) anger du Apple-ID:t för framtida referens.
 
 ![Skärmbild av någon som anger det Apple-ID som användes för att skapa registreringsprogramtoken och bläddrat till denna token.](./media/device-enrollment-program-enroll-ios/image03.png)
 
@@ -126,13 +130,13 @@ Med pushcertifikatet kan Intune registrera och hantera iOS/iPadOS-enheter genom 
 
 ## <a name="create-an-apple-enrollment-profile"></a>Skapa en Apple-registreringsprofil
 
-Nu när du har installerat din token kan skapa du en registreringsprofil för DEP-enheter. En enhetsregistreringsprofil definierar inställningarna som tillämpas på en grupp av enheter vid registreringen. Det finns en gräns på 100 registreringsprofiler per DEP-token.
+Nu när du har installerat din token kan skapa du en registreringsprofil för ADE-enheter. En enhetsregistreringsprofil definierar inställningarna som tillämpas på en grupp av enheter vid registreringen. Det finns en gräns på 100 registreringsprofiler per ADE-token.
 
 > [!NOTE]
 > Enheterna kommer att blockeras om det inte finns tillräckligt med licenser i företagsportalen för en VPP-token, eller om token har upphört att gälla. Intune visar en varning när en token snart upphör att gälla, eller om licenserna börjar ta slut.
  
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram**.
+1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken**.
 2. Välj en token, välj **Profiler** > **Skapa profil** > **iOS**.
 
     ![Skärmbild av Skapa en profil.](./media/device-enrollment-program-enroll-ios/image04.png)
@@ -163,7 +167,7 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för DE
 6. Om du väljer **Företagsportal** för **Välj var användarna måste autentiseras**, kan du använda en VPP-token för att automatiskt installera företagsportalen på enheten. I det här fallet behöver användaren inte ange ett Apple-ID. Om du vill installera Företagsportalen med en VPP-token väljer du en token under **Installera Företagsportalen med VPP**. Kräver att företagsportalen redan har lagts till i VPP-token. Kontrollera att du har konfigurerat appdistribution i Intune (Intune>Klientappar) för att säkerställa att företagsportalappen uppdateras även efter registreringen. Om du vill undvika användarinteraktion bör du skaffa Företagsportal som en iOS/iPadOS VPP-app, göra den till en obligatorisk app och använda enhetslicenser för tilldelningen. Se till att den token du väljer inte upphör att gälla och att du har tillräckligt många enhetslicenser för företagsportalappen. Om token upphör att gälla eller om licenserna tar slut kan Intune installera företagsportalen från App Store istället, och då krävs ett Apple-ID. 
 
     > [!NOTE]
-    > När **Välj var användarna måste autentiseras** är inställt till **Företagsportal**, se till att enhetsregistreringsprocessen utförs inom de närmsta 24 timmarna efter att företagsportalen laddats ned till DEP-enheten. Annars kan registreringen misslyckas och en fabriksåterställning krävs för att registrera enheten.
+    > När **Välj var användarna måste autentiseras** är inställt till **Företagsportal** måste du se till att enhetsregistreringsprocessen utförs inom de närmsta 24 timmarna efter att företagsportalen laddats ned till ADE-enheten. Annars kan registreringen misslyckas och en fabriksåterställning krävs för att registrera enheten.
     
     ![Skärmbild av installation av Företagsportalen med VPP.](./media/device-enrollment-program-enroll-ios/install-cp-with-vpp.png)
 
@@ -181,7 +185,7 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för DE
 
     ![Skärmbild för Enhetshanteringsinställningar.](./media/device-enrollment-program-enroll-ios/supervisedmode.png)
 
-    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder DEP som mekanism för att aktivera övervakat läge, särskilt om du distribuerar större antal iOS/iPadOS-enheter.
+    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder ADE som mekanism för att aktivera övervakat läge, särskilt om du distribuerar större antal iOS/iPadOS-enheter.
 
     Användare meddelas att deras enheter är övervakade på två sätt:
 
@@ -251,10 +255,10 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för DE
 ## <a name="sync-managed-devices"></a>Synkronisera hanterade enheter
 Nu när Intune har fått behörighet att hantera dina enheter, kan du synkronisera Intune med Apple och se dina hanterade enheter i Intune på Azure-portalen.
 
-1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj en token i listan > **Enheter** > **Synkronisera**. ![Skärmbild på noden Registreringsprogramenheter och länken Synkronisera.](./media/device-enrollment-program-enroll-ios/image06.png)
+1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj en token i listan > **Enheter** > **Synkronisera**. ![Skärmbild på noden Registreringsprogramenheter och länken Synkronisera.](./media/device-enrollment-program-enroll-ios/image06.png)
 
    För att följa Apples villkor för godkänd registreringsprogramtrafik tillämpar Intune följande begränsningar:
-   - En fullständig synkronisering kan inte köras oftare än en gång var sjunde dag. Under en fullständig synkronisering, hämtar Intune den fullständigt uppdaterade listan med serienummer som tilldelats den Apple MDM-server som är ansluten till Intune. Om en DEP-enhet tas bort från Intune-portalen ska den inte vara tilldelad från Apple MDM-servern i DEP-portalen. Om den ej är tilldelad, importeras den inte om till Intune förrän den fullständiga synkroniseringen har körts.   
+   - En fullständig synkronisering kan inte köras oftare än en gång var sjunde dag. Under en fullständig synkronisering, hämtar Intune den fullständigt uppdaterade listan med serienummer som tilldelats den Apple MDM-server som är ansluten till Intune. Om en ADE-enhet tas bort från Intune-portalen ska den inte vara tilldelad från Apple MDM-servern i ADE-portalen. Om den ej är tilldelad, importeras den inte om till Intune förrän den fullständiga synkroniseringen har körts.   
    - En synkronisering körs automatiskt var 24:e timme. Du kan också synkronisera genom att klicka på **Synkronisera**-knappen (högst en gång var 15:e minut). Alla synkroniseringsbegäranden ges 15 minuter att slutföras. **Synkronisera**-knappen är inaktiverad tills att en synkronisering har slutförts. Synkroniseringen kommer att uppdatera status för befintliga enheter och importera nya enheter som tilldelats Apple MDM-servern.   
 
 
@@ -264,7 +268,7 @@ Du måste tilldela en registreringsprogramprofil till enheterna innan de kan reg
 >[!NOTE]
 >Du kan även tilldela profiler serienummer från bladet **Apple-serienummer**.
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj en token i listan.
+1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > välj en token i listan.
 2. Välj **Enheter** > välj enheter i listan > **Tilldela profil**.
 3. Välj en profil för enheterna under **Tilldela profil** och välj sedan **Tilldela**.
 
@@ -272,27 +276,27 @@ Du måste tilldela en registreringsprogramprofil till enheterna innan de kan reg
 
 Du kan välja en standardprofil som ska tillämpas för alla enheter som registreras med en specifik token.
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj en token i listan.
+1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > välj en token i listan.
 2. Välj **Ange standardprofil**, välj en profil i listmenyn och välj sedan **Spara**. Den här profilen kommer att tillämpas på alla enheter som registreras med token.
 
 ## <a name="distribute-devices"></a>Distribuera enheter
-Du har aktiverat hantering och synkronisering mellan Apple och Intune, och har tilldelat en profil så att DEP-enheterna kan registreras. Du kan nu distribuera enheter till användare. Enheter med användartillhörighet kräver att varje användare tilldelas en Intune-licens. Enheter utan användartillhörighet kräver en enhetslicens. En aktiverad enhet kan inte använda en registreringsprofil förrän enheten har rensats.
+Du har aktiverat hantering och synkronisering mellan Apple och Intune, och har tilldelat en profil så att ADE-enheterna kan registreras. Du kan nu distribuera enheter till användare. Enheter med användartillhörighet kräver att varje användare tilldelas en Intune-licens. Enheter utan användartillhörighet kräver en enhetslicens. En aktiverad enhet kan inte använda en registreringsprofil förrän enheten har rensats.
 
 Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregistreringsprogrammet](../user-help/enroll-your-device-dep-ios.md).
 
-## <a name="renew-a-dep-token"></a>Ladda upp en DEP-token  
+## <a name="renew-an-ade-token"></a>Förnya en ADE-token  
 
 > [!NOTE]
-> Förutom att förnya ditt DEP-token varje år måste du också förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager eller om användaren lämnar din Apple Business Manager-organisation.
+> Förutom att förnya din ADE-token varje år måste du också förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager eller om användaren lämnar din Apple Business Manager-organisation.
 
-1. Gå till deploy.apple.com.  
+1. Gå till business.apple.com.  
 2. Under **Hantera servrar**, väljer du din MDM-server som är associerad med den tokenfil som du vill förnya.
 3. Välj **Skapa ny Token**.
 
     ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-ios/generatenewtoken.png)
 
 4. Välj **Din servertoken**.  
-5. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj token.
+5. I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj token.
     ![Skärmbild av registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/enrollmentprogramtokens.png)
 
 6. Välj **Förnya token** och ange det Apple-ID som användes för att skapa den ursprungliga token.  

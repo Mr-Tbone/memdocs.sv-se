@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98567612b31604f79339a550275e274a2c90c3a4
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 431d2753b04269e9aacd7ef951ef3f45a076df60
+ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79342419"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80407904"
 ---
 # <a name="intune-app-installation-error-reference"></a>Referens för fel vid Intune-appinstallation
 
@@ -92,6 +92,8 @@ Följande felmeddelanden och beskrivningar ger information om iOS/iPadOS-install
 | 0x87D13B77 | -2016330889 | Ingen säker anslutning kunde upprättas.  | Fel vid validering av appmanifest på grund av nätverksanslutning (säker anslutning misslyckades). |
 | 0x87D13B80 | -2016330880 | CannotConnectToITunesStoreError | Det gick inte att installera appen på grund av att det inte gick att ansluta till iTunes Store. |
 | 0x87D13B9F  | -2016330849 | Det finns en tillgänglig uppdatering för VPP-appen. | Den här koden returneras när en VPP-app är installerad men en senare version är tillgänglig. |
+| 0x87D13B9E | 2016330850 | Det går inte att framtvinga inställningen för avinstallation av app. Försök att installera appen igen. | Appen är redan installerad på enheten men inställningen för avinstallation vid tillbakadragande matchar inte det konfigurerade värdet. Be användaren att begära att appinstallationen från företagsportalen försöker använda inställningen för avinstallation vid tillbakadragande igen. |
+
 
 ## <a name="other-installation-errors"></a>Andra installationsfel
 

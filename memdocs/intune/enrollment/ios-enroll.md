@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79bb7e627043e439c7438c2fc4afcfdee5a44406
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: e7d7f35d6d6b11875c722d4969f5776040ca0dfc
+ms.sourcegitcommit: 71f26a0756fd40c1a06f885f3d31e49734fe97fe
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80086120"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80256461"
 ---
 # <a name="enroll-iosipados-devices-in-intune"></a>Registrera iOS/iPadOS-enheter i Intune
 
@@ -52,23 +52,23 @@ När alla krav är uppfyllda och du har tilldelat licenser till användarna, kan
 
 Intune stöder följande registreringsmetoder för iOS/iPadOS-enheter som ägs av företaget för organisationer som köper enheter till sina användare:
 
-- Apples program för enhetsregistrering (DEP)
+- Automatisk enhetsregistrering för Apple (ADE)
 - Apple School Manager
 - Apple Configurator-registrering med installationsassistenten
 - Apple Configurator – direkt registrering
 
 Du kan även registrera företagsägda iOS/iPadOS-enheter med ett konto för [enhetsregistreringshantering](device-enrollment-manager-enroll.md).
 
-## <a name="device-enrollment-program"></a>Program för enhetsregistrering
+## <a name="automated-device-enrollment"></a>Automatisk enhetsregistrering
 
-Företag kan nu hantera iOS/iPadOS-enheter som köpts via Apples program för enhetsregistrering (DEP). Med DEP kan du distribuera en registreringsprofil "over-the-air" för att hantera enheter. Mer information finns i [Programmet för enhetsregistrering](device-enrollment-program-enroll-ios.md).
+Företag kan köpa iOS/iPadOS-enheter via Apples automatiserade enhetsregistrering (ADE). Med ADE kan du distribuera en registreringsprofil ”over-the-air” för att hantera enheter. Mer information finns i [Programmet för enhetsregistrering](device-enrollment-program-enroll-ios.md).
 
 ## <a name="user-enrollment"></a>Användarregistrering
 Med Användarregistrering får administratörer tillgång till en deluppsättning hanteringsalternativ jämfört med andra registreringsmetoder. Mer information finns i [Åtgärder, lösenord och andra alternativ som stöds i Användarregistrering](ios-user-enrollment-supported-actions.md) och [Konfigurera Användarregistrering för iOS/iPadOS och iPadOS](ios-user-enrollment.md).
 
 ## <a name="apple-school-manager"></a>Apple School Manager
 
-Apple School Manager är ett enhetsregistreringsprogram för skolor. Du kan distribuera en profil för att registrera enheter på samma sätt som i DEP. Lär dig mer om [Apple School Manager](apple-school-manager-set-up-ios.md).
+Apple School Manager är ett enhetsregistreringsprogram för skolor. Du kan distribuera en profil för att registrera enheter på samma sätt som i ADE. Lär dig mer om [Apple School Manager](apple-school-manager-set-up-ios.md).
 
 ## <a name="apple-configurator"></a>Apple Configurator
 
@@ -79,7 +79,7 @@ Du kan registrera iOS/-enheter med Apple Configurator på en Mac-dator. För att
 
 Läs mer om [registrering med Apple Configurator](apple-configurator-enroll-ios.md).
 
-## <a name="use-the-company-portal-on-dep-enrolled-or-apple-configurator-enrolled-devices"></a>Använda företagsportalen på enheter som registrerats med enhetsregistreringsprogrammet eller Apple Configurator
+## <a name="use-the-company-portal-on-ade-enrolled-or-apple-configurator-enrolled-devices"></a>Använda företagsportalen på enheter som registrerats med ADE eller Apple Configurator
 
 Enheter som har konfigurerats med användartillhörighet kan installera och köra företagsportalappen för att ladda ned appar och hantera enheter. Efter det att användarna fått sina enheter måste de utföra ett antal ytterligare steg för att slutföra installationen och installera företagsportalsappen.
 

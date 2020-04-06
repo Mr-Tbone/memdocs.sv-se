@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b66777e9c108ab4a6b84e4d4fa0942532685912f
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 2c8c521dc0899b3429de85e95116a6277d724771
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80086734"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327281"
 ---
 # <a name="move-android-devices-from-device-administrator-to-work-profile-management"></a>Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering
 
@@ -40,7 +40,7 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
 - Du konfigurerar Android-arbetsprofilhantering genom [att ansluta ditt Intune-klientkonto till ditt Android Enterprise-konto](connect-intune-android-enterprise.md).
 - [Ställ in Android Enterprise-arbetsprofilregistrering](android-work-profile-enroll.md) för den grupp användare som flyttar till Android-arbetsprofilen.
 - Överväg att öka användarenhetsgränserna. När du avregistrerar enheter från enhetsadministratörshantering, kan det hända att enhetsposter inte tas bort omedelbart. Om du vill tillhandahålla en buffert under den här perioden, kan du behöva öka enhetsgränskapaciteten så att användarna kan registrera sig för arbetsprofilhantering.
-  - [Konfigurera Azure Active Directory-enhet inställningarna](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal.md#configure-device-settings) för maximalt antal enheter per användare.
+  - [Konfigurera Azure Active Directory-enhet inställningarna](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#configure-device-settings) för maximalt antal enheter per användare.
   - Justera [Intune-enhetens gränsbegränsningar](enrollment-restrictions-set.md#create-a-device-limit-restriction) genom att ange enhetsgränsen. 
 
 ## <a name="create-device-compliance-policy"></a>Skapa en efterlevnadsprincip för enheter
@@ -71,6 +71,7 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
     > [!NOTE]
     > - Naturligtvis kan du använda användarvänlig hypertext för länkarna i kommunikationen med användarna. Använd dock inte URL-förkortare eftersom länkarna kanske inte fungerar om de ändras på det sättet.
     > - Om Android Företagsportal är öppen och i bakgrunden när en användare trycker på länken, kan han eller hon istället gå till den sista sidan som är öppen.
+    > - Användarna måste trycka på länken på en Android-enhet. Om de i stället klistrar in den i en webbläsare så startas inte Android-företagsportalen. 
 
     Välj **Nästa**.
 
@@ -80,7 +81,7 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
 
 ## <a name="troubleshooting"></a>Felsökning
 
-[Flödet för slutanvändare som vill flytta till en ny enhetshanteringsinstallation](https://docs.microsoft.com/mem/intune/user-help/move-to-new-device-management-setup.md) vägleder användaren genom avregistreringen från enhetsadministratörshantering och till en konfiguration med arbetsprofilshantering. Användarna måste ha [Android-enhetsadministratörsregistrerade enheter](android-enroll-device-administrator.md) med Android Företagsportal version 5.0.4720.0 eller senare.
+[Flödet för slutanvändare som vill flytta till en ny enhetshanteringsinstallation](../user-help/move-to-new-device-management-setup.md) vägleder användaren genom avregistreringen från enhetsadministratörshantering och till en konfiguration med arbetsprofilshantering. Användarna måste ha [Android-enhetsadministratörsregistrerade enheter](android-enroll-device-administrator.md) med Android Företagsportal version 5.0.4720.0 eller senare.
 
 ### <a name="user-sees-an-error-after-tapping-resolve"></a>Användaren ser ett fel efter att ha tryckt på Lös
 Om användarna ser ett fel efter att ha tryckt på knappen **Lös** beror det förmodligen på någon av följande orsaker:
@@ -103,8 +104,5 @@ Användarna kan se en felsida i webbläsaren när de trycker på URL:en till sid
 - Android-enheten använder Android 6 eller tidigare. 
 
 ## <a name="next-steps"></a>Nästa steg
-[Se slutanvändarflödet](https://docs.microsoft.com/mem/intune/user-help/move-to-new-device-management-setup.md)
-
+[Se slutanvändarflödet](../user-help/move-to-new-device-management-setup.md)
 [Hantera Android-arbetsprofilenheter med Intune](android-enterprise-overview.md)
-
-

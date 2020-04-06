@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ab840653d7090ed925af0db08f410e236392234
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: ba902cca39db44c20c79ae7b960b13966c1a09d9
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80219851"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80323091"
 ---
 # <a name="enforce-compliance-on-macs-managed-with-jamf-pro"></a>Tvinga fram efterlevnad på Mac-datorer som hanteras med Jamf Pro
 
@@ -114,7 +114,7 @@ Kontrollera Jamf-konfigurationen om anslutningstestet från Jamf Pro-konsolen mi
 
 ## <a name="removing-a-jamf-managed-device-from-intune"></a>Ta bort en Jamf-hanterad enhet från Intune
 
-Om du vill ta bort en Jamf-hanterad enhet öppnar du administrationscentret för Microsoft Endpoint Manager och väljer **Enheter** > **Alla enheter**, väljer enheten och väljer sedan **Ta bort**.  Du kan aktivera massborttagning av enheter genom att välja flera enheter och klicka på **Ta bort**.
+Om du vill ta bort en Jamf-hanterad enhet öppnar du Microsoft Endpoint Manager admin center och väljer **Enheter** > **Alla enheter**, väljer enheten och väljer sedan **Ta bort**.  Du kan aktivera massborttagning av enheter genom att välja flera enheter och klicka på **Ta bort**.
 
 Få information om hur du [tar bort en Jamf-hanterad enhet i Jamf Pro-dokumenten](https://www.jamf.com/jamf-nation/articles/80/unmanaging-computers-while-preserving-their-inventory-information). Du kan även skicka in ett supportärende med [Jamf-support](https://www.jamf.com/support/) för ytterligare hjälp. 
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 216cf1a4d84adf717ebf914732eab3d6a169508f
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 04ee6fea411c0ee231f4a7e9e00cdea45d206943
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79350427"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326615"
 ---
 # <a name="troubleshoot-deployment-of-a-scep-certificate-profile-to-devices-in-microsoft-intune"></a>Felsöka distribution av SCEP-certifikatprofiler till enheter med Microsoft Intune
 
@@ -36,7 +36,7 @@ SCEP-certifikatprofiler för Android kommer till enheten som en SyncML och logga
 
 ### <a name="validate-that-the-android-device-was-sent-the-policy"></a>Verifiera att Android-enheten har tagit emot principen
 
-För att verifiera att en profil har skickats till den avsedda enheten går du till [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431). Välj **Felsökning + support** > **Felsök**.  I fönstret *Felsök* anger du **Tilldelningar** **Konfigurationsprofiler** och validerar sedan följande konfigurationer:
+För att verifiera att en profil har skickats till den avsedda enheten går du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Välj **Felsökning + support** > **Felsök**.  I fönstret *Felsök* anger du **Tilldelningar** **Konfigurationsprofiler** och validerar sedan följande konfigurationer:
 
 1. Ange en användare som ska ta emot SCEP-certifikatprofilen.
 
@@ -63,7 +63,7 @@ Exempel på nyckelposter:
 
 ### <a name="validate-that-the-iosipados-device-was-sent-the-policy"></a>Kontrollera att iOS/iPadOS-enheten har tagit emot principen
 
-För att verifiera att en profil har skickats till den avsedda enheten går du till [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431). Välj **Felsökning + support** > **Felsök**.  I fönstret *Felsök* anger du **Tilldelningar** **Konfigurationsprofiler** och validerar sedan följande konfigurationer:
+För att verifiera att en profil har skickats till den avsedda enheten går du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Välj **Felsökning + support** > **Felsök**.  I fönstret *Felsök* anger du **Tilldelningar** **Konfigurationsprofiler** och validerar sedan följande konfigurationer:
 
 1. Ange en användare som ska ta emot SCEP-certifikatprofilen.
 
@@ -90,7 +90,7 @@ Exempel på nyckelposter:
 
 ### <a name="validate-that-the-windows-device-was-sent-the-policy"></a>Verifiera att Windows-enheten har tagit emot principen
 
-För att verifiera att en profil har skickats till den avsedda enheten går du till [Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431)[Microsoft Endpoint Manager Admin Center](https://go.microsoft.com/fwlink/?linkid=2109431). Välj **Felsökning + support** > **Felsök**.  I fönstret *Felsök* anger du **Tilldelningar** **Konfigurationsprofiler** och validerar sedan följande konfigurationer:
+För att verifiera att en profil har skickats till den avsedda enheten går du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431)[administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Välj **Felsökning + support** > **Felsök**.  I fönstret *Felsök* anger du **Tilldelningar** **Konfigurationsprofiler** och validerar sedan följande konfigurationer:
 
 1. Ange en användare som ska ta emot SCEP-certifikatprofilen.
 

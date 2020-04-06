@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad456ef7cc88ccb24079010479bd8f27292eb73d
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 07612080f170c5f2bef448aa616a4422508218d1
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79363271"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326941"
 ---
 # <a name="troubleshoot-iosipados-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av iOS/iPadOS-enhet i Microsoft Intune
 
@@ -41,7 +41,7 @@ Samla in följande information om problemet:
 - Hur många användare påverkas? Påverkas alla användare eller bara vissa av dem?
 - Hur många enheter påverkas? Påverkas alla enheter eller bara vissa av dem?
 - Vad är MDM-utfärdare?
-- Hur utförs registreringen? Är det "ta med din egen enhet" (BYOD) eller Apple-programmet för enhetsregistrering (DEP) med registreringsprofiler?
+- Hur utförs registreringen? Är det ”Bring your own device” (BYOD) eller Apple Automated Device Enrollment (ADE) med registreringsprofiler?
 
 ## <a name="error-messages"></a>Felmeddelanden
 
@@ -106,7 +106,7 @@ Om ditt företag använder flera domäner för användarautentiseringsuppgifter 
 **Orsak:** Den användare som försöker registrera enheten har ingen Microsoft Intune-licens.
 
 #### <a name="resolution"></a>Lösning
-1. Gå till [Administrationscentret för Office 365](https://portal.office.com/adminportal/home#/homepage) och välj **Användare > Aktiva användare**.
+1. Gå till [Administrationscentret för Office 365](https://admin.microsoft.com) och välj **Användare > Aktiva användare**.
 2. Markera det användarkonto som du vill tilldela en Intune-användarlicens och välj sedan **Produktlicenser > Redigera**.
 3. Växla till **På** för den licens som du vill tilldela till den här användaren och välj sedan **Spara**.
 4. Omregistrera enheten.
@@ -157,7 +157,7 @@ Om ditt företag använder flera domäner för användarautentiseringsuppgifter 
 **Orsak:** Den användare som försöker registrera enheten har ingen giltig Intune-licens.
 
 #### <a name="resolution"></a>Lösning
-1. Gå till [administrationscentret för Microsoft 365 ](https://portal.office.com/adminportal/home#/homepage) och välj sedan **Användare** > **Aktiva användare**.
+1. Gå till [administrationscentret för Microsoft 365 ](https://admin.microsoft.com) och välj sedan **Användare** > **Aktiva användare**.
 2. Välj det påverkade användarkontot > **Produktlicenser** > **Redigera**.
 3. Kontrollera att den här användaren har tilldelats en giltig Intune-licens.
 4. Omregistrera enheten.
@@ -166,7 +166,7 @@ Om ditt företag använder flera domäner för användarautentiseringsuppgifter 
 
 **Orsak:** Den användare som försöker registrera enheten har ingen giltig Intune-licens.
 
-1. Gå till [administrationscentret för Microsoft 365 ](https://portal.office.com/adminportal/home#/homepage) och välj sedan **Användare** > **Aktiva användare**.
+1. Gå till [administrationscentret för Microsoft 365 ](https://admin.microsoft.com) och välj sedan **Användare** > **Aktiva användare**.
 2. Välj det berörda användarkontot och välj sedan **Produktlicenser** > **Redigera**.
 3. Kontrollera att den här användaren har tilldelats en giltig Intune-licens.
 4. Omregistrera enheten.
@@ -203,7 +203,7 @@ Förnya APNs-certifikatet och registrera sedan enheten på nytt.
 
 ### <a name="xpc_type_error-connection-invalid"></a>XPC_TYPE_ERROR Anslutningen är ogiltig
 
-När du aktiverar en DEP-hanterad enhet som har tilldelats en registreringsprofil, misslyckas registreringen och du får följande felmeddelande:
+När du aktiverar en ADE-hanterad enhet som har tilldelats en registreringsprofil, misslyckas registreringen och du får följande felmeddelande:
 
 ```
 asciidoc
@@ -213,7 +213,7 @@ iPhone com.apple.accessibility.AccessibilityUIServer(MobileAsset)[288] <Notice>:
 iPhone mobileassetd[83] <Notice>: 0x1a49aebc0 Client connection: XPC_TYPE_ERROR Connection invalid <error: 0x1a49aebc0> { count = 1, transaction: 0, voucher = 0x0, contents = "XPCErrorDescription" => <string: 0x1a49aee18> { length = 18, contents = "Connection invalid" }
 ```
 
-**Orsak:** Det finns ett anslutningsproblem mellan enheten och Apple DEP-tjänsten.
+**Orsak:** Det finns ett anslutningsproblem mellan enheten och Apple ADE-tjänsten.
 
 #### <a name="resolution"></a>Lösning
 Åtgärda anslutningsproblemet eller använd en annan nätverksanslutning för att registrera enheten. Du kan också behöva kontakta Apple om problemet kvarstår.
@@ -221,20 +221,20 @@ iPhone mobileassetd[83] <Notice>: 0x1a49aebc0 Client connection: XPC_TYPE_ERROR 
 
 ## <a name="other-issues"></a>Andra problem
 
-### <a name="dep-enrollment-doesnt-start"></a>DEP-registrering startar inte
-När du aktiverar en DEP-hanterad enhet som har tilldelats en registreringsprofil initieras inte Intune-registreringsprocessen.
+### <a name="ade-enrollment-doesnt-start"></a>ADE-registrering startar inte
+När du aktiverar en ADE-hanterad enhet som har tilldelats en registreringsprofil initieras inte Intune-registreringsprocessen.
 
-**Orsak:** Registreringen skapas innan DEP-token laddas upp till Intune.
+**Orsak:** Registreringsprofilen skapas innan ADE-token laddas upp till Intune.
 
 #### <a name="resolution"></a>Lösning
 
 1. Redigera registreringsprofilen. Du kan göra ändringar i profilen. Syftet med detta är att uppdatera profilens ändringstid.
-2. Synkronisera DEP-hanterade enheter: Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > välj en token > **Synkronisera nu**. En synkroniseringsbegäran skickas till Apple.
+2. Synkronisera ADE-hanterade enheter: I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj en token > **Synkronisera nu**. En synkroniseringsbegäran skickas till Apple.
 
-### <a name="dep-enrollment-stuck-at-user-login"></a>DEP-registrering har fastnat vid användarinloggning
-När du aktiverar en DEP-hanterad enhet som har tilldelats en registreringsprofil, sker den första installationen efter att du angett dina autentiseringsuppgifter.
+### <a name="ade-enrollment-stuck-at-user-login"></a>ADE-registrering har fastnat vid användarinloggning
+När du aktiverar en ADE-hanterad enhet som har tilldelats en registreringsprofil, fastnar den första installationen efter att du angett dina autentiseringsuppgifter.
 
-**Orsak:** Multifaktorautentisering (MFA) har aktiverats. Förnärvarande fungerar inte MFA under registreringen på DEP-enheter.
+**Orsak:** Multifaktorautentisering (MFA) har aktiverats. Förnärvarande fungerar inte MFA under registreringen på ADE-enheter.
 
 #### <a name="resolution"></a>Lösning
 Inaktivera MFA och registrera sedan enheten på nytt.

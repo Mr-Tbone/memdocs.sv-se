@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7538cce4b116098db21e89d491476e8e0cd7f4e5
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 410911a44ca84230c30ccbea394c24b539b77c4f
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80086077"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80327045"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Konfigurera registrering för macOS-enheter i Intune
 
@@ -60,7 +60,7 @@ Information om andra slutanvändaraktiviteter finns i de här artiklarna:
 
 ## <a name="company-owned-macos-devices"></a>Företagsägda macOS-enheter
 Intune har stöd för följande registreringsmetoder för macOS-enheter som ägs av företaget, i organisationer som köper enheter till sina användare:
-- [Apples program för enhetsregistrering (DEP)](device-enrollment-program-enroll-macos.md): Företag kan köpa macOS-enheter via Apples program för enhetsregistrering (DEP). Med DEP kan du distribuera en registreringsprofil ”over-the-air” för att hantera enheter.
+- [Automatisk enhetsregistrering för Apple (ADE)](device-enrollment-program-enroll-macos.md): Organisationer kan köpa macOS-enheter via ADE. Med ADE kan du distribuera en registreringsprofil ”over-the-air” för att hantera enheter.
 - [Enhetsregistreringshanteraren (DEM)](device-enrollment-manager-enroll.md): Du kan använda ett DEM-konto till att registrera upp till 1 000 enheter.
 
 ## <a name="block-macos-enrollment"></a>Blockera macOS-registrering

@@ -17,12 +17,12 @@ ms.reviewer: spshumwa
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f102daeab975bbbf0a618d1a5d642c84f52edba
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 077d7c4dd345b9b16677d61269b9f331dedb4dbb
+ms.sourcegitcommit: d601f4e08268d139028f720c0a96dadecc7496d5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79344499"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80488087"
 ---
 # <a name="bulk-enrollment-for-windows-devices"></a>Massregistrering för Windows-enheter
 
@@ -61,11 +61,13 @@ Azure AD-användare är standardanvändare på enheterna och kan ta emot de till
 7. Ange dina Azure AD-autentiseringsuppgifter för att kunna hämta en masstoken.
    ![Skärmbild över att logga in i Windows Configuration Designer-appen](./media/windows-bulk-enroll/bulk-enroll-cred.png)
 
-8. Klicka på **Nästa** när **Masstoken** har hämtats.
+8. I **Använd det här kontot överallt på den här enheten** väljer du **Endast den här appen**.
 
-9. Du kan också **Lägga till program** och **Lägga till certifikat**. Dessa appar och certifikat är konfigurerade på enheten.
+9. Klicka på **Nästa** när **Masstoken** har hämtats.
 
-10. Du kan också lösenordsskydda ditt konfigurationspaket.  Klicka på **Skapa**.
+10. Du kan också **Lägga till program** och **Lägga till certifikat**. Dessa appar och certifikat är konfigurerade på enheten.
+
+11. Du kan också lösenordsskydda ditt konfigurationspaket.  Klicka på **Skapa**.
     ![Skärmbild över paketskydd i Windows Configuration Designer-appen](./media/windows-bulk-enroll/bulk-enroll-create.png)
 
 ## <a name="provision-devices"></a>Konfigurera enheter

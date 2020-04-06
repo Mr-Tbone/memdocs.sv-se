@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f58c20731395c95e532e28165553743fdef701e9
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 7686be29b819d29aa39ed12d558780dde9bf4159
+ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80083561"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80401374"
 ---
 # <a name="review-client-app-protection-logs"></a>Granska loggarna för klientappskydd
 
@@ -33,6 +33,9 @@ Processen för att aktivera och samla in loggar varierar efter plattform:
 - **iOS/iPadOS-enheter** – Använd Microsoft Edge för iOS/iPadOS för att samla in loggar. Mer information finns i [Hantera webbåtkomst med Microsoft Edge med Microsoft Intune](manage-microsoft-edge.md#use-microsoft-edge-to-access-managed-app-logs). 
 - **Windows 10-enheter** – Använd *MDMDiag* och händelseloggar. Se [Diagnostisera MDM-fel i Windows 10](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) i Windows-klientens hanteringsinnehåll och bloggen [Felsökning av Windows 10 vid Intune-principfel](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/).
 - **Android-enheter** – Använd Microsoft Edge för Android för att samla in loggar. Mer information finns i [Hantera webbåtkomst med Microsoft Edge med Microsoft Intune](manage-microsoft-edge.md#use-microsoft-edge-to-access-managed-app-logs). 
+
+  > [!Note]
+  > På fullständigt hanterade Android-enheter kan i vissa fall Intune-företagsportalappen visas under alla appar. Detta kan inträffa när en app som är associerad med en appskyddsprincip inte har installerats eller inte har startats. 
 
 I följande tabell visas namnet på appskyddsprincipen och de värden som stöds och som sparas i loggen. Dessutom identifierar varje inställning principinställningen som finns i Microsoft Endpoint Manager-portalen. Detaljerad information om varje inställning finns i [Inställningar för iOS/iPadOS-appskyddsprinciper](app-protection-policy-settings-ios.md).
 

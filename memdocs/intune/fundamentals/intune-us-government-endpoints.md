@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 149a1dba78b32f2d59884fbb5b69ed58f4c0fccd
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 97298bba752f4af29c9dc7c2483c324cbd77a6bc
+ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79358773"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80438776"
 ---
 # <a name="us-government-endpoints-for-microsoft-intune"></a>Slutpunkter för amerikanska myndigheter för Microsoft Intune
 
@@ -51,6 +51,7 @@ I följande tabeller visas de portar och tjänster som Intune-klienten har åtko
 - Azure-portalen: https:\//portal.azure.us/ 
 - Office 365: https:\//portal.office365.us/ 
 - Intune-företagsportalen: https:\//portal.manage.microsoft.us/ 
+- Administrationscenter för Microsoft Endpoint Manager: https:\//endpoint.microsoft.us/
 
 ## <a name="partner-service-endpoints-that-intune-depends-on"></a>Partnertjänstslutpunkter som Intune är beroende av:
 - AAD Sync Service: https:\//syncservice.gov.us.microsoftonline.com/DirectoryService.svc

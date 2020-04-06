@@ -1,12 +1,12 @@
 ---
 title: Appskyddsprincip för Windows Information Protection (WIP)
 titleSuffix: Microsoft Intune
-description: Skapa och distribuera en WIP-appskyddsprincip med Microsoft Intune
+description: Skapa och distribuera en WIP-princip (Windows Information Protection) med Microsoft Intune
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/26/2020
+ms.date: 03/25/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ea664594744facd36f3f92900a1e80c48053904
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 6e7305d33b1c40c2624c5c860f59922a5817c818
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79345695"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326109"
 ---
-# <a name="create-and-deploy-windows-information-protection-wip-app-protection-policy-with-intune"></a>Skapa och distribuera en WIP-appskyddsprincip med Intune
+# <a name="create-and-deploy-windows-information-protection-wip-policy-with-intune"></a>Skapa och distribuera en WIP-princip (Windows Information Protection) med Intune
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Du kan använda appskyddsprinciper med Windows 10-appar för att skydda appar utan enhetsregistrering.
+Du kan använda WIP-principer med Windows 10-appar för att skydda appar utan enhetsregistrering.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -49,10 +49,10 @@ Du måste känna till några grundläggande begrepp när du lägger till en WIP-
 
 ## <a name="prerequisites"></a>Krav
 
-Du måste konfigurera MAM-providern innan du kan skapa en WIP-appskyddsprincip. Läs mer i [Konfigurera din MAM-provider med Intune](app-protection-policies-configure-windows-10.md).  
+Du måste konfigurera MAM-providern innan du kan skapa en WIP-princip. Läs mer i [Konfigurera din MAM-provider med Intune](app-protection-policies-configure-windows-10.md).  
 
 > [!IMPORTANT]
-> RIA stöder inte multi-identitet. Det kan bara finnas en hanterad identitet åt gången.
+> RIA stöder inte multi-identitet. Det kan bara finnas en hanterad identitet åt gången. Mer information om funktioner och begränsningar i WIP finns i [Skydda företagsdata med Windows informationsskydd](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
 
 Du måste dessutom ha följande licens och uppdatering:
 
@@ -63,7 +63,7 @@ Du måste dessutom ha följande licens och uppdatering:
 
 
 
-## <a name="to-add-a-wip-app-protection-policy"></a>Lägga till en WIP-appskyddsprincip
+## <a name="to-add-a-wip-policy"></a>Lägga till en RIA-princip
 
 När du konfigurerar Intune i din organisation kan du skapa en WIP-specifik princip.
 
@@ -76,7 +76,7 @@ När du konfigurerar Intune i din organisation kan du skapa en WIP-specifik prin
 3. Lägg till följande värden:
     - **Namn:** Skriv ett namn (obligatoriskt) för den nya principen.
     - **Beskrivning:** (Valfritt) Ge en beskrivning.
-    - **Plattform:** Välj **Windows 10** som den plattform som stöds för din appskyddsprincip.
+    - **Plattform:** Välj **Windows 10** som den plattform som stöds för din WIP-princip.
     - **Registreringsstatus:** Välj **Utan registrering** som din princips registreringsstatus.
 4. Välj **Skapa**. Principen skapas och visas i tabellen i fönstret **Appskyddsprinciper**.
 

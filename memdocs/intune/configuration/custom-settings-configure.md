@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2020
+ms.date: 03/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6122f4624cc40152184c1c460afa6a7a39976063
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: c96de75557a4817f4e5f034689faecf7374cfe3f
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80083993"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359440"
 ---
 # <a name="create-a-profile-with-custom-settings-in-intune"></a>Skapa en profil med anpassade inställningar i Intune
 
@@ -38,20 +38,26 @@ Den här artikeln visar hur du skapar en anpassad profil för Android-enhetsadmi
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+    - **Plattform**: Välj plattform för dina enheter. Alternativen är:  
+
+        - **Android-enhetsadministratör**
+        - **Android enterprise**
+        - **iOS/iPadOS**
+        - **macOS**
+        - **Windows 10 och senare**
+        - **Windows Phone 8.1**
+
+    - **Profil**: Välj **Anpassad**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
     - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Exempel på ett bra principnamn: **Windows 10: Anpassad profil som aktiverar AllowVPNOverCellular anpassad OMA-URI**.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj plattform för dina enheter. Alternativen är:
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
 
-      - **Android-enhetsadministratör**
-      - **Android enterprise**
-      - **iOS/iPadOS**
-      - **macOS**
-      - **Windows 10 och senare**
-      - **Windows 8.1 och senare**
+6. Välj **Nästa**.
 
-    - **Profiltyp**: Välj **Anpassad**.
-
-4. Inställningarna skiljer sig åt för de olika plattformarna. Om du vill se inställningarna för en viss plattform väljer du din plattform:
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
 
     - [Android-enhetsadministratör](custom-settings-android.md)
     - [Android enterprise](custom-settings-android-for-work.md)
@@ -61,10 +67,24 @@ Den här artikeln visar hur du skapar en anpassad profil för Android-enhetsadmi
     - [Windows Holographic for Business](custom-settings-windows-holographic.md)
     - [Windows Phone 8.1](custom-settings-windows-phone-8-1.md)
 
-5. När du är klar väljer du **Skapa profil** > **Skapa**.
+8. Välj **Nästa**.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
 
-Profilen skapas och visas i profillistan (**Enhetskonfiguration** > **Profiler**).
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
+## <a name="example"></a>Exempel
+
+I följande exempel är inställningen **Connectivity/AllowVPNOverCellular** aktiverad. Med den här inställningen kan en Windows 10-enhet öppna en VPN-anslutning vid användning av ett mobilnät.
+
+> [!div class="mx-imgBorder"]
+> ![Exempel på en anpassad princip som innehåller VPN-inställningar i Intune och Endpoint Manager](./media/custom-settings-configure/custom-policy-example.png)
 
 ## <a name="next-steps"></a>Nästa steg
 
-När profilen har skapats är den klar att tilldelas. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+Profilen skapas, men den kanske inte gör något än. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).

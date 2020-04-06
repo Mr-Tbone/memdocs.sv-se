@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d391bf08d963e26dd91607d7dad0347e77d130ed
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 52d69b851b67d0a230e71d8aaa6b60b5cb7b2b8d
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79361945"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80325693"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>Så här hanterar du iOS- och MacOS-appar som har köpts via ett Apples volymköpsprogram med Microsoft Intune
 
@@ -88,7 +88,7 @@ Migrera befintligt inköpt VPP-innehåll och token till appar och böcker i Appl
 2. Se till att alla VPP-inköpare i din organisation har slutfört steg 1 innan du fortsätter.
 3. Kontrollera att alla inköpta appar och licenser har migrerats till appar och böcker i Apple Business Manager eller Apple School Manager.
 4. Ladda ned en ny platstoken genom att gå till **Apple Business (eller School) Manager** > **Inställningar** > **Appar och böcker** > **Mina servertoken**.
-5. Uppdatera platstoken i administrationscentret för Microsoft Endpoint Manager genom att gå till **Klientadministration** > **Anslutningar och token** > **Apple VPP-token** och synkronisera token.
+5. Uppdatera platstoken i administrationscentret för Microsoft Endpoint Manager genom att gå till **Administration av klientorganisation** > **Anslutning och token** > **Apple VPP-token** och synkronisera token.
 
 ## <a name="upload-an-apple-vpp-or-location-token"></a>Överför en Apple VPP-token eller platstoken
 

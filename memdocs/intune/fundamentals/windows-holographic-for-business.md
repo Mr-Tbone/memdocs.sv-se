@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 03/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f8a15199f599cf0fd4f90ea965bcc3e668f3b27
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 44cae6e1e7fdd310a6053cbcb6f19371263d0161
+ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79354418"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80326628"
 ---
 # <a name="manage-and-use-different-device-management-features-on-windows-holographic-and-hololens-devices-with-intune"></a>Hantera och använda olika enhetshanteringsfunktioner på Windows Holographic- och HoloLens-enheter med Intune
 
@@ -107,7 +107,7 @@ Med Intune kan du skapa enhetskategorier som automatiskt lägger till enheter i 
 
 ## <a name="device-configuration-profiles"></a>Enhetens konfigurationsprofiler
 
-**[Kom igång med konfigurationsprofiler](../configuration/device-profiles.md) och [skapa din egen profil](../configuration/device-profile-create.md)**
+**[Kom igång med konfigurationsprofiler](../configuration/device-profiles.md) och [profilöversikt](../configuration/device-profile-create.md)**
 
 Intune innehåller inställningar och funktioner som du kan aktivera eller inaktivera på olika enheter i din organisation. Dessa inställningar och funktioner hanteras med hjälp av profiler. Du kan till exempel skapa en profil som aktiverar Cortana eller använder Microsoft Defender SmartScreen på enheter som kör Windows Holographic for Business.
 

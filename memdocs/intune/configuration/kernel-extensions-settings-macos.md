@@ -6,26 +6,25 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 09/10/2019
+ms.date: 03/24/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
+ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa471beb5929a6c5b39267871518f560fe6978f6
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 2e18fad8f1112681a62bcdacd63c652cfd4ad3ac
+ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79343433"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80359295"
 ---
 # <a name="macos-device-settings-to-configure-and-use-kernel-extensions-in-intune"></a>macOS-enhetsinställningar för att konfigurera och använda kerneltillägg i Intune
-
-
 
 I den här artikeln beskrivs de olika inställningar för kerneltillägg som du kan kontrollera på macOS-enheter. I din MDM-lösning (hantering av mobilenheter) använder du dessa inställningar när du lägger till och hanterar kerneltillägg på dina enheter.
 
@@ -44,7 +43,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-user-approved-automated-device-enrollment"></a>Inställningarna gäller för: Användargodkänd, automatisk enhetsregistrering
 
-- **Tillåt användaråsidosättningar**: Med **Tillåt** kan användare godkänna kerneltillägg som inte ingår i konfigurationsprofilen. **Inte konfigurerad** (standard) förhindrar användare från att tillåta tillägg som inte ingår i konfigurationsprofilen. Det innebär att endast tillägg som ingår i konfigurationsprofilen tillåts.
+- **Tillåt användaråsidosättningar**: Med **Tillåt** kan användare godkänna kerneltillägg som inte ingår i konfigurationsprofilen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att användare tillåter tillägg som inte ingår i konfigurationsprofilen. Det innebär att endast tillägg som ingår i konfigurationsprofilen tillåts.
 
   Mer information om den här funktionen finns i [Användargodkänd inläsning av kerneltillägg](https://developer.apple.com/library/archive/technotes/tn2459/_index.html) (öppnar Apples webbplats).
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/23/2020
+ms.date: 03/30/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71e8b874e50fc1300124d748dfb70963acae089b
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: 237e281b88492ff7b7e1b5614600662e15761935
+ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220106"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80407830"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningar för Windows 10 (och senare) för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -208,7 +208,9 @@ De här inställningarna använder [CSP för upplevelseprincip](https://docs.mic
   Den här principinställningen gäller inte om datorn är Azure AD-ansluten och automatisk registrering har aktiverats.
 
 - **Manuell installation av rotcertifikat** (endast mobil): **Blockera** hindrar slutanvändare från att manuellt installera rotcertifikat och mellanliggande CAP-certifikat. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
-- **Kamera**: **Blockera** hindrar slutanvändare från att använda kameran på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Kamera**: **Blockera** hindrar slutanvändare från att använda kameran på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till enhetens kamera.
+
+  Intune hanterar endast åtkomst till enhetens kamera. Programmet har inte åtkomst till bilder eller videor.
 
   [CSP för kamera](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-camera)
 
