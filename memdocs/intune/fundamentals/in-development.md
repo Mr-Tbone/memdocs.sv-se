@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 04/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a807a90cdca18d79e7b92b4efeb56d341da2596
-ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
+ms.openlocfilehash: 3f53096f25b4bb05b80d11246ac2fa01486f6e42
+ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438716"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80808158"
 ---
 # <a name="in-development-for-microsoft-intune---april-2020"></a>Under utveckling för Microsoft Intune – april 2020
 
@@ -87,16 +87,6 @@ En ny konfigurationsprofil för macOS-enheter kommer att bli tillgänglig, som k
 
 Gäller för:
 - macOS
-
-### <a name="improved-user-interface-experience-when-creating-configuration-profiles-on-iosipados-and-macos-devices---5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984----"></a>Förbättrat användargränssnitt när du skapar konfigurationsprofiler på iOS/iPadOS- och macOS-enheter<!-- 5569008-5569039-5569057-5569110-5569116-5569131-5569139-5569153-5859984  -->
-När du skapar en profil för iOS/iPadOS- eller macOS-enheter uppdateras funktionen i administrationscentret för slutpunktshantering. Den här ändringen påverkar följande enhetskonfigurationsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS** eller **macOS** för plattformen):
-
-- Anpassad: iOS/iPadOS, macOS
-- Enhetsfunktioner: iOS/iPadOS, macOS
-- Enhetsbegränsningar: iOS/iPadOS, macOS
-- Slutpunktsskydd: macOS
-- Tillägg: macOS
-- Inställningsfil: macOS
 
 ### <a name="device-configuration-profile-settings-and-values-will-be-updated-for-windows-platforms---4091122---"></a>Inställningar och värden för enhetskonfigurationsprofiler kommer att uppdateras för Windows-plattformar<!-- 4091122 -->
 När du skapar enhetskonfigurationsprofiler för Windows-plattformar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > valfritt **Windows**-alternativ för plattform) kommer vissa inställningar och deras värden att skilja sig från molnlösningsleverantören och kan vara svåra att förstå. Inställningsnamn och deras värden kommer att uppdateras så att de blir tydligare.

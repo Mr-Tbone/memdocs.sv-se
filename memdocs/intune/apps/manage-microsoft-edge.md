@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b25d5439aa9d0842cbbee24b5e8759d00f371d4b
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: 58e651849632fd06f962edfc90649ad14eeaeda0
+ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407710"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696546"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Hantera webbåtkomst med Microsoft Edge med Microsoft Intune
 
@@ -367,14 +367,14 @@ Om din organisation arbetar inom en starkt reglerad bransch eller använder per 
 
 |    Tangent    |    Värde    |
 |-----------|-------------|
-|    `com.microsoft.intune.mam.managedbrowser.disableFeatures`    |    Värdet **inprivate** inaktiverar InPrivate-surfning.   |
+|    `com.microsoft.intune.mam.managedbrowser.disabledFeatures`    |    Värdet **inprivate** inaktiverar InPrivate-surfning.   |
 
 ### <a name="restrict-microsoft-edge-use-to-allowed-accounts-only"></a>Begränsa Microsoft Edge-användningen till endast tillåtna konton
 
 Förutom att blockera InPrivate- och MSA-surfning kan du välja att endast tillåta användning av Microsoft Edge när användaren är inloggad med sitt AAD-konto. Den här funktionen är endast tillgänglig för MDM-registrerade enheter. Här kan du lära dig mer om hur du konfigurerar den här inställningen:
 
 >[!NOTE]
-> `com.microsoft.intune.mam.managedbrowser.disableFeatures` kan användas för att inaktivera flera funktioner samtidigt. Om du till exempel vill inaktivera både InPrivate och lösenord använder du `inprivate| password`.
+> `com.microsoft.intune.mam.managedbrowser.disabledFeatures` kan användas för att inaktivera flera funktioner samtidigt. Om du till exempel vill inaktivera både InPrivate och lösenord använder du `inprivate|password`.
 
 ## <a name="configure-microsoft-edge-as-a-kiosk-app-on-android-devices"></a>Konfigurera Microsoft Edge som en kioskapp på Android-enheter
 

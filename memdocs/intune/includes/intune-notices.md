@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 0b3af293ebc83c14f85abeb0dbaa38ca5187b267
-ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
+ms.openlocfilehash: 7fe4f5241fe0cea70bd77fcdd559cfca909598a8
+ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438701"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80808179"
 ---
 Dessa meddelanden innehåller viktig information som kan hjälpa dig att förbereda dig för framtida ändringar och funktioner i Intune.
 
@@ -67,3 +67,26 @@ Stöd för hantering av äldre datorer upphör den 15 oktober 2020. Uppgradera d
 [Läs mer](https://go.microsoft.com/fwlink/?linkid=2107122)
 
 
+### <a name="decreasing-support-for-android-device-administrator--5857738--"></a>Minskat stöd för Android-enhetsadministratör<!--5857738-->
+Android-enhetsadministratören (kallas ibland för ”äldre” Android-hantering och lanserades med Android 2.2) är ett sätt att hantera Android-enheter. Det finns dock en bättre hanteringsfunktion med [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (lanseras med Android 5.0). För att kunna flytta till en modern, mer omfattande och säkrare enhetshantering,minskar Google stödet för enhetsadministration i nya versioner av Android.
+
+#### <a name="how-does-this-affect-me"></a>Hur påverkar det här mig?
+På grund av dessa ändringar av Google kommer Intune-användare att påverkas på följande sätt:  
+- Intune kommer bara att kunna erbjuda fullt stöd för enhetsadministratörshanterade Android-enheter som kör Android 10 och senare till och med andra kvartalet 2020. Enheter med Android 10 eller senare som hanteras av enhetsadministratörer efter denna tidpunkt kommer inte längre att kunna hanteras fullt ut. Det innebär exempelvis att berörda enheter inte får de nya lösenordskraven.
+    - Samsung KNOX-enheter kommer inte att påverkas av denna tidsram, eftersom utökad support tillhandahålls via Intunes integrering med KNOX-plattformen. Detta ger dig mer tid att planera övergången från enhetsadministratörernas hantering.    
+- Android-enheter som hanteras av en enhetsadministratör som blir kvar på tidigare versioner av Android än Android 10 påverkas inte och kan fortfarande hanteras av en enhetsadministratör.    
+- För alla enheter med Android 10 och senare har Google begränsat möjligheten för hanteringsagenter för enhetsadministratören, t.ex. företagsportalen, att komma åt information om enhetsidentifierare. Den här begränsningen påverkar följande Intune-funktioner när enheten uppdateras till Android 10 eller senare:  
+    - Nätverksåtkomstkontroll för VPN fungerar inte längre.   
+    - Om enheter identifieras som företagsägda med IMEI eller serienummer markeras de inte automatiskt som företagsägda.  
+    - IMEI och serienumret kommer inte längre att vara synligt för IT-administratörer i Intune. 
+        > [!NOTE]
+        > Detta påverkar endast enheter som hanteras av enhetsadministratören på Android 10 och senare och påverkar inte enheter som hanteras som Android Enterprise. 
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Vad kan jag göra för att förbereda mig för den här ändringen?
+För att undvika den minskade funktionaliteten i tredje kvartalet 2020, rekommenderar vi följande:
+- Publicera inte nya enheter för hantering av enhetsadministratören.
+- Om en enhet väntar på en Android 10-uppdatering kan du migrera den från enhetsadministratörshantering till Android Enterprise-hantering och/eller appskyddsprinciper.
+
+#### <a name="additional-information"></a>Ytterligare information
+- [Googles vägledning för migrering från enhetsadministratören till Android Enterprise](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
+- [Googles dokumentation om tillbakadragningen av API:et för enhetsadministratören](https://developers.google.com/android/work/device-admin-deprecation)

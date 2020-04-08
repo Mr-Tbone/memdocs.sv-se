@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: 82872ba6-80f8-4cc9-adf4-0ccd8ff26dd2
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8a38ad4cf8aa9186bfbd061c5463d36e93c116c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 1d08b058303d70188c89d3ded989d4d3864b318f
+ms.sourcegitcommit: 012947b2095979ceb4e9c9f698e9c32f46baa7d8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79351467"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80525197"
 ---
 # <a name="integrate-pradeo-mobile-threat-defense-with-intune"></a>Integrera Pradeo Mobile Threat Defense med Intune
 
@@ -64,7 +64,7 @@ Processen för Pradeo-appauktorisering består av följande:
 
 ## <a name="to-set-up-pradeo-integration"></a>Så konfigurerar du Pradeo-integrering
 
-1. Gå till [Pradeo Security-konsolen](https://www.apps-security.com) och logga in med dina autentiseringsuppgifter.
+1. Gå till [Pradeo Security-konsolen](https://www.pradeo-security.com) och logga in med dina autentiseringsuppgifter.
 
 2. Välj **Administration - Enterprise Mobility Management** (Administration – mobilitetshantering i företaget) på menyn.
 

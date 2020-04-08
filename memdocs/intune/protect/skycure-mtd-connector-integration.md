@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 211db029b681a933b1ac018a070ca3c3d55d67a9
-ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
+ms.openlocfilehash: 0810205e1b1e8b349d074560ec589b10e85443f1
+ms.sourcegitcommit: 012947b2095979ceb4e9c9f698e9c32f46baa7d8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79526503"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80525226"
 ---
 # <a name="set-up-symantec-endpoint-protection-mobile-integration-with-intune"></a>Konfigurera Symantec Endpoint Protection Mobile-integrering med Intune
 
@@ -40,7 +40,7 @@ Utför följande steg om du vill integrera lösningen Symantec Endpoint Protecti
 - Azure AD-kontot måste vara ett globalt administratörskonto för att utföra integrationen.
 ### <a name="network-setup"></a>Nätverkskonfiguration
 
-Du kan kontrollera att nätverket har konfigurerats korrekt för integrering med SEP Mobile-installationen genom att läsa Symantec-artikeln [Konfigurera SEP-hanteraren efter installationen](http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/14-2-x/Getting_Started_with_Symantec_Endpoint_Protection__1/installing-with-a-custom-configuration-v116874998-d3814e1541.html).
+Du kan kontrollera att nätverket har konfigurerats korrekt för integrering med SEP Mobile-installationen genom att läsa Symantec-artikeln [Konfigurera SEP-hanteraren efter installationen](http://techdocs.broadcom.com/content/broadcom/techdocs/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/Managing_a_Custom_Installation_3/Planning_the_Installation_0/network-architecture-considerations-v19543152-d23e65.html).
 
 ### <a name="full-integration-vs-read-only"></a>Fullständig integrering resp. Skrivskyddad
 
