@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/27/2020
+ms.date: 04/01/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b877587e8eb50019086e2296d7cc5b7e900da62a
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: f77fb3b93c2600bf422aa95af267abc3e64ae7ee
+ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323794"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80551351"
 ---
 # <a name="selectively-wipe-data-using-app-protection-policy-conditional-launch-actions-in-intune"></a>Rensar data selektivt med villkorsstyrda startåtgärder för appskyddsprinciper i Intune
 
@@ -59,7 +59,7 @@ För iOS/iPadOS kan du konfigurera åtgärder för följande inställningar med 
 - Enhetsmodell(er)
 - Högsta tillåtna hotnivå för enhet
 
-Om du vill använda inställningen **Enhetsmodell(er)** anger du en semikolonavgränsad lista med iOS/iPadOS-modellidentifierare. De här värdena är inte skiftlägeskänsliga. Förutom i Intune-rapportering av indata för enhetsmodellerna kan du hitta en identifierare för iOS/iPadOS-modeller i kolumnen Enhetstyp i [dokumentationen om HockeyApp-stöd](https://support.hockeyapp.net/kb/client-integration-ios-mac-os-x-tvos/ios-device-types) eller på den här [GitHub-lagringsplatsen från tredje part](https://gist.github.com/adamawolf/3048717).<br>
+Om du vill använda inställningen **Enhetsmodell(er)** anger du en semikolonavgränsad lista med iOS/iPadOS-modellidentifierare. De här värdena är inte skiftlägeskänsliga. Förutom i Intune-rapporteringen av indata för enhetsmodellerna, kan du hitta en identifierare för iOS/iPadOS-modeller i kolumnen Enhetstyp på den här [GitHub-lagringsplatsen från tredje part](https://gist.github.com/adamawolf/3048717).<br>
 Exempel på indata: *iPhone5,2;iPhone5,3*
 
 På slutanvändarens enheter kan Intune-klienten utföra åtgärder baserat på en enkel matchning av enhetsmodellsträngar som angetts i Intune för programskyddsprinciper. Matchningen beror helt på vad enheten rapporterar. Du (IT-administratören) uppmuntras säkerställa att det avsedda beteendet fungerar genom att testa den här inställningen baserat på en rad olika enhetstillverkare och modeller som är riktade till en liten användargrupp. Standardvärdet är **Inte konfigurerat**.<br>

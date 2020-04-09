@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5937cd09a5224933004233b8d4efe8a0e47155f3
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: 8f9212d275b17db6a40e3133b5363cd13c9d13d6
+ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80359379"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80551428"
 ---
 # <a name="add-macos-kernel-extensions-in-intune"></a>Lägg till macOS kernel-tillägg i Intune
 
@@ -68,6 +68,9 @@ Den här artikeln beskriver hur du skapar en enhetskonfigurationsprofil med hjä
 >
 > - [Notarisera din app före distribution](https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution) (öppnar Apple-webbplatsen) 
 > - [Förbered för ändringar av kerneltillägg i macOS High Sierra](https://support.apple.com/en-us/HT208019) (öppnar Apple-webbplatsen)
+
+> [!NOTE]
+> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="create-the-profile"></a>Skapa profilen
 

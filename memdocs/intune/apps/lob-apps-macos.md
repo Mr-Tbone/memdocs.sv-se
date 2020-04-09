@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/23/2020
+ms.date: 03/31/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e798d579341a841d25bea9abb416367fac15c2b
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 6dad4dffba0efadcca0ea5eb7d61960bec1b3f8e
+ms.sourcegitcommit: 0907ee1137773f0482b1d2b9bb344e206d05aede
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324052"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80536825"
 ---
 # <a name="how-to-add-macos-line-of-business-lob-apps-to-microsoft-intune"></a>Lägga till verksamhetsspecifika appar för macOS i Microsoft Intune
 
@@ -65,8 +65,8 @@ Du måste hämta ett externt verktyg, markera det hämtade verktyget som en kör
     - `IntuneAppUtil -h`<br>
     Det här kommandot visar användningsinformation för verktyget.
     
-    - `IntuneAppUtil -c <source_file> -o <output_file> [-v]`<br>
-    Det här kommandot kommer att omsluta den verksamhetsspecifika *.pkg*-filen till en *.intunemac*-fil.
+    - `IntuneAppUtil -c <source_file> -o <output_directory_path> [-v]`<br>
+    Det här kommandot kommer att se till att den verksamhetsspecifika *. pkg*-appfilen som finns i `<source_file>` omsluts av *. intunemac*-filen med samma namn och placeras i den mapp som `<output_directory_path>` pekar mot.
     
     - `IntuneAppUtil -r <filename.intunemac> [-v]`<br>
     Det här kommandot extraherar identifierade parametrar och version för den skapade *.intunemac*-filen.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c8c521dc0899b3429de85e95116a6277d724771
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 6f16c39ff0af44918099863be5d23ec9fe564493
+ms.sourcegitcommit: 954b3aae7916ad14065e6e86a577c5205103a50e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80327281"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80624919"
 ---
 # <a name="move-android-devices-from-device-administrator-to-work-profile-management"></a>Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering
 
@@ -65,8 +65,8 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
 
 
     I e-postmeddelandet kan du ta med URL:en nedan i dina meddelanden till användarna. URL:en startar Android Företagsportal på sidan **Uppdatera enhetsinställningar**. Den här sidan startar deras flöde för att flytta till arbetsprofilhantering.
-    - [https://portal.manage.microsoft.com/UpdateSettings.aspx](https://portal.manage.microsoft.com/UpdateSettings.aspx).
-    - För amerikanska myndigheter kan du använda den här länken i stället: [https://portal.manage.microsoft.us/UpdateSettings.aspx](https://portal.manage.microsoft.us/UpdateSettings.aspx).
+    - `https://portal.manage.microsoft.com/UpdateSettings.aspx`.
+    - För amerikanska myndigheter kan du använda den här länken i stället: `https://portal.manage.microsoft.us/UpdateSettings.aspx`.
   
     > [!NOTE]
     > - Naturligtvis kan du använda användarvänlig hypertext för länkarna i kommunikationen med användarna. Använd dock inte URL-förkortare eftersom länkarna kanske inte fungerar om de ändras på det sättet.

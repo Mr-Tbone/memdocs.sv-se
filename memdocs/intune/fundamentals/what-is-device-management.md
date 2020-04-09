@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: microsoft-intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 756d835a54a9b020be50a83d95d1925334fda8f1
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 32e5d053b6dd579aad25a268604248d4fb5a6072
+ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80326650"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696478"
 ---
 # <a name="device-management-overview"></a>Översikt över enhetshantering
 
@@ -76,7 +76,7 @@ En viktig uppgift i en enhetshanteringslösning är att tillhandahålla säkerhe
 
 Det finns ett par olika metoder att hantera enheter på. Du kan hantera olika enhetsaspekter med hjälp av de inbyggda funktionerna i Intune. Den här metoden kallas för **hantering av mobilenheter (MDM)** . Användare ”registrerar” sina enheter och använder certifikat för att kommunicera med Intune. Som IT-administratör kan du push-överföra appar till enheter, begränsa enheter till ett specifikt operativsystem, blockera personliga enheter och mycket annat. Om du tappar bort en enhet eller om den blir stulen kan du dessutom ta bort alla data från enheten.
 
-I den andra metoden hanterar du appar på enheter. Den här metoden kallas för **hantering av mobilprogram (MAM)** . Användarna kan använda sina personliga enheter för att få åtkomst till företagsresurser. När användarna öppnar en app, t.ex. e-post eller SharePoint, uppmanas de att autentisera sig ytterligare. Om du tappar bort en enhet eller om den blir stulen kan du ta bort alla företagsdata från enheten.
+I den andra metoden hanterar du appar på enheter. Den här metoden kallas för **hantering av mobilprogram (MAM)** . Användarna kan använda sina personliga enheter för att få åtkomst till företagsresurser. När användarna öppnar en app, t.ex. e-post eller SharePoint, uppmanas de att autentisera sig ytterligare. Om du tappar bort en enhet eller om den blir stulen kan du ta bort alla organisationens data från de Intune-hanterade programmen.
 
 Du kan också använda en kombination av [MDM och MAM](byod-technology-decisions.md).
 

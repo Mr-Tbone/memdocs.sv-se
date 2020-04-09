@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e83077561ec4492feaf14789cf339e0b3ee86e2
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: 9cb8cea30b53c5619580b289f73529668d71e909
+ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80359320"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80551497"
 ---
 # <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Lägg till en fil med egenskapslista på macOS-enheter med Microsoft Intune
 
@@ -43,6 +43,9 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 - Om du inte är säker på hur du anger en appnyckel så ändrar du inställningen i appen. Granska sedan appens inställningsfil med [Xcode](https://developer.apple.com/xcode/) för att se hur inställningen har konfigurerats. Apple rekommenderar att du tar bort inställningar som inte går att hantera med Xcode innan du importerar filen.
 - Endast vissa appar fungerar med hanterade inställningar och de kanske inte tillåter att du hanterar alla inställningar.
 - Se till att ladda upp filer med egenskapslistor som riktas mot enhetskanalinställningarna och inte användarkanalinställningarna. Filer med egenskapslistor riktas mot hela enheten.
+
+> [!NOTE]
+> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="create-the-profile"></a>Skapa profilen
 

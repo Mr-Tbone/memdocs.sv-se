@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/12/2020
+ms.date: 04/02/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c08e0a967d18aaa7defb8e7b180a60f68c1b92c
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: ee632901162042f7d777043e6700b796b4badf58
+ms.sourcegitcommit: 9145a5b3b39c111993e8399a4333dd82d3fe413c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407803"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80620616"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Fristående Intune – Win32-apphantering
 
@@ -33,7 +33,7 @@ ms.locfileid: "80407803"
 > Den här funktionen för apphantering har stöd för både 32-bitars och 64-bitars operativsystemarkitektur för Windows-program.
 
 > [!IMPORTANT]
-> När du distribuerar Win32-appar bör du överväga att endast använda [tillägget för Intune-hantering](../apps/intune-management-extension.md), särskilt om du har ett Win32-installationsprogram för flera filer. Om du blandar installationen av Win32-appar och verksamhetsspecifika appar under autopilotregistreringen, kan det hända att appen inte kan installeras.  
+> När du distribuerar Win32-appar bör du överväga att endast använda [Intune-hanteringstillägget](../apps/intune-management-extension.md), särskilt om du har ett Win32-installationsprogram för flera filer. Om du blandar installationen av Win32-appar och verksamhetsspecifika appar under autopilotregistreringen, kan det hända att appen inte kan installeras. Intune-hanteringstillägget installeras automatiskt när ett PowerShell-skript eller en Win32-app tilldelas till användaren eller enheten.
 
 ## <a name="prerequisites"></a>Krav
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30bf5ba078029e35988d3531ee510d9db6c6cdb8
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: cb8d5b53e136ea22d1edbad7755e198fd4155285
+ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80359471"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80551394"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -37,6 +37,9 @@ Intune innehåller många funktioner och inställningar som hjälper administrat
 Intune använder ”konfigurationsprofiler” till att skapa och anpassa inställningarna efter din organisations behov. När du har lagt till dessa funktioner i en profil, kan du skicka eller distribuera profilen till iOS/iPadOS- och macOS-enheter i din organisation.
 
 Den här artikeln beskriver de olika funktioner som du kan konfigurera och visar hur du skapar en profil för enhetskonfigurationen. Artikeln innehåller även alla tillgängliga inställningar för [iOS/iPadOS](ios-device-features-settings.md)- och [macOS](macos-device-features-settings.md)-enheter.
+
+> [!NOTE]
+> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="airprint"></a>AirPrint
 

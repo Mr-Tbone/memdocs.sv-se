@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/26/2020
+ms.date: 04/02/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 52d69b851b67d0a230e71d8aaa6b60b5cb7b2b8d
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: ef23854fd3fee0883f6f91415a40ebbcc1b3c240
+ms.sourcegitcommit: 9145a5b3b39c111993e8399a4333dd82d3fe413c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80325693"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80620583"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>Så här hanterar du iOS- och MacOS-appar som har köpts via ett Apples volymköpsprogram med Microsoft Intune
 
@@ -46,15 +46,15 @@ En platstoken kallas även VPP-token. Den här typen av token används för att 
 ## <a name="how-are-purchased-apps-licensed"></a>Hur licensieras köpta appar?
 Grupper kan tilldelas köpta appar med två typer av licenser som Apple erbjuder för iOS/iPadOS- och macOS-enheter.
 
-|   | Enhetslicensiering | Användarlicensiering |
-|-----|------------------|----------------|
-| **App Store-inloggning** | Krävs inte. | Varje slutanvändare måste använda ett unikt Apple-ID när hen uppmanas att logga in till App Store. |
-| **Enhetskonfigurationen blockerar åtkomst till App Store** | Appar kan installeras och uppdateras med hjälp av företagsportalen. | Inbjudan att ansluta till Apple VPP kräver åtkomst till App Store. Om du har angett en princip för att inaktivera App Store, så fungerar inte användarlicensieringen för VPP-appar. |
-| **Automatisk appuppdatering** | Enligt Intune-administratörens konfiguration av Apple VPP tokeninställningarna, där appens **tilldelningstyp** **måste anges**. <br> <br> Om **tilldelningstypen** är **tillgänglig för registrerade enheter**, så kan tillgängliga appuppdateringar installeras från företagsportalen. | Enligt slutanvändarens konfiguration i de personliga App Store-inställningarna. Detta kan inte hanteras av Intune-administratören. |
-| **Användarregistrering** | Stöds inte. | Stöds med hanterade Apple-ID:n. |
-| **Böcker** | Stöds inte. | Stöds. |
-| **Licenser som används** | 1 licens per enhet. Licensen associeras med enheten. | 1 licens för upp till 5 enheter med samma personliga Apple-ID. Licensen associeras med användaren. <br> <br> En slutanvändare som är associerad med ett personligt Apple-ID och ett hanterat Apple-ID i Intune förbrukar 2 applicenser.|
-| **Licensmigrering** | Appar kan migrera tyst från användare till enhetslicenser. | Appar kan inte migreras från enheten till användarlicenser. |
+|  | Enhetslicensiering | Användarlicensiering |
+|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| App Store-inloggning | Krävs inte. | Varje slutanvändare måste använda ett unikt Apple-ID när hen uppmanas att logga in till App Store. |
+| Enhetskonfigurationen blockerar åtkomst till App Store | Appar kan installeras och uppdateras med hjälp av företagsportalen. | Inbjudan att ansluta till Apple VPP kräver åtkomst till App Store. Om du har konfigurerat en princip för att inaktivera App Store, så fungerar inte användarlicensieringen för VPP-appar. |
+| Automatisk appuppdatering | Enligt Intune-administratörens konfiguration av Apple VPP-tokeninställningarna, där appens tilldelningstyp måste anges.<p>Om tilldelningstypen är tillgänglig för registrerade enheter, kan tillgängliga appuppdateringar installeras från företagsportalen. | Enligt slutanvändarens konfiguration i de personliga App Store-inställningarna. Detta kan inte hanteras av Intune-administratören. |
+| Användarregistrering | Stöds inte. | Stöds med hanterade Apple-ID:n. |
+| Böcker | Stöds inte. | Stöds. |
+| Licenser som används | 1 licens per enhet. Licensen associeras med enheten. | 1 licens för upp till 5 enheter med samma personliga Apple-ID. Licensen associeras med användaren.<p>En slutanvändare som är associerad med ett personligt Apple-ID och ett hanterat Apple-ID i Intune förbrukar 2 applicenser. |
+| Licensmigrering | Appar kan migrera tyst från användare till enhetslicenser. | Appar kan inte migreras från enheten till användarlicenser. |
 
 > [!NOTE]  
 > Företagsportalen visar inte enhetslicensierade appar för användarregistrerade enheter, eftersom endast användarlicensierade appar kan installeras på användarregistreringsenheter.
@@ -158,10 +158,10 @@ Slutanvändaren får prompter för VPP-appinstallation i ett antal scenarier. Va
 
 Du kan återkalla alla associerade iOS/iPadOS eller macOS VPP-applicenser (volyminköpsprogram) baserat på en viss enhet, användare eller app.  Men det finns vissa skillnader mellan iOS/iPadOS- och macOS-plattformarna. 
 
-|   | iOS/iPadOS | macOS |
-|-----|------------------|----------------|
-| **Ta bort apptilldelning** | När du tar bort en app som har tilldelats till en användare, frigör Intune användarens eller enhetens licens och avinstallerar appen från enheten. | När du tar bort en app som en användare har tilldelats, så frigör Intune användarens eller enhetens licens. Appen avinstalleras inte från enheten. |
-| **Återkalla applicens** | När du återkallar en applicens återtas applicensen från användaren eller enheten. Du måste ändra tilldelningen till **Avinstallera** om du vill ta bort appen från enheten. | När du återkallar en applicens återtas applicensen från användaren eller enheten. MacOS-appen med återkallad licens fortsätter att vara användbar på enheten, men kan inte uppdateras förrän en licens har tilldelats till användaren eller enheten på nytt. Enligt Apple tas dessa appar bort efter en 30 dagar lång betänketid. Apple tillhandahåller dock inget sätt för Intune att ta bort appen med hjälp av tilldelningsåtgärden Avinstallera.
+|  | iOS/iPadOS | macOS |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ta bort en apptilldelning | När du tar bort en app som är tilldelad en användare, återtar Intune användarens eller enhetens licens och avinstallerar appen från enheten. | När du tar bort en app som är tilldelad en användare, återtar Intune användarens eller enhetens licens. Appen avinstalleras inte från enheten. |
+| Återkalla en applicens | När du återkallar en applicens återtas den från användaren eller enheten. Du måste ändra tilldelningen till **Avinstallera** om du vill ta bort appen från enheten. | När du återkallar en applicens återtas den från användaren eller enheten. En macOS-app med återkallad licens kan fortsatt användas på enheten, men kan inte uppdateras förrän en licens har tilldelats till användaren eller enheten på nytt. Enligt Apple tas sådana appar bort efter en 30 dagar lång betänketid. Apple tillhandahåller dock inget sätt för Intune att ta bort appen med en tilldelningsåtgärd för avinstallation. |
 
 >[!NOTE]
 > - Intune återtar applicenser när en anställd lämnar företaget och inte längre ingår i AAD-grupperna.

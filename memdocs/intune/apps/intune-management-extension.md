@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/26/2020
+ms.date: 04/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d424163df07dbe6add74bbdab9ec36a7b220b655
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 6c8e1551b49fce5074bd2e88d1d8802f62cca2bb
+ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324230"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80808099"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>Använda PowerShell-skript på Windows 10-enheter i Intune
 
@@ -31,6 +31,9 @@ Använd Microsoft Intune-hanteringstillägget för att ladda upp PowerShell-skri
 Den här funktionen gäller för:
 
 - Windows 10 och senare
+
+> [!NOTE]
+> När förhandskraven för Intune-hanteringstillägget är uppfyllda installeras det automatiskt när ett PowerShell-skript eller en Win32-app tilldelas till användaren eller enheten. Mer information finns i avsnittet med [förhandskrav](../apps/intune-management-extension.md#prerequisites) för Intune-hanteringstillägget.
 
 ## <a name="move-to-modern-management"></a>Övergå till modern hantering
 
@@ -121,7 +124,34 @@ Intune-hanteringstillägget har följande krav. När förhandskraven är uppfyll
 
 - Slutanvändarna behöver inte vara inloggade på enheten för att köra PowerShell-skript.
 
-- Klienten för Intune-hanteringstillägg kontrollerar varje timme, och efter varje omstart, om det finns nya skript eller ändringar. När du tilldelar principen till Azure AD-grupper körs PowerShell-skriptet och körningsresultaten rapporteras. När skriptet körs så körs det inte igen såvida det inte finns en ändring i skriptet eller principen.
+- Agenten för Intune-hanteringstillägg kontrollerar varje timme, och efter varje omstart, om det finns nya skript eller ändringar. När du tilldelar principen till Azure AD-grupper körs PowerShell-skriptet och körningsresultaten rapporteras. När skriptet körs så körs det inte igen såvida det inte finns en ändring i skriptet eller principen. Om skriptet misslyckas försöker agenten för Intune-hanteringstillägg att köra skriptet tre gånger under sina tre följande incheckningar.
+
+### <a name="failure-to-run-script-example"></a>Det gick inte att köra skriptexemplet
+8\.00
+  -  Checkar in
+  -  Kör skriptet **ConfigScript01**
+  -  Skriptet misslyckas
+
+09.00
+  -  Checkar in
+  -  Kör skriptet **ConfigScript01**
+  -  Skriptet misslyckas (antal nya försök = 1)
+
+10.00
+  -  Checkar in
+  -  Kör skriptet **ConfigScript01**
+  -  Skriptet misslyckas (antal nya försök = 2)
+  
+11.00
+  -  Checkar in
+  -  Kör skriptet **ConfigScript01**
+  -  Skriptet misslyckas (antal nya försök = 3)
+
+24.00
+  -  Checkar in
+  - Inga ytterligare försök görs att köra skriptet **ConfigScript01**.
+  - Om inga ytterligare ändringar görs i skriptet, kommer inga ytterligare försök att göras att köra skriptet.
+
 
 ## <a name="monitor-run-status"></a>Övervaka körningsstatus
 

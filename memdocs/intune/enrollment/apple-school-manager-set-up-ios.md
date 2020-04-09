@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19660a8b2dc6b804a1ee1a1eaf407261ca9af2b1
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 1bbca477b389b568d2aca1ab0f9394ec09fe2b24
+ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80327243"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696556"
 ---
 # <a name="set-up-iosipados-device-enrollment-with-apple-school-manager"></a>Konfigurera registrering av iOS/iPadOS-enheter med Apple School Manager
 
@@ -38,7 +38,6 @@ Apple School Manager-registrering kan inte användas med [Apples program för en
 **Förutsättningar**
 - [Push-certifikat för hantering av mobila enheter (MDM)](apple-mdm-push-certificate-get.md)
 - [MDM-utfärdare](../fundamentals/mdm-authority-set.md)
-- [Apple MDM-pushcertifikat](apple-mdm-push-certificate-get.md)
 - Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
 - Enheter som köpts från programmet [Apple School Management](http://school.apple.com)
 
@@ -120,7 +119,7 @@ Nu när du har installerat din token, kan du skapa en registreringsprofil för A
 
 8. Flera användare kan logga in på iPad-enheter som har registrerats med hjälp av ett hanterat Apple-ID. Det gör du genom att välja **Ja** under **Delad iPad** (det här alternativet kräver att **Registrera utan användartillhörighet** och **Övervakat** är inställda på **Ja**). Hanterade Apple-ID:n skapas i Apple School Manager-portalen. Läs mer om [Delad iPad](../fundamentals/education-settings-configure-ios-shared.md) och [Apples krav för delad iPad](https://help.apple.com/classroom/ipad/2.0/#/cad7e2e0cf56).
 
-9. Välj om du vill att enheter som använder den här profilen ska kunna **Synkronisera med datorer**. Om du väljer **Tillåt Apple Configurator efter certifikat** måste du välja ett certifikat under **Apple Configurator-certifikat**.
+9. Välj om du vill att enheter som använder den här profilen ska kunna **Synkronisera med datorer**. **Neka alla** innebär att ingen av de enheter som använder den här profilen kan synkronisera med data på någon dator. Om du väljer **Tillåt Apple Configurator efter certifikat** måste du välja ett certifikat under **Apple Configurator-certifikat**.
 
 10. Om du väljer **Tillåt Apple Configurator efter certifikat** i föregående steg, väljer du ett Apple Configurator-certifikat att importera.
 

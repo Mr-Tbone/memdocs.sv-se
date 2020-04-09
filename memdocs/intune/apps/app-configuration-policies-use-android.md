@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/28/2020
+ms.date: 04/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 691da0c74ceddb34a48bfdf01e19dadaed444e45
-ms.sourcegitcommit: 670c90a2e2d3106048f53580af76cabf40fd9197
+ms.openlocfilehash: 2e5a9db094163bcf4f987b881c83d98be655acfd
+ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80233463"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80808083"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Lägg till konfigurationsprinciper för hanterade Android Enterprise-enheter
 
@@ -47,7 +47,7 @@ Konfigurationsprinciper för appar i Microsoft Intune tillhandahåller inställn
 8. Klicka på **Lägg till** för att visa fönstret **Lägg till behörigheter**.
 9. Välj de behörigheter som du vill åsidosätta. De behörigheter som beviljas här åsidosätter principen "Standardbehörigheter för app" för de valda apparna.
 10. Ange **behörighetstillstånd** för varje behörighet. Du kan välja från **Fråga**, **Bevilja automatiskt** eller **Neka automatiskt**. För mer information om behörigheter, se [Android Enterprise-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune](../protect/compliance-policy-create-android-for-work.md).
-11. I listrutan väljer du **Konfigurationsinställningsformat**. Välj en av följande metoder för att lägga till konfigurationsinformation:
+11. Om den hanterade appen har stöd för konfigurationsinställningar väljer du **formatet för konfigurationsinställningar** i listrutan. Välj en av följande metoder för att lägga till konfigurationsinformation:
     - **Använd Configuration Designer**
     - **Ange JSON-data**<br><br>
     Information om hur du använder Configuration Designer finns i [Använda Configuration Designer](#use-the-configuration-designer). Information om hur du anger XML-data finns i [Ange JSON-data](#enter-json-data).

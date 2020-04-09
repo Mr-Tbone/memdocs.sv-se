@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/17/2020
+ms.date: 03/31/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 185cfbf49c9a6623559a2b50f0184980286e03eb
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: 9e97322fa8a126203bf6e4d1e7a3703b92ded339
+ms.sourcegitcommit: 0907ee1137773f0482b1d2b9bb344e206d05aede
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80358716"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80536851"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>Vad är apphantering i Microsoft Intune?
 
@@ -119,6 +119,8 @@ Följande objekt i konsolen tillhandahåller apprelaterade funktioner:
 - **Apple VPP-token**: Tillämpa och visa dina licenser för iOS/iPadOS-volymköpsprogrammet (VPP). Mer information finns i [Volyminköpta iOS/iPadOS-appar](vpp-apps-ios.md).
 - **Hanterat Google Play**: Google Play för företag är Googles appbutik för företag och den enda källan till appar för Android Enterprise. Du hittar mer information i [Lägg till hanterade Google Play-appar till Android enterprise-enheter med Intune](apps-add-android-for-work.md).
 - **Anpassning**: Anpassa företagsportalen efter ert varumärke. Mer information finns i [Konfiguration av Företagsportal](company-portal-app.md).
+
+Mer information om hur du lägger till appar finns i [Lägga till appar i Microsoft Intune](../apps/apps-add.md).
 
 ## <a name="next-steps"></a>Nästa steg
 

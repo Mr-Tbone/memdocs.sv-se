@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 04/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 677f85874ddf206b716e70a0cc6c659e10b99fef
-ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
+ms.openlocfilehash: 00faad5cccf8b2ed3198542868a36cb4699299b8
+ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80438817"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80808206"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -55,14 +55,29 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 -->  
 
 <!-- ########################## -->
+## <a name="week-of-april-6-2020"></a>Veckan som börjar 6 april 2020
+
+#### <a name="new-shell-script-settings-for-macos-devices---6884363---"></a>Nya Shell-skript-inställningar för macOS-enheter<!-- 6884363 -->
+När du konfigurerar Shell-skript för macOS-enheter, kan du nu konfigurera följande nya inställningar: 
+- Dölja skriptmeddelanden på enheter
+- Skriptfrekvens
+- Maximalt antal nya försök om skriptet misslyckas
+
+Mer information finns i [Använda Shell-skript på macOS-enheter i Intune](../apps/macos-shell-scripts.md).
+
+<!-- ########################## -->
 ## <a name="week-of-march-30-2020"></a>Den vecka som börjar 30 mars 2020
 
 ### <a name="new-url-for-the-microsoft-endpoint-manager-admin-center---3704810---"></a>Ny URL för administrationscentret för Microsoft Endpoint Manager<!-- 3704810 -->
 För att anpassa efter tillkännagivandet om Microsoft Endpoint Manager på Ignite förra året har vi ändrat URL:en för administrationscentret för Microsoft Endpoint Manager (tidigare Microsoft 365-enhetshantering) till [https://endpoint.microsoft.com](https://endpoint.microsoft.com). Den gamla URL:en för administrationscentret ([https://devicemanagement.microsoft.com](https://devicemanagement.microsoft.com)) fortsätter att fungera, men vi rekommenderar att du börjar använda den nya URL:en för administrationscentret för Microsoft Endpoint Manager.
 
-Mer information finns i [Förenkla IT-uppgifter med hjälp av administrationscentret för Microsoft Endpoint Manager](what-is-device-management.md#simplify-it-tasks-using-the-device-management-admin-center).
+Mer information finns i [Förenkla IT-uppgifter med hjälp av administrationscentret för Microsoft Endpoint Manager](what-is-device-management.md#simplify-it-tasks-using-the-device-management-admin-center).  
 
-### <a name="app-management"></a>Apphantering
+
+### <a name="app-management"></a>Apphantering  
+
+#### <a name="company-portal-for-ios-supports-landscape-mode--6048329-wnready---"></a>Företagsportalen för iOS stödjer liggande läge<!--6048329 wnready -->   
+Användare kan nu registrera sina enheter, hitta appar och få IT-support med hjälp av valfri skärmorientering. Appen identifieras automatiskt och anpassar skärmen till stående eller liggande läge, såvida inte användaren låser skärmen i stående läge.  
 
 #### <a name="script-support-for-macos-devices-public-preview---4280361-wnready---"></a>Skriptstöd för macOS-enheter (offentlig förhandsversion)<!-- 4280361 wnready -->
 Du kan lägga till och distribuera skript till macOS-enheter. Det här stödet utökar din möjlighet att konfigurera macOS-enheter utöver vad som är möjligt med hjälp av interna MDM-funktioner på macOS-enheter. Mer information finns i [Använda Shell-skript på macOS-enheter i Intune](../apps/macos-shell-scripts.md).
@@ -71,6 +86,9 @@ Du kan lägga till och distribuera skript till macOS-enheter. Det här stödet u
 ## <a name="week-of-march-24-2020"></a>Den vecka som börjar 24 mars 2020
 
 ### <a name="improved-user-interface-experience-when-creating-device-restrictions-profiles-on-android-and-android-enterprise-devices---5841361---"></a>Förbättrat användargränssnitt när vid skapande av enhetskonfigurationsprofiler på enheter med Android eller Android Enterprise<!-- 5841361 -->
+
+> [!NOTE] 
+> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar inställningar.
 
 När du skapar en profil för enheter med Android eller Android Enterprise kommer upplevelsen i administrationscentret för slutpunktshantering att uppdateras. Den här ändringen påverkar följande enhetskonfigurationsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Android-enhetsadministratör** eller **Android Enterprise** för plattformen):
 
@@ -82,6 +100,9 @@ Mer information om enhetsbegränsningar som du kan konfigurera finns i [Android-
 
 ### <a name="improved-user-interface-experience-when-creating-configuration-profiles-on-iosipados-and-macos-devices---5569002-5568997---"></a>Förbättrat användargränssnitt när du skapar konfigurationsprofiler på iOS/iPadOS- och macOS-enheter<!-- 5569002 5568997 -->
 
+> [!NOTE]
+> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar inställningar.
+
 När du skapar en profil för iOS- eller macOS-enheter uppdateras funktionen i administrationscentret för slutpunktshantering. Den här ändringen påverkar följande enhetskonfigurationsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPadOS** eller **macOS** för plattformen):
 
 - Anpassad: iOS/iPadOS, macOS
@@ -92,6 +113,9 @@ När du skapar en profil för iOS- eller macOS-enheter uppdateras funktionen i a
 - Inställningsfil: macOS
 
 ### <a name="hide-from-user-configuration-setting-in-device-features-on-macos-devices---6524869---"></a>Dölj från inställningen för användarkonfiguration i enhetsfunktionerna på macOS-enheter<!-- 6524869 -->
+
+> [!NOTE]
+> Den här inställningen aktiveras för alla kunder under de närmaste veckorna.
 
 När du skapar en konfigurationsprofil för enhetsfunktioner på macOS-enheter finns nu den nya inställningen **Dölj från användarkonfiguration** (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **macOS** för plattformen > **Enhetsfunktioner** för profilen > **Inloggningsalternativ**).
 
@@ -187,6 +211,10 @@ Om du vill se de inställningar som du kan begränsa går du till [Inställninga
 Meddelandeikonen för en väntande MAM-princip på felsökningsbladet har ändrats till en informationsikon.
 
 ####  <a name="ui-update-when-configuring-compliance-policy---3961639------"></a>Uppdatering av användargränssnittet vid konfiguration av efterlevnadsprinciper<!-- 3961639    -->
+
+> [!NOTE]
+> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar inställningar.
+
 Vi har uppdaterat gränssnittet för att [skapa efterlevnadsprinciper](../protect/create-compliance-policy.md#create-the-policy) i Microsoft Endpoint Manager (**Enheter** > **Efterlevnadsprinciper** > **Principer** > **Skapa princip**). Vi har en ny användarupplevelse som inkluderar samma inställningar och information som du har använt tidigare. Den nya upplevelsen följer en guideliknande process för skapande av efterlevnadsprincip och innehåller den sida där du lägger till *Tilldelningar* för principen och en *Granska + Skapa*-sida, där du kan granska konfigurationen innan du skapar principen.
 
 #### <a name="retire-noncompliant-devices---1827291---------"></a>Ta icke-kompatibla enheter ur bruk<!-- 1827291       -->

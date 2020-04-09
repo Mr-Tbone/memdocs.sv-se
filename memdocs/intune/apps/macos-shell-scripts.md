@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/26/2020
+ms.date: 04/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36936976528b5ea9c3fff1f77ec11223a4e4e63d
-ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
+ms.openlocfilehash: ba099e3614c11e10ce4cd9ae94668a1648bfc150
+ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80401790"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80808049"
 ---
 # <a name="use-shell-scripts-on-macos-devices-in-intune-public-preview"></a>Använda shell-skript på macOS-enheter i Intune (allmänt tillgänglig förhandsversion)
 
@@ -55,6 +55,9 @@ Se till att följande krav uppfylls när du skriver in shell-skript och tilldela
 4. I **Skriptinställningar** anger du följande egenskaper och väljer **Nästa**:
    - **Ladda upp skript**: Bläddra till shell-skriptet. Skriptfilen måste vara mindre än 200 KB.
    - **Köra skript som inloggad användare**: Välj **Ja** för att köra skriptet med användarens autentiseringsuppgifter på enheten. Välj **Nej** (standard) om du vill köra skriptet som rotanvändaren. 
+   - **Dölja skriptmeddelanden på enheter:** Som standard visas skriptmeddelanden för varje skript som körs. På macOS-enheter ser slutanvändarna en avisering från Intun om att *IT konfigurerar datorn*.
+   - **Skriptfrekvens:** Välj hur ofta skriptet ska köras. Välj **Inte konfigurerat** (standard) för att bara köra skriptet en gång.
+   - **Maximalt antal nya försök om skriptet misslyckas:** Välj hur många gånger skriptet ska köras om det returnerar en slutkod som inte är noll (noll innebär att det är klart). Välj **Inte konfigurerat** (standard) för att inte försöka igen när ett skript misslyckas.
 5. I **Omfångstaggar** väljer du om du vill lägga till omfångstaggar för skriptet och väljer sedan **Nästa**. Du kan använda omfångstaggar för att bestämma vem som kan se skript i Intune. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
 6. Välj **Tilldelningar** > **Välj grupper att ta med**. En befintlig lista över Azure AD-grupper visas. Välj en eller flera enhetsgrupper som innehåller de användare vars macOS-enheter ska ta emot skriptet. Välj **Välj**. De grupper du väljer visas i listan och tilldelas din skriptprincip.
    > [!NOTE]
@@ -103,9 +106,17 @@ Din tilldelade Intune-roll kräver behörigheter för **enhetskonfiguration** f�
  - Agenten autentiseras tyst med Intune-tjänster innan den checkar in för att ta emot tilldelade shell-skript för macOS-enheten.
  - Agenten tar emot tilldelade shell-skript och kör skripten baserat på det konfigurerade schemat, nya försök, meddelandeinställningar och andra inställningar som angetts av administratören.
  - Agenten söker normalt efter nya eller uppdaterade skript hos Intune-tjänster var 8:e timme. Incheckningsprocessen sker oberoende av MDM-incheckningen. 
+ 
+ ### <a name="how-can-i-manually-initiate-an-agent-check-in-from-a-mac"></a>Hur kan jag starta en agentincheckning manuellt från en Mac?
+På en hanterad Mac-dator som har agenten installerad öppnar du **Terminal** och kör `IntuneMdmAgent` kommandot för att avsluta `sudo killall IntuneMdmAgent` processen. Processen `IntuneMdmAgent` startas om omedelbart, vilket initierar en incheckning hos Intune.
 
- >[!NOTE]
- > Åtgärden **Kontrollera inställningar** på Företagsportal tvingar bara en MDM-incheckning. Det finns ingen manuell åtgärd för agentincheckning.
+Som alternativ kan du göra följande:
+1. Öppna **Aktivitetskontroll** > **Visa** > *välj **Alla processer**.* 
+2. Sök efter processer med namnet `IntuneMdmAgent`. 
+3. Avsluta processen som körs för **rot**-användaren. 
+
+> [!NOTE]
+> Åtgärden **Kontrollera inställningar** i Företagsportal och åtgärden **Synkronisera** för enheter i Microsoft Endpoint Manager-administratörskonsolen initierar en MDM-incheckning och tvingar inte fram en agentincheckning.
 
  ### <a name="when-is-the-agent-removed"></a>När tas agenten bort?
  Det finns flera villkor som kan orsaka att agenten tas bort från enheten, till exempel:

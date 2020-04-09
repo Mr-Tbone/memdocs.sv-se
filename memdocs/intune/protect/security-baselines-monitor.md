@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/04/2020
+ms.date: 04/01/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.reviewer: shpate
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f7118fbbf05c7793d93faf2aa4c9a4bb1af821c
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 53187f7795eee07a62a83c1fb17a289451b32ee2
+ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80322621"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80551673"
 ---
 # <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Övervaka säkerhetsbaslinje och profil i Microsoft Intune
 
@@ -153,4 +153,8 @@ På Windows 10-enheter finns det en inbyggd rapport för MDM-diagnostikinformati
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Övervaka enhetsprofiler](../configuration/device-profile-monitor.md) och [visa vissa vanliga problem och lösningar](../configuration/device-profile-troubleshoot.md).
+- [Läs mer om säkerhetsbaslinjer](security-baselines.md)
+- [Undvika konflikter](security-baselines.md#avoid-conflicts)
+- [Övervaka enhetsprofiler](../configuration/device-profile-monitor.md) 
+- [Vanliga problem och lösningar](../configuration/device-profile-troubleshoot.md).
+- [Felsöka principer och profiler i Intune](../configuration/troubleshoot-policies-in-microsoft-intune.md)

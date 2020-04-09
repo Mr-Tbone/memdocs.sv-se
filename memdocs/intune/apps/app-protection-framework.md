@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd6956a9bdb19f25e39dd8cfb8e7e685d60f7b8c
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 635804a9ad5cd76d104f16bcd204df1daa28b114
+ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80083545"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696484"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Dataskyddsramverk med appskyddsprinciper 
 
@@ -62,6 +62,9 @@ Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp 
 Följande inställningar för appskyddsprincip bör aktiveras för tillämpliga appar och tilldelas till alla mobilanvändare. Mer information om varje principinställning finns i [Inställningar för iOS-appskyddsprinciper](app-protection-policy-settings-ios.md) och [Inställningar för Android-appskyddsprinciper](app-protection-policy-settings-android.md).
 
 Microsoft rekommenderar att du granskar och kategoriserar användningsscenarier och sedan konfigurerar användare med hjälp av de normativa riktlinjerna för den nivån. Precis som med alla ramverk kan inställningar inom en motsvarande nivå behöva justeras baserat på organisationens behov, eftersom dataskydd måste utvärdera hotmiljön, riskbenägenheten och påverkan på användbarheten.  
+
+### <a name="conditional-access-policies"></a>Villkorliga åtkomstprinciper
+För att säkerställa att endast appar som har stöd för appskyddsprinciper får åtkomst till arbets- eller skolkontodata, krävs principer för villkorsstyrd åtkomst för Azure Active Directory. Se **Scenario 1: Office 365-appar kräver godkända appar med appskyddsprinciper** i [Kräva appskyddsprincip för molnappsåtkomst med villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/app-protection-based-conditional-access) för stegen för att implementera de specifika principerna.
 
 ### <a name="apps-to-include-in-the-app-protection-policies"></a>Appar som ska ingå i appskyddsprinciperna  
 

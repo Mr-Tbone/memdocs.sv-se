@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4ed859078f7cc6be5a91b303de45f7247248203
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: 7c6c8b9d964355b1c08756fc2026a87e30bc7297
+ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80359181"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80551515"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>Funktionsinställningar för macOS-enheter i Intune
 
@@ -82,6 +82,9 @@ Om du vill lägga till AirPrinter-servrar, behöver du ha skrivarens IP-adress, 
   När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
 
 - **Dölj från användarkonfiguration**: **Dölj** innebär att appen inte visas i listan Användare och grupper vid inloggning. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard visar operativsystemet objektet du startar vid inloggning i listan Användare och grupper med alternativet Dölj avmarkerat.
+
+  > [!NOTE]
+  > Den här inställningen aktiveras för alla kunder under de närmaste två veckorna.
 
 ## <a name="login-window"></a>Inloggningsfönstret
 
@@ -169,8 +172,8 @@ Den här funktionen gäller för:
   - **Lägg till**: Välj om du vill lägga till dina konfigurationsnycklar.
 
 - **Användning av nyckelring** (endast Kerberos): Förhindra att lösenord sparas och lagras i nyckelringen genom att välja **Blockera**. Om den blockeras uppmanas inte användarna att spara sina lösenord och de måste ange lösenordet på nytt när Kerberos-biljetten upphör att gälla. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att lösenord sparas och lagras i nyckelringen. Användarna uppmanas inte att ange sitt lösenord igen när biljetten upphör att gälla.
-- **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske inte kräver att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten som standard. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
-- **Standardsfär** (endast Kerberos): Välj **Aktivera** om du vill ange det **Sfär**-värde som du angav som standardsfär. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte ange en standardsfär.
+- **Face ID, Touch ID eller lösenord** (endast Kerberos): **Kräv** tvingar användarna att ange sitt Face ID, Touch ID eller enhetslösenord när autentiseringsuppgiften krävs för att uppdatera Kerberos-biljetten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte kräver att användare använder biometrik eller enhetslösenord för att uppdatera Kerberos-biljetten. Om **Användning av nyckelring** är blockerad gäller inte den här inställningen.
+- **Standardsfär** (endast Kerberos): Välj **Aktivera** om du vill ange det **Sfär**-värde som du angav som standardsfär. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte anger en standardsfär.
 
   > [!TIP]
   > - **Aktivera** den här inställningen om du konfigurerar flera Kerberos SSO-ap-tillägg i din organisation.

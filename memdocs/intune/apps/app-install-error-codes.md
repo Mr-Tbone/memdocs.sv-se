@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/27/2020
+ms.date: 04/02/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 431d2753b04269e9aacd7ef951ef3f45a076df60
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: bdf779e35125d8da7093e67702e064cff362d6ed
+ms.sourcegitcommit: 9145a5b3b39c111993e8399a4333dd82d3fe413c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407904"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80620544"
 ---
 # <a name="intune-app-installation-error-reference"></a>Referens för fel vid Intune-appinstallation
 
@@ -59,6 +59,7 @@ Följande felmeddelanden och beskrivningar ger information om iOS/iPadOS-install
 |--------------------|------------------|------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0x87D12906 | -2016335610 | Apple MDM-agentfel: Appinstallationen misslyckades utan att orsak angetts. Försök att installera appen igen. | Apple MDM-agenten returnerade att installationskommandot misslyckades. |
 | 0x87D1313C | -2016333508 | Nätverksanslutningen på klienten bröts. Senare försök kan lyckas i en bättre nätverksmiljö. | Nätverksanslutningen bröts medan den uppdaterade webbadressen för nedladdningstjänsten skickades till enheten. Mer specifikt gick det inte att hitta någon server med det angivna värdnamnet. |
+| 0x87D1313D | -2016333507 | Det gick inte att hämta licensen för appen med iTunes Store-ID | Synkronisera den associerade VPP-token och synkronisera sedan enheten med Intune. Om problemet kvarstår tar du bort grupptilldelningen och tilldelar om VPP-appen som enhetslicensierad. Om problemet ändå kvarstår kan du återkalla applicensen från enheten genom att gå till **Appar** > **iOS** > *välja VPP-appen* > **Applicenser** > *välja enheten*. Återkalla sedan licensen och försök att tilldela appen till användargruppen eller enhetsgruppen igen. Om problemet ändå kvarstår kan du återkalla alla VPP-licenser för enheten genom att gå till **Enheter** > **iOS** > *välja enheten* > **Översikt** > **Återkalla licenser** och sedan dra tillbaka enheten och registrera den igen i Intune.
 | 0x87D11388 | -2016341112 | iOS/iPadOS-enheten är upptagen för närvarande.  | iOS/iPadOS-enheten var upptagen, vilket ledde till ett fel. Enheten var låst. Användaren behöver låsa upp enheten för att kunna installera appen. |
 | 0x87D13B64 | -2016330908 | Appinstallationen misslyckades.  | Ett appinstallationsfel inträffade. Du behöver iOS/iPadOS-konsolloggar för att felsöka problemet. |
 | 0x87D13B66 | -2016330906 | Appen är hanterad men har upphört att gälla eller tagits bort av användaren.  | Antingen avinstallerade användaren appen uttryckligen, eller så har appen upphört att gälla men kunde inte laddas ned eller så matchar inte appidentifieringen svaret från enheten.   Det här felet kan också inträffa på grund av en bugg i plattformen iOS/iPadOS 9.2.2. |

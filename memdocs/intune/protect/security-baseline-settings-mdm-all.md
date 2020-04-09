@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 388630712b398ef82e78e55efa63418e95187681
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 5b40ed9dff0d83639015e70889bf7008e8e68173
+ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79351194"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696504"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>Inställningar för Windows MDM-säkerhetsbaslinjer för Intune
 
@@ -1583,6 +1583,9 @@ Mer information finns i [CSP-princip – Defender](https://docs.microsoft.com/wi
 ::: zone pivot="mdm-may-2019"
 
 - **Adobe Reader-start i en underordnad process**:  
+Den här regeln förhindrar attacker genom att blockera Adobe Reader från att skapa ytterligare processer. Via sociala tekniker eller kryphål kan skadlig kod ladda ned och starta ytterligare nyttolaster och bryta ut från Adobe Reader. Om du blockerar underordnade processer från att genereras av Adobe Reader förhindras skadlig kod, som försöker att använda den som en vektor, från att spridas.
+[Läs mer](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction)
+
   **Standard**: Aktivera
 
 ::: zone-end
@@ -2162,3 +2165,9 @@ Följande inställningar är antingen:
 - **Kräv versaler i PIN-koden**
 
 ::: zone-end
+
+## <a name="next-steps"></a>Nästa steg
+
+- [Läs mer om säkerhetsbaslinjer](security-baselines.md)
+- [Undvika konflikter](security-baselines.md#avoid-conflicts)
+- [Felsöka principer och profiler i Intune](../configuration/troubleshoot-policies-in-microsoft-intune.md)

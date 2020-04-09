@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73b471d7eefa8e696b17a949756ce1395530c5f7
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: fadd5817ccd4e591fe92c11cb30041296ac85d61
+ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323200"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696453"
 ---
 # <a name="set-up-app-based-conditional-access-policies-with-intune"></a>Konfigurera appbaserade villkorliga åtkomstprinciper med Intune
 
@@ -32,7 +32,7 @@ Konfigurera appbaserade principer för villkorlig åtkomst för appar som finns 
 [Intune-appskyddsprinciper](../apps/app-protection-policies.md) måste tillämpas på apparna innan du använder appbaserade principer för villkorlig åtkomst.
 
 > [!IMPORTANT]
-> Den här artikeln innehåller stegvisa anvisningar som beskriver hur du lägger till en princip för appbaserad villkorlig åtkomst. Du kan följa samma steg när du lägger till appar som SharePoint Online, Microsoft Teams och Microsoft Exchange Online från listan över godkända appar.
+> Den här artikeln innehåller stegvisa anvisningar som beskriver hur du lägger till en enkel princip för appbaserad villkorsstyrd åtkomst. Du kan använda samma steg för andra molnappar. Se [Planera distribution av villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) för mer information.
 
 ## <a name="create-app-based-conditional-access-policies"></a>Skapa principer för appbaserad villkorsstyrd åtkomst
 
@@ -48,7 +48,7 @@ Innan du kan skapa principer för villkorsstyrd åtkomst från administrationsce
 
 3. Ange ett **principnamn** och välj **Användare och grupper** under *Tilldelningar*. Använd inkludera eller exkludera alternativ för att lägga till grupper för principen och välj **Klar**.
 
-4. Välj **Molnappar eller åtgärder** och välj vilka appar som ska skyddas. Välj t.ex. **Välj appar**, och välj **Office 365 SharePoint Online** och **Office 365 Exchange Online**.
+4. Välj **Molnappar eller åtgärder** och välj vilka appar som ska skyddas. Välj till exempel **Välj appar** och sedan **Office 365 (förhandsversion)** .
 
    Klicka på **Klar** för att spara ändringarna.
 
@@ -56,7 +56,7 @@ Innan du kan skapa principer för villkorsstyrd åtkomst från administrationsce
 
    Klicka på **Klar** för att spara ändringarna.
 
-6. Under *Åtkomstkontroller* väljer du **Bevilja** för att tillämpa villkorlig åtkomst baserat på enhetsefterlevnad. Välj exempelvis **Bevilja åtkomst** > **Kräv att enheten markerats som kompatibel**.
+6. Under *Åtkomstkontroller* väljer du **Bevilja** för att tillämpa villkorlig åtkomst baserat på enhetsefterlevnad. Välj till exempel **Bevilja åtkomst** > **Kräv godkänd klientapp** och **Kräv appskyddsprincip (förhandsversion)** och sedan **Kräv en av de markerade kontrollerna**.
 
    Välj **OK** för att spara ändringarna.
 
