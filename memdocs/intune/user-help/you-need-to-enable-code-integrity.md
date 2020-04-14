@@ -28,7 +28,7 @@ ms.locfileid: "79346449"
 ---
 # <a name="enable-code-integrity"></a>Aktivera kodintegritet
 
-Din organisation kan kräva att din dator aktiveras med en hotskyddsfunktion som kallas *kodintegritet*. Kodintegritet kontrollerar drivrutiner och systemfiler på enheten efter tecken på skador eller skadlig programvara. För att kodintegritet ska fungera på enheten måste även en annan säkerhetsfunktion som kallas [*Säker start](https://docs.microsoft.com/windows/security/information-protection/secure-the-windows-10-boot-process#secure-boot)* vara aktiverad.
+Din organisation kan kräva att din dator aktiveras med en hotskyddsfunktion som kallas *kodintegritet*. Kodintegritet kontrollerar drivrutiner och systemfiler på enheten efter tecken på skador eller skadlig programvara. För att kodintegritet ska fungera på enheten måste även en annan säkerhetsfunktion som kallas [*Säker start*](https://docs.microsoft.com/windows/security/information-protection/secure-the-windows-10-boot-process#secure-boot) vara aktiverad.
 
 Kontakta din organisations IT-support om din dator inte är kompatibel på grund av kodintegritet är inaktiverad. Supportpersonalen hjälper dig att aktivera Säker start, vilket utlöser kodintegritet nästa gången du startar enheten. 
 

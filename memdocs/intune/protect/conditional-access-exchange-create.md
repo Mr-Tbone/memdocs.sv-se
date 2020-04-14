@@ -101,7 +101,7 @@ Innan du kan använda följande procedur för att konfigurera en lokal åtkomstk
 
 2. Gå till **Innehavaradministratör** > **Exchange-åtkomst** och välj sedan **Åtkomst till Exchange lokalt**.
 
-3. I fönstret **Åtkomst till Exchange lokalt** väljer du **Ja** för att *	Aktivera åtkomstkontroll för Exchange lokalt*.
+3. I fönstret **Åtkomst till Exchange lokalt** väljer du **Ja** för att *Aktivera åtkomstkontroll för Exchange lokalt*.
 
    > [!div class="mx-imgBorder"]
    > ![Exempel på skärmbild av den lokala Exchange-åtkomstskärmen](./media/conditional-access-exchange-create/exchange-on-premises-access.png)
