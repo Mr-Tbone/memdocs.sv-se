@@ -39,7 +39,7 @@ Procedurerna i den här artikeln kräver åtkomst till både Intune- och Jamf Pr
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-2. Välj **Enheter** > **Efterlevnadsprinciper**. Om du använder en princip som du skapat tidigare väljer du den principen i konsolen och går sedan vidare till nästa steg i proceduren. Skapa en ny princip genom att välja **Skapa princip** och ange sedan information för en princip med *plattformen***macOS**. Konfigurera *Inställningar* och *Åtgärder vid inkompatibilitet* enligt organisationens krav och spara principen genom att välja **Skapa**.
+2. Välj **Enheter** > **Efterlevnadsprinciper**. Om du använder en princip som du skapat tidigare väljer du den principen i konsolen och går sedan vidare till nästa steg i proceduren. Skapa en ny princip genom att välja **Skapa princip** och ange sedan information för en princip med *plattformen* **macOS**. Konfigurera *Inställningar* och *Åtgärder vid inkompatibilitet* enligt organisationens krav och spara principen genom att välja **Skapa**.
 
 3. Välj **Tilldelningar** i fönstret *Översikt* för principerna. Använd de tillgängliga alternativen och välj vilka Azure AD-användare (Azure Active Directory) och säkerhetsgrupper som principen ska tillämpas på. **Jamf-integreringen med Intune stöder inte efterlevnadsprinciper som tillämpas på enhetsgrupper.**
 
