@@ -118,7 +118,7 @@ Visa inställningarna av Microsoft Edge-webbläsarens säkerhetsbaslinjer som st
 - **Styr vilka tillägg som inte kan installeras**  
   **Standard**: Aktiverad  
 
-  Lista med de specifika tillägg som användarna inte kan installera i Microsoft Edge. När du distribuerar principen inaktiveras alla tillägg i listan som tidigare har installerats och användarna kan inte aktivera dem. Om du tar bort ett objekt från listan med blockerade tillägg, aktiveras tillägget automatiskt på nytt oavsett var det har installerats.
+  Skapa en lista med de specifika tillägg som användarna inte kan installera i Microsoft Edge. När du distribuerar principen inaktiveras alla tillägg i listan som tidigare har installerats och användarna kan inte aktivera dem. Om du tar bort ett objekt från listan med blockerade tillägg, aktiveras tillägget automatiskt på nytt oavsett var det har installerats.
   
   Använd **\*** för att blockera alla tillägg som inte uttryckligen finns med i listan över tillåtna. Om den här principen är inställd på *Inte konfigurerad*, kan användarna installera alla tillägg i Microsoft Edge. 
   
