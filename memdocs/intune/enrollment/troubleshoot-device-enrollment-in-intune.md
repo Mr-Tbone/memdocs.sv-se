@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic;seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af60c91e52bcee643166729f3a3ac57ae232c4d9
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: ac29e27c85ad43ccc078c54dd9d5b8b659206f57
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80326996"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81397772"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Felsöka enhetsregistrering i Microsoft Intune
 
@@ -237,7 +237,7 @@ För att kontrollera om certifikatet har installerats på rätt sätt kan du anv
 
 Följande steg beskriver bara en av många metoder och verktyg som du kan använda för att kontrollera att certifikatet har installerats.
 
-1. Gå till [det kostnadsfria Digicert-verktyget](ttps://www.digicert.com/help/).
+1. Gå till [det kostnadsfria Digicert-verktyget](https://www.digicert.com/help/).
 2. Ange det fullständiga domännamnet (t.ex. sts.contoso.com) för AD FS-servern och välj **KONTROLLERA SERVER**.
 
 Om servercertifikatet har installerats korrekt, ser du alla kryssmarkeringar i resultaten. Om problemet ovan kvarstår visas ett rött X i avsnitten "Certifikatnamnmatchningar" och "SSL-certifikatet är korrekt installerat" i rapporten.

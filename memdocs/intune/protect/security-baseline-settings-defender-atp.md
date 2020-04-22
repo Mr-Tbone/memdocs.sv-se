@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a431ad92c285e1a2912e0f387ee5ea514e876ef
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: 67f4d3c08cbad08464d488073c574babcc77dc61
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80551755"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81397517"
 ---
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>Baslinjeinställningar för Intune för Microsoft Defender Avancerat skydd
 
@@ -133,7 +133,7 @@ Mer information finns i [BitLocker-grupprincipinställningar](https://docs.micro
     - **Ja** – Windows tillåter inte att data skrivs till fasta enheter som inte är BitLocker-skyddade. Om en fast enhet inte är krypterad måste användaren slutföra installationsguiden för BitLocker för enheten innan skrivåtkomst beviljas.
 
   - **Konfigurera krypteringsmetod för fasta dataenheter**  
-    CSP: [EncryptionMethodByDriveType](hhttps://go.microsoft.com/fwlink/?linkid=872526)  
+    CSP: [EncryptionMethodByDriveType](https://go.microsoft.com/fwlink/?linkid=872526)  
     Den här inställningen är tillgänglig när *Princip för BitLocker på fasta enheter* har angetts till *Konfigurera*.
 
     Konfigurera krypteringsmetod och krypteringsgrad för fasta dataenhetsdiskar. *XTS-AES 128-bitars* är Windows standardkrypteringsmetod och det rekommenderade värdet.
@@ -215,7 +215,7 @@ Mer information finns i [BitLocker-grupprincipinställningar](https://docs.micro
 ## <a name="device-installation"></a>Enhetsinstallation
 
 - **Hardware device installation by device identifiers** (Installation av maskinvaruenheter efter enhets-ID)  
-  [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](hhttps://go.microsoft.com/fwlink/?linkid=2066794)  
+  [DeviceInstallation/PreventInstallationOfMatchingDeviceIDs](https://go.microsoft.com/fwlink/?linkid=2066794)  
   
   Med den här principinställningen kan du ange en lista med ID:n för Plug and Play-maskinvara och kompatibla ID:n för enheter som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet.  Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern.
 

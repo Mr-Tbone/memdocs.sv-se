@@ -19,16 +19,16 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1070c7b396ac3c19c340a69b6e2eb8db9d6707b6
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80327188"
 ---
 # <a name="automatically-enroll-macos-devices-with-the-apple-business-manager-or-apple-school-manager"></a>Registrera macOS-enheter automatiskt med Apple Business Manager eller Apple School Manager
 
 > [!IMPORTANT]
-> Apple har nyligen övergått från att använda Apples program för enhetsregistrering (DEP) till Apples program för automatisk enhetsregistrering (ADE). Intune-gränssnittet håller på att uppdateras för att återspegla detta. Tills vi har slutfört ändringarna kommer du att se *Programmet för enhetsregistrering* i Intune-portalen. När du ser det används nu Automatisk enhetsregistrering.
+> Apple har nyligen övergått från att använda Apples program för enhetsregistrering (DEP) till Apples program för automatisk enhetsregistrering (ADE). Intune-gränssnittet håller på att uppdateras för att återspegla detta. Till dess att vi har slutfört ändringarna kommer det att stå *Programmet för enhetsregistrering* i Intune-portalen. När du ser det används nu Automatisk enhetsregistrering.
 
 Du kan konfigurera Intune-registrering av macOS-enheter som köpts via Apples [Apple Business Manager](https://business.apple.com/) eller [Apple School Manager](https://school.apple.com/). Du kan använda endera av dessa registreringsmetoder för ett stort antal enheter utan att behöva röra dem. Du kan leverera macOS-enheter direkt till användare. När användaren sätter på enheten körs installationsassistenten med de konfigurerade inställningarna och enheten registreras i Intune-hanteringen.
 

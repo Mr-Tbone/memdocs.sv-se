@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55660497751f1961c9c579ba1d800900189db782
-ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
+ms.openlocfilehash: 934e2283fec0cd68ea5b72f092fb6dcac6f3fe4c
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79526469"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81379640"
 ---
 # <a name="troubleshoot-device-to-ndes-server-communication-for-scep-certificate-profiles-in-microsoft-intune"></a>Felsök enhet för NDES-serverkommunikation för SCEP-certifikatsprofiler i Microsoft Intune
 
@@ -298,7 +298,7 @@ Du har konfigurerat Azure-AD-programproxyn. När du bläddrar till SCEP-serverns
 
 `This page can't be displayed`
 
-- **Orsak**: Det här problemet uppstår när den externa SCEP-URL:en i Application Proxy-konfigurationen är inkorrekt. Ett exempel på denna URL är https://contoso.com/certsrv/mscep/mscep.dll.
+- **Orsak**: Det här problemet uppstår när den externa SCEP-URL:en i Application Proxy-konfigurationen är inkorrekt. Ett exempel på denna URL är `https://contoso.com/certsrv/mscep/mscep.dll`.
 
   **Lösning**: Använd standarddomänen för *yourtenant.msappproxy.net* för den externa SCEP-URL:en i programproxykonfigurationen.
 

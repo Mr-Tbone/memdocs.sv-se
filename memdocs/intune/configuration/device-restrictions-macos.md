@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 50dd3d245b9a89836e3858d71a7ad124189e0973
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80407851"
 ---
 # <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>macOS-enhetsinställningar för att tillåta eller begränsa funktioner med hjälp av Intune
@@ -134,7 +134,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 - **Lista över typer av begränsade appar**: Skapa en lista över appar som användarna inte får installera eller använda. Alternativen är:
 
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Användare kan som standard få åtkomst till appar som du tilldelar samt inbyggda appar.
-  - **Otillåtna appar**: Ange de appar (som inte hanteras av Intune) som användarna inte får installera och köra. Användare hindras inte från att installera en förbjuden app. Om en användare installerar en app från den här listan rapporteras det i Intune.
+  - **Otillåtna appar**: Ange de appar (som inte hanteras av Intune) som användarna inte får installera eller köra. Användare hindras inte från att installera en förbjuden app. Om en användare installerar en app från den här listan rapporteras det i Intune.
   - **Godkända appar**: Ange de appar som användare tillåts att installera. Om användarna vill fortsätta följa standard får de inte installera andra appar. Appar som hanteras av Intune tillåts automatiskt. Det gäller även företagsportalsappen. Användarna hindras inte från att installera en app som inte finns med i listan över godkända appar. Men om de gör det rapporteras det i Intune.
 
 - **Appsamlings-ID**: Ange [appsamlings-ID](bundle-ids-built-in-ios-apps.md) för den app som du vill lägga till. Du kan visa eller dölja inbyggda appar och verksamhetsspecifika appar. På Apple-webbplatsen finns en lista med [inbyggda Apple-appar](https://support.apple.com/HT208094).

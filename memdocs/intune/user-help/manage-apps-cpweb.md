@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
 ms.openlocfilehash: 374b433ff6ee50f91343489ae36a1a190d87c7aa
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79347866"
 ---
 # <a name="manage-apps-from-the-company-portal-website"></a>Hantera appar från webbplatsen för företagsportalen 
@@ -66,7 +66,7 @@ Den här sidan innehåller följande information om varje app:
 * Tilldelningstyp: Hur appen tilldelas och görs tillgänglig för dig. Mer information finns i Tillgängliga och obligatoriska appar. Din organisation kan antingen göra en app tillgänglig så att du kan installera på egen hand, eller så kan den kräva och installera en app på din enhet automatiskt.  
 * Utgivare: Namnet på utvecklaren eller det företag som distribuerade appen. En utgivare är vanligtvis en programvaruleverantör eller din organisation.  
 * Publiceringsdatum: Det datum då appen gjordes tillgänglig för nedladdning. Publiceringsdatumet kan visa appens första lansering eller den senaste uppdateringen av appen.
-* Status: Aktuell installationsstatus för appen på din enhet. Appar kan visas som installerar, installerad och installationen misslyckades. Det kan ta upp till 10 minuter innan en uppdaterad status visas för obligatoriska appar.  
+* Status: Aktuell installationsstatus för appen på din enhet. Appar kan visas som installeras, installerad och installationen misslyckades. Det kan ta upp till 10 minuter innan en uppdaterad status visas för obligatoriska appar.  
 
 ### <a name="search-and-refine"></a>Sök och förfina  
 

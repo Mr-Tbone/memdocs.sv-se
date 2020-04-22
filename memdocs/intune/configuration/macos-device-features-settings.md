@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/25/2020
+ms.date: 04/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c6c8b9d964355b1c08756fc2026a87e30bc7297
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: 63ffda60d00c1a386eb65d851563c911957c0acd
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80551515"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81615716"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>Funktionsinställningar för macOS-enheter i Intune
 
@@ -82,9 +82,6 @@ Om du vill lägga till AirPrinter-servrar, behöver du ha skrivarens IP-adress, 
   När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
 
 - **Dölj från användarkonfiguration**: **Dölj** innebär att appen inte visas i listan Användare och grupper vid inloggning. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard visar operativsystemet objektet du startar vid inloggning i listan Användare och grupper med alternativet Dölj avmarkerat.
-
-  > [!NOTE]
-  > Den här inställningen aktiveras för alla kunder under de närmaste två veckorna.
 
 ## <a name="login-window"></a>Inloggningsfönstret
 

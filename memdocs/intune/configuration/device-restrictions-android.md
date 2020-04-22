@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4afc27680c464f67756340ebcb0958887ae6f795
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80407876"
 ---
 # <a name="android-and-samsung-knox-standard-device-restriction-settings-lists-in-intune"></a>Inställningar av begränsningar för Android- och Samsung Knox Standard-enheter i Intune
@@ -66,7 +66,7 @@ I den här artikeln visas alla inställningar av enhetsbegränsningar som du kan
 - **Minsta lösenordslängd**: Ange det minsta antal tecken som krävs (från 4 till 16). Ange till exempel `6` för att kräva minst sex siffror eller tecken i lösenordet.
 - **Maximalt antal minuter av inaktivitet innan skärmen låses**: Anger hur lång tid en enhet måste vara inaktiv innan skärmen låses automatiskt. Ange till exempel `5` om du vill låsa enheter efter 5 minuters inaktivitet. Om värdet är tomt eller inställt på **Inte konfigurerad**, ändrar eller uppdaterar Intune inte inställningen.
 
-  Användare kan inte ange ett tidsvärde på en enhet som är större än den konfigurerade tiden i profilen. Användare kan dock ange ett lägre värde. Om profilen t.ex. är inställd på `15` minuter, kan användare ange värdet till 5 minuter. Användare kan inte ange värdet till 30 minuter.
+  Användare kan inte ange ett tidsvärde på en enhet som är större än den konfigurerade tiden i profilen. Användare kan dock ange ett lägre värde. Om profilen t.ex. är inställd på `15` minuter, kan användare ange värdet till 5 minuter. Användarna kan inte ange värdet till 30 minuter.
 
 - **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan enheter rensas (från 4 till 11). `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Lösenordets giltighetstid (dagar)** : Ange antalet dagar innan enhetslösenordet måste ändras (från 1 till 365 dagar). Ange till exempel `90` om lösenordet ska upphöra efter 90 dagar. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
