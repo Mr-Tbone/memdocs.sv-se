@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 210ec5ea6acc2d0ce91a93c83991b630a6fdbb4d
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79353248"
 ---
 # <a name="macos-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>macOS-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
@@ -59,7 +59,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 ## <a name="system-security-settings"></a>Inställningar för systemsäkerhet
 
-### <a name="password"></a>lösenordsinställning
+### <a name="password"></a>Lösenord
 
 - **Kräv ett lösenord för att låsa upp mobila enheter**:  
   - **Ej konfigurerat** (*standard*)
@@ -69,7 +69,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   - **Inte konfigurerad** (*standard*) – Användare kan skapa enkla lösenord som **1234** eller **1111**.
   - **Blockera** – Användarna kan inte skapa enkla lösenord, som exempelvis **1234** eller **1111**.
 
-- **Minsta lösenordslängd**:  
+- **Minsta längd på lösenord**:  
   Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.
 
 - **Lösenordstyp**: Ange om ett lösenord endast ska ha **numeriska** tecken, eller om det ska vara en blandning av siffror och andra tecken (**alfanumeriska**).
@@ -116,7 +116,7 @@ Brandväggen skyddar enheter mot obehörig nätverksåtkomst. Du kan använda br
 
 Mer information finns i [Gatekeeper i macOS](https://support.apple.com/HT202491) (Apples webbplats öppnas).
 
-**Tillåt nedladdade appar från de här platserna**: Tillåter att program som stöds kan installeras på dina enheter från olika platser. Du kan välja mellan följande platsalternativ:
+**Tillåt nedladdade appar från de här platserna**: Gör att program som stöds kan installeras på dina enheter från olika platser. Du kan välja mellan följande platsalternativ:
 
 - **Inte konfigurerat** (*standard*) – Gatekeeper-alternativet har ingen effekt på kompatibilitet eller inkompatibilitet.  
 - **Mac App Store** – Installera endast appar för Mac App Store. Appar kan inte installeras från tredje part eller identifierade utvecklare. Om en användare väljer Gatekeeper för att installera appar utanför Mac App Store utvärderas enheten som inkompatibel.

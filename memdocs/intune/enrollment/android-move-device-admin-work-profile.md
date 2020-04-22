@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6f16c39ff0af44918099863be5d23ec9fe564493
-ms.sourcegitcommit: 954b3aae7916ad14065e6e86a577c5205103a50e
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80624919"
 ---
 # <a name="move-android-devices-from-device-administrator-to-work-profile-management"></a>Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering
@@ -34,7 +34,7 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
 2. Registrering för arbetsprofilhantering
 3. Lösning av eventuella efterlevnadsproblem. 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Användarna måste ha [Android-enhetsadministratörsregistrerade enheter](android-enroll-device-administrator.md) med Android Företagsportal version 5.0.4720.0 eller senare.
 - Du konfigurerar Android-arbetsprofilhantering genom [att ansluta ditt Intune-klientkonto till ditt Android Enterprise-konto](connect-intune-android-enterprise.md).

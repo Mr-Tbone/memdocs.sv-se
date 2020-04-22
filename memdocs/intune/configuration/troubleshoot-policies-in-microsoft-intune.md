@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f3aaf2bf895082f3647f0a1ad6b9997a5e97baee
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79364129"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Felsökning av principer och profiler i Intune
@@ -37,7 +37,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
 ## <a name="use-built-in-troubleshooting"></a>Använda inbyggd felsökning
 
-1. Välj **Felsökning och support** i [Administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431):
+1. Välj [Felsökning och support](https://go.microsoft.com/fwlink/?linkid=2109431) i **Administrationscenter för Microsoft Endpoint Manager**:
 
     ![Gå till Hjälp och support i Intune och välj Felsök](./media/troubleshoot-policies-in-microsoft-intune/help-and-support-troubleshoot.png)
 
@@ -91,7 +91,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
         **Principtillstånd**:
 
-        - **Inte tillämpligt**: Principen stöds inte på den här plattformen. iOS/iPadOS-principer fungerar t.ex. inte på Android. Samsung KNOX-principer fungerar inte på Windows-enheter.
+        - **Ej tillämpligt**: Principen stöds inte på den här plattformen. iOS/iPadOS-principer fungerar t.ex. inte på Android. Samsung KNOX-principer fungerar inte på Windows-enheter.
         - **Konflikt**: Det finns en befintlig inställning på enheten som Intune inte kan åsidosätta. Eller så har du distribuerat två principer med samma inställning med olika värden.
         - **Väntar**: Enheten har inte checkats in i Intune för att få principen. Eller så har enheten tagit emot principen men har inte rapporterat statusen till Intune.
         - **Fel**: Du hittar fel och möjliga lösningar i [Felsöka åtkomstproblem för företagsresurser](../fundamentals/troubleshoot-company-resource-access-problems.md).
@@ -110,7 +110,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
     - **Överensstämmer**: Enheten har tagit emot profilen och rapporterar till Intune att den överensstämmer med inställningen.
 
-    - **Ej tillämpligt**: Profilinställningen är inte tillämplig. E-postinställningar för iOS/iPadOS-enheter är t.ex. inte tillämpliga för Android-enheter.
+    - **Inte tillämplig**: Profilinställningen är inte tillämplig. E-postinställningar för iOS/iPadOS-enheter är t.ex. inte tillämpliga för Android-enheter.
 
     - **Väntar**: Profilen har skickats till enheten men har inte rapporterat statusen till Intune. Till exempel kräver kryptering på Android användaraktivering, vilket kan leda till att krypteringen väntar.
 
@@ -128,7 +128,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
 ## <a name="alert-saving-of-access-rules-to-exchange-has-failed"></a>Avisering: Det gick inte att spara åtkomstregler i Exchange
 
-**Problem**: Du får aviseringen **Det gick inte att spara åtkomstregler i Exchange** i administrationskonsolen.
+**Problem**: Du får aviseringen **Det gick inte att spara åtkomstregler i Exchange**  i administrationskonsolen.
 
 Om du har skapat principer på arbetsytan Exchange On-premises-princip (administrationskonsolen) men använder Office 365, tillämpas inte de konfigurerade principinställningarna av Intune. Observera principkällan i aviseringen. Ta bort de gamla reglerna under arbetsytan Exchange On-premises-princip. De gamla reglerna är globala Exchange-regler i Intune för lokal Exchange och är inte relevanta för Office 365. Skapa sedan en ny princip för Office 365.
 
@@ -170,7 +170,7 @@ För Windows-datorer som hanteras med Intune-programklienten kan principfel i fi
 
 4. Dra meddelandereglaget till standardinställningen.
 
-### <a name="error-cannot-obtain-the-value-from-the-computer-0x80041013"></a>FEL: Det går inte att hämta värdet från datorn, 0x80041013
+### <a name="error-cannot-obtain-the-value-from-the-computer-0x80041013"></a>Fel: Det går inte att hämta värdet från datorn, 0x80041013
 
 Inträffar om tiden på det lokala systemet är felsynkroniserat med fem minuter eller mer. Om tiden på den lokala datorn inte är rätt synkroniserad misslyckas säkra transaktioner eftersom tidsstämplarna blir ogiltiga.
 

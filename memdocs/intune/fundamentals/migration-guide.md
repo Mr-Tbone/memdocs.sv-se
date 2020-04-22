@@ -18,10 +18,10 @@ ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 88f30f10af5969d202dd8eb252cc82d03d3d921e
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79358071"
 ---
 # <a name="intune-migration-guide"></a>Migreringsguide för Intune
@@ -36,7 +36,7 @@ Den här guiden leder dig genom de olika stegen för att migrera från en MDM-le
 
 Den här guiden delar in migreringen i två faser, som båda innehåller uppgifter, strategier och taktiska riktlinjer som hjälper dig att ta dig igenom alla steg i processen med att migrera till Intune MDM.
 
-- [Fas 1: Förbered Intune för hantering av mobila enheter](migration-guide-prepare.md)
+- [Fas 1: Förbereda Intune för hantering av mobila enheter](migration-guide-prepare.md)
 
   - [Utvärdera dina MDM-migreringskrav](migration-guide-prepare.md#assess-mdm-requirements)
 
@@ -48,7 +48,7 @@ Den här guiden delar in migreringen i två faser, som båda innehåller uppgift
 
   - [Särskilda överväganden vid migrering](migration-guide-considerations.md)
 
-- [Fas 2: Migreringskampanj](migration-guide-campaign.md)
+- [Steg 2: Migreringskampanjen](migration-guide-campaign.md)
 
   - [Kommunikationsplan](migration-guide-communication-plan.md)
 
@@ -72,4 +72,4 @@ Det är viktigt att du är medveten om att den nya Intune-distributionen kan ski
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Fas 1: Förbered Intune för hantering av mobila enheter](migration-guide-prepare.md)
+[Fas 1: Förbereda Intune för hantering av mobila enheter](migration-guide-prepare.md)

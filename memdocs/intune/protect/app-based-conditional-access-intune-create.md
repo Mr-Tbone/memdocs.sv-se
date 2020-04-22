@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fadd5817ccd4e591fe92c11cb30041296ac85d61
-ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80696453"
 ---
 # <a name="set-up-app-based-conditional-access-policies-with-intune"></a>Konfigurera appbaserade villkorliga åtkomstprinciper med Intune
@@ -46,7 +46,7 @@ Innan du kan skapa principer för villkorsstyrd åtkomst från administrationsce
 
 2. Välj **Slutpunktssäkerhet** > **Villkorlig åtkomst** > **Ny princip**.
 
-3. Ange ett **principnamn** och välj **Användare och grupper** under *Tilldelningar*. Använd inkludera eller exkludera alternativ för att lägga till grupper för principen och välj **Klar**.
+3. Ange ett **principnamn** och välj *Användare och grupper* under **Tilldelningar**. Använd inkludera eller exkludera alternativ för att lägga till grupper för principen och välj **Klar**.
 
 4. Välj **Molnappar eller åtgärder** och välj vilka appar som ska skyddas. Välj till exempel **Välj appar** och sedan **Office 365 (förhandsversion)** .
 

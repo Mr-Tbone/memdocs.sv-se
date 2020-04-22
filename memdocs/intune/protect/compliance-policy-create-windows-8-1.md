@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0189fea7f73b70286a6daf844a10806d4c1e8a5d
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79353209"
 ---
 # <a name="windows-81-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Windows 8.1-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
@@ -59,7 +59,7 @@ Datorer med Windows 8.1 returnerar en **3**-version. Om regeln för operativsyst
 
 ## <a name="system-security"></a>Systemsäkerhet
 
-### <a name="password"></a>lösenordsinställning
+### <a name="password"></a>Lösenord
 
 - **Kräv ett lösenord för att låsa upp mobila enheter**:  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
@@ -69,7 +69,7 @@ Datorer med Windows 8.1 returnerar en **3**-version. Om regeln för operativsyst
   - **Inte konfigurerad** (*standard*) – Användare kan skapa enkla lösenord som **1234** eller **1111**.
   - **Blockera** – Användarna kan inte skapa enkla lösenord, som exempelvis **1234** eller **1111**.  
 
-- **Minsta lösenordslängd**:  
+- **Minsta längd på lösenord**:  
   Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.
 
   För enheter som kör Windows och som öppnas med ett Microsoft-konto, kan inte efterlevnadsprincipen göra någon korrekt utvärdering ifall något av följande villkor uppfylls:  
@@ -98,7 +98,7 @@ Datorer med Windows 8.1 returnerar en **3**-version. Om regeln för operativsyst
 - **Maximalt antal minuters inaktivitet innan lösenord krävs**:  
   Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen.
 
-- **Lösenordets giltighetstid (dagar)** :  
+- **Förfallotid för lösenord (dagar)** :  
   Ange antalet dagar tills lösenordet upphör att gälla och användarna måste skapa ett nytt.
 
 - **Antal tidigare lösenord för att förhindra återanvändning**:  

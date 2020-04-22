@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 78dec649f5486e0dcf56f92b8ac16d176d119653
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80322328"
 ---
 # <a name="troubleshoot-device-actions-in-intune"></a>Felsöka enhetsåtgärder i Intune
@@ -97,12 +97,12 @@ Eftersom en av dina efterlevnadsprinciper kräver ett lösenord.
 ## <a name="wipe-action"></a>Åtgärden Rensa
 
 ### <a name="i-cant-restart-a-windows-10-device-after-using-the-wipe-action"></a>Jag kan inte starta om en Windows 10-enhet efter att ha använt rensningsåtgärden
-Detta kan bero på att du väljer **Rensa enheten och fortsätter att rensa även om enheterna inte har någon energiförsörjning. Om du väljer det här alternativet bör du vara medveten om att det kan hindra vissa Windows 10-enheter från att starta igen.** på en Windows 10-enhet.
+Detta kan inträffa om du har valt **Rensa enheten och fortsätt att rensa även om enheten förlorar ström. Om du väljer det här alternativet måste du vara medveten om att det kan hindra vissa Windows 10-enheter från att starta igen.** på en Windows 10-enhet.
 
 Detta kan bero på att Windows-installationen har drabbats av en större skada som förhindrar operativsystemet från att installeras om. I sådana fall misslyckas processen och lämnar systemet i [Windows återställningsmiljö]( https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 ### <a name="i-cant-restart-a-bitlocker-encrypted-device-after-using-the-wipe-action"></a>Jag kan inte starta om en BitLocker-krypterad enhet efter att ha använt rensningsåtgärden
-Detta kan bero på att du väljer **Rensa enheten och fortsätter att rensa även om enheterna inte har någon energiförsörjning. Om du väljer det här alternativet bör du vara medveten om att det kan hindra vissa Windows 10-enheter från att starta igen.** alternativ på en BitLocker-krypterad enhet.
+Detta kan inträffa om du har valt **Rensa enheten och fortsätt att rensa även om enheten förlorar ström. Om du väljer det här alternativet måste du vara medveten om att det kan hindra vissa Windows 10-enheter från att starta igen.** alternativ på en BitLocker-krypterad enhet.
 
 Lös problemet genom att använda startbara medier när du ska installera om Windows 10 på enheten.
 

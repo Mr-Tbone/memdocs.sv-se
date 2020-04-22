@@ -19,15 +19,15 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2e036e139e97ce033b3269ba0b8d5cf202fad773
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79360034"
 ---
 # <a name="get-data-from-the-intune-data-warehouse-api-with-a-rest-client"></a>Hämta data från API för Intune-informationslagret med en REST-klient
 
-Du når datamodellen Intune-informationslager via RESTful-slutpunkter. Klienten måste auktorisera med Microsoft Azure Active Directory (Azure AD) med hjälp av OAuth 2.0 för att få åtkomst till dina data. Om du vill aktivera åtkomst måste du först ställa in en inbyggd app i Azure och ge behörighet till Microsoft Intune-API. Den lokala klienten får behörighet och kan sedan kommunicera med informationslagrets slutpunkter via den inbyggda appen.
+Du kan öppna datamodellen Intune-informationslager via RESTful-slutpunkter. Klienten måste auktorisera med Microsoft Azure Active Directory (Azure AD) med hjälp av OAuth 2.0 för att få åtkomst till dina data. Om du vill aktivera åtkomst måste du först ställa in en inbyggd app i Azure och ge behörighet till Microsoft Intune-API. Den lokala klienten får behörighet och kan sedan kommunicera med informationslagrets slutpunkter via den inbyggda appen.
 
 När du ska ställa in en klient för att hämta data från informationslager-API:et måste du:
 

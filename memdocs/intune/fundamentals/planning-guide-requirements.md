@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6e002b62fb00c4e2e8523848c4c64ad7a54ce024
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79357655"
 ---
 # <a name="determine-use-case-scenario-requirements"></a>Fastställa scenariokrav för användningsfall
@@ -35,7 +35,7 @@ Du kan också ha organisationsgrupper för företagets användningsfall som har 
 
 Följande är några exempel på krav för användningsfall i en organisation, som visar olika kravuppsättningar för varje användningsfall/underanvändningsfall, organisationsgrupp och mobil enhetsplattform. Du kan också använda följande tabell för att ange organisationens krav för användningsfall:
 
-| **Användningsfall** | **Underanvändningsfall** | **Grupper** | **Enhetsplattformar** | **Krav** |
+| **Användningsfall** | **Underanvändningsfall** | **Grupper** | **Enhetsplattformar** | **Requirements** |
 |:---:|:---:|:---:|:---:|:---:|
 | Företag | Informationsarbetare | Personalavdelning, ekonomi | iOS/iPadOS | Säker e-post, enhetsinställningar, profiler, appar |                                                          
 | Företag | Chefer | Personalavdelning, ekonomi | iOS/iPadOS | Säker e-post, enhetsinställningar, profiler, appar |                                                         

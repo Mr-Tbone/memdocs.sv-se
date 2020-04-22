@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b23fbed8f12c4df90ff2136434e21f3eba369c9e
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80322570"
 ---
 # <a name="disable-activation-lock-on-supervised-iosipados-devices-with-intune"></a>Inaktivera aktiveringslåset på övervakade iOS/-enheter med Intune
@@ -38,7 +38,7 @@ Microsoft Intune kan hjälpa dig att hantera iOS/iPadOS-aktiveringslåset, en fu
 
 ## <a name="how-activation-lock-affects-you"></a>Hur du påverkas av aktiveringslås
 
-Även om aktiveringslås hjälper till att skydda iOS/iPadOS-enheter och förbättra chansen att få tillbaka en borttappad eller stulen enhet, så gör den här funktionen att du som IT-administratör står inför ett antal utmaningar. Exempel:
+Även om aktiveringslås hjälper till att skydda iOS/iPadOS-enheter och förbättra chansen att få tillbaka en borttappad eller stulen enhet, så gör den här funktionen att du som IT-administratör står inför ett antal utmaningar. Till exempel:
 
 - En användare ställer in aktiveringslås på en enhet. Användaren lämnar sen företaget och lämnar tillbaks enheten. Utan användarens Apple-ID och lösenord går det inte att återaktivera enheten.
 - Du behöver en rapport med alla enheter som har aktiveringslås aktiverat.

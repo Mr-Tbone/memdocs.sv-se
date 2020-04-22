@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
 ms.openlocfilehash: 84a7f679cc071a3e8d339fd29e278dfde6eef28c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79348204"
 ---
 # <a name="enroll-your-windows-phone-81-device-in-intune"></a>Registrera din Windows Phone 8.1-enhet i Intune  
@@ -35,7 +35,7 @@ Om du vill registrera din enhet i Intune följer du instruktionerna som motsvara
 ## <a name="enroll-through-company-portal"></a>Registrera via Företagsportalen  
 Följ dessa steg om du kan installera appen Företagsportal från Microsoft Store. 
 
-1. Tryck på **Starta** > **Store**.  
+1. Tryck på **Start** > **Store**.  
 
 2. Tryck på **Sök** och skriv sedan **företagsportal**.  
 

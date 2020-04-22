@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae24c8cad5ccee06444ffec6a4cd8b39b3371b49
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: b8872efe661f01d2cc286282c38953739711982b
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80327295"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81397704"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-dedicated-devices"></a>Konfigurera Intune-registrering av dedikerade Android Enterprise-enheter
 
@@ -39,7 +39,7 @@ Enheter som du hanterar på det här sättet registreras i Intune utan ett anvä
 
 Enheter måste uppfylla följande krav för att kunna hanteras som en dedikerad Android Enterprise-enhet:
 
-- Android OS version 5.1 och senare.
+- Android OS version 6.0 och senare.
 - Enheter måste köra en distribution av Android som har anslutningsfunktioner för Google Mobile Services (GMS). Enheter måste ha GMS tillgängligt för att kunna ansluta till GMS.
 
 ## <a name="set-up-android-enterprise-dedicated-device-management"></a>Konfigurera hantering av dedikerade Android Enterprise-enheter
@@ -61,8 +61,8 @@ Du måste skapa en registreringsprofil så att du kan registrera dina dedikerade
 
 1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Android** > **Android-registrering** > **Företagsägda reserverade enheter**.
 2. Välj **Skapa** och fyll i de obligatoriska fälten.
-    - **Namn**: Skriv ett namn som ska användas när du tilldelar profilen till den dynamiska enhetsgruppen.
-    - **Förfallodatum för token**: Det datum när token upphör att gälla. Google använder ett maxvärde på 90 dagar.
+    - **Namn**: Ange ett namn som du vill använda när du tilldelar profilen till den dynamiska enhetsgruppen.
+    - **Tokenförfallodatum**: Datumet då token går ut. Google använder ett maxvärde på 90 dagar.
 3. Spara profilen genom att välja **Skapa**.
 
 ### <a name="create-a-device-group"></a>Skapa en enhetsgrupp
@@ -72,11 +72,11 @@ Du kan rikta appar och principer till tilldelade eller dynamiska enhetsgrupper. 
 1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Grupper** > **Alla grupper** > **Ny grupp**.
 2. På bladet **Grupp** fyller du i de obligatoriska fälten så här:
     - **Grupptyp**: Säkerhet
-    - **Gruppnamn:** Ange ett intuitivt namn (till exempel Fabrik 1-enheter)
-    - **Typ av medlemskap**: Dynamisk enhet
+    - **Gruppnamn**: Ange ett intuitivt namn (till exempel Fabrik 1-enheter)
+    - **Medlemskapstyp**: Dynamisk enhet
 3. Välj **Lägg till dynamisk fråga**.
 4. På bladet **Regler för dynamiskt medlemskap** fyller du i fälten så här:
-    - **Lägg till dynamisk medlemskapsregel**: Enkel regel
+    - **Lägg till dynamisk medlemsregel**: Enkel regel
     - **Lägg till enheter där**: enrollmentProfileName
     - Välj **Lika med** i mittenrutan.
     - I det sista fältet anger du registreringsprofilnamnet som du har skapat tidigare.
@@ -85,7 +85,7 @@ Du kan rikta appar och principer till tilldelade eller dynamiska enhetsgrupper. 
 
 ### <a name="replace-or-remove-tokens"></a>Ersätta eller ta bort token
 
-- **Ersätt token**: Du kan generera en ny token/QR-kod som håller på att förfalla med hjälp av Ersätt token.
+- **Ersätt token**: Du kan generera en ny token/QR-kod när en håller på att gå ut genom at använda Ersätt token.
 - **Återkalla token**: Du kan omedelbart återkalla token/QR-koden. Då kan token/QR-koden inte längre användas. Du kan använda det här alternativet om du:
   - av misstag delar token/QR-koden med en obehörig part
   - slutför alla registreringar och inte längre behöver token/QR-koden

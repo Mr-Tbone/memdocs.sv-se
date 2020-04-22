@@ -19,17 +19,17 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ed623abeb602e599866af7b7249756edd87d5a29
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79349205"
 ---
 # <a name="zimperium-mobile-threat-defense-connector-with-intune"></a>Zimperium Mobile Threat Defense-anslutning med Intune
 
 Du kan styra åtkomsten från mobila enheter till företagsresurser med villkorlig åtkomst, baserat på riskbedömning som utförs av Zimperium, en Mobile Threat Defense-lösning (MTD) som är integrerad med Microsoft Intune. Risken bedöms utifrån telemetri som samlas in från enheter som kör Zimperium-appen.
 
-Du kan konfigurera principer för villkorlig åtkomst baserat på Zimperium-riskbedömning. Den aktiveras via Intune-efterlevnadsprinciper för registrerade enheter, som du kan använda för att tillåta eller blockera åtkomst för icke-kompatibla enheter till företagets resurser baserat på de hot som har identifierats. För oregistrerade enheter kan du använda appskyddsprinciper till att framtvinga en blockering eller selektiv rensning baserat på identifierade hot.
+Du kan konfigurera principer för villkorlig åtkomst baserat på Zimperium-riskbedömning. Den aktiveras via Intune-efterlevnadsprinciper för registrerade enheter, som du kan använda för att tillåta eller blockera åtkomst för icke-kompatibla enheter till företagets resurser baserat på de hot som har identifierats. För oregistrerade enheter kan du använda appskyddsprinciper för att framtvinga en blockering eller selektiv rensning baserat på identifierade hot.
 
 ## <a name="supported-platforms"></a>Plattformar som stöds
 
@@ -37,7 +37,7 @@ Du kan konfigurera principer för villkorlig åtkomst baserat på Zimperium-risk
 
 - **iOS 8 och senare**
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Azure Active Directory Premium
 

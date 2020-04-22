@@ -19,19 +19,19 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fb8b5eae3c88664caff76da597fc3ab9111f989c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79343862"
 ---
-# <a name="quickstart-create-and-assign-an-app-protection-policy"></a>Snabbstart: Skapa och tilldela en skyddsprincip för ett program
+# <a name="quickstart-create-and-assign-an-app-protection-policy"></a>Snabbstart: Skapa och tilldela en appskyddsprincip
 
 I den här snabbstarten använder du Intune för att skapa och tilldela en appskyddsprincip till en klientapp på en slutanvändares enhet. Intune använder appskyddsprinciper för att bekräfta att dina appar uppfyller organisationens dataskyddskrav.
 
 Om du inte har en Intune-prenumeration [kan du registrera dig för ett kostnadsfritt utvärderingskonto](../fundamentals/free-trial-sign-up.md).
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - För att slutföra den här snabbstarten måste du [skapa en användare](../fundamentals/quickstart-create-user.md), [skapa en grupp](../fundamentals/quickstart-create-group.md), [registrera en enhet](../enrollment/quickstart-setup-auto-enrollment.md) och [lägga till och tilldela en app](quickstart-add-assign-app.md).
 
@@ -49,7 +49,7 @@ Använd följande steg om du vill skapa en appskyddsprincip:
     - **Namn**: *Windows 10-innehållsskydd*
     - **Beskrivning**: *Användare som är associerade med den här principen kommer inte att kunna klippa ut, kopiera eller klistra in innehåll mellan den tilldelade appen och andra icke-hanterade appar på enheten.*
     - **Plattform**: *Windows 10*
-    - **Registreringsstatus**: *Med registrering*
+    - **Registreringstillstånd**: *Med registrering*
 
 3. Välj **Skyddade appar** för att välja de appar som måste följa den här principen.
 4. Klicka på **Lägg till appar**.
@@ -86,4 +86,4 @@ I den här snabbstarten skapade och tilldelade du en appskyddsprincip. Användar
 Om du vill följa den här serien med Intune-snabbstarter fortsätter du till nästa snabbstart.
 
 > [!div class="nextstepaction"]
-> [Snabbstart: Skapa och tilldela en anpassad roll](../fundamentals/create-custom-role.md)
+> [Snabbstart – Skapa och tilldela en anpassad roll](../fundamentals/create-custom-role.md)

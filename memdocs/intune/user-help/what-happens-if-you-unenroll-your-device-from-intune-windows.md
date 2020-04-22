@@ -20,10 +20,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
 ms.openlocfilehash: 56a7b87f61c522eb7796d201be4b3100d57f8ca1
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79346878"
 ---
 # <a name="what-happens-if-you-unenroll-your-windows-device-from-intune"></a>Vad händer om du avregistrerar din Windows-enhet från Intune?
@@ -62,7 +62,7 @@ För Windows 8.1 gäller även följande:
 
 - Det går inte att använda företagsappar eller företagsdata på enheten längre.
 
-- Eventuella inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
+- Inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
 
     > [!IMPORTANT]
     > Det enda undantaget är krypteringsprinciper, som fortfarande gäller. Om företagets policy krävde att du krypterade din Windows Phone är det enda sättet att dekryptera telefonen att återställa den med hjälp **Inställningar**-menyn.
@@ -73,7 +73,7 @@ För Windows 8.1 gäller även följande:
 
 - Det går inte att använda företagsappar eller företagsdata på enheten längre.
 
-- Eventuella inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
+- Inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
 
 - Du kanske inte längre kan ansluta till företagets nätverk via Wi-Fi eller VPN.
 
@@ -87,6 +87,6 @@ När du tar bort en Windows RT-enhet händer följande:
 
 - Det går inte att använda företagsappar eller företagsdata på enheten längre.
 
-- Eventuella inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
+- Inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
 
 Kontakta företagets support om du har frågor. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

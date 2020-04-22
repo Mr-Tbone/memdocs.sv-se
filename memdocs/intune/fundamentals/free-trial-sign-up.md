@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 893981700ede9587a980faa0e4d6b0384c24e3d4
-ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80401488"
 ---
 # <a name="quickstart-try-microsoft-intune-for-free"></a>Snabbstart: Prova Microsoft Intune utan kostnad
@@ -31,7 +31,7 @@ Microsoft Intune hjälper dig att skydda din arbetskrafts företagsdata genom at
 
 Intune ger hantering av mobilenheter (MDM) och hantering av mobilappar (MAM) från en säker molnbaserad tjänst som administreras med hjälp av administrationscentret för Microsoft Endpoint Manager. Med Intune kan du se till att personalens företagsresurser (data, enheter och appar) är korrekt konfigurerade och uppdaterade, har korrekt åtkomst och uppfyller företagets efterlevnadsprinciper och krav.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 Innan du konfigurerar Microsoft Intune, bör du granska följande krav:
 
 - [Operativsystem och webbläsare som stöds](supported-devices-browsers.md)
@@ -136,4 +136,4 @@ I den här snabbstarten skapade du en kostnadsfri prenumeration för att prova I
 Om du vill följa den här serien med Intune-snabbstarter fortsätter du till nästa snabbstart.
 
 > [!div class="nextstepaction"]
-> [Snabbstart: Skapa en användare och tilldela en licens till den](quickstart-create-user.md)
+> [Snabbstart: Skapa en användare och tilldela användaren en licens](quickstart-create-user.md)

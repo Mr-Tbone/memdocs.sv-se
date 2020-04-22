@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b6306f89f1e8ed2aefadd2691df4b3b21e2edafe
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79345162"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Använda Azure AD för att få åtkomst till Intune API:er i Microsoft Graph
@@ -160,7 +160,7 @@ Tabellen innehåller inställningarna i den ordning de visas i Azure-portalen. I
 
 Behörighetsomfattningar för Intune kräver för närvarande administratörsåtkomst.  Detta innebär att du måste ha motsvarande autentiseringsuppgifter när du kör appar eller skript som har åtkomst till Intune API-resurser.
 
-### <a name="app-ro"></a>DeviceManagementApps.Read.All
+### <a name="devicemanagementappsreadall"></a><a name="app-ro"></a>DeviceManagementApps.Read.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa Microsoft Intune-appar__
 
@@ -170,7 +170,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Appskyddsprinciper
   - Appkonfigurationer
 
-### <a name="app-rw"></a>DeviceManagementApps.ReadWrite.All
+### <a name="devicemanagementappsreadwriteall"></a><a name="app-rw"></a>DeviceManagementApps.ReadWrite.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa och skriva Microsoft Intune-appar__
 
@@ -183,18 +183,18 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Appskyddsprinciper
   - Appkonfigurationer
 
-### <a name="cfg-ro"></a>DeviceManagementConfiguration.Read.All
+### <a name="devicemanagementconfigurationreadall"></a><a name="cfg-ro"></a>DeviceManagementConfiguration.Read.All
 
-- Inställningen **Aktivera åtkomst**: __Läs Microsoft Intune-enhetskonfiguration och principer__
+- Inställningen **Aktivera åtkomst**: __Läsa enhetskonfiguration och principer för Microsoft Intune__
 
 - Tillåter läsbehörighet till följande entitetsegenskaper och status:
   - Enhetskonfiguration
   - Efterlevnadsprincip för enhet
   - Meddelanden
 
-### <a name="cfg-ra"></a>DeviceManagementConfiguration.ReadWrite.All
+### <a name="devicemanagementconfigurationreadwriteall"></a><a name="cfg-ra"></a>DeviceManagementConfiguration.ReadWrite.All
 
-- Inställningen **Aktivera åtkomst**: __Läs och skriv Microsoft Intune-enhetskonfiguration och principer__
+- Inställningen **Aktivera åtkomst**: __Läsa och skriva enhetskonfiguration och principer för Microsoft Intune__
 
 - Tillåter samma åtgärder som __DeviceManagementConfiguration.Read.All__
 
@@ -203,7 +203,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Efterlevnadsprincip för enhet
   - Meddelanden
 
-### <a name="mgd-po"></a>DeviceManagementManagedDevices.PrivilegedOperations.All
+### <a name="devicemanagementmanageddevicesprivilegedoperationsall"></a><a name="mgd-po"></a>DeviceManagementManagedDevices.PrivilegedOperations.All
 
 - Inställningen **Aktivera åtkomst**: __Utföra användarpåverkande fjärråtgärder på Microsoft Intune-enheter__
 
@@ -217,7 +217,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Starta om datorn
   - Ta bort användare från en delad enhet
 
-### <a name="mgd-ro"></a>DeviceManagementManagedDevices.Read.All
+### <a name="devicemanagementmanageddevicesreadall"></a><a name="mgd-ro"></a>DeviceManagementManagedDevices.Read.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa Microsoft Intune-enheter__
 
@@ -228,7 +228,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Fjärråtgärder
   - Information om skadlig kod
 
-### <a name="mgd-rw"></a>DeviceManagementManagedDevices.ReadWrite.All
+### <a name="devicemanagementmanageddevicesreadwriteall"></a><a name="mgd-rw"></a>DeviceManagementManagedDevices.ReadWrite.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa och skriva Microsoft Intune-enheter__
 
@@ -243,7 +243,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Inaktivera aktiveringslås
   - Begära fjärrhjälp
 
-### <a name="rac-ro"></a>DeviceManagementRBAC.Read.All
+### <a name="devicemanagementrbacreadall"></a><a name="rac-ro"></a>DeviceManagementRBAC.Read.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa RBAC-inställningar för Microsoft Intune__
 
@@ -252,7 +252,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Rolldefinitioner
   - Resursåtgärder
 
-### <a name="rac-rw"></a>DeviceManagementRBAC.ReadWrite.All
+### <a name="devicemanagementrbacreadwriteall"></a><a name="rac-rw"></a>DeviceManagementRBAC.ReadWrite.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa och skriva RBAC-inställningar för Microsoft Intune__
 
@@ -262,7 +262,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Rolltilldelningar
   - Rolldefinitioner
 
-### <a name="svc-ro"></a>DeviceManagementServiceConfig.Read.All
+### <a name="devicemanagementserviceconfigreadall"></a><a name="svc-ro"></a>DeviceManagementServiceConfig.Read.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa Microsoft Intune-konfiguration__
 
@@ -278,7 +278,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
   - Anpassning
   - Mobile Threat Defense
 
-### <a name="svc-rw"></a>DeviceManagementServiceConfig.ReadWrite.All
+### <a name="devicemanagementserviceconfigreadwriteall"></a><a name="svc-rw"></a>DeviceManagementServiceConfig.ReadWrite.All
 
 - Inställningen **Aktivera åtkomst**: __Läsa och skriva Microsoft Intune-konfiguration__
 
@@ -602,7 +602,7 @@ Du kan också:
     string authority = "https://login.microsoftonline.com/common/";
     ```
 
-    på
+    till
 
     ``` csharp
     string authority = "https://login.microsoftonline.com/northwind.onmicrosoft.com/";

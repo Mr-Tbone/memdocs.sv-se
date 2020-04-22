@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b9f5a560b0f44b8ff256034b51cb9057faf0ec2
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: ce61f7af7c11fb579e34890700231ca2e59fb5cd
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80576860"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81267691"
 ---
 # <a name="how-to-use-intune-in-environments-without-google-mobile-services"></a>Använda Intune i miljöer utan Google Mobile Services
 
@@ -33,7 +33,7 @@ Microsoft Intune använder Google Mobile Services (GMS) för att kommunicera med
 
 ### <a name="for-users-outside-of-mainland-china"></a>För användare utanför kinesiska fastlandet 
 
-Om Google Play inte är tillgängligt kan Android-enheter ladda ned [Microsofts Intune-företagsportalapp för Android](../user-help/install-the-company-portal-app-android.md) och läsa in appen separat. När appen installeras på det här sättet får appen inte uppdateringar eller korrigeringar automatiskt. Du måste vara noga med att regelbundet uppdatera och förse appen med korrigeringar. 
+Om Google Play inte är tillgängligt kan Android-enheter ladda ned [Microsofts Intune-företagsportalapp för Android](https://www.microsoft.com/en-us/download/details.aspx?id=49140) och läsa in appen separat. När appen installeras på det här sättet får appen inte uppdateringar eller korrigeringar automatiskt. Du måste vara noga med att regelbundet uppdatera och förse appen med korrigeringar. 
 
 ### <a name="for-users-in-mainland-china"></a>För användare på kinesiska fastlandet 
 

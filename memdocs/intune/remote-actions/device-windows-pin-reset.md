@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7107669b3a87f0ca7488f2fdd5203c6052beffad
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80326275"
 ---
 # <a name="reset-the-passcode-on-windows-devices-using-intune"></a>Återställa lösenord på Windows-enheter med Intune
@@ -42,9 +42,9 @@ Följande plattformar stöds **inte**:
 Om du vill återställa lösenordet på Windows-enheter, publicerar du tjänsten för PIN-återställning på Intune-klienten.
 
 1. Gå till [Microsofts tjänst för PIN-återställning](https://login.windows.net/common/oauth2/authorize?response_type=code&client_id=b8456c59-1230-44c7-a4a2-99b085333e84&resource=https%3A%2F%2Fgraph.windows.net&redirect_uri=https%3A%2F%2Fcred.microsoft.com&state=e9191523-6c2f-4f1d-a4f9-c36f26f89df0&prompt=admin_consent) och logga in med klientorganisationens administratörskonto.
-2. **Godkänn** medgivande för att PIN-återställningstjänsten får åtkomst till ditt konto: ![Godkänn PIN-återställningsserverns begäran om behörigheter](./media/device-windows-pin-reset/pin-reset-service-home-screen.png)
+2. **Godkänn** att tjänsten för PIN-återställning får åtkomst till ditt konto: ![Godkänn begäran om åtkomst från tjänsten för PIN-återställning](./media/device-windows-pin-reset/pin-reset-service-home-screen.png)
 3. Gå till [Microsofts klient för PIN-återställning](https://login.windows.net/common/oauth2/authorize?response_type=code&client_id=9115dd05-fad5-4f9c-acc7-305d08b1b04e&resource=https%3A%2F%2Fcred.microsoft.com%2F&redirect_uri=ms-appx-web%3A%2F%2FMicrosoft.AAD.BrokerPlugin%2F9115dd05-fad5-4f9c-acc7-305d08b1b04e&state=6765f8c5-f4a7-4029-b667-46a6776ad611&prompt=admin_consent) och logga in med klientorganisationens administratörskonto. **Godkänn** att klienten för PIN-återställning får åtkomst till ditt konto.
-4. I [Azure-portalen](https://portal.azure.com) kontrollerar du att tjänsten för PIN-återställning finns med i listan över Enterprise-program (Alla program): ![Sidan för att återställa PIN-koden för tjänstbehörigheter](./media/device-windows-pin-reset/pin-reset-service-application.png)
+4. I [Azure-portalen](https://portal.azure.com) kontrollerar du att tjänsten för PIN-återställning finns med i listan Enterprise-program (Alla program): ![Behörighetssida för tjänsten för PIN-återställning](./media/device-windows-pin-reset/pin-reset-service-application.png)
 
 > [!NOTE]
 > När du har godkänt begäranden om PIN-återställning får du antingen meddelandet `Page not found`, eller så verkar det som om ingenting händer. Detta är normalt. Kontrollera att de två programmen för PIN-återställning finns med i listan för din klientorganisation.

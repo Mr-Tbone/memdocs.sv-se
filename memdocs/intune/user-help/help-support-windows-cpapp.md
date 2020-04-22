@@ -19,10 +19,10 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
 ms.openlocfilehash: 1fcf4d98504f23f5fa19a099d61e7534e4df4571
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79336751"
 ---
 # <a name="get-help-and-support-in-company-portal-for-windows-10"></a>Få hjälp och support i Företagsportal för Windows 10
@@ -31,7 +31,7 @@ Gå till sidan **Hjälp och support** i Företagsportal för att börja felsöka
 
 Via **Hjälp och support** kan du:  
 
-* få hjälp med problem med appen
+* Få hjälp med problem med appen
 * visa supportavdelningens kontaktuppgifter
 * få svar på vanliga frågor (Vanliga frågor och svar) 
 * rapportera problem med appen till Microsoft
@@ -44,13 +44,13 @@ Skicka e-post till organisationen om problem med Företagsportal. Välj **Få hj
 
 Stegvisa anvisningar finns i [Skicka loggar till företagets supportavdelning från appen Företagsportal för Windows 10](send-logs-to-your-it-admin-cp-windows.md).  
 
-## <a name="view-helpdesk-contact-details"></a>Visa supportavdelningens kontaktuppgifter  
+## <a name="view-helpdesk-contact-details"></a>visa supportavdelningens kontaktuppgifter  
 Använd organisationens supportuppgifter, som telefonnummer, e-postadresser och webbplats för att snabbt felsöka arbets- eller skolåtkomst.  
 
 ## <a name="find-answers-to-frequently-asked-questions"></a>Få svar på vanliga frågor  
 Vi har sammanställt en lista över vanliga frågor och svar för att ge svar eller felsöka dina bekymmer med registrering och åtkomst. Välj ett ämne som du vill visa hjälpartikeln för på Microsoft.docs.com.  
 
-## <a name="report-app-problems-to-microsoft"></a>Rapportera problem med appen till Microsoft  
+## <a name="report-app-problems-to-microsoft"></a>rapportera problem med appen till Microsoft  
 När du väljer **Rapportera problem till Microsoft** går du till sidan **Skicka feedback**. Där kan du:
 
 * Rapportera ett problem eller en bugg som du ser i appen  

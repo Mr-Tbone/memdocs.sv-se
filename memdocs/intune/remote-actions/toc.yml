@@ -5,7 +5,7 @@
   items:
     - name: Översikt över enhetshantering
       href: device-management.md
-- name: Instruktionsguider
+- name: Instruktioner
   items:
     - name: Lås och lösenord
       items:

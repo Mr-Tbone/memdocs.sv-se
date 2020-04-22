@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7d193e067a752e89377b4bec903ff4f890add230
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80325628"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>Felsöka BitLocker-principer i Microsoft Intune
@@ -105,7 +105,7 @@ Confirm-SecureBootUEFI
 
 ### <a name="review-the-devices-registry-key-configuration"></a>Granska enhetens registernyckelkonfiguration
 
-När BitLocker-principen har distribuerats till en enhet kan du visa följande registernyckel på enheten där du kan granska konfigurationen av BitLocker-inställningarna:  *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitLocker*. Här är ett exempel:
+När BitLocker-principen har distribuerats till en enhet kan du visa följande registernyckel på enheten där du kan granska konfigurationen av BitLocker-inställningarna: *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\BitLocker*. Här är ett exempel:
 
 ![BitLocker-registernyckel](./media/troubleshooting-bitlocker-policies/registry.png)
 

@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b437a72a2380fea215746aa76b35898c6fc60b16
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80551372"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Skapa en efterlevnadsprincip i Microsoft Intune
@@ -52,7 +52,7 @@ Om du vill använda enhetsefterlevnadsprinciper måste du:
   - iOS
   - macOS
   - Windows 10
-  - Windows 8,1
+  - Windows 8.1
   - Windows Phone 8.1
 
 - Registrera enheter i Intune (krävs för att kunna se efterlevnadsstatusen)
@@ -134,7 +134,7 @@ If the **Evaluate** button is grayed out, make sure the policy is assigned to on
 
 ## <a name="refresh-cycle-times"></a>Uppdatera cykeltider
 
-Intune använder olika uppdateringscykler för att söka efter uppdateringar av efterlevnadsprinciper. Om enheten nyligen har registrerats körs incheckningarna oftare. [Princip-och profiluppdateringscykler](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) visar de uppskattade uppdateringstiderna.
+Intune använder olika uppdateringscykler för att söka efter uppdateringar av efterlevnadsprinciper. Om enheten nyligen har registrerats körs incheckningarna oftare. [Princip-och profil uppdaterings cykler](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) visar de uppskattade uppdateringstiderna.
 
 Användarna kan när de vill öppna företagsportalappen och synkronisera enheten för att söka efter principuppdateringar.
 
@@ -166,7 +166,7 @@ Om en enhet har flera policyer för efterlevnad och enheten har olika efterlevna
 |---------|---------|
 |Okänt     |1|
 |NotApplicable     |2|
-|Kompatibel|3|
+|godkända|3|
 |InGracePeriod|4|
 |NonCompliant|5|
 |Fel|6|

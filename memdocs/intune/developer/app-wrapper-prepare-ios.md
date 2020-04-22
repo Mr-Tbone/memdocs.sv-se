@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 26204a36000b8c49b65effbfdb5f629fc092df64
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79345552"
 ---
 # <a name="prepare-ios-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>Förbered iOS-appar för appskyddsprinciper med Intunes programhanteringsverktyg
@@ -101,7 +101,7 @@ Du behöver följande för att distribuera appar som är omslutna av Intune:
 
    ![Apple Developer-portalen – Certifikat, ID:n och profiler](./media/app-wrapper-prepare-ios/iOS-signing-cert-1.png)
 
-5. Klicka på ![plustecknet i övre högra hörnet av](./media/app-wrapper-prepare-ios/iOS-signing-cert-2.png) Apple Developer-portalen för att lägga till ett iOS-certifikat.
+5. Klicka på fliken ![plustecknet i övre högra hörnet av](./media/app-wrapper-prepare-ios/iOS-signing-cert-2.png) Apple Developer-portalen för att lägga till ett iOS-certifikat.
 
 6. Välj att skapa ett **In-House and Ad Hoc** (internt och ad hoc)-certifikat under **Produktion**.
 
@@ -148,7 +148,7 @@ Du behöver följande för att distribuera appar som är omslutna av Intune:
 
 2. Klicka på **Certifikat, ID och profiler**.
 
-3. Klicka på ![plustecknet i övre högra hörnet av](./media/app-wrapper-prepare-ios/iOS-signing-cert-2.png) Apple Developer-portalen för att lägga till en iOS-etableringsprofil.
+3. Klicka på fliken ![plustecknet i övre högra hörnet av](./media/app-wrapper-prepare-ios/iOS-signing-cert-2.png) Apple Developer-portalen för att lägga till en iOS-etableringsprofil.
 
 4. Välj att skapa en **intern** etableringsprofil under **Distribution**.
 
@@ -287,7 +287,7 @@ Om det inte går att slutföra programhanteringsverktyget visas något av följa
 |Indataappen du angav har inte signerats. Ange en giltig signerad app.|Appomslutningsverktyget kräver att apparna signeras. Läs utvecklardokumentationen om du vill veta hur du signerar en omsluten app.|
 |Indataappen du har angett måste vara i formatet IPA eller APP.|Endast appar med filnamnstilläggen APP och IPA godkänns av appomslutningsverktyget. Kontrollera att indatafilen har ett giltigt filnamnstillägg och har kompilerats som en APP- eller IPA-fil.|
 |Indataappen som du angav är redan omsluten och har den senaste versionen av principmallen.|Programhanteringsverktyget omsluter inte en befintlig omsluten app igen med den senaste versionen av principmallen.|
-|Varning! Du har inte angett någon SHA1-certifikatshash. Kontrollera att den omslutna appen har signerats innan du distribuerar den.|Kontrollera att du har angett ett giltigt SHA1-hashvärde efter kommandoradsflaggan -c. |
+|VARNING: Du har inte angett någon SHA1-certifikatshash. Kontrollera att den omslutna appen har signerats innan du distribuerar den.|Kontrollera att du har angett ett giltigt SHA1-hashvärde efter kommandoradsflaggan -c. |
 
 ### <a name="collecting-logs-for-your-wrapped-applications-from-the-device"></a>Hämta loggar för dina omslutna program från enheten
 Använd följande steg för att hämta loggar för dina omslutna program under felsökningen.

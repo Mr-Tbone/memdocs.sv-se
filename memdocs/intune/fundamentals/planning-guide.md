@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6327de8fd4543f60d66eedc3ac6b86b8275f2ca2
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79357226"
 ---
 # <a name="intune-deployment-planning-design-and-implementation-guide"></a>Guide för planering, utformning och implementering för distribution av Intune
@@ -33,19 +33,19 @@ Microsoft Intune-distributionen börjar med bra planering och utformning. Syftet
 
 Den här guiden innehåller avsnitt som vägleder dig genom hela processen för att distribuera Intune. Börja med Avsnitt 1 för att klargöra dina mål och utmaningar. Gå sedan vidare till avsnitten 2-7 i den ordning som bäst uppfyller dina behov. Du behöver inte gå igenom dessa avsnitt i ordning, du kan slutföra dem parallellt.
 
-- [Avsnitt 1: Fastställa distributionsmål, målsättningar och utmaningar](planning-guide-deployment-goals.md)
+- [Avsnitt 1: Fastställa distributionsmål och utmaningar](planning-guide-deployment-goals.md)
 
-- [Avsnitt 2: Identifiera scenarier för användningsfall](planning-guide-scenarios.md)
+- [Avsnitt 2: Identifiera användningsfall](planning-guide-scenarios.md)
 
 - [Avsnitt 3: Fastställa krav för användningsfall](planning-guide-requirements.md)
 
 - [Avsnitt 4: Utveckla en distributionsplan](planning-guide-rollout-plan.md)
 
-- [Avsnitt 5: Utveckla en kommunikationsplan för distributionen](planning-guide-communication-plan.md)
+- [Avsnitt 5: Utveckla en kommunikationsplan för distribution](planning-guide-communication-plan.md)
 
 - [Avsnitt 6: Utveckla en supportplan](planning-guide-support-plan.md)
 
-- [Avsnitt 7: Skapa en Intune-design](planning-guide-design.md)
+- [Avsnitt 7: Skapa en Intune-utformning](planning-guide-design.md)
 
 - [Avsnitt 8: Intune-implementering](planning-guide-onboarding.md)
 
@@ -53,7 +53,7 @@ Den här guiden innehåller avsnitt som vägleder dig genom hela processen för 
 
 Den här guiden innehåller även ytterligare teknisk information och tabellmallar som kan användas för att hjälpa dig med processen att planera, utforma och implementera distribution av Intune.
 
-- [Ytterligare resurser: Länkar och tabellmallar](planning-guide-resources.md)
+- [Ytterligare resurser: Länkar och mallar för tabeller](planning-guide-resources.md)
 
 ## <a name="assumptions"></a>Antaganden
 
@@ -63,4 +63,4 @@ Den här guiden innehåller även ytterligare teknisk information och tabellmall
 
 ## <a name="next-steps"></a>Nästa steg
 
-Låt oss börja med det första avsnittet: [Fastställa distributionsmål, målsättningar och utmaningar](planning-guide-deployment-goals.md).
+Låt oss börja med det första avsnittet: [Fastställa distributionsmål, delmål och utmaningar](planning-guide-deployment-goals.md).

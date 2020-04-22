@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 275939c4c97b25f7e9b2ab179a7491d47801e48e
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79355068"
 ---
 # <a name="use-policies-to-simplify-windows-pc-management"></a>Använd principer för att förenkla hanteringen av Windows-datorer
@@ -48,12 +48,12 @@ Microsoft Intune Center är installerat på alla hanterade datorer. Du kan konfi
 
 |Principinställningar|Information|
 |------------------|--------------------|
-|**Namn**|Namnet på den administratör som hanterar datorn.<br />Maximal längd: 40 tecken|
-|**Telefonnummer**|Telefonnumret till den administratör som hanterar datorn.<br />Maximal längd: 20 tecken|
-|**E-postadress**|E-postadressen till den administratör som hanterar datorn.<br />Maximal längd: 40 tecken|
-|**Webbplatsnamn**|Namnet på användarnas supportwebbplats.<br />> Maximal längd: 40 tecken|
-|**Webbadress**|Webbadressen till supportwebbplatsen.<br />Maximal längd: 150 tecken|
-|**Anmärkningar**|En kommentar som visas för användarna.<br />Maximal längd: 120 tecken|
+|**Namn**|Namnet på den administratör som hanterar datorn.<br />Maxlängd: 40 tecken|
+|**Telefonnummer**|Telefonnumret till den administratör som hanterar datorn.<br />Maxlängd: 20 tecken|
+|**E-postadress**|E-postadressen till den administratör som hanterar datorn.<br />Maxlängd: 40 tecken|
+|**Webbplatsnamn**|Namnet på användarnas supportwebbplats.<br />Maxlängd: 40 tecken|
+|**Webbadress**|Webbadressen till supportwebbplatsen.<br />Maxlängd: 150 tecken|
+|**Anmärkningar**|En kommentar som visas för användarna.<br />Maxlängd: 120 tecken|
 
 Information om principer och inställningar som du kan konfigurera för Windows-datorer finns i följande resurser:
 

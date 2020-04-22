@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4e9a37e2dbb725a06d304d345fd085dabbc5e14
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80086996"
 ---
 # <a name="configure-esim-cellular-profiles-in-intune---public-preview"></a>Konfigurera mobila eSIM-profiler i Intune – offentlig förhandsversion
@@ -37,7 +37,7 @@ I Intune kan du importera engångskoder för aktivering som tillhandahålls av d
 
 Följande krävs för att distribuera eSIM till dina enheter med hjälp av Intune:
 
-- **eSIM-kompatibla enheter**, till exempel Surface LTE: Se [om din enhet stöder eSIM](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data). Eller så kan du se en lista över [några av de kända eSIM-kompatibla enheterna](#esim-capable-devices) (i den här artikeln).
+- **eSIM-kompatibla enheter**, till exempel Surface LTE: se [om din enhet har stöd för eSIM](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data). Eller så kan du se en lista över [några av de kända eSIM-kompatibla enheterna](#esim-capable-devices) (i den här artikeln).
 - **Windows 10 Fall Creators Update PC** (1709 eller senare) som registreras och MDM-hanteras av Intune
 - **Aktiveringskoder** tillhandahålls av mobiloperatören. De här engångskoderna för aktivering läggs till i Intune och distribueras till dina eSIM-kompatibla enheter. Kontakta mobiloperatören om du vill skaffa eSIM-aktiveringskoder.
 
@@ -70,7 +70,7 @@ Följande enheter har tillkännagivits som eSIM-kompatibla eller finns på markn
 - HP Spectre Folio 13
 - Lenovo Yoga C630
 
-## <a name="step-1-add-cellular-activation-codes"></a>Steg 1: Lägga till mobilaktiveringskoder
+## <a name="step-1-add-cellular-activation-codes"></a>Steg 1: Lägg till mobilaktiveringskoder
 
 Mobilaktiveringskoder tillhandahålls av mobiloperatören i en kommaavgränsad fil (csv). När du har den här filen lägger du till den i Intune med följande steg:
 
@@ -194,7 +194,7 @@ eSIM-profilen tas även bort när enheten [dras tillbaka](../remote-actions/devi
 - Skapa en statisk Azure AD-enhetsgrupp som endast innehåller eSIM-enheter som är mål.
 - Om det finns ett problem med distributionsstatusen kontrollerar du följande:
   - **Filformatet är inte korrekt**: Se **Steg 1: Lägg till mobilaktiveringskoder** (i den här artikeln) om hur du formaterar filen korrekt.
-  - **Mobilaktiveringen fungerar inte, kontakta mobiloperatören**: Aktiveringskoden kan kanske inte aktiveras inom deras nätverk. Eller så misslyckades nedladdningen av profilen och mobilaktiveringen.
+  - **Mobilaktiveringen fungerar inte; kontakta mobiloperatören**: Aktiveringskoden kan kanske inte aktiveras inom deras nätverk. Eller så misslyckades nedladdningen av profilen och mobilaktiveringen.
 
 ## <a name="next-steps"></a>Nästa steg
 [Konfigurera enhetsprofiler](device-profiles.md)

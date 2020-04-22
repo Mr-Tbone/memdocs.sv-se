@@ -20,17 +20,17 @@ ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
 ms.openlocfilehash: 1c3b448726d52a838299e7be7a68611f460c4929
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79335464"
 ---
 # <a name="remove-your-device-from-management-if-you-declined-terms-of-use"></a>Ta bort enheten från hanteringen om du inte godkände ”Användningsvillkor”
 
 Om du inte godkände användningsvillkoren när du försökte logga in på företagsportalappen, kan du inte logga in i företagsportalappen vid framtida försök. Du måste därför använda dessa anvisningar för att ta bort enheten från Intune.
 
-När du avinstallerar företagsportalappen tar du även bort enheten från Intune. Enheten kommer inte längre att kunna komma åt företagsresurser. Mer information om vad som händer när du tar bort enheten från hantering finns i [Vad händer om du avregistrerar din enhet från Intune?](what-happens-if-you-unenroll-your-device-from-intune-android.md).
+När du avinstallerar företagsportalappen tar du även bort enheten från Intune. Enheten kommer inte längre att kunna komma åt företagsresurser. Mer information om vad som händer när du tar bort enheten finns i [Vad händer om du avregistrerar din enhet från Intune?](what-happens-if-you-unenroll-your-device-from-intune-android.md).
 
 Innan du kan avinstallera företagsportalappen måste du välja inställningen **Enhetsadministratörer** och inaktivera **Företagsportalen**. Anvisningarna kan skilja sig en aning beroende på vilken Android-enhet du har.
 

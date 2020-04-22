@@ -19,17 +19,17 @@ search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89d9fce6579b0fdf89299e342969f647c457cc84
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80324832"
 ---
 # <a name="configure-google-chrome-for-android-devices-using-intune"></a>Konfigurera Google Chrome för Android-enheter med Intune 
 
 Du kan använda en konfigurationsprincip för Intune-appar med Google Chrome för Android-enheter. Inställningarna för appen kan tillämpas automatiskt. Du kan till exempel ange de bokmärken och webbadresser som du vill blockera eller tillåta.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Användarens Android Enterprise-enhet måste vara registrerad i Intune. Mer information finns i [Konfigurera registrering av Android Enterprise-arbetsprofilenheter](../enrollment/android-work-profile-enroll.md).
 - Google Chrome läggs till som en hanterad Google Play-app. Läs om hanterade Google Play-konton i [Anslut ditt Intune-konto till ditt hanterade Google Play-konto](../enrollment/connect-intune-android-enterprise.md) för mer information.

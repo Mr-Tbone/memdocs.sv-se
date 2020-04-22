@@ -1,6 +1,6 @@
 - name: Vägledning för utvecklare
   href: index.yml
-- name: Instruktionsguider
+- name: Instruktioner
   expanded: true
   items:
     - name: Skydda program med Intune App SDK

@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fd7483319443b7a960f8e704442d2b43b6b00c66
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80326911"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Konfigurera registrering av Windows-enheter
@@ -67,8 +67,8 @@ När vanliga användare loggar in med sina autentiseringsuppgifter för Azure AD
 ## <a name="simplify-windows-enrollment-without-azure-ad-premium"></a>Förenkla Windows-registreringen utan Azure AD Premium
 Du kan förenkla registreringen genom att skapa ett DNS-alias (CNAME-posttyp) som omdirigerar registreringsbegäranden till Intune-servrarna. I annat fall måste användare som försöker ansluta till Intune ange Intune-servernamnet under registreringen.
 
-**Steg 1: Skapa CNAME** (valfritt)<br>
-Skapa CNAME-DNS-resursposter för företagsdomänen. Om ditt företags webbplats till exempel är contoso.com så skapar du en CNAME-post i DNS som omdirigerar EnterpriseEnrollment.contoso.com till enterpriseenrollment-s.manage.microsoft.com.
+**Steg 1: Skapa CNAME-poster** (valfritt)<br>
+Skapa CNAME-DNS-resursposter för företagets domän. Om ditt företags webbplats till exempel är contoso.com så skapar du en CNAME-post i DNS som omdirigerar EnterpriseEnrollment.contoso.com till enterpriseenrollment-s.manage.microsoft.com.
 
 Det är valfritt att skapa CNAME DNS-poster, men det blir enklare för användarna om du gör det. Om ingen CNAME-post hittas, uppmanas användarna att manuellt ange MDM-servernamnet, enrollment.manage.microsoft.com.
 

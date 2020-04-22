@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6dc2c1d4f07e601d98bc2f26ec4766e21a8f1bc7
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79350674"
 ---
 # <a name="troubleshoot-conditional-access"></a>Felsöka villkorlig åtkomst
@@ -110,7 +110,7 @@ Om en enhet inte är kompatibel men fortsätter att ha åtkomst, vidtar du följ
 - Kontrollera att enheten identifieras. Pekar Exchange Connector på en Exchange 2010-klientåtkomstserver när användaren har en Exchange 2013-servern? I så fall kan Intune inte känna till enhetens anslutning till Exchange om Exchange-standardregeln är Tillåt, även om användaren är i målgruppen.
 
 - Kontrollera om enhetens finns/enhetens åtkomststatus i Exchange:
-  - Använd denna PowerShell-cmdlet om du vill hämta en lista över alla mobila enheter för en postlåda: Get-ActiveSyncDeviceStatistics -mailbox mbx. Om enheten inte visas har den inte åtkomst till Exchange.
+  - Använd denna PowerShell-cmdlet om du vill hämta en lista över alla mobila enheter för en postlåda: ”Get-ActiveSyncDeviceStatistics -mailbox mbx”. Om enheten inte visas har den inte åtkomst till Exchange.
   
   - Om enheten visas använder du cmdleten ”Get-CASmailbox -identity:’upn’ | fl” för att få detaljerad information om enhetens åtkomststatus och skicka informationen till Microsoft Support.
 

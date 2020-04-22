@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ac931bf20140865e1185c4f401de0141273cdb3
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80359417"
 ---
 # <a name="use-custom-settings-for-ios-and-ipados-devices-in-microsoft-intune"></a>Använd anpassade inställningar för iOS- och iPadOS-enheter i Microsoft Intune
@@ -32,7 +32,7 @@ När du använder iOS/iPadOS-enheter kan du hämta anpassade inställningar till
 - [Apple Configurator](https://itunes.apple.com/app/apple-configurator-2/id1037126344?mt=12)
 - [Apple Profile Manager](https://support.apple.com/profile-manager)
 
-Du kan använda dessa verktyg för att exportera inställningar till en konfigurationsprofil. I Intune importerar du den här filen och tilldelar sedan dina iOS/iPadOS-användare och -enheter profilen. Inställningarna distribueras så snart de har tilldelats. De skapar också en baslinje eller standard för iOS/iPadOS i din organisation.
+Du kan använda dessa verktyg för att exportera inställningar till en konfigurationsprofil. I Intune importerar du den här filen och tilldelar sedan dina iOS/iPadOS-användare och -enheter profilen. Inställningarna distribueras så snarat de har tilldelats. De skapar också en baslinje eller standard för iOS/iPadOS i din organisation.
 
 Den här artikeln innehåller riktlinjer om hur man använder Apple Configurator och Apple Profile Manager och beskriver de egenskaper som du kan konfigurera.
 
@@ -57,7 +57,7 @@ Den här artikeln innehåller riktlinjer om hur man använder Apple Configurator
 ## <a name="custom-configuration-profile-settings"></a>Anpassade inställningar för konfigurationsprofil
 
 - **Anpassat namn på konfigurationsprofil**: Ange ett namn för principen. Det här namnet visas på enheten och i Intune-statusen.
-- **Konfigurationsprofilsfil**: Bläddra till den konfigurationsprofil som du skapade med Apple Configurator eller Apple Profile Manager. Den största filstorleken är `1000000` byte (precis under 1 MB). Filen som du importerade visas i området **Filinnehåll**.
+- **Konfigurationsprofilfil**: Bläddra till konfigurationsprofilen som du skapade med Apple Configurator eller Apple Profile Manager. Den största filstorleken är `1000000` byte (precis under 1 MB). Filen som du importerade visas i området **Filinnehåll**.
 
   Du kan också lägga till enhetstoken i dina anpassade konfigurationsfiler. Enhetstoken används för att lägga till enhetsspecifik information. Ange till exempel `{{serialnumber}}` om du vill visa serienumret. På enheten visas texten på ungefär samma sätt som `123456789ABC`, som är unikt för varje enhet. När du anger variabler ska du använda klammerparenteser `{{ }}`. [Token för appkonfiguration](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) innehåller en lista över variabler som kan användas. Du kan också använda `deviceid` eller andra enhetsspecifika värden.
 

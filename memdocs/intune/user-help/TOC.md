@@ -17,6 +17,9 @@
 #### [Registrera Android-enheten](enroll-device-android-company-portal.md)  
 #### [Registrera med Android-arbetsprofilen](enroll-device-android-work-profile.md)
 #### [Registrera med Microsoft Intune-appen](enroll-device-android-microsoft-intune-app.md)
+#### Registrera med härledda autentiseringsuppgifter
+##### [Registrera med Entrust Datacard](enroll-android-device-entrust-datacard.md)
+##### [Registrera med Intercede](enroll-android-device-intercede.md)
 ### [Flytta till installation av ny enhetshantering](move-to-new-device-management-setup.md)
 ### [Använda hanterade appar på enheten](use-managed-apps-on-your-device-android.md)
 ### [Kryptera din enhet](encrypt-your-device-android.md)
@@ -26,7 +29,7 @@
 ### [Installera VPN](install-your-companys-virtual-private-network-VPN-android.md)
 ### [Inaktivera Microsofts insamling av användningsdata](turn-off-microsoft-usage-data-collection-android.md)
 ### [Vad händer om du avregistrerar din enhet från Intune?](what-happens-if-you-unenroll-your-device-from-intune-android.md)
-#### [Avregistrera din enhet](unenroll-your-device-from-intune-android.md)
+#### [Avregistrera enheten](unenroll-your-device-from-intune-android.md)
 #### [Avregistrera din enhet om du har avvisat användningsvillkoren](unenroll-your-device-from-intune-if-you-declined-terms-of-use-android.md)
 
 ### Åtgärda vanliga problem med Android
@@ -78,7 +81,7 @@
 ### [Använda hanterade appar på enheten](use-managed-apps-on-your-device-ios.md)
 ### [Ange eller ändra ditt lösenord](set-or-change-your-passcode-ios.md)
 ### [Vad händer om du återställer en enhet med hjälp av företagsportalen?](effects-of-device-reset-company-portal-ios.md)
-### [Avregistrera din enhet](unenroll-your-device-from-intune-ios.md)
+### [Avregistrera enheten](unenroll-your-device-from-intune-ios.md)
 #### [Vad händer om du avregistrerar din enhet?](what-happens-if-you-unenroll-your-device-from-intune-ios.md)
 ### [Synkronisera enheten manuellt](sync-your-device-manually-ios.md)
 

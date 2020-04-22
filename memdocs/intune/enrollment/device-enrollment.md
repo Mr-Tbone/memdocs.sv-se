@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e3636314ee21823b76a09120f92aca45965437d3
-ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/07/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80808189"
 ---
 # <a name="what-is-device-enrollment"></a>Vad är enhetsregistrering?
@@ -31,7 +31,7 @@ Med Intune kan du hantera personalens enheter och appar, samt hur de kommer åt 
 
 Det finns flera metoder för att registrera personalens enheter, vilket visas i följande tabeller. Varje metod påverkas av ägarskapet för enheten (personlig eller företagsägd), enhetstypen (iOS, Windows, Android) och hanteringskraven (återställning, tillhörighet, låsning).
 
-Som standard tillåts enheter för alla plattformar registreras i Intune. Men du kan [begränsa enheter efter plattform](enrollment-restrictions-set.md#create-a-device-type-restriction).
+Som standard Som standard tillåts enheter för alla plattformar registreras i Intune. Men du kan [begränsa enheter efter plattform](enrollment-restrictions-set.md#create-a-device-type-restriction).
 
 ## <a name="iosipados-enrollment-methods"></a>iOS/iPadOS-registreringsmetoder
 
@@ -40,8 +40,8 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 | | Enheter rensas under registreringen. | Kopplar varje enhet till en användare.| Det innebär att användarna inte kan avregistrera enheter. | |
 |**[BYOD](#bring-your-own-device)** | Nej| Ja | Nej | [Mer information](apple-mdm-push-certificate-get.md)|
 |**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej | [Mer information](device-enrollment-manager-enroll.md)|
-|**[ADE](#apple-automated-device-enrollment)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-ios.md)|
-|**[USB-SA](#usb-sa)**| Ja | Valfri | Nej| [Mer information](apple-configurator-enroll-ios.md)|
+|**[ADE](#apple-automated-device-enrollment)**| Ja | Valfritt | Valfritt|[Mer information](device-enrollment-program-enroll-ios.md)|
+|**[USB-SA](#usb-sa)**| Ja | Valfritt | Nej| [Mer information](apple-configurator-enroll-ios.md)|
 |**[USB-Direct](#usb-direct)**| Nej | Nej | Nej|[Mer information](apple-configurator-enroll-ios.md)|
 
 ## <a name="macos-enrollment-methods"></a>Registreringsmetoder för macOS
@@ -49,7 +49,7 @@ Som standard tillåts enheter för alla plattformar registreras i Intune. Men du
 |:---:|:---:|:---:|:---:|:---:|
 |**[BYOD](#bring-your-own-device)** | Nej| Ja | Nej | [Mer information](macos-enroll.md)|
 |**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej  | [Mer information](device-enrollment-manager-enroll.md)|
-|**[ADE](#apple-automated-device-enrollment)**| Ja | Valfri | Valfri|[Mer information](device-enrollment-program-enroll-macos.md)|
+|**[ADE](#apple-automated-device-enrollment)**| Ja | Valfritt | Valfritt|[Mer information](device-enrollment-program-enroll-macos.md)|
 
 ## <a name="windows-enrollment-methods"></a>Metoder för Windows-registrering
 

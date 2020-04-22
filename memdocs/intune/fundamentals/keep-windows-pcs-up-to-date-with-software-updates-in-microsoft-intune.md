@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9a1a5b291135f5c6d42a47377d14d6d3d4f13411
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79362335"
 ---
 # <a name="keep-windows-pcs-up-to-date-with-software-updates-in-microsoft-intune"></a>Hålla datorerna uppdaterade med programvaruuppdateringar i Microsoft Intune
@@ -80,7 +80,7 @@ Använd följande två procedurer för att bli redo att använda programvaruuppd
 
 1. I [Microsoft Intune-administrationskonsolen](https://manage.microsoft.com/) väljer du **Admin** &gt; **Uppdateringar**.
 
-2. På sidan **Tjänstinställningar: Uppdateringar** går du till listan **Produktkategori** och väljer de uppdateringskategorier som du vill göra tillgängliga för datorer. Observera att de vanligaste uppdateringarna är markerade som standard.
+2. På sidan **Tjänstinställningar: Uppdateringar** väljer du de uppdateringskategorier som du vill göra tillgängliga för datorer i listan **Produktkategori** . Observera att de vanligaste uppdateringarna är markerade som standard.
 
     > [!IMPORTANT]
     > Om du vill säkerställa att datorer får de uppdateringar som har godkänts av administratören ska inte WSUS-grupprincipinställningen (WSUS = Windows Server Update Services) **Ange sökväg till tjänsten Microsoft Update på intranätet** tillämpas på datorer som har registrerats med Intune.
@@ -93,7 +93,7 @@ Använd följande två procedurer för att bli redo att använda programvaruuppd
 
 1. I [Microsoft Intune-administrationskonsolen](https://manage.microsoft.com/) väljer du **Admin** &gt; **Uppdateringar**.
 
-2. I avsnittet **Regler för automatiskt godkännande** på sidan **Serverinställningar: Uppdateringar** väljer du **Ny**.
+2. I ämnet **Regler för automatiska godkännanden** på sidan **Serverinställningar: Uppdateringar** väljer du **Ny**.
 
 3. På sidan **Allmänt** i guiden Skapa regler för automatiskt godkännande anger du ett namn för och en valfri beskrivning av regeln.
 
@@ -114,7 +114,7 @@ Använd följande två procedurer för att bli redo att använda programvaruuppd
 
 7. På sidan **Sammanfattning** granskar du inställningarna för den nya regeln och väljer sedan **Slutför**.
 
-Den nya regeln visas i avsnittet **Regler för automatiskt godkännande** på sidan **Tjänstinställningar: Uppdateringar**.
+Den nya regeln visas i ämnet **Regler för automatiska godkännanden** på sidan **Tjänstinställningar: Uppdateringar** .
 
 > [!NOTE]
 > När du skapar en regel för automatiskt godkännande godkänner den bara framtida uppdateringar och godkänner inte automatiskt tidigare uppdateringar som redan finns i Intune. Om du vill godkänna dessa uppdateringar behöver du köra regeln för automatiskt godkännande.
@@ -205,7 +205,7 @@ Du kan använda listan **Filter** om du vill göra det lättare att söka efter 
 
 När du väljer en uppdatering från listan blir ytterligare kommandon tillgängliga som gör att du kan hantera uppdateringar på det sätt som visas i följande tabell:
 
-|Uppgift|Information|
+|Aktivitet|Information|
 |--------|--------------------|
 |**Visa egenskaper**|Visar detaljerad information om uppdateringen inklusive hur många datorer som den är tillämpbar för.|
 |**Redigera**|Endast för uppdateringar för program som inte kommer från Microsoft. Gör att du kan redigera egenskaperna för uppdateringen.|

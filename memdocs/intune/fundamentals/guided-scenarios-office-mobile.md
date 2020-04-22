@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7aabc09e276c723e9aeaed4ec8eb3dd4c0332b4e
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79362517"
 ---
 # <a name="guided-scenario---secure-microsoft-office-mobile-apps"></a>Guidat scenario – Skydda Microsoft Office-mobilappar
@@ -46,7 +46,7 @@ Office-mobilappar och Microsoft Edge för mobila enheter har stöd för dubbla i
 
 [Intune-appskyddsprinciper](../apps/app-protection-policy.md) hjälper dig att skydda arbetsfiler på enheter som är registrerade i Intune. Du kan även använda appskyddsprinciper på medarbetarnas enheter som inte har registrerats för hantering i Intune. Även om ditt företag inte hanterar enheten i det här fallet måste du fortfarande se till att arbetsfiler och resurser är skyddade.
 
-Du kan använda appskyddsprinciper för att förhindra att användare sparar arbetsfiler på oskyddade platser. Du kan även begränsa dataflytten till andra appar som inte skyddas av appskyddsprinciper. Principinställningar för appskydd inkluderar:
+Du kan använda appskyddsprinciper för att förhindra att användare sparar arbetsfiler på oskyddade platser. Du kan även begränsa dataflytten till andra appar som inte skyddas av appskyddsprinciper. Några exempel på inställningar för appskyddsprinciper är:
 
 - Dataflyttningsprinciper såsom **Spara kopior av organisationsdata** och **Begränsa klipp ut, kopiera och klistra in**.
 - Åtkomstprincipsinställningar för att kräva enkel PIN för åtkomst och blockera hanterade appar från att köras på jailbrokade eller rotade enheter.
@@ -59,7 +59,7 @@ I det här exemplet har administratören tillämpat appskyddsprinciper på Outlo
 
 ![Processflöde för villkorsstyrd åtkomst för Outlook-appar](./media/guided-scenarios-office-mobile/guided-scenarios-office-mobile-02.png)
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Du behöver följande Intune-administratörsbehörigheter:
 
@@ -109,7 +109,7 @@ När du har valt apparna klickar du på **Nästa**.
 
 I det här steget måste du konfigurera kraven för åtkomst till och delning av företagsfiler och e-postmeddelanden i dessa appar. Som standard kan användare spara data till organisationens OneDrive- och SharePoint-konton.
 
-| Inställningen | Beskrivning | Standardvärde |
+| Inställningar | Beskrivning | Standardvärde |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | Typ av PIN-kod | Numeriska PIN-koder består uteslutande av siffror. Lösenord består av alfanumeriska tecken och specialtecken.  För att konfigurera ”lösenordstypen” i iOS/iPadOS måste appen ha Intune SDK version 7.1.12 eller senare. Numerisk typ har ingen begränsning för Intune-SDK-version. | Numeriskt |
 | Välja minimilängd för PIN-kod | Ange det minsta antalet siffror i en PIN-kodsekvens. | 6 |

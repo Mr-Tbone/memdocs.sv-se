@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae1f0117f6dbf186b3a4bdddb393d053c33c914a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79359800"
 ---
 # <a name="reference-for-devices-entities"></a>Referens för enhetsentiteter
@@ -52,7 +52,7 @@ Entiteten **deviceTypes** representerar den enhetstyp som andra informationslage
 
 | deviceTypeID  | Name | Beskrivning |
 |---------|------------|--------|
-| 0 |skrivbords- |Windows Desktop-enhet |
+| 0 |Skrivbord |Windows Desktop-enhet |
 | 1 |WindowsRT |WindowsRT-enhet |
 | 2 |WinMO6 |Windows Mobile 6.0-enhet |
 | 3 |Nokia |Nokia-enhet |

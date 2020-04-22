@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 569a80d21efd82b6008c7aa7a613c089a10c6ff3
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79357902"
 ---
 # <a name="intune-network-configuration-requirements-and-bandwidth"></a>Krav för Intune-nätverkskonfiguration och bandbredd
@@ -64,7 +64,7 @@ En cachelagrande proxyserver som tar emot innehållsbegäranden från klienter k
 Nedan visas vanliga inställningar för en proxyserver som cachelagrar innehåll för Intune-klienter.
 
 
-|          Inställningen           |           Rekommenderat värde           |                                                                                                  Information                                                                                                  |
+|          Inställningar           |           Rekommenderat värde           |                                                                                                  Information                                                                                                  |
 |----------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         Cachestorlek         |             5 GB till 30 GB             | Värdet varierar beroende på hur många klientdatorer som finns i nätverket och vilka konfigurationer som du använder. Om du vill förhindra att filer tas bort för tidigt, ändrar du storleken på cacheminnet för din miljö. |
 | Storlek för enskilda cachefiler |                950 MB                 |                                                                     Den här inställningen kanske inte är tillgänglig i alla proxyservrar med cachelagring.                                                                     |
@@ -97,7 +97,7 @@ Intune-klienter kan använda BranchCache för att minska WAN-trafiken (Wide Area
 
 - Windows 7
 - Windows 8.0
-- Windows 8,1
+- Windows 8.1
 - Windows 10
 
 Om du vill använda BranchCache måste klientdatorn ha BranchCache aktiverat och dessutom vara konfigurerat för **distribuerat cacheläge**.

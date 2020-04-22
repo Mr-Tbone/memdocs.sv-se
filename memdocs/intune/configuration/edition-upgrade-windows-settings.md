@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2ab94c3cc8bb9009d49a6b301d9a67fa6ffc5f1a
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79364311"
 ---
 # <a name="windows-10-and-newer-device-settings-to-upgrade-editions-or-enable-s-mode-in-intune"></a>Enhetsinställningar för Windows 10 (och senare) vid uppgradering av utgåvor, eller när S-läget aktiveras i Intune
@@ -38,15 +38,15 @@ Mer information om den här funktionen finns i [Uppgradera Windows 10-utgåvor e
 
 ## <a name="edition-upgrade"></a>Versionsuppgradering
 
-- **Utgåva att uppgradera till**: Välj den Windows 10-utgåva som du uppgraderar till. De enheter som omfattas av principen uppgraderas till den valda utgåvan.
-- **Produktnyckel**: Ange produktnyckeln som du fick från Microsoft. När du har skapat en princip som innehåller en produktnyckel går den inte att uppdatera och den är dold av säkerhetsskäl. Om du vill ändra produktnyckeln måste du ange hela nyckeln igen.
-- **Licensfil**: I **Windows 10 Holographic for Business** eller **Windows 10 Mobile-utgåvan** väljer du **Bläddra** och den licensfil som du fick från Microsoft. Licensfilen innehåller licensinformation för de utgåvor som du uppgraderar enheterna till.
+- **Utgåva att uppgradera till**: Välj vilken Windows 10-utgåva som du uppgraderar till. De enheter som omfattas av principen uppgraderas till den valda utgåvan.
+- **Produktnyckel**: Ange produktnyckeln som du har fått från Microsoft. När du har skapat en princip som innehåller en produktnyckel går den inte att uppdatera och den är dold av säkerhetsskäl. Om du vill ändra produktnyckeln måste du ange hela nyckeln igen.
+- **Licensfil**: för **Windows 10 Holographic för företag** eller **Windows 10 Mobile-version** väljer du **Bläddra** och går till den licensfil som du har fått från Microsoft. Licensfilen innehåller licensinformation för de utgåvor som du uppgraderar enheterna till.
 
 ## <a name="mode-switch"></a>Växla läge
 
-- **Ingen konfiguration**: En enhet i S-läge blir kvar i S-läget. En slutanvändare kan ange att enheten ska växla från S-läget.
-- **Behåll i S-läget**: Hindrar användaren från att växla enheten från S-läget.
-- **Växla**: Växlar enheten från S-läget.
+- **Ingen konfiguration**: En enhet i S-läge förblir i S-läge. En slutanvändare kan ange att enheten ska växla från S-läget.
+- **Bli kvar i S-läge**: användaren kan inte växla från S-läget.
+- **Växla**: Växlar enheten från S-läge.
 
 ## <a name="next-steps"></a>Nästa steg
 

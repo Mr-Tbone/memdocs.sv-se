@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 04/07/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b68aa94f924141d1de8f216f7501ccd76f9d35f
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: 61d84b0d1f5047df23e9571a0330768ed37eb921
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80086322"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "80862830"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Lägga till Wi-Fi-inställningar för Windows 10-enheter och senare enheter i Microsoft Intune
 
@@ -35,38 +35,36 @@ Den här artikeln beskriver dessa inställningar.
 
 ## <a name="basic-profile"></a>Grundläggande profil
 
-- **Wi-Fi-typ**: Välj **Basic**. 
+- **Wi-Fi-typ**: Välj **Grundläggande**. 
 
-- **Namn på Wi-Fi (SSID)** : Förkortning för Service Set Identifier. Det här värdet är det verkliga namnet på det trådlösa nätverk som enheterna ansluter till. Användarna ser dock bara det **anslutningsnamn** som du konfigurerar när de väljer anslutningen.
+- **Wi-Fi-namn (SSID)** : Förkortning för nätverksnamn. Det här värdet är det verkliga namnet på det trådlösa nätverk som enheterna ansluter till. Användarna ser dock bara det **anslutningsnamn** som du konfigurerar när de väljer anslutningen.
 
-- **Anslutningens namn**: Ange ett användarvänligt för den här Wi-Fi-anslutningen. Den text som du anger är det namn som användarna ser när de bläddrar i tillgängliga anslutningar på sin enhet.
+- **Anslutningsnamn**: Ange ett användarvänligt för den här Wi-Fi-anslutningen. Den text som du anger är det namn som användarna ser när de bläddrar i tillgängliga anslutningar på sin enhet.
 
-- **Anslut automatiskt när nätverket kan nås**: När det här är **Ja** ansluter enheter automatiskt när de är inom räckvidden för det här nätverket. När det är **No** (Nej) ansluter enheter inte automatiskt.
+- **Connect automatically when in range** (Anslut automatiskt inom räckvidd): När det här är **Yes** (Ja) ansluter enheter automatiskt när de är inom räckvidden för det här nätverket. När det är **No** (Nej) ansluter enheter inte automatiskt.
 
-  - **Anslut till ett mer prioriterat nätverk om det är tillgängligt**: Om enheterna är inom räckvidden för ett mer prioriterat nätverk väljer du **Ja** för att använda det föredragna nätverket. Välj **No** (Nej) om du vill använda Wi-Fi-nätverket i den här konfigurationsprofilen.
+  - **Connect to more preferred network if available** (Anslut till ett mer prioriterat nätverk om det är tillgängligt): Om enheterna är inom räckvidden för ett mer prioriterat nätverk väljer du **Yes** (Ja) för att använda det föredragna nätverket. Välj **No** (Nej) om du vill använda Wi-Fi-nätverket i den här konfigurationsprofilen.
 
     Exempelvis kan du skapa ett Wi-Fi-nätverk med namnet **ContosoCorp** och använda **ContosoCorp** i konfigurationsprofilen. Du har även ett **ContosoGuest**-Wi-Fi-nätverk inom räckvidd. När företagets enheter är inom räckvidd vill du att de automatiskt ska anslutas till **ContosoCorp**. I det här scenariot ställer du in egenskapen **Connect to more preferred network if available** (Anslut till ett mer prioriterat nätverk om det är tillgängligt) till **No** (Nej).
 
-  - **Anslut till det här nätverket även om det inte sänder sitt SSID**: Välj **Ja** för att konfigurationsprofilen automatiskt ska ansluta till nätverket, även om nätverket är dolt (det vill säga att dess SSID inte sänds offentligt). Välj **No** (Nej) om du inte vill att den här konfigurationsprofilen ska ansluta till ditt dolda nätverk.
+  - **Connect to this network, even when it is not broadcasting its SSID** (Anslut till det här nätverket även om det inte sänder sitt SSID): Välj **Yes** (Ja) för att konfigurationsprofilen automatiskt ska ansluta till nätverket, även om nätverket är dolt (det vill säga att dess SSID inte sänds offentligt). Välj **No** (Nej) om du inte vill att den här konfigurationsprofilen ska ansluta till ditt dolda nätverk.
 
 - **Gräns för anslutningar med datapriser**: En administratör kan välja hur nätverkstrafiken mäts. Program kan sedan justera sitt nätverkstrafiksbeteende baserat på den här inställningen. Alternativen är:
 
-  - **Obegränsad**: Standard. Anslutningen är inte avgiftsbelagd och det finns inga trafikbegränsningar.
+  - **Obegränsat**: Standard. Anslutningen är inte avgiftsbelagd och det finns inga trafikbegränsningar.
   - **Fast**: Använd det här alternativet om nätverket är konfigurerat med en fast gräns för nätverkstrafik. När den här gränsen har nåtts är nätverksåtkomst förbjuden.
   - **Variabel**: Använd det här alternativet om nätverkstrafiken debiteras per byte (kostnad per byte).
 
 - **Trådlös säkerhetstyp**: Ange det säkerhetsprotokoll som används för att autentisera enheter i nätverket. Alternativen är:
   - **Öppet (ingen autentisering)** : Använd bara det här alternativet om nätverket är oskyddat.
-  - **WPA/WPA2 – Personal**: Ett säkrare alternativ, som ofta används för Wi-Fi-anslutning. För ökad säkerhet kan du också ange lösenordet för en i förväg delad nyckel eller en nätverksnyckel.
+  - **WPA/WPA2-personligt**: Ett säkrare alternativ, som ofta används för Wi-Fi-anslutning. För ökad säkerhet kan du också ange lösenordet för en i förväg delad nyckel eller en nätverksnyckel.
 
     - **I förväg delad nyckel** (PSK): Valfritt. Visas när du väljer **WPA/WPA2-personligt** som säkerhetstyp. När nätverket är konfigurerat, konfigureras också ett lösenord eller en nätverksnyckel. Ange lösenordet eller nätverksnyckeln för PSK-värdet. Ange en sträng på mellan 8 och 64 tecken. Om lösenordet eller nätverksnyckeln är 64 tecken, anger du hexadecimala tecken.
 
-      > [!NOTE]
-      > När du sparar Wi-Fi-profilen visas inte det PSK-värde som du angav av säkerhetsskäl. Vattenstämpeln för den i förväg delade nyckeln visar fortfarande **Inte konfigurerad** trots att PSK har sparats i profilen. För att ändra PSK anger du en ny nyckel och sparar profilen. Om du sparar en PSK, redigerar principen och lämnar PSK tomt fortsätter befintlig PSK att användas.
       > [!IMPORTANT]
       > PSK är detsamma för alla enheter som du riktar profilen till. Om nyckeln har komprometterats kan den användas av vilken enhet som helst för att ansluta till Wi-Fi-nätverket. Skydda din PSK:er för att undvika obehörig åtkomst.
 
-- **Företagets proxyinställningar**: Välj att använda proxyinställningarna i din organisation. Alternativen är:
+- **Company Proxy settings** (Företagets proxyinställningar): Välj att använda proxyinställningarna i din organisation. Alternativen är:
   - **Inga**: Inga proxyinställningar konfigureras.
   - **Konfigurera manuellt**: Ange **proxyserverns IP-adress** och dess **portnummer**.
   - **Konfigurera automatiskt**: Ange URL:en som pekar på ett PAC-skript (Proxy Auto-Configuration). Ange till exempel `http://proxy.contoso.com/proxy.pac`.
@@ -77,38 +75,38 @@ Välj **OK** > **Skapa** för att spara ändringarna. Profilen skapas och visas 
 
 - **Wi-Fi-typ**: Välj **Företag**.
 
-- **Namn på Wi-Fi (SSID)** : Förkortning för Service Set Identifier. Det här värdet är det verkliga namnet på det trådlösa nätverk som enheterna ansluter till. Användarna ser dock bara det **anslutningsnamn** som du konfigurerar när de väljer anslutningen.
+- **Wi-Fi-namn (SSID)** : Förkortning för nätverksnamn. Det här värdet är det verkliga namnet på det trådlösa nätverk som enheterna ansluter till. Användarna ser dock bara det **anslutningsnamn** som du konfigurerar när de väljer anslutningen.
 
-- **Anslutningens namn**: Ange ett användarvänligt för den här Wi-Fi-anslutningen. Den text som du anger är det namn som användarna ser när de bläddrar i tillgängliga anslutningar på sin enhet.
+- **Anslutningsnamn**: Ange ett användarvänligt för den här Wi-Fi-anslutningen. Den text som du anger är det namn som användarna ser när de bläddrar i tillgängliga anslutningar på sin enhet.
 
-- **Anslut automatiskt när nätverket kan nås**: När det här är **Ja** ansluter enheter automatiskt när de är inom räckvidden för det här nätverket. När det är **No** (Nej) ansluter enheter inte automatiskt.
-  - **Anslut till ett mer prioriterat nätverk om det är tillgängligt**: Om enheterna är inom räckvidden för ett mer prioriterat nätverk väljer du **Ja** för att använda det föredragna nätverket. Välj **No** (Nej) om du vill använda Wi-Fi-nätverket i den här konfigurationsprofilen.
+- **Connect automatically when in range** (Anslut automatiskt inom räckvidd): När det här är **Yes** (Ja) ansluter enheter automatiskt när de är inom räckvidden för det här nätverket. När det är **No** (Nej) ansluter enheter inte automatiskt.
+  - **Connect to more preferred network if available** (Anslut till ett mer prioriterat nätverk om det är tillgängligt): Om enheterna är inom räckvidden för ett mer prioriterat nätverk väljer du **Yes** (Ja) för att använda det föredragna nätverket. Välj **No** (Nej) om du vill använda Wi-Fi-nätverket i den här konfigurationsprofilen.
 
     Exempelvis kan du skapa ett Wi-Fi-nätverk med namnet **ContosoCorp** och använda **ContosoCorp** i konfigurationsprofilen. Du har även ett **ContosoGuest**-Wi-Fi-nätverk inom räckvidd. När företagets enheter är inom räckvidd vill du att de automatiskt ska anslutas till **ContosoCorp**. I det här scenariot ställer du in egenskapen **Connect to more preferred network if available** (Anslut till ett mer prioriterat nätverk om det är tillgängligt) till **No** (Nej).
 
-  - **Anslut till det här nätverket även om det inte sänder sitt SSID**: Välj **Ja** för att konfigurationsprofilen automatiskt ska ansluta till nätverket, även om nätverket är dolt (det vill säga att dess SSID inte sänds offentligt). Välj **No** (Nej) om du inte vill att den här konfigurationsprofilen ska ansluta till ditt dolda nätverk.
+  - **Connect to this network, even when it is not broadcasting its SSID** (Anslut till det här nätverket även om det inte sänder sitt SSID): Välj **Yes** (Ja) för att konfigurationsprofilen automatiskt ska ansluta till nätverket, även om nätverket är dolt (det vill säga att dess SSID inte sänds offentligt). Välj **No** (Nej) om du inte vill att den här konfigurationsprofilen ska ansluta till ditt dolda nätverk.
 
 - **Gräns för anslutningar med datapriser**: En administratör kan välja hur nätverkstrafiken mäts. Program kan sedan justera sitt nätverkstrafiksbeteende baserat på den här inställningen. Alternativen är:
 
-  - **Obegränsad**: Standard. Anslutningen är inte avgiftsbelagd och det finns inga trafikbegränsningar.
+  - **Obegränsat**: Standard. Anslutningen är inte avgiftsbelagd och det finns inga trafikbegränsningar.
   - **Fast**: Använd det här alternativet om nätverket är konfigurerat med en fast gräns för nätverkstrafik. När den här gränsen har nåtts är nätverksåtkomst förbjuden.
   - **Variabel**: Använd det här alternativet om nätverkstrafiken debiteras per byte.
 
 - **Enkel inloggning (SSO)** : Gör att du kan konfigurera enkel inloggning (SSO), där autentiseringsuppgifter delas för nätverksinloggning med dator och Wi-Fi. Alternativen är:
   - **Inaktivera**: Inaktiverar SSO-beteende. Användaren måste autentisera till nätverket separat.
   - **Aktivera innan användaren loggar in på enheten**: Använd enkel inloggning för att autentisera till nätverket precis före användarens inloggningsprocess.
-  - **Aktivera när användaren har loggat in på en enhet**: Använd enkel inloggning för att autentisera till nätverket omedelbart efter användarens inloggningsprocess är klar.
+  - **Aktivera efter användaren loggar in på enheten**: Använd enkel inloggning för att autentisera till nätverket omedelbart efter användarens inloggningsprocess är klar.
   - **Längsta tid att autentisera före timeout**: Ange det maximala antalet sekunder att vänta före autentisering till nätverket, 1–120 sekunder.
   - **Tillåt Windows att fråga användaren om ytterligare autentiseringsuppgifter**: Om du väljer **Ja** tillåts Windows-systemet att fråga användaren om ytterligare autentiseringsuppgifter om autentiseringsmetoden som kräver det. Välj **Nej** för att dölja dessa frågor.
 
-- **Aktivera cachelagring av Pairwise Master Key (PMK)** : Välj **Ja** för att cachelagra PMK:n som användes vid autentiseringen. Den här cachelagringen gör vanligtvis att autentisering till nätverket slutförs snabbare. Välj **Nej** för att framtvinga autentiseringshandskakningen vid anslutning till Wi-Fi-nätverket varje gång.
+- **Aktivera cachelagring av Pairwise Master Key (PMK)** : Välj **Ja** för att cachelagra PMK som används vid autentisering. Den här cachelagringen gör vanligtvis att autentisering till nätverket slutförs snabbare. Välj **Nej** för att framtvinga autentiseringshandskakningen vid anslutning till Wi-Fi-nätverket varje gång.
 
   - **Längsta tid som en PMK lagras i cacheminnet**: Ange hur många minuter som en Pairwise Master Key (PMK) lagras i cacheminnet, 5–1440 minuter.
-  - **Högsta antal PMK-nycklar lagrade i cachen**: Ange antalet nycklar som lagrade i cachen, från 1–255.
+  - **Maximalt antal PMK:er som lagras i cacheminnet**: Ange hur många nycklar som lagras i cacheminnet, 1–255.
 
 - **Aktivera förautentisering**: Förautentisering gör att profilen kan autentisera till alla åtkomstpunkter för nätverket i profilen före anslutning. Vid flyttning mellan åtkomstpunkter återansluter förautentisering användaren eller enheter snabbare. Välj **Ja** för att profilen ska autentisera till alla åtkomstpunkter för det här nätverket som ligger inom räckvidd. Välj **Nej** om du vill kräva att användaren eller enheten autentiserar till varje åtkomstpunkt separat.
 
-  - **Högsta antal förautentiseringsförsök**: Ange antalet försök för att förautentisera, från 1–16.
+  - **Högsta antal förautentiseringsförsök**: Ange antalet försök att förautentisera, 1–16.
 
 - **EAP-typ**: Välj EAP-typ (Extensible Authentication Protocol) för autentisering av skyddade trådlösa anslutningar. Alternativen är:
 
@@ -126,7 +124,7 @@ Välj **OK** > **Skapa** för att spara ändringarna. Profilen skapas och visas 
 
       **Certifikatservernamn**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Ange ett eller flera gemensamma namn som används i de certifikat som utfärdats av en betrodd certifikatutfärdare (CA). Om du anger den här informationen kan du hoppa över dialogrutan för dynamiskt förtroende som visas på användarenheter när de ansluter till Wi-Fi-nätverket.  
 
-      **Rotcertifikat för serververifiering**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Välj den betrodda rotcertifikatsprofil som ska användas för att autentisera anslutningen.  
+      **Rotcertifikat för servervalidering**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Välj den betrodda rotcertifikatsprofil som ska användas för att autentisera anslutningen.  
 
       **Identitetssekretess (yttre identitet)** : Använd med EAP-typen **PEAP**. Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.  
 
@@ -146,12 +144,12 @@ Välj **OK** > **Skapa** för att spara ändringarna. Profilen skapas och visas 
 
       **Identitetssekretess (yttre identitet)** : Använd med EAP-typen **EAP-TTLS**. Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
 
-- **Företagets proxyinställningar**: Välj att använda proxyinställningarna i din organisation. Alternativen är:
+- **Company Proxy settings** (Företagets proxyinställningar): Välj att använda proxyinställningarna i din organisation. Alternativen är:
   - **Inga**: Inga proxyinställningar konfigureras.
   - **Konfigurera manuellt**: Ange **proxyserverns IP-adress** och dess **portnummer**.
-  - **Konfigurera automatiskt**: Ange den URL som pekar till ett PAC-skript. Ange till exempel `http://proxy.contoso.com/proxy.pac`.
+  - **Konfigurera automatiskt**: Ange den URL som pekar till ett PAC-skript (Proxy Auto-Configuration). Ange till exempel `http://proxy.contoso.com/proxy.pac`.
 
-- **Tvinga Wi-Fi-profilen att följa FIPS-standarden (Federal Information Processing Standard)** : Välj **Ja** när du verifierar mot FIPS 140-2-standarden. Den här standarden krävs för alla amerikanska federala myndigheter som använder kryptografibaserade säkerhetssystem för att skydda känslig men ej klassificerad information som lagras digitalt. Välj **Nej** för att inte vara FIPS-kompatibel.
+- **Tvinga Wi-Fi-profilen att följa FIPS-standarden (Federal Information Processing Standard)** : Välj **Ja** vid validering mot FIPS 140-2-standarden. Den här standarden krävs för alla amerikanska federala myndigheter som använder kryptografibaserade säkerhetssystem för att skydda känslig men ej klassificerad information som lagras digitalt. Välj **Nej** för att inte vara FIPS-kompatibel.
 
 Välj **OK** > **Skapa** för att spara ändringarna. Profilen skapas och visas i profillistan.
 

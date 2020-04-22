@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c5c2af6ce301b0a5de06cbbd4126b1661ca21fb0
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79359072"
 ---
 # <a name="guided-scenario---deploy-microsoft-edge-for-mobile"></a>Guidat scenario – Distribuera Microsoft Edge för mobil
@@ -38,7 +38,7 @@ Nedanstående Microsoft Edge-företagsfunktioner som aktiveras med Intune-princi
 - **Integrering med Azure Application-proxy** – Administratörer kan styra åtkomsten till SaaS-appar och webbappar, vilket garanterar att webbläsarbaserade appar endast körs i den skyddade Microsoft Edge-webbläsaren, oavsett om användarna ansluter från företagets nätverk eller från Internet.
 - **Genvägar till hanterade favoriter och startsida** – För att underlätta åtkomsten kan administratörer ange URL:er som visas i Favoriter när slutanvändarna använder sin företagsmiljö. Administratörer kan ange en genväg till startsidan som visas som primär genväg när företagsanvändaren öppnar en ny sida eller en ny flik i Microsoft Edge.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - [Ange MDM-auktoriteten till Intune](mdm-authority-set.md#set-mdm-authority-to-intune) – inställningen för hantering av mobilenheter (MDM, Mobile Device Management) avgör hur du hanterar dina enheter. Som IT-administratör måste du ange en utfärdare för hantering av mobila enheter innan användarna kan registrera enheter för hantering.
 - Intune-administratörsbehörigheter som krävs:

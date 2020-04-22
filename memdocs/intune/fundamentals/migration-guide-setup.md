@@ -17,10 +17,10 @@ ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3b7784d4ad86e3418259f85ca1c4577d2289dc86
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79358162"
 ---
 # <a name="basic-setup"></a>Grundläggande konfiguration
@@ -59,13 +59,13 @@ Om du planerar att använda certifikatbaserad autentisering för VPN-, Wi-Fi- el
 
 Innan du kan migrera till Intune måste du ha en [Intune-prenumeration](account-sign-up.md).
 
-### <a name="task-2-assign-intune-user-licenses"></a>Uppgift 2: Tilldela Intune-användarlicenser
+### <a name="task-2-assign-intune-user-licenses"></a>Steg 2: Tilldela Intune-användarlicenser
 
 - Lär dig [hur man tilldelar Intune-användarlicenser](licenses-assign.md).
 
 - Om du har skapat en ny Azure Active Directory-klient kan du läsa om [hur du kan skapa nya användare eller synkronisera användare från din lokala Active Directory (AD).](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect)
 
-### <a name="task-3-set-your-mdm-authority-to-intune"></a>Uppgift 3: Ange din MDM-auktoritet till Intune
+### <a name="task-3-set-your-mdm-authority-to-intune"></a>Uppgift 3: Konfigurera Intune som utfärdare för hantering av mobilenheter
 
 Vi rekommenderar att du hanterar Intune med hjälp av [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 

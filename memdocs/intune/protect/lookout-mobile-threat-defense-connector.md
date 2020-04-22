@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 17b120faa0021a1fc044d7831b4b81ea88f404a7
-ms.sourcegitcommit: bbb63f69ff8a755a2f2d86f2ea0c5984ffda4970
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79526588"
 ---
 # <a name="lookout-mobile-endpoint-security-connector-with-intune"></a>Lookout Mobile Endpoint Security-anslutningsprogram med Intune
@@ -32,13 +32,13 @@ Du kan styra åtkomsten från mobila enheter till företagsresurser baserat på 
 - Installerade skadliga program
 - Skadliga nätverksprofiler
 
-Du kan konfigurera principer för villkorsstyrd åtkomst baserat på riskbedömningen i Lookout. Den aktiveras via Intune-efterlevnadsprinciper för registrerade enheter, som du kan använda för att tillåta eller blockera åtkomst för icke-kompatibla enheter till företagets resurser baserat på de hot som har identifierats. För oregistrerade enheter kan du använda appskyddsprinciper till att framtvinga en blockering eller selektiv rensning baserat på identifierade hot.
+Du kan konfigurera principer för villkorsstyrd åtkomst baserat på riskbedömningen i Lookout. Den aktiveras via Intune-efterlevnadsprinciper för registrerade enheter, som du kan använda för att tillåta eller blockera åtkomst för icke-kompatibla enheter till företagets resurser baserat på de hot som har identifierats. För oregistrerade enheter kan du använda appskyddsprinciper för att framtvinga en blockering eller selektiv rensning baserat på identifierade hot.
 
 ## <a name="how-do-intune-and-lookout-mobile-endpoint-security-help-protect-company-resources"></a>Hur skyddar Intune och Lookout Mobile Endpoint Security företagets resurser?
 
 Lookouts mobilapp, **Lookout for Work**, är installerad och körs på mobila enheter. Den här appen avbildar filsystem, nätverksstackar samt telemetri för enheter och program där det är tillgängligt och skickar det sedan till Lookouts molntjänst för att utvärdera enhetens risk för mobila hot. Du kan ändra risknivåklassificeringen för hot i Lookout-konsolen så som den passar dig.
 
-- **Stöd för registrerade enheter** – Intune-enhetens efterlevnadsprincip innehåller en regel för MTD (Mobile Threat Defense) som kan använda informationen om riskbedömning från Lookout for Work. När MTD-regeln är aktiverad utvärderar Intune enhetens efterlevnad med principen som du har aktiverat. Om enheten inte bedöms uppfylla efterlevnadskraven nekas användarna åtkomst till företagsresurser som Exchange Online och SharePoint Online. Användarna får också instruktioner från Lookout for Work-appen som är installerad på deras enheter, som hjälper dem att åtgärda problemet så att de kan komma åt företagets resurser igen. Stöd för användning av Lookout for Work med registrerade enheter:
+- **Stöd för registrerade enheter** – Intune-enhetens efterlevnadsprincip innehåller en regel för MTD (Mobile Threat Defense) som kan använda informationen om riskbedömning från Lookout for Work. När MTD-regeln är aktiverad utvärderar Intune enhetens efterlevnad med den princip som du har aktiverat. Om enheten inte bedöms uppfylla efterlevnadskraven nekas användarna åtkomst till företagsresurser som Exchange Online och SharePoint Online. Användarna får också instruktioner från Lookout for Work-appen som är installerad på deras enheter, som hjälper dem att åtgärda problemet så att de kan komma åt företagets resurser igen. Stöd för användning av Lookout for Work med registrerade enheter:
   - [Lägga till MTD-appar till enheter](../protect/mtd-apps-ios-app-configuration-policy-add-assign.md)
   - [Skapa en enhetsefterlevnadsprincip som stöder MTD](../protect/mtd-device-compliance-policy-create.md)
   - [Aktivera MTD-anslutningen i Intune](../protect/mtd-connector-enable.md)
@@ -57,7 +57,7 @@ Följande plattformar har stöd för Lookout efter att ha registrerats i Intune:
 
 Mer information om stöd för plattformar och språk finns på [Lookout-webbplatsen](https://personal.support.lookout.com/hc/articles/114094140253).  
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Enterprise-prenumeration för Lookout Mobile EndPoint Security  
 - Microsoft Intune-prenumeration
@@ -135,4 +135,4 @@ Här följer de åtgärder du måste utföra för att implementera den här lös
 - [Aktivera Mobile Endpoint Security i Intune](mtd-connector-enable.md)
 - [Lägga till och tilldela appen Lookout for Work](mtd-apps-ios-app-configuration-policy-add-assign.md)
 - [Konfigurera Lookout-enhetens efterlevnadsprincip](mtd-device-compliance-policy-create.md)
-- [Skapa en MTD-appskyddspolicy](mtd-app-protection-policy.md)
+- [Skapa en MTD-appskyddsprincip](mtd-app-protection-policy.md)

@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a2c5590acd870e2623491052ba43bf29e4676568
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79344369"
 ---
 # <a name="add-apps-for-windows-pcs-that-run-the-intune-software-client"></a>Lägg till program för Windows-datorer som kör Intune-klientprogramvaran
@@ -53,7 +53,7 @@ Använd Intune-programvaruutgivaren för att konfigurera egenskaper för appen o
    - **Ange platsen för programvarans installationsfiler**. Ange platsen för installationsfilerna, eller välj **Bläddra** för att välja platsen i en lista.
    - **Inkludera ytterligare filer och undermappar från samma mapp**. Vissa program som använder Windows Installer kräver stödfiler. Dessa måste finnas i samma mapp som installationsfilen. Välj det här alternativet om du vill distribuera dessa stödfiler.
 
-   Om du till exempel vill publicera en app med namnet Application.msi i Intune skulle sidan se ut så här: ![Sidan Programvaruinstallation för utgivaren](./media/add-apps-for-windows-pcs-in-microsoft-intune/publisher-for-pc.png)
+   Om du till exempel vill publicera en app med namnet Application.msi i Intune skulle sidan se ut så här: ![Sidan Programvaruinstallation i programvaruutgivaren](./media/add-apps-for-windows-pcs-in-microsoft-intune/publisher-for-pc.png)
 
    Den här installationstypen använder en del av ditt molnlagringsutrymme.
 
@@ -92,7 +92,7 @@ Använd Intune-programvaruutgivaren för att konfigurera egenskaper för appen o
 
 7. Endast för **Windows Installer**-filtypen (endast .exe): På sidan **Returkoder** kan du lägga till nya felkoder som tolkas av Intune när appen installeras på en hanterad Windows-dator.
 
-   Som standard använder Intune branschstandardens returkoder för att rapportera fel eller framgång när ett appaket installeras: **0** (lyckades) eller **3010** (lyckades med omstart). Du kan också lägga till egna returkoder i listan. Om du anger en lista över returkoder och appinstallationen returnerar en kod som inte finns i listan tolkas det som ett fel.
+   Som standard använder Intune returkoder som är branschstandard för att rapportera fel eller framgång för installation av ett appaket: **0** (Klart) eller **3010** (Lyckas med omstart). Du kan också lägga till egna returkoder i listan. Om du anger en lista över returkoder och appinstallationen returnerar en kod som inte finns i listan tolkas det som ett fel.
 
 8. På sidan **Sammanfattning** läser du igenom den information som du har angivit. När du är klar väljer du **Överför**.
 

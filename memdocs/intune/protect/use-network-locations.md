@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4da3a8e9e59f1f6a4d1c38354f14163c4773fd7d
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80325308"
 ---
 # <a name="use-locations-network-fence-in-intune"></a>Använda platser (nätverksstängsel) i Intune
@@ -40,7 +40,7 @@ På din tillverkningsanläggning använder vissa anställda Android-enheter. En 
 
 Dessutom kan du lägga till [åtgärder vid inkompatibilitet](#configure-the-actions-for-noncompliance). När enheten är tillbaka lokalt på anläggningen och på nätverksplatsen får den återigen åtkomst till företagsresurser.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Så här skapar du en platsbaserad efterlevnadsprincip:
 

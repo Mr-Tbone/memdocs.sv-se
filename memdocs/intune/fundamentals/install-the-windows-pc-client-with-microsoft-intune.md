@@ -16,10 +16,10 @@ search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a1641efe6899c46a797a8ccf7979b533cb620d19
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79358968"
 ---
 # <a name="install-the-intune-software-client-on-windows-pcs"></a>Installera Intune-klientprogrammet på Windows-datorer
@@ -126,8 +126,8 @@ Om användarna inte har tilldelats en licens för Intune och organisationens MDM
 
 - Användare av Windows 10- eller Windows 8.1-datorer visas två registreringsalternativ:
 
-  - **Registrera datorn som en mobil enhet**: Användarna väljer knappen **Läs mer om att registrera** för att se anvisningar om hur datorn registreras som en mobil enhet. Den här knappen visas tydligt eftersom MDM-registreringen anses vara det registreringsalternativ som är standard och föredras. Dock gäller inte MDM-alternativet för det här avsnittet, som endast omfattar installationen av klientprogrammet.
-  - **Registrera datorn med Intune-klientprogrammet**: Du måste berätta för användarna att de ska välja länken **Klicka här om du vill ladda ned** som vägleder dem genom installationen av klientprogrammet.
+  - **Registrera Windows-datorer som mobila enheter**: Användare trycker på knappen **Läs mer om att registrera** och tas till anvisningar om hur du registrerar datorn som en mobil enhet. Den här knappen visas tydligt eftersom MDM-registreringen anses vara det registreringsalternativ som är standard och föredras. Dock gäller inte MDM-alternativet för det här avsnittet, som endast omfattar installationen av klientprogrammet.
+  - **Registrera datorn med Intune-klientprogrammet**: Du måste berätta för användarna att de ska välja länken **Klicka här om du vill ladda ned** som tar dem genom installationen av klientprogrammet.
 
 Följande tabell innehåller en sammanfattning av alternativen.
 

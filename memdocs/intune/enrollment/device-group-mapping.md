@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b10d56e9eb915273d5be9a5b14ca4528a64a2057
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80327107"
 ---
 # <a name="categorize-devices-into-groups"></a>Kategorisera enheter i grupper
@@ -35,7 +35,7 @@ Enhetskategorier använder följande arbetsflöde:
 2. När användare av iOS/iPadOS- och Android-enheter registrerar en enhet, så måste de välja en kategori från listan med kategorier som du har konfigurerat. Om de vill tilldela en kategori till en Windows-enhet måste användarna använda webbplatsen Företagsportal.
 3. Du kan sedan distribuera principer och appar för dessa grupper.
 
-Du kan skapa vilken typ av enhetskategori som du vill. Exempel:
+Du kan skapa vilken typ av enhetskategori som du vill. Till exempel:
 - Butikskassa
 - Demonstrationsenhet
 - Försäljning
@@ -44,7 +44,7 @@ Du kan skapa vilken typ av enhetskategori som du vill. Exempel:
 
 ## <a name="how-to-configure-device-categories"></a>Så här konfigurerar du enhetsinställningar
 
-### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>Steg 1: Skapa enhetskategorier på Intune-bladet i Azure-portalen
+### <a name="step-1-create-device-categories-on-the-intune-blade-of-the-azure-portal"></a>Steg 1: Skapa enhetskategorier på Intune-bladet på Azure-portalen
 1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Enhetskategorier**.
 2. På sidan **Enhetskategorier** väljer du **Skapa** för att lägga till en ny kategori.
 3. På bladet **Skapa enhetskategori** anger du ett **Namn** på den nya kategorin och en valfri **Beskrivning**.

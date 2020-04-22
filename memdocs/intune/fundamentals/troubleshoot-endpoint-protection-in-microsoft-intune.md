@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 16b7cc65ae043fb48b7f500bfcd65195c7ff7561
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79355705"
 ---
 # <a name="endpoint-protection-issues-and-possible-solutions-in-microsoft-intune"></a>Problem med Endpoint Protection och möjliga lösningar i Microsoft Intune
@@ -37,7 +37,7 @@ Granska händelseloggar och felkoder för att [felsöka problem med Microsoft De
 
 ### <a name="endpoint-protection-engine-unavailable"></a>Endpoint Protection-motorn är inte tillgänglig
 
-**Möjlig orsak**: Motorn för Endpoint Protection i Intune är skadad eller har tagits bort.
+**Potentiell orsak**: Motorn för Endpoint Protection i Intune är skadad eller borttagen.
 
 **Möjliga lösningar**:
 
@@ -58,29 +58,29 @@ Du kan få ett meddelande om att vissa funktioner är inaktiverade. Du får de h
 `Script scanning disabled`  
 `Network Inspection System disabled`  
 
-**Möjliga lösningar**: Aktivera de här funktionerna. Anvisningar finns i:
+**Möjliga lösningar**: aktivera dessa funktioner. Anvisningar finns i:
 
 - [Lägg till Endpoint Protection-inställningar](../protect/endpoint-protection-configure.md)
 - [Microsoft Defender Antivirus](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus)
-- [Slutanvändare: Aktivera realtidsskydd om du vill komma åt företagsresurser](../user-help/turn-on-defender-windows.md)
+- [Slutanvändare: aktivera realtidsskydd om du vill komma åt företagsresurser](../user-help/turn-on-defender-windows.md)
 
 ### <a name="malware-definitions-out-of-date"></a>Definitionerna för skadlig kod är inaktuella
 
 Den här statusen visas när definitionerna för skadlig kod på enheten är inaktuella med 14 dagar eller mer. Meddelandet kan till exempel indikera om enheten är frånkopplad från Internet eller om definitionerna för skadlig kod är inaktuella.
 
-**Möjliga lösningar**: Om definitionerna för skadlig kod är inaktuella, kan du uppdatera definitionerna med [Microsoft Defender Antivirus](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus).
+**Möjliga lösningar**: om definitionerna för skadlig kod är inaktuella, kan du uppdatera definitionerna med [Microsoft Defender Antivirus](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus).
 
 ### <a name="full-scan-overdue-or-quick-scan-overdue"></a>Det är dags för Fullständig sökning eller Snabbsökning
 
 En fullständig sökning eller Snabbsökning har inte slutförts de senaste 14 dagarna. Det här scenariot kan inträffa om enheten startar om under en fullständig genomsökning.
 
-**Möjliga lösningar**: Om en genomsökning har förfallit kan du köra en genomsökning en gång, eller schemalägga återkommande genomsökningar. Se [Microsoft Defender Antivirus](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus).
+**Möjliga lösningar**: om en genomsökning har förfallit kan du köra en genomsökning en gång, eller schemalägga återkommande genomsökningar. Se [Microsoft Defender Antivirus](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus).
 
 ### <a name="another-endpoint-protection-application-running"></a>Ett annat program för slutpunktsskydd körs
 
 Ett annat program för slutpunktsskydd körs och enheten är felfri.
 
-**Möjliga lösningar**: Om ett annat program för slutpunktsskydd är installerat och Intune upptäcker det programmet, kan enheten bli instabil.
+**Möjliga lösningar**: om ett annat program för slutpunktsskydd är installerat och Intune upptäcker det programmet, kan enheten bli instabil.
 
 ## <a name="next-steps"></a>Nästa steg
 

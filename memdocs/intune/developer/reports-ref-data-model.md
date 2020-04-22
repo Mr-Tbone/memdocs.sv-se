@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cf5ab63f72484ddbbf311810e232404ab643d2d2
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79359852"
 ---
 # <a name="microsoft-intune-data-warehouse-data-model"></a>Datamodell för Microsoft Intune-informationslager
@@ -42,14 +42,14 @@ Dessa områden innehåller entiteterna som är viktiga för din Intune-miljö. D
 
 - [Program](reports-ref-application.md)
 - [Datum](reports-ref-date.md)
-- [Enheter](reports-ref-devices.md)
+- [Egenskaper](reports-ref-devices.md)
 - [Tillägg för Intune-hantering](reports-ref-intunemanagementextension.md)
 - [Princip](reports-ref-policy.md)
 - [Mobilapphantering (MAM)](../apps/app-management.md)
 - [Användare](reports-ref-user.md)
 - [Användarenhetsassociation](reports-ref-user-device.md)
 
-## <a name="relationships-star-schema-model"></a>Relationer: Star-schemamodell
+## <a name="relationships-star-schema-model"></a>Relationer: Star-schemamodellen
 
 Lagret organiserar entiteterna i relationer som är meningsfulla för den typ av frågor du vill ställa. Du kan till exempel granska antalet installationer av ett internt utvecklat Android-program. Informationslagrets struktur ger dig en lättöverskådlig bild av den mobila miljön. Analysverktyg, exempelvis Microsoft Power BI, kan i sin tur använda informationslagerdatamodellen för att skapa visualiseringar och dynamiska instrumentpaneler.
 
@@ -57,7 +57,7 @@ Enheter och relationer använder en star-schemamodell. Ett star-schema visar fak
 
 Ett stjärnschema är utformat för maximal flexibilitet och dataanalys så att du kan skapade de rapporter som behövs för att förstå din föränderliga mobilmiljö.
 
-## <a name="time-daily-snapshots"></a>Tid: Dagliga ögonblicksbilder
+## <a name="time-daily-snapshots"></a>Tid: dagliga ögonblicksbilder
 
 Lagret är nedströms från dina Intune-data. Intune tar en daglig ögonblicksbild vid midnatt UTC-tid och lagrar den i lagret. Varaktigheten för kvarhållna ögonblicksbilder varierar mellan faktatabeller. Vissa kan kvarhållas sju dagar, andra 30 dagar och vissa till och med längre.
 

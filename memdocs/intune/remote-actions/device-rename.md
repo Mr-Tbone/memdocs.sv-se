@@ -17,10 +17,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4ff0e650a3eccf057158d3faf28875e42ed90a4d
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80325031"
 ---
 # <a name="rename-a-device-in-intune"></a>Ändra namn på en enhet i Intune
@@ -46,7 +46,7 @@ Den här funktionen stöder för närvarande inte namnbyte av Windows-hybridenhe
 När du byter namn på en Windows-enhet måste det nya namnet följa dessa regler:
 - 15 tecken eller mindre (måste vara mindre än eller lika med 63 byte exklusive avslutande NULL)
 - Inte null eller en tom sträng
-- Tillåten ASCII: Bokstäver (a–z, A–Z), siffror (0–9) och bindestreck
+- Tillåten ASCII: bokstäver (a-z, A-Z), siffror (0-9) och bindestreck
 - Tillåten Unicode: tecken > = 0x80, måste vara en giltig UTF8, måste vara IDN-mappningsbara (det vill säga att RtlIdnToNameprepUnicode lyckas; se RFC 3492)
 - Namn får inte enbart innehålla siffror
 - Inga blanksteg i namnet

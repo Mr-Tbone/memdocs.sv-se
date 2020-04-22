@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8e44fa26c84537fdcf801192ce8cc22790f320b9
-ms.sourcegitcommit: 6a6a713fc1090e03893d80f4259dc7300fb1d5ff
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80438798"
 ---
 # <a name="android-device-administrator-enrollment"></a>Administratörsregistrering för Android-enhet
@@ -48,7 +48,7 @@ Mer information om Googles Android Enterprise-funktioner finns i följande artik
 När en användare har registrerat sig kan du börja hantera användarens enheter i Intune, inklusive [tilldela efterlevnadsprinciper](../protect/compliance-policy-create-android.md), [hantera appar](../apps/app-management.md) med mera.
 
 Information om andra användaraktiviteter finns i de här artiklarna:
-- [Resurser om slutanvändarupplevelsen med Microsoft Intune](../fundamentals/end-user-educate.md)
+- [Resurser om slutanvändarens upplevelse med Microsoft Intune](../fundamentals/end-user-educate.md)
 - [Använda en Android-enhet med Intune](https://docs.microsoft.com/mem/intune/user-help/why-enroll-android-device)
 
 

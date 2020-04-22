@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 71563a44e991e7324b9ce258d66d288d4b5a6cdb
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "80327251"
 ---
 # <a name="set-up-iosipados-device-enrollment-with-apple-configurator"></a>Konfigurera registrering av iOS/iPadOS-enheter med Apple Configurator
@@ -35,7 +35,7 @@ Intune stöder registrering av iOS/iPadOS-enheter med hjälp av [Apple Configura
 
 Registreringsmetoder med Apple Configurator kan inte användas med [enhetsregistreringshanteraren](device-enrollment-manager-enroll.md).
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Fysisk åtkomst till iOS/iPadOS-enheter
 - [Ange MDM-utfärdare](../fundamentals/mdm-authority-set.md)

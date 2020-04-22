@@ -15,10 +15,10 @@ ms.assetid: 361ef17b-1ee0-4879-b7b1-d678b0787f5a
 search.appverid: MET150
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c25a40d288b643c289c05322e3e2d4677afb0b60
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79362244"
 ---
 # <a name="manage-operating-system-versions-with-intune"></a>Hantera versioner av operativsystem med Intune
@@ -78,12 +78,12 @@ Mer information finns i [Hur du skapar och tilldelar skyddsprinciper för appar]
 
 ## <a name="managing-a-new-operating-system-version-rollout"></a>Hantera distribution av en ny operativsystemversion
 Du kan använda Intune-funktionerna som beskrivs i den här artikeln för att flytta organisationen till en ny operativsystemversion inom tidslinjen du anger. I följande steg finns en exempel-distributionsmodell för att flytta dina användare från operativsystemet v1 till operativsystemet v2 på sju dagar.
-- **Steg 1**: Använd begränsningar för registrering för att kräva operativsystem v2 som den lägsta versionen för att registrera enheten. Det säkerställer att nya slutanvändarenheter är kompatibla vid registreringen.
+- **Steg 1**: Använd begränsningar för registrering för att kräva operativsystemet v2 som den lägsta versionen för att registrera enheten. Det säkerställer att nya slutanvändarenheter är kompatibla vid registreringen.
 - **Steg 2a**: Använd Intune-appskyddsprinciper för att varna användare när appen öppnas eller återupptas om att operativsystem v2 krävs.
 - **Steg 2b**. Använd efterlevnadsprinciper för enheter för att kräva operativsystem v2 som lägsta version för att en enhet ska vara kompatibel. Använd **Åtgärder** för icke-kompatibilitet för att tillåta en sju dagar lång respitperiod och för att skicka ett e-postmeddelande till slutanvändarna med din tidslinje och dina krav.
   - Dessa principer informerar slutanvändarna om att befintliga enheter måste uppdateras via e-post, via Intune-företagsportalen, och informera när appen öppnas för appar som aktiverats med en appskyddsprincip.
   - Du kan köra en efterlevnadsrapport för att identifiera användare som inte följer standard. 
-- **Steg 3a**: Använd Intune-appskyddsprinciper för att blockera användare när en app öppnas eller återupptas om enheten inte kör operativsystem v2.
+- **Steg 3a**: Använd Intune-appskyddsprinciper för att blockera användare när en app öppnas eller återupptas om enheten inte kör operativsystemet v2.
 - **Steg 3b**: Använd efterlevnadsprinciper för enheter för att kräva operativsystem v2 som lägsta version för att en enhet ska vara kompatibel.
   - Principerna kräver att enheterna ska vara uppdaterade för att de ska fortsätta att få åtkomst till organisationsdata. Skyddade tjänster blockeras när de används med villkorlig åtkomst för enheten. Appar som är aktiverade med en appskyddsprincip blockeras när de öppnas eller när de får åtkomst till organisationsdata.
 

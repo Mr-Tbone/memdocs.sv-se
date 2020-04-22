@@ -18,10 +18,10 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d9da6870caed61917d8093e2dd25882cec72d987
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79353261"
 ---
 # <a name="iosipados-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS-/iPadOS-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
@@ -83,7 +83,7 @@ Mer information om e-postprofiler finns i [Använda e-postprofiler med Intune f�
 
 ## <a name="system-security"></a>Systemsäkerhet
 
-### <a name="password"></a>lösenordsinställning
+### <a name="password"></a>Lösenord
 
 > [!NOTE]
 > När en efterlevnads- eller konfigurationsprincip används på en iOS-/iPadOS-enhet, uppmanas användarna att ange ett lösenord var 15:e minut. Användarna uppmanas kontinuerligt tills ett lösenord anges. När ett lösenord anges för iOS-/iPadOS-enheten startar krypteringsprocessen automatiskt. Enheten förblir krypterad tills lösenordet inaktiveras.
@@ -96,7 +96,7 @@ Mer information om e-postprofiler finns i [Använda e-postprofiler med Intune f�
   - **Inte konfigurerad** (*standard*) – Användare kan skapa enkla lösenord som **1234** eller **1111**.
   - **Blockera** – Användarna kan inte skapa enkla lösenord, som exempelvis **1234** eller **1111**. 
 
-- **Minsta lösenordslängd**:  
+- **Minsta längd på lösenord**:  
   Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.  
 
 - **Lösenordstyp som krävs**:  
@@ -113,7 +113,7 @@ Mer information om e-postprofiler finns i [Använda e-postprofiler med Intune f�
 - **Maximalt antal minuter av inaktivitet innan skärmen låses**:  
   Ange tiden innan enhetens skärm låses vid inaktivitet. Alternativen är *Inte konfigurerat* (standard), *Omedelbart* och från *1 minut* till *15 minuter*.
 
-- **Lösenordets giltighetstid (dagar)** :  
+- **Förfallotid för lösenord (dagar)** :  
   Ange antalet dagar tills lösenordet upphör att gälla och användaren måste skapa ett nytt. 
 
 - **Antalet tidigare lösenord för att förhindra återanvändning** *(iOS 8.0 och senare)* :   

@@ -17,15 +17,15 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f4e809a888fc2696e54540ee6baa2271d7340579
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79361061"
 ---
 # <a name="upgrade-devices-running-windows-holographic-to-windows-holographic-for-business"></a>Uppgradera enheter som kör Windows Holographic till Windows Holographic for Business
 
-Microsoft Intune innehåller många inställningar som hanterar och skyddar dina enheter. I den här artikeln visas och beskrivs inställningarna för att uppgradera Windows Holographic-enheter till Windows Holographic for Business. De här inställningarna skapas i uppgraderingens konfigurationsprofil i Intune som sedan skickas eller distribueras till enheter.
+Microsoft Intune innehåller många inställningar som hanterar och skyddar dina enheter. I den här artikeln visas och beskrivs inställningarna för att uppgradera Windows Holographic-enheter till Windows Holographic for Business. Inställningarna skapas i uppgraderingens konfigurationsprofil i Intune, som sedan skickas eller distribueras till enheterna.
 
 I din MDM-lösning (hantering av mobilenheter) använder du dessa inställningar när du uppgraderar dina Windows Holographic-enheter. Du kan köpa Commercial Suite om du behöver licensen som krävs vid uppgraderingen av Microsoft HoloLens. Mer information finns i [Unlock Windows Holographic for Business features](https://docs.microsoft.com/hololens/hololens1-upgrade-enterprise) (Lås upp funktioner i Windows Holographic for Business).
 
@@ -37,7 +37,7 @@ Mer information om den här funktionen finns i [Uppgradera Windows 10-utgåvor e
 
 ## <a name="edition-upgrade"></a>Versionsuppgradering
 
-- **Utgåva att uppgradera till**: Välj **Windows 10 Holographic for Business**.
+- **Version att uppgradera till**: **Windows 10 Holographic for Business**.
 - **Licensfil**: Bläddra till och välj den XML-licensfil som du har fått.
 
   ![Ange XML-filnamnet som innehåller licensinformationen för Holographic for Business](./media/holographic-upgrade/Holographic-edition-upgrade.png)

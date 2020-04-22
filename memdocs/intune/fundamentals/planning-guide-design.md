@@ -19,10 +19,10 @@ search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d29294f1d9556f195fe70f0e2cb36cc8c9ddcfba
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/21/2020
 ms.locfileid: "79357733"
 ---
 # <a name="create-a-design"></a>Skapa en design
@@ -194,7 +194,7 @@ Du behöver veta vilka enheter som kommer att finnas i miljön och bekräfta om 
 
 ### <a name="devices"></a>Egenskaper
 
-Intune hanterar mobila enheter för att skydda företagets data och gör att slutanvändarna kan arbeta från fler platser. Intune har stöd för många enhetsplattformar, så vi rekommenderar att du dokumenterar de enheter, OS-plattformar och versioner som det kommer att finnas stöd för i organisationens utformning. Exempel:
+Intune hanterar mobila enheter för att skydda företagets data och gör att slutanvändarna kan arbeta från fler platser. Intune har stöd för många enhetsplattformar, så vi rekommenderar att du dokumenterar de enheter, OS-plattformar och versioner som det kommer att finnas stöd för i organisationens utformning. Till exempel:
 
 | **Enhetsplattform** | **OS-versioner** |
 |:---:|:---:|
@@ -255,8 +255,8 @@ Du bör skapa minst en konfigurationsprincip per plattform. Du kan skapa flera k
 
 | **Principnamn** | **Enhetsplattform** | **Inställningar** | **Målgrupp** |   
 |:---:|:---:|:---:|:---:|
-| Företag – iOS | iOS | PIN-kod krävs, längd: 6, Begränsa molnsäkerhetskopiering | Företagsenheter |                                                           
-| Företag – Android | Android | PIN-kod krävs, längd: 6, Begränsa molnsäkerhetskopiering | Företagsenheter |                                                           
+| Företag – iOS | iOS | PIN-kod krävs, längd: 6, begränsa säkerhetskopiering i molnet | Företagsenheter |                                                           
+| Företag – Android | Android | PIN-kod krävs, längd: 6, begränsa säkerhetskopiering i molnet | Företagsenheter |                                                           
 | BYOD – iOS  | iOS | PIN-kod krävs, längd: 4 | BYOD-enheter |
 | BYOD – Android  | Android | PIN-kod krävs, längd: 4 | BYOD-enheter |
 
