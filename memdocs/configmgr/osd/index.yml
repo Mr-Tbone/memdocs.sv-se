@@ -1,0 +1,62 @@
+### YamlMime:Landing
+title: Dokumentation för distribution av operativsystem
+summary: Använd Configuration Manager för att distribuera Windows via olika metoder och automatisera uppgifter.
+metadata:
+  title: Dokumentation för distribution av operativsystem
+  titleSuffix: Configuration Manager
+  description: Använd Configuration Manager för att distribuera Windows via olika metoder och automatisera uppgifter.
+  ms.prod: configuration-manager
+  ms.technology: configmgr-osd
+  ms.topic: landing-page
+  author: aczechowski
+  ms.author: aaroncz
+  ms.date: 01/28/2020
+  ms.openlocfilehash: 5c56cef287ee16a8899c16af72d4734c9d1f4bad
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741960"
+landingContent:
+- title: Om distribution av operativsystem
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Introduktion till distribution av operativsystem
+      url: understand/introduction-to-operating-system-deployment.md
+    - text: Krav på infrastruktur
+      url: plan-design/infrastructure-requirements-for-operating-system-deployment.md
+  - linkListType: concept
+    links:
+    - text: Förbereda för distribution av operativsystem
+      url: get-started/prepare-for-operating-system-deployment.md
+    - text: Distributionsscenarier för operativsystem
+      url: deploy-use/scenarios-to-deploy-enterprise-operating-systems.md
+    - text: Distributionsmetoder för operativsystem
+      url: deploy-use/methods-to-deploy-enterprise-operating-systems.md
+- title: Kom igång
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Hantera aktivitetssekvenser
+      url: deploy-use/manage-task-sequences-to-automate-tasks.md
+    - text: Skapa en aktivitetssekvens för en operativsystemuppgradering
+      url: deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md
+    - text: Skapa en fasindelad distribution
+      url: deploy-use/create-phased-deployment-for-task-sequence.md
+    - text: Distribuera en aktivitetssekvens
+      url: deploy-use/deploy-a-task-sequence.md
+    - text: Felsök en aktivitetssekvens
+      url: deploy-use/debug-task-sequence.md
+- title: Teknisk referens
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Använda redigeringsprogrammet för aktivitetssekvenser
+      url: understand/task-sequence-editor.md
+    - text: Om aktivitetssekvenssteg
+      url: understand/task-sequence-steps.md
+    - text: Använda aktivitetssekvensvariabler
+      url: understand/using-task-sequence-variables.md
+    - text: Variabelreferens för aktivitetssekvens
+      url: understand/task-sequence-variables.md

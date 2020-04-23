@@ -1,0 +1,30 @@
+### YamlMime:Landing
+title: Dokumentation om klientkoppling
+summary: Ladda upp dina Configuration Manager-enheter till molntjänsten och utför åtgärder med dem.
+metadata:
+  title: Dokumentation om klientkoppling
+  titleSuffix: Configuration Manager
+  description: Ladda upp dina Configuration Manager-enheter till molntjänsten och utför åtgärder med dem.
+  ms.product: configuration-manager
+  ms.technology: configmgr-core
+  ms.topic: landing-page
+  author: mestew
+  ms.author: mstewart
+  ms.date: 04/01/2020
+  ms.openlocfilehash: 282a213e680231ad1d88323f8a4e34380e58672d
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741365"
+landingContent:
+- title: Om klientkoppling
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Aktivera klientkoppling
+      url: device-sync-actions.md
+  - linkListType: reference
+    links:
+    - text: Felsöka klientkoppling
+      url: technical-reference.md

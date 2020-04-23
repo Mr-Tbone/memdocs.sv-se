@@ -1,0 +1,7 @@
+- name: Konfigurationshanteraren
+  tocHref: /azure/azure-monitor/
+  topicHref: /sccm/index
+  items:
+    - name: Kärninfrastruktur
+      tocHref: /azure/azure-monitor/platform/
+      topicHref: /sccm/core/understand/introduction

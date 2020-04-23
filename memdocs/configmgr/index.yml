@@ -1,0 +1,235 @@
+### YamlMime:Hub
+title: Dokumentation om Microsoft Endpoint Configuration Manager
+summary: 'Officiell produktdokumentation för de följande komponenterna i Microsoft Endpoint Manager: Configuration Manager, samhantering och Desktop Analytics'
+metadata:
+  ms.topic: hub-page
+  ms.openlocfilehash: b890572e652528e1446f1dd2e194d933c27938dd
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741484"
+highlightedContent:
+  items:
+  - title: Nyheter
+    itemType: learn
+    url: ./core/plan-design/changes/whats-new-incremental-versions.md
+  - title: Konfigurationer som stöds
+    itemType: architecture
+    url: ./core/plan-design/configs/supported-configurations.md
+  - title: Uppdateringar och service
+    itemType: deploy
+    url: ./core/servers/manage/updates.md
+  - title: Loggfiler
+    itemType: learn
+    url: ./core/plan-design/hierarchy/log-files.md
+  - title: Portar
+    itemType: learn
+    url: ./core/plan-design/hierarchy/ports.md
+  - title: Teknisk förhandsvisning
+    itemType: get-started
+    url: ./core/get-started/technical-preview.md
+conceptualContent:
+  items:
+  - title: Molnansluten hantering
+    links:
+    - text: Hantera klienter på Internet
+      url: ./core/clients/manage/manage-clients-internet.md
+      itemType: overview
+    - text: Prenumerationsavtal för Azure AD
+      url: ./core/plan-design/security/plan-for-security.md#bkmk_planazuread
+      itemType: architecture
+    - text: Azure-tjänster
+      url: ./core/servers/deploy/configure/azure-services-wizard.md
+      itemType: how-to-guide
+  - title: Samhantering
+    links:
+    - text: Snabbstarter
+      url: ./comanage/quickstarts.md
+      itemType: quickstart
+    - text: Självstudier
+      url: ./comanage/tutorial-co-manage-clients.md
+      itemType: tutorial
+    - text: Arbetsbelastningar
+      url: ./comanage/workloads.md
+      itemType: overview
+    footerLink:
+      text: Läs mer
+      url: ./comanage/index.yml
+  - title: Realtidshantering
+    links:
+    - text: CMPivot
+      url: ./core/servers/manage/cmpivot.md
+      itemType: get-started
+    - text: Kör PowerShell-skript
+      url: ./apps/deploy-use/create-deploy-scripts.md
+      itemType: how-to-guide
+  - title: Desktop Analytics
+    links:
+    - text: Översikt
+      url: ./desktop-analytics/overview.md
+      itemType: overview
+    - text: Distribuera Windows 10 till en pilotgrupp
+      url: ./desktop-analytics/tutorial-windows10.md
+      itemType: tutorial
+    - text: Ställ in Desktop Analytics
+      url: ./desktop-analytics/set-up.md
+      itemType: how-to-guide
+    - text: Office 365-instrumentpanelen
+      url: ./sum/deploy-use/office-365-dashboard.md
+      itemType: learn
+    footerLink:
+      text: Läs mer
+      url: ./desktop-analytics/index.yml
+  - title: Infrastrukturförenkling
+    links:
+    - text: Platsserver hög tillgänglighet
+      url: ./core/servers/deploy/configure/site-server-high-availability.md
+      itemType: deploy
+    - text: Omtilldela en distributionsplats
+      url: ./core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_reassign
+      itemType: how-to-guide
+    - text: Configuration Manager på Azure
+      url: ./core/understand/configuration-manager-on-azure.md
+      itemType: learn
+  - title: Kärninfrastruktur
+    links:
+    - text: Använd konsolen
+      url: ./core/servers/manage/admin-console.md
+      itemType: how-to-guide
+    - text: Distribuera klienter
+      url: ./core/clients/deploy/deploy-clients-to-windows-computers.md
+      itemType: deploy
+    - text: Håll dig uppdaterad med ConfigMgr och Windows 10
+      url: ./core/understand/configuration-manager-and-windows-as-service.md
+      itemType: learn
+    footerLink:
+      text: Läs mer
+      url: ./core/index.yml
+  - title: Apphantering
+    links:
+    - text: Skapa appar
+      url: ./apps/get-started/create-and-deploy-an-application.md
+      itemType: how-to-guide
+    - text: Distribuera appar
+      url: ./apps/deploy-use/deploy-applications.md
+      itemType: deploy
+    - text: Planera för Software Center
+      url: ./apps/plan-design/plan-for-software-center.md
+      itemType: architecture
+    - text: Microsoft Edge-hantering
+      url: ./apps/deploy-use/deploy-edge.md
+      itemType: how-to-guide
+    footerLink:
+      text: Läs mer
+      url: ./apps/index.yml
+  - title: Distribution av operativsystem
+    links:
+    - text: Uppgradera till Windows 10
+      url: ./osd/deploy-use/upgrade-windows-to-the-latest-version.md
+      itemType: overview
+    - text: Fasindelade distributioner
+      url: ./osd/deploy-use/create-phased-deployment-for-task-sequence.md
+      itemType: how-to-guide
+    - text: Aktivitetssekvenssteg
+      url: ./osd/understand/task-sequence-steps.md
+      itemType: learn
+    footerLink:
+      text: Läs mer
+      url: ./osd/index.yml
+  - title: Programuppdateringar
+    links:
+    - text: Planera programuppdateringar
+      url: ./sum/plan-design/plan-for-software-updates.md
+      itemType: architecture
+    - text: Distribuera programuppdateringar
+      url: ./sum/deploy-use/deploy-software-updates.md
+      itemType: deploy
+    - text: Optimera Windows 10-uppdatering
+      url: ./sum/deploy-use/optimize-windows-10-update-delivery.md
+      itemType: learn
+    - text: Uppdatera Office 365
+      url: ./sum/deploy-use/manage-office-365-proplus-updates.md
+      itemType: how-to-guide
+    footerLink:
+      text: Läs mer
+      url: ./sum/index.yml
+  - title: Efterlevnad för enhet
+    links:
+    - text: Skapa konfigurationsobjekt
+      url: ./compliance/deploy-use/create-configuration-items.md
+      itemType: how-to-guide
+    - text: Microsoft Edge-inställningar
+      url: ./compliance/deploy-use/browser-profiles.md
+      itemType: how-to-guide
+    - text: Windows-versionsuppgradering
+      url: ./compliance/deploy-use/upgrade-windows-version.md
+      itemType: how-to-guide
+    footerLink:
+      text: Läs mer
+      url: ./compliance/index.yml
+  - title: Skydda
+    links:
+    - text: Windows Defender
+      url: ./protect/deploy-use/endpoint-protection.md
+      itemType: overview
+    - text: WDATP
+      url: ./protect/deploy-use/windows-defender-advanced-threat-protection.md
+      itemType: how-to-guide
+    - text: BitLocker-hantering
+      url: ./protect/plan-design/bitlocker-management.md
+      itemType: overview
+    footerLink:
+      text: Läs mer
+      url: ./protect/index.yml
+additionalContent:
+  sections:
+  - title: Community och support för Configuration Manager
+    items:
+    - title: Configuration Manager-blogg
+      summary: Nyheter och meddelanden
+      url: https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog
+    - title: 'Twitter: #ConfigMgr'
+      summary: Håll dig uppdaterad med vårt aktiva community på Twitter
+      url: https://twitter.com/hashtag/configmgr
+    - title: Forum för Configuration Manager
+      summary: Ställa tekniska frågor i produktforumen
+      url: https://social.technet.microsoft.com/Forums/home?forum=ConfigMgrCBGeneral%2CConfigMgrDeployment%2CConfigMgrMDM%2CConfigMgrMigration%2CConfigMgrCompliance%2CConfigMgrAppManagement%2CConfigMgrPowerShell%2CConfigMgrCBOSD&filter=alltypes&sort=lastpostdesc
+    - title: UserVoice-produktfeedback
+      summary: Dela produktidéer med det tekniska teamet
+      url: https://configurationmanager.uservoice.com/forums/300492-ideas
+    - title: Produktsupport
+      summary: Få professionell hjälp från Microsoft-support
+      url: https://aka.ms/cmcbsupport
+    - title: System Center 2012 R2 Configuration Manager
+      summary: Dokumentation för den tidigare versionen av Configuration Manager
+      url: https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682144(v=technet.10)
+  - title: Annat innehåll
+    items:
+    - title: Utveckla
+      links:
+      - url: https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps
+        text: PowerShell
+      - url: ./develop/index.yml
+        text: SDK (Software Development Kit)
+      - url: ./develop/adminservice/index.yml
+        text: REST-API för administrationstjänsten
+      - url: ./develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views.md
+        text: SQL-vyer
+    - title: Verktyg
+      links:
+      - url: ./core/support/support-center.md
+        text: Support Center
+      - url: ./mdt/index.yml
+        text: MDT
+      - url: ./apps/pcm/package-conversion-manager.md
+        text: Paketomvandlingshanteraren
+      - url: ./core/support/tools.md
+        text: Läs mer >
+    - title: Andra communitywebbplatser
+      links:
+      - url: https://www.reddit.com/r/sccm
+        text: ConfigMgr på Reddit
+      - url: https://www.facebook.com/groups/ConfigMgr2012
+        text: ConfigMgr Professionals Group på Facebook
+  footer: Hittade du ett problem på vår webbplats? [Berätta för oss](./core/understand/use-docs.md#bkmk_docfeedback)!

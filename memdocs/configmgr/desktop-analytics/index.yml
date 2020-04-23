@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: Dokumentation för Desktop Analytics
+summary: Desktop Analytics är en molntjänst som integrerar med Configuration Manager. Den ger insikter som hjälper dig att uppdatera dina Windows-klienter.
+metadata:
+  title: Dokumentation för Desktop Analytics
+  titleSuffix: Configuration Manager
+  description: Desktop Analytics är en molntjänst som integrerar med Configuration Manager. Den ger insikter som hjälper dig att uppdatera dina Windows-klienter.
+  ms.prod: configuration-manager
+  ms.technology: configmgr-analytics
+  ms.topic: landing-page
+  author: aczechowski
+  ms.author: aaroncz
+  ms.date: 01/28/2020
+  ms.openlocfilehash: 1c0aa1c481acb18fadeebbdecdcd4759568d2242
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741416"
+landingContent:
+- title: Om Desktop Analytics
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vad är Desktop Analytics?
+      url: overview.md
+    - text: Nyheter
+      url: whats-new.md
+  - linkListType: tutorial
+    links:
+    - text: Pilot Windows 10
+      url: tutorial-windows10.md
+- title: Kom igång
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Ställ in Desktop Analytics
+      url: set-up.md
+    - text: Anslut konfigurationshanteraren
+      url: connect-configmgr.md
+    - text: Registrera enheter
+      url: enroll-devices.md
+- title: Resurser
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Vanliga frågor och svar om Desktop Analytics
+      url: faq.md
+    - text: Aktivera delning av data
+      url: enable-data-sharing.md
+    - text: Övervaka anslutningsstatus
+      url: monitor-connection-health.md
+    - text: Felsöka Desktop Analytics
+      url: troubleshooting.md

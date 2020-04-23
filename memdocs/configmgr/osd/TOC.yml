@@ -1,0 +1,148 @@
+- name: Dokumentation för distribution av operativsystem
+  href: index.yml
+- name: Förstå
+  items:
+    - name: Introduktion till distribution av operativsystem
+      href: understand/introduction-to-operating-system-deployment.md
+- name: Planera och utforma
+  items:
+    - name: Infrastrukturkrav för distribution av operativsystem
+      href: plan-design/infrastructure-requirements-for-operating-system-deployment.md
+    - name: Att tänka på när du planerar automatiseringsuppgifter
+      href: plan-design/planning-considerations-for-automating-tasks.md
+    - name: Scenarier för att distribuera operativsystem i företag
+      items:
+        - name: Översikt över distributionsscenarier för operativsystem
+          href: deploy-use/scenarios-to-deploy-enterprise-operating-systems.md
+        - name: Uppgradera Windows till den senaste versionen
+          href: deploy-use/upgrade-windows-to-the-latest-version.md
+        - name: Windows Autopilot för befintliga enheter
+          href: deploy-use/windows-autopilot-for-existing-devices.md
+        - name: Uppdatera en befintlig dator med en ny version av Windows
+          href: deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md
+        - name: Installera en ny version av Windows på en ny dator (utan operativsystem)
+          href: deploy-use/install-new-windows-version-new-computer-bare-metal.md
+        - name: Ersätta en befintlig dator och överföra inställningar
+          href: deploy-use/replace-an-existing-computer-and-transfer-settings.md
+    - name: Metoder för att distribuera operativsystem i företag
+      items:
+        - name: Distributionsmetoder för operativsystem
+          href: deploy-use/methods-to-deploy-enterprise-operating-systems.md
+        - name: Använda PXE för att distribuera Windows via nätverket
+          href: deploy-use/use-pxe-to-deploy-windows-over-the-network.md
+        - name: Använda Software Center för att distribuera Windows via nätverket
+          href: deploy-use/use-software-center-to-deploy-windows-over-the-network.md
+        - name: Använda startbara media för att distribuera Windows via nätverket
+          href: deploy-use/use-bootable-media-to-deploy-windows-over-the-network.md
+        - name: Använda fristående media för att distribuera Windows utan att använda nätverket
+          href: deploy-use/use-stand-alone-media-to-deploy-windows-without-using-the-network.md
+        - name: Använd multicast för att distribuera Windows via nätverket
+          href: deploy-use/use-multicast-to-deploy-windows-over-the-network.md
+        - name: Skapa en avbildning för en OEM-tillverkare i fabriken eller lokal anläggning
+          href: deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md
+    - name: Säkerhet och sekretess för distribution av operativsystem
+      href: plan-design/security-and-privacy-for-operating-system-deployment.md
+    - name: Planera kompatibilitet för distribution av operativsystem
+      href: plan-design/planning-for-operating-system-deployment-interoperability.md
+- name: Kom igång
+  items:
+    - name: Förbereda platssystemroller för distribution av operativsystem
+      href: get-started/prepare-site-system-roles-for-operating-system-deployments.md
+    - name: Förbereda för distribution av operativsystem
+      items:
+        - name: Förbereda för distribution av operativsystem
+          href: get-started/prepare-for-operating-system-deployment.md
+        - name: Startavbildningar
+          items:
+            - name: Hantera startavbildningar
+              href: get-started/manage-boot-images.md
+            - name: Anpassa startavbildningar
+              href: get-started/customize-boot-images.md
+        - name: Operativsystemavbildningar
+          items:
+            - name: Hantera avbildningar av operativsystem
+              href: get-started/manage-operating-system-images.md
+            - name: Anpassa avbildningar av operativsystem
+              href: get-started/customize-operating-system-images.md
+        - name: Hantera uppgraderingspaket för operativsystem
+          href: get-started/manage-operating-system-upgrade-packages.md
+        - name: Hantera drivrutiner
+          href: get-started/manage-drivers.md
+        - name: Hantera användartillstånd
+          href: get-started/manage-user-state.md
+        - name: Förbereda distributioner till okända datorer
+          href: get-started/prepare-for-unknown-computer-deployments.md
+        - name: Koppla användare till en måldator
+          href: get-started/associate-users-with-a-destination-computer.md
+    - name: Förbereda peer-cache i Windows PE för att minska WAN-trafiken
+      href: get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md
+- name: Distribuera och använda
+  items:
+    - name: Hantera och skapa aktivitetssekvenser
+      href: deploy-use/manage-task-sequences-to-automate-tasks.md
+    - name: Skapa aktivitetssekvenser för att automatisera uppgifter
+      items:
+        - name: Skapa en aktivitetssekvens för att installera ett operativsystem
+          href: deploy-use/create-a-task-sequence-to-install-an-operating-system.md
+        - name: Skapa en aktivitetssekvens för att uppgradera ett operativsystem
+          href: deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md
+        - name: Aktivitetssekvenssteg för att hantera konvertering av BIOS till UEFI
+          href: deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md
+        - name: Skapa en aktivitetssekvens för att avbilda ett operativsystem
+          href: deploy-use/create-a-task-sequence-to-capture-an-operating-system.md
+        - name: Skapa en aktivitetssekvens för att avbilda och återställa ett användartillstånd
+          href: deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md
+        - name: Skapa en anpassad aktivitetssekvens
+          href: deploy-use/create-a-custom-task-sequence.md
+        - name: Skapa en aktivitetssekvens för annat än distributioner av operativsystem
+          href: deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md
+    - name: Distribuera en aktivitetssekvens
+      href: deploy-use/deploy-a-task-sequence.md
+    - name: Skapa en fasindelad distribution
+      href: deploy-use/create-phased-deployment-for-task-sequence.md
+    - name: Hantera och övervaka fasindelade distributioner
+      href: deploy-use/manage-monitor-phased-deployments.md
+    - name: Hantera Windows som en tjänst
+      href: deploy-use/manage-windows-as-a-service.md
+    - name: Distribuera Windows to Go
+      href: deploy-use/deploy-windows-to-go.md
+    - name: Övervaka distribution av operativsystem
+      href: deploy-use/monitor-operating-system-deployments.md
+    - name: Felsök en aktivitetssekvens
+      href: deploy-use/debug-task-sequence.md
+    - name: Konfigurera innehåll i förcachen
+      href: deploy-use/configure-precache-content.md
+    - name: Skapa aktivitetssekvensmedia
+      items:
+        - name: Översikt över aktivitetssekvensmedia
+          href: deploy-use/create-task-sequence-media.md
+        - name: Skapa fristående media
+          href: deploy-use/create-stand-alone-media.md
+        - name: Skapa förinstallerade media
+          href: deploy-use/create-prestaged-media.md
+        - name: Skapa startbara media
+          href: deploy-use/create-bootable-media.md
+        - name: Skapa avbildningsmedia
+          href: deploy-use/create-capture-media.md
+- name: Tekniska referenser
+  items:
+    - name: Använda redigeringsprogrammet för aktivitetssekvenser
+      href: understand/task-sequence-editor.md
+    - name: Användarupplevelser för distribution av operativsystem
+      href: understand/user-experience.md
+    - name: Aktivitetssekvenssteg
+      items:
+        - name: Om aktivitetssekvenssteg
+          href: understand/task-sequence-steps.md
+        - name: Installera programuppdateringar
+          href: understand/install-software-updates.md
+        - name: Företablera BitLocker i Windows PE
+          href: deploy-use/preprovision-bitlocker-in-windows-pe.md
+    - name: Använda aktivitetssekvensvariabler
+      href: understand/using-task-sequence-variables.md
+    - name: Aktivitetssekvensvariabler
+      href: understand/task-sequence-variables.md
+    - name: Förinläsningskommandon för aktivitetssekvensmedier
+      href: understand/prestart-commands-for-task-sequence-media.md
+    - name: Etableringsläge
+      href: understand/provisioning-mode.md

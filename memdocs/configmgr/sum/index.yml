@@ -1,0 +1,66 @@
+### YamlMime:Landing
+title: Dokumentation om hantering av programuppdatering
+summary: Configuration Manager hjälper dig att hantera uppgiften att spåra och använda programuppdateringar för klienter i organisationen.
+metadata:
+  title: Dokumentation om hantering av programuppdatering
+  titleSuffix: Configuration Manager
+  description: Configuration Manager hjälper dig att hantera uppgiften att spåra och använda programuppdateringar för klienter i organisationen.
+  ms.product: configuration-manager
+  ms.technology: configmgr-sum
+  ms.topic: landing-page
+  author: mestew
+  ms.author: mstewart
+  ms.date: 01/10/2020
+  ms.openlocfilehash: aa421de09ee69713097a5efe78b0a9b2a1a71856
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741178"
+landingContent:
+- title: Om hantering av programuppdateringar
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Introduktion till programuppdateringar
+      url: understand/software-updates-introduction.md
+    - text: Exempel på att distribuera och övervaka månatliga programuppdateringar
+      url: deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md
+  - linkListType: architecture
+    links:
+    - text: Planera programuppdateringar
+      url: plan-design/plan-for-software-updates.md
+    - text: Metodtips för programuppdateringar
+      url: plan-design/software-updates-best-practices.md
+- title: Kom igång
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Installera en programuppdateringsplats
+      url: get-started/install-a-software-update-point.md
+    - text: Konfigurera klassificeringar och produkter
+      url: get-started/configure-classifications-and-products.md
+    - text: Synkronisera programuppdateringar
+      url: get-started/synchronize-software-updates.md
+  - linkListType: how-to-guide
+    links:
+    - text: Distribuera programuppdateringar automatiskt
+      url: deploy-use/automatically-deploy-software-updates.md
+    - text: Övervaka programuppdateringar
+      url: deploy-use/monitor-software-updates.md
+- title: Främsta uppgifter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Hantera uppdateringar för Office 365-ProPlus
+      url: deploy-use/manage-office-365-proplus-updates.md
+    - text: Aktivera uppdateringar från tredje part
+      url: deploy-use/third-party-software-updates.md
+    - text: Hantera inställningar för programuppdateringar
+      url: get-started/manage-settings-for-software-updates.md
+  - linkListType: concept
+    links:
+    - text: Optimera leverans för Windows 10-uppdatering
+      url: deploy-use/optimize-windows-10-update-delivery.md
+    - text: Underhåll för programuppdatering
+      url: deploy-use/software-updates-maintenance.md

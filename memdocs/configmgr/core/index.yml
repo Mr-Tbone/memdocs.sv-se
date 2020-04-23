@@ -1,0 +1,84 @@
+### YamlMime:Landing
+title: Dokumentation om grundläggande infrastruktur
+summary: Grundläggande information om produkten Configuration Manager, inklusive platsservrar och klienter.
+metadata:
+  title: Dokumentation om grundläggande infrastruktur
+  titleSuffix: Configuration Manager
+  description: Grundläggande information om produkten Configuration Manager, inklusive platsservrar och klienter.
+  ms.prod: configuration-manager
+  ms.technology: configmgr-core
+  ms.topic: landing-page
+  author: aczechowski
+  ms.author: aaroncz
+  ms.date: 01/30/2020
+  ms.openlocfilehash: 2816bb6b4685cdd6e7ce56b981fc9e0ffbd89ac3
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741450"
+landingContent:
+- title: Om den grundläggande infrastrukturen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vad är Configuration Manager?
+      url: understand/introduction.md
+    - text: Vanliga frågor och svar om Microsoft Endpoint Configuration Manager
+      url: understand/microsoft-endpoint-manager-faq.md
+    - text: Nyheter
+      url: plan-design/changes/whats-new-incremental-versions.md
+    - text: Teknisk förhandsvisning
+      url: get-started/technical-preview.md
+  - linkListType: get-started
+    links:
+    - text: Använda konsolen
+      url: servers/manage/admin-console.md
+    - text: Använda Software Center
+      url: understand/software-center.md
+    - text: Använda dokumenten
+      url: understand/use-docs.md
+    - text: Hitta hjälp
+      url: understand/find-help.md
+- title: Kom igång
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Konfigurationer som stöds
+      url: plan-design/configs/supported-configurations.md
+    - text: Stöd för Windows 10
+      url: plan-design/configs/support-for-windows-10.md
+    - text: Krav på webbplatsen
+      url: plan-design/configs/site-and-site-system-prerequisites.md
+  - linkListType: deploy
+    links:
+    - text: Uppdateringar och service
+      url: servers/manage/updates.md
+    - text: Installera uppdatering i konsolen
+      url: servers/manage/install-in-console-updates.md
+    - text: Distribuera klienter
+      url: clients/deploy/deploy-clients-to-windows-computers.md
+    - text: Migrera mellan hierarkier
+      url: migration/migrate-data-between-hierarchies.md
+- title: Främsta uppgifter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Aktivera TLS 1.2
+      url: plan-design/security/enable-tls-1-2.md
+    - text: CMPivot
+      url: servers/manage/cmpivot.md
+    - text: Planera för CMG
+      url: clients/manage/cmg/plan-cloud-management-gateway.md
+    - text: Förbättrad HTTP
+      url: plan-design/hierarchy/enhanced-http.md
+  - linkListType: reference
+    links:
+    - text: Loggfiler
+      url: plan-design/hierarchy/about-log-files.md
+    - text: Portar
+      url: plan-design/hierarchy/ports.md
+    - text: Klientinställningar
+      url: clients/deploy/about-client-settings.md
+    - text: Verktyg
+      url: support/tools.md

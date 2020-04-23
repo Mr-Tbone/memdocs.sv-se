@@ -1,0 +1,100 @@
+### YamlMime:Landing
+title: Skydda data och infrastruktursdokumentation
+summary: Skydda både din infrastruktur och dina data från exponering eller skadliga attacker med hjälp av Konfigurationshanteraren.
+metadata:
+  title: Skydda data och infrastruktursdokumentation
+  titleSuffix: Configuration Manager
+  description: Skydda både din infrastruktur och dina data från exponering eller skadliga attacker med hjälp av Konfigurationshanteraren.
+  ms.product: configuration-manager
+  ms.technology: configmgr-protect
+  ms.topic: landing-page
+  author: mestew
+  ms.author: mstewart
+  ms.date: 01/10/2020
+  ms.openlocfilehash: 44481f1b0fb304ed12a40d100352a9f7a6d8dd39
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741858"
+landingContent:
+- title: Hantera BitLocker-diskkryptering (BDE)
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Planera för BitLocker-hantering
+      url: plan-design/bitlocker-management.md
+  - linkListType: deploy
+    links:
+    - text: Distribuera BitLocker-hantering
+      url: deploy-use/bitlocker/deploy-management-agent.md
+    - text: Konfigurera BitLocker-portaler
+      url: deploy-use/bitlocker/setup-websites.md
+  - linkListType: how-to-guide
+    links:
+    - text: Se BitLocker-rapporter
+      url: deploy-use/bitlocker/view-reports.md
+    - text: Använd administrations- och övervakningswebbplatsen BitLocker
+      url: deploy-use/bitlocker/helpdesk-portal.md
+- title: Certifikatprofiler
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Introduktion till certifikatprofiler
+      url: deploy-use/introduction-to-certificate-profiles.md
+  - linkListType: get-started
+    links:
+    - text: Planera för certifikatmallsbehörigheter för certifikatprofiler
+      url: plan-design/planning-for-certificate-template-permissions.md
+    - text: Krav för certifikatprofiler
+      url: plan-design/prerequisites-for-certificate-profiles.md
+  - linkListType: deploy
+    links:
+    - text: Konfigurera infrastrukturen för certifikat
+      url: deploy-use/certificate-infrastructure.md
+    - text: Skapa certifikatprofiler
+      url: deploy-use/endpoint-configure-alerts.md
+    - text: Distribuera resursåtkomstprofiler
+      url: deploy-use/endpoint-definition-updates.md
+- title: Främsta uppgifter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Registrering för Microsoft Defender Advanced Threat Protection
+      url: deploy-use/windows-defender-advanced-threat-protection.md
+    - text: Felsöka Windows Defender eller Endpoint Protection-klienten
+      url: deploy-use/troubleshoot-endpoint-client.md
+    - text: Hantera principer för program mot skadlig kod och brandväggsinställningar
+      url: deploy-use/endpoint-antimalware-firewall.md
+    - text: Hantering av Windows Defender-programreglering
+      url: deploy-use/use-device-guard-with-configuration-manager.md
+    - text: Skapa och distribuera Windows Defender Application Guard
+      url: deploy-use/create-deploy-application-guard-policy.md
+    - text: Windows Hello för företag-inställningar
+      url: deploy-use/windows-hello-for-business-settings.md
+- title: Slutpunktsskydd
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Översikt över Endpoint Protection
+      url: deploy-use/endpoint-protection.md
+  - linkListType: get-started
+    links:
+    - text: Planera för Endpoint Protection
+      url: plan-design/planning-for-endpoint-protection.md
+  - linkListType: deploy
+    links:
+    - text: Skapa en Endpoint Protection-platssystemroll
+      url: deploy-use/endpoint-protection-site-role.md
+    - text: Konfigurera aviseringar för Endpoint Protection
+      url: deploy-use/endpoint-configure-alerts.md
+    - text: Konfigurera definitionsuppdateringar för Endpoint Protection
+      url: deploy-use/endpoint-definition-updates.md
+  - linkListType: how-to-guide
+    links:
+    - text: Skapa och distribuera principer för program mot skadlig kod för Endpoint Protection
+      url: deploy-use/endpoint-antimalware-policies.md
+    - text: Konfigurera anpassade klientinställningar för Endpoint Protection
+      url: deploy-use/endpoint-protection-configure-client.md
+    - text: Övervaka Endpoint Protection-status
+      url: deploy-use/monitor-endpoint-protection.md

@@ -1,0 +1,126 @@
+- name: Dokumentation för apphantering
+  href: index.yml
+- name: Förstå och utforska
+  items:
+    - name: Introduktion
+      href: understand/introduction-to-application-management.md
+- name: Kom igång
+  items:
+    - name: Skapa och distribuera ett program
+      href: get-started/create-and-deploy-an-application.md
+- name: Planera och utforma
+  items:
+    - name: Planera för och konfigurera programhantering
+      href: plan-design/plan-for-and-configure-application-management.md
+    - name: Planera för Software Center
+      href: plan-design/plan-for-software-center.md
+    - name: Säkerhet och sekretess
+      href: plan-design/security-and-privacy-for-application-management.md
+- name: Distribuera och använda
+  items:
+    - name: Skapa program
+      href: deploy-use/create-applications.md
+      items:
+        - name: Skapa program för Mac-datorer
+          href: get-started/creating-mac-computer-applications.md
+        - name: Skapa Windows-program
+          href: get-started/creating-windows-applications.md
+        - name: Skapa serverprogram för Linux och UNIX
+          href: get-started/creating-linux-and-unix-server-applications.md
+        - name: Skapa Windows Embedded-program
+          href: get-started/creating-windows-embedded-applications.md
+        - name: Skapa globala villkor
+          href: deploy-use/create-global-conditions.md
+        - name: Skapa programgrupper
+          href: deploy-use/create-app-groups.md
+        - name: Paket och program
+          href: deploy-use/packages-and-programs.md
+        - name: Paketdefinitionsfiler
+          href: deploy-use/package-definition-files.md
+    - name: Distribuera program
+      items:
+        - name: Distribuera program
+          href: deploy-use/deploy-applications.md
+        - name: Skapa en fasindelad distribution
+          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
+        - name: Godkänna program
+          href: deploy-use/app-approval.md
+        - name: Installera program för en enhet
+          href: deploy-use/install-app-for-device.md
+        - name: Dela ett program
+          href: deploy-use/share-applications.md
+        - name: Simulera programdistributioner
+          href: deploy-use/simulate-application-deployments.md
+        - name: 'Distribuera Microsoft Edge, version 77 eller senare'
+          href: deploy-use/deploy-edge.md
+        - name: Distribuera virtuella App-V-program
+          href: get-started/deploying-app-v-virtual-applications.md
+        - name: Tips för felsökning av distribution av appar
+          href: deploy-use/troubleshoot-application-deployment.md
+    - name: Övervaka program
+      items:
+        - name: Övervaka program från konsolen
+          href: deploy-use/monitor-applications-from-the-console.md
+        - name: Hantera och övervaka fasindelade distributioner
+          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
+        - name: Övervaka appanvändningen med avläsning av programvara
+          href: deploy-use/monitor-app-usage-with-software-metering.md
+    - name: Hantera program
+      items:
+        - name: Hanteringsuppgifter
+          href: deploy-use/management-tasks-applications.md
+        - name: Mappning mellan användare och enhet
+          href: deploy-use/link-users-and-devices-with-user-device-affinity.md
+        - name: Microsoft Store för företag och utbildning
+          href: deploy-use/manage-apps-from-the-windows-store-for-business.md
+        - name: Virtuella App-V-miljöer
+          href: deploy-use/create-app-v-virtual-environments.md
+        - name: Importera och exportera program
+          href: deploy-use/import-export-applications.md
+    - name: Uppdatera och dra tillbaka program
+      items:
+        - name: Uppdatera och dra tillbaka program
+          href: deploy-use/update-and-retire-applications.md
+        - name: Ändra och ersätta program
+          href: deploy-use/revise-and-supersede-applications.md
+        - name: Avinstallera program
+          href: deploy-use/uninstall-applications.md
+    - name: Kör och hantera skript
+      href: deploy-use/create-deploy-scripts.md
+      items:
+        - name: Lär dig om säkerhet för PowerShell-skript
+          href: deploy-use/learn-script-security.md
+    - name: Paketomvandlingshanteraren
+      items:
+        - name: Plan för paketomvandlingshanteraren
+          href: pcm/package-conversion-manager.md
+        - name: Så här analyserar och konverterar du paket
+          href: pcm/how-to-analyze-and-convert.md
+- name: Felsöka
+  items:
+    - name: Felsöka programdistributioner
+      items:
+        - name: Innan du börjar
+          href: understand/app-deployment-technical-reference.md
+        - name: Policy för programdistribution
+          href: understand/deployment-policy-technical-reference.md
+        - name: Programdistribution för enheter
+          href: understand/device-deployment-technical-reference.md
+        - name: Programdistribution för användare
+          href: understand/user-deployment-technical-reference.md
+        - name: Klientkomponenter för programdistribution
+          href: understand/client-components-technical-reference.md
+        - name: Programutvärdering
+          href: understand/deployment-evaluation-technical-reference.md
+        - name: Programnedladdning
+          href: understand/deployment-download-technical-reference.md
+        - name: Programinstallation
+          href: understand/deployment-install-technical-reference.md
+    - name: Felsöka integrering av Microsoft Store för företag och utbildning
+      href: deploy-use/troubleshoot-microsoft-store-for-business-integration.md
+    - name: Felsök Package Conversion Manager
+      items:
+        - name: Felsök Package Conversion Manager
+          href: pcm/troubleshoot-pcm.md
+        - name: Felmeddelanden för paketomvandlingshanteraren
+          href: pcm/error-messages.md

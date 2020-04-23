@@ -1,0 +1,62 @@
+- name: Dokumentation för enhetsefterlevnad
+  href: index.yml
+- name: Förstå och utforska
+  items:
+    - name: Säkerställa efterlevnad för enhet
+      href: understand/ensure-device-compliance.md
+- name: Kom igång
+  items:
+    - name: Komma igång med kompatibilitetsinställningar
+      href: get-started/get-started-with-compliance-settings.md
+- name: Planera och utforma
+  items:
+    - name: Planera för och konfigurera kompatibilitetsinställningar
+      href: plan-design/plan-for-and-configure-compliance-settings.md
+    - name: Uppgifter för hantering av efterlevnad
+      items:
+        - name: Vanliga uppgifter för kompatibilitetshantering
+          href: plan-design/common-tasks-for-managing-compliance.md
+        - name: Enheter med Configuration Manager-klienten
+          href: plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md
+        - name: Skapa och distribuera konfigurationsbaslinjer
+          href: plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md
+    - name: Säkerhet och sekretess
+      href: plan-design/security-and-privacy-for-compliance-settings.md
+- name: Distribuera och använda
+  items:
+    - name: Skapa konfigurationsobjekt
+      items:
+        - name: Översikt över att skapa konfigurationsobjekt
+          href: deploy-use/create-configuration-items.md
+        - name: Enheter som hanteras med Configuration Manager-klienten
+          items:
+            - name: Windows 10
+              href: deploy-use/create-configuration-items-for-windows-10-devices-managed-with-the-client.md
+            - name: Mac OS X
+              href: deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md
+            - name: Windows-skrivbord och server (anpassad)
+              href: deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md
+    - name: Skapa underordnade konfigurationsobjekt
+      href: deploy-use/create-child-configuration-items.md
+    - name: Skapa konfigurationsbaslinjer
+      href: deploy-use/create-configuration-baselines.md
+    - name: Distribuera konfigurationsbaslinjer
+      href: deploy-use/deploy-configuration-baselines.md
+    - name: Hantera konfigurationsdata
+      items:
+        - name: Hantera konfigurationsdata
+          href: deploy-use/management-tasks-for-configuration-data.md
+        - name: Importera konfigurationsdata
+          href: deploy-use/import-configuration-data.md
+    - name: Skapa användardata och profilkonfigurationsobjekt
+      href: deploy-use/create-user-data-and-profiles-configuration-items.md
+    - name: OneDrive för företag-profiler
+      href: deploy-use/onedrive-profile.md
+    - name: Skapa fjärranslutningsprofiler
+      href: deploy-use/create-remote-connection-profiles.md
+    - name: Uppgradera Windows-enheter till en ny version
+      href: deploy-use/upgrade-windows-version.md
+    - name: Konfigurera Microsoft Edge-inställningar
+      href: deploy-use/browser-profiles.md
+    - name: Övervaka kompatibilitetsinställningar
+      href: deploy-use/monitor-compliance-settings.md

@@ -1,0 +1,95 @@
+- name: Dokumentation om hantering av programuppdatering
+  href: index.yml
+- name: Förstå och utforska
+  items:
+    - name: Introduktion till programuppdateringar
+      href: understand/software-updates-introduction.md
+    - name: Ikoner som används för programuppdateringar
+      href: understand/software-updates-icons.md
+- name: Planera och utforma
+  items:
+    - name: Planera programuppdateringar
+      href: plan-design/plan-for-software-updates.md
+    - name: Krav för programuppdatering
+      href: plan-design/prerequisites-for-software-updates.md
+    - name: Metodtips för programuppdateringar
+      href: plan-design/software-updates-best-practices.md
+    - name: Säkerhet och sekretess för programuppdateringar
+      href: plan-design/security-and-privacy-for-software-updates.md
+- name: Kom igång
+  items:
+    - name: Förbered för hantering av programuppdateringar
+      href: get-started/prepare-for-software-updates-management.md
+    - name: Installera en programuppdateringsplats
+      href: get-started/install-a-software-update-point.md
+    - name: Synkronisera programuppdateringar
+      href: get-started/synchronize-software-updates.md
+    - name: Konfigurera klassificeringar och produkter
+      href: get-started/configure-classifications-and-products.md
+    - name: Hantera inställningar för programuppdateringar
+      href: get-started/manage-settings-for-software-updates.md
+    - name: Synkronisera programuppdateringar i frånkopplade miljöer
+      items:
+        - name: Synkronisera programuppdateringar från en frånkopplad plats för programuppdatering
+          href: get-started/synchronize-software-updates-disconnected.md
+        - name: Synkronisera Office 365-uppdateringar från en frånkopplad programuppdateringsplats
+          href: get-started/synchronize-office-updates-disconnected.md
+- name: Distribuera och använda
+  items:
+    - name: Hämta programuppdateringar
+      href: deploy-use/download-software-updates.md
+    - name: Lägga till programuppdateringar i en uppdateringsgrupp
+      href: deploy-use/add-software-updates-to-an-update-group.md
+    - name: Distribuera programuppdateringar
+      href: deploy-use/deploy-software-updates.md
+      items:
+        - name: Distribuera programuppdateringar manuellt
+          href: deploy-use/manually-deploy-software-updates.md
+        - name: Distribuera programuppdateringar automatiskt
+          href: deploy-use/automatically-deploy-software-updates.md
+        - name: Skapa en fasindelad distribution
+          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
+    - name: Övervaka programuppdateringar
+      href: deploy-use/monitor-software-updates.md
+      items:
+        - name: Hantera och övervaka fasindelade distributioner
+          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
+    - name: Underhåll för programuppdatering
+      href: deploy-use/software-updates-maintenance.md
+    - name: Orkestreringsgrupper
+      href: deploy-use/orchestration-groups.md
+    - name: Tjänster för servergrupp
+      href: deploy-use/service-a-server-group.md
+    - name: Instrumentpanel för Office 365-klienthantering
+      href: deploy-use/office-365-dashboard.md
+    - name: Hantera uppdateringar för Office 365-ProPlus
+      href: deploy-use/manage-office-365-proplus-updates.md
+    - name: Optimera leverans för Windows 10-uppdatering
+      href: deploy-use/optimize-windows-10-update-delivery.md
+    - name: Hantera filer för snabbinstallation för Windows 10-uppdateringar
+      href: deploy-use/manage-express-installation-files-for-windows-10-updates.md
+    - name: Integrering med Windows Update för företag i Windows 10
+      href: deploy-use/integrate-windows-update-for-business-windows-10.md
+    - name: Programuppdateringar från tredje part
+      href: deploy-use/third-party-software-updates.md
+    - name: Exempelscenario för att distribuera säkerhetsuppdateringar
+      href: deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md
+- name: System Center Updates Publisher
+  href: tools/updates-publisher.md
+  items:
+    - name: Installera
+      href: tools/install-updates-publisher.md
+    - name: Konfigurera alternativ
+      href: tools/updates-publisher-options.md
+    - name: Hantera kataloger
+      href: tools/updates-publisher-catalogs.md
+    - name: Hantera uppdateringar
+      href: tools/manage-updates-with-updates-publisher.md
+    - name: Hantera publikationer
+      href: tools/updates-publisher-publications.md
+    - name: Skapa nya uppdateringar
+      href: tools/create-updates-with-updates-publisher.md
+    - name: Tillämpbarhetsregler
+      href: tools/updates-publisher-applicability-rules.md
+    - name: Certifikat och skydd
+      href: tools/updates-publisher-security.md

@@ -1,0 +1,8 @@
+- name: Dokumentation om klientkoppling
+  href: index.yml
+- name: Distribuera och använda
+  items:
+    - name: Aktivera klientkoppling
+      href: device-sync-actions.md
+    - name: Felsöka enhetsåtgärder
+      href: technical-reference.md

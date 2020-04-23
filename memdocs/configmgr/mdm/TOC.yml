@@ -1,0 +1,48 @@
+- name: Dokumentation om MDM
+  href: index.yml
+- name: Lokal MDM
+  items:
+    - name: Vad är lokal MDM
+      href: understand/manage-mobile-devices-with-on-premises-infrastructure.md
+    - name: Planera för lokal MDM
+      href: plan-design/plan-on-premises-mdm.md
+    - name: Setup
+      items:
+        - name: Installera lokala roller
+          href: get-started/install-site-system-roles-for-on-premises-mdm.md
+        - name: Konfigurera certifikat
+          href: get-started/set-up-certificates-on-premises-mdm.md
+        - name: Konfigurera för registrering
+          href: get-started/set-up-device-enrollment-on-premises-mdm.md
+    - name: Registrera enheter
+      items:
+        - name: Översikt över registrering
+          href: deploy-use/enroll-devices-on-premises-mdm.md
+        - name: Användarregistrering
+          href: deploy-use/user-enroll-devices-on-premises-mdm.md
+        - name: Massregistrering
+          href: deploy-use/bulk-enroll-devices-on-premises-mdm.md
+    - name: Hantera enheter och skydda data
+      href: deploy-use/wipe-lock-reset-devices.md
+    - name: Hantera program
+      href: deploy-use/management-tasks-applications.md
+    - name: Hantera konfigurationsinställningar
+      href: deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md
+    - name: Hantera företagsresurser
+      items:
+        - name: Skapa PFX-certifikatprofiler
+          href: deploy-use/create-pfx-certificate-profiles.md
+        - name: Importera PFX-certifikatprofiler
+          href: deploy-use/import-pfx-certificate-profiles.md
+        - name: Wi-Fi-profiler
+          href: ../protect/deploy-use/create-wifi-profiles.md?toc=/configmgr/mdm/toc.json&bc=/configmgr/mdm/breadcrumb/toc.json
+        - name: VPN-profiler
+          href: ../protect/deploy-use/vpn-profiles.md?toc=/configmgr/mdm/toc.json&bc=/configmgr/mdm/breadcrumb/toc.json
+- name: Exchange Server-anslutning
+  items:
+    - name: Enhetshantering med Exchange
+      href: deploy-use/manage-mobile-devices-with-exchange-activesync.md
+    - name: Installera Exchange Connector
+      href: deploy-use/install-configure-exchange-connector.md
+- name: Vad har hänt med hybrid-MDM?
+  href: understand/what-happened-to-hybrid.md

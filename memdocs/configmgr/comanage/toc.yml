@@ -1,0 +1,54 @@
+- name: Dokumentation om samhantering
+  href: index.yml
+- name: Översikt
+  items:
+    - name: Vad är samhantering?
+      href: overview.md
+- name: Snabbstarter
+  items:
+    - name: Översikt över Snabbstart
+      href: quickstarts.md
+    - name: Omedelbart värde
+      items:
+        - name: Villkorlig åtkomst
+          href: quickstart-conditional-access.md
+        - name: Fjärråtgärder från Intune
+          href: quickstart-remote-actions.md
+        - name: Klienthälsa
+          href: quickstart-client-health.md
+        - name: Hybrid Azure AD
+          href: quickstart-hybrid-aad.md
+        - name: Windows Autopilot
+          href: quickstart-autopilot.md
+    - name: Komma igång
+      items:
+        - name: Sökvägar till samhantering
+          href: quickstart-paths.md
+        - name: Konfigurera Hybrid Azure AD
+          href: quickstart-setup-hybrid-aad.md
+        - name: Uppgradera till Windows 10
+          href: quickstart-upgrade-win10.md
+        - name: Skaffa hjälp från FastTrack
+          href: quickstart-fasttrack.md
+- name: Självstudier
+  items:
+    - name: Aktivera samhantering för Configuration Manager-klienter
+      href: tutorial-co-manage-clients.md
+    - name: Aktivera samhantering för internetbaserade enheter
+      href: tutorial-co-manage-new-devices.md
+- name: Begrepp
+  items:
+    - name: Arbetsbelastningar
+      href: workloads.md
+    - name: Samexistens för tredje parts MDM
+      href: coexistence.md
+- name: Instruktionsguider
+  items:
+    - name: Aktivera samhantering
+      href: how-to-enable.md
+    - name: Förbereda Internetbaserade enheter
+      href: how-to-prepare-Win10.md
+    - name: Växla arbetsbelastningar till Intune
+      href: how-to-switch-workloads.md
+    - name: Övervaka samhantering
+      href: how-to-monitor.md

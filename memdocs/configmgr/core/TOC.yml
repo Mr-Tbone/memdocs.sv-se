@@ -1,0 +1,879 @@
+- name: Dokumentation om grundläggande infrastruktur
+  href: index.yml
+- name: Förstå och utforska
+  items:
+    - name: Vad är Configuration Manager?
+      href: understand/introduction.md
+    - name: Vanliga frågor och svar om Microsoft Endpoint Configuration Manager
+      href: understand/microsoft-endpoint-manager-faq.md
+    - name: Vad har hänt med SCCM?
+      href: understand/what-happened-to-sccm.md
+    - name: Introduktion
+      items:
+        - name: Hitta hjälp för Configuration Manager
+          href: understand/find-help.md
+        - name: Så här använder du dokumenten
+          href: understand/use-docs.md
+        - name: Så här använder du konsolen
+          href: servers/manage/admin-console.md
+        - name: Hjälpmedelsfunktioner
+          href: understand/accessibility-features.md
+        - name: Användarhandbok för Software Center
+          href: understand/software-center.md
+    - name: Grunderna
+      items:
+        - name: Grunder i Configuration Manager
+          href: understand/fundamentals.md
+        - name: Platser och hierarkier
+          href: understand/fundamentals-of-sites-and-hierarchies.md
+        - name: 'Om uppgradering, uppdatering och installation'
+          href: understand/upgrade-update-install.md
+        - name: Hantera enheter
+          href: understand/fundamentals-of-managing-devices.md
+        - name: Klienthantering
+          href: understand/fundamentals-of-client-management-tasks.md
+        - name: Säkerhet
+          href: understand/fundamentals-of-security.md
+        - name: Rollbaserad administration
+          href: understand/fundamentals-of-role-based-administration.md
+    - name: Configuration Manager och Windows som en tjänst
+      href: understand/configuration-manager-and-windows-as-service.md
+    - name: Använd molntjänster
+      items:
+        - name: Översikt över molntjänster
+          href: understand/use-cloud-services.md
+        - name: Configuration Manager på Azure
+          href: understand/configuration-manager-on-azure.md
+    - name: Vanliga frågor och svar om webbplatsers storlek och prestanda
+      href: understand/site-size-performance-faq.md
+    - name: Vanliga frågor och svar om produkt och licensiering
+      href: understand/product-and-licensing-faq.md
+    - name: Vilken gren av Configuration Manager bör jag använda?
+      href: understand/which-branch-should-i-use.md
+    - name: Licensiering och förgreningar
+      href: understand/learn-more-editions.md
+    - name: Utökad samverkansklient
+      href: understand/interoperability-client.md
+    - name: Långsiktig underhållsgren (LTSB)
+      items:
+        - name: Översikt över långsiktig underhållsgren (LTSB)
+          href: understand/introduction-to-the-ltsb.md
+        - name: Konfigurationer som stöds för LTSB
+          href: understand/supported-configurations-for-ltsb.md
+        - name: Installera LTSB
+          href: understand/install-the-ltsb.md
+        - name: Hantera LTSB
+          href: understand/manage-the-ltsb.md
+        - name: Uppgradera LTSB till aktuell gren
+          href: understand/convert-to-current-branch.md
+- name: Planera och utforma
+  items:
+    - name: Förbered dig för Configuration Manager
+      href: plan-design/get-ready.md
+    - name: Produktförändringar
+      items:
+        - name: Funktioner
+          href: plan-design/changes/features-and-capabilities.md
+        - name: Nyheter i senare versioner
+          href: plan-design/changes/whats-new-incremental-versions.md
+        - name: Nyheter i version 2002
+          href: plan-design/changes/whats-new-in-version-2002.md
+        - name: Nyheter i version 1910
+          href: plan-design/changes/whats-new-in-version-1910.md
+        - name: Nyheter i version 1906
+          href: plan-design/changes/whats-new-in-version-1906.md
+        - name: Nyheter i version 1902
+          href: plan-design/changes/whats-new-in-version-1902.md
+        - name: Nyheter i version 1810
+          href: plan-design/changes/whats-new-in-version-1810.md
+        - name: Vad har förändrats från Configuration Manager 2012
+          href: plan-design/changes/what-has-changed-from-configuration-manager-2012.md
+        - name: Borttaget och inaktuellt
+          items:
+            - name: Översikt över borttaget och inaktuellt
+              href: plan-design/changes/deprecated/removed-and-deprecated.md
+            - name: Borttagna och föråldrad funktioner
+              href: plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md
+            - name: Borttaget och inaktuellt för platsservrar
+              href: plan-design/changes/deprecated/removed-and-deprecated-server.md
+            - name: Borttaget och inaktuellt för klienter
+              href: plan-design/changes/deprecated/removed-and-deprecated-client.md
+    - name: Konfigurationer som stöds
+      items:
+        - name: Konfigurationer som stöds
+          href: plan-design/configs/supported-configurations.md
+        - name: Antal och gränsvärden
+          href: plan-design/configs/size-and-scale-numbers.md
+        - name: Plats och krav för platssystem
+          href: plan-design/configs/site-and-site-system-prerequisites.md
+        - name: Riktlinjer för platsstorlek och -prestanda
+          href: plan-design/configs/site-size-performance-guidelines.md
+        - name: Operativsystem som stöds för platssystemservrar
+          href: plan-design/configs/supported-operating-systems-for-site-system-servers.md
+        - name: Operativsystem som stöds för klienter och enheter
+          href: plan-design/configs/supported-operating-systems-for-clients-and-devices.md
+        - name: Stöd för Windows 10 som en klient
+          href: plan-design/configs/support-for-windows-10.md
+        - name: Operativsystem som stöds för konsoler
+          href: plan-design/configs/supported-operating-systems-consoles.md
+        - name: Rekommenderad maskinvara
+          href: plan-design/configs/recommended-hardware.md
+        - name: Stöd för SQL Server-versioner
+          href: plan-design/configs/support-for-sql-server-versions.md
+        - name: Stöd för Active Directory-domäner
+          href: plan-design/configs/support-for-active-directory-domains.md
+        - name: Stöd för Windows-funktioner och nätverk
+          href: plan-design/configs/support-for-windows-features-and-networks.md
+        - name: Stöd för virtualiseringsmiljöer
+          href: plan-design/configs/support-for-virtualization-environments.md
+    - name: Välja en lösning för enhetshantering
+      href: plan-design/choose-a-device-management-solution.md
+    - name: Designa en hierarki med webbplatser
+      items:
+        - name: Designa en hierarki
+          href: plan-design/hierarchy/design-a-hierarchy-of-sites.md
+        - name: Planera för SMS-providern
+          href: plan-design/hierarchy/plan-for-the-sms-provider.md
+        - name: Planera för platsdatabasen
+          href: plan-design/hierarchy/plan-for-the-site-database.md
+        - name: Planera för platssystemsservrar
+          href: plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md
+        - name: Grundläggande begrepp för innehållshantering
+          items:
+            - name: Grunder i innehållshantering
+              href: plan-design/hierarchy/fundamental-concepts-for-content-management.md
+            - name: Använda en molnbaserad distributionsplats
+              href: plan-design/hierarchy/use-a-cloud-based-distribution-point.md
+            - name: Använda en mottagardistributionsplats
+              href: plan-design/hierarchy/use-a-pull-distribution-point.md
+            - name: Innehållsbibliotek
+              href: plan-design/hierarchy/the-content-library.md
+            - name: Flödesschema – hantera innehållsbiblioteket
+              href: plan-design/hierarchy/manage-content-library-flowchart.md
+            - name: Rensningsverktyg för innehållsbibliotek
+              href: plan-design/hierarchy/content-library-cleanup-tool.md
+            - name: Peer-cache för Configuration Manager-klienter
+              href: plan-design/hierarchy/client-peer-cache.md
+            - name: Package Transfer Manager
+              href: plan-design/hierarchy/package-transfer-manager.md
+            - name: Hantera nätverksbandbredd för innehållshantering
+              href: plan-design/hierarchy/manage-network-bandwidth.md
+            - name: Säkerhet och sekretess för innehållshantering
+              href: plan-design/hierarchy/security-and-privacy-for-content-management.md
+        - name: Dataöverföringar mellan platser
+          items:
+            - name: Dataöverföringstyper
+              href: plan-design/hierarchy/data-transfers-between-sites.md
+            - name: Filbaserad replikering
+              href: plan-design/hierarchy/file-based-replication.md
+            - name: Databasreplikering
+              href: plan-design/hierarchy/database-replication.md
+        - name: Hur klienter hittar resurser och tjänster
+          href: plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md
+        - name: Säkerhet och sekretess för platsadministration
+          href: plan-design/hierarchy/security-and-privacy-for-site-administration.md
+    - name: Planera för nätverksinfrastruktur
+      items:
+        - name: Överväganden angående nätverksinfrastruktur
+          href: plan-design/network/configure-firewalls-ports-domains.md
+        - name: Portar
+          href: plan-design/hierarchy/ports.md
+        - name: Stöd för proxyserver
+          href: plan-design/network/proxy-server-support.md
+        - name: Krav för Internet-åtkomst
+          href: plan-design/network/internet-endpoints.md
+        - name: Active Directory-schema
+          items:
+            - name: Förbered Active Directory-schemat
+              href: plan-design/network/extend-the-active-directory-schema.md
+            - name: Schemautökningar
+              href: plan-design/network/schema-extensions.md
+        - name: Förbered Windows-servrar för att hantera platssystem
+          href: plan-design/network/prepare-windows-servers.md
+        - name: Webbplatser för platssystemsservrar
+          href: plan-design/network/websites-for-site-system-servers.md
+        - name: Översikt över CNG-certifikat
+          href: plan-design/network/cng-certificates-overview.md
+        - name: Certifikatkrav för PKI
+          href: plan-design/network/pki-certificate-requirements.md
+        - name: Exempel på distribution av PKI-certifikat
+          href: plan-design/network/example-deployment-of-pki-certificates.md
+    - name: Diagnostik och användningsdata
+      items:
+        - name: Översikt över diagnostik och användningsdata
+          href: plan-design/diagnostics/diagnostics-and-usage-data.md
+        - name: Så använder Microsoft diagnostik och användningsdata
+          href: plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md
+        - name: Så samlar Configuration Manager in data
+          href: plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md
+        - name: Visa diagnostik- och användningsdata
+          href: plan-design/diagnostics/view-diagnostics-and-usage-data.md
+        - name: Nivåer av diagnostik och användningsdata
+          items:
+            - name: Nivåöversikt
+              href: plan-design/diagnostics/levels-overview.md
+            - name: Data för version 2002
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-2002.md
+            - name: Data för version 1910
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1910.md
+            - name: Data för version 1906
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1906.md
+            - name: Data för version 1902
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1902.md
+            - name: Data för version 1810
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810.md
+        - name: Vanliga frågor och svar
+          href: plan-design/diagnostics/frequently-asked-questions.md
+    - name: Säkerhet och sekretess för Configuration Manager
+      items:
+        - name: Översikt över säkerhet och sekretess
+          href: plan-design/security/security-and-privacy.md
+        - name: Planera för säkerhet
+          href: plan-design/security/plan-for-security.md
+        - name: Rekommenderade säkerhetsmetoder och sekretessinformation
+          href: plan-design/security/security-best-practices-and-privacy-information.md
+        - name: Sekretesspolicy – Configuration Manager Cmdlet-bibliotek
+          href: plan-design/security/privacy-statement-cmdlet-library.md
+        - name: Ytterligare sekretessinformation
+          href: plan-design/security/additional-privacy.md
+        - name: Konfigurera säkerhet
+          href: plan-design/security/configure-security.md
+        - name: Teknisk referens för kryptografiska kontroller
+          href: plan-design/security/cryptographic-controls-technical-reference.md
+        - name: Aktivera TLS 1.2
+          items:
+            - name: Om att aktivera TLS 1.2
+              href: plan-design/security/enable-tls-1-2.md
+            - name: Aktivera TLS 1.2 på klienter
+              href: plan-design/security/enable-tls-1-2-client.md
+            - name: Aktivera TLS 1.2 på platsservrar och fjärrplatssystem
+              href: plan-design/security/enable-tls-1-2-server.md
+            - name: Vanliga problem vid aktivering av TLS 1.2
+              href: plan-design/security/enable-tls-1-2-troubleshoot.md
+- name: Kom igång
+  items:
+    - name: Utvärdera Configuration Manager i ett labb
+      items:
+        - name: Översikt över labb
+          href: get-started/evaluate-with-lab-environment.md
+        - name: Skapa ett labb
+          href: get-started/set-up-your-lab.md
+        - name: Skapa ett labb i Azure
+          href: get-started/azure-template.md
+    - name: Technical Preview
+      items:
+        - name: Översikt över teknisk förhandsversion
+          href: get-started/technical-preview.md
+        - name: Funktioner i 2003
+          href: get-started/2020/technical-preview-2003.md
+        - name: Funktioner i 2002.2
+          href: get-started/2020/technical-preview-2002-2.md
+        - name: Funktioner i 2002
+          href: get-started/2020/technical-preview-2002.md
+        - name: Funktioner i 2001.2
+          href: get-started/2020/technical-preview-2001-2.md
+        - name: Funktioner i 2001
+          href: get-started/2020/technical-preview-2001.md
+        - name: Funktioner i 1912
+          href: get-started/2019/technical-preview-1912.md
+    - name: Migrera data mellan hierarkier
+      items:
+        - name: Översikt över migrering
+          href: migration/migrate-data-between-hierarchies.md
+        - name: Planera för migrering
+          items:
+            - name: Planera för migrering
+              href: migration/planning-for-migration.md
+            - name: Krav för migrering
+              href: migration/prerequisites-for-migration.md
+            - name: Checklistor för migrering
+              href: migration/administrator-checklists-for-migration-planning.md
+            - name: Avgöra om du ska migrera data
+              href: migration/determine-whether-to-migrate-data.md
+            - name: Planera källhierarkin
+              href: migration/planning-a-source-hierarchy-strategy.md
+            - name: Planera migreringsjobb
+              href: migration/planning-a-migration-job-strategy.md
+            - name: Planera klientmigrering
+              href: migration/planning-a-client-migration-strategy.md
+            - name: Planera innehållsdistribution
+              href: migration/planning-a-content-deployment-migration-strategy.md
+            - name: Planera migreringen av objekt
+              href: migration/planning-for-the-migration-of-objects.md
+            - name: Planera övervakning av migrering
+              href: migration/planning-to-monitor-migration-activity.md
+            - name: Planera slutförande av migrering
+              href: migration/planning-to-complete-migration.md
+        - name: Konfigurera källhierarkier och källplatser
+          href: migration/configuring-source-hierarchies-and-source-sites-for-migration.md
+        - name: Åtgärder för att migrera
+          href: migration/operations-for-migration.md
+        - name: Säkerhet och sekretess för migrering
+          href: migration/security-and-privacy-for-migration.md
+- name: Distribuera servrar och roller
+  items:
+    - name: Distribuera servrar och roller
+      href: servers/deploy/start-using.md
+    - name: Installera infrastruktur
+      items:
+        - name: Hämta installationsmedium
+          href: servers/deploy/install/get-install-media.md
+        - name: Innan du kör installationsprogrammet
+          items:
+            - name: Installationsreferens
+              href: servers/deploy/install/setup-reference.md
+            - name: Installationsnedladdning
+              href: servers/deploy/install/setup-downloader.md
+            - name: Kravkontrollerare
+              href: servers/deploy/install/prerequisite-checker.md
+            - name: Kravkontroller
+              href: servers/deploy/install/list-of-prerequisite-checks.md
+        - name: Installera platser
+          items:
+            - name: Översikt över att förbereda för att installera platser
+              href: servers/deploy/install/installing-sites.md
+            - name: Förbereda för att installera platser
+              href: servers/deploy/install/prepare-to-install-sites.md
+            - name: Förutsättningar för att installera platser
+              href: servers/deploy/install/prerequisites-for-installing-sites.md
+            - name: Använd installationsguiden
+              href: servers/deploy/install/use-the-setup-wizard-to-install-sites.md
+            - name: Använda en kommandorad
+              items:
+                - name: Översikt över kommandorad
+                  href: servers/deploy/install/use-a-command-line-to-install-sites.md
+                - name: Kommandoradsalternativ
+                  href: servers/deploy/install/command-line-options-for-setup.md
+            - name: Installera konsoler
+              href: servers/deploy/install/install-consoles.md
+            - name: Uppgradera en utvärderingsinstallation
+              href: servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md
+            - name: Uppgradera till Configuration Manager
+              href: servers/deploy/install/upgrade-to-configuration-manager.md
+            - name: Scenarier för att effektivisera installationen
+              href: servers/deploy/install/scenarios-to-streamline-your-installation.md
+    - name: Konfigurera platser och hierarkier
+      items:
+        - name: Översikt över att konfigurera platser och hierarkier
+          href: servers/deploy/configure/configure-sites-and-hierarchies.md
+        - name: Lägga till platssystemroller
+          items:
+            - name: Översikt över att lägga till platssystemroller
+              href: servers/deploy/configure/add-site-system-roles.md
+            - name: Installera platssystemroller
+              href: servers/deploy/configure/install-site-system-roles.md
+            - name: Installera molnbaserade distributionsplatser
+              href: servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md
+            - name: Om tjänstanslutningspunkten
+              href: servers/deploy/configure/about-the-service-connection-point.md
+            - name: Konfigurationsalternativ för platssystemroller
+              href: servers/deploy/configure/configuration-options-for-site-system-roles.md
+            - name: Databasrepliker för hanteringsplatser
+              href: servers/deploy/configure/database-replicas-for-management-points.md
+        - name: Platskomponenter
+          href: servers/deploy/configure/site-components.md
+        - name: Publicera platsdata
+          href: servers/deploy/configure/publish-site-data.md
+        - name: Hantera innehåll och innehållsinfrastrukturer
+          items:
+            - name: Översikt över innehållsinfrastruktur
+              href: servers/deploy/configure/manage-content-and-content-infrastructure.md
+            - name: Installera och konfigurera distributionsplatser
+              href: servers/deploy/configure/install-and-configure-distribution-points.md
+            - name: Distribuera och hantera innehåll
+              href: servers/deploy/configure/deploy-and-manage-content.md
+            - name: Övervaka innehåll
+              href: servers/deploy/configure/monitor-content-you-have-distributed.md
+            - name: Microsoft Connected Cache
+              href: plan-design/hierarchy/microsoft-connected-cache.md
+            - name: Felsöka Microsoft Connected Cache
+              href: servers/deploy/configure/troubleshoot-microsoft-connected-cache.md
+        - name: Kör Discovery
+          items:
+            - name: Översikt över identifieringsmetoder
+              href: servers/deploy/configure/run-discovery.md
+            - name: Om identifieringsmetoder
+              href: servers/deploy/configure/about-discovery-methods.md
+            - name: Välj identifieringsmetoder
+              href: servers/deploy/configure/select-discovery-methods-to-use.md
+            - name: Konfigurera identifieringsmetoder
+              href: servers/deploy/configure/configure-discovery-methods.md
+        - name: Platsgränser och gränsgrupper
+          items:
+            - name: Översikt över platsgränser och gränsgrupper
+              href: servers/deploy/configure/define-site-boundaries-and-boundary-groups.md
+            - name: Gränser
+              href: servers/deploy/configure/boundaries.md
+            - name: Gränsgrupper
+              href: servers/deploy/configure/boundary-groups.md
+            - name: Procedurer för gränsgrupper
+              href: servers/deploy/configure/boundary-group-procedures.md
+        - name: Hög tillgänglighet
+          items:
+            - name: Alternativ med hög tillgänglighet
+              href: servers/deploy/configure/high-availability-options.md
+            - name: Platsserver hög tillgänglighet
+              href: servers/deploy/configure/site-server-high-availability.md
+            - name: Flödesschema – konfiguration av passiv platsserver
+              href: servers/deploy/configure/passive-site-server-flowchart.md
+            - name: Flödesschema – höj upp platsservern (planerat)
+              href: servers/deploy/configure/promote-site-server-flowchart.md
+            - name: Flödesschema – höj upp platsservern (oplanerat)
+              href: servers/deploy/configure/promote-site-server-unplanned-flowchart.md
+            - name: Förbered för att använda SQL Server Always On
+              href: servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md
+            - name: Konfigurera SQL Server Always On
+              href: servers/deploy/configure/configure-aoag.md
+            - name: Använd ett SQL Server-kluster
+              href: servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md
+        - name: Anpassade platser för databasfiler
+          href: servers/deploy/configure/custom-locations-for-site-database-files.md
+        - name: Konfigurera rollbaserad administration
+          href: servers/deploy/configure/configure-role-based-administration.md
+        - name: Konfigurera Azure-tjänster
+          href: servers/deploy/configure/azure-services-wizard.md
+    - name: Avinstallera och ta bort
+      items:
+        - name: 'Avinstallera roller, platser och hierarkier'
+          href: servers/deploy/install/uninstall-sites-and-hierarchies.md
+        - name: Ta bort CAS
+          href: servers/deploy/install/remove-central-administration-site.md
+    - name: Tekniska referenser
+      items:
+        - name: Konton
+          href: plan-design/hierarchy/accounts.md
+        - name: Kommunikation mellan slutpunkter
+          href: plan-design/hierarchy/communications-between-endpoints.md
+        - name: Förbättrade HTTP-platssystem
+          href: plan-design/hierarchy/enhanced-http.md
+        - name: Verktyg för underhåll av hierarki
+          href: servers/manage/hierarchy-maintenance-tool-preinst.exe.md
+        - name: Internationell support
+          href: plan-design/hierarchy/international-support.md
+        - name: Samverkan mellan olika versioner
+          href: plan-design/hierarchy/interoperability-between-different-versions.md
+        - name: Språkpaket
+          href: servers/deploy/install/language-packs.md
+        - name: Om loggfiler
+          href: plan-design/hierarchy/about-log-files.md
+        - name: Loggfilsreferens
+          href: plan-design/hierarchy/log-files.md
+        - name: Versionsanmärkningar
+          href: servers/deploy/install/release-notes.md
+        - name: Tillståndsmeddelanden
+          href: plan-design/hierarchy/state-messaging-system-center-configuration-manager.md
+        - name: Stöd för Unicode och ASCII
+          href: plan-design/hierarchy/unicode-and-ascii-support.md
+- name: Hantera infrastruktur
+  items:
+    - name: Hanteringsinsikter
+      href: servers/manage/management-insights.md
+    - name: CMPivot
+      items:
+        - name: Använda CMPivot
+          href: servers/manage/cmpivot.md
+        - name: Felsöka CMPivot
+          href: servers/manage/cmpivot-tsg.md
+    - name: Underhållsaktiviteter
+      items:
+        - name: Översikt över underhållsaktiviteter
+          href: servers/manage/maintenance-tasks.md
+        - name: Referens för underhållsaktivitet
+          href: servers/manage/reference-for-maintenance-tasks.md
+    - name: Ändra infrastrukturen
+      items:
+        - name: Modifiera infrastruktur
+          href: servers/manage/modify-your-infrastructure.md
+        - name: Mappen CD.Latest
+          href: servers/manage/the-cd.latest-folder.md
+    - name: Uppgradera den lokala infrastrukturen
+      href: servers/manage/upgrade-on-premises-infrastructure.md
+    - name: Översikt över uppdateringar för Configuration Manager
+      items:
+        - name: Uppdateringar för Configuration Manager
+          href: servers/manage/updates.md
+        - name: Uppdateringar i konsolen
+          items:
+            - name: Installera uppdatering i konsolen
+              href: servers/manage/install-in-console-updates.md
+            - name: Uppdateringsverktyg för återställning
+              href: servers/manage/update-reset-tool.md
+            - name: Testa databasuppgraderingen
+              href: servers/manage/test-database-upgrade.md
+            - name: Flödesschema – hämta uppdateringar
+              href: servers/manage/download-updates-flowchart.md
+            - name: Flödesschema – Uppdatera replikering
+              href: servers/manage/update-replication-flowchart.md
+        - name: Förhandsfunktioner
+          href: servers/manage/pre-release-features.md
+        - name: Servicefönster för platsservrar
+          href: servers/manage/service-windows.md
+        - name: Använd tjänstanslutningsverktyget
+          href: servers/manage/use-the-service-connection-tool.md
+        - name: Använda verktyget Uppdatera registrering
+          href: servers/manage/use-the-update-registration-tool-to-import-hotfixes.md
+        - name: Använda installationsprogrammet för snabbkorrigeringar
+          href: servers/manage/use-the-hotfix-installer-to-install-updates.md
+        - name: Checklista för att installera uppdatering 2002
+          href: servers/manage/checklist-for-installing-update-2002.md
+        - name: Checklista för att installera uppdatering 1910
+          href: servers/manage/checklist-for-installing-update-1910.md
+        - name: Checklista för att installera uppdatering 1906
+          href: servers/manage/checklist-for-installing-update-1906.md
+        - name: Checklista för att installera uppdatering 1902
+          href: servers/manage/checklist-for-installing-update-1902.md
+        - name: Checklista för att installera uppdatering 1810
+          href: servers/manage/checklist-for-installing-update-1810.md
+        - name: Stöd för versioner i den aktuella grenen
+          href: servers/manage/current-branch-versions-supported.md
+    - name: Säkerhetskopiering och återställning
+      items:
+        - name: Säkerhetskopiera webbplatser
+          href: servers/manage/backup-and-recovery.md
+        - name: Återställ webbplatser
+          href: servers/manage/recover-sites.md
+        - name: Obevakad webbplatsåterställning
+          href: servers/manage/unattended-recovery.md
+    - name: Påverkan av webbplatsfel
+      href: servers/manage/site-failure-impacts.md
+    - name: Övervaka infrastruktur
+      items:
+        - name: Övervaka hierarki
+          href: servers/manage/monitor-hierarchy.md
+        - name: Använda aviseringar och statussystemet
+          href: servers/manage/use-alerts-and-the-status-system.md
+        - name: Hälsoattestering
+          href: servers/manage/health-attestation.md
+        - name: Replikeringsinfrastruktur
+          items:
+            - name: Övervaka replikering
+              href: servers/manage/monitor-replication.md
+            - name: Felsöka SQL-replikering
+              items:
+                - name: Felsöka SQL-replikering
+                  href: servers/manage/replication/overview.md
+                - name: SQL-replikering
+                  href: servers/manage/replication/sql-replication.md
+                - name: SQL-konfiguration
+                  href: servers/manage/replication/sql-configuration.md
+                - name: SQL-prestanda
+                  href: servers/manage/replication/sql-performance.md
+                - name: Ominitiering av SQL-replikering (ominitiering)
+                  href: servers/manage/replication/sql-replication-reinit.md
+                - name: Ominitiering av globala data
+                  href: servers/manage/replication/global-data-reinit.md
+                - name: Ominitiering av webbplatsdata
+                  href: servers/manage/replication/site-data-reinit.md
+                - name: Saknat ominiteringsmeddelande
+                  href: servers/manage/replication/reinit-missing-message.md
+        - name: Frågor
+          items:
+            - name: Introduktion till frågor
+              href: servers/manage/introduction-to-queries.md
+            - name: Hantera frågor
+              href: servers/manage/manage-queries.md
+            - name: Skapa frågor
+              href: servers/manage/create-queries.md
+            - name: Säkerhet och sekretess för frågor
+              href: servers/manage/security-and-privacy-for-queries.md
+        - name: Rapportering
+          items:
+            - name: Introduktion till rapportering
+              href: servers/manage/introduction-to-reporting.md
+            - name: Integrera med Power BI-rapportserver
+              href: servers/manage/powerbi-report-server.md
+            - name: Planera för rapportering
+              items:
+                - name: Planera för rapportering
+                  href: servers/manage/planning-for-reporting.md
+                - name: Krav för rapportering
+                  href: servers/manage/prerequisites-for-reporting.md
+                - name: Lista över rapporter
+                  href: servers/manage/list-of-reports.md
+            - name: Konfigurera rapporter
+              href: servers/manage/configuring-reporting.md
+            - name: Åtgärder och underhåll för rapportering
+              href: servers/manage/operations-and-maintenance-for-reporting.md
+            - name: Skapa anpassade rapportmodeller
+              href: servers/manage/creating-custom-report-models-in-sql-server-reporting-services.md
+        - name: Informationslager
+          href: servers/manage/data-warehouse.md
+    - name: Support Center
+      href: support/support-center.md
+      items:
+        - name: Översikt över Supportcenter
+          href: support/support-center.md
+        - name: Snabbstartsguide
+          href: support/support-center-quickstart.md
+        - name: Tillgänglighet
+          href: support/support-center-accessibility.md
+        - name: Referens för användargränssnitt
+          href: support/support-center-ui-reference.md
+        - name: Anpassningar
+          href: support/support-center-customize.md
+        - name: Support Center OneTrace (förhandsversion)
+          href: support/support-center-onetrace.md
+    - name: Configuration Manager-verktyg
+      items:
+        - name: Översikt över verktyg
+          href: support/tools.md
+        - name: CMTrace
+          href: support/cmtrace.md
+        - name: Klientspion
+          href: support/clispy.md
+        - name: Distributionsövervakningsverktyget
+          href: support/deployment-monitoring-tool.md
+        - name: Principspion
+          href: support/policy-spy.md
+        - name: Power Viewer-verktyget
+          href: support/power-viewer-tool.md
+        - name: Skicka schema-verktyget
+          href: support/send-schedule-tool.md
+        - name: DP jobbköhanteraren
+          href: support/dp-job-manager.md
+        - name: Visningsprogrammet för mängdutvärdering
+          href: support/ceviewer.md
+        - name: Innehållsbiblioteksutforskaren
+          href: support/content-library-explorer.md
+        - name: Innehållsbiblioteköverföring
+          href: support/content-library-transfer.md
+        - name: Innehållsägarskapsverktyget
+          href: support/content-ownership-tool.md
+        - name: Utöka och migrera till Microsoft Azure
+          href: support/azure-migration-tool.md
+        - name: Verktyget för rollbaserad administration och granskning
+          href: support/rbaviewer.md
+        - name: Verktyget körningsmätarsammanfattning
+          href: support/run-meter-summ.md
+    - name: Hantera högriskdistributioner
+      href: servers/manage/settings-to-manage-high-risk-deployments.md
+- name: Distribuera klienter
+  items:
+    - name: Planera klientdistribution
+      items:
+        - name: Installationsmetoder för klient
+          href: clients/deploy/plan/client-installation-methods.md
+        - name: Krav för distribution av klienter till Windows-datorer
+          items:
+            - name: Krav för distribution av klienter
+              href: clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md
+            - name: Windows-brandväggsinställningar och portinställningar för klienter
+              href: clients/deploy/windows-firewall-and-port-settings-for-clients.md
+        - name: Bestämma platssystemrollerna för klienter
+          href: clients/deploy/plan/determine-the-site-system-roles-for-clients.md
+        - name: Säkerhet och sekretess för klienter
+          href: clients/deploy/plan/security-and-privacy-for-clients.md
+        - name: Metodtips för klientdistribution
+          href: clients/deploy/plan/best-practices-for-client-deployment.md
+        - name: Avgöra om du ska blockera klienter
+          href: clients/deploy/plan/determine-whether-to-block-clients.md
+        - name: Planera för klientdistribution till Linux och UNIX-datorer
+          href: clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md
+        - name: Planera en klientdistribution till Mac-datorer
+          href: clients/deploy/plan/planning-for-client-deployment-to-mac-computers.md
+        - name: Klientdistribution till Windows Embedded-enheter
+          items:
+            - name: Planera klientdistribution till Windows Embedded-enheter
+              href: clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md
+            - name: Exempelscenario
+              href: clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md
+        - name: Planera för aktivering av klienter
+          href: clients/deploy/plan/plan-wake-up-clients.md
+        - name: Hantera VDI-klienter
+          href: clients/deploy/plan/considerations-for-managing-clients-in-a-vdi.md
+    - name: Klientdistributionsuppgifter
+      items:
+        - name: Konfigurera klientkommunikationsportar
+          href: clients/deploy/configure-client-communication-ports.md
+        - name: Konfigurera klienter för att använda DNS-publicering
+          href: clients/deploy/configure-client-computers-to-find-management-points-by-using-dns-publishing.md
+        - name: Konfigurera klientinställningar
+          items:
+            - name: Konfigurera klientinställningar
+              href: clients/deploy/configure-client-settings.md
+            - name: Om klientinställningar
+              href: clients/deploy/about-client-settings.md
+        - name: Meddelanden om omstart av enhet
+          href: clients/deploy/device-restart-notifications.md
+        - name: Så här konfigurerar du Wake on LAN
+          href: clients/deploy/configure-wake-on-lan.md
+        - name: Distribuera klienter till Windows-datorer
+          items:
+            - name: Distribuera klienter på Windows-datorer
+              href: clients/deploy/deploy-clients-to-windows-computers.md
+            - name: Installera klienter med Azure AD
+              href: clients/deploy/deploy-clients-cmg-azure.md
+            - name: Tokenbaserad autentisering för CMG
+              href: clients/deploy/deploy-clients-cmg-token.md
+            - name: Klientinstallationsegenskaper
+              href: clients/deploy/about-client-installation-properties.md
+            - name: Klientinstallationsegenskaper som publicerats till AD
+              href: clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md
+        - name: Distribuera klienter till UNIX- och Linux-servrar
+          items:
+            - name: Distribuera klienter till UNIX- och Linux-servrar
+              href: clients/deploy/deploy-clients-to-unix-and-linux-servers.md
+            - name: Linux- och UNIX-klientkommandon
+              href: clients/deploy/linux-and-unix-clients-technical-reference.md
+        - name: Förbered att distribuera klienter på Mac-datorer
+          href: clients/deploy/prepare-to-deploy-mac-clients.md
+        - name: Distribuera klienter på Mac-datorer
+          href: clients/deploy/deploy-clients-to-macs.md
+        - name: Tilldela klienter till en plats
+          href: clients/deploy/assign-clients-to-a-site.md
+        - name: Konfigurera klientstatus
+          href: clients/deploy/configure-client-status.md
+        - name: Övervaka status för klientdistribution
+          href: clients/deploy/monitor-client-deployment-status.md
+- name: Hantera klienter
+  items:
+    - name: Översikt över att hantera klienter
+      href: clients/manage/monitor-and-manage-clients.md
+    - name: Övervaka och hantera klienter
+      items:
+        - name: Övervaka klienter
+          href: clients/manage/monitor-clients.md
+        - name: Övervaka Linux- och UNIX-klienter
+          href: clients/manage/monitor-clients-for-linux-and-unix-servers.md
+        - name: Hantera klienter
+          href: clients/manage/manage-clients.md
+        - name: Klientmeddelande
+          href: clients/manage/client-notification.md
+        - name: Hantera Linux- och UNIX-klienter
+          href: clients/manage/manage-clients-for-linux-and-unix-servers.md
+        - name: Synkronisera data till Azure Monitor
+          href: 'https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm?context=sccm/core/context/core-context'
+        - name: Underhåll Mac-klienter
+          href: clients/manage/maintain-mac-clients.md
+        - name: Instrumentpanel för Surface-enhet
+          href: clients/manage/surface-device-dashboard.md
+    - name: Hantera klienter på Internet
+      items:
+        - name: Översikt över att hantera klienter på Internet
+          href: clients/manage/manage-clients-internet.md
+        - name: Gateway för molnhantering
+          items:
+            - name: Planera för en molnhanteringsgateway
+              href: clients/manage/cmg/plan-cloud-management-gateway.md
+            - name: Säkerhet och sekretess för molnhanteringsgateway
+              href: clients/manage/cmg/security-and-privacy-for-cloud-management-gateway.md
+            - name: Vanliga frågor och svar för molnhanteringsgateway
+              href: clients/manage/cmg/cloud-management-gateway-faq.md
+            - name: Certifikat för molnhanteringsgateway
+              href: clients/manage/cmg/certificates-for-cloud-management-gateway.md
+            - name: Konfigurera en molnhanteringsgateway
+              href: clients/manage/cmg/setup-cloud-management-gateway.md
+            - name: Övervaka klienter på en molnhanteringsgateway
+              href: clients/manage/cmg/monitor-clients-cloud-management-gateway.md
+        - name: Planera för internetbaserad klienthantering
+          href: clients/manage/plan-internet-based-client-management.md
+        - name: Arbetsflöde för Azure AD-autentisering
+          href: clients/manage/azure-ccmsetup.md
+    - name: Samlingar
+      items:
+        - name: Introduktion till samlingar
+          href: clients/manage/collections/introduction-to-collections.md
+        - name: Krav för samlingar
+          href: clients/manage/collections/prerequisites-for-collections.md
+        - name: Metodtips för samlingar
+          href: clients/manage/collections/best-practices-for-collections.md
+        - name: Skapa samlingar
+          href: clients/manage/collections/create-collections.md
+        - name: Hantera samlingar
+          href: clients/manage/collections/manage-collections.md
+        - name: Använda underhållsperioder
+          href: clients/manage/collections/use-maintenance-windows.md
+        - name: Kategorisera enheter i samlingar automatiskt
+          href: clients/manage/collections/automatically-categorize-devices-into-collections.md
+        - name: Säkerhet och sekretess för samlingar
+          href: clients/manage/collections/security-and-privacy-for-collections.md
+    - name: Maskinvaruinventering
+      items:
+        - name: Introduktion till maskinvaruinventering
+          href: clients/manage/inventory/introduction-to-hardware-inventory.md
+        - name: Utöka maskinvaruinventeringen
+          href: clients/manage/inventory/extend-hardware-inventory.md
+        - name: Konfigurera maskinvaruinventering
+          href: clients/manage/inventory/configure-hardware-inventory.md
+        - name: Visa maskinvaruinventering med hjälp av Resursläsaren
+          href: clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md
+        - name: Standardklasser för Resursläsaren
+          href: clients/manage/inventory/resource-explorer-classes.md
+        - name: Maskinvaruinventering för Linux och UNIX
+          href: clients/manage/inventory/hardware-inventory-for-linux-and-unix.md
+        - name: Säkerhet och sekretess för maskinvaruinventering
+          href: clients/manage/inventory/security-and-privacy-for-hardware-inventory.md
+    - name: Programvaruinventering
+      items:
+        - name: Introduktion till programvaruinventering
+          href: clients/manage/inventory/introduction-to-software-inventory.md
+        - name: Så här ställer du in programvaruinventering
+          href: clients/manage/inventory/configure-software-inventory.md
+        - name: Visa programvaruinventering med hjälp av Resursläsaren
+          href: clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md
+        - name: Säkerhet och sekretess för programvaruinventering
+          href: clients/manage/inventory/security-and-privacy-for-software-inventory.md
+    - name: Tillgångsinformation
+      items:
+        - name: Introduktion
+          href: clients/manage/asset-intelligence/introduction-to-asset-intelligence.md
+        - name: Krav
+          href: clients/manage/asset-intelligence/prerequisites-for-asset-intelligence.md
+        - name: Konfigurera Tillgångsinformation
+          href: clients/manage/asset-intelligence/configuring-asset-intelligence.md
+        - name: Använd Tillgångsinformation
+          href: clients/manage/asset-intelligence/operations-for-asset-intelligence.md
+        - name: Säkerhet och sekretess
+          href: clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md
+        - name: Exempel på valideringstillståndsövergångar
+          href: clients/manage/asset-intelligence/example-validation-state-transitions-for-asset-intelligence.md
+        - name: Exempel på en importfil för allmänna licenser
+          href: clients/manage/asset-intelligence/example-asset-intelligence-general-license-import.md
+        - name: Använda instrumentpanelen för produktens livscykel
+          href: clients/manage/asset-intelligence/product-lifecycle-dashboard.md
+    - name: Fjärrstyrning
+      items:
+        - name: Introduktion till fjärrstyrning
+          href: clients/manage/remote-control/introduction-to-remote-control.md
+        - name: Krav för fjärrstyrning
+          href: clients/manage/remote-control/prerequisites-for-remote-control.md
+        - name: Konfigurera fjärrstyrning
+          href: clients/manage/remote-control/configuring-remote-control.md
+        - name: Fjärradministrera en Windows-klientdator
+          href: clients/manage/remote-control/remotely-administer-a-windows-client-computer.md
+        - name: Kontrollera användningen av fjärrstyrning
+          href: clients/manage/remote-control/audit-remote-control-usage.md
+        - name: Säkerhet och sekretess för fjärrstyrning
+          href: clients/manage/remote-control/security-and-privacy-for-remote-control.md
+    - name: Energisparfunktioner
+      items:
+        - name: Introduktion till energisparfunktioner
+          href: clients/manage/power/introduction-to-power-management.md
+        - name: Krav för energisparfunktioner
+          href: clients/manage/power/prerequisites-for-power-management.md
+        - name: Rekommenderade metoder för energisparfunktioner
+          href: clients/manage/power/best-practices-for-power-management.md
+        - name: Checklista för energisparfunktioner för administratörer
+          href: clients/manage/power/administrator-checklist-for-power-management.md
+        - name: Konfigurera energisparfunktioner
+          href: clients/manage/power/configuring-power-management.md
+        - name: Skapa och använda energischeman
+          href: clients/manage/power/create-and-apply-power-plans.md
+        - name: Övervaka och planera för energisparfunktioner
+          href: clients/manage/power/monitor-and-plan-for-power-management.md
+        - name: Säkerhet och sekretess för energisparfunktioner
+          href: clients/manage/power/security-and-privacy-for-power-management.md
+    - name: Uppgradera klienter
+      items:
+        - name: Så här uppgraderar du klienter
+          href: clients/manage/upgrade/upgrade-clients.md
+        - name: Testa klientuppgraderingar i en förproduktionssamling
+          href: clients/manage/upgrade/test-client-upgrades.md
+        - name: Undanta Windows-klienter från uppgraderingar
+          href: clients/manage/upgrade/exclude-clients-windows.md
+        - name: Uppgradera Windows-klienter
+          href: clients/manage/upgrade/upgrade-clients-for-windows-computers.md
+        - name: Uppgradera Linux- och UNIX-klienter
+          href: clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md
+        - name: Uppgradera Mac-klienter
+          href: clients/manage/upgrade/upgrade-clients-on-mac-computers.md

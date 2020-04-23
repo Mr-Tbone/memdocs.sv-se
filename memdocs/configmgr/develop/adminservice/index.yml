@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: Dokumentation om administrationstjänsten
+summary: Dokumentation för utvecklare om REST-API:et för Configuration Manager
+metadata:
+  title: Dokumentation om administrationstjänsten
+  titleSuffix: Configuration Manager
+  description: Ladda upp dina Configuration Manager-enheter till molntjänsten och utför åtgärder med dem.
+  ms.product: configuration-manager
+  ms.technology: configmgr-sdk
+  ms.topic: landing-page
+  author: aczechowski
+  ms.author: aaroncz
+  ms.date: 04/01/2020
+  ms.openlocfilehash: c6c2e97491982f39db4c149ac0bc38266bc2ea27
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741688"
+landingContent:
+- title: Om administrationstjänsten
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vad är administrationstjänsten?
+      url: overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurationsanvisningar
+      url: set-up.md
+    - text: Använd så här
+      url: usage.md

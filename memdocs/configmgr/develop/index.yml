@@ -1,0 +1,62 @@
+### YamlMime:Landing
+title: Dokumentation i Configuration Manager SDK
+summary: Configuration Manager SDK innehåller dokumentation och exempel till hjälp för utveckling av program som använder och ändrar Configuration Manager-data.
+metadata:
+  title: SDK-dokumentation
+  titleSuffix: Configuration Manager
+  description: Configuration Manager SDK innehåller dokumentation och exempel till hjälp för utveckling av program som använder och ändrar Configuration Manager-data.
+  ms.prod: configuration-manager
+  ms.technology: configmgr-sdk
+  ms.topic: landing-page
+  author: aczechowski
+  ms.author: aaroncz
+  ms.date: 04/01/2020
+  ms.openlocfilehash: 94ad699d6de55ffbbc77722b2e9e4063844f78a3
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741722"
+landingContent:
+- title: Om Configuration Manager SDK
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Översikt över SDK
+      url: core/misc/system-center-configuration-manager-sdk.md
+    - text: Nyheter
+      url: core/changes/what-s-new-in-the-system-center-configuration-manager-sdk.md
+    - text: Krav för SDK
+      url: core/reqs/about-configuration-manager-sdk-requirements.md
+  - linkListType: reference
+    links:
+    - text: API-referens för Configuration Manager
+      url: reference/configuration-manager-reference.md
+    - text: REST-API för administrationstjänsten
+      url: adminservice/index.yml
+- title: Kom igång
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Kom igång med programmering i Configuration Manager
+      url: core/understand/getting-started-with-configuration-manager-programming.md
+    - text: Översikt över arkitekturen
+      url: core/understand/architectural-overview.md
+    - text: Kom igång med PowerShell
+      url: core/understand/getting-started-with-configuration-manager-and-windows-powershell.md
+  - linkListType: reference
+    links:
+    - text: PowerShell-cmdletar i Configuration Manager
+      url: https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps
+- title: Främsta uppgifter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Introduktion till WBEMTEST
+      url: core/understand/introduction-to-wbemtest.md
+  - linkListType: reference
+    links:
+    - text: Schema-SQL-vyer i Configuration Manager
+      url: core/understand/configuration-manager-schema-sql-views.md
+    - text: SMS_R_System, serverns WMI-klass
+      url: reference/core/clients/manage/sms_r_system-server-wmi-class.md

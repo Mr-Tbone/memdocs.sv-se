@@ -1,0 +1,144 @@
+- name: Skydda data och infrastruktursdokumentation
+  href: index.yml
+- name: Förstå och utforska
+  items:
+    - name: Översikt
+      href: understand\protect-data-and-site-infrastructure.md
+- name: Planera och utforma
+  items:
+    - name: Planera för Endpoint Protection
+      href: plan-design/planning-for-endpoint-protection.md
+    - name: Planera för BitLocker-hantering
+      href: plan-design/bitlocker-management.md
+    - name: Planera för certifikatprofiler
+      items:
+        - name: Krav för certifikatprofiler
+          href: plan-design/prerequisites-for-certificate-profiles.md
+        - name: Certifikatmallsbehörigheter för certifikatprofiler
+          href: plan-design/planning-for-certificate-template-permissions.md
+    - name: Krav för Wi-Fi- och VPN-profiler
+      href: plan-design/prerequisites-for-wifi-vpn-profiles.md
+    - name: Säkerhet och sekretess
+      items:
+        - name: Profil för Wi-Fi och VPN
+          href: plan-design/security-and-privacy-for-wifi-vpn-profiles.md
+        - name: Certifikatprofiler
+          href: plan-design/security-and-privacy-for-certificate-profiles.md
+- name: Distribuera och använda
+  items:
+    - name: Slutpunktsskydd
+      items:
+        - name: Översikt över Endpoint Protection
+          href: deploy-use/endpoint-protection.md
+        - name: Konfigurera Endpoint Protection
+          items:
+            - name: Så här konfigurerar du Endpoint Protection
+              href: deploy-use/endpoint-protection-configure.md
+            - name: Platssystemroll
+              href: deploy-use/endpoint-protection-site-role.md
+            - name: Aviseringar
+              href: deploy-use/endpoint-configure-alerts.md
+            - name: Definitionsuppdateringar
+              items:
+                - name: Översikt över definitionsuppdateringar
+                  href: deploy-use/endpoint-definition-updates.md
+                - name: Uppdateringar för ConfigMgr
+                  href: deploy-use/endpoint-definitions-configmgr.md
+                - name: Uppdateringar för WSUS
+                  href: deploy-use/endpoint-definitions-wsus.md
+                - name: Microsoft-uppdateringar
+                  href: deploy-use/endpoint-definitions-microsoft-updates.md
+                - name: Malware Protection Center
+                  href: deploy-use/endpoint-definitions-protection-center.md
+                - name: Uppdateringar för nätverksresurs
+                  href: deploy-use/endpoint-definitions-network.md
+            - name: Distribuera princip
+              href: deploy-use/endpoint-antimalware-policies.md
+            - name: Konfigurera klienten
+              href: deploy-use/endpoint-protection-configure-client.md
+        - name: Principer för Windows-brandväggen
+          href: deploy-use/create-windows-firewall-policies.md
+        - name: Microsoft Defender Advanced Threat Protection
+          href: deploy-use/windows-defender-advanced-threat-protection.md
+        - name: Skapa och distribuera Exploit Guard-princip
+          href: deploy-use/create-deploy-exploit-guard-policy.md
+        - name: Skapa och distribuera Application Guard-princip
+          href: deploy-use/create-deploy-application-guard-policy.md
+        - name: Inställningar för Windows Defender-programreglering
+          href: deploy-use/use-device-guard-with-configuration-manager.md
+        - name: Åtgärder för program mot skadlig kod och brandväggar
+          href: deploy-use/endpoint-antimalware-firewall.md
+        - name: Endpoint Protection-scenario
+          href: deploy-use/scenarios-endpoint-protection.md
+        - name: Klienthjälp för Endpoint Protection
+          href: deploy-use/endpoint-protection-client-help.md
+        - name: Felsökning av klient
+          href: deploy-use/troubleshoot-endpoint-client.md
+        - name: Vanliga frågor och svar om Windows Defender
+          href: deploy-use/endpoint-protection-client-faq.md
+    - name: BitLocker-hantering
+      items:
+        - name: Kryptera återställningsdata
+          href: deploy-use/bitlocker/encrypt-recovery-data.md
+        - name: Distribuera BitLocker-hantering
+          href: deploy-use/bitlocker/deploy-management-agent.md
+        - name: Konfigurera BitLocker-portaler
+          href: deploy-use/bitlocker/setup-websites.md
+        - name: Anpassa självbetjäningsportalen
+          href: deploy-use/bitlocker/customize-self-service-portal.md
+        - name: Se BitLocker-rapporter
+          href: deploy-use/bitlocker/view-reports.md
+        - name: Webbplats för administration och övervakning
+          href: deploy-use/bitlocker/helpdesk-portal.md
+        - name: Självbetjäningsportalen
+          href: deploy-use/bitlocker/self-service-portal.md
+    - name: Windows Hello för företag-inställningar
+      href: deploy-use/windows-hello-for-business-settings.md
+    - name: Certifikatprofiler
+      items:
+        - name: Introduktion till certifikatprofiler
+          href: deploy-use/introduction-to-certificate-profiles.md
+        - name: Skapa certifikatprofiler
+          href: deploy-use/create-certificate-profiles.md
+        - name: Konfigurera certifikatinfrastruktur
+          href: deploy-use/certificate-infrastructure.md
+    - name: Wi-Fi-profiler
+      items:
+        - name: Skapa Wi-Fi-profiler
+          href: deploy-use/create-wifi-profiles.md
+    - name: VPN-profiler
+      items:
+        - name: VPN-profiler
+          href: deploy-use/vpn-profiles.md
+        - name: Skapa VPN-profiler
+          href: deploy-use/create-vpn-profiles.md
+        - name: Hitta ett paketfamiljenamn (PFN) för per app-VPN
+          href: deploy-use/find-a-pfn-for-per-app-vpn.md
+    - name: 'Distribuera Wi-Fi-, VPN-, e-post- och certifikatprofiler'
+      href: deploy-use/deploy-wifi-vpn-email-cert-profiles.md
+    - name: Inställningar för användarvillkor
+      href: ../mdm/understand/what-happened-to-hybrid.md?toc=/sccm/protect/toc.json&bc=/sccm/protect/breadcrumb/toc.json
+    - name: Övervaka skydd
+      items:
+        - name: 'Övervaka Wi-Fi-, e-post- och VPN-profiler'
+          href: deploy-use/monitor-wifi-email-vpn-profiles.md
+        - name: Övervaka certifikatprofiler
+          href: deploy-use/monitor-certificate-profiles.md
+        - name: Övervaka Endpoint Protection
+          href: deploy-use/monitor-endpoint-protection.md
+- name: Teknisk referens
+  items:
+    - name: BitLocker-hantering
+      items:
+        - name: Inställningsreferens
+          href: tech-ref/bitlocker/settings.md
+        - name: Felsöka BitLocker
+          href: tech-ref/bitlocker/troubleshoot.md
+        - name: BitLocker-händelseloggar
+          href: tech-ref/bitlocker/about-event-logs.md
+        - name: Klienthändelseloggar
+          href: tech-ref/bitlocker/client-event-logs.md
+        - name: Serverhändelseloggar
+          href: tech-ref/bitlocker/server-event-logs.md
+        - name: Inkompatibel kod
+          href: tech-ref/bitlocker/non-compliance-codes.md

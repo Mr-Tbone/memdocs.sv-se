@@ -1,0 +1,16 @@
+- name: Dokumentation om administrationstjänsten
+  href: index.yml
+- name: Vad är administrationstjänsten?
+  href: overview.md
+- name: Instruktionsguider
+  items:
+    - name: Konfigurationsanvisningar
+      href: set-up.md
+    - name: Använd så här
+      href: usage.md
+- name: Referens
+  items:
+    - name: Vanliga frågor och svar
+      href: faq.md
+    - name: Versionsanmärkningar
+      href: release-notes.md

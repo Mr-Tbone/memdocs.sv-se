@@ -1,0 +1,56 @@
+### YamlMime:Landing
+title: Dokumentation om samhantering
+summary: Med samhantering kan du hantera Windows 10-enheter samtidigt med både Configuration Manager och Microsoft Intune.
+metadata:
+  title: Dokumentation om samhantering
+  titleSuffix: Configuration Manager
+  description: Med samhantering kan du hantera Windows 10-enheter samtidigt med både Configuration Manager och Microsoft Intune.
+  ms.product: configuration-manager
+  ms.technology: configmgr-comanage
+  ms.topic: landing-page
+  author: mestew
+  ms.author: mstewart
+  ms.date: 01/10/2020
+  ms.openlocfilehash: bc1bf65ecaf77ded325fcdae19a0d318052b1cc9
+  ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81741008"
+landingContent:
+- title: Om samhantering
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vad är samhantering?
+      url: overview.md
+    - text: Sökvägar till samhantering
+      url: quickstart-paths.md
+  - linkListType: video
+    links:
+    - text: Villkorlig åtkomst med samhantering
+      url: https://channel9.msdn.com/Series/Endpoint-Zone/The-Security-Benefits-of-Conditional-Access/player
+- title: Kom igång
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Aktivera samhantering för befintliga Configuration Manager-klienter
+      url: tutorial-co-manage-clients.md
+    - text: Aktivera samhantering för nya internetbaserade enheter
+      url: tutorial-co-manage-new-devices.md
+  - linkListType: video
+    links:
+    - text: Uppgradera till Windows 10 för samhantering
+      url: https://channel9.msdn.com/Series/Endpoint-Zone/Upgrading-to-Windows-10-to-Enable-Co-Management/player
+- title: Främsta uppgifter
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Växla Configuration Manager-arbetsbelastningar till Intune
+      url: how-to-switch-workloads.md
+    - text: Övervaka samhantering i Configuration Manager
+      url: how-to-monitor.md
+  - linkListType: video
+    links:
+    - text: Windows Autopilot med samhantering
+      url: https://channel9.msdn.com/Series/Endpoint-Zone/Using-Windows-Autopilot-with-Co-Management/player
