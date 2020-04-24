@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/13/2020
+ms.date: 04/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ccc5c93d72c026c38616c8fdcfea6f81f153aa0
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: fd126e59b8162a66815e89d0e80850fe2fe9c2d4
+ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79352325"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81771067"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Ange regler för enheter som tillåter åtkomst till resurser i din organisation med Intune
 
@@ -82,7 +82,7 @@ Du kan även använda policyer för enhetsefterlevnad utan villkorlig åtkomst. 
 
 ## <a name="ways-to-deploy-device-compliance-policies"></a>Sätt att distribuera policyer för efterlevnad för enheter
 
-Du kan distribuera policyer för efterlevnad till användare i användargrupper eller till enheter i enhetsgrupper. När en efterlevnadsprincip distribueras till en användare så kontrolleras om alla användarens enheter uppfyller efterlevnadskraven. På Windows 10 version 1803 och senare enheter, rekommenderar vi för att distribuera till enhetsgrupper *om* den primära användaren inte registrerat enheten. Användning av enhetsgrupper i det här scenariot hjälper till med kompabilitetsrapportering.
+Du kan distribuera policyer för efterlevnad till användare i användargrupper eller till enheter i enhetsgrupper. När en efterlevnadsprincip distribueras till en användare så kontrolleras om alla användarens enheter uppfyller efterlevnadskraven. Användning av enhetsgrupper i det här scenariot hjälper till med kompabilitetsrapportering.
 
 Intune innehåller också en uppsättning inbyggda efterlevnadsprincipinställningar. Följande inbyggda principer utvärderas på alla enheter som registrerats i Intune:
 

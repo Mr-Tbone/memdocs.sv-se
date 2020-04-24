@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7de306a7d4f632b3eedf321323e12c7ad95b713
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 1dce45d0ad8d44d09345ebfe3fcd358b34a104d6
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79341964"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078387"
 ---
 # <a name="protecting-application-extensions"></a>Skydda programtillägg
 
@@ -77,5 +77,5 @@ Om en användare godkänner att data delas mellan konton, som med Office-tilläg
 - Läs mer om [LinkedIn-information och LinkedIn-funktioner i Microsoft-appar](https://go.microsoft.com/fwlink/?linkid=850740).
 - Läs mer om utgåvor av LinkedIn-kontoanslutningar på [översiktssidan för Office 365](https://products.office.com/en-US/business/office-365-roadmap?filters=%26freeformsearch=linkedin#abc). 
 - Läs mer om hur du [konfigurerar LinkedIn-kontoanslutningar](https://docs.microsoft.com/azure/active-directory/linkedin-integration).
-- Mer information om data som delas mellan användarnas LinkedIn-konton och Microsoft-arbetskonton och -skolkonton finns i avsnittet om [LinkedIn i Microsoft-program på arbetsplatsen eller skolan](https://www.linkedin.com/help/linkedin/answer/84077).
+- Mer information om data som delas mellan användarnas LinkedIn-konton, Microsoft-arbetskonton och -skolkonton finns i avsnittet om [LinkedIn i Microsoft-program på arbetsplatsen eller i skolan](https://www.linkedin.com/help/linkedin/answer/84077).
 

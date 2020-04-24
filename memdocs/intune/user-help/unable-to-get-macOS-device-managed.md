@@ -19,12 +19,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 26fbc0fbc8c498df67d254895e71ef9a9ae6970f
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b368fa0835e8779db5214d5372d97b72f76d906e
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79347151"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077554"
 ---
 # <a name="unable-to-get-macos-device-managed"></a>Det gick inte att hämta hanterad macOS-enhet
 
