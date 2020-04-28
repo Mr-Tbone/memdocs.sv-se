@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8720eec22c8e7fd8a9c8c2303b50e71db0e834ad
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 1fcd77774cb19a70ee02cab9d2d1e6a44dd9745a
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79362595"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023205"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Guidat scenario – Molnhanterat modernt skrivbord
 
-Det moderna skrivbordet är informationsarbetarens förstklassiga produktivitetsplattform. Det moderna skrivbordets huvudkomponenter är Office 365 ProPlus och Windows 10 samt de senaste säkerhetsbaslinjerna för Windows 10 och Microsoft Defender Advanced Threat Protection.
+Det moderna skrivbordet är informationsarbetarens förstklassiga produktivitetsplattform. Det moderna skrivbordets huvudkomponenter är Microsoft 365-appar och Windows 10 samt de senaste säkerhetsbaslinjerna för Windows 10 och Microsoft Defender Advanced Threat Protection.
 
 Hanteringen av det moderna skrivbordet från molnet ger ytterligare fördelar med Internetomspännande fjärråtgärder. Molnhantering använder Windows inbyggda principer för hantering av mobilenheter och eliminerar beroenden av lokal Active Directory-grupprincip.
 
@@ -46,7 +46,7 @@ Om du vill utvärdera ett molnhanterat modernt skrivbord i din organisation hitt
 
 ## <a name="step-1---introduction"></a>Steg 1 – Introduktion
 
-Med hjälp av det här guidade scenariot konfigurerar du en testanvändare, registrerar en enhet i Intune och distribuerar enheten med Intune-rekommenderade inställningar samt Windows 10 och Office ProPlus. Enheten kommer även att konfigureras för Microsoft Defender Advanced Threat Protection om du väljer att [aktivera detta skydd i Intune](../protect/advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune). Den användare som du konfigurerar samt den enhet som du registrerar kommer att läggas till i en ny säkerhetsgrupp och konfigureras med de rekommenderade inställningarna för säkerhet och produktivitet.
+Med hjälp av det här guidade scenariot konfigurerar du en testanvändare, registrerar en enhet i Intune och distribuerar enheten med Intune-rekommenderade inställningar samt Windows 10 och Microsoft 365-appar. Enheten kommer även att konfigureras för Microsoft Defender Advanced Threat Protection om du väljer att [aktivera detta skydd i Intune](../protect/advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune). Den användare som du konfigurerar samt den enhet som du registrerar kommer att läggas till i en ny säkerhetsgrupp och konfigureras med de rekommenderade inställningarna för säkerhet och produktivitet.
 
 ### <a name="what-you-will-need-to-continue"></a>Det här behöver du för att fortsätta
 
@@ -121,7 +121,7 @@ Det guidade scenariot tilldelar även användaren till den valda Autopilot-enhet
 
 När användaren ansluter enheten till Azure Active Directory tillämpas följande konfigurationer på enheten:
 
-1. Office 365 ProPlus installeras automatiskt på den molnhanterade datorn. Den innehåller de program som du är van vid, däribland Access, Excel, OneNote, Outlook, PowerPoint, Publisher, Skype för företag och Word. Du kan använda dessa program för att ansluta till Office 365-tjänster såsom SharePoint Online, Exchange Online och Skype för företag – Online. Office 365 ProPlus uppdateras regelbundet med nya funktioner, till skillnad från icke-prenumerationsversioner av Office. En lista över nya funktioner finns i Nyheter i Office 365.
+1. Microsoft 365-appar installeras automatiskt på den molnhanterade datorn. Den innehåller de program som du är van vid, däribland Access, Excel, OneNote, Outlook, PowerPoint, Publisher, Skype för företag och Word. Du kan använda dessa program för att ansluta till Office 365-tjänster såsom SharePoint Online, Exchange Online och Skype för företag – Online. Microsoft 365-appar uppdateras regelbundet med nya funktioner, till skillnad från icke-prenumerationsversioner av Office. En lista över nya funktioner finns i Nyheter i Office 365.
 2. Windows-säkerhetsbaslinjer kommer att installeras på den molnhanterade datorn. Om du har konfigurerat Microsoft Defender Advanced Threat Protection kommer det guidade scenariot även att konfigurera baslinjeinställningar för Defender. Defender Advanced Threat Protection ger ett nytt skyddslager efter intrång för Windows 10-säkerhetsstacken. Med en kombination av klientteknik som är inbyggd i Windows 10 och en robust molntjänst hjälper det till att identifiera hot som tar sig förbi de andra försvaren. 
 
 ## <a name="next-steps"></a>Nästa steg

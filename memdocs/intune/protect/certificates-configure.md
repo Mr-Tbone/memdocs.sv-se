@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2019
+ms.date: 04/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7bcc99937cfdf0c286eeb4f7f3d11ff4bf5c0c4f
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 151b258826dcb65b3311b81e3c47bc5c089cb017
+ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80322804"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81771214"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Använda certifikat för autentisering i Microsoft Intune
 
@@ -99,7 +99,7 @@ Du använder den här .cer-filen när du [skapar betrodda certifikatprofiler](#c
 
 ## <a name="create-trusted-certificate-profiles"></a>Skapa profiler för betrodda certifikat
 
-Skapa en betrodd certifikatprofil innan du kan skapa en SCEP-, PKCS- eller PKCS-importerad certifikatprofil. Genom att distribuera en betrodd certifikatprofil ser du till att varje enhet känner igen giltigheten hos din certifikatutfärdare. SCEP-certifikatprofiler refererar direkt till en betrodd certifikatprofil. PKCS-certifikatprofiler refererar inte direkt till den betrodda certifikatprofilen, men de refererar direkt till den server som är värd för din certifikatutfärdare. PKCS-importerade certifikatprofiler refererar inte direkt till den betrodda certifikatprofilen men kan använda den på enheten. Distribution av en betrodd certifikatprofil till enheter säkerställer att det här förtroendet upprättas. När en enhet inte litar på rotcertifikatutfärdaren misslyckas SCEP- eller PKCS-certifikatprofilprincipen.
+Skapa och distribuera en betrodd certifikatprofil innan du skapar en SCEP-, PKCS- eller PKCS-importerad certifikatprofil. Att distribuera en betrodd certifikatprofil till samma grupper som tar emot andra certifikatprofiltyper säkerställer att varje enhet kan identifiera giltighet för din certifikatutfärdare. SCEP-certifikatprofiler refererar direkt till en betrodd certifikatprofil. PKCS-certifikatprofiler refererar inte direkt till den betrodda certifikatprofilen, men de refererar direkt till den server som är värd för din certifikatutfärdare. PKCS-importerade certifikatprofiler refererar inte direkt till den betrodda certifikatprofilen men kan använda den på enheten. Distribution av en betrodd certifikatprofil till enheter säkerställer att det här förtroendet upprättas. När en enhet inte litar på rotcertifikatutfärdaren misslyckas SCEP- eller PKCS-certifikatprofilprincipen.
 
 Skapa en separat betrodd certifikatprofil för varje enhetsplattform som du vill stödja, precis som du gör för SCEP-, PKCS- och PKCS-importerade certifikatprofiler.
 

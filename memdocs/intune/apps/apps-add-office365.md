@@ -18,19 +18,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84e77a894e207d5dfb2ffe9247ef449050d46036
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: d411950dce117aa9c99f806d2ef80796a2a2fc50
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80324954"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023273"
 ---
 # <a name="add-office-365-apps-to-windows-10-devices-with-microsoft-intune"></a>Lägg till Office 365-appar i Windows 10-enheter med Microsoft Intune
 
 Innan du kan tilldela, övervaka, konfigurera eller skydda appar måste du lägga till dem till Intune. En av de tillgängliga [apptyperna](apps-add.md#app-types-in-microsoft-intune) är Office 365-appar för Windows 10-enheter. Genom att välja den här apptypen i Intune kan du tilldela och installera Office 365-appar på enheter som du hanterar och som kör Windows 10. Du kan även tilldela och installera appar för skrivbordsklienten för Microsoft Project Online och Microsoft Visio Online, abonnemang 2 om du har licenser för dessa. De tillgängliga Office 365-apparna visas som en enda post i listan med appar i Intune-konsolen i Azure.
 
 > [!NOTE]
-> Du måste använda Office 365 ProPlus-licenser för att kunna aktivera de Office 365 ProPlus-appar som distribueras via Microsoft Intune. Office 365 Business Edition stöds av Intune, men du måste konfigurera appsviten Office 365 Business Edition med XML-data. Mer information finns i [Konfigurera appsviten med XML-data](apps-add-office365.md#step-2---option-2-configure-app-suite-using-xml-data).
+> Microsoft Office 365 ProPlus har bytt namn till **Microsoft 365-appar för företag**. I vår dokumentation kommer vi ofta att referera till det som **Microsoft 365-appar**.
+> 
+> Du måste använda licenser för Microsoft 365-appar för att kunna aktivera de Microsoft 365-appar som distribueras via Microsoft Intune. Microsoft 365-appar för företag stöds av Intune, men du måste konfigurera appsviten Microsoft 365-appar för företag med XML-data. Mer information finns i [Konfigurera appsviten med XML-data](apps-add-office365.md#step-2---option-2-configure-app-suite-using-xml-data).
 
 ## <a name="before-you-start"></a>Innan du börjar
 
@@ -38,21 +40,21 @@ Innan du kan tilldela, övervaka, konfigurera eller skydda appar måste du lägg
 > Om det finns .msi Office-appar på slutanvändarens enhet måste du använda funktionen **Ta bort MSI** för att avinstallera de här apparna på ett säkert sätt. Annars kommer det inte gå att installera de Office 365-appar som levereras via Intune.
 
 - Enheterna måste köra Windows 10 Creators Update eller senare.
-- Intune har endast stöd för att lägga till Office-appar från Office 365.
+- Intune har endast stöd för att lägga till Office-appar från Microsoft 365-appar.
 - Om alla Office-program är öppna när Intune installerar appen kan installationen misslyckas och användare kan förlora data från filer som inte sparats.
 - Den här installationsmetoden stöds inte på Windows Home-, Windows Team-, Windows Holographic- eller Windows Holographic for Business-enheter.
 - Intune stöder inte installation av Office 365-skrivbordsappar från Microsoft Store (kallas även Office Centennial-appar) på en enhet som du redan har distribuerat Office 365-appar till med Intune. Om du installerar den här konfigurationen kan det orsaka dataförlust eller skadade data.
 - Många obligatoriska eller tillgängliga apptilldelningar är inte additiva. En senare tilldelning av en app överskriver de befintliga installerade apptilldelningarna. Om den första uppsättningen Office-program innehåller Word och den senare inte gör det så kommer exempelvis Word att avinstalleras. Detta tillstånd gäller inte för Visio- eller Project-program.
-- Flera Office 365-distributioner stöds inte för närvarande. Endast en distribution kommer att levereras till enheten
+- Flera Office 365-distributioner stöds inte för närvarande. Endast en distribution kommer att levereras till enheten.
 - **Office-version** – Välj om du vill tilldela 32-bitars- eller 64-bitarsversionen av Office. Du kan installera 32-bitarsversionen på enheter med 32-bitar och 64-bitar, men du kan bara installera 64-bitarsversionen på 64-bitarsenheter.
-- **Ta bort MSI från slutanvändarenheter** – Välj om du vill ta bort befintliga Office .MSI-appar från slutanvändarenheter. Installationen kommer inte lyckas om det finns redan befintliga .MSI-appar på slutanvändarenheter. Apparna som ska avinstalleras är inte begränsade till de appar som valts för installation i **Konfigurera appsviten**, utan alla Office-appar (MSI) tas bort från slutanvändarens enhet. Mer information finns i [Ta bort befintliga MSI-versioner av Office vid uppgradering till Office 365 ProPlus](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). När Intune installerar om Office på slutanvändarnas datorer får användarna automatiskt samma språkpaket som de hade med tidigare .MSI Office-installationer.
+- **Ta bort MSI från slutanvändarenheter** – Välj om du vill ta bort befintliga Office .MSI-appar från slutanvändarenheter. Installationen kommer inte lyckas om det finns redan befintliga .MSI-appar på slutanvändarenheter. Apparna som ska avinstalleras är inte begränsade till de appar som valts för installation i **Konfigurera appsviten**, utan alla Office-appar (MSI) tas bort från slutanvändarens enhet. Mer information finns i [Ta bort befintliga MSI-versioner av Office vid uppgradering till Microsoft 365-appar](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). När Intune installerar om Office på slutanvändarnas datorer får användarna automatiskt samma språkpaket som de hade med tidigare .MSI Office-installationer.
 
-## <a name="select-the-office-365-suite-app-type"></a>Välj en app av Office 365-pakettyp
+## <a name="select-microsoft-365-apps"></a>Välj Microsoft 365-appar
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Appar** > **Alla appar** > **Lägg till**.
-3. Välj **Windows 10** i avsnittet **Office 365-paket** på fönstret **Välj apptyp**.
-4. Klicka på **Välj**. Stegen **Lägga till Office 365-paket** visas.
+3. Välj **Windows 10** i avsnittet **Microsoft 365-appar** i fönstret **Välj apptyp**.
+4. Klicka på **Välj**. Stegen i **Lägg till Microsoft 365-appar**visas.
 
 
 ## <a name="step-1---app-suite-information"></a>Steg 1 – Information om appsvit
@@ -70,7 +72,7 @@ I det här steget anger du information om appaketet. Den här informationen hjä
     - **Utvecklare**: Microsoft visas som utvecklare.
     - **Ägare**: Microsoft visas som ägare.
     - **Kommentarer**: Ange eventuella kommentarer som du vill koppla till den här appen.
-    - **Logotyp**: Office 365-logotypen visas med appen när användarna söker på företagsportalen.
+    - **Logotyp**: Webbläsarens logotyp för Microsoft 365-appar visas med appen när användare söker på företagsportalen.
 2. Klicka på **Nästa** för att visa sidan **Konfigurera appsviten**.
 
 ## <a name="step-2---option-1-configure-app-suite-using-the-configuration-designer"></a>Steg 2 – (**Alternativ 1**) Konfigurera appsviten med Configuration Designer 
@@ -84,12 +86,12 @@ När du väljer **Configuration Designer** ändras fönstret **Lägg till app** 
 - Information om appsvit
 - Egenskaper
 
-<img alt="Add Office 365 - Configuration designer" src="./media/apps-add-office365/apps-add-office365-02.png" width="700">
+<img alt="Add Microsoft 365 Apps - Configuration designer" src="./media/apps-add-office365/apps-add-office365-02.png" width="700">
 
 1. På sidan **Konfigurationsappsvit** väljer du **Configuration designer**.
    - **Välj Office-appar**: Välj de standard-Office-appar som du vill tilldela till enheter genom att välja apparna i listrutan.
    - **Välj andra Office-appar (licens krävs)** : Välj de övriga Office-appar som du vill tilldela till enheter och som du har licens för genom att välja apparna i listrutan. Dessa appar innehåller licensierade appar, till exempel Microsoft Project Online Desktop-klienten och Microsoft Visio Online Plan 2.
-   - **Arkitektur**: Välj om du vill tilldela **32-bitars**- eller **64-bitarsversionen** av Office ProPlus. Du kan installera 32-bitarsversionen på enheter med 32-bitar och 64-bitar, men du kan bara installera 64-bitarsversionen på 64-bitarsenheter.
+   - **Arkitektur**: Välj om du vill tilldela versionen med **32-bitar** eller **64-bitar** av Microsoft 365-appar. Du kan installera 32-bitarsversionen på enheter med 32-bitar och 64-bitar, men du kan bara installera 64-bitarsversionen på 64-bitarsenheter.
     - **Uppdatera kanal**: Välj hur Office uppdateras på enheter. Information om de olika uppdateringskanalerna finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus). Välj mellan:
         - **Varje månad**
         - **Månadskanal (riktad)**
@@ -97,7 +99,7 @@ När du väljer **Configuration Designer** ändras fönstret **Lägg till app** 
         - **Varje halvår (riktad)**
 
         När du har valt en kanal kan du välja följande:
-        - **Ta bort andra versioner**: Välj **Ja** om du vill ta bort andra versioner av Office (MSI) från användarenheter. Välj om du vill ta bort befintliga Office .MSI-appar från slutanvändarenheter. Installationen kommer inte lyckas om det finns redan befintliga .MSI-appar på slutanvändarenheter. Apparna som ska avinstalleras är inte begränsade till de appar som valts för installation i **Konfigurera appsviten**, utan alla Office-appar (MSI) tas bort från slutanvändarens enhet. Mer information finns i [Ta bort befintliga MSI-versioner av Office vid uppgradering till Office 365 ProPlus](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). När Intune installerar om Office på slutanvändarnas datorer får användarna automatiskt samma språkpaket som de hade med tidigare .MSI Office-installationer. 
+        - **Ta bort andra versioner**: Välj **Ja** om du vill ta bort andra versioner av Office (MSI) från användarenheter. Välj om du vill ta bort befintliga Office .MSI-appar från slutanvändarenheter. Installationen kommer inte lyckas om det finns redan befintliga .MSI-appar på slutanvändarenheter. Apparna som ska avinstalleras är inte begränsade till de appar som valts för installation i **Konfigurera appsviten**, utan alla Office-appar (MSI) tas bort från slutanvändarens enhet. Mer information finns i [Ta bort befintliga MSI-versioner av Office vid uppgradering till Microsoft 365-appar](https://docs.microsoft.com/deployoffice/upgrade-from-msi-version). När Intune installerar om Office på slutanvändarnas datorer får användarna automatiskt samma språkpaket som de hade med tidigare .MSI Office-installationer. 
         - **Version som ska installeras**: Välj den version av Office som ska installeras.
         - **Specifik version**: Om du har valt **Specifik** som **Versionatt installera** i ovanstående inställning kan du välja att installera en viss version av Office för den valda kanalen på slutanvändarens enheter. 
             
@@ -105,11 +107,11 @@ När du väljer **Configuration Designer** ändras fönstret **Lägg till app** 
             
             För enheter som uppdaterar sin fästa version (eller uppdaterar några andra egenskaper) och har distribuerats som tillgängliga visas rapporteringsstatusen som Installerad om de installerade den tidigare versionen innan enhetsincheckningen inträffar. När enhetsincheckningen inträffar ändras statusen tillfälligt till Okänd, men det visas inte för användaren. När användaren initierar installationen för den senare tillgängliga versionen ser användaren att statusen ändras till Installerad.
             
-            Mer information finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus).
-    - **Använd aktivering av delade datorer**: Välj det här alternativet när flera användare delar en dator. Mer information finns i [översikt över delad aktivering för Office 365](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
+            Mer information finns i [Översikt över uppdateringskanaler för Microsoft 365-appar](https://docs.microsoft.com/DeployOffice/overview-of-update-channels-for-office-365-proplus).
+    - **Använd aktivering av delade datorer**: Välj det här alternativet när flera användare delar en dator. Mer information finns i [översikt över delad aktivering för Microsoft 365-appar](https://docs.microsoft.com/DeployOffice/overview-of-shared-computer-activation-for-office-365-proplus).
     - **Godkänn applicensavtalet för slutanvändare automatiskt**: Välj det här alternativet om slutanvändarna inte är tvungna att acceptera licensavtalet. Intune accepterar sedan avtalet automatiskt.
     - **Språk**: Office installeras automatiskt på alla språk som stöds och som är installerade med Windows på slutanvändarens enhet. Välj det här alternativet om du vill installera ytterligare språk med app-paketet. <p></p>
-        Du kan distribuera ytterligare språk för Office 365 Pro Plus-appar som hanteras via Intune. I listan med tillgängliga språk står även **typen** av språkpaket med (kärnspråk, delspråk och språkverktyg). Välj **Microsoft Intune** > **Appar** > **Alla appar** > **Lägg till** i Azure Portal. Välj **Windows 10** under **Office 365 Suite** i listan **Apptyp** i fönstret **Lägg till app**. Välj **Språk** i fönstret **Inställningar för appsvit**. Mer information finns i [översikten över språkdistribution i Office 365 ProPlus](https://docs.microsoft.com/deployoffice/overview-of-deploying-languages-in-office-365-proplus).
+        Du kan distribuera ytterligare språk för Office 365 Pro Plus-appar som hanteras via Intune. I listan med tillgängliga språk står även **typen** av språkpaket med (kärnspråk, delspråk och språkverktyg). Välj **Microsoft Intune** > **Appar** > **Alla appar** > **Lägg till** i Azure Portal. Välj **Windows 10** under **Microsoft 365-appar** i listan **Apptyp** i fönstret **Lägg till app**. Välj **Språk** i fönstret **Inställningar för appsvit**. Mer information finns i [översikten över språkdistribution i Microsoft 365-appar](https://docs.microsoft.com/deployoffice/overview-of-deploying-languages-in-office-365-proplus).
 2. Visa sidan **Omfångstaggar** genom att klicka på **Nästa**.
 
 ## <a name="step-2---option-2-configure-app-suite-using-xml-data"></a>Steg 2 – (**alternativ 2**) Konfigurera appsviten med XML-data 
@@ -121,7 +123,7 @@ Om du har valt alternativet **Ange XML-data** i listrutan **Inställningsformat*
 1. Din konfigurations-XML har lagts till.
 
     > [!NOTE]
-    > Produkt-ID:t kan antingen vara Business (`O365BusinessRetail`) eller Proplus (`O365ProPlusRetail`). Du kan dock endast konfigurera appsviten Office 365 Business Edition med XML-data. 
+    > Produkt-ID:t kan antingen vara Business (`O365BusinessRetail`) eller Proplus (`O365ProPlusRetail`). Du kan dock endast konfigurera appsviten Microsoft 365-appar för företag med XML-data. Notera att Microsoft Office 365 ProPlus har bytt namn till **Microsoft 365-appar för företag**.
 
 2. Visa sidan **Omfångstaggar** genom att klicka på **Nästa**.
 
@@ -143,7 +145,7 @@ Du kan använda omfångstaggar för att bestämma vem som kan se klientappsinfor
 1. Granska värdena och inställningarna som du har angett för appsviten.
 2. När du är färdig klickar du på **Skapa** för att lägga till appen i Intune.
 
-    **Översiktsbladet** för Office 365 Windows 10-appsviten som du har skapat visas i applistan.
+    Bladet **Översikt** visas.
 
 ## <a name="deployment-details"></a>Distributionsinformation
 
@@ -192,7 +194,7 @@ När du vet att Intune och nätverksinfrastrukturen fungerar som förväntat gå
 - Samla in utförliga loggfiler för Office-installationen under installationen. Det gör du genom att följa dessa steg:<br>
     1. Aktivera utförlig loggning för Office-installation på måldatorerna. Du gör detta genom att köra följande kommando för att ändra registret:<br>
         `reg add HKLM\SOFTWARE\Microsoft\ClickToRun\OverRide /v LogLevel /t REG_DWORD /d 3`<br>
-    2. Distribuera Office 365-sviten till målenheterna igen.<br>
+    2. Distribuera Microsoft 365-appar till målenheterna igen.<br>
     3. Vänta i cirka 15 till 20 minuter och gå sedan till mappen **%temp%** och mappen **%windir%\temp**, sortera efter **Ändrad den** och välj *{Machine Name}-{TimeStamp}.log*-filerna som ändras enligt din reproduktionstid.<br>
     4. Kör följande kommando för att inaktivera utförlig loggning:<br>
         `reg delete HKLM\SOFTWARE\Microsoft\ClickToRun\OverRide /v LogLevel /f`<br>
@@ -200,7 +202,7 @@ När du vet att Intune och nätverksinfrastrukturen fungerar som förväntat gå
 
 ## <a name="errors-during-installation-of-the-app-suite"></a>Fel under installationen av appsviten
 
-Se [Så här aktiverar du loggning för Office 365 ProPlus ULS](/office/troubleshoot/diagnostic-logs/how-to-enable-office-365-proplus-uls-logging) för information om hur du visar utförliga installationsloggar.
+Se [Så här aktiverar du ULS-loggning för Microsoft 365-appar](/office/troubleshoot/diagnostic-logs/how-to-enable-office-365-proplus-uls-logging) för information om hur du visar utförliga installationsloggar.
 
 I följande tabeller visas vanliga felkoder som kan uppstå och deras innebörd.
 

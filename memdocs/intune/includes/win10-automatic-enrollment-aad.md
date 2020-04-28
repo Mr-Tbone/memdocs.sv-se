@@ -2,7 +2,7 @@
 
 Med automatisk registrering kan användarna registrera sina Windows 10-enheter i Intune. Användarna registrerar genom att lägga till sina arbetskonton till sina personligt ägda enheter eller genom att ansluta sina företagsägda enheter till Azure Active Directory. Enheten registreras och ansluts till Azure Active Directory i bakgrunden. När enheten har registrerats hanteras den med Intune.
 
-**Krav**
+**Förutsättningar**
 
 - Azure Active Directory Premium-prenumeration ([provprenumeration](https://go.microsoft.com/fwlink/?LinkID=816845))
 - Microsoft Intune-prenumeration

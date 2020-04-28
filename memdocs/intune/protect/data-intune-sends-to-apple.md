@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da9ab5fe5a8716e3af0ae02122f51d06e6e55e6f
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 424b835669986d1ede6e2300e9dfaba619034c30
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79352507"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079747"
 ---
 # <a name="data-intune-sends-to-apple"></a>Data som Intune skickar till Apple
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2eae55477ef62c408ff886499f4668c81c799fc8
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: e359b07669f45999ae3de4280d1eb65d5ca11064
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326289"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023341"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten
 
@@ -134,7 +134,7 @@ Du kan endast rensa kioskenheter. Du kan inte dra tillbaka Android-kioskenheter.
 
 |Datatyp|Windows 8.1 (MDM) och Windows RT 8.1|Windows RT|Windows Phone 8.1 och Windows Phone 8|Windows 10|
 |-------------|----------------------------------------------------------------|--------------|-----------------------------------------|--------|
-|Företagsappar och associerade data som installerats av Intune|Nycklar återkallas för filer som skyddas av EFS. Användaren kan inte öppna filerna.|Företagsappar tas inte bort.|Appar som ursrpungligen installerats via företagsportalen avinstalleras. Data som hör till företagsappar tas bort.|Apparna avinstalleras. Nycklar för separat inläsning tas bort.<br>För Windows 10 version 1703 (Creator Update) och senare tas inte Office 365 ProPlus-appar bort. Win32-appar som installerats via Intune-hanteringstillägget avinstalleras inte på oregistrerade enheter. Administratörer kan använda tilldelningsundantag för att inte erbjuda Win32-appar till BYOD-enheter.|
+|Företagsappar och associerade data som installerats av Intune|Nycklar återkallas för filer som skyddas av EFS. Användaren kan inte öppna filerna.|Företagsappar tas inte bort.|Appar som ursrpungligen installerats via företagsportalen avinstalleras. Data som hör till företagsappar tas bort.|Apparna avinstalleras. Nycklar för separat inläsning tas bort.<br>För Windows 10 version 1703 (Creator Update) och senare tas inte Microsoft 365-appar bort. Win32-appar som installerats via Intune-hanteringstillägget avinstalleras inte på oregistrerade enheter. Administratörer kan använda tilldelningsundantag för att inte erbjuda Win32-appar till BYOD-enheter.|
 |Inställningar|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|
 |Profilinställningar för Wi-Fi och VPN|Tas bort.|Tas bort.|Stöds inte.|Tas bort.|
 |Certifikatprofilinställningar|Certifikat tas bort och återkallas.|Certifikat tas bort och återkallas.|Stöds inte.|Certifikat tas bort och återkallas.|

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58203c09784f0d4a50472ff4ae9cd06957025a1c
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 391fa20cf7ba53af649f9f614d9ca02c653c278b
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80324342"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079322"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-appdistribution med hjälp av Microsoft Intune 
 
@@ -97,7 +97,7 @@ Appar kan bara installeras i enhetskontexten när de stöds av både enheten och
 - Win32-appar
 - Offline-licensierade Microsoft Store för företag-appar
 - Verksamhetsspecifika appar (MSI, APPX och MSIX)
-- Office 365 ProPlus
+- Microsoft 365-appar för företag
 
 Verksamhetsspecifika Windows-appar (i synnerhet APPX och MSIX) och Microsoft Store för företag-appar (offline-appar) som du har valt att installera i enhetskontext måste tilldelas till en enhetsgrupp. Installationen misslyckas om någon av dessa appar distribueras i användarkontexten. Följande status och fel visas i administratörskonsolen:
   - Status: Misslyckades.

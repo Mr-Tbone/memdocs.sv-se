@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2020
+ms.date: 04/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2ef5656c2608cee825dc294d87e661c7ad63634
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: dfa559a9c628dfc87c982023e350947d3e9bfeea
+ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80322789"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81771476"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>Konfigurera och använda PKCS-certifikat med Intune
 
@@ -151,7 +151,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 3. Klicka på *Ladda ned programvara för certifikatanslutningsapp* för anslutningsprogrammet för PKCS #12 och spara filen på en plats som du kan komma åt från servern där du ska installera anslutningsprogrammet.
 
    ![Microsoft Intune Certificate Connector nedladdning](./media/certficates-pfx-configure/download-ndes-connector.png)
- 
+
 4. När nedladdningen är klar loggar du in på servern. Efter det:
 
     1. Se till att .NET 4.5 Framework eller senare är installerat, eftersom det krävs av NDES-certifikatanslutningsappen. .NET 4.5 framework ingår automatiskt i Windows Server 2012 R2 och senare versioner.
@@ -202,7 +202,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 
    Välj **Nästa**.
 
-10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Planera för att distribuera den här certifikatprofilen till samma grupper som tar emot PKCS-certifikatets profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
 
     Välj **Nästa**.
 
@@ -260,7 +260,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 
    Välj **Nästa**.
 
-10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Planera för att distribuera den här certifikatprofilen till samma grupper som tar emot den betrodda certifikatprofilen. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
 
     Välj **Nästa**.
 

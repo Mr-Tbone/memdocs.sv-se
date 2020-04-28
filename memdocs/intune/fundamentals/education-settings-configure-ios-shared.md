@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8612640ec71075194af680535a988f2228bb66fd
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 21b1fb333ce77fdf358e268eb22db17708bbfe11
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79362894"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82076143"
 ---
 # <a name="configure-intune-education-settings-for-shared-ipad-devices"></a>Konfigurera Intune-utbildningsinställningar för delade iPad-enheter
 

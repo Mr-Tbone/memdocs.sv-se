@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93bacecf2829b1e7119f909c14ce9ab44a8f6d2f
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: f4b374d79d689e1ecad8124489fe5023378bd4f1
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79349907"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079084"
 ---
 # <a name="troubleshoot-ndes-reporting-of-certificate-deployments-in-microsoft-intune"></a>Felsöka NDES-rapportering av certifikatsdistributioner i Microsoft Intune
 

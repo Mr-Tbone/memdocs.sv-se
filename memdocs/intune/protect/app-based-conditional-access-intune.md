@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04a8cd4ce64b566bf2d90ef301c1be44589a53e4
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 27033c2452224bc93e335f3517c9548ad65666c4
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79354197"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82080155"
 ---
 # <a name="app-based-conditional-access-with-intune"></a>Appbaserad villkorlig åtkomst med Intune
 
@@ -34,9 +34,9 @@ Appbaserad, villkorlig åtkomst och klientapphantering lägger till ett säkerhe
 > [!NOTE]
 > En hanterad app är en app som har tillämpade appskyddsprinciper och kan hanteras av Intune.
 
-Du kan blockera inbyggda e-postappar i iOS/iPadOS och Android genom att bara tillåta att Microsoft Outlook-appen får åtkomst till Exchange Online. Dessutom kan du blockera appar där Intunes appskyddsprinciper inte har tillämpats för åtkomst till SharePoint Online.
+Du kan blockera inbyggda e-postappar i iOS/iPadOS och Android genom att bara tillåta att Microsoft Outlook-appen får åtkomst till Exchange Online. Dessutom kan du blockera appar där Intune-appskyddsprinciper inte har tillämpats för åtkomst till SharePoint Online.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Innan du skapar en appbaserad princip för villkorlig åtkomst måste du ha:
 

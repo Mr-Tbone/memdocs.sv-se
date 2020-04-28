@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3d0335274604519da82146cab8837459e190801
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 5464e70d915dceb9cf2c6a3b2385419cfc11e38b
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80322845"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077843"
 ---
 # <a name="use-intune-to-remediate-vulnerabilities-identified-by-microsoft-defender-atp"></a>Använda Intune för att åtgärda sårbarheter som upptäckts av Microsoft Defender ATP
 
@@ -63,7 +63,7 @@ Ett exempel på ett arbetsflöde:
 
 - När åtgärden har slutförts öppnar Intune-administratören säkerhetsuppgiften och väljer **Slutför uppgift**.  Status för åtgärden uppdateras för Intune och i ATP, där säkerhetsadministratörer bekräftar den ändrade statusen för säkerhetsrisken.
 
-## <a name="prerequisites"></a>Förutsättningar  
+## <a name="prerequisites"></a>Krav  
 
 **Prenumerationer**:
 

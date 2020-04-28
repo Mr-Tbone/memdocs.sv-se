@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f09ffc2bc1d0c1850f20121c869186018cf9ae31
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 944b3d98dc59dcae69f72fef5dfdb1793701f67a
+ms.sourcegitcommit: 2871a17e43b2625a5850a41a9aff447c8ca44820
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79354431"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82126173"
 ---
 # <a name="using-windows-10-virtual-machines-with-intune"></a>Använda virtuella Windows 10-datorer med Intune
 
@@ -31,12 +31,15 @@ Intune stöder hanteringen av virtuella datorer som kör Windows 10 Enterprise m
 
 Tänk på följande när du hanterar virtuella Windows 10-datorer med Intune:
 
+- Windows 10 Enterprise-flersession (Enterprise för virtuella enheter) som används i Windows Virtual Desktop stöder för närvarande inte Intune-hantering.
+
 ## <a name="enrollment"></a>Registrering
 - Vi rekommenderar inte att du hanterar virtuella datorer med sessionsvärdar vid behov med Intune. Varje virtuella dator måste registreras när den skapas. Genom att regelbundet ta bort virtuella datorer lämnar du också kvar överblivna enhetsposter i Intune tills de [rensas](../remote-actions/devices-wipe.md#automatically-delete-devices-with-cleanup-rules). 
 - Distributionstyperna i Windows Autopilot för självdistribution och assisterad distribution stöds inte eftersom det krävs en fysisk Trusted Platform Module (TPM). 
 - OOBE-registreringen (Out-of-Box Experience) stöds inte på virtuella datorer som bara kan nås med hjälp av RDP (till exempel virtuella datorer som har Azure som värd). Den här begränsningen innebär följande:
     - Windows Autopilot och kommersiell OOBE stöds inte.
     - Alternativen för registreringstatussidan för enhetssammanhangsprinciper stöds inte.
+
 
 ## <a name="configuration"></a>Konfiguration
 Intune stöder inte någon konfiguration som använder en Trusted Platform Module eller maskinvaruhantering, inklusive:

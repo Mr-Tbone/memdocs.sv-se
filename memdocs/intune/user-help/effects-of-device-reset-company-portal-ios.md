@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 4cb9b22220e4c33aadd5b7c46f4274df44e3ec9c
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 87b51d2df20f13ad29bca0b5961d59a41cbedf49
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79337817"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82080070"
 ---
 # <a name="effects-of-company-portal-ios-device-reset"></a>Effekter vid företagsportalens iOS-enhetsåterställning 
 
@@ -32,13 +32,13 @@ Om du återställer din iPhone eller iPad via företagsportalen kan vissa appar 
 
 Om din organisation hanterar din enhet och du har åtkomst till e-post, appar och Wi-Fi för arbete och skola:
 
-- Enheten visas inte på företagsportalen längre.  
+- Din enhet visas inte i Företagsportal längre.  
 
 - Enheten kommer att återställas till tillverkarens fabriksinställningar. Personliga data, appar och inställningar tas bort.
 
 Om enheten bara har konfigurerats för åtkomst till e-postmeddelanden på arbetsplats eller skola:
 
-- Enheten visas inte på företagsportalen längre.  
+- Din enhet visas inte i Företagsportal längre.  
 
 - Ditt arbets- eller skolkonto kommer att tas bort. E-postmeddelanden som inte har sparats kommer att tas bort.   
 

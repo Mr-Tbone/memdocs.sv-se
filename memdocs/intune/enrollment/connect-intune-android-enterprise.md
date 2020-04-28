@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97024c641be4c61561e762751cfabfab2732e4c1
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 6027a8f193bc470c4c7ab7724f3b9736c2487980
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80327174"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078030"
 ---
 # <a name="connect-your-intune-account-to-your-managed-google-play-account"></a>Ansluta ditt Intune-konto till ditt hanterade Google Play-konto
 
@@ -41,7 +41,7 @@ Intune lägger automatiskt till fyra vanliga Android Enterprise-relaterade appar
 > [!NOTE]
 > På grund av interaktion mellan Google- och Microsoft-domäner kan det i det här steget krävas att du justerar inställningarna för webbläsaren.  Se till att ”portal.azure.com” och ”play.google.com” finns i samma säkerhetszon i webbläsaren.
 
-1. Om du inte redan gjort det, förbereder du för hantering av mobila enheter genom att ange [Microsoft Intune](../fundamentals/mdm-authority-set.md) som **utfärdare för hantering av mobila enheter**.
+1. Om du inte redan gjort det, förbereder du för hantering av mobila enheter genom att ange **Microsoft Intune** som [utfärdare för hantering av mobila enheter](../fundamentals/mdm-authority-set.md).
 2. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Android** > **Android-registrering** > **Hanterat Google Play-konto**.  Om du använder en anpassad Intune-administratörsroll krävs läs- och uppdateringsbehörigheter för organisationen för åtkomst till detta.
    
    ![Sidan för Android enterprise-registrering](./media/connect-intune-android-enterprise/android-work-bind.png)

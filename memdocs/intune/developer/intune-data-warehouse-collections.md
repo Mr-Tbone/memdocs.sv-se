@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b8ffa656aa468b50569518aaff503fec1d21027
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 9a4d468c62132c6af4477ba48f17ac9b21013e51
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086245"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82022745"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune-informationslagersamlingar
 
@@ -38,7 +38,7 @@ I entiteten **AppRevision** visas en lista över alla appversioner.
 | ApplicationId              | Unik identifierare för appen – liknar AppKey, men den här nyckeln är naturlig.        | b66bc706-ffff-7437-0340-032819502773 |
 | Revision                   | Versionen som anges av administratören under uppladdningen av binärfilen.                   | 2                                    |
 | Titel                      | Appens titel.                                                                     | Excel                                |
-| Publisher                  | Appens utgivare.                                                                 | Microsoft                            |
+| Utgivare                  | Appens utgivare.                                                                 | Microsoft                            |
 | UploadState                | Appens uppladdningsstatus.                                                              | 1                                    |
 | AppTypeKey                 | Referens till AppType som beskrivs i följande avsnitt.                            | 1                                    |
 | VppProgramTypeKey          | Referens till VppProgramType som beskrivs nedan.                                        | 30876                                |
@@ -69,7 +69,7 @@ Entiteten **AppType** visar en lista över installationskällan för en app.
 | 3         | App Store-app                   | En App Store-app.                                 |
 | 4         | Verksamhetsspecifik iOS-app                     | En verksamhetsspecifik app för iOS.                      |
 | 5         | Hanterad App Store-app (MAM)     | En App Store-app med aktiverad hantering.       |
-| 6         | O365 Pro Plus Suite             | Office 365 Pro Plus Suite för Windows 10.     |
+| 6         | O365 Pro Plus Suite             | Microsoft 365-apparna för Windows 10.     |
 | 7         | Webbapp                         | En webbapp.                                        |
 | 8         | Windows Phone 8.1-Store-app     | En Windows Phone 8.1-app från Store.                    |
 | 9         | Microsoft Store-app               | En Microsoft Store-app.                              |
@@ -85,7 +85,7 @@ I följande tabell sammanfattas tilldelningsstatusen för efterlevnadsprinciper 
 | DateKey       | Datumnyckel när sammanfattningen skapades för kompatibilitetsprincipen.                                                                                                                   | 20161204 |
 | Okänt       | Antalet enheter som är offline eller inte kunde kommunicera med Intune eller Azure AD av andra orsaker.                                                                           | 5        |
 | NotApplicable | Antalet enheter där kompatibilitetsprinciper som tilldelats av administratören inte kan användas.                                                                                     | 201      |
-| godkända     | Antalet enheter som har tillämpat en eller flera kompatibilitetsprinciper som administratören har satt upp som mål.                                                                        | 4083     |
+| Kompatibel     | Antalet enheter som har tillämpat en eller flera kompatibilitetsprinciper som administratören har satt upp som mål.                                                                        | 4083     |
 | InGracePeriod | Antalet enheter som inte är kompatibla men som är i respitperioden som angetts av administratören.                                                                                  | 57       |
 | NonCompliant  | Antalet enheter som inte har tillämpat en eller flera kompatibilitetsprinciper som administratören har satt upp som mål, eller där användaren inte har följt de principer som administratören har satt upp som mål. | 43       |
 |    Fel      |    Antalet enheter som inte kunde kommunicera med Intune eller Azure AD och returnerade ett felmeddelande.                                                                          |    3     |
@@ -100,7 +100,7 @@ I följande tabell sammanfattas tilldelningsstatus för efterlevnadsprinciper f�
 | PolicyPlatformKey | Nyckel för plattformstypen för efterlevnadsprincipen som sammanfattningen skapades för.                                                                                            | 5        |
 | Okänt           | Antalet enheter som är offline eller inte kunde kommunicera med Intune eller Azure AD av andra orsaker.                                                                           | 13       |
 | NotApplicable     | Antalet enheter där kompatibilitetsprinciper som tilldelats av administratören inte kan användas.                                                                                     | 3        |
-| godkända         | Antalet enheter som har tillämpat en eller flera kompatibilitetsprinciper som administratören har satt upp som mål.                                                                        | 45       |
+| Kompatibel         | Antalet enheter som har tillämpat en eller flera kompatibilitetsprinciper som administratören har satt upp som mål.                                                                        | 45       |
 | InGracePeriod     | Antalet enheter som inte är kompatibla men som är i respitperioden som angetts av administratören.                                                                                  | 3        |
 | NonCompliant      | Antalet enheter som inte har tillämpat en eller flera kompatibilitetsprinciper som administratören har satt upp som mål, eller där användaren inte har följt de principer som administratören har satt upp som mål. | 7        |
 | Fel             | Antalet enheter som inte kunde kommunicera med Intune eller Azure AD och returnerade ett felmeddelande.                                                                             | 3        |
@@ -117,7 +117,7 @@ I följande tabell sammanfattas tilldelningsstatus för efterlevnadsprinciper f�
 |  complianceStatus  |                       Beskrivning                      |
 |:------------------:|:------------------------------------------------------:|
 |    Okänt         |    Okänt.                                                                        |
-|    godkända       |    Kompatibel.                                                                      |
+|    Kompatibel       |    Kompatibel.                                                                      |
 |    Ej kompatibel    |       Enheten är icke-kompatibel och blockeras från företagsresurser.             |
 |    Konflikt        |    Konflikt med andra regler.                                                      |
 |    Fel           |       Fel.                                                                       |
@@ -270,7 +270,7 @@ Entiteten **deviceType** representerar den enhetstyp som andra informationslager
 | deviceTypeID |        Name       |                      Beskrivning                      |
 |:------------:|:-----------------:|:-----------------------------------------------------:|
 | -1           | Inte tillgänglig   | Enhetstypen är inte tillgänglig.                     |
-| 0            | Skrivbord           | Windows-skrivbordsenhet                              |
+| 0            | skrivbords-           | Windows-skrivbordsenhet                              |
 | 1            | Windows           | Windows-enhet                                      |
 | 2            | WinMO6            | Windows Mobile 6.0-enhet                           |
 | 3            | Nokia             | Nokia-enhet                                        |
@@ -590,7 +590,7 @@ Entiteten **ownerType** visar om en enhet är företagsägd, privat ägd eller o
 |:-------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------:|
 | ownerTypeID   | Unikt id för ägartyp.                                                                                                                                               |                            |
 | ownerTypeKey  | Unik identifierare för ägartypen i informationslagret – surrogatnyckel.                                                                                                       |                            |
-| ownerTypeName | Representerar ägartypen för enheterna: Företag – enheten är företagsägd.  Privat – enheten är privatägd (BYOD).   Okänd – det finns ingen information om enheten. | Företag Privat Okänd |
+| ownerTypeName | Representerar enheternas ägartyp:  Företag – Enheten är företagsägd.  Privat – enheten är privatägd (BYOD).   Okänd – det finns ingen information om enheten. | Företag Privat Okänd |
 
 > [!Note]  
 > För `ownerTypeName`-filtret i AzureAD måste du ange värdet `deviceOwnership` som `Company` när du skapar dynamiska grupper för enheter. Mer information finns i [Regler för enheters](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 

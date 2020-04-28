@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce61f7af7c11fb579e34890700231ca2e59fb5cd
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 5aa91a84b2fe5d8870afc93022ab5a468b30e0db
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81267691"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82074800"
 ---
 # <a name="how-to-use-intune-in-environments-without-google-mobile-services"></a>Använda Intune i miljöer utan Google Mobile Services
 

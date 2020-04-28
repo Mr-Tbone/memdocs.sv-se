@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/26/2020
+ms.date: 04/15/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 671f80efb54f51cac410b37de6227e456d9316d9
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 36b39d20e666015ae040a1fa058dca1d167686e4
+ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323133"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81739898"
 ---
 # <a name="configure-exchange-on-premises-access-for-intune"></a>Konfigurera lokal Exchange-åtkomst för Intune
 
@@ -35,7 +35,7 @@ Om du har en Exchange Online Dedicated-miljö och vill veta om den har den nya e
 
 Innan du kan konfigurera villkorlig åtkomst måste du kontrollera att följande inställningar finns:
 
-- Din Exchange-version måste vara **Exchange 2010 SP1 eller senare**. Matrisen för Exchange Server-klientåtkomstservern (CAS) stöds.
+- Din Exchange-version måste vara **Exchange 2010 SP3 eller senare**. Matrisen för Exchange Server-klientåtkomstservern (CAS) stöds.
 
 - Du har installerat och använt [Exchange Active Syncs lokala Exchange-anslutningsprogram](exchange-connector-install.md) som ansluter Intune till Exchange lokalt.
 
@@ -124,7 +124,7 @@ Innan du kan använda följande procedur för att konfigurera en lokal åtkomstk
    > [!div class="mx-imgBorder"]
    > ![Exempel på skärmbild av arbetsflödet Redigera organisation för meddelanden](./media/conditional-access-exchange-create/edit-organization-user-notification.png)
 
-   Andra standardmeddelandet som skickas per e-post till användarna om deras enhet inte är kompatibel och om de vill ha lokal åtkomst till Exchange. Meddelandemallen använder Markup Language. Du kan även se en förhandsgranskning av hur meddelandet blir medan du skriver
+   Ändra standardmeddelandet som skickas per e-post till användarna om deras enhet inte är kompatibel och om de vill ha lokal åtkomst till Exchange. Meddelandemallen använder Markup Language. Du kan även se en förhandsgranskning av hur meddelandet blir medan du skriver
 
    Välj **Granska och spara**  och sedan **Spara** om du vill spara dina ändringar och slutföra konfigurationen av lokal åtkomst till Exchange.
 

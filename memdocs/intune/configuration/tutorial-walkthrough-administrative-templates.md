@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26576212f4df86681210956669320ed4b124025d
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: c1bb178c03682b9dd04902fecd50e5f2c9f01d0b
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80488137"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82022865"
 ---
 # <a name="tutorial-use-the-cloud-to-configure-group-policy-on-windows-10-devices-with-admx-templates-and-microsoft-intune"></a>Självstudie: Använd molnet för att konfigurera grupprinciper på Windows 10-enheter med ADMX-mallar och Microsoft Intune
 
@@ -34,7 +34,7 @@ Administrativa mallar för grupprinciper, som även kallas ADMX-mallar, innehål
 ADMX-mallar är tillgängliga för följande tjänster:
 
 - **Microsoft Edge**: Ladda ned på [Microsoft Edge-principfil](https://www.microsoftedgeinsider.com/en-us/enterprise).
-- **Office**: Ladda ned på [Office 365 ProPlus, Office 2019 och Office 2016](https://www.microsoft.com/download/details.aspx?id=49030).
+- **Office**: Ladda ned på [Microsoft 365-appar, Office 2019 och Office 2016](https://www.microsoft.com/download/details.aspx?id=49030).
 - **Windows**: Inbyggt i operativsystemet Windows 10.
 
 Mer information om ADMX-principer finns i [Förstå ADMX-stödda principer](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies).

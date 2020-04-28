@@ -19,12 +19,12 @@ ms.reviewer: tisilver
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 1e1f1c04bed91de3ac193ea3b6a07bde4e8658ba
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: d0e933d3ab40b6c07615f701c9d181d41e4fded5
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81638235"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077792"
 ---
 # <a name="set-up-ios-or-ipados-device-with-company-portal-and-entrust-datacard"></a>Konfigurera en iOS- eller iPadOS-enhet med företagsportalen och Entrust Datacard
 
@@ -51,11 +51,11 @@ Härledda autentiseringsuppgifter används för att:
 
 Härledda autentiseringsuppgifter är en implementering av riktlinjerna från National Institute of Standards and Technology (NIST) för härledda PIV-autentiseringsuppgifter (Personal Identity Verification) som en del av en Special Publication (SP) 800-157.  
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
  För att slutföra registreringen måste du ha:
 
-* Ditt smartkort för skola eller arbete
+* Ditt smartkort som tillhandahålls av skola eller arbete
 * Åtkomst till en dator eller kiosk där du kan logga in med ditt smartkort
 * Din mobila enhet
 * Intunes-företagsportalappen för iOS och iPadOS installerad på din enhet  
@@ -66,24 +66,24 @@ Härledda autentiseringsuppgifter är en implementering av riktlinjerna från Na
 
 2. Skriv ned koden på skärmen.  
 
-    ![Exempelbild på företagsportalappen med meddelandet och koden på skärmen.](./media/copy-code-intercede.png)   
+    ![Exempelavbildning på företagsportalappen med meddelandet och koden på skärmen.](./media/copy-code-intercede.png)   
 
 3. Växla till din smartkortaktiverade enhet och gå till https://microsoft.com/devicelogin. 
-4. Ange koden som du skrev ned förut.  
+4. Ange koden du tidigare skrev ned.  
 
     ![Exempel på skärmbild på företagsportalswebbplatsens uppmaning ”Ange kod”.](./media/enter-code-intercede.png)   
 
-5. Sätt i smartkortet för att logga in.   
+5. Infoga smartkortet för att logga in.   
 6. Gå tillbaka till företagsportalappen på din mobila enhet och följ anvisningarna på skärmen för att registrera enheten.  
 7. När registreringen är klar meddelar företagsportalen dig att du ska konfigurera smartkortet. Tryck på meddelandet. Om du inte får något meddelande bör du kontrollera din e-post.   
 
     ![Exempel på skärmbild av företagsportalens push-meddelande på enhetens startsida.](./media/action-required-in-app-intercede.png)  
 
 8. På skärmen **Ställ in åtkomst till mobilens smartkort**:   
-    a. Tryck på länken till organisationens konfigurationsanvisningar. Om din organisation inte tillhandahåller ytterligare instruktioner kommer du att skickas till den här artikeln.  
+    a. Tryck på länken till organisationens konfigurationsinstruktioner. Om din organisation inte tillhandahåller ytterligare instruktioner kommer du att skickas till den här artikeln.  
     b. Tryck på **Börja**.  
 
-    ![Exempel på skärmbild av företagsportalens skärm för mobil smartkortåtkomst.](./media/smart-card-info-intercede.png)
+    ![Exempel på skärmbild av företagsportalen skärm till mobil smartkortåtkomst.](./media/smart-card-info-intercede.png)
 
 9. Växla till din smartkortaktiverade enhet och öppna IdentityGuard. 
 10. Hitta inloggningsområdet för smarta autentiseringsuppgifter och välj inloggningsknappen.  
@@ -96,13 +96,13 @@ Härledda autentiseringsuppgifter är en implementering av riktlinjerna från Na
     b. På listmenyn väljer du **Entrust IdentityGudard Mobile Smart Credential** (Mobil smart autentiseringsuppgift för Entrust IdentityGudard).  
     c. Fortsätt till nästa skärm. Du ser en QR-kod med ett numeriskt lösenord under.  
 
-16. Gå tillbaka till din mobila enhet. I Företagsportal > skärmen **Hämta QR-kod** trycker du på **Fortsätt**. 
+16. Återgå till din mobila enhet. I Företagsportal > skärmen **Hämta QR-kod** trycker du på **Fortsätt**. 
 
     ![Exempel på skärmbild av skärmen Företagsportal > Hämta QR-kod.](./media/get-qr-code-intercede.png)  
 17. Tryck på **Använd kamera** > **OK**.  
 
     ![Exempel på skärmbild av en fråga i företagsportalen om att få åtkomst till kameran.](./media/allow-cp-camera-access-intercede.png)  
-18. Skanna bilden av QR-koden som finns på din smartkortaktiverade enhet.  
+18. Skanna avbildningen av QR-koden som finns på din Smart Cards-aktiverade enhet.  
 19. Ange det numeriska lösenordet som visas under QR-koden.  
 
     ![Exempel på skärmbild av skärmen Company Portal Password (Lösenord för företagsportal) anger du lösenordsfältet.](./media/enter-password-derived-credentials.png)   

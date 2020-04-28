@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 02/22/2018
+ms.date: 04/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f3964ec67c9c78e5aedc70ff4f328a66c59c04b
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 2c05a5518ff180bcfd3f00f6f59097815e9eed9d
+ms.sourcegitcommit: 2871a17e43b2625a5850a41a9aff447c8ca44820
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80696530"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82126157"
 ---
 # <a name="enroll-iosipados-devices-in-intune"></a>Registrera iOS/iPadOS-enheter i Intune
 
@@ -35,7 +35,7 @@ Som Intune-administratör kan du konfigurera registrering för iOS/iPadOS- och i
 
 Innan du kan aktivera iOS/iPadOS-enheter måste du göra följande:
 
-- [Kontrollera att enheten är kvalificerad för registrering av Apple-enheter](https://support.apple.com/en-us/HT204142#eligibility).
+- [Kontrollera att enheterna stöds](../fundamentals/supported-devices-browsers.md).
 - [Konfigurera Intune](../fundamentals/setup-steps.md) - följande steg konfigurerar din Intune-infrastruktur. I synnerhet kräver registrering av enheter att du [anger en MDM-utfärdare](../fundamentals/mdm-authority-set.md).
 - [Hämta ett certifikat för Apple MDM Push](apple-mdm-push-certificate-get.md) – Apple kräver ett certifikat för att aktivera hantering av iOS/iPadOS- och macOS-enheter.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1070c7b396ac3c19c340a69b6e2eb8db9d6707b6
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: e6a62767fdb3e80c7f7f517c06f1e44a6a7423d1
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80327188"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078013"
 ---
 # <a name="automatically-enroll-macos-devices-with-the-apple-business-manager-or-apple-school-manager"></a>Registrera macOS-enheter automatiskt med Apple Business Manager eller Apple School Manager
 
@@ -118,7 +118,7 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för en
 5. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
     - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda Intune-företagsportalappen för tjänster som installation av appar. Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Mer information](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint). Multifaktorautentisering stöds inte för ADE-enheter för macOS med mappning mellan användare och enhet.
 
-    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som företagsportalappen fungerar inte.
+    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som Företagsportal fungerar inte.
 
 6. Välj **Enhetshanteringsinställningar** och välj om du vill tillämpa låst registrering för enheter som använder den här profilen. **Låst registrering** inaktiverar macOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Systeminställningar** eller via **Terminal**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten.
 

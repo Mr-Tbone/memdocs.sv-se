@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e7305d33b1c40c2624c5c860f59922a5817c818
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 8103e1a4946c0a325501b0d9f538c00d08a1e4cb
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326109"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078319"
 ---
 # <a name="create-and-deploy-windows-information-protection-wip-policy-with-intune"></a>Skapa och distribuera en WIP-princip (Windows Information Protection) med Intune
 
@@ -123,7 +123,7 @@ När du lägger till de appar som du vill skydda med RIA måste du använda ett 
 
 ### <a name="before-you-begin"></a>Innan du börjar
 
-WIP-utbildning är en rapport som gör det möjligt att övervaka WIP-aktiverade appar och okända WIP-appar. De okända apparna är de som inte distribueras av organisationens IT-avdelning. Du kan exportera de här apparna från rapporten och lägga till dem i dina WIP-principer för att undvika avbrott i produktivitet innan de framtvingar WIP i blockeringsläge.
+WIP-utbildning är en rapport som gör det möjligt att övervaka WIP-aktiverade appar och okända WIP-appar. De okända apparna är de som inte distribueras av organisationens IT-avdelning. Du kan exportera de här apparna från rapporten och lägga till dem i dina WIP-principer för att undvika avbrott i produktivitet innan de framtvingar WIP i ”blockeringsläge”.
 
 <!-- 1631908 -->
 Förutom att visa information om WIP-aktiverade appar kan du visa en sammanfattning av de enheter som har delat arbetsdata med webbplatser. Med den här informationen kan du bestämma vilka webbplatser som ska läggas till i gruppernas och användarnas PIA-principer. I sammanfattningen visas vilka webbplatsadresser som används av WIP-aktiverade appar.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d82121fbd3d02c5eef9f45a4e67a897277da9334
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 8c3c2719759180fb4b367d46e45a314995b6f425
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79357772"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079254"
 ---
 # <a name="develop-a-rollout-communication-plan"></a>Utveckla en kommunikationsplan för distribution
 

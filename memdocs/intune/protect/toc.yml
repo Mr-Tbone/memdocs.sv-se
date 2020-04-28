@@ -87,10 +87,14 @@
           href: app-based-conditional-access-intune-create.md
         - name: ADAL och Intune
           href: app-modern-authentication-block.md
-        - name: Integrera Jamf Pro med Intune för kompatibilitet
-          href: conditional-access-integrate-jamf.md
-        - name: Tvinga fram efterlevnad på Mac-datorer som hanteras med Jamf Pro
-          href: conditional-access-assign-jamf.md
+        - name: Jamf Pro för macOS
+          items:
+            - name: Använda Jamf Cloud-anslutningsprogrammet
+              href: conditional-access-jamf-cloud-connector.md
+            - name: Integrera Jamf manuellt med Intune
+              href: conditional-access-integrate-jamf.md
+            - name: Tvinga fram efterlevnad på Mac-datorer som hanteras med Jamf Pro
+              href: conditional-access-assign-jamf.md
     - name: Skydd mot hot
       items:
         - name: Mobile Threat Defense
@@ -253,26 +257,15 @@
           href: troubleshoot-jamf.md
 - name: Referens
   items:
+    - name: Principinställningar för Antivirus
+      items:
+        - name: Inställningar för macOS Defender Antivirus
+          href: antivirus-microsoft-defender-settings-macos.md
+        - name: Inställningar för Windows 10 Microsoft Defender Antivirus
+          href: antivirus-microsoft-defender-settings-windows.md
     - name: API för att lägga till tredje parts certifikatutfärdare
-      href: scep-libraries-apis.md
     - name: Inställningar för efterlevnadsprinciper
       items:
-        - name: Säkerhetsbaslinjer
-          items:
-            - name: Windows 10 MDM-baslinjeinställningar
-              href: security-baseline-settings-mdm-all.md
-            - name: Microsoft Defender ATP-baslinjeinställningar
-              href: security-baseline-settings-defender-atp.md
-            - name: Microsoft Edge-baslinjeinställningar
-              href: security-baseline-settings-edge.md
-        - name: Principinställningar för Antivirus
-          items:
-            - name: Inställningar för macOS Defender Antivirus
-              href: antivirus-microsoft-defender-settings-macos.md
-            - name: Inställningar för Windows 10 Microsoft Defender Antivirus
-              href: antivirus-microsoft-defender-settings-windows.md
-        - name: Windows Update-inställningar
-          href: windows-update-settings.md
         - name: Inställningar för efterlevnadsprinciper – Android
           href: compliance-policy-create-android.md
         - name: Inställningar för efterlevnadsprinciper – Android Enterprise
@@ -287,6 +280,17 @@
           href: compliance-policy-create-windows-8-1.md
         - name: Inställningar för efterlevnadsprinciper – Windows Phone 8.1
           href: compliance-policy-create-windows-8-1.md
+      href: scep-libraries-apis.md
+    - name: Inställningar för säkerhetsbaslinjer
+      items:
+        - name: Windows 10 MDM-baslinjeinställningar
+          href: security-baseline-settings-mdm-all.md
+        - name: Microsoft Defender ATP-baslinjeinställningar
+          href: security-baseline-settings-defender-atp.md
+        - name: Microsoft Edge-baslinjeinställningar
+          href: security-baseline-settings-edge.md
+    - name: Windows Update-inställningar
+      href: windows-update-settings.md
     - name: Felkoder och beskrivningar
       items:
         - name: Programvaruuppdateringsfel

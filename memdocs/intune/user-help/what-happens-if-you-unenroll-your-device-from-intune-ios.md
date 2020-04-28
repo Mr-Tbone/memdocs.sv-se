@@ -19,12 +19,12 @@ ms.reviewer: esmich, elocholi
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 92fcdda0e3b99e227fafb85a87a4f1eda27756e1
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 91a69f413e4b24a5a9f5b5fb092270039d4e0668
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79335191"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82076891"
 ---
 # <a name="what-happens-if-you-unenroll-your-ios-or-macos-device-from-intune"></a>Vad händer om du avregistrerar din iOS- eller macOS-enhet från Intune?
 
@@ -32,9 +32,9 @@ När du avregistrerar din iOS- eller macOS-enhet från Intune:
 
 - Din enhet visas inte längre på företagsportalen.
 
-- Det går inte att installera appar från företagsportalen längre.
+- Det går inte att installera appar från Företagsportal längre.
 
-- Inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
+- Eventuella inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.
 
 - Du kanske inte längre har åtkomst till vissa företagsresurser från din enhet, t.ex. filresurser eller interna webbplatser.
 

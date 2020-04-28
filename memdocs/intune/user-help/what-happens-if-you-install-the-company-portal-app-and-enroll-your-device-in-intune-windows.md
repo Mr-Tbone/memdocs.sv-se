@@ -19,12 +19,12 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 6a8c7212de97fbcb741d03cbcec57bafc4692484
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 65533f3d93d226b91493c98fd029c6257e7e6409
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79335243"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077265"
 ---
 # <a name="what-happens-if-you-install-the-company-portal-app-and-enroll-your-windows-device-in-intune"></a>Vad händer om du installerar företagsportalappen och registrerar din Windows-enhet i Intune?
 
@@ -49,7 +49,7 @@ När du registrerar en enhet ger du företagets support tillstånd att till exem
 
 - Företagets support kan se vilka program som är installerade på enheten, inklusive programvara som du har installerat själv.
 
-- Ange krav för enheten, till exempel krav på lösenord eller PIN-kod för enheten för att skydda företagsdata. Företagets support kan också begränsa hur många gånger du kan ange ett felaktigt lösenord, och kan låsa dig ute från enheten om du försöker för många gånger.
+- Ange krav för enheten, till exempel för att kräva ett lösenord eller en PIN-kod för enheten för att skydda företagsdata. Företagets support kan också begränsa hur många gånger du kan ange ett felaktigt lösenord, och kan låsa dig ute från enheten om du försöker för många gånger.
 
 - Kräva att du krypterar data på din enhet för att skydda företagsdata, om enheten förloras eller blir stulen.
 

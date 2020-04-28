@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fcf2139019b1f4d764b55ee31f5961711a71834c
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 6b0c673eb702e3e9f08209d04bf256c049b10ee6
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80219885"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82022695"
 ---
 # <a name="use-update-channel-and-target-version-settings-to-update-office-365-with-microsoft-intune-administrative-templates"></a>Använd inställningar för Uppdatera kanal och Målversion till att uppdatera Office 365 med Microsoft Intunes administrativa mallar
 
@@ -37,7 +37,7 @@ Gäller för:
 
 ## <a name="prerequisites"></a>Krav
 
-Kom ihåg att [aktivera automatiska uppdateringar i Office 365 ProPlus](https://docs.microsoft.com/deployoffice/configure-update-settings-for-office-365-proplus) för dina Office-appar. Du kan göra detta med hjälp av en grupprincip eller Intune Office 2016 ADMX-mallen:
+Kom ihåg att [aktivera automatiska uppdateringar i Microsoft 365-appar](https://docs.microsoft.com/deployoffice/configure-update-settings-for-office-365-proplus) för dina Office-appar. Du kan göra detta med hjälp av en grupprincip eller Intune Office 2016 ADMX-mallen:
 
 > [!div class="mx-imgBorder"]
 > ![I den administrativa Intune-mallen anger du inställningen Aktivera automatiska uppdateringar för Office](./media/administrative-templates-update-office/admx-enable-automatic-updates.png)
@@ -78,7 +78,7 @@ När du har tilldelat principen och synkroniserat enheten, kan du kontrollera at
     > ![Exempel på registernyckelns administrativa mall L_Updatebranch](./media/administrative-templates-update-office/admx-update-branch-registry-key.png)
 
     > [!TIP]
-    > I [Hantera Office 365 ProPlus med Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) visas värdena och vad de innebär. Registervärdena baseras på den valda distributionskanalen:
+    > I [Hantera Microsoft 365-appar med Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) visas värdena och vad de innebär. Registervärdena baseras på den valda distributionskanalen:
     >
     >- Månadskanal                - value="Current"
     >- Månadskanal (riktad)     - value="Current"
@@ -98,7 +98,7 @@ I det här läget har Intune-principen tillämpats på enheten.
     - `UpdateChannel`: En dynamisk nyckel som ändras, beroende på de konfigurerade inställningarna.
     - `CDNBaseUrl`: Ange när Office 365 installeras på enheten.
 
-3. Titta på värdet `UpdateChannel`. Värdet visar hur ofta Office uppdateras. I [Hantera Office 365 ProPlus med Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) visas värdena och vad de är inställda på.
+3. Titta på värdet `UpdateChannel`. Värdet visar hur ofta Office uppdateras. I [Hantera Microsoft 365-appar med Configuration Manager](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel) visas värdena och vad de är inställda till.
 
     I följande exempel visas att `UpdateChannel` har angetts till `http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60`, som är **månadsvis**:
 
@@ -141,7 +141,7 @@ Om du vill göra mer kan du tvinga Office att hämta den senaste versionsuppdate
 
 ### <a name="step-1-force-the-office-version-to-update"></a>Steg 1: Tvinga Office-versionen att uppdatera
 
-1. Kontrollera att Office-versionen stöder den uppdateringskanal som du väljer. I [Uppdateringshistorik för Office 365 ProPlus](https://docs.microsoft.com/officeupdates/update-history-office365-proplus-by-date) visas de versionsnummer som stöder de olika uppdateringskanalerna.
+1. Kontrollera att Office-versionen stöder den uppdateringskanal som du väljer. I [Uppdateringshistorik för Microsoft 365-appar](https://docs.microsoft.com/officeupdates/update-history-office365-proplus-by-date) visas de versionsnummer som stöder de olika uppdateringskanalerna.
 
 2. I din [administrativa Intune-mall](administrative-templates-windows.md#create-the-template) går du till inställningen för **Målversion** och anger den version som du vill använda.
 
@@ -182,6 +182,6 @@ Du kan använda de här stegen för att testa principen innan du distribuerar de
 
 [Uppdatera kanalvärden för Office 365-klienter](https://docs.microsoft.com/configmgr/sum/deploy-use/manage-office-365-proplus-updates#bkmk_channel)
 
-[Översikt över molnprinciptjänsten i Office för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/overview-office-cloud-policy-service)
+[Översikt över molnprinciptjänsten i Microsoft 365-appar](https://docs.microsoft.com/deployoffice/overview-office-cloud-policy-service)
 
 [Använda Windows 10-mallar till att konfigurera grupprincipinställningar (ADMX-mallar) i Microsoft Intune](administrative-templates-windows.md)

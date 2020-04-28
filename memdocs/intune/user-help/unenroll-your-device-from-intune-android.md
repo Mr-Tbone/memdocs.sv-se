@@ -19,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 77c8a972020113b36b57c992b64a6965f733d119
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 66053bae197a74bf83a41b7ea400ffdc3d514b06
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79335477"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077588"
 ---
 # <a name="unenroll-your-android-device-from-management"></a>Avregistrera din Android-enhet från hanteringen  
 
@@ -33,7 +33,7 @@ Ta bort en registrerad Android-enhet så att den inte längre hanteras av din or
 * Enheten förlorar åtkomst till organisationens skyddade data och resurser.
 * Enheten visas inte längre på Företagsportalen.
 * Du kan inte installera appar från Företagsportalen.
-* Inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.  
+* Eventuella inställningar som ändrades på enheten när du lade till den (t.ex. inaktivering av kameran eller krav på en viss lösenordslängd) gäller inte längre.  
 
 > [!NOTE]
 > Du kan inte avregistrera eller ta bort dina företagsägda enheter från appen Microsoft Intune. Enheten registrerades under den första konfigurationen av enheten och den måste vara registrerad för att få åtkomst till din organisations resurser.  

@@ -1,0 +1,60 @@
+- name: Dokumentation för Desktop Analytics
+  href: index.yml
+- name: Översikt
+  items:
+    - name: Vad är Desktop Analytics?
+      href: overview.md
+    - name: Nyheter
+      href: whats-new.md
+- name: Självstudier
+  items:
+    - name: Pilot Windows 10
+      href: tutorial-windows10.md
+- name: Begrepp
+  items:
+    - name: Distributionsplaner
+      href: about-deployment-plans.md
+    - name: Tillgångar
+      href: about-assets.md
+    - name: Kvalitets- och funktionsuppdateringar
+      href: about-updates.md
+    - name: Utvärdering av kompatibilitet
+      href: compat-assessment.md
+    - name: Övervakning av hälsotillstånd
+      href: health-status-monitoring.md
+- name: Instruktionsguider
+  items:
+    - name: Ställ in Desktop Analytics
+      href: set-up.md
+    - name: Anslut konfigurationshanteraren
+      href: connect-configmgr.md
+    - name: Registrera enheter
+      href: enroll-devices.md
+    - name: Skapa distributionsplaner
+      href: create-deployment-plans.md
+    - name: Distribuera till piloten
+      href: deploy-pilot.md
+    - name: Distribuera till produktion
+      href: deploy-prod.md
+    - name: Återställa konto
+      href: account-reset.md
+    - name: Stänga konto
+      href: account-close.md
+- name: Referens
+  items:
+    - name: Aktivera delning av data
+      href: enable-data-sharing.md
+    - name: Sekretess
+      href: privacy.md
+    - name: Felsöka
+      href: troubleshooting.md
+    - name: Logginsamlaren
+      href: log-collector.md
+    - name: Övervaka anslutningsstatus
+      href: monitor-connection-health.md
+    - name: Grupprincipinställningar
+      href: group-policy-settings.md
+    - name: Vanliga frågor och svar
+      href: faq.md
+    - name: Få support
+      href: get-support.md

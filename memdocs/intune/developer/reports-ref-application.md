@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78fce6f5f518227500b3cf42f1d935c0dd88df8c
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 4ec35681b6e81eb28c114733cc7913dd90875bfd
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79359865"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023324"
 ---
 # <a name="reference-for-application-entities"></a>Referens för programenheter
 
@@ -77,7 +77,7 @@ Entiteten **AppType** visar en lista över installationskällan för en app.
 | 3 |iOS Store-app | En iOS Store-app. |
 | 4 |Verksamhetsspecifik iOS-app | Verksamhetsspecifik app för iOS. |
 | 5 |Hanterad iOS Store-app (MAM?) | En iOS Store-app med aktiverad hantering. |
-| 6 |O365 Pro Plus Suite | Office 365 Pro Plus Suite för Windows 10. |
+| 6 |O365 Pro Plus Suite | Microsoft 365-apparna för Windows 10. |
 | 7 |Webbapp | En webbapp. |
 | 8 |Windows Phone 8.1 Store-app | En Windows Phone 8.1 Store-app. |
 | 9 |Windows Store-app | En Windows Store-app. |

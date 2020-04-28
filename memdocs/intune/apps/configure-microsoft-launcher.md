@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 04/22/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0711b407b185b3a9621ff80a371bd3aaa5032ead
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: ac4a9797df1ea64a5ffbceca3ea204bd9ed13a6f
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80407738"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82075548"
 ---
 # <a name="configure-microsoft-launcher"></a>Konfigurera Microsoft Launcher
 
@@ -49,6 +49,8 @@ Om du lägger till egenskaper med **Configuration Designer** kan du automatiskt 
 
    > [!NOTE]
    > När egenskaperna har konfigurerats via Configuration Designer kommer JSON-data också att uppdateras så att de endast återspeglar dessa egenskaper. Om du vill lägga till ytterligare konfigurationsnycklar i JSON-data använder du exemplet med [JSON-skript](../apps/configure-microsoft-launcher.md#microsoft-launcher-configuration-example) för att kopiera de rader som behövs för varje konfigurationsnyckel. 
+
+Om komplexa egenskaper har konfigurerats, visas JSON-dataredigeraren i redigeringsprocessen när du redigerar tidigare skapade konfigurationsprinciper för appar. Alla tidigare konfigurerade inställningar kommer att bevaras och du kan växla till att använda konfigurationsverktyget för att ändra inställningar som stöds.
 
 ## <a name="using-configuration-designer"></a>Använda Configuration Designer
 

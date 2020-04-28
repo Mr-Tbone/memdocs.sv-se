@@ -1,0 +1,77 @@
+- name: Docs
+  tocHref: /
+  topicHref: /
+  items:
+    - name: Enterprise Mobility + Security
+      tocHref: /enterprise-mobility-security/
+      topicHref: /enterprise-mobility-security/
+      items:
+        - name: Microsoft Endpoint Manager
+          tocHref: /mem/
+          topicHref: /mem/
+          items:
+            - name: Intune
+              tocHref: /mem/intune/
+              topicHref: /mem/intune/
+              items:
+                - name: Användarhjälp för Intune
+                  tocHref: /mem/intune/user-help/
+                  topicHref: /mem/intune/user-help/use-managed-devices-to-get-work-done
+                - name: Appar
+                  tocHref: /mem/intune/apps/
+                  topicHref: /mem/intune/apps/
+                - name: Grunderna
+                  tocHref: /mem/intune/fundamentals/
+                  topicHref: /mem/intune/fundamentals/
+                - name: Registrering
+                  tocHref: /mem/intune/enrollment/
+                  topicHref: /mem/intune/enrollment/
+                - name: Fjärråtgärder
+                  tocHref: /mem/intune/remote-actions/
+                  topicHref: /mem/intune/remote-actions/
+                - name: Konfiguration
+                  tocHref: /mem/intune/configuration/
+                  topicHref: /mem/intune/configuration/
+                - name: Skydda
+                  tocHref: /mem/intune/protect/
+                  topicHref: /mem/intune/protect/
+                - name: Developer
+                  tocHref: /mem/intune/developer/
+                  topicHref: /mem/intune/developer/
+            - name: Konfigurationshanteraren
+              tocHref: /mem/configmgr/
+              topicHref: /mem/configmgr/
+              items:
+                - name: Guide för programhantering
+                  tocHref: /mem/configmgr/apps/
+                  topicHref: /mem/configmgr/apps/
+                - name: Samhantering
+                  tocHref: /mem/configmgr/comanage/
+                  topicHref: /mem/configmgr/comanage/
+                - name: Efterlevnad för enhet
+                  tocHref: /mem/configmgr/compliance/
+                  topicHref: /mem/configmgr/compliance/
+                - name: Guide för grundläggande infrastruktur
+                  tocHref: /mem/configmgr/core/
+                  topicHref: /mem/configmgr/core/
+                - name: Desktop Analytics
+                  tocHref: /mem/configmgr/desktop-analytics/
+                  topicHref: /mem/configmgr/desktop-analytics/
+                - name: Developer
+                  tocHref: /mem/configmgr/develop/
+                  topicHref: /mem/configmgr/develop/
+                - name: Hantering av mobila enheter
+                  tocHref: /mem/configmgr/mdm/
+                  topicHref: /mem/configmgr/mdm/
+                - name: Distribution av operativsystem
+                  tocHref: /mem/configmgr/osd/
+                  topicHref: /mem/configmgr/osd/
+                - name: Skydda
+                  tocHref: /mem/configmgr/protect/
+                  topicHref: /mem/configmgr/protect/
+                - name: Programuppdateringar
+                  tocHref: /mem/configmgr/sum/
+                  topicHref: /mem/configmgr/sum/
+                - name: Klientkoppling
+                  tocHref: /mem/configmgr/tenant-attach/
+                  topicHref: /mem/configmgr/tenant-attach/

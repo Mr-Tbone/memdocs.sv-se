@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 64a1a8484af537649fd618b5cfa718dc7dff5607
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: af748f91d47d6276b5590577079130e2be470e05
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79335295"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077367"
 ---
 # <a name="what-happens-if-you-install-the-company-portal-app-and-enroll-your-ios-device-in-intune"></a>Vad händer om du installerar företagsportalappen och registrerar din iOS-enhet i Intune?
 
@@ -47,7 +47,7 @@ När enheten har registrerats kan företagets support:
 
 - Återställa enheten till standardinställningarna om den stjäls eller tappas bort.
 
-- Ta bort alla installerade företagsrelaterade data- och affärsappar. Dina personliga data och inställningar tas inte bort.
+- Ta bort alla installerade företagsrelaterade data- och affärsappar. Dina personuppgifter och inställningar tas inte bort.
 
 - Kräva att du måste ha ett lösenord eller en PIN-kod för enheten.
 

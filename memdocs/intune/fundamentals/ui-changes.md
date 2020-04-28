@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fbf58b7ae035bbd7da15814787f283c7b80e13e
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 5ff2898f97bbef4cba0d14d4810a503d613cff18
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79355120"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077928"
 ---
 # <a name="where-did-my-intune-feature-go-in-azure"></a>Var är Intune-funktionen i Azure?
 Vi passade på att ordna några uppgifter på ett mer logiskt sätt när vi flyttade Intune till Azure-portalen. Men alla förbättringar innebär att man måste lära sig den nya ordningen. Den här referensguiden är till för dem som är bekanta med Intune i den klassiska portalen och undrar hur de ska arbeta med Intune i Azure-portalen. Om du letar efter en funktion som inte tas upp i den här artikeln kan du lämna en kommentar vid artikelns slut så kan vi uppdatera den.
@@ -52,7 +52,7 @@ I den klassiska portalen gick det att ange regler för att styra MDM-registrerin
 
 ![Bild av klassiska regler för registrering av mobil enhet](./media/ui-changes/01-classic-rules.png)
 
-Dessa regler tillämpades på alla användare i Intune-kontot utan undantag. I Azure-portalen visas dessa regler nu i två olika principtyper: Begränsningar av enhetstyp och Begränsningar för enhetsgräns.
+Dessa regler tillämpades på alla användare i Intune-kontot utan undantag. I Azure Portal visas dessa regler nu i två olika principtyper: Begränsningar för enhetstyper och begränsningar för enhetsgränser.
 
 ![Bild av registreringsbegränsningar för mobil enhet](./media/ui-changes/02-azure-enroll-restrictions.png)
 

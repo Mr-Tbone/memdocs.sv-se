@@ -19,12 +19,12 @@ ms.reviewer: tisilver
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 8caf05a2869088fd4f8206d1306d82c696f527a2
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b83092521f1ab0058d47d599e7fd9c10c2fd6d35
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81638214"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077775"
 ---
 # <a name="set-up-ios-or-ipados-device-with-company-portal-and-intercede"></a>Konfigurera en iOS- eller iPadOS-enhet med företagsportalen och Intercede
 
@@ -52,7 +52,7 @@ Härledda autentiseringsuppgifter används för att:
 
 Härledda autentiseringsuppgifter är en implementering av riktlinjerna från National Institute of Standards and Technology (NIST) för härledda PIV-autentiseringsuppgifter (Personal Identity Verification) som en del av en Special Publication (SP) 800-157.  
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
  För att slutföra registreringen måste du ha:
 

@@ -17,12 +17,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8be97edbbba9a998dd223a5a0e9c8982c1a16a1
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 70f6e3d3fcd0a5f65866e43198b499b321aab836
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326599"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079050"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-unmanaged-devices"></a>Självstudie: Skydda e-post i Exchange Online på ohanterade enheter
 
@@ -38,7 +38,7 @@ Du behöver en testklient med följande prenumerationer för den här självstud
 
 - Azure Active Directory Premium ([kostnadsfri utvärderingsversion](https://azure.microsoft.com/free/?WT.mc_id=A261C142F))
 - Intune-prenumeration ([kostnadsfri utvärderingsversion](../fundamentals/free-trial-sign-up.md))
-- En Office 365 Business-prenumeration med Exchange ([kostnadsfri utvärderingsversion](https://go.microsoft.com/fwlink/p/?LinkID=510938))
+- Microsoft 365-appar för företagsprenumeration med Exchange ([kostnadsfri utvärderingsversion](https://go.microsoft.com/fwlink/p/?LinkID=510938))
 
 ## <a name="sign-in-to-intune"></a>Logga in i Intune
 

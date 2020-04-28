@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 682791256bf0ce40db1dedd1fa6b947efc85b729
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: aa8a18d24fb27b1d1ca7ea7dbe4fad532f85d662
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79352390"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82022729"
 ---
 # <a name="prevent-unauthorized-access-to-company-data-using-microsoft-intune"></a>Förhindra obehörig åtkomst till företagsdata med Microsoft Intune
 
@@ -36,7 +36,7 @@ Följande åtgärdsplan kan användas om du uppfyller följande krav:
 * Företaget använder Office 365 Exchange Online, SharePoint Online, OneDrive för företag eller Yammer.
 * Företaget har licenser för Microsoft 365, Enterprise Mobility + Security (EMS) eller Azure Information Protection.
 * Företaget arbetar med enheter som kör Windows 7 Service Pack 1 eller senare.
-* Företaget använder Office 365 ProPlus med 2016-appar eller 2013-appar, Office Professional Plus 2016, Office Professional Plus 2013 med Service Pack 1 eller Office Professional Plus 2010.
+* Företaget använder Microsoft 365-appar med 2016-appar eller 2013-appar, Office Professional Plus 2016, Office Professional Plus 2013 med Service Pack 1 eller Office Professional Plus 2010.
 
 ## <a name="action-plan"></a>Åtgärdsplan
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a37971928ab2aef8c5e78e9d0eefb748ecf5f04
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 4ca133b1995769f1c4cdfdcaf6b3a8256d7e6d5c
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79358643"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078861"
 ---
 # <a name="microsoft-intune-service-description"></a>Beskrivning av Microsoft Intune-tjänsten
 
@@ -92,7 +92,7 @@ För att hjälpa dig att planera för tjänständringar meddelar vi dig minst 7�
 Och, slutligen, i de sällsynta fall då det finns behov av någon form av åtgärd i efterhand för att få tillbaka tjänsten i normalt skick, eller då det krävs stora ändringar som vi bedömer kan vara potentiellt störande utifrån feedback från kunderna, så skickar vi ut e-postmeddelanden till tjänstadministratörerna utifrån dina aktuella [kommunikationsinställningar för Office 365](https://support.office.com/article/Change-your-contact-preferences-for-communications-from-Microsoft-6f70de1b-a64d-4498-bfbd-be8c83a9c0fc), förutsatt att du har en giltig e-postadress (helst till arbetsplatsen).  
 
 
-<!--- ## Choose the management solution that’s right for you
+<!--- ## Choose the management solution that's right for you
 You can set up Intune in several ways to manage and help protect your company's mobile devices and computers (referred to as **devices** in this article).
 
 - **Intune stand-alone configuration.** Use the web-based admin console in Intune to manage devices in your organization. Intune can be used without any on-premises IT infrastructure. If you use Intune with Active Directory Domain Services, you can use domain user accounts that you manage with Domain Services with Intune.
@@ -100,7 +100,7 @@ You can set up Intune in several ways to manage and help protect your company's 
 --->
 
 ## <a name="language-support"></a>Språkstöd
-Intune körs i Azure-portalen som stöder följande språk: kinesiska (förenklad), kinesiska (traditionell), tjeckiska, holländska, engelska, tyska, ungerska, italienska, japanska, portugisiska (Brasilien), portugisiska (Portugal), ryska, spanska, engelska, franska, koreanska, polska, svenska och turkiska.
+Intune körs i Azure-portalen, som stöder följande språk: kinesiska (förenklad), kinesiska (traditionell), tjeckiska, holländska, engelska, tyska, ungerska, italienska, japanska, portugisiska (Brasilien), portugisiska (Portugal), ryska, spanska, engelska, franska, koreanska, polska, svenska och turkiska.
 
 Intune-administrationskonsolen och mobilmiljöerna för användarna stöder danska, grekiska, finska, norska och rumänska, samt alla de språk som stöds av Azure Portal.
 

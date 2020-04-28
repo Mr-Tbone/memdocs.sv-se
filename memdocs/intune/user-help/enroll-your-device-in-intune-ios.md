@@ -19,12 +19,12 @@ ms.reviewer: tisilv
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: aeb2e22348e7197f0abb62ee540c37079f8645f4
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 49e598f370669ed55688af6e6a570a932b5bf9d3
+ms.sourcegitcommit: 3ff33493c3f93bf06fdc942d30958a2a4ad03529
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80084689"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82137974"
 ---
 # <a name="set-up-ios-device-access-to-your-company-resources"></a>Konfigurera iOS-enhetsåtkomst till företagsresurser  
 
@@ -170,13 +170,13 @@ En paus på mer än några minuter under registreringen göra att appen stängs 
 
 8. På skärmen **Logga in** anger du lösenordet för ditt hanterade Apple-ID. I de flesta fall är de här autentiseringsuppgifterna samma som de du använder till att logga in på ditt arbets- eller skolkonto, om inte organisationen har försett dig med andra autentiseringsuppgifter. 
 9. Tryck på **Logga in**.  
-10. Du ser ett meddelande på skärmen när profilen har installerats. Kontrollera att profilen har installerats genom att gå till inställningarna för  **Profiler och enhetshantering** . Du bör se profilen under  **Hantering av mobilenheter.**  
+10. Du ser ett meddelande på skärmen när profilen har installerats. Kontrollera att profilen har installerats genom att gå till inställningarna för **Profiler och enhetshantering**. Du bör se profilen under **Hantering av mobilenheter.**  
 
     ![Exempel på skärmbild av appen Inställningar, inställningar för Profiler och enhetshantering, som visar hanteringsprofilen.](./media/ios-12-cp-enroll-1904.PNG)  
 
 11. Gå tillbaka till appen Företagsportal. Företagsportalen börjar synkronisera och konfigurera din enhet. Du kan uppmanas att uppdatera ytterligare enhetsinställningar. I så fall trycker du på **Fortsätt**.    
 
-12. Du vet att installationen är klar när alla objekt i listan visas med en grön bockmarkering. Tryck på  **Klar**.  
+12. Du vet att installationen är klar när alla objekt i listan visas med en grön bockmarkering. Tap **Klar**.  
 
 ## <a name="it-administrator-support"></a>IT-administratörssupport  
 Om du är IT-administratör och stöter på problem när du registrerar enheter kan du läsa [Felsöka problem med registrering av iOS-enhet i Microsoft Intune](https://support.microsoft.com/en-us/help/4039809). Den här artikeln innehåller vanliga fel, deras orsaker och stegen för att lösa dem.  

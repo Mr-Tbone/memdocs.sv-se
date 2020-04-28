@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9975ffb8ce56659016680304c936fc8bb7d0774
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: f2244f484b44673454b1bbb6ba6286c253021517
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79344200"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079271"
 ---
 # <a name="common-ways-to-use-microsoft-intune"></a>Vanliga sätt att använda Microsoft Intune
 
@@ -99,4 +99,4 @@ Den enkla användarupplevelsen är avgörande i detta fall. Därför får anstä
 
 Ibland behöver anställda använda enheter, appar eller webbläsare som du inte kan hantera, t.ex. offentliga datorer på mässor och hotell.
 
-Ska du tillåta att medarbetarna får åtkomst till företagets e-post från dem? Med Intune och Microsoft Enterprise Mobility + Security kan du enkelt välja att inte göra det, genom att [begränsa e-poståtkomsten till enheter som hanteras av din organisation](../protect/conditional-access.md). Detta säkerställer att en autentiserad anställd oavsiktligt lämnar företagsdata på den icke-betrodda datorn.
+Ska du tillåta att medarbetarna får åtkomst till företagets e-post från dem? Med Intune och Microsoft Enterprise Mobility + Security kan du enkelt välja att ”inte” göra det, genom att [begränsa e-poståtkomsten till enheter som hanteras av din organisation](../protect/conditional-access.md). Detta säkerställer att en autentiserad anställd oavsiktligt lämnar företagsdata på den icke-betrodda datorn.

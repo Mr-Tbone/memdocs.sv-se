@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 104996e87c830701b1725129727c76d8c7a09ee3
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: cf4fc3017ccf3efcf93986544c8a60b60acbf3c8
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79344135"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82076126"
 ---
 # <a name="how-to-configure-intune-settings-for-the-iosipados-classroom-app"></a>Så här konfigurerar du inställningar för iOS-/iPadOS-appen Classroom för Intune
 
@@ -79,7 +79,7 @@ Du kan importera information till SDS på något av följande sätt:
 1. Logga in på [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
 3. I fönstret **Intune** väljer du **Enhetskonfiguration**.
 2. I fönstret **Enhetskonfiguration** under avsnittet **Hantera** väljer du **Profiler**.
-5. I profilfönstret väljer du **Skapa profil**.
+5. I fönstret Profiler väljer du **Skapa profil**.
 6. Ange **Namn** och **Beskrivning** för iOS-/iPadOS-utbildningsprofilen i fönstret **Skapa profil**.
 7. Välj **iOS** i listrutan **Plattform**.
 8. Välj **Utbildning** i listrutan **Profiltyp**.

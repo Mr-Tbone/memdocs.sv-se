@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5b6762669e4d816010982c63a119bffdec2f055
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 32405d7cc00d7ddbf528eb9ce736cf0faf702b42
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79334281"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023035"
 ---
 # <a name="quickstart-add-and-assign-a-client-app"></a>Snabbstart: Lägg till och tilldela en klientapp
 
@@ -46,7 +46,7 @@ En app kan inkluderas så att Intune kan hantera aspekter av appen.
 Använd följande steg för att lägga till en app i Intune:
 
 1. Välj **Appar** > **Alla appar** > **Lägg till** i [Intune](https://aka.ms/intuneportal). 
-2. Välj **Windows 10** i avsnittet **Office 365-paket** på fönstret **Välj apptyp**.
+2. Välj **Windows 10** i avsnittet **Microsoft 365-appar** i fönstret **Välj apptyp**.
 3. Klicka på **Välj**. Stegen **Lägg till app** visas.
 4. Bekräfta standardinformationen på sidan **Information om appsvit**.
 5. Klicka på **Nästa** för att visa sidan **Konfigurera appsviten**.
@@ -88,7 +88,7 @@ Du måste installera och använda företagsportalappen för att installera den *
 
 2. Från **Start-menyn** öppnar du **Microsoft Store**. Leta sedan upp **företagsportalappen** och installera den.
 3. Starta **företagsportalappen**.
-4. Klicka på den app som du lade till med hjälp av Intune. I den här snabbstarten lade du till appen **Microsoft Office 365-appaket**.
+4. Klicka på den app som du lade till med hjälp av Intune. I den här snabbstarten lade du till appen **Microsoft 365-appaket**.
 
     > [!NOTE]
     > Om du inte kunde tilldela några appar till Intune-användaren visas följande meddelande: *Din IT-administratör har inte gjort några appar tillgängliga för dig.*

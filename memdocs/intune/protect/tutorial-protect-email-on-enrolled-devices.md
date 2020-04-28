@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 200bde56a4a1e77ce78678eddd35537c04dfa514
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 24bdaf71f90e3da84fb26c4b69d9b81f43413c69
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80325494"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079067"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-managed-devices"></a>Självstudie: Skydda e-post i Exchange Online på hanterade enheter
 
@@ -43,7 +43,7 @@ Du behöver en testklient med följande prenumerationer för den här självstud
 
 - Azure Active Directory Premium ([kostnadsfri utvärderingsversion](https://azure.microsoft.com/free/?WT.mc_id=A261C142F))
 
-- En Office 365 Business-prenumeration med Exchange ([kostnadsfri utvärderingsversion](https://go.microsoft.com/fwlink/p/?LinkID=510938))
+- Microsoft 365-appar för företagsprenumeration med Exchange ([kostnadsfri utvärderingsversion](https://go.microsoft.com/fwlink/p/?LinkID=510938))
 
 Innan du börjar måste du skapa en testenhetsprofil för iOS-enheter genom att följa stegen i [Snabbstart: Skapa en e-postenhetsprofil för iOS/iPadOS](../configuration/quickstart-email-profile.md).
 

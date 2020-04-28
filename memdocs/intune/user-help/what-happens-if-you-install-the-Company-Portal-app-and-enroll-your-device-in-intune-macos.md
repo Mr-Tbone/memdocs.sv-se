@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 581ff7ec85cc85e41968a4ed3a7b2616d0dd7c28
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: ed1399f10a7a806ed6404e596a93b7aa5538caa6
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79346904"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077350"
 ---
 # <a name="what-happens-if-you-install-the-company-portal-app-and-enroll-your-macos-device-in-intune"></a>Vad händer om du installerar företagsportalappen och registrerar din macOS-enhet i Intune?
 
@@ -44,7 +44,7 @@ När enheten har registrerats kan företagets support:
 
 - Återställa enheten till standardinställningarna om den stjäls eller tappas bort.
 
-- Ta bort alla installerade företagsrelaterade data- och affärsappar. Dina personliga data och inställningar tas inte bort.
+- Ta bort alla installerade företagsrelaterade data- och affärsappar. Dina personuppgifter och inställningar tas inte bort.
 
 - Kräva att du måste ha ett lösenord eller en PIN-kod för enheten.
 
