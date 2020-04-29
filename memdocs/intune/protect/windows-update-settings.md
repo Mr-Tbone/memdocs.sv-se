@@ -15,12 +15,12 @@ ms.reviewer: aiwang
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bb76dbb14fe2deb95c02a18ccc048fc6a4b2538
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 0b18af35b0e741540637ecdde74877d1058a7915
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078965"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254715"
 ---
 # <a name="windows-update-settings-for-intune"></a>Windows Update-inställningar för Intune  
 
@@ -85,8 +85,7 @@ Uppdateringsinställningarna styr vilka bitar som en enhet laddar ner och när d
   Uppskjutningsperiod som stöds:  
 
   - *Windows version 1709 och senare* – 0 till 365 dagar  
-  - *Windows version 1703* – 0 till 180 dagar  
-
+  
   Funktionsuppdateringarna är för det mesta nya funktioner i Windows.  
 
 - **Konfigurera avinstallationsperiod för funktionsuppdatering (2–60 dagar)**  
@@ -164,8 +163,6 @@ Inställningarna för användargränssnittet styr slutanvändarens upplevelse vi
   
   Den här inställningen ger olika resultat beroende på enhetens Windows-version:  
  
-  - *Windows version 1703 och tidigare* – När du startar om en enhet utförs vissa kontroller, exempelvis kontroll av aktiva användare, batterinivå, spel som körs och mycket mer.  
-  
   - *Windows version 1709 och senare* – Under aktiva timmar körs inte följande processer för uppdateringar: genomsöka, ladda ned, installera och starta om. Efter aktiva timmar körs uppdateringens processer och kan väcka enheten från strömsparläge, genomsöka, ladda ned, installera och starta om enheten så länge enheten har ström eller batteri. 
 
 - **Blockera användare från att pausa Windows-uppdateringar**  
