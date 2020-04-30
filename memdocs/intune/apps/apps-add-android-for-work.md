@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/02/2020
+ms.date: 04/13/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6855abaf09a89303bfadd1a973dd1e1761346af
-ms.sourcegitcommit: 954b3aae7916ad14065e6e86a577c5205103a50e
+ms.openlocfilehash: 728fa69303760252068db454c04ed4431b89602a
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80624895"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81615522"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Lägg till Google Play för företag-appar till Android enterprise-enheter med Intune
 
@@ -141,8 +141,6 @@ Mer information om privata hanterade Google Play-appar, inklusive vanliga frågo
 2. I konsolen väljer du **Lägg till nytt program**.
 3. Du kan överföra och tillhandahålla information om din app på samma sätt som du publicerar en app i Google Play-butiken. Du måste dock välja **Gör det här programmet tillgängligt endast för min organisation (<*organisationsnamn*>)** .
 
-    ![Gör appen tillgänglig endast för din organisation](./media/apps-add-android-for-work/restrict.png)
-
     Den här åtgärden gör bara appen tillgänglig för din organisation. Den blir inte tillgänglig på i offentliga Google Play-butiken.
 
     Mer information om att ladda upp och publicerar Android-appar finns i [Google Developer Console Help](https://support.google.com/googleplay/android-developer/answer/113469) (Hjälp med Google-utvecklarkonsolen).
@@ -218,6 +216,10 @@ Du kan också konfigurera Google Play att automatiskt godkänna app-behörighete
 ## <a name="additional-managed-google-play-app-reporting-for-android-enterprise-work-profile-devices"></a>Ytterligare rapportering för Managed Google Play-app för Android Enterprise-arbetsprofilenheter
 
 För Managed Google Play-appar som distribueras till Android Enterprise-arbetsprofilenheter kan du visa status och versionsnumret för den app som är installerad på en enhet som använder Intune. 
+
+## <a name="working-with-managed-google-play-closed-testing-tracks"></a>Arbeta med testspår på Hanterad Google Play
+
+Du kan distribuera en icke-produktionsversion av en hanterad Google Play-app till enheter som registrerats i ett Android Enterprise-scenario (**Android Enterprise-arbetsprofil**, **Fullständigt hanterad** och **Dedikerad**) för att utföra testningen. I Intune kan du se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med AAD-användargrupper eller -enheter. Arbetsflödet för att tilldela en produktionsversion till en grupp som för närvarande finns är detsamma som att tilldela en icke-produktionskanal. Efter distributionen motsvarar installationsstatus för varje spår spårets versionsnummer i hanterad Google Play. Mer information finns i [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213).
 
 ## <a name="delete-managed-google-play-apps"></a>Radera hanterade Google Play-appar
 Du kommer att kunna ta bort hanterade Google Play-appar från Microsoft Intune om nödvändigt. Om du vill ta bort en hanterad Google Play-app öppnar du Microsoft Intune i Azure Portal och väljer **Appar** > **Alla appar**. Från listan över appar väljer du ellipserna (...) till höger om den hanterade Google Play-appen och väljer sedan **Ta bort** från den visade listan. När du tar bort en hanterad Google Play-app från applistan blir den hanterade Google Play-appen automatiskt ej godkänd.

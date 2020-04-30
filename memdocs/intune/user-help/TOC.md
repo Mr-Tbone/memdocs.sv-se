@@ -29,7 +29,7 @@
 ### [Installera VPN](install-your-companys-virtual-private-network-VPN-android.md)
 ### [Inaktivera Microsofts insamling av användningsdata](turn-off-microsoft-usage-data-collection-android.md)
 ### [Vad händer om du avregistrerar din enhet från Intune?](what-happens-if-you-unenroll-your-device-from-intune-android.md)
-#### [Avregistrera enheten](unenroll-your-device-from-intune-android.md)
+#### [Avregistrera din enhet](unenroll-your-device-from-intune-android.md)
 #### [Avregistrera din enhet om du har avvisat användningsvillkoren](unenroll-your-device-from-intune-if-you-declined-terms-of-use-android.md)
 
 ### Åtgärda vanliga problem med Android
@@ -54,12 +54,11 @@
 #### [Säkerhetskorrigeringen stöds inte](you-need-to-update-your-device-OS-security-patch-android.md)
 #### [Enheter med krypteringsfel](your-device-appears-encrypted-but-cp-says-otherwise-android.md)
 
-### Mobile Threat Defense
-#### [Installera en Mobile Threat Defense-app](you-are-prompted-to-install-mtd-android.md)
-##### [Installera Lookout for Work](you-are-prompted-to-install-lookout-for-work-android.md)
-##### [Installera Symantec Endpoint Protection Mobile](you-are-prompted-to-install-skycure-android.md)
-##### [Installera SandBlast Mobile Protect](you-are-prompted-to-install-sandblast-android.md)
-##### [Installera Zimperium zIPS](you-are-prompted-to-install-zips-android.md)
+### Mobile Threat Defense-appar 
+#### [Installera Lookout for Work](you-are-prompted-to-install-lookout-for-work-android.md)
+#### [Installera Symantec Endpoint Protection Mobile](you-are-prompted-to-install-skycure-android.md)
+#### [Installera SandBlast Mobile Protect](you-are-prompted-to-install-sandblast-android.md)
+#### [Installera Zimperium zIPS](you-are-prompted-to-install-zips-android.md)
 #### [Lösa ett hot](you-need-to-resolve-a-threat-found-by-mtd-android.md)
 ##### [Använd Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-android.md)
 ##### [Använd Symantec Endpoint Protection Mobile](you-need-to-resolve-a-threat-found-by-skycure-android.md)
@@ -81,7 +80,7 @@
 ### [Använda hanterade appar på enheten](use-managed-apps-on-your-device-ios.md)
 ### [Ange eller ändra ditt lösenord](set-or-change-your-passcode-ios.md)
 ### [Vad händer om du återställer en enhet med hjälp av företagsportalen?](effects-of-device-reset-company-portal-ios.md)
-### [Avregistrera enheten](unenroll-your-device-from-intune-ios.md)
+### [Avregistrera din enhet](unenroll-your-device-from-intune-ios.md)
 #### [Vad händer om du avregistrerar din enhet?](what-happens-if-you-unenroll-your-device-from-intune-ios.md)
 ### [Synkronisera enheten manuellt](sync-your-device-manually-ios.md)
 
@@ -99,12 +98,11 @@
 #### [Uppdatera din enhet för att installera Outlook](update-device-outlook-ios.md)
 #### [Min iOS-version stöds inte ännu](your-ios-version-isnt-yet-supported.md)
 
-### Mobile Threat Defense
-#### [Installera en Mobile Threat Defense-app](you-are-prompted-to-install-mtd-ios.md)
-##### [Installera Lookout for Work](you-are-prompted-to-install-lookout-for-work-ios.md)
-##### [Installera Symantec Endpoint Protection Mobile](you-are-prompted-to-install-skycure-ios.md)
-##### [Installera SandBlast Mobile Protect](you-are-prompted-to-install-sandblast-ios.md)
-##### [Installera Zimperium zIPS](you-are-prompted-to-install-zips-ios.md)
+### Mobile Threat Defense-appar
+#### [Installera Lookout for Work](you-are-prompted-to-install-lookout-for-work-ios.md)
+#### [Installera Symantec Endpoint Protection Mobile](you-are-prompted-to-install-skycure-ios.md)
+#### [Installera SandBlast Mobile Protect](you-are-prompted-to-install-sandblast-ios.md)
+#### [Installera Zimperium zIPS](you-are-prompted-to-install-zips-ios.md)
 #### [Lösa ett hot](you-need-to-resolve-a-threat-found-by-mtd-ios.md)
 ##### [Använd Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-ios.md)
 ##### [Använd Symantec Endpoint Protection Mobile](you-need-to-resolve-a-threat-found-by-skycure-ios.md)

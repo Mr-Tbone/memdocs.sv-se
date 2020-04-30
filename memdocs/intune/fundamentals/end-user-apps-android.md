@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 03/12/2020
+ms.date: 04/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1d18a423242300b6c2b66c01c59404cef42ebd9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 4c0c913d3bc1467096090ac4e80d1d9d5f578a1b
+ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79372559"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182318"
 ---
 # <a name="how-your-android-users-get-their-apps"></a>Så får dina Android-användare sina appar  
 
@@ -33,12 +33,12 @@ Den här artikeln hjälper dig att förstå hur och var dina Android-slutanvänd
 | Typ av app | Verksamhetsspecifika appar | Play Store-appar  |
 | ------------- |-------------| -----|
 | Tillgängliga appar      | Användarna trycker på **Installera** i företagsportalen. Ett meddelande visas och användarna kan sedan trycka på det för att starta installationen. När installationen har slutförts försvinner meddelandet. | Användare trycker på appen i Företagsportal och kommer till en appsida i Play Store. Här startar de installationen.|
-| Required apps      | **På enheter som kör Android 9.0 och tidigare** visas användare ett meddelande som de inte kan stänga. I meddelandet står det att de måste ladda ned en app. Användarna trycker på meddelandet för att starta nedladdningen och installationen. När installationen har slutförts försvinner meddelandet. **På enheter som kör Android 10.0 och senare** visas användare ett meddelande som de inte kan stänga. I meddelandet står det att de måste ladda ned en app. Användarna trycker på meddelandet för att starta nedladdningen och får sedan ett meddelande om att starta installationen av appen. När installationen har slutförts försvinner meddelandet.| Ett meddelande som inte kan stängas visas för användarna. I meddelandet står det att de måste installera en app. När användarna trycker på meddelandet dirigeras de till en appsida i Play Store. Här startar de installationen. När installationen har slutförts försvinner meddelandet. |
+| Required apps      | Ett meddelande som inte kan stängas visas för användarna. I meddelandet står det att de måste installera en app. Användarna trycker på meddelandet för att starta installationen. När installationen har slutförts försvinner meddelandet.    | Ett meddelande som inte kan stängas visas för användarna. I meddelandet står det att de måste installera en app. När användarna trycker på meddelandet dirigeras de till en appsida i Play Store. Här startar de installationen. När installationen har slutförts försvinner meddelandet. |
 
-Slutanvändarna måste tillåta installation från okända källor för att kunna installera [verksamhetsspecifika appar](../apps/lob-apps-android.md). Den här inställningen finns normalt på två olika platser:
+Slutanvändarna måste tillåta installation från okända källor för att kunna installera [verksamhetsspecifika appar](../apps/lob-apps-android.md). Den här inställningen finns vanligtvis på två olika platser, beroende på Android-version:
 
-* **Android 7.1.2 och tidigare**: **Inställningar** > **Säkerhet** > **Okända källor**
-* **Android 8.0 och senare**: **Inställningar** > **Apps & notifications (Appar och aviseringar)**  > **Special app access (Särskild appåtkomst)**  > **Install unknown apps (Installera okända appar)**  > **Company Portal (Företagsportal)**  > **Allow from this source (Tillåt från den här källan)**
+* Android 7.1.2 och tidigare: **Inställningar** > **Säkerhet** > **Okända källor**
+* Android 8.0 och senare: **Inställningar** > **Apps & notifications (Appar och aviseringar)**  > **Special app access (Särskild appåtkomst)**  > **Install unknown apps (Installera okända appar)**  > **Company Portal (Företagsportal)**  > **Allow from this source (Tillåt från den här källan)**
 
 Om detta inträffar får slutanvändaren ett meddelande i företagsportalappen och vägleds direkt till rätt inställning. 
 
@@ -47,13 +47,13 @@ Om detta inträffar får slutanvändaren ett meddelande i företagsportalappen o
 | Typ av app | Verksamhetsspecifika appar | Play Store-appar  |
 | ------------- |-------------| -----|
 | Tillgängliga appar      | Användarna trycker på **Installera** i företagsportalen. Appen installeras utan ytterligare åtgärder från användaren. | Användare trycker på appen i Företagsportal och kommer till en appsida i Play Store. Här startar de installationen.|
-| Required apps      | **På enheter som kör Android 9.0 och tidigare** installeras appen utan åtgärd från användare. **På enheter som kör Android 10.0 och senare** visas användare ett meddelande som de inte kan stänga. I meddelandet står det att de måste ladda ned en app. Användarna trycker på meddelandet för att starta installationen. När installationen har slutförts försvinner meddelandet. | Ett meddelande som inte kan stängas visas för användarna. I meddelandet står det att de måste installera en app. När användarna trycker på meddelandet dirigeras de till en appsida i Play Store. Här startar de installationen. När installationen har slutförts försvinner meddelandet. |
+| Required apps      | Appen installeras utan ytterligare åtgärder från användaren.    | Ett meddelande som inte kan stängas visas för användarna. I meddelandet står det att de måste installera en app. När användarna trycker på meddelandet dirigeras de till en appsida i Play Store. Här startar de installationen. När installationen har slutförts försvinner meddelandet. |
 
 Appar kan vara hanterade eller ohanterade (se nedan). Processen för att göra appar hanterade är densamma för alla typer av Android-enheter.
 
-**Hanterade appar** – Dessa appar hanteras med principer. De har omslutits av Intune eller skapats med Intune App SDK. De här apparna kan hanteras av Intune och applikations-policys kan tillämpas på dem.
+* Hanterade appar: Dessa appar hanteras med principer. De har omslutits av Intune eller skapats med Intune App SDK. De här apparna kan hanteras av Intune och applikations-policys kan tillämpas på dem.
 
-**Ohanterade appar** – Dessa appar hanteras med principer. De har inte omslutits av Intune eller inkluderar inte Intune App SDK. Programprincipen kan inte tillämpas på de här apparna.
+* Icke-hanterade appar: Dessa appar hanteras inte med principer. De har inte omslutits av Intune eller inkluderar inte Intune App SDK. Programprincipen kan inte tillämpas på de här apparna.
 
 ## <a name="zebra-devices-with-zebra-mobility-extensions"></a>Zebra-enheter med Zebra Mobility Extensions
 

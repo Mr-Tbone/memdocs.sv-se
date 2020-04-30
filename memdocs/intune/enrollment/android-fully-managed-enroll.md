@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d768859d65fff18d6ce94a26b48bb28f57417af6
-ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
+ms.openlocfilehash: 8830d0c18bb4ef257abcffd75d001b9d8af5f502
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80808075"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81220591"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-fully-managed-devices"></a>Konfigurera Intune-registrering av fullständigt hanterade Android Enterprise-enheter 
 
@@ -60,7 +60,7 @@ För de här stegen om du vill konfigurera hanteringen av fullständigt hanterad
 2. Välj **Ja** under **Låt användarna registrera företagsägda användarenheter** .
 
 > [!NOTE]
-> Om du har definierat en princip för villkorlig åtkomst för Azure AD som använder kontrollen *Kräv att enheten är markerad som kompatibel* och gäller för **alla molnappar**, **Android** och **webbläsare** måste du utesluta **Microsoft Intune**-molnappen från den här principen. Det beror på att Android-konfigureringsprocesser använder en Chrome-flik för att autentisera användarna under registreringen. Se [dokumentationen om villkorlig åtkomst till Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/) för mer information.
+> Om du har definierat en princip för villkorsstyrd åtkomst för Azure AD som använder beviljandekontrollen *Kräv att enheten är markerad som kompatibel* eller en blockeringsprincip och gäller för **Alla molnappar**, **Android** och **Webbläsare** måste du utesluta **Microsoft Intune**-molnappen från den här principen. Det beror på att Android-konfigureringsprocessen använder en Chrome-flik för att autentisera användarna under registreringen. Mer information finns i [dokumentationen om villkorsstyrd åtkomst för Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/).
 
 När den här inställningen anges till **Ja** får du en token för programregistrering (en slumpmässig sträng) och en QR-kod för din Intune-klient. Den här enda registreringstoken är giltig för alla användare och förfaller inte. Beroende på enhetens Android OS-version kan du använda antingen token eller QR-koden för att registrera enheten.
 

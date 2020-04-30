@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04bc86ff697ed7083cacd552cbf9ebe5096a228c
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: f74308e5c59adee6810d54ce44cf104514f83056
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326869"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254783"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av Windows-enheter i Microsoft Intune
 
@@ -304,7 +304,7 @@ Registering your device for mobile management (Previous step failed)
 
 - Enheten måste ha ett fysiskt TPM 2.0-chip. Enheter med virtuella TPM:er (till exempel virtuella Hyper-V-datorer) eller TPM 1.2-chips fungerar inte med självdistributionsläge.
 - Enheten måste köra någon av följande versioner av Windows:
-    - Windows 10 version 1703 eller senare.
+    - Windows 10 version 1709 eller senare.
     - Om Hybrid Azure AD Join används, Windows 10 version 1809 eller senare.
 
 

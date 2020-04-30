@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/21/2020
+ms.date: 04/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -17,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 002d8e8826fbc1420bf9deca6fb88a3468e8a2ad
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: c0d9267f989988ae33d56696d424de56a649bca2
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324513"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "80900481"
 ---
 # <a name="add-microsoft-edge-to-macos-devices-using-microsoft-intune"></a>Lägga till Microsoft Edge till macOS-enheter med hjälp av Microsoft Intune
 
 Innan du kan distribuera, konfigurera, övervaka eller skydda appar måste du lägga till dem till Intune. En av de tillgängliga [apptyperna](apps-add.md#app-types-in-microsoft-intune) är Microsoft Edge *version 77 och senare*. Genom att välja den här apptypen i Intune kan du tilldela och installera Microsoft Edge *version 77 och senare* till enheter som du hanterar och som kör macOS. Den här apptypen gör det enkelt för dig att tilldela Microsoft Edge till macOS-enheter utan att du behöver använda macOS-verktyget för appomslutning. För att hålla apparna säkrare och uppdaterade levereras den här appen med Microsoft AutoUpdater (MAU).
 
 > [!IMPORTANT]
-> Den här apptypen är i **offentlig förhandsversion** och erbjuder utvecklar- och betakanaler för macOS. Distributionen är bara på engelska (EN), men slutanvändarna kan ändra visningsspråket i webbläsaren under **Inställningar** > **Språk**. 
+> Den här apptypen erbjuder utvecklar- och betakanaler för macOS. Distributionen är bara på engelska (EN), men slutanvändarna kan ändra visningsspråket i webbläsaren under **Inställningar** > **Språk**. 
 
 > [!NOTE]
 > Microsoft Edge *version 77 och senare* är även tillgängligt för Windows 10.

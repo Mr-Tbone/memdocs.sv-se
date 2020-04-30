@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b40ed9dff0d83639015e70889bf7008e8e68173
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 86ddb7c17aba291901ca396a9ff4532ab327a307
+ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80696504"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82210289"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>Inställningar för Windows MDM-säkerhetsbaslinjer för Intune
 
@@ -463,24 +463,24 @@ Mer information finns i [CSP-princip – EventLogService](https://docs.microsoft
 Mer information finns i [CSP-princip – Experience](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience) i Windows-dokumentationen.
 
 - **Blockera Windows Spotlight**:  
-  Tillåter IT-administratörer att inaktivera alla Windows Spotlight-funktioner – Windows Spotlight på låsskärmen, Windows-tips, Microsoft-konsumentfunktioner och liknande funktioner.  
+  Gör det möjligt för IT-administratörer att stänga av (blockera) alla Windows Spotlight-funktioner. Det omfattar Windows Spotlight på låsskärmen, Windows-tips, Microsoft-konsumentfunktioner och liknande funktioner.  
   [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067037)
 
   **Standard**: Ja
 
-  När *Blockera Windows Spotlight* är inställt på *Ja*, är följande inställningar tillgängliga.
+  När *Blockera Windows Spotlight* är inställt på *Ej konfigurerad* blockeras Windows Spotlight inte på enheter och du kan sedan konfigurera följande inställningar för att blockera valda objekt för Windows Spotlight:
 
   - **Blockera tredjepartsförslag i Windows Spotlight**:  
     Anger om app- och innehållsförslag från utgivare av tredjepartsprogramvara ska tillåtas i Windows Spotlight-funktioner, till exempel låsskärmen, föreslagna appar på Start-menyn och Windows-tips. Användare kan fortfarande se förslag för Microsoft-funktioner, -appar och -tjänster.  
     [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067045)
 
-    **Standard**: Ja
+    **Standard**: Inte konfigurerat
 
   - **Blockera konsumentspecifika funktioner**:  
     Gör det möjligt för IT-administratörer att aktivera rena konsumentupplevelser, till exempel startförslag, medlemskapsaviseringar, appinstallation efter välkomstprogram (OOBE) och omdirigeringspaneler.  
     [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067054)
 
-    **Standard**: Ja
+    **Standard**: Inte konfigurerat
 
 ## <a name="exploit-guard"></a>Sårbarhetsskydd
 

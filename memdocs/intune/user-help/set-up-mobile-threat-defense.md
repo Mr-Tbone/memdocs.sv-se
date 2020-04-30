@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/25/2019
+ms.date: 04/27/2020
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -17,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: b5df63a14f27b657c585eb43e09b02368d969939
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 676af3373acd399056a0ebdc77c9152442a72101
+ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80084404"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182284"
 ---
 # <a name="install-mobile-threat-defense"></a>Installera Skydd mot mobilhot   
 
@@ -30,7 +30,7 @@ Som en del av din organisations säkerhetskrav kan du behöva installera en MTD-
 
 Om du inte har den nödvändiga MTD-appen blockeras du från att logga in på skyddade appar med ditt arbets- eller skolkonto. I den här artikeln får du lära dig [hur du installerar en MTD-app](set-up-mobile-threat-defense.md#install-app) för att bli avblockerad.  
 
-Det finns flera MTD-leverantörsappar som kan installeras. Din organisation meddelar dig vilken som ska användas. 
+Det finns flera olika MTD-leverantörsappar som kan installeras, med olika namn. Din organisation meddelar dig vilken som ska användas. Om du uppmanas att installera appen men inte får ytterligare instruktioner eller någon länk för att hämta appen ska du kontakta din IT-support. 
 
 
 ## <a name="information-your-organization-can-see"></a>Information din organisation kan se   

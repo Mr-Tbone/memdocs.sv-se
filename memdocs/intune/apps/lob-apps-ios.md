@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/23/2020
+ms.date: 04/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5caa8b23950e3ce87f66d6804961a9a2a3e21c6
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 90f943c7eca95a5311023b03e769e4e18ada9249
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324080"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "80863102"
 ---
 # <a name="add-an-ios-line-of-business-app-to-microsoft-intune"></a>Lägg till en verksamhetsspecifik app för iOS i Microsoft Intune
 
@@ -34,7 +34,7 @@ Informationen i den här artikeln visar hur du lägger till en verksamhetsspecif
 > [!NOTE]
 > Användare av iOS-enheter kan ta bort några av de inbyggda iOS-apparna såsom Stocks och Maps. Du kan inte använda Intune för att distribuera om dessa appar. Om användarna tar bort dessa appar måste de gå till App Store och installera om dem manuellt.
 >
-> iOS LOB-appar har en maximal storleksgräns på 4 GB per app.
+> iOS LOB-appar har en maximal storleksgräns på 2 GB per app.
 
 > [!NOTE]
 > Paketidentifierare (till exempel *com.contoso.app*) ska vara unika identifierare för en app. Om du till exempel installerar en betaversion av en verksamhetsspecifik app för testning vid sidan av produktionsversionen, måste betaversionen ha en annan unik identifierare (till exempel *com.contoso.app-beta*). Annars kommer betaversionen överlappa produktionsversionen och behandlas som en uppgradering. Att byta namn på IPA-filen påverkar inte det här beteendet.
@@ -80,7 +80,7 @@ Du kan använda omfångstaggar för att bestämma vem som kan se klientappsinfor
 
 ## <a name="step-3---assignments"></a>Steg 3 – Tilldelningar
 
-1. Välj **Obligatorisk**, **Tillgängligt för registrerade enheter** eller **Avinstallera** som grupptilldelning för appen. Mer information finns i [Lägg till grupper för att organisera användare och enheter](../fundamentals/groups-add.md) och [Tilldela appar till grupper med Microsoft Intune](apps-deploy.md).
+1. Välj **Obligatorisk**, **Tillgängligt för registrerade enheter**, **Tillgänglig med eller utan registrering** eller **Avinstallera** som grupptilldelning för appen. Mer information finns i [Lägg till grupper för att organisera användare och enheter](../fundamentals/groups-add.md) och [Tilldela appar till grupper med Microsoft Intune](apps-deploy.md).
 2. Visa sidan **Granska och skapa** genom att klicka på **Nästa**.
 
 ## <a name="step-4---review--create"></a>Steg 4 – Granska och skapa

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d3b794fdd180ad655b7cd11cc5c1f6d11bc874e
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: f0a7bbdd5bb27b6fe17f5b4f44302551ff67de5d
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075463"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254987"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>Hantera dataöverföring mellan iOS-appar med Microsoft Intune
 
@@ -45,7 +45,7 @@ Använd appskyddsprinciper med iOS-funktionen **Öppna i hantering** för att sk
 ## <a name="configure-user-upn-setting-for-microsoft-intune-or-third-party-emm"></a>Konfigurera inställningen för användar-UPN för Microsoft Intune eller en EMM-lösning från tredje part
 Inställningen för användar-UPN **måste** konfigureras för enheter som hanteras av Intune eller en EMM-lösning från tredje part för att identifiera det registrerade användarkontot. UPN-konfigurationen används med de appskyddsprinciper som du distribuerar från Intune. Proceduren nedan beskriver det allmänna flödet för att konfigurera UPN-inställningen, samt den resulterande användarupplevelsen:
 
-1. [Skapa och tilldela en appskyddsprincip](app-protection-policies.md) för iOS/iPadOS i [Azure Portal](https://portal.azure.com). Konfigurera principinställningar enligt företagets krav och välj de iOS-appar som ska ha principen.
+1. På [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du [skapa och tilldela en appskyddsprincip](app-protection-policies.md) för iOS/iPadOS. Konfigurera principinställningar enligt företagets krav och välj de iOS-appar som ska ha principen.
 
 2. Distribuera de appar och den e-postprofil som ska hanteras via Intune, eller MDM-lösningen från tredje part, genom att följa de allmänna stegen nedan. Se även *Exempel 1*.
 

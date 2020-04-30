@@ -19,12 +19,12 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: f9e62cd4c4034e4cf2eafaea56aa3e5175b1797e
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: cc2fbfac43916a8298646f6ff57c146c45966b1c
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79335750"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254817"
 ---
 # <a name="sync-your-windows-device-manually"></a>Synkronisera Windows-enheten manuellt
 
@@ -40,7 +40,7 @@ Alla Windows-enheter kan synkroniseras från enhetens inställningsapp, inklusiv
 * [Windows Phone 8.1](#windows-phone-81)    
 
 ## <a name="sync-directly-from-company-portal-app-for-windows"></a>Synkronisera direkt från företagsportalappen för Windows
-Följ stegen för att manuellt synkronisera alla Windows 10-enheter som kör Creators uppdatering (version 1703) eller senare.
+Följ stegen för att manuellt synkronisera alla Windows 10-enheter som kör Creators uppdatering (version 1709) eller senare.
 
 1. Öppna företagsportalappen på din enhet.
 

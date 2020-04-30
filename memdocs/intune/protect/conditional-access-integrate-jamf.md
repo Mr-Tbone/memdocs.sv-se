@@ -6,28 +6,32 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 04/13/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: 4b6dcbcc-4661-4463-9a36-698d673502c6
-ms.reviewer: jinyoon
+ms.reviewer: arnab
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a9f4d9195c68664f42570746ade6d924c8da62
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: e5b568a90d4077c32a88044beea746907613eb0e
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323014"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81525741"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>Integrera Jamf Pro med Intune för kompatibilitet
 
-Om din organisation använder [Jamf Pro](https://www.jamf.com) för att hantera macOS-enheter, kan du använda Microsoft Intune-efterlevnadsprinciper med villkorsstyrd åtkomst i Azure AD (Azure Active Directory) för att kontrollera att enheterna i organisationen är kompatibla innan de får åtkomst till företagets resurser. Den här artikeln beskriver hur du konfigurerar Jamf-integrering med Intune.
+Om din organisation använder [Jamf Pro](https://www.jamf.com) för att hantera macOS-enheter, kan du använda Microsoft Intune-efterlevnadsprinciper med villkorsstyrd åtkomst i Azure AD (Azure Active Directory) för att kontrollera att enheterna i organisationen är kompatibla innan de får åtkomst till företagets resurser. Om du vill integrera Jamf Pro med Intune har du två alternativ:
+
+- **Manually configure integration** (Konfigurera integrering manuellt) – Använd informationen i den här artikeln om du vill konfigurera Jamf-integrering med Intune manuellt.
+- **Använda Jamf Cloud-anslutningsprogrammet** (*rekommenderat*) – Använd informationen i [Använda Jamf Cloud Connector med Microsoft Intune](../protect/conditional-access-jamf-cloud-connector.md) om du vill installera Jamf Cloud Connector för att integrera Jamf Pro med Microsoft Intune. Cloud Connector automatiserar många av de steg som krävs när du konfigurerar integrering manuellt.
+
 
 När Jamf Pro integreras med Intune kan du synkronisera inventeringsdata från macOS-enheter med Intune via Azure AD. Intunes efterlevnadsmotor analyserar sedan inventeringsdata för att generera en rapport. Intunes analys kombineras med information om enhetsanvändarens Azure AD-identitet för att kräva efterlevnad med villkorlig åtkomst. Enheter som är kompatibla med principerna för villkorlig åtkomst kan få åtkomst till skyddade företagsresurser.
 
@@ -154,7 +158,7 @@ När du har konfigurerat integrationen mellan Intune och Jamf måste du [tilläm
 
 ## <a name="disconnect-jamf-pro-and-intune"></a>Koppla från Jamf Pro och Intune
 
-Om du inte längre använder Jamf Pro för att hantera Mac-enheter i organisationen och vill att användarna ska hanteras av Intune måste du ta bort anslutningen mellan Jamf Pro och Intune. Ta bort anslutningen med hjälp av Jamf Pro-konsolen.
+Om du behöver ta bort integreringen av Jamf Pro med Intune kan du använda följande steg för att ta bort anslutningen från Jamf Pro-konsolen. Den här informationen gäller både för en manuellt konfigurerad integrering och för integrering med Cloud Connector.
 
 1. I Jamf Pro går du till **Global Management** > **Conditional Access** (Global hantering > Villkorlig åtkomst). På fliken **macOS Intune Integration** (Intune-integrering för macOS) väljer du **Edit** (Redigera).
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2020
+ms.date: 04/17/2002
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.localizationpriority: high
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebeb2c31b72ec10f4ce95b09e32b3e3c9accccfa
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 7b6940d191902627616501f192fc810363bee1a3
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323018"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81688230"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Använda härledda autentiseringsuppgifter i Microsoft Intune
 
-*Den här artikeln gäller för enheter som kör iOS*
+*Den här artikeln gäller iOS/iPad och fullständigt hanterade Android-enheter som kör version 7.0 och senare*
 
 I en miljö där smartkort krävs för autentisering eller kryptering och signering kan du nu använda Intune för att etablera mobila enheter med ett certifikat som härleds från en användares smartkort. Det certifikatet kallas för en *härledd autentiseringsuppgift*. Intune [stöder flera utfärdare av härledda autentiseringsuppgifter](#supported-issuers), men du kan bara använda en enda utfärdare per klientorganisation åt gången.
 
@@ -34,18 +34,19 @@ Härledda autentiseringsuppgifter är en implementering av riktlinjerna från Na
 **Med Intunes implementering**:
 
 - Intune-administratören konfigurerar sin klientorganisation så att den fungerar med en utfärdare av härledda autentiseringsuppgifter som stöds. Du behöver inte konfigurera några Intune-specifika inställningar i systemet för utfärdaren av härledda autentiseringsuppgifter.
-
 - Intune-administratören anger **Härledda autentiseringsuppgifter** som *autentiseringsmetod* för följande objekt:
-
+  
+  **För iOS/iPadOS**:
   - Vanliga profiltyper som Wi-Fi, VPN och e-post, som innehåller den inbyggda e-postappen för iOS/iPadOS
-
   - Appautentisering
-
   - S/MIME-signering och -kryptering
 
+  **För fullständigt hanterade Android Enterprise-enheter**:
+  - Vanliga profiltyper såsom Wi-Fi och VPN
+  - Appautentisering
+  
 - Användare hämtar en härledd autentiseringsuppgift med hjälp av sitt smartkort på en dator för att autentisera till utfärdaren av härledda autentiseringsuppgifter. Utfärdaren utfärdar sedan ett certifikat som har härletts från smartkortet till den mobila enheten.
-
-- När enheten har tagit emot den härledda autentiseringsuppgiften används den för autentisering samt för S/MIME-signering och -kryptering när appar eller resursåtkomstprofiler kräver den härledda autentiseringsuppgiften. 
+- När enheten har tagit emot den härledda autentiseringsuppgiften används den för autentisering samt för S/MIME-signering och -kryptering när appar eller resursåtkomstprofiler kräver den härledda autentiseringsuppgiften.
 
 ## <a name="prerequisites"></a>Krav
 
@@ -53,21 +54,22 @@ Granska följande information innan du konfigurerar klientorganisationen att anv
 
 ### <a name="supported-platforms"></a>Plattformar som stöds
 
-Intune har stöd för härledda autentiseringsuppgifter på följande OS-plattformar:
+Intune har stöd för härledda autentiseringsuppgifter på följande plattformar:
 
 - iOS/iPadOS
+- Android Enterprise – fullständigt hanterade enheter (version 7.0 och senare)
 
 ### <a name="supported-issuers"></a>Utfärdare som stöds
 
 Intune har stöd för en enda utfärdare av härledda autentiseringsuppgifter för per klientorganisation. Du kan konfigurera Intune att fungera med följande utfärdare:
 
-- **DISA Purebred**: https://cyber.mil/pki-pke/purebred/
+- **DISA Purebred** (endast iOS): https:\//cyber.mil/pki-pke/purebred/
 - **Entrust Datacard**: https://www.entrustdatacard.com/
 - **Intercede**: https://www.intercede.com/
 
-Viktig information om hur du använder olika utfärdare finns i vägledningen för respektive utfärdare<!-- , including the issuers end-user workflow-->. Mer information finns i [Planera för härledda autentiseringsuppgifter](#plan-for-derived-credentials) i den här artikeln.
+Viktig information om hur du använder olika utfärdare finns i vägledningen för respektive utfärdare. Mer information finns i [Planera för härledda autentiseringsuppgifter](#plan-for-derived-credentials) i den här artikeln.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Om du tar bort en utfärdare av härledda autentiseringsuppgifter från din klientorganisation kommer de härledda autentiseringsuppgifter som konfigurerades via den utfärdaren inte längre att fungera.
 >
 > Se [Ändra utfärdaren för härledda autentiseringsuppgifter](#change-the-derived-credential-issuer) senare i den här artikeln.
@@ -76,23 +78,24 @@ Viktig information om hur du använder olika utfärdare finns i vägledningen f�
 
 Planera för distribution av Intune-företagsportalappen till enheter som ska registreras för en härledd autentiseringsuppgift. Enhetsanvändare använder Företagsportal-appen för att starta processen för registrering av autentiseringsuppgifter.
 
-Information om iOS/iPadOS-enheter finns i [Lägga till iOS/iPadOS-butiksappar till Microsoft Intune](../apps/store-apps-ios.md).
+- Information om iOS-enheter finns i [Lägga till iOS-butiksappar till Microsoft Intune](../apps/store-apps-ios.md).
+- För Android-enheter kan du läsa [Lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md).
 
 ## <a name="plan-for-derived-credentials"></a>Planera för härledda autentiseringsuppgifter
 
 Förstå följande överväganden innan du konfigurerar en utfärdare av härledda autentiseringsuppgifter.
 
-### <a name="1-review-the-documentation-for-your-chosen-derived-credential-issuer"></a>1) Granska dokumentationen för din valda utfärdare av härledda autentiseringsuppgifter  
+### <a name="1-review-the-documentation-for-your-chosen-derived-credential-issuer"></a>1) Granska dokumentationen för din valda utfärdare av härledda autentiseringsuppgifter
 
 Innan du konfigurerar en utfärdare bör du läsa igenom utfärdarens dokumentation för att förstå hur deras system levererar härledda autentiseringsuppgifter till enheter.
 
-Beroende på vilken utfärdare du väljer kan du behöva ha personal tillgänglig vid tidpunkten för registreringen för att hjälpa användarna att slutföra processen. Du bör också granska dina aktuella Intune-konfigurationer för att se till att de inte blockerar åtkomst som krävs för att enheter eller användare ska kunna slutföra begäran om autentiseringsuppgifter.
+Beroende på vilken utfärdare du väljer kan du behöva ha personal tillgänglig vid tidpunkten för registreringen för att hjälpa användarna att slutföra processen. Granska även dina aktuella Intune-konfigurationer för att se till att de inte blockerar åtkomst som krävs för att enheter eller användare ska kunna slutföra begäran om autentiseringsuppgifter.
 
 Du kan till exempel använda villkorsstyrd åtkomst för att blockera åtkomst till e-post för icke-kompatibla enheter. Om du förlitar dig på e-postaviseringar för att uppmana användare att starta processen för registrering med härledda autentiseringsuppgifter får användarna kanske inte de instruktionerna förrän de efterlever principen.
 
 På liknande sätt kräver vissa arbetsflöden för begäran av härledd autentiseringsuppgift användning av enhetskameran för att skanna en QR-kod på skärmen. Koden länkar den enheten till den autentiseringsbegäran som skedde mot utfärdaren av härledda autentiseringsuppgifter med användarens autentiseringsuppgifter för smartkort. Om principerna för enhetskonfiguration blockerar användningen av kameran kan användaren inte slutföra begäran om registrering med härledd autentiseringsuppgift.
 
-Allmän information:
+**Allmän information**:
 
 - Du kan endast konfigurera en enskild utfärdare per klientorganisation åt gången, och den utfärdaren är tillgänglig för alla användare och enheter som stöds i din klientorganisation.
 
@@ -106,39 +109,57 @@ Nedan visas viktiga överväganden för varje partner som stöds.  Bekanta dig m
 
 #### <a name="disa-purebred"></a>DISA Purebred
 
-Granska [användararbetsflödet för DISA Purebred](https://docs.microsoft.com/mem/intune/user-help/enroll-ios-device-disa-purebred). Viktiga krav för det här arbetsflödet är:
+Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
+
+- [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-disa-purebred)
+
+**Viktiga krav är**:
 
 - Användare behöver åtkomst till en dator eller KIOSK där de kan använda sina smartkort för att autentisera till utfärdaren.
-
 - Enheter som ska registreras för en härledd autentiseringsuppgift måste installera Intune-företagsportalappen.
-
 - Använd Intune för att [distribuera DISA Purebred-appen](#deploy-the-disa-purebred-app) till enheter som ska registreras för en härledd autentiseringsuppgift. Den här appen måste distribueras via Intune så att den hanteras och sedan kan fungera med Intune-företagsportalappen. Den här appen används av enhetsanvändare för att slutföra begäran om härledd autentiseringsuppgift.
-
 - DISA Purebred-appen kräver ett [per-app-VPN](../configuration/vpn-settings-configure.md) för att se till att appen kan komma åt DISA Purebred under registreringen för den härledda autentiseringsuppgiften.
-
 - Enhetsanvändare måste arbeta med supportpersonal under registreringsprocessen. Under registreringen får användaren tidsbegränsade engångslösenord under förloppet för registreringsprocessen.
+- När ändringar görs i en princip som använder härledda autentiseringsuppgifter, till exempel skapande av en ny Wi-Fi-profil, uppmanas iOS- och iPad-användare att öppna Företagsportal-appen.
+- Användare uppmanas att öppna Företagsportal-appen när de behöver förnya sina härledda autentiseringsuppgifter.
 
 Information om hur du hämtar och konfigurerar DISA Purebred-appen finns i [Distribuera DISA Purebred-appen](#deploy-the-disa-purebred-app) senare i den här artikeln.
 
 #### <a name="entrust-datacard"></a>Entrust Datacard
 
-Granska [användararbetsflödet för Entrust Datacard](https://docs.microsoft.com/mem/intune/user-help/enroll-ios-device-entrust-datacard). Viktiga krav för det här arbetsflödet är:
+Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
+
+- [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-entrust-datacard)
+- [Fullständigt hanterade Android Enterprise-enheter](../user-help/enroll-android-device-entrust-datacard.md)
+
+**Viktiga krav är**:
 
 - Användare behöver åtkomst till en dator eller KIOSK där de kan använda sina smartkort för att autentisera till utfärdaren.
-
 - Enheter som ska registreras för en härledd autentiseringsuppgift måste installera Intune-företagsportalappen.
-
 - Användning av en enhetskamera för att skanna en QR-kod som länkar autentiseringsbegäran till begäran om härledd autentiseringsuppgift från den mobila enheten.
+- Användarna uppmanas av Företagsportal-appen eller via e-post att registrera sig för härledda autentiseringsuppgifter.
+- När ändringar görs i en princip som använder härledda autentiseringsuppgifter, till exempel vid skapande av en ny Wi-Fi-profil:
+  - **iOS och iPad** – användarna uppmanas att öppna Företagsportal-appen.
+  - **Fullständigt hanterade Android Enterprise-enheter** – Företagsportal-appen behöver inte öppnas.
+- Användare uppmanas att öppna Företagsportal-appen när de behöver förnya sina härledda autentiseringsuppgifter.
 
 #### <a name="intercede"></a>Intercede
 
-Granska [användararbetsflödet för Intercede](https://docs.microsoft.com/mem/intune/user-help/enroll-ios-device-intercede). Viktiga krav för det här arbetsflödet är:
+Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
+
+- [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-intercede)
+- [Fullständigt hanterade Android Enterprise-enheter](../user-help/enroll-android-device-intercede.md)
+
+**Viktiga krav är**:
 
 - Användare behöver åtkomst till en dator eller KIOSK där de kan använda sina smartkort för att autentisera till utfärdaren.
-
 - Enheter som ska registreras för en härledd autentiseringsuppgift måste installera Intune-företagsportalappen.
-
 - Användning av en enhetskamera för att skanna en QR-kod som länkar autentiseringsbegäran till begäran om härledd autentiseringsuppgift från den mobila enheten.
+- Användarna uppmanas av Företagsportal-appen eller via e-post att registrera sig för härledda autentiseringsuppgifter.
+- När ändringar görs i en princip som använder härledda autentiseringsuppgifter, till exempel vid skapande av en ny Wi-Fi-profil:
+  - **iOS och iPad** – användarna uppmanas att öppna Företagsportal-appen.
+  - **Fullständigt hanterade Android Enterprise-enheter** – Företagsportal-appen behöver inte öppnas.
+- Användare uppmanas att öppna Företagsportal-appen när de behöver förnya sina härledda autentiseringsuppgifter.
 
 ### <a name="3-deploy-a-trusted-root-certificate-to-devices"></a>3) Distribuera ett betrott rotcertifikat till enheter
 
@@ -150,9 +171,15 @@ Skapa och ge vägledning till dina användare om hur de startar processen för r
 
 Vi rekommenderar att du tillhandahåller en URL som är värd för din vägledning. Du anger den här URL:en när du konfigurerar utfärdaren av härledda autentiseringsuppgifter för din klientorganisation, och den URL:en görs tillgänglig från Företagsportal-appen. Om du inte anger din egen URL tillhandahåller Intune en länk till allmän information. Den här informationen kan inte omfatta alla scenarier och är kanske inte korrekt för din miljö.
 
-### <a name="5-deploy-intune-policies-that-require-derived-credentials"></a>5) Distribuera Intune-principer som kräver härledda autentiseringsuppgifter
+### <a name="dive-idsupported-objects-5-deploy-intune-policies-that-require-derived-credentials"></a><dive id="supported-objects"> 5) Distribuera Intune-principer som kräver härledda autentiseringsuppgifter
 
-Skapa nya principer eller redigera befintliga principer till att använda härledda autentiseringsuppgifter. Härledda autentiseringsuppgifter ersätter andra autentiseringsmetoder för appautentisering, Wi-Fi, VPN och e-post samt för S/MIME-signering och -kryptering.
+Skapa nya principer eller redigera befintliga principer till att använda härledda autentiseringsuppgifter. Härledda autentiseringsuppgifter ersätter andra autentiseringsmetoder för följande objekt:
+
+- Appautentisering
+- Wi-Fi
+- VPN
+- e-post (endast iOS)
+- S/MIME-signering och -kryptering, inklusive Outlook (endast iOS)
 
 Undvik att kräva användning av en härledd autentiseringsuppgift för åtkomst till en process som du kommer att använda som en del av processen för att hämta den härledda autentiseringsuppgiften, eftersom detta kan förhindra användare från att slutföra begäran.
 
@@ -169,7 +196,7 @@ Innan du skapar principer som kräver användning av en härledd autentiseringsu
 3. Ange ett eget **Visningsnamn** för principen för utfärdare av härledda autentiseringsuppgifter.  Det här namnet visas inte för dina enhetsanvändare.
 
 4. För **Utfärdare av härledda autentiseringsuppgifter**väljer du den utfärdare av härledda autentiseringsuppgifter som du har valt för din klientorganisation:
-   - DISA Purebred
+   - DISA Purebred (endast iOS)
    - Entrust Datacard
    - Intercede  
 
@@ -181,7 +208,7 @@ Innan du skapar principer som kräver användning av en härledd autentiseringsu
 
    - Registrera en enhet med en utfärdare för att hämta en ny härledd autentiseringsuppgift.
    - Hämta en ny härledd autentiseringsuppgift när den aktuella autentiseringsuppgiften är nära att upphöra.
-   - Använd en härledd autentiseringsuppgift med en princip för autentisering via Wi-Fi, e-post eller app samt för S/MIME-signering och -kryptering.
+   - Använd en härledd autentiseringsuppgift med ett [objekt som stöds](#supported-objects).
 
 7. När du är klar väljer du **Spara** för att slutföra konfigurationen av utfärdare av härledda autentiseringsuppgifter.
 
@@ -197,8 +224,10 @@ Utöver att distribuera appen med Intune konfigurerar du ett per-app-VPN för In
 
 **Slutför följande steg**:
   
-1. Ladda ned [DISA Purebred-programmet](https://cyber.mil/pki-pke/purebred/).
-2. Distribuera DISA Purebred-programmet i Intune.  Se [Lägg till en verksamhetsspecifik app för iOS/iPadOS i Microsoft Intune](../apps/lob-apps-ios.md).
+1. Ladda ned DISA Purebred-programmet: https:\//cyber.mil/pki-pke/purebred/.
+
+2. Distribuera DISA Purebred-programmet i Intune. Se [Lägg till en verksamhetsspecifik app för iOS i Microsoft Intune](../apps/lob-apps-ios.md).
+
 3. [Skapa ett per-app-VPN](../configuration/vpn-settings-configure.md) för DISA Purebred-programmet.
 
 ## <a name="use-derived-credentials-for-authentication-and-smime-signing-and-encryption"></a>Använda härledda autentiseringsuppgifter för appautentisering samt för S/MIME-signering och -kryptering
@@ -206,10 +235,16 @@ Utöver att distribuera appen med Intune konfigurerar du ett per-app-VPN för In
 Du kan ange **Härledd autentiseringsuppgift** för följande profiltyper och syften:
 
 - [Program](#use-derived-credentials-for-app-authentication)
-- [E-post](../configuration/email-settings-ios.md)
-- [VPN](../configuration/vpn-settings-ios.md)
+- E-post:
+  - [iOS- och iPadOS](../configuration/email-settings-ios.md)
+  - [Android enterprise](../configuration/email-settings-android-enterprise.md)
+- VPN:
+  - [iOS- och iPadOS](../configuration/vpn-settings-ios.md)
+  - [Android enterprise](../configuration/vpn-settings-android-enterprise.md)
 - [S/MIME-signering och -kryptering](certificates-s-mime-encryption-sign.md)
-- [Wi-Fi](../configuration/wi-fi-settings-ios.md)
+- Wi-Fi:
+  - [iOS- och iPadOS](../configuration/wi-fi-settings-ios.md)
+  - [Android enterprise](../configuration/wi-fi-settings-android-enterprise.md)
 
   För Wi-Fi-profiler är *Autentiseringsmetod* endast tillgänglig när **EAP-typen** har angetts till något av följande värden:
   - EAP – TLS
@@ -221,35 +256,25 @@ Du kan ange **Härledd autentiseringsuppgift** för följande profiltyper och sy
 Använd härledda autentiseringsuppgifter för certifikatbaserad autentisering till webbplatser och program. Så här använder du en härledd autentiseringsuppgift för appautentisering:
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
+3. Ange följande inställningar:
 
-3. Ange följande egenskaper:
-   - **Plattform**: Välj plattform för de enheter som ska få den här profilen.
-   - **Profil**: Välj **Härledd autentiseringsuppgift**
+   För iOS och iPadOS:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är till exempel **Härledd autentiseringsuppgift för iOS-enhetsprofil**.
+   - **Beskrivning**: Ange en beskrivning som ger en översikt över inställningen, samt annan viktig information.
+   - **Plattform**: Välj **iOS/iPadOS**.
+   - **Profiltyp**: Välj **Härledd autentiseringsuppgift**.
 
-4. Välj **Skapa**.
+   För Android Enterprise:
+   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är till exempel **Härledd autentiseringsuppgift för Android Enterprise-enhetsprofil**.
+   - **Beskrivning**: Ange en beskrivning som ger en översikt över inställningen, samt annan viktig information.
+   - **Plattform**: Välj **Android Enterprise**.
+   - **Profiltyp**: Under *Endast enhetens ägare* väljer du **Härledd autentiseringsuppgift**.
 
-5. Ange följande egenskaper i **Grundinställningar**:
+4. Klicka på **OK** för att spara ändringarna.
+5. När du är klar väljer du **OK** > **Skapa** för att skapa Intune-profilen. När du är klar visas din profil i listan **Enhetskonfiguration – profiler**.
+6. Välj din nya profil > **Tilldelningar**. Välj de grupper som ska ta emot principen.
 
-   - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är till exempel **Härledd autentiseringsuppgift för iOS/iPadOS-enhetsprofil**.
-   - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-
-6. Välj **Nästa**.
-
-7. I **Konfigurationsinställningar** ställer du in **Använd en härledd autentiseringsuppgift för appautentisering** på **Ja** och väljer sedan **Nästa**.
-
-8. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
-
-   Välj **Nästa**.
-
-9. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
-
-    Välj **Nästa**.
-
-10. Granska inställningarna under **Granska + skapa**. När du väljer Skapa sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
-
- 
 Användare får appen eller e-postaviseringen beroende på vilka inställningar du angav när du konfigurerade utfärdaren av härledda autentiseringsuppgifter. Meddelandet uppmanar användaren att starta Företagsportalen så att de härledda autentiseringsuppgifterna kan bearbetas.
 
 ## <a name="renew-a-derived-credential"></a>Förnya en härledd autentiseringsuppgift
@@ -260,7 +285,6 @@ Om du konfigurerar en eller flera metoder för **Meddelandetyp** meddelar Intune
 
 När en enhet får en ny härledd autentiseringsuppgift distribueras principer som använder härledda autentiseringsuppgifter på nytt till den enheten.
 
-
 ## <a name="change-the-derived-credential-issuer"></a>Ändra utfärdaren av härledda autentiseringsuppgifter
 
 På klientorganisationsnivå kan du ändra utfärdaren av autentiseringsuppgifter. Dock stöds endast en enskild utfärdare för en klientorganisation åt gången.
@@ -269,7 +293,7 @@ När du har ändrat utfärdaren uppmanas användarna att hämta en ny härledd a
 
 ### <a name="change-the-issuer-for-your-tenant"></a>Ändra utfärdaren för din klientorganisation
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Om du tar bort en utfärdare och omedelbart konfigurerar om samma utfärdare måste du fortfarande uppdatera profiler och enheter för att använda härledda autentiseringsuppgifter från den utfärdaren. Härledda autentiseringsuppgifter som hämtades innan du tar bort utfärdaren är inte längre giltiga.
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
@@ -287,4 +311,4 @@ När du har tagit bort en utfärdare och sedan lägger till en ny måste enhetsa
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Översikt över enhetskonfigurationsprofil](../configuration/device-profile-create.md)
+[Skapa profiler för enhetskonfiguration](../configuration/device-profile-create.md).

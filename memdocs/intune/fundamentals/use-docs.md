@@ -11,12 +11,12 @@ author: dougeby
 ms.author: dougeby
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b91f6b11df1b65176711df0ecd907a1764c2e692
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 3892da4f3783e8b169bff576a9945f34cc47c356
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79355094"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81726049"
 ---
 # <a name="using-the-intune-docs"></a>Med hjälp av Intune-dokument
 
@@ -117,11 +117,11 @@ Följ dessa allmänna riktlinjer när du bidrar till Intune-dokumentation:
 
 ## <a name="consolidation-of-documentation-for-microsoft-endpoint-manager"></a>Konsolidering av dokumentation för Microsoft Endpoint Manager
 
-För att bättre stödja kombinerade scenarier för Intune och Configuration Manager har det här dokumentationsbiblioteket flyttats till [https://docs.microsoft.com/mem/intune](https://docs.microsoft.com/mem/intune). Configuration Managers dokumentationsbibliotek kommer senare att flyttas till `docs.microsoft.com/mem/configmgr`. Alla länkar kommer att omdirigeras automatiskt, så du behöver inte göra några ändringar för att läsa det här innehållet.
+För att förbättra stödet för kombinerade scenarier för Intune och Configuration Manager har Intune- och Configuration Manager-dokumentationen samlats på webbplatsen för Microsoft Endpoint Manager. Intune-dokumentationen finns nu på [https://docs.microsoft.com/mem/intune](https://docs.microsoft.com/mem/intune) och Configuration Manager-dokumentationsbiblioteket finns på [https://docs.microsoft.com/mem/configmgr](https://docs.microsoft.com/mem/configmgr). Alla länkar kommer att omdirigeras automatiskt om du använder en gammal URL, så du behöver inte göra några ändringar för att läsa det här innehållet.
 
 Om du ger feedback eller bidrar till artiklar är vissa ändringar nödvändiga:
 
-- Befintliga GitHub-problem kommer att finnas kvar på den ursprungliga lagringsplatsen, [https://github.com/MicrosoftDocs/IntuneDocs/issues](https://github.com/MicrosoftDocs/IntuneDocs/issues).
+- Befintliga GitHub-problem fanns kvar på den ursprungliga lagringsplatsen, [https://github.com/MicrosoftDocs/IntuneDocs/issues](https://github.com/MicrosoftDocs/IntuneDocs/issues) eller [https://github.com/MicrosoftDocs/sccmdocs/issues](https://github.com/MicrosoftDocs/sccmdocs/).
 
   - De här problemen visas inte som öppna eller stängda problem i avsnittet Feedback i den länkade artikeln.
 

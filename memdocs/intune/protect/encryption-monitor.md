@@ -17,12 +17,12 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 55c98368619338bb7018be0651f6cde4054cf9cf
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 0b634dad49b11e39e9a046688f0b5fd9ddc53ab4
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079713"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255004"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Övervaka enhetskryptering med Intune
 
@@ -56,7 +56,7 @@ Fönstret Krypteringsrapport innehåller en lista över de enheter som du hanter
     - MacOS version 10.13 eller senare
 
     **För Windows 10-enheter**:
-    - Version 1703 eller senare av *Business*, *Enterprise* eller *Education*, eller version 1809 eller senare av *Pro*
+    - Version 1709 eller senare av *Business*, *Enterprise* eller *Education*, eller version 1809 eller senare av *Pro*
     - Enheten måste ha en TPM-krets
 
     Mer information finns i [BitLocker-CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp) i Windows-dokumentationen.
@@ -120,9 +120,9 @@ När du väljer en enhet från krypteringsrapporten visas fönstret **Enhetens k
 
     *Tänk på att: Intune kan inte konfigurera FileVault på en enhet som redan är krypterad. I stället måste användaren dekryptera enheten manuellt innan den kan hanteras av en enhetskonfigurationsprincip och Intune*.
 
-  - FileVault kräver att användaren godkänner sin hanteringsprofil i MacOS Catalina och senare.
+  - FileVault kräver att användaren godkänner sin hanteringsprofil i macOS Catalina och senare.
 
-    *Tänk på att: Från och med MacOS version 10.15 (Catalina) kan användargodkända registreringsinställningar resultera i kravet att användare godkänner FileVault-kryptering manuellt. Mer information finns i avsnittet [om användargodkänd registrering](../enrollment/macos-enroll.md) i Intune-dokumentationen*.
+    *Tänk på att: Från och med macOS version 10.15 (Catalina) kan användargodkända registreringsinställningar resultera i kravet att användare godkänner FileVault-kryptering manuellt. Mer information finns i avsnittet [om användargodkänd registrering](../enrollment/macos-enroll.md) i Intune-dokumentationen*.
 
   - Okänt.
 
@@ -229,7 +229,7 @@ Intune ger åtkomst till Azure AD-bladet för BitLocker så att du kan visa BitL
 
    När nycklar inte finns i Azure AD visar Intune *Det gick inte att hitta någon BitLocker-nyckel för den här enheten*.
 
-Information för BitLocker hämtas med hjälp av den [BitLocker-CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp). BitLocker-CSP stöds på Windows 10 version 1703 och senare samt för Windows 10 Pro version 1809 och senare.
+Information för BitLocker hämtas med hjälp av den [BitLocker-CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp). BitLocker-CSP stöds på Windows 10 version 1709 och senare samt för Windows 10 Pro version 1809 och senare.
 
 ## <a name="next-steps"></a>Nästa steg
 

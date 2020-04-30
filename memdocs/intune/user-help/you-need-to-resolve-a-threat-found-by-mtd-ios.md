@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/05/2018
+ms.date: 04/27/2020
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -17,18 +17,18 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 905378b764fe3e8beee7eb90570cb9f871d9fa47
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: bc6780d8956b00e9e0f177c69f067bafa4e8b49e
+ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79346215"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182998"
 ---
-# <a name="resolve-a-threat-found-by-a-mobile-threat-defense-app"></a>Lös ett hot som har påträffas av en Mobile Threat Defense-app
+# <a name="resolving-a-threat-found-by-a-mobile-threat-defense-app"></a>Lös ett hot som har påträffas av en Mobile Threat Defense-app
 
-Appar med skydd mot mobilhot identifierar och varnar dig om potentiella hot på dina enheter. En del organisationer integrerar en tjänst för skydd mot mobilhot med en MDM-provider, t.ex. Intune. När den har integrerats rapporterar tjänsten för skydd mot mobilhot eventuella hot (t.ex. misstänkta appar, nätverk och sårbarheter i operativsystemet) och meddelar dig i företagsportalappen. Du kan sedan hitta information om hotet och åtgärdssteg i appen för skydd mot mobilhot.  
+Mobile Threat Defense-appen (MTD) identifierar och varnar dig för hot på enheten, till exempel misstänkta appar, nätverk eller OS-sårbarheter. Företagsportal appen meddelar dig när ett hot har identifierats och låter dig veta om det påverkar din åtkomst till skol- eller arbetsresurser. Den omdirigerar dig sedan till MTD-appen för information om hotet och, om det är tillgängligt, steg för att åtgärda det. 
 
-Hot visas i företagsportalen som olösta, ej kompatibla problem. Om hoten klassificeras som en tillräckligt stor risk kommer företaget att återkalla din åtkomst till dess företagsresurser. Så länge dessa hot finns på din enhet kan du inte:  
+Om ett hot förefaller vara för riskabelt, enlig organisationens bestämmelser, kan din åtkomst till skol- eller arbetsresurserna återkallas. Så länge dessa hot finns på din enhet kan du inte:  
 
 * Ansluta till företagets e-post
 * Ansluta till företagets Wi-Fi
@@ -36,7 +36,7 @@ Hot visas i företagsportalen som olösta, ej kompatibla problem. Om hoten klass
 * Synkronisera företagsfiler med OneDrive
 * Få åtkomst till företagsappar
 
-Nedan visas de iOS-specifika tjänster för skydd mot mobilhot som din organisation kan ha konfigurerat. Välj en app för att läsa mer om olika funktioner. 
+Det finns många olika MTD-leverantörsappar som du kan ha med olika namn. Nedan visas bara några iOS-specifika appar som du kan ha. Välj en app för att se hur den fungerar med Företagsportalen för att varna dig om hot. Om du vill ha mer information följer du Företagsportalens och MTD-appens skärmanvisningar eller kontaktar IT-supporten. 
 
 
 * [Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-ios.md)
@@ -44,5 +44,5 @@ Nedan visas de iOS-specifika tjänster för skydd mot mobilhot som din organisat
 * [SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-ios.md)
 * [Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-ios.md)
 
-Behöver du fortfarande hjälp? Kontakta företagets support. Du hittar kontaktinformationen på [Företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
+Behöver du fortfarande hjälp? Kontakta din supportansvarige. Du hittar kontaktinformationen på [Företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
 

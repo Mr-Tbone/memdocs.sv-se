@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/03/2020
+ms.date: 04/22/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 635804a9ad5cd76d104f16bcd204df1daa28b114
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 86117193ce7aae01380923ce26f84dfb5ba97a4d
+ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80696484"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182301"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Dataskyddsramverk med appskyddsprinciper 
 
@@ -37,7 +37,7 @@ Ramverket för APP-dataskyddskonfiguration är indelat i tre olika konfiguration
 
 - Nivå 2: Förbättrat dataskydd för företag – Microsoft rekommenderar den här konfigurationen för enheter vars användare får åtkomst till känslig eller konfidentiell information. Den här konfigurationen gäller för de flesta mobila användare som har åtkomst till arbets- eller skoldata. Vissa av kontrollerna kan påverka användarupplevelsen.
 
-- Nivå 3: Starkt dataskydd för företag – Microsoft rekommenderar den här konfigurationen för enheter som körs av organisationer med ett större eller mer avancerat säkerhetsteam, eller för specifika användare eller grupper som utsätts för ovanligt hög risk (i ett exempel identifierade en organisation användare som hanterar data som direkt och allvarligt skulle påverka aktiepriset om dessa data skulle stjälas). Organisationer som kan antas vara föremål för välfinansierade och avancerade angrepp bör eftersträva den här konfigurationen.
+- Nivå 3: Starkt dataskydd för företag – Microsoft rekommenderar den här konfigurationen för enheter som körs av organisationer med ett större eller mer avancerat säkerhetsteam, eller för specifika användare eller grupper som utsätts för ovanligt hög risk (användare som hanterar mycket känsliga data, där otillåtet yppande skulle orsaka omfattande materiella förluster för organisationen). Organisationer som kan antas vara föremål för välfinansierade och avancerade angrepp bör eftersträva den här konfigurationen.
 
 ## <a name="app-data-protection-framework-deployment-methodology"></a>Distributionsmetod för ramverket för APP-dataskydd
 
@@ -159,8 +159,8 @@ De principinställningar som tillämpas på nivå 2 inkluderar alla principinst�
 
 | Inställningen | Beskrivning av inställning |          Värde/åtgärd  |          Plattform        | Obs! |
 |--------------------|----------------------------|-----------------------------------------------------------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enhetsvillkor  |       Lägsta operativsystemversion  |          *Format: Major.Minor.Build <br>Exempel:   12.4.4*/Blockera åtkomst |          iOS/iPadOS        | Microsoft rekommenderar att du konfigurerar den lägsta iOS-huvudversionen till att matcha de iOS-versioner som stöds för Microsoft-appar.   Microsoft-appar stöder en N-1-metod där N är den aktuella iOS-huvudversionen. För mindre och byggbaserade versionsvärdet rekommenderar Microsoft att du kontrollerar att enheterna är uppdaterade med respektive säkerhetsuppdateringar. De senaste rekommendationerna från Apple finns i [Apple security updates](https://support.apple.com/en-us/HT201222) (Säkerhetsuppdateringar från Apple) |
-| Enhetsvillkor  |       Lägsta operativsystemversion  |          *Format: Major.Minor<br> Exempel: 8.0*/Blockera åtkomst   |          Android        | Microsoft rekommenderar att du konfigurerar den lägsta Android-huvudversionen till att matcha de Android-versioner som stöds för Microsoft-appar. OEM-tillverkare och enheter som följer rekommenderade krav för Android Enterprise måste ha stöd för den aktuella leveransversionen plus en bokstavsuppgradering.   För närvarande rekommenderar Android 8.0 och senare för kunskapsarbetare.   De senaste rekommendationerna för Android finns i [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/) (Rekommenderade krav för Android Enterprise) |
+| Enhetsvillkor  |       Lägsta operativsystemversion  |          *Format: Major.Minor.Build <br>Exempel:   12.4.6*/Blockera åtkomst |          iOS/iPadOS        | Microsoft rekommenderar att du konfigurerar den lägsta iOS-huvudversionen till att matcha de iOS-versioner som stöds för Microsoft-appar.   Microsoft-appar stöder en N-1-metod där N är den aktuella iOS-huvudversionen. För mindre och byggbaserade versionsvärdet rekommenderar Microsoft att du kontrollerar att enheterna är uppdaterade med respektive säkerhetsuppdateringar. De senaste rekommendationerna från Apple finns i [Apple security updates](https://support.apple.com/en-us/HT201222) (Säkerhetsuppdateringar från Apple) |
+| Enhetsvillkor  |       Lägsta operativsystemversion  |          *Format: Major.Minor<br> Exempel: 5.0*/Blockera åtkomst   |          Android        | Microsoft rekommenderar att du konfigurerar den lägsta Android-huvudversionen till att matcha de Android-versioner som stöds för Microsoft-appar. OEM-tillverkare och enheter som följer rekommenderade krav för Android Enterprise måste ha stöd för den aktuella leveransversionen plus en bokstavsuppgradering.   För närvarande rekommenderar Android 8.0 och senare för kunskapsarbetare.   De senaste rekommendationerna för Android finns i [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/) (Rekommenderade krav för Android Enterprise) |
 | Enhetsvillkor  |       Lägsta korrigeringsversion  |          *Format:   ÅÅÅÅ-MM-DD <br> Exempel: 2020-01-01*/Blockera åtkomst  |          Android        | Android-enheter kan ta emot månatliga säkerhetskorrigeringar, men versionen är beroende av OEM-tillverkare och/eller operatörer. Organisationer bör se till att distribuerade Android-enheter tar emot säkerhetsuppdateringar innan de implementerar den här inställningen. De senaste korrigeringsversionerna finns i [Android Security Bulletins](https://source.android.com/security/bulletin/).  |
 
 #### <a name="level-3-enterprise-high-data-protection"></a>Nivå 3: Starkt dataskydd för företag 
@@ -192,6 +192,7 @@ De principinställningar som tillämpas på nivå 3 inkluderar alla principinst�
 
 | Inställningen | Beskrivning av inställning |          Värde/åtgärd  |          Plattform        | Obs! |
 |----------------------------|--------------------------------------|-------------------|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Enhetsvillkor  |       Lägsta operativsystemversion  |          *Format: Major.Minor<br> Exempel: 8.0*/Blockera åtkomst   |          Android        | Microsoft rekommenderar att du konfigurerar den lägsta Android-huvudversionen till att matcha de Android-versioner som stöds för Microsoft-appar. OEM-tillverkare och enheter som följer rekommenderade krav för Android Enterprise måste ha stöd för den aktuella leveransversionen plus en bokstavsuppgradering.   För närvarande rekommenderar Android 8.0 och senare för kunskapsarbetare.   De senaste rekommendationerna för Android finns i [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/) (Rekommenderade krav för Android Enterprise) |
 |       Enhetsvillkor  |          Jailbrokade/rotade enheter  |        Ej tillämpligt/Rensa data  |          iOS/iPadOS, Android        |  |
 |       Enhetsvillkor  |          Högsta tillåtna hotnivå  |          Skyddad/Blockera åtkomst  |          iOS/iPadOS, Android        | <p>Oregistrerade enheter kan kontrolleras med avseende på hot med hjälp av Mobile Threat Defense. Mer information finns i [Mobile Threat Defense för oregistrerade enheter](https://aka.ms/mtdmamdocs).      </p><p>     Om enheten har registrerats kan den här inställningen hoppas över och Mobile Threat Defense i stället distribueras för registrerade enheter. Mer information finns i [Mobile Threat Defense för registrerade enheter](../protect/mtd-device-compliance-policy-create.md).</p> |
 

@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/25/2019
+ms.date: 04/13/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,16 +16,16 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ad666f21b2ff271b99675486835357dfd071773
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 157c61e9f145295f5ef728d12385fa44697a88e2
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80326506"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81725647"
 ---
 # <a name="intune-compliance-reports-for-updates"></a>Intune-efterlevnadsrapporter för uppdateringar
 
-När du använder Intune för att distribuera Windows-uppdateringar till Windows 10-enheter visar du information om uppdateringsefterlevnad med hjälp av Intune eller en kostnadsfri lösning som heter *Uppdateringsefterlevnad*, som ingår i Microsoft Operations Management Suite (OMS).
+När du använder Intune för att distribuera Windows-uppdateringar till Windows 10-enheter visar du information om uppdateringsefterlevnad med hjälp av Intune eller en kostnadsfri lösning som heter *Uppdateringsefterlevnad*. Uppdateringsefterlevnad är en del av OMS (Microsoft Operations Management Suite).
 
 ## <a name="use-intune"></a>Använda Intune
 
@@ -47,13 +47,13 @@ Så här granskar du en principrapport om distributionsstatusen för de Windows 
 
 ## <a name="use-update-compliance"></a>Använda Uppdateringsefterlevnad
 
-Du kan övervaka Windows 10-uppdateringsdistribution med hjälp av [Uppdateringsefterlevnad](https://technet.microsoft.com/itpro/windows/manage/update-compliance-monitor), en Windows Analytics-lösning. Uppdateringsefterlevnad erbjuds via Azure-portalen och är tillgängligt utan kostnad för enheter som uppfyller dess [krav](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started#update-compliance-prerequisites).  
+Du kan övervaka Windows 10-uppdateringsdistribution med hjälp av [Uppdateringsefterlevnad](https://technet.microsoft.com/itpro/windows/manage/update-compliance-monitor). Uppdateringsefterlevnad erbjuds via Azure-portalen och är tillgängligt utan kostnad för enheter som uppfyller dess [krav](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started#update-compliance-prerequisites).  
 
 När du använder den här lösningen distribuerar du ett kommersiellt ID till valfria Intune-hanterade Windows 10 enheter som du vill rapportera uppdateringsefterlevnad för.  
 
 I Intune kan du konfigurera det kommersiella ID:t med hjälp av OMA-URI-inställningarna för en anpassad princip. Se [Använda anpassade inställningar för Windows 10-enheter i Intune](../configuration/custom-settings-windows-10.md).
 
-Den OMA-URI-sökväg (skiftlägeskänslig) du använder när du ska konfigurera det kommersiella ID:t är: *./Vendor/MSFT/DMClient/Provider/MS DM Server/CommercialID*  
+Den OMA-URI-sökväg (skiftlägeskänslig) du använder när du ska konfigurera det kommersiella ID:t är: *./Vendor/MSFT/DMClient/Provider/MS DM Server/CommercialID*
 
 Du kan t.ex. använda följande värden i **Lägga till eller redigera OMA-URI-inställningen**:
 

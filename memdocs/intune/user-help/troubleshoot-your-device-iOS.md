@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 06/02/2017
+ms.date: 04/27/2020
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,16 +19,16 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: e8b2fe2cfa080c5fffc1e66e66a397a036d794c6
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 65a7c561e8686a88367d70bf17d0f08eee80af02
+ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79347190"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82210340"
 ---
-# <a name="fix-common-issues-with-your-ios-device"></a>Åtgärda vanliga problem med din iOS-enhet
+# <a name="fix-common-problems-with-your-ios-device"></a>Åtgärda vanliga problem med din iOS-enhet
 
-Ibland kan problem uppstå med en iOS-enhet som eventuellt kan åtgärdas genom felsökning. Nedan finns en lista med några vanliga problem som du först kan försöka lösa själv. Vid mer komplicerade problem rekommenderar vi att du kontaktar företagets support via kontaktinformationen på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).
+Använd länkarna i den här artikeln för att få svar på vanliga frågor om iOS-registrering eller för att felsöka iOS-relaterade problem. Om du har en fråga eller behöver hjälp med något som inte finns med i listan kan du kontakta IT-supporten med hjälp av kontaktinformationen på [Företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
 
 - [Jag behöver återansluta en komprometterad iOS-enhet](how-to-reconnect-a-compromised-ios-device.md)
 - [Jag behöver skicka fel till företagets support](send-errors-to-your-it-admin-ios.md)
@@ -38,5 +38,5 @@ Ibland kan problem uppstå med en iOS-enhet som eventuellt kan åtgärdas genom 
 - [Hur hittar jag serienumret på enheten?](how-do-i-find-the-serial-number-on-my-device-ios.md)
 - [Jag behöver uppdatera min iOS-enhet](you-need-to-update-your-ios-device.md)
 - [Min iOS-version stöds inte ännu](your-ios-version-isnt-yet-supported.md)
-- [Jag måste installera en Mobile Threat Defense-app på min iOS-enhet](you-are-prompted-to-install-mtd-ios.md)
+- [Jag måste installera en Mobile Threat Defense-app på min iOS-enhet](set-up-mobile-threat-defense.md)
 - [Jag måste lösa ett hot som en Mobile Threat Defense-app har påträffats på min iOS-enhet](you-need-to-resolve-a-threat-found-by-mtd-ios.md)

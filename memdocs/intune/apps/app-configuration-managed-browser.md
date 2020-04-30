@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b62a717217daaffeca5480ac55d0ccef3b10136
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 47b6f624ba5c12cd68322bde5c1f85ad7f0a6430
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323398"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "80862847"
 ---
 # <a name="manage-web-access-using-a-microsoft-intune-policy-protected-browser"></a>Hantera Internetåtkomst med hjälp av en Microsoft Intune-principskyddad webbläsare
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Med en webbläsare som skyddas med Intune-principer (Microsoft Edge eller Intune Managed Browser) kan du vara säker på att åtkomsten till företagswebbplatser alltid är skyddad.  När de har konfigurerats med Intune kan skyddade webbläsare dra nytta av följande:
+Genom att använda en webbläsare som skyddas med en Intune-princip, till exempel Microsoft Edge, ser du till att företagswebbplatser alltid används med aktiva skydd. När de har konfigurerats med Intune kan skyddade webbläsare dra nytta av följande:
 
 - Programskyddsprinciper
 - Villkorlig åtkomst
@@ -38,11 +38,11 @@ Med en webbläsare som skyddas med Intune-principer (Microsoft Edge eller Intune
 - Integrering av en Azure-programproxy
 
 > [!IMPORTANT]
-> Intune Managed Browser kommer att dras tillbaka. Skydda din Intune-webbläsarupplevelse genom att använda Microsoft Edge. 
+> Intune Managed Browser har dragits tillbaka. Skydda din Intune-webbläsarupplevelse genom att använda [Microsoft Edge](../apps/manage-microsoft-edge.md). 
 
 ## <a name="microsoft-edge-support"></a>Microsoft Edge-stöd
 
-Du kan använda Microsoft Edge för företagsscenarier på iOS/iPadOS- och Android-enheter. Microsoft Edge har stöd för samma hanteringsscenarier som Intune Managed Browser, men där finns dessutom förbättringar av användarupplevelsen. Nedanstående Microsoft Edge-företagsfunktioner som aktiveras med Intune-principer är tillgängliga:
+Du kan använda Microsoft Edge för företagsscenarier på iOS/iPadOS- och Android-enheter. Nedanstående Microsoft Edge-företagsfunktioner som aktiveras med Intune-principer är tillgängliga:
 
 - **Dubbel identitet** – Användarna kan lägga till både ett arbetskonto och ett personligt konto för surfning. Det finns en fullständig uppdelning mellan de två identiteterna, vilket liknar arkitektur och funktioner i Office 365 och Outlook. Intune-administratörer kommer att kunna ställa in de önskade principerna för en skyddad surfupplevelse på arbetskontot. 
 - **Integrering med Intunes appskyddsprincip** – Administratörer kan nu använda appskyddsprinciper i Microsoft Edge, inklusive kontroll av klipp ut, kopiera och klistra in, förhindra skärmdumpar och säkerställa att användarvalda länkar bara öppnas i andra hanterade appar.
@@ -53,7 +53,7 @@ Microsoft Intunes skyddsprinciper för Microsoft Edge hjälper till att skydda d
 
 ## <a name="getting-started"></a>Komma igång
 
-Microsoft Edge och Intune Managed Browser är webbappar för webbläsare som du och slutanvändarna kan hämta från offentliga appbutiker för användning i din organisation. 
+Microsoft Edge är en webbläsarapp som du och dina slutanvändare kan ladda ned från offentliga appbutiker och använda i din organisation. 
 
 Operativsystemkrav för webbläsarprinciper:
 - Android 4 och senare eller
@@ -189,7 +189,7 @@ Använd proceduren ovan för att skapa en Microsoft Edge-appkonfiguration. Ange 
 
 ## <a name="how-to-configure-application-proxy-settings-for-protected-browsers"></a>Så här konfigurerar du programproxyinställningar för skyddade webbläsare
 
-Microsoft Edge, Intune Managed Browser och [Azure AD-programproxy]( https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started) kan användas tillsammans så att du kan hantera följande scenarier för användare av iOS/iPadOS- och Android-enheter:
+Microsoft Edge och [Azure AD-programproxy]( https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started) kan användas tillsammans så att du kan hantera följande scenarier för användare av iOS/iPadOS- och Android-enheter:
 
 - En användare laddar ned och loggar in på Microsoft Outlook-appen. Intunes appskyddsprinciper tillämpas automatiskt. De krypterar sparade data och blockerar användaren från att överföra företagets filer till ohanterade appar och platser på enheten. När användaren sedan klickar på en länk till en intranätplats i Outlook kan du ange att länken ska öppnas i en skyddad webbläsare snarare än någon annan webbläsare. Den skyddade webbläsaren identifierar att intranätsplatsen har gjorts tillgänglig för användaren via programproxyn. Användaren omdirigeras automatiskt via programproxyn för att autentisera med alla tillämpliga multifaktorautentiseringar och principer för villkorlig åtkomst innan de når intranätplatsen. Den här platsen, som tidigare inte hittades när användaren använde en fjärranslutning, kan nu öppnas och länken i Outlook fungerar som förväntat.
 - En fjärranvändare öppnar den skyddade webbläsaren och navigerar till en intranätplats via den interna webbadressen. Den skyddade webbläsaren identifierar att intranätsplatsen har gjorts tillgänglig för användaren via programproxyn. Användaren omdirigeras automatiskt via programproxyn för att autentisera med alla tillämpliga multifaktorautentiseringar och principer för villkorlig åtkomst innan de når intranätplatsen. Den här platsen, som tidigare inte hittades när användaren använde en fjärranslutning, kan nu öppnas.
@@ -199,18 +199,17 @@ Microsoft Edge, Intune Managed Browser och [Azure AD-programproxy]( https://docs
 - Konfigurera dina interna program via Azure AD-programproxyn.
   - Se [installationsdokumentationen](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) för att konfigurera programproxy och publicera program. 
   - [Användare måste tilldelas](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application#add-a-user-for-testing) till det företagsprogram för vilket omdirigeringen ska ske. Detta måste göras även om programmet är inställt på passthrough-läge för förautentisering och om kravet på användartilldelning har inaktiverats i inställningarna för programproxyn.
-- Du måste använda version 1.2.0 eller senare av Managed Browser-appen.
-- Användare av Managed Browser eller Microsoft Edge har en [Intune-appskyddsprincip](app-protection-policy.md) tilldelad till appen.
+- Användare av Microsoft Edge-appen måste ha en [Intune-appskyddsprincip](app-protection-policy.md) tilldelad till appen.
 
     > [!NOTE]
-    > Det kan ta upp till 24 timmar innan omdirigeringsdata för en uppdaterad programproxy börjar gälla i Managed Browser eller Microsoft Edge.
+    > Det kan ta upp till 24 timmar innan omdirigeringsdata för en uppdaterad programproxy börjar gälla i Microsoft Edge.
 
 
 #### <a name="step-1-enable-automatic-redirection-to-a-protected-browser-from-outlook"></a>Steg 1: Aktivera automatisk omdirigering till en skyddad webbläsare från Outlook
 Outlook måste konfigureras med en appskyddsprincip som aktiverar inställningen **Begränsa webbinnehåll till visning i Managed Browser**.
 
 #### <a name="step-2-assign-an-app-configuration-policy-assigned-for-the-protected-browser"></a>Steg 2: Tilldela en appkonfigurationsprincip som har tilldelats till den skyddade webbläsaren
-Den här proceduren konfigurerar Managed Browser eller Microsoft Edge för omdirigering via en programproxy. 
+Den här proceduren konfigurerar Microsoft Edge-appen för omdirigering via en programproxy. 
 
 Öppna fliken **Edge** i konfigurationsinställningarna för principen och välj **Aktivera** för omdirigeringsvärdet för programproxyn. Om du aktiverar den här inställningen får användarna åtkomst till företagslänkar och lokala webbappar som publicerats via Azure Application Proxy.
 
@@ -223,7 +222,7 @@ Den här inställningen gör att du kan konfigurera vilken startsida användarna
 - Genvägsikonen för startsidan visas som en ikon under sökkontrollen.  Den kan inte redigeras eller tas bort.
 - Genvägen till startsidan visar namnet på din organisation för att särskilja den.  Den visas alltid som den första ikonen.
 
-Använd proceduren för att skapa en appkonfiguration för Microsoft Edge eller Managed Browser och ange följande nyckel- och värdepar:
+Använd proceduren till att skapa en konfiguration för Microsoft Edge-appen, och ange följande nyckel/värde-par:
 
 |                                Tangent                                |                                                           Värde                                                            |
 |-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
@@ -237,7 +236,7 @@ Med den här inställningen kan du konfigurera en uppsättning bokmärken som ä
 - De här bokmärkena visas överst i listan. Alla bokmärken som användare skapar visas under de här bokmärkena.
 - Om du har aktiverat omdirigering av App Proxy kan du lägga till App Proxy-webbappar med antingen deras interna eller externa URL-adress.
 
-Använd proceduren för att skapa en appkonfiguration för Microsoft Edge eller Managed Browser och ange följande nyckel- och värdepar:
+Använd proceduren till att skapa en konfiguration för Microsoft Edge-appen, och ange följande nyckel/värde-par:
 
 |                                Tangent                                 |                                                                                                                                                                                                                                                         Värde                                                                                                                                                                                                                                                          |
 |--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -245,7 +244,7 @@ Använd proceduren för att skapa en appkonfiguration för Microsoft Edge eller 
 
 ## <a name="how-to-specify-allowed-and-blocked-urls-for-a-protected-browser"></a>Så här anger du tillåtna och blockerade webbadresser för en skyddad webbläsare
 
-Använd proceduren för att skapa en appkonfiguration för Microsoft Edge eller Managed Browser och ange följande nyckel- och värdepar:
+Använd proceduren till att skapa en konfiguration för Microsoft Edge-appen, och ange följande nyckel/värde-par:
 
 |Tangent|Värde|
 |-|-|
@@ -311,13 +310,13 @@ Grundstenen i Microsoft Edge Mobile Enterprise är modellen med dubbla identitet
 
 En av fördelarna med den här modellen är att när användare försöker öppna en länk (till exempel en tidningsartikel osv.) till en plats som inte tillåts av din organisation kan de göra det i sin personliga miljö som är helt åtskild från arbetsmiljön. Dessa mjuka övergångar är aktiverade som standard. 
 
-Använd proceduren för att skapa en appkonfiguration för Microsoft Edge eller Managed Browser och ange följande nyckel- och värdepar:
+Använd proceduren till att skapa en konfiguration för Microsoft Edge-appen, och ange följande nyckel/värde-par:
 
 | Tangent                                                                | Värde                                                 |
 |--------------------------------------------------------------------|-------------------------------------------------------|
 | **com.microsoft.intune.mam.managedbrowser.AllowTransitionOnBlock** | **False** förhindrar att dessa mjuka övergångar sker |
 
-## <a name="how-to-access-to-managed-app-logs-using-the-managed-browser-on-ios"></a>Komma åt loggar för hanterade appar med Managed Browser i iOS
+## <a name="how-to-access-managed-app-logs-using-the-managed-browser-on-ios"></a>Så här kommer du åt loggar för hanterade appar med hjälp av Managed Browser i iOS
 
 Slutanvändare med Managed Browser installerade på sina iOS/iPadOS-enheter kan se hanteringsstatus för alla appar som har publicerats av Microsoft. De kan skicka loggar för felsökning av deras hanterade iOS/iPadOS-appar.
 

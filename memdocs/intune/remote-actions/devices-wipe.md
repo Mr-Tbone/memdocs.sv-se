@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e359b07669f45999ae3de4280d1eb65d5ca11064
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: cbcd54a56304df36c536e5a623f4e9da5ba3f15b
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82023341"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254698"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten
 
@@ -94,7 +94,7 @@ Följande tabeller beskriver vilka data som tas bort och hur åtgärden **Dra ti
 |E-post|E-postprofiler som tillhandahålls via Intune tas bort. Cachelagrad e-post på enheten tas bort.|
 |Frånkoppling från Azure AD|Azure AD-posten tas bort.|
 
-### <a name="android"></a>Android
+### <a name="android-device-administrator"></a>Android-enhetsadministratör
 
 |Datatyp|Android|Android Samsung Knox Standard|
 |-------------|-----------|------------------------|
@@ -110,11 +110,11 @@ Följande tabeller beskriver vilka data som tas bort och hur åtgärden **Dra ti
 |E-post|Ej tillämpligt (e-postprofiler stöds inte av Android-enheter)|E-postprofiler som tillhandahålls via Intune tas bort. Cachelagrad e-post på enheten tas bort.|
 |Frånkoppling från Azure AD|Azure AD-posten tas bort.|Azure AD-posten tas bort.|
 
-### <a name="android-work-profile"></a>Android-arbetsprofil
+### <a name="android-enterprise-devices-with-a-work-profile"></a>Android Enterprise-enheter med en arbetsprofil
 
 Om du tar bort företagsdata från en Android-arbetsprofilenhet raderas alla data, appar och inställningar i arbetsprofilen på den enheten. Enheten dras tillbaka från hantering med Intune. Rensning stöds inte för Android-arbetsprofiler.
 
-### <a name="android-enterprise-kiosk-devices"></a>Android enterprise-kioskenheter
+### <a name="android-enterprise-dedicated-devices"></a>Dedikerade Android Enterprise-enheter
 
 Du kan endast rensa kioskenheter. Du kan inte dra tillbaka Android-kioskenheter.
 
@@ -134,7 +134,7 @@ Du kan endast rensa kioskenheter. Du kan inte dra tillbaka Android-kioskenheter.
 
 |Datatyp|Windows 8.1 (MDM) och Windows RT 8.1|Windows RT|Windows Phone 8.1 och Windows Phone 8|Windows 10|
 |-------------|----------------------------------------------------------------|--------------|-----------------------------------------|--------|
-|Företagsappar och associerade data som installerats av Intune|Nycklar återkallas för filer som skyddas av EFS. Användaren kan inte öppna filerna.|Företagsappar tas inte bort.|Appar som ursrpungligen installerats via företagsportalen avinstalleras. Data som hör till företagsappar tas bort.|Apparna avinstalleras. Nycklar för separat inläsning tas bort.<br>För Windows 10 version 1703 (Creator Update) och senare tas inte Microsoft 365-appar bort. Win32-appar som installerats via Intune-hanteringstillägget avinstalleras inte på oregistrerade enheter. Administratörer kan använda tilldelningsundantag för att inte erbjuda Win32-appar till BYOD-enheter.|
+|Företagsappar och associerade data som installerats av Intune|Nycklar återkallas för filer som skyddas av EFS. Användaren kan inte öppna filerna.|Företagsappar tas inte bort.|Appar som ursrpungligen installerats via företagsportalen avinstalleras. Data som hör till företagsappar tas bort.|Apparna avinstalleras. Nycklar för separat inläsning tas bort.<br>För Windows 10 version 1709 (Creator Update) och senare tas inte Microsoft 365-appar bort. Win32-appar som installerats via Intune-hanteringstillägget avinstalleras inte på oregistrerade enheter. Administratörer kan använda tilldelningsundantag för att inte erbjuda Win32-appar till BYOD-enheter.|
 |Inställningar|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|
 |Profilinställningar för Wi-Fi och VPN|Tas bort.|Tas bort.|Stöds inte.|Tas bort.|
 |Certifikatprofilinställningar|Certifikat tas bort och återkallas.|Certifikat tas bort och återkallas.|Stöds inte.|Certifikat tas bort och återkallas.|

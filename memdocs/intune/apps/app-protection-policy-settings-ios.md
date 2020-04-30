@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a09b103f87b99e5ce7df3ec68760f1b55a9033bd
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: eda210408adbb15d82d6bfc31bef2f225f53bc6f
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79341860"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "80863085"
 ---
 # <a name="ios-app-protection-policy-settings"></a>Principinställningar för iOS-appskydd
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -31,6 +31,9 @@ ms.locfileid: "79341860"
 I den här artikeln beskrivs inställningarna för appskyddsprinciper för iOS/iPadOS-enheter. Principinställningarna som beskrivs kan [konfigureras](app-protection-policies.md) för en appskyddsprincip i fönstret **Inställningar** i Microsoft Azure-portalen när du skapar en ny princip.
 
 Det finns tre typer av principinställningar: *Dataflytt*, *åtkomstkrav* och *villkorlig start*. I den här artikeln används termen ***principhanterade appar*** för att hänvisa till appar som har konfigurerats med appskyddsprinciper.
+
+> [!IMPORTANT]
+> Intune Managed Browser har dragits tillbaka. Skydda din Intune-webbläsarupplevelse genom att använda [Microsoft Edge](../apps/manage-microsoft-edge.md). 
 
 ## <a name="data-protection"></a>Dataskydd
 

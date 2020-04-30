@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/22/2019
+ms.date: 04/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e1a7c9665f142bf7dd7832e6bac0e016539ddea
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 86c90d8313cd9eed853ad438a5ea9a31f0d834ce
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79358734"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81725540"
 ---
 # <a name="network-endpoints-for-microsoft-intune"></a>Nätverksslutpunkter för Microsoft Intune  
 
@@ -34,6 +34,9 @@ Då Intune är en molnbaserad tjänst krävs inte någon lokal infrastruktur, ti
 
 Om du vill hantera enheter bakom brandväggar och proxyservrar, måste du aktivera kommunikation för Intune.
 
+> [!NOTE]
+> Informationen i avsnittet gäller även för Microsoft Intune Certificate Connector. Anslutningsprogrammet har samma nätverkskrav som hanterade enheter
+
 - Proxyservern måste ha stöd för både **HTTP (80)** och **HTTPS (443)** eftersom Intune-klienter använder båda protokollen. Windows informationsskydd använder port 444.
 - För vissa åtgärder (t.ex. nedladdning av programuppdateringar för den klassiska datoragenten) kräver Intune att det finns en oautentiserad åtkomst till proxyservern för att få åtkomst till manage.microsoft.com
 
@@ -44,6 +47,7 @@ Du kan ändra inställningarna för proxyservern på enskilda klientdatorer. Du 
 > [!NOTE] If Windows 8.1 devices haven't cached proxy server credentials, enrollment might fail because the request doesn't prompt for credentials. Enrollment fails without warning as the request wait for a connection. If users might experience this issue, instruct them to open their browser settings and save proxy server settings to enable a connection.   -->
 
 Hanterade enheter kräver konfigurationer som låter **Alla användare** komma åt tjänster genom brandväggar.
+
 
 I följande tabeller visas de portar och tjänster som Intune-klienten har åtkomst till:
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2020
+ms.date: 04/17/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -13,34 +13,51 @@ ms.localizationpriority: high
 ms.technology: ''
 ms.suite: ems
 search.appverid: MET150
+ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64b71c17a14ff77f828d4be69ed820b21bd7a246
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: b8b8bde6b7979cfe3b936a08630e23e19fc7e5a0
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323353"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81615049"
 ---
-# <a name="automate-email-and-add-actions-for-noncompliant-devices-in-intune"></a>Automatisera e-post och lägga till åtgärder för inkompatibla enheter i Intune
+# <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
 För enheter som inte uppfyller dina principer eller regler för efterlevnad kan du lägga till **åtgärder för inkompatibilitet**. Den här funktionen konfigurerar en tidssorterad sekvens med åtgärder, till exempel att skicka e-post till slutanvändaren och mer.
 
 ## <a name="overview"></a>Översikt
 
-När Intune identifierar en enhet som inte är kompatibel, markerar Intune omedelbart enheten som inkompatibel som standard. Den [villkorliga åtkomsten](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (AD) blockerar sedan enheten. När en enhet inte är kompatibel kan du med **åtgärder för inkompatibilitet** få mer flexibilitet när du ska bestämma dig för vad du bör göra. Du kan t.ex. låta bli att blockera enheten omedelbart och ge användaren en respitperiod för att bli kompatibel.
+Som standard innehåller varje efterlevnadsprincip åtgärden för inkompatibilitet, **Markera enheten som inkompatibel**, med ett schema på noll dagar (**0**). När Intune identifierar en enhet som inte är kompatibel gör standardinställningen att Intune omedelbart markerar enheten som inkompatibel. Sedan kan den [villkorliga åtkomsten](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (AD) blockera enheten.
 
-Det finns flera typer av åtgärder:
+Genom att konfigurera **Åtgärder för inkompatibilitet** får du flexibiliteten att bestämma vad du ska göra med inkompatibla enheter, och när du ska göra det. Du kan t.ex. bestämma dig för att inte blockera enheten omedelbart, och sedan ge användaren en respitperiod att åtgärda problemet.
 
-- **Skicka e-post till slutanvändare**: Anpassa en e-postavisering innan den skickas till slutanvändaren. Du kan anpassa mottagare, ämne, brödtext, företagslogotyp och kontaktinformation.
+För varje åtgärd du kan ange kan du konfigurera ett schema som avgör när den åtgärden börjar gälla, baserat på antalet dagar efter att enheten har markerats som inkompatibel. Du kan också konfigurera flera instanser av en åtgärd. När du ställer in flera instanser av en åtgärd i en princip körs åtgärden igen vid den senare schemalagda tiden om enheten inte är kompatibel.
 
-    Dessutom inkluderar Intune information om den inkompatibla enheten i e-postmeddelandet.
+Alla åtgärder är inte tillgängliga för alla plattformar.
 
-- **Fjärrlåsa en icke-kompatibel enhet**: För enheter som inte är kompatibla kan du utfärda en fjärrlåsning. Användaren uppmanas i så fall att ange en PIN-kod eller ett lösenord för att låsa upp enheten. Mer om funktionen [Fjärrlåsning](../remote-actions/device-remote-lock.md).
+## <a name="available-actions-for-noncompliance"></a>Tillgängliga åtgärder för inkompatibilitet
 
-- **Markera enhet som inkompatibel**: Skapa ett schema (med antal dagar) varefter enheten markeras som inkompatibel. Du kan konfigurera åtgärden till att börja gälla omedelbart, eller ge användaren en respitperiod för att bli kompatibel.
+Följande är tillgängliga åtgärder för inkompatibilitet. Om inget annat anges är varje åtgärd tillgänglig för alla plattformar som stöds av Intune:
 
-- **Ta den icke-kompatibla enheten ur bruk**: Den här åtgärden tar bort alla företagets data från enheten och tar bort enheten från Intune-hanteringen. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst 30 dagar. Följande plattformar stöder den här åtgärden:
+- **Markera enhet som inkompatibel**: Som standard anges den här åtgärden för varje efterlevnadsprincip och har ett schema på noll (**0**) dagar, vilket markerar enheter som inkompatibla direkt.
+
+  När du ändrar standardschemat anger du en respitperiod där en användare kan åtgärda problem eller bli kompatibel utan att markeras som icke-kompatibel.
+
+- **Skicka e-post till slutanvändare**: Den här åtgärden skickar ett e-postmeddelande till användaren.
+När du aktiverar den här åtgärden:
+
+  - Välj en *Mall för aviseringsmeddelande* som den här åtgärden skickar. Du måste [Skapa en mall för aviseringsmeddelande](#create-a-notification-message-template) innan du kan tilldela en till den här åtgärden. När du skapar ett anpassat meddelande anpassar du ämnet och meddelandetexten, och du kan lägga till företagets logotyp, företagets namn och ytterligare kontaktinformation.
+  - Välj att skicka meddelandet till ytterligare mottagare genom att välja en eller flera av dina Azure AD-grupper.
+
+När e-postmeddelandet skickas lägger Intune till information om den inkompatibla enheten i e-postmeddelandet.
+
+- **Fjärrlåsa en icke-kompatibel enhet**: Använd den här åtgärden för att utfärda ett fjärrlås för en enhet. Användaren uppmanas i så fall att ange en PIN-kod eller ett lösenord för att låsa upp enheten. Mer om funktionen [Fjärrlåsning](../remote-actions/device-remote-lock.md).
+
+- **Ta den icke-kompatibla enheten ur bruk**: Den här åtgärden tar bort alla företagets data från enheten och tar bort enheten från Intune-hanteringen. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst **30** dagar.
+
+  Följande plattformar stöder den här åtgärden:
   - Android
   - iOS
   - macOS
@@ -48,24 +65,47 @@ Det finns flera typer av åtgärder:
   - Windows Phone 8.1 och senare
 
   Läs mer om att [ta bort enheter](../remote-actions/devices-wipe.md#retire).
+
+- **Skicka push-meddelande till slutanvändare**: Konfigurera den här åtgärden för att skicka ett push-meddelande om inkompatibilitet till en enhet via Företagsportal-appen eller Intune-appen på enheten.
+
+  Följande plattformar stöder den här åtgärden:
+  - Android:
+    - Android-enhetsadministratör
+    - Ägare av Android Enterprise-enhet
+    - Android Enterprise-arbetsprofil
+  - iOS/iPadOS
+
+  Push-meddelandet skickas den första gången som en enhet checkar in med Intune och är inte kompatibel med policyn för efterlevnad. När en användare väljer meddelandet öppnas Företagsportal-appen eller Intune-appen med information om orsaken till inkompatibiliteten. Användaren kan sedan vidta åtgärder för att lösa problemet. Informationen om inkompatibilitet i meddelandet genereras av Intune och kan inte anpassas.
+
+  > [!IMPORTANT]
+  > Intune, Företagsportal-appen och Microsoft Intune-appen kan inte garantera att ett anpassat meddelande levereras. Aviseringar kan visas efter flera timmars fördröjning, om de visas alls. Det här gäller även när användare har inaktiverat push-meddelanden.
+  >
+  > Förlita dig inte på den här aviseringsmetoden för brådskande meddelanden.
+
+  Varje instans av åtgärden skickar ett meddelande en gång. Om du vill skicka samma meddelande igen från en princip konfigurerar du ytterligare instanser av åtgärden i principen, var och en med ett annat schema.
   
-  Den här artikeln visar hur du:
+  Du kan till exempel schemalägga den första åtgärden för noll dagar och sedan lägga till en andra instans av åtgärden som är inställd på tre dagar. Den här fördröjningen före det andra meddelandet ger användaren några dagar för att lösa problemet och undvika det andra meddelandet.
 
-- Skapa en mall för meddelandeaviseringar
-- Skapa en åtgärd för inkompatibilitet. Du kan till exempel skicka ett e-postmeddelande eller fjärrlåsa en enhet
+  För att undvika att skicka skräppost till användare med för många duplicerade meddelanden kan du granska och effektivisera vilka efterlevnadsprinciper som innehåller ett push-meddelande vid inkompatibilitet, och granska scheman för att undvika upprepade aviseringar för samma problem som skickas för ofta.
 
+  Tänk på att:
+  - För en enda princip som innehåller flera instanser av en push-avisering för samma dag skickas bara ett enda meddelande för den dagen.
+
+  - När flera efterlevnadsprinciper omfattar samma villkor för efterlevnad och inkluderar åtgärden för push-meddelande med samma schema, skickas flera meddelanden till samma enhet samma dag.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-- Du måste ha minst en efterlevnadsprincip för enheter för att kunna konfigurera åtgärder vid inkompatibilitet. Se följande plattformar när du ska skapa en efterlevnadsprincip för enheter:
+Du kan [lägga till åtgärder för inkompatibilitet](#add-actions-for-noncompliance) när du konfigurerar efterlevnadsprinciper för enheter, eller senare genom att redigera principen. Du kan lägga till ytterligare åtgärder till varje princip för att uppfylla dina behov. Tänk på att varje efterlevnadsprincip automatiskt inkluderar standardåtgärden vid inkompatibilitet som markerar enheter som inkompatibla, med ett schema inställt på noll dagar.
 
-  - [Android](compliance-policy-create-android.md)
-  - [Android-arbetsprofiler](compliance-policy-create-android-for-work.md)
-  - [iOS](compliance-policy-create-ios.md)
-  - [macOS](compliance-policy-create-mac-os.md)
-  - [Windows](compliance-policy-create-windows.md)
+Du måste ha konfigurerat villkorlig Azure AD-åtkomst för att kunna använda principer för enhetsefterlevnad till att blockera enheter från företagets resurser. Mer information finns i [Villkorlig åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) eller [Vanliga sätt att använda villkorlig åtkomst med Intune](conditional-access-intune-common-ways-use.md).
 
-- Du måste ha konfigurerat villkorlig Azure AD-åtkomst när du använder principer för enhetsefterlevnad till att blockera enheter från företagets resurser. Mer information finns i [Villkorlig åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) eller [Vanliga sätt att använda villkorlig åtkomst med Intune](conditional-access-intune-common-ways-use.md).
+Se följande plattformsspecifika vägledning när du ska skapa en efterlevnadsprincip för enheter:
+
+- [Android](compliance-policy-create-android.md)
+- [Android-arbetsprofiler](compliance-policy-create-android-for-work.md)
+- [iOS](compliance-policy-create-ios.md)
+- [macOS](compliance-policy-create-mac-os.md)
+- [Windows](compliance-policy-create-windows.md)
 
 ## <a name="create-a-notification-message-template"></a>Skapa en mall för aviseringsmeddelanden
 
@@ -100,7 +140,7 @@ Om du vill skicka ett e-postmeddelande till användarna skapar du en mall för a
 
 När du skapar en princip för enhetsefterlevnad skapar Intune automatiskt en åtgärd för inkompatibilitet. Om en enhet inte uppfyller din efterlevnadsprincip markerar den här åtgärden enheten som inkompatibel. Du kan anpassa hur länge enheten ska markeras som inkompatibel. Det går inte att ta bort åtgärden.
 
-Förutom standardåtgärden att markera enheter som icke-kompatibla, så kan du lägga till valfria åtgärder när du skapar en efterlevnadsprincip, eller uppdatera en befintlig princip.
+Du kan lägga till valfria åtgärder när du skapar en princip för efterlevnad, eller uppdatera en befintlig princip.
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
@@ -123,13 +163,15 @@ Förutom standardåtgärden att markera enheter som icke-kompatibla, så kan du 
 
    - **Ta den icke-kompatibla enheten ur bruk**: Ta bort alla företagets data från enheten och ta bort enheten från Intune-hanteringen när den är inkompatibel. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst **30** dagar.
 
+   - **Skicka push-meddelande till slutanvändare**: Konfigurera den här åtgärden för att skicka ett push-meddelande om inkompatibilitet till en enhet via Företagsportal-appen eller Intune-appen på enheten.
+
 5. Konfigurera ett **schema**: Ange hur många dagar (0 till 365) efter en inkompatibilitet som åtgärden ska utlösas på användarnas enheter. (*Ta icke-kompatibel enhet ur bruk* har stöd för minst 30 dagar.) Efter den här respittiden kan du tillämpa en [princip för villkorlig åtkomst](conditional-access-intune-common-ways-use.md). Om du anger **0** (noll) dagar tillämpas den villkorliga åtkomsten **omedelbart**. Om en enhet till exempel inte är kompatibel kan du använda villkorlig åtkomst för att blockera åtkomsten till e-post, SharePoint och andra organisationsresurser omedelbart.
 
    När du skapar en efterlevnadsprincip skapas automatiskt åtgärden **Markera enheten som inkompatibel**, och den ställs automatiskt in på **0** dagar (omedelbart). Med den här åtgärden bedöms enheten som icke-kompatibel direkt när den checkar in. Om du även använder villkorlig åtkomst träder den villkorliga åtkomsten i kraft direkt. Om du vill tillåta en respitperiod ändrar du **Schema** för åtgärden **Markera enheten som inkompatibel**.
 
-  I efterlevnadsprincipen kanske du även vill meddela användaren. Du kan lägga till åtgärden **Skicka e-post till slutanvändare**. I åtgärden **Skicka e-post** anger du två dagar för **Schema**. Om enheten eller slutanvändaren fortfarande bedöms som icke-kompatibel dag två skickas e-postmeddelandet dag två. Om du vill skicka e-post till användaren på dag fem i lägger du till en annan åtgärd och anger fem dagar för **Schema**.
+   I efterlevnadsprincipen kanske du även vill meddela användaren. Du kan lägga till åtgärden **Skicka e-post till slutanvändare**. I åtgärden **Skicka e-post** anger du två dagar för **Schema**. Om enheten eller slutanvändaren fortfarande bedöms som icke-kompatibel dag två skickas e-postmeddelandet dag två. Om du vill skicka e-post till användaren på dag fem i lägger du till en annan åtgärd och anger fem dagar för **Schema**.
 
-   Mer information om efterlevnad och de inbyggda åtgärderna finns i [översikt över efterlevnad](device-compliance-get-started.md).
+  Mer information om efterlevnad och de inbyggda åtgärderna finns i [översikt över efterlevnad](device-compliance-get-started.md).
 
 6. När du är klar väljer du **Lägg till** > **OK** för att spara ändringarna.
 

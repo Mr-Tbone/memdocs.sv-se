@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07c29f45c2d9356bda78e021d3baf9647aa03397
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 6633682a9572ba36f41f42e77c5aa64403e0e209
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80326797"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81440585"
 ---
 # <a name="create-a-custom-role-in-intune"></a>Skapa en anpassad roll i Intune
 
@@ -40,7 +40,7 @@ För att kunna skapa, redigera eller tilldela roller måste ditt konto ha en av 
 
 3. På sidan **Behörigheter** väljer du de behörigheter som du vill använda med den här rollen.
 
-4. På sidan **Omfång (taggar)** väljer du taggarna för den här rollen. Den här rollen kan komma åt resurser som också har dessa taggar. Välj **Nästa**.
+4. På sidan **Omfång (taggar)** väljer du taggarna för den här rollen. När den här rollen tilldelas en användare kan användaren komma åt resurser som också har dessa taggar. Välj **Nästa**.
 
 5. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya rollen visas i listan på bladet **Intune-roller – Alla roller**.
 

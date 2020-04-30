@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 483f82e67c3f5d8ad3b4e55fba73e21eba85d49d
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 03df52662aaced80280192b9096c6d169020b55d
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80327152"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81615455"
 ---
 # <a name="identify-devices-as-corporate-owned"></a>Identifiera enheter som företagsägda
 
@@ -128,3 +128,9 @@ Enheters egenskaper visar **Ägarskap** för varje enhetspost i Intune. Som admi
 3. Ange **Äganderätt till enhet** som **Personlig** eller **Företagsägd**.
 
    ![Enhetsegenskaperna visar alternativ för Enhetskategori och Ägarskap för enhet](./media/corporate-identifiers-add/device-properties.png)
+
+Du kan konfigurera ett push-meddelande till användarna av Företagsportal-appen (både Android och iOS) när deras ägarskapstyp ändras från **Personlig** till **Företag** som ett integritetsmeddelande. 
+
+När en enhets ägarskapstyp ändras från Företag till Personlig tar Intune bort all appinformation som tidigare samlats in från den enheten inom 7 dagar. Om så är tillämpligt tar Intune även bort det registrerade telefonnumret. Intune kommer fortfarande att samla in en inventering av appar som installerats av IT-administratören på enheten samt samla in ett partiellt telefonnummer för enheten när den har markerats som personlig.
+
+Den här inställningen hittar du i Microsoft Endpoint Manager genom att välja **Administration av klientorganisation** > **Anpassning**. Mer information finns i [Företagsportal – konfiguration](../apps/company-portal-app.md#configuration).

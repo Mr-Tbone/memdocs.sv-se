@@ -5,23 +5,23 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/01/2020
+ms.date: 04/17/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: shpate
+ms.reviewer: aanavath
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 618ed802d33f2c50a567f1e18da4689855bbf016
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: faf117f3eedbfe7527606d7a0942cab644c700cb
+ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80551678"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81615647"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Använd baslinjer för säkerhet för att konfigurera Windows 10-enheter i Intune
 
@@ -46,13 +46,34 @@ Säkerhetsbaslinjer kan hjälpa dig få ett säkert arbetsflöde från slutpunkt
 
 [Windows säkerhetsbaslinjer](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) är en bra resurs om man vill lära sig mer om den här funktionen. [Hantering av mobilenheter](https://docs.microsoft.com/windows/client-management/mdm/) är en bra resurs om du vill lära dig mer om MDM och vad du kan göra på Windows-enheter.
 
+## <a name="available-security-baselines"></a>Tillgängliga säkerhetsbaslinjer
+
+Följande instanser av säkerhetsbaslinjer är tillgängliga för användning med Intune. Använd länkarna om du vill visa inställningarna för den senaste instansen av varje baslinje.
+
+- **MDM-säkerhetsbaslinje**
+  - [MDM-säkerhetsbaslinje för maj 2019](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)
+  - [Förhandsversion: MDM-säkerhetsbaslinje för oktober 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
+
+- **Microsoft Defender ATP-baslinje**
+   *(Denna baslinje kan användas när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites))* .
+  - [Microsoft Defender ATP-baslinje version 3](security-baseline-settings-defender-atp.md)
+
+  > [!NOTE]
+  > Säkerhetsbaslinjen för Microsoft Defender ATP är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer.  Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
+
+- **Microsoft Edge-baslinje**
+  - [Microsoft Edge-baslinje för april 2020 (Edge version 80 och senare)](security-baseline-settings-edge.md?pivots-edge-april-2020)
+  - [Förhandsversion: Microsoft Edge-baslinje för oktober 2019 (Edge version 77 och senare)](security-baseline-settings-edge.md?pivots=edge-october-2019)
+
+Du kan fortsätta att använda och redigera profiler som du har skapat tidigare baserat på en förhandsvisningsmall, till och med när förhandsversionerna inte längre är tillgängliga för att skapa nya profiler.
+
+När du är redo att flytta till en senare version av en baslinje som du använder kan du läsa i [Ändra baslinjeversionen för en profil](#change-the-baseline-version-for-a-profile) i den här artikeln. 
+
 ## <a name="about-baseline-versions-and-instances"></a>Om baslinjeversioner och instanser
 
 Varje ny versioninstans av en baslinje kan lägga till eller ta bort inställningar eller göra andra ändringar. När nya inställningar för Windows 10 blir tillgängliga tillsammans med nya versioner av Windows 10 kan MDM-säkerhetsbaslinjen få en ny versioninstans som innehåller de senaste inställningarna.
 
-I Intune-konsolen visar panelen för varje baslinje mallens namn och grundläggande information om baslinjen. Informationen inkluderar hur många profiler du har som använder den typen av baslinje, hur många separata instanser (versioner) av typen av baslinje som finns tillgängliga och ett *Senaste publiceringsdatum* som identifierar när den här baslinjemallen las till i din klient. Följande exempel visar en panel för en välanvänd MDM-säkerhetsbaslinje:
-
-![Baslinjepanel](./media/security-baselines/baseline-tile.png)
+I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) under **Slutpunktssäkerhet** > **Säkerhetsbaslinjer** visas en lista över tillgängliga baslinjer. I listan ingår namnet på baslinjemallen, hur många profiler du har som använder den typen av baslinje, hur många separata instanser (versioner) av typen av baslinje som finns tillgängliga och ett *Senaste publiceringsdatum* som identifierar när den senaste versionen av baslinjemallen blev tillgänglig.
 
 Om du vill visa mer information om de baslinjeversioner som du använder väljer du en baslinjepanel för att öppna fönstret *Översikt* och väljer sedan **Versioner**. Intune visar information om versionerna av den baslinje som används av dina profiler. I fönstret versioner kan du välja en version för att visa mer information om de profiler som använder den här versionen. Du kan också välja två olika versioner och sedan välja **Jämför baslinjer** för att hämta en CSV-fil som beskriver dessa skillnader.
 
@@ -74,26 +95,6 @@ Använd informationen på följande länkar för att identifiera och lösa konfl
 
 - [Felsöka principer och profiler i Intune](../configuration/troubleshoot-policies-in-microsoft-intune.md)
 - [Övervaka dina säkerhetsbaslinjer](security-baselines-monitor.md#troubleshoot-using-per-setting-status)
-
-## <a name="available-security-baselines"></a>Tillgängliga säkerhetsbaslinjer
-
-Följande instanser av säkerhetsbaslinjer är tillgängliga för användning med Intune. Använd länkarna om du vill visa inställningarna för den senaste instansen av varje baslinje.
-
-- **MDM-säkerhetsbaslinje**
-  - [MDM-säkerhetsbaslinje för maj 2019](security-baseline-settings-mdm-all.md?pivots=mdm-may-2019)
-  - [Förhandsversion: MDM-säkerhetsbaslinje för oktober 2018](security-baseline-settings-mdm-all.md?pivots=mdm-preview)
-
-- **Microsoft Defender ATP-baslinje**
-   *(Denna baslinje kan användas när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites))* .
-  - [Microsoft Defender ATP-baslinje version 3](security-baseline-settings-defender-atp.md)
-
-  > [!NOTE]
-  > Säkerhetsbaslinjen för Microsoft Defender ATP är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer.  Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
-
-- **Microsoft Edge-baslinje**
-  - [Förhandsversion: Microsoft Edge-baslinje](security-baseline-settings-edge.md)
-
-Du kan fortsätta att använda och redigera profiler som du har skapat tidigare baserat på en förhandsvisningsmall, till och med när förhandsversionerna inte längre är tillgängliga för att skapa nya profiler.
 
 ## <a name="manage-baselines"></a>Hantera baslinjer
 
