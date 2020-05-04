@@ -1,0 +1,61 @@
+---
+title: Teknisk för hands version 1810,2
+titleSuffix: Configuration Manager
+description: Lär dig mer om nya funktioner som är tillgängliga i Configuration Manager Technical Preview Branch version 1810,2.
+ms.date: 10/16/2018
+ms.prod: configuration-manager
+ms.technology: configmgr-core
+ms.topic: conceptual
+ms.assetid: 231bcfe3-4178-4104-9af0-0e57b86e2ff4
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ROBOTS: NOINDEX
+ms.openlocfilehash: 047a18222fcc1f94c46b10c392ea95b14e9b97f1
+ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81714712"
+---
+# <a name="capabilities-in-configuration-manager-technical-preview-version-18102"></a>Funktioner i Configuration Manager Technical Preview version 1810,2 
+
+*Gäller för: Configuration Manager (Technical Preview Branch)*
+
+Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska för hands versionen för Configuration Manager version 1810,2. Installera den här versionen om du vill uppdatera och lägga till nya funktioner till din tekniska för hands versions webbplats. 
+
+Läs artikeln om [teknisk för hands version](technical-preview.md) innan du installerar den här uppdateringen. Den artikeln är bekant med de allmänna kraven och begränsningarna för att använda en teknisk för hands version, hur du uppdaterar mellan versioner och hur du ger feedback.     
+
+
+<!--  Known Issues Template
+## Known issues 
+
+[!INCLUDE [known issue title](includes/known-issue-bugid.md)]
+
+-->
+
+
+
+<br>
+
+**I följande avsnitt beskrivs de nya funktionerna för att prova i den här versionen:**  
+
+[!INCLUDE [Improvements to collection evaluation](includes/1810-2/1358981.md)]
+
+[!INCLUDE [Configuration Manager administrator authentication](includes/1810-2/1357013.md)]
+
+[!INCLUDE [Management insights rule for peer cache source client version](includes/1810-2/1358008.md)]
+
+[!INCLUDE [Improvements to internet-based client setup](includes/1810-2/1359181.md)]
+
+[!INCLUDE [Convert applications to MSIX](includes/1810-2/1359029.md)]
+
+[!INCLUDE [Changes to client notification action to wake up a device](includes/1810-2/1317364.md)]  
+
+
+
+## <a name="next-steps"></a>Nästa steg
+
+Mer information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [Technical Preview](technical-preview.md).    
+
+Mer information om de olika grenarna med Configuration Manager finns i [vilken gren av Configuration Manager ska jag använda?](../understand/which-branch-should-i-use.md)
