@@ -1,0 +1,106 @@
+---
+title: Felsök enhets åtgärd
+titleSuffix: Configuration Manager
+description: Felsök teknisk referens för enhets åtgärder i Configuration Manager
+ms.date: 04/01/2020
+ms.topic: conceptual
+ms.prod: configuration-manager
+ms.technology: configmgr-sum
+ms.assetid: 44c2eb8a-3ccc-471f-838b-55d7971bb79e
+manager: dougeby
+author: mestew
+ms.author: mstewart
+ms.openlocfilehash: 72da589a3f4213fb64b4123d5580cb1be945de0e
+ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81717596"
+---
+# <a name="troubleshooting-device-actions-for-configuration-manager-devices"></a>Felsöka enhets åtgärder för Configuration Manager enheter
+
+*Gäller för: Configuration Manager (aktuell gren)*
+
+Från och med Configuration Manager 2002 kan Configuration Manager-klienter synkroniseras med administrations Center för Microsoft Endpoint Manager. Vissa klient åtgärder kan köras från administrations Center för Microsoft Endpoint Manager på de synkroniserade klienterna.
+
+Tillgängliga åtgärder är:
+- Synkronisera dator princip
+- Synkronisera användar princip
+- Utvärderings cykel för program
+
+
+[![Enhets översikt i administrations Center för Microsoft Endpoint Manager](./media/3555758-device-overview-actions.png)](./media/3555758-device-overview-actions.png#lightbox)
+  
+När en administratör kör en åtgärd från administrations centret för Microsoft Endpoint Manager vidarebefordras meddelande förfrågan till Configuration Manager plats och från platsen till klienten.
+
+## <a name="configuration-manager-components"></a>Configuration Manager-komponenter
+
+- **SMS_SERVICE_CONNECTOR**: använder Gateway Notification Worker för att bearbeta meddelandet från administrations Center för Microsoft Endpoint Manager.
+- **SMS_NOTIFICATION_SERVER**: hämtar meddelandet och skapar ett klient meddelande.
+- **BgbAgent**: klienten hämtar uppgiften och kör den begärda åtgärden.
+
+## <a name="sms_service_connector"></a>SMS_SERVICE_CONNECTOR
+
+När en åtgärd initieras från administrations centret för Microsoft Endpoint Manager, bearbetar **CMGatewayNotificationWorker. log** begäran.  
+
+```text
+Received new notification. Validating basic notification details...
+Validating device action message content...
+Authorized to perform client action. TemplateID: RequestMachinePolicy TenantId: a1b2c3a1-b2c3-d4a1-b2c3-d4a1b2c3a1b2 AADUserID:     a1b2c3a1-b2c3-d4a1-b2c3-d4a1b2c3a1b2
+Forwarded BGB remote task. TemplateID: 1 TaskGuid: a43dd1b3-a006-4604-b012-5529380b3b6f TaskParam: TargetDeviceIDs: 1  
+```
+ 
+1. Ett meddelande tas emot från administrations Center för Microsoft Endpoint Manager.
+
+   ```text
+   Received new notification. Validating basic notification details..
+   ```
+
+1. Användar-och enhets åtgärder verifieras.
+
+   ```text
+   Validating device action message content... 
+   Authorized to perform client action. TemplateID: RequestMachinePolicy TenantId: a1b2c3a1-b2c3-d4a1-b2c3-d4a1b2c3a1b2 AADUserID:     a1b2c3a1-b2c3-d4a1-b2c3-d4a1b2c3a1b2
+   ```
+
+1. Fjärruppgiften vidarebefordras till SMS_NOTIFICATION_SERVER.
+
+    ```text
+   Forwarded BGB remote task. TemplateID: 1 TaskGuid: a43dd1b3-a006-4604-b012-5529380b3b6f TaskParam: TargetDeviceIDs: 1  
+    ```
+
+
+## <a name="sms_notification_server"></a>SMS_NOTIFICATION_SERVER
+
+När meddelandet har skickats till SMS_NOTIFICATION_SERVER skickas en uppgift från hanterings platsen till motsvarande klient. Du ser följande i **BgbServer. log**, som finns på hanterings platsen:
+
+```text
+Get one push message from database.
+Starting to send push task (PushID: 7 TaskID: 8 TaskGUID: A43DD1B3-A006-4604-B012-5529380B3B6F TaskType: 1 TaskParam: ) to 1 clients  with throttling (strategy: 1 param: 42)
+```
+
+## <a name="bgbagent"></a>BgbAgent
+
+Det sista steget inträffar på klienten och kan visas i **CcmNotificationAgent. log**. När uppgiften tas emot begär Schemaläggaren att utföra åtgärden. När åtgärden utförs visas ett bekräftelse meddelande:
+
+```text
+Receive task from server with pushid=7, taskid=8, taskguid=A43DD1B3-A006-4604-B012-5529380B3B6F, tasktype=1 and taskParam=
+
+Send Task response message <BgbResponseMessage TimeStamp="2020-01-21T15:43:43Z"><PushID>8</PushID><TaskID>9</TaskID><ReturnCode>1</ReturnCode></BgbResponseMessage> successfully.
+```
+
+## <a name="common-issues"></a>Vanliga problem
+
+Om administratören inte har de behörigheter som krävs i Configuration Manager, ser du ett `Unauthorized` svar i **CMGatewayNotificationWorker. log**.
+
+```text
+Received new notification. Validating basic notification details..
+Validating device action message content...
+Unauthorized to perform client action. TemplateID: RequestMachinePolicy TenantId: a1b2c3a1-b2c3-d4a1-b2c3-d4a1b2c3a1b2 AADUserID: 3a1e89e6-e190-4615-9d38-a208b0eb1c78
+```  
+
+Se till att användaren som kör åtgärden från administrations centret för Microsoft Endpoint Manager har de behörigheter som krävs på Configuration Manager-platsen. Mer information finns i [Microsoft Endpoint Manager-klient anslutning för krav](device-sync-actions.md#prerequisites).
+
+## <a name="next-steps"></a>Nästa steg
+
+[Aktivera samhantering](../comanage/overview.md) för att få fler moln drivna funktioner som villkorlig åtkomst.
