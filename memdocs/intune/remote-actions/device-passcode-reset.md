@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87cfb3edf860cfc9de9c479a13dd1ea3fa54e599
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: ef7a076c0a41e84e0028da6655569401f334772c
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80326459"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078982"
 ---
 # <a name="reset-or-remove-a-device-passcode-in-intune"></a>Återställa eller ta bort ett enhetslösenord i Intune
 
@@ -42,7 +42,7 @@ Det här dokumentet beskriver återställning av lösenord på såväl enhets- s
 | macOS | Nej |
 | Windows | Nej |
 
-För Android-enheter innebär detta i praktiken att lösenordsåterställning på enhetsnivå endast stöds på enheter med 6.x eller tidigare, eller Android Enterprise-enheter som körs i helskärmsläge. Detta beror på att Google inte längre stöder återställning av lösenord för Android 7-enheter från en app med enhetsadministratör vilket gäller för alla MDM-leverantörer.
+För Android-enheter innebär detta i praktiken att lösenordsåterställning på enhetsnivå endast stöds på enheter med 6.x eller tidigare, eller Android Enterprise-enheter som körs i helskärmsläge. Det här beror på att Google inte längre stöder återställning av lösenord för Android 7-enheter från en app med behörighet som enhetsadministratör vilket gäller för alla MDM-leverantörer.
 
 ## <a name="supported-platforms-for-android-enterprise-work-profile-passcode-reset"></a>Plattformar som stöds lösenordsåterställning för Android Enterprise, arbetsprofil
 
@@ -59,13 +59,15 @@ Använd åtgärden återställ lösenord för att skapa ett nytt lösenord för 
 
 1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) med någon av följande roller: Global Azure Active Directory-administratör, Azure Active Directory Intune-tjänsteadministratör, supportoperatör eller rolladministratör.
 2. Välj **Enheter** och sedan **Alla enheter**.
-3. Välj en enhet från listan över enheter som du hanterar och välj **Ta bort lösenord**.
+3. Välj en enhet från listan över enheter som du hanterar och välj **Återställ lösenord**.
 
-## <a name="reset-android-work-profile-passcodes"></a>Återställa lösenord för Android-arbetsprofiler
+## <a name="reset-android-work-profile-and-device-owner-passcodes"></a>Återställa lösenord för Android-arbetsprofil och enhetsägare
 
 Android Enterprise-arbetsprofilenheter som stöds får ett nytt lösenord för att låsa upp hanterade profiler, eller en kontrollfråga för hanterade profiler för slutanvändaren.
 
-För Android Enterprise-enheter som kör version 8.x eller senare och som har registrerats med en arbetsprofil informeras slutanvändarna att de ska aktivera det återställa lösenordet när registreringen har slutförts. Meddelandet visas om ett lösenord för arbetsprofilen krävs och har ställts in. När de har angett lösenordet tas meddelandet bort.
+För Android Enterprise-arbetsprofilenheter som kör version 8.x eller senare informeras slutanvändarna om att de ska aktivera det återställda lösenordet direkt när registreringen har slutförts. Meddelandet visas om ett lösenord för arbetsprofilen krävs och har ställts in. När lösenordet har angetts tas meddelandet bort.
+
+För Android Enterprise-enhetsägar- eller arbetsprofilenheter som kör version 8.x eller senare får MEM Intune-administratören ett tillfälligt lösenord efter att återställning av lösenord har valts från konsolen. Det tillfälliga lösenordet måste anges på enheten. Det tillfälliga lösenordet för enheten kommer att visas i konsolen i 7 dagar.
 
 
 ## <a name="remove-iosipados-passcodes"></a>Ta bort iOS/iPadOS-lösenord

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 633adc8fa28f422c4b21958675efb53cb2571d39
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: a0cf2096b4a8862a29d47bc05aa29f0cbb48792b
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324735"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023256"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Lägg till appar i Microsoft Intune 
 
@@ -56,8 +56,8 @@ I följande tabell visas de specifika apptyperna och hur du kan lägga till dem 
 | Windows Phone 8.1 Store-appar  | Store-app  | Välj **Windows Phone 8.1** som **apptyp** och ange appens webbadress på Microsoft Store. |
 | Microsoft Store-appar  | Store-app  | Välj **Windows** som **apptyp** och ange appens webbadress på Microsoft Store. |
 | Google Play-appar som hanteras | Store-app  | Välj **Hanterad Google Play** som **apptyp**, sök efter appen och välj appen i Intune. |
-| Office 365-appar för Windows 10  | Store-app (Office 365) | Välj **Windows 10** under **Office 365-paket** som **apptyp**, och markera sedan den Office 365-app som du vill installera.  |
-| Office 365-appar för macOS | Store-app (Office 365) | Välj **macOS** under **Office 365-paket** som **apptyp**, och välj sedan Office 365-appaketet. |
+| Office 365-appar för Windows 10  | Store-app (Office 365) | Välj **Windows 10** under **Microsoft 365 Apps** som **apptyp** och välj sedan den Office 365-app du vill installera.  |
+| Office 365-appar för macOS | Store-app (Office 365) | Välj **macOS** under **Microsoft 365 Apps** som **apptyp** och välj sedan Office 365-serien. |
 | Microsoft Edge version 77 och senare för Windows 10 | Store-app | Välj **Windows 10** under **Microsoft Edge, version 77 och senare** som **apptyp**. |
 | Microsoft Edge version 77 och senare för Windows 10 | Store-app | Välj **macOS** under **Microsoft Edge, version 77 och senare** som **apptyp**. |
 | Verksamhetsspecifika appar för Android | Verksamhetsspecifik app | Välj **Branschspecifik app** som **apptyp**, välj **Appaketfil** och ange sedan en Android-installationsfil med tillägget **.apk**.  |
@@ -121,7 +121,7 @@ Mer information om vilken typ av appar din organisation behöver finns i avsnitt
 Med Intune kan du ändra funktionen för appar som du distribuerar för att justera dem efter företagets principer för efterlevnad och säkerhet. Med den här kontrollen kan du också bestämma hur företagets data ska skyddas. Intune-hanterade appar har en omfattande uppsättning skyddsprinciper för mobila program som:
 
 - Begränsning av funktionerna kopiera och klistra in och spara som.
-- Konfiguration av webblänkar som ska öppnas i appen Intune Managed Browser.
+- Konfiguration av webblänkar så att de öppnas i Microsoft Edge-appen.
 - Aktivering av användning av flera identiteter och villkorlig åtkomst på appnivå.
 
 Intune-hanterade appar kan även aktivera appskydd utan att kräva registrering. På så sätt får du möjligheten att tillämpa principer för förebyggande av dataförlust utan att hantera användarens enhet. Dessutom kan du införliva hantering av mobilappar i dina mobila och verksamhetsspecifika appar med Intune App SDK och App Wrapping Tool. Mer information om verktygen finns i [Översikt över Intune App SDK](../developer/app-sdk.md).

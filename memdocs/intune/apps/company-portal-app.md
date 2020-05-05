@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/16/2020
+ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6a3152966dee507cde690d9be8f5a7e210c7945
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: 7e584019063c6af7f04f5666ba2c38d8199681c5
+ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407759"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81771413"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -31,7 +31,7 @@ Företagsportal-appar, Företagsportal-webbplatsen och Intune-appen på Android 
 
 ## <a name="customizing-the-user-experience"></a>Anpassa användarupplevelsen
 
-Genom att anpassa slutanvändarupplevelsen kan du skapa en välbekant miljö för dina slutanvändare. Det gör du genom att navigera till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välja **Innehavaradministratör** > **Anpassning** och sedan konfigurera de nödvändiga inställningarna. De här inställningarna gäller för Företagsportal-appar, Företagsportal-webbplatsen och Intune-appen på Android.
+Genom att anpassa slutanvändarupplevelsen kan du skapa en välbekant miljö för dina slutanvändare. Om du vill göra detta navigerar du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och väljer **Innehavaradministration** > **Anpassning**, där du kan redigera standardprincipen eller skapa upp till 10 gruppinriktade principer. De här inställningarna gäller för Företagsportal-appar, Företagsportal-webbplatsen och Intune-appen på Android.
 
 ## <a name="branding"></a>Anpassning
 
@@ -45,7 +45,7 @@ I följande tabell visas anpassningsinformation för slutanvändarupplevelsen:
 | **Visa i sidhuvud** | Ange om slutanvändarupplevelsens sidhuvud ska visa **Företagslogotyp och företagsnamn**, **Endast företagslogotyp** eller **Endast företagsnamn**. I förhandsgranskningsrutorna nedan visas endast logotypen, inte namnet.  |
 | **Ladda upp logotypen för temafärgsbakgrund** | Ladda upp den logotyp som du vill visa ovanpå den valda temafärgen. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek:   750 KB<br>Filtyp: PNG, JPG eller JPEG |
 | **Ladda upp logotyp för vit eller ljus bakgrund** | Ladda upp logotypen som du vill visa ovanpå vita eller ljusa bakgrunder. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut mot en vit bakgrund i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek: 750 KB<br>Filtyp: PNG, JPG eller JPEG |
-| **Ladda upp varumärkesbild** | Ladda upp en bild som återspeglar organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1 125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
+| **Ladda upp varumärkesbild** | Ladda upp en bild som återspeglar organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
 
 > [!NOTE]
 > När en användare installerar ett iOS/iPadOS-program från företagsportalen får de ett meddelande. Detta inträffar när iOS/iPadOS-appen är länkad till App Store, ett volymköpt program (VPP) eller en verksamhetsspecifik app (LOB). Användaren kan acceptera åtgärden eller tillåta hantering av appen. Meddelandet visar företagets namn. Om företagets namn inte är tillgängligt visas **företagsportalen**.
@@ -91,8 +91,9 @@ Följande tabell tillhandahåller ytterligare konfigurationsinformation:
 | Fältnamn | Maximal längd | Mer information |
 |------------------------------------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | URL för sekretesspolicy | 79 | Ange din organisations sekretesspolicy så att den visas när användarna klickar på sekretesslänkar. Du måste ange en giltig URL i formatet `https://www.contoso.com`. |
-| Sekretessmeddelande i Företagsportal för iOS/iPad | 520 | Behåll standardvärdet eller ange ett anpassat meddelande som listar de objekt som din organisation kan eller inte kan se på hanterade iOS/iPad-enheter. Du kan använda Markdown när du ska lägga till punkter, fet stil, kursiv stil och länkar. |
+| Sekretessmeddelande i Företagsportal för iOS/iPad | 520 | Behåll standardvärdet eller ange ett anpassat meddelande som listar de objekt som din organisation kan eller inte kan se på hanterade iOS/iPad-enheter. Du kan använda markdown när du ska lägga till punkter, fet stil, kursiv stil och länkar. |
 | Enhetsregistrering | E.t. | Ange om och hur användarna ska uppmanas att registrera sig för hantering av mobilenheter. Informationen finns nedan. |
+| Avisering om filägarskap | E.t. | Skicka ett push-meddelande till användarna av företagsportalsappen (både Android och iOS) när deras ägarskapstyp ändras från personlig till företag. Som standard är push-meddelandet inställt på av. När ägarskapet för enheten är inställt på företagsägarskap har Intune större åtkomst till enheten, som innehåller fullständig app-inventering, FileVault-nyckelrotering, hämtning av telefonnummer och ett urval av fjärråtgärder. Mer information finns i [Ändra enhetsägande](../enrollment/corporate-identifiers-add.md#change-device-ownership).  |
 
 ### <a name="device-enrollment-setting-options"></a>Alternativ för inställning av enhetsregistrering
 
@@ -188,7 +189,7 @@ Vissa plattformar och konfigurationer tillåter inte självbetjäning av enhets�
 <sup>(4)</sup> **Byt namn** ändrar endast enhetsnamnet i företagsportalappen eller i webbportalen, inte på enheten.<br>
 <sup>(5)</sup> **Rensa** är inte tillgängligt på användarregistrerade iOS/iPadOS-enheter.<br>
 <sup>(6) </sup> **Återställ lösenord** stöds inte på vissa Android- och Android Enterprise-konfigurationer. För mer information, se [Återställa eller ta bort ett enhetslösenord i Intune](../remote-actions/device-passcode-reset.md).<br>
-<sup>(7) </sup> **Dra tillbaka** och **Rensa** är inte tillgängliga i scenarier för Android Enterprise-enhetsägare (COPE, COBO, COSU).<br> 
+<sup>(7) </sup> **Dra tillbaka** och **Rensa** är inte tillgängliga i scenarier för Android Enterprise-enhetsägare (COPE, COBO, COSU).<br>
 <sup>(8)</sup> **Återställ lösenord** stöds inte på användarregistrerade iOS/iPadOS-enheter.
 
 ## <a name="next-steps"></a>Nästa steg

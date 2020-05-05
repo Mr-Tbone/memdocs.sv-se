@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c047c0f54e64dbe17b6bd9e9082272e80fe7566c
-ms.sourcegitcommit: e7fb8cf2ffce29548b4a33b2a0c33a3a227c6bc4
+ms.openlocfilehash: 5657a26419280871e6739060509a72c4604fc3a7
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80401478"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255021"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>Nyheter i Microsoft Intune – föregående månader
 
@@ -222,7 +222,7 @@ Du använder härledda autentiseringsuppgifter som autentiseringsmetod för enhe
 
 Mer information om standarden finns i [Derived PIV Credentials](https://www.nccoe.nist.gov/projects/building-blocks/piv-credentials) (Härledda PIV-autentiseringsuppgifter) på www.nccoe.nist.gov.
 
-#### <a name="use-graph-api-to-specify-a-on-premises-user-principal-name-as-a-variable-for-scep-certificates----5437939----------"></a>Använd Graph API för att ange ett lokalt användarhuvudnamn som en variabel för SCEP-certifikat<!--  5437939        -->  
+#### <a name="use-graph-api-to-specify-an-on-premises-user-principal-name-as-a-variable-for-scep-certificates----5437939----------"></a>Använd Graph API för att ange ett lokalt användarhuvudnamn som en variabel för SCEP-certifikat<!--  5437939        -->  
 När du använder [Intune-Graph API](https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-1.0) kan du ange onPremisesUserPrincipalName som en variabel för SAN (alternativt namn för certifikatmottagare) för SCEP-certifikat.
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->'
@@ -284,7 +284,7 @@ När LOB-appen har laddats ned visas ett meddelande om **utförd nedladdning** p
 Appar kan anropa Intune Graph API med både läs- och skrivåtgärder med hjälp av appidentitet utan användarens autentiseringsuppgifter. Mer information om hur du kommer åt Microsoft Graph API för Intune finns i [Arbeta med Intune i Microsoft Graph.](https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-1.0)
 
 #### <a name="protected-data-sharing-and-encryption-for-intune-app-sdk-for-ios---3586942----"></a>Delning och kryptering av skyddade data för Intune App SDK för iOS<!-- 3586942  -->
-Intune App SDK för iOS använder 256-bitars krypteringsnycklar när kryptering har aktiverats av appskyddsprinciper. Alla appar måste vara i SDK-version 8.1.1 för att delning av skyddade data ska vara möjlig.
+Intune App SDK för iOS använder 256-bitars krypteringsnycklar när kryptering har aktiverats av appskyddsprinciper. Alla appar måste ha SDK-version 8.1.1 för att möjliggöra delning av skyddade data.
 
 #### <a name="updates-to-microsoft-intune-app---4997846---"></a>Uppdateringar av Microsoft Intune-appen<!-- 4997846 -->
 Microsoft Intune-appen för Android har uppdaterats med följande förbättringar:
@@ -2011,7 +2011,7 @@ Nu uppmanas användarna att ange en PIN-kod när de gör biometriska ändringar 
 Den här funktionen är endast tillgänglig för iOS och kräver medverkan av program som integrerar Intune APP SDK för iOS, version 9.0.1 eller senare. Integrering av SDK krävs så att beteendet kan tillämpas på de berörda programmen. Den här integreringen händer på löpande bas, och är beroende av specifika programteam. Vissa appar som deltar omfattar WXP, Outlook, Managed Browser och Yammer.
 
 #### <a name="network-access-control-support-on-ios-vpn-clients---1333693---"></a>Stöd för åtkomstkontroll på nätverk på VPN-klienter för iOS<!-- 1333693 -->
-Med den här uppdateringen finns en ny inställning för att aktivera åtkomstkontroll på nätverk (NAC) när du skapar en VPN-profil för Cisco AnyConnect, F5-åtkomst och Citrix SSO för iOS. Den här inställningen tillåter att NAC-ID för enheten inkluderas i VPN-profilen. För närvarande finns det inte några VPN-klienter eller NAC-partnerlösningar som har stöd för detta nya NAC-ID, men vi håller dig informerad via vårt [supportblogginlägg](ttps://aka.ms/iOS12_and_vpn) när det finns.
+Med den här uppdateringen finns en ny inställning för att aktivera åtkomstkontroll på nätverk (NAC) när du skapar en VPN-profil för Cisco AnyConnect, F5-åtkomst och Citrix SSO för iOS. Den här inställningen tillåter att NAC-ID för enheten inkluderas i VPN-profilen. För närvarande finns det inte några VPN-klienter eller NAC-partnerlösningar som har stöd för detta nya NAC-ID, men vi håller dig informerad via vårt [supportblogginlägg](https://aka.ms/iOS12_and_vpn) när det finns.
 
 Om du vill använda NAC, måste du:
 1. Välja att tillåta att Intune inkluderar enhets-ID i VPN-profiler
@@ -2200,7 +2200,7 @@ Med den här funktionsuppdateringen kan du skapa en profil för enhetskonfigurat
 Gäller för: senaste [Windows Insider](https://docs.microsoft.com/windows-insider/at-work-pro/)-version (medan förhandsversion används).
 
 #### <a name="windows-defender-atp-configuration-package-automatically-added-to-configuration-profile---2144658---"></a>ATP-konfigurationspaketet för Windows Defender läggs automatiskt till i konfigurationsprofilen<!-- 2144658 -->
-När du använder enheter med [Advanced Threat Protection och registrering](../protect/advanced-threat-protection.md#onboard-devices-by-using-a-configuration-profile) i Intune behövde du tidigare ladda ned ett konfigurationspaket och lägga till det i din konfigurationsprofil. Med den här uppdateringen hämtar Intune paketet automatiskt från Windows Defender Säkerhetscenter och lägger till det i din profil.
+När du använder enheter med [Advanced Threat Protection och registrering](../protect/advanced-threat-protection.md#onboard-windows-devices-by-using-a-configuration-profile) i Intune behövde du tidigare ladda ned ett konfigurationspaket och lägga till det i din konfigurationsprofil. Med den här uppdateringen hämtar Intune paketet automatiskt från Windows Defender Säkerhetscenter och lägger till det i din profil.
 Gäller för Windows 10 och senare.
 
 #### <a name="require-users-to-connect-during-device-setup--2311457--"></a>Kräv att användare ansluter under enhetskonfiguration<!--2311457-->
@@ -2530,7 +2530,7 @@ Nu kan du redigera hanteringsnamnfältet på bladet **Egenskaper** för en enhet
 #### <a name="new-all-devices-filter-device-category---1878520---"></a>Nytt filter för Alla enheter: Enhetskategori<!-- 1878520 -->
 Nu kan du filtrera listan **Alla enheter** efter enhetskategori. Om du vill göra det väljer du **Enheter** > **Alla enheter** > **Filter** > **Enhetskategori**.
 
-#### <a name="use-teamviewer-to-screen-share-ios-and-macos-devices---1985547---"></a>Använda TeamViewer för att skärmdela iOS- och MacOS-enheter<!-- 1985547 -->
+#### <a name="use-teamviewer-to-screen-share-ios-and-macos-devices---1985547---"></a>Använda TeamViewer för att skärmdela iOS- och macOS-enheter<!-- 1985547 -->
 Nu kan administratörer ansluta till [TeamViewer](../remote-actions/teamviewer-support.md) och börja skärmdela en session med iOS- och macOS-enheter. iPhone-, iPad- och macOS-användare kan dela sina skärmar live med andra stationära och mobila enheter. 
 
 #### <a name="multiple-exchange-connector-support---2070451---"></a>Stöd för flera Exchange-anslutningsappar<!-- 2070451 -->
@@ -2935,7 +2935,7 @@ Med Azure Active Directory (Azure AD) kan du nu begränsa åtkomsten till webbpl
 Vi har uppdaterat företagsportalappen för Android så att den följer Androids riktlinjer för [Materialdesign](https://material.io/). Du kan se bilder av de nya ikonerna i artikeln [Nyheter i appens gränssnitt](whats-new-app-ui.md).
 
 #### <a name="company-portal-enrollment-improved---1874230-eeready--"></a>Registrering i företagsportalen har förbättrats<!-- 1874230 eeready-->
-Användare som registrerar en enhet med hjälp av företagsportalen i Windows 10 version 1703 och senare, kan slutföra det första steget i registreringen utan att lämna appen.
+Användare som registrerar en enhet med hjälp av företagsportalen i Windows 10 version 1709 och senare kan slutföra det första steget i registreringen utan att lämna appen.
 #### <a name="hololens-and-surface-hub-now-appear-in-device-lists--1725868---"></a>HoloLens och Surface Hub visas nu i enhetslistor<!--1725868 -->
 Vi har lagt till stöd för att visa Intune-registrerade HoloLens- och Surface Hub-enheter i företagsportalappen för Android.
 
@@ -3574,7 +3574,7 @@ När profilen har pushats till enheten beror nästa steg på profilkonfiguration
 ### <a name="access-to-managed-app-logs-for-ios---1469920---"></a>Åtkomst till loggar för hanterade appar för iOS<!-- 1469920 -->
 Slutanvändare med Managed Browser installerad kan nu se hanteringsstatus för alla appar som har publicerats av Microsoft och kan skicka loggar för felsökning av hanterade iOS-appar.
 
-Om du vill lära dig att aktivera felsökningsläget i Managed Browser på en iOS-enhet kan du läsa [Komma åt loggar för hanterade appar med Managed Browser i iOS](../apps/app-configuration-managed-browser.md#how-to-access-to-managed-app-logs-using-the-managed-browser-on-ios).
+Om du vill lära dig att aktivera felsökningsläget i Managed Browser på en iOS-enhet kan du läsa [Komma åt loggar för hanterade appar med Managed Browser i iOS](../apps/app-configuration-managed-browser.md).
 
 ### <a name="improvements-to-device-setup-workflow-in-the-company-portal-for-ios-in-version-290---1417174---"></a>Förbättringar av arbetsflödet för enhetskonfiguration i företagsportalen för iOS i version 2.9.0<!-- 1417174 -->
 
@@ -4025,7 +4025,7 @@ Baserat på feedback från våra kunder har vi ändrat företagsportalappen för
 Baserat på användarfeedback har vi lagt till en ny menyåtgärd i företagsportalen för Android för att ta bort den från din enhet. Den här åtgärden tar bort enheten från Intune-hanteringen så att användaren kan ta bort appen från enheten. Du kan se dessa ändringar på sidan [Vad är nytt i appens gränssnitt](whats-new-app-ui.md) och i [bruksanvisningen för din Android-enhet](../user-help/unenroll-your-device-from-intune-android.md).
 
 ### <a name="improvements-to-app-syncing-with-windows-10-creators-update--676505--"></a>Förbättringar av appsynkronisering med Windows 10 Creators Update<!--676505-->
-Företagsportalen för Windows 10 kommer automatiskt att initiera en synkronisering för appinstallationsbegäranden för enheter med Windows 10 Creators Update (1703). Detta minskar problemen där appen fastnar vid tillståndet ”Väntar på synkronisering” när installationer utförs. Dessutom kommer användare att kunna initiera en synkronisering från appen manuellt. Du kan se dessa ändringar på sidan [Nyheter i appens användargränssnitt](whats-new-app-ui.md).
+Företagsportalen för Windows 10 kommer automatiskt att initiera en synkronisering för appinstallationsbegäranden för enheter med Windows 10 Creators Update (1709). Detta minskar problemen där appen fastnar vid tillståndet ”Väntar på synkronisering” när installationer utförs. Dessutom kommer användare att kunna initiera en synkronisering från appen manuellt. Du kan se dessa ändringar på sidan [Nyheter i appens användargränssnitt](whats-new-app-ui.md).
 
 ### <a name="new-guided-experience-for-windows-10-company-portal---1058938---"></a>Ny guidad upplevelse för Windows 10-företagsportalen<!---1058938--->
 Företagsportalappen för Windows 10 kommer att innehålla en guidad Intune-genomgång för enheter som inte har identifierats eller registrerats. Den nya guiden innehåller stegvisa anvisningar som hjälper användaren att utföra AAD-registrering (krävs för villkorliga åtkomstfunktioner) och MDM-registrering (krävs för enhetshanteringsfunktioner). Guiden kommer att vara tillgänglig på företagsportalens startsida. Användarna kan fortsätta att använda appen även om de inte slutför registreringen, men de får begränsad funktionalitet.

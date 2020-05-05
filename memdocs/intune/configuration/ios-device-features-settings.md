@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/25/2020
+ms.date: 04/27/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69ca92125728ec8fdac27c229f8aacc5c0ef29c0
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: af60c16c4a7c9d27409f82cfc53d5c345dfe1af0
+ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80359387"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82210266"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -97,7 +97,7 @@ Du kan lägga till upp till **sex** objekt (appar och mappar som kombineras) fö
 
     Apparna som du lägger till på en sida i en mapp ordnas från vänster till höger, och i samma ordning som i listan. Om du lägger till flera appar än vad som får plats på en sida, kommer apparna att flyttas till en annan sida.
 
-    - **Mappnamn**: Ange namnet på mappen. Namnet visas för användare på deras enhet.
+    - **Mappnamn**: Ange namnet på mappen. Namnet visas för användare på deras enheter.
     - **Lista över sidor**: **Lägg till** en sida och ange följande egenskaper:
 
       - **Sidnamn**: Ange ett namn för sidan. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på iOS-/iPadOS-enheten.
@@ -111,10 +111,10 @@ Du kan lägga till upp till **sex** objekt (appar och mappar som kombineras) fö
 
 #### <a name="example"></a>Exempel
 
-I följande exempel visar skärmen dock endast apparna Safari, Mail och Stocks. Mail-appen är markerad för att visa dess egenskaper:
+I följande exempel ser du dock apparna Safari, Mail och Stocks. Mail-appen är markerad för att visa dess egenskaper:
 
 > [!div class="mx-imgBorder"]
-> ![Exempel på inställningar för iOS/iPadOS-docka](./media/ios-device-features-settings/FfFiUcP.png)
+> ![Exempel på dockningsinställningar för startskärmen i iOS/iPadOS i Intune](./media/ios-device-features-settings/dock-screen-mail-app.png)
 
 När du tilldelar principen till en iPhone liknar dockan följande bild:
 
@@ -158,10 +158,15 @@ Du kan lägga till upp till **40** sidor på en enhet.
 
 #### <a name="example"></a>Exempel
 
-I följande exempel har en ny sida med namnet **Contoso** lagts till. Sidan visar apparna Hitta vänner och Inställningar. Inställningsappen är markerad för att visa dess egenskaper:
+I följande exempel har en ny sida med namnet **Contoso** lagts till. På den här sidan ser du apparna Find Friends och Settings:
 
 > [!div class="mx-imgBorder"]
-> ![Exempel på startskärmsinställningar för iOS/iPadOS i Intune](./media/ios-device-features-settings/Jc2OxyX.png)
+> ![Inställningar för layout av ny sida i iOS/iPadOS och exempel i Intune](./media/ios-device-features-settings/page-find-friends-settings-apps.png)
+
+Inställningsappen är markerad för att visa dess egenskaper:
+
+> [!div class="mx-imgBorder"]
+> ![Exempel på inställning av egenskaper i iOS/iPadOS i Intune](./media/ios-device-features-settings/page-settings-app-properties.png)
 
 När du tilldelar principen till en iPhone liknar sidan följande bild:
 
@@ -175,7 +180,7 @@ När du tilldelar principen till en iPhone liknar sidan följande bild:
 - **Lägg till**: Lägg till meddelanden för appar:
 
   > [!div class="mx-imgBorder"]
-  > ![Lägg till appmeddelande i iOS-/iPadOS-profil i Intune](./media/ios-device-features-settings/ios-macos-app-notifications.png)
+  > ![Lägg till appmeddelande i iOS-/iPadOS-profil i Intune](./media/ios-device-features-settings/ios-ipados-app-notifications.png)
 
   - **Appsamlings-ID**: Ange **Appsamlings-ID** för den app som du vill lägga till. Se [Samlings-ID för inbyggda iOS-/iPadOS-appar](bundle-ids-built-in-ios-apps.md) för några exempel.
   - **Appnamn**: Ange namnet på appen som du vill lägga till. Det här namnet används för din referens i administrationscentret för Microsoft Endpoint Manager. Det visas *inte* på enheter.
@@ -214,9 +219,11 @@ Den här funktionen gäller för:
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
-- **Användarnamnattribut från AAD**: Intune söker efter det här attributet för varje användare i Azure Active Directory. Intune fyller sedan i respektive fält (till exempel UPN) innan XML som installeras på enheten genereras. Alternativen är:
+- **Sfär**: Ange domändelen av URL:en. Ange till exempel `contoso.com`.
+- **Kerberos-huvudnamn**: Intune söker efter det här attributet för varje användare i Azure Active Directory. Intune fyller sedan i respektive fält (till exempel UPN) innan XML som installeras på enheten genereras. Alternativen är:
 
-  - **Användarens huvudnamn (UPN)** : UPN parsas på följande sätt:
+  - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard uppmanas användaren av operativsystemet att ange ett Kerberos-huvudnamn när profilen distribueras till enheter. Ett huvudnamn krävs för att MDM:er ska kunna installera SSO-profiler.
+  - **Användarens huvudnamn (UPN)** : Användarens huvudnamn (UPN) parsas på följande sätt:
 
     > [!div class="mx-imgBorder"]
     > ![Attributet SSO för iOS-/iPadOS-användarnamn i Intune](./media/ios-device-features-settings/User-name-attribute.png)
@@ -227,15 +234,22 @@ Den här funktionen gäller för:
 
   - **ID för Intune-enhet**: Intune väljer automatiskt ID:t för Intune-enheten.
 
-    Som standard behöver appar bara använda enhets-ID. Men om din app använder sfären och enhets-ID:t kan du skriva sfären i textrutan Sfär.
+    Som standard behöver appar bara använda enhets-ID. Men om din app använder sfären och enhets-ID:t kan du skriva sfären i textrutan **Sfär**.
 
     > [!NOTE]
     > Som standard bör du lämna området tomt om du använder enhets-ID.
 
   - **Enhets-ID för Azure Active Directory**
+  - **SAM-kontonamn**: Intune fyller i namnet för det lokala SAM-kontot (Security Account Manager).
 
-- **Sfär**: Ange domändelen av URL:en. Ange till exempel `contoso.com`.
-- **URL-prefix som används för enkel inloggning**: **Lägg till** URL:er i din organisation som kräver användarautentisering med enkel inloggning.
+
+- **Appar**: **Lägg till** appar på användarnas enheter som kan använda enkel inloggning.
+
+  Matrisen `AppIdentifierMatches` måste innehålla strängar som matchar appsamlings-ID:n. Dessa strängar kan vara exakta matchningar, till exempel `com.contoso.myapp`, eller så anger du en prefixmatchning för paket-ID:t med jokertecknet \*. Jokertecknet måste komma efter en punkt (.), och får bara förekomma en gång, i slutet av strängen såsom `com.contoso.*`. När ett jokertecken används beviljas alla appar vars samlings-ID börjar med prefixet åtkomst till kontot.
+
+  Använd **appnamn** för att ange ett användarvänligt namn som hjälper dig att identifiera paket-ID:t.
+
+- **Webbadressprefix**: **Lägg till** URL:er i din organisation som kräver användarautentisering med enkel inloggning.
 
   När en användare exempelvis ansluter till någon av dessa platser använder iOS-/iPadOS-enheten autentiseringsuppgifterna för enkel inloggning. Användaren behöver inte ange ytterligare autentiseringsuppgifter. Om multifaktorautentisering är aktiverat måste användarna ange en autentisering till.
 
@@ -246,13 +260,7 @@ Den här funktionen gäller för:
 
   Mönstren `http://.com` och `https://.com` matchar alla HTTP- respektive HTTPS-adresser.
 
-- **Appar som ska använda enkel inloggning**: **Lägg till** appar på användarnas enheter som kan använda enkel inloggning.
-
-  Matrisen `AppIdentifierMatches` måste innehålla strängar som matchar appsamlings-ID:n. Dessa strängar kan vara exakta matchningar, till exempel `com.contoso.myapp`, eller så anger du en prefixmatchning för paket-ID:t med jokertecknet \*. Jokertecknet måste komma efter en punkt (.), och får bara förekomma en gång, i slutet av strängen såsom `com.contoso.*`. När ett jokertecken används beviljas alla appar vars samlings-ID börjar med prefixet åtkomst till kontot.
-
-  Använd **appnamn** för att ange ett användarvänligt namn som hjälper dig att identifiera paket-ID:t.
-
-- **Förnyelsecertifikat för autentiseringsuppgifter**: Om du använder certifikat för autentisering (inte lösenord), väljer du det befintliga SCEP- eller PFX-certifikatet som autentiseringscertifikat. Vanligtvis är det här certifikatet samma certifikat som distribueras till användaren för andra profiler, till exempel VPN, Wi-Fi eller e-post.
+- **Förnyelse av certifikat**: Om du använder certifikat för autentisering (inte lösenord), väljer du det befintliga SCEP- eller PFX-certifikatet som autentiseringscertifikat. Vanligtvis är det här certifikatet samma certifikat som distribueras till användaren för andra profiler, till exempel VPN, Wi-Fi eller e-post.
 
 ## <a name="web-content-filter"></a>Webbinnehållsfilter
 
@@ -288,37 +296,24 @@ Den här funktionen gäller för:
 
 - **Typ av SSO-apptillägg**: Välj typ av SSO-apptillägg. Alternativen är:
 
-  - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard använder operativsystemet inte alltid apptillägg. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
-  - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
+  - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard använder operativsystemet inte apptillägg. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
+  - **Microsoft Azure AD**: Använder Microsoft Enterprise SSO-plugin-programmet, som är ett SSO-apptillägg av omdirigeringstyp. Det här plugin-programmet ger enkel inloggning för Active Directory-konton i alla program som har stöd för [Apples Enterprise-funktion för enkel inloggning](https://developer.apple.com/documentation/authenticationservices). Använd denna typ av SSO-apptillägg för att aktivera SSO på Microsoft-appar, organisationsappar och webbplatser som autentiseras med hjälp av Azure AD.
 
-    På iOS/iPad 13.0-enheter och senare kan du konfigurera **Microsoft Azure AD SSO-apptillägg** med den här typen av typ av SSO-apptillägg för omdirigering. Microsoft Azure AD-tillägget möjliggör enkel inloggning mellan Microsoft-appar och organisationsappar som använder Azure AD för autentisering. Azure AD-tillägget fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som tidigare hade en asynkron autentisering med Microsoft Authenticator-appen fortsätter att få SSO med SSO-tillägget. Azure AD SSO-tillägget stöder ännu inte webbläsar-SSO. Mer information om SSO och iOS/iPad Authentication Broker finns i [Konfigurera SSO på macOS och iOS/iPad](https://docs.microsoft.com/azure/active-directory/develop/single-sign-on-macos-ios).  
-
-    **Konfigurera iOS Microsoft Azure AD-tillägget:**
-
-    1. Ställ in **SSO-apptilläggstyp** på **Omdirigera**.
-    2. Ställ in **Tilläggs-ID** på `com.microsoft.azureauthenticator.ssoextension`.
-    3. Ställ in **Team-ID** på `SGGM6D27TK`.
-    4. Ange följande URL:er i inställningen **URL:er**:
-
-        - `https://login.microsoftonline.com`
-        - `https://login.windows.net`
-        - `https://login.microsoft.com`
-        - `https://sts.windows.net`
-        - `https://login.partner.microsoftonline.cn`
-        - `https://login.chinacloudapi.cn`
-        - `https://login.microsoftonline.de`
-        - `https://login.microsoftonline.us`
-        - `https://login.usgovcloudapi.net`
-        - `https://login-us.microsoftonline.com`
+    Plugin-programmet för enkel inloggning fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som tidigare hade en asynkron autentisering med Microsoft Authenticator-appen fortsätter att få SSO med [Microsoft Enterprise SSO-plugin-programmet för Apple-enheter](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin).
 
     > [!IMPORTANT]
-    > Om du vill uppnå enkel inloggning med iOS/iPad Microsoft Azure AD-tillägget, måste du först installera iOS/iPad Microsoft Authenticator-appen på enheterna. Authenticator förser enheterna med Azure AD-tillägget, och inställningarna för MDM SSO-apptillägget aktiverar Azure AD-tillägget. När Authenticator och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen.
+    > Om du vill uppnå enkel inloggning med tilläggstypen för Microsoft Azure AD SSO-appen, måste du först installera Microsoft Authenticator-appen för iOS/iPad på enheterna. Authenticator-appen levererar Microsoft Enterprise SSO-plugin-programmet till enheter, och tilläggsinställningarna för MDM SSO-appen aktiverar plugin-programmet. När Authenticator och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session på sina enheter. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen. Mer information om Authenticator finns i [What is the Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-overview) (vad är Microsoft Authenticator-appen).
 
+  - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
   - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill använda SSO med autentiseringsflöden med anrop och svar. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
   - **Kerberos**: Använd Apples inbyggda Kerberos-tillägg som ingår i iOS 13.0 och iPadOS 13.0 eller senare. Det här alternativet är en Kerberos-specifik version av apptillägget **Autentiseringsuppgifter**.
 
   > [!TIP]
   > Med hjälp av typerna **Omdirigering** och **Autentiseringsuppgifter** lägger du till dina egna konfigurationsvärden för att gå igenom tillägget. Om du använder **Autentiseringsuppgifter** bör du överväga att använda inbyggda konfigurationsinställningar från Apple i **Kerberos**-typen.
+
+- **Läget Delad enhet** (endast Microsoft Azure AD): Välj **Aktivera** om du ska distribuera Microsoft Enterprise SSO-plugin-programmet till iOS/iPad-enheter som konfigurerats för Azure AD:s funktion för läget Delad enhet. Enheter i delat läge gör det möjligt för många användare att logga in och ut globalt på program som stöder läget Delad enhet. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. Som standard är iOS/iPad-enheter inte avsedda att delas mellan flera användare.
+
+  Mer information om läget Delad enhet och hur du aktiverar det finns i [Overview of shared device mode](https://docs.microsoft.com/azure/active-directory/develop/msal-shared-devices) (översikt över läget Delad enhet) och [Shared device mode for iOS devices](https://docs.microsoft.com/azure/active-directory/develop/msal-ios-shared-devices) (läget Delad enhet för iOS-enheter).  
 
 - **Tilläggs-ID** (omdirigering och autentiseringsuppgift): Ange det paket-ID som identifierar ditt SSO-apptillägg, exempelvis `com.apple.extensiblesso`.
 
@@ -336,16 +331,16 @@ Den här funktionen gäller för:
 - **URL:er** (endast omdirigering): Ange URL-prefixen för dina identitetsprovidrar för vilkas räkning apptillägget för omdirigering använder SSO. När användarna omdirigeras till dessa URL:er ingriper SSO-apptillägget och framtvingar SSO.
 
   - Alla URL:er i Intune-apptilläggsprofilerna för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken SSO-apptilläggsprofil som helst, även om du använder olika typer av SSO-tillägg.
-  - URL:erna måste inledas med http://eller https://.
+  - URL:erna måste inledas med `http://` eller `https://`.
 
-- **Ytterligare konfiguration** (omdirigering och autentiseringsuppgift): Ange ytterligare tilläggsspecifika data som ska skickas till SSO-apptillägget:
+- **Ytterligare konfiguration** (Microsoft Azure AD, omdirigering och autentiseringsuppgift): Ange ytterligare tilläggsspecifika data som ska skickas till SSO-apptillägget:
   - **Nyckel**: Ange namnet på det objekt som du vill lägga till, t.ex. `user name`.
   - **Typ**: Ange datatyp. Alternativen är:
 
     - Sträng
     - Boolesk: I **Konfigurationsvärde** anger du `True` eller `False`.
     - Heltal: Ange ett tal i **Konfigurationsvärde**.
-    
+
   - **Värde**: Ange data.
 
   - **Lägg till**: Välj om du vill lägga till dina konfigurationsnycklar.

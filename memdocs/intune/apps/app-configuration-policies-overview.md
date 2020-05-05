@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/06/2020
+ms.date: 04/22/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e5abdfe69d5553be420d96da60f34df93a6b2f4
-ms.sourcegitcommit: 017b93345d8d8de962debfe3db5fc1bda7719079
+ms.openlocfilehash: f4dd0b1702b06f3efbed07a70b13a59b271816f8
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80083678"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023018"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Appkonfigurationsprinciper för Microsoft Intune
 
@@ -72,6 +72,20 @@ Val av **Hanterade appar** som **Enhetsregistreringstyp** syftar specifikt på a
 
 > [!NOTE]
 > För appar med flera identiteter, till exempel Microsoft Outlook, kan användarinställningar beaktas. Prioriterad inkorg, till exempel, respekterar användarinställningen och ändrar inte konfigurationen. Andra parametrar gör det möjligt att kontrollera huruvida en användare kan ändra inställningen. Mer information finns i [Distribuera appkonfigurationsinställningar för Outlook för iOS/iPadOS och Android](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+
+## <a name="android-app-configuration-policies"></a>Konfigurationsprinciper för Android-appar
+
+För konfigurationsprinciper för Android-appar kan du välja typ av enhetsregistrering innan du skapar en konfigurationsprofil för appar. Du kan redovisa certifikatprofiler som baseras på registreringstyp (arbetsprofil eller enhetsägare). Den här uppdateringen innehåller följande:
+
+1. Om en ny profil skapas och arbetsprofil och enhetsägarprofil väljs som enhetsregistreringstyp kan du inte associera en certifikatprofil med appkonfigurationsprincipen.
+2. Om en ny profil skapas och Endast arbetsprofil har valts kan de certifikatprinciper för arbetsprofil som skapats under Enhetskonfiguration användas.
+3. Om en ny profil skapas och Endast enhetens ägare har valts kan de certifikatprinciper för enhetsägare som skapats under Enhetskonfiguration användas. 
+4. Om du distribuerar en Gmail- eller Nine-konfigurationsprofil till en dedikerad Android Enterprise-enhet som inte involverar en användare misslyckas det eftersom Intune inte kan matcha användaren.
+
+> [!IMPORTANT]
+> För de befintliga principer som skapats före lanseringen av den här funktionen (april 2020, version 2004) och som inte har några associerade certifikatprofiler, används som standard arbetsprofil och enhetsägarprofil som enhetsregistreringstyp. Även för de befintliga principer som skapats före lanseringen av den här funktionen och som har associerade certifikatprofiler, används som standard endast arbetsprofil.
+> 
+> Befintliga principer kan inte åtgärda eller utfärda nya certifikat.
 
 ## <a name="validate-the-applied-app-configuration-policy"></a>Verifiera den tillämpade appkonfigurationsprincipen
 
@@ -149,7 +163,7 @@ Du kan verifiera iOS/iPadOS-konfigurationen med **Intune-diagnostikloggen** på 
 
 ### <a name="android-configuration-on-managed-devices"></a>Android-konfiguration på hanterade enheter
 
-Du kan verifiera iOS/iPadOS-konfigurationen med **Intune-diagnostikloggen** på hanterade enheter för konfiguration av hanterade appar.
+Du kan verifiera Android-konfigurationen med **Intune-diagnostikloggen** på hanterade enheter för konfiguration av hanterade appar.
 
 Om du vill samla in loggar från en Android-enhet måste du eller slutanvändaren ladda ned loggarna från enheten via en USB-anslutning (eller motsvarigheten till **Utforskaren** på enheten). Här är stegen:
 

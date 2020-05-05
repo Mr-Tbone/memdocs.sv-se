@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82b9dd1db3bd625f21dcdbf2df375f5b8612e74a
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: db9164d68783356faf01fe4fc4e8d74f2a4b0869
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80327228"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023358"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -32,7 +32,7 @@ ms.locfileid: "80327228"
 
 Du kan konfigurera Intune för att registrera iOS/iPadOS-enheter som köpts via [automatisk enhetsregistrering (ADE)](https://deploy.apple.com) (tidigare programmet för enhetsregistrering) från Apple. Med Automatisk enhetsregistrering kan du konfigurera ett stort antal enheter utan att behöva röra dem. Enheter som iPhones, iPads och MacBooks kan levereras direkt till användarna. När användaren sätter på enheten körs installationsassistenten, som innehåller vanliga funktioner för Apple-produkter, med de förkonfigurerade inställningarna och enheten registreras i hanteringen.
 
-Om du vill aktivera ADE använder du både Intune-portalen och [Apple Business Manager (ABM)](https://business.apple.com/)- eller [Apple School Manager (ASM)](https://school.apple.com/)-portalen. En lista med serienummer eller inköpsordernummer krävs för att du ska kunna tilldela enheter till Intune för hantering i någon av dessa Apple-portaler. Du kan skapa ADE-registreringsprofiler i Intune med inställningar som tillämpas på enheterna under registreringen. Observera att ADE inte kan användas med ett konto för [enhetsregistreringshanterare](device-enrollment-manager-enroll.md).
+Om du vill aktivera ADE använder du både Intune-portalen och [Apple Business Manager (ABM)](https://business.apple.com/)- eller [Apple School Manager (ASM)](https://school.apple.com/)-portalen. En lista med serienummer eller inköpsordernummer krävs för att du ska kunna tilldela enheter till Intune för hantering i någon av dessa Apple-portaler. Du kan skapa ADE-registreringsprofiler i Intune med inställningar som tillämpas på enheterna under registreringen. ADE kan inte användas med ett konto för [enhetsregistreringshanterare](device-enrollment-manager-enroll.md).
 
 > [!NOTE]
 > ADE ställer in enhetskonfigurationer som inte alltid kan tas bort av slutanvändaren. Enheten måste därför rensas före [migreringen till ADE](../fundamentals/migration-guide-considerations.md) så att den återställs till dess ursprungliga tillstånd (fabriksinställningarna).
@@ -52,7 +52,7 @@ Om du vill att företagsportalen ska uppdateras automatiskt och erbjuda appen F�
 
 Apple införde övervakat läge i iOS/iPadOS 5. En iOS/iPadOS-enhet i övervakat läge kan hanteras med fler kontroller, exempelvis kontroller som blockerar skärmdumpar eller installation av appar från App Store. Det är därför användbart för företagsägda enheter. Intune har stöd för konfigurering av enheter för övervakat läge som en del av ADE.
 
-Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11 och senare bör ADE-konfigurerade enheter alltid övervakas. Flaggan ADE *is_supervised* ignoreras i en framtida iOS/iPadOS-version.
+Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11 och senare bör ADE-konfigurerade enheter alltid övervakas. Flaggan ADE *is_supervised* ignoreras från och med iOS/iPadOS-version 13.0. Alla iOS/iPad-enheter med version 13.0 eller senare övervakas automatiskt när de registreras för automatisk enhetsregistrering. 
 
 <!--
 **Steps to enable enrollment programs from Apple**
@@ -66,6 +66,13 @@ Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11
 - Enheter som köpts i [Apples ADE](https://deploy.apple.com)
 - [Utfärdare för hantering av mobil enhet (MDM)](../fundamentals/mdm-authority-set.md)
 - [Apple MDM-pushcertifikat](apple-mdm-push-certificate-get.md)
+
+## <a name="supported-volume"></a>Volym som stöds
+
+- Högsta antalet registreringsprofiler per token: 1,000  
+- Högsta antalet automatiserade enhetsregistreringsenheter per profil: ingen begränsning (inom det högsta antalet enheter per token)
+- Högsta antalet automatiserade enhetsregistreringstoken per Intune-konto: 2,000
+- Högsta antalet automatiserade enhetsregistreringsenheter per token: 75 000
 
 ## <a name="get-an-apple-ade-token"></a>Hämta en Apple ADE-token
 
@@ -84,8 +91,8 @@ Du kan också skapa en token med [Apple Business Manager (ABM)](https://business
 
 2. Välj **Jag godkänner** för att ge Microsoft behörighet att skicka information om användare och enhet till Apple.
 
-> [!NOTE]
-> När du kommit förbi steg 2 och ska ladda ned certifikatet för den offentliga Intune-nyckeln, ska du inte stänga guiden eller navigera från sidan. Om du gör det ogiltigförklaras certifikatet du har laddat ned. I så fall måste du utföra den här processen på nytt. Då blir också knappen **Skapa** och fliken **Granska + skapa** nedtonad, och du kan inte slutföra processen.
+   > [!NOTE]
+   > När du kommit förbi steg 2 och ska ladda ned certifikatet för den offentliga Intune-nyckeln, ska du inte stänga guiden eller navigera från sidan. Om du gör det ogiltigförklaras det certifikat som du har laddat ned. I så fall måste du utföra den här processen på nytt. Då blir även knappen **Skapa** på fliken **Granska + skapa** nedtonad, och du kan inte slutföra processen.
 
    ![Skärmbild av rutan Registreringsprogramtoken i arbetsytan för Apple-certifikat. Nedladdning av offentlig nyckel.](./media/device-enrollment-program-enroll-ios/add-enrollment-program-token-pane.png)
 
@@ -122,7 +129,7 @@ I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?lin
 
 ### <a name="step-4-upload-your-token-and-choose-scope-tags"></a>Steg 4. Ladda upp din token och välj omfångstaggar.
 
-1. I rutan **Apple-token** bläddrar du till certifikatfilen (.pem) och väljer **Öppna**.
+1. I rutan **Apple-token** bläddrar du till certifikatfilen (.p7m) och väljer **Öppna**.
 2. Om du vill tillämpa [omfångstaggar](../fundamentals/scope-tags.md) på denna DEP-token, väljer du **Omfång (taggar)** och de omfångstaggar som du vill använda. Omfångstaggar som tillämpas på en token ärvs av profiler och enheter som läggs till i den.
 3. Välj **Skapa**.
 
@@ -141,14 +148,15 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 
     ![Skärmbild av Skapa en profil.](./media/device-enrollment-program-enroll-ios/image04.png)
 
-3. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
+3. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. För enheter som har registrerats med automatisk enhetsregistrering och User Affinity kan policyer levereras snabbast till enheterna via inriktning på AAD-användargrupper där den registrerade användaren är medlem. Om du riktar in program och policyer mot dynamiska grupper baserat på registreringsprofilerna sker viss fördröjning för enheterna när registreringsflödet har slutförts.
+Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
 
     ![Profilnamn och beskrivning.](./media/device-enrollment-program-enroll-ios/image05.png)
 
 4. Välj **Nästa: Enhetshanteringsinställningar**.
 
 5. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
-    - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda Intune-företagsportalappen för tjänster som installation av appar. Om du använder ADFS och registreringsprofilen har **Autentisera med företagsportalen i stället för installationsassistenten** inställt på **Nej**, krävs [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints) [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
+    - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda Intune-företagsportalappen för tjänster som installation av appar. Om du använder ADFS och installationsassistenten för att autentisera krävs [WS-Trust 1.3-användarnamn/blandad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints) [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
 
     - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här alternativet för enheter som inte kommer åt lokala användardata. Appar som Företagsportal fungerar inte.
 
@@ -197,10 +205,15 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 
 10. Välj om du vill ha låst registrering för enheter som använder den här profilen. **Låst registrering** inaktiverar iOS/iPadOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Inställningar**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten. Sådana enheter måste ha hanteringsläget **Övervakad** inställt på *Ja*. 
 
+    > [!NOTE]
+    > När enheten har registrerats med **Låst registrering** kommer användarna inte att kunna använda **Ta bort enhet** eller **Fabriksåterställning** i Företagsportal-appen. Alternativen kommer inte att vara tillgängliga för användarna. Användarna kan inte heller ta bort enheten på Företagsportal-webbplatsen (https://portal.manage.microsoft.com).
+    > Om en BYOD-enhet konverteras till en automatiserad Apple-enhetsregistreringsenhet och registreras med en profil som aktiverats för **låst registrering** kan användare använda **Ta bort enhet** och **Fabriksåterställning** i 30 dagar. Därefter inaktiveras alternativen eller blir otillgängliga. Referens: https://help.apple.com/configurator/mac/2.8/#/cad99bc2a859.
+
 11. Välj om du vill att enheter som använder den här profilen ska kunna **Synkronisera med datorer**. Om du väljer **Tillåt Apple Configurator efter certifikat** måste du välja ett certifikat under **Apple Configurator-certifikat**.
 
      > [!NOTE]
-     > Om **Synkronisera med datorer** har angetts till **Neka alla**, är porten begränsad på iOS-och iPad-enheter. Porten kan bara användas för laddning och inget annat. Porten blockeras från att använda iTunes eller Apple Configurator.
+     > Om **Synkronisera med datorer** har angetts till **Neka alla**, är porten begränsad på iOS-och iPad-enheter. Porten kan bara användas för laddning och inget annat. Porten kommer att blockeras från att använda iTunes eller Apple Configurator 2.
+     Om **Synkronisera med datorer** anges till **Tillåt Apple Configurator efter certifikat** ska du spara en lokal kopia av certifikatet som du kan använda senare. Du kan inte göra ändringar i den uppladdade kopian. Det är viktigt att behålla det här certifikatet så att det är tillgängligt i framtiden. 
 
 12. Om du väljer **Tillåt Apple Configurator efter certifikat** i föregående steg, väljer du ett Apple Configurator-certifikat att importera.
 
@@ -287,7 +300,7 @@ Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregi
 ## <a name="renew-an-ade-token"></a>Förnya en ADE-token  
 
 > [!NOTE]
-> Förutom att förnya din ADE-token varje år måste du också förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager eller om användaren lämnar din Apple Business Manager-organisation.
+> Utöver att förnya din ADE-token varje år behöver du även förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager, eller om användaren lämnar din Apple Business Manager-organisation.
 
 1. Gå till business.apple.com.  
 2. Under **Hantera servrar**, väljer du din MDM-server som är associerad med den tokenfil som du vill förnya.
@@ -305,3 +318,15 @@ Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregi
 8. Överför den nyligen hämtade token.  
 9. Välj **Förnya token**. Du får se en bekräftelse att token har förnyats.   
     ![Skärmbild av bekräftelse.](./media/device-enrollment-program-enroll-ios/confirmation.png)
+
+## <a name="delete-an-ade-token-from-intune"></a>Ta bort en ADE-token från Intune
+
+Du kan ta bort token för registreringsprofiler från Intune förutsatt att
+- inga enheter har tilldelats till token
+- inga enheter har tilldelats till standardprofilen
+
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/macOS** > **iOS/macOS-registrering** > **Token för registreringsprogram** > välj token > **Enheter**.
+2. Ta bort alla enheter som är tilldelade till token.
+3. Gå till **Enheter** > **iOS/macOS** > **iOS/macOS-registrering** > **Token för registreringsprogram** > välj token > **Profiler**.
+4. Om det finns en standardprofil tar du bort den.
+5. Gå till **Enheter** > **iOS/macOS** > **iOS/macOS-registrering** > **Token för registreringsprogram** > välj token > **Ta bort**.

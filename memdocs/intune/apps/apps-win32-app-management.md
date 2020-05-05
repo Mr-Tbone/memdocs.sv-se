@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee632901162042f7d777043e6700b796b4badf58
-ms.sourcegitcommit: 9145a5b3b39c111993e8399a4333dd82d3fe413c
+ms.openlocfilehash: 8d1933350675a0d36042d1a4bd1e6a26c9a95814
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80620616"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254613"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Fristående Intune – Win32-apphantering
 
@@ -357,6 +357,11 @@ Dessutom visar företagsportalappen ytterligare statusmeddelanden för appinstal
 ## <a name="set-win32-app-availability-and-notifications"></a>Ange tillgänglighet och meddelanden för Win32-appen
 Du kan konfigurera starttid och tidsgräns för en Win32-app. Vid starttiden börjar Intune-hanteringstillägget ladda ned och cachelagra appinnehållet för den avsikt som krävs. Appen installeras vid tiden för tidsgränsen. För tillgängliga appar anger starttiden när appen är synlig i företagsportalen och innehållet laddas ned när slutanvändaren begär appen från företagsportalen. Du kan också aktivera en respitperiod för omstart. 
 
+> [!IMPORTANT]
+> Inställningen **Tidsgräns för omstart** i avsnittet **Tilldelning** gäller bara när **Omstartsbeteende** i avsnittet **Program** har angetts till något av följande alternativ:
+> - **Bestäm beteende baserat på returkoder**
+> - **Intune tvingar fram obligatorisk omstart av enhet**
+
 Så här anger du appens tillgänglighet baserat på datum och tid för en app som krävs:
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
@@ -405,6 +410,8 @@ Agentloggar på klientdatorn finns vanligtvis i `C:\ProgramData\Microsoft\Intune
 > **På X86-klientdatorer**:<br>
 > *C:\Program Files\Microsoft Intune Management Extension\Content*<br>
 > *C:\windows\IMECache*
+>
+> Mer information finns i [Rekommendationer om virusgenomsökning för företagsdatorer som kör versioner av Windows som för närvarande stöds](https://support.microsoft.com/help/822158/virus-scanning-recommendations-for-enterprise-computers).
 
 ### <a name="detecting-the-win32-app-file-version-using-powershell"></a>Identifiera versionen för Win32-appfilen med hjälp av PowerShell
 

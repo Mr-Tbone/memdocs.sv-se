@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/06/2020
+ms.date: 04/14/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,16 +17,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a533344b72952098403fae0ebcabbcad473684a
-ms.sourcegitcommit: db511e03f14e6120968b60def8990485eb42529b
+ms.openlocfilehash: 16c086295b93b72ef2f9cfbd2d6a15d6bb54f320
+ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80611724"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82183025"
 ---
 # <a name="frequently-asked-questions-about-mam-and-app-protection"></a>Vanliga frågor och svar om MAM och appskydd
 
 Den här artikeln ger svar på några vanliga frågor om Intune MAM (Mobile Application Management) och appskyddet i Intune.
+
 
 ## <a name="mam-basics"></a>Grundläggande om MAM
 
@@ -34,13 +35,14 @@ Den här artikeln ger svar på några vanliga frågor om Intune MAM (Mobile Appl
 Med [Intune mobile application management](app-lifecycle.md) avses den svit av Intune-hanteringsfunktioner som låter dig publicera, pusha, konfigurera, skydda, övervaka och uppdatera mobilappar för dina användare.
 
 **Vilka är fördelarna med appskyddet i MAM?**<br></br>
-MAM skyddar företagets data inom ett program. Med MAM utan registrering (MAM-WE), kan en arbets- eller skolrelaterad app som innehåller känsliga data hanteras på nästan alla enheter, inklusive personliga enheter i BYOD-scenarier (Bring Your Own Device). Många produktivitetsappar, till exempel Microsoft Office-apparna, kan hanteras av Intune MAM. Se listan över officiella [Intune-hanterade appar](https://www.microsoft.com/cloud-platform/microsoft-intune-apps) tillgängliga för allmänt bruk.
+MAM skyddar företagets data inom ett program. Med MAM utan registrering (MAM-WE), kan en arbets- eller skolrelaterad app som innehåller känsliga data hanteras på nästan alla enheter, inklusive personliga enheter i BYOD-scenarier (Bring Your Own Device).
+ Många produktivitetsappar, till exempel Microsoft Office-apparna, kan hanteras av Intune MAM. Se listan över officiella [Intune-hanterade appar](https://www.microsoft.com/cloud-platform/microsoft-intune-apps) tillgängliga för allmänt bruk.
 
 **Vilka enhetskonfigurationer har MAM stöd för?**<br></br>
 Intune MAM stöder två konfigurationer:
-- **Intune MDM + MAM**: IT-administratörer kan bara hantera appar med hjälp av MAM och appskyddsprinciper på enheter som registreras med Intune mobile device management (MDM). För att hantera appar med hjälp av MDM + MAM, ska kunder använda Intune-konsolen i Azure-portalen på https://portal.azure.com.
+- **Intune MDM + MAM**: IT-administratörer kan bara hantera appar med hjälp av MAM och appskyddsprinciper på enheter som registreras med Intune mobile device management (MDM). För att hantera appar med hjälp av MDM + MAM ska kunderna använda [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-- **MAM utan enhetsregistrering**: Med MAM utan enhetsregistrering, eller MAM-WE, kan IT-administratörer hantera appar med hjälp av MAM och appskyddsprinciper på enheter som inte har registrerats med Intune MDM. Detta innebär att appar kan hanteras av Intune på enheter som registrerats med tredje parts EMM-leverantörer. För att hantera appar med hjälp av MAM-WE, ska kunder använda Intune-konsolen i Azure-portalen på [https://portal.azure.com](https://portal.azure.com). Appar kan också hanteras av Intune på enheter som har registrerats med tredje parts-leverantörer av Enterprise Mobility Management (EMM) eller inte har registrerats alls med MDM.
+- **MAM utan enhetsregistrering**: Med MAM utan enhetsregistrering, eller MAM-WE, kan IT-administratörer hantera appar med hjälp av MAM och appskyddsprinciper på enheter som inte har registrerats med Intune MDM. Detta innebär att appar kan hanteras av Intune på enheter som registrerats med tredje parts EMM-leverantörer. För att hantera appar med hjälp av MAM + WE ska kunderna använda [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Appar kan också hanteras av Intune på enheter som har registrerats med tredje parts-leverantörer av Enterprise Mobility Management (EMM) eller inte har registrerats alls med MDM.
 
 
 ## <a name="app-protection-policies"></a>Appskyddsprinciper
@@ -54,6 +56,7 @@ Se [Inställningar för Android-appskyddsprinciper](app-protection-policy-settin
 **Är det möjligt att tillämpa både MDM- och MAM-principer på samma användare på samma gång för olika enheter? Till exempel, om en användare kan komma åt sina arbetsresurser från sin egen MAM-aktiverade dator, men kommer kan komma till jobbet och använda en Intune MDM-hanterad enhet. Finns det några förbehåll med den här idén?**<br></br>
 Om du tillämpar en MAM-princip för användaren utan att ange enhetens tillstånd kommer användaren att få MAM-principen på både BYOD-enheten och den Intune-hanterade enheten. Du kan också tillämpa en MAM-princip som baseras på det hanterade tillståndet. Så när du skapar en appskyddsprincip väljer du Nej bredvid Rikta till alla typer av appar. Gör sedan något av följande:
 - Tillämpa en mindre strikt MAM-princip på Intune-hanterade enheter och tillämpa en mer begränsande MAM-princip på enheter som inte är MDM-registrerade.
+-   Använd en lika strikt MAM-princip för Intune-hanterade enheter som för hanterade enheter från tredje part.
 - Tillämpa bara en MAM-princip på oregistrerade enheter.
 
 Mer information finns i [Så här övervakar du appskyddsprinciper](app-protection-policies-monitor.md).
@@ -69,7 +72,8 @@ Alla appar som har integrerats med [Intune App-SDK](../developer/app-sdk.md) ell
 
 - Slutanvändaren måste ha en licens för Microsoft Intune som tilldelats deras Azure Active Directory-konto. Se [Hantera Intune-licenser](../fundamentals/licenses-assign.md) för information om hur du tilldelar Intune-licenser till slutanvändare.
 
-- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål. Appskyddsprinciper kan skapas och distribueras i Intune-konsolen i [Azure-portalen](https://portal.azure.com). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
+- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål.
+ Appskyddsprinciper kan skapas och distribueras i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
 
 - Slutanvändaren måste logga in på appen med sitt AAD-konto.
 
@@ -78,7 +82,7 @@ Alla appar som har integrerats med [Intune App-SDK](../developer/app-sdk.md) ell
 Intune SDK-utvecklingsteamet testar och underhåller aktivt stödet för appar som skapats med de ursprungliga Android-, iOS/iPadOS- (Obj-C, Swift), Xamarin- och Xamarin.Forms-plattformarna. Även om vissa kunder har lyckats integrera Intune SDK med andra plattformar som React Native och NativeScript, tillhandahåller vi inte någon uttrycklig vägledning eller några plugin-program för apputvecklare som använder något annat än våra stödda plattformar.
 
 **Har Intune APP SDK stöd för Microsoft Authentication Library (MSAL) eller sociala konton?**<br></br>
-Intune APP SDK använder vissa avancerade ADAL-funktioner för både första- och tredjepartsversionerna av SDK:n. Därför fungerar MSAL inte bra ihop med många av våra grundläggande scenarier, till exempel autentisering till tjänsten Intune-appskydd och villkorlig start. Eftersom den allmänna instruktionen från Microsoft Identity-teamet är att gå över till MSAL för alla Microsoft Office-appar kommer Intune SDK så småningom att behöva stödja detta, men det finns inga planer på det idag.
+Intune App SDK kan använda antingen Azure Active Directory Authentication Library eller Microsoft Authentication Library för scenarierna med autentisering och villkorlig start. Den förlitar sig även på ADAL/MSAL för att registrera användarens identitet i MAM-tjänsten för hantering utan enhetsregistreringsscenarier.
 
 **Vilka är de ytterligare krav som ställs för användning av [Outlook-mobilappen](https://products.office.com/outlook)?**
 
@@ -91,7 +95,7 @@ Intune APP SDK använder vissa avancerade ADAL-funktioner för både första- oc
 
 **Vilka är de ytterligare kraven för att använda [Word-, Excel- och PowerPoint](https://products.office.com/business/office)-apparna?**
 
-- Slutanvändaren måste ha en licens för [Office 365 Business eller Enterprise](https://products.office.com/business/compare-more-office-365-for-business-plans) som länkats till deras Azure Active Directory-konto. Prenumerationen måste inkludera Office-apparna på mobila enheter och kan inkludera ett molnlagringskonto med [OneDrive för företag](https://onedrive.live.com/about/business/). Office 365-licenser kan tilldelas i [Microsoft 365-administrationscentret](https://admin.microsoft.com) med hjälp av följande [instruktioner](https://support.office.com/article/Assign-or-remove-licenses-for-Office-365-for-business-997596b5-4173-4627-b915-36abac6786dc).
+- Slutanvändaren måste ha en licens för [Microsoft 365 for business eller enterprise](https://products.office.com/business/compare-more-office-365-for-business-plans) som länkats till Azure Active Directory-kontot. Prenumerationen måste inkludera Office-apparna på mobila enheter och kan inkludera ett molnlagringskonto med [OneDrive för företag](https://onedrive.live.com/about/business/). Office 365-licenser kan tilldelas i [Microsoft 365-administrationscentret](https://admin.microsoft.com) med hjälp av följande [instruktioner](https://support.office.com/article/Assign-or-remove-licenses-for-Office-365-for-business-997596b5-4173-4627-b915-36abac6786dc).
 
 - Slutanvändaren måste ha en hanterad plats som konfigurerats med detaljerade spara som-funktioner under inställningen för programskyddsprincipen ”Spara kopior av organisationsdata”. Om den hanterade platsen till exempel är OneDrive, ska [OneDrive](https://onedrive.live.com/about/)-appen vara konfigurerad i slutanvändarens Word-, Excel- eller PowerPoint-app.
 
@@ -110,6 +114,7 @@ Se licenskraven för [Skype för företag](https://products.office.com/skype-for
 
 **Vad är stöd för flera identiteter?**<br></br>
 Stöd för flera identiteter är möjligheten för Intune App SDK att bara tillämpa appskyddsprinciper på arbets- eller skolkontot som använts för inloggning i appen. Om ett personligt konto är inloggat i appen ändras inga data.
+
 
 **Vad är syftet med stöd för flera identiteter?**<br></br>
 Stöd för flera identiteter gör att appar med både företags- och konsumentanvändare (t.ex. Office-appar) kan släppas offentligt med Intunes appskyddsfunktioner för företagets konton.
@@ -140,7 +145,7 @@ Intune PIN-koden fungerar enligt en inaktivitetsbaserad timer (värdet för Kont
 
 - **Hur skyddar Intune PIN-koden mot nyckelsökningsattacker?**<br></br> Som en del av appens PIN-princip kan IT-administratören ange det maximala antalet gånger som en användare kan försöka att autentisera sin PIN-kod innan appen blir låst. När antalet försök har uppfyllts kan Intune App SDK rensa företagets data i appen.
   
-- **Varför måste jag ange en PIN-kod två gånger på appar från samma utgivare?**<br></br> MAM (på iOS/iPadOS) tillåter för tillfället PIN på programnivå med alfanumeriska tecken och specialtecken (kallas lösenord) som kräver medverkan av program (d.v.s. WXP, Outlook, hanterad webbläsare, Yammer) för att integrera Intune APP SDK:n för iOS/iPadOS. Utan detta tillämpas inställningar för lösenord inte korrekt för de aktuella programmen. Detta var en funktion som introducerades i Intune SDK för iOS/iPadOS v. 7.1.12. <br><br> För att stödja den här funktionen och säkerställa bakåtkompatibilitet med tidigare versioner av Intune SDK för iOS/iPadOS, hanteras alla PIN-koder (numeriska eller lösenord) i 7.1.12+ separat från den numeriska PIN-koden i tidigare versioner av SDK. Därför måste en enhet som har program med Intune SDK för iOS/iPadOS-versioner före 7.1.12 och efter 7.1.12 från samma utgivare, ställa in två PIN-koder. <br><br> Med detta sagt är de två PIN-koderna (för varje app) inte relaterade på något sätt, d.v.s. de måste följa den appskyddsprincip som tillämpas på appen. Därför kan användare konfigurera samma PIN-kod två gånger *endast* om apparna A och B har samma principer tillämpade (med avseende på PIN-kod). <br><br> Det här beteendet är specifikt för PIN-koden på iOS/iPadOS-program som har aktiverats med Intune Mobile App Management. Med tiden när program inför senare versioner av Intune SDK för iOS/iPadOS, blir det inte ett så stort problem att behöva ange PIN-kod två gånger på appar från samma utgivare. Se avsnittet nedan för ett exempel.
+- **Varför måste jag ange en PIN-kod två gånger på appar från samma utgivare?**<br></br> MAM (på iOS/iPadOS) tillåter för tillfället PIN på programnivå med alfanumeriska tecken och specialtecken (kallas lösenord) som kräver medverkan av program (d.v.s. WXP, Outlook, hanterad webbläsare, Yammer) för att integrera Intune APP SDK:n för iOS/iPadOS. Utan detta tillämpas inställningar för lösenord inte korrekt för de aktuella programmen. Detta var en funktion som introducerades i Intune SDK för iOS/iPadOS v. 7.1.12. <br><br> För att stödja den här funktionen och säkerställa bakåtkompatibilitet med tidigare versioner av Intune SDK för iOS/iPadOS, hanteras alla PIN-koder (numeriska eller lösenord) i 7.1.12+ separat från den numeriska PIN-koden i tidigare versioner av SDK. Därför måste en enhet som har program med Intune SDK för iOS/iPadOS-versioner före 7.1.12 och efter 7.1.12 från samma utgivare, ställa in två PIN-koder. <br><br> Med detta sagt är de två PIN-koderna (för varje app) inte relaterade på något sätt, d.v.s. de måste följa den appskyddsprincip som tillämpas för appen. Därför kan användare konfigurera samma PIN-kod två gånger *endast* om apparna A och B har samma principer tillämpade (med avseende på PIN-kod). <br><br> Det här beteendet är specifikt för PIN-koden på iOS/iPadOS-program som har aktiverats med Intune Mobile App Management. Med tiden när program inför senare versioner av Intune SDK för iOS/iPadOS, blir det inte ett så stort problem att behöva ange PIN-kod två gånger på appar från samma utgivare. Se avsnittet nedan för ett exempel.
 
   >[!NOTE]
   > Om t.ex. app A har skapats med en tidigare version än 7.1.12 och app B har byggts med en version som är högre än eller lika med 7.1.12 från samma utgivare, måste slutanvändaren ställa in PIN-koder separat för A och B om båda är installerade på en iOS/iPadOS-enhet. <br><br> Om en app C har SDK-version 7.1.9 installerad på enheten, delar den samma PIN-kod som app A. <br><br> En app D som skapats med 7.1.14 delar samma PIN-kod som app B. <br><br> Om bara apparna A och C är installerade på en enhet, behöver en PIN-kod anges. Detsamma gäller om bara apparna B och D är installerade på en enhet.
@@ -161,7 +166,7 @@ Intune kan rensa AppData på tre olika sätt: fullständig rensning av enheten, 
 
 - **Vad är selektiv rensning för MDM?**<br></br> Se [Ta bort enheter – dra tillbaka](../remote-actions/devices-wipe.md#retire) för att läsa om hur du tar bort företagsdata.
 
-- **Vad är selektiv rensning för MAM?**<br></br> Selektiv rensning för MAM tar helt enkelt bort företagsdata från en app. Begäran initieras med hjälp av Intune Azure-portalen. Information om hur du initierar en rensningsbegäran finns i [Så här rensar du endast företagsdata från appar](apps-selective-wipe.md).
+- **Vad är selektiv rensning för MAM?**<br></br> Selektiv rensning för MAM tar helt enkelt bort företagsdata från en app. Begäran initieras med hjälp av [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Information om hur du initierar en rensningsbegäran finns i [Så här rensar du endast företagsdata från appar](apps-selective-wipe.md).
 
 - **Hur snabbt sker selektiv rensning för MAM?**<br></br> Om användaren använder appen när selektiv rensning initieras söker Intune App SDK var 30:e minut efter en begäran om selektiv rensning från Intune MAM-tjänsten. Den söker även efter selektiv rensning när användaren startar appen för första gången och loggar in med sitt arbets- eller skolkonto.
 
@@ -174,7 +179,8 @@ Ja! IT-administratören kan distribuera och ange appskyddsprincip för [Intune M
 ## <a name="app-experience-on-android"></a>App-upplevelse på Android
 
 **Varför behövs företagsportalappen för att Intunes appskydd ska fungera på Android-enheter?**<br></br>
-Många av appskyddets funktioner är inbyggda i företagsportalappen. Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För MAM-WE behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
+Många av appskyddets funktioner är inbyggda i företagsportalappen.
+ Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För MAM-WE behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
 
 **Hur fungerar åtkomstinställningar till flera Intune-appar som är konfigurerade för samma uppsättning appar och användare med Android?**<br></br>
 Appskyddsprinciper i Intune för åtkomst tillämpas i en viss ordning på slutanvändarenheter när de försöker få åtkomst till en riktad app från ett företagskonto. Vanligtvis får en blockering företräde, och därefter en varning som kan avfärdas. Exempel: Om det är tillämpligt för den specifika användaren/appen används en lägsta inställning för Android-korrigeringsprogramversionen. Den varnar en användare för att göra en uppdatering efter den lägsta inställningen för Android-korrigeringsprogramversionen som blockerar användarens åtkomst. I scenariot där en IT-administratör konfigurerar den äldsta Android-korrigeringsprogramversionen till 2018-03-01 och den äldsta Android-korrigeringsprogramversionen (endast varning) till 2018-02-01, medan enheten som försöker få åtkomst till appen hade korrigeringsprogramversionen 2018-01-01, blockeras slutanvändaren baserat på den mer restriktiva inställningen för den lägsta Android-korrigeringsprogramversionen. Det leder till blockerad åtkomst. 
@@ -191,7 +197,7 @@ Intune använder Google Play Protect SafetyNet-API:er som tillägg till våra be
 - Enheter som misslyckas med grundläggande integritet
 - Enheter med ett upplåst startprogram
 - Enheter med en anpassad systemavbildning/ROM
-- Enheter för vilka tillverkaren inte ansökte eller godkändes för Google-certifiering 
+- Enheter som tillverkaren inte ansökte om eller godkändes för Google-certifiering 
 - Enheter med en systemavbildning som skapats direkt från Android Open Source Program-källfilerna
 - Enheter med en betaversion/utvecklarförhandsversion av systemavbildningen
 

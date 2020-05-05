@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82e02795dc9dbcbc0598218418404fe74fdf1226
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: e6a3e2b9026024791ef1a9e4eb5aca08718d8573
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80551619"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023171"
 ---
 # <a name="use-policy-sets-to-group-collections-of-management-objects"></a>Använda principuppsättningar för att gruppera samlingar av hanteringsobjekt
 
@@ -89,7 +89,7 @@ Principuppsättningar är en ny funktion i version 1910 och har följande kända
   - Android Store-app
   - Verksamhetsspecifik Android-app
   - Hanterad verksamhetsspecifik Android-app
-  - Office 365 ProPlus Suite (Windows 10)
+  - Microsoft 365-appar (Windows 10)
   - Webblänk
   - Inbyggd iOS/iPadOS-app
   - Inbyggd Android-app
@@ -121,6 +121,7 @@ Principuppsättningar är en ny funktion i version 1910 och har följande kända
     Om en princip läggs till i en principuppsättning som distribueras till en grupp visas gruppen som direkt tilldelad i arbetsbelastningen, inte ”tilldelad via principuppsättningen”. Resultatet av detta är att MAM inte bearbetar borttagningar av grupptilldelningar som kommer från principuppsättningar.
 
 - MAM stöder inte distribution till virtuella grupper för **Alla användare** och **Alla enheter** för några principtyper alls.
+- Enhetskonfigurationsprofilen av typen ”Administrativa mallar” kan inte väljas som en del av en principuppsättning.
 
 ## <a name="next-steps"></a>Nästa steg
 

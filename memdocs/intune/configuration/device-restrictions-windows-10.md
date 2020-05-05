@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 04/28/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 237e281b88492ff7b7e1b5614600662e15761935
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: 4babd715df08a905a5ceed6ec881cbfe07f5de19
+ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407830"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209881"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningar för Windows 10 (och senare) för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -81,11 +81,13 @@ De här inställningarna använder [CSP för ApplicationManagement-princip](http
 
   [ApplicationManagement/AllowGameDVR CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowgamedvr)
 
-- **Endast appar från Store**: Den här inställningen styr användarupplevelsen när användare installerar appar från andra platser än Microsoft Store. Alternativen är:
+- **Endast appar från Store**: Den här inställningen styr användarupplevelsen när användare installerar appar från andra platser än Microsoft Store. Den förhindrar inte installation av innehåll från USB-enheter, nätverksresurser eller andra källor som inte är Internet. Använd en tillförlitlig webbläsare för att se till att dessa skydd fungerar som förväntat.
+
+  Alternativen är:
 
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Som standard kan operativsystemet tillåta att slutanvändare installerar appar från andra platser än Microsoft Store, inklusive appar som definierats i andra principinställningar.  
   - **Överallt**: Stänger av apprekommendationer och låter användarna installera appar från valfri plats.  
-  - **Endast Store**: Tvingar slutanvändare att endast installera appar från Microsoft Store.
+  - **Endast Store**: Syftet är att förhindra att skadligt innehåll påverkar dina användarenheter när du laddar ned körbart innehåll från Internet. När användarna försöker installera appar från Internet blockeras installationen. Användarna ser ett meddelande som rekommenderar att de laddar ned appar från Microsoft Store.
   - **Rekommendationer**: Vid installation av en app från webben som är tillgänglig i Microsoft Store visas ett meddelande för användare där de rekommenderas att ladda ned den från Store.  
   - **Prioritera Store**: Varnar användare när de installerar appar från andra platser än Microsoft Store.
 
@@ -140,10 +142,14 @@ De här inställningarna använder [CSP för Bluetooth-princip](https://docs.mic
 
 De här inställningarna använder [CSP för kontoprincip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-accounts), som även visar de Windows-versioner som stöds.
 
+> [!IMPORTANT]
+> Att blockera eller inaktivera dessa Microsoft-kontoinställningar kan påverka registreringsscenarier som kräver att användare loggar in på Azure AD. Till exempel använder du [assisterad AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove). I normala fall visas ett fönster för Azure AD-inloggning för användarna. När de här inställningarna är inställda på **Blockera** eller **Inaktivera** kan det hända att alternativet för inloggning i Azure AD inte visas. I stället uppmanas användarna att godkänna licensavtalet och skapa ett lokalt konto, vilket kanske inte är vad du vill.
+
 - **Microsoft-konto**: **Blockera** hindrar slutanvändare från att associera ett Microsoft-konto med enheten. **Inte konfigurerat** (standard) tillåter tillägg och användning av ett Microsoft-konto.
+
 - **Andra konton än Microsoft-konton**: **Blockera** hindrar slutanvändare från att lägga till icke-Microsoft-konton via användargränssnittet. **Inte konfigurerat** (standard) tillåter användare att lägga till e-postkonton som inte associeras med ett Microsoft-konto.
 - **Synkroniseringsinställningar för Microsoft-konto**: **Inte konfigurerat** (standard) tillåter att enhets- och appinställningar som associeras med ett Microsoft-konto synkroniseras mellan enheter. **Blockera** förhindrar den här synkroniseringen.
-- **Inloggningsassistent för Microsoft-konton**: När det här är inställt på **Inte konfigurerat** (standard) kan slutanvändare starta och stoppa tjänsten **Inloggningsassistent för Microsoft-konton** (wlidsvc). Den här operativsystemtjänsten tillåter att användare loggar in på sitt Microsoft-konto. **Inaktivera** hindrar slutanvändare från att kontrollera Inloggningsassistent för Microsoft-konton (wlidsvc).
+- **Inloggningsassistent för Microsoft-konton**: När det här är inställt på **Inte konfigurerat** (standard) kan slutanvändare starta och stoppa tjänsten **Inloggningsassistent för Microsoft-konton** (wlidsvc). Den här operativsystemtjänsten tillåter att användare loggar in på sitt Microsoft-konto. Med **Inaktivera** konfigureras Microsoft Sign-in Assistant-tjänsten (WLIDSVC) till Inaktiverad och slutanvändarna förhindras att starta den manuellt.
 
 ## <a name="cloud-printer"></a>Molnskrivare
 
@@ -404,7 +410,7 @@ När ”Blockera och aktivera åsidosättning av användaren” är markerat kan
 - **Tillåt helskärmsläge**: **Ja** (standard) tillåter Microsoft Edge att använda helskärmsläge, vilket endast visar webbinnehållet och döljer användargränssnittet i Microsoft Edge. **Nej** förhindrar helskärmsläge i Microsoft Edge.
 - **Tillåt sidan about:flags**: **Ja** (standard) använder operativsystemets standardvärde, vilket kan tillåta åtkomst till sidan `about:flags`. Sidan `about:flags` gör att användare kan ändra inställningar för utvecklare och aktivera experimentella funktioner. **Nej** hindrar slutanvändare från att komma åt sidan `about:flags` i Microsoft Edge.
 - **Tillåt utvecklarverktyg**: **Ja** (standard) tillåter användare att använda F12-utvecklarverktygen till att skapa och felsöka webbplatser som standard. **Nej** hindrar slutanvändare från att använda F12-utvecklarverktygen.
-- **Tillåt JavaScript**: **Ja** (standard) Tillåter att skript, exempelvis JavaScript, körs i Microsoft Edge-webbläsaren. **Nej** förhindrar att Java-skript körs i webbläsaren.
+- **Tillåt JavaScript**: **Ja** (standard) tillåter att skript, exempelvis JavaScript, körs i Microsoft Edge-webbläsaren. **Nej** förhindrar att Java-skript körs i webbläsaren.
 - **Användaren kan installera tillägg**: **Ja** tillåter att slutanvändarna installerar Microsoft Edge-tillägg på enheten. **Nej** förhindrar installationen.
 - **Tillåt separat inläsning av utvecklartillägg**: **Ja** (standard) använder operativsystemets standardvärde, vilket kan tillåta separat inläsning. Separat inläsning installerar och kör overifierade tillägg. **Nej** hindrar Microsoft Edge från att utföra separat inläsning med hjälp av funktionen **Läs in tillägg**. Det förhindrat inte separat inläsning av tillägg på andra sätt, till exempel via PowerShell.
 - **Tillägg som krävs**: Välj vilka tillägg som inte ska kunna inaktiveras av slutanvändarna i Microsoft Edge. Ange paketfamiljenamnet och välj **Lägg till**. [Hitta ett paketfamiljenamn (PFN) för VPN per app](https://docs.microsoft.com/configmgr/protect/deploy-use/find-a-pfn-for-per-app-vpn) innehåller viss vägledning.
@@ -669,7 +675,7 @@ De här inställningarna använder [CSP för startpolicy](https://docs.microsoft
 
 ## <a name="microsoft-defender-smart-screen"></a>Microsoft Defender SmartScreen
 
-- **SmartScreen för Microsoft Edge**: **Kräv** inaktiverar Microsoft Defender SmartScreen och hindrar användarna från att aktivera funktionen. **Inte konfigurerat** (standard) aktiverar SmartScreen. Hjälper till att skydda användarna mot potentiella hot och hindrar användare från att stänga av den.
+- **SmartScreen för Microsoft Edge**: **Kräv** aktiverar Microsoft Defender SmartScreen och hindrar användarna från att inaktivera funktionen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kan operativsystemet aktivera SmartScreen och tillåta att användare aktiverar och inaktiverar funktionen.
 
   Microsoft Edge använder Microsoft Defender SmartScreen (aktiverat) för att skydda användarna mot potentiella nätfiskeförsök och skadlig programvara.
 

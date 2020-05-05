@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2019
+ms.date: 04/21/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,20 +16,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a775171a72de32af98d8089311b5fe467e560515
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 3da418db81a315e4102b63c34ffc557646d36f70
+ms.sourcegitcommit: 2871a17e43b2625a5850a41a9aff447c8ca44820
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80323137"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82126063"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
 När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) för att stödja Simple Certificate Enrollment Protocol-certifikat (SCEP) kan du skapa och sedan tilldela SCEP-certifikatprofiler till användare och enheter i Intune.
 
-> [!IMPORTANT]  
-> Innan du skapar SCEP-certifikatprofiler måste enheter som kommer att använda en SCEP-certifikatprofil lita på din betrodda rotcertifikatutfärdare (CA). Använd en *betrodd certifikatprofil* i Intune för att etablera det betrodda rotcertifikatutfärdarcertifikatet till användare och enheter. Information om den betrodda certifikatprofilen finns i [Exportera det betrodda rotcertifikatutfärdarcertifikatet](certificates-configure.md#export-the-trusted-root-ca-certificate) och [Skapa betrodda certifikatprofiler](certificates-configure.md#create-trusted-certificate-profiles) i *Använda certifikat för autentisering i Intune*.
-
+> [!IMPORTANT]
+> För att kunna använda en SCEP-certifikatprofil måste enheter lita på din betrodda rotcertifikatutfärdare (CA). Förtroende för rotcertifikatutfärdare upprättas bäst genom att distribuera en [betrodd certifikatprofil](../protect/certificates-configure.md#create-trusted-certificate-profiles) till samma grupp som tar emot SCEP-certifikatprofilen. Betrodda certifikatprofiler etablerar certifikatet för den betrodda rotcertifikatutfärdaren.
 
 ## <a name="create-a-scep-certificate-profile"></a>Skapa en SCEP-certifikatprofil
 
@@ -95,7 +94,8 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
        - **Serienummer**
        - **Anpassad**: När du väljer det här alternativet visas även textrutan **Anpassad**. Använd det här fältet om du vill ange ett anpassat format för ämnesnamnet, inklusive variabler. Anpassat format stöder två variabler: **Eget namn (CN)** och **E-postadress (E)** . **Eget namn (cn)** kan ställas in till någon av följande variabler:
 
-         - **CN={{UserName}}** : Användarens huvudnamn, till exempel janedoe@contoso.com.
+         - **CN={{UserName}}** : Användarens namn, till exempel janedoe.
+         - **CN={{UserPrincipalName}}** : Användarens huvudnamn, till exempel janedoe@contoso.com.\*
          - **CN={{AAD_Device_ID}}** : Ett ID som tilldelas när du registrerar en enhet i Azure Active Directory (AD). Detta ID används vanligtvis för att autentisera med Azure AD.
          - **CN={{SERIALNUMBER}}** : Det unika serienummer (SN) som vanligtvis används av tillverkaren för att identifiera en enhet.
          - **CN={{IMEINumber}}** : Det unika IMEI-nummer (International Mobile Equipment Identity) som används för att identifiera en mobiltelefon.
@@ -111,6 +111,8 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
          - **CN={{UserName}},E={{EmailAddress}},OU=Mobile,O=Finance Group,L=Redmond,ST=Washington,C=US**
 
          Det exemplet omfattar ett format för ämnesnamnet som använder variablerna CN och E samt strängar för värdena för organisationsenhet, organisation, plats, tillstånd och land/region. [CertStrToName-funktionen](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) beskriver den här funktionen och dess strängar som stöds.
+         
+         \* För profiler av typen Endast Android-enhetens ägare fungerar inte inställningen **CN={{UserPrincipalName}}** . Profiler av typen Endast Android-enhetsägare kan användas för enheter utan användare, och därför kan den här profilen inte hämta användarens huvudnamn för användaren. Om du verkligen behöver det här alternativet för enheter med användare kan du använda en lösning som följande: **CN={{UserName}}\@contoso.com** Anger användarnamnet och den domän som du lade till manuellt, till exempel janedoe@contoso.com
 
       - **Certifikattypen Enhet**
 
@@ -224,7 +226,7 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
    - **Webbadresser för SCEP-server**:
 
-     Ange en eller flera webbadresser för de NDES-servrar som utfärdar certifikat via SCEP. Ange till exempel något i stil med *https://ndes.contoso.com/certsrv/mscep/mscep.dll* . Du kan lägga till ytterligare SCEP-URL:er för belastningsutjämning vid behov eftersom URL:er slumpmässigt skickas till enheten med profilen. Om någon av SCEP-servrarna inte är tillgänglig misslyckas SCEP-begäran, och vid senare enhetsincheckningar är det möjligt att certifikatbegäran kan göras mot samma server som är nere.
+     Ange en eller flera webbadresser för de NDES-servrar som utfärdar certifikat via SCEP. Ange något i stil med `https://ndes.contoso.com/certsrv/mscep/mscep.dll`. Du kan lägga till ytterligare SCEP-URL:er för belastningsutjämning vid behov eftersom URL:er slumpmässigt skickas till enheten med profilen. Om någon av SCEP-servrarna inte är tillgänglig misslyckas SCEP-begäran, och vid senare enhetsincheckningar är det möjligt att certifikatbegäran kan göras mot samma server som är nere.
 
 8. Välj **Nästa**.
 
@@ -259,7 +261,7 @@ Använd något av följande alternativ för att undvika den här begränsningen 
 
 Du kan **till exempel** ha ett ämnesnamn som visas som *testanvändare (TestCompany, LLC)* .  En CSR som innehåller ett ämnesnamn som har kommatecken mellan *TestCompany* och *LLC* ger upphov till problem.  Du kan undvika problemet genom att placera citattecken runt hela ämnesnamnet eller genom att ta bort kommatecken från mellan *TestCompany* och *LLC*:
 
-- **Lägg till citattecken:** *CN=* "Test User (TestCompany, LLC)",OU=UserAccounts,DC=corp,DC=contoso,DC=com*
+- **Lägg till citattecken:** *CN="Test User (TestCompany, LLC)",OU=UserAccounts,DC=corp,DC=contoso,DC=com*
 - **Ta bort kommatecknet**: *CN=Test User (TestCompany LLC),OU=UserAccounts,DC=corp,DC=contoso,DC=com*
 
  Om du försöker undanta kommatecknet med ett omvänt snedstreck kommer detta dock att misslyckas med ett fel i CRP-loggen:
@@ -282,7 +284,11 @@ Exception:    at Microsoft.ConfigurationManager.CertRegPoint.ChallengeValidation
 
 ## <a name="assign-the-certificate-profile"></a>Tilldela certifikatprofilen
 
-Tilldela SCEP-certifikatprofiler på samma sätt som du [distribuerar enhetsprofiler](../configuration/device-profile-assign.md) för andra syften. Tänk dock på följande innan du fortsätter:
+Tilldela SCEP-certifikatprofiler på samma sätt som du [distribuerar enhetsprofiler](../configuration/device-profile-assign.md) för andra syften.
+
+Om du vill använda en SCEP-certifikatprofil måste enheten även ha fått den betrodda certifikatprofil som etablerar den med din betrodda rotcertifikatutfärdare. Glöm inte att distribuera både den betrodda rotcertifikatprofilen och SCEP-certifikatprofilen i samma grupper.
+
+Tänk dock på följande innan du fortsätter:
 
 - När du tilldelar SCEP-certifikatprofiler till grupper installeras filen för betrott rotcertifikatutfärdarcertifikat (såsom det anges i den *betrodda certifikatprofilen*) på enheten. Enheten använder SCEP-certifikatprofilen för att skapa en certifikatbegäran för det betrodda rotcertifikatutfärdarcertifikatet.
 
@@ -293,8 +299,6 @@ Tilldela SCEP-certifikatprofiler på samma sätt som du [distribuerar enhetsprof
 - Om du vill publicera certifikat till enheter kort efter att enheten registrerats, tilldelar du certifikatprofilen till en användargrupp i stället för en enhetsgrupp. Om du tilldelar till en enhetsgrupp krävs en fullständig enhetsregistrering innan enheten kan ta emot principer.
 
 - Om du använder samhantering för Intune och Configuration Manager i Configuration Manager ska du [ange arbetsbelastningsreglaget](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) för resursåtkomstprinciper till **Intune** eller **Pilot Intune**. Den här inställningen gör att Windows 10-klienter kan starta processen för att begära certifikatet.
-
-- Även om du skapar och tilldelar den betrodda certifikatprofilen och SCEP-certifikatprofilen separat måste båda tilldelas. Om inte båda är installerade på en enhet misslyckas SCEP-certifikatprincipen. Se till att alla betrodda rotcertifikatprofiler också distribueras till samma grupper som SCEP-profilen. Om du till exempel distribuerar en SCEP-certifikatprofil till en användargrupp måste även den betrodda rotcertifikatprofilen (och den mellanliggande profilen) distribueras till samma användargrupp.
 
 > [!NOTE]
 > När en SCEP- eller PKCS-certifikatprofil är associerad med en annan profil på enheter med iOS/iPadOS, som en Wi-Fi- eller VPN-profil, tar enheten emot ett certifikat för var och en av de ytterligare profilerna. Det här gör att iOS-/iPad-enheten har flera certifikat som levereras via SCEP- eller PKCS-certifikatbegäran. 

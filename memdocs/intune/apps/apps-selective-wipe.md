@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/27/2020
+ms.date: 04/10/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a063baf405c9f9886718242f48a47e1e5fe68f5
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 1640928bfb1ca27d4ee72e014adad88db0976a2d
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324510"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078353"
 ---
 # <a name="how-to-wipe-only-corporate-data-from-intune-managed-apps"></a>Hur du rensar endast företagsdata från Intune-hanterade appar
 
@@ -40,9 +40,9 @@ Om du vill ta bort företagets appdata selektivt skapar du en rensningsbegäran 
 > Kontakter som synkroniseras direkt från appen till den interna adressboken tas bort. Kontakter som synkroniseras från den interna adressboken till en annan extern källa kan inte rensas. Detta gäller för närvarande endast för Microsoft Outlook-appen.
 
 ## <a name="deployed-wip-policies-without-user-enrollment"></a>Distribuerade WIP-principer utan användarregistrering
-WIP-principer (Windows Information Protection) kan distribueras utan att MDM-användare behöver registrera sina Windows 10-enheter. Med den här konfigurationen kan företag skydda sina företagsdokument baserat på WIP-konfigurationen, samtidigt som användarna kan fortsätta att hantera sina egna Windows-enheter. När dokument skyddas med en WIP-princip kan skyddade data rensas selektivt av en Intune-administratör. Genom att välja användaren och enheten, och skicka en rensningsbegäran, blir alla data som skyddades via WIP-principen oanvändbara. Från Intune på Azure-portalen väljer du **Klientapp** > **Selektiv radering av app**. Mer information finns i [Skapa och distribuera en WIP-appskyddsprincip med Intune](windows-information-protection-policy-create.md).
+WIP-principer (Windows Information Protection) kan distribueras utan att MDM-användare behöver registrera sina Windows 10-enheter. Med den här konfigurationen kan företag skydda sina företagsdokument baserat på WIP-konfigurationen, samtidigt som användarna kan fortsätta att hantera sina egna Windows-enheter. När dokument skyddas med en WIP-princip kan skyddade data rensas selektivt av en Intune-administratör ([global administratör eller en Intune-tjänstadministratör](../fundamentals/users-add.md#types-of-administrators)). Genom att välja användaren och enheten, och skicka en rensningsbegäran, blir alla data som skyddades via WIP-principen oanvändbara. Från Intune på Azure-portalen väljer du **Klientapp** > **Selektiv radering av app**. Mer information finns i [Skapa och distribuera en WIP-appskyddsprincip med Intune](windows-information-protection-policy-create.md).
 
-## <a name="create-a-wipe-request"></a>Skapa en rensningsbegäran
+## <a name="create-a-device-based-wipe-request"></a>Skapa en enhetsbaserad rensningsbegäran
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Appar** > **Selektiv radering av app** > **Skapa rensningsbegäran**.<br>
@@ -61,6 +61,16 @@ Tjänsten skapar och spårar en separat rensningsförfrågan för varje skyddad 
 
    ![Skärmbild av fönstret ”Klientappar – Selektiv radering av app”](./media/apps-selective-wipe/apps-selective-wipe-03.png)
 
+## <a name="create-a-user-based-wipe-request"></a>Skapa en användarbaserad rensningsbegäran
+
+Genom att lägga till en användare till rensningen på användarnivå utfärdar vi automatiskt rensningskommandon till alla appar på alla användarens enheter.  Användaren fortsätter att få rensningskommandon vid varje incheckning från alla enheter.  Om du vill återaktivera en användare måste du ta bort den från listan.  
+
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Välj **Appar** > **Selektiv radering av app** > **Skapa rensningsbegäran**.<br>
+   Välj **Rensning på användarnivå**
+3. Klicka på **Lägg till** så visas fönstret **Välj användare**.
+4. Välj den användare vars appdata du vill rensa och klicka på **Välj**.
+
 ## <a name="monitor-your-wipe-requests"></a>Övervaka dina rensningsbegäranden
 
 Du kan få en sammanfattande rapport som visar övergripande status för rensningsförfrågan och som innehåller antalet väntande förfrågningar och fel. Följ dessa steg för mer information:
@@ -74,7 +84,7 @@ Dessutom kan du se namnet på enheten och dess enhetstyp, vilket kan vara använ
 >[!IMPORTANT]
 > Användaren måste öppna appen för att rensningen ska ske och rensningen kan ta upp till 30 minuter att slutföra efter att en begäran har gjorts.
 
-## <a name="delete-a-wipe-request"></a>Ta bort en rensningsförfrågan
+## <a name="delete-a-device-wipe-request"></a>Ta bort en begäran om enhetsrensning
 
 Rensningar med väntande status visas tills du tar bort dem manuellt. Så här tar du bort en rensningsförfrågan manuellt:
 
@@ -85,6 +95,14 @@ Rensningar med väntande status visas tills du tar bort dem manuellt. Så här t
     ![Skärmbild på listan för rensningsförfrågan i fönstret Selektiv radering av app](./media/apps-selective-wipe/delete-wipe-request.png)
 
 3. Du uppmanas att bekräfta borttagningen. Välj **Ja** eller **Nej** och klicka på **OK**.
+
+## <a name="delete-a-user-wipe-request"></a>Ta bort en begäran om användarrensning
+
+Användarrensningar finns kvar i listan tills de tas bort av en administratör. Så här tar du bort en användare från listan:
+
+1. I fönstret **Klientappar – Selektiv radering av app** väljer du **Rensning på användarnivå**
+2. I listan högerklickar du på den användare du vill ta bort och väljer sedan **Ta bort**. 
+
 
 ## <a name="see-also"></a>Se även
 [Vad är appskyddsprincip](app-protection-policy.md)

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/07/2019
+ms.date: 04/20/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4698c0bf286fab855b0067899c5347b643ee6ce9
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 2163f420089dcd8936d6dc64b8ce02c5ff268b53
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80325746"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82079900"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Konfigurera infrastrukturen för att stödja SCEP med Intune
 
@@ -46,13 +46,14 @@ Följande lokala infrastruktur måste köras på servrar som är domänanslutna 
 
   - Den server som är värd för NDES måste vara domänansluten och i samma skog som din företagscertifikatutfärdare.
   - Du kan inte använda NDES som är installerad på den server som är värd för företagscertifikatutfärdaren.
-  - Du installerar Microsoft Intune Certificate Connector på samma server som är värd för NDES.
+  - Du installerar Microsoft Intune Certificate Connector på samma server som NDES.
 
   Mer information om NDES finns i [vägledningen för registreringstjänsten för nätverksenheter](https://technet.microsoft.com/library/hh831498.aspx) i Windows Server-dokumentationen samt [Använda en principmodul med registreringstjänsten för nätverksenheter](https://technet.microsoft.com/library/dn473016.aspx).
 
 - **Microsoft Intune Certificate Connector** – Microsoft Intune Certificate Connector krävs för användning av SCEP-certifikatprofiler med Intune. Den här artikeln vägleder dig genom [installationen av det här anslutningsprogrammet](#install-the-intune-certificate-connector).
 
-  Anslutningsprogrammet har stöd för FIPS-läge (Federal Information Processing Standard). FIPS krävs inte, men när det är aktiverat kan du utfärda och återkalla certifikat.
+  Anslutningsprogrammet har stöd för FIPS-läge (Federal Information Processing Standard). Du behöver inte FIPS, men när det är aktiverat kan du utfärda och återkalla certifikat.
+  - Anslutningsprogrammet har samma nätverkskrav som [hanterade enheter](../fundamentals/intune-endpoints.md#access-for-managed-devices).
   - Anslutningsprogrammet måste köras på samma server som NDES-serverrollen, en server som kör Windows Server 2012 R2 eller senare.
   - .NET 4.5 Framework krävs av anslutningsprogrammet och ingår automatiskt i Windows Server 2012 R2.
   - Internet Explorer Enhanced Security Configuration [måste vara inaktiverat på den server som är värd för NDES](https://technet.microsoft.com/library/cc775800(v=WS.10).aspx) samt Microsoft Intune Certificate Connector.
@@ -99,7 +100,7 @@ Följande certifikat och mallar används när du använder SCEP.
 
 |Objekt    |Information    |
 |----------|-----------|
-|**SCEP-certifikatmall**         |En mall som du konfigurerar på den utfärdande certifikatutfärdaren för att uppfylla enheternas SCEP-begäranden. |
+|**SCEP-certifikatmall**         |En mall som du konfigurerar på den utfärdande certifikatutfärdaren för att uppfylla enheternas SCEP-förfrågningar. |
 |**Certifikat för klientautentisering** |Begärt från din utfärdande certifikatutfärdare eller offentliga certifikatutfärdare.<br /> Du installerar det här certifikatet på den dator som är värd för NDES-tjänsten, och det används av Intune Certificate Connector.<br /> Om certifikatet har användningarna av *klientens* och *serverns* autentiseringsnycklar inställt på (**Förbättrad nyckelanvändning**) i den certifikatutfärdarmall som du använder för att utfärda det här certifikatet. Då kan du använda samma certifikat för server- och klientautentisering. |
 |**Certifikat för serverautentisering** |Webbservercertifikat som begärs från din utfärdande certifikatutfärdare eller offentliga certifikatutfärdare.<br /> Du installerar och binder det här SSL-certifikatet i IIS på den dator som är värd för NDES.<br />Om certifikatet har användningarna av *klientens* och *serverns* autentiseringsnycklar inställt på (**Förbättrad nyckelanvändning**) i den certifikatutfärdarmall som du använder för att utfärda det här certifikatet. Då kan du använda samma certifikat för server- och klientautentisering. |
 |**Certifikat från betrodd rotcertifikatutfärdare**       |För att kunna använda en SCEP-certifikatprofil måste enheter lita på din betrodda rotcertifikatutfärdare (CA). Använd en *betrodd certifikatprofil* i Intune för att etablera det betrodda rotcertifikatutfärdarcertifikatet till användare och enheter. <br/><br/> **-**  Använd ett enskilt betrott rotcertifikatutfärdarcertifikat per operativsystemplattform och associera det certifikatet med varje betrodd certifikatprofil som du skapar. <br /><br /> **-**  Du kan använda ytterligare certifikat från betrodda rotcertifikatutfärdarcertifikat när det behövs. Till exempel kan du använda ytterligare certifikat för att ge ett förtroende till en certifikatutfärdare som signerar serverautentiseringscertifikaten för dina Wi-Fi-åtkomstpunkter. Skapa ytterligare betrodda rotcertifikatutfärdarcertifikat för utfärdande certifikatutfärdare.  I den SCEP-certifikatprofil som du skapar i Intune ska du ange den betrodda rotcertifikatutfärdarprofilen för den utfärdande certifikatutfärdaren.<br/><br/> Information om den betrodda certifikatprofilen finns i [Exportera det betrodda rotcertifikatutfärdarcertifikatet](certificates-configure.md#export-the-trusted-root-ca-certificate) och [Skapa betrodda certifikatprofiler](certificates-configure.md#create-trusted-certificate-profiles) i *Använda certifikat för autentisering i Intune*. |
@@ -417,7 +418,7 @@ Microsoft Intune Certificate Connector installeras på den server som kör din N
 
    2. Det konto som du använder måste tilldelas en giltig Intune-licens.
 
-   3. När du har loggat in laddar Intune Certificate Connector ned ett certifikat från Intune. Det här certifikatet används för autentisering mellan anslutningsappen och Intune. Om det konto som du använde inte har någon Intune-licens kan inte anslutningsprogrammet (NDESConnectorUI.exe) hämta certifikatet från Intune.  
+   3. När du har loggat in laddar Intune Certificate Connector ned ett certifikat från Intune. Det här certifikatet används för autentisering mellan anslutningsappen och Intune. Om det konto du använde inte har någon Intune-licens kan inte anslutningsprogrammet (NDESConnectorUI.exe) hämta certifikatet från Intune.  
 
       Om din organisation använder en proxyserver och proxyn krävs för att NDES-servern ska få åtkomst till Internet, välj **Använd proxyserver**. Ange sedan proxyservernamn, port och autentiseringsuppgifter för att ansluta.
 

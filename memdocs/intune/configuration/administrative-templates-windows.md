@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/23/2020
+ms.date: 04/15/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75ef2a03c9f42f0bda78af009f0fb563fbcedb75
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: f609ec62259deffb220c8ee935d0f10a98ae77b5
+ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80220065"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82254902"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Använda Windows 10-mallar för att konfigurera grupprincipinställningar i Microsoft Intune
 
@@ -41,7 +41,7 @@ Den här artikeln listar stegen för att skapa en mall för Windows 10-enheter o
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-- Några av de här inställningarna är tillgängliga från och med Windows 10 version 1703 (RS2/version 15063). Vissa inställningar ingår inte i alla Windows-versioner. Vi rekommenderar att du använder Windows 10 Enterprise version 1903 (19H1/version 18362) och senare för bästa möjliga upplevelse.
+- Några av de här inställningarna är tillgängliga från och med Windows 10 version 1709 (RS2/version 15063). Vissa inställningar ingår inte i alla Windows-versioner. Vi rekommenderar att du använder Windows 10 Enterprise version 1903 (19H1/version 18362) och senare för bästa möjliga upplevelse.
 
 - I Windows-inställningarna använder du [CSP:er för Windows-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#policies-supported-by-group-policy-and-admx-backed-policies). CSP:er fungerar i olika utgåvor av Windows, till exempel Home, Professional, Enterprise och så vidare. Om du vill se om en CSP fungerar i en viss version går du till [CSP:er för Windows-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider#policies-supported-by-group-policy-and-admx-backed-policies).
 
@@ -102,6 +102,10 @@ Den här artikeln listar stegen för att skapa en mall för Windows 10-enheter o
     Välj **Nästa**.
 
 14. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Om profilen är tilldelad till användargrupper gäller de konfigurerade ADMX-inställningarna för alla enheter som användaren registrerar och loggar in på. Om profilen är tilldelad till enhetsgrupper gäller de konfigurerade ADMX-inställningarna för alla användare som loggar in på den enheten. Den här tilldelningen sker om ADMX-inställningen är en datorkonfiguration (`HKEY_LOCAL_MACHINE`) eller en användarkonfiguration (`HKEY_CURRENT_USER`). Med vissa inställningar kan en datorinställning som tilldelas till en användare även påverka upplevelsen för andra användare på enheten.
+    
+    Mer information finns i [Användargrupper jämfört med enhetsgrupper](device-profile-assign.md#user-groups-vs-device-groups).
 
     Välj **Nästa**.
 

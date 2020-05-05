@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 672c978a7e590e8e26f676733bd2903d3684e978
-ms.sourcegitcommit: db511e03f14e6120968b60def8990485eb42529b
+ms.openlocfilehash: de679314bcd3b52ff879fbe9a6340a61d2b7e993
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80611739"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078370"
 ---
 # <a name="app-protection-policies-overview"></a>Översikt över principer för appskydd
 
@@ -147,7 +147,8 @@ Följande lista innehåller kraven för att använda appskyddsprinciper på en I
 
 - Slutanvändaren måste ha en licens för Microsoft Intune som tilldelats deras Azure Active Directory-konto. Se [Hantera Intune-licenser](../fundamentals/licenses-assign.md) för information om hur du tilldelar Intune-licenser till slutanvändare.
 
-- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål. Appskyddsprinciper kan skapas och distribueras i Intune-konsolen i [Azure-portalen](https://portal.azure.com). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
+- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål.
+ Appskyddsprinciper kan skapas och distribueras i Intune-konsolen i [Azure-portalen](https://portal.azure.com). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
 
 - Slutanvändaren måste logga in på appen med sitt AAD-konto.
 
@@ -167,7 +168,7 @@ Ytterligare krav som ställs för användning av [Outlook-mobilappen](https://pr
 ### <a name="word-excel-and-powerpoint"></a>Word, Excel och PowerPoint
 De ytterligare kraven för att använda [Word-, Excel- och PowerPoint](https://products.office.com/business/office)-apparna omfattar följande:
 
-- Slutanvändaren måste ha en licens för [Office 365 Business eller Enterprise](https://products.office.com/business/compare-more-office-365-for-business-plans) som länkats till deras Azure Active Directory-konto. Prenumerationen måste inkludera Office-apparna på mobila enheter och kan inkludera ett molnlagringskonto med [OneDrive för företag](https://onedrive.live.com/about/business/). Office 365-licenser kan tilldelas i [Microsoft 365-administrationscentret](https://admin.microsoft.com) med hjälp av följande [instruktioner](https://support.office.com/article/Assign-or-remove-licenses-for-Office-365-for-business-997596b5-4173-4627-b915-36abac6786dc).
+- Slutanvändaren måste ha en licens för [Microsoft 365 for business eller enterprise](https://products.office.com/business/compare-more-office-365-for-business-plans) som länkats till Azure Active Directory-kontot. Prenumerationen måste inkludera Office-apparna på mobila enheter och kan inkludera ett molnlagringskonto med [OneDrive för företag](https://onedrive.live.com/about/business/). Office 365-licenser kan tilldelas i [Microsoft 365-administrationscentret](https://admin.microsoft.com) med hjälp av följande [instruktioner](https://support.office.com/article/Assign-or-remove-licenses-for-Office-365-for-business-997596b5-4173-4627-b915-36abac6786dc).
 
 - Slutanvändaren måste ha en hanterad plats som konfigurerats med detaljerade spara som-funktioner under inställningen för programskyddsprincipen ”Spara kopior av organisationsdata”. Om den hanterade platsen till exempel är OneDrive, ska [OneDrive](https://onedrive.live.com/about/)-appen vara konfigurerad i slutanvändarens Word-, Excel- eller PowerPoint-app.
 
@@ -190,7 +191,7 @@ Inställningarna, som nås via OneDrive Admin-konsolen, konfigurerar en särskil
 
 När den har aktiverats skyddas OneDrive- och SharePoint-appar för iOS/iPadOS och Android med de valda inställningarna som standard. IT-personal kan ändra den här principen i Intune-konsolen för att lägga till fler riktade appar och ändra alla principinställningar. 
 
-Som standard kan det endast finnas en **Global** princip per klient. Du kan dock använda [Intune Graph API:er](../developer/intune-graph-apis.md) för att skapa extra globala principer per klient men detta rekommenderas inte. Vi rekommendera att du inte skapar extra globala principer då detta kan komplicera en eventuell felsökning av implementeringen av principen.
+Som standard kan det endast finnas en **Global** princip per klient. Du kan dock använda [Intune Graph API:er](../developer/intune-graph-apis.md) för att skapa extra globala principer per klient men detta rekommenderas inte. Vi rekommenderar att du inte skapar extra globala principer då detta kan komplicera en eventuell felsökning av implementeringen av principen.
 
 Medan den **Globala** principen gäller för alla användare i din klient kommer standardprinciper för appskydd med Intune att åsidosätta dessa inställningar.
 
@@ -199,6 +200,7 @@ Medan den **Globala** principen gäller för alla användare i din klient kommer
 ### <a name="multi-identity"></a>Flera identiteter
 
 Med stöd för flera identiteter kan en app stödja flera målgrupper. Dessa målgrupper är både ”företagsanvändare” och ”personliga” användare. Arbets- och skolkonton används av företagsgrupper medan personliga konton används för konsumentanvändare, t. ex. Microsoft Office-användare. En app som har stöd för flera identiteter kan publiceras offentligt, där appskyddsprinciperna endast tillämpas när appen används i arbets- och skolkontexten (”företag”). Stöd för flera identiteter använder [Intune App SDK:n](../developer/app-sdk.md) till att enbart tillämpa appskyddsprinciper på det arbets- eller skolkonto som har registrerats i appen. Om ett personligt konto är inloggat i appen ändras inga data.
+
 
 För ett exempel på ”privat” kontext, anta att en användare som startar ett nytt dokument i Word, då anses detta vara privat kontext så Intune-appskyddsprinciper tillämpas inte. När dokumentet sparas på ”företagets” OneDrive-konto kommer det anses vara ”företagskontext” och Intune-appskyddsprinciperna tillämpas.
 
@@ -251,7 +253,7 @@ Om du märker att PIN-koden rensas på vissa enheter, så kommer förmodligen f�
 **Ställer du in en PIN-kod två gånger på appar från samma utgivare?**<br>
 MAM (på iOS/iPadOS) tillåter för tillfället PIN-koder på programnivå med alfanumeriska tecken och specialtecken (s.k. lösenord) som kräver medverkan av program (som WXP, Outlook, hanterad webbläsare, Yammer) för att integrera [Intune SDK:n för iOS](../developer/app-sdk-ios.md). Utan detta tillämpas inställningar för lösenord inte korrekt för de aktuella programmen. Detta var en funktion som introducerades i Intune SDK för iOS v. 7.1.12.
 
-För att stödja den här funktionen och säkerställa bakåtkompatibilitet med tidigare versioner av Intune SDK för iOS/iPadOS, hanteras alla PIN-koder (numeriska eller lösenord) i 7.1.12+ separat från den numeriska PIN-koden i tidigare versioner av SDK. Därför måste en enhet som har program med Intune SDK för iOS-versioner före 7.1.12 och efter 7.1.12 från samma utgivare, ställa in två PIN-koder. De två PIN-koderna (för varje app) är inte relaterade på något sätt, d.v.s. de måste följa den appskyddsprincip som tillämpas på appen. Därför kan användare konfigurera samma PIN-kod två gånger *endast* om apparna A och B har samma principer tillämpade (med avseende på PIN-kod). 
+För att stödja den här funktionen och säkerställa bakåtkompatibilitet med tidigare versioner av Intune SDK för iOS/iPadOS, hanteras alla PIN-koder (numeriska eller lösenord) i 7.1.12+ separat från den numeriska PIN-koden i tidigare versioner av SDK. Därför måste en enhet som har program med Intune SDK för iOS-versioner före 7.1.12 och efter 7.1.12 från samma utgivare, ställa in två PIN-koder. De två PIN-koderna (för varje app) är inte relaterade på något sätt, de måste alltså följa den appskyddsprincip som tillämpas för appen. Därför kan användare konfigurera samma PIN-kod två gånger *endast* om apparna A och B har samma principer tillämpade (med avseende på PIN-kod). 
 
 Det här beteendet är specifikt för PIN-koden på iOS/iPadOS-program som har aktiverats med Intune Mobile App Management. Med tiden när program inför senare versioner av Intune SDK för iOS/iPadOS, blir det inte ett så stort problem att behöva ange PIN-kod två gånger på appar från samma utgivare. Se avsnittet nedan för ett exempel.
 
@@ -300,7 +302,7 @@ Om användaren använder appen när selektiv rensning initieras söker [Intune S
 Intunes appskydd är beroende av att användaridentiteten är stämmer överens mellan programmet och [Intune SDK:n](../developer/app-sdk.md). Det enda sättet att garantera detta är via modern autentisering. Det finns scenarier där appar kan fungera med en lokal konfiguration, men de är varken konsekventa eller garanterade.
 
 **Ett säkert sätt att öppna webblänkar från hanterade appar**<br>
-IT-administratören kan distribuera och ange appskyddsprincip för [Intune Managed Browser-appen](app-configuration-managed-browser.md), en webbläsare som har utvecklats av Microsoft Intune som enkelt kan hanteras med Intune. IT-administratören kan kräva att alla webblänkar i Intune-hanterade appar ska öppnas med Managed Browser-appen.
+IT-administratören kan distribuera och ange appskyddsprincip för [Microsoft Edge](app-configuration-managed-browser.md), en webbläsare som enkelt kan hanteras med Intune. IT-administratören kan kräva att alla webblänkar i Intune-hanterade appar ska öppnas med Managed Browser-appen.
 
 ## <a name="app-protection-experience-for-ios-devices"></a>Appskyddsupplevelse för iOS-enheter
 
@@ -320,7 +322,8 @@ När du hanterar olika typer av inställningar, så måste ett krav avseende Int
 ## <a name="app-protection-experience-for-android-devices"></a>Appskyddsupplevelse för Android-enheter
 
 ### <a name="company-portal-app-and-intune-app-protection"></a>Företagsportalapp och Intune-appskydd
-Många av appskyddets funktioner är inbyggda i företagsportalappen. Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För mobilapphantering utan registrering (MAM-WE) behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
+Många av appskyddets funktioner är inbyggda i företagsportalappen.
+ Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För mobilapphantering utan registrering (MAM-WE) behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
 
 ### <a name="multiple-intune-app-protection-access-settings-for-same-set-of-apps-and-users"></a>Flera åtkomstinställningar för Intune App Protection för samma uppsättning appar och användare
 Appskyddsprinciper i Intune för åtkomst tillämpas i en viss ordning på slutanvändarenheter när de försöker få åtkomst till en riktad app från ett företagskonto. Vanligtvis får en blockering företräde, och därefter en varning som kan avfärdas. Exempel: Om det är tillämpligt för den specifika användaren/appen används en lägsta inställning för Android-korrigeringsprogramversionen. Den varnar en användare för att göra en uppdatering efter den lägsta inställningen för Android-korrigeringsprogramversionen som blockerar användarens åtkomst. I scenariot där en IT-administratör konfigurerar den äldsta Android-korrigeringsprogramversionen till 2018-03-01 och den äldsta Android-korrigeringsprogramversionen (endast varning) till 2018-02-01, medan enheten som försöker få åtkomst till appen hade korrigeringsprogramversionen 2018-01-01, blockeras slutanvändaren baserat på den mer restriktiva inställningen för den lägsta Android-korrigeringsprogramversionen. Det leder till blockerad åtkomst. 
@@ -339,7 +342,7 @@ Intune använder Google Play Protect SafetyNet-API:er som tillägg till våra be
 - Enheter som misslyckas med grundläggande integritet
 - Enheter med ett upplåst startprogram
 - Enheter med en anpassad systemavbildning/ROM
-- Enheter för vilka tillverkaren inte ansökte eller godkändes för Google-certifiering
+- Enheter som tillverkaren inte ansökte om eller godkändes för Google-certifiering
 - Enheter med en systemavbildning som skapats direkt från Android Open Source Program-källfilerna
 - Enheter med en betaversion/utvecklarförhandsversion av systemavbildningen
 

@@ -1,12 +1,12 @@
 ---
-title: Installera Office 365 i macOS-enheter med Microsoft Intune
+title: Installera Office 365-appar på macOS-enheter med Microsoft Intune
 titleSuffix: ''
 description: Så här använder du Microsoft Intune för installera Office 365-appar på macOS-enheter.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/23/2020
+ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,32 +18,34 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 007d5929c6d1b0dd953d4910b31c872582e817cc
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 39837fc3d97389d830fb1befe7e55c276022d351
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80324858"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82023239"
 ---
 # <a name="assign-office-365-to-macos-devices-with-microsoft-intune"></a>Tilldela Office 365 till macOS-enheter med Microsoft Intune
 
-Den här apptypen gör det enkelt för dig att tilldela macOS-enheter till Office 365 2016-appar. Genom att använda den här apptypen kan du installera Word, Excel, PowerPoint, Outlook och OneNote. För att hålla apparna säkrare och uppdaterade innehåller de här apparna även Microsoft AutoUpdater (MAU). Appar som du vill använda visas som en enda app i listan med appar i Intune-konsolen.
+Den här apptypen gör det enkelt för dig att tilldela macOS-enheter till Office 365 2016-appar. Genom att använda den här apptypen kan du installera Word, Excel, PowerPoint, Outlook, OneNote och Teams. För att hålla apparna säkrare och uppdaterade innehåller de här apparna även Microsoft AutoUpdater (MAU). Appar som du vill använda visas som en enda app i listan med appar i Intune-konsolen.
 
+> [!NOTE]
+> Microsoft Office 365 ProPlus har bytt namn till **Microsoft 365-appar för företag**. I vår dokumentation kommer vi ofta att referera till det som **Microsoft 365-appar**.
 
 ## <a name="before-you-start"></a>Innan du börjar
 
-Innan du börjar lägga till Office 365 till macOS-enheter bör du förstå följande:
+Innan du börjar lägga till Office 365-appar på macOS-enheter bör du förstå följande:
 
 - Enheterna som du distribuerar dessa appar på måste köra macOS 10.10 eller senare.
 - Intune har stöd för att lägga till Office-appar som ingår i Office 2016 för Mac-paket endast.
 - Om alla Office-program är öppna när Intune installerar appen kan användare förlora data från filer som inte sparats.
 
-## <a name="select-the-office-365-suite-app-type"></a>Välj en app av Office 365-pakettyp
+## <a name="select-microsoft-365-apps"></a>Välj Microsoft 365-appar
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Appar** > **Alla appar** > **Lägg till**.
-3. Välj **macOS** i avsnittet **Office 365-paket** i fönstret **Välj apptyp**.
-4. Klicka på **Välj**. Stegen **Lägga till Office 365-paket** visas.
+3. Välj **macOS** i avsnittet **Microsoft 365 Apps** i fönstret **Välj apptyp**.
+4. 4. Klicka på **Välj**. Stegen i **Lägg till Microsoft 365-appar**visas.
 
 ## <a name="step-1---app-suite-information"></a>Steg 1 – Information om appsvit
 
@@ -60,7 +62,7 @@ I det här steget anger du information om appaketet. Den här informationen hjä
     - **Utvecklare**: Microsoft visas som utvecklare.
     - **Ägare**: Microsoft visas som ägare.
     - **Kommentarer**: Ange eventuella kommentarer som du vill koppla till den här appen.
-    - **Logotyp**: Office 365-logotypen visas med appen när användarna söker på företagsportalen.
+    - **Logotyp**: Webbläsarens logotyp för Microsoft 365-appar visas med appen när användare söker på företagsportalen.
 2. Visa sidan **Omfångstaggar** genom att klicka på **Nästa**.
 
 ## <a name="step-2---select-scope-tags-optional"></a>Steg 2 – Välj omfångstaggar (valfritt)
@@ -74,7 +76,7 @@ Du kan använda omfångstaggar för att bestämma vem som kan se klientappsinfor
 1. Välj **Obligatorisk**, **Tillgängligt för registrerade enheter**som grupptilldelning för appsviten. Mer information finns i [Lägg till grupper för att organisera användare och enheter](../fundamentals/groups-add.md) och [Tilldela appar till grupper med Microsoft Intune](apps-deploy.md).
 
     >[!Note]
-    > Du kan inte avinstallera Office 365 för macOS-appsviten via Intune.
+    > Du kan inte avinstallera appsviten Microsoft 365 Apps for macOS via Intune.
 
 2. Visa sidan **Granska och skapa** genom att klicka på **Nästa**. 
 
@@ -83,9 +85,9 @@ Du kan använda omfångstaggar för att bestämma vem som kan se klientappsinfor
 1. Granska värdena och inställningarna som du har angett för appsviten.
 2. När du är färdig klickar du på **Skapa** för att lägga till appen i Intune.
 
-    **Översiktsbladet** för Office 365 Windows 10-appsviten som du har skapat visas i applistan. Programsviten visas som en enda post i listan över appar.
+    Bladet **Översikt** visas. Programsviten visas som en enda post i listan över appar.
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Mer information om att lägga till appar för Office 365 i en Windows 10-enhet, finns i [Tilldela Office 365 ProPlus 2016-appar till Windows 10-enheter med Microsoft Intune](apps-add-office365.md).
+- Mer information om att lägga till appar för Office 365-appar på Windows 10-enheter finns i [Tilldela Microsoft 365 Apps på Windows 10-enheter med Microsoft Intune](apps-add-office365.md).
 - Om du vill veta mer om att inkludera och exkludera apptilldelningar från grupper med användare kan du läsa [Inkludera och exkludera apptilldelningar](apps-inc-exl-assignments.md).

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0efaaf94f969e0b1b27582027a68b9e59c944b0c
-ms.sourcegitcommit: e2567b5beaf6c5bf45a2d493b8ac05d996774cac
+ms.openlocfilehash: 8ba3563a243b13b874608ad7a3ec918130e5bb80
+ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80326855"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82022712"
 ---
 # <a name="set-up-an-enrollment-status-page"></a>Konfigurera en sida för registreringsstatus
  
@@ -41,7 +41,7 @@ Statussidan för registreringen kan hjälpa användaren att förstå statusen f�
 Du kan också ange en prioritetsordning för varje profil om det skulle uppstå konflikter mellan profiltilldelningar för samma användare.
 
 > [!NOTE]
-> Sidan för registreringsstatus kan bara vara riktad mot en användare som tillhör en tilldelad grupp och principen ställs in på enheten vid tidpunkten för registreringen för alla användare som använder enheten.  
+> Sidan för registreringsstatus kan bara vara riktad mot en användare som tillhör en tilldelad grupp och principen ställs in på enheten vid tidpunkten för registreringen för alla användare som använder enheten.  Enhetsmål för profiler för Statussidan för registrering stöds inte för närvarande.
 
 ## <a name="available-settings"></a>Tillgängliga inställningar
 
@@ -97,6 +97,10 @@ Du kan ange vilka appar som måste installeras innan användaren kan komma åt s
 5. Välj **Valda** för **Blockera enhetsanvändning tills följande obligatoriska appar har installerats, om de är tilldelade till användaren/enheten**.
 6. Välj **Välj appar** > välj apparna > **Välj** > **Spara**.
 
+De appar som ingår i den här listan används av Intune för att filtrera listan som bör betraktas som blockerande.  Den anger inte vilka appar som ska installeras.  Om du till exempel konfigurerar den här listan så att den inkluderar ”app 1”, ”app 2” och ”app 3”, och ”app 3” och ”app 4” är riktade till enheten eller användaren, kommer sidan för registreringsstatus endast att spåra ”app 3”.  ”App 4” kommer fortfarande att installeras, men sidan för registreringsstatus kommer inte att vänta på att den ska slutföras.
+
+Högst 25 appar kan anges.
+
 ## <a name="enrollment-status-page-tracking-information"></a>Spårningsinformation på statussidan för registrering
 
 Det finns tre faser där statussidan spårar information: enhetsförberedelse, enhetskonfiguration och kontokonfiguration.
@@ -145,10 +149,11 @@ För kontokonfiguration spårar statussidan för registrering följande objekt o
 ### <a name="troubleshooting"></a>Felsökning
 Vanliga frågor om felsökning.
 
-- Varför installerades inte mina program under enhetsinstallationsfasen under autopilotdistributionen som använder registreringsstatussidan?
-  - För att garantera att program installeras under en installation av en autopilotenhet, se till att 
-        1. Programmet väljs för att blockera åtkomst i listan över valda appar
-        2. Programmen riktas mot samma Azure AD-enhetsgrupp som din autopilotprofil är tilldelad till. 
+- Varför har mina program inte installerats och spårats på sidan för registreringsstatus?
+  - För att garantera att program installeras och spåras på sidan för registreringsstatus ska du kontrollera att:
+      - Apparna är kopplade till en Azure AD-grupp som innehåller enheten (för enhetsinriktade appar) eller användaren (för användarinriktade appar) med hjälp av en ”obligatorisk” tilldelning.  (Enhetsinriktade appar spåras under enhetsfasen av ESP, medan användarinriktade appar spåras under användarfasen av ESP.)
+      - Du anger antingen **Blockera enhetsanvändning tills alla appar och profiler är installerade** eller så tar du med appen i listan **Blockera enhetsanvändning tills de nödvändiga apparna är installerade**.
+      - Apparna installeras i enhetskontexten och tillämpar inga regler för användarkontexten.
 
 - Varför visas sidan registreringsstatus för distributioner som inte gäller autopilot, till exempel när en användare loggar in för första gången på en registrerad enhet för Configuration Manager-medhantering?  
   - Registreringsstatussidan visar installationsstatus för alla registreringsmetoder, inklusive
@@ -190,7 +195,6 @@ Vanliga frågor om felsökning.
 ### <a name="known-issues"></a>Kända problem
 Nedan visas kända problem. 
 - Om du inaktiverar ESP-profilen tas inte ESP-principen bort från enheterna och användarna får fortfarande ESP när de loggar in på enheten för första gången. Principen tas inte bort när ESP-profilen är inaktiverad. Du måste distribuera OMA-URI för att inaktivera ESP. Se ovan för instruktioner om hur du inaktiverar ESP med OMA-URI. 
-- En väntande omstart kommer alltid att orsaka ett avbrott. Avbrottet beror på att enheten måste startas om. Enheten måste starta om för att ge tillräckligt med tid för att objektet som spåras i registreringsstatussidan ska slutföras. En omstart kommer att leda till att registreringsstatussidan avslutas. Efter omstart kommer enheten inte att starta kontokonfigurationen.  Överväg att inte kräva omstart när programmet installeras. 
 - En omstart under enhetsinstallationen tvingar användaren att ange sina autentiseringsuppgifter innan de övergår till installationsfasen för kontot. Användarautentiseringsuppgifter bevaras inte under omstarten. Låt användaren ange sina autentiseringsuppgifter. Därefter kan registreringsstatussidan fortsätta. 
 - Registreringsstatussidan kommer alltid att göra ett avbrott under en registrering av arbets- eller skolkonto på enheter med versioner av Windows 10 som är äldre än 1903. Registreringsstatussidan väntar på att Azure AD-registreringen ska slutföras. Problemet åtgärdas i Windows 10-version 1903 och senare.  
 - Hybrid Azure AD-autopilotdistribution med ESP tar längre tid än det avbrott som har definierats i ESP-profilen. I hybriddistributioner av Azure AD-autopilot tar ESP 40 minuter längre än värdet som anges i ESP-profilen. Den här fördröjningen låter det lokala AD-anslutningsprogrammet skapa den nya enhetsposten i Azure AD. 
