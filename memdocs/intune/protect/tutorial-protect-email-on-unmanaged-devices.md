@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/21/2019
+ms.date: 04/30/2020
 ms.topic: tutorial
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70f6e3d3fcd0a5f65866e43198b499b321aab836
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 4f32ced29b6bb53f8c091ba1a0f42261a2baa493
+ms.sourcegitcommit: d05b1472385c775ebc0b226e8b465dbeb5bf1f40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079050"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605226"
 ---
 # <a name="tutorial-protect-exchange-online-email-on-unmanaged-devices"></a>Självstudie: Skydda e-post i Exchange Online på ohanterade enheter
 
@@ -95,7 +95,6 @@ I den här självstudien ska vi konfigurera en Intune-appskyddsprincip för iOS 
    Fortsätt genom att klicka på **Next** .
 
 8. På sidan **Tilldelningar** kan du tilldela appskyddsprincipen till grupper av användare. I den här självstudien tilldelar du inte den här principen till en grupp.  
- Du behöver inte konfigurera de här inställningarna.
 
    Fortsätt genom att klicka på **Next** .
 

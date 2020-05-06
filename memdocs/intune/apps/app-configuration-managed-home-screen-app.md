@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d596a0a43c17243431fa47bcac996868fd38066
-ms.sourcegitcommit: 7687cf8fdecd225216f58b8113ad07a24e43d4a3
+ms.openlocfilehash: ef8fb81b7be05d21eec5a4d1b544ee1a7d34bd07
+ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80358691"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82693482"
 ---
 # <a name="configure-the-microsoft-managed-home-screen-app-for-android-enterprise"></a>Konfigurera Microsofts hanterade hemskärmsapp för Android Enterprise
 
@@ -66,7 +66,6 @@ I följande tabell visas tillgängliga konfigurationsnycklar, värdetyper, stand
 | Ställa in storlek för appikon | heltal | 2 | Gör att du kan ange ikonstorlek för appar som visas på startskärmen. Du kan välja följande värden i den här konfigurationen för olika storlekar: 0 (minst), 1 (liten), 2 (normal), 3 (stor) och 4 (störst). |
 | Ange ikon för appmappen | heltal | 0 | Gör att du kan definiera utseendet på appmapparna på startskärmen. Du kan välja utseende bland följande värden: Mörk fyrkantig(0);   mörk cirkel(1); ljus fyrkantig(2); ljus cirkel(3). |
 | Ange skärmens orientering | heltal | 1 | Gör att du kan ange startskärmens orientering till stående eller liggande läge eller tillåt automatisk rotation. Du kan ställa in orienteringen genom att ange värden 1 (för stående läge), 2 (för liggande läge), 3 (för automatisk rotation). |
-| Aktivera enhetstelemetri | bool | FALSE | Aktiverar all telemetri som samlas in för den hanterade startskärmen. Om du aktiverar det här kan Microsoft hantera enhetstelemetri, som hur många gånger en viss app startas på enheten. |
 | Ange tillåtna program | bundleArray | FALSE | Gör att du kan definiera en uppsättning appar som ska visas på startskärmen bland apparna som är installerade på enheten. Du kan definiera appar genom att ange paketnamnet för de appar som du vill göra synliga. Till exempel skulle com.microsoft.emmx göra inställningar tillgängliga på startskärmen. Apparna som du godkänner i det här avsnittet bör vara installerade på enheten för att kunna visas på startskärmen. |
 | Ställa in fästa webblänkar | bundleArray | FALSE | Du kan fästa webbplatser som snabbstartsikoner på startskärmen. Med den här konfigurationen kan du definiera webbadressen och lägga till den på startskärmen så att användaren kan starta webbläsaren med en tryckning. |
 | Aktivera skärmsläckare | bool | FALSE | Aktivera eller inaktivera skärmsläckarläget. Om det är inställt på true (sant) kan du konfigurera **screen_saver_image**, **screen_saver_show_time**,   **inactive_time_to_show_screen_saver** och   **media_detect_screen_saver**. |
@@ -78,10 +77,17 @@ I följande tabell visas tillgängliga konfigurationsnycklar, värdetyper, stand
 | Typ av virtuell hemknapp | sträng | swipe_up | Använd **swipe_up** för att få åtkomst till hemknappen med en uppsvepningsgest. Använd **flyt** för att få åtkomst till en fäst, beständig hemknapp som slutanvändaren kan flytta på skärmen. |
 | Indikator för batteri och signalstyrka | bool | Sant  | Om du ställer in den här inställningen på `True` visas en indikator för batteri och signalstyrka. |
 | Lösenord för att avsluta låst läge för uppgift | sträng |   | Ange en kod som består av 4–6 siffror som ska användas för att tillfälligt ta bort läget för låst uppgift för felsökning. |
+| Visa hanterad inställning | bool | TRUE | ”Hanterad inställning” är en hanterad app för startskärmen som bara visas om du har konfigurerat inställningar för snabbåtkomst, inklusive **Visa Wi-Fi-inställning**, **Visa Bluetooth-inställning**, **Visa volyminställning** och **Visa ficklampsinställning**. De här inställningarna kan också nås genom att du sveper nedåt på skärmen. Ange den här nyckeln som `False` om du vill dölja appen ”Hanterad inställning” och göra så att slutanvändarna bara når inställningarna genom att svepa nedåt.    |
+| Aktivera felsökningsmeny för enkel åtkomst | bool | FALSE | Växla den här inställningen till `True` för att öppna felsökningsmenyn från appen Hanterade inställningar eller med nedåtsvepning på den hanterade startskärmen. Möjligheten att avsluta helskärmsläget finns för närvarande i felsökningsmenyn. Du öppnar den genom att trycka på bakåtknappen cirka 15 gånger. Ha kvar den här inställningen på `False` om du vill göra så att startpunkten för felsökningsmenyn endast kan nås via bakåtknappen.   |
 | Visa inställningar för trådlöst nätverk | bool | FALSE | Om du ställer in den här inställningen på `True` kan användaren aktivera eller inaktivera Wi-Fi eller ansluta till olika Wi-Fi-nätverk.  |
+| Aktivera Wi-Fi-lista över tillåtna | bool | FALSE | Växla den här inställningen till `True` och fyll nyckeln i **Wi-Fi-lista över tillåtna** för att begränsa vilka Wi-Fi-nätverk som visas på den hanterade startskärmen. Ange till `False` om du vill visa alla tillgängliga Wi-Fi-nätverk som enheten har identifierat. Observera att den här inställningen endast är relevant om **Visa Wi-Fi-inställningen** har angetts till `True` och **Wi-Fi-lista över tillåtna** har fyllts i.   |
+| Wi-Fi-lista över tillåtna| bundleArray | FALSE | Gör att du kan visa alla SSID:er för de Wi-Fi-nätverk som du vill att enheten ska visa på den hanterade startskärmen. Den här listan är bara relevant om **Visa Wi-Fi-inställningen** och **Aktivera Wi-Fi-lista över tillåtna** har angetts till `True`. Om någon av dessa har angetts till `False` behöver du inte ändra den här konfigurationen.    |
 | Visa Bluetooth-inställning | bool | FALSE | Om du ställer in den här inställningen på `True` kan användaren aktivera eller inaktivera Bluetooth och ansluta till olika Bluetooth-aktiverade enheter.   |
+| Visa volyminställning | bool | FALSE | Om du växlar den här inställningen till `True` får slutanvändaren åtkomst till ett volymreglage för att justera medievolymen.   |
+| Visa ficklampsinställning | bool | FALSE | Om du växlar den här inställningen till `True` kan slutanvändaren slå på eller stänga av enhetens ficklampa. Om enheten inte har stöd för en ficklampa visas inte den här inställningen även om den är konfigurerad till `True`.   |
+| Visa inställning för enhetsinformation | bool | FALSE | Om du växlar den här inställningen till `True` kan användaren få snabb information om enheten från appen Hanterad inställning eller genom att svepa nedåt. Tillgänglig information inkluderar enhetens märke, modell och serienummer.   |
 | Programmen i mappen sorteras efter namn | bool | TRUE | När den inställningen är `False` visas objekt i en mapp i den angivna ordningen. Annars visas de i bokstavsordning i mappen.   |
-| Programordning har aktiverats | bool | FALSE | När den här inställningen är `True` kan program, webblänkar och mappar visas i en vald ordning på den hanterade startskärmen. När den är aktiv kan du ställa in ordningen med **app_order**. Användaren kan aktivera eller inaktivera Bluetooth och ansluta till olika Bluetooth-aktiverade enheter.   |
+| Programordning har aktiverats | bool | FALSE | När den här inställningen är `True` kan program, webblänkar och mappar visas i en vald ordning på den hanterade startskärmen. När den är aktiverad anger ordningen med **app_order**.   |
 | Programordning | bundleArray | FALSE | Du kan ange i vilken ordning program, webblänkar och mappar visas på den hanterade hemskärmen. För att använda inställningen måste **Lås hemskärmen** vara aktivt, **Ställ in rutnätsstorlek** måste ha definierats och **Aktivera programordning** måste vara inställd på `True`.   |
 
 ## <a name="enter-json-data"></a>Ange JSON-data
@@ -124,10 +130,6 @@ Här följer ett exempel på ett JSON-skript med alla tillgängliga konfiguratio
         {
             "key": "screen_orientation",
             "valueInteger": 1
-        },
-        {
-            "key": "enable_telemetry",
-            "valueBool": false
         },
         {
             "key": "applications",
@@ -182,6 +184,51 @@ Här följer ett exempel på ett JSON-skript med alla tillgängliga konfiguratio
         {
             "key": "show_bluetooth_setting",
             "valueBool": false
+        },
+        {
+            "key": "show_flashlight_setting",
+            "valueBool": false
+        },
+        {
+            "key": "show_volume_setting",
+            "valueBool": false
+        },
+        {
+            "key": "show_device_info_setting",
+            "valueBool": false
+        },
+        {
+            "key": "show_managed_setting",
+            "valueBool": false
+        },
+        {
+            "key": "enable_easy_access_debugmenu",
+            "valueBool": false
+        },
+        {
+            "key": "enable_wifi_allowlist",
+            "valueBool": false
+        },
+        {
+            "key": "wifi_allowlist",
+            "valueBundleArray": [
+                {
+                    "managedProperty": [
+                        {
+                            "key": "SSID",
+                            "valueString": "name of Wi-Fi network 1 here"
+                        }
+                    ]
+                },   
+                {
+                    "managedProperty": [
+                        {
+                            "key": "SSID",
+                            "valueString": "name of Wi-Fi network 2 here"
+                        }
+                    ]
+                }  
+            ]
         },
         {
             "key": "grid_size",
@@ -335,7 +382,7 @@ Här följer ett exempel på ett JSON-skript med alla tillgängliga konfiguratio
 Nu ger Managed Home Screen-appen tillgång till Googles Android Device Policy-app. Managed Home Screen-appen är en anpassad startfunktion som används med enheter som har registrerats i Intune som AE-dedikerade (Android Enterprise) enheter som använder helskärmsläge för flera appar. Du kan komma åt Android Device Policy-appen, eller vägleda användare till Android Device Policy-appen, för support och felsökning. Den här startfunktionen är tillgänglig när enheten registreras och låses på startskärmen i Managed Home Screen. Inga ytterligare installationer behövs för att använda den här funktionen.
 
 ## <a name="managed-home-screen-debug-screen"></a>Felsökningsskärm för hanterad startsida
-Du kan komma åt den hanterade startskärmens felsökningsskärm genom att klicka på knappen **Tillbaka** tills felsökningsskärmen visas (klicka på knappen **Tillbaka** 15 gånger eller mer). Från felsökningsskärmen kan du starta programmet Android Device Policy, visa och överföra loggar eller tillfälligt pausa helskärmsläget för att uppdatera enheten. Mer information om hur du pausar helskärmsläget finns i objektet **Lämna helskärmsläget** i [inställningarna för dedikerad enhet](../configuration/device-restrictions-android-for-work.md#dedicated-devices) för Android Enterprise.
+Du kan komma åt den hanterade startskärmens felsökningsskärm genom att klicka på knappen **Tillbaka** tills felsökningsskärmen visas (klicka på knappen **Tillbaka** 15 gånger eller mer). Från felsökningsskärmen kan du starta programmet Android Device Policy, visa och överföra loggar eller tillfälligt pausa helskärmsläget för att uppdatera enheten. Mer information om hur du pausar helskärmsläget finns i objektet **Lämna helskärmsläget** i [inställningarna för dedikerad enhet](../configuration/device-restrictions-android-for-work.md#dedicated-devices) för Android Enterprise. Om du vill ha ett enklare sätt att få åtkomst till den hanterade startskärmens felsökningsskärm kan du ange **Aktivera felsökningsmeny för enkel åtkomst** till `True` med hjälp av principer för programkonfiguration. 
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/24/2020
+ms.date: 04/09/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb8d5b53e136ea22d1edbad7755e198fd4155285
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: 4ffa3d11b92c38373da22e53b96fe9cf9e520b5b
+ms.sourcegitcommit: af8a3efd361a7f3fa6e98e5126dfb1391966ff76
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80551394"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82149174"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -37,9 +37,6 @@ Intune innehåller många funktioner och inställningar som hjälper administrat
 Intune använder ”konfigurationsprofiler” till att skapa och anpassa inställningarna efter din organisations behov. När du har lagt till dessa funktioner i en profil, kan du skicka eller distribuera profilen till iOS/iPadOS- och macOS-enheter i din organisation.
 
 Den här artikeln beskriver de olika funktioner som du kan konfigurera och visar hur du skapar en profil för enhetskonfigurationen. Artikeln innehåller även alla tillgängliga inställningar för [iOS/iPadOS](ios-device-features-settings.md)- och [macOS](macos-device-features-settings.md)-enheter.
-
-> [!NOTE]
-> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="airprint"></a>AirPrint
 
@@ -134,14 +131,14 @@ Gäller för:
 
 ## <a name="single-sign-on"></a>Enkel inloggning
 
-De flesta verksamhetsspecifika appar kräver av säkerhetsskäl någon nivå av användarautentisering. I många fall kräver den här autentiseringen att användaren anger samma autentiseringsuppgifter upprepade gånger. För att förbättra användarupplevelsen kan utvecklare skapa appar som använder enkel inloggning (SSO). Med enkel inloggning minskar antalet gånger som en användare måste ange autentiseringsuppgifter.
+De flesta verksamhetsspecifika appar kräver av säkerhetsskäl någon nivå av användarautentisering. I många fall kräver autentiseringen att användaren anger samma autentiseringsuppgifter upprepade gånger. För att förbättra användarupplevelsen kan utvecklare skapa appar som använder enkel inloggning (SSO). Med enkel inloggning minskar antalet gånger som en användare måste ange autentiseringsuppgifter.
+
+Profilen för enkel inloggning baseras på Kerberos. Kerberos är ett protokoll för nätverksautentisering som använder kryptering med hemliga nycklar för att autentisera klient-serverprogram. Intune-inställningarna definierar Kerberos-kontoinformation vid åtkomst till servrar eller angivna appar och hanterar Kerberos-utmaningar för webbplatser och interna appar. Apple rekommenderar att du använder inställningarna för [tillägget för enkel inloggning för Kerberos](#single-sign-on-app-extension) (i den här artikeln) i stället för inställningarna för enkel inloggning.  
 
 Om du vill använda enkel inloggning, måste du ha:
 
 - En app som är kodad för att leta efter användarens autentiseringsuppgifter lagrade i enkel inloggning på enheten.
 - Intune måste ha konfigurerats för enkel inloggning för iOS/iPadOS-enheter.
-
-![Fönstret Enkel inloggning](./media/device-features-configure/sso-blade.png)
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [Enkel inloggning i iOS/iPadOS](ios-device-features-settings.md#single-sign-on).
 
@@ -156,7 +153,7 @@ De här inställningarna konfigurerar ett apptillägg som möjliggör enkel inlo
 
 Använd de här inställningarna i Intune för att konfigurera ett apptillägg för enkel inloggning som har skapats av din organisation, identitetsprovider, Microsoft eller Apple. Tillägget för SSO-appen hanterar autentisering för dina användare. De här inställningarna konfigurerar apptillägg för enkel inloggning av omdirigerings- och inloggningsinformationstyp.
 
-- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OAuth och SAML2. Microsoft har ett apptillägg för enkel inloggning av Azure AD-omdirigeringstyp för iOS/iPad som kan aktiv ras med inställningarna för apptillägget för enkel inloggning.
+- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OAuth och SAML2. Du kan använda ett allmänt omdirigeringstillägg på macOS-enheter. För iOS/iPad-enheter kan du välja mellan Microsoft Azure AD-tillägget för enkel inloggning ([Microsoft Enterprise-plugin-programmet för enkel inloggning](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin)) och ett allmänt omdirigeringstillägg.
 - Inloggningsinformationstypen är utformad för autentiseringsflöden med anrop och svar. Du kan välja mellan ett Kerberos-specifikt tillägg för autentiseringsuppgifter från Apple och ett generiskt för autentiseringsuppgifter.
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [iOS/iPadOS SSO-apptillägg](ios-device-features-settings.md#single-sign-on-app-extension) och [macOS SSO-apptillägg](macos-device-features-settings.md#single-sign-on-app-extension).

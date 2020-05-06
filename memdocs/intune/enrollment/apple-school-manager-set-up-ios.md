@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bbca477b389b568d2aca1ab0f9394ec09fe2b24
-ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
+ms.openlocfilehash: 63a465e39e8a041c47b6748d9dacdebf3c6ea8a5
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80696556"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82078115"
 ---
 # <a name="set-up-iosipados-device-enrollment-with-apple-school-manager"></a>Konfigurera registrering av iOS/iPadOS-enheter med Apple School Manager
 
@@ -90,7 +90,7 @@ Nu när du har installerat din token, kan du skapa en registreringsprofil för A
 4. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
     - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda företagsportalen för tjänster som installation av appar. Det här alternativet låter också användare autentisera sina enheter med företagsportalen. Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).   Det delade iPad-läget i Apple School Manager innebär att användarna måste registrera sig utan användartillhörighet.
 
-    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare, till exempel en delad enhet. Använd det här alternativet för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som företagsportalappen fungerar inte.
+    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare, till exempel en delad enhet. Använd det här alternativet för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som Företagsportal fungerar inte.
 
 5. Om du väljer **Registrera med användartillhörighet**, kan du låta användare autentisera sig med företagsportalen istället för Apple Installationsassistenten.
 
@@ -105,7 +105,7 @@ Nu när du har installerat din token, kan du skapa en registreringsprofil för A
     > Dessa stöds inte vid autentisering med Apples installationsassistent.
 
 6. Välj **Inställningar för enhetshantering** och välj om du vill att enheter som använder den här profilen ska övervakas.
-    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder ADE som mekanism för att aktivera övervakat läge, särskilt för organisationer som distribuerar större antal iOS/iPadOS-enheter.
+    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att ADE används som mekanism för att aktivera övervakat läge i Intune, särskilt för organisationer som distribuerar större antal iOS-/iPadOS-enheter.
 
     Användare meddelas att deras enheter är övervakade på två sätt:
 

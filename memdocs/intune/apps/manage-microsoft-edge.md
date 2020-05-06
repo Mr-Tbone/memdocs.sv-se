@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 04/27/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58e651849632fd06f962edfc90649ad14eeaeda0
-ms.sourcegitcommit: e17fc618d4c56c38a65c489b73ba27baa133ee7b
+ms.openlocfilehash: cc1b11fe533499ebe29101c09fb1355cd8d04243
+ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80696546"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82183083"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Hantera webbåtkomst med Microsoft Edge med Microsoft Intune
 
@@ -39,8 +39,8 @@ Microsoft Intunes skyddsprinciper för Microsoft Edge hjälper till att skydda d
 ## <a name="getting-started"></a>Komma igång
 
 Du och slutanvändarna kan ladda ned Microsoft Edge från offentliga appbutiker för användning i företaget. Operativsystemkraven för webbläsarprinciper är något av följande:
-- Android 4 och senare
-- iOS 8.0 och senare
+- Android 5 och senare
+- iOS 12.0 och senare
 
 ## <a name="application-protection-policies-for-microsoft-edge"></a>Principer för programskydd för Microsoft Edge
 
@@ -129,7 +129,7 @@ Du kan tilldela inställningarna till Azure AD-grupper med användare. Om använ
 
 ## <a name="direct-users-to-microsoft-edge-instead-of-the-intune-managed-browser"></a>Dirigera användarna till Microsoft Edge i stället för Intune Managed Browser 
 
-Både Intune Managed Browser och Microsoft Edge kan nu användas av principskyddade webbläsare. För att säkerställa att dina användare använder rätt webbläsarapp ska du rikta alla Intune-hanterade appar (t.ex. Outlook, OneDrive och SharePoint) med följande konfigurationsinställning:
+Microsoft Edge kan användas som en principskyddad webbläsare. För att säkerställa att dina användare använder rätt webbläsarapp ska du rikta alla Intune-hanterade appar (t.ex. Outlook, OneDrive och SharePoint) med följande konfigurationsinställning:
 
 |    Tangent    |    Värde    |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -194,7 +194,7 @@ På samma sätt som du konfigurerar en genväg till en startsida så kan du konf
 
 |    Tangent    |    Värde    |
 |-------------------------------------------------------------------|-------------|
-|    com.microsoft.intune.mam.managedbrowser.managedTopSites   |    Ange en uppsättning adressvärden. Varje genväg till en vanlig webbplats består av en rubrik och en webbadress. Avgränsa rubriken och URL:en med tecknet `|`. Exempel: <br> `GitHub | https://github.com/||LinkedIn|https://www.linkedin.com`    |
+|    com.microsoft.intune.mam.managedbrowser.managedTopSites   |    Ange en uppsättning adressvärden. Varje genväg till en vanlig webbplats består av en rubrik och en webbadress. Avgränsa rubriken och URL:en med tecknet `|`. Exempel: <br> `GitHub|https://github.com/||LinkedIn|https://www.linkedin.com`    |
 
 ## <a name="configure-your-organizations-logo-and-brand-color-for-new-tab-pages-in-microsoft-edge"></a>Konfigurera din organisations logotyp och varumärkesfärg för nya flikar i Microsoft Edge
 
@@ -415,7 +415,7 @@ Mer information om hur du visar loggar på Android-enheter finns i [Skicka logga
 
 Följande är ytterligare överväganden för säkerhet och sekretess för Microsoft Edge:
 
-- Microsoft Edge använder inte inställningar som användare anger för den inbyggda webbläsaren https://docs.microsoft.com/en-us/intune/apps/app-configuration-policies-use-android#allow-only-configured-organization-accounts-in-multi-identity-apps på sina enheter, eftersom Microsoft Edge inte har åtkomst till de här inställningarna.
+- Microsoft Edge använder inte inställningar som användare anger för den inbyggda webbläsaren på sina enheter, eftersom Microsoft Edge inte har åtkomst till de här inställningarna.
 - Du kan konfigurera alternativet **Kräv enkel PIN-kod för åtkomst** eller **Kräv företagets autentiseringsuppgifter för åtkomst** i en appskyddsprincip som är associerad med Microsoft Edge. Om en användare väljer hjälplänken på autentiseringssidan kan de besöka alla webbplatser, oavsett om de har lagts till i en lista över blockerade webbplatser i principen.
 - Microsoft Edge kan endast blockera åtkomst till webbplatser när de öppnas direkt. Den blockerar inte åtkomst när användare använder mellanliggande tjänster (till exempel en översättningstjänst) för åtkomst till webbplatsen.
 - För att tillåta autentisering och få åtkomst till Intune-dokumentationen är ***microsoft.com** undantaget från listan Tillåt eller blockera. Detta tillåts alltid.
