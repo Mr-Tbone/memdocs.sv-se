@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2020
+ms.date: 04/24/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,28 +16,25 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c5528e5de99e599c968f0c006aa98545b2004e2
-ms.sourcegitcommit: 0ad7cd842719887184510c6acd9cdfa290a3ca91
+ms.openlocfilehash: beea54b7ca244190ec0821d4ce8364369797590a
+ms.sourcegitcommit: ad4b3e4874a797b755e774ff84429b5623f17c5c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80551552"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166627"
 ---
 # <a name="enforce-compliance-for-microsoft-defender-atp-with-conditional-access-in-intune"></a>Tvinga fram kompatibilitet för Microsoft Defender ATP med villkorlig åtkomst i Intune
 
-Du kan integrera Microsoft Defender Avancerat skydd (Microsoft Defender ATP) med Microsoft Intune som en Skydd mot mobilhot-lösning. Integrationen kan hjälpa dig att förhindra säkerhetsöverträdelser och begränsa effekten av överträdelser inom en organisation. Microsoft Defender ATP fungerar med enheter som kör Windows 10 eller senare.
+Du kan integrera Microsoft Defender Avancerat skydd (Microsoft Defender ATP) med Microsoft Intune som en Skydd mot mobilhot-lösning. Integrationen kan hjälpa dig att förhindra säkerhetsöverträdelser och begränsa effekten av överträdelser inom en organisation. Microsoft Defender ATP kan användas med enheter som kör Windows 10 eller senare och med Android-enheter.
 
 För att lyckas, använder du följande konfigurationer tillsammans:
 
-- **Etablera en tjänst-till-tjänst-anslutning mellan Intune och Microsoft Defender ATP**. Med den här anslutningen kan Microsoft Defender ATP samla in data om datorrisker från Windows 10-enheter som du hanterar med Intune.
+- **Etablera en tjänst-till-tjänst-anslutning mellan Intune och Microsoft Defender ATP**. Med den här anslutningen kan Microsoft Defender ATP samla in data om datorrisker från Windows 10-enheter och Android-enheter som du hanterar med Intune.
 - **Använd en enhetskonfigurationsprofil för att publicera enheter med Microsoft Defender ATP**. Du registrerar enheter för att konfigurera som så att de kommunicerar med Microsoft Defender ATP och för att tillhandahålla data som hjälper dem att utvärdera sin risknivå.
 - **Använd en efterlevnadsprincip för enheter för att ange den risknivå som du vill tillåta**. Risknivåer rapporteras av Microsoft Defender ATP. Enheter som överskrider den tillåtna risknivån identifieras som icke-kompatibla.
 - **Använd en princip** för villkorlig åtkomst för att blockera användare från att komma åt företagsresurser från enheter som inte är kompatibla.
 
 När du integrerar Intune med Microsoft Defender ATP kan du dra nytta av ATP:s Threat & Vulnerability Management (TVM) och [använda Intune för att åtgärda sårbarheter i slutpunkterna som har upptäckts av TVM](atp-manage-vulnerabilities.md).
-
-> [!NOTE]
-> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="example-of-using-microsoft-defender-atp-with-intune"></a>Exempel på användning av Microsoft Defender ATP med Intune
 
@@ -61,7 +58,7 @@ Eftersom du har en efterlevnadsprincip för Intune-enheter för att klassificera
 Om du vill använda Microsoft Defender ATP med Intune måste du ha följande konfigurerat och klart att använda:
 
 - Licensierad klientorganisation för Enterprise Mobility + Security E3 och Windows E5 (eller Microsoft 365 Enterprise E5)
-- Microsoft Intune-miljö med [Intune-hanterade](../enrollment/windows-enroll.md) Windows 10-enheter som även är Azure AD-anslutna
+- Microsoft Intune-miljö med [Intune-hanterade](../enrollment/windows-enroll.md) Windows 10-enheter eller Android-enheter som även är Azure AD-anslutna
 - [Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) och åtkomst till Microsoft Defender Security Center (ATP-portal)
 
 > [!NOTE]
@@ -81,15 +78,17 @@ Du behöver bara aktivera Defender ATP en gång per klientorganisation.
 
    ![Välj att öppna Microsoft Defender Security Center](./media/advanced-threat-protection/atp-device-compliance-open-microsoft-defender.png)
 
-4. I **Microsoft Defender Security Center**:
-    1. Välj **Inställningar** > **Avancerade funktioner**.
-    2. För **Microsoft Intune-anslutningen**, välj **På**:
+3. I **Microsoft Defender Security Center**:
+   1. Välj **Inställningar** > **Avancerade funktioner**.
+   2. För **Microsoft Intune-anslutningen**, välj **På**:
 
-        ![Aktivera anslutningen till Intune](./media/advanced-threat-protection/atp-security-center-intune-toggle.png)
+      ![Aktivera anslutningen till Intune](./media/advanced-threat-protection/atp-security-center-intune-toggle.png)
 
-    3. Välj **Spara inställningar**.
+   3. Välj **Spara inställningar**.
 
-4. Gå tillbaka till **Microsoft Defender Avancerat skydd** i administrationscentret för Microsoft Endpoint Manager. Under **MDM-inställningar för efterlevnadsprinciper** väljer du **På** för **Anslut Windows-enheter i version 10.0.15063 och högre till Microsoft Defender ATP**.
+4. Gå tillbaka till **Microsoft Defender Avancerat skydd** i administrationscentret för Microsoft Endpoint Manager. Under **MDM-inställningar för efterlevnadsprinciper**, beroende på organisationens behov:
+   - Ställ in **Anslut Windows-enheter version 10.0.15063 och senare till Microsoft Defender ATP** till **På** och/eller
+   - Ställ in **Anslut Android-enheter version 6.0.0 och senare till Microsoft Defender ATP** till **På**.
 
 5. Välj **Spara**.
 
@@ -107,9 +106,9 @@ Du behöver bara aktivera Defender ATP en gång per klientorganisation.
 >
 > Du kan visa klassiska principer för villkorlig åtkomst genom att gå till **Azure Active Directory** > **Villkorlig åtkomst** > **Klassiska principer** i [Azure](https://portal.azure.com/#home).
 
-## <a name="onboard-devices-by-using-a-configuration-profile"></a>Publicera enheter med en konfigurationsprofil
+## <a name="onboard-windows-devices-by-using-a-configuration-profile"></a>Publicera Windows-enheter med en konfigurationsprofil 
 
-När du har upprättat tjänst-till-tjänst-anslutningen mellan Intune och Microsoft Defender ATP kan du publicera dina Intune-hanterade enheter till ATP så att data om deras risknivå kan samlas in och användas. Använd en enhetskonfigurationsprofil för att publicera enheter med Microsoft Defender ATP.
+För Windows-plattformen kan du, efter att ha upprättat tjänst-till-tjänst-anslutningen mellan Intune och Microsoft Defender ATP, publicera dina Intune-hanterade enheter till ATP så att data om deras risknivå kan samlas in och användas. Använd en enhetskonfigurationsprofil för att publicera enheter med Microsoft Defender ATP.
 
 När du upprättar anslutningen till Microsoft Defender ATP fick Intune ett konfigurationspaket för Microsoft Defender ATP-registrering från Microsoft Defender ATP. Det här paketet distribueras till enheter med enhetskonfigurationsprofilen. Konfigurationspaketet konfigurerar enheter för att kommunicera med [Microsoft Defender ATP-tjänster](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) för att söka igenom filer, identifiera hot och rapportera risken till Microsoft Defender ATP. När du publicerat en enhet med konfigurationspaketet behöver du inte göra det igen. Du kan också publicera enheter med hjälp av en [grupprincip eller Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints).
 
@@ -118,7 +117,7 @@ När du upprättar anslutningen till Microsoft Defender ATP fick Intune ett konf
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange ett **Namn** och en **Beskrivning**.
-4. För **Plattform** väljer du **Windows 10 och senare**
+4. För **Plattform** väljer du **Windows 10 och senare** 
 5. För **Profiltyp** väljer du **Microsoft Defender ATP (Windows 10 Desktop)** .
 6. Konfigurera inställningarna:
 
@@ -137,7 +136,7 @@ När du upprättar anslutningen till Microsoft Defender ATP fick Intune ett konf
 
 ## <a name="create-and-assign-the-compliance-policy"></a>Skapa och tilldela en efterlevnadsprincip
 
-Efterlevnadsprincipen bestämmer risknivån som du bedömer som lämplig för en enhet.
+För både Windows- och Android-enheter bestämmer efterlevnadsprincipen risknivån som du bedömer som lämplig för en enhet.
 
 Om du inte vet hur du skapar en efterlevnadsprincip, se proceduren [Skapa en princip](../protect/create-compliance-policy.md#create-the-policy) i artikeln *Skapa en efterlevnadsprincip i Microsoft Intune*. Följande information gäller konfigurering av Defender ATP som en del av en efterlevnadsprincip.
 
@@ -145,9 +144,9 @@ Om du inte vet hur du skapar en efterlevnadsprincip, se proceduren [Skapa en pri
 
 2. Välj **Enheter** > **Efterlevnadsprinciper** > **Principer** > **Skapa princip**.
 
-3. För **Plattform** väljer du *Windows 10 och senare* och väljer sedan **Skapa** för att öppna konfigurationsfönstret **Skapa princip**.
+3. För **Plattform** väljer du *Windows 10 och senare*, **Android-enhetens administratör** och/eller **Android Enterprise**. Öppna sedan konfigurationsfönstret **Skapa princip** genom att välja **Skapa**.
 
-4. Ange ett **Namn** på fliken **Grundläggande information** som sedan kan hjälpa dig att identifiera detta. Du kan också välja att ange en **Beskrivning**.
+4. Ange ett **Namn** som sedan kan hjälpa dig att identifiera detta. Du kan också välja att ange en **Beskrivning**.
   
 5. På fliken **Efterlevnadsinställningar** utökar du gruppen **Microsoft Defender ATP** och anger **Kräv att enheten ska hållas vid eller under riskpoängen** till önskad nivå.
 
@@ -205,7 +204,7 @@ Mer information om rapporter finns i [Intune-rapporter](../fundamentals/reports.
 
 ## <a name="view-onboarding-status"></a>Visa registreringsstatus
 
-Om du vill se registreringsstatus för alla Intune-hanterade Windows 10-enheter, kan du gå till **Enhetsefterlevnad** > **Microsoft Defender ATP**. Från den här sidan kan du också börja skapa en enhetskonfigurationsprofil som kan registrera fler enheter till Microsoft Defender ATP.
+Om du vill se registreringsstatus för alla Intune-hanterade Windows 10-enheter, kan du gå till **Innehavaradministration** > **Microsoft Defender ATP**. Från den här sidan kan du också börja skapa en enhetskonfigurationsprofil som kan registrera fler enheter till Microsoft Defender ATP.
 
 ## <a name="next-steps"></a>Nästa steg
 

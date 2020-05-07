@@ -9,6 +9,7 @@ ms.date: 10/31/2019
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
+ms.subservice: end-user
 ms.technology: ''
 ms.assetid: ''
 searchScope:
@@ -18,18 +19,18 @@ ms.reviewer: tisilver
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 38d1b40ecdeee5bfd872297a5fd4f0229cb48dcf
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: 268ed874be65c9ade7f801b89528d1a23f176ee1
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79337596"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82077809"
 ---
 # <a name="set-up-ios-or-ipados-device-with-company-portal-and-disa-purebred"></a>Konfigurera en iOS- eller iPadOS-enhet med Intune-företagsportalen och DISA Purebred  
 
 Registrera din enhet med appen för Intune-företagsportal om du vill få säker mobil åtkomst till din organisations e-post, filer och appar. När enheten har registrerats blir den *hanterad*. Din organisation kan tilldela principer och appar till enheten via en MDM-provider för hantering av mobilenheter, t.ex. Intune.  
 
-Under registreringen ska du även installera härledda autentiseringsuppgifter på enheten. Din organization kan kräva att du använder härledda autentiseringsuppgifter som en autentiseringsmetod när du får åtkomst till resurser, eller för att signera och kryptera e-post. 
+Under registreringen ska du även installera härledda autentiseringsuppgifter på enheten. Din organisation kan kräva att du använder härledda autentiseringsuppgifter som en autentiseringsmetod när du får åtkomst till resurser, eller för att signera och kryptera e-post. 
 
 Det är sannolikt att du behöver konfigurera en härledd autentiseringsuppgift om du använder ett smartkort för att:
 
@@ -39,13 +40,13 @@ Det är sannolikt att du behöver konfigurera en härledd autentiseringsuppgift 
 I den här artikeln kommer du att:  
 
    * Registrera en mobil iOS- eller iPadOS-enhet med Intune-företagsportalen.  
-   * Hämta en härledd autentiseringsuppgift från organisationens leverantör av den härledda autentiseringsuppgiften, [DISA Purebred](https://cyber.mil/pki-pke/purebred/).  
+   * Hämta en härledd autentiseringsuppgift från organisationens leverantör av den härledda autentiseringsuppgiften, DISA Purebred: https:\//cyber.mil/pki-pke/purebred/.  
 
 ## <a name="what-are-derived-credentials"></a>Vad är härledda autentiseringsuppgifter?  
-En härledd autentiseringsuppgift är ett certifikat som härleds från autentiseringsuppgifter för smartkort och som är installerat på din enhet. Det ger dig fjärråtkomst till arbetsresureser samtidigt som det förhindrar obehöriga användare att komma åt känslig information.  
+En härledd autentiseringsuppgift är ett certifikat som härleds från smartkortets autentiseringsuppgifter och som är installerat på din enhet. Det ger dig fjärråtkomst till arbetsresurser samtidigt som det förhindrar att obehöriga användare får åtkomst till känslig information.  
 
 Härledda autentiseringsuppgifter används för att: 
-* Autentisera studenter och medarbetare som loggar in på skol- eller arbetsappar, Wi-Fi och VPN
+* Autentisera elever och medarbetare som loggar in på skol- eller arbetsappar, Wi-Fi och VPN
 * Signera och kryptera e-post för skola eller arbete med S/MIME-certifikat
 
 Härledda autentiseringsuppgifter är en implementering av riktlinjerna från National Institute of Standards and Technology (NIST) för härledda PIV-autentiseringsuppgifter (Personal Identity Verification) som en del av en Special Publication (SP) 800-157.  
@@ -73,10 +74,10 @@ Du måste också kontakta en Purebred-agent eller representant under installatio
     ![Exempel på skärmbild på företagsportalswebbplatsens uppmaning ”Ange kod”.](./media/enter-code-intercede.png)   
 
 5. Infoga smartkortet för att logga in.  
-6. Gå tillbaka till företagsportalen på din mobila enhet och följ anvisningarna på skärmen för att registrera enheten.  
-7. När registreringen är klar meddelar företagsportalen dig att du ska konfigurera smartkortet. Tryck på meddelandet. Om du inte får ett meddelande bör du kontrollera din e-post.   
+6. Gå tillbaka till företagsportalappen på din mobila enhet och följ anvisningarna på skärmen för att registrera enheten.  
+7. När registreringen är klar meddelar företagsportalen dig att du ska konfigurera smartkortet. Tryck på meddelandet. Om du inte får något meddelande bör du kontrollera din e-post.   
 
-    ![Exempel på skärmbild av företagsportalen push-meddelande på enhetens startsida.](./media/action-required-in-app-intercede.png)  
+    ![Exempel på skärmbild av företagsportalens push-meddelande på enhetens startsida.](./media/action-required-in-app-intercede.png)  
 8. På skärmen **Ställ in åtkomst till mobilens smartkort**:  
     a. Tryck på länken till organisationens konfigurationsinstruktioner. Om din organisation inte tillhandahåller ytterligare instruktioner kommer du att skickas till den här artikeln.  
     b. Öppna Purebred-appen genom att klicka på **Öppna**.  
@@ -118,7 +119,7 @@ Du måste också kontakta en Purebred-agent eller representant under installatio
 21. Återgå till företagsportalappen och vänta medan företagsportalen har slutfört konfigurationen av enheten.   
 
 ## <a name="next-steps"></a>Nästa steg  
-När registreringen är klar har du åtkomst till arbetsresurser, till exempel e-post, Wi-Fi och alla appar som din organisation gör tillgängliga. Mer information om hur du hämtar, söker efter, installerar och avinstallerar appar i företagsportalen finns i:
+När registreringen är klar har du åtkomst till arbetsresurser, till exempel e-post, Wi-Fi och alla appar som din organisation har gjort tillgängliga. Mer information om hur du hämtar, söker efter, installerar och avinstallerar appar i företagsportalen finns i:
 
 * [Hantera appar från Företagsportal-webbplatsen](manage-apps-cpweb.md)  
 * [Använda hanterade appar på enheten](use-managed-apps-on-your-device-ios.md)  

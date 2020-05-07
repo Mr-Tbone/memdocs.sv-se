@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/13/2020
+ms.date: 04/23/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aaec456a5ff9864fedf5e95f317bc484ddfc4d82
-ms.sourcegitcommit: fe7484e86ec8a109fa5f54fe9cceef8aac94bd9f
+ms.openlocfilehash: fedca34aaf390dfec655e3166f3a153af93a7ce0
+ms.sourcegitcommit: 7b3eed763b394075766ea080968889a8538bfe56
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80275075"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82506598"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Inställningar för Windows 10 (och senare) för att skydda delade enheter med Intune
 
@@ -748,17 +748,6 @@ De här inställningarna gäller specifikt fasta dataenheter.
     - **Säkerhetskopiera återställningslösenord och nyckelpaket**  
     - **Säkerhetskopiera endast återställningslösenord**  
 
-  - **Klientbaserad rotering av återställningslösenord**  
-    **Standard**: Nyckelrotering har aktiverats för Azure AD-anslutna enheter  
-    CSP:n BitLocker: [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp)  
-    
-    Med den här inställningen påbörjas en klientbaserad rotering av återställningslösenord efter en återställning av operativsystemenhet (antingen med bootmgr eller WinRE).  
-
-    - Inte konfigurerat  
-    - Nyckelrotering har inaktiverats  
-    - Nyckelrotering har aktiverats för Azure AD-anslutna enheter  
-    - Nyckelrotering har aktiverats för Azure AD- och hybridanslutna enheter  
-
   - **Lagra återställningsinformation i Azure Active Directory innan du aktiverar BitLocker**  
     **Standard**: Inte konfigurerat  
  
@@ -942,6 +931,9 @@ Blockera följande för att hjälpa till att förhindra e-posthot:
 > **På X86-klientdatorer**:  
 > *C:\Program Files\Microsoft Intune Management Extension\Content*  
 > *C:\windows\IMECache*  
+>
+> Mer information finns i [Rekommendationer om virusgenomsökning för företagsdatorer som kör versioner av Windows som för närvarande stöds](https://support.microsoft.com/help/822158/virus-scanning-recommendations-for-enterprise-computers).
+
 
 ### <a name="controlled-folder-access"></a>Reglerad mappåtkomst  
 
@@ -1264,9 +1256,8 @@ Använd dessa alternativ för att konfigurera de lokala säkerhetsinställningar
   **Standard**: Inte konfigurerat  
   CSP:n LocalPoliciesSecurityOptions: [Devices_AllowUndockWithoutHavingToLogon](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-devices-allowundockwithouthavingtologon)  
 
-  
-  - **Blockera** – användarna kan trycka på den fysiska utmatningsknappen på en dockad bärbar enhet för att på ett säkert sätt koppla bort enheten.  
-  - **Inte konfigurerat** – användare måste logga in på enheten och få behörighet att koppla bort enheten från dockningsstation.  
+  - **Blockera** – användare måste logga in på enheten och få behörighet att koppla bort enheten från dockningsstation.
+  - **Inte konfigurerat** – användare kan trycka på den fysiska utmatningsknappen på en dockad bärbar enhet för att på ett säkert sätt koppla bort enheten.
 
 - **Installera skrivardrivrutiner för delade skrivare**  
   **Standard**:  Inte konfigurerat  
@@ -1309,8 +1300,8 @@ Använd dessa alternativ för att konfigurera de lokala säkerhetsinställningar
   CSP:n LocalPoliciesSecurityOptions: [InteractiveLogon_DoNotRequireCTRLALTDEL](https://go.microsoft.com/fwlink/?linkid=867951)  
 
 
-  - **Aktivera** – användare måste inte trycka på CTRL+ALT+DEL för att logga in.  
-  - **Inte konfigurerad** – kräv att användarna trycker på CTRL+ALT+DEL innan de loggar in på Windows.  
+  - **Aktivera** – användare måste trycka på CTRL+ALT+DEL innan de loggar in i Windows.
+  - **Inte konfigurerat** – användare måste inte trycka på CTRL+ALT+DEL för att logga in.
 
 - **Beteende vid borttagning av smartkort**  
   **Standard**: Lås arbetsstation   

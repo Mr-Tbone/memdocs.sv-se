@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf2c3c09ca957b0355669edc536dfd1f0d0e3226
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: 38598e0245b0cfe15be4b9303620aea1724933d1
+ms.sourcegitcommit: ad4b3e4874a797b755e774ff84429b5623f17c5c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407891"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166578"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -85,7 +85,7 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 
 ### <a name="system-security"></a>Systemsäkerhet
 
-- **Hotgenomsökning för appar**: Om du väljer **Kräv** (standard) kan Google Play Protect genomsöka appar före de installeras och efter de installerats. Om ett hot identifieras kan användarna varnas och uppmanas att ta bort appen från enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske operativsystemet inte aktiverar eller kör Google Play Protect för genomsökning av appar.
+- **Hotgenomsökning för appar**: Om du väljer **Kräv** (standard) kan Google Play Protect genomsöka appar före de installeras och efter de installerats. Om ett hot identifieras kan användarna varnas och uppmanas att ta bort appen från enheten. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske operativsystemet inte aktiverar eller kör Google Play Protect för genomsökning av appar.
 
 ### <a name="dedicated-devices"></a>Särskilda enheter
 
@@ -207,6 +207,9 @@ Använd dessa inställningar om du vill konfigurera en upplevelse i helskärmsfo
 - **Antal dagar tills lösenordet går ut**: Ange antalet dagar innan enhetslösenordet måste ändras (från 1 till 365 dagar). Ange till exempel `90` om lösenordet ska upphöra efter 90 dagar. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Antal lösenord som krävs innan användaren kan återanvända ett lösenord**: Använd den här inställningen för att förhindra att användare återanvänder tidigare använda lösenord. Ange antal tidigare använda lösenord som inte får återanvändas, från 1–24. Ange till exempel `5` om användare inte ska kunna ange ett nytt lösenord till sina nuvarande lösenord eller något av de föregående fyra lösenorden. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan enheten rensas (från 4 till 11). `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
+
+  > [!NOTE]
+  > Enhetsägarens enheter uppmanas inte att ställa in ett lösen ord. Inställningarna tillämpas och du måste ange lösenordet manuellt. Principen som framtvingar detta rapporterar att åtgärden misslyckades tills du anger lösenordet som uppfyller dina krav.
 
 ### <a name="power-settings"></a>Energiinställningar
 

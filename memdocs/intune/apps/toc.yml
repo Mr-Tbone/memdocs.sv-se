@@ -147,10 +147,10 @@
               href: apps-configure-chrome-android.md
         - name: Volyminköpta appar och böcker
           items:
-            - name: Hantera VPP-appar och-böcker
+            - name: Översikt över volyminköp
               href: vpp-apps.md
               displayName: vpp; volume purchased
-            - name: iOS VPP-appar
+            - name: Volyminköpta iOS-appar
               href: vpp-apps-ios.md
             - name: Microsoft Store för företag-appar
               href: windows-store-for-business.md
@@ -206,6 +206,10 @@
           href: app-install-error-codes.md
         - name: Felsök hantering av mobilprogram
           href: troubleshoot-mam.md
+        - name: Granska appskyddsloggar
+          href: app-protection-policy-settings-log.md
+        - name: Felsöka distributionen av appskyddsprinciper
+          href: troubleshoot-app-protection-policy-deployment.md
 - name: Referens
   items:
     - name: Skydda program med Intune App SDK
