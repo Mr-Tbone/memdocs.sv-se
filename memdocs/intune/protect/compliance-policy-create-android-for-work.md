@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/07/2020
+ms.date: 05/01/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 26bd9a92343c1ddcc31c1ff65b43643f3d9e22c9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: d419eb341d3d15a8307396d1bcf13235201606f4
+ms.sourcegitcommit: 56bb5419c41c2e150ffed0564350123135ea4592
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79353365"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729247"
 ---
 # <a name="android-enterprise-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Android Enterprise-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -41,11 +41,24 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 [Skapa en efterlevnadsprincip](create-compliance-policy.md#create-the-policy). Välj **Android Enterprise** för **Plattform**.
 
+
 ## <a name="device-owner"></a>Enhetens ägare
+
+### <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
+
+- **Kräv att enheten ska hållas vid eller under riskpoängen**  
+
+  Välj den högsta tillåtna riskpoängen för enheter som utvärderas av Microsoft Defender ATP. Enheter som överskrider den här poängen markeras som inkompatibla.
+  - **Ej konfigurerat** (*standard*)
+  - **Rensa**
+  - **Låg**
+  - **Medel**
+  - **Hög**
 
 ### <a name="device-health"></a>Enhetens hälsotillstånd
 
-- **Kräv att enheten ligger på eller under enhetshotnivån**: Välj den högsta tillåtna enhetshotnivå som utvärderas av din [tjänst för skydd mot mobilhot](mobile-threat-defense.md). Enheter som överskrider den här hotnivå markeras som inkompatibla. Om du vill använda den här inställningen väljer du den tillåtna hotnivån:
+- **Kräv att enheten ligger på eller under enhetshotnivån**  
+  Välj den högsta tillåtna enhetshotnivå som utvärderas av din [tjänst för skydd mot mobilhot](mobile-threat-defense.md). Enheter som överskrider den här hotnivå markeras som inkompatibla. Om du vill använda den här inställningen väljer du den tillåtna hotnivån:
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Skyddad** – Det här alternativet är säkrast och innebär att enheten inte kan ha några hot. Om hot på någon nivå identifieras på enheten betraktas den som inkompatibel.
@@ -53,12 +66,13 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   - **Medel** – Enheten utvärderas som kompatibel om hoten som finns på enheten är på en låg eller medelhög nivå. Om hot på en högre nivå identifieras på enheten får den statusen inkompatibel.
   - **Hög** – Det här alternativet är det minst säkra då det tillåter alla hotnivåer. Det skulle kunna vara användbart om lösningen endast används i rapporteringssyfte.
   
-> [!NOTE] 
+> [!NOTE]
 > Alla MTD-leverantörer (Mobile Threat Defense) stöds på Android Enterprise-enhetsägardistributioner med hjälp av appkonfiguration. Kontakta din MTD-leverantör för att få den exakta konfiguration som krävs för att stödja Android Enterprise-enhetsägarplattformar på Intune.
 
 #### <a name="google-play-protect"></a>Google Play-skydd
 
-- **SafetyNet-enhetsattestering**: Ange den nivå av [SafetyNet-attestering](https://developer.android.com/training/safetynet/attestation.html) som måste uppfyllas. Alternativen är:
+- **SafetyNet-enhetsattestering**  
+  Ange den nivå av [SafetyNet-attestering](https://developer.android.com/training/safetynet/attestation.html) som måste uppfyllas. Alternativen är:
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kontrollera grundläggande integritet**
   - **Kontrollera grundläggande integritet och certifierade enheter**
@@ -67,94 +81,119 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 #### <a name="operating-system-version"></a>Operativsystemversion
 
-- **Lägsta version av operativsystemet**: När en enhet inte uppfyller minimikravet på operativsystemversion, rapporteras den som inkompatibel. En länk med information om hur du uppgraderar visas. Slutanvändaren kan uppgradera sin enhet och sedan komma åt organisationsresurser.
+- **Lägsta version av operativsystemet**  
+  När en enhet inte uppfyller minimikravet på operativsystemversion, rapporteras den som inkompatibel. En länk med information om hur du uppgraderar visas. Slutanvändaren kan uppgradera sin enhet och sedan komma åt organisationsresurser.
 
   *Som standard finns det ingen konfigurerad version*.
 
-- **Högsta version av operativsystemet**: När en enhet använder en senare version av operativsystemet än den i regeln blockeras åtkomsten till organisationsresurser. Användaren uppmanas att kontakta IT-administratören. Enheten kan inte komma åt organisationens resurser förrän regeln ändras så att operativsystemversionen tillåts.
+- **Högsta version av operativsystemet**  
+  När en enhet använder en senare version av operativsystemet än den i regeln blockeras åtkomsten till organisationsresurser. Användaren uppmanas att kontakta IT-administratören. Enheten kan inte komma åt organisationens resurser förrän regeln ändras så att operativsystemversionen tillåts.
 
   *Som standard finns det ingen konfigurerad version*.
 
-- **Lägsta säkerhetskorrigeringsnivå**:  Välj den äldsta säkerhetskorrigeringsnivå som en enhet kan ha. Enheter som inte har minst den här korrigeringsnivån räknas som inkompatibla. Datumet måste anges i formatet YYYY-MM-DD.
+- **Lägsta säkerhetskorrigeringsnivå**  
+  Välj den äldsta säkerhetskorrigeringsnivå som en enhet kan ha. Enheter som inte har minst den här korrigeringsnivån räknas som inkompatibla. Datumet måste anges i formatet YYYY-MM-DD.
 
   *Som standard finns det inget konfigurerat datum*.
 
-
 ### <a name="system-security"></a>Systemsäkerhet
 
-- **Kräv ett lösenord för att låsa upp mobila enheter**: 
+- **Kräv ett lösenord för att låsa upp mobila enheter**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Användarna måste ange ett lösenord innan de får åtkomst till sina enheter.
-  - **Lösenordstyp som krävs**: Välj om ett lösenord endast ska innehålla numeriska tecken, eller en blandning av siffror och andra tecken. Alternativen är:
-    - **Standard för enheten** – för att utvärdera lösenordsefterlevnad ska du välja en annan lösenordsstyrka än **Standard för enheten**.  
-    - **Lösenord krävs, inga begränsningar**
-    - **Svag biometrik** - [Stark eller svag biometri](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (öppnar Androids webbplats)
-    - **Numeriskt** (*standard*): Lösenordet får bara innehålla siffror, till exempel `123456789`. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
-    - **Numeriskt avancerat** – Upprepade eller efterföljande siffror, till exempel ”1111” eller ”1234”, tillåts inte. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
-    - **Alfabetiskt** – Bokstäver i alfabetet måste anges. Siffror och symboler krävs inte. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
-    - **Alfanumeriskt** – Innehåller versaler, gemener och numeriska tecken. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
-    - **Alfanumeriskt med symboler** – Innehåller versaler, gemener, numeriska tecken, skiljetecken och symboler. Ange även:
-    
-    Beroende på den *lösenordstyp* du väljer är följande inställningar tillgängliga:  
-    - **Minsta lösenordslängd**: Ange den minsta längd som lösenordet måste ha (mellan 4 och 16 tecken).  
 
-    - **Antal tecken som krävs**: Ange hur många tecken som lösenordet måste innehålla (mellan 0 och 16 tecken).
+- **Lösenordstyp krävs**  
+  Välj om ett lösenord endast ska innehålla numeriska tecken, eller en blandning av siffror och andra tecken. Alternativen är:
+  - **Standard för enheten** – för att utvärdera lösenordsefterlevnad ska du välja en annan lösenordsstyrka än *Standard för enheten*.
+  - **Lösenord krävs, inga begränsningar**
+  - **Svag biometrik** - [Stark eller svag biometri](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (öppnar Androids webbplats)
+  - **Numeriskt** (*standard*): Lösenordet får bara innehålla siffror, till exempel `123456789`. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
+  - **Numeriskt avancerat** – Upprepade eller efterföljande siffror, till exempel ”1111” eller ”1234”, tillåts inte. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
+  - **Alfabetiskt** – Bokstäver i alfabetet måste anges. Siffror och symboler krävs inte. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
+  - **Alfanumeriskt** – Innehåller versaler, gemener och numeriska tecken. Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
+  - **Alfanumeriskt med symboler** – Innehåller versaler, gemener, numeriska tecken, skiljetecken och symboler.
 
-    - **Antal gemener som krävs**: Ange hur många gemener som lösenordet måste innehålla (mellan 0 och 16 tecken).
+  Beroende på den *lösenordstyp* du väljer är följande inställningar tillgängliga:
+  - **Minsta längd på lösenord**  
+    Ange den minsta längd som lösenordet måste ha (mellan 4 och 16 tecken).  
 
-    - **Antal versaler som krävs**: Ange hur många versaler som lösenordet måste innehålla (mellan 0 och 16 tecken).
+  - **Antal tecken som krävs**  
+    Ange hur många tecken som lösenordet måste innehålla (mellan 0 och 16 tecken).
 
-    - **Antal icke-bokstavstecken som krävs**: Ange hur många icke-bokstavstecken (bokstäver som inte ingår i alfabetet) som lösenordet måste innehålla (mellan 0 och 16 tecken).
+  - **Antal gemener som krävs**  
+    Ange hur många gemener som lösenordet måste innehålla (mellan 0 och 16 tecken).
 
-    - **Antal numeriska tecken som krävs**: Ange hur många numeriska tecken (till exempel `1`, `2` eller `3`) som lösenordet måste innehålla (mellan 0 och 16 tecken).
-    
-    - **Antal symboltecken som krävs**: Ange hur många symboltecken (till exempel `&`, `#` eller `%`) som lösenordet måste innehålla (mellan 0 och 16 tecken).
- 
-- **Maximalt antal minuters inaktivitet innan lösenord krävs**: Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen. Bland alternativen finns standardvalet *Inte konfigurerat* samt från *1 minut* till *8 timmar*.
+  - **Antal versaler som krävs**  
+    Ange hur många versaler som lösenordet måste innehålla (mellan 0 och 16 tecken).
 
-- **Antal dagar tills lösenordet går ut**: Ange antal dagar innan lösenordet för enheten måste ändras (mellan 1 och 365). Exempel: Om du vill att lösenordet ska ändras om 60 dagar anger du `60`. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord.
+  - **Antal icke-bokstavstecken som krävs**  
+    Ange hur många icke-bokstavstecken (bokstäver som inte ingår i alfabetet) som lösenordet måste innehålla (mellan 0 och 16 tecken).
 
-   *Inget värde har konfigurerats som standard*.
+  - **Antal numeriska tecken som krävs**  
+    Ange hur många numeriska tecken (till exempel `1`, `2` eller `3`) som lösenordet måste innehålla (mellan 0 och 16 tecken).
 
-- **Antal lösenord som krävs innan användaren kan återanvända ett lösenord**: Ange antalet senast använda lösenord som inte får återanvändas, mellan 1 och 24. Använd den här inställningen för att förhindra att användaren återanvänder tidigare använda lösenord.  
+  - **Antal symboltecken som krävs**  
+    Ange hur många symboltecken (till exempel `&`, `#` eller `%`) som lösenordet måste innehålla (mellan 0 och 16 tecken).
+
+  - **Maximalt antal minuters inaktivitet innan lösenord krävs**  
+    Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen. Bland alternativen finns standardvalet *Inte konfigurerat* samt från *1 minut* till *8 timmar*.
+
+  - **Antal dagar tills lösenordet går ut**  
+    Ange antal dagar innan lösenordet för enheten måste ändras (mellan 1 och 365). Exempel: Om du vill att lösenordet ska ändras om 60 dagar anger du `60`. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord.
+
+    *Inget värde har konfigurerats som standard*.
+
+  - **Antal lösenord som krävs innan användaren kan återanvända ett lösenord**  
+    Ange antalet senast använda lösenord som inte får återanvändas, mellan 1 och 24. Använd den här inställningen för att förhindra att användaren återanvänder tidigare använda lösenord.  
 
     *Som standard finns det ingen konfigurerad version*.
 
 #### <a name="encryption"></a>Kryptering
 
-- **Kryptering av datalagring på enheten**: 
+- **Kryptering av datalagring på enheten**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  - **Kräv** – kryptera datalagring på dina enheter.  
+  - **Kräv** – kryptera datalagring på dina enheter.
 
   Du behöver inte konfigurera den här inställningen eftersom Android Enterprise-enheter tvingar fram kryptering.
 
 ## <a name="work-profile"></a>Arbetsprofil
 
-### <a name="device-health"></a>Enhetens hälsotillstånd
+### <a name="microsoft-defender-atp---for-work-profile"></a>Microsoft Defender ATP – *för arbetsprofil*
 
-- **Rotade enheter**: 
+- **Kräv att enheten ska hållas vid eller under riskpoängen**  
+  Välj den högsta tillåtna riskpoängen för enheter som utvärderas av Microsoft Defender ATP. Enheter som överskrider den här poängen markeras som inkompatibla.
+  - **Ej konfigurerat** (*standard*)
+  - **Rensa**
+  - **Låg**
+  - **Medel**
+  - **Hög**
+
+### <a name="device-health---for-work-profile"></a>Enhetens hälsotillstånd – *för arbetsprofil*
+
+- **Rotade enheter**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  - **Blockera** – Markera rotade (jailbreakade) enheter som inkompatibla.  
+  - **Blockera** – Markera rotade (jailbreakade) enheter som inkompatibla.
 
-- **Kräv att enheten ligger på eller under enhetshotnivån**: Välj den högsta tillåtna enhetshotnivå som utvärderas av din [tjänst för skydd mot mobilhot](mobile-threat-defense.md). Enheter som överskrider den här hotnivå markeras som inkompatibla. Om du vill använda den här inställningen väljer du den tillåtna hotnivån:
-
+- **Kräv att enheten ligger på eller under enhetshotnivån**  
+  Välj den högsta tillåtna enhetshotnivå som utvärderas av din [tjänst för skydd mot mobilhot](mobile-threat-defense.md). Enheter som överskrider den här hotnivå markeras som inkompatibla. Om du vill använda den här inställningen väljer du den tillåtna hotnivån:
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Skyddad** – Det här alternativet är säkrast och innebär att enheten inte kan ha några hot. Om hot på någon nivå identifieras på enheten betraktas den som inkompatibel.
   - **Låg** – Enheten utvärderas som kompatibel om det bara finns lågnivåhot på den. Om hot på en högre nivå identifieras får enheten statusen icke-kompatibel.
   - **Medel** – Enheten utvärderas som kompatibel om hoten som finns på enheten är på en låg eller medelhög nivå. Om hot på en högre nivå identifieras på enheten får den statusen inkompatibel.
   - **Hög** – Det här alternativet är det minst säkra då det tillåter alla hotnivåer. Det skulle kunna vara användbart om lösningen endast används i rapporteringssyfte.
 
-#### <a name="google-play-protect"></a>Google Play-skydd
+#### <a name="google-play-protect---for-work-profile"></a>Google Play-skydd – *för arbetsprofil*
 
-- **Google Play-tjänster har konfigurerats**: 
+- **Google Play-tjänster har konfigurerats**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  - **Kräv** – Kräv att Google Play-tjänstappen installeras och aktiveras. Google Play-tjänster tillåter säkerhetsuppdateringar, vilket är ett beroende på grundnivå för många säkerhetsfunktioner på certifierade Google-enheter. 
+  - **Kräv** – Kräv att Google Play-tjänstappen installeras och aktiveras. Google Play-tjänster tillåter säkerhetsuppdateringar, vilket är ett beroende på grundnivå för många säkerhetsfunktioner på certifierade Google-enheter.
   
-- **Uppdaterad säkerhetsprovider**: 
+- **Uppdaterad säkerhetsprovider**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  - **Kräv** – Kräv att en uppdaterad säkerhetsprovider kan skydda enheten mot kända säkerhetsproblem. 
+  - **Kräv** – Kräv att en uppdaterad säkerhetsprovider kan skydda enheten mot kända säkerhetsproblem.
   
-- **SafetyNet-enhetsattestering**: Ange den nivå av [SafetyNet-attestering](https://developer.android.com/training/safetynet/attestation.html) som måste uppfyllas. Alternativen är:
+- **SafetyNet-enhetsattestering**  
+  Ange den nivå av [SafetyNet-attestering](https://developer.android.com/training/safetynet/attestation.html) som måste uppfyllas. Alternativen är:
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kontrollera grundläggande integritet**
   - **Kontrollera grundläggande integritet och certifierade enheter**
@@ -162,27 +201,30 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 > [!NOTE]
 > På Android Enterprise-enheter är **Hotgenomsökning för appar** en enhetskonfigurationsprincip. Administratörer kan aktivera inställningen på en enhet med hjälp av en konfigurationsprincip. Mer information finns i avsnittet om [begränsningsinställningar för Android Enterprise-enheter](../configuration/device-restrictions-android-for-work.md).
 
-### <a name="device-properties"></a>Egenskaper för enhet
+### <a name="device-properties---for-work-profile"></a>Enhetsegenskaper – *för arbetsprofil*
 
-#### <a name="operating-system-version"></a>Operativsystemversion
+#### <a name="operating-system-version---for-work-profile"></a>Operativsystemversion – *för arbetsprofil*
 
-- **Lägsta version av operativsystemet**: När en enhet inte uppfyller minimikravet på operativsystemversion, rapporteras den som inkompatibel. En länk med information om hur du uppgraderar visas. Slutanvändaren kan uppgradera sin enhet och sedan komma åt organisationsresurser.
-
-  *Som standard finns det ingen konfigurerad version*.
-
-- **Högsta version av operativsystemet**: När en enhet använder en senare version av operativsystemet än den i regeln blockeras åtkomsten till organisationsresurser. Användaren uppmanas att kontakta IT-administratören. Enheten kan inte komma åt organisationens resurser förrän regeln ändras så att operativsystemversionen tillåts.
+- **Lägsta version av operativsystemet**  
+När en enhet inte uppfyller minimikravet på operativsystemversion, rapporteras den som inkompatibel. En länk med information om hur du uppgraderar visas. Slutanvändaren kan uppgradera sin enhet och sedan komma åt organisationsresurser.
 
   *Som standard finns det ingen konfigurerad version*.
 
-### <a name="system-security"></a>Systemsäkerhet
+- **Högsta version av operativsystemet**  
+När en enhet använder en senare version av operativsystemet än den i regeln blockeras åtkomsten till organisationsresurser. Användaren uppmanas att kontakta IT-administratören. Enheten kan inte komma åt organisationens resurser förrän regeln ändras så att operativsystemversionen tillåts.
 
-- **Kräv ett lösenord för att låsa upp mobila enheter**: 
-  - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen. 
+  *Som standard finns det ingen konfigurerad version*.
+
+### <a name="system-security---for-work-profile"></a>Systemsäkerhet – *för arbetsprofil*
+
+- **Kräv ett lösenord för att låsa upp mobila enheter**  
+  - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Användarna måste ange ett lösenord innan de får åtkomst till sina enheter.  
 
   Den här inställningen tillämpas på enhetsnivå. Om du bara behöver kräva ett lösenord på arbetsprofilnivå, använder du en konfigurationsprincip. Mer information finns i avsnittet om [konfigurationsinställningar för Android Enterprise-enheter](../configuration/device-restrictions-android-for-work.md).
 
-- **Lösenordstyp som krävs**: Välj om ett lösenord endast ska innehålla numeriska tecken, eller en blandning av siffror och andra tecken. Alternativen är:
+- **Lösenordstyp krävs**  
+  Välj om ett lösenord endast ska innehålla numeriska tecken, eller en blandning av siffror och andra tecken. Alternativen är:
   - **Standard för enheten**
   - **Låg säkerhetsbiometri**
   - **Minst numeriskt** (*standard*): Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
@@ -191,26 +233,31 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   - **Minst alfanumeriskt**: Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
   - **Minst alfanumeriskt med symboler**: Ange en **minsta längd på lösenord** som användaren måste ange (mellan 4 och 16 tecken).
 
-  Beroende på den *lösenordstyp* du väljer är följande inställningar tillgängliga:  
-  - **Maximalt antal minuters inaktivitet innan lösenord krävs**: Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen. Bland alternativen finns standardvalet *Inte konfigurerat* samt från *1 minut* till *8 timmar*.
+  Beroende på den *lösenordstyp* du väljer är följande inställningar tillgängliga:
 
-  - **Antal dagar tills lösenordet går ut**: Ange antal dagar innan lösenordet för enheten måste ändras (mellan 1 och 365). Exempel: Om du vill att lösenordet ska ändras om 60 dagar anger du `60`. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord.
+  - **Maximalt antal minuters inaktivitet innan lösenord krävs**  
+    Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen. Bland alternativen finns standardvalet *Inte konfigurerat* samt från *1 minut* till *8 timmar*.
 
-  - **Minsta lösenordslängd**: Ange den minsta längd som lösenordet måste ha (mellan 4 och 16 tecken). 
-  
-  - **Antal tidigare lösenord för att förhindra återanvändning**: Ange antalet senast använda lösenord som inte får återanvändas. Använd den här inställningen för att förhindra att användaren återanvänder tidigare använda lösenord.
+  - **Antal dagar tills lösenordet går ut**  
+    Ange antal dagar innan lösenordet för enheten måste ändras (mellan 1 och 365). Exempel: Om du vill att lösenordet ska ändras om 60 dagar anger du `60`. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord.
 
-#### <a name="encryption"></a>Kryptering
+  - **Minsta längd på lösenord**  
+    Ange den minsta längd som lösenordet måste ha (mellan 4 och 16 tecken).
 
-- **Kryptering av datalagring på enheten**: 
+  - **Antal tidigare lösenord för att förhindra återanvändning**  
+    Ange antalet senast använda lösenord som inte får återanvändas. Använd den här inställningen för att förhindra att användaren återanvänder tidigare använda lösenord.
+
+#### <a name="encryption---for-work-profile"></a>Kryptering – *för arbetsprofil*
+
+- **Kryptering av datalagring på enheten**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – kryptera datalagring på dina enheter.  
 
   Du behöver inte konfigurera den här inställningen eftersom Android Enterprise-enheter tvingar fram kryptering.
 
-#### <a name="device-security"></a>Enhetssäkerhet
+#### <a name="device-security---for-work-profile"></a>Enhetssäkerhet – *för arbetsprofil*
 
-- **Blockera appar från okända källor**: 
+- **Blockera appar från okända källor**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Blockera** – blockera enheter med källor med **Säkerhet** > **Okända källor** aktiverat (*stöds i Android 4.0 till Android 7.x. Stöds inte av Android 8.0 och senare*).  
 
@@ -221,7 +268,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
   Du behöver inte konfigurera den här inställningen eftersom Android Enterprise-enheter alltid begränsar installationer från okända källor.
 
-- **Körningsintegritet för företagsportalappen**: 
+- **Körningsintegritet för företagsportalappen**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Välj *Kräv* om du vill bekräfta att företagsportalsappen uppfyller följande krav:
     - Har standardkörningsmiljön installerad
@@ -229,13 +276,14 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
     - Är inte i felsökningsläge
     - Har installerats från en känd källa
 
-- **Blockera USB-felsökning på enheten**: 
+- **Blockera USB-felsökning på enheten**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Blockera** – Förhindra att enheter använder USB-felsökningsfunktionen.  
 
   Du behöver inte konfigurera den här inställningen eftersom USB-felsökning redan är inaktiverat på Android Enterprise-enheter.
 
-- **Lägsta säkerhetskorrigeringsnivå**:  Välj den äldsta säkerhetskorrigeringsnivå som en enhet kan ha. Enheter som inte har minst den här korrigeringsnivån räknas som inkompatibla. Datumet måste anges i formatet YYYY-MM-DD.
+- **Lägsta säkerhetskorrigeringsnivå**  
+  Välj den äldsta säkerhetskorrigeringsnivå som en enhet kan ha. Enheter som inte har minst den här korrigeringsnivån räknas som inkompatibla. Datumet måste anges i formatet YYYY-MM-DD.
 
   *Som standard finns det inget konfigurerat datum*.
 

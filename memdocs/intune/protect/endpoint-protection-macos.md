@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/24/2020
+ms.date: 04/29/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e857cdd7028851f14f607739ba7e37c744fa2f1
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 337f7608b4c75a5a2ce2c85774d2090d549ae1fe
+ms.sourcegitcommit: b7e5b053dfa260e7383a9744558d50245f2bccdc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80359455"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587261"
 ---
 # <a name="macos-endpoint-protection-settings-in-intune"></a>Inställningar av slutpunktsskydd för macOS i Intune  
 
@@ -113,6 +113,18 @@ Mer information om Apple FileVault-inställningarna finns i [FDEFileVault](https
 
   - **Antal gånger som ignorering tillåts**  
   Ange det antal gånger som användare kan ignorera frågor om att aktivera FileVault innan FileVault krävs för att de ska kunna logga in. 
+
+    > [!IMPORTANT]
+    >
+    > Det finns ett känt problem med värdet **Ingen gräns, fråga alltid**. I stället för att låta en användare kringgå kryptering när de loggar in, kräver den här inställningen enhetskryptering vid nästa inloggning. Det här problemet förväntas vara åtgärdat i slutet av juni och rapporteras i MC210922.
+    >
+    > När problemet har åtgärdats kommer den här inställningen att ha ett nytt alternativ, noll (**0**), som kräver att enheter krypteras nästa gång en användare loggar in på enheten. När Intune uppdateras med den här korrigeringen kommer alla principer som har inställningen **Ingen gräns, fråga alltid** att uppdateras så att det nya **0**-värdet används, som kräver kryptering.
+    >
+    > När det här problemet har åtgärdats kan du välja att kringgå kryptering genom att konfigurera om den här inställningen och ange **Ingen gräns, fråga alltid** eftersom inställningen kommer att fungera som förväntat och låta användarna kringgå kryptering av enheten.
+    >
+    > Om du har installerat macOS-enheter kan du visa mer information genom att logga in på [administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), gå till **Klientadministration** > **Klientstatus**, välja **Service Health och meddelandecenter** och leta efter meddelande-ID:t **MC210922**.
+
+    <br> 
 
     - **Inte konfigurerat** – kryptering på enheten krävs innan nästa inloggning tillåts.  
     - **1** till **10** – tillåt användare att ignorera uppmaningen från 1 till 10 gånger innan kryptering på enheten krävs.  

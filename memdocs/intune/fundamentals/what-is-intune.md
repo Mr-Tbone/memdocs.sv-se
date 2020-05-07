@@ -17,20 +17,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8fce5e8d7a92922d6061c33655bc4e83b3a1a95
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 3a10709972b0387681d00c8fe848079807c6293a
+ms.sourcegitcommit: 4381afb515c06f078149bd52528d1f24b63a2df9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80233482"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82538097"
 ---
 # <a name="microsoft-intune-is-an-mdm-and-mam-provider-for-your-devices"></a>Microsoft Intune är en MDM- och MAM-provider för dina enheter
 
 Microsoft Intune är en molnbaserad tjänst som fokuserar på hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM). Intune ingår i Microsofts [Enterprise Mobility + Security (EMS)](https://www.microsoft.com/microsoft-365/enterprise-mobility-security) och gör det möjligt för användarna att vara produktiva samtidigt som organisationens data skyddas. Den integreras med andra tjänster, inklusive Microsoft 365 och Azure Active Directory (Azure AD) för att styra vilka som har åtkomst och vad de har åtkomst till, samt Azure Information Protection för dataskydd. När du använder den tillsammans med Microsoft 365 kan dina anställda vara produktiva på alla sina enheter, samtidigt som organisationens information skyddas.
 
-![Bild av Intune-arkitektur](./media/what-is-intune/intunearch_sm.png)
-
-Visa en [större version](./media/what-is-intune/intunearchitecture.svg) av Intune-arkitekturdiagrammet.
+[![Bild av Intune-arkitektur](./media/what-is-intune/intunearch_sm.png )](./media/what-is-intune/intunearchitecture.svg#lightbox)
 
 Med Intune kan du:
 
@@ -61,6 +59,11 @@ När enheterna har registrerats och hanteras i Intune kan administratörerna:
 - [Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler](../configuration/device-profiles.md)
 
 - [Skydda enheter med Microsoft Intune](../protect/device-protect.md)
+
+### <a name="try-the-interactive-guide"></a>Prova den interaktiva guiden
+Den interaktiva guiden [Hantera enheter med Microsoft Endpoint Manager](https://mslearn.cloudguides.com/en-us/guides/Manage%20devices%20with%20Microsoft%20Endpoint%20Manager) vägleder dig steg för steg genom administrationscentret för Microsoft Endpoint Manager och visar hur du hanterar och skyddar mobil- och skrivbordsprogram.</br></br>
+
+> [!VIDEO https://mslearn.cloudguides.com/en-us/guides/Manage%20devices%20with%20Microsoft%20Endpoint%20Manager]
 
 ## <a name="manage-apps"></a>Hantera appar
 

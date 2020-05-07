@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54e18ae8da6d534e26e37da8fba898e60f5a2986
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 5f85a8ffc81aa91bce09d6a76eeb5a52335d8b23
+ms.sourcegitcommit: dda5e6f00f79737348e850d971f15fc3093d6431
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079849"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82745194"
 ---
 # <a name="monitor-intune-device-compliance-policies"></a>Övervaka efterlevnadsprinciper för Intune-enheter
 
@@ -102,6 +102,11 @@ Den här åtgärden öppnar fönstret **Enhetsefterlevnad** och visar enheter i 
 ![Bilden av instrumentpanelen visar mer information på enheten med den specifika statusen](./media/compliance-policy-monitor/drill-down-details.png)
 
 Om du vill se alla enheter som ägs av en specifik användare kan du även filtrera diagramrapporten genom att skriva in användarens e-postadress.
+
+> [!TIP]
+> Om ingen användare är inloggad på enheten skickar målenhetens efterlevnadsprincip en kompatibilitetsrapport till Intune som visar **systemkontot** som User Principal Name. Detta beror på att en efterlevnadsprincip för en enhet kördes mot en grupp med användare eller enheter, men ingen användare var inloggad på enheten när efterlevnadsprincipen utvärderades.
+>
+> Om flera användare är inloggade på samma enhet och en efterlevnadsprincip som körs mot alla inloggade användare har konfigurerats för enheten, kan det också hända att samma enhet visas flera gånger i efterlevnadsrapporten eftersom varje inloggad användare måste utvärdera enhetens efterlevnadsprincip och rapportera den till Intune.
 
 #### <a name="filter-and-columns"></a>Filter och kolumner
 

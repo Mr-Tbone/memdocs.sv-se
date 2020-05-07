@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c8e1551b49fce5074bd2e88d1d8802f62cca2bb
-ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
+ms.openlocfilehash: 749377ceecf29d9b900cff108fc4b736d6b8d0f2
+ms.sourcegitcommit: d05b1472385c775ebc0b226e8b465dbeb5bf1f40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80808099"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605175"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>Använda PowerShell-skript på Windows 10-enheter i Intune
 
@@ -30,7 +30,7 @@ Använd Microsoft Intune-hanteringstillägget för att ladda upp PowerShell-skri
 
 Den här funktionen gäller för:
 
-- Windows 10 och senare
+- Windows 10 och senare (förutom Windows 10 Home)
 
 > [!NOTE]
 > När förhandskraven för Intune-hanteringstillägget är uppfyllda installeras det automatiskt när ett PowerShell-skript eller en Win32-app tilldelas till användaren eller enheten. Mer information finns i avsnittet med [förhandskrav](../apps/intune-management-extension.md#prerequisites) för Intune-hanteringstillägget.
@@ -47,11 +47,14 @@ Tillägget för Intune-hantering kompletterar de inbyggda funktionerna i Windows
 
 Intune-hanteringstillägget har följande krav. När förhandskraven är uppfyllda installeras Intune-hanteringstillägget automatiskt när ett PowerShell-skript eller en Win32-app tilldelas till användaren eller enheten.
 
-- Enheter som kör Windows 10 version 1607 eller senare. Om enheten registrerats med hjälp av [automatisk massregistrering](../enrollment/windows-bulk-enroll.md) måste enheter köra Windows 10 version 1703 eller senare. Intune-hanteringstillägget stöds inte på Windows 10 i S-läge, eftersom S-läge inte tillåter körning av andra appar än Store-appar. 
+- Enheter som kör Windows 10 version 1607 eller senare. Om enheten registrerats med hjälp av [automatisk massregistrering](../enrollment/windows-bulk-enroll.md) måste enheter köra Windows 10 version 1709 eller senare. Intune-hanteringstillägget stöds inte på Windows 10 i S-läge, eftersom S-läge inte tillåter körning av andra appar än Store-appar. 
   
 - Enheter som anslutits till Azure Active Directory (AD), inklusive:  
   
   - Azure AD-anslutna hybridenheter: Enheter som anslutits till Azure Active Directory (AD), och även anslutits till lokal Active Directory (AD). Mer information finns i [Planera implementeringen av din Azure Active Directory-hybridanslutning](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan).
+  
+  > [!TIP]
+  > Se till att enheterna är [anslutna](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network) till Microsoft Azure AD. Enheter som endast är [registrerade](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) i Microsoft Azure AD kommer inte att ta emot skripten.  
 
 - Enheter som registrerats i Intune, inklusive:
 
@@ -71,8 +74,8 @@ Intune-hanteringstillägget har följande krav. När förhandskraven är uppfyll
     - [Arbetsbelastning för klientappar](https://docs.microsoft.com/configmgr/comanage/workloads#client-apps)
     - [Så här växlar du Configuration Manager-arbetsbelastningar till Intune](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads)
   
-> [!TIP]
-> Se till att enheterna är [anslutna](https://docs.microsoft.com/azure/active-directory/user-help/user-help-join-device-on-network) till Microsoft Azure AD. Enheter som endast är [registrerade](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network) i Microsoft Azure AD kommer inte att ta emot skripten.
+> [!NOTE]
+> Information om hur du använder virtuella Windows 10-datorer finns i [Använda virtuella Windows 10-datorer med Intune](../fundamentals/windows-10-virtual-machines.md).
 
 ## <a name="create-a-script-policy-and-assign-it"></a>Skapa en skriptprincip och tilldela den
 
@@ -125,6 +128,8 @@ Intune-hanteringstillägget har följande krav. När förhandskraven är uppfyll
 - Slutanvändarna behöver inte vara inloggade på enheten för att köra PowerShell-skript.
 
 - Agenten för Intune-hanteringstillägg kontrollerar varje timme, och efter varje omstart, om det finns nya skript eller ändringar. När du tilldelar principen till Azure AD-grupper körs PowerShell-skriptet och körningsresultaten rapporteras. När skriptet körs så körs det inte igen såvida det inte finns en ändring i skriptet eller principen. Om skriptet misslyckas försöker agenten för Intune-hanteringstillägg att köra skriptet tre gånger under sina tre följande incheckningar.
+
+- För delade enheter körs PowerShell-skriptet för varje ny användare som loggar in.
 
 ### <a name="failure-to-run-script-example"></a>Det gick inte att köra skriptexemplet
 8\.00

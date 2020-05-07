@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/06/2020
+ms.date: 04/30/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba099e3614c11e10ce4cd9ae94668a1648bfc150
-ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
+ms.openlocfilehash: c5839154ab0c884e933e8d11055e745d54503433
+ms.sourcegitcommit: 8a8378b685a674083bfb9fbc9c0662fb0c7dda97
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80808049"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619550"
 ---
 # <a name="use-shell-scripts-on-macos-devices-in-intune-public-preview"></a>Använda shell-skript på macOS-enheter i Intune (allmänt tillgänglig förhandsversion)
 
@@ -39,7 +39,7 @@ Se till att följande krav uppfylls när du skriver in shell-skript och tilldela
  - Kommandoradstolkar för tillämpliga gränssnitt är installerade.
 
 ## <a name="important-considerations-before-using-shell-scripts"></a>Viktiga överväganden innan du använder shell-skript
- - Shell-skript kräver att Microsoft Intune MDM-agenten har installerats på macOS-enheten. Mer information finns i [Microsoft Intune MDM Agent for macOS](macos-shell-scripts.md#microsoft-intune-mdm-agent-for-macos) (Microsoft Intune MDM-agenten för macOS).
+ - Shell-skript kräver att Microsoft Intune-hanteringsagenten har installerats på macOS-enheten. Mer information finns i [Microsoft Intune-hanteringsagenten för macOS](macos-shell-scripts.md#microsoft-intune-management-agent-for-macos).
  - Shell-skript körs parallellt på enheter som separata processer.
  - Shell-skript som körs som den inloggade användaren körs för alla användarkonton som är inloggade på enheten vid körningstillfället.
  - En slutanvändare måste logga in på enheten för att kunna köra skript som körs som en inloggad användare.
@@ -62,7 +62,7 @@ Se till att följande krav uppfylls när du skriver in shell-skript och tilldela
 6. Välj **Tilldelningar** > **Välj grupper att ta med**. En befintlig lista över Azure AD-grupper visas. Välj en eller flera enhetsgrupper som innehåller de användare vars macOS-enheter ska ta emot skriptet. Välj **Välj**. De grupper du väljer visas i listan och tilldelas din skriptprincip.
    > [!NOTE]
    > - Shell-skript i Intune kan bara tilldelas till säkerhetsgrupper för Azure AD-enheter. Tilldelning av användargrupper stöds inte i förhandsversionen. 
-   > - Vid uppdatering av tilldelningar för shell-skript uppdateras även tilldelningar för [Microsoft Intune MDM-agent för macOS](macos-shell-scripts.md#microsoft-intune-mdm-agent-for-macos).
+   > - När tilldelningar uppdateras för shell-skript uppdateras även tilldelningar för [Microsoft Intune-hanteringsagenten för macOS](macos-shell-scripts.md#microsoft-intune-management-agent-for-macos).
 7. I **Granska + lägg till** visas en sammanfattning av de inställningar som du har konfigurerat. Välj **Lägg till** för att spara skriptet. När du väljer **Lägg till** distribueras skriptprincipen till de grupper som du har valt.
 
 Skriptet som du har skapat visas nu i listan över skript. 
@@ -78,6 +78,47 @@ Du kan övervaka körningsstatus för alla tilldelade skript för användare och
 När ett skript körs returnerar det något av följande tillstånd:
 - Skriptkörningsstatusen **Misslyckades** anger att skriptet returnerade en slutkod som inte är noll eller att skriptet har fel format. 
 - Skriptkörningsstatusen **Lyckades** anger att skriptet returnerade noll som slutkod. 
+
+## <a name="troubleshoot-macos-shell-script-policies-using-log-collection"></a>Felsöka principer för macOS-gränssnittsskript med hjälp av logginsamling
+
+Du kan samla in enhetsloggar för att felsöka skriptproblem på macOS-enheter. 
+
+### <a name="requirements-for-log-collection"></a>Krav för logginsamling
+Följande objekt krävs för insamling av loggar på en macOS-enhet:
+- Du måste ange den fullständiga absoluta loggfilsökvägen.
+- Filsökvägar får endast avgränsas med ett semikolon (;).
+- Den högsta storleken på loggsamlingar som kan laddas upp är 60 MB (komprimerat) eller högst 25 filer, beroende på vilken gräns som nås först.
+- Filtyper som tillåts för logginsamling inkluderar följande filnamnstillägg: *.log, .zip, .gz, .tar, .txt, .xml, .crash och .rtf*
+
+#### <a name="collect-device-logs"></a>Samla in enhetsloggar
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. I rapporten för **Enhetsstatus** eller **Användarstatus** väljer du en enhet.
+3. Välj **Samla in loggar** och ange sökvägar till loggfiler som endast avgränsas med semikolon (;) utan blanksteg eller radbrytningar mellan sökvägar.<br>Till exempel ska flera sökvägar skrivas som `/Path/to/logfile1.zip;/Path/to/logfile2.log`. 
+
+   >[!IMPORTANT]
+   > Flera loggfilsökvägar som avgränsas med kommatecken, punkt, radbrytning eller citattecken med eller utan blanksteg leder till logginsamlingsfel. Blanksteg är inte heller tillåtna som avgränsare mellan sökvägar.
+
+4. Välj **OK**. Loggar samlas in nästa gång Intune-hanteringsagenten på enheten checkar in med Intune. Den här kontrollen sker vanligtvis var 8:e timme.
+
+   >[!NOTE]
+   > 
+   > - Insamlade loggar krypteras på enheten, överförs och lagras i Microsoft Azure-lagring i 30 dagar. Lagrade loggar dekrypteras på begäran och laddas ned med hjälp av administrationscentret för Microsoft Endpoint Manager.
+   > - Utöver de administratörsangivna loggarna samlas även loggarna för Intune-hanteringsagenten in från dessa mappar: `/Library/Logs/Microsoft/Intune` och `~/Library/Logs/Microsoft/Intune`. Agentloggfilernas namn är `IntuneMDMDaemon date--time.log` och `IntuneMDMAgent date--time.log`. 
+   > - Om någon administratörsangiven fil saknas eller har fel filnamnstillägg hittar du dessa filnamn i `LogCollectionInfo.txt`.     
+
+### <a name="log-collection-errors"></a>Logginsamlingsfel
+Logginsamling lyckas kanske inte på grund av något av följande skäl som anges i tabellen nedan. Följ reparationsstegen nedan för att lösa felen.
+
+| Felkod (hex) | Felkod (dec) | Felmeddelande | Reparationssteg |
+|------------------|------------------|---------------|-------------------|
+| 0X87D300D1 | 2016214834 | Loggfilstorleken får inte överskrida 60 MB. | Se till att komprimerade loggar är mindre än 60 MB stora. |
+| 0X87D300D1 | 2016214831 | Den angivna loggfilsökvägen måste finnas. Systemanvändarmappen är en ogiltig plats för loggfiler. | Se till att den angivna filsökvägen är giltig och tillgänglig. |
+| 0X87D300D2 | 2016214830 | Det gick inte att ladda upp logginsamlingsfilen eftersom uppladdningswebbadressen upphört att gälla. | Prova åtgärden **Samla in loggar** igen. |
+| 0X87D300D3, 0X87D300D5, 0X87D300D7 | 2016214829, 2016214827, 2016214825 | Det gick inte att ladda upp logginsamlingsfilen på grund av ett krypteringsfel. Prova att ladda upp logar igen. | Prova åtgärden **Samla in loggar** igen. |
+| | 2016214828 | Antalet loggfiler överskred den tillåtna gränsen på 25 filer. | Endast upp till 25 loggfiler kan samlas in åt gången. |
+| 0X87D300D6 | 2016214826 | Det gick inte att ladda upp logginsamlingsfilen på grund av ett zipfel. Försök att ladda upp loggar igen. | Prova åtgärden **Samla in loggar** igen. |
+| | 2016214740 | Det gick inte att kryptera loggarna eftersom de komprimerade loggarna inte hittades. | Prova åtgärden **Samla in loggar** igen. |
+| | 2016214739 | Loggarna samlades in men kunde inte lagras. | Prova åtgärden **Samla in loggar** igen. |
 
 ## <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 ### <a name="why-are-assigned-shell-scripts-not-running-on-the-device"></a>Varför körs inte tilldelade shell-skript på enheten?
@@ -95,9 +136,9 @@ Ett skript körs bara igen när inställningen för **högsta antal nya försök
 ### <a name="what-intune-role-permissions-are-required-for-shell-scripts"></a>Vilka rollbehörigheter i Intune krävs för shell-skript?
 Din tilldelade Intune-roll kräver behörigheter för **enhetskonfiguration** för att ta bort, tilldela, skapa, uppdatera eller läsa shell-skript.
 
-## <a name="microsoft-intune-mdm-agent-for-macos"></a>Microsoft Intune MDM-agent för macOS
+## <a name="microsoft-intune-management-agent-for-macos"></a>Microsoft Intune-hanteringsagenten för macOS
  ### <a name="why-is-the-agent-required"></a>Varför behövs agenten?
- Microsoft Intune MDM-agenten behöver installeras på hanterade macOS-enheter för att möjliggöra avancerade funktioner för enhetshantering som inte stöds av det inbyggda operativsystemet macOS.
+Microsoft Intune-hanteringsagenten måste vara installerad på hanterade macOS-enheter för att du ska kunna använda avancerade enhetshanteringsfunktioner som inte stöds av det inbyggda macOS-operativsystemet.
  
  ### <a name="how-is-the-agent-installed"></a>Hur installeras agenten?
  Agenten installeras automatiskt och tyst på Intune-hanterade macOS-enheter som du tilldelar minst ett shell-skript i administrationscentret för Microsoft Endpoint Manager. Agenten installeras på `/Library/Intune/Microsoft Intune Agent.app` när det är tillämpligt och visas inte i **Finder** > **Program** på macOS-enheter. Agenten visas som `IntuneMdmAgent` i **Aktivitetskontroll** när den körs på macOS-enheter.
@@ -125,7 +166,7 @@ Som alternativ kan du göra följande:
  - Agenten är i ett oåterkalleligt tillstånd i mer än 24 timmar (enhetens aktiva tid).
 
  ### <a name="how-to-turn-off-usage-data-sent-to-microsoft-for-shell-scripts"></a>Vill du veta hur du stänger av de användningsdata som skickas till Microsoft för shell-skript?
- Om du vill stänga av användningsdata som skickas till Microsoft från Intune MDM-agenten öppnar du Företagsportal och väljer **Meny** > **Inställningar** > *avmarkera Tillåt att Microsoft samlar in användningsdata*. Åtgärden stänger av användningsdata som skickas för både Intune MDM-agenten och Företagsportal.
+ Om du vill stänga av användningsdata som skickas till Microsoft från Intune-hanteringsagenten öppnar du Företagsportal och väljer **Meny** > **Inställningar** > *avmarkera Tillåt att Microsoft samlar in användningsdata*. Åtgärden stänger av användningsdata som skickas för både Intune-hanteringsagenten och Företagsportal.
 
 ## <a name="known-issues"></a>Kända problem
 - **Tilldelning av användargrupp:** Shell-skript som är tilldelade till användargrupper gäller inte för enheter. Tilldelning av användargrupper stöds för närvarande inte i förhandsversionen. Använd tilldelning av användargrupper för att tilldela skript.

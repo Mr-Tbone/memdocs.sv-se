@@ -5,34 +5,58 @@ description: Inställningar för säkerhetsbaslinjer som stöds av Intune för a
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/01/2020
+ms.date: 05/01/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: medium
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: aanavath
+ms.reviewer: laarrizz
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67f4d3c08cbad08464d488073c574babcc77dc61
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+zone_pivot_groups: atp-baseline-versions
+ms.openlocfilehash: e1081395c733807c38dc940ebd1b7c2765da7a9a
+ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81397517"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82693401"
 ---
+<!-- Pivots in use: 
+::: zone pivot="atp-april-2020"
+::: zone-end
+
+::: zone pivot="atp-march-2020"
+::: zone-end
+
+::: zone pivot="atp-march-2020,atp-april-2020"
+::: zone-end
+-->
+
 # <a name="microsoft-defender-advanced-threat-protection-baseline-settings-for-intune"></a>Baslinjeinställningar för Intune för Microsoft Defender Avancerat skydd
 
 Visa baslinjeinställningarna för Microsoft Defender Avancerat skydd som stöds av Microsoft Intune. Standardinställningarna för ATP-baslinjen (Advanced Threat Protection) representerar den rekommenderade konfigurationen för ATP och kanske inte överensstämmer med baslinjens standardvärden för andra säkerhetsbaslinjer.
 
-Informationen i den här artikeln gäller version 3 av Microsoft Defender Avancerat skydd-baslinjen, som gavs ut den 1 mars 2020.
+::: zone pivot="atp-april-2020"
+
+Informationen i den här artikeln gäller version 4 av Microsoft Defender ATP-baslinjen, som gavs ut den 21 april 2020. För att förstå vad som är nytt i den här versionen av baslinjen jämfört med tidigare versioner kan du använda aktiviteten [Jämför baslinjer](../protect/security-baselines.md#compare-baseline-versions) som är tillgänglig när du visar fönstret *Versioner* för den här baslinjen.
+
+::: zone-end
+::: zone pivot="atp-march-2020"
+
+Informationen i den här artikeln gäller version 3 av Microsoft Defender Avancerat skydd-baslinjen, som gavs ut den 1 mars 2020. För att förstå vad som är nytt i den här versionen av baslinjen jämfört med tidigare versioner kan du använda aktiviteten [Jämför baslinjer](../protect/security-baselines.md#compare-baseline-versions) som är tillgänglig när du visar fönstret *Versioner* för den här baslinjen.
+
+::: zone-end
+::: zone pivot="atp-march-2020,atp-april-2020"
+
 
 Baslinjen för Microsoft Defender Advanced Threat Protection är tillgänglig när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites).
 
 Baslinjen är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer. Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
+
 
 ## <a name="application-guard"></a>Application Guard
 
@@ -630,11 +654,26 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
   - **Ja** (*standard*) – Alla nedladdade filer och bifogade filer söks igenom. Inställningen återgår till klientens standard, vilken är aktiverad, men användaren kan ändra den. Om du vill inaktivera den här inställningen använder du en anpassad URI.
   - **Inte konfigurerat** – Inställningen återgår till klientens standard, vilken är aktiverad, men användaren kan ändra den. Om du vill inaktivera den här inställningen använder du en anpassad URI.
 
+::: zone-end
+::: zone pivot="atp-april-2020"
+
+- **Blockera åtkomstskydd**  
+  CSP: [Defender/AllowOnAccessProtection](https://go.microsoft.com/fwlink/?linkid=2113935&clcid=0x409)
+
+  - **Ja**
+  - **Ej konfigurerat** (*standard*)
+
+::: zone-end
+::: zone pivot="atp-march-2020"
+
 - **Blockera åtkomstskydd**  
   CSP: [Defender/AllowOnAccessProtection](https://go.microsoft.com/fwlink/?linkid=2113935&clcid=0x409)
 
   - **Ja** (*standard*)
   - **Inte konfigurerat**
+
+::: zone-end
+::: zone pivot="atp-march-2020,atp-april-2020"
 
 - **Genomsök webbläsarskript**  
   CSP: [Defender/AllowScriptScanning](https://go.microsoft.com/fwlink/?linkid=2114054&clcid=0x409)
@@ -863,6 +902,8 @@ Mer information finns i [PassportForWork CSP](https://docs.microsoft.com/windows
     - **Inte tillåtet**
     - **Obligatoriskt**
     - **Tillåtet** (*standard*)
+
+::: zone-end
 
 ## <a name="next-steps"></a>Nästa steg
 

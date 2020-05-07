@@ -5,23 +5,23 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/17/2020
+ms.date: 05/01/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ''
-ms.reviewer: aanavath
+ms.reviewer: laarrizz
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: faf117f3eedbfe7527606d7a0942cab644c700cb
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 35e48be90b80d0c776087c95444f5f77f5ff547c
+ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81615647"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82693421"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Använd baslinjer för säkerhet för att konfigurera Windows 10-enheter i Intune
 
@@ -56,7 +56,8 @@ Följande instanser av säkerhetsbaslinjer är tillgängliga för användning me
 
 - **Microsoft Defender ATP-baslinje**
    *(Denna baslinje kan användas när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites))* .
-  - [Microsoft Defender ATP-baslinje version 3](security-baseline-settings-defender-atp.md)
+  - [Microsoft Defender ATP-baslinje för april 2020 – version 4](security-baseline-settings-defender-atp.md?pivots=atp-april-2020)
+  - [Microsoft Defender ATP-baslinje för mars 2020 – version 3](security-baseline-settings-defender-atp.md?pivots=atp-march-2020)
 
   > [!NOTE]
   > Säkerhetsbaslinjen för Microsoft Defender ATP är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer.  Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
@@ -73,15 +74,21 @@ När du är redo att flytta till en senare version av en baslinje som du använd
 
 Varje ny versioninstans av en baslinje kan lägga till eller ta bort inställningar eller göra andra ändringar. När nya inställningar för Windows 10 blir tillgängliga tillsammans med nya versioner av Windows 10 kan MDM-säkerhetsbaslinjen få en ny versioninstans som innehåller de senaste inställningarna.
 
-I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) under **Slutpunktssäkerhet** > **Säkerhetsbaslinjer** visas en lista över tillgängliga baslinjer. I listan ingår namnet på baslinjemallen, hur många profiler du har som använder den typen av baslinje, hur många separata instanser (versioner) av typen av baslinje som finns tillgängliga och ett *Senaste publiceringsdatum* som identifierar när den senaste versionen av baslinjemallen blev tillgänglig.
+I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) under **Slutpunktssäkerhet** > **Säkerhetsbaslinjer** visas en lista över tillgängliga baslinjer. I listan ingår namnet på baslinjemallen, hur många profiler du har som använder den typen av baslinje, hur många separata instanser (versioner) av typen av baslinje som finns tillgängliga och ett *Senaste publiceringsdatum* som anger när den senaste versionen av baslinjemallen blev tillgänglig.
 
-Om du vill visa mer information om de baslinjeversioner som du använder väljer du en baslinjepanel för att öppna fönstret *Översikt* och väljer sedan **Versioner**. Intune visar information om versionerna av den baslinje som används av dina profiler. I fönstret versioner kan du välja en version för att visa mer information om de profiler som använder den här versionen. Du kan också välja två olika versioner och sedan välja **Jämför baslinjer** för att hämta en CSV-fil som beskriver dessa skillnader.
-
-![Jämför baslinjer](./media/security-baselines/compare-baselines.png)
-
-När du skapar en *profil* för säkerhetsbaslinjen använder profilen automatiskt den nyligen utgivna instansen av säkerhetsbaslinjen.  Du kan fortsätta att använda och redigera profiler som du har skapat tidigare som anvämnder en tidigare version av baslinjen, inklusive baslinjer som har skapats i en förhandsversion.
+Om du vill visa mer information om de baslinjeversioner som du använder väljer du en baslinjepanel för att öppna fönstret *Översikt* och väljer sedan **Versioner**. Intune visar information om de versioner av baslinjen som används av dina profiler, inklusive den senaste och den aktiva baslinjeversionen.  Du kan välja en version för att visa mer information om de profiler som använder den versionen.
 
 Du kan välja att [ändra versionen](#change-the-baseline-version-for-a-profile) för en baslinje som används med en specifik profil. Det här innebär att när en ny version kommer behöver du inte skapa en ny baslinjeprofil för att använda den. När du är klar kan du istället välja en baslinjeprofil och sedan använda det inbyggda alternativet för att ändra instansversionen för profilen till en ny.
+
+### <a name="compare-baseline-versions"></a>Jämför baslinjeversioner
+
+I fönstret **Versioner** för en säkerhetsbaslinje finns en lista över alla versioner av baslinjen som du har distribuerat. Den här listan innehåller även den senaste och den aktiva versionen av baslinjen. När du skapar en ny *säkerhetsbaslinjeprofil* använder profilen den senaste versionen av säkerhetsbaslinjen.  Du kan fortsätta använda och redigera profiler som du har skapat tidigare som använder en tidigare version av baslinjen, inklusive baslinjer som har skapats i en förhandsversion.
+
+Du kan se vad som har ändrats mellan olika versioner genom att markera kryssrutorna för två olika versioner och sedan välja **Jämför baslinjer** för att ladda ned en CSV-fil med information om skillnaderna. 
+
+Filen visar varje inställning i de två baslinjeversionerna och anger om de har ändrats (*notEqual*) eller inte (*equal*). Informationen innehåller även standardvärdet för inställningen efter version, samt anger om inställningen har *lagts till* för den senaste versionen eller *tagits bort* från den senaste versionen.
+
+![Jämför baslinjer](./media/security-baselines/compare-baselines.png)
 
 ## <a name="avoid-conflicts"></a>Undvika konflikter
 
@@ -199,6 +206,14 @@ När du sparar efter en slutförd konvertering kommer baslinjen att distribueras
 När en inställning för en säkerhetsbaslinje inte längre gäller för en enhet eller inställningar i baslinjen är inställda på *Inte konfigurerad* kommer dessa inställningar på enheten inte att återgå till en förhanterad konfiguration. Istället behåller de tidigare hanterade inställningarna på enheten sina senaste konfigurationer som har tagits emot från baslinjen fram tills dess att någon annan process uppdaterade dessa inställningar på enheten.
 
 Andra processer som kan ändra inställningarna på enheten senare inkluderar en annan eller ny säkerhetsbaslinje, enhetskonfigurationsprofil, grupprincipkonfigurationer eller manuella ändringar av enhetens inställningar.
+
+### <a name="older-baseline-versions"></a>Äldre baslinjeversioner
+
+Microsoft Endpoint Manager uppdaterar versioner av inbyggda säkerhetsbaslinjer beroende på de varierande behoven i en typisk organisation. Varje ny version resulterar i en versionsuppdatering av en viss baslinje. Avsikten är att kunderna ska använda den senaste baslinjeversionen som en startpunkt för deras enhetskonfigurationsprofiler.
+
+När det inte längre finns några profiler som använder en äldre baslinje i din klientorganisation, visar Microsoft Endpoint Manager endast den senaste baslinjeversionen som är tillgänglig.
+
+Om du har en profil som är associerad med en äldre baslinje, kommer den gamla baslinjen att fortsätta att visas.
 
 ## <a name="co-managed-devices"></a>Samhanterade enheter
 

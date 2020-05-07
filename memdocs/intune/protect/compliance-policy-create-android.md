@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/21/2019
+ms.date: 05/01/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58369ee2130ac296c9768812cf51b3fcbfed0d95
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 3f8cb75907befaa747ebae1718815d9722ff7085
+ms.sourcegitcommit: 56bb5419c41c2e150ffed0564350123135ea4592
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79353339"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729218"
 ---
 # <a name="android-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Android-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -38,17 +38,35 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 [Skapa en efterlevnadsprincip](create-compliance-policy.md#create-the-policy). Som **Plattform** väljer du **Android-enhetsadministratör**.
 
+## <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
+
+- **Kräv att enheten ska hållas vid eller under riskpoängen**  
+
+  Välj den högsta tillåtna riskpoängen för enheter som utvärderas av Microsoft Defender ATP. Enheter som överskrider den här poängen markeras som inkompatibla.
+  - **Ej konfigurerat** (*standard*)
+  - **Rensa**
+  - **Låg**
+  - **Medel**
+  - **Hög**
+
 ## <a name="device-health"></a>Enhetens hälsotillstånd
 
-- **Rotade enheter**:
+- **Enheter som hanteras med enhetsadministratör**  
+  *Enhetsadministratörsfunktioner* ersätts av Android Enterprise.
+
+  - **Ej konfigurerat** (*standard*)
+  - **Blockering** – När enhetsadministratören blockeras ombeds användarna att gå över till Android Enterprise-arbetsprofilhantering för att få åtkomst igen.
+
+- **Rotade enheter**  
+  Förhindra företagsåtkomst för rotade enheter. (Den här kompatibilitetskontrollen stöds för Android 4.0 och senare.)
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Blockera** – Markera rotade (jailbreakade) enheter som inkompatibla.
 
-- **Kräv att enheten ligger på eller under enhetshotnivån**:
-
+- **Kräv att enheten ligger på eller under enhetshotnivån**  
   Använd den här inställningen för att använda riskbedömningen från en ansluten Mobile Threat Defense-tjänst  för skydd mot hot som ett villkor för efterlevnad.
-  - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen. 
+
+  - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Säkrad** – Det här alternativet är det säkraste eftersom enheten inte kan ha några hot. Om hot på någon nivå identifieras på enheten betraktas den som inkompatibel.
   - **Låg** – Enheten utvärderas som kompatibel om det bara finns lågnivåhot på den. Om hot på en högre nivå identifieras får enheten statusen icke-kompatibel.
   - **Medel** – Enheten utvärderas som kompatibel om befintliga hot på enheten är på en låg eller medelhög nivå. Om hot på en högre nivå identifieras på enheten får den statusen inkompatibel.
@@ -56,19 +74,18 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 ### <a name="google-play-protect"></a>Google Play-skydd
 
-- **Google Play-tjänster har konfigurerats**:
-
+- **Google Play-tjänster har konfigurerats**  
   Google Play-tjänster tillåter säkerhetsuppdateringar, vilket är ett beroende på grundnivå för många säkerhetsfunktioner på certifierade Google-enheter.
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.  
   - **Kräv** – Kräv att Google Play-tjänstappen installeras och aktiveras.  
 
-- **Uppdaterad säkerhetsprovider**:
+- **Uppdaterad säkerhetsprovider**
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Kräv att en uppdaterad säkerhetsprovider kan skydda enheten mot kända säkerhetsproblem.
 
-- **Hotgenomsökning för appar**:
+- **Hotgenomsökning för appar**
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Kräv att funktionen **Verifiera appar** i Android har aktiverats.
@@ -76,8 +93,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   > [!NOTE]
   > Den här funktionen är en kompatibilitetsinställning på den äldre Android-plattformen. Intune kan bara kontrollera om den här inställningen är aktiverad på enhetsnivå.
 
-- **SafetyNet-enhetsattestering**:
-
+- **SafetyNet-enhetsattestering**  
   Ange den nivå av [SafetyNet-attestering](https://developer.android.com/training/safetynet/attestation.html) som måste uppfyllas. Alternativen är:
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
@@ -89,16 +105,14 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 ## <a name="device-properties"></a>Egenskaper för enhet
 
-### <a name="operating-system-version"></a>Operativsystemversion 
+### <a name="operating-system-version"></a>Operativsystemversion
 
-- **Lägsta version av operativsystemet**:
-
+- **Lägsta version av operativsystemet**  
   När en enhet inte uppfyller minimikravet på operativsystemversion, rapporteras den som inkompatibel. En länk med information om hur du uppgraderar visas. Slutanvändaren kan välja att uppgradera enheten och kan sedan komma åt företagets resurser.
 
   *Som standard finns det ingen konfigurerad version*.
 
-- **Högsta version av operativsystemet**:
-
+- **Högsta version av operativsystemet**  
   När en enhet använder en senare version av operativsystemet än den som har specificerats i regeln, så blockeras åtkomsten till företagets resurser. Användaren uppmanas sedan att kontakta IT-administratören. Den här enheten kan inte komma åt företagsresurser förrän en regel ändras så att operativsystemversionen tillåts.
 
   *Som standard finns det ingen konfigurerad version*.
@@ -107,26 +121,18 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 ### <a name="password"></a>lösenordsinställning
 
-<!-- Removed
-- **Minimum password length**: Enter the minimum number of digits or characters that the user's password must have.   
+- **Kräv ett lösenord för att låsa upp mobila enheter**  
+  *Stöds på Android 4.0 och senare eller KNOX 4.0 och senare.*
 
-
-- **Maximum minutes of inactivity before password is required**: Enter the idle time before the user must reenter their password. When you choose **Not configured** (default), this setting isn't evaluated for compliance or non-compliance.
-
-- **Password expiration (days)**: Select the number of days before the password expires and the user must create a new password.
-
-- **Number of previous passwords to prevent reuse**: Enter the number of recent passwords that can't be reused. Use this setting to restrict the user from creating previously used passwords.
-
--->
-
-- **Kräv ett lösenord för att låsa upp mobila enheter**:
+  Den här inställningen anger huruvida användaren måste ange ett lösenord för att komma åt information på sin mobila enhet. Rekommenderat värde: Kräver  
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Användarna måste ange ett lösenord innan de får åtkomst till sina enheter.
 
-- **Lösenordstyp som krävs**:
+- **Lösenordstyp krävs**  
+  *Stöds på Android 4.0 och senare eller KNOX 4.0 och senare.*
 
-  Välj om ett lösenord endast ska innehålla numeriska tecken, eller en blandning av siffror och andra tecken. Alternativen är:
+  Välj om ett lösenord endast ska innehålla numeriska tecken, eller en blandning av siffror och andra tecken.
 
   - **Standard för enheten** – för att utvärdera lösenordsefterlevnad ska du välja en annan lösenordsstyrka än **Standard för enheten**.
   - **Låg säkerhetsbiometri**
@@ -136,9 +142,29 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   - **Minst alfanumeriskt**
   - **Minst alfanumeriskt med symboler**
 
+  Baserat på konfigurationen av den här inställningen är ett eller flera av följande alternativ tillgängliga:
+
+  - **Minsta längd på lösenord**  
+    *Stöds på Android 4.0 och senare eller KNOX 4.0 och senare.*
+
+    Ange det minsta antal siffror eller tecken som användarens lösenord måste innehålla.
+
+  - **Maximalt antal minuters inaktivitet innan lösenord krävs**  
+    *Stöds på Android 4.0 och senare eller KNOX 4.0 och senare.*
+
+    Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen. Om du väljer **Ej konfigurerad** (standard) görs ingen kompatibilitetskontroll för den här inställningen.
+
+  - **Antal dagar tills lösenordet går ut**  
+  *Stöds på Android 4.0 och senare eller KNOX 4.0 och senare.*
+
+  Ange efter hur många dagar lösenordet upphör att gälla och då användaren måste skapa ett nytt lösenord.
+
+  - **Antal tidigare lösenord för att förhindra återanvändning**  
+    Ange antalet senast använda lösenord som inte får återanvändas. Använd den här inställningen för att förhindra att användaren återanvänder tidigare använda lösenord. (Stöds för Android 4.0 och senare eller KNOX 4.0 och senare.)
+
 ### <a name="encryption"></a>Kryptering
 
-- **Kryptering av datalagring på en enhet**:  
+- **Kryptering av datalagring på en enhet**  
   *Stöds på Android 4.0 och senare eller KNOX 4.0 och senare.*
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
@@ -146,7 +172,8 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 ### <a name="device-security"></a>Enhetssäkerhet
 
-- **Blockera appar från okända källor**:
+- **Blockera appar från okända källor**  
+  *Stöds från Android 4.0 till Android 7.x. Stöds inte av Android 8.0 och senare*
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Blockera** – blockera enheter med källor med **Säkerhet > Okända källor** aktiverat (*stöds i Android 4.0 till Android 7.x. Stöds inte på Android 8.0 och senare.* ).
@@ -156,8 +183,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   > [!IMPORTANT]
   > Inställningen **Blockera appar från okända källor** måste vara aktiverad för program med separat inläsning. Du bör endast tillämpa den här efterlevnadsprincipen om du inte läser in Android-appar separat på enheter.
 
-- **Körningsintegritet för företagsportalappen**:
-
+- **Körningsintegritet för företagsportalappen**
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Välj *Kräv* om du vill bekräfta att företagsportalsappen uppfyller följande krav:
 
@@ -166,19 +192,20 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
     - Är inte i felsökningsläge
     - Har installerats från en känd källa
 
-- **Blockera USB-felsökning på enheten** *(Android 4.2 eller senare)* :
+- **Blockera USB-felsökning på enheten**  
+  *(Stöds på Android 4.2 eller senare)*
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Blockera** – Förhindra att enheter använder USB-felsökningsfunktionen.
 
-- **Lägsta säkerhetskorrigeringsnivå** *(Android 6.0 eller senare)* :
+- **Lägsta säkerhetskorrigeringsnivå**  
+  *(Stöds på Android 6.0 eller senare)*
 
   Välj den äldsta säkerhetskorrigeringsnivå som en enhet kan ha. Enheter som inte har minst den här korrigeringsnivån räknas som inkompatibla. Datumet måste anges i formatet `YYYY-MM-DD`.
 
   *Som standard finns det inget konfigurerat datum*.
 
-- **Begränsade appar**:
-
+- **Begränsade appar**  
   Ange **appnamnet** och **appsamlings-ID:t** för appar som ska vara begränsade, och välj sedan **Lägg till**. En enhet med minst en begränsad app installerad har markerats som inkompatibel.
 
 ## <a name="next-steps"></a>Nästa steg

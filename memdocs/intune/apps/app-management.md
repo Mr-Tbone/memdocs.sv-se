@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e97322fa8a126203bf6e4d1e7a3703b92ded339
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: baffa150b416b778e41a59fdf4e5a1b686cdae7b
+ms.sourcegitcommit: 4381afb515c06f078149bd52528d1f24b63a2df9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80536851"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82538148"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>Vad är apphantering i Microsoft Intune?
 
@@ -109,6 +109,11 @@ Apparbetsbelastningen innehåller länkar till allmän information om appar och 
     - **Appkategorier**: Lägg till, fäst och ta bort appkategorinamn.
     - **E-böcker**: En del appbutiker erbjuder möjligheten att köpa flera licenser till en app eller bok som du vill köra i företaget. Mer information finns i [Hantera volyminköpta appar och böcker med Microsoft Intune](vpp-apps.md).
 - **Hjälp och support**: Felsök, begär support eller visa Intunes status. Mer information finns i [Felsöka problem](../fundamentals/help-desk-operators.md).
+
+### <a name="try-the-interactive-guide"></a>Prova den interaktiva guiden
+Den interaktiva guiden [Hantera och skydda mobil- och skrivbordsprogram med Microsoft Endpoint Manager](https://mslearn.cloudguides.com/en-us/guides/Manage%20and%20protect%20mobile%20and%20desktop%20applications%20with%20Microsoft%20Endpoint%20Manager) vägleder dig steg för steg genom administrationscentret för Microsoft Endpoint Manager och visar hur du hanterar enheter som är registrerade i Intune, framtvingar efterlevnad med principer och skyddar organisationens data.</br></br>
+
+> [!VIDEO https://mslearn.cloudguides.com/en-us/guides/Manage%20and%20protect%20mobile%20and%20desktop%20applications%20with%20Microsoft%20Endpoint%20Manager]
 
 ## <a name="additional-information"></a>Ytterligare information
 Följande objekt i konsolen tillhandahåller apprelaterade funktioner:

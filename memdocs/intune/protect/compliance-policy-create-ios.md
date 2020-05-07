@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/07/2020
+ms.date: 05/01/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9da6870caed61917d8093e2dd25882cec72d987
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 536ad36120a8fb5dc4ad0d16b8f265e56260d461
+ms.sourcegitcommit: 56bb5419c41c2e150ffed0564350123135ea4592
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79353261"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729265"
 ---
 # <a name="iosipados-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS-/iPadOS-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -41,9 +41,9 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 ## <a name="email"></a>E-post
 
-- **Kräv att mobila enheter har en hanterad e-postprofil**:  
+- **Det gick inte att konfigurera e-post på enheten**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  - **Kräv** – Enheter som inte har någon e-postprofil som hanteras av Intune anses inte följa standard. En enhet kan inte ha en hanterad e-postprofil om den inte är korrekt inriktad, eller om användaren konfigurerar e-postkontot manuellt på enheten.
+  - **Kräv** – Ett hanterat e-postkonto krävs. Om användaren redan har ett e-postkonto på enheten måste e-postkontot tas bort så att Intune kan konfigurera ett konto på rätt sätt. Om det inte finns något e-postkonto på enheten bör användaren kontakta IT-administratören för att konfigurera ett hanterat e-postkonto.
 
   Enheten betraktas som inkompatibel i följande situationer:  
   - E-postprofilen är associerad med en annan användargrupp än användargruppen som kompatibilitetsprincipen körs mot.
@@ -53,12 +53,16 @@ Mer information om e-postprofiler finns i [Använda e-postprofiler med Intune f�
 
 ## <a name="device-health"></a>Enhetens hälsotillstånd
 
-- **Jailbrokade enheter**:  
+- **Jailbrokade enheter**  
+  *Stöds för iOS 8.0 och senare*
+
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Blockera** – Markera rotade (jailbreakade) enheter som inkompatibla.  
 
-- **Kräv att enheten ligger på eller under enhetens hotnivå** *(iOS 8.0 och senare)* :  
-  Använd den här inställningen för att använda riskbedömningen som ett villkor för efterlevnad. Välj den tillåtna hotnivån:  
+- **Kräv att enheten ligger på eller under enhetshotnivån**  
+  *Stöds för iOS 8.0 och senare*
+
+  Använd den här inställningen för att använda riskbedömningen som ett villkor för efterlevnad. Välj den tillåtna hotnivån:
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Skyddad** – Det här alternativet är säkrast och innebär att enheten inte kan ha några hot. Om hot på någon nivå identifieras på enheten betraktas den som inkompatibel.
   - **Låg** – Enheten utvärderas som kompatibel om det bara finns lågnivåhot på den. Om hot på en högre nivå identifieras får enheten statusen icke-kompatibel.
@@ -69,59 +73,79 @@ Mer information om e-postprofiler finns i [Använda e-postprofiler med Intune f�
 
 ### <a name="operating-system-version"></a>Operativsystemversion  
 
-- **Lägsta operativsystemsversion** *(iOS 8.0 och senare)* :  
+- **Lägsta version av operativsystemet**  
+  *Stöds för iOS 8.0 och senare*
+
   När en enhet inte uppfyller minimikravet på operativsystemversion, rapporteras den som inkompatibel. En länk med information om hur du uppgraderar visas. Slutanvändarna kan välja att uppgradera sina enheter. Därefter kan de komma åt organisationens resurser.
 
-- **Högsta operativsystemversion** *(iOS 8.0 och senare)* :  
+- **Högsta version av operativsystemet**  
+  *Stöds för iOS 8.0 och senare*
+
   När en enhet använder en senare version av operativsystemet än den version som anges i regeln, så blockeras åtkomsten till organisationens resurser. Slutanvändaren uppmanas att kontakta IT-administratören. Enheten kan inte komma åt organisationens resurser förrän en regel ändras så att operativsystemversionen stöds.
 
-- **Lägsta operativsystembyggversion** *(iOS 8.0 och senare)* :  
+- **Lägsta OS-byggversion**  
+  *Stöds för iOS 8.0 och senare*
+
   När Apple publicerar säkerhetsuppdateringar, uppdateras normalt inte versionsnumret av operativsystemet. Använd denna funktion för att ange ett minsta tillåtna versionsnummer på enheten.
 
-- **Högsta operativsystembyggversion** *(iOS 8.0 och senare)* :  
+- **Högsta OS-byggversion*  
+  *Stöds för iOS 8.0 och senare*
+
   När Apple publicerar säkerhetsuppdateringar, uppdateras normalt inte versionsnumret av operativsystemet. Använd denna funktion för att ange ett högsta tillåtna versionsnummer på enheten.
 
 ## <a name="system-security"></a>Systemsäkerhet
 
-### <a name="password"></a>Lösenord
+### <a name="password"></a>lösenordsinställning
 
 > [!NOTE]
 > När en efterlevnads- eller konfigurationsprincip används på en iOS-/iPadOS-enhet, uppmanas användarna att ange ett lösenord var 15:e minut. Användarna uppmanas kontinuerligt tills ett lösenord anges. När ett lösenord anges för iOS-/iPadOS-enheten startar krypteringsprocessen automatiskt. Enheten förblir krypterad tills lösenordet inaktiveras.
 
-- **Kräv ett lösenord för att låsa upp mobila enheter**:  
+- **Kräv ett lösenord för att låsa upp mobila enheter**  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.  
   - **Kräv** – Användarna måste ange ett lösenord innan de får åtkomst till sina enheter. iOS-/iPadOS-enheter som använder lösenord krypteras.
 
-- **Enkla lösenord**:  
+- **Enkla lösenord**  
+  *Stöds för iOS 8.0 och senare*
+
   - **Inte konfigurerad** (*standard*) – Användare kan skapa enkla lösenord som **1234** eller **1111**.
-  - **Blockera** – Användarna kan inte skapa enkla lösenord, som exempelvis **1234** eller **1111**. 
+  - **Blockera** – Användarna kan inte skapa enkla lösenord, som exempelvis **1234** eller **1111**.
 
-- **Minsta längd på lösenord**:  
-  Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.  
+- **Minsta längd på lösenord**  
+  *Stöds för iOS 8.0 och senare*
 
-- **Lösenordstyp som krävs**:  
+  Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.
+
+- **Lösenordstyp krävs**  
+  *Stöds för iOS 8.0 och senare*
+
   Ange om ett lösenord endast ska ha **numeriska** tecken, eller om det ska vara en blandning av siffror och andra tecken (**alfanumeriska**).
 
-- **Antal icke-alfanumeriska tecken i lösenord**:  
-  Ange det lägsta antalet specialtecken (`&`, `#`, `%`, `!` osv) som måste ingå i lösenordet. 
+- **Antal icke-alfanumeriska tecken i lösenord**  
+  Ange det lägsta antalet specialtecken (`&`, `#`, `%`, `!` osv) som måste ingå i lösenordet.
 
   Om du anger en högre siffra måste användaren skapa ett lösenord som är mer komplext.
 
-- **Maximalt antal minuter från det att skärmen låses till dess att ett lösenord måste anges** *(iOS 8.0 och senare)* :  
+- **Maximalt antal minuter efter skärmlås innan ett lösenord krävs**  
+  *Stöds för iOS 8.0 och senare*
+
   Ange hur lång tid det ska ta efter att skärmen har låsts innan en användare måste ange ett lösenord för att få åtkomst till enheten. Alternativen är *Inte konfigurerat* (standard), *Omedelbart* och från *1 minut* till *4 timmar*.
 
-- **Maximalt antal minuter av inaktivitet innan skärmen låses**:  
+- **Maximalt antal minuter av inaktivitet innan skärmen låses**  
   Ange tiden innan enhetens skärm låses vid inaktivitet. Alternativen är *Inte konfigurerat* (standard), *Omedelbart* och från *1 minut* till *15 minuter*.
 
-- **Förfallotid för lösenord (dagar)** :  
-  Ange antalet dagar tills lösenordet upphör att gälla och användaren måste skapa ett nytt. 
+- **Lösenordets giltighetstid (i dagar)**  
+  *Stöds för iOS 8.0 och senare*
 
-- **Antalet tidigare lösenord för att förhindra återanvändning** *(iOS 8.0 och senare)* :   
+  Ange antalet dagar tills lösenordet upphör att gälla och användaren måste skapa ett nytt.
+
+- **Antal tidigare lösenord för att förhindra återanvändning**  
+  *Stöds för iOS 8.0 och senare*
+
   Ange antal tidigare använda lösenord som inte får återanvändas.
 
 ### <a name="device-security"></a>Enhetssäkerhet
 
-- **Begränsade appar**:  
+- **Begränsade appar**  
   Du kan begränsa appar genom att lägga till deras samlings-ID:n i principen. Om appen är installerad på en enhet markeras enheten som inkompatibel.
 
   - **Appnamn** – Ange ett användarvänligt namn som hjälper dig att identifiera samlings-ID:t.

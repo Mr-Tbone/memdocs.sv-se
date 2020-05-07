@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2020
+ms.date: 05/05/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 554bc09aa57306010069df4a85baa70fafdc41a6
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 7d8ea221b6c1768055e3ca1839c20ed64e2e3838
+ms.sourcegitcommit: 14d7dd0a99ebd526c9274d5781c298c828323ebf
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086682"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82802029"
 ---
 # <a name="settings-for-windows-10-microsoft-defender-antivirus-policy-in-microsoft-intune"></a>Inställningar för Windows 10 Microsoft Defender antivirusprinciper i Microsoft Intune
 
@@ -82,7 +82,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Ja** – Framtvinga användning av övervakning i realtid. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Tillåt kontinuerligt skydd**  
-  CSP: [AllowOnAccessProtection](https://go.microsoft.com/fwlink/?linkid=2113935&clcid=0x409)
+  CSP: [AllowOnAccessProtection](https://go.microsoft.com/fwlink/?linkid=2113935)
 
   Konfigurera virusskydd som hela tiden är aktivt, i stället för på begäran.
 
@@ -90,8 +90,16 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Nej** – Blockera åtkomstskydd på enheter. Enhetsanvändare kan inte ändra den här inställningen.
   - **Ja** – Åtkomstskydd är aktivt på enheterna.
 
+- **Övervaka inkommande och utgående filer**  
+  CSP: [Defender/RealTimeScanDirection](https://go.microsoft.com/fwlink/?linkid=2113943)
+
+  Konfigurera den här inställningen för att ange vilken NTFS-fil och programaktivitet som ska övervakas.
+  - **Övervaka alla filer** (*standard*)
+  - **Övervaka enbart inkommande filer**
+  - **Övervaka enbart utgående filer**
+
 - **Aktivera beteendeövervakning**  
-  CSP: [AllowBehaviorMonitoring](https://go.microsoft.com/fwlink/?linkid=2114048&clcid=0x409)
+  CSP: [AllowBehaviorMonitoring](https://go.microsoft.com/fwlink/?linkid=2114048)
 
   Som standard använder Defender på Windows 10 Desktop-enheter funktionen för beteendeövervakning.
 
@@ -109,7 +117,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Ja** – Nätverksskydd är aktiverat. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Genomsök alla nedladdade filer och bifogade filer**  
-  CSP: [EnableNetworkProtection](https://go.microsoft.com/fwlink/?linkid=2113939&clcid=0x409)
+  CSP: [EnableNetworkProtection](https://go.microsoft.com/fwlink/?linkid=2113939)
 
   Konfigurera Defender för att söka igenom alla nedladdade filer och bifogade filer.
 
@@ -118,7 +126,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Ja** – Defender söker igenom alla nedladdade filer och bifogade filer. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Genomsök skript som används i Microsoft-webbläsare**  
-  CSP: [AllowScriptScanning](https://go.microsoft.com/fwlink/?linkid=2114054&clcid=0x409)
+  CSP: [AllowScriptScanning](https://go.microsoft.com/fwlink/?linkid=2114054)
 
   Konfigurera Defender för att söka igenom skript.
 
@@ -127,7 +135,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Ja** – Defender söker igenom skript. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Genomsök nätverksfiler**  
-  CSP: [AllowScanningNetworkFiles](https://go.microsoft.com/fwlink/?linkid=2114049&clcid=0x409)
+  CSP: [AllowScanningNetworkFiles](https://go.microsoft.com/fwlink/?linkid=2114049&)
 
   Konfigurera Defender för att söka igenom nätverksfiler.
 
@@ -136,7 +144,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Ja** – Aktivera genomsökning av nätverksfiler. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Genomsök e-post**  
-  CSP: [AllowEmailScanning](https://go.microsoft.com/fwlink/?linkid=2114052&clcid=0x409)
+  CSP: [AllowEmailScanning](https://go.microsoft.com/fwlink/?linkid=2114052)
 
   Konfigurera Defender för att söka igenom inkommande e-post.
 
@@ -147,7 +155,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
 ## <a name="remediation"></a>Åtgärder
 
 - **Antal dagar (0–90) som skadlig kod ska bevaras i karantän**  
-  CSP: [DaysToRetainCleanedMalware](https://go.microsoft.com/fwlink/?linkid=2114055&clcid=0x409)
+  CSP: [DaysToRetainCleanedMalware](https://go.microsoft.com/fwlink/?linkid=2114055)
 
   Ange ett antal dagar från noll till 90 som systemet ska hålla kvar objekt i karantän innan de tas bort automatiskt. Värdet noll håller kvar objekten i karantän och tar inte bort dem automatiskt.
 
@@ -160,7 +168,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Skicka alla exempel automatiskt**
 
 - **Åtgärd som ska vidtas vid potentiellt oönskade appar**  
-  CSP: [PUAProtection](https://go.microsoft.com/fwlink/?linkid=2114051&clcid=0x409)
+  CSP: [PUAProtection](https://go.microsoft.com/fwlink/?linkid=2114051)
 
   Ange identifieringsnivå för potentiellt oönskade appar (PUA). Defender varnar användare när potentiellt oönskad programvara laddas ned eller försöker installeras på en enhet.
 
@@ -170,7 +178,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
   - **Granskningsläge** – Defender identifierar potentiellt oönskade program, men vidtar inga åtgärder. Du kan läsa information om vilka program som Windows Defender skulle ha vidtagit åtgärder mot genom att söka efter händelser som har skapats av Defender i Loggboken.
 
 - **Åtgärder för identifierade hot**  
-  CSP: [ThreatSeverityDefaultAction](https://go.microsoft.com/fwlink/?linkid=2113938&clcid=0x409)
+  CSP: [ThreatSeverityDefaultAction](https://go.microsoft.com/fwlink/?linkid=2113938)
 
   Ange den åtgärd som Defender ska vidta för identifierad skadlig kod baserat på hotnivån på den skadliga koden.
   
@@ -193,7 +201,7 @@ För varje inställning i den här gruppen kan du expandera inställningen, väl
 ## <a name="scan"></a>Genomsökning
 
 - **Sök igenom arkivfiler**  
-  CSP: [AllowArchiveScanning](https://go.microsoft.com/fwlink/?linkid=2114047&clcid=0x409)
+  CSP: [AllowArchiveScanning](https://go.microsoft.com/fwlink/?linkid=2114047)
 
   Konfigurera Defender för att söka igenom arkivfiler, t. ex. ZIP-eller CAB-filer.
 
@@ -203,7 +211,7 @@ Läs mer
   - **Ja** – Aktivera genomsökning av arkivfiler. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Använd låg CPU-prioritet för schemalagda genomsökningar**  
-  CSP: [EnableLowCPUPriority](https://go.microsoft.com/fwlink/?linkid=2113944&clcid=0x409)
+  CSP: [EnableLowCPUPriority](https://go.microsoft.com/fwlink/?linkid=2113944)
 
   Konfigurera CPU-prioritet för schemalagda genomsökningar.
   - **Inte konfigurerad** (*standard*) – Inställningen återgår till systemstandard, där inga ändringar av processorprioriteten görs.
@@ -211,7 +219,7 @@ Läs mer
   - **Ja** – Låg processorprioritet kommer att användas under schemalagda genomsökningar. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Inaktivera fullständig komma ifatt-sökning**  
-  CSP: [DisableCatchupFullScan](https://go.microsoft.com/fwlink/?linkid=2114042&clcid=0x409)
+  CSP: [DisableCatchupFullScan](https://go.microsoft.com/fwlink/?linkid=2114042)
 
   Konfigurera komma ifatt-sökningar för schemalagda fullständiga genomsökningar. En komma ifatt-sökning är en genomsökning som initieras eftersom en regelbundet schemalagd genomsökning missades. Dessa schemalagda genomsökningar missas vanligtvis eftersom datorn stängdes av vid den schemalagda tiden.
 
@@ -220,7 +228,7 @@ Läs mer
   - **Ja** – Komma ifatt-sökningar för schemalagda fullständiga genomsökningar verkställs och användaren kan inte inaktivera dem. Om en dator är offline under två på varandra följande schemalagda genomsökningar startas en komma ifatt-sökning nästa gång någon loggar in på datorn. Om ingen schemalagd genomsökning har konfigurerats kommer det inte att bli någon komma ifatt-sökning. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Inaktivera komma ifatt-snabbsökning**  
-  CSP: [DisableCatchupQuickScan](https://go.microsoft.com/fwlink/?linkid=2113941&clcid=0x409)
+  CSP: [DisableCatchupQuickScan](https://go.microsoft.com/fwlink/?linkid=2113941)
 
   Konfigurera komma ifatt-sökningar för schemalagda snabbgenomsökningar. En komma ifatt-sökning är en genomsökning som initieras eftersom en regelbundet schemalagd genomsökning missades. Dessa schemalagda genomsökningar missas vanligtvis eftersom datorn stängdes av vid den schemalagda tiden.
 
@@ -229,12 +237,12 @@ Läs mer
   - **Ja** – Komma ifatt-sökningar för schemalagda snabbgenomsökningar verkställs och användaren kan inte inaktivera dem. Om en dator är offline under två på varandra följande schemalagda genomsökningar startas en komma ifatt-sökning nästa gång någon loggar in på datorn. Om ingen schemalagd genomsökning har konfigurerats kommer det inte att bli någon komma ifatt-sökning. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Gräns för processoranvändning under genomsökning**  
-  CSP: [AvgCPULoadFactor](https://go.microsoft.com/fwlink/?linkid=2114046&clcid=0x409)
+  CSP: [AvgCPULoadFactor](https://go.microsoft.com/fwlink/?linkid=2114046)
 
   Ange som en procentandel från noll till 100 den genomsnittliga processorbelastningsfaktorn för Defender-genomsökningen.
 
 - **Sök igenom anslutna nätverksenheter vid fullständig** genomsökning  
-  CSP: [AllowFullScanOnMappedNetworkDrives](https://go.microsoft.com/fwlink/?linkid=2113945&clcid=0x409)
+  CSP: [AllowFullScanOnMappedNetworkDrives](https://go.microsoft.com/fwlink/?linkid=2113945)
 
   Konfigurera Defender för att söka igenom mappade nätverksenheter.
 
@@ -243,13 +251,13 @@ Läs mer
   - **Ja** – Aktivera genomsökning av mappade nätverksenheter. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Kör daglig snabbsökning**  
-  CSP: [ScheduleQuickScanTime](https://go.microsoft.com/fwlink/?linkid=2114053&clcid=0x409)
+  CSP: [ScheduleQuickScanTime](https://go.microsoft.com/fwlink/?linkid=2114053)
 
   Välj tidpunkt på dagen då Defender-snabbskanningen ska köras.
   Som standard är detta **Inte konfigurerat**
 
 - **Skanningstyp**  
-  CSP: [ScanParameter](https://go.microsoft.com/fwlink/?linkid=2114045&clcid=0x409)
+  CSP: [ScanParameter](https://go.microsoft.com/fwlink/?linkid=2114045)
 
   Välj den typ av genomsökning som Defender ska köra.
 
@@ -271,14 +279,14 @@ Läs mer
 ## <a name="updates"></a>Uppdateringar
 
 - **Ange hur ofta (0–24 timmar) sökning ska ske efter säkerhetsinsiktsuppdateringar**  
-  CSP: [SignatureUpdateInterval](https://go.microsoft.com/fwlink/?linkid=2113936&clcid=0x409)
+  CSP: [SignatureUpdateInterval](https://go.microsoft.com/fwlink/?linkid=2113936)
 
   Ange intervallet från noll till 24 (i timmar) som ska användas för att söka efter signaturer. Värdet noll resulterar innebär ingen kontroll för nya signaturer. Värdet 2 kommer att kontrollera varannan timme och så vidare.
 
 ## <a name="user-experience"></a>Användarupplevelse
 
 - **Tillåt användaråtkomst till Microsoft Defender-app**  
-  CSP: [AllowUserUIAccess](https://go.microsoft.com/fwlink/?linkid=2114043&clcid=0x409)  
+  CSP: [AllowUserUIAccess](https://go.microsoft.com/fwlink/?linkid=2114043)  
 
   - **Inte konfigurerad** (*standard*) – Inställningen återgår till klientens standardvärde där gränssnitt och aviseringar tillåts.
   - **Nej** – Användargränssnittet för Defender är inte tillgängligt och aviseringar visas inte.

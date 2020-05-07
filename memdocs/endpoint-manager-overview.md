@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/23/2020
+ms.date: 05/04/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: ''
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 939224776199407abb6a508f25bf5dadbacb882f
-ms.sourcegitcommit: 795e8a6aca41e1a0690b3d0d55ba3862f8a683e7
+ms.openlocfilehash: 1dee569d6f2ce4ed1a3bc278c9c9a886f9d23974
+ms.sourcegitcommit: 99a6e83219978433ec5a91d09beeaf69acbeb522
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "82135995"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82782264"
 ---
 # <a name="microsoft-endpoint-manager-overview"></a>Översikt av Microsoft Endpoint Manager
 
@@ -102,11 +102,11 @@ Du kan också tänka på slutpunktshanteraren som tre delar: moln, lokalt och mo
 
 ## <a name="what-you-need-to-get-started"></a>Vad du behöver för att komma igång
 
+Microsoft Endpoint Manager är en lösningsplattform som kombinerar flera tekniker. Det är inte en ny licens. Tjänsterna licensieras enligt de enskilda licensvillkoren. Mer information finns i avsnittet om [villkor för produktlicensiering](https://www.microsoft.com/licensing/product-licensing/products).
+
 Om du för närvarande använder Configuration Manager får du även Microsoft Intune för att hantera dina Windows-enheter. För andra plattformar, som iOS/iPad och Android, behöver du en separat Intune-licens.
 
-I de flesta fall kan Microsoft 365 vara det bästa alternativet, eftersom du får slutpunktshanteraren och Office 365.
-
-Mer information finns i [Microsoft 365](https://www.microsoft.com/licensing/product-licensing/microsoft-365-enterprise).
+I de flesta fall kan Microsoft 365 vara det bästa alternativet, eftersom du får slutpunktshanteraren och Office 365. Mer information finns i [Microsoft 365](https://www.microsoft.com/licensing/product-licensing/microsoft-365-enterprise).
 
 ## <a name="next-steps"></a>Nästa steg
 

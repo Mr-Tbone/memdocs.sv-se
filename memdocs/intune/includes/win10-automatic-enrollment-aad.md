@@ -28,9 +28,11 @@ Med automatisk registrering kan användarna registrera sina Windows 10-enheter i
    - **Alla** – Alla användare kan automatiskt registrera sina Windows 10-enheter
 
       > [!IMPORTANT]
-      > För BYOD-enheter har MAM-användaromfattningen företräde om både MAM- och MDM-användaromfattningen (automatisk MDM-registrering) har aktiverats för alla användare (eller samma grupper av användare). Enheten använder WIP-principer (Windows Information Protection) (om du har konfigurerat dem) istället för att vara MDM-registrerade.
+      > För Windows BYOD-enheter har MAM-användaromfånget företräde om både MAM- och MDM-användaromfånget (automatisk MDM-registrering) har aktiverats för alla användare (eller samma grupper av användare). Enheten MDM-registreras inte och Windows Information Protection-principer (WIP) tillämpas om du har konfigurerat dem.
       >
-      > För företagsenheter har MDM-användaromfattningen företräde om båda omfattningarna har aktiverats. Enheterna MDM-registreras.
+      > Om avsikten är att aktivera automatisk registrering för Windows BYOD-enheter till en MDM: Konfigurera MDM-användaromfånget till **Alla** (eller **Vissa** och ange en grupp) och MAM-användaromfånget till **Ingen** (eller **Vissa** och ange en grupp; se till att användarna inte är medlemmar i en grupp som omfattas av både MDM- och MAM-användaromfång).
+      >
+      >För [företagsenheter](../enrollment/enrollment-restrictions-set.md#blocking-personal-windows-devices) får MDM-användaromfånget företräde om både MDM- och MAM-användaromfång är aktiverade. Enheten registreras automatiskt i den konfigurerade MDM:en.
 
    > [!NOTE]
    > MDM-användaromfånget måste vara inställt på en Azure AD-grupp som innehåller användarobjekt.

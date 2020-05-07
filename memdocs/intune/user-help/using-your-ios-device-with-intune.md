@@ -19,19 +19,19 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 07d0d807a9d675d7eef0a3910a50d547dc6be872
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 764c04e130f206e77a99e557d0397a329865c2ab
+ms.sourcegitcommit: d05b1472385c775ebc0b226e8b465dbeb5bf1f40
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79335334"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605090"
 ---
 # <a name="using-your-ios-device-with-intune-company-portal"></a>Använd din iOS-enhet med Intune-företagsportalen
 Den här artikeln listar uppgifter och information som är specifik för företagsportalen för iOS. Du kan använda den för att hjälpa dig felsöka och hantera din iOS-enhet. Klicka på en länk om du vill se mer information, steg och skärmdumpar.
 
 ## <a name="supported-versions"></a>Versioner som stöds
 
-Företagsportalen för iOS stöder för närvarande iOS 10.0 och senare.  
+Företagsportalen för iOS stöder för närvarande iOS 11.0 och senare.  
 
 
 ## <a name="enrolling-into-intune-and-installing-the-company-portal"></a>Registrera enheten i Intune och installera företagsportalen

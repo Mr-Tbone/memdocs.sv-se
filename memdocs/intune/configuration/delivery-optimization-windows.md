@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/10/2020
+ms.date: 04/28/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: kerimh
-ms.openlocfilehash: 71039737a74aebb3066c001536aaf677a0467696
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: c37563dee40d776d352dec4e0b8ef11b1dc8f67b
+ms.sourcegitcommit: 7b3eed763b394075766ea080968889a8538bfe56
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79345682"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82506547"
 ---
 # <a name="delivery-optimization-settings-in-microsoft-intune"></a>Inställningar för leveransoptimering i Microsoft Intune
 
@@ -39,22 +39,28 @@ Information om leveransoptimering i Windows 10 finns i [Uppdateringar av leveran
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
 3. Ange följande egenskaper:
+   - **Plattform**: Välj **Windows 10 och senare**.
+   - **Profiltyp**: Välj **Leveransoptimering**.
 
-    - **Namn**: Ange ett beskrivande namn på den nya profilen.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Leveransoptimering**.
+4. Välj **Skapa**.
 
-4. Välj **Inställningar** > **Konfigurera** och definiera hur du vill att uppdateringar och appar ska laddas ned. Information om tillgängliga inställningar finns i [Inställningar för leveransoptimering för Intune](delivery-optimization-settings.md).
+5. På sidan **Grundläggande inställningar** anger du ett namn och en beskrivning för profilen. Välj sedan **Nästa**.
 
-5. Välj **OK** > **Skapa** när du är klar för att spara dina ändringar.
+6. På sidan **Konfigurationsinställningar** anger du hur du vill att uppdateringar och appar ska laddas ned. Information om tillgängliga inställningar finns i [Inställningar för leveransoptimering för Intune](delivery-optimization-settings.md).
 
-Profilen skapas och visas i listan. Sedan [tilldelar du profilen](device-profile-assign.md) och [övervakar dess status](device-profile-monitor.md).
+   När du har konfigurerat inställningarna väljer du **Nästa**.
 
-<!-- ## Move existing update rings to delivery optimization
+7. På sidan **Omfång (taggar)** väljer du **Välj omfångstaggar** för att öppna fönstret *Välj taggar* för att tilldela omfångstaggar till profilen.
+  
+   Fortsätt genom att välja **Nästa**.
 
-**Delivery optimization** settings replace **Software updates – Windows 10 Update Rings**. Your existing update rings can be easily changed to use the **Delivery optimization** settings. To maintain the same settings when you create a delivery optimization profile, use the same *Delivery optimization download mode* and then set the same settings as you already use. However, you can choose to reconfigure delivery optimization settings to take advantage of the full range of addition settings that the Delivery Optimization profile can manage. 
--->
+8. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+   Välj **Nästa**.
+
+9. På sidan **Tillämplighetsregler** använder du alternativen **Regel**, **Egenskap** och **Värde** för att definiera hur profilen ska tillämpas i tilldelade grupper.
+
+10. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Profilen skapas och visas i listan. Sedan [tilldelar du profilen](device-profile-assign.md) och [övervakar dess status](device-profile-monitor.md).
 
 ## <a name="remove-delivery-optimization-from-windows-10-update-rings"></a>Ta bort leveransoptimering från Windows 10-uppdateringsgrupper
 

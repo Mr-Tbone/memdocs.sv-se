@@ -24,10 +24,18 @@ groups:
     title: Oktober 2019
   - id: edge-april-2020
     title: April 2020
+- id: atp-baseline-versions
+  title: ATP-baslinjeversioner
+  prompt: Välj en version
+  pivots:
+  - id: atp-april-2020
+    title: April 2020
+  - id: atp-march-2020
+    title: Mars 2020
 metadata:
-  ms.openlocfilehash: 2071c0b05d2ec5f8b5fb20f25436e0ec297613e6
-  ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+  ms.openlocfilehash: 304a1087e156f7c491afd83b9981cdba996dc9fc
+  ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81615756"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82693274"

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd126e59b8162a66815e89d0e80850fe2fe9c2d4
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: b9fa14dd54a820ed20f8b3b504a836392c7f428f
+ms.sourcegitcommit: 4381afb515c06f078149bd52528d1f24b63a2df9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771067"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82538164"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Ange regler för enheter som tillåter åtkomst till resurser i din organisation med Intune
 
@@ -74,7 +74,7 @@ Intune använder [villkorlig åtkomst](https://docs.microsoft.com/azure/active-d
 
 ### <a name="with-conditional-access"></a>Med villkorlig åtkomst
 
-Du kan ge enheter som följer principreglerna åtkomst till e-post och andra organisationsresurser. Om enheterna inte följer principreglerna får de inte någon åtkomst till organisationsresurserna. Det är det som kallas villkorlig åtkomst.
+Du kan ge enheter som följer principreglerna åtkomst till e-post och andra organisationsresurser. Om enheterna inte följer principreglerna får de inte åtkomst till organisationsresurserna. Det är det som kallas villkorlig åtkomst.
 
 ### <a name="without-conditional-access"></a>Utan villkorlig åtkomst
 
