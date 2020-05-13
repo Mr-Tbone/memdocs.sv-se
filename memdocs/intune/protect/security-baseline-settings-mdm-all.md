@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0416332c74ba3305d344794c888d1867c25f8271
-ms.sourcegitcommit: 99a6e83219978433ec5a91d09beeaf69acbeb522
+ms.openlocfilehash: 67bb805df6406226c67084ed832f5cc590b1664a
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82782233"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943917"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>Inställningar för Windows MDM-säkerhetsbaslinjer för Intune
 
@@ -1594,7 +1594,7 @@ Den här regeln förhindrar attacker genom att blockera Adobe Reader från att s
   **Standard**:  Ja  
 
 - **Sök igenom arkivfiler**:  
-  CSP: [](https://go.microsoft.com/fwlink/?linkid=2114047)
+  CSP: [Defender/AllowArchiveScanning](https://go.microsoft.com/fwlink/?linkid=2114047)
   
   Om inställningen är inställd på Ja krävs genomsökning av arkivfiler såsom ZIP- och CAB-filer. Om inställningen är inställd på Inte konfigurerat används klientens standardinställning. Med standardinställningen genomsöks arkiverade filer, men användaren kan inaktivera funktionen.
 

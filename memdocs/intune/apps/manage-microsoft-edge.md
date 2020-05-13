@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc1b11fe533499ebe29101c09fb1355cd8d04243
-ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
+ms.openlocfilehash: 373c3c5a6a3167943d78e5a17ac9b7cab8afba8a
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82183083"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943866"
 ---
 # <a name="manage-web-access-by-using-microsoft-edge-with-microsoft-intune"></a>Hantera webbåtkomst med Microsoft Edge med Microsoft Intune
 
@@ -351,7 +351,7 @@ Som standard erbjuder Microsoft Edge för iOS att spara dina användares löseno
 
 |    Tangent    |    Värde    |
 |-----------------------|-----------------------|
-|    `com.microsoft.intune.mam.managedbrowser.disableFeatures`    |    Värdet **password** inaktiverar frågor om att spara lösenord åt slutanvändaren.    |
+|    `com.microsoft.intune.mam.managedbrowser.disabledFeatures`    |    Värdet **password** inaktiverar frågor om att spara lösenord åt slutanvändaren.    |
 
 ### <a name="disable-users-from-adding-extensions-to-microsoft-edge"></a>Inaktivera användare från att lägga till tillägg i Microsoft Edge 
 
