@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/27/2020
+ms.date: 05/07/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af60c16c4a7c9d27409f82cfc53d5c345dfe1af0
-ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
+ms.openlocfilehash: fce26aab90989f31ee56a9abd58f617c780d9c4b
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82210266"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943883"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -107,7 +107,7 @@ Du kan lägga till upp till **sex** objekt (appar och mappar som kombineras) fö
       Du kan lägga till upp till **20** sidor för enhetsdockan.
 
 > [!NOTE]
-> När du lägger till ikoner med hjälp av dockningsinställningarna låser du ikonerna på startsidan och andra sidor så att de inte kan flyttas. Detta kan vara standardinställningen för MDM-principer med iOS/iPadOS och Apple.
+> När du använder inställningarna för hemskärmens layout för att lägga till sidor eller lägger till sidor och appar till Docka är ikonerna på startsidan och sidorna låsta. De kan inte flyttas eller tas bort. Detta beteende kan vara standardinställningen för MDM-principer med iOS/iPadOS och Apple.
 
 #### <a name="example"></a>Exempel
 

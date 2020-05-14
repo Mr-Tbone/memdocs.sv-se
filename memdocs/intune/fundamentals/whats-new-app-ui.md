@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 03/05/2020
+ms.date: 05/08/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe95196da3e75dc50e585dc1c4508e8d20c7d5e3
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 17213a29d5182176fe2fd8e5802e5ca03587d8f7
+ms.sourcegitcommit: 0dafd513a59afe592b5cfe2a80b6288020dc5bf0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255038"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82991798"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Uppdateringar i användargränssnittet för Intunes slutanvändarappar
 
@@ -36,6 +36,26 @@ Om du är anställd eller student bör du titta på skärmbilderna och länkarna
 
 
 
+## <a name="week-of-may-4-2020"></a>Den vecka som börjar 4 maj 2020  
+### <a name="company-portal-for-android-guides-users-to-get-apps-after-work-profile-enrollment----6103999---"></a>Företagsportal för Android hjälper användarna att hämta appar utifrån registreringen av arbetsprofilen <!-- 6103999 -->
+Vi förbättrar vägledningen i appen i Företagsportal så att användarna enklare kan hitta och installera appar. När användaren har registrerat sin arbetsprofil ser de ett meddelande som förklarar att de kan hitta föreslagna appar i den märkta versionen av Google Play. Det sista steget i [Registrera enhet med Android-profil](../user-help/enroll-device-android-work-profile.md) har uppdaterats för att visa det nya meddelandet. 
+
+![Exempelbild på uppmaning i Företagsportalen, fliken Enheter, om att öppna märkta versioner av Google Play.](./media/whats-new-app-ui/updated-banner-android-2005.png)  
+
+Användarna ser också den nya länken **Hämta appar** i Företagsportal-lådan till vänster. 
+
+![Exempelbild på den vänstra lådan i Företagsportalen där menyobjektet Hämta mappar har markerats.](./media/whats-new-app-ui/updated-drawer-android-2005.png)  
+
+För att skapa utrymma för dessa nya och förbättrade upplevelser har vi tagit bort fliken **APPAR** i följande bilder.  
+
+![Exempelbild på den nu borttagna fliken Appar i företagsportalen.](./media/whats-new-app-ui/apps-tab-android-removed-2005.png)  
+
+
+
+
+
+
+
 ## <a name="week-of-march-2-2020"></a>Den vecka som börjar 2 mars 2020   
 ### <a name="improved-sign-in-experience-in-company-portal-for-android"></a>Förbättrad inloggningsupplevelse i Företagsportal för Android   
 Vi har uppdaterat layouten för flera inloggningsskärmar i företagsportalappen för Android så att upplevelsen blir modernare, enklare och tydligare för användare. Om du vill se alla registreringsinstruktioner för Företagsportal för Android går du till [Registrera din Android-enhet](../user-help/enroll-device-android-company-portal.md) eller [Registrera med Android-arbetsprofil](../user-help/enroll-device-android-work-profile.md).   
@@ -44,7 +64,7 @@ Vi har uppdaterat layouten för flera inloggningsskärmar i företagsportalappen
 |Uppdaterad|Föregående|   
 |---|---|   
 |![Exempelbild på ny inloggningsskärm för Företagsportalen, inloggningsknapp.](./media/whats-new-app-ui/intune-company-portal-sign-in-2003.png)|![Exempelbild av föregående inloggningssida för Företagsportalen som visar rörligare design.](./media/whats-new-app-ui/intune-company-portal-sign-in-2002.png)| 
-|![Exempelbild av en ny skärm för inloggningsförlopp som visar en förloppsindikator.](./media/whats-new-app-ui/intune-company-portal-signing-in-2003.png)|![Exempelbild av föregående skärm för inloggningsförlopp som visar en rörligare design.](./media/whats-new-app-ui/intune-company-portal-signing-in-2002.png)|  
+|![Exempelbild av en ny skärm för inloggningsförlopp som visar en förloppsindikator.](./media/whats-new-app-ui/intune-company-portal-signing-in-2003.png)|![Exempelbild av föregående skärm för inloggningsförlopp som visar en rörligare design.](./media/whats-new-app-ui/intune-company-portal-signing-in-2002.png)|
 ## <a name="week-of-february-3-2020"></a>Den vecka som börjar den 3 februari 2020
 
 ### <a name="screen-removed-from-company-portal-android-work-profile-enrollment---6103987---"></a>En skärm har tagits bort från registreringen av Android-arbetsprofiler i företagsportalen <!--6103987 -->
@@ -615,6 +635,6 @@ Det här är våra planer för hur vi kan förbättra användarupplevelsen genom
 
 
 ## <a name="see-also"></a>Se även
-* [Microsoft Intune-blogg](https://go.microsoft.com/fwlink/?LinkID=273882)
+* [Microsoft Intune-blogg](https://www.microsoft.com/microsoft-365/blog/microsoft-intune/)
 * [Översikt över molnplattformen](https://www.microsoft.com/cloud-platform/roadmap)
 * [Nyheter i Intune](whats-new.md)

@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 02/07/2020
+ms.date: 05/08/2020
 ms.topic: article
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 839809de89d4220fa87012cd9a28e5f6b6c35dcf
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 3007e9a40dd77e156f0c0a77214e819948fc01da
+ms.sourcegitcommit: 0dafd513a59afe592b5cfe2a80b6288020dc5bf0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79348594"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82991556"
 ---
 # <a name="enroll-device-with-android-work-profile"></a>Registrera enhet med Android-arbetsprofil
 
@@ -74,6 +74,15 @@ Lär dig mer om [vad som händer när du skapar en arbetsprofil](what-happens-wh
 9. När installationen är klar trycker du på **KLAR**.  
 
     ![Exempelbild av Företagsportal, Konfiguration av företagsåtkomst-skärmen som visar slutförd installation och Klar-knappen.](./media/work-profile-done-1911.png)  
+
+10. När du uppmanas att visa din organisations föreslagna appar i Google Play väljer du **ÖPPNA**. 
+
+    ![Exempelbild på uppmaning i Företagsportalen om att öppna märkta versioner av Google Play.](./media/get-apps-banner-android-2005.png) 
+
+    Om du inte är redo att installera appar kan du alltid komma åt dem senare genom att gå direkt till den märkta versionen av Google Play-appen. Du kan också välja **Hämta appar** från Företagsportal-menyn.  
+
+    ![Exempelbild på Företagsportal-menyn med länken Hämta appar markerad.](./media/updated-drawer-android-2005.png) 
+
 
 
 ## <a name="next-steps"></a>Nästa steg  

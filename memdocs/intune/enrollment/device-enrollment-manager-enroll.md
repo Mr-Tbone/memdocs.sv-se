@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8710043244e0b6becebef60890ac1a0ec3105971
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 80e15e78e270ae72bdf584e9db967cae81d3ac2b
+ms.sourcegitcommit: 4c129bb04ea4916c78446e89fbff956397cbe828
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82254647"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343005"
 ---
 # <a name="enroll-devices-in-intune-by-using-a-device-enrollment-manager-account"></a>Registrera enheter i Intune med ett konto för enhetsregistreringshanteraren
 
@@ -46,6 +46,8 @@ DEM-användarkonton och enheter som har registrerats med ett DEM-användarkonto 
 - Om du tillämpar en begränsning för Azure AD-enheter på ett DEM-konto hindrar det dig från att nå gränsen på 1 000 enheter som DEM kan registrera.
 
 ## <a name="enrollment-methods-supported-by-dem-accounts"></a>Registreringsmetoder som stöds av DEM-konton
+
+Du kan använda följande metoder för att registrera enheter med DEM-konton:
 
 - [Windows Autopilot](enrollment-autopilot.md)
 - [Massregistrering för Windows-enheter](windows-bulk-enroll.md)

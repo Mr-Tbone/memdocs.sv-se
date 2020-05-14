@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed0194f0ace1ed1e962a8b993a4e93f7ef487bdc
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: dfcedebf32c8f08450e3eaa87c99f9bc11dd7431
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80084931"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906906"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Inställningar för Windows 10 och senare för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -44,7 +44,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 ### <a name="windows-health-attestation-service-evaluation-rules"></a>Utvärderingsregler för Windows hälsoattesteringstjänst
 
 - **Kräv BitLocker**:  
-   Windows BitLocker-diskkryptering krypterar alla data som lagras på Windows-operativsystemsvolymen. BitLocker använder Trusted Platform Module (TPM) för att skydda Windows-operativsystemet och användardata. Det kan också bekräfta att en dator inte manipuleras, även om den lämnas obevakad, tappas bort eller blir stulen. Om datorn utrustas med en kompatibel TPM-modul använder BitLocker den för att låsa krypteringsnycklarna som skyddar uppgifterna. Därför är nycklarna inte tillgängliga förrän TPM verifierar datorns tillstånd.  
+   Med Windows BitLocker-diskkryptering krypteras alla data på volymen för Windows-operativsystemet. BitLocker använder Trusted Platform Module (TPM) för att skydda Windows-operativsystemet och användardata. Det kan också bekräfta att en dator inte manipuleras, även om den lämnas obevakad, tappas bort eller blir stulen. Om datorn är utrustad med en kompatibel TPM använder BitLocker TPM för att låsa krypteringsnycklarna som skyddar data. Därför är nycklarna inte tillgängliga förrän TPM verifierar datorns tillstånd.  
 
    - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
    - **Kräv** – Enheten skydda data som lagras på enheten mot obehörig åtkomst när systemet är avstängt eller i viloläge.  
@@ -65,7 +65,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 Fler resurser:
 
 - Mer information om hur hälsoattesteringstjänsten fungerar finns i [CSP för hälsoattestering](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp).
-- [Supporttips: Använda Hälsoattestering för enhet som en del av din Intune-kompatibilitetsprincip](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Using-Device-Health-Attestation-Settings-as-Part-of/ba-p/282643).
+- [Tips för support: Använda Hälsoattestering för enhet som en del av din Intune-kompatibilitetsprincip](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Using-Device-Health-Attestation-Settings-as-Part-of/ba-p/282643).
 
 ## <a name="device-properties"></a>Egenskaper för enhet
 
@@ -110,7 +110,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
 
 ## <a name="system-security"></a>Systemsäkerhet
 
-### <a name="password"></a>Lösenord
+### <a name="password"></a>lösenordsinställning
 
 - **Kräv ett lösenord för att låsa upp mobila enheter**:  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
@@ -139,13 +139,13 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
     > - [DeviceLock/AlphanumericDevicePasswordRequired CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-alphanumericdevicepasswordrequired)
     > - [DeviceLock/MinDevicePasswordComplexCharacters CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-mindevicepasswordcomplexcharacters)
 
-- **Minsta längd på lösenord**:  
+- **Minsta lösenordslängd**:  
   Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.
 
 - **Maximalt antal minuters inaktivitet innan lösenord krävs**:  
   Ange efter hur lång tids inaktivitet som användaren måste ange sitt lösenord igen.
 
-- **Förfallotid för lösenord (dagar)** :  
+- **Lösenordets giltighetstid (dagar)** :  
   Ange antalet dagar tills lösenordet upphör att gälla och användaren måste skapa ett nytt. Värdet kan vara 1-730.
 
 - **Antal tidigare lösenord för att förhindra återanvändning**:  
@@ -188,10 +188,20 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
 - **Antivirus**:  
   - **Ej konfigurerad** (*standard*) – Intune kontrollerar inte om några antiviruslösningar har installerats på enheten. 
   - **Kräv** – Kontrollera efterlevnaden med hjälp av antiviruslösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.
+  
+  [DeviceStatus CSP – DeviceStatus/Antivirus/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+
+  > [!NOTE]
+  > DeviceStatus CSP för antivirus stöds inte för *Windows 10 Home* och rapporterar status *Inte tillämpligt*. Intune-teamet arbetar på en lösning. Du kan undvika den här begränsningen genom att använda [inställningar för Windows Defender](#defender) i din efterlevnadsprincip för enheter. Windows Defender-inställningar stöds med Windows 10 Home.  
 
 - **Antispionprogram**:  
   - **Ej konfigurerat** (*standard*) – Intune kontrollerar inte om några antspionslösningar har installerats på enheten.
   - **Kräv** – Kontrollera efterlevnaden med hjälp av antispionlösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.  
+  
+  [DeviceStatus CSP – DeviceStatus/Antispionprogram/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+
+  > [!NOTE]
+  > DeviceStatus CSP för antispionprogram stöds inte för *Windows 10 Home* och rapporterar status *Inte tillämpligt*. Intune-teamet arbetar på en lösning. Du kan undvika den här begränsningen genom att använda [inställningar för Windows Defender](#defender) i din efterlevnadsprincip för enheter. Windows Defender-inställningar stöds med Windows 10 Home. 
 
 ### <a name="defender"></a>Defender
 

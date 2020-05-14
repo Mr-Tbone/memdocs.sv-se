@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81e5dc772ca85bf124af3da33a263b683ea0885b
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 2ea6d407417300d2b758861ed35fcecc88f7ec74
+ms.sourcegitcommit: 0dafd513a59afe592b5cfe2a80b6288020dc5bf0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326968"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82991709"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot
 Du kan använda Intune och Windows Autopilot för att konfigurera Azure Active Directory-anslutna hybridenheter. Du gör det genom att följa stegen i den här artikeln.
@@ -108,6 +108,8 @@ Organisationsenheten som beviljas behörighet att skapa datorer måste matcha:
 ## <a name="install-the-intune-connector"></a>Installera Intune Connector
 
 Intune Connector för Active Directory måste installeras på en dator som kör Windows Server 2016 eller senare. Datorn måste också ha åtkomst till internet och din Active Directory. Om du vill öka skalningen och tillgängligheten eller om du vill ha stöd för flera Active Directory-domäner kan du installera flera anslutningsprogram i din miljö. Vi rekommenderar att du installerar anslutningsappen på en server som inte kör några andra Intune-anslutningsappar.
+
+Intune-anslutningsappen kräver [samma slutpunkter som Intune](../fundamentals/intune-endpoints.md).
 
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Windows** > **Windows-registrering** > **Intune Connector för Active Directory** > **Lägg till**. 
 2. Följ anvisningarna för att ladda ned Connector.

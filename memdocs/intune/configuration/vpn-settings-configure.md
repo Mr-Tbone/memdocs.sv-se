@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 05/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70b0c5693c22b6504016d85e35977c5f99935742
-ms.sourcegitcommit: b7e5b053dfa260e7383a9744558d50245f2bccdc
+ms.openlocfilehash: c72d2f8d9bd6a7235845863000272f605bb41089
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587204"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943832"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>Skapa VPN-profiler för att ansluta till VPN-servrar i Intune
 
@@ -185,6 +185,10 @@ När du skapar VPN-profilen väljer du en SCEP- eller PKCS-certifikatprofil som 
 Om du använder certifikatbaserad autentisering för din VPN-profil distribuerar du VPN-profilen, certifikatprofilen och profilen för betrodd rot till samma grupper för att säkerställa att varje enhet kan verifiera din certifikatutfärdare.
 
 Mer information om hur du skapar och använder certifikatprofiler i Intune finns i [Konfigurera certifikat i Microsoft Intune](../protect/certificates-configure.md).
+
+> [!NOTE]
+> Certifikat som läggs till med den **PKCS-importerade certifikatprofiltypen** stöds inte för VPN-autentisering. Certifikat som läggs till med profiltypen **PKCS-certifikat** stöds för VPN-autentisering.
+
 
 ### <a name="user-name-and-password"></a>Användarnamn och lösenord
 

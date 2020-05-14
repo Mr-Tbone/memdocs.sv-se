@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3da418db81a315e4102b63c34ffc557646d36f70
-ms.sourcegitcommit: 2871a17e43b2625a5850a41a9aff447c8ca44820
+ms.openlocfilehash: fe91e36ab5cc66fe81c77401a2a0374f6577b202
+ms.sourcegitcommit: 5f9d5d22114ae5aeb0270c7fb59c5dced5f48826
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82126063"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82862385"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
@@ -301,7 +301,8 @@ Tänk dock på följande innan du fortsätter:
 - Om du använder samhantering för Intune och Configuration Manager i Configuration Manager ska du [ange arbetsbelastningsreglaget](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) för resursåtkomstprinciper till **Intune** eller **Pilot Intune**. Den här inställningen gör att Windows 10-klienter kan starta processen för att begära certifikatet.
 
 > [!NOTE]
-> När en SCEP- eller PKCS-certifikatprofil är associerad med en annan profil på enheter med iOS/iPadOS, som en Wi-Fi- eller VPN-profil, tar enheten emot ett certifikat för var och en av de ytterligare profilerna. Det här gör att iOS-/iPad-enheten har flera certifikat som levereras via SCEP- eller PKCS-certifikatbegäran. 
+> - När en SCEP- eller PKCS-certifikatprofil är associerad med en annan profil på enheter med iOS/iPadOS, som en Wi-Fi- eller VPN-profil, tar enheten emot ett certifikat för var och en av de ytterligare profilerna. Det här gör att iOS-/iPad-enheten har flera certifikat som levereras via SCEP- eller PKCS-certifikatbegäran. 
+> - På iOS 13 och macOS 10.15 finns det [ytterligare några säkerhetskrav som dokumenteras av Apple](https://support.apple.com/HT210176) att ta hänsyn till.  
 
 
 ## <a name="next-steps"></a>Nästa steg

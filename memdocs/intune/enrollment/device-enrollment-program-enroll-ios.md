@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db9164d68783356faf01fe4fc4e8d74f2a4b0869
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: dd999f621375cfdbfa80bf076766be20053221dc
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82023358"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83269073"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -148,8 +148,7 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 
     ![Skärmbild av Skapa en profil.](./media/device-enrollment-program-enroll-ios/image04.png)
 
-3. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. För enheter som har registrerats med automatisk enhetsregistrering och User Affinity kan policyer levereras snabbast till enheterna via inriktning på AAD-användargrupper där den registrerade användaren är medlem. Om du riktar in program och policyer mot dynamiska grupper baserat på registreringsprofilerna sker viss fördröjning för enheterna när registreringsflödet har slutförts.
-Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
+3. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. 
 
     ![Profilnamn och beskrivning.](./media/device-enrollment-program-enroll-ios/image05.png)
 
@@ -264,6 +263,17 @@ Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.co
 16. Välj **Nästa** för att gå till sidan **Granska + skapa**.
 
 17. Spara profilen genom att välja **Skapa**.
+
+### <a name="dynamic-groups-in-azure-active-directory"></a>Dynamiska grupper i Azure Active Directory
+
+Du kan använda registreringsfältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Läs mer om [dynamiska Azure Active Directory-grupper](/azure/active-directory/users-groups-roles/groups-dynamic-membership).
+
+Använd profilnamnet för att definiera [parametern enrollmentProfileName](/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) för att tilldela registreringsprofilen till enheter.
+
+För den snabbaste principleveransen på ADE-enheter med användartillhörighet se till att den registrerade användaren är medlem i en ADD-användargrupp innan du konfigurerar enheten. 
+
+Om du tilldelar dynamiska grupper till registreringsprofiler kan det leda till en fördröjning i att leverera program och principer till enheter efter registreringen.
+
 
 ## <a name="sync-managed-devices"></a>Synkronisera hanterade enheter
 Nu när Intune har fått behörighet att hantera dina enheter, kan du synkronisera Intune med Apple och se dina hanterade enheter i Intune på Azure-portalen.

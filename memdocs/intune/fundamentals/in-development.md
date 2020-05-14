@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 04/06/2020
+ms.date: 04/28/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,14 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f53096f25b4bb05b80d11246ac2fa01486f6e42
-ms.sourcegitcommit: 252e718dc58da7d3e3d3a4bb5e1c2950757f50e2
+ms.openlocfilehash: 7827c85585d630f64ba9c6d342b6275fca506b1d
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80808158"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906959"
 ---
-# <a name="in-development-for-microsoft-intune---april-2020"></a>Under utveckling för Microsoft Intune – april 2020
+# <a name="in-development-for-microsoft-intune"></a>Under utveckling för Microsoft Intune
 
 För att hjälpa dig med förberedelser och planering innehåller den här sidan information om uppdateringar av och funktioner i användargränssnittet i Intune som är under utveckling, men som inte släppts än. Förutom informationen på den här sidan: 
 
@@ -36,6 +36,8 @@ För att hjälpa dig med förberedelser och planering innehåller den här sidan
 > Den här informationen återspeglar våra planer gällande Intune-funktioner i kommande versioner. Datum och enskilda funktioner kan ändras. Den här sidan beskriver inte alla funktioner som utvecklas.
 
 **RSS-feed**: Få reda på när den här sidan uppdateras genom att kopiera och klistra in följande webbadress i feed-läsaren: `https://docs.microsoft.com/api/search/rss?search=%22in+development+-+microsoft+intune%22&locale=en-us`
+
+**Den här artikeln uppdaterades senast det datum som anges i rubriken ovan.**
 
 <!--
 ## What's coming to Intune in the Azure portal 
@@ -58,35 +60,36 @@ För att hjälpa dig med förberedelser och planering innehåller den här sidan
 <!-- ***********************************************-->
 ## <a name="app-management"></a>Apphantering
 
-### <a name="update-to-android-app-configuration-policies---6113334----"></a>Uppdatering av konfigurationsprinciper för Android-appar<!-- 6113334  -->
-Konfigurationsprinciperna för Android-appar kommer att uppdateras så att administratörer kan välja typ av enhetsregistrering innan de skapar konfigurationsprofiler för appar. Funktionen läggs till i kontot för certifikatprofiler som baseras på registreringstyp (arbetsprofil eller enhetsägare).  Vid lanseringen inträffar följande:
+### <a name="support-for-multiple-accounts-in-company-portal-for-mac---5779449----"></a>Stöd för flera konton i Företagsportal för Mac<!-- 5779449  -->
+Företagsportal för macOS-enheter cachelagrar nu användarkonton, vilket gör det enklare att logga in. Användare behöver inte längre logga in i Företagsportal varje gång de startar programmet. Dessutom visar Företagsportal en kontoväljare om flera användarkonton är cachelagrade, så att användarna inte behöver ange sitt användarnamn. 
 
-- För de befintliga principer som skapats före lanseringen av den här funktionen och som inte har några associerade certifikatprofiler, används som standard arbetsprofil och enhetsägarprofil som enhetsregistreringstyp.
-- För de befintliga principer som skapats före lanseringen av den här funktionen och som har associerade certifikatprofiler, används som standard endast arbetsprofil.
-- Om en ny profil skapas och arbetsprofil och enhetsägarprofil väljs som enhetsregistreringstyp kan du inte associera en certifikatprofil med appkonfigurationsprincipen.
-- Om en ny profil skapas och Endast arbetsprofil har valts kan de certifikatprinciper för arbetsprofil som skapats under Enhetskonfiguration användas.
-- Om en ny profil skapas och Endast enhetens ägare har valts kan de certifikatprinciper för enhetsägare som skapats under Enhetskonfiguration användas.
+### <a name="auto-update-vpp-available-apps---3640511----"></a>Uppdatera VPP-tillgängliga appar automatiskt<!-- 3640511  -->
+Appar som är publicerade som VPP-tillgängliga appar (VPP) uppdateras automatiskt när **Automatisk uppdatering av appar** är aktiverat för VPP-token. För närvarande uppdateras inte VPP-tillgängliga appar automatiskt. Slutanvändarna måste i stället gå till Företagsportal och installera om appen om det finns en nyare version. Obligatoriska appar har dock för närvarande stöd för automatiska uppdateringar.
 
-Befintliga principer kan inte åtgärda eller utfärda nya certifikat.
+### <a name="customize-self-service-device-actions-in-the-company-portal--4393379----"></a>Anpassa åtgärder för självbetjäningsenhet i Företagsportal<!--4393379  -->
+Du kan anpassa de tillgängliga åtgärderna för självbetjäning som visas för slutanvändare i appen Företagsportal och på webbplatsen. För att förhindra oavsiktliga enhetsåtgärder kan du konfigurera inställningarna för appen Företagsportal genom att välja **Administration av klientorganisation** > **Anpassning** > **Skapa** > **Dölj funktioner**. Följande alternativ är tillgängliga:
+- Dölj knappen **Ta bort** på Windows-företagsenheter.
+- Dölj knappen **Återställ** på Windows-företagsenheter.
+- Dölj knappen **Återställ** på iOS-företagsenheter.
+- Dölj knappen **Ta bort** på iOS-företagsenheter.
 
-Vi har också lagt till e-postkonfigurationsprofiler för Gmail och Nine som fungerar för både registreringstypen Arbetsprofil och Enhetsägare. Detta innefattar användning av certifikatprofiler på båda e-postkonfigurationstyperna.  Alla Gmail- eller Nine-principer som du har skapat under Enhetskonfiguration för arbetsprofiler fortsätter att gälla för enheten och du behöver inte flytta dem till appkonfigurationsprinciper.
+Mer information finns i [Åtgärder för självbetjäningsenhet för användare från företagsportalen](../apps/company-portal-app.md#user-self-service-device-actions-from-the-company-portal).
 
-I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) hittar du appkonfigurationsprinciperna genom att välja **Appar** > **Appkonfigurationsprinciper**. Mer information om appkonfigurationsprinciper finns i [Appkonfigurationsprinciper för Microsoft Intune](../apps/app-configuration-policies-overview.md).
+### <a name="unified-delivery-of-azure-ad-enterprise-or-office-online-applications-in-the-company-portal--4404429---"></a>Enhetlig leverans av Azure AD Enterprise- eller Office Online-program i Företagsportal<!--4404429 -->
+Du kan växla (**Dölj** eller **Visa**) visning av Azure AD Enterprise- eller Office Online-program i Företagsportal. Användarna ser hela programkatalogen från den valda Microsoft-tjänsten. Som standard är **Dölj** valt för alla ytterligare appkällor. Den här funktionen börjar gälla först i Företagsportal-webbplatsen från version 2005 och stöd för Windows-, iOS/iPad- och macOS-företagsportaler förväntas följa. Du hittar den här kommande inställningen i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) genom att välja **Administration av klientorganisation** > **Anpassning**. Mer information finns i [Anpassa Intune Företagsportal-appar, företagsportalens webbplats och Intune-appen](../apps/company-portal-app.md).
 
-### <a name="microsoft-teams-is-now-included-in-the-office-365-suite-for-macos---5903936----"></a>Microsoft Teams ingår nu i Office 365-paketet för macOS<!-- 5903936  -->
-Användare som tilldelas Microsoft Office för macOS i Microsoft Endpoint Manager får förutom de vanliga Microsoft Office-apparna (Word, Excel, PowerPoint, Outlook och OneNote) nu även Microsoft Teams. Intune identifierar befintliga Mac-enheter som har andra Office för macOS-appar installerade och kommer att försöka installera Microsoft Teams nästa gång enheten checkar in med Intune. I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du hitta **Office 365-paketet** för macOS genom att välja **Appar** > **macOS** > **Lägg till**. Mer information finns i [Tilldela Office 365 till macOS-enheter med Microsoft Intune](../apps/apps-add-office365-macos.md).
+### <a name="search-the-intune-docs-from-the-company-portal---1736480---"></a>Söka i Intune-dokument från Företagsportal<!-- 1736480 -->
+Nu kan du söka i Intune-dokumentationen direkt från appen Företagsportal för macOS. Välj **Hjälp** > **Sök** i menyfältet och ange några nyckelord för att snabbt hitta svar på dina frågor.
 
-### <a name="group-targeting-support-for-customization-pane----4722837----"></a>Stöd för riktning till grupper i fönstret Anpassning <!-- 4722837  -->
-Du kommer att kunna rikta inställningarna i fönstret Anpassning till användargrupper. Välj **Klientappar** > **Anpassning** i Intune-portalen. Mer information finns i [Anpassa Intune-företagsportalens appar, företagsportalens webbplats och Intune-appen](company-portal-app.md].
+### <a name="company-portal-for-android-will-guide-users-to-get-apps-after-work-profile-enrollment----6103999----"></a>Företagsportal för Android hjälper användarna att hämta appar utifrån registreringen av arbetsprofilen <!-- 6103999  -->
+Vi förbättrar vägledningen i appen i Företagsportal så att användarna enklare kan hitta och installera appar.  När användaren har registrerat sin arbetsprofil visas ett meddelande som talar om att de kan hitta föreslagna appar i den märkta versionen av Google Play. Användarna ser också den nya länken **Hämta appar** i Företagsportal-lådan till vänster. För att möjliggöra det här har vi tagit bort fliken **APPAR**. 
+
+### <a name="android-company-portal-user-experience---5736084---"></a>Användarupplevelsen i företagsportalen för Android<!-- 5736084 -->
+I 2005-versionen av Android Företagsportal kommer slutanvändare på Android-enheter som får en varning, blockering eller rensning via en appskyddspolicy att se en ny användarupplevelse. I stället för den nuvarande dialogrutan ser slutanvändarna ett meddelande som beskriver orsaken till varningen, blockeringen eller rensningen och stegen för att åtgärda problemet. Mer information finns i [Appskyddsupplevelse för Android-enheter](../apps/app-protection-policy.md#app-protection-experience-for-android-devices) och [Inställningar för Android-appskyddsprinciper i Microsoft Intune](../apps/app-protection-policy-settings-android.md).
+
 
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Enhetskonfiguration
-
-### <a name="wired-network-device-configuration-profiles-for-macos-devices---3508686----"></a>Enhetskonfigurationsprofiler för fast nätverk för macOS-enheter<!-- 3508686  -->
-En ny konfigurationsprofil för macOS-enheter kommer att bli tillgänglig, som konfigurerar kabelanslutna nätverk (**Enhetskonfiguration** > **Profiler** > **Skapa profil** > **macOS** för plattformen > **Kabelanslutet nätverk** för profiltypen). Använd den här funktionen för att skapa 802.1 x-profiler för att hantera kabelanslutna nätverk och distribuera dessa kabelanslutna nätverk till dina macOS-enheter.
-
-Gäller för:
-- macOS
 
 ### <a name="device-configuration-profile-settings-and-values-will-be-updated-for-windows-platforms---4091122---"></a>Inställningar och värden för enhetskonfigurationsprofiler kommer att uppdateras för Windows-plattformar<!-- 4091122 -->
 När du skapar enhetskonfigurationsprofiler för Windows-plattformar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > valfritt **Windows**-alternativ för plattform) kommer vissa inställningar och deras värden att skilja sig från molnlösningsleverantören och kan vara svåra att förstå. Inställningsnamn och deras värden kommer att uppdateras så att de blir tydligare.
@@ -108,31 +111,37 @@ Vi lägger till en ny inställning i FileVault-kategorin i mallen [macOS-slutpun
 
 Den här inställningen kommer inte att vara tillgänglig i tidigare skapade principer. Du behöver återskapa FileVault-principer för att konfigurera den här inställningen och använda den. 
 
-### <a name="send-push-notifications-as-an-action-for-non-compliance----1733150-----"></a>Skicka push-meddelanden som en åtgärd för inkompatibilitet <!-- 1733150   -->
-För iOS- och Android-plattformar lägger vi till en ny åtgärd för inkompatibilitet som innebär att ett push-meddelande skickas via företagsportalsappen. När en användare klickar på det här meddelandet startas företagsportalsappen, och i appen visas information om inkompatibilitetsorsaken. Administratörer kan konfigurera den nya åtgärden för inkompatibilitet i Microsoft Endpoint Manager admin center genom att gå till **Enheter** > **Kompatibilitetsprinciper** > **Skapa princip** och sedan välja *Åtgärd* för att skicka ett push-meddelande via app.
+### <a name="configure-system-extensions-on-macos-devices---6255624----"></a>Konfigurera systemtillägg på macOS-enheter<!-- 6255624  -->
+På macOS-enheter kan du skapa en kernel-tilläggsprofil för att konfigurera inställningar på kernelnivå (**Enheter** > **Konfigurationsprofiler** > **macOS** för plattformen > **Kernel-tillägg** för profiler). Apple håller på att återkalla kerneltillägg och ersätter dem med systemtillägg i en framtida version. Systemtillägg körs i användarutrymmet och ger inte tillgång till kerneln. Målet är att öka säkerheten och ge mer kontroll till slutanvändaren, samtidigt som attacker på kernelnivå begränsas. Med både kerneltillägg och systemtillägg kan användare installera apptillägg som utökar de inbyggda funktionerna i operativsystemet.
 
-### <a name="pre-release-testing-for-managed-google-play-apps---2681933----"></a>Förhandstestning för hanterade Google Play-appar<!-- 2681933  -->
-Organisationer som använder [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213) kommer att kunna hantera dessa kanaler med Intune. Du kommer att kunna selektivt tilldela verksamhetsspecifika appar (som publiceras på Google Plays förproduktionskanaler) till pilotgrupper för testning. I Intune kommer du också att kunna se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med AAD-användare eller -enheter. Den här funktionen är tillgänglig för alla våra aktuella Android Enterprise-scenarier (arbetsprofil, fullständigt hanterad, särskilt avsedd). I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du lägga till en hanterad Google Play-app genom att välja **Appar** > **Android** > **Lägg till**. Du hittar mer information i [Lägg till hanterade Google Play-appar till Android enterprise-enheter med Intune](../apps/apps-add-android-for-work.md).
+I Intune kan du konfigurera både kerneltillägg och systemtillägg (**Enheter** > **Konfigurationsprofiler** > **macOS** för plattformen > **Systemtillägg** för profiler). Kerneltillägg gäller för 10.13.2 och senare. Systemtillägg gäller för 10.15 och senare. Från macOS 10.15 till macOS 10.15.4 kan kerneltillägg och systemtillägg användas tillsammans. 
 
-### <a name="manage-smime-settings-for-outlook-on-android---6517085-----"></a>Hantera S/MIME-inställningar för Outlook på Android<!-- 6517085   -->
-Du kommer att kunna använda appkonfigurationsprinciper för att hantera S/MIME-inställningen för Outlook på enheter som kör Android Enterprise. Du kommer också att kunna välja om enhetsanvändare ska kunna aktivera eller inaktivera S/MIME i Outlook-inställningarna eller inte. Om du vill använda appkonfigurationsprinciper för Android går du till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) och väljer **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade enheter**.
-
-### <a name="additional-options-in-sso-and-sso-app-extension-profiles-on-iosipados-devices---6504155----"></a>Ytterligare alternativ i SSO- och SSO-apptilläggsprofiler på iOS/iPadOS-enheter<!-- 6504155  -->
-På iOS/iPadOS-enheter kan du:
-
-- Ange SAM-kontonamnet (Hanteraren för kontosäkerhet) som Kerberos-huvudnamn i SSO-profiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPadOS** som plattform > **Enhetsfunktioner** som profil > **Enkel inloggning**). 
-- Konfigurera Microsoft Azure AD-tillägget för iOS/iPadOS med färre klick med hjälp av den nya SSO-apptilläggstypen i SSO-apptilläggsprofiler (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPadOS** som plattform > **Enhetsfunktioner** som profil > **Tillägg för enkel inloggning**). Du kan aktivera Azure AD-tillägget för delade enheter och skicka tilläggsspecifika data till tillägget.
+Information om kerneltillägg på macOS-enheter finns i [Lägga till kerneltillägg i macOS](../configuration/kernel-extensions-overview-macos.md).
 
 Gäller för:
-- iOS/iPadOS 13.0+
-
-Mer information om hur du använder enkel inloggning på iOS/iPadOS-enheter finns i [Tilläggsöversikten för enkel inloggning](../configuration/device-features-configure.md#single-sign-on-app-extension) och [listan med inställningar för enkel inloggning](../configuration/ios-device-features-settings.md#single-sign-on-app-extension).
+- macOS 10.15 och senare
 
 <!-- ***********************************************-->
 ## <a name="device-enrollment"></a>Enhetsregistrering
 
 ### <a name="bring-your-own-devices-can-use-vpn-to-deploy--5015344---"></a>VPN kan användas för att distribuera egna enheter (BYOD, Bring Your Own Device)<!--5015344 -->
-Med den nya Autopilot-profilens **Hoppa över kontroll av domänanslutning**-växlingsknapp kan du distribuera Hybrid Azure AD-anslutna enheter utan åtkomst till ditt företagsnätverk med hjälp av din egen Win 32 VPN-tredjepartsklient. Om du vill se den nya växlingsknappen kan du gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter**  > **Windows** > **Windows-registrering** > **Distributionsprofiler** > **Skapa profil** > **Välkomstupplevelse (OOBE)** .
+Den här funktionen kan vara försenad.
+
+### <a name="automated-device-sync-interval-down-to-12-hours--3077535---"></a>Automatiskt intervall för synkronisering av enheter sänks till 12 timmar<!--3077535 -->
+För Apples Automated Device Enrollment sänks det automatiserade synkroniseringsintervallet mellan Intune och Apple Business Manager från 24 timmar till 12 timmar. Mer information om synkronisering finns i [Synkronisering av hanterade enheter](../enrollment/device-enrollment-program-enroll-ios.md#sync-managed-devices).
+
+### <a name="autopilot-support-for-hololens-2-devices--6305220--"></a>Autopilot-stöd för HoloLens 2-enheter<!--6305220-->
+Windows Autopilot får stöd för HoloLens 2-enheter. Mer information om att använda Autopilot i Intune finns i [Registrera Windows-enheter i Intune med hjälp av Windows Autopilot](../enrollment/enrollment-autopilot.md).
+
+### <a name="enrollment-restrictions-will-support-scope-tags--4209550---"></a>Vi inför stöd för omfångstaggar i registreringen<!--4209550 -->
+Du kan tilldela omfångstaggar i registreringsbegränsningar. Det gör du genom att gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **Registreringsbegränsningar** > **Skapa begränsning**. Skapa någon typ av begränsning så visas sidan **Omfångstaggar**.
+
+### <a name="shared-ipads-for-business--6367326---"></a>Delat iPad for Business<!--6367326 -->
+Du kan använda Intune och Apple Business Manager till att enkelt och säkert konfigurera delade iPads så att flera medarbetare kan dela enheter. Apples [Delad iPad](https://developer.apple.com/education/shared-ipad/) får en ny anpassad upplevelse för flera användare samtidigt som användardata bevaras. Med ett hanterat Apple-ID kan användare komma åt sina appar, data och inställningar efter att ha loggat in på en delad iPad i organisationen. Delad iPad fungerar med federerade identiteter.
+
+Du ser den här funktionen genom att gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramtoken** > välj en token** > **Profiler** > **Skapa profil** > **iOS**. På sidan **Hanteringsinställningar** väljer du **Registrera utan användartillhörighet** så visas alternativet **Delad iPad**.
+
+**Gäller för:** macOS 13.4 och senare. Den här versionen innehåller stöd för tillfälliga sessioner med delad iPad så att användarna kan komma åt en enhet utan ett hanterat Apple-ID. Vid utloggning raderar enheten all användarinformation så att enheten omedelbart kan användas, vilket eliminerar behovet av enhetsrensning. 
 
 <!-- ***********************************************-->
 ## <a name="device-management"></a>Enhetshantering
@@ -140,23 +149,22 @@ Med den nya Autopilot-profilens **Hoppa över kontroll av domänanslutning**-vä
 ### <a name="powershell-scripts-support-for-byod-devices---1862833----"></a>Stöd för PowerShell-skript för BYOD-enheter<!-- 1862833  -->
 PowerShell-skript kommer att stödja Azure AD-registrerade enheter i Intune. Mer information om PowerShell finns i [Använda PowerShell-skript på Windows 10-enheter i Intune](../apps/intune-management-extension.md). Den här funktionen stöder inte enheter som kör Windows 10 Home Edition.
 
-### <a name="script-support-for-macos-devices---4280361----"></a>Skriptstöd för macOS-enheter<!-- 4280361  -->
-Du kommer att kunna lägga till och distribuera skript till macOS-enheter. Det här stödet utökar din möjlighet att konfigurera macOS-enheter utöver vad som är möjligt med hjälp av interna MDM-funktioner på macOS-enheter.
-
 ### <a name="log-analytics-will-include-device-details-log--6014987----"></a>Log Analytics innehåller enhetsinformationslogg<!--6014987  -->
 Loggar med Intune-enhetsinformation kommer att vara tillgängliga i **Rapporter** > **Logganalys**. Du kan korrelera enhetsinformationen för att bygga anpassade frågor och Azure-arbetsböcker.
 
-### <a name="push-notification-when-device-ownership-type-is-changed---5575875----"></a>Push-meddelande när ägarskapstypen för enheten ändras<!-- 5575875  -->
-Du kommer att kunna konfigurera ett push-meddelande till användarna av företagsportalsappen (både Android och iOS) när deras ägarskapstyp ändras från Personlig till Företag som en integritetsmeddelande. Den här inställningen hittar du i Microsoft Endpoint Manager genom att välja **Administration av klientorganisation** > **Anpassning**. Mer information om hur enhetsägarskapet påverkar slutanvändarna finns i [Ändra enhetsägande](../enrollment/corporate-identifiers-add.md#change-device-ownership).
+
+### <a name="macos-script-support---6376978----"></a>stöd för macOS-skript<!-- 6376978  -->
+Nu är skriptstöd för macOS allmänt tillgängligt. Dessutom lägger vi till stöd för både användartilldelade skript och macOS-enheter som har registrerats med Apples Automated Device Enrollment (tidigare Programmet för enhetsregistrering). Mer information finns i [Använda Shell-skript på macOS-enheter i Intune](../apps/macos-shell-scripts.md).
 
 <!-- ***********************************************-->
 <!--## Intune apps-->
  
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
-<!--
-## Monitor and troubleshoot
--->
+## <a name="monitor-and-troubleshoot"></a>Övervaka och felsöka
+
+### <a name="power-bi-compliance-report-template-v20---636958----"></a>Mall för Power BI-efterlevnadsrapport V2.0<!-- 636958  -->
+Administratörer kan uppdatera versionen av Power BI-efterlevnadsrapporten från V1.0 till V2.0. V2.0 har en förbättrad design och ändringar av beräkningar och data som visas i mallen. Mer information finns i [Ansluta till Data Warehouse med Power BI](../developer/reports-proc-get-a-link-powerbi.md).
 
 <!-- ***********************************************-->
 <!--
@@ -166,21 +174,34 @@ Du kommer att kunna konfigurera ett push-meddelande till användarna av företag
 <!-- ***********************************************-->
 ## <a name="security"></a>Säkerhet
 
-### <a name="derived-credentials-support-on-android-fully-managed-devices--4839592--"></a>Stöd för härledda autentiseringsuppgifter på fullständigt hanterade Android-enheter<!--4839592-->
-Du kommer att kunna använda härledda autentiseringsuppgifter på fullständigt hanterade Android Enterprise-enheter. Support kommer att inkluderas för att hämta en härledd autentiseringsuppgift för Entrust Datacard, Intercede och DISA Purebred. Du kan använda en härledd autentiseringsuppgift för appautentisering, Wi-Fi, VPN eller S/MIME-signering och/eller kryptering med appar som stöder det.
+### <a name="derived-credentials-support-for-disa-purebred-on-android-devices--4839592---"></a>Stöd för härledda autentiseringsuppgifter för DISA Purebred på Android-enheter<!--4839592 -->
+Du kommer att kunna använda *DISA Purebred* som en leverantör för [härledda autentiseringsuppgifter](../protect/derived-credentials.md) på fullständigt hanterade Android Enterprise-enheter (**klientadministration** > **Anslutningar och token** > **Härledda autentiseringsuppgifter**). Support kommer att inkluderas för att hämta en härledd autentiseringsuppgift för DISA Purebred. Du kan använda en härledd autentiseringsuppgift för appautentisering, Wi-Fi, VPN eller S/MIME-signering och/eller kryptering med appar som stöder det. 
+
+I april lade Intune till stöd för *Entrust Datacard* och *Intercede* som leverantörer för härledda autentiseringsuppgifter. 
 
 ### <a name="privacy-preferences-settings-for-macos-devices---2934232---"></a>Sekretessinställningar för macOS-enheter<!-- 2934232 --> 
 Med lanseringen av macOS Catalina 10.15 har Apple lagt till nya förbättringar av säkerhet och sekretess. Som standard kan program och processer inte komma åt specifika data utan användarmedgivande. Om användarna inte ger medgivande kan det hända att programmen och processerna inte fungerar. Intune lägger till stöd för inställningar som gör att IT-administratörer kan tillåta eller neka medgivande för dataåtkomst åt slutanvändare på enheter som kör macOS 10.14 och senare. De här inställningarna ser till att program och processer fortsätter att fungera korrekt och minskar det antal meddelanden som slutanvändarna får.
 
-### <a name="updated-ui-text-and-labels-for-windows-10-endpoint-protection-profile-settings---5983747---"></a>Uppdatering av text och etiketter för användargränssnittet i inställningarna för Windows 10-slutpunktsskyddsprofil<!-- 5983747 -->
-Vi uppdaterar texten för olika inställningar som du konfigurerar som Windows 10-enhetskonfigurationsprofiler så att det blir enklare att förstå avsedd användning och avsett syfte med inställningarna.
 
-De inställningar som vi uppdaterar inkluderar Windows 10-enhetskonfigurationsprofiler för:
+### <a name="duplicate-your-policies-in-endpoint-security---5892558-----"></a>Duplicera policyer i Endpoint Security<!-- 5892558   -->
+Du kan välja en policy du har skapat i Endpoint Security-noden i administrationscentret för Microsoft Endpoint Manager och sedan kopiera den.  Du kan kopiera följande policyer: 
 
-- [Enhetsbegränsningar](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus) > Microsoft Defender Antivirus  
-- [Endpoint Protection](../protect/endpoint-protection-windows-10.md) > Microsoft Defender Antivirus
+- Antivirus
+- Diskkryptering
+- Brandvägg
+- Slutpunktsidentifiering och svar
+- Minska attackytan
+- Kontoskydd
 
-De inställningar som stöds med Intune ändras inte. Detta är endast en uppdatering av texten i användargränssnittet i administrationscentret för Microsoft-slutpunktshantering.
+Den ursprungliga policyn kopieras, och sedan kan du byta namn på och redigera den. Kopian innehåller inte samma tilldelningar som originalet.
+
+### <a name="send-push-notifications-as-an-action-for-non-compliance----1733150-----"></a>Skicka push-meddelanden som en åtgärd för inkompatibilitet <!-- 1733150   -->
+För iOS och Android lägger vi till en ny åtgärd för inkompatibilitet som skickar ett push-meddelande via företagsportalsappen. När en användare klickar på det här meddelandet startas företagsportalsappen, och i appen visas information om inkompatibilitetsorsaken. Administratörer kan konfigurera den nya åtgärden för inkompatibilitet i Microsoft Endpoint Manager admin center genom att gå till **Enheter** > **Kompatibilitetsprinciper** > **Skapa princip** och sedan välja *Åtgärd* för att skicka ett push-meddelande via app. 
+
+### <a name="new-profile-for-endpoint-security-firewall-policy---5653324-----"></a>Ny profil för Endpoint Security Firewall-policy<!-- 5653324   -->
+I en förhandsversion har vi lagt till ytterligare en profil för Windows 10 och senare i Firewall-policyn för Intunes Endpoint Security (**Endpoint Security** > **Brandvägg** > **Skapa policy** > välj **Windows 10 och senare**). 
+
+Varje instans av den här nya profilen har stöd för upp till 150 anpassade *Microsoft Defender Firewall-regler*. Med Microsoft Defender Firewall-regelpolicyn kan du definiera detaljerade regler för Windows Firewall som tillåter eller blockerar portar och program i Windows 10.
 
 <!-- ***********************************************-->
 ## <a name="notices"></a>Meddelanden

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ffa3d11b92c38373da22e53b96fe9cf9e520b5b
-ms.sourcegitcommit: af8a3efd361a7f3fa6e98e5126dfb1391966ff76
+ms.openlocfilehash: 8e72fc48608ebf32f3e32d4a94ab7203ee418d8f
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82149174"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943815"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -153,7 +153,7 @@ De här inställningarna konfigurerar ett apptillägg som möjliggör enkel inlo
 
 Använd de här inställningarna i Intune för att konfigurera ett apptillägg för enkel inloggning som har skapats av din organisation, identitetsprovider, Microsoft eller Apple. Tillägget för SSO-appen hanterar autentisering för dina användare. De här inställningarna konfigurerar apptillägg för enkel inloggning av omdirigerings- och inloggningsinformationstyp.
 
-- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OAuth och SAML2. Du kan använda ett allmänt omdirigeringstillägg på macOS-enheter. För iOS/iPad-enheter kan du välja mellan Microsoft Azure AD-tillägget för enkel inloggning ([Microsoft Enterprise-plugin-programmet för enkel inloggning](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin)) och ett allmänt omdirigeringstillägg.
+- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OpenID Connect, OAuth och SAML2. Du kan använda ett allmänt omdirigeringstillägg på macOS-enheter. För iOS/iPad-enheter kan du välja mellan Microsoft Azure AD-tillägget för enkel inloggning ([Microsoft Enterprise-plugin-programmet för enkel inloggning](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin)) och ett allmänt omdirigeringstillägg.
 - Inloggningsinformationstypen är utformad för autentiseringsflöden med anrop och svar. Du kan välja mellan ett Kerberos-specifikt tillägg för autentiseringsuppgifter från Apple och ett generiskt för autentiseringsuppgifter.
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [iOS/iPadOS SSO-apptillägg](ios-device-features-settings.md#single-sign-on-app-extension) och [macOS SSO-apptillägg](macos-device-features-settings.md#single-sign-on-app-extension).

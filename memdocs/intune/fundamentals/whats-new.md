@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 04/30/2020
+ms.date: 05/04/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf490c71fdc94b974e53a9d0f388a777e986f13c
-ms.sourcegitcommit: 8a8378b685a674083bfb9fbc9c0662fb0c7dda97
+ms.openlocfilehash: 5b3c8287d9b5ca2d46094d04ee2179128bead4a8
+ms.sourcegitcommit: 0dafd513a59afe592b5cfe2a80b6288020dc5bf0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619584"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82991748"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -51,6 +51,14 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 ### Device security
 ### Intune apps
 ### Monitor and troubleshoot
+
+<!-- ########################## -->
+## <a name="week-of-may-4-2020"></a>Den vecka som börjar 4 maj 2020  
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->  
+
+### <a name="company-portal-for-android-guides-users-to-get-apps-after-work-profile-enrollment----6103999---"></a>Företagsportal för Android hjälper användarna att hämta appar utifrån registreringen av arbetsprofilen <!-- 6103999 -->
+Vi förbättrar vägledningen i appen i Företagsportal så att användarna enklare kan hitta och installera appar. När användaren har registrerat sin arbetsprofil ser de ett meddelande som förklarar att de kan hitta föreslagna appar i den märkta versionen av Google Play. Det sista steget i [Registrera enhet med Android-profil](../user-help/enroll-device-android-work-profile.md) har uppdaterats för att visa det nya meddelandet. Användarna ser också den nya länken **Hämta appar** i Företagsportal-lådan till vänster. För att möjliggöra det här har vi tagit bort fliken **APPAR**. Om du vill se de uppdaterade skärmarna går du till [Uppdateringar i användargränssnittet för Intunes slutanvändarappar](./whats-new-app-ui.md). 
 
 <!-- ########################## -->
 ## <a name="week-of-april-20-2020"></a>Veckan som börjar 20 april 2020

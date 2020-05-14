@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 569a80d21efd82b6008c7aa7a613c089a10c6ff3
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 5b3052d8d213ce3190ed29b43f580a8de9c840b7
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79357902"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943849"
 ---
 # <a name="intune-network-configuration-requirements-and-bandwidth"></a>Krav för Intune-nätverkskonfiguration och bandbredd
 
@@ -64,7 +64,7 @@ En cachelagrande proxyserver som tar emot innehållsbegäranden från klienter k
 Nedan visas vanliga inställningar för en proxyserver som cachelagrar innehåll för Intune-klienter.
 
 
-|          Inställningar           |           Rekommenderat värde           |                                                                                                  Information                                                                                                  |
+|          Inställningen           |           Rekommenderat värde           |                                                                                                  Information                                                                                                  |
 |----------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         Cachestorlek         |             5 GB till 30 GB             | Värdet varierar beroende på hur många klientdatorer som finns i nätverket och vilka konfigurationer som du använder. Om du vill förhindra att filer tas bort för tidigt, ändrar du storleken på cacheminnet för din miljö. |
 | Storlek för enskilda cachefiler |                950 MB                 |                                                                     Den här inställningen kanske inte är tillgänglig i alla proxyservrar med cachelagring.                                                                     |
@@ -74,14 +74,6 @@ Nedan visas vanliga inställningar för en proxyserver som cachelagrar innehåll
 
 Information om hur du använder en proxyserver till att cachelagra innehåll finns i dokumentationen för din proxyserverlösning.
 
-### <a name="use-background-intelligent-transfer-service-bits-on-computers"></a>Använda BITS (Background Intelligent Transfer Service) på datorer
-
-Under den tid då du konfigurerar kan du använda BITS på en Windows-dator för att minska nätverksbandbredden. Du kan konfigurera BITS-principen på sidan **Nätverksbandbredd** i Intune-agentprincipen.
-
-> [!NOTE]
-> Vid MDM-hantering i Windows använder bara operativsystemets hanteringsgränssnitt för apptypen MobileMSI BITS för nedladdning. AppX/MsiX använder sin egen nedladdningsstack utan BITS och Win32-appar via Intune-agenten använder leveransoptimering i stället för BITS.
-
-Läs mer om BITS och Windows-datorer i [Background Intelligent Transfer Service](https://technet.microsoft.com/library/bb968799.aspx) i TechNet-biblioteket.
 
 ### <a name="delivery-optimization"></a>Leveransoptimering
 
@@ -91,13 +83,28 @@ Hela listan med Windows 10-versioner och innehållstyper som stöds av Leveranso
 
 Du kan [konfigurera Leveransoptimering](../configuration/delivery-optimization-settings.md) som en del av dina enhetskonfigurationsprofiler.
 
-### <a name="use-branchcache-on-computers"></a>Använda BranchCache på datorer
+
+### <a name="background-intelligent-transfer-service-bits-and-branchcache"></a>BITS (Background Intelligent Transfer Service) och BranchCache 
+
+Du kan använda Microsoft Intune för att hantera Windows-datorer [som mobila enheter med hantering av mobila enheter (MDM)](../enrollment/windows-enroll.md) eller som datorer med Intune-programvaruklienten. Microsoft rekommenderar att kunderna [använder MDM-hanteringslösningen](../enrollment/windows-enroll.md) närhelst det är möjligt. Vid hantering på det här sättet stöds inte BITS och BranchCache. Mer information finns i [Jämför hanteringen av Windows-datorer som datorer respektive mobila enheter](pc-management-comparison.md).
+
+#### <a name="use-bits-on-computers-requires-intune-software-client"></a>Använda (BITS) på datorer (kräver Intune-klientprogrammet)
+
+Under den tid då du konfigurerar kan du använda BITS på en Windows-dator för att minska nätverksbandbredden. Du kan konfigurera BITS-principen på sidan **Nätverksbandbredd** i Intune-agentprincipen.
+
+> [!NOTE]
+> Vid MDM-hantering i Windows använder bara operativsystemets hanteringsgränssnitt för apptypen MobileMSI BITS för nedladdning. AppX/MsiX använder sin egen nedladdningsstack utan BITS och Win32-appar via Intune-agenten använder leveransoptimering i stället för BITS.
+
+Läs mer om BITS och Windows-datorer i [Background Intelligent Transfer Service](https://technet.microsoft.com/library/bb968799.aspx) i TechNet-biblioteket.
+
+
+#### <a name="use-branchcache-on-computers-requires-intune-software-client"></a>Använda BranchCache på datorer (kräver Intune-klientprogrammet)
 
 Intune-klienter kan använda BranchCache för att minska WAN-trafiken (Wide Area Network). BranchCache stöds i följande operativsystem:
 
 - Windows 7
 - Windows 8.0
-- Windows 8.1
+- Windows 8,1
 - Windows 10
 
 Om du vill använda BranchCache måste klientdatorn ha BranchCache aktiverat och dessutom vara konfigurerat för **distribuerat cacheläge**.
@@ -106,8 +113,6 @@ Som standard aktiveras BranchCache och distribuerat cacheläge på en dator när
 
 Om du använder BranchCache bör du arbeta med andra administratörer i din organisation som hanterar grupprincip och Intune-brandväggsprincip. Kontrollera att de inte distribuerar en princip som inaktiverar BranchCache eller brandväggsundantag. Mer information om BranchCache finns i [BranchCache-översikt](https://technet.microsoft.com/library/hh831696.aspx).
 
-> [!NOTE]
-> Du kan använda Microsoft Intune för att hantera Windows-datorer [som mobila enheter med hantering av mobila enheter (MDM)](../enrollment/windows-enroll.md) eller som datorer med Intune-programvaruklienten. Microsoft rekommenderar att kunderna [använder MDM-hanteringslösningen](../enrollment/windows-enroll.md) närhelst det är möjligt. Vid hantering på det här sättet stöds inte BranchCache. Mer information finns i [Jämför hanteringen av Windows-datorer som datorer respektive mobila enheter](pc-management-comparison.md).
 
 ## <a name="next-steps"></a>Nästa steg
 

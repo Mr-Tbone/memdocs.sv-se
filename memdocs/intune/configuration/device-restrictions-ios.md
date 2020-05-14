@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 05/06/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 897366ba9b7bae15050c0aa5e392ba5255a90b24
-ms.sourcegitcommit: e2877d21dfd70c4029c247275fa2b38e76bd22b8
+ms.openlocfilehash: 49ecd2a1aaa5408a721b06264703720be601c73c
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80407825"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83269022"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för iOS och iPadOS tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -95,6 +95,10 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 - **Aktiveringslås**: **Allow** aktiverar aktiveringslåset på övervakade iOS/iPadOS-enheter. Aktiveringslåset gör det svårare att återaktivera en förlorad eller stulen enhet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Blockera borttagning av app**: **Blockera** hindrar användarna från att ta bort appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ta bort appar från enheter.
 - **Tillåt USB-tillbehör när enheten är låst**: **Tillåt** låter USB-tillbehör utbyta data med enheter som har varit låsts i över en timme. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet uppdaterar kanske inte USB-begränsat läge som standard på enheterna, och USB-tillbehören blockeras från att överföra data från enheterna om de är låsta i mer än en timme.
+
+  Den här funktionen gäller för:  
+  - iOS/iPadOS 11.4.1 och senare
+
 - **Tvinga automatiskt datum och tid**: **Kräv** tvingar övervakade enheter att ange datum och tid automatiskt. Enhetens tidszon uppdateras när enheten har mobila anslutningar eller har aktiverats för Wi-Fi med platstjänster. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Kräv att deltagarna begär tillstånd för att lämna Klassrumskursen**: **Kräv** tvingar elever som har registrerats i en ohanterad kurs med appen Klassrum att begära tillstånd från läraren om att lämna kursen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet tvingar kanske inte som standard eleven att be om behörighet.
 
@@ -292,7 +296,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
   - **Installerar appar från App Store**: **Blockera** innebär att App Store inte visas på enhetens startsida. Användarna kan fortsätta att använda iTunes eller Apple Configurator för att installera appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att App Store visas på hemskärmen.
-  - **Automatisk nedladdning av appar**: **Blockera** förhindrar automatisk nedladdning av appar som har köpts på andra enheter. Det påverkar inte uppdateringar av befintliga appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att appar som har köpts på andra iOS/iPadOS-enheter laddas ned på enheten.
+  - **Automatisk nedladdning av appar**: **Blockera** förhindrar automatisk nedladdning av appar som har köpts på andra enheter och automatiska uppdateringar av nya appar. Det påverkar inte uppdateringar av befintliga appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att appar som har köpts på andra iOS/iPadOS-enheter laddas ned och uppdateras på enheten.
 
 - **Stötande innehåll i iTunes-musik, podcast eller nyheter**: **Blockera** förhindrar stötande innehåll i iTunes-musik, podcastsändningar eller nyheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten får åtkomst till sådant som är klassificerat som vuxet innehåll i butiken.
 
@@ -324,7 +328,10 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ### <a name="settings-apply-to-device-enrollment-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Enhetsregistrering, automatisk enhetsregistrering (övervakad)
 
+
 - **Spotlight-sökning för att returnera resultat från Internet**: **Blockera** förhindrar Spotlight från att returnera resultat från sökningar på Internet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Spotlight-sökningar ansluter till Internet för att visa sökresultat.
+
+  Den här inställningen är dubblerad i användargränssnittet och kommer att åtgärdas i en kommande version. För närvarande gäller den här inställningen för övervakade enheter. I en framtida version gäller den här inställningen för enhetsregistrerade och automatiserade enhetsregistrerade enheter och kräver inte övervakning.
 
 - **Cookies i Safari**: Välj hur cookies ska hanteras på enheter. Alternativen är:
   - Tillåt
@@ -334,7 +341,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 - **Safari JavaScript**: **Blockera** förhindrar att JavaScript körs i webbläsaren på enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta Java-skript.
 
-- **Popupfönster i Safari**: **Blockera** inaktiverar blockering av popup-fönster i webbläsaren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta blockering av popup-fönster.
+- **Popupfönster i Safari**: **Blockera** blockerar alla popup-fönster webbläsaren Safari. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta blockering av popup-fönster.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
@@ -386,6 +393,8 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 - **Ändringar av inställningarna för appen Hitta mina vänner**: **Blockera** förhindrar ändringar i Find My Friends-appinställningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att användarna ändrar inställningarna för appen Hitta mina vänner.
 
 - **Spotlight-sökning för att returnera resultat från Internet**: **Blockera** förhindrar Spotlight från att returnera resultat från sökningar på Internet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Spotlight-sökningar ansluter till Internet för att visa sökresultat.
+
+  Den här inställningen är dubblerad i användargränssnittet och kommer att åtgärdas i en kommande version. För närvarande gäller den här inställningen för övervakade enheter. I en framtida version gäller den här inställningen för enhetsregistrerade och automatiserade enhetsregistrerade enheter och kräver inte övervakning.
 
 - **Blockera borttagning av systemappar från enheten**: **Blockera** inaktiverar möjligheten att ta bort systemappar från enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ta bort systemappar.
 
@@ -586,11 +595,16 @@ Om du vill lägga till appar kan du:
 
   Från och med iOS/iPadOS 13.0 kräver den här inställningen övervakade enheter.
 
-## <a name="autonomous-single-app-mode"></a>Autonomt enkelt appläge
+## <a name="autonomous-single-app-mode-asam"></a>Autonomt enkelt appläge (ASAM)
 
-Använd inställningarna för att konfigurera iOS/iPadOS-enheter så att de kör specifika appar i autonomt enkelt appläge. När det här läget har konfigurerats och användaren startar någon av de konfigurerade apparna låses enheten till den appen. Det går inte att byta app/aktivitet förrän användaren avslutar den tillåtna appen.
+Använd inställningarna för att konfigurera iOS/iPadOS-enheter så att de kör specifika appar i autonomt enkelt appläge (ASAM). När det här läget har konfigurerats och användaren startar någon av de konfigurerade apparna låses enheten till den appen. Det går inte att byta app/aktivitet förrän användaren avslutar den tillåtna appen.
 
 På en skola eller ett universitet kan du till exempel lägga till en app som gör att användarna kan skriva prov på enheten. Du kan också låsa enheten i företagsportalsappen tills användarna har autentiserats. När appens åtgärder har slutförts av användaren, eller om du tar bort principen, återgår enheten till sitt normala tillstånd.
+
+> [!NOTE]
+> Alla appar stöder inte autonomt enkelt appläge. För att kunna använda en app i autonomt enkelt appläge krävs vanligtvis ett paket-ID eller ett nyckel/värde-par som levereras av en appkonfigurationsprincip. Mer information finns i [`autonomousSingleAppModePermittedAppIDs`begränsningen](https://developer.apple.com/documentation/devicemanagement/restrictions) i Apples MDM-dokumentation. Mer information om de specifika inställningar som krävs för den app som du konfigurerar finns i leverantörens dokumentation.
+
+Om du till exempel vill konfigurera Zoom Rooms i autonomt enkelt appläge kan du använda `us.zoom.zpcontroller`-paket-ID:t. I detta fall gör du också en ändring på webbportalen för Zoom. Mer information finns i [hjälpcentret för Zoom](https://support.zoom.us/hc/articles/360021322632-Autonomous-Single-App-Mode-for-Zoom-Rooms-with-a-Third-Party-MDM).
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
@@ -601,6 +615,8 @@ På en skola eller ett universitet kan du till exempel lägga till en app som g�
 Du kan även **Importera** en CSV-fil med listan över appnamn och deras samlings-ID:n. Eller **exportera** en befintlig lista som innehåller dessa appar.
 
 ## <a name="kiosk"></a>Helskärmsläge
+
+[Läget med en enda app](https://support.apple.com/guide/mdm/mdm80a981/web) kallas helskärmsläge i Intune.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 
@@ -666,8 +682,7 @@ Du kan även **Importera** en CSV-fil med listan över appnamn och deras samling
 
 Övervakat läge för iOS/iPadOS kan bara aktiveras under den inledande enhetsinställningen via Apple-programmet för enhetsregistrering eller med hjälp av Apple Configurator. När du har aktiverat övervakat läge kan Intune konfigurera en enhet med följande funktioner:
 
-- Applås (enkelt appläge) 
-- Global HTTP-proxy 
+- Helskärmsläge (enkelt appläge): Kallas för ”applås” i [dokumentationen för Apple-utvecklare](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf).
 - Inaktivera aktiveringslås 
 - Autonomt enkelt appläge 
 - Webbinnehållsfilter 
