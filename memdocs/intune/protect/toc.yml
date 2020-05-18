@@ -60,12 +60,51 @@
           href: actions-for-noncompliance.md
         - name: Övervaka enhetsefterlevnad
           href: compliance-policy-monitor.md
-    - name: Kryptera enheter
+    - name: Slutpunktsskydd
+      href: endpoint-security.md
       items:
-        - name: Kryptera enheter
-          href: encrypt-devices.md
-        - name: Övervaka enhetskryptering
-          href: encryption-monitor.md
+        - name: Hantera enheter
+          href: endpoint-security-manage-devices.md
+        - name: Säkerhetsbaslinjer
+          items:
+            - name: Säkerhetsbaslinjer
+              href: security-baselines.md
+            - name: Övervaka dina baslinjer
+              href: security-baselines-monitor.md
+        - name: Säkerhetsuppgifter
+          href: atp-manage-vulnerabilities.md
+        - name: Säkerhetsprincip
+          items:
+            - name: Hantera säkerhetsprinciper
+              href: endpoint-security-policy.md
+            - name: Antivirus
+              href: endpoint-security-antivirus-policy.md
+            - name: Diskkryptering
+              href: endpoint-security-disk-encryption-policy.md
+            - name: Brandvägg
+              href: endpoint-security-firewall-policy.md
+            - name: Slutpunktsidentifiering och svar
+              href: endpoint-security-edr-policy.md
+            - name: Minska attackytan
+              href: endpoint-security-asr-policy.md
+            - name: Kontoskydd
+              href: endpoint-security-account-protection-policy.md
+        - name: Microsoft Defender ATP
+          href: advanced-threat-protection.md
+        - name: Kryptera diskar
+          items:
+            - name: Hantera BitLocker-princip
+              href: encrypt-devices.md
+            - name: Hantera FileVault-princip
+              href: encrypt-devices-filevault.md
+            - name: Hantera diskkryptering
+              href: encryption-monitor.md
+    - name: Identity Protection
+      items:
+        - name: Windows Hello
+          href: windows-hello.md
+        - name: Identity Protection
+          href: identity-protection-configure.md
     - name: Villkorlig åtkomst
       items:
         - name: Översikt över villkorsstyrd åtkomst
@@ -87,100 +126,76 @@
           href: app-based-conditional-access-intune-create.md
         - name: ADAL och Intune
           href: app-modern-authentication-block.md
-        - name: Jamf Pro för macOS
-          items:
-            - name: Använda Jamf Cloud-anslutningsprogrammet
-              href: conditional-access-jamf-cloud-connector.md
-            - name: Integrera Jamf manuellt med Intune
-              href: conditional-access-integrate-jamf.md
-            - name: Tvinga fram efterlevnad på Mac-datorer som hanteras med Jamf Pro
-              href: conditional-access-assign-jamf.md
-    - name: Skydd mot hot
-      items:
-        - name: Mobile Threat Defense
-          href: mobile-threat-defense.md
-          items:
-            - name: MTD på oregistrerade enheter
-              items:
-                - name: Lägg till MTD-appar på oregistrerade enheter
-                  href: mtd-add-apps-unenrolled-devices.md
-                - name: Skapa en MTD-appskyddsprincip
-                  href: mtd-app-protection-policy.md
-                - name: Aktivera MTD för oregistrerade enheter
-                  href: mtd-enable-unenrolled-devices.md
-            - name: MTD på registrerade enheter
-              items:
-                - name: Lägg till MTD-appar på registrerade enheter
-                  href: mtd-apps-ios-app-configuration-policy-add-assign.md
-                - name: Skapa en MTD-enhetsefterlevnadsprincip
-                  href: mtd-device-compliance-policy-create.md
-                - name: Aktivera MTD för registrerade enheter
-                  href: mtd-connector-enable.md
-            - name: MTD-program
-              items:
-                - name: Konfigurera Better Mobile
-                  href: better-mobile-threat-defense-connector.md
-                  items:
-                    - name: Integrering av Better Mobile och Intune
-                      href: better-mobile-mtd-connector-integration.md
-                      displayName: sso
-                - name: Konfigurera Check Point
-                  href: checkpoint-sandblast-mobile-mobile-threat-defense-connector.md
-                  items:
-                    - name: Check Point- och Intune-integrering
-                      href: checkpoint-sandblast-mobile-mtd-connector-integration.md
-                - name: Konfigurera Lookout
-                  href: lookout-mobile-threat-defense-connector.md
-                  items:
-                    - name: Lookout- och Intune-integrering
-                      href: lookout-mtd-connector-integration.md
-                - name: Konfigurera Pradeo
-                  href: pradeo-mobile-threat-defense-connector.md
-                  items:
-                    - name: Pradeo- och Intune-integrering
-                      href: pradeo-mtd-connector-integration.md
-                - name: Konfigurera Sophos Mobile
-                  href: sophos-mtd-connector.md
-                  items:
-                    - name: Sophos Mobile och Intune-integrering
-                      href: sophos-mtd-connector-integration.md
-                - name: Konfigurera Symantec
-                  href: skycure-mobile-threat-defense-connector.md
-                  items:
-                    - name: Symantec- och Intune-integrering
-                      href: skycure-mtd-connector-integration.md
-                - name: Konfigurera Wandera
-                  href: wandera-mtd-connector.md
-                  items:
-                    - name: Wandera- och Intune-integrering
-                      href: wandera-mtd-connector-integration.md
-                - name: Konfigurera Zimperium
-                  href: zimperium-mobile-threat-defense-connector.md
-                  items:
-                    - name: Zimperium- och Intune-integrering
-                      href: zimperium-mtd-connector-integration.md
-        - name: Microsoft Defender
-          items:
-            - name: Microsoft Defender ATP
-              href: advanced-threat-protection.md
-            - name: Säkerhetsuppgifter
-              href: atp-manage-vulnerabilities.md
-    - name: Säkerhetsbaslinjer
-      items:
-        - name: Säkerhetsbaslinjer
-          href: security-baselines.md
-        - name: Övervaka dina baslinjer
-          href: security-baselines-monitor.md
+        - name: Integrera Jamf Pro med Intune för kompatibilitet
+          href: conditional-access-integrate-jamf.md
+        - name: Tvinga fram efterlevnad på Mac-datorer som hanteras med Jamf Pro
+          href: conditional-access-assign-jamf.md
     - name: Endpoint Protection
       href: endpoint-protection-configure.md
+    - name: Mobile Threat Defense-partner
+      href: mobile-threat-defense.md
+      items:
+        - name: MTD på oregistrerade enheter
+          items:
+            - name: Lägg till MTD-appar på oregistrerade enheter
+              href: mtd-add-apps-unenrolled-devices.md
+            - name: Skapa en MTD-appskyddsprincip
+              href: mtd-app-protection-policy.md
+            - name: Aktivera MTD för oregistrerade enheter
+              href: mtd-enable-unenrolled-devices.md
+        - name: MTD på registrerade enheter
+          items:
+            - name: Lägg till MTD-appar på registrerade enheter
+              href: mtd-apps-ios-app-configuration-policy-add-assign.md
+            - name: Skapa en MTD-enhetsefterlevnadsprincip
+              href: mtd-device-compliance-policy-create.md
+            - name: Aktivera MTD för registrerade enheter
+              href: mtd-connector-enable.md
+        - name: MTD-program
+          items:
+            - name: Konfigurera Better Mobile
+              href: better-mobile-threat-defense-connector.md
+              items:
+                - name: Integrering av Better Mobile och Intune
+                  href: better-mobile-mtd-connector-integration.md
+                  displayName: sso
+            - name: Konfigurera Check Point
+              href: checkpoint-sandblast-mobile-mobile-threat-defense-connector.md
+              items:
+                - name: Check Point- och Intune-integrering
+                  href: checkpoint-sandblast-mobile-mtd-connector-integration.md
+            - name: Konfigurera Lookout
+              href: lookout-mobile-threat-defense-connector.md
+              items:
+                - name: Lookout- och Intune-integrering
+                  href: lookout-mtd-connector-integration.md
+            - name: Konfigurera Pradeo
+              href: pradeo-mobile-threat-defense-connector.md
+              items:
+                - name: Pradeo- och Intune-integrering
+                  href: pradeo-mtd-connector-integration.md
+            - name: Konfigurera Sophos Mobile
+              href: sophos-mtd-connector.md
+              items:
+                - name: Sophos Mobile och Intune-integrering
+                  href: sophos-mtd-connector-integration.md
+            - name: Konfigurera Symantec
+              href: skycure-mobile-threat-defense-connector.md
+              items:
+                - name: Symantec- och Intune-integrering
+                  href: skycure-mtd-connector-integration.md
+            - name: Konfigurera Wandera
+              href: wandera-mtd-connector.md
+              items:
+                - name: Wandera- och Intune-integrering
+                  href: wandera-mtd-connector-integration.md
+            - name: Konfigurera Zimperium
+              href: zimperium-mobile-threat-defense-connector.md
+              items:
+                - name: Zimperium- och Intune-integrering
+                  href: zimperium-mtd-connector-integration.md
     - name: Åtkomstkontroll för nätverk
       href: network-access-control-integrate.md
-    - name: Windows Hello
-      items:
-        - name: Windows Hello
-          href: windows-hello.md
-        - name: Identity Protection
-          href: identity-protection-configure.md
     - name: Certifikat
       items:
         - name: Använd certifikat för autentisering
@@ -257,13 +272,8 @@
           href: troubleshoot-jamf.md
 - name: Referens
   items:
-    - name: Principinställningar för Antivirus
-      items:
-        - name: Inställningar för macOS Defender Antivirus
-          href: antivirus-microsoft-defender-settings-macos.md
-        - name: Inställningar för Windows 10 Microsoft Defender Antivirus
-          href: antivirus-microsoft-defender-settings-windows.md
     - name: API för att lägga till tredje parts certifikatutfärdare
+      href: scep-libraries-apis.md
     - name: Inställningar för efterlevnadsprinciper
       items:
         - name: Inställningar för efterlevnadsprinciper – Android
@@ -280,7 +290,26 @@
           href: compliance-policy-create-windows-8-1.md
         - name: Inställningar för efterlevnadsprinciper – Windows Phone 8.1
           href: compliance-policy-create-windows-8-1.md
-      href: scep-libraries-apis.md
+    - name: Säkerhetsprincipinställningar för slutpunkter
+      items:
+        - name: Principinställningar för Antivirus
+          items:
+            - name: Inställningar för macOS Defender Antivirus
+              href: antivirus-microsoft-defender-settings-macos.md
+            - name: Inställningar för Windows 10 Microsoft Defender Antivirus
+              href: antivirus-microsoft-defender-settings-windows.md
+            - name: Inställningar för Windows-säkerhetsfunktioner
+              href: antivirus-security-experience-windows-settings.md
+        - name: Profilinställningar för diskkryptering
+          href: endpoint-security-disk-encryption-profile-settings.md
+        - name: Inställningar för brandväggsprincip
+          href: endpoint-security-firewall-profile-settings.md
+        - name: Profilinställningar för slutpunktsidentifiering och svar
+          href: endpoint-security-edr-profile-settings.md
+        - name: Profilinställningar för minskning av attackytan (förhandsversion)
+          href: endpoint-security-asr-profile-settings.md
+        - name: Profilinställningar för kontoskydd
+          href: endpoint-security-account-protection-profile-settings.md
     - name: Inställningar för säkerhetsbaslinjer
       items:
         - name: Windows 10 MDM-baslinjeinställningar

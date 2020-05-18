@@ -20,6 +20,7 @@
 #### Registrera med härledda autentiseringsuppgifter
 ##### [Registrera med Entrust Datacard](enroll-android-device-entrust-datacard.md)
 ##### [Registrera med Intercede](enroll-android-device-intercede.md)
+##### [Registrera med Disa Purebred](enroll-android-device-disa-purebred.md)
 ### [Flytta till installation av ny enhetshantering](move-to-new-device-management-setup.md)
 ### [Använda hanterade appar på enheten](use-managed-apps-on-your-device-android.md)
 ### [Kryptera din enhet](encrypt-your-device-android.md)
