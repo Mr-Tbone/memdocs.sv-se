@@ -165,7 +165,7 @@
             - name: Översikt över principer för appskydd
               href: app-protection-policy.md
               displayName: app; protection; policy
-            - name: Dataskyddsramverk med APP
+            - name: Dataskyddsramverk med appskyddsprinciper
               href: app-protection-framework.md
             - name: Skapa programskyddsprinciper
               items:
