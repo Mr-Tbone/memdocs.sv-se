@@ -46,7 +46,7 @@ Innan du kan skapa principer för villkorsstyrd åtkomst från administrationsce
 
 2. Välj **Slutpunktssäkerhet** > **Villkorlig åtkomst** > **Ny princip**.
 
-3. Ange ett **principnamn** och välj *Användare och grupper* under **Tilldelningar**. Använd inkludera eller exkludera alternativ för att lägga till grupper för principen och välj **Klar**.
+3. Ange ett **principnamn** och välj **Användare och grupper** under *Tilldelningar*. Använd inkludera eller exkludera alternativ för att lägga till grupper för principen och välj **Klar**.
 
 4. Välj **Molnappar eller åtgärder** och välj vilka appar som ska skyddas. Välj till exempel **Välj appar** och sedan **Office 365 (förhandsversion)** .
 

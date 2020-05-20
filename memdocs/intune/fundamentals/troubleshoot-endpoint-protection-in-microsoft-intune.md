@@ -68,7 +68,7 @@ Du kan få ett meddelande om att vissa funktioner är inaktiverade. Du får de h
 
 Den här statusen visas när definitionerna för skadlig kod på enheten är inaktuella med 14 dagar eller mer. Meddelandet kan till exempel indikera om enheten är frånkopplad från Internet eller om definitionerna för skadlig kod är inaktuella.
 
-**Möjliga lösningar**: om definitionerna för skadlig kod är inaktuella, kan du uppdatera definitionerna med [Microsoft Defender Antivirus](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus).
+[Möjliga lösningar](../configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus): om definitionerna för skadlig kod är inaktuella, kan du uppdatera definitionerna med **Microsoft Defender Antivirus**.
 
 ### <a name="full-scan-overdue-or-quick-scan-overdue"></a>Det är dags för Fullständig sökning eller Snabbsökning
 

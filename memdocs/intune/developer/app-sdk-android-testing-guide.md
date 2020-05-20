@@ -38,7 +38,7 @@ Du kan skapa nya konton med eller utan förgenererade data. Så här skapar du e
 
 
 ## <a name="azure-portal-policy-configuration"></a>Konfiguration av Azure-portalprinciper
-[Skapa och tilldela appskyddsprinciper](../apps/app-protection-policies.md) på [Azure-portalens Intune-blad](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Intune_Apps/MainMenu/14/selectedMenuItem/Overview). Du kan även skapa och tilldela din [appkonfigurationsprincip](../apps/app-configuration-policies-overview.md) på Intune-bladet.
+[Skapa och tilldela appskyddsprinciper](https://portal.azure.com/?feature.customportal=false#blade/Microsoft_Intune_Apps/MainMenu/14/selectedMenuItem/Overview) på [Azure-portalens Intune-blad](../apps/app-protection-policies.md). Du kan även skapa och tilldela din [appkonfigurationsprincip](../apps/app-configuration-policies-overview.md) på Intune-bladet.
 
 > [!NOTE]
 > Om din app inte visas på Azure-portalen kan du ange den som mål med en princip genom att välja alternativet **fler appar** och ange paketnamnet i textrutan.
