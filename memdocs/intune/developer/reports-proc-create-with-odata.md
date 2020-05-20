@@ -93,10 +93,10 @@ Ett trädkarta-diagram visar hierarkiska data som rutor i rutor. Varje gren i hi
 ![Trädkartevisualiseringar med Power BI](./media/reports-proc-create-with-odata/reports-create-03-treemap.png)
 
 1. Leta upp och välj **Trädkarta** i fönstret **Visualiseringar**. **Trädkartan** läggs till på rapportarbetsytan.
-2. Leta upp **tabellen i**fönstret`devices` fält.
+2. Leta upp `devices` tabellen i **fönstret** fält.
 3. Expandera tabellen `devices` och välj datafältet `manufacturer`.
-4. Dra data fältet till rapport arbets ytan och släpp det `manufacturer`i TreeMap **-diagrammet.**
-5. `deviceKey` Dra data fältet från tabellen till fönstret `devices`visualiseringar**och släpp det under avsnittet**värden**i rutan med etiketten**Lägg till data fält här **.**  
+4. Dra data fältet till rapport arbets ytan och släpp det **i TreeMap**-diagrammet.`manufacturer`
+5. `devices` Dra data fältet från tabellen till fönstret **visualiseringar** och släpp det under avsnittet **värden** i rutan med etiketten **Lägg till data fält här**. `deviceKey`  
 
 Nu har du ett visuellt objekt som visar din organisations distribution av enheternas tillverkare.
 
@@ -107,7 +107,7 @@ Nu har du ett visuellt objekt som visar din organisations distribution av enhete
 Du kan lägga till ett filter till din trädkarta så att du kan svara på fler frågor med programmet.
 
 1. Lägg till ett filter genom att välja rapportarbetsytan och sedan **Utsnittsikonen** (![trädkarta med datamodell och relationer som stöds](./media/reports-proc-create-with-odata/reports-create-slicer.png)) under **Visualiseringar**. Den tomma **utsnittsvisualiseringen** visas på arbetsytan.
-2. Leta upp **tabellen i**fönstret`ownerTypes` fält.
+2. Leta upp `ownerTypes` tabellen i **fönstret** fält.
 3. Expandera tabellen `ownerTypes` och välj datafältet `ownerTypeName`.
 4. Dra datafältet `onwerTypeName` från tabellen `ownerTypes` till rutan **Filter** och släpp det under avsnittet **Filter på den här sidan** i rutan med namnet **Lägg till datafält här**.  
 
