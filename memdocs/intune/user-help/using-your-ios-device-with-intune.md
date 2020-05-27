@@ -6,7 +6,7 @@ author: lenewsad
 ms.author: lanewsad
 manager: dougeby
 ms.date: 10/01/2018
-ms.topic: article
+ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
 ms.subservice: end-user
@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 764c04e130f206e77a99e557d0397a329865c2ab
-ms.sourcegitcommit: d05b1472385c775ebc0b226e8b465dbeb5bf1f40
+ms.openlocfilehash: 5b4ebc74c2be3cfdd0c833516da20e89eb72f6ab
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605090"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83880646"
 ---
 # <a name="using-your-ios-device-with-intune-company-portal"></a>Använd din iOS-enhet med Intune-företagsportalen
 Den här artikeln listar uppgifter och information som är specifik för företagsportalen för iOS. Du kan använda den för att hjälpa dig felsöka och hantera din iOS-enhet. Klicka på en länk om du vill se mer information, steg och skärmdumpar.
