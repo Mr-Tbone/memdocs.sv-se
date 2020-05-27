@@ -6,22 +6,23 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/26/2020
-ms.topic: reference
+ms.date: 05/05/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
+ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cb8cea30b53c5619580b289f73529668d71e909
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: ebf65ecc6dbe5059adbd6fec70833bf2fcab9de7
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80551497"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988666"
 ---
 # <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Lägg till en fil med egenskapslista på macOS-enheter med Microsoft Intune
 
@@ -44,9 +45,6 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 - Endast vissa appar fungerar med hanterade inställningar och de kanske inte tillåter att du hanterar alla inställningar.
 - Se till att ladda upp filer med egenskapslistor som riktas mot enhetskanalinställningarna och inte användarkanalinställningarna. Filer med egenskapslistor riktas mot hela enheten.
 
-> [!NOTE]
-> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
-
 ## <a name="create-the-profile"></a>Skapa profilen
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
@@ -66,9 +64,13 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 7. I **Konfigurationsinställningar** konfigurerar du inställningarna:
 
-    - **Önskat domännamn**: Filer med egenskapslistor används vanligtvis för webbläsare (Microsoft Edge), [Microsoft Defender Avancerat skydd](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) och anpassade appar. När du skapar en inställningsdomän skapas även ett samlings-ID. Ange samlings-ID:t, t.ex. `com.company.application`. Ange till exempel `com.Contoso.applicationName`, `com.Microsoft.Edge` eller `com.microsoft.wdav`.
+    - **Önskat domännamn**: Ange samlings-ID:t, t.ex. `com.company.application`. Ange till exempel `com.Contoso.applicationName`, `com.Microsoft.Edge` eller `com.microsoft.wdav`.
+
+      Filer med egenskapslistor används vanligtvis för webbläsare (Microsoft Edge), [Microsoft Defender Avancerat skydd](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) och anpassade appar. När du skapar en inställningsdomän skapas även ett samlings-ID.
+
     - **Fil med egenskapslista**: Välj filen med egenskapslistan som är kopplad till din app. Se till att det är en `.plist`- eller `.xml`-fil. Du kan till exempel ladda upp filen `YourApp-Manifest.plist` eller `YourApp-Manifest.xml`.
-    - **Filinnehåll**: Nyckelinformationen i filen med egenskapslistan visas. Om du behöver ändra nyckelinformationen öppnar du listfilen i en annan redigerare och laddar sedan upp filen igen i Intune.
+
+      Nyckelinformationen i filen med egenskapslistan visas. Om du behöver ändra nyckelinformationen öppnar du listfilen i en annan redigerare och laddar sedan upp filen igen i Intune.
 
     Se till att filen är korrekt formaterad. Filen får bara innehålla nyckelvärdepar och får inte vara omslutas av taggtypen `<dict>`, `<plist>` eller `<xml>`. Till exempel bör filen med egenskapslistan likna följande fil:
 
@@ -93,6 +95,6 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 ## <a name="next-steps"></a>Nästa steg
 
-Profilen har skapats, men den gör inte något än. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
 Ytterligare information om inställningsfiler för Microsoft Edge finns i [Konfigurera Microsoft Edge-principinställningar på macOS](https://docs.microsoft.com/deployedge/configure-microsoft-edge-on-mac).

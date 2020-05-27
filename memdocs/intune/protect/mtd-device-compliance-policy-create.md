@@ -6,8 +6,8 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/17/2020
-ms.topic: conceptual
+ms.date: 05/21/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb5a04b8db382345cbf8f3e86feab8b3cea9efd9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 06e975e386b0d754b03e75ffeda456a432a6dc4b
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81615690"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83984996"
 ---
 # <a name="create-mobile-threat-defense-mtd-device-compliance-policy-with-intune"></a>Skapa en princip för Mobile Threat Defense-enhetsefterlevnad med Intune
 
@@ -59,11 +59,6 @@ Förutsättningar för principen för enhetsefterlevnad med MTD:
    - **Medel**: Enheten följer standard om hoten som hittas på enheten är låga eller medelhöga. Om hot på en högre nivå identifieras på enheten får den statusen icke-kompatibel.
 
    - **Hög**: Det här är den minst säkra nivån. Detta tillåter alla hotnivåer och använder endast Mobile Threat Defense i rapporteringssyfte. Enheterna måste ha MTD-appen aktiverad med den här inställningen.
-
-   > [!IMPORTANT]
-   > För Android Enterprise-enhetsägare kan du inte redigera principen för att ändra hotnivån senare efter att du har skapat och sparat en princip. Redigeringar som ändrar enhetens hotnivå för Enhetens hälsotillstånd-inställningen **Kräv att enheten ska hållas vid eller under hotnivån för enheten** misslyckas med att tillämpas. För att kunna ändra hotnivåvärdet måste du ta bort den aktuella principen och skapa en ny princip som anger den önskade hotnivån.
-   >
-   > Detta är ett känt problem som kommer att lösas i en framtida uppdatering av Intune.
 
 6. Välj **OK** två gånger och sedan **Skapa** för att skapa principen.
 

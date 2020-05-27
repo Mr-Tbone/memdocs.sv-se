@@ -6,7 +6,7 @@ author: brenduns
 ms.author: brenduns
 manager: dougeby
 ms.date: 03/20/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b437a72a2380fea215746aa76b35898c6fc60b16
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: de23dc438ac176383cf5f5fbfac4da22f91bd4b2
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80551372"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988826"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Skapa en efterlevnadsprincip i Microsoft Intune
 
@@ -52,15 +52,12 @@ Om du vill använda enhetsefterlevnadsprinciper måste du:
   - iOS
   - macOS
   - Windows 10
-  - Windows 8.1
+  - Windows 8,1
   - Windows Phone 8.1
 
 - Registrera enheter i Intune (krävs för att kunna se efterlevnadsstatusen)
 
 - Registrera enheter för en användare, eller registrera utan någon primär användare. Enheter som har registrerats för flera användare stöds inte.
-
-> [!NOTE]
-> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="create-the-policy"></a>Skapa principen
 
@@ -134,7 +131,7 @@ If the **Evaluate** button is grayed out, make sure the policy is assigned to on
 
 ## <a name="refresh-cycle-times"></a>Uppdatera cykeltider
 
-Intune använder olika uppdateringscykler för att söka efter uppdateringar av efterlevnadsprinciper. Om enheten nyligen har registrerats körs incheckningarna oftare. [Princip-och profil uppdaterings cykler](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) visar de uppskattade uppdateringstiderna.
+Intune använder olika uppdateringscykler för att söka efter uppdateringar av efterlevnadsprinciper. Om enheten nyligen har registrerats körs incheckningarna oftare. [Princip-och profiluppdateringscykler](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) visar de uppskattade uppdateringstiderna.
 
 Användarna kan när de vill öppna företagsportalappen och synkronisera enheten för att söka efter principuppdateringar.
 
@@ -166,7 +163,7 @@ Om en enhet har flera policyer för efterlevnad och enheten har olika efterlevna
 |---------|---------|
 |Okänt     |1|
 |NotApplicable     |2|
-|godkända|3|
+|Kompatibel|3|
 |InGracePeriod|4|
 |NonCompliant|5|
 |Fel|6|

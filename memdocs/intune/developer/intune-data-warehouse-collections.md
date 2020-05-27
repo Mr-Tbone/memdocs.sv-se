@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a4d468c62132c6af4477ba48f17ac9b21013e51
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: 997a2db8917da1443531d8446176c21db3a5dbf6
+ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82022745"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83709459"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune-informationslagersamlingar
 
@@ -193,6 +193,8 @@ Entiteten **DeviceConfigurationProfileUserActivity** innehåller en lista över 
 | OSVersion                  | OS-version.                                                                                                                                                                          |
 | JailBroken                 | Om enheten har brutits upp eller rotats.                                                                                                                                         |
 | DeviceCategoryKey          | Nyckeln för attributet enhetskategori för den här enheten.                                                                                                                                    |
+
+
 ## <a name="deviceregistrationstates"></a>deviceRegistrationStates
 Entiteten **DeviceRegistrationState** representerar den registreringstyp som andra informationslagersamlingar hänvisar till. 
 
@@ -222,7 +224,6 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | DeviceRegistrationState    | Nyckeln för attributet klientregistreringstillstånd för den här enheten.                                                                                                                      |
 | OwnerTypeKey               | Nyckeln för attributet ägartyp för den här enheten: företag, privat eller okänd.                                                                                                    |
 | EnrolledDateTime           | Datum och tid då enheten registrerades.                                                                                                                                         |
-| EthernetMacAddress           | Den unika nätverksidentifieraren för den här enheten.                                                                                                                                        |
 | LastSyncDateTime           | Senast kända incheckning på Intune.                                                                                                                                              |
 | ManagementAgentKey         | Nyckeln för den hanteringsagent som är kopplad till den här enheten.                                                                                                                             |
 | ManagementStateKey         | Nyckeln för det hanteringstillstånd som är kopplat till enheten och som visar det senaste tillståndet för en fjärråtgärd eller om den har brutits upp/rotats.                                                |
@@ -244,16 +245,12 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | MEID                       | MEID                                                                                                                                                                                   |
 | isSupervised               | Status för övervakad enhet                                                                                                                                                               |
 | FreeStorageSpaceInBytes    | Ledigt lagringsutrymme i byte.                                                                                                                                                                 |
-| TotalStorageSpaceInBytes   | Total lagringskapacitet i bytes.                                                                                                                                                                |
 | EncryptionState            | Krypteringstillstånd på enheten.                                                                                                                                                      |
 | SubscriberCarrier          | Abonnentens operatör på enheten                                                                                                                                                       |
 | PhoneNumber                | Enhetens telefonnummer                                                                                                                                                             |
 | IMEI                       | IMEI                                                                                                                                                                                   |
 | CellularTechnology         | Enhetens mobilteknik                                                                                                                                                    |
 | WiFiMacAddress             | Wi-Fi MAC                                                                                                                                                                              |
-| Modell                      | Enhetsmodellen.                                                                                                                                                                      |
-| Office365Version           | Den version av Office 365 som är installerad på enheten.                                                                                                                             |
-| PhysicalMemoryInBytes      | Fysiskt minne i bytes.                                                                                                                                                          |
 
 
 ## <a name="devicetypes"></a>deviceTypes

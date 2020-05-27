@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 861d7f526711f2169e8fd03b3df09659440523b9
-ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
+ms.openlocfilehash: c20489b8da3080506065d68aeb1b19dae362c2fb
+ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693447"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556327"
 ---
 <!-- Pivots in use: 
 ::: zone pivot="edge-october-2019"
@@ -47,7 +47,6 @@ Visa inställningarna av Microsoft Edge-webbläsarens säkerhetsbaslinjer som st
 ::: zone-end
 ::: zone pivot="edge-april-2020"
 
-*Den nya baslinjen distribueras till klientorganisationer under de närmaste veckorna. Vi förväntar oss att alla klientorganisationer kommer att ha den nya baslinjen i början av maj.*
 För att förstå vad som är nytt i den här versionen av baslinjen jämfört med tidigare versioner kan du använda aktiviteten [Jämför baslinjer](../protect/security-baselines.md#compare-baseline-versions) som är tillgänglig när du visar fönstret *Versioner* för den här baslinjen. För att förstå vad som är nytt i den här versionen av baslinjen jämfört med tidigare versioner kan du använda aktiviteten [Jämför baslinjer](../protect/security-baselines.md#compare-baseline-versions) som är tillgänglig när du visar fönstret *Versioner* för den här baslinjen.
 
 ::: zone-end
