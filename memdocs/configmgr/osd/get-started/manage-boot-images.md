@@ -10,12 +10,12 @@ ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1166d4c674207ed3590901465ca90a98ce3ae78f
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 4403c8d0c57fba8fb63e3df729fb8a48ff123362
+ms.sourcegitcommit: d8dc05476ecd5db7ecb36dc649b566b349ba263d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075072"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83732881"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Hantera start avbildningar med Configuration Manager
 
@@ -25,7 +25,7 @@ En start avbildning i Configuration Manager är en [Windows PE](https://docs.mic
 
 ## <a name="default-boot-images"></a><a name="BKMK_BootImageDefault"></a>Standard start avbildningar
 
-Configuration Manager tillhandahåller två standard start avbildningar: en som stöder x86-plattformar och en som stöder x64-plattformar. De här avbildningarna lagras i mapparna *x64* eller *i386* i följande resurs på plats servern: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\`. Standard start avbildningarna uppdateras eller återskapas beroende på vilken åtgärd du utför.
+Configuration Manager tillhandahåller två standard start avbildningar: en som stöder x86-plattformar och en som stöder x64-plattformar. De här avbildningarna lagras i mapparna *x64* eller *i386* i följande resurs på plats servern: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\` . Standard start avbildningarna uppdateras eller återskapas beroende på vilken åtgärd du utför.
 
 Tänk på följande om några av de åtgärder som beskrivs för standard start avbildningar:
 
@@ -188,7 +188,7 @@ På fliken **Anpassning** väljer du någon av följande inställningar:
 - Välj alternativet för att **Aktivera för inläsnings kommandon** för att ange ett kommando som ska köras innan aktivitetssekvensen körs. När du aktiverar det här alternativet anger du också den kommando rad som ska köras och eventuella stödfiler som krävs av kommandot.  
 
     > [!WARNING]  
-    > Lägg `cmd /c` till i början av kommando raden. Om du inte anger `cmd /c`något stängs inte kommandot när det har körts. Distributionen fortsätter att vänta tills kommandot har slutförts och inga andra konfigurerade kommandon eller åtgärder startas.  
+    > Lägg till `cmd /c` i början av kommando raden. Om du inte anger något `cmd /c` stängs inte kommandot när det har körts. Distributionen fortsätter att vänta tills kommandot har slutförts och inga andra konfigurerade kommandon eller åtgärder startas.  
 
     > [!TIP]  
     > När du skapar en aktivitetssekvens skriver guiden paket-ID och för inläsnings kommando rad till filen **CreateTSMedia. log** . Den här informationen inkluderar värdet för alla variabler i en aktivitetssekvens. Den här loggen finns på den dator som kör Configuration Manager-konsolen. Granska logg filen för att verifiera värdena för variablerna för aktivitetssekvensen.  
@@ -201,13 +201,8 @@ På fliken **Anpassning** väljer du någon av följande inställningar:
 
 - **Ange standard tangentbordslayout i WinPE**: <!--4910348-->Från och med version 1910 konfigurerar du standard tangentbordslayouten för en start avbildning. Om du väljer ett annat språk än en-US, kan Configuration Manager fortfarande innehålla en-us i tillgängliga språk. På enheten är den första tangentbordslayouten det valda språket, men användaren kan byta enhet till en-US om det behövs.
 
-    > [!Tip]
-    > PowerShell [-cmdleten Set-CMBootImage](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmbootimage?view=sccm-ps) innehåller nu en ny parameter `-InputLocale`. Ett exempel:
-    >
-    > ```PowerShell
-    > # Set boot image keyboard layout to Russian (Russia)
-    > Set-CMBootimage -Id "CM100004" -InputLocale "ru-ru"`
-    > ```
+> [!Tip]
+> Använd cmdleten [set-CMBootImage](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmbootimage?view=sccm-ps) PowerShell-cmdlet för att konfigurera inställningarna från ett skript.
 
 #### <a name="optional-components"></a>Valfria komponenter
 

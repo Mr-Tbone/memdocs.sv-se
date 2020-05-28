@@ -10,12 +10,12 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 30cd61240b09f821d8b18c37e6accc7450f35817
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 35379aed71544a25a98ec4dfa421be70c1bae851
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718849"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427743"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installera en moln distributions plats för Configuration Manager
 
@@ -35,7 +35,7 @@ Den här artikeln beskriver stegen för att installera en Configuration Manager 
 - [Distribuera innehåll och konfigurera klienter](#bkmk_client)
 - [Hantera och övervaka](#bkmk_monitor)
 - [Ändra](#bkmk_modify)
-- [Avancerad fel sökning](#bkmk_tshoot)
+- [Avancerad felsökning](#bkmk_tshoot)
 
 
 ## <a name="before-you-begin"></a><a name="bkmk_before"></a>Innan du börjar
@@ -65,7 +65,7 @@ Använd följande check lista för att kontrol lera att du har nödvändig infor
     > [!TIP]  
     > Innan du begär certifikatet för serverautentisering som använder tjänst namnet, kontrollerar du att det önskade Azure-domännamnet är unikt. Till exempel *WallaceFalls.CloudApp.net*.
     >
-    > 1. Logga in på [Azure Portal](https://portal.azure.com).
+    > 1. Logga in på [Azure-portalen](https://portal.azure.com).
     > 1. Välj **alla resurser**och välj sedan **Lägg till**.
     > 1. Sök efter **moln tjänst**. Välj **Skapa**.
     > 1. I fältet **DNS-namn** anger du det prefix som du vill använda, till exempel *WallaceFalls*. Gränssnittet visar om domän namnet är tillgängligt eller redan används av en annan tjänst.
@@ -132,7 +132,7 @@ Utför den här proceduren på webbplatsen som värd för den här moln distribu
     - **Certifikat fil**: Välj **Bläddra** och välj. PFX-fil för den här moln distributions platsens certifikat för serverautentisering. Det egna namnet från det här certifikatet fyller i fälten **FQDN** för obligatoriska tjänster och **tjänst namn** .  
 
         > [!NOTE]  
-        > Certifikat för moln distributions plats serverns autentisering stöder jokertecken. Om du använder ett jokertecken, ersätter du asterisken`*`() i fältet för **tjänstens FQDN** med det önskade värd namnet för tjänsten.  
+        > Certifikat för moln distributions plats serverns autentisering stöder jokertecken. Om du använder ett jokertecken, ersätter du asterisken ( `*` ) i fältet för **tjänstens FQDN** med det önskade värd namnet för tjänsten.  
 
 5. På sidan **aviseringar** ställer du in lagrings kvoter, överförings kvoter och i vilken procent andel av kvoterna som du vill Configuration Manager generera aviseringar. Välj **Nästa**.  
 
@@ -169,11 +169,11 @@ Innan klienter kan använda moln distributions platsen måste de kunna matcha na
 If you issue the server authentication certificate from your PKI, you may directly specify the Azure **Service name**. For example, `WallaceFalls.cloudapp.net`. When you specify this certificate in the Create Cloud Distribution Point Wizard, both the **Service FQDN** and **Service name** properties are the same. In this scenario, you don't need to configure DNS. The name that clients receive from the management point is the same name as the service in Azure.  
 -->
 
-Certifikatets nätverks namn för serverautentisering måste innehålla ditt domän namn. Det här namnet måste anges när du köper ett certifikat från en offentlig leverantör. Vi rekommenderar att du utfärdar det här certifikatet från din PKI. Till exempel `WallaceFalls.contoso.com`. När du anger det här certifikatet i guiden skapa distributions plats för molnet fyller det egna namnet på **tjänstens FQDN** -egenskap (`WallaceFalls.contoso.com`). **Tjänst namnet** tar samma värdnamn (`WallaceFalls`) och lägger till det i Azure- `cloudapp.net`domännamnet. I det här scenariot måste klienterna matcha domänens **FQDN** -namn`WallaceFalls.contoso.com`() till Azure **-tjänstens namn** (`WallaceFalls.cloudapp.net`). Skapa ett CNAME-alias för att mappa dessa namn.
+Certifikatets nätverks namn för serverautentisering måste innehålla ditt domän namn. Det här namnet måste anges när du köper ett certifikat från en offentlig leverantör. Vi rekommenderar att du utfärdar det här certifikatet från din PKI. Till exempel `WallaceFalls.contoso.com`. När du anger det här certifikatet i guiden skapa distributions plats för molnet fyller det egna namnet på **tjänstens FQDN** -egenskap ( `WallaceFalls.contoso.com` ). **Tjänst namnet** tar samma värdnamn ( `WallaceFalls` ) och lägger till det i Azure-domännamnet `cloudapp.net` . I det här scenariot måste klienterna matcha domänens **FQDN** - `WallaceFalls.contoso.com` namn () till Azure **-tjänstens namn** ( `WallaceFalls.cloudapp.net` ). Skapa ett CNAME-alias för att mappa dessa namn.
 
 ### <a name="create-cname-alias"></a>Skapa CNAME-alias
 
-Skapa en kanonisk namn post (CNAME) i din organisations offentliga, Internet-riktad DNS. Den här posten skapar ett alias för moln distributions platsens **FQDN-** egenskap som klienter får till Azure **-tjänstens namn**. Skapa till exempel en ny CNAME-post för `WallaceFalls.contoso.com` till `WallaceFalls.cloudapp.net`.  
+Skapa en kanonisk namn post (CNAME) i din organisations offentliga, Internet-riktad DNS. Den här posten skapar ett alias för moln distributions platsens **FQDN-** egenskap som klienter får till Azure **-tjänstens namn**. Skapa till exempel en ny CNAME-post för `WallaceFalls.contoso.com` till `WallaceFalls.cloudapp.net` .  
 
 ### <a name="client-name-resolution-process"></a>Process för klient namns matchning
 
@@ -215,6 +215,8 @@ Standard klient inställningarna gör att klienterna automatiskt kan använda mo
 ## <a name="manage-and-monitor"></a><a name="bkmk_monitor"></a>Hantera och övervaka  
 
 Övervaka innehåll som du distribuerar till en moln distributions plats på samma sätt som med andra lokala distributions platser. Mer information finns i [Övervaka innehåll](monitor-content-you-have-distributed.md).
+
+När du visar listan över moln distributions platser i-konsolen kan du lägga till fler kolumner i listan. Kolumnen **data utgående** visar t. ex. mängden data klienter som hämtats från tjänsten under de senaste 30 dagarna.<!-- SCCMDocs#755 -->
 
 ### <a name="alerts"></a><a name="bkmk_alerts"></a>Aviseringar  
 

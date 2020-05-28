@@ -10,12 +10,12 @@ ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 918df2cded3fad48352fff6a2617b1133540c0eb
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: bb770a559904421f6bf01616504331dbebb9b549
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712430"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268087"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Självstudie: Aktivera samhantering för befintliga Configuration Manager-klienter
 
@@ -38,7 +38,7 @@ Använd den här självstudien när:
 > * Konfigurera Intune för att automatiskt registrera enheter  
 > * Aktivera samhantering i Configuration Manager  
 
-## <a name="prerequisites"></a>Krav  
+## <a name="prerequisites"></a>Förutsättningar  
 
 ### <a name="azure-services-and-environment"></a>Azure-tjänster och-miljö
 
@@ -64,9 +64,10 @@ Om du inte redan finns i din miljö kan du under den här självstudien:
 
 I den här självstudien använder du följande behörigheter för att slutföra aktiviteter:
 
-- Ett konto som är en *Global administratör* i Azure Active Directory (Azure AD) 
 - Ett konto som är en *domän administratör* i din lokala infrastruktur  
 - Ett konto som är en *Fullständig administratör* för *alla* scope i Configuration Manager
+- Ett konto som är en *Global administratör* i Azure Active Directory (Azure AD)
+   - Se till att du har tilldelat en Intune-licens till det konto som du använder för att logga in på din klient organisation. Annars Miss lyckas inloggningen med fel meddelandet "användaren känns inte igen". <!--mem issue 169-->
 
 ## <a name="set-up-hybrid-azure-ad"></a>Konfigurera Hybrid Azure AD
 
@@ -120,7 +121,7 @@ Om du får problem med att slutföra hybrid Azure AD-anslutning för domänanslu
 
 Använd klient inställningar för att konfigurera Configuration Manager klienterna automatiskt ska registreras med Azure AD.  
 
-1. Öppna**klient inställningarna**för**Administration** > **Overview** > av **Configuration Manager konsol** > och redigera sedan **standard klient inställningarna**.  
+1. Öppna klient inställningarna för administration av **Configuration Manager konsol**  >  **Administration**  >  **Overview**  >  **Client Settings**och redigera sedan **standard klient inställningarna**.  
 
 2. Välj **Cloud Services**.  
 
@@ -134,7 +135,7 @@ Nu ska vi konfigurera automatisk registrering av enheter med Intune. Med automat
 
 Med automatisk registrering kan användarna registrera sina Windows 10-enheter till Intune. Enheter registreras när en användare lägger till sitt arbets konto till sin personligt ägda enhet eller när en företagsägda enhet är ansluten till Azure Active Directory.  
 
-1. Logga in på [Azure Portal](https://portal.azure.com/) och välj **Azure Active Directory** > **Mobility (MDM och MAM)** > **Microsoft Intune**.  
+1. Logga in på [Azure Portal](https://portal.azure.com/) och välj **Azure Active Directory**  >  **Mobility (MDM och MAM)**  >  **Microsoft Intune**.  
 
 2. Konfigurera **användar omfång i MDM**. Ange något av följande för att konfigurera vilka användares enheter som hanteras av Microsoft Intune och acceptera standardvärdena för URL-värden.  
 

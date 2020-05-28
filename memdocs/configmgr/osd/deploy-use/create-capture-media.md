@@ -24,7 +24,7 @@ ms.locfileid: "81711149"
 Genom att avbilda media i Configuration Manager kan du avbilda en operativ system avbildning från en referens dator. Avbildnings medier innehåller den Start avbildning som startar referens datorn och den aktivitetssekvens som avbildar operativ system avbildningen. Använd avbildnings medier för scenariot för att [skapa en aktivitetssekvens för att avbilda ett operativ system](create-a-task-sequence-to-capture-an-operating-system.md).  
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du skapar avbildnings medier med hjälp av guiden skapa aktivitetssekvens måste du se till att alla dessa villkor är uppfyllda.
 
@@ -74,7 +74,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
         > [!IMPORTANT]  
         > Om du väljer en befintlig .iso-avbildning raderar guiden för aktivitetssekvensmedium den avbildningen från enheten eller resursen så fort du går vidare till nästa sida i guiden. Den befintliga avbildningen tas bort även om du avbryter guiden.  
 
-    - **Mellanlagringsplats**<!--1359388-->: Processen för att skapa media kan kräva mycket temporärt enhets utrymme. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp`. Från och med version 1902, för att ge dig större flexibilitet med var de här temporära filerna ska lagras, ändra värdet till en annan enhet och sökväg.  
+    - **Mellanlagringsplats**<!--1359388-->: Processen för att skapa media kan kräva mycket temporärt enhets utrymme. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp` . Från och med version 1902, för att ge dig större flexibilitet med var de här temporära filerna ska lagras, ändra värdet till en annan enhet och sökväg.  
 
     - **Medie etikett**<!--1359388-->: Från och med version 1902 lägger du till en etikett i mediet för aktivitetssekvenser. Med den här etiketten kan du bättre identifiera mediet när du har skapat det. Standardvärdet är `Configuration Manager`. Det här textfältet visas på följande platser:  
 
@@ -82,7 +82,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
 
         - Om du formaterar en USB-enhet används de första 11 tecknen i etiketten som namn  
 
-        - Configuration Manager skriver en textfil som kallas `MediaLabel.txt` för roten på mediet. Som standard innehåller filen en enskild rad med text: `label=Configuration Manager`. Om du anpassar etiketten för Media använder den här raden den anpassade etiketten i stället för standardvärdet.  
+        - Configuration Manager skriver en textfil som kallas `MediaLabel.txt` för roten på mediet. Som standard innehåller filen en enskild rad med text: `label=Configuration Manager` . Om du anpassar etiketten för Media använder den här raden den anpassade etiketten i stället för standardvärdet.  
 
     - **Inkludera filen autorun. inf på mediet**<!-- 4090666 -->: Från och med version 1906 lägger Configuration Manager inte till en autorun. inf-fil som standard. Den här filen blockeras vanligt vis av program mot skadlig kod. Mer information om AutoRun-funktionen i Windows finns i [skapa ett autorun-aktiverat CD-ROM-program](https://docs.microsoft.com/windows/desktop/shell/autoplay). Om det fortfarande behövs för ditt scenario väljer du det här alternativet för att inkludera filen.  
 

@@ -10,12 +10,12 @@ ms.assetid: 15a4e323-9f42-4fea-bb14-f2b905d1f77c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4375867e70cb7f2989b78572c7fc8e005f95be73
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c9e8e40a6bdfa129a03e6042985e4956ffb21b5c
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713452"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906319"
 ---
 # <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-configuration-manager"></a>Distribuera klienter till UNIX-och Linux-servrar i Configuration Manager
 
@@ -36,7 +36,7 @@ Innan du kan hantera en Linux-eller UNIX-server med Configuration Manager måste
  När du har installerat-klienten anger du klient inställningar i Configuration Manager-konsolen för att konfigurera klient agenten på samma sätt som Windows-baserade klienter. Mer information finns i  [Klientinställningar för Linux- och UNIX-servrar](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
 
 ##  <a name="about-client-installation-packages-and-the-universal-agent"></a><a name="BKMK_AboutInstallPackages"></a>Om klient installations paket och Universal Agent  
- Om du vill installera klienten för Linux och UNIX på en viss plattform måste du använda lämpligt klientinstallationspaket för datorn där du installerar klienten. Lämpliga klientinstallationspaket ingår som en del av varje klientnedladdning från [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=525184). Utöver klientinstallationspaketen omfattar klientnedladdningen **install** -skriptet som hanterar installationen av klienten på varje dator.  
+ Om du vill installera klienten för Linux och UNIX på en viss plattform måste du använda lämpligt klientinstallationspaket för datorn där du installerar klienten. Lämpliga klientinstallationspaket ingår som en del av varje klientnedladdning från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47719). Utöver klientinstallationspaketen omfattar klientnedladdningen **install** -skriptet som hanterar installationen av klienten på varje dator.  
 
  När du installerar en-klient kan du använda samma process och kommando rads egenskaper oavsett vilket klient installations paket du använder.  
 
@@ -69,7 +69,7 @@ Varje klient installations paket innehåller alla filer som krävs för att slut
 
 ###  <a name="to-install-the-configuration-manager-client-on-linux-and-unix-servers"></a><a name="BKMK_ToInstallLnUClinent"></a>Så här installerar du Configuration Manager-klienten på Linux-och UNIX-servrar  
 
-1.  På en Windows-dator [hämtar du lämplig klientfil för den Linux- eller UNIX-server](https://go.microsoft.com/fwlink/?LinkID=525184) som du vill hantera.  
+1.  På en Windows-dator [hämtar du lämplig klientfil för den Linux- eller UNIX-server](https://www.microsoft.com/download/details.aspx?id=47719) som du vill hantera.  
 
 2.  Kör den självextraherande .exe-filen på Windows-datorn för att extrahera installationsskriptet och .tar-filen för klientinstallation.  
 
@@ -134,7 +134,7 @@ Varje klient installations paket innehåller alla filer som krävs för att slut
 
      Valfritt. Anger den fullständiga sökvägen och filnamnet för ett X.509 PKI-certifikat i Public Key Certificate Standard-format (PKCS#12). Det här certifikatet används för klientautentisering. Om ett certifikat inte har angetts under installationen och du behöver lägga till eller ändra ett certifikat använder du verktyget **certutil** . Mer information finns i [Hantera certifikat på klienten för Linux och UNIX](../manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts).  
 
-     När du använder `-UsePKICert`måste du också ange lösen ordet som är kopplat till PKCS # 12-filen med hjälp av `-certpw` kommando rads parametern.  
+     När du använder `-UsePKICert` måste du också ange lösen ordet som är kopplat till PKCS # 12-filen med hjälp av `-certpw` kommando rads parametern.  
 
      Om du inte använder den här egenskapen för att ange ett PKI-certifikat använder klienten ett självsignerat certifikat och all kommunikation till plats systemen är över HTTP.  
 
@@ -147,7 +147,7 @@ Varje klient installations paket innehåller alla filer som krävs för att slut
 
 -   `-certpw <parameter>`  
 
-     Valfritt. Anger det lösen ord som är kopplat till PKCS # 12-filen som du angav genom `-UsePKICert` att använda egenskapen.  
+     Valfritt. Anger det lösen ord som är kopplat till PKCS # 12-filen som du angav genom att använda `-UsePKICert` egenskapen.  
 
      Exempel: `-UsePKICert <full path and filename> -certpw <password>`  
 

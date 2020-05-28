@@ -10,12 +10,12 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 59b0b799fd54e0e613f78b11b48b53b19d20ddbf
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 9143c224082f00b882d3cb557b47b737012393fa
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712227"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906342"
 ---
 # <a name="get-started-with-compliance-settings-in-configuration-manager"></a>Kom igång med kompatibilitetsinställningar i Configuration Manager
 
@@ -107,7 +107,7 @@ Mer information finns i [uppgradera Windows-enheter med uppgraderings principen 
 
 ## <a name="microsoft-edge-browser-profiles"></a>Profiler för Microsoft Edge-webbläsare
 <!-- 1357310 -->
-Från och med version 1802, för kunder som använder [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) -webbläsaren på Windows 10-klienter, skapar du en princip för kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. 
+Från och med version 1802, för kunder som använder [Microsoft Edge](https://www.microsoft.com/itpro/microsoft-edge) -webbläsaren på Windows 10-klienter, skapar du en princip för kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. 
 
 Mer information finns i [webb läsar profiler för Microsoft Edge](../deploy-use/browser-profiles.md).
 

@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9fd1e0bb45972bb9b3ba2a3e0bbfbb3d0509c4a8
-ms.sourcegitcommit: 56bb5419c41c2e150ffed0564350123135ea4592
+ms.openlocfilehash: bfcdd74b7b5c31e3f3ab6bb38a7ea96de9d05eec
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729299"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905147"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Teknisk för hands version för Configuration Manager
 
@@ -25,7 +25,7 @@ Den här artikeln innehåller information om den månatliga Technical Preview-gr
 
 Eftersom den här versionen är en teknisk för hands version kan detaljer och funktioner komma att ändras.
 
-Den här informationen gäller för alla versioner av Configuration Manager Technical Preview-grenen. Den här artikeln innehåller en lista över alla nya funktioner tillsammans med den tekniska för hands versionen som den först visas i. Till exempel version **2001** för januari (`01`) av 2020 (`20`). Separata-artiklar som är dedikerade till varje för hands versions information.
+Den här informationen gäller för alla versioner av Configuration Manager Technical Preview-grenen. Den här artikeln innehåller en lista över alla nya funktioner tillsammans med den tekniska för hands versionen som den först visas i. Till exempel version **2001** för januari ( `01` ) av 2020 ( `20` ). Separata-artiklar som är dedikerade till varje för hands versions information.
 
 Information om vad som är nytt i den *aktuella grenen* av Configuration Manager finns i [Nyheter i Configuration Manager stegvisa versioner](../plan-design/changes/whats-new-incremental-versions.md).
 
@@ -74,7 +74,7 @@ Den tekniska för hands versionen av Configuration Manager stöder följande pro
 - -Platsen har stöd för upp till 10 klienter, vilket kan köra en [version som stöds av klienten](../plan-design/configs/supported-operating-systems-for-clients-and-devices.md).<!-- SCCMDocs#1656 -->
 
 > [!Note]
-> Inkludering av dessa produkter i det här innehållet innebär inte en förlängning av stöd för en version som ligger utanför support livs cykeln. Configuration Manager stöder inte produkter som ligger utanför support livs cykeln. Mer information finns i [Microsofts livs cykel princip](https://go.microsoft.com/fwlink/p/?LinkId=208270).
+> Inkludering av dessa produkter i det här innehållet innebär inte en förlängning av stöd för en version som ligger utanför support livs cykeln. Configuration Manager stöder inte produkter som ligger utanför support livs cykeln. Mer information finns i [Microsofts livs cykel princip](https://support.microsoft.com/lifecycle).
 
 ## <a name="install-and-update"></a><a name="bkmk_install"></a>Installera och uppdatera
 
@@ -95,7 +95,7 @@ Installera en bas linje version i upp till ett år efter lanseringen. Använd de
 
 - **Teknisk för hands version 2002**: Configuration Manager Technical Preview branch version 2002 är tillgänglig som både en uppdatering i konsolen och som en ny bas linje version.
 
-Hämta en bas linje version från [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+Hämta en bas linje version från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
 ## <a name="providing-feedback"></a><a name="BKMK_TPFeedback"></a>Lämna feedback
 

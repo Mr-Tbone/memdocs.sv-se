@@ -10,12 +10,13 @@ ms.assetid: 8e0e8496-136b-461f-8239-cc19c6b78c3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8c42576f35d285fc7285466c4208d7ccaf370daa
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: ac9b5ddd85904c90709a9450d6d2a9ffd379ddb9
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723707"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268767"
 ---
 # <a name="how-to-create-deployment-plans-in-desktop-analytics"></a>Skapa distributions planer i Desktop Analytics
 
@@ -94,7 +95,7 @@ Konfigurera om enheterna ska få driv rutiner från Windows Update. Värdet är 
 
 ### <a name="windows-applications"></a>Windows-program
 
-Apparna som Skriv bords analys *visar som beskrivet* baseras på tröskelvärdet för låg installation. Ange det här tröskelvärdet i beredskaps reglerna för distributions planen. Som standard är det här tröskelvärdet **2,0%**. Du kan ändra värdet från `0.0` till. `10.0`
+Apparna som Skriv bords analys *visar som beskrivet* baseras på tröskelvärdet för låg installation. Ange det här tröskelvärdet i beredskaps reglerna för distributions planen. Som standard är det här tröskelvärdet **2,0%**. Du kan ändra värdet från `0.0` till `10.0` .
 
 
 ## <a name="next-steps"></a>Nästa steg

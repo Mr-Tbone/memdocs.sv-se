@@ -10,12 +10,12 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0174cea761da15cc57eeb55fba26070fe664bb76
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: add0d17205cc82b30f3a88558c690a813239b92a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710967"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906939"
 ---
 # <a name="deploy-windows-to-go-with-configuration-manager"></a>Distribuera Windows To Go med Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "81710967"
 
 Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i Configuration Manager. Windows To Go är en företagsfunktion i Windows 8 som gör att du kan skapa en Windows To Go-arbetsyta som kan startas från ett USB-minne på datorer som uppfyller certifikatkraven för Windows 7 eller Windows 8, oavsett vilket operativsystem som körs på datorn. Windows To Go-arbetsytor kan använda samma avbildning som företag använder för sina skrivbordsdatorer och bärbara datorer, och kan hanteras på samma sätt.  
 
- Mer information om Windows To Go finns i [funktions översikt över Windows To Go](https://go.microsoft.com/fwlink/p/?LinkId=263433).  
+ Mer information om Windows To Go finns i [funktions översikt över Windows To Go](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh831833(v=ws.11)).  
 
 ## <a name="provision-windows-to-go"></a>Etablera Windows To Go  
  Windows To Go är ett operativsystem som är lagrat på ett USB-minne. Du kan etablera Windows To Go-enheten på ungefär samma sätt som du etablerar andra distributioner av operativsystem. Men eftersom Windows To Go är utformat som en användarorienterad och i hög grad mobil lösning måste du gå till väga på ett något annat sätt när du etablerar de här enheterna.  
@@ -105,7 +105,7 @@ Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i
 
    -   **Kommentar**: Ange en unik beskrivning av mediets avsedda användning.  
 
-   -   **Mediefil**: Ange namn och sökväg för utdatafilerna. Guiden skriver utdatafilerna till den här platsen. Till exempel: ** \\\servername\folder\outputfile.wim**  
+   -   **Mediefil**: Ange namn och sökväg för utdatafilerna. Guiden skriver utdatafilerna till den här platsen. Till exempel: ** \\ \servername\folder\outputfile.wim**  
 
 7. På sidan **Säkerhet** anger du följande information och klickar sedan på **Nästa**.  
 
@@ -311,7 +311,7 @@ Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i
 
     1.  **Namn**: Ange ett namn för kommandoraden, t.ex. **Enable BitLocker for Windows To Go**.  
 
-    2.  **Kommando rad**: i386 \ osdbitlocker_wtg. exe/Enable/pwd: < *ingen&#124;AD*>  
+    2.  **Kommando rad**: i386 \ osdbitlocker_wtg. exe/Enable/pwd: < *ingen & #124; AD*>  
 
          Parametrar:  
 

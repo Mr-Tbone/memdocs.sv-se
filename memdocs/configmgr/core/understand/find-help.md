@@ -2,7 +2,7 @@
 title: Hitta hjälp
 titleSuffix: Configuration Manager
 description: Hitta resurser för ytterligare information om Configuration Manager.
-ms.date: 04/01/2020
+ms.date: 05/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6610e86c12b6f7704b65dc11c476fa09e8f2ae63
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7bae98a8df1d8b8ff843bd333083c4c6ad68848c
+ms.sourcegitcommit: 4c129bb04ea4916c78446e89fbff956397cbe828
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722909"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343192"
 ---
 # <a name="find-help-for-using-configuration-manager"></a>Få hjälp med att använda Configuration Manager
 
@@ -81,7 +81,7 @@ Från och med Configuration Manager 2002 skapas ett status meddelande när din f
    - Meddelande-ID 53900 för lyckad överföring.
    - Meddelande-ID 53901 för misslyckad överföring.
 
-Visa status meddelanden från **övervaka** > **system status** > **status meddelande frågor**. Börja med frågan **alla status meddelanden** och välj tidsram. När meddelande inläsningen visas klickar du på knappen **filtrera meddelanden** och filtrerar efter meddelande-ID 53900 eller 53901.
+Visa status meddelanden från **övervaka**  >  **system status**  >  **status meddelande frågor**. Börja med frågan **alla status meddelanden** och välj tidsram. När meddelande inläsningen visas klickar du på knappen **filtrera meddelanden** och filtrerar efter meddelande-ID 53900 eller 53901.
 
 Status meddelanden skapas inte om du [skickar feedback som du har sparat för senare sändning](find-help.md#BKMK_NoInternet).
 
@@ -127,13 +127,20 @@ När du **skickar ett leende** eller **skickar en bister min**skickas följande 
         - `-s --silent`Ingen loggning till konsolen (det går inte att kombinera med--verbose)
         - `-v, --verbose`Utförlig loggning av utdata till konsolen (kan inte kombineras med--Silent)
         - `--help`Visar hjälp skärmen
+    
+    - Från och med version 1910 stöder UploadOfflineFeedback-verktyget användningen av en proxyserver. Du kan ange följande parametrar:
+        - `-x, --proxy`Anger en proxyserver för att ansluta Internet.
+        - `-o, --port`Anger porten för proxyservern för att ansluta Internet.
+        - `-u, --user`Anger användar namnet för proxyservern för anslutning av Internet.
+        - `-w, --password`Anger lösen ordet för proxyservern för att ansluta Internet. Ange en asterisk (&#42;) för att skapa en prompt för lösen ordet. Lösen ordet visas inte när du skriver det vid lösen ords prompten. Vi rekommenderar starkt att du använder en asterisk (&#42;) för att skapa en uppräkning för lösen ords indatatypen eftersom oformaterad text på kommando raden är mindre säker.
+        - `-i`Hoppa över anslutnings kontroll: hoppar över kontrollen av nätverks anslutningen och överför bara feedback med angivna inställningar.
 
 ## <a name="confirmation-of-console-feedback"></a><a name="bkmk_feedbackid"></a>Bekräftelse av konsol kommentarer
 
 <!--3556010-->
 Från och med version 1902 visas ett bekräftelse meddelande när du skickar feedback via Configuration Manager-konsolen eller UploadOfflineFeedback. exe. Det här meddelandet innehåller ett **feedback-ID**, som du kan ge till Microsoft som ett spårnings-ID.
 
-- Om du vill kopiera **feedback-ID: t**väljer du kopierings ikonen bredvid ID: t eller använder kortkommandot **CTRL** + **C** .
+- Om du vill kopiera **feedback-ID: t**väljer du kopierings ikonen bredvid ID: t eller använder kortkommandot **CTRL**  +  **C** .
   - Detta ID lagras inte på din dator, så se till att kopiera det innan du stänger fönstret.
 - Om du klickar på **Visa inte det här meddelandet igen** utelämnas dialog rutan och det kan inte visas i framtiden.
 

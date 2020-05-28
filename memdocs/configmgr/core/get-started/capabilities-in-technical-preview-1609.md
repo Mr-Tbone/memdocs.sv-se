@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: e7e803dd1cbacbbd65a5f2968e217656b088d281
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 51a974247d7281d6134b699a5865f801d1ed6094
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721537"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905711"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-configuration-manager"></a>Funktioner i Technical Preview 1609 för Configuration Manager
 
@@ -51,7 +51,6 @@ Om den är aktive rad uppmanas installations assistenten för Apple att använda
 
 Med uppgraderings analys kan du utvärdera och analysera enhets beredskap och kompatibilitet med Windows 10 för att ge enklare och smidigare uppgraderingar. Genom att integrera Upgrade Analytics med Configuration Manager kan du komma åt uppgraderingens kompatibilitetsinformation i Configuration Manager-administratörskonsolen och sedan använda enhets listan för att uppgradera eller reparera enheter.
 
-Du kan läsa mer om Upgrade Analytics i [Kom igång med Upgrade Analytics](https://technet.microsoft.com/itpro/windows/deploy/upgrade-analytics-get-started).
 
 ## <a name="native-connection-types-for-windows-10-vpn-hybrid-profiles"></a>Inbyggda anslutnings typer för Windows 10 VPN hybrid profiler
 
@@ -72,7 +71,7 @@ I den här versionen har vi uppdaterat [Windows Store för företag-integrering]
 #### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>Köp och synkronisera en betald online-licensierad app
 
 1. Köp en betald online-licensierad app från Windows Store för företag.
-2. I arbets ytan **Administration** i Configuration Manager-konsolen klickar du på **Cloud Services** > **uppdateringar och service** > **för Windows Store för företag**.
+2. I arbets ytan **Administration** i Configuration Manager-konsolen klickar du på **Cloud Services**  >  **uppdateringar och service**  >  **för Windows Store för företag**.
 3. På fliken **Start** går du till gruppen **Synkronisera** och klickar på **Synkronisera nu**.
 4. Därefter visas den app du köpte i noden **licens information för Store-appar** i arbets ytan **Application Management** .
 
@@ -83,7 +82,7 @@ Proceduren för att skapa och distribuera ett Configuration Manager program frå
 
 #### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Ändra klientens hemliga nyckel från Azure Active Directory
 
-1. I arbets ytan **Administration** i Configuration Manager-konsolen klickar du på **Cloud Services** > **uppdateringar och service** > **för Windows Store för företag**.
+1. I arbets ytan **Administration** i Configuration Manager-konsolen klickar du på **Cloud Services**  >  **uppdateringar och service**  >  **för Windows Store för företag**.
 2. Välj ditt Windows Store för företag-konto och klicka sedan på **Egenskaper**.
 3. I dialog rutan **Egenskaper för Windows Store för företag-konto** anger du en ny nyckel i fältet **hemlig nyckel för klienten** och klickar sedan på **Verifiera**. När du har verifierat klickar du på **Använd**och stänger sedan dialog rutan.
 
@@ -239,7 +238,7 @@ I följande avsnitt beskrivs de ändringar som introduceras i den här för hand
 ### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Ändringar i användar gränssnittet och beteendet för gränser grupper och innehålls platser
 Följande är viktiga ändringar i gränser grupper och hur klienter hittar innehåll. Många av dessa ändringar och koncept fungerar tillsammans.
 - **Konfigurationer för snabb eller långsam tas bort:** Du kan inte längre konfigurera enskilda distributions platser så att de blir snabba eller långsamma.  I stället behandlas alla plats system som är kopplade till en avgränsnings grupp. På grund av den här ändringen stöder fliken **referenser** för gränser grupp egenskaperna inte längre konfigurationen av snabb eller långsam.
-- **Ny standard gränser grupp på varje plats:**  Varje primär plats har en ny standard gränser grupp med namnet ***default-site-bounds-group\<>***.  Om en klient inte finns på en nätverks plats som är tilldelad en avgränsnings grupp, kommer klienten att använda de plats system som är kopplade till standard gruppen från dess tilldelade plats. Planera att använda den här gränser gruppen som ersättning till begreppet återställnings innehålls plats.    
+- **Ny standard gränser grupp på varje plats:**  Varje primär plats har en ny standard gränser grupp med namnet ***default-site-bounds-group \<>***.  Om en klient inte finns på en nätverks plats som är tilldelad en avgränsnings grupp, kommer klienten att använda de plats system som är kopplade till standard gruppen från dess tilldelade plats. Planera att använda den här gränser gruppen som ersättning till begreppet återställnings innehålls plats.    
   -  **Tillåt borttagning av återställnings käll platser för innehåll** : du behöver inte längre konfigurera en distributions plats som ska användas för återställningen och alternativen för att ange detta tas bort från användar gränssnittet.
 
   Resultatet av inställningen **tillåter att klienter använder en återställnings käll plats för innehåll** på en distributions typ för program har ändrats. Den här inställningen för en distributions typ gör nu att en klient kan använda standard platsens gränser-grupp som en innehålls käll plats.
@@ -318,8 +317,8 @@ Genom att konfigurera de olika grann grupperna så att de blir tillgängliga vid
 
 ### <a name="update-existing-boundary-groups-to-the-new-model"></a><a name="bkmk_update"></a>Uppdatera befintliga gränser grupper till den nya modellen
 När du installerar version 1609 och uppdaterar platsen görs följande konfigurationer automatiskt. Dessa är avsedda för att säkerställa att det aktuella återställnings beteendet är tillgängligt tills du konfigurerar nya gränser grupper och relationer.  
-- Oskyddade distributions platser på en plats läggs till i *standardvärdet för\<plats gränser-grupp för platskod>* gränser för den platsen.
-- En kopia görs av varje befintlig avgränsnings grupp som innehåller en plats server som kon figurer ATS med en långsam anslutning. Namnet på den nya gruppen är *** \<namnet på den ursprungliga avgränsnings gruppen>-långsamma-tmp***:  
+- Oskyddade distributions platser på en plats läggs till i *standardvärdet för plats gränser-grupp för \< platskod>* gränser för den platsen.
+- En kopia görs av varje befintlig avgränsnings grupp som innehåller en plats server som kon figurer ATS med en långsam anslutning. Namnet på den nya gruppen är namnet på den *** \< ursprungliga avgränsnings gruppen>-långsamma-tmp***:  
   -   Plats system som har en snabb anslutning finns kvar i den ursprungliga avgränsnings gruppen.
   -   En kopia av plats system som har en långsam anslutning läggs till i kopian av gränser gruppen. De ursprungliga plats systemen som kon figurer ATS som långsamma finns kvar i den ursprungliga gränser-gruppen för bakåtkompatibilitet, men används inte från den aktuella gränser gruppen.
   -   Det finns inga associerade gränser för den här kopian av gräns gruppen. En återställnings länk skapas dock mellan den ursprungliga gruppen och den nya kopian av gräns gruppen som har återställnings tiden inställd på noll.
@@ -338,7 +337,7 @@ Inte valt | Vald |   **Normal reserv** -Använd distributions platser i den aktu
 
 
 ## <a name="office-365-client-management-dashboard"></a>Instrument panel för Office 365-klient hantering  
-Configuration Manager 1609 Technical Preview introducerar en ny instrument panel. Om du vill visa instrument panelen går du till**365****Översikt över** >  **program varu bibliotek** > i Configuration Manager-konsolen.
+Configuration Manager 1609 Technical Preview introducerar en ny instrument panel. Om du vill visa instrument panelen går du till **Software Library**  >  **365 översikt över**program varu bibliotek i Configuration Manager-konsolen  >  **Office 365 Client Management**.
 >[!NOTE]
 >På arbets ytan **Nyheter** i Configuration Manager-konsolen har den nya instrument panelen felaktigt namnet **Office 365 service instrument panel**.
 
@@ -348,7 +347,7 @@ På instrument panelen visas diagram med följande:
 - Office 365-klient versioner
 - Office 365-klient språk
 - Office 365-klient kanaler     
-Mer information finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+Mer information finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/overview-update-channels).
 - Regler för automatisk distribution som har Office 365-klienten valt i uppsättningen tillgängliga produkter.
 
 Du kan vidta följande åtgärder på instrument panelen:
@@ -368,7 +367,7 @@ I den här versionen kan du från instrument panelen för Office 365-klient hant
 - Du kan ha problem när du försöker importera befintliga klient inställningar (XML) i installations guiden för Office 365-appen. Du kan konfigurera klient inställningarna manuellt utan problem.
 
 #### <a name="to-deploy-office-365-apps-to-clients"></a>Distribuera Office 365-appar till klienter
-1. I Configuration Manager-konsolen navigerar du till**Översikt över** >  **program varu bibliotek** > **kontor 365-klient hantering**.
+1. I Configuration Manager-konsolen navigerar du till översikt över **program varu bibliotek**  >  **Overview**  >  **kontor 365-klient hantering**.
 2. Klicka på **Office 365 installations program** i det övre högra fönstret. Installations guiden för Office 365-klienten öppnas.
 3. På sidan **program inställningar** anger du ett namn och en beskrivning för appen, anger nedladdnings platsen för filerna och klickar sedan på **Nästa**. Observera att platsen måste anges i formatet &#92;&#92;*server*&#92;*resurs*.
 4. På sidan **Importera klient inställningar** väljer du om du vill importera klient inställningarna för Office 365 från en befintlig XML-konfigurationsfil eller ange inställningarna manuellt och klicka sedan på **Nästa**.
@@ -383,7 +382,7 @@ När du har en befintlig konfigurations fil anger du platsen för filen och hopp
 Om du väljer att inte distribuera paketet i guiden går du vidare till steg 9.
 8. Konfigurera resten av guide sidorna på samma sätt som för en typisk program distribution. Mer information finns i [skapa och distribuera ett program](../../apps/get-started/create-and-deploy-an-application.md).
 9. Slutför guiden.
-10. Du kan distribuera eller redigera programmet precis som med andra program i Configuration Manager från program **bibliotek** > **Översikt** > **program hanterings** > **program**.
+10. Du kan distribuera eller redigera programmet precis som med andra program i Configuration Manager från program **bibliotek**  >  **Översikt**  >  **program hanterings**  >  **program**.
 
 >[!NOTE]
 >När du har distribuerat Office 365-appar kan du skapa automatiska distributions regler för att underhålla apparna. Skapa en ADR för Office 365-appar genom att klicka på **skapa en ADR**och välja **Office 365-klient** när du väljer produkten. Mer information finns i [distribuera program uppdateringar automatiskt](../../sum/deploy-use/automatically-deploy-software-updates.md).
@@ -417,7 +416,7 @@ I en befintlig aktivitetssekvens för att installera ett operativ system lägger
 I den här versionen får du en snabb överblick över övergripande kompatibilitet för enheter och de vanligaste orsakerna till bristande efterlevnad genom att använda nya diagram under **arbets ytan övervakning** i Configuration Manager-konsolen.
 
 #### <a name="to-view-the-intune-compliance-charts"></a>Så här visar du scheman för Intune-efterlevnad
-1. I Configuration Manager-konsolen går du till **övervakning** > **Översikt över** > **kompatibilitetsinställningar.**
+1. I Configuration Manager-konsolen går du till **övervakning**  >  **Översikt över**  >  **kompatibilitetsinställningar**.
 2. Diagrammet **övergripande kompatibilitet för enhet** visas.
 3. Klicka på noden **efterlevnadsprinciper** om du vill visa de övergripande diagrammen för **enhetens efterlevnad** och de **vanligaste orsakerna** .
 
@@ -437,7 +436,7 @@ Slutför följande avsnitt i ordning:
 
 #### <a name="check-the-top-non-compliance-reasons-chart"></a>Kontrol lera de vanligaste orsakerna till inkompatibilitet
 5. Markera de **vanligaste orsakerna till inkompatibilitet** . Det här diagrammet visar de fem främsta orsakerna till inkompatibilitet, men när endast två kompatibilitetsinställningar har ställts in över principer visas endast de 2 vanligaste orsakerna.
-6. Klicka på ett av avsnitten i diagrammet. Båda enheterna bör visas i den filtrerade vyn under **till gångar och efterlevnad** > **översikts** > **enhet**.
+6. Klicka på ett av avsnitten i diagrammet. Båda enheterna bör visas i den filtrerade vyn under **till gångar och efterlevnad**  >  **översikts**  >  **enhet**.
 
 #### <a name="make-devices-compliant-and-check-the-charts"></a>Gör enheterna kompatibla och kontrol lera diagrammen
 7. Gör en av de enheter som är kompatibla med en av principerna. Kontrol lera det övergripande diagrammet för **enhetskompatibilitet** igen. Diagrammet ska visa en kompatibel enhet och en icke-kompatibel enhet.

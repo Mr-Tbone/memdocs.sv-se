@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: df951bfb44313cfec8dacb8c0df34abb7beb0c56
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: f3f38de1d7440ffd0293bde359deeb6be3bbeffb
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720298"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906196"
 ---
 # <a name="recommended-antivirus-exclusions-for-configuration-manager"></a>Rekommenderade Antivirus undantag för Configuration Manager
 
@@ -83,7 +83,7 @@ För att förhindra sådana problem rekommenderar vi att du lägger till följan
 
 ### <a name="folder-exclusions-for-clients"></a>Mappar undantag för klienter
 
-- *Client Installation Folder*Installationsmapp för klient\*. SDF\\
+- Installationsmapp för *klienter* \\ \* . SDF
 - *\ServiceData för installationsmapp*
 - C:\Windows\CCMCache
 - C:\Windows\CCMSetup
@@ -114,10 +114,10 @@ Process undantag är bara nödvändigt om aggressiva antivirus program anser Con
 
 Mer information om antivirus undantag finns i följande artiklar:
 
-[Configuration Manager Current Branch Antivirus undantag – System Center Premier Field Engineer-bloggen](https://blogs.technet.microsoft.com/systemcenterpfe/2017/05/24/configuration-manager-current-branch-antivirus-update/)
+[Configuration Manager Current Branch Antivirus undantag – System Center Premier Field Engineer-bloggen](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/configuration-manager-current-branch-antivirus-exclusions/ba-p/884831)
 
-[Uppdaterade System Center 2012 Configuration Manager Antivirus undantag med mer information om OSD och start avbildningar](https://blogs.technet.microsoft.com/systemcenterpfe/2013/01/11/updated-system-center-2012-configuration-manager-antivirus-exclusions-with-more-details-on-osd-and-boot-images-etc/)
+[Uppdaterade System Center 2012 Configuration Manager Antivirus undantag med mer information om OSD och start avbildningar](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/updated-system-center-2012-configuration-manager-antivirus/ba-p/884371)
 
-[Så här väljer du antivirus program som ska köras på datorer som kör SQL Server](https://support.microsoft.com/en-us/help/309422/how-to-choose-antivirus-software-to-run-on-computers-that-are-running-sql-server)
+[Så här väljer du antivirus program som ska köras på datorer som kör SQL Server](https://support.microsoft.com/help/309422/how-to-choose-antivirus-software-to-run-on-computers-that-are-running-sql-server)
 
-[Rekommendationer för virus genomsökning för företags datorer som kör Windows-versioner som stöds för närvarande](https://support.microsoft.com/en-us/help/822158/virus-scanning-recommendations-for-enterprise-computers-that-are-running-currently-supported-versions-of-windows)
+[Rekommendationer för virus genomsökning för företags datorer som kör Windows-versioner som stöds för närvarande](https://support.microsoft.com/help/822158/virus-scanning-recommendations-for-enterprise-computers-that-are-running-currently-supported-versions-of-windows)

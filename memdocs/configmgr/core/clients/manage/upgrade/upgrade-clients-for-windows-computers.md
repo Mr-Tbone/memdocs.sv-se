@@ -10,12 +10,12 @@ ms.assetid: 6143fd47-48ec-4bca-b53b-5b9b9f067bc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7476f27c050a7870cd8f860f2e1b6bfa3d68a7e9
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: b3849f360b2f22f2f48bbe49159b610399158b29
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81715027"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427770"
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-configuration-manager"></a>Uppgradera klienter för Windows-datorer i Configuration Manager
 
@@ -39,7 +39,7 @@ Undanta klienter från uppgradering genom att ange en undantags samling. Mer inf
 > Om du uppgraderar Server infrastrukturen från en tidigare version av Configuration Manager slutför du Server uppgraderingar innan du uppgraderar Configuration Manager-klienterna. I den här processen ingår att installera alla aktuella gren uppdateringar. Den senaste uppdateringen av den aktuella grenen innehåller den senaste versionen av klienten. Uppgradera klienter när du har installerat alla Configuration Manager-uppdateringar.
 
 > [!NOTE]
-> Om du planerar att omtilldela platsen för klienterna under uppgraderingen anger du den nya platsen med `SMSSITECODE` client. msi-egenskapen. Om du använder värdet `AUTO` för för `SMSSITECODE`, anger `SITEREASSIGN=TRUE`du även. Den här egenskapen tillåter automatisk omtilldelning av platser under uppgraderingen. Mer information finns i [Egenskaper för klient installation – SMSSITECODE](../../deploy/about-client-installation-properties.md#smssitecode).
+> Om du planerar att omtilldela platsen för klienterna under uppgraderingen anger du den nya platsen med `SMSSITECODE` client. msi-egenskapen. Om du använder värdet `AUTO` för för `SMSSITECODE` , anger du även `SITEREASSIGN=TRUE` . Den här egenskapen tillåter automatisk omtilldelning av platser under uppgraderingen. Mer information finns i [Egenskaper för klient installation – SMSSITECODE](../../deploy/about-client-installation-properties.md#smssitecode).
 
 ## <a name="about-automatic-client-upgrade"></a><a name="bkmk_autoupdate"></a>Om automatisk klient uppgradering
 
@@ -97,7 +97,7 @@ Använd följande procedur för att konfigurera automatisk klient uppgradering p
 Klienterna tar emot dessa inställningar nästa gång de hämtar principer.
 
 > [!NOTE]
-> Klient uppgraderingar följer alla Configuration Manager underhålls fönster som du har konfigurerat.
+> Klient uppgraderingar följer alla Configuration Manager underhålls fönster som du har konfigurerat. Execmgr-tråden kör bara klient installations programmet start program (CCMSetup. exe) under ett underhålls fönster. Om enheten kör en utgåva av Windows med ett Skriv filter försöker CCMSetup hämta och installera på samma tidpunkt. Annars slumpar CCMSetup en tid för att hämta innehåll. När den har laddat ned innehåll och kompilerar den lokala principen, schemalägger execmgr klient uppgraderingen under nästa underhålls period.<!-- SCCMDocs#896 -->
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -10,12 +10,12 @@ ms.assetid: 33a6c1d9-4dd8-411c-a748-693a5bd2ea5a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 241e7ed9a2195e178cc1aac2ee2a146eea60b093
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: b691004742def4c126ba82b07cad1651cbe822f8
+ms.sourcegitcommit: 13ceb4e1cc8c2a10bfa199e301bf9bada8ceb268
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721747"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82923430"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Skapa och distribuera Windows Defender Application Guard-princip
 
@@ -23,14 +23,14 @@ ms.locfileid: "81721747"
 <!-- 1351960 -->  
 Du kan skapa och distribuera [Windows Defender Application Guard-principer (Application Guard)](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) med hjälp av Configuration Manager Endpoint Protection. Dessa principer hjälper dig att skydda dina användare genom att öppna obetrodda webbplatser i en säker isolerad behållare som inte är tillgänglig för andra delar av operativ systemet.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
-Om du vill skapa och distribuera en Windows Defender Application Guard-princip måste du använda Windows 10s uppdaterings uppdatering (1709). De Windows 10-enheter som du distribuerar principen till måste konfigureras med en princip för nätverks isolering. Mer information finns i [Översikt över Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview).
+Om du vill skapa och distribuera en Windows Defender Application Guard-princip måste du använda Windows 10s uppdaterings uppdatering (1709). De Windows 10-enheter som du distribuerar principen till måste konfigureras med en [princip för nätverks isolering](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard#network-isolation-settings). Mer information finns i [Översikt över Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview).
 
 ## <a name="create-a-policy-and-to-browse-the-available-settings"></a>Skapa en princip och bläddra bland de tillgängliga inställningarna
 
 1. I Configuration Manager-konsolen väljer du **till gångar och efterlevnad**.
-2. I arbets ytan **till gångar och efterlevnad** väljer du **Översikt** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2. I arbets ytan **till gångar och efterlevnad** väljer du **Översikt**  >  **Endpoint Protection**  >  **Windows Defender Application Guard**.
 3. På fliken **Start** går du till gruppen **skapa** och klickar på **skapa Windows Defender Application Guard-princip**.
 4. Med hjälp av [artikeln](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) som en referens kan du bläddra och konfigurera de tillgängliga inställningarna. Med Configuration Manager kan du ange vissa princip inställningar:
    - [Inställningar för värd interaktion](#bkmk_HIS)
@@ -73,7 +73,7 @@ Konfigurerar program beteende i Application Guard-sessionen. Innan Configuration
 - **Innehåll**
   - Företags webbplatser kan läsa in icke-Enterprise-innehåll, till exempel plugin-program från tredje part.
 - **Andra**
-  - Behåll användarens genererade webb läsar data
+  - Behåll användargenererade webbläsardata
   - Granska säkerhets händelser i den isolerade Application Guard-sessionen
 
 ### <a name="file-management"></a><a name="bkmk_FM"></a>Fil hantering

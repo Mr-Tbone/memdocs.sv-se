@@ -10,12 +10,12 @@ ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 39039347361076ae7c8491f95419187d0af9da85
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7de7d562131f97ac21d1c394b176d3b7f4ce7747
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722622"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906437"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Konfigurationer som stöds för långsiktig etablerings gren i System Center Configuration Manager
 
@@ -25,9 +25,9 @@ Använd informationen i det här avsnittet för att ta reda på vilka operativ s
 Om detta inte anges i det här eller de LTSB specifika ämnena, gäller samma konfigurationer och begränsningar som gäller för Current Branch version 1606 för LTSB.  Använd den information som gäller för den version som du använder när det uppstår konflikter. Normalt är LTSB mer begränsad än Current Branch.
 
 ## <a name="general-statement-of-support"></a>Allmän support specifikation
-Följande produkter och tekniker stöds av den här grenen av Configuration Manager. Deras införande i det här innehållet uttrycker dock inget tillägg till stöd för någon produkt eller version utöver produktens enskilda support livs cykel. Produkter som ligger utanför support livs cykeln stöds inte för användning med Configuration Manager. Mer information finns på webbplatsen för [Microsoft Support Lifecycle](https://go.microsoft.com/fwlink/p/?LinkId=208270) och Läs [vanliga frågor och svar om Microsoft Support Lifecycle-policyn](https://go.microsoft.com/fwlink/p/?LinkId=31976).
+Följande produkter och tekniker stöds av den här grenen av Configuration Manager. Deras införande i det här innehållet uttrycker dock inget tillägg till stöd för någon produkt eller version utöver produktens enskilda support livs cykel. Produkter som ligger utanför support livs cykeln stöds inte för användning med Configuration Manager. Mer information finns på webbplatsen för [Microsoft Support Lifecycle](https://support.microsoft.com/lifecycle) och Läs vanliga frågor och svar om Microsoft Support Lifecycle-policyn.
 
-Dessutom stöds inte produkter och produkt versioner som inte visas i följande avsnitt om de inte har annonser ATS på [Enterprise Mobility + Security Blogg](https://blogs.technet.microsoft.com/enterprisemobility/).
+Dessutom stöds inte produkter och produkt versioner som inte visas i följande avsnitt om de inte har annonser ATS på [Enterprise Mobility + Security Blogg](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/bg-p/enterprisemobilityandsecurity).
 
 **Begränsningar för framtida support:** LTSB har begränsat stöd för framtida Server-och klient operativ system och produkt beroenden. Listan med plattformar för LTSB är fast för utgivnings tiden:
 
@@ -72,7 +72,7 @@ Du kan använda LTSB för att hantera följande operativ system för Windows-dat
 - Server Core-installationen av Windows Server 2012 (x64) (anmärkning 2)
 
 **(Anmärkning 1)** Data Center-versioner stöds men är inte certifierade för Configuration Manager.  
-**(Anmärkning 2)** För att stödja push-installation av klienter måste datorn som kör den här operativ system versionen köra roll tjänsten fil server för Server rollen fil-och lagrings tjänster. Information om hur du installerar Windows-funktioner på en Server Core-dator finns i [Installera Server roller och funktioner på en Server Core-server](https://technet.microsoft.com/library/jj574158(v=ws.11).aspx) i TechNet-biblioteket för Windows Server 2012.
+**(Anmärkning 2)** För att stödja push-installation av klienter måste datorn som kör den här operativ system versionen köra roll tjänsten fil server för Server rollen fil-och lagrings tjänster. Information om hur du installerar Windows-funktioner på en Server Core-dator finns i [Installera Server roller och funktioner på en Server Core-server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574158(v=ws.11)).
 
 ### <a name="windows-embedded"></a>Windows Embedded
 Du kan använda LTSB för att hantera följande Windows Embedded-enheter genom att installera-klient program varan på enheten.  Mer information finns i [Planera för klient distribution till Windows Embedded-enheter](../clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).
@@ -123,7 +123,7 @@ Du kan använda LTSB för att hantera följande Windows Embedded-enheter genom a
 -   Tyska    
 -   Italienska    
 -   Japanska  
--   Koreansk  
+-   Koreanska  
 -   Portugisiska (Brasilien)  
 -   Ryska  
 -   Spanska (Spanien)  
@@ -131,7 +131,7 @@ Du kan använda LTSB för att hantera följande Windows Embedded-enheter genom a
 ### <a name="mac-computers"></a>Mac-datorer  
  Du kan använda LTSB för att hantera Mac OS X-datorer med Configuration Manager-klienten för Mac.
 
-Installations paketet för Mac-klienten levereras inte med Configuration Manager mediet. Du kan ladda ned det som en del av hämtningen "klienter för ytterligare operativ system" från [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=525184).  
+Installations paketet för Mac-klienten levereras inte med Configuration Manager mediet. Du kan ladda ned det som en del av hämtningen "klienter för ytterligare operativ system" från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47719).  
 
 Stöd för Mac-operativsystem är begränsat till de som anges i det här avsnittet. Support omfattar inte ytterligare operativ system som kan stödjas av en framtida uppdatering av Mac-installationspaket för Current Branch.
 
@@ -145,7 +145,7 @@ Mer information finns i [Distribuera klienter till Mac-datorer](../clients/deplo
 ## <a name="linux-and-unix-servers"></a>Linux-och UNIX-servrar
 Du kan använda LTSB för att hantera Linux-och UNIX-servrar med Configuration Manager-klienten för Linux och UNIX.
 
-Klient installations paketen för Linux och UNIX levereras inte med Configuration Manager mediet. Du kan ladda ned dem som en del av hämtningen "klienter för ytterligare operativ system" från [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=525184). Utöver klientinstallationspaketen omfattar klientnedladdningen install -skriptet som hanterar installationen av klienten på varje dator.
+Klient installations paketen för Linux och UNIX levereras inte med Configuration Manager mediet. Du kan ladda ned dem som en del av hämtningen "klienter för ytterligare operativ system" från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47719). Utöver klientinstallationspaketen omfattar klientnedladdningen install -skriptet som hanterar installationen av klienten på varje dator.
 
 Stöd för Linux-och UNIX-operativsystem är begränsat till de som anges i det här avsnittet. Support omfattar inte ytterligare operativ system som kan stödjas av en framtida uppdatering av Linux-och UNIX-klient paket för Current Branch.
 
@@ -163,95 +163,95 @@ Följande versioner stöds med den angivna. tar-filen.
 
 |Version|Fil|  
 |-|-|  
-|Version 5,3 (Power)|CCM-Aix53ppc. &lt;bygge\>. tar|  
-|Version 6,1 (Power)|CCM-Aix61ppc. &lt;bygge\>. tar|  
-|Version 7,1 (Power)|CCM-Aix71ppc. &lt;bygge\>. tar|  
+|Version 5,3 (Power)|CCM-Aix53ppc. &lt; bygge \> . tar|  
+|Version 6,1 (Power)|CCM-Aix61ppc. &lt; bygge \> . tar|  
+|Version 7,1 (Power)|CCM-Aix71ppc. &lt; bygge \> . tar|  
 
 ### <a name="centos"></a>CentOS  
 
 |Version|Fil|  
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 ### <a name="debian"></a>Debian  
 
 |Version|Fil|    
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 8 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 8 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 8 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 8 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 ### <a name="hp-ux"></a>HP-UX  
 
 |Version|Fil|  
 |-|-|  
-|Version 11iv2 IA64|CCM-HpuxB. 11.23-I64. &lt;bygge\>. tar|  
-|Version 11iv2 PA – RISC|CCM – HpuxB. 11.23 PA. &lt;bygge\>. tar|  
-|Version 11iv3 IA64|CCM-HpuxB. 11.31-I64. &lt;bygge\>. tar|  
-|Version 11iv3 PA – RISC|CCM – HpuxB. 11.31 PA. &lt;bygge\>. tar|  
+|Version 11iv2 IA64|CCM-HpuxB. 11.23-I64. &lt; bygge \> . tar|  
+|Version 11iv2 PA – RISC|CCM – HpuxB. 11.23 PA. &lt; bygge \> . tar|  
+|Version 11iv3 IA64|CCM-HpuxB. 11.31-I64. &lt; bygge \> . tar|  
+|Version 11iv3 PA – RISC|CCM – HpuxB. 11.31 PA. &lt; bygge \> . tar|  
 
 ### <a name="oracle-linux"></a>Oracle Linux  
 
 |Version|Fil|    
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 ### <a name="red-hat-enterprise-linux-rhel"></a>Red Hat Enterprise Linux (RHEL)  
 
 |Version|Fil|  
 |-|-|  
-|Version 4 x86|CCM-RHEL4x86. &lt;bygge\>. tar|  
-|Version 4 x64|CCM-RHEL4x64. &lt;bygge\>. tar|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 4 x86|CCM-RHEL4x86. &lt; bygge \> . tar|  
+|Version 4 x64|CCM-RHEL4x64. &lt; bygge \> . tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 ### <a name="solaris"></a>Solaris  
 
 |Version|Fil|   
 |-|-|  
-|Version 9-SPARC|CCM-Sol9sparc. &lt;bygge\>. tar|  
-|Version 10 x86|CCM-Sol10x86. &lt;bygge\>. tar|  
-|Version 10-SPARC|CCM-Sol10sparc. &lt;bygge\>. tar|  
-|Version 11 x86|CCM-Sol11x86. &lt;bygge\>. tar|  
-|Version 11-SPARC|CCM-Sol11sparc. &lt;bygge\>. tar|  
+|Version 9-SPARC|CCM-Sol9sparc. &lt; bygge \> . tar|  
+|Version 10 x86|CCM-Sol10x86. &lt; bygge \> . tar|  
+|Version 10-SPARC|CCM-Sol10sparc. &lt; bygge \> . tar|  
+|Version 11 x86|CCM-Sol11x86. &lt; bygge \> . tar|  
+|Version 11-SPARC|CCM-Sol11sparc. &lt; bygge \> . tar|  
 
 ### <a name="suse-linux-enterprise-server-sles"></a>SUSE Linux Enterprise Server (SLES)  
 
 |Version|Fil|  
 |-|-|  
-|Version 9 x86|CCM-SLES9x86. &lt;bygge\>. tar|  
-|Version 10 SP1 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 10 SP1 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 11 SP1 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 11 SP1 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 12 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 9 x86|CCM-SLES9x86. &lt; bygge \> . tar|  
+|Version 10 SP1 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 10 SP1 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 11 SP1 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 11 SP1 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 12 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 ### <a name="ubuntu"></a>Ubuntu  
 
 |Version|Fil|    
 |-|-|  
-|Version 10,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 10,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 12,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 12,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 14,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 14,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 10,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 10,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 12,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 12,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 14,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 14,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 ### <a name="exchange-server-connector"></a>Exchange Server-anslutning
  LTSB stöder begränsad hantering av enheter som ansluter till Exchange Server-instansen, utan att installera klient program vara. Mer information finns i [Hantera mobila enheter med Configuration Manager och Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
@@ -311,7 +311,7 @@ Alla LTSB-plats system måste vara medlemmar i en Windows Active Directory-domä
 Informationen i följande Current Branch avsnitt gäller för LTSB:
 - [Antal och gränsvärden](../plan-design/configs/size-and-scale-numbers.md)
 - [Plats och krav för platssystem](../plan-design/configs/site-and-site-system-prerequisites.md)
-- [Alternativ med hög tillgänglighet](../servers/deploy/configure/high-availability-options.md)
+- [Alternativ för hög tillgänglighet](../servers/deploy/configure/high-availability-options.md)
 - [Rekommenderad maskinvara](../plan-design/configs/recommended-hardware.md)
 - [Stöd för Windows-funktioner och nätverk](../plan-design/configs/support-for-windows-features-and-networks.md)
 - [Stöd för virtualiseringsmiljöer](../plan-design/configs/support-for-virtualization-environments.md)

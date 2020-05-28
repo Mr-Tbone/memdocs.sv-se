@@ -10,12 +10,12 @@ ms.assetid: 45a10878-ff48-4318-9c6d-c014b38a4039
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 09618acc1c0950c3eaae79cca59fcf71dc7ef61e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 66770ea14c3ae53bad8e6df61b54c7c5e2d2aaa0
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709574"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904563"
 ---
 # <a name="supported-configurations-for-configuration-manager"></a>Konfigurationer som stöds för Configuration Manager
 
@@ -27,12 +27,12 @@ Informationen i det här och följande avsnitt är nödvändig för att hjälpa 
 
 När en Configuration Manager funktion eller funktion kräver mer detaljerade konfigurationer, ingår informationen i den användarspecifika dokumentationen och kompletterar mer allmän konfigurations information.  
 
- De produkter och tekniker som beskrivs i följande avsnitt stöds av Configuration Manager. Deras införande i det här innehållet innebär dock inte en förlängning av stöd för någon produkt utöver produktens enskilda support livs cykel. Produkter som är bortom deras support livs cykel stöds inte för användning med Configuration Manager, inklusive produkter som omfattas av [ESU-programmet (Extended Security updates)](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) . Mer information om Microsofts supportlivscykler finns på webbplatsen [Microsoft Support Lifecycle](https://go.microsoft.com/fwlink/p/?LinkId=208270) . Mer information om utökade säkerhets uppdateringar i Configuration Manager finns i [operativ system versioner som stöds för klienter och enheter för Configuration Manager](supported-operating-systems-for-clients-and-devices.md#bkmk_ESU).
+ De produkter och tekniker som beskrivs i följande avsnitt stöds av Configuration Manager. Deras införande i det här innehållet innebär dock inte en förlängning av stöd för någon produkt utöver produktens enskilda support livs cykel. Produkter som är bortom deras support livs cykel stöds inte för användning med Configuration Manager, inklusive produkter som omfattas av [ESU-programmet (Extended Security updates)](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) . Mer information om Microsofts supportlivscykler finns på webbplatsen [Microsoft Support Lifecycle](https://support.microsoft.com/lifecycle) . Mer information om utökade säkerhets uppdateringar i Configuration Manager finns i [operativ system versioner som stöds för klienter och enheter för Configuration Manager](supported-operating-systems-for-clients-and-devices.md#bkmk_ESU).
 
 > [!NOTE]  
->  Om du vill ha mer information om Microsofts support livs cykel policy går du till webbplatsen vanliga frågor och svar om support policy för Microsoft Support Lifecycle på [Microsoft Support livs cykel princip](https://go.microsoft.com/fwlink/p/?LinkId=31976).  
+>  Om du vill ha mer information om Microsofts support livs cykel policy går du till webbplatsen vanliga frågor och svar om support policy för Microsoft Support Lifecycle på [Microsoft Support livs cykel princip](https://support.microsoft.com/lifecycle).  
 
- Dessutom stöds inte produkter och produkt versioner som inte listas i följande avsnitt med Configuration Manager om de inte har meddelats på bloggen för [Enterprise Mobility and Security](https://blogs.technet.microsoft.com/enterprisemobility/).  I så fall föregås innehållet på den här bloggen av en uppdatering av den här delen av dokumentationen.
+ Dessutom stöds inte produkter och produkt versioner som inte listas i följande avsnitt med Configuration Manager om de inte har meddelats på bloggen för [Enterprise Mobility and Security](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/bg-p/enterprisemobilityandsecurity).  I så fall föregås innehållet på den här bloggen av en uppdatering av den här delen av dokumentationen.
 
 
 -  [Antal och gränsvärden](../../../core/plan-design/configs/size-and-scale-numbers.md)  

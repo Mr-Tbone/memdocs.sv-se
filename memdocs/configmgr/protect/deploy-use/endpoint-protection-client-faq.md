@@ -10,12 +10,12 @@ ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8b89f2dd9f60b43db5c4ce8956f843429b47bc62
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 3b206c1556c2e9550ade5c2322acd65ad2b19412
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724372"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906835"
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Vanliga frågor och svar om Endpoint Protection klient
 
@@ -145,7 +145,7 @@ Om du vill ta bort alla oönskade eller potentiellt skadliga objekt som Windows 
 
 -   Kontrollera att ditt antivirus- och antispionprogram, Windows Defender, använder de senaste uppdateringarna mot potentiella hot (se Hur håller jag virus-och spionprogramsdefinitioner uppdaterade?). Kontrollera också att du alltid använder den senaste versionen av Windows Defender.  
 
--   Hämta bara uppdateringar från välkända källor. För Windows-operativsystem går du alltid till [Microsoft Update](https://go.microsoft.com/fwlink/?LinkID=96304) (https://go.microsoft.com/fwlink/?LinkID=96304) och för annan program vara använder alltid de legitima webbplatserna för det företag eller den person som tillverkar det.  
+-   Hämta bara uppdateringar från välkända källor. För Windows-operativsystem går du alltid till [Microsoft Update katalogen](https://catalog.update.microsoft.com).  För annan program vara använder du alltid legitima webbplatser för det företag eller den person som tillverkar det.
 
 -   Om du får ett e-postmeddelande med en bifogad fil och du är osäker på källan, bör du ta bort den direkt. Hämta inte några program eller filer från okända källor och var försiktig när du använder handelsfiler med andra användare.  
 

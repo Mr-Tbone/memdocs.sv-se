@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 11066470347db0f3ffbfadda9897aed92baa645b
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: e7bc30c4350d96654a0f6a6ae548d63c2928e791
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82073610"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904660"
 ---
 # <a name="whats-new-in-version-1802-of-configuration-manager"></a>Vad är nytt i version 1802 av Configuration Manager
 
@@ -143,7 +143,7 @@ Microsoft har för avsikt att ta bort stöd för Linux-och UNIX-klienter i Confi
 
 ### <a name="surface-device-dashboard"></a>Instrumentpanel för Surface-enhet
 <!--1355788-->
-På instrument panelen för Surface-enheter finns information om de Surface-enheter som finns i din miljö. I-konsolen går du till **övervakning** > av**Surface-enheter**. Du kan visa objekten:
+På instrument panelen för Surface-enheter finns information om de Surface-enheter som finns i din miljö. I-konsolen går du till **övervakning**av  >  **Surface-enheter**. Du kan visa objekten:
 - Procent av ytor
 - Procent av Surface-modeller
 - De fem främsta versionerna av inbyggd program vara
@@ -169,7 +169,7 @@ Från och med den här versionen kan du Visa en instrument panel med information
 
 ### <a name="microsoft-edge-browser-policies"></a>Principer för Microsoft Edge-webbläsare
 <!-- 1357310 -->
-För kunder som använder [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) -webbläsaren på Windows 10-klienter skapar du en princip för Configuration Manager kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. Mer information finns i [skapa Microsoft Edge-webbläsarens profil](../../../compliance/deploy-use/browser-profiles.md). 
+För kunder som använder [Microsoft Edge](https://www.microsoft.com/itpro/microsoft-edge) -webbläsaren på Windows 10-klienter skapar du en princip för Configuration Manager kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. Mer information finns i [skapa Microsoft Edge-webbläsarens profil](../../../compliance/deploy-use/browser-profiles.md). 
 
 
 
@@ -309,5 +309,5 @@ I den här versionen ingår följande förbättringar i Configuration Manager-ko
 
 
 
-## <a name="next-steps"></a>Nästa steg
+## <a name="next-steps"></a>Efterföljande moment
 När du är redo att installera den här versionen, se [uppdateringar för Configuration Manager](../../servers/manage/updates.md).

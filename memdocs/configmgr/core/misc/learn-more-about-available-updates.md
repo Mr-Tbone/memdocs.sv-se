@@ -10,17 +10,17 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e3f835f3fb583569cf0f2701188a787f1ce2715a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 33c383484e79032e6b86035013538b1990322d27
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712962"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268019"
 ---
 # <a name="learn-more-about-available-updates-for-configuration-manager"></a>Läs mer om tillgängliga uppdateringar för Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Om du använder en version av Configuration Manager, se [vad som är nytt](https://technet.microsoft.com/library/mt622084.aspx)  
+Om du använder en version av Configuration Manager, se [vad som är nytt](../plan-design/changes/what-has-changed-from-configuration-manager-2012.md).
 
- Om du använder en teknisk för hands version av Configuration Manager, se [Technical Preview för Configuration Manager](https://technet.microsoft.com/library/mt595861.aspx)
+Om du använder en teknisk för hands version av Configuration Manager, se [Technical Preview för Configuration Manager](../get-started/technical-preview.md).

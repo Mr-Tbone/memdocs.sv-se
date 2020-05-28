@@ -10,12 +10,12 @@ ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 623125ad64c7ed421ea209137eb68f17891d7a81
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7848e3c0c38391ab61d10ad46cbb772c812539c7
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714019"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906648"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-configuration-manager"></a>Planera för klient distribution till Windows Embedded-enheter i Configuration Manager
 
@@ -46,11 +46,11 @@ ms.locfileid: "81714019"
 
  Configuration Manager stöder hantering av följande typer av Skriv filter:  
 
-- Filbaserat Skriv filter (FBWF) – mer information finns i [filbaserat Skriv filter](https://go.microsoft.com/fwlink/?LinkID=204717).  
+- Filbaserat Skriv filter (FBWF) – mer information finns i [filbaserat Skriv filter](https://docs.microsoft.com/previous-versions/windows/embedded/aa940926(v=winembedded.5)).  
 
-- Förbättrat Skriv filter (EWF) RAM – mer information finns i [förbättrat Skriv filter](https://go.microsoft.com/fwlink/?LinkId=204718).  
+- Förbättrat Skriv filter (EWF) RAM – mer information finns i [förbättrat Skriv filter](https://docs.microsoft.com/previous-versions/windows/embedded/ms912906(v=winembedded.5)).  
 
-- Enhetligt Skriv filter (UWF) – mer information finns i [enhetligt Skriv filter](https://go.microsoft.com/fwlink/?LinkId=309236).  
+- Enhetligt Skriv filter (UWF) – mer information finns i [enhetligt Skriv filter](https://docs.microsoft.com/windows-hardware/customize/enterprise/unified-write-filter).  
 
   Configuration Manager stöder inte Skriv filter åtgärder när Windows Embedded-enheten är i EWF RAM-läge.  
 
@@ -59,7 +59,7 @@ ms.locfileid: "81714019"
 > 
 > **För enheter som endast använder FBWF:** Konfigurera följande undantag för att spara klient tillstånd och inventerings data mellan omstarter av enheter:  
 > 
-> - CCMINSTALLDIR\\*. SDF  
+> - CCMINSTALLDIR \\ *. SDF  
 >   -   CCMINSTALLDIR\ServiceData  
 >   -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 > 

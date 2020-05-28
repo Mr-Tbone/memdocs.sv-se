@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a1355b6d670e94d985717dfb32386f579cba42a0
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: cb91e62c4ffce37068b2de5e125865e28ff8c53b
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078676"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83878960"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Grundläggande begrepp för innehålls hantering i Configuration Manager
 
@@ -103,18 +103,18 @@ I följande listor sammanfattas skillnaderna mellan BDR ( *Binary differential R
 Configuration Manager stöder flera alternativ för att hantera innehåll mellan peer-enheter i samma nätverk:
 
 - [BranchCache](#branchcache)
-- [Leveransoptimering](#delivery-optimization)
+- [Leverans optimering](#delivery-optimization)
 - [Configuration Manager peer-cache](#peer-cache)
 
 Använd följande tabell för att jämföra huvud funktionerna i dessa tekniker:
 
-| Funktion  | Peer&nbsp;-cache  | Leverans&nbsp;optimering  | BranchCache  |
+| Funktion  | Peer- &nbsp; cache  | Leverans &nbsp; optimering  | BranchCache  |
 |---------|---------|---------|---------|
-| Över undernät | Ja | Ja | Inga |
+| Över undernät | Ja | Ja | Nej |
 | Begränsa bandbredden | Ja (bitar) | Ja (inbyggt) | Ja (bitar) |
 | Partiellt innehåll | Ja | Ja | Ja |
 | Kontrol lera cachestorlek på disk | Ja | Ja | Ja |
-| Identifiering av peer-källa | Manuell (klient inställning) | Automatisk | Automatisk |
+| Identifiering av peer-källa | Manuell (klient inställning) | Automatiskt | Automatiskt |
 | Peer-identifiering | Via hanterings platsen med hjälp av gränser grupper | GÖR moln tjänst | Sändning |
 | Rapportering | Instrument panel för klient data källor | Instrument panel för klient data källor | Instrument panel för klient data källor |
 | WAN-användnings kontroll | Gränsgrupper | GÖR så här | Endast undernät |
@@ -156,7 +156,7 @@ Leverans optimering är den rekommenderade tekniken för att optimera Windows 10
 Från och med version 1906 kan du installera en Microsoft-ansluten cache-server på dina distributions platser. Genom att cachelagra det här innehållet lokalt kan dina klienter dra nytta av leverans optimerings funktionen, men du kan skydda WAN-länkar.
 
 > [!NOTE]
-> Från och med version 1910 heter funktionen nu **Microsoft Connected cache**. Det kallades tidigare för leverans optimering i nätverket (DOINC).
+> Från och med version 1910 heter funktionen nu **Microsoft Connected cache**. Det kallades tidigare för leverans optimering i nätverket.
 
 Den här cache-servern fungerar som en transparent cache på begäran för innehåll som hämtas av leverans optimering. Använd klient inställningar för att kontrol lera att den här servern endast erbjuds till medlemmar i den lokala Configuration Managers gränser gruppen.
 

@@ -32,7 +32,7 @@ Mer information finns i [Configuration Manager på Azure](../understand/configur
 
 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Den här processen kräver en Azure-prenumeration där du kan skapa följande objekt: 
 - Två Standard_B2s virtuella datorer för domänkontrollant, hanterings plats och distributions plats.

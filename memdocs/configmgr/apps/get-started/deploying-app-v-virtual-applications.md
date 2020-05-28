@@ -10,12 +10,12 @@ ms.assetid: ddcad9f2-a542-4079-83ca-007d7cb44995
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bea7c2ef5c3d77932fcd91ca8d4d2b8baa62edd2
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: df6f550b21523e365055f6a4cdafadca7603c4bf
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710477"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906376"
 ---
 # <a name="deploy-app-v-virtual-applications-with-configuration-manager"></a>Distribuera virtuella App-V-program med Configuration Manager
 
@@ -31,7 +31,7 @@ När du använder Configuration Manager för att hantera virtuella program får 
 
 -   Distribution av operativ system, program vara och maskin varu inventering, avläsning av program vara och till gångs information för att stödja virtuella program  
 
-Mer information om hur du skapar och sekvenserar program med Microsoft Application Virtualization (App-V) finns i [Application Virtualization](https://technet.microsoft.com/library/cc843848.aspx) i TechNet-biblioteket.  
+Mer information om hur du skapar och sekvenserar program med Microsoft Application Virtualization (App-V) finns i [Application Virtualization 4-dokumentationen](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v4/).  
 
 Förutom de andra Configuration Manager krav och procedurer för att skapa ett program måste du tänka på följande när du skapar och distribuerar virtuella program:
 
@@ -49,7 +49,7 @@ Förutom de andra Configuration Manager krav och procedurer för att skapa ett p
 
 -   För att distribuera virtuella program i Configuration Manager måste klient datorerna ha minst App-V 4,6 SP1 eller en senare version av-klienten installerad.  
 
--   Innan du kan distribuera virtuella program måste du uppdatera App-V-klienten med den snabb korrigering som beskrivs i Knowledge Base-artikeln [2645225](https://support.microsoft.com/kb/2645225).  
+-   Innan du kan distribuera virtuella program uppdaterar du App-V-klienten med den senaste snabb korrigeringen. Mer information finns i [aktuell lista över app-v 4,5-och app-v 4,6-fil versioner](https://support.microsoft.com/help/2950945/current-list-of-app-v-4-5-and-app-v-4-6-file-versions).
 
 -   När du använder anslutnings grupper i App-V 5,0 kan de distribuerade virtuella programmen dela samma fil system och register på klient datorerna. Till skillnad från virtuella program kan dessa program dela data med varandra. Dessutom behåller anslutningsgrupper användarinställningarna för de program som de innehåller. Virtuella App-V-miljöer i Configuration Manager används för att konfigurera anslutnings grupper på klient datorer. Virtuella miljöer skapas eller ändras på klientdatorer när programmet installeras eller när klienter sedan utvärderar de installerade programmen. Du kan prioritera dessa program så att när flera program försöker att ändra ett filsystem eller ett registervärde så har programmet med den högsta prioriteten företräde. Mer information finns i [skapa virtuella App-V-miljöer](../../apps/deploy-use/create-app-v-virtual-environments.md).  
 
@@ -58,16 +58,16 @@ Förutom de andra Configuration Manager krav och procedurer för att skapa ett p
 
 -   **App-v 4,6**: om du vill använda virtuella program i Configuration Manager måste app-v 4,6 SP1, app-v 4,6 SP2 eller app-v 4,6 SP3-klienten vara installerad på klient datorerna.  
 
-     Innan du kan distribuera virtuella program måste du också uppdatera App-V 4,6 SP1-klienten med snabb korrigeringen som beskrivs i Knowledge Base-artikeln [2645225](https://go.microsoft.com/fwlink/p/?LinkId=237322).  
+     Innan du kan distribuera virtuella program uppdaterar du App-V 4,6-klienten med den senaste snabb korrigeringen. Mer information finns i [aktuell lista över app-v 4,5-och app-v 4,6-fil versioner](https://support.microsoft.com/help/2950945/current-list-of-app-v-4-5-and-app-v-4-6-file-versions).  
 
--   **App-v 5, app-v 5,0 SP1, App-V 5,0 SP2, app-v 5,0 SP3 och app-v 5,1**: för app-v 5,0 SP2 måste du installera [Hotfix Package 5](https://support.microsoft.com/en-us/kb/2963211) eller använda app-v 5,0 SP3.  
+-   **App-v 5, app-v 5,0 SP1, App-V 5,0 SP2, app-v 5,0 SP3 och app-v 5,1**: för app-v 5,0 SP2 måste du installera [Hotfix Package 5](https://support.microsoft.com/help/2963211) eller använda app-v 5,0 SP3.  
 -   **App-V 5,2**: Detta är inbyggt i Windows 10 Education (1607 och senare), Windows 10 Enterprise (1607 och senare) och windows Server 2016.
 
 Mer information om App-V i Windows 10 finns i följande avsnitt:
 
-- [Vad är nytt i App-V](https://technet.microsoft.com/itpro/windows/manage/appv-about-appv)
-- [Komma igång med App-V för Windows 10](https://technet.microsoft.com/itpro/windows/manage/appv-getting-started)
-- [Uppgradera till App-V för Windows 10 från en befintlig installation](https://technet.microsoft.com/itpro/windows/manage/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation)
+- [Vad är nytt i App-V](https://docs.microsoft.com/windows/application-management/app-v/appv-about-appv)
+- [Komma igång med App-V för Windows 10](https://docs.microsoft.com/windows/application-management/app-v/appv-getting-started)
+- [Uppgradera till App-V för Windows 10 från en befintlig installation](https://docs.microsoft.com/windows/application-management/app-v/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation)
 
 ##  <a name="steps-to-manage-app-v-virtual-applications"></a>Steg för att hantera virtuella App-V-program  
  Följ dessa steg om du vill hantera virtuella App-V-program:  
@@ -147,7 +147,7 @@ För att du ska kunna använda den här funktionen med Configuration Manager må
 Mer information om App-V Dynamic Suite Composition finns i dokumentationen till App-V.  
 
 ##  <a name="converting-app-v-46-applications-to-app-v-5-applications"></a>Konvertera App-V 4.6-program till App-V 5-program  
-Programpaketsformatet har ändrats mellan App-V 4.6 och App-V 5. Program som har sekvenserats med App-V 4.6 stöds inte längre. Men App-V 5 har ett paket konverterings verktyg som du kan använda för att konvertera program. Mer information finns i [dokumentationen till App-V 5](https://technet.microsoft.com/library/jj713472.aspx).  
+Programpaketsformatet har ändrats mellan App-V 4.6 och App-V 5. Program som har sekvenserats med App-V 4.6 stöds inte längre. Men App-V 5 har ett paket konverterings verktyg som du kan använda för att konvertera program. Mer information finns i [så här konverterar du ett paket som skapats i en tidigare version av App-V](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v5/how-to-convert-a-package-created-in-a-previous-version-of-app-v).  
 
 Följ dessa anvisningar när du konverterar App-V 4.6-program till App-V 5-program:  
 
@@ -178,7 +178,7 @@ Distributions konfigurations filen innehåller inställningar som gäller för d
 
 Om du vill distribuera virtuella App-V 5-program med Configuration Manager måste alla tre filerna finnas i samma mapp när du skapar distributions typen App-V 5. Om det finns flera filer i mappen kommer Configuration Manager använda den senaste.  
 
-Mer information finns i [dokumentationen till App-V 5](https://technet.microsoft.com/library/jj713466.aspx).  
+Mer information finns i om den [dynamiska konfigurationen av App-V 5,0](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v5/about-app-v-50-dynamic-configuration).  
 
 ##  <a name="app-v-local-interaction"></a> Local Interaction i App-V  
 I vissa program distributions scenarier installeras program lokalt på klient datorerna och andra program distribueras som virtuella program till samma klient dator. Som standard kan inte program som installeras lokalt se eller kommunicera direkt med virtualiserade program. Detta är det avsedda beteendet för program isoleringen som App-V tillhandahåller. Lokal interaktion är en funktion i App-V-klienten som du kan aktivera för varje program så att lokalt installerade program som körs på en klient dator kan se och kommunicera med virtualiserade program. Configuration Manager och App-V har fullt stöd för lokal interaktion.  
@@ -186,7 +186,7 @@ I vissa program distributions scenarier installeras program lokalt på klient da
 Mer information om funktionen App-V Local Interaction finns i dokumentationen till App-V.  
 
 ##  <a name="app-v-5-shared-content-store"></a>Shared Content Store i App-V 5  
-Configuration Manager stöder den delade innehålls lagrings funktionen i App-V 5. Mer information finns i [Planera för App-V 5.0 Shared Content Store (SCS)](https://technet.microsoft.com/library/jj713431.aspx).  
+Configuration Manager stöder den delade innehålls lagrings funktionen i App-V 5. Mer information finns i [Planera för App-V 5.0 Shared Content Store (SCS)](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v5/planning-for-the-app-v-50-sequencer-and-client-deployment#planning-for-the-app-v-50-shared-content-store-scs).  
 
 ##  <a name="monitoring-virtual-applications"></a>Övervaka virtuella program  
 

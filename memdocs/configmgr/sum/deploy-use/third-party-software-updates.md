@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f430979a2189494e977c501a36f9f039f860ca7a
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: f5461f888bfa2b749061eef4000f0d7c5f756b84
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771430"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906747"
 ---
 # <a name="enable-third-party-updates"></a>Aktivera uppdateringar från tredje part 
 
@@ -27,10 +27,10 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
 > Configuration Manager aktiverar inte den här funktionen som standard. Innan du använder den aktiverar du den valfria funktionen **Aktivera stöd för uppdateringar från tredje part på klienter**. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).
 
 
-## <a name="prerequisites"></a>Krav 
+## <a name="prerequisites"></a>Förutsättningar 
 - Tillräckligt med disk utrymme på den översta program uppdaterings platsens WSUSContent-mapp för att lagra det binära innehållet för program uppdateringar från tredje part.
     - Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution.
-    - Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme kan du läsa [om hur du ändrar platsen där WSUS lagrar uppdateringar lokalt](https://blogs.technet.microsoft.com/sus/2008/05/19/wsus-how-to-change-the-location-where-wsus-stores-updates-locally/) blogg inlägg.
+    - Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme kan du läsa [om hur du ändrar platsen där WSUS lagrar uppdateringar lokalt](https://docs.microsoft.com/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally) blogg inlägg.
 - Tjänsten för synkronisering av program uppdateringar från tredje part kräver Internet åtkomst.
     - Download.microsoft.com över HTTPS-port 443 krävs för partner förtecknings listan. 
     -  Internet åtkomst till eventuella kataloger från tredje part och uppdatering av innehållsfiler. Ytterligare andra portar än 443 kan behövas.
@@ -40,7 +40,7 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Ytterligare krav när SUP är fjärran sluten från plats servern på den översta nivån 
 
 1. SSL måste vara aktiverat på SUP när den är fjärran sluten. Detta kräver ett certifikat för serverautentisering som skapats från en intern certifikat utfärdare eller via en offentlig Provider.
-    - [Konfigurera SSL på WSUS](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol)
+    - [Konfigurera SSL på WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol)
         - Observera att vissa av webb tjänsterna och de virtuella katalogerna alltid är HTTP och inte HTTPS när du konfigurerar SSL på WSUS. 
         - Configuration Manager laddar ned innehåll från tredje part för program uppdaterings paket från WSUS-innehålls katalogen via HTTP.   
     - [Konfigurera SSL på SUP](../get-started/install-a-software-update-point.md#configure-ssl-communications-to-wsus)
@@ -51,7 +51,7 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
 
 
 3. Skapa följande register nyckel på Configuration Manager plats Server: 
-    - `HKLM\Software\Microsoft\Update Services\Server\Setup`skapar du ett nytt DWORD-värde med namnet **EnableSelfSignedCertificates** med `1`värdet. 
+    - `HKLM\Software\Microsoft\Update Services\Server\Setup`skapar du ett nytt DWORD-värde med namnet **EnableSelfSignedCertificates** med värdet `1` . 
 
 4. Så här aktiverar du installationen av det självsignerade WSUS-signeringscertifikat till betrodda utgivare och betrodda rot lager på den fjärranslutna SUP-servern:
    - **Anslutnings kontot för WSUS-servern** måste ha behörighet för fjärr administration på SUP-servern.
@@ -75,7 +75,7 @@ Om du aktiverar det här alternativet kan du prenumerera på uppdaterings katalo
 Du måste bestämma om du vill att Configuration Manager automatiskt ska hantera WSUS-signeringscertifikat från tredje part med hjälp av ett självsignerat certifikat, eller om du behöver konfigurera certifikatet manuellt. 
 
 ### <a name="automatically-manage-the-wsus-signing-certificate"></a>Hantera signerings certifikatet för WSUS automatiskt
-Om du inte har ett krav för att använda PKI-certifikat kan du välja att automatiskt hantera signerings certifikaten för uppdateringar från tredje part. Hantering av WSUS-certifikat görs som en del av synkroniseringsprocessen och registreras i `wsyncmgr.log`. 
+Om du inte har ett krav för att använda PKI-certifikat kan du välja att automatiskt hantera signerings certifikaten för uppdateringar från tredje part. Hantering av WSUS-certifikat görs som en del av synkroniseringsprocessen och registreras i `wsyncmgr.log` . 
 
 1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen. Expandera **plats konfiguration**och välj noden **platser** .
 2. Välj platsen på den översta nivån i hierarkin. I menyfliksområdet klickar du på **Konfigurera plats komponenter**och väljer **program uppdaterings plats**.
@@ -234,12 +234,12 @@ Synkronisering av program uppdateringar från tredje part hanteras av SMS_ISVUPD
 -  Configuration Manager har en ny version för katalogens CAB-filformat. Den nya versionen innehåller certifikaten för leverantörens binära filer. Dessa certifikat läggs till i noden **certifikat** under **säkerhet** i arbets ytan **Administration** när du godkänner och litar på katalogen.  
      - Du kan fortfarande använda den äldre katalogen CAB-filversion så länge nedladdnings-URL: en är https och uppdateringarna signeras. Innehållet kan inte publiceras eftersom certifikaten för binärfilerna inte finns i CAB-filen och redan har godkänts. Du kan undvika det här problemet genom att söka efter certifikatet i noden **certifikat** , ta bort blockeringen och sedan publicera uppdateringen igen. Om du publicerar flera uppdateringar som är signerade med olika certifikat måste du avblockera varje certifikat som används.
      - Mer information finns i status meddelanden 11523 och 11524 i tabellen nedan status meddelande.
--  När program uppdaterings tjänsten från tredje part på den översta nivån för program uppdaterings platsen på den översta nivån kräver en proxyserver för Internet åtkomst, kan det hända att kontroller av digitala signaturer Miss lyckas. Du kan åtgärda det här problemet genom att konfigurera inställningarna för WinHTTP-proxyn på plats systemet. Mer information finns i [netsh-kommandon för WinHTTP](https://go.microsoft.com/fwlink/p/?linkid=199086).
+-  När program uppdaterings tjänsten från tredje part på den översta nivån för program uppdaterings platsen på den översta nivån kräver en proxyserver för Internet åtkomst, kan det hända att kontroller av digitala signaturer Miss lyckas. Du kan åtgärda det här problemet genom att konfigurera inställningarna för WinHTTP-proxyn på plats systemet. Mer information finns i [netsh-kommandon för WinHTTP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731131(v=ws.10)).
 - När du använder en CMG för innehålls lagring laddas inte innehållet för uppdateringar från tredje part ned till klienter om inställningen **Hämta delta innehåll när den tillgängliga** [klienten](../../core/clients/deploy/about-client-settings.md#allow-clients-to-download-delta-content-when-available) är aktive rad. <!--6598587-->
 
 ## <a name="status-messages"></a>Statusmeddelanden
 
-| Meddelande       | Severity           | Beskrivning | Möjlig orsak| Möjlig lösning
+| Meddelande       | Allvarlighetsgrad           | Beskrivning | Möjlig orsak| Möjlig lösning
 | ------------- |-------------| -----|----|----|
 | 11516     | Fel |Det gick inte att publicera innehåll för uppdateringen av uppdaterings-ID eftersom innehållet är osignerat.  Det går bara att publicera innehåll med giltiga signaturer.  |Configuration Manager tillåter inte att osignerade uppdateringar publiceras.| Publicera uppdateringen på ett annat sätt. </br></br>Se om en signerad uppdatering är tillgänglig från leverantören.|
 | 11523  | Varning |  Katalogen "X" omfattar inte innehålls signerings certifikat. försök att publicera uppdaterings innehåll för uppdateringar från den här katalogen kan Miss lyckas förrän innehålls signerings certifikaten har lagts till och godkänts. | Det här meddelandet kan inträffa när du importerar en katalog som använder en äldre version av CAB-filformat.|Kontakta katalog leverantören för att få en uppdaterad katalog som innehåller certifikat för innehålls signering. </br> </br> Certifikaten för binärfilerna ingår inte i CAB-filen så innehållet kan inte publiceras. Du kan undvika det här problemet genom att söka efter certifikatet i noden **certifikat** , ta bort blockeringen och sedan publicera uppdateringen igen. Om du publicerar flera uppdateringar som är signerade med olika certifikat måste du avblockera varje certifikat som används.|

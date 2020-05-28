@@ -10,12 +10,12 @@ ms.assetid: e3bb3e13-3037-4122-93bc-504bfd080a4d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7f72dcba7e7f1e3af0bf168ca83deb958094879a
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: 3304d480f0650191a784a9152ae464e81c2207a1
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720669"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906401"
 ---
 # <a name="import-pfx-certificate-profiles"></a>Importera PFX-certifikatprofiler
 
@@ -28,7 +28,7 @@ Configuration Manager stöder olika typer av certifikat Arkiv för olika enheter
 Använd Configuration Manager för att importera autentiseringsuppgifter för certifikatet och etablera sedan PFX-filer till enheter. Du kan använda dessa filer för att generera användarspecifika certifikat som stöd för krypterad data utbyte.
 
 > [!TIP]  
-> En stegvis genom gång av den här processen finns i blogg inlägget [så här skapar och distribuerar du PFX-certifikat profiler i Configuration Manager](https://blogs.technet.microsoft.com/karanrustagi/2015/09/01/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager/).  
+> En stegvis genom gång av den här processen finns i blogg inlägget [så här skapar och distribuerar du PFX-certifikat profiler i Configuration Manager](https://docs.microsoft.com/archive/blogs/karanrustagi/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager).  
 
 ## <a name="create-a-profile"></a>Skapa en profil
 

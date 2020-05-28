@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: f32eaffe673324699e20fc7c579ea1ac9b38c479
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 337b494bdce24463c19dd22ae975af5e99d6d895
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82076347"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905850"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-configuration-manager"></a>Funktioner i Technical Preview 1511 för Configuration Manager
 
@@ -34,7 +34,7 @@ För datorer som är anslutna via WUfB kommer Configuration Manager inte att kun
 
 -   Windows 10 Desktop Pro eller Windows 10 Enterprise Edition version 1511 eller senare  
 
--   Datorer som ska hanteras via [Windows Update för företag](https://technet.microsoft.com/library/mt622730\(v=vs.85\).aspx).  
+-   Datorer som ska hanteras via [Windows Update för företag](https://docs.microsoft.com/windows/deployment/update/waas-manage-updates-wufb).  
 
 ### <a name="try-it-out"></a>prova!  
  Försök att utföra följande uppgift och Använd sedan feedback-informationen nära överst i det här avsnittet för att berätta för oss hur det fungerade:  
@@ -67,7 +67,7 @@ När Microsoft publicerar en ny uppdatering för Office 365-skrivbordet till WSU
 
 4. Du kan kontrol lera efterlevnaden för Office 365-uppdateringar med hjälp av övervakning eller rapporter i konsolen.  
 
-   Detaljerade anvisningar finns i [Hantera Office 365-klient uppdateringar med Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
+   Detaljerade anvisningar finns i [Hantera Office 365-klient uppdateringar med Configuration Manager Technical Preview](https://docs.microsoft.com/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
 
 ##  <a name="support-for-sql-server-alwayson-for-highly-available-databases"></a><a name="BKMK_AlwasyOn"></a>Stöd för SQL Server AlwaysOn för databaser med hög tillgänglighet  
  Configuration Manager har nu stöd för att använda en SQL Server AlwaysOn-tillgänglighetsgrupper som värd för plats databasen.  När du installerar en ny plats kan du direkt konfigurera installationen att använda tillgänglighets gruppen i stället för en normal instans av SQL Server.  
@@ -110,7 +110,7 @@ Försök att utföra följande uppgifter och Använd sedan feedback-informatione
  Använd följande procedurer för att först skapa och konfigurera tillgänglighets gruppen och sedan installera en ny Configuration Manager-plats som använder tillgänglighets gruppen.  
 
 #### <a name="to-create-a-sql-server-alwayson-availability-group"></a>Så här skapar du en SQL Server AlwaysOn-tillgänglighetsgruppen  
-Processen för att [skapa en SQL Server tillgänglighets grupp](https://technet.microsoft.com/library/ff878265\(v=sql.120\).aspx) dokumenteras i SQL Server-dokumentations biblioteket.  När du skapar tillgänglighets gruppen ser du till att följande krav för användning med Configuration Manager är uppfyllda:  
+Processen för att [skapa en SQL Server tillgänglighets grupp](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-ver15) dokumenteras i SQL Server-dokumentations biblioteket.  När du skapar tillgänglighets gruppen ser du till att följande krav för användning med Configuration Manager är uppfyllda:  
 
 -   Högst tre medlemmar:  
 
@@ -131,7 +131,7 @@ Installera en plats som använder en SQL Server tillgänglighets grupp:
 
 1.  Ersätt följande när du uppmanas att göra det Configuration Manager installationen:  
 
-    -   **SQL Server namn**: Ange det virtuella namnet för den slut punkt som du konfigurerade när du skapade tillgänglighets gruppen. Det virtuella namnet ska vara ett fullständigt DNS-namn, ** &lt;t\>. ex. endpointServer. fabrikam.com**.  
+    -   **SQL Server namn**: Ange det virtuella namnet för den slut punkt som du konfigurerade när du skapade tillgänglighets gruppen. Det virtuella namnet ska vara ett fullständigt DNS-namn, t ** &lt; \> . ex. endpointServer. fabrikam.com**.  
 
     -   **Instans**: det här värdet ska vara tomt. Det finns ingen instans i den här konfigurationen.  
 
@@ -165,7 +165,7 @@ Försök att utföra följande uppgift och Använd sedan feedback-informationen 
 
 #### <a name="to-create-a-collection-for-a-server-cluster"></a>Så här skapar du en samling för ett Server kluster  
 
-1.  [Skapa en enhets samling](https://technet.microsoft.com/library/gg712295.aspx) som innehåller servrarna i klustret.  
+1.  [Skapa en enhets samling](../clients/manage/collections/create-collections.md) som innehåller servrarna i klustret.  
 
 2.  I arbets ytan **till gångar och efterlevnad** klickar du på **enhets samlingar**, högerklickar på den samling som innehåller servrarna i klustret och klickar sedan på **Egenskaper**.  
 
@@ -200,6 +200,6 @@ Försök att utföra följande uppgift och Använd sedan feedback-informationen 
 
 #### <a name="to-deploy-software-updates-to-the-server-cluster"></a>Distribuera program uppdateringar till Server klustret  
 
-1.  [Distribuera program uppdateringar](https://technet.microsoft.com/library/gg712304.aspx) till Server kluster samlingen.  
+1.  [Distribuera program uppdateringar](../../sum/deploy-use/deploy-software-updates.md) till Server kluster samlingen.  
 
-2.  [Övervaka program uppdaterings distributionen](https://technet.microsoft.com/library/gg712304.aspx).  
+2.  [Övervaka program uppdaterings distributionen](../../sum/deploy-use/monitor-software-updates.md).  

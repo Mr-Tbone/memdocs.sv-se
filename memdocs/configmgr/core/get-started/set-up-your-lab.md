@@ -10,12 +10,12 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: a23f6106a8c922b3ff4e8306fb76aec4fd26b148
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 216c61a671d7d06e434fa399bb3bae12e12f7275
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711611"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905171"
 ---
 # <a name="set-up-a-configuration-manager-lab"></a>Konfigurera ett Configuration Manager labb
 
@@ -31,9 +31,9 @@ Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb 
 
 -   **Labb miljön använder Windows Server 2012 R2**, där vi kommer att installera Configuration Manager.  
 
-     Du kan ladda ned en utvärderings version av Windows Server 2012 R2 från [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012).  
+     Du kan ladda ned en utvärderings version av Windows Server 2012 R2 från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012).  
 
-     Överväg att ändra eller inaktivera Förbättrad säkerhets konfiguration i Internet Explorer för att lättare komma åt några av de hämtade filerna som refereras till under de här övningarna. Läs mer om WCF i [Internet Explorer: Förbättrad säkerhetskonfiguration](https://technet.microsoft.com/library/dd883248\(v=ws.10\).aspx) .  
+     Överväg att ändra eller inaktivera Förbättrad säkerhets konfiguration i Internet Explorer för att lättare komma åt några av de hämtade filerna som refereras till under de här övningarna. Mer information finns i [Internet Explorer: förbättrad säkerhets konfiguration](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd883248(v=ws.10)).  
 
 -   **I labbmiljön används SQL Server 2012 SP2** för platsdatabasen.  
 
@@ -45,7 +45,7 @@ Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb 
 
     -   **SQL_Latin1_General_CP1_CI_AS** som klassen **SQL-sortering** .  
 
-    -   **Windows-autentisering**, [och inte SQL-autentisering](https://technet.microsoft.com/library/ms144284.aspx), krävs.  
+    -   **Windows-autentisering**, [och inte SQL-autentisering](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15), krävs.  
 
     -   En dedikerad **SQL Server instans** krävs.  
 
@@ -61,11 +61,11 @@ Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb 
 
 -   Domänkontrollanten **använder Windows Server 2008 R2** med Active Directory Domain Services installerat. Domänkontrollanten fungerar även som värd för DHCP-och DNS-servrarna för användning med ett fullständigt kvalificerat domän namn.  
 
-     Mer information finns i den här [översikten av Active Directory Domain Services](https://technet.microsoft.com/library/hh831484).  
+     Mer information finns i [Översikt över Active Directory Domain Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11)).  
 
 -   **Hyper-V används med ett fåtal virtuella datorer** för att kontrol lera att de hanterings steg som vidtas i de här övningarna fungerar som förväntat. Minst tre virtuella datorer rekommenderas med Windows 10 installerat.  
 
-     Mer information finns i den här [översikten av Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).  
+     Mer information finns i [Översikt över Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).  
 
 -   **Administratörsbehörighet** krävs för samtliga komponenter.  
 
@@ -95,7 +95,7 @@ När du har installerat alla dessa komponenter måste du vidta ytterligare åtg�
 Nästa steg som krävs för att göra det möjligt för Configuration Manager klienter att fråga Active Directory Domain Services för att hitta plats resurser visas i nästa procedur.  
 
 ##  <a name="create-the-system-management-container"></a><a name="BKMK_CreateSysMgmtLab"></a> Skapa System Management-containern  
- Configuration Manager skapar inte automatiskt den begärda System Management-behållaren i Active Directory Domain Services när schemat utökas. Du måste därför själv skapa den för övningen. I det här steget ska du [installera ADSI-redigering.](https://technet.microsoft.com/library/cc773354\(WS.10\).aspx#BKMK_InstallingADSIEdit)  
+ Configuration Manager skapar inte automatiskt den begärda System Management-behållaren i Active Directory Domain Services när schemat utökas. Du måste därför själv skapa den för övningen. Det här steget kräver att du [installerar ADSI Edit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10)).
 
  Kontrollera att du är inloggad som ett konto med behörighet för att **Skapa alla underordnade objekt** för **System**-containern i Active Directory Domain Services.  
 
@@ -103,7 +103,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 1.  Kör **ADSI Edit**och anslut till den domän där platsservern finns.  
 
-2.  Expandera **domän&lt;datorns fullständigt kvalificerade domän\>namn**, expandera **<unikt\>namn**, högerklicka på **CN = System**, klicka på **ny**och klicka sedan på **objekt**.  
+2.  Expandera **domän &lt; datorns fullständigt kvalificerade domän \> namn**, expandera **<unikt \> namn**, högerklicka på **CN = System**, klicka på **ny**och klicka sedan på **objekt**.  
 
 3.  I dialogrutan **Skapa objekt** väljer du **Container** och klickar sedan på **Nästa**.  
 
@@ -119,7 +119,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 #### <a name="to-set-security-permissions-for-the-system-management-container"></a>Ange säkerhetsbehörighet för System Management-containern:  
 
-1.  Expandera **plats serverns domän**i konsol fönstret, expandera **DC =&lt;serverns unika namn\>** och expandera sedan **CN = System**. Högerklicka på **CN=System Management**och klicka sedan på **Egenskaper**.  
+1.  Expandera **plats serverns domän**i konsol fönstret, expandera **DC = &lt; serverns unika namn \> **och expandera sedan **CN = System**. Högerklicka på **CN=System Management**och klicka sedan på **Egenskaper**.  
 
 2.  I dialogrutan **Egenskaper för CN=System Management** klickar du på fliken **Säkerhet** . Klicka sedan på **Lägg till** och lägg till platsserverns datorkonto. Ge kontot behörigheten **Fullständig behörighet** .  
 
@@ -129,7 +129,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 5.  Klicka på **OK** . Konsolen **ADSI-redigering** stängs och proceduren slutförs.  
 
-     Om du vill ha mer information om den här proceduren kan du läsa [utöka Active Directory-schemat för Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md)  
+     Mer information finns i [utöka Active Directory-schemat för Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md)  
 
 ##  <a name="extend-the-active-directory-schema-using-extadschexe"></a><a name="BKMK_ExtADSchLab"></a> Utöka Active Directory-schemat med extadsch.exe  
  Du utökar Active Directory schema för den här övningen så att du kan använda alla Configuration Manager funktioner och funktioner med minsta möjliga administrativa kostnader. Utökning av Active Directory-schemat är en konfiguration för hela skogen som görs en gång per skog. När du utökar schemat permanent ändras uppsättningen av klasser och attribut i den grundläggande Active Directory-konfigurationen. Den här åtgärden går inte att ångra. Genom att utöka schemat kan Configuration Manager få åtkomst till komponenter som gör det möjligt för dem att fungera effektivt i din labb miljö.  
@@ -139,7 +139,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 #### <a name="to-extend-the-active-directory-schema-using-extadschexe"></a>Utöka Active Directory-schemat med extadsch.exe:  
 
-1.  Skapa en säkerhets kopia av system tillstånd för schemats huvuddomänkontrollant. Mer information om hur du säkerhetskopierar huvuddomänkontrollanten finns i [Windows Server Backup](https://technet.microsoft.com/library/cc770757.aspx)  
+1.  Skapa en säkerhets kopia av system tillstånd för schemats huvuddomänkontrollant. Mer information om hur du säkerhetskopierar huvud domänkontrollanten finns [Windows Server Backup](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770757(v=ws.11))  
 
 2.  Gå till **\SMSSETUP\BIN\X64** på installationsmediet.  
 
@@ -147,7 +147,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 4.  Kontrollera att schemat har utökats genom att titta i **extadsch.log** som finns i rotmappen på enheten.  
 
-     Om du vill ha mer information om den här proceduren kan du läsa [utöka Active Directory-schemat för Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md).  
+     Mer information finns i [utöka Active Directory-schemat för Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
 ##  <a name="other-required-tasks"></a><a name="BKMK_OtherTasksLab"></a> Andra nödvändiga uppgifter  
  Följande uppgifter måste utföras före installationen.  
@@ -158,7 +158,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
  **Installera .NET och aktivera Windows Communication Foundation**  
 
- Du måste installera två .NET Framework-program: först .NET 3.5.1 och sedan .NET 4.5.2+. Du måste också aktivera WCF (Windows Communication Foundation). WCF är utformat för att göra det lättare att hantera distribuerad datorbehandling, med bred samverkan och direktstöd för tjänstorientering, och underlättar dessutom utvecklingen av anslutna program via en tjänstorienterad programmeringsmodell. Läs mer om WCF i [Vad är Windows Communication Foundation?](https://technet.microsoft.com/subscriptions/ms731082\(v=vs.90\).aspx) .  
+ Du måste installera två .NET Framework-program: först .NET 3.5.1 och sedan .NET 4.5.2+. Du måste också aktivera WCF (Windows Communication Foundation). WCF är utformat för att göra det lättare att hantera distribuerad datorbehandling, med bred samverkan och direktstöd för tjänstorientering, och underlättar dessutom utvecklingen av anslutna program via en tjänstorienterad programmeringsmodell. Mer information finns i [Vad är Windows Communication Foundation?](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms731082(v=vs.90)).
 
 #### <a name="to-install-net-and-activate-windows-communication-foundation"></a>Installera .NET och aktivera Windows Communication Foundation:  
 
@@ -198,27 +198,15 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 10. När grundinstallationen av .NET är klar går du till [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=42643) för att hämta webbinstallationsprogrammet för .NET Framework 4.5.2. Klicka på knappen **Ladda ned** och sedan på **Kör** så att installationsprogrammet körs. Alla komponenter som måste installeras upptäcks automatiskt och installeras på det språk du valt.  
 
-Mer information om varför dessa .NET Framework-program behövs finns i följande artiklar:  
-
--   [Versioner av och beroenden i .NET Framework](https://technet.microsoft.com/library/bb822049.aspx)  
-
--   [Steg för steg-beskrivning av programkompatibilitet i .NET Framework 4 RTM](https://technet.microsoft.com/library/dd889541.aspx)  
-
--   [Gör så här: Uppgradera ett ASP.NET-webbprogram till ASP.NET 4](https://technet.microsoft.com/library/dd483478\(VS.100\).aspx)  
-
--   [Vanliga frågor och svar om Microsofts supportpolicy under produktens livscykel för .NET Framework](https://support.microsoft.com/en-us/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update)  
-
--   [CLR inifrån-in-process sida vid sida](https://msdn.microsoft.com/magazine/ee819091.aspx)  
-
 **Aktivera BITS, IIS och RDC**  
 
-[BITS (Background Intelligent Transfer Service)](https://technet.microsoft.com/library/dn282296.aspx) används för program där filer måste överföras asynkront mellan en klient och en server. Med BITS bevaras svarstiden hos andra nätverksprogram genom att flödet av överföringar mäts i förgrunden och bakgrunden. Filöverföringar återupptas automatiskt om en överföring avbryts.  
+[BITS (Background Intelligent Transfer Service)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282296(v=ws.11)) används för program där filer måste överföras asynkront mellan en klient och en server. Med BITS bevaras svarstiden hos andra nätverksprogram genom att flödet av överföringar mäts i förgrunden och bakgrunden. Filöverföringar återupptas automatiskt om en överföring avbryts.  
 
 För den här övningen installerar du BITS eftersom platsservern även ska användas som hanteringsplats.  
 
 IIS (Internet Information Services) är en flexibel och skalbar webbserver som kan användas som värd för vad som helst på webben. Den används av Configuration Manager för ett antal plats system roller. Om du vill ha mer information om IIS granskar du [webbplatser för plats system servrar](../../core/plan-design/network/websites-for-site-system-servers.md).  
 
-[RDC (Remote Differential Compression)](https://technet.microsoft.com/library/cc754372.aspx) är en uppsättning API:er som kan användas av program för att ta reda på om några ändringar gjorts i en grupp filer. Tack vare RDC replikeras endast de ändrade delarna av en fil vilket håller nere nätverkstrafiken till et minimum.  
+[RDC (Remote Differential Compression)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754372(v=ws.11)) är en uppsättning API:er som kan användas av program för att ta reda på om några ändringar gjorts i en grupp filer. Tack vare RDC replikeras endast de ändrade delarna av en fil vilket håller nere nätverkstrafiken till et minimum.  
 
 #### <a name="to-enable-bits-iis-and-rdc-site-server-roles"></a>Aktivera BITS-, IIS- och RDC-platssystemroller:  
 
@@ -298,7 +286,7 @@ IIS (Internet Information Services) är en flexibel och skalbar webbserver som k
 
         -   **FTP-tjänst**  
 
-    -   **Hanterings verktyg**  
+    -   **Hanteringsverktyg**  
 
         -   **IIS-hanteringskonsol**  
 
@@ -330,7 +318,7 @@ IIS (Internet Information Services) är en flexibel och skalbar webbserver som k
 
 7.  Klicka på **Installera** och kontrollera att installationen har slutförts ordentligt i fönstret **Meddelanden** i **Serverhanteraren**.  
 
-Som standard blockerar IIS flera filnamnstillägg och platser från åtkomst via HTTP eller HTTPS. Om du vill att filerna ska kunna distribueras på klientsystem måste du ställa in begäransfiltrering för IIS på distributionsplatsen. Mer information finns i [IIS Request Filtering for distribution points](../../core/plan-design/network/prepare-windows-servers.md#BKMK_IISFiltering).  
+Som standard blockerar IIS flera filnamnstillägg och platser från åtkomst via HTTP eller HTTPS. Om du vill att filerna ska kunna distribueras på klientsystem måste du ställa in begäransfiltrering för IIS på distributionsplatsen. Mer information finns i [filtrering av IIS-förfrågningar för distributions platser](../../core/plan-design/network/prepare-windows-servers.md#BKMK_IISFiltering).  
 
 #### <a name="to-configure-iis-filtering-on-distribution-points"></a>Ställa in IIS-filtrering på distributionsplatser:  
 
@@ -356,7 +344,7 @@ Innan du påbörjar installationen startar du  [Prerequisite Checker](../servers
 
 3.  Följ installations proceduren som visas i [installera en plats med hjälp av installations guiden för Configuration Manager](../servers/deploy/install/use-the-setup-wizard-to-install-sites.md). Under installationen anger du följande:  
 
-    |Steg under platsinstallationen:|Val|  
+    |Steg under platsinstallationen:|Urval|  
     |-----------------------------------------|---------------|  
     |Steg 4: sidan **Produktnyckel**|Välj **Utvärdering**.|  
     |Steg 7:  **Nödvändiga nedladdningar**|Välj **Ladda ned nödvändiga filer** och ange den fördefinierade platsen.|  

@@ -10,12 +10,12 @@ ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 824eaeb939249e1bcc2ed21d5815a0a72dc54797
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 46d2af2d89e41e931add0f77931b442b68835235
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81717869"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906468"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Säkerhetskopiera en Configuration Manager-plats
 
@@ -71,7 +71,7 @@ För att förenkla säkerhets kopierings processen kan du skapa en **AfterBackup
 
 Du kan säkerhetskopiera en central administrations plats och en primär plats. Sekundära platser eller plats system servrar har inte säkerhets kopierings aktiviteter.
 
-När Configuration Manager säkerhets kopierings tjänsten körs följer den instruktionerna som definierats i säkerhets kopierings kontroll `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box\Smsbkup.ctl`filen:. Du kan redigera säkerhetskopieringskontrollfilen och därmed ändra säkerhetskopieringstjänstens beteende.  
+När Configuration Manager säkerhets kopierings tjänsten körs följer den instruktionerna som definierats i säkerhets kopierings kontroll filen: `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box\Smsbkup.ctl` . Du kan redigera säkerhetskopieringskontrollfilen och därmed ändra säkerhetskopieringstjänstens beteende.  
 > [!NOTE]
 > Ändringar av **Smsbkup. CTL** kommer att gälla efter att tjänsten SMS_SITE_VSS_WRITER på plats servern har startats om.
 
@@ -116,7 +116,7 @@ Statusinformation för platssäkerhetskopieringen skrivs till filen **Smsbkup.lo
 
 -   När du konfigurerar säkerhets kopierings aktiviteten för att skapa en avisering när den Miss lyckas kan du leta efter fel aviseringar om säkerhets kopiering i noden **aviseringar** på arbets ytan **övervakning** .  
 
--   Öppna Utforskaren på plats servern och bläddra till `<ConfigMgrInstallationFolder>\Logs`. Granska **Smsbkup. log** för varningar och fel. När säkerhets kopieringen av platsen har slutförts visas `Backup completed` loggen med `STATMSG: ID=5035`meddelande-ID.  
+-   Öppna Utforskaren på plats servern och bläddra till `<ConfigMgrInstallationFolder>\Logs` . Granska **Smsbkup. log** för varningar och fel. När säkerhets kopieringen av platsen har slutförts visas loggen `Backup completed` med meddelande-ID `STATMSG: ID=5035` .  
 
     > [!TIP]  
     >  Starta om säkerhets kopierings åtgärden genom att stoppa och starta om tjänsten **SMS_SITE_BACKUP** Windows när underhålls åtgärden för säkerhets kopieringen Miss lyckas.  
@@ -137,7 +137,7 @@ Behåll flera Arkiv av ögonblicks bilden av säkerhets kopian av följande anle
 
 
 ## <a name="using-the-afterbackupbat-file"></a>Använda filen AfterBackup.bat  
-När platsen har säkerhetskopierats försöker säkerhets kopierings aktiviteten automatiskt att köra ett skript med namnet **AfterBackup. bat**. Skapa filen AfterBackup. bat manuellt på plats servern i `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box`. Om det finns en AfterBackup. bat-fil i rätt mapp, körs den automatiskt när säkerhets kopierings åtgärden har slutförts.
+När platsen har säkerhetskopierats försöker säkerhets kopierings aktiviteten automatiskt att köra ett skript med namnet **AfterBackup. bat**. Skapa filen AfterBackup. bat manuellt på plats servern i `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box` . Om det finns en AfterBackup. bat-fil i rätt mapp, körs den automatiskt när säkerhets kopierings åtgärden har slutförts.
 
 AfterBackup. bat-filen låter dig arkivera ögonblicks bilden av säkerhets kopian i slutet av varje säkerhets kopierings åtgärd. Den kan utföra andra uppgifter efter säkerhets kopieringen som inte är en del av underhålls uppgiften plats Server för säkerhets kopiering. AfterBackup.bat-filen integrerar arkivet och säkerhetskopieringsåtgärderna, och säkerställer härigenom att varje ny ögonblicksbild av säkerhetskopian arkiveras.
 
@@ -172,7 +172,7 @@ Innehålls biblioteket i Configuration Manager är den plats där alla innehåll
 
 -   Innehålls biblioteket måste återställas innan du kan distribuera om innehållet till distributions platser. När du startar omdistribution av innehåll Configuration Manager kopieras filerna från plats serverns innehålls bibliotek till distributions platserna. Mer information finns i [innehålls biblioteket](../../plan-design/hierarchy/the-content-library.md).  
 
--   Paketets källfiler måste återställas innan du kan uppdatera innehåll på distributions platser. När du startar en innehålls uppdatering Configuration Manager kopierar nya eller ändrade filer från paket källan till innehålls biblioteket. Sedan kopieras filerna till associerade distributions platser. Kör följande SQL Server fråga mot plats databasen för att hitta paketets käll plats för alla paket och program: `SELECT * FROM v_Package`. Du kan identifiera paketets källplats genom att titta på de första tre tecknen i paketets ID. Om paketets ID exempelvis är CEN00001 är platskoden för källplatsen CEN. När du återställer paketets källfiler måste de återställas till samma plats som innan det uppstod.  
+-   Paketets källfiler måste återställas innan du kan uppdatera innehåll på distributions platser. När du startar en innehålls uppdatering Configuration Manager kopierar nya eller ändrade filer från paket källan till innehålls biblioteket. Sedan kopieras filerna till associerade distributions platser. Kör följande SQL Server fråga mot plats databasen för att hitta paketets käll plats för alla paket och program: `SELECT * FROM v_Package` . Du kan identifiera paketets källplats genom att titta på de första tre tecknen i paketets ID. Om paketets ID exempelvis är CEN00001 är platskoden för källplatsen CEN. När du återställer paketets källfiler måste de återställas till samma plats som innan det uppstod.  
 
 Kontrol lera att du inkluderar både innehålls biblioteket och paketets källfiler i fil systemets säkerhets kopia för plats servern.  
 
@@ -183,12 +183,12 @@ Använd följande procedur för att säkerhetskopiera Updates Publisher-database
 
 #### <a name="back-up-the-updates-publisher-database"></a>Säkerhetskopiera Updates Publisher-databasen  
 
-1.  På den dator som kör Updates Publisher bläddrar du till uppdaterings utgivarens databas fil **Scupdb. SDF** i `%USERPROFILE%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\`. Det finns en annan databas fil för varje användare som kör Updates Publisher.  
+1.  På den dator som kör Updates Publisher bläddrar du till uppdaterings utgivarens databas fil **Scupdb. SDF** i `%USERPROFILE%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\` . Det finns en annan databas fil för varje användare som kör Updates Publisher.  
 
-2.  Kopiera databasfilen till ditt mål för säkerhetskopian. Om ditt mål för säkerhets kopiering till exempel `E:\ConfigMgr_Backup`är, kan du kopiera uppdateringens publicerings databas `E:\ConfigMgr_Backup\SCUP`fil till.  
+2.  Kopiera databasfilen till ditt mål för säkerhetskopian. Om ditt mål för säkerhets kopiering till exempel är `E:\ConfigMgr_Backup` , kan du kopiera uppdateringens publicerings databas fil till `E:\ConfigMgr_Backup\SCUP` .  
 
     > [!TIP]  
-    >  Om det finns mer än en databas fil på en dator bör du överväga att lagra filen i en undermapp som anger den användar profil som är kopplad till databas filen. Du kan till exempel ha en databas fil i `E:\ConfigMgr_Backup\SCUP\User1` och en annan databas fil i `E:\ConfigMgr_Backup\SCUP\User2`.  
+    >  Om det finns mer än en databas fil på en dator bör du överväga att lagra filen i en undermapp som anger den användar profil som är kopplad till databas filen. Du kan till exempel ha en databas fil i `E:\ConfigMgr_Backup\SCUP\User1` och en annan databas fil i `E:\ConfigMgr_Backup\SCUP\User2` .  
 
 
 
@@ -213,7 +213,7 @@ SMS Writer är en tjänst som interagerar med Windows-tjänsten Volume Shadow Co
 ### <a name="process"></a>Process  
 1. SMS Writer registreras hos VSS-tjänsten och binds till dess gränssnitt och händelser. 
 2. När VSS sänder ut information om händelser, eller om tjänsten skickar specifika meddelanden till SMS Writer, svarar SMS Writer på meddelandet och vidtar lämpliga åtgärder. 
-3. SMS Writer läser säkerhets kopierings kontroll filen **Smsbkup. CTL** som finns `<ConfigMgrInstallationPath>\inboxes\smsbkup.box`i och avgör vilka filer och data som ska säkerhets kopie ras. 
+3. SMS Writer läser säkerhets kopierings kontroll filen **Smsbkup. CTL** som finns i `<ConfigMgrInstallationPath>\inboxes\smsbkup.box` och avgör vilka filer och data som ska säkerhets kopie ras. 
 4. SMS Writer bygger metadata, som består av olika komponenter, inklusive specifika data från SMS-registernyckeln och under nycklar. 
     a. Den skickar metadata till VSS när den begärs. 
     b. VSS skickar sedan metadata till det begärda programmet, Configuration Manager backup Manager. 
@@ -231,7 +231,7 @@ Skrivar-ID: t för SMS Writer är **03ba67dd-dc6d-4729-A038-251f7018463b**.
 Tjänsten SMS Writer måste köras med kontot Lokalt system.  
 
 ### <a name="volume-shadow-copy-service"></a>Tjänsten Volume Shadow Copy  
-VSS är ett antal COM API:er som implementerar ett ramverk som gör det möjligt att ta säkerhetskopior av volymer medan programmen på systemet fortsätter att skriva till volymerna. VSS erbjuder ett konsekvent gränssnitt som möjliggör samordning mellan användarprogram som ändrar data på hårddisken (tjänsten SMS Writer) och dem som säkerhetskopierar program (tjänsten Backup Manager). Mer information finns i [tjänsten Volume Shadow Copy](https://go.microsoft.com/fwlink/p/?LinkId=241968).  
+VSS är ett antal COM API:er som implementerar ett ramverk som gör det möjligt att ta säkerhetskopior av volymer medan programmen på systemet fortsätter att skriva till volymerna. VSS erbjuder ett konsekvent gränssnitt som möjliggör samordning mellan användarprogram som ändrar data på hårddisken (tjänsten SMS Writer) och dem som säkerhetskopierar program (tjänsten Backup Manager). Mer information finns i [tjänsten Volume Shadow Copy](https://docs.microsoft.com/windows-server/storage/file-server/volume-shadow-copy-service).  
 
 
 

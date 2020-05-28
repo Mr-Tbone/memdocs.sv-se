@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0a10726062d679666d14cbbb0b87510af5dfe30c
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 3259bd1b20740046e70b1ef53281b0ff235a3896
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078812"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905470"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-configuration-manager"></a>Funktioner i Technical Preview 1705 för Configuration Manager
 
@@ -57,14 +57,14 @@ Du kan använda det här verktyget när en uppdatering i konsolen ännu inte har
 
 När du kör verktyget körs det mot den uppdatering som du anger. Som standard tar verktyget inte bort installerade eller nedladdade uppdateringar.  
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 Det konto som du använder för att köra verktyget kräver följande behörigheter:
 -   **Läs** -och **Skriv** behörighet till plats databasen för den centrala administrations platsen och varje primär plats i hierarkin. Om du vill ange dessa behörigheter kan du lägga till användar kontot som medlem i **db_datawriter** och **db_datareader** [fasta databas roller](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) i Configuration Manager databasen för varje plats. Verktyget samverkar inte med sekundära platser.
 -   **Lokal administratör** på platsen på den översta nivån i hierarkin.
 -   **Lokal administratör** på den dator som är värd för tjänst anslutnings punkten.
 
 Du behöver GUID för det uppdaterings paket som du vill återställa. Hämta GUID:
--   Gå till **Administration** > **uppdateringar och underhåll** i-konsolen och högerklicka på rubriken för en av kolumnerna (t. ex. **tillstånd**) i visningsfönstret och välj **paket-GUID**. Detta lägger till kolumnen i visningen, och kolumnen visar GUID för uppdaterings paketet.
+-   Gå till **Administration**  >  **uppdateringar och underhåll** i-konsolen och högerklicka på rubriken för en av kolumnerna (t. ex. **tillstånd**) i visningsfönstret och välj **paket-GUID**. Detta lägger till kolumnen i visningen, och kolumnen visar GUID för uppdaterings paketet.
 
 > [!TIP]  
 > Om du vill kopiera GUID väljer du raden för det uppdaterings paket som du vill återställa och använder sedan CTRL + C för att kopiera raden. Om du klistrar in det kopierade valet i en text redigerare kan du sedan kopiera bara GUID för användning som en kommando rads parameter när du kör verktyget.
@@ -85,13 +85,13 @@ När verktyget har körts:
 
 |                        Parameter                         |                                                            Beskrivning                                                            |
 |----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| **-S &lt;FQDN för SQL Server på platsen på den översta nivån>** | *Obligatoriskt* <br> Du måste ange det fullständiga domän namnet för den SQL Server som är värd för plats databasen för platsen på den översta nivån i hierarkin. |
-|                **-D &lt;databas namn>**                 |                             *Obligatoriskt* <br> Du måste ange namnet på den översta nivån på plats databasen.                             |
-|                 **-P &lt;paket-GUID>**                 |                        *Obligatoriskt* <br> Du måste ange GUID för det uppdaterings paket som du vill återställa.                        |
-|           **-I &lt;SQL Server instans namn>**           |                   *Valfritt* <br> Använd detta för att identifiera den instans av SQL Server som är värd för plats databasen.                   |
+| **-S &lt; FQDN för SQL Server på platsen på den översta nivån>** | *Obligatoriskt* <br> Du måste ange det fullständiga domän namnet för den SQL Server som är värd för plats databasen för platsen på den översta nivån i hierarkin. |
+|                **-D &lt; databas namn>**                 |                             *Obligatoriskt* <br> Du måste ange namnet på den översta nivån på plats databasen.                             |
+|                 **-P &lt; paket-GUID>**                 |                        *Obligatoriskt* <br> Du måste ange GUID för det uppdaterings paket som du vill återställa.                        |
+|           **-I &lt; SQL Server instans namn>**           |                   *Valfritt* <br> Använd detta för att identifiera den instans av SQL Server som är värd för plats databasen.                   |
 |                       **-FDELETE**                       |                      *Valfritt* <br> Använd detta för att framtvinga borttagning av ett uppdaterings paket som har hämtats.                      |
 
- **Fler**  
+ **Exempel:**  
  I ett typiskt scenario vill du återställa en uppdatering som har hämtnings problem. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset. exe-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
  I ett mer extrema scenario vill du framtvinga borttagning av problem med uppdaterings paketet. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset. exe-FDELETE-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
@@ -99,7 +99,7 @@ När verktyget har körts:
 ### <a name="test-the-tool-with-the-technical-preview"></a>Testa verktyget med teknisk för hands version  
 Du kan använda det här verktyget med teknisk för hands version 1606 eller senare. Detta finns i så fall att du kan använda verktyget med ett större antal uppdaterings scenarier för tekniska för hands versioner, utan att behöva vänta tills nästa tekniska för hands version är tillgänglig.
 
-Kör verktyget på ett uppdaterings paket för en teknisk för hands version innan uppdateringen uppfyller krav kontrollen. Ett slutfört krav kontroll tillstånd identifieras av en av följande status för paketet i **administrations** > **uppdateringar och underhåll**:  
+Kör verktyget på ett uppdaterings paket för en teknisk för hands version innan uppdateringen uppfyller krav kontrollen. Ett slutfört krav kontroll tillstånd identifieras av en av följande status för paketet i **administrations**  >  **uppdateringar och underhåll**:  
 -   **Krav kontroll godkändes**
 -   **Krav kontroll godkändes med varning**
 -   **Krav kontrollen misslyckades**
@@ -121,12 +121,12 @@ Med den här versionen kan du nu använda asynkrona inchecknings repliker i SQL 
 
 - Den här versionen stöder inte redundans för att använda den asynkrona commit-repliken som plats databas.
   > [!CAUTION]  
-  > Eftersom Configuration Manager inte validerar statusen för den asynkrona commit-replikeringen för att bekräfta att den är aktuell, och [genom att utforma en sådan replik kan vara osynkroniserade](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), använder en asynkron replik som plats databas och skyddar din webbplats och data på risk.  
+  > Eftersom Configuration Manager inte validerar statusen för den asynkrona commit-replikeringen för att bekräfta att den är aktuell, och [genom att utforma en sådan replik kan vara osynkroniserade](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2014#AvailabilityModes), använder en asynkron replik som plats databas och skyddar din webbplats och data på risk.  
 
 - Du kan använda samma antal och typ av repliker i en tillgänglighets grupp som stöds av den version av SQL Server som du använder.   (Tidigare stöd var begränsat till två synkrona commit-repliker.)
 
 ### <a name="configure-an-asynchronous-commit-replica"></a>Konfigurera en asynkron commit-replik
-Om du vill lägga till en asynkron replik i en [tillgänglighets grupp som du använder med Configuration Manager](../servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)behöver du inte köra de konfigurations skript som krävs för att konfigurera en synkron replik. (Detta beror på att det inte finns stöd för att använda den asynkrona repliken som plats databasen.) I [SQL Server-dokumentationen](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)) finns information om hur du lägger till sekundära repliker i tillgänglighets grupper.
+Om du vill lägga till en asynkron replik i en [tillgänglighets grupp som du använder med Configuration Manager](../servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)behöver du inte köra de konfigurations skript som krävs för att konfigurera en synkron replik. (Detta beror på att det inte finns stöd för att använda den asynkrona repliken som plats databasen.) Mer information finns i [lägga till en sekundär replik i en tillgänglighets grupp](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/add-a-secondary-replica-to-an-availability-group-sql-server?view=sql-server-2014).
 
 ### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Använd den asynkrona repliken för att återställa din webbplats
 Innan du använder en asynkron replik för att återställa plats databasen måste du stoppa den aktiva primära platsen för att förhindra ytterligare skrivningar till plats databasen. När du har stoppat platsen kan du använda en asynkron replik i stället för att använda en [manuellt återställd databas](../servers/manage/recover-sites.md#use-a-site-database-that-has-been-manually-recovered).
@@ -139,7 +139,7 @@ Att stoppa-platsen är detsamma som att stoppa Platskomponenthanteraren tjänste
 ## <a name="improved-user-notifications-for-office-365-updates"></a>Förbättrade användar meddelanden för Office 365-uppdateringar
 Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Office 365-uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Före den här versionen stängdes Office-program som var öppna automatiskt utan varning när en Office 365-uppdatering skickades till en klient. Efter den här uppdateringen kommer Office-program inte längre att avslutas utan förvarning.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 Den här uppdateringen gäller för Office 365 ProPlus-klienter.
 
 ### <a name="known-issues"></a>Kända problem
@@ -170,7 +170,7 @@ Se till att du har läst blogg inlägget för att förstå grunderna om Windows 
 Så här skapar du en princip och bläddrar bland de tillgängliga inställningarna:
 
 1.  I Configuration Manager-konsolen väljer du **till gångar och efterlevnad**.
-2.  I arbets ytan **till gångar och efterlevnad** väljer du **Översikt** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2.  I arbets ytan **till gångar och efterlevnad** väljer du **Översikt**  >  **Endpoint Protection**  >  **Windows Defender Application Guard**.
 3.  På fliken **Start** går du till gruppen **skapa** och klickar på **skapa Windows Defender Application Guard-princip**.
 4.  Med blogg inlägget som referens kan du bläddra bland och konfigurera de tillgängliga inställningarna för att testa funktionen.
 5.  När du är klar slutför du guiden och distribuerar principen till en eller flera Windows 10-enheter.
@@ -246,7 +246,7 @@ Nu har du anslutit din Configuration Manager-plats till Azure AD.
 Innan du börjar ska du kontrol lera att källfilerna för klient installationen lagras lokalt på den enhet som du vill installera klienten på.
 Följ sedan anvisningarna i [Distribuera klienter till Windows-datorer](../clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual) med följande installations kommando rad (ersätt värdena i exemplet med dina egna värden):
 
-**CCMSetup. exe/NoCrlCheck/Source: C:\CLIENT CCMHOSTNAME = SCCMPROXYCONTOSO. CLOUDAPP. NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode = HEC AADTENANTID = 780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME = contoso AADCLIENTAPPID =\<GUID> AADRESOURCEURI =<https://contososerver>**
+**CCMSetup. exe/NoCrlCheck/Source: C:\CLIENT CCMHOSTNAME = SCCMPROXYCONTOSO. CLOUDAPP. NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode = HEC AADTENANTID = 780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME = contoso AADCLIENTAPPID = \< GUID > AADRESOURCEURI =<https://contososerver>**
 
 - **/NoCrlCheck**: om hanterings platsen eller Cloud Management Gateway använder ett icke-offentligt Server certifikat, kanske klienten inte kan komma åt CRL-platsen.
 - **/Source**: lokal mapp: platsen för klientens installationsfiler.
@@ -276,7 +276,7 @@ Krav för att konfigurera en anslutning till OMS är oförändrad från de [som 
 
 ### <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Använd guiden Azure-tjänster för att konfigurera anslutningen till OMS
 
-1.  I-konsolen går du till **administrations** > **Översikt** > **Cloud Services** > **Azure-tjänster**och väljer **sedan konfigurera Azure-tjänster** på fliken **Start** i menyfliksområdet för att starta **guiden Azure-tjänster**.
+1.  I-konsolen går du till **administrations**  >  **Översikt**  >  **Cloud Services**  >  **Azure-tjänster**och väljer sedan **Konfigurera Azure-tjänster** på fliken **Start** i menyfliksområdet för att starta **guiden Azure-tjänster**.
 
 2.  På sidan **Azure-tjänster** väljer du moln tjänsten operation Management Suite. Ange ett eget namn på **Azure-tjänstens namn** och en valfri beskrivning och klicka sedan på **Nästa**.
 

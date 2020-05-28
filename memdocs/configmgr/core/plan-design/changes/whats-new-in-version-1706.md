@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: a4fa056c9c0708d2cecc0ca5f244e134e22ad10b
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: a8a4ce1c3d54311db18decc85f57d3e03298d339
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82073717"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904681"
 ---
 # <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Vad&#39;s nya i version 1706 av Configuration Manager
 
@@ -28,8 +28,8 @@ Uppdatering 1706 för Configuration Manager aktuella grenen är tillgänglig som
 > Om du vill installera en ny plats måste du använda en bas linje version av Configuration Manager.  
 >
 > Läs mer om:    
-> - [Nya platser installeras](https://technet.microsoft.com/library/mt590197.aspx)  
-> - [Installera uppdateringar på platser](https://technet.microsoft.com/library/mt607046.aspx)  
+> - [Nya platser installeras](../../servers/deploy/install/installing-sites.md)  
+> - [Installera uppdateringar på platser](../../servers/manage/updates.md)  
 > - [Bas linje-och uppdaterings versioner](../../servers/manage/updates.md#bkmk_Baselines)  
 
 Följande avsnitt innehåller information om ändringar och nya funktioner som introducerats i version 1706 av Configuration Manager.  
@@ -211,7 +211,7 @@ I den här versionen har vi avsevärt förbättrat hämtnings tiden för Express
 Du kan nu använda Configuration Manager för att hantera uppdateringar av Microsoft Surface-drivrutiner.    
 
 
-#### <a name="prerequisites"></a>Krav
+#### <a name="prerequisites"></a>Förutsättningar
 - Alla program uppdaterings platser måste köra Windows Server 2016.    
 - Detta är en för hands versions funktion som du måste aktivera för att den ska vara tillgänglig. Mer information finns i [Använda förhandsversionsfunktioner från uppdateringar](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
@@ -223,7 +223,7 @@ Du kan nu använda Configuration Manager för att hantera uppdateringar av Micro
 
 ### <a name="configure-windows-update-for-business-deferral-policies"></a>Konfigurera Windows Update för principer för avstängning av företag
 <!-- 1290890 -->
-Nu kan du konfigurera regler för avstängning för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag. Du kan hantera uppskjutnings principerna i noden nya **Windows Update för affärs principer** under **program varu bibliotek** > **Windows 10-Underhåll**.
+Nu kan du konfigurera regler för avstängning för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag. Du kan hantera uppskjutnings principerna i noden nya **Windows Update för affärs principer** under **program varu bibliotek**  >  **Windows 10-Underhåll**.
 
 Mer information finns i [integration med Windows Update för företag i Windows 10](../../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md#configure-windows-update-for-business-deferral-policies).
 

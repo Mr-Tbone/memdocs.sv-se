@@ -26,7 +26,7 @@
     - name: Appskyddsprinciper och arbetsprofiler (Android)
       href: android-deployment-scenarios-app-protection-work-profiles.md
       displayName: app-we; without; without enrollment
-    - name: Använda Intune utan GMS
+    - name: Använda Intune utan Google Mobile Services
       href: manage-without-gms.md
     - name: MAM VANLIGA FRÅGOR OCH SVAR
       href: mam-faq.md

@@ -10,12 +10,12 @@ ms.assetid: 95033a9b-ff13-4b70-b1de-bcb25bcb6024
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9a1dcd3528f4dbaacec81837150d6f8a1ad6c455
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 652a0c5e36ce7c4bacf40531a82fdf4e16197d95
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724169"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906919"
 ---
 # <a name="customize-operating-system-images-with-configuration-manager"></a>Anpassa operativ system avbildningar med Configuration Manager
 
@@ -95,7 +95,7 @@ Operativ system avbildningar i Configuration Manager är WIM-filer och represent
     > [!IMPORTANT]  
     >  Aktivitetssekvenssteget [Förbered Windows för avbildning](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) försöker återställa det lokala administratörslösenordet på referensdatorn till ett tomt värde innan Sysprep körs. Om den lokala säkerhetsprincipen **Lösenord måste uppfylla krav på komplexitet** aktiverats återställer det här aktivitetssekvenssteget inte administratörslösenordet. Inaktivera i så fall säkerhetsprincipen innan du kör aktivitetssekvensen.  
 
-     Mer information om Sysprep finns i [Teknisk referens för Sysprep (System Preparation](https://go.microsoft.com/fwlink/?LinkId=280286).  
+     Mer information om Sysprep finns i [Översikt över Sysprep (System preparation)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).  
 
 -   **Lämpliga verktyg och skript som krävs för att underlätta installationsscenarier**  
 

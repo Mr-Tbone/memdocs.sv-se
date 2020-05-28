@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7397fc17-3ae8-4525-8386-aea8a9cffa06
-ms.openlocfilehash: 08baf595199bdda121f897d507de97cb7e93e620
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: f9b9c49bde16754b7a60112905f14da2cd5e48eb
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81715069"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906281"
 ---
 # <a name="surface-device-dashboard-in-configuration-manager"></a>Instrument panel för Surface-enhet i Configuration Manager
 
@@ -31,8 +31,8 @@ Använd följande steg för att öppna instrument panelen för Surface-enheter:
 2. Klicka på noden **övervakning** . 
 3. Om du vill läsa in instrument panelen klickar du på **Surface-enheter**.
 
-**Instrument panel för Surface Device-instrumentpanelens**
-![yta](media/Surface-device-dashboard.PNG)
+**Instrument panel** 
+ ![ för Surface-enheter Instrument panel för Surface-enheter](media/Surface-device-dashboard.PNG)
 
 
 
@@ -57,11 +57,9 @@ På instrument panelen för Surface-enheter visas tre grafer för din miljö.
 
 ## <a name="more-information"></a>Mer information
 
-Mer information om Surface-enheter finns i:
-- [Ytans]( https://go.microsoft.com/fwlink/?linkid=861998) webbplats.
+Mer information om Surface-enheter finns på [Surface](https://www.microsoft.com/surface) -webbplatsen.
 
-Mer information om hur du distribuerar uppdateringar av inbyggd Surface-programvara i Configuration Manager finns i:
-- [Hantera uppdateringar av Surface-drivrutiner i Configuration Manager]( https://support.microsoft.com/help/4098906).
+Mer information om hur du distribuerar uppdateringar av inbyggd Surface-programvara i Configuration Manager finns i [Hantera uppdateringar av Surface-drivrutiner](https://support.microsoft.com/help/4098906).
 
 
 

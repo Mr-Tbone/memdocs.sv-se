@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: c38230b44f7f18e3f60cb4c88b31a03e10a37d30
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d52725e0127f7129a3962cd3ef178d2540bb785a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721642"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905738"
 ---
 # <a name="capabilities-in-technical-preview-1605-for-configuration-manager"></a>Funktioner i Technical Preview 1605 för Configuration Manager
 
@@ -97,13 +97,13 @@ Vanliga åtgärder som att ta bort **/Rensa**, **återställa lösen ord**, **fj
 
 1.  I Azure Active Directory registrerar du Configuration Manager som hanterings verktyg för webb program och/eller webb-API. Då får du ett klient-ID som du kommer att behöva senare.  
 
-    1.  I noden [https://manage.windowsazure.com](https://manage.windowsazure.com)Active Directory i väljer du din Azure Active Directory och klickar sedan på **program** > **Lägg till**.  
+    1.  I noden Active Directory i [https://manage.windowsazure.com](https://manage.windowsazure.com) väljer du din Azure Active Directory och klickar sedan på **program**  >  **Lägg till**.  
 
     2.  Klicka på **Lägg till ett program som min organisation utvecklar**.  
 
     3.  Ange ett namn för programmet, Välj **webb program** och/eller **webb-API**och klicka sedan på pilen **Nästa** .  
 
-    4.  Ange samma URL för både **inloggnings-URL: en** och **app-ID-URI: n**. URL: en kan vara vad som helst och behöver inte matcha en riktig adress. Du kan till exempel ange **https://&lt;dindomän>/SCCM**.  
+    4.  Ange samma URL för både **inloggnings-URL: en** och **app-ID-URI: n**. URL: en kan vara vad som helst och behöver inte matcha en riktig adress. Du kan till exempel ange **https:// &lt; dindomän>/SCCM**.  
 
     5.  Slutför guiden.  
 
@@ -163,7 +163,7 @@ Vanliga åtgärder som att ta bort **/Rensa**, **återställa lösen ord**, **fj
 
     2.  2.  Välj den app som du vill distribuera och klicka sedan på **skapa program**i gruppen **skapa** på fliken **Start** .  
 
--   Den plats du använder för att hämta och ladda upp en Apple VPP-token för volym köps appar i Configuration Manager-konsolen har ändrats. Du kan nu göra detta på arbets ytan **admin** under noden **Cloud Services** > **Apples volymköpsprogram tokens** .  
+-   Den plats du använder för att hämta och ladda upp en Apple VPP-token för volym köps appar i Configuration Manager-konsolen har ändrats. Du kan nu göra detta på arbets ytan **admin** under noden **Cloud Services**  >  **Apples volymköpsprogram tokens** .  
 
 ##  <a name="enterprise-data-protection-edp"></a><a name="BKMK_VPP"></a>Enterprise Data Protection (EDP)  
  Du kan skapa konfigurations objekt som du kan använda för att distribuera EDP-principer (Enterprise Data Protection), inklusive att låta dig välja dina skyddade appar, din EDP-skydds nivå och hur du hittar företags data i nätverket. Mer information om EDP finns i följande avsnitt:  
@@ -192,7 +192,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 #### <a name="general-prerequisites"></a>Allmänna krav  
 
--   Se till att du har slutfört [förberedelse stegen för lokal hantering av mobila enheter](https://technet.microsoft.com/library/mt613153.aspx) och [registrerat dina enheter](https://technet.microsoft.com/library/mt627870.aspx).  
+-   Se till att du har slutfört [förberedelse stegen för lokal MDM](../../mdm/plan-design/plan-on-premises-mdm.md) och [registrerat dina enheter](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md).  
 
 -   För bästa möjliga installations upplevelse när du använder Företagsportal kontrollerar du att Configuration Manager har en aktiv anslutning till Microsoft Intune.  
 
@@ -236,7 +236,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
    2. Kör **set-ExecutionPolicy RemoteSigned**  
 
-   3. ** &lt;I\>\CD.latest\SMSSETUP\TOOLS\MDM** för katalogens SCCM-installation kör **.\ConfigurationScript.ps1**  
+   3. I \Cd.latest\SMSSETUP\TOOLS\MDM för katalogens ** &lt; SCCM \> -installation** kör **.\ConfigurationScript.ps1**  
 
       Konfigurations skriptet gör följande:  
 
@@ -284,7 +284,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 #### <a name="to-create-a-collection-for-a-server-group"></a>Så här skapar du en samling för en Server grupp  
 
-1.  [Skapa en enhets samling](https://technet.microsoft.com/library/gg712295.aspx) som innehåller datorerna i Server gruppen.  
+1.  [Skapa en enhets samling](../clients/manage/collections/create-collections.md) som innehåller datorerna i Server gruppen.  
 
 2.  I arbets ytan **till gångar och efterlevnad** klickar du på **enhets samlingar**, högerklickar på den samling som innehåller datorerna i Server gruppen och klickar sedan på **Egenskaper**.  
 
@@ -325,9 +325,9 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 #### <a name="to-deploy-software-updates-to-the-server-group-and-monitor-status"></a>Distribuera program uppdateringar till Server gruppen och övervaka status  
 
-1.  [Distribuera program uppdateringar](https://technet.microsoft.com/library/gg712304.aspx) till Server grupps samlingen.  
+1.  [Distribuera program uppdateringar](../../sum/deploy-use/deploy-software-updates.md) till Server grupps samlingen.  
 
-2.  [Övervaka program uppdaterings distributionen](https://technet.microsoft.com/library/gg712304.aspx). Förutom standardvyerna för övervakning av program uppdateringar visas en ny tillstånds Beskrivning när en klient väntar på att program uppdateringarna ska installeras. **Väntar på Lås** visas för det nya läget.  
+2.  [Övervaka program uppdaterings distributionen](../../sum/deploy-use/monitor-software-updates.md). Förutom standardvyerna för övervakning av program uppdateringar visas en ny tillstånds Beskrivning när en klient väntar på att program uppdateringarna ska installeras. **Väntar på Lås** visas för det nya läget.  
 
 #### <a name="to-clear-the-deployment-locks-for-computers-in-a-server-group"></a>Så här tar du bort distributions lås för datorer i en Server grupp  
 
@@ -366,7 +366,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 ##### <a name="onboard-devices-for-microsoft-defender-atp"></a>Onboard-enheter för Microsoft Defender ATP  
 
-1. I Configuration Manager-konsolen navigerar **du till gångar och efterlevnad** > **Översikt** > **Endpoint Protection** > **Windows Defender ATP-principer** och klickar på **skapa Windows Defender ATP-princip**. Guiden Microsoft Defender ATP-princip öppnas.  
+1. I Configuration Manager-konsolen navigerar du **till gångar och efterlevnad**-  >  **Översikt**  >  **Endpoint Protection**  >  **Windows Defender ATP-principer** och klickar på **skapa Windows Defender ATP-princip**. Guiden Microsoft Defender ATP-princip öppnas.  
 
 2. Ange **namn** och **Beskrivning** för Microsoft Defender ATP-principen och välj **onboarding**. Klicka på Nästa.  
 
@@ -386,7 +386,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 ##### <a name="monitor-microsoft-defender-atp"></a>Övervaka Microsoft Defender ATP  
 
-1.  I Configuration Manager-konsolen, navigerar du till **övervakning** > **Översikt** > **säkerhet** och klickar sedan på **Windows Defender ATP**.  
+1.  I Configuration Manager-konsolen, navigerar du till **övervakning**  >  **Översikt**  >  **säkerhet** och klickar sedan på **Windows Defender ATP**.  
 
 2.  Granska instrument panelen för Microsoft Defender Avancerat skydd.  
 
@@ -408,7 +408,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 ### <a name="enable-health-attestation-for-on-premises-devices"></a>Aktivera hälsoattestering för lokala enheter  
  I 1605 har vi åtgärdat några buggar som upptäckts i 1604 Technical Preview.  Konfigurera tjänsten för lokal hälsoattestering med hjälp av inställningarna för klient agenten för att testa den.  
 
-1.  I Configuration Manager-konsolen navigerar du till **Administration** > **Översikt** > **klient inställningar**och ställer sedan in **Använd tjänsten för lokal hälsoattestering** på **Ja**.  
+1.  I Configuration Manager-konsolen navigerar du till **Administration**  >  **Översikt**  >  **klient inställningar**och ställer sedan in **Använd tjänsten för lokal hälsoattestering** på **Ja**.  
 
 2.  Ange **URL till lokal hälsoattesteringstjänst**och klicka sedan på **OK**.  
 
@@ -429,7 +429,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 ##### <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>Fördeklarera företagsägda enheter med IMEI- eller iOS-serienummer  
 
-1. I Configuration Manager-konsolen går du **till till gångar och efterlevnad** > ,**Översikt** > **alla företagsägda** > enheter**fördeklarerade enheter**och klickar sedan på **skapa fördeklarerade enheter**. Guiden för fördeklarerade enheter öppnas.  
+1. I Configuration Manager-konsolen går du **till till gångar och efterlevnad**,  >  **Översikt**  >  **alla företagsägda**enheter  >  **fördeklarerade enheter**och klickar sedan på **skapa fördeklarerade enheter**. Guiden för fördeklarerade enheter öppnas.  
 
 2. Ange hur du vill lägga till enhets information:  
 

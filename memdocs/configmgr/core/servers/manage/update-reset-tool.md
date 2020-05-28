@@ -30,14 +30,14 @@ Använd det här verktyget när en [uppdatering i konsolen](install-in-console-u
 
 När du kör verktyget körs det mot den uppdatering som du anger. Som standard tar verktyget inte bort installerade eller nedladdade uppdateringar.  
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 Det konto som du använder för att köra verktyget kräver följande behörigheter:
 - **Läs** -och **Skriv** behörighet till plats databasen för den centrala administrations platsen och till varje primär plats i hierarkin. Om du vill ange dessa behörigheter kan du lägga till användar kontot som medlem i **db_datawriter** och **db_datareader** [fasta databas roller](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) i Configuration Manager databasen för varje plats. Verktyget samverkar inte med sekundära platser.
 - **Lokal administratör** på platsen på den översta nivån i hierarkin.
 - **Lokal administratör** på den dator som är värd för tjänst anslutnings punkten.
 
 Du behöver GUID för det uppdaterings paket som du vill återställa. Hämta GUID:
-  1.   I-konsolen går du till **Administration** > **uppdateringar och underhåll**.
+  1.   I-konsolen går du till **Administration**  >  **uppdateringar och underhåll**.
   2.   I visningsfönstret högerklickar du på rubriken för en av kolumnerna (t. ex. **tillstånd**) och väljer sedan **paket-GUID** för att lägga till kolumnen i visningen.
   3.   Kolumnen visar nu GUID för uppdaterings paketet.
 
@@ -65,13 +65,13 @@ När verktyget har körts:
 
 |                        Parameter                         |                                                       Beskrivning                                                        |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| **-S &lt;FQDN för SQL Server på platsen på den översta nivån>** | *Obligatoriskt* <br> Ange det fullständiga domän namnet för SQL Server som är värd för plats databasen för platsen på den översta nivån i hierarkin. |
-|                **-D &lt;databas namn>**                 |                          *Obligatoriskt* <br> Ange namnet på databasen på platsen på den översta nivån.                          |
-|                 **-P &lt;paket-GUID>**                 |                        *Obligatoriskt* <br> Ange GUID för det uppdaterings paket som du vill återställa.                        |
-|           **-I &lt;SQL Server instans namn>**           |                    *Valfritt* <br> Identifiera instansen av SQL Server som är värd för plats databasen.                     |
+| **-S &lt; FQDN för SQL Server på platsen på den översta nivån>** | *Obligatoriskt* <br> Ange det fullständiga domän namnet för SQL Server som är värd för plats databasen för platsen på den översta nivån i hierarkin. |
+|                **-D &lt; databas namn>**                 |                          *Obligatoriskt* <br> Ange namnet på databasen på platsen på den översta nivån.                          |
+|                 **-P &lt; paket-GUID>**                 |                        *Obligatoriskt* <br> Ange GUID för det uppdaterings paket som du vill återställa.                        |
+|           **-I &lt; SQL Server instans namn>**           |                    *Valfritt* <br> Identifiera instansen av SQL Server som är värd för plats databasen.                     |
 |                       **-FDELETE**                       |                       *Valfritt* <br> Framtvinga borttagning av ett uppdaterings paket som har hämtats.                        |
 
-**Fler**  
+**Exempel:**  
 I ett typiskt scenario vill du återställa en uppdatering som har hämtnings problem. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset. exe-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
 I ett mer extrema scenario vill du framtvinga borttagning av problem med uppdaterings paketet. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset. exe-FDELETE-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

@@ -2,7 +2,7 @@
 title: Dokumentation om konsol
 titleSuffix: Configuration Manager
 description: Den här artikeln visas endast i Configuration Manager-konsolen.
-ms.date: 04/23/2020
+ms.date: 05/11/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: cd5c03b9b05bff253a93466eb27700685faea055
-ms.sourcegitcommit: 2871a17e43b2625a5850a41a9aff447c8ca44820
+ms.openlocfilehash: 678f19d4ec69bea2bc5b3863e3e2a8332c10f3be
+ms.sourcegitcommit: 5d32dd481e2a944465755ce74e14c835cce2cd1c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82126052"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83551612"
 ---
 <!-- 
 - Feature 1357546
@@ -27,7 +27,7 @@ ms.locfileid: "82126052"
 
 # <a name="microsoft-endpoint-configuration-manager-documentation"></a>Dokumentation om Microsoft Endpoint Configuration Manager
 
-*Senaste uppdatering: 23 april 2020*
+*Senaste uppdatering: 11 maj 2020*
 
 Det här innehållet kan hjälpa dig att lära och stödja Configuration Manager.
 
@@ -55,22 +55,22 @@ En granskad lista över viktiga artiklar.
 
 ## <a name="trending"></a>Populära
 
-De populäraste artiklarna mellan 1 mars och 30 mars 2020.
+De populäraste artiklarna mellan 1 april och 30 april 2020.
 
 | Sid visningar | Titel |
 |------------|-------|
-| 22659 | [Planera för en molnhanteringsgateway](https://docs.microsoft.com/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) |
-| 16797 | [Loggfilsreferens](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/log-files) |
-| 16142 | [Portar som används för anslutningar](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/ports) |
-| 15907 | [Användarhandbok för Software Center](https://docs.microsoft.com/configmgr/core/understand/software-center) |
-| 14667 | [Uppdateringar och service](https://docs.microsoft.com/configmgr/core/servers/manage/updates) |
-| 14455 | [Aktivera Transport Layer Security (TLS) 1,2 – Översikt](https://docs.microsoft.com/configmgr/core/plan-design/security/enable-tls-1-2) |
-| 12292 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
-| 12062 | [Samhantering för Windows 10-enheter](https://docs.microsoft.com/configmgr/comanage/overview) |
-| 11741 | [Vad är Configuration Manager?](https://docs.microsoft.com/configmgr/core/understand/introduction) |
-| 11282 | [Nyheter i version 1910](https://docs.microsoft.com/configmgr/core/plan-design/changes/whats-new-in-version-1910) |
+| 37071 | [Planera för en molnhanteringsgateway](https://docs.microsoft.com/mem/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) |
+| 19105 | [Loggfilsreferens](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/log-files) |
+| 17942 | [Portar som används för anslutningar](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/ports) |
+| 15564 | [Uppdateringar och service](https://docs.microsoft.com/mem/configmgr/core/servers/manage/updates) |
+| 15389 | [Aktivera Transport Layer Security (TLS) 1,2 – Översikt](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2) |
+| 15316 | [Samhantering för Windows 10-enheter](https://docs.microsoft.com/mem/configmgr/comanage/overview) |
+| 15229 | [Användarhandbok för Software Center](https://docs.microsoft.com/mem/configmgr/core/understand/software-center) |
+| 14978 | [Aktivera Transport Layer Security (TLS) 1,2 på klienter](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2-client) |
+| 13522 | [Desktop Analytics](https://docs.microsoft.com/mem/configmgr/desktop-analytics/overview) |
+| 13017 | [Klientinställningar](https://docs.microsoft.com/mem/configmgr/core/clients/deploy/about-client-settings) |
 
-Sidan [Configuration Manager Hub](https://docs.microsoft.com/mem/configmgr/) fick 36 258 sid visningar under den här tids perioden.
+Sidan [Configuration Manager Hub](https://docs.microsoft.com/mem/configmgr/) fick 41 479 sid visningar under den här tids perioden.
 
 ## <a name="recently-updated"></a>Nyligen uppdaterad
 
@@ -78,15 +78,16 @@ Artiklar med en senaste och betydande uppdatering.
 
 | Senast granskad | Titel |
 |---------------|-------|
-| 3/30/2020 | [Referens för underhållsaktivitet](https://docs.microsoft.com/configmgr/core/servers/manage/reference-for-maintenance-tasks) |
-| 3/30/2020 | [Hantera inställningar för programuppdateringar](https://docs.microsoft.com/configmgr/sum/get-started/manage-settings-for-software-updates) |
-| 3/25/2020 | [Endpoint Protection principer för skadlig kod](https://docs.microsoft.com/configmgr/protect/deploy-use/endpoint-antimalware-policies) |
-| 2020-03-23 | [Windows Autopilot för befintliga enheter](https://docs.microsoft.com/configmgr/osd/deploy-use/windows-autopilot-for-existing-devices) |
-| 2020-03-12 | [Så här skapar du distributions planer](https://docs.microsoft.com/configmgr/desktop-analytics/create-deployment-plans) |
-| 2020-03-12 | [Distribuera till pilot](https://docs.microsoft.com/configmgr/desktop-analytics/deploy-pilot) |
-| 2020-03-12 | [Nyheter i Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/whats-new) |
-| 3/3/2020 | [Utvärdering av kompatibilitet](https://docs.microsoft.com/configmgr/desktop-analytics/compat-assessment) |
-| 3/3/2020 | [Desktop Analytics](https://docs.microsoft.com/configmgr/desktop-analytics/overview) |
+| 2020-04-30 | [Teknisk för hands version 2004](https://docs.microsoft.com/mem/configmgr/core/get-started/2020/technical-preview-2004) |
+| 4/29/2020 | [Tokenbaserad autentisering för CMG](https://docs.microsoft.com/mem/configmgr/core/clients/deploy/deploy-clients-cmg-token) |
+| 4/28/2020 | [Orchestration-grupper](https://docs.microsoft.com/mem/configmgr/sum/deploy-use/orchestration-groups) |
+| 2020-04-15 | [Process för program godkännande](https://docs.microsoft.com/mem/configmgr/develop/apps/application-approval-process) |
+| 2020-04-15 | [Registrera enheter i Skriv bords analys](https://docs.microsoft.com/mem/configmgr/desktop-analytics/enroll-devices) |
+| 4/10/2020 | [Microsoft Endpoint Manager-klient anslutning](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions) |
+| 4/8/2020 | [Integrera med Power BI-rapportserver](https://docs.microsoft.com/mem/configmgr/core/servers/manage/powerbi-report-server) |
+| 4/8/2020 | [Viktig information](https://docs.microsoft.com/mem/configmgr/core/servers/deploy/install/release-notes) |
+| 4/1/2020 | [Vad är administrations tjänsten?](https://docs.microsoft.com/mem/configmgr/develop/adminservice/overview) |
+| 4/1/2020 | [Nyheter i version 2002](https://docs.microsoft.com/mem/configmgr/core/plan-design/changes/whats-new-in-version-2002) |
 
 ## <a name="troubleshooting-articles"></a>Felsökningsartiklar
 
@@ -106,11 +107,12 @@ Guidad genom gång för att hjälpa till med fel sökning Configuration Manager-
 
 ## <a name="new-and-updated-support-articles"></a>Nya och uppdaterade support artiklar
 
-Support artiklar som är nya eller uppdaterade mellan 21 februari och 19 mars 2020.
+Support artiklar som är nya eller uppdaterade mellan 20 mars och 15 maj 2020.
 
-- [KB 4552430 synkronisering av uppdaterings kategori från tredje part återställs till standardvärdet i Configuration Manager](https://support.microsoft.com/help/4552430)
-- [KB 4551013 reviderade uppdateringar från tredje part går inte att hämta i Configuration Manager](https://support.microsoft.com/help/4551013)
-- [KB 4552181 innehålls distributions ficka i Configuration Manager aktuell gren, version 1910](https://support.microsoft.com/help/4552181)
-- [KB 4550023 en Configuration Manager uppgradering på plats inte fortsätter efter en återställning av Windows 10-uppgradering på plats](https://support.microsoft.com/help/4550023)
+- [Det går inte att skapa ett Microsoft Edge-program i KB 4561494 i Configuration Manager](https://support.microsoft.com/help/4561494)
+- [KB 4551059-fjärrConfiguration Manager-konsolen låser sig i 20 sekunder var 10: e minut](https://support.microsoft.com/help/4551059)
+- [KB 4556203 Sammanfattning av ändringar i Microsoft-slutpunkt Configuration Manager aktuell gren, version 2002](https://support.microsoft.com/help/4556203)
+- [KB 4553501-uppdatering för Microsoft Endpoint Configuration Manager version 2002, tidig uppdaterings ring](https://support.microsoft.com/help/4553501)
+- [KB 4561945 "den underliggande anslutningen stängdes" visas när tjänst anslutnings verktyget laddar ned filen ConfigMgr. AdminUIContent. cab](https://support.microsoft.com/help/4561945)
 
 Information om hur du prenumererar på atom-eller RSS-meddelanden om nya Configuration Manager Support artiklar finns i [support innehålls uppdateringar](https://support.microsoft.com/help/4089498/) och välj **Microsoft Endpoint Configuration Manager**.  

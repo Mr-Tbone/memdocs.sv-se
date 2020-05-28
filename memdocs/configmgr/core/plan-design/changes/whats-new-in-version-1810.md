@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6a9770dca209669659abf6e4fc9c23d5e6972981
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 2a3b322f868c5c203114de4d974ba6682272c5d7
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82073559"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906255"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Vad är nytt i version 1810 av Configuration Manager aktuella grenen
 
@@ -43,7 +43,7 @@ Läs om support ändringar innan de implementeras i [borttagna och föråldrade 
 
 Från den 14 augusti 2018 är funktionen för hantering av hybrid mobila enheter inaktuell. Mer information finns i [vad hände med hybrid MDM](../../../mdm/understand/what-happened-to-hybrid.md).<!--Intune feature 2683117-->  
 
-Stöd för System Center Endpoint Protection (SCEP) för Mac och Linux (alla versioner) upphör den 31 december 2018. Tillgänglighet för nya virus definitioner för SCEP för Mac och SCEP för Linux kan komma att upphöra efter Supportens slut. Mer information finns i [blogg inlägget End of support](https://go.microsoft.com/fwlink/?linkid=870182).
+Stöd för System Center Endpoint Protection (SCEP) för Mac och Linux (alla versioner) upphör den 31 december 2018. Tillgänglighet för nya virus definitioner för SCEP för Mac och SCEP för Linux kan komma att upphöra efter Supportens slut. Mer information finns i [blogg inlägget End of support](https://techcommunity.microsoft.com/t5/configuration-manager-blog/end-of-support-for-scep-for-mac-and-scep-for-linux-on-december/ba-p/286257).
 
 Klassiska tjänst distributioner i Azure är nu föråldrade i Configuration Manager. Börja använda Azure Resource Manager distributioner för Cloud Management Gateway och moln distributions platsen. Mer information finns i [plan for CMG](../../clients/manage/cmg/plan-cloud-management-gateway.md#azure-resource-manager).
 
@@ -435,7 +435,7 @@ Följande samlade uppdateringar (4488598) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Titel | Date | I-konsolen |
+| ID | Titel | Datum | I-konsolen |
 |---------|---------|---------|---------|
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
 | [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Ja |

@@ -10,12 +10,12 @@ ms.assetid: 97e23075-549c-4e45-ab1e-0671027edacf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c7ad4e96d9afba7e52d2ff2e5dd3f4f6be0b9a98
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 2db1a719aaf1cb79973f1af8e2de3c1bbb91d605
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078710"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83879095"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Vad är nytt i version 1906 av Configuration Manager aktuella grenen
 
@@ -186,7 +186,7 @@ Mer information finns i [instrument panelen för klient data källor](../../serv
 ### <a name="use-your-distribution-point-as-an-in-network-cache-server-for-delivery-optimization"></a>Använd distributions platsen som en server för nätverks-cache för leverans optimering
 
 <!--3555764-->
-Nu kan du installera DOINC-Server (Delivery Optimization in-Network cache) på dina distributions platser. Genom att cachelagra det här innehållet lokalt kan dina klienter dra nytta av leverans optimerings funktionen, men du kan skydda WAN-länkar.
+Nu kan du installera leverans optimering i-Network cache server på dina distributions platser. Genom att cachelagra det här innehållet lokalt kan dina klienter dra nytta av leverans optimerings funktionen, men du kan skydda WAN-länkar.
 
 Den här cache-servern fungerar som en transparent cache på begäran för innehåll som hämtas av leverans optimering. Använd klient inställningar för att kontrol lera att den här servern endast erbjuds till medlemmar i den lokala Configuration Managers gränser gruppen.
 
@@ -306,7 +306,7 @@ Den här versionen innehåller följande förbättringar av appens godkännanden
 
 - Det finns en ny WMI-metod som är **DeleteInstance** att ta bort en begäran om godkännande av appen. Den här åtgärden avinstallerar inte appen på enheten. Om den inte redan är installerad kan användaren inte installera appen från Software Center.
 
-- Anropa **CreateApprovedRequest** -API: et för att skapa en förauktoriserad begäran om en app på en enhet. Om du vill förhindra att appen installeras automatiskt på klienten anger du **AutoInstall** parametern för automatisk installation `FALSE`till. Användaren ser appen i Software Center, men installeras inte automatiskt.
+- Anropa **CreateApprovedRequest** -API: et för att skapa en förauktoriserad begäran om en app på en enhet. Om du vill förhindra att appen installeras automatiskt på klienten anger du parametern för automatisk **installation** till `FALSE` . Användaren ser appen i Software Center, men installeras inte automatiskt.
 
 Mer information finns i [godkänna program](../../../apps/deploy-use/app-approval.md).
 
@@ -501,9 +501,9 @@ Nu kan du granska efterlevnads statistik för att se vilka enheter som kräver e
 
 Hyperlänken för **obligatorisk vy** är tillgänglig på följande platser:
 
-   - **Program varu bibliotek** > **program uppdateringar** > **alla program uppdateringar**
-   - **Program varu bibliotek** > **Windows 10 Underhåll** > **alla Windows 10-uppdateringar**
-   - **Program varu bibliotek** > **kontor 365 klient hantering** > **Office 365 uppdateringar**
+   - **Program varu bibliotek**  >  **Program uppdateringar**  >  **Alla program uppdateringar**
+   - **Program varu bibliotek**  >  **Windows 10-Underhåll**  >  **Alla Windows 10-uppdateringar**
+   - **Program varu bibliotek**  >  **Office 365-klient hantering**  >  **Office 365-uppdateringar**
 
 Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md#drill-through-required-updates), [hantera Windows som en tjänst](../../../osd/deploy-use/manage-windows-as-a-service.md#drill-through-required-updates)och [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#drill-through-required-office-365-updates).
 
@@ -562,7 +562,7 @@ Gå till noden **enheter** på arbets ytan **till gångar och efterlevnad** och 
 
 > [!Note]  
 > - Den här fliken är för närvarande inte tillgänglig från en undernoden enheter under noden **enhets samlingar** . Till exempel när du väljer alternativet för att **Visa medlemmar** i en samling.
-> - Den här fliken kanske inte är ifylld som förväntat för vissa användare. Om du vill se en fullständig lista över samlingar som en enhet tillhör måste du ha säkerhets rollen **Fullständig administratör** . Detta är ett känt problem. <!--5107309-->
+> - Den här fliken kanske inte är ifylld som förväntat för vissa användare. Om du vill se en fullständig lista över samlingar som en enhet tillhör måste du ha säkerhets rollen **Fullständig administratör** . Detta är ett känt fel. <!--5107309-->
 
 ### <a name="task-sequences-tab-in-applications-node"></a>Fliken aktivitetssekvenser i noden program
 

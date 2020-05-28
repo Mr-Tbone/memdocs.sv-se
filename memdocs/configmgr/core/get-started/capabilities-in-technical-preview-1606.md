@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 05e7bbe6373ed91de5a2bb8e99a8425e733274f2
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 0513c1908b1360a50653931dda57e5d148055240
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721621"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905680"
 ---
 # <a name="capabilities-in-technical-preview-1606-for-configuration-manager"></a>Funktioner i Technical Preview 1606 för Configuration Manager
 
@@ -50,7 +50,7 @@ Du kan skapa enhets kategorier, som kan användas för att automatiskt placera e
 
 ### <a name="associate-a-collection-with-a-device-category"></a>Koppla en samling till en enhets kategori
 När du associerar en samling med en enhets kategori kommer alla enheter i den kategori som du anger att läggas till i samlingen.
-1.  I dialog rutan **Egenskaper** för en enhets samling klickar du på **Lägg till regel** > **enhet kategori regel**.
+1.  I dialog rutan **Egenskaper** för en enhets samling klickar du på **Lägg till regel**  >  **enhet kategori regel**.
 2.  I dialog rutan **Skapa regel för medlemskap i enhets kategori** väljer du den kategori som ska tillämpas på alla enheter i samlingen.
 3.  Stäng dialog rutan **Skapa regel för medlemskap i enhets kategori** och dialog rutan Egenskaper för samling.
 
@@ -80,9 +80,9 @@ Liknande alternativ har lagts till i guiden distribution av program uppdateringa
 
 Device Guard är en funktion i Windows 10 som använder maskinvaru-och program varu funktioner för att strikt styra vad som får köras på enheten.
 
-Du kan läsa en detaljerad översikt över vad Device Guard gör och hur det fungerar i [den här TechNet-artikeln](https://technet.microsoft.com/itpro/windows/whats-new/device-guard-overview).
+Mer information finns i [Introduktion till Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
 
-I den här versionen kan Configuration Manager samverka med Device Guard och [Windows AppLocker](https://technet.microsoft.com/library/dd723678(v=ws.10).aspx) så att körbara filer och DLL-filer som distribueras med Configuration Manager automatiskt är betrodda när de kommer från ett hanterat installations program, vilket innebär att de kommer att kunna köras på mål enheten och annan program vara kommer inte att kunna köras om det uttryckligen tillåts att köras av andra AppLocker-regler.  
+I den här versionen kan Configuration Manager samverka med Device Guard och [Windows AppLocker](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd723678(v=ws.10)) så att körbara filer och DLL-filer som distribueras med Configuration Manager automatiskt är betrodda när de kommer från ett hanterat installations program, vilket innebär att de kommer att kunna köras på mål enheten och annan program vara kommer inte att kunna köras om det uttryckligen tillåts att köras av andra AppLocker-regler.  
 
 Den här funktionen kan för närvarande inte konfigureras från Configuration Manager-konsolen. Om du vill konfigurera principen måste du konfigurera en register nyckel på varje klient och konfigurera Windows-tjänster på klienten.
 När detta är färdigt konfigurerar du AppLocker-principagenten. När du har konfigurerat princip filen kan du distribuera den till valfri kompatibel klient enhet.
@@ -93,24 +93,22 @@ Precis som alla AppLocker-principer kan principer med hanterade installations re
 - Gransknings läge – program anteckningen hindras från att köras, men alla program som skulle ha blockerats rapporteras i en loggfil (detta stöds i en senare version av Configuration Manager).
 - Tvångs aktivering – program blockeras från att köras.
 
-Mer information om hur du använder Device Guard med Configuration Manager finns på [bloggen för Enterprise Mobility and Security](https://blogs.technet.microsoft.com/enterprisemobility/2016/06/20/configmgr-as-a-managed-installer-with-win10).
+Mer information finns i följande artiklar:
 
-Mer läsning:
+- [Introduktion till Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 
-- [Introduktion till Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)
-- [Device Guard-certifiering och efterlevnad](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
-- [Distributions guide för Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
+- [Planera och komma igång med distributions processen för Windows Defender program kontroll](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)
 
   ##  <a name="multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a>Flera enhets hanterings platser för lokal hantering av mobila enheter  
-  Med teknisk för hands version 1606\-, lokal hantering av mobila enheter (MDM) har stöd för en ny funktion i Windows 10-uppdaterings perioden som automatiskt konfigurerar en registrerad enhet att ha mer än en enhets hanterings plats tillgänglig för användning. Den här funktionen gör det möjligt för enheten att återgå till en annan enhets hanterings plats när den normala användningen inte är tillgänglig. Den här funktionen fungerar bara för datorer där uppdatering av Windows 10-årsdag är installerat.  
+  Med teknisk för hands version 1606, \- lokal hantering av mobila enheter (MDM) har stöd för en ny funktion i Windows 10-uppdaterings perioden som automatiskt konfigurerar en registrerad enhet att ha mer än en enhets hanterings plats tillgänglig för användning. Den här funktionen gör det möjligt för enheten att återgå till en annan enhets hanterings plats när den normala användningen inte är tillgänglig. Den här funktionen fungerar bara för datorer där uppdatering av Windows 10-årsdag är installerat.  
 
 ### <a name="try-it-out"></a>prova!  
 
 1.  Installera mer än en enhets hanterings plats i hierarkin.  
 
-2.  Registrera en uppdaterings enhet för Windows 10-\-årsdag för lokal hantering av mobila enheter.  
+2.  Registrera en uppdaterings enhet för Windows 10-årsdag för \- lokal hantering av mobila enheter.  
 
-Information om hur du förbereder din webbplats och registrerar enheter för\-lokal hantering av mobila enheter finns i [Hantera mobila enheter med lokal infrastruktur](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
+Information om hur du förbereder din webbplats och registrerar enheter för \- lokal hantering av mobila enheter finns i [Hantera mobila enheter med lokal infrastruktur](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
 ## <a name="cloud-proxy-service-for-managing-clients-on-the-internet"></a><a name="cloud_proxy"></a>Molnbaserad proxy-tjänst för att hantera klienter på Internet
 
@@ -221,10 +219,10 @@ När klienterna har den nya plats informationen för tjänsten Cloud proxy kan d
 
 Från och med den tekniska för hands versionen 1606 kan du använda en Configuration Manager klient agent inställning, i stället för grup princip, för att låta Office 365-klienter ta emot uppdateringar från Configuration Manager. När du har konfigurerat den här inställningen och distribuerat Office 365-uppdateringar kommunicerar Configuration Manager klient agenten med Office 365-klient agenten att hämta Office 365-uppdateringar från en distributions plats och installera dem. Configuration Manager också ta inventering av klient agent inställningen.
 
-Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](https://technet.microsoft.com/library/mt741983.aspx).
+Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 ### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Ange Configuration Manager klient inställningen för att hantera Office 365-klient agenten
-1.  I Configuration Manager-konsolen klickar du på **Administration** > **Översikt** > **klient inställningar**.
+1.  I Configuration Manager-konsolen klickar du på **Administration**  >  **Översikt**  >  **klient inställningar**.
 2. Öppna lämpliga enhets inställningar för att aktivera klient agenten. Mer information om standard-och anpassade klient inställningar finns i [Konfigurera klient inställningar](../../core/clients/deploy/configure-client-settings.md).
 3. Klicka på **program uppdateringar** och välj **Ja** för inställningen **aktivera hantering av klient agenten för Office 365** .  
 

@@ -10,12 +10,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 96594731ef64577d30267376d3bcb93268e59a9e
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: ebd847e44c1acd87c316514ec9919f8a6690a647
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075021"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428576"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuera BitLocker-hantering
 
@@ -77,7 +77,7 @@ När du skapar och distribuerar den här principen aktiverar Configuration Manag
 
     - **Välj skydd för operativ system enhet**: Konfigurera den att använda en TPM och PIN-kod eller bara TPM.
 
-    - **Konfigurera minimilängd för PIN-kod för start**: om du behöver en PIN-kod är det här värdet den kortaste längd som användaren kan ange. Användaren anger denna PIN-kod när datorn startar för att låsa upp enheten. Som standard är `4`minimilängd för PIN-kod.
+    - **Konfigurera minimilängd för PIN-kod för start**: om du behöver en PIN-kod är det här värdet den kortaste längd som användaren kan ange. Användaren anger denna PIN-kod när datorn startar för att låsa upp enheten. Som standard är minimilängd för PIN-kod `4` .
 
     Mer information om dessa och andra inställningar på den här sidan finns i [Inställningar referens-OS-enhet](../../tech-ref/bitlocker/settings.md#os-drive).
 
@@ -152,7 +152,7 @@ Använd följande loggar för att övervaka och felsöka:
 
 - MBAM-händelse logg: i Windows Loggboken bläddrar du till program och tjänster > Microsoft > Windows > MBAM.  Mer information finns i [om händelse](../../tech-ref/bitlocker/about-event-logs.md) loggar för BitLocker och [klient händelse loggar](../../tech-ref/bitlocker/client-event-logs.md).
 
-- **BitlockerMangementHandler. log** i klient loggar Sök väg `%WINDIR%\CCM\Logs` , som standard
+- **BitlockerMangementHandler. log** i klient loggar Sök väg, `%WINDIR%\CCM\Logs` som standard
 
 ### <a name="management-point-logs-recovery-service"></a>Hanterings plats loggar (återställnings tjänst)
 
@@ -205,7 +205,7 @@ När du byter krypterings hanterings utfärdare bör du planera för [omkrypteri
 
 Mer information om hur du hanterar BitLocker med Intune finns i följande artiklar:
 
-- [Använda enhets kryptering med Intune](../../../../intune/protect/encrypt-devices.md#bitlocker-encryption-for-windows-10)
+- [Använda enhets kryptering med Intune](../../../../intune/protect/encrypt-devices.md)
 - [Felsöka BitLocker-principer i Microsoft Intune](../../../../intune/protect/troubleshoot-bitlocker-policies.md)
 
 ## <a name="next-steps"></a>Nästa steg

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: 138ff268f42dae1c15e11b34c92e6c7a3044705b
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: a870d2bf18b9e7f064e914f450aee0f5e3e2e545
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078455"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906706"
 ---
 # <a name="prerequisites-for-software-updates-in-configuration-manager"></a>Krav för program uppdateringar i Configuration Manager
 
@@ -83,7 +83,7 @@ Två uppdateringar krävs för att synkronisera **uppgraderings** klassificering
 
 - Du måste installera [KB 3095113](https://support.microsoft.com/kb/3095113), som lanserades i oktober 2015, på dina program uppdaterings platser och plats servrar innan du synkroniserar **uppgraderingar** -klassificeringen.
   - Den här uppdateringen aktiverar klassificeringen **uppgraderingar** .
-- För att kunna underhålla Windows 10 version 1607 och senare måste du installera och konfigurera [KB 3159706](https://support.microsoft.com/en-us/help/3159706). KB 3159706 släpptes i maj 2016.
+- För att kunna underhålla Windows 10 version 1607 och senare måste du installera och konfigurera [KB 3159706](https://support.microsoft.com/help/3159706). KB 3159706 släpptes i maj 2016.
   - Den här uppdateringen gör att WSUS kan dekryptera filerna som används för att uppgradera Windows 10 version 1607 och senare.
 
 >[!IMPORTANT]
@@ -95,7 +95,7 @@ Uppdateringarna och problemet som beskrivs i det här avsnittet gäller endast f
 
 ### <a name="historical-information-about-kb-3095113"></a>Historisk information om KB 3095113
 
- [KB 3095113](https://support.microsoft.com/kb/3095113) [släpptes som en snabb korrigering](https://blogs.technet.microsoft.com/wsus/2015/12/03/important-update-for-wsus-4-0-kb-3095113/) i oktober 2015 för att lägga till stöd för Windows 10-uppgraderingar i WSUS. Uppdateringen gör att WSUS kan synkronisera och distribuera uppdateringar i klassificeringen **uppgraderingar** för Windows 10.
+ [KB 3095113](https://support.microsoft.com/kb/3095113) [släpptes som en snabb korrigering](https://docs.microsoft.com/archive/blogs/wsus/important-update-for-wsus-4-0-kb-3095113) i oktober 2015 för att lägga till stöd för Windows 10-uppgraderingar i WSUS. Uppdateringen gör att WSUS kan synkronisera och distribuera uppdateringar i klassificeringen **uppgraderingar** för Windows 10.
 
 Om du synkroniserar eventuella uppgraderingar utan att först ha installerat [KB 3095113](https://support.microsoft.com/kb/3095113), fyller du i WSUS-databasen (SUSDB) med oanvändbara data. Dessa data måste rensas innan uppgraderingar kan distribueras korrekt. Windows 10-uppgraderingar i det här läget kan inte hämtas med hjälp av guiden hämta program uppdateringar.
 
@@ -115,15 +115,15 @@ ERROR: DownloadContentFiles() failed with hr=0x80073633
 # This log is truncated for readability.
 ```
 
-Historiskt sett, när dessa fel uppstod, löses de genom att göra en modifierad version av [lösnings stegen för WSUS](https://blogs.technet.microsoft.com/wsus/2016/01/29/how-to-delete-upgrades-in-wsus/). Eftersom de här stegen liknar lösningen för att inte utföra de manuella stegen som krävs efter installationen av KB 3159706 har vi kombinerat båda uppsättningarna med steg till en enda lösning i avsnittet nedan:
+Historiskt sett, när dessa fel uppstod, löses de genom att göra en modifierad version av [lösnings stegen för WSUS](https://docs.microsoft.com/archive/blogs/wsus/how-to-delete-upgrades-in-wsus). Eftersom de här stegen liknar lösningen för att inte utföra de manuella stegen som krävs efter installationen av KB 3159706 har vi kombinerat båda uppsättningarna med steg till en enda lösning i avsnittet nedan:
 
 - [För att återställa från synkronisering av uppgraderingar innan du installerar kb 3095113 eller kb 3159706](#bkmk_fix-upgrades).
 
 ### <a name="historical-information-about-kb-3159706"></a>Historisk information om KB 3159706
 
-KB 3148812 släpptes ursprungligen i april 2016 för att aktivera att WSUS ska dekryptera. ESD-filer som används för att uppgradera Windows 10-paket. [Kb 3148812 orsakade problem för vissa kunder](https://blogs.technet.microsoft.com/wsus/2016/05/05/the-long-term-fix-for-kb3148812-issues/) och ersattes med [KB 3159706](https://support.microsoft.com/en-us/help/3159706). KB 3159706 måste installeras på alla dina program uppdaterings platser och plats servrar innan du kan underhålla Windows 10-version 1607 och senare enheter. Problem kan dock uppstå om du inte inser att KB kräver följande manuella steg efter installationen:
+KB 3148812 släpptes ursprungligen i april 2016 för att aktivera att WSUS ska dekryptera. ESD-filer som används för att uppgradera Windows 10-paket. [Kb 3148812 orsakade problem för vissa kunder](https://docs.microsoft.com/archive/blogs/wsus/the-long-term-fix-for-kb3148812-issues) och ersattes med [KB 3159706](https://support.microsoft.com/help/3159706). KB 3159706 måste installeras på alla dina program uppdaterings platser och plats servrar innan du kan underhålla Windows 10-version 1607 och senare enheter. Problem kan dock uppstå om du inte inser att KB kräver följande manuella steg efter installationen:
 
-1. Kör `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing`en upphöjd kommando tolk.
+1. Kör en upphöjd kommando tolk `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing` .
 1. Starta om WSUS-tjänsten på alla WSUS-servrar.
 
 Om du inte inser att KB 3159706 hade manuella steg efter installationen, eller om du har synkroniserat i uppgraderingen för Windows 10 1607 innan du installerade KB 3159706, skulle du kunna köra problem med att ansluta till WSUS-konsolen och distribuera uppgraderingen. När en klient hämtade uppgraderings filen får den en [ **0xC1800118** -felkod](https://support.microsoft.com/help/3194588/0xc1800118-error-when-you-push-windows-10-version-1607-by-using-wsus).
@@ -143,7 +143,7 @@ Följ stegen nedan för att lösa både 0xc1800118-fel och "fel: ogiltig certifi
       Get-WsusClassification | Where-Object -FilterScript {$_.Classification.Title -Eq "Upgrades"} | Set-WsusClassification -Disable
       ```  
      - Om du delar WSUS-databasen mellan flera WSUS-servrar behöver du bara avmarkera **uppgraderingarna** en gång för varje databas.  
-1. Från en upphöjd kommando tolk på varje WSUS-server kör `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing`du:. Starta sedan om WSUS-tjänsten på alla WSUS-servrar.
+1. Från en upphöjd kommando tolk på varje WSUS-server kör du: `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing` . Starta sedan om WSUS-tjänsten på alla WSUS-servrar.
    -  WSUS placerar databasen i [enanvändarläge](https://docs.microsoft.com/sql/relational-databases/databases/set-a-database-to-single-user-mode) innan den kontrollerar för att se om servicen behövs. Underhållet körs eller körs inte utifrån resultatet av kontrollen. Databasen placeras sedan i läget för flera användare. 
    - Om du delar WSUS-databasen mellan flera WSUS-servrar behöver du bara utföra den här underhållet en gång för varje databas.
 1. Ta bort alla Windows 10-uppgraderingar från varje WSUS-databas med hjälp av PowerShell ISE som kör som administratör.
