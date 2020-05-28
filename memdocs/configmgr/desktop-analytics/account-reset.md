@@ -10,12 +10,13 @@ ms.assetid: 884d4864-950b-4139-b778-d5368e1f6ef2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ece2d2725b8485f55fdce7761098577485bc2d1
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: 29f108254e3201925917a0546dd96d36a19763b6
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722496"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268886"
 ---
 # <a name="how-to-reset-your-account"></a>Så här återställer du ditt konto
 
@@ -23,7 +24,7 @@ ms.locfileid: "81722496"
 
 Om du konfigurerar Desktop Analytics i din miljö, men vill börja om med onboarding och registrering, använder du den här processen för att återställa ditt konto.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Endast en **Global administratör** kan återställa kontot i Azure Portal.
 

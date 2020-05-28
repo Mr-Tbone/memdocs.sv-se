@@ -10,12 +10,12 @@ ms.assetid: 2285a953-6a86-4ed5-97dd-cd57b02bc1ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8d0968a61be4e450bb145b309f61de0d6c212549
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2b5bcbce659601e10f44f06af94eb939767a389a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713998"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906630"
 ---
 # <a name="prepare-to-deploy-client-software-to-macs"></a>Förbereda distribution av klient program vara till Mac
 
@@ -27,7 +27,7 @@ Följ dessa steg för att se till att du är redo att [distribuera Configuration
 
 ## <a name="mac-prerequisites"></a>Mac-krav
 
-Installations paketet för Mac-klienten levereras inte med Configuration Manager mediet. Hämta **klienter för ytterligare operativ system** från [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=525184).  
+Installations paketet för Mac-klienten levereras inte med Configuration Manager mediet. Hämta **klienter för ytterligare operativ system** från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47719).  
 
 En lista över versioner som stöds finns i [operativ system som stöds för klienter och enheter](../../plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mac-computers).
 

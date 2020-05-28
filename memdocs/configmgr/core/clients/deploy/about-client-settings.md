@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1435c1ab6be8c80178566ae9d354084fddebb22a
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: 127ed43fded6c66bc4395ae4d69a28ae8c9eddd5
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771356"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83877530"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Om klient inställningar i Configuration Manager
 
@@ -325,9 +325,9 @@ Om klienterna måste installera nödvändiga program uppdateringar vid distribut
 
 ### <a name="grace-period-for-enforcement-after-deployment-deadline-hours"></a>Respitperiod för tillämpning efter distributionens tids gräns (timmar)
 
-Om du vill ge användare mer tid för att installera nödvändiga program eller program uppdaterings distributioner utöver tids gränsen, ställer du in det här alternativet på **Ja**. Den här Grace-perioden är för en dator avstängd under en längre tid och användaren måste installera många program eller uppdaterings distributioner. Den här inställningen är till exempel användbar om en användare returnerar semestern och måste vänta en stund medan klienten installerar förfallna program distributioner.
+Ange ett värde för det här alternativet om du vill ge användare mer tid för att installera nödvändiga program eller program uppdaterings distributioner utanför tids gränsen. Den här Grace-perioden är för en dator avstängd under en längre tid och användaren måste installera många program eller uppdaterings distributioner. Den här inställningen är till exempel användbar om en användare returnerar semestern och måste vänta en stund medan klienten installerar förfallna program distributioner.
 
-Ange en respitperiod på 1 till 120 timmar. Använd den här inställningen tillsammans med distributions egenskapen **fördröjd tillämpning av distributionen enligt användar inställningar**. Mer information finns i [distribuera program](../../../apps/deploy-use/deploy-applications.md#delay-enforcement-with-a-grace-period).
+Ange en respitperiod på 0 till 120 timmar. Använd den här inställningen tillsammans med distributions egenskapen **fördröjd tillämpning av distributionen enligt användar inställningar**. Mer information finns i [distribuera program](../../../apps/deploy-use/deploy-applications.md#delay-enforcement-with-a-grace-period).
 
 
 ## <a name="computer-restart"></a>Omstart av dator
@@ -363,7 +363,7 @@ Du använder Configuration Manager gränser grupper för att definiera och regle
 
 ### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Använd Configuration Manager gränser grupper för grupp-ID för leverans optimering
 
-Välj **Ja** om du vill använda gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med det önskade innehållet.
+Välj **Ja** om du vill använda gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med det önskade innehållet. När du aktiverar den här inställningen anges även hämtnings läget för leverans optimering till grupp (2) på mål klienter.
 
 > [!Note]
 > Microsoft rekommenderar att klienten konfigurerar den här inställningen via lokal princip i stället för grup princip. Detta gör att gränserna för grupp identifieraren kan anges som leverans optimerings grupp identifierare på klienten. Mer information finns i avsnittet om [leverans optimering](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md#delivery-optimization).
@@ -509,13 +509,12 @@ Välj något av följande alternativ för den här inställningen:
 
     - Nödvändiga distributioner (om tidsgränsen för installationen uppnås)  
 
-    > [!IMPORTANT]  
-    > Klienten tillåter alltid programinstallationer från Software Center, oavsett inställningarna för avgiftsbelagd Internet anslutning.  
-
     Om klienten når data överförings gränsen för den avgiftsbelagda Internet anslutningen försöker klienten inte längre kommunicera med Configuration Manager-platser.  
 
 - **Blockera**: Configuration Manager klienten försöker inte kommunicera med Configuration Manager platser när den är på en avgiftsbelagd Internet-anslutning. Det här alternativet är standardinställningen.  
 
+> [!IMPORTANT]  
+> Klienten tillåter alltid programinstallationer från Software Center, oavsett inställningarna för avgiftsbelagd Internet anslutning. Om användaren begär en program varu installation medan enheten är i ett nätverk med datapriser, följer Software Center användarens avsikt.<!-- MEMDocs#285 -->
 
 
 ## <a name="power-management"></a>Energisparfunktioner  
@@ -777,9 +776,9 @@ Om du vill ange de typer av filer som ska inventeras väljer du **Ange typer**oc
 
 - Välj **nytt** om du vill lägga till en ny filtyp i lagret. Ange följande information i dialog rutan **Egenskaper för inventerade filer** :  
 
-    - **Namn**: Ange ett namn för den fil som du vill inventera. Använd en asterisk (`*`) som jokertecken för att representera valfri text sträng och ett frågetecken (`?`) för att representera ett enskilt tecken. Om du till exempel vill inventera alla filer med fil namns tillägget. doc anger du fil namnet `*.doc`.  
+    - **Namn**: Ange ett namn för den fil som du vill inventera. Använd en asterisk ( `*` ) som jokertecken för att representera valfri text sträng och ett frågetecken ( `?` ) för att representera ett enskilt tecken. Om du till exempel vill inventera alla filer med fil namns tillägget. doc anger du fil namnet `*.doc` .  
 
-    - **Plats**: Välj **Ange** för att öppna dialog rutan **Sök vägs egenskaper** . Konfigurera program varu inventering för att söka igenom alla klient hård diskar efter den angivna filen, söka i en angiven sökväg `C:\Folder`(till exempel) eller söka efter en angiven variabel (t `%windir%`. ex.). Du kan också söka i alla undermappar under den angivna sökvägen.  
+    - **Plats**: Välj **Ange** för att öppna dialog rutan **Sök vägs egenskaper** . Konfigurera program varu inventering för att söka igenom alla klient hård diskar efter den angivna filen, söka i en angiven sökväg (till exempel `C:\Folder` ) eller söka efter en angiven variabel (t `%windir%` . ex.). Du kan också söka i alla undermappar under den angivna sökvägen.  
 
     - **Exkludera krypterade och komprimerade filer**: när du väljer det här alternativet inventeras inte komprimerade eller krypterade filer.  
 
@@ -798,9 +797,9 @@ Om du vill samla in filer från klient datorer väljer du **Ange filer**och konf
 
 - Ange följande information i dialogrutan **Insamlade filegenskaper** :  
 
-    - **Namn**: Ange ett namn för den fil som du vill samla in. Använd en asterisk (`*`) som jokertecken för att representera valfri text sträng och ett frågetecken (`?`) för att representera ett enskilt tecken.  
+    - **Namn**: Ange ett namn för den fil som du vill samla in. Använd en asterisk ( `*` ) som jokertecken för att representera valfri text sträng och ett frågetecken ( `?` ) för att representera ett enskilt tecken.  
 
-    - **Plats**: Välj **Ange** för att öppna dialog rutan **Sök vägs egenskaper** . Konfigurera program varu inventering för att söka igenom alla klient hård diskar efter den fil som du vill samla in, söka i en angiven sökväg `C:\Folder`(till exempel) eller söka efter en angiven variabel (t `%windir%`. ex.). Du kan också söka i alla undermappar under den angivna sökvägen.  
+    - **Plats**: Välj **Ange** för att öppna dialog rutan **Sök vägs egenskaper** . Konfigurera program varu inventering för att söka igenom alla klient hård diskar efter den fil som du vill samla in, söka i en angiven sökväg (till exempel `C:\Folder` ) eller söka efter en angiven variabel (t `%windir%` . ex.). Du kan också söka i alla undermappar under den angivna sökvägen.  
 
     - **Exkludera krypterade och komprimerade filer**: när du väljer det här alternativet samlas komprimerade eller krypterade filer inte in.  
 
@@ -946,7 +945,7 @@ Den här klient inställningen ger följande alternativ:
 
 - **Låg**: du kan fortsätta att arbeta med enheten medan den laddas ned och uppdateras i bakgrunden. Den totala installations tiden är längre, men användarens avbrott är kortare. Du kan behöva öka uppdateringens maximala körnings tid för att undvika tids gräns när du använder det här alternativet.  
 
-    - `/Priority` Tar bort [kommando rads alternativet för installations programmet för Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från filen setupconfig. ini.
+    - Tar bort `/Priority` [kommando rads alternativet för installations programmet för Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från filen setupconfig. ini.
 
 
 ### <a name="enable-third-party-software-updates"></a>Aktivera program uppdateringar från tredje part

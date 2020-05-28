@@ -10,16 +10,17 @@ ms.assetid: e0db3311-2303-4013-a906-76b408172d3c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 29f063da47dc26789493b2a83ad8e0cfa6885270
-ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
+ms.reviewer: acabello
+ms.openlocfilehash: d1f18c135f200b2a9e40b970871c73a0d98893a2
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693297"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429827"
 ---
 # <a name="desktop-analytics-faq"></a>Vanliga frågor och svar om Desktop Analytics
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 ### <a name="can-i-use-cloud-enabled-analytics-with-intune-managed-devices"></a><a name="bkmk_intune"></a>Kan jag använda molnbaserad analys med Intune-hanterade enheter?
 
@@ -51,6 +52,10 @@ Ja, Använd följande process:
 
 - På fliken **stationär Analytics-anslutning** ändrar du **mål samlingen** eller hanterar de ytterligare samlingarna.
 
+<!-- 7130169 -->
+> [!Note]
+> Ta inte med fler än 20 samlingar i listan över ytterligare samlingar. Var försiktig med det totala antalet enheter i varje samling. Inkludera alltid din [globala pilot samling med och exkludera samlingar](deploy-pilot.md#bkmk_GlobalPilot).  
+
 > [!IMPORTANT]  
 > Configuration Manager använder en inställnings princip för att konfigurera enheter i mål samlingen. Den här principen inkluderar inställningar för diagnostikdata för att göra det möjligt för enheter att skicka data till Microsoft. Om du ändrar mål samlingen återställs inte inställnings principen på enheterna längre i mål samlingen. Om du inte vill att enheterna ska kunna skicka diagnostikdata konfigurerar du om [enheterna](account-close.md#reconfigure-clients).
 
@@ -64,7 +69,7 @@ Mer information finns i [Uppdatera en befintlig dator med en ny version av Windo
 
 ### <a name="can-i-change-from-bios-to-uefi-when-upgrading-windows"></a>Kan jag ändra från BIOS till UEFI vid uppgradering av Windows?
 
-Ja. Mer information finns i [konvertera från BIOS till UEFI under en uppgradering på plats](../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+Ja. Mer information finns i [konvertera från BIOS till UEFI under en uppgradering på plats](../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md#bkmk_ipu).
 
 ### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>Kan jag använda Desktop Analytics med Windows 10-LTSC?
 

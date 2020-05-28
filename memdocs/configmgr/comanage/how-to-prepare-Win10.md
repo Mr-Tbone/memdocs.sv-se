@@ -5,17 +5,17 @@ description: Lär dig hur du förbereder dina Windows 10 Internet-baserade enhet
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 04/24/2020
+ms.date: 05/14/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 59ca1006d8700e52b3f3fb703f8896ce9fa8b9b7
-ms.sourcegitcommit: 3ff33493c3f93bf06fdc942d30958a2a4ad03529
+ms.openlocfilehash: e6582599a02f4a8196ee739ca875df4d158a993e
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82137923"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427798"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Förbereda Internet-baserade enheter för samhantering
 
@@ -104,13 +104,13 @@ Mer information finns i [Egenskaper för klient installation](../core/clients/de
 
 ### <a name="create-the-app-in-intune"></a>Skapa appen i Intune
 
-1. Gå till [Azure Portal](https://portal.azure.com)och öppna Intune-sidan.  
+1. Gå till [administrations Center för Microsoft Endpoint Manager](https://endpoint.microsoft.com)och expandera sedan det vänstra navigerings fönstret.  
 
-2. Välj > **appar**för **klient program** > **Lägg till**.  
+2. Välj **appar**  >  **alla appar**  >  **Lägg till**.  
 
 3. Under **annan**väljer du **branschspecifika appar**.  
 
-4. Ladda upp filen **CCMSetup. msi** -appaket. Hitta filen i följande mapp på Configuration Manager plats Server: `<ConfigMgr installation directory>\bin\i386`.  
+4. Ladda upp filen **CCMSetup. msi** -appaket. Hitta filen i följande mapp på Configuration Manager plats Server: `<ConfigMgr installation directory>\bin\i386` .  
 
     > [!Tip]  
     > När du uppdaterar platsen, se till att du även uppdaterar den här appen i Intune.  

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ced1cc1347167451d4efb789b40746ff849710ee
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 9178b595ba67723c623979b4c29290e42fe5f6ac
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709966"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83877737"
 ---
 # <a name="technical-reference-for-the-package-conversion-manager-plug-in-configuration-xml"></a>Teknisk referens för konfigurations-XML för Package Conversion Manager-plugin
 
@@ -44,7 +44,10 @@ I följande tabell beskrivs XML-elementen i Configuration Manager konfigurations
 ## <a name="sample-configuration-xml"></a>Exempel på konfigurations-XML
 
 Det här avsnittet innehåller ett exempel på XML-element för Package Conversion Manager-konfiguration i Configuration Manager konfigurations filen **Microsoft. ConfigurationManagement. exe. config**. Som standard är filen i följande sökväg:  
-`C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManagement.exe.config`
+`C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\Microsoft.ConfigurationManagement.exe.config`
+
+> [!IMPORTANT]
+> Från och med version 1910 ändrades den här sökvägen till att använda `Microsoft Endpoint Manager` mappen. Se till att du inte använder en äldre version av filen som kan finnas i en annan mapp. 
 
 I exemplet finns elementen som är relaterade till paket konverterings hanteraren i följande element:`Microsoft.ConfigurationManagement.UserCentric.Workflow.Properties.Settings`
 

@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 2ae184400a3de0d7ab27fffc1ce1e6287593b1ae
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: ed3f53b6e2e9557def20fc459dfcf4641b0e396d
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82076313"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905830"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-configuration-manager"></a>Funktioner i Technical Preview 1601 för Configuration Manager
 
@@ -83,7 +83,7 @@ I 1601 Technical Preview har vi lagt till stöd för följande funktioner:
 
     -   **Alla begärda uppdateringar har installerats med en tids gräns som är äldre än ett visst antal dagar:** Den här regeln kontrollerar om användarens enhet har alla uppdateringar som krävs (anges i regeln för **obligatoriska automatiska uppdateringar** ) inom en tids gräns och respittid som du anger och installerar automatiskt eventuella väntande uppdateringar som krävs.  
 
-    -   **Kräv BitLocker-enhets kryptering:** Detta är en kontroll för att se om den primära enheten (t. ex\\. C:) på enheten är BitLocker-krypterad. Om Bitlocker-kryptering inte är aktiverat på den primära enheten blockeras åtkomsten till e-post och SharePoint-tjänster.  
+    -   **Kräv BitLocker-enhets kryptering:** Detta är en kontroll för att se om den primära enheten (t. ex. C: \\ ) på enheten är BitLocker-krypterad. Om Bitlocker-kryptering inte är aktiverat på den primära enheten blockeras åtkomsten till e-post och SharePoint-tjänster.  
 
     -   **Kräv program mot skadlig kod:** Detta är en kontroll för att se om program mot skadlig kod (endast System Center Endpoint Protection eller Windows Defender) är aktiverat och körs.  
          Om det inte är aktiverat blockeras åtkomsten till e-post och SharePoint-tjänster.  
@@ -136,11 +136,11 @@ En klient är online om den är ansluten till en plats system roll för en Confi
 |![ikon för offlinestatus för klienter](media/offline-status-icon.png)|Klienten är offline.|  
 |![ikon för okänd status för klienter](media/unknown-status-icon.png)|Klientens status är okänd.|  
 
-### <a name="prerequisites"></a>Krav  
+### <a name="prerequisites"></a>Förutsättningar  
  Klientens onlinestatus saknar krav. Du kan börja använda det så snart Configuration Manager Technical Preview 1601 har installerats.  
 
 ### <a name="limitations"></a>Begränsningar  
- Klientens onlinestatus är bara tillgänglig för Windows-datorer med den Configuration Manager-klienten installerad. Klientens onlinestatus stöds inte för Mac-datorer, Linux-eller UNIX-datorer eller enheter som hanteras\-med lokal hantering av mobila enheter.  
+ Klientens onlinestatus är bara tillgänglig för Windows-datorer med den Configuration Manager-klienten installerad. Klientens onlinestatus stöds inte för Mac-datorer, Linux-eller UNIX-datorer eller enheter som hanteras med \- lokal hantering av mobila enheter.  
 
 ### <a name="to-view-client-online-status"></a>Visa klientens onlinestatus  
 
@@ -164,7 +164,6 @@ En klient är online om den är ansluten till en plats system roll för en Confi
 
  Configuration Manager nu kan du hantera appar som du har köpt via ett sådant program genom att importera licens informationen från App Store och spåra hur många av de licenser som du har använt.  
 
- Mer information finns i [Hantera appar som du har köpt via ett volym inköps program med Configuration Manager](https://technet.microsoft.com/library/mt627954.aspx).  
 
 ### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS-app-konfiguration för program<br />Hybrid  
  Vissa iOS-program har stöd för förkonfiguration av inställningar, till exempel en server eller databas som programmet ska ansluta till. Configuration Manager stöder nu distribution av konfigurations principer för appar till enheten som gör att användaren kan använda appen direkt utan att behöva känna till den här informationen. Utvecklare måste aktivera den här funktionen i sina appar.  

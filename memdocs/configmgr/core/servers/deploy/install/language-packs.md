@@ -10,12 +10,12 @@ ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ec5581567925ee57300274e50288058e06d80ec0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 53aa7e932e782254f63b422526b315f3ce91f397
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718191"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906160"
 ---
 # <a name="language-packs-in-configuration-manager"></a>Språk paket i Configuration Manager
 
@@ -42,7 +42,7 @@ När du kör Configuration Manager installationen laddar den ned språk paket fi
 
 ## <a name="server-languages"></a>Server språk  
 
-Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på servrar. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=252609).  
+Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på servrar. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).  
 
 |Serverspråk|Språkvariant-ID (LCID)|Kod med tre bokstäver|  
 |---------------------|------------------------|-----------------------|  
@@ -56,7 +56,7 @@ Använd följande tabell för att mappa ett språk-ID till ett språk som du vil
 |Ungerska|040e|HUN|  
 |Italienska – Italien|0410|ITA|  
 |Japanska|0411|JPN|  
-|Koreansk|0412|KOR|  
+|Koreanska|0412|KOR|  
 |Polska|0415|PLK|  
 |Portugisiska – Brasilien|0416|PTB|  
 |Portugisiska – Portugal|0816|PTG|  
@@ -69,7 +69,7 @@ Använd följande tabell för att mappa ett språk-ID till ett språk som du vil
 
 ## <a name="client-languages"></a>Klient språk  
 
-Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på klient datorer. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=252609).  
+Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på klient datorer. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).  
 
 |Klientspråk|Språkvariant-ID (LCID)|Kod med tre bokstäver|  
 |---------------------|------------------------|-----------------------|  
@@ -86,7 +86,7 @@ Använd följande tabell för att mappa ett språk-ID till ett språk som du vil
 |Ungerska|040e|HUN|  
 |Italienska – Italien|0410|ITA|  
 |Japanska|0411|JPN|  
-|Koreansk|0412|KOR|  
+|Koreanska|0412|KOR|  
 |Norska|0414|NOR|  
 |Polska|0415|PLK|  
 |Portugisiska (Brasilien)|0416|PTB|  

@@ -2,7 +2,7 @@
 title: Distributions planer i Desktop Analytics
 titleSuffix: Configuration Manager
 description: Lär dig mer om distributions planer i Desktop Analytics.
-ms.date: 01/14/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: 0f369f3a-f251-4f34-9302-1bdc6ea5d139
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c14eb9127b096f7fc4e4680735867913ea877f54
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: ccc325ac4b8e02142a1442862ad661a77b0561f2
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722538"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268495"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Om distributions planer i Desktop Analytics
 
@@ -47,8 +48,6 @@ Som standard uppdaterar Desktop Analytics distributions plan data dagligen. Alla
 
 När du har anslutit Skriv bords analys till Configuration Manager väljer du samlingarna i distributions planerna. Med den här integrationen kan du distribuera Windows till en samling baserat på Desktop Analytics-data.
 
-
-
 ## <a name="readiness-rules"></a>Beredskaps regler
 
 Följande beredskaps regler är tillgängliga i distributions planer:
@@ -56,7 +55,6 @@ Följande beredskaps regler är tillgängliga i distributions planer:
 - Anger om enheterna automatiskt ska ta emot driv rutiner från Windows Update. Om enheterna får driv rutins uppdateringar från Windows Update markeras alla driv rutins problem som identifieras som en del av beredskaps utvärderingen automatiskt som **klara**.  
 
 - Tröskelvärde för antal låga installationer för dina Windows-appar. Om en app installeras på en högre procent andel av datorerna än det här tröskelvärdet markerar distributions planen appen **som en**försvars man. Den här taggen innebär att du kan bestämma hur viktigt appen ska testa under pilot fasen.  
-
 
 ## <a name="plan-assets"></a>Planera till gångar
 
@@ -76,14 +74,14 @@ Windows Upgrade-beslutet att **ersätta enheten** kan bero på någon av följan
 - En nödvändig start komponent i systemet har en blockerad driv rutin
 - Den speciella fabrikat och modell kan inte uppgraderas
 - Det finns en komponent i visnings klass med ett driv rutins block som har alla följande attribut:
-    - Du åsidosätter inte
-    - Det finns ingen driv rutin i den nya OS-versionen
-    - Den finns inte redan på Windows Update
+  - Du åsidosätter inte
+  - Det finns ingen driv rutin i den nya OS-versionen
+  - Den finns inte redan på Windows Update
 - Det finns en annan plug-and-Play-komponent på systemet som blockerar uppgraderingen
 - Det finns en trådlös komponent som använder en XP-emulerad driv rutin
 - En nätverks komponent med en aktiv anslutning kommer att förlora sin driv rutin. Med andra ord kan det gå förlorat nätverks anslutningen efter uppgraderingen.
 
-Windows Upgrade-beslutet om att **Installera** om innebär att uppgraderingen måste installeras om i stället för en uppgradering på plats. 
+Windows Upgrade-beslutet om att **Installera** om innebär att uppgraderingen måste installeras om i stället för en uppgradering på plats.
 
 Ett **blockerat** Windows-uppgraderings beslut kan orsakas av följande orsaker:
 
@@ -102,11 +100,13 @@ Apparna som Skriv bords analys *visar som en* uppdatering baseras på tröskelv�
    > [!Tip]
    > Mer information om app-kategorin "ej viktiga" finns i [beslut om automatisk uppgradering av system-och Store-appar](about-assets.md#bkmk_plan-autoapp). <!-- 3587232 -->
 
+**Informationen om program versioner** är inaktive rad som standard, så den här fliken kombinerar alla versioner av appar med samma namn och utgivare.<!-- 5542186 --> Standard beteendet hjälper till att minska det totala antalet appar som visas, vilket hjälper dig att minska dina ansträngningar att kommentera apparna. Antalet appar i panelen för att ange **appar visas också** i den här inställningen. I stället för hundratals instanser av Microsoft Edge finns det till exempel en instans för alla versioner. Du kan fatta beslut en gång för alla versioner. Om du behöver fatta beslut om vissa versioner av en app aktiverar du den här inställningen. Du kan också konfigurera den här inställningen när du arbetar på globala till gångs nivå. Mer information finns i [om till gångar – appar](about-assets.md#apps).
+
+När **information om program versioner** är inaktive rad, visar fönstret programinformation antalet program versioner och språk som den kombinerar. Om du sparar ändringar i appens information gäller den för alla versioner. Ange exempelvis **uppgraderings beslutet** eller **prioriteten**. Vissa värden visar flera, vilket innebär att det inte finns ett konsekvent värde för alla versioner. Tjänsten ger fortfarande kompatibilitets riskbedömningar för varje version. Aktivera program versions **information** om du vill se en riskbedömning av kompatibilitet för en speciell program version.
 
 ### <a name="drivers"></a>Drivrutiner
 
 Se listan över driv rutiner som ingår i den här distributions planen. Ange **uppgraderings beslutet**, granska Microsofts rekommendation och se riskfaktorer för kompatibilitet.
-
 
 ## <a name="importance"></a>Betydelse
 
@@ -116,18 +116,13 @@ Om en app är installerad på mindre än 2% av de riktade enheterna har den mark
 
 För appar väljer du en viktig betydelse för **kritiska**, **viktiga**eller **inte viktiga**. Om du markerar ett som kritiskt eller viktigt inkluderar Desktop Analytics i pilot distributionen vissa enheter med den appen. Tjänsten innehåller fler instanser av en kritisk app i piloten. Om du markerar en app som inte är viktig ställer Skriv bords analys automatiskt in den så att den är **klar att uppgradera**.
 
-
-
 ## <a name="pilot-devices"></a>Pilot enheter
 
 Skriv bords analys kombinerar din prioritets information med globala pilot inställningar. Sedan skapas en rekommendation för vilka enheter som ska ingå i pilot distributionen. Den rekommenderade pilot distributionen innehåller enheter med olika maskinvarukonfigurationer och en eller flera instanser av alla kritiska och viktiga appar. Om en app har marker ATS som kritisk rekommenderar tjänsten fler enheter med appen i piloten.
 
-
-
 ## <a name="deployment-plans-in-configuration-manager"></a>Distributions planer i Configuration Manager
 
 När du har skapat en distributions plan använder du Configuration Manager för att distribuera produkterna. När distributionen startar övervakar Desktop Analytics distributionen baserat på inställningarna i planen.
-
 
 ## <a name="next-steps"></a>Nästa steg
 

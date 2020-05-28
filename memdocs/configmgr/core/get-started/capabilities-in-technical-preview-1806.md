@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 522e01b0d811d768d4f239bc917c2e3db08e05ef
-ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
+ms.openlocfilehash: 2168f844f1c9ef98ea21da68b73531bca7aad999
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82210085"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905181"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-configuration-manager"></a>Funktioner i Technical Preview 1806 för Configuration Manager
 
@@ -75,16 +75,16 @@ Följande program uppdaterings kataloger från tredje part är tillgängliga i d
 SCUP fortsätter att stödja andra kataloger och scenarier. Listan över kataloger i noden program uppdaterings kataloger från tredje part i Configuration Manager-konsolen är dynamisk och kommer att uppdateras eftersom ytterligare kataloger är tillgängliga och stöds.
 
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - Konfigurera hantering av program uppdateringar med en HTTPS-aktiverad program uppdaterings plats. Mer information finns i [förbereda för hantering av program uppdateringar](../../sum/get-started/prepare-for-software-updates-management.md).  
   - Program uppdaterings platsen måste finnas på plats servern för den här funktionen i den här versionen. <!--515810--> 
 
     > [!Tip]  
     > Program uppdaterings platsen kräver HTTPS eftersom det är ett krav för de WSUS-API: er som används för att hantera signerings certifikat. Klienterna behöver inte också vara HTTPS-aktiverade. Mer information om hur du aktiverar HTTPS på WSUS finns i följande artiklar om hjälp:  
-    > - [Säker WSUS med Secure Sockets Layer Protocol](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) 
-    > - [Blogg inlägg för WSUS-support](https://blogs.technet.microsoft.com/sus/2011/05/09/how-to-create-an-internet-facing-wsus-server-that-uses-different-internal-and-external-names/)
+    > - [Säker WSUS med Secure Sockets Layer Protocol](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) 
+    > - [Blogg inlägg för WSUS-support](https://docs.microsoft.com/archive/blogs/sus/how-to-create-an-internet-facing-wsus-server-that-uses-different-internal-and-external-names)
 
-- Det finns tillräckligt med disk utrymme på program uppdaterings platsen, WSUSContent-mappen, för att lagra det binära innehållet för program uppdateringar från tredje part. Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution. Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme läser du blogg inlägget om WSUS support team [så här ändrar du den plats där WSUS lagrar uppdateringar lokalt](https://blogs.technet.microsoft.com/sus/2008/05/19/wsus-how-to-change-the-location-where-wsus-stores-updates-locally/).  
+- Det finns tillräckligt med disk utrymme på program uppdaterings platsen, WSUSContent-mappen, för att lagra det binära innehållet för program uppdateringar från tredje part. Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution. Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme läser du blogg inlägget om WSUS support team [så här ändrar du den plats där WSUS lagrar uppdateringar lokalt](https://docs.microsoft.com/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally).  
 
 - Aktivera och distribuera klient inställningen [Aktivera program uppdateringar från tredje part](../clients/deploy/about-client-settings.md#enable-third-party-software-updates) i **program uppdaterings** gruppen.  
 
@@ -149,7 +149,7 @@ Utför följande steg för *alla program uppdateringar från tredje part* som du
 
 
 ### <a name="monitoring-progress-of-third-party-software-updates"></a>Övervaknings förlopp för program uppdateringar från tredje part
-Synkronisering av program uppdateringar från tredje part hanteras av SMS_ISVUPDATES_SYNCAGENT-komponenten på plats servern. Du kan visa status meddelanden från den här komponenten eller Visa mer detaljerad status i SMS_ISVUPDATES_SYNCAGENT. log. Den här loggen finns på plats servern i undermappen **loggar** i platsens installations katalog. Som standard är `C:\Program Files\Microsoft Configuration Manager\Logs`den här sökvägen. Mer information om övervakning av den allmänna processen för program uppdaterings hantering finns i [övervaka program uppdateringar](../../sum/deploy-use/monitor-software-updates.md).
+Synkronisering av program uppdateringar från tredje part hanteras av SMS_ISVUPDATES_SYNCAGENT-komponenten på plats servern. Du kan visa status meddelanden från den här komponenten eller Visa mer detaljerad status i SMS_ISVUPDATES_SYNCAGENT. log. Den här loggen finns på plats servern i undermappen **loggar** i platsens installations katalog. Som standard är den här sökvägen `C:\Program Files\Microsoft Configuration Manager\Logs` . Mer information om övervakning av den allmänna processen för program uppdaterings hantering finns i [övervaka program uppdateringar](../../sum/deploy-use/monitor-software-updates.md).
 
 
 ### <a name="known-issues"></a>Kända problem
@@ -191,9 +191,6 @@ Det finns också ett nytt globalt villkor, **Office 365-program som hanteras av 
 <!--1357861-->
 Package Conversion Manager är nu ett integrerat verktyg som gör att du kan konvertera äldre Configuration Manager 2007-paket till Configuration Manager aktuella gren program. Sedan kan du använda funktioner i program som beroenden, krav regler och mappning mellan användare och enhet.
 
-> [!Tip]  
-> Äldre dokumentation för de befintliga funktionerna i Package Conversion Manager finns på [TechNet](https://technet.microsoft.com/library/hh531519.aspx). Relevant information finns i processen för att migrera till docs.microsoft.com-biblioteket.
-
 ### <a name="try-it-out"></a>prova!
  Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-technical-preview-1804.md#bkmk_feedback) för att berätta hur det fungerade.
 
@@ -206,7 +203,6 @@ Package Conversion Manager är nu ett integrerat verktyg som gör att du kan kon
      - **Konvertera paket**: vissa paket kan enkelt konverteras till program med den här åtgärden.
      - **Åtgärda och konvertera**: vissa paket kräver att problem korrigeras innan de konverteras till program.  
 
-   Mer information om de här åtgärderna finns i [analysera och konvertera paket](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/hh846244%28v%3dtechnet.10%29).  
 
 3. Gå till arbets ytan **övervakning** och välj **paket konverterings status**. Den nya instrument panelen visar den övergripande analys-och konverterings statusen för paket på-platsen. En ny bakgrunds aktivitet sammanfattar automatiskt analys data.  
 
@@ -237,8 +233,8 @@ Nu kan du distribuera program uppdateringar till enheter utan att först hämta 
 <!--1358149-->
 Office-verktyget för anpassning är nu integrerat med Office 365-installations programmet i Configuration Manager-konsolen. När du skapar en distribution för Office 365 kan du nu konfigurera de senaste Office-hanterbarhets inställningarna dynamiskt. Verktyget Office-anpassning uppdateras samtidigt som lanseringen av nya versioner av Office 365. Nu kan du dra nytta av de nya hanterings inställningarna i Office 365 så snart de är tillgängliga. 
 
-### <a name="prerequisites"></a>Krav
-- Datorn som kör Configuration Managers konsolen behöver Internet åtkomst via HTTPS-port 443. Installations guiden för Office 365-klienten använder ett webb läsar API för Windows https://config.office.comstandard som öppnas. Om en Internet-proxy används måste användaren kunna komma åt denna URL.
+### <a name="prerequisites"></a>Förutsättningar
+- Datorn som kör Configuration Managers konsolen behöver Internet åtkomst via HTTPS-port 443. Installations guiden för Office 365-klienten använder ett webb läsar API för Windows standard som öppnas https://config.office.com . Om en Internet-proxy används måste användaren kunna komma åt denna URL.
 
 ### <a name="try-it-out"></a>prova!
  Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-technical-preview-1804.md#bkmk_feedback) för att berätta hur det fungerade.

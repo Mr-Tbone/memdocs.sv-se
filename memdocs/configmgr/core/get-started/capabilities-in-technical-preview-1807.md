@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 398f16b8f75d894030d76406807f74bdaa4be9d5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ace27e9035af6696e455382a32365be0e3824d65
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714789"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905202"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funktioner i Configuration Manager Technical Preview version 1807 
 
@@ -78,11 +78,11 @@ Om du vill se mer information om ett tillgängligt objekt klickar du på det i h
 - **Feedback**: visar Configuration Manager [UserVoice-webbplatsen](https://configurationmanager.uservoice.com/)  
 
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 - Använd Configuration Manager-konsolen på ett klient-OS.  
 
-    - Alternativt men rekommenderas inte: inaktivera Internet Explorer på ett server-OS [: förbättrad säkerhets konfiguration](https://go.microsoft.com/fwlink/?LinkId=253461).  
+    - Alternativt men rekommenderas inte: inaktivera Internet Explorer på ett server-OS [: förbättrad säkerhets konfiguration](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd883248(v=ws.10)).
 
 - Datorn med-konsolen kräver Internet åtkomst och anslutning till följande platser:  
     - `https://aka.ms`  
@@ -112,7 +112,7 @@ Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-tech
 
 Som standard är den här inställningen **Automatisk**. Med det här värdet väljer Configuration Manager den enhet där den är installerad. 
 
-Under offlineunderhåll kan Configuration Manager lagra temporära filer i mappen `<drive>:\ConfigMgr_OfflineImageServicing`. Den monterar även OS-avbildningarna i den här mappen. 
+Under offlineunderhåll kan Configuration Manager lagra temporära filer i mappen `<drive>:\ConfigMgr_OfflineImageServicing` . Den monterar även OS-avbildningarna i den här mappen. 
 
 Granska logg filen **OfflineServicingMgr. log** . 
 
@@ -169,7 +169,7 @@ Den nya knappen i Software Center som användare kan använda för att **Reparer
 Konfigurera e-postaviseringar för begäran om program godkännande. När en användare begär ett program får du ett e-postmeddelande. Klicka på länkar i e-postmeddelandet för att godkänna eller neka begäran, utan att behöva Configuration Manager-konsolen.
 
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 #### <a name="to-send-email-notifications"></a>Skicka e-postmeddelanden
 - Aktivera den [valfria funktionen](../servers/manage/install-in-console-updates.md#bkmk_options) **Godkänn program begär Anden för användare per enhet**.  
@@ -191,7 +191,7 @@ Om du inte konfigurerar de här förutsättningarna skickar-platsen e-postaviser
 
     - Konfigurera följande inställningar manuellt för den här inbyggda appen i Azure AD:  
 
-        - **Omdirigerings-URI**: `https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`. Använd det fullständigt kvalificerade domän namnet (FQDN) för CMG-tjänsten (Cloud Management Gateway), till exempel GraniteFalls.Contoso.com.   
+        - **Omdirigerings-URI**: `https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth` . Använd det fullständigt kvalificerade domän namnet (FQDN) för CMG-tjänsten (Cloud Management Gateway), till exempel GraniteFalls.Contoso.com.   
 
         - **Manifest**: ange **oauth2AllowImplicitFlow** till True:`"oauth2AllowImplicitFlow": true,`  
 

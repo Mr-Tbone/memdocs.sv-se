@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d3ae44892cd46a438113fb54dad0e290b8fb148e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 556ddb10f0ba25fc1c3cf4b215d5058d3221c7fe
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723315"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906449"
 ---
 # <a name="checklist-for-installing-update-1702-for-configuration-manager"></a>Check lista för att installera uppdatering 1702 för Configuration Manager
 
@@ -27,7 +27,7 @@ När du använder den aktuella grenen av Configuration Manager kan du installera
 > [!TIP]
 > Version 1702 är även tillgänglig som [bas linje medium](updates.md#bkmk_Baselines) som du kan använda för att installera den första platsen i en ny hierarki.
 
-För att hämta uppdateringen för version 1702 måste du använda en plats system roll för tjänst anslutnings punkt på platsen på den översta nivån i hierarkin. Detta kan vara i läget online eller offline. När hierarkin har laddat ned uppdaterings paketet från Microsoft kan du hitta det i- **konsolen &gt; under &gt; administration &gt; översikt Cloud Services uppdateringar och underhåll**.
+För att hämta uppdateringen för version 1702 måste du använda en plats system roll för tjänst anslutnings punkt på platsen på den översta nivån i hierarkin. Detta kan vara i läget online eller offline. När hierarkin har laddat ned uppdaterings paketet från Microsoft kan du hitta det i-konsolen under **Administration &gt; Översikt &gt; Cloud Services &gt; uppdateringar och underhåll**.
 
 -   När uppdateringen är listad som **tillgänglig**är uppdateringen klar att installeras. Innan du installerar version 1702 bör du läsa följande information [om hur du installerar uppdatering 1702](#about-installing-update-1702) och [Check listan](#checklist) för konfigurationer som ska göras innan du startar uppdateringen.
 
@@ -35,7 +35,7 @@ För att hämta uppdateringen för version 1702 måste du använda en plats syst
 
     -   Om dmpdownloader. log anger att dmpdownloader-processen är i ström spar läge och väntar på ett intervall innan du söker efter uppdateringar, kan du starta om **SMS_EXECUTIVE** tjänsten på plats servern för att starta om nedladdningen av uppdateringens omdistributions-filer.
 
-    -   En annan vanlig hämtnings fråga inträffar när proxyserverinställningar förhindrar nedladdning från `silverlight.dlservice.microsoft.com` och `download.microsoft.com`.
+    -   En annan vanlig hämtnings fråga inträffar när proxyserverinställningar förhindrar nedladdning från `silverlight.dlservice.microsoft.com` och `download.microsoft.com` .
 
 Mer information om hur du installerar uppdateringar finns [i uppdateringar och underhåll i konsolen](updates.md#bkmk_inconsole).
 
@@ -89,7 +89,7 @@ Mer information finns i [krav för plats och plats system](../../plan-design/con
 
 **Granska versionen av Windows Assessment and Deployment Kit (ADK) för Windows 10** Windows 10 ADK bör vara version 1607 eller senare. Om du måste uppdatera ADK måste du göra det innan du påbörjar uppdateringen av Configuration Manager. Detta säkerställer att standard start avbildningarna uppdateras automatiskt till den senaste versionen av Windows PE. (Anpassade Start avbildningar måste uppdateras manuellt.)
 
-Om du uppdaterar platsen innan du uppdaterar ADK, se bloggen [Configuration Manager och Windows ADK för Windows 10, version 1607](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/09/configuration-manager-and-the-windows-adk-for-windows-10-version-1607/) för ett skript som kan användas för att återskapa start avbildningarna.
+Om du uppdaterar platsen innan du uppdaterar ADK, se bloggen [Configuration Manager och Windows ADK för Windows 10, version 1607](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configuration-manager-and-the-windows-adk-for-windows-10-version/ba-p/274047) för ett skript som kan användas för att återskapa start avbildningarna.
 
 **Granska statusen för platsen och hierarkin och kontrollera om det finns några fel som inte har åtgärdats:** Innan du uppdaterar en plats löser du alla operativa problem som finns på platsservern, platsdatabasservern och i platssystemrollerna som är installerade på fjärrdatorer. En platsuppgradering kan misslyckas på grund av befintliga operativa problem.
 
@@ -99,7 +99,7 @@ Mer information finns i [använda aviseringar och status systemet för Configura
 Se till att fil-och databasreplikering mellan platser fungerar och är aktuella. Fördröjningar eller efter släpning i kan antingen förhindra en smidig och lyckad uppdatering.
 För databasreplikering kan du använda funktionen för replikeringslänkanalys för att lösa eventuella fel innan du startar uppdateringen.
 
-Mer information finns i avsnittet om att [övervaka databasreplikering](monitor-replication.md)i [Replikeringslänkanalys](monitor-replication.md#BKMK_RLA) .
+Mer information finns i [Replication Link Analyzer](monitor-replication.md#BKMK_RLA)   avsnittet om att [övervaka databasreplikering](monitor-replication.md)i Replikeringslänkanalys   .
 
 **Installera alla tillämpliga viktiga uppdateringar för operativ system på datorer som är värdar för platsen, plats databas servern och fjärrplatsens system roller:** Innan du installerar en uppdatering för Configuration Manager bör du installera eventuella kritiska uppdateringar för varje tillämpligt plats system. Om en uppdatering som du installerar kräver en omstart, startar du om de tillämpliga datorerna innan du påbörjar uppgraderingen.
 
@@ -184,7 +184,7 @@ Mer information finns i [uppdateringar för Configuration Manager](updates.md).
 
 ## <a name="post-update-checklist"></a>Check lista för uppdatering efter uppdatering
 Granska följande åtgärder som ska vidtas när installationen har slutförts.
-1. Kontrol lera att plats-till-plats-replikering är aktiv. I-konsolen kan du Visa **övervakning** > **av platshierarki**och **övervaka** > **databasreplikering** för att se om det finns några problem eller bekräfta att replikeringslänken är aktiva.
+1. Kontrol lera att plats-till-plats-replikering är aktiv. I-konsolen kan du Visa **övervakning**  >  **Site Hierarchy**av platshierarki och **övervaka**  >  **databasreplikering** för att se om det finns några problem eller bekräfta att replikeringslänken är aktiva.
 2. Kontrol lera att varje plats Server och plats system roll har uppdaterats till version 1702. I-konsolen kan du lägga till den valfria kolumn **versionen** i visningen av vissa noder, inklusive **platser** och **distributions platser**.
 
    Vid behov installeras en plats system roll automatiskt för att uppdatera till den nya versionen. Överväg att starta om fjärrplatssystem som inte uppdateras korrekt.

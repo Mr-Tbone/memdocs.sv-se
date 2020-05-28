@@ -10,12 +10,12 @@ ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a72ff9947f6ca31ce2158c5c763602b34948a15c
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: b012dd1e7da0d6a3efb4d1cc33b8a79ef319bc0a
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075667"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83269005"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-configuration-manager"></a>Lär dig hur klienter hittar plats resurser och tjänster för Configuration Manager
 
@@ -62,7 +62,7 @@ En klient väljer en hanterings plats för att kommunicera med baserat på klien
 
 Du kan använda prioriterade, eller önskade, hanteringsplatser. Prioriterade hanterings platser är hanterings platser från en klients tilldelade plats som är associerade med en avgränsnings grupp som klienten använder för att hitta plats system servrar. En prioriterad hanterings platss koppling med en avgränsnings grupp som plats system Server liknar hur distributions platser eller platser för tillståndsmigrering är kopplade till en avgränsnings grupp. Om du aktiverar önskade hanteringsplatser för hierarkin kommer en klient att försöka använda en önskad hanteringsplats innan den använder andra hanteringsplatser från den tilldelade webbplatsen när den använder en hanteringsplats från den tilldelade webbplatsen.  
 
-Du kan också använda informationen i bloggen för [hanterings plats tillhörighet](https://blogs.technet.com/b/jchalfant/archive/2014/09/22/management-point-affinity-added-in-configmgr-2012-r2-cu3.aspx) på TechNet.com för att konfigurera mappning mellan hanterings platser. Mappning mellan hanterings platser åsidosätter standard beteendet för tilldelade hanterings platser och gör att klienten kan använda en eller flera olika hanterings platser.  
+Du kan också använda informationen i bloggen för [hanterings plats tillhörighet](https://docs.microsoft.com/archive/blogs/jchalfant/management-point-affinity-added-in-configmgr-2012-r2-cu3) för att konfigurera tillhörighet mellan hanterings platser. Mappning mellan hanterings platser åsidosätter standard beteendet för tilldelade hanterings platser och gör att klienten kan använda en eller flera olika hanterings platser.  
 
 Varje gång en klient behöver kontakta en hanterings plats kontrollerar den MP-listan, som den lagrar lokalt i Windows Management Instrumentation (WMI). Klienten skapar en första MP-lista när den installeras. Klienten uppdaterar sedan regelbundet listan med information om varje hanterings plats i hierarkin.  
 
@@ -131,12 +131,12 @@ När en klient upprättar kommunikation med en hanterings plats fortsätter den 
 Klienten väljer slumpmässigt en ny hanterings plats som ska användas.  
 
 ##  <a name="active-directory"></a><a name="bkmk_ad"></a>Active Directory  
-Klienter som är domänanslutna kan använda AD DS för tjänstlokalisering. Detta kräver att webbplatserna [publicerar data till Active Directory](https://technet.microsoft.com/library/hh696543.aspx).  
+Klienter som är domänanslutna kan använda AD DS för tjänstlokalisering. Detta kräver att webbplatserna [publicerar data till Active Directory](../../servers/deploy/configure/publish-site-data.md).  
 
 En klient kan använda AD DS för tjänst lokalisering när samtliga följande villkor är uppfyllda:  
 
-- Active Directory- [schemat har utökats](https://technet.microsoft.com/library/mt345589.aspx) eller utökats för System Center 2012 Configuration Manager.  
-- [Active Directorys skogen har kon figurer ATS för publicering](https://technet.microsoft.com/library/hh696542.aspx)och Configuration Manager-platser är konfigurerade att publicera.  
+- Active Directory- [schemat har utökats](../network/extend-the-active-directory-schema.md) eller utökats för System Center 2012 Configuration Manager.  
+- [Active Directorys skogen har kon figurer ATS för publicering](../../servers/deploy/configure/publish-site-data.md)och Configuration Manager-platser är konfigurerade att publicera.  
 - Klientdatorn är medlem i en Active Directory-domän och har åtkomst till en global katalogserver.  
 
 Om en klient inte kan hitta en hanterings plats som ska användas för tjänst lokalisering från AD DS försöker den använda DNS.  
@@ -148,7 +148,7 @@ Klienter på intranätet kan använda DNS för tjänstlokalisering. Detta kräve
 - AD DS-schemat har inte utökats till stöd för Configuration Manager.
 - Klienter på intranätet finns i en skog som inte är aktive rad för Configuration Manager publicering.  
 - Du har klienter på arbets grupps datorer och dessa klienter är inte konfigurerade för klient hantering enbart för Internet. (En arbets grupps klient som kon figurer ATS för Internet kommer endast att kommunicera med Internet-riktade hanterings platser och använder inte DNS för tjänst lokalisering.)  
-- Du kan [konfigurera klienter för att hitta hanteringsplatser från DNS](https://technet.microsoft.com/library/gg682055).  
+- Du kan [konfigurera klienter för att hitta hanteringsplatser från DNS](../../clients/deploy/configure-client-computers-to-find-management-points-by-using-dns-publishing.md).  
 
 När en plats publicerar tjänstlokaliseringsposter för hanteringsplatser till DNS:  
 
@@ -183,7 +183,7 @@ Configuration Manager stöder RFC 2782 för tjänst lokaliserings poster. Dessa 
 
 Om du vill publicera en hanterings plats till Configuration Manager anger du följande värden:  
 
-- **_Service**: ange **_mssms_mp**_&lt;platskod\>, där &lt;SiteCode\> är hanterings platsens platskod.  
+- **_Service**: ange **_mssms_mp**_ &lt; platskod \> , där &lt; SiteCode \> är hanterings platsens platskod.  
 - **._Proto**: Ange **._tcp**.  
 - **.Name**: Ange hanteringsplatsens DNS-suffix, till exempel **contoso.com**.  
 - **TTL**: Ange **14400**, vilket är fyra timmar.  
@@ -201,7 +201,7 @@ Om du använder Windows Server-DNS kan du ange DNS-posten för intranäthanterin
 
 ##### <a name="to-configure-automatic-publishing"></a>Konfigurera automatisk publicering:  
 
-1.  I Configuration Manager-konsolen expanderar du **Administration** > **plats konfiguration** > **platser**.  
+1.  I Configuration Manager-konsolen expanderar du **Administration**  >  **plats konfiguration**  >  **platser**.  
 
 2.  Välj din webbplats och välj sedan **Konfigurera plats komponenter**.  
 
@@ -226,7 +226,7 @@ Om du använder Windows Server-DNS kan du ange DNS-posten för intranäthanterin
 4.  Genom att använda alternativet **nya andra poster** väljer du **tjänst lokalisering (SRV)** i dialog rutan **typ av resurs post** , väljer **skapa post**, anger följande information och väljer sedan **färdig**:  
 
     - **Domän**: Ange hanteringsplatsens DNS-suffix om det behövs, till exempel **contoso.com**.  
-    - **Tjänst**: typ **_mssms_mp**_&lt;platskod\>, där &lt;SiteCode\> är hanterings platsens platskod.  
+    - **Tjänst**: typ **_mssms_mp**_ &lt; platskod \> , där &lt; SiteCode \> är hanterings platsens platskod.  
     - **Protokoll**: Skriv **_tcp**.  
     - **Prioritet**: Configuration Manager inte använder det här fältet.  
     - **Vikt**: Configuration Manager använder inte det här fältet.  

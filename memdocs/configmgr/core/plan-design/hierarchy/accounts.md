@@ -2,20 +2,20 @@
 title: Konton som används
 titleSuffix: Configuration Manager
 description: Identifiera och hantera de Windows-grupper, konton och SQL-objekt som används i Configuration Manager.
-ms.date: 10/23/2019
+ms.date: 05/08/2020
 ms.prod: configuration-manager
-ms.technology: configmgr-core
+ms.technology: Configuration Manager-core
 ms.topic: conceptual
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a6808fed9fa9aaf894e3975066eb7707880b7948
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 5bd1284b96e1739126b8d6ee19f20699d47e5880
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82073423"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268002"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Konton som används i Configuration Manager
 
@@ -24,14 +24,14 @@ ms.locfileid: "82073423"
 Använd följande information för att identifiera de Windows-grupper, konton och SQL-objekt som används i Configuration Manager, hur de används och eventuella krav.  
 
 - [Windows-grupper som skapas och används i Configuration Manager](#bkmk_groups)  
-  - [ConfigMgr_CollectedFilesAccess](#configmgr_collectedfilesaccess)  
-  - [ConfigMgr_DViewAccess](#configmgr_dviewaccess)  
-  - [Användare av ConfigMgr-fjärrstyrning](#configmgr-remote-control-users)  
+  - [Konfigurations Manager_CollectedFilesAccess](#configmgr_collectedfilesaccess)  
+  - [Konfigurations Manager_DViewAccess](#configmgr_dviewaccess)  
+  - [Configuration Manager fjärr styrnings användare](#configmgr_rcusers)  
   - [SMS-administratörer](#sms-admins)  
-  - [SMS_SiteSystemToSiteServerConnection_MP_&lt;SiteCode\>](#bkmk_remotemp)  
-  - [SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;SiteCode\>](#bkmk_remoteprov)  
-  - [SMS_SiteSystemToSiteServerConnection_Stat_&lt;SiteCode\>](#bkmk_remotestat)  
-  - [SMS_SiteToSiteConnection_&lt;SiteCode\>](#bkmk_filerepl)  
+  - [SMS_SiteSystemToSiteServerConnection_MP_ &lt; SiteCode\>](#bkmk_remotemp)  
+  - [SMS_SiteSystemToSiteServerConnection_SMSProv_ &lt; SiteCode\>](#bkmk_remoteprov)  
+  - [SMS_SiteSystemToSiteServerConnection_Stat_ &lt; SiteCode\>](#bkmk_remotestat)  
+  - [SMS_SiteToSiteConnection_ &lt; SiteCode\>](#bkmk_filerepl)  
 
 - [Konton som används i Configuration Manager](#bkmk_accounts)
   - [Konto för Active Directory grupp identifiering](#active-directory-group-discovery-account)  
@@ -96,7 +96,7 @@ Configuration Manager skapas automatiskt och i många fall upprätthålls automa
 > När Configuration Manager skapar en grupp på en dator som är en domän medlem är gruppen en lokal säkerhets grupp. Om datorn är en domänkontrollant är gruppen en lokal domän grupp. Den här typen av grupp delas mellan alla domänkontrollanter i domänen.  
 
 
-### <a name="configmgr_collectedfilesaccess"></a><a name="configmgr_collectedfilesaccess"></a>ConfigMgr_CollectedFilesAccess
+### <a name="configuration-manager_collectedfilesaccess"></a><a name="configmgr_collectedfilesaccess"></a>Konfigurations Manager_CollectedFilesAccess
 
 Configuration Manager använder den här gruppen för att ge åtkomst till att visa filer som samlats in av program varu inventering.  
 
@@ -114,14 +114,14 @@ Configuration Manager hanterar grupp medlemskapet automatiskt. Medlemmar är adm
 Den här gruppen har som standard behörigheten **läsa** till följande mapp på plats servern:`C:\Program Files\Microsoft Configuration Manager\sinv.box\FileCol`  
 
 
-### <a name="configmgr_dviewaccess"></a><a name="configmgr_dviewaccess"></a>ConfigMgr_DViewAccess  
+### <a name="configuration-manager_dviewaccess"></a><a name="configmgr_dviewaccess"></a>Konfigurations Manager_DViewAccess  
 
 Den här gruppen är en lokal säkerhets grupp som Configuration Manager skapar på plats databas servern eller databas replik servern för en underordnad primär plats. Platsen skapar den när du använder distribuerade vyer för databasreplikering mellan platser i en hierarki. Den innehåller plats servern och SQL Server dator konton för den centrala administrations platsen.
 
 Mer information finns i [data överföringar mellan platser](data-transfers-between-sites.md).
 
 
-### <a name="configmgr-remote-control-users"></a>Användare av ConfigMgr-fjärrstyrning  
+### <a name="configuration-manager-remote-control-users"></a><a name="configmgr_rcusers"></a>Configuration Manager fjärr styrnings användare  
 
 Configuration Manager fjärrverktyg använder den här gruppen för att lagra de konton och grupper som du har skapat i listan över **behöriga användare** . Platsen tilldelar varje klient den här listan.  
 
@@ -166,7 +166,7 @@ Du kan visa rättigheter och behörigheter för gruppen SMS-administratörer i M
 När du använder en fjärran sluten Configuration Manager-konsol konfigurerar du DCOM-behörigheter för **fjärraktivering** på både plats SERVERDATORN och SMS-providern. Bevilja behörighet till **SMS Admins** -gruppen. Den här åtgärden fören klar administrationen i stället för att ge rättigheterna direkt till användare eller grupper. Mer information finns i [Konfigurera DCOM-behörigheter för fjärranslutna Configuration Manager-konsoler](../../servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole). 
 
 
-### <a name="sms_sitesystemtositeserverconnection_mp_ltsitecode"></a><a name="bkmk_remotemp"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;SiteCode\>  
+### <a name="sms_sitesystemtositeserverconnection_mp_ltsitecode"></a><a name="bkmk_remotemp"></a>SMS_SiteSystemToSiteServerConnection_MP_ &lt; SiteCode\>  
  
 Hanterings platser som är fjärranslutna från plats servern använder den här gruppen för att ansluta till plats databasen. Gruppen ger hanteringsplatsåtkomst till inkorgsmapparna på platsservern och platsdatabasen.  
 
@@ -179,10 +179,10 @@ När du avinstallerar en plats tas inte gruppen bort automatiskt. Ta bort den ma
 Configuration Manager hanterar grupp medlemskapet automatiskt. Medlemmar är som standard datorkonton för fjärrdatorer som har en hanteringsplats för platsen.
 
 #### <a name="permissions"></a>Behörigheter
-Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll i följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes`. Den här gruppen har ytterligare behörighet att **skriva** till undermappar under **inkorgar**, till vilken hanterings platsen skriver klient data.
+Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll i följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes` . Den här gruppen har ytterligare behörighet att **skriva** till undermappar under **inkorgar**, till vilken hanterings platsen skriver klient data.
 
 
-### <a name="sms_sitesystemtositeserverconnection_smsprov_ltsitecode"></a><a name="bkmk_remoteprov"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;SiteCode\>  
+### <a name="sms_sitesystemtositeserverconnection_smsprov_ltsitecode"></a><a name="bkmk_remoteprov"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_ &lt; SiteCode\>  
  
 Fjärranslutna SMS-providers använder den här gruppen för att ansluta till plats servern.  
 
@@ -195,11 +195,11 @@ När du avinstallerar en plats tas inte gruppen bort automatiskt. Ta bort den ma
 Configuration Manager hanterar grupp medlemskapet automatiskt. Som standard inkluderar medlemskap dator kontot eller ett domän användar konto. Det här kontot används för att ansluta till plats servern från varje fjärr-SMS-provider.
 
 #### <a name="permissions"></a>Behörigheter
-Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll i följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes`. Den här gruppen har ytterligare behörighet att **skriva** och **ändra** till undermappar under inkorgarna. SMS-providern kräver åtkomst till dessa mappar.
+Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll i följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes` . Den här gruppen har ytterligare behörighet att **skriva** och **ändra** till undermappar under inkorgarna. SMS-providern kräver åtkomst till dessa mappar.
 
-Den här gruppen har också **Läs** behörighet till undermapparna på plats servern nedan `C:\Program Files\Microsoft Configuration Manager\OSD\Bin`. 
+Den här gruppen har också **Läs** behörighet till undermapparna på plats servern nedan `C:\Program Files\Microsoft Configuration Manager\OSD\Bin` . 
 
-Den har också följande behörigheter till undermapparna nedan `C:\Program Files\Microsoft Configuration Manager\OSD\boot`:
+Den har också följande behörigheter till undermapparna nedan `C:\Program Files\Microsoft Configuration Manager\OSD\boot` :
 - **Läsa**  
 - **Läs & kör**  
 - **Visa mappinnehåll**  
@@ -207,7 +207,7 @@ Den har också följande behörigheter till undermapparna nedan `C:\Program File
 - **Ändra**   
 
 
-### <a name="sms_sitesystemtositeserverconnection_stat_ltsitecode"></a><a name="bkmk_remotestat"></a>SMS_SiteSystemToSiteServerConnection_Stat_&lt;SiteCode\>  
+### <a name="sms_sitesystemtositeserverconnection_stat_ltsitecode"></a><a name="bkmk_remotestat"></a>SMS_SiteSystemToSiteServerConnection_Stat_ &lt; SiteCode\>  
 
 Filen Dispatch Manager-komponenten på Configuration Manager fjärrplatssystem använder den här gruppen för att ansluta till plats servern.  
 
@@ -220,12 +220,12 @@ När du avinstallerar en plats tas inte gruppen bort automatiskt. Ta bort den ma
 Configuration Manager hanterar grupp medlemskapet automatiskt. Som standard inkluderar medlemskap dator kontot eller domän användar kontot. Det här kontot används för att ansluta till plats servern från varje fjärrplatssystem som kör fil sändnings hanteraren.
 
 #### <a name="permissions"></a>Behörigheter
-Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll till följande mapp och dess undermappar på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes`. 
+Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll till följande mapp och dess undermappar på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes` . 
 
-Den här gruppen har ytterligare behörighet att **skriva** och **ändra** till följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes\statmgr.box`.
+Den här gruppen har ytterligare behörighet att **skriva** och **ändra** till följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes\statmgr.box` .
 
 
-### <a name="sms_sitetositeconnection_ltsitecode"></a><a name="bkmk_filerepl"></a>SMS_SiteToSiteConnection_&lt;SiteCode\>  
+### <a name="sms_sitetositeconnection_ltsitecode"></a><a name="bkmk_filerepl"></a>SMS_SiteToSiteConnection_ &lt; SiteCode\>  
 Configuration Manager använder den här gruppen för att aktivera filbaserad replikering mellan platser i en hierarki. För varje fjärrplats som överför filer direkt till den här platsen, har den här gruppen konton som har kon figurer ATS som ett **filreplikeringsflöde**.  
 
 #### <a name="type-and-location"></a>Typ och plats
@@ -237,7 +237,7 @@ När du installerar en ny plats som underordnad till en annan plats, lägger Con
 När du avinstallerar en plats tas inte gruppen bort automatiskt. Ta bort den manuellt när du har avinstallerat en plats.
 
 #### <a name="permissions"></a>Behörigheter
-Den här gruppen har som standard **fullständig behörighet** till följande mapp: `C:\Program Files\Microsoft Configuration Manager\inboxes\despoolr.box\receive`.
+Den här gruppen har som standard **fullständig behörighet** till följande mapp: `C:\Program Files\Microsoft Configuration Manager\inboxes\despoolr.box\receive` .
 
 
 
@@ -245,6 +245,8 @@ Den här gruppen har som standard **fullständig behörighet** till följande ma
 
 Du kan konfigurera följande konton för Configuration Manager.  
 
+> [!TIP]
+> Använd inte procent andelen ( `%` ) i lösen ordet för konton som du anger i Configuration Manager-konsolen. Kontot kan inte autentiseras.<!-- SCCMDocs#1032 -->
 
 ### <a name="active-directory-group-discovery-account"></a>Konto för Active Directory grupp identifiering  
 
@@ -382,7 +384,7 @@ Klient datorer använder **nätverks åtkomst kontot** när de inte kan använda
 
 En Configuration Manager-klient försöker först använda sitt dator konto för att hämta innehållet. Om det Miss lyckas försöker den automatiskt med nätverks åtkomst kontot.  
 
-Från och med version 1806 kan en arbets grupp eller Azure AD-ansluten klient säkert komma åt innehåll från distributions platser utan att det behövs något konto för nätverks åtkomst. Det här problemet omfattar distributions scenarier för operativ system med en aktivitetssekvens som körs från startmedia, PXE eller Software Center. Mer information finns i [Enhanced http](enhanced-http.md).<!--1358228,1358278-->
+Om du konfigurerar platsen för HTTPS eller [Enhanced http](enhanced-http.md)kan en arbets grupp eller Azure AD-ansluten klient på ett säkert sätt komma åt innehåll från distributions platser utan att det behövs något konto för nätverks åtkomst. Det här problemet omfattar distributions scenarier för operativ system med en aktivitetssekvens som körs från startmedia, PXE eller Software Center.<!--1358228,1358278--> Mer information finns i [klient till hanterings plats kommunikation](communications-between-endpoints.md#bkmk_client2mp).<!-- SCCMDocs#1345 -->
 
 > [!Note]  
 > Om du aktiverar **utökat http** till att inte kräva kontot för nätverks åtkomst måste distributions platsen köra Windows Server 2012 eller senare. <!--SCCMDocs-pr issue #2696-->
@@ -458,7 +460,7 @@ SQL Server Reporting Services använder **repor ting Services-platsens konto** f
 > Kontot som du anger måste ha behörigheten **lokal inloggning** på den dator som är värd för SQL Reporting Services-databasen.
 
 > [!NOTE]  
-> Kontot beviljas automatiskt alla nödvändiga rättigheter genom att läggas till i smsschm_users SQL Database-rollen på ConfigMgr-databasen.
+> Kontot beviljas automatiskt alla nödvändiga rättigheter genom att läggas till i smsschm_users SQL Database-rollen i Configuration Managers databasen.
 
 Mer information finns i [Introduktion till rapportering](../../servers/manage/introduction-to-reporting.md).
 
@@ -643,41 +645,41 @@ Det här objektet används för att köra SQL Reporting-körningar.  Följande l
 
 ## <a name="database-roles-that-configuration-manager-uses-in-sql"></a><a name="bkmk_sqlroles"></a>Databas roller som Configuration Manager använder i SQL
 <!--SCCMDocs issue #1160-->
-Configuration Manager skapar och underhåller automatiskt följande roll objekt i SQL. De här rollerna ger åtkomst till vissa lagrade procedurer, tabeller, vyer och funktioner för att utföra de åtgärder som krävs för varje roll för att antingen hämta data eller infoga data till och från ConfigMgr-databasen. De här objekten finns i Configuration Manager-databasen under säkerhet/roller/databas roller.
+Configuration Manager skapar och underhåller automatiskt följande roll objekt i SQL. De här rollerna ger åtkomst till vissa lagrade procedurer, tabeller, vyer och funktioner för att utföra de åtgärder som krävs för varje roll för att antingen hämta data eller infoga data till och från Configuration Manager databasen. De här objekten finns i Configuration Manager-databasen under säkerhet/roller/databas roller.
 
 > [!IMPORTANT]  
-> Att ändra eller ta bort dessa objekt kan orsaka drastiska problem inom en Configuration Managers miljö.  Vi rekommenderar att du inte gör några ändringar i dessa objekt.
+> Att ändra eller ta bort dessa objekt kan orsaka drastiska problem inom en Configuration Managers miljö. Ändra inte de här objekten. Följande lista är endast avsedd som information.
 
 ### <a name="smsdbrole_aitool"></a>smsdbrole_AITool
 
-Import av Tillgångsinformation volym licenser. ConfigMgr ger behörighet till användar konton baserat på RBA-åtkomst för att kunna importera volym licenser som ska användas med Tillgångsinformation.  Det här kontot kan läggas till av en fullständig administratörs roll eller till en till gångs hanterings roll.
+Import av Tillgångsinformation volym licenser. Configuration Manager ger behörighet till användar konton baserat på RBA åtkomst för att kunna importera volym licenser som ska användas med Tillgångsinformation.  Det här kontot kan läggas till av en fullständig administratörs roll eller till en till gångs hanterings roll.
 
 ### <a name="smsdbrole_aius"></a>smsdbrole_AIUS
 
-Tillgångsinformation synkronisering av uppdateringar. ConfigMgr beviljar det dator konto som är värd för Tillgångsinformation för synkronisering av plats konto för att hämta Tillgångsinformation-Datadata och visa väntande AI-data för uppladdning.
+Tillgångsinformation synkronisering av uppdateringar. Configuration Manager beviljar det dator konto som är värd för Tillgångsinformations plats konto för synkronisering för att hämta Tillgångsinformation-Datadata och visa väntande AI-data för uppladdning.
 
 ### <a name="smsdbrole_amtsp"></a>smsdbrole_AMTSP
 
 Out-of-band-hantering. Den här rollen används av Configuration Manager AMT-rollen för att hämta data på enheter som har stöd för Intel AMT.
 
 > [!NOTE]  
-> Den här rollen är föråldrad i nyare versioner av ConfigMgr.
+> Den här rollen är föråldrad i nyare versioner av Configuration Manager.
 
 ### <a name="smsdbrole_crp"></a>smsdbrole_CRP
 
-Stöd för certifikat registrerings plats System Center Endpoint Protection (SCEP). ConfigMgr ger behörighet till dator kontot för plats systemet som stöder certifikat registrerings platsen för SCEP-stöd för certifikat signering och förnyelse.
+Certifikat registrerings plats som stöder Simple Certificate Enrollment Protocol (SCEP). Configuration Manager beviljar behörighet till dator kontot för det plats system som stöder certifikat registrerings platsen för SCEP-stöd för certifikat signering och förnyelse.
 
 ### <a name="smsdbrole_crppfx"></a>smsdbrole_CRPPfx
 
-Certifikat registrerings plats PFX-stöd. ConfigMgr ger behörighet till dator kontot för plats systemet som stöder certifikat registrerings platsen som kon figurer ATS för PFX-stöd för signering och förnyelse.
+Certifikat registrerings plats PFX-stöd. Configuration Manager beviljar behörighet till dator kontot för plats systemet som stöder certifikat registrerings platsen som kon figurer ATS för PFX-stöd för signering och förnyelse.
 
 ### <a name="smsdbrole_dmp"></a>smsdbrole_DMP
 
-Enhets hanterings plats. ConfigMgr beviljar den här behörigheten till dator kontot för en hanterings plats som har alternativet "Tillåt att mobila enheter och Mac-datorer använder den här hanterings platsen", möjlighet att tillhandahålla stöd för MDM-registrerade enheter.
+Enhets hanterings plats. Configuration Manager ger behörighet till dator konto för en hanterings plats som har alternativet "Tillåt att mobila enheter och Mac-datorer använder den här hanterings platsen", möjlighet att tillhandahålla stöd för MDM-registrerade enheter.
 
 ### <a name="smsdbrole_dmpconnector"></a>smsdbrole_DmpConnector
 
-Tjänst anslutnings punkt. ConfigMgr ger den här behörigheten till det dator konto som är värd för tjänst anslutnings punkten för att hämta och tillhandahålla telemetridata, hantera moln tjänster och hämta tjänst uppdateringar.
+Tjänst anslutnings punkt. Configuration Manager ger behörighet till det dator konto som är värd för tjänst anslutnings punkten för att hämta och tillhandahålla telemetridata, hantera moln tjänster och hämta uppdateringar av tjänsten.
 
 ### <a name="smsdbrole_dviewaccess"></a>smsdbrole_DViewAccess
 
@@ -685,11 +687,11 @@ Distribuerade vyer. Configuration Manager tilldelar den här behörigheten till 
 
 ### <a name="smsdbrole_dwss"></a>smsdbrole_DWSS
 
-Informations lager. ConfigMgr beviljar den här behörigheten till det dator konto som är värd för data lager rollen.
+Informations lager. Configuration Manager beviljar den här behörigheten till det dator konto som är värd för data lager rollen.
 
 ### <a name="smsdbrole_enrollsvr"></a>smsdbrole_EnrollSvr
 
- Registrerings plats. ConfigMgr ger den här behörigheten till det dator konto som är värd för registrerings platsen för att tillåta enhets registrering via MDM.
+ Registrerings plats. Configuration Manager beviljar den här behörigheten till det dator konto som är värd för registrerings platsen för att tillåta enhets registrering via MDM.
 
 ### <a name="smsdbrole_extract"></a>smsdbrole_extract
 
@@ -697,26 +699,26 @@ Ger åtkomst till alla utökade schema vyer.
 
 ### <a name="smsdbrole_hmsuser"></a>smsdbrole_HMSUser
 
-Tjänsten för hierarki Manager. ConfigMgr ger behörighet att hantera meddelanden för redundans och SQL Server Broker-transaktioner mellan platser i en hierarki.
+Tjänsten för hierarki Manager. Configuration Manager beviljar behörighet att hantera meddelanden för redundans och SQL Server Broker-transaktioner mellan platser i en hierarki.
 
 > [!NOTE]  
 > Smdbrole_WebPortal rollen är som standard medlem i den här rollen.
 
 ### <a name="smsdbrole_mcs"></a>smsdbrole_MCS
 
-Multicast-tjänst. ConfigMgr ger den här behörigheten till dator kontot för den distributions plats som stöder multicast.
+Multicast-tjänst. Configuration Manager tilldelar den här behörigheten till dator kontot för den distributions plats som stöder multicast.
 
 ### <a name="smsdbrole_mp"></a>smsdbrole_MP
 
-Hanterings plats. ConfigMgr ger den här behörigheten till det dator konto som är värd för hanterings plats rollen för att ge stöd för ConfigMgr-klienter.
+Hanterings plats. Configuration Manager ger den här behörigheten till det dator konto som är värd för hanterings plats rollen för att ge stöd för Configuration Manager-klienter.
 
 ### <a name="smsdbrole_mpmbam"></a>smsdbrole_MPMBAM
 
-Hanterings plats Microsoft BitLocker-administration och övervakning. ConfigMgr ger den här behörigheten till det dator konto som är värd för hanterings platsen som hanterar MBAM för en miljö.
+Hanterings plats Microsoft BitLocker-administration och övervakning. Configuration Manager ger den här behörigheten till det dator konto som är värd för hanterings platsen som hanterar MBAM för en miljö.
 
 ### <a name="smsdbrole_mpusersvc"></a>smsdbrole_MPUserSvc
 
-Program förfrågan för hanterings plats. ConfigMgr ger den här behörigheten till det dator konto som är värd för hanterings platsen som stöd för användarbaserade program begär Anden.
+Program förfrågan för hanterings plats. Configuration Manager ger den här behörigheten till det dator konto som är värd för hanterings platsen som stöd för användarbaserade program begär Anden.
 
 ### <a name="smsdbrole_siteprovider"></a>smsdbrole_siteprovider
 
@@ -724,16 +726,37 @@ SMS-provider. Configuration Manager beviljar den här behörigheten till det dat
 
 ### <a name="smsdbrole_siteserver"></a>smsdbrole_siteserver
 
-Plats Server. ConfigMgr ger den här behörigheten till det dator konto som är värd för den primära platsen eller CAS-platsen.
+Plats Server. Configuration Manager beviljar den här behörigheten till det dator konto som är värd för den primära platsen eller CAS-platsen.
 
 ### <a name="smsdbrole_sup"></a>smsdbrole_SUP
 
-Program uppdaterings plats. ConfigMgr ger den här behörigheten till det dator konto som är värd för program uppdaterings platsen för att arbeta med uppdateringar från tredje part.
+Program uppdaterings plats. Configuration Manager ger den här behörigheten till det dator konto som är värd för program uppdaterings platsen för att arbeta med uppdateringar från tredje part.
 
 ### <a name="smsdbrole_webportal"></a>smsdbrole_WebPortal
 
-Programkatalog webbplats punkt. ConfigMgr beviljar behörighet till det dator konto som är värd för Programkatalog webbplatsen för att tillhandahålla användarbaserad program distribution.
+Programkatalog webbplats punkt. Configuration Manager beviljar behörighet till det dator konto som är värd för Programkatalog webbplats platsen för att tillhandahålla användarbaserad program distribution.
 
 ### <a name="smsschm_users"></a>smsschm_users
 
-Åtkomst till användar rapporter. ConfigMgr beviljar åtkomst till det konto som används för repor ting Services-plats-kontot för att tillåta åtkomst till SMS repor ting-vyer för att Visa Configuration Manager rapporterings data.  Data begränsas ytterligare med hjälp av RBA.
+Åtkomst till användar rapporter. Configuration Manager beviljar åtkomst till det konto som används för repor ting Services-plats-kontot för att tillåta åtkomst till SMS-rapportvyn för att Visa Configuration Manager rapporterings data.  Data begränsas ytterligare med hjälp av RBA.
+
+## <a name="elevated-permissions"></a>Utökade behörigheter
+
+<!-- SCCMDocs#405 -->
+
+Configuration Manager kräver att vissa konton har utökade behörigheter för pågående åtgärder. Se till exempel [krav för att installera en primär plats](../../servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_PrereqPri). I följande lista sammanfattas de här behörigheterna och skälen till varför de är nödvändiga.
+
+- Dator kontot för den primära plats servern och den centrala administrations plats servern kräver:
+
+  - Lokal administratörs behörighet på alla plats system servrar. Den här behörigheten är att hantera, installera och ta bort system tjänster. Plats servern uppdaterar även lokala grupper på plats systemet när du lägger till eller tar bort roller.
+
+  - Sysadmin-åtkomst till SQL-instansen för plats databasen. Den här behörigheten är att konfigurera och hantera SQL för platsen. Configuration Manager tätt integreras med SQL är det inte bara en databas.
+
+- Användar konton i rollen fullständig administratör kräver:
+
+  - Lokal administratörs behörighet på alla plats servrar. Den här behörigheten är att visa, redigera, ta bort och installera system tjänster, register nycklar och-värden samt WMI-objekt.
+
+  - Sysadmin-åtkomst till SQL-instansen för plats databasen. Den här behörigheten är att installera och uppdatera databasen under installationen eller återställningen. Det krävs också för SQL-underhåll och-åtgärder. Till exempel Omindexering och uppdatering av statistik.
+
+    > [!NOTE]
+    > Vissa organisationer kan välja att ta bort sysadmin-åtkomst och bara bevilja det när det behövs. Det här beteendet kallas ibland för "just-in-Time"-åtkomst (JIT). " I det här fallet bör användare med rollen fullständig administratör fortfarande ha åtkomst till läsa, uppdatera och köra lagrade procedurer på Configuration Manager databasen. Dessa behörigheter gör att de kan felsöka de flesta problem utan fullständig sysadmin-åtkomst.

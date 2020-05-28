@@ -10,12 +10,12 @@ ms.assetid: 694bc29f-a7fd-4e06-815a-1a9c5e9ac563
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eda58982094860ccf075bcd2d1d8ed9e3d3bb2df
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d4f5ff0e1c8c92fbadc286e9909388eb66aa8f7b
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722741"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906108"
 ---
 # <a name="introduction-to-the-long-term-servicing-branch-of-configuration-manager"></a>Introduktion till långsiktig service gren för Configuration Manager
 
@@ -53,7 +53,7 @@ Moln integrering, samt funktioner som ingår i Configuration Manager nuvarande g
 
 ## <a name="find-ltsb-documentation"></a>Hitta LTSB-dokumentation
 
-LTSB baseras på den aktuella gren versionen 1606. Använd den [aktuella gren dokumentationen](https://docs.microsoft.com/sccm/), med varningar och begränsningar som är begränsade till LTSB. Dessa varningar och begränsningar identifieras i följande artiklar:
+LTSB baseras på den aktuella gren versionen 1606. Använd den [aktuella gren dokumentationen](https://docs.microsoft.com/mem/configmgr/), med varningar och begränsningar som är begränsade till LTSB. Dessa varningar och begränsningar identifieras i följande artiklar:
 
 - [Installera LTSB](install-the-ltsb.md)
 - [Uppgradera LTSB till aktuell gren](convert-to-current-branch.md)
@@ -68,10 +68,10 @@ Kunder med aktiv Software Assurance (SA) på Configuration Manager licenser, ell
 
 Kunder som har permanent rätt att System Center Configuration Manager, eller som tillåter SA eller prenumerationen att upphöra att vara efter 1 oktober, kan installera den version av System Center Configuration Manager LTSB som är aktuell vid tidpunkten för förfallet.
 
-Mer information om de här licenserna finns i de [fullständiga villkoren för de produkter som du köper via Microsofts volym licensierings program](https://go.microsoft.com/fwlink/?LinkId=800052).
+Mer information om de här licenserna finns i de [fullständiga villkoren för de produkter som du köper via Microsofts volym licensierings program](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?mode=1).
 
 Mer information om licensiering för Configuration Manager grenar finns i [Configuration Manager licensiering och grenar](learn-more-editions.md).
 
-## <a name="next-steps"></a>Nästa steg
+## <a name="next-steps"></a>Efterföljande moment
 
 Om du bestämmer att Configuration Manager LTSB är rätt gren för din miljö, installerar du [en ny LTSB](install-the-ltsb.md#install-a-new-site) -plats som en del av en ny hierarki eller [uppgraderar en System Center 2012-Configuration Manager plats](install-the-ltsb.md#upgrade-from-system-center-2012-configuration-manager) och hierarki.

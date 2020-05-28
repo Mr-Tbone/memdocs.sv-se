@@ -10,12 +10,12 @@ ms.assetid: b1751e3c-a60c-4ab7-a943-2595df1eb612
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d6be23adc7ac082545bffeef59ed52d3455d9931
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 588bccc533909f2438dc61d6f25b39c3a582c71b
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720305"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83879015"
 ---
 # <a name="about-log-files-in-configuration-manager"></a>Om loggfiler i Configuration Manager
 
@@ -211,9 +211,12 @@ Till exempel för distributions plats rollen:
 
 Använd följande procedur för att ändra utförlig nivå för AdminUI. log för Configuration Manager-konsolen:
 
-1. Öppna konsol konfigurations filen **Microsoft. ConfigurationManagement. exe. config**i en XML-redigerare som anteckningar. Standard konfigurations filen finns på följande plats:`C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManagement.exe.config`
+1. Öppna konsol konfigurations filen **Microsoft. ConfigurationManagement. exe. config**i en XML-redigerare som anteckningar. Standard konfigurations filen finns på följande plats:`C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\Microsoft.ConfigurationManagement.exe.config`
 
-1. Under elementet **system. Diagnostics** > **sources** > **SOURCES** , ändrar du attributet **switchValue** från `Error` till `Verbose`. Ett exempel:
+    > [!IMPORTANT]
+    > Från och med version 1910 ändrades den här sökvägen till att använda `Microsoft Endpoint Manager` mappen. Se till att du inte använder en äldre version av filen som kan finnas i en annan mapp.
+
+1. Under elementet **system. Diagnostics**  >  **sources**  >  **SOURCES** , ändrar du attributet **switchValue** från `Error` till `Verbose` . Ett exempel:
 
     Original: `<source name="SmsAdminUISnapIn" switchValue="Error">` nytt:`<source name="SmsAdminUISnapIn" switchValue="Verbose" >`
 
@@ -240,7 +243,7 @@ Följande platser är standardvärdena. Om du har anpassat installations katalog
 - Klientsession`C:\Windows\CCM\logs`
 - Servernamn`C:\Program Files\Microsoft Configuration Manager\Logs`
 - Hanterings plats:`C:\SMS_CCM\Logs`
-- Configuration Manager-konsol:`C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\AdminUILog`
+- Configuration Manager-konsol:`C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\AdminUILog`
 - IIS`C:\inetpub\logs\logfiles\w3svc1`
 
 ### <a name="task-sequence-log-locations"></a>Platser för aktivitetssekvens
@@ -248,7 +251,7 @@ Följande platser är standardvärdena. Om du har anpassat installations katalog
 Platsen för logg filen **Smsts. log** i aktivitetssekvensen varierar beroende på fasen i aktivitetssekvensen:
 
 - I Windows PE före [Formatera och partitionera disk](../../../osd/understand/task-sequence-steps.md#BKMK_FormatandPartitionDisk) steg: `X:\Windows\temp\smstslog\smsts.log` (X är Windows PE RAM-enhet)
-- I steget Windows PE efter **format och disk partition** : `X:\smstslog\smsts.log`, kopieras sedan till `C:\_SMSTaskSequence\Logs\smstslog\smsts.log` när enheten är klar
+- I steget Windows PE efter **format och disk partition** : `X:\smstslog\smsts.log` , kopieras sedan till `C:\_SMSTaskSequence\Logs\smstslog\smsts.log` när enheten är klar
 - I det nya Windows-operativsystemet innan klienten installeras:`C:\_SMSTaskSequence\Logs\smstslog\smsts.log`
 - I Windows efter att klienten har installerats:`C:\Windows\CCM\Logs\smstslog\smsts.log`
 - I Windows när aktivitetssekvensen har slutförts:`C:\Windows\CCM\Logs\smsts.log`

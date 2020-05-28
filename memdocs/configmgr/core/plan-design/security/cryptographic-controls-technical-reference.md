@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: df289c284774a4e0bb3a379853f31f8d6f5bd44d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 623a8dab52e13c4674b961e825033430d34a8f88
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720599"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906552"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Teknisk referens för kryptografiska kontroller
 
@@ -260,5 +260,5 @@ Gör så här för att förbättra säkerheten för dina Configuration Manager-k
 - Inaktivera SSL 3,0, TLS 1,0 och TLS 1,1 
 - Ändra ordning på TLS-relaterade chiffersviter 
 
-Mer information finns i [så här begränsar du användningen av vissa kryptografiska algoritmer och protokoll i Schannel. dll](https://support.microsoft.com/en-us/kb/245030/) och [prioriterar Schannel cipher-paket](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx). Dessa procedurer påverkar inte Configuration Manager funktioner.
+Mer information finns i [så här begränsar du användningen av vissa kryptografiska algoritmer och protokoll i Schannel. dll](https://support.microsoft.com/help/245030/) och [prioriterar Schannel cipher-paket](https://docs.microsoft.com/windows/win32/secauthn/prioritizing-schannel-cipher-suites). Dessa procedurer påverkar inte Configuration Manager funktioner.
 

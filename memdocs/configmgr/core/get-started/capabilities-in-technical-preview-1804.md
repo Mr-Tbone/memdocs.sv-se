@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: b30386745244900e7f525f8f45b25a598628bf43
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: b709d6ec0c0cda188502c314d945a70e8de71288
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078744"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905258"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-configuration-manager"></a>Funktioner i Technical Preview 1804 för Configuration Manager
 
@@ -68,7 +68,7 @@ Det här fjärrinnehålls biblioteket är en ny förutsättning för att [plats 
 > [!Note]  
 > Den här åtgärden flyttar bara innehålls biblioteket på plats servern. Innehålls bibliotekets placering påverkas inte av distributions platserna. 
 
-### <a name="prerequisites"></a>Krav  
+### <a name="prerequisites"></a>Förutsättningar  
 - Plats serverns dator konto behöver **Läs** -och **Skriv** behörighet till nätverks Sök vägen som du flyttar innehålls biblioteket till. Inga komponenter är installerade på fjärrdatorn. 
 
 ### <a name="try-it-out"></a>prova!
@@ -80,7 +80,7 @@ Det här fjärrinnehålls biblioteket är en ny förutsättning för att [plats 
 
 3. Välj **en nätverks resurs** och ange en giltig nätverks Sök väg. Den här sökvägen är den plats där platsen flyttar innehålls biblioteket. Klicka på **OK**.  
 
-4. Observera egenskapen **status** i kolumnen innehålls bibliotek i informations fönstret. Den uppdaterar för att visa platsens förlopp när innehålls biblioteket flyttas. När pågår visas procent andelen slutförd. Om det finns ett fel tillstånd visas fel meddelandet. Vanliga fel är `access denied` eller `disk full`. När du är klar `OK`visas den. Mer information finns i **Distmgr. log** . Mer information finns i [loggarna plats Server och plats system Server](../plan-design/hierarchy/log-files.md#BKMK_SiteSiteServerLog).  
+4. Observera egenskapen **status** i kolumnen innehålls bibliotek i informations fönstret. Den uppdaterar för att visa platsens förlopp när innehålls biblioteket flyttas. När pågår visas procent andelen slutförd. Om det finns ett fel tillstånd visas fel meddelandet. Vanliga fel är `access denied` eller `disk full` . När du är klar visas den `OK` . Mer information finns i **Distmgr. log** . Mer information finns i [loggarna plats Server och plats system Server](../plan-design/hierarchy/log-files.md#BKMK_SiteSiteServerLog).  
 
 Om du behöver flytta innehålls biblioteket tillbaka till plats servern upprepar du den här processen men väljer alternativet **lokalt på plats servern**.  
 
@@ -134,8 +134,6 @@ Om du försöker skicka feedback från en enhet som inte har åtkomst till Inter
 
 Använd Support Center för klient fel sökning, real tids logg visning eller för att hämta statusen för en Configuration Manager klient dator för senare analys. Support Center är ett enda verktyg för att konsolidera många administratörs fel söknings verktyg. En för hands version av den senaste versionen av Support Center med fel korrigeringar, förbättringar och en förhands granskning av vårt nya logg visnings program finns i den tekniska för hands versionen. Hitta installations programmet för Support Center på plats servern i mappen **CD. latest\SMSSETUP\Tools\SupportCenter** .
 
- > [!Tip]  
- > Äldre dokumentation för de befintliga funktionerna i Support Center finns på [TechNet](https://technet.microsoft.com/library/dn688621.aspx). Relevant information finns i processen för att migrera till docs.microsoft.com-biblioteket.  
 
 ### <a name="new-support-center-features"></a>Nya Support Center-funktioner  
 
@@ -196,7 +194,7 @@ Vissa klient-och Server verktyg kan avslutas oväntat vid start. Det här proble
 
 Beteendet har ändrats när du återkallar godkännande för ett program. Nu när du nekar begäran för programmet, avinstallerar klienten programmet från användarens enhet. 
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - Aktivera funktionen **Godkänn program begär Anden för användare per enhet**.
 
 ### <a name="try-it-out"></a>prova!
@@ -304,7 +302,7 @@ Vi har gjort följande förbättringar av operativ Systems distributionen, varav
   > Variabler och deras värden sparas med aktivitetssekvensen som XML och fördunklade i databasen. När klienten begär en aktivitetssekvens från hanterings platsen krypteras den under överföring och lagras på klienten. Alla variabel värden är dock oformaterad text i aktivitetssekvensen i minnet under körning på klienten. Om aktivitetssekvensen innehåller ett steg för att mata ut värdet för variabeln, är den här utmatningen oformaterad text. Det här beteendet kräver en uttrycklig åtgärd av administratören att inkludera ett sådant steg i aktivitetssekvensen. 
 
 
-- [Maskera program namn under körnings kommando steget i en aktivitetssekvens](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): om du vill förhindra att potentiellt känsliga data visas eller loggas anger du variabeln **OSDDoNotLogCommand** till `TRUE`. Den här variabeln maskerar program namnet i Smsts. log under [körningen av kommando rads steget Kör kommando rad](../../osd/understand/task-sequence-steps.md#BKMK_RunCommandLine) . <!--1358493-->  
+- [Maskera program namn under körnings kommando steget i en aktivitetssekvens](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): om du vill förhindra att potentiellt känsliga data visas eller loggas anger du variabeln **OSDDoNotLogCommand** till `TRUE` . Den här variabeln maskerar program namnet i Smsts. log under [körningen av kommando rads steget Kör kommando rad](../../osd/understand/task-sequence-steps.md#BKMK_RunCommandLine) . <!--1358493-->  
 
 
 

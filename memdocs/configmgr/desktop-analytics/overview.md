@@ -10,12 +10,13 @@ ms.assetid: 38b2bed2-20dd-4ce1-abc0-219343d2c4b8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6710170d6c86f59b1626285c618f3108f8947974
-ms.sourcegitcommit: 8a8378b685a674083bfb9fbc9c0662fb0c7dda97
+ms.reviewer: acabello
+ms.openlocfilehash: b280661c4de9282d3907b7d480477fc67f6a8dc5
+ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619448"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83824072"
 ---
 # <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -62,7 +63,7 @@ Desktop Analytics ger följande fördelar:
 
 - **Configuration Manager-integrering**: tjänst molnet – möjliggör din befintliga lokala infrastruktur. Använd dessa data och analyser för att distribuera och hantera Windows på dina enheter.  
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller följande krav.
 
@@ -93,7 +94,7 @@ Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller f
     > Desktop Analytics stöder flera Configuration Manager hierarkier som rapporterar till en enda Azure AD-klient.<!-- 4814075 --> Om du har flera hierarkier i din miljö har du följande alternativ:
     >
     > - Använd olika kommersiella ID: n och Azure AD-klienter.
-    > - Konfigurera båda hierarkierna så att de använder samma kommersiella ID för att dela Azure AD-instansen och Desktop Analytics-instansen.
+    > - Konfigurera båda hierarkierna så att de använder samma kommersiella ID för att dela Azure AD-instansen och Desktop Analytics-instansen. Använd [olika appar](connect-configmgr.md#bkmk_connect) för att ansluta varje hierarki. Det kan ta upp till 30 dagar innan du kopplar från en hiearchy för portalen för att återspegla ändringarna. 
 
 - Enheter som kör Windows 7, Windows 8,1 eller Windows 10  
 

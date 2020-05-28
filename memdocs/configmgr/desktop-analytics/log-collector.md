@@ -1,5 +1,5 @@
 ---
-title: Logginsamlaren
+title: Logginsamlare
 titleSuffix: Configuration Manager
 description: Använd loggar insamlings verktyget för att felsöka Desktop Analytics
 ms.date: 07/26/2019
@@ -10,19 +10,20 @@ ms.assetid: 349b2a69-af46-481f-afb2-24d98774e852
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c101e45eb794ff73599e9612a5aec991be01ae6c
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: 8782913e40bffdcbe5a151fac8821f05b7e7fece
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718884"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268580"
 ---
 # <a name="desktop-analytics-log-collector"></a>Logg insamlare för Skriv bords analys
 
 Från och med Configuration Manager version 1906 använder du verktyget **DesktopAnalyticsLogsCollector. ps1** från installations katalogen Configuration Manager för att felsöka problem med enhets registrering för Station ära datorer. Den kör vissa grundläggande fel söknings steg och samlar in relevanta loggar i en enda arbets katalog. Du kan dela det här innehållet med Microsoft support.
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - En stationär Analytics-klient som kör Windows 10, Windows 8,1 eller Windows 7 med Service Pack 1
 
@@ -117,7 +118,7 @@ Anger om skriptet samlar in Windows UTC-spårning och kör anslutnings diagnos.
 **Standardvärde**: `0` (Aktivera inte UTC-spårning eller diagnostik för att köra anslutning)
 
 
-## <a name="output"></a>Utdata
+## <a name="output"></a>Resultat
 
 Skriptet skapar en *arbetsmapp* under den angivna sökvägen. Till exempel **M365AnalyticsLogs_yy_MM_dd_HH_mm_ss**. Alla utdatafiler placeras i den här arbetsmappen.
 

@@ -2,7 +2,7 @@
 title: Nyheter i Desktop Analytics
 titleSuffix: Configuration Manager
 description: En sammanfattning av de nya funktionerna i den senaste månads versionen av moln tjänsten för Skriv bords analys.
-ms.date: 03/12/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: fa300181-86cb-4afe-8fbf-895a7572378d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ce882f6bfc7a0d724688d5df59051dae17d54498
-ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
+ms.reviewer: acabello
+ms.openlocfilehash: 1d45d115f279603fa74e143c603c116146278ffe
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693147"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268172"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Nyheter i Desktop Analytics
 
@@ -26,6 +27,16 @@ Lär dig vad som är nytt varje månad i Skriv bords analys.
 
 Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
 <!-- a locale is required for the RSS search string -->
+
+## <a name="may-2020"></a>Maj 2020
+
+### <a name="reduce-the-number-of-apps-for-review"></a>Minska antalet appar för granskning
+
+<!-- 5542186 -->
+
+För att hjälpa till att konsolidera och minska antalet appar som visas på sidan till gångar i portalen kombinerar den nu alla versioner av appar med samma namn och utgivare. Antalet appar i panelen för att ange appar visas **i den här** inställningen. I stället för hundratals instanser av Microsoft Edge finns det till exempel en instans för alla versioner. Du kan fatta beslut en gång för alla versioner. Om du behöver fatta beslut om vissa versioner av en app kan du konfigurera det här beteendet.
+
+Mer information finns i [om till gångar – appar](about-assets.md#apps).
 
 ## <a name="march-2020"></a>Mars 2020
 

@@ -10,12 +10,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 24c3a72eacea6446fb82785a25b0318d8cad0471
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 3c52008089a6d23d5c4efe44f0970bb186eb334a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711597"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904638"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>SQL Server-versioner som stöds för Configuration Manager
 
@@ -65,7 +65,7 @@ I en hierarki med flera platser kan olika platser använda olika versioner av SQ
 - De SQL Server-versioner som du använder finns kvar i supporten av Microsoft.
 - SQL Server stöder replikering mellan de två versionerna av SQL Server. Mer information finns i [SQL Server replikering bakåt](https://docs.microsoft.com/sql/relational-databases/replication/replication-backward-compatibility).
 
-För SQL Server 2016 och tidigare, stöd för varje SQL-version och service pack följer [Microsofts livs cykel princip](https://aka.ms/sqllifecycle). Stöd för en speciell SQL Server service pack innehåller ackumulerade uppdateringar om de inte bryter mot den grundläggande service pack versionen. Från och med SQL Server 2017 frigörs inte service packs eftersom det följer en [modern underhålls modell](https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-the-modern-servicing-model-for-sql-server/). SQL Servers teamet rekommenderar kontinuerlig, [proaktiv installation av ackumulerade uppdateringar](https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/) när de blir tillgängliga.
+För SQL Server 2016 och tidigare, stöd för varje SQL-version och service pack följer [Microsofts livs cykel princip](https://aka.ms/sqllifecycle). Stöd för en speciell SQL Server service pack innehåller ackumulerade uppdateringar om de inte bryter mot den grundläggande service pack versionen. Från och med SQL Server 2017 frigörs inte service packs eftersom det följer en [modern underhålls modell](https://docs.microsoft.com/archive/blogs/sqlreleaseservices/announcing-the-modern-servicing-model-for-sql-server). SQL Servers teamet rekommenderar kontinuerlig, [proaktiv installation av ackumulerade uppdateringar](https://docs.microsoft.com/archive/blogs/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism) när de blir tillgängliga.
 
 Om inget annat anges stöds följande versioner av SQL Server med alla aktiva versioner av Configuration Manager. Om stöd för en ny SQL Server-version läggs till, anges Configuration Manager-versionen som lägger till det stödet. Om stödet är inaktuellt kan du se mer information om berörda versioner av Configuration Manager.
 
@@ -109,7 +109,7 @@ SQL Server version 2019 loggar följande fel:
 
 `Microsoft SQL Server reported SQL message 596, severity 21: [HY000][596][Microsoft][SQL Server Native Client 11.0][SQL Server]Cannot continue the execution because the session is in the kill state.`
 
-Du ser också krasch dum par (`.mdump` filer) från SQL i sin logg katalog som standard. `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log`
+Du ser också krasch dum par ( `.mdump` filer) från SQL i sin logg katalog som standard `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log` .
 
 ### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: standard, Enterprise
 

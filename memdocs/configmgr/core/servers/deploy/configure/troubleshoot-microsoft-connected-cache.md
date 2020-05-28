@@ -10,19 +10,19 @@ ms.assetid: 121e0341-4f51-4d54-a357-732c26caf7c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5be6158a2ed7d79af2bee72c81a462e4d83b68e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 0a8c975798c506339a981e8648003387dc1e9838
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718289"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83878100"
 ---
 # <a name="troubleshoot-microsoft-connected-cache-in-configuration-manager"></a>Felsök Microsoft Connected cache i Configuration Manager
 
 Den här artikeln innehåller teknisk information om Microsoft Connected cache i Configuration Manager. Använd den för att felsöka problem som du kan ha i din miljö. Mer information om hur det fungerar och hur du använder det finns i [Microsoft Connected cache i Configuration Manager](../../../plan-design/hierarchy/microsoft-connected-cache.md).
 
 > [!NOTE]
-> Från och med version 1910 heter funktionen nu **Microsoft Connected cache**. Det kallades tidigare för leverans optimering i nätverket (DOINC).
+> Från och med version 1910 heter funktionen nu **Microsoft Connected cache**. Det kallades tidigare för leverans optimering i nätverket.
 
 ## <a name="verify"></a>Verifiera
 
@@ -76,12 +76,12 @@ Om klienten inte har kon figurer ATS korrekt, eller om cache-servern inte är ko
 
 ### <a name="verify-on-the-server"></a><a name="bkmk_verify-server"></a>Verifiera på servern
 
-Kontrol lera först att register egenskaperna är korrekt konfigurerade: `HKLM\SOFTWARE\Microsoft\Delivery Optimization In-Network Cache`. Till exempel är `PrimaryDrivesInput\DOINC-E77D08D0-5FEA-4315-8C95-10D359D59294`enhetens cache-plats, där `PrimaryDrivesInput` kan vara flera enheter, till `C,D,E`exempel.
+Kontrol lera först att register egenskaperna är korrekt konfigurerade: `HKLM\SOFTWARE\Microsoft\Delivery Optimization In-Network Cache` . Till exempel är enhetens cache-plats `PrimaryDrivesInput\DOINC-E77D08D0-5FEA-4315-8C95-10D359D59294` , där `PrimaryDrivesInput` kan vara flera enheter, till exempel `C,D,E` .
 
 Använd sedan följande metod för att simulera en begäran om klient hämtning till servern med de obligatoriska rubrikerna.
 
 1. Öppna ett 64-bitars PowerShell-fönster som administratör.
-2. Kör följande kommando och ersätt namnet eller IP-adressen för servern för `<DoincServer>`:
+2. Kör följande kommando och ersätt namnet eller IP-adressen för servern för `<DoincServer>` :
 
 ```PowerShell
 Invoke-WebRequest -URI "http://<DoincServer>/mscomtest/wuidt.gif" -Headers @{"Host"="b1.download.windowsupdate.com"}
@@ -116,7 +116,7 @@ Följande attribut indikerar att det är klart:
 
 - Installations logg för ARR:`%temp%\arr_setup.log`
 
-- Server installations logg för cachelagring `SMS_DP$\Ms.Dsp.Do.Inc.Setup\DoincSetup.log` : på distributions platsen och `DistMgr.log` på plats servern
+- Server installations logg för cachelagring: `SMS_DP$\Ms.Dsp.Do.Inc.Setup\DoincSetup.log` på distributions platsen och `DistMgr.log` på plats servern
 
 - Drift loggar i IIS: som standard`%SystemDrive%\inetpub\logs\LogFiles`
 

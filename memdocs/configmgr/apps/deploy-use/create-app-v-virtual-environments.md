@@ -30,7 +30,7 @@ I en virtuell miljö för Microsoft Application Virtualization (App-V) i Configu
 
 ## <a name="create-an-app-v-virtual-environment"></a>Skapa en virtuell App-V-miljö  
 
-1.  I Configuration Manager-konsolen väljer du **program bibliotek program bibliotek** > **program hantering** > **App-V virtuella miljöer**.  
+1.  I Configuration Manager-konsolen väljer du **program bibliotek**  >  **program bibliotek program hantering**  >  **App-V virtuella miljöer**.  
 
 3.  På fliken **Start** går du till gruppen **skapa** och väljer **Skapa virtuell miljö**.  
 

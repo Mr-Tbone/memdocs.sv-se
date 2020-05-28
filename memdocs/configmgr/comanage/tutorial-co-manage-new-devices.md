@@ -5,17 +5,17 @@ description: Lär dig hur du konfigurerar samhantering för nya Internet-baserad
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 03/12/2020
+ms.date: 05/14/2020
 ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 75016e8028dde29c83ae7e7f5a23a1f6dbb4417f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 67d86850dc0440481916984af8635d9e005044c6
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712717"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428608"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Självstudie: Aktivera samhantering för nya Internetbaserade enheter
 
@@ -40,7 +40,7 @@ Använd den här självstudien när:
 > * Aktivera samhantering i Configuration Manager
 > * Konfigurera Intune för att installera Configuration Manager-klienten
 
-## <a name="prerequisites"></a>Krav  
+## <a name="prerequisites"></a>Förutsättningar  
 
 ### <a name="azure-services-and-environment"></a>Azure-tjänster och-miljö
 
@@ -96,7 +96,7 @@ Om det här certifikatet:
 
 ### <a name="identify-a-unique-name-for-your-cloud-management-gateway-in-azure"></a>Identifiera ett unikt namn för din Cloud Management Gateway i Azure
 
-När du begär certifikatet för CMG, anger du vad som måste vara ett unikt namn för att identifiera din *moln tjänst (klassisk)* i Azure. Som standard använder det offentliga Azure-molnet *cloudapp.net*och CMG finns i cloudapp.net-domänen som * \<YourUniqueDnsName>. cloudapp.net*.  
+När du begär certifikatet för CMG, anger du vad som måste vara ett unikt namn för att identifiera din *moln tjänst (klassisk)* i Azure. Som standard använder det offentliga Azure-molnet *cloudapp.net*och CMG finns i cloudapp.net-domänen som * \< YourUniqueDnsName>. cloudapp.net*.  
 
 > [!TIP]  
 > I den här självstudien använder **certifikatet för CMG Server-autentisering** ett fullständigt domän namn som slutar på *contoso.com*.  När vi har skapat CMG konfigurerar vi en kanonisk namn post (CNAME) i vår organisations offentliga DNS. Den här posten skapar ett alias för den CMG som mappar till det namn som vi använder i det offentliga certifikatet.  
@@ -206,9 +206,9 @@ Kör följande procedur från den primära plats servern.
 
    - **Program namn**: Ange ett eget namn för appen, till exempel *Cloud Management Web App*.  
 
-   - **Start sidans URL**: det här värdet används inte av Configuration Manager, men krävs av Azure AD. Som standard är `https://ConfigMgrService`det här värdet.  
+   - **Start sidans URL**: det här värdet används inte av Configuration Manager, men krävs av Azure AD. Som standard är det här värdet `https://ConfigMgrService` .  
 
-   - **App-ID-URI**: det här värdet måste vara unikt i din Azure AD-klient. Den finns i åtkomsttoken som används av Configuration Manager-klienten för att begära åtkomst till tjänsten. Som standard är `https://ConfigMgrService`det här värdet.  
+   - **App-ID-URI**: det här värdet måste vara unikt i din Azure AD-klient. Den finns i åtkomsttoken som används av Configuration Manager-klienten för att begära åtkomst till tjänsten. Som standard är det här värdet `https://ConfigMgrService` .  
 
    Välj sedan logga in och ange ett globalt administratörs konto **för**Azure AD. Autentiseringsuppgifterna sparas inte av Configuration Manager. Den här personen behöver inte behörigheter i Configuration Manager och behöver inte vara samma konto som kör guiden Azure-tjänster.
 
@@ -220,7 +220,7 @@ Kör följande procedur från den primära plats servern.
 
    - **Program namn**: Ange ett eget namn för appen, till exempel *Cloud Management Native Client app*.
 
-   - **Svars-URL**: det här värdet används inte av Configuration Manager, men krävs av Azure AD. Som standard är `https://ConfigMgrClient`det här värdet.
+   - **Svars-URL**: det här värdet används inte av Configuration Manager, men krävs av Azure AD. Som standard är det här värdet `https://ConfigMgrClient` .
    Välj sedan logga in och ange ett globalt administratörs konto **för**Azure AD. Precis som webbappen sparas inte dessa autentiseringsuppgifter och kräver inte behörigheter i Configuration Manager.
 
    När du har loggat in visas resultaten. Välj **OK** för att stänga dialog rutan skapa klient program och gå tillbaka till sidan med egenskaper för appen. Välj sedan **Nästa** för att fortsätta.
@@ -237,11 +237,11 @@ Kör följande procedur från den primära plats servern.
 
    1. Välj den webbapp som du skapade.
 
-   2. Gå till **inställningar > nödvändiga behörigheter**, Välj **bevilja behörigheter**och välj sedan **Ja**.  
+   2. Gå till **API-behörigheter** > Välj **bevilja administratörs medgivande för** <your tenant> och välj sedan **Ja**.  
 
    3. Välj den inbyggda klient app som du skapade.
 
-   4. Gå till **inställningar > nödvändiga behörigheter**, Välj **bevilja behörigheter**och välj sedan **Ja**.  
+   4. Gå till **API-behörigheter** > Välj **bevilja administratörs medgivande för** <your tenant> och välj sedan **Ja**.
 
 9. I Configuration Manager-konsolen går du till **Administration > översikt > Cloud Services > Azure-tjänster**och väljer din Azure-tjänst. Högerklicka på **Azure Active Directory användar identifiering** och välj **Kör fullständig identifiering nu**. Bekräfta åtgärden genom att välja **Ja** .  
 
@@ -323,7 +323,7 @@ Konfigurera platsen så att den stöder utökad HTTP.
 
 3. Gå nu till **administrations > översikt > plats konfiguration > servrar och plats system roller** och välj servern med en hanterings plats där du vill installera anslutnings punkten för moln hanterings Gateway.  
 
-4. Välj **Lägg till plats system roller**och **Nästa**> **Nästa**.  
+4. Välj **Lägg till plats system roller**och **Nästa** >  **Nästa**.  
 
 5. Välj **Cloud Management Gateway-anslutningssträngen** och välj sedan **Nästa** för att fortsätta.  
 
@@ -351,7 +351,7 @@ Använd klient inställningar för att konfigurera Configuration Manager kliente
 
    - **Tillåt åtkomst till moln distributions platsen**
 
-4. På sidan **klient princip** anger du **Aktivera användar princip begär Anden från Internet klienter** = **Ja**.
+4. På sidan **klient princip** anger du **Aktivera användar princip begär Anden från Internet klienter**  =  **Ja**.
 
 5. Spara konfigurationen genom att välja **OK**.
 
@@ -383,11 +383,11 @@ Sedan, när en tidigare ohanterad Windows 10-enhet registreras med Intune, insta
 
 ### <a name="create-an-intune-app-to-install-the-configuration-manager-client"></a>Skapa en Intune-App för att installera Configuration Manager-klienten
 
-1. Från den primära plats servern loggar du in på [Azure Portal](https://portal.azure.com/) och går till Intune- **>-klientens appar > appar > Lägg till**.
+1. Logga in på [administrations Center för Microsoft Endpoint Manager](https://endpoint.microsoft.com) från den primära plats servern och gå till **apparna**  >  **alla appar**  >  **Lägg till**.
 
-2. För **typ av app**: Välj **branschspecifika appar**.
+2. För typ av app väljer du **branschspecifika appar** under **övrigt**.
 
-3. Välj **app Package-fil**och bläddra sedan till platsen för Configuration Manager filen **CCMSetup. msi**och välj sedan **Öppna > OK**.
+3. För **appaket-filen**bläddrar du till platsen för Configuration Manager filen **CCMSetup. msi**och väljer sedan **Öppna > OK**.
 Till exempel *C:\Program\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
 4. Välj **app-information**och ange sedan följande information:
@@ -395,7 +395,7 @@ Till exempel *C:\Program\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
    - **Utgivare**: Microsoft  
 
-   - **Kommando rads argument**: * \<ange kommando raden **CCMSETUPCMD** . Du kan använda kommando raden som du sparade från* *sidan aktivering i konfigurations guiden för samhantering. Den här kommando raden innehåller namnen på moln tjänsten och ytterligare värden som gör det möjligt för enheter att installera Configuration Manager klient program varan. >*  
+   - **Kommando rads argument**: * \< ange kommando raden **CCMSETUPCMD** . Du kan använda kommando raden som du sparade från* *sidan aktivering i konfigurations guiden för samhantering. Den här kommando raden innehåller namnen på moln tjänsten och ytterligare värden som gör det möjligt för enheter att installera Configuration Manager klient program varan. >*  
 
      Kommando rads strukturen bör likna det här exemplet endast med parametrarna CCMSETUPCMD och SMSSiteCode:  
 
@@ -412,11 +412,11 @@ Till exempel *C:\Program\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
 Följande procedur distribuerar appen för att installera Configuration Manager-klienten som du skapade i föregående procedur.
 
-1. Logga in på [Azure Portal](https://portal.azure.com/).  Välj **alla tjänster > Intune > klient program > appar**och välj sedan **Start programmet för klient installation för ConfigMgr**, den app som du skapade för att distribuera Configuration Manager klienten.  
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://endpoint.microsoft.com). Välj **appar**  >  **alla appar** och välj **Start programmet för ConfigMgr-klient installation**, den app som du skapade för att distribuera Configuration Manager-klienten.  
 
-2. Välj **tilldelningar > Lägg till grupp**.  Ange **tilldelnings typ** som **obligatorisk**och Använd sedan **inkluderade grupper** och **undantagna grupper** för att ange de Azure Active Directory (AD) grupper som har användare och enheter som du vill delta i samhantering.  
+2. Klicka på **Egenskaper** och sedan på **Redigera** för **tilldelningar**. Välj **Lägg till grupp** under **obligatoriska** tilldelningar för att ange de Azure Active Directory (AD) grupper som har användare och enheter som du vill delta i samhantering.  
 
-3. Välj **OK** och **Spara** konfigurationen.
+3. Välj **Granska + Spara** och **Spara** konfigurationen.
 Appen krävs nu av användare och enheter som du har tilldelat den till. När appen har installerat Configuration Manager-klienten på en enhet hanteras den av samhantering.
 
 ## <a name="summary"></a>Sammanfattning

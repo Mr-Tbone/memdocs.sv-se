@@ -10,12 +10,12 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 04981e944b838f89af2383678c94e620aaefd7f0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a52b70b0a753036c506e5d515cbac048d6771295
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719325"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83879060"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Vad är nytt i version 1910 av Configuration Manager aktuella grenen
 
@@ -42,11 +42,11 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Följande Microsoft-hanterings lösningar är nu en del av Microsoft Endpoint Manager-varumärket:
 
-- [Konfigurationshanteraren](https://docs.microsoft.com/configmgr)
+- [Configuration Manager](https://docs.microsoft.com/configmgr)
 - [Intune](https://docs.microsoft.com/intune)
 - [Desktop Analytics](../../../desktop-analytics/overview.md)
 - [Autopilot](https://docs.microsoft.com/intune/enrollment/enrollment-autopilot)
-- Andra funktioner i [administrations konsolen för enhets hantering](https://go.microsoft.com/fwlink/?linkid=2109094)
+- Andra funktioner i [administrations konsolen för enhets hantering](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/microsoft-intune-rolls-out-an-improved-streamlined-endpoint/ba-p/937760)
 
 Mer information finns i följande inlägg från Bengt Anderson, Microsoft corporate vice president för Microsoft 365:
 
@@ -123,7 +123,7 @@ När du aktiverar Microsoft Connected cache på Configuration Manager distributi
 Mer information finns [i Microsoft Connected cache i Configuration Manager](../hierarchy/microsoft-connected-cache.md#bkmk_intune).
 
 > [!NOTE]
-> Configuration Manager nuvarande gren version 1906 ingår [i DOINC (Delivery Optimization in-Network cache](../hierarchy/microsoft-connected-cache.md) ), ett program som installerats på Windows Server och som fortfarande är under utveckling. Den här funktionen heter nu Microsoft Connected cache från den aktuella gren versionen 1910.
+> Configuration Manager nuvarande gren version 1906 har inkluderat [leverans optimering i nätverket cache](../hierarchy/microsoft-connected-cache.md), ett program som är installerat på Windows Server och fortfarande är under utveckling. Den här funktionen heter nu Microsoft Connected cache från den aktuella gren versionen 1910.
 >
 > När du installerar den anslutna cachen på en Configuration Manager distributions plats avlastar den leverans optimerings tjänstens trafik till lokala källor. Ansluten cache gör detta genom att effektivt cachelagra innehåll på byte-intervall-nivån.
 

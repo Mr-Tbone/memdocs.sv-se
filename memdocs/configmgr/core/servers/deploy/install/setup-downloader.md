@@ -1,8 +1,8 @@
 ---
-title: Installationshämtare
+title: Verktyget för konfigurations hämtare
 titleSuffix: Configuration Manager
-description: Läs mer om det här fristående programmet som är utformat för att se till att plats installationen använder aktuella versioner av nyckel installations filer.
-ms.date: 01/22/2020
+description: Använd det fristående verktyget för att ladda ned aktuella versioner av nyckel installationsfilerna för installationen.
+ms.date: 05/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,102 +10,113 @@ ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2fa1899f8e7dc14812f9f9ecf889350a153b2d25
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2da8aed5cfe4a478010165445094f1fce4627d9a
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718079"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428840"
 ---
 # <a name="setup-downloader-for-configuration-manager"></a>Installations hämtaren för Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Innan du kör installations programmet för att installera eller uppgradera en Configuration Manager plats kan du använda det fristående installations hämtande programmet från den version av Configuration Manager som du vill installera för att hämta uppdaterade installationsfiler.  
+Innan du kör Configuration Manager installations programmet för att installera eller uppgradera en plats kan du använda det fristående verktyget för installations hämtaren för att hämta uppdaterade installationsfiler. Kör verktyget från den version av Configuration Manager som du vill installera. Använd uppdaterade installationsfiler för att kontrol lera att plats installationen använder aktuella versioner av nyckel installations filer.
 
-Om du använder uppdaterade installationsfiler ser du till att plats installationen använder aktuella versioner av nyckel installations filer. I Oveview:   
--   När du använder installations hämtaren för att ladda ned filer innan du startar installationen anger du en mapp som innehåller filerna.  
--   Det konto som du använder för att köra installations hämtaren måste ha **fullständig** behörighet till download-mappen.  
--   När du kör installations programmet för att installera eller uppgradera en plats kan du dirigera den till att använda den här lokala kopian av filer som du tidigare har laddat ned. Detta förhindrar att installations formuläret ansluter till Microsoft när du startar plats installationen eller uppgraderingen.  
--   Du kan använda samma lokala kopia av installationsfilerna för efterföljande plats installationer eller uppgraderingar.  
+När du använder installations hämtaren anger du en mapp som innehåller filerna. Det konto som du använder för att köra verktyget måste ha **fullständig** behörighet till download-mappen. När du kör installations programmet för att installera eller uppgradera en plats kan du ange den här lokala kopian av filer som du tidigare har laddat ned. Det här beteendet förhindrar att installations programmet ansluter till Microsoft när du startar plats installationen eller uppgraderingen. Du kan använda samma lokala kopia av installationsfilerna för andra plats installationer eller uppgraderingar av samma version.
 
-Följande typer av filer hämtas av installations hämtaren:  
--   Nödvändiga omdistribuerbara filer som krävs  
--   Språkpaket  
--   De senaste produkt uppdateringarna för installation  
+Installations hämtaren hämtar följande typer av filer:
+
+- Nödvändiga omdistribuerbara filer som krävs
+- Språkpaket
+- De senaste produkt uppdateringarna för installation
 
 Det finns två alternativ för att köra installations hämtaren:
+
 - Kör programmet med användar gränssnittet
-- För kommando rads alternativ kör du programmet i en kommando tolk
+- Kör programmet i en kommando tolk för ytterligare kommando rads alternativ
 
+Om din organisation begränsar nätverkskommunikation med Internet med hjälp av en brand vägg eller proxyserver, måste du tillåta att verktyget får åtkomst till Internet-slutpunkter. Enheten där du ska köra verktyget kräver Internet åtkomst på samma sätt som tjänst anslutnings punkten. Mer information finns i [krav för Internet åtkomst](../../../plan-design/network/internet-endpoints.md#bkmk_scp).<!-- SCCMDocs#677 -->
 
-## <a name="run-setup-downloader-with-the-user-interface"></a><a name="bkmk_ui"></a>Kör installations hämtaren med användar gränssnittet  
+## <a name="run-setup-downloader-with-the-user-interface"></a><a name="bkmk_ui"></a>Kör installations hämtaren med användar gränssnittet
 
-1.  Öppna Utforskaren och gå till ** &lt;ConfigMgrInstallationMedia\>\SMSSETUP\BIN\X64**på en dator som har Internet åtkomst.  
+1. På en dator som har Internet åtkomst bläddrar du till installations mediet för den version av Configuration Manager som du vill installera.
 
-2.  Öppna installations hämtaren genom att dubbelklicka på **setupdl. exe**.   
+1. I undermappen **SMSSETUP\BIN\X64** kör du **setupdl. exe**.
 
-3. Ange sökvägen till den mapp som ska vara värd för de uppdaterade installationsfilerna och klicka sedan på **Hämta**. Installations hämtaren verifierar de filer som för närvarande finns i download-mappen. Den hämtar bara filer som saknas eller som är nyare än befintliga filer. Installations hämtaren skapar undermappar för nedladdade språk och andra nödvändiga undermappar.  
+1. Ange sökvägen till mappen där du vill lagra de uppdaterade installationsfilerna och välj sedan **Hämta**. Installations hämtaren verifierar de filer som för närvarande finns i download-mappen. Den hämtar bara filer som saknas eller som är nyare än befintliga filer. Den skapar undermappar för nedladdade språk och andra nödvändiga komponenter.
 
-4.  Om du vill granska nedladdnings resultatet öppnar du filen **ConfigMgrSetup. log** i rot katalogen på enhet C.  .  
+1. Information om hämtnings resultaten finns i **C:\ConfigMgrSetup.log**.
 
-## <a name="run-setup-downloader-from-a-command-prompt"></a><a name="bkmk_cmd"></a>Kör installations hämtaren från en kommando tolk  
+## <a name="run-setup-downloader-from-a-command-prompt"></a><a name="bkmk_cmd"></a>Kör installations hämtaren från en kommando tolk
 
-1.  I ett kommando tolks fönster går du till ** &lt; *Configuration Manager installations medie*\>\SMSSETUP\BIN\X64**.   
+1. Öppna en kommando tolk och ändra katalogen till installations mediet för den version av Configuration Manager som du vill installera.
 
-2.  Öppna installations hämtaren genom att köra **setupdl. exe**.
+1. Ändra katalogen till undermappen **SMSSETUP\BIN\X64** och kör **setupdl. exe** med de nödvändiga alternativen.
 
-    Du kan använda följande kommando rads alternativ med **setupdl. exe**:   
+1. Information om hämtnings resultaten finns i **C:\ConfigMgrSetup.log**.
 
-    -   **/Verify**: Använd det här alternativet för att verifiera filerna i download-mappen, som innehåller språkfiler. Granska filen ConfigMgrSetup. log i rot katalogen på enhet C för en lista över filer som är inaktuella. Inga filer laddas ned när du använder det här alternativet.  
+### <a name="command-line-options"></a>Kommandoradsalternativ
 
-    -   **/VERIFYLANG**: Använd det här alternativet för att verifiera språkfilerna i download-mappen. Granska filen ConfigMgrSetup. log i rot katalogen på enhet C för en lista över språkfiler som är inaktuella.
+Du kan använda följande kommando rads alternativ med **setupdl. exe**:
 
-    -   **/Lang**: Använd det här alternativet om du bara vill hämta språkfilerna till download-mappen.  
+- **/Verify**: verifiera filerna i download-mappen, som innehåller språkfiler. För en lista över inaktuella filer, granska **C:\ConfigMgrSetup.log**. När du använder det här alternativet hämtas inga filer.
 
-    -   **/NOUI**: Använd det här alternativet för att starta installations hämtaren utan att Visa användar gränssnittet. När du använder det här alternativet måste du ange **hämtnings Sök vägen** som en del av kommandot i kommando tolken.  
+- **/VERIFYLANG**: kontrol lera bara språkfilerna i download-mappen. För en lista över inaktuella språkfiler, granska **C:\ConfigMgrSetup.log**.
 
-    -   DownloadPath: du kan ange sökvägen till download-mappen för att automatiskt starta verifierings-eller hämtnings processen. ** &lt;\>** Du måste ange hämtnings Sök vägen när du använder alternativet **/NOUI** . Om du inte anger en sökväg för hämtning måste du ange sökvägen när installations hämtaren öppnas. Installations hämtaren skapar mappen om den inte finns.  
+- **/Lang**: Hämta bara språkfilerna till download-mappen.
 
-    Exempel på kommandon:
+- **/NOUI**: starta installations hämtaren utan användar gränssnittet. När du använder det här alternativet krävs **hämtnings Sök vägen** .
 
-    -   **setupdl &lt;DownloadPath\>**  
+- **Hämtnings Sök väg**: om du vill starta verifierings-eller hämtnings processen automatiskt anger du sökvägen till download-mappen. När du använder alternativet **/NOUI** , krävs hämtnings Sök vägen. Om du inte anger en hämtnings Sök väg uppmanas du att ange sökvägen med installations hämtaren. Om mappen inte finns skapas den av installations hämtaren.
 
-        -   Installations hämtaren startar, verifierar filerna i den angivna download-mappen och hämtar sedan bara de filer som saknas eller som har nyare versioner än befintliga filer.     
+### <a name="example-commands"></a>Exempelkommandon
 
-    -   **setupdl/VERIFY &lt;-DownloadPath\>**  
+#### <a name="example-1"></a>Exempel 1
 
-        -   Installations hämtaren startar och verifierar filerna i den angivna download-mappen.  
+Installations hämtaren verifierar filerna i den angivna download-mappen och laddar ned filer.
 
-    -   **setupdl/NOUI &lt;-DownloadPath\>**  
+`setupdl.exe C:\Download`
 
-        -   Installations hämtaren startar, verifierar filerna i den angivna download-mappen och hämtar sedan bara de filer som saknas eller som är nyare än de befintliga filerna.  
+#### <a name="example-2"></a>Exempel 2
 
-    -   **setupdl/LANG &lt;-DownloadPath\>**  
+Installations hämtaren verifierar bara filerna i den angivna download-mappen.
 
-        -   Installations hämtaren startar, verifierar språkfilerna i den angivna download-mappen och hämtar sedan bara de språkfiler som saknas eller som är nyare än de befintliga filerna.  
+`setupdl.exe /VERIFY C:\Download`
 
-    -   **setupdl/VERIFY**  
+#### <a name="example-3"></a>Exempel 3
 
-        -   Installations hämtaren startar och du måste ange sökvägen till download-mappen. Därefter verifierar installations hämtaren filerna i download-mappen när du har klickat på **Verifiera**.  
+Installations hämtaren verifierar filerna i den angivna download-mappen och laddar ned filer. Verktyget visar inte något användar gränssnitt.
 
-3.  Om du vill granska nedladdnings resultatet öppnar du filen **ConfigMgrSetup. log** i rot katalogen på enhet C.
+`setupdl.exe /NOUI C:\Download`
+
+#### <a name="example-4"></a>Exempel 4
+
+Installations hämtaren verifierar språkfilerna i den angivna download-mappen och hämtar sedan bara språkfilerna.
+
+`setupdl.exe /LANG C:\Download`
 
 ## <a name="copy-setup-downloader-files-to-another-computer"></a><a name="bkmk_cp-files"></a>Kopiera installations hämta filer till en annan dator
 
 1. I Utforskaren går du till någon av följande platser:
 
     - **&lt;Configuration Manager installationsmedia> \SMSSETUP\BIN\X64**
+
     - **&lt;Configuration Manager installations Sök väg> \BIN\X64**
-    
+
 1. Kopiera följande filer till samma målmapp på den andra datorn:
-    
+
     - **setupdl. exe**
-    - **. \\språk>\\setupdlres &lt;. dll**
-      - Den här filen finns i undermappen för installations språket. Till exempel är engelska i `00000409` undermappen.
 
-    Som exempel bör målmapparna på enheten se ut så här:
-    - C:\ConfigManInstall\setupdl.exe
-    - C:\ConfigManInstall\00000409\setupdlres.dll
+    - **.\\&lt; språk > \\ setupdlres. dll**
 
-1. Starta installations hämtaren från datorn med antingen [användar gränssnittet](#bkmk_ui) eller [kommando tolken](#bkmk_cmd), som beskrivs i avsnitten ovan.
+        > [!NOTE]
+        > Den här filen finns i undermappen för installations språket. Till exempel är engelska i `00000409` undermappen.
+
+    Målmapparna på enheten bör se ut som i följande exempel:
+
+    - `C:\ConfigManInstall\setupdl.exe`
+
+    - `C:\ConfigManInstall\00000409\setupdlres.dll`
+
+1. Kör installations hämtaren från mål datorn. Använd antingen [användar gränssnittet](#bkmk_ui) eller [kommando tolken](#bkmk_cmd).

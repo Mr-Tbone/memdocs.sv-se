@@ -10,12 +10,12 @@ ms.assetid: 24fca61e-9cdb-447a-ad7a-f4d2e4fd6704
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c191debd77502f7d594a77eb3bd0c50cd6854f66
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 84cb878de3eea56dc68180a83fd4b6a32b2d1073
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722587"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906429"
 ---
 # <a name="use-cloud-services-with-configuration-manager"></a>Använda molntjänster med Configuration Manager
 
@@ -36,7 +36,7 @@ Configuration Manager stöder flera molnbaserade alternativ. Dessa kan komplette
 
 -   Information om molnbaserade distributions platser finns i [Installera molnbaserade distributions platser](../servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md).
 
--   Mer information om Azure finns i [Azure](https://go.microsoft.com/fwlink/p/?LinkId=262965) i MSDN-biblioteket.  
+-   Mer information om Azure finns i [Vad är Azure?](https://azure.microsoft.com/overview/what-is-azure/)
 
 ### <a name="azure-virtual-machines-for-cloud-based-infrastructure"></a>Virtuella Azure-datorer (för molnbaserad infrastruktur)  
  Configuration Manager stöder användning av datorer som körs på virtuella datorer i Azure, precis som när det körs lokalt i det fysiska företags nätverket. Du kan använda virtuella Azure-datorer i följande scenarier:  
@@ -78,12 +78,4 @@ Dessa ytterligare funktioner kräver inte att du har en Azure-prenumeration. Du 
 ##  <a name="security-for-cloud-based-services"></a><a name="BKMK_CloudSec"></a>Säkerhet för molnbaserade tjänster  
  Configuration Manager använder certifikat för att etablera och få åtkomst till ditt innehåll i Azure och för att hantera de tjänster som du använder. Configuration Manager krypterar de data som du lagrar i Azure, men ger inga ytterligare säkerhets-eller data kontroller utöver de som Azure tillhandahåller.  
 
- Mer information finns i informationen om de olika molnbaserade resurs scenarierna. Du kan också läsa följande avsnitt om Azure-säkerhet:  
-
--   [Azure: förstå säkerhets konto hantering i Azure](https://go.microsoft.com/fwlink/p/?LinkId=262968)  
-
--   [Översikt över Azure-säkerhet](https://go.microsoft.com/fwlink/p/?LinkId=262970)  
-
--   [Klara säkerheten vid molnmigrering](https://go.microsoft.com/fwlink/p/?LinkId=262971)  
-
--   [Datasäkerhet i Azure del 1 av 2](https://go.microsoft.com/fwlink/p/?LinkId=262974)  
+ Mer information finns i informationen om de olika molnbaserade resurs scenarierna. Se även en [Introduktion till Azure-säkerhet](https://docs.microsoft.com/azure/security/fundamentals/overview).

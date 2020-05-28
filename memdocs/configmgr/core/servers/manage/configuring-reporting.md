@@ -10,12 +10,12 @@ ms.assetid: 55ae86a7-f0ab-4c09-b4da-89cd0e7fa0e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ba67fee260867494302e49b7c9d3a97480e236b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1b7ada6f54a7642817a321937a4d7128994d5538
+ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723763"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83823987"
 ---
 # <a name="configure-reporting-in-configuration-manager"></a>Konfigurera rapportering i Configuration Manager
 
@@ -70,7 +70,7 @@ Kontrollera att SQL Server Reporting Services är installerat och körs korrekt 
 
 3. Öppna **nyckeln ReportBuilderApplicationManifestName** -nyckeln för att redigera värde data.  
 
-4. Ändra värdet till `ReportBuilder_3_0_0_0.application`och välj sedan **OK** för att spara.
+4. Ändra värdet till `ReportBuilder_3_0_0_0.application` och välj sedan **OK** för att spara.
 
 5. Stäng Registereditorn.  
 
@@ -114,7 +114,7 @@ Mer information om hur du konfigurerar plats system finns i [Installera plats sy
 
 1. Konfigurera följande inställningar på sidan **repor ting Services-plats** :  
 
-    - **Namn på plats databas server**: Ange namnet på den server som är värd för Configuration Manager plats databasen. Guiden hämtar vanligt vis det fullständigt kvalificerade domän namnet (FQDN) för servern. Om du vill ange en databas instans använder du &lt;format *Server namnet*>\&lt; *instans namn*>. Till exempel `sqlserver\named1`.
+    - **Namn på plats databas server**: Ange namnet på den server som är värd för Configuration Manager plats databasen. Guiden hämtar vanligt vis det fullständigt kvalificerade domän namnet (FQDN) för servern. Om du vill ange en databas instans använder du format &lt; *Server namnet* > \& lt;* instans namn*>. Till exempel `sqlserver\named1`.
 
     - **Databas namn**: Ange namnet på den Configuration Manager plats databasen. Välj **Verifiera** för att bekräfta att guiden har åtkomst till plats databasen.  
 
@@ -130,7 +130,7 @@ Mer information om hur du konfigurerar plats system finns i [Installera plats sy
 
     - **Konto för repor ting Services-plats**: Välj **Ange**och välj sedan ett konto som ska användas. SQL Server Reporting Services på repor ting Services-platsen använder det här kontot för att ansluta till Configuration Managers plats databas. Den här anslutningen är att hämta data för en rapport. Välj **befintligt konto** för att ange ett Windows-användarkonto som du tidigare har konfigurerat som ett Configuration Manager konto. Välj **nytt konto** om du vill ange ett Windows-användarkonto som inte är konfigurerat för användning. Configuration Manager tilldelar automatiskt den angivna användaren åtkomst till plats databasen.  
 
-        Kontot som kör repor ting Services måste tillhöra den domän lokala säkerhets gruppen **Windows Authorization Access Group**. Den måste också ha behörigheten **Läs TokenGroupsGlobalAndUniversal** för att **tillåta**. Användare i en annan domän än kontot för repor ting Services-platsen måste ha ett dubbelriktat förtroende mellan domänerna för att kunna köra rapporter.
+        Kontot som kör repor ting Services måste tillhöra den domän lokala säkerhets gruppen **Windows Authorization Access Group**. Detta ger kontot behörighet **att läsa** för attributet **TokenGroupsGlobalAndUniversal** för alla användar objekt i domänen. Användare i en annan domän än kontot för repor ting Services-platsen måste ha ett dubbelriktat förtroende mellan domänerna för att kunna köra rapporter.
 
         Det angivna Windows-användarkontot och lösenordet krypteras och lagras i Reporting Services-databasen. Reporting Services använder kontot och lösenordet för att från platsdatabasen hämta data till rapporterna.  
 
@@ -232,9 +232,9 @@ Verifiera installationen av repor ting Services-platsen genom att titta på viss
 
 ### <a name="verify-installation-by-log-file"></a>Verifiera installationen med logg filen
 
-Öppna filen **Srsrp. log** som finns i katalogen **loggar** i Configuration Manager installations Sök väg. Sök efter strängen `Installation was successful`.
+Öppna filen **Srsrp. log** som finns i katalogen **loggar** i Configuration Manager installations Sök väg. Sök efter strängen `Installation was successful` .
 
-Stega genom den här logg filen från den tidpunkt då repor ting Services-platsen har installerats. Kontrollera att rapportmapparna har skapats, att rapporterna har distribuerats och att säkerhetsprincipen för varje mapp har bekräftats. Efter den sista raden med säkerhets princip bekräftelser söker du efter strängen `Successfully checked that the SRS web service is healthy on server`.  
+Stega genom den här logg filen från den tidpunkt då repor ting Services-platsen har installerats. Kontrollera att rapportmapparna har skapats, att rapporterna har distribuerats och att säkerhetsprincipen för varje mapp har bekräftats. Efter den sista raden med säkerhets princip bekräftelser söker du efter strängen `Successfully checked that the SRS web service is healthy on server` .  
 
 ## <a name="configure-a-certificate-to-author-reports"></a>Konfigurera ett certifikat för att skapa rapporter
 

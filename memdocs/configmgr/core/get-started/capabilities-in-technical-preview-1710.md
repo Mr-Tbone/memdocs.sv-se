@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 503bb6d2293b4b5efb1d84980225a9d7052e1656
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 3dd4c3f22a0f2c24153e6d26be2e3098511c5dc4
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721299"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905310"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-configuration-manager"></a>Funktioner i Technical Preview 1710 för Configuration Manager
 
@@ -35,7 +35,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 - **Uppdatering till en ny för hands version Miss lyckas när du har en plats server i passivt läge**. När du kör en för hands version som har en [primär plats server i passivt läge](capabilities-in-technical-preview-1706.md#site-server-role-high-availability), måste du avinstallera plats servern för passivt läge innan du kan uppdatera för hands versions platsen till den nya för hands versionen. Du kan installera om den passiva läges plats servern efter att platsen har slutfört uppdateringen.
 
   Så här avinstallerar du plats servern för passivt läge:
-  1. I-konsolen går du till **Administration** > **Översikt** > **plats konfigurations** > **servrar och plats system roller**och väljer sedan plats servern för passivt läge.
+  1. I-konsolen går du till **Administration**  >  **Översikt**  >  **plats konfigurations**  >  **servrar och plats system roller**och väljer sedan plats servern för passivt läge.
   2. I fönstret **plats system roller** högerklickar du på **plats Server** rollen och väljer sedan **ta bort roll**.
   3. Högerklicka på plats servern för passivt läge och välj sedan **ta bort**.
   4. När plats servern har avinstallerats startar du om tjänsten **CONFIGURATION_MANAGER_UPDATE**på den aktiva primära plats servern.
@@ -99,7 +99,7 @@ Efterlevnadsprinciper för distribution av sårbarhets Guard-principer är tillg
 
 Mer information om sårbarhets skydd och vissa komponenter och regler finns i [Windows Defender sårbarhet Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard) i dokumentations biblioteket för Windows.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 Hanterade enheter måste köra Windows 10 1709 är Creators Update eller senare och uppfyller följande krav beroende på de komponenter och regler som har kon figurer ATS:
 
 |Sårbarhets skydds komponent |Ytterligare krav|
@@ -110,7 +110,7 @@ Hanterade enheter måste köra Windows 10 1709 är Creators Update eller senare 
 | Nätverks skydd  |  [Windows Defender av real tids skydd]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.  |
 
 ### <a name="create-an-exploit-guard-policy----1355468---"></a>Skapa en princip för sårbarhets skydd  <!--1355468 -->
-1. Gå till **till gångar och efterlevnad** > **Endpoint Protection**i Configuration Manager-konsolen och klicka sedan på **Windows Defender sårbarhets skydd**.
+1. Gå till **till gångar och efterlevnad**Endpoint Protection i Configuration Manager-konsolen  >  **Endpoint Protection**och klicka sedan på **Windows Defender sårbarhets skydd**.
 2. På fliken **Start** går du till gruppen **skapa** och klickar på **Skapa princip för sårbarhet**.
 3. Ange ett namn och en valfri beskrivning för konfigurationsobjektet på sidan **Allmänt** i guiden **Skapa konfigurationsobjekt**.
 4. Välj sedan de komponenter för sårbarhets skydd som du vill hantera med den här principen. För varje komponent som du väljer kan du konfigurera ytterligare information.
@@ -121,11 +121,11 @@ Hanterade enheter måste köra Windows 10 1709 är Creators Update eller senare 
 5. Slutför guiden för att skapa principen, som du senare kan distribuera till enheter.
 
 ### <a name="deploy-an-exploit-guard-policy"></a>Distribuera en princip för sårbarhets skydd     
-När du har skapat principer för sårbarhets skydd kan du distribuera dem med hjälp av guiden Distribuera sårbarhets skydds princip. Det gör du genom att öppna Configuration Manager-konsolen till **till gångar och efterlevnad** > **Endpoint Protection**och sedan klicka på **distribuera sårbarhets Guard-princip**.
+När du har skapat principer för sårbarhets skydd kan du distribuera dem med hjälp av guiden Distribuera sårbarhets skydds princip. Det gör du genom att öppna Configuration Manager-konsolen till **till gångar och efterlevnad**  >  **Endpoint Protection**och sedan klicka på **distribuera sårbarhets Guard-princip**.
 
 ## <a name="limited-support-for-cng-certificates"></a>Begränsat stöd för CNG-certifikat
 <!-- 1356191 -->
-Från och med den här versionen kan du nu använda [Cryptography-API: t. ex. CNG-](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) certifikatmallar för följande scenarier:
+Från och med den här versionen kan du nu använda [Cryptography-API: t. ex. CNG-](https://docs.microsoft.com/windows/win32/seccng/cng-features) certifikatmallar för följande scenarier:
 
 - Klient registrering och kommunikation med en HTTPS-hanterings plats.   
 - Program distribution och program distribution med en HTTPS-distributions plats.   
@@ -202,7 +202,7 @@ Läs [blogg inlägget](https://blogs.windows.com/msedgedev/2016/09/27/applicatio
 
 Så här skapar du en princip och bläddrar bland de tillgängliga inställningarna:
 1. I **Configuration Manager** -konsolen väljer du **till gångar och efterlevnad**.
-2. I arbets ytan **till gångar och efterlevnad** väljer du **Översikt** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2. I arbets ytan **till gångar och efterlevnad** väljer du **Översikt**  >  **Endpoint Protection**  >  **Windows Defender Application Guard**.
 3. På fliken **Start** går du till gruppen **skapa** och klickar på **skapa Windows Defender Application Guard-princip**.
 4. Med blogg inlägget som referens kan du bläddra bland och konfigurera de tillgängliga inställningarna för att testa funktionen.
 5. I den här versionen har vi lagt till den nya nätverks definitions sidan i guiden. Här anger du företagets identitet och definierar företagets nätverks gränser.
@@ -218,5 +218,5 @@ Så här skapar du en princip och bläddrar bland de tillgängliga inställninga
 
 Läs mer om Windows Defender Application Guard i [det här blogg inlägget](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97). Mer information om fristående läge för Windows Defender Application Guard finns i [det här blogg inlägget](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
 
-## <a name="next-steps"></a>Nästa steg
+## <a name="next-steps"></a>Efterföljande moment
 Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).    

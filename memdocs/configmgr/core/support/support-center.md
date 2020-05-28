@@ -10,12 +10,12 @@ ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 21279eb2f7d7962d1286d60a599411912d38313a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: da2fe2ad66617ffb5ad3058011f111b0aaf9e9ae
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718604"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903916"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center för Configuration Manager
 
@@ -52,10 +52,10 @@ Från och med version 1906 är **OneTrace** ett nytt logg visnings program med S
 
 ### <a name="powershell-cmdlets"></a>PowerShell-cmdletar
 
-Support Center innehåller också [Windows PowerShell-cmdletar](https://go.microsoft.com/fwlink/?linkid=397830). Använd dessa cmdletar för att skapa en fjärr anslutning till en annan Configuration Manager-klient, för att konfigurera data insamlings alternativ och för att starta data insamling.
+Support Center innehåller också [PowerShell-cmdletar](https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps). Använd dessa cmdletar för att skapa en fjärr anslutning till en annan Configuration Manager-klient, för att konfigurera data insamlings alternativ och för att starta data insamling.
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Installera följande komponenter på den server eller klient dator där du installerar Support Center:
 
@@ -66,7 +66,7 @@ Installera följande komponenter på den server eller klient dator där du insta
 
 ## <a name="install"></a>Installera
 
-Hitta installations programmet för Support Center på plats servern på följande sökväg: `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi`.
+Hitta installations programmet för Support Center på plats servern på följande sökväg: `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi` .
 
 När du har installerat den hittar du följande objekt på Start-menyn i **Microsoft System Center** -gruppen:  
 
@@ -86,7 +86,7 @@ Om du redan har installerat en äldre version av Support Center Miss lyckas det 
 
 ### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Fjärr anslutningar måste innehålla dator namn eller domän som en del av användar namnet
 
-Om du ansluter till en fjärran sluten klient från Support Center måste du ange dator namn eller domän namn för användar kontot när anslutningen upprättas. Om du använder ett kort dator namn eller domän namn (till exempel `.\administrator`), lyckas anslutningen, men Support Center samlar inte in data från klienten.
+Om du ansluter till en fjärran sluten klient från Support Center måste du ange dator namn eller domän namn för användar kontot när anslutningen upprättas. Om du använder ett kort dator namn eller domän namn (till exempel `.\administrator` ), lyckas anslutningen, men Support Center samlar inte in data från klienten.
 
 Undvik det här problemet genom att använda följande format för användar namn för att ansluta till en fjärran sluten klient:
 
@@ -95,7 +95,7 @@ Undvik det här problemet genom att använda följande format för användar nam
 
 ### <a name="scripted-server-message-block-connections-to-remote-clients-might-require-removal"></a>Skriptbaserade Server Message Block-anslutningar till fjärrklienter kan kräva borttagning
 
-När du ansluter till fjärrklienter med hjälp av PowerShell-cmdleten [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) skapar Support Center en SMB-anslutning (Server Message Block) till varje fjärran sluten klient. Dessa anslutningar behålls när du har slutfört data insamlingen. För att undvika att överskrida det maximala antalet fjärr anslutningar för Windows kan du `net use` använda kommandot för att se den aktiva uppsättningen fjärr anslutningar. Inaktivera sedan alla onödiga anslutningar med hjälp av följande kommando:`net use <connection_name> /d`
+När du ansluter till fjärrklienter med hjälp av PowerShell-cmdleten [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) skapar Support Center en SMB-anslutning (Server Message Block) till varje fjärran sluten klient. Dessa anslutningar behålls när du har slutfört data insamlingen. För att undvika att överskrida det maximala antalet fjärr anslutningar för Windows kan du använda `net use` kommandot för att se den aktiva uppsättningen fjärr anslutningar. Inaktivera sedan alla onödiga anslutningar med hjälp av följande kommando:`net use <connection_name> /d`
 där `<connection_name>` är namnet på fjärr anslutningen.
 
 ### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>Begäran om utvärderings cykel för program distribution skickas inte korrekt till fjärrdatorer

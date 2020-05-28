@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
-ms.openlocfilehash: 8c91ba1c2b4b5ef7072c030eddd9b97dd69933e5
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 928ef8a8ebc90807912f22901743725df9aa67e7
+ms.sourcegitcommit: 79fb3b0f0486de1644904be348b7e08048e93b18
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075718"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82842231"
 ---
 # <a name="co-management-workloads"></a>Arbets belastningar för samhantering
 
@@ -39,7 +39,7 @@ Samhantering har stöd för följande arbets belastningar:
 
 - [Klientappar](#client-apps)  
 
-## <a name="compliance-policies"></a>Compliance principer
+## <a name="compliance-policies"></a>Efterlevnadsprinciper
 
 Efterlevnadsprinciper definierar de regler och inställningar som en enhet måste följa för att anses vara kompatibla med principer för villkorlig åtkomst. Du kan också använda efterlevnadsprinciper för att övervaka och åtgärda kompatibilitetsproblem med enheter oberoende av villkorlig åtkomst. Från och med Configuration Manager version 1910 kan du lägga till utvärdering av anpassade konfigurations bas linjer som en bedömnings regel för efterlevnadsprinciper. Mer information finns i [Inkludera anpassade konfigurations bas linjer som en del av utvärderingen av efterlevnadsprinciper](../compliance/deploy-use/create-configuration-baselines.md#bkmk_CAbaselines).
 
@@ -75,16 +75,15 @@ Endpoint Protection arbets belastningen omfattar Windows Defender Suite för sky
 - Windows Defender Application Control  
 - Windows Defender Säkerhetscenter  
 - Windows Defender Avancerat skydd (nu kallat Microsoft Defender Threat Protection)
-- Windows informationsskydd  
 
 Mer information om Intune-funktionen finns i [Endpoint Protection för Microsoft Intune](https://docs.microsoft.com/intune/endpoint-protection-windows-10).
 
 > [!Note]  
 > När du växlar den här arbets belastningen finns Configuration Manager-principerna kvar på enheten tills Intune-principerna skriver över dem. Det här beteendet ser till att enheten fortfarande har skydds principer under över gången.
 >
-> Endpoint Protection arbets belastningen ingår också i enhets konfigurationen. Samma sak gäller när du växlar arbets belastningen för [enhets konfigurationen](#device-configuration) .<!-- SCCMDocs.nl-nl issue #4 -->
+> Endpoint Protection arbets belastningen ingår också i enhets konfigurationen. Samma sak gäller när du växlar arbets belastningen för [enhets konfigurationen](#device-configuration) .<!-- SCCMDocs.nl-nl issue #4 --> När du växlar arbets belastningen för enhets konfigurationen innehåller den också principer för Windows Information Protection-funktionen, som inte ingår i arbets belastningen för Endpoint Protection.<!-- 4184095 -->
 >
-> De inställningar för Microsoft Defender Antivirus som är en del av profil typen enhets begränsningar för enhets konfiguration i Intune ingår inte i omfattningen för skjutreglaget för slut punkts skydd. Om du vill hantera Microsoft Defender Antivirus för samhanterade enheter med skjutreglaget för Endpoint Protection aktiverat, använder du de nya antivirus principerna i **Microsoft Endpoint Manager administrations Center** > **Endpoint Security** > **Antivirus**. Den nya princip typen har nya och förbättrade alternativ och har stöd för alla samma inställningar som är tillgängliga i profilen enhets begränsningar. <!--6609171-->
+> De inställningar för Microsoft Defender Antivirus som är en del av profil typen enhets begränsningar för enhets konfiguration i Intune ingår inte i omfattningen för skjutreglaget för slut punkts skydd. Om du vill hantera Microsoft Defender Antivirus för samhanterade enheter med skjutreglaget för Endpoint Protection aktiverat, använder du de nya antivirus principerna i **Microsoft Endpoint Manager administrations Center**  >  **Endpoint Security**  >  **Antivirus**. Den nya princip typen har nya och förbättrade alternativ och har stöd för alla samma inställningar som är tillgängliga i profilen enhets begränsningar. <!--6609171-->
 >
 > Windows-krypterings funktionen innehåller BitLocker-hantering. Mer information om beteendet för den här funktionen med samhantering finns i [distribuera BitLocker-hantering](../protect/deploy-use/bitlocker/deploy-management-agent.md#co-management-and-intune).<!-- SCCMDocs#2321 -->
 
@@ -97,6 +96,9 @@ Arbets belastningen enhets konfiguration innehåller inställningar som du hante
 Du kan fortfarande distribuera inställningar från Configuration Manager till samhanterade enheter även om Intune är enhets konfigurations utfärdaren. Detta undantag kan användas för att konfigurera inställningar som din organisation kräver men som ännu inte är tillgängliga i Intune. Ange detta undantag i en [Configuration Manager konfigurations bas linje](../compliance/deploy-use/create-configuration-baselines.md). Aktivera alternativet att **alltid tillämpa den här bas linjen även för samhanterade klienter** när du skapar bas linjen. Du kan ändra den senare på fliken **Allmänt** i egenskaperna för en befintlig bas linje.  
 
 Mer information om Intune-funktionen finns [i skapa en enhets profil i Microsoft Intune](https://docs.microsoft.com/intune/device-profile-create).  
+
+> [!NOTE]
+> När du växlar arbets belastningen för enhets konfigurationen innehåller den också principer för Windows Information Protection-funktionen, som inte ingår i arbets belastningen för Endpoint Protection.<!-- 4184095 -->
 
 ## <a name="office-click-to-run-apps"></a>Office Klicka-och-kör-appar
 
@@ -139,13 +141,13 @@ När Endpoint Protection arbets belastningen flyttas över till Intune kanske kl
 
 Undvik det här problemet genom att använda CleanUpPolicy. xml med hjälp av ConfigSecurityPolicy. exe när Intune-principerna har tagits emot av klienten med hjälp av stegen nedan:
 
-1. Kopiera och spara texten nedan som `CleanUpPolicy.xml`.
+1. Kopiera och spara texten nedan som `CleanUpPolicy.xml` .
 
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
    <SecurityPolicy xmlns="http://forefront.microsoft.com/FEP/2010/01/PolicyData" Name="FEP clean-up policy"><PolicySection Name="FEP.AmPolicy"><LocalGroupPolicySettings><IgnoreKey Name="SOFTWARE\Policies\Microsoft\Microsoft Antimalware"/><IgnoreKey Name="SOFTWARE\Policies\Microsoft\Windows Defender"/></LocalGroupPolicySettings></PolicySection></SecurityPolicy>
    ```
-1. Öppna en upphöjd kommando tolk `ConfigSecurityPolicy.exe`för. Den här körbara filen är vanligt vis i någon av följande kataloger:
+1. Öppna en upphöjd kommando tolk för `ConfigSecurityPolicy.exe` . Den här körbara filen är vanligt vis i någon av följande kataloger:
    - C:\Program\Windows Defender
    - C:\Program\Microsoft säkerhets klient
 1. I kommando tolken skickar du i XML-filen för att rensa principen. Till exempel `ConfigSecurityPolicy.exe C:\temp\CleanUpPolicy.xml`.  

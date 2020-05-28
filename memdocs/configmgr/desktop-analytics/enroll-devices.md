@@ -10,12 +10,13 @@ ms.assetid: 2ea18d09-c957-47f7-8e54-c6f2b3c74347
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e9cca066d389ea8d3847737651f4994977a5e2f5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: 22b5461df3a560449316009471ea029967118f5d
+ms.sourcegitcommit: 97fbb7db14b0c4049c0fe3a36ee16a5c0cf3407a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723616"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83864917"
 ---
 # <a name="how-to-enroll-devices-in-desktop-analytics"></a>Registrera enheter i Skriv bords analys
 
@@ -36,10 +37,10 @@ I följande tabell visas uppdateringarna för varje komponent i operativ system 
 | OS-version | Bedömning | DiagTrack |
 | --------------| ----------------------- | -------------------|
 | Windows 10 1909 | <sup> [Anmärkning 1](#bkmk_note1) ingår</sup> | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4529964) |
-| Windows 10 1903 | Ingår | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4498140) |
-| Windows 10 1809 | Ingår | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4464619) |
-| Windows 10 1803 | Ingår | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4099479) |
-| Windows 10 1709 | Ingår | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4043454) |
+| Windows 10 1903 | <sup> [Anmärkning 1](#bkmk_note1) ingår</sup> | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4498140) |
+| Windows 10 1809 | <sup> [Anmärkning 1](#bkmk_note1) ingår</sup> | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4464619) |
+| Windows 10 1803 | <sup> [Anmärkning 1](#bkmk_note1) ingår</sup> | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4099479) |
+| Windows 10 1709 | <sup> [Anmärkning 1](#bkmk_note1) ingår</sup> | [Senaste kumulativa uppdateringen](https://support.microsoft.com/help/4043454) |
 | Windows 8,1 | [KB 2976978](https://support.microsoft.com/help/2976978) <sup> [Anmärkning 2](#bkmk_note2)</sup> | [Senaste månatliga sammanställning](https://support.microsoft.com/help/4009470) |
 | Windows 7 SP1 | [KB 2952664](https://support.microsoft.com/help/2952664) <sup> [Anmärkning 3](#bkmk_note3)</sup> | [Senaste månatliga sammanställning](https://support.microsoft.com/help/4009469) |
 
@@ -50,7 +51,7 @@ I följande tabell visas uppdateringarna för varje komponent i operativ system 
 
 ### <a name="note-1-windows-10"></a><a name="bkmk_note1"></a>Anmärkning 1: Windows 10
 
-Även om Windows 10 innehåller dessa komponenter som standard kräver Windows 10-enheter den senaste kumulativa uppdateringen för att få alla funktioner i Skriv bords analys. Till exempel för att utvärdera enheten för kompatibilitet mot den senaste versionen av operativ systemet och för att få information om den nära real tids informationen för distributioner och registrerings status.
+Även om Windows 10 innehåller dessa komponenter som standard kräver Windows 10-enheter den senaste kumulativa uppdateringen för att få alla funktioner i Skriv bords analys som att utvärdera enheten för kompatibilitet mot den senaste versionen av operativ systemet.
 
 ### <a name="note-2-windows-81"></a><a name="bkmk_note2"></a>Anmärkning 2: Windows 8,1
 
@@ -125,7 +126,7 @@ Det finns ett alternativ i Configuration Manager inställningarna för Skriv bor
 
 I allmänhet använder du Configuration Manager samlingar för att ange inställningar för Skriv bords analys och registrering. Använd direkt medlemskap eller frågor för att ta med eller undanta enheter från samlingen. Mer information finns i [så här skapar du samlingar](../core/clients/manage/collections/create-collections.md).
 
-Configuration Manager konfigurerar bara Windows-inställningarna om ett värde inte redan finns. Om du behöver konfigurera olika inställningar för en unik enhets grupp kan du använda [grup princip](group-policy-settings.md). Inställningar som riktas mot grup princip har företräde framför Configuration Manager inställningar.
+Configuration Manager konfigurerar bara Windows-inställningarna om ett värde inte redan finns. Om du behöver konfigurera olika inställningar för en unik enhets grupp kan du använda [grup princip](group-policy-settings.md). Inställningar som riktas mot grup princip har företräde framför Configuration Manager inställningar. Enheter som omfattas av grup principen kanske inte korrekt reflekterar status på instrument panelen för [anslutnings hälsa](monitor-connection-health.md) .
 
 När du konfigurerar den diagnostiska data nivån ställer du in den övre gräns värdet för enheten. Som standard i Windows 10, version 1803 och senare kan användare välja att ange en lägre nivå. Du kan styra det här beteendet med hjälp av grup princip inställningen **Konfigurera telemetri välja användar gränssnitt**. Mer information finns i [grup princip inställningar för Desktop Analytics](group-policy-settings.md).
 

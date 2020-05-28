@@ -2,7 +2,7 @@
 title: Utvärdering av kompatibilitet
 titleSuffix: Configuration Manager
 description: Lär dig om kompatibilitetskontroll för Windows-appar och driv rutiner i Skriv bords analys.
-ms.date: 04/21/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: ea78f726-b1b3-49b0-8141-d916be48c458
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eedd33999ce17417122b2403c777a0b560e5f197
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.reviewer: acabello
+ms.openlocfilehash: 7b2bff4f8365693c86540c9b0578307340f13a49
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110006"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268903"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Kompatibilitetskontroll i Desktop Analytics
 
@@ -29,7 +30,7 @@ Skriv bords analys använder följande kategorier för kompatibilitetskontroll:
 
 - **Hög**: programmet är nästan säkert att fungera under eller efter uppgraderingen. Det kan behöva åtgärdas.
 
-- **Okänd**: appen bedömde inte. Det finns inga andra insikter, till exempel *MS-kända problem*.
+- **Okänd**: appen bedömde inte. Det finns inga andra insikter som *MS-kända problem* eller *färdiga för Windows*.
 
 I listan över appar eller driv rutins resurser i en distributions plan ser du det här värdet för varje till gång i kolumnen **Kompatibilitetsrapport** .
 
@@ -40,9 +41,13 @@ I listan över appar eller driv rutins resurser i en distributions plan ser du d
 Det finns flera källor som Desktop Analytics använder för att generera utvärderings klassificeringen för program:
 
 - [Kända problem med Microsoft](#microsoft-known-issues)
+- [Redo för Windows](#ready-for-windows)
 - [Avancerade insikter](#advanced-insights)
 
 Du kan hitta utvärderingen för varje källa i appen i Skriv bords analys. I listan med app-tillgångar i en distributions plan väljer du en enskild app för att öppna dess egenskaper utfällt fönster. Du ser en övergripande rekommendations-och utvärderings nivå. Avsnittet **kompatibilitets riskfaktorer** visar Detaljer för dessa utvärderingar.
+
+> [!TIP]
+> Om fönstret programinformation inte visar kompatibilitetskontrollen kan det bero på att **information om program versioner** är av. Den är inaktive rad som standard och kombinerar alla versioner av appar med samma namn och utgivare. Tjänsten ger fortfarande kompatibilitets riskbedömningar för varje version. Aktivera program versions **information** om du vill se en riskbedömning av kompatibilitet för en speciell program version. Mer information finns i [planera till gångar](about-deployment-plans.md#plan-assets).
 
 ## <a name="microsoft-known-issues"></a>Kända problem med Microsoft
 
@@ -120,7 +125,7 @@ Windows-kompatibilitetsproblem klassificerar vissa appar och driv rutiner med en
 
 1. Välj **plan till gångar** på menyn och växla till fliken **appar** .
 
-1. Filtrera kolumnen namn om du vill visa objekt med värden som innehåller ordet `Safeguard`. Välj resultatet om du vill visa mer information.
+1. Filtrera kolumnen namn om du vill visa objekt med värden som innehåller ordet `Safeguard` . Välj resultatet om du vill visa mer information.
 
     > [!NOTE]
     > Den här posten är inte en riktig app som är installerad på dina enheter. Det är en plats hållare som hjälper dig att identifiera appar eller driv rutiner i din miljö med taggen för skydds kompatibilitet.
@@ -130,6 +135,28 @@ Windows-kompatibilitetsproblem klassificerar vissa appar och driv rutiner med en
 1. Jämför den aktuella publicerade listan med listan med till gångar i din miljö. Åtgärda eventuella problematiska appar eller driv rutiner genom att uppdatera till en kompatibel version.
 
 [![Skärm bild av skydds appen i Desktop Analytics](media/5746559-safeguards.png)](media/5746559-safeguards.png#lightbox)
+
+## <a name="ready-for-windows"></a>Redo för Windows
+
+Tillämpnings status baseras på information från kommersiella enheter som delar data med Microsoft. Statusen är integrerad med support satser från program varu leverantörer.
+
+Skriv bords analys ger tillämpnings status för varje version av en till gång som finns på kommersiella enheter. Den här statusen omfattar inte data från konsument enheter eller enheter som inte delar data. Statusen är kanske inte representativ för införande frekvensen på alla Windows 10-enheter.
+
+Möjliga kategorier är:
+
+- **Starkt infört**: minst 100 000 kommersiella Windows 10-enheter har installerat den här appen.
+
+- **Antog**: minst 10 000 kommersiella Windows 10-enheter har installerat den här appen.
+
+- **Otillräckliga data**: det finns för få kommersiella Windows 10-enheter som delar information för den här appen för Microsoft att kategorisera dess införande.
+
+- **Kontakta utvecklaren**: det kan finnas kompatibilitetsproblem med den här versionen av appen. Microsoft rekommenderar att du kontaktar program leverantören och lär dig mer.
+
+- **Okänd**: det finns ingen tillgänglig information för den här versionen av programmet. Information kan vara tillgänglig för andra versioner av programmet.
+
+### <a name="support-statement"></a>Support instruktion
+
+Om program varu leverantören stöder en eller flera versioner av det här programmet på Windows 10 visas den här instruktionen i fönstret Egenskaper för app. I avsnittet kompatibilitets riskfaktorer tittar du på **support instruktionen**.
 
 ## <a name="advanced-insights"></a>Avancerade insikter
 
@@ -209,7 +236,7 @@ Desktop Analytics visar också och grupper efter tillgänglighet för alla driv 
 
 Du hittar utvärderingen av driv rutinen i Skriv bords analys. I listan över driv rutins resurser i en distributions plan väljer du en enskild driv rutin för att öppna dess egenskaper utfällt fönster. Du ser en övergripande rekommendations-och utvärderings nivå. Avsnittet **kompatibilitets riskfaktorer** visar Detaljer för dessa utvärderingar.
 
-| Tillgänglighet för driv rutin | Krävs åtgärd? | Vad det innebär | Riktlinjer |
+| Tillgänglighet för driv rutin | Krävs åtgärd? | Vad det innebär | Vägledning |
 |---------------------|------------------|---------------|----------|
 | Tillgänglig i box | Nej, endast för kännedom | Den aktuella installerade versionen av ett program eller en driv rutin migreras inte till den nya versionen av operativ systemet. En kompatibel version installeras med den nya operativ system versionen. | Ingen åtgärd krävs för att uppgraderingen ska kunna fortsätta. |
 | Importera från Windows Update | Ja | Den aktuella installerade versionen av en driv rutin migreras inte till den nya versionen av operativ systemet. En kompatibel version är tillgänglig från Windows Update. | Om datorn automatiskt tar emot uppdateringar från Windows Update krävs ingen åtgärd. Annars kan du importera en ny driv rutin från Windows Update när du har uppgraderat Windows. |

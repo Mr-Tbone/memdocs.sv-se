@@ -2,7 +2,7 @@
 title: Övervaka samhantering
 titleSuffix: Configuration Manager
 description: Använd instrument panelen för samhantering för att granska information om samhanterade enheter.
-ms.date: 07/26/2019
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 64d34cef57a3d5f141093d2b099c0b352604be42
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: e4516ca9baa7398322c204908c25248921a69d25
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709700"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268070"
 ---
 # <a name="how-to-monitor-co-management-in-configuration-manager"></a>Övervaka samhantering i Configuration Manager
 
@@ -173,7 +173,7 @@ Produktions principen (CoMgmtSettingsProd) är riktad till samlingen **alla syst
 
 ## <a name="wmi-device-data"></a>WMI-enhets data
 
-Fråga **SMS_Client_ComanagementState** WMI-klassen. Du kan skapa anpassade samlingar i Configuration Manager, vilket hjälper dig att fastställa statusen för din samhanterings distribution. Mer information om hur du skapar anpassade samlingar finns i [skapa samlingar](../core/clients/manage/collections/create-collections.md).
+Fråga **SMS_Client_ComanagementState** WMI-klassen i namn området **root\sms\ site_ &lt; SITECODE>** på plats servern. Du kan skapa anpassade samlingar i Configuration Manager, vilket hjälper dig att fastställa statusen för din samhanterings distribution. Mer information om hur du skapar anpassade samlingar finns i [skapa samlingar](../core/clients/manage/collections/create-collections.md).
 
 Följande fält är tillgängliga i WMI-klassen:  
 

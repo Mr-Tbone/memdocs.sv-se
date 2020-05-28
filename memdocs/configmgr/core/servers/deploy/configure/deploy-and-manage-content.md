@@ -2,7 +2,7 @@
 title: Distribuera innehåll
 titleSuffix: Configuration Manager
 description: När du har installerat distributions platser för Configuration Manager kan du börja distribuera innehåll till dem.
-ms.date: 10/06/2016
+ms.date: 05/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7478eff1a14eeffd4d12b1539df7c5573c6a7cb6
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: df26fe91f009a1a4f5d3c5a4f4adb5fe45bbd245
+ms.sourcegitcommit: 4c129bb04ea4916c78446e89fbff956397cbe828
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722979"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343158"
 ---
 # <a name="deploy-and-manage-content-for-configuration-manager"></a>Distribuera och hantera innehåll för Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "81722979"
 När du har installerat distributions platser för Configuration Manager kan du börja distribuera innehåll till dem. Normalt överförs innehåll till distributions platser över nätverket, men andra alternativ för att hämta innehåll till distributions platserna finns. När innehålls överföring till en distributions plats kan du uppdatera, distribuera om, ta bort och validera innehållet på distributions platser.  
 
 ##  <a name="distribute-content"></a><a name="bkmk_distribute"></a>Distribuera innehåll  
-Normalt distribuerar du innehåll till distributions platser så att det är tillgängligt för klient datorer. (Undantaget till detta är när du använder innehålls distribution på begäran för en bestämd distribution.)  När du distribuerar innehåll lagrar Configuration Manager innehållsfiler i ett paket och distribuerar sedan paketet till distributions platsen. Typer av innehåll som du kan distribuera, inklusive:  
+Normalt distribuerar du innehåll till distributions platser så att det är tillgängligt för klient datorer. (Undantaget till detta är när du använder innehålls distribution på begäran för en bestämd distribution.) När du distribuerar innehåll lagrar Configuration Manager innehållsfiler i ett paket och distribuerar sedan paketet till distributions platsen. Innehållet för paketet hämtas från plats serverns innehålls bibliotek. Typer av innehåll som du kan distribuera, inklusive:  
 
 - Program distributions typer  
 
@@ -52,21 +52,21 @@ Använd följande procedur för att distribuera innehåll till distributions pla
 
 2.  I arbets ytan **program bibliotek** väljer du ett av följande steg för den typ av innehåll som du vill distribuera:  
 
-    - **Program**: Expandera **program hanterings** > **program**och välj sedan de program som du vill distribuera.  
+    - **Program**: Expandera **program hanterings**  >  **program**och välj sedan de program som du vill distribuera.  
 
-    - **Paket**: Expandera **program hanterings** >  **paket**och välj sedan de paket som du vill distribuera.  
+    - **Paket**: Expandera **program hanterings**  >   **paket**och välj sedan de paket som du vill distribuera.  
 
-    - **Distributions paket**: Expandera**distributions paket**för **program uppdateringar** >  och välj sedan de distributions paket som du vill distribuera.  
+    - **Distributions paket**: **Software Updates**expandera  >   **distributions paket**för program uppdateringar och välj sedan de distributions paket som du vill distribuera.  
 
-    - **Driv rutins paket**: Expandera**driv rutins paket**för **operativ system** >  och välj sedan de driv rutins paket som du vill distribuera.  
+    - **Driv rutins paket**: Expandera **Operating Systems**  >   **driv rutins paket**för operativ system och välj sedan de driv rutins paket som du vill distribuera.  
 
-    - **Operativ Systems avbildningar**: **expandera** >  **Operating System Images**operativ system avbildningar och välj sedan de operativ Systems avbildningar som du vill distribuera.  
+    - **Operativ Systems avbildningar**: **expandera operativ system avbildningar**  >   **Operating System Images**och välj sedan de operativ Systems avbildningar som du vill distribuera.  
 
-    - **Installations**program för operativ system: **expandera** > operativ system**installations program för**operativ system och välj sedan de installations program för operativ system som du vill distribuera.  
+    - **Installations**program för operativ system: **expandera operativ**system  >  **installations program för**operativ system och välj sedan de installations program för operativ system som du vill distribuera.  
 
-    - **Start avbildningar**: Expandera **operativ system** >  **Start avbildningar**och välj sedan de start avbildningar som du vill distribuera.  
+    - **Start avbildningar**: Expandera **operativ system**  >   **Start avbildningar**och välj sedan de start avbildningar som du vill distribuera.  
 
-    - **Aktivitetssekvenser**:**expandera aktivitetssekvenser**för **operativ system** >  och välj sedan den aktivitetssekvens som du vill distribuera. Även om aktivitetssekvenser inte innehåller innehåll har de associerade innehålls beroenden som distribueras.  
+    - **Aktivitetssekvenser**: Expandera aktivitetssekvenser för **operativ system**  >   **Task Sequences**och välj sedan den aktivitetssekvens som du vill distribuera. Även om aktivitetssekvenser inte innehåller innehåll har de associerade innehålls beroenden som distribueras.  
 
       > [!NOTE]  
       > Om du ändrar aktivitetssekvensen måste du distribuera om innehållet.  
@@ -155,7 +155,7 @@ Du kan skapa en komprimerad, förinstallerad innehålls fil som innehåller file
     > [!NOTE]  
     > **För program:** På fliken **Start** i gruppen **program** klickar du på **Skapa förinstallerad innehålls fil**.  
     >   
-    > **För paket:** Klicka på **Skapa förinstallerad innehålls fil**i &lt;gruppen *PackageName*> på fliken **Start** .  
+    > **För paket:** **Home** &lt; Klicka på **Skapa förinstallerad innehålls fil**i gruppen *PackageName*> på fliken Start.  
 
 4.  På sidan **Allmänt** klickar du på **Bläddra**, väljer platsen för den förinstallerade innehålls filen, anger ett namn på filen och klickar sedan på **Spara**. Du använder den här förinstallerade innehålls filen på primära plats servrar, sekundära plats servrar eller distributions platser för att importera innehållet och metadata.  
 
@@ -252,16 +252,16 @@ Använd följande procedur för att manuellt exportera innehållsfilerna från d
 
 1.  Kopiera den förinstallerade innehålls filen till den dator som du vill extrahera innehållet från.  
 
-2.  Kopiera &lt;kommando rads verktyget extrahera innehåll från *ConfigMgrInstallationPath*> \Bin\\&lt;-*plattformen*> till den dator som du vill extrahera den förinstallerade innehålls filen från.  
+2.  Kopiera kommando rads verktyget extrahera innehåll från &lt; *ConfigMgrInstallationPath*> \Bin- \\ &lt; *plattformen*> till den dator som du vill extrahera den förinstallerade innehålls filen från.  
 
 3.  Öppna kommando tolken och navigera till mappen för den förinstallerade innehålls filen och verktyget extrahera innehåll.  
 
     > [!NOTE]  
     > Du kan extrahera en eller flera filer med förinstallerat innehåll på en plats Server, sekundär plats Server eller distributions plats.  
 
-4.  Skriv **extractcontent/p:**&lt;*PrestagedFileLocation*>**\\**&lt;*PrestagedFileName*PrestagedFileName> **/s** för att importera en enskild fil.  
+4.  Skriv **extractcontent/p:** &lt; *PrestagedFileLocation* > **\\** &lt; *PrestagedFileName* >  **/s** för att importera en enskild fil.  
 
-    Skriv **extractcontent/p:**&lt;*PrestagedFileLocation*> **/s** för att importera alla förinstallerade filer i den angivna mappen.  
+    Skriv **extractcontent/p:** &lt; *PrestagedFileLocation* >  **/s** för att importera alla förinstallerade filer i den angivna mappen.  
 
     Skriv till exempel **extractcontent/p: D:\PrestagedFiles\MyPrestagedFile.pkgx/s** där `D:\PrestagedFiles\` är PrestagedFileLocation, `MyPrestagedFile.pkgx` är namnet på den förinstallerade filen och `/S` informerar Configuration Manager att bara extrahera innehållsfiler som är nyare än vad som finns på distributions platsen.  
 
@@ -311,7 +311,7 @@ Du har följande alternativ för att hantera innehåll:
 
 ### <a name="update-content"></a>Uppdatera innehåll
 När käll fils platsen för en distribution uppdateras genom att lägga till nya filer eller ersätta befintliga filer med en nyare version, kan du uppdatera innehållsfilerna på distributions platserna genom att använda åtgärden **Uppdatera distributions platser** eller **Uppdatera innehåll** :  
-- Innehållsfilerna kopieras från käll fil Sök vägen till innehålls biblioteket på den plats som äger paketets innehålls källa  
+- Innehållsfilerna kopieras från den ursprungliga paket käll platsen till innehålls biblioteket på den plats som äger paketets innehålls källa
 - Paket versionen ökas  
 - Varje instans av innehålls biblioteket på plats servrar och distributions platser uppdateras bara med de filer som har ändrats  
 
@@ -324,19 +324,19 @@ När käll fils platsen för en distribution uppdateras genom att lägga till ny
 
 2.  I arbets ytan **program bibliotek** väljer du ett av följande steg för den typ av innehåll som du vill distribuera:  
 
-    - **Program**: Expandera **program hanterings** > **program**och välj sedan de program som du vill distribuera. Klicka på fliken **distributions typer** och välj sedan den distributions typ som du vill uppdatera.  
+    - **Program**: Expandera **program hanterings**  >  **program**och välj sedan de program som du vill distribuera. Klicka på fliken **distributions typer** och välj sedan den distributions typ som du vill uppdatera.  
 
-    - **Paket**: Expandera **program hanterings** > **paket**och välj sedan de paket som du vill uppdatera.  
+    - **Paket**: Expandera **program hanterings**  >  **paket**och välj sedan de paket som du vill uppdatera.  
 
-    - **Distributions paket**: Expandera**distributions paket**för **program uppdateringar** > och välj sedan de distributions paket som du vill uppdatera.  
+    - **Distributions paket**: **Software Updates**expandera  >  **distributions paket**för program uppdateringar och välj sedan de distributions paket som du vill uppdatera.  
 
-    - **Driv rutins paket**: Expandera**driv rutins paket**för **operativ system** > och välj sedan de driv rutins paket som du vill uppdatera.  
+    - **Driv rutins paket**: Expandera **Operating Systems**  >  **driv rutins paket**för operativ system och välj sedan de driv rutins paket som du vill uppdatera.  
 
-    - **Operativ Systems avbildningar**: **expandera** > **Operating System Images**operativ system avbildningar och välj sedan de operativ Systems avbildningar som du vill uppdatera.  
+    - **Operativ Systems avbildningar**: **expandera operativ system avbildningar**  >  **Operating System Images**och välj sedan de operativ Systems avbildningar som du vill uppdatera.  
 
-    - **Installations**program för operativ system: Expandera operativ system**installations program**för **operativ** > system och välj sedan de installations program för operativ system som du vill uppdatera.  
+    - **Installations**program för operativ system: Expandera operativ system **Operating Systems**  >  **installations program**för operativ system och välj sedan de installations program för operativ system som du vill uppdatera.  
 
-    - **Start avbildningar**: Expandera **operativ system** >  **Start avbildningar**och välj sedan de start avbildningar som du vill uppdatera.  
+    - **Start avbildningar**: Expandera **operativ system**  >   **Start avbildningar**och välj sedan de start avbildningar som du vill uppdatera.  
 
 3.  På fliken **Start** går du till gruppen **distribution** och klickar på **Uppdatera distributions platser**. Klicka sedan på **OK** för att bekräfta att du vill uppdatera innehållet.  
 
@@ -362,19 +362,19 @@ Använd den här åtgärden för att reparera innehållsfiler i paketet eller sk
 
 2.  I arbets ytan **program bibliotek** väljer du ett av följande steg för den typ av innehåll som du vill distribuera:  
 
-    - **Program**: Expandera **program hanterings** >  **program**och välj sedan det program som du vill distribuera om.  
+    - **Program**: Expandera **program hanterings**  >   **program**och välj sedan det program som du vill distribuera om.  
 
-    - **Paket**: Expandera **program hanterings** > **paket**och välj sedan det paket som du vill distribuera om.  
+    - **Paket**: Expandera **program hanterings**  >  **paket**och välj sedan det paket som du vill distribuera om.  
 
-    - **Distributions paket**: Expandera**distributions paket**för **program uppdateringar** >  och välj sedan det distributions paket som du vill distribuera om.  
+    - **Distributions paket**: **Software Updates**expandera  >   **distributions paket**för program uppdateringar och välj sedan det distributions paket som du vill distribuera om.  
 
-    - **Driv rutins paket**: Expandera**driv rutins paket**för **operativ system** > och välj sedan det driv rutins paket som du vill distribuera om.  
+    - **Driv rutins paket**: Expandera **Operating Systems**  >  **driv rutins paket**för operativ system och välj sedan det driv rutins paket som du vill distribuera om.  
 
-    - **Operativ Systems avbildningar**: **expandera** > **Operating System Images**operativ system avbildningar och välj sedan den operativ Systems avbildning som du vill distribuera om.  
+    - **Operativ Systems avbildningar**: **expandera operativ system avbildningar**  >  **Operating System Images**och välj sedan den operativ Systems avbildning som du vill distribuera om.  
 
-    - **Installations** > **program för**operativ system: **expandera operativ system installations**program och välj sedan de installations program för operativ system som du vill distribuera om.  
+    - **Installations**program för operativ system: **expandera operativ system installations**  >  **Operating System Installers**program och välj sedan de installations program för operativ system som du vill distribuera om.  
 
-    - **Start avbildningar**: Expandera **operativ system** >  **Start avbildningar**och välj sedan den Start avbildning som du vill distribuera om.  
+    - **Start avbildningar**: Expandera **operativ system**  >   **Start avbildningar**och välj sedan den Start avbildning som du vill distribuera om.  
 
 3.  På fliken **Start** går du till gruppen **Egenskaper** och klickar på **Egenskaper**.  
 
@@ -409,7 +409,7 @@ Du kan använda klass metoden **RetryContentReplication** Windows Management INS
 
 Använd bara den här metoden för att tvinga replikering när du måste omdistribuera innehållet när det har uppstått problem med normal replikering av innehåll (som vanligt vis bekräftas med hjälp av noden övervakning i-konsolen).   
 
-Mer information om det här SDK-alternativet finns [i RetryContentReplication-metoden i Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) på MSDN. Microsoft.com.
+Mer information om SDK-alternativet finns [i RetryContentReplication-metod i klass SMS_CM_UpdatePackages](../../../../develop/reference/sum/retrycontentreplication-method-in-class-sms_cm_updatepackages.md).
 
 ### <a name="remove-content"></a>Ta bort innehåll
 När du inte längre behöver innehåll på dina distributions platser kan du ta bort innehållsfilerna på distributions platsen.  
@@ -426,19 +426,19 @@ Men när innehållet associeras med ett annat paket som har distribuerats till s
 
 2.  I arbets ytan **program bibliotek** väljer du ett av följande steg för den typ av innehåll som du vill ta bort:  
 
-    - **Program**: Expandera **program hanterings** > **program**och välj sedan det program som du vill ta bort.  
+    - **Program**: Expandera **program hanterings**  >  **program**och välj sedan det program som du vill ta bort.  
 
-    - **Paket**: Expandera **program hanterings** > **paket**och välj sedan det paket som du vill ta bort.  
+    - **Paket**: Expandera **program hanterings**  >  **paket**och välj sedan det paket som du vill ta bort.  
 
-    - **Distributions paket**: Expandera**distributions paket**för **program uppdateringar** > och välj sedan det distributions paket som du vill ta bort.  
+    - **Distributions paket**: **Software Updates**expandera  >  **distributions paket**för program uppdateringar och välj sedan det distributions paket som du vill ta bort.  
 
-    - **Driv rutins paket**: Expandera**driv rutins paket**för **operativ system** > och välj sedan det driv rutins paket som du vill ta bort.  
+    - **Driv rutins paket**: Expandera **Operating Systems**  >  **driv rutins paket**för operativ system och välj sedan det driv rutins paket som du vill ta bort.  
 
-    - **Operativ Systems avbildningar**: **expandera** > **Operating System Images**operativ system avbildningar och välj sedan den operativ Systems avbildning som du vill ta bort.  
+    - **Operativ Systems avbildningar**: **expandera operativ system avbildningar**  >  **Operating System Images**och välj sedan den operativ Systems avbildning som du vill ta bort.  
 
-    - **Installations** > **program för**operativ system: **expandera operativ system installations**program och välj sedan det installations program för operativ system som du vill ta bort.  
+    - **Installations**program för operativ system: **expandera operativ system installations**  >  **Operating System Installers**program och välj sedan det installations program för operativ system som du vill ta bort.  
 
-    - **Start avbildningar**: Expandera **operativ system** > **Start avbildningar**och välj sedan den Start avbildning som du vill ta bort.  
+    - **Start avbildningar**: Expandera **operativ system**  >  **Start avbildningar**och välj sedan den Start avbildning som du vill ta bort.  
 
 3.  På fliken **Start** går du till gruppen **Egenskaper** och klickar på **Egenskaper**.  
 
@@ -491,19 +491,19 @@ Mer information om hur du konfigurerar schema för innehålls validering finns i
 
 2.  I arbets ytan **program bibliotek** väljer du ett av följande steg för den typ av innehåll som du vill verifiera:  
 
-    - **Program**: Expandera **program hanterings** > **program**och välj sedan det program som du vill validera.  
+    - **Program**: Expandera **program hanterings**  >  **program**och välj sedan det program som du vill validera.  
 
-    - **Paket**: Expandera **program hanterings** > **paket**och välj sedan det paket som du vill validera.  
+    - **Paket**: Expandera **program hanterings**  >  **paket**och välj sedan det paket som du vill validera.  
 
-    - **Distributions paket**: Expandera**distributions paket**för **program uppdateringar** > och välj sedan det distributions paket som du vill validera.  
+    - **Distributions paket**: **Software Updates**expandera  >  **distributions paket**för program uppdateringar och välj sedan det distributions paket som du vill validera.  
 
-    - **Driv rutins paket**: Expandera**driv rutins paket**för **operativ system** > och välj sedan det driv rutins paket som du vill validera.  
+    - **Driv rutins paket**: Expandera **Operating Systems**  >  **driv rutins paket**för operativ system och välj sedan det driv rutins paket som du vill validera.  
 
-    - **Operativ Systems avbildningar**: **expandera** > **Operating System Images**operativ system avbildningar och välj sedan den operativ Systems avbildning som du vill validera.  
+    - **Operativ Systems avbildningar**: **expandera operativ system avbildningar**  >  **Operating System Images**och välj sedan den operativ Systems avbildning som du vill validera.  
 
-    - **Installations** >  **program för**operativ system: **expandera operativ system installations**program och välj sedan de installations program för operativ system som du vill validera.  
+    - **Installations**program för operativ system: **expandera operativ system installations**  >   **Operating System Installers**program och välj sedan de installations program för operativ system som du vill validera.  
 
-    - **Start avbildningar**: Expandera **operativ system** > **Start avbildningar**och välj sedan den Start avbildning som du vill förinstallera.  
+    - **Start avbildningar**: Expandera **operativ system**  >  **Start avbildningar**och välj sedan den Start avbildning som du vill förinstallera.  
 
 3.  På fliken **Start** går du till gruppen **Egenskaper** och klickar på **Egenskaper**.  
 

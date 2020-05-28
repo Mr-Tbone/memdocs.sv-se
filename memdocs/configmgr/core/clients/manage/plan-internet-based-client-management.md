@@ -107,7 +107,7 @@ Du kan konfigurera andra klienter för både Internet-och intranäts klient hant
 
 Fördelen med automatisk växling är att klienter kan använda alla funktioner när de ansluter till intranätet och få viktig hantering när de är på Internet. Innehålls hämtning som börjar på Internet kan återupptas sömlöst i intranätet och på det andra sättet.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 IBCM i Configuration Manager har följande beroenden:
 

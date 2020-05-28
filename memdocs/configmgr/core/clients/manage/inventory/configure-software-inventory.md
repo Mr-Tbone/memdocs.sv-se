@@ -10,12 +10,12 @@ ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 74436eb95166ae9bc78d7ae22881b709349bf847
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: f6fcf4736c30d8743d0d26b52aac60ef12b5c9cd
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714432"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906305"
 ---
 # <a name="how-to-configure-software-inventory-in-configuration-manager"></a>Så här konfigurerar du program varu inventering i Configuration Manager
 
@@ -25,7 +25,7 @@ Den här proceduren konfigurerar standard klient inställningarna för program v
 
 ## <a name="to-configure-software-inventory"></a>Så här konfigurerar du programvaruinventering  
 
-1. I Configuration Manager-konsolen väljer du **Administration** > **klient inställningar**  **standard klient inställningar**.  
+1. I Configuration Manager-konsolen väljer du **Administration**  >  **klient inställningar****standard klient inställningar**.    
 
 2. På fliken **Start** går du till gruppen **Egenskaper** och väljer **Egenskaper**.  
 
@@ -44,7 +44,7 @@ Den här proceduren konfigurerar standard klient inställningarna för program v
    > [!TIP]
    >   Felkod 80041006 i inventoryprovider. log innebär att WMI-providern har slut på minne. Det innebär att minnes kvot gränsen för en provider har nåtts och inventerings leverantören inte kan fortsätta.
    > I det här fallet skapar inventerings agenten en rapport med 0 poster så att inga lager artiklar rapporteras. <br/>
-   > En möjlig lösning för det här felet är att minska omfånget för program inventerings samlingen. Om felet inträffar efter att inventerings omfånget har begränsats, kan [MemoryPerHost](https://blogs.technet.microsoft.com/askperf/2008/09/16/memory-and-handle-quotas-in-the-wmi-provider-service/) -egenskapen som definieras i klassen [_ProviderHostQuotaConfiguration](https://msdn.microsoft.com/library/aa394671) tillhandahålla en lösning.
+   > En möjlig lösning för det här felet är att minska omfånget för program inventerings samlingen. Om felet inträffar efter att inventerings omfånget har begränsats, kan [MemoryPerHost](https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-and-handle-quotas-in-the-wmi-provider-service/ba-p/373319) -egenskapen som definieras i klassen [_ProviderHostQuotaConfiguration](https://docs.microsoft.com/windows/win32/wmisdk/--providerhostquotaconfiguration) tillhandahålla en lösning.
 
 <!--SMS.480648 include WMI Out of memory tip -->
 

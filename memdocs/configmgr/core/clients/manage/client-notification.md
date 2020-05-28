@@ -10,12 +10,12 @@ ms.assetid: deb8aac8-2bd9-4980-a25b-5f8d93051226
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8a00f77a5a902728a7c41905314511cffcfa81a5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7680c8f955773f169d56f36eb9bbe6507d2d7ce6
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714096"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427812"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Klient meddelande i Configuration Manager
 
@@ -153,6 +153,9 @@ Från och med version 1910 finns nya enhets åtgärder för **client Diagnostics
 Mer information om de här inställningarna finns i [logg filen](../../plan-design/hierarchy/about-log-files.md#bkmk_reg-client).
 
 Spåra status för uppgiften i **diagnostik. log** på klienten. När klient loggar samlas in loggas ytterligare information i **MP_SinvCollFile. log** på hanterings platsen och **lera filen sinvproc. log** på plats servern.
+
+> [!Tip]
+> Insamlade klient loggar lagras enligt inställningarna för fil samling för program varu inventering. Filerna lagras på plats servern i **katalogen Inboxes\sinv.box\Filecol** -katalogen. Det finns ingen definierad gräns för antalet versioner. Aktiviteten [ta bort föråldrade filer](../../servers/manage/reference-for-maintenance-tasks.md#delete-aged-collected-files) plats underhåll tar bort filerna enligt ett schema, vilket som standard är var 90: e dag.
 
 ### <a name="prerequisites---client-diagnostics"></a>Krav – klientautentisering
 

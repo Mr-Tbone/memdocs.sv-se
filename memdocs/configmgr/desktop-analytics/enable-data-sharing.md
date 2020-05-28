@@ -10,12 +10,13 @@ ms.assetid: be680198-4cea-4378-a686-d52f382ba483
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c7610b0e60f3ea02918c9dd98858a3b2bfd7c712
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: 0811c695acba4859bf32de535a28ea55cf8eee07
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723637"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268750"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Aktivera data delning för Skriv bords analys
 
@@ -74,6 +75,9 @@ Om du vill aktivera data delning konfigurerar du proxyservern så att den tillå
 > För sekretess och data integritet kontrollerar Windows om ett Microsoft SSL-certifikat (certifikat fästning) vid kommunikation med slut punkter för diagnostikdata. SSL-avlyssning och inspektion är inte möjlig. Om du vill använda Desktop Analytics utesluter du dessa slut punkter från SSL-inspektion.<!-- BUG 4647542 -->
 
 Från och med version 2002, om Configuration Manager-platsen inte kan ansluta till obligatoriska slut punkter för en moln tjänst, genererar den en kritisk status meddelande-ID 11488. När den inte kan ansluta till tjänsten ändras SMS_SERVICE_CONNECTOR komponent status till kritisk. Visa detaljerad status i noden [komponent status](../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorSystemStatus) i Configuration Manager-konsolen.<!-- 5566763 -->
+
+> [!NOTE]
+> Mer information om IP-adressintervall för Microsoft finns i [Microsofts offentliga IP-utrymme](https://www.microsoft.com/download/details.aspx?id=53602). Dessa adresser uppdateras regelbundet. Det finns ingen kornig het för tjänsten. alla IP-adresser i dessa intervall kan användas.
 
 ### <a name="server-connectivity-endpoints"></a>Slut punkter för Server anslutning
 
@@ -136,7 +140,7 @@ Konfigurera enheter så att de använder den inloggade användarens kontext för
 - Se till att användarna har proxy-behörighet för att få åtkomst till slut punkterna för diagnostikdata. Det här alternativet kräver att enheterna har konsol användare med proxy-behörigheter, så att du inte kan använda den här metoden med hjälp av omdirigerings enheter.
 
 > [!IMPORTANT]
-> Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen **DisableEnterpriseAuthProxy** är beroende av register nyckeln `0`DisableEnterpriseAuthProxy, medan Microsoft Defender ATP kräver att den är inställd `1`på. Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
+> Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen är beroende av register nyckeln **DisableEnterpriseAuthProxy** `0` , medan Microsoft Defender ATP kräver att den är inställd på `1` . Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
 
 ### <a name="device-proxy-authentication"></a>Enhets-proxy-autentisering
 
@@ -158,7 +162,7 @@ Den här metoden är den mest komplexa eftersom den kräver följande konfigurat
 
   - Transparent proxy
 
-  - Konfigurera en enhets omfattande WinINET-proxy med följande grup princip inställning: **gör proxyinställningar per dator (i stället för per användare)** (ProxySettingsPerUser = `1`)
+  - Konfigurera en enhets omfattande WinINET-proxy med följande grup princip inställning: **gör proxyinställningar per dator (i stället för per användare)** (ProxySettingsPerUser = `1` )
 
   - Dirigerad anslutning eller som använder Network Address Translation (NAT)
 

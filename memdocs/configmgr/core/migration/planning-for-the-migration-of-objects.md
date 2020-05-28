@@ -10,12 +10,12 @@ ms.assetid: 066caf00-e419-4efb-93d3-ba4ba878297c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9777fb12a2d63a990587386ac33cb2749bf19a4e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 93c3887307c32ea636a6dbb064cda13f4b9130c6
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719654"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905134"
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-configuration-manager-current-branch"></a>Planera för migrering av Configuration Manager objekt till Configuration Manager aktuella grenen
 
@@ -123,7 +123,7 @@ Du kan migrera följande operativsystemdistributionsobjekt från en källhierark
 Du kan migrera konfigurationsobjekt och konfigurationsbaslinjer.  
 
 > [!NOTE]  
->  Feltolkade konfigurations objekt från Configuration Manager 2007-käll-hierarkier stöds inte för migrering. Du kan inte migrera eller importera dessa konfigurationsobjekt till målhierarkin. Mer information om feltolkade konfigurations objekt finns i avsnittet [om konfigurations objekt i Desired Configuration Management](https://go.microsoft.com/fwlink/?LinkId=103846) i dokumentations biblioteket för Configuration Manager 2007.  
+>  Feltolkade konfigurations objekt från Configuration Manager 2007-käll-hierarkier stöds inte för migrering. Du kan inte migrera eller importera dessa konfigurationsobjekt till målhierarkin. Mer information om feltolkade konfigurations objekt finns i avsnittet [om konfigurations objekt i Desired Configuration Management](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694136(v=technet.10)#uninterpreted-configuration-item) i dokumentations biblioteket för Configuration Manager 2007.  
 
 Du kan importera Configuration Manager 2007-konfigurations paket. Import processen konverterar automatiskt konfigurations paketen så att de är kompatibla med Configuration Manager aktuella grenen.  
 

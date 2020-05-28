@@ -2,7 +2,7 @@
 title: Viktig information
 titleSuffix: Configuration Manager
 description: Läs om brådskande problem som ännu inte har åtgärd ATS i produkten eller som omfattas av en Microsoft Support kunskaps bas artikel.
-ms.date: 04/08/2020
+ms.date: 05/21/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: da0b9fc5600a957680ad22e54edc176c892527a6
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 131b6104d5724c8a4eeb0bb68c4afd9a5319abb7
+ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718135"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83823970"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Viktig information för Configuration Manager
 
@@ -33,6 +33,8 @@ Information om de nya funktionerna som introducerades med olika versioner finns 
 - [Nyheter i version 1910](../../../plan-design/changes/whats-new-in-version-1910.md)
 - [Nyheter i version 1906](../../../plan-design/changes/whats-new-in-version-1906.md)  
 - [Nyheter i version 1902](../../../plan-design/changes/whats-new-in-version-1902.md)
+
+Information om de nya funktionerna i Desktop Analytics finns i [Nyheter i Desktop Analytics](../../../../desktop-analytics/whats-new.md).
 
 > [!Tip]  
 > Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22release+notes+-+Configuration+Manager%22&locale=en-us`
@@ -107,7 +109,7 @@ Om du kör Configuration Manager-konsolen på ett operativ system där språket 
 
 Felet beror på att en `scripts` mapp inte finns under `AdminConsole\bin` katalogen för svenska, ungerska eller japanska språk. Mappen skript är lokaliserad på dessa OS-språk.
 
-Undvik det här problemet genom att skapa en mapp som `scripts` heter i `AdminConsole\bin` katalogen. Kopiera filerna från din lokaliserade mapp till den nya `scripts` mappen. Distribuera Microsoft Edge, version 77 och senare när filerna har kopierats.
+Undvik det här problemet genom att skapa en mapp `scripts` som heter i `AdminConsole\bin` katalogen. Kopiera filerna från din lokaliserade mapp till den nya `scripts` mappen. Distribuera Microsoft Edge, version 77 och senare när filerna har kopierats.
 
 ## <a name="os-deployment"></a>Distribution av operativsystem
 
@@ -166,6 +168,15 @@ Mer information finns i [skapa anpassade säkerhets roller](../configure/configu
 
 ## <a name="desktop-analytics"></a>Desktop Analytics
 
+### <a name="an-extended-security-update-for-windows-7-causes-them-to-show-as-unable-to-enroll"></a><a name="dawin7-diagtrack"></a>En utökad säkerhets uppdatering för Windows 7 gör att de visas som **det inte går att registrera**
+
+<!-- 7283186 -->
+_Gäller för: Configuration Manager version 1902, 1906, 1910 och 2002_
+
+Den utökade säkerhets uppdateringen (ESU) från april 2020 för Windows 7 ändrade den lägsta version som krävs för DiagTrack. dll från 10586 till 10240. Den här ändringen gör att Windows 7-enheter visas som **det inte går att registrera** i instrument panelen för **anslutnings hälsa** för Skriv bords analys. När du ökar detalj nivån till enhets läget för den här statusen visas följande tillstånd i **DiagTrack-tjänstens konfigurations** egenskap:`Connected User Experience and Telemetry (diagtrack.dll) component is outdated. Check requirements.`
+
+Det krävs ingen lösning för det här problemet. Avinstallera inte april-ESU. Om detta är felaktigt konfigurerat rapporterar Windows 7-enheterna fortfarande diagnostikdata till Skriv bords analys tjänsten och visas fortfarande i portalen.
+
 ### <a name="if-you-use-hardware-inventory-for-distributed-views-you-cant-onboard-to-desktop-analytics"></a>Om du använder maskin varu inventering för distribuerade vyer kan du inte publicera till Skriv bords analys
 
 <!-- 4950335 -->
@@ -209,7 +220,7 @@ Om du skapar en anslutning till en Azure-tjänst och ställer in **Azure-miljön
 Select Environment, Name, TenantID From AAD_Tenant_Ex
 ```
 
-För det offentliga molnet är `2` resultatet av den här frågan för den angivna innehavaren.
+För det offentliga molnet är resultatet av den här frågan `2` för den angivna innehavaren.
 
 ### <a name="cant-download-content-from-a-cloud-management-gateway-enabled-for-tls-12"></a>Det går inte att ladda ned innehåll från en moln hanterings-Gateway 1,2 som är aktive rad
 

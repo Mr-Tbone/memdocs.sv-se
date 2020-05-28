@@ -10,12 +10,12 @@ ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6891a46050bb83e54fb34b97d9129fcb5873785
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: f877de32c9915f91d1e2d7f2d90b9b40ab69df11
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718674"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906579"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Ytterligare information om sekretess för Configuration Manager
 
@@ -91,6 +91,6 @@ Mer information finns i [Endpoint Protection](../../../protect/deploy-use/endpoi
 
 I Configuration Manager-konsolen går du till arbets ytan **övervakning** , väljer noden **platshierarki** och växlar till den **geografiska vyn**. I den här vyn kan du använda kartor som Microsoft Bing Maps tillhandahåller för att visa din Configuration Manager fysiska servertopologi. Den plats information som du anger skickas från servern till Bing Maps-webbtjänsten för att aktivera den här funktionen.
 
-Microsoft använder den här informationen för att driva och förbättra Microsoft Bing Maps och andra webbplatser och tjänster från Microsoft. Mer information finns i [Microsofts sekretess policy](https://go.microsoft.com/fwlink/?LinkId=823548).
+Microsoft använder den här informationen för att driva och förbättra Microsoft Bing Maps och andra webbplatser och tjänster från Microsoft. Mer information finns i [Microsofts sekretess policy](https://privacy.microsoft.com/privacystatement).
 
 Du kan välja att inte använda den geografiska vyn för webbplatshierarkin. I vyn standardhierarki-diagram kan du se hierarkin och inte använda Bing Maps-tjänsten.

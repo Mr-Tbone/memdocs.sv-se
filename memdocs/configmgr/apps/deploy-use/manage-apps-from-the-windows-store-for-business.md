@@ -40,7 +40,7 @@ Configuration Manager stöder hantering av Microsoft Store för affärs-och utbi
 |Synkronisera AppData till Configuration Manager<br>(synkronisering sker var 24: e timme)|Ja|Ja|
 |Skapa Configuration Manager program från Store-appar|Ja|Ja|
 |Stöd för kostnads fria appar från Store|Ja|Ja|
-|Stöd för betalda appar från Store|Inga|Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup>|
+|Stöd för betalda appar från Store|Nej|Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 |Stöd för distributioner som krävs för användar-eller enhets samlingar|Ja|Ja|
 |Stöd för tillgängliga distributioner till användar-eller enhets samlingar|Ja|Ja|
 |Stöd för branschspecifika appar från Store|Ja|Ja|

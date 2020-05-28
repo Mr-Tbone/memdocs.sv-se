@@ -2,7 +2,7 @@
 title: Tillgänglighet
 titleSuffix: Configuration Manager
 description: Lär dig mer om de funktioner som gör Configuration Manager tillgängliga för alla.
-ms.date: 03/27/2019
+ms.date: 05/15/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2ff86df999ab744d590b1ca120a8b566d18f446b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1b25b0137e24212cbad2ba688735e45d9fe9aac0
+ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718562"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556038"
 ---
 # <a name="accessibility-features-in-configuration-manager"></a>Hjälpmedels funktioner i Configuration Manager
 
@@ -45,7 +46,7 @@ Använd följande kortkommandon för att få åtkomst till en arbets yta:
 |CTRL + 4|  Administration|
 
 
-### <a name="other-keyboard-shortcuts"></a>Andra kortkommandon
+### <a name="other-console-shortcuts"></a>Andra konsol gen vägar
 
 |Kortkommando|  Syfte|
 |--------|--------|  
@@ -56,6 +57,14 @@ Använd följande kortkommandon för att få åtkomst till en arbets yta:
 |CTRL + D|Ange fokus till informations fönstret när det är tillgängligt.|
 |Alt     |Ändra fokus till och från menyfliksområdet.|
 
+### <a name="cmpivot-shortcuts"></a><a name="bkmk_cmpshortcuts"></a>CMPivot-genvägar
+
+De flesta kortkommandona för [webb läsar tangenter](https://support.microsoft.com/help/17456/windows-internet-explorer-ease-of-access-options) kommer att fungera i CMPivot.
+
+|Kortkommando|Syfte|
+|--------|--------|  
+|Ctrl + 1|Ange fokus på den första fliken.|
+|Alt +&lt;|Tillbaka till adressen|
 
 
 ## <a name="other-accessibility-features"></a>Andra hjälpmedels funktioner
@@ -85,9 +94,9 @@ Använd följande kortkommandon för att få åtkomst till en arbets yta:
 ## <a name="see-also"></a>Se även
 
 Mer information om grunderna i hur du navigerar Configuration Manager användar gränssnitt finns i följande artiklar:
-- [Använda Configuration Manager-konsolen](../servers/manage/admin-console.md)  
+- [Använda Configuration Manager-konsolen](../servers/manage/admin-console.md)
 - [Användarhandbok för Software Center](software-center.md)
 
 > [!NOTE]  
-> Informationen i den här artikeln kan endast gälla användare som har licens för Microsoft-produkter i USA. Om du har köpt den här produkten utanför USA kan du använda informations kortet för dotter bolag som medföljde ditt program varu paket eller besöka [webbplatsen Microsoft Accessibility](https://go.microsoft.com/fwlink/?LinkId=8431) för kontakt information för Microsoft Support Services. Du kan kontakta ditt dotter bolag för att ta reda på om den typ av produkter och tjänster som beskrivs i det här avsnittet är tillgängliga i ditt område. Informationen om hjälpmedelsfunktioner är tillgänglig på andra språk, däribland japanska och franska.  
+> Informationen i den här artikeln kan endast gälla användare som har licens för Microsoft-produkter i USA. Om du har köpt den här produkten utanför USA kan du använda informations kortet för dotter bolag som medföljde ditt program varu paket eller besöka [webbplatsen Microsoft Accessibility](https://www.microsoft.com/accessibility/) för kontakt information för Microsoft Support Services. Du kan kontakta ditt dotter bolag för att ta reda på om den typ av produkter och tjänster som beskrivs i det här avsnittet är tillgängliga i ditt område. Informationen om hjälpmedelsfunktioner är tillgänglig på andra språk, däribland japanska och franska.  
 

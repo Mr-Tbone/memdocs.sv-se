@@ -35,7 +35,7 @@ Configuration Manager version 1802 samlar in tre nivåer av diagnostik-och anvä
 ##  <a name="how-to-change-the-level"></a><a name="bkmk_change"></a> Ändra nivån
  Administratörer som har en rollbaserad administrativ omfattning som inkluderar **ändrings** behörigheter för objekt klassen **plats** kan ändra nivån på data som samlas in i inställningarna för diagnostik-och användnings data i Configuration Manager-konsolen.
 
-Du ändrar data insamlings nivån från-konsolen genom att gå till **Administration** > **Översikt** > **plats konfiguration** > **platser**. Öppna **Inställningar för hierarki**och välj sedan den data nivå som du vill använda.  
+Du ändrar data insamlings nivån från-konsolen genom att gå till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**. Öppna **Inställningar för hierarki**och välj sedan den data nivå som du vill använda.  
 
 
 
@@ -173,7 +173,7 @@ För Configuration Manager version 1802 omfattar den här nivån följande data:
 - ***[Ny]*** Högsta och genomsnittliga primära användare per enhet
 
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version
 

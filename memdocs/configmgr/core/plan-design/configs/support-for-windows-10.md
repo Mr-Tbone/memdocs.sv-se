@@ -2,7 +2,7 @@
 title: Stöd för Windows 10
 titleSuffix: Configuration Manager
 description: Lär dig mer om de Windows 10-versioner som stöds som klienter eller för OSD med Configuration Manager
-ms.date: 04/01/2020
+ms.date: 05/27/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7241db0220bf4adf9b55341514afb03de33c2589
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a67a22f788af39dacb9f3a39e91e0f28444c6988
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709630"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83879064"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Stöd för Windows 10 i Configuration Manager  
 
@@ -53,11 +53,12 @@ I följande tabell visas de versioner av Windows 10 som du kan använda som en k
 | **Enterprise 2015-LTSB** <!--10/14/2025-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 | **Enterprise 2016-LTSB** <!--10/13/2026-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 | **Enterprise LTSC 2019** <!--01/09/2029-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1709**<br>(10.0.16299)   <!--04/14/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **1709**<br>(10.0.16299)   <!--10/13/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 | **1803**<br>(10.0.17134)   <!--11/10/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 | **1809**<br>(10.0.17763)   <!--05/11/2021-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 | **1903**<br>(10.0.18362)   <!--12/08/2020-->   | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1909**<br>(10.0.18363)   <!--05/11/2021-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **1909**<br>(10.0.18363)   <!--05/10/2022-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **2004**<br>(10.0.19041)   <!--??/??/2021-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) |
 
 <!-- lifecycle reference: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet -->
 
@@ -65,8 +66,8 @@ Mer information om Windows-livscykel finns i [fakta bladet för Windows-livscyke
 
 | Nyckel |
 |--|
-| ![Stöds](media/green_check.png) = **Supported**  |
-| ![](media/Red_X.png) = **Stöds inte** |
+| ![Stöds ](media/green_check.png)  =  **Supported**  |
+| ![Stöds inte ](media/Red_X.png)  =  **Not supported** |
 
 ### <a name="windows-10-client-support-notes"></a><a name="bkmk_win10-notes"></a>Support anteckningar för Windows 10-klienten
 
@@ -112,12 +113,13 @@ I följande tabell visas de versioner av Windows 10 ADK som du kan använda med 
 | **1803**<br>(10.1.17134) | ![Bakåtkompatibla](media/blue_compat.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) |
 | **1809**<br>(10.1.17763) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Stöds inte](media/Red_X.png) |
 | **1903**<br>(10.1.18362) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **2004**<br>(10.1.19041) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) |
 
 |Nyckel|
 |--|
-| ![Stöds](media/green_check.png) = **Supported** <br/> I den här tabellen visas endast stöd för Windows ADK i relation till versionen av Configuration Manager. Microsoft rekommenderar att du använder Windows ADK som matchar den version av Windows som du distribuerar. Använd den senaste Windows ADK-versionen när du distribuerar den senaste versionen av Windows 10. Den senaste versionen av Windows ADK kan ha stöd för distribution av äldre OS-versioner, t. ex. Windows 8,1.<!-- SCCMDocs issue 1229 --> Mer information om stöd för Windows ADK-komponenter finns i [DISM-plattformar som stöds](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) och [USMT-krav](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
-| ![  = **Backward compatible** Bakåtkompatibelt](media/blue_compat.png)bakåtkompatibla <br/> Den här kombinationen testas inte utan bör fungera. Vi kommer att dokumentera eventuella kända problem eller varningar. |
-| ![](media/Red_X.png) = **Stöds inte** |
+| ![Stöds ](media/green_check.png)  =  **Supported** <br/> I den här tabellen visas endast stöd för Windows ADK i relation till versionen av Configuration Manager. Microsoft rekommenderar att du använder Windows ADK som matchar den version av Windows som du distribuerar. Använd den senaste Windows ADK-versionen när du distribuerar den senaste versionen av Windows 10. Den senaste versionen av Windows ADK kan ha stöd för distribution av äldre OS-versioner, t. ex. Windows 8,1.<!-- SCCMDocs issue 1229 --> Mer information om stöd för Windows ADK-komponenter finns i [DISM-plattformar som stöds](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) och [USMT-krav](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
+| ![Bakåtkompatibelt bakåtkompatibla ](media/blue_compat.png)   =  **Backward compatible** <br/> Den här kombinationen testas inte utan bör fungera. Vi kommer att dokumentera eventuella kända problem eller varningar. |
+| ![Stöds inte ](media/Red_X.png)  =  **Not supported** |
 
 ### <a name="windows-10-adk-support-notes"></a><a name="bkmk_adk-notes"></a>Support anteckningar för Windows 10 ADK
 

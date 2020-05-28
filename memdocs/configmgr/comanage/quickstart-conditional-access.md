@@ -10,12 +10,12 @@ ms.assetid: 4cf640b3-610c-4c3c-b966-c62e9f5654ff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d35f36b6578359f62f21b4e2208a70ace22cf0d9
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 94f002ecd12d08ffd5f3d4767e315e0d83714929
+ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711506"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83764058"
 ---
 # <a name="conditional-access-with-co-management"></a>Villkorlig åtkomst med samhantering
 
@@ -108,11 +108,11 @@ Villkorlig åtkomst är enkelt att använda när du [aktiverar samhantering](how
 
 Mer information om hur du använder villkorlig åtkomst finns i följande artiklar: 
 
-- [Villkorlig åtkomst i Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)  
+- [Villkorlig åtkomst för Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)  
 
 - [Efterlevnadsprinciper för Intune-enheter](https://docs.microsoft.com/intune/device-compliance)  
 
-- [App-baserad villkorlig åtkomst med Intune](https://docs.microsoft.com/intune/app-based-conditional-access-intune)  
+- [Appbaserad villkorlig åtkomst med Intune](https://docs.microsoft.com/intune/app-based-conditional-access-intune)  
 
 > [!Note]  
 > Villkorliga åtkomst funktioner blir tillgängliga omedelbart för Hybrid Azure AD-anslutna enheter. Dessa funktioner omfattar Multi-Factor Authentication och hybrid Azure AD Join Access Control. Detta beror på att de är baserade på Azure AD-egenskaper. Aktivera samhantering för att utnyttja den konfigurations utvärderingen från Intune och Configuration Manager. Med den här konfigurationen får du åtkomst kontroll direkt från Intune för kompatibla enheter. Det ger dig också Intunes utvärderings funktion för efterlevnadsprinciper.  

@@ -5,17 +5,17 @@ description: Distribuera program uppdateringar automatiskt med hjälp av regler 
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 04/21/2020
+ms.date: 05/20/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: eca3227a023561a099804ef0928bfee7a7aff2c6
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: bf172c4cb34a17ac793ea5568b0505505baf97a0
+ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110448"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83709442"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuera programuppdateringar automatiskt  
 
@@ -49,7 +49,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
          - **Office 365-klientens uppdaterings** mall innehåller vanliga inställningar som används när du distribuerar uppdateringar för Office 365 Pro plus-klienter.
              > [!Note]
-             > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Om din automatisk distribution förlitar sig på egenskapen "title" måste du redigera den från den 9 juni 2020. `Microsoft 365 Apps Update - Semi-annual Channel Version 1908 for x64 based Edition (Build 11929.50000)`är ett exempel på den nya titeln. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change).
+             > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Om din automatisk distribution förlitar sig på egenskapen "title" måste du redigera den från den 9 juni 2020. `Microsoft 365 Apps Update - Semi-annual Channel Version 1908 for x64 based Edition (Build 11929.50000)`är ett exempel på den nya titeln. Mer information om hur du ändrar din automatisk distribution för rubrik ändringen finns i [Uppdatera kanaler för Microsoft 365 appar](manage-office-365-proplus-updates.md#bkmk_channel). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change).
 
          - **Uppdaterings mal len SCEP och Windows Defender Antivirus** innehåller vanliga inställningar som används när du distribuerar Endpoint Protection definitions uppdateringar.  
 
@@ -85,7 +85,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
      - Gränsen för programuppdateringar i den automatiska distributionsregeln är 1000 programuppdateringar.  
 
-     - Vid behov filtrerar du på innehålls storleken för program uppdateringar i regler för automatisk distribution. Mer information finns i [Configuration Manager och förenklad Windows-underhåll på äldre operativ system](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/).  
+     - Vid behov filtrerar du på innehålls storleken för program uppdateringar i regler för automatisk distribution. Mer information finns i [Configuration Manager och förenklad Windows-underhåll på äldre operativ system](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configuration-manager-and-simplified-windows-servicing-on-down/ba-p/274056).  
 
      - Från och med version 1910 kan du använda **distribuerat** som ett uppdaterings filter för de automatiska distributions reglerna. Med det här filtret kan du identifiera nya uppdateringar som kan behöva distribueras till pilot-eller test samlingar. Filtret för program uppdatering kan också undvika att distribuera om äldre uppdateringar. 
          - När du använder **distribuerad** som ett filter måste du vara mindful att du redan har distribuerat uppdateringen till en annan samling, till exempel en pilot-eller test samling. <!--4852033-->
@@ -187,7 +187,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
         -  **Beskrivning**: Ange en beskrivning som ger information om distributionspaketet. Den valfria beskrivningen är begränsad till 127 tecken.  
 
-        -  **Paketkälla**: Anger platsen för källfilerna för programuppdateringen. Ange en nätverks Sök väg för käll platsen, till exempel `\\server\sharename\path`eller klicka på **Bläddra** för att hitta nätverks platsen. Skapa en delad mapp för distributions paketets källfiler innan du fortsätter till nästa sida.  
+        -  **Paketkälla**: Anger platsen för källfilerna för programuppdateringen. Ange en nätverks Sök väg för käll platsen, till exempel `\\server\sharename\path` eller klicka på **Bläddra** för att hitta nätverks platsen. Skapa en delad mapp för distributions paketets källfiler innan du fortsätter till nästa sida.  
 
             - Du kan inte använda den angivna platsen som källa till ett annat program distributions paket.  
 
@@ -211,7 +211,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
     -   **Hämta program uppdateringar från Internet**: Välj den här inställningen för att ladda ned program uppdateringar från en angiven plats på Internet. Den här inställningen är aktiverad som standard.  
 
-    -   **Hämta programuppdateringar från en plats i det lokala nätverket**: Välj den här inställningen för att ladda ned programuppdateringarna från en lokal katalog eller delad mapp. Den här inställningen är användbar när den dator som kör guiden inte har Internet åtkomst. Alla datorer med Internet åtkomst kan preliminärt ladda ned program uppdateringarna. Lagra dem sedan på en plats i det lokala nätverket som är tillgängligt från den dator där guiden körs.  
+    -   **Hämta programuppdateringar från en plats i det lokala nätverket**: Välj den här inställningen för att ladda ned programuppdateringarna från en lokal katalog eller delad mapp. Den här inställningen är användbar när den dator som kör guiden inte har Internet åtkomst. Alla datorer med Internet åtkomst kan preliminärt ladda ned program uppdateringarna. Lagra dem sedan på en plats i det lokala nätverket som är tillgängligt från den dator där guiden körs. Ett annat scenario kan vara när du hämtar innehåll som publiceras via System Center Updates Publisher eller en uppdaterings lösning från tredje part. WSUS-innehållet på den översta nivån för program uppdaterings platsen kan anges som nätverks plats att laddas ned från, t `\\server\WsusContent` . ex.. <!--memdocs-issue-211-->
 
 14. På sidan **Val av språk** väljer du de språk för vilka platsen hämtar de valda program uppdateringarna. Platsen hämtar bara de här uppdateringarna om de är tillgängliga på de valda språken. Program uppdateringar som inte är språkspecifika laddas alltid ned. Som standard väljer guiden de språk som du har konfigurerat i egenskaperna för program uppdaterings platsen. Minst ett språk måste väljas innan du fortsätter till nästa sida. Om du bara väljer språk som en program uppdatering inte stöder, Miss lyckas nedladdningen för uppdateringen.  
 

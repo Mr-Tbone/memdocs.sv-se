@@ -2,7 +2,7 @@
 title: Hanteringsinsikter
 titleSuffix: Configuration Manager
 description: Lär dig mer om hanterings funktionerna i Configuration Manager-konsolen.
-ms.date: 04/01/2020
+ms.date: 05/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e9aae1da48deabd0cc339cd25055827caf07354b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 69b2533dd5c86124a6aff9feac7306ecf16c6e5a
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713739"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268971"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Hanterings insikter i Configuration Manager
 
@@ -78,9 +78,9 @@ Noden för **hanterings insikter** innehåller en grafisk instrument panel. Den 
 Använd följande filter överst i instrument panelen för att förfina vyn:
 
 - Visa slutförd
-- Valfri
+- Valfritt
 - Rekommenderas
-- Kritisk
+- Kritiskt
 
 Instrument panelen innehåller följande paneler:  
 
@@ -146,13 +146,13 @@ Från och med version 1902 finns det nya regler med rekommendationer för att ha
 
 - **Samlingar med samma start tid för ny utvärdering**: dessa samlingar har samma omprövnings tid som andra samlingar. Ändra tiden för förnyad utvärdering så att de inte står i konflikt.  
 
-- **Samlingar med kötid över två sekunder**: granska Frågeregler för den här samlingen. Överväg att ändra eller ta bort samlingen.
+- **Samlingar med kötid över 5 minuter**: granska Frågeregler för den här samlingen. Överväg att ändra eller ta bort samlingen.
 
 - Följande regler innehåller konfigurationer som kan orsaka onödig belastning på platsen. Granska samlingarna, ta bort dem eller inaktivera regel utvärderingen:  
 
   - **Samlingar utan Frågeregler och stegvisa uppdateringar är aktiverade**  
 
-  - **Samlingar utan Frågeregler och har Aktiver ATS för schemalagd eller stegvis utvärdering**  
+  - **Samlingar utan Frågeregler och har Aktiver ATS för scheman**  
 
   - **Samlingar utan Frågeregler och Schemalägg fullständig utvärdering har valts**  
 

@@ -5,17 +5,17 @@ description: Configuration Manager synkroniserar Office 365-klient uppdateringar
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 04/21/2020
+ms.date: 05/20/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: 4967b8b289d54a6355cb0a1e6454d5fac469a733
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: 09d8f0a37e9ed4308c5c8ffcf005c788612be235
+ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110414"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83709510"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Hantera Office 365 ProPlus med Configuration Manager
 
@@ -58,18 +58,18 @@ För tidigare Configuration Manager-versioner måste du utföra följande steg f
 ### <a name="deploy-office-365-apps-using-configuration-manager-version-1806-or-higher"></a>Distribuera Office 365-appar med Configuration Manager version 1806 eller högre: 
 Från och med Configuration Manager 1806 är Office-anpassnings verktyget integrerat med Office 365-installationsprogrammet i Configuration Manager-konsolen. När du skapar en distribution för Office 365 kan du konfigurera de senaste Office-hanterbarhets inställningarna dynamiskt. <!--1358149-->
 
-1. I Configuration Manager-konsolen navigerar du till**Översikt över** >  **program varu bibliotek** > **kontor 365-klient hantering**.
+1. I Configuration Manager-konsolen navigerar du till översikt över **program varu bibliotek**  >  **Overview**  >  **kontor 365-klient hantering**.
 2. Klicka på **Office 365 installations program** i det övre högra fönstret. Installations guiden för Office 365-klienten öppnas.
 3. På sidan **program inställningar** anger du ett namn och en beskrivning för appen, anger nedladdnings platsen för filerna och klickar sedan på **Nästa**. Platsen måste anges som &#92;&#92;*server*&#92;*resurs*.
 4. På sidan **Office-inställningar** klickar du på **gå till anpassnings verktyget för Office**. Då öppnas Office- [anpassnings verktyget för Klicka-och-kör](https://config.office.com).
 5. Konfigurera önskade inställningar för din Office 365-installation. Klicka på **Skicka** i det övre högra hörnet på sidan när du har slutfört konfigurationen. 
-6. På sidan **distribution** bestämmer du om du vill distribuera nu eller vid ett senare tillfälle. Om du väljer att distribuera senare kan du hitta programmet i program **bibliotek** > **program hanterings** > **program**.  
+6. På sidan **distribution** bestämmer du om du vill distribuera nu eller vid ett senare tillfälle. Om du väljer att distribuera senare kan du hitta programmet i program **bibliotek**  >  **program hanterings**  >  **program**.  
 7. Bekräfta inställningarna på sidan **Sammanfattning** . 
 8. Klicka på **Nästa** och sedan på **Stäng** när installations guiden för Office 365-klienten har slutförts. 
 
 ### <a name="deploy-office-365-apps-using-configuration-manager-version-1802-and-prior"></a>Distribuera Office 365-appar med Configuration Manager version 1802 och tidigare:
 
-1. I Configuration Manager-konsolen navigerar du till**Översikt över** >  **program varu bibliotek** > **kontor 365-klient hantering**.
+1. I Configuration Manager-konsolen navigerar du till översikt över **program varu bibliotek**  >  **Overview**  >  **kontor 365-klient hantering**.
 2. Klicka på **Office 365 installations program** i det övre högra fönstret. Installations guiden för Office 365-klienten öppnas.
 3. På sidan **program inställningar** anger du ett namn och en beskrivning för appen, anger nedladdnings platsen för filerna och klickar sedan på **Nästa**. Platsen måste anges som &#92;&#92;*server*&#92;*resurs*.
 4. På sidan **Importera klient inställningar** väljer du om du vill importera klient inställningarna för Office 365 från en befintlig XML-konfigurationsfil eller ange inställningarna manuellt. Klicka på **Nästa** när du är klar.  
@@ -83,7 +83,7 @@ Från och med Configuration Manager 1806 är Office-anpassnings verktyget integr
 7. På sidan **distribution** väljer du om du vill distribuera programmet och klickar sedan på **Nästa**. <br/>Om du väljer att inte distribuera paketet i guiden går du vidare till steg 9.
 8. Konfigurera resten av guide sidorna på samma sätt som för en typisk program distribution. Mer information finns i [skapa och distribuera ett program](../../apps/get-started/create-and-deploy-an-application.md).
 9. Slutför guiden.
-10. Du kan distribuera eller redigera programmet från program **bibliotek** > **Översikt** > program**hanterings** > **program**.    
+10. Du kan distribuera eller redigera programmet från program **bibliotek**  >  **Översikt**program  >  **hanterings**  >  **program**.    
 
 När du har skapat och distribuerat Office 365-program med Office 365-installations programmet kan Configuration Manager inte hantera Office-uppdateringar som standard. Om du vill att Office 365-klienter ska kunna ta emot uppdateringar från Configuration Manager, se [distribuera Office 365-uppdateringar med Configuration Manager](#deploy-office-365-updates).
 
@@ -96,7 +96,7 @@ När du har distribuerat Office 365-appar kan du skapa automatiska distributions
 
 Du kan gå igenom efterlevnads statistik för att se vilka enheter som kräver en speciell Office 365-programuppdatering. Om du vill visa enhets listan måste du ha behörighet att visa uppdateringar och de samlingar som enheterna tillhör. Så här ökar du detalj nivån i enhets listan:
 
-1. Gå till **program varu bibliotek** > **kontor 365 klient hantering** > **Office 365 uppdateringar**.
+1. Gå till **program varu bibliotek**  >  **kontor 365 klient hantering**  >  **Office 365 uppdateringar**.
 1. Välj en uppdatering som krävs av minst en enhet.
 1. Titta på fliken **Sammanfattning** och hitta cirkel diagrammet under **statistik**.
 1. Välj hyperlänken **vy som krävs** bredvid cirkel diagrammet för att öka detalj nivån i enhets listan.
@@ -114,7 +114,7 @@ Använd följande steg för att distribuera Office 365-uppdateringar med Configu
 
     **Metod 1**: från och med Configuration Manager version 1606 kan du använda klient inställningen Configuration Manager för att hantera Office 365-klient agenten. När du har konfigurerat den här inställningen och distribuerat Office 365-uppdateringar kommunicerar Configuration Manager klient agenten med Office 365-klient agenten för att ladda ned uppdateringarna från en distributions plats och installera dem. Configuration Manager tar inventering av klient inställningar för Office 365 ProPlus.    
 
-      1. I Configuration Manager-konsolen klickar du på **Administration** > **Översikt** > **klient inställningar**.  
+      1. I Configuration Manager-konsolen klickar du på **Administration**  >  **Översikt**  >  **klient inställningar**.  
 
       2. Öppna lämpliga enhets inställningar för att aktivera klient agenten. Mer information om standard-och anpassade klient inställningar finns i [Konfigurera klient inställningar](../../core/clients/deploy/configure-client-settings.md).  
 
@@ -125,7 +125,7 @@ Använd följande steg för att distribuera Office 365-uppdateringar med Configu
 4. [Distribuera Office 365-uppdateringar](deploy-software-updates.md) till klienter.
 
 > [!Important]
-> - Från och med Configuration Manager version 1706 Office 365-klient uppdateringar har flyttats till noden **Office 365 klient hantering** >**Office 365 updates** . Den här flytten påverkar inte den aktuella ADR-konfigurationen. 
+> - Från och med Configuration Manager version 1706 Office 365-klient uppdateringar har flyttats till noden **Office 365 klient hantering**  > **Office 365 updates** . Den här flytten påverkar inte den aktuella ADR-konfigurationen. 
 > - Innan Configuration Manager version 1610 måste du ladda ned och distribuera uppdateringar på samma språk som har kon figurer ATS på Office 365-klienter. Anta till exempel att du har en Office 365-klient som har kon figurer ATS med en-US och de-de-språken. På plats servern laddar du ned och distribuerar endast en-US-inneh åll för en tillämplig Office 365-uppdatering. När användaren startar installationen från Software Center för den här uppdateringen låser sig uppdateringen och laddar ned innehållet för de. 
 
 > [!NOTE]  
@@ -184,7 +184,7 @@ Använd följande procedur på program uppdaterings platsen på den centrala adm
 > Konfigurering av ytterligare uppdaterings språk för Office 365 är en inställning för hela platsen. När du har lagt till språken med hjälp av följande procedur hämtas alla Office 365-uppdateringar på dessa språk, samt de språk som du väljer på sidan **Val av språk** i guiden hämta program uppdateringar eller distribuera program uppdateringar.
 
 1. Från en kommando tolk skriver du *WBEMTest* som en administrativ användare för att öppna Windows Management Instrumentation testaren.
-2. Klicka på **Anslut**och skriv sedan *root\sms\ site_&lt;siteCode&gt;*.
+2. Klicka på **Anslut**och skriv sedan *root\sms\ site_ &lt; siteCode &gt; *.
 3. Klicka på **fråga**och kör sedan följande fråga: *välj &#42; från SMS_SCI_Component där componentname = "SMS_WSUS_CONFIGURATION_MANAGER"*  
    ![WMI-fråga](../media/1-wmiquery.png)
 4. I resultat fönstret dubbelklickar du på objektet med plats koden för den centrala administrations platsen eller den fristående primära platsen.
@@ -197,7 +197,7 @@ Använd följande procedur på program uppdaterings platsen på den centrala adm
  
    ![Lägg till språk i egenskaps redigeraren](../media/4-props.png)  
 9. Klicka på **Stäng**, klicka på **Stäng**, klicka på **Spara egenskap**och klicka på **Spara objekt** (om du klickar på **Stäng** här ignoreras värdena). Klicka på **Stäng**och avsluta Windows Management Instrumentation testaren genom att klicka på **Avsluta** .
-10. I Configuration Manager-konsolen går du till**Översikt över** >  **program bibliotek** > **kontor 365 klient hantering** > **Office 365 uppdateringar**.
+10. I Configuration Manager-konsolen går du till **Software Library**  >  **Översikt över**program bibliotek  >  **kontor 365 klient hantering**  >  **Office 365 uppdateringar**.
 11. Nu när du hämtar Office 365-uppdateringar laddas uppdateringarna ned på de språk som du väljer i guiden och konfigureras i den här proceduren. För att kontrol lera att uppdateringarna laddas ned på rätt språk går du till paket källan för uppdateringen och letar efter filer med språk koden i fil namnet.  
     ![Fil namn med ytterligare språk](../media/5-verification.png)
 
@@ -207,7 +207,7 @@ När du använder åtgärds steget [installera program uppdateringar](../../osd/
 För att se till att uppdaterings kanalen är inställd så att distribuerade uppdateringar identifieras korrekt, använder du någon av följande metoder:
 
 **Metod 1:**
-1. Öppna Schemaläggaren (taskschd. msc) på en dator med samma version av Office 365 ProPlus och identifiera uppgiften Office 365 automatiska uppdateringar. Normalt finns den under Schemaläggaren- **bibliotek** >**Microsoft**>**Office**.
+1. Öppna Schemaläggaren (taskschd. msc) på en dator med samma version av Office 365 ProPlus och identifiera uppgiften Office 365 automatiska uppdateringar. Normalt finns den under Schemaläggaren- **bibliotek**  > **Microsoft** > **Office**.
 2. Högerklicka på aktiviteten automatiska uppdateringar och välj **Egenskaper**.
 3. Gå till fliken **åtgärder** och klicka på **Redigera**. Kopiera kommandot och eventuella argument. 
 4. Redigera aktivitetssekvensen i Configuration Manager-konsolen.
@@ -216,7 +216,7 @@ För att se till att uppdaterings kanalen är inställd så att distribuerade up
 7. Klicka på **OK**. 
 
 **Metod 2:**
-1. Öppna Schemaläggaren (taskschd. msc) på en dator med samma version av Office 365 ProPlus och identifiera uppgiften Office 365 automatiska uppdateringar. Normalt finns den under Schemaläggaren- **bibliotek** >**Microsoft**>**Office**.
+1. Öppna Schemaläggaren (taskschd. msc) på en dator med samma version av Office 365 ProPlus och identifiera uppgiften Office 365 automatiska uppdateringar. Normalt finns den under Schemaläggaren- **bibliotek**  > **Microsoft** > **Office**.
 2. Redigera aktivitetssekvensen i Configuration Manager-konsolen.
 3. Lägg till ett nytt **körnings kommando rads** steg innan steget **installera program uppdateringar** i aktivitetssekvensen. Om Office 365 ProPlus installeras som en del av samma aktivitetssekvens kontrollerar du att det här steget körs när Office har installerats.
 4. I fältet kommando rad anger du den kommando rad som ska köra den schemalagda aktiviteten. Se exemplet nedan och se till att strängen i citat tecken matchar sökvägen och namnet på uppgiften som identifierades i steg 1.  
@@ -224,7 +224,33 @@ För att se till att uppdaterings kanalen är inställd så att distribuerade up
     Exempel: `schtasks /run /tn "\Microsoft\Office\Office Automatic Updates 2.0"`
 5. Klicka på **OK**. 
 
-## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a><a name="bkmk_channel"></a>Ändra uppdaterings kanalen när du har aktiverat att Office 365-klienter ska ta emot uppdateringar från Configuration Manager
+## <a name="update-channels-for-microsoft-365-apps"></a><a name="bkmk_channel"></a>Uppdatera kanaler för Microsoft 365 appar
+<!--6298093-->
+När Office 365 ProPlus har bytt namn till **Microsoft 365 appar för företag**, ändrades även uppdaterings kanalernas namn. Om du använder en automatisk distributions regel (ADR) för att distribuera uppdateringar måste du göra ändringar i automatisk distribution om de är beroende av egenskapen **title** . Det beror på att namnet på uppdaterings paketen i Microsoft Updates katalogen ändras.
+
+För närvarande börjar rubriken på ett uppdaterings paket för Office 365 ProPlus med "Office 365-klient uppdatering" som visas i följande exempel:
+
+&nbsp;&nbsp;Office 365-klient uppdatering – halvårs kanal Version 1908 för x64-baserad utgåva (version 11929,20648)
+
+För uppdaterings paket som släpps den 9 juni kommer rubriken att börja med "Microsoft 365 uppdatering av appar" som visas i följande exempel:
+
+&nbsp;&nbsp;Uppdatering av Microsoft 365-appar – halvårs kanal Version 1908 för x64-baserad utgåva (version 11929,50000)
+</br>
+</br>
+
+|Nytt kanal namn|Föregående kanal namn|
+|--|--|
+|Halvårs årlig företags kanal|Halvårskanal|
+|Halvårs visare för företags kanal (för hands version)|Halvårskanal (riktad)|
+|Månatlig företags kanal|NA|
+|Aktuell kanal|Månads kanal|
+|Aktuell kanal (förhands granskning)|Månads kanal (riktad)|
+|Beta kanal|Insider|
+
+Mer information om hur du ändrar din automatisk distribution finns i [distribuera program uppdateringar automatiskt](automatically-deploy-software-updates.md). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change).
+
+
+## <a name="change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager"></a>Ändra uppdaterings kanalen när du har aktiverat att Office 365-klienter ska ta emot uppdateringar från Configuration Manager
 
 När du har distribuerat Office 365 ProPlus kan du ändra uppdaterings kanalen med grupprincip eller Office Deployment Tool (ODT). Du kan till exempel flytta en enhet från halvårs kanal till halvårs kanal (riktad). När du byter kanal uppdateras Office automatiskt utan att du behöver installera om eller ladda ned den fullständiga versionen. Mer information finns i [Ändra Office 365 ProPlus-uppdaterings kanal för enheter i din organisation](https://docs.microsoft.com//deployoffice/change-update-channels).
 

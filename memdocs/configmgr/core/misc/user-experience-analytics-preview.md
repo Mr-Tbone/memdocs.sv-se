@@ -2,7 +2,7 @@
 title: För hands version av Endpoint Analytics
 titleSuffix: Configuration Manager
 description: Instruktioner för för hands versionen av Endpoint Analytics.
-ms.date: 04/30/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: e7dbb53833c29aae442eec4ca3c8402b99cde237
-ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
-ms.translationtype: HT
+ms.openlocfilehash: c7a99931db27b6a55c9e0722cc12c1d7a9cc9e80
+ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693241"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83764245"
 ---
 # <a name="endpoint-analytics-preview"></a><a name="bkmk_uea"></a>För hands version av Endpoint Analytics
 
@@ -24,6 +24,9 @@ ms.locfileid: "82693241"
 > Den här informationen är relaterad till en förhands gransknings funktion som kan ändras avsevärt innan den släpps kommersiellt. Microsoft lämnar inga garantier, uttryckliga eller underförstådda, avseende informationen som visas här. 
 >
 > Mer information om ändringar i slut punkts analys finns i [Vad är nytt i slut punkts analys](whats-new-endpoint-analytics.md). 
+>
+>Om du vill ansluta till den privata för hands versionen av slut punkts analys anger du informationen [i det här formuläret](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR9-ZzmlTlbJMh03eDDHtO81UOERLUkMzNFZKSlBaNFNFUVhFSlE0MzNYMS4u). Klienterna kommer att användas som öppningar för för hands versionen.
+
 
 ## <a name="endpoint-analytics-overview"></a>Översikt över slut punkts analys
 
@@ -64,7 +67,7 @@ För att kunna registrera enheter via Intune måste den här för hands versione
 För att kunna registrera enheter via Configuration Manager måste den här för hands versionen:
 - Configuration Manager version 2002 eller senare
 - Klienter som uppgraderats till version 2002 eller senare
-- [Microsoft Endpoint Manager-klient koppling](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions) aktive rad med en Azure-klient plats för Nordamerika (vi kommer att utökas till andra regioner snart)
+- [Microsoft Endpoint Manager-klient ansluter](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions) aktive rad med en Azure-klient plats för Nordamerika eller Europa (vi kommer att utökas till andra regioner snart)
 
 Oavsett om du registrerar enheter via Intune eller Configuration Manager, har [**proaktivt reparations skript**](#bkmk_uea_prs) följande krav:
 - Enheter måste vara Azure AD-anslutna eller hybrid Azure AD-ansluten och uppfylla något av följande villkor:
@@ -99,8 +102,38 @@ En skrivskyddad användare behöver bara **Läs** behörighet under både **enhe
 
 För förebyggande reparationer måste användaren ha behörighet som är lämplig för deras roll under kategorin **enhets inställningar** .  Behörigheter i kategorin **slut punkts analys** behövs inte om användaren bara använder förebyggande reparationer.
 
+En [Intune-tjänsteadministratör](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#intune-service-administrator-permissions) krävs för att bekräfta licensierings kraven innan du använder proaktiva reparationer för första gången.
 
 ## <a name="start-gathering-data"></a><a name="bkmk_uea_start"></a>Börja samla in data
+- Om du bara registrerar Intune-hanterade enheter går du vidare till utgivaren [i avsnittet slut punkts analys Portal](#bkmk_uea_onboard) .
+
+- Om du registrerar enheter som hanteras av Configuration Manager måste du utföra följande steg:
+   - [Aktivera data insamling för slut punkts analys i Configuration Manager](#bkmk_uea_cm_enroll)
+   - [Aktivera data uppladdning i Configuration Manager](#bkmk_uea_cm_upload)
+   - [Publicera i slut punkts Analytics-portalen](#bkmk_uea_onboard)  
+
+### <a name="enroll-devices-managed-by-configuration-manager"></a><a name="bkmk_uea_cm_enroll"></a>Registrera enheter som hanteras av Configuration Manager
+<!--6051638, 5924760-->
+Innan du registrerar Configuration Manager enheter kontrollerar du [kraven](#bkmk_uea_prereq) , inklusive aktivering av [Microsoft Endpoint Manager-klient anslutning](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions). 
+
+#### <a name="enable-endpoint-analytics-data-collection-in-configuration-manager"></a><a name="bkmk_uea_cm_enable"></a>Aktivera data insamling för slut punkts analys i Configuration Manager
+
+1. I Configuration Manager-konsolen går du till **Administration**  >  **klient inställningar**  >  **standard klient inställningar**.
+1. Högerklicka och välj **Egenskaper** och välj sedan inställningarna för **dator agent** .
+1. Ange **Aktivera data insamling för slut punkts analys** till **Ja**.
+   > [!Important] 
+   > Om du har en befintlig anpassad klient agent inställning som har distribuerats till dina enheter måste du uppdatera alternativet **Aktivera data insamling för slut punkts analys** i den anpassade inställningen och sedan distribuera det på datorerna så att det börjar gälla.
+
+#### <a name="enable-data-upload-in-configuration-manager"></a><a name="bkmk_uea_cm_upload"></a>Aktivera data uppladdning i Configuration Manager
+
+1. I Configuration Manager-konsolen går du till **Administration**  >  **Cloud Services**  >  **samhantering**.
+1. Välj **CoMgmtSettingsProd** och klicka sedan på **Egenskaper**.
+1. På fliken **Konfigurera uppladdning** markerar du alternativet för att **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager**
+
+   :::image type="content" source="media/6051638-configure-upload-configmgr.png" alt-text="Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager" lightbox="media/6051638-configure-upload-configmgr.png":::
+
+### <a name="onboard-in-the-endpoint-analytics-portal"></a><a name="bkmk_uea_onboard"></a>Publicera i slut punkts Analytics-portalen
+Det krävs registrering från slut punkts analys portalen för både Configuration Manager-och Intune-hanterade enheter.
 
 1. Gå till `https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu`
 1. Klicka på **Starta**. Detta tilldelar automatiskt en konfigurations profil för att samla in start prestanda data från alla tillgängliga enheter. Du kan [ändra tilldelade enheter](#bkmk_uea_profile) senare. Det kan ta upp till 24 timmar innan start prestanda data fylls från dina Intune-registrerade enheter efter att de startats om.
@@ -207,7 +240,7 @@ Om du klickar till en viss enhet kan du se start-och inloggnings historik. Histo
 Sidan **Start prestanda** har rapporterings flikar som ger stöd för insikter, inklusive:
 1. **Modell prestanda**. På den här fliken kan du se start-och inloggnings prestanda per enhets modell, vilket kan hjälpa dig att identifiera om prestanda problem är isolerade till vissa modeller.
 1. **Enhets prestanda**. Den här fliken innehåller start-och inloggnings mått för alla dina enheter. Du kan sortera efter ett visst mått (till exempel GP-inloggningsnamn) för att se vilka enheter som har sämsta resultat för det måttet för att hjälpa till med fel sökning. Du kan också söka efter en enhet efter namn. Om du klickar på en enhet kan du se start-och inloggnings historiken, vilket kan hjälpa dig att identifiera om det fanns en ny regression
-1. **Start processer**. Den här fliken (om den är synlig) visar vi bara detta till en del av dig eftersom vi fortfarande utvecklar den här funktionen) visar vilka processer som påverkar "inloggningen" tid för att svara på Skriv bordet ". Det håller processorn över 50% när Skriv bordet har Render ATS.
+1. **Start processer**. Start processer kan påverka användar upplevelsen negativt genom att öka hur lång tid användarna måste vänta på att Skriv bordet ska svara. Den här fliken (om den är synlig) visar vi bara detta till en del av dig eftersom vi fortfarande utvecklar den här funktionen) visar vilka processer som påverkar "inloggningen" tid för att svara på Skriv bordet ". Det håller processorn över 50% när Skriv bordet har Render ATS. Tabellen visar endast processer som påverkar minst 10 enheter i din klient organisation.  
 
 ## <a name="proactive-remediations"></a><a name="bkmk_uea_prs"></a>Proaktiva reparationer
 
@@ -218,7 +251,7 @@ Varje skript paket består av ett identifierings skript, ett reparations skript 
 ### <a name="get-the-detection-and-remediation-scripts"></a><a name="bkmk_uea_prs_ps1"></a>Hämta identifierings-och reparations skript
 
 1. Kopiera skripten från slutet av den här artikeln i avsnittet [PowerShell-skript](#bkmk_uea_ps_scripts) .
-    - Skriptfiler vars namn börjar med `det` är identifierings skript. Reparations skript börjar med `rem`.
+    - Skriptfiler vars namn börjar med `det` är identifierings skript. Reparations skript börjar med `rem` .
     - En beskrivning av skripten finns i Beskrivning av [skript](#bkmk_uea_scripts).
 1. Spara varje skript med det angivna namnet. Namnet visas också i kommentarerna överst i varje skript.
     - Du kan använda ett annat skript namn, men det stämmer inte överens med det namn som anges i avsnittet [skript beskrivningar](#bkmk_uea_scripts) .
@@ -232,7 +265,7 @@ Tjänsten för **Microsoft Intune hanterings tillägg** hämtar skripten från I
      [![Slut punkts analys-sidan för förebyggande reparationer. Välj länken Skapa.](media/proactive-remediations-create.png)](media/proactive-remediations-create.png#lightbox)
 1. I **grundläggande** steg ger du skript paketet ett **namn** och eventuellt en **Beskrivning**. Fältet **utgivare** kan redige ras, men som standard används klient namnet. Det går inte att redigera **versionen** . 
 1. I steget **Inställningar** kopierar du texten från skripten som du laddade ned till **identifierings skriptet** och **reparations skript** fälten. 
-   - Du behöver motsvarande identifierings-och reparations skript för samma paket. Till exempel motsvarar `Detect_stale_Group_Policies.ps1` identifierings skriptet med `Remediate_stale_GroupPolicies.ps1` reparations skriptet.
+   - Du behöver motsvarande identifierings-och reparations skript för samma paket. Till exempel `Detect_stale_Group_Policies.ps1` motsvarar identifierings skriptet med `Remediate_stale_GroupPolicies.ps1` reparations skriptet.
        [![Slut punkts analys för proaktiva reparationer skript inställningar sidan.](media/proactive-remediations-script-settings.png)](media/proactive-remediations-script-settings.png#lightbox)
 1. Slutför alternativen på sidan **Inställningar** med följande rekommenderade konfigurationer:
    - **Kör det här skriptet med de inloggade autentiseringsuppgifterna**: Detta beror på skriptet. Mer information finns i [skript beskrivningar](#bkmk_uea_scripts).
@@ -241,7 +274,7 @@ Tjänsten för **Microsoft Intune hanterings tillägg** hämtar skripten från I
 1. Klicka på **Nästa** och tilldela sedan alla **omfångs etiketter** som du behöver.
 1. I steget **tilldelningar** väljer du de enhets grupper som du vill distribuera skript paketet till.
 1. Slutför **granskningen och skapa** steget för distributionen.
-1. Under **rapportering** > av**slut punkts analys – proaktiva reparationer**kan du se en översikt över identifierings-och reparations status.
+1. Under **rapportering**  >  av**slut punkts analys – proaktiva reparationer**kan du se en översikt över identifierings-och reparations status.
        [![Slut punkts analys rapport över aktiva reparationer, översikts sida.](media/proactive-remediations-report-overview.png)](media/proactive-remediations-report-overview.png#lightbox)
 1. Klicka på **enhets status** om du vill hämta statusinformation för varje enhet i distributionen.
        [![Status för enhets status för slut punkts analys proaktiva reparationer.](media/proactive-remediations-device-status.png)](media/proactive-remediations-device-status.png#lightbox)
@@ -310,7 +343,7 @@ Observera att de här problemen inte gäller data som kommer från den kommande 
 För det andra är en snabb lista att gå igenom för fel sökning:
 1. Kontrol lera att du har Windows Health Monitoring-profilen som är avsedd för alla enheter som du vill ha prestanda data för. Du kan hitta en länk till den här profilen inifrån inställnings sidan för slut punkts analys, eller så går du till den som en annan Intune-profil. Titta på fliken tilldelning för att se till att den är tilldelad till den förväntade uppsättningen enheter. 
 1. Ta en titt på vilka enheter som har kon figurer ATS för data insamling. Du kan också se den här informationen på sidan profil översikt.  
-   - Det finns ett känt problem där kunder kan se fel vid profil tilldelning, där berörda enheter visar felkoden `-2016281112 (Remediation failed)`. Vi undersöker aktivt det här problemet.
+   - Det finns ett känt problem där kunder kan se fel vid profil tilldelning, där berörda enheter visar felkoden `-2016281112 (Remediation failed)` . Vi undersöker aktivt det här problemet.
 1. Enheter som har kon figurer ATS för data insamling måste startas om efter att data insamlingen har Aktiver ATS och du måste vänta upp till 24 timmar efter att enheten har visats på fliken enhets prestanda.
 1. Om enheten har kon figurer ATS för data insamling, har startats om och efter 24 timmar ser du fortfarande att enheten inte kan komma åt våra samlings slut punkter. Det här problemet kan inträffa om ditt företag använder en proxyserver och slut punkterna inte har Aktiver ATS i proxyn. Mer information finns i [fel sökning av slut punkter](#bkmk_uea_endpoints).
 
@@ -350,7 +383,7 @@ Konfigurera enheter så att de använder den inloggade användarens kontext för
 - Kontrol lera att användarna har proxy-behörighet för att komma åt data delnings slut punkterna. Det här alternativet kräver att enheterna har konsol användare med proxy-behörigheter, så att du inte kan använda den här metoden med hjälp av omdirigerings enheter.
 
 > [!IMPORTANT]
-> Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen **DisableEnterpriseAuthProxy** är beroende av register nyckeln `0`DisableEnterpriseAuthProxy, medan Microsoft Defender ATP kräver att den är inställd `1`på. Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
+> Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen är beroende av register nyckeln **DisableEnterpriseAuthProxy** `0` , medan Microsoft Defender ATP kräver att den är inställd på `1` . Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
 
 #### <a name="device-proxy-authentication"></a>Enhets-proxy-autentisering
 
@@ -372,7 +405,7 @@ Den här metoden är den mest komplexa eftersom den kräver följande konfigurat
 
   - Transparent proxy
 
-  - Konfigurera en enhets omfattande WinINET-proxy med följande grup princip inställning: **gör proxyinställningar per dator (i stället för per användare)** (ProxySettingsPerUser = `1`)
+  - Konfigurera en enhets omfattande WinINET-proxy med följande grup princip inställning: **gör proxyinställningar per dator (i stället för per användare)** (ProxySettingsPerUser = `1` )
 
   - Dirigerad anslutning eller som använder Network Address Translation (NAT)
 
@@ -380,6 +413,10 @@ Den här metoden är den mest komplexa eftersom den kräver följande konfigurat
 
 
 ## <a name="frequently-asked-questions"></a><a name="bkmk_uea_faq"></a>Vanliga frågor och svar
+
+### <a name="will-my-endpoint-analytics-data-migrate-if-i-move-my-intune-tenant-to-a-different-tenant-location"></a>Kommer mina slut punkts analys data att migrera om jag flyttar min Intune-klient till en annan klient plats?
+
+Om du migrerar din Intune-klient till en annan plats går alla data i din slut punkts analys lösning vid tidpunkten för migreringen förlorade. Eftersom slut punkter rapporterar till slut punkts analys kontinuerligt, överförs alla händelser som inträffar efter migrering automatiskt till din nya klient plats och dina rapporter börjar fyllas i igen, förutsatt att enheterna förblir korrekt registrerade. 
 
 ### <a name="why-are-the-scripts-exiting-with-a-code-of-1"></a>Varför avslutas skripten med en kod på 1?
 
@@ -391,14 +428,14 @@ Skripten avslutas med en kod på 1 för att signalera till Intune att reparation
 
 ## <a name="script-descriptions"></a><a name="bkmk_uea_scripts"></a>Skript beskrivningar
 
-I den här tabellen visas skript namn, beskrivningar, identifieringar, reparationer och konfigurerbara objekt. Skriptfiler vars namn börjar med `Detect` är identifierings skript. Reparations skript börjar med `Remediate`. Dessa skript kan kopieras från nästa avsnitt i den här artikeln.
+I den här tabellen visas skript namn, beskrivningar, identifieringar, reparationer och konfigurerbara objekt. Skriptfiler vars namn börjar med `Detect` är identifierings skript. Reparations skript börjar med `Remediate` . Dessa skript kan kopieras från nästa avsnitt i den här artikeln.
 
 |Skriptets namn|Beskrivning|
 |---|---|
 |**Uppdatera inaktuella grup principer** </br>`Detect_stale_Group_Policies.ps1` </br> `Remediate_stale_GroupPolicies.ps1`| Identifierar om senaste grupprincip uppdatering är större än `7 days` sedan.  </br>Anpassa tröskelvärdet för 7 dagar genom att ändra värdet för `$numDays` i identifierings skriptet. </br></br>Åtgärdar genom att köra `gpupdate /target:computer /force` och`gpupdate /target:user /force`  </br> </br>Kan hjälpa till att minska antalet nätverks anslutnings support samtal när certifikat och konfigurationer levereras via grupprincip. </br> </br> **Kör skriptet med de inloggade autentiseringsuppgifterna**: Ja|
 |**Starta om Office Klicka-och-kör-tjänsten** </br> `Detect_Click_To_Run_Service_State.ps1` </br> `Remediate_Click_To_Run_Service_State.ps1`| Identifierar om tjänsten Klicka-till-kör är inställd på att starta automatiskt och om tjänsten stoppas. </br> </br> Åtgärdar genom att ställa in tjänsten att starta automatiskt och starta tjänsten om den stoppas. </br></br> Hjälper till att åtgärda problem där Win32 Microsoft 365-appar för företag inte startar, eftersom tjänsten för att klicka och köra har stoppats. </br> </br> **Kör skriptet med de inloggade autentiseringsuppgifterna**: Nej|
-|**Kontrol lera nätverks certifikat** </br>`Detect_Expired_Issuer_Certificates.ps1` </br>`Remediate_Expired_Issuer_Certificates.ps1`|Identifierar certifikat som utfärdats av en certifikat utfärdare antingen i datorns eller användarens personliga arkiv som har upphört att gälla eller snart upphör att gälla. </br> Ange CA: n genom att ändra värdet `$strMatch` för i identifierings skriptet. Ange 0 om `$expiringDays` du vill hitta utgångna certifikat eller ange ett annat antal dagar för att hitta certifikat som snart upphör att gälla.  </br></br>Åtgärdar genom att öka ett popup-meddelande till användaren. </br> Ange värdena `$Title` och `$msgText` med den meddelande rubrik och text som du vill att användarna ska se. </br> </br> Meddelar användare om utgångna certifikat som kan behöva förnyas. </br> </br> **Kör skriptet med de inloggade autentiseringsuppgifterna**: Nej|
-|**Rensa inaktuella certifikat** </br>`Detect_Expired_User_Certificates.ps1` </br> `Remediate_Expired_User_Certificates.ps1`| Identifierar utgångna certifikat som utfärdats av en certifikat utfärdare i den aktuella användarens personliga arkiv. </br> Ange CA: n genom att ändra värdet `$certCN` för i identifierings skriptet. </br> </br> Åtgärdar genom att ta bort utgångna certifikat som utfärdats av en certifikat utfärdare från den aktuella användarens personliga arkiv. </br> Ange CA: n genom att ändra värdet `$certCN` för i reparations skriptet. </br> </br> Söker efter och tar bort utgångna certifikat som utfärdats av en certifikat utfärdare från den aktuella användarens personliga arkiv. </br> </br> **Kör skriptet med de inloggade autentiseringsuppgifterna**: Ja|
+|**Kontrol lera nätverks certifikat** </br>`Detect_Expired_Issuer_Certificates.ps1` </br>`Remediate_Expired_Issuer_Certificates.ps1`|Identifierar certifikat som utfärdats av en certifikat utfärdare antingen i datorns eller användarens personliga arkiv som har upphört att gälla eller snart upphör att gälla. </br> Ange CA: n genom att ändra värdet för `$strMatch` i identifierings skriptet. Ange 0 om `$expiringDays` du vill hitta utgångna certifikat eller ange ett annat antal dagar för att hitta certifikat som snart upphör att gälla.  </br></br>Åtgärdar genom att öka ett popup-meddelande till användaren. </br> Ange `$Title` värdena och `$msgText` med den meddelande rubrik och text som du vill att användarna ska se. </br> </br> Meddelar användare om utgångna certifikat som kan behöva förnyas. </br> </br> **Kör skriptet med de inloggade autentiseringsuppgifterna**: Nej|
+|**Rensa inaktuella certifikat** </br>`Detect_Expired_User_Certificates.ps1` </br> `Remediate_Expired_User_Certificates.ps1`| Identifierar utgångna certifikat som utfärdats av en certifikat utfärdare i den aktuella användarens personliga arkiv. </br> Ange CA: n genom att ändra värdet för `$certCN` i identifierings skriptet. </br> </br> Åtgärdar genom att ta bort utgångna certifikat som utfärdats av en certifikat utfärdare från den aktuella användarens personliga arkiv. </br> Ange CA: n genom att ändra värdet för `$certCN` i reparations skriptet. </br> </br> Söker efter och tar bort utgångna certifikat som utfärdats av en certifikat utfärdare från den aktuella användarens personliga arkiv. </br> </br> **Kör skriptet med de inloggade autentiseringsuppgifterna**: Ja|
 
 ## <a name="powershell-scripts"></a><a name="bkmk_uea_ps_scripts"></a>PowerShell-skript
 
@@ -770,7 +807,7 @@ De grundläggande funktionerna i slut punkts analys samlar för närvarande in i
   - **gpLogonDurationInMilliseconds**: tid för grup principer som ska bearbetas
   - **desktopShownDurationInMilliseconds:** Tid för skriv bord (Explorer. exe) som ska läsas in
   - **desktopUsableDurationInMilliseconds:** Tiden för Skriv bordet (Explorer. exe) ska kunna användas
-  - **topProcesses:** Lista över processer som lästs in under start med namn, med information om processor användnings statistik och appar (namn, utgivare, version). Till exempel *{\"processname\":\"svchost\",\"CpuUsage\": 43,\"ProcessFullPath\":\"C:\\\\Windows\\\\system32\\\\svchost. exe\",\"ProductName\":\"Microsoft&reg; Windows&reg; operativ system\",\"Publisher\":\"Microsoft Corporation\",\"ProductVersion\":\"10.0.18362.1\"}*
+  - **topProcesses:** Lista över processer som lästs in under start med namn, med information om processor användnings statistik och appar (namn, utgivare, version). Till exempel *{ \" processname \" : \" svchost \" , \" CpuUsage \" : 43, \" ProcessFullPath \" : \" C: \\ \\ Windows \\ \\ system32 \\ \\ svchost. exe \" , \" ProductName \" : \" Microsoft &reg; Windows &reg; operativ system \" , \" Publisher \" : \" Microsoft Corporation \" , \" ProductVersion \" : \" 10.0.18362.1 \" }*
 - Enhetsdata som inte är kopplade till en enhet eller en användare (om dessa data är kopplade till en enhet eller en användare behandlar Intune dem som identifierade data)
   - **ID:** Unikt enhets-ID som används av Windows Update
   - **localId:** Ett lokalt definierat unikt ID för enheten. Detta är inte det läsliga enhets namnet. Troligen lika med värdet som lagras vid HKLM\Software\Microsoft\SQMClient\MachineId.

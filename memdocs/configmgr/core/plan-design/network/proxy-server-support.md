@@ -2,7 +2,7 @@
 title: Stöd för proxyserver
 titleSuffix: Configuration Manager
 description: Lär dig hur Configuration Manager plats system servrar använder proxyservrar.
-ms.date: 04/01/2020
+ms.date: 05/05/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5581214dd786bdefd29d0e4d2626de536ad26ace
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 89a2f76f394d3bdf8fd6785429ae0ae60302537a
+ms.sourcegitcommit: 14d7dd0a99ebd526c9274d5781c298c828323ebf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718716"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82802097"
 ---
 # <a name="proxy-server-support-in-configuration-manager"></a>Stöd för proxyserver i Configuration Manager
 
@@ -50,6 +50,10 @@ För den här konfigurationen måste den primära platsservern:
 - Som standard använder datorns **system** konto för att ansluta. Det kan också använda plats systemets proxyserver för proxyserver, om det behövs.  
 
 - Använder Windows webb läsar-API: er.  
+
+### <a name="cloud-management-gateway-connection-point"></a>Anslutning punkt för moln hanterings-Gateway
+
+Cloud Management Gateway (CMG)-anslutnings punkten är en lokal roll som kommunicerar med CMG-tjänsten i Azure. Mer information finns i [Planera för CMG](../../clients/manage/cmg/plan-cloud-management-gateway.md).
 
 ### <a name="distribution-point"></a>Distributionsplats
 
@@ -111,3 +115,7 @@ Från och med Configuration Manager version 2002 använder följande funktioner 
     - **Använd autentiseringsuppgifter för att ansluta till proxyservern**: många proxyservrar kräver att en användare autentiseras. Som standard använder plats system servern sitt dator konto för att ansluta till proxyservern. Om det behövs aktiverar du det här alternativet, klickar på **Ange**och väljer sedan ett **befintligt konto** eller anger ett **nytt konto**. Dessa autentiseringsuppgifter är **Server kontot för plats systemets proxyserver**.  Mer information finns i [konton som används i Configuration Manager](../hierarchy/accounts.md).  
 
 4. Välj **OK** för att spara den nya konfigurationen av proxyservern.  
+
+## <a name="next-steps"></a>Nästa steg
+
+Om din organisation begränsar nätverkskommunikation med Internet med en brand vägg eller proxyserver, måste du tillåta åtkomst till Internet-slutpunkter. Mer information finns i [krav för Internet åtkomst](internet-endpoints.md).

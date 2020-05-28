@@ -10,12 +10,12 @@ ms.assetid: 95c13c00-909f-4fbb-bbaa-1eba9d54d8c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c78bb5876455e68292e4a69d86a256fa9e5172d0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1ace560130e43fd5675b51b6d507e84043c01407
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718709"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904076"
 ---
 # <a name="schema-extensions-for-configuration-manager"></a>Schemautökningar för Configuration Manager
 
@@ -25,7 +25,7 @@ Du kan utöka Active Directory-schemat så att det stöder Configuration Manager
 
 -   Det är en bra idé att utöka Active Directory schema, men det är inte obligatoriskt.  
 
-Innan du [utökar Active Directory-schemat](https://docs.microsoft.com/sccm/core/plan-design/network/extend-the-active-directory-schema) bör du vara bekant med Active Directory Domain Services och känna dig bekväm med att [ändra Active Directory-schemat](https://technet.microsoft.com/library/cc759402\(v=ws.10\).aspx).  
+Innan du [utökar Active Directory-schemat](https://docs.microsoft.com/sccm/core/plan-design/network/extend-the-active-directory-schema) bör du vara bekant med Active Directory Domain Services och känna dig bekväm med att [ändra Active Directory-schemat](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)).  
 
 ## <a name="considerations-for-extending-the-active-directory-schema-for-configuration-manager"></a>Att tänka på när du utökar Active Directory schema för Configuration Manager  
 
@@ -70,7 +70,7 @@ Innan du [utökar Active Directory-schemat](https://docs.microsoft.com/sccm/core
 
     -   **Installera klienter manuellt** och ange klient installations egenskaper genom att använda kommando rads egenskaper för CCMSetup-installation. Detta måste innefatta följande:  
 
-        -   Ange en hanterings plats eller käll Sök väg som datorn kan ladda ned installationsfilerna från med hjälp av CCMSetup-egenskapen **/MP:&lt;= hanterings plats namn\> dator namn** eller **/Source:&lt;sökväg till klientens källfiler\> ** på CCMSetup-kommandoraden under klient installationen.  
+        -   Ange en hanterings plats eller käll Sök väg som datorn kan ladda ned installationsfilerna från med hjälp av CCMSetup-egenskapen **/MP: = &lt; hanterings plats namn \> dator namn** eller **/Source: &lt; \> sökväg till klientens källfiler** på CCMSetup-kommandoraden under klient installationen.  
 
         -   Ange en lista med inledande hanterings platser som klienten ska använda så att den kan tilldela dem till platsen och sedan ladda ned klient princip-och plats inställningar. Använd egenskapen CCMSetup Client.msi SMSMP för att göra detta.  
 

@@ -10,12 +10,12 @@ ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c7a505296fe51aae996d429fe7da2033d3a787ff
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 542069b82ea4c68a48ccc47b79007fd2fa25322a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722566"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906016"
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Vilken gren av Configuration Manager bör jag använda?
 
@@ -47,7 +47,7 @@ Microsoft planerar att lansera uppdateringar för Configuration Manager aktuella
 
 Om du vill installera den aktuella grenen som en ny plats använder du [bas linje medier](../servers/manage/updates.md#bkmk_Baselines). Använd också bas linje medier för att uppgradera från System Center 2012 Configuration Manager med Service Pack 2 eller System Center 2012 R2 Configuration Manager med Service Pack 1. Åtkomst till det här mediet beror på hur din organisations licenser Configuration Manager.
 
-Du kan också använda bas linje mediet för att installera en ny plats som är en utvärderings version av den aktuella grenen. Utvärderings versionen kräver ingen licens. Du kan använda utvärderings versionen i 180 dagar. Den stöder uppgradering till en licensierad version av den aktuella grenen. Om du bara vill installera en utvärderings version hämtar du den från [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
+Du kan också använda bas linje mediet för att installera en ny plats som är en utvärderings version av den aktuella grenen. Utvärderings versionen kräver ingen licens. Du kan använda utvärderings versionen i 180 dagar. Den stöder uppgradering till en licensierad version av den aktuella grenen. Om du bara vill installera en utvärderings version hämtar du den från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
 > [!NOTE]
 > Använd bas linje medium för att installera platser för en ny Configuration Manager hierarki. Om du tidigare har installerat en bas linje version använder du uppdateringar i konsolen för att uppdatera dina platser till en ny version.  
@@ -87,9 +87,9 @@ Om du vill installera LTSB som en ny plats eller som en uppgradering från en Sy
 > [!TIP]  
 > Läs mer om System Center 2016 i [dokumentationen för system center 2016](https://docs.microsoft.com/system-center/index). Den här dokumentationen identifierar också hur du hämtar System Center 2016, som kräver ett licens avtal för Microsoft eller liknande rättigheter.  
 >  
-> Om du vill hitta Configuration Manager version 1606 i Volume Licensing Service Center (VLSC) går du till fliken **nedladdningar och nycklar** i [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), söker efter `System Center 2016`och väljer sedan antingen **system center 2016 Data Center** eller **System Center 2016 standard**.  
+> Om du vill hitta Configuration Manager version 1606 i Volume Licensing Service Center (VLSC) går du till fliken **nedladdningar och nycklar** i [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), söker efter `System Center 2016` och väljer sedan antingen **System Center 2016 Data Center** eller **System Center 2016 standard**.  
 >  
-> Du kan också få en utvärderings version av System Center 2016 från [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview).  
+> Du kan också få en utvärderings version av System Center 2016 från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview).  
 
 ### <a name="features-of-the-ltsb"></a>Funktioner i LTSB
 
@@ -166,6 +166,6 @@ Om du vill kontrol lera versionen av din webbplats går du till **om Configurati
 
 ### <a name="branch"></a>Gren
 
-Om du vill bekräfta grenen för platsen går du till **Administration** > **plats konfiguration** > **platser**och öppnar **Inställningar för hierarkin**i-konsolen. Om det finns ett aktivt alternativ för att konvertera till den aktuella grenen kör platsen LTSB-versionen. När platsen kör den aktuella grenen inaktiverar konsolen det här alternativet.
+Om du vill bekräfta grenen för platsen går du till **Administration**  >  **plats konfiguration**  >  **platser**och öppnar **Inställningar för hierarkin**i-konsolen. Om det finns ett aktivt alternativ för att konvertera till den aktuella grenen kör platsen LTSB-versionen. När platsen kör den aktuella grenen inaktiverar konsolen det här alternativet.
 
 Mer information om olika versioner av Configuration Manager finns i [bas linje-och uppdaterings versioner](../servers/manage/updates.md#bkmk_Baselines).

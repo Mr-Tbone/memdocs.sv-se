@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 36d256e674a0fe973eca4bc692a244af034d5cc1
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 8c585473ec80ad4c6dfe49d22e527e99175bfbb4
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82076772"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83877417"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurera Cloud Management Gateway för Configuration Manager
 
@@ -41,7 +41,7 @@ Använd följande check lista för att kontrol lera att du har nödvändig infor
 
     - Integrering med [Azure AD](../../../servers/deploy/configure/azure-services-wizard.md) för **moln hantering**. Identifiering av Azure AD-användare krävs inte.  
 
-    - Microsoft **. ClassicCompute** & **Microsoft. Storage** Resource providers måste vara registrerade i Azure-prenumerationen. Mer information finns i [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+    - Microsoft **. ClassicCompute**  &  **Microsoft. Storage** Resource providers måste vara registrerade i Azure-prenumerationen. Mer information finns i [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
     - En prenumerations administratör måste logga in.  
 
@@ -87,7 +87,7 @@ Gör den här proceduren på platsen på den översta nivån. Platsen är anting
 6. På sidan Inställningar i guiden väljer du först **Bläddra** och väljer. PFX-fil för certifikatet för serverautentisering för CMG. Namnet från det här certifikatet fyller i fälten för obligatoriska **tjänst-FQDN** och **tjänst namn** .  
 
    > [!NOTE]  
-   > Certifikatet för CMG-serverautentisering stöder jokertecken. Om du använder ett jokertecken, ersätter du asterisken`*`() i fältet för **tjänstens FQDN** med det önskade värd namnet för CMG.<!--491233-->  
+   > Certifikatet för CMG-serverautentisering stöder jokertecken. Om du använder ett jokertecken, ersätter du asterisken ( `*` ) i fältet för **tjänstens FQDN** med det önskade värd namnet för CMG.<!--491233-->  
 
 7. Välj den **region** List rutan för att välja Azure-regionen för den här CMG.  
 
@@ -199,6 +199,43 @@ Det här kommandot visar alla Internetbaserade hanterings platser som klienten k
 > [!Note]  
 > Om du vill felsöka CMG-klient trafiken använder du **CMGHttpHandler. log**, **CMGService. log**och **SMS_Cloud_ProxyConnector. log**. Mer information finns i [loggfiler](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
 
+### <a name="install-off-premises-clients-using-a-cmg"></a>Installera lokala klienter med en CMG
+
+Om du vill installera klient agenten på system som inte är anslutna till intranätet måste något av följande villkor vara uppfyllt. I samtliga fall krävs ett lokalt administratörs konto på mål systemen.
+
+1. Den Configuration Manager webbplatsen har kon figurer ATS korrekt för att använda PKI-certifikat för klientautentisering. Dessutom har klient systemen ett giltigt, unikt och betrott certifikat för klientautentisering som tidigare utfärdats till dem.
+
+2. Systemen är Azure AD-domänanslutna eller hybrid Azure AD-domänanslutna.
+
+3. Webbplatsen kör Configuration Manager version 2002 eller senare.
+
+För alternativ 1 och 2 använder du parametern **/MP** för att ange URL: en för CMG när du anropar **CCMSetup. exe**. Mer information finns i [om klient installations parametrar och egenskaper](../../deploy/about-client-installation-properties.md#mp).
+
+För alternativ 3, från och med Configuration Manager version 2002, kan du installera klient agenten på system som inte är anslutna till intranätet med en token för Mass registrering. Mer information om den här metoden finns i [skapa en token för Mass registrering](../../deploy/deploy-clients-cmg-token.md#create-a-bulk-registration-token).
+
+### <a name="configure-off-premises-clients-for-cmg"></a>Konfigurera lokala klienter för CMG
+
+Du kan ansluta system till en nyligen konfigurerad CMG där följande villkor är uppfyllda:  
+
+- Configuration Manager klient agenten har redan installerats på system.
+
+- System är inte anslutna och kan inte anslutas till intranätet.
+
+- System uppfyller något av följande villkor:
+
+  - Varje har ett giltigt, unikt och betrott certifikat för klientautentisering som utfärdats tidigare.
+
+  - Azure AD-domänansluten
+
+  - Hybrid Azure AD-domänanslutna.
+
+- Du vill inte eller kan du inte fullständigt installera om den befintliga klient agenten.
+
+- Du har en metod för att ändra ett dator register värde och starta om värd tjänsten för **SMS-agenten** med ett lokalt administratörs konto.
+
+Om du vill framtvinga anslutningen på de här systemen skapar du registervärdet **CMGFQDNs** (av typen REG_SZ) under **HKLM\Software\Microsoft\CCM**. Ange det här värdet till URL: en för CMG (till exempel `https://contoso-cmg.contoso.com` ). När du har angett startar du om tjänsten **värd för SMS-agent** på klient systemet.
+
+Om Configuration Manager-klienten inte har en aktuell CMG-eller internetbaserad hanterings plats som angetts i registret kontrollerar den automatiskt **CMGFQDNs** -registervärdet. Den här kontrollen sker var 25: e timme, när värd tjänsten för **SMS-agenten** startar eller när den identifierar en nätverks ändring. När klienten ansluter till platsen och lär sig om en CMG, uppdaterar den automatiskt det här värdet.
 
 ## <a name="modify-a-cmg"></a>Ändra en CMG
 

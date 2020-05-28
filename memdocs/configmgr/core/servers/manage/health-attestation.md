@@ -10,23 +10,23 @@ ms.assetid: 91f9de33-b277-4500-acd6-e7d90a2947c9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9917ec8a1ed2072903276de438f49d3f783a1284
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ed155fb61491a273732ed3b974b6ddb5ac29bc89
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712451"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904002"
 ---
 # <a name="health-attestation-for-configuration-manager"></a>Hälsoattestering för Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Administratörer kan visa statusen för [hälsoattesteringen av Windows 10-enheten](https://technet.microsoft.com/library/mt592023.aspx) i Configuration Manager-konsolen.  Med hälsoattestering för enheten kan administratörer se till att klientdatorer har följande tillförlitliga konfigurationer av BIOS, TPM och startprogram aktiverade:  
+Administratörer kan visa statusen för [hälsoattesteringen av Windows 10-enheten](https://docs.microsoft.com/windows/security/threat-protection/protect-high-value-assets-by-controlling-the-health-of-windows-10-based-devices) i Configuration Manager-konsolen.  Med hälsoattestering för enheten kan administratörer se till att klientdatorer har följande tillförlitliga konfigurationer av BIOS, TPM och startprogram aktiverade:  
 
 -   Tidig start av program mot skadlig kod – Tidig start av program mot skadlig kod (ELAM) skyddar datorn när den startas och innan drivrutiner från tredje part initieras. [Aktivera ELAM](https://gallery.technet.microsoft.com/How-to-turn-on-Early-84552ec5)  
 -   BitLocker – Windows BitLocker-diskkryptering är programvara som gör att du kan kryptera alla data som lagras på Windows-operativsystemsvolymen.  [Aktivera BitLocker](https://gallery.technet.microsoft.com/How-to-turn-on-BitLocker-34294d3d)  
--   Säker start – Säker start är en säkerhetsstandard som utvecklats av medlemmar av datorindustrin för att säkerställa att datorn startas med programvara som är betrodd av datortillverkaren. [Mer information om Säker start](https://technet.microsoft.com/library/hh824987.aspx)  
--   Kodintegritet – Kodintegritet är en funktion som förbättrar säkerheten för operativsystemet genom att verifiera integriteten hos en drivrutin eller systemfil varje gång den läses in i minnet. [Lär dig mer om Kodintegritet](https://technet.microsoft.com/library/dd348642.aspx)  
+-   Säker start – Säker start är en säkerhetsstandard som utvecklats av medlemmar av datorindustrin för att säkerställa att datorn startas med programvara som är betrodd av datortillverkaren. [Mer information om Säker start](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824987(v=win.10))  
+-   Kodintegritet – Kodintegritet är en funktion som förbättrar säkerheten för operativsystemet genom att verifiera integriteten hos en drivrutin eller systemfil varje gång den läses in i minnet. [Lär dig mer om Kodintegritet](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd348642(v=ws.10))  
 
 Den här funktionen är tillgänglig för datorer och lokala resurser som hanteras av Configuration Manager och mobila enheter med Microsoft Intune. Administratörer kan ange om rapportering sker via molnet eller lokala infrastrukturer. Med den lokala kontrollen över hälsoattestering av enheter kan administratören övervaka klient datorer utan Internet åtkomst.
 
@@ -34,7 +34,7 @@ Den här funktionen är tillgänglig för datorer och lokala resurser som hanter
 
  **Signaturkrav**  
 
--   Klient enheter som kör Windows 10 version 1607 eller Windows Server 2016 version 1607 med [Hälsoattestering för enhet aktiverat](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation).
+-   Klient enheter som kör Windows 10 version 1607 eller Windows Server 2016 version 1607 med [Hälsoattestering för enhet aktiverat](https://docs.microsoft.com/windows-server/security/device-health-attestation).
 -   TPM 1,2 eller TPM 2-aktiverade enheter.
 -   När du använder moln hantering, kommunicerar kommunikationen mellan Configuration Manager klient agenten och hanterings platsen med *has.spserv.Microsoft.com* (port 443) tjänsten för hälso tillstånds attestering (Cloud Management). När den är lokalt måste klienten kunna kommunicera med hanterings platsen för enhetens hälsoattestering.
 
@@ -42,7 +42,7 @@ Den här funktionen är tillgänglig för datorer och lokala resurser som hanter
 
 Använd den här proceduren för att aktivera övervakning av enhetens hälsoattestering för enheter som ansluter till Internet.
 
-1.  I Configuration Manager-konsolen väljer du **Administration** > **Översikt** > **klient inställningar**.  Välj fliken för **Datoragent** -inställningar.  
+1.  I Configuration Manager-konsolen väljer du **Administration**  >  **Översikt**  >  **klient inställningar**.  Välj fliken för **Datoragent** -inställningar.  
 2.  I dialogrutan **Standardinställningar** väljer du **Datoragent** och rullar ned till **Aktivera kommunikation med tjänsten för hälsoattestering**.  
 3.  Ställ in **Aktivera kommunikation med hälsoattesteringstjänsten** till **Ja**och klicka sedan på **OK**.  
 4. Rikta in dig på de enhets samlingar som ska rapportera enhetens hälso tillstånd.
@@ -52,10 +52,10 @@ Använd den här proceduren för att aktivera övervakning av hälsoattestering 
 
 Från och med Configuration Manager 1702 kan webb adressen för den lokala enhetens hälsoattesterings tjänst konfigureras på hanterings platsen så att den stöder klient enheter utan Internet åtkomst.
 
-1. I Configuration Manager-konsolen navigerar du till **Administration** > **Översikt** > **plats konfiguration** > **platser**.
-2. Högerklicka på den primära eller sekundära platsen med hanterings platsen som stöder lokala hälsoattesteringar för enheter och välj **Konfigurera plats komponenter** > **hanterings plats**. Sidan **Egenskaper för hanterings plats komponent** öppnas.
+1. I Configuration Manager-konsolen navigerar du till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**.
+2. Högerklicka på den primära eller sekundära platsen med hanterings platsen som stöder lokala hälsoattesteringar för enheter och välj **Konfigurera plats komponenter**  >  **hanterings plats**. Sidan **Egenskaper för hanterings plats komponent** öppnas.
 3. På fliken **Avancerade alternativ** väljer du **Lägg till** och anger en giltig webb adress till tjänst för lokal hälsoattestering för enhet. Du kan lägga till flera URL: er. Om flera lokala webb adresser anges får klienterna den fullständiga uppsättningen och väljer slumpmässigt vilken som ska användas.
-4.  I Configuration Manager-konsolen väljer du **Administration** > **Översikt** > **klient inställningar**.  Välj fliken för **Datoragent** -inställningar.  
+4.  I Configuration Manager-konsolen väljer du **Administration**  >  **Översikt**  >  **klient inställningar**.  Välj fliken för **Datoragent** -inställningar.  
 5.  Rulla ned för att **Aktivera kommunikation med tjänsten hälsoattestering**och Ställ in på **Ja**.
 7.  Klicka på alternativet **Använd lokal Health Attestaion-tjänst** och Ställ in på **Ja**.
 8. Rikta in dig på de enheter som ska rapportera enhetens hälso tillstånd med inställningarna för klient agenten för att aktivera rapportering av hälsoattestering för enhet.

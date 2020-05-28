@@ -2,7 +2,7 @@
 title: Till gångar i Analytics för Station ära datorer
 titleSuffix: Configuration Manager
 description: Lär dig om enheter, driv rutiner och appar i Skriv bords analys.
-ms.date: 01/16/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: d07198cf-49bb-4712-8c63-063b4302cc11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fe1338781cbb16a8485de050a294e34e487a2ecc
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: d5900fd4cb4fdebea23e626ffbe17c5289712b31
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722552"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268920"
 ---
 # <a name="assets-in-desktop-analytics"></a>Till gångar i Analytics för Station ära datorer
 
@@ -41,15 +42,19 @@ Fliken **appar** visar alla installerade appar som tjänsten identifierar på di
 
 Viktiga **appar är** installerade på fler än 2% av registrerade enheter.
 
+**Informationen om program versioner** är inaktive rad som standard, så den här fliken kombinerar alla versioner av appar med samma namn och utgivare.<!-- 5542186 --> Standard beteendet hjälper till att minska det totala antalet appar som visas, vilket hjälper dig att minska dina ansträngningar att kommentera apparna. Antalet appar i panelen för att ange **appar visas också** i den här inställningen. I stället för hundratals instanser av Microsoft Edge finns det till exempel en instans för alla versioner. Du kan fatta beslut en gång för alla versioner. Om du behöver fatta beslut om vissa versioner av en app aktiverar du den här inställningen. Du kan också konfigurera den här inställningen när du arbetar med en distributions plan. Mer information finns i [planera till gångar](about-deployment-plans.md#plan-assets).
+
+Välj appen i listan och välj **Redigera**. Den här åtgärden visar information om appen. Välj den **viktiga** List menyn och ange ett värde. Du kan också tilldela en **ägare**. Om du gör några ändringar väljer du **Spara**.
+
 Konfigurera **betydelsen** av appar genom att ställa in en av följande kategorier:
 
-- Kritisk
+- Kritiskt
 - Viktigt
 - Ignorera
 - Ej granskad
 - Inte viktigt<!-- 3587232 -->
 
-Välj appen i listan och välj **Redigera**. Den här åtgärden visar information om appen. Välj den **viktiga** List menyn och ange ett värde. Du kan också tilldela en **ägare**. Om du gör några ändringar väljer du **Spara**.
+När **information om program versioner** är inaktive rad, visar fönstret programinformation antalet program versioner och språk som den kombinerar. Om du sparar ändringar i appens information gäller den för alla versioner. Ange till exempel **prioritet** eller **ägare**. Vissa värden visar flera, vilket innebär att det inte finns ett konsekvent värde för alla versioner.
 
 ### <a name="automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" />Automatiskt uppgraderings beslut av system-och Store-appar
 
@@ -70,7 +75,7 @@ Att identifiera **prioritets** -och **uppgraderings beslut** är viktigt för al
 >    - För Store-appar, filtrera **typ** som **modern**
 >    - Filtrera **kategori** som **bakgrunds process** eller Windows- **komponent** i system apps
 
-I en distributions plan kan du också ställa in **uppgraderings beslutet**. Mer information finns i [planera till gångar](about-deployment-plans.md#plan-assets)
+I en distributions plan kan du också ställa in **uppgraderings beslutet**. Mer information finns i [planera till gångar](about-deployment-plans.md#plan-assets).
 
 ### <a name="usage"></a>Användning
 

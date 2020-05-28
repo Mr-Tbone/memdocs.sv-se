@@ -2,7 +2,7 @@
 title: Kravkontroller
 titleSuffix: Configuration Manager
 description: Referens för de särskilda krav kontrollerna för Configuration Manager uppdateringar.
-ms.date: 04/01/2020
+ms.date: 05/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d8fc9abfc9fc09bc3011a3fee30b258023d04c8a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 9f0ed1d5913154d90242d1aa2a47efbcf7d22282
+ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718198"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82943798"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Lista över nödvändiga kontroller för Configuration Manager
 
@@ -727,7 +727,7 @@ Configuration Manager kräver inte Active Directory schema tillägg för plats S
 
 *Gäller för: Central administrations webbplats, primär plats*
 
-Paketen innehåller inte ogiltiga tecken i resurs namnet, t `#`. ex..
+Paketen innehåller inte ogiltiga tecken i resurs namnet, t `#` . ex..
 
 ### <a name="site-system-to-sql-server-communication"></a>Plats system för att SQL Server kommunikation
 
@@ -741,7 +741,7 @@ Det konto som du konfigurerade för att köra SQL Server-tjänsten för plats da
 
 Från och med version 1810 kontrollerar du om plats databasen har en efter släpning av SQL Change tracking-data.<!--SCCMDocs-pr issue 3023-->  
 
-Verifiera den här kontrollen manuellt genom att köra en Diagnostisk lagrad procedur i plats databasen. Skapa först en [diagnostisk anslutning](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) till din plats databas. Den enklaste metoden är att använda SQL Server Management Studio databas motorns Frågeredigeraren och ansluta till `admin:<instance name>`.
+Verifiera den här kontrollen manuellt genom att köra en Diagnostisk lagrad procedur i plats databasen. Skapa först en [diagnostisk anslutning](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) till din plats databas. Den enklaste metoden är att använda SQL Server Management Studio databas motorns Frågeredigeraren och ansluta till `admin:<instance name>` .
 
 Kör följande kommandon i ett dedikerat fönster för anslutnings frågor för administratörer:
 
@@ -771,9 +771,9 @@ SELECT * FROM vLogs WHERE ProcedureName = 'spDiagChangeTracking'
 
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Uppdatering av SQL Server Native Client kan kräva en omstart, vilket kan påverka plats installations processen.
 
-Den här kontrollen ser till att platsen har en version av SQL Native Client som stöds. Från och med version 1810 är den lägsta versionen SQL 2012 SP4 (`11.*.7001.0`).
+Den här kontrollen ser till att plats servern har en version av SQL Native Client som stöds. Krav kontrollen kontrollerar inte versionen av SQL Native Client på fjärrplatssystem.
 
-Den här SQL Native Client versionen stöder TLS 1,2. Mer information finns i följande artiklar:
+Den lägsta versionen är SQL 2012 SP4 ( `11.*.7001.0` ). Den här SQL Native Client versionen stöder TLS 1,2. Mer information finns i följande artiklar:
 
 - [TLS 1,2-stöd för Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server)  
 

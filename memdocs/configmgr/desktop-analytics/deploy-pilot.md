@@ -10,12 +10,13 @@ ms.assetid: 637fbd8e-b8ea-4c7e-95ee-a60a323c496e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b0e939b51c464215ac1d4feea539ceb5677a01a6
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: 0e90855949f5c8f249db6b2f4305c71b8ee4e768
+ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723686"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83824026"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Så här distribuerar du till pilot med Desktop Analytics
 
@@ -100,7 +101,12 @@ Innan du kan distribuera Windows måste du först skapa program varu objekt i Co
 
 ## <a name="deploy-to-pilot-devices"></a>Distribuera till pilot enheter
 
-Configuration Manager använder data från Desktop Analytics för att skapa samlingar för pilot-och produktions distributionerna. För att se till att enheterna är felfria efter varje distributions fas kan du använda följande procedur för att skapa en integrerad stegvis distribution med Desktop Analytics:
+Configuration Manager använder data från Desktop Analytics för att skapa samlingar för pilot-och produktions distributionerna. De här samlingarna finns i arbets ytan **till gångar och efterlevnad** , noden **enhets samlingar** , mappen **distributions planer** .
+
+> [!IMPORTANT]
+> De här samlingarna hanteras av Configuration Manager för distributions planer för Skriv bords analys. Manuella ändringar stöds inte.
+
+För att se till att enheterna är felfria efter varje distributions fas kan du använda följande procedur för att skapa en integrerad stegvis distribution med Desktop Analytics:
 
 1. I Configuration Manager-konsolen går du till **program biblioteket**, expanderar **underhåll av Skriv bords analys**och väljer noden **distributions planer** .  
 
@@ -113,9 +119,9 @@ Configuration Manager använder data från Desktop Analytics för att skapa saml
 
 4. Ange ett namn för distributionen och välj den aktivitetssekvens som ska användas. Använd alternativet för att **automatiskt skapa en standard distribution i två faser**och konfigurera sedan följande samlingar:  
 
-    - **Första samlingen**: Sök efter och välj **pilot** samlingen för den här distributions planen. Standard namngivnings konventionen för den här samlingen `<deployment plan name> (Pilot)`är.
+    - **Första samlingen**: Sök efter och välj **pilot** samlingen för den här distributions planen. Standard namngivnings konventionen för den här samlingen är `<deployment plan name> (Pilot)` .
 
-    - **Andra samlingen**: Sök efter och välj **produktions** samlingen för den här distributions planen. Standard namngivnings konventionen för den här samlingen `<deployment plan name> (Production)`är.
+    - **Andra samlingen**: Sök efter och välj **produktions** samlingen för den här distributions planen. Standard namngivnings konventionen för den här samlingen är `<deployment plan name> (Production)` .
 
     > [!Note]  
     > Med Desktop Analytics-integrering skapar Configuration Manager automatiskt pilot-och produktions samlingar för distributions planen. Innan du kan använda dem kan det ta tid för dessa samlingar att synkronisera. Mer information finns i [Felsök-data svars tid](troubleshooting.md#data-latency).<!-- 4984639 -->
@@ -172,7 +178,7 @@ Sidan **distributions status** visar enheter i följande kategorier:
 
 - Inte startad
 - Pågår
-- Slutfört
+- Slutförd
 - Kräver åtgärd – enheter
 - Kräver åtgärds problem
 

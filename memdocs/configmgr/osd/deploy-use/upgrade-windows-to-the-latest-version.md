@@ -10,12 +10,12 @@ ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d604095ec3097581289a05cd306b865dbd7da99a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 8bfb45ba835851c33d6017f7f0a884bd2c1e9421
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720011"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429329"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-configuration-manager"></a>Uppgradera Windows till den senaste versionen med Configuration Manager
 
@@ -85,7 +85,7 @@ Följande uppgifter är inte kompatibla med uppgradering på plats. De kräver a
 
   - Ändra diskpartitioner
   - Ändra system arkitekturen från x86 till x64
-  - Implementera UEFI. (Mer information om ett möjligt alternativ finns i [konvertera från BIOS till UEFI under en uppgradering på plats](task-sequence-steps-to-manage-bios-to-uefi-conversion.md#convert-from-bios-to-uefi-during-an-in-place-upgrade).)
+  - Implementera UEFI. (Mer information om ett möjligt alternativ finns i [konvertera från BIOS till UEFI under en uppgradering på plats](task-sequence-steps-to-manage-bios-to-uefi-conversion.md#bkmk_ipu).)
   - Ändra det grundläggande OS-språket  
 
 - Du har anpassade krav, inklusive att använda en anpassad bas avbildning, med disk kryptering från tredje part eller kräver offline-åtgärder från tredje part.  

@@ -2,7 +2,7 @@
 title: Hantera synkronisering av program uppdateringar
 titleSuffix: Configuration Manager
 description: Använd de här stegen för att schemalägga synkronisering av program uppdateringar, starta synkroniseringen av program uppdateringar manuellt och övervaka synkroniseringen av program uppdateringar.
-ms.date: 12/20/2018
+ms.date: 05/11/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -10,12 +10,12 @@ ms.assetid: ea8698c4-9df5-4cf5-8b62-ab93115b4769
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: d1b47965fa5cc36b0c0eb6d47c2214d1dceb8ee8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d36c6a02868b8ccde9538a286135b2ad1ce08f43
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712682"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83269056"
 ---
 #  <a name="synchronize-software-updates"></a><a name="BKMK_SUMSync"></a>Synkronisera program uppdateringar
 
@@ -56,7 +56,7 @@ Använd följande procedurer på platsen på den översta nivån för att initie
 
 2. Expandera **Programuppdateringar** på arbetsytan Programvarubibliotek och klicka på **Alla programuppdateringar** eller **Programuppdateringsgrupper**.  
 
-3. Gå till gruppen **Skapa** på fliken **Start** och klicka på **Synkronisera programuppdateringar**. Bekräfta att du vill initiera synkroniseringsprocessen genom att klicka på **Ja** i dialogrutan.  
+3. På fliken **Start** i gruppen **alla program uppdateringar** klickar du på **Synkronisera program uppdateringar**. Bekräfta att du vill initiera synkroniseringsprocessen genom att klicka på **Ja** i dialogrutan.  
 
    När du har initierat synkroniseringsprocessen på program uppdaterings platsen kan du övervaka synkroniseringsprocessen från Configuration Manager-konsolen för alla program uppdaterings platser i hierarkin. Använd följande procedur om du vill övervaka processen för synkronisering av programuppdateringar.  
 

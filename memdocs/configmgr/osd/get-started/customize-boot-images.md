@@ -10,12 +10,12 @@ ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1e486ddd8652529000c6ec02266f677e45669111
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: cc679ec7e73e9d43902ad70e09fb2a01c95eed65
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724197"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906890"
 ---
 # <a name="customize-boot-images-with-configuration-manager"></a>Anpassa Start avbildningar med Configuration Manager
 
@@ -49,11 +49,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
 - **WinPE-WDS-Tools**: Installerar Windows Deployment Services-verktyg.  
 
-  Det finns andra Windows PE-paket som du också kan lägga till. Följande resurser ger mer information om valfria komponenter som du kan lägga till i startavbildningen.  
-
-- Information om Windows PE 5 finns i [WinPE: Lägga till paket (lista över valfria komponenter)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)  
-
-- För Windows PE 3.1, se [Lägg till ett paket i en Windows PE-avbildning](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) i TechNets dokumentationsbibliotek för Windows 7.  
+  Det finns andra Windows PE-paket som du också kan lägga till. Mer information om valfria komponenter som du kan lägga till i Start avbildningen finns i [WinPE: lägga till paket (alternativ referens för valfria komponenter)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).
 
 > [!NOTE]
 >När du startar i WinPE från en anpassad startavbildning som innehåller verktyg som du har lagt till kan du öppna en kommandotolk från WinPE och ange filnamnet i verktyget för att köra den. Platsen för dessa verktyg läggs automatiskt till i variabeln Path. Kommando tolken kan bara läggas till om inställningen **Aktivera kommando stöd (endast testning)** är markerad på fliken **anpassning** i Start avbildningens egenskaper.
@@ -67,7 +63,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
 2. Ladda ned Windows ADK för Windows 8.1 från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=39982).  
 
-3. Kopiera start avbildningen (wimpe. wim) från Windows ADK-installationsmappen (till exempel <*installations Sök väg*> \Windows Kits\\<*version*> \Assessment och Deployment Kit\Windows Preinstallation Environment\\<*x86 eller amd64*>\\<*locale*>) till en målmapp på den dator som du vill anpassa start avbildningen från. I den här proceduren är C:\WinPEWAIK målmappens namn.  
+3. Kopiera start avbildningen (wimpe. wim) från Windows ADK-installationsmappen (till exempel <*installations Sök väg*> \Windows Kits \\ < *version*> \Assessment och Deployment Kit\Windows Preinstallation Environment \\ < *x86 eller amd64* > \\ < *locale*>) till en målmapp på den dator som du vill anpassa start avbildningen från. I den här proceduren är C:\WinPEWAIK målmappens namn.  
 
 4. Använd DISM för att montera startavbildningen i en lokal Windows PE-mapp. Ange till exempel följande kommandorad:  
 
@@ -76,7 +72,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     Där C:\WinPEWAIK är den mapp som innehåller startavbildningen och där C:\WinPEMount är den monterade mappen.  
 
    > [!NOTE]
-   >  Mer information om DISM finns i artikeln [Teknisk referens för DISM (Deployment Image Servicing and Management)](https://technet.microsoft.com/library/hh824821.aspx) i TechNets dokumentationsbibliotek för Windows 8.1 och Windows 8.
+   >  Mer information finns i referens för [DISM (Deployment Image Servicing and Management)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-reference--deployment-image-servicing-and-management).
 
 5. När du har monterat startavbildningen använder du DISM för att lägga till valfria komponenter i startavbildningen. I Windows PE 5 finns de valfria 64-bitarskomponenterna i <*Installationssökväg*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs.  
 
@@ -112,7 +108,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\en-us\WinPE-WDS-Tools_en-us.cab"**  
 
    > [!TIP]
-   >  Mer information om valfria komponenter som kan läggas till i startavbildningen finns i [referenslistan för valfria Windows PE-komponenter](https://technet.microsoft.com/library/hh824926.aspx) i TechNets dokumentationsbibliotek för Windows 8.1 och Windows 8.  
+   >  Mer information om valfria komponenter som du kan lägga till i Start avbildningen finns i referens för [valfria Windows PE-komponenter](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).
 
 6. Använd DISM om drivrutiner måste läggas till i startavbildningen. Skriv följande om du måste lägga till drivrutiner i startavbildningen:  
 
@@ -136,7 +132,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
    4. På sidan **Datakälla** anger du följande alternativ och klickar sedan på **Nästa**.  
 
-      - I rutan **Sökväg** anger du sökvägen till den uppdaterade startavbildningsfilen. Den angivna sökvägen måste vara en giltig nätverkssökväg i UNC-format. Exempel ** \\ \\ **: <em>Server namn</em>**>WinPEWAIK\\**<em>resurs</em> **> \Winpe.wim**.  
+      - I rutan **Sökväg** anger du sökvägen till den uppdaterade startavbildningsfilen. Den angivna sökvägen måste vara en giltig nätverkssökväg i UNC-format. Exempel: **\\\\<** <em>Server namn</em> **>\\<** <em>WinPEWAIK resurs</em> **> \Winpe.wim**.  
 
       - Välj startavbildningen i den nedrullningsbara listan **Startavbildningsfil**. Om WIM-filen innehåller flera startavbildningar visas var och en i listan.  
 
@@ -160,7 +156,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
    4. Öppna Testprogram för Windows Management Instrumentation genom att skriva **wbemtest** i en kommandotolk.  
 
-   5. ** \\Skriv \\ ** <em>SMS-providerns dator</em> **> \root\sms\ site_<** <em>platskod</em> **>** i **namn område**och klicka sedan på **Anslut**.  
+   5. Skriv **\\\\<** <em>SMS-providerns dator</em> **> \root\sms\ Site_<** <em>platskod</em> **>** i **namn område**och klicka sedan på **Anslut**.  
 
    6. Klicka på **Öppna instans**, skriv **sms_bootimagepackage.packageID="<packageID\>"** och klicka sedan på **OK**. Som paket-ID anger du det värde som du identifierade i steg 3.  
 
@@ -198,7 +194,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     Där C:\WinPEWAIK är den mapp som innehåller startavbildningen och där C:\WinPEMount är den monterade mappen.  
 
    > [!NOTE]
-   >  Mer information om DISM finns i [Teknisk referens för underhåll och hantering av distributionsavbildning](https://technet.microsoft.com/library/dd744256\(v=ws.10\).aspx) i TechNets dokumentationsbibliotek för Windows 7.  
+   > Mer information finns i referens för [DISM (Deployment Image Servicing and Management)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-reference--deployment-image-servicing-and-management).
 
 5. När du har monterat startavbildningen använder du DISM för att lägga till valfria komponenter i startavbildningen. I till exempel Windows PE 3.1 finns de valfria komponenterna i <*Installationssökväg*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
@@ -228,7 +224,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-wds-tools_en-us.cab"**  
 
    > [!TIP]
-   >  Mer information om olika paket som du kan lägga till i startavbildningen finns i artikeln [Lägga till ett paket i en Windows PE-avbildning](https://technet.microsoft.com/library/dd799312\(v=WS.10\).aspx) i TechNets dokumentationsbibliotek för Windows 7.  
+   >  Mer information om de olika paket som du kan lägga till i Start avbildningen finns i [lägga till ett paket i en Windows PE-avbildning](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd799312(v=ws.10)).
 
 6. Använd DISM om drivrutiner måste läggas till i startavbildningen. Skriv följande om du måste lägga till drivrutiner i startavbildningen:  
 
@@ -252,7 +248,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
    4. På sidan **Datakälla** anger du följande alternativ och klickar sedan på **Nästa**.  
 
-      - I rutan **Sökväg** anger du sökvägen till den uppdaterade startavbildningsfilen. Den angivna sökvägen måste vara en giltig nätverkssökväg i UNC-format. Exempel ** \\ \\ **: <em>Server namn</em>**>WinPEWAIK\\**<em>resurs</em> **> \Winpe.wim**.  
+      - I rutan **Sökväg** anger du sökvägen till den uppdaterade startavbildningsfilen. Den angivna sökvägen måste vara en giltig nätverkssökväg i UNC-format. Exempel: **\\\\<** <em>Server namn</em> **>\\<** <em>WinPEWAIK resurs</em> **> \Winpe.wim**.  
 
       - Välj startavbildningen i den nedrullningsbara listan **Startavbildningsfil**. Om WIM-filen innehåller flera startavbildningar visas var och en i listan.  
 
@@ -276,7 +272,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
    4. Öppna Testprogram för Windows Management Instrumentation genom att skriva **wbemtest** i en kommandotolk.  
 
-   5. ** \\Skriv \\ ** <em>SMS-providerns dator</em> **> \root\sms\ site_<** <em>platskod</em> **>** i **namn område**och klicka sedan på **Anslut**.  
+   5. Skriv **\\\\<** <em>SMS-providerns dator</em> **> \root\sms\ Site_<** <em>platskod</em> **>** i **namn område**och klicka sedan på **Anslut**.  
 
    6. Klicka på **Öppna instans**, skriv **sms_bootimagepackage.packageID="<packageID\>"** och klicka sedan på **OK**. Som paket-ID anger du det värde som du identifierade i steg 3.  
 

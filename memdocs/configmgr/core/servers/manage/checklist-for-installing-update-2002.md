@@ -2,7 +2,7 @@
 title: Check lista för 2002
 titleSuffix: Configuration Manager
 description: Lär dig mer om åtgärder som ska vidtas innan du uppdaterar till Configuration Manager version 2002.
-ms.date: 04/01/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2993032a-1204-4bd8-b5af-17a980bb0649
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a7f2abac1810b5ab40e3c253b6aee7aa970174d9
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 63293c103cf8a19d006bd700cac6c370ba5e7391
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723539"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268954"
 ---
 # <a name="checklist-for-installing-update-2002-for-configuration-manager"></a>Check lista för att installera uppdatering 2002 för Configuration Manager
 
@@ -33,7 +33,7 @@ När hierarkin har laddat ned uppdaterings paketet från Microsoft kan du hitta 
 
   - Dmpdownloader. log kan indikera att dmpdownloader-processen väntar i ett intervall innan den söker efter uppdateringar. Starta om den **SMS_EXECUTIVE** tjänsten på plats servern för att starta om nedladdningen av uppdateringens omdistributions filer.
 
-  - En annan vanlig hämtnings fråga inträffar när proxyserverinställningar förhindrar nedladdning från `silverlight.dlservice.microsoft.com`, `download.microsoft.com`och `go.microsoft.com`.
+  - En annan vanlig hämtnings fråga inträffar när proxyserverinställningar förhindrar nedladdning från `silverlight.dlservice.microsoft.com` , `download.microsoft.com` och `go.microsoft.com` .
 
 Mer information om hur du installerar uppdateringar finns [i uppdateringar och underhåll i konsolen](updates.md#bkmk_inconsole).
 
@@ -68,33 +68,35 @@ Första gången du använder en Configuration Manager-konsol när uppdateringen 
 
 <!-- SCCMDocs#1397 -->
 
-<!-- As of December 20, 2019, version 2002 is globally available for all customers to install. If you previously opted in to the early update ring, watch for an update to this current branch version.
- -->
+Från och med den 11 maj 2020 är version 2002 globalt tillgängligt för alla kunder att installera. Om du tidigare har valt att logga in med tidig uppdatering kan du titta på en uppdatering av den aktuella gren versionen.
 
-För tillfället släpps version 2002 för tidig uppdatering av ringen. Om du vill installera den här uppdateringen måste du välja. Följande PowerShell-skript lägger till din hierarki eller fristående primär plats till tidig uppdaterings ringen för version 2002:
+<!--
+At this time, version 2002 is released for the early update ring. To install this update, you need to opt-in. The following PowerShell script adds your hierarchy or standalone primary site to the early update ring for version 2002:
 
-[Skript för att välja version 2002](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
+[Version 2002 opt-in script](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
 
-Microsoft signerar skriptet digitalt och paketerar det i en signerad självextraherande körbar fil.
+<!--
+Microsoft digitally signs the script, and bundles it inside a signed self-extracting executable.
 
 > [!Note]  
-> Version 2002-uppdateringen gäller endast platser som kör version 1810 eller senare.
+> The version 2002 update is only applicable to sites running version 1810 or later.
 
-Så här anmäler du dig till tidig uppdaterings ringen:
+To opt-in to the early update ring:
 
-1. Öppna Windows PowerShell och **Kör som administratör**
-1. Kör skriptet **EnableEarlyUpdateRing2002. ps1** med hjälp av följande syntax:
+1. Open Windows PowerShell and **Run as administrator**
+1. Run the **EnableEarlyUpdateRing2002.ps1** script, using the following syntax:
 
     `EnableEarlyUpdateRing2002.ps1 <SiteServer_Name> | SiteServer_IP>`
 
-    Där `SiteServer` refererar till den centrala administrations platsen eller den fristående primära plats servern. Till exempel, `EnableEarlyUpdateRing2002.ps1 cmprimary01`
+    Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing2002.ps1 cmprimary01`
 
-1. Söka efter uppdateringar. Mer information finns i [Hämta tillgängliga uppdateringar](install-in-console-updates.md#get-available-updates).
+1. Check for updates. For more information, see [Get available updates](install-in-console-updates.md#get-available-updates).
 
-Version 2002-uppdateringen bör nu vara tillgänglig i-konsolen.
+The version 2002 update should now be available in the console.
 
 > [!Important]  
-> Det här skriptet lägger bara till din webbplats till den tidigaste uppdaterings ringen för version 2002. Det är inte en permanent ändring.
+> This script only adds your site to the early update ring for version 2002. It's not a permanent change.
+ -->
 
 ## <a name="checklist"></a>Checklista
 
@@ -190,7 +192,7 @@ Innan du installerar uppdateringen inaktiverar du alla plats underhålls aktivit
 
 Om en underhållsaktivitet för platsdatabasen körs under installationen av uppdateringen kan installationen av uppdateringen misslyckas. Innan du inaktiverar en aktivitet registrerar du schemat för aktiviteten så att du kan återställa dess konfiguration när uppdateringen har installerats.
 
-Mer information finns i [underhålls aktiviteter](maintenance-tasks.md) och [referens för underhålls aktiviteter](reference-for-maintenance-tasks.md).
+Mer information finns i [underhålls aktiviteter](maintenance-tasks.md)   och [referens för underhålls aktiviteter](reference-for-maintenance-tasks.md).
 
 ### <a name="temporarily-stop-any-antivirus-software"></a>Stoppa alla antivirus program tillfälligt
 
@@ -212,7 +214,7 @@ Du kan till exempel lägga till anpassade poster i filen **osdinjection. XML** i
 
 När du installerar en plats uppdatering som även uppdaterar klienten måste du testa den nya klient uppdateringen i för produktion innan du uppdaterar alla produktions klienter. Om du vill använda det här alternativet konfigurerar du webbplatsen så att den stöder automatiska uppgraderingar för för produktion innan du påbörjar installationen av uppdateringen.
 
-Mer information finns i [Uppgradera klienter](../../clients/manage/upgrade/upgrade-clients.md) och [testa klient uppgraderingar i en för produktions samling](../../clients/manage/upgrade/test-client-upgrades.md).
+Mer information finns i [Uppgradera klienter](../../clients/manage/upgrade/upgrade-clients.md)   och [testa klient uppgraderingar i en för produktions samling](../../clients/manage/upgrade/test-client-upgrades.md).
 
 ### <a name="plan-to-use-service-windows"></a>Planera att använda service fönster
 
@@ -237,7 +239,7 @@ Om du vill köra en krav kontroll från konsolen går du till arbets ytan **Admi
 Mer information finns i avsnittet **köra krav kontrollen innan du installerar en uppdatering** i [innan du installerar en uppdatering i konsolen](install-in-console-updates.md#bkmk_beforeinstall).
 
 > [!IMPORTANT]  
-> När krav kontrollen körs uppdaterar processen vissa produkt käll filer som används för plats underhålls aktiviteter. När du har kört krav kontrollen men innan du installerar uppdateringen måste du därför köra **setupwpf. exe** (Configuration Manager installationen) från CD: n för att utföra en plats underhålls uppgift. Den senaste mappen på plats servern.
+> När krav kontrollen körs uppdaterar processen vissa produkt käll filer som används för plats underhålls aktiviteter. När du har kört krav kontrollen men innan du installerar uppdateringen måste du därför köra **setupwpf. exe**   (Configuration Manager installationen) från CD: n för att utföra en plats underhålls uppgift. Den senaste mappen på plats servern.
 
 ### <a name="update-sites"></a>Uppdatera platser
 

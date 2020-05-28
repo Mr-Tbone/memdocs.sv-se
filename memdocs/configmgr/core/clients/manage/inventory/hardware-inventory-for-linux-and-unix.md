@@ -10,12 +10,12 @@ ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1bdfb8c6d528c12581f05f86111a1a76d2259faa
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 84f4b822475111352c5dcf23f4868a1fa43ec3a7
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714425"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906270"
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-configuration-manager"></a>Maskin varu inventering för Linux och UNIX i Configuration Manager
 
@@ -105,7 +105,7 @@ Du kan också tvinga klienten på en Linux- eller UNIX-server att genast köra m
 ###  <a name="create-a-custom-hardware-inventory-provider-for-linux-and-unix-computers"></a><a name="BKMK_LinuxProvider"></a> Skapa en anpassad maskinvaruinventeringsprovider för Linux- och UNIX-datorer:  
  Om du vill skapa en anpassad Provider för maskin varu inventering för Configuration Manager-klienten för Linux och UNIX, använder du **OMI Source-v. 1.0.6** och följer instruktionerna från OMI komma igång-guiden. Den här processen omfattar att skapa en MOF-fil (Managed Object Format) som definierar schemat för den nya providern. Senare importerar du MOF-filen till Configuration Manager för att aktivera stöd för den nya anpassade inventerings klassen.  
 
- Både OMI Source - v.1.0.6 och Kom igång-guiden för OMI kan hämtas från webbplatsen för [The Open Group](https://github.com/microsoft/omi/blob/master/README.md) . Du hittar dessa hämtningsbara filer på fliken **Documents** (Dokument) på följande webbsida på webbplatsen OpenGroup.org: [Open Management Infrastructure (OMI)](https://go.microsoft.com/fwlink/p/?LinkId=286805).  
+ Både OMI Source - v.1.0.6 och Kom igång-guiden för OMI kan hämtas från webbplatsen för [The Open Group](https://github.com/microsoft/omi/blob/master/README.md) . Du hittar dessa hämtningsbara filer på fliken **Documents** (Dokument) på följande webbsida på webbplatsen OpenGroup.org: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/).  
 
 ###  <a name="configure-each-computer-that-runs-linux-or-unix-with-the-custom-hardware-inventory-provider"></a><a name="BKMK_AddProvidertoLinux"></a> Konfigurera varje dator som kör Linux eller UNIX med den anpassade maskinvaruinventeringsprovidern:  
  När du har skapat en anpassad inventeringsprovider måste du kopiera och sedan registrera providerns biblioteksfil på varje dator som har inventering som du vill hämta.  

@@ -10,18 +10,18 @@ ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e2c8b369b69bd5fcddd2f52b875b5089d82ebb0e
-ms.sourcegitcommit: d05b1472385c775ebc0b226e8b465dbeb5bf1f40
-ms.translationtype: HT
+ms.openlocfilehash: b3ddd1a4b59ba750e9fca5f8386762b4a5dddb13
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605142"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429832"
 ---
 # <a name="task-sequence-variables"></a>Aktivitetssekvensvariabler
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Den här artikeln är en referens för alla tillgängliga variabler i alfabetisk ordning. Använd webbläsaren **Sök** funktion (vanligt vis **CTRL** + **F**) för att hitta en speciell variabel. Variabeln noterar om den är specifik för särskilda steg. Artikeln om [stegen i aktivitetssekvensen](task-sequence-steps.md) innehåller en lista över variabler som är speciella för varje steg.
+Den här artikeln är en referens för alla tillgängliga variabler i alfabetisk ordning. Använd webbläsaren **Sök** funktion (vanligt vis **CTRL**  +  **F**) för att hitta en speciell variabel. Variabeln noterar om den är specifik för särskilda steg. Artikeln om [stegen i aktivitetssekvensen](task-sequence-steps.md) innehåller en lista över variabler som är speciella för varje steg.
 
 Mer information finns i [använda variabler för aktivitetssekvens](using-task-sequence-variables.md).
 
@@ -106,11 +106,11 @@ Anger standardgateways som används av datorn.
 
 ### <a name="_smstsdownloadondemand"></a><a name="SMSTSDownloadOnDemand"></a>_SMSTSDownloadOnDemand
 
-Om den aktuella aktivitetssekvensen körs i läget Hämta på begäran är `true`den här variabeln. Ladda ned-i-demand-läge innebär att Task Sequence Manager laddar ned innehåll lokalt endast när det måste ha åtkomst till innehållet.
+Om den aktuella aktivitetssekvensen körs i läget Hämta på begäran är den här variabeln `true` . Ladda ned-i-demand-läge innebär att Task Sequence Manager laddar ned innehåll lokalt endast när det måste ha åtkomst till innehållet.
 
 ### <a name="_smstsinwinpe"></a><a name="SMSTSInWinPE"></a>_SMSTSInWinPE
 
-När det aktuella steget i aktivitetssekvensen körs i Windows PE är `true`den här variabeln. Testa den här aktivitetssekvensen för att fastställa den aktuella operativ system miljön.
+När det aktuella steget i aktivitetssekvensen körs i Windows PE är den här variabeln `true` . Testa den här aktivitetssekvensen för att fastställa den aktuella operativ system miljön.
 
 ### <a name="_smstsipaddresses"></a><a name="SMSTSIPAddresses"></a>_SMSTSIPAddresses
 
@@ -132,9 +132,9 @@ Lagrar retur koden från den senaste åtgärden som kördes. Den här variabeln 
 
 ### <a name="_smstslastactionsucceeded"></a><a name="SMSTSLastActionSucceeded"></a>_SMSTSLastActionSucceeded
 
-- Om det sista steget lyckades är `true`den här variabeln.  
+- Om det sista steget lyckades är den här variabeln `true` .  
 
-- Om det sista steget misslyckades, är `false`det.  
+- Om det sista steget misslyckades, är det `false` .  
 
 - Om aktivitetssekvensen hoppade över den senaste åtgärden, eftersom steget har inaktiverats eller det associerade villkoret utvärderas till **false**återställs inte den här variabeln. Den innehåller fortfarande värdet för föregående åtgärd.  
 
@@ -177,7 +177,7 @@ Anger datorns märke.
 
 ### <a name="_smstsmdatapath"></a><a name="SMSTSMDataPath"></a>_SMSTSMDataPath
 
-Anger den sökväg som definieras av [SMSTSLocalDataDrive](#SMSTSLocalDataDrive) -variabeln. När du definierar SMSTSLocalDataDrive innan aktivitetssekvensen startar, t. ex. genom att ange en samlings variabel, definierar Configuration Manager _SMSTSMDataPath variabeln när aktivitetssekvensen startar.
+Anger den sökväg som definieras av [SMSTSLocalDataDrive](#SMSTSLocalDataDrive) -variabeln. Den här sökvägen anger var aktivitetssekvensen lagrar temporära cachefiler på mål datorn när den körs. När du definierar SMSTSLocalDataDrive innan aktivitetssekvensen startar, t. ex. genom att ange en samlings variabel, definierar Configuration Manager _SMSTSMDataPath variabeln när aktivitetssekvensen startar.
 
 ### <a name="_smstsmediatype"></a><a name="SMSTSMediaType"></a>_SMSTSMediaType
 
@@ -205,7 +205,7 @@ Lagrar namnet på anpassnings titeln som aktivitetssekvensen visas i dialog ruta
 
 *Gäller steget [Uppgradera operativ system](task-sequence-steps.md#BKMK_UpgradeOS) .*
 
-Lagrar det slutkod som Installationsprogrammet för Windows returnerar för att indikera lyckade eller misslyckade. Den här variabeln är användbar `/Compat` med kommando rads alternativet.
+Lagrar det slutkod som Installationsprogrammet för Windows returnerar för att indikera lyckade eller misslyckade. Den här variabeln är användbar med `/Compat` kommando rads alternativet.
 
 #### <a name="example"></a>Exempel
 
@@ -239,7 +239,7 @@ Anger datorns serienummer.
 
 ### <a name="_smstssetuprollback"></a><a name="SMSTSSetupRollback"></a>_SMSTSSetupRollback
 
-Anger om Installationsprogrammet för Windows utförde en återställnings åtgärd under en uppgradering på plats. De variabla värdena kan `true` vara `false`eller.
+Anger om Installationsprogrammet för Windows utförde en återställnings åtgärd under en uppgradering på plats. De variabla värdena kan vara `true` eller `false` .
 
 ### <a name="_smstssitecode"></a><a name="SMSTSSiteCode"></a>_SMSTSSiteCode
 
@@ -274,7 +274,7 @@ När aktivitetssekvensen använder HTTPS för att kommunicera med hanterings pla
 
 ### <a name="_smstsuserstarted"></a><a name="SMSTSUserStarted"></a>_SMSTSUserStarted
 
-Anger om en användare startade aktivitetssekvensen. Den här variabeln anges endast om aktivitetssekvensen startas från Software Center. Om [_SMSTSLaunchMode](#SMSTSLaunchMode) exempelvis är inställt på `SMS`.
+Anger om en användare startade aktivitetssekvensen. Den här variabeln anges endast om aktivitetssekvensen startas från Software Center. Om [_SMSTSLaunchMode](#SMSTSLaunchMode) exempelvis är inställt på `SMS` .
 
 Den här variabeln kan ha följande värden:  
 
@@ -284,7 +284,7 @@ Den här variabeln kan ha följande värden:
 
 ### <a name="_smstsusessl"></a><a name="SMSTSUseSSL"></a>_SMSTSUseSSL
 
-Anger om aktivitetssekvensen använder SSL för att kommunicera med Configuration Manager hanterings platsen. Om du konfigurerar dina plats system för HTTPS anges värdet till `true`.
+Anger om aktivitetssekvensen använder SSL för att kommunicera med Configuration Manager hanterings platsen. Om du konfigurerar dina plats system för HTTPS anges värdet till `true` .
 
 ### <a name="_smstsuuid"></a><a name="SMSTSUUID"></a>_SMSTSUUID
 
@@ -301,84 +301,84 @@ Anger om datorn körs som en Windows To Go-enhet.
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om kontroll av **minsta minne (MB)** returnerade sant (`1`) eller falskt (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om kontroll av **minsta minne (MB)** returnerade sant ( `1` ) eller falskt ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crspeed"></a><a name="TSCRSPEED"></a>_TS_CRSPEED
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för huruvida kontroll av **lägsta processorhastighet (MHz)** returnerade sant (`1`) eller falskt (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för huruvida kontroll av **lägsta processorhastighet (MHz)** returnerade sant ( `1` ) eller falskt ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crdisk"></a><a name="TSCRDISK"></a>_TS_CRDISK
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om kontroll av **minsta ledigt disk utrymme (MB)** returnerade sant`1`() eller falskt`0`(). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om kontroll av **minsta ledigt disk utrymme (MB)** returnerade sant ( `1` ) eller falskt ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crostype"></a><a name="TSCROSTYPE"></a>_TS_CROSTYPE
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om det **aktuella operativ systemet som ska uppdateras är** kontrollen returnerade sant (`1`) eller falskt (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om det **aktuella operativ systemet som ska uppdateras är** kontrollen returnerade sant ( `1` ) eller falskt ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crarch"></a><a name="TSCRARCH"></a>_TS_CRARCH
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om **arkitekturen för aktuell OS** -kontroll returnerade true (`1`) eller false`0`(). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om **arkitekturen för aktuell OS** -kontroll returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crminosver"></a><a name="TSCRMINOSVER"></a>_TS_CRMINOSVER
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om den **lägsta versions kontrollen för operativ systemet** returnerade true (`1`)`0`eller false (). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om den **lägsta versions kontrollen för operativ systemet** returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crmaxosver"></a><a name="TSCRMAXOSVER"></a>_TS_CRMAXOSVER
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om den **högsta versions kontrollen för operativ systemet** returnerar`1`true () eller`0`false (). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om den **högsta versions kontrollen för operativ systemet** returnerar true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crclientminver"></a><a name="TSCRCLIENTMINVER"></a>_TS_CRCLIENTMINVER
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om den **lägsta klient versions** kontrollen returnerade True`1`() eller false (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om den **lägsta klient versions** kontrollen returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_croslanguage"></a><a name="TSCROSLANGUAGE"></a>_TS_CROSLANGUAGE
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om **språket för den aktuella OS** -kontrollen returnerade True`1`() eller false (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om **språket för den aktuella OS** -kontrollen returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_cracpower"></a><a name="TSCRACPOWER"></a>_TS_CRACPOWER
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om den **nätström** som är ansluten check returnerade True`1`() eller false (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om den **nätström** som är ansluten check returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crnetwork"></a><a name="TSCRNETWORK"></a>_TS_CRNETWORK
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om kontrollen nätverkskort **anslutet** returnerade true (`1`) eller false (`0`). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om kontrollen nätverkskort **anslutet** returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_ts_crwired"></a><a name="TSCRWIRED"></a>_TS_CRWIRED
 
 *Från och med version 2002* <!--6005561-->  
 *Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
 
-En skrivskyddad variabel för om **nätverkskortet inte är trådlös** kontroll returnerade värdet true (`1`) eller false`0`(). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+En skrivskyddad variabel för om **nätverkskortet inte är trådlös** kontroll returnerade värdet true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
 ### <a name="_tsappinstallstatus"></a><a name="TSAppInstallStatus"></a>_TSAppInstallStatus
 
@@ -422,15 +422,15 @@ Denna inställning är obligatorisk. Möjliga värden är `True` eller `False`. 
 
 #### <a name="osdadapter0ipaddresslist"></a>OSDAdapter0IPAddressList
 
-Kommaavgränsad lista med IP-adresser för nätverkskortet. Den här egenskapen ignoreras om inte **EnableDHCP** har `false`angetts till. Denna inställning är obligatorisk.
+Kommaavgränsad lista med IP-adresser för nätverkskortet. Den här egenskapen ignoreras om inte **EnableDHCP** har angetts till `false` . Denna inställning är obligatorisk.
 
 #### <a name="osdadapter0subnetmask"></a>OSDAdapter0SubnetMask
 
-Kommaavgränsad lista med nätmasker. Den här egenskapen ignoreras om inte **EnableDHCP** har `false`angetts till. Denna inställning är obligatorisk.
+Kommaavgränsad lista med nätmasker. Den här egenskapen ignoreras om inte **EnableDHCP** har angetts till `false` . Denna inställning är obligatorisk.
 
 #### <a name="osdadapter0gateways"></a>OSDAdapter0Gateways
 
-Kommaavgränsad lista över IP-gateway-adresser. Den här egenskapen ignoreras om inte **EnableDHCP** har `false`angetts till. Denna inställning är obligatorisk.
+Kommaavgränsad lista över IP-gateway-adresser. Den här egenskapen ignoreras om inte **EnableDHCP** har angetts till `false` . Denna inställning är obligatorisk.
 
 #### <a name="osdadapter0dnsdomain"></a>OSDAdapter0DNSDomain
 
@@ -454,15 +454,15 @@ Ange till `true` för att aktivera filtrering av IP-protokoll på kortet.
 
 #### <a name="osdadapter0ipprotocolfilterlist"></a>OSDAdapter0IPProtocolFilterList
 
-Kommaavgränsad lista över protokoll som tillåts att köra över IP. Den här egenskapen ignoreras om **EnableIPProtocolFiltering** har värdet `false`.
+Kommaavgränsad lista över protokoll som tillåts att köra över IP. Den här egenskapen ignoreras om **EnableIPProtocolFiltering** har värdet `false` .
 
 #### <a name="osdadapter0enabletcpfiltering"></a>OSDAdapter0EnableTCPFiltering
 
-Ange till `true` för att aktivera TCP-port filtrering för nätverkskortet.
+Ange till för `true` att aktivera TCP-port filtrering för nätverkskortet.
 
 #### <a name="osdadapter0tcpfilterportlist"></a>OSDAdapter0TCPFilterPortList
 
-Kommaavgränsad lista över portar som ska beviljas åtkomst behörighet för TCP. Den här egenskapen ignoreras om **EnableTCPFiltering** har värdet `false`.
+Kommaavgränsad lista över portar som ska beviljas åtkomst behörighet för TCP. Den här egenskapen ignoreras om **EnableTCPFiltering** har värdet `false` .
 
 #### <a name="osdadapter0tcpipnetbiosoptions"></a>OSDAdapter0TcpipNetbiosOptions
 
@@ -478,7 +478,7 @@ Ange till `true` att använda WINS för namn matchning.
 
 #### <a name="osdadapter0winsserverlist"></a>OSDAdapter0WINSServerList
 
-Kommaavgränsad lista med IP-adresser för WINS-server. Den här egenskapen ignoreras om inte **EnableWINS** har `true`angetts till.
+Kommaavgränsad lista med IP-adresser för WINS-server. Den här egenskapen ignoreras om inte **EnableWINS** har angetts till `true` .
 
 #### <a name="osdadapter0macaddress"></a>OSDAdapter0MacAddress
 
@@ -582,7 +582,7 @@ Från och med version 1906 använder du den här variabeln för att ange hur må
 
 #### <a name="valid-values"></a>Giltiga värden
 
-Ett heltal från `1` till `15`.
+Ett heltal från `1` till `15` .
 
 ### <a name="osdbitlockerrebootcountoverride"></a><a name="OSDBitLockerRebootCountOverride"></a>OSDBitLockerRebootCountOverride
 
@@ -593,7 +593,7 @@ Från och med version 1906 anger du det här värdet för att åsidosätta antal
 
 #### <a name="valid-values"></a>Giltiga värden
 
-Ett heltal från `0` till `15`.
+Ett heltal från `0` till `15` .
 
 ### <a name="osdbitlockerrecoverypassword"></a><a name="OSDBitLockerRecoveryPassword"></a>OSDBitLockerRecoveryPassword
 
@@ -651,7 +651,7 @@ Anger namnet på måldatorn.
 
 *Gäller för steget [avbilda Windows-inställningar](task-sequence-steps.md#BKMK_CaptureWindowsSettings) .*
 
-Ange datorns NetBIOS-namn. Värdet anges bara om variabeln [OSDMigrateComputerName](#OSDMigrateComputerName) har värdet `true`.
+Ange datorns NetBIOS-namn. Värdet anges bara om variabeln [OSDMigrateComputerName](#OSDMigrateComputerName) har värdet `true` .
 
 ### <a name="osdconfigfilename"></a><a name="OSDConfigFileName"></a>OSDConfigFileName
 
@@ -723,9 +723,9 @@ Anger RFC 1779-formatnamnet för organisationsenheten (OU) som måldatorn anslut
 
 (indata)
 
-Ange variabeln till `TRUE`om du vill förhindra att potentiellt känsliga data visas eller loggas. Den här variabeln maskerar program namnet i steget **Smsts. log** under ett **installations paket** .
+Ange variabeln till om du vill förhindra att potentiellt känsliga data visas eller loggas `TRUE` . Den här variabeln maskerar program namnet i steget **Smsts. log** under ett **installations paket** .
 
-Från och `TRUE`med version 1902 döljer den också kommando raden från steget **Kör kommando rad** i logg filen.<!--3654172-->
+Från och med version 1902 `TRUE` döljer den också kommando raden från steget **Kör kommando rad** i logg filen.<!--3654172-->
 
 ### <a name="osdenabletcpipfiltering"></a><a name="OSDEnableTCPIPFiltering"></a>OSDEnableTCPIPFiltering
 
@@ -840,7 +840,7 @@ Anger RFC 1779-formatnamnet för organisationsenheten (OU) som måldatorn anslut
 
 (indata)
 
-Anger lösen ordet för den [OSDJoinAccount](#OSDJoinAccount) som mål datorn använder för att ansluta till Active Directorys domänen. Om den här variabeln inte innehåller den här variabeln försöker Installationsprogrammet för Windows ett tomt lösen ord. Om variabeln [osdjointype tilldelas värdet](#OSDJoinType) -variabeln har `0` angetts till (Anslut till domän), krävs det här värdet.
+Anger lösen ordet för den [OSDJoinAccount](#OSDJoinAccount) som mål datorn använder för att ansluta till Active Directorys domänen. Om den här variabeln inte innehåller den här variabeln försöker Installationsprogrammet för Windows ett tomt lösen ord. Om variabeln [osdjointype tilldelas värdet](#OSDJoinType) -variabeln har angetts till `0` (Anslut till domän), krävs det här värdet.
 
 ### <a name="osdjoinskipreboot"></a><a name="OSDJoinSkipReboot"></a>OSDJoinSkipReboot
 
@@ -963,7 +963,7 @@ Anger om datornamnet migrerats.
 
 (indata)
 
-Anger konfigurationsfilerna som används för att kontrollera avbildningen av användarprofiler. Den här variabeln används bara om [OSDMigrateMode](#OSDMigrateMode) har värdet `Advanced`. Det här kommaavgränsade listvärdet anges för att utföra anpassad migrering av användarprofiler.
+Anger konfigurationsfilerna som används för att kontrollera avbildningen av användarprofiler. Den här variabeln används bara om [OSDMigrateMode](#OSDMigrateMode) har värdet `Advanced` . Det här kommaavgränsade listvärdet anges för att utföra anpassad migrering av användarprofiler.
 
 #### <a name="example"></a>Exempel
 
@@ -1030,7 +1030,7 @@ Anger om det lokala datorkontot återställs.
 
 (indata)
 
-Om variabeln [OSDMigrateLocalAccounts](#OSDMigrateLocalAccounts) är `true`måste den här variabeln innehålla lösen ordet som tilldelats till *alla* migrerade lokala konton. USMT tilldelar samma lösen ord till alla migrerade lokala konton. Överväg det här lösen ordet som temporärt och ändra det senare med någon annan metod.
+Om variabeln [OSDMigrateLocalAccounts](#OSDMigrateLocalAccounts) är `true` måste den här variabeln innehålla lösen ordet som tilldelats till *alla* migrerade lokala konton. USMT tilldelar samma lösen ord till alla migrerade lokala konton. Överväg det här lösen ordet som temporärt och ändra det senare med någon annan metod.
 
 ### <a name="osdmigratemode"></a><a name="OSDMigrateMode"></a>OSDMigrateMode
 
@@ -1123,11 +1123,11 @@ Använd följande variabel namn för att definiera egenskaperna för den *först
 
 #### <a name="osdpartitions0type"></a>OSDPartitions0Type
 
-Anger typen av partition. Den här egenskapen är obligatorisk. Giltiga värden är `Primary`, `Extended`, `Logical`och `Hidden`.
+Anger typen av partition. Den här egenskapen är obligatorisk. Giltiga värden är `Primary` , `Extended` , `Logical` och `Hidden` .
 
 #### <a name="osdpartitions0filesystem"></a>OSDPartitions0FileSystem
 
-Anger vilken typ av fil system som ska användas för att formatera partitionen. Den här egenskapen är valfri. Om du inte anger något fil system formateras inte partitionen av steget. Giltiga värden är `FAT32` och `NTFS`.
+Anger vilken typ av fil system som ska användas för att formatera partitionen. Den här egenskapen är valfri. Om du inte anger något fil system formateras inte partitionen av steget. Giltiga värden är `FAT32` och `NTFS` .
 
 #### <a name="osdpartitions0bootable"></a>OSDPartitions0Bootable
 
@@ -1135,7 +1135,7 @@ Anger om partitionen är startbar. Den här egenskapen är obligatorisk. Om det 
 
 #### <a name="osdpartitions0quickformat"></a>OSDPartitions0QuickFormat
 
-Anger vilken typ av format som används. Den här egenskapen är obligatorisk. Om det här värdet är inställt på `TRUE`, utför steget ett Snabbformatering. Annars utför steget ett fullständigt format.
+Anger vilken typ av format som används. Den här egenskapen är obligatorisk. Om det här värdet är inställt på `TRUE` , utför steget ett Snabbformatering. Annars utför steget ett fullständigt format.
 
 #### <a name="osdpartitions0volumename"></a>OSDPartitions0VolumeName
 
@@ -1147,7 +1147,7 @@ Anger partitionens storlek. Den här egenskapen är valfri. Om den här egenskap
 
 #### <a name="osdpartitions0sizeunits"></a>OSDPartitions0SizeUnits
 
-I steget används dessa enheter för att tolka variabeln **OSDPartitions0Size** . Den här egenskapen är valfri. Giltiga värden är `MB` (standard), `GB`och `Percent`.
+I steget används dessa enheter för att tolka variabeln **OSDPartitions0Size** . Den här egenskapen är valfri. Giltiga värden är `MB` (standard), `GB` och `Percent` .
 
 #### <a name="osdpartitions0volumelettervariable"></a>OSDPartitions0VolumeLetterVariable
 
@@ -1200,7 +1200,7 @@ Anger det registrerade standard organisations namnet i det nya operativ systemet
 
 *Gäller för steget [avbilda Windows-inställningar](task-sequence-steps.md#BKMK_CaptureWindowsSettings) .*
 
-Inställt på datorns registrerade organisationsnamn. Värdet anges bara om variabeln [OSDMigrateRegistrationInfo](#OSDMigrateRegistrationInfo) har värdet `true`.
+Inställt på datorns registrerade organisationsnamn. Värdet anges bara om variabeln [OSDMigrateRegistrationInfo](#OSDMigrateRegistrationInfo) har värdet `true` .
 
 ### <a name="osdregisteredusername"></a><a name="OSDRegisteredUserName"></a>OSDRegisteredUserName
 
@@ -1311,13 +1311,13 @@ Anger sökvägen till Windows-katalogen för det installerade operativ systemet 
 
 Anger standard tids zons inställningen som används i det nya operativ systemet.
 
-Ange värdet för den här variabeln till språkets invariant-namn för tids zonen. Använd till exempel strängen i `Std` värdet för en tidszon under följande register nyckel:. `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones`
+Ange värdet för den här variabeln till språkets invariant-namn för tids zonen. Använd till exempel strängen i `Std` värdet för en tidszon under följande register nyckel: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones` .
 
 ### <a name="osdtimezone-output"></a><a name="OSDTimeZone-output"></a>Tilldelas osdtimezone (utdata)
 
 *Gäller för steget [avbilda Windows-inställningar](task-sequence-steps.md#BKMK_CaptureWindowsSettings) .*
 
-Anger datorns tidszon. Värdet anges bara om variabeln [OSDMigrateTimeZone](#OSDMigrateTimeZone) har värdet `true`.
+Anger datorns tidszon. Värdet anges bara om variabeln [OSDMigrateTimeZone](#OSDMigrateTimeZone) har värdet `true` .
 
 ### <a name="osdwindowssettingsinputlocale"></a><a name="OSDWindowsSettingsInputLocale"></a>OSDWindowsSettingsInputLocale
 
@@ -1527,7 +1527,7 @@ Anger hur en aktivitetssekvensen associerar användare med måldatorn. Ställ in
 <!--512358-->
 I frånkopplade scenarier försöker aktivitetssekvensen upprepade gånger att skicka status meddelanden till hanterings platsen. Detta beteende i det här scenariot orsakar fördröjningar vid bearbetning av aktivitetssekvensen.
 
-Ange den här variabeln till `true` så försöker motorn för aktivitetssekvenser inte att skicka status meddelanden när det första meddelandet inte har skickats. Det första försöket innehåller flera återförsök.
+Ange den här variabeln till så `true` försöker motorn för aktivitetssekvenser inte att skicka status meddelanden när det första meddelandet inte har skickats. Det första försöket innehåller flera återförsök.
 
 När aktivitetssekvensen startas om kvarstår värdet för den här variabeln. Aktivitetssekvensen försöker dock skicka ett första status meddelande. Det första försöket innehåller flera återförsök. Om det lyckas fortsätter aktivitetssekvensen att skicka status oavsett värdet för den här variabeln. Om det inte går att skicka status använder aktivitetssekvensen värdet för den här variabeln.
 
@@ -1540,7 +1540,7 @@ När aktivitetssekvensen startas om kvarstår värdet för den här variabeln. A
 
 (indata)
 
-Som standard i ett 64-bitars operativ system hittar aktivitetssekvensen och kör programmet på kommando raden med hjälp av WOW64-fil systemets omdirigerare. Detta gör att kommandot kan hitta 32-bitars versioner av OS-program och DLL-filer. Om du `true` anger den här variabeln inaktive ras användningen av WOW64-fil systemets omdirigerare. Kommandot hittar inbyggda 64-bitars versioner av OS-program och DLL-filer. Den här variabeln har ingen påverkan när den körs på ett 32-bitars operativ system.
+Som standard i ett 64-bitars operativ system hittar aktivitetssekvensen och kör programmet på kommando raden med hjälp av WOW64-fil systemets omdirigerare. Detta gör att kommandot kan hitta 32-bitars versioner av OS-program och DLL-filer. Om du anger den här variabeln `true` inaktive ras användningen av WOW64-fil systemets omdirigerare. Kommandot hittar inbyggda 64-bitars versioner av OS-program och DLL-filer. Den här variabeln har ingen påverkan när den körs på ett 32-bitars operativ system.
 
 ### <a name="smstsdownloadabortcode"></a><a name="SMSTSDownloadAbortCode"></a>SMSTSDownloadAbortCode
 
@@ -1592,9 +1592,9 @@ Använd den här variabeln för att ändra visningsspråk för en språkneutral 
 
 ### <a name="smstslocaldatadrive"></a><a name="SMSTSLocalDataDrive"></a>SMSTSLocalDataDrive
 
-Anger var aktivitetssekvensen lagrar temporära filer på mål datorn när den körs.
+Anger var aktivitetssekvensen lagrar temporära cachefiler på mål datorn när den körs.
 
-Ange den här variabeln innan aktivitetssekvensen startar, t. ex. genom att ange en samlings variabel. När aktivitetssekvensen startar definierar Configuration Manager [_SMSTSMDataPath](#SMSTSMDataPath) variabeln när aktivitetssekvensen startar.
+Ange den här variabeln innan aktivitetssekvensen startar, t. ex. genom att ange en samlings variabel. När aktivitetssekvensen startar definierar Configuration Manager [_SMSTSMDataPath](#SMSTSMDataPath) variabeln baserat på vad variabeln SMSTSLocalDataDrive har definierats för.
 
 ### <a name="smstsmp"></a><a name="SMSTSMP"></a>SMSTSMP
 
@@ -1609,7 +1609,7 @@ Använd den här variabeln för att ange URL: en eller IP-adressen för Configur
 
 (indata)
 
-Om klienten inte finns på intranätet använder du den här variabeln för att aktivera upprepade MPList-begäranden för att uppdatera klienten. Som standard är den här variabeln inställd `True`på.
+Om klienten inte finns på intranätet använder du den här variabeln för att aktivera upprepade MPList-begäranden för att uppdatera klienten. Som standard är den här variabeln inställd på `True` .
 
 När klienterna är på Internet anger du den här variabeln för `False` att undvika onödiga fördröjningar.
 
@@ -1626,7 +1626,7 @@ Om aktivitetssekvensen inte kan hämta listan över hanterings platser (MPList) 
 
 ### <a name="smstspeerdownload"></a><a name="SMSTSPeerDownload"></a>SMSTSPeerDownload
 
-Använd den här variabeln om du vill att klienten ska kunna använda peer-cache i Windows PE. Om du `true` anger den här variabeln aktive ras den här funktionen.
+Använd den här variabeln om du vill att klienten ska kunna använda peer-cache i Windows PE. Om du anger den här variabeln `true` aktive ras den här funktionen.
 
 ### <a name="smstspeerrequestport"></a><a name="SMSTSPeerRequestPort"></a>SMSTSPeerRequestPort
 
@@ -1638,7 +1638,7 @@ Använd den här variabeln för att tillfälligt bevara innehåll i aktivitetsse
 
 ### <a name="smstspostaction"></a><a name="SMSTSPostAction"></a>SMSTSPostAction
 
-Anger ett kommando som körs när aktivitetssekvensen har slutförts. Ange `shutdown.exe /r /t 30 /f` till exempel att datorn ska starta om 30 sekunder efter att aktivitetssekvensen har slutförts.
+Anger ett kommando som körs när aktivitetssekvensen har slutförts. Ange till exempel `shutdown.exe /r /t 30 /f` att datorn ska starta om 30 sekunder efter att aktivitetssekvensen har slutförts.
 
 ### <a name="smstspreferredadvertid"></a><a name="SMSTSPreferredAdvertID"></a>SMSTSPreferredAdvertID
 
@@ -1646,7 +1646,7 @@ Tvingar aktivitetssekvensen att köra en viss riktad distribution på mål dator
 
 ### <a name="smstspreservecontent"></a><a name="SMSTSPreserveContent"></a>SMSTSPreserveContent
 
-Den här variabeln flaggar innehållet i aktivitetssekvensen som ska behållas i Configuration Manager-klientcachen efter distributionen. Den här variabeln skiljer sig från [SMSTSPersistContent](#SMSTSPersistContent), som endast behåller innehållet under aktivitetssekvensen. SMSTSPersistContent använder cachen för aktivitetssekvenser, SMSTSPreserveContent använder Configuration Manager-klientcachen. Aktivera den här `true` funktionen genom att ange SMSTSPreserveContent till.
+Den här variabeln flaggar innehållet i aktivitetssekvensen som ska behållas i Configuration Manager-klientcachen efter distributionen. Den här variabeln skiljer sig från [SMSTSPersistContent](#SMSTSPersistContent), som endast behåller innehållet under aktivitetssekvensen. SMSTSPersistContent använder cachen för aktivitetssekvenser, SMSTSPreserveContent använder Configuration Manager-klientcachen. Aktivera den här funktionen genom att ange SMSTSPreserveContent till `true` .
 
 ### <a name="smstsrebootdelay"></a><a name="SMSTSRebootDelay"></a>SMSTSRebootDelay
 
@@ -1665,7 +1665,7 @@ Från och med version 1906 använder du den här variabeln med den befintliga [S
 
 #### <a name="example"></a>Exempel
 
-Du vill ge användarna ett meddelande om att starta om 60-minuters omstart i början av en aktivitetssekvens för Windows 10-uppgradering på plats. Efter den första långa tids gränsen vill du att ytterligare tids gränser bara är 60 sekunder. Ange SMSTSRebootDelay till `3600`och SMSTSRebootDelayNext till `60`.  
+Du vill ge användarna ett meddelande om att starta om 60-minuters omstart i början av en aktivitetssekvens för Windows 10-uppgradering på plats. Efter den första långa tids gränsen vill du att ytterligare tids gränser bara är 60 sekunder. Ange SMSTSRebootDelay till `3600` och SMSTSRebootDelayNext till `60` .  
 
 
 ### <a name="smstsrebootmessage"></a><a name="SMSTSRebootMessage"></a>SMSTSRebootMessage
@@ -1685,7 +1685,7 @@ Anger att en omstart krävs när det aktuella aktivitetssekvenssteget har slutf�
 
 ### <a name="smstsretryrequested"></a><a name="SMSTSRetryRequested"></a>SMSTSRetryRequested
 
-Begär ett nytt försök efter att det aktuella aktivitetssekvenssteget har slutförts. Om variabeln för aktivitetssekvensen har angetts anger du även variabeln [SMSTSRebootRequested](#SMSTSRebootRequested) `true`. När datorn har startats om kör aktivitetssekvensen om samma steg i aktivitetssekvensen.
+Begär ett nytt försök efter att det aktuella aktivitetssekvenssteget har slutförts. Om variabeln för aktivitetssekvensen har angetts anger du även variabeln [SMSTSRebootRequested](#SMSTSRebootRequested) `true` . När datorn har startats om kör aktivitetssekvensen om samma steg i aktivitetssekvensen.
 
 ### <a name="smstsruncommandlineasuser"></a><a name="SMSTSRunCommandLineAsUser"></a>SMSTSRunCommandLineAsUser
 
@@ -1696,7 +1696,7 @@ Använd variabler för aktivitetssekvens för att konfigurera användar kontexte
 
 Konfigurera `SMSTSRunCommandLineAsUser` med något av följande värden:
 
-- `true`: Alla ytterligare **körnings kommando rads** steg körs i kontexten för den användare som `SMSTSRunCommandLineUserName`anges i.
+- `true`: Alla ytterligare **körnings kommando rads** steg körs i kontexten för den användare som anges i `SMSTSRunCommandLineUserName` .
 
 - `false`: Alla ytterligare **körnings kommando rads** steg körs i den kontext som du konfigurerade i steget.
 
@@ -1732,7 +1732,7 @@ Använd variabler för aktivitetssekvens för att konfigurera användar kontexte
 
 Konfigurera `SMSTSRunPowerShellAsUser` med något av följande värden:
 
-- `true`: Alla **kör PowerShell-skript** körs i kontexten för den användare som anges i `SMSTSRunPowerShellUserName`.
+- `true`: Alla **kör PowerShell-skript** körs i kontexten för den användare som anges i `SMSTSRunPowerShellUserName` .
 
 - `false`: Alla **kör PowerShell-skript** körs i den kontext som du konfigurerade i steget.
 
@@ -1767,7 +1767,7 @@ Kontrol lera timeout för genomsökning av program uppdateringar under det här 
 
 ### <a name="smstsudausers"></a><a name="SMSTSUDAUsers"></a>SMSTSUDAUsers
 
-Anger de primära användarna av mål datorn med hjälp av följande format: `<DomainName>\<UserName>`. Avgränsa flera användare med kommatecken (`,`). Mer information finns i [associera användare med en måldator](../get-started/associate-users-with-a-destination-computer.md).
+Anger de primära användarna av mål datorn med hjälp av följande format: `<DomainName>\<UserName>` . Avgränsa flera användare med kommatecken ( `,` ). Mer information finns i [associera användare med en måldator](../get-started/associate-users-with-a-destination-computer.md).
 
 #### <a name="example"></a>Exempel
 
@@ -1783,7 +1783,7 @@ Den här valfria variabeln aktivitetssekvens styr klient beteendet när en progr
 
 Ange värdet för SMSTSWaitForSecondReboot i sekunder för att ange hur länge aktivitetssekvensen pausas i det här steget när datorn startas om. Tillåt tillräckligt med tid om det finns en andra omstart.
 
-Om du till exempel ställer in SMSTSWaitForSecondReboot på `600`pausar en aktivitetssekvens i 10 minuter efter en omstart innan ytterligare steg körs. Den här variabeln är användbar när steget installera program uppdateringar i en enskild installation installerar hundratals program uppdateringar.
+Om du till exempel ställer in SMSTSWaitForSecondReboot på `600` pausar en aktivitetssekvens i 10 minuter efter en omstart innan ytterligare steg körs. Den här variabeln är användbar när steget installera program uppdateringar i en enskild installation installerar hundratals program uppdateringar.
 
 > [!Note]
 > Den här variabeln gäller bara för en aktivitetssekvens som distribuerar ett operativ system. Den fungerar inte i en anpassad aktivitetssekvens. <!-- 2839998 -->
@@ -1791,14 +1791,14 @@ Om du till exempel ställer in SMSTSWaitForSecondReboot på `600`pausar en aktiv
 ### <a name="tsdebugmode"></a><a name="TSDebugMode"></a>TSDebugMode
 
 <!--3612274-->
-Från och med version 1906 ställer du in den `TRUE` här variabeln på en samling eller ett dator objekt som aktivitetssekvensen distribueras till. Alla enheter som har denna variabel uppsättning kommer att placera en aktivitetssekvens som distribueras i fel söknings läge.
+Från och med version 1906 ställer du in den här variabeln `TRUE` på en samling eller ett dator objekt som aktivitetssekvensen distribueras till. Alla enheter som har denna variabel uppsättning kommer att placera en aktivitetssekvens som distribueras i fel söknings läge.
 
 Mer information finns i [fel sökning av en aktivitetssekvens](../deploy-use/debug-task-sequence.md).
 
 ### <a name="tsdebugonerror"></a><a name="TSDebugOnError"></a>TSDebugOnError
 
 <!-- 5012536 -->
-Från och med version 1910 ställer du in den `TRUE` här variabeln för att automatiskt starta [fel sökning av aktivitetssekvensen](../deploy-use/debug-task-sequence.md) när aktivitetssekvensen returnerar ett fel.
+Från och med version 1910 ställer du in den här variabeln för `TRUE` att automatiskt starta [fel sökning av aktivitetssekvensen](../deploy-use/debug-task-sequence.md) när aktivitetssekvensen returnerar ett fel.
 
 Ange den här variabeln med:
 
@@ -1821,7 +1821,7 @@ Använd den här variabeln för att styra när aktivitetssekvensen visar förlop
 
 (indata)
 
-Ange om motorn för aktivitetssekvenser ser en identifierad varning som ett fel under det här steget. Aktivitetssekvensen ställer in [_TSAppInstallStatus](#TSAppInstallStatus) variabeln till `Warning` när ett eller flera program, eller ett obligatoriskt beroende, inte installerades eftersom det inte uppfyller ett krav. När du ställer in den här `True`variabeln på och aktivitetssekvensen anger **_TSAppInstallStatus** till `Warning`, är resultatet ett fel. Värdet `False` är standard beteendet.
+Ange om motorn för aktivitetssekvenser ser en identifierad varning som ett fel under det här steget. Aktivitetssekvensen ställer in [_TSAppInstallStatus](#TSAppInstallStatus) variabeln till `Warning` när ett eller flera program, eller ett obligatoriskt beroende, inte installerades eftersom det inte uppfyller ett krav. När du ställer in den här variabeln på `True` och aktivitetssekvensen anger **_TSAppInstallStatus** till `Warning` , är resultatet ett fel. Värdet `False` är standard beteendet.
 
 ### <a name="tsprogressinfolevel"></a><a name="TSProgressInfoLevel"></a>TSProgressInfoLevel
 
@@ -1832,6 +1832,10 @@ Ange den här variabeln för att styra vilken typ av information som ska visas i
 - `1`: Inkludera det aktuella steget och de totala stegen för förlopps texten. Till exempel **2 av 10**.
 - `2`: Inkludera det aktuella steget, totalt antal steg och slutförda procent. Till exempel **2 av 10 (20% slutförd)**.
 - `3`: Inkludera procent andelen slutförd. Till exempel **(20% slutförd)**.
+
+### <a name="tsuefidrive"></a><a name="TSUEFIDrive"></a>TSUEFIDrive
+
+Använd i egenskaperna för en FAT32-partition i **variabel** fältet. När aktivitetssekvensen identifierar den här variabeln förbereder den disken för över gång till UEFI innan datorn startas om. Mer information finns i avsnittet [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md).
 
 ### <a name="workingdirectory"></a><a name="WorkingDirectory"></a>WorkingDirectory
 
@@ -1864,7 +1868,7 @@ Följande variabler är föråldrade:
 >
 > Under en operativ Systems distribution bestämmer Installationsprogrammet för Windows som standard den bästa enhets beteckningen (vanligt vis C:).
 
-*Föregående beteende*: OSDPreverveDriveLetter-variabeln avgör om aktivitetssekvensen använder enhets beteckningen som registrerats i avbildnings filen (WIM) när en avbildning används. Ange värdet för den här variabeln `false` till att använda den plats som du anger för **mål** inställningen i steget **Använd operativ systemets** aktivitetssekvens. Mer information finns i [Använd OS-avbildning](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).
+*Föregående beteende*: OSDPreverveDriveLetter-variabeln avgör om aktivitetssekvensen använder enhets beteckningen som registrerats i avbildnings filen (WIM) när en avbildning används. Ange värdet för den här variabeln till `false` att använda den plats som du anger för **mål** inställningen i steget **Använd operativ systemets** aktivitetssekvens. Mer information finns i [Använd OS-avbildning](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).
 
 
 ## <a name="see-also"></a>Se även

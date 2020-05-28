@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: fc38d0cbd70faa23f67c7089944b8b4c2cd0f7fc
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 2e398795a14f5073141f103d93ccd82e61d4d7a8
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078727"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904899"
 ---
 # <a name="what39s-new-in-version-1602-of-configuration-manager"></a>Vad&#39;s nya i version 1602 av Configuration Manager
 
@@ -42,9 +42,9 @@ Uppdatering 1602 för Configuration Manager är bara tillgänglig som en uppdate
 > [!WARNING]  
 >  Innan du uppgraderar till Windows Server 2012 R2 måste du avinstallera WSUS 3.2 från servern.  
 >   
->  Information om det här viktiga steget finns i avsnittet "nya och ändrade funktioner" i [Windows Server Update Services översikt](https://technet.microsoft.com/library/hh852345.aspx)i Windows Server-dokumentationen.  
+>  Mer information om det här viktiga steget finns i avsnittet "nya och ändrade funktioner" i [Windows Server Update Services översikt](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345(v=ws.11)#new-and-changed-functionality).  
 
- Om du vill uppgradera en server använder du uppgraderings procedurerna för Windows Server 2012 R2. Du behöver inte köra en återställning av Configuration Manager plats Server efter uppgraderingen. Information om uppgraderingsprocesser finns i [Uppgraderingsalternativ för Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) i dokumentationen för Windows Server.  
+ Om du vill uppgradera en server använder du uppgraderings procedurerna för Windows Server 2012 R2. Du behöver inte köra en återställning av Configuration Manager plats Server efter uppgraderingen. Information om uppgraderingsprocesser finns i [Uppgraderingsalternativ för Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)) i dokumentationen för Windows Server.  
 
 ###  <a name="sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a>SQL Server AlwaysOn-tillgänglighetsgrupper  
  Använd SQL Server AlwaysOn-tillgänglighetsgrupper för att vara värd för plats databasen på primära platser och den centrala administrations platsen som en lösning för hög tillgänglighet och katastrof återställning.  
@@ -60,7 +60,7 @@ Uppdatering 1602 för Configuration Manager är bara tillgänglig som en uppdate
 
 -   När du väljer klassificeringen **uppgraderingar** för synkronisering av program uppdateringar visas en varning. Med den här varningen kan du se att [snabb korrigering 3095113](https://support.microsoft.com/kb/3095113) för Windows Server Update Services (WSUS) 4,0 krävs innan du kan synkronisera program uppdateringar och för att Windows 10-underhållet ska fungera korrekt. Från varnings meddelandet kan du gå till den associerade kunskaps bas artikeln.  
 
--   Tillgängliga Windows 10-uppgraderingar visas nu bara i noden **Windows 10** \ -**uppdateringar för alla Windows 10-uppdateringar** i Configuration Manager-konsolen. De här uppdateringarna visas inte längre i noden **program** \ uppdateringar**alla program uppdateringar** i-konsolen.  
+-   Tillgängliga Windows 10-uppgraderingar visas nu bara i noden **Windows 10**-  \  **uppdateringar för alla Windows 10-uppdateringar** i Configuration Manager-konsolen. De här uppdateringarna visas inte längre i noden **program**uppdateringar  \  **alla program uppdateringar** i-konsolen.  
 
 -   En service plan anses vara en distribution med hög risk och i fönstret **Välj samling** visas endast de anpassade samlingar som uppfyller de verifierings inställningar för distribution som kon figurer ATS i platsens egenskaper. Mer information finns i [Inställningar för att hantera högrisk distributioner för Configuration Manager](../../servers/manage/settings-to-manage-high-risk-deployments.md).  
 
@@ -142,7 +142,7 @@ De här apparna finns i noden **program** i Configuration Manager-konsolen.
  Mer information finns i [övervaka klienter](../../../core/clients/manage/monitor-clients.md).  
 
 ### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Uppdatera dator-och användar princip från Software Center  
- Ett nytt alternativ, **Sync-princip**, har lagts till på **sidan alternativ** > **dator underhåll** i Software Center som gör att datorn uppdaterar sin Configuration Manager dator och användar princip.  
+ Ett nytt alternativ, **Sync-princip**, har lagts till på sidan **alternativ**  >  **dator underhåll** i Software Center som gör att datorn uppdaterar sin Configuration Manager dator och användar princip.  
 
 ### <a name="software-center-branding-changes"></a>Ändringar i Software Center-anpassning  
  Du kan ändra färg, organisations namn och ikon som visas i Software Center. De här inställningarna tillämpas enligt följande regler:  

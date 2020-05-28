@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d154dc0ba681a37ebb2155bfa1bcdb6d8734965f
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: b3e1a2feaddb7384d76790249152c89dfa8ee2d3
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82073967"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904806"
 ---
 # <a name="what39s-new-in-version-1610-of-configuration-manager"></a>Vad&#39;s nya i version 1610 av Configuration Manager
 
@@ -29,8 +29,8 @@ Uppdatering 1610 för Configuration Manager aktuella grenen är tillgänglig som
 > Om du vill installera en ny plats måste du använda en bas linje version av Configuration Manager.  
 >
 > Läs mer om:    
-> - [Nya platser installeras](https://technet.microsoft.com/library/mt590197.aspx)  
-> - [Installera uppdateringar på platser](https://technet.microsoft.com/library/mt607046.aspx)  
+> - [Nya platser installeras](../../servers/deploy/install/installing-sites.md)  
+> - [Installera uppdateringar på platser](../../servers/manage/updates.md)  
 > - [Bas linje-och uppdaterings versioner](../../servers/manage/updates.md#bkmk_Baselines)
 
 Följande avsnitt innehåller information om ändringar och nya funktioner som introducerats i version 1610 av Configuration Manager.  
@@ -156,7 +156,7 @@ Mer information:
 - [Konfigurera klientinställningar](../../clients/deploy/configure-client-settings.md)
 
 ## <a name="software-updates-dashboard"></a>Instrument panel för program uppdateringar
-Använd den nya instrument panelen för program uppdateringar om du vill visa aktuell kompatibilitetsstatus för enheter i din organisation och snabbt analysera data för att se vilka enheter som är utsatta för risk. Om du vill visa instrument panelen navigerar du till **övervaknings** > **Översikt** > **säkerhets** > **instrument panel för säkerhets program uppdateringar**.
+Använd den nya instrument panelen för program uppdateringar om du vill visa aktuell kompatibilitetsstatus för enheter i din organisation och snabbt analysera data för att se vilka enheter som är utsatta för risk. Om du vill visa instrument panelen navigerar du till **övervaknings**  >  **Översikt**  >  **säkerhets**  >  **instrument panel för säkerhets program uppdateringar**.
 
 Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md).
 
@@ -168,7 +168,7 @@ Den här åtgärden gör inte att programmet avinstalleras från några enheter.
 
 ## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrera efter innehålls storlek i regler för automatisk distribution
 Nu kan du filtrera efter innehålls storleken för program uppdateringar i regler för automatisk distribution. Om du till exempel bara vill hämta program uppdateringar som är mindre än 2 MB kan du ange filtret för **innehålls storlek (KB)** till **< 2048**. Genom att använda det här filtret förhindrar du att stora program uppdateringar hämtas automatiskt, vilket ger bättre stöd för förenklad Windows-etablering när nätverks bandbredden är begränsad. Mer information finns i:
-- [Configuration Manager och förenklad Windows-underhåll på äldre operativ system](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)
+- [Configuration Manager och förenklad Windows-underhåll på äldre operativ system](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configuration-manager-and-simplified-windows-servicing-on-down/ba-p/274056)
 - [Distribuera programuppdateringar automatiskt](../../../sum/deploy-use/automatically-deploy-software-updates.md)
 
 Gör något av följande för att konfigurera fältet för **innehålls storlek (KB)** :
@@ -176,7 +176,7 @@ Gör något av följande för att konfigurera fältet för **innehålls storlek 
 - I egenskaperna för en befintlig regel för automatisk distribution går du till fliken **program uppdateringar** .
 
 ## <a name="office-365-client-management-dashboard"></a>Instrument panel för Office 365-klient hantering
-Instrument panelen för Office 365-klient hantering är nu tillgänglig i Configuration Manager-konsolen. Om du vill visa instrument panelen går du till**Översikt över** >  **program varu bibliotek** > **Office 365-klient hantering**.
+Instrument panelen för Office 365-klient hantering är nu tillgänglig i Configuration Manager-konsolen. Om du vill visa instrument panelen går du till översikt över **program varu bibliotek**  >  **Overview**  >  **Office 365-klient hantering**.
 
 På instrument panelen visas diagram med följande:
 

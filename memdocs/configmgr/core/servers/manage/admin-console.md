@@ -10,12 +10,12 @@ ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 58b66639094a602206114cd75a724504618ad38c
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: ac5b3ca8e8e2231bb421838fa56b20253ddfcb74
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110040"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83878382"
 ---
 # <a name="how-to-use-the-configuration-manager-console"></a>Använda Configuration Manager-konsolen
 
@@ -27,7 +27,7 @@ Administratörer använder Configuration Manager-konsolen för att hantera Confi
 
 Configuration Manager-konsolen installeras alltid på varje plats Server. Du kan också installera det på andra datorer. Mer information finns i [installera Configuration Manager-konsolen](../deploy/install/install-consoles.md).
 
-Den enklaste metoden för att öppna-konsolen på en Windows 10-dator **Start** , tryck på Start `Configuration Manager console`och börja skriva. Du kanske inte behöver ange hela strängen för Windows för att hitta den bästa matchningen.
+Den enklaste metoden för att öppna-konsolen på en Windows 10-dator, tryck på **Start** och börja skriva `Configuration Manager console` . Du kanske inte behöver ange hela strängen för Windows för att hitta den bästa matchningen.
 
 Om du bläddrar på Start menyn tittar du på ikonen för **Configuration Manager konsolen** i **Microsoft Endpoint Manager** -gruppen.
 
@@ -163,7 +163,7 @@ Från och med version 1902 kan du se de senaste anslutningarna för Configuratio
 
 Från och med version 1910 kan du meddelande om andra Configuration Manager-administratörer från noden **konsol anslutningar** med hjälp av Microsoft Teams. När du väljer att **Starta Microsoft Teams chatt** med en administratör lanseras Microsoft Teams och en chatt öppnas med användaren.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 - För att starta en chatt med en administratör måste det konto som du vill chatta med ha identifierats med [Azure AD eller AD User Discovery](../deploy/configure/about-discovery-methods.md#bkmk_aboutUser).
 - Microsoft Teams installerat på den enhet från vilken du kör-konsolen.
@@ -172,7 +172,7 @@ anteckning
 
 ### <a name="start-microsoft-teams-chat"></a>Starta Microsoft Teams Chat
 
-1. Gå till **Administration** > **säkerhets** > **konsol anslutningar**.
+1. Gå till **Administration**  >  **säkerhets**  >  **konsol anslutningar**.
 1. Högerklicka på en användares konsol anslutning och välj **Starta Microsoft Teams Chat**.
     - Om användarens huvud namn inte hittas för den valda administratören, är det bara att **Starta Microsoft Teams Chat** .
     - Ett fel meddelande, inklusive en nedladdnings länk, visas om Microsoft Teams inte är installerat på den enhet från vilken du kör-konsolen.
@@ -228,7 +228,7 @@ Följande meddelanden är mest tillämpliga för den Technical Preview-grenen:
 - Felaktig matchning av konsol version (kritisk): konsol versionen matchar inte plats versionen  
 - Plats uppgradering är tillgänglig (varning): det finns ett nytt uppdaterings paket tillgängligt  
 
-Mer information och fel söknings hjälp finns i filen **SmsAdminUI. log** på-konsol datorn. Som standard har logg filen följande sökväg: `C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\AdminUILog\SmsAdminUI.log`.
+Mer information och fel söknings hjälp finns i filen **SmsAdminUI. log** på-konsol datorn. Som standard har logg filen följande sökväg: `C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\AdminUILog\SmsAdminUI.log` .
 
 
 ## <a name="in-console-documentation-dashboard"></a><a name="bkmk_doc-dashboard"></a>Instrument panel för dokumentation i konsolen
@@ -356,7 +356,7 @@ Gå till noden **enheter** på arbets ytan **till gångar och efterlevnad** och 
 
 > [!Note]  
 > - Den här fliken är för närvarande inte tillgänglig från en undernoden enheter under noden **enhets samlingar** . Till exempel när du väljer alternativet för att **Visa medlemmar** i en samling.
-> - Den här fliken kanske inte är ifylld som förväntat för vissa användare. Om du vill se en fullständig lista över samlingar som en enhet tillhör måste du ha säkerhets rollen **Fullständig administratör** . Detta är ett känt problem. <!--5107309--> <!--5107309-->
+> - Den här fliken kanske inte är ifylld som förväntat för vissa användare. Om du vill se en fullständig lista över samlingar som en enhet tillhör måste du ha säkerhets rollen **Fullständig administratör** . Detta är ett känt fel. <!--5107309--> <!--5107309-->
 
 
 #### <a name="add-smbios-guid-column-to-device-and-device-collection-nodes"></a>Lägg till SMBIOS GUID-kolumn till noder i enhet och enhets samling
@@ -419,9 +419,9 @@ I arbets ytan **program bibliotek** expanderar du **program hantering**, går ti
 
 1. Gå till någon av följande platser i Configuration Manager-konsolen:
 
-   - **Program varu bibliotek** > **program uppdateringar** > **alla program uppdateringar**
-   - **Program varu bibliotek** > **Windows 10 Underhåll** > **alla Windows 10-uppdateringar**
-   - **Program varu bibliotek** > **kontor 365 klient hantering** > **Office 365 uppdateringar**
+   - **Program varu bibliotek**  >  **Program uppdateringar**  >  **Alla program uppdateringar**
+   - **Program varu bibliotek**  >  **Windows 10-Underhåll**  >  **Alla Windows 10-uppdateringar**
+   - **Program varu bibliotek**  >  **Office 365-klient hantering**  >  **Office 365-uppdateringar**
 
 1. Välj en uppdatering som krävs av minst en enhet.
 1. Titta på fliken **Sammanfattning** och hitta cirkel diagrammet under **statistik**.

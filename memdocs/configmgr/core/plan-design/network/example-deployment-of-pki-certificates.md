@@ -10,12 +10,12 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 994ee2916020ecc4e6d9d3c35f41fe24d5a31405
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 45ef103645630b8e203710ec0ff36a71b3cef4cf
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718779"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904250"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-configuration-manager-windows-server-2008-certification-authority"></a>Steg för steg-distribution av PKI-certifikaten för Configuration Manager: Windows Server 2008-certifikat utfärdare
 
@@ -52,7 +52,7 @@ I följande tabell visas de typer av PKI-certifikat som kan krävas för Configu
 |Certifikatkrav|Beskrivning av certifikatet|  
 |-----------------------------|-----------------------------|  
 |Webbservercertifikat för platssystem som kör IIS|Det här certifikatet används för att kryptera data och autentisera servern för klienter. Den måste installeras externt från Configuration Manager på plats system servrar som kör Internet Information Services (IIS) och som har kon figurer ATS i Configuration Manager för att använda HTTPS.<br /><br /> Anvisningar om hur du konfigurerar och installerar det här certifikatet finns i [distribuera webb Server certifikatet för plats system som kör IIS](#BKMK_webserver2008_cm2012) i den här artikeln.|  
-|Tjänstcertifikat för klienter som ansluter till molnbaserade distributionsplatser|Anvisningar om hur du konfigurerar och installerar det här certifikatet finns i [distribuera tjänst certifikatet för molnbaserade distributions platser](#BKMK_clouddp2008_cm2012) i den här artikeln.<br /><br /> **Viktigt:** Detta certifikat används tillsammans med Windows Azure-hanteringscertifikatet. Mer information om hanterings certifikatet finns i [så här skapar du ett hanterings certifikat](https://docs.microsoft.com/azure/cloud-services/cloud-services-certs-create#create-a-new-self-signed-certificate) och [hur du lägger till ett hanterings certifikat i en Windows Azure-prenumeration](https://docs.microsoft.com/azure/cloud-services/cloud-services-configure-ssl-certificate-portal#step-3-upload-a-certificate) i avsnittet Windows Azure-plattformen i MSDN-biblioteket.|  
+|Tjänstcertifikat för klienter som ansluter till molnbaserade distributionsplatser|Anvisningar om hur du konfigurerar och installerar det här certifikatet finns i [distribuera tjänst certifikatet för molnbaserade distributions platser](#BKMK_clouddp2008_cm2012) i den här artikeln.<br /><br /> **Viktigt:** Detta certifikat används tillsammans med Windows Azure-hanteringscertifikatet. Mer information om hanterings certifikatet finns i [så här skapar du ett hanterings certifikat](https://docs.microsoft.com/azure/cloud-services/cloud-services-certs-create#create-a-new-self-signed-certificate) och [hur du lägger till ett hanterings certifikat i en Windows Azure-prenumeration](https://docs.microsoft.com/azure/cloud-services/cloud-services-configure-ssl-certificate-portal#step-3-upload-a-certificate).|  
 |Klientcertifikat för Windows-datorer|Det här certifikatet används för att autentisera Configuration Manager klient datorer för plats system som har kon figurer ATS för att använda HTTPS. Den kan också användas för hanterings platser och tillståndsmigrering för att övervaka deras drift status när de har kon figurer ATS för att använda HTTPS. Den måste installeras externt från Configuration Manager på datorer.<br /><br /> Anvisningar för hur du konfigurerar och installerar det här certifikatet finns i [distribuera klient certifikatet för Windows-datorer](#BKMK_client2008_cm2012) i det här avsnittet.|  
 |Klientcertifikat för distributionsplatser|Certifikatet har två syften:<br /><br /> Certifikatet används för att autentisera distributionsplatsen för en HTTPS-aktiverad hanteringsplats innan distributionsplatsen skickar statusmeddelanden.<br /><br /> När distributionsplatsalternativet **Aktivera PXE-stöd för klienter** är valt, skickas certifikatet till datorer som startas med PXE så att de kan ansluta till en HTTPS-aktiverad hanteringsplats då operativsystemet distribueras.<br /><br /> Anvisningar för hur du konfigurerar och installerar det här certifikatet finns i [distribuera klient certifikatet för distributions platser](#BKMK_clientdistributionpoint2008_cm2012) i den här artikeln.|  
 |Registreringscertifikat för mobila enheter|Det här certifikatet används för att autentisera Configuration Manager mobila enhets klienter till plats system som är konfigurerade att använda HTTPS. Den måste installeras som en del av registreringen av mobila enheter i Configuration Manager och du väljer den konfigurerade certifikat mal len som en inställning för mobila enhets klienter.<br /><br /> Anvisningar för hur du konfigurerar det här certifikatet finns i [distribuera registrerings certifikatet för mobila enheter](#BKMK_mobiledevices2008_cm2012) i det här avsnittet.|  
@@ -354,7 +354,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 4.  I resultat fönstret går du till fliken **länkade Grupprincip objekt** , högerklickar på den nya Grupprincip och väljer sedan **Redigera**.  
 
-5.  I **redigeraren Grupprinciphantering**, expanderar du **principer** under **dator konfiguration**och går sedan till **Windows-inställningar** / **säkerhets inställningar** / **principer för offentliga nycklar**.  
+5.  I **redigeraren Grupprinciphantering**, expanderar du **principer** under **dator konfiguration**och går sedan till **Windows-inställningar**  /  **säkerhets inställningar**  /  **principer för offentliga nycklar**.  
 
 6.  Högerklicka på objekt typen **certifikat tjänst klienten-automatisk anmälan**och välj sedan **Egenskaper**.  
 

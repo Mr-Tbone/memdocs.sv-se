@@ -10,12 +10,12 @@ ms.assetid: f0703475-85a4-450d-a4e8-7a18a01e2c47
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3a05c10d1f73fa0817febdd591190f6bc2ff0a0e
-ms.sourcegitcommit: b7e5b053dfa260e7383a9744558d50245f2bccdc
+ms.openlocfilehash: c6b33027d67329b883f401168795c1b466ded1a7
+ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587270"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83709409"
 ---
 # <a name="token-based-authentication-for-cloud-management-gateway"></a>Tokenbaserad autentisering för Cloud Management Gateway
 
@@ -25,7 +25,7 @@ ms.locfileid: "82587270"
 
 CMG (Cloud Management Gateway) stöder många typer av klienter, men även med [utökad http](../../plan-design/hierarchy/enhanced-http.md)kräver dessa klienter ett certifikat för [klientautentisering](../manage/cmg/certificates-for-cloud-management-gateway.md#for-internet-based-clients-communicating-with-the-cloud-management-gateway). Detta certifikat krav kan vara svårt att etablera på Internetbaserade klienter som inte ofta ansluter till det interna nätverket, inte kan ansluta Azure Active Directory (Azure AD) och inte har någon metod för att installera ett PKI-utfärdat certifikat.
 
-Från och med version 2002, utökar Configuration Manager enhetens support med följande metoder:
+För att lösa dessa utmaningar, från och med version 2002, utökar Configuration Manager enhetens support med följande metoder:
 
 - Registrera i det interna nätverket för en unik token
 
@@ -54,7 +54,7 @@ Om du inte kan installera och registrera klienter i det interna nätverket skapa
 
 1. Öppna en kommandotolk som administratör.
 
-1. Kör verktyget från `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern: `BulkRegistrationTokenTool.exe`. Skapa en ny token med `/new` parametern. Till exempel `BulkRegistrationTokenTool.exe /new`. Mer information finns i [användning av token för Mass registrering](#bulk-registration-token-tool-usage).
+1. Kör verktyget från `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern: `BulkRegistrationTokenTool.exe` . Skapa en ny token med `/new` parametern. Till exempel `BulkRegistrationTokenTool.exe /new`. Mer information finns i [användning av token för Mass registrering](#bulk-registration-token-tool-usage).
 
 1. Kopiera token och spara den på en säker plats.
 
@@ -71,7 +71,7 @@ Du kan inte skapa en token för Mass registrering på en plats som har en plats 
 
 ### <a name="bulk-registration-token-tool-usage"></a>Användning av token för Mass registrering
 
-`BulkRegistrationTokenTool.exe` Verktyget finns i `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern. Logga in på plats servern och kör den som administratör. Det stöder följande kommando rads parametrar:
+`BulkRegistrationTokenTool.exe`Verktyget finns i `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern. Logga in på plats servern och kör den som administratör. Det stöder följande kommando rads parametrar:
 
 - `/?`
 - `/new`
@@ -101,7 +101,29 @@ Token lagras inte på klienten eller på platsen. Se till att kopiera token frå
 
 Använd with `/new` parameter för att ange giltighets perioden för token. Ange ett heltals värde i minuter. Standardvärdet är 4 320 (tre dagar). Det maximala värdet är 10 080 (sju dagar).
 
-Exempel: `BulkRegistrationTokenTool.exe /lifetime:4320`
+Exempel: `BulkRegistrationTokenTool.exe /lifetime 4320`
+
+## <a name="bulk-registration-token-management"></a>Token Management för Mass registrering
+
+Du kan se tidigare skapade token för Mass registrering och deras livs längd i Configuration Manager-konsolen och blockera deras användning vid behov. Plats databasen lagrar dock inte token för Mass registrering.
+
+#### <a name="to-review-a-bulk-registration-token"></a>Så här granskar du en token för Mass registrering
+
+1. Klicka på **Administration**i Configuration Manager-konsolen.
+
+2. I arbets ytan Administration expanderar du **säkerhet**och klickar på **certifikat**. Konsolen visar alla plats-relaterade certifikat och token för Mass registrering i informations fönstret.
+
+3. Välj den token för Mass registrering som ska granskas.
+
+Du kan identifiera vissa token för Mass registrering baserat på deras GUID. GUID för token för Mass registrering visas när token skapas. Du kan också filtrera eller sortera efter behov i kolumnen **typ** .
+
+#### <a name="to-block-a-bulk-registration-token"></a>Så här blockerar du en token för Mass registrering
+
+1. Klicka på **Administration**i Configuration Manager-konsolen.
+
+2. I arbets ytan Administration expanderar du **säkerhet**, klickar på **certifikat**och väljer den token för Mass registrering som ska blockeras.
+
+3. På fliken **Start** i menyfliksområdet eller högerklicka på menyn innehåll väljer du **blockera**. Däremot kan du häva blockering av tidigare blockerade token för Mass registrering genom att välja **Häv blockering** på fliken **Start** i menyfliksområdet eller menyn för att högerklicka på innehåll.
 
 ## <a name="see-also"></a>Se även
 

@@ -10,12 +10,12 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3af6f2883ebf17ab19f57762b8b3bf26e3716262
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 9e59d850a78a8f45f93769003e7a1de99e5634b3
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075735"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906392"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Skapa Windows-program i Configuration Manager
 
@@ -27,7 +27,7 @@ Förutom de andra Configuration Manager krav och procedurer för att [skapa ett 
 
 Configuration Manager stöder distribution av Windows-appaket (. appx) och app bunt-format (. appxbundle) för Windows 8,1-och Windows 10-enheter.
 
-När du skapar ett program i Configuration Manager-konsolen väljer du installations fil **typen** för programmet som **Windows-appaket (\*. appx, \*. appxbundle, \*. msix, \*. msixbundle)**. Mer information om hur du skapar appar i allmänhet finns i [skapa program](../deploy-use/create-applications.md). Mer information om MSIX-formatet finns i [stöd för MSIX-format](#bkmk_msix).
+När du skapar ett program i Configuration Manager-konsolen väljer du installations fil **typen** för programmet som **Windows-appaket ( \* . appx, \* . appxbundle, \* . msix, \* . msixbundle)**. Mer information om hur du skapar appar i allmänhet finns i [skapa program](../deploy-use/create-applications.md). Mer information om MSIX-formatet finns i [stöd för MSIX-format](#bkmk_msix).
 
 > [!Note]  
 > Om du vill dra nytta av nya Configuration Manager funktioner måste du först uppdatera klienter till den senaste versionen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.<!--SCCMDocs issue 646-->  
@@ -58,7 +58,7 @@ Om du vill konfigurera en distributions typ för Windows-appen för den här fun
 
 Configuration Manager stöder formaten Windows 10-appaket (. msix) och app-paket (. msixbundle). Windows 10 version 1809 eller senare har stöd för dessa format.
 
-- En översikt över MSIX finns i [en närmare titt på MSIX](https://blogs.msdn.microsoft.com/sgern/2018/06/18/a-closer-look-at-msix/).  
+- En översikt över MSIX finns i [en närmare titt på MSIX](https://docs.microsoft.com/archive/blogs/sgern/a-closer-look-at-msix).  
 
 - Information om hur du skapar en ny MSIX-app finns [i stöd för MSIX som introducerades i Insider Build 17682](https://techcommunity.microsoft.com/t5/MSIX-Blog/MSIX-support-introduced-in-Insider-Build-17682/ba-p/202376).  
 
@@ -79,7 +79,7 @@ Konvertera befintliga Windows Installer-program (. msi) till MSIX-format.
 
   - Installera [MSIX packning Tool](https://www.microsoft.com/store/productId/9N5LW3JBCXKF) från Microsoft Store  
 
-  - Installera [MSIX packnings verktyg driv rutin](/windows/msix/packaging-tool/tool-known-issues#frameworks-and-drivers)<!--SCCMDocs-pr issue #3091-->  
+  - Installera [MSIX packnings verktyg driv rutin](https://docs.microsoft.com/windows/msix/packaging-tool/tool-known-issues#frameworks-and-drivers)<!--SCCMDocs-pr issue #3091-->  
 
 Installera inte andra appar eller tjänster på den här enheten. Det är ditt referens system.
 
@@ -104,7 +104,7 @@ Om processen Miss lyckas pekar sammanfattnings sidan på logg filen med mer info
 
 Om du vill använda den här MSIX-appen måste du först signera den så att klienterna litar på den. Mer information om den här processen finns i följande artiklar:
 
-- [MSIX – MSIX packnings verktyg – signera MSIX-paketet](https://blogs.msdn.microsoft.com/sgern/2018/09/06/msix-the-msix-packaging-tool-signing-the-msix-package/)
+- [MSIX – MSIX packnings verktyg – signera MSIX-paketet](https://docs.microsoft.com/archive/blogs/sgern/msix-the-msix-packaging-tool-signing-the-msix-package)
 - [Signera ett appaket med SignTool](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
 
 När du har signerat appen skapar du en ny distributions typ i programmet i Configuration Manager. Mer information finns i [skapa distributions typer för programmet](../deploy-use/create-applications.md#bkmk_create-dt).
@@ -152,7 +152,7 @@ När du skapar ett program för att lägga till en aktivitetssekvensdistribution
 
 ## <a name="support-for-universal-windows-platform-uwp-apps"></a><a name="bkmk_uwp"></a>Stöd för Universell Windows-plattform-appar (UWP)  
 
-Windows 10-enheter kräver inte en nyckel för separat inläsning för att installera branschspecifika appar. Om du vill aktivera separat inläsning i Windows måste register `HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps` nyckeln ha värdet **1**.  
+Windows 10-enheter kräver inte en nyckel för separat inläsning för att installera branschspecifika appar. Om du vill aktivera separat inläsning i Windows måste register nyckeln `HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps` ha värdet **1**.  
 
 Om du inte konfigurerar den här register nyckeln anger Configuration Manager automatiskt värdet till **1** första gången du distribuerar en app till enheten. Om du har angett värdet till **0**kan Configuration Manager inte automatiskt ändra värdet och distributionen av branschspecifika appar Miss lyckas.  
 
@@ -163,12 +163,12 @@ Använd följande tabell för att ta reda på vilken typ av kod signerings certi
 | Paket  | Symantec  | Ej Symantec  |
 |---------|---------|---------|
 | Universella **. appx** -paket på Windows 10 Mobile-enheter | Ja | Ja |
-| **. xap** -paket | Ja | Inga |
-| **. appx** -paket som skapats för Windows Phone 8,1 för installation på Windows 10 Mobile-enheter | Ja | Inga |
+| **. xap** -paket | Ja | Nej |
+| **. appx** -paket som skapats för Windows Phone 8,1 för installation på Windows 10 Mobile-enheter | Ja | Nej |
 
 ## <a name="deploy-windows-installer-apps-to-mdm-enrolled-windows-10-devices"></a><a name="bkmk_mdm-msi"></a>Distribuera Windows Installer appar till MDM-registrerade Windows 10-enheter  
 
-Med distributions typen **Windows Installer\*via MDM (. msi)** kan du skapa och distribuera Windows Installer-baserade appar till MDM-registrerade enheter som kör Windows 10.  
+Med distributions typen **Windows Installer via MDM ( \* . msi)** kan du skapa och distribuera Windows Installer-baserade appar till MDM-registrerade enheter som kör Windows 10.  
 
 Tänk på följande när du använder den här distributions typen:
 

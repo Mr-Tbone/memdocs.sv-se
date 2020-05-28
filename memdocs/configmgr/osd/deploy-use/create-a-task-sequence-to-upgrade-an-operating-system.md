@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b11e0a1747cb8303c14f5971b98d337ae7b2a834
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 8d87b2cde9a9fadb7326939b7fe473ba2a757e91
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723007"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83430124"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Skapa en aktivitetssekvens för att uppgradera ett operativ system i Configuration Manager
 
@@ -24,11 +24,11 @@ ms.locfileid: "81723007"
 Använd aktivitetssekvenser i Configuration Manager för att automatiskt uppgradera ett operativ system på mål datorn. Den här uppgraderingen kan vara från Windows 7 eller senare till Windows 10, eller från Windows Server 2012 eller senare till Windows Server 2016. Skapa en aktivitetssekvens som refererar till uppgraderings paketet för operativ systemet och eventuellt annat innehåll att installera, till exempel program eller program uppdateringar. Aktivitetssekvensen för att uppgradera ett operativ system är en del av [uppgraderings Fönstren till det senaste versions](upgrade-windows-to-the-latest-version.md) scenariot.  
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du skapar aktivitetssekvensen måste följande krav vara på plats:
 
-### <a name="required"></a>Krävs
+### <a name="required"></a>Obligatorisk
 
 - [Uppgraderings paketet för operativ systemet](../get-started/manage-operating-system-upgrade-packages.md) måste vara tillgängligt i Configuration Manager-konsolen.  
 
@@ -63,7 +63,7 @@ Om du vill uppgradera operativ systemet på klienter skapar du en aktivitetssekv
 
     - **Versions index**: om det finns flera tillgängliga OS Edition-index i paketet väljer du det önskade versions indexet. Som standard väljs det första indexet i guiden.  
 
-    - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck`-`(). Till exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
+    - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck ( `-` ). Exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
 
         > [!Note]  
         > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
@@ -136,7 +136,7 @@ Lägg till steg i den här gruppen för att ta bort alla driv rutiner som inte �
 
 Lägg till steg i den här gruppen för att ta bort eller pausa säkerhets program från tredje part, till exempel Antivirus.  
 
-Om du använder ett disk krypterings program från tredje part, anger du dess krypterings driv rutin för `/ReflectDrivers` installationsprogrammet för Windows med [kommando rads alternativet](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#reflectdrivers). Lägg till [variabel steget Ställ in](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) aktivitetssekvens i aktivitetssekvensen i den här gruppen. Ange variabeln för aktivitetssekvensen till **OSDSetupAdditionalUpgradeOptions**. Ställ in värdet på `/ReflectDrivers` med sökvägen till driv rutinen. Den här [aktivitetssekvensen](../understand/task-sequence-variables.md#OSDSetupAdditionalUpgradeOptions) lägger till installationsprogrammet för Windows kommando raden som används av aktivitetssekvensen. Kontakta program varu leverantören om du behöver ytterligare vägledning om den här processen.  
+Om du använder ett disk krypterings program från tredje part, anger du dess krypterings driv rutin för Installationsprogrammet för Windows med `/ReflectDrivers` [kommando rads alternativet](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#reflectdrivers). Lägg till [variabel steget Ställ in](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) aktivitetssekvens i aktivitetssekvensen i den här gruppen. Ange variabeln för aktivitetssekvensen till **OSDSetupAdditionalUpgradeOptions**. Ställ in värdet på `/ReflectDrivers` med sökvägen till driv rutinen. Den här [aktivitetssekvensen](../understand/task-sequence-variables.md#OSDSetupAdditionalUpgradeOptions) lägger till installationsprogrammet för Windows kommando raden som används av aktivitetssekvensen. Kontakta program varu leverantören om du behöver ytterligare vägledning om den här processen.  
 
 ### <a name="download-package-content-task-sequence-step"></a>Steg i aktivitetssekvens för att ladda ned paket innehåll  
 
@@ -147,7 +147,7 @@ Använd steget [Ladda ned paket innehåll](../understand/task-sequence-steps.md#
 - Om du vill ladda ned relevanta drivrutinspaket dynamiskt använder du två **Ladda ned paketinnehåll**-steg med villkor som identifierar lämplig maskinvarutyp för varje drivrutinspaket. Konfigurera varje steg för **hämtning av paket innehåll** för att använda samma variabel. Använd sedan variabeln för det **mellanlagrade innehålls** värdet i avsnittet driv rutiner i steget **Uppgradera operativ system** .  
 
     > [!NOTE]  
-    > Configuration Manager lägger till ett numeriskt suffix till variabel namnet. Om du till exempel anger `%mycontent%` som en anpassad variabel lagrar klienten allt innehåll som refereras till på den här platsen. När du refererar till variabeln i ett efterföljande steg, till exempel **Uppgradera operativ system**, använder du variabeln med ett numeriskt suffix. I det här exemplet `%mycontent01%` , `%mycontent02%`eller, där numret motsvarar den ordning som steget **Hämta paket innehåll** innehåller, visas det här innehållet.  
+    > Configuration Manager lägger till ett numeriskt suffix till variabel namnet. Om du till exempel anger `%mycontent%` som en anpassad variabel lagrar klienten allt innehåll som refereras till på den här platsen. När du refererar till variabeln i ett efterföljande steg, till exempel **Uppgradera operativ system**, använder du variabeln med ett numeriskt suffix. I det här exemplet, `%mycontent01%` eller `%mycontent02%` , där numret motsvarar den ordning som steget **Hämta paket innehåll** innehåller, visas det här innehållet.  
 
 
 ## <a name="recommended-task-sequence-steps-for-post-processing"></a>Rekommenderade steg för aktivitetssekvenser för efter bearbetning
@@ -261,12 +261,12 @@ Mer information finns i [Uppgradera operativ system](../understand/task-sequence
 
 ### <a name="convert-from-bios-to-uefi"></a>Konvertera från BIOS till UEFI
 
-Om du vill ändra enheten från BIOS till UEFI under den här aktivitetssekvensen, se [konvertera från BIOS till UEFI under en uppgradering på plats](task-sequence-steps-to-manage-bios-to-uefi-conversion.md#convert-from-bios-to-uefi-during-an-in-place-upgrade).  
+Om du vill ändra enheten från BIOS till UEFI under den här aktivitetssekvensen, se [konvertera från BIOS till UEFI under en uppgradering på plats](task-sequence-steps-to-manage-bios-to-uefi-conversion.md#bkmk_ipu).  
 
 ### <a name="manage-bitlocker"></a>Hantera BitLocker
 
 <!--SCCMDocs issue #494-->
-Om du använder BitLocker Disk Encryption inaktive ras som standard Installationsprogrammet för Windows automatiskt under uppgraderingen. Från och med Windows 10 version 1803 innehåller Installationsprogrammet för Windows `/BitLocker` kommando rads parametern för att styra det här beteendet. Om dina säkerhets krav gör att du alltid måste ha en aktiv disk kryptering, använder du **OSDSetupAdditionalUpgradeOptions** - [variabeln](../understand/task-sequence-variables.md#OSDSetupAdditionalUpgradeOptions) i gruppen **Förbered för uppgradering** för att `/BitLocker TryKeepActive`inkludera. Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#bitlocker).
+Om du använder BitLocker Disk Encryption inaktive ras som standard Installationsprogrammet för Windows automatiskt under uppgraderingen. Från och med Windows 10 version 1803 innehåller Installationsprogrammet för Windows `/BitLocker` kommando rads parametern för att styra det här beteendet. Om dina säkerhets krav gör att du alltid måste ha en aktiv disk kryptering, använder du **OSDSetupAdditionalUpgradeOptions** - [variabeln](../understand/task-sequence-variables.md#OSDSetupAdditionalUpgradeOptions) i gruppen **Förbered för uppgradering** för att inkludera `/BitLocker TryKeepActive` . Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#bitlocker).
 
 ### <a name="remove-default-apps"></a>Ta bort standard appar
 

@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7ec5802a8931bc4397eaf302920f09d8597802fe
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 73aac9e1bfb7b902a7db28ba4be00a2a02277324
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721614"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905686"
 ---
 # <a name="capabilities-in-technical-preview-1607-for-configuration-manager"></a>Funktioner i Technical Preview 1607 för Configuration Manager
 
@@ -62,15 +62,15 @@ Anpassad anpassning av Software Center tillämpas enligt följande regler:
 ## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>Använd samma nätverkskort för flera initierade PXE-distributioner
 När du använder ett Ethernet-kort för att skapa flera enheter (till exempel ett USB-Ethernet-kort som du använder på flera enheter) i teknisk för hands version 1607, kan du aktivera en ny inställning som gör att du kan ange maskin varu identifierare för Ethernet-korten. Configuration Manager ignorerar maskinvaru-ID: n i listan när en PXE-installation utförs och för klient registrering.
 
-Mer information om det här problemet finns i [bloggen Configuration Manager OSD support team](https://blogs.technet.microsoft.com/system_center_configuration_manager_operating_system_deployment_support_blog/2015/08/27/reusing-the-same-nic-for-multiple-pxe-initiated-deployments-in-system-center-configuration-manger-osd/).  
+Mer information om det här problemet finns i [bloggen Configuration Manager OSD support team](https://techcommunity.microsoft.com/t5/configuration-manager-archive/reusing-the-same-nic-for-multiple-pxe-initiated-deployments-in/ba-p/273721).  
 
 ### <a name="enable-the-feature-to-manage-duplicate-hardware-identifiers"></a>Aktivera funktionen för att hantera dubbla maskin varu identifierare  
-1. I Configuration Manager-konsolen går du till **Administration** > **Översikt** > **Cloud Services** > **uppdateringar och underhålls** > **funktioner**.
+1. I Configuration Manager-konsolen går du till **Administration**  >  **Översikt**  >  **Cloud Services**  >  **uppdateringar och underhålls**  >  **funktioner**.
 2. I visningsfönstret väljer du **Hantera dubbletter av maskin varu identifierare**.
 3. På fliken **Start** går du till gruppen **funktioner** och klickar på **Aktivera**.
 
 ### <a name="add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Lägg till maskin varu identifierare för Configuration Manager att ignorera  
-1. I Configuration Manager-konsolen går du till **Administration** > **Översikt** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen går du till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**.
 2. På fliken **Start** går du till gruppen **Platser** och klickar på **Hierarkiinställningar**.
 3. Gå till fliken **klient godkännande och poster i konflikt** .
 4. Klicka på **Lägg till** i avsnittet **dubbletter av maskin varu identifierare** för att lägga till nya maskin varu identifierare.

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 426767b65e0fd770a9a41ce9463948007a524c41
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: b7643c73d2e9dad00e926bdc3db905016c45860a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078761"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905224"
 ---
 # <a name="capabilities-in-technical-preview-18062-for-configuration-manager"></a>Funktioner i Technical Preview 1806,2 för Configuration Manager
 
@@ -125,7 +125,7 @@ Gå till **program biblioteket**i Configuration Manager-konsolen, expandera **pr
 
 Beteendet för en stegvis distribution av program är detsamma som för aktivitetssekvenser. Mer information finns i skapa stegvisa [distributioner för en aktivitetssekvens](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md).
 
-#### <a name="prerequisite"></a>Krav
+#### <a name="prerequisite"></a>Förutsättning
 Distribuera innehållet för programmet till en distributions plats innan du skapar fasen för stegvis distribution.<!--518293-->
 
 #### <a name="known-issue"></a>Kända problem
@@ -147,11 +147,11 @@ När du skapar en stegvis distribution och konfigurerar en fas manuellt, på sid
 <!--1357427-->
 Configuration Manager stöder nu distribution av nya Windows 10-appaket (. msix) och app-paket (. msixbundle). Den senaste versionen av [Windows Insider Preview](https://insider.windows.com/) stöder för närvarande dessa nya format.
 
-En översikt över MSIX finns i [en närmare titt på MSIX](https://blogs.msdn.microsoft.com/sgern/2018/06/18/a-closer-look-at-msix/).
+En översikt över MSIX finns i [en närmare titt på MSIX](https://docs.microsoft.com/archive/blogs/sgern/a-closer-look-at-msix).
 
 Information om hur du skapar en ny MSIX-app finns [i stöd för MSIX som introducerades i Insider Build 17682](https://techcommunity.microsoft.com/t5/MSIX-Blog/MSIX-support-introduced-in-Insider-Build-17682/ba-p/202376).
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - En Windows 10-klient som kör minst Windows Insider Preview version 17682
 - Ett Windows-appaket i MSIX-format
 
@@ -159,7 +159,7 @@ Information om hur du skapar en ny MSIX-app finns [i stöd för MSIX som introdu
 Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-technical-preview-1804.md#bkmk_feedback) för att berätta hur det fungerade.
 
 1. [Skapa ett program](../../apps/deploy-use/create-applications.md)i Configuration Manager-konsolen. 
-2. Välj programinstallations fil **typ** som **Windows-appaket (\*. appx, \*. appxbundle, \*. msix, \*. msixbundle)**.
+2. Välj programinstallations fil **typ** som **Windows-appaket ( \* . appx, \* . appxbundle, \* . msix, \* . msixbundle)**.
 3. [Distribuera programmet](../../apps/deploy-use/deploy-applications.md) till klienten som kör den senaste versionen av Windows Insider Preview.
 
 
@@ -171,7 +171,7 @@ När [klientens push](../clients/deploy/plan/client-installation-methods.md#clie
 Beroende på dina säkerhets principer kanske din miljö redan föredrar eller kräver Kerberos över äldre NTLM-autentisering. Mer information om säkerhets överväganden för dessa autentiseringsprotokoll finns i [säkerhets princip inställningen i Windows för att begränsa NTLM](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers#security-considerations).
 
 
-### <a name="prerequisite"></a>Krav
+### <a name="prerequisite"></a>Förutsättning
 
 Om du vill använda den här funktionen måste klienterna vara i en betrodd Active Directory skog. Kerberos i Windows förlitar sig på Active Directory för ömsesidig autentisering. 
 
@@ -253,7 +253,7 @@ Om peer-källans klient har fler än en IP-adress (IPv4, IPv6 eller båda) funge
 Den här versionen itererar ytterligare om support för program uppdateringar från tredje part på grund av din [feedback från UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). [Teknisk för hands version 1806](capabilities-in-technical-preview-1806.md#bkmk-3pupdate) tillhandahöll support för *partner kataloger*, som är registrerade kataloger från program varu leverantörer. Kataloger som du anger, som inte är registrerade hos Microsoft, kallas *anpassade kataloger*. Lägg till anpassade kataloger i Configuration Manager-konsolen.  
 
 
-### <a name="prerequisites"></a>Krav 
+### <a name="prerequisites"></a>Förutsättningar 
 
 - Konfigurera [program uppdateringar från tredje part](capabilities-in-technical-preview-1806.md#bkmk-3pupdate). Slutför fas 1: Aktivera och konfigurera funktionen.   
 
@@ -303,7 +303,7 @@ Ta bort anpassade kataloger från samma nod i konsolen. Välj en anpassad katalo
 
 
 ### <a name="known-issue"></a>Kända problem
-Borttagnings åtgärden för anpassade kataloger är nedtonad och du kan därför inte ta bort anpassade kataloger från-konsolen. Du kan lösa problemet genom att använda **WBEMTest** -verktyget på plats servern. Fråga efter den instans som du vill ta bort med namnet eller hämtnings-URL: en `select * from SMS_ISVCatalog where DownloadURL="http://www.contoso.com/catalog.cab"`, till exempel:. I fönstret frågeresultat markerar du objektet och klickar på **ta bort**.<!--518676-->  
+Borttagnings åtgärden för anpassade kataloger är nedtonad och du kan därför inte ta bort anpassade kataloger från-konsolen. Du kan lösa problemet genom att använda **WBEMTest** -verktyget på plats servern. Fråga efter den instans som du vill ta bort med namnet eller hämtnings-URL: en, till exempel: `select * from SMS_ISVCatalog where DownloadURL="http://www.contoso.com/catalog.cab"` . I fönstret frågeresultat markerar du objektet och klickar på **ta bort**.<!--518676-->  
 
 
 

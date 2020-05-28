@@ -63,7 +63,7 @@ Distributionsstatusen för paketdistribution och programdistribution sammanstäl
 
 ## <a name="monitor-the-state-of-an-application-in-the-configuration-manager-console"></a>Övervaka status för ett program i Configuration Manager-konsolen  
 
-1.  I Configuration Manager-konsolen väljer du **övervakning** > av**distributioner**.  
+1.  I Configuration Manager-konsolen väljer du **övervakning**av  >  **distributioner**.  
 
 3.  Om du vill granska distributions information för varje kompatibilitetstillstånd och enheterna i det tillståndet väljer du en distribution och klickar sedan på Visa status i gruppen **distribution** på fliken **Start** . i fönstret distribution väljer du **Visa status** för att öppna fönstret **distributions status** . I det här fönstret kan du visa tillgångarna för varje kompatibilitetsstatus. Välj en till gång för att visa mer detaljerad information om distributions statusen för till gången.  
 
@@ -80,7 +80,7 @@ Informationen som visas i fönstret **distributions status** när du har valt **
 
 Om data som visas på fliken **Sammanfattning** och fliken **distributions typer** inte matchar de data som visas i fönstret **distributions status** väljer du **Kör sammanfattning** för att uppdatera data på dessa flikar. Du kan konfigurera standardsammanfattningsintervallet för programdistribution så här:  
 
-1. I Configuration Manager-konsolen väljer du **Administration** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen väljer du **Administration**  >  **plats konfiguration**  >  **platser**.
 
 2. I listan **platser** väljer du den plats som du vill konfigurera sammanfattnings intervallet för. gå sedan till fliken **Start** . i gruppen **Inställningar** väljer du **status sammanfattningar**.
 

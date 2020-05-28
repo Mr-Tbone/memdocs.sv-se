@@ -10,12 +10,12 @@ ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 253de522937e48fa1f3939c7303faf7e43e4e047
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d7432b3522d5292e2c2afc1dac6b8db3382cca12
+ms.sourcegitcommit: 4c129bb04ea4916c78446e89fbff956397cbe828
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720900"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83343175"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Innehålls biblioteket i Configuration Manager
 
@@ -85,11 +85,13 @@ Ett fjärran slutet innehålls bibliotek är ett krav för att [plats servern sk
 >
 > Om du flyttar innehålls biblioteket till samma lagrings volym som paket källorna kan du inte markera den här volymen för datadeduplicering. Innehålls biblioteket stöder datadeduplicering, men paketets käll volym stöder den inte. Mer information finns i [datadeduplicering](../configs/support-for-windows-features-and-networks.md#bkmmk_datadedup).<!--SCCMDOcs issue #831-->  
 
-### <a name="prerequisites"></a>Krav  
+### <a name="prerequisites"></a>Förutsättningar  
 
 - Plats serverns dator konto måste ha **fullständig** behörighet till nätverks Sök vägen som du flyttar innehålls biblioteket till. Den här behörigheten gäller både resursen och fil systemet. Inga komponenter är installerade på fjärrdatorn.
 
 - Plats servern kan inte ha distributions plats rollen. Innehålls biblioteket används också av distributions platsen, och den här rollen stöder inte ett innehålls bibliotek för fjärrnätverk. När du har flyttat innehålls biblioteket kan du inte lägga till distributions plats rollen på plats servern.  
+
+- Det fjärranslutna systemet för innehålls biblioteket måste finnas i en betrodd domän.
 
 > [!Important]  
 > Återanvänd inte en delad nätverks plats mellan flera platser. Använd exempelvis inte samma sökväg för både en central administrations plats och en underordnad primär plats. Den här konfigurationen kan skada innehålls biblioteket och kräver att du bygger om den.<!--SCCMDocs-pr issue 2764-->  
@@ -105,14 +107,14 @@ Ett fjärran slutet innehålls bibliotek är ett krav för att [plats servern sk
 
 3. Välj **Hantera innehålls bibliotek** i menyfliksområdet.  
 
-4. I fönstret Hantera innehålls bibliotek visas den lokala enheten och sökvägen i fältet **aktuell plats** . Ange en giltig nätverks Sök väg för den **nya platsen**. Den här sökvägen är den plats där platsen flyttar innehålls biblioteket. Det måste innehålla ett mappnamn som redan finns på resursen, till exempel `\\server\share\folder`. Välj **OK**.  
+4. I fönstret Hantera innehålls bibliotek visas den lokala enheten och sökvägen i fältet **aktuell plats** . Ange en giltig nätverks Sök väg för den **nya platsen**. Den här sökvägen är den plats där platsen flyttar innehålls biblioteket. Det måste innehålla ett mappnamn som redan finns på resursen, till exempel `\\server\share\folder` . Välj **OK**.  
 
 5. Observera värdet **status** i kolumnen innehålls bibliotek på fliken Sammanfattning i informations fönstret. Den uppdaterar för att visa platsens förlopp när innehålls biblioteket flyttas.  
 
    - När det **pågår**, visar **flytt förloppet (%)** procent klart.  
 
         > [!Note]  
-        > Om du har ett stort innehålls bibliotek kan du se `0%` förloppet i-konsolen en stund. Med ett bibliotek på 1 TB måste du till exempel kopiera 10 GB innan det visas `1%`. Granska **Distmgr. log**, som visar hur många filer och byte som har kopierats. Från och med version 1810 visar logg filen även en beräknad återstående tid.
+        > Om du har ett stort innehålls bibliotek kan du se `0%` förloppet i-konsolen en stund. Med ett bibliotek på 1 TB måste du till exempel kopiera 10 GB innan det visas `1%` . Granska **Distmgr. log**, som visar hur många filer och byte som har kopierats. Från och med version 1810 visar logg filen även en beräknad återstående tid.
 
    - Om det finns ett fel tillstånd visas felet i status. Vanliga fel är **åtkomst nekad** eller **disk full**.  
 
@@ -128,7 +130,7 @@ Om det ursprungliga innehålls biblioteket sträcker sig över två enheter, sl�
 
 Från och med version 1810, under kopierings processen, bearbetar inte komponenterna för **despooler** -och **distributions hanteraren** nya paket. Den här åtgärden ser till att innehållet inte läggs till i biblioteket när det flyttas. Oavsett vilket schemalägger du den här ändringen under ett system underhåll.
 
-Om du behöver flytta innehålls biblioteket tillbaka till plats servern upprepar du den här processen, men anger en lokal enhet och en sökväg för den **nya platsen**. Det måste innehålla ett mappnamn som redan finns på enheten, till exempel `D:\SCCMContentLib`. När det ursprungliga innehållet fortfarande finns flyttar processen snabbt konfigurationen till plats serverns lokala plats.
+Om du behöver flytta innehålls biblioteket tillbaka till plats servern upprepar du den här processen, men anger en lokal enhet och en sökväg för den **nya platsen**. Det måste innehålla ett mappnamn som redan finns på enheten, till exempel `D:\SCCMContentLib` . När det ursprungliga innehållet fortfarande finns flyttar processen snabbt konfigurationen till plats serverns lokala plats.
 
 > [!Tip]  
 > Om du vill flytta innehållet till en annan enhet på plats servern använder du verktyget för **överföring av innehålls bibliotek** . Mer information finns i [överförings verktyget för innehålls bibliotek](../../support/content-library-transfer.md).  
@@ -154,11 +156,11 @@ Som standard lagras innehålls biblioteket i roten på en enhet i en mapp med na
 
 ### <a name="package-library"></a>Paket bibliotek
 
-Mappen paket bibliotek, **PkgLib**, innehåller en fil för varje paket som distribueras till distributions platsen. Fil namnet är paket-ID: t, till exempel `ABC00001.INI`. I den här filen under `[Packages]` avsnittet finns en lista med innehålls-id: n som ingår i paketet, samt annan information som version. Till exempel är **ABC00001** ett äldre paket vid version **1**. Innehålls-ID: t i den `ABC00001.1`här filen är.
+Mappen paket bibliotek, **PkgLib**, innehåller en fil för varje paket som distribueras till distributions platsen. Fil namnet är paket-ID: t, till exempel `ABC00001.INI` . I den här filen under `[Packages]` avsnittet finns en lista med innehålls-id: n som ingår i paketet, samt annan information som version. Till exempel är **ABC00001** ett äldre paket vid version **1**. Innehålls-ID: t i den här filen är `ABC00001.1` .
 
 ### <a name="data-library"></a>Data bibliotek
 
-Mappen data bibliotek, **DataLib**, innehåller en fil och en mapp för varje pakets innehåll. Till exempel heter `ABC00001.1.INI` `ABC00001.1`filen och mappen respektive. Filen innehåller information som ska verifieras. Mappen återskapar mappstrukturen från det ursprungliga paketet.
+Mappen data bibliotek, **DataLib**, innehåller en fil och en mapp för varje pakets innehåll. Till exempel heter filen och mappen respektive `ABC00001.1.INI` `ABC00001.1` . Filen innehåller information som ska verifieras. Mappen återskapar mappstrukturen från det ursprungliga paketet.
 
 Filerna i data biblioteket ersätts av INI-filer med namnet på den ursprungliga filen i paketet. Till exempel `MyFile.exe.INI`. De här filerna innehåller information om original filen, till exempel storlek, tid ändrad och hash. Använd de första fyra tecknen i hashen för att hitta den ursprungliga filen i fil biblioteket. Till exempel är hash i filen. exe. INI **DEF98765**och de första fyra tecknen är **DEF9**.
 
@@ -168,7 +170,7 @@ Om innehålls biblioteket sträcker sig över flera enheter, kan paketfilerna fi
 
 Hitta en speciell fil med de första fyra tecknen från den hash som finns i data biblioteket. I mappen fil bibliotek finns många mappar, var och en med ett namn på fyra bokstäver. Hitta mappen som matchar de första fyra tecknen från hashen. När du har hittat den här mappen innehåller den en eller flera uppsättningar av tre filer. Dessa filer delar samma namn, men en har fil namns tillägget INI, en har tillägget SIG, och en har inget fil namns tillägg. Den ursprungliga filen är den som inte har något tillägg, vars namn är lika med hash-värdet från data biblioteket.
 
-Till exempel mapp **DEF9** innehåller `DEF98765.INI`, `DEF98765.SIG`och. `DEF98765` `DEF98765`är originalet `MyFile.exe`. INI-filen innehåller en lista över "användare" eller innehålls-id: n som delar samma fil. Platsen tar inte bort en fil om inte allt innehåll också tas bort.
+Till exempel mapp **DEF9** innehåller `DEF98765.INI` , `DEF98765.SIG` och `DEF98765` . `DEF98765`är originalet `MyFile.exe` . INI-filen innehåller en lista över "användare" eller innehålls-id: n som delar samma fil. Platsen tar inte bort en fil om inte allt innehåll också tas bort.
 
 ### <a name="drive-spanning"></a>Enhets utsträckning
 
@@ -180,7 +182,7 @@ Om du väljer alternativet **Automatisk** , Configuration Manager väljer enhete
 
 Du anger ett reserv utrymmes belopp under konfigurationen. Configuration Manager försöker använda en sekundär disk när den bästa tillgängliga disken bara har den här reserv utrymmes mängden kvar utan kostnad. Varje gång en ny enhet väljs för användning väljs enheten med mest tillgängligt ledigt utrymme.
 
-Du kan inte ange att en distributions plats ska använda alla enheter, förutom en viss uppsättning. Förhindra det här problemet genom att skapa en tom fil i roten på enheten, som `NO_SMS_ON_DRIVE.SMS`kallas. Placera den här filen innan Configuration Manager väljer enheten för användning. Om Configuration Manager identifierar filen i enhetens rot använder den inte enheten för innehålls biblioteket.
+Du kan inte ange att en distributions plats ska använda alla enheter, förutom en viss uppsättning. Förhindra det här problemet genom att skapa en tom fil i roten på enheten, som kallas `NO_SMS_ON_DRIVE.SMS` . Placera den här filen innan Configuration Manager väljer enheten för användning. Om Configuration Manager identifierar filen i enhetens rot använder den inte enheten för innehålls biblioteket.
 
 
 ## <a name="troubleshooting"></a>Felsökning
@@ -196,3 +198,5 @@ Följande tips kan hjälpa dig att felsöka problem med innehålls biblioteket:
 - Om du vill se om det finns någon hash-matchning, verifierar du paketet från Configuration Manager-konsolen.  
 
 - Det sista alternativet är att distribuera om innehållet. Den här åtgärden bör lösa de flesta problem.  
+
+Mer detaljerad information finns i [förstå och felsöka innehålls distribution i Configuration Manager](https://support.microsoft.com/help/4482728/understand-troubleshoot-content-distribution-in-configuration-manager).

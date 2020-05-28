@@ -10,12 +10,12 @@ ms.assetid: cb616925-bb94-4b7c-a867-b3d95aef4d5e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f9d2a7d4a16f85e9a5f78dd6251754d86527da87
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 05110714d3aa8ca48ff9384f0116338b0092fde1
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709896"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83877627"
 ---
 # <a name="troubleshoot-package-conversion-manager"></a>Felsök Package Conversion Manager
 
@@ -58,10 +58,13 @@ I informations fönstret i noden **paket** i Configuration Manager-konsolen visa
 
 ### <a name="enable-logging"></a>Aktivera loggning
 
-När du aktiverar loggning för Package Conversion Manager loggar den alla åtgärder, undantag och fel. 
+När du aktiverar loggning för Package Conversion Manager loggar den alla åtgärder, undantag och fel.
 
 Om du vill aktivera loggning för den här komponenten i Configuration Manager ändrar du **Microsoft. ConfigurationManagement. exe. config**. Den här konfigurations filen finns som standard i följande sökväg:  
-`C:\Program Files (x86)\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManagement.exe.config`  
+`C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\Microsoft.ConfigurationManagement.exe.config`  
+
+> [!IMPORTANT]
+> Från och med version 1910 ändrades den här sökvägen till att använda `Microsoft Endpoint Manager` mappen. Se till att du inte använder en äldre version av filen som kan finnas i en annan mapp.
 
 Lägg till följande **växlar** och **spåra** XML-element i elementet **system. Diagnostics** efter det sista elementet **sources** :
 
@@ -83,7 +86,7 @@ Lägg till följande **växlar** och **spåra** XML-element i elementet **system
 I det här exemplet används filen **PCMtrace. log**. Den här loggen finns på den dator som kör Configuration Manager-konsolen på följande sökväg:  
 `%UserProfile%\AppData\Local\Temp`
 
-Om du vill konfigurera detalj nivån ändrar du inställningen för spårnings växeln **PcmLogging** . Ange det här värdet till fyra detalj nivåer, från minst detaljerad (`1`) till mest detaljerade (`4`).
+Om du vill konfigurera detalj nivån ändrar du inställningen för spårnings växeln **PcmLogging** . Ange det här värdet till fyra detalj nivåer, från minst detaljerad ( `1` ) till mest detaljerade ( `4` ).
 
 
 ### <a name="smsprovlog"></a>SMSProv.log

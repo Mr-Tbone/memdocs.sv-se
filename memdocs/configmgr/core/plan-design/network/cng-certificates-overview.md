@@ -10,12 +10,12 @@ ms.assetid: dba904ae-7c44-46db-ae63-999b9821cb46
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4574b7ae97e8200da248a0b798677eacadb6229f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: deb3108d492a955eb0ec6b1635e306dcb85e0062
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719836"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904221"
 ---
 # <a name="cng-certificates-overview"></a>Översikt över CNG-certifikat
 <!-- 1356191 --> 
@@ -23,7 +23,7 @@ ms.locfileid: "81719836"
 Configuration Manager har begränsat stöd för kryptografi: CNG-certifikat (Next Generation). Configuration Manager klienter kan använda certifikat för PKI-klientautentisering med privat nyckel i CNG Key Storage Provider (KSP). Med KSP-stöd har Configuration Manager-klienter stöd för maskinvarubaserad privat nyckel, t. ex. TPM-KSP för certifikat för PKI-klientautentisering.
 
 ## <a name="supported-scenarios"></a>Scenarier som stöds
-Du kan använda [Cryptography-API: t. ex. CNG-](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) certifikatmallar för följande scenarier:
+Du kan använda [Cryptography-API: t. ex. CNG-](https://docs.microsoft.com/windows/win32/seccng/cng-features) certifikatmallar för följande scenarier:
 
 - Klient registrering och kommunikation med en HTTPS-hanterings plats   
 - Program distribution och program distribution med en HTTPS-distributions plats   

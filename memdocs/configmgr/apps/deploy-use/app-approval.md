@@ -2,7 +2,7 @@
 title: Godkänna program
 titleSuffix: Configuration Manager
 description: Lär dig mer om inställningar och beteenden för program godkännande i Configuration Manager.
-ms.date: 04/30/2020
+ms.date: 05/04/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 20493c86-6454-4b35-8f22-0d049b68b8bb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fac75f0f13141c86b29d0213b3c7b06b9f603062
-ms.sourcegitcommit: 2aa97d1b6409575d731c706faa2bc093c2b298c4
+ms.openlocfilehash: f725c1b7dc380a84cd94e666b98dbd309df3744c
+ms.sourcegitcommit: 14d7dd0a99ebd526c9274d5781c298c828323ebf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82643230"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82802063"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Godkänn program i Configuration Manager
 
@@ -99,7 +99,7 @@ Om det finns fler än en avisering kan du bestämma vilken avisering som ska anv
 
 Användare kan lägga till en kommentar till begäran från Software Center. Den här kommentaren visar på program förfrågan i Configuration Manager-konsolen. Från och med version 1902 visas kommentaren även i e-postmeddelandet. Med den här kommentaren i e-postmeddelandet kan god kännare fatta ett bättre beslut att godkänna eller avvisa begäran.<!--3594063-->
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 #### <a name="to-send-email-notifications-and-take-action-on-internal-network"></a>Skicka e-postmeddelanden och vidta åtgärder i interna nätverk
 
@@ -108,6 +108,9 @@ Med de här kraven får mottagarna ett e-postmeddelande med en avisering om beg�
 - Aktivera den [valfria funktionen](../../core/servers/manage/install-in-console-updates.md#bkmk_options) **Godkänn program begär Anden för användare per enhet**.  
 
 - Konfigurera [e-postavisering för aviseringar](../../core/servers/manage/use-alerts-and-the-status-system.md#to-configure-email-notification-for-alerts).  
+
+    > [!NOTE]
+    > Den administrativa användare som distribuerar programmet måste ha behörighet att skapa en avisering och en prenumeration. Om den här användaren inte har dessa behörigheter visas ett fel i slutet av **guiden distribuera program vara**: "du har inte säkerhets rättigheter för att utföra den här åtgärden."<!-- 2810283 -->
 
 - Aktivera SMS-providern på den primära platsen för att använda ett certifikat.<!--SCCMDocs-pr issue 3135--> Välj ett av följande alternativ:  
 
@@ -127,39 +130,39 @@ Med dessa ytterligare valfria krav kan mottagarna godkänna eller neka begäran 
 
 - Aktivera administrations tjänsten för SMS-providern via Cloud Management Gateway. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **plats konfiguration**och välj noden **servrar och plats system roller** . Välj servern med rollen SMS-provider. I informations fönstret väljer du rollen **SMS-provider** och sedan **Egenskaper** i menyfliksområdet på fliken plats roll. Välj alternativet för att **tillåta Configuration Manager Cloud Management Gateway-trafik för administrations tjänsten**.  
 
-  - SMS-providern kräver **.NET 4.5.2** eller senare.  
+- SMS-providern kräver **.NET 4.5.2** eller senare.  
 
-- [Gateway för molnhantering](../../core/clients/manage/cmg/plan-cloud-management-gateway.md)  
+- Konfigurera en [Gateway för moln hantering](../../core/clients/manage/cmg/plan-cloud-management-gateway.md).
 
-- Publicera webbplatsen till [Azure-tjänster](../../core/servers/deploy/configure/azure-services-wizard.md) för **moln hantering**  
+- Publicera webbplatsen till [Azure-tjänster](../../core/servers/deploy/configure/azure-services-wizard.md) för **moln hantering**.
 
-  - Aktivera [identifiering av Azure AD-användare](../../core/servers/deploy/configure/configure-discovery-methods.md#azureaadisc)  
+- Aktivera [identifiering av Azure AD-användare](../../core/servers/deploy/configure/configure-discovery-methods.md#azureaadisc).
 
-  - Konfigurera inställningar i Azure AD manuellt:  
+- Konfigurera inställningar i Azure AD manuellt:  
 
-        1. Gå till [Azure Portal](https://portal.azure.com) som en användare med *globala administratörs* behörigheter. Gå till **Azure Active Directory**och välj **Appregistreringar**.  
+    1. Gå till [Azure Portal](https://portal.azure.com) som en användare med *globala administratörs* behörigheter. Gå till **Azure Active Directory**och välj **Appregistreringar**.  
 
-        2. Välj det program som du skapade för Configuration Manager integrering av **moln hantering** .  
+    1. Välj det program som du skapade för Configuration Manager integrering av **moln hantering** .  
 
-        3. I menyn **Hantera** väljer du **autentisering**.  
+    1. I menyn **Hantera** väljer du **autentisering**.  
 
-            1. I avsnittet **omdirigerings-URI** klistrar du in följande sökväg:`https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`  
+        1. I avsnittet **omdirigerings-URI** klistrar du in följande sökväg:`https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`  
 
-            2. Ersätt `<CMG FQDN>` med det fullständigt kvalificerade domän namnet (FQDN) för din Cloud Management Gateway-tjänst (CMG). Till exempel GraniteFalls.Contoso.com.  
+        1. Ersätt `<CMG FQDN>` med det fullständigt kvalificerade domän namnet (FQDN) för din Cloud Management Gateway-tjänst (CMG). Till exempel GraniteFalls.Contoso.com.  
 
-            3. Välj sedan **Spara**.  
+        1. Välj sedan **Spara**.  
 
-        4. I menyn **Hantera** väljer du **manifest**.  
+    1. I menyn **Hantera** väljer du **manifest**.  
 
-            1. I fönstret Redigera manifest hittar du egenskapen **oauth2AllowImplicitFlow** .  
+        1. I fönstret Redigera manifest hittar du egenskapen **oauth2AllowImplicitFlow** .  
 
-            2. Ändra värdet till **Sant**. Till exempel bör hela raden se ut som på följande rad:`"oauth2AllowImplicitFlow": true,`  
+        1. Ändra värdet till **Sant**. Till exempel bör hela raden se ut som på följande rad:`"oauth2AllowImplicitFlow": true,`  
 
-            3. Välj **Spara**.  
+        1. Välj **Spara**.  
 
 ### <a name="configure-email-approval"></a>Konfigurera e-postgodkännande
 
-1. I Configuration Manager-konsolen [distribuerar du ett program](deploy-applications.md) som är tillgängligt för en användar samling. På sidan **distributions inställningar** aktiverar du det för godkännande. Ange sedan en eller flera e-postadresser som ska få aviseringar. Avgränsa e-postadresser med semikolon (`;`).  
+1. I Configuration Manager-konsolen [distribuerar du ett program](deploy-applications.md) som är tillgängligt för en användar samling. På sidan **distributions inställningar** aktiverar du det för godkännande. Ange sedan en eller flera e-postadresser som ska få aviseringar. Avgränsa e-postadresser med semikolon ( `;` ).  
 
      > [!Note]  
      > Alla i din Azure AD-organisation som tar emot e-postmeddelandet kan godkänna begäran. Vidarebefordra inte e-postmeddelandet till andra såvida du inte vill att de ska vidta åtgärder.  

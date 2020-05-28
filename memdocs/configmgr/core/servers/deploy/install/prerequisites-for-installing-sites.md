@@ -10,12 +10,12 @@ ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8362dbf5cf7264c19f683ce5a224f1e0ec348b36
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a7f7853b006d4ac8b11a30217d1b05b1eedd69dc
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718149"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268988"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Krav för att installera Configuration Manager-platser
 
@@ -49,6 +49,9 @@ Om du installerar en central administrations plats som en del av en hierarki fö
 
         > [!IMPORTANT]  
         > När Configuration Manager installationen är klar måste plats serverns dator konto behålla sysadmin-behörighet att SQL Server. Ta inte bort SQL sysadmin-rättigheterna från det här kontot.  
+
+    > [!NOTE]
+    > Mer information om behovet av de här behörigheterna när installationen är klar finns i [förhöjd behörighet](../../../plan-design/hierarchy/accounts.md#elevated-permissions).
 
 - Om du installerar en primär plats behöver du följande ytterligare rättigheter:  
 
@@ -134,7 +137,7 @@ När du har expanderat platsen måste du konfigurera om följande Azure-tjänste
 - [Microsoft Store för företag](../../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md)  
 - [Gateway för molnhantering](../../../clients/manage/cmg/plan-cloud-management-gateway.md)
 
-I version 1806 och senare förnyar du den hemliga nyckeln för Azure Active Directory-klienten. Mer information finns i [förnya hemlig nyckel](../configure/azure-services-wizard.md#bkmk_renew).
+Det enklaste sättet är att förnya Azure Active Directory-klientens hemliga nyckel. Mer information finns i [förnya hemlig nyckel](../configure/azure-services-wizard.md#bkmk_renew).
 
 Du kan också ta bort och återskapa anslutningen till tjänsten:
 

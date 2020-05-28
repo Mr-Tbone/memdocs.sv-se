@@ -10,12 +10,12 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f18ed2180f1d526e2afa4872e8fa9018c7e18721
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 04ed335c65369840085fe44ba2f1b81d7806a0e3
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722713"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906052"
 ---
 # <a name="licensing-and-branches-for-configuration-manager"></a>Licensiering och filialer för Configuration Manager
 
@@ -32,7 +32,7 @@ Använd den här artikeln om du vill veta mer om licens kraven för de installat
 
 Kunder med aktiv Software Assurance (SA) på Configuration Manager licenser eller med motsvarande prenumerations rättigheter från och med den 1 oktober 2016 har rätt att använda version 1606 från oktober 2016 för Configuration Manager. Kunder med rättigheter att Configuration Manager den 1 oktober 2016 hittar två licensierade alternativ vid installation: aktuell gren och långsiktig service gren (LTSB).
 
-De fullständiga villkoren för de produkter som du köper via Microsofts volym licensierings program finns i [licens villkoren och dokumentationen](https://go.microsoft.com/fwlink/?LinkId=800052).
+De fullständiga villkoren för de produkter som du köper via Microsofts volym licensierings program finns i [licens villkoren och dokumentationen](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?mode=1).
 
 
 ## <a name="licensed-branches"></a>Licensierade grenar
@@ -117,7 +117,7 @@ Om du vill veta mer om produkt licens information använder du följande resurse
 
 - [Översikt över VLSC](https://www.microsoft.com/Licensing/existing-customer/vlsc-training-and-resources.aspx)
 
-- [Produkt villkor för Microsoft Volume Licensing](https://go.microsoft.com/fwlink/?LinkId=800052)
+- [Produkt villkor för Microsoft Volume Licensing](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?mode=1)
 
 - Volym licens kunder kan få en översikt över sina licenser från [volym licens Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Gå till menyn **licenser** och välj **licens översikt**.
 

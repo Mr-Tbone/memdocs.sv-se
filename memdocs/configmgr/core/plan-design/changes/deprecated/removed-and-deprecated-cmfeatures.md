@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 184c836a601378fcb8e58f78debb80a3cd48857c
-ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
+ms.openlocfilehash: 40eda7184d7be5010bf51e3ac0d30d6d9442203c
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693107"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905066"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Borttagna och föråldrade funktioner för Configuration Manager
 
@@ -29,7 +29,7 @@ Den här informationen kan komma att ändras i framtida versioner. Den kan inte 
 
 Följande funktioner är föråldrade. Du kan fortfarande använda dem nu, men Microsoft planerar att avsluta supporten i framtiden.
 
-|Funktion|Första meddelande om utfasning|Stöd&nbsp;har tagits bort|
+|Funktion|Första meddelande om utfasning|Stöd har &nbsp; tagits bort|
 |-----------|---|--------------|
 | Skriv bords analys om du vill **Visa senaste data** för enhets registrering och säkerhets uppdateringar.<!-- 7080949 --> Mer information finns i [data svars tid](../../../../desktop-analytics/troubleshooting.md#data-latency).|Maj 2020|Juli 2020|
 |Implementeringen av delning av innehåll från Azure har ändrats. Använd en Content-aktiverad Cloud Management Gateway. Du kommer inte att kunna skapa en traditionell moln distributions plats i framtiden.|Februari 2019|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
@@ -43,14 +43,14 @@ Den angivna tids ramen måste bestämmas (TBD). Microsoft rekommenderar att du �
 
 Följande funktioner stöds inte längre. I vissa fall är de inte längre i produkten.
 
-|Funktion|Första meddelande om utfasning|Stöd&nbsp;har tagits bort|  
+|Funktion|Första meddelande om utfasning|Stöd har &nbsp; tagits bort|  
 |-----------|---|--------------|  
 | Windows Analytics och Uppgraderingsberedskap-integrering. Mer information finns i [KB 4521815: pensionering i Windows Analytics den 31 januari 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement). | 14 oktober 2019 | 31 januari 2020 |
 | Utvärdering av enhetens hälsoattestering för efterlevnadsprinciper för villkorlig åtkomst <!--1235616 aka 3608202--> Mer information finns i [vad hände med hybrid MDM](../../../../mdm/understand/what-happened-to-hybrid.md).| 3 juli 2019 | Version 1910 |
 | Configuration Manager Företagsportal-appen | 21 maj, 2019 | Version 1910 |
 | Program katalogen, inklusive båda plats system rollerna: webbplatsen för program katalogen och webb tjänst platsen. Mer information finns i [ta bort program katalogen](../../../../apps/plan-design/plan-for-and-configure-application-management.md#bkmk_remove-appcat). | 21 maj, 2019 | Version 1910 |
 |Certifikatbaserad autentisering med Windows Hello för företag-inställningar i Configuration Manager<br>Mer information finns i [Inställningar för Windows Hello för företag](../../../../protect/deploy-use/windows-hello-for-business-settings.md).|December 2017|Version 1910|
-|System Center-Endpoint Protection för Mac och Linux<br>Mer information finns i [blogg inlägget End of support](https://go.microsoft.com/fwlink/?linkid=870182).|Oktober 2018|31 december 2018|
+|System Center-Endpoint Protection för Mac och Linux<br>Mer information finns i [blogg inlägget End of support](https://techcommunity.microsoft.com/t5/configuration-manager-blog/end-of-support-for-scep-for-mac-and-scep-for-linux-on-december/ba-p/286257).|Oktober 2018|31 december 2018|
 |Lokal villkorlig åtkomst<br>Mer information finns i [vad hände med hybrid MDM](../../../../mdm/understand/what-happened-to-hybrid.md).|30 januari 2019|1 september 2019|
 |Hantering av mobila hybrid enheter (MDM)<br>Mer information finns i [vad hände med hybrid MDM](../../../../mdm/understand/what-happened-to-hybrid.md).<br><br>Från och med 1902 Intune Service Release, förväntades i slutet av februari 2019, kan nya kunder inte skapa en ny hybrid anslutning.<!--Intune feature 2683117-->|14 augusti 2018|1 september 2019|
 |SCAP-tillägg (Security Content Automation Protocol). <!--3607889--><br>Den tidigare certifierade versionen är fortfarande tillgänglig på [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=48741).|September 2018|Version 1810|
@@ -80,7 +80,7 @@ Med Configuration Manager har det inbyggda stödet för AMT-baserade datorer ini
 
 Configuration Manager har tagit bort stöd för Network Access Protection. Funktionen är föråldrad i Windows Server 2012 R2 och har tagits bort från Windows 10.  
 
-För alternativ till nätverksåtkomstskydd, se avsnittet *Föråldrade funktioner* i [Översikt över nätverkspolicy och åtkomsttjänster](https://technet.microsoft.com/library/hh831683.aspx).
+För alternativ till nätverksåtkomstskydd, se avsnittet *Föråldrade funktioner* i [Översikt över nätverkspolicy och åtkomsttjänster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831683(v=ws.11)).
 
 ## <a name="see-also"></a>Se även
 

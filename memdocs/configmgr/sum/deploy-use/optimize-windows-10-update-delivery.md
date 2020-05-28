@@ -2,7 +2,7 @@
 title: Optimera leverans för Windows 10-uppdatering
 titleSuffix: Configuration Manager
 description: Lär dig hur du använder Configuration Manager för att hantera uppdaterings innehåll för att hålla dig uppdaterad med Windows 10.
-ms.date: 04/21/2020
+ms.date: 05/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f7edd05a7b1ce105e81fd4f594d95c9dfb45f472
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: 835dcd0c86244c1731cb6c6e040d577160759614
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771378"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83267798"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Optimera Windows 10-uppdaterings leverans med Configuration Manager
 
@@ -96,12 +96,12 @@ Att välja rätt peer caching-teknik för Express-installationsfiler beror på d
 
 | Funktioner  | Leveransoptimering  | Peer-cache  | BranchCache  |
 |---------|---------|---------|---------|
-| Stöds över undernät | Ja | Ja | Inga |
+| Stöds över undernät | Ja | Ja | Nej |
 | Bandbredds begränsning | Ja (inbyggt) | Ja (via BITS) | Ja (via BITS) |
 | Stöd för delar av innehåll | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. | Endast för Office 365 och Express-uppdateringar | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. |
 | Innehålls typer som stöds | **Via ConfigMgr:** </br> -Express uppdateringar </br> – Alla Windows-uppdateringar (från och med version 1910). Detta omfattar inte Office-uppdateringar.</br> </br> **Via Microsoft Cloud:**</br> – Windows-och säkerhets uppdateringar</br> – Driv rutiner</br> – Windows Store-appar</br> – Windows Store för företag-appar | Alla innehålls typer för ConfigMgr, inklusive bilder som hämtats i [Windows PE](../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) | Alla innehålls typer i ConfigMgr, förutom bilder |
 | Cachestorlek på disk kontroll | Ja | Ja | Ja |
-| Identifiering av en peer-källa | Automatisk | Manuell (klient agent inställning) | Automatisk |
+| Identifiering av en peer-källa | Automatiskt | Manuell (klient agent inställning) | Automatiskt |
 | Peer-identifiering | Via moln tjänsten för leverans optimering (kräver Internet åtkomst) | Via hanterings plats (baserat på klient gränser grupper) | Multicast |
 | Rapportering | Ja (med hjälp av Skriv bords analys) | ConfigMgr-klient data källor instrument panel | ConfigMgr-klient data källor instrument panel |
 | WAN-användnings kontroll | Ja (ursprunglig, kan styras via grup princip inställningar) | Gränsgrupper | Endast undernät stöder |
@@ -125,13 +125,13 @@ Om Server sidans kompromisser med större storleks uppdateringar är block för 
 
 Windows Update Agent (WUA) begär innehåll först. Om det inte går att installera Express uppdateringen kan den återgå till den fullständiga fil uppdateringen.  
 
-1. Den Configuration Manager klienten instruerar WUA att ladda ned uppdaterings innehållet. När WUA initierar en Express nedladdning laddar den först ned en stub (till exempel `Windows10.0-KB1234567-<platform>-express.cab`), som ingår i Express paketet.  
+1. Den Configuration Manager klienten instruerar WUA att ladda ned uppdaterings innehållet. När WUA initierar en Express nedladdning laddar den först ned en stub (till exempel `Windows10.0-KB1234567-<platform>-express.cab` ), som ingår i Express paketet.  
 
 2. WUA skickar denna stub till installations programmet för Windows Update, Component-Based Servicing (CBS). CBS använder stub-funktionen för att göra en lokal inventering, och jämför de delta i filen på enheten med vad som behövs för att komma till den senaste versionen av filen som erbjuds.  
 
 3. CBS ber sedan WUA att ladda ned de nödvändiga intervallen från en eller flera Express. polyesterstapelfibrer-filer.  
 
-4. Leverans optimerings koordinater med Configuration Manager och laddar ned intervallen från en lokal distributions plats eller peer-datorer om det är tillgängligt. Om leverans optimering är inaktive rad används Background Intelligent Transfer Service (BITS) på samma sätt med Configuration Manager koordinera peer-cache-källor. Leverans optimering eller BITS skickar de intervall som ska avbrytas, vilket gör dem tillgängliga för CBS att tillämpa och installera.  
+4. Om leverans optimering är aktive rad och peer-datorer identifieras för att ha de intervall som krävs, kommer klienten att ladda ned från peer-datorer oberoende av ConfigMgr-klienten. Om leverans optimeringen är inaktive rad eller om inga peer-datorer har de intervall som behövs laddar ConfigMgr-klienten dessa intervall från en lokal distributions plats (eller en peer-eller Microsoft Update). Intervallen skickas till Windows Update Agent som gör dem tillgängliga för CBS för att tillämpa intervallen.
 
 
 #### <a name="why-are-the-express-files-psf-so-large-when-stored-on-configuration-manager-peer-sources-in-the-ccmcache-folder"></a>Varför är Express-filerna (. polyesterstapelfibrer) så stora när de lagras på Configuration Manager peer-källor i ccmcache-mappen?

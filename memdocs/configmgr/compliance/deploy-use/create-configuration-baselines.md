@@ -10,12 +10,12 @@ ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 2028974c166e060f445b255db6c5af707725a3f4
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1365aec90093ee24ad967e1d68e7c414b4efa254
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712927"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906666"
 ---
 # <a name="create-configuration-baselines-in-configuration-manager"></a>Skapa konfigurations bas linjer i Configuration Manager
 
@@ -23,6 +23,9 @@ ms.locfileid: "81712927"
 
 
 Konfigurations bas linjer i Configuration Manager innehåller fördefinierade konfigurations objekt och eventuellt andra konfigurations bas linjer. När en konfigurationsbaslinje har skapats kan du distribuera den till en samling så att enheter i samlingen hämtar konfigurationsbaslinjen och använder den för att utvärdera sin kompatibilitet.  
+
+> [!TIP]
+> Det finns inget sätt att ange i vilken ordning som Configuration Manager klienten utvärderar konfigurations objekt i en bas linje. Den är icke-deterministisk.<!-- MEMDocs#175 -->
 
 ## <a name="configuration-baselines"></a>Konfigurationsbaslinjer
 
@@ -38,7 +41,7 @@ Konfigurations bas linjer i Configuration Manager innehåller fördefinierade ko
 
 Använd följande procedur för att skapa en konfigurations bas linje med hjälp av dialog rutan **skapa konfigurations bas linje** :  
 
-1. I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad** > **Compliance Settings** > kompatibilitetsinställningar**konfigurations bas linjer**.  
+1. I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad**  >  **kompatibilitetsinställningar**  >  **konfigurations bas linjer**.  
 
 2. Klicka på **Skapa konfigurationsbaslinje** i gruppen **Skapa** på fliken **Start**.  
 
@@ -95,19 +98,19 @@ Om du vill inkludera anpassade konfigurations bas linjer som en del av utvärder
 
 När en användare är en del av en samling som är riktad mot en efterlevnadsprincip som innehåller regel villkoret **Inkludera konfigurerade bas linjer i utvärderingen av efterlevnadsprinciper**, alla bas linjer med utgångs punkt i alternativet **utvärdera den här bas linjen som en del av alternativet utvärdering av efterlevnadsprincip** som är markerat och som distribueras till användaren eller användarens enhet utvärderas för kompatibilitet. Ett exempel:
 
-- `User1`är en del `User Collection 1`av.
-- `User1`använder `Device1`, som finns i `Device Collection 1` och `Device Collection 2`.
-- `Compliance Policy 1`har villkoret **Inkludera konfigurerade bas linjer i bedömnings** regeln för efterlevnadsprinciper och distribueras till `User Collection 1`.
-- `Configuration Baseline 1`har **utvärdera denna bas linje som en del av utvärderingen av efterlevnadsprinciper** valt och distribueras `Device Collection 1`till.
-- `Configuration Baseline 2`har **utvärdera denna bas linje som en del av utvärderingen av efterlevnadsprinciper** valt och distribueras `Device Collection 2`till.
+- `User1`är en del av `User Collection 1` .
+- `User1`använder `Device1` , som finns i `Device Collection 1` och `Device Collection 2` .
+- `Compliance Policy 1`har villkoret **Inkludera konfigurerade bas linjer i bedömnings** regeln för efterlevnadsprinciper och distribueras till `User Collection 1` .
+- `Configuration Baseline 1`har **utvärdera denna bas linje som en del av utvärderingen av efterlevnadsprinciper** valt och distribueras till `Device Collection 1` .
+- `Configuration Baseline 2`har **utvärdera denna bas linje som en del av utvärderingen av efterlevnadsprinciper** valt och distribueras till `Device Collection 2` .
 
-I det här scenariot `Compliance Policy 1` utvärderas, `User1` när `Device1`de utvärderas för att använda, både `Configuration Baseline 1` och `Configuration Baseline 2` .
+I det här scenariot `Compliance Policy 1` utvärderas, när de utvärderas för att `User1` använda `Device1` , både `Configuration Baseline 1` och `Configuration Baseline 2` .
 
-- `User1`använder `Device2`ibland.
-- `Device2`är medlem i `Device Collection 2` och `Device Collection 3`.
+- `User1`använder ibland `Device2` .
+- `Device2`är medlem i `Device Collection 2` och `Device Collection 3` .
 - `Device Collection 3`har `Configuration Baseline 3` distribuerats till den, men **utvärdera den här bas linjen som en del av utvärderingen av efterlevnadsprinciper** är inte markerad.
 
-Vid `User1` användning `Device2`utvärderas `Configuration Baseline 2` endast när `Compliance Policy 1` det utvärderas.
+Vid `User1` användning `Device2` `Configuration Baseline 2` utvärderas endast när det `Compliance Policy 1` utvärderas.
 
 > [!NOTE]
 ><!--5582516-->

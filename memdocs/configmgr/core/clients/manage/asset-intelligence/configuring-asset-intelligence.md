@@ -10,12 +10,12 @@ ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 56a65a0a4e1dd9a96e5725ea8c68cc435947bb08
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1a5c89d3fdd82bfa654f806c6931bde2621e714b
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713956"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906618"
 ---
 # <a name="configure-asset-intelligence-in-configuration-manager"></a>Konfigurera Tillgångsinformation i Configuration Manager
 
@@ -39,7 +39,7 @@ Tillgångsinformation inventeringar och hanterar användning av program varu lic
 
 ##### <a name="to-enable-asset-intelligence-hardware-inventory-reporting-classes-from-the-asset-intelligence-home-page"></a>Så här aktiverar du rapportklasser för maskinvaruinventering i Tillgångsinformation från startsidan för Tillgångsinformation  
 
-1.  I Configuration Manager-konsolen väljer du **till gång och efterlevnad** > **tillgångsinformation**.  
+1.  I Configuration Manager-konsolen väljer du **till gång och efterlevnad**  >  **tillgångsinformation**.  
 
 3.  På fliken **Start** går du till gruppen **tillgångsinformation** och väljer **Redigera lager klasser**.   
 
@@ -51,13 +51,13 @@ Tillgångsinformation inventeringar och hanterar användning av program varu lic
 
 ##### <a name="to-enable-asset-intelligence-hardware-inventory-reporting-classes-from-client-settings-properties"></a>Så här aktiverar du rapportklasser för maskinvaruinventering i Tillgångsinformation från egenskaperna för klientinställningar  
 
-1.  I Configuration Manager-konsolen väljer du **Administration** >  **klient inställningar** > **standard klient agent inställningar**. Om du har skapat anpassade klient inställningar kan du välja dem i stället.  
+1.  I Configuration Manager-konsolen väljer du **Administration**  >   **klient inställningar**  >  **standard klient agent inställningar**. Om du har skapat anpassade klient inställningar kan du välja dem i stället.  
 
 3.  På fliken **start** > **egenskaps** grupp väljer du **Egenskaper**.   
 
-4.  Välj klasser för **maskin varu inventerings** > **uppsättning**. .  
+4.  Välj klasser för **maskin varu inventerings**  >  **uppsättning**. .  
 
-5.  Välj **Filtrera efter kategori** > **tillgångsinformation rapporterings klasser**. Listan med klasser uppdateras med endast rapportklasserna för maskinvaruinventering i Tillgångsinformation.  
+5.  Välj **Filtrera efter kategori**  >  **tillgångsinformation rapporterings klasser**. Listan med klasser uppdateras med endast rapportklasserna för maskinvaruinventering i Tillgångsinformation.  
 
 6.  Välj minst en rapport klass från listan.  
 
@@ -73,7 +73,7 @@ Förutom att hämta ny information för tillgångsinformationskatalogen kan plat
 
 ##### <a name="to-install-an-asset-intelligence-synchronization-point-site-system-role"></a>Så här installerar du en platssystemroll för en plats för synkronisering av tillgångsinformation  
 
-1.  I Configuration Manager-konsolen väljer du **Administration**> **plats konfigurations** > **servrar och plats system roller**.  
+1.  I Configuration Manager-konsolen väljer du **Administration** >  **plats konfigurations**  >  **servrar och plats system roller**.  
 
 3.  Lägg till plats system rollen för Tillgångsinformation-platsen till en ny eller befintlig plats system Server:  
 
@@ -110,7 +110,7 @@ Förutom att hämta ny information för tillgångsinformationskatalogen kan plat
 
 ##### <a name="to-enable-success-logon-event-logging-by-using-a-local-security-policy"></a>Så här aktiverar du loggning av lyckade inloggningshändelser med hjälp av en lokal säkerhetsprincip  
 
-1.  På en Configuration Manager klient dator väljer du **Starta** > **administrations verktyg** > **lokal säkerhets princip**.  
+1.  På en Configuration Manager klient dator väljer du **Starta**  >  **administrations verktyg**  >  **lokal säkerhets princip**.  
 
 2.  I dialog rutan **lokal säkerhets princip** , under **säkerhets inställningar**, expanderar du **lokala principer**och väljer sedan **gransknings princip**.  
 
@@ -139,7 +139,7 @@ Förutom att hämta ny information för tillgångsinformationskatalogen kan plat
 4.  På sidan **Importera** anger du om du importerar en MVLS-fil (Microsoft Volume Licensing) (.xml eller .csv) eller en allmän licensöversikt (.csv). Mer information om hur du skapar en allmänt licensöversiktsfil finns i [Create a general license statement information file for import](#BKMK_CreateGeneralLicenseStatement) senare i det här avsnittet.  
 
     > [!WARNING]  
-    >  Information om hur du hämtar en MVLS-fil i CSV-format som du kan importera till tillgångsinformationskatalogen finns i [Microsoft Volume Licensing Service Center](https://go.microsoft.com/fwlink/p/?LinkId=226547). Du måste ha ett registrerat konto på webbplatsen för att komma åt den här informationen. Du måste kontakta din Microsoft-kontorepresentant för information om hur du får tag på en MVLS-fil i XML-format.  
+    >  Information om hur du hämtar en MVLS-fil i CSV-format som du kan importera till tillgångsinformationskatalogen finns i [Microsoft Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Du måste ha ett registrerat konto på webbplatsen för att komma åt den här informationen. Du måste kontakta din Microsoft-kontorepresentant för information om hur du får tag på en MVLS-fil i XML-format.  
 
 5.  Ange UNC-sökvägen till licens översikts filen eller Välj **Bläddra** för att välja en delad nätverksmapp och en fil.  
 
@@ -190,19 +190,19 @@ Tillgångsinformation matchar de produkter som du anger i den allmänna licensö
 #### <a name="sample-table-to-describe-software-licenses"></a>Exempeltabell för att beskriva programvarulicenser  
  När du skapar en importfil för en allmän licensöversikt kan du använda följande tabell för att beskriva programlicenser som ska importeras till tillgångsinformationskatalogen.  
 
-|Kolumnnamn|Datatyp|Krävs|Exempel|  
+|Kolumnnamn|Datatyp|Obligatorisk|Exempel|  
 |-----------------|---------------|--------------|-------------|  
 |Name|Högst 255 tecken|Ja|Programvarutitel|  
 |Utgivare|Högst 255 tecken|Ja|Programvaruutgivare|  
 |Version|Högst 255 tecken|Ja|Programvaruversion|  
 |Språk|Högst 255 tecken|Ja|Programvarans språk|  
 |EffectiveQuantity|Heltal|Ja|Antal köpta licenser|  
-|PONumber|Högst 255 tecken|Inga|Information om inköpsordern|  
-|ResellerName (Återförsäljarnamn)|Högst 255 tecken|Inga|Information om återförsäljaren|  
-|DateOfPurchase|Datumvärde i följande format: ÅÅÅÅ-MM-DD|Inga|Datum för licensköpet|  
-|SupportPurchased|Bitvärde|Inga|0 eller 1: Ange 0 för Ja och 1 för Nej|  
-|SupportExpirationDate|Datumvärde i följande format: ÅÅÅÅ-MM-DD|Inga|Slutdatum för köpt support|  
-|Kommentarer|Högst 255 tecken|Inga|Valfria kommentarer|  
+|PONumber|Högst 255 tecken|Nej|Information om inköpsordern|  
+|ResellerName (Återförsäljarnamn)|Högst 255 tecken|Nej|Information om återförsäljaren|  
+|DateOfPurchase|Datumvärde i följande format: ÅÅÅÅ-MM-DD|Nej|Datum för licensköpet|  
+|SupportPurchased|Bitvärde|Nej|0 eller 1: Ange 0 för Ja och 1 för Nej|  
+|SupportExpirationDate|Datumvärde i följande format: ÅÅÅÅ-MM-DD|Nej|Slutdatum för köpt support|  
+|Kommentarer|Högst 255 tecken|Nej|Valfria kommentarer|  
 
 ###  <a name="configure-asset-intelligence-maintenance-tasks"></a><a name="BKMK_ConfigureMaintenanceTasks"></a> Configure Asset Intelligence maintenance tasks  
  Följande underhållsaktiviteter är tillgängliga för Tillgångsinformation:  
@@ -213,7 +213,7 @@ Tillgångsinformation matchar de produkter som du anger i den allmänna licensö
 
 ##### <a name="to-configure-asset-intelligence-maintenance-tasks"></a>Så här konfigurerar du underhållsaktiviteter för Tillgångsinformation  
 
-1.  I Configuration Manager-konsolen väljer du **Administration** > **plats konfiguration** > **platser**.  
+1.  I Configuration Manager-konsolen väljer du **Administration**  >  **plats konfiguration**  >  **platser**.  
 
 3.  Välj den plats där du vill konfigurera underhållsaktiviteten för Tillgångsinformation.  
 

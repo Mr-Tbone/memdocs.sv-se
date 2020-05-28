@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6402205ae694d719845492b1af37000a0b9335c5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: cee161747d5c0b462836b7c3a44e1460173b124c
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721474"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905663"
 ---
 # <a name="capabilities-in-technical-preview-1610-for-configuration-manager"></a>Funktioner i Technical Preview 1610 för Configuration Manager
 
@@ -29,7 +29,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
 **Följande är nya funktioner som du kan prova med den här versionen.**  
 ## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrera efter innehålls storlek i regler för automatisk distribution
-Nu kan du filtrera efter innehålls storleken för program uppdateringar i regler för automatisk distribution. Du kan till exempel ange filtret för **innehålls storlek (KB)** till **< 2048** för att endast hämta program uppdateringar som är mindre än 2 MB. Med det här filtret förhindrar du att stora program uppdateringar laddas ned automatiskt för att ge bättre stöd för förenklad Windows-etablering när nätverks bandbredden är begränsad. Mer information finns i [Configuration Manager och förenklad Windows-underhåll på äldre operativ system](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/).
+Nu kan du filtrera efter innehålls storleken för program uppdateringar i regler för automatisk distribution. Du kan till exempel ange filtret för **innehålls storlek (KB)** till **< 2048** för att endast hämta program uppdateringar som är mindre än 2 MB. Med det här filtret förhindrar du att stora program uppdateringar laddas ned automatiskt för att ge bättre stöd för förenklad Windows-etablering när nätverks bandbredden är begränsad. Mer information finns i [Configuration Manager och förenklad Windows-underhåll på äldre operativ system](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configuration-manager-and-simplified-windows-servicing-on-down/ba-p/274056).
 
 #### <a name="to-configure-the-content-size-field"></a>Så här konfigurerar du fältet innehålls storlek
 Om du vill konfigurera fältet **innehålls storlek (KB)** går du till sidan **program uppdateringar** i guiden Skapa regel för automatisk distribution när du skapar en ADR eller går till fliken **program uppdateringar** i egenskaperna för en befintlig ADR.
@@ -64,7 +64,7 @@ Så här nekar du ett program som godkänns förfrågan:
 1. [Skapa och distribuera ett program](../../apps/deploy-use/create-applications.md) som kräver godkännande i Configuration Manager-konsolen.
 2. Öppna Software Center på en klient dator och skicka en begäran om programmet.
 3. Godkänn programbegäran i Configuration Manager-konsolen.
-4. Neka den godkända programbegäran: i Configuration Manager-konsolen går du till översikt över program **varu bibliotek** > **Översikt över** > **program hanterings** > **begär Anden** och väljer den programbegäran som du vill neka.  Klicka på **neka**i menyfliksområdet.
+4. Neka den godkända programbegäran: i Configuration Manager-konsolen går du till översikt över program **varu bibliotek**  >  **Översikt över**  >  **program hanterings**  >  **begär Anden** och väljer den programbegäran som du vill neka.  Klicka på **neka**i menyfliksområdet.
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Undanta klienter från automatisk uppgradering
 Technical Preview 1610 introducerar en ny inställning som du kan använda för att undanta en samling klienter från att automatiskt installera uppdaterade klient versioner.  Detta gäller för automatisk uppgradering samt andra metoder, till exempel program uppdatering baserad uppgradering, inloggnings skript och grup princip. Detta kan användas för en samling datorer som behöver bättre försiktighet vid uppgradering av-klienten. En klient som ingår i en undantagen samling ignorerar begär Anden om att installera uppdaterad klient program vara.
@@ -126,7 +126,7 @@ Mer specifikt kan du konfigurera följande inställningar för Windows Defender:
 
 ### <a name="try-it-out"></a>prova!
 
-1. I Configuration Manager-konsolen går du **till till gångar och efterlevnad** > **Översikt över** > **Compliance Settings** > kompatibilitetsinställningar**konfigurations objekt**och skapar ett nytt **konfigurations objekt**.
+1. I Configuration Manager-konsolen går du **till till gångar och efterlevnad**  >  **Översikt över**  >  **kompatibilitetsinställningar**  >  **konfigurations objekt**och skapar ett nytt **konfigurations objekt**.
 2. Ange ett namn och välj sedan **Windows 8,1 och Windows 10** under **Inställningar för enheter som hanteras utan den Configuration Manager klienten** och klicka på **Nästa**.
 3. Se till att **alla Windows 10 (64-bitars)** och **alla windows 10 (32-bitars)** har marker ATS på sidan **plattformar som stöds** och klicka sedan på **Nästa**.
 4. Välj gruppen **Windows Defender** -inställningar och klicka sedan på **Nästa**.
@@ -143,7 +143,7 @@ Du kan nu begära en princip synkronisering för en mobil enhet från Configurat
 
 ### <a name="try-it-out"></a>prova!
 
-1. I Configuration Manager-konsolen går du **till till gångar och efterlevnad** > **– Översikt** > enheter.
+1. I Configuration Manager-konsolen går du **till till gångar och efterlevnad**  >  **– Översikt** > enheter.
 2. Välj **Skicka synkroniseringsbegäran**i menyn **åtgärder för fjärrenhet** .
 
 Synkroniseringen kan ta fem till tio minuter. Alla ändringar i principen synkroniseras till enheten. Du kan spåra statusen för synkroniseringsbegäran i kolumnen **fjärrsynkroniseringsstatus** i vyn **enheter** eller i enhetens **egenskaps** dialog ruta.

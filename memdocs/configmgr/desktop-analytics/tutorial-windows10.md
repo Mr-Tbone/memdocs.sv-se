@@ -10,12 +10,13 @@ ms.assetid: 3e82cd96-0ce0-474a-a597-d65fceadc95a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2456f530444fa5d9514247edd77cbe7b02f62c38
-ms.sourcegitcommit: 2871a17e43b2625a5850a41a9aff447c8ca44820
+ms.reviewer: acabello
+ms.openlocfilehash: b991c2ddd0ea121251eb19afbdb032844be8738d
+ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82126008"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83268206"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Självstudie: distribuera Windows 10 till pilot
 
@@ -29,13 +30,13 @@ I den här guiden får du lära dig att:
 > * Skapa en distributions plan för Skriv bords analys för Windows 10  
 > * Använd Configuration Manager för att distribuera Windows 10 till pilot gruppen  
 
-Om du inte har en Azure-prenumeration kan du skapa ett [kostnadsfritt](https://azure.microsoft.com/free) konto innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
+Om du inte har någon Azure-prenumeration kan du [skapa ett kostnadsfritt konto](https://azure.microsoft.com/free) innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
 
 Skriv bords analys använder en *Log Analytics arbets yta* i din Azure-prenumeration. En arbetsyta är i grunden en container som innehåller kontoinformation och enkel konfigurationsinformation för kontot. Mer information finns i [hantera arbets ytor](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access?toc=/azure/azure-monitor/toc.json).
 
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du börjar den här självstudien måste du kontrol lera att du har följande krav:  
 
@@ -243,7 +244,7 @@ Använd den här proceduren för att skapa en distributions plan i Desktop Analy
 
         - **Mina datorer hämtar automatiskt driv rutiner från Windows Update**: Standardinställningen är **inaktive rad**, vilket rekommenderas när du distribuerar med Configuration Manager.  
 
-        - **Definiera tröskelvärdet för tröskelvärden för låg installation för dina appar**: standardvärdet är `2%`. Appar som är under det här tröskelvärdet anges automatiskt till *lågt antal installationer*. Desktop Analytics validerar inte dessa tillägg under piloten.  
+        - **Definiera tröskelvärdet för tröskelvärden för låg installation för dina appar**: standardvärdet är `2%` . Appar som är under det här tröskelvärdet anges automatiskt till *lågt antal installationer*. Desktop Analytics validerar inte dessa tillägg under piloten.  
 
             Om en app installeras på en högre procent andel av datorerna än det här tröskelvärdet markerar distributions planen appen *som en*försvars man. Sedan kan du bestämma vad som är viktigt att testa under pilot fasen.  
 

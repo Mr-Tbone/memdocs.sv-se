@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: bd9475a72ef8d2b25f026ab76e124c8217ed7ee9
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: eacf64245f4cfc779dc92be73e8d7e387b34f909
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82073950"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427928"
 ---
 # <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Vad&#39;s nya i version 1702 av Configuration Manager
 
@@ -28,8 +28,8 @@ Uppdatering 1702 för Configuration Manager aktuella grenen är tillgänglig som
 > Om du vill installera en ny plats måste du använda en bas linje version av Configuration Manager.  
 >
 > Läs mer om:    
-> - [Nya platser installeras](https://technet.microsoft.com/library/mt590197.aspx)  
-> - [Installera uppdateringar på platser](https://technet.microsoft.com/library/mt607046.aspx)  
+> - [Nya platser installeras](../../servers/deploy/install/installing-sites.md)  
+> - [Installera uppdateringar på platser](../../servers/manage/updates.md)  
 > - [Bas linje-och uppdaterings versioner](../../servers/manage/updates.md#bkmk_Baselines)
 
 Följande avsnitt innehåller information om ändringar och nya funktioner som introducerats i version 1702 av Configuration Manager.  
@@ -71,7 +71,7 @@ Du kan hitta **feedback** -alternativet:
 - När du högerklickar på ett objekt i-konsolen.   
    ![Skärmdumpsverktygen – Klicka på alternativ](./media/feedback-option.png)   
 
-  Om du väljer **feedback** öppnas webbläsaren på [webbplatsen för Configuration Manager UserVoice feedback](https://go.microsoft.com/fwlink/?linkid=617029).
+  Om du väljer **feedback** öppnas webbläsaren på [webbplatsen för Configuration Manager UserVoice feedback](https://configurationmanager.uservoice.com/forums/300492-ideas).
 
 
 ###  <a name="changes-for-updates-and-servicing"></a>Ändringar för uppdateringar och underhåll
@@ -191,7 +191,7 @@ Du kan nu gå tillbaka till en föregående sida när du kör en aktivitetssekve
 Från och med version 1702 kan du välja att använda förcachet innehåll för tillgängliga distributioner av aktivitetssekvenser. Innehåll i förväg ger dig möjlighet att låta klienten Ladda ned tillämpligt innehåll så fort det tar emot distributionen. När användaren klickar på **Installera** i Software Center är innehållet därför klart och installationen startar snabbt eftersom innehållet finns på den lokala hård disken. Mer information finns i [Konfigurera för-cache-innehåll](../../../osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md#configure-pre-cache-content).
 
 ### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Konvertera från BIOS till UEFI under en uppgradering på plats
-Windows 10 Creators Update introducerar ett enkelt konverterings verktyg som automatiserar processen för att partitionera om hård disken för UEFI-aktiverad maskin vara och integrera konverterings verktyget i Windows 7 till Windows 10 uppgraderings process på plats. När du kombinerar det här verktyget med aktivitetssekvensen för uppgradering av operativ system och OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI, kan du konvertera datorerna från BIOS till UEFI under en uppgradering på plats till Windows 10 Creators Update. Mer information finns i avsnittet [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../../../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+Windows 10 Creators Update introducerar ett enkelt konverterings verktyg som automatiserar processen för att partitionera om hård disken för UEFI-aktiverad maskin vara och integrera konverterings verktyget i Windows 7 till Windows 10 uppgraderings process på plats. När du kombinerar det här verktyget med aktivitetssekvensen för uppgradering av operativ system och OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI, kan du konvertera datorerna från BIOS till UEFI under en uppgradering på plats till Windows 10 Creators Update. Mer information finns i avsnittet [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../../../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md#bkmk_ipu).
 
 ### <a name="improvements-to-the-install-applications-task-sequence-step"></a>Förbättringar av steget installera program i aktivitetssekvensen
 Den här versionen introducerade följande förbättringar:
@@ -248,7 +248,7 @@ Från och med version 1702 för hantering av mobila enheter (MDM) behöver du in
 Den här ändringen påverkar guiderna för att skapa följande objekt:
 
 - Konfigurationsobjekt
-- Compliance principer
+- Efterlevnadsprinciper
 - Certifikatprofiler
 - E-postprofiler
 - VPN-profiler
@@ -275,13 +275,13 @@ Nu kan du distribuera licensierade appar till enheter samt användare. Beroende 
 |-|-|-|-|
 |Configuration Manager version|App har stöd för enhets licensiering?|Distributions samlings typ|Ansökan om licens|
 |Tidigare än 1702|Ja|Användare|Användar licens|
-|Tidigare än 1702|Inga|Användare|Användar licens|
+|Tidigare än 1702|Nej|Användare|Användar licens|
 |Tidigare än 1702|Ja|Enhet|Användar licens|
-|Tidigare än 1702|Inga|Enhet|Användar licens|
+|Tidigare än 1702|Nej|Enhet|Användar licens|
 |1702 och senare|Ja|Användare|Användar licens|
-|1702 och senare|Inga|Användare|Användar licens|
+|1702 och senare|Nej|Användare|Användar licens|
 |1702 och senare|Ja|Enhet|Enhets licens|
-|1702 och senare|Inga|Enhet|Användar licens|
+|1702 och senare|Nej|Enhet|Användar licens|
 
 ### <a name="support-for-ios-volume-purchase-program-for-education"></a>Stöd för iOS-volym köps program för utbildning
 

@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 518954457ba58656aeb1986689a3cf74ce918c02
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 6ccfb523cc1abc3a64d396f32d55a4dc4551987c
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713151"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428600"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -36,9 +36,9 @@ Kommandot CCMSetup. exe laddar ned filer som behövs för att installera kliente
 > [!NOTE]
 > Du kan inte installera client. msi direkt.  
 
-CCMSetup. exe innehåller kommando rads *parametrar* för att anpassa installationen. Parametrar föregås av ett snedstreck (`/`) och enligt praxis är gemener. Du anger värdet för en parameter när det behövs med ett kolon (`:`) omedelbart följt av värdet. Mer information finns i [kommando rads parametrar för CCMSetup. exe](#ccmsetupexe-command-line-parameters).
+CCMSetup. exe innehåller kommando rads *parametrar* för att anpassa installationen. Parametrar föregås av ett snedstreck ( `/` ) och enligt praxis är gemener. Du anger värdet för en parameter när det behövs med ett kolon ( `:` ) omedelbart följt av värdet. Mer information finns i [kommando rads parametrar för CCMSetup. exe](#ccmsetupexe-command-line-parameters).
 
-Du kan också ange *Egenskaper* på kommando raden för CCMSetup. exe för att ändra funktions sättet för Client. msi. egenskaper efter konvention är versaler. Du anger ett värde för en egenskap med ett likhets tecken`=`() omedelbart följt av värdet. Mer information finns i [client. msi-egenskaper](#clientMsiProps).
+Du kan också ange *Egenskaper* på kommando raden för CCMSetup. exe för att ändra funktions sättet för Client. msi. egenskaper efter konvention är versaler. Du anger ett värde för en egenskap med ett likhets tecken ( `=` ) omedelbart följt av värdet. Mer information finns i [client. msi-egenskaper](#clientMsiProps).
 
 > [!IMPORTANT]  
 > Ange CCMSetup-parametrar innan du anger egenskaper för Client. msi.  
@@ -109,7 +109,7 @@ Den här parametern kan också ange URL: en för en CMG (Cloud Management Gatewa
 - Kör följande kommando:
 
     ```PowerShell
-    (Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
+    (Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP
     ```
 
 - Lägg till `https://` prefixet som ska användas med **/MP** -parametern.
@@ -117,7 +117,7 @@ Den här parametern kan också ange URL: en för en CMG (Cloud Management Gatewa
 Exempel för när du använder URL: en för Cloud Management Gateway:`ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
 > [!Important]
-> När du anger URL: en för en moln hanterings-Gateway för **/MP** -parametern måste `https://`den börja med.
+> När du anger URL: en för en moln hanterings-Gateway för **/MP** -parametern måste den börja med `https://` .
 
 ### <a name="regtoken"></a>/regtoken
 
@@ -218,19 +218,19 @@ Exempel: `CCMSetup.exe /UsePKICert /NoCRLCheck`
 
 Den här parametern anger en textfil som visar en lista över klient installations egenskaper.
 
-- Om CCMSetup körs som en tjänst placerar du filen i mappen CCMSetup-system: `%Windir%\Ccmsetup`.
+- Om CCMSetup körs som en tjänst placerar du filen i mappen CCMSetup-system: `%Windir%\Ccmsetup` .
 
 - Om du anger parametern [**/noservice**](#noservice) placerar du filen i samma mapp som CCMSetup. exe.
 
 Exempel: `CCMSetup.exe /config:"configuration file name.txt"`
 
-Använd filen **filen mobileclienttemplate. TCF** i `\bin\<platform>` mappen i Configuration Manager installations katalog på plats servern för att ange rätt fil format. Den här filen innehåller kommentarer om avsnitten och hur de används. Ange klient installations egenskaperna i `[Client Install]` avsnittet efter följande text:. `Install=INSTALL=ALL`
+Använd filen **filen mobileclienttemplate. TCF** i `\bin\<platform>` mappen i Configuration Manager installations katalog på plats servern för att ange rätt fil format. Den här filen innehåller kommentarer om avsnitten och hur de används. Ange klient installations egenskaperna i `[Client Install]` avsnittet efter följande text: `Install=INSTALL=ALL` .
 
-Exempel `[Client Install]` på avsnitts post:`Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
+Exempel på `[Client Install]` avsnitts post:`Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
 ### <a name="skipprereq"></a>/skipprereq
 
-Den här parametern anger att CCMSetup. exe inte ska installera den angivna förutsättningen. Du kan ange mer än ett värde. Använd semikolon (`;`) för att avgränsa varje värde.
+Den här parametern anger att CCMSetup. exe inte ska installera den angivna förutsättningen. Du kan ange mer än ett värde. Använd semikolon ( `;` ) för att avgränsa varje värde.
 
 Exempel:
 
@@ -255,9 +255,9 @@ Exempel: `CCMSetup.exe /ExcludeFeatures:ClientUI` installerar inte Software Cent
 
 ## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a>Retur koder för CCMSetup. exe
 
-Kommandot CCMSetup. exe ger följande retur koder. Du kan felsöka genom `%WinDir%\ccmsetup\ccmsetup.log` att granska klienten för kontext och ytterligare information om retur koder.
+Kommandot CCMSetup. exe ger följande retur koder. Du kan felsöka genom att granska `%WinDir%\ccmsetup\ccmsetup.log` klienten för kontext och ytterligare information om retur koder.
 
-|Returkod|Betydelse|  
+|Returkod|Innebörd|  
 |-----------|-------|  
 |0|Klart|  
 |6|Fel|  
@@ -272,7 +272,7 @@ Följande egenskaper kan ändra installations beteendet för CCMSetup. msi.
 
 ### <a name="ccmsetupcmd"></a>CCMSETUPCMD
 
-Använd denna CCMSetup. *MSI* -egenskap för att skicka ytterligare kommando rads parametrar och egenskaper till CCMSetup. *exe*. Inkludera andra parametrar och egenskaper inom citat tecken (`"`). Använd den här egenskapen när du startar Configuration Manager-klienten med [INTUNE MDM-installations metoden](plan/client-installation-methods.md#microsoft-intune-mdm-installation).
+Använd denna CCMSetup. *MSI* -egenskap för att skicka ytterligare kommando rads parametrar och egenskaper till CCMSetup. *exe*. Inkludera andra parametrar och egenskaper inom citat tecken ( `"` ). Använd den här egenskapen när du startar Configuration Manager-klienten med [INTUNE MDM-installations metoden](plan/client-installation-methods.md#microsoft-intune-mdm-installation).
 
 Exempel: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
 
@@ -323,7 +323,7 @@ Example: `ccmsetup.exe AADTENANTNAME=Contoso`
 
 ### <a name="ccmadmins"></a>CCMADMINS  
 
-Anger ett eller flera Windows-användarkonton eller grupper som ska få åtkomst till klientinställningar och rutiner. Den här egenskapen är användbar när du inte har lokal administratörs behörighet på klient datorn. Ange en lista över konton som är avgränsade med semikolon`;`().
+Anger ett eller flera Windows-användarkonton eller grupper som ska få åtkomst till klientinställningar och rutiner. Den här egenskapen är användbar när du inte har lokal administratörs behörighet på klient datorn. Ange en lista över konton som är avgränsade med semikolon ( `;` ).
 
 Exempel: `CCMSetup.exe CCMADMINS="domain\account1;domain\group1"`
 
@@ -338,7 +338,7 @@ Exempel: `CCMSetup.exe CCMALLOWSILENTREBOOT`
 
 ### <a name="ccmalwaysinf"></a>CCMALWAYSINF
 
-Om du vill ange att klienten alltid är Internet-baserad och aldrig ansluter till intranätet anger du `1`det här egenskap svärdet. Klientens anslutningstyp är **Alltid Internet**.  
+Om du vill ange att klienten alltid är Internet-baserad och aldrig ansluter till intranätet anger du det här egenskap svärdet `1` . Klientens anslutningstyp är **Alltid Internet**.  
 
 Använd den här egenskapen med [**CCMHOSTNAME**](#ccmhostname) för att ange det fullständiga domän namnet för den Internetbaserade hanterings platsen. Använd även den med CCMSetup-parametern [**/UsePKICert**](#usepkicert) och plats koden ([**SMSSITECODE**](#smssitecode)).
 
@@ -350,7 +350,7 @@ Exempel: `CCMSetup.exe /UsePKICert CCMALWAYSINF=1 CCMHOSTNAME=SERVER3.CONTOSO.CO
 
 Använd den här egenskapen för att ange listan med certifikat utfärdare. Den här listan innehåller certifikat information för betrodda rot certifikat utfärdare (CA) som Configuration Manager-platsen litar på.  
 
-Det här värdet är en Skift läges känslig matchning för de attribut som finns i rot certifikat utfärdarens certifikat. Separera attribut med kommatecken (`,`) eller semikolon (`;`). Ange mer än ett rot certifikat för certifikat utfärdare med hjälp av`|`ett avgränsnings streck ().
+Det här värdet är en Skift läges känslig matchning för de attribut som finns i rot certifikat utfärdarens certifikat. Separera attribut med kommatecken ( `,` ) eller semikolon ( `;` ). Ange mer än ett rot certifikat för certifikat utfärdare med hjälp av ett avgränsnings streck ( `|` ).
 
 Exempel: `CCMCERTISSUERS="CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US | CN=Litware Corporate Root CA; O=Litware, Inc."`
 
@@ -378,9 +378,9 @@ Använd nyckelordet **SubjectAttr** för att söka efter objekt IDENTIFIERARE (O
 
 Exempel:
 
-- `CCMCERTSEL="SubjectAttr:2.5.4.11 = Computers"`: Sök efter attributet för organisationsenheten uttryckt som en objekt identifierare och namngett `Computers`.
+- `CCMCERTSEL="SubjectAttr:2.5.4.11 = Computers"`: Sök efter attributet för organisationsenheten uttryckt som en objekt identifierare och namngett `Computers` .
 
-- `CCMCERTSEL="SubjectAttr:OU = Computers"`: Sök efter attributet Organisations enhet som uttrycks som ett unikt namn och `Computers`med namnet.
+- `CCMCERTSEL="SubjectAttr:OU = Computers"`: Sök efter attributet Organisations enhet som uttrycks som ett unikt namn och med namnet `Computers` .
 
 > [!IMPORTANT]
 > Om du använder ämnes namnet är nyckelordet **subject** Skift läges känsligt och nyckelordet **SubjectStr** är Skift läges okänsligt.
@@ -389,7 +389,7 @@ Exempel:
 
 En fullständig lista över attribut som du kan använda för val av certifikat finns i [attributvärden som stöds för urvalskriterier för PKI-certifikat](#BKMK_attributevalues).
 
-Om fler än ett certifikat matchar sökningen och du anger [**CCMFIRSTCERT**](#ccmfirstcert) till `1`, väljer klient installations programmet certifikatet med den längsta giltighets perioden.
+Om fler än ett certifikat matchar sökningen och du anger [**CCMFIRSTCERT**](#ccmfirstcert) till `1` , väljer klient installations programmet certifikatet med den längsta giltighets perioden.
 
 ### <a name="ccmcertstore"></a>CCMCERTSTORE
 
@@ -425,7 +425,7 @@ Mer information finns i [logg filen](../../plan-design/hierarchy/about-log-files
 
 ### <a name="ccmevalinterval"></a>CCMEVALINTERVAL
 
-Frekvensen i minuter då utvärderings verktyget för klient hälsa (ccmeval. exe) körs. Ange ett heltals värde `1` från `1440`till. Som standard körs ccmeval en gång om dagen (1440 minuter).
+Frekvensen i minuter då utvärderings verktyget för klient hälsa (ccmeval. exe) körs. Ange ett heltals värde från `1` till `1440` . Som standard körs ccmeval en gång om dagen (1440 minuter).
 
 Exempel: `CCMSetup.exe CCMEVALINTERVAL=1440`
 
@@ -433,13 +433,13 @@ Mer information om utvärdering av klient hälsa finns i [övervaka klienter](..
 
 ### <a name="ccmevalhour"></a>CCMEVALHOUR
 
-Timmen under dagen då utvärderings verktyget för klient hälsa (ccmeval. exe) körs. Ange ett heltals värde `0` från (midnatt) `23` till (11:00 PM). Som standard körs ccmeval vid midnatt.
+Timmen under dagen då utvärderings verktyget för klient hälsa (ccmeval. exe) körs. Ange ett heltals värde från `0` (midnatt) till `23` (11:00 PM). Som standard körs ccmeval vid midnatt.
 
 Mer information om utvärdering av klient hälsa finns i [övervaka klienter](../manage/monitor-clients.md#bkmk_health).
 
 ### <a name="ccmfirstcert"></a>CCMFIRSTCERT
 
-Om du ställer in den här `1`egenskapen på väljer klienten PKI-certifikatet med den längsta giltighets perioden.
+Om du ställer in den här egenskapen på `1` väljer klienten PKI-certifikatet med den längsta giltighets perioden.
 
 Exempel: `CCMSetup.exe /UsePKICert CCMFIRSTCERT=1`
 
@@ -466,23 +466,23 @@ Den här egenskapen kan ange adressen till en CMG (Cloud Management Gateway). An
 Exempelvis: `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
 > [!Important]
-> När du anger adressen till en CMG för egenskapen **CCMHOSTNAME** ska du inte lägga till ett prefix som `https://`. Använd bara det här prefixet med **/MP** -URL: en för en CMG.
+> När du anger adressen till en CMG för egenskapen **CCMHOSTNAME** ska du inte lägga till ett prefix som `https://` . Använd bara det här prefixet med **/MP** -URL: en för en CMG.
 
 ### <a name="ccmhttpport"></a>CCMHTTPPORT
 
-Anger vilken port som klienten ska använda när den kommunicerar via HTTP till plats system servrar. Som standard är `80`det här värdet.
+Anger vilken port som klienten ska använda när den kommunicerar via HTTP till plats system servrar. Som standard är det här värdet `80` .
 
 Exempel: `CCMSetup.exe CCMHTTPPORT=80`
 
 ### <a name="ccmhttpsport"></a>CCMHTTPSPORT
 
-Anger vilken port som klienten ska använda när den kommunicerar via HTTPS till plats system servrar. Som standard är `443`det här värdet.
+Anger vilken port som klienten ska använda när den kommunicerar via HTTPS till plats system servrar. Som standard är det här värdet `443` .
 
 Exempel: `CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`
 
 ### <a name="ccminstalldir"></a>CCMINSTALLDIR
 
-Använd den här egenskapen för att ange att mappen ska installera Configuration Manager-klientens filer. Som standard används `%WinDir%\CCM`.
+Använd den här egenskapen för att ange att mappen ska installera Configuration Manager-klientens filer. Som standard används `%WinDir%\CCM` .
 
 > [!TIP]
 > Oavsett var du installerar-klient filerna installeras filen **cmcore. dll** alltid i `%WinDir%\System32` mappen. På ett 64-bitars operativ system installerar den en kopia av cmcore. dll i `%WinDir%\SysWOW64` mappen. Den här filen stöder 32-bitars program som använder 32-bitars versionen av-klientens API: er från Configuration Manager SDK.
@@ -506,7 +506,7 @@ Mer information finns i [logg filen](../../plan-design/hierarchy/about-log-files
 
 ### <a name="ccmlogmaxhistory"></a>CCMLOGMAXHISTORY
 
-När en Configuration Manager loggfil når den maximala storleken, byter klienten namn på den som en säkerhets kopia och skapar en ny loggfil. Den här egenskapen anger hur många tidigare versioner av logg filen som ska behållas. Standardvärdet är `1`. Om du ställer in värdet på `0`, behåller inte klienten logg fils historiken.
+När en Configuration Manager loggfil når den maximala storleken, byter klienten namn på den som en säkerhets kopia och skapar en ny loggfil. Den här egenskapen anger hur många tidigare versioner av logg filen som ska behållas. Standardvärdet är `1`. Om du ställer in värdet på `0` , behåller inte klienten logg fils historiken.
 
 Exempel: `CCMSetup.exe CCMLOGMAXHISTORY=5`
 
@@ -520,7 +520,7 @@ Exempel: `CCMSetup.exe CCMLOGMAXSIZE=300000` (300 000 byte)
 
 ### <a name="disablesiteopt"></a>DISABLESITEOPT
 
-Ange den här egenskapen `TRUE` till om du vill blockera administratörer från att ändra den tilldelade platsen i Configuration Manager kontroll panelen.
+Ange den här egenskapen till `TRUE` om du vill blockera administratörer från att ändra den tilldelade platsen i Configuration Manager kontroll panelen.
 
 Exempel: **CCMSetup.exe DISABLESITEOPT=TRUE**
 
@@ -554,7 +554,7 @@ Exempel: `CCMSetup.exe FSP=SMSFP01`
 
 ### <a name="ignoreappvversioncheck"></a>IGNOREAPPVVERSIONCHECK
 
-Om du ställer in den här `TRUE`egenskapen på kontrollerar klient installations programmet inte den lägsta version som krävs för Microsoft Application Virtualization (App-V).
+Om du ställer in den här egenskapen på `TRUE` kontrollerar klient installations programmet inte den lägsta version som krävs för Microsoft Application Virtualization (App-V).
 
 > [!IMPORTANT]  
 > Om du installerar Configuration Manager-klienten utan att installera App-V kan du inte [distribuera virtuella program](../../../apps/get-started/deploying-app-v-virtual-applications.md).
@@ -581,9 +581,9 @@ Använd följande process:
 
 1. [Skapa en aktivitetssekvens som inte är en operativ system distribution](../../../osd/deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md) för att installera appar, installera program uppdateringar och konfigurera inställningar.
 
-1. [Distribuera denna](../../../osd/deploy-use/deploy-a-task-sequence.md) aktivitetssekvens till den nya inbyggda samlingen, **alla etablerings enheter**. Anteckna distributions-ID för aktivitetssekvens till exempel `PRI20001`.
+1. [Distribuera denna](../../../osd/deploy-use/deploy-a-task-sequence.md) aktivitetssekvens till den nya inbyggda samlingen, **alla etablerings enheter**. Anteckna distributions-ID för aktivitetssekvens till exempel `PRI20001` .
 
-1. [Installera Configuration Manager-klienten](deploy-clients-to-windows-computers.md#BKMK_Manual) på en enhet och inkludera följande egenskap: `PROVISIONTS=PRI20001`. Ange värdet för den här egenskapen som distributions-ID för aktivitetssekvens.
+1. [Installera Configuration Manager-klienten](deploy-clients-to-windows-computers.md#BKMK_Manual) på en enhet och inkludera följande egenskap: `PROVISIONTS=PRI20001` . Ange värdet för den här egenskapen som distributions-ID för aktivitetssekvens.
 
     - Om du installerar-klienten från Intune under registreringen av samhantering, se så [här förbereder du Internetbaserade enheter för samhantering](../../../comanage/how-to-prepare-Win10.md).
 
@@ -606,7 +606,7 @@ Exempel: `CCMSetup.exe SMSSITECODE=AUTO SITEREASSIGN=TRUE`
 
 ### <a name="smscachedir"></a>SMSCACHEDIR
 
-Anger platsen för mappen för klientcachen på klient datorn. Som standard är `%WinDir%\ccmcache`cache-platsen.
+Anger platsen för mappen för klientcachen på klient datorn. Som standard är cache-platsen `%WinDir%\ccmcache` .
 
 Exempel: `CCMSetup.exe SMSCACHEDIR="C:\Temp"`  
 
@@ -614,7 +614,7 @@ Använd den här egenskapen med egenskapen [**SMSCACHEFLAGS**](#smscacheflags) f
 
 ### <a name="smscacheflags"></a>SMSCACHEFLAGS
 
-Använd den här egenskapen för att ange ytterligare installations information för mappen client cache. Du kan använda **SMSCACHEFLAGS** -egenskaper individuellt eller i en kombination avgränsade`;`med semikolon ().
+Använd den här egenskapen för att ange ytterligare installations information för mappen client cache. Du kan använda **SMSCACHEFLAGS** -egenskaper individuellt eller i en kombination avgränsade med semikolon ( `;` ).
 
 Om du inte tar med den här egenskapen:
 
@@ -628,7 +628,7 @@ När du uppgraderar en befintlig klient ignorerar klient installations programme
 
 - **PERCENTDISKSPACE**: Ange cache-storlek som en procent andel av det *totala* disk utrymmet. Om du anger den här egenskapen anger du också [**SMSCACHESIZE**](#smscachesize) till ett procent värde.
 
-- **PERCENTFREEDISKSPACE**: Ange cache-storlek som en procent andel av det *lediga* disk utrymmet. Om du anger den här egenskapen anger du även [**SMSCACHESIZE**](#smscachesize) som ett procent värde. Disken har till exempel 10 MB ledigt och du anger `SMSCACHESIZE=50`. Klient installations programmet anger cache-storleken till 5 MB. Du kan inte använda den här egenskapen med egenskapen **PERCENTDISKSPACE** .
+- **PERCENTFREEDISKSPACE**: Ange cache-storlek som en procent andel av det *lediga* disk utrymmet. Om du anger den här egenskapen anger du även [**SMSCACHESIZE**](#smscachesize) som ett procent värde. Disken har till exempel 10 MB ledigt och du anger `SMSCACHESIZE=50` . Klient installations programmet anger cache-storleken till 5 MB. Du kan inte använda den här egenskapen med egenskapen **PERCENTDISKSPACE** .
 
 - **MAXDRIVE**: installera cachen på den största tillgängliga disken. Om du anger en sökväg med egenskapen [**SMSCACHEDIR**](#smscachedir) ignorerar klient installations programmet det här värdet.
 
@@ -668,7 +668,7 @@ Använd den här egenskapen för att ange den plats och ordning som klient insta
 
 - `U`: Uppgradera den installerade klienten till en nyare version och Använd den tilldelade plats koden.
 
-Som standard används `PU`klient installations programmet. Först kontrol leras installations egenskaperna (`P`) och sedan de befintliga inställningarna (`U`).  
+Som standard används klient installations programmet `PU` . Först kontrol leras installations egenskaperna ( `P` ) och sedan de befintliga inställningarna ( `U` ).  
 
 Exempel: `CCMSetup.exe SMSCONFIGSOURCE=RP`
 
@@ -693,7 +693,7 @@ Example: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`
 Anger en första hanterings plats för den Configuration Manager klienten som ska användas.  
 
 > [!IMPORTANT]  
-> Om hanterings platsen endast tar emot klient anslutningar via HTTPS ska du prefix för hanterings `https://`platsens namn med.
+> Om hanterings platsen endast tar emot klient anslutningar via HTTPS ska du prefix för hanterings platsens namn med `https://` .
 
 Exempel:
 
@@ -724,10 +724,10 @@ Exempel: `CCMSetup.exe /UsePKICert SMSSIGNCERT=C:\folder\smssign.cer`
 
 ### <a name="smssitecode"></a>SMSSITECODE
 
-Den här egenskapen anger en Configuration Manager plats som du tilldelar klienten. Det här värdet kan antingen vara en platskod med tre tecken eller ordet `AUTO`. Om du anger `AUTO`eller inte anger den här egenskapen försöker klienten bestämma sin platstilldelning från Active Directory Domain Services eller från en angiven hanterings plats. Om du `AUTO` vill aktivera för klient uppgraderingar anger du även [SITEREASSIGN = True](#sitereassign).
+Den här egenskapen anger en Configuration Manager plats som du tilldelar klienten. Det här värdet kan antingen vara en platskod med tre tecken eller ordet `AUTO` . Om du anger `AUTO` eller inte anger den här egenskapen försöker klienten bestämma sin platstilldelning från Active Directory Domain Services eller från en angiven hanterings plats. Om du vill aktivera `AUTO` för klient uppgraderingar anger du även [SITEREASSIGN = True](#sitereassign).
 
 > [!NOTE]  
-> Om du också anger en Internetbaserad hanterings plats med egenskapen [**CCMHOSTNAME**](#ccmhostname) använder `AUTO` du inte med **SMSSITECODE**. Tilldela klienten en plats direkt genom att ange plats koden.
+> Om du också anger en Internetbaserad hanterings plats med egenskapen [**CCMHOSTNAME**](#ccmhostname) använder du inte `AUTO` med **SMSSITECODE**. Tilldela klienten en plats direkt genom att ange plats koden.
 
 Exempel: `CCMSetup.exe SMSSITECODE=XZY`
 

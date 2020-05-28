@@ -10,12 +10,12 @@ ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 05b77fa181da67858c30f48fc8045c20384953ce
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 63f815394414167ad4f887c5970538eab22c931a
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720095"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906150"
 ---
 # <a name="create-queries-in-configuration-manager"></a>Skapa frågor i Configuration Manager
 
@@ -42,23 +42,23 @@ I den här artikeln beskrivs hur du skapar och importerar frågor i Configuratio
     |**Användarresurs**|Använd för att söka efter typisk användar information, t. ex. användar namn, användar grupp namn och namn på säkerhets grupper.|  
     |**Distribution**|Använd om du vill söka efter vanliga attribut för en distribution, t. ex. distributions namn, schema och den samling som den distribuerades till.|  
 
-6.  Välj **Redigera frågeuttryck** för att öppna dialog &lt;rutan Egenskaper\> för frågans namns **instruktion** .  
+6.  Välj **Redigera frågeuttryck** för att öppna &lt; dialog rutan Egenskaper för frågans namns \> **instruktion** .  
 
-7.  På fliken **Allmänt** i dialog rutan &lt;egenskaper för\> frågans namn **instruktion** anger du de attribut som frågan returnerar och hur de ska visas. Välj ikonen **ny** om du vill lägga till ett nytt attribut. Du kan också välja **Visa frågespråk** för att ange eller redigera frågan direkt i WMI Query Language (WQL). Exempel på WMI-frågor finns i avsnittet [exempel på WQL-frågor](#BKMK_Example) i den här artikeln.  
+7.  På fliken **Allmänt** i &lt; dialog rutan Egenskaper för frågans namn \> **instruktion** anger du de attribut som frågan returnerar och hur de ska visas. Välj ikonen **ny** om du vill lägga till ett nytt attribut. Du kan också välja **Visa frågespråk** för att ange eller redigera frågan direkt i WMI Query Language (WQL). Exempel på WMI-frågor finns i avsnittet [exempel på WQL-frågor](#BKMK_Example) i den här artikeln.  
 
     > [!TIP]  
     > Du kan använda följande referens dokumentation som hjälp för att skapa egna WQL-frågor:  
     >   
-    > -   [WQL (SQL för WMI)](https://go.microsoft.com/fwlink/p/?LinkId=256653)  
-    > -   [WHERE-sats](https://go.microsoft.com/fwlink/p/?LinkId=256654)  
-    > -   [WQL-operatorer](https://go.microsoft.com/fwlink/p/?LinkId=256655)  
+    > -   [WQL (SQL för WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wql-sql-for-wmi)  
+    > -   [WHERE-sats](https://docs.microsoft.com/windows/win32/wmisdk/where-clause)  
+    > -   [WQL-operatorer](https://docs.microsoft.com/windows/win32/wmisdk/wql-operators)  
 
-8.  På fliken **villkor** i dialog rutan &lt;\> **Egenskaper** för frågeuttryck anger du villkor som används för att förfina frågeresultatet. Du kan till exempel bara returnera resurser som har plats koden **XYZ**. Du kan konfigurera flera villkor för en fråga.  
+8.  På fliken **villkor** i &lt; \> dialog rutan **Egenskaper** för frågeuttryck anger du villkor som används för att förfina frågeresultatet. Du kan till exempel bara returnera resurser som har plats koden **XYZ**. Du kan konfigurera flera villkor för en fråga.  
 
     > [!IMPORTANT]  
     > Om du skapar en fråga som inte innehåller några villkor returnerar frågan alla enheter i samlingen **Alla system** .  
 
-9. På fliken **kopplingar** i dialog rutan Egenskaper &lt;för frågans namn\> **instruktion** kan du kombinera data från två olika attribut i frågeresultatet. Även om Configuration Manager automatiskt skapar frågor till kopplingar när du väljer olika attribut för frågeresultatet, innehåller fliken **kopplingar** fler avancerade alternativ. Configuration Manager stöder dessa attribut klasser:  
+9. På fliken **kopplingar** i &lt; dialog rutan Egenskaper för frågans namn \> **instruktion** kan du kombinera data från två olika attribut i frågeresultatet. Även om Configuration Manager automatiskt skapar frågor till kopplingar när du väljer olika attribut för frågeresultatet, innehåller fliken **kopplingar** fler avancerade alternativ. Configuration Manager stöder dessa attribut klasser:  
 
     |Kopplingstyp|Beskrivning|  
     |---------------|-----------------|  
@@ -69,7 +69,7 @@ I den här artikeln beskrivs hur du skapar och importerar frågor i Configuratio
 
      Mer information om hur du använder kopplings åtgärder finns i SQL Server-dokumentationen.  
 
-10. Välj **OK** för att stänga &lt;dialog rutan\> **Egenskaper** för frågans namn uttryck.  
+10. Välj **OK** för att stänga &lt; dialog rutan Egenskaper för frågans namn \> **uttryck** .  
 
 11. På fliken **Allmänt** i **guiden Skapa fråga**anger du att frågeresultatet inte är begränsat till medlemmarna i en samling, att de är begränsade till medlemmarna i en angiven samling, eller att en fråga för en samling visas varje gången frågan körs.  
 
@@ -91,7 +91,7 @@ I den här artikeln beskrivs hur du skapar och importerar frågor i Configuratio
 Det här avsnittet innehåller exempel på WQL-frågor som du kan använda i din-hierarki eller ändra för andra orsaker. Om du vill använda dessa frågor väljer du **Visa frågespråk** i dialog rutan **Egenskaper för frågeuttryck** . Kopiera och klistra sedan in frågan i fältet **frågeuttryck** .  
 
 > [!TIP]  
-> Använd jokertecknet `%` för en obestämd teckensträng. `%Visio%` Returnerar till exempel Microsoft Office Visio 2010.  
+> Använd jokertecknet `%` för en obestämd teckensträng. Returnerar till exempel `%Visio%` Microsoft Office Visio 2010.  
 
 ### <a name="computers-that-run-windows-10"></a>Datorer som kör Windows 10
 
@@ -133,7 +133,7 @@ SMS_R_System.SystemOUName = "OU Name"
 
 ### <a name="computers-with-a-specific-netbios-name"></a>Datorer med ett visst NetBIOS-namn
 
-Använd följande fråga om du vill returnera NetBIOS-namnet på alla datorer som börjar med en specifik sträng med tecken. I det här exemplet returnerar frågan alla datorer med ett NetBIOS-namn som börjar med `ABC`.  
+Använd följande fråga om du vill returnera NetBIOS-namnet på alla datorer som börjar med en specifik sträng med tecken. I det här exemplet returnerar frågan alla datorer med ett NetBIOS-namn som börjar med `ABC` .  
 
 ``` WQL
 select SMS_R_System.NetbiosName from
@@ -148,7 +148,7 @@ Enhets typer lagras i Configuration Manager-databasen under resurs klassen **SMS
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = <Device ID>  
 ```  
 
-Använd något av följande värden för &lt;enhets\>-ID:  
+Använd något av följande värden för &lt; enhets-ID \> :  
 
 |Enhetstyp|Värde för AgentEdition|  
 |-----------------|---------------------------|  

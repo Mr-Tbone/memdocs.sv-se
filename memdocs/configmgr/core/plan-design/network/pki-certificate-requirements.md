@@ -10,12 +10,12 @@ ms.assetid: d6a73e68-57d8-4786-842b-36669541d8ff
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3729bdc28cce961bd081ddb461d3d1da45d6c017
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 909f9fa603f6b979b283593da79730a97fcb9fc9
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718723"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904159"
 ---
 # <a name="pki-certificate-requirements-for-configuration-manager"></a>PKI-certifikatkrav för Configuration Manager
 
@@ -23,11 +23,7 @@ ms.locfileid: "81718723"
 
 De PKI-certifikat (Public Key Infrastructure) som du kan behöva för Configuration Manager visas i följande tabeller. Den här informationen förutsätter grundläggande kunskaper om PKI-certifikat. Mer information finns i [steg-för-steg-exempel distribution av PKI-certifikaten för Configuration Manager: Windows Server 2008-certifikat utfärdare](example-deployment-of-pki-certificates.md).
 
-Mer information om Active Directory Certificate Services finns i följande dokumentation:  
-
-- För Windows Server 2012: [Översikt av Active Directory Certificate Services](https://go.microsoft.com/fwlink/p/?LinkId=286744)  
-
-- För Windows Server 2008: [Active Directory Certificate Services i Windows Server 2008](https://go.microsoft.com/fwlink/p/?LinkId=115018)
+Mer information om Active Directory Certificate Services finns i [Översikt över Active Directory Certificate Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).
 
 Information om hur du använder Cryptography-API: CNG-certifikat (Next Generation) med Configuration Manager finns i [Översikt över CNG-certifikat](cng-certificates-overview.md).
 

@@ -2,7 +2,7 @@
 title: Övervaka distribution av operativsystem
 titleSuffix: Configuration Manager
 description: För att hjälpa dig att övervaka objekt för operativ Systems distribution tillhandahåller Configuration Manager-konsolen aviseringar, rapporter och olika status indikatorer.
-ms.date: 10/06/2016
+ms.date: 05/04/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 08085d94-295c-432f-b5e3-9736bce0193b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9d0a430a1010611bc6a7e0871e8c59ca3d1f8de7
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7afab9fbbb443b2f9fb4af15a3805c0b7df7a014
+ms.sourcegitcommit: 14d7dd0a99ebd526c9274d5781c298c828323ebf
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723833"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82802174"
 ---
 # <a name="monitor-operating-system-deployments-in-configuration-manager"></a>Övervaka operativ Systems distributioner i Configuration Manager
 
@@ -45,6 +45,9 @@ Configuration Manager-konsolen innehåller följande metoder som hjälper dig at
 3.  Klicka på den aktivitetssekvens som du vill övervaka distributionsstatus för.  
 
 4.  Klicka på **Visa status** på fliken **Start** i gruppen **Distribution**.  
+
+> [!NOTE]  
+> När en uppgradering initieras skapas status meddelandet 52200. Detta innehåller den användare som gjorde uppgraderingen.  
 
 ##  <a name="operating-system-deployment-reports"></a><a name="BKMK_TSReports"></a> Rapporter för operativsystemsdistribution  
  Det finns många fördefinierade rapporter för operativsystemsdistribution. De ordnas i flera kategorier och kan användas för att rapportera om specifik information om tillståndsmigrering och aktivitetssekvensdistribution. Förutom att använda förkonfigurerade rapporter kan du också skapa anpassade programuppdateringsrapporter i enlighet med företagets behov. Mer information finns i [åtgärder och underhåll för rapportering](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  

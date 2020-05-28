@@ -2,7 +2,7 @@
 title: Microsoft Connected Cache
 titleSuffix: Configuration Manager
 description: Använd din Configuration Manager distributions plats som en lokal cache-server för leverans optimering
-ms.date: 03/20/2019
+ms.date: 05/05/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e718e62f097a9fec20d7b29deb9f03453931188a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4dead573e1744a5c8b84ff954e85be43af644486
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714971"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83878496"
 ---
 # <a name="microsoft-connected-cache-in-configuration-manager"></a>Microsoft Connected cache i Configuration Manager
 
@@ -26,7 +26,7 @@ ms.locfileid: "81714971"
 Från och med version 1906 kan du installera en Microsoft-ansluten cache-server på dina distributions platser. Genom att cachelagra det här innehållet lokalt kan dina klienter dra nytta av leverans optimerings funktionen, men du kan skydda WAN-länkar.
 
 > [!NOTE]
-> Från och med version 1910 heter funktionen nu **Microsoft Connected cache**. Det kallades tidigare för leverans optimering i nätverket (DOINC).
+> Från och med version 1910 heter funktionen nu **Microsoft Connected cache**. Det kallades tidigare för leverans optimering i nätverket.
 
 Den här cache-servern fungerar som en transparent cache på begäran för innehåll som hämtas av leverans optimering. Använd klient inställningar för att kontrol lera att den här servern endast erbjuds till medlemmar i den lokala Configuration Managers gränser gruppen.
 
@@ -99,15 +99,29 @@ När du konfigurerar klienter att använda den anslutna cache-servern, begär de
 
 ### <a name="note-1-about-drive-selection"></a><a name="bkmk_note1"></a>Anmärkning 1: om val av enhet
 
-Om du väljer **Automatisk**används **No_sms_on_drive. SMS** -filen när Configuration Manager installerar den anslutna cache-komponenten. Distributions platsen har till exempel filen `C:\no_sms_on_drive.sms`. Även om enheten C: har mest ledigt utrymme, Configuration Manager konfigurerar det anslutna cacheminnet för att använda en annan enhet för cacheminnet.
+Om du väljer **Automatisk**används **No_sms_on_drive. SMS** -filen när Configuration Manager installerar den anslutna cache-komponenten. Distributions platsen har till exempel filen `C:\no_sms_on_drive.sms` . Även om enheten C: har mest ledigt utrymme, Configuration Manager konfigurerar det anslutna cacheminnet för att använda en annan enhet för cacheminnet.
 
-Om du väljer en speciell enhet som redan har **No_sms_on_drive. SMS** -filen ignorerar Configuration Manager filen. Det finns en uttrycklig avsikt att konfigurera den anslutna cachen för att använda enheten. Distributions platsen har till exempel filen `F:\no_sms_on_drive.sms`. När du konfigurerar distributions platsens egenskaper för att använda enhets enheten **f:** Configuration Manager konfigureras den anslutna cachen så att den använder enheten f: för dess cacheminne.
+Om du väljer en speciell enhet som redan har **No_sms_on_drive. SMS** -filen ignorerar Configuration Manager filen. Det finns en uttrycklig avsikt att konfigurera den anslutna cachen för att använda enheten. Distributions platsen har till exempel filen `F:\no_sms_on_drive.sms` . När du konfigurerar distributions platsens egenskaper för att använda enhets enheten **f:** Configuration Manager konfigureras den anslutna cachen så att den använder enheten f: för dess cacheminne.
 
 Ändra enheten efter att du har installerat den anslutna cachen:
 
 - Konfigurera distributions platsens egenskaper manuellt så att de använder en viss enhets beteckning.
 
 - Om värdet är inställt på automatisk skapar du först filen **No_sms_on_drive. SMS** . Gör sedan några ändringar i egenskaperna för distributions platsen för att utlösa en konfigurations ändring.
+
+### <a name="automation"></a>Automation
+
+<!-- SCCMDocs#1911 -->
+
+Du kan använda Configuration Manager SDK för att automatisera konfigurationen av Microsoft Connected cache-inställningar på en distributions plats. När det gäller alla webbplats roller använder du [klassen SMS_SCI_SYSRESUSE WMI](../../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md). Mer information finns i [programmering av plats roller](../../../develop/osd/about-operating-system-deployment-site-role-configuration.md#programming-the-site-roles).
+
+När du uppdaterar **SMS_SCI_SysResUse** -instansen för distributions platsen anger du följande egenskaper:
+
+- **AgreeDOINCLicense**: ange att `1` accepterar licens villkoren.
+- **Flaggor**: aktivera `|= 4` , inaktivera`&= ~4`
+- **DiskSpaceDOINC**: Ange till `Percentage` eller`GB`
+- **RetainDOINCCache**: Ange till `0` eller`1`
+- **LocalDriveDOINC**: Ange till `Automatic` , eller en speciell enhets beteckning, till exempel `C:` eller`D:`
 
 ## <a name="verify"></a>Verifiera
 
@@ -134,9 +148,9 @@ Mer detaljerad information finns i [felsöka Microsoft Connected cache i Configu
 
 Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samhanterade klienter när du aktiverar ansluten cache på Configuration Manager distributions platser.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
-#### <a name="client"></a>Klient
+#### <a name="client"></a>Client
 
 - Uppdatera klienten till den senaste versionen.
 
@@ -145,7 +159,7 @@ Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samh
     > [!TIP]
     > Använd följande grup princip inställning: dator konfiguration > Administrativa mallar > Windows-komponenter > leverans optimering > **minsta ram-kapacitet (inklusive) som krävs för att aktivera användning av peer-cachelagring (i GB)**.
 
-#### <a name="site"></a>Plats
+#### <a name="site"></a>Webbplats
 
 - Aktivera ansluten cache på en distributions plats. Mer information finns i [Microsoft Connected cache](microsoft-connected-cache.md).
 

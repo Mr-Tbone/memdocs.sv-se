@@ -10,12 +10,12 @@ ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 2c8ca66bc83ec8eb18bc331287b6dbee47af7d85
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 0a2a45ff866ea02aacc83c42109c8cba4020ed4e
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719808"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906805"
 ---
 #  <a name="manage-settings-for-software-updates"></a><a name="BKMK_ManageSUSettings"></a>Hantera inställningar för program uppdateringar  
 
@@ -40,7 +40,7 @@ Det finns specifika grupprincipinställningar som används av Windows Update Age
 När programuppdateringsplatsen har skapats för en plats tar klienterna emot en datorprincip som förser dem med programuppdateringsplatsens servernamn och konfigurerar den lokala principen **Ange sökväg till tjänsten Microsoft Update på intranätet** på datorn. WUA hämtar servernamnet som anges i inställningen **Ange intranätserver för identifiering av uppdateringar**, och sedan ansluter WUA till denna server när den söker igenom programuppdateringarnas kompatibiliteter. När en domänprincip skapas för inställningen **Ange sökväg till tjänsten Microsoft Update på intranätet** åsidosätts den lokala principen så att WUA kan ansluta till en annan server än platsen för programuppdatering. Om detta inträffar kan det hända att klienten söker efter programuppdateringarnas kompatibilitet med utgångspunkt i olika produkter, klassificeringar och språk. Därför bör du inte konfigurera Active Directory-principen för klientdatorerna.  
 
 ### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>Grupprincipen Tillåt signerat innehåll från tjänsten Microsoft Update på intranätet  
-Du måste aktivera grupprincipinställningen **Tillåt signerat innehåll från Microsoft-uppdateringstjänst på intranätet** innan WUA (på datorerna) söker efter programuppdateringar som har skapats och publicerats med System Center Updates Publisher. När principinställningen har aktiverats godtar WUA programuppdateringar som tas emot via en plats i intranätet, om programuppdateringarna har signerats i certifikatarkivet **Betrodda utgivare** på den lokala datorn. Mer information om vilka grupprincipinställningar som krävs för Updates Publisher finns i [dokumentationsbiblioteket för Updates Publisher 2011](https://go.microsoft.com/fwlink/p/?LinkId=232476).  
+Du måste aktivera grupprincipinställningen **Tillåt signerat innehåll från Microsoft-uppdateringstjänst på intranätet** innan WUA (på datorerna) söker efter programuppdateringar som har skapats och publicerats med System Center Updates Publisher. När principinställningen har aktiverats godtar WUA programuppdateringar som tas emot via en plats i intranätet, om programuppdateringarna har signerats i certifikatarkivet **Betrodda utgivare** på den lokala datorn. Mer information om vilka grupprincipinställningar som krävs för Updates Publisher finns i [dokumentationsbiblioteket för Updates Publisher 2011](https://docs.microsoft.com/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
 
 ### <a name="automatic-updates-configuration"></a>Konfiguration av automatiska uppdateringar  
 Automatiska uppdateringar gör att säkerhetsuppdateringar och andra viktiga uppdateringar kan hämtas till klientdatorerna. Automatiska uppdateringar konfigureras i grupprincipinställningen **Konfigurera automatiska uppdateringar** eller på kontrollpanelen på den lokala datorn. När Automatiska uppdateringar har aktiverats kan klientdatorerna ta emot uppdateringsaviseringar, och om inställningarna har konfigurerats rätt kan klientdatorerna hämta och installera nödvändiga uppdateringar. När Automatiska uppdateringar används samtidigt som programuppdateringar kan varje klientdator visa både aviseringsikoner och meddelandefönster om samma uppdatering. När klientdatorn måste startas om kan varje klientdator dessutom visa en dialogruta om omstarten för samma uppdatering.  
@@ -137,6 +137,6 @@ Som standard kontrol leras inte CRL-listan (Certificate Revocation List) när si
 Om CRL-kontrollen används måste den vara aktive rad på de Configuration Manager-konsoler som bearbetar program uppdateringar.  
 
 #### <a name="to-enable-crl-checking"></a>Aktivera CRL-kontroll  
-På den dator som utför CRL-kontrollen går du till produkt-DVD: n och kör följande från en kommando tolk: **\SMSSETUP\BIN\X64\\**<*language*>**\UpdDwnldCfg.exe/checkrevocation**.  
+På den dator som utför CRL-kontrollen går du till produkt-DVD: n och kör följande från en kommando tolk: **\SMSSETUP\BIN\X64 \\ ** < *language* > **\UpdDwnldCfg.exe/checkrevocation**.  
 
 Till exempel för engelska (US) kör **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe/checkrevocation**  

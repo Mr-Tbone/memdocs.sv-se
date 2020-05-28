@@ -10,12 +10,12 @@ ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 14f319cfa1d09cf21cc5da5ed4a9fde9b9b9799b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: b17c8c9ed0c1f6f9a5aeb487e07ad3d3dc66cbae
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723868"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903964"
 ---
 # <a name="recover-a-configuration-manager-site"></a>Återställa en Configuration Manager-plats
 
@@ -50,7 +50,7 @@ Använd någon av följande procedurer för att rensa en befintlig server:
 #### <a name="clean-an-existing-server-for-site-server-recovery-only"></a>Rensa en befintlig server för återställning av plats Server
 
 1. Ta bort SMS-registernycklar:`HKLM\Software\Microsoft\SMS`
-2. Ta bort alla register poster som `SMS` börjar `HKLM\System\CurrentControlSet\Services`med från. Ett exempel:
+2. Ta bort alla register poster som börjar med `SMS` från `HKLM\System\CurrentControlSet\Services` . Ett exempel:
     - SMS_DISCOVERY_DATA_MANAGER
     - SMS_EXECUTIVE
     - SMS_INBOX_MONITOR
@@ -193,7 +193,7 @@ Använd det här alternativet om ingen data förlust har inträffat på Configur
 
 Configuration Manager aktiverar ändrings spårning för plats databasen i SQL Server. Med ändrings spårning kan Configuration Manager fråga efter information om de ändringar som gjorts i databas tabellerna efter en tidigare tidpunkt. Kvarhållningsperioden anger hur länge informationen om ändrings spårningen ska behållas. Som standard är plats databasen konfigurerad för att ha en kvarhållningsperiod på fem dagar. När du återställer en platsdatabas fortsätter återställningsprocessen på olika sätt beroende på om din säkerhetskopia görs inom kvarhållningsperioden eller inte. Om din SQL Server till exempel Miss lyckas och den senaste säkerhets kopieringen är sju dagar gammal, är den utanför kvarhållningsperioden.
 
-Mer information om SQL Server ändrings spårning av intern information finns i följande blogg inlägg från SQL Server-teamet: [ändringsspårning rensa-del 1](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-1/) och [ändringsspårning rensning-del 2](https://blogs.msdn.microsoft.com/sql_server_team/change-tracking-cleanup-part-2).
+Mer information om SQL Server ändrings spårning av intern information finns i följande blogg inlägg från SQL Server-teamet: [ändringsspårning rensa-del 1](https://docs.microsoft.com/archive/blogs/sql_server_team/change-tracking-cleanup-part-1) och [ändringsspårning rensning-del 2](https://docs.microsoft.com/archive/blogs/sql_server_team/change-tracking-cleanup-part-2).
 
 ### <a name="reinitialization-of-site-or-global-data"></a>Initiera om plats-eller globala data
 
@@ -263,7 +263,7 @@ Använd någon av följande procedurer för att få hjälp att återställa plat
 
 1. Förbered det obevakade installationsskriptet för de alternativ som du behöver för platsåterställningen. Mer information finns i [obevakad plats återställning](unattended-recovery.md).  
 
-2. Kör Configuration Manager-installationen med hjälp `/script` av kommando rads alternativet. Du kan till exempel skapa en initierings fil för installations programmet **namnet ConfigMgrUnattend. ini**. Du sparar den i `C:\Temp` katalogen på den dator där du kör installations programmet. Ange följande kommando:  
+2. Kör Configuration Manager-installationen med hjälp av `/script` kommando rads alternativet. Du kan till exempel skapa en initierings fil för installations programmet **namnet ConfigMgrUnattend. ini**. Du sparar den i `C:\Temp` katalogen på den dator där du kör installations programmet. Ange följande kommando:  
 
     `setup.exe /script C:\temp\ConfigMgrUnattend.ini`  
 
@@ -380,7 +380,7 @@ Vissa kunder skapar anpassade rapporter i SQL Server Reporting Services. När de
 
 Plats databasen spårar var innehållsfilerna lagras på plats servern. Själva innehållsfilerna säkerhets kopie ras eller återställs inte som en del av säkerhets kopierings-och återställnings processen. Om du vill återställa innehållsfiler fullständigt återställer du innehålls biblioteket och paketets källfiler till den ursprungliga platsen. Det finns flera metoder för att återskapa innehållsfilerna. Den enklaste metoden är att återställa filerna från en fil system säkerhets kopia av plats servern.
 
-Om du inte har en fil system säkerhets kopia för paketets källfiler, kopierar eller hämtar du dem manuellt. Den här processen liknar när du ursprungligen skapade paketet. Kör följande fråga i SQL Server för att hitta paketets käll plats för alla paket och program: `SELECT * FROM v_Package`. Identifiera paketets käll plats genom att titta på de första tre tecknen i paket-ID: t. Om paketets ID exempelvis är CEN00001 är platskoden för källplatsen CEN. När du ska återställa paketkällfiler måste de återställas till den plats där de fanns innan felet inträffade.
+Om du inte har en fil system säkerhets kopia för paketets källfiler, kopierar eller hämtar du dem manuellt. Den här processen liknar när du ursprungligen skapade paketet. Kör följande fråga i SQL Server för att hitta paketets käll plats för alla paket och program: `SELECT * FROM v_Package` . Identifiera paketets käll plats genom att titta på de första tre tecknen i paket-ID: t. Om paketets ID exempelvis är CEN00001 är platskoden för källplatsen CEN. När du ska återställa paketkällfiler måste de återställas till den plats där de fanns innan felet inträffade.
 
 Om du inte har en fil system säkerhets kopia som innehåller innehålls biblioteket har du följande återställnings alternativ:  
 
@@ -406,7 +406,7 @@ Som en del av egenskaperna för tillståndsmigrering anger du de mappar som lagr
 
 ### <a name="regenerate-the-certificates-for-distribution-points"></a>Återskapa certifikatet för distributionsplatser
 
-När du har återställt en plats kan **Distmgr. log** ange följande post för en eller flera distributions platser: `Failed to decrypt cert PFX data`. Den här posten anger att distributions platsens certifikat data inte kan dekrypteras av platsen. Lös problemet genom att återskapa eller importera certifikatet för berörda distributions platser igen. Använd cmdleten [set-CMDistributionPoint](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmdistributionpoint) PowerShell.
+När du har återställt en plats kan **Distmgr. log** ange följande post för en eller flera distributions platser: `Failed to decrypt cert PFX data` . Den här posten anger att distributions platsens certifikat data inte kan dekrypteras av platsen. Lös problemet genom att återskapa eller importera certifikatet för berörda distributions platser igen. Använd cmdleten [set-CMDistributionPoint](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmdistributionpoint) PowerShell.
 
 ### <a name="update-certificates-used-for-cloud-based-distribution-points"></a>Uppdatera certifikat som används för molnbaserade distributions platser
 

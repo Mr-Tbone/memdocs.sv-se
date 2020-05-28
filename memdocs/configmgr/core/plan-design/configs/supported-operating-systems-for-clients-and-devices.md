@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 57c60fcdadf3e58b59d33ecf2753789122a38ecc
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: e9e0ec6df5f80b318cb78ed8cddc986b613230e1
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078693"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904534"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>OS-versioner som stöds för klienter och enheter för Configuration Manager
 
@@ -54,7 +54,7 @@ Om du behöver en användar princip i det här scenariot och godkänner eventuel
 
 - I version 1910 och senare använder du [klient inställningar](../../clients/deploy/configure-client-settings.md). Konfigurera följande inställning i **klient princip** gruppen: **Aktivera användar princip för flera**användarsessioner.<!-- 4737447 -->
 
-- I version 1906 använder du Configuration Manager SDK med [WMI-klassen SMS_PolicyAgentConfig Server](../../../develop/reference/core/clients/config/sms_policyagentconfig-server-wmi-class.md). Ange den nya `PolicyEnableUserPolicyOnTS` egenskapen till `true`.
+- I version 1906 använder du Configuration Manager SDK med [WMI-klassen SMS_PolicyAgentConfig Server](../../../develop/reference/core/clients/config/sms_policyagentconfig-server-wmi-class.md). Ange den nya `PolicyEnableUserPolicyOnTS` egenskapen till `true` .
 
 > [!Note]  
 > Du kan inte använda samhantering med en klient som kör Windows 10 Enterprise multi-session. <!-- SCCMDocs-pr#3950 -->
@@ -168,7 +168,7 @@ Hantera Windows CE enheter med Configuration Manager äldre klient för mobila e
 
 - Japanska  
 
-- Koreansk  
+- Koreanska  
 
 - Portugisiska (Brasilien)  
 
@@ -209,7 +209,7 @@ Mer information finns i [Distribuera klienter till Mac-datorer](../../clients/de
 > [!Important]  
 > Configuration Manager version 1902 släpper stöd för Linux och UNIX som en klient. Utfasningen presenterades av [version 1802](../changes/whats-new-in-version-1802.md#deprecation-announcement-for-linux-and-unix-client-support). Överväg Microsoft Azure hantering för hantering av Linux-servrar. Azure-lösningar har omfattande Linux-support som i de flesta fall överskrider Configuration Manager-funktioner, inklusive slut punkt till slut punkt för korrigerings hantering för Linux.
 
-Klient installations paketen för Linux och UNIX levereras inte med Configuration Manager mediet. Hämta **klienter för ytterligare operativ system** från [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=525184). Utöver klient installations paketen omfattar klient nedladdningen skriptet som hanterar installationen av klienten på varje dator.  
+Klient installations paketen för Linux och UNIX levereras inte med Configuration Manager mediet. Hämta **klienter för ytterligare operativ system** från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47719). Utöver klient installations paketen omfattar klient nedladdningen skriptet som hanterar installationen av klienten på varje dator.  
 
 ### <a name="requirements-and-limitations"></a>Krav och begränsningar
 
@@ -229,89 +229,89 @@ Följande versioner stöds med den angivna. tar-filen.
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 6,1 (Power)|CCM-Aix61ppc. &lt;bygge\>. tar|  
-|Version 7,1 (Power)|CCM-Aix71ppc. &lt;bygge\>. tar|  
+|Version 6,1 (Power)|CCM-Aix61ppc. &lt; bygge \> . tar|  
+|Version 7,1 (Power)|CCM-Aix71ppc. &lt; bygge \> . tar|  
 
 #### <a name="centos"></a>CentOS  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 #### <a name="debian"></a>Debian  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 8 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 8 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 8 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 8 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 #### <a name="hp-ux"></a>HP-UX  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 11iv3 IA64|CCM-HpuxB. 11.31-I64. &lt;bygge\>. tar|  
+|Version 11iv3 IA64|CCM-HpuxB. 11.31-I64. &lt; bygge \> . tar|  
 
 #### <a name="oracle-linux"></a>Oracle Linux  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 #### <a name="red-hat-enterprise-linux-rhel"></a>Red Hat Enterprise Linux (RHEL)  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 5 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 5 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 6 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 6 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 7 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 5 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 5 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 6 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 6 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 7 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 #### <a name="solaris"></a>Solaris  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 10 x86|CCM-Sol10x86. &lt;bygge\>. tar|  
-|Version 10-SPARC|CCM-Sol10sparc. &lt;bygge\>. tar|  
-|Version 11 x86|CCM-Sol11x86. &lt;bygge\>. tar|  
-|Version 11-SPARC|CCM-Sol11sparc. &lt;bygge\>. tar|  
+|Version 10 x86|CCM-Sol10x86. &lt; bygge \> . tar|  
+|Version 10-SPARC|CCM-Sol10sparc. &lt; bygge \> . tar|  
+|Version 11 x86|CCM-Sol11x86. &lt; bygge \> . tar|  
+|Version 11-SPARC|CCM-Sol11sparc. &lt; bygge \> . tar|  
 
 #### <a name="suse-linux-enterprise-server-sles"></a>SUSE Linux Enterprise Server (SLES)  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 10 SP1 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 10 SP1 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 11 SP1 x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 11 SP1 x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 12 x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 10 SP1 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 10 SP1 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 11 SP1 x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 11 SP1 x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 12 x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 #### <a name="ubuntu"></a>Ubuntu  
 
 |Version|TAR-fil|  
 |-|-|  
-|Version 10,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 10,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 12,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 12,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 14,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 14,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
-|Version 16,04 LTS x86|CCM-Universalx86. &lt;bygge\>. tar|  
-|Version 16,04 LTS x64|CCM-Universalx64. &lt;bygge\>. tar|  
+|Version 10,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 10,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 12,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 12,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 14,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 14,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
+|Version 16,04 LTS x86|CCM-Universalx86. &lt; bygge \> . tar|  
+|Version 16,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 
 ## <a name="on-premises-mdm"></a><a name="bkmk_OnpremOS"></a>Lokal MDM

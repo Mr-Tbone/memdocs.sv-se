@@ -10,12 +10,12 @@ ms.assetid: a4d8cda2-bc9b-4fb4-aa0d-23c31b4fc60b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 926d1483739b85f787ebc9e2a992ea7ed39633c2
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
-ms.translationtype: HT
+ms.openlocfilehash: 2523d06034f4a7effe769235cb5a4ede4df7e167
+ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722216"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83764126"
 ---
 # <a name="plan-for-bitlocker-management"></a>Planera för BitLocker-hantering
 
@@ -70,11 +70,11 @@ Tillåt andra personer i din organisation utanför Configuration Manager-konsole
 
 Låt användarna hjälpa sig att använda en enda nyckel för att låsa upp en BitLocker-krypterad enhet. När den här nyckeln används skapas en ny nyckel för enheten.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Om du vill skapa en princip för BitLocker-hantering behöver du rollen **Fullständig administratör** i Configuration Manager.
 
-- BitLocker-återställningsnyckeln kräver HTTPS för att kryptera återställnings nycklarna över nätverket från konfigurationen hantera klienten till hanterings platsen. Det finns två alternativ:
+- BitLocker-återställningsnyckeln kräver HTTPS för att kryptera återställnings nycklarna över nätverket från Configuration Manager-klienten till hanterings platsen. Det finns två alternativ:
 
   - HTTPS – Aktivera IIS-webbplatsen på hanterings platsen som är värd för återställnings tjänsten. Det här alternativet gäller endast för Configuration Manager version 2002.<!-- 5925660 -->
 
@@ -96,7 +96,7 @@ Låt användarna hjälpa sig att använda en enda nyckel för att låsa upp en B
 
 - Det användar konto som kör Portal installations skriptet måste ha SQL **sysadmin** -behörighet på plats databas servern. Under installationen anger skriptet inloggnings-, användar-och SQL-roll rättigheter för webb serverns dator konto. Du kan ta bort det här användar kontot från sysadmin-rollen när du har slutfört installationen av självbetjänings portalen och webbplatsen för administration och övervakning.
 
-- BitLocker-hantering stöds inte på virtuella datorer. Därför kanske vissa funktioner inte fungerar som förväntat på virtuella datorer. BitLocker-hanteringen kommer till exempel inte att starta krypteringen på fasta enheter av virtuella datorer. Ytterligare fasta enheter på virtuella datorer kan visas som kompatibla även om de inte är krypterade.
+- BitLocker-hantering stöds inte på virtuella datorer (VM) eller på Server operativ system. Därför kanske vissa funktioner inte fungerar som förväntat på virtuella datorer eller på Server operativ system. Till exempel på virtuella datorer startar BitLocker-hanteringen inte krypteringen på fasta enheter av virtuella datorer. Dessutom kan fasta enheter i virtuella datorer visas som kompatibla även om de inte är krypterade.
 
 > [!TIP]
 > Som standard krypterar steget **Aktivera BitLocker** endast *använt utrymme* på enheten. BitLocker-hanteringen använder *fullständig disk* kryptering. Konfigurera den här aktivitetssekvensen för att aktivera alternativet att **använda fullständig disk kryptering**. Mer information finns i avsnittet om [aktivitetssekvenser – aktivera BitLocker](../../osd/understand/task-sequence-steps.md#BKMK_EnableBitLocker).

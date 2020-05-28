@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d06bda9d07a53e022de27afc68f40f9ce706867f
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: fb13844dd05049b9186909884aa0c457a8cfacd9
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82076160"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428411"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-configuration-manager"></a>Funktioner i Technical Preview 1703 för Configuration Manager
 
@@ -35,13 +35,13 @@ Nu kan du distribuera licensierade appar till enheter samt användare. Beroende 
 |-|-|-|-|
 |Configuration Manager version|App har stöd för enhets licensiering?|Distributions samlings typ|Ansökan om licens|
 |Tidigare än 1702|Ja|Användare|Användar licens|
-|Tidigare än 1702|Inga|Användare|Användar licens|
+|Tidigare än 1702|Nej|Användare|Användar licens|
 |Tidigare än 1702|Ja|Enhet|Användar licens|
-|Tidigare än 1702|Inga|Enhet|Användar licens|
+|Tidigare än 1702|Nej|Enhet|Användar licens|
 |1702 och senare|Ja|Användare|Användar licens|
-|1702 och senare|Inga|Användare|Användar licens|
+|1702 och senare|Nej|Användare|Användar licens|
 |1702 och senare|Ja|Enhet|Enhets licens|
-|1702 och senare|Inga|Enhet|Användar licens|
+|1702 och senare|Nej|Enhet|Användar licens|
 
 
 ## <a name="direct-links-to-applications-in-software-center"></a>Direkt länkar till program i Software Center
@@ -97,7 +97,7 @@ I Azure Active Directory registrerar du Configuration Manager som ett webb progr
 
 ### <a name="use-the-wizard-to-configure-the-wsfb-cloud-service"></a>Använd guiden för att konfigurera moln tjänsten WSfB
 
-1. I-konsolen går du till **administrations** > **Översikt** > **Cloud Services hantering** > **Azure** > **Azure-tjänster**och väljer sedan **Konfigurera Azure-tjänster** för att starta **guiden Azure-tjänster**.
+1. I-konsolen går du till **administrations**  >  **Översikt**  >  **Cloud Services hantering**  >  **Azure**  >  **Azure-tjänster**och väljer sedan **Konfigurera Azure-tjänster** för att starta **guiden Azure-tjänster**.
 
 2. På sidan **Azure-tjänster** väljer du den tjänst som du vill konfigurera och klickar sedan på **Nästa**. Med den här för hands versionen kan endast WSfB konfigureras.
 
@@ -127,10 +127,10 @@ Du kan nu använda resten av [Current Branch innehåll](../../apps/deploy-use/ma
 ### <a name="modify-a-cloud-service-configuration"></a>Ändra en moln tjänst konfiguration
 Du kan visa och redigera egenskaperna för en moln tjänst för att ändra konfigurationen.
 
-I-konsolen går du till **administrations** > **Översikt** > **Cloud Services hantering** > **Azure** > **Azure-tjänster**och väljer sedan **Konfigurera Azure-tjänster**, väljer en moln tjänst och väljer sedan **Egenskaper**.
+I-konsolen går du till **administrations**  >  **Översikt**  >  **Cloud Services hantering**  >  **Azure**  >  **Azure-tjänster**och väljer sedan **Konfigurera Azure-tjänster**, väljer en moln tjänst och väljer sedan **Egenskaper**.
 
 ## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Konvertera från BIOS till UEFI under en uppgradering på plats
-Windows 10 Creators Update introducerar ett enkelt konverterings verktyg som automatiserar processen för att partitionera om hård disken för UEFI-aktiverad maskin vara och integrera konverterings verktyget i Windows 7 till Windows 10 uppgraderings process på plats. När du kombinerar det här verktyget med aktivitetssekvensen för uppgradering av operativ system och OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI, kan du konvertera datorerna från BIOS till UEFI under en uppgradering på plats till Windows 10 Creators Update. Mer information finns i avsnittet [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+Windows 10 Creators Update introducerar ett enkelt konverterings verktyg som automatiserar processen för att partitionera om hård disken för UEFI-aktiverad maskin vara och integrera konverterings verktyget i Windows 7 till Windows 10 uppgraderings process på plats. När du kombinerar det här verktyget med aktivitetssekvensen för uppgradering av operativ system och OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI, kan du konvertera datorerna från BIOS till UEFI under en uppgradering på plats till Windows 10 Creators Update. Mer information finns i avsnittet [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md#bkmk_ipu).
 
 ## <a name="collapsible-task-sequence-groups"></a>Komprimerbara aktivitetssekvenser
 Den här versionen ger möjlighet att expandera och minimera grupper av aktivitetssekvenser. Du kan expandera eller komprimera enskilda grupper eller expandera eller komprimera alla grupper samtidigt.
@@ -139,11 +139,11 @@ Den här versionen ger möjlighet att expandera och minimera grupper av aktivite
 ## <a name="client-settings-to-configure-windows-analytics-for-upgrade-readiness"></a>Klient inställningar för att konfigurera Windows Analytics för Uppgraderingsberedskap
 Från och med den här versionen kan du använda enhets klient inställningar för att förenkla konfigurationen av Windows-diagnostikdata som krävs för att använda Windows Analytics-lösningar som Uppgraderingsberedskap med Configuration Manager. Configuration Manager kan hämta data från Windows Analytics som kan ge värdefull insyn i miljöns aktuella tillstånd baserat på de Windows-diagnostikdata som rapporteras av klient datorerna. Windows-diagnostikdata rapporteras av klient datorer till Windows Diagnostic-tjänsten och sedan överförs relevanta data senare till Windows Analytics-lösningar som finns i en av organisationens OMS-arbetsytor. Uppgraderingsberedskap är en Windows Analytics-lösning som kan hjälpa dig att prioritera beslut om Windows-uppgraderingar för dina hanterade enheter.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - Du måste ha konfigurerat platsen så att den använder Uppgraderingsberedskap moln tjänsten.
 
 ### <a name="configure-windows-analytics-client-settings"></a>Konfigurera klient inställningar för Windows Analytics
-Om du vill konfigurera Windows Analytics går du till **Administration** > **klient inställningar**i Configuration Manager-konsolen, dubbelklickar på **skapa anpassade enhets klient inställningar** och kontrollerar sedan **Windows Analytics**.  
+Om du vill konfigurera Windows Analytics går du till **Administration**  >  **klient inställningar**i Configuration Manager-konsolen, dubbelklickar på **skapa anpassade enhets klient inställningar** och kontrollerar sedan **Windows Analytics**.  
 
 Konfigurera sedan följande efter att du har navigerat till fliken **Windows Analytics** -inställningar:
 - **Kommersiellt ID**  

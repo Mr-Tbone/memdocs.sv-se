@@ -10,16 +10,16 @@ ms.assetid: 9875c443-19bf-43a0-9203-3a741f305096
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dd2a8b3bfb7c4b8af277616c7eaed329bc143bb7
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 23cc7d0c642637a310f53280bafed6a2a28d2834
+ms.sourcegitcommit: 4174f7e485067812c29aea01a4767989ffdbb578
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711604"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83406677"
 ---
 # <a name="create-a-configuration-manager-lab-in-azure"></a>Skapa ett Configuration Manager labb i Azure
 
-*Gäller för: Configuration Manager (Technical Preview Branch)*
+*Gäller för: Configuration Manager (aktuell gren, Technical Preview-gren)*
 
 <!--3556017-->
 
@@ -32,15 +32,15 @@ Mer information finns i [Configuration Manager på Azure](../understand/configur
 
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Den här processen kräver en Azure-prenumeration där du kan skapa följande objekt: 
-- Två Standard_B2s virtuella datorer för domän-och MP-& DP-roller.
-- En Standard_B2ms virtuell dator för primär plats Server och SQL Database-Server.
+- Två Standard_B2s virtuella datorer för domänkontrollant, hanterings plats och distributions plats.
+- En Standard_B2ms virtuell dator för den primära plats servern och SQL Database-servern.
 - Standard_LRS lagrings konto
 
 > [!Tip]  
-> Se [pris Kalkylatorn för Azure](https://azure.microsoft.com/pricing/calculator/) för att hjälpa till att fastställa potentiella kostnader.  
+> Information om hur du fastställer potentiella kostnader finns i [pris Kalkylatorn för Azure](https://azure.microsoft.com/pricing/calculator/).  
 
 
 
@@ -71,9 +71,9 @@ Den här processen kräver en Azure-prenumeration där du kan skapa följande ob
     > [!Important]  
     > Följande inställningar krävs av Azure. Använd standardvärdena. Ändra inte dessa värden.  
     > 
-    > - plats för artefakter: platsen för skripten för den här mallen ** \_** <!-- https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sccm-technicalpreview/ -->  
+    > - ** \_ plats för artefakter**: platsen för skripten för den här mallen <!-- https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sccm-technicalpreview/ -->  
     >
-    > - artefakt platsens SAS-token: sasToken krävs för att få åtkomst till artefakt platsen ** \_**  
+    > - ** \_ artefakt platsens SAS-token**: sasToken krävs för att få åtkomst till artefakt platsen  
     > 
     > - **Plats**: platsen för alla resurser
 
@@ -84,9 +84,9 @@ Azure validerar inställningarna och påbörjar sedan distributionen. Kontrol le
 > [!NOTE]
 > Processen kan ta 2-4 timmar. Även om Azure Portal visar att distributionen lyckades, fortsätter konfigurations skripten att köras. Starta inte om de virtuella datorerna under processen.
 
-Om du vill se status för konfigurations skripten ansluter du `<prefix>PS1` till servern och visar följande fil: `%windir%\TEMP\ProvisionScript\PS1.json`. Om du ser alla steg som slutförda utförs processen.
+Om du vill se status för konfigurations skripten ansluter du till `<prefix>PS1` servern och visar följande fil: `%windir%\TEMP\ProvisionScript\PS1.json` . Om du ser alla steg som slutförda utförs processen.
 
-För att ansluta till de virtuella datorerna får du först från Azure Portal de offentliga IP-adresserna för varje virtuell dator. När du ansluter till den virtuella datorn är `contoso.com`domän namnet. Använd de autentiseringsuppgifter som du angav i distributions mal len. Mer information finns i [så här ansluter du och loggar in på en virtuell Azure-dator som kör Windows](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
+För att ansluta till de virtuella datorerna får du först från Azure Portal de offentliga IP-adresserna för varje virtuell dator. När du ansluter till den virtuella datorn är domän namnet `contoso.com` . Använd de autentiseringsuppgifter som du angav i distributions mal len. Mer information finns i [så här ansluter du och loggar in på en virtuell Azure-dator som kör Windows](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
 
 
 
@@ -96,13 +96,13 @@ Alla tre virtuella datorer har följande specifikationer:
 - 150 GB disk utrymme
 - Både en offentlig och en privat IP-adress. De offentliga IP-adresserna finns i en nätverks säkerhets grupp som endast tillåter fjärr skrivbords anslutningar på TCP-port 3389. 
 
-Prefixet som du angav i distributions mal len är prefixet för den virtuella datorns namn. Om du till exempel anger "contoso" som prefix är `contosoDC`domänkontrollantens dator namn.
+Prefixet som du angav i distributions mal len är prefixet för den virtuella datorns namn. Om du till exempel anger "contoso" som prefix är domänkontrollantens dator namn `contosoDC` .
 
 
 ### `<prefix>DC01`
 
 - Active Directory-domänkontrollant
-- Standard_B2s, som har två CPU och 4 GB minne
+- Standard_B2s, som har två processorer och 4 GB minne
 - Windows Server 2019 Data Center Edition
 
 #### <a name="windows-features-and-roles"></a>Windows-funktioner och Windows-roller
@@ -113,7 +113,7 @@ Prefixet som du angav i distributions mal len är prefixet för den virtuella da
 
 ### `<prefix>PS01`
 
-- Standard_B2ms, som har två CPU och 8 GB minne
+- Standard_B2ms, som har två processorer och 8 GB minne
 - Windows Server 2016 Data Center Edition
 - SQL Server
 - Windows 10 ADK med Windows PE 
@@ -127,7 +127,7 @@ Prefixet som du angav i distributions mal len är prefixet för den virtuella da
 
 ### `<prefix>DPMP01`
 
-- Standard_B2s, som har två CPU och 4 GB minne
+- Standard_B2s, som har två processorer och 4 GB minne
 - Windows Server 2019 Data Center Edition
 - Distributionsplats
 - Hanteringsplats

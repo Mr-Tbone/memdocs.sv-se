@@ -10,12 +10,12 @@ ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 8889c0ee306eaaf682563b2e8e72d5482054d1c7
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7e4e84b55c929dd878cb0720b3f61dfceedcf449
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710792"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82904098"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Förbereda Windows-servrar för att hantera Configuration Manager
 
@@ -98,7 +98,7 @@ Följande Windows-roller krävs för att stödja vissa funktioner, t. ex. progra
 ##  <a name="iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a>Filtrering av IIS-begäranden för distributions platser  
 Som standard använder IIS begärandefiltrering för att blockera flera filnamnstillägg och mapplatser från åtkomst via HTTP- eller HTTPS-kommunikation. På en distributions plats förhindrar detta att klienter hämtar paket som har blockerade tillägg eller mappar.  
 
-När dina paket källfiler har tillägg som blockeras i IIS av din konfiguration för begär ande filtrering, måste du konfigurera begär ande filtrering så att de tillåts. Detta gör du genom [att redigera funktionen för filtrering av begär Anden](https://technet.microsoft.com/library/hh831621.aspx) i IIS-hanteraren på dina distributions plats datorer.  
+När dina paket källfiler har tillägg som blockeras i IIS av din konfiguration för begär ande filtrering, måste du konfigurera begär ande filtrering så att de tillåts. Detta gör du genom [att redigera funktionen för filtrering av begär Anden](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)) i IIS-hanteraren på dina distributions plats datorer.  
 
 Dessutom används följande fil namns tillägg av Configuration Manager för paket och program. Kontrol lera att konfigurationerna för begär ande filtrering inte blockerar följande fil namns tillägg:  
 
@@ -136,4 +136,4 @@ Källfiler för en program distribution kan till exempel innehålla en mapp med 
 - HEAD
 - PROPFIND
 
-Mer information finns i [Konfigurera filtrering av begär anden i IIS](https://technet.microsoft.com/library/hh831621.aspx#Verbs). 
+Mer information finns i [Konfigurera filtrering av begär anden i IIS](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)#http-verbs). 

@@ -10,12 +10,12 @@ ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 590f3adec168fe6d7f4718505bd6f7d6b9f7c25f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: fe570eeedc2c050bdaf27903d30ddffff63109d9
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712535"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83879149"
 ---
 # <a name="creating-custom-report-models-for-configuration-manager-in-sql-server-reporting-services"></a>Skapa anpassade rapport modeller för Configuration Manager i SQL Server Reporting Services
 
@@ -68,7 +68,7 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
 4.  I dialogrutan **Anslutningshanteraren** anger du följande anslutningsegenskaper för datakällan:  
 
-    -   **Server namn**: Ange namnet på Configuration Manager plats databas servern eller Välj den i listan. Om du arbetar med en namngiven instans i stället för standard instansen skriver &lt; *databas server*>\\&lt;*instans namn*>.  
+    -   **Server namn**: Ange namnet på Configuration Manager plats databas servern eller Välj den i listan. Om du arbetar med en namngiven instans i stället för standard instansen skriver du &lt; *databas server* > \\ &lt; *instans namn*>.  
 
     -   Välj **Använd Windows-autentisering**.  
 
@@ -136,17 +136,17 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
 ###  <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a><a name="BKMK_DeployReportModel"></a>Distribuera den anpassade rapport modellen till Configuration Manager  
 
-1. Leta reda på den mapp där du sparade det skapade rapportmodellprojektet. Till exempel%*USERPROFILE*% \ Documents\Visual Studio 2008 \\\*&lt;Projects projekt namn\>.*  
+1. Leta reda på den mapp där du sparade det skapade rapportmodellprojektet. Till exempel%*USERPROFILE*% \ Documents\Visual Studio 2008 \ \\ * &lt; Projects projekt namn \> .*  
 
 2. Kopiera följande filer från rapportmodellprojektmappen till en tillfällig mapp på datorn:  
 
-   -   *Modell namn\> &lt;* **.dsv**  
+   -   * &lt; Modell namn \> * **. DSV**  
 
-   -   *Modell namn\> &lt;* **.smdl**  
+   -   * &lt; Modell namn \> * **. SMDL**  
 
 3. Öppna ovanstående filer i en textredigerare, till exempel Notepad.  
 
-4. Leta upp den första raden i filen i filen _ &lt;Model name\>_**. DSV**och Läs följande:  
+4. Leta upp den första raden i filen i filen _ &lt; Model name \> _**. DSV**och Läs följande:  
 
     `<DataSourceView xmlns="https://schemas.microsoft.com/analysisservices/2003/engine">`
 
@@ -156,9 +156,9 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
 5. Kopiera allt filinnehåll till Urklipp i Windows.  
 
-6. Stäng fil _ &lt;modellens namn\>_**. DSV**.  
+6. Stäng fil _ &lt; modellens namn \> _**. DSV**.  
 
-7. Leta upp de tre sista raderna i filen i fil _ &lt;modell namnet\>_**. SMDL**, som visas på följande sätt:  
+7. Leta upp de tre sista raderna i filen i fil _ &lt; modell namnet \> _**. SMDL**, som visas på följande sätt:  
 
     `</Entity>`  
 
@@ -166,11 +166,11 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
     `</SemanticModel>`  
 
-8. Klistra in innehållet i fil _ &lt;modell namnet\>_**. DSV** direkt före den sista raden i filen (**&lt;SemanticModel\>**).  
+8. Klistra in innehållet i fil _ &lt; modell namnet \> _**. DSV** direkt före den sista raden i filen (** &lt; SemanticModel \> **).  
 
-9. Spara och Stäng fil _ &lt;modell namnet\>_**. SMDL**.  
+9. Spara och Stäng fil _ &lt; modell namnet \> _**. SMDL**.  
 
-10. Kopiera fil _ &lt;modell\>namnet_**. SMDL** till mappen *% ProgramFiles%* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other på plats servern för Configuration Manager.  
+10. Kopiera fil _ &lt; modell namnet \> _**. SMDL** till mappen *% ProgramFiles%* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other på plats servern för Configuration Manager.  
 
     > [!IMPORTANT]  
     >  När du har kopierat rapport modell filen till Configuration Manager plats Server måste du avsluta och starta om Configuration Manager-konsolen innan du kan använda rapport modellen i **guiden Skapa rapport**.  
@@ -213,7 +213,7 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
 4.  I dialogrutan **Anslutningshanteraren** anger du följande anslutningsegenskaper för datakällan:  
 
-    -   **Server namn**: Ange namnet på Configuration Manager plats databas servern eller Välj den i listan. Om du arbetar med en namngiven instans i stället för standard instansen skriver &lt; *databas server*>\\&lt;*instans namn*>.  
+    -   **Server namn**: Ange namnet på Configuration Manager plats databas servern eller Välj den i listan. Om du arbetar med en namngiven instans i stället för standard instansen skriver du &lt; *databas server* > \\ &lt; *instans namn*>.  
 
     -   Välj **Använd Windows-autentisering**.  
 
@@ -246,7 +246,7 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
    - **v_GS_OPERATING_SYSTEM (dbo)**  
 
-     När du har valt varje vy **>** klickar du på för att överföra objektet till listan **inkluderade objekt** .  
+     När du har valt varje vy klickar **>** du på för att överföra objektet till listan **inkluderade objekt** .  
 
    > [!TIP]  
    >  Du kan sortera objekten i alfabetisk ordning genom att klicka på rubriken **Namn** överst i listan **Tillgängliga objekt** , så blir det lättare att hitta objektet.  
@@ -379,17 +379,17 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
 #### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>To deploy the custom report model to Configuration Manager  
 
-1. Leta reda på den mapp där du sparade det skapade rapportmodellprojektet. Till exempel%*USERPROFILE*% \ Documents\Visual Studio 2008 \\\*&lt;Projects projekt namn\>.*  
+1. Leta reda på den mapp där du sparade det skapade rapportmodellprojektet. Till exempel%*USERPROFILE*% \ Documents\Visual Studio 2008 \ \\ * &lt; Projects projekt namn \> .*  
 
 2. Kopiera följande filer från rapportmodellprojektmappen till en tillfällig mapp på datorn:  
 
-   -   *Modell namn\> &lt;* **.dsv**  
+   -   * &lt; Modell namn \> * **. DSV**  
 
-   -   *Modell namn\> &lt;* **.smdl**  
+   -   * &lt; Modell namn \> * **. SMDL**  
 
 3. Öppna ovanstående filer i en textredigerare, till exempel Notepad.  
 
-4. Leta upp den första raden i filen i filen _ &lt;Model name\>_**. DSV**och Läs följande:  
+4. Leta upp den första raden i filen i filen _ &lt; Model name \> _**. DSV**och Läs följande:  
 
     `<DataSourceView xmlns="https://schemas.microsoft.com/analysisservices/2003/engine">`
 
@@ -399,9 +399,9 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
 5. Kopiera allt filinnehåll till Urklipp i Windows.  
 
-6. Stäng fil _ &lt;modellens namn\>_**. DSV**.  
+6. Stäng fil _ &lt; modellens namn \> _**. DSV**.  
 
-7. Leta upp de tre sista raderna i filen i fil _ &lt;modell namnet\>_**. SMDL**, som visas på följande sätt:  
+7. Leta upp de tre sista raderna i filen i fil _ &lt; modell namnet \> _**. SMDL**, som visas på följande sätt:  
 
     `</Entity>`  
 
@@ -409,11 +409,11 @@ Exempel rapport modeller ingår i Configuration Manager, men du kan även defini
 
     `</SemanticModel>`  
 
-8. Klistra in innehållet i fil _ &lt;modell namnet\>_**. DSV** direkt före den sista raden i filen (**&lt;SemanticModel\>**).  
+8. Klistra in innehållet i fil _ &lt; modell namnet \> _**. DSV** direkt före den sista raden i filen (** &lt; SemanticModel \> **).  
 
-9. Spara och Stäng fil _ &lt;modell namnet\>_**. SMDL**.  
+9. Spara och Stäng fil _ &lt; modell namnet \> _**. SMDL**.  
 
-10. Kopiera fil _ &lt;modell\>namnet_**. SMDL** till mappen *% ProgramFiles%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other på Configuration Manager plats Server.  
+10. Kopiera fil _ &lt; modell namnet \> _**. SMDL** till mappen *% ProgramFiles%* \Microsoft Endpoint Manager\AdminConsole\XmlStorage\Other på Configuration Manager plats Server.  
 
     > [!IMPORTANT]  
     >  När du har kopierat rapport modell filen till Configuration Manager plats Server måste du avsluta och starta om Configuration Manager-konsolen innan du kan använda rapport modellen i **guiden Skapa rapport**.  

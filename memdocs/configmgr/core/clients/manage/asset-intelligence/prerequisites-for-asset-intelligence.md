@@ -10,12 +10,12 @@ ms.assetid: 23ab4f94-7bfe-436e-8a6a-029409a2730c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: dfed0f2c2e8149abb05d4b21047d4d494f034e53
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a7f87336c35c236a9e07d531469d65958d5d14e0
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714131"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906587"
 ---
 # <a name="prerequisites-for-asset-intelligence-in-configuration-manager"></a>Krav för Tillgångsinformation i Configuration Manager
 
@@ -42,4 +42,4 @@ Tillgångsinformation i Configuration Manager har externa beroenden och beroende
 |Beroenden för klientagent för maskinvaruinventering|För att det ska gå att samla in de inventeringsdata som krävs för vissa tillgångsinformationsrapporter måste klientagenten för maskinvaruinventering vara aktiverad. Dessutom måste vissa rapportklasser för maskinvaruinventering som tillgångsinformationsrapporterna är beroende av vara aktiverade på primära platsservrar.<br /><br /> Information om hur du aktiverar klientagent för maskinvaruinventering finns i [så här utökar du maskin varu inventeringen](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).|  
 |Beroenden för klientagenten för programmätare|Ett antal programvarurapporter i Tillgångsinformation är beroende av klientagenten för programmätare för att tillhandahålla data. Information om hur du aktiverar klient agenten för program varu avläsning finns i [övervaka app-användning med avläsning av program vara](../../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).<br /><br /> Följande tillgångsinformationsrapporter är beroende av klientagenten för programmätare för att tillhandahålla data:<br /><br /> – Program vara 07A – nyligen använda körbara filer efter antal datorer<br />– Program vara 07B – datorer som nyligen har använt en angiven körbar fil<br />– Program vara 07C – nyligen använda körbara filer på en speciell dator<br />– Program vara 08A – nyligen använda körbara filer per antal användare<br />– Program vara 08B – användare som nyligen har använt en angiven körbar fil<br />– Program vara 08C – nyligen använda körbara filer av en angiven användare|  
 |Krav för rapportklasser för maskinvaruinventering i Tillgångsinformation|Tillgångsinformation rapporter i Configuration Manager är beroende av vissa rapporterings klasser för maskin varu inventering. Rapportklasserna för maskinvaruinventering måste aktiveras och klienterna måste rapportera maskinvaruinventering baserat på dessa klasser för att de associerade tillgångsinformationsrapporterna ska innehåller data. Du kan aktivera följande rapportklasser för maskinvaruinventering för att uppfylla kraven för tillgångsinformationsrapporterna:<br /><br /> – SMS_SystemConsoleUsage<sup>1</sup><br />– SMS_SystemConsoleUser<sup>1</sup><br />-SMS_InstalledSoftware<br />-SMS_AutoStartSoftware<br />-SMS_BrowserHelperObject<br />-Win32_USBDevice<br />-SMS_InstalledExecutable<br />-SMS_SoftwareShortcut<br />– Program<br />– Produkt<br />-SMS_SoftwareTag<br /><br /> <sup>1</sup> Rapportklasserna **SMS_SystemConsoleUsage** och **SMS_SystemConsoleUser** för maskinvarurapportering i Tillgångsinformation är aktiverade som standard.<br /><br /> Du kan redigera rapport klasserna Tillgångsinformation maskin varu inventering i Configuration Manager-konsolen, på arbets ytan **till gångar och efterlevnad** , när du klickar på noden **tillgångsinformation** . Mer information finns i avsnittet [aktivera tillgångsinformation maskin varu inventerings rapporterings klasser](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md#BKMK_EnableAssetIntelligence) i avsnittet [Konfigurera tillgångsinformation](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) .|  
-|Rapporteringstjänstpunkt|Platssystemrollen för Reporting Services-platsen måste installeras innan rapporter för programvaruuppdateringar kan visas. Mer information om hur du skapar en Reporting Services-plats finns i [Konfigurera rapportering i Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=232661).|  
+|Rapporteringstjänstpunkt|Platssystemrollen för Reporting Services-platsen måste installeras innan rapporter för programvaruuppdateringar kan visas. Mer information om hur du skapar en repor ting Services-plats finns i [Konfigurera rapportering](../../../servers/manage/configuring-reporting.md).|  

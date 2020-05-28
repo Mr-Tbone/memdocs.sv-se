@@ -10,12 +10,12 @@ ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f38b8662d4d7b5e7897d0c43560a5e2a4672eee6
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ffee9d851f00bcac5ed7ba562bdc9db8e0fa2767
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720746"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903945"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Uppdateringar och underhåll för Configuration Manager
 
@@ -60,11 +60,13 @@ Följande versioner av Configuration Manager som stöds är för närvarande til
 
 | Version | Tillgänglighetsdatum | [Stöds till och med](current-branch-versions-supported.md) | Baslinje | Uppdatering i konsolen |  
 |-------------|-----------|------------|--------------|------------------------|  
-| [**2002**](../../plan-design/changes/whats-new-in-version-2002.md)<br /> (5.00.8968) | Maj 2020 | 1 oktober 2021 | Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup> | Ja |
-| [**1910**](../../plan-design/changes/whats-new-in-version-1910.md)<br /> (5.00.8913) | 29 november 2019 | Den 29 maj, 2021 | Inga | Ja |
-| [**1906**](../../plan-design/changes/whats-new-in-version-1906.md)<br /> (5.00.8853) | 26 juli 2019 | 26 januari 2021 | Inga | Ja |
+| [**2002**](../../plan-design/changes/whats-new-in-version-2002.md)<br /> (5.00.8968) | Den 1 april 2020 | 1 oktober 2021 | Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup> | Ja |
+| [**1910**](../../plan-design/changes/whats-new-in-version-1910.md)<br /> (5.00.8913) | 29 november 2019 | Den 29 maj, 2021 | Nej | Ja |
+| [**1906**](../../plan-design/changes/whats-new-in-version-1906.md)<br /> (5.00.8853) | 26 juli 2019 | 26 januari 2021 | Nej | Ja |
 | [**1902**](../../plan-design/changes/whats-new-in-version-1902.md)<br /> (5.00.8790) | 27 mars 2019 | 27 september 2020 | Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup> | Ja |
-| [**1810**](../../plan-design/changes/whats-new-in-version-1810.md)<br /> (5.00.8740) | 27 november 2018 | Den 1 december 2020 | Inga | Ja |
+| [**1810**](../../plan-design/changes/whats-new-in-version-1810.md)<br /> (5.00.8740) | 27 november 2018 | Den 1 december 2020 | Nej | Ja |
+
+**Tillgänglighets datumet** är när [tidig uppdaterings ringen](checklist-for-installing-update-2002.md#early-update-ring) släpps. Du kommer att få ett bas linje medium tillgängligt i Volume licens Service Center när uppdateringen är globalt tillgänglig.
 
 <a name="bkmk_note1"></a>
 
@@ -75,7 +77,7 @@ Följande versioner av Configuration Manager som stöds är för närvarande til
 > - System Center 2016 Data Center
 > - System Center 2016 standard  
 >
-> Du kan till exempel söka i VLSC `System Center Config Mgr (current branch)`efter. Hitta bas linje mediet i listan med filer och ladda ned för den versionen.  
+> Du kan till exempel söka i VLSC efter `System Center Config Mgr (current branch)` . Hitta bas linje mediet i listan med filer och ladda ned för den versionen.  
 
 #### <a name="historical-versions"></a>Historiska versioner
 
@@ -83,16 +85,16 @@ I följande tabell visas tidigare versioner av Configuration Manager aktuella gr
 
 | Version | Tillgänglighetsdatum | Stöds till och med | Baslinje | Uppdatering i konsolen |  
 |-------------|-----------|------------|--------------|------------------------|  
-| **1806** <br /> (5.00.8692) | 31 juli 2018 | 31 januari 2020 | Inga | Ja |
+| **1806** <br /> (5.00.8692) | 31 juli 2018 | 31 januari 2020 | Nej | Ja |
 | **1802** <br /> (5.00.8634) | Den 22 mars 2018 | Den 22 september 2019 | Ja | Ja |
-| **1710** <br /> (5.00.8577) | 20 november 2017 | 20 maj, 2019 | Inga | Ja |
-| **1706** <br /> (5.00.8540) | 31 juli 2017 | 31 juli 2018 | Inga | Ja |
+| **1710** <br /> (5.00.8577) | 20 november 2017 | 20 maj, 2019 | Nej | Ja |
+| **1706** <br /> (5.00.8540) | 31 juli 2017 | 31 juli 2018 | Nej | Ja |
 | **1702** <br /> (5.00.8498) | 27 mars 2017 | 27 mars 2018 | Ja | Ja |
-| **1610** <br /> (5.00.8458) | 18 november 2016 | 18 november 2017 | Inga | Ja |
-| **1606** <br /> (5.00.8412.1000) | Den 22 juli 2016 | Den 22 juli 2017 | Inga | Ja |
-| **1606 med KB3186654** <br />5.00.8412.1307) | 12 oktober 2016 | 12 oktober 2017 | Ja | Inga |
-| **1602** <br /> (5.00.8355) | 11 mars 2016 | 11 mars 2017 | Inga | Ja |
-| **1511** <br /> (5.00.8325) | 8 december 2015 | 8 december 2016 | Ja | Inga |  
+| **1610** <br /> (5.00.8458) | 18 november 2016 | 18 november 2017 | Nej | Ja |
+| **1606** <br /> (5.00.8412.1000) | Den 22 juli 2016 | Den 22 juli 2017 | Nej | Ja |
+| **1606 med KB3186654** <br />5.00.8412.1307) | 12 oktober 2016 | 12 oktober 2017 | Ja | Nej |
+| **1602** <br /> (5.00.8355) | 11 mars 2016 | 11 mars 2017 | Nej | Ja |
+| **1511** <br /> (5.00.8325) | 8 december 2015 | 8 december 2016 | Ja | Nej |  
 
 #### <a name="how-to-check-the-version"></a>Kontrol lera versionen
 

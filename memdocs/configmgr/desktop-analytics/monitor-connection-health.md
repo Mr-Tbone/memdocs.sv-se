@@ -10,12 +10,13 @@ ms.assetid: 1f4e26f7-42f2-40c8-80cf-efd405349c6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 37555c6b60b0d2c18096c2778e9a077baeb9143f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.reviewer: acabello
+ms.openlocfilehash: fdc15860f2d093a4c9c61b787ba0b780051d3f3d
+ms.sourcegitcommit: 97fbb7db14b0c4049c0fe3a36ee16a5c0cf3407a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714544"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83864879"
 ---
 # <a name="monitor-connection-health"></a>Övervaka anslutningsstatus
 
@@ -103,6 +104,9 @@ Enheten har följande attribut:
 Configuration Manager identifierar ett eller flera blockerande problem som förhindrar enhets registrering. Mer information finns i listan över [enhets egenskaper för Skriv bords analys i Configuration Manager](#bkmk_config-issues).  
 
 Configuration Manager-klienten är till exempel inte minst version 1902 (5.0.8790). Uppdatera klienten till den senaste versionen. Överväg att aktivera automatisk klient uppgradering för Configuration Managers platsen. Mer information finns i [Uppgradera klienter](../core/clients/manage/upgrade/upgrade-clients.md#automatic-client-upgrade).  
+
+> [!TIP]
+> Det finns ett känt problem med den utökade säkerhets uppdateringen från april 2020 (ESU) för Windows 7 som orsakar att enheter rapporterar felet. Mer information finns i [versions anteckningar](../core/servers/deploy/install/release-notes.md#dawin7-diagtrack).<!-- 7283186 -->
 
 Från och med version 2002 kan du enklare identifiera konfigurations problem för klientens proxyserver på två områden:
 
@@ -213,7 +217,7 @@ Annars kan det Visa något av följande fel:
 
 - Det går inte att konfigurera SetRequestAllAppraiserVersions (Device app Compatibility data insamling). Kontrol lera loggen för undantags informationen  
 
-- Det går inte att skriva RequestAllAppraiserVersions till `HKLM:\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\AppCompatFlags\Appraiser`register nyckeln. Kontrol lera behörigheter  
+- Det går inte att skriva RequestAllAppraiserVersions till register nyckeln `HKLM:\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\AppCompatFlags\Appraiser` . Kontrol lera behörigheter  
 
 Kontrol lera behörigheterna för den här register nyckeln. Kontrol lera att det lokala system kontot har åtkomst till den här nyckeln för att Configuration Manager-klienten ska ställas in.  
 
@@ -228,7 +232,7 @@ Installera den senaste kompatibilitetsrapporten. Mer information finns i [Compat
 
 ### <a name="appraiser-version"></a>Utbedömnings version
 
-Den här egenskapen visar den aktuella versionen av komponenten för bedömning på enheten. Den visar fil versionen på `%windir%\System32\appraiser.dll`, utan decimal tecken. Fil version 10.0.17763 visas till exempel som 10017763.
+Den här egenskapen visar den aktuella versionen av komponenten för bedömning på enheten. Den visar fil versionen på `%windir%\System32\appraiser.dll` , utan decimal tecken. Fil version 10.0.17763 visas till exempel som 10017763.
 
 ### <a name="last-successful-full-run-of-appraiser"></a>Senaste lyckade körning av bedömare
 
@@ -248,7 +252,7 @@ Om det inte lyckas kan det Visa något av följande fel:
 
 Mer information hittar du i M365AHandler. log på klienten.
 
-Sök efter följande fil: `%windir%\System32\CompatTelRunner.exe`. Om den inte finns installerar du om de [uppdateringar](enroll-devices.md#update-devices)som krävs. Kontrol lera att ingen annan system komponent tar bort den här filen, till exempel en grup princip eller en tjänst för program mot skadlig kod.
+Sök efter följande fil: `%windir%\System32\CompatTelRunner.exe` . Om den inte finns installerar du om de [uppdateringar](enroll-devices.md#update-devices)som krävs. Kontrol lera att ingen annan system komponent tar bort den här filen, till exempel en grup princip eller en tjänst för program mot skadlig kod.
 
 Om filen M365AHandler. log på klienten innehåller något av följande fel:
 
@@ -299,7 +303,7 @@ Om det inte lyckas kan det Visa något av följande fel:
 
 Mer information hittar du i M365AHandler. log på klienten.
 
-Sök efter följande fil: `%windir%\System32\DeviceCensus.exe`. Om den inte finns installerar du om de [uppdateringar](enroll-devices.md#update-devices)som krävs. Kontrol lera att ingen annan system komponent tar bort den här filen, till exempel en grup princip eller en tjänst för program mot skadlig kod.
+Sök efter följande fil: `%windir%\System32\DeviceCensus.exe` . Om den inte finns installerar du om de [uppdateringar](enroll-devices.md#update-devices)som krävs. Kontrol lera att ingen annan system komponent tar bort den här filen, till exempel en grup princip eller en tjänst för program mot skadlig kod.
 
 ### <a name="windows-diagnostic-endpoint-connectivity"></a>Anslutning till Windows diagnostisk slut punkt
 
@@ -356,9 +360,9 @@ Om den här kontrollen lyckas konfigureras enheten korrekt med ett kommersiellt 
 
 Annars kan det Visa något av följande fel:
 
-- Det går inte att skriva CommercialId till `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`register nyckeln. Kontrol lera behörigheter  
+- Det går inte att skriva CommercialId till register nyckeln `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection` . Kontrol lera behörigheter  
 
-- Det går inte att uppdatera CommercialId i `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`register nyckeln. Kontrol lera loggen för undantags informationen  
+- Det går inte att uppdatera CommercialId i register nyckeln `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection` . Kontrol lera loggen för undantags informationen  
 
 - Ange rätt CommercialId-värde vid`HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`  
 
@@ -393,7 +397,7 @@ Annars kan det Visa något av följande fel:
 
 - Det går inte att söka efter enhets namnet som ska skickas till Microsoft som en del av Windows-diagnostikdata. Kontrol lera loggen för undantags informationen  
 
-- Det går inte att skriva AllowDeviceNameInTelemetry `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`till register nyckeln. Kontrol lera behörigheter  
+- Det går inte att skriva AllowDeviceNameInTelemetry till register nyckeln `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection` . Kontrol lera behörigheter  
 
 Mer information hittar du i M365AHandler. log på klienten.  
 
@@ -409,6 +413,9 @@ Om den här kontrollen lyckas konfigureras DiagTrack-komponenten korrekt på enh
 Annars kan det Visa något av följande fel:
 
 - Komponenten för anslutna användar upplevelser och telemetri (DiagTrack. dll) är inaktuell. Kontrol lera krav  
+
+    > [!TIP]
+    > Det finns ett känt problem med den utökade säkerhets uppdateringen från april 2020 (ESU) för Windows 7 som orsakar att enheter rapporterar felet. Mer information finns i [versions anteckningar](../core/servers/deploy/install/release-notes.md#dawin7-diagtrack).<!-- 7283186 -->
 
 - Det går inte att hitta komponenten för anslutna användar upplevelser och telemetri (DiagTrack. dll). Kontrol lera krav  
 
@@ -426,7 +433,7 @@ Kontrol lera att tjänsten för **anslutna användar upplevelser och telemetri**
 
 ### <a name="diagtrack-version"></a>DiagTrack-version
 
-Den här egenskapen visar den aktuella versionen av komponenten ansluten användar upplevelse och telemetri på enheten. Den visar fil versionen på `%windir%\System32\diagtrack.dll`, utan decimal tecken. Fil version 10.0.10586 visas till exempel som 10010586.
+Den här egenskapen visar den aktuella versionen av komponenten ansluten användar upplevelse och telemetri på enheten. Den visar fil versionen på `%windir%\System32\diagtrack.dll` , utan decimal tecken. Fil version 10.0.10586 visas till exempel som 10010586.
 
 ### <a name="sqm-id-retrieval"></a>Hämtning av SQM-ID
 

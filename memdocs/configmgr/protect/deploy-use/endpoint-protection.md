@@ -10,12 +10,12 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b74a8c1daff31a8ffca8a38e6449aeeef1bb9b2d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 5bdfd566682156e39e1dbed7c55af85b20a78671
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81715650"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906686"
 ---
 # <a name="endpoint-protection"></a>Slutpunktsskydd
 
@@ -92,7 +92,7 @@ Endpoint Protection hanterar och övervakar Microsoft Defender Avancerat skydd (
 ## <a name="endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Endpoint Protection-klienten för Mac-datorer och Linux-servrar  
 
 > [!Important]  
-> Stöd för System Center Endpoint Protection (SCEP) för Mac och Linux (alla versioner) upphör den 31 december 2018. Tillgänglighet för nya virus definitioner för SCEP för Mac och SCEP för Linux kan komma att upphöra efter Supportens slut. Mer information finns i [blogg inlägget End of support](https://go.microsoft.com/fwlink/?linkid=870182).  
+> Stöd för System Center Endpoint Protection (SCEP) för Mac och Linux (alla versioner) upphör den 31 december 2018. Tillgänglighet för nya virus definitioner för SCEP för Mac och SCEP för Linux kan komma att upphöra efter Supportens slut. Mer information finns i [blogg inlägget End of support](https://techcommunity.microsoft.com/t5/configuration-manager-blog/end-of-support-for-scep-for-mac-and-scep-for-linux-on-december/ba-p/286257).  
 
  I System Center Endpoint Protection ingår en Endpoint Protection-klient för Linux och Mac-datorer. Dessa klienter levereras inte med Configuration Manager. Ladda ned följande produkter från [Microsoft Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter/default.aspx):  
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 88234bb3117850bc3280242671ae459308a5262e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d8c1cd6610bd09b2714951d8a755770b6347b2f6
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714845"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82905233"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-configuration-manager"></a>Funktioner i Technical Preview 1805 för Configuration Manager
 
@@ -97,7 +97,7 @@ Configuration Manager migrerar inte befintliga klassiska moln distributions plat
 > Den här funktionen aktiverar inte stöd för Azure Cloud Service-leverantörer (CSP). Distributions plats distributionen i Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services).  
 
 
-### <a name="prerequisites"></a>Krav  
+### <a name="prerequisites"></a>Förutsättningar  
 - Integrering med [Azure AD](../clients/deploy/deploy-clients-cmg-azure.md). Identifiering av Azure AD-användare krävs inte.  
 
 - Samma [krav för en moln distributions plats](../plan-design/hierarchy/use-a-cloud-based-distribution-point.md#bkmk_requirements), förutom för Azures hanterings certifikat.  
@@ -164,10 +164,8 @@ När du övergår till den här arbets belastningen kan du fortfarande distribue
 
 Windows Server med låg extra fördröjning i bakgrunds transport (LEDBAT) är en funktion i Windows Server som hjälper dig att hantera nätverks överföringar i bakgrunden. För distributions platser som körs på versioner av Windows Server som stöds kan du aktivera ett alternativ för att justera nätverks trafiken. Klienter använder bara nätverks bandbredd när den är tillgänglig. 
 
-Mer information om Windows-LEDBAT finns i blogg inlägget [nya transport förskott](https://blogs.technet.microsoft.com/networking/2016/07/18/announcing-new-transport-advancements-in-the-anniversary-update-for-windows-10-and-windows-server-2016/) .
 
-
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - En distributions plats på Windows Server, version 1709.  
 
 - Det finns ingen klient förutsättning.<!--SCCMDocs issue 699-->  
@@ -192,7 +190,7 @@ Följande skärm bild är en del av instrument panelen för moln hantering som v
 Den här funktionen omfattar även **CMG-anslutnings analys** för verifiering i real tid för att under lätta fel sökningen. I konsol verktyget kontrol leras tjänstens aktuella status och kommunikations kanalen genom CMG anslutnings punkt till alla hanterings platser som tillåter CMG-trafik.
 
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - En aktiv [Cloud Management Gateway](../clients/manage/cmg/plan-cloud-management-gateway.md) som används av Internetbaserade klienter.  
 
 - Den webbplats som publicerats till [Azure-tjänster](../servers/deploy/configure/azure-services-wizard.md) för moln hantering.  
@@ -248,7 +246,7 @@ När du högerklickar på en speciell enhet kan du också pivotera vyn för den 
 - Aktiva anslutningar
 - Uppdateringar som saknas
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - Mål klienterna måste uppdateras till den senaste versionen.  
 
 - Configuration Manager-administratören måste ha behörighet för att köra skript. Mer information finns i [säkerhets roller för skript](../../apps/deploy-use/create-deploy-scripts.md#bkmk_ScriptRoles).  
@@ -298,7 +296,7 @@ En arbets grupp eller Azure AD-ansluten klient kan ladda ned innehåll via en s�
 En Azure AD-ansluten eller en [hybrid Azure AD-enhet](/azure/active-directory/devices/concept-azure-ad-join-hybrid) utan en Azure AD-användare som är inloggad kan på ett säkert sätt kommunicera med sin tilldelade plats. Den molnbaserade enhets identiteten räcker nu för att autentisera med CMG och hanterings platsen.  
 
 
-### <a name="prerequisites"></a>Krav  
+### <a name="prerequisites"></a>Förutsättningar  
 
 - En hanterings plats som kon figurer ATS för HTTP-klientanslutningar. Ange det här alternativet på fliken **Allmänt** i egenskaperna för plats system rollen.  
 
@@ -345,12 +343,12 @@ I den här versionen kan du aktivera Configuration Manager-platsen för att auto
 
 Mer information om allmän användning av SCUP-verktyget finns [System Center Updates Publisher](../../sum/tools/updates-publisher.md).
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 - Aktivera och distribuera klient inställningen **Aktivera program uppdateringar från tredje part** i **program uppdaterings** gruppen.
 - Om WSUS finns på en separat server från program uppdaterings platsen, måste du göra något av följande alternativ på den fjärranslutna WSUS-servern:
     - Aktivera Remote Registry-tjänsten i Windows  
     eller
-    - Skapa ett nytt DWORD `HKLM\Software\Microsoft\Update Services\Server\Setup`-värde med namnet **EnableSelfSignedCertificates** med värdet i register nyckeln `1`. 
+    - `HKLM\Software\Microsoft\Update Services\Server\Setup`Skapa ett nytt DWORD-värde med namnet **EnableSelfSignedCertificates** med värdet i register nyckeln `1` . 
 
 ### <a name="try-it-out"></a>prova!
 Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-technical-preview-1804.md#bkmk_feedback) för att berätta hur det fungerade.
@@ -390,7 +388,7 @@ Standard mal len för aktivitetssekvenser för Windows 10 uppgradering på plats
 ## <a name="cmtrace-installed-with-client"></a>CMTrace installeras med klienten
 <!--1357971-->
 
-CMTrace-logg visnings verktyget installeras nu automatiskt tillsammans med Configuration Manager-klienten. Den läggs till i klient installations katalogen, vilket som standard är `%WinDir%\ccm\cmtrace.exe`.
+CMTrace-logg visnings verktyget installeras nu automatiskt tillsammans med Configuration Manager-klienten. Den läggs till i klient installations katalogen, vilket som standard är `%WinDir%\ccm\cmtrace.exe` .
 
 > [!Note]  
 > CMTrace registreras *inte* automatiskt med Windows för att öppna fil namns tillägget. log.
@@ -414,10 +412,10 @@ Den här versionen innehåller följande förbättringar av den nya mekanismen f
 
 - Dialog rutan feedback kommer nu ihåg dina tidigare inställningar, till exempel de valda alternativen och din e-postadress.  
 
-- Det stöder nu offline-feedback. Spara feedback från-konsolen och ladda sedan upp till Microsoft från ett Internet-anslutet system. Använd det nya verktyget för uppladdning av offline- `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe`feedback som finns i. Om du vill se tillgängliga och nödvändiga kommando rads alternativ kör du verktyget med `--help` alternativet. Det anslutna systemet behöver åtkomst till **Petrol.Office.Microsoft.com**.
+- Det stöder nu offline-feedback. Spara feedback från-konsolen och ladda sedan upp till Microsoft från ett Internet-anslutet system. Använd det nya verktyget för uppladdning av offline-feedback som finns i `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe` . Om du vill se tillgängliga och nödvändiga kommando rads alternativ kör du verktyget med `--help` alternativet. Det anslutna systemet behöver åtkomst till **Petrol.Office.Microsoft.com**.
 
 ### <a name="known-issues"></a>Kända problem
-När du använder **Skicka ett leende** eller **skicka en bister min** från-konsolen på en dator med Internet anslutning kan den returnera följande meddelande: "Det gick inte att skicka feedback". Om du klickar på **Mer information**visas följande text: `{"Message":""}`. Det här felet beror på ett känt problem med svaret från system för backend-feedback. Du kan ignorera felet. Microsoft har fortfarande fått din feedback. (Om informationen visar ett annat meddelande använder du alternativet offline-feedback för att försöka skicka feedbacken vid ett senare tillfälle.)
+När du använder **Skicka ett leende** eller **skicka en bister min** från-konsolen på en dator med Internet anslutning kan den returnera följande meddelande: "Det gick inte att skicka feedback". Om du klickar på **Mer information**visas följande text: `{"Message":""}` . Det här felet beror på ett känt problem med svaret från system för backend-feedback. Du kan ignorera felet. Microsoft har fortfarande fått din feedback. (Om informationen visar ett annat meddelande använder du alternativet offline-feedback för att försöka skicka feedbacken vid ett senare tillfälle.)
 
 
 

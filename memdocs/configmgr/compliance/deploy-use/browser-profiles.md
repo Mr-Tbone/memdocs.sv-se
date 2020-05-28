@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.openlocfilehash: 91c11e133c74cd3b55db09e8bf80fd6c4df7774d
-ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
+ms.openlocfilehash: 4ed49ed3623b34bfb51fd66fafa858ae3951a5af
+ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82210102"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82906347"
 ---
 # <a name="configure-microsoft-edge-settings-in-configuration-manager"></a>Konfigurera inställningar för Microsoft Edge i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
 <!-- 1357310 -->
-Från och med version 1802, för kunder som använder [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) -webbläsaren på Windows 10-klienter, skapar du en princip för Configuration Manager kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. 
+Från och med version 1802, för kunder som använder [Microsoft Edge](https://www.microsoft.com/itpro/microsoft-edge) -webbläsaren på Windows 10-klienter, skapar du en princip för Configuration Manager kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. 
 
 Den här principen gäller endast för klienter i Windows 10, version 1703 eller senare. <!--511552-->
 

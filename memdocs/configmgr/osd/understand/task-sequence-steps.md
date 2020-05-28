@@ -148,7 +148,7 @@ Ange det driv rutins paket som innehåller de enhets driv rutiner som behövs. V
 
 #### <a name="install-driver-package-via-running-dism-with-recurse-option"></a>Installera driv rutins paket genom att köra DISM med alternativet rekursivt
 
-Välj det här alternativet om du `/recurse` vill lägga till parametern till DISM-kommandoraden när Windows använder driv rutins paketet.
+Välj det här alternativet om du vill lägga till `/recurse` parametern till DISM-kommandoraden när Windows använder driv rutins paketet.
 
 När du aktiverar det här alternativet kan du även ange ytterligare kommando rads parametrar för DISM. Använd [OSDInstallDriversAdditionalOptions](task-sequence-variables.md#OSDInstallDriversAdditionalOptions) -variabeln för att ta med fler alternativ. Mer information finns i [kommando rads alternativ för Windows 10 DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/deployment-image-servicing-and-management--dism--command-line-options).<!-- SCCMDocs#2125 -->
 
@@ -215,11 +215,11 @@ Välj det här alternativet för att ansluta måldatorn till den angivna arbetsg
 
 #### <a name="join-a-domain"></a>Ansluta till en domän
 
-Välj det här alternativet för att ansluta måldatorn till den angivna domänen. Ange eller bläddra till domänen, till exempel `fabricam.com`. Ange eller bläddra till en LDAP-sökväg (Lightweight Directory Access Protocol) för en organisationsenhet. Till exempel: `LDAP//OU=computers, DC=Fabricam.com, C=com`.  
+Välj det här alternativet för att ansluta måldatorn till den angivna domänen. Ange eller bläddra till domänen, till exempel `fabricam.com` . Ange eller bläddra till en LDAP-sökväg (Lightweight Directory Access Protocol) för en organisationsenhet. Exempel: `LDAP//OU=computers, DC=Fabricam.com, C=com`.  
 
 #### <a name="account"></a>Konto
 
-Välj **Ange** för att ange ett konto med de behörigheter som krävs för att ansluta datorn till domänen. I dialog rutan **Windows-användarkonto** anger du användar namnet i följande format:. `Domain\User` Mer information finns i [domän anslutning till konto](../../core/plan-design/hierarchy/accounts.md#task-sequence-domain-join-account).
+Välj **Ange** för att ange ett konto med de behörigheter som krävs för att ansluta datorn till domänen. I dialog rutan **Windows-användarkonto** anger du användar namnet i följande format: `Domain\User` . Mer information finns i [domän anslutning till konto](../../core/plan-design/hierarchy/accounts.md#task-sequence-domain-join-account).
 
 #### <a name="adapter-settings"></a>Inställningar för nätverkskort
 
@@ -274,7 +274,7 @@ Det här steget utför olika åtgärder beroende på om det använder en OS-avbi
 
 Steget **Använd operativ Systems avbildning** utför följande åtgärder när du använder en OS-avbildning:  
 
-1. Ta bort allt innehåll på mål volymen, förutom filer i mappen som anges av ** \_SMSTSUserStatePath** -variabeln.  
+1. Ta bort allt innehåll på mål volymen, förutom filer i mappen som anges av ** \_ SMSTSUserStatePath** -variabeln.  
 
 2. Extrahera innehållet i den angivna wim-filen till den angivna partitionen.  
 
@@ -292,7 +292,7 @@ Steget **Använd operativ Systems avbildning** utför följande åtgärder när 
 
 Steget **Använd operativ Systems avbildning** utför följande åtgärder när du använder ett uppgraderings paket för operativ system:  
 
-1. Ta bort allt innehåll på mål volymen, förutom filer i mappen som anges av ** \_SMSTSUserStatePath** -variabeln.  
+1. Ta bort allt innehåll på mål volymen, förutom filer i mappen som anges av ** \_ SMSTSUserStatePath** -variabeln.  
 
 2. Förbered svars filen:  
 
@@ -324,7 +324,7 @@ Installerar ett operativ system med ett uppgraderings paket för operativ system
 Använd det här alternativet för att tillhandahålla en svarsfil för Windows-installation (**Unattend. XML**, **Unattend. txt**eller **Sysprep. inf**) beroende på operativ systemets version och installations metod. Filen du anger kan innehålla flera av alternativen för standardkonfigurationen som stöds av Windows svarsfiler. Du kan till exempel använda den för att ange startsida för Internet Explorer. Ange det paket som innehåller svars filen och den associerade sökvägen till filen i paketet.  
 
 > [!NOTE]  
-> Svars filen för Windows-installationen som du anger kan innehålla inbäddade variabler för aktivitetssekvenser i `%varname%`formuläret, där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel strängen för variabelns faktiska värde. Du kan inte använda dessa inbäddade variabler för aktivitetssekvenser i ett numeriskt fält i svars filen Unattend. xml.  
+> Svars filen för Windows-installationen som du anger kan innehålla inbäddade variabler för aktivitetssekvenser i formuläret `%varname%` , där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel strängen för variabelns faktiska värde. Du kan inte använda dessa inbäddade variabler för aktivitetssekvenser i ett numeriskt fält i svars filen Unattend. xml.  
 
 Om du inte anger svars filen för installations programmet för Windows skapas automatiskt en svarsfil i aktivitetssekvensen.  
 
@@ -628,7 +628,7 @@ En valfri användardefinierad Beskrivning av den fångade OS-avbildningen som la
 
 Ett valfritt användardefinierat versions nummer som ska tilldelas avbildningen av den insamlade operativ systemet. Det här värdet kan vara valfri kombination av bokstäver och siffror. Den lagras i bild filen.  
 
-#### <a name="created-by"></a>Skapad av  
+#### <a name="created-by"></a>Skapades av  
 
 Det valfria namnet på den användare som skapade operativ system avbildningen. Den lagras i bild filen.  
 
@@ -704,7 +704,7 @@ Välj det här alternativet för att välja vilka konfigurationsfiler i USMT-pak
 
 #### <a name="enable-verbose-logging"></a>Aktivera utförlig loggning
 
-Aktivera det här alternativet för att skapa mer detaljerad information i loggfilen. När du fångar in status genererar aktivitetssekvensen som standard **ScanState. log** i mappen aktivitetssekvens `%WinDir%\ccm\logs`.  
+Aktivera det här alternativet för att skapa mer detaljerad information i loggfilen. När du fångar in status genererar aktivitetssekvensen som standard **ScanState. log** i mappen aktivitetssekvens `%WinDir%\ccm\logs` .  
 
 #### <a name="skip-files-using-encrypted-file-system"></a>Hoppa över filer med krypterade filsystem
 
@@ -856,7 +856,7 @@ Från och med version 2002 kontrollerar du att det aktuella operativ systemet k�
 
 #### <a name="minimum-client-version"></a>Lägsta klient version
 
-Från och med version 2002 kontrollerar du att den Configuration Manager klient versionen är minst den angivna versionen. Ange klient versionen i följande format: `5.00.8913.1005`.
+Från och med version 2002 kontrollerar du att den Configuration Manager klient versionen är minst den angivna versionen. Ange klient versionen i följande format: `5.00.8913.1005` .
 
 #### <a name="language-of-current-os"></a>Språk för aktuellt operativ system
 
@@ -1019,7 +1019,7 @@ Välj att spara paketet på någon av följande platser:
 
 - **Arbets katalog för aktivitetssekvens**: den här platsen kallas även för aktivitetssekvensen.  
 
-- **Configuration Manager-klientcachen**: Använd det här alternativet för att lagra innehållet i klientens cacheminne. Den här sökvägen är `%WinDir%\ccmcache`som standard.  
+- **Configuration Manager-klientcachen**: Använd det här alternativet för att lagra innehållet i klientens cacheminne. Den här sökvägen är som standard `%WinDir%\ccmcache` .  
 
 - **Anpassad sökväg**: aktivitetssekvensen laddas först ned paketet till arbets katalogen för aktivitetssekvensen. Sedan flyttas innehållet till den här sökvägen som du anger. Motorn för aktivitetssekvenser lägger till sökvägen med paket-ID: t.  
 
@@ -1027,7 +1027,7 @@ Välj att spara paketet på någon av följande platser:
 
 Spara paketets sökväg i en anpassad aktivitetssekvens-variabel. Använd sedan den här variabeln i ett annat steg i aktivitetssekvensen.
 
-Configuration Manager lägger till ett numeriskt suffix till variabel namnet. Du kan till exempel ange en variabel `%MyContent%` som en anpassad variabel. Det är roten där aktivitetssekvensen lagrar allt innehåll som refereras till i det här steget. Det här innehållet kan innehålla flera paket. Lägg till ett numeriskt suffix när du refererar till variabeln. För det första paketet, se `%MyContent01%`. När du refererar till variabeln i efterföljande steg, till exempel **Uppgradera operativ system**, använder `%MyContent02%` eller `%MyContent03%`, där numret motsvarar den ordning som ska användas för att **Hämta** paketets innehålls steg.  
+Configuration Manager lägger till ett numeriskt suffix till variabel namnet. Du kan till exempel ange en variabel `%MyContent%` som en anpassad variabel. Det är roten där aktivitetssekvensen lagrar allt innehåll som refereras till i det här steget. Det här innehållet kan innehålla flera paket. Lägg till ett numeriskt suffix när du refererar till variabeln. För det första paketet, se `%MyContent01%` . När du refererar till variabeln i efterföljande steg, till exempel **Uppgradera operativ system**, använder `%MyContent02%` eller `%MyContent03%` , där numret motsvarar den ordning som ska användas för att **Hämta** paketets innehålls steg.  
 
 #### <a name="if-a-package-download-fails-continue-downloading-other-packages-in-the-list"></a>Om det inte går att ladda ned ett paket kan du fortsätta att ladda ned andra paket i listan.
 
@@ -1530,7 +1530,7 @@ Du kan också ange eller bläddra efter en organisationsenhet i den angivna dom�
 
 #### <a name="enter-the-account-which-has-permission-to-join-the-domain"></a>Ange det konto som har behörighet att ansluta till domänen
 
-Välj **Ange** för att ange användar namn och lösen ord för ett konto som har behörighet att ansluta till domänen. Ange kontot i formatet: `Domain\account`. Mer information om konto för aktivitetssekvens domän anslutning finns i [konton](../../core/plan-design/hierarchy/accounts.md#task-sequence-domain-join-account).  
+Välj **Ange** för att ange användar namn och lösen ord för ett konto som har behörighet att ansluta till domänen. Ange kontot i formatet: `Domain\account` . Mer information om konto för aktivitetssekvens domän anslutning finns i [konton](../../core/plan-design/hierarchy/accounts.md#task-sequence-domain-join-account).  
 
 
 
@@ -1861,7 +1861,7 @@ Fortsätter att återställa användar tillstånd och inställningar även om US
 
 #### <a name="enable-verbose-logging"></a>Aktivera utförlig loggning
 
-Aktivera det här alternativet för att skapa mer detaljerad information i loggfilen. Vid återställning av status genererar aktivitetssekvensen som standard **LoadState. log** i mappen aktivitetssekvens `%WinDir%\ccm\logs`.  
+Aktivera det här alternativet för att skapa mer detaljerad information i loggfilen. Vid återställning av status genererar aktivitetssekvensen som standard **LoadState. log** i mappen aktivitetssekvens `%WinDir%\ccm\logs` .  
 
 
 
@@ -2050,11 +2050,11 @@ Följande exempel innehåller ogiltiga parametrar. De första två objekten är 
 `-NoLogo -ExecutionPolicy Unrestricted -File MyScript.ps1 -MyParameter1 MyValue1 -MyParameter2 MyValue2`
 
 <!-- SCCMDocs-pr issue 3561 -->
-Använd enkla citat tecken (`'`) runt värdet om ett parameter värde innehåller ett specialtecken. Om du använder dubbla citat`"`tecken () kan det leda till att aktivitetssekvensen felaktigt bearbetar parametern.
+Använd enkla citat tecken () runt värdet om ett parameter värde innehåller ett specialtecken `'` . Om du använder dubbla citat tecken ( `"` ) kan det leda till att aktivitetssekvensen felaktigt bearbetar parametern.
 
 Exempelvis: `-Arg1 '%TSVar1%' -Arg2 '%TSVar2%'`
 
-Från och med version 2002 ställer du in den här egenskapen till en variabel.<!-- 5690481 --> Om du till exempel anger `%MyScriptVariable%`när aktivitetssekvensen kör skriptet, läggs värdet för den här anpassade variabeln till i PowerShell-kommandoraden.
+Från och med version 2002 ställer du in den här egenskapen till en variabel.<!-- 5690481 --> Om du till exempel anger `%MyScriptVariable%` När aktivitetssekvensen kör skriptet, läggs värdet för den här anpassade variabeln till i PowerShell-kommandoraden.
 
 #### <a name="powershell-execution-policy"></a>PowerShell-körningsprincip
 
@@ -2223,7 +2223,7 @@ Lägg till en regel för att ange en dynamisk variabel som ska användas i aktiv
 
 - **Märke och modell**: utvärdera värden för datorns märke och modell. Både märke och modell måste utvärderas till sant för regeln ska utvärderas till sant.
 
-    Ange en asterisk (`*`) och frågetecken (`?`) som jokertecken. Asterisken matchar flera tecken och frågetecknet matchar ett enskilt tecken. Strängen `DELL*900?` matchar till exempel både `DELL-ABC-9001` och. `DELL9009`  
+    Ange en asterisk ( `*` ) och frågetecken ( `?` ) som jokertecken. Asterisken matchar flera tecken och frågetecknet matchar ett enskilt tecken. Strängen matchar till exempel `DELL*900?` både `DELL-ABC-9001` och `DELL9009` .  
 
 - **Variabel för aktivitetssekvens**: Lägg till en variabel för aktivitetssekvens, villkor och värde som ska utvärderas. Regeln returnerar sant när värdet för variabeln uppfyller de angivna villkoren.  
 
@@ -2282,7 +2282,7 @@ Aktivera det här alternativet om du vill maskera känsliga data som lagras i va
 
 #### <a name="value"></a>Värde  
 
-Aktivitetssekvensen ställer in variabeln till det här värdet. Ange den här variabeln för aktivitetssekvensen till värdet för en annan aktivitetssekvens-variabel med `%varname%`syntaxen.  
+Aktivitetssekvensen ställer in variabeln till det här värdet. Ange den här variabeln för aktivitetssekvensen till värdet för en annan aktivitetssekvens-variabel med syntaxen `%varname%` .  
 
 
 
@@ -2292,7 +2292,7 @@ Använd det här steget för att utföra över gången från Windows PE till det
 
 Det här steget ansvarar för över gången till aktivitetssekvensen från Windows PE till det fullständiga operativ systemet. Steget körs både i Windows PE och det fullständiga operativ systemet på grund av den här över gången. Men eftersom över gången startar i Windows PE kan det bara läggas till i Windows PE-delen av aktivitetssekvensen.  
 
-Det här steget ersätter Sysprep. inf-eller Unattend. XML-katalogpartitioner, till `%WINDIR%` exempel `%ProgramFiles%`och, med installations katalogen för Windows PE `X:\Windows`. Aktivitetssekvensen ignorerar variabler som anges genom att använda de här miljövariablerna.  
+Det här steget ersätter Sysprep. inf-eller Unattend. XML-katalogpartitioner, till exempel `%WINDIR%` och `%ProgramFiles%` , med installations katalogen för Windows PE `X:\Windows` . Aktivitetssekvensen ignorerar variabler som anges genom att använda de här miljövariablerna.  
 
 Om du vill lägga till det här steget i redigeraren för aktivitetssekvens väljer du **Lägg till**, Välj **avbildningar**och välj sedan **Installera Windows och ConfigMgr**.
 
@@ -2375,7 +2375,7 @@ Om det finns ett för produktions klient paket tillgängligt, och datorn är med
 
 Steget aktivitetssekvens anger automatiskt platstilldelning och standard konfigurationen. Använd det här fältet för att ange ytterligare installations egenskaper som ska användas när du installerar-klienten. Om du vill ange flera installationsegenskaper avgränsar du dem med ett blanksteg.  
 
-Ange kommando rads alternativ som ska användas vid klient installation. Ange `/skipprereq: silverlight.exe` till exempel för att informera CCMSetup. exe om att inte installera Microsoft Silverlight-krav. Mer information om tillgängliga kommando rads alternativ för CCMSetup. exe finns i [om klient installations egenskaper](../../core/clients/deploy/about-client-installation-properties.md).  
+Ange kommando rads alternativ som ska användas vid klient installation. Ange till exempel `/skipprereq: silverlight.exe` för att informera CCMSetup. exe om att inte installera Microsoft Silverlight-krav. Mer information om tillgängliga kommando rads alternativ för CCMSetup. exe finns i [om klient installations egenskaper](../../core/clients/deploy/about-client-installation-properties.md).  
 
 ### <a name="options-for-setup-windows-and-configmgr"></a>Alternativ för installation av Windows och ConfigMgr
 
@@ -2424,9 +2424,9 @@ Välj det här alternativet för att ange uppgraderings paketet för Windows 10-
 
 #### <a name="source-path"></a>Källsökväg
 
-Anger en lokal sökväg eller en nätverks Sök väg till Windows 10-mediet som Installationsprogrammet för Windows använder. Den här inställningen motsvarar kommando rads alternativet `/InstallFrom`installationsprogrammet för Windows.
+Anger en lokal sökväg eller en nätverks Sök väg till Windows 10-mediet som Installationsprogrammet för Windows använder. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/InstallFrom` .
 
-Du kan också ange en variabel, till exempel `%MyContentPath%` eller `%DPC01%`. När du använder en variabel för käll Sök vägen anger du dess värde tidigare i aktivitetssekvensen. Använd till exempel steget [Ladda ned paket innehåll](#BKMK_DownloadPackageContent) för att ange en variabel för platsen för operativ system uppgraderings paketet. Använd sedan variabeln för käll Sök vägen för det här steget.  
+Du kan också ange en variabel, till exempel `%MyContentPath%` eller `%DPC01%` . När du använder en variabel för käll Sök vägen anger du dess värde tidigare i aktivitetssekvensen. Använd till exempel steget [Ladda ned paket innehåll](#BKMK_DownloadPackageContent) för att ange en variabel för platsen för operativ system uppgraderings paketet. Använd sedan variabeln för käll Sök vägen för det här steget.  
 
 #### <a name="edition"></a>Utgåva
 
@@ -2438,7 +2438,7 @@ Ange produkt nyckeln som ska användas för uppgraderings processen.
 
 #### <a name="provide-the-following-driver-content-to-windows-setup-during-upgrade"></a>Ange följande drivrutinsinnehåll i Windows-installationsprogrammet under uppgradering
 
-Lägg till driv rutiner på mål datorn under uppgraderings processen. Drivrutinerna måste vara kompatibla med Windows 10. Den här inställningen motsvarar kommando rads alternativet `/InstallDriver`installationsprogrammet för Windows. Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#installdrivers).
+Lägg till driv rutiner på mål datorn under uppgraderings processen. Drivrutinerna måste vara kompatibla med Windows 10. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/InstallDriver` . Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#installdrivers).
 
 Ange ett av följande alternativ:  
 
@@ -2459,7 +2459,7 @@ Ange antalet minuter innan Configuration Manager inte det här steget. Det här 
 
 #### <a name="perform-windows-setup-compatibility-scan-without-starting-upgrade"></a>Utför kompatibilitetskontroll i Windows-installationsprogrammet utan att starta uppgraderingen
 
-Utför Installationsprogrammet för Windows kompatibilitetskontroll utan att starta uppgraderings processen. Den här inställningen motsvarar kommando rads alternativet `/Compat ScanOnly`installationsprogrammet för Windows. Distribuera hela operativ Systems uppgraderings paketet med det här alternativet.
+Utför Installationsprogrammet för Windows kompatibilitetskontroll utan att starta uppgraderings processen. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/Compat ScanOnly` . Distribuera hela operativ Systems uppgraderings paketet med det här alternativet.
 
 <!--SCCMDocs-pr issue 2812-->
 När du aktiverar det här alternativet sätter det här steget inte Configuration Manager klienten i etablerings läge. Installationsprogrammet för Windows körs tyst i bakgrunden och klienten fortsätter att fungera som vanligt. Mer information finns i [etablerings läge](provisioning-mode.md).
@@ -2478,11 +2478,11 @@ Mer information om den här parametern finns i [installationsprogrammet för Win
 
 #### <a name="ignore-any-dismissible-compatibility-messages"></a>Ignorera alla kompatibilitetsmeddelanden som kan avfärdas
 
-Anger att installationen Slutför installationen och ignorerar eventuella kompatibilitetsmeddelanden avfärdas. Den här inställningen motsvarar kommando rads alternativet `/Compat IgnoreWarning`installationsprogrammet för Windows.  
+Anger att installationen Slutför installationen och ignorerar eventuella kompatibilitetsmeddelanden avfärdas. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/Compat IgnoreWarning` .  
 
 #### <a name="dynamically-update-windows-setup-with-windows-update"></a>Uppdatera installationsprogrammet för Windows dynamiskt med Windows Update
 
-Aktivera installations programmet för att utföra dynamiska uppdaterings åtgärder, till exempel Sök, ladda ned och installera uppdateringar. Den här inställningen motsvarar kommando rads alternativet `/DynamicUpdate`installationsprogrammet för Windows. Den här inställningen är inte kompatibel med Configuration Manager program uppdateringar. Aktivera det här alternativet när du hanterar uppdateringar med fristående Windows Server Update Services (WSUS) eller Windows Update för företag.  
+Aktivera installations programmet för att utföra dynamiska uppdaterings åtgärder, till exempel Sök, ladda ned och installera uppdateringar. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/DynamicUpdate` . Den här inställningen är inte kompatibel med Configuration Manager program uppdateringar. Aktivera det här alternativet när du hanterar uppdateringar med fristående Windows Server Update Services (WSUS) eller Windows Update för företag.  
 
 #### <a name="override-policy-and-use-default-microsoft-update"></a>Åsidosätt principen och Använd standard Microsoft Update
 
