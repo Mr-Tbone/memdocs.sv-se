@@ -2,7 +2,7 @@
 title: Nyheter i version 2002
 titleSuffix: Configuration Manager
 description: Få information om ändringar och nya funktioner som introducerats i version 2002 av Configuration Manager aktuella grenen.
-ms.date: 05/11/2020
+ms.date: 05/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: de718cdc-d0a9-47e2-9c99-8fa2cb25b5f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1aca9058b0f095b7f25b345c15eed1446dcf61d2
-ms.sourcegitcommit: 7b224e138c0618e978be59832b3486f3745abacc
+ms.openlocfilehash: afdcc608133d306042c9c6dc817396bb2fc3f387
+ms.sourcegitcommit: b0ae4a9972bac3518d0d4f33e033ac492eefe3c1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83381561"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84126489"
 ---
 # <a name="whats-new-in-version-2002-of-configuration-manager-current-branch"></a>Vad är nytt i version 2002 av Configuration Manager aktuella grenen
 
@@ -328,6 +328,15 @@ Mer information finns i [synkronisera Office 365-uppdateringar från en frånkop
 
 <!-- 5229962 -->
 Configuration Manager har utökat sitt stöd för onboarding-enheter till Microsoft Defender ATP. Mer information finns i [Microsoft Defender Avancerat skydd](../../../protect/deploy-use/windows-defender-advanced-threat-protection.md#onboard-devices).
+
+## <a name="onboard-configuration-manager-clients-to-microsoft-defender-atp-via-the-microsoft-endpoint-manager-admin-center"></a><a name="bkmk_atp"></a>Publicera Configuration Manager klienter till Microsoft Defender ATP via administrations Center för Microsoft Endpoint Manager
+<!--5691658-->
+Nu kan du distribuera hanterings principer för Microsoft Defender ATP-EDR för att Configuration Manager hanterade klienter. Dessa klienter kräver inte Azure AD eller MDM-registrering och principen riktas mot ConfigMgr-samlingar i stället för Azure AD-grupper.
+
+Med den här funktionen kan kunder hantera både Intune MDM och Configuration Manager EDR/ATP-onboarding från en enda hanterings upplevelse – administrations Center för Microsoft Endpoint Manager. Mer information finns i [princip för slut punkts identifiering och-svar för slut punkts säkerhet i Intune](../../../../intune/protect/endpoint-security-edr-policy.md).
+
+> [!Important]
+> Du behöver samla in snabb korrigering, [KB4563473](https://support.microsoft.com/help/4563473), installerad i din miljö för den här funktionen.
 
 ### <a name="improvements-to-bitlocker-management"></a>Förbättringar av BitLocker-hantering
 
