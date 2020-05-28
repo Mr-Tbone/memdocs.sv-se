@@ -43,23 +43,23 @@ Den här processen använder ett PowerShell-skript, MBAMWebSiteInstaller. ps1, f
 
 - `-SqlInstanceName <InstanceName>`: SQL Server instans namnet för den primära plats databasen. Ta inte med den här parametern om SQL använder standard instansen.
 
-- `-SqlDatabaseName <DatabaseName>`(obligatoriskt): namnet på den primära plats databasen, till exempel `CM_ABC`.
+- `-SqlDatabaseName <DatabaseName>`(obligatoriskt): namnet på den primära plats databasen, till exempel `CM_ABC` .
 
 - `-ReportWebServiceUrl <ReportWebServiceUrl>`: Webb tjänstens URL för den primära platsens rapporterings tjänst plats. Det är **URL-värdet för webb tjänsten** i **repor ting Services Configuration Manager**.
 
     > [!NOTE]
     > Den här parametern är att installera **rapporten för återställnings granskning** som är länkad från webbplatsen för administration och övervakning. Som standard innehåller Configuration Manager andra hanterings rapporter för BitLocker.
 
-- `-HelpdeskUsersGroupName <DomainUserGroup>`: Till exempel `contoso\BitLocker help desk users`. En domän användar grupp vars medlemmar har åtkomst till **hanterings** områden för TPM och **enhets återställning** på webbplatsen för administration och övervakning. När du använder dessa alternativ måste den här rollen fylla i alla fält, inklusive användarens domän och konto namn.
+- `-HelpdeskUsersGroupName <DomainUserGroup>`: Till exempel `contoso\BitLocker help desk users` . En domän användar grupp vars medlemmar har åtkomst till **hanterings** områden för TPM och **enhets återställning** på webbplatsen för administration och övervakning. När du använder dessa alternativ måste den här rollen fylla i alla fält, inklusive användarens domän och konto namn.
 
-- `-HelpdeskAdminsGroupName <DomainUserGroup>`: Till exempel `contoso\BitLocker help desk admins`. En domän användar grupp vars medlemmar har åtkomst till alla återställnings områden på webbplatsen för administration och övervakning. När hjälpa användare att återställa sina enheter, behöver den här rollen bara ange återställnings nyckeln.
+- `-HelpdeskAdminsGroupName <DomainUserGroup>`: Till exempel `contoso\BitLocker help desk admins` . En domän användar grupp vars medlemmar har åtkomst till alla återställnings områden på webbplatsen för administration och övervakning. När hjälpa användare att återställa sina enheter, behöver den här rollen bara ange återställnings nyckeln.
 
-- `-MbamReportUsersGroupName <DomainUserGroup>`: Till exempel `contoso\BitLocker report users`. En domän användar grupp vars medlemmar har skrivskyddad åtkomst till **rapport** avsnittet på webbplatsen för administration och övervakning.
+- `-MbamReportUsersGroupName <DomainUserGroup>`: Till exempel `contoso\BitLocker report users` . En domän användar grupp vars medlemmar har skrivskyddad åtkomst till **rapport** avsnittet på webbplatsen för administration och övervakning.
 
     > [!NOTE]
     > Installations skriptet skapar inte de domän användar grupper som du anger i parametrarna **-HelpdeskUsersGroupName**, **-HelpdeskAdminsGroupName**och **-MbamReportUsersGroupName** . Innan du kör skriptet ska du se till att skapa dessa grupper.
     >
-    > När du anger parametrarna **-HelpdeskUsersGroupName**, **-HelpdeskAdminsGroupName**och **-MbamReportUsersGroupName** , måste du ange både domän namnet och grupp namnet. Använd formatet `"domain\user_group"`. Uteslut inte domän namnet. Om domän namnet eller grupp namnet innehåller blank steg eller specialtecken, omger du parametern med citat tecken (`"`).
+    > När du anger parametrarna **-HelpdeskUsersGroupName**, **-HelpdeskAdminsGroupName**och **-MbamReportUsersGroupName** , måste du ange både domän namnet och grupp namnet. Använd formatet `"domain\user_group"`. Uteslut inte domän namnet. Om domän namnet eller grupp namnet innehåller blank steg eller specialtecken, omger du parametern med citat tecken ( `"` ).
 
 - `-SiteInstall Both`: Ange vilken av komponenterna som ska installeras. Giltiga alternativ är:
   - `Both`: Installera båda komponenterna
@@ -68,7 +68,7 @@ Den här processen använder ett PowerShell-skript, MBAMWebSiteInstaller. ps1, f
 
 - `-IISWebSite`: Den webbplats där skriptet installerar MBAM-webbprogram. Som standard används IIS-standardwebbplatsen. Skapa den anpassade webbplatsen innan du använder den här parametern.
 
-- `-InstallDirectory`: Sökvägen där skriptet installerar filerna för webb programmet. Den här sökvägen är `C:\inetpub`som standard. Skapa den anpassade katalogen innan du använder den här parametern.
+- `-InstallDirectory`: Sökvägen där skriptet installerar filerna för webb programmet. Den här sökvägen är som standard `C:\inetpub` . Skapa den anpassade katalogen innan du använder den här parametern.
 
 - `-Uninstall`: Avinstallerar webb Portal webbplatser för BitLocker-hantering på en webb server där de redan har installerats.
 

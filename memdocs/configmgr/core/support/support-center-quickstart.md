@@ -27,11 +27,11 @@ Skapa en fullständig *fel söknings paket* fil (. zip) som fångar upp klienten
 
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Lokal administratörs behörighet till en Configuration Manager-klient  
 
-- Installations programmet för Support Center. Den här filen finns på plats servern på `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi`. Mer information finns i [Support Center-install](support-center.md#install).  
+- Installations programmet för Support Center. Den här filen finns på plats servern på `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi` . Mer information finns i [Support Center-install](support-center.md#install).  
 
 
 
@@ -43,7 +43,7 @@ Skapa en fullständig *fel söknings paket* fil (. zip) som fångar upp klienten
 
 3.  På fliken Start i menyfliksområdet väljer du **samla in markerade data**. Som standard samlar Support Center endast in den minsta data uppsättningen: loggfiler, klient konfiguration och operativ system.  
 
-4.  Spara fel söknings paket filen (. zip) i en mapp på datorn. Som standard liknar fil namnet följande exempel: `Support_c885cdfed3c7482bba4f9e662978ec07.zip`.  
+4.  Spara fel söknings paket filen (. zip) i en mapp på datorn. Som standard liknar fil namnet följande exempel: `Support_c885cdfed3c7482bba4f9e662978ec07.zip` .  
 
 
 

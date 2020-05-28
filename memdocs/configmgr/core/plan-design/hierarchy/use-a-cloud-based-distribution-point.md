@@ -10,12 +10,12 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7a14b79a9e7fd91b6470836b4271a669725065bd
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: 52c2b70d2b094d5a89d80aafa61f1db67a53816f
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771171"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83987708"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Använd en moln distributions plats i Configuration Manager
 
@@ -44,7 +44,7 @@ Den här artikeln hjälper dig att lära dig om moln distributions platsen, plan
 - [Prestanda och skalning](#bkmk_perf)
 - [Portar och data flöde](#bkmk_dataflow)
 - [Certifikat](#bkmk_certs)
-- [Vanliga frågor och svar](#bkmk_faq)
+- [Vanliga frågor och svar (FAQ)](#bkmk_faq)
 
 
 ## <a name="features-and-benefits"></a><a name="bkmk_features"></a>Funktioner och fördelar
@@ -174,7 +174,9 @@ När du använder en moln distributions plats i-hierarkin använder du följande
 
 ### <a name="deployment-settings"></a>Distributionsinställningar
 
-- När du distribuerar en aktivitetssekvens med alternativet för att **Ladda ned innehåll lokalt vid behov genom att köra aktivitetssekvensen**, innehåller hanterings platsen ingen moln distributions plats som en innehålls plats. Distribuera aktivitetssekvensen med alternativet för att **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas** för att klienter ska kunna använda en moln distributions plats.  
+- **Hämta innehåll lokalt vid behov genom att köra aktivitetssekvensen**. Från och med version 1910 kan aktivitetssekvensen Ladda ned paket på begäran från en innehålls aktive rad CMG eller en moln distributions plats. Den här ändringen ger ytterligare flexibilitet för distributioner av Windows 10 på plats till Internet-baserade enheter.
+
+- **Hämta allt innehåll lokalt innan aktivitetssekvensen startas**. I Configuration Manager version 1906 och tidigare fungerar andra alternativ som **Hämta innehåll lokalt när det behövs av aktivitetssekvensen som körs** inte i det här scenariot. Motorn för aktivitetssekvenser kan inte ladda ned innehåll från en moln källa. Den Configuration Manager klienten måste ladda ned innehållet från moln källan innan aktivitetssekvensen startas. Du kan fortfarande använda det här alternativet i version 1910 om det behövs för att uppfylla dina krav.
 
 - En moln distributions plats har inte stöd för paket distributioner med alternativet att **köra program från distributions platsen**. Använd distributions alternativet för att **Ladda ned innehåll från distributions platsen och kör lokalt**.  
 

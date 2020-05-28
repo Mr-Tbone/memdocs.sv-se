@@ -40,15 +40,15 @@ OneTrace fungerar med många typer av loggfiler, till exempel:
 - Windows Update ETW-loggfil i Windows 10
 - Windows Update logg filen på Windows 7 & Windows 8,1
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - .NET Framework version 4,6 eller senare
 
 ## <a name="install"></a>Installera
 
-OneTrace installeras med Support Center. Hitta installations programmet för Support Center på plats servern på följande sökväg: `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi`.
+OneTrace installeras med Support Center. Hitta installations programmet för Support Center på plats servern på följande sökväg: `cd.latest\SMSSETUP\Tools\SupportCenter\SupportCenterInstaller.msi` .
 
-Som standard installeras OneTrace-programmet på `C:\Program Files (x86)\Configuration Manager Support Center\CMPowerLogViewer.exe`.
+Som standard installeras OneTrace-programmet på `C:\Program Files (x86)\Configuration Manager Support Center\CMPowerLogViewer.exe` .
 
 > [!Note]  
 > Support Center och OneTrace använder Windows Presentation Foundation (WPF). Den här komponenten är inte tillgänglig i Windows PE. Fortsätt att använda CMTrace i Start avbildningar med aktivitetssekvensdistribution.  
@@ -69,7 +69,7 @@ Om du vill visa logg grupper går du till menyn **Visa** och väljer **logg grup
 
 ### <a name="customize-log-groups"></a>Anpassa logg grupper
 
-Du kan anpassa dessa grupper genom att ändra konfigurations-XML, som som standard finns i följande sökväg `C:\Program Files (x86)\Configuration Manager Support Center\LogGroups.xml`:.
+Du kan anpassa dessa grupper genom att ändra konfigurations-XML, som som standard finns i följande sökväg: `C:\Program Files (x86)\Configuration Manager Support Center\LogGroups.xml` .
 
 Följande exempel är en del av standard konfigurations filen:
 
@@ -89,13 +89,13 @@ Följande exempel är en del av standard konfigurations filen:
 </LogGroups>
 ```
 
-`GroupType` Egenskapen accepterar följande värden:
+`GroupType`Egenskapen accepterar följande värden:
 
 - `0`: Okänd eller annan
 - `1`: Configuration Manager klient loggar
 - `2`: Configuration Manager Server loggar
 
-`GroupFilePath` Egenskapen kan innehålla en explicit sökväg för loggfilerna. Om det är tomt är OneTrace beroende av register konfigurationen för grupp typen. Om du t. ex. `GroupType=1`anger så kommer OneTrace automatiskt att söka `C:\Windows\CCM\Logs` efter loggarna i gruppen. I det här exemplet behöver du inte ange `GroupFilePath`.
+`GroupFilePath`Egenskapen kan innehålla en explicit sökväg för loggfilerna. Om det är tomt är OneTrace beroende av register konfigurationen för grupp typen. Om du t. ex. anger så `GroupType=1` kommer OneTrace automatiskt att söka `C:\Windows\CCM\Logs` efter loggarna i gruppen. I det här exemplet behöver du inte ange `GroupFilePath` .
 
 ## <a name="see-also"></a>Se även
 

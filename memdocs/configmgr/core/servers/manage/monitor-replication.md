@@ -10,12 +10,12 @@ ms.assetid: 69550b35-bcdb-4b47-bbec-b3c8bc92bb7b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 96cce5d4aaa352177b1c24ff78cf15e90ea6e823
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4a9ae791582911f91e5f76b841248ad5085d8170
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713711"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83879825"
 ---
 # <a name="monitor-database-replication"></a>Övervaka databasreplikering
 
@@ -122,7 +122,10 @@ Kör RLA antingen i Configuration Manager-konsolen eller i en kommando tolk:
 
 - För att köra i Configuration Manager-konsolen: gå till arbets ytan **övervakning** och välj noden **databasreplikering** . Välj den replikeringslänk som du vill analysera och välj sedan i menyfliksområdet **Replikeringslänkanalys**.  
 
-- Skriv följande kommando för att köra i en kommando tolk:`%ProgramFiles(x86)%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe <source site server FQDN> <destination site server FQDN>`  
+- Skriv följande kommando för att köra i en kommando tolk:`%ProgramFiles(x86)%\Microsoft Endpoint Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe <source site server FQDN> <destination site server FQDN>`  
+
+    > [!IMPORTANT]
+    > Från och med version 1910 ändrades den här sökvägen till att använda `Microsoft Endpoint Manager` mappen. Se till att du inte använder en äldre version av filen som kan finnas i en annan mapp.
 
 När du kör RLA upptäcks problem med hjälp av en serie diagnostiska regler och kontroller. Du ser de problem som verktyget identifierar. När det finns instruktioner för att lösa ett problem visas dessa. Om RLA kan åtgärda ett problem automatiskt, visas ett sådant alternativ.
 

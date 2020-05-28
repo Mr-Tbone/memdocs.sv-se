@@ -35,7 +35,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 - **Det går inte att uppdatera till för hands version 1707 när du har en plats server i passivt läge**. När du kör för hands versionen av version 1706 och har en [primär plats server i passivt läge](capabilities-in-technical-preview-1706.md#site-server-role-high-availability)måste du avinstallera plats servern för passivt läge innan du kan uppdatera för hands versions platsen till version 1707. Du kan installera om den passiva läges plats servern efter att platsen har kört version 1707.
 
   Så här avinstallerar du plats servern för passivt läge:
-  1. I-konsolen går du till **Administration** > **Översikt** > **plats konfigurations** > **servrar och plats system roller**och väljer sedan plats servern för passivt läge.
+  1. I-konsolen går du till **Administration**  >  **Översikt**  >  **plats konfigurations**  >  **servrar och plats system roller**och väljer sedan plats servern för passivt läge.
   2. I fönstret **plats system roller** högerklickar du på **plats Server** rollen och väljer sedan **ta bort roll**.
   3. Högerklicka på plats servern för passivt läge och välj sedan **ta bort**.
   4. När plats servern har avinstallerats startar du om tjänsten **CONFIGURATION_MANAGER_UPDATE**på den aktiva primära plats servern.
@@ -60,7 +60,7 @@ Från och med den här versionen stöder peer-cache distribution av installation
 
 ## <a name="surface-device-dashboard"></a>Instrument panel för Surface-enheter
 <!--1355788-->
-På instrument panelen för Surface-enheter finns information om de Surface-enheter som finns i din miljö. I-konsolen går du till **övervakning** > av**Surface-enheter**. Du kan visa följande:
+På instrument panelen för Surface-enheter finns information om de Surface-enheter som finns i din miljö. I-konsolen går du till **övervakning**av  >  **Surface-enheter**. Du kan visa följande:
 - procent av ytor
 - procent av Surface-modeller
 - de fem främsta operativ system versionerna
@@ -81,7 +81,7 @@ För att kunna skapa och distribuera Windows Defender Application Guard-principe
 #### <a name="to-create-a-policy-and-to-browse-the-available-settings"></a>Så här skapar du en princip och bläddrar bland de tillgängliga inställningarna:
 
 1. I Configuration Manager-konsolen väljer du **till gångar och efterlevnad**.
-2. I arbets ytan **till gångar och efterlevnad** väljer du **Översikt** > **Endpoint Protection** > **Windows Defender Application Guard**.
+2. I arbets ytan **till gångar och efterlevnad** väljer du **Översikt**  >  **Endpoint Protection**  >  **Windows Defender Application Guard**.
 3. På fliken **Start** går du till gruppen **skapa** och klickar på **skapa Windows Defender Application Guard-princip**.
 4. Med blogg inlägget som referens kan du bläddra bland och konfigurera de tillgängliga inställningarna för att testa funktionen.
 5. I den här versionen har vi lagt till den nya **nätverks definitions** sidan i guiden. På den här sidan anger du företagets identitet och definierar företagets nätverks gränser.<br>Windows 10-datorer lagrar bara en lista över nätverks isolering på klienten. I den här versionen kan du skapa två olika typer av nätverks isolerings listor (en från Windows Information Protection och en från Windows Defender Application Guard) och distribuera dem till klienten. Om du distribuerar båda principerna måste dessa listor för nätverks isolering matcha. Om du distribuerar listor som inte matchar samma klient kommer distributionen att Miss Don.
