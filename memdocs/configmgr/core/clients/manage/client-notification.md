@@ -10,12 +10,12 @@ ms.assetid: deb8aac8-2bd9-4980-a25b-5f8d93051226
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7680c8f955773f169d56f36eb9bbe6507d2d7ce6
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: cb7cc71618ad0f86abce3ab76d6344e0d23bfc58
+ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427812"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153429"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Klient meddelande i Configuration Manager
 
@@ -140,7 +140,7 @@ Från och med version 1910 finns nya enhets åtgärder för **client Diagnostics
 
 - **Aktivera utförlig loggning**: ändra den globala logg nivån för CCM-komponenten till utförlig och aktivera fel söknings loggning.
 - **Inaktivera utförlig loggning**: ändra den globala logg nivån till standard och inaktivera fel söknings loggning.
-- **Samla in klient loggar** (från 2002): ett klient meddelande skickas till de valda klienterna för att samla in CCM-loggarna. Loggarna returneras med program varu inventerings fil insamling. <!--4226618-->
+- **Samla in klient loggar** (från 2002): platsen skickar ett klient meddelande till de valda klienterna för att samla in CCM-loggarna. Klienten skickar loggarna till hanterings platsen med samma kanal som fil samlingen för program varu inventering. <!--4226618--> Du behöver inte aktivera program varu inventering i klient inställningar.<!-- MEMDocs#305 -->
    - Storleks gränsen för de komprimerade klient loggarna är 100 MB. <!--6366098-->
    - Använd [Resursläsaren](inventory/use-resource-explorer-to-view-software-inventory.md#bkmk_diag) hantera och Visa de här filerna.
 

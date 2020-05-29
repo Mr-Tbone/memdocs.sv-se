@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6ccfb523cc1abc3a64d396f32d55a4dc4551987c
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 12fee834e4f384cc180658a8e58cf3920a907831
+ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428600"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153458"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -80,6 +80,8 @@ Exempel: `ccmsetup.exe /?`
 
 Anger fil hämtnings platsen. Använd en lokal sökväg eller UNC-sökväg. Enheten laddar ned filer med SMB-protokollet (Server Message Block). Om du vill använda **/Source**måste Windows-användarkontot för klient installationen ha **Läs** behörighet till platsen.
 
+Mer information om hur CCMSetup laddar ned innehåll finns i [gränser grupper – klient installation](../../servers/deploy/configure/boundary-groups.md#bkmk_ccmsetup). Artikeln innehåller också information om CCMSetup-beteende om du använder både parametrarna **/MP** och **/Source** .
+
 > [!TIP]  
 > Du kan använda parametern **/Source** mer än en gång på en kommando rad för att ange alternativa hämtnings platser.  
 
@@ -88,6 +90,8 @@ Exempel: `ccmsetup.exe /source:"\\server\share"`
 ### <a name="mp"></a>/MP
 
 Anger en käll hanterings plats för datorer att ansluta till. Datorer använder den här hanterings platsen för att hitta den närmaste distributions platsen för installationsfilerna. Om det inte finns några distributions platser eller om datorerna inte kan ladda ned filerna från distributions platserna efter fyra timmar, laddar de ned filerna från den angivna hanterings platsen.  
+
+Mer information om hur CCMSetup laddar ned innehåll finns i [gränser grupper – klient installation](../../servers/deploy/configure/boundary-groups.md#bkmk_ccmsetup). Artikeln innehåller också information om CCMSetup-beteende om du använder både parametrarna **/MP** och **/Source** .
 
 > [!IMPORTANT]  
 > Den här parametern anger en första hanterings plats för datorer för att hitta en nedladdnings källa och kan vara vilken hanterings plats som helst på alla platser. Den *tilldelar* inte klienten till den angivna hanterings platsen.
@@ -748,7 +752,7 @@ Configuration Manager stöder följande attributvärden för urvalskriterier fö
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Titel|  
+|2.5.4.12|T eller Title|Rubrik|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
 |2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  

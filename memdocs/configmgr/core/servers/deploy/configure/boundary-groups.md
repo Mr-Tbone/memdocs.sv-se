@@ -10,12 +10,12 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ce77c43f49556b3a60e36f05127f82d4d135762a
-ms.sourcegitcommit: 2aa97d1b6409575d731c706faa2bc093c2b298c4
+ms.openlocfilehash: c9567cc441636bbda31262e0857e2fc6484c2af7
+ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82643265"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153402"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Konfigurera gränser grupper för Configuration Manager
 
@@ -103,7 +103,7 @@ När en klient inte kan hitta ett tillgängligt plats system börjar den söka e
 
 ### <a name="the-default-site-boundary-group"></a>Standard platsens gränser grupp
 
-Du kan skapa egna gränser grupper, och varje plats har en standard plats för webbplats gränser som Configuration Manager skapar. Den här gruppen heter **standard-site-bounds-Group&lt;platskod>**. Gruppen för plats ABC skulle till exempel heta **default-site-Enbounds Group&lt;ABC>**.
+Du kan skapa egna gränser grupper, och varje plats har en standard plats för webbplats gränser som Configuration Manager skapar. Den här gruppen heter **standard-site-bounds-Group &lt; platskod>**. Gruppen för plats ABC skulle till exempel heta **default-site-Enbounds Group &lt; ABC>**.
 
 För varje avgränsnings grupp som du skapar skapar Configuration Manager automatiskt en underförstådd länk till varje standard plats gränser grupp i hierarkin.  
 
@@ -154,8 +154,16 @@ Om du konfigurerar innehållet för att distribuera på begäran och det inte ä
 
 ### <a name="client-installation"></a><a name="bkmk_ccmsetup"></a>Klient installation
 
+Installations programmet för Configuration Manager-klienten, CCMSetup, kan hämta installations innehåll från en lokal källa eller via en hanterings plats. Det ursprungliga beteendet beror på vilka kommando rads parametrar du använder för att installera klienten:<!-- MEMDocs#286 -->
+
+- Om du inte använder någon av **/MP** -eller **/Source** -parametrarna försöker CCMSetup hämta en lista över hanterings platser från Active Directory eller DNS.
+- Om du bara anger **/Source**tvingar den installationen från den angivna sökvägen. Det identifierar inte hanterings platser. Om det inte går att hitta CCMSetup. cab på den angivna sökvägen, Miss lyckas CCMSetup.
+- Om du anger både **/MP** och **/Source**kontrol leras de angivna hanterings platserna och de identifieras. Om den inte kan hitta en giltig hanterings plats går den tillbaka till den angivna käll Sök vägen.
+
+Mer information om de här CCMSetup-parametrarna finns i [parametrar och egenskaper för klient installation](../../../clients/deploy/about-client-installation-properties.md).
+
 <!--1358840-->
-När du installerar Configuration Manager-klienten kontaktar CCMSetup-processen hanterings platsen för att hitta nödvändigt innehåll. Hanterings platsen returnerar distributions platser baserat på konfigurationen av gränser gruppen. Om du definierar relationer för den begränsade gruppen returnerar hanterings platsen distributions platser i följande ordning:
+När CCMSetup kontaktar hanterings platsen för att hitta det nödvändiga innehållet, returnerar hanterings platsen distributions platser baserat på konfiguration av gränser grupper. Om du definierar relationer för den begränsade gruppen returnerar hanterings platsen distributions platser i följande ordning:
 
 1. Aktuell avgränsnings grupp  
 2. Intilliggande gränser grupper  
@@ -241,16 +249,16 @@ Vanliga scenarier för att aktivera det här alternativet:
 
 - Du har en enda stor avgränsnings grupp för alla fjärranslutna kontor. Aktivera det här alternativet och klienter delar bara innehåll inom under nätet på den fjärranslutna arbets platsen, i stället för att dela innehåll mellan platser.
 
-Från och med version 2002 kan du undanta vissa undernät för matchning, beroende på nätverkets konfiguration. Du vill till exempel ta med en kant linje men undanta ett speciellt VPN-undernät. Som standard utesluter Configuration Manager standard-Teredo-undernätet`2001:0000:%`().<!--3555777-->
+Från och med version 2002 kan du undanta vissa undernät för matchning, beroende på nätverkets konfiguration. Du vill till exempel ta med en kant linje men undanta ett speciellt VPN-undernät. Som standard utesluter Configuration Manager standard-Teredo-undernätet ( `2001:0000:%` ).<!--3555777-->
 
 > [!NOTE]
 > När du i version 2002 [expanderar en fristående primär plats](../install/prerequisites-for-installing-sites.md#bkmk_expand) för att lägga till en central administrations plats (CAS), återställs undantags listan för under nätet till standardvärdet. Undvik det här problemet genom att köra PowerShell-skriptet efter plats expansionen för att anpassa undantags listan för under nätet på certifikat utfärdarna.<!-- 6309068 -->
 
-Importera din undantags lista för undernät som en kommaavgränsad under näts sträng. Använd procent tecknet (`%`) som jokertecken. På plats servern på den översta nivån ställer du in eller läser egenskapen **SubnetExclusionList** embedded för **SMS_HIERARCHY_MANAGER** -komponenten i **SMS_SCI_Component** -klassen. Mer information finns i [SMS_SCI_Component Server WMI-klass](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md).
+Importera din undantags lista för undernät som en kommaavgränsad under näts sträng. Använd procent tecknet ( `%` ) som jokertecken. På plats servern på den översta nivån ställer du in eller läser egenskapen **SubnetExclusionList** embedded för **SMS_HIERARCHY_MANAGER** -komponenten i **SMS_SCI_Component** -klassen. Mer information finns i [SMS_SCI_Component Server WMI-klass](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md).
 
 ##### <a name="sample-powershell-script-to-update-the-subnet-exclusion-list"></a>Exempel på PowerShell-skript för att uppdatera undantags listan för under nätet
 
-Följande skript är ett exempel på hur du kan ändra det här värdet. Lägg till dina undernät i variabeln **PropertyValue** efter `2001:0000:%,172.16.16.0`. Det är en semikolonavgränsad sträng. Kör det här skriptet på toppnivå plats servern i hierarkin.
+Följande skript är ett exempel på hur du kan ändra det här värdet. Lägg till dina undernät i variabeln **PropertyValue** efter `2001:0000:%,172.16.16.0` . Det är en semikolonavgränsad sträng. Kör det här skriptet på toppnivå plats servern i hierarkin.
 
 ```PowerShell
 $PropertyValue = "2001:0000:%,172.16.16.0"
@@ -469,7 +477,7 @@ Du kan inte längre konfigurera enskilda distributions platser så att de blir s
 
 ### <a name="new-default-boundary-group-at-each-site"></a>Ny standard gränser grupp på varje plats
 
-Varje primär plats har en ny standard gränser grupp med namnet **default-site-bounds-group&lt;>**. När en klient inte finns på en nätverks plats som är tilldelad en avgränsnings grupp, används de plats system som är kopplade till standard gruppen från dess tilldelade plats. Planera att använda den här gränser gruppen som ersättning till begreppet återställnings innehålls plats.
+Varje primär plats har en ny standard gränser grupp med namnet **default-site-bounds-group &lt;>**. När en klient inte finns på en nätverks plats som är tilldelad en avgränsnings grupp, används de plats system som är kopplade till standard gruppen från dess tilldelade plats. Planera att använda den här gränser gruppen som ersättning till begreppet återställnings innehålls plats.
 
 #### <a name="allow-fallback-source-locations-for-content-is-removed"></a>**Tillåt att återställnings käll platser för innehåll** tas bort
 

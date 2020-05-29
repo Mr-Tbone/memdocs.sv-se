@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 8251e21c7eccb87b764af75e883018bdc894ca37
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 4536adad3114b944baa6c75ac4e246ecddf4a2d2
+ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268682"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84153462"
 ---
 # <a name="group-policy-settings-for-desktop-analytics"></a>Grup princip inställningar för Skriv bords analys
 
@@ -80,7 +80,7 @@ Grup princip inställningarna i följande tabell har störst potential för att 
 | **Konfigurera det kommersiella ID: t** | CommercialId | Om du anger ett annat värde för den här principen åsidosätts det kommersiella ID som anges av Configuration Manager. Om det inte är samma ID kan konfigurerade enheter inte visas i Skriv bords analys. |
 | **Tillåt telemetri** | AllowTelemetry | Om du anger ett annat värde för den här principen åsidosätts den globala diagnostikdata som du angav i Configuration Manager för mål samlingen. |
 | **Begränsa utökade diagnostikdata till minimi kravet för Windows Analytics** | LimitEnhancedDiagnosticDataWindowsAnalytics | Den här principen är beroende av den tidigare AllowTelemetry-inställningen. Beroende på vilken nivå du angav i Configuration Manager eller med grup princip, kan den här principen ändra nivån för diagnostikdata på enheten till **förbättrad** eller **utökad (begränsad)**. Den här principen gäller endast om AllowTelemetry har värdet `2` (**utökad**). |
-| **Tillåt att enhets namn skickas i Windows-diagnostikdata** | AllowDeviceNameInTelemetry | Om du väljer att skicka enhets namn i Configuration Manager kan du åsidosätta det b som konfigurerar principen till inaktive rad. När du inaktiverar den här inställningen visas enhets namn som "okända" i Skriv bords analys. Mer information finns i [enhets namn](enroll-devices.md#device-name). |
+| **Tillåt att enhets namn skickas i Windows-diagnostikdata** | AllowDeviceNameInTelemetry | Om du väljer att skicka enhets namn i Configuration Manager kan du åsidosätta det genom att konfigurera principen till inaktive rad. När du inaktiverar den här inställningen visas enhets namn som "okända" i Skriv bords analys. Mer information finns i [enhets namn](enroll-devices.md#device-name). |
 | **Konfigurera användning av autentiserad proxy för tjänsten för anslutna användar upplevelser och telemetri** | DisableEnterpriseAuthProxy | Om du konfigurerar Configuration Manager enheter att använda autentiserad proxy ( `0` ) och sedan konfigurerar den här principen för att **inaktivera användning av autentiserad proxy** ( `1` ), skickar enheten diagnostikdata i system kontexten i stället för användarens kontext. Om du inte konfigurerar enheten med en proxyserver i system kontext, eller om enheten inte kan autentisera till proxyn, kan Windows inte skicka diagnostikdata till Desktop Analytics. |
 
 > [!NOTE]
