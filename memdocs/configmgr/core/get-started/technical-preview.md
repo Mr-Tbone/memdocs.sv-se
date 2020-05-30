@@ -2,7 +2,7 @@
 title: Tekniska för hands versioner
 titleSuffix: Configuration Manager
 description: Lär dig mer om den tekniska för hands versionen för att testa nya funktioner och funktioner i Configuration Manager.
-ms.date: 04/30/2020
+ms.date: 05/29/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bfcdd74b7b5c31e3f3ab6bb38a7ea96de9d05eec
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: e4c0842a3e23eb8503c945073a4be35db5173086
+ms.sourcegitcommit: 0d2f6132428b5fa994e5b770ab1d2bf7d78ac179
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905147"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84226245"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Teknisk för hands version för Configuration Manager
 
@@ -116,20 +116,28 @@ Enable this section if needed to include any broad change to the tech preview br
 This is the full list of new features in the latest TP release
 
 bullet format:
-<!-- - [title](2020/technical-preview-2003.md) <!--ID-->
+<!-- - [title](2020/technical-preview-2005.md) <!--ID-->
 
 Följande funktioner är tillgängliga med den senaste Configuration Manager Technical Preview-versionen:
 
-### <a name="technical-preview-version-2004"></a>Teknisk för hands version 2004
+### <a name="technical-preview-version-2005"></a>Teknisk för hands version 2005
 
-- [Microsoft Endpoint Manager-klient ansluter: information om ConfigMgr-klient](2020/technical-preview-2004.md#bkmk_mem) <!--6374854-->
-- [Meddelanden från Microsoft](2020/technical-preview-2004.md#notifications-from-microsoft) <!--3953121-->
-- [Kopiera identifierings data från-konsolen](2020/technical-preview-2004.md#bkmk_copydisco) <!--6890051-->
-- [Förbättringar av CMPivot](2020/technical-preview-2004.md#improvements-to-cmpivot) <!--6518631-->
-- [Stöd för PowerShell version 7](2020/technical-preview-2004.md#bkmk_pwsh7) <!--6023299-->
-- [Förbättra för att formatera och partitionera disk steg för aktivitetssekvens](2020/technical-preview-2004.md#bkmk_osdpart) <!--6610288-->
-- [Regler för insikter för operativ system distribution](2020/technical-preview-2004.md#bkmk_osdmi) <!--6982275-->
-- [PowerShell-cmdletar för distributions typer för aktivitetssekvens](2020/technical-preview-2004.md#bkmk_osdpwsh) <!--7019342-->
+- [Klient anslutning: enhets tids linje i administrations centret](2020/technical-preview-2005.md#bkmk_timeline) <!--7141381-->
+- [Klient anslutning: installera ett program från administrations centret](2020/technical-preview-2005.md#bkmk_apps) <!--6024389-->
+- [Klient anslutning: CMPivot från administrations centret](2020/technical-preview-2005.md#bkmk_cmpivot) <!--6024392-->
+- [Klient anslutning: kör skript från administrations centret](2020/technical-preview-2005.md#bkmk_scripts) <!--6234688-->
+- [VPN-avgränsnings typ](2020/technical-preview-2005.md#bkmk_vpn) <!--7020519-->
+- [Azure AD-autentisering i Software Center](2020/technical-preview-2005.md#bkmk_availapp) <!--6935376-->
+- [Installera och uppgradera klienten på en avgiftsbelagd anslutning](2020/technical-preview-2005.md#bkmk_meter) <!--6976145-->
+- [Medie stöd för aktivitetssekvens för molnbaserad innehåll](2020/technical-preview-2005.md#bkmk_tsmedia) <!--6209223-->
+- [Förbättringar av Cloud Management Gateway-cmdletar](2020/technical-preview-2005.md#bkmk_pwshcmg) <!--6978300-->
+- [Community Hub och GitHub](2020/technical-preview-2005.md#community-hub-and-github) <!--3555935-->
+- [Microsoft 365-appar för företag](2020/technical-preview-2005.md#bkmk_365_apps) <!--6298093-->
+- [Rapportera installations-och uppgraderings problem till Microsoft](2020/technical-preview-2005.md#report-setup-and-upgrade-failures-to-microsoft) <!--5622909-->
+- [Meddelande om förfallo datum för Azure AD-appens hemliga nyckel](2020/technical-preview-2005.md#bkmk_alertkey) <!--6386392-->
+- [Förbättringar av stegen i BitLocker-aktivitetssekvensen](2020/technical-preview-2005.md#bkmk_tsbitlocker) <!--6995601-->
+- [Förbättringar av rensnings verktyget för innehålls bibliotek](2020/technical-preview-2005.md#bkmk_content) <!--6887878-->
+- [Ta bort kommando tolken under uppgraderingen av Windows 10 på plats](2020/technical-preview-2005.md#bkmk_ipucmd) <!--2837795-->
 
 > [!NOTE]
 > Funktioner som var tillgängliga i en tidigare version av den tekniska för hands versionen är fortfarande tillgängliga i senare versioner. På samma sätt är funktioner som läggs till i Configuration Manager aktuella grenen tillgängliga i den tekniska förhands gransknings grenen.
@@ -146,6 +154,17 @@ Följande funktioner släpptes med tidigare versioner av Configuration Manager T
 
 > [!TIP]
 > När en ny aktuell gren version är tillgänglig visas funktioner som är tillgängliga i den versionen i *den senaste artikeln om nyheter.* Mer information finns i [Nyheter i stegvisa versioner](../plan-design/changes/whats-new-incremental-versions.md#supported-versions).
+
+### <a name="technical-preview-version-2004"></a>Teknisk för hands version 2004
+
+- [Microsoft Endpoint Manager-klient ansluter: information om ConfigMgr-klient](2020/technical-preview-2004.md#bkmk_mem) <!--6374854-->
+- [Meddelanden från Microsoft](2020/technical-preview-2004.md#notifications-from-microsoft) <!--3953121-->
+- [Kopiera identifierings data från-konsolen](2020/technical-preview-2004.md#bkmk_copydisco) <!--6890051-->
+- [Förbättringar av CMPivot](2020/technical-preview-2004.md#improvements-to-cmpivot) <!--6518631-->
+- [Stöd för PowerShell version 7](2020/technical-preview-2004.md#bkmk_pwsh7) <!--6023299-->
+- [Förbättra för att formatera och partitionera disk steg för aktivitetssekvens](2020/technical-preview-2004.md#bkmk_osdpart) <!--6610288-->
+- [Regler för insikter för operativ system distribution](2020/technical-preview-2004.md#bkmk_osdmi) <!--6982275-->
+- [PowerShell-cmdletar för distributions typer för aktivitetssekvens](2020/technical-preview-2004.md#bkmk_osdpwsh) <!--7019342-->
 
 ### <a name="technical-preview-version-2003"></a>Teknisk för hands version 2003
 

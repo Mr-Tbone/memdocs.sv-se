@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: dd970dc1517a6fcc197b2bf39a141871b4999a02
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 82c8495391dcc22aa2784657bc1461887e412577
+ms.sourcegitcommit: 7b8921d3ea6a751de67315771d68e2d2750fa36f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268427"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223652"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Data sekretess för Skriv bords analys
 
@@ -55,7 +55,7 @@ Följande bild visar hur diagnostikdata flödar från enskilda enheter via Diagn
 
     4. Du distribuerar kompatibilitetsinställningar till alla mål enheter.  
 
-3. Enheter skickar diagnostikdata till Microsoft Diagnostic Datahantering-tjänsten för Windows. Den här tjänsten finns i USA.  
+3. Enheter skickar diagnostikdata till Microsoft Diagnostic Datahantering-tjänsten för Windows. Alla diagnostikdata krypteras över HTTPS och använder certifikat för att fästa vid överföring från enheten till den här tjänsten. Tjänsten Microsoft Datahantering finns i USA.
 
 4. Varje dag skapar Microsoft en ögonblicks bild av IT-fokuserade insikter. Den här ögonblicks bilden kombinerar diagnostikdata från Windows med dina indata för registrerade enheter. Den här processen sker i ett tillfälligt lagrings utrymme som bara används av Desktop Analytics. Den tillfälliga lagrings platsen finns i Microsoft Data Center i USA. Alla data skickas via en krypterad SSL-kanal (HTTPS). Ögonblicks bilderna åtskiljs av ett kommersiellt ID.  
 
