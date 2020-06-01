@@ -157,6 +157,10 @@
               href: intune-endpoints.md
             - name: Intune-slutpunkter för amerikanska myndigheter
               href: intune-us-government-endpoints.md
+            - name: Slutpunkter i Kina
+              href: china-endpoints.md
+            - name: Intune som drivs av 21Vianet i Kina
+              href: china.md
         - name: Logga in i Intune
           href: account-sign-up.md
         - name: Konfigurera domäner
