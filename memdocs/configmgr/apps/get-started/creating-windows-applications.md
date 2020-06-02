@@ -10,12 +10,12 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 9e59d850a78a8f45f93769003e7a1de99e5634b3
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: ddd01055ac6edf2872854c93cc5172b396052ad2
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906392"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270862"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Skapa Windows-program i Configuration Manager
 
@@ -39,7 +39,7 @@ Etablera ett program med ett Windows app-paket för alla användare på enheten.
 > [!Important]  
 > Var försiktig med att installera, konfigurera och uppdatera olika versioner av samma Windows app-paket på en enhet, vilket kan orsaka oväntade resultat. Det här problemet kan uppstå när du använder Configuration Manager för att etablera appen, men sedan tillåta att användare uppdaterar appen från Microsoft Store. Mer information finns i nästa steg-vägledning när du [hanterar appar från Microsoft Store för företag](../deploy-use/manage-apps-from-the-windows-store-for-business.md#next-steps).  
 
-När du konfigurerar en offline-licensierad app, tillåter Configuration Manager inte att Windows automatiskt uppdaterar den från Microsoft Store.  
+När du distribuerar offline-appar till Windows 10-enheter med Configuration Manager-klienten tillåter du inte att användare uppdaterar program som är externa för att Configuration Manager distributioner. Kontroll av uppdateringar till offline-appar är särskilt viktigt i miljöer med flera användare, till exempel klass rum. Mer information finns i [Hantera appar från Microsoft Store för företag och utbildning med Configuration Manager](../deploy-use/manage-apps-from-the-windows-store-for-business.md#next-steps).<!-- MEMDocs#316 -->
 
 Configuration Manager stöder app-etablering i alla versioner av Windows 10 som stöds.<!--SCCMDocs-pr issue 2762-->
 
@@ -163,8 +163,8 @@ Använd följande tabell för att ta reda på vilken typ av kod signerings certi
 | Paket  | Symantec  | Ej Symantec  |
 |---------|---------|---------|
 | Universella **. appx** -paket på Windows 10 Mobile-enheter | Ja | Ja |
-| **. xap** -paket | Ja | Nej |
-| **. appx** -paket som skapats för Windows Phone 8,1 för installation på Windows 10 Mobile-enheter | Ja | Nej |
+| **. xap** -paket | Yes | Inga |
+| **. appx** -paket som skapats för Windows Phone 8,1 för installation på Windows 10 Mobile-enheter | Yes | Inga |
 
 ## <a name="deploy-windows-installer-apps-to-mdm-enrolled-windows-10-devices"></a><a name="bkmk_mdm-msi"></a>Distribuera Windows Installer appar till MDM-registrerade Windows 10-enheter  
 

@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b9e2e4e85d9fb6a1ab34af8760e0ac61d6e4fab4
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 79e83a7ba111b1d7f96fb623914ffe8e11f22f3d
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718303"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270879"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Förbered för användning SQL Server Always on-tillgänglighetsgrupper med Configuration Manager
 
@@ -106,7 +106,7 @@ Konfigurera databasen för varje replik med följande inställningar:
 
     Mer information finns i [CLR-integrering](https://docs.microsoft.com/sql/relational-databases/clr-integration/clr-integration-enabling).  
 
-- Ange **Max storleken för text repl** till `2147483647`:  
+- Ange **Max storleken för text repl** till `2147483647` :  
 
     ``` SQL
     EXECUTE sp_configure 'max text repl size (B)', 2147483647
@@ -264,6 +264,8 @@ När installationen är klar måste följande portar vara öppna för Configurat
 
 Du kan använda anpassade portar för dessa konfigurationer. Använd samma anpassade portar av slut punkten och alla repliker i tillgänglighets gruppen.
 
+Skapa en belastnings Utjämnings regel för varje port i Azure Load Balancer för SQL för att replikera data mellan platser. Mer information finns i [Konfigurera portar med hög tillgänglighet för en intern belastningsutjämnare](https://docs.microsoft.com/azure/load-balancer/load-balancer-configure-ha-ports).<!-- MEMDocs#252 -->
+
 #### <a name="listener"></a>Lyssnare
 
 Tillgänglighetsgruppen måste ha minst en *lyssnare i tillgänglighetsgruppen*. När du konfigurerar Configuration Manager att använda plats databasen i tillgänglighets gruppen, använder den den här lyssnaren virtuella namn. Även om en tillgänglighets grupp kan innehålla flera lyssnare kan Configuration Manager bara använda en. Mer information finns i [skapa eller konfigurera en lyssnare för en SQL Server tillgänglighets grupp](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server).
@@ -280,11 +282,11 @@ Betrakta till exempel följande scenario:
 
 - Du skapar en tillgänglighets grupp som använder tre SQL-servrar.  
 
-- Din primära replikserver är en ny installation av SQL Server 2014. Som standard lagras databasen i databasen. MDF och. LDF-filer `C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA`i.  
+- Din primära replikserver är en ny installation av SQL Server 2014. Som standard lagras databasen i databasen. MDF och. LDF-filer i `C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA` .  
 
-- Du har uppgraderat båda de sekundära replik servrarna till SQL Server 2014 från tidigare versioner. Med uppgraderingen behåller de här servrarna den ursprungliga fil Sök vägen för att lagra databasfiler: `C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA`.  
+- Du har uppgraderat båda de sekundära replik servrarna till SQL Server 2014 från tidigare versioner. Med uppgraderingen behåller de här servrarna den ursprungliga fil Sök vägen för att lagra databasfiler: `C:\Program Files\Microsoft SQL Server\MSSQL10.MSSQLSERVER\MSSQL\DATA` .  
 
-- Innan du flyttar plats databasen till den här tillgänglighets gruppen skapar du följande fil Sök väg på varje sekundär replik Server `C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA`:. Den här sökvägen är en dubblett av sökvägen som används på den primära repliken, även om de sekundära replikerna inte använder den här fil platsen.  
+- Innan du flyttar plats databasen till den här tillgänglighets gruppen skapar du följande fil Sök väg på varje sekundär replik Server: `C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA` . Den här sökvägen är en dubblett av sökvägen som används på den primära repliken, även om de sekundära replikerna inte använder den här fil platsen.  
 
 - Sedan beviljar du SQL Server tjänst kontot på varje sekundär replik fullständig behörighet till den nyligen skapade fil platsen på den servern.  
 

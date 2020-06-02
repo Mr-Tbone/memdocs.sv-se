@@ -10,12 +10,12 @@ ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d7697f8b5a2017aa732c52512bf31598c070fbc
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7b9111e3be82424425561e0a664fee955d73ee63
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714880"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270828"
 ---
 # <a name="how-to-manage-clients-in-configuration-manager"></a>Hantera klienter i Configuration Manager
 
@@ -103,7 +103,7 @@ Mer information finns i [så här konfigurerar du klient inställningar](../depl
 
 ### <a name="approve"></a>Godkänn
 
-När klienten kommunicerar med plats system med HTTP och ett självsignerat certifikat måste du godkänna dessa klienter för att identifiera dem som betrodda datorer. Som standard godkänner plats konfigurationen automatiskt klienter från samma Active Directory skog och betrodda skogar. Detta standard beteende innebär att du inte behöver godkänna varje klient manuellt. Godkänn manuellt de arbets grupps datorer som du litar på och andra ej godkända datorer som du litar på.
+När klienten kommunicerar med plats system med HTTP och ett självsignerat certifikat måste du godkänna dessa klienter för att identifiera dem som betrodda datorer. Som standard godkänner plats konfigurationen automatiskt klienter från samma Active Directory skog, betrodda skogar och anslutna Azure Active Directory (Azure AD)-klient organisationer<!-- MEMDocs#318 -->. Detta standard beteende innebär att du inte behöver godkänna varje klient manuellt. Godkänn manuellt de arbets grupps datorer som du litar på och andra ej godkända datorer som du litar på.
 
 > [!IMPORTANT]  
 > Även om vissa hanterings funktioner kan fungera för klienter som inte är godkända, är detta ett scenario som inte stöds för Configuration Manager.  
@@ -310,7 +310,7 @@ Mer information om hur du använder de här kommando rads egenskaperna för CCMS
 
 1. På klient datorn öppnar du **Configuration Manager** kontroll panelen.  
 
-2. Växla till fliken **cache** . Ange egenskaper för utrymme och plats. Standard platsen är `%windir%\ccmcache`.  
+2. Växla till fliken **cache** . Ange egenskaper för utrymme och plats. Standard platsen är `%windir%\ccmcache` .  
 
 3. Om du vill ta bort filerna i cache-mappen väljer du **ta bort filer**.  
 
@@ -333,7 +333,7 @@ Du kan avinstallera Configuration Manager klient program varan från en dator me
 > [!TIP]  
 > Avinstallations processen visar inga resultat på skärmen. Information om hur du kontrollerar att klienten har avinstallerat finns i följande loggfil:`%windir%\ccmsetup\logs\CCMSetup.log`  
 >
-> Om du behöver vänta tills avinstallationen har slutförts innan du gör något annat, `Wait-Process CCMSetup` kör du i PowerShell. Det här kommandot kan pausa ett skript tills CCMSetup-processen har slutförts.
+> Om du behöver vänta tills avinstallationen har slutförts innan du gör något annat, kör du `Wait-Process CCMSetup` i PowerShell. Det här kommandot kan pausa ett skript tills CCMSetup-processen har slutförts.
 
 
 ## <a name="manage-conflicting-records"></a><a name="BKMK_ConflictingRecords"></a>Hantera poster i konflikt

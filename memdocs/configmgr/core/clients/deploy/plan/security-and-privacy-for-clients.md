@@ -10,12 +10,12 @@ ms.assetid: c1d71899-308f-49d5-adfa-3a3ec0163ed8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e4922502b49ab2da9ce393fab809e4dc583fd962
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 84ef4e37ddf756f04101c9cdec0ec7a4ed91688d
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714012"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270845"
 ---
 # <a name="security-and-privacy-for-configuration-manager-clients"></a>Säkerhet och sekretess för Configuration Manager-klienter
 
@@ -32,7 +32,7 @@ Configuration Manager-platsen accepterar data från enheter som kör Configurati
 
 - Som platsegenskap ställer du in **Inställningar för platssystem** på **Endast HTTPS**.  
 
-- Installera klienter med egenskapen `UsePKICert` CCMSetup.  
+- Installera klienter med `UsePKICert` egenskapen CCMSetup.  
 
 - Använd en lista över återkallade certifikat och se till att klienter och kommunicerande servrar alltid har åtkomst till den.  
 
@@ -48,7 +48,7 @@ Om du inte kan använda PKI-autentisering identifierar godkännandet en dator so
 - Automatiskt för datorer i betrodda domäner
 - Automatisk för alla datorer  
 
-Den säkraste metoden för godkännande är att automatiskt godkänna klienter som är medlemmar i betrodda domäner. Kontrol lera sedan manuellt och godkänn alla andra datorer. Att automatiskt godkänna alla klienter rekommenderas inte om du inte har andra åtkomst kontroller för att förhindra att otillförlitliga datorer får åtkomst till nätverket.  
+Den säkraste metoden för godkännande är att automatiskt godkänna klienter som är medlemmar i betrodda domäner. Det här alternativet inkluderar moln domänanslutna klienter från anslutna Azure Active Directory (Azure AD)-klient organisationer.<!-- MEMDocs#318 --> Kontrol lera sedan manuellt och godkänn alla andra datorer. Att automatiskt godkänna alla klienter rekommenderas inte om du inte har andra åtkomst kontroller för att förhindra att otillförlitliga datorer får åtkomst till nätverket.  
 
 Mer information om hur du godkänner datorer manuellt finns i [Hantera klienter från noden enheter](../../manage/manage-clients.md#BKMK_ManagingClients_DevicesNode).  
 
