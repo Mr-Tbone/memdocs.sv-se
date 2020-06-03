@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 0e90855949f5c8f249db6b2f4305c71b8ee4e768
-ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
+ms.openlocfilehash: 3aa722415248ad9275c6ad065f0120bfe78d3ce4
+ms.sourcegitcommit: 8a023e941d90c107c9769a1f7519875a31ef9393
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83824026"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84311228"
 ---
 # <a name="how-to-deploy-to-pilot-with-desktop-analytics"></a>Så här distribuerar du till pilot med Desktop Analytics
 
@@ -104,7 +104,7 @@ Innan du kan distribuera Windows måste du först skapa program varu objekt i Co
 Configuration Manager använder data från Desktop Analytics för att skapa samlingar för pilot-och produktions distributionerna. De här samlingarna finns i arbets ytan **till gångar och efterlevnad** , noden **enhets samlingar** , mappen **distributions planer** .
 
 > [!IMPORTANT]
-> De här samlingarna hanteras av Configuration Manager för distributions planer för Skriv bords analys. Manuella ändringar stöds inte.
+> De här samlingarna hanteras av Configuration Manager för distributions planer för Skriv bords analys. Manuella ändringar stöds inte. Om du tar bort någon av de här samlingarna fungerar inte Desktop Analytics och du måste [ansluta Configuration Manager](connect-configmgr.md) igen.<!--7208090-->
 
 För att se till att enheterna är felfria efter varje distributions fas kan du använda följande procedur för att skapa en integrerad stegvis distribution med Desktop Analytics:
 

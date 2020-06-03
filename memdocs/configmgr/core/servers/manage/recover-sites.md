@@ -2,7 +2,7 @@
 title: Webbplats återställning
 titleSuffix: Configuration Manager
 description: Lär dig hur du återställer dina platser i Configuration Manager.
-ms.date: 08/23/2019
+ms.date: 06/02/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b17c8c9ed0c1f6f9a5aeb487e07ad3d3dc66cbae
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 37e4db2ad801c5923ba3db54554af0bb13968048
+ms.sourcegitcommit: 64727a4b025a589e270842da39516c4c42563a34
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903964"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84301443"
 ---
 # <a name="recover-a-configuration-manager-site"></a>Återställa en Configuration Manager-plats
 
@@ -347,6 +347,10 @@ Upprepa processen för alla andra PXE-aktiverade distributions platser.
     - **Kör PowerShell-skript**: om du använder alternativet för att **köra det här steget som följande konto**väljer du **Ange**. Ange och bekräfta lösen ordet och välj sedan **Verifiera**.
 
 Upprepa processen för alla aktivitetssekvenser.
+
+### <a name="recreate-bootable-media-and-prestaged-media-in-non-pki-environments"></a>Återskapa startbara medier och förinstallerade medier i andra miljöer än PKI
+
+I miljöer som inte är PKI-miljöer baseras självsignerade certifikat i startbara medier och för beredda medier på dator nycklarna på den server där mediet skapades. Av den anledningen, om maskin varan ändras eller operativ systemet installeras som en del av en återställning, måste alla startbara medier och förinstallerade medier som skapas på servern återskapas. Mer information om hur du skapar startbara medier och förinstallerade medier finns i [Skapa startbara media](../../../osd/deploy-use/create-bootable-media.md) och [skapa för beredda medier](../../../osd/deploy-use/create-prestaged-media.md).
 
 ### <a name="reenter-sideloading-keys"></a>Ange nycklar för separat inläsning
 
