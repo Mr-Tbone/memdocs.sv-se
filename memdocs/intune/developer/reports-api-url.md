@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/03/2020
+ms.date: 05/26/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04521681ee6e262f4634cfc96560a5922ce1b8c0
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: ef0ba25d697bca6d6a6af7aad3565e6c2c70841e
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79360242"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165948"
 ---
 # <a name="intune-data-warehouse-api-endpoint"></a>API-slutpunkt för Intune-informationslager
 
@@ -79,7 +79,7 @@ Den aktuella versionen har stöd för följande OData-frågeparametrar: `$filter
 > I filterexemplen antas att dagens datum är 2019-02-21.
 
 |                             Filter                             |           Prestandaoptimering           |                                          Beskrivning                                          |
-|:--------------------------------------------------------------:|:--------------------------------------------:|:---------------------------------------------------------------------------------------------:|
+|----------------------------------------------------------------|----------------------------------------------|-----------------------------------------------------------------------------------------------|
 |    `maxhistorydays=7`                                            |    Fullständig                                      |    Returnera data med `DateKey` mellan 20180214 och 20180221.                                     |
 |    `$filter=DateKey eq 20180214`                                 |    Fullständig                                      |    Returnera data med `DateKey` lika med 20180214.                                                    |
 |    `$filter=DateKey ge 20180214 and DateKey lt 20180221`         |    Fullständig                                      |    Returnera data med `DateKey` mellan 20180214 och 20180220.                                     |

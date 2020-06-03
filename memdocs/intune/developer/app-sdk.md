@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/02/2020
+ms.date: 05/27/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b754ce98dfafd6eefb9346561268db1e4b32ed3b
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 58c78b43fc90aba68fa20d20153b33e7879636e6
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989865"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166084"
 ---
 # <a name="microsoft-intune-app-sdk-overview"></a>Översikt över Microsoft Intune App SDK
 Intune App SDK, som finns för både iOS och Android, gör det möjligt för din app att stödja Intune-[appskyddsprinciper](../apps/app-protection-policy.md). När appskyddsprinciper tillämpas på din app kan den hanteras av Intune och identifieras av Intune som en hanterad app. SDK:n arbetar för att minimera mängden kodändringar i programmet som utvecklare behöver göra. Som du märker kan du aktivera de flesta SDK-funktioner utan att ändra appens beteende. För att få en ännu bättre upplevelse för slutanvändare och IT-administratörer kan du använda SDK:ns API:er för att anpassa din apps beteende till att stödja funktioner som kräver medverkan av din app.

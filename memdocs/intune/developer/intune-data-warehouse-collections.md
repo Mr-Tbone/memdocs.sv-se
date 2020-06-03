@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 997a2db8917da1443531d8446176c21db3a5dbf6
-ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
+ms.openlocfilehash: 7b58a24340741621a4034ed4f77ad1298251a692
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83709459"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165880"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune-informationslagersamlingar
 
@@ -33,7 +33,7 @@ Följande Intune-informationslagersamlingar innehåller egenskaper, beskrivninga
 I entiteten **AppRevision** visas en lista över alla appversioner.
 
 |          Egenskap          |                                      Beskrivning                                      |                Exempel               |
-|:--------------------------:|:-------------------------------------------------------------------------------------:|:------------------------------------:|
+|----------------------------|---------------------------------------------------------------------------------------|--------------------------------------|
 | AppKey                     | Appens unika id.                                                         | 123                                  |
 | ApplicationId              | Unik identifierare för appen – liknar AppKey, men den här nyckeln är naturlig.        | b66bc706-ffff-7437-0340-032819502773 |
 | Revision                   | Versionen som anges av administratören under uppladdningen av binärfilen.                   | 2                                    |
@@ -54,7 +54,7 @@ I entiteten **AppRevision** visas en lista över alla appversioner.
 Entiteten **AppType** visar en lista över installationskällan för en app.
 
 |   Egenskap  |        Beskrivning        |
-|:-----------:|:-------------------------:|
+|-------------|---------------------------|
 | AppTypeID   | Id för typen           |
 | AppTypeKey  | Surrogatnyckel för nyckeln |
 | AppTypeName | Typ av app                  |
@@ -62,7 +62,7 @@ Entiteten **AppType** visar en lista över installationskällan för en app.
 ### <a name="example"></a>Exempel
 
 | AppTypeID |                Name               |                     Beskrivning                     |
-|:---------:|:---------------------------------:|:---------------------------------------------------:|
+|-----------|-----------------------------------|-----------------------------------------------------|
 | 0         | Android-butiksapp               | En app från en Android-butik.                             |
 | 1         | Verksamhetsspecifik Android-app                 | En verksamhetsspecifik app för Android.                  |
 | 2         | Hanterad Android-butiksapp (MAM) | En app med aktiverad hantering från en Android-butik. |
@@ -81,7 +81,7 @@ Entiteten **AppType** visar en lista över installationskällan för en app.
 I följande tabell sammanfattas tilldelningsstatusen för efterlevnadsprinciper för enheter. Den visar antalet enheter som finns i varje kompatibilitetstillstånd.
 
 |    Egenskap   |                                                                                      Beskrivning                                                                                     |  Exempel |
-|:-------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | DateKey       | Datumnyckel när sammanfattningen skapades för kompatibilitetsprincipen.                                                                                                                   | 20161204 |
 | Okänt       | Antalet enheter som är offline eller inte kunde kommunicera med Intune eller Azure AD av andra orsaker.                                                                           | 5        |
 | NotApplicable | Antalet enheter där kompatibilitetsprinciper som tilldelats av administratören inte kan användas.                                                                                     | 201      |
@@ -94,7 +94,7 @@ I följande tabell sammanfattas tilldelningsstatusen för efterlevnadsprinciper 
 I följande tabell sammanfattas tilldelningsstatus för efterlevnadsprinciper för enheter per princip och per principtyp. Den visar antalet enheter som finns efter kompatibilitetstillstånd för varje tilldelad efterlevnadsprincip.
 
 |      Egenskap     |                                                                                      Beskrivning                                                                                     |  Exempel |
-|:-----------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------:|
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | DateKey           | Datumnyckel när sammanfattningen skapades för kompatibilitetsprincipen.                                                                                                                   | 20161219 |
 | PolicyKey         | Nyckel för efterlevnadsprincipen som sammanfattningen skapades för.                                                                                                                   | 10178    |
 | PolicyPlatformKey | Nyckel för plattformstypen för efterlevnadsprincipen som sammanfattningen skapades för.                                                                                            | 5        |
@@ -107,7 +107,7 @@ I följande tabell sammanfattas tilldelningsstatus för efterlevnadsprinciper f�
 ## <a name="compliancestates"></a>complianceStates
 
 |      Egenskap      |                       Beskrivning                      |
-|:------------------:|:------------------------------------------------------:|
+|--------------------|--------------------------------------------------------|
 | complianceStatus   | Kompatibilitetsstatus för enheter med mdmStatusKey       |
 | complianceStateKey | Kompatibilitetsnyckel för att matcha enhet och kompatibilitetsstatus |
 | complianceStateID  | ID för att matcha kompatibilitetstillståndet                |
@@ -115,7 +115,7 @@ I följande tabell sammanfattas tilldelningsstatus för efterlevnadsprinciper f�
 ### <a name="example"></a>Exempel
 
 |  complianceStatus  |                       Beskrivning                      |
-|:------------------:|:------------------------------------------------------:|
+|--------------------|--------------------------------------------------------|
 |    Okänt         |    Okänt.                                                                        |
 |    Kompatibel       |    Kompatibel.                                                                      |
 |    Ej kompatibel    |       Enheten är icke-kompatibel och blockeras från företagsresurser.             |
@@ -128,7 +128,7 @@ I följande tabell sammanfattas tilldelningsstatus för efterlevnadsprinciper f�
 Entiteten **datum** representerar datum som flera informationslagerentiteter refererar till.
 
 |     Egenskap    |                       Beskrivning                      |    Exempel    |
-|:---------------:|:------------------------------------------------------:|:-------------:|
+|-----------------|--------------------------------------------------------|---------------|
 | DateKey         | Unikt id för datumet i informationslagret. | 20160703      |
 | FullDate        | Datumet i fullständigt datum/tid-format.        | 7/3/2016 0:00 |
 | DayOfWeek       | Veckodag                                            | 1             |
@@ -151,7 +151,7 @@ Entiteten **datum** representerar datum som flera informationslagerentiteter ref
 ## <a name="devicecategories"></a>deviceCategories
 
 |      Egenskap      |                                    Beskrivning                                   |                Exempel               |
-|:------------------:|:--------------------------------------------------------------------------------:|:------------------------------------:|
+|--------------------|----------------------------------------------------------------------------------|--------------------------------------|
 | deviceCategoryID   | Unik identifierare för enhetskategorin.                                       | fb415ba2-7c08-41f6-a5e5-685b50da2c4c |
 | deviceCategoryKey  | Unik identifierare för enhetskategorin i informationslagret – surrogatnyckel | 1                                    |
 | deviceCategoryName | Visningsnamn för enhetskategorin.                                            | Smartphones                          |
@@ -160,7 +160,7 @@ Entiteten **datum** representerar datum som flera informationslagerentiteter ref
 Entiteten **DeviceConfigurationProfileDeviceActivity** innehåller en lista över antalet enheter med tillståndet lyckades, väntar, misslyckades eller fel per dag. Antalet visar de enhetskonfigurationsprofiler som har tilldelats entiteten. Om en enhet exempelvis har tillståndet lyckades för alla tilldelade principer, ökar antalet lyckade med ett för den dagen. Om det finns två tilldelade principer för en enhet, en med tillståndet lyckades och en med tillståndet fel, ökar antalet lyckade och enheten försätts i feltillstånd. Entiteten visar hur många enheter som har en viss status vid en viss dag under de senaste 30 dagarna.
 
 |  Egenskap |                                          Beskrivning                                          |  Exempel |
-|:---------:|:---------------------------------------------------------------------------------------------:|:--------:|
+|-----------|-----------------------------------------------------------------------------------------------|----------|
 | DateKey   | Datumnyckel när incheckningen av enhetskonfigurationsprofilen registrerades i informationslagret. | 20160703 |
 | Väntar   | Antalet unika enheter i väntande läge.                                                    | 123      |
 | Lyckades | Antalet unika enheter med tillståndet lyckades.                                                    | 12       |
@@ -181,7 +181,7 @@ Entiteten **DeviceConfigurationProfileUserActivity** innehåller en lista över 
 ## <a name="devicepropertyhistories"></a>devicePropertyHistories
 
 |          Egenskap          |                                                                                      Beskrivning                                                                                     |
-|:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DateKey                    | Referens till datumtabellen som visar dag.                                                                                                                                          |
 | DeviceKey                  | Unik identifierare för enheten i informationslagret – surrogatnyckel. Det här är en referens till enhetstabellen som innehåller Intune-enhetens ID.                               |
 | DeviceName                 | Namn på enheten på plattformar som tillåter namngivning av enheter. På andra plattformar skapar Intune ett namn för andra egenskaper. Det här attributet kan inte göras tillgängligt för alla enheter. |
@@ -199,7 +199,7 @@ Entiteten **DeviceConfigurationProfileUserActivity** innehåller en lista över 
 Entiteten **DeviceRegistrationState** representerar den registreringstyp som andra informationslagersamlingar hänvisar till. 
 
 |           Egenskap          |                                     Beskrivning                                     |
-|:---------------------------:|:-----------------------------------------------------------------------------------:|
+|-----------------------------|-------------------------------------------------------------------------------------|
 | deviceRegistrationStateID   | Unikt id för registreringstillstånd                                            |
 | deviceRegistrationStateKey  | Unik identifierare för registreringstillståndet i informationslagret – surrogatnyckel |
 | deviceRegistrationStateName | Registreringstillstånd                                                                  |
@@ -216,7 +216,7 @@ Entiteten **DeviceRegistrationState** representerar den registreringstyp som and
 Entiteten **enhet** innehåller en lista över alla registrerade enheter som hanteras och deras respektive egenskaper.
 
 |          Egenskap          |                                                                                       Beskrivning                                                                                      |
-|:--------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DeviceKey                  | Unik identifierare för enheten i informationslagret – surrogatnyckel.                                                                                                               |
 | DeviceId                   | Unik identifierare för enheten.                                                                                                                                                     |
 | DeviceName                 | Namnet på enheten på plattformar som tillåter namngivning av enheter. På andra plattformar skapar Intune ett namn utifrån övriga egenskaper. Det här attributet kan inte göras tillgängligt för alla enheter. |
@@ -257,7 +257,7 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 Entiteten **deviceType** representerar den enhetstyp som andra informationslagerentiteter hänvisar till. Enhetstypen beskriver vanligtvis antingen enhetsmodell, tillverkare eller både och.
 
 |    Egenskap    |                                  Beskrivning                                 |
-|:--------------:|:----------------------------------------------------------------------------:|
+|----------------|------------------------------------------------------------------------------|
 | DeviceTypeID   | Unik identifierare för enhetstypen                                       |
 | DeviceTypeKey  | Unik identifierare för enhetstypen i informationslagret – surrogatnyckel |
 | DeviceTypeName | Enhetstyp                                                                |
@@ -265,7 +265,7 @@ Entiteten **deviceType** representerar den enhetstyp som andra informationslager
 ### <a name="example"></a>Exempel
 
 | deviceTypeID |        Name       |                      Beskrivning                      |
-|:------------:|:-----------------:|:-----------------------------------------------------:|
+|--------------|-------------------|-------------------------------------------------------|
 | -1           | Inte tillgänglig   | Enhetstypen är inte tillgänglig.                     |
 | 0            | skrivbords-           | Windows-skrivbordsenhet                              |
 | 1            | Windows           | Windows-enhet                                      |
@@ -294,7 +294,7 @@ Entiteten **deviceType** representerar den enhetstyp som andra informationslager
 Entiteten **deviceEnrollmentType** visar hur en enhet registrerades. Typ av registrering visar registreringsmetod. I exemplen visas olika typer av registrering och vad de innebär.
 
 |         Egenskap         |                                    Beskrivning                                    |
-|:------------------------:|:---------------------------------------------------------------------------------:|
+|--------------------------|-----------------------------------------------------------------------------------|
 | deviceEnrollmentTypeID   | Unik identifierare för registreringstypen.                                       |
 | deviceEnrollmentTypeKey  | Unik identifierare för registreringstypen i informationslagret – surrogatnyckel. |
 | deviceEnrollmentTypeName | Namn på registreringstyp.                                                           |
@@ -302,7 +302,7 @@ Entiteten **deviceEnrollmentType** visar hur en enhet registrerades. Typ av regi
 ### <a name="example"></a>Exempel
 
 | enrollmentTypeID |                Name                |                                        Beskrivning                                       |
-|:----------------:|:----------------------------------:|:----------------------------------------------------------------------------------------:|
+|------------------|------------------------------------|------------------------------------------------------------------------------------------|
 | 0                | Okänt                            | Registreringstyp samlades inte in                                                      |
 | 1                | UserEnrollment                     | Användardriven registrering via BYOD-kanal.                                           |
 | 2                | DeviceEnrollmentManager            | Användarregistrering med ett konto för enhetsregistreringshanterare.                              |
@@ -406,7 +406,7 @@ Entiteten **EnrollmentFailureReason** visar en mer detaljerad orsak till ett enh
 **IntuneManagementExtension** visar en lista över hälsan för **intuneManagementExtension** på varje Windows 10-enhet per dag. Data bevaras under de senaste 60 dagarna.
 
 |       Egenskap      |                          Beskrivning                          | Exempel |
-|:-------------------:|:-------------------------------------------------------------:|:-------:|
+|---------------------|---------------------------------------------------------------|---------|
 | DateKey             | Datumets unika id.                                | 123     |
 | TenantKey           | Klientens unika id.                              | 456     |
 | DeviceKey           | Unikt id för enheten.                              | 789     |
@@ -417,7 +417,7 @@ Entiteten **EnrollmentFailureReason** visar en mer detaljerad orsak till ett enh
 **IntuneManagementExtensionHealthState** visar en lista över alla möjliga hälsotillstånd för **IntuneManagementExtension**.
 
 |      Egenskap     |                   Beskrivning                  | Exempel |
-|:-----------------:|:----------------------------------------------:|:-------:|
+|-------------------|------------------------------------------------|---------|
 | ExtensionStateKey | Unik identifierare för hälsotillstånd.           | 2       |
 | ExtensionState    | Hälsotillståndet för en IntuneManagementExtension. | Felfri |
 
@@ -425,7 +425,7 @@ Entiteten **EnrollmentFailureReason** visar en mer detaljerad orsak till ett enh
 Entiteten **IntuneManagementExtensionVersion** visar en lista över alla versioner som används av **IntuneManagementExtension**.
 
 |       Egenskap      |                          Beskrivning                          | Exempel |
-|:-------------------:|:-------------------------------------------------------------:|:-------:|
+|---------------------|---------------------------------------------------------------|---------|
 | ExtensionVersionKey | Unik identifierare för IntuneManagementExtension-versionen. | 1       |
 | ExtensionVersion    | Det fyrsiffriga versionsnumret.                                   | 1.0.2.0 |
 
@@ -512,7 +512,7 @@ Entiteten **MamPlatform** innehåller en lista över namn på plattformar och ty
 Entiteten **managementAgentType** representerar de agenter som används för att hantera en enhet.
 
 |         Egenskap        |                                       Beskrivning                                       |
-|:-----------------------:|:---------------------------------------------------------------------------------------:|
+|-------------------------|-----------------------------------------------------------------------------------------|
 | ManagementAgentTypeID   | Unikt id för typ av hanteringsagent.                                         |
 | ManagementAgentTypeKey  | Unik identifierare för typen av hanteringsagent i informationslagret – surrogatnyckel. |
 | ManagementAgentTypeName | Visar vilken typ av agent som används för att hantera enheten.                              |
@@ -520,7 +520,7 @@ Entiteten **managementAgentType** representerar de agenter som används för att
 ### <a name="example"></a>Exempel
 
 | ManagementAgentTypeID |                Name               |                                  Beskrivning                                 |
-|:---------------------:|:---------------------------------:|:----------------------------------------------------------------------------:|
+|-----------------------|-----------------------------------|------------------------------------------------------------------------------|
 | 1                     | EAS                               | Enheten hanteras via Exchange Active Sync                         |
 | 2                     | MDM                               | Enheten hanteras med hjälp av en MDM-agent                                   |
 | 3                     | EasMdm                            | Enheten hanteras både av Exchange Active Sync och en MDM-agent        |
@@ -537,7 +537,7 @@ Entiteten **managementAgentType** representerar de agenter som används för att
 Entiteten **ManagementState** innehåller information om enhetens tillstånd. Informationen kan vara användbar i fall där fjärråtgärder tillämpas, om enheten är jailbrokad eller rotad.
 
 |       Egenskap      |                                     Beskrivning                                    |
-|:-------------------:|:----------------------------------------------------------------------------------:|
+|---------------------|------------------------------------------------------------------------------------|
 | managementStateID   | Unik identifierare för hanteringstillståndet.                                       |
 | managementStateKey  | Unik identifierare för hanteringstillståndet i informationslagret – surrogatnyckel. |
 | managementStateName | Visar tillståndet för fjärråtgärden som utförts på den här enheten.                 |
@@ -545,7 +545,7 @@ Entiteten **ManagementState** innehåller information om enhetens tillstånd. In
 ### <a name="example"></a>Exempel
 
 | managementStateID |      Name      |                                                   Beskrivning                                                   |
-|:-----------------:|:--------------:|:---------------------------------------------------------------------------------------------------------------:|
+|-------------------|----------------|-----------------------------------------------------------------------------------------------------------------|
 | 0                 | Hanterade        | Hanterad utan väntande fjärråtgärder.                                                                       |
 | 1                 | RetirePending  | Ett kommando för tillbakadragande väntar på enheten.                                                             |
 | 2                 | RetireFailed   | Det gick inte att utföra kommandot för tillbakadragande på enheten.                                                                      |
@@ -563,7 +563,7 @@ Entiteten **ManagementState** innehåller information om enhetens tillstånd. In
 Entiteten MobileAppInstallState representerar installationstillståndet för ett mobilprogram efter att det har tilldelats till en grupp som innehåller enheter och/eller användare.
 
 |       Egenskap      |                        Beskrivning                       |
-|:-------------------:|:--------------------------------------------------------:|
+|---------------------|----------------------------------------------------------|
 | AppInstallStateKey  | Unikt ID för appens installationstillstånd för ditt konto. |
 | AppInstallState     | Uppräkningsvärde för appens installationstillstånd.                     |
 | AppInstallStateName | Namn på appens installationstillstånd.                           |
@@ -572,7 +572,7 @@ Entiteten MobileAppInstallState representerar installationstillståndet för ett
 Representerar installationstillståndet för ett mobilprogram för en viss enhetstyp som använder hantering av mobilprogram via Microsoft Intune.
 
 |      Egenskap      |                                                          Beskrivning                                                          |
-|:------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | DateKey            | Nyckeln för det datum då appens installationstillstånd registrerades.                                                                     |
 | AppKey             | Nyckeln för mobilprogrammet som används för att identifiera en instans av AppRevision.                                                          |
 | DeviceTypeKey      | Nyckeln för den enhetstyp som har kopplats till mobilprogrammet.                                                              |
@@ -584,7 +584,7 @@ Representerar installationstillståndet för ett mobilprogram för en viss enhet
 Entiteten **ownerType** visar om en enhet är företagsägd, privat ägd eller okänd.
 
 |    Egenskap   |                                                                                     Beskrivning                                                                                    |           Exempel          |
-|:-------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------:|
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
 | ownerTypeID   | Unikt id för ägartyp.                                                                                                                                               |                            |
 | ownerTypeKey  | Unik identifierare för ägartypen i informationslagret – surrogatnyckel.                                                                                                       |                            |
 | ownerTypeName | Representerar enheternas ägartyp:  Företag – Enheten är företagsägd.  Privat – enheten är privatägd (BYOD).   Okänd – det finns ingen information om enheten. | Företag Privat Okänd |
@@ -596,7 +596,7 @@ Entiteten **ownerType** visar om en enhet är företagsägd, privat ägd eller o
 Entiteten **Princip** innehåller en lista över enhetskonfigurationsprofiler, appkonfigurationsprofiler och efterlevnadsprinciper. Principerna med hantering av mobilenheter (MDM) kan tilldelas en grupp i företaget.
 
 |          Egenskap          |                                                                       Beskrivning                                                                      |                Exempel               |
-|:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------:|
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 | PolicyKey                  | Unik nyckel för principen i informationslagret.                                                                                              | 123                                  |
 | PolicyId                   | Unikt id för principen i informationslagret.                                                                                                 | b66bc706-ffff-7437-0340-032819502773 |
 | PolicyName                 | Namnet på principen.                                                                                                                                    | "Windows 10 Baseline"                |
@@ -610,7 +610,7 @@ Entiteten **Princip** innehåller en lista över enhetskonfigurationsprofiler, a
 Följande tabell visar antalet enheter med tillståndet lyckades, väntar, misslyckades eller fel per dag. Siffran återger data per principtypprofil. Om en enhet exempelvis har tillståndet lyckades för alla tilldelade principer, ökar antalet lyckade med ett för den dagen. Om det finns två tilldelade principer för en enhet, en med tillståndet lyckades och en med tillståndet fel, ökar antalet lyckade och enheten försätts i feltillstånd. Entiteten **policyDeviceActivity** visar en lista över hur många enheter som har ett visst tillstånd under en viss dag inom de senaste 30 dagarna.
 
 |  Egenskap |                                           Beskrivning                                           |        Exempel        |
-|:---------:|:-----------------------------------------------------------------------------------------------:|:---------------------:|
+|-----------|-------------------------------------------------------------------------------------------------|-----------------------|
 | DateKey   | Datumnyckel när incheckningen av enhetskonfigurationsprofilen registrerades i informationslagret. | 20160703              |
 | Väntar   | Antalet unika enheter i väntande tillstånd.                                                    | 123                   |
 | Lyckades | Antalet unika enheter med tillståndet lyckades.                                                    | 12                    |
@@ -621,7 +621,7 @@ Följande tabell visar antalet enheter med tillståndet lyckades, väntar, missl
 ## <a name="policyplatformtypes"></a>policyPlatformTypes
 
 |        Egenskap        |                      Beskrivning                      |     Exempel    |
-|:----------------------:|:-----------------------------------------------------:|:--------------:|
+|------------------------|-------------------------------------------------------|----------------|
 | PolicyPlatformTypeKey  | Den unika nyckeln för principens plattformstyp.        | 20170519       |
 | PolicyPlatformTypeId   | Den unika identifieraren för principens plattformstyp. | 1              |
 | PolicyPlatformTypeName | Namnet på principens plattformstyp.              | AndroidForWork |
@@ -630,7 +630,7 @@ Följande tabell visar antalet enheter med tillståndet lyckades, väntar, missl
 Entiteten **PolicyTypeActivity** visat det sammanlagda antalet enheter med tillståndet lyckades, väntar misslyckades eller fel. Tillståndet visas avseende enhetskonfigurationsprofil, appkonfigurationsprofil eller efterlevnadsprincip per dag.
 
 |    Egenskap   |                                          Beskrivning                                          |           Exempel           |
-|:-------------:|:---------------------------------------------------------------------------------------------:|:---------------------------:|
+|---------------|-----------------------------------------------------------------------------------------------|-----------------------------|
 | DateKey       | Datumnyckel när incheckningen av enhetskonfigurationsprofilen registrerades i informationslagret. | 20160703                    |
 | PolicyKey     | Principnyckel, kan kopplas till princip för att hämta policyName.                                | Windows 10-baslinje         |
 | PolicyTypeKey | Typ av principnyckel, kan kopplas till principtyp för att hämta namnet på principtypen.             | Windows 10-efterlevnadsprincip |
@@ -643,7 +643,7 @@ Entiteten **PolicyTypeActivity** visat det sammanlagda antalet enheter med tills
 Entiteten **PolicyType** innehåller en lista över typer av enhetskonfigurationsprofiler, appkonfigurationsprofiler och efterlevnadsprinciper. Principerna med hantering av mobilenheter (MDM) kan tilldelas en grupp i företaget.
 
 |    Egenskap    |                       Beskrivning                      |            Exempel            |
-|:--------------:|:------------------------------------------------------:|:-----------------------------:|
+|----------------|--------------------------------------------------------|-------------------------------|
 | PolicyTypeId   | Unikt id för principen i källsystemet.  | 123                           |
 | PolicyTypeKey  | Unikt id för principen i informationslagret. | 1                             |
 | PolicyTypeName | Namn på principtypen.                               | Windows 10-efterlevnadsprincip. |
@@ -652,7 +652,7 @@ Entiteten **PolicyType** innehåller en lista över typer av enhetskonfiguration
 Följande tabell visar antalet användare med tillståndet lyckades, väntar, misslyckades eller fel per dag. Siffran återger data per principtypprofil. Om en enhet exempelvis har tillståndet lyckades för alla tilldelade principer ökar antalet lyckade med ett för den dagen. Om en användare har tilldelats två profiler, en med tillståndet lyckades och den andra med tillståndet fel, räknas användaren i feltillståndet. Entiteten **PolicyUserActivity** visar en lista över hur många användare som är i ett visst tillstånd under en viss dag inom de senaste 30 dagarna.
 
 |  Egenskap |                                          Beskrivning                                          |       Exempel       |
-|:---------:|:---------------------------------------------------------------------------------------------:|:-------------------:|
+|-----------|-----------------------------------------------------------------------------------------------|---------------------|
 | DateKey   | Datumnyckel när incheckningen av enhetskonfigurationsprofilen registrerades i informationslagret. | 20160703            |
 | Väntar   | Antalet unika enheter i väntande läge.                                                    | 123                 |
 | Lyckades | Antalet unika enheter med tillståndet lyckades.                                                    | 12                  |
@@ -680,7 +680,7 @@ En **termsAndConditions**-entitet representerar metadata och innehållet i en vi
 Entiteten **Användarenhetsassociation** innehåller användarenhetsassociationer i din organisation.
 
 |        Name        |                                             Beskrivning                                            |     Exempel     |
-|:------------------:|:--------------------------------------------------------------------------------------------------:|:---------------:|
+|--------------------|----------------------------------------------------------------------------------------------------|-----------------|
 | UserKey            | Unikt id för användaren i informationslagret.   (Surrogatnyckel).                            | 123             |
 | DeviceKey          | Unikt id för enheten i informationslagret.                                             | 123             |
 | CreatedDateTimeUTC | Datum och tid när användarenhetsassociationen skapades. Använder UTC-formatet.                     | 11/23/2016 0:00 |
@@ -693,7 +693,7 @@ Entiteten **user** visar en lista över alla Azure Active Directory-användare (
 Entitetssamlingen **user** innehåller användardata. De här posterna innehåller användarens tillstånd vid datainsamlingsperioden, även om användaren har tagits bort. En användare kan till exempel läggas till i Intune och sedan tas bort under den senaste månaden. Användaren är inte tillgänglig vid tidpunkten för rapporten, men användaren och tillståndet finns i data från föregående månad. Du kan skapa en rapport som visar varaktigheten för användarens historiska förekomst i dina data.
 
 |          Egenskap          |                                                                                                           Beskrivning                                                                                                          |                Exempel               |
-|:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------:|
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
 | UserKey                    | Unik identifierare för användaren i informationslagret – surrogatnyckel.                                                                                                                                                         | 123                                  |
 | UserId                     | Unik identifierare för användaren, liknar UserKey men är en naturlig nyckel.                                                                                                                                                    | b66bc706-ffff-7437-0340-032819502773 |
 | UserEmail                  | Användarens e-postadress.                                                                                                                                                                                                     | John@constoso.com                    |
@@ -718,7 +718,7 @@ En **userTermsAndConditionsAcceptance**-entitet representerar godkännandestatus
 Entiteten **vppProgramType** innehåller en lista över möjliga typer av volymköpsprogram för en app.
 
 |      Egenskap      |          Beskrivning         |
-|:------------------:|:----------------------------:|
+|--------------------|------------------------------|
 | VppProgramTypeID   | ID för typen.           |
 | VppProgramTypeKey  | Surrogatnyckel för nyckeln. |
 | VppProgramTypeName | Typ av volymköpsprogram.          |
@@ -726,7 +726,7 @@ Entiteten **vppProgramType** innehåller en lista över möjliga typer av volymk
 ### <a name="example"></a>Exempel
 
 |             VppProgramID             |         Name        | Beskrivning                |
-|:------------------------------------:|:-------------------:|----------------------------|
+|--------------------------------------|---------------------|----------------------------|
 | 3DDA2474-470B-4503-9830-2665C21C1945 | Microsoft           | Microsofts volymköpsprogram. |
 | 00000000-0000-0000-0000-000000000000 | Inte tillgängligt än | Standardvärde, inget volymköpsprogram.   |
 | B54814E0-68EA-4BA4-8088-B5AAB58E737B | Apple               | Apples volymköpsprogram.     |

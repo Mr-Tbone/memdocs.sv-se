@@ -6,7 +6,7 @@ keywords: ''
 author: erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/19/2019
+ms.date: 05/28/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -15,12 +15,12 @@ ms.assetid: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 299eba5cfd07edac44db35d3b3eb6b97e5242973
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: f44bd52d12753ae25b8828d6c41d3055721a1fd6
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989986"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165999"
 ---
 # <a name="intune-reports"></a>Intune-rapporter
 Microsoft Intune-rapporter gör det möjligt för dig att övervaka hälsotillståndet och aktiviteten hos punkter i din organisation på ett mer effektivt sätt och ger även andra rapporteringsdata i Intune. Du kan till exempel se rapporter om enhetens efterlevnad, enhetens hälsotillstånd och enhetstrender. Dessutom kan du skapa anpassade rapporter för att få mer information. 

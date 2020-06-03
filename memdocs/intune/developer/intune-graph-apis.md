@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0412f15912ac9017ebc49f974ec621d86f8b6c0e
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: b87b2528dce4d007f2a2031a11fd69ea774c2033
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989094"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165914"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Använda Azure AD för att få åtkomst till Intune API:er i Microsoft Graph
 
@@ -143,7 +143,7 @@ Mer information:
 När du beviljar behörighet för Microsoft Graph kan du ange följande omfattningar för att styra åtkomsten till Intune-funktioner: I följande tabell sammanfattas behörighetsomfattningarna för Intune API.  Den första kolumnen visar namnet på den funktion som visas i Azure-portalen och den andra kolumnen innehåller namnet på behörighetsomfattningen.
 
 Inställningen _Aktivera åtkomst_ | Namn på sökomfång
-:--|:--
+:--|---
 __Utföra användarpåverkande fjärråtgärder på Microsoft Intune-enheter__ | [DeviceManagementManagedDevices.PrivilegedOperations.All](#mgd-po)
 __Läsa och skriva Microsoft Intune-enheter__ | [DeviceManagementManagedDevices.ReadWrite.All](#mgd-rw)
 __Läsa Microsoft Intune-enheter__ | [DeviceManagementManagedDevices.Read.All](#mgd-ro)
