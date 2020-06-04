@@ -2,7 +2,7 @@
 title: Uppgradera klienter i Windows
 titleSuffix: Configuration Manager
 description: Uppgradera klienter på Windows-datorer i Configuration Manager.
-ms.date: 08/27/2019
+ms.date: 06/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6143fd47-48ec-4bca-b53b-5b9b9f067bc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b3849f360b2f22f2f48bbe49159b610399158b29
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 8b0a69b07a3be633434203f93b0724cec4ea88a3
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427770"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347157"
 ---
 # <a name="how-to-upgrade-clients-for-windows-computers-in-configuration-manager"></a>Uppgradera klienter för Windows-datorer i Configuration Manager
 
@@ -59,9 +59,6 @@ En klient kan uppgradera automatiskt i följande scenarier:
 > Om du vill identifiera olika versioner av Configuration Manager-klienten i din hierarki använder du rapport **antalet Configuration Manager klienter efter klient versioner** i mappen rapportmapp **-klient information**.  
 
 Configuration Manager skapar ett uppgraderings paket som standard. Paketet skickas automatiskt till alla distributions platser i hierarkin. Om du gör ändringar i klient paketet på certifikat utfärdarna, Configuration Manager automatiskt uppdatera paketet och distribuera det igen. Ett exempel är att ändra när du lägger till ett klient språk paket. Om du aktiverar automatisk klient uppgradering installerar varje klient automatiskt det nya klient språk paketet.
-
-> [!NOTE]  
-> Configuration Manager skickar inte klient uppgraderings paketet automatiskt till Configuration Manager molnbaserade distributions platser.  
 
 Aktivera automatisk klient uppgradering i hela hierarkin. Den här konfigurationen håller dina klienter uppdaterade med mindre ansträngning.  
 

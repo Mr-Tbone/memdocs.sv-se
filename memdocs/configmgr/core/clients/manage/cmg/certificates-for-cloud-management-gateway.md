@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 33e4ecbac965206ec4043f5adf91d2dbfb9602d8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7e9602ef5ea784dd3e97578d5ff585f2ca662c1e
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714082"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347210"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certifikat för Cloud Management Gateway
 
@@ -65,7 +65,7 @@ CMG skapar en HTTPS-tjänst som Internetbaserade klienter ansluter till. Servern
 
 Det här certifikatet kräver ett globalt unikt namn för att identifiera tjänsten i Azure. Innan du begär ett certifikat bör du kontrol lera att Azure-domännamnet som du vill ha är unikt. Till exempel *GraniteFalls.CloudApp.net*.
 
-1. Logga in på [Azure Portal](https://portal.azure.com).
+1. Logga in på [Azure-portalen](https://portal.azure.com).
 1. Välj **alla resurser**och välj sedan **Lägg till**.
 1. Sök efter **moln tjänst**. Välj **Skapa**.
 1. I fältet **DNS-namn** anger du det prefix som du vill använda, till exempel *GraniteFalls*. Gränssnittet visar om domän namnet är tillgängligt eller redan används av en annan tjänst.
@@ -78,7 +78,7 @@ Om du även vill aktivera CMG för innehåll kontrollerar du att namnet på CMG-
 - Sök efter **lagrings konto**
 - Testa ditt namn i fältet **namn på lagrings konto**
 
-DNS-namnets prefix, till exempel *GraniteFalls*, ska vara 3 till 24 tecken långt och endast använda alfanumeriska tecken. Använd inte specialtecken, t. ex. ett`-`bindestreck ().<!-- SCCMDocs#1080 -->
+DNS-namnets prefix, till exempel *GraniteFalls*, ska vara 3 till 24 tecken långt och endast använda alfanumeriska tecken. Använd inte specialtecken, t. ex. ett bindestreck ( `-` ).<!-- SCCMDocs#1080 -->
 
 ### <a name="cmg-trusted-root-certificate-to-clients"></a><a name="bkmk_cmgroot"></a>CMG betrodda rot certifikat till klienter
 
@@ -238,15 +238,16 @@ Konfigurera en lokal hanterings plats med följande klient anslutnings läge:
 
 #### <a name="legend-of-terms"></a>Förklaring av villkor
 
-- *Arbets grupp*: enheten är inte ansluten till en domän eller Azure AD, men har ett [certifikat för klientautentisering](#bkmk_clientauth)  
-- *AD-* domänansluten: du ansluter enheten till en lokal Active Directory domän  
-- *Azure AD-ansluten*: även känd som molnbaserad domän ansluten, ansluter du enheten till en Azure Active Directory klient  
-- *Hybrid-ansluten*: du ansluter enheten till både en Active Directory domän och en Azure AD-klient  
-- *Http*: på hanterings platsens egenskaper anger du klient anslutningarna till **http**  
-- *Https*: i egenskaperna för hanterings platsen anger du klient anslutningarna till **https**  
-- *E-http*: på fliken plats egenskaper, fliken **klient dator kommunikation** , anger du plats system inställningarna till **https eller http**, och du aktiverar alternativet att **använda Configuration Manager-genererade certifikat för http-plats system**. Du konfigurerar hanterings platsen för HTTP, HTTP-hanterings platsen är klar för både HTTP-och HTTPS-kommunikation (token-auth-scenarier).  
+- *Arbets grupp*: enheten är inte ansluten till en domän eller Azure AD, men har ett [certifikat för klientautentisering](#bkmk_clientauth).
+- *AD-* domänansluten: du ansluter enheten till en lokal Active Directory domän.
+- *Azure AD-ansluten*: även känd som molnbaserad domän ansluten, ansluter du enheten till en Azure Active Directory klient. Mer information finns i [Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join).
+- *Hybrid-ansluten*: du ansluter enheten till din lokala Active Directory och registrerar den med din Azure Active Directory. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid).
+- *Http*: Ange klient anslutningarna till **http**på hanterings platsens egenskaper.
+- *Https*: Ange klient anslutningarna till **https**på hanterings platsens egenskaper.
+- *E-http*: på fliken plats egenskaper, fliken **klient dator kommunikation** , anger du plats system inställningarna till **https eller http**, och du aktiverar alternativet att **använda Configuration Manager-genererade certifikat för http-plats system**. Du konfigurerar hanterings platsen för HTTP, HTTP-hanterings platsen är klar för både HTTP-och HTTPS-kommunikation (token-auth-scenarier).
+
     > [!Note]
-    > Från och med version 1906 kallas den här fliken **kommunikations säkerhet**.<!-- SCCMDocs#1645 -->  
+    > Från och med version 1906 kallas den här fliken **kommunikations säkerhet**.<!-- SCCMDocs#1645 -->
 
 ## <a name="azure-management-certificate"></a><a name="bkmk_azuremgmt"></a>Hanterings certifikat för Azure
 

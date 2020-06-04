@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 127ed43fded6c66bc4395ae4d69a28ae8c9eddd5
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 21e837d5d97c42f095159a87e015f181c5e53419
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83877530"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347176"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Om klient inställningar i Configuration Manager
 
@@ -98,7 +98,7 @@ Aktiverar [peer-cache](../../plan-design/hierarchy/client-peer-cache.md) för Co
 Från och med version 1906 anger du den minsta tiden som den Configuration Manager klienten ska behålla cachelagrat innehåll. Den här klient inställningen definierar den minsta tids period Configuration Manager agenten ska vänta innan den kan ta bort innehåll från cachen om mer utrymme behövs.
 
 Som standard är det här värdet 1 440 minuter (24 timmar).
-Det maximala värdet för den här inställningen är 10 080 minuter (1 vecka).
+Det maximala värdet för den här inställningen är 10 080 minuter (en vecka).
 
 Den här inställningen ger dig större kontroll över klientens cacheminne på olika typer av enheter. Du kan minska värdet på klienter som har små hård diskar och inte behöver behålla befintligt innehåll innan en annan distribution körs.
 
@@ -114,7 +114,7 @@ Anger hur ofta följande Configuration Manager klienter hämtar klient princip:
 - Mac-datorer  
 - Datorer som kör Linux eller UNIX  
 
-Det här värdet är 60 minuter som standard. Genom att minska det här värdet kan klienterna söka på platsen oftare. Med flera klienter kan det här beteendet ha en negativ inverkan på platsens prestanda. [Rikt linjerna för storlek och skala](../../plan-design/configs/size-and-scale-numbers.md) baseras på standardvärdet. Om du ökar det här värdet går det snabbare att söka efter platsen. Eventuella ändringar i klient principerna, inklusive nya distributioner, tar längre tid för klienter att ladda ned och bearbeta.<!-- SCCMDocs issue 823 -->
+Det här värdet är 60 minuter som standard. Genom att minska det här värdet kan klienterna söka på platsen oftare. Med många klienter kan det här beteendet ha en negativ inverkan på platsens prestanda. [Rikt linjerna för storlek och skala](../../plan-design/configs/size-and-scale-numbers.md) baseras på standardvärdet. Om du ökar det här värdet går det snabbare att söka efter platsen. Eventuella ändringar i klient principerna, inklusive nya distributioner, tar längre tid för klienter att ladda ned och bearbeta.<!-- SCCMDocs issue 823 -->
 
 ### <a name="enable-user-policy-on-clients"></a>Aktivera användar princip på klienter
 
@@ -276,7 +276,7 @@ Konfigurera hur användare kan installera program vara, program uppdateringar oc
 
 Om datorerna kräver PIN-kod för BitLocker, åsidosätter det här alternativet kravet på att ange en PIN-kod när datorn startas om efter en program varu installation.  
 
-- **Always**: Configuration Manager tillfälligt avbryter BitLocker efter att det har installerat program vara som kräver en omstart och har påbörjat en omstart av datorn. Den här inställningen gäller endast för omstart av datorn som initierats av Configuration Manager. Den här inställningen inaktiverar inte kravet att ange BitLocker-PIN-koden när användaren startar om datorn. Kravet på PIN-koden för BitLocker återupptas när Windows har startats.
+- **Alltid**: Configuration Manager tillfälligt pausar BitLocker efter att ha installerat program vara som kräver en omstart, och datorn startas om. Den här inställningen gäller endast när Configuration Manager startar om datorn. Den här inställningen inaktiverar inte kravet att ange BitLocker-PIN-koden när användaren startar om datorn. Kravet på PIN-koden för BitLocker återupptas när Windows har startats.
 
 - **Aldrig**: Configuration Manager pausar inte BitLocker efter att ha installerat program vara som kräver en omstart. I det här scenariot kan program varu installationen inte slutföras förrän användaren anger PIN-koden för att slutföra standard start processen och läsa in Windows.
 
@@ -329,29 +329,11 @@ Ange ett värde för det här alternativet om du vill ge användare mer tid för
 
 Ange en respitperiod på 0 till 120 timmar. Använd den här inställningen tillsammans med distributions egenskapen **fördröjd tillämpning av distributionen enligt användar inställningar**. Mer information finns i [distribuera program](../../../apps/deploy-use/deploy-applications.md#delay-enforcement-with-a-grace-period).
 
-
 ## <a name="computer-restart"></a>Omstart av dator
 
-Följande inställningar måste vara kortare i varaktighet än det kortaste underhålls fönstret som tillämpas på datorn:
+Mer information om de här inställningarna finns i [meddelanden om omstart av enhet](device-restart-notifications.md).<!-- 7182335 -->
 
-- **Visa ett tillfälligt meddelande till användaren som anger intervallet innan användaren loggas ut eller omstart av datorn (minuter)**
-- **Visa en dialog ruta som användaren inte kan stänga, som visar nedräknings intervallet innan användaren loggas ut eller datorn startas om (minuter)**
-
-
-Mer information om underhålls perioder finns i [använda underhålls](../manage/collections/use-maintenance-windows.md)perioder.
-
-- **Ange varaktighet för vilo läge för omstart av datorn (minuter) för omstart** (från och med version 1906)<!--3976435-->
-  - Standardvärdet är 240 minuter.
-  - Varaktighet svärdet för vilo läge ska vara mindre än det tillfälliga meddelande svärdet minus värdet för meddelandet som användaren inte kan stänga.
-  - Mer information finns i [meddelanden om omstart av enhet](device-restart-notifications.md).
-
-**När en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande**<!--3555947-->: Från och med version 1902 kan du konfigurera den här inställningen till **Ja** för att ändra användar upplevelsen till mer påträngande. Den här inställningen gäller för alla distributioner av program, aktivitetssekvenser och program uppdateringar. Mer information finns i [Planera för Software Center](../../../apps/plan-design/plan-for-software-center.md#bkmk_impact).
-
-> [!IMPORTANT]
-> I Configuration Manager 1902, under vissa omständigheter, ersätter dialog rutan inte popup-meddelanden. Lös problemet genom att installera Samlad [uppdatering för Configuration Manager version 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
-
-
-## <a name="delivery-optimization"></a>Leveransoptimering 
+## <a name="delivery-optimization"></a>Leveransoptimering
 
 <!-- 1324696 -->
 Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Konfigurera leverans optimeringen så att den använder dina gränser när du delar innehåll mellan peer-datorer.
@@ -363,7 +345,7 @@ Du använder Configuration Manager gränser grupper för att definiera och regle
 
 ### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Använd Configuration Manager gränser grupper för grupp-ID för leverans optimering
 
-Välj **Ja** om du vill använda gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med det önskade innehållet. När du aktiverar den här inställningen anges även hämtnings läget för leverans optimering till grupp (2) på mål klienter.
+Välj **Ja** om du vill använda gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med innehållet. När du aktiverar den här inställningen anges även hämtnings läget för leverans optimering till grupp (2) på mål klienter.
 
 > [!Note]
 > Microsoft rekommenderar att klienten konfigurerar den här inställningen via lokal princip i stället för grup princip. Detta gör att gränserna för grupp identifieraren kan anges som leverans optimerings grupp identifierare på klienten. Mer information finns i avsnittet om [leverans optimering](../../plan-design/hierarchy/fundamental-concepts-for-content-management.md#delivery-optimization).
@@ -411,7 +393,7 @@ Välj **Ja** om du vill förhindra att datorn startas om när den Endpoint Prote
 
 ### <a name="allowed-period-of-time-users-can-postpone-a-required-restart-to-complete-the-endpoint-protection-installation-hours"></a>Tids period som användare kan skjuta upp en begärd omstart för att slutföra Endpoint Protection installationen (timmar)
 
-Om en omstart krävs efter att den Endpoint Protection klienten har installerats, anger den här inställningen antalet timmar som användarna kan skjuta upp den begärda omstarten. Den här inställningen kräver att inställningen för **ignorera eventuella nödvändiga omstarter av datorn efter att Endpoint Protection-klienten har installerats** **.**  
+Om en omstart krävs efter att den Endpoint Protection klienten har installerats, anger den här inställningen antalet timmar som användarna kan skjuta upp den begärda omstarten. Den här inställningen kräver att du inaktiverar följande inställning: **ignorera eventuella nödvändiga omstarter av datorn efter att Endpoint Protection-klienten har installerats**.
 
 ### <a name="disable-alternate-sources-such-as-microsoft-windows-update-microsoft-windows-server-update-services-or-unc-shares-for-the-initial-definition-update-on-client-computers"></a>Inaktivera alternativa källor (till exempel Microsoft Windows Update, Microsoft Windows Server Update Services eller UNC-resurser) för den inledande definitions uppdateringen på klient datorer
 
@@ -423,7 +405,7 @@ Välj **Ja** om du vill att Configuration Manager endast ska installera den för
 
 ### <a name="polling-interval-for-mobile-device-legacy-clients"></a>Avsöknings intervall för äldre mobila enhets klienter
 
-Välj **ange intervall** för att ange hur lång tid i minuter eller timmar som äldre mobila enheter avsöker för principen. Dessa enheter innehåller plattformar som Windows CE, Mac OS X och UNIX eller Linux.
+Välj **ange intervall** för att ange hur lång tid i minuter eller timmar som äldre mobila enheter avsöker för principen. Dessa enheter innehåller plattformar som Windows CE, macOS och UNIX eller Linux.
 
 ### <a name="polling-interval-for-modern-devices-minutes"></a>Avsöknings intervall för moderna enheter (minuter)
 
@@ -529,7 +511,7 @@ Välj **Ja** om du vill låta användare av Software Center undanta sina datorer
 
 ### <a name="allow-network-wake-up"></a>Tillåt nätverks aktivering
 
-Tillagt i 1810. När inställningen är **aktive**rad konfigurerar energi inställningarna på nätverkskortet så att nätverkskortet kan aktivera enheten. När inställningen är **inaktive**rad konfigureras energi inställningarna på nätverkskortet så att det inte tillåter att nätverkskortet aktiverar enheten.
+När du aktiverar den här inställningen konfigurerar klienten energi inställningarna på datorn så att nätverkskortet kan aktivera enheten. Om du inaktiverar den här inställningen kan datorns nätverkskort inte aktivera enheten.
 
 ### <a name="enable-wake-up-proxy"></a>Aktivera aktiveringsproxy
 
@@ -549,7 +531,7 @@ Konfigurera sedan följande ytterligare inställningar efter behov:
     > [!IMPORTANT]  
     > Numret måste stämma med numret i **Egenskaper**för platsen. Om du ändrar det här numret på en plats uppdateras det inte automatiskt på den andra platsen.  
 
-- **Undantag i Windows Defender-brandväggen för Wake-up-proxy**: Configuration Manager klienten konfigurerar automatiskt port numret för Wake-up-proxy på enheter som kör Windows Defender-brandväggen. Välj **Konfigurera** för att ange önskade brand Väggs profiler.  
+- **Undantag i Windows Defender-brandväggen för Wake-up-proxy**: Configuration Manager klienten konfigurerar automatiskt port numret för Wake-up-proxy på enheter som kör Windows Defender-brandväggen. Välj **Konfigurera** för att ange brand Väggs profilerna.  
 
     Om klienterna kör en annan brand vägg konfigurerar du den manuellt för att tillåta **port numret för Wake-up-proxy (UDP)**.  
 
@@ -586,7 +568,7 @@ Innan du överför innehåll från det delade Urklippet i en fjärrstyrningssess
 
 ### <a name="grant-remote-control-permission-to-local-administrators-group"></a>Bevilja fjärrstyrningsbehörigheten till lokal administratörsgrupp
 
-Välj om lokala administratörer på den server som initierar fjärr styrnings anslutningen ska kunna upprätta fjärr styrnings anslutningar till klient datorer.  
+Välj om lokala administratörer på den server som startar fjärr styrnings anslutningen ska kunna upprätta fjärr styrnings anslutningar till klient datorer.  
 
 ### <a name="access-level-allowed"></a>Tillåten åtkomstnivå
 
@@ -620,7 +602,7 @@ Ange det här alternativet om du vill använda ljud för att indikera när en fj
 
 Konfigurera den här inställningen till **Ja** för att låta Configuration Manager hantera oönskade Fjärrhjälp-sessioner.  
 
-I en oönskad fjärrhjälpsession begärdes inte användaren på klient datorn att hjälpa till att initiera sessionen.  
+I en oönskad fjärrhjälpsession begärdes inte användaren på klient datorn att hjälpa till att starta sessionen.  
 
 ### <a name="manage-solicited-remote-assistance-settings"></a>Hantera önskade Fjärrhjälp-inställningar
 
@@ -630,7 +612,7 @@ I en efterfrågad fjärrhjälpssession skickade användaren på klient datorn en
 
 ### <a name="level-of-access-for-remote-assistance"></a>Åtkomstnivå för Fjärrhjälp
 
-Välj den åtkomst nivå som ska tilldelas till Fjärrhjälp-sessioner som initieras i Configuration Manager-konsolen. Välj något av följande alternativ:
+Välj den åtkomst nivå som ska tilldelas till Fjärrhjälp-sessioner som startas i Configuration Manager-konsolen. Välj något av följande alternativ:
 
 - **Ingen** (standardvärde)
 - **Fjärrvisning**
@@ -671,7 +653,7 @@ När du aktiverar det här alternativet döljs användar tillgängliga program s
 
 ### <a name="hide-installed-applications-in-software-center"></a><a name="bkmk_HideInstalled"></a>Dölj installerade program i Software Center
 
-När du aktiverar det här alternativet visas inte längre program som redan är installerade på fliken program. Det här alternativet anges som standard när du installerar eller uppgraderar till Configuration Manager 1802. Installerade program är fortfarande tillgängliga för granskning på fliken installations status. <!--1357592-->
+När du aktiverar det här alternativet visas inte längre program som redan är installerade på fliken program. Det här alternativet anges som standard när du installerar eller uppgraderar till Configuration Manager. Installerade program är fortfarande tillgängliga för granskning på fliken installations status. <!--1357592-->
 
 ### <a name="hide-application-catalog-link-in-software-center"></a><a name="bkmk_HideAppCat"></a>Dölj Programkatalog länk i Software Center
 
@@ -696,7 +678,7 @@ Tillgängliga flikar:
 - **Alternativ**
 - Lägg till upp till fem anpassade flikar genom att klicka på knappen **Lägg till flik** .
   - Ange **flikens namn** och **innehålls-URL** för din anpassade flik.
-  - Klicka på **fliken ta bort** om du vill ta bort en anpassad flik.  
+  - Välj **fliken ta bort** om du vill ta bort en anpassad flik.  
 
   >[!Important]  
   > - Vissa webbplats funktioner kanske inte fungerar när du använder den som en anpassad flik i Software Center. Se till att testa resultaten innan du distribuerar det till klienter. <!--519659-->
@@ -731,9 +713,9 @@ Om din organisation till exempel inte använder efterlevnadsprinciper och du vil
 
   - I Software Center används alltid standardvärdet. Användare kan ändra det här filtret, men Software Center behåller inte sina preferenser.  
 
-- Ange **standard visningen** för vyn som antingen **panel** eller **listvy**. 
+- Ange **standard visningen** för vyn som antingen **panel** eller **listvy**.
 
-  - Om en användare ändrar den här konfigurationen, behåller Software Center användarnas preferenser i framtiden. 
+  - Om en användare ändrar den här konfigurationen, behåller Software Center användarnas preferenser i framtiden.
 
 
 ## <a name="software-deployment"></a>Programvarudistribution  
@@ -854,9 +836,9 @@ Använd den här inställningen för att aktivera program uppdateringar på Conf
 
 ### <a name="software-update-scan-schedule"></a>Schema för sökning efter programvaruuppdateringar
 
-Välj **schema** för att ange hur ofta klienten ska initiera en sökning efter kompatibilitetskontroll. Den här sökningen bestämmer status för program uppdateringar på klienten (till exempel obligatorisk eller installerad). Mer information om kompatibilitetsutvärdering finns i [Software updates compliance assessment](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance).  
+Välj **schema** för att ange hur ofta klienten ska starta en sökning efter kompatibilitetskontroll. Den här sökningen bestämmer status för program uppdateringar på klienten (till exempel obligatorisk eller installerad). Mer information om kompatibilitetsutvärdering finns i [Software updates compliance assessment](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance).  
 
-Som standard använder den här genomsökningen ett enkelt schema för att initiera var sjunde dag. Du kan skapa ett anpassat schema. Du kan ange en exakt start dag och tid, använda UTC (Universal Coordinated Time) eller lokal tid och konfigurera det återkommande intervallet för en angiven veckodag.  
+Som standard använder den här genomsökningen ett enkelt schema för att starta var sjunde dag. Du kan skapa ett anpassat schema. Du kan ange en exakt start dag och tid, använda UTC (Universal Coordinated Time) eller lokal tid och konfigurera det återkommande intervallet för en angiven veckodag.  
 
 > [!NOTE]  
 > Om du anger ett intervall på mindre än en dag, Configuration Manager automatiskt en dag som standard.  
@@ -868,14 +850,14 @@ Som standard använder den här genomsökningen ett enkelt schema för att initi
 
 Välj **schema** för att konfigurera hur ofta klient agenten för program uppdateringar ska utvärdera program uppdateringar för installations status på Configuration Manager klient datorer. När tidigare installerade program uppdateringar inte längre hittas på klienter, men som fortfarande krävs, installerar klienten om program uppdateringarna.
 
-Justera schemat baserat på företags princip för program uppdaterings efterlevnad och om användarna ska kunna avinstallera program uppdateringar. Varje omvärderings cykel för distribution ger nätverks-och klient dator processor aktivitet. Som standard använder den här inställningen ett enkelt schema för att initiera omprövningen av distributionen var sjunde dag.  
+Justera schemat baserat på företags princip för program uppdaterings efterlevnad och om användarna ska kunna avinstallera program uppdateringar. Varje omvärderings cykel för distribution ger nätverks-och klient dator processor aktivitet. Som standard använder den här inställningen ett enkelt schema för att starta omprövningen av distributionen var sjunde dag.  
 
 > [!NOTE]  
 > Om du anger ett intervall på mindre än en dag, Configuration Manager automatiskt en dag som standard.  
 
 ### <a name="when-any-software-update-deployment-deadline-is-reached-install-all-other-software-update-deployments-with-deadline-coming-within-a-specified-period-of-time"></a>Installera alla andra program uppdaterings distributioner med tids gräns inom en angiven tids period när en tids gräns för distribution av program uppdatering har uppnåtts
 
-Ställ in det här alternativet på **Ja** om du vill installera alla program uppdateringar från nödvändiga distributioner med tids gränser som inträffar inom en angiven tids period. När en nödvändig program uppdaterings distribution når en tids gräns initierar klienten installationen av program uppdateringarna i distributionen. Den här inställningen avgör om program uppdateringar ska installeras från andra nödvändiga distributioner som har en tids gräns inom den angivna tiden.  
+Ställ in det här alternativet på **Ja** om du vill installera alla program uppdateringar från nödvändiga distributioner med tids gränser som inträffar inom en angiven tids period. När en nödvändig program uppdaterings distribution når en tids gräns startar klienten installationen för program uppdateringarna i distributionen. Den här inställningen avgör om program uppdateringar ska installeras från andra nödvändiga distributioner som har en tids gräns inom den angivna tiden.  
 
 Använd den här inställningen för att påskynda installationen av nödvändiga program uppdateringar. Den här inställningen har också möjlighet att öka klient säkerheten, minska meddelanden till användaren och minska omstarter av klienter. Som standard är inställningen **Nej**.  
 
@@ -911,7 +893,7 @@ När du ställer in det här alternativet på **Ja**, aktive ras konfigurationen
 
 ### <a name="enable-installation-of-software-updates-in-all-deployments-maintenance-window-when-software-update-maintenance-window-is-available"></a><a name="bkmk_SUMMaint"></a>Aktivera installation av program uppdateringar i underhålls fönstret för alla distributioner när underhålls fönstret program uppdatering är tillgängligt
 
-Från och med version 1810, när du ställer in det här alternativet på **Ja** och klienten har minst en definierad underhålls period för program uppdatering, kommer program uppdateringar att installeras under underhålls perioden "alla distributioner".
+När du ställer in det här alternativet på **Ja**och klienten har minst en definierad underhålls period för program uppdatering, kommer program uppdateringar att installeras under ett underhålls fönster för "alla distributioner".
 
 Som standard är inställningen **Nej**. Det här värdet använder samma beteende som innan: om båda typerna finns ignoreras fönstret. <!--2839307-->
 
@@ -943,7 +925,7 @@ Den här klient inställningen ger följande alternativ:
 
     - Konfigurerar filen setupconfig. ini på enheten med `/Priority Normal` [kommando rads alternativet Windows-installation](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
 
-- **Låg**: du kan fortsätta att arbeta med enheten medan den laddas ned och uppdateras i bakgrunden. Den totala installations tiden är längre, men användarens avbrott är kortare. Du kan behöva öka uppdateringens maximala körnings tid för att undvika tids gräns när du använder det här alternativet.  
+- **Låg**: du kan fortsätta att arbeta med enheten medan den laddas ned och uppdateras i bakgrunden. Den totala installations tiden är längre, men användarens avbrott är kortare. Du kan behöva öka uppdateringens maximala kör tid för att undvika timeout när du använder det här alternativet.  
 
     - Tar bort `/Priority` [kommando rads alternativet för installations programmet för Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från filen setupconfig. ini.
 

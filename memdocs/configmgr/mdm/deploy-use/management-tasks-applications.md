@@ -10,12 +10,12 @@ ms.assetid: 8adbe2e2-de26-4a80-8bbd-a5f34b8bac79
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 693f661f2a2db59335ec8e463842a0ad03c977f3
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: f9fafcc4b5462afb1b8e528837ea6ba61203e73d
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721915"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347158"
 ---
 # <a name="manage-apps-for-on-premises-mdm-in-configuration-manager"></a>Hantera appar för lokal MDM i Configuration Manager
 
@@ -61,4 +61,4 @@ Granska följande begränsningar som är begränsade till mobila enheter:
 
 ## <a name="next-step"></a>Nästa steg
 
-Om du vill göra ändringar, avinstallera eller ersätta ett distribuerat program med ett nytt program hanterar du det på samma sätt som en app i Configuration Manager. Mer information finns i [Uppdatera och dra tillbaka program](../../apps/deploy-use/update-and-retire-applications.md).
+Om du vill göra ändringar, avinstallera eller ersätta ett distribuerat program med ett nytt program hanterar du det på samma sätt som en app i Configuration Manager. Mer information finns i [ändra och ersätta program](../../apps/deploy-use/revise-and-supersede-applications.md).

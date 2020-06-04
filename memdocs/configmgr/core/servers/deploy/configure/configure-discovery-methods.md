@@ -2,7 +2,7 @@
 title: Konfigurera identifiering
 titleSuffix: Configuration Manager
 description: Konfigurera identifierings metoder för att hitta resurser som ska hanteras från nätverket, Active Directory och Azure Active Directory.
-ms.date: 04/01/2020
+ms.date: 06/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3bd03cb15ae1633d8ddfc8c2f26a741d2679b083
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: cfda27df7df537ededb1f103afdd6107354af786
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721047"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347295"
 ---
 # <a name="configure-discovery-methods-for-configuration-manager"></a>Konfigurera identifierings metoder för Configuration Manager
 
@@ -148,7 +148,7 @@ Använd informationen i följande avsnitt för att konfigurera de olika identifi
 
 ### <a name="configure-active-directory-system-discovery"></a><a name="bkmk_config-adsd"></a>Konfigurera Active Directory system identifiering  
 
-1. På fliken **Allmänt** i Active Directory System identifiering fönstret Egenskaper **väljer du ikonen** ](media/Disc_new_Icon.gif) ny ikon ny ikon ![för att ange en ny Active Directory behållare. I dialog rutan **Active Directory behållare** slutför du följande konfigurationer:  
+1. På fliken **Allmänt** i Active Directory System identifiering fönstret Egenskaper **väljer du ikonen ny ikon** ny ikon ![ ](media/Disc_new_Icon.gif) för att ange en ny Active Directory behållare. I dialog rutan **Active Directory behållare** slutför du följande konfigurationer:  
 
     1. Skriv eller bläddra till en plats för **sökvägen**. Det här värdet är en giltig LDAP-sökväg till en behållare eller organisationsenhet (OU). Platsen frågar efter resurser på den här sökvägen. Till exempel, `LDAP://CN=Computers,DC=contoso,DC=com`  
 
@@ -183,7 +183,7 @@ Använd informationen i följande avsnitt för att konfigurera de olika identifi
 
 ### <a name="configure-active-directory-user-discovery"></a><a name="bkmk_config-adud"></a>Konfigurera identifiering av Active Directory användare  
 
-1. På fliken **Allmänt** i Active Directory användar identifiering fönstret Egenskaper **väljer du ikonen** ](media/Disc_new_Icon.gif) ny ikon ny ikon ![för att ange en ny Active Directory behållare. I dialog rutan **Active Directory behållare** slutför du följande konfigurationer:  
+1. På fliken **Allmänt** i Active Directory användar identifiering fönstret Egenskaper **väljer du ikonen ny ikon** ny ikon ![ ](media/Disc_new_Icon.gif) för att ange en ny Active Directory behållare. I dialog rutan **Active Directory behållare** slutför du följande konfigurationer:  
 
     1. Ange en eller flera platser att söka i.  
 
@@ -209,7 +209,7 @@ Identifiering av Azure AD-användare är inte aktiverat eller har kon figurer AT
 
 Mer information finns i [identifiering av Azure AD-användare](about-discovery-methods.md#azureaddisc).
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 Om du vill aktivera och konfigurera den här identifierings metoden [konfigurerar du Azure-tjänster](azure-services-wizard.md) för **moln hantering**.
 
@@ -258,14 +258,14 @@ När du konfigurerar Azure-tjänsten för **moln hantering** :
 
 Du kan identifiera användar grupper och medlemmar i dessa grupper från Azure AD. När platsen hittar användare i Azure AD-grupper som den inte har identifierat tidigare läggs de till som nya användar resurser i Configuration Manager. En resurs post för användar grupp skapas när gruppen är en säkerhets grupp.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 - [Azure-tjänst](azure-services-wizard.md) för moln hantering
 - Behörighet att läsa och söka i Azure AD-grupper
 
 ### <a name="limitations"></a>Begränsningar
 
-Delta identifiering för identifiering av Azure AD-användargrupp är för närvarande inaktiverat.
+Delta identifiering för identifiering av Azure AD-användargrupp är inaktiverat i version 1906. Du kan aktivera den från Configuration Manager version 1910.
 
 ### <a name="log-files"></a>Loggfiler
 
@@ -415,7 +415,7 @@ Använd följande procedurer för att först upptäcka nätverk sto pol Ogin och
     - På fliken **undernät** väljer du alternativet **Sök lokalt undernät** .  
 
       > [!TIP]  
-      > Om du känner till de speciella undernät som utgör ditt nätverk avmarkerar du kryss rutan **Sök i lokala undernät** . Välj sedan](media/Disc_new_Icon.gif)ikonen **ny** ikon ![ny ikon och Lägg till de angivna undernät som du vill söka efter. För stora nätverk söker du bara efter ett eller två undernät i taget för att minimera användningen av nätverks bandbredd.  
+      > Om du känner till de speciella undernät som utgör ditt nätverk avmarkerar du kryss rutan **Sök i lokala undernät** . Välj sedan ikonen **ny** ikon ![ ny ikon ](media/Disc_new_Icon.gif) och Lägg till de angivna undernät som du vill söka efter. För stora nätverk söker du bara efter ett eller två undernät i taget för att minimera användningen av nätverks bandbredd.  
 
     - På fliken **domäner** väljer du alternativet för att söka i den **lokala domänen**.  
 
@@ -424,7 +424,7 @@ Använd följande procedurer för att först upptäcka nätverk sto pol Ogin och
       > [!TIP]  
       > När du först mappar nätverk sto pol Ogin konfigurerar du bara ett par router hopp för att minimera användningen av nätverks bandbredd.  
 
-4. På fliken **Schemaläggning** ](media/Disc_new_Icon.gif)väljer du ikonen **ny** ikon ![ny ikon och anger ett schema för att köra identifiering.  
+4. På fliken **Schemaläggning** väljer du ikonen **ny** ikon ![ ny ikon ](media/Disc_new_Icon.gif) och anger ett schema för att köra identifiering.  
 
     > [!NOTE]  
     > Du kan inte tilldela en annan identifierings konfiguration till separata scheman för nätverks identifiering. Varje gången en nätverks identifiering körs används den aktuella identifierings konfigurationen.  
@@ -451,7 +451,7 @@ Använd följande procedurer för att först upptäcka nätverk sto pol Ogin och
 
     - Om du vill söka i ett särskilt undernät kontrollerar du att under nätet visas i **undernät att söka** och har ett **Sök** värde **aktiverat**:  
 
-      1. Om under nätet inte visas väljer du ikonen **ny** ikon ![ny](media/Disc_new_Icon.gif). I dialog rutan **ny under näts tilldelning** anger du information om **undernät** och **mask** och väljer sedan **OK**. Som standard är ett nytt undernät aktiverat för sökning.  
+      1. Om under nätet inte visas väljer du ikonen **ny** ikon ![ ny ](media/Disc_new_Icon.gif) . I dialog rutan **ny under näts tilldelning** anger du information om **undernät** och **mask** och väljer sedan **OK**. Som standard är ett nytt undernät aktiverat för sökning.  
 
       2. Om du vill ändra **Sök** värdet för ett undernät i listan väljer du det i listan. Välj sedan **växlings** ikonen för att växla värdet mellan **inaktive rad** och **aktive rad**.  
 
@@ -461,21 +461,21 @@ Använd följande procedurer för att först upptäcka nätverk sto pol Ogin och
 
     - Om du vill söka i en speciell domän kontrollerar du att domänen är listad i **domäner** och att **Sök** värdet är **aktiverat**:  
 
-      1. Om domänen inte finns med i listan väljer **New** du ikonen ![ny ikon](media/Disc_new_Icon.gif)ny. I dialog rutan **domän egenskaper** anger du **domän** informationen och väljer sedan **OK**. Som standard är en ny domän aktive rad för sökning.  
+      1. Om domänen inte finns med i listan väljer du ikonen **ny** ikon ![ ny ](media/Disc_new_Icon.gif) . I dialog rutan **domän egenskaper** anger du **domän** informationen och väljer sedan **OK**. Som standard är en ny domän aktive rad för sökning.  
 
       2. Om du vill ändra **Sök** värdet för en listad domän väljer du det i listan. Välj sedan **växlings** ikonen för att växla värdet mellan **inaktive rad** och **aktive rad**.  
 
 7. Om du vill konfigurera identifieringen så att den söker efter vissa SNMP-gruppnamn för SNMP-enheter växlar du till fliken **SNMP** . Konfigurera sedan ett eller flera av följande alternativ:  
 
-    - Om du vill lägga till ett SNMP-gruppnamn i listan med **namn på SNMP-grupper**väljer du ikonen **ny** ikon ![ny](media/Disc_new_Icon.gif). I dialog rutan **nytt SNMP-gruppnamn** anger du **namnet** på SNMP-gruppen och väljer sedan **OK**.  
+    - Om du vill lägga till ett SNMP-gruppnamn i listan med **namn på SNMP-grupper**väljer du ikonen **ny** ikon ![ ny ](media/Disc_new_Icon.gif) . I dialog rutan **nytt SNMP-gruppnamn** anger du **namnet** på SNMP-gruppen och väljer sedan **OK**.  
 
-    - Om du vill ta bort ett SNMP-gruppnamn väljer du grupp namnet och väljer **Delete** sedan ikonen ![ta bort](media/Disc_delete_Icon.gif)ikon ta bort.  
+    - Om du vill ta bort ett SNMP-gruppnamn väljer du grupp namnet och väljer sedan ikonen ta **bort** ikon ![ ta bort ](media/Disc_delete_Icon.gif) .  
 
-    - Om du vill justera Sök ordningen för SNMP-gruppnamnen väljer du ett grupp namn i listan. Välj sedan ikonen Flytta **objekt uppåt** ![](media/Disc_moveUp_Icon.gif) eller flytta ned **-ikonen** ![flytta ned](media/Disc_moveDown_Icon.gif). När identifieringen körs genomsöks gruppens namn i en uppifrån och ned-ordning. 
+    - Om du vill justera Sök ordningen för SNMP-gruppnamnen väljer du ett grupp namn i listan. Välj sedan ikonen Flytta **objekt uppåt** eller flytta ned-ikonen ![ ](media/Disc_moveUp_Icon.gif) **Move Item Down** ![ Flytta ned ](media/Disc_moveDown_Icon.gif) . När identifieringen körs genomsöks gruppens namn i en uppifrån och ned-ordning. 
 
     - Om du vill konfigurera maximalt antal router hopp för användning av SNMP-sökningar väljer du antalet hopp från List rutan **maximalt antal hopp** .  
 
-8. Om du vill konfigurera en SNMP-enhet växlar du till fliken **SNMP-enheter** . Om enheten inte visas väljer du ikonen **ny** ikon ![ny](media/Disc_new_Icon.gif). I dialog rutan **ny SNMP-enhet** anger du IP-adress eller enhets namn för SNMP-enheten och väljer sedan **OK**.  
+8. Om du vill konfigurera en SNMP-enhet växlar du till fliken **SNMP-enheter** . Om enheten inte visas väljer du ikonen **ny** ikon ![ ny ](media/Disc_new_Icon.gif) . I dialog rutan **ny SNMP-enhet** anger du IP-adress eller enhets namn för SNMP-enheten och väljer sedan **OK**.  
 
     > [!NOTE]  
     > Om du anger ett enhets namn måste Configuration Manager kunna matcha NetBIOS-namnet till en IP-adress.  
@@ -487,12 +487,12 @@ Använd följande procedurer för att först upptäcka nätverk sto pol Ogin och
       > [!NOTE]  
       > Om du vill använda det här alternativet måste servern låna ut sin IP-adress från en DHCP-server och kan inte använda en statisk IP-adress.  
 
-    - Om du vill fråga en speciell DHCP-Server **New** väljer du ![ikonen](media/Disc_new_Icon.gif)ny ikon ny. I dialog rutan **ny DHCP-server** anger du IP-adressen eller Server namnet för DHCP-servern och väljer sedan **OK**.  
+    - Om du vill fråga en speciell DHCP-server väljer du ikonen **ny** ikon ![ ny ](media/Disc_new_Icon.gif) . I dialog rutan **ny DHCP-server** anger du IP-adressen eller Server namnet för DHCP-servern och väljer sedan **OK**.  
 
       > [!NOTE]  
       > Om du anger ett server namn måste Configuration Manager kunna matcha NetBIOS-namnet till en IP-adress.  
 
-10. Om du vill konfigurera när identifieringen ska köras växlar du till fliken **schema** . Välj sedan](media/Disc_new_Icon.gif) ikonen **ny** ikon ![ny ikon för att ange ett schema för att köra nätverks identifiering. Du kan konfigurera flera återkommande scheman och flera scheman som inte har någon upprepning.  
+10. Om du vill konfigurera när identifieringen ska köras växlar du till fliken **schema** . Välj sedan ikonen **ny** ikon ![ ny ikon ](media/Disc_new_Icon.gif) för att ange ett schema för att köra nätverks identifiering. Du kan konfigurera flera återkommande scheman och flera scheman som inte har någon upprepning.  
 
     > [!NOTE]  
     > Om fliken **Schemaläggning** visar fler än ett schema samtidigt körs nätverks identifieringen för alla scheman när den har kon figurer ATS vid den tidpunkt som anges i schemat. Det här beteendet gäller även för återkommande scheman.  

@@ -2,7 +2,7 @@
 title: Meddelanden om omstart av enhet
 titleSuffix: Configuration Manager
 description: Starta om aviserings beteende för olika klient inställningar i Configuration Manager.
-ms.date: 08/23/2019
+ms.date: 06/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,26 +10,22 @@ ms.assetid: 5ef1bff8-9733-4b5a-b65f-26b94accd210
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5b6d383b2d5904f4d31fff5f549127dc21c39f29
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: b326c4dd8112a72555239f2c3eda078ebf47bf82
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713396"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347227"
 ---
 # <a name="device-restart-notifications-in-configuration-manager"></a>Meddelanden om omstart av enhet i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-De meddelanden som en användare får för en väntande enhets omstart kan variera beroende på [dator inställningar för omstart](about-client-settings.md#computer-restart) och vilken version av Configuration Manager som används. Den här artikeln hjälper administratörer att avgöra vad användar upplevelsen är för att vänta på meddelanden om omstart av enheten.
-
->[!NOTE]
-> - Den här artikeln fokuserar på klient inställningar som finns i Configuration Manager version 1902 och version 1906.
-
+De meddelanden som en användare får för en väntande omstart av enheten kan variera beroende på [klient inställningarna för datorn](#client-settings) och vilken version av Configuration Manager du använder. Den här artikeln hjälper dig att konfigurera användar upplevelsen för meddelanden om väntande omstart av enheten.
 
 ## <a name="deployment-types-for-restart-notifications"></a>Distributions typer för meddelanden om omstart
 
-[Klient inställningarna för omstart av datorn](about-client-settings.md#computer-restart) ändrar användar upplevelsen för alla nödvändiga distributioner som kräver en omstart av följande typer:
+[Klient inställningarna för omstart av datorn](#client-settings) ändrar användar upplevelsen för alla nödvändiga distributioner som kräver en omstart av följande typer:
 
 - [Program](../../../apps/deploy-use/deploy-applications.md)
 - [Aktivitetssekvens](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)
@@ -37,38 +33,163 @@ De meddelanden som en användare får för en väntande enhets omstart kan varie
 
 ## <a name="restart-notification-types"></a>Starta om meddelande typer
 
-När en omstart krävs får slutanvändaren ett meddelande om den kommande omstarten. Det finns fyra allmänna aviseringar som användare kan ta emot:
+När en enhet kräver en omstart, visar klienten ett meddelande till slutanvändaren om den kommande omstarten. Det finns fyra allmänna aviseringar som användare kan ta emot.
 
-**Popup-meddelande** som informerar dig om att en omstart krävs. Informationen i popup-meddelandet kan vara olika beroende på vilken version av Configuration Manager du kör. Den här typen av meddelande är inbyggd i Windows OS och du kan också se program vara från tredje part med den här typen av avisering.
+### <a name="toast-notification"></a>Popup-meddelande
+
+Ett Windows popup-meddelande informerar användaren om att enheten måste startas om. Informationen i popup-meddelandet kan vara olika beroende på vilken version av Configuration Manager du kör. Den här typen av meddelande är inbyggd i Windows OS. Du kan också se program vara från tredje part med den här typen av avisering.
 
 ![Popup-meddelande om väntande omstart](media/3555947-restart-toast.png)
 
-Software Center-meddelande med alternativet vilo läge visar återstående tid innan en omstart tillämpas. Meddelandet kan variera beroende på din version av Configuration Manager.
+### <a name="software-center-notification-with-snooze"></a>Software Center-meddelande med vilo läge
+
+I Software Center visas ett meddelande med ett alternativ för vilo läge och den tid som återstår innan enheten måste startas om. Meddelandet kan variera beroende på din version av Configuration Manager.
 
 ![Väntar på att starta om Software Center-meddelanden med knappen vilo läge](media/3976435-snooze-restart-countdown.png)
 
-Meddelande Center slutlig tids nedräkning som inte kan stängas av användaren. Knappen vilo läge är nedtonad.
+### <a name="software-center-final-countdown-notification"></a>Meddelande om slutlig nedräkning i Software Center
+
+Software Center visar denna slutgiltiga nedräknings avisering som användaren inte kan stänga eller i vilo läge.
 
 ![Meddelande om slutlig nedräkning i Software Center](media/3976435-final-restart-countdown.png)
 
-Om användaren proaktivt installerar nödvändig program vara som behöver startas om innan tids gränsen inträffar visas ett annat meddelande. Följande meddelande visas när inställningen för användar upplevelsen tillåter meddelanden och du inte använder popup-meddelanden för distributionen. Mer information om hur du konfigurerar dessa inställningar finns i [Inställningar för distribution av **användar upplevelser** ](../../../apps/deploy-use/deploy-applications.md#bkmk_deploy-ux) och [användar meddelanden för nödvändiga distributioner](../../../apps/deploy-use/deploy-applications.md#bkmk_notify).
+Från och med version 1906 ser användaren ingen förlopps indikator i meddelandet om att den väntande omstarten är mindre än 24 timmar.
+
+### <a name="software-center-notification-before-deadline"></a>Software Center-meddelande före tids gräns
+
+Om användaren proaktivt installerar nödvändig program vara före tids gränsen, och det krävs en omstart, visas ett annat meddelande. Följande meddelande visas när inställningen för användar upplevelsen tillåter meddelanden och du inte använder popup-meddelanden för distributionen. Mer information om hur du konfigurerar dessa inställningar finns i [Inställningar för distribution av **användar upplevelser** ](../../../apps/deploy-use/deploy-applications.md#bkmk_deploy-ux) och [användar meddelanden för nödvändiga distributioner](../../../apps/deploy-use/deploy-applications.md#bkmk_notify).
 
 ![Meddelande om proaktivt installerad program vara](media/3976435-proactive-user-restart-notification.png)
 
-- När du inte använder popup-meddelanden liknar dialog rutan för program vara som är markerad som **tillgänglig** samma som proaktivt installerad program vara.
+#### <a name="available-apps"></a>Tillgängliga appar
 
-  - För **tillgänglig** program vara har meddelandet ingen tids gräns för omstarten och användaren kan välja deras egna intervall för vilo läge. Mer information finns i [godkännande inställningar](../../../apps/deploy-use/deploy-applications.md#bkmk_approval).
+När du inte använder popup-meddelanden liknar dialog rutan för program vara som är markerad som **tillgänglig** samma som proaktivt installerad program vara. För **tillgänglig** program vara har meddelandet ingen tids gräns för omstarten och användaren kan välja deras egna intervall för vilo läge. Mer information finns i [godkännande inställningar](../../../apps/deploy-use/deploy-applications.md#bkmk_approval).
 
-    ![Program vara som marker ATS som "tillgänglig" har ingen tids gräns för omstart i meddelandet.](media/3555947-deployment-marked-available-restart.png)
+![Program vara som marker ATS som "tillgänglig" har ingen tids gräns för omstart i meddelandet.](media/3555947-deployment-marked-available-restart.png)
 
-## <a name="device-restart-notifications-in-version-1902"></a>Meddelanden om omstart av enhet i version 1902
+## <a name="client-settings"></a>Klientinställningar
+
+Om du vill styra klient omstarts beteendet konfigurerar du följande enhets klient inställningar i gruppen **omstart av dator** . Mer information finns i [så här konfigurerar du klient inställningar](configure-client-settings.md).
+
+### <a name="specify-the-amount-of-time-after-the-deadline-before-a-device-gets-restarted-minutes"></a>Ange efter hur lång tid en enhet har startats om (minuter)
+
+Den här inställningen måste vara kortare i varaktighet än den kortaste underhålls perioden som tillämpas på datorn. Mer information om underhålls perioder finns i [använda underhålls](../manage/collections/use-maintenance-windows.md)perioder.
+
+Standardvärdet är 90 minuter. Från och med version 1906 ökade det maximala värdet från 1440 minuter (24 timmar) till 20160 minuter (två veckor).
+
+> [!NOTE]
+> Den här inställningen **visar tidigare ett tillfälligt meddelande till användaren som anger intervallet innan användaren loggas ut eller datorn startas om (minuter)**.
+
+### <a name="specify-the-amount-of-time-that-a-user-is-presented-a-final-countdown-notification-before-a-device-gets-restarted-minutes"></a>Ange hur lång tid det tar för en användare att presentera en slut för tids nedräkning innan en enhet startas om (minuter)
+
+Den här inställningen måste vara kortare i varaktighet än den kortaste underhålls perioden som tillämpas på datorn. Mer information om underhålls perioder finns i [använda underhålls](../manage/collections/use-maintenance-windows.md)perioder.
+
+Standardvärdet är 15 minuter.
+
+> [!NOTE]
+> Den här inställningen har tidigare rubriken **Visa en dialog ruta som användaren inte kan stänga, vilket visar nedräknings intervallet innan användaren loggas ut eller datorn startas om (minuter)**.
+
+### <a name="specify-the-frequency-of-reminder-notifications-presented-to-the-user-after-the-deadline-before-a-device-gets-restarted-minutes"></a>Ange frekvensen för påminnelse meddelanden som visas för användaren, efter tids gränsen, innan en enhet startas om (minuter)
+<!--3976435-->
+_Från och med version 1906_
+
+Värdet för frekvens varaktigheten måste vara mindre än värdet för **Ange efter hur lång tid som en enhet har startats om (minuter)** minus värdet för **Ange hur lång tid en användare har fått en slutgiltig nedräknings avisering innan en enhet startas om (minuter)**. Annars fungerar inte påminnelse meddelandena.
+
+Standardvärdet är 240 minuter.
+
+> [!NOTE]
+> Den här inställningen har tidigare rubriken **ange varaktighet för vilo läge för omstart av datorns meddelanden (minuter)**.
+
+### <a name="when-a-deployment-requires-a-restart-show-a-dialog-window-to-the-user-instead-of-a-toast-notification"></a>När en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande
+<!--3555947-->
+Från och med version 1902 kan du konfigurera den här inställningen till **Ja** för att ändra användar upplevelsen till mer påträngande. Den här inställningen gäller för alla distributioner av program, aktivitetssekvenser och program uppdateringar. Mer information finns i [Planera för Software Center](../../../apps/plan-design/plan-for-software-center.md#bkmk_impact).
+
+> [!IMPORTANT]
+> I Configuration Manager 1902, under vissa omständigheter, ersätter dialog rutan inte popup-meddelanden. Lös problemet genom att installera Samlad [uppdatering för Configuration Manager version 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
+
+## <a name="device-restart-notifications-version-1906"></a>Meddelanden om omstart av enhet (version 1906)
+<!--3976435-->
+Vissa kunder föredrar vanliga omstart-meddelanden och gör det möjligt för användarna att skjuta upp en kort tids period. Andra gör det möjligt för användare att skjuta upp en omstart under längre tids perioder och meddela användare om den väntande omstarten sällan. Från och med Configuration Manager version 1906 har du ytterligare kontroll över tidpunkten och frekvensen för att starta om aviseringar.
+
+### <a name="install-required-software-at-or-after-the-deadline"></a>Installera nödvändig program vara vid eller efter tids gränsen
+
+När nödvändig program vara installeras vid eller efter tids gränsen, kommer användarna att se aviseringar beroende på vilka klient inställningar du har valt.
+
+Om inställningen **när en distribution kräver en omstart, visar du ett dialog fönster för användaren i stället för ett popup-meddelande** är inställt på:
+
+- **Nej**: Windows visar popup-meddelanden tills distributionen når den slutgiltiga nedräknings aviseringen.
+
+- **Ja**: Software Center visar ett meddelande:
+
+  - Om omstarten är längre än 24 timmar visas en uppskattad start tid. Tiden för det här meddelandet baseras på inställningen: **Ange efter hur lång tid som ska gå innan enheten startas om (minuter)**.
+
+    ![Tiden för omstart är längre än 24 timmar](media/3976435-notification-greater-than-24-hours.png)
+
+  - Om omstarten är mindre än 24 timmar visas en förlopps indikator. Tiden för det här meddelandet baseras på inställningen: **Ange efter hur lång tid som ska gå innan enheten startas om (minuter)**.
+
+    ![Tiden för omstart är mindre än 24 timmar](media/3976435-notification-less-than-24-hours.png)
+
+Om användaren väljer **vilo läge**visas ett annat tillfälligt meddelande efter att vilo perioden har löpt ut. Det här beteendet förutsätter att det inte har nått den slutgiltiga nedräkningen ännu. Tids inställningen för nästa meddelande baseras på inställningen: **Ange frekvensen för påminnelse meddelanden som visas för användaren, efter deadline, innan en enhet startas om (minuter)**. Om användaren väljer **vilo läge**och intervallet för vilo läge är en timme, meddelar Software Center användaren igen om 60 minuter. Det här beteendet förutsätter att det inte har nått den slutgiltiga nedräkningen ännu.
+
+När den når den slutgiltiga nedräkningen visar Software Center användaren ett meddelande om att de inte kan stängas. Förlopps indikatorn är i rött och användaren kan inte försätta den i **vilo läge** .
+
+![Slut punkts meddelande i program varu Center i version 1906](media/3976435-1906-final-restart-countdown.png)
+
+### <a name="proactively-install-required-software-before-the-deadline"></a>Installera nödvändig program vara före tids gränsen
+
+Om användaren proaktivt installerar nödvändig program vara som behöver startas om före tids gränsen, ser de ett annat meddelande. Mer information om hur du konfigurerar dessa inställningar finns i [Inställningar för distribution av **användar upplevelser** ](../../../apps/deploy-use/deploy-applications.md#bkmk_deploy-ux) och [användar meddelanden för nödvändiga distributioner](../../../apps/deploy-use/deploy-applications.md#bkmk_notify).
+
+Följande meddelande visas när inställningen för användar upplevelsen tillåter meddelanden och du inte använder popup-meddelanden för distributionen:
+
+![Meddelande om proaktivt installerad program vara](media/3976435-proactive-user-restart-notification.png)
+
+När distributionen når sin tids gräns följer Software Center beteendet för att [installera nödvändig program vara vid eller efter tids gränsen](#install-required-software-at-or-after-the-deadline).
+
+## <a name="example-configurations"></a>Exempel på konfigurationer
+
+I följande exempel beskrivs hur du konfigurerar klient inställningarna för att uppnå vissa beteenden.
+
+### <a name="reminders-are-off"></a>Påminnelser är inaktiverade
+
+| Inställning | Värde |
+|---------|---------|
+|Ange efter hur lång tid en enhet har startats om (minuter)|180|
+|Ange hur lång tid det tar för en användare att presentera en slut för tids nedräkning innan en enhet startas om (minuter)|60|
+|Ange frekvensen för påminnelse meddelanden som visas för användaren, efter tids gränsen, innan en enhet startas om (minuter)|240|
+|När en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande|Inga|
+
+Enheten kommer att startas om tre timmar (**180** minuter) efter distributionens tids gräns. En timme (**60** minuter) innan den startas om ser användaren en nedräkning som inte kan stängas eller försättas i vilo läge. Det första påminnelse meddelandet är inställt på att starta fyra timmar (**240** minuter) efter tids gränsen, vilket är efter omstarten. Det innebär att användaren inte ser några påminnelser.
+
+### <a name="low-reminder-frequency"></a>Låg påminnelse frekvens
+
+| Inställning | Värde |
+|---------|---------|
+|Ange efter hur lång tid en enhet har startats om (minuter)|7200|
+|Ange hur lång tid det tar för en användare att presentera en slut för tids nedräkning innan en enhet startas om (minuter)|120|
+|Ange frekvensen för påminnelse meddelanden som visas för användaren, efter tids gränsen, innan en enhet startas om (minuter)|900|
+|När en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande|Ja|
+
+Enheten kommer att startas om fem dagar (**7200** minuter) efter distributionens tids gräns. Två timmar (**120** minuter) innan den startas om ser användaren en nedräkning som inte kan stängas eller försättas i vilo läge. Den här konfigurationen gör det möjligt för 118 timmar att Visa påminnelser ( `(7200 - 120) / 60` ). 15 timmar (**900** minuter) efter tids gränsen visar Software Center den första påminnelsen. Det visar högst sex ytterligare påminnelser var 15: e timme (**900 minuter**). Användaren ser påminnelsen som ett fönster på skärmen, i stället för ett meddelande som försvinner om några sekunder.
+
+### <a name="high-reminder-frequency"></a>Hög påminnelse frekvens
+
+| Inställning | Värde |
+|---------|---------|
+|Ange efter hur lång tid en enhet har startats om (minuter)|2880|
+|Ange hur lång tid det tar för en användare att presentera en slut för tids nedräkning innan en enhet startas om (minuter)|60|
+|Ange frekvensen för påminnelse meddelanden som visas för användaren, efter tids gränsen, innan en enhet startas om (minuter)|30|
+|När en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande|Ja|
+
+Enheten startas om två dagar (**2880** minuter) efter distributionens tids gräns. En timme (**60** minuter) innan den startas om ser användaren en nedräkning som inte kan stängas eller försättas i vilo läge. Den här konfigurationen gör det möjligt för 47 timmar att Visa påminnelser ( `(2880 - 60) / 60` ). **30** minuter efter tids gränsen visar Software Center den första påminnelsen. Det visar högst 92 ytterligare påminnelser var **30: e minut**. Användaren ser påminnelsen som ett fönster på skärmen, i stället för ett meddelande som försvinner om några sekunder.
+
+## <a name="device-restart-notifications-version-1902"></a>Meddelanden om omstart av enhet (version 1902)
 
 <!--3555947-->
 Användare ser ibland inte Windows popup-meddelanden om en omstart eller en nödvändig distribution. Sedan visas inte upplevelsen för att försätta påminnelsen i vilo läge. Det här beteendet kan leda till en låg användar upplevelse när klienten når en tids gräns.
 
 Från och med version 1902, när program varu ändringar krävs eller distributioner behöver startas om, kan du välja att använda en mer påträngande dialog ruta.
 
-I gruppen [dator omstart](about-client-settings.md#computer-restart) av klient inställningar aktiverar du följande alternativ: **när en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande**.  
+I gruppen [dator omstart](#client-settings) av klient inställningar aktiverar du följande alternativ: **när en distribution kräver en omstart visar du ett dialog fönster för användaren i stället för ett popup-meddelande**.  
 
 Om du konfigurerar den här klient inställningen ändras användar upplevelsen för alla nödvändiga distributioner som kräver en omstart från popup-meddelanden:
 
@@ -100,52 +221,12 @@ Följande inställningar måste vara kortare i varaktighet än det kortaste [und
 > [!IMPORTANT]
 > I Configuration Manager 1902, under vissa omständigheter, ersätter dialog rutan inte popup-meddelanden. Lös problemet genom att installera Samlad [uppdatering för Configuration Manager version 1902](https://support.microsoft.com/help/4500571/update-rollup-for-configuration-manager-current-branch-1902). <!--4404715-->
 
-## <a name="device-restart-notifications-starting-in-version-1906"></a>Meddelanden om omstart av enhet från version 1906
-<!--3976435-->
-Vissa administratörer föredrar regelbundna omstart-meddelanden och en kort tidsram för att tillåta att omstarter ska skjutas upp. Andra administratörer låter användare skjuta upp en omstart under längre tids perioder och vill att användarna ska meddelas om den väntande omstarten sällan. Configuration Manager version 1906 ger en administratör ytterligare kontroll över tiden och frekvensen för meddelanden om omstart. Följande objekt introducerades i 1906 för att ge administratören större kontroll:
-
-- **Ange varaktighet för vilo läge för omstart av datorn (minuter) för** [omstart av datorn.](about-client-settings.md#computer-restart)
-- Det maximala värdet för att **Visa ett tillfälligt meddelande till användaren som anger intervallet innan användaren loggas ut eller datorn startas om (minuter)** , ökad från 1440 minuter (24 timmar) till 20160 minuter (två veckor).
-- Användaren ser ingen förlopps indikator i meddelandet om att den väntande omstarten är mindre än 24 timmar.
-
-### <a name="notifications-when-required-software-is-installed-at-or-after-the-deadline"></a>Meddelanden när nödvändig program vara installeras vid eller efter tids gränsen
-
-När nödvändig program vara installeras vid eller efter tids gränsen, kommer användarna att se aviseringar beroende på vilka klient inställningar du har valt.
-
-Om inställningen **när en distribution kräver en omstart, visar du ett dialog fönster för användaren i stället för ett popup-meddelande** är inställt på:
-
-- **Inga** popup-meddelanden används förrän det slutliga nedräknings meddelandet har nåtts.
-- **Ja** – ett meddelande om Software Center visas.
-  - Om omstarten är längre än 24 timmar visas en uppskattad start tid. Tiden för det här meddelandet baseras på inställningen: **Visa ett tillfälligt meddelande till användaren som anger intervallet innan användaren loggas ut eller datorn startas om (minuter)**.
-
-     ![Tiden för omstart är längre än 24 timmar](media/3976435-notification-greater-than-24-hours.png)
-
-  - Om omstarten är mindre än 24 timmar visas en förlopps indikator. Tiden för det här meddelandet baseras på inställningen: **Visa ett tillfälligt meddelande till användaren som anger intervallet innan användaren loggas ut eller omstart av datorn (minuter)**
-
-     ![Tiden för omstart är mindre än 24 timmar](media/3976435-notification-less-than-24-hours.png)
-
-Om användaren väljer knappen för **vilo läge** inträffar ett annat tillfälligt meddelande när vilo perioden har löpt ut, förutsatt att de inte har nått den slutliga nedräkningen ännu. Tids inställningen för nästa meddelande baseras på inställningen: **ange varaktighet för vilo läge för omstart av datorns meddelanden (timmar)**. Om användaren väljer **vilo läge** och intervallet för vilo läge är en timme, kommer användaren att meddelas igen om 60 minuter förutsatt att de inte har nått den slutgiltiga nedräkningen.
-
-När den slutliga nedräkningen uppnås får användaren ett meddelande om att de inte kan stängas. Förlopps indikatorn är i rött och användaren kan inte trycka på **vilo läge**.
-
-![Slut punkts meddelande i program varu Center i version 1906](media/3976435-1906-final-restart-countdown.png)
-
-### <a name="the-user-proactively-installs-before-the-deadline"></a>Användaren installerar proaktivt före tids gränsen
-
-Om användaren proaktivt installerar nödvändig program vara som behöver startas om innan tids gränsen inträffar visas ett annat meddelande. Mer information om hur du konfigurerar dessa inställningar finns i [Inställningar för distribution av **användar upplevelser** ](../../../apps/deploy-use/deploy-applications.md#bkmk_deploy-ux) och [användar meddelanden för nödvändiga distributioner](../../../apps/deploy-use/deploy-applications.md#bkmk_notify). 
-
-Följande meddelande visas när inställningen för användar upplevelsen tillåter meddelanden och du inte använder popup-meddelanden för distributionen:
-
-![Meddelande om proaktivt installerad program vara](media/3976435-proactive-user-restart-notification.png)
-
-När tids gränsen för program varan har nåtts [installeras meddelandena när den nödvändiga program varan installeras vid eller efter att tids gränsen](#notifications-when-required-software-is-installed-at-or-after-the-deadline) har använts.
-
 ## <a name="log-files"></a>Loggfiler
 
-Använd filen **RebootCoordinator. log** och **SCNotify. log** för fel sökning av enhets omstarter. Du kan också behöva använda ytterligare klient [logg fil](../../plan-design/hierarchy/log-files.md) baserat på vilken typ av distribution som används.
+Om du vill felsöka omstarter av enheter använder du filerna **RebootCoordinator. log** och **SCNotify. log** på klienten. Utifrån en speciell typ av distribution kan du också behöva använda ytterligare klient [logg-filer](../../plan-design/hierarchy/log-files.md).
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Introduktion till program hantering](../../../apps/understand/introduction-to-application-management.md)
-- [Introduktion till operativsystemdistribution](../../../osd/understand/introduction-to-operating-system-deployment.md)
-- [Introduktion till hantering av programuppdateringar](../../../sum/understand/software-updates-introduction.md)
+- [Konfigurera klientinställningar](configure-client-settings.md)
+- [Inställningar för **användar upplevelse** för program distribution](../../../apps/deploy-use/deploy-applications.md#bkmk_deploy-ux)
+- [Användar meddelanden för obligatoriska program distributioner](../../../apps/deploy-use/deploy-applications.md#bkmk_notify)

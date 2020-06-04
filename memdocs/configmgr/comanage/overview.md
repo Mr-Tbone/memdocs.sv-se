@@ -10,12 +10,12 @@ ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: e06dc0d40eb6359d11ef31045989d7ed398b3687
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 86bd566e9582c7dd7c83f93c22430edcc8ea0d0d
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711324"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347193"
 ---
 # <a name="what-is-co-management"></a>Vad är samhantering?
 
@@ -65,12 +65,12 @@ Mer information om det här omedelbara värdet från samhantering finns i snabb 
 
 Med samhantering kan du också dirigera med Intune för flera arbets belastningar. Mer information finns i avsnittet om [arbets belastningar](#workloads) .
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Samhanteringen har följande krav inom följande områden:
 
 - [Licensiering](#licensing)  
-- [Konfigurationshanteraren](#configuration-manager)  
+- [Configuration Manager](#configuration-manager)  
 - [Azure Active Directory](#azure-ad) (Azure AD)  
 - [Microsoft Intune](#intune)  
 - [Windows 10](#windows-10)  
@@ -90,7 +90,7 @@ Samhanteringen har följande krav inom följande områden:
     >
     > Du behöver inte längre köpa och tilldela enskilda Intune-eller EMS-licenser till dina användare. Mer information finns i [vanliga frågor och svar om produkt och licensiering](../core/understand/product-and-licensing-faq.md#bkmk_mem).
 
-### <a name="configuration-manager"></a>Konfigurationshanteraren
+### <a name="configuration-manager"></a>Configuration Manager
 
 Co-Management kräver Configuration Manager version 1710 eller senare.
 
@@ -102,7 +102,7 @@ Om du aktiverar samhantering behöver du inte publicera din webbplats med Azure 
 
 - Windows 10-enheter måste vara anslutna till Azure AD. De kan vara någon av följande typer:  
 
-  - [Hybrid Azure AD-ansluten](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan), där enheten är ansluten till din lokala Active Directory och är ansluten till din Azure Active Directory.  
+  - [Hybrid Azure AD-ansluten](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid), där enheten är ansluten till din lokala Active Directory och registrerad med din Azure Active Directory.
 
   - Endast [Azure AD-ansluten](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan) . (Den här typen kallas ibland "molnbaserad domän ansluten")<!--SCCMDocs issue 605-->  
 
@@ -122,7 +122,7 @@ Uppgradera dina enheter till Windows 10, version 1709 eller senare. Mer informat
 ### <a name="permissions-and-roles"></a>Behörigheter och roller
 
 <!--SCCMDocs issue #667-->
-| Action | Roll krävs |
+| Åtgärd | Roll krävs |
 |----|----|
 | Konfigurera en gateway för moln hantering i Configuration Manager | Azure- **prenumerations hanterare** |
 | Skapa Azure AD-appar från Configuration Manager | **Global administratör** för Azure AD |
@@ -139,7 +139,7 @@ Du behöver inte byta arbets belastningar eller så kan du göra dem individuell
 
 Samhantering har stöd för följande arbets belastningar:
 
-- Compliance principer  
+- Efterlevnadsprinciper  
 
 - Windows Update principer  
 

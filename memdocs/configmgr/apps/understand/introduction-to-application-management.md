@@ -10,12 +10,12 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d3cd21fe4b1d53ecbb0bc60818405cb795a4f289
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1b2fc0dfe37ad51ce1a549545c3eaa716395438d
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710764"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347121"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introduktion till program hantering i Configuration Manager
 
@@ -95,7 +95,7 @@ När du gör *ändringar* i ett program eller en distributions typ skapar Config
 - Återställa en tidigare version av ett program
 - Ta bort en gammal version
 
-Mer information finns i [Uppdatera och dra tillbaka program](../deploy-use/update-and-retire-applications.md).  
+Mer information finns i [omarbeta program](../deploy-use/revise-and-supersede-applications.md#application-revisions).  
 
 ### <a name="detection-method"></a>Identifieringsmetod
 
