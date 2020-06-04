@@ -6,7 +6,7 @@ author: lenewsad
 ms.author: lanewsad
 manager: dougeby
 ms.date: 04/17/2020
-ms.topic: article
+ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
 ms.technology: ''
@@ -18,12 +18,12 @@ ms.reviewer: jeyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8afc499f85e91658b411a25988ac858ca59030cc
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: e82d8f27b7ffbce663ee64030a6d933bf1684dc1
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81616053"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83880595"
 ---
 # <a name="set-up-android-device-with-company-portal-and-intercede"></a>Registrera en Android-enhet med företagsportalen och Intercede
 
@@ -135,7 +135,7 @@ I det här avsnittet skannar du den QR-kod som du fått av företaget.  När du 
 ### <a name="token-enrollment"></a>Tokenregistrering  
 I det här avsnittet anger du den token som du fått av företaget. När du är klar omdirigeras du tillbaka till stegen för enhetsregistrering.  
 
-1. På skärmen för Google-inloggning går du till rutan **E-post eller telefon** och skriver **afw#setup**. Tryck på **nästa**. 
+1. På skärmen för Google-inloggning går du till rutan **E-post eller telefon** och skriver **afw#setup**. Tryck sedan på **Nästa**. 
 
    ![Exempelbild på Google-inloggningsskärmen som visar att ”afw#setup” skrivs in i fältet.](./media/token-intune-app-01.png)   
 
@@ -162,7 +162,7 @@ I det här avsnittet anger du den token som du fått av företaget. När du är 
 
    1. Tryck på länken till organisationens konfigurationsanvisningar. Om din organisation inte tillhandahåller ytterligare instruktioner kommer du att skickas till den här artikeln.
 
-   2. Tryck på **Börja**.  
+   2. Tryck på **BÖRJA**.  
 
    > [!div class="mx-imgBorder"]
    > ![Exempel på skärmbild av företagsportalens skärm för mobil smartkortåtkomst.](./media/smart-card-open-entrust-android.png)
@@ -173,7 +173,7 @@ I det här avsnittet anger du den token som du fått av företaget. När du är 
 
 5. När du tillfrågas om vilken profil du vill använda, väljer du alternativet att aktivera med en mobilautentiseringsuppgift. En QR-kod visas.  
 
-6. Återgå till Android-enheten. I Företagsportal > skärmen **Hämta QR-kod** trycker du på **Nästa**.
+6. Återgå till Android-enheten. I Företagsportal > skärmen **Hämta QR-kod** trycker du på **NÄSTA**.
 
     > [!div class="mx-imgBorder"]
     > ![Exempel på skärmbild av skärmen Företagsportal > Hämta QR-kod.](./media/get-qr-code-entrust-android.png)

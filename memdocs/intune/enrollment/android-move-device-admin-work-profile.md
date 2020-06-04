@@ -7,7 +7,7 @@ author: ErikjeMS
 ms.author: erikje
 manager: dougeby
 ms.date: 03/20/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f16c39ff0af44918099863be5d23ec9fe564493
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: fd9741cfa8cf9edd03d723e63ed1936e1c986d08
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80624919"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989061"
 ---
 # <a name="move-android-devices-from-device-administrator-to-work-profile-management"></a>Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering
 
@@ -34,7 +34,7 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
 2. Registrering för arbetsprofilhantering
 3. Lösning av eventuella efterlevnadsproblem. 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Användarna måste ha [Android-enhetsadministratörsregistrerade enheter](android-enroll-device-administrator.md) med Android Företagsportal version 5.0.4720.0 eller senare.
 - Du konfigurerar Android-arbetsprofilhantering genom [att ansluta ditt Intune-klientkonto till ditt Android Enterprise-konto](connect-intune-android-enterprise.md).
@@ -59,14 +59,18 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
     ![Blockera enheter](./media/android-move-device-admin-work-profile/block-devices.png)
 
 5. På sidan **Platser** kan du lägga till platser om du vill > **Nästa**.
-6. På **Åtgärder vid inkompatibilite**kan du ange åtgärden **Skicka e-post till slutanvändare**.
 
-    ![Skicka e-post](./media/android-move-device-admin-work-profile/send-email.png)
+6. På fliken **Åtgärder för inkompatibilitet** kan du konfigurera [tillgängliga åtgärder för inkompatibilitet](../protect/actions-for-noncompliance.md#available-actions-for-noncompliance) för att anpassa slutanvändarnas upplevelse av det här flödet.
 
+    ![Åtgärder vid inkompatibilitet](media/android-move-device-admin-work-profile/noncompliance-actions.png)
 
-    I e-postmeddelandet kan du ta med URL:en nedan i dina meddelanden till användarna. URL:en startar Android Företagsportal på sidan **Uppdatera enhetsinställningar**. Den här sidan startar deras flöde för att flytta till arbetsprofilhantering.
-    - `https://portal.manage.microsoft.com/UpdateSettings.aspx`.
-    - För amerikanska myndigheter kan du använda den här länken i stället: `https://portal.manage.microsoft.us/UpdateSettings.aspx`.
+    Här är några åtgärder att överväga:
+
+    - **Markera enheten som inkompatibel**: Som standard är den här åtgärden inställd på noll (0) dagar så att enheter markeras som inkompatibla direkt. Om du ändrar det här till fler dagar får användarna en respitperiod där de kan se flödet för att flytta till arbetsprofilhanteringen utan att markeras som inkompatibla. Om du till exempel ställer in 14 dagar har användarna två veckor på sig att flytta från enhetsadministratör till arbetsprofilhantering utan att förlora åtkomsten till resurser.
+    - **Skicka push-meddelande till slutanvändare**: Konfigurera det här för att skicka push-meddelanden till enhetsadministratörens enheter. När en användare väljer meddelandet startas Android Företagsportal på sidan **Uppdatera enhetsinställningar** där användaren kan starta flödet för att gå över till arbetsprofilhantering.
+    - **Skicka e-post till slutanvändare**: Konfigurera det här för att skicka e-postmeddelanden till användare om flytten från enhetsadministratör till arbetsprofilhantering. Du kan ta med webbadressen nedan i e-postmeddelandet. När en användare väljer webbadressen startas Android Företagsportal på sidan Uppdatera enhetsinställningar där användaren kan starta flödet för att gå över till arbetsprofilhantering.
+      - `https://portal.manage.microsoft.com/UpdateSettings.aspx`.
+      - För amerikanska myndigheter kan du använda den här länken i stället: `https://portal.manage.microsoft.us/UpdateSettings.aspx`.
   
     > [!NOTE]
     > - Naturligtvis kan du använda användarvänlig hypertext för länkarna i kommunikationen med användarna. Använd dock inte URL-förkortare eftersom länkarna kanske inte fungerar om de ändras på det sättet.

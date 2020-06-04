@@ -1,5 +1,5 @@
 ---
-title: Ange utfärdare för hantering av mobila enheter
+title: Konfigurera utfärdare för hantering av mobila enheter
 titleSuffix: Microsoft Intune
 description: Ange utfärdare för hantering av mobila enheter i Intune.
 keywords: ''
@@ -7,7 +7,7 @@ author: ErikjeMS
 ms.author: erikje
 manager: dougeby
 ms.date: 08/16/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: fundamentals
 ms.localizationpriority: high
@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eee979ad22a501f8545b93c85790d37ca9648cf7
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 7244872fa888aaee164187e62a2355a94f793499
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82077911"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83985174"
 ---
-# <a name="set-the-mobile-device-management-authority"></a>Ange utfärdare för hantering av mobila enheter
+# <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
@@ -36,9 +36,9 @@ Möjliga konfigurationerna är:
 
 - **Intune-samhantering** – Integration av Intunes molnlösning med Configuration Manager för Windows 10-enheter. Du kan konfigurera Intune med hjälp av Configuration Manager-konsolen. [Konfigurera automatisk registrering av enheter i Intune](https://docs.microsoft.com/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
 
-- **Hantering av mobilenheter i Office 365** – Integrering av Office 365 med Intunes molnlösning. Du kan konfigurera Intune från ditt administrationscenter för Microsoft 365. Innehåller en delmängd av de funktioner som är tillgängliga i Fristående Intune. Ange utfärdare av mobilenhetshantering i Administrationscenter för Microsoft 365.
+- **Hantering av mobilenheter i Office 365** – Integrering av Office 365 med Intunes molnlösning. Du kan konfigurera Intune från ditt administrationscenter för Microsoft 365. Innehåller en delmängd av de funktioner som är tillgängliga i Fristående Intune. Läs mer i [Konfigurera Mobile Device Management (MDM) i Office 365](https://support.office.com/en-us/article/Set-up-Mobile-Device-Management-MDM-in-Office-365-dd892318-bc44-4eb1-af00-9db5430be3cd)
 
-- **Office 365 MDM-samexistens** Du kan aktivera och använda MDM för såväl Office 365 som Intune samtidigt på din klient och konfigurera hanteringsbehörigheten till antingen Intune eller MDM för Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras mobilenheter. Användarens hanteringsbehörighet definieras utifrån den licens som tilldelats användaren. Mer information finns i [Microsoft Intune-samexistens med MDM för Office 365](https://blogs.technet.microsoft.com/configmgrdogs/2016/01/04/microsoft-intune-co-existence-with-mdm-for-office-365)
+- **Office 365 MDM-samexistens** Du kan aktivera och använda MDM för både Office och Intune samtidigt på din klient och ange hanteringsbehörighet som antingen Intune eller MDM for Office så att varje användare får bestämma vilken tjänst som ska användas till att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av MDM for Office. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av MDM for Office växlar hanteringen till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter MDM for Office innan användarna byts till Intune, annars förlorar enheterna MDM for Office-konfigurationen och får ingen annan konfiguration från Intune.
 
 ## <a name="set-mdm-authority-to-intune"></a>Ange Intune som utfärdare för hantering av mobila enheter
 
@@ -70,14 +70,6 @@ När du har bytt till den nya MDM-utfärdaren kan det ta upp till åtta timmar i
 - Enheter måste ansluta till tjänsten efter ändringen så att inställningarna från den nya MDM-utfärdaren (fristående Intune) ersätter de befintliga inställningarna på enheten.
 - När du har ändrat MDM-utfärdaren finns några av de grundläggande inställningarna (t.ex. profiler) från den tidigare MDM-utfärdaren kvar på enheten i upp till sju dagar, eller tills enheten ansluter till tjänsten för första gången. Vi rekommenderar att du konfigurerar appar och inställningar (principer, profiler, appar osv.) i den nya MDM-utfärdaren så snart som möjligt och distribuerar inställningen till användargrupperna för användare som har befintliga registrerade enheter. Så fort en enhet ansluter till tjänsten efter ändringen av MDM-utfärdare tar den emot de nya inställningarna från den nya MDM-utfärdaren, vilket förhindrar avbrott i hanteringen och skyddet av enheten.
 - Enheter som inte har associerade användare (vanligt om du har iOS/iPadOS-programmet för enhetsregistrering eller vid massregistreringsscenarier) migreras inte till den nya MDM-utfärdaren. För dessa enheter måste du ringa supporten och få hjälp med att flytta dem till den nya MDM-utfärdaren.
-
-## <a name="change-mdm-authority-to-office-365"></a>Ändra MDM-utfärdare till Office 365
-
-Om du vill aktivera Office 365 MDM (eller aktivera MDM-samexistens) utöver din befintliga Intune-tjänst går du till [https://protection.office.com](https://protection.office.com) väljer **Skydd mot dataförlust** > **Säkerhetsprinciper för enhet** > **Visa en lista över hanterade enheter** > **Kom igång**.
-
-Mer information finns i [Konfigurera Mobile Device Management (MDM) i Office 365](https://support.office.com/en-us/article/Set-up-Mobile-Device-Management-MDM-in-Office-365-dd892318-bc44-4eb1-af00-9db5430be3cd).
-
-Om du vill att slutanvändarna bara ska hanteras av Office 365 MDM tar bort alla tilldelade Intune- och/eller EMS-licenser efter aktivering av Office 365 MDM.
 
 ## <a name="mobile-device-cleanup-after-mdm-certificate-expiration"></a>Rensa mobila enheter efter att MDM-certifikatet upphört att gälla
 

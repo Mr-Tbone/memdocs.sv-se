@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 12/18/2019
+ms.date: 05/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,67 +15,55 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b6646c67f9425d395bbec1e33c03f6f29b6af7e
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 96074f4bea22b7468b1f210d631f0912eeafe7b5
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79361932"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428994"
 ---
 # <a name="use-custom-settings-for-windows-10-devices-in-intune"></a>Använda anpassade inställningar för Windows 10-enheter i Intune
 
-Med Microsoft Intune kan du lägga till eller skapa anpassade inställningar för dina Windows 10-enheter med hjälp av ”anpassade profiler”. Anpassade profiler är en funktion i Intune. De gör att du kan lägga till enhetsinställningar och funktioner som inte är inbyggda i Intune.
+Den här artikeln beskriver de olika anpassade inställningar du kan styra på enheter med Windows 10 och senare. Inom ramen för din MDM-lösning (hantering av mobilenheter) kan du använda de här inställningarna till att konfigurera inställningar som inte är inbyggda i Intune.
 
-Anpassade profiler i Windows 10 använder OMA-URI-inställningar (Open Mobile Alliance Uniform Resource Identifier) för att konfigurera olika funktioner. De här inställningarna används vanligtvis av tillverkare av mobila enheter till att styra funktioner på enheten. 
+Mer information om anpassade profiler finns i [Skapa en profil med anpassade inställningar](custom-settings-configure.md).
+
+Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som sedan tilldelas eller distribueras till dina Windows 10-enheter.
+
+Den här funktionen gäller för:
+
+- Windows 10 och senare
+
+Anpassade profiler i Windows 10 använder OMA-URI-inställningar (Open Mobile Alliance Uniform Resource Identifier) för att konfigurera olika funktioner. De här inställningarna används vanligtvis av tillverkare av mobila enheter till att styra funktioner på enheten.
 
 I Windows 10 finns flera CSP-inställningar (Configuration Service Provider), t.ex. [Princip-CSP (Policy Configuration Service Provider)](https://technet.microsoft.com/itpro/windows/manage/how-it-pros-can-use-configuration-service-providers).
 
 Glöm inte att [enhetsbegränsningsprofilen i Windows 10](device-restrictions-windows-10.md) innehåller många inbyggda inställningar som du kan använda. Det betyder att du kanske inte behöver ange anpassade värden.
 
-Den här artikeln:
+## <a name="before-you-begin"></a>Innan du börjar
 
-- Beskriver hur du skapar en anpassad profil för Windows 10-enheter
-- Innehåller en lista med rekommenderade OMA-URI-inställningar
-- Innehåller ett exempel på en anpassad profil som öppnar en VPN-anslutning
+[Skapa en anpassad Windows 10-profil](custom-settings-configure.md#create-the-profile).
 
-## <a name="create-the-profile"></a>Skapa profilen
+## <a name="oma-uri-settings"></a>OMA-URI-inställningar
 
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
-3. Ange följande inställningar:
+**Lägg till**: Ange följande inställningar:
 
-    - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett användbart profilnamn är till exempel **anpassad profil för Windows 10**.
-    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Anpassad**.
+- **Namn**: Ange ett unikt namn för OMA-URI-inställningen som hjälper dig att identifiera den i listan över inställningar.
+- **Beskrivning**: Ange en beskrivning som ger en översikt över inställningen, samt annan viktig information.
+- **OMA-URI** (skiftlägeskänslig): Ange den OMA-URI som du vill använda som inställning.
+- **Datatyp**: Välj den datatyp som du vill använda för den här OMA-URI-inställningen. Alternativen är:
 
-4. I **Anpassade OMA-URI-inställningar** väljer du **Lägg till**. Ange följande inställningar:
+  - Base64 (fil)
+  - Boolesk
+  - Sträng (XML-fil)
+  - Datum och tid
+  - Sträng
+  - Flyttal
+  - Heltal
 
-    - **Namn**: Ange ett unikt namn för OMA-URI-inställningen som hjälper dig att identifiera den i listan över inställningar.
-    - **Beskrivning**: Ange en beskrivning som ger en översikt över inställningen, samt annan viktig information.
-    - **OMA-URI** (skiftlägeskänslig): Ange den OMA-URI som du vill använda som inställning.
-    - **Datatyp**: Välj den datatyp som du vill använda för den här OMA-URI-inställningen. Alternativen är:
+- **Värde**: Ange det datavärde som du vill associera med den OMA-URI som du har angett. Värdet beror på vilken datatyp du valt. Om du till exempel valde **Datum och tid**, väljer du värdet från en datumväljare.
 
-        - Sträng
-        - Sträng (XML-fil)
-        - Datum och tid
-        - Heltal
-        - Flyttal
-        - Boolesk
-        - Base64 (fil)
-
-    - **Värde**: Ange det datavärde som du vill associera med den OMA-URI som du har angett. Värdet beror på vilken datatyp du valt. Om du till exempel valde **Datum och tid**, väljer du värdet från en datumväljare.
-
-    När du har lagt till några inställningar kan du välja **Exportera**. **Exportera** skapar en lista över alla värden som du har lagt till i en fil med kommaavgränsade värden (.csv).
-
-5. Klicka på **OK** för att spara ändringarna. Fortsätt att lägga till fler inställningar efter behov.
-6. När du är klar väljer du **OK** > **Skapa** för att skapa Intune-profilen. När du är klar visas din profil i listan **Enhetskonfiguration – profiler**.
-
-## <a name="example"></a>Exempel
-
-I följande exempel är inställningen **Connectivity/AllowVPNOverCellular** aktiverad. Med den här inställningen kan en Windows 10-enhet öppna en VPN-anslutning vid användning av ett mobilnät.
-
-![Exempel på en anpassad princip som innehåller VPN-inställningar](./media/custom-settings-windows-10/custom-policy-example.png)
+När du har lagt till några inställningar kan du välja **Exportera**. **Exportera** skapar en lista över alla värden som du har lagt till i en fil med kommaavgränsade värden (.csv).
 
 ## <a name="find-the-policies-you-can-configure"></a>Hitta principer som du kan konfigurera
 
@@ -87,4 +75,6 @@ Observera att Intune inte stöder alla inställningar i [referensen för konfigu
 
 ## <a name="next-steps"></a>Nästa steg
 
-Profilen har skapats, men den gör inte något än. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+
+[Läs mer om anpassade profiler i Intune](custom-settings-configure.md).

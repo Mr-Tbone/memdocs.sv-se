@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/22/2019
+ms.date: 05/14/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ab94c3cc8bb9009d49a6b301d9a67fa6ffc5f1a
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: a91a84ece833bf893395e494a0e99fa675f14c2a
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79364311"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429648"
 ---
 # <a name="windows-10-and-newer-device-settings-to-upgrade-editions-or-enable-s-mode-in-intune"></a>Enhetsinställningar för Windows 10 (och senare) vid uppgradering av utgåvor, eller när S-läget aktiveras i Intune
 
@@ -38,18 +38,20 @@ Mer information om den här funktionen finns i [Uppgradera Windows 10-utgåvor e
 
 ## <a name="edition-upgrade"></a>Versionsuppgradering
 
-- **Utgåva att uppgradera till**: Välj vilken Windows 10-utgåva som du uppgraderar till. De enheter som omfattas av principen uppgraderas till den valda utgåvan.
-- **Produktnyckel**: Ange produktnyckeln som du har fått från Microsoft. När du har skapat en princip som innehåller en produktnyckel går den inte att uppdatera och den är dold av säkerhetsskäl. Om du vill ändra produktnyckeln måste du ange hela nyckeln igen.
-- **Licensfil**: för **Windows 10 Holographic för företag** eller **Windows 10 Mobile-version** väljer du **Bläddra** och går till den licensfil som du har fått från Microsoft. Licensfilen innehåller licensinformation för de utgåvor som du uppgraderar enheterna till.
+- **Utgåva att uppgradera till**: Välj den Windows 10-utgåva som du uppgraderar till. De enheter som omfattas av principen uppgraderas till den valda utgåvan.
+- **Produktnyckel**: Ange produktnyckeln som du fick från Microsoft. När du har skapat en princip som innehåller en produktnyckel går den inte att uppdatera och den är dold av säkerhetsskäl. Om du vill ändra produktnyckeln måste du ange hela nyckeln igen.
+- **Licensfil**: I **Windows 10 Holographic for Business** eller **Windows 10 Mobile-utgåvan** väljer du **Bläddra** och den licensfil som du fick från Microsoft. Licensfilen innehåller licensinformation för de utgåvor som du uppgraderar enheterna till.
 
 ## <a name="mode-switch"></a>Växla läge
 
-- **Ingen konfiguration**: En enhet i S-läge förblir i S-läge. En slutanvändare kan ange att enheten ska växla från S-läget.
-- **Bli kvar i S-läge**: användaren kan inte växla från S-läget.
-- **Växla**: Växlar enheten från S-läge.
+- **Växla från S-läge**: Växlar enheten från S-läget. Alternativen är:
+
+  - **Ingen konfiguration**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard kan S-lägesenheten stanna kvar i S-läge. Användaren kan ange att enheten ska växla från S-läget.
+  - **Behåll i S-läget**: Förhindrar att användare växlar enheten från S-läget.
+  - **Växla**: Användare kan ange att enheten ska växla från S-läget.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Profilen skapas, men den kanske inte gör något än. Kom ihåg att [tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
 Du kan också skapa uppgraderingsprofiler för utgåvan i [Windows Holographic for Business](holographic-upgrade.md)-enheter.

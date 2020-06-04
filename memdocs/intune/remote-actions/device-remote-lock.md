@@ -6,7 +6,7 @@ author: ErikjeMS
 ms.author: erikje
 manager: dougeby
 ms.date: 02/27/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: remote-actions
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29b30d46fc5998c69059c743c3f469e198cee1ef
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: f6cafadbecbb0e0f0287b8a6ac4db5a1168e5e84
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80325127"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83983085"
 ---
 # <a name="remotely-lock-devices-with-intune"></a>Fjärrlåsa enheter med Intune
 
@@ -45,7 +45,8 @@ ms.locfileid: "80325127"
 - Windows 10 desktop
 
 > [!NOTE]
-> För macOS-enheter anger du en 6-siffrig PIN-kod för återställning. När enheten är låst visar **Enhetsöversikt** PIN-koden tills en annan enhetsåtgärd skickas.
+> För macOS-enheter anger du en 6-siffrig PIN-kod för återställning. När enheten är låst visar **Enhetsöversikt** PIN-koden tills en annan enhetsåtgärd skickas. Se till att skriva ner PIN-koden eftersom den bara är tillgänglig i 7 dagar efter att kommandot för fjärrlås har skickats. Efter sju dagar kommer Intune inte längre att ha PIN-koden. Initiera inte heller det här kommandot igen för samma enhet förrän den ursprungliga PIN-koden används för att låsa upp enheten. Du bör skicka det här kommandot, skriva ned PIN-koden och inte skicka kommandot till samma enhet igen förrän du har använt det för att komma till macOS-enheten.  
+
 
 ## <a name="remote-lock-a-device"></a>Fjärrlås på en enhet
 

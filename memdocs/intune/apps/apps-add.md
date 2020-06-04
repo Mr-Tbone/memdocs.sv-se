@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/19/2020
-ms.topic: conceptual
+ms.date: 05/11/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0cf2096b4a8862a29d47bc05aa29f0cbb48792b
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: da78e0f80df31f5cb0f6236c4f85f93c05f0320a
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82023256"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989478"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Lägg till appar i Microsoft Intune 
 
@@ -43,6 +43,7 @@ Intune stöder en mängd olika apptyper. De tillgängliga alternativen skiljer s
 | Appar om skrivits internt (verksamhetsspecifika) | Intune installerar appen på enheten (du tillhandahåller installationsfilen). | Du måste uppdatera appen. |
 | Appar som är inbyggda (inbyggda appar) | Intune installerar apparna på enheten.  | Uppdateringar av appar sker automatiskt. |
 | Appar på webben (webblänk) | Intune skapar en genväg till webbappen på enhetens startskärm. | Uppdateringar av appar sker automatiskt. |
+| Appar från andra Microsoft-tjänster  | Intune skapar en genväg till appen i företagsportalen. Mer information finns i [Inställningsalternativ för appkällor](../apps/company-portal-app.md#app-source-setting-options). | Uppdateringar av appar sker automatiskt. |
 
 ### <a name="specific-app-type-details"></a>Information för specifika apptyper
  
@@ -70,7 +71,6 @@ I följande tabell visas de specifika apptyperna och hur du kan lägga till dem 
 | Android Enterprise-systemprogram  | Store-app  | Välj **Android Enterprise-systemapp** som **apptyp** och ange sedan appens namn, utgivare och paketfil.  |
 | Windows-app (Win32)  | Verksamhetsspecifik app  | Välj **Windows-app (Win32)** som **apptyp**, välj **appaketfilen** och välj sedan en installationsfil med tillägget **.intunewin**.  |
 | macOS LOB-appar | Verksamhetsspecifik app  | Välj **Line-of-business** som **apptyp**, välj **appaketfilen** och välj sedan en installationsfil med tillägget **.intunemac**.  |
-
 
 <sup>1</sup> Mer information om Android Enterprise- och Android Work-profiler finns i [Förstå licensierade appar](apps-add.md#understanding-licensed-apps) nedan.
 
@@ -112,6 +112,7 @@ Du kan välja bland följande app-typer:
 - **Appar från butiken**: Appar som har laddats upp till antingen Microsoft Store, iOS/iPadOS Store eller Android Store kallas för Store-appar. En store-apps provider underhåller och tillhandahåller uppdateringar för appen. Du väljer appen i Store-listan och lägger till den med hjälp av Intune som en app som är tillgänglig för användarna.
 - **Appar som har skrivits internt (verksamhetsspecifika)** : Appar som har skapats internt kallas för verksamhetsspecifika appar (LOB). Funktionerna i den här apptypen har skapats för någon av plattformarna som stöds av Intune, som Windows, iOS/iPadOS, macOS eller Android. Din organisation skapar och förser dig med uppdateringar som en separat fil. Du ger användarna uppdateringar för appen genom att lägga till och distribuera uppdateringarna med Intune.
 - **Appar på webben**: Webbappar är klientserverprogram. Servern tillhandahåller webbappen, som inkluderar användargränssnitt, innehåll och funktioner. Dessutom erbjuder moderna webbtjänstplattformar dessutom vanligen säkerhet, belastningsutjämning och andra förmåner. Den här typen av app underhålls separat på webben. Du använder Intune för att peka på den här apptypen. Du tilldelar också vilka användargrupper som ska kunna få åtkomst till den här appen. Observera att Android inte har stöd för webbappar.
+- **Appar från andra Microsoft-tjänster**: Appar som har startats från antingen Azure AD eller Office Online. **Azure AD Enterprise-program** registreras och tilldelas via [Azure-portalen](https://portal.azure.com). **Office Online-program** tilldelas med de licenskontroller som är tillgängliga i [administrationscentret för M365](https://admin.microsoft.com). Du kan dölja eller visa Azure AD Enterprise- och Office Online-program för slutanvändarna i företagsportalen. Du hittar den här konfigurationsinställningen i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) genom att välja **Administration av klientorganisation** > **Anpassning**. Välj om du vill **dölja** eller **visa** antingen **Azure AD Enterprise-program** eller **Office Online-program** i företagsportalen för varje slutanvändare. Slutanvändarna ser hela programkatalogen från den valda Microsoft-tjänsten. Som standard är **Dölj** valt för alla ytterligare appkällor. Mer information finns i [Inställningsalternativ för appkällor](../apps/company-portal-app.md#app-source-setting-options). 
 
 När du bestämmer vilka appar som krävs för din organisation behov, bör du överväga hur apparna integrerar med molntjänster, vilka data apparna kan få åtkomst till, om apparna är tillgängliga för BYOD-användare och om apparna kräver internetåtkomst.
 

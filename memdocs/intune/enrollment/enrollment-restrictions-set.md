@@ -7,7 +7,7 @@ author: ErikjeMS
 ms.author: erikje
 manager: dougeby
 ms.date: 08/17/2018
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4da13b77b52a8110072dcba208b70d1ce0407cbb
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: c1bbcfc953945f7e8525cb7dc7edf3b1dd8a2f5c
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82077996"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989072"
 ---
 # <a name="set-enrollment-restrictions"></a>Ange registreringsbegränsningar
 
@@ -83,12 +83,14 @@ Standardbegränsningar tillhandahålls automatiskt för både begränsningar fö
 
 6. Under **Personligt ägda** väljer du **Tillåt** för de plattformar som du vill tillåta som personligt ägda enheter.
 7. Ange en kommateckenavgränsad lista över de tillverkare som du vill blockera under **Enhetstillverkare**.
-8. Välj **Nästa** för att gå till sidan **Tilldelningar**.
-9. Välj **Välj grupper att inkludera** och använd sedan sökrutan för att hitta grupper som du vill ska ingå i begränsningen. Begränsningen gäller endast för grupper som den är tilldelad till. Om du inte tilldelar en begränsning till minst en grupp så påverkar den inte något. Välj sedan **Välj**. 
+8. Välj **Nästa** för att gå till sidan **Omfångskoder**.
+9. På sidan **Omfångstaggar** kan du lägga till omfångstaggar som du vill använda för den här begränsningen. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md). När du använder omfångstaggar för registreringsbegränsningar kan användarna bara ordna om policyer som de har omfång för. De kan också bara ordna om de policypositioner de har omfång för. Användarna ser det faktiska prioritetsnumret för varje policy. En användare i omfånget kan se den relativa prioriteten för policyerna, även om användaren inte kan se alla andra policyer.
+10. Välj **Nästa** för att gå till sidan **Tilldelningar**.
+11. Välj **Välj grupper att inkludera** och använd sedan sökrutan för att hitta grupper som du vill ska ingå i begränsningen. Begränsningen gäller endast för grupper som den är tilldelad till. Om du inte tilldelar en begränsning till minst en grupp så påverkar den inte något. Välj sedan **Välj**. 
     ![Skärmpunkt för att välja plattformsinställningar](./media/enrollment-restrictions-set/select-groups.png)
-10. Välj **Nästa** för att gå till sidan **Granska + skapa**.
-11. Välj **Skapa** för att skapa begränsningen.
-12. Den nya begränsningen skapas med prioritet precis ovanför standardvärdet. Du kan [ändra prioriteten](#change-enrollment-restriction-priority).
+12. Välj **Nästa** för att gå till sidan **Granska + skapa**.
+13. Välj **Skapa** för att skapa begränsningen.
+14. Den nya begränsningen skapas med prioritet precis ovanför standardvärdet. Du kan [ändra prioriteten](#change-enrollment-restriction-priority).
 
 
 ## <a name="create-a-device-limit-restriction"></a>Skapa en enhetsgränsbegränsning
@@ -98,12 +100,14 @@ Standardbegränsningar tillhandahålls automatiskt för både begränsningar fö
 3. Välj **Nästa** för att gå till sidan **Enhetsgräns**.
 4. För **Enhetsgräns**, ange det maximala antalet enheter som en användare kan registrera.
     ![Skärmpunkt för att välja enhetsgräns](./media/enrollment-restrictions-set/choose-device-limit.png)
-5. Välj **Nästa** för att gå till sidan **Tilldelningar**.
-6. Välj **Välj grupper att inkludera** och använd sedan sökrutan för att hitta grupper som du vill ska ingå i begränsningen. Begränsningen gäller endast för grupper som den är tilldelad till. Om du inte tilldelar en begränsning till minst en grupp så påverkar den inte något. Välj sedan **Välj**. 
+5. Välj **Nästa** för att gå till sidan **Omfångskoder**.
+6. På sidan **Omfångstaggar** kan du lägga till omfångstaggar som du vill använda för den här begränsningen. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md). När du använder omfångstaggar för registreringsbegränsningar kan användarna bara ordna om policyer som de har omfång för. De kan också bara ordna om de policypositioner de har omfång för. Användarna ser det faktiska prioritetsnumret för varje policy. En användare i omfånget kan se den relativa prioriteten för policyerna, även om användaren inte kan se alla andra policyer.
+7. Välj **Nästa** för att gå till sidan **Tilldelningar**.
+8. Välj **Välj grupper att inkludera** och använd sedan sökrutan för att hitta grupper som du vill ska ingå i begränsningen. Begränsningen gäller endast för grupper som den är tilldelad till. Om du inte tilldelar en begränsning till minst en grupp så påverkar den inte något. Välj sedan **Välj**. 
     ![Skärmpunkt för att välja grupper](./media/enrollment-restrictions-set/select-groups-device-limit.png)
-7. Välj **Nästa** för att gå till sidan **Granska + skapa**.
-8. Välj **Skapa** för att skapa begränsningen.
-9. Den nya begränsningen skapas med prioritet precis ovanför standardvärdet. Du kan [ändra prioriteten](#change-enrollment-restriction-priority).
+9. Välj **Nästa** för att gå till sidan **Granska + skapa**.
+10. Välj **Skapa** för att skapa begränsningen.
+11. Den nya begränsningen skapas med prioritet precis ovanför standardvärdet. Du kan [ändra prioriteten](#change-enrollment-restriction-priority).
 
 Vid BYOD-registrering ser användarna information om att de har uppnått gränsen för antalet registrerade enheter. Till exempel i iOS:
 

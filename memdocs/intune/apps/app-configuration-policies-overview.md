@@ -7,7 +7,7 @@ author: Erikre
 ms.author: erikre
 manager: dougeby
 ms.date: 04/22/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4dd0b1702b06f3efbed07a70b13a59b271816f8
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: 6e99922c920966f4f0bb1037b5fc74799cfca7c5
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82023018"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988780"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Appkonfigurationsprinciper för Microsoft Intune
 
@@ -107,7 +107,7 @@ Du kan verifiera appkonfigurationsprincipen med följande tre metoder:
 
 ### <a name="iosipados-configuration-on-unmanaged-devices"></a>iOS/iPadOS-konfiguration på ohanterade enheter
 
-Du kan verifiera iOS/iPadOS-konfigurationen med **Intune-diagnostikloggen** på ohanterade enheter för konfiguration av hanterade appar. Förutom stegen nedan så kan du få åtkomst till hanterade apploggar med hjälp av Microsoft Edge. Mer information finns i [Använda Microsoft Edge i iOS/iPadOS för att få åtkomst till loggar för hanterade appar](manage-microsoft-edge.md#use-microsoft-edge-to-access-managed-app-logs).
+Du kan verifiera iOS/iPadOS-konfigurationen med **Intune-diagnostikloggen** på ohanterade enheter för konfiguration av hanterade appar. Förutom stegen nedan så kan du få åtkomst till hanterade apploggar med hjälp av Microsoft Edge. Mer information finns i [Använda Edge för iOS och Android till att komma åt loggar för hanterade appar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
 
 1. Om den inte redan är installerad på enheten laddar du ned och installerar **Microsoft Edge** från App Store. Mer information finns i [Microsoft Intune-skyddade appar](apps-supported-intune-apps.md).
 2. Starta **Microsoft Edge** och välj **Om** > **intunejälp** i navigeringsfältet.

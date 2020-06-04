@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/20/2020
-ms.topic: conceptual
+ms.date: 05/19/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 379ceb4bf99081e5544be15d338aade0eb5a7a60
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 91ca1e8a710e13e393af5bb3723ca1086e37887d
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80323599"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988600"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Hur du skapar och tilldelar skyddsprinciper för appar
 
@@ -33,9 +33,19 @@ Lär dig hur du skapar och tilldelar Microsoft Intune-appskyddsprinciper (APP) f
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-Appskyddsprinciper kan tillämpas på appar som körs på enheter som kan, men som inte nödvändigtvis, hanteras av Intune. En mer detaljerad beskrivning av hur appskyddsprinciper fungerar och scenarier som stöds av appskyddsprinciper i Intune finns i [Vad är appskyddsprinciper i Microsoft Intune?](app-protection-policy.md)
+Appskyddsprinciper kan tillämpas på appar som körs på enheter som kan, men som inte nödvändigtvis, hanteras av Intune. En mer detaljerad beskrivning av hur appskyddsprinciper fungerar och scenarier som stöds av appskyddsprinciper i Intune finns i [Översikt över principer för appskydd](app-protection-policy.md).
 
-Om du söker efter en lista över appar med MAM-stöd, se [lista över MAM-appar](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+De alternativ som är tillgängliga i appskyddsprinciper (APP) gör det möjligt för organisationer att skräddarsy skyddet för deras specifika behov. För vissa är det inte alltid uppenbart vilka principinställningar som krävs för att implementera ett fullständigt scenario. För att hjälpa organisationer att prioritera härdning av mobilklientslutpunkter har Microsoft infört taxonomi för dess APP-dataskyddsramverk för mobilappshantering för iOS och Android.
+
+Dataskyddsramverket för appskyddsprinciper är indelat i tre olika konfigurationsnivåer, och varje nivå bygger på den föregående nivån:
+
+- **Grundläggande dataskydd för företag** (nivå 1) säkerställer att apparna skyddas med en PIN-kod och krypteras och utför åtgärder för selektiv rensning. För Android-enheter verifierar den här nivån Android-enhetsattestering. Det här är en konfiguration på ingångsnivå som ger liknande dataskyddskontroll i principer för Exchange Online-postlåda och introducerar IT och användarpopulationen för APP.
+- **Förbättrat dataskydd för företag** (nivå 2) introducerar mekanismer för skydd mot dataläckage i APP och minimikrav för OS. Den här konfigurationen gäller för de flesta mobila användare som har åtkomst till arbets- eller skoldata.
+- **Starkt dataskydd för företag** (nivå 3) introducerar avancerade mekanismer för dataskydd, förbättrad PIN-konfiguration och skydd mot mobila hot i appar. Den här konfigurationen är önskvärd för användare som har åtkomst till data med hög risk.
+
+Om du vill se specifika rekommendationer för varje konfigurationsnivå och minsta antal appar som måste skyddas går du till [Dataskyddsramverk med hjälp av appskyddsprinciper](app-protection-framework.md).
+
+Om du letar efter en lista över appar som har integrerat Intune SDK kan du gå till [Skyddade appar i Microsoft Intune](apps-supported-intune-apps.md).
 
 Information om att lägga till organisationens affärsapplikationer i Microsoft Intune och förbereda för appskyddsprinciper finns i [Lägga till appar i Microsoft Intune](apps-add.md).
 

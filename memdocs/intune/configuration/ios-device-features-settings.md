@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fce26aab90989f31ee56a9abd58f617c780d9c4b
-ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
+ms.openlocfilehash: 235a79f644bf15b82eb9e8750f04519238760aca
+ms.sourcegitcommit: 5d32dd481e2a944465755ce74e14c835cce2cd1c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82943883"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83551935"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -213,7 +213,7 @@ Den här funktionen gäller för:
   Enhetstoken kan också användas för att lägga till enhetsspecifik information i de här fälten. Ange till exempel `Serial Number: {{serialnumber}}` om du vill visa serienumret. På låsskärmen visas texten ungefär som `Serial Number 123456789ABC`. När du anger variabler ska du använda klammerparenteser `{{ }}`. [Token för appkonfiguration](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) innehåller en lista över variabler som kan användas. Du kan också använda `deviceName` eller andra enhetsspecifika värden.
 
   > [!NOTE]
-  > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` i stället för `{{deviceid}}` visas litteralsträngen i stället för enhetens unika ID. Se till att du anger rätt information.
+  > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` i stället för `{{deviceid}}` eller '{{DEVICEID}}' visas strängliteralen i stället för enhetens unika ID. Se till att du anger rätt information. Du kan använda variabler med endast gemener eller versaler, men inte en blandning. 
 
 ## <a name="single-sign-on"></a>Enkel inloggning
 

@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/03/2020
+ms.date: 05/26/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31eef700f7aa38b70c5e9a2fa75fd3faee4c9713
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: bc01428430eb665dc609cff84ee322f28e3b7d79
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078064"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165438"
 ---
 # <a name="reference-for-devices-entities"></a>Referens för enhetsentiteter
 
@@ -226,7 +226,7 @@ Entiteten **managementAgentType** representerar de agenter som används för att
 Entiteten **enheter** innehåller en lista över registrerade hanterade enheter och deras respektive egenskaper.
 
 |          Egenskap          |                                                                                       Beskrivning                                                                                      |
-|:--------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | deviceKey                  | Unik identifierare för enheten i informationslagret – surrogatnyckel.                                                                                                               |
 | deviceId                   | Unik identifierare för enheten.                                                                                                                                                     |
 | deviceName                 | Namnet på enheten på plattformar som tillåter namngivning av enheter. På andra plattformar skapar Intune ett namn utifrån övriga egenskaper. Det här attributet kan inte göras tillgängligt för alla enheter. |
@@ -263,13 +263,18 @@ Entiteten **enheter** innehåller en lista över registrerade hanterade enheter 
 | cellularTechnology         | Enhetens mobilteknik                                                                                                                                                    |
 | WiFiMacAddress             | Wi-Fi MAC                                                                                                                                                                              |
 | ICCD                       | Integrated Circuit Card Identifier (identifierare för integrerat kretskort)                                                                                                                                                     |
+| windowsOsEdition           | Windows-operativsystemversion.                                                                                                                             |
+| ethernetMacAddress           | Den unika nätverksidentifieraren för den här enheten.                                                                                                                                        |
+| modell                      | Enhetsmodellen.                                                                                                                                                                      |
+| Office365Version           | Den version av Office 365 som är installerad på enheten.                                                                                                                             |
+
 
 ## <a name="devicepropertyhistories"></a>devicePropertyHistories
 
 Entiteten **devicePropertyHistory** innehåller samma egenskaper som enhetstabellen och dagliga ögonblicksbilder av varje enhetspost per dag under de senaste 90 dagarna. I kolumnen DateKey visas dagen för varje rad.
 
 |          Egenskap          |                                                                                      Beskrivning                                                                                     |
-|:--------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | dateKey                    | Referens till datumtabellen som visar dag.                                                                                                                                          |
 | deviceKey                  | Unik identifierare för enheten i informationslagret – surrogatnyckel. Det här är en referens till enhetstabellen som innehåller Intune-enhetens ID.                               |
 | deviceName                 | Namn på enheten på plattformar som tillåter namngivning av enheter. På andra plattformar skapar Intune ett namn för andra egenskaper. Det här attributet kan inte göras tillgängligt för alla enheter. |
@@ -281,4 +286,6 @@ Entiteten **devicePropertyHistory** innehåller samma egenskaper som enhetstabel
 | OSVersion                  | OS-version.                                                                                                                                                                          |
 | jailBroken                 | Om enheten har brutits upp eller rotats.                                                                                                                                         |
 | deviceCategoryKey          | Nyckeln för attributet enhetskategori för den här enheten. 
+| physicalMemoryInBytes      | Fysiskt minne i bytes.                                                                                                                                                          |
+| totalStorageSpaceInBytes   | Total lagringskapacitet i bytes.                                                                                                                                                                |
 

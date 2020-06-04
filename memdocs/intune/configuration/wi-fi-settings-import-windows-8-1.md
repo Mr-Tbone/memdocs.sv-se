@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 05/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,18 +15,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef2c4593ad9809614b7e0d497745065fef12df69
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: d17614424cdb20d2d88d818fcdd015c229150d66
+ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086375"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556344"
 ---
 # <a name="import-wi-fi-settings-for-windows-devices-in-intune"></a>Importera Wi-Fi-inställningar för Windows-enheter i Intune
 
 För enheter som kör Windows kan du importera en Wi-Fi-konfigurationsprofil som tidigare exporterats till en fil. **För Windows 10 och senare enheter kan du även [skapa en Wi-Fi-profil](wi-fi-settings-windows.md) direkt i Intune**.
 
-Gäller för:  
+Den här funktionen gäller för:
+
 - Windows 8.1 och senare
 - Windows 10 och senare
 - Windows 10 Desktop eller Mobile
@@ -54,12 +55,16 @@ På en Windows-dator som redan har rätt WiFi-profil installerad, gör du följa
 4. Kör kommandot `netsh wlan export profile name="ProfileName" folder=c:\Wifi`. Detta kommando skapar en fil för Wi-Fi-profilen med namnet **Wi-Fi-WiFiName.xml** i målmappen.
 
 > [!IMPORTANT]
-> - Om du exporterar en profil för trådlöst nätverk som innehåller en i förväg delad nyckel, **måste** du lägga till `key=clear` i kommandot. Ange till exempel: `netsh wlan export profile name="ProfileName" key=clear folder=c:\Wifi`
+>
+> - Om du exporterar en profil för trådlöst nätverk som innehåller en i förväg delad nyckel, **måste** du lägga till `key=clear` i kommandot. Ange till exempel:
+>
+>   `netsh wlan export profile name="ProfileName" key=clear folder=c:\Wifi`
+>
 > - En i förväg delad nyckel med Windows 10 visar ett reparationsfel i Intune. När detta sker tilldelas den trådlösa nätverksprofilen till enheten och profilen fungerar som förväntat.
 > - Om du exporterar en trådlös nätverksprofil som innehåller en i förväg delad nyckel, måste filen vara skyddad. Nyckeln är i oformaterad text, så det är ditt ansvar att skydda den.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Profilen har skapats, men den gör inte något än. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
 Se [Översikt över Wi-Fi-inställningar](wi-fi-settings-configure.md), inklusive andra tillgängliga plattformar.

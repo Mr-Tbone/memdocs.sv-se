@@ -6,7 +6,7 @@ author: brenduns
 ms.author: brenduns
 manager: dougeby
 ms.date: 03/24/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 mr.reviewer: karthib
-ms.openlocfilehash: 6b5d0f88222c8d48da4f91ff3cf8d4628ccb179d
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: cb51d5f73edbc28572ee01d49ba4bd5a62cf6393
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80551582"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989633"
 ---
 # <a name="add-endpoint-protection-settings-in-intune"></a>Lägga till inställningar för slutpunktsskydd i Intune
 
@@ -38,9 +38,6 @@ Innan du skapar en profil ska du läsa följande artiklar om de inställningar f
 
 - [Inställningar för macOS](endpoint-protection-macos.md)
 - [Inställningar för Windows 10](endpoint-protection-windows-10.md)
-
-> [!NOTE]
-> Användargränssnittet i Intune uppdateras till en helskärmsupplevelse och kan ta flera veckor. Innan klienten får den här uppdateringen får du ett något annorlunda arbetsflöde när du skapar eller redigerar de inställningar som beskrivs i den här artikeln.
 
 ## <a name="create-a-device-profile-containing-endpoint-protection-settings"></a>Skapa en enhetsprofil med inställningar för slutpunktsskydd
 
@@ -60,8 +57,9 @@ Innan du skapar en profil ska du läsa följande artiklar om de inställningar f
 4. Välj **Skapa**.
 5. Ange följande egenskaper i **Grundinställningar**:
 
-    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Till exempel är ett användbart principnamn **macOS: Endpoint Protection-profil som konfigurerar brandväggen för alla macOS-enheter**.
-    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
+   - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett bra namn kan till exempel innehålla profiltypen och plattformen.
+
+   - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
 
 6. Välj **Nästa**.
 

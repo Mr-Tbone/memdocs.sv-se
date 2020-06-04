@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/26/2020
-ms.topic: conceptual
+ms.date: 05/07/2020
+ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 386e59fe3a7156a8bb74ed39a1b2fcad6ad91dad
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 3437a1b9fe3c663844d366bbfda6c0bcb463c3ab
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80359306"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83983802"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler i Microsoft Intune
 
@@ -60,7 +60,7 @@ Den här funktionen stöder:
 - iOS/iPadOS
 - macOS
 - Windows Phone 8.1
-- Windows 8.1
+- Windows 8,1
 - Windows 10 och senare
 
 ## <a name="custom-profile"></a>Anpassad profil
@@ -179,7 +179,7 @@ Den här funktionen stöder:
 
 ## <a name="extensions"></a>Tillägg
 
-[Kernel-tillägg](kernel-extensions-overview-macos.md) låter administratörer lägga till ytterligare funktioner eller program på kernelnivå på macOS-enheter. Konfigurera dessa inställningar för att lita på alla tillägg från en specifik utvecklare eller partner eller tillåt vissa kerneltillägg.
+[Systemtillägg och kerneltillägg i macOS](kernel-extensions-overview-macos.md) gör att administratörer kan lägga till funktioner och program som utökar de inbyggda funktionerna i operativsystemet. Konfigurera de här inställningarna om du vill lita på alla tillägg från en viss utvecklare eller partner, eller tillåt specifika tillägg.
 
 Den här funktionen stöder:
 
@@ -271,7 +271,7 @@ Den här funktionen stöder:
 - iOS/iPadOS
 - macOS
 - Windows Phone 8.1
-- Windows 8.1
+- Windows 8,1
 - Windows 10 och senare
 
 ## <a name="wi-fi"></a>Wi-Fi

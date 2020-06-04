@@ -6,7 +6,7 @@ author: lenewsad
 ms.author: lanewsad
 manager: dougeby
 ms.date: 10/31/2019
-ms.topic: article
+ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
 ms.subservice: end-user
@@ -18,12 +18,12 @@ ROBOTS: ''
 ms.reviewer: esmich
 ms.suite: ems
 ms.collection: ''
-ms.openlocfilehash: ed3f9f6f01c8dc2df3a89daee991d9f8c61056b9
-ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
+ms.openlocfilehash: 028a568b9a588697139f97f292c70c50347217f3
+ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82210323"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83882085"
 ---
 # <a name="what-information-can-my-organization-see-when-i-enroll-my-device"></a>Vilken information min organisation se när jag registrerar min enhet?
 
@@ -51,7 +51,14 @@ Organisationen kan inte se din personliga information när du registrerar en enh
 - IMEI
 
  > [!NOTE]
- > För fullständigt hanterade och dedikerade enheter för Android Enterprise kan du inte se alla appar.    
+ > För fullständigt hanterade och dedikerade enheter för Android Enterprise kan du inte se alla appar.
+ 
+ > [!NOTE]
+ > En app anses vara en **hanterad app** när den installeras på något av följande sätt:
+ > 1. En användare installerar den från Företagsportal-appen efter att en Intune-administratör publicerat den som **tillgänglig**.
+ > 2. Appen publiceras som **obligatorisk** av en Intune-administratör och installeras på enheten. 
+ >
+ > Om du är IT-administratör eller supportmedarbetare i organisationen och vill ha mer information om hantering av appar i Intune kan du läsa [Förstå funktionerna för ohanterade appar, hanterade appar och MAM-appar](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/understanding-the-capabilities-of-unmanaged-apps-managed-apps/ba-p/249164).
     
 **Det här kan organisationen kanske se:**
 

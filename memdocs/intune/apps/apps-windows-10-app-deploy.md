@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/25/2020
-ms.topic: conceptual
+ms.date: 05/19/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 391fa20cf7ba53af649f9f614d9ca02c653c278b
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 5ed491fd379879369ead35ceb2c618def91d3e53
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079322"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83985936"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-appdistribution med hjälp av Microsoft Intune 
 
@@ -92,7 +92,9 @@ Beroende på apptyp kan appen installeras på en Windows 10-enhet på något av 
 > [!NOTE]
 > För Win32-appar som skapats som Dubbelläge, måste administratören välja om appen ska användas som en app i Användarläge eller Datorläge för alla tilldelningar som är associerade med instansen. Distributionskontexten kan inte ändras per tilldelning.  
 
-Appar kan bara installeras i enhetskontexten när de stöds av både enheten och Intune-apptypen. Du kan installera följande typer av appar i enhetskontexten och tilldela en enhetsgrupp dessa appar:
+Appar kan bara installeras i enhetskontexten när de stöds av både enheten och Intune-apptypen. Enhetskontextinstallationer stöds på Windows 10-datorer och Teams-enheter, t. ex. Surface Hub. De har inte stöd för enheter som kör Windows Holographic for Business, som till exempel Microsoft HoloLens.
+
+Du kan installera följande typer av appar i enhetskontexten och tilldela en enhetsgrupp dessa appar:
 
 - Win32-appar
 - Offline-licensierade Microsoft Store för företag-appar

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/31/2020
+ms.date: 05/14/2020
 ms.topic: tutorial
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41a2dce895761053e482fe029e4599819a099ac6
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 682934276a080323976e7045a14450dc382f4574
+ms.sourcegitcommit: 4174f7e485067812c29aea01a4767989ffdbb578
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82254868"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83406573"
 ---
 # <a name="tutorial-use-the-cloud-to-configure-group-policy-on-windows-10-devices-with-admx-templates-and-microsoft-intune"></a>Självstudie: Använd molnet för att konfigurera grupprinciper på Windows 10-enheter med ADMX-mallar och Microsoft Intune
 
@@ -114,7 +114,7 @@ Du kan även öppna administrationscentret för Endpoint Manager från [administ
 
 1. Gå till [https://admin.microsoft.com](https://admin.microsoft.com).
 2. Logga in med administratörskontot för din Microsoft 365-klientorganisationsprenumeration.
-3. Under **Administrationscenter** väljer du **Alla administrationscenter** > **Slutpunktshantering**. Administrationscentret för Endpoint Manager öppnas.
+3. Välj **Visa alla** > **All admin centers** (Alla administrationscenter)  > **Endpoint management** (Hantera slutpunkt). Administrationscentret för Endpoint Manager öppnas.
 
     > [!div class="mx-imgBorder"]
     > ![Visa alla administrationscenter i administrationscentret för Microsoft 365](./media/tutorial-walkthrough-administrative-templates/microsoft365-admin-centers.png)
@@ -123,7 +123,13 @@ Du kan även öppna administrationscentret för Endpoint Manager från [administ
 
 Lokala principer tillämpas i LSDOU-ordningen (Local, Site, Domain, Organizational Unit (OU)) – lokalt, webbplats, domän och organisationsenhet. I den här hierarkin skriver OU-principer över lokala principer, domänprinciper skriver över webbplatsprinciper och så vidare.
 
-I Intune tillämpas principer på användare och grupper som du skapar. Det finns ingen hierarki. Om två principer uppdaterar samma inställning visas inställningen som en konflikt. Om två efterlevnadsprinciper är i konflikt tillämpas den mest restriktiva principen. Om två konfigurationsprofiler är i konflikt tillämpas inte inställningen. Mer information finns i [Vanliga frågor, problem och lösningar med enhetsprinciper och profiler](device-profile-troubleshoot.md#if-multiple-policies-are-assigned-to-the-same-user-or-device-how-do-i-know-which-settings-gets-applied).
+I Intune tillämpas principer på användare och grupper som du skapar. Det finns ingen hierarki. Exempel:
+
+- Om två principer uppdaterar samma inställning visas inställningen som en konflikt.
+- Om två efterlevnadsprinciper är i konflikt tillämpas den mest restriktiva principen.
+- Om två konfigurationsprofiler är i konflikt tillämpas inte inställningen.
+
+Mer information finns i [Vanliga frågor, problem och lösningar med enhetsprinciper och profiler](device-profile-troubleshoot.md#if-multiple-policies-are-assigned-to-the-same-user-or-device-how-do-i-know-which-settings-gets-applied).
 
 I följande steg kommer du att skapa säkerhetsgrupper och lägga till användare i grupperna. Du kan lägga till en användare i flera grupper. Bland annat är det vanligt att en användare har flera enheter, till exempel en Surface Pro för arbete och en Android-mobilenhet för personligt bruk. Och det är vanligt att en person kommer åt organisationsresurser från dessa flera enheter.
 
@@ -237,7 +243,7 @@ I det här avsnittet skapar vi en administrativ mall i Intune, tittar på några
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
 5. Välj **Nästa**.
-6. I **Konfigurationsinställningar** finns inställningar som gäller för enheter (**datorkonfiguration**) och inställningar som gäller för användare **(användarkonfiguration**):
+6. I **Konfigurationsinställningar** visar **Alla inställningar** en alfabetisk lista med alla inställningar. Du kan även filtrera inställningar som gäller för enheter (**Datorkonfiguration**) och inställningar som gäller för användare (**Användarkonfiguration**):
 
     > [!div class="mx-imgBorder"]
     > ![Använd inställningar för ADMX-mallar för användare och enheter i Microsoft Intune Endpoint Manager](./media/tutorial-walkthrough-administrative-templates/administrative-templates-choose-computer-user-configuration.png)
@@ -305,7 +311,7 @@ I det här avsnittet visar vi en princip i Intune och dess matchande princip i R
 > [!TIP]
 > Om du vill se inbyggda Windows-principer kan du även använda GPEdit (appen **Redigera grupprincip**).
 
-#### <a name="compare-an-edge-policy"></a>Jämföra en Edge-princip
+#### <a name="compare-a-microsoft-edge-policy"></a>Jämföra en Microsoft Edge-princip
 
 1. Gå till mallen **Administrationsmall – Windows 10 Student-enheter** i Endpoint Manager-administratörscentret.
 2. Expandera **Datorkonfiguration** > **Microsoft Edge** > **Start, startsida och ny fliksida**. Observera de tillgängliga inställningarna.
@@ -368,7 +374,7 @@ I den här mallen konfigurerade vi några Internet Explorer-inställningar för 
 
 3. Välj **Nästa**. Under **Granska + skapa** väljer du **Skapa** för att spara dina ändringar.
 
-När profilen har sparats tillämpas den på enheterna när de checkar in med Intune. Om enheterna är anslutna till Internet kan det ske omedelbart. Mer information om uppdateringstider för principer finns i [Hur lång tid tar det innan principerna, profilerna eller apparna når enheterna efter att de har tilldelats?](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
+När profilen har sparats tillämpas den på enheterna när de checkar in med Intune. Om enheterna är anslutna till Internet kan det ske omedelbart. Mer information om uppdateringstider för principer finns i [How long does it take for devices to get a policy, profile, or app](device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) (Hur lång tid tar det innan principerna, profilerna eller apparna når enheterna).
 
 Lås inte ute dig själv när du tilldelar strikta eller restriktiva principer och profiler. Överväg att skapa en grupp som är exkluderad från dina principer och profiler. Tanken är att det ska finnas åtkomst till felsökning. Övervaka den här gruppen för att bekräfta att den används som det är tänkt.
 
@@ -394,9 +400,9 @@ I det här avsnittet skapar du en administrativ mall för OneDrive i Intune för
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
 
 5. Välj **Nästa**.
-6. I **Konfigurationsinställningar** konfigurerar du följande inställningar. Se till att välja **OK** för att spara ändringarna.
+6. I **Konfigurationsinställningar** konfigurerar du följande inställningar. Se till att välja **OK** för att spara ändringarna:
 
-    - **Dator konfiguration** > **Alla inställningar**:
+    - **Datorkonfiguration**:
       - **Logga in användare i tyst läge till OneDrive-synkroniseringsklienten med deras Windows-autentiseringsuppgifter**
         - **Typ**: Enhet
         - **Värde**: Aktiverad
@@ -404,7 +410,7 @@ I det här avsnittet skapar du en administrativ mall för OneDrive i Intune för
         - **Typ**: Enhet
         - **Värde**: Aktiverad
 
-    - **Användarkonfiguration** > **Alla inställningar**:
+    - **Användarkonfiguration**:
       - **Hindra användarna från att synkronisera personliga OneDrive-konton**
         - **Typ**: Användare
         - **Värde**: Aktiverad

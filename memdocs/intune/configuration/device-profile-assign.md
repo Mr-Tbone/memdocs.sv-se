@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a05e36a2da42bf88e2d9d7e94a67e2d81b8f1271
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 08d53bd7ffedc2679fca675b88e021301d15fb62
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078285"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989017"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Tilldela användar- och enhetsprofiler i Microsoft Intune
 
@@ -48,7 +48,7 @@ Se till att du har rätt roll för att tilldela principer. Mer information finns
 3. Välj den profil som du vill tilldela > **Tilldelningar**.
 4. Välj om du vill **inkludera** eller **exkludera** grupper och välj sedan grupperna. När du väljer dina grupper väljer du en Azure AD-grupp. Håll ned **Ctrl**-tangenten om du vill markera flera grupper.
 
-    ![Skärmbild med alternativ för att inkludera eller exkludera grupper från en profiltilldelning](./media/device-profile-assign/group-include-exclude.png)
+    :::image type="content" source="./media/device-profile-assign/group-include-exclude.png" alt-text="Skärmbild med alternativ för att inkludera eller exkludera grupper från en profiltilldelning i Microsoft Intune":::
 
 5. **Spara** ändringarna.
 
@@ -109,7 +109,7 @@ Vi rekommenderar att du skapar och tilldelar profiler som är specifika för din
 
 När du tilldelar profilerna använder du följande tabell till att inkludera och exkludera grupper. En bockmarkering innebär att tilldelningen stöds:
 
-![Alternativ som stöds för att inkludera eller exkludera grupper från en profiltilldelning](./media/device-profile-assign/include-exclude-user-device-groups.png)
+:::image type="content" source="./media/device-profile-assign/include-exclude-user-device-groups.png" alt-text="Alternativ som stöds för att inkludera eller exkludera grupper från en profiltilldelning":::
 
 ### <a name="what-you-should-know"></a>Det här bör du veta
 

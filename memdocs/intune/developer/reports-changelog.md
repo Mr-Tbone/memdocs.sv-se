@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 05/28/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,18 +18,49 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36944b05a12b150c15e59f145efd9fef85598a2f
-ms.sourcegitcommit: d1c7548b4177d720065b822356f9a08d1e1657c2
+ms.openlocfilehash: 90d1ab0792e329616fce525cfe672c07219908b5
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82881051"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165863"
 ---
 # <a name="change-log-for-the-intune-data-warehouse-api"></a>Ändringslogg för Intunes informationslager-API
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Håll dig uppdaterad om uppdateringar för Intune-informationslagret.
+
+## <a name="2004"></a>2004 
+_Utgiven i april 2020_
+
+### <a name="beta-changes"></a>Betaändringar
+
+I den här tabellen visas egenskapen som lagts till för entiteten **device** i Intune Data Warehouse.
+
+|    Samling                          |    Ändra     |    Beskrivningsinformation                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    windowsOsEdition     |    Tillagd    |    Windows-operativsystemversion.                                                                                                                                                                                                                                                                     |
+
+## <a name="2003"></a>2003 
+_Utgiven i mars 2020_
+
+### <a name="beta-changes"></a>Betaändringar
+
+I den här tabellen visas egenskaperna som lagts till för entiteten **device** i Intune Data Warehouse.
+
+|    Samling                          |    Ändra     |    Beskrivningsinformation                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    ethernetMacAddress    |    Tillagd    |    Den unika nätverksidentifieraren för den här enheten.                                                                                                                                                                                                                                                                     |
+|    modell    |    Tillagd    |    Enhetsmodellen.                                                                                                                                                                                                                                                                     |
+|    Office365Version    |    Tillagd    |    Den version av Office 365 som är installerad på enheten.                                                                                                                                                                                                                                                                     |
+
+I den här tabellen visas egenskaperna som lagts till för entiteten **devicePropertyHistory** i Intune Data Warehouse.
+
+|    Samling                          |    Ändra     |    Beskrivningsinformation                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    physicalMemoryInBytes    |    Tillagd    |    Fysiskt minne i bytes.                                                                                                                                                                                                                                                                     |
+|    totalStorageSpaceInBytes     |    Tillagd    |    Totalt lagringsutrymme i byte.                                                                                                                                                                                                                                                                     |
 
 ## <a name="1903-part-2"></a>1903 (del 2)
 _Publicerad i april 2019_

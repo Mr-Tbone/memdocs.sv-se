@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 05/13/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3aaf2bf895082f3647f0a1ad6b9997a5e97baee
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: e96199d9f525fa0dcbf7545d2c20b90a3a76b9cd
+ms.sourcegitcommit: b94415467831517f2aeab9c7c8a13fe8db8bc8ed
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79364129"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83401805"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Felsökning av principer och profiler i Intune
 
@@ -37,14 +37,14 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
 ## <a name="use-built-in-troubleshooting"></a>Använda inbyggd felsökning
 
-1. Välj [Felsökning och support](https://go.microsoft.com/fwlink/?linkid=2109431) i **Administrationscenter för Microsoft Endpoint Manager**:
+1. Välj **Felsökning och support** i [Administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431):
 
-    ![Gå till Hjälp och support i Intune och välj Felsök](./media/troubleshoot-policies-in-microsoft-intune/help-and-support-troubleshoot.png)
+    :::image type="content" source="./media/troubleshoot-policies-in-microsoft-intune/help-and-support-troubleshoot.png" alt-text="I administrationscentret för Endpoint Management och Intune går du till Felsökning och support.":::
 
 2. Välj **Välj användare** > välj användaren som har ett problem > **Välj**.
 3. Bekräfta att **Intune-licens** och **Kontostatus** har gröna bockmarkeringar:
 
-    ![I Intune väljer du användaren och bekräftar att Kontostatus och Intune-licens har gröna bockmarkeringar för statusen](./media/troubleshoot-policies-in-microsoft-intune/account-status-intune-license-show-green.png)
+    :::image type="content" source="./media/troubleshoot-policies-in-microsoft-intune/account-status-intune-license-show-green.png" alt-text="I Intune väljer du användaren och kontrollerar att Kontostatus och Intune-licens har gröna bockmarkeringar för statusen.":::
 
     **Användbara länkar**:
 
@@ -91,7 +91,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
         **Principtillstånd**:
 
-        - **Ej tillämpligt**: Principen stöds inte på den här plattformen. iOS/iPadOS-principer fungerar t.ex. inte på Android. Samsung KNOX-principer fungerar inte på Windows-enheter.
+        - **Inte tillämpligt**: Principen stöds inte på den här plattformen. iOS/iPadOS-principer fungerar t.ex. inte på Android. Samsung KNOX-principer fungerar inte på Windows-enheter.
         - **Konflikt**: Det finns en befintlig inställning på enheten som Intune inte kan åsidosätta. Eller så har du distribuerat två principer med samma inställning med olika värden.
         - **Väntar**: Enheten har inte checkats in i Intune för att få principen. Eller så har enheten tagit emot principen men har inte rapporterat statusen till Intune.
         - **Fel**: Du hittar fel och möjliga lösningar i [Felsöka åtkomstproblem för företagsresurser](../fundamentals/troubleshoot-company-resource-access-problems.md).
@@ -110,7 +110,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
     - **Överensstämmer**: Enheten har tagit emot profilen och rapporterar till Intune att den överensstämmer med inställningen.
 
-    - **Inte tillämplig**: Profilinställningen är inte tillämplig. E-postinställningar för iOS/iPadOS-enheter är t.ex. inte tillämpliga för Android-enheter.
+    - **Ej tillämpligt**: Profilinställningen är inte tillämplig. E-postinställningar för iOS/iPadOS-enheter är t.ex. inte tillämpliga för Android-enheter.
 
     - **Väntar**: Profilen har skickats till enheten men har inte rapporterat statusen till Intune. Till exempel kräver kryptering på Android användaraktivering, vilket kan leda till att krypteringen väntar.
 
@@ -128,7 +128,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
 ## <a name="alert-saving-of-access-rules-to-exchange-has-failed"></a>Avisering: Det gick inte att spara åtkomstregler i Exchange
 
-**Problem**: Du får aviseringen **Det gick inte att spara åtkomstregler i Exchange**  i administrationskonsolen.
+**Problem**: Du får aviseringen **Det gick inte att spara åtkomstregler i Exchange** i administrationskonsolen.
 
 Om du har skapat principer på arbetsytan Exchange On-premises-princip (administrationskonsolen) men använder Office 365, tillämpas inte de konfigurerade principinställningarna av Intune. Observera principkällan i aviseringen. Ta bort de gamla reglerna under arbetsytan Exchange On-premises-princip. De gamla reglerna är globala Exchange-regler i Intune för lokal Exchange och är inte relevanta för Office 365. Skapa sedan en ny princip för Office 365.
 
@@ -170,7 +170,7 @@ För Windows-datorer som hanteras med Intune-programklienten kan principfel i fi
 
 4. Dra meddelandereglaget till standardinställningen.
 
-### <a name="error-cannot-obtain-the-value-from-the-computer-0x80041013"></a>Fel: Det går inte att hämta värdet från datorn, 0x80041013
+### <a name="error-cannot-obtain-the-value-from-the-computer-0x80041013"></a>FEL: Det går inte att hämta värdet från datorn, 0x80041013
 
 Inträffar om tiden på det lokala systemet är felsynkroniserat med fem minuter eller mer. Om tiden på den lokala datorn inte är rätt synkroniserad misslyckas säkra transaktioner eftersom tidsstämplarna blir ogiltiga.
 

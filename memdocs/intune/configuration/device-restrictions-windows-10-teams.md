@@ -1,12 +1,12 @@
 ---
-title: Microsoft Intune-enhetsbegränsningar för Windows 10 Team
+title: Begränsningar för Surface Hub Windows 10 Team-enheter i Microsoft Intune – Azure | Microsoft Docs
 titleSuffix: ''
-description: Läs mer om enhetsbegränsningar som är tillgängliga för enheter som kör Windows 10 Team.
+description: Använd Intune till att lägga till eller konfigurera inställningar för Surface Hub-enheter som kör Windows 10 Team.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 3/6/2018
+ms.date: 05/14/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,40 +16,69 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 31457667612617bb573ddfb145ed26f70de33159
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b57bc0b7c76a6b67a26c7b1fdacb7880173a055c
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79361659"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429693"
 ---
-# <a name="microsoft-intune-windows-10-team-device-restriction-settings"></a>Inställningar för begränsningar för Windows 10 Team-enheter i Microsoft Intune
+# <a name="windows-10-team-settings-to-allow-or-restrict-features-on-surface-hub-devices-using-intune"></a>Windows 10 Team-inställningar för att tillåta eller begränsa funktioner på Surface Hub-enheter med hjälp av Intune
 
-I den här artikeln visas inställningarna av enhetsbegränsningar som du kan konfigurera för enheter som kör Windows 10 Team.
+I den här artikeln går vi igenom de enhetsbegränsningar i Microsoft Intune du kan konfigurera för enheter som kör Windows 10 Team, inklusive Surface Hub-enheter.
+
+## <a name="before-you-begin"></a>Innan du börjar
+
+[Skapa enhetsprofilen](device-restrictions-configure.md#create-the-profile).
 
 ## <a name="apps-and-experience"></a>Appar och upplevelse
 
-- **Aktivera skärm när någon är i rummet** – Tillåter att enheten aktiveras automatiskt när dess sensor känner av att någon är i rummet.
-- **Mötesinformation som visas på välkomstskärmen** – Aktivera det här alternativet för att välja den information som ska visas i rutan Möten på välkomstskärmen. Du kan:
-  - **Visa endast kalender och tid**
-  - **Visa kalender, tid och ämne (ämnet är dolt för privata möten)**
-- **Webbadress till bakgrundsbild för välkomstskärm** – Aktivera den här inställningen om du vill visa en anpassad bakgrund på **välkomstskärmen** på Windows 10 Team-enheter från den webbadress som du anger.<br>Bilden måste vara i PNG-format och webbadressen måste börja med **https://** .
+De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+
+- **Aktivera skärmen när någon är i rummet**: **Blockera** förhindrar att skärmen aktiveras automatiskt när sensorn känner av att någon är i rummet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Mötesinformation som visas på välkomstskärmen**: Välj vilken information som ska visas på panelen Möten på välkomstskärmen. Alternativen är:
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+  - **Endast kalender och tid**
+  - **Kalender, tid och ämne (ämnet är dolt för privata möten)**
+- **Webbadress till bakgrundsbild för välkomstskärm**: Ange webbadressen till en .png-bild du vill använda som anpassad bakgrund på **välkomstskärmen** på Windows 10 Team-enheter. Bilden måste vara i PNG-format och webbadressen måste börja med `https://`.
+- **Starta appen Anslut automatiskt**: **Blockera** förhindrar att Connect-appen öppnas automatiskt när en projektion startas. Om funktionen blockeras kan användarna starta Connect-appen manuellt från hubbens inställningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Inloggningsförslag**: **Blockera** inaktiverar automatisk ifyllning av inloggningsrutan med inbjudna från schemalagda möten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Mina möten och filer**: **Blockera** inaktiverar funktionen **Mina möten och filer** på Start-menyn. Den här funktionen visar den inloggade användarens möten och filer från Office 365. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
 ## <a name="azure-operational-insights"></a>Azure Operational Insights
 
-- **Operational Insights i Azure** – Operational Insights i Azure är en del av Microsoft Operations Manager-programsviten och samlar in, lagrar och analyserar loggfilsdata från Windows 10 Team-enheter.
-Om du vill kunna ansluta till Azure Operational Insights måste du ange ett **Arbetsyte-ID** och en **Arbetsytenyckel**.
+- **Azure Operational Insights**: **Aktivera** samlar in, lagrar och analyserar loggdata från Windows 10 Team-enheter med Azure Operational Insights. Azure Operational Insights ingår i programsviten Microsoft Operations Manager. Om du vill ansluta till Azure Operational Insights måste du ange ett **Arbetsyte-ID** och en **Arbetsytenyckel**.
+
+  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte samlar in dessa data.
 
 ## <a name="maintenance"></a>Underhåll
 
-- **Underhållsperiod för programuppdateringar** – Konfigurerar tidsperioden då uppdateringar till enheten kan göras. Du kan konfigurera fönstrets **Starttid** och **Varaktighet i timmar** (från 1–5 timmar).
+De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+
+- **Underhållsperiod för uppdateringar**: **Aktivera** skapar en underhållsperiod när uppdateringar kan installeras. Ange underhållsperiodens **Starttid** och **Varaktighet i timmar**, mellan 1–5 timmar.
+
+  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+
+## <a name="session"></a>Session
+
+De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+
+- **Volym**: Ange standardvolymvärdet för en ny session, mellan 0–100. När värdet är tomt varken ändrar eller uppdaterar Intune den här inställningen. Operativsystemet kan som standard ange volymen som 45.
+- **Skärmtidsgräns**: Ange antalet minuter innan hubbskärmen stängs av.
+- **Tidsgräns för session**: Ange antalet minuter innan sessionen upphör.
+- **Timeout för viloläge**: Ange antalet minuter innan hubben övergår i viloläge.
+- **Återuppta session**: **Blockera** förhindrar att användare återupptar en session när tidsgränsen har uppnåtts. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
 ## <a name="wireless-projection"></a>Trådlös projektion
 
-- **PIN-kod för trådlös projektion** – Anger om du måste ange en PIN-kod innan du kan använda funktionerna för trådlös projektion för enheten.
-- **Trådlös Miracast-projektion** – Välj det här alternativet om du vill att Windows 10 Team-enheten ska kunna använda Miracast-aktiverade enheter för att projicera innehåll.
-- **Kanal för trådlös Miracast-projektion** – Välj den Miracast-kanal som ska användas för att upprätta anslutningen.
+De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+
+- **PIN-kod för trådlös projektion**: **Kräv** tvingar användarna att ange en PIN-kod innan de använder funktionerna för trådlös projektion på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Trådlös Miracast-projektion**: **Blockera** förhindrar att Miracast-aktiverade enheter används för projektion. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Kanal för trådlös Miracast-projektion**: Välj Miracast-kanal för att upprätta anslutningen.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Använd informationen i [Konfigurera inställningar för enhetsbegränsningar](device-restrictions-configure.md) för att spara och tilldela profilen till användare och enheter.
+Mer information finns i [Konfigurera inställningar för enhetsbegränsning](device-restrictions-configure.md).
+
+[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).

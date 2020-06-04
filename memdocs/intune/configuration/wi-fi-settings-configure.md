@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
-ms.topic: conceptual
+ms.date: 05/19/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1ff20db13a87faea41d262da5742a428ec4d28f
-ms.sourcegitcommit: b7e5b053dfa260e7383a9744558d50245f2bccdc
+ms.openlocfilehash: ca2a5ddd3d2b4c0aa93c7c955d0d688944ee8f95
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587281"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83985513"
 ---
 # <a name="add-and-use-wi-fi-settings-on-your-devices-in-microsoft-intune"></a>Lägga till och använda Wi-Fi-inställningar på dina enheter i Microsoft Intune
 
@@ -39,11 +39,11 @@ Den här artikeln visar stegen för att skapa en Wi-Fi-profil. Den innehåller �
 
 Wi-Fi-profiler stöder följande enhetsplattformar:
 
-- Android 4 och senare
+- Android 5 och senare
 - Android Enterprise och Kiosk
-- iOS 8.0 och senare
+- iOS 11.0 och senare
 - iPadOS 13.0 och senare
-- macOS X 10.11 och senare
+- macOS X 10.12 och senare
 - Windows 10 och senare, Windows 10 Mobile och Windows Holographic for Business
 
 > [!NOTE]

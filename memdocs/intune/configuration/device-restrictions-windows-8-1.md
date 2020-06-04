@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 05/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,20 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59af48b36cb9c76ce7587457d4921356f542493f
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 36a74e503f15fe982eeaf1addfed40d0c599cb2c
+ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80407668"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556242"
 ---
 # <a name="microsoft-intune-windows-81-device-restriction-settings"></a>Inställningar för begränsningar för Windows 8.1-enheter i Microsoft Intune
 
 I den här artikeln visas inställningarna av enhetsbegränsningar som du kan konfigurera för enheter som kör Windows 8.1.
+
+## <a name="before-you-begin"></a>Innan du börjar
+
+[Skapa en Windows 8.1-konfigurationsprofil för enhetsbegränsningar](device-restrictions-configure.md#create-the-profile).
 
 ## <a name="general"></a>Allmänt
 
@@ -46,15 +50,19 @@ I den här artikeln visas inställningarna av enhetsbegränsningar som du kan ko
   - **Numeriskt**: Lösenordet får bara innehålla siffror.
 - **Minsta lösenordslängd**: Ange det minsta antal tecken som krävs (från 6 till 16). Ange till exempel `6` för att kräva minst sex siffror eller tecken i lösenordet.
 - **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felinloggningar innan enheten rensas (från 1 till 14).
-- **Maximalt antal minuter av inaktivitet innan skärmen låses (i minuter)** : Anger hur lång tid enheten måste vara inaktiv innan skärmen låses automatiskt (från 1 till 60 minuter). Ange till exempel `5` om du vill låsa enheter efter 5 minuters inaktivitet. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+- **Maximalt antal minuter av inaktivitet innan skärmen låses (i minuter)** : Anger hur lång tid enheten måste vara inaktiv innan skärmen låses automatiskt (från 1 till 60 minuter). Ange till exempel `5 Minutes` om du vill låsa enheter efter 5 minuters inaktivitet. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
 - **Lösenordets giltighetstid (dagar)** : Ange det antal dagar efter vilket enhetens lösenord måste ändras (från 1 till 255). Ange till exempel `90` om lösenordet ska upphöra efter 90 dagar. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Förhindra återanvändning av tidigare lösenord**: Ange antal tidigare använda lösenord som inte får återanvändas, från 1–24. Ange till exempel `5` om användare inte ska kunna ange ett nytt lösenord till sina nuvarande lösenord eller något av de föregående fyra lösenorden. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
-- **Bildlösenord och PIN-kod**: **Blockera** förhindrar användning av en bild eller PIN-kod som lösenord. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Med ett bildlösenord kan användaren logga in med gester på en bild. Med en PIN-kod kan användaren snabbt logga in med en fyrsiffrig kod.
+- **Bildlösenord och PIN-kod**: Med ett bildlösenord kan användaren logga in med gester på en bild. Med en PIN-kod kan användaren snabbt logga in med en fyrsiffrig kod.
+
+  **Blockera** förhindrar användning av en bild eller PIN-kod som lösenord. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+
 - **Kryptering**: **Kräv kryptering** på enhet, inklusive filer. Alla enheter stöder inte kryptering. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
 
   Om du vill konfigurera den här inställningen, och rapportera efterlevnad på korrekt sätt, konfigurerar du även:
+
   - **Lösenordstyp som krävs**: Ange till minst **Numeriskt**.
-  - **Minsta lösenordslängd**: Ange till minst `4`.
+  - **Minsta lösenordslängd**: Ange till minst `6`.
 
   Om du vill framtvinga kryptering på enheter som kör Windows 8.1 måste du installera [December 2014 MDM-klientuppdateringen för Windows](https://support.microsoft.com/kb/3013816) på varje enhet.
 
@@ -69,7 +77,7 @@ I den här artikeln visas inställningarna av enhetsbegränsningar som du kan ko
 - **Autofyll**: **Blockera** hindrar användare från att ändra inställningarna för automatisk komplettering i webbläsaren och från att använda automatisk ifyllning av formulärfält. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta autofyll.
 - **Bedrägerivarningar**: **Kräv** visar varningar i webbläsaren om potentiellt bedrägliga webbplatser. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **SmartScreen för Microsoft Edge**: **Blockera** inaktiverar Microsoft Defender SmartScreen. SmartScreen letar efter potentiella nätfiskebedrägerier och skadlig programvara vid åtkomst till webbplatser och nedladdning av filer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard aktivera SmartScreen.
-- **JavaScript**: **Blockera** hindrar skript (till exempel JavaScript) från att köras i webbläsaren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Tillåt JavaScript**: **Blockera** hindrar skript (till exempel JavaScript) från att köras i webbläsaren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta JavaScript.
 - **Popup-fönster**: **Blockera** aktiverar blockering av popup-fönster i webbläsaren. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Do Not Track-huvuden**: **Blockera** hindrar enheter från att skicka Do Not Track-huvuden till webbplatser som kräver spårningsinfo. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Plugin-program**: **Blockera** hindrar användare från att lägga till plugin-program i Internet Explorer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
@@ -77,9 +85,9 @@ I den här artikeln visas inställningarna av enhetsbegränsningar som du kan ko
 - **Automatisk identifiering av intranätsplats**: **Blockera** hindrar webbläsaren från att automatiskt identifiera intranätsplatser. Regler för intranätsmappning blockeras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Internetsäkerhetsnivå**: Anger säkerhetsnivå för webbplatser på Internet. Alternativen är:
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
-  - **Medel**
-  - **Medelhög**
   - **Hög**
+  - **Medelhög**
+  - **Medel**
 - **Intranätssäkerhetsnivå**: Anger säkerhetsnivå för intranätplatser. Alternativen är:
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
   - **Låg**
@@ -95,8 +103,12 @@ I den här artikeln visas inställningarna av enhetsbegränsningar som du kan ko
   - **Medelhög**
   - **Hög**
 - **Hög säkerhet för ej tillförlitliga platser**: Konfigurerar säkerhetsnivån för zonen Ej betrodda platser. **Konfigurerad** inför hög säkerhet för ej tillförlitliga platser. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
-- **Menyåtkomst till företagsläge**: **Blockera** hindrar användare från att komma åt menyalternativen för företagsläge från Internet Explorer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. När detta anges till **Blockera** anger du även:
+- **Menyåtkomst till företagsläge**: **Blockera** hindrar användare från att komma åt menyalternativen för företagsläge från Internet Explorer. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+
+  När du har angett **Inte konfigurerad**anger du även:
+
   - **Loggningsrapportplats (URL)** : Ange en URL-plats för hämtning av rapporter som visar vilka webbplatser som har aktiverad företagslägesåtkomst.
+
 - **Plats för webbplatslista för företagsläge (endast stationär dator)** : Ange platsen för listan över webbplatser som kan öppnas i företagsläge.
 
 ## <a name="cellular"></a>Mobilnät

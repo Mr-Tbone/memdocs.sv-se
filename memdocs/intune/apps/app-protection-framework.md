@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/22/2020
+ms.date: 05/19/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86117193ce7aae01380923ce26f84dfb5ba97a4d
-ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
+ms.openlocfilehash: 91683280a2e48d82fd145bf19228c33b432b6b49
+ms.sourcegitcommit: a1da477542fb0ff360685d6eb58ef43e37ac3950
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82182301"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83853578"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Dataskyddsramverk med appskyddsprinciper 
 
@@ -55,7 +55,7 @@ Som anges i tabellen ovan bör alla ändringar av appskyddsprinciper först utf�
 
 När du testar ändringar i en APP bör du vara medveten om [leveranstiming](app-protection-policy-delivery.md). Statusen för APP-leverans för en viss användare kan övervakas. Mer information finns i [Så här övervakar du appskyddsprinciper](app-protection-policies-monitor.md).
 
-Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp av Edge och URL:en *about:Intunehelp*. Mer information finns i [Granska loggarna för klientappskydd](app-protection-policy-settings-log.md) och [Hantera webbåtkomst med hjälp av Microsoft Edge med Microsoft Intune](manage-microsoft-edge.md#use-microsoft-edge-to-access-managed-app-logs).
+Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp av Edge och URL:en *about:Intunehelp*. Mer information finns i [Granska säkerhetsloggar för klientappar](app-protection-policy-settings-log.md) och [Använda Edge för iOS och Android för att komma åt loggar för hanterade appar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
 
 ## <a name="app-data-protection-framework-settings"></a>Inställningar för ramverket för APP-dataskydd
 
@@ -140,7 +140,7 @@ Principerna på nivå 1 tillämpar en rimlig dataåtkomstnivå och minimerar sam
 
 Nivå 2 är den dataskyddskonfiguration som rekommenderas som standard för enheter vars användare får åtkomst till mer känslig information. De här enheterna är ett naturligt mål för angripare i dagens företagsvärld. De här rekommendationerna förutsätter inte att det finns en stor personal med säkerhetsexperter och bör därför vara genomförbara för de flesta företagsorganisationer. Den här konfigurationen utökar konfigurationen på nivå 1 genom att begränsa dataöverföringsscenarier och kräva en lägsta operativsystemversion.
 
-De principinställningar som tillämpas på nivå 2 inkluderar alla principinställningar som rekommenderas för nivå 1 och lägger bara till eller uppdaterar principinställningarna nedan för att implementera fler kontroller och en mer avancerad konfiguration än nivå 1. De här inställningarna kan ha en något högre påverkan på användare eller program, men de upprätthåller en nivå av dataskydd som bättre motsvarar riskerna för användare med åtkomst till känslig information på mobila enheter.
+I policyinställningarna som tillämpas på nivå 2 ingår alla policyinställningar som rekommenderas för nivå 1, men nedan visas bara de inställningar som har lagts till eller ändrats för att implementera fler kontroller och en mer avancerad konfiguration än nivå 1. De här inställningarna kan ha en något högre påverkan på användare eller program, men de upprätthåller en nivå av dataskydd som bättre motsvarar riskerna för användare med åtkomst till känslig information på mobila enheter.
 
 #### <a name="data-protection"></a>Dataskydd
 
@@ -167,7 +167,7 @@ De principinställningar som tillämpas på nivå 2 inkluderar alla principinst�
 
 Nivå 3 är den dataskyddskonfiguration som rekommenderas som standard för organisationer med stora och avancerade säkerhetsorganisationer, eller för specifika användare och grupper som utsätts för ovanligt hög risk från angrepp. Sådana organisationer är ofta föremål för välfinansierade och avancerade angrepp, vilket berättigar de ytterligare begränsningar och kontroller som beskrivs. Den här konfigurationen utökar konfigurationen på nivå 2 genom att begränsa ytterligare dataöverföringsscenarier, öka komplexiteten för PIN-konfigurationen samt lägga till identifiering av mobila hot.  
 
-De principinställningar som tillämpas på nivå 3 inkluderar alla principinställningar som rekommenderas för nivå 1 och 2 och lägger bara till eller uppdaterar principinställningarna nedan för att implementera dataskyddskonfiguration och kontroller som är strikta. Dessa principinställningar har potentiellt stor påverkan på användare eller program, och ger därmed en säkerhetsnivå som är lämplig med tanke på de risker som gällande organisationer utsätts för.  
+I policyinställningarna som tillämpas på nivå 3 ingår alla policyinställningar som rekommenderas för nivå 2, men nedan visas bara de inställningar som lagts till eller ändrats för att implementera fler kontroller och en mer avancerad konfiguration än nivå 2. Dessa principinställningar har potentiellt stor påverkan på användare eller program, och ger därmed en säkerhetsnivå som är lämplig med tanke på de risker som gällande organisationer utsätts för.  
 
 #### <a name="data-protection"></a>Dataskydd
 

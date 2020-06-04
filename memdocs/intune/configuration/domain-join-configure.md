@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/20/2020
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 207b3983c214ad4e166ae58ea0ccd18ea23bf418
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 211722a02183d3b86525468f907d4093331d9de6
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79364402"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988428"
 ---
 # <a name="configuration-domain-join-settings-for-hybrid-azure-ad-joined-devices-in-microsoft-intune"></a>Inställningar för domänanslutningskonfiguration för Azure AD-anslutna hybridenheter i Microsoft Intune
 
@@ -42,12 +42,17 @@ Den här artikeln visar hur du skapar en domänanslutningsprofil för en Autopil
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+    - **Plattform**: Välj **Windows 10 och senare**.
+    - **Profil**: Välj **Domänanslutning (förhandsversion)** .
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
     - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Exempel på ett bra principnamn: **Windows 10: Domänanslutningsprofil som innehåller information om lokal domän för registrering av anslutna AD-hybridenheter med Windows Autopilot**.
     - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Domänanslutning (förhandsversion)** .
 
-4. Välj **Inställningar**. Ange följande egenskaper:
+6. Välj **Nästa**.
+7. Välj **Konfigurationsinställningar** och ange följande egenskaper:
 
     - **Datornamnsprefix**: Ange ett prefix för enhetsnamnet. Datornamn är 15 tecken långa. Efter prefixet genereras de återstående 15 tecknen slumpmässigt.
     - **Domännamn**: Ange det fullständiga domännamn (FQDN) som enheterna ska anslutas till. Ange till exempel `americas.corp.contoso.com.`
@@ -55,12 +60,22 @@ Den här artikeln visar hur du skapar en domänanslutningsprofil för en Autopil
 
       Mer information och råd om den här inställningen finns i [Distribuera Azure AD-anslutna hybridenheter](../enrollment/windows-autopilot-hybrid.md).
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+8. Välj **Nästa**.
 
-Profilen skapas och visas i profillistan. Den är nu redo så att du kan [distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot](../enrollment/windows-autopilot-hybrid.md).
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller den användargrupp som ska få din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
+Den är nu redo så att du kan [distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot](../enrollment/windows-autopilot-hybrid.md).
 
 ## <a name="next-steps"></a>Nästa steg
 
-När profilen har skapats är den klar att tilldelas. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+När profilen har [tilldelats](device-profile-assign.md) [övervakar du dess status](device-profile-monitor.md).
 
 [Distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot](../enrollment/windows-autopilot-hybrid.md).

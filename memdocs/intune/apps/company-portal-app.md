@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/09/2020
-ms.topic: conceptual
+ms.date: 05/26/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e584019063c6af7f04f5666ba2c38d8199681c5
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: 8f79ac0ef70eb9eccf47837517e3e69df3fdb3e8
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771413"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84165727"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -42,7 +42,7 @@ I följande tabell visas anpassningsinformation för slutanvändarupplevelsen:
 | **Organisationsnamn** | Det här namnet visas i alla meddelanden i slutanvändarupplevelsen. Du kan ställa in den så att den visas i sidhuvuden och använder inställningen **Visa i sidhuvud**. Maxlängden är 40 tecken. |
 | **Färg** | Välj **Standard** och välj bland fem standardfärger. Välj **Anpassad** om du vill välja en specifik färg baserat på en hexadecimal kod. |
 | **Temafärg** | Ange den temafärg som ska visas i hela slutanvändarupplevelsen. Vi ställer automatiskt in textfärgen på svart eller vit, så att den visas ovanpå den valda temafärgen. |
-| **Visa i sidhuvud** | Ange om slutanvändarupplevelsens sidhuvud ska visa **Företagslogotyp och företagsnamn**, **Endast företagslogotyp** eller **Endast företagsnamn**. I förhandsgranskningsrutorna nedan visas endast logotypen, inte namnet.  |
+| **Visa i sidhuvud** | Ange om slutanvändarupplevelsens sidhuvud ska visa **Organisationens logotyp och namn**, **Endast organisationens logotyp** eller **Endast organisationens namn**. I förhandsgranskningsrutorna nedan visas endast logotypen, inte namnet.  |
 | **Ladda upp logotypen för temafärgsbakgrund** | Ladda upp den logotyp som du vill visa ovanpå den valda temafärgen. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek:   750 KB<br>Filtyp: PNG, JPG eller JPEG |
 | **Ladda upp logotyp för vit eller ljus bakgrund** | Ladda upp logotypen som du vill visa ovanpå vita eller ljusa bakgrunder. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut mot en vit bakgrund i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek: 750 KB<br>Filtyp: PNG, JPG eller JPEG |
 | **Ladda upp varumärkesbild** | Ladda upp en bild som återspeglar organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
@@ -86,21 +86,25 @@ Ange din organisations supportinformation, så att anställda kan kontakta dig m
 
 ## <a name="configuration"></a>Konfiguration
 
-Följande tabell tillhandahåller ytterligare konfigurationsinformation:
+Du kan konfigurera Företagsportal-miljön specifikt för registrering, sekretess, meddelanden, appkällor och självbetjäningsåtgärder.
+
+### <a name="enrollment"></a>Registrering
+
+I den här tabellen visas registreringsspecifik konfigurationsinformation:
 
 | Fältnamn | Maximal längd | Mer information |
 |------------------------------------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| URL för sekretesspolicy | 79 | Ange din organisations sekretesspolicy så att den visas när användarna klickar på sekretesslänkar. Du måste ange en giltig URL i formatet `https://www.contoso.com`. |
-| Sekretessmeddelande i Företagsportal för iOS/iPad | 520 | Behåll standardvärdet eller ange ett anpassat meddelande som listar de objekt som din organisation kan eller inte kan se på hanterade iOS/iPad-enheter. Du kan använda markdown när du ska lägga till punkter, fet stil, kursiv stil och länkar. |
-| Enhetsregistrering | E.t. | Ange om och hur användarna ska uppmanas att registrera sig för hantering av mobilenheter. Informationen finns nedan. |
-| Avisering om filägarskap | E.t. | Skicka ett push-meddelande till användarna av företagsportalsappen (både Android och iOS) när deras ägarskapstyp ändras från personlig till företag. Som standard är push-meddelandet inställt på av. När ägarskapet för enheten är inställt på företagsägarskap har Intune större åtkomst till enheten, som innehåller fullständig app-inventering, FileVault-nyckelrotering, hämtning av telefonnummer och ett urval av fjärråtgärder. Mer information finns i [Ändra enhetsägande](../enrollment/corporate-identifiers-add.md#change-device-ownership).  |
+| Enhetsregistrering | E.t. | Ange om och hur användarna ska uppmanas att registrera sig för hantering av mobilenheter. Mer information finns i [Inställningsalternativ för enhetsregistrering](../apps/company-portal-app.md#device-enrollment-setting-options). |
 
-### <a name="device-enrollment-setting-options"></a>Alternativ för inställning av enhetsregistrering
+#### <a name="device-enrollment-setting-options"></a>Alternativ för inställning av enhetsregistrering
 
 > [!NOTE]
 > Stöd för inställningen för enhetsregistrering kräver att slutanvändarna har följande Företagsportal-versioner:
 > - Företagsportal på iOS/iPadOS: version 4.4 eller senare
 > - Företagsportal på Android: version 5.0.4715.0 eller senare 
+
+> [!IMPORTANT]
+> Följande inställningar gäller inte för iOS/iPad-enheter som är konfigurerade att registreras med [automatisk enhetsregistrering](../enrollment/device-enrollment-program-enroll-ios.md). Oavsett hur de här inställningarna konfigureras så kommer iOS/iPad-enheter som är konfigurerade att registreras med automatisk enhetsregistrering att registreras i det inledande flödet, och användarna uppmanas att logga in när de startar Företagsportal.
 
 |    Alternativ för enhetsregistrering    |    Beskrivning    |    Checklisteprompter    |    Meddelande    |    Enhetsstatusinformation    |    Appstatusinformation (om en app som kräver registrering)    |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------|--------------------|-----------------------------|--------------------------------------------------------------------|
@@ -110,11 +114,51 @@ Följande tabell tillhandahåller ytterligare konfigurationsinformation:
 
 <sup>(1)</sup> **Känt ärende:** Om du konfigurerar appar till att kräva registrering vid installation och även anger enhetsregistreringen som ”Ej tillgänglig”, så kommer Företagsportal-appen på Android fortfarande att hjälpa användarna att registrera sig. Detta kommer att tas bort inom kort.
 
-> [!NOTE]
-> Om du använder Azure Government har slutanvändarna tillgång till apploggar som hjälper dem att avgöra hur de ska dela när de inleder processen för att få hjälp med ett problem. Om du inte använder Azure Government skickar företagsportalen apploggar direkt till Microsoft när användaren initierar processen för att få hjälp med ett problem. När apploggarna skickas till Microsoft blir det enklare att felsöka och lösa problem.
+### <a name="privacy"></a>Sekretess
+
+I den här tabellen visas sekretesspecifik konfigurationsinformation:
+
+| Fältnamn | Maximal längd | Mer information |
+|------------------------------------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| URL för sekretesspolicy | 79 | Ange din organisations sekretesspolicy så att den visas när användarna klickar på sekretesslänkar. Du måste ange en giltig URL i formatet `https://www.contoso.com`. |
+| Sekretessmeddelande i Företagsportal för iOS/iPad | 520 | Behåll **Standard** eller ange ett **Anpassat** meddelande som listar de objekt din organisation inte kan se på hanterade iOS/iPad-enheter. Du kan använda Markdown när du ska lägga till punkter, fet stil, kursiv stil och länkar. Användarna ser också en lista med saker som din organisation kan se och göra, men den listan genereras automatiskt av Intune och kan inte anpassas. |
+
+### <a name="device-ownership-notification"></a>Avisering om filägarskap
+
+I den här tabellen visas meddelandespecifik konfigurationsinformation:
+
+| Fältnamn | Maximal längd | Mer information |
+|------------------------------------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Skicka ett push-meddelande till användarna när typen av enhetsägande ändras från privat till företag (endast Android och iOS/iPadOS) | E.t. | Skicka ett push-meddelande till användarna av företagsportalsappen (både Android och iOS) när deras ägarskapstyp ändras från personlig till företag. Som standard är push-meddelandet inställt på av. När ägarskapet för enheten är inställt på företagsägarskap har Intune större åtkomst till enheten, som innehåller fullständig app-inventering, FileVault-nyckelrotering, hämtning av telefonnummer och ett urval av fjärråtgärder. Mer information finns i [Ändra enhetsägande](../enrollment/corporate-identifiers-add.md#change-device-ownership).  |
+
+### <a name="app-sources"></a>Appkällor
+
+Du kan välja vilka ytterligare appkällor som ska visas i Företagsportal. I den här tabellen visas konfigurationsinformation specifik för appkällor:
+
+| Fältnamn | Maximal längd | Mer information |
+|------------------------------------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Azure AD Enterprise-program | E.t. | Välj om du vill **Dölja** eller **Visa** **Azure AD Enterprise-program** i Företagsportal för varje slutanvändare. Mer information finns i [Inställningsalternativ för appkällor](../apps/company-portal-app.md#app-source-setting-options). |
+| Office Online-program | E.t. | Välj om du vill **Dölja** eller **Visa** **Office Online-program** i Företagsportal för varje slutanvändare. Mer information finns i [Inställningsalternativ för appkällor](../apps/company-portal-app.md#app-source-setting-options). |
+
+#### <a name="app-source-setting-options"></a>Inställningsalternativ för appkällor
 
 > [!NOTE]
-> I enlighet med Microsoft och Apples policy säljer vi inte några data som samlas in av vår tjänst till någon tredje part av någon anledning.
+> På webbplatsen Företagsportal kan du initialt visa appar från andra Microsoft-tjänster.
+
+Du kan dölja eller visa **Azure AD Enterprise-program** och **Office Online-program** i Företagsportal för varje slutanvändare. **Visa** gör att Företagsportal visar hela programkatalogen från de valda Microsoft-tjänster som har tilldelats till användaren. **Azure AD Enterprise-program** registreras och tilldelas via [Azure-portalen](https://portal.azure.com). **Office Online-program** tilldelas med de licenskontroller som är tillgängliga i [administrationscentret för M365](https://admin.microsoft.com). Du hittar den här konfigurationsinställningen i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) genom att välja **Administration av klientorganisation** > **Anpassning**. Som standard är **Dölj** valt för alla ytterligare appkällor. 
+
+### <a name="customizing-user-self-service-actions-for-the-company-portal"></a>Anpassa självbetjäningsåtgärder för användare i Företagsportal
+
+Du kan anpassa vilka självbetjäningsåtgärder som visas för slutanvändare i appen Företagsportal och på webbplatsen. För att förhindra oavsiktliga enhetsåtgärder kan du konfigurera inställningarna för appen Företagsportal genom att välja **Administration av klientorganisation** > **Anpassning**. 
+
+Följande alternativ är tillgängliga:
+- Dölj knappen **Ta bort** på Windows-företagsenheter.
+- Dölj knappen **Återställ** på Windows-företagsenheter.
+- Dölj knappen **Ta bort** på iOS/iPadOS-företagsenheter.
+- Dölj knappen **Återställ** på iOS/iPadOS-företagsenheter.
+
+> [!NOTE]
+> De här åtgärderna kan användas till att begränsa enhetsåtgärder i appen Företagsportal och på webbplatsen, och implementerar inte några policyer för enhetsbegränsning. Om du vill förhindra att användare fabriksåterställer eller tar bort MDM från inställningarna måste du konfigurera policyer för enhetsbegränsning. 
 
 ## <a name="company-portal-derived-credentials-for-iosipados-devices"></a>Företagsportal-härledda autentiseringsuppgifter för iOS/iPadOS-enheter
 
@@ -136,7 +180,7 @@ Slutanvändare kan utlösa navigerings-, app- och enhetsåtgärder i Windows-fö
 Följande kortkommandon är tillgängliga i Windows-företagsportalappen.
 
 | Område | Beskrivning | Kortkommando |
-|:------------------:|:--------------:|:-----------------:|
+|--------------------|----------------|-------------------|
 | Navigeringsmenyn | Navigering | Alt+M |
 |  | Hem | Alt+H |
 |  | Alla appar | Alt+A |
@@ -159,7 +203,9 @@ Slutanvändarna kommer också att kunna se tillgängliga genvägar i Windows-fö
 
 ## <a name="user-self-service-device-actions-from-the-company-portal"></a>Åtgärder för självbetjäningsenhet för användare från företagsportalen
 
-Användare kan utföra åtgärder på sina lokala eller fjärranslutna enheter via företagsportalens app eller webbplats, eller via Intune-appen på Android. De åtgärder som en användare kan utföra varierar beroende på enhetens plattform och konfiguration. I samtliga fall kan fjärrenhetsåtgärder endast utföras av enhetens primära användare.
+Användare kan utföra åtgärder på sina lokala eller fjärranslutna enheter via appen Företagsportal, webbplatsen Företagsportal eller Intune-appen i Android. De åtgärder som en användare kan utföra varierar beroende på enhetens plattform och konfiguration. I samtliga fall kan fjärrenhetsåtgärder endast utföras av enhetens primära användare.  
+
+Här är några av de tillgängliga självbetjäningsåtgärderna:
 
 - **Dra tillbaka** – tar bort enheten från Intune-hantering. I appen och webbplatsen för företagsportalen visas detta som **Ta bort**.
 - **Rensa** – den här åtgärden startar en återställning av enheten. På företagsportalens webbplats visas detta som **Återställ** eller **Återställ till fabriksinställningar** i företagsportalappen för iOS/iPadOS.
@@ -169,14 +215,16 @@ Användare kan utföra åtgärder på sina lokala eller fjärranslutna enheter v
 - **Återställ lösenord** – den här åtgärden används för att återställa enhetens lösenord. På iOS/iPadOS-enheter tas lösenordet bort och slutanvändaren måste ange ett nytt lösenord i inställningarna. På Android-enheter som stöds skapas ett nytt lösenord av Intune som visas tillfälligt i företagsportalen.
 - **Nyckelåterställning** – Den här åtgärden används för att återställa en personlig återställningsnyckel för krypterade macOS-enheter från företagsportalens webbplats. 
 
+Om du vill anpassa vilka självbetjäningsåtgärder som är tillgängliga för användare kan du läsa [Anpassa självbetjäningsåtgärder för användare i Företagsportal](../apps/company-portal-app.md#customizing-user-self-service-actions-for-the-company-portal).
+
 ### <a name="self-service-actions"></a>Självbetjäningsåtgärder
 
 Vissa plattformar och konfigurationer tillåter inte självbetjäning av enhetsåtgärder. I tabellen nedan finns mer information om självbetjäningsåtgärder:
 
 |  | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup> | Android<sup>(3)</sup> |
 |----------------------|--------------------------|-------------------|-----------------------------------|-------------------------|
-| Pensionera | Tillgängligt<sup>(1)</sup> | Tillgänglig | Tillgänglig | Tillgängligt<sup>(7)</sup> |
-| Rensning | Tillgänglig | Tillgänglig<sup>(5)</sup> | NA | Tillgängligt<sup>(7)</sup> |
+| Pensionera | Tillgängligt<sup>(1)</sup> | Tillgänglig<sup>(9)</sup> | Tillgänglig | Tillgängligt<sup>(7)</sup> |
+| Rensning | Tillgänglig | Tillgänglig<sup>(5)</sup><sup>(9)</sup> | NA | Tillgängligt<sup>(7)</sup> |
 | Byt namn <sup>(4)</sup> | Tillgänglig | Tillgänglig | Tillgänglig | Tillgänglig |
 | Synkronisera | Tillgänglig | Tillgänglig | Tillgänglig | Tillgänglig |
 | Fjärrlåsning | Endast på Windows Phone | Tillgänglig | Tillgänglig | Tillgänglig |
@@ -190,8 +238,17 @@ Vissa plattformar och konfigurationer tillåter inte självbetjäning av enhets�
 <sup>(5)</sup> **Rensa** är inte tillgängligt på användarregistrerade iOS/iPadOS-enheter.<br>
 <sup>(6) </sup> **Återställ lösenord** stöds inte på vissa Android- och Android Enterprise-konfigurationer. För mer information, se [Återställa eller ta bort ett enhetslösenord i Intune](../remote-actions/device-passcode-reset.md).<br>
 <sup>(7) </sup> **Dra tillbaka** och **Rensa** är inte tillgängliga i scenarier för Android Enterprise-enhetsägare (COPE, COBO, COSU).<br>
-<sup>(8)</sup> **Återställ lösenord** stöds inte på användarregistrerade iOS/iPadOS-enheter.
+<sup>(8)</sup> **Återställ lösenord** stöds inte på användarregistrerade iOS/iPadOS-enheter.<br>
+<sup>(9)</sup>Alla iOS/iPadOS-enheter med automatisk enhets registrering (tidigare DEP) har alternativen **Ta ur bruk** och **Rensa** inaktiverade.
+
+### <a name="app-logs"></a>Apploggar
+
+Om du använder Azure Government har slutanvändarna tillgång till apploggar som hjälper dem att avgöra hur de ska dela när de inleder processen för att få hjälp med ett problem. Om du inte använder Azure Government skickar företagsportalen apploggar direkt till Microsoft när användaren initierar processen för att få hjälp med ett problem. När apploggarna skickas till Microsoft blir det enklare att felsöka och lösa problem.
+
+> [!NOTE]
+> I enlighet med Microsoft och Apples policy säljer vi inte några data som samlas in av vår tjänst till någon tredje part av någon anledning.
 
 ## <a name="next-steps"></a>Nästa steg
 
+- [Konfigurera din organisations logotyp och varumärkesfärg för nya flikar i Microsoft Edge för iOS och Android](manage-microsoft-edge.md#organization-logo-and-brand-color)
 - [Lägga till appar](apps-add.md)

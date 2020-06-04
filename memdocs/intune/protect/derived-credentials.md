@@ -5,8 +5,8 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/17/2020
-ms.topic: conceptual
+ms.date: 5/15/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8d4b866ca2086ae11efa10f1967b08f12e55919
-ms.sourcegitcommit: d1c7548b4177d720065b822356f9a08d1e1657c2
+ms.openlocfilehash: d1b13d29f42778d73d4df4a86127b070db5dc601
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82881034"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989802"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Använda härledda autentiseringsuppgifter i Microsoft Intune
 
@@ -63,7 +63,7 @@ Intune har stöd för härledda autentiseringsuppgifter på följande plattforma
 
 Intune har stöd för en enda utfärdare av härledda autentiseringsuppgifter för per klientorganisation. Du kan konfigurera Intune att fungera med följande utfärdare:
 
-- **DISA Purebred** (endast iOS): https:\//cyber.mil/pki-pke/purebred/
+- **DISA Purebred** (endast iOS): https://public.cyber.mil/pki-pke/purebred/
 - **Entrust Datacard**: https://www.entrustdatacard.com/
 - **Intercede**: https://www.intercede.com/
 
@@ -112,6 +112,7 @@ Nedan visas viktiga överväganden för varje partner som stöds.  Bekanta dig m
 Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
 
 - [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-disa-purebred)
+- [Fullständigt hanterade Android Enterprise-enheter](https://docs.microsoft.com/mem/intune/user-help/enroll-android-device-disa-purebred)
 
 **Viktiga krav är**:
 
@@ -226,7 +227,10 @@ Utöver att distribuera appen med Intune konfigurerar du ett per-app-VPN för In
   
 1. Ladda ned DISA Purebred-programmet: https:\//cyber.mil/pki-pke/purebred/.
 
-2. Distribuera DISA Purebred-programmet i Intune. Se [Lägg till en verksamhetsspecifik app för iOS i Microsoft Intune](../apps/lob-apps-ios.md).
+2. Distribuera DISA Purebred-programmet i Intune. 
+
+   - Se [Lägg till en verksamhetsspecifik app för iOS i Microsoft Intune](../apps/lob-apps-ios.md).
+   - Läs mer i [Lägga till en verksamhetsspecifik Android-app i Microsoft Intune](../apps/lob-apps-android.md)
 
 3. [Skapa ett per-app-VPN](../configuration/vpn-settings-configure.md) för DISA Purebred-programmet.
 

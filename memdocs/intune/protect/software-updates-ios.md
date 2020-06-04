@@ -5,20 +5,20 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/20/2020
-ms.topic: conceptual
+ms.date: 05/15/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4de042fdc443a43e8a34a2eb433ecad34152887a
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 2d1aefab1e222ddb20b1c033c787ba7d323f59e5
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79350726"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988301"
 ---
 # <a name="add-iosipados-software-update-policies-in-intune"></a>Lägga till principer för iOS/iPadOS-programuppdatering i Intune
 
@@ -33,6 +33,10 @@ Den här funktionen gäller för:
 - iPadOS 13.0 och senare (övervakade enheter)
 
 Som standard checkas enheter in på Intune var 8:e timme. Om en uppdatering är tillgänglig via en uppdateringsprincip laddas uppdateringen ned till enheten. Enheten installerar sedan uppdateringen vid nästa incheckning inom det angivna schemat. Normalt krävs ingen användarinteraktion under uppdateringsprocessen, men om enheten har ett lösenord måste användaren ange detta för att starta en programuppdatering. Profiler hindrar inte användare från att uppdatera operativsystemet manuellt. Användare kan hindras från att uppdatera operativsystemet manuellt med en princip för enhetskonfiguration som begränsar visningen av programuppdateringar.
+
+> [!NOTE]
+> Om du använder [Autonomt enkelt appläge (ASAM)](https://docs.microsoft.com/mem/intune/configuration/device-restrictions-ios#autonomous-single-app-mode-asam) bör effekten av OS-uppdateringar betraktas som att det resulterande beteendet kan vara oönskat.
+Överväg att testa effekten av OS-uppdateringar i appen som du kör i ASAM.
 
 ## <a name="configure-the-policy"></a>Konfigurera principen
 
@@ -70,7 +74,9 @@ Som standard checkas enheter in på Intune var 8:e timme. Om en uppdatering är 
        Om du inte anger någon start- och sluttid gäller ingen begränsning, och uppdateringar kan installeras när som helst.  
 
        > [!NOTE]
-       > Om du vill fördröja visningen av programuppdateringar under en viss tid på dina övervakade iOS/iPadOS-enheter konfigurerar du de inställningarna i [Enhetsbegränsningar](../configuration/device-restrictions-ios.md#general). Principer för programuppdatering åsidosätter eventuella enhetsbegränsningar. När du anger både en princip för programuppdatering och en begränsning som fördröjer programuppdateringars synlighet framtvingar enheten en programuppdatering enligt principen. Begränsningen gäller så att användarna inte ser alternativet att själva uppdatera enheten, och uppdateringen överförs enligt vad som definieras av din iOS-uppdateringsprincip.
+       > Du kan konfigurera inställningar i [Enhetsbegränsningar](../configuration/device-restrictions-ios.md#general) för att dölja en uppdatering från enhetsanvändare under en viss tidsperiod på dina övervakade iOS-/iPad-enheter. En begränsningsperiod kan ge dig tid att testa en uppdatering innan den visas för användare att installera. När enhetsbegränsningsperioden har gått ut blir uppdateringen synlig för användarna. Användarna kan sedan välja att installera den, eller så kan dina programuppdateringsprinciper automatiskt installera klart den.
+       >
+       > När du använder en enhetsbegränsning för att dölja en uppdatering granskar du programuppdateringsprinciperna för att se till att de inte schemalägger installationen av uppdateringen innan begränsningsperioden upphör. Principer för programuppdatering installerar uppdateringar baserat på ett eget schema, oavsett om uppdateringen är dold eller synlig för enhetens användare.
 
    När du har konfigurerat *Inställningar för uppdateringsprincip* väljer du **Nästa**.
 

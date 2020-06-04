@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 242ec66ef79195533e7362694efb00928769b305
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 379eacee731c8cdd773fc7a15f556ab85e409f7c
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078183"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989888"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>Utvecklarhandbok för Microsoft Intune App SDK för iOS
 
@@ -122,7 +122,7 @@ Följ anvisningarna nedan om du vill aktivera Intune App SDK:
 2. Lägg till dessa iOS-ramverk i projektet:  
 -  MessageUI.framework  
 -  Security.framework  
--  MobileCoreServices.framework  
+-  CoreServices.framework  
 -  SystemConfiguration.framework  
 -  libsqlite3.TBD  
 -  libc ++ .tbd  
@@ -248,7 +248,7 @@ Några av de här inställningarna kan ha beskrivits i föregående avsnitt och 
 Inställningen  | Typ  | Definition | Obligatoriskt?
 --       |  --   |   --       |  --
 ADALClientId  | Sträng  | Appens klient-ID för Azure AD. | Krävs för alla appar som använder MSAL och alla ADAL-appar som får åtkomst till en AAD-resurs som inte är Intune-baserad. |
-ADALAuthority | Sträng | Appens Azure AD-auktoritet används. Du bör använda din egen miljö där AAD-konton har konfigurerats. | Krävs om appen använder ADAL eller MSAL för att komma åt en AAD-resurs som inte är Intune-baserad. Om detta värde saknas används ett Intune-standardvärde.|
+ADALAuthority | Sträng | Appens Azure AD-auktoritet används. Du bör använda din egen miljö där AAD-konton har konfigurerats. | Valfritt. Rekommenderas om appen är ett anpassat affärsprogram som skapats för användning i en enda organisation/AAD-klientorganisation. Om det här värdet saknas används den vanliga AAD-utfärdaren.|
 ADALRedirectUri  | Sträng  | Appens omdirigerings-URI för Azure AD. | ADALRedirectUri eller ADALRedirectScheme krävs för alla appar som använder MSAL och alla ADAL-appar som får åtkomst till en AAD-resurs som inte är i Intune.  |
 ADALRedirectScheme  | Sträng  | Appens omdirigeringsschema för Azure AD. Detta kan användas i stället för ADALRedirectUri om programmets omdirigerings-URI har formatet `scheme://bundle_id`. | ADALRedirectUri eller ADALRedirectScheme krävs för alla appar som använder MSAL och alla ADAL-appar som får åtkomst till en AAD-resurs som inte är i Intune. |
 ADALLogOverrideDisabled | Boolesk  | Anger om SDK dirigerar alla ADAL/MSAL-loggar (inklusive eventuella ADAL-anrop från appen) till den egna loggfilen. Standardvärdet är NO (NEJ). Ange YES (JA) om appen ska ange egna återanrop i ADAL/MSAL-loggen. | Valfritt. |

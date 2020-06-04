@@ -6,7 +6,7 @@ author: Erikre
 ms.author: erikre
 manager: dougeby
 ms.date: 04/30/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -17,17 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5839154ab0c884e933e8d11055e745d54503433
-ms.sourcegitcommit: 8a8378b685a674083bfb9fbc9c0662fb0c7dda97
+ms.openlocfilehash: 36b85fa6713af5679e59382efaeb354bb4949705
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619550"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83990583"
 ---
-# <a name="use-shell-scripts-on-macos-devices-in-intune-public-preview"></a>Använda shell-skript på macOS-enheter i Intune (allmänt tillgänglig förhandsversion)
-
-> [!NOTE]
-> Shell-skript för macOS-enheter finns just nu i förhandsversion. Granska listan med [kända problem i förhandsversionen](macos-shell-scripts.md#known-issues) innan du använder den här funktionen.
+# <a name="use-shell-scripts-on-macos-devices-in-intune"></a>Använda shell-skript på macOS-enheter i Intune
 
 Använd shell-skript för att utöka funktionerna för enhetshantering i Intune utöver vad som stöds av operativsystemet macOS. 
 
@@ -59,10 +56,11 @@ Se till att följande krav uppfylls när du skriver in shell-skript och tilldela
    - **Skriptfrekvens:** Välj hur ofta skriptet ska köras. Välj **Inte konfigurerat** (standard) för att bara köra skriptet en gång.
    - **Maximalt antal nya försök om skriptet misslyckas:** Välj hur många gånger skriptet ska köras om det returnerar en slutkod som inte är noll (noll innebär att det är klart). Välj **Inte konfigurerat** (standard) för att inte försöka igen när ett skript misslyckas.
 5. I **Omfångstaggar** väljer du om du vill lägga till omfångstaggar för skriptet och väljer sedan **Nästa**. Du kan använda omfångstaggar för att bestämma vem som kan se skript i Intune. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
-6. Välj **Tilldelningar** > **Välj grupper att ta med**. En befintlig lista över Azure AD-grupper visas. Välj en eller flera enhetsgrupper som innehåller de användare vars macOS-enheter ska ta emot skriptet. Välj **Välj**. De grupper du väljer visas i listan och tilldelas din skriptprincip.
+6. Välj **Tilldelningar** > **Välj grupper att ta med**. En befintlig lista över Azure AD-grupper visas. Välj en eller flera användar- eller enhetsgrupper som ska ta emot skriptet. Välj **Välj**. De grupper du väljer visas i listan och tilldelas din skriptprincip.
    > [!NOTE]
-   > - Shell-skript i Intune kan bara tilldelas till säkerhetsgrupper för Azure AD-enheter. Tilldelning av användargrupper stöds inte i förhandsversionen. 
-   > - När tilldelningar uppdateras för shell-skript uppdateras även tilldelningar för [Microsoft Intune-hanteringsagenten för macOS](macos-shell-scripts.md#microsoft-intune-management-agent-for-macos).
+   > - Shell-skript som tilldelas till användargrupper gäller för alla användare som loggar in på Mac-enheten.  
+   > - Vid uppdatering av tilldelningar för shell-skript uppdateras även tilldelningar för [Microsoft Intune MDM-agent för macOS](macos-shell-scripts.md#microsoft-intune-management-agent-for-macos).
+
 7. I **Granska + lägg till** visas en sammanfattning av de inställningar som du har konfigurerat. Välj **Lägg till** för att spara skriptet. När du väljer **Lägg till** distribueras skriptprincipen till de grupper som du har valt.
 
 Skriptet som du har skapat visas nu i listan över skript. 
@@ -123,7 +121,7 @@ Logginsamling lyckas kanske inte på grund av något av följande skäl som ange
 ## <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 ### <a name="why-are-assigned-shell-scripts-not-running-on-the-device"></a>Varför körs inte tilldelade shell-skript på enheten?
 Det här kan ha flera orsaker:
-* Agenten kan behöva checka in för att ta emot nya eller uppdaterade skript. Incheckningsprocessen sker var åttonde timme och skiljer sig från MDM-incheckningen. Kontrollera att enheten är igång och ansluten till ett nätverk för en lyckad agentinloggning, och vänta tills agenten checkar in.
+* Agenten kan behöva checka in för att ta emot nya eller uppdaterade skript. Incheckningsprocessen sker var åttonde timme och skiljer sig från MDM-incheckningen. Kontrollera att enheten är igång och ansluten till ett nätverk för en lyckad agentinloggning, och vänta tills agenten checkar in. Du kan också begära att slutanvändaren öppnar företagsportalen på Mac, markerar enheten och klickar på **Kontrollera inställningar**.
 * Agenten kanske inte är installerad. Kontrollera att agenten är installerad på `/Library/Intune/Microsoft Intune Agent.app` på macOS-enheten.
 * Agenten kanske inte är i felfritt tillstånd. Agenten kommer att försöka återställa i 24 timmar och sedan ta bort och ominstallera sig själv om shell-skripten fortfarande är tilldelade.
 
@@ -149,15 +147,12 @@ Microsoft Intune-hanteringsagenten måste vara installerad på hanterade macOS-e
  - Agenten söker normalt efter nya eller uppdaterade skript hos Intune-tjänster var 8:e timme. Incheckningsprocessen sker oberoende av MDM-incheckningen. 
  
  ### <a name="how-can-i-manually-initiate-an-agent-check-in-from-a-mac"></a>Hur kan jag starta en agentincheckning manuellt från en Mac?
-På en hanterad Mac-dator som har agenten installerad öppnar du **Terminal** och kör `IntuneMdmAgent` kommandot för att avsluta `sudo killall IntuneMdmAgent` processen. Processen `IntuneMdmAgent` startas om omedelbart, vilket initierar en incheckning hos Intune.
+På en hanterad Mac som har agenten installerad öppnar du **företagsportalen**, väljer den lokala enheten, klickar på **Kontrollera inställningar**. Detta initierar en MDM-incheckning och en agentincheckning.
 
-Som alternativ kan du göra följande:
-1. Öppna **Aktivitetskontroll** > **Visa** > *välj **Alla processer**.* 
-2. Sök efter processer med namnet `IntuneMdmAgent`. 
-3. Avsluta processen som körs för **rot**-användaren. 
+Du kan också öppna **terminalen** och köra kommandot `sudo killall IntuneMdmAgent` för att avsluta `IntuneMdmAgent`-processen. Processen `IntuneMdmAgent` startas om omedelbart, vilket initierar en incheckning hos Intune.
 
 > [!NOTE]
-> Åtgärden **Kontrollera inställningar** i Företagsportal och åtgärden **Synkronisera** för enheter i Microsoft Endpoint Manager-administratörskonsolen initierar en MDM-incheckning och tvingar inte fram en agentincheckning.
+> Åtgärden **Synkronisera** för enheter i Microsoft Endpoint Manager-administratörskonsolen initierar en MDM-incheckning och tvingar inte fram en agentincheckning.
 
  ### <a name="when-is-the-agent-removed"></a>När tas agenten bort?
  Det finns flera villkor som kan orsaka att agenten tas bort från enheten, till exempel:
@@ -165,14 +160,14 @@ Som alternativ kan du göra följande:
  - macOS-enheten hanteras inte längre.
  - Agenten är i ett oåterkalleligt tillstånd i mer än 24 timmar (enhetens aktiva tid).
 
+ ### <a name="why-are-scripts-running-even-though-the-mac-is-no-longer-managed"></a>Varför körs skript även om Mac inte längre hanteras?
+ När en Mac med tilldelade skript inte längre hanteras tas agenten inte bort omedelbart. Agenten upptäcker att Mac inte hanteras vid nästa agentincheckning (vanligtvis var åttonde timme) och avbryter schemalagda skriptkörningar. Därför körs alla lokalt lagrade skript som är schemalagda att köras oftare än nästa schemalagda agentincheckning. När agenten inte kan checka in igen försöker den att checka in i upp till 24 timmar (enhetens aktiva tid) och tas sedan bort från Mac-enheten.
+ 
  ### <a name="how-to-turn-off-usage-data-sent-to-microsoft-for-shell-scripts"></a>Vill du veta hur du stänger av de användningsdata som skickas till Microsoft för shell-skript?
  Om du vill stänga av användningsdata som skickas till Microsoft från Intune-hanteringsagenten öppnar du Företagsportal och väljer **Meny** > **Inställningar** > *avmarkera Tillåt att Microsoft samlar in användningsdata*. Åtgärden stänger av användningsdata som skickas för både Intune-hanteringsagenten och Företagsportal.
 
 ## <a name="known-issues"></a>Kända problem
-- **Tilldelning av användargrupp:** Shell-skript som är tilldelade till användargrupper gäller inte för enheter. Tilldelning av användargrupper stöds för närvarande inte i förhandsversionen. Använd tilldelning av användargrupper för att tilldela skript.
-- **Samla in loggar:** Åtgärden ”Samla in loggar” är synlig. Vid försök till logginsamling visas dock meddelandet ”ett fel uppstod” och loggarna registreras inte. Insamling av loggar stöds för närvarande inte i förhandsversionen.
 - **Ingen körningsstatus för skript:** Skulle det osannolika inträffa att ett skript tas emot på enheten och enheten kopplas från innan körningsstatusen rapporteras, kommer enheten inte att rapportera körningsstatus för skriptet i administratörskonsolen.
-- **Användarstatusrapport:** Problem med att en rapport är tom har uppstått. Välj [Övervaka](https://go.microsoft.com/fwlink/?linkid=2109431) i **administrationscentret för Microsoft Endpoint Manager**. Användarstatusen visar en tom rapport.
 
 ## <a name="next-steps"></a>Nästa steg
 

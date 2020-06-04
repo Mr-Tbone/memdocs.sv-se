@@ -5,8 +5,8 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/17/2020
-ms.topic: conceptual
+ms.date: 05/26/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8b8bde6b7979cfe3b936a08630e23e19fc7e5a0
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: fff21eac61f7b68e00989aefc1f9ea6dc3ad7c0a
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81615049"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989310"
 ---
 # <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
@@ -55,11 +55,25 @@ När e-postmeddelandet skickas lägger Intune till information om den inkompatib
 
 - **Fjärrlåsa en icke-kompatibel enhet**: Använd den här åtgärden för att utfärda ett fjärrlås för en enhet. Användaren uppmanas i så fall att ange en PIN-kod eller ett lösenord för att låsa upp enheten. Mer om funktionen [Fjärrlåsning](../remote-actions/device-remote-lock.md).
 
+  Följande plattformar stöder den här åtgärden:
+  - Android:
+    - Android-enhetsadministratör
+    - Ägare av Android Enterprise-enhet
+    - Android Enterprise-arbetsprofil
+    - Android Enterprise-kioskenheter
+  - iOS/iPadOS
+  - macOS
+  - Windows 10 Mobil
+  - Windows Phone 8.1 och senare
+
 - **Ta den icke-kompatibla enheten ur bruk**: Den här åtgärden tar bort alla företagets data från enheten och tar bort enheten från Intune-hanteringen. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst **30** dagar.
 
   Följande plattformar stöder den här åtgärden:
-  - Android
-  - iOS
+  - Android:
+    - Android-enhetsadministratör
+    - Ägare av Android Enterprise-enhet
+    - Android Enterprise-arbetsprofil
+  - iOS/iPadOS
   - macOS
   - Windows 10 Mobil
   - Windows Phone 8.1 och senare
@@ -161,7 +175,7 @@ Du kan lägga till valfria åtgärder när du skapar en princip för efterlevnad
 
    - **Fjärrlåsa en icke-kompatibel enhet**: Lås enheten när den är inkompatibel. Den här åtgärden tvingar användaren att ange en PIN-kod eller ett lösenord för att låsa upp enheten.
 
-   - **Ta den icke-kompatibla enheten ur bruk**: Ta bort alla företagets data från enheten och ta bort enheten från Intune-hanteringen när den är inkompatibel. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst **30** dagar.
+   - **Ta den icke-kompatibla enheten ur bruk**: Ta bort alla företagets data från enheten och ta bort enheten från Intune-hanteringen när den är inkompatibel.
 
    - **Skicka push-meddelande till slutanvändare**: Konfigurera den här åtgärden för att skicka ett push-meddelande om inkompatibilitet till en enhet via Företagsportal-appen eller Intune-appen på enheten.
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 01/09/2019
+ms.date: 05/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b7e77933134dae3523edaf45f8b345aca4fc162
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 49d1b8f407814fd368a7ff45bb94bc4c5ef7fd9d
+ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79343355"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556293"
 ---
 # <a name="windows-holographic-for-business-settings-to-manage-shared-devices-using-intune"></a>Windows Holographic for Business-inställningar för hantering av delade enheter med Intune
 
@@ -36,24 +36,33 @@ Mer information om den här funktionen i Intune finns i [Styra åtkomst, konton 
 
 ## <a name="before-your-begin"></a>Innan du börjar
 
-[Skapa profilen](shared-user-device-settings.md).
+[Skapa en enhetskonfigurationsprofil för delad enhet för flera användare i Windows 10](shared-user-device-settings.md).
+
+När du skapar en delad konfigurationsprofil för Windows 10 finns det fler inställningar än vad som anges i den här artikeln. Inställningarna i den här artikeln stöds på Windows Holographic for Business-enheter.
 
 ## <a name="shared-multi-user-device-settings"></a>Inställningar för delade enheter med flera användare
 
 > [!NOTE]
 > Enheter som kör Windows Holographic for Business, inklusive Microsoft HoloLens, stöder bara inställningarna i **Kontohantering**. Om du konfigurerar några av de andra inställningarna som visas i Intune, till exempel **Läget för delad dator**, har det ingen inverkan på dessa enheter.
 
-- **Kontohantering**: Ange **Aktivera** för att automatiskt ta bort lokala konton skapade av gäster och konton i AD och Azure AD. När en användare loggar ut enheten, eller när systemunderhåll körs, tas dessa konton bort. När alternativet är aktiverat anger du även följande:
-  - **Borttagning av konto**: Välj när konton tas bort: **Vid tröskelvärdet för lagringsutrymme**, **Vid tröskelvärdet för lagringsutrymme och tröskelvärdet för inaktivitet** eller **Omedelbart efter utloggning**. Ange även:
+- **Kontohantering**: Välj om konton ska tas bort automatiskt. Alternativen är:
+  - **Inte konfigurerat** (standard): Tar automatiskt bort lokala konton som skapats av gäster, konton i AD och Azure AD. När en användare loggar ut enheten, eller när systemunderhåll körs, tas dessa konton bort.
+
+    Ange även:
+
+    - **Borttagning av konto**: Välj när konton tas bort:
+      - **Vid tröskelvärdet för lagringsutrymme**
+      - **Vid tröskelvärdet för lagringsutrymme och tröskelvärdet för inaktivitet**
+      - **Omedelbart efter utloggning**
+
+    Ange även:
+
     - **Starta borttagning (%)** : Ange ett procenttal (0–100) för diskutrymme. När det totala disk-/lagringsutrymmet sjunker under det värde du anger tas cachelagrade konton bort. Konton tas bort kontinuerligt för att frigöra diskutrymme. Konton som har varit inaktiva längst tas bort först.
     - **Avbryt borttagning (%)** : Ange ett procenttal (0–100) för diskutrymme. När det totala disk-/lagringsutrymmet uppfyller det värde du anger avbryts borttagningen.
 
-  Ange **Inaktivera** för att behålla lokala konton, AD-konton och Azure AD-konton som har skapats av gäster.
-
-  > [!NOTE]
-  > Microsoft HoloLens-enheter stöder bara inställningarna i **Kontohantering**.
+  - **Inaktivera**: Lokala konton, AD- och Azure AD-konton som skapats av gäster stannar på enheten och tas inte bort.
 
 ## <a name="next-steps"></a>Nästa steg
 
 - [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
-- Se inställningarna för [Windows 10 och senare](shared-user-device-settings-windows.md).
+- Se inställningarna för delad användarenhet i [Windows 10 och senare](shared-user-device-settings-windows.md).

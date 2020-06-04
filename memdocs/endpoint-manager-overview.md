@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/04/2020
+ms.date: 05/21/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: ''
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dee569d6f2ce4ed1a3bc278c9c9a886f9d23974
-ms.sourcegitcommit: 99a6e83219978433ec5a91d09beeaf69acbeb522
+ms.openlocfilehash: d9e3d03211907f31008b31d68c4ed5cd11ae1a6e
+ms.sourcegitcommit: fb77170957f50aa386ff825fb4183b4fd9e3e488
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82782264"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791732"
 ---
 # <a name="microsoft-endpoint-manager-overview"></a>Översikt av Microsoft Endpoint Manager
 
@@ -50,7 +50,7 @@ Slutpunktshanteraren innehåller följande tjänster:
 
   Mer information finns i [Vad är Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/what-is-intune).
 
-- **Configuration Manager**: Configuration Manager är en lokal hanteringslösning för hantering av stationära datorer, servrar och bärbara datorer som finns i ditt nätverk eller är Internet-baserade. Du kan använda molnet för att integrera med Intune, Azure AD, Microsoft Defender ATP och andra molntjänster. Använd Configuration Manager för att distribuera appar, programuppdateringar och operativsystem. Du kan också övervaka efterlevnad, fråga och agera för klienter i realtid och mycket mer.
+- **Configuration Manager**: Configuration Manager är en lokal hanteringslösning för hantering av stationära datorer, servrar och bärbara datorer som finns i ditt nätverk eller är Internet-baserade. Du kan molnaktivera lösningen för att integrera den med Intune, Azure Active Directory (AD), Microsoft Defender ATP och andra molntjänster. Använd Configuration Manager för att distribuera appar, programuppdateringar och operativsystem. Du kan också övervaka efterlevnad, fråga och agera för klienter i realtid och mycket mer.
 
   Som en del av slutpunktshanteraren kan du fortsätta att använda Configuration Manager som du alltid har gjort. Om du är redo att flytta några uppgifter till molnet kan du överväga [samhantering](https://docs.microsoft.com/configmgr/comanage/).
 
@@ -74,7 +74,7 @@ Slutpunktshanteraren innehåller följande tjänster:
 
   Du hittar mer information i [Översikt av Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot) och [Registrera Windows-enheter i Intune](/mem/intune/enrollment/enrollment-autopilot).
 
-- **Azure AD Premium**: Azure AD används av slutpunktshanteraren för enheter, användare, grupper, dynamiska grupper, automatisk registrering, multifaktorautentisering och villkorlig åtkomst. Dessa funktioner är viktiga för att skydda enheter, appar och data.
+- **Azure Active Directory (AD)** : Endpoint Manager använder Azure AD till att identifiera enheter, användare, grupper och multifaktorautentisering (MFA). **Azure AD Premium**, som kan medföra ytterligare kostnader, har [fler funktioner](https://azure.microsoft.com/pricing/details/active-directory/) som hjälper dig att skydda appar och data som dynamiska grupper, automatisk registrering och villkorsstyrd åtkomst.
 
   Mer information finns i [Lägg till användare](/mem/intune/fundamentals/users-add), [Konfigurera automatisk registrering](/mem/intune/enrollment/windows-enroll) och [om villkorsstyrd åtkomst](/mem/intune/protect/conditional-access).
 

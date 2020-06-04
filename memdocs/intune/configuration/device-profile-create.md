@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/26/2020
-ms.topic: conceptual
+ms.date: 05/14/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2031ba23b49bda4890d2638272e3b808b4bf5a9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 74e365e50d73bb14f20376c92b43061b12d00003
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80327444"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988462"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Skapa en enhetsprofil i Microsoft Intune
 
@@ -85,10 +85,9 @@ Välj sedan profiltyp. Vilka inställningar du kan konfigurera varierar beroende
 - [VPN](vpn-settings-configure.md)
 - [Wi-Fi](wi-fi-settings-configure.md)
 
-Om du till exempel väljer **iOS/iPadOS** som plattform, ser alternativen för profiltypen ut ungefär så här:
+Om du till exempel väljer **iOS/iPadOS** som plattform ser profilalternativen ut ungefär så här:
 
-> [!div class="mx-imgBorder"]
-> ![Skapa iOS/iPadOS-profil i Intune](./media/device-profile-create/create-device-profile.png)
+:::image type="content" source="./media/device-profile-create/create-device-profile.png" alt-text="Skapa en iOS/iPad-profil i Microsoft Intune.":::
 
 ## <a name="scope-tags"></a>Omfångstaggar
 
@@ -129,10 +128,9 @@ När du tilldelar profilen till grupperna fungerar tillämplighetsreglerna som e
 
 ### <a name="add-a-rule"></a>Lägg till en regel
 
-1. Välj **Tillämpbarhetsregler**. Du kan välja **Regel**, **Egenskap** och **OS-utgåva**:
+1. Välj **Tillämpbarhetsregler**. Du kan välja **Regel** och **Egenskap**:
 
-    > [!div class="mx-imgBorder"]
-    > ![Lägg till en tillämplighetsregel till en enhetskonfigurationsprofil i Microsoft Intune](./media/device-profile-create/applicability-rules.png)
+    :::image type="content" source="./media/device-profile-create/applicability-rules.png" alt-text="Lägga till en tillämplighetsregel för en Windows 10-enhetskonfigurationsprofil i Microsoft Intune.":::
 
 2. I **Regel** väljer du om du vill inkludera eller exkludera användare eller grupper. Alternativen är:
 
@@ -174,12 +172,11 @@ När du skapar profiler bör du tänka på följande rekommendationer:
 
 - Skilj användarprinciper från enhetsprinciper.
 
-  [Administrativa mallar i Intune](administrative-templates-windows.md) har till exempel hundratals ADMX-inställningar. Dessa mallar visar om en inställning gäller för användare eller enheter. När du skapar administrativa mallar tilldelar du användarinställningarna till en användargrupp och tilldelar enhetsinställningarna till en enhetsgrupp.
+  [Administrativa mallar i Intune](administrative-templates-windows.md) har till exempel tusentals ADMX-inställningar. Dessa mallar visar om en inställning gäller för användare eller enheter. När du skapar administrativa mallar tilldelar du användarinställningarna till en användargrupp och tilldelar enhetsinställningarna till en enhetsgrupp.
 
   Följande bild visar ett exempel på en inställning som kan gälla för användare och/eller tillämpas på enheter:
 
-  > [!div class="mx-imgBorder"]
-  > ![Intune-administratörsmall som tillämpas på användare och enheter](./media/device-profile-create/setting-applies-to-user-and-device.png)
+  :::image type="content" source="./media/device-profile-create/setting-applies-to-user-and-device.png" alt-text="Intune-administrationsmall som gäller för användare och enheter.":::
 
 - Varje gång du skapar en begränsad princip bör du informera användarna om detta. Om du till exempel vill ändra lösenordskravet från 4 tecken till 6 tecken, meddelar du användarna detta innan du tilldelar principen.
 

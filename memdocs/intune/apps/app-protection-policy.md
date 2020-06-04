@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/19/2020
-ms.topic: conceptual
+ms.date: 05/19/2020
+ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de679314bcd3b52ff879fbe9a6340a61d2b7e993
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 68e337f6315fc6d198e27c494b7689bb1cb9bc97
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078370"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989627"
 ---
 # <a name="app-protection-policies-overview"></a>Översikt över principer för appskydd
 
@@ -84,6 +84,18 @@ Plattformsstödet för Intune-appskyddsprinciper är synkroniserat med plattform
 > [!IMPORTANT]
 > Intunes företagsportal krävs på enheten för att kunna ta emot appskyddsprinciper på Android. Mer information finns i [Krav för åtkomst till appar i Intune-företagsportalen](../fundamentals/end-user-mam-apps-android.md#access-apps).
 
+## <a name="app-protection-policy-data-protection-framework"></a>Dataskyddsramverk med policyer för appskydd
+
+De alternativ som är tillgängliga för appskyddspolicyer (APP) gör att organisationer kan skräddarsy skyddet enligt deras specifika behov. För vissa är det inte alltid uppenbart vilka policyinställningar som krävs för att implementera ett fullständigt scenario. För att hjälpa organisationer att prioritera härdning av mobilklientslutpunkter har Microsoft infört taxonomi för dataskyddsramverket med APP:er för mobilappshantering för iOS och Android.
+
+Dataskyddsramverket för APP:er är indelat i tre olika konfigurationsnivåer där varje nivå bygger på den föregående nivån:
+
+- **Grundläggande dataskydd för företag** (nivå 1) säkerställer att apparna skyddas med en PIN-kod, krypteras och utför åtgärder för selektiv rensning. För Android-enheter verifierar den här nivån Android-enhetsattestering. Det här är en konfiguration på ingångsnivå som ger liknande dataskyddskontroll som policyer för Exchange Online-postlådor och introducerar IT-avdelningen och användarna för APP.
+- **Förbättrat dataskydd för företag** (nivå 2) introducerar APP-mekanismer för att förhindra dataläckage och minimikrav för operativsystem. Den här konfigurationen gäller för de flesta mobila användare som har åtkomst till arbets- eller skoldata.
+- **Starkt dataskydd för företag** (nivå 3) introducerar avancerade mekanismer för dataskydd, förbättrad PIN-konfiguration och skydd mot mobila hot i appar. Den här konfigurationen passar för användare som hanterar skyddsvärda data.
+
+Om du vill se specifika rekommendationer för varje konfigurationsnivå och minsta antal appar som måste skyddas går du till [Dataskyddsramverk med hjälp av appskyddspolicyer](app-protection-framework.md).
+
 ## <a name="how-app-protection-policies-protect-app-data"></a>Hur appskyddsprinciper skyddar appdata
 
 ### <a name="apps-without-app-protection-policies"></a>Appar utan appskyddsprinciper
@@ -143,14 +155,13 @@ Intune SDK-utvecklingsteamet testar och underhåller aktivt stödet för appar s
 
 Följande lista innehåller kraven för att använda appskyddsprinciper på en Intune-hanterad app:
 
-- Slutanvändare måste ha ett Azure Active Directory-konto (AAD). Se [Lägg till användare och ge administrativ behörighet till Intune](../fundamentals/users-add.md) för information om hur du skapar Intune-användare i Azure Active Directory.
+- Slutanvändaren måste ha ett ADD-konto (Azure Active Directory). Se [Lägg till användare och ge administrativ behörighet till Intune](../fundamentals/users-add.md) för information om hur du skapar Intune-användare i Azure Active Directory.
 
 - Slutanvändaren måste ha en licens för Microsoft Intune som tilldelats deras Azure Active Directory-konto. Se [Hantera Intune-licenser](../fundamentals/licenses-assign.md) för information om hur du tilldelar Intune-licenser till slutanvändare.
 
-- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål.
- Appskyddsprinciper kan skapas och distribueras i Intune-konsolen i [Azure-portalen](https://portal.azure.com). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
+- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål. Appskyddsprinciper kan skapas och distribueras i Intune-konsolen i [Azure-portalen](https://portal.azure.com). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
 
-- Slutanvändaren måste logga in på appen med sitt AAD-konto.
+- Slutanvändaren måste logga in i appen med sitt Azure AD-konto.
 
 ## <a name="app-protection-policies-for-microsoft-office-apps"></a>Appskyddsprinciper för Microsoft Office-appar
 
@@ -201,7 +212,6 @@ Medan den **Globala** principen gäller för alla användare i din klient kommer
 
 Med stöd för flera identiteter kan en app stödja flera målgrupper. Dessa målgrupper är både ”företagsanvändare” och ”personliga” användare. Arbets- och skolkonton används av företagsgrupper medan personliga konton används för konsumentanvändare, t. ex. Microsoft Office-användare. En app som har stöd för flera identiteter kan publiceras offentligt, där appskyddsprinciperna endast tillämpas när appen används i arbets- och skolkontexten (”företag”). Stöd för flera identiteter använder [Intune App SDK:n](../developer/app-sdk.md) till att enbart tillämpa appskyddsprinciper på det arbets- eller skolkonto som har registrerats i appen. Om ett personligt konto är inloggat i appen ändras inga data.
 
-
 För ett exempel på ”privat” kontext, anta att en användare som startar ett nytt dokument i Word, då anses detta vara privat kontext så Intune-appskyddsprinciper tillämpas inte. När dokumentet sparas på ”företagets” OneDrive-konto kommer det anses vara ”företagskontext” och Intune-appskyddsprinciperna tillämpas.
 
 Anta som ett exempel på ett arbets- eller ”företagskontext” att en användare startar appen OneDrive med sitt arbetskonto. De kan inte flytta filerna till en personlig lagringsplats i ett arbetskontext. Om användaren senare använder OneDrive med ett personligt konto kan hen kopiera och flytta data från sin personliga OneDrive utan begränsningar.
@@ -209,7 +219,7 @@ Anta som ett exempel på ett arbets- eller ”företagskontext” att en använd
 Outlook har en kombinerad e-postvy med såväl ”personlig” som ”företags-e-post”. I det här fallet begär Outlook-appen Intune-PIN-koden vid start.
 
   >[!NOTE]
-  > Även om Edge är i kontexten ”företag” kan användaren avsiktligt flytta OneDrive-kontextfiler för ”företag” till en okänd personlig molnlagringsplats. För att undvika detta, se [Ange listor över tillåtna eller blockerade platser för Microsoft Edge](../apps/manage-microsoft-edge.md#specify-allowed-or-blocked-sites-list-for-microsoft-edge) och konfigurera listan över tillåtna/blockerade webbplatser för Edge.
+  > Även om Edge är i kontexten ”företag” kan användaren avsiktligt flytta OneDrive-kontextfiler för ”företag” till en okänd personlig molnlagringsplats. För att undvika detta kan du läsa [Hantera begränsade webbplatser](manage-microsoft-edge.md#manage-restricted-web-sites) och konfigurera listan med tillåtna/blockerade webbplatser i Edge.
 
 Mer information om flera identiteter i Intune finns i [MAM och flera identiteter](apps-supported-intune-apps.md).
 
@@ -312,7 +322,7 @@ Intunes appskyddsprinciper kan styra åtkomst till den Intune-licensierade anvä
 Syftet med detta är att fortsätta att hålla din organisations data i appen säkra och skyddade på appnivå. Den här funktionen är endast tillgänglig för iOS/iPadOS och kräver medverkan av program som integrerar Intune SDK:n för iOS/iPadOS, version 9.0.1 eller senare. Integrering av SDK krävs så att beteendet kan tillämpas på de berörda programmen. Den här integreringen händer på löpande bas, och är beroende av specifika programteam. Vissa appar som deltar omfattar WXP, Outlook, Managed Browser och Yammer.
   
 ### <a name="ios-share-extension"></a>Tillägg för iOS-resurs
-Du kan använda iOS/iPadOS-resurstillägget för att öppna arbets- eller skoldata i ohanterade appar, även om dataöverföringsprincipen är inställd på **Endast hanterade appar** eller **Inga appar**. Intunes appskyddsprincip kan inte styra iOS/iPadOS-resurstillägget utan att hantera enheten. Därför krypterar Intune _**"företagets" data innan den delas utanför appen**_ . Du kan verifiera detta krypteringsbeteende genom att försöka öppna en "företags"-fil utanför den hanterade appen. Filen ska vara krypterad och inte kunna öppnas utanför den hanterade appen.
+Du kan använda iOS/iPadOS-resurstillägget för att öppna arbets- eller skoldata i ohanterade appar, även om dataöverföringsprincipen är inställd på **Endast hanterade appar** eller **Inga appar**. Intunes appskyddsprincip kan inte styra iOS/iPadOS-resurstillägget utan att hantera enheten. Därför krypterar Intune _**"företagets" data innan den delas utanför appen**_. Du kan verifiera detta krypteringsbeteende genom att försöka öppna en "företags"-fil utanför den hanterade appen. Filen ska vara krypterad och inte kunna öppnas utanför den hanterade appen.
 
 ### <a name="multiple-intune-app-protection-access-settings-for-same-set-of-apps-and-users"></a>Flera åtkomstinställningar för Intune App Protection för samma uppsättning appar och användare
 Appskyddsprinciper i Intune för åtkomst tillämpas i en viss ordning på slutanvändarenheter när de försöker få åtkomst till en riktad app från ett företagskonto. Vanligtvis får rensningar företräde, följt av blockeringar och därefter varningar som kan avfärdas. Exempel: Om det är tillämpligt för den specifika användaren/appen används en lägsta iOS/iPadOS-operativsysteminställning som varnar en användare för att göra en uppdatering av sin iOS/iPadOS-version efter den lägsta iOS/iPadOS-operativsysteminställningen som blockerar användarens åtkomst. I scenariot där en IT-administratör konfigurerar det äldsta iOS-operativsystemet till 11.0.0.0 och det äldsta iOS-operativsystemet (endast varning) till 11.1.0.0, medan enheten som försöker få åtkomst till appen hade iOS-version 10 blockeras slutanvändaren baserat på den mer restriktiva inställningen för den lägsta iOS-operativsystemversionen. Det leder till blockerad åtkomst.
@@ -322,8 +332,7 @@ När du hanterar olika typer av inställningar, så måste ett krav avseende Int
 ## <a name="app-protection-experience-for-android-devices"></a>Appskyddsupplevelse för Android-enheter
 
 ### <a name="company-portal-app-and-intune-app-protection"></a>Företagsportalapp och Intune-appskydd
-Många av appskyddets funktioner är inbyggda i företagsportalappen.
- Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För mobilapphantering utan registrering (MAM-WE) behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
+Många av appskyddets funktioner är inbyggda i företagsportalappen. Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För mobilapphantering utan registrering (MAM-WE) behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
 
 ### <a name="multiple-intune-app-protection-access-settings-for-same-set-of-apps-and-users"></a>Flera åtkomstinställningar för Intune App Protection för samma uppsättning appar och användare
 Appskyddsprinciper i Intune för åtkomst tillämpas i en viss ordning på slutanvändarenheter när de försöker få åtkomst till en riktad app från ett företagskonto. Vanligtvis får en blockering företräde, och därefter en varning som kan avfärdas. Exempel: Om det är tillämpligt för den specifika användaren/appen används en lägsta inställning för Android-korrigeringsprogramversionen. Den varnar en användare för att göra en uppdatering efter den lägsta inställningen för Android-korrigeringsprogramversionen som blockerar användarens åtkomst. I scenariot där en IT-administratör konfigurerar den äldsta Android-korrigeringsprogramversionen till 2018-03-01 och den äldsta Android-korrigeringsprogramversionen (endast varning) till 2018-02-01, medan enheten som försöker få åtkomst till appen hade korrigeringsprogramversionen 2018-01-01, blockeras slutanvändaren baserat på den mer restriktiva inställningen för den lägsta Android-korrigeringsprogramversionen. Det leder till blockerad åtkomst. 

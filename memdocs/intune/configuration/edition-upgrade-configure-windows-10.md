@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -17,16 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 068363167d5c6abb54dde26939b102db2f120d27
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b846aa1ead9bb2d1c1b15d783e646e59047c16ee
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79364389"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988408"
 ---
 # <a name="upgrade-windows-10-editions-or-switch-out-of-s-mode-on-devices-using-microsoft-intune"></a>Uppgradera Windows 10-utgåvor eller växla från S-läge på enheter med Microsoft Intune
-
-
 
 Som en del av din lösning för hantering av mobila enheter kan du uppgradera Windows 10-enheter. Exempelvis kan du uppgradera dina Windows 10 Professional-enheter till Windows 10 Enterprise. Eller så vill du att enheten ska växla från S-läge.
 
@@ -100,21 +98,37 @@ Följande tabell innehåller uppgraderingsvägar som stöds för Windows 10-utg�
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+    - **Plattform**: Välj **Windows 10 och senare**.
+    - **Profil**: Välj **Uppgradering av utgåva**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
     - **Namn**: Ange ett beskrivande namn på den nya profilen. Ange något i stil med `Windows 10 edition upgrade profile` eller `Windows 10 switch off S mode`.
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Uppgradering av utgåva**.
-    - **Inställningar**: Ange vilka inställningar som du vill konfigurera. En lista med alla inställningar och vad de gör finns i:
 
-        - [Windows 10-uppgradering och S-läge](edition-upgrade-windows-settings.md)
-        - [Windows Holographic for Business](holographic-upgrade.md)
+6. Välj **Nästa**.
+7. Ange de inställningar du vill konfigurera i **Konfigurationsinställningar**. En lista med alla inställningar och vad de gör finns i:
 
-4. Välj **OK** > **Skapa** för att spara ändringarna.
+    - [Windows 10-uppgradering och S-läge](edition-upgrade-windows-settings.md)
+    - [Windows Holographic for Business](holographic-upgrade.md)
 
-Profilen skapas och visas i listan. Kom ihåg att [tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+8. Välj **Nästa**.
+
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller den användargrupp som ska få din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
+Nästa gång varje enhet checkar in tillämpas principen.
 
 ## <a name="next-steps"></a>Nästa steg
 
-När profilen har skapats är den klar att tilldelas. [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+När [profilen har tilldelats](device-profile-assign.md) [övervakar du dess status](device-profile-monitor.md).
 
-Visa uppgraderingen och S-inställningar för [Windows 10](edition-upgrade-windows-settings.md)- och [Windows Holographic for Business](holographic-upgrade.md)-enheter.
+Visa uppgraderings- och S-lägesinställningar för [Windows 10](edition-upgrade-windows-settings.md)- och [Windows Holographic for Business](holographic-upgrade.md)-enheter.

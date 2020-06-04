@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df5c33e1e8e589f430fe8265ee4762b4755f3618
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 28dfeecf841eb1b9c69f46b2002b350c83514e1d
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086454"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83990563"
 ---
 # <a name="use-a-custom-device-profile-to-create-a-wifi-profile-with-a-pre-shared-key-in-intune"></a>Använd en anpassad enhetsprofil för att skapa en Wi-Fi-profil med en i förväg delad nyckel i Intune
 
@@ -52,12 +52,17 @@ Den här funktionen stöder:
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+    - **Plattform**: Välj din plattform.
+    - **Profil**: Välj **Anpassad**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
     - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett exempel på ett bra principnamn är **Custom OMA-URI Wi-Fi profile settings for Android device administrator devices** (Anpassade inställningar för OMA-URI Wi-Fi-profil för Android-enhetens administratörsenheter).
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj din plattform.
-    - **Profiltyp**: Välj **Anpassad**.
 
-4. I **Inställningar** väljer du **Lägg till**. Lägg till en ny OMA-URI-inställning med följande egenskaper:
+6. Välj **Nästa**.
+7. Gå till **Konfigurationsinställningar** och välj **Lägg till**. Lägg till en ny OMA-URI-inställning med följande egenskaper:
 
     1. **Namn**: Ange ett namn för OMA-URI-inställningen.
     2. **Beskrivning**: Ange en beskrivning för OMA-URI-inställningen. Denna inställning är valfri, men rekommenderas.
@@ -74,10 +79,22 @@ Den här funktionen stöder:
     4. **Datatyp**: Välj **Sträng**.
 
     5. **Värde**: Klistra in XML-koden. Se [exemplen](#android-or-windows-wi-fi-profile-example) i den här artikeln. Uppdatera varje värde så att det matchar dina nätverksinställningar. I avsnittet med kommentarer om koden finns tips.
+    6. Välj **Lägg till** för att spara dina ändringar.
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+8. Välj **Nästa**.
 
-Din profil visas i profillistan. [Tilldela den här profilen](device-profile-assign.md) till dina användargrupper. Den här principen kan bara tilldelas till användargrupper.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller den användargrupp som ska få din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    > [!NOTE]
+    > Den här principen kan bara tilldelas till användargrupper.
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
 
 Nästa gång varje enhet checkar in tillämpas principen och en Wi-Fi-profil skapas på enheten. Enheten kan därefter ansluta till nätverket automatiskt.
 

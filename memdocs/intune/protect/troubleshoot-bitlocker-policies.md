@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac6650f06abddd2633e73f39a6bf72d54e344a61
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 92d1e1c5d1e2a66ed036d0ed7a5a75d40c737bf3
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079203"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428981"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>Felsöka BitLocker-principer i Microsoft Intune
 
@@ -169,11 +169,11 @@ Du bör nu ha en god förståelse för hur du kontrollerar att BitLocker-princip
      
 **BitLocker-kryptering utförs inte tyst** – du har konfigurerat en princip för Endpoint Protection med inställningen "Varning för annan diskkryptering" inställd på blockera och krypteringsguiden visas fortfarande:
 
-- **Bekräfta att Windows-versionen stöder tyst kryptering** Detta kräver minst version 1803. Om användaren inte är administratör på enheten än krävs en lägsta version på 1809. Dessutom har 1809 stöd för enheter som inte stöder modernt vänteläge
+- **Bekräfta att Windows-versionen stöder tyst kryptering** Detta kräver minst version 1803. Om användaren inte är administratör för enheten krävs minst version 1809. Dessutom har 1809 stöd för enheter som inte stöder modernt vänteläge
 
 **En BitLocker-krypterad enhet visas som ej kompatibel med Intunes efterlevnadsprinciper** – problemet uppstår när BitLocker-krypteringen inte är klar. BitLocker-kryptering kan ta lång tid baserat på faktorer som diskstorlek, antal filer och BitLocker-inställningar. När krypteringen är klar visas enheten som Kompatibel. Enheter kan också vara temporärt inkompatibla direkt efter en nyligen genomförd installation av Windows-uppdateringar.
 
-**Enheter krypteras med en 128-bitars algoritm när principen är unik för 256-bitar** – som standard krypterar Windows 10 en enhet med XTS-AES 128-bitars kryptering. I den här handboken beskrivs [hur du ställer in 256-bitars kryptering för BitLocker under autopilot](https://techcommunity.microsoft.com/t5/intune-customer-success/setting-256-bit-encryption-for-bitlocker-during-autopilot-with/ba-p/323791#).
+**Enheter krypteras med en 128-bitars algoritm när principen anger 256 bitar** – som standard krypterar Windows 10 enheter med XTS-AES 128-bitars kryptering. I den här handboken beskrivs [hur du ställer in 256-bitars kryptering för BitLocker under autopilot](https://techcommunity.microsoft.com/t5/intune-customer-success/setting-256-bit-encryption-for-bitlocker-during-autopilot-with/ba-p/323791#).
 
 
 **Exempel på undersökning**

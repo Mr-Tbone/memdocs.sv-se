@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 05/14/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: tycast
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d2f671e88b1221961e978d1945e28c7cec474cb
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 9fbe28a6585fe9fe5cf7772b559924675ac39a30
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086494"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429475"
 ---
 # <a name="windows-10-and-windows-holographic-device-settings-to-add-vpn-connections-using-intune"></a>Inställningar för Windows 10- och Windows Holographic-enheter för att lägga till VPN-anslutningar med Intune
 
@@ -66,7 +66,7 @@ Beroende på vilka inställningar du väljer, kanske inte alla värden är konfi
   - **PPTP**
 
   När du väljer en VPN-anslutningstyp, kan du också efterfrågas om följande inställningar:  
-  - **Alltid på**: Välj **Aktivera** för att automatiskt ansluta till VPN-anslutningen när följande händelser inträffar:
+  - **Alltid på**: **Aktivera** ansluter automatiskt till VPN-anslutningen när följande händelser inträffar:
     - Användarna loggar in på sina enheter
     - Nätverket på enheten ändras
     - Skärmen på enheten sätts på efter att ha varit avstängd
@@ -114,10 +114,11 @@ Läs mer om att skapa anpassade EAP XML-filer i informationen om [EAP-konfigurat
 
   - **Koppla Windows informationsskydd till den här anslutningen**: Ange en **WIP-domän för den här anslutningen**
   - **Koppla appar till den här anslutningen**: Du kan välja **Begränsa VPN-anslutning till de här apparna** och sedan lägga till **Tillhörande appar**. De appar som du anger använder automatiskt VPN-anslutningen. Appidentifieraren beror på typen av app. För en universell app anger du paketfamiljenamnet. För en skrivbordsapp anger du appens filsökväg.
-  >[!IMPORTANT]
-  >Vi rekommenderar att du skyddar alla applistor som skapas för VPN:er per app. Om en obehörig användare ändrar listan och du importerar den till applistan med VPN:er per app, finns risken att du tillåter VPN-åtkomst till appar som inte ska ha åtkomst. Ett sätt att skydda applistor på är att använda en åtkomstkontrollista (ACL).
 
-- **Nätverkstrafikregler för den här VPN-anslutningen**: Ange vilka protokoll, vilka lokala portar och fjärrportar samt vilka adressintervall som aktiveras för VPN-anslutningen. Om du inte skapar någon regel för nätverkstrafik aktiveras alla protokoll, portar och adressintervall. När du har skapat en regel använder VPN-anslutningen bara de protokoll, portar och adressintervall som du har angett i regeln.
+  > [!IMPORTANT]
+  > Vi rekommenderar att du skyddar alla applistor som skapas för VPN:er per app. Om en obehörig användare ändrar listan och du importerar den till applistan med VPN:er per app, finns risken att du tillåter VPN-åtkomst till appar som inte ska ha åtkomst. Ett sätt att skydda applistor på är att använda en åtkomstkontrollista (ACL).
+
+- **Nätverkstrafikregler för den här VPN-anslutningen**: Ange protokoll och vilka lokala portar och fjärrportar samt vilka adressintervall som är aktiverade för VPN-anslutningen. Om du inte skapar någon regel för nätverkstrafik aktiveras alla protokoll, portar och adressintervall. När du har skapat en regel använder VPN-anslutningen bara de protokoll, portar och adressintervall som du har angett i regeln.
 
 ## <a name="conditional-access"></a>Villkorlig åtkomst
 

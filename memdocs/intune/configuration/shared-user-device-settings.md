@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/04/2019
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 179314f363c8f086239b2c926c4bed8d09c68204
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 4f85c30c9472849d26802c8cdccd7a95006a3e4a
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79364168"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83984006"
 ---
 # <a name="control-access-accounts-and-power-features-on-shared-pc-or-multi-user-devices-using-intune"></a>Kontrollera åtkomst, konton och energifunktioner på delade datorer eller enheter med flera användare med Intune
 
@@ -46,18 +46,39 @@ När profilen har skapats i Intune distribuerar och tilldelar du profilen till e
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+   - **Plattform**: Välj **Windows 10 och senare**.
+   - **Profil**: Välj **Delad enhet för flera användare**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
    - **Namn**: Ange ett beskrivande namn på den nya profilen.
    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-   - **Plattform**: Välj **Windows 10 och senare**.
-   - **Profiltyp**: Välj **Delad enhet för flera användare**.
 
-4. Konfigurera inställningarna för [Windows 10 och senare](shared-user-device-settings-windows.md) eller [Windows Holographic for Business](shared-user-device-settings-windows-holographic.md).
+6. Välj **Nästa**.
+7. Under **Konfigurationsinställningar**  visas olika inställningar som du kan konfigurera beroende på vilken plattform du väljer. Välj din plattform för detaljerade inställningar:
 
-5. Välj **OK** > **Skapa** för att spara ändringarna.
+    - [Windows 10 och senare](shared-user-device-settings-windows.md)
+    - [Windows Holographic for Business](shared-user-device-settings-windows-holographic.md)
 
-Din profil skapas och visas i listan men den gör ingenting än. Se till att [tilldela profilen](device-profile-assign.md) till enhetsgrupper i din organisation.
+8. Välj **Nästa**.
+
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de enhetsgrupper som ska få din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+    > [!NOTE]
+    > Se till att tilldela profilen till enhetsgrupper i din organisation.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
+Nästa gång varje enhet checkar in tillämpas principen.
 
 ## <a name="next-steps"></a>Nästa steg
 
 - Se alla inställningar för [Windows 10 och senare](shared-user-device-settings-windows.md) och [Windows Holographic for Business](shared-user-device-settings-windows-holographic.md).
-- [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+- När [profilen har tilldelats](device-profile-assign.md) [övervakar du dess status](device-profile-monitor.md).

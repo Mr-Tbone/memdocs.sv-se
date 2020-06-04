@@ -6,8 +6,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/15/2020
-ms.topic: conceptual
+ms.date: 05/20/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9657353dd877b380d506e588934e3f6fd29b51c1
-ms.sourcegitcommit: b7e5b053dfa260e7383a9744558d50245f2bccdc
+ms.openlocfilehash: 205c892c885682d10877aae4c92429cf59adb0ac
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587032"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989157"
 ---
 # <a name="add-email-settings-to-devices-using-intune"></a>Lägg till e-postinställningar på enheter med Intune
 
@@ -29,9 +29,9 @@ Microsoft Intune innehåller olika e-postinställningar som du kan distribuera t
 
 Du kan använda e-postprofiler för att konfigurera de inbyggda e-postinställningarna för följande enheter:
 
-- Android-enhetsadministratör på Samsung Knox Standard 4.0 och senare
+- Android-enhetsadministratör på Samsung Knox Standard 5.0 och senare
 - Android enterprise
-- iOS 8.0 och senare
+- iOS 11.0 och senare
 - iPadOS 13.0 och senare
 - Windows Phone 8.1 och senare
 - Windows 10 Desktop och Windows 10 Mobile

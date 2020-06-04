@@ -7,7 +7,7 @@ author: brenduns
 ms.author: brenduns
 manager: dougeby
 ms.date: 11/18/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 0b634dad49b11e39e9a046688f0b5fd9ddc53ab4
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 1199c6db96325a103394cfb53a4ca70092cd3767
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255004"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989659"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Övervaka enhetskryptering med Intune
 
@@ -169,68 +169,20 @@ När du visar fönstret Krypteringsrapport kan du välja **Exportera** för att 
 
 Den här rapporten kan användas för att identifiera problem för grupper av enheter. Du kan till exempel använda rapporten för att identifiera en lista med macOS-enheter som alla rapporterar *FileVault har redan aktiverats av användaren*, vilket indikerar enheter som måste dekrypteras manuellt innan Intune kan hantera deras FileVault-inställningar.
 
-## <a name="filevault-recovery-keys"></a>FileVault-återställningsnycklar
+## <a name="manage-recovery-keys"></a>Hantera återställningsnycklar
 
-När Intune först krypterar en macOS-enhet med FileVault skapas en personlig återställningsnyckel. Efter krypteringen visas den personliga nyckeln en enda gång för slutanvändaren.
+Mer information om att hantera återställningsnycklar finns i följande avsnitt i Intune-dokumentationen:
 
-För hanterade enheter kan Intune deponera en kopia av den personliga återställningsnyckeln. Deponeringen av nycklar gör att Intune-administratörer kan rotera nycklar för att skydda enheter, och användare för att återställa en förlorad eller roterad personlig återställningsnyckel.
+macOS FileVault:
+- [Hämta privat återställningsnyckel](../protect/encrypt-devices-filevault.md#retrieve-personal-recovery-key)
+- [Rotera återställningsnycklar](../protect/encrypt-devices-filevault.md#rotate-recovery-keys)
+- [Återställa återställningsnycklar](../protect/encrypt-devices-filevault.md#recover-recovery-keys)
 
-Intune stöder flera alternativ för att rotera och återställa personliga återställningsnycklar. En nyckel kan exempelvis roteras om den nuvarande personliga nyckeln försvinner eller misstänks vara utsatt för risk.
-
-> [!IMPORTANT]
-> Enheter som krypteras av användare, och inte av Intune, kan inte hanteras av Intune. Det innebär att Intune inte kan deponera den personliga återställningsnyckeln för dessa enheter, eller hantera rotationen av återställningsnyckeln. Innan Intune kan hantera FileVault och återställningsnycklar för enheten måste användaren dekryptera enheten och sedan låta Intune kryptera enheten.
-
-### <a name="rotate-recovery-keys"></a>Rotera återställningsnycklar
-
-- **Automatisk rotation**: Som administratör kan du konfigurera FileVault-inställningen Rotering av privat återställningsnyckel för att automatiskt generera nya återställningsnycklar med jämna mellanrum. När en ny nyckel skapas för en enhet visas inte nyckeln för användaren. Användaren måste i stället få nyckeln från en administratör eller via företagsportalappen.
-
-- **Manuell rotation**: Som administratör kan du visa information om en enhet som du hanterar med Intune och som krypteras med FileVault. Du kan sedan välja att manuellt rotera återställningsnyckeln för företagsenheter. Du kan inte rotera återställningsnycklar för personliga enheter.
-
-  Så här roterar du en återställningsnyckel:
-
-  1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-  
-  2. Välj **Enheter** > **Alla enheter**.
-  
-  3. I listan med enheter väljer du den enhet som är krypterad och som du vill rotera nyckeln för. Välj  **Återställningsnycklar** under Övervaka.
-  
-  4. Välj **Rotera FileVault-återställningsnyckel** i fönstret Återställningsnycklar.
-
-     Nästa gång enheten checkar in med Intune roteras den personliga nyckeln. Om det behövs kan den nya nyckeln hämtas av slutanvändaren via företagsportalen.
-
-### <a name="recover-recovery-keys"></a>Återställa återställningsnycklar
-
-- **Administratör**: Administratörer kan inte visa personliga återställningsnycklar för enheter som är krypterade med FileVault.
-
-- **Slutanvändare**: Slutanvändare använder webbplatsen för företagsportalen från valfri enhet för att visa den aktuella personliga återställningsnyckeln för någon av deras hanterade enheter. Du kan inte visa återställningsnycklar från appen Företagsportal.
-
-  Så här visar du en återställningsnyckel:
-  
-  1. Logga in på webbplatsen för *Intune-företagsportalen* från valfri enhet.
-
-  2. På portalen går du till **Enheter** och väljer den macOS-enhet som är krypterad med FileVault.
-
-  3. Välj **Hämta återställningsnyckel**. Den aktuella återställningsnyckeln visas.
-
-## <a name="bitlocker-recovery-keys"></a>BitLocker-återställningsnycklar
-
-Intune ger åtkomst till Azure AD-bladet för BitLocker så att du kan visa BitLocker-nyckel-ID:n och återställningsnycklar för dina Windows 10-enheter från Intune-portalen. För att enheten ska vara nåbar måste dess nycklar vara deponerade till Azure AD.
-
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-
-2. Välj **Enheter** > **Alla enheter**.
-
-3. Välj en enhet i listan. Under *Övervaka* väljer du sedan **Återställningsnycklar**.
-  
-   När nycklar är tillgängliga i Azure AD finns följande information tillgänglig:
-   - BitLocker-nyckel-ID
-   - BitLocker-återställningsnyckel
-   - Enhetstyp
-
-   När nycklar inte finns i Azure AD visar Intune *Det gick inte att hitta någon BitLocker-nyckel för den här enheten*.
-
-Information för BitLocker hämtas med hjälp av den [BitLocker-CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp). BitLocker-CSP stöds på Windows 10 version 1709 och senare samt för Windows 10 Pro version 1809 och senare.
+Windows 10 BitLocker:
+- [Rotera återställningsnycklar för BitLocker](../protect/encrypt-devices.md#rotate-bitlocker-recovery-keys)
 
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa en princip för [enhetsefterlevnad](compliance-policy-create-windows.md).
+[Hantera policy för BitLocker](../protect/encrypt-devices.md)
+
+[Hantera policy för FileVault](encrypt-devices-filevault.md)

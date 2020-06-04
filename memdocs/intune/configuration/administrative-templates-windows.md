@@ -1,12 +1,12 @@
 ---
 title: Använda mallar för Windows 10-enheter i Microsoft Intune – Azure | Microsoft Docs
-description: Använd Administrativa mallar i Microsoft Intune och Endpoint Manager för att skapa grupper med inställningar för Windows 10-enheter. Med dessa inställningar i en enhetskonfigurationsprofil kan du styra Office-program, Microsoft Edge, säkra funktioner i Internet Explorer, styra åtkomst till OneDrive, använda fjärrskrivbordsfunktioner, aktivera automatisk uppspelning, ange energisparinställningar, använda HTTP-utskrifter, använda olika alternativ för användarinloggning samt styra händelseloggens storlek.
+description: Använd Administrativa mallar i Microsoft Intune och Endpoint Manager för att skapa grupper med inställningar för Windows 10-enheter. Med de här inställningarna i en enhetskonfigurationsprofil kan du styra Office-program, Microsoft Edge, skydd för Internet Explorer, åtkomst till OneDrive, använda fjärrskrivbordet, aktivera automatisk uppspelning, ange energisparinställningar, använda HTTP-utskrifter, styra användarnas inloggning och ändra händelseloggens storlek.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/15/2020
-ms.topic: conceptual
+ms.date: 05/14/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -16,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f609ec62259deffb220c8ee935d0f10a98ae77b5
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 89635c9eb2849b4896ea3df85dd081d6e267627e
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82254902"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83990205"
 ---
 # <a name="use-windows-10-templates-to-configure-group-policy-settings-in-microsoft-intune"></a>Använda Windows 10-mallar för att konfigurera grupprincipinställningar i Microsoft Intune
 
 När du hanterar enheter i din organisation är det bra att skapa en grupp med inställningar som tillämpas på olika enhetsgrupper. Anta att du har flera enhetsgrupper. För grupp A vill du tilldela en viss uppsättning inställningar. För grupp B vill du tilldela en annan uppsättning inställningar. Du vill även ha en enkel vy över de inställningar du kan konfigurera.
 
-Du kan slutföra den här uppgiften med **Administrativa mallar** i Microsoft Intune. De administrativa mallarna innehåller hundratals inställningar som styr funktionerna i Microsoft Edge version 77 och senare, Internet Explorer, Microsoft Office-program, fjärrskrivbord, OneDrive, lösenord och PIN-koder med mera. Med de här inställningarna kan gruppadministratörer hantera grupprinciper i molnet.
+Du kan slutföra den här uppgiften med **Administrativa mallar** i Microsoft Intune. De administrativa mallarna innehåller tusentals inställningar som styr funktionerna i bland annat Microsoft Edge version 77 och senare, Internet Explorer, Microsoft Office-program, fjärrskrivbord, OneDrive, lösenord och PIN-koder. Med de här inställningarna kan gruppadministratörer hantera grupprinciper i molnet.
 
 Den här funktionen gäller för:
 
@@ -62,27 +62,27 @@ Den här artikeln listar stegen för att skapa en mall för Windows 10-enheter o
 
 6. Välj **Nästa**.
 
-7. I **konfigurationsinställningarna** konfigurerar du inställningar som gäller för enheten (**datorkonfiguration**) och inställningar som gäller för användare **(användarkonfiguration**):
+7. I **Konfigurationsinställningar** kan du välja **Alla inställningar** för att se en alfabetisk lista med alla inställningar. Eller konfigurationsinställningar som gäller för enheter (**Datorkonfiguration**) och inställningar som gäller för användare (**Användarkonfiguration**):
 
     > [!div class="mx-imgBorder"]
     > ![Använd inställningar för ADMX-mallar för användare och enheter i Microsoft Intune Endpoint Manager](./media/administrative-templates-windows/administrative-templates-choose-computer-user-configuration.png)
 
-8. När du väljer **datorkonfiguration** visas inställningskategorierna. Du kan välja valfri kategori för att se de tillgängliga inställningarna.
+8. När du väljer **Alla inställningar** visas alla inställningar. Bläddra nedåt för att använda pilarna före och nästa för att se fler inställningar:
+
+    > [!div class="mx-imgBorder"]
+    > ![Se en lista exempellista över inställningar och använd föregående- och nästa-knapparna](./media/administrative-templates-windows/administrative-templates-sample-settings-list.png)
+
+9. Välj en inställning. Filtrera exempelvis på **Office** och välj **Aktivera begränsad bläddring**. En detaljerad beskrivning av inställningen visas. Välj **Aktiverad**, **Inaktiverad** eller lämna inställningen som **Inte konfigurerad** (standard). Den detaljerade beskrivningen förklarar även vad som händer när du väljer **Aktiverad**, **Inaktiverad** eller **Inte konfigurerad**.
+
+    > [!TIP]
+    > Windows-inställningarna i Intune motsvarar den lokala grupprincipen sökväg som du ser i redigeraren för grupprincipobjekt (`gpedit`)
+
+10. När du väljer **Datorkonfiguration** eller **Användarkonfiguration** visas inställningskategorierna. Du kan välja valfri kategori för att se de tillgängliga inställningarna.
 
     Välj till exempel **datorkonfiguration** > **Windows-komponenter** > **Internet Explorer** för att se alla enhetsinställningar som gäller för Internet Explorer:
 
     > [!div class="mx-imgBorder"]
     > ![Se alla enhetsinställningar som gäller för Internet Explorer i Microsoft Intune Endpoint Manager](./media/administrative-templates-windows/administrative-templates-all-internet-explorer-settings-device.png)
-
-9. Du kan också välja **Alla inställningar** för att se alla enhetsinställningar. Bläddra nedåt för att använda pilarna före och nästa för att se fler inställningar:
-
-    > [!div class="mx-imgBorder"]
-    > ![Se en lista exempellista över inställningar och använd föregående- och nästa-knapparna](./media/administrative-templates-windows/administrative-templates-sample-settings-list.png)
-
-10. Välj en inställning. Filtrera exempelvis på **Office** och välj **Aktivera begränsad bläddring**. En detaljerad beskrivning av inställningen visas. Välj **Aktiverad**, **Inaktiverad** eller lämna inställningen som **Inte konfigurerad** (standard). Den detaljerade beskrivningen förklarar även vad som händer när du väljer **Aktiverad**, **Inaktiverad** eller **Inte konfigurerad**.
-
-    > [!TIP]
-    > Windows-inställningarna i Intune motsvarar den lokala grupprincipen sökväg som du ser i redigeraren för grupprincipobjekt (`gpedit`)
 
 11. Klicka på **OK** för att spara ändringarna.
 
@@ -104,7 +104,7 @@ Den här artikeln listar stegen för att skapa en mall för Windows 10-enheter o
 14. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
 
     Om profilen är tilldelad till användargrupper gäller de konfigurerade ADMX-inställningarna för alla enheter som användaren registrerar och loggar in på. Om profilen är tilldelad till enhetsgrupper gäller de konfigurerade ADMX-inställningarna för alla användare som loggar in på den enheten. Den här tilldelningen sker om ADMX-inställningen är en datorkonfiguration (`HKEY_LOCAL_MACHINE`) eller en användarkonfiguration (`HKEY_CURRENT_USER`). Med vissa inställningar kan en datorinställning som tilldelas till en användare även påverka upplevelsen för andra användare på enheten.
-    
+
     Mer information finns i [Användargrupper jämfört med enhetsgrupper](device-profile-assign.md#user-groups-vs-device-groups).
 
     Välj **Nästa**.
@@ -115,16 +115,22 @@ Nästa gången enheten söker efter konfigurationsuppdateringar tillämpas de in
 
 ## <a name="find-some-settings"></a>Hitta några inställningar
 
-Det finns hundratals inställningar tillgängliga i dessa mallar. För att göra det enklare att hitta specifika inställningar använder du de inbyggda funktionerna:
+Det finns tusentals inställningar tillgängliga i de här mallarna. För att göra det enklare att hitta specifika inställningar använder du de inbyggda funktionerna:
 
-- I mallen markerar du kolumnerna **Inställningar**, **Tillstånd**, **Inställningstyp** eller **Sökväg** för att sortera listan. Markera till exempel kolumnen **Sökväg** och klicka på pilen Nästa om du vill se alla inställningar i sökvägen `Microsoft Excel`:
+- I mallen markerar du kolumnerna **Inställningar**, **Tillstånd**, **Inställningstyp** eller **Sökväg** för att sortera listan. Du kan till exempel välja kolumnen **Sökväg** och klicka på pilen Nästa om du vill se alla inställningar för sökvägen `Microsoft Excel`.
 
-- Använd rutan **Sök** i mallen för att hitta specifika inställningar. Du kan söka genom att ange inställning eller sökväg. Sök t.ex. efter `copy`. Alla inställningar med `copy` visas:
+- Använd rutan **Sök** i mallen för att hitta specifika inställningar. Du kan söka genom att ange inställning eller sökväg. Du kan till exempel välja **Alla inställningar** och söka efter `copy`. Alla inställningar med `copy` visas:
 
   > [!div class="mx-imgBorder"]
   > ![Sök efter kopia för att visa alla enhetsinställningar i administrativa mallar i Intune](./media/administrative-templates-windows/search-copy-settings.png) 
 
   I ett annat exempel söker du efter `microsoft word`. Du ser inställningarna du kan ange för Microsoft Word-programmet. Sök efter `explorer` om du vill se Internet Explorer-inställningar du kan lägga till i mallen.
+
+- Du kan också smalna av sökningen genom att bara välja **Datorkonfiguration** eller **Användarkonfiguration**.
+
+  Om du till exempel vill se alla tillgängliga användarinställningar för Internet Explorer väljer du **Användarkonfiguration** och söker efter `Internet Explorer`. Endast de IE-inställningar som gäller för användare visas:
+
+  :::image type="content" source="./media/administrative-templates-windows/show-all-internet-explorer-settings-user-configuration.png" alt-text="Välj Användarkonfiguration i ADMX-mallen och sök eller filtrera efter Internet Explorer i Microsoft Intune.":::
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -6,8 +6,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/23/2019
-ms.topic: conceptual
+ms.date: 05/15/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6512aa01a55a3a1ed949b634b97eb891e9459a9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 361f0ff36b78daddd08954953744f3f95191d4f3
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80327116"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83990611"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Registrera Windows-enheter i Intune med hjälp av Windows Autopilot  
 Det är enklare att registrera enheter i Intune med Windows Autopilot. Att skapa och underhålla anpassade operativsystemavbildningar är en process som tar tid. Det kan också ta tid att applicera de här anpassade operativsystemavbildningarna till nya enheter för att förbereda dem för användning innan du ger dem till dina slutanvändare. Med Microsoft Intune och Autopilot kan du ge dina slutanvändare nya enheter utan att behöva skapa, underhålla och installera anpassade operativsystemavbildningar på enheterna. Om du använder Intune för att hantera Autopilot-enheter kan du hantera principer, profiler, appar med mera när de har registrerats. I [översikten över Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot) finns en översikt över fördelar, scenarier och förutsättningar.
@@ -34,6 +34,8 @@ Det finns fyra typer av Autopilot-distributioner:
 - [Detaljerat](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove) gör att partner eller IT-personal kan företablera en Windows 10-dator så att den är helt konfigurerad och användningsklar
 - [Autopilot för befintliga enheter](https://docs.microsoft.com/windows/deployment/windows-autopilot/existing-devices) gör att du enkelt kan distribuera den senaste versionen av Windows 10 till dina befintliga enheter
 - [Användarläge](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) för traditionella användare.
+
+Den här artikeln förklarar hur du konfigurerar Autopilot för Windows-datorer. Mer information om Autopilot och Hololens finns i [Windows Autopilot för HoloLens 2](https://docs.microsoft.com/hololens/hololens2-autopilot).
 
 ## <a name="prerequisites"></a>Krav
 
@@ -90,7 +92,7 @@ Du kan lägga till Windows Autopilot-enheter genom att importera en CSV-fil med 
 
 ## <a name="create-an-autopilot-deployment-profile"></a>Skapa en Autopilot-distributionsprofil
 Autopilot-distributionsprofiler används för att konfigurera Autopilot-enheterna. Du kan skapa upp till 350 profiler per klientorganisation.
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Windows** > **Windows-registrering** > **Distributionsprofiler** > **Skapa profil**.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **Windows** > **Windows-registrering** > **Distributionsprofiler** > **Skapa profil** > **Windows-dator** eller **HoloLens**. Den här artikeln förklarar hur du konfigurerar Autopilot för Windows-datorer. Mer information om Autopilot och Hololens finns i [Windows Autopilot för HoloLens 2](https://docs.microsoft.com/hololens/hololens2-autopilot).
 2. På sidan **Grundinställningar** anger du ett **Namn** och en valfri **Beskrivning**.
 
     ![Skärmbild av sidan Grundinställningar](./media/enrollment-autopilot/create-profile-basics.png)
@@ -192,7 +194,7 @@ Krav: Azure Active Directory Företagsportal har konfigurerats och Windows 10, v
 
     ![Skärmbild av eget namn](./media/enrollment-autopilot/friendly-name.png)
 
-4. Välj **Ok**.
+4. Välj **OK**.
 
 
 ## <a name="delete-autopilot-devices"></a>Ta bort Autopilot-enheter

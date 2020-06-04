@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/21/2020
-ms.topic: conceptual
+ms.date: 05/19/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8707b938231e682fe1cd165c207cca8e575950d4
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 24938f85cf85e9c5934a0e26029ec2ccfc5c33a7
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80324661"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989450"
 ---
 # <a name="add-microsoft-defender-atp-to-macos-devices-using-microsoft-intune"></a>Lägga till Microsoft Defender Avancerat skydd på macOS-enheter med Microsoft Intune
 
@@ -76,7 +76,7 @@ Appen som du har skapat visas i applistan där du kan tilldela den till de grupp
 > Apple tillhandahåller för närvarande inget sätt för Intune att avinstallera Microsoft Defender ATP på macOS-enheter.
 
 ## <a name="next-steps"></a>Nästa steg
-- Information om hur du konfigurerar Microsoft Defender ATP på macOS-enheter finns i [Konfigurera Microsoft Defender ATP på macOS-enheter](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/mac-preferences).
+- Information om att tillämpa en antiviruspolicy för Endpoint Security i Intune finns i [Endpoint Security-policyn Antivirus i Intune](../protect/endpoint-security-antivirus-policy.md) 
 - Om du vill veta mer om att inkludera och exkludera apptilldelningar från grupper med användare kan du läsa [Inkludera och exkludera apptilldelningar](apps-inc-exl-assignments.md).
-- [Tilldela appar till grupper](apps-deploy.md)
+- Information om att tilldela appar till grupper i Intune finns i [Tilldela appar till grupper](apps-deploy.md).
 

@@ -5,8 +5,8 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/21/2020
-ms.topic: conceptual
+ms.date: 05/21/2020
+ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9fa14dd54a820ed20f8b3b504a836392c7f428f
-ms.sourcegitcommit: 4381afb515c06f078149bd52528d1f24b63a2df9
+ms.openlocfilehash: 559d9a704f0b33e3fda3adf628626b56ff263de3
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82538164"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989717"
 ---
 # <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Ange regler för enheter som tillåter åtkomst till resurser i din organisation med Intune
 
@@ -64,11 +64,17 @@ Remember that you need to implement Conditional Access policies in addition to c
 
 ## <a name="device-compliance-policies-work-with-azure-ad"></a>Enhetsefterlevnadsprinciper kan användas med Azure AD
 
-Intune använder [villkorlig åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) i Azure Active Directory (AD) (öppnar en annan dokumentwebbplats) för att tvinga fram efterlevnaden. När en enhet registreras i Intune startas även registreringen i Azure AD och enhetens information uppdateras i Azure AD. Enhetens efterlevnadsstatus är viktig information. Efterlevnadsstatusen används av villkorliga åtkomstprinciper för att blockera eller tillåta åtkomst till e-post eller andra organisationsresurser.
+Intune använder [villkorsstyrd åtkomst](../protect/conditional-access.md) för att säkerställa efterlevnad. Villkorsstyrd åtkomst är en Azure Active Directory-teknik (Azure AD).
 
-- [Vad är enhetshantering i Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/device-management-introduction) är en bra resurs som beskriver varför och hur enheter registreras i Azure AD.
+När en enhet registreras i Intune startas även registreringen i Azure AD och enhetens information uppdateras i Azure AD. Enhetens efterlevnadsstatus är viktig information. Efterlevnadsstatusen används av villkorliga åtkomstprinciper för att blockera eller tillåta åtkomst till e-post eller andra organisationsresurser.
 
-- I [Villkorlig åtkomst](conditional-access.md) och [Vanliga sätt att använda villkorlig åtkomst på](conditional-access-intune-common-ways-use.md) beskrivs den här funktionen i relation till Intune.
+Läs om villkorsstyrd åtkomst och Intune:
+
+- [Vanliga sätt att använda villkorlig åtkomst på med Intune](conditional-access-intune-common-ways-use.md)
+
+Lär dig mer om villkorsstyrd åtkomst i Azure AD-dokumentationen:
+  - [Vad är villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+  - [Vad är en enhetsidentitet](https://docs.microsoft.com/azure/active-directory/device-management-introduction)
 
 ## <a name="ways-to-use-device-compliance-policies"></a>Hantera efterlevnadsprinciper för enheter
 
@@ -86,22 +92,22 @@ Du kan distribuera policyer för efterlevnad till användare i användargrupper 
 
 Intune innehåller också en uppsättning inbyggda efterlevnadsprincipinställningar. Följande inbyggda principer utvärderas på alla enheter som registrerats i Intune:
 
-- **Markera enheter utan någon tilldelad policy för efterlevnad som**: Den här egenskapen har två värden:
+- **Markera enheter utan någon tilldelad policy för efterlevnad som**: Detta är en standardåtgärd för inkompatibilitet. Den här egenskapen har två värden:
 
   - **Kompatibel** (*standard*): säkerhetsfunktion av
   - **Ej kompatibel**: säkerhetsfunktion av
 
   Om en enhet inte har en policy för efterlevnad är den kompatibel som standard. Om du använder villkorlig åtkomst med kompatibla principer rekommenderar vi att du ändrar standardinställningen till **Inte kompatibel**. Om en användare inte är kompatibel eftersom ingen princip har tilldelats, visar [företagsportalsappen](../apps/company-portal-app.md)`No compliance policies have been assigned`.
 
-- **Förbättrad identifiering av uppbrytning**: När den här inställningen är aktiverad inträffar jailbrokad enhetsstatus oftare på iOS/iPad-enheter. Den här inställningen påverkar endast enheter som är föremål för en efterlevnadsprincip som blockerar jailbrokade enheter. Om den här egenskapen aktiveras används enhetens platstjänster, vilket kan påverka batterianvändningen. Användarens platsdata lagras inte av Intune och används bara för att utlösa upplåsningsidentifiering oftare i bakgrunden. 
+- **Förbättrad identifiering av uppbrytning** (*gäller iOS/iPadOS*): När den här inställningen är aktiverad inträffar jailbrokad enhetsstatus oftare på iOS/iPad-enheter. Den här inställningen påverkar endast enheter som är föremål för en efterlevnadsprincip som blockerar jailbrokade enheter. Om den här egenskapen aktiveras används enhetens platstjänster, vilket kan påverka batterianvändningen. Användarens platsdata lagras inte av Intune och används bara för att utlösa upplåsningsidentifiering oftare i bakgrunden. 
 
   När du aktiverar den här inställningen kräver den följande av enheter:
   - Aktivera platstjänster på operativsystemsnivå.
   - Tillåt alltid att företagsportalen använder platstjänster.
 
-  Utvärderingen utlöses genom att företagsportalappen öppnas, eller att enheten fysiskt flyttas ett betydande avstånd – cirka 500 meter eller mer. På iOS 13 och senare kräver den här funktionen att användare väljer ”Tillåt alltid” när enheten ber dem att fortsätta tillåta att företagsportalen använder deras plats i bakgrunden. Om användare inte alltid tillåter åtkomst till platser och har en princip med den här inställningen konfigurerad markeras enheten som inkompatibel. Observera att Intune inte kan garantera att varje betydande platsändring säkerställer en kontroll med upplåsningsdetektering, eftersom detta är beroende av en enhets nätverksanslutning vid den aktuella tidpunkten.
+  Förbättrad identifiering fungerar via platstjänsterna. Utvärderingen utlöses genom att företagsportalappen öppnas, eller att enheten fysiskt flyttas ett betydande avstånd – cirka 500 meter eller mer. På iOS 13 och senare kräver den här funktionen att användare väljer ”Tillåt alltid” när enheten ber dem att fortsätta tillåta att företagsportalen använder deras plats i bakgrunden. Om användare inte alltid tillåter åtkomst till platser och har en princip med den här inställningen konfigurerad markeras enheten som inkompatibel. Observera att Intune inte kan garantera att varje betydande platsändring säkerställer en kontroll med upplåsningsdetektering, eftersom detta är beroende av en enhets nätverksanslutning vid den aktuella tidpunkten.
 
-- **Giltighetsperiod för efterlevnadsstatus (dagar)** : Ange inom vilken tidsperiod enheterna ska rapportera status för alla mottagna efterlevnadsprinciper. Enheter som inte returnerar status inom den här tidsperioden behandlas som inkompatibla. Standardvärdet är 30 dagar. Minimivärdet är 1 dag.
+- **Giltighetsperiod för efterlevnadsstatus (dagar)** : Ange inom vilken tidsperiod enheterna ska rapportera status för alla mottagna efterlevnadsprinciper. Enheter som inte returnerar status inom den här tidsperioden behandlas som inkompatibla. Standardvärdet är 30 dagar. Det högsta värdet är 120 dagar. Minimivärdet är 1 dag.
 
   Den här inställningen visar **Är aktiv** för efterlevnadsstandardpolicyn (**Enheter** > **Övervaka** > **Ställa in regelefterlevnad**). Bakgrundsaktiviteten för den här principen körs en gång om dagen.
 

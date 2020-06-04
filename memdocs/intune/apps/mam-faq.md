@@ -17,17 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16c086295b93b72ef2f9cfbd2d6a15d6bb54f320
-ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
+ms.openlocfilehash: c544109b170d25f4d9a2999a11bc47d4b4a090c5
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82183025"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989974"
 ---
 # <a name="frequently-asked-questions-about-mam-and-app-protection"></a>Vanliga frågor och svar om MAM och appskydd
 
 Den här artikeln ger svar på några vanliga frågor om Intune MAM (Mobile Application Management) och appskyddet i Intune.
-
 
 ## <a name="mam-basics"></a>Grundläggande om MAM
 
@@ -35,8 +34,7 @@ Den här artikeln ger svar på några vanliga frågor om Intune MAM (Mobile Appl
 Med [Intune mobile application management](app-lifecycle.md) avses den svit av Intune-hanteringsfunktioner som låter dig publicera, pusha, konfigurera, skydda, övervaka och uppdatera mobilappar för dina användare.
 
 **Vilka är fördelarna med appskyddet i MAM?**<br></br>
-MAM skyddar företagets data inom ett program. Med MAM utan registrering (MAM-WE), kan en arbets- eller skolrelaterad app som innehåller känsliga data hanteras på nästan alla enheter, inklusive personliga enheter i BYOD-scenarier (Bring Your Own Device).
- Många produktivitetsappar, till exempel Microsoft Office-apparna, kan hanteras av Intune MAM. Se listan över officiella [Intune-hanterade appar](https://www.microsoft.com/cloud-platform/microsoft-intune-apps) tillgängliga för allmänt bruk.
+MAM skyddar företagets data inom ett program. Med MAM utan registrering (MAM-WE), kan en arbets- eller skolrelaterad app som innehåller känsliga data hanteras på nästan alla enheter, inklusive personliga enheter i BYOD-scenarier (Bring Your Own Device). Många produktivitetsappar, till exempel Microsoft Office-apparna, kan hanteras av Intune MAM. Se listan över officiella [Intune-hanterade appar](https://www.microsoft.com/cloud-platform/microsoft-intune-apps) tillgängliga för allmänt bruk.
 
 **Vilka enhetskonfigurationer har MAM stöd för?**<br></br>
 Intune MAM stöder två konfigurationer:
@@ -72,8 +70,7 @@ Alla appar som har integrerats med [Intune App-SDK](../developer/app-sdk.md) ell
 
 - Slutanvändaren måste ha en licens för Microsoft Intune som tilldelats deras Azure Active Directory-konto. Se [Hantera Intune-licenser](../fundamentals/licenses-assign.md) för information om hur du tilldelar Intune-licenser till slutanvändare.
 
-- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål.
- Appskyddsprinciper kan skapas och distribueras i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
+- Slutanvändaren måste tillhöra en säkerhetsgrupp som är målet för en appskyddsprincip. Samma appskyddsprincip måste ha den specifika app som används som mål. Appskyddsprinciper kan skapas och distribueras i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Säkerhetsgrupper kan för närvarande skapas i [Microsoft 365-administrationscentret](https://admin.microsoft.com).
 
 - Slutanvändaren måste logga in på appen med sitt AAD-konto.
 
@@ -81,7 +78,7 @@ Alla appar som har integrerats med [Intune App-SDK](../developer/app-sdk.md) ell
 
 Intune SDK-utvecklingsteamet testar och underhåller aktivt stödet för appar som skapats med de ursprungliga Android-, iOS/iPadOS- (Obj-C, Swift), Xamarin- och Xamarin.Forms-plattformarna. Även om vissa kunder har lyckats integrera Intune SDK med andra plattformar som React Native och NativeScript, tillhandahåller vi inte någon uttrycklig vägledning eller några plugin-program för apputvecklare som använder något annat än våra stödda plattformar.
 
-**Har Intune APP SDK stöd för Microsoft Authentication Library (MSAL) eller sociala konton?**<br></br>
+**Har Intune APP SDK stöd för Microsoft Authentication Library (MSAL)?**<br></br>
 Intune App SDK kan använda antingen Azure Active Directory Authentication Library eller Microsoft Authentication Library för scenarierna med autentisering och villkorlig start. Den förlitar sig även på ADAL/MSAL för att registrera användarens identitet i MAM-tjänsten för hantering utan enhetsregistreringsscenarier.
 
 **Vilka är de ytterligare krav som ställs för användning av [Outlook-mobilappen](https://products.office.com/outlook)?**
@@ -114,7 +111,6 @@ Se licenskraven för [Skype för företag](https://products.office.com/skype-for
 
 **Vad är stöd för flera identiteter?**<br></br>
 Stöd för flera identiteter är möjligheten för Intune App SDK att bara tillämpa appskyddsprinciper på arbets- eller skolkontot som använts för inloggning i appen. Om ett personligt konto är inloggat i appen ändras inga data.
-
 
 **Vad är syftet med stöd för flera identiteter?**<br></br>
 Stöd för flera identiteter gör att appar med både företags- och konsumentanvändare (t.ex. Office-appar) kan släppas offentligt med Intunes appskyddsfunktioner för företagets konton.
@@ -174,13 +170,12 @@ Intune kan rensa AppData på tre olika sätt: fullständig rensning av enheten, 
 Intunes appskydd är beroende av att användarens identiteten är konsekvent mellan appen och Intune App SDK. Det enda sättet att garantera detta är via modern autentisering. Det finns scenarier där appar kan fungera med en lokal konfiguration, men de är varken konsekventa eller garanterade.
 
 **Finns det ett säkert sätt att öppna webblänkar från hanterade appar?**<br></br>
-Ja! IT-administratören kan distribuera och ange appskyddsprincip för [Intune Managed Browser-appen](../apps/app-configuration-managed-browser.md), en webbläsare som har utvecklats av Microsoft Intune som enkelt kan hanteras med Intune. IT-administratören kan kräva att alla webblänkar i Intune-hanterade appar ska öppnas med Managed Browser-appen.
+Ja! IT-administratören kan distribuera och ställa in appskyddspolicyn för appen Microsoft Edge. IT-administratören kan kräva att alla webblänkar i Intune-hanterade appar ska öppnas med appen Microsoft Edge.
 
 ## <a name="app-experience-on-android"></a>App-upplevelse på Android
 
 **Varför behövs företagsportalappen för att Intunes appskydd ska fungera på Android-enheter?**<br></br>
-Många av appskyddets funktioner är inbyggda i företagsportalappen.
- Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För MAM-WE behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
+Många av appskyddets funktioner är inbyggda i företagsportalappen. Enhetsregistrering _krävs inte_, även om företagsportalappen alltid krävs. För MAM-WE behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
 
 **Hur fungerar åtkomstinställningar till flera Intune-appar som är konfigurerade för samma uppsättning appar och användare med Android?**<br></br>
 Appskyddsprinciper i Intune för åtkomst tillämpas i en viss ordning på slutanvändarenheter när de försöker få åtkomst till en riktad app från ett företagskonto. Vanligtvis får en blockering företräde, och därefter en varning som kan avfärdas. Exempel: Om det är tillämpligt för den specifika användaren/appen används en lägsta inställning för Android-korrigeringsprogramversionen. Den varnar en användare för att göra en uppdatering efter den lägsta inställningen för Android-korrigeringsprogramversionen som blockerar användarens åtkomst. I scenariot där en IT-administratör konfigurerar den äldsta Android-korrigeringsprogramversionen till 2018-03-01 och den äldsta Android-korrigeringsprogramversionen (endast varning) till 2018-02-01, medan enheten som försöker få åtkomst till appen hade korrigeringsprogramversionen 2018-01-01, blockeras slutanvändaren baserat på den mer restriktiva inställningen för den lägsta Android-korrigeringsprogramversionen. Det leder till blockerad åtkomst. 
@@ -216,7 +211,7 @@ Intunes appskyddsprinciper kan styra åtkomst till den Intune-licensierade anvä
 Syftet med detta är att fortsätta att hålla din organisations data i appen säkra och skyddade på appnivå. Den här funktionen är endast tillgänglig för iOS/iPadOS och kräver medverkan av program som integrerar Intune App SDK:n för iOS/iPadOS, version 9.0.1 eller senare. Integrering av SDK krävs så att beteendet kan tillämpas på de berörda programmen. Den här integreringen händer på löpande bas, och är beroende av specifika programteam. Vissa appar som deltar omfattar WXP, Outlook, Managed Browser och Yammer.
   
 **Jag kan använda delningtillägg i iOS för att öppna arbets- eller skoldata i ohanterade appar, även om dataöverföringsprincipen är inställd på "endast hanterade appar" eller "inga appar." Kan inte detta läcka data?**<br></br>
-Intunes appskyddsprincip kan inte styra iOS resurstillägg utan att hantera enheten. Därför krypterar Intune _**"företagets" data innan den delas utanför appen**_ . Du kan verifiera detta genom att försöka öppna en "företags"-fil utanför den hanterade appen. Filen ska vara krypterad och inte kunna öppnas utanför den hanterade appen.
+Intunes appskyddsprincip kan inte styra iOS resurstillägg utan att hantera enheten. Därför krypterar Intune _**"företagets" data innan den delas utanför appen**_. Du kan verifiera detta genom att försöka öppna en "företags"-fil utanför den hanterade appen. Filen ska vara krypterad och inte kunna öppnas utanför den hanterade appen.
 
 **Hur fungerar åtkomstinställningar till flera Intune-appar som är konfigurerade för samma uppsättning appar och användare med iOS?**<br></br>
 Appskyddsprinciper i Intune för åtkomst tillämpas i en viss ordning på slutanvändarenheter när de försöker få åtkomst till en riktad app från ett företagskonto. Vanligtvis får rensningar företräde, följt av blockeringar och därefter varningar som kan avfärdas. Exempel: Om det är tillämpligt för den specifika användaren/appen används en lägsta iOS/iPadOS-operativsysteminställning som varnar en användare för att göra en uppdatering av sin iOS/iPadOS-version efter den lägsta iOS/iPadOS-operativsysteminställningen som blockerar användarens åtkomst. I scenariot där en IT-administratör konfigurerar det äldsta iOS/iPadOS-operativsystemet till 11.0.0.0 och det äldsta iOS/iPadOS-operativsystemet (endast varning) till 11.1.0.0, medan enheten som försöker få åtkomst till appen hade iOS/iPadOS-version 10 blockeras slutanvändaren baserat på den mer restriktiva inställningen för den lägsta iOS/iPadOS-operativsystemversionen. Det leder till blockerad åtkomst.

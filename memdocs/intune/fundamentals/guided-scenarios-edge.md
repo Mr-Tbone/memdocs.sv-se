@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5c2af6ce301b0a5de06cbbd4126b1661ca21fb0
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 49f9b9076d20c1f5d4740a6f8b1b9883e12ce629
+ms.sourcegitcommit: a1da477542fb0ff360685d6eb58ef43e37ac3950
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79359072"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83853544"
 ---
 # <a name="guided-scenario---deploy-microsoft-edge-for-mobile"></a>Guidat scenario – Distribuera Microsoft Edge för mobil
 
@@ -38,7 +38,7 @@ Nedanstående Microsoft Edge-företagsfunktioner som aktiveras med Intune-princi
 - **Integrering med Azure Application-proxy** – Administratörer kan styra åtkomsten till SaaS-appar och webbappar, vilket garanterar att webbläsarbaserade appar endast körs i den skyddade Microsoft Edge-webbläsaren, oavsett om användarna ansluter från företagets nätverk eller från Internet.
 - **Genvägar till hanterade favoriter och startsida** – För att underlätta åtkomsten kan administratörer ange URL:er som visas i Favoriter när slutanvändarna använder sin företagsmiljö. Administratörer kan ange en genväg till startsidan som visas som primär genväg när företagsanvändaren öppnar en ny sida eller en ny flik i Microsoft Edge.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - [Ange MDM-auktoriteten till Intune](mdm-authority-set.md#set-mdm-authority-to-intune) – inställningen för hantering av mobilenheter (MDM, Mobile Device Management) avgör hur du hanterar dina enheter. Som IT-administratör måste du ange en utfärdare för hantering av mobila enheter innan användarna kan registrera enheter för hantering.
 - Intune-administratörsbehörigheter som krävs:
@@ -90,6 +90,5 @@ I det sista steget kan du granska en sammanfattning av de inställningar som du 
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Förbättra säkerheten för användning av Microsoft Edge genom att konfigurera integrering av Intune-appskyddsprincip. Mer information finns i [Appskyddsprinciper för Microsoft Edge](../apps/manage-microsoft-edge.md#application-protection-policies-for-microsoft-edge).
-- Om du har webbplatser i intranätet som ska inkluderas bör du gå igenom skydd av åtkomst med integrering av Azure-programproxy. Mer information finns i [Konfigurera programproxyinställningar för Microsoft Edge](../apps/manage-microsoft-edge.md#configure-application-proxy-settings-for-microsoft-edge).
-
+- Förbättra säkerheten för användning av Microsoft Edge genom att konfigurera integrering av Intune-appskyddsprincip. Mer information finns i [Skapa appskyddsprinciper i Intune](../apps/manage-microsoft-edge.md#create-intune-app-protection-policies).
+- Om du har webbplatser i intranätet som ska inkluderas bör du gå igenom skydd av åtkomst med integrering av Azure-programproxy. Mer information finns i [Hantera proxykonfiguration](../apps/manage-microsoft-edge.md#manage-proxy-configuration).

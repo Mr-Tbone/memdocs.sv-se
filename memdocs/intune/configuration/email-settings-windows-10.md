@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 05/14/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa861a266f89b82fdd2d6e73d30fdc2e58da33b4
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 0cd3505d0a0067adfe9082d7aa3882f3421a2183
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086918"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83429609"
 ---
 # <a name="email-profile-settings-for-devices-running-windows-10-in-microsoft-intune"></a>E-postprofilinställningar för enheter som kör Windows 10 i Microsoft Intune
 
@@ -40,10 +40,10 @@ Använd e-postprofilinställningarna till att konfigurera E-post-appen på dina 
   - **SAM-kontonamn**: Kräver domänen, till exempel `domain\user1`. Ange även:  
     - **Källa för användardomännamn**: Välj **AAD** (Azure Active Directory) eller **Anpassat**.
 
-      När du väljer att hämta attributen från **AAD** anger du:
+      När du hämtar attributen från **AAD** anger du även:
       - **Attribut för användardomännamn från AAD**: Välj att hämta attributet **Fullständigt domännamn** eller **NetBIOS-namn** för användaren.
 
-      När du väljer att använda **anpassade** attribut anger du:
+      När du använder **anpassade** attribut anger du även:
       - **Anpassat domännamn som används**: Ange ett värde som Intune använder för domännamnet, exempelvis `contoso.com` eller `contoso`.
 
 - **E-postadressattribut från AAD**: Intune hämtar det här attributet från Azure Active Directory (AAD). Välj hur e-postadressen för användaren ska genereras. Alternativen är:
@@ -56,12 +56,14 @@ Använd e-postprofilinställningarna till att konfigurera E-post-appen på dina 
 
 ### <a name="synchronization"></a>Synkronisering
 
-- **Antal e-postmeddelanden som ska synkroniseras**: Välj det antal dagar med e-post du vill synkronisera. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Välj **Obegränsat** om du vill synkronisera all tillgänglig e-post.
-- **Synkroniseringsschema**: Välj det schema som ska användas av enheterna när de synkroniserar data från Exchange-servern. Du kan också välja **När meddelanden tas emot**, som synkroniserar data så fort de anländer. Eller välj **Manuellt** så att enhetens användare startar synkroniseringen.
+- **Antal e-postmeddelanden som ska synkroniseras**: Välj det antal dagars e-post du vill synkronisera. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Välj **Obegränsat** om du vill synkronisera all tillgänglig e-post.
+- **Synkroniseringsschema**: Välj det schema som ska användas av enheterna när de synkroniserar data från Exchange-servern. Du kan också välja **När meddelanden tas emot**, som synkroniserar data så fort de anländer. Eller välja **Manuellt** så att enhetens användare startar synkroniseringen.
+
+  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
 ### <a name="content-sync"></a>Synkronisering av innehåll
 
-- **Innehållstyp som ska synkroniseras:** Välj vilka typer av innehåll du vill synkronisera till enheterna:
+- **Innehållstyp som ska synkroniseras:** Välj vilka typer av innehåll du vill synkronisera till enheterna. Alternativen är:
   - **Kontakter**: **På** synkroniserar kontakterna. **Av** synkroniserar inte automatiskt kontakterna. Användarna synkroniseras manuellt.
   - **Kalender**: **På** synkroniserar kalendern. **Av** synkroniserar inte automatiskt kontakterna. Användarna synkroniseras manuellt.
   - **Uppgifter**: **På** synkroniserar aktiviteterna. **Av** synkroniserar inte automatiskt aktiviteterna. Användarna synkroniseras manuellt.
@@ -70,4 +72,6 @@ Använd e-postprofilinställningarna till att konfigurera E-post-appen på dina 
 
 Du kan också konfigurera e-postinställningarna på [Android-](email-settings-android.md), [Android Enterprise-](email-settings-android-enterprise.md) och [iOS/iPad](email-settings-ios.md). 
 
-[Konfigurera e-postinställningar i Intune](email-settings-configure.md).
+[Läs mer om e-postinställningarna i Intune](email-settings-configure.md).
+
+[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).

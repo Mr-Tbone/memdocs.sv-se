@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/26/2020
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60a4ac793500cd4d31df2188344e2b5f4e1094a4
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: a9be644a47a361cf29e7b7132b2c87a4921553ea
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80359153"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989426"
 ---
 # <a name="windows-10-and-windows-holographic-for-business-device-settings-to-run-as-a-dedicated-kiosk-using-intune"></a>Inställningar för enheter med Windows 10 (och senare) och Windows Holographic for Business som ska köras i dedikerat helskärmsläge med Intune
 
@@ -45,30 +45,46 @@ Den här artikeln beskriver hur du skapar en enhetskonfigurationsprofil. En list
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+   - **Plattform**: Välj **Windows 10 och senare**.
+   - **Profil**: Välj **Helskärmsläge**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
    - **Namn**: Ange ett beskrivande namn på den nya profilen.
    - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-   - **Plattform**: Välj **Windows 10 och senare**
-   - **Profiltyp**: Välj **Helskärmsläge**
 
-4. I **Inställningar** väljer du ett **helskärmsläge**. **Helskärmsläge**: Identifierar den typ av kioskläge som stöds av principen. Alternativen är:
+6. Välj **Nästa**.
+7. I **Konfigurationsinställningar** > **Välj ett helskärmsläge** väljer du den typ av helskärmsläge som stöds av policyn. Alternativen är:
 
-    - **Inte konfigurerat** (standard): Principen aktiverar inte helskärmsläge.
+    - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Principen aktiverar inte helskärmsläge.
     - **En app, helskärmsläge**: Enhet körs som ett enda användarkonto och låser det till en enda Store-app. När användaren loggar in startar alltså en specifik app. Det här läget gör också att användaren inte kan öppna nya appar eller ändra appen som körs.
     - **Helskärmsläge för flera appar**: Enheten kör flera Store-appar, Win32-appar eller inkorgens Windows-appar med hjälp av ett ID för programanvändarmodell (AUMID). Det är bara de appar som du lägger till som är tillgängliga på enheten.
 
         Med en kiosk för flera appar, eller en enhet för ett bestämt ändamål, skapas en mer användarvänlig upplevelse för användarna eftersom de endast ser de appar de behöver. Appar som de inte behöver visas inte.
 
     En lista med alla inställningar och vad de gör finns i:
+
       - [Inställningar för helskärmsläge i Windows 10](kiosk-settings-windows.md)
       - [Inställningar för helskärmsläge i Windows Holographic for Business](kiosk-settings-holographic.md)
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar.
+8. Välj **Nästa**.
 
-Profilen skapas och visas i profillistan. Nu ska du [tilldela](device-profile-assign.md) profilen.
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar** väljer du de användare eller den användargrupp som ska få din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
+Nästa gång varje enhet checkar in tillämpas principen.
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
+När [profilen har tilldelats](device-profile-assign.md) [övervakar du dess status](device-profile-monitor.md).
 
 Du kan skapa helskärmsprofiler för enheter som kör följande plattformar:
 

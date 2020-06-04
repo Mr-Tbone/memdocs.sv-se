@@ -1,13 +1,13 @@
 ---
-title: Kryptera enheter med den krypteringsmetod som stöds av plattformarna
+title: Kryptera Windows 10-enheter med BitLocker i Intune
 titleSuffix: Microsoft Intune
-description: Kryptera enheter med inbyggda krypteringsmetoder som BitLocker eller FileVault och hantera återställningsnycklarna för de krypterade enheterna på Intune-portalen.
+description: Kryptera enheter med inbyggda krypteringsmetoder i BitLocker och hantera återställningsnycklarna för de krypterade enheterna i Intune-portalen.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/03/2020
-ms.topic: conceptual
+ms.date: 05/18/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -17,114 +17,103 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: d79f97da88a939d95b68a9ef747da87cf3844598
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 16a2558a0f4b002528e749f4a66d3341e83c8576
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80322475"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989664"
 ---
-# <a name="use-device-encryption-with-intune"></a>Använda enhetskryptering med Intune
+# <a name="manage-bitlocker-policy-for-windows-10-in-intune"></a>Hantera BitLocker-policy för Windows 10 i Intune
 
-Skydda data på dina enheter genom att använda Intune för att hantera inbyggd disk- eller enhetskryptering för enheter.
+Använd Intune för att konfigurera BitLocker-diskkryptering på enheter som kör Windows 10.
 
-Konfigurera diskkryptering som en del av en enhetskonfigurationsprofil för Endpoint Protection. Följande plattformar och krypteringstekniker stöds av Intune:
+BitLocker är tillgängligt på enheter som kör Windows 10 eller senare. För vissa BitLocker-inställningar måste enheten har en TPM som stöds.
 
-- macOS: FileVault
-- Windows 10 och senare: BitLocker
+Använd någon av följande policytyper till att konfigurera BitLocker på dina hanterade enheter
 
-Intune tillhandahåller också en inbyggd [krypteringsrapport](encryption-monitor.md) som visar information om krypteringsstatusen för enheter, för alla dina hanterade enheter.
+- **[Endpoint Security-policyn Diskkryptering för BitLocker i Windows 10](#create-an-endpoint-security-policy-for-bitlocker)** . BitLocker-profilen i *Endpoint Security* är en fokuserad grupp inställningar som är dedikerade för att konfigurera BitLocker.
 
-## <a name="filevault-encryption-for-macos"></a>FileVault-kryptering för macOS
+  Visa BitLocker-inställningarna som är tillgängliga i [BitLocker-profiler från policyn Diskkryptering](../protect/endpoint-security-disk-encryption-profile-settings.md#bitlocker).
 
-Använd Intune för att konfigurera FileVault-diskkryptering på enheter som kör macOS. Använd sedan Intunes krypteringsrapport för att visa krypteringsinformation för de enheterna och för att hantera återställningsnycklar för FileVault-krypterade enheter.
+- **[Enhetskonfigurationsprofil för Endpoint Protection för BitLocker i Windows 10](#create-an-endpoint-security-policy-for-bitlocker)** . BitLocker-inställningarna är en av de tillgängliga inställningskategorierna för Endpoint Protection i Windows 10.
 
-Användargodkänd enhetsregistrering krävs för att FileVault ska fungera på enheten. Användaren måste godkänna hanteringsprofilen manuellt i systeminställningarna för att registreringen ska betraktas som användargodkänd.
+  Visa de BitLocker-inställningar som är tillgängliga för [BitLocker i Endpoint Protection-profiler från policyn Enhetskonfiguration](../protect/endpoint-protection-windows-10.md#windows-settings).
 
-FileVault är ett program för kryptering av hela diskar som ingår i macOS. Du kan använda Intune för att konfigurera FileVault på enheter som kör **MacOS 10.13 eller senare**.
+> [!TIP]
+> Intune har en inbyggd [krypteringsrapport](encryption-monitor.md) som visar information om krypteringsstatusen för alla dina hanterade enheter. När Intune krypterar en Windows 10-enhet med BitLocker kan du visa och hämta BitLocker-återställningsnycklar när du visar krypteringsrapporten.
+>
+> Du kan också komma åt viktig information för BitLocker från dina enheter, som du hittar i Azure Active Directory (Azure AD).
+[krypteringsrapport](encryption-monitor.md) som visar information om krypteringsstatusen för alla dina hanterade enheter.
 
-Om du vill konfigurera FileVault skapar du en [enhetskonfigurationsprofil](endpoint-protection-configure.md) för slutpunktsskydd för macOS-plattformen. FileVault-inställningar är en av de tillgängliga inställningskategorierna för macOS-slutpunktsskydd.
+## <a name="permissions-to-manage-bitlocker"></a>Behörighet att hantera BitLocker
 
-När du har skapat en princip för att kryptera enheter med FileVault tillämpas principen på enheter i två steg. Först förbereds enheten så att Intune kan hämta och säkerhetskopiera återställningsnyckeln. Den här åtgärden kallas deponering eller deposition. När nyckeln har deponerats kan diskkrypteringen starta.
+För att kunna hantera BitLocker i Intune måste ditt konto ha rätt behörigheter för [rollbaserad åtkomstkontroll](../fundamentals/role-based-access-control.md) (RBAC) i Intune.
 
-![FileVault-inställningar](./media/encrypt-devices/filevault-settings.png)
+Nedan ser du BitLocker-behörigheterna som ingår i kategorin Fjärruppgifter och de inbyggda RBAC-roller som ger behörigheten:
 
-Mer information om FileVault-inställningen som du kan hantera med Intune finns i [FileVault](endpoint-protection-macos.md#filevault) i Intune-artikeln om inställningar för slutpunktsskydd i macOS.
-
-### <a name="permissions-to-manage-filevault"></a>Behörighet att hantera FileVault
-
-För att kunna hantera FileVault i Intune måste ditt konto ha rätt behörigheter för [rollbaserad åtkomstkontroll](../fundamentals/role-based-access-control.md) (RBAC) i Intune.
-
-Nedan visas de FileVault-behörigheter som ingår i kategorin **Fjärruppgifter** och de inbyggda RBAC-roller som ger behörigheten:
- 
-- **Hämta FileVault-nyckel**:
-  - Supportavdelningen
-  - Slutpunktssäkerhetshanteraren
-
-- **Rotera FileVault-nyckel**
+- **Rotera Bitlocker-nycklar**
   - Supportavdelningen
 
-### <a name="how-to-configure-macos-filevault"></a>Så här konfigurerar du FileVault för macOS
+## <a name="create-and-deploy-policy"></a>Skapa och distribuera policy
+
+Använd någon av följande procedurer för att skapa de policytyper du vill använda.
+
+### <a name="create-an-endpoint-security-policy-for-bitlocker"></a>Skapa en Endpoint Security-policy för BitLocker
+
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Välj **Endpoint Security** > **Diskkryptering** > **Skapa princip**.
+
+3. Ange följande alternativ:
+   1. **Plattform**: Windows 10 eller senare
+   2. **Profil**: BitLocker
+
+   ![Välj BitLocker-profilen](./media/encrypt-devices/select-windows-bitlocker-es.png)
+
+4. Konfigurera inställningarna för BitLocker enligt dina affärsbehov på sidan **Konfigurationsinställningar**.  
+
+   Om du vill aktivera BitLocker tyst läser du [Tyst aktivering av BitLocker på enheter](#silently-enable-bitlocker-on-devices) i den här artikeln, där står ytterligare förutsättningar och den specifika inställningskonfiguration du måste använda.
+
+   Välj **Nästa**.
+
+5. På sidan **Omfång (taggar)** väljer du **Välj omfångstaggar** för att öppna fönstret Välj taggar och tilldela omfångstaggar till profilen.
+
+   Fortsätt genom att välja **Nästa**.
+
+6. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om att tilldela profiler finns i Tilldela profiler till användare och enheter.
+
+   Välj **Nästa**.
+
+7. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
+
+### <a name="create-a-device-configuration-profile-for-bitlocker"></a>Skapa en enhetskonfigurationsprofil för BitLocker
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
 3. Ange följande alternativ:
+   1. **Plattform**: Windows 10 och senare
+   2. **Profiltyp**: Endpoint Protection
 
-   - Plattform: macOS
-   - Profiltyp: Endpoint Protection
-
-4. Välj **Inställningar** > **FileVault**.
-
-5. För *FileVault* väljer du **Aktivera**.
-
-6. För *Typ av återställningsnyckel* stöds endast **Privat nyckel**.
-
-   Överväg att lägga till ett meddelande som hjälper slutanvändarna att hämta återställningsnyckeln för deras enheter. Den här informationen kan vara användbar för dina slutanvändare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
-
-   Exempel: Om du vill hämta en förlorad eller nyligen roterad återställningsnyckel loggar du in på webbplatsen för Intune-företagsportalen från valfri enhet. På portalen går du till *Enheter* och väljer den enhet där FileVault är aktiverat och väljer sedan *Hämta återställningsnyckel*. Den aktuella återställningsnyckeln visas.
-
-7. Konfigurera de återstående [FileVault](endpoint-protection-macos.md#filevault)inställningarna efter dina affärsbehov och välj **OK**.
-
-  8. Slutför konfigurationen av ytterligare inställningar och spara sedan profilen.  
-
-### <a name="manage-filevault"></a>Hantera FileVault
-
-När Intune har krypterat en macOS-enhet med FileVault kan du visa och hantera FileVault-återställningsnycklarna när du visar [Intunes krypteringsrapport](encryption-monitor.md).
-
-När Intune har krypterat en macOS-enhet med FileVault kan du visa enhetens personliga återställningsnyckel från företagsportalen på webben på vilken enhet som helst. När du är i Intune-företagsportalen väljer du den krypterade macOS-enheten och väljer sedan Hämta återställningsnyckel som en fjärrenhetsåtgärd.
-
-### <a name="retrieve-personal-recovery-key-from-mem-encrypted-macos-devices"></a>Hämta personlig återställningsnyckel från MEM-krypterade macOS-enheter
-
-Slutanvändare kan hämta sin personliga återställningsnyckel (FileVault Key) med hjälp av iOS-företagsportalappen, Android-företagsportalappen eller Android Intune-appen. Den enhet som har den personliga återställningsnyckeln måste registreras med Intune och krypteras med FileVault via Intune. Med hjälp av iOS-företagsportalappen, Android-företagsportalsappen, Android Intune-appen eller företagsportalwebbplatsen kan slutanvändaren se den **FileVault**-återställningsnyckel som krävs för att få åtkomst till deras Mac-enheter. Slutanvändare kan välja **Enheter** > *den krypterade och registrerade macOS-enheten* > **Hämta återställningsnyckel**. Webbläsaren visar webbföretagsportalen och visar återställningsnyckeln. 
-
-## <a name="bitlocker-encryption-for-windows-10"></a>BitLocker-kryptering för Windows 10
-
-Använd Intune för att konfigurera BitLocker-diskkryptering på enheter som kör Windows 10. Använd sedan Intunes krypteringsrapport för att visa krypteringsinformation för de enheterna. Du kan också komma åt viktig information för BitLocker från dina enheter, som du hittar i Azure Active Directory (Azure AD).
-
-BitLocker är tillgängligt på enheter som kör **Windows 10 eller senare**.
-
-Konfigurera BitLocker när du skapar en [enhetskonfigurationsprofil](endpoint-protection-configure.md) för slutpunktsskydd för Windows 10-plattformen eller senare. BitLocker-inställningarna finns i kategorin med inställningar för Windows-kryptering för Windows 10-slutpunktsskydd.
-
-![BitLocker-inställningar](./media/encrypt-devices/bitlocker-settings.png)
-
-### <a name="how-to-configure-windows-10-bitlocker"></a>Så här konfigurerar du BitLocker i Windows 10
-
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-
-2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
-
-3. Ange följande alternativ:
-
-   - Plattform: Windows 10 och senare
-   - Profiltyp: Endpoint Protection
+   ![Välj BitLocker-profilen](./media/encrypt-devices/select-windows-bitlocker-dc.png)
 
 4. Välj **Inställningar** > **Windows-kryptering**.
 
-5. Konfigurera inställningarna för BitLocker efter dina affärsbehov och välj **OK**.
+   ![BitLocker-inställningar](./media/encrypt-devices/bitlocker-settings.png)
 
-6. Slutför konfigurationen av ytterligare inställningar och spara sedan profilen.
+5. Konfigurera inställningarna för BitLocker enligt dina affärsbehov.
+
+   Om du vill aktivera BitLocker tyst läser du [Tyst aktivering av BitLocker på enheter](#silently-enable-bitlocker-on-devices) i den här artikeln, där står ytterligare förutsättningar och den specifika inställningskonfiguration du måste använda.
+
+6. Välj **OK**.
+
+7. Slutför konfigurationen av ytterligare inställningar och spara sedan profilen.
+
+## <a name="manage-bitlocker"></a>Hantera BitLocker
+
+Om du vill visa information om de enheter som tar emot BitLocker-policyer läser du [Övervaka diskkryptering](../protect/encryption-monitor.md). Du kan också visa och hämta återställningsnycklar för BitLocker när du visar krypteringsrapporten.
 
 ### <a name="silently-enable-bitlocker-on-devices"></a>Aktivera BitLocker på enheter tyst
 
@@ -139,22 +128,35 @@ Enheter måste uppfylla följande villkor för att kunna användas för tyst akt
 
 **Konfiguration av BitLocker-princip**:
 
-Följande två inställningar för [BitLocker-basinställningarna](../protect/endpoint-protection-windows-10.md#bitlocker-base-settings) måste vara konfigurerade i BitLocker-principen:
+Följande två inställningar för *BitLocker-basinställningarna* måste vara konfigurerade i BitLocker-principen:
 
 - **Varning för annan diskkryptering** = *Blockera*.
 - **Låt standardanvändare aktivera kryptering under Azure AD-anslutning** = *Tillåt*
 
-BitLocker-principen **får inte kräva** användning av en PIN-startkod eller startnyckel. När en PIN-startkod eller startnyckel för TPM *krävs* kan BitLocker inte aktiveras tyst, utan kräver interaktion från slutanvändaren.  Detta krav uppfylls genom följande tre [BitLocker OS-enhetsinställningar](../protect/endpoint-protection-windows-10.md#bitlocker-os-drive-settings) i samma princip:
+BitLocker-principen **får inte kräva** användning av en PIN-startkod eller startnyckel. När en PIN-startkod eller startnyckel för TPM *krävs* kan BitLocker inte aktiveras tyst eftersom det krävs interaktion från slutanvändaren.  Detta krav uppfylls genom följande tre *BitLocker OS-enhetsinställningar* i samma princip:
 
 - **Kompatibel PIN-startkod för TPM** får inte vara inställd på *Kräv PIN-startkod med TPM*
 - **Kompatibel startnyckel för TPM** får inte vara inställd på *Kräv startnyckel med TPM*
 - **Kompatibel startnyckel och PIN-startkod för TPM** får inte vara inställd på *Kräv startnyckel och PIN-startkod med TPM*
 
+### <a name="view-details-for-recovery-keys"></a>Visa information om återställningsnycklar
 
+Intune ger åtkomst till Azure AD-bladet för BitLocker så att du kan visa BitLocker-nyckel-ID:n och återställningsnycklar för dina Windows 10-enheter från Intune-portalen. För att enheten ska vara nåbar måste dess nycklar vara deponerade till Azure AD.
 
-### <a name="manage-bitlocker"></a>Hantera BitLocker
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-När Intune har krypterat en Windows 10-enhet med BitLocker kan du visa och hämta BitLocker-återställningsnycklar när du visar [Intunes krypteringsrapport](encryption-monitor.md).
+2. Välj **Enheter** > **Alla enheter**.
+
+3. Välj en enhet i listan. Under *Övervaka* väljer du sedan **Återställningsnycklar**.
+  
+   När nycklar är tillgängliga i Azure AD finns följande information tillgänglig:
+   - BitLocker-nyckel-ID
+   - BitLocker-återställningsnyckel
+   - Enhetstyp
+
+   När nycklar inte finns i Azure AD visar Intune *Det gick inte att hitta någon BitLocker-nyckel för den här enheten*.
+
+Information för BitLocker hämtas med hjälp av den [BitLocker-CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp). BitLocker-CSP stöds på Windows 10 version 1703 och senare samt för Windows 10 Pro version 1809 och senare.
 
 ### <a name="rotate-bitlocker-recovery-keys"></a>Rotera BitLocker-återställningsnycklar
 
@@ -171,7 +173,7 @@ Enheter måste uppfylla följande krav för att stödja rotation av BitLocker-å
   - **Klientbaserad rotering av återställningslösenord**
 
   Den här inställningen finns under *Windows-kryptering* som en del av en enhetskonfigurationsprincip för Windows 10 slutpunktsskydd.
-  
+
 #### <a name="to-rotate-the-bitlocker-recovery-key"></a>Så här roterar du BitLocker-återställningsnycklar
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
@@ -180,16 +182,12 @@ Enheter måste uppfylla följande krav för att stödja rotation av BitLocker-å
 
 3. I listan över enheter som du hanterar väljer du en enhet, väljer **Mer** och sedan fjärråtgärden **BitLocker-nyckelrotering**.
 
+4. På sidan **Översikt** på enheten väljer du **BitLocker-nyckelrotering**. Om du inte ser det här alternativet väljer du ellipsen ( **...** ) för att visa fler alternativ och väljer sedan fjärrenhetsåtgärden **BitLocker-nyckelrotering**.
+
+   ![Välj ellipsen för att visa fler alternativ](./media/encrypt-devices/select-more.png)
+
 ## <a name="next-steps"></a>Nästa steg
 
-Skapa [en enhetsefterlevnadsprincip](compliance-policy-create-windows.md).
+[Hantera FileVault-policy](../protect/encrypt-devices-filevault.md)
 
-Använd krypteringsrapporten för att hantera:
-
-- [BitLocker-återställningsnycklar](encryption-monitor.md#bitlocker-recovery-keys)
-- [FileVault-återställningsnycklar](encryption-monitor.md#filevault-recovery-keys)
-
-Granska de krypteringsinställningar som du kan konfigurera med Intune för:
-
-- [BitLocker](endpoint-protection-windows-10.md#windows-encryption)
-- [FileVault](endpoint-protection-macos.md#filevault)
+[Övervaka diskkryptering](../protect/encryption-monitor.md)

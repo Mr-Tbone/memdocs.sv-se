@@ -1,11 +1,11 @@
 ---
 title: Inställningar för Windows Holographic for Business-enheter – Microsoft Intune – Azure | Microsoft Docs
-description: Läs om och konfigurera inställningar för enhetsbegränsning i Microsoft Intune för Windows Holographic for Business, inklusive avregistrering, geoplats, lösenord, installation av appar från app store, cookies och popup-fönster i Microsoft Edge, Microsoft Defender, sökning, moln och lagring, Bluetooth-anslutning, systemtid och användningsdata i Azure.
+description: Läs om och konfigurera inställningar för enhetsbegränsningar i Microsoft Intune för Windows Holographic for Business. Kontrollera avregistrering, geoposition, lösenord, installation av appar från app store, cookies och popup-fönster i Microsoft Edge, Microsoft Defender, sökningar, moln och lagring, Bluetooth-anslutningar, systemtid och användningsdata.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 05/18/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,97 +15,143 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a207c34c0d46b423eda44abf953e9c084cc9b2d
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 301cdd9403b0bb3e2d64c8707782ecbc639dc044
+ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078234"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556058"
 ---
 # <a name="windows-holographic-for-business-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Windows Holographic for Business tillåter eller begränsar funktioner med hjälp av Intune
 
-
-
 Den här artikeln beskriver de olika inställningar som du kan styra på Windows Holographic for Business-enheter, till exempel Microsoft Hololens. Använd inställningarna som en del av din lösning för hantering av mobilenheter, för att tillåta eller inaktivera funktioner, kontrollera säkerheten etc.
+
+Som Intune-administratör kan du skapa och tilldela dessa inställningar till dina enheter.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
-[Skapa en enhetskonfigurationsprofil](device-restrictions-configure.md#create-the-profile).
+[Skapa en Windows 10-konfigurationsprofil för enhetsbegränsningar](device-restrictions-configure.md#create-the-profile).
 
-## <a name="general"></a>Allmänt
-
-- **Manuell avregistrering**: Tillåter att användaren manuellt raderar sitt arbetsplatskonto från enheten.
-- **Cortana**: Aktivera eller inaktivera röstassistenten Cortana.
-- **Geoplats**: Anger om enheten kan använda tjänsterna för platsinformation.
-
-## <a name="password"></a>lösenordsinställning
-
-- **Lösenord**: Slutanvändaren måste ange ett lösenord för att få åtkomst till enheten.
-- **Kräv lösenord när enheten återgår från viloläge**: Anger att användaren måste mata in ett lösenord för att låsa upp enheten.
+När du skapar en Windows 10-konfigurationsprofil för enhetsbegränsningar finns det fler inställningar än vad som anges i den här artikeln. Inställningarna i den här artikeln stöds på Windows Holographic for Business-enheter.
 
 ## <a name="app-store"></a>Appbutik
 
-- **Uppdatera appar automatiskt från Store:** : Tillåter att appar som installeras från Microsoft Store uppdateras automatiskt.
-- **Installation av betrodd app**: Tillåter att appar som signeras med ett betrott certifikat läses in separat.
-- **Lås upp via utvecklare**: Tillåter Windows utvecklarinställningar, till exempel att separat inlästa appar ska kunna ändras av slutanvändaren.
+- **Uppdatera appar automatiskt från Store:** : **Blockera** förhindrar att uppdateringar installeras automatiskt från Microsoft Store. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kan operativsystemet tillåta att appar installerade från Microsoft Store uppdateras automatiskt.
 
-## <a name="microsoft-edge-browser"></a>Microsoft Edge-webbläsaren
+  [ApplicationManagement/AllowAppStoreAutoUpdate CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowappstoreautoupdate)
 
-- **Cookies**: Innebär att webbläsaren sparar Internetcookies på enheten.
-- **Popup-fönster**: Blockerar popup-fönster i webbläsaren (gäller endast Windows 10 Desktop).
-- **Sökförslag**: Tillåter att din sökmotor föreslår platser när du skriver sökord.
-- **Lösenordshanteraren**: Aktivera eller inaktivera lösenordshanteraren för Microsoft Edge.
-- **Skicka Do Not Track-huvuden**: Konfigurerar Microsoft Edge-webbläsaren så att Do Not Track-huvuden skickas till webbplatser som användarna besöker.
+- **Installation av betrodd app**: Välj om icke-Microsoft Store-appar kan installeras, även kallat separat inläsning. Separat inläsning är att installera och sedan köra eller testa en app som inte är certifierad av Microsoft Store. Ett exempel kan vara en app som är intern för endast ditt företag. Alternativen är:
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+  - **Blockera**: Förhindrar separat inläsning. Icke-Microsoft Store-appar kan inte installeras.
+  - **Tillåt**: Tillåter separat inläsning. Icke-Microsoft Store-appar kan installeras.
 
-## <a name="microsoft-defender-smart-screen"></a>Microsoft Defender SmartScreen
+  [ApplicationManagement/AllowAllTrustedApps CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowalltrustedapps)
 
-- **SmartScreen för Microsoft Edge**: Aktivera Microsoft Edge SmartScreen för att komma åt webbplats och filhämtningar.
+- **Lås upp via utvecklare**: Tillåt att användarna kan ändra utvecklarinställningar i Windows, som att tillåta separat inlästa appar. Alternativen är:
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+  - **Blockera**: Förhindrar utvecklarläge och separat inläsning av appar.
+  - **Tillåt**: Tillåter utvecklarläge och separat inläsning av appar.
 
-## <a name="search"></a>Sök
-
-- **Sök plats** – Ange om platsinformation får användas i sökning. information
-
-## <a name="cloud-and-storage"></a>Moln och lagring
-
-- **Microsoft-konto**: Låter användaren associera ett Microsoft-konto med enheten.
+  [CSP:n ApplicationManagement/AllowDeveloperUnlock](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-allowdeveloperunlock)
 
 ## <a name="cellular-and-connectivity"></a>Mobilnät och anslutning
 
-- **Bluetooth**: Styr om användaren kan aktivera och konfigurera Bluetooth på enheten.
-- **Bluetooth-identifiering**: Innebär att enheten kan upptäckas av andra Bluetooth-aktiverade enheter.
-- **Bluetooth-annonsering**: Innebär att enheten kan ta emot annonser via Bluetooth.
+- **Bluetooth**: **Blockera** hindrar användare från att aktivera Bluetooth. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att Bluetooth används på enheten.
+
+  [CSP:n Connectivity/AllowBluetooth](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-connectivity#connectivity-allowbluetooth)
+
+- **Bluetooth-identifiering**: **Blockera** hindrar enheten från att identifieras av andra Bluetooth-aktiverade enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kan operativsystemet tillåta att andra Bluetooth-aktiverade enheter, som ett headset, identifierar enheten.
+
+  [CSP:n Bluetooth/AllowDiscoverableMode](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowdiscoverablemode)
+
+- **Bluetooth-annonsering**: **Blockera** hindrar enheten från att skicka ut Bluetooth-annonsering. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten skickar ut Bluetooth-annonsering.
+
+  [CSP:n Bluetooth/AllowAdvertising](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowadvertising)
+
+## <a name="cloud-and-storage"></a>Moln och lagring
+
+- **Microsoft-konto**: **Blockera** hindrar användare från att associera ett Microsoft-konto med enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att ett Microsoft-konto läggs till och används.
+
+  [CSP:n Accounts/AllowMicrosoftAccountConnection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-accounts#accounts-allowmicrosoftaccountconnection)
 
 ## <a name="control-panel-and-settings"></a>Kontrollpanel och inställningar
 
-- **Ändring av systemtid**: Förhindrar att slutanvändaren ändrar enhetens datum och tid.
+- **Ändring av systemtid**: **Blockera** hindrar användare från att ändra inställningar för datum och tid på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att ändra dessa inställningar.
 
-## <a name="kiosk---obsolete"></a>Kiosk – föråldrad
+  [CSP:n Settings/AllowDateTime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-settings#settings-allowdatetime)
 
-De här inställningarna är skrivskyddade och kan inte ändras. Om du vill konfigurera helskärmsläge kan du läsa mer i [Kioskinställningar](kiosk-settings-holographic.md).
+## <a name="general"></a>Allmänt
 
-En helskärmslägesenhet kör vanligtvis en viss app. Användarna kommer inte åt funktioner på enheten utanför helskärmslägesappen.
+- **Manuell avregistrering**: **Blockera** hindrar användare från att ta bort arbetskontot via arbetskontrollpanelen på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
-- **Helskärmsläge**: Identifierar den typ av helskärmsläge som stöds av principen. Alternativen är:
+  [CSP:n Experience/AllowManualMDMUnenrollment](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience#experience-allowmanualmdmunenrollment)
 
-  - **Inte konfigurerat** (standard): Den här principen aktiverar inte något helskärmsläge. 
-  - **Helskärmsläge för enskilda appar**: Profilen innebär att enheten endast kan köra en app. Appen startas när användaren loggar in. Det här läget gör också att användaren inte kan öppna nya appar eller ändra appen som körs.
-  - **Helskärmsläge för flera appar**: Profilen innebär att enheten kan köra flera appar. Endast de appar som du lägger till är tillgängliga för användaren. Med helskärmsläge för flera appar skapas en mer användarvänlig upplevelse för användarna eftersom de endast ser de appar de behöver. Och de appar användarna inte behöver tas bort från deras vy. 
-  
-    När du lägger till appar för helskärmsläge för flera appar måste du också lägga till en layoutfil för startmenyn. [Layoutfilen för startmenyn](/hololens/hololens-kiosk#start-layout-file-for-mdm-intune-and-others) innehåller exempel-XML som kan användas i Intune. 
+- **Geoplats**: **Blockera** hindrar användare från att aktivera platstjänster på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
-### <a name="single-app-kiosks"></a>Helskärmsläge för enskilda appar
+  [CSP:n Experience/AllowFindMyDevice](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience#experience-allowfindmydevice)
 
-Ange följande inställningar:
+- **Cortana**: **Blockera** inaktiverar röstassistenten Cortana på enheten. När Cortana är avstängt kan användare fortfarande söka för att hitta objekt på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användning av Cortana.
 
-- **Användarkonto**: Ange det lokala (för enheten) användarkontot eller den Azure AD-kontoinloggning som är associerad med helskärmsappen. För konton som är kopplade till Azure AD-domäner ska kontot anges i formatet `domain\username@tenant.org`. 
+  [CSP:n Experience/AllowCortana](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience#experience-allowcortana)
 
-    Om helskärmsapparna finns i en miljö som riktar sig till allmänheten ska automatisk inloggning vara aktiverat och en användartyp med minsta privilegier (till exempel ett lokalt standardanvändarkonto) användas. Om du konfigurerar ett Azure Active Directory-konto (AD) för helskärmsläge använder du formatet `AzureAD\user@contoso.com`.
+## <a name="microsoft-edge-browser"></a>Microsoft Edge-webbläsaren
 
-- **ID för programanvändarmodell (AUMID) för appen**: Ange AUMID för helskärmsappen. Läs mer i [Find the Application User Model ID of an installed app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app) (Hitta programanvändarmodell-ID för en installerad app).
+- **Starta upplevelse** > **Tillåt popup-fönster**: **Ja** (standard) tillåter popup-fönster i webbläsaren. **Nej** hindrar popup-fönster i webbläsaren.
+
+  [CSP:n Browser/AllowPopups](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowpopups)
+
+- **Favoriter och Sök** > **Visa sökförslag**: **Ja** (standard) innebär att din sökmotor föreslår webbplatser när du skriver sökfraser i adressfältet. **Nej** förhindrar den här funktionen.
+
+  [CSP:n Browser/AllowSearchSuggestionsinAddressBar](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar)
+
+- **Sekretess och säkerhet** > **Tillåt lösenordshanteraren**: **Ja** (standard) tillåter Microsoft Edge att automatiskt använda lösenordshanteraren, som gör att användare kan spara och hantera lösenord på enheten. **Nej** hindrar Microsoft Edge från att använda lösenordshanteraren.
+
+  [CSP:n Browser/AllowPasswordManager](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager)
+
+- **Sekretess och säkerhet** > **Cookies**: Välj hur cookies ska hanteras i webbläsaren. Alternativen är:
+  - **Tillåt**: Cookies sparas på enheten.
+  - **Blockera alla cookies**: Cookies sparas på enheten.
+  - **Blockera endast cookies från tredje part**: Cookies från tredje part eller partner sparas inte på enheten.
+
+  [CSP:n Browser/AllowCookies](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowcookies)
+
+- **Sekretess och säkerhet** > **Skicka Do Not Track-huvuden**: **Ja** skickar Do Not Track-huvuden till webbplatser som kräver spårningsinfo (rekommenderas). **Nej** (standard) skickar inte sidhuvuden som gör att webbplatser kan spåra användaren. Användare kan konfigurera den här inställningen.
+
+  [CSP:n Browser/AllowDoNotTrack](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack)
+
+## <a name="microsoft-defender-smartscreen"></a>Microsoft Defender SmartScreen
+
+- **SmartScreen för Microsoft Edge**: **Kräv** aktiverar Microsoft Defender SmartScreen och hindrar användarna från att inaktivera funktionen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kan operativsystemet aktivera SmartScreen och tillåta att användare aktiverar och inaktiverar funktionen.
+
+  [CSP för Browser/AllowSmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen)
+
+## <a name="password"></a>lösenordsinställning
+
+- **Lösenord**: **Kräv** tvingar användarna att ange ett lösenord för att komma åt enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till enheter utan lösenord. Gäller endast för lokala konton. Lösenord för domänkonton förblir konfigurerade av Active Directory (AD) och Azure AD.
+
+  [CSP:n DeviceLock/DevicePasswordEnabled](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-devicepasswordenabled)
+
+- **Kräv lösenord när enheten återgår från viloläge**: **Kräv** tvingar användarna att ange ett lösenord för att låsa upp enheten när den är inaktiv. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard kräva en PIN-kod eller ett lösenord när enheten varit inaktiv.
+
+  [CSP:n DeviceLock/AllowIdleReturnWithoutPassword](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-allowidlereturnwithoutpassword)
 
 ## <a name="reporting-and-telemetry"></a>Rapportering och telemetri
 
-- **Dela användningsdata**: Välj nivå för de diagnostikdata som ska skickas.
+- **Dela användningsdata**: Välj nivå av diagnostikdata som skickas. Alternativen är:
+
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Ingen inställning framtvingas. Användarna väljer vilken nivå som ska skickas. Operativsystemet kan som standard inte dela några data.
+  - **Säkerhet**: Information som krävs för att göra Windows säkrare, bland annat data om inställningar för komponenten Enhetlig användarupplevelse och telemetri, Borttagning av skadlig programvara och Microsoft Defender
+  - **Grundläggande**: Grundläggande enhetsinformation som kvalitetsrelaterade data, appkompatibilitet, data om appanvändning och data från nivån Säkerhet
+  - **Förbättrad**: Ytterligare information, bland annat hur Windows, Windows Server, System Center och appar används, deras prestanda, avancerade tillförlitlighetsdata och data från nivåerna Grundläggande och Säkerhet
+  - **Fullständig**: Alla data som behövs för att identifiera och bidra till att lösa problem och data från nivåerna Säkerhet, Grundläggande och Förbättrad.
+
+  [CSP för System/AllowTelemetry](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-allowtelemetry)
+
+## <a name="search"></a>Sök
+
+- **Sök plats**: **Blockera** hindrar Windows Search från att använda platsinformation. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta den här funktionen.
+
+  [CSP:n Search/AllowSearchToUseLocation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-search#search-allowsearchtouselocation)
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -7,7 +7,7 @@ author: ErikjeMS
 ms.author: erikje
 manager: dougeby
 ms.date: 02/04/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd999f621375cfdbfa80bf076766be20053221dc
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 2db33dbe94ff5aef62563531149250fbd4268acc
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83269073"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83986979"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -39,14 +39,11 @@ Om du vill aktivera ADE använder du både Intune-portalen och [Apple Business M
 
 ## <a name="automated-device-enrollment-and-the-company-portal"></a>Automatisk enhetsregistrering och företagsportalen
 
-ADE-registreringar är inte kompatibla med App Store-versionen av företagsportalappen. Du kan ge användarna åtkomst till företagsportalappen på en ADE-enhet. Du kanske vill ange åtkomsten så att användarna kan välja vilka företagsappar de vill använda på sin enhet, eller använda modern autentisering för att slutföra registreringsprocessen. 
+ADE-registreringar är inte kompatibla med App Store-versionen av företagsportalappen. Du kan ge användarna åtkomst till appen Företagsportal på en ADE-enhet. Du kanske vill ange åtkomsten så att användarna kan välja vilka företagsappar de vill använda på sin enhet, eller använda modern autentisering för att slutföra registreringsprocessen. 
 
 Om du vill aktivera modern autentisering vid registreringen, skickar du appen till enheten med **Installera företagsportalen med VPP** (volyminköpsprogram) i ADE-profilen. Mer information finns i [Registrera iOS/-enheter automatiskt med Apples ADE](device-enrollment-program-enroll-ios.md#create-an-apple-enrollment-profile).
 
 Om du vill att företagsportalen ska uppdateras automatiskt och erbjuda appen Företagsportal på enheter som redan har registrerats med ADE, distribuerar du företagsportalappen via Intune som ett obligatoriskt volyminköpsprogram (VPP) med en [programkonfigurationsprincip](../apps/app-configuration-policies-use-ios.md).
-
-> [!NOTE]
-> Vid automatisk enhetsregistrering, när Företagsportal körs i enstaka appläge, visas ett felmeddelande när du klickar på länken **Läs mer** på grund av läget. När registreringen är färdig kan du visa mer information i Företagsportal när enheten inte längre är i enstaka appläge. 
 
 ## <a name="what-is-supervised-mode"></a>Vad är övervakat läge?
 
@@ -212,7 +209,7 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 
      > [!NOTE]
      > Om **Synkronisera med datorer** har angetts till **Neka alla**, är porten begränsad på iOS-och iPad-enheter. Porten kan bara användas för laddning och inget annat. Porten kommer att blockeras från att använda iTunes eller Apple Configurator 2.
-     Om **Synkronisera med datorer** anges till **Tillåt Apple Configurator efter certifikat** ska du spara en lokal kopia av certifikatet som du kan använda senare. Du kan inte göra ändringar i den uppladdade kopian. Det är viktigt att behålla det här certifikatet så att det är tillgängligt i framtiden. 
+     Om **Synkronisera med datorer** har värdet **Tillåt Apple Configurator efter certifikat** ska du spara en lokal kopia av certifikatet som du kan använda senare. Du kan inte göra ändringar i den uppladdade kopian och det är viktigt att du behåller det här certifikatet så att du kan använda det i framtiden. För att ansluta till iOS/iPad-enheten från en macOS-enhet eller PC måste samma certifikat vara installerat på enheten som upprättar anslutningen till iOS/iPad-enheten som registrerades med profilen för automatisk enhetsregistrering med den här konfigurationen och certifikatet.
 
 12. Om du väljer **Tillåt Apple Configurator efter certifikat** i föregående steg, väljer du ett Apple Configurator-certifikat att importera.
 
@@ -235,29 +232,33 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 
     | Inställningar på skärm i Installationsassistenten | Om du väljer **Visa** kommer enheten under installationen att ... |
     |------------------------------------------|------------------------------------------|
-    | <strong>Lösenord</strong> | Fråga användaren om ett lösenord. Kräv alltid ett lösenord för osäkrade enheter om inte åtkomsten kontrolleras på något annat sätt (t.ex. helskärmsläge som begränsar enheten till en app). |
-    | <strong>Platstjänster</strong> | Fråga användaren om deras plats. |
-    | <strong>Återställa</strong> | Visa skärmen Appar och data. På den här skärmen kan användaren återställa eller överföra data från säkerhetskopieringen i iCloud när enheten konfigureras. |
-    | <strong>iCloud och Apple-ID</strong> | Ge användaren möjlighet att logga in med sitt Apple-ID och använda iCloud.                         |
-    | <strong>Villkor</strong> | Kräva att användaren godkänner Apples användarvillkor. |
-    | <strong>Touch ID</strong> | Ge användaren möjlighet att ställa in identifiering med fingeravtryck för enheten. |
-    | <strong>Apple Pay</strong> | Ge användaren möjlighet att konfigurera Apple Pay på enheten. |
-    | <strong>Zoom</strong> | Ge användaren möjlighet att zooma in på skärmen under konfigurationen. |
-    | <strong>Siri</strong> | Ge användaren möjlighet att ställa in Siri. |
-    | <strong>Diagnostikdata</strong> | Visa skärmen Diagnostik för användaren. På den här skärmen kan användaren välja att skicka diagnostikdata till Apple. |
-    | <strong>Visningston</strong> | Ge användaren möjlighet att aktivera Visningston. |
-    | <strong>Sekretess</strong> | Visa sekretesskärmen för användaren. |
-    | <strong>Android-migrering</strong> | Ge användaren möjlighet att migrera data från en Android-enhet. |
-    | <strong>iMessage och FaceTime</strong> | Ge användaren möjlighet att konfigurera iMessage och FaceTime. |
-    | <strong>Registrering</strong> | Visa informationsskärmar för registrering för användarutbildning, som försättsblad och multitasking och kontrollcenter. |
-    | <strong>Klockmigrering</strong> | Ge användaren möjlighet att migrera data från en klockenhet. |
-    | <strong>Skärmtid</strong> | Visa skärmen Skärmtid. |
-    | <strong>Programuppdatering</strong> | Visa skärmen för obligatorisk programuppdatering. |
-    | <strong>SIM-installation</strong> | Ge användaren möjlighet att lägga till ett mobilabonnemang. |
-    | <strong>Utseende</strong> | Visa skärmen Utseende för användaren. |
+    | <strong>Lösenord</strong> | Fråga användaren om ett lösenord. Kräv alltid ett lösenord för osäkrade enheter om inte åtkomsten kontrolleras på något annat sätt (t.ex. helskärmsläge som begränsar enheten till en app). För iOS/iPadOS 7.0 och senare. |
+    | <strong>Platstjänster</strong> | Fråga användaren om deras plats. För macOS 10.11 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Återställa</strong> | Visa skärmen Appar och data. På den här skärmen kan användaren återställa eller överföra data från säkerhetskopieringen i iCloud när enheten konfigureras. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>iCloud och Apple-ID</strong> | Ge användaren möjlighet att logga in med sitt Apple-ID och använda iCloud. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare.   |
+    | <strong>Villkor</strong> | Kräva att användaren godkänner Apples användarvillkor. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Touch ID</strong> | Ge användaren möjlighet att ställa in identifiering med fingeravtryck för enheten. För macOS 10.12.4 och senare samt iOS/iPadOS 8.1 och senare. |
+    | <strong>Apple Pay</strong> | Ge användaren möjlighet att konfigurera Apple Pay på enheten. För macOS 10.12.4 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Zoom</strong> | Ge användaren möjlighet att zooma in på skärmen under konfigurationen. För iOS/iPadOS 8.3 och senare. |
+    | <strong>Siri</strong> | Ge användaren möjlighet att ställa in Siri. För macOS 10.12 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Diagnostikdata</strong> | Visa skärmen Diagnostik för användaren. På den här skärmen kan användaren välja att skicka diagnostikdata till Apple. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Visningston</strong> | Ge användaren möjlighet att aktivera Visningston. För macOS 10.13.6 och senare samt iOS/iPadOS 9.3.2 och senare. |
+    | <strong>Sekretess</strong> | Visa sekretesskärmen för användaren. För macOS 10.13.4 och senare samt iOS/iPadOS 11.3 och senare. |
+    | <strong>Android-migrering</strong> | Ge användaren möjlighet att migrera data från en Android-enhet. För iOS/iPadOS 9.0 och senare.|
+    | <strong>iMessage och FaceTime</strong> | Ge användaren möjlighet att konfigurera iMessage och FaceTime. För iOS/iPadOS 9.0 och senare. |
+    | <strong>Registrering</strong> | Visa informationsskärmar för registrering för användarutbildning, som försättsblad och multitasking och kontrollcenter. För iOS/iPadOS 11.0 och senare. |
+    | <strong>Klockmigrering</strong> | Ge användaren möjlighet att migrera data från en klockenhet. För iOS/iPadOS 11.0 och senare.|
+    | <strong>Skärmtid</strong> | Visa skärmen Skärmtid. För macOS 10.15 och senare samt iOS/iPadOS 12.0 och senare. |
+    | <strong>Programuppdatering</strong> | Visa skärmen för obligatorisk programuppdatering. För iOS/iPadOS 12.0 och senare. |
+    | <strong>SIM-installation</strong> | Ge användaren möjlighet att lägga till ett mobilabonnemang. För iOS/iPadOS 12.0 och senare. |
+    | <strong>Utseende</strong> | Visa skärmen Utseende för användaren. För macOS 10.14 och senare samt iOS/iPadOS 13.0 och senare. |
     | <strong>Express-språk</strong>| Visa skärmen Express-språk för användaren. |
     | <strong>Önskat språk</strong> | Ge användaren möjlighet att välja **Önskat språk**. |
-    | <strong>Migrering av enhet till enhet</strong> | Ge användaren möjlighet att migrera data från sin gamla enhet till den här enheten.|
+    | <strong>Migrering av enhet till enhet</strong> | Ge användaren möjlighet att migrera data från sin gamla enhet till den här enheten. För iOS/iPadOS 13.0 och senare. |
+    | <strong>Registrering</strong> | Visa registreringsskärmen för användaren. För macOS 10.9 och senare. |
+    | <strong>FileVault</strong> | Visa FileVault 2-krypteringsskärmen för användaren. För macOS 10.10 och senare. |
+    | <strong>iCloud-diagnostik</strong> | Visa skärmen iCloud-analys för användaren. För macOS 10.12.4 och senare. |
+    | <strong>iCloud Storage</strong> | Visa sidan iCloud-dokument och skrivbord för användaren. För macOS 10.13.4 och senare. |
     
 
 16. Välj **Nästa** för att gå till sidan **Granska + skapa**.
@@ -282,7 +283,7 @@ Nu när Intune har fått behörighet att hantera dina enheter, kan du synkronise
 
    För att följa Apples villkor för godkänd registreringsprogramtrafik tillämpar Intune följande begränsningar:
    - En fullständig synkronisering kan inte köras oftare än en gång var sjunde dag. Under en fullständig synkronisering, hämtar Intune den fullständigt uppdaterade listan med serienummer som tilldelats den Apple MDM-server som är ansluten till Intune. Om en ADE-enhet tas bort från Intune-portalen ska den inte vara tilldelad från Apple MDM-servern i ADE-portalen. Om den ej är tilldelad, importeras den inte om till Intune förrän den fullständiga synkroniseringen har körts.   
-   - En synkronisering körs automatiskt var 24:e timme. Du kan också synkronisera genom att klicka på **Synkronisera**-knappen (högst en gång var 15:e minut). Alla synkroniseringsbegäranden ges 15 minuter att slutföras. **Synkronisera**-knappen är inaktiverad tills att en synkronisering har slutförts. Synkroniseringen kommer att uppdatera status för befintliga enheter och importera nya enheter som tilldelats Apple MDM-servern.   
+   - En synkronisering körs automatiskt var 12:e timme. Du kan också synkronisera genom att klicka på **Synkronisera**-knappen (högst en gång var 15:e minut). Alla synkroniseringsbegäranden ges 15 minuter att slutföras. **Synkronisera**-knappen är inaktiverad tills att en synkronisering har slutförts. Synkroniseringen kommer att uppdatera status för befintliga enheter och importera nya enheter som tilldelats Apple MDM-servern.   
 
 
 ## <a name="assign-an-enrollment-profile-to-devices"></a>Tilldela enheterna en registreringsprofil

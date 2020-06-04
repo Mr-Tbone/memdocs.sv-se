@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2020
-ms.topic: conceptual
+ms.date: 05/26/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -16,14 +16,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4e9a37e2dbb725a06d304d345fd085dabbc5e14
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 17c0c83452f7b67ad2fef660e8f0c81bc6d4b78f
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086996"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989142"
 ---
-# <a name="configure-esim-cellular-profiles-in-intune---public-preview"></a>Konfigurera mobila eSIM-profiler i Intune – offentlig förhandsversion
+# <a name="configure-esim-cellular-profiles-in-intune-public-preview"></a>Konfigurera mobila eSIM-profiler i Intune (offentlig förhandsversion)
 
 eSIM är ett inbäddat SIM-kort som du kan använda för att ansluta till Internet via en mobildataanslutning på en eSIM-kompatibel enhet, till exempel [Surface LTE Pro](https://www.microsoft.com/surface/business/surface-pro). Med ett eSIM behöver du inte skaffa ett SIM-kort från din mobiloperatör. Som global resenär kan du även växla mellan mobiloperatörer och dataabonnemang så att du alltid håller dig uppkopplad.
 
@@ -37,7 +37,7 @@ I Intune kan du importera engångskoder för aktivering som tillhandahålls av d
 
 Följande krävs för att distribuera eSIM till dina enheter med hjälp av Intune:
 
-- **eSIM-kompatibla enheter**, till exempel Surface LTE: se [om din enhet har stöd för eSIM](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data). Eller så kan du se en lista över [några av de kända eSIM-kompatibla enheterna](#esim-capable-devices) (i den här artikeln).
+- **eSIM-kompatibla enheter**, till exempel Surface LTE: Se [om din enhet stöder eSIM](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data). Eller så kan du se en lista över [några av de kända eSIM-kompatibla enheterna](#esim-capable-devices) (i den här artikeln).
 - **Windows 10 Fall Creators Update PC** (1709 eller senare) som registreras och MDM-hanteras av Intune
 - **Aktiveringskoder** tillhandahålls av mobiloperatören. De här engångskoderna för aktivering läggs till i Intune och distribueras till dina eSIM-kompatibla enheter. Kontakta mobiloperatören om du vill skaffa eSIM-aktiveringskoder.
 
@@ -54,23 +54,9 @@ Den här artikeln vägleder dig genom stegen.
 
 ## <a name="esim-capable-devices"></a>eSIM-kompatibla enheter
 
-Följande enheter har tillkännagivits som eSIM-kompatibla eller finns på marknaden i dag. Kontrollera även om [din enhet stöder eSIM](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data).
+Kontakta enhetstillverkaren om du är osäker på om enheterna har stöd för eSIM. På Windows-enheter kan du kontrollera stödet för eSIM. Mer information finns i [Använda ett eSIM till att hämta en mobil dataanslutning till din Windows 10-dator](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data).
 
-- Acer Swift 7
-- ASUS NovoGo TP370QL
-- ASUS TP401
-- ASUS omvandlare Mini T103
-- HP Elitebook G5
-- HP känner avundsjuka x2
-- HP Probook G5
-- Lenovo Miix 630
-- Lenovo T480
-- Samsung Galaxy Book
-- Surface Pro LTE
-- HP Spectre Folio 13
-- Lenovo Yoga C630
-
-## <a name="step-1-add-cellular-activation-codes"></a>Steg 1: Lägg till mobilaktiveringskoder
+## <a name="step-1-add-cellular-activation-codes"></a>Steg 1: Lägga till mobilaktiveringskoder
 
 Mobilaktiveringskoder tillhandahålls av mobiloperatören i en kommaavgränsad fil (csv). När du har den här filen lägger du till den i Intune med följande steg:
 
@@ -97,11 +83,11 @@ När du arbetar med csv-filen med aktiveringskoderna ser du till att du eller di
     1. Den första kolumnen är unikt ICCID (identifierare för SIM-kortet)
     2. Den andra kolumnen är matchande ID med endast ett kommatecken som avgränsare (inget kommatecken i slutet). Se följande exempel:
 
-        ![Exempel på CSV-fil med mobiloperatörens aktiveringskod](./media/esim-device-configuration/url-activation-code-examples.png)
+        :::image type="content" source="./media/esim-device-configuration/url-activation-code-examples.png" alt-text="CSV-fil med kodexempel för aktivering av mobiloperatör.":::
 
 3. CSV-filnamnet blir namnet på mobilabonnemangspoolen i Endpoint Managers administrationscenter. I föregående bild är filnamnet `UnlimitedDataSkynet.csv`. Därför ger Intune abonnemangspoolen namnet `UnlimitedDataSkynet.csv`:
 
-    ![Mobilabonnemangspoolen namnges efter CSV-exempelfilens aktiveringskod](./media/esim-device-configuration/subscription-pool-name-csv-file.png)
+    :::image type="content" source="./media/esim-device-configuration/subscription-pool-name-csv-file.png" alt-text="Mobilabonnemangspoolen namnges efter CSV-filen med kodexemplet för aktivering.":::
 
 ## <a name="step-2-create-an-azure-ad-device-group"></a>Steg 2: Skapa en Azure AD-enhetsgrupp
 
@@ -120,7 +106,7 @@ Tilldela profilen till den Azure AD-grupp som innehåller eSIM-enheterna.
 3. I listan med profiler väljer du den eSIM-mobilabonnemangspool som du vill tilldela och väljer sedan **Tilldelningar**.
 4. Välj om du vill **inkludera** eller **exkludera** grupper och välj sedan grupperna.
 
-    ![Inkludera enhetsgruppen för att tilldela profilen](./media/esim-device-configuration/include-exclude-groups.png)
+    :::image type="content" source="./media/esim-device-configuration/include-exclude-groups.png" alt-text="Ta med enhetsgruppen för att tilldela profilen i Microsoft Intune.":::
 
 5. När du väljer dina grupper väljer du en Azure AD-grupp. Om du vill välja flera grupper använder du **Ctrl**-tangenten och väljer grupperna.
 6. **Spara** ändringarna när du är klar.
@@ -173,7 +159,7 @@ Du kan övervaka och visa en detaljerad lista över enheter i Enhetsstatus.**
 2. Välj **Mobilt** > **Hantera eSIM-profiler**
 3. eSIM-profilerna visas i listan:
 
-    ![Visa eSIM-profiler i enhetsinställningarna](./media/esim-device-configuration/device-settings-cellular-profiles.png)
+    :::image type="content" source="./media/esim-device-configuration/device-settings-cellular-profiles.png" alt-text="Visa eSIM-profilerna i dina enhetsinställningar.":::
 
 ## <a name="remove-the-esim-profile-from-device"></a>Ta bort eSIM-profilen från enheten
 
@@ -194,7 +180,8 @@ eSIM-profilen tas även bort när enheten [dras tillbaka](../remote-actions/devi
 - Skapa en statisk Azure AD-enhetsgrupp som endast innehåller eSIM-enheter som är mål.
 - Om det finns ett problem med distributionsstatusen kontrollerar du följande:
   - **Filformatet är inte korrekt**: Se **Steg 1: Lägg till mobilaktiveringskoder** (i den här artikeln) om hur du formaterar filen korrekt.
-  - **Mobilaktiveringen fungerar inte; kontakta mobiloperatören**: Aktiveringskoden kan kanske inte aktiveras inom deras nätverk. Eller så misslyckades nedladdningen av profilen och mobilaktiveringen.
+  - **Mobilaktiveringen fungerar inte, kontakta mobiloperatören**: Aktiveringskoden kan kanske inte aktiveras inom deras nätverk. Eller så misslyckades nedladdningen av profilen och mobilaktiveringen.
 
 ## <a name="next-steps"></a>Nästa steg
+
 [Konfigurera enhetsprofiler](device-profiles.md)

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/04/2019
+ms.date: 05/26/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e036e139e97ce033b3269ba0b8d5cf202fad773
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 8a90345bef46161911bcb1c1072b6ae4af41f16e
+ms.sourcegitcommit: 97fbb7db14b0c4049c0fe3a36ee16a5c0cf3407a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79360034"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83864964"
 ---
 # <a name="get-data-from-the-intune-data-warehouse-api-with-a-rest-client"></a>Hämta data från API för Intune-informationslagret med en REST-klient
 
-Du kan öppna datamodellen Intune-informationslager via RESTful-slutpunkter. Klienten måste auktorisera med Microsoft Azure Active Directory (Azure AD) med hjälp av OAuth 2.0 för att få åtkomst till dina data. Om du vill aktivera åtkomst måste du först ställa in en inbyggd app i Azure och ge behörighet till Microsoft Intune-API. Den lokala klienten får behörighet och kan sedan kommunicera med informationslagrets slutpunkter via den inbyggda appen.
+Du når datamodellen Intune-informationslager via RESTful-slutpunkter. Klienten måste auktorisera med Microsoft Azure Active Directory (Azure AD) med hjälp av OAuth 2.0 för att få åtkomst till dina data. Om du vill aktivera åtkomst måste du först ställa in en inbyggd app i Azure och ge behörighet till Microsoft Intune-API. Den lokala klienten får behörighet och kan sedan kommunicera med informationslagrets slutpunkter via den inbyggda appen.
 
 När du ska ställa in en klient för att hämta data från informationslager-API:et måste du:
 
@@ -216,6 +216,7 @@ Följande exempel innehåller en enkel REST-klient. Koden använder klassen **ht
 
    Console.Write(response.Content.ReadAsStringAsync().Result);
    Console.ReadKey();
+   }
    }
    }
    ```

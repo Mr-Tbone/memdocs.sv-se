@@ -1,12 +1,12 @@
 ---
 title: Lägga till VPN-inställningar för enheter i Microsoft Intune – Azure | Microsoft Docs
-description: För Android-enhetsadministratör-, Android Enterprise-, iOS-, iPadOS-, macOS- och Windows-enheter använder du inbyggda inställningar för att skapa anslutningar för virtuella privata nätverk (VPN) i Microsoft Intune.
+description: På enheter med Android-enhetsadministratör, Android Enterprise, iOS, iPadOS, macOS och Windows använder du inbyggda inställningar till att skapa VPN-anslutningar (virtuella privata nätverk) i Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
 ms.date: 05/07/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c72d2f8d9bd6a7235845863000272f605bb41089
-ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
+ms.openlocfilehash: 1c92220fabf8d1cb2a34ac702dd4157ef848762b
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82943832"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83990270"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>Skapa VPN-profiler för att ansluta till VPN-servrar i Intune
 
-Virtuella privata nätverk (VPN) ger användarna säker fjärråtkomst till företagets nätverk. Enheter använder en VPN-anslutningsprofil för att initiera en anslutning till VPN-servern. **VPN-profiler** i Microsoft Intune tilldelar VPN-inställningar till användare och enheter i din organisation så att de enkelt och säkert kan ansluta till nätverket.
+Virtuella privata nätverk (VPN) ger användarna säker fjärråtkomst till företagets nätverk. Enheter använder en VPN-anslutningsprofil för att initiera en anslutning till VPN-servern. **VPN-profiler** i Microsoft Intune tilldelar VPN-inställningar till användare och enheter i organisationen. Använd de här inställningarna så att användarna enkelt och säkert kan ansluta till organisationens nätverk.
 
 Exempel: Du vill konfigurera alla enheter som kör iOS/iPadOS med de inställningar som krävs för att ansluta till en filresurs i företagsnätverket. Du skapar en VPN-profil som innehåller de här inställningarna. Sedan tilldelar du den här profilen till alla användare som har iOS/iPadOS-enheter. Användarna ser VPN-anslutningen i listan med tillgängliga nätverk och kan enkelt ansluta.
 
@@ -108,7 +108,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - Android Enterprise-arbetsprofiler
   - Ägare av Android Enterprise-enhet (helt hanterad)
   - iOS/iPadOS
-  - macOS
   - Windows 10
   - Windows 8,1
   - Windows Phone 8.1
@@ -182,7 +181,7 @@ VPN-profiler kan använda ett antal olika anslutningstyper och protokoll från o
 
 När du skapar VPN-profilen väljer du en SCEP- eller PKCS-certifikatprofil som du tidigare har skapat i Intune. Profilen kallas för identitetscertifikat. Det används för att autentisera mot en betrodd certifikatprofil (eller ett *rotcertifikat*) som du har skapat för att användarens enhet ska få ansluta. Det betrodda certifikatet tilldelas datorn som autentiserar VPN-anslutningen, vanligtvis VPN-servern.
 
-Om du använder certifikatbaserad autentisering för din VPN-profil distribuerar du VPN-profilen, certifikatprofilen och profilen för betrodd rot till samma grupper för att säkerställa att varje enhet kan verifiera din certifikatutfärdare.
+Om du använder certifikatbaserad autentisering för din VPN-profil distribuerar du VPN-profilen, certifikatprofilen och profilen för betrodd rot till samma grupper. Den här tilldelningen ser till att varje enhet kan identifiera certifikatutfärdarens legitimitet.
 
 Mer information om hur du skapar och använder certifikatprofiler i Intune finns i [Konfigurera certifikat i Microsoft Intune](../protect/certificates-configure.md).
 

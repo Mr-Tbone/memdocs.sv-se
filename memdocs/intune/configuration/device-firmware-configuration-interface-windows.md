@@ -5,8 +5,8 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/06/2019
-ms.topic: conceptual
+ms.date: 05/13/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.localizationpriority: high
 ms.technology: ''
@@ -15,16 +15,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df8f6ba6873e98663be853e134995bab640541fc
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 2f598a73275e257fca3ff4024641fce54c3dabd2
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79361126"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83983834"
 ---
 # <a name="use-device-firmware-configuration-interface-profiles-on-windows-devices-in-microsoft-intune-public-preview"></a>Använda DFCI-profiler på Windows-enheter i Microsoft Intune (allmänt tillgänglig förhandsversion)
-
-
 
 När du använder Intune för att hantera Autopilot-enheter kan du hantera UEFI-inställningar (BIOS) när enheterna har registrerats med hjälp av DFCI (Device Firmware Configuration Interface). En översikt av fördelar, scenarier och förutsättningar finns i [översikten över DFCI](https://microsoft.github.io/mu/dyn/mu_plus/DfciPkg/Docs/Dfci_Feature/).
 
@@ -81,31 +79,35 @@ Den här profilen innehåller de DFCI-inställningar som du konfigurerar.
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 3. Ange följande egenskaper:
 
+    - **Plattform**: Välj **Windows 10 och senare**.
+    - **Profil**: Välj **Device Firmware Configuration Interface**.
+
+4. Välj **Skapa**.
+5. Ange följande egenskaper i **Grundinställningar**:
+
     - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett användbart profilnamn är till exempel **Windows: Konfigurera DFCI-inställningar på Windows-enheter**.
     - **Beskrivning**: Ange en beskrivning av profilen. Denna inställning är valfri, men rekommenderas.
-    - **Plattform**: Välj **Windows 10 och senare**.
-    - **Profiltyp**: Välj **Device Firmware Configuration Interface**.
 
-4. Konfigurera inställningarna:
+6. Välj **Nästa**.
+7. I **Konfigurationsinställningar**, konfigurerar du följande inställningar:
 
     - **Tillåt lokal användare att ändra UEFI-inställningar (BIOS)** : Alternativen är:
       - **Endast ej konfigurerade inställningar**: Den lokala användaren kan ändra valfri inställningar *förutom* de inställningar som uttryckligen anges till **Aktivera** eller **Inaktivera** av Intune.
       - **Inga**: Den lokala användaren kan inte ändra UEFI-inställningar (BIOS), däribland inställningar som inte visas i DFCI-profilen.
 
     - **CPU- och I/O-virtualisering**: Alternativen är:
-        - **Inte konfigurerad**: Intune ändrar inte den här funktionen och låter eventuella inställningar vara kvar som de är.
+        - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
         - **Aktiverad**: BIOS gör plattformens funktioner för CPU- och I/O-virtualisering tillgängliga för användning av operativsystemet. Det aktiverar Windows-tekniker för virtualiseringsbaserad säkerhet och enhetsskydd.
-        - **Inaktivera**: BIOS inaktiverar plattformens funktioner för CPU- och I/O-virtualisering och förhindrar att de används.
     - **Kameror**: Alternativen är:
-        - **Inte konfigurerad**: Intune ändrar inte den här funktionen och låter eventuella inställningar vara kvar som de är.
+        - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
         - **Aktiverad**: Alla inbyggda kameror som hanteras direkt av UEFI (BIOS) aktiveras. Kringutrustning, till exempel USB-kameror, påverkas inte.
         - **Inaktiverad**: Alla inbyggda kameror som hanteras direkt av UEFI (BIOS) inaktiveras. Kringutrustning, till exempel USB-kameror, påverkas inte.
     - **Mikrofoner och högtalare**:  Alternativen är:
-        - **Inte konfigurerad**: Intune ändrar inte den här funktionen och låter eventuella inställningar vara kvar som de är.
+        - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
         - **Aktiverad**: Alla inbyggda mikrofoner och högtalare som hanteras direkt av UEFI (BIOS) aktiveras. Kringutrustning, till exempel USB-enheter, påverkas inte.
         - **Inaktiverad**: Alla inbyggda mikrofoner och högtalare som hanteras direkt av UEFI (BIOS) inaktiveras. Kringutrustning, till exempel USB-enheter, påverkas inte.
     - **Radio (Bluetooth, Wi-Fi, NFC osv.)** : Alternativen är:
-        - **Inte konfigurerad**: Intune ändrar inte den här funktionen och låter eventuella inställningar vara kvar som de är.
+        - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
         - **Aktiverad**: Alla inbyggda radior som hanteras direkt av UEFI (BIOS) aktiveras. Kringutrustning, till exempel USB-enheter, påverkas inte.
         - **Inaktiverad**: Alla inbyggda radior som hanteras direkt av UEFI (BIOS) inaktiveras. Kringutrustning, till exempel USB-enheter, påverkas inte.
 
@@ -113,19 +115,31 @@ Den här profilen innehåller de DFCI-inställningar som du konfigurerar.
         > Om du inaktiverar inställningen **Radio** måste enheten ha en trådbunden nätverksanslutning. Annars kan enheten bli ohanterbar.
 
     - **Starta från externa media (USB, SD)** : Alternativen är:
-        - **Inte konfigurerad**: Intune ändrar inte den här funktionen och låter eventuella inställningar vara kvar som de är.
+        - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
         - **Aktiverad**: UEFI (BIOS) tillåter start från icke-hårddiskbaserad lagring.
         - **Inaktiverad**: UEFI (BIOS) tillåter inte start från icke-hårddiskbaserad lagring.
-    - **Starta från nätverkskort**:  Alternativen är:
-        - **Inte konfigurerad**: Intune ändrar inte den här funktionen och låter eventuella inställningar vara kvar som de är.
+    - **Starta från nätverkskort**: Alternativen är:
+        - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
         - **Aktiverad**: UEFI (BIOS) tillåter start från inbyggda nätverksgränssnitt.
         - **Inaktiverad**: UEFI (BIOS) tillåter inte start från inbyggda nätverksgränssnitt.
 
-5. När du är klar väljer du **OK** > **Skapa** för att spara dina ändringar. Profilen skapas och visas i listan.
+8. Välj **Nästa**.
+
+9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+
+    Välj **Nästa**.
+
+10. Under **Tilldelningar**väljer du de användare eller användargruppen som ska ta emot din profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](device-profile-assign.md).
+
+    Välj **Nästa**.
+
+11. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och profilen tilldelas. Principen visas också i profillistan.
+
+Nästa gången varje enhet checkar in tillämpas principen.
 
 ## <a name="assign-the-profiles-and-reboot"></a>Tilldela profilerna och starta om
 
-När profilerna har skapats är de [redo att tilldelas](../configuration/device-profile-assign.md). Tilldela profilerna till dina Azure AD-säkerhetsgrupper som omfattar dina DFCI-enheter.
+[Tilldela](../configuration/device-profile-assign.md) profilerna till dina Azure AD-säkerhetsgrupper som omfattar dina DFCI-enheter. Profilen kan tilldelas när den skapas, eller efteråt.
 
 När enheten kör Windows Autopilot kan DFCI framtvinga en omstart på sidan för registreringsstatus. Den första omstarten registrerar UEFI i Intune. 
 
@@ -179,4 +193,4 @@ När DFCI-principen tillämpas kan lokala användare inte ändra inställningar 
 
 ## <a name="next-steps"></a>Nästa steg
 
-När profilen har tilldelats [övervakar du dess status](device-profile-monitor.md).
+När [profilen har tilldelats](device-profile-assign.md) [övervakar du dess status](device-profile-monitor.md).

@@ -6,8 +6,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 08/05/2019
-ms.topic: conceptual
+ms.date: 05/22/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd7483319443b7a960f8e704442d2b43b6b00c66
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 9104716c469168a5ab2c5c1b49caf14071150db1
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326911"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83988901"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Konfigurera registrering av Windows-enheter
 
@@ -67,8 +67,8 @@ När vanliga användare loggar in med sina autentiseringsuppgifter för Azure AD
 ## <a name="simplify-windows-enrollment-without-azure-ad-premium"></a>Förenkla Windows-registreringen utan Azure AD Premium
 Du kan förenkla registreringen genom att skapa ett DNS-alias (CNAME-posttyp) som omdirigerar registreringsbegäranden till Intune-servrarna. I annat fall måste användare som försöker ansluta till Intune ange Intune-servernamnet under registreringen.
 
-**Steg 1: Skapa CNAME-poster** (valfritt)<br>
-Skapa CNAME-DNS-resursposter för företagets domän. Om ditt företags webbplats till exempel är contoso.com så skapar du en CNAME-post i DNS som omdirigerar EnterpriseEnrollment.contoso.com till enterpriseenrollment-s.manage.microsoft.com.
+**Steg 1: Skapa CNAME** (valfritt)<br>
+Skapa CNAME-DNS-resursposter för företagsdomänen. Om ditt företags webbplats till exempel är contoso.com så skapar du en CNAME-post i DNS som omdirigerar EnterpriseEnrollment.contoso.com till enterpriseenrollment-s.manage.microsoft.com.
 
 Det är valfritt att skapa CNAME DNS-poster, men det blir enklare för användarna om du gör det. Om ingen CNAME-post hittas, uppmanas användarna att manuellt ange MDM-servernamnet, enrollment.manage.microsoft.com.
 
@@ -95,8 +95,8 @@ Contosos DNS-administratör skapar följande CNAME-poster:
 
 Distributionen av DNS-poständringarna kan ta upp till 72 timmar. Du kan inte verifiera DNS-ändringen i Intune förrän DNS-posten har spridits.
 
-## <a name="additional-endpoints-are-supported-but-not-recommended"></a>Ytterligare slutpunkter stöds men rekommenderas inte
-EnterpriseEnrollment-s.manage.microsoft.com är det föredragna fullständiga domännamnet men det finns två andra slutpunkter som har används av kunder tidigare och stöds. Både EnterpriseEnrollment.manage.microsoft.com (utan -s) och manage.microsoft.com fungerar som mål för servern för automatisk identifiering men användare måste trycka på OK på ett bekräftelsemeddelande. Om du vill peka på EnterpriseEnrollment-s.manage.microsoft.commåste inte användaren göra det ytterligare bekräftelsesteget, så det är den rekommenderade konfigurationen
+## <a name="additional-endpoints-are-used-but-no-longer-supported"></a>Fler slutpunkter används men stöds inte längre
+EnterpriseEnrollment-s.manage.microsoft.com är rekommenderad FQDN för registrering. Det finns två andra slutpunkter som kunder har använt tidigare och fortfarande fungerar, men de stöds inte längre. Både EnterpriseEnrollment.manage.microsoft.com (utan -s) och manage.microsoft.com fungerar som mål för servern för automatisk identifiering men användare måste trycka på OK på ett bekräftelsemeddelande. Om du vill peka på EnterpriseEnrollment-s.manage.microsoft.commåste inte användaren göra det ytterligare bekräftelsesteget, så det är den rekommenderade konfigurationen
 
 ## <a name="alternate-methods-of-redirection-are-not-supported"></a>Alternativa metoder för omdirigering stöds inte
 Det går inte att använda en annan metod än CNAME-konfigurationen. Till exempel stöds inte användning av en proxyserver för att omdirigera enterpriseenrollment.contoso.com/EnrollmentServer/Discovery.svc till enterpriseenrollment-s.manage.microsoft.com/EnrollmentServer/Discovery.svc eller manage.microsoft.com/EnrollmentServer/Discovery.svc.

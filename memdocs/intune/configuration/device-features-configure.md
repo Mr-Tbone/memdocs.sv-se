@@ -1,12 +1,12 @@
 ---
 title: Skapa iOS/iPadOS- eller macOS-enhetsprofiler i Microsoft Intune – Azure | Microsoft Docs
-description: Lägg till eller skapa en iOS-, iPadOS- eller macOS-enhetsprofil och konfigurera sedan inställningar för AirPrint, layout för startsidan, appmeddelanden, delad enhet, enkel inloggning och webbinnehållsfilter i Microsoft Intune.
+description: Lägg till eller skapa en enhetsprofil för iOS, iPad eller macOS. Konfigurera inställningar för AirPrint, layout för startsidan, appmeddelanden, delad enhet, enkel inloggning och webbinnehållsfilter i Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/09/2020
-ms.topic: conceptual
+ms.date: 05/06/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: high
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8e72fc48608ebf32f3e32d4a94ab7203ee418d8f
-ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
+ms.openlocfilehash: 349fdc7b0f13f0999b8c9993bcaba1d458ebac59
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82943815"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83989202"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -54,7 +54,7 @@ Gäller för:
 
 ## <a name="app-notifications"></a>Appmeddelanden
 
-Välj hur appar på iOS- och iPadOS-enheter får aviseringar. Till exempel, skicka aviseringar från Intune så att de visas i meddelandecentret, visas på låsskärmen eller spelar upp ett ljud.
+Välj hur appar på iOS- och iPadOS-enheter får aviseringar. Till exempel, skicka aviseringar så att de visas i meddelandecentret, visas på låsskärmen eller spelar upp ett ljud.
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [Appaviseringar i iOS/iPadOS](ios-device-features-settings.md#app-notifications).
 

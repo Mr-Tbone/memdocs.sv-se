@@ -5,8 +5,8 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/22/2020
-ms.topic: conceptual
+ms.date: 05/20/2020
+ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9a3e2c2a2c50f2d0fde264eedc2096d34f815a9
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: 13824c82b426e1efb00dce2db7c9f4a2dd5bb9ee
+ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82023188"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83990325"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Konfigurera och använda importerade PKCS-certifikat med Intune
 
@@ -126,7 +126,7 @@ Om du vill använda PowerShell-cmdletarna bygger du projektet själv med hjälp 
 
 3. Ändra **Debug** till **Release**.
 
-4. Gå till **Build** och välj **Build PFXImportPS**. Efter en stund visas bekräftelsen **Build succeeded** längst ned till vänster i Visual Studio.
+4. Gå till **Build** och välj **Build PFXImportPS**. Efter en stund ser du bekräftelsen **Build succeeded** längst ned till vänster i Visual Studio.
 
    ![Build-alternativet i Visual Studio](./media/certificates-imported-pfx-configure/vs-build-release.png)
 
@@ -148,7 +148,7 @@ PowerShell-modulen tillhandahåller metoder för att skapa en nyckel med Windows
 
 3. Kör `Import-Module .\IntunePfxImport.psd1` för att importera modulen.
 
-4. Kör sedan `Add-IntuneKspKey "Microsoft Software Key Storage Provider" "PFXEncryptionKey"`
+4. Kör sedan `Add-IntuneKspKey -ProviderName "Microsoft Software Key Storage Provider" -KeyName "PFXEncryptionKey"`
 
    > [!TIP]
    > Providern du använder måste väljas igen när du importerar PFX-certifikat. Du kan använda **Microsoft-programvaruprovidern för nyckellagring** men den stöds för att använda en annan provider. Nyckelnamnet anges också som ett exempel och du kan välja ett annat nyckelnamn.
@@ -187,12 +187,12 @@ Välj den nyckellagrinsprovider som matchar providern du använde för att skapa
 
 3. Kör `Import-Module .\IntunePfxImport.psd1` för att importera modulen
 
-4. Kör `$authResult = Get-IntuneAuthenticationToken -AdminUserName "<Admin-UPN>"` för autentisera till Intune Graph
+4. Kör `Set-IntuneAuthenticationToken  -AdminUserName "<Admin-UPN>"` för autentisera till Intune Graph
 
    > [!NOTE]
    > Då autentiseringen körs mot Graph måste du ange behörigheter för AppID. Om det är först gången du använder det här verktyget krävs en *global administratör*. PowerShell-cmdletarna använder samma AppID som den som används med [PowerShell Intune-exempel](https://github.com/microsoftgraph/powershell-intune-samples).
 
-5. Konvertera lösenordet för varje PFX-fil som du importerar till en säker sträng genom att köra `$SecureFilePassword = ConvertTo-SecureString -String "<PFXPassword>" -AsPlainText -Force`.
+5. Konvertera lösenordet för varje PFX-fil du importerar till en säker sträng genom att köra `$SecureFilePassword = ConvertTo-SecureString -String "<PFXPassword>" -AsPlainText -Force`.
 
 6. Om du vill skapa ett **UserPFXCertificate**-objekt kör du `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>"`
 
@@ -200,10 +200,15 @@ Välj den nyckellagrinsprovider som matchar providern du använde för att skapa
 
    > [!NOTE]
    > När du importerar certifikatet från ett annat system än servern där anslutningsappen är installerad måste du använda följande kommando som innehåller nyckelfilsökvägen: `$userPFXObject = New-IntuneUserPfxCertificate -PathToPfxFile "<FullPathPFXToCert>" $SecureFilePassword "<UserUPN>" "<ProviderName>" "<KeyName>" "<IntendedPurpose>" "<PaddingScheme>" "<File path to public key file>"`
+   >
+   > *VPN* kan inte användas som IntendedPurpose. 
 
-7. Importera **UserPFXCertificate**-objektet till Intune genom att köra `Import-IntuneUserPfxCertificate -AuthenticationResult $authResult -CertificateList $userPFXObject`
 
-8. Validera certifikatet som har importerats genom att köra `Get-IntuneUserPfxCertificate -AuthenticationResult $authResult -UserList "<UserUPN>"`
+7. Importera **UserPFXCertificate**-objektet till Intune genom att köra `Import-IntuneUserPfxCertificate -CertificateList $userPFXObject`
+
+8. Validera certifikatet som har importerats genom att köra `Get-IntuneUserPfxCertificate -UserList "<UserUPN>"`
+
+9.  Vi rekommenderar att du rensar AAD-tokencachen utan att vänta på att den ska upphöra av sig själv, genom att köra `Remove-IntuneAuthenticationToken`
 
 Mer information om andra tillgängliga kommandon finns i readme-filen i [PFXImport PowerShell Project på GitHub](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
 
@@ -212,7 +217,7 @@ Mer information om andra tillgängliga kommandon finns i readme-filen i [PFXImpo
 När du har importerat certifikaten till Intune skapar du en profil för **PKCS-importerat certifikat** och tilldelar den till Azure Active Directory-grupper.
 
 > [!NOTE]
-> När du har skapat en PKCS-importerad certifikatprofil är värdena **Avsett syfte** och **Key Storage Provider** (KSP) i profilen skrivskyddade och kan inte redigeras. Om du behöver ett annat värde för någon av dessa inställningar skapar och distribuerar du en ny profil. 
+> När du har skapat en PKCS-importerad certifikatprofil är värdena för **Avsett syfte** och **Key Storage Provider** (KSP) i profilen skrivskyddade och kan inte redigeras. Om du behöver ett annat värde för någon av dessa inställningar skapar och distribuerar du en ny profil. 
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
