@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 04/16/2020
+ms.date: 05/05/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 63ffda60d00c1a386eb65d851563c911957c0acd
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 9d4bc2de9e16cfcf9322cf343badafe3c9a35c70
+ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81615716"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83428904"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>Funktionsinställningar för macOS-enheter i Intune
 
@@ -31,25 +31,29 @@ Du kan använda dessa funktioner för att styra macOS-enheter som en del av din 
 
 I den här artikeln visas inställningarna, tillsammans med en beskrivning av vad varje inställning gör. Här visas även anvisningar för att hämta IP-adress, sökväg och port för AirPrint-skrivare som använder Terminal-appen (emulator). Om du vill ha mer information om enhetsfunktionerna går du till [Lägg till funktionsinställningar för iOS/iPadOS- eller macOS-enhet](device-features-configure.md).
 
+> [!NOTE]
+> Användargränssnittet kanske inte har samma registreringstyper som i den här artikeln. Informationen i den här artikeln är korrekt. Användargränssnittet uppdateras i en kommande version.
+
 ## <a name="before-you-begin"></a>Innan du börjar
 
-[Skapa en macOS-enhetskonfigurationsprofil](device-features-configure.md).
+[Skapa en profil för macOS-enhetsfunktioner](device-features-configure.md).
 
 > [!NOTE]
 > Dessa inställningar gäller för olika registreringstyper. Vissa inställningar gäller för alla registreringsalternativ. Mer information om de olika registreringstyperna finns i [macOS-registrering](../enrollment/macos-enroll.md).
 
 ## <a name="airprint"></a>AirPrint
 
-### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering och automatisk enhetsregistrering
+### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **IP-adress**: Ange skrivarens IPv4- eller IPv6-adress. Om du använder värdnamn till att identifiera skrivare, kan du hämta IP-adressen genom att pinga skrivaren i Terminal-appen. Det finns mer information i [Hämta IP-adress och sökväg](#get-the-ip-address-and-path) (i den här artikeln).
-- **Sökväg**: Ange sökvägen till skrivaren. Sökvägen är vanligtvis `ipp/print` för skrivare i nätverket. Det finns mer information i [Hämta IP-adress och sökväg](#get-the-ip-address-and-path) (i den här artikeln).
-- **Port** (iOS 11.0+, iPadOS 13.0+): Ange lyssningsporten för AirPrint-målet. Om du lämnar den här egenskapen tom, kommer AirPrint att använda standardporten.
-- **TLS** (iOS 11.0+, iPadOS 13.0+): Välj **Aktivera** för att skydda AirPrint-anslutningar med TLS (Transport Layer Security).
+- **AirPrint-mål**: **Lägg till** en eller flera AirPrint-skrivare där användare kan skriva ut från sina enheter. Ange även:
+  - **Port** (iOS 11.0+, iPadOS 13.0+): Ange lyssningsporten för AirPrint-målet. Om du lämnar den här egenskapen tom, kommer AirPrint att använda standardporten.
+  - **IP-adress**: Ange skrivarens IPv4- eller IPv6-adress. Ange till exempel `10.0.0.1`. Om du använder värdnamn till att identifiera skrivare, kan du hämta IP-adressen genom att pinga skrivaren i Terminal-appen. Det finns mer information under [Hämta IP-adress och sökväg](#get-the-ip-address-and-path) (i den här artikeln).
+  - **Sökväg**: Ange resurssökvägen till skrivaren. Sökvägen är vanligtvis `ipp/print` för skrivare i nätverket. Det finns mer information under [Hämta IP-adress och sökväg](#get-the-ip-address-and-path) (i den här artikeln).
+  - **TLS** (iOS 11.0+, iPadOS 13.0+): Alternativen är:
+    - **Nej** (standard): TLS (Transport Layer Security) används inte vid anslutning till AirPrint-skrivare.
+    - **Ja**: Skyddar AirPrint-anslutningar med TLS (Transport Layer Security).
 
-- **Lägg till** AirPrint-servern. Du kan lägga till flera AirPrint-servrar.
-
-Du kan också **Importera** en kommaavgränsad fil (.csv) med en lista över AirPrint-skrivare. När du har lagt till AirPrint-skrivarna i Intune, kan du också **Exportera** listan.
+- **Importera** en kommaavgränsad fil (.csv) med en lista över AirPrint-skrivare. När du har lagt till AirPrint-skrivarna i Intune, kan du också **Exportera** listan.
 
 ### <a name="get-the-ip-address-and-path"></a>Hämta IP-adress och sökväg
 
@@ -66,60 +70,88 @@ Om du vill lägga till AirPrinter-servrar, behöver du ha skrivarens IP-adress, 
 
 4. Använd värdena för IP-adressen och resurssökvägen. I det här exemplet är IP-adressen `10.50.25.21` och resurssökvägen är `/ipp/port1`.
 
+## <a name="associated-domains"></a>Tillhörande domäner
+
+Med Intune kan du:
+
+- Lägg till många app-till-domän-associationer.
+- Associera många domäner med samma app.
+
+Den här funktionen gäller för:
+
+- macOS 10.15 och senare
+
+### <a name="settings-apply-to-user-approved-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering som användaren godkänner och automatisk enhetsregistrering
+
+- **Tillhörande domäner**: **Lägg till** en koppling mellan din domän och en app. Den här funktionen delar inloggningsuppgifter mellan en Contoso-app och en Contoso-webbplats. Ange även:
+
+  - **App-ID**: Ange app-ID:t för den app som ska associeras med en webbplats. App-ID:t innehåller team-ID:t och ett bunt-ID: `TeamID.BundleID`.
+
+    Team-ID:t är en sträng med 10 tecken (bokstäver och siffror) som genereras av Apple för dina apputvecklare, t.ex. `ABCDE12345`. [Leta upp ditt team-ID](https://help.apple.com/developer-account/#/dev55c3c710c) (öppnar Apples webbplats) innehåller mer information.
+
+    Bunt-ID:t identifierar appen unikt och är vanligtvis formaterat i omvänd domännamnsnotation. Bunt-ID:t för Finder är t.ex. `com.apple.finder`. Om du vill hitta bunt-ID:t, så använd AppleScript i Terminal:
+
+    `osascript -e 'id of app "ExampleApp"'`
+
+  - **Domän**: Ange den webbplatsdomän som ska associeras med en app. Domänen innehåller en tjänsttyp och ett fullständigt kvalificerat värdnamn, t. ex. `webcredentials:www.contoso.com`.
+
+    Du kan matcha alla underdomäner i en associerad domän genom att ange `*.` (en asterisk som jokertecken och en punkt) framför domänens början. Du måste ange perioden. Exakta domäner har högre prioritet än domäner med jokertecken. Därför matchas mönster från överordnade domäner *om* någon matchning inte finns i den fullständigt kvalificerade underdomänen.
+
+    Tjänsttypen kan vara:
+
+    - **authsrv**: Tillägg för enkel inloggning
+    - **applink**: Universell länk
+    - **webbinloggningsuppgifter**: Automatisk ifyllning av lösenord
+
+> [!TIP]
+> Du kan felsöka på din macOS-enhet genom att öppna **Systeminställningar** > **Profiler**. Bekräfta att profilen du skapade finns i enhetens profillista. Om den finns med i listan, såse till att **Associerad domänkonfiguration** finns i profilen och att den innehåller rätt app-ID och domäner.
+
 ## <a name="login-items"></a>Inloggningsobjekt
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-- **Filer, mappar och anpassade appar**: **Lägg till** sökvägen för en fil, mapp, anpassad app eller systemapp som ska öppnas när användare loggar in på sina enheter. Systemappar eller appar som har skapats eller anpassats för din organisation finns vanligtvis i `Applications`-mappen, med en sökväg liknande `/Applications/AppName.app`. 
+- **Lägg till filer, mappar och egna appar som ska starta vid inloggning**: **Lägg till** sökvägen för en fil, mapp, anpassad app eller systemapp som ska öppnas när användare loggar in på sina enheter. Ange även:
 
-  Du kan lägga till många filer, mappar och appar. Ange till exempel:  
-  
-  - `/Applications/Calculator.app`
-  - `/Applications`
-  - `/Applications/Microsoft Office/root/Office16/winword.exe`
-  - `/Users/UserName/music/itunes.app`
-  
-  När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
+  - **Sökväg för objekt**: Ange sökvägen till filen, mappen eller appen. Systemappar eller appar som har skapats eller anpassats för din organisation finns vanligtvis i `Applications`-mappen, med en sökväg liknande `/Applications/AppName.app`.
 
-- **Dölj från användarkonfiguration**: **Dölj** innebär att appen inte visas i listan Användare och grupper vid inloggning. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard visar operativsystemet objektet du startar vid inloggning i listan Användare och grupper med alternativet Dölj avmarkerat.
+    Du kan lägga till många filer, mappar och appar. Ange till exempel:  
+  
+    - `/Applications/Calculator.app`
+    - `/Applications`
+    - `/Applications/Microsoft Office/root/Office16/winword.exe`
+    - `/Users/UserName/music/itunes.app`
+  
+    När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
+
+  - **Dölj**: Välj om du vill visa eller dölja appen. Alternativen är:
+    - **Inte konfigurerad**: Det här är standardinställningen. Intune varken ändrar eller uppdaterar den här inställningen. Som standard visar operativsystemet objektet i listan Användare och grupper med alternativet Dölj avmarkerat.
+    - **Ja**: Döljer appen i listan Användare och grupper vid inloggning.
 
 ## <a name="login-window"></a>Inloggningsfönstret
 
-### <a name="settings-apply-to-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering och automatisk enhetsregistrering
+### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
 
-#### <a name="window-layout"></a>Fönsterlayout
-
-- **Visa ytterligare information i menyfältet**: När du väljer tidsområdet på menyraden visas värdnamnet och macOS-versionen om **Tillåt** är valt. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte visa den här informationen på menyraden.
+- **Visa ytterligare information i menyfältet**: **Ja** innebär att värdnamnet och macOS-versionen visas när du väljer tidsområdet i menyfältet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte visa den här informationen på menyraden.
 - **Banderoll**: Ange ett meddelande som visas på inloggningsskärmen på enheter. Du kan till exempel ange organisationsinformation, ett välkomstmeddelande eller information för Upphittat.
-- **Välj inloggningsformat**: Välj hur användare loggar in på enheter. Alternativen är:
-  - **Fråga efter användarnamn och lösenord** (standard): Kräver att användarna anger ett användarnamn och lösenord.
-  - **Lista alla användare, fråga efter lösenord**: Kräver att användarna väljer sitt användarnamn från en användarlista och sedan anger sitt lösenord. Konfigurera också:
+- **Kräv textfälten användarnamn och lösenord**: Välj hur användare loggar in på enheter. **Ja** kräver att användarna anger ett användarnamn och lösenord. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard kräva att användare väljer sitt användarnamn i en lista och sedan skriver sitt lösenord.
 
-    - **Lokala användare**: Om du väljer **Dölj** visas inte lokala användarkonton i användarlistan, som kan innehålla standardkonton och administratörskonton. Endast nätverks- och systemanvändarkonton visas. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa de lokala användarkonton i användarlistan.
-    - **Mobilkonton**: Om du väljer **Dölj** visas inte mobilkonton i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa mobilkonton i användarlistan. Vissa mobilkonton kan visas som nätverksanvändare.
-    - **Nätverksanvändare**: Välj **Visa** om du vill visa nätverksanvändare i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa nätverksanvändarkonton i användarlistan.
-    - **Administratörer**: Om du väljer **Dölj** visas inte administratörskonton i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa administratörskonton i användarlistan.
-    - **Andra användare**: Välj **Visa** om du vill visa **Andra...** användare i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte visa andra användarkonton i användarlistan.
+  Ange även:
 
-#### <a name="login-screen-power-settings"></a>Strömsparinställningar på inloggningsskärmen
+  - **Dölj lokala användare**: Om du väljer **Ja** visas inte lokala användarkonton i användarlistan, som kan innehålla standardkonton och administratörskonton. Endast nätverks- och systemanvändarkonton visas. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa de lokala användarkonton i användarlistan.
+  - **Dölj mobilkonton**: Om du väljer **Ja** visas inte mobilkonton i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa mobilkonton i användarlistan. Vissa mobilkonton kan visas som nätverksanvändare.
+  - **Visa nätverksanvändare**: Välj **Ja** om du vill visa nätverksanvändare i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa nätverksanvändarkonton i användarlistan.
+  - **Dölj datorns administratörer**: Om du väljer **Ja** visas inte administratörskonton i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa administratörskonton i användarlistan.
+  - **Visa andra användare:** : Välj **Ja** om du vill visa **Andra...** användare i användarlistan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inte visa andra användarkonton i användarlistan.
 
-- **Stäng av**: Om du väljer **Dölj** visas inte avstängningsknappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa avstängningsknappen.
-- **Starta om**: Om du väljer **Dölj** visas inte omstartsknappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa omstartsknappen.
-- **Vila**: Om du väljer **Dölj** visas inte Vila-knappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa Vila-knappen.
-
-#### <a name="other"></a>Andra
-
-- **Inaktivera användarinloggning från konsol**: Om du väljer **Inaktivera** döljs macOS-kommandoraden som används för att logga in. Vanliga användare kan **inaktivera** den här inställningen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta avancerade användare att logga in med macOS-kommandoraden. För att gå till konsolläget anger användarna `>console` i fältet Användarnamn. Användarna måste sedan autentiseras i konsolfönstret.
-
-#### <a name="apple-menu"></a>Apple-menyn
-
-När användarna loggar in på enheterna påverkar följande inställningar vad de kan göra.
-
-- **Inaktivera Stäng av**: Om du väljer **Inaktivera** kan användarna inte använda alternativet **Stäng av** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Stäng av** på enheter.
-- **Inaktivera omstart** : Om du väljer **Inaktivera** kan användarna inte välja alternativet **Starta om** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Starta om** på enheter.
-- **Inaktivera Ström av**: Om du väljer **Inaktivera** kan användarna inte välja alternativet **Ström av** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Ström av** på enheter.
-- **Inaktivera Logga ut** (macOS 10.13 och senare): Om du väljer **Inaktivera** kan användarna inte välja alternativet **Logga ut** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Logga ut** på enheter.
-- **Inaktivera Lås skärm** (macOS 10.13 och senare): Om du väljer **Inaktivera** kan användarna inte välja alternativet **Lås skärm** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Lås skärm** på enheter.
+- **Dölj nedstängningsknapp**: Om du väljer **Ja** visas inte avstängningsknappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa avstängningsknappen.
+- **Dölj knappen Starta om**: Om du väljer **Ja** visas inte omstartsknappen på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa omstartsknappen.
+- **Dölj knappen Vila**: Om du väljer **Ja** visas inte knappen Vila på inloggningsskärmen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard visa Vila-knappen.
+- **Inaktivera användarinloggning från konsol**: Om du väljer **Ja** döljs kommandoraden i macOS som används för att logga in. Vanliga användare kan ange den här inställningen till **Ja**. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta avancerade användare att logga in med macOS-kommandoraden. För att gå till konsolläget anger användarna `>console` i fältet Användarnamn. Användarna måste sedan autentiseras i konsolfönstret.
+- **Inaktivera nedstängning när inloggad**: Om du väljer **Ja** kan användarna inte välja alternativet **Stäng av** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Stäng av** på enheter.
+- **Inaktivera omstart när inloggad**: Om du väljer **Ja** kan användarna inte välja alternativet **Starta om** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Starta om** på enheter.
+- **Inaktivera avstängning när inloggad**: Om du väljer **Ja** kan användarna inte välja alternativet **Ström av** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Ström av** på enheter.
+- **Inaktivera utloggning när inloggad** (macOS 10.13 eller senare): Om du väljer **Ja** kan användarna inte välja alternativet **Logga ut** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Logga ut** på enheter.
+- **Inaktivera låsskärm när inloggad** (macOS 10.13 eller senare): Om du väljer **Ja** kan användarna inte välja alternativet **Låsskärm** efter att de har loggat in. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att välja menyalternativet **Lås skärm** på enheter.
 
 ## <a name="single-sign-on-app-extension"></a>Tillägg för enkel inloggning
 
@@ -127,7 +159,7 @@ Den här funktionen gäller för:
 
 - macOS 10.15 och senare
 
-### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper 
+### <a name="settings-apply-to-user-approved-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering som användaren godkänner och automatisk enhetsregistrering
 
 - **Typ av SSO-apptillägg**: Välj typ av inloggningsinformation för SSO-apptillägg. Alternativen är:
 
@@ -163,7 +195,7 @@ Den här funktionen gäller för:
     - Sträng
     - Boolesk: I **Konfigurationsvärde** anger du `True` eller `False`.
     - Heltal: Ange ett tal i **Konfigurationsvärde**.
-    
+
   - **Värde**: Ange data.
   
   - **Lägg till**: Välj om du vill lägga till dina konfigurationsnycklar.
@@ -199,42 +231,6 @@ Den här funktionen gäller för:
 - **Programpakets-ID:n** (endast Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. Dessa appar beviljas åtkomst till den biljettbeviljande biljetten för Kerberos och autentiseringsbiljetten. Apparna autentiserar även användare för tjänster som de har behörighet till.
 - **Domänsfärsmappning** (endast Kerberos): **Lägg till** DNS-suffixen för den domän som ska mappas till din sfär. Använd den här inställningen när värdarnas DNS-namn inte matchar sfärnamnet. Du behöver förmodligen inte skapa den här anpassade domän-till-sfär-mappningen.
 - **PKINIT-certifikat** (endast Kerberos): **Välj** den kryptering för offentlig nyckel för inledande autentisering (PKINIT) som kan användas för Kerberos-autentisering. Du kan välja mellan [PKCS](../protect/certficates-pfx-configure.md)- eller [SCEP](../protect/certificates-scep-configure.md) -certifikat som du har lagt till i Intune. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
-
-## <a name="associated-domains"></a>Tillhörande domäner
-
-Med Intune kan du:
-
-- Lägg till många app-till-domän-associationer.
-- Associera många domäner med samma app.
-
-Den här funktionen gäller för:
-
-- macOS 10.15 och senare
-
-### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
-
-- **App-ID**: Ange app-ID:t för den app som ska associeras med en webbplats. App-ID:t innehåller team-ID:t och ett bunt-ID: `TeamID.BundleID`.
-
-  Team-ID:t är en sträng med 10 tecken (bokstäver och siffror) som genereras av Apple för dina apputvecklare, t.ex. `ABCDE12345`. [Leta upp ditt team-ID](https://help.apple.com/developer-account/#/dev55c3c710c) (öppnar Apples webbplats) innehåller mer information.
-
-  Bunt-ID:t identifierar appen unikt och är vanligtvis formaterat i omvänd domännamnsnotation. Bunt-ID:t för Finder är t.ex. `com.apple.finder`. Om du vill hitta bunt-ID:t, så använd AppleScript i Terminal:
-
-  `osascript -e 'id of app "ExampleApp"'`
-
-- **Domän**: Ange den webbplatsdomän som ska associeras med en app. Domänen innehåller en tjänsttyp och ett fullständigt kvalificerat värdnamn, t. ex. `webcredentials:www.contoso.com`.
-
-  Du kan matcha alla underdomäner i en associerad domän genom att ange `*.` (en asterisk som jokertecken och en punkt) framför domänens början. Du måste ange perioden. Exakta domäner har högre prioritet än domäner med jokertecken. Därför matchas mönster från överordnade domäner *om* någon matchning inte finns i den fullständigt kvalificerade underdomänen.
-
-  Tjänsttypen kan vara:
-
-  - **authsrv**: Tillägg för enkel inloggning
-  - **applink**: Universell länk
-  - **webbinloggningsuppgifter**: Automatisk ifyllning av lösenord
-
-- **Lägg till**: Välj om du vill lägga till dina appar och associerade domäner.
-
-> [!TIP]
-> Du kan felsöka på din macOS-enhet genom att öppna **Systeminställningar** > **Profiler**. Bekräfta att profilen du skapade finns i enhetens profillista. Om den finns med i listan, såse till att **Associerad domänkonfiguration** finns i profilen och att den innehåller rätt app-ID och domäner.
 
 ## <a name="next-steps"></a>Nästa steg
 

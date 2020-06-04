@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd9741cfa8cf9edd03d723e63ed1936e1c986d08
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 685f2a51c7a2bfacbc95fb2a7615f0e459b97245
+ms.sourcegitcommit: b0ae4a9972bac3518d0d4f33e033ac492eefe3c1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989061"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84126523"
 ---
 # <a name="move-android-devices-from-device-administrator-to-work-profile-management"></a>Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering
 
@@ -72,10 +72,10 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
       - `https://portal.manage.microsoft.com/UpdateSettings.aspx`.
       - För amerikanska myndigheter kan du använda den här länken i stället: `https://portal.manage.microsoft.us/UpdateSettings.aspx`.
   
-    > [!NOTE]
-    > - Naturligtvis kan du använda användarvänlig hypertext för länkarna i kommunikationen med användarna. Använd dock inte URL-förkortare eftersom länkarna kanske inte fungerar om de ändras på det sättet.
-    > - Om Android Företagsportal är öppen och i bakgrunden när en användare trycker på länken, kan han eller hon istället gå till den sista sidan som är öppen.
-    > - Användarna måste trycka på länken på en Android-enhet. Om de i stället klistrar in den i en webbläsare så startas inte Android-företagsportalen. 
+      > [!NOTE]
+      > - Naturligtvis kan du använda användarvänlig hypertext för länkarna i kommunikationen med användarna. Använd dock inte URL-förkortare eftersom länkarna kanske inte fungerar om de ändras på det sättet.
+      > - Om Android Företagsportal är öppen och i bakgrunden när en användare trycker på länken, kan han eller hon istället gå till den sista sidan som är öppen.
+      > - Användarna måste trycka på länken på en Android-enhet. Om de i stället klistrar in den i en webbläsare så startas inte Android-företagsportalen. 
 
     Välj **Nästa**.
 
