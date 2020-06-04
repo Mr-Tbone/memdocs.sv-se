@@ -145,6 +145,8 @@
               href: app-configuration-policies-outlook.md
             - name: Konfigurera Google Chrome för Android
               href: apps-configure-chrome-android.md
+            - name: Konfigurera VPN för Android Enterprise
+              href: app-configuration-vpn-ae.md
         - name: Volyminköpta appar och böcker
           items:
             - name: Översikt över volyminköp
