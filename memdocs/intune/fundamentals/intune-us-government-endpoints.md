@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 28454fc067a7d8ab281b92d571a872bd9e0aa2d0
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: d1574e07ca58debaef5bbc134a86d76aa21778a3
+ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83991174"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84347274"
 ---
 # <a name="us-government-endpoints-for-microsoft-intune"></a>Slutpunkter för amerikanska myndigheter för Microsoft Intune
 
@@ -61,22 +61,9 @@ I följande tabeller visas de portar och tjänster som Intune-klienten har åtko
 - MS Graph: https:\//graph.microsoft.us
 - ADRS: https:\//enterpriseregistration.microsoftonline.us
 
-## <a name="windows-push-notification-services"></a>Windows Push Notification Services
-På Intune-hanterade enheter som hanteras med MDM krävs Windows Push Notification Services (WNS) för enhetsåtgärder och andra omedelbara aktiviteter. Mer information finns i [Företagsbrandväggar och proxykonfigurationer som stödjer WNS-trafik](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config)
+[!INCLUDE [Intune notices](../includes/windows-push-notification-services.md)]
 
-## <a name="apple-device-network-information"></a>Nätverksinformation för Apple-enhet
-
-|**Används för**|**Värdnamn (IP-adress/undernät)**|**Protokoll**|**Port**|
-|------------|-----------|------------|-----------|
-|Hämta och visa innehåll från Apple-servrar|itunes.apple.com<br>\*.itunes.apple.com<br>\*.mzstatic.com<br>\*.phobos.apple.com<br>\*.phobos.itunes-apple.com.akadns.net|HTTP|80|
-|Kommunikation med APNS-servrar|#-courier.push.apple.com<br>”#” är ett slumpmässigt tal från 0 till 50.|TCP|5223 och 443|
-|Olika funktioner, bland annat åtkomst till Internet, iTunes-butiken, macOS App Store, iCloud, meddelanden etc.|phobos.apple.com<br>ocsp.apple.com<br>ax.itunes.apple.com<br>ax.itunes.apple.com.edgesuite.net|HTTP/HTTPS|80 eller 443|
-
-Mer information finns i:
-
-- [TCP- och UDP-portar som används av Apples programvaruprodukter](https://support.apple.com/HT202944)
-- [Om macOS-, iOS/iPadOS-och iTunes-serverns värdanslutningar och bakgrundsprocesser i iTunes](https://support.apple.com/HT201999)
-- [Om dina macOS- och iOS/iPadOS-klienter inte får push-meddelanden från Apple](https://support.apple.com/HT203609)
+[!INCLUDE [Intune notices](../includes/apple-device-network-information.md)]
 
 ## <a name="next-steps"></a>Nästa steg
 [Nätverksslutpunkter för Microsoft Intune](intune-endpoints.md)

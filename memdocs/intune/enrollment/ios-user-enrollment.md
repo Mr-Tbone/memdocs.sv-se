@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 775a03e378fb8cee5992de7d81625f4485e6cc84
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 5d98f3f8205490848d9f5137e97e7796eee67a67
+ms.sourcegitcommit: 7a5196d4d9736c5cd52a23155c479523e52a097d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990552"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84436779"
 ---
 # <a name="set-up-iosipados-and-ipados-user-enrollment-preview"></a>Konfigurera användarregistrering för iOS/iPadOS och iPadOS (förhandsversion)
 
@@ -37,7 +37,6 @@ Mer information om vilka alternativ som är tillgängliga med Användarregistrer
 ## <a name="prerequisites"></a>Krav
 - [Utfärdare för hantering av mobil enhet (MDM)](../fundamentals/mdm-authority-set.md)
 - [Apple MDM-pushcertifikat](apple-mdm-push-certificate-get.md)
-- [Hanterade Apple-ID:n](https://support.apple.com/guide/apple-business-manager/mdm1c9622977/web).
 
 ## <a name="create-a-user-enrollment-profile-in-intune"></a>Skapa en profil för Användarregistrering i Intune
 

@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 089303b76f674d47767afdff72341d09f7f227d4
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 78cc6182cf8682935ecaa6c319e30ee8261fc2fb
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431741"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455267"
 ---
 # <a name="settings-for-the-windows-security-experience-profile-in-microsoft-intune"></a>Inställningar för Windows-säkerhetsupplevelseprofilen i Microsoft Intune
 
@@ -43,7 +43,7 @@ Visa inställningarna för antivirusprinciper som du kan konfigurera för **Wind
   - **Ja** – Avsnittet om virus och skydd mot hot i Windows Security-appen döljs för slutanvändare. Meddelanden om virus och skydd mot hot ignoreras.
 
   - **Alternativet Dölj dataåterställning efter utpressningstrojanattack i Windows Security-appen**  
-    CSP: [](https://go.microsoft.com/fwlink/?linkid=873664)
+    CSP: [HideRansomwareDataRecovery](https://go.microsoft.com/fwlink/?linkid=873664)
 
   - **Inte konfigurerad** (*standard*) – Inställningen återgår till klientens standardvärde för att tillåta användaråtkomst och meddelanden.
   - **Ja** – Avsnittet om dataåterställning efter utpressningstrojanattack i Windows Security-appen döljs för slutanvändare. Meddelanden om utpressningstrojan ignoreras.
@@ -85,7 +85,7 @@ Visa inställningarna för antivirusprinciper som du kan konfigurera för **Wind
   - **Ja** – Avsnittet om familjealternativ i Windows-säkerhetsappen döljs för slutanvändare. Dessutom ignoreras meddelanden som rör familjealternativ.
 
 - **Meddelanden i Windows-säkerhetsappen**  
-  CSP: [](https://go.microsoft.com/fwlink/?linkid=873675)
+  CSP: [DisableNotifications](https://go.microsoft.com/fwlink/?linkid=873675)
 
   Använd den här inställningen för att blockera Windows-säkerhetsmeddelanden för dina användare för alla föregående funktionsinställningar. Du kan också hantera Windows-säkerhetsappens meddelanden per funktion med hjälp av inställningarna för att fortsätta.
 
