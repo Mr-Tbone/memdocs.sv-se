@@ -2,7 +2,7 @@
 title: Hantera inställningar för programuppdateringar
 titleSuffix: Configuration Manager
 description: Läs om de klient inställningar som är lämpliga för program uppdateringar på din webbplats när du har installerat program uppdaterings platsen.
-ms.date: 03/30/2020
+ms.date: 06/04/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -10,12 +10,12 @@ ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 0a2a45ff866ea02aacc83c42109c8cba4020ed4e
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 2b851c03424af0ba0f826716b401705879338855
+ms.sourcegitcommit: 7a5196d4d9736c5cd52a23155c479523e52a097d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906805"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84436677"
 ---
 #  <a name="manage-settings-for-software-updates"></a><a name="BKMK_ManageSUSettings"></a>Hantera inställningar för program uppdateringar  
 
@@ -113,13 +113,13 @@ På fliken **Ersättningsinformation** kan du se följande information om ersät
 I egenskaper kan du konfigurera inställningar för programuppdateringar för en eller flera programuppdateringar. Du kan konfigurera de flesta inställningar för programuppdatering på den centrala administrationsplatsen eller den fristående primära platsen. Följande avsnitt innehåller hjälp om hur du konfigurerar inställningar för programuppdateringar.  
 
 ####  <a name="set-maximum-run-time"></a><a name="BKMK_SetMaxRunTime"></a> Ange maximal körtid  
-På fliken **Maximal körningstid** anger du den maximala tidsperiod som en programuppdatering tilldelas för att slutföras på klientdatorer. Om uppdateringen tar längre tid än det maximala körnings tids värdet skapar Configuration Manager ett status meddelande och slutar övervaka distributionen för program uppdaterings installationen. Du kan bara konfigurera den här inställningen på den centrala administrationsplatsen eller på en fristående primär plats.  
+På fliken **Maximal körningstid** anger du den maximala tidsperiod som en programuppdatering tilldelas för att slutföras på klientdatorer. Om uppdateringen tar längre tid än det maximala körnings tids värdet skapar Configuration Manager ett status meddelande och stoppar installationen av program uppdateringarna. Du kan bara konfigurera den här inställningen på den centrala administrationsplatsen eller på en fristående primär plats.  
 
 Configuration Manager använder också den här inställningen för att avgöra om installationen av program uppdateringen ska initieras inom ett konfigurerat underhålls fönster. Om det maximala körningstidsvärdet är större än den tillgängliga återstående tiden i underhållsfönstret skjuts installationen av programuppdateringarna upp till starten av nästa underhållsfönster. När det finns flera programuppdateringar att installera på en klientdator med ett konfigurerat underhållsfönster (tidsram) installeras programuppdateringen med den lägsta maximala körningstiden först, sedan programuppdateringen med den näst lägsta maximala körningstiden och så vidare. Innan varje programuppdatering installeras verifierar klienten att det tillgängliga underhållsfönstret erbjuder tillräckligt lång tid för att installera programuppdateringen. När installationen av en programuppdatering har påbörjats fortsätter den att installeras även om installationen fortsätter när underhållsfönstret är slut. Mer information om underhålls perioder finns i [använda underhålls fönster](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 På fliken **Maximal körningstid** kan du visa och konfigurera följande inställningar:  
 
-- **Maximal kör tid**: anger det maximala antalet minuter som har tilldelats för att en program uppdaterings installation ska slutföras innan installationen inte längre övervakas av Configuration Manager. Den här inställningen används också för att bestämma om det finns tillräckligt med tid kvar för att installera uppdateringen innan underhållsfönstret tar slut. Standardvärdet är 60 minuter för Service Pack. För andra program uppdaterings typer är standardvärdet 10 minuter om du gjorde en ny installation av Configuration Manager version 1511 eller senare och 5 minuter när du har uppgraderat från en tidigare version. Värdena kan ligga mellan 5 till 9999 minuter.  
+- **Maximal kör tid**: anger det maximala antalet minuter som har tilldelats för att en program uppdaterings installation ska slutföras innan installationen stoppas av Configuration Manager. Den här inställningen används också för att bestämma om det finns tillräckligt med tid kvar för att installera uppdateringen innan underhållsfönstret tar slut. Standardvärdet är 60 minuter för Service Pack. För andra program uppdaterings typer är standardvärdet 10 minuter om du gjorde en ny installation av Configuration Manager version 1511 eller senare och 5 minuter när du har uppgraderat från en tidigare version. Värdena kan ligga mellan 5 till 9999 minuter.  
 
 > [!IMPORTANT]  
 >  Se till att ange det maximala kör tids värde som är mindre än den konfigurerade underhålls perioden eller öka tiden för underhålls perioden till ett värde som är större än den maximala körnings tiden. Annars initieras aldrig installationen av programuppdateringen.  

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: c7a99931db27b6a55c9e0722cc12c1d7a9cc9e80
-ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
+ms.openlocfilehash: 7ddcb1ade6f39d1fc2cb824470c33d39496bcbf1
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83764245"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428680"
 ---
 # <a name="endpoint-analytics-preview"></a><a name="bkmk_uea"></a>För hands version av Endpoint Analytics
 
@@ -347,8 +347,11 @@ För det andra är en snabb lista att gå igenom för fel sökning:
 1. Enheter som har kon figurer ATS för data insamling måste startas om efter att data insamlingen har Aktiver ATS och du måste vänta upp till 24 timmar efter att enheten har visats på fliken enhets prestanda.
 1. Om enheten har kon figurer ATS för data insamling, har startats om och efter 24 timmar ser du fortfarande att enheten inte kan komma åt våra samlings slut punkter. Det här problemet kan inträffa om ditt företag använder en proxyserver och slut punkterna inte har Aktiver ATS i proxyn. Mer information finns i [fel sökning av slut punkter](#bkmk_uea_endpoints).
 
+### <a name="data-collection-for-intune-managed-devices"></a>Data insamling för Intune-hanterade enheter
 
-### <a name="endpoints"></a><a name="bkmk_uea_endpoints"></a>Slut punkter
+Slut punkts analys utnyttjar Windows 10-och Windows Server-anslutna användar upplevelser och telemetri-komponenten (DiagTrack) för att samla in data från Intune-hanterade enheter. Kontrol lera att tjänsten för **anslutna användar upplevelser och telemetri** på enheten körs.
+
+#### <a name="endpoints"></a><a name="bkmk_uea_endpoints"></a>Slut punkter
 
 För att registrera enheter till slut punkts analys måste de skicka nödvändiga funktions data till Microsoft. Om din miljö använder en proxyserver använder du den här informationen för att konfigurera proxyn.
 
@@ -364,15 +367,15 @@ Om du vill aktivera funktionell data delning konfigurerar du proxyservern så at
 | `https://*.manage.microsoft.com` | Används för att synkronisera enhets samling och enheter med slut punkts analys (endast på Configuration Manager Server roll). Mer information finns i [Konfigurera proxyservern för en plats system Server](../plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
 
 
-### <a name="proxy-server-authentication"></a>Autentisering av proxyserver
+#### <a name="proxy-server-authentication"></a>Autentisering av proxyserver
 
 Om din organisation använder proxyautentisering för Internet åtkomst kontrollerar du att den inte blockerar data på grund av autentisering. Om proxyn inte tillåter att enheter skickar dessa data visas de inte i Skriv bords analys.
 
-#### <a name="bypass-recommended"></a>Kringgå (rekommenderas)
+##### <a name="bypass-recommended"></a>Kringgå (rekommenderas)
 
 Konfigurera proxyservrarna så att de inte kräver proxyautentisering för trafik till data delnings slut punkter. Det här alternativet är den mest omfattande lösningen. Det fungerar för alla versioner av Windows 10.  
 
-#### <a name="user-proxy-authentication"></a>Autentisering av användar-proxy
+##### <a name="user-proxy-authentication"></a>Autentisering av användar-proxy
 
 Konfigurera enheter så att de använder den inloggade användarens kontext för proxyautentisering. Den här metoden kräver följande konfigurationer:
 
@@ -385,7 +388,7 @@ Konfigurera enheter så att de använder den inloggade användarens kontext för
 > [!IMPORTANT]
 > Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen är beroende av register nyckeln **DisableEnterpriseAuthProxy** `0` , medan Microsoft Defender ATP kräver att den är inställd på `1` . Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
 
-#### <a name="device-proxy-authentication"></a>Enhets-proxy-autentisering
+##### <a name="device-proxy-authentication"></a>Enhets-proxy-autentisering
 
 Den här metoden har stöd för följande scenarier:
 

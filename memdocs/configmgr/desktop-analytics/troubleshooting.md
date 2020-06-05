@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 69694fa39375daf436abf59fcd48edda41a9fc62
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: cfd329b7edb695c1e7316323555bfc18a2fd479e
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268257"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428577"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Felsöka Desktop Analytics
 
@@ -68,7 +68,7 @@ Desktop Analytics lägger till följande program i Azure AD:
 
 - **MALogAnalyticsReader**: övervakar din Azure Log Analytics-arbetsyta för att se till att den dagliga ögonblicks bilden har kopierats. Mer information finns i [program rollen MALogAnalyticsReader](#bkmk_MALogAnalyticsReader).  
 
-- **Office365-klient administratör**: aktiverar Configuration Manager hämtning av distributions Plans information och status för enhets beredskap från Skriv bords analys.
+- **Skriv bords analys**: aktiverar Configuration Manager hämtning av distributions Plans information och status för enhets beredskap från Skriv bords analys.
 
 Om du behöver etablera dessa appar när du har slutfört installationen går du till fönstret **anslutna tjänster** . Välj **Konfigurera användare och appar åtkomst**och etablera apparna.  
 

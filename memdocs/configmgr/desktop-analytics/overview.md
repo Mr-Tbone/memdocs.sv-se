@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: b280661c4de9282d3907b7d480477fc67f6a8dc5
-ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
+ms.openlocfilehash: a2829c5bd86192c4f2421550af9f27aef64aa353
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83824072"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428650"
 ---
 # <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -63,16 +63,13 @@ Desktop Analytics ger följande fördelar:
 
 - **Configuration Manager-integrering**: tjänst molnet – möjliggör din befintliga lokala infrastruktur. Använd dessa data och analyser för att distribuera och hantera Windows på dina enheter.  
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller följande krav.
 
 ### <a name="technical"></a>Teknik
 
 - En aktiv Global Azure-prenumeration med [globala administratörs](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions) behörigheter. [Microsoft-konton](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) stöds inte.  
-
-    > [!Important]  
-    > Desktop Analytics kräver för närvarande att du distribuerar en Office 365-tjänst i din Azure AD-klient. Detta är inte ett krav i framtiden.
 
     - **Ägarens behörigheter för arbets ytan** för att **Konfigurera din arbets yta**och följande roller:  
 

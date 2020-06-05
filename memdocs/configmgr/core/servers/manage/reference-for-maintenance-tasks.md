@@ -2,7 +2,7 @@
 title: Referens för underhållsaktivitet
 titleSuffix: Configuration Manager
 description: Information för var och en av Configuration Manager plats underhålls aktiviteter
-ms.date: 03/30/2020
+ms.date: 06/04/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9964834bf3a6bfa8e5c0a0bb70039554134490ec
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: e989de5acab778374c233862d0ab4d7077899d28
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723875"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428601"
 ---
 # <a name="reference-for-maintenance-tasks-in-configuration-manager"></a>Referens för underhålls aktiviteter i Configuration Manager
 
@@ -35,7 +35,7 @@ Använd den här aktiviteten för att skapa en säkerhets kopia av den viktiga i
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Inte aktiverat|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="check-application-title-with-inventory-information"></a>Kontrol lera program titel med inventerings information
 
@@ -44,8 +44,8 @@ Använd den här aktiviteten för att bevara program varu titlarnas konsekvens m
 |||
 |---------|---------|
 |**Central administrationsplats**|Enabled|
-|Primär plats|Inte tillgängligt|
-|Sekundär plats|Inte tillgängligt|
+|Primär plats|Inte tillgänglig|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="clear-undiscovered-clients"></a>Rensa klienter som inte är identifierade
 
@@ -56,9 +56,9 @@ Använd den här aktiviteten för att ta bort den installerade flaggan för klie
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Inte aktiverat|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-application-request-data"></a>Ta bort föråldrade program förfrågnings data
 
@@ -66,9 +66,9 @@ Använd den här aktiviteten för att ta bort föråldrade program begär Anden 
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-application-revisions"></a>Ta bort föråldrade program revisioner
 
@@ -78,7 +78,7 @@ Använd den här aktiviteten för att ta bort program revisioner som inte längr
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-client-download-history"></a>Ta bort föråldrad klient hämtnings historik
 
@@ -86,9 +86,9 @@ Använd den här aktiviteten för att ta bort historiska data om nedladdnings k�
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-client-operations"></a>Ta bort föråldrade klientåtgärder
 
@@ -96,12 +96,13 @@ Använd den här aktiviteten för att ta bort alla föråldrade data för klient
 
 - Föråldrade eller utgångna klient meddelanden, t. ex. nedladdnings begär Anden för datorn eller användar
 - Endpoint Protection, som begär anden av en administrativ användare för klienter, köra en sökning eller hämta uppdaterade definitioner
+- Kör skript status resultat
 
 |||
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-client-presence-history"></a>Ta bort närvaro historik för inaktuell klient
 <!-- not listed in dogfood for either primary or CAS, was it renamed? -->
@@ -111,7 +112,7 @@ Använd den här aktiviteten för att ta bort historik information om onlinestat
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-cloud-management-gateway-traffic-data"></a>Ta bort föråldrade Cloud Management Gateway trafik data
 
@@ -127,7 +128,7 @@ Använd den här aktiviteten för att ta bort alla föråldrade data om den traf
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-cmpivot-results"></a>Ta bort föråldrade CMPivot-resultat
 
@@ -135,9 +136,9 @@ Använd den här aktiviteten för att ta bort information om föråldrade plats 
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-collected-files"></a>Ta bort föråldrade insamlade filer
 
@@ -145,9 +146,9 @@ Använd den här aktiviteten för att ta bort information om insamlade filer fr�
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-computer-association-data"></a>Ta bort föråldrade dator Associations data
 
@@ -155,9 +156,9 @@ Använd den här aktiviteten för att ta bort från databasen föråldrade opera
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-console-connection-data"></a>Ta bort föråldrade konsol anslutnings data
 
@@ -167,7 +168,7 @@ Den här uppgiften tar bort data från plats databasen om konsol anslutningar ti
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-delete-detection-data"></a>Ta bort föråldrade borttagnings identifierings data
 
@@ -177,7 +178,7 @@ Använd den här aktiviteten för att ta bort föråldrade data från databasen 
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-device-wipe-record"></a>Ta bort föråldrad enhets rensnings post
 
@@ -185,9 +186,9 @@ Använd den här aktiviteten för att ta bort inaktuella data om rensnings åtg�
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-discovery-data"></a>Ta bort föråldrade identifieringsdata
 
@@ -201,9 +202,9 @@ Den här aktiviteten tar också bort föråldrade enheter som marker ATS som ina
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-distribution-point-usage-stats"></a>Ta bort föråldrad distributions plats användnings statistik
 
@@ -213,7 +214,7 @@ Använd den här aktiviteten för att ta bort föråldrade data för distributio
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-enrolled-devices"></a>Ta bort föråldrade registrerade enheter
 
@@ -223,9 +224,9 @@ Den här uppgiften gäller enheter som har registrerats med Configuration Manage
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Inte aktiverat|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-ep-health-status-history-data"></a>Ta bort föråldrade historik data över EP-hälsostatus
 
@@ -233,9 +234,9 @@ Använd den här aktiviteten om du vill ta bort informationen om föråldrad dat
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-exchange-partnership"></a>Ta bort föråldrat Exchange-partnerskap
 
@@ -246,9 +247,9 @@ Använd den här aktiviteten för att ta bort föråldrade data om mobila enhete
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-inventory-history"></a>Ta bort föråldrad inventerings historik
 
@@ -256,9 +257,9 @@ Använd den här aktiviteten för att ta bort data från databas inventerings da
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-log-data"></a>Ta bort föråldrade loggdata
 
@@ -279,9 +280,9 @@ Använd den här aktiviteten för att ta bort inaktuella data från databasen f�
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-metering-summary-data"></a>Ta bort föråldrade mätar sammanfattnings data
 
@@ -289,9 +290,9 @@ Använd den här aktiviteten för att ta bort inaktuella sammanfattnings data f�
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-notification-server-history"></a>Ta bort föråldrad meddelande Server historik
 
@@ -301,7 +302,7 @@ Den här uppgiften tar bort föråldrade klient närvaro historik.
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-notification-task-history"></a>Ta bort föråldrade meddelande uppgifts historik
 
@@ -309,9 +310,9 @@ Använd den här aktiviteten för att ta bort information om klient aviseringar 
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-passcode-records"></a>Ta bort föråldrade lösen post poster
 
@@ -321,7 +322,7 @@ Använd den här aktiviteten på platsen på den översta nivån i hierarkin fö
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-replication-data"></a>Ta bort föråldrade replikeringsdata
 
@@ -351,7 +352,7 @@ Använd den här aktiviteten för att ta bort data från databasen föråldrade 
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-threat-data"></a>Ta bort föråldrade hot data
 
@@ -359,9 +360,9 @@ Använd den här aktiviteten för att ta bort inaktuella Endpoint Protection hot
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-unknown-computers"></a>Ta bort föråldrade okända datorer
 
@@ -369,9 +370,9 @@ Använd den här aktiviteten för att ta bort information om okända datorer fr�
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-aged-user-device-affinity-data"></a>Ta bort föråldrade tillhörighets data för användare
 
@@ -379,9 +380,9 @@ Använd den här aktiviteten för att ta bort föråldrade tillhörighets data f
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-duplicate-system-discovery-data"></a>Ta bort dubbla system identifierings data
 
@@ -390,8 +391,8 @@ Använd den här aktiviteten om du vill ta bort alla dubblettposter som skapats 
 |||
 |---------|---------|
 |**Central administrationsplats**|Enabled|
-|Primär plats|Inte tillgängligt|
-|Sekundär plats|Inte tillgängligt|
+|Primär plats|Inte tillgänglig|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-expired-mdm-bulk-enroll-package-records"></a>Ta bort utgångna poster i MDM-Mass registrering
 
@@ -401,7 +402,7 @@ Använd den här aktiviteten för att ta bort gamla Mass registrerings certifika
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-inactive-client-discovery-data"></a>Ta bort inaktiva klient identifierings data
 
@@ -414,9 +415,9 @@ Den här aktiviteten fungerar bara på resurser som är Configuration Manager kl
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Inte aktiverat|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-obsolete-alerts"></a>Ta bort föråldrade aviseringar
 
@@ -426,7 +427,7 @@ Använd den här aktiviteten för att ta bort inaktuella aviseringar som har lag
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-obsolete-client-discovery-data"></a>Ta bort föråldrade klient identifierings data
 
@@ -437,9 +438,9 @@ Använd den här aktiviteten för att ta bort föråldrade klient poster från d
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Inte aktiverat|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-obsolete-forest-discovery-sites-and-subnets"></a>Ta bort föråldrade identifierings platser och undernät för skogar
 
@@ -449,7 +450,7 @@ Använd den här aktiviteten för att ta bort data om Active Directory platser, 
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="delete-orphaned-client-deployment-state-records"></a>Ta bort överblivna poster för klient distributions tillstånd
 
@@ -457,9 +458,9 @@ Använd den här aktiviteten för att regelbundet rensa den tabell som innehåll
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="evaluate-collection-members"></a>Utvärdera samlings medlemmar
 
@@ -467,9 +468,9 @@ Du konfigurerar utvärderingen av samlings medlemskap som en plats komponent. Me
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="monitor-keys"></a>Övervaka nycklar
 
@@ -479,7 +480,7 @@ Använd den här aktiviteten för att övervaka integriteten för primära nyckl
 |---------|---------|
 |**Central administrationsplats**|Enabled|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="rebuild-indexes"></a>Återskapa index
 
@@ -505,9 +506,9 @@ Om du vill sammanfatta data för avläsning av program vara och spara disk utrym
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="summarize-installed-software-data"></a>Sammanfatta installerade program varu data
 
@@ -515,9 +516,9 @@ Med den här uppgiften kan du sammanfatta data från insamlad till gångs inform
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="summarize-monthly-usage-metering-data"></a>Sammanfatta månatliga användnings mätnings data
 
@@ -527,9 +528,9 @@ Om du vill sammanfatta data för avläsning av program vara och spara utrymme i 
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="update-application-available-targeting"></a>Uppdatera program tillgänglig för mål anpassning
 
@@ -539,9 +540,9 @@ Dessa mappningar sparas i en tabell för snabbreferens. När ett medlemskap i sa
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 ### <a name="update-application-catalog-tables"></a>Uppdatera Programkatalog tabeller
 
@@ -549,9 +550,9 @@ Använd den här aktiviteten för att synkronisera Programkatalog webbplatsens D
 
 |||
 |---------|---------|
-|Central administrationsplats|Inte tillgängligt|
+|Central administrationsplats|Inte tillgänglig|
 |**Primär plats**|Enabled|
-|Sekundär plats|Inte tillgängligt|
+|Sekundär plats|Inte tillgänglig|
 
 
 ## <a name="see-also"></a>Se även

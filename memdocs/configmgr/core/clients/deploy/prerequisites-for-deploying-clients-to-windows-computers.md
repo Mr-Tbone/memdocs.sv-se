@@ -2,7 +2,7 @@
 title: Krav för distribution av Windows-klient
 titleSuffix: Configuration Manager
 description: Läs om kraven för att distribuera Configuration Manager-klienten till Windows-datorer.
-ms.date: 11/29/2019
+ms.date: 06/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1d4cd7ffe38f7191a5361ad2e89817ea80f9f093
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2aa375d0521e6088904ebe9a1f10af83f4bc261f
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713977"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428552"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Krav för distribution av klienter till Windows-datorer i Configuration Manager
 
@@ -28,24 +28,26 @@ Mer information om minimi kraven för maskin vara och operativ system för Confi
 > [!NOTE]  
 > De versionsnummer för programvaran som anges är endast de lägsta versionerna som krävs.  
 
-
 ## <a name="prerequisites-for-windows-clients"></a><a name="BKMK_prereqs_computers"></a>Krav för Windows-klienter  
 
 Använd följande information för att fastställa kraven för när du installerar Configuration Manager-klienten på Windows-enheter.  
 
-### <a name="dependencies-external-to-configuration-manager"></a>Beroenden utanför Configuration Manager  
+### <a name="dependencies-external-to-configuration-manager"></a>Beroenden utanför Configuration Manager
 
-|Komponent|Beskrivning|  
-|---|---|  
-|Windows Installer version 3.1.4000.2435|Krävs för att det ska gå att använder Windows Installers uppdateringsfiler (.msp) för paket och programvaruuppdateringar.|  
-|Microsoft Background Intelligent Transfer Service (BITS) version 2.5|Krävs för att tillåta begränsad data överföring mellan klient datorn och Configuration Manager plats system. BITS laddas inte ned automatiskt under klient installationen. När BITS installeras på datorerna kräver det vanligt vis en omstart för att slutföra installationen.<br /><br /> De flesta operativ system innehåller BITS. Om de inte gör det installerar du BITS innan du installerar Configuration Manager-klienten.|  
-|Microsoft Task Scheduler|Aktivera den här tjänsten på klienten för att slutföra klient installationen.|  
+Många av dessa komponenter är tjänster eller funktioner som Windows aktiverar som standard. Inaktivera inte dessa komponenter på Configuration Manager klienter.
+
+|Komponent|Beskrivning|
+|---|---|
+|Windows installationsverktyg|Krävs för att stödja användningen av Windows Installer-filer för program och program varu uppdateringar.|
+|Microsoft Background Intelligent Transfer Service (BITS)|Krävs för att tillåta begränsad data överföring mellan klient datorn och Configuration Manager plats system.|
+|Microsoft Task Scheduler|Krävs för klient åtgärder, till exempel regelbundet utvärdera hälsan hos den Configuration Manager klienten.|
+|Microsoft Remote Differential Compression (RDC)|Krävs för optimering av dataöverföringar i nätverket|
 |Stöd för SHA-2-kod signering|Från och med version 1906 kräver klienterna stöd för SHA-2-algoritmen för kod signering. Mer information finns i [stöd för SHA-2-kod signering](#bkmk_sha2).|
 
 #### <a name="sha-2-code-signing-support"></a><a name="bkmk_sha2"></a>Stöd för SHA-2-kod signering
 
 <!--SCCMDocs-pr#3404-->
-På grund av svagheter i SHA-1-algoritmen och för att anpassa sig till bransch standarder, signerar Microsoft nu bara Configuration Manager binärfiler med hjälp av säkrare SHA-2-algoritmen. Äldre Windows OS-versioner kräver en uppdatering av stöd för SHA-2-kod signering. Mer information finns i [support kravet för 2019 SHA-2-kod signering för Windows och WSUS](https://support.microsoft.com/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
+På grund av svagheter i SHA-1-algoritmen och för att justera till bransch standarder, signerar Microsoft nu bara Configuration Manager binärfiler med hjälp av säkrare SHA-2-algoritmen. Äldre Windows OS-versioner kräver en uppdatering av stöd för SHA-2-kod signering. Mer information finns i [support kravet för 2019 SHA-2-kod signering för Windows och WSUS](https://support.microsoft.com/help/4472027/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus).
 
 Om du inte uppdaterar dessa versioner av operativ systemet kan du inte installera Configuration Manager-klient version 1906. Det här beteendet gäller för antingen en ny klient installation eller uppdatering från en tidigare version.
 
@@ -64,18 +66,15 @@ Om du behöver hantera en klient på en version av Windows som inte har uppdater
 
 Den Configuration Manager klienten har externa beroenden. Dessa beroenden beror på operativ systemets version och installerad program vara på klient datorn.  
 
-Om klienten kräver dessa beroenden för att slutföra installationen installeras de automatiskt.  
+Om klienten kräver dessa beroenden för att slutföra installationen installeras de automatiskt.
 
-|Komponent|Beskrivning|  
-|---|---|  
-|Windows Update Agent version 7.0.6000.363|Krävs av Windows för stöd av identifiering och distribution av uppdateringar.|  
-|Microsoft Core XML Services (MSXML) version 6.20.5002 eller senare|Krävs för bearbetning av XML-dokument i Windows.|  
-|Microsoft Remote Differential Compression (RDC)|Krävs för optimering av dataöverföringar i nätverket|  
-|Microsoft Visual C++ 2013 Redistributable version 12.0.21005.1|Krävs för stöd av klientåtgärder. När du installerar den här uppdateringen på klient datorer kan det krävas en omstart för att slutföra installationen.|  
-|Microsoft Visual C++ 2005 Redistributable version 8.0.50727.42|För version 1606 och tidigare krävs stöd för Microsoft SQL Server Compact åtgärder.|  
-|Windows Imaging APIs 6.0.6001.18000|Krävs för att tillåta Configuration Manager att hantera Windows-avbildningsfiler (. wim).|  
-|Microsoft Policy Platform 1.2.3514.0|Krävs för att klienter ska kunna utvärdera efterlevnadsinställningar.|  
-|Microsoft .NET Framework version 4.5.2|Krävs för stöd av klientåtgärder. Installeras automatiskt på klient datorn om den inte har Microsoft .NET Framework version 4,5 eller senare installerad. Mer information finns i [Mer information om Microsoft .NET Framework version 4.5.2](#dotNet).|  
+|Komponent|Beskrivning|
+|---|---|
+|Microsoft Core XML Services (MSXML) version 6.20.5002 eller senare ( `msxml6.msi` )|Krävs för bearbetning av XML-dokument i Windows.|
+|Microsoft Visual C++ 2013 Redistributable version 12.0.40660.0 ( `vcredist_x*.exe` )|Krävs för stöd av klientåtgärder. När du installerar den här uppdateringen på klient datorer kan det krävas en omstart för att slutföra installationen.|<!-- SCCMDocs#1526 -->
+|Windows Imaging-API: er 6.0.6001.18000 eller senare ( `wimgapi.msi` )|Krävs för att tillåta Configuration Manager att hantera Windows-avbildningsfiler (. wim).|
+|Microsoft Policy Platform 1.2.3514.0 eller senare ( `MicrosoftPolicyPlatformSetup.msi` )|Krävs för att klienter ska kunna utvärdera efterlevnadsinställningar.|  
+|Microsoft .NET Framework version 4.5.2 eller senare ( `NDP452-KB2901907-x86-x64-AllOS-ENU.exe` )|Krävs för stöd av klientåtgärder. Installeras automatiskt på klient datorn om den inte har Microsoft .NET Framework version 4,5 eller senare installerad. Mer information finns i [Mer information om Microsoft .NET Framework version 4.5.2](#dotNet).|  
 |Microsoft SQL Server Compact 4,0 SP1-komponenter|Krävs för att lagra information som rör klientåtgärder.|  
 
 > [!Important]
@@ -120,7 +119,7 @@ Följande förutsättningar är specifika för de olika klientinstallationsmetod
 
 #### <a name="client-push-installation"></a>Push-installation av klient  
 
-- -Platsen använder konton för push-installation av klienter för att ansluta till datorer för att installera-klienten. Ange dessa konton på fliken **konton** i egenskaperna för push-installation av klienter. Kontot måste vara medlem av den lokala administratörsgruppen på måldatorn.  
+- -Platsen använder konton för push-installation av klienter för att ansluta till datorer för att installera-klienten. Ange dessa konton på fliken **konton** i egenskaperna för push-installation av klienter. Kontot måste vara medlem i den lokala administratörs gruppen på mål datorn.  
 
     Om du inte anger ett konto för push-installation av klienter använder plats servern sitt dator konto.  
 
