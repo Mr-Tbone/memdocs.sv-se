@@ -10,12 +10,12 @@ ms.assetid: a44006eb-8650-49f6-94e1-18fa0ca959ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b447e5c8d34a4b8758fa0fd6109113b0675a635
-ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
+ms.openlocfilehash: 39d6bf22cb24492a0f4e3f59313184ce522b5d09
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84347023"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455012"
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Installera och tilldela Configuration Manager Windows 10-klienter med Azure AD för autentisering
 
@@ -95,7 +95,7 @@ Mer information finns i [Egenskaper för klient installation](about-client-insta
 - Gateway för molnhantering
 - Internetbaserad hanterings plats
 
-Egenskapen **SMSMP** anger antingen den lokala eller Internetbaserade hanterings platsen.
+Egenskapen **SMSMP** anger den lokala hanterings platsen. Det är inte obligatoriskt. Det rekommenderas för Azure AD-anslutna enheter som är centralt på intranätet, så att de kan hitta en lokal hanterings plats.
 
 I det här exemplet används en gateway för moln hantering. Den ersätter exempel värden:`ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
 

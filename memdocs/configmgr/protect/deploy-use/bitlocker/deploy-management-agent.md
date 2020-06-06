@@ -10,12 +10,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ebd847e44c1acd87c316514ec9919f8a6690a647
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: e33ba8df84239b4a438ff0c526bb255c5b7d0052
+ms.sourcegitcommit: e618ea7cb864635c838b672bc71a1e926bf7c047
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428576"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84458159"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuera BitLocker-hantering
 
@@ -35,7 +35,7 @@ Innan du skapar och distribuerar principer för hantering av BitLocker:
 
 - Om det behövs [krypterar du återställnings nycklar](encrypt-recovery-data.md) i plats databasen
 
-## <a name="create-a-policy"></a>Skapa en policy
+## <a name="create-a-policy"></a>Skapa en princip
 
 När du skapar och distribuerar den här principen aktiverar Configuration Manager klienten BitLocker-hanteringsservern på enheten.
 
@@ -126,7 +126,7 @@ När du skapar fler än en princip kan du konfigurera deras relativa prioritet. 
 
 1. Om du vill att enheten ska kunna kryptera eller dekryptera sina enheter när som helst väljer du alternativet för att **tillåta reparation utanför underhålls fönstret**. Om samlingen har ett underhålls fönster repare ras den här BitLocker-principen.
 
-1. Konfigurera ett **enkelt** eller **anpassat** schema. Som standard utvärderar klienten efterlevnaden av den här principen var 12: e timme.
+1. Konfigurera ett **enkelt** eller **anpassat** schema. Klienten utvärderar sitt kompatibilitet baserat på de inställningar som anges i schemat.
 
 1. Välj **OK** för att distribuera principen.
 

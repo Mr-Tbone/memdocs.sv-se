@@ -10,12 +10,12 @@ ms.assetid: 9d1e8252-99e3-48aa-bfa5-0cf4cd6637b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 184bdc58ac6dc0e311875cc1ddab8c605d8eec32
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ec465f3dee33ca311aec120e74a2994a81a90ec9
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720627"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455233"
 ---
 # <a name="configure-pre-cache-content-for-task-sequences"></a>Konfigurera innehåll i förinställt cacheminne för aktivitetssekvenser
 
@@ -68,7 +68,7 @@ Skapa [driv rutins paket](../get-started/manage-drivers.md#BKMK_ManagingDriverPa
 För att avgöra vilka driv rutins paket som laddas ned under för cachelagring, utvärderar klienten modellen mot egenskapen **namn** för **Win32_ComputerSystemProduct** WMI-klassen.
 
 > [!TIP]
-> Den faktiska frågan använder en `LIKE` instruktion med jokertecken: `select * from win32_computersystemproduct where name like "%yourstring%"`. Om du till exempel anger `Surface` som modell matchar frågan alla modeller som innehåller strängen.<!-- 6315551 -->
+> Den faktiska frågan använder en `LIKE` instruktion med jokertecken: `select * from win32_computersystemproduct where name like "%yourstring%"` . Om du till exempel anger `Surface` som modell matchar frågan alla modeller som innehåller strängen.<!-- 6315551 -->
 
 #### <a name="package"></a>Paket
 
@@ -101,7 +101,6 @@ Till exempel använder följande **uppgraderings operativ system** den engelska 
 >
 > Lägg först till språket genom att välja **operativ systemets språk** villkor. Redigera sedan WMI-frågan för att inkludera arkitektur satsen.
 
-
 ### <a name="3-deploy-the-task-sequence"></a><a name="bkmk_deploy"></a>3. distribuera aktivitetssekvensen
 
 [Distribuera aktivitetssekvensen](deploy-a-task-sequence.md). Konfigurera följande inställningar för funktionen för cache:  
@@ -115,8 +114,7 @@ Till exempel använder följande **uppgraderings operativ system** den engelska 
 - På fliken **distributions platser** konfigurerar du inställningarna för **distributions alternativ** . Om innehållet inte lagras i förväg innan en användare startar installationen, använder klienten dessa inställningar.  
 
     > [!Important]  
-    > För en aktivitetssekvens som installerar en OS-avbildning ska du inte använda distributions alternativet för att **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**. När aktivitetssekvensen rensar disken innan den tillämpar OS-avbildningen tar den bort-klientcachen. Eftersom innehållet är borta Miss lyckas aktivitetssekvensen.<!-- SCCMDocs-PR #1338 -->
-
+    > För en aktivitetssekvens som installerar en OS-avbildning ska du inte använda distributions alternativet för att **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**. När aktivitetssekvensen rensar disken innan den tillämpar OS-avbildningen tar den bort-klientcachen. Eftersom innehållet är borta Miss lyckas aktivitetssekvensen.<!-- SCCMDocs-PR #1338 --> De här distributions alternativen är dynamiska baserat på andra alternativ som du väljer för distributionen. Mer information finns i [Distribuera en aktivitetssekvens](deploy-a-task-sequence.md#bkmk_deploy-options).<!-- MEMDocs#328, SCCMDocs#2114 -->
 
 ## <a name="user-experience"></a>Användarupplevelse
 
@@ -125,7 +123,6 @@ Till exempel använder följande **uppgraderings operativ system** den engelska 
 - När klienten gör distributionen tillgänglig för användare visas ett meddelande som informerar användarna om den nya distributionen. Nu syns aktivitetssekvensen i Software Center. Användaren kan gå till Software Center och klicka på **Installera** för att starta installationen.  
 
 - Om klienten inte har cachelagrat innehållet fullständigt när användaren installerar aktivitetssekvensen använder klienten de inställningar som du anger på fliken **distributions alternativ** i distributionen.  
-
 
 ## <a name="see-also"></a>Se även
 

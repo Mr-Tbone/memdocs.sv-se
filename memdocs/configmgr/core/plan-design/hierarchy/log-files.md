@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 36ab89f1e9988adc167bf69ff7d9f53b02bbe10f
-ms.sourcegitcommit: ad4b3e4874a797b755e774ff84429b5623f17c5c
+ms.openlocfilehash: 11efada9eaf7e16a68902d7d6d78fb6708916d05
+ms.sourcegitcommit: e618ea7cb864635c838b672bc71a1e926bf7c047
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166551"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84458142"
 ---
 # <a name="log-file-reference"></a>Loggfilsreferens
 
@@ -55,7 +55,7 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
 - [Loggfiler efter funktioner](#BKMK_FunctionLogs)  
 
-  - [Program hantering](#BKMK_AppManageLog)  
+  - [Programhantering](#BKMK_AppManageLog)  
 
   - [Tillgångsinformation](#BKMK_AILog)  
 
@@ -75,13 +75,13 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
   - [Desktop Analytics](#desktop-analytics)
 
-  - [Identifiering](#BKMK_DiscoveryLog)  
+  - [Identifikation](#BKMK_DiscoveryLog)  
 
   - [Endpoint Protection](#BKMK_EPLog)  
 
   - [Tillägg](#BKMK_Extensions)  
 
-  - [Inventering](#BKMK_InventoryLog)  
+  - [Lager](#BKMK_InventoryLog)  
 
   - [Migrering](#BKMK_MigrationLog)  
 
@@ -167,13 +167,13 @@ I följande tabell listas loggfilerna som finns på Configuration Manager-klient
 |PolicySdk.log|Registrerar aktiviteter för principsystem-SDK-gränssnitt.|  
 |Pwrmgmt.log|Registrerar information om aktivering, inaktivering och konfigurering av klientinställningar för aktiveringsproxy.|  
 |PwrProvider.log|Registrerar aktiviteter för Power Management-providern (PWRInvProvider) som finns i WMI-tjänsten. På alla versioner av Windows som stöds räknar providern upp de aktuella inställningarna på datorer som inventerar maskinvara och använder energisparinställningar.|  
-|SCClient_&lt;*domain*\>domän@användar namn\>_1. log*username*&lt;|Registrerar aktiviteten i Software Center för angiven användare på klientdatorn.|  
-|SCClient_&lt;*domain*\>domän@användar namn\>_2. log*username*&lt;|Registrerar den historiska aktiviteten i Software Center för angiven användare på klientdatorn.|  
+|SCClient_ &lt; *domän* \> @ &lt; *användar namn* \> _1. log|Registrerar aktiviteten i Software Center för angiven användare på klientdatorn.|  
+|SCClient_ &lt; *domän* \> @ &lt; *användar namn* \> _2. log|Registrerar den historiska aktiviteten i Software Center för angiven användare på klientdatorn.|  
 |Scheduler.log|Registrerar aktiviteter för schemalagda aktiviteter för alla klientåtgärder.|  
-|SCNotify_&lt;*domain*\>domän@användar namn\>_1. log*username*&lt;|Registrerar aktiviteten för att avisera användare om programvara för den angivna användaren.|  
-|SCNotify_&lt;*domain*\>domän@&lt;*date_time* användar namn\>_1-Date_Time>. log*username*&lt;|Registrerar den historiska informationen för att avisera användare om programvara för den angivna användaren.|  
+|SCNotify_ &lt; *domän* \> @ &lt; *användar namn* \> _1. log|Registrerar aktiviteten för att avisera användare om programvara för den angivna användaren.|  
+|SCNotify_ &lt; *domän* \> @ &lt; *användar namn* \> _1- &lt; *Date_Time*>. log|Registrerar den historiska informationen för att avisera användare om programvara för den angivna användaren.|  
 |setuppolicyevaluator.log|Registrerar konfiguration och skapande av inventeringsprincip i WMI.|  
-|SleepAgent_&lt;*domän*\>@SYSTEM_0.log|Huvud logg filen för Väcknings-proxy.|  
+|SleepAgent_ &lt; *domän*\>@SYSTEM_0.log|Huvud logg filen för Väcknings-proxy.|  
 |smscliui.log|Registrerar användningen av Configuration Manager-klienten i kontroll panelen.|  
 |SrcUpdateMgr.log|Registrerar aktivitet för installerade Windows Installer-program som uppdateras med aktuella källplaceringar för distributionsplatser.|  
 |StatusAgent.log|Registrerar statusmeddelanden som skapas av klientkomponenter.|  
@@ -210,7 +210,7 @@ Configuration Manager-klienten för Linux och UNIX registrerar information i fö
 |Loggnamn|Information|
 |-------------------|-----------------------------------------------------------------|
 |Scxcm. log| Logg filen för kärn tjänsten i Configuration Manager-klienten för Linux och UNIX (ccmexec. bin). Den här loggfilen innehåller information om installation och pågående drift av ccmexec.bin. Den här logg filen finns som standard på **/var/opt/Microsoft/scxcm.log**. Du ändrar placeringen för loggfilen genom att redigera **/opt/microsoft/configmgr/etc/scxcm.conf** och ändra fältet **PATH**. Du behöver inte starta om klient datorn eller tjänsten för att ändringen ska börja gälla. Du kan ange loggnings nivån till någon av fyra olika inställningar. |
-| Scxcmprovider. log |Logg filen för CIM-tjänsten för Configuration Manager-klienten för Linux och UNIX (omiserver. bin). Den här loggfilen innehåller information om pågående drift av nwserver.bin. Den här loggen finns `/var/opt/microsoft/configmgr/scxcmprovider.log`på. Du ändrar placeringen för loggfilen genom att redigera **/opt/microsoft/omi/etc/scxcmprovider.conf** och ändra fältet **PATH**. Du behöver inte starta om klient datorn eller tjänsten för att ändringen ska börja gälla. Du kan ange loggnings nivån till någon av tre inställningar.|
+| Scxcmprovider. log |Logg filen för CIM-tjänsten för Configuration Manager-klienten för Linux och UNIX (omiserver. bin). Den här loggfilen innehåller information om pågående drift av nwserver.bin. Den här loggen finns på `/var/opt/microsoft/configmgr/scxcmprovider.log` . Du ändrar placeringen för loggfilen genom att redigera **/opt/microsoft/omi/etc/scxcmprovider.conf** och ändra fältet **PATH**. Du behöver inte starta om klient datorn eller tjänsten för att ändringen ska börja gälla. Du kan ange loggnings nivån till någon av tre inställningar.|
 
 Båda loggfiler stöder flera loggningsnivåer:  
 
@@ -246,12 +246,12 @@ Du hittar mer information om **logrotate** i dokumentationen till de Linux- och 
 
 Configuration Manager-klienten för Mac-datorer registrerar information i följande loggfiler på Mac-datorn:  
 
-|Loggnamn|Information|Plats|
+|Loggnamn|Information|Location|
 |--------------|-------------|-------------|
-|CCMClient-&lt;*Date_Time*>. log|Registrerar aktiviteter som är relaterade till Mac-klienternas åtgärder, inklusive program hantering, inventering och fel loggning.| `/Library/Application Support/Microsoft/CCM/Logs`|  
-|CCMAgent-&lt;*Date_Time*>. log|Registrerar information som rör klient åtgärder, inklusive inloggnings-och inloggnings åtgärder samt Mac-datorns aktivitet.| `~/Library/Logs`|  
-|CCMNotifications-&lt;*Date_Time*>. log|Registrerar aktiviteter som är relaterade till Configuration Manager-meddelanden som visas på Mac-datorn.| `~/Library/Logs`|  
-|CCMPrefPane-&lt;*Date_Time*>. log|Registrerar aktiviteter relaterade till dialog rutan Configuration Manager inställningar på Mac-datorn, vilket omfattar allmän status och fel loggning.| `~/Library/Logs`|  
+|CCMClient- &lt; *Date_Time*>. log|Registrerar aktiviteter som är relaterade till Mac-klienternas åtgärder, inklusive program hantering, inventering och fel loggning.| `/Library/Application Support/Microsoft/CCM/Logs`|  
+|CCMAgent- &lt; *Date_Time*>. log|Registrerar information som rör klient åtgärder, inklusive inloggnings-och inloggnings åtgärder samt Mac-datorns aktivitet.| `~/Library/Logs`|  
+|CCMNotifications- &lt; *Date_Time*>. log|Registrerar aktiviteter som är relaterade till Configuration Manager-meddelanden som visas på Mac-datorn.| `~/Library/Logs`|  
+|CCMPrefPane- &lt; *Date_Time*>. log|Registrerar aktiviteter relaterade till dialog rutan Configuration Manager inställningar på Mac-datorn, vilket omfattar allmän status och fel loggning.| `~/Library/Logs`|  
 
 Logg filen **SMS_DM. log** på plats system servern registrerar även kommunikationen mellan Mac-datorer och hanterings platsen som har kon figurer ATS för mobila enheter och Mac-datorer.  
 
@@ -438,7 +438,7 @@ I följande tabell listas loggfilerna som innehåller information som rör progr
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
 |objreplmgr.log|Innehåller information om replikeringen av meddelandefiler av program uppdateringar från en överordnad plats till underordnade platser.|Platsserver|  
-|PatchDownloader.log|Innehåller information om processen för att hämta programuppdateringar från uppdateringskällan till nedladdningsmålet på platsservern.|När du hämtar uppdateringar manuellt finns filen i din `%temp%` katalog på den dator där du använder-konsolen. För regler för automatisk distribution, om Configuration Manager-klienten är installerad på plats servern finns den här filen på plats servern i `%windir%\CCM\Logs`.|  
+|PatchDownloader.log|Innehåller information om processen för att hämta programuppdateringar från uppdateringskällan till nedladdningsmålet på platsservern.|När du hämtar uppdateringar manuellt finns filen i din `%temp%` katalog på den dator där du använder-konsolen. För regler för automatisk distribution, om Configuration Manager-klienten är installerad på plats servern finns den här filen på plats servern i `%windir%\CCM\Logs` .|  
 |ruleengine.log|Registrerar detaljer om regler för automatisk distribution för grupperna för identifiering, nedladdning av innehåll och programuppdatering samt skapande av distributioner.|Platsserver|
 |SMS_ISVUPDATES_SYNCAGENT. log| Loggfil för synkronisering av program uppdateringar från tredje part.| Program uppdaterings plats på den översta nivån i Configuration Manager hierarkin.|
 |SUPSetup.log|Innehåller information om installation av programuppdateringsplatsen. När installationen av programuppdateringsplatsen är klar skrivs texten **Installationen slutfördes** till denna loggfil.|Platssystemserver|  
@@ -481,6 +481,7 @@ I följande tabell listas loggfilerna som innehåller information som rör progr
 |SMSdpmon.log|Innehåller information om den schemalagda aktiviteten för övervakning av distributionsplatsens hälsa som är konfigurerad på en distributionsplats.|Platsserver|  
 |SoftwareCatalogUpdateEndpoint.log|Registrerar aktiviteter för att hantera URL: en för Programkatalog som visas i Software Center.|Klient|  
 |SoftwareCenterSystemTasks.log|Innehåller information om aktiviteter som är relaterade till den nödvändiga komponent valideringen av Software Center.|Klient|  
+|TSDTHandler. log|För distributions typen för aktivitetssekvensen. Den loggar processen från App-tvång (installera eller avinstallera) till påstarten av aktivitetssekvensen. Använd den med AppEnforce. log och Smsts. log.|Klient|<!-- MEMDocs#336 -->
 
 #### <a name="packages-and-programs"></a>Paket och program
 
@@ -572,7 +573,7 @@ I följande tabell listas loggfilerna som innehåller information som rör Cloud
 
 #### <a name="note-1-logs-synchronized-from-azure"></a><a name="bkmk_note1"></a>Anmärkning 1: loggar synkroniserade från Azure
 
-Dessa är lokala Configuration Manager loggfiler som Cloud Service Manager synkroniserar från Azure Storage var femte minut. Cloud Management Gateway pushar loggar till Azure Storage var femte minut. Den maximala fördröjningen är 10 minuter. Utförliga växlar påverkar både lokala och fjärranslutna loggar. De faktiska fil namnen inkluderar tjänst namnet och roll instans identifieraren. Till exempel CMG-*ServiceName*-*RoleInstanceID*-CMGSetup. log
+Dessa är lokala Configuration Manager loggfiler som Cloud Service Manager synkroniserar från Azure Storage var femte minut. Cloud Management Gateway pushar loggar till Azure Storage var femte minut. Den maximala fördröjningen är 10 minuter. Utförliga växlar påverkar både lokala och fjärranslutna loggar. De faktiska fil namnen inkluderar tjänst namnet och roll instans identifieraren. Till exempel CMG-*ServiceName* - *RoleInstanceID*-CMGSetup. log
 
 ### <a name="compliance-settings-and-company-resource-access"></a><a name="BKMK_CompSettingsLog"></a>Kompatibilitetsinställningar och åtkomst till företags resurser
 
@@ -602,7 +603,7 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|CloudDP-&lt;GUID\>. log|Innehåller information för en specifik molnbaserad distributionsplats, däribland information om lagring och åtkomst till innehåll.|Platssystemserver|  
+|CloudDP- &lt; GUID \> . log|Innehåller information för en specifik molnbaserad distributionsplats, däribland information om lagring och åtkomst till innehåll.|Platssystemserver|  
 |CloudMgr.log|Innehåller information om innehålls etablering, insamling av lagrings-och bandbredds statistik och åtgärder som initierats av administratören för att stoppa eller starta moln tjänsten som kör en molnbaserad distributions plats.|Platssystemserver|  
 |DataTransferService.log|Innehåller information om all BITS-kommunikation för princip- eller paketåtkomst. Den här loggen används även för innehålls hantering av mottagar distributions platser.|Dator som är konfigurerad som en mottagar distributions plats|  
 |PullDP.log|Innehåller information om innehåll som pull-distributionsplatsen överför från källdistributionsplatser.|Dator som är konfigurerad som en mottagar distributions plats|  
@@ -615,8 +616,8 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 
 Använd följande loggfiler för att felsöka problem med Desktop Analytics integrerat med Configuration Manager.
 
-Loggfilerna för tjänst anslutnings punkten finns i följande katalog: `%ProgramFiles%\Configuration Manager\Logs\M365A`.
-Loggfilerna på Configuration Manager-klienten finns i följande katalog: `%WinDir%\CCM\logs`.
+Loggfilerna för tjänst anslutnings punkten finns i följande katalog: `%ProgramFiles%\Configuration Manager\Logs\M365A` .
+Loggfilerna på Configuration Manager-klienten finns i följande katalog: `%WinDir%\CCM\logs` .
 
 | Logga | Beskrivning |Dator med loggfil|
 |---------|---------|---------|
@@ -871,7 +872,7 @@ Underhåll använder samma infrastruktur och process som program uppdateringar. 
 |--------------|-----------------|----------------------------|  
 |CBS. log|Registrerar etablerings problem som rör ändringar i Windows-uppdateringar eller-roller och-funktioner.|Klient|
 |DISM. log|Registrerar alla åtgärder med DISM. Om det behövs kommer DISM. log att peka på CBS. log för mer information.|Klient|
-|Setupact. log|Primär logg fil för de flesta fel som inträffar under Windows-installationen. Logg filen finns i mappen% windir%\$Windows. ~ BT\sources\panther.|Klient|
+|Setupact. log|Primär logg fil för de flesta fel som inträffar under Windows-installationen. Logg filen finns i mappen% windir% \$ Windows. ~ BT\sources\panther.|Klient|
 
 Mer information finns i [online Servicing-relaterade loggfiler](https://docs.microsoft.com/windows-hardware/manufacture/desktop/deployment-troubleshooting-and-log-files#online-servicing-related-log-files).
 

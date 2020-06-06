@@ -10,12 +10,12 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4dead573e1744a5c8b84ff954e85be43af644486
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 70d4930da712eccff8bdb1f1986a68aa5fe77644
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83878496"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455284"
 ---
 # <a name="microsoft-connected-cache-in-configuration-manager"></a>Microsoft Connected cache i Configuration Manager
 
@@ -63,7 +63,7 @@ När du konfigurerar klienter att använda den anslutna cache-servern, begär de
 
   - Förinstallera inte funktionen för IIS- [programbegäran](https://docs.microsoft.com/iis/extensions/planning-for-arr/application-request-routing-version-2-overview) (arr). Den anslutna cachen installerar ARR och konfigurerar dess inställningar. Microsoft kan inte garantera att den anslutna cachens ARR-konfiguration inte hamnar i konflikt med andra program på servern som också använder den här funktionen.
 
-  - Distributions platsen kräver Internet åtkomst till Microsoft-molnet. De speciella URL: erna kan variera beroende på det aktuella molnbaserade innehållet. Mer information finns i [krav för Internet åtkomst](../network/internet-endpoints.md).
+  - Distributions platsen kräver Internet åtkomst till Microsoft-molnet. De speciella URL: erna kan variera beroende på det aktuella molnbaserade innehållet. Se till att även tillåta slut punkter för leverans optimering. Mer information finns i [krav för Internet åtkomst](../network/internet-endpoints.md).
 
   - Från och med version 2002 kan det anslutna cache-programmet använda en oautentiserad proxyserver för Internet åtkomst. Mer information finns i [Konfigurera proxyservern för en plats system Server](../network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server).<!-- 5856396 -->
 
@@ -148,9 +148,9 @@ Mer detaljerad information finns i [felsöka Microsoft Connected cache i Configu
 
 Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samhanterade klienter när du aktiverar ansluten cache på Configuration Manager distributions platser.
 
-### <a name="prerequisites"></a>Förutsättningar
+### <a name="prerequisites"></a>Krav
 
-#### <a name="client"></a>Client
+#### <a name="client"></a>Klient
 
 - Uppdatera klienten till den senaste versionen.
 

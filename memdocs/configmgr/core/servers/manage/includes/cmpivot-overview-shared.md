@@ -3,13 +3,13 @@ author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
 ms.topic: include
-ms.date: 05/26/2020
-ms.openlocfilehash: ad725a2aeb01984d8bce71f66307792e8d1691ee
-ms.sourcegitcommit: 0d2f6132428b5fa994e5b770ab1d2bf7d78ac179
+ms.date: 06/05/2020
+ms.openlocfilehash: 3672127798b66d857b4a1dbd5014c02dfed8a7ee
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84226666"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84466844"
 ---
 <!--This file is shared by the CMPivot overview articles for both Microsoft Endpoint Manager tenant attach and Configuration Manager-->
 
@@ -28,7 +28,7 @@ CCMRecentlyUsedApplications | where CompanyName like '%Microsoft%'
 Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande följande entiteter:
 
 
-|Entitet|Description|
+|Entitet|Beskrivning|
 |---|---|
 |AadStatus|Status för Azure Active Directory|
 |Administratörer|Medlemmar i den lokala administratörs gruppen|
@@ -128,7 +128,6 @@ Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande
 |ProtectedVolumeInformation|Information om skyddad volym|
 |Protokoll|Protokoll|
 |QuickFixEngineering|Snabb korrigerings teknik|
-|Register ()|Alla värden för en enskild register nyckel|
 |SCSIController|SCSI-styrenhet|
 |SerialPortConfiguration|Konfiguration av seriell port|
 |SerialPorts|Serie portar|
@@ -182,7 +181,7 @@ Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande
 
 Tabell operatörer kan använda filter, sammanfatta och transformera data strömmar. För närvarande stöds följande operatorer:
 
-|Tabell operatörer|Description|
+|Tabell operatörer|Beskrivning|
 |---|---|
 |count|Returnerar en tabell med en enda post som innehåller antalet poster|
 |distinct|Skapar en tabell med en distinkt kombination av de angivna kolumnerna i indata-tabellen|
@@ -264,10 +263,11 @@ Skalära funktioner kan användas i uttryck. För närvarande stöds följande s
 > [!Important]
 > Dessa objekt stöds inte när du kör CMPivot från Microsoft Endpoint Manager administrations Center.
 
-|Typ|Objekt|Description|
+|Typ|Objekt|Beskrivning|
 |--|--|---|
 |Entitet|AccountSID|Konto-SID|
 |Entitet|FileContent()|Innehåll i en enskild fil|
 |Entitet|NAPClient|NAP-klient|
 |Entitet|NAPSystemHealthAgent|Hälso agent för NAP-system|
+|Entitet|Register ()|Alla värden för en enskild register nyckel<!--7371183-->|
 |Tabell operator|återge|Återger resultat som grafiska utdata|

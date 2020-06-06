@@ -10,12 +10,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 58afaf564a8afaba4569755575fcc7c1757c5529
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: 8423af8d4c743965f627a94a07f587fd97d45bdf
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110142"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84454978"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
@@ -34,11 +34,11 @@ Mer information om tjänst anslutnings punkten finns i [om tjänst anslutnings p
 Andra Configuration Manager-funktioner kan kräva ytterligare slut punkter från tjänst anslutnings punkten. Mer information finns i de andra avsnitten i den här artikeln.
 
 > [!TIP]  
-> Tjänst anslutnings punkten använder Microsoft Intune tjänsten när den ansluter till `go.microsoft.com` eller. `manage.microsoft.com` Det finns ett känt problem där Intune Connector upplever anslutnings problem om Baltimore CyberTrust-rotcertifikatet inte är installerat eller är skadat på tjänst anslutnings punkten. Mer information finns i [KB 3187516: tjänst anslutnings punkten hämtar inte uppdateringar](https://support.microsoft.com/help/3187516).  
+> Tjänst anslutnings punkten använder Microsoft Intune tjänsten när den ansluter till `go.microsoft.com` eller `manage.microsoft.com` . Det finns ett känt problem där Intune Connector upplever anslutnings problem om Baltimore CyberTrust-rotcertifikatet inte är installerat eller är skadat på tjänst anslutnings punkten. Mer information finns i [KB 3187516: tjänst anslutnings punkten hämtar inte uppdateringar](https://support.microsoft.com/help/3187516).  
 
 Från och med version 2002, om Configuration Manager-platsen inte kan ansluta till obligatoriska slut punkter för en moln tjänst, genererar den en kritisk status meddelande-ID 11488. När den inte kan ansluta till tjänsten ändras SMS_SERVICE_CONNECTOR komponent status till kritisk. Visa detaljerad status i noden [komponent status](../../servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorSystemStatus) i Configuration Manager-konsolen.<!-- 5566763 -->
 
-### <a name="updates-and-servicing"></a><a name="bkmk_scp-updates"/>Uppdateringar och underhåll
+### <a name="updates-and-servicing"></a><a name="bkmk_scp-updates"></a>Uppdateringar och underhåll
 
 Mer information om den här funktionen finns i [uppdateringar och underhåll för Configuration Manager](../../servers/manage/updates.md).
 
@@ -87,6 +87,18 @@ Om du registrerar Windows 10-enheter till Microsoft Intune för samhantering kon
 
 Om du integrerar Configuration Manager med [Microsoft Store för företag](../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md)kontrollerar du att tjänst anslutnings punkten och de riktade enheterna har åtkomst till moln tjänsten. Mer information finns i [konfiguration av Microsoft Store för företag-proxy](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business#proxy-configuration).
 
+## <a name="delivery-optimization"></a>Leveransoptimering
+
+Om du använder leverans optimering måste klienterna kommunicera med sin moln tjänst:`*.do.dsp.mp.microsoft.com`
+
+Distributions platser som har stöd för Microsoft Connected cache kräver även dessa slut punkter.
+
+Mer information finns i följande artiklar:
+
+- [Vanliga frågor och svar om leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions)
+- [Grundläggande begrepp för innehålls hantering i Configuration Manager](../hierarchy/fundamental-concepts-for-content-management.md#delivery-optimization)
+- [Microsoft Connected cache i Configuration Manager](../hierarchy/microsoft-connected-cache.md)
+
 ## <a name="cloud-services"></a><a name="bkmk_cloud"></a>Moln tjänster
 
 <!-- SCCMDocs-pr #3402 -->
@@ -106,9 +118,9 @@ För distribution av CMG/CDP-tjänst behöver **tjänst anslutnings punkten** å
 
 - Service Management-slut punkt:`https://management.core.windows.net/`  
 
-- Lagrings slut `<name>.blob.core.windows.net` punkt: och`<name>.table.core.windows.net`
+- Lagrings slut punkt: `<name>.blob.core.windows.net` och`<name>.table.core.windows.net`
 
-    Där `<name>` är namnet på moln tjänsten för din CMG eller CDP. Om din CMG till exempel är `GraniteFalls.CloudApp.Net`, så är den första lagrings slut punkten som `GraniteFalls.blob.core.windows.net`tillåts.<!-- SCCMDocs#2288 -->
+    Där `<name>` är namnet på moln tjänsten för din CMG eller CDP. Om din CMG till exempel är `GraniteFalls.CloudApp.Net` , så är den första lagrings slut punkten som tillåts `GraniteFalls.blob.core.windows.net` .<!-- SCCMDocs#2288 -->
 
 För hämtning av Azure AD-token av **Configuration Manager-konsolen** och- **klienten**:
 

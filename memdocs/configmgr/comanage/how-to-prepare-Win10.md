@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: e6582599a02f4a8196ee739ca875df4d158a993e
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 66e6156466d0432aaa8b3b162263f8207bdc9d78
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427798"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455114"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Förbereda Internet-baserade enheter för samhantering
 
@@ -78,7 +78,7 @@ Bestäm vilka kommando rads egenskaper du behöver för din miljö:
   - AADCLIENTAPPID  
   - AADRESOURCEURI  
 
-- Om klienten växlar tillbaka till intranätet krävs följande egenskap:  
+- Om klienten växlar tillbaka till intranätet använder du följande egenskap:
   - SMSMP  
 
 - Om du använder ett eget PKI-certifikat och din CRL inte har publicerats på Internet, krävs följande parameter:  

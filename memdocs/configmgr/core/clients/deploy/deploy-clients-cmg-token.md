@@ -10,12 +10,12 @@ ms.assetid: f0703475-85a4-450d-a4e8-7a18a01e2c47
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6b33027d67329b883f401168795c1b466ded1a7
-ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
+ms.openlocfilehash: 5054d44371fd3114a9644f90d37dabf1e81d1997
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83709409"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455029"
 ---
 # <a name="token-based-authentication-for-cloud-management-gateway"></a>Tokenbaserad autentisering för Cloud Management Gateway
 
@@ -54,16 +54,22 @@ Om du inte kan installera och registrera klienter i det interna nätverket skapa
 
 1. Öppna en kommandotolk som administratör.
 
-1. Kör verktyget från `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern: `BulkRegistrationTokenTool.exe` . Skapa en ny token med `/new` parametern. Till exempel `BulkRegistrationTokenTool.exe /new`. Mer information finns i [användning av token för Mass registrering](#bulk-registration-token-tool-usage).
+1. Kör verktyget från `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern: `BulkRegistrationTokenTool.exe` . Skapa en ny token med `/new` parametern. Exempelvis `BulkRegistrationTokenTool.exe /new`. Mer information finns i [användning av token för Mass registrering](#bulk-registration-token-tool-usage).
 
 1. Kopiera token och spara den på en säker plats.
 
 1. Installera Configuration Manager-klienten på en Internetbaserad enhet. Inkludera klient installations parametern: [**/regtoken**](about-client-installation-properties.md#regtoken). Följande exempel på kommando raden innehåller andra obligatoriska konfigurations parametrar och egenskaper:
 
-    `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com /regtoken:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik9Tbzh2Tmd5VldRUjlDYVh5T2lacHFlMDlXNCJ9.eyJTQ0NNVG9rZW5DYXRlZ29yeSI6IlN7Q01QcmVBdXRoVG9rZW4iLCJBdXRob3JpdHkiOiJTQ0NNIiwiTGljZW5zZSI6IlNDQ00iLCJUeXBlIjoiQnVsa1JlZ2lzdHJhdGlvbiIsIlRlbmFudElkIjoiQ0RDQzVFOTEtMEFERi00QTI0LTgyRDAtMTk2NjY3RjFDMDgxIiwiVW5pcXVlSWQiOiJkYjU5MWUzMy1wNmZkLTRjNWItODJmMy1iZjY3M2U1YmQwYTIiLCJpc3MiOiJ1cm46c2NjbTpvYXV0aDI6Y2RjYzVlOTEtMGFkZi00YTI0LTgyZDAtMTk2NjY3ZjFjMDgxIiwiYXVkIjoidXJuOnNjY206c2VydmljZSIsImV4cCI6MTU4MDQxNbUwNSwibmJmIjoxNTgwMTU2MzA1fQ.ZUJkxCX6lxHUZhMH_WhYXFm_tbXenEdpgnbIqI1h8hYIJw7xDk3wv625SCfNfsqxhAwRwJByfkXdVGgIpAcFshzArXUVPPvmiUGaxlbB83etUTQjrLIk-gvQQZiE5NSgJ63LCp5KtqFCZe8vlZxnOloErFIrebjFikxqAgwOO4i5ukJdl3KQ07YPRhwpuXmwxRf1vsiawXBvTMhy40SOeZ3mAyCRypQpQNa7NM3adCBwUtYKwHqiX3r1jQU0y57LvU_brBfLUL6JUpk3ri-LSpwPFarRXzZPJUu4-mQFIgrMmKCYbFk3AaEvvrJienfWSvFYLpIYA7lg-6EVYRcCAA`
+    `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC /regtoken:eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik9Tbzh2Tmd5VldRUjlDYVh5T2lacHFlMDlXNCJ9.eyJTQ0NNVG9rZW5DYXRlZ29yeSI6IlN7Q01QcmVBdXRoVG9rZW4iLCJBdXRob3JpdHkiOiJTQ0NNIiwiTGljZW5zZSI6IlNDQ00iLCJUeXBlIjoiQnVsa1JlZ2lzdHJhdGlvbiIsIlRlbmFudElkIjoiQ0RDQzVFOTEtMEFERi00QTI0LTgyRDAtMTk2NjY3RjFDMDgxIiwiVW5pcXVlSWQiOiJkYjU5MWUzMy1wNmZkLTRjNWItODJmMy1iZjY3M2U1YmQwYTIiLCJpc3MiOiJ1cm46c2NjbTpvYXV0aDI6Y2RjYzVlOTEtMGFkZi00YTI0LTgyZDAtMTk2NjY3ZjFjMDgxIiwiYXVkIjoidXJuOnNjY206c2VydmljZSIsImV4cCI6MTU4MDQxNbUwNSwibmJmIjoxNTgwMTU2MzA1fQ.ZUJkxCX6lxHUZhMH_WhYXFm_tbXenEdpgnbIqI1h8hYIJw7xDk3wv625SCfNfsqxhAwRwJByfkXdVGgIpAcFshzArXUVPPvmiUGaxlbB83etUTQjrLIk-gvQQZiE5NSgJ63LCp5KtqFCZe8vlZxnOloErFIrebjFikxqAgwOO4i5ukJdl3KQ07YPRhwpuXmwxRf1vsiawXBvTMhy40SOeZ3mAyCRypQpQNa7NM3adCBwUtYKwHqiX3r1jQU0y57LvU_brBfLUL6JUpk3ri-LSpwPFarRXzZPJUu4-mQFIgrMmKCYbFk3AaEvvrJienfWSvFYLpIYA7lg-6EVYRcCAA`
 
     > [!TIP]
     > Mer information om den här kommando raden finns i [Installera och registrera klienten med hjälp av Azure AD-identitet](deploy-clients-cmg-azure.md#install-and-register-the-client-using-azure-ad-identity). Den här processen är liknande och använder bara Azure AD-egenskaperna.
+
+Kontrol lera följande logg fil för att kontrol lera en liknande post:<!-- bug 7357499 -->
+
+```ClientLocation.log
+Rotating internet management point, new management point [1] is: https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 (0) with capabilities: <Capabilities SchemaVersion ="1.0"><Property Name="SSL" Version="1" /></Capabilities>
+```
 
 ### <a name="known-issues"></a>Kända problem
 
@@ -107,26 +113,26 @@ Exempel: `BulkRegistrationTokenTool.exe /lifetime 4320`
 
 Du kan se tidigare skapade token för Mass registrering och deras livs längd i Configuration Manager-konsolen och blockera deras användning vid behov. Plats databasen lagrar dock inte token för Mass registrering.
 
-#### <a name="to-review-a-bulk-registration-token"></a>Så här granskar du en token för Mass registrering
+### <a name="review-a-bulk-registration-token"></a>Granska en token för Mass registrering
 
-1. Klicka på **Administration**i Configuration Manager-konsolen.
+1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen.
 
-2. I arbets ytan Administration expanderar du **säkerhet**och klickar på **certifikat**. Konsolen visar alla plats-relaterade certifikat och token för Mass registrering i informations fönstret.
+2. Expandera **säkerhet**och välj noden **certifikat** . Konsolen visar alla plats-relaterade certifikat och token för Mass registrering i informations fönstret.
 
 3. Välj den token för Mass registrering som ska granskas.
 
-Du kan identifiera vissa token för Mass registrering baserat på deras GUID. GUID för token för Mass registrering visas när token skapas. Du kan också filtrera eller sortera efter behov i kolumnen **typ** .
+Du kan filtrera eller sortera i kolumnen **typ** . Identifiera vissa token för Mass registrering baserat på deras GUID. När du skapar en token för Mass registrering visar verktyget GUID.
 
-#### <a name="to-block-a-bulk-registration-token"></a>Så här blockerar du en token för Mass registrering
+### <a name="block-a-bulk-registration-token"></a>Blockera en token för Mass registrering
 
-1. Klicka på **Administration**i Configuration Manager-konsolen.
+1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen.
 
-2. I arbets ytan Administration expanderar du **säkerhet**, klickar på **certifikat**och väljer den token för Mass registrering som ska blockeras.
+2. Expandera **säkerhet**, välj noden **certifikat** och välj den token för Mass registrering som ska blockeras.
 
-3. På fliken **Start** i menyfliksområdet eller högerklicka på menyn innehåll väljer du **blockera**. Däremot kan du häva blockering av tidigare blockerade token för Mass registrering genom att välja **Häv blockering** på fliken **Start** i menyfliksområdet eller menyn för att högerklicka på innehåll.
+3. På fliken **Start** i menyfliksområdet eller snabb menyn på snabb menyn väljer du **blockera**. Om du vill avblockera tidigare blockerade Mass registrerings tokens väljer du åtgärden **Häv blockering** .
 
 ## <a name="see-also"></a>Se även
 
-- [Planera för Cloud Management Gateway](../manage/cmg/plan-cloud-management-gateway.md)
+- [Planera för molnhanteringsgatewayen](../manage/cmg/plan-cloud-management-gateway.md)
 
 - [Installera och tilldela Configuration Manager Windows 10-klienter med Azure AD för autentisering](deploy-clients-cmg-azure.md)

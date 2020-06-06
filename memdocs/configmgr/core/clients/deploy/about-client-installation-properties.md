@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12fee834e4f384cc180658a8e58cf3920a907831
-ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
+ms.openlocfilehash: fda1e877f8e0bc211b36e288af13de204305cc5a
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153458"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455046"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -43,7 +43,7 @@ Du kan också ange *Egenskaper* på kommando raden för CCMSetup. exe för att �
 > [!IMPORTANT]  
 > Ange CCMSetup-parametrar innan du anger egenskaper för Client. msi.  
 
-CCMSetup. exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager-installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Till exempel `\\SiteServer\SMS_ABC\Client`.
+CCMSetup. exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager-installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Exempelvis `\\SiteServer\SMS_ABC\Client`.
 
 I kommandotolken används följande format i CCMSetup.exe-kommandot:  
 
@@ -676,21 +676,19 @@ Som standard används klient installations programmet `PU` . Först kontrol lera
 
 Exempel: `CCMSetup.exe SMSCONFIGSOURCE=RP`
 
-<!--
-### SMSDIRECTORYLOOKUP
+### <a name="smsdirectorylookup"></a>SMSDIRECTORYLOOKUP
 
-Specifies whether the client can use Windows Internet Name Service (WINS) to find a management point that accepts HTTP connections. Clients use this method when they can't find a management point in Active Directory Domain Services or in DNS.  
+Anger om klienten kan använda Windows Internet Name Service (WINS) för att hitta en hanteringsplats som accepterar HTTP-anslutningar. Klienter använder den här metoden när de inte kan hitta en hanterings plats i Active Directory Domain Services eller i DNS.
 
- This property doesn't affect whether the client uses WINS for name resolution.  
+Den här egenskapen påverkar inte om klienten använder WINS för namn matchning.
 
- You can configure two different modes for this property:  
+Du kan konfigurera två olika lägen för den här egenskapen:
 
--   NOWINS: This value is the most secure setting for this property and prevents clients from finding a management point in WINS. When you use this setting, clients must have an alternative method to locate a management point on the intranet, such as Active Directory Domain Services or by using DNS publishing.  
+- **NOWINS**: det här värdet är den säkraste inställningen för den här egenskapen. Den förhindrar klienter från att hitta en hanterings plats i WINS. När du använder den här inställningen måste klienter ha en alternativ metod för att hitta en hanterings plats på intranätet. Till exempel Active Directory Domain Services eller DNS-publicering.
 
--   WINSSECURE (default): In this mode, a client that uses HTTP communication can use WINS to find a management point. However, the client must have a copy of the trusted root key before it can successfully connect to the management point. For more information, see [Planning for the trusted root key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
+- **WINSSECURE** (standard): i det här läget kan en klient som använder http-kommunikation använda WINS för att hitta en hanterings plats. Klienten måste dock ha en kopia av den betrodda rotnyckeln innan den kan ansluta till hanteringsplatsen. Mer information finns i [Planera för den betrodda rot nyckeln](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).
 
-Example: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  
--->
+Exempel: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  
 
 ### <a name="smsmp"></a>SMSMP
 

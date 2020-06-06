@@ -10,12 +10,12 @@ ms.assetid: b2abcdb0-72e0-4c70-a4b8-7827480ba5b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c2347275ffdc194e73cf792d6f83ffa75732f8c4
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 13c16e89cc75bff1ccecd03a98cd12782c419a40
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711415"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455209"
 ---
 # <a name="deploy-a-task-sequence"></a>Distribuera en aktivitetssekvens
 
@@ -146,7 +146,7 @@ Använd följande procedur för att distribuera en aktivitetssekvens till datore
 
     - **Skriv filter hantering för Windows Embedded-enheter**: den här inställningen styr installations beteendet på Windows Embedded-enheter som är aktiverade med ett Skriv filter. Välj alternativet för att genomföra ändringar vid installationens tids gräns eller under en underhålls period. När du väljer det här alternativet krävs en omstart och ändringarna sparas på enheten. Annars installeras programmet på det tillfälliga överlägget och genomförs senare. När du distribuerar en aktivitetssekvens till en Windows Embedded-enhet ser du till att enheten är medlem i en samling som har en konfigurerad underhålls period.  
 
-    - **Tillåt att aktivitetssekvensen körs för klient på Internet**: Ange om aktivitetssekvensen tillåts köras på en Internetbaserad klient. Åtgärder som kräver ett start medium, till exempel installation av ett operativ system, stöds inte med den här inställningen. Använd endast det här alternativet för allmänna program varu installationer eller skriptbaserade aktivitetssekvenser som utför åtgärder i standard operativ systemet.  
+    - **Tillåt att aktivitetssekvensen körs för klient på Internet**: Ange om aktivitetssekvensen tillåts köras på en Internetbaserad klient. Åtgärder som kräver ett start medium, till exempel installation av ett operativ system, stöds inte med den här inställningen. Använd endast det här alternativet för allmänna program varu installationer eller skriptbaserade aktivitetssekvenser som kör åtgärder i standard operativ systemet.  
 
         - Den här inställningen stöds för distribution av en aktivitetssekvens för Windows 10-uppgradering till Internetbaserade klienter via Cloud Management Gateway. Mer information finns i [distribuera uppgradering av Windows 10 på plats via CMG](#deploy-windows-10-in-place-upgrade-via-cmg).  
 
@@ -154,19 +154,7 @@ Använd följande procedur för att distribuera en aktivitetssekvens till datore
 
 9. Ange följande information på sidan **Distributionsplatser** :  
 
-    - **Distributionsalternativ**: Du kan ange ett av följande alternativ:  
-
-        > [!NOTE]  
-        > När du använder multicast för att distribuera ett operativ system laddar du ned innehållet till datorerna antingen efter behov eller innan aktivitetssekvensen körs.  
-
-        - **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**: ange att klienter laddar ned innehåll från distributions platsen när de behövs i aktivitetssekvensen. Klienten startar aktivitetssekvensen. När ett steg i aktivitetssekvensen kräver innehåll hämtas det innan steget körs.  
-
-        - **Hämta allt innehåll lokalt innan aktivitetssekvensen startas**: ange att klienterna ska ladda ned allt innehåll från distributions platsen innan aktivitetssekvensen körs. Om du gör aktivitetssekvensen tillgänglig för PXE-och start medie distributioner på sidan **distributions inställningar** visas inte det här alternativet.  
-
-        - **Få åtkomst till innehållet direkt från en distributions plats vid behov genom att köra aktivitetssekvensen**: ange att klienter kör innehållet från distributions platsen. Det här alternativet är bara tillgängligt om du aktiverar alla paket som är kopplade till aktivitetssekvensen för att använda en paket resurs på distributions platsen. Om du vill aktivera innehållet för att använda en paketdelning går du till fliken **Dataåtkomst** i **Egenskaper** för varje paket.  
-
-            > [!IMPORTANT]  
-            > För bästa säkerhet väljer du alternativen för att **Ladda ned innehåll lokalt när det behövs av aktivitetssekvensen som körs** eller **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas**. När du väljer något av dessa alternativ Configuration Manager hash-kodar paketet, så att det kan säkerställa paket integriteten. När du väljer alternativet för att **komma åt innehåll direkt från en distributions plats vid behov genom att köra aktivitetssekvensen**, verifierar Configuration Manager inte paketets hash innan du kör det angivna programmet. Eftersom platsen inte kan garantera paket integriteten är det möjligt för användare med administratörs behörighet att ändra eller manipulera paket innehåll.  
+    - **Distributions alternativ**: Mer information finns i [distributions alternativ](#bkmk_deploy-options).
 
     - **Använd en fjärrdistributions plats om det inte finns någon lokal distributions plats**: Ange om klienter kan använda distributions platser från en intilliggande gränser grupp för att ladda ned det innehåll som krävs av aktivitetssekvensen.  
 
@@ -178,6 +166,63 @@ Använd följande procedur för att distribuera en aktivitetssekvens till datore
 10. Om du vill spara inställningarna och använda dem igen går du till fliken **Sammanfattning** och väljer **Spara som mall**. Ange ett namn för mallen och välj de inställningar som ska sparas.  
 
 11. Slutför guiden.  
+
+### <a name="deployment-options"></a><a name="bkmk_deploy-options"></a>Distributions alternativ
+
+<!-- MEMDocs#328, SCCMDocs#2114 -->
+
+De här alternativen finns på fliken **distributions platser** i aktivitetssekvensdistribution. De är dynamiska baserat på andra val i en aktivitetssekvens distribution och attribut. Du kan inte alltid se alla alternativ.
+
+> [!NOTE]  
+> När du använder multicast för att distribuera ett operativ system laddar du ned innehållet till datorerna antingen efter behov eller innan aktivitetssekvensen körs.  
+
+- **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**: ange att klienter laddar ned innehåll från distributions platsen när de behövs i aktivitetssekvensen. Klienten startar aktivitetssekvensen. När ett steg i aktivitetssekvensen kräver innehåll hämtas det innan steget körs.  
+
+- **Hämta allt innehåll lokalt innan aktivitetssekvensen startas**: ange att klienterna ska ladda ned allt innehåll från distributions platsen innan aktivitetssekvensen körs. Om du gör aktivitetssekvensen tillgänglig för PXE-och start medie distributioner på sidan **distributions inställningar** visas inte det här alternativet.  
+
+- **Få åtkomst till innehållet direkt från en distributions plats vid behov genom att köra aktivitetssekvensen**: ange att klienter kör innehållet från distributions platsen. Det här alternativet är bara tillgängligt om du aktiverar alla paket som är kopplade till aktivitetssekvensen för att använda en paket resurs på distributions platsen. Om du vill aktivera innehållet för att använda en paketdelning går du till fliken **Dataåtkomst** i **Egenskaper** för varje paket.  
+
+> [!IMPORTANT]  
+> För bästa säkerhet väljer du alternativen för att **Ladda ned innehåll lokalt när det behövs av aktivitetssekvensen som körs** eller **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas**. När du väljer något av dessa alternativ Configuration Manager hash-kodar paketet, så att det kan säkerställa paket integriteten. När du väljer alternativet för att **komma åt innehåll direkt från en distributions plats vid behov genom att köra aktivitetssekvensen**, verifierar Configuration Manager inte paketets hash innan du kör det angivna programmet. Eftersom platsen inte kan garantera paket integriteten är det möjligt för användare med administratörs behörighet att ändra eller manipulera paket innehåll.  
+
+#### <a name="example-1-one-deployment-option"></a>Exempel 1: ett distributions alternativ
+
+Du distribuerar en aktivitetssekvens för operativ Systems distribution som rensar disken och tillämpar en avbildning. På sidan **distributions inställningar** gör du det tillgängligt för ett alternativ som inkluderar media och PXE:
+
+:::image type="content" source="media/deploy-setting-make-available.png" alt-text="Distribuera aktivitetssekvens, gör den tillgänglig för följande":::
+
+På sidan **distributions platser** finns det bara ett distributions alternativ:
+
+- **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**
+
+:::image type="content" source="media/deploy-option-1.png" alt-text="Distribuera aktivitetssekvens, ett distributions alternativ":::
+
+Alternativet att **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas** är inte tillgängligt eftersom distributionen görs tillgänglig för media och PXE.
+
+Alternativet att **komma åt innehåll direkt från en distributions plats när det behövs av aktivitetssekvensen som körs** är inte tillgängligt. Inte allt innehåll som refereras till använder en paket resurs.
+
+#### <a name="example-2-two-deployment-options"></a>Exempel 2: två distributions alternativ
+
+Du distribuerar en aktivitetssekvens för operativ Systems distribution som rensar disken och tillämpar en avbildning. På sidan **distributions inställningar** gör du det bara tillgängligt för **Configuration Manager klienter**. På sidan **distributions platser** finns det två tillgängliga distributions alternativ:
+
+- **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**
+- **Hämta allt innehåll lokalt innan aktivitetssekvensen startas**
+
+:::image type="content" source="media/deploy-option-2.png" alt-text="Distribuera aktivitetssekvens, två distributions alternativ":::
+
+Alternativet att **komma åt innehåll direkt från en distributions plats när det behövs av aktivitetssekvensen som körs** är inte tillgängligt. Inte allt innehåll som refereras till använder en paket resurs.
+
+#### <a name="example-3-three-deployment-options"></a>Exempel 3: tre distributions alternativ
+
+Du har flera paket med administrativa skript och tillhör ande innehåll. På fliken **data åtkomst** i paket egenskaperna konfigurerar du alla för att **Kopiera innehållet i det här paketet till en paket resurs på distributions platser**.
+
+Du skapar en aktivitetssekvens som bara har flera **installations paket** steg för dessa skript paket och distribuerar det. På sidan **distributions inställningar** är det enda alternativet att endast vara tillgängligt för **Configuration Manager klienter**. Det här alternativet är endast tillgängligt. Aktivitetssekvensen är inte för operativ system distribution, eftersom den inte har någon kopplad start avbildning. På sidan **distributions platser** finns det tre tillgängliga distributions alternativ:
+
+- **Ladda ned innehåll lokalt när du behöver genom att köra aktivitetssekvensen**
+- **Hämta allt innehåll lokalt innan aktivitetssekvensen startas**
+- **Få åtkomst till innehållet direkt från en distributions plats vid behov genom att köra aktivitetssekvensen**
+
+:::image type="content" source="media/deploy-option-3.png" alt-text="Distribuera aktivitetssekvens, tre distributions alternativ":::
 
 ## <a name="deploy-windows-10-in-place-upgrade-via-cmg"></a>Distribuera uppgradering av Windows 10 på plats via CMG
 

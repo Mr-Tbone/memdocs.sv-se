@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 7ddcb1ade6f39d1fc2cb824470c33d39496bcbf1
-ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
+ms.openlocfilehash: da8c52dabf27ddf0992d9f405400b3ac984f2ecc
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428680"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455131"
 ---
 # <a name="endpoint-analytics-preview"></a><a name="bkmk_uea"></a>För hands version av Endpoint Analytics
 
@@ -56,7 +56,7 @@ Du börjar använda slut punkts analys genom att verifiera kraven och sedan bör
 
 I den här för hands versionen kan du registrera enheter via Configuration Manager eller Microsoft Intune. 
 
-För att kunna registrera enheter via Intune måste den här för hands versionen:
+#### <a name="to-enroll-devices-via-intune-this-preview-requires"></a><a name="bkmk_uea__intune_prereq"></a>För att kunna registrera enheter via Intune måste den här för hands versionen:
 - Intune-registrerade enheter som kör Windows 10
 - Start prestanda insikter är bara tillgängliga för enheter som kör version 1903 eller senare av Windows 10 Enterprise (Home-och Pro-utgåvor stöds inte för närvarande) och enheterna måste vara Azure AD-anslutna eller hybrid Azure AD-ansluten. Datorer som är anslutna till en arbets plats stöds inte för närvarande.
 - Nätverks anslutning från enheter till det offentliga Microsoft-molnet. Mer information finns i [slut punkter](#bkmk_uea_endpoints).
@@ -64,11 +64,12 @@ För att kunna registrera enheter via Intune måste den här för hands versione
    - Genom att klicka på **Start**godkänner du och bekräftar att dina kund uppgifter kan lagras utanför den plats som du valde när du etablerade Microsoft Intune-klienten.
    - När du har klickat på **Starta** för att samla in data kan andra skrivskyddade roller Visa data.
 
-För att kunna registrera enheter via Configuration Manager måste den här för hands versionen:
+#### <a name="to-enroll-devices-via-configuration-manager-this-preview-requires"></a><a name="bkmk_uea__cm_prereq"></a>För att kunna registrera enheter via Configuration Manager måste den här för hands versionen:
 - Configuration Manager version 2002 eller senare
 - Klienter som uppgraderats till version 2002 eller senare
 - [Microsoft Endpoint Manager-klient ansluter](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions) aktive rad med en Azure-klient plats för Nordamerika eller Europa (vi kommer att utökas till andra regioner snart)
 
+#### <a name="proactive-remediation-scripting-requires"></a><a name="bkmk_uea__prs_prereq"></a>Proaktiva reparations skript kräver:
 Oavsett om du registrerar enheter via Intune eller Configuration Manager, har [**proaktivt reparations skript**](#bkmk_uea_prs) följande krav:
 - Enheter måste vara Azure AD-anslutna eller hybrid Azure AD-ansluten och uppfylla något av följande villkor:
 - En Windows 10 Enterprise-, Professional-eller Education-enhet som hanteras av Intune
