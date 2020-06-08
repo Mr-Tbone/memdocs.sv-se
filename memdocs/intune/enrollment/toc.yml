@@ -93,10 +93,13 @@
       items:
         - name: Automatisk enhetsregistrering
           href: device-enrollment-program-enroll-ios.md
-        - name: Konfigurera användarregistrering för iOS/iPadOS och iPadOS
-          href: ios-user-enrollment.md
-        - name: Åtgärder och alternativ som stöd för användarregistrering
-          href: ios-user-enrollment-supported-actions.md
+          displayName: dep; ade; bulk enroll
+        - name: Registrera användare och enhet
+          items:
+            - name: Skapa profilen
+              href: ios-user-enrollment.md
+            - name: Åtgärder som stöds vid användarregistrering
+              href: ios-user-enrollment-supported-actions.md
         - name: Apple School Manager
           href: apple-school-manager-set-up-ios.md
         - name: Apple Configurator
