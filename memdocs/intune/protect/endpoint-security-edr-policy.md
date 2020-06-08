@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/22/2020
+ms.date: 05/29/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: ac8f82396571a7ae39df43662000f9f3f17d0430
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: d0ba328f1976d0463c6be042dfd6f8a7570d6dac
+ms.sourcegitcommit: eb51bb38d484e8ef2ca3ae3c867561249fa413f3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990876"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84206340"
 ---
 # <a name="endpoint-detection-and-response-policy-for-endpoint-security-in-intune"></a>Endpoint Security-policyn Slutpunktsidentifiering och svar i Intune
 
@@ -38,13 +38,13 @@ EDR-policyer distribueras till grupper av enheter i Azure Active Directory (Azur
 
 Du hittar Endpoint Security-policyn Slutpunktsidentifiering och svar under *Hantera* i noden **Endpoint Security** i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
-Visa [inställningar för Slutpunktsidentifiering och svar](../protect/endpoint-security-edr-profile-settings.md).
+Visa [inställningar för Slutpunktsidentifiering och svar](endpoint-security-edr-profile-settings.md).
 
 ## <a name="prerequisites-for-edr-policies"></a>Förutsättningar för EDR-policyer
 
 **Allmänt**:
 
-- **Klientorganisation för Microsoft Defender Advanced Threat Protection** – din Defender ATP-klientorganisation måste vara integrerad med Microsoft Endpoint Manager-klientorganisationen (Intune-prenumerationen) innan du kan skapa EDR-principer. Läs mer i [Använda Microsoft Defender ATP](../protect/advanced-threat-protection.md) i Intune-dokumentationen.
+- **Klientorganisation för Microsoft Defender Advanced Threat Protection** – din Defender ATP-klientorganisation måste vara integrerad med Microsoft Endpoint Manager-klientorganisationen (Intune-prenumerationen) innan du kan skapa EDR-principer. Läs mer i [Använda Microsoft Defender ATP](advanced-threat-protection.md) i Intune-dokumentationen.
 
 **Så här använder du enheter från Configuration Manager**:
 
@@ -67,7 +67,7 @@ Om du vill använda EDR-policyer med Configuration Manager-enheter måste du utf
 
 ## <a name="edr-profiles"></a>EDR-profiler
 
-[Visa inställningarna](../protect/endpoint-security-edr-profile-settings.md) du kan konfigurera för följande plattformar och profiler.
+[Visa inställningarna](endpoint-security-edr-profile-settings.md) du kan konfigurera för följande plattformar och profiler.
 
 **Intune** – följande stöds för enheter du hanterar med Intune:
 
@@ -138,7 +138,7 @@ Om du planerar att aktivera samhantering bör du vara bekant med fenomenet samha
 
       När det här alternativet är valt visar guiden ytterligare sidor för att slutföra konfigurationen av samhanteringen. Mer information finns i [Aktivera samhantering](../../configmgr/comanage/how-to-enable.md) i Configuration Manager-dokumentationen.
 
-     ![Konfigurera anslutning av klientorganisationen](./media/endpoint-security-edr-policy/tenant-onboarding.png)
+     ![Konfigurera anslutning av klientorganisationen](media/endpoint-security-edr-policy/tenant-onboarding.png)
 
 4. Klicka på **Nästa** och sedan **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen av samlingar till administrationscentret för Microsoft Endpoint Manager.
 
@@ -159,7 +159,7 @@ Om du planerar att aktivera samhantering bör du vara bekant med fenomenet samha
 3. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Klicka på **Använd**.
    - Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Du kan också välja att begränsa konfigurationen till en eller flera enhetssamlingar.
 
-     ![Visa fliken Egenskaper för samhantering](./media/endpoint-security-edr-policy/configure-upload.png)
+     ![Visa fliken Egenskaper för samhantering](media/endpoint-security-edr-policy/configure-upload.png)
 
 4. Logga in med ditt *globala administratörskonto* när du uppmanas till det.
 
@@ -195,7 +195,7 @@ När du har konfigurerat vilka samlingar som ska synkroniseras till administrati
 
    - Du kan inte välja det här alternativet om Configuration Manager-hierarkin inte är ansluten till klientorganisationen.
   
-   ![Konfigurera molnsynkronisering](./media/endpoint-security-edr-policy/cloud-sync.png)
+   ![Konfigurera molnsynkronisering](media/endpoint-security-edr-policy/cloud-sync.png)
 
 3. Välj **OK** för att spara konfigurationen.
 
@@ -258,11 +258,17 @@ Du kan visa information om de EDR-policyer du distribuerar i administrationscent
 
 - För policyer som riktar sig mot plattformen **Windows 10 och senare** (Intune) ser du en översikt över efterlevnaden av policyn. Du kan också välja diagrammet och visa en lista med enheter som har tagit emot policyn och gå vidare till enskilda enheter för att visa mer information.
 
+  I diagrammet **Enheter med ATP-sensor** visas endast enheter som registrerats till Defender ATP med profilen **Windows 10 och senare**. För att se till att du har full representation av dina enheter i det här diagrammet distribuerar du registreringsprofilen till alla dina enheter. Enheter som registrerar till Defender ATP med externa metoder som grupprincip eller PowerShell, räknas som **Enheter utan ATP-sensorn**.
+
 - För policyer som riktar sig mot plattformen **Windows 10 och Windows Server** (Configuration Manager) ser du en översikt över efterlevnaden av policyn, men du kan inte visa mer detaljerad information. Vyn är begränsad eftersom administrationscentret tar emot begränsad statusinformation från Configuration Manager, som hanterar distributionen av policyn till Configuration Manager-enheterna.
 
-[Visa inställningarna](../protect/endpoint-security-edr-profile-settings.md) du kan konfigurera för både plattformar och profiler.
+
+
+
+
+[Visa inställningarna](endpoint-security-edr-profile-settings.md) du kan konfigurera för både plattformar och profiler.
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Konfigurera Endpoint Security-policyer](../protect/endpoint-security-policy.md#create-an-endpoint-security-policy)
+- [Konfigurera Endpoint Security-policyer](endpoint-security-policy.md#create-an-endpoint-security-policy)
 - Läs mer om [Slutpunktsidentifiering och svar](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response) i dokumentationen för Microsoft Defender ATP.

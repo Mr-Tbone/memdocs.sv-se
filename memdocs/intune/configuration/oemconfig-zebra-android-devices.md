@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/12/2020
+ms.date: 06/02/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2227face347e6d82cf7807bea241eda4856c1d67
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 2a38c445018200d9fe80db19142f123aba783b60
+ms.sourcegitcommit: 8a023e941d90c107c9769a1f7519875a31ef9393
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988687"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84311186"
 ---
 # <a name="deploy-multiple-oemconfig-profiles-to-zebra-devices-in-microsoft-intune"></a>Distribuera flera OEMConfig-profiler till Zebra-enheter i Microsoft Intune
 
@@ -44,7 +44,9 @@ Skapa en [OEMConfig-konfigurationsprofil](android-oem-configuration-overview.md)
 
 ## <a name="use-multiple-profiles"></a>Använda flera profiler
 
-På Zebra-enheter kan du ha flera profiler på varje enhet samtidigt. Den här funktionen gör att du kan dela upp dina Zebra OEMConfig-inställningar i mindre profiler. Zebras OEMConfig-schema använder också **åtgärder**. Åtgärder är operationer som körs på enheten. De konfigurerar inte några inställningar. Använd de här åtgärderna till saker som att utlösa filnedladdning eller rensa Urklipp. Du hittar en fullständig lista med åtgärder som stöds i [Zebra-dokumentationen](https://techdocs.zebra.com/oemconfig/10-0/about/) (detta öppnar Zebra-webbplatsen).
+På Zebra-enheter kan du ha flera profiler på varje enhet samtidigt. Den här funktionen gör att du kan dela upp dina Zebra OEMConfig-inställningar i mindre profiler. Du kan till exempel skapa en baslinjeprofil som påverkar alla enheter. Skapa sedan fler profiler som konfigurerar inställningar specifika för en enhet.
+
+Zebras OEMConfig-schema använder också **åtgärder**. Åtgärder är operationer som körs på enheten. De konfigurerar inte några inställningar. Använd de här åtgärderna till saker som att utlösa filnedladdning eller rensa Urklipp. Du hittar en fullständig lista med åtgärder som stöds i [Zebra-dokumentationen](https://techdocs.zebra.com/oemconfig/10-0/about/) (detta öppnar Zebra-webbplatsen).
 
 Du kan till exempel skapa en Zebra OEMConfig-profil som tillämpar vissa inställningar på enheten. En annan Zebra OEMConfig-profil innehåller en åtgärd som rensar Urklipp. Du tilldelar den första profilen till en Zebra-enhetsgrupp. Senare måste du rensa Urklipp på de här enheterna. Du tilldelar den andra profilen till samma enhetsgrupp utan att ändra den första profilen. Enheternas Urklipp rensas utan att du skickar eller påverkar konfigurationsinställningarna som skapades i den första profilen.
 
@@ -52,20 +54,26 @@ I ett annat exempel har du tilldelat en OEMConfig-profil som konfigurerade någr
 
 ## <a name="ordering"></a>Ordna profiler
 
-När du har flera profiler på varje enhet är inte ordningen som profilerna distribueras i självklar. Det här beteendet är en begränsning hos Google Play. Om du vill köra åtgärderna i en viss följd kan du använda [Zebras transaktionsfunktion](https://techdocs.zebra.com/oemconfig/9-1/mc/) (öppnar Zebras webbplats). Nu ska vi titta på ett exempel.
+När du har flera profiler på varje enhet är inte ordningen som profilerna distribueras i självklar. Det här beteendet är en begränsning hos Google Play. Om du vill köra åtgärderna i följd kan du använda [Zebras transaktionssteg-funktion](https://techdocs.zebra.com/oemconfig/10-0/mc/) (öppnar Zebras webbplats). 
 
-Vi har två profiler:
+Sammanfattningsvis, om ordningen är viktig, använd [Zebras transaktionssteg-funktionen](https://techdocs.zebra.com/oemconfig/10-0/mc/) (öppnar Zebras webbplats). Om ordningen inte spelar någon roll, använder du flera Intune-profiler. 
 
-- **Profil 1**: Aktiverar Bluetooth. Den här profilen tilldelas på måndagen till gruppen **Alla enheter**.
-- **Profil 2**: Konfigurerar andra inställningar. Den här profilen tilldelas på tisdagen till gruppen **Alla enheter**.
+För att ta några olika exempel:
 
-Bluetooth måste vara aktiverat innan den andra inställningen konfigureras.
+- Du vill aktivera Bluetooth för alla nyligen registrerade Zebra-enheter innan du konfigurerar andra inställningar på enheterna. Kör funktionerna i sekvens med **Steg**-funktionen i Zebra-schemat.
 
-På onsdagen registrerar du 10 nya Zebra-enheter i Intune. Profil 1 och profil 2 tilldelas till gruppen **Alla enheter**. När de nya enheterna synkroniseras med Intune får de profilerna. De här enheterna kan få profil 2 innan profil 1.
+  Skapa en Intune-profil som har två transaktionssteg. Det första steget innehåller Bluetooth-inställningarna och det andra steget konfigurerar den andra inställningen. När Zebras OEMConfig-app tar emot profilen körs stegen i rätt ordning.
 
-Med funktionen **Steg** i Zebra-schemat kan du se till att åtgärderna körs i rätt följd. I det här fallet skapar du en profil som har två transaktionssteg. Det första steget innehåller Bluetooth-inställningarna och det andra steget konfigurerar den andra inställningen. När Zebras OEMCong-app tar emot profilen körs stegen i rätt ordning.
+  Mer information finns i [Zebras transaktionssteg](https://techdocs.zebra.com/oemconfig/10-0/mc/) (öppnar Zebras webbplats).
 
-Mer information finns i [Zebras transaktionssteg](https://techdocs.zebra.com/oemconfig/9-1/mc/) (öppnar Zebras webbplats).
+- Du vill att alla Zebra-enheter ska visa tid i 24-timmarsformat. För några av enheterna vill du stänga av kameran. Inställningarna för tid och kamera är inte beroende av varandra.
+
+  Skapa två Intune-profiler:
+
+  - **Profil 1**: Visar tiden i 24-timmarsformat. På måndag tilldelas den här profilen gruppen **Alla enheter**.
+  - **Profil 2**: Stänger av kameran. På tisdag tilldelas den här profilen gruppen **Zebra AE-fabriksenheter**.
+
+  På onsdagen registrerar du 10 nya Zebra-enheter i Intune. Profil 1 och profil 2 har tilldelats. När de nya enheterna synkroniseras med Intune får de profilerna. De här enheterna kan få profil 2 innan de får profil 1.
 
 ## <a name="enhanced-reporting"></a>Förbättrad rapportering
 

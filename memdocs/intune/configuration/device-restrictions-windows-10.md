@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/26/2020
+ms.date: 06/02/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20c552ff879574edc0ed497b5c99b45b8092918a
-ms.sourcegitcommit: 97fbb7db14b0c4049c0fe3a36ee16a5c0cf3407a
+ms.openlocfilehash: f469d9646fad3b247743b6017f0ecbc7917f2cdf
+ms.sourcegitcommit: 8a023e941d90c107c9769a1f7519875a31ef9393
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83864909"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84311194"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningar för Windows 10 (och senare) för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -49,7 +49,7 @@ De här inställningarna använder [CSP för ApplicationManagement-princip](http
   - **Blockera**: Förhindrar separat inläsning. Icke-Microsoft Store-appar kan inte installeras.
   - **Tillåt**: Tillåter separat inläsning. Icke-Microsoft Store-appar kan installeras.
 
-- **Lås upp via utvecklare**: Tillåter Windows utvecklarinställningar, till exempel att separat inlästa appar ska kunna ändras av användarna. Alternativen är:
+- **Lås upp via utvecklare**: Tillåt att användarna kan ändra utvecklarinställningar i Windows, som att tillåta separat inlästa appar. Alternativen är:
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
   - **Blockera**: Förhindrar utvecklarläge och separat inläsning av appar.
   - **Tillåt**: Tillåter utvecklarläge och separat inläsning av appar.
@@ -130,7 +130,7 @@ De här inställningarna använder CSP:er för [anslutningsprincip](https://docs
 De här inställningarna använder [CSP för Bluetooth-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth), som även visar de Windows-versioner som stöds.
 
 - **Bluetooth**: **Blockera** hindrar användare från att aktivera Bluetooth. **Inte konfigurerat** (standard) tillåter Bluetooth på enheten.
-- **Bluetooth-identifiering**: **Blockera** hindrar enheten från att identifieras av andra Bluetooth-aktiverade enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kan operativsystemet tillåta att andra Bluetooth-aktiverade enheter, till exempel ett headset, identifierar enheten.
+- **Bluetooth-identifiering**: **Blockera** hindrar enheten från att identifieras av andra Bluetooth-aktiverade enheter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kan operativsystemet tillåta att andra Bluetooth-aktiverade enheter, som ett headset, identifierar enheten.
 
   [CSP:n Bluetooth/AllowDiscoverableMode](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowdiscoverablemode)
 
@@ -464,7 +464,7 @@ De här inställningarna använder [CSP för NetworkProxy-princip](https://docs.
 
 De här inställningarna använder [CSP för DeviceLock-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock), som även visar de Windows-versioner som stöds.
 
-- **Lösenord**: **Kräv** tvingar användarna att ange lösenord för att få åtkomst till enheterna. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till enheter utan lösenord. Gäller endast för lokala konton. Lösenord för domänkonton förblir konfigurerade av Active Directory (AD) och Azure AD.
+- **Lösenord**: **Kräv** tvingar användarna att ange ett lösenord för att komma åt enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta åtkomst till enheter utan lösenord. Gäller endast för lokala konton. Lösenord för domänkonton förblir konfigurerade av Active Directory (AD) och Azure AD.
 
   [DeviceLock/DevicePasswordEnabled CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-devicepasswordenabled)
 
@@ -638,11 +638,11 @@ De här inställningarna använder [CSP för WirelessDisplay-princip](https://do
 ## <a name="reporting-and-telemetry"></a>Rapportering och telemetri
 
 - **Dela användningsdata**: Välj nivå av diagnostikdata som skickas. Alternativen är:
-  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Ingen inställning framtvingas. Användare väljer den nivå som skickas. Operativsystemet kanske som standard inte delar några data.
-  - **Säkerhet**: Information som krävs för att hålla Windows säkrare, däribland data om inställningar för komponenten Enhetlig användarupplevelse och telemetri, Borttagning av skadlig programvara samt Microsoft Defender
-  - **Grundläggande**: Grundläggande enhetsinformation såsom kvalitetsrelaterade data, appkompatibilitet, appanvändningsdata och data från nivån Säkerhet
-  - **Förbättrad**: Ytterligare information som omfattar: hur Windows, Windows Server, System Center och appar används, hur de presterar, avancerade tillförlitlighetsdata samt data från både nivåerna Grundläggande och Säkerhet
-  - **Fullständig**: Alla data som behövs för att identifiera och bidra till att lösa problem, plus data från nivåerna Säkerhet, Grundläggande och Förbättrad.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Ingen inställning framtvingas. Användarna väljer vilken nivå som ska skickas. Operativsystemet kan som standard inte dela några data.
+  - **Säkerhet**: Information som krävs för att göra Windows säkrare, bland annat data om inställningar för komponenten Enhetlig användarupplevelse och telemetri, Borttagning av skadlig programvara och Microsoft Defender
+  - **Grundläggande**: Grundläggande enhetsinformation som kvalitetsrelaterade data, appkompatibilitet, data om appanvändning och data från nivån Säkerhet
+  - **Förbättrad**: Ytterligare information, bland annat hur Windows, Windows Server, System Center och appar används, deras prestanda, avancerade tillförlitlighetsdata och data från nivåerna Grundläggande och Säkerhet
+  - **Fullständig**: Alla data som behövs för att identifiera och bidra till att lösa problem och data från nivåerna Säkerhet, Grundläggande och Förbättrad.
 
   [CSP för System/AllowTelemetry](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system#system-allowtelemetry)
 
@@ -1095,7 +1095,8 @@ De här inställningarna använder [CSP för Defender-princip](https://docs.micr
 - **Identifiera potentiellt oönskade program**: Den här funktionen identifierar och blockerar potentiellt oönskade program från att ladda ned och installera i nätverket. Programmen betraktas inte som virus, skadlig kod eller andra typer av hot. Men de kan köra åtgärder på slutpunkter som kan påverka deras prestanda eller användning. Välj nivå av skydd när Windows identifierar potentiellt oönskade program. Alternativen är:
 
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Som standard kan Microsoft Defender inaktivera den här funktionen.
-  - **Blockera**: Microsoft Defender identifierar potentiellt oönskade program och identifierade objekt blockeras. Dessa objekt visas i historiken tillsammans med andra hot.
+  - **Av**: Skydd mot potentiellt oönskade program av.
+  - **Aktivera**: Microsoft Defender identifierar potentiellt oönskade program och identifierade objekt blockeras. Dessa objekt visas i historiken tillsammans med andra hot.
   - **Granska**: Microsoft Defender identifierar potentiellt oönskade program, men vidtar ingen åtgärd. Du kan granska information om det program som Microsoft Defender skulle vidta åtgärder mot. Till exempel kan du söka efter händelser som skapats av Microsoft Defender i Loggboken.
 
   Mer information om potentiellt oönskade appar finns i [Identifiera och blockera potentiellt oönskade program](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/detect-block-potentially-unwanted-apps-windows-defender-antivirus).
@@ -1162,7 +1163,7 @@ De här inställningarna använder [CSP för energiprincip](https://docs.microso
 
 - **Strömknapp**: Välj vad som ska hända när enheten använder batteridrift och strömknappen väljs. Alternativen är:
 
-  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemet kan som standard tillåta användarna att sytra den här inställningen.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemet kan som standard tillåta användarna att styra den här inställningen.
   - **Ingen åtgärd**: Enheten förblir aktiverad och fortsätter att använda batteridrift.
   - **Viloläge**: Enheten försätts i strömsparläge och använder en liten mängd batteriladdning. Datorn förblir på, och öppnade appar och filer lagras i RAM (Random Access Memory).
   - **Viloläge**: Enheten försätts i viloläge. Öppnade appar och filer lagras på hårddisken, och enheten stängs av.
@@ -1172,7 +1173,7 @@ De här inställningarna använder [CSP för energiprincip](https://docs.microso
 
 - **Vila**: Välj vad som ska hända när enheten använder batteridrift och knappen Strömsparläge väljs. Alternativen är:
 
-  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemet kan som standard tillåta användarna att sytra den här inställningen.
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemet kan som standard tillåta användarna att styra den här inställningen.
   - **Ingen åtgärd**: Enheten förblir aktiverad och fortsätter att använda batteridrift.
   - **Viloläge**: Enheten försätts i strömsparläge och använder en liten mängd batteriladdning. Datorn förblir på, och öppnade appar och filer lagras i RAM (Random Access Memory).
   - **Viloläge**: Enheten försätts i viloläge. Öppnade appar och filer lagras på hårddisken, och enheten stängs av.

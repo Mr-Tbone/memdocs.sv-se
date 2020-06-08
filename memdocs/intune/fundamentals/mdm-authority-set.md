@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7244872fa888aaee164187e62a2355a94f793499
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 4209c461877786000e01dd03e4e0dea9f76a6e84
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83985174"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270964"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
@@ -36,9 +36,9 @@ Möjliga konfigurationerna är:
 
 - **Intune-samhantering** – Integration av Intunes molnlösning med Configuration Manager för Windows 10-enheter. Du kan konfigurera Intune med hjälp av Configuration Manager-konsolen. [Konfigurera automatisk registrering av enheter i Intune](https://docs.microsoft.com/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
 
-- **Hantering av mobilenheter i Office 365** – Integrering av Office 365 med Intunes molnlösning. Du kan konfigurera Intune från ditt administrationscenter för Microsoft 365. Innehåller en delmängd av de funktioner som är tillgängliga i Fristående Intune. Läs mer i [Konfigurera Mobile Device Management (MDM) i Office 365](https://support.office.com/en-us/article/Set-up-Mobile-Device-Management-MDM-in-Office-365-dd892318-bc44-4eb1-af00-9db5430be3cd)
+- **Hantering av mobila enheter för Office 365** – om du har MDM för Office 365 aktiverat visas MDM-utfärdaren som Office 365. Om du vill börja använda Intune så måste du köpa Intune-licenser.
 
-- **Office 365 MDM-samexistens** Du kan aktivera och använda MDM för både Office och Intune samtidigt på din klient och ange hanteringsbehörighet som antingen Intune eller MDM for Office så att varje användare får bestämma vilken tjänst som ska användas till att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av MDM for Office. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av MDM for Office växlar hanteringen till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter MDM for Office innan användarna byts till Intune, annars förlorar enheterna MDM for Office-konfigurationen och får ingen annan konfiguration från Intune.
+- **Office 365 MDM-samexistens** – Du kan lägga till Intune till din klientorganisation om du redan använder MDM för Office 365 och konfigurera hanteringsbehörigheten till antingen Intune eller MDM för Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av MDM for Office. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av MDM for Office växlar hanteringen till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter MDM for Office innan användarna byts till Intune, annars förlorar enheterna MDM for Office-konfigurationen och får ingen annan konfiguration från Intune.
 
 ## <a name="set-mdm-authority-to-intune"></a>Ange Intune som utfärdare för hantering av mobila enheter
 

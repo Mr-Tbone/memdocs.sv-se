@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/13/2020
+ms.date: 06/2/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e96199d9f525fa0dcbf7545d2c20b90a3a76b9cd
-ms.sourcegitcommit: b94415467831517f2aeab9c7c8a13fe8db8bc8ed
+ms.openlocfilehash: 8ee0603a96d7276e9e1ef0fb9bff60ac44a3ef84
+ms.sourcegitcommit: 64727a4b025a589e270842da39516c4c42563a34
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83401805"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84301392"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Felsökning av principer och profiler i Intune
 
@@ -37,7 +37,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
 ## <a name="use-built-in-troubleshooting"></a>Använda inbyggd felsökning
 
-1. Välj **Felsökning och support** i [Administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431):
+1. I [administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), väljer du **Felsökning och support** > **Felsök**:
 
     :::image type="content" source="./media/troubleshoot-policies-in-microsoft-intune/help-and-support-troubleshoot.png" alt-text="I administrationscentret för Endpoint Management och Intune går du till Felsökning och support.":::
 
@@ -98,7 +98,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
         **Användbara länkar**: 
 
-        - [Sätt att distribuera policyer för efterlevnad för enheter](../protect/device-compliance-get-started.md#ways-to-deploy-device-compliance-policies)
+        - [Sätt att distribuera policyer för efterlevnad för enheter](../protect/device-compliance-get-started.md)
         - [Övervaka principer för enhetsefterlevnad](../protect/compliance-policy-monitor.md)
 
 ## <a name="youre-unsure-if-a-profile-is-correctly-applied"></a>Du är osäker på om en profil tillämpas korrekt
@@ -123,7 +123,7 @@ Kontrollera [Klientorganisationens status](../fundamentals/tenant-status.md) och
 
 - [Felsöka iOS/iPadOS- eller Android-principer som inte tillämpas på enheter](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-tip-Troubleshooting-iOS-or-Android-policies-not-applying/ba-p/280154) (öppnar en annan Microsoft-webbplats)
 - [Felsöka Windows 10 Intune-principfel](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/) (öppnar en blogg)
-- [Felsök anpassade CSP-inställningar för Windows 10](https://support.microsoft.com/en-us/help/4055338/troubleshoot-csp-setting-windows-10-computer-intune) (öppnar en annan Microsoft-webbplats)
+- [Felsök anpassade CSP-inställningar för Windows 10](https://support.microsoft.com/help/4055338/troubleshoot-csp-setting-windows-10-computer-intune) (öppnar en annan Microsoft-webbplats)
 - [Windows 10-grupprincipen jämfört med Intunes MDM-princip](https://blogs.technet.microsoft.com/cbernier/2018/04/02/windows-10-group-policy-vs-intune-mdm-policy-who-wins/) (öppnar en annan Microsoft-webbplats)
 
 ## <a name="alert-saving-of-access-rules-to-exchange-has-failed"></a>Avisering: Det gick inte att spara åtkomstregler i Exchange

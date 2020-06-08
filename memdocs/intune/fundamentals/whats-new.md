@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 05/22/2020
+ms.date: 05/28/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca3ec1605bd4d63c182511c32297da0bdb503d8b
-ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
+ms.openlocfilehash: 67a0ad9eeb7e5ced358a44b17fd8f1c0b05fa2b8
+ms.sourcegitcommit: 7b8921d3ea6a751de67315771d68e2d2750fa36f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83824174"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223659"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -54,7 +54,22 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 
 <!-- ########################## -->
 
+## <a name="week-of-may-25-2020"></a>Den vecka som börjar 25 maj 2020
+
+### <a name="app-management"></a>Apphantering
+
+#### <a name="windows-32-bit-x86-apps-on-arm64-devices---5477661---"></a>Windows 32-bitars (x86) appar på ARM64-enheter<!-- 5477661 -->
+Windows 32-bitars (x86) appar som distribueras som tillgängliga för ARM64-enheter visas nu i Företagsportalen. Mer information om Windows 32-bitars appar finns i [Win32-apphantering](../apps/apps-win32-app-management.md).
+
+#### <a name="windows-company-portal-app-icon---7114635---"></a>Ikon för Windows-företagsportalapp<!-- 7114635 -->
+Ikonen för Windows företagsportalappen har uppdaterats. Mer information om företagsportalen finns i [Anpassa Intune-företagsportalappar, företagsportalens webbplats och Intune-appen](../apps/company-portal-app.md).
+
 ## <a name="week-of-may-18-2020"></a>Den vecka som börjar 18 maj 2020
+
+### <a name="app-management"></a>Apphantering  
+
+#### <a name="update-to-icons-in-company-portal-app-for-iosipados-and-macos--6057697---"></a>Uppdatera till ikoner i företagsportalappen för iOS/iPadOS och macOS<!--6057697 -->
+Vi har uppdaterat ikonerna i Företagsportalen för att skapa ett modernt utseende och känsla som stöds på enheter med dubbla skärmar och som är kompatibla med Microsoft Fluent-designsystemet. Om du vill se de uppdaterade ikonerna, går du till [UI-uppdateringar för Intune-slutanvändarappar](./whats-new-app-ui.md). 
 
 ### <a name="device-security"></a>Enhetssäkerhet
 

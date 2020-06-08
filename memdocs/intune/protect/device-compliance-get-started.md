@@ -1,11 +1,11 @@
 ---
 title: Policyer för efterlevnad för enheter i Microsoft Intune – Azure | Microsoft Docs
-description: Kom igång med att använda enhetsefterlevnadsprinciper, få en översikt över status och allvarlighetsgrader, använd statusen InGracePeriod, arbeta med villkorsstyrd åtkomst och hantera enheter utan en tilldelad princip.
+description: Kom igång med att använda efterlevnadsprinciper, inklusive inställningar för efterlevnadsprinciper och enhetsefterlevnadsprinciper för Microsoft Intune.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/21/2020
+ms.date: 05/28/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,108 +16,146 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 559d9a704f0b33e3fda3adf628626b56ff263de3
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 227a44436f4490c9b3e2188609a9714a0e842149
+ms.sourcegitcommit: eb51bb38d484e8ef2ca3ae3c867561249fa413f3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989717"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84206323"
 ---
-# <a name="set-rules-on-devices-to-allow-access-to-resources-in-your-organization-using-intune"></a>Ange regler för enheter som tillåter åtkomst till resurser i din organisation med Intune
+# <a name="use-compliance-policies-to-set-rules-for-devices-you-manage-with-intune"></a>Använd efterlevnadsprinciper för att ange regler för enheter som du hanterar med Intune
 
-Många MDM-lösningar för hantering av mobilenheter skyddar organisationens data genom att kräva att användare och enheter uppfyller vissa krav. I Intune kan kallas den här funktionen för ”efterlevnadsprinciper”. Efterlevnadsprinciperna definierar de regler och inställningar som användare och enheter måste följa för att vara kompatibla. I kombination med villkorlig åtkomst kan administratörer blockera användare och enheter som inte följer reglerna.
+Många MDM-lösningar för hantering av mobilenheter som Intune, skyddar organisationens data genom att kräva att användare och enheter uppfyller vissa krav. I Intune kan kallas den här funktionen för *efterlevnadsprinciper*.
 
-En Intune-administratör kan till exempel kräva att:
+Efterlevnadsprinciper i Intune:
 
-- Slutanvändarna ska använda ett lösenord för att få åtkomst till organisationens data på mobila enheter
-- Att enheten inte är jailbrokad eller rotad
-- En högsta eller lägsta operativsystemversion finns på enheten
-- Att enheten ligger på eller under en hotnivå
+- Definierar de regler och inställningar som användare och enheter måste följa för att vara kompatibla.
+- Inkludera åtgärder som gäller för enheter som inte är kompatibla. Åtgärder för inkompatibilitet kan varna användare om villkoren för inkompatibilitet och skydda data på icke-kompatibla enheter.
+- Kan [kombineras med villkorsstyrd åtkomst](#integrate-with-conditional-access) vilket därmed kan blockera användare och enheter som inte uppfyller reglerna.
 
-Du kan också använda den här funktionen till att övervaka efterlevnadsstatus på enheter i din organisation.
+Efterlevnadsprinciper i Intune har två delar:
 
-> [!IMPORTANT]
-> Intune följer enhetens incheckningsschema för alla efterlevnadsutvärderingar på enheten. [Princip-och profiluppdateringscykler](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned) visar de uppskattade uppdateringstiderna.
+- **Inställningar för efterlevnadsprincip** – inställningar för hela klientorganisationen som är en inbyggd efterlevnadsprincip som varje enhet tar emot. Inställningar för efterlevnadsprinciper anger en baslinje för hur en efterlevnadsprincip fungerar i din Intune-miljö, inklusive om enheter som inte har tagit emot några efterlevnadsprinciper är kompatibla eller inkompatibla.
 
-<!---### Actions for noncompliance
+- **Efterlevnadsprincip** – plattformsspecifika regler som du konfigurerar och distribuerar till grupper av användare eller enheter.  Dessa regler definierar krav för enheter, till exempel lägsta operativsystem eller användning av diskkryptering. Enheter måste uppfylla dessa regler för att anses vara kompatibla.
 
-You can specify what needs to happen when a device is determined as noncompliant. This can be a sequence of actions during a specific time.
-When you specify these actions, Intune will automatically initiate them in the sequence you specify. See the following example of a sequence of
-actions for a device that continues to be in the noncompliant status for
-a week:
+Precis som andra Intune-principer beror utvärderingar av efterlevnadsprinciper för en enhet på när enheten checkar in med Intune och [cykler för princip- och profiluppdatering](../configuration/device-profile-troubleshoot.md#how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned).
 
-- When the device is first determined to be noncompliant, an email with noncompliant notification is sent to the user.
+## <a name="compliance-policy-settings"></a>Inställningar för efterlevnadsprinciper
 
-- 3 days after initial noncompliance state, a follow up reminder is sent to the user.
+*Inställningar för efterlevnadsprinciper* är inställningar för hela klientorganisationen som avgör hur Intunes efterlevnadstjänst samverkar med dina enheter. De här inställningarna skiljer sig från de inställningar som du konfigurerar i en efterlevnadsprincip för enheter.
 
-- 5 days after initial noncompliance state, a final reminder with a notification that access to company resources will be blocked on the device in 2 days if the compliance issues are not remediated is sent to the user.
+Om du vill hantera inställningarna för efterlevnadsprinciper loggar du in på [administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och gå till **slutpunktssäkerhet** > **enhetsefterlevnad** > **inställningar för efterlevnadsprinciper**.
 
-- 7 days after initial noncompliance state, access to company resources is blocked. This requires that you have Conditional Access policy that specifies that access from noncompliant devices should    be blocked for services such as Exchange and SharePoint.
+Inställningarna för efterlevnadsprinciper omfattar följande inställningar:
 
-### Grace Period
+- **Markera enheter utan någon tilldelad efterlevnadsprincip som**
 
-This is the time between when a device is first determined as
-noncompliant to when access to company resources on that device is blocked. This time allows for time that the user has to resolve
-compliance issues on the device. You can also use this time to create your action sequences to send notifications to the user before their access is blocked.
+  Den här inställningen avgör hur Intune hanterar enheter som inte har tilldelats en enhetsefterlevnadsprincip. Den här inställningen har två värden:
+  - **Kompatibla** (*standard*): Den här säkerhetsfunktionen är av. Enheter som inte har någon efterlevnadsprincip anses vara *kompatibla*.
+  - **Ej kompatibel**: Den här säkerhetsfunktionen är på. Enheter som inte tagit emot en enhetsefterlevnadsprincip anses ej kompatibla.
 
-Remember that you need to implement Conditional Access policies in addition to compliance policies in order for access to company resources to be blocked.--->
+  Om du använder villkorsstyrd åtkomst med enhetsefterlevnadsprinciperna rekommenderar vi att du ändrar den här inställningen till **inte kompatibel** för att säkerställa att endast enheter som har bekräftats som kompatibla kan komma åt dina resurser.
 
-## <a name="device-compliance-policies-work-with-azure-ad"></a>Enhetsefterlevnadsprinciper kan användas med Azure AD
+  Om en användare inte är kompatibel eftersom ingen princip har tilldelats, visar [företagsportalsappen](../apps/company-portal-app.md) att inga efterlevnadsprinciper har tilldelats.
 
-Intune använder [villkorsstyrd åtkomst](../protect/conditional-access.md) för att säkerställa efterlevnad. Villkorsstyrd åtkomst är en Azure Active Directory-teknik (Azure AD).
+- **Förbättrad identifiering av jailbreak** (*gäller endast iOS/iPadOS*)
 
-När en enhet registreras i Intune startas även registreringen i Azure AD och enhetens information uppdateras i Azure AD. Enhetens efterlevnadsstatus är viktig information. Efterlevnadsstatusen används av villkorliga åtkomstprinciper för att blockera eller tillåta åtkomst till e-post eller andra organisationsresurser.
+  Den här inställningen påverkar endast enheter som är föremål för en enhetsefterlevnadsprincip som blockerar jailbrokade enheter.  (Se inställningarna för [Enhetshälsa](compliance-policy-create-ios.md#device-health) för iOS/iPadOS).
 
-Läs om villkorsstyrd åtkomst och Intune:
+  Den här inställningen har två värden:
 
-- [Vanliga sätt att använda villkorlig åtkomst på med Intune](conditional-access-intune-common-ways-use.md)
+  - **Inaktiverad** (*standard*): Den här säkerhetsfunktionen är av. Den här har ingen inverkan på enheter som är föremål för en enhetsefterlevnadsprincip som blockerar jailbrokade enheter.
+  - **Aktiverad**: Den här säkerhetsfunktionen är på. Enheter som tar emot enhetsefterlevnadsprincipen för att blockera jailbrokade enheter använder förbättrad jailbreak-identifiering.
 
-Lär dig mer om villkorsstyrd åtkomst i Azure AD-dokumentationen:
-  - [Vad är villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-  - [Vad är en enhetsidentitet](https://docs.microsoft.com/azure/active-directory/device-management-introduction)
+  När det aktiveras på en tillämplig iOS/iPadOS-enhet:
 
-## <a name="ways-to-use-device-compliance-policies"></a>Hantera efterlevnadsprinciper för enheter
+  - Aktiverar enheten platstjänster på OS-nivå.
+  - Tillåter enheten att företagsportalen använder platstjänster.
+  - Använder enheten sina platstjänster för att utlösa jailbreak-identifiering oftare i bakgrunden. Användarens platsdata lagras inte av Intune.
 
-### <a name="with-conditional-access"></a>Med villkorlig åtkomst
+  Förbättrad jailbreak-identifiering kör en utvärdering när:
 
-Du kan ge enheter som följer principreglerna åtkomst till e-post och andra organisationsresurser. Om enheterna inte följer principreglerna får de inte åtkomst till organisationsresurserna. Det är det som kallas villkorlig åtkomst.
+  - Företagsportalsappen öppnas
+  - Enheten fysiskt flyttas ett betydande avstånd på cirka 500 meter eller mer. Intune kan inte garantera att varje betydande platsändring resulterar i en kontroll med jailbreak-detektering, detta eftersom kontrollen är beroende av en enhets nätverksanslutning vid tidpunkten.
 
-### <a name="without-conditional-access"></a>Utan villkorlig åtkomst
+  På iOS 13 och senare, kräver den här funktionen att användare väljer *Tillåt alltid* när enheten uppmanar dem att fortsätta låta att Företagsportalen använder deras plats i bakgrunden. Om användare inte alltid tillåter åtkomst till platser och har en princip med den här inställningen konfigurerad markeras enheten som inkompatibel.
 
-Du kan även använda policyer för enhetsefterlevnad utan villkorlig åtkomst. När du använder efterlevnadsprinciper separat utvärderas målenheterna varefter deras efterlevnadsstatus rapporteras. Du kan t.ex. få en rapport om hur många enheter som inte är krypterade, eller vilka enheter som är jailbrokade eller rotade. När du använder efterlevnadsprinciper utan villkorlig åtkomst, tillämpas inga åtkomstbegränsningar på organisationens resurser.
+- **Giltighetsperiod för efterlevnadsstatus (dagar)**
 
-## <a name="ways-to-deploy-device-compliance-policies"></a>Sätt att distribuera policyer för efterlevnad för enheter
+  Ange en period i vilken enheter måste rapporteras på alla mottagna efterlevnadsprinciper. Om en enhet inte kan rapportera efterlevnadsstatus för en princip innan giltighetsperioden går ut, behandlas enheten som inkompatibel.
 
-Du kan distribuera policyer för efterlevnad till användare i användargrupper eller till enheter i enhetsgrupper. När en efterlevnadsprincip distribueras till en användare så kontrolleras om alla användarens enheter uppfyller efterlevnadskraven. Användning av enhetsgrupper i det här scenariot hjälper till med kompabilitetsrapportering.
+  Som standard är perioden inställt på 30 dagar. Du kan konfigurera en period från 1 till 120 dagar.
 
-Intune innehåller också en uppsättning inbyggda efterlevnadsprincipinställningar. Följande inbyggda principer utvärderas på alla enheter som registrerats i Intune:
+  Du kan visa information om inställningen för enhetsefterlevnad till giltighetsperiod. Logga in på [administrationscenter för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och gå till **Enheter** > **Övervaka** > **Ställ in efterlevnad**. Den här inställningen har namnet **Är aktiv** i *Inställning*-kolumnen.  Mer information om detta och relaterade vyer för kompatibilitetsstatus finns i [Övervaka enhetens kompatibilitet](compliance-policy-monitor.md).
 
-- **Markera enheter utan någon tilldelad policy för efterlevnad som**: Detta är en standardåtgärd för inkompatibilitet. Den här egenskapen har två värden:
+## <a name="device-compliance-policies"></a>Efterlevnadsprinciper för enheter
 
-  - **Kompatibel** (*standard*): säkerhetsfunktion av
-  - **Ej kompatibel**: säkerhetsfunktion av
+Efterlevnadsprinciper för Intune-enheter:
 
-  Om en enhet inte har en policy för efterlevnad är den kompatibel som standard. Om du använder villkorlig åtkomst med kompatibla principer rekommenderar vi att du ändrar standardinställningen till **Inte kompatibel**. Om en användare inte är kompatibel eftersom ingen princip har tilldelats, visar [företagsportalsappen](../apps/company-portal-app.md)`No compliance policies have been assigned`.
+- Definierar de regler och inställningar som användare och hanterade enheter måste uppfylla för att vara kompatibla. Exempel på regler är att kräva att enheter kör en lägsta OS-version, inte är jailbreakad eller rotad och ligger på eller under en *hotnivå* som angetts av programvaran för hothantering som du har integrerat med Intune.
+- Stöd åtgärder som gäller för enheter som inte uppfyller dina efterlevnadsregler. Exempel på åtgärder inkluderar fjärrlåsning, eller att skicka en enhetsanvändare e-post om enhetens status så att de kan åtgärda den.
+- Distribuera till användare i användargrupper eller till enheter i enhetsgrupper. När en efterlevnadsprincip distribueras till en användare så kontrolleras alla användarens enheter för efterlevnad. Användning av enhetsgrupper i det här scenariot hjälper till med kompabilitetsrapportering.
 
-- **Förbättrad identifiering av uppbrytning** (*gäller iOS/iPadOS*): När den här inställningen är aktiverad inträffar jailbrokad enhetsstatus oftare på iOS/iPad-enheter. Den här inställningen påverkar endast enheter som är föremål för en efterlevnadsprincip som blockerar jailbrokade enheter. Om den här egenskapen aktiveras används enhetens platstjänster, vilket kan påverka batterianvändningen. Användarens platsdata lagras inte av Intune och används bara för att utlösa upplåsningsidentifiering oftare i bakgrunden. 
+Om du använder villkorsstyrd åtkomst kan principerna för villkorsstyrd åtkomst använda resultaten från enhetsefterlevnad för att blockera åtkomst till resurser från inkompatibla enheter.
 
-  När du aktiverar den här inställningen kräver den följande av enheter:
-  - Aktivera platstjänster på operativsystemsnivå.
-  - Tillåt alltid att företagsportalen använder platstjänster.
+De tillgängliga inställningar du kan ange i en efterlevnadsprincip beror den plattformstyp du väljer när du skapar en princip. Olika enhetsplattformar stöder olika inställningar och varje plattformstyp kräver en separat princip.  
 
-  Förbättrad identifiering fungerar via platstjänsterna. Utvärderingen utlöses genom att företagsportalappen öppnas, eller att enheten fysiskt flyttas ett betydande avstånd – cirka 500 meter eller mer. På iOS 13 och senare kräver den här funktionen att användare väljer ”Tillåt alltid” när enheten ber dem att fortsätta tillåta att företagsportalen använder deras plats i bakgrunden. Om användare inte alltid tillåter åtkomst till platser och har en princip med den här inställningen konfigurerad markeras enheten som inkompatibel. Observera att Intune inte kan garantera att varje betydande platsändring säkerställer en kontroll med upplåsningsdetektering, eftersom detta är beroende av en enhets nätverksanslutning vid den aktuella tidpunkten.
+Följande ämnen länkar till dedikerade artiklar för olika aspekter av konfigurationsprincipen för enheten.
 
-- **Giltighetsperiod för efterlevnadsstatus (dagar)** : Ange inom vilken tidsperiod enheterna ska rapportera status för alla mottagna efterlevnadsprinciper. Enheter som inte returnerar status inom den här tidsperioden behandlas som inkompatibla. Standardvärdet är 30 dagar. Det högsta värdet är 120 dagar. Minimivärdet är 1 dag.
+- [**Åtgärder vid inkompatibilitet**](actions-for-noncompliance.md) – varje efterlevnadsprincip för enheter innehåller en eller flera åtgärder vid inkompatibilitet. De här åtgärderna är regler som tillämpas på enheter som inte uppfyller de villkor som du har angett i principen.
 
-  Den här inställningen visar **Är aktiv** för efterlevnadsstandardpolicyn (**Enheter** > **Övervaka** > **Ställa in regelefterlevnad**). Bakgrundsaktiviteten för den här principen körs en gång om dagen.
+  Som standard inkluderar varje enhets efterlevnadsprincip åtgärden för att markera en enhet som inkompatibel om den inte uppfyller en principregel. Därefter tillämpar principen eventuella ytterligare åtgärder för inkompatibilitet på enheten som du har konfigurerat, baserat på de scheman som du har angett för dessa åtgärder.
 
-Du kan använda dessa inbyggda principer till att övervaka inställningarna. Intune [uppdaterar eller söker efter uppdateringar](create-compliance-policy.md#refresh-cycle-times) med olika intervall, beroende på enhetsplattform. [Vanliga frågor, problem och lösningar med enhetsprinciper och profiler i Microsoft Intune](../configuration/device-profile-troubleshoot.md) är en bra resurs.
+  Åtgärder för inkompatibilitet kan hjälpa till att varna användare när deras enhet inte är kompatibel eller skydda data som kan finnas på en enhet. Exempel på åtgärder är:
 
-Efterlevnadsrapporter är ett bra sätt att kontrollera status för enheter. I [Övervaka efterlevnadsprinciper](compliance-policy-monitor.md) finns mer vägledning.
+  - **Skicka e-postaviseringar** till användare och grupper med information om den inkompatibla enheten. Du kan konfigurera principen att skicka ett e-postmeddelande omedelbart när enheten markeras inkompatibel och därefter igen tills dess att enheten blir kompatibel.
+  - **Fjärrlåsa enheter** som har varit inkompatibla under en viss tid.
+  - **Dra tillbaka enheter** när de har varit inkompatibla under en viss tid. Den här åtgärden tar bort alla företagets data från enheten och tar bort enheten från Intune-hantering.
 
-## <a name="non-compliance-and-conditional-access-on-the-different-platforms"></a>Inkompatibilitet och villkorlig åtkomst på olika plattformar
+- [**Konfigurera nätverksplatser**](use-network-locations.md) – stöds av Android-enheter. Du kan konfigurera *nätverksplatser* och sedan använda platserna som en efterlevnadsregel för enheter. Den här typen av regel kan flagga en enhet som inkompatibel när den ligger utanför eller lämnar ett angivet nätverk. Innan du kan ange en platsregel måste du konfigurera nätverksplatserna.
+
+- [**Skapa en princip**](create-compliance-policy.md) – med informationen i den här artikeln kan du granska förutsättningar, arbeta med alternativen för att konfigurera regler, ange åtgärder för inkompatibilitet och tilldela principen till grupper. Den här artikeln innehåller också information om principuppdateringstider.
+
+  Visa efterlevnadsinställningar för enheter för de olika enhetsplattformarna:
+
+  - [Android](compliance-policy-create-android.md)
+  - [Android enterprise](compliance-policy-create-android-for-work.md)
+  - [iOS](compliance-policy-create-ios.md)
+  - [macOS](compliance-policy-create-mac-os.md)
+  - [Windows Holographic for Business](compliance-policy-create-windows.md#windows-holographic-for-business)
+  - [Windows Phone 8.1](compliance-policy-create-windows-8-1.md)
+  - [Windows 8.1 och senare](compliance-policy-create-windows-8-1.md)
+  - [Windows 10 och senare](compliance-policy-create-windows.md)
+
+## <a name="monitor-compliance-status"></a>Övervaka kompatibilitetsstatus
+
+Intune innehåller en instrumentpanel för enhetsefterlevnad som du använder för att övervaka kompatibilitetsstatus för enheter och för att gå in på detaljnivå för principer och enheter för mer information. Läs mer om den här instrumentpanelen i [Övervaka enhetsefterlevnad](compliance-policy-monitor.md).
+
+## <a name="integrate-with-conditional-access"></a>Integrera med villkorsstyrd åtkomst
+
+När du använder villkorsstyrd åtkomst kan du konfigurera principer för villkorsstyrd åtkomst så att de använder resultaten från enhetsefterlevnadsprinciperna för att avgöra vilka enheter som kan komma åt organisationens resurser. Den här åtkomstkontrollen är utöver och separat från åtgärder för inkompatibilitet som du inkluderar i efterlevnadsprinciper för enheter.
+
+När en enhet registreras i Intune registreras den i Azure AD. Kompatibilitetsstatus för enheterna rapporteras till Azure AD. Om principerna för villkorsstyrd åtkomst har angetts till *Kräv att enheten har markerats som kompatibel*, använder villkorsstyrd åtkomst denna status för att avgöra om den ska bevilja eller blockera åtkomst till e-post och organisationens övriga resurser.
+
+Om du kommer att använda efterlevnadsstatus för enheter med principer för villkorsstyrd åtkomst, granska hur din klientorganisation har konfigurerat *Markera enheter utan tilldelad efterlevnadsprincip som*, vilket du hanterar under [Inställningar för efterlevnadsprinciper](#compliance-policy-settings).
+
+Mer information om hur du använder villkorsstyrd åtkomst med dina efterlevnadsprinciper för enheter finns i [Enhetsbaserad villkorsstyrd åtkomst](conditional-access-intune-common-ways-use.md#device-based-conditional-access)
+
+Läs mer om villkorsstyrd åtkomst i Azure AD-dokumentationen:
+
+- [Vad är villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Vad är en enhetsidentitet](https://docs.microsoft.com/azure/active-directory/device-management-introduction)
+
+### <a name="reference-for-non-compliance-and-conditional-access-on-the-different-platforms"></a>Referens för inkompatibilitet och villkorsstyrd åtkomst på olika plattformar
 
 Följande tabell beskriver också hur inkompatibla inställningar hanteras när en efterlevnadsprincip används med en princip för villkorlig åtkomst.
+
+- **Åtgärdad**: Enhetens operativsystem tillämpar efterlevnad. Till exempel om användaren tvingas att ange en PIN-kod.
+
+- **I karantän**: Enhetens operativsystem tillämpar inte efterlevnad. Till exempel tvingar Android- och Android Enterprise-enheter inte användaren att kryptera enheten. När enheten inte uppfyller efterlevnadskraven utförs följande åtgärder:
+  - Enheten blockeras om en princip för villkorlig åtkomst tillämpas för användaren.
+  - Företagsportalappen meddelar användaren om eventuella efterlevnadsproblem.
 
 ---------------------------
 
@@ -133,25 +171,10 @@ Följande tabell beskriver också hur inkompatibla inställningar hanteras när 
 
 ---------------------------
 
-**Åtgärdad**: Enhetens operativsystem tillämpar efterlevnad. Till exempel om användaren tvingas att ange en PIN-kod.
-
-**I karantän**: Enhetens operativsystem tillämpar inte efterlevnad. Till exempel tvingar Android- och Android Enterprise-enheter inte användaren att kryptera enheten. När enheten inte uppfyller efterlevnadskraven utförs följande åtgärder:
-
-- Enheten blockeras om en princip för villkorlig åtkomst tillämpas för användaren.
-- Företagsportalappen meddelar användaren om eventuella efterlevnadsproblem.
-
 ## <a name="next-steps"></a>Nästa steg
 
-- [Skapa en princip](create-compliance-policy.md) och visa kraven.
-- Se efterlevnadsinställningar för de olika enhetsplattformarna:
-
-  - [Android](compliance-policy-create-android.md)
-  - [Android enterprise](compliance-policy-create-android-for-work.md)
-  - [iOS](compliance-policy-create-ios.md)
-  - [macOS](compliance-policy-create-mac-os.md)
-  - [Windows Holographic for Business](compliance-policy-create-windows.md#windows-holographic-for-business)
-  - [Windows Phone 8.1](compliance-policy-create-windows-8-1.md)
-  - [Windows 8.1 och senare](compliance-policy-create-windows-8-1.md)
-  - [Windows 10 och senare](compliance-policy-create-windows.md)
-
-- Information om principentiteter för Intune Data Warehouse finns i [Referens för principentiteter](../developer/reports-ref-policy.md).
+- [Konfigurera platser](../protect/use-network-locations.md) för användning med Android-enheter
+- [Skapa och distribuera princip](../protect/create-compliance-policy.md) och granska förhandskrav
+- [Övervaka enhetsefterlevnad](../protect/compliance-policy-monitor.md)
+- [Vanliga frågor, problem och lösningar med enhetsprinciper och profiler i Microsoft Intune](../configuration/device-profile-troubleshoot.md)
+- [Referens för principentiteter](../developer/reports-ref-policy.md) har information om Intune Data Warehouse-principentiteter
