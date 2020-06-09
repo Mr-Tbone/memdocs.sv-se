@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8d75208de7cc6697699d79e3a52df742f605fdb
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 529d7a7da1257b9ebce1e1ab3cec706e8f100403
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990732"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270947"
 ---
 # <a name="use-powershell-scripts-on-windows-10-devices-in-intune"></a>Använda PowerShell-skript på Windows 10-enheter i Intune
 
@@ -68,7 +68,7 @@ Intune-hanteringstillägget har följande krav. När förhandskraven är uppfyll
     
     - Användaren loggar in på enheten med sitt Azure AD-konto, och registrerar sedan i Intune.
 
-  - Samhanterade enheter som använder Configuration Manager och Intune. Kontrollera att arbetsbelastningen för **Appar** är inställd på **Pilot Intune** eller **Intune**. Se följande artiklar för vägledning: 
+  - Samhanterade enheter som använder Configuration Manager och Intune. När du installerar Win32-appar, så kontrollera att arbetsbelastningen för **Appar** är inställd på **Pilot Intune** eller **Intune**. PowerShell-skript körs även om arbetsbelastningen **Appar** har ställts in på **Konfigurationshanteraren**. Intune Management-tillägget distribueras till en enhet när du använder ett PowerShell-skript på den enheten. Som nämnts ovan måste enheten dock vara en Azure AD- eller Hybrid Azure AD-ansluten enhet som måste köra Windows 10 version 1607 eller senare. Se följande artiklar för vägledning: 
   
     - [Vad är samhantering?](https://docs.microsoft.com/configmgr/comanage/overview) 
     - [Arbetsbelastning för klientappar](https://docs.microsoft.com/configmgr/comanage/workloads#client-apps)

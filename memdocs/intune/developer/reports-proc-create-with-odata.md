@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 12/03/2019
+ms.date: 05/29/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87c1a63ffdfc0b923f636159536f6d6cf6420db9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 081d293432e15fccfd2b30d2eb7b7c300789e74f
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79360021"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270981"
 ---
 # <a name="create-an-intune-report-from-the-odata-feed-with-power-bi"></a>Skapa en Intune-rapport från OData-feeden med Power BI
 
@@ -54,9 +54,9 @@ Installera den senaste versionen av Power BI Desktop. Du kan ladda ned Power BI 
 > [!Note]  
 > Du måste ha behörighet för **Rapporter** i Intune. Mer information finns i [Auktorisering](reports-api-url.md#authorization).
 
-1. Logga in på [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
-2. Öppna fönstret **Intune Data Warehouse** genom att välja Data Warehouse-länken under **Övriga uppgifter** på höger sida om bladet **Microsoft Intune – översikt**.
-3. Kopiera den anpassade feed-URL:en. Till exempel: `https://fef.tenant.manage.microsoft.com/ReportingService/DataWarehouseFEService?api-version=beta`
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Välj **Rapporter** > **Intune Data Warehouse** > **Informationslager**.
+3. Kopiera den anpassade feed-URL:en. Exempelvis: `https://fef.tenant.manage.microsoft.com/ReportingService/DataWarehouseFEService?api-version=v1.0`
 4. Öppna Power BI Desktop.
 5. Välj **Arkiv** > **Hämta data** > **Odata-feed** från menyfältet.
 6. Klistra in den anpassade feedadressen du kopierade från föregående steg i adressfältet i fönstret **OData-feed**.

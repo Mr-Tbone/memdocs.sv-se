@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/21/2020
+ms.date: 06/01/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c98de99eb8f72840080ca720465559c462bc77f
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: 2cc40eb4a8b094cd933a6bb3f4f8c7fdae927f7b
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82023375"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84270899"
 ---
 # <a name="troubleshoot-app-installation-issues"></a>Felsöka appinstallationsproblem
 
@@ -107,6 +107,18 @@ Det finns särskilda krav som du måste följa för att samla in loggfiler:
 - Du kan samla in Win32-appinstallationsloggar för appar som uppfyller apptilldelningsavsikten Krävs, Tillgänglig eller Avinstallera.
 - Lagrade loggar krypteras för att skydda personligt identifierbar information som finns i loggarna.
 - När du öppnar supportbegäranden om Win32-appfel bifogar du associerade felloggar genom att följa stegen ovan.
+
+## <a name="app-types-supported-on-arm64-devices"></a>Apptyper som stöds på ARM64-enheter
+
+De apptyper som stöds på ARM64-enheter är följande:
+- Webbappar som inte kräver någon hanterad webbläsare för att öppnas. 
+- Microsoft Store för Business-appar eller Windows Universal LOB-appar (`.appx`) med någon av följande kombinationer av `TargetDeviceFamily`- och `ProcessorArchitectures`-element:
+  - `TargetDeviceFamily` innehåller skrivbordsappar, Universal-appar och Windows8x-appar. Windows8x-appar gäller endast för Microsoft Store för företag-appar online.
+  - `ProcessorArchitecture` innehåller x86-appar, ARM-appar, ARM64-appar och neutrala appar.
+- Windows Store-appar
+- Mobila MSI LOB-appar
+- Win32-appar med en kravregel på 32 bitar.
+- Windows Offices klicka-och-kör-appar om 32-bitars eller x86-arkitektur har valts.
 
 ## <a name="troubleshooting-apps-from-the-microsoft-store"></a>Felsöka appar från Microsoft Store
 

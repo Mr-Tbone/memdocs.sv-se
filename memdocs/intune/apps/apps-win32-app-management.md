@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/02/2020
+ms.date: 06/01/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70cb3e2f8baf89be5e77867b385788cb04181ba1
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 8814e1a2c6b1af48d71a0a82c02492e48b44dda9
+ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83986033"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84271015"
 ---
 # <a name="intune-standalone---win32-app-management"></a>Fristående Intune – Win32-apphantering
 
@@ -66,7 +66,7 @@ Om du kör `IntuneWinAppUtil.exe` från kommandofönstret utan parametrar vägle
 ### <a name="available-command-line-parameters"></a>Tillgängliga kommandoradsparametrar 
 
 |    **Kommandoradsparameter**    |    **Beskrivning**    |
-|:------------------------------:|:----------------------------------------------------------:|
+|--------------------------------|------------------------------------------------------------|
 |    `-h`     |    Hjälp    |
 |    `-c <setup_folder>`     |    Mapp för alla installationsfiler. Alla filer i den här mappen komprimeras till en *.intunewin*-fil.    |
 |    `-s <setup_file>`     |    Installationsfil (till exempel *setup.exe* eller *setup.msi*).    |
@@ -76,7 +76,7 @@ Om du kör `IntuneWinAppUtil.exe` från kommandofönstret utan parametrar vägle
 ### <a name="example-commands"></a>Exempelkommandon
 
 |    **Exempelkommando**    |    **Beskrivning**    |
-|:-----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|-------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    `IntuneWinAppUtil -h`    |    Det här kommandot visar användningsinformation för verktyget.    |
 |    `IntuneWinAppUtil -c c:\testapp\v1.0 -s c:\testapp\v1.0\setup.exe -o c:\testappoutput\v1.0 -q`    |    Det här kommandot genererar `.intunewin`-filen från den angivna källmappen och installationsfilen. För MSI-installationsfilen hämtar det här verktyget nödvändig information för Intune. Om `-q` anges körs kommandot i tyst läge och om utdatafilen redan finns skrivs den över. Om utdatamappen inte finns, skapas den automatiskt.    |
 
@@ -456,7 +456,7 @@ I PowerShell-kommandot ovan ska du ersätta `<path to binary file>` med din sök
 - Kontrollera operativsystemversionen – Windows 10 1607 och senare.  
 - Kontrollera Windows 10 SKU – Windows 10 S eller Windows-versioner som körs med S-läge aktiverat har inte stöd för MSI-installation.
 
-Mer information om felsökning av Win32-appar finns i [Felsökning av Win32-appinstallation](troubleshoot-app-install.md#win32-app-installation-troubleshooting).
+Mer information om felsökning av Win32-appar finns i [Felsökning av Win32-appinstallation](troubleshoot-app-install.md#win32-app-installation-troubleshooting). Information om olika typer av appar på ARM64-enheter finns i [Apptyper som stöds på ARM64-enheter](../apps/troubleshoot-app-install.md#app-types-supported-on-arm64-devices).
 
 ## <a name="next-steps"></a>Nästa steg
 

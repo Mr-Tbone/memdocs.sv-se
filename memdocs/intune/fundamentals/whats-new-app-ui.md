@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 05/08/2020
+ms.date: 05/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17213a29d5182176fe2fd8e5802e5ca03587d8f7
-ms.sourcegitcommit: 0dafd513a59afe592b5cfe2a80b6288020dc5bf0
+ms.openlocfilehash: efa965bc3dff2436a98602e3cb9dda96a1fe580d
+ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82991798"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166197"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Uppdateringar i användargränssnittet för Intunes slutanvändarappar
 
@@ -34,6 +34,19 @@ Läs mer om de senaste uppdateringarna för Microsoft Intune-apparna. Vi lägger
 
 Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](https://docs.microsoft.com/mem/intune/user-help/use-managed-devices-to-get-work-done).  
 
+
+
+## <a name="week-of-may-18-2020"></a>Den vecka som börjar 18 maj 2020  
+### <a name="update-to-icons-in-company-portal-app-for-iosipados-and-macos---6057697---"></a>Uppdatera till ikoner i företagsportalappen för iOS/iPadOS och macOS <!--6057697 -->  
+Vi har uppdaterat ikonerna i Företagsportalen för att skapa ett utseende och en känsla av mer modernt slag som stöds på enheter med dubbla skärmar och som är kompatibla med Microsoft Fluent-designsystemet.
+
+|Uppdaterat för iOS/iPadOS|Tidigare för iOS/iPad|   
+|---|---|   
+|![Bild av Företagsportalen för iOS/iPad, där de uppdaterade ikonerna på den nedre menyn har markerats.](./media/whats-new-app-ui/company-portal-ios-icons-after-2005.png)|![Bild av Företagsportalen för iOS, där de tidigare ikonerna har markerats.](./media/whats-new-app-ui/company-portal-ios-icons-before-2005.png)| 
+
+|Uppdaterat för  macOS|  
+|---|
+|![Bild av fliken Enheter i Företagsportalen för macOS, där de uppdaterade ikonerna har markerats.](./media/whats-new-app-ui/company-portal-macos-icons-after-2005.png)|  
 
 
 ## <a name="week-of-may-4-2020"></a>Den vecka som börjar 4 maj 2020  

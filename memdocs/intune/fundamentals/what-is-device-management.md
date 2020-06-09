@@ -4,7 +4,7 @@ description: Microsoft 365 Enterprise innehåller Microsoft Intune. Se hur Intun
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 11/13/2019
+ms.date: 05/28/2020
 ms.topic: overview
 audience: microsoft-business
 ms.service: microsoft-intune
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: microsoft-intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44f9446299bb20bd73890a67ec33c3d8e7a36e48
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 540faaca71d3694b95d32a24c947a977989a3223
+ms.sourcegitcommit: 7b8921d3ea6a751de67315771d68e2d2750fa36f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988140"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223632"
 ---
 # <a name="device-management-overview"></a>Översikt över enhetshantering
 
@@ -57,9 +57,19 @@ Med Intune kan du hantera flera enheter per person och de olika plattformar som 
 
 Mer information om Intune finns i [Vad är Intune](what-is-intune.md).
 
+## <a name="co-management"></a>Samhantering
+
+Många organisationer använder lokala Configuration Manager för att hantera enheter, inklusive stationära datorer och servrar. Du kan molnansluta din lokala Configuration Manager till Microsoft Intune. När du molnansluter får du fördelarna med Intune och molnet, inklusive [villkorsstyrd åtkomst](https://docs.microsoft.com/mem/configmgr/comanage/quickstart-conditional-access), [körning av fjärråtgärder](https://docs.microsoft.com/mem/configmgr/comanage/quickstart-remote-actions), [användning av Windows Autopilot](https://docs.microsoft.com/mem/configmgr/comanage/quickstart-autopilot) med mera.
+
+[Microsoft Endpoint Manager](https://docs.microsoft.com/mem/endpoint-manager-overview) är en lösningsplattform som kombinerar flera tjänster. Den innehåller [Microsoft Intune](what-is-intune.md) för molnbaserad enhetshantering och [Configuration Manager + Intune](https://docs.microsoft.com/mem/configmgr/comanage/overview) för molnansluten enhetshantering.
+
+Om du använder Configuration Manager och är redo att flytta några uppgifter till molnet, så är samhantering svaret.
+
+Mer information om hur du molnansluter Configuration Manager finns i [Vad är samhantering](https://docs.microsoft.com/mem/configmgr/comanage/overview).
+
 ## <a name="integration-with-secure-and-protect-services"></a>Integrering med tjänster för att säkra och skydda
 
-En viktig uppgift i en enhetshanteringslösning är att tillhandahålla säkerhet och skydd. Intune gör ett bra jobb med att genomföra den här uppgiften genom integration med andra tjänster. Till exempel:
+En viktig uppgift i en enhetshanteringslösning är att tillhandahålla säkerhet och skydd. Intune gör ett bra jobb med att genomföra den här uppgiften genom integration med andra tjänster. Exempel:
 
 - **Microsoft 365** är en viktig komponent när det gäller att förenkla vanliga IT-uppgifter. I Microsoft 365 Administrationscenter skapar du användare och hanterar grupper. Du får även åtkomst till andra tjänster, till exempel Intune och Azure AD.
 

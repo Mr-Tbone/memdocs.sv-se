@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/13/2020
+ms.date: 05/29/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f86b418df46069b2a33dd56d06e0e82dbbbf8090
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 734a1361d8889ca1463e8d8986239e088b90cd09
+ms.sourcegitcommit: eb51bb38d484e8ef2ca3ae3c867561249fa413f3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81538455"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84206374"
 ---
 # <a name="use-the-jamf-cloud-connector-with-microsoft-intune"></a>Använda Jamf Cloud Connector med Microsoft Intune
 
@@ -157,13 +157,15 @@ Om du för närvarande har en manuellt konfigurerad integrering mellan Intune oc
 
    ![Välja Cloud Connector på Jamf Pro-konsolen](./media/conditional-access-jamf-cloud-connector/select-cloud-connector.png)
 
-6. På popup-menyn **Nationellt moln** väljer du platsen för det nationella molnet från Microsoft.
+6. På popup-menyn **Nationellt moln** väljer du platsen för det nationella molnet från Microsoft. Om du ersätter din tidigare integrering med JAMF Cloud Connector kan du hoppa över det här steget, förutsatt att platsen har angetts.
 
 7. Välj något av följande alternativ för landningssidan för datorer som inte känns igen av Microsoft Azure:
    - **Standardsidan för Jamf Pro-enhetsregistrering** – Beroende på den aktuella macOS-enhetens status omdirigerar det här alternativet användarna till antingen Jamf Pro-portalen för enhetsregistrering (för registrering i Jamf Pro) eller Intunes företagsportal-app (för registrering i Azure AD).
    - **Sidan Åtkomst nekad**
    - **Anpassad URL**
-
+  
+   Om du ersätter din tidigare integrering med JAMF Cloud Connector kan du hoppa över det här steget, förutsatt att landningssidan har angetts.
+  
 8. Välj **Anslut**. Du omdirigeras för att registrera Jamf Pro-programmen i Azure.
 
    När du uppmanas till det anger du dina Microsoft Azure-autentiseringsuppgifter och följer anvisningarna på skärmen för att bevilja de begärda behörigheterna. Du beviljar behörigheter för **Cloud Connector** och sedan igen för **Cloud Connector-appen för användarregistrering**. Båda apparna är registrerade i Azure som företagsprogram.
@@ -283,6 +285,10 @@ Ja. Du kan ändra anslutningstypen till manuell igen och följa stegen för manu
 ### <a name="permissions-were-modified-on-one-or-both-required-apps-cloud-connector-and-cloud-connector-user-registration-app-and-registration-is-not-working-is-this-supported"></a>Behörigheter ändrades för en av eller båda de appar som krävs (*Cloud Connector* och *Cloud Connector-appen för användarregistrering*) och registreringen fungerar inte. Stöds detta?
 
 Det finns inte stöd för att ändra behörigheterna för apparna.
+
+### <a name="is-there-a-log-file-in-jamf-pro-that-shows-if-the-connection-type-has-been-changed"></a>Finns det en loggfil i Jamf Pro som visar om anslutningstypen har ändrats?
+
+Ja, ändringarna loggas i filen JAMFChangeManagement.log. Om du vill visa loggen för ändringshantering loggar du in på Jamf Pro, går till **Inställningar** > **Systeminställningar** > **Ändringshantering** > **Loggar**, söker efter **Objekttyp** för **Villkorsstyrd åtkomst** och klickar sedan på **Information**, så visas ändringarna.
 
 ## <a name="next-steps"></a>Nästa steg
 

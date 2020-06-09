@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/30/2020
+ms.date: 06/01/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38598e0245b0cfe15be4b9303620aea1724933d1
-ms.sourcegitcommit: ad4b3e4874a797b755e774ff84429b5623f17c5c
+ms.openlocfilehash: b81686f645d9fce610c39266feb2675fd35cc280
+ms.sourcegitcommit: 6f67c864cf71b4a6a316f4d04a6cc43cf28b4277
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166578"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257043"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -231,8 +231,16 @@ Använd dessa inställningar om du vill konfigurera en upplevelse i helskärmsfo
 
 ### <a name="applications"></a>Program
 
-- **Tillåt installation från okända källor**: **Tillåt** tillåter att användare aktiverar **Okända källor**. Den här inställningen gör att appar kan installeras från okända källor, inklusive andra källor än Google Play. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att användarna aktiverar **Okända källor**.
-- **Tillåt åtkomst till alla appar i Google Play-butiken**: När **Tillåt** har valts får användarna åtkomst till alla appar i Google Play. De får inte åtkomst till de appar som har blockerats av administratören i [Klientappar](../apps/apps-add-android-for-work.md). När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tvinga användarna att endast använda appar som administratören gjort tillgängliga i Google Play, eller appar som krävs i [Klientappar](../apps/apps-add-android-for-work.md).
+- **Tillåt installation från okända källor**: **Tillåt** tillåter att användare aktiverar **Okända källor**. Den här inställningen gör att appar kan installeras från okända källor, inklusive andra källor än Google Play. De tillåter användare att läsa in appar separat på enheten via andra kanaler än Google Play Store. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att användarna aktiverar **Okända källor**.
+- **Tillåt åtkomst till alla appar i Google Play-butiken**: När **Tillåt** har valts får användarna åtkomst till alla appar i Google Play. De får inte åtkomst till de appar som har blockerats av administratören i [Klientappar](../apps/apps-add-android-for-work.md).
+
+  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard:
+  
+  - Tvinga användarna att endast använda appar som administratören gjort tillgängliga i Google Play, eller appar som krävs i [Klientappar](../apps/apps-add-android-for-work.md). 
+  - Automatiskt avinstallera alla appar som identifierats som installerade av användare utanför Google Play-butiken.
+
+  Om du vill aktivera separat inläsning ställer du in alternativen **Tillåt installation från okända källor** och **Tillåt åtkomst till alla appar i Google Play Store** på **Tillåt**.
+
 - **Automatiska appuppdateringar**: Enheter söker efter programuppdateringar dagligen. Välj när automatiska uppdateringar ska installeras. Alternativen är:
   - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
   - **Användarens val**: Operativsystemet kan vara inställt på det här alternativet som standard. Användarna kan ange sina inställningar i den hanterade Google Play-appen.
