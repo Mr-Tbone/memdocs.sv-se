@@ -10,12 +10,12 @@ ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8186b45a0b0c74840582052f9c585c0557180493
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: 1987ba504630ab1d4b23cdb54710f0cbaa3db28a
+ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721950"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84506266"
 ---
 # <a name="create-configuration-items-for-windows-devices-with-on-premises-mdm-in-configuration-manager"></a>Skapa konfigurations objekt för Windows-enheter med lokal MDM i Configuration Manager
 
@@ -60,9 +60,9 @@ Mer allmän information om kompatibilitetsinställningar i Configuration Manager
 
     - **Information**
 
-    - **Honom**
+    - **Varning**
 
-    - **Kritisk**
+    - **Kritiskt**
 
     - **Kritisk med händelse**: enheter som inte uppfyller den här regeln rapporterar allvarlighets graden **kritisk** för Configuration Manager rapporter. Den loggar också inkompatibla tillstånd som en Windows-händelse i program händelse loggen.
 
@@ -89,8 +89,8 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.
 - **Antal lagrade lösen ord**: förhindrar åter användning av tidigare använda lösen ord.
 - **Antal misslyckade inloggnings försök innan enheten rensas**: om detta antal inloggnings försök Miss lyckas rensar MDM enheten
 - **Tid av inaktivitet innan enheten låses**: Ange hur lång tid en enhet kan vara inaktiv innan den låses. Enheten är inaktiv när det inte finns några användarindata.
-- **Lösen ords komplexitet**: Välj om du kan ange en numerisk PIN- `1234`kod, till exempel, eller om du måste ange ett starkt lösen ord.
-  - **Antal avancerade teckenuppsättningar som krävs i lösen ord**: om lösen ords komplexiteten är **stark**väljer du hur många typer av tecken lösen ordet kräver: versaler, gemener, siffror eller symboler. Som standard är `2`det här värdet.
+- **Lösen ords komplexitet**: Välj om du kan ange en numerisk PIN-kod, till exempel `1234` , eller om du måste ange ett starkt lösen ord.
+  - **Antal avancerade teckenuppsättningar som krävs i lösen ord**: om lösen ords komplexiteten är **stark**väljer du hur många typer av tecken lösen ordet kräver: versaler, gemener, siffror eller symboler. Som standard är det här värdet `2` .
 - **Skicka PIN-koden för återställning av lösenord till Exchange Server**
 
 ### <a name="device"></a>Enhet
@@ -164,7 +164,7 @@ Dessa inställningar gäller för enheter som kör Windows 8.1 och Windows 10.
 - **Säkerhets nivå för zonen betrodda**platser: Ange säkerhets nivån för zonen betrodda platser: hög, medium-hög, medium, medium-Low eller Low.
 - **Säkerhets nivå för zonen ej betrodda platser**: Ange säkerhets nivån för zonen ej betrodda platser: hög.
 - **Namn områden för zonen Intranät**: Konfigurera webbplatser som ska läggas till eller tas bort från zonen Intranät.
-- **Gå till intranäts plats för enstaka ord**: Tillåt eller förhindra att Internet Explorer automatiskt går till en intranäts plats om användaren anger ett giltigt plats namn utan föregående protokoll, till exempel `https://`.
+- **Gå till intranäts plats för enstaka ord**: Tillåt eller förhindra att Internet Explorer automatiskt går till en intranäts plats om användaren anger ett giltigt plats namn utan föregående protokoll, till exempel `https://` .
 - **Meny alternativet Enterprise-läge**: gör att användare kan aktivera och inaktivera Enterprise-läget från **verktyg** -menyn i Internet Explorer.
   - **Loggnings rapport plats (URL)**: när Enterprise-läget är aktivt anger du en URL för att logga besökta webbplatser.
 - **Plats för webbplats lista för företags läge (URL)**: när Enterprise-läget är aktivt anger du listan över webbplatser som använder den.
@@ -242,7 +242,7 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.
         - **WPA2**
         - **WPA2-PSK**
     - **Data kryptering**: Välj den krypterings metod som används av den här anslutningen. De tillgängliga värdena ändras baserat på den **autentiseringsmetod** du väljer:
-        - **Inaktiverats**
+        - **Inaktiverad**
         - **WEP**
         - **TKIP**
         - **AES**
@@ -321,13 +321,13 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 team.
 - **Mötes information som visas på Välkomst skärmen**: Välj den typ av information som enheten visar på panelen **möten** på **välkomst** skärmen:
   - **Visa endast kalender och tid**
   - **Visa kalender, tid och ämne (ämnet är dolt för privata möten)**
-- **URL för låsskärm bakgrunds bild**: Ange en URL för att visa en anpassad bakgrund på **välkomst** skärmen på en Windows 10 team-enhet. Starta URL: en `https://` med och Använd PNG-formatet.
+- **URL för låsskärm bakgrunds bild**: Ange en URL för att visa en anpassad bakgrund på **välkomst** skärmen på en Windows 10 team-enhet. Starta URL: en med `https://` och Använd PNG-formatet.
 
 ### <a name="windows-information-protection"></a>Windows informationsskydd  
 
 Mer information om hur du konfigurerar företags data skydd med Configuration Manager finns i [skydda företags data med Windows information Protection (Pia)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
 
-### <a name="microsoft-edge"></a>Microsoft Edge
+### <a name="microsoft-edge-legacy"></a>Microsoft Edge-bakåtkompatibelt
 
 Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.  
 
@@ -369,14 +369,14 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.
 - **Sök igenom e-postmeddelanden**: Defender söker igenom e-postmeddelanden när de tas emot på enheten.
 - **Genomsök flyttbara enheter**: Defender söker igenom flyttbara enheter, till exempel USB-käppar.
 - **Sök igenom mappade enheter**: Defender söker igenom enheter som är mappade till nätverks resurser. Till exempel `H:` mappas till en användares personliga enhet. Om filerna på enheten är skrivskyddade kan inte Defender ta bort skadlig kod som hittas där.
-- **Sök igenom filer öppnade från delade**nätverksmappar: Defender söker igenom filer när en användare öppnar dem från en delad nätverks Sök väg. Till exempel `\\server\share\file.doc`. Om filen på resursen är skrivskyddad kan inte Defender ta bort skadlig kod som hittas.
+- **Sök igenom filer öppnade från delade**nätverksmappar: Defender söker igenom filer när en användare öppnar dem från en delad nätverks Sök väg. Exempelvis `\\server\share\file.doc`. Om filen på resursen är skrivskyddad kan inte Defender ta bort skadlig kod som hittas.
 - **Uppdaterings intervall för signatur**: Välj det tidsintervall då Defender söker efter nya signaturfiler.
 - **Tillåt moln skydd**: Defender använder Microsoft-molnet för att ta emot information om aktivitet för skadlig kod och aktivera funktioner som blockera vid första sikten.
 - **Uppmana användarna att skicka exempel**: Välj beteende för Defender när filer kan kräva ytterligare analys. Till exempel kan Defender automatiskt skicka filer till Microsoft för att avgöra om de är skadliga.
 - **Identifiering av potentiellt oönskade program**: skyddar enheten mot att köra program vara som klassificeras av Defender som potentiellt oönskade. Du kan skydda dig mot dessa program som körs eller använda gransknings läget för att rapportera när en användare installerar ett potentiellt oönskat program.
 - **Filer och**mappar som ska undantas: Lägg till en eller flera filer och mappar i undantags listan. Exempel: `C:\Path` eller `%ProgramFiles%\Path\filename.exe`. Defender inkluderar inte dessa filer och mappar i real tids-eller schemalagda genomsökningar.
 - **Undantag för fil tillägg**: Lägg till ett eller flera fil namns tillägg i undantags listan. Exempel: `java` eller `exe`. Defender inkluderar inga filer med dessa fil namns tillägg i real tids-eller schemalagda genomsökningar.
-- **Process undantag**: Lägg till vissa processer i undantags listan. Till exempel `C:\path\myproc.exe`. Den här typen av undantag stöder endast följande tillägg `exe`: `com`,, `scr`eller. Defender inkluderar inte dessa processer i real tids-eller schemalagda genomsökningar.
+- **Process undantag**: Lägg till vissa processer i undantags listan. Exempelvis `C:\path\myproc.exe`. Den här typen av undantag stöder endast följande tillägg: `exe` , `com` , eller `scr` . Defender inkluderar inte dessa processer i real tids-eller schemalagda genomsökningar.
 
 ### <a name="additional-settings"></a>Ytterligare inställningar
 

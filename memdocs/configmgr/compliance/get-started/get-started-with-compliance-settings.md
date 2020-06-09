@@ -10,12 +10,12 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9143c224082f00b882d3cb557b47b737012393fa
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: f0a26d02770ff8460787ee9897bdc8f1218a2c12
+ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906342"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84506170"
 ---
 # <a name="get-started-with-compliance-settings-in-configuration-manager"></a>Kom igång med kompatibilitetsinställningar i Configuration Manager
 
@@ -103,11 +103,8 @@ Versions uppgraderings principen uppgraderar automatiskt enheter som kör vissa 
 
 Mer information finns i [uppgradera Windows-enheter med uppgraderings principen för versionen](../deploy-use/upgrade-windows-version.md)
 
-
-
-## <a name="microsoft-edge-browser-profiles"></a>Profiler för Microsoft Edge-webbläsare
+## <a name="microsoft-edge-legacy-browser-profiles"></a>Äldre webb läsar profiler i Microsoft Edge
 <!-- 1357310 -->
-Från och med version 1802, för kunder som använder [Microsoft Edge](https://www.microsoft.com/itpro/microsoft-edge) -webbläsaren på Windows 10-klienter, skapar du en princip för kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. 
+För kunder som använder [Microsoft Edge äldre](https://docs.microsoft.com/microsoft-edge/deploy/) webbläsare på Windows 10-klienter skapar du en Configuration Manager efterlevnadsprincip för att konfigurera webb läsar inställningarna.
 
-Mer information finns i [webb läsar profiler för Microsoft Edge](../deploy-use/browser-profiles.md).
-
+Mer information finns i [Microsoft Edge Legacy Browser-profiler](../deploy-use/browser-profiles.md).

@@ -10,12 +10,12 @@ ms.assetid: a4d8cda2-bc9b-4fb4-aa0d-23c31b4fc60b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2523d06034f4a7effe769235cb5a4ede4df7e167
-ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
+ms.openlocfilehash: 2c03d5d06dc6b49ceff6af8ce862eb19cb4a517a
+ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83764126"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84531476"
 ---
 # <a name="plan-for-bitlocker-management"></a>Planera för BitLocker-hantering
 
@@ -23,7 +23,7 @@ ms.locfileid: "83764126"
 
 <!-- 3601034 -->
 
-Från och med version 1910 använder Configuration Manager för att hantera BitLocker-diskkryptering (BDE) för lokala Windows-klienter. Den ger fullständig livs cykel hantering i BitLocker som kan ersätta användningen av Microsoft BitLocker administration and Monitoring (MBAM).
+Från och med version 1910 använder Configuration Manager för att hantera BitLocker-diskkryptering (BDE) för lokala Windows-klienter som är anslutna till Active Directory. Azure Active Directory anslutna eller arbets grupps klienter stöds inte. Den ger fullständig livs cykel hantering i BitLocker som kan ersätta användningen av Microsoft BitLocker administration and Monitoring (MBAM).
 
 > [!Note]  
 > Configuration Manager aktiverar inte den här valfria funktionen som standard. Du måste aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).  
@@ -59,7 +59,7 @@ Inbyggda rapporter för:
 
 - Krypterings status per volym eller per enhet
 - Enhetens primära användare
-- Kompatibilitetsstatus
+- efterlevnadsstatus
 - Orsaker till bristande efterlevnad
 
 ### <a name="administration-and-monitoring-website"></a>Webbplats för administration och övervakning
@@ -92,7 +92,7 @@ Låt användarna hjälpa sig att använda en enda nyckel för att låsa upp en B
     > [!NOTE]
     > Installera endast självbetjänings portalen och webbplatsen för administration och övervakning med en primär plats databas. I en-hierarki installerar du de här webbplatserna för varje primär plats.
 
-- Installera [Microsoft ASP.NET MVC 4,0](https://docs.microsoft.com/aspnet/mvc/mvc4)på den webb server som ska vara värd för självbetjänings portalen.
+- På webb servern som ska vara värd för självbetjänings portalen installerar du [Microsoft ASP.NET MVC 4,0](https://docs.microsoft.com/aspnet/mvc/mvc4) och .NET Framework 3,5-funktionen innan du avinstallerar installations processen. Andra nödvändiga Windows Server-roller och-funktioner installeras automatiskt under installations processen för portalen.
 
 - Det användar konto som kör Portal installations skriptet måste ha SQL **sysadmin** -behörighet på plats databas servern. Under installationen anger skriptet inloggnings-, användar-och SQL-roll rättigheter för webb serverns dator konto. Du kan ta bort det här användar kontot från sysadmin-rollen när du har slutfört installationen av självbetjänings portalen och webbplatsen för administration och övervakning.
 
