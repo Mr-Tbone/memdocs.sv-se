@@ -2,7 +2,7 @@
 title: Ta bort certifikat utfärdare
 titleSuffix: Configuration Manager
 description: Ta bort den centrala administrations platsen (CAS) för att förenkla din Configuration Manager-infrastruktur till en enda fristående primär plats.
-ms.date: 04/01/2020
+ms.date: 06/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 16975644-8dfa-4f22-b45a-c54a9250dbd2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6704075d707306f55a50a937185c9bdd28b18cc5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 237c326c4420aec13ad6c9ca9b07d9f5304b6945
+ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718114"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84613979"
 ---
 # <a name="remove-the-central-administration-site"></a>Ta bort den centrala administrations platsen
 
@@ -93,9 +93,9 @@ Från och med version 2002, om hierarkin består av den centrala administrations
 
     - På **Start** -menyn väljer du **Configuration Manager installationen**.
 
-    - I katalogen för *installations mediet*för Configuration Manager öppnar `\SMSSETUP\BIN\X64\setup.exe`du. Kontrol lera att den här versionen är samma som plats versionen.
+    - I katalogen för *installations mediet*för Configuration Manager öppnar du `\SMSSETUP\BIN\X64\setup.exe` . Kontrol lera att den här versionen är samma som plats versionen.
 
-    - I katalogen där Configuration Manager har *installerats*öppnar `\BIN\X64\setup.exe`du.
+    - I katalogen där Configuration Manager har *installerats*öppnar du `\BIN\X64\setup.exe` .
 
 1. Granska informationen på sidan **innan du börjar** .
 
@@ -143,7 +143,7 @@ När du har tagit bort certifikat utfärdarna går du igenom följande steg som 
 
 - Om du ansluter Configuration Manager med [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm?context=configmgr/core/context/core-context)måste du återställa anslutningen. Det första steget för att lösa eventuella problem är att [förnya den hemliga nyckeln](../configure/azure-services-wizard.md#bkmk_renew). Om det inte löser problemet återskapar du anslutningen.<!-- 5584635 -->
 
-- Om du aktiverar synkronisering av Surface-drivrutiner i version 2002 konfigurerar du om den här funktionen när du har tagit bort certifikat utfärdarna. Mer information finns i [Inkludera uppdateringar för Microsoft-Surface-drivrutiner och inbyggd program vara](../../../../sum/get-started/configure-classifications-and-products.md#bkmk_Surface).<!-- 5728727 -->
+- Om du aktiverar synkronisering av Surface-drivrutiner i version 2002 konfigurerar du om den här funktionen när du har tagit bort certifikat utfärdarna. Mer information finns i [uppdateringar för Microsoft-Surface-drivrutiner och inbyggd program vara](../../../../sum/deploy-use/surface-drivers.md).<!-- 5728727 -->
 
 - Om du hanterar program uppdateringar från tredje part:
 

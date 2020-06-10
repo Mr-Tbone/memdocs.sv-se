@@ -5,17 +5,17 @@ description: Följ dessa steg om du vill konfigurera program uppdaterings klassi
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 05/13/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: 7e2cc1c2dc52a0bb6eb8d0dd143cbb2d005dc6e9
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 4f13ff305ba5fc2b5c5080bafb6fed2412ff8366
+ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078472"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84614071"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurera klassificeringar och produkter som ska synkroniseras  
 
@@ -28,7 +28,7 @@ Metadata för program uppdateringar hämtas under synkroniseringsprocessen i Con
 
 ## <a name="to-configure-classifications-and-products-to-synchronize"></a>Konfigurera klassificeringar och produkter som ska synkroniseras  
 
-1. I **Configuration Manager** -konsolen navigerar du till **Administration** > **plats konfiguration** > **platser**.
+1. I **Configuration Manager** -konsolen navigerar du till **Administration**  >  **plats konfiguration**  >  **platser**.
 
 2. Välj den centrala administrations platsen eller den fristående primära platsen.  
 
@@ -47,9 +47,9 @@ Metadata för program uppdateringar hämtas under synkroniseringsprocessen i Con
      - **Samlade uppdateringar**: anger en testad, kumulativ uppsättning snabb korrigeringar, säkerhets uppdateringar, viktiga uppdateringar och uppdateringar som paketeras tillsammans för enkel distribution. En samlad uppdatering hanterar vanligt vis ett speciellt utrymme, till exempel en säkerhets-eller produkt komponent.  
      - **Uppdateringar**: anger en mycket utgiven korrigering för ett enskilt problem. En uppdatering åtgärdar en icke-kritisk, icke-säkerhetsrelaterad bugg.  
      - **Uppgradering**: anger en uppgradering för funktioner och funktioner i Windows 10. Dina program uppdaterings platser och platser måste köra minst WSUS 6,2 med [snabb korrigeringen 3095113](https://support.microsoft.com/kb/3095113) för att få **uppgraderings** klassificeringen. Mer information om hur du installerar den här uppdateringen och andra uppdateringar för **uppgraderingar**finns i [krav för program uppdateringar](../plan-design/prerequisites-for-software-updates.md#BKMK_wsus2012).
-
+    
     > [!NOTE]
-    > Du kan markera kryss rutan **Inkludera uppdatering av Microsoft-Surface-drivrutiner och inbyggd program vara** för att synkronisera Microsoft Surface-drivrutiner.<!--1098490--> Mer information finns i avsnittet [Inkludera uppdateringar för Microsoft-funktionsyta och inbyggd program vara](#bkmk_Surface) .
+    > Du kan markera kryss rutan **Inkludera uppdatering av Microsoft-Surface-drivrutiner och inbyggd program vara** för att synkronisera Microsoft Surface-drivrutiner.<!--1098490--> Alla program uppdaterings platser måste köra Windows Server 2016 eller senare för att kunna synkronisera Surface-drivrutiner. Om du aktiverar en program uppdaterings plats på en dator som kör Windows Server 2012 efter att du har aktiverat Surface-drivrutiner, är genomsöknings resultaten för driv rutins uppdateringarna inte korrekta. Detta resulterar i att felaktiga efterlevnadsprinciper visas i Configuration Manager-konsolen och i Configuration Manager rapporter. Mer information finns i [Hantera Surface-drivrutiner med Configuration Manager](../deploy-use/surface-drivers.md).
 
 5. På fliken **Produkter** anger du de produkter som du vill synkronisera programuppdateringar för och klickar sedan på **Stäng**.  
 
@@ -67,13 +67,6 @@ Metadata för program uppdateringar hämtas under synkroniseringsprocessen i Con
     > - [Automatiska distributions regler](../deploy-use/automatically-deploy-software-updates.md#bkmk_adr-process) som innehåller **Windows 10** -produkten kommer att uppdateras för att inkludera **Windows 10, version 1903 och senare**.
     > - [Service planer](../../osd/deploy-use/manage-windows-as-a-service.md#servicing-plan-workflow) uppdateras för att omfatta produkten **Windows 10, version 1903 och senare** .
 
-## <a name="include-microsoft-surface-drivers-and-firmware-updates"></a><a name="bkmk_Surface"></a>Ta med uppdateringar för Microsoft-funktionsyta och inbyggd program vara
-
-Du kan markera kryss rutan **Inkludera uppdatering av Microsoft-Surface-drivrutiner och inbyggd program vara** för att synkronisera Microsoft Surface-drivrutiner.<!--1098490--> Alla program uppdaterings platser måste köra Windows Server 2016 med Cumulative Update [KB4025339](https://support.microsoft.com/help/4025339) eller senare installerat för att kunna synkronisera Surface-drivrutiner. Om du aktiverar en program uppdaterings plats på en dator som kör Windows Server 2012 efter att du har aktiverat Surface-drivrutiner, är genomsöknings resultaten för driv rutins uppdateringarna inte korrekta. Detta resulterar i att felaktiga efterlevnadsprinciper visas i Configuration Manager-konsolen och i Configuration Manager rapporter.  
-
-- Den här funktionen introducerades först i version 1706 som en [för hands versions funktion](../../core/servers/manage/pre-release-features.md). Från och med version 1710 är den här funktionen inte längre en för hands versions funktion.  
-- Configuration Manager aktiverar inte den här valfria funktionen som standard. Du måste aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).<!--505213-->  
-- Driv rutiner för ARM-enheter stöds inte för synkronisering.
 
 ## <a name="configuring-products-for-versions-of-windows-10"></a>Konfigurera produkter för versioner av Windows 10
 
@@ -98,7 +91,7 @@ När du godkänner funktions uppdateringar för Windows 10, version 1909, finns 
   - Krav för aktiverings paketet är:
     - En minsta kumulativ uppdatering av [KB4517389](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4517389), publicerad den 8 oktober 2019.
     - En minimal underhålls uppdatering av [KB4520390](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4520390), publicerad den 24 september 2019.
-  - Den här uppdateringen, precis som andra funktions uppdateringar, är inte tillgänglig för `https:\\catalog.update.microsoft.com`import från.
+  - Den här uppdateringen, precis som andra funktions uppdateringar, är inte tillgänglig för import från `https:\\catalog.update.microsoft.com` .
   - Uppdateringen synkroniseras automatiskt med WSUS om du har valt produkt-och **uppgraderings** klassificering i **Windows 10, version 1903 och senare** , för synkronisering.
   - Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **Windows 10 service**och välj noden **alla Windows 10-uppdateringar** . Sök efter villkoren "aktivering" eller "4517245".
 
@@ -143,7 +136,7 @@ För ytterligare information om stöd för Windows Insider i Configuration Manag
 
 Du måste aktivera produkter och klassificeringar för Windows Insider-uppgraderingar och uppdateringar. Funktions uppdateringar, ackumulerade uppdateringar och andra uppdateringar för Windows Insider finns under produkt kategorin **Windows Insider för hands version** .
 
-1. I **Configuration Manager** -konsolen navigerar du till **Administration** > **plats konfiguration** > **platser**.
+1. I **Configuration Manager** -konsolen navigerar du till **Administration**  >  **plats konfiguration**  >  **platser**.
 2. Välj den centrala administrations platsen eller den fristående primära platsen.  
 3. Klicka på **Konfigurera platskomponenter** i gruppen **Inställningar** på **Start**-fliken och klicka sedan på **Programuppdateringsplats**.
 4. På fliken **produkter** kontrollerar du att följande produkter har valts för synkronisering:
@@ -157,7 +150,7 @@ Du måste aktivera produkter och klassificeringar för Windows Insider-uppgrader
 
 ### <a name="upgrading-windows-insider-devices"></a>Uppgradera Windows Insider-enheter
 
-När uppgraderingarna för Windows-Insiders är synkroniserade kan du se dem från **program varu biblioteket** > **Windows 10-Underhåll** > av**alla Windows 10-uppdateringar**.
+När uppgraderingarna för Windows-Insiders är synkroniserade kan du se dem från **program varu biblioteket**  >  **Windows 10-Underhåll**av  >  **alla Windows 10-uppdateringar**.
 
 ![Windows Insiders funktions uppdateringar för Windows 10-underhåll](media/3556023-windows-insiders-pre-release-feature-update.png)
 

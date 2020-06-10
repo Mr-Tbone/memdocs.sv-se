@@ -5,17 +5,17 @@ description: Granska information om Surface-enheter med hjälp av instrument pan
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 06/09/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7397fc17-3ae8-4525-8386-aea8a9cffa06
-ms.openlocfilehash: f9b9c49bde16754b7a60112905f14da2cd5e48eb
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 7e6a98c25fabff31d3eae688edf89540c1ab71a7
+ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906281"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84613944"
 ---
 # <a name="surface-device-dashboard-in-configuration-manager"></a>Instrument panel för Surface-enhet i Configuration Manager
 
@@ -59,7 +59,7 @@ På instrument panelen för Surface-enheter visas tre grafer för din miljö.
 
 Mer information om Surface-enheter finns på [Surface](https://www.microsoft.com/surface) -webbplatsen.
 
-Mer information om hur du distribuerar uppdateringar av inbyggd Surface-programvara i Configuration Manager finns i [Hantera uppdateringar av Surface-drivrutiner](https://support.microsoft.com/help/4098906).
+Mer information om hur du distribuerar uppdateringar av inbyggd Surface-programvara i Configuration Manager finns i [Hantera uppdateringar av Surface-drivrutiner](../../../sum/deploy-use/surface-drivers.md).
 
 
 
