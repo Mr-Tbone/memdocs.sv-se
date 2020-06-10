@@ -1,5 +1,5 @@
 ---
-title: Konfigurera Lookout-integreringen med Microsoft Intune
+title: Konfigurera Lookout Mobile Endpoint Security med Microsoft Intune
 titleSuffix: Microsoft Intune
 description: Läs mer om hur du integrerar Intune med Lookout Endpoint Security som Mobile Threat Defense-lösning för att styra mobila enheters åtkomst till företagsresurser.
 keywords: ''
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4951db457c6a49179dd38ca24463dda292b227e5
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 89d9e8d168175d841a4fb202836ce24df37b5615
+ms.sourcegitcommit: 42a4a4454e56fa681f0ad39f5e585492dfbad286
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988120"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84331026"
 ---
 # <a name="set-up-lookout-mobile-endpoint-security-integration-with-intune"></a>Konfigurera Lookout Mobile Endpoint Security-integration med Intune
 Med en miljö som uppfyller [kraven](lookout-mobile-threat-defense-connector.md#prerequisites) kan du integrera Lookout Mobile Endpoint Security med Intune. Informationen i den här artikeln vägleder dig genom stegen för att integrera och konfigurera viktiga inställningar i Lookout för användning med Intune.  
@@ -72,7 +72,7 @@ Om du vill aktivera prenumerationsintegrering för Lookout Mobile Endpoint Secur
 
 Följande steg utförs i Lookout Enterprise-administratörskonsolen och gör det möjligt att ansluta till Lookout-tjänsten för Intune-registrerade enheter (via enhetens efterlevnad) **och** oregistrerade enheter (via appskyddsprinciper).
 
-Efter att Lookout-supporten har skapat ditt Lookout Enterprise-konto, skickar de ett e-postmeddelande till ditt företags primära kontakt med en länk till webbadressen för inloggning:https://aad.lookout.com/les?action=consent. 
+Efter att Lookout-supporten har skapat ditt Lookout Enterprise-konto, skickar de ett e-postmeddelande till ditt företags primära kontakt med en länk till webbadressen för inloggning: https://aad.lookout.com/les?action=consent. 
 
 ### <a name="initial-sign-in"></a>Första inloggningen  
 Vid den första inloggningen på Lookout MES-konsolen visas en samtyckessida (https://aad.lookout.com/les?action=consent). En global Azure AD-administratör behöver bara logga bara in och välja **Acceptera**. Efterföljande inloggningar kräver inte att användaren har Azure AD-behörighet på den här nivån. 

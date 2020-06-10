@@ -15,12 +15,12 @@ ms.reviewer: pfetty
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5d0e809e834a82f192128263742bc2b9b0024a2
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 9a264b9a3b8f0ba15debe7e7323c106f09fa12c6
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079288"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455250"
 ---
 # <a name="technology-decisions-for-enabling-byod-with-microsoft-enterprise-mobility--security-ems"></a>Teknikval för att kunna tillämpa BYOD med Microsoft Enterprise Mobility + Security (EMS)
 
@@ -72,14 +72,14 @@ Som redan nämnts kan du med hjälp av villkorlig åtkomst få en användare att
 |Komprometterat användarkonto | Blockera högriskanvändare | Blockera högriskanvändare |
 |Komprometterat användarkonto | PIN-kod för enhet | PIN-kod för app |
 | | | |
-| Komprometterad enhet eller app | Krav på kompatibel enhet | Upplåsningskontroll (jailbreak) när appen startar |
+| Komprometterad enhet eller app | Krav på kompatibel enhet | Upplåsningskontroll (jailbreak)/rotkontroll när appen startar |
 | Komprometterad enhet eller app | Kryptera enhetsdata | Kryptera appdata |
 | | | |
 |Borttappad eller stulen enhet | Ta bort alla enhetsdata | Ta bort alla appdata|
 | | | |
-| Dela data eller spara data till osäkra platser av misstag | Begränsa säkerhetskopiering av enhetsdata | Begränsa klipp ut/kopiera/klistra in|
+| Dela data eller spara data till osäkra platser av misstag | Begränsa säkerhetskopiering av enhetsdata | Begränsa säkerhetskopiering av organisationsdata |
 | Dela data eller spara data till osäkra platser av misstag | Begränsa spara som | Begränsa spara som |
-|Dela data eller spara data till osäkra platser av misstag | Inaktivera utskrift | saknas|
+|Dela data eller spara data till osäkra platser av misstag | Inaktivera utskrift | Inaktivera utskrift av organisationsdata |
 
 ## <a name="next-steps"></a>Nästa steg
 Nu är det dags att bestämma om du vill använda BYOD i din organisation med fokus på enhetshantering, apphantering eller en kombination av dessa. Valet är ditt, men du kan känna dig trygg med att funktionerna för identitet och säkerhet i Azure AD är tillgängliga oavsett vad du väljer.  

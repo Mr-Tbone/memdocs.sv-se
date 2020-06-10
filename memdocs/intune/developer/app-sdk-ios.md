@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/02/2020
+ms.date: 06/04/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 379eacee731c8cdd773fc7a15f556ab85e409f7c
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 0d3b1fc1917e7567301a2d2c8a3a3b06d4892a6b
+ms.sourcegitcommit: 7a5196d4d9736c5cd52a23155c479523e52a097d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989888"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84436796"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>Utvecklarhandbok för Microsoft Intune App SDK för iOS
 
@@ -35,13 +35,13 @@ Med Microsoft Intune App SDK för iOS kan du lägga till Intune-appskyddsprincip
 
 ## <a name="prerequisites"></a>Krav
 
-* Du behöver en Mac OS-dator som kör OS X 10.8.5 eller senare och som också har Xcode-version 9 eller senare installerad.
+- Du behöver en Mac OS-dator som kör OS X 10.12.6 eller senare och som också har Xcode-version 9 eller senare installerad.
 
-* Appen måste vara anpassad för iOS 11 eller senare.
+- Appen måste vara anpassad för iOS 11 eller senare.
 
-* Läs [licensvillkoren för Intune App SDK för iOS](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20for%20iOS.pdf). Skriv ut och behåll en kopia av licensvillkoren. Genom att ladda ned och använda Intune App SDK för iOS samtycker du till de här licensvillkoren.  Om du inte godkänner dem ska du inte använda programvaran.
+- Läs [licensvillkoren för Intune App SDK för iOS](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios/blob/master/Microsoft%20License%20Terms%20Intune%20App%20SDK%20for%20iOS.pdf). Skriv ut och behåll en kopia av licensvillkoren. Genom att ladda ned och använda Intune App SDK för iOS samtycker du till de här licensvillkoren.  Om du inte godkänner dem ska du inte använda programvaran.
 
-* Hämta filerna för Intune App SDK för iOS på [GitHub](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios).
+- Hämta filerna för Intune App SDK för iOS på [GitHub](https://github.com/msintuneappsdk/ms-intune-app-sdk-ios).
 
 ## <a name="whats-in-the-sdk-repository"></a>Innehåll på SDK-lagringsplatsen
 
@@ -750,7 +750,7 @@ Om din app integreras med Siri Intents bör du läsa kommentarerna för `areSiri
 ## <a name="notifications"></a>Meddelanden
 Om din app får aviseringar bör du läsa kommentarerna för `notificationPolicy` i `IntuneMAMPolicy.h` för att få instruktioner om hur du stöder det här scenariot.  Det rekommenderas appar registreras för `IntuneMAMPolicyDidChangeNotification` enligt beskrivningen i `IntuneMAMPolicyManager.h` och kommunicerar detta värde till sin `UNNotificationServiceExtension` via nyckelringen.
 ## <a name="displaying-web-content-within-application"></a>Visa webbinnehåll i program
-Om ditt program har möjlighet att visa webbplatser i en webbvy och de visade webbplatserna har möjlighet att navigera till godtyckliga webbplatser ansvarar programmet för att ange den aktuella identiteten så att hanterade data inte kan läcka via webbvyn. Exempel på detta är webbplatser för ”Föreslå en funktion” eller ”Feedback” som har antingen direkta eller indirekta länkar till en sökmotor.
+Om ditt program har möjlighet att visa webbplatser i en webbvy och de visade webbsidorna har möjlighet att navigera till godtyckliga webbplatser ansvarar programmet för att ange den aktuella identiteten så att hanterade data inte kan läcka via webbvyn. Exempel på detta är webbplatser för ”Föreslå en funktion” eller ”Feedback” som har antingen direkta eller indirekta länkar till en sökmotor.
 Program med flera identiteter bör anropa IntuneMAMPolicyManager setUIPolicyIdentity och skicka in den tomma strängen innan webbvyn visas. När webbvyn har stängts bör programmet anropa setUIPolicyIdentity och skicka in den aktuella identiteten.
 Program med en enskild entitet bör anropa IntuneMAMPolicyManager setCurrentThreadIdentity och skicka in den tomma strängen innan webbvyn visas. När webbvyn har stängts bör programmet anropa setCurrentThreadIdentity och skicka in nil.
 

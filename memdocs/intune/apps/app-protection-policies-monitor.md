@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/28/2020
+ms.date: 06/05/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,17 +18,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f39681bf954e84376e5d8e3862354a2a10b1003a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 10c715bcff63e6ec5a9ec9002926f6ee6608360e
+ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988103"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84455080"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Så här övervakar du appskyddsprinciper
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Du kan övervaka statusen i de appskyddsprinciper som du har tillämpat på användare i fönstret för Intunes appskydd i [Azure-portalen](https://portal.azure.com). Där hittar du dessutom information om de användare som påverkas av appskyddsprinciperna, dess efterlevnadsstatus och eventuella problem som användarna kan råka ut för.
+Du kan övervaka statusen i de appskyddsprinciper som du har tillämpat på användare i fönstret för Intunes appskydd i Intune. Där hittar du dessutom information om de användare som påverkas av appskyddsprinciperna, dess efterlevnadsstatus och eventuella problem som användarna kan råka ut för.
 
 Det finns tre olika platser för att övervaka appskyddsprinciper:
 - Sammanfattningsvy
@@ -43,10 +43,9 @@ Kvarhållningsperioden för appskyddsdata är 90 dagar. Alla appinstanser som ha
 ## <a name="summary-view"></a>Sammanfattningsvy
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Välj **Appar** > **Övervaka** > **Appskyddsstatus**.
+2. Välj **Appar** > **Övervaka** > **Appskyddsstatus**.
 
-   ![Skärmbild av panelen Sammanfattning i fönstret för hantering av mobilprogram i Intune](./media/app-protection-policies-monitor/app-protection-user-status-summary.png)
-
+Följande lista innehåller information om appskyddsstatus: 
 - **Tilldelade användare**: Det totala antalet tilldelade användare i företaget som använder en app som är associerad med en princip i en arbetskontext och är skyddade och licensierade, samt de tilldelade användare som är oskyddade och olicensierade.
 - **Flaggade användare**: Antalet användare som har problem med sina enheter. Upplåsta (iOS/iPadOS) och rotade (Android) enheter rapporteras under **Flaggade användare**. Även användare med enheter som är flaggade av Googles SafetyNet-kontroll för enhetsattestering (om det är aktiverat av IT-administratören) rapporteras här. 
 - **Användare med potentiellt skadliga appar**: Antalet användare som kan ha en skadlig app på en Android-enhet som identifieras av Google Play Protect. 

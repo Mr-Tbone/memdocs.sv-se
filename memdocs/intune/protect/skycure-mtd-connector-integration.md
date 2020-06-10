@@ -1,5 +1,5 @@
 ---
-title: Konfigurera Symantec-integration med Microsoft Intune
+title: Konfigurera Symantec Endpoint Protection Mobile-integrering med Microsoft Intune
 titleSuffix: Microsoft Intune
 description: Konfigurera Symantec Endpoint Protection Mobile-lösningen med Microsoft Intune för att styra mobil enhetsåtkomst till företagets resurser.
 keywords: ''
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ebd42a4603224004ab586fb6648dcd6360e2f94
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 250c94250346eb84ad6b1661768d27b8c14fdf62
+ms.sourcegitcommit: 42a4a4454e56fa681f0ad39f5e585492dfbad286
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988303"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330992"
 ---
 # <a name="set-up-symantec-endpoint-protection-mobile-integration-with-intune"></a>Konfigurera Symantec Endpoint Protection Mobile-integrering med Intune
 

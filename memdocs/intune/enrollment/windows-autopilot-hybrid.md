@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91a63011b16a05387f09f4cc5b3fe74b9c30891e
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 9983eb211b816ae05a1f9d180a7dbb68e3fac505
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988979"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428661"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot
 Du kan använda Intune och Windows Autopilot för att konfigurera Azure Active Directory-anslutna hybridenheter. Du gör det genom att följa stegen i den här artikeln.
@@ -107,7 +107,7 @@ Organisationsenheten som beviljas behörighet att skapa datorer måste matcha:
 
 ## <a name="install-the-intune-connector"></a>Installera Intune Connector
 
-Intune Connector för Active Directory måste installeras på en dator som kör Windows Server 2016 eller senare. Datorn måste också ha åtkomst till internet och din Active Directory. Om du vill öka skalningen och tillgängligheten eller om du vill ha stöd för flera Active Directory-domäner kan du installera flera anslutningsprogram i din miljö. Vi rekommenderar att du installerar anslutningsappen på en server som inte kör några andra Intune-anslutningsappar.
+Intune Connector för Active Directory måste installeras på en dator som kör Windows Server 2016 eller senare. Datorn måste också ha åtkomst till internet och din Active Directory. Om du vill öka skalningen och tillgängligheten kan du installera flera anslutningsprogram i din miljö. Vi rekommenderar att du installerar anslutningsappen på en server som inte kör några andra Intune-anslutningsappar.  Observera att varje anslutningsprogram måste kunna skapa datorobjekt på den domän som du vill stödja.
 
 Intune-anslutningsappen kräver [samma slutpunkter som Intune](../fundamentals/intune-endpoints.md).
 

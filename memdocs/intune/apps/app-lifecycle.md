@@ -5,7 +5,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/27/2020
+ms.date: 06/03/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: apps; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33f59cc2ecd2662e2d5d09fb06a9f1c7a33f0fca
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 8605b33d8fb83fb4537182127860f0cbb098e620
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79342367"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428607"
 ---
 # <a name="overview-of-the-app-lifecycle-in-microsoft-intune"></a>Översikt över applivscykeln i Microsoft Intune
 
@@ -54,7 +54,7 @@ Intune ger många sätt att skydda data i dina appar. De viktigaste metoderna ä
 
 ## <a name="retire"></a>Pensionera
 
-Så småningom är det troligt att appar som du har distribuerat blir inaktuella och måste tas bort. Intune gör det enkelt att [dra tillbaka appar från tjänsten](../remote-actions/device-management.md).
+Så småningom är det troligt att appar som du har distribuerat blir inaktuella och måste tas bort. Intune gör det enkelt att avinstallera appar. Mer information finns i [Avinstallera en app](../apps/apps-add.md#uninstall-an-app).
 
 ## <a name="next-steps"></a>Nästa steg
 

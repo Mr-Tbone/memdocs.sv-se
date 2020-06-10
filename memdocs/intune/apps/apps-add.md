@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da78e0f80df31f5cb0f6236c4f85f93c05f0320a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: f01baaf8ca48229242b6f65d10ef28a294a632bc
+ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989478"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428620"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Lägg till appar i Microsoft Intune 
 
@@ -187,6 +187,25 @@ Intune kommer automatiskt att installera om, uppdatera eller ta bort en obligato
 - Om en obligatorisk app inte kan installeras eller på något sätt inte finns på enheten utvärderar Intune kompatibilitet och installerar om appen enligt det här schemat.  
 - En administratör anger en app som är tillgänglig för en användargrupp och en slutanvändare installerar appen från företagsportalen på enheten. Senare uppdaterar administratören appen från v1 till v2. Intune uppdaterar appen enligt det här schemat, förutsatt att eventuell tidigare version av appen finns kvar på enheten.
 - Om administratören distribuerar avinstallationsavsikt och appen finns på enheten men gick inte att avinstallera, utvärderar Intune kompatibilitet och avinstallerar appen enligt det här schemat.   
+
+## <a name="uninstall-an-app"></a>Avinstallera en app
+
+Använd följande steg när du behöver avinstallera en app från användarnas enheter.
+
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Välj **Appar** > **Alla appar** > *appen* > **Tilldelningar** > **Lägg till grupp**.
+3. I fönstret **Lägg till grupp** väljer du **Avinstallera**.
+4. Välj **Inkluderade grupper** för att välja vilka grupper av användare som ska påverkas av apptilldelningen.
+5. Välj de grupper som du vill tillämpa avinstallationen på.
+6. Klicka på **Välj** i fönstret **Välj grupper**.
+7. Klicka på **OK** i fönstret **Tilldela** för att ange tilldelningen.
+8. Välj **Exkludera grupper** om du vill undanta grupper av användare så att de inte påverkas av den här apptilldelningen.
+9. Om du har valt att undanta grupper i **Välj grupper**, klicka på **Välj**.
+10. Välj **OK** i fönstret **Lägg till grupp**.
+11. Välj **Spara** i appfönstret **Tilldelningar**.
+
+> [!IMPORTANT]
+> Om du vill avinstallera appen måste du ta bort medlemmarna eller grupptilldelningen för installationen innan du tilldelar en avinstallation. Om en grupp är tilldelad att både installera en app och avinstallera en app, förblir appen kvar och tas inte bort.
 
 ## <a name="app-installation-errors"></a>Appinstallationsfel
 

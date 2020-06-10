@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5562ef1eaa1cc98e3f5a654e90e4779e228768b6
-ms.sourcegitcommit: 8a023e941d90c107c9769a1f7519875a31ef9393
+ms.openlocfilehash: 90039e9bb75bcf7c266ac033408f87d37e27ef8d
+ms.sourcegitcommit: 7a5196d4d9736c5cd52a23155c479523e52a097d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84311211"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84436762"
 ---
 # <a name="in-development-for-microsoft-intune"></a>Under utveckling för Microsoft Intune
 
@@ -161,7 +161,7 @@ Nya fel rapporteras för iOS/iPad- och macOS-enheter, inklusive
 - Antalet borttagna Apple Business Manager-enheter kommer att läggas till på översiktssidan, där dina enheters status visas.
 
 ### <a name="bring-your-own-devices-can-use-vpn-to-deploy--5015344---"></a>VPN kan användas för att distribuera egna enheter (BYOD, Bring Your Own Device)<!--5015344 -->
-Den här funktionen kan vara försenad.
+Med den nya växlingsknappen **Hoppa över kontroll av domänanslutning** för Autopilot-profil kan du distribuera Hybrid Azure AD-anslutna enheter utan åtkomst till ditt företagsnätverk med hjälp av din egen Win32 VPN-klient från 3:e part. Om du vill se den nya växlingsknappen kan du gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter**  > **Windows** > **Windows-registrering** > **Distributionsprofiler** > **Skapa profil** > **Välkomstupplevelse (OOBE)** .
 
 ### <a name="shared-ipads-for-business--6367326---"></a>Delat iPad for Business<!--6367326 -->
 Du kan använda Intune och Apple Business Manager till att enkelt och säkert konfigurera delade iPads så att flera medarbetare kan dela enheter. Apples [Delad iPad](https://developer.apple.com/education/shared-ipad/) får en ny anpassad upplevelse för flera användare samtidigt som användardata bevaras. Med ett hanterat Apple-ID kan användare komma åt sina appar, data och inställningar efter att ha loggat in på en delad iPad i organisationen. Delad iPad fungerar med federerade identiteter.
