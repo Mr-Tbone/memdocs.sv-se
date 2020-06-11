@@ -2,7 +2,7 @@
 title: Community Hub och GitHub
 titleSuffix: Configuration Manager
 description: Aktivera och Använd community Hub i Configuration Manager
-ms.date: 06/02/2020
+ms.date: 06/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 88cead9a-64fe-471e-b57c-81707cefe46c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d3dd8f8af7a3add38d8003da12078d393041631d
-ms.sourcegitcommit: 5e339c07001e911cf75ef922e6c66a7efdeab6f1
+ms.openlocfilehash: 606c9490e56d932176b17eef95ea4ed0c956770e
+ms.sourcegitcommit: a198e4efa52b16f87049853b9d8c9854fd9fa057
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84637732"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84680429"
 ---
 # <a name="community-hub-and-github"></a>Community Hub och GitHub
 <!--3555935, 3555936-->
@@ -36,10 +36,11 @@ Community Hub stöder följande objekt:
 
 ## <a name="prerequisites"></a>Krav
 
-- Enheten som kör Configuration Manager-konsolen som används för att komma åt hubben behöver följande objekt:
-   - Windows 10 version 17110 eller senare
+- Enheten som kör Configuration Manager-konsolen som används för att få åtkomst till community Hub behöver följande objekt:
    - .NET Framework version 4,6 eller senare
-
+   - Windows 10 version 17110 eller senare
+      - Windows Server stöds inte, så Configuration Manager-konsolen måste installeras på en Windows 10-enhet separat från plats servern.
+   - Det inloggade användar kontot får inte vara det inbyggda administratörs kontot
 
 - Om du vill hämta rapporter måste du aktivera alternativet **använd Configuration Manager-genererade certifikat för HTTP-platssystem** på den plats som du importerar till. Mer information finns i [Enhanced http](/sccm/core/plan-design/hierarchy/enhanced-http).
    1. Gå till **Administration**  >  **plats konfiguration**  >  **platser**.
