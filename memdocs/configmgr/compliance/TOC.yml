@@ -56,7 +56,7 @@
       href: deploy-use/create-remote-connection-profiles.md
     - name: Uppgradera Windows-enheter till en ny version
       href: deploy-use/upgrade-windows-version.md
-    - name: Konfigurera Microsoft Edge-inställningar
+    - name: Konfigurera äldre Microsoft Edge-inställningar
       href: deploy-use/browser-profiles.md
     - name: Övervaka kompatibilitetsinställningar
       href: deploy-use/monitor-compliance-settings.md
