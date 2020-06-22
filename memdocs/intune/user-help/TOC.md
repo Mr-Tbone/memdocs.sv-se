@@ -83,7 +83,7 @@
 ### [Vad händer om du återställer en enhet med hjälp av företagsportalen?](effects-of-device-reset-company-portal-ios.md)
 ### [Avregistrera din enhet](unenroll-your-device-from-intune-ios.md)
 #### [Vad händer om du avregistrerar din enhet?](what-happens-if-you-unenroll-your-device-from-intune-ios.md)
-### [Synkronisera enheten manuellt](sync-your-device-manually-ios.md)
+### [Synkronisera iOS-enhet manuellt](sync-your-device-manually-ios.md)
 
 ### [Åtgärda vanliga problem med iOS](troubleshoot-your-device-iOS.md)
 #### [Återansluta en komprometterad iOS-enhet](how-to-reconnect-a-compromised-ios-device.md)
@@ -115,6 +115,7 @@
 ### [Registrera din macOS-enhet](enroll-your-device-in-intune-macos-cp.md)
 ### [Registrera din macOS-enhet som tillhandahålls av organisationen](enroll-company-device-macos.md)  
 ### [Avregistrera din macOS-enhet](unenroll-your-device-from-intune-macos.md)  
+### [Synkronisera macOS-enhet manuellt](sync-your-device-manually-macos.md)
 ### [Åtgärda vanliga problem med macOS](troubleshoot-your-device-macos.md)
 #### [Min macOS-version stöds inte ännu](your-macos-version-isnt-yet-supported.md)
 #### [Uppdatera din macOS-enhet](you-need-to-update-your-macos-device.md)

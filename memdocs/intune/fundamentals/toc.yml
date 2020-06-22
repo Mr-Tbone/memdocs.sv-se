@@ -17,7 +17,7 @@
         - name: Funktioner under utveckling
           href: in-development.md
         - name: Viktiga meddelanden
-          href: 'whats-new.md#notices'
+          href: whats-new.md#notices
 - name: Snabbstarter
   items:
     - name: Prova Intune utan kostnad
@@ -163,6 +163,8 @@
               href: china.md
         - name: Logga in i Intune
           href: account-sign-up.md
+        - name: Administratörer utan licens
+          href: unlicensed-admins.md
         - name: Konfigurera domäner
           href: custom-domain-name-configure.md
         - name: Lägg till användare
