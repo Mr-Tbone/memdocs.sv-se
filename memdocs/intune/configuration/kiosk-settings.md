@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9be644a47a361cf29e7b7132b2c87a4921553ea
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: f58e457a5868053a94e1f2c1185bbae0e4b69327
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989426"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093081"
 ---
 # <a name="windows-10-and-windows-holographic-for-business-device-settings-to-run-as-a-dedicated-kiosk-using-intune"></a>Inställningar för enheter med Windows 10 (och senare) och Windows Holographic for Business som ska köras i dedikerat helskärmsläge med Intune
 
@@ -31,7 +31,7 @@ Den här funktionen gäller för:
 - Windows 10 och senare
 - Windows 10 Holographic for Business
 
-Information om hur du skapar kioskprofiler för andra plattformar finns i [Android-enhetsadministratör](device-restrictions-android.md#kiosk), [Android Enterprise](device-restrictions-android-for-work.md#dedicated-devices) och [iOS/iPad](device-restrictions-ios.md#kiosk).
+Information om hur du skapar kioskprofiler för andra plattformar finns i [Android-enhetsadministratör](device-restrictions-android.md#kiosk), [Android Enterprise](device-restrictions-android-for-work.md#device-experience) och [iOS/iPad](device-restrictions-ios.md#kiosk).
 
 Intune stöder en helskärmsprofil per enhet. Om du behöver flera helskärmsprofiler på en enskild enhet, kan du använda en [Anpassad OMA-URI](custom-settings-windows-10.md).
 
@@ -89,6 +89,6 @@ När [profilen har tilldelats](device-profile-assign.md) [övervakar du dess sta
 Du kan skapa helskärmsprofiler för enheter som kör följande plattformar:
 
 - [Android-enhetsadministratör](device-restrictions-android.md#kiosk)
-- [Android enterprise](device-restrictions-android-for-work.md#dedicated-devices)
+- [Android enterprise](device-restrictions-android-for-work.md#device-experience)
 - [Windows 10 och senare](kiosk-settings-windows.md)
 - [Windows Holographic for Business](kiosk-settings-holographic.md)

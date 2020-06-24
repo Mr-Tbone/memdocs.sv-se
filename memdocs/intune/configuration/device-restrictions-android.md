@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fc11d7302c30dd53314eb2312d37842b081a6b3
-ms.sourcegitcommit: 5f9d5d22114ae5aeb0270c7fb59c5dced5f48826
+ms.openlocfilehash: 02e07ec75b7c0d07a81a9c6f555cf119310a9a9f
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82862368"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093689"
 ---
 # <a name="android-and-samsung-knox-standard-device-restriction-settings-lists-in-intune"></a>Inställningar av begränsningar för Android- och Samsung Knox Standard-enheter i Intune
 
@@ -193,4 +193,4 @@ Inställningarna för helskärmsläget gäller endast för Samsung Knox Standard
 
 [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
-Du kan också skapa profiler för helskärmsläge för [Android Enterprise](device-restrictions-android-for-work.md#dedicated-devices)- och [Windows 10](kiosk-settings.md)-enheter.
+Du kan också skapa profiler för helskärmsläge för [Android Enterprise](device-restrictions-android-for-work.md#device-experience)- och [Windows 10](kiosk-settings.md)-enheter.

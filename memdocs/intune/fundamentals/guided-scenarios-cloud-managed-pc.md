@@ -9,6 +9,7 @@ manager: dougeby
 ms.date: 02/26/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
+ms.subservice: fundamentals
 ms.localizationpriority: high
 ms.technology: ''
 ms.reviewer: dagerrit
@@ -16,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec125e1ab58e733707adb3d9f4df304e21ffabcf
-ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
+ms.openlocfilehash: c43b74b6ca20fa3f140ad688be49daa928c54b5f
+ms.sourcegitcommit: 397ec824f1368dcf06c3870c89f52347852062bd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83764143"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85264047"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Guidat scenario – Molnhanterat modernt skrivbord
 
@@ -126,5 +127,5 @@ När användaren ansluter enheten till Azure Active Directory tillämpas följan
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Om du använder Microsoft Defender Advanced Threat Detection skapar du en [Intune-efterlevnadsprincip](../protect/advanced-threat-protection.md#create-and-assign-the-compliance-policy) för att kräva att hotanalysen i Defender uppfyller efterlevnad.
+- Om du använder Microsoft Defender Advanced Threat Detection skapar du en [Intune-efterlevnadsprincip](../protect/advanced-threat-protection.md#create-and-assign-compliance-policy-to-set-device-risk-level) för att kräva att hotanalysen i Defender uppfyller efterlevnad.
 - Skapa en [enhetsbaserad princip för villkorsstyrd åtkomst](../protect/advanced-threat-protection.md#create-a-conditional-access-policy) för att blockera åtkomst om enheten inte uppfyller Intune-efterlevnad.

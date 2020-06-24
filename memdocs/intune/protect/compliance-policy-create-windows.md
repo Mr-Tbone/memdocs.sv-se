@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 12/09/2019
+ms.date: 06/19/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfcedebf32c8f08450e3eaa87c99f9bc11dd7431
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 972596cd3973c84c4f00409464f2fe621efc1369
+ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906906"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85107425"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Inställningar för Windows 10 och senare för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -46,13 +46,12 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 - **Kräv BitLocker**:  
    Med Windows BitLocker-diskkryptering krypteras alla data på volymen för Windows-operativsystemet. BitLocker använder Trusted Platform Module (TPM) för att skydda Windows-operativsystemet och användardata. Det kan också bekräfta att en dator inte manipuleras, även om den lämnas obevakad, tappas bort eller blir stulen. Om datorn är utrustad med en kompatibel TPM använder BitLocker TPM för att låsa krypteringsnycklarna som skyddar data. Därför är nycklarna inte tillgängliga förrän TPM verifierar datorns tillstånd.  
 
-   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-   - **Kräv** – Enheten skydda data som lagras på enheten mot obehörig åtkomst när systemet är avstängt eller i viloläge.  
-
+  - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
+  - **Kräv** – Enheten skydda data som lagras på enheten mot obehörig åtkomst när systemet är avstängt eller i viloläge.  
 
 - **Kräv att säker start ska vara aktiverat på enheten**:  
-    - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-    - **Kräv** – Systemet tvingas att starta med tillförlitliga fabriksinställningar. Huvudkomponenterna som används för att starta datorn dessutom ha rätt kryptografiska signaturer som är betrodda av den organisation som tillverkade enheten. UEFI-baserad inbyggd programvara kontrollerar signaturen innan den låter datorn starta. Om filer har manipulerats, vilket delar deras signatur, kan systemet inte starta om.
+  - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
+  - **Kräv** – Systemet tvingas att starta med tillförlitliga fabriksinställningar. Huvudkomponenterna som används för att starta datorn dessutom ha rätt kryptografiska signaturer som är betrodda av den organisation som tillverkade enheten. UEFI-baserad inbyggd programvara kontrollerar signaturen innan den låter datorn starta. Om filer har manipulerats, vilket delar deras signatur, kan systemet inte starta om.
 
   > [!NOTE]
   > Inställningen **Kräv att säker start är aktiverat på enheten** stöds på vissa TPM 1.2- och 2.0-enheter. För enheter som inte stöder TPM 2.0 eller senare, visas principstatusen i Intune som **Ej ompatibel**. Mer information om vilka versioner som stöds finns i [Hälsoattestering för enhet](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-overview#device-health-attestation).
@@ -60,7 +59,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 - **Kräv kodintegritet**:  
   Kodintegritet är en funktion som kontrollerar integriteten för en drivrutin eller systemfil varje gång de läses in i minnet.
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  -  **Kräv** – Kräv kodintegritet, som upptäcker om en osignerad drivrutin eller systemfil läses in i kerneln. Den upptäcker också om en systemfil ändras av skadlig programvara eller körs av ett användarkonto med administratörsbehörighet.
+  - **Kräv** – Kräv kodintegritet, som upptäcker om en osignerad drivrutin eller systemfil läses in i kerneln. Den upptäcker också om en systemfil ändras av skadlig programvara eller körs av ett användarkonto med administratörsbehörighet.
 
 Fler resurser:
 
@@ -104,7 +103,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
 
 - **Kräv enhetskompatibilitet från Configuration Manager**:  
   - **Inte konfigurerad** (*standard*) – Intune gör inte några kompatibilitetskontroller av inställningarna i Configuration Manager.
-  - **Kräv** – Kräv att alla inställningar (konfigurationsobjekt) i Configuration Manager följer standard.  
+  - **Kräv** – Kräv att alla inställningar (konfigurationsobjekt) i Configuration Manager följer standard.
 
     Du kan till exempel kräva att alla programuppdateringar installeras på enheter. Det här kravet har tillståndet ”installerad” i Configuration Manager. Om några program på enheten är i ett okänt tillstånd är enheten inte kompatibel i Intune.
 
@@ -128,7 +127,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   
   Om värdet är *Alfanumeriskt* är nedanstående inställning tillgänglig:  
   - **Lösenordskomplexitet**:  
-    Alternativen är: 
+    Alternativen är:
     - **Kräv siffror och gemener** (*standard*)
     - **Kräv siffror, gemener och versaler**
     - **Siffror, gemener, versaler och specialtecken krävs.**
@@ -172,7 +171,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
 
 - **Brandvägg**:  
   - **Inte konfigurerad** (*standard*) – Intune styr inte Microsoft Defender-brandväggen eller ändrar befintliga inställningar.
-  - **Kräv** – Aktivera Microsoft Defender-brandväggen och hindra användarna från att inaktivera funktionen.  
+  - **Kräv** – Aktivera Microsoft Defender-brandväggen och hindra användarna från att inaktivera funktionen.
 
   [CSP:n Firewall](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp)
 
@@ -181,27 +180,21 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
 
 - **Trusted Platform Module (TPM)** :  
   - **Inte konfigurerad** (*standard*) – Intune kontrollerar inte enheten för en TPM-kretsversion.
-  - **Kräv** – Intune kontrollerar TPM-kretsens version för kompatibilitet. Enheten är kompatibel om TPM-kretsens version är större än **0** (noll). Enheten är inte kompatibel om det inte finns någon TPM-version på den.  
+  - **Kräv** – Intune kontrollerar TPM-kretsens version för kompatibilitet. Enheten är kompatibel om TPM-kretsens version är större än **0** (noll). Enheten är inte kompatibel om det inte finns någon TPM-version på den.
 
   [DeviceStatus CSP - DeviceStatus/TPM/SpecificationVersion node](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
   
 - **Antivirus**:  
-  - **Ej konfigurerad** (*standard*) – Intune kontrollerar inte om några antiviruslösningar har installerats på enheten. 
+  - **Ej konfigurerad** (*standard*) – Intune kontrollerar inte om några antiviruslösningar har installerats på enheten.
   - **Kräv** – Kontrollera efterlevnaden med hjälp av antiviruslösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.
-  
-  [DeviceStatus CSP – DeviceStatus/Antivirus/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
 
-  > [!NOTE]
-  > DeviceStatus CSP för antivirus stöds inte för *Windows 10 Home* och rapporterar status *Inte tillämpligt*. Intune-teamet arbetar på en lösning. Du kan undvika den här begränsningen genom att använda [inställningar för Windows Defender](#defender) i din efterlevnadsprincip för enheter. Windows Defender-inställningar stöds med Windows 10 Home.  
+  [DeviceStatus CSP – DeviceStatus/Antivirus/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
 
 - **Antispionprogram**:  
   - **Ej konfigurerat** (*standard*) – Intune kontrollerar inte om några antspionslösningar har installerats på enheten.
-  - **Kräv** – Kontrollera efterlevnaden med hjälp av antispionlösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.  
-  
-  [DeviceStatus CSP – DeviceStatus/Antispionprogram/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+  - **Kräv** – Kontrollera efterlevnaden med hjälp av antispionlösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.
 
-  > [!NOTE]
-  > DeviceStatus CSP för antispionprogram stöds inte för *Windows 10 Home* och rapporterar status *Inte tillämpligt*. Intune-teamet arbetar på en lösning. Du kan undvika den här begränsningen genom att använda [inställningar för Windows Defender](#defender) i din efterlevnadsprincip för enheter. Windows Defender-inställningar stöds med Windows 10 Home. 
+  [DeviceStatus CSP – DeviceStatus/Antispionprogram/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
 
 ### <a name="defender"></a>Defender
 
@@ -212,7 +205,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Kräv** – Aktivera Microsoft Defender-tjänsten för skadlig kod och hindra användarna från att inaktivera funktionen.
 
 - **Lägsta version av Microsoft Defender Antimalware**:  
-  Ange den lägsta tillåtna versionen av Microsoft Defender-tjänsten för skydd mot skadlig kod. Ange till exempel `4.11.0.0`. Om du lämnar detta tomt kan du använda vilken version som helst av Microsoft Defender-tjänsten för skydd mot skadlig kod.  
+  Ange den lägsta tillåtna versionen av Microsoft Defender-tjänsten för skydd mot skadlig kod. Ange till exempel `4.11.0.0`. Om du lämnar detta tomt kan du använda vilken version som helst av Microsoft Defender-tjänsten för skydd mot skadlig kod.
 
   *Som standard finns det ingen konfigurerad version*.
 
@@ -244,7 +237,6 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Hög** – Det här alternativet är det minst säkra, och det tillåter alla hotnivåer. Det skulle kunna vara användbart om lösningen endast används i rapporteringssyfte.
   
   Information om hur du konfigurerar Microsoft Defender ATP (Advanced Threat Protection – Avancerat skydd) som skyddstjänst finns i [Aktivera Microsoft Defender ATP med villkorsstyrd åtkomst](advanced-threat-protection.md).
-
 
 ## <a name="windows-holographic-for-business"></a>Windows 10 Holographic for Business
 

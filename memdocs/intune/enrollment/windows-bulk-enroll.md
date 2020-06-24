@@ -17,12 +17,12 @@ ms.reviewer: spshumwa
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecbde2f6e6a40379cd37a6ddebe09fa9dab8e3b1
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 7894e2648b58b1afd313250dc9724f117fe6c93a
+ms.sourcegitcommit: 79ffc8afed164c408db6994806d71f64d1fc0b8f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988916"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216543"
 ---
 # <a name="bulk-enrollment-for-windows-devices"></a>Massregistrering för Windows-enheter
 
@@ -37,7 +37,7 @@ Azure AD-användare är standardanvändare på enheterna och kan ta emot de till
 
 ## <a name="create-a-provisioning-package"></a>Skapa ett konfigurationspaket
 
-1. Hämta [Windows Configuration Designer (WCD)](https://www.microsoft.com/store/apps/9nblggh4tx22) från Microsoft Store.
+1. Hämta [Windows Configuration Designer (WCD)](https://www.microsoft.com/p/windows-configuration-designer/9nblggh4tx22) från Microsoft Store.
    ![Skärmbild av Store med Windows Configuration Designer-appen](./media/windows-bulk-enroll/bulk-enroll-store.png)
 
 2. Öppna appen **Windows Configuration Designer** och välj **Konfigurera skrivbordsenheter**.

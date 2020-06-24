@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e48ba131d97e68570f1d6cb85b285ddc3198971c
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: a4f4ef6bab42f2f1b97c32a422d92247a3e564f7
+ms.sourcegitcommit: a198e4efa52b16f87049853b9d8c9854fd9fa057
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429755"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84680412"
 ---
 # <a name="macos-device-settings-to-allow-or-restrict-features-using-intune"></a>macOS-enhetsinställningar för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -190,7 +190,7 @@ Den här funktionen gäller för:
 
   - **Kodkrav**: Ange kodsignaturen för programmet eller processen.
 
-    En kodsignatur skapas när en app eller en binärfil signeras med ett utvecklarcertifikat. Du hittar beteckningen genom att köra kommandot `codesign` manuellt i appen Terminal: `codesign --display -r -/path/to/app/binary`. Kodsignaturen är allt som står efter `=>`.
+    En kodsignatur skapas när en app eller en binärfil signeras med ett utvecklarcertifikat. Du hittar beteckningen genom att köra kommandot `codesign` manuellt i appen Terminal: `codesign --display -r - /path/to/app/binary`. Kodsignaturen är allt som står efter `=>`.
 
   - **Aktivera verifiering av statisk kod**: Välj **Ja** om appen eller processen ska validera kodkravet statiskt. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
 

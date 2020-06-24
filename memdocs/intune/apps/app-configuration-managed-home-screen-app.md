@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b2c804618081a21aaf9dfd70b92d65fc14a7cc7
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 3bcb9d86cf413407bc1e0812be4b0c9e17d0f88d
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988840"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093210"
 ---
 # <a name="configure-the-microsoft-managed-home-screen-app-for-android-enterprise"></a>Konfigurera Microsofts hanterade hemskärmsapp för Android Enterprise
 
@@ -34,7 +34,7 @@ Hanterad hemskärm är appen som används för företagsägda Android Enterprise
 Om du når inställningar via enhetskonfiguration ska du vanligtvis konfigurera inställningarna där. Om du gör det kan du spara tid, minimera fel och få ett bättre Intune-stöd. Vissa av inställningarna för hanterad startskärm är dock för närvarande endast tillgängliga via fönstret **Appkonfigurationsprinciper** i Intune-konsolen. Med hjälp av det här dokumentet kan du lära dig att konfigurera olika inställningar, antingen med Configuration Designer eller ett JSON-skript. 
 
 > [!NOTE]
-> Det är för närvarande möjligt, och tillrådligt, att konfigurera godkända program och fästa webblänkar via **Appar** och **Enhetskonfiguration**. En fullständig lista över vilka inställningar som är tillgängliga i **Enhetskonfiguration** som påverkar hanterad startskärm finns i [Inställningar för särskilda enheter](../configuration/device-restrictions-android-for-work.md#dedicated-devices).  
+> Det är för närvarande möjligt, och tillrådligt, att konfigurera godkända program och fästa webblänkar via **Appar** och **Enhetskonfiguration**. En fullständig lista över vilka inställningar som är tillgängliga i **Enhetskonfiguration** som påverkar hanterad startskärm finns i [Inställningar för särskilda enheter](../configuration/device-restrictions-android-for-work.md#device-experience).  
 
 Gå först till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Appar** > **Appkonfigurationsprinciper**. Lägg till en konfigurationsprincip för **Hanterade enheter** som kör **Android** och välj **Hanterad startskärm** som den tillhörande appen. Klicka på **Konfigurationsinställningar** om du vill konfigurera de olika tillgängliga inställningarna för Hanterad startskärm. 
 
@@ -382,7 +382,7 @@ Här följer ett exempel på ett JSON-skript med alla tillgängliga konfiguratio
 Nu ger Managed Home Screen-appen tillgång till Googles Android Device Policy-app. Managed Home Screen-appen är en anpassad startfunktion som används med enheter som har registrerats i Intune som AE-dedikerade (Android Enterprise) enheter som använder helskärmsläge för flera appar. Du kan komma åt Android Device Policy-appen, eller vägleda användare till Android Device Policy-appen, för support och felsökning. Den här startfunktionen är tillgänglig när enheten registreras och låses på startskärmen i Managed Home Screen. Inga ytterligare installationer behövs för att använda den här funktionen.
 
 ## <a name="managed-home-screen-debug-screen"></a>Felsökningsskärm för hanterad startsida
-Du kan komma åt den hanterade startskärmens felsökningsskärm genom att klicka på knappen **Tillbaka** tills felsökningsskärmen visas (klicka på knappen **Tillbaka** 15 gånger eller mer). Från felsökningsskärmen kan du starta programmet Android Device Policy, visa och överföra loggar eller tillfälligt pausa helskärmsläget för att uppdatera enheten. Mer information om hur du pausar helskärmsläget finns i objektet **Lämna helskärmsläget** i [inställningarna för dedikerad enhet](../configuration/device-restrictions-android-for-work.md#dedicated-devices) för Android Enterprise. Om du vill ha ett enklare sätt att få åtkomst till den hanterade startskärmens felsökningsskärm kan du ange **Aktivera felsökningsmeny för enkel åtkomst** till `True` med hjälp av principer för programkonfiguration. 
+Du kan komma åt den hanterade startskärmens felsökningsskärm genom att klicka på knappen **Tillbaka** tills felsökningsskärmen visas (klicka på knappen **Tillbaka** 15 gånger eller mer). Från felsökningsskärmen kan du starta programmet Android Device Policy, visa och överföra loggar eller tillfälligt pausa helskärmsläget för att uppdatera enheten. Mer information om hur du pausar helskärmsläget finns i objektet **Lämna helskärmsläget** i [inställningarna för dedikerad enhet](../configuration/device-restrictions-android-for-work.md#device-experience) för Android Enterprise. Om du vill ha ett enklare sätt att få åtkomst till den hanterade startskärmens felsökningsskärm kan du ange **Aktivera felsökningsmeny för enkel åtkomst** till `True` med hjälp av principer för programkonfiguration. 
 
 ## <a name="next-steps"></a>Nästa steg
 
