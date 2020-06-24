@@ -2,7 +2,7 @@
 title: Hantera klienter på Internet
 titleSuffix: Configuration Manager
 description: Lär dig mer om att hantera klienter med Cloud Management Gateway och Internetbaserad klient hantering i Configuration Manager.
-ms.date: 03/22/2018
+ms.date: 06/10/2020
 ms.prod: configuration-manager
 ms.topic: conceptual
 ms.technology: configmgr-client
@@ -10,12 +10,12 @@ ms.assetid: c667d6af-80c4-485f-910c-896c0171fd00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c00d480b993498c5fa27e2a4d91a5f2a3bc130ee
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2840b30bee20d2fa73531b07c095e028979f6274
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710631"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715602"
 ---
 # <a name="manage-clients-on-the-internet-with-configuration-manager"></a>Hantera klienter på Internet med Configuration Manager
 
@@ -25,53 +25,53 @@ Normalt i Configuration Manager, är de flesta av de hanterade datorerna och ser
 
 Configuration Manager kan hantera Internet-anslutna klienter på två sätt:
 
--   Gateway för molnhantering
+- Gateway för molnhantering
 
--   Internetbaserad klienthantering
+- Internetbaserad klienthantering
 
+> [!NOTE]
+> Du kan ha en kombination av båda tjänsterna för en enda plats. Om en enhet hämtar princip från webbplatsen för både IBCM och CMG, slumpar den mellan dem för kommunikation. Den enda mekanism som är tillgänglig för att kontrol lera kommunikationen är klientautentisering. Om till exempel en Azure AD-ansluten klient inte litar på certifikatet för serverautentisering för den Internetbaserade hanterings platsen, kan det bara använda CMG. Om en domänansluten klient inte litar på certifikatet för serverautentisering för CMG, kan den endast använda den Internetbaserade hanterings platsen.<!-- SCCMDocs#1541 -->
 
 ## <a name="cloud-management-gateway"></a>Gateway för molnhantering
 
-Cloud Management Gateway tillhandahåller hantering av Internetbaserade klienter. Den använder en kombination av en Microsoft Azure moln tjänst och en ny plats system roll som kommunicerar med tjänsten. Internetbaserade klienter använder moln tjänsten för att kommunicera med den lokala Configuration Manager.
+Cloud Management Gateway tillhandahåller hantering av Internetbaserade klienter. Den använder en kombination av en Microsoft Azure moln tjänst och en lokal plats system roll som kommunicerar med tjänsten. Internetbaserade klienter använder moln tjänsten för att kommunicera med den lokala Configuration Manager.
 
-#### <a name="advantages"></a>Fördelar  
+### <a name="cmg-advantages"></a>CMG-fördelar
 
--   Ingen ytterligare investering för lokal infrastruktur krävs.  
+- Ingen ytterligare investering för lokal infrastruktur krävs.  
 
--   Visar inte lokal infrastruktur till Internet.  
+- Visar inte lokal infrastruktur till Internet.  
 
--   Virtuella datorer i molnet som kör tjänsten hanteras fullständigt av Azure och kräver inget underhåll.  
+- Virtuella datorer i molnet som kör tjänsten hanteras fullständigt av Azure och kräver inget underhåll.  
 
--   Konfigurera och konfigurera enkelt i Configuration Manager-konsolen.  
+- Konfigurera och konfigurera enkelt i Configuration Manager-konsolen.  
 
-#### <a name="disadvantages"></a>Nackdelar  
+### <a name="cmg-disadvantages"></a>CMG nack delar  
 
--   Moln prenumerations kostnad.  
+- Moln prenumerations kostnad.  
 
--   Hanterings data som skickas via moln tjänsten.  
+- Hanterings data som skickas via moln tjänsten.  
 
 Mer information finns i [Planera för Cloud Management Gateway](cmg/plan-cloud-management-gateway.md).  
 
-
-
 ## <a name="internet-based-client-management"></a>Internetbaserad klienthantering
 
-Den här metoden förlitar sig på Internet-riktade plats system servrar som klienterna kommunicerar med i hanterings syfte. Det kräver att klienter och plats system servrar konfigureras för internetbaserad hantering.
+Den här metoden förlitar sig på Internet-riktade plats system servrar som klienterna kommunicerar direkt med i hanterings syfte. Det kräver att klienter och plats system servrar konfigureras för internetbaserad klient hantering (IBCM).
 
-#### <a name="advantages"></a>Fördelar  
+### <a name="ibcm-advantages"></a>IBCM-fördelar
 
--   Inget beroende av moln tjänst.  
+- Inget beroende av moln tjänst.  
 
--   Ingen ytterligare kostnad som är associerad med en moln prenumeration.  
+- Ingen ytterligare kostnad som är associerad med en moln prenumeration.  
 
--   Fullständig kontroll över servrar och roller som tillhandahåller tjänsten.  
+- Fullständig kontroll över servrar och roller som tillhandahåller tjänsten.  
 
-#### <a name="disadvantages"></a>Nackdelar  
+### <a name="ibcm-disadvantages"></a>IBCM NACK delar
 
--   Kräv ytterligare investeringar i infrastrukturen.  
+- Kräv ytterligare investeringar i infrastrukturen.  
 
--   Kostnader för overheadkostnader och drift för ytterligare infrastruktur.  
+- Kostnader för overheadkostnader och drift för ytterligare infrastruktur.  
 
--   Infrastrukturen måste exponeras för Internet.  
+- Infrastrukturen måste exponeras för Internet.  
 
 Mer information finns i [Planera för internetbaserad klient hantering](plan-internet-based-client-management.md).  

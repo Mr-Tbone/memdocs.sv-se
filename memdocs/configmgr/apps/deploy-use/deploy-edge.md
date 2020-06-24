@@ -10,12 +10,12 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2c3a542355dfa01e5f4f5be12f7b1bac10f30250
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 141a60a72038156fff2579419e92e558dab5a9b8
+ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710274"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84776947"
 ---
 # <a name="microsoft-edge-management"></a>Microsoft Edge-hantering
 
@@ -36,7 +36,7 @@ För klienter riktade till en Microsoft Edge-distribution:
 
 Enheten som kör Configuration Managers konsolen behöver åtkomst till följande slut punkter:
 
-|Plats|Användning|
+|Location|Användning|
 |---|---|
 |`https://edgeupdates.microsoft.com/api/products?view=enterprise`|Information om utgåvor av Microsoft Edge|
 |`http://dl.delivery.mp.microsoft.com`|Innehåll för Microsoft Edge-versioner|
@@ -74,10 +74,10 @@ Skapa ett Microsoft Edge-program med hjälp av den inbyggda program upplevelsen 
 
 ### <a name="log-files-for-deployment"></a>Loggfiler för distribution
 
-|Plats|Logga|Användning|
+|Location|Logga|Användning|
 |---|---|---|
 | Platsserver|SMSProv.log|Visar information om skapandet av appen eller distributionen Miss lyckas.|
-| [Varierar](../../core/plan-design/hierarchy/log-files.md)|PatchDownloader.log| Visar information om innehålls hämtningen Miss lyckas|
+| [Det varierar](../../core/plan-design/hierarchy/log-files.md)|PatchDownloader.log| Visar information om innehålls hämtningen Miss lyckas|
 | Klient|  AppEnforce.log|Visar installations information|
 
 ## <a name="update-microsoft-edge"></a>Uppdatera Microsoft Edge
@@ -126,7 +126,7 @@ Aktivera följande egenskaper i [maskin varu inventerings](../../core/clients/ma
 - **Standard webbläsare (SMS_DefaultBrowser)**
    - Webb läsar program-ID
 
-- **SMS_BrowserUsage (SMS_BrowserUsage)**
+- **Webb läsar användning (SMS_BrowserUsage)**
    - BrowserName
    - UsagePercentage
 

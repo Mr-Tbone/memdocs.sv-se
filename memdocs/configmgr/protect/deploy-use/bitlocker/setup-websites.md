@@ -10,12 +10,12 @@ ms.assetid: 1cd8ac9f-b7ba-4cf4-8cd2-d548b0d6b1df
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cbd7c516515718cca96bff9b1715233964cb2aa5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 53fc4f694579fb8c53a4aea1054cf49dff21e1d2
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81717365"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715687"
 ---
 # <a name="set-up-bitlocker-portals"></a>Konfigurera BitLocker-portaler
 
@@ -28,7 +28,7 @@ Om du vill använda följande komponenter för BitLocker-hantering i Configurati
 - Självbetjänings Portal för användare
 - Webbplatsen för administration och övervakning (supportavdelningen)
 
-Du kan installera portalerna på en befintlig plats server med IIS eller använda en fristående webb server för att vara värd för dem.
+Du kan installera portalerna på en befintlig plats Server eller plats system server med IIS installerat eller använda en fristående webb server för att vara värd för dem.
 
 > [!NOTE]
 > Installera endast självbetjänings portalen och webbplatsen för administration och övervakning med en primär plats databas. I en-hierarki installerar du de här webbplatserna för varje primär plats.
@@ -37,7 +37,7 @@ Innan du börjar ska du kontrol lera [kraven](../../plan-design/bitlocker-manage
 
 ## <a name="script-usage"></a>Skript användning
 
-Den här processen använder ett PowerShell-skript, MBAMWebSiteInstaller. ps1, för att installera dessa komponenter på webb servern. Den accepterar följande parametrar:
+Den här processen använder ett PowerShell-skript MBAMWebSiteInstaller.ps1 för att installera dessa komponenter på webb servern. Den accepterar följande parametrar:
 
 - `-SqlServerName <ServerName>`(obligatoriskt): det fullständigt kvalificerade domän namnet för den primära platsens databas server.
 

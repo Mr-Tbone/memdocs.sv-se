@@ -5,17 +5,17 @@ description: Använd den här artikeln för att besvara vanliga frågor om Cloud
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/05/2019
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c1a128d-22fb-49f1-8e0b-36513a8dc117
-ms.openlocfilehash: 2bd3824df18ecdf426720a99db8720ef4b678733
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: bd846b0155a0baddad76d6027ffbd239d7dbf26f
+ms.sourcegitcommit: 5f15a3abf33ce7bfd6855ffeef2ec3cd4cd48a7f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714075"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721898"
 ---
 # <a name="frequently-asked-questions-about-the-cloud-management-gateway"></a>Vanliga frågor och svar om Cloud Management Gateway
 
@@ -23,13 +23,11 @@ ms.locfileid: "81714075"
 
 I den här artikeln får du svar på vanliga frågor om Cloud Management Gateway. Mer information finns i [Planera för Cloud Management Gateway](plan-cloud-management-gateway.md).
 
-
 ## <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 
 ### <a name="what-certificates-do-i-need"></a>Vilka certifikat behöver jag?
 
 Mer detaljerad information finns i [certifikat för Cloud Management Gateway](certificates-for-cloud-management-gateway.md).
-
 
 ### <a name="do-i-need-azure-expressroute"></a>Behöver jag Azure ExpressRoute?
 
@@ -41,30 +39,42 @@ Nej. Med [Azure ExpressRoute](/azure/expressroute/expressroute-introduction) kan
 
 Inget underhåll krävs. Designen av Cloud Management Gateway använder Azure Platform as a Service (PaaS). Med den prenumeration du anger skapar Configuration Manager de virtuella datorer, lagring och nätverk som behövs. Azure säkrar och uppdaterar den virtuella datorn. De här virtuella datorerna är inte en del av din lokala miljö, som är fallet med IaaS (Infrastructure as a Service). Cloud Management Gateway är en PaaS som utökar din Configuration Manager miljö i molnet. Mer information finns i [skydda PaaS-distributioner](/azure/security/security-paas-deployments).
 
-
 ### <a name="how-can-i-ensure-service-continuity-during-service-updates"></a>Hur kan jag garantera tjänste kontinuitet under tjänst uppdateringar?
 
 Genom att skala CMG till att omfatta två eller fler instanser får du automatiskt nytta av uppdaterings domäner i Azure. Se [Uppdatera en moln tjänst](/azure/cloud-services/cloud-services-update-azure-service).
-
 
 ### <a name="im-already-using-ibcm-if-i-add-cmg-how-do-clients-behave"></a>Jag använder redan IBCM. Hur fungerar klienterna om jag lägger till CMG?
 
 Om du redan har distribuerat [Internetbaserad klient hantering](../plan-internet-based-client-management.md) (IBCM) kan du även distribuera Cloud Management Gateway. Klienterna tar emot principer för båda tjänsterna. När de är på Internet väljer de slumpmässigt och använder en av dessa Internetbaserade tjänster.
 
-
-### <a name="do-the-user-accounts-have-to-be-in-the-same-azure-ad-tenant-as-the-tenant-associated-with-the-subscription-that-hosts-the-cmg-cloud-service"></a>Måste användar kontona finnas i samma Azure AD-klient som klienten som är associerad med den prenumeration som är värd för CMG-moln tjänsten?
+### <a name="do-the-user-accounts-have-to-be-in-the-same-azure-ad-tenant-as-the-tenant-associated-with-the-subscription-that-hosts-the-cmg-cloud-service"></a><a name="bkmk_tenant"></a>Måste användar kontona finnas i samma Azure AD-klient som klienten som är associerad med den prenumeration som är värd för CMG-moln tjänsten?
 <!--SCCMDocs-pr issue #2873-->
-Om din miljö har fler än en prenumeration kan du distribuera CMG till alla prenumerationer som kan vara värdar för Azure Cloud Services. 
+Nej, du kan distribuera CMG till alla prenumerationer som kan vara värdar för Azure Cloud Services.
+
+För att klargöra villkoren:
+
+- _Klienten_ är katalogen för användar konton och app-registreringar. En klient organisation kan ha flera prenumerationer.
+- En _prenumeration_ delar upp fakturering, resurser och tjänster. Den är kopplad till en enda klient.
 
 Den här frågan är gemensam i följande scenarier:  
 
-- När du har distinkta test-och produktions Active Directory och Azure AD-miljöer, men en enda, centraliserad Azure-värd prenumeration  
+- När du har distinkta test-och produktions Active Directory och Azure AD-miljöer, men en enda, centraliserad Azure-värd prenumeration.
 
-- Din användning av Azure har vuxit ekologiskt över olika team  
+- Din användning av Azure har vuxit ekologiskt över olika team
 
 När du använder en Resource Manager-distribution ska du publicera Azure AD-klienten som är associerad med prenumerationen. Med den här anslutningen kan Configuration Manager autentisera till Azure för att skapa, distribuera och hantera CMG.  
 
 Om du använder Azure AD-autentisering för användare och enheter som hanteras via CMG, kan du publicera Azure AD-klienten. Mer information om Azure-tjänster för moln hantering finns i [Konfigurera Azure-tjänster](../../../servers/deploy/configure/azure-services-wizard.md). När du integrerar varje Azure AD-klient kan en enda CMG tillhandahålla Azure AD-autentisering för flera klienter, oavsett värd platsen.
+
+#### <a name="example-1-one-tenant-with-multiple-subscriptions"></a>Exempel 1: en klient med flera prenumerationer
+
+Användar identiteter, enhets registreringar och app-registreringar finns i samma klient organisation. Du kan välja vilken prenumeration som CMG använder. Du kan distribuera flera CMG-tjänster från en plats till separata prenumerationer. Platsen har en 1-till-en-relation med klienten. Du bestämmer vilka prenumerationer som ska användas för olika orsaker, till exempel fakturering eller logisk avgränsning.
+
+#### <a name="example-2-multiple-tenants"></a>Exempel 2: flera klienter
+
+Med andra ord har din miljö fler än en Azure AD. Om du behöver stöd för användar-och enhets identiteter i båda klienterna måste du koppla platsen till varje klient. Den här processen kräver ett administratörs konto från varje klient organisation för att skapa app-registreringar i den klient organisationen. En plats kan sedan vara värd för CMG-tjänster i flera klienter. Du kan skapa en CMG i valfri tillgänglig prenumeration i någon av klient organisationerna. Enheter som är anslutna till eller är hybrid anslutna till Azure AD kan använda en CMG.
+
+Om användar-och enhets identiteter finns i en klient, men CMG-prenumerationen finns i en annan klient, måste du koppla platsen till båda klienterna. Tekniskt sett behövs inte klient appen för den andra klienten som bara har CMG-tjänsten. Klient programmet ger endast autentisering av användare och enheter för klienter som använder CMG-tjänsten.<!-- SCCMDocs#1902 -->
 
 ### <a name="how-does-cmg-affect-my-clients-connected-via-vpn"></a>Hur påverkar CMG mina klienter som är anslutna via VPN?
 

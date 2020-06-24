@@ -2,7 +2,7 @@
 title: Loggfilsreferens
 titleSuffix: Configuration Manager
 description: En referens till alla loggfiler för Configuration Manager klient, server och beroende komponenter.
-ms.date: 04/24/2020
+ms.date: 06/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 11efada9eaf7e16a68902d7d6d78fb6708916d05
-ms.sourcegitcommit: e618ea7cb864635c838b672bc71a1e926bf7c047
+ms.openlocfilehash: 63f8ad6827a1aa72c3aaa51e21fecbf639fbb405
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84458142"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715585"
 ---
 # <a name="log-file-reference"></a>Loggfilsreferens
 
@@ -190,10 +190,10 @@ I följande tabell listas loggfilerna som innehåller information som rör insta
 
 |Loggnamn|Beskrivning|  
 |--------------|-----------------|  
-|ccmsetup.log|Registrerar CCMSetup. exe-aktiviteter för klient konfiguration, klient uppgradering och borttagning av klienter. Kan användas för att felsöka problem med klientinstallation.|  
-|ccmsetup-ccmeval.log|Registrerar CCMSetup. exe-aktiviteter för klient status och reparation.|  
+|ccmsetup.log|Registrerar ccmsetup.exe uppgifter för klient konfiguration, klient uppgradering och borttagning av klienter. Kan användas för att felsöka problem med klientinstallation.|  
+|ccmsetup-ccmeval.log|Registrerar ccmsetup.exe uppgifter för klient status och reparation.|  
 |CcmRepair.log|Registrerar klientagentens reparationsaktiviteter.|  
-|client.msi.log|Registrerar konfigurations uppgifter som gjorts av client. msi. Kan användas för att felsöka problem med installation eller borttagning av klient.|  
+|client.msi.log|Registrerar konfigurations uppgifter som har utförts av client.msi. Kan användas för att felsöka problem med installation eller borttagning av klient.|  
 
 ### <a name="client-for-linux-and-unix"></a><a name="BKMK_LogFilesforLnU"></a>Klient för Linux och UNIX
 
@@ -366,7 +366,7 @@ I följande tabell listas loggfilerna som innehåller information som rör infor
 |--------------|-----------------|----------------------------|  
 |DWSSMSI. log|Registrerar meddelanden som genereras av installationen av en service punkt för informations lager.|Platssystemserver|  
 |DWSSSetup. log|Registrerar meddelanden som genereras av installationen av en service punkt för informations lager.|Platssystemserver|  
-|Microsoft. ConfigMgrDataWarehouse. log|Registrerar information om datasynkronisering mellan plats databasen och informations lager databasen.|Platssystemserver|  
+|Microsoft.ConfigMgrDataWarehouse. log|Registrerar information om datasynkronisering mellan plats databasen och informations lager databasen.|Platssystemserver|  
 
 ### <a name="fallback-status-point"></a><a name="BKMK_FSPLog"></a>Återställnings status punkt
 
@@ -384,7 +384,9 @@ Följande tabell listar de loggfiler som innehåller information relaterad till 
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|CcmIsapi.log|Registrerar klientmeddelandeaktivitet på slutpunkten.|Platssystemserver|  
+|CcmIsapi.log|Registrerar klientmeddelandeaktivitet på slutpunkten.|Platssystemserver|
+|CCM_STS. log|Registrerar aktiviteter för autentiseringstoken, antingen från Azure Active Directory eller plats-utfärdade klient-tokens.|Platssystemserver|
+|ClientAuth.log|Registrerar signerings-och autentiserings aktivitet.|Platssystemserver|
 |MP_CliReg.log|Registrerar den klientregistreringsaktivitet som behandlas av hanteringsplatsen.|Platssystemserver|  
 |MP_Ddr.log|Registrerar konvertering av XML. DDR-poster från klienter och kopierar dem sedan till plats servern.|Platssystemserver|  
 |MP_Framework.log|Registrerar aktiviteter för komponenterna för kärnhanteringsplatser och klientramverk.|Platssystemserver|  
@@ -394,6 +396,7 @@ Följande tabell listar de loggfiler som innehåller information relaterad till 
 |MP_Location.log|Registrerar aktivitet för placeringsbegäran och svar från klienter.|Platssystemserver|  
 |MP_OOBMgr.log|Registrerar hanterings plats aktiviteter som är relaterade till att ta emot en eng ång slö sen ord från en klient.|Platssystemserver|  
 |MP_Policy.log|Registrerar principkommunikation.|Platssystemserver|  
+|MP_RegistrationManager. log|Registrerar aktiviteter relaterade till klient registrering, till exempel validering av certifikat, CRL och tokens.|Platssystemserver|
 |MP_Relay.log|Registrerar överföring av filer som har samlats in från klienten.|Platssystemserver|  
 |MP_Retry.log|Registrerar nya försök att bearbeta maskin varu inventering.|Platssystemserver|  
 |MP_Sinv.log|Registrerar detaljer om konvertering av XML-poster för programvaruinventering från klienter och kopiering av dessa filer till platsservern.|Platssystemserver|  
@@ -472,7 +475,7 @@ I följande tabell listas loggfilerna som innehåller information som rör progr
 |NotiCtrl. log|Meddelanden om program begär Anden.|Platsserver|  
 |portlctl.log|Innehåller information om övervakningsaktiviteter för programkatalogens webbplats platssystemsroll.|Platssystemserver|  
 |portlwebMSI.log|Innehåller information om MSI-installationsaktiviteter för programkatalogens webbplatsroll.|Platssystemserver|  
-|PrestageContent.log|Innehåller information om användningen av verktyget ExtractContent. exe på en fjärran sluten distributions plats. Det här verktyget packar upp innehåll som har exporterats till en fil.|Platssystemserver|  
+|PrestageContent.log|Innehåller information om användningen av ExtractContent.exe-verktyget på en fjärr, förinstallerad distributions plats. Det här verktyget packar upp innehåll som har exporterats till en fil.|Platssystemserver|  
 |ServicePortalWebService.log|Innehåller information om programkatalogens webbtjänsts aktiviteter.|Platssystemserver|  
 |ServicePortalWebSite.log|Innehåller information programkatalogens webbplats aktiviteter.|Platssystemserver|  
 |SettingsAgent. log|Tillämpning av specifika program, registrerar dirigering av program grupps utvärdering och information om samhanterings principer.|Klient|
@@ -607,10 +610,10 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |CloudMgr.log|Innehåller information om innehålls etablering, insamling av lagrings-och bandbredds statistik och åtgärder som initierats av administratören för att stoppa eller starta moln tjänsten som kör en molnbaserad distributions plats.|Platssystemserver|  
 |DataTransferService.log|Innehåller information om all BITS-kommunikation för princip- eller paketåtkomst. Den här loggen används även för innehålls hantering av mottagar distributions platser.|Dator som är konfigurerad som en mottagar distributions plats|  
 |PullDP.log|Innehåller information om innehåll som pull-distributionsplatsen överför från källdistributionsplatser.|Dator som är konfigurerad som en mottagar distributions plats|  
-|PrestageContent.log|Registrerar information om användningen av verktyget ExtractContent. exe på en fjärran sluten distributions plats. Det här verktyget packar upp innehåll som har exporterats till en fil.|Platssystemroll|  
+|PrestageContent.log|Innehåller information om användningen av ExtractContent.exe-verktyget på en fjärr, förinstallerad distributions plats. Det här verktyget packar upp innehåll som har exporterats till en fil.|Platssystemroll|  
 |SMSdpmon.log|Innehåller information om schemalagda aktiviteter för distributions platsens hälso övervakning som är konfigurerade på en distributions plats.|Platssystemroll|  
 |smsdpprov.log|Innehåller information om uppackningen av komprimerade filer som tagits emot från en primär plats. Den här loggen genereras av WMI-providern för den fjärranslutna distributions platsen.|Distributions plats dator som inte finns med på plats servern|  
-|smsdpusage. log|Innehåller information om smsdpusage. exe som kör och samlar in data för rapporten användnings översikt för distributions platser.|Platssystemroll|  
+|smsdpusage. log|Innehåller information om de smsdpusage.exe som kör och samlar in data för sammanfattnings rapporten över användning av distributions platser.|Platssystemroll|  
 
 ### <a name="desktop-analytics"></a>Desktop Analytics
 

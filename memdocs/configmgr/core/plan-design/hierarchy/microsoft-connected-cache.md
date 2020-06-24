@@ -10,12 +10,12 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 70d4930da712eccff8bdb1f1986a68aa5fe77644
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: 5bea4fab3b32464cc0d03469d4966fe3611d2f76
+ms.sourcegitcommit: 02635469d684d233fef795d2a15615658e62db10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455284"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84814916"
 ---
 # <a name="microsoft-connected-cache-in-configuration-manager"></a>Microsoft Connected cache i Configuration Manager
 
@@ -37,7 +37,7 @@ Den här cachen är separat från Configuration Manager distributions plats inne
 
 ## <a name="how-it-works"></a>Så här fungerar det
 
-När du konfigurerar klienter att använda den anslutna cache-servern, begär de inte längre Microsoft Cloud-hanterat innehåll från Internet. Klienterna begär det här innehållet från den cache-server som är installerad på distributions platsen. Den lokala servern cachelagrar det här innehållet med hjälp av IIS-funktionen för-routning av programbegäran (ARR). Sedan kan cache-servern snabbt svara på eventuella framtida förfrågningar om samma innehåll. Om den anslutna cache-servern inte är tillgänglig eller om innehållet inte har cachelagrats, laddar klienterna ned innehållet från Internet. Klienter använder också leverans optimering, så du kan ladda ned delar av innehållet från peer-datorer i nätverket.
+När du konfigurerar klienter att använda den anslutna cache-servern, begär de inte längre Microsoft Cloud-hanterat innehåll från Internet. Klienterna begär det här innehållet från den cache-server som är installerad på distributions platsen. Den lokala servern cachelagrar det här innehållet med hjälp av IIS-funktionen för-routning av programbegäran (ARR). Sedan kan cache-servern snabbt svara på eventuella framtida förfrågningar om samma innehåll. Om den anslutna cache-servern inte är tillgänglig eller om innehållet inte har cachelagrats, laddar klienterna ned innehållet från Internet. Klienter använder också leverans optimering för att hämta delar av innehållet från peer-datorer i nätverket.
 
 ![Diagram över hur anslutna cache fungerar](media/3555764-microsoft-connected-cache.png)
 

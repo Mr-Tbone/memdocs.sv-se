@@ -2,7 +2,7 @@
 title: Krav för Internet-åtkomst
 titleSuffix: Configuration Manager
 description: Lär dig om Internet-slutpunkter så att du kan använda alla funktioner i Configuration Manager funktioner.
-ms.date: 04/21/2020
+ms.date: 06/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8423af8d4c743965f627a94a07f587fd97d45bdf
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: fb965ec6547ff1c06586464780b6db224b943000
+ms.sourcegitcommit: 9a8a9cc7dcb6ca333b87e89e6b325f40864e4ad8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84454978"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740783"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
@@ -77,7 +77,8 @@ Mer information om den här funktionen finns i [hantera Windows som en tjänst](
 
 Mer information om den här funktionen finns i [Konfigurera Azure-tjänster för användning med Configuration Manager](../../servers/deploy/configure/azure-services-wizard.md).
 
-- `management.azure.com`  
+- `management.azure.com`(Offentligt Azure-moln)
+- `management.usgovcloudapi.net`(Azure-moln för amerikanska myndigheter)
 
 ## <a name="co-management"></a>Samhantering
 
@@ -110,31 +111,66 @@ I det här avsnittet beskrivs följande funktioner:
 - Azure Active Directory (Azure AD)-integration
 - Azure AD-baserad identifiering
 
-För distribution av CMG/CDP-tjänst behöver **tjänst anslutnings punkten** åtkomst till:
+Mer information om CMG finns i [Planera för CMG](../../clients/manage/cmg/plan-cloud-management-gateway.md).
 
-- Specifika Azure-slutpunkter är olika per miljö beroende på konfigurationen. Configuration Manager lagrar dessa slut punkter i plats databasen. Fråga tabellen **AzureEnvironments** i SQL Server efter listan över Azure-slutpunkter.  
+I följande avsnitt visas slut punkterna efter roll. Vissa slut punkter refererar till en tjänst av `<name>` , som är moln tjänst namnet för CMG eller CDP. Om din CMG till exempel är `GraniteFalls.CloudApp.Net` , är den faktiska lagrings slut punkten `GraniteFalls.blob.core.windows.net` .<!-- SCCMDocs#2288 -->
 
-**CMG-anslutnings punkten** behöver åtkomst till följande tjänst slut punkter:
+### <a name="service-connection-point"></a>Tjänstanslutningspunkt
+
+För distribution av CMG/CDP-tjänst behöver tjänst anslutnings punkten åtkomst till:
+
+- Specifika Azure-slutpunkter är olika per miljö beroende på konfigurationen. Configuration Manager lagrar dessa slut punkter i plats databasen. Fråga tabellen **AzureEnvironments** i SQL Server efter listan över Azure-slutpunkter.
+
+- [Azure-tjänster](#azure-services)
+
+- För identifiering av Azure AD-användare:
+
+  - Version 1902 och senare: Microsoft Graph slut punkt`https://graph.microsoft.com/`
+
+  - Version 1810 och tidigare: Azure AD Graph-slutpunkt`https://graph.windows.net/`  
+
+### <a name="cmg-connection-point"></a>CMG kopplings punkt
+
+CMG-anslutnings punkten behöver åtkomst till följande tjänst slut punkter:
+
+- Namn på moln tjänst (för CMG eller CDP):
+  - `<name>.cloudapp.net`(Offentligt Azure-moln)
+  - `<name>.usgovcloudapp.net`(Azure-moln för amerikanska myndigheter)
 
 - Service Management-slut punkt:`https://management.core.windows.net/`  
 
-- Lagrings slut punkt: `<name>.blob.core.windows.net` och`<name>.table.core.windows.net`
+- Lagrings slut punkt (för innehålls aktive rad CMG eller CDP):
+  - `<name>.blob.core.windows.net`(Offentligt Azure-moln)
+  - `<name>.blob.core.usgovcloudapi.net`(Azure-moln för amerikanska myndigheter)
+<!--  and `<name>.table.core.windows.net` per DC, only used internally -->
 
-    Där `<name>` är namnet på moln tjänsten för din CMG eller CDP. Om din CMG till exempel är `GraniteFalls.CloudApp.Net` , så är den första lagrings slut punkten som tillåts `GraniteFalls.blob.core.windows.net` .<!-- SCCMDocs#2288 -->
+Plats systemet för CMG-anslutnings punkten stöder användning av en webbproxy. Mer information om hur du konfigurerar den här rollen för en proxy finns i [stöd för proxy server](proxy-server-support.md#configure-the-proxy-for-a-site-system-server). Anslutnings punkten för CMG måste bara ansluta till CMG-tjänstens slut punkter. Den behöver inte åtkomst till andra Azure-slutpunkter.
 
-För hämtning av Azure AD-token av **Configuration Manager-konsolen** och- **klienten**:
+### <a name="configuration-manager-client"></a>Configuration Manager-klient
 
-- ActiveDirectoryEndpoint`https://login.microsoftonline.com/`  
+- Namn på moln tjänst (för CMG eller CDP):
+  - `<name>.cloudapp.net`(Offentligt Azure-moln)
+  - `<name>.usgovcloudapp.net`(Azure-moln för amerikanska myndigheter)
 
-För identifiering av Azure AD-användare behöver **tjänst anslutnings punkten** åtkomst till:
+- Lagrings slut punkt (för innehålls aktive rad CMG eller CDP):
+  - `<name>.blob.core.windows.net`(Offentligt Azure-moln)
+  - `<name>.blob.core.usgovcloudapi.net`(Azure-moln för amerikanska myndigheter)
 
-- Version 1810 och tidigare: Azure AD Graph-slutpunkt`https://graph.windows.net/`  
+- För Azure AD-token hämtar Azure AD-slut punkten:
+  - `login.microsoftonline.com`(Offentligt Azure-moln)
+  - `login.microsoftonline.us`(Azure-moln för amerikanska myndigheter)
 
-- Version 1902 och senare: Microsoft Graph slut punkt`https://graph.microsoft.com/`
+### <a name="configuration-manager-console"></a>Configuration Manager-konsolen
 
-Plats systemet för moln hanterings platsen (CMG) stöder användning av en webbproxy. Mer information om hur du konfigurerar den här rollen för en proxy finns i [stöd för proxy server](proxy-server-support.md#configure-the-proxy-for-a-site-system-server). Anslutnings punkten för CMG måste bara ansluta till CMG-tjänstens slut punkter. Den behöver inte åtkomst till andra Azure-slutpunkter.
+- För Azure AD-token hämtar Azure AD-slut punkten:
 
-Mer information om CMG finns i [Planera för CMG](../../clients/manage/cmg/plan-cloud-management-gateway.md).
+  - Offentligt Azure-moln
+    - `login.microsoftonline.com`
+    - `aadcdn.msauth.net`<!-- MEMDocs#351 -->
+    - `aadcdn.msftauth.net`
+
+  - Azure-moln för amerikanska myndigheter
+    - `login.microsoftonline.us`
 
 ## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
 
@@ -204,18 +240,23 @@ Datorer med Configuration Manager-konsolen kräver åtkomst till följande Inter
 
 Mer information om den här funktionen finns i [produkt feedback](../../understand/find-help.md#product-feedback).
 
-### <a name="community-workspace-documentation-node"></a>Community-arbetsyta, noden dokumentation
+### <a name="community-workspace"></a>Community-arbetsyta
+
+#### <a name="documentation-node"></a>Noden dokumentation
+
+Mer information om den här konsol noden finns i [använda Configuration Manager-konsolen](../../servers/manage/admin-console.md).
 
 - `https://aka.ms`
 
 - `https://raw.githubusercontent.com`
 
-Mer information om den här konsol noden finns i [använda Configuration Manager-konsolen](../../servers/manage/admin-console.md).
+#### <a name="community-hub"></a>Community-hubb
 
-<!-- 
-Community Hub
-when in current branch, get details from SCCMDocs-pr #3403 
- -->
+Mer information om den här funktionen finns i [Community Hub](../../servers/manage/community-hub.md).
+
+- `https://github.com`
+
+- `https://communityhub.microsoft.com`
 
 ### <a name="monitoring-workspace-site-hierarchy-node"></a>Arbets ytan övervakning, noden platshierarki
 

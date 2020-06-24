@@ -5,17 +5,17 @@ description: Configuration Manager synkroniserar uppdateringar för Surface-driv
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 06/09/2020
+ms.date: 06/18/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9f9f4e6-5b4f-4b8f-94d6-db9b2b239113
-ms.openlocfilehash: 6428b6e1992af6dbb1f6d49b9ef1eac3010dd833
-ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
+ms.openlocfilehash: 04793a053e85be051ce9ffafd2f15d274cf166f0
+ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84614985"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84973085"
 ---
 # <a name="manage-surface-drivers-with-configuration-manager"></a>Hantera Surface-drivrutiner med Configuration Manager
 
@@ -85,28 +85,27 @@ De flesta driv rutiner tillhör följande produkt grupper:
 
 ## <a name="surface-models"></a><a name="bkmk_models"></a>Surface-modeller
 
-Följande tabell innehåller de funktions modeller och versioner av Windows 10 där Configuration Manager kan installera driv rutiner. Uppdateringar av Surface-drivrutiner är inte tillgängliga i Configuration Manager samma dag som de publiceras i Microsoft Updates katalogen. Configuration Manager upprätthåller en egen lista över vilka Surface-drivrutiner som ska importeras. Den här listan publiceras regelbundet och innehåller de driv rutiner som publicerades på eller före ett visst datum. Enheter som behöver Windows 10 S-produkter noteras.
+Följande tabell innehåller de funktions modeller och versioner av Windows 10 där Configuration Manager kan installera driv rutiner. Uppdateringar av Surface-drivrutiner är inte tillgängliga i Configuration Manager samma dag som de publiceras i Microsoft Updates katalogen. Configuration Manager upprätthåller en egen lista över vilka Surface-drivrutiner som ska importeras. Enheter som behöver Windows 10 S-produkter noteras. Microsoft syftar till att hämta de Surface-drivrutiner som lagts till i listan över tillåtna den andra tisdagen varje månad för att göra dem tillgängliga för synkronisering till Configuration Manager. Mer information finns i [vanliga frågor och svar](#bkmk_faq).
 
-**Surface-drivrutiner som publicerats den 9 juni 2020 är tillgängliga i Configuration Manager**. 
-
+</br>
 
 |Surface-modell|Windows 10 1709| Windows 10 1803|Windows 10 1809|Windows 10 1903|Windows 10 1909|
 |----|----|----|----|----|----|
 |Surface Pro 3|Ja| Ja| Ja |Ja|Ja|
 |Surface Pro 4|Ja| Ja| Ja |Ja|Ja|
-|Surface Pro 6|Saknas| Ja| Ja |Ja|Ja|
-|Surface Pro 7|Saknas| Saknas| Saknas |Ja|Ja|
-|Yta Pro X|Saknas| Saknas| Saknas |Ja|Ja|
+|Surface Pro 6|Ej tillämpligt| Ja| Ja |Ja|Ja|
+|Surface Pro 7|Ej tillämpligt| Ej tillämpligt| Ej tillämpligt |Ja|Ja|
+|Yta Pro X|Ej tillämpligt| Ej tillämpligt| Ej tillämpligt |Ja|Ja|
 |Surface Book|Ja| Ja| Ja |Ja|Ja|
 |Surface Book 2|Ja| Ja| Ja |Ja|Ja|
-|Surface Book 3|Saknas| Saknas| Saknas |Saknas|Ja|
+|Surface Book 3|Ej tillämpligt| Ej tillämpligt| Ej tillämpligt |Ja|Ja|
 |Surface-dator|Ja, med produkten "Windows 10 S version 1709 och senare service driv rutiner" valt| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
-|Surface laptop 2|Ja| Ja |Ja|Ja|Ja|
-|Surface laptop 3|Saknas| Saknas|Saknas|Ja |Ja|
-|Surface go|Saknas| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
-|Surface Go 2|Saknas| Ja| Ja |Ja|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
+|Surface laptop 2|Ej tillämpligt| Ja |Ja|Ja|Ja|
+|Surface laptop 3|Ej tillämpligt| Ej tillämpligt|Ej tillämpligt|Ja |Ja|
+|Surface go|Ej tillämpligt| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
+|Surface Go 2|Ej tillämpligt| Ej tillämpligt| Ja |Ja|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
 |Surface Studio|Ja| Ja| Ja |Ja|Ja|
-|Surface Studio 2|Saknas| Ja| Ja |Ja|Ja|
+|Surface Studio 2|Ej tillämpligt| Ja| Ja |Ja|Ja|
 
 ## <a name="verify-the-configuration"></a>Kontrollera konfigurationen
 
@@ -137,42 +136,25 @@ Kontrol lera att program uppdaterings platsen är korrekt konfigurerad genom att
    Den här posten är ett XML-element som visar varje produkt grupp och klassificering som är synkroniserad av program uppdaterings plats servern. Om du inte hittar de produkter som du har valt, så sparas dubbla kontroller av produkterna för program uppdaterings platsen.
 1. Du kan också vänta tills nästa synkronisering har slutförts. Kontrol lera sedan om uppdateringar för Surface-drivrutinen och inbyggd program vara visas i program uppdateringar i Configuration Manager-konsolen. Konsolen kan till exempel visa följande information: ![ synkroniserade Surface-drivrutiner i Configuration Manager-konsolen](media/synchronized-surface-drivers.png)
 
-## <a name="frequently-asked-questions-faq"></a>Vanliga frågor och svar (FAQ)
+##  <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a>Vanliga frågor och svar
 
 ### <a name="after-i-follow-the-steps-in-this-article-my-surface-drivers-are-still-not-synchronized-why"></a>När jag har följt stegen i den här artikeln synkroniseras inte mina Surface-drivrutiner. Varför?
 
-Om du synkroniserar från en WSUS-server (överordnad Windows Server Update Services) i stället för Microsoft Update kontrollerar du att den överordnade WSUS-servern är konfigurerad för att stödja och synkronisera uppdateringar av Surface-drivrutiner. Alla underordnade servrar är begränsade till uppdateringar som finns i den överordnade WSUS-serverdatabasen.
+Om du synkroniserar från en överordnad Windows Server Update Services (WSUS)-Server, i stället för Microsoft Update, kontrollerar du att den överordnade WSUS-servern är konfigurerad för att stödja och synkronisera uppdateringar av Surface-drivrutiner. Alla underordnade servrar är begränsade till uppdateringar som finns i den överordnade WSUS-serverdatabasen.
 
-### <a name="after-i-follow-the-steps-in-this-article-some-surface-drivers-are-synchronized-but-not-the-expected-drivers-why"></a>När jag har följt stegen i den här artikeln synkroniseras vissa Surface-drivrutiner, men inte de förväntade driv rutinerna. Varför?
+Det finns fler än 68 000 uppdateringar som klassificeras som driv rutiner i WSUS. För att förhindra att icke-Surface-relaterade driv rutiner synkroniseras till Configuration Manager, filtrerar Microsoft filter driv rutins synkronisering mot en lista över tillåtna. När den nya listan över tillåtna har publicerats och integrerats i Configuration Manager läggs de nya driv rutinerna till i-konsolen efter nästa synkronisering. Microsoft syftar till att hämta de Surface-drivrutiner som lagts till i listan över tillåtna den andra tisdagen varje månad för att göra dem tillgängliga för synkronisering till Configuration Manager.
 
-Bearbetnings tiden för att testa driv rutiner och bekräfta dem för distribution via WSUS och Configuration Manager varierar. Uppdateringar av Surface-drivrutiner är därför inte nödvändigt vis tillgängliga på samma dag för både manuell installation och Configuration Manager konsol distribution.
+Om din Configuration Managers miljö är offline, importeras en ny lista över tillåtna varje gång du importerar [service uppdateringar](../../core/servers/manage/use-the-service-connection-tool.md) till Configuration Manager. Du måste också importera en [ny WSUS-katalog](../get-started/synchronize-software-updates-disconnected.md) som innehåller driv rutinerna innan uppdateringarna visas i Configuration Manager-konsolen. Eftersom en fristående WSUS-miljö innehåller fler driv rutiner än en Configuration Manager-SUP rekommenderar vi att du upprättar en Configuration Manager miljö som har online-funktioner och att du konfigurerar den för att synkronisera Surface-drivrutiner. Detta ger en mindre WSUS-export som liknar offline-miljön.
 
-Det finns dessutom fler än 68 000 uppdateringar som klassificeras som driv rutiner i WSUS. För att förhindra att icke-Surface-relaterade driv rutiner synkroniseras till Configuration Manager, filtrerar Microsoft filter driv rutins synkronisering mot en lista över tillåtna. Surface-drivrutiner måste genomgå ytterligare testning innan de kan läggas till i den här listan. När den nya listan över tillåtna har publicerats och integrerats i Configuration Manager läggs de nya driv rutinerna till i-konsolen efter nästa synkronisering.
+Om din Configuration Managers miljö är online och kan identifiera nya uppdateringar kommer du att få uppdateringar av listan automatiskt. Om du inte ser de förväntade driv rutinerna granskar du WCM. log och WsyncMgr. log efter synkroniseringsfel.
 
-### <a name="is-the-driver-allow-list-published-is-it-downloadable"></a>Är listan över tillåtna driv rutiner publicerade? Är den nedladdnings bar?
+### <a name="my-configuration-manager-environment-is-offline-can-i-manually-import-surface-drivers-into-wsus"></a>Min Configuration Managers miljö är offline, kan jag importera Surface-drivrutiner manuellt till WSUS?
 
-Listan över funktions driv rutiner har inte publicerats online. Den här listan levereras till Configuration Manager via kanaler för uppdatering och underhåll. Om din Configuration Managers miljö är online och kan identifiera nya uppdateringar, får du automatiskt uppdateringar i listan.
+Nej. Även om uppdateringen importeras till WSUS importeras inte uppdateringen till Configuration Manager-konsolen för distribution om den inte visas i listan över tillåtna. Du måste använda [tjänst anslutnings verktyget](../../core/servers/manage/use-the-service-connection-tool.md) för att importera service uppdateringar till Configuration Manager för att uppdatera listan över tillåtna.
 
-Om din Configuration Managers miljö är offline, importeras en ny lista över tillåtna varje gång du importerar service uppdateringar till Configuration Manager. Du måste också importera en ny WSUS-katalog som innehåller driv rutinerna innan uppdateringarna visas i Configuration Manager-konsolen. Eftersom en fristående WSUS-miljö innehåller fler driv rutiner än en Configuration Manager program uppdaterings plats, rekommenderar vi att du upprättar en Configuration Manager miljö som har online-funktioner och att du konfigurerar den för att synkronisera Surface-drivrutiner. Detta ger en mindre WSUS-export som liknar offline-miljön.
+### <a name="what-alternative-methods-do-i-have-to-deploy-surface-driver-and-firmware-updates"></a>Vilka alternativa metoder behöver jag för att distribuera uppdateringar för Surface-drivrutiner och inbyggd program vara?
 
-En annan lösning är att använda [alternativa metoder](#bkmk_alt) för att distribuera uppdateringar för Surface-drivrutiner och inbyggd program vara.
-
-### <a name="i-require-the-latest-firmware-update-and-i-cant-wait-for-it-to-be-approved-for-import-into-configuration-manager-can-i-manually-import-the-driver-into-wsus"></a>Jag kräver den senaste uppdateringen av den inbyggda program varan och kan inte vänta på att den ska godkännas för import till Configuration Manager. Kan jag importera driv rutinen till WSUS manuellt? 
-
-Nej. Även om uppdateringen importeras till WSUS importeras inte uppdateringen till Configuration Manager-konsolen för distribution om den inte visas i listan över tillåtna.
-
-En annan lösning är att använda [alternativa metoder](#bkmk_alt) för att distribuera uppdateringar för Surface-drivrutiner och inbyggd program vara.
-
-### <a name="can-i-manually-add-a-driver-to-the-allow-list"></a>Kan jag lägga till en driv rutin manuellt i listan över tillåtna? 
-
-Nej. Listan lagras i Configuration Manager databasen. Eventuella ändringar i listan kommer att skrivas över nästa gång som CAB-filen bearbetas.
-
-
-### <a name="what-alternative-methods-do-i-have-to-deploy-surface-driver-and-firmware-updates"></a><a name="bkmk_alt"></a>Vilka alternativa metoder behöver jag för att distribuera uppdateringar för Surface-drivrutiner och inbyggd program vara?
-
-Information om hur du distribuerar uppdateringar för Surface-drivrutiner och inbyggd program vara via alternativa kanaler finns i [Hantera uppdateringar av Surface-drivrutiner och inbyggd program vara](https://docs.microsoft.com/surface/manage-surface-pro-3-firmware-updates).
-
-Om du vill ladda ned MSI-eller. exe-filen och sedan distribuera via traditionella program varu distributions kanaler, se [behålla den inbyggda program varan för den aktuella arbets ytan med Configuration Manager](https://blogs.technet.microsoft.com/thejoncallahan/2016/06/20/keeping-surface-firmware-updated-with-configuration-manager/).
+Information om hur du distribuerar uppdateringar för Surface-drivrutiner och inbyggd program vara via alternativa kanaler finns i [Hantera uppdateringar av Surface-drivrutiner och inbyggd program vara](https://docs.microsoft.com/surface/manage-surface-driver-and-firmware-updates). Om du vill ladda ned MSI-eller. exe-filen och sedan distribuera via traditionella program varu distributions kanaler, se [behålla den inbyggda program varan för den aktuella arbets ytan med Configuration Manager](https://docs.microsoft.com/archive/blogs/thejoncallahan/keeping-surface-firmware-updated-with-configuration-manager).
 
 ## <a name="next-steps"></a>Nästa steg
 

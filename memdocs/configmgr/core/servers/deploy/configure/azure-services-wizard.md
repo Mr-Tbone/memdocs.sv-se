@@ -2,7 +2,7 @@
 title: Konfigurera Azure-tjänster
 titleSuffix: Configuration Manager
 description: Anslut din Configuration Manager-miljö med Azure-tjänster för moln hantering, Microsoft Store för företag och Log Analytics.
-ms.date: 07/31/2019
+ms.date: 06/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f36da59c6924f6d2f71d882f601c6dd563840d73
-ms.sourcegitcommit: fb84a87e46f9fa126c1c24ddea26974984bc9ccc
+ms.openlocfilehash: 6ca5307de5c7df54c3cf7924bc91b0175b1bfa39
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82022542"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715330"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Konfigurera Azure-tjänster för användning med Configuration Manager
 
@@ -23,22 +23,21 @@ ms.locfileid: "82022542"
 
 Använd **guiden Azure-tjänster** för att förenkla processen med att konfigurera Azure Cloud Services som du använder med Configuration Manager. Den här guiden ger en gemensam konfigurations upplevelse med hjälp av Azure Active Directory (Azure AD)-webbappens registreringar. De här apparna tillhandahåller prenumerations-och konfigurations information och autentiserar kommunikationen med Azure AD. Appen ersätter samma information varje gång du konfigurerar en ny Configuration Manager komponent eller tjänst med Azure.
 
-
 ## <a name="available-services"></a>Tillgängliga tjänster
 
 Konfigurera följande Azure-tjänster med hjälp av den här guiden:  
 
 - **Moln hantering**: den här tjänsten gör det möjligt för webbplatsen och klienter att autentisera med hjälp av Azure AD. Den här autentiseringen möjliggör andra scenarier, t. ex.:  
 
-    - [Installera och tilldela Configuration Manager Windows 10-klienter med Azure AD för autentisering](../../../clients/deploy/deploy-clients-cmg-azure.md)  
+  - [Installera och tilldela Configuration Manager Windows 10-klienter med Azure AD för autentisering](../../../clients/deploy/deploy-clients-cmg-azure.md)  
 
-    - [Konfigurera identifiering av Azure AD-användare](configure-discovery-methods.md#azureaadisc)  
+  - [Konfigurera identifiering av Azure AD-användare](configure-discovery-methods.md#azureaadisc)  
 
-    - [Konfigurera identifiering av användar grupper i Azure AD](configure-discovery-methods.md#bkmk_azuregroupdisco)
+  - [Konfigurera identifiering av användar grupper i Azure AD](configure-discovery-methods.md#bkmk_azuregroupdisco)
 
-    - Stöd för vissa [scenarier med Cloud Management Gateway](../../../clients/manage/cmg/plan-cloud-management-gateway.md#scenarios)  
+  - Stöd för vissa [scenarier med Cloud Management Gateway](../../../clients/manage/cmg/plan-cloud-management-gateway.md#scenarios)  
 
-    - [E-postmeddelanden för app-godkännande](../../../../apps/deploy-use/app-approval.md#bkmk_email-approve)
+  - [E-postmeddelanden för app-godkännande](../../../../apps/deploy-use/app-approval.md#bkmk_email-approve)
 
 - **Log Analytics koppling**: [anslut till Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm). Synkronisera samlings data till Log Analytics.  
 
@@ -51,7 +50,7 @@ Konfigurera följande Azure-tjänster med hjälp av den här guiden:
 
 I följande tabell visas information om var och en av tjänsterna.  
 
-- **Klienter**: antalet tjänst instanser som du kan konfigurera. Varje instans måste vara en distinkt Azure-klient.  
+- **Klienter**: antalet tjänst instanser som du kan konfigurera. Varje instans måste vara en distinkt Azure AD-klient.  
 
 - **Moln**: alla tjänster har stöd för det globala Azure-molnet, men alla tjänster har inte stöd för privata moln, t. ex. Azure amerikanska myndigheters moln.  
 
@@ -84,7 +83,6 @@ Om du vill ha mer information om Azure Apps börjar du med följande artiklar:
 - [Grunderna i att registrera ett program i Azure AD](/azure/active-directory/develop/authentication-scenarios)  
 - [Registrera ditt program med din Azure Active Directory-klient](https://docs.microsoft.com/azure/active-directory/active-directory-app-registration)
 
-
 ## <a name="before-you-begin"></a>Innan du börjar
 
 När du har bestämt vilken tjänst du vill ansluta till, se tabellen i [tjänst information](#service-details). Den här tabellen innehåller information som du behöver för att slutföra guiden Azure-tjänst. Få en diskussion i förväg med din Azure AD-administratör. Bestäm vilken av följande åtgärder som ska vidtas:
@@ -96,7 +94,6 @@ När du har bestämt vilken tjänst du vill ansluta till, se tabellen i [tjänst
 Vissa tjänster kräver att Azure AD-apparna har särskilda behörigheter. Granska informationen för varje tjänst för att avgöra vilka behörigheter som krävs. Innan du kan importera en webbapp måste du till exempel först skapa en Azure-administratör i [Azure Portal](https://portal.azure.com).
 
 När du konfigurerar Log Analytics-anslutningen ger du den nya behörigheten för webb program *deltagare* i resurs gruppen som innehåller den relevanta arbets ytan. Med den här behörigheten kan Configuration Manager komma åt arbets ytan. När du tilldelar behörigheten söker du efter namnet på appens registrering i avsnittet **Lägg till användare** i Azure Portal. Den här processen är samma som när [du tillhandahåller Configuration Manager med behörighet att Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics). En Azure-administratör måste tilldela dessa behörigheter innan du importerar appen till Configuration Manager.
-
 
 ## <a name="start-the-azure-services-wizard"></a>Starta guiden Azure-tjänster
 
@@ -113,7 +110,6 @@ När du konfigurerar Log Analytics-anslutningen ger du den nya behörigheten fö
     3. Välj den Azure-tjänst som du vill ansluta till Configuration Manager.  
 
 4. Välj **Nästa** för att fortsätta till sidan [Egenskaper för Azure-appen](#azure-app-properties) i guiden Azure-tjänster.  
-
 
 ## <a name="azure-app-properties"></a>Egenskaper för Azure-App
 
@@ -151,15 +147,18 @@ När du har valt, importera eller skapat en webbapp väljer du **OK** för att s
 
 När du väljer **Importera** från dialog rutan Server App eller appen app i guiden Azure-tjänster öppnas dialog rutan importera appar. På den här sidan kan du ange information om en Azure AD-webbapp som redan har skapats i Azure Portal. Den importerar metadata om webbappen till Configuration Manager. Ange följande information:
 
-- **Namn på Azure AD-klient**
-- **Azure AD-klient-ID**
-- **Program namn**: ett eget namn för appen.
-- **Klient-ID**
-- **Hemlig nyckel**
+- **Namn på Azure AD-klient organisation**: namnet på din Azure AD-klient.
+- **Azure AD-klient-ID**: GUID för din Azure AD-klient.
+- **Program namn**: ett eget namn för appen, visnings namnet i appens registrering.
+- **Klient-ID**: **programmets (klient) ID-** värde för appens registrering. Formatet är ett standard-GUID.
+- **Hemlig nyckel**: du måste kopiera den hemliga nyckeln när du registrerar appen i Azure AD.
 - **Förfallo datum för hemlig nyckel**: Välj ett framtida datum i kalendern.
-- **App-ID-URI**: det här värdet måste vara unikt i din Azure AD-klient. Den finns i åtkomsttoken som används av Configuration Manager-klienten för att begära åtkomst till tjänsten. Det här värdet är som standard `https://ConfigMgrService`.  
+- **App-ID-URI**: det här värdet måste vara unikt i din Azure AD-klient. Den finns i åtkomsttoken som används av Configuration Manager-klienten för att begära åtkomst till tjänsten. Värdet är **program-ID-URI: n** för app Registration-posten i Azure AD-portalen. Formatet liknar `https://ConfigMgrService` .
 
 När du har angett informationen väljer du **Verifiera**. Välj **OK** för att stänga dialog rutan importera appar. Den här åtgärden återgår till antingen [sidan app](#azure-app-properties) i guiden Azure-tjänster eller i [dialog rutan Server App](#server-app-dialog).
+
+> [!TIP]
+> När du registrerar appen i Azure AD kan du behöva ange följande **omdirigerings-URI**manuellt: `ms-appx-web://Microsoft.AAD.BrokerPlugin/<ClientID>` . Ange appens klient-ID-GUID, till exempel: `ms-appx-web://Microsoft.AAD.BrokerPlugin/a26a653e-17aa-43eb-ab36-0e36c7d29f49` .<!-- SCCMDocs#1135 -->
 
 #### <a name="create-server-application-dialog"></a>Dialog rutan skapa serverprogram
 
@@ -202,7 +201,7 @@ När du har valt, importerat eller skapat en inbyggd app väljer du **OK** för 
 När du väljer **Importera** från dialog rutan för klient program öppnas dialog rutan importera appar. På den här sidan kan du ange information om en inbyggd Azure AD-app som redan har skapats i Azure Portal. Den importerar metadata om den inbyggda appen till Configuration Manager. Ange följande information:
 
 - **Program namn**: ett eget namn för appen.
-- **Klient-ID**
+- **Klient-ID**: **programmets (klient) ID-** värde för appens registrering. Formatet är ett standard-GUID.
 
 När du har angett informationen väljer du **Verifiera**. Välj **OK** för att stänga dialog rutan importera appar. Den här åtgärden återgår till dialog rutan för [klientens app](#client-app-dialog).
 
@@ -229,11 +228,7 @@ När du har angett webb-och interna appar på sidan appar, fortsätter guiden Az
 
 Slutligen avslutar du guiden Azure-tjänster via sidorna Sammanfattning, förlopp och slut för ande. Du har slutfört konfigurationen av en Azure-tjänst i Configuration Manager. Upprepa den här processen om du vill konfigurera andra Azure-tjänster.
 
-
 ## <a name="renew-secret-key"></a><a name="bkmk_renew"></a>Förnya hemlig nyckel
-
-> [!Note]
-> Om du vill förnya den hemliga nyckeln för en Azure-app i version 1802 och tidigare måste du återskapa appen.
 
 ### <a name="renew-key-for-created-app"></a>Förnya nyckel för den skapade appen
 
@@ -247,16 +242,14 @@ Slutligen avslutar du guiden Azure-tjänster via sidorna Sammanfattning, förlop
 
 Om du har importerat Azure-appen i Configuration Manager använder du Azure Portal för att förnya. Notera den nya hemliga nyckeln och förfallo datumet. Lägg till den här informationen i guiden **förnya hemlig nyckel** .  
 
-> [!Note]  
+> [!NOTE]
 > Spara den hemliga nyckeln innan du stänger Azure-programmets egenskaps **nyckel** sida. Den här informationen tas bort när du stänger sidan.
-
 
 ## <a name="view-the-configuration-of-an-azure-service"></a>Visa konfigurationen för en Azure-tjänst
 
 Visa egenskaperna för en Azure-tjänst som du har konfigurerat för användning. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **Cloud Services**och välj Azure- **tjänster**. Välj den tjänst som du vill visa eller redigera och välj sedan **Egenskaper**.
 
 Om du väljer en tjänst och väljer **ta bort** i menyfliksområdet, tar den här åtgärden bort anslutningen i Configuration Manager. Appen tas inte bort i Azure AD. Be Azure-administratören att ta bort appen när den inte längre behövs. Eller kör guiden Azure-tjänst för att importera appen.<!--483440-->
-
 
 ## <a name="cloud-management-data-flow"></a>Moln hanterings data flöde
 

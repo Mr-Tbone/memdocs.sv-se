@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 0811c695acba4859bf32de535a28ea55cf8eee07
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 7403dc26f5fe1789fcda6b3eddf30136a4cd6e68
+ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268750"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84795660"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Aktivera data delning för Skriv bords analys
 
@@ -35,8 +35,8 @@ De grundläggande funktionerna i Desktop Analytics fungerar på nivån **grundl�
 
 - Användning av appar
 - [Ytterligare App Insights](compat-assessment.md#additional-insights)
-- Distributions status data
-- Hälso övervaknings data
+- [Distributions status data](deploy-prod.md#address-deployment-alerts)
+- [Hälso övervaknings data](health-status-monitoring.md)
 
 Microsoft rekommenderar att du aktiverar den **förbättrade (begränsade)** diagnostikdata med Desktop Analytics för att maximera de fördelar du får från den.
 

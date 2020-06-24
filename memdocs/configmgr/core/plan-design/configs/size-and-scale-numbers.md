@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0861bb73769beb6c7595b896afc8d0e156eef94d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 5109ababd00011784618f9c989e1d2b756a322d9
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709644"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715636"
 ---
 # <a name="size-and-scale-numbers-for-configuration-manager"></a>Antal och gränsvärden för Configuration Manager
 
@@ -136,6 +136,9 @@ Mer information finns i CMG- [prestanda och skalning](../../clients/manage/cmg/p
 
 Information om hur många klienter och enheter som en hanterings plats har stöd för finns i avsnittet [hanterings platser](#bkmk_mp) .  
 
+> [!NOTE]
+> Om du aktiverar hanterings platsen så att den har stöd för en [Gateway för moln hantering](../../clients/manage/cmg/plan-cloud-management-gateway.md), är det Internetbaserade klient förfrågningar per normal. Storleks vägledningen för en hanterings plats påverkar inte om den fungerar lokalt eller på Internetbaserade klienter.
+
 ### <a name="software-update-point"></a>Programuppdateringsplats  
 
 Använd följande rekommendationer som bas linje. Den här bas linjen hjälper dig att fastställa information för den kapacitets planering för program uppdateringar som är lämpligt för din organisation. De faktiska kapacitets kraven kan skilja sig från rekommendationerna som anges i den här artikeln beroende på följande kriterier:
@@ -144,6 +147,9 @@ Använd följande rekommendationer som bas linje. Den här bas linjen hjälper d
 - Den maskin vara som du använder som värd för program uppdaterings platsens plats system
 - Antalet hanterade klienter
 - De andra plats system rollerna som är installerade på servern  
+
+> [!NOTE]
+> Om du aktiverar program uppdaterings platsen för att ha stöd för en [Gateway för moln hantering](../../clients/manage/cmg/plan-cloud-management-gateway.md), är det Internetbaserade klient förfrågningar per normal. Storleks vägledningen för en program uppdaterings plats ändrar inte om den fungerar lokalt eller på Internetbaserade klienter.
 
 #### <a name="capacity-planning-for-the-software-update-point"></a><a name="BKMK_SUMCapacity"></a> Kapacitetsplanering för programuppdateringsplatsen  
 

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: d5900fd4cb4fdebea23e626ffbe17c5289712b31
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: f87c4cc1bcbe8039acb5876dc8e26ac597f12e59
+ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268920"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85107296"
 ---
 # <a name="assets-in-desktop-analytics"></a>Till gångar i Analytics för Station ära datorer
 
@@ -56,7 +56,7 @@ Konfigurera **betydelsen** av appar genom att ställa in en av följande kategor
 
 När **information om program versioner** är inaktive rad, visar fönstret programinformation antalet program versioner och språk som den kombinerar. Om du sparar ändringar i appens information gäller den för alla versioner. Ange till exempel **prioritet** eller **ägare**. Vissa värden visar flera, vilket innebär att det inte finns ett konsekvent värde för alla versioner.
 
-### <a name="automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp" />Automatiskt uppgraderings beslut av system-och Store-appar
+### <a name="automatic-upgrade-decision-of-system-and-store-apps"></a><a name="bkmk_plan-autoapp"> </a> Automatiskt uppgraderings beslut av system-och Store-appar
 
 <!-- 3587232 -->
 Att identifiera **prioritets** -och **uppgraderings beslut** är viktigt för alla viktiga appar i arbets flödet för Skriv bords analys. För att minska dina ansträngningar när du kommenterar de här apparna markeras vissa typer av appar automatiskt som *inte viktiga*. Distributions planens uppgraderings beslut för de här apparna är också markerat som *klart*. Följande appar är kompatibla och bör fortsätta att fungera när du har uppgraderat Windows:

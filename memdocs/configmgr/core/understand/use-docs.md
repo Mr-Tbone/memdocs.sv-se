@@ -10,12 +10,12 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d694f9985e6d1e5118f2620e5cbd556de249788a
-ms.sourcegitcommit: 568f8f8c19fafdd0f4352d0682f1ca7a4d665d25
+ms.openlocfilehash: 31f9b1cb083400abd36858a177e87804a916362c
+ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81771318"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746530"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Använda Configuration Manager dokument
 
@@ -34,9 +34,9 @@ Allmän hjälp med produkten finns i [hitta hjälp](find-help.md).
 
 Använda följande söktips för att hitta den information du behöver:
 
-- När du använder önskad sökmotor för att hitta innehåll för Configuration Manager ska du `ConfigMgr` inkludera tillsammans med Sök nyckelorden.
+- När du använder önskad sökmotor för att hitta innehåll för Configuration Manager ska du inkludera `ConfigMgr` tillsammans med Sök nyckelorden.
 
-  - Sök efter resultat från `docs.microsoft.com/configmgr` för Configuration Manager aktuella grenen. Resultat från `docs.microsoft.com/previous-versions` gäller för äldre produkt versioner.
+  - Sök efter resultat från `docs.microsoft.com/mem/configmgr` för Configuration Manager aktuella grenen. Resultat från `docs.microsoft.com/previous-versions` gäller för äldre produkt versioner.
 
   - Om du vill fokusera Sök resultaten ytterligare till det aktuella innehålls biblioteket inkluderar `site:docs.microsoft.com` du sökmotorns omfång.
 
@@ -46,13 +46,13 @@ Använda följande söktips för att hitta den information du behöver:
   - "distributions typ" i stället för "DT"
   - "program uppdateringar" i stället för "SUM"
 
-- Om du vill söka i den aktuella artikeln använder du webbläsarens **Sök** funktion. I de flesta moderna webbläsare trycker du på **CTRL**+**F** och anger sedan Sök villkoren.
+- Om du vill söka i den aktuella artikeln använder du webbläsarens **Sök** funktion. I de flesta moderna webbläsare trycker du på **CTRL** + **F** och anger sedan Sök villkoren.
 
 - Varje artikel om `docs.microsoft.com` innehåller följande fält för att hjälpa till med sökningen av innehållet:
 
-  - **Sök** i det övre högra hörnet. Om du vill söka i alla artiklar anger du villkoren i det här fältet. Artiklar i Configuration Managers biblioteket innehåller automatiskt Sök `ConfigMgr` omfång för att bara söka i det här dokumentations biblioteket.
+  - **Sök** i det övre högra hörnet. Om du vill söka i alla artiklar anger du villkoren i det här fältet. Artiklar i Configuration Managers biblioteket innehåller automatiskt `ConfigMgr` Sök omfång för att bara söka i det här dokumentations biblioteket.
 
-  - **Filtrera efter rubrik** ovanför den vänstra innehålls förteckningen. Om du vill söka i den aktuella innehålls förteckningen anger du villkoren i det här fältet. Det här fältet matchar endast termer som visas i artikel titlarna för den aktuella noden. Till exempel **kärn infrastruktur** (`docs.microsoft.com/configmgr/core`) eller **program hantering** (`docs.microsoft.com/configmgr/apps`).
+  - **Filtrera efter rubrik** ovanför den vänstra innehålls förteckningen. Om du vill söka i den aktuella innehålls förteckningen anger du villkoren i det här fältet. Det här fältet matchar endast termer som visas i artikel titlarna för den aktuella noden. Till exempel **kärn infrastruktur** ( `docs.microsoft.com/configmgr/core` ) eller **program hantering** ( `docs.microsoft.com/configmgr/apps` ).
 
 - Har du problem med att hitta något? [Fil feedback!](#bkmk_docfeedback) När du har angett problemet anger du den sökmotor som du använder, nyckelorden du försökte och mål artikeln. Den här feedbacken hjälper Microsoft att optimera innehållet för bättre sökning.
 
@@ -83,7 +83,7 @@ Använd GitHub-problem för att skicka in följande typer av feedback:
 
 Om du skapar ett problem för icke-doc-relaterade ämnen kommer Microsoft att stänga problemen. Ett exempel:
 
-- [Produktfeedback](find-help.md#product-feedback)
+- [Produkt feedback](find-help.md#product-feedback)
 - [Produkt frågor](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)
 - [Supportförfrågningar](https://aka.ms/cmcbsupport)
 
@@ -133,7 +133,7 @@ Om du vill bidra, men inte vet var du ska starta, kan du läsa följande rekomme
 
     Microsoft-författare tilldelar dessa etiketter till problem som är lämpliga kandidater för community-bidrag.
 
-- Granska en artikel som är korrekt. Uppdatera sedan **MS. date** -metadata med `mm/dd/yyyy` hjälp av format. Detta bidrag hjälper till att hålla innehållet uppdaterat.
+- Granska en artikel som är korrekt. Uppdatera sedan **MS. date** -metadata med hjälp av `mm/dd/yyyy` format. Detta bidrag hjälper till att hålla innehållet uppdaterat.
 
 - Lägg till klargöranden, exempel eller vägledning baserat på din erfarenhet. Detta bidrag använder kraften i communityn för att dela kunskap.
 

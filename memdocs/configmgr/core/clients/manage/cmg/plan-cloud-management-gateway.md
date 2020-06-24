@@ -2,7 +2,7 @@
 title: Planera för en molnhanteringsgateway
 titleSuffix: Configuration Manager
 description: Planera och utforma Cloud Management Gateway (CMG) för att förenkla hanteringen av Internetbaserade klienter.
-ms.date: 04/21/2020
+ms.date: 06/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 67b6fc51493dce4ee1718586cbf454da91883409
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 136e11f97849e5fd8a27d9f83ea1bd44791c492e
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82254630"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715653"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planera för Cloud Management Gateway i Configuration Manager
 
@@ -85,9 +85,12 @@ Distribution och drift av CMG innehåller följande komponenter:
 
 - [**Tjänst anslutnings punktens**](../../../servers/deploy/configure/about-the-service-connection-point.md) plats system roll kör Cloud Service Manager-komponenten som hanterar alla CMG-distributions uppgifter. Dessutom övervakar och rapporterar tjänstens hälsa och loggnings information från Azure AD. Kontrol lera att tjänst anslutnings punkten är i [onlineläge](../../../servers/deploy/configure/about-the-service-connection-point.md#bkmk_modes).  
 
-- **Hanterings** platsens plats system roll tjänster klient begär Anden per normal.  
+- **Hanterings** platsens plats system roll tjänster klient begär Anden per normal.
 
-- Klient begär Anden för plats system roll tjänster för **program uppdaterings platsen** per normal.  
+- Klient begär Anden för plats system roll tjänster för **program uppdaterings platsen** per normal.
+
+    > [!NOTE]
+    > Storleks vägledningen för hanterings platser och program uppdaterings platser påverkar inte om de fungerar lokalt eller på Internetbaserade klienter. Mer information finns i [storlek och skalnings nummer](../../../plan-design/configs/size-and-scale-numbers.md#management-point).
 
 - **Internetbaserade klienter** ansluter till CMG för att komma åt lokala Configuration Manager-komponenter.
 
@@ -151,15 +154,33 @@ När klienter växlar till Internet, kommunicerar de med CMG i Azure-regionen US
 > [!TIP]
 > Du behöver inte distribuera fler än en moln hanterings-Gateway för syftet med geolokalisering. Configuration Manager-klienten påverkas i huvudsak av den små svars tiden som kan uppstå med moln tjänsten, även om den är geografiskt avlägsen.
 
+### <a name="test-environments"></a>Test miljöer
+<!-- SCCMDocs#1225 -->
+Många organisationer har separata miljöer för produktion, testning, utveckling eller kvalitets säkring. När du planerar din CMG-distribution bör du tänka på följande frågor:
+
+- Hur många Azure AD-klienter har din organisation?
+  - Finns det en separat klient för testning?
+  - Är användar-och enhets identiteter i samma klient organisation?
+
+- Hur många prenumerationer finns i varje klient?
+  - Finns det prenumerationer som är speciella för testning?
+
+Configuration Manager Azure-tjänsten för **moln hantering** stöder flera klienter. Flera Configuration Manager-platser kan ansluta till samma klient organisation. En enda plats kan distribuera flera CMG-tjänster till olika prenumerationer. Flera platser kan distribuera CMG-tjänster till samma prenumeration. Configuration Manager ger flexibilitet beroende på din miljö och dina affärs behov.
+
+Mer information finns i följande vanliga frågor och svar: [användar kontona måste finnas i samma Azure AD-klient som klienten som är kopplad till den prenumeration som är värd för CMG-moln tjänsten?](cloud-management-gateway-faq.md#bkmk_tenant)
+
 ## <a name="requirements"></a>Krav
 
 - En **Azure-prenumeration** som värd för CMG.
+
+    > [!IMPORTANT]
+    > CMG stöder inte prenumerationer med en Azure Cloud Service Provider (CSP).<!-- MEMDocs#320 -->
 
 - Ditt användar konto måste vara en **fullständig administratörs** -eller **infrastruktur administratör** i Configuration Manager.<!-- SCCMDocs#2146 -->
 
 - En **Azure-administratör** behöver delta i den första skapandet av vissa komponenter, beroende på din design. Den här personen kan vara samma som Configuration Manager administratör eller separat. Om den är separat behöver den inte behörighet i Configuration Manager.
 
-  - Om du vill distribuera CMG behöver du en **prenumerations administratör**
+  - Om du vill distribuera CMG behöver du en **prenumerations ägare**
   - Om du vill integrera-platsen med Azure AD för att distribuera CMG med hjälp av Azure Resource Manager behöver du en **Global administratör**
 
 - Minst en lokal Windows Server som värd för **CMG-anslutnings punkten**. Du kan samplacera rollen med andra Configuration Manager plats system roller.  
@@ -193,7 +214,7 @@ När klienter växlar till Internet, kommunicerar de med CMG i Azure-regionen US
 
 - Program uppdaterings platser som använder en utjämning av nätverks belastning fungerar inte med CMG. <!--505311-->  
 
-- CMG-distributioner som använder Azures resurs modell aktiverar inte stöd för Azure Cloud Service Providers (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services)  
+- CMG-distributioner som använder Azures resurs modell aktiverar inte stöd för Azure Cloud Service Providers (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [Azure-tjänster som är tillgängliga i Azure CSP-programmet](https://docs.microsoft.com/partner-center/azure-plan-available).
 
 ### <a name="support-for-configuration-manager-features"></a>Stöd för Configuration Manager funktioner
 
@@ -202,7 +223,7 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 |Funktion  |Support  |
 |---------|---------|
 | Programuppdateringar     | ![Stöds](media/green_check.png) |
-| Endpoint Protection     | ![](media/green_check.png) <sup>[Anmärkning 1](#bkmk_note1)</sup> som stöds |
+| Endpoint Protection     | ![](media/green_check.png) <sup> [Anmärkning 1](#bkmk_note1) som stöds</sup> |
 | Inventering av maskin- och programvara     | ![Stöds](media/green_check.png) |
 | Klient status och meddelanden     | ![Stöds](media/green_check.png) |
 | Kör skript     | ![Stöds](media/green_check.png) |
@@ -231,7 +252,7 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 |Nyckel|
 |--|
 |![Stöds](media/green_check.png) = Den här funktionen stöds med CMG av alla versioner av Configuration Manager som stöds  |
-|![Stöds](media/green_check.png) (*YYMM*) = den här funktionen stöds med CMG från och med version *YYMM* av Configuration Manager  |
+|![Stöds ](media/green_check.png) (*YYMM*) = den här funktionen stöds med CMG från och med *version YYMM* av Configuration Manager  |
 |![Stöds inte](media/Red_X.png) = Den här funktionen stöds inte med CMG |
 
 #### <a name="note-1-support-for-endpoint-protection"></a><a name="bkmk_note1"></a>Anmärkning 1: stöd för Endpoint Protection
@@ -333,6 +354,9 @@ Följande diagram är ett grundläggande, konceptuellt data flöde för CMG:
 
 3. Klienten ansluter till CMG via HTTPS-port 443. Den autentiserar med hjälp av Azure AD eller certifikatet för klientautentisering.  
 
+    > [!NOTE]
+    > Om du aktiverar CMG för att hantera innehåll eller använder en moln distributions plats ansluter klienten direkt till Azure Blob Storage via HTTPS-port 443. Mer information finns i [använda en molnbaserad distributions plats](../../../plan-design/hierarchy/use-a-cloud-based-distribution-point.md#bkmk_dataflow).<!-- SCCMDocs#2332 -->
+
 4. CMG vidarebefordrar klient kommunikationen över den befintliga anslutningen till anslutnings punkten för den lokala CMG. Du behöver inte öppna några inkommande brand Väggs portar.  
 
 5. Anslutnings punkten för CMG vidarebefordrar klient kommunikationen till den lokala hanterings platsen och program uppdaterings platsen.  
@@ -350,6 +374,7 @@ I den här tabellen listas de nätverks portar och protokoll som krävs. *Klient
 | CMG kopplings punkt | HTTPS | 443 | CMG-tjänst | Återställnings protokoll för att bygga CMG-kanalen till endast en instans av virtuell dator instans <sup> [2](#bkmk_port-note2)</sup> |
 | CMG kopplings punkt | HTTPS | 10124-10139 | CMG-tjänst | Reserv protokoll för att bygga CMG-kanalen till två eller flera VM-instanser <sup> [Anmärkning 3](#bkmk_port-note3)</sup> |
 | Klient | HTTPS | 443 | CMG | Allmän klient kommunikation |
+| Klient | HTTPS | 443 | Blob Storage | Hämta molnbaserad innehåll |
 | CMG kopplings punkt | HTTPS eller HTTP | 443 eller 80 | Hanteringsplats | Lokal trafik, Port beror på hanterings platsens konfiguration |
 | CMG kopplings punkt | HTTPS eller HTTP | 443 eller 80 | Programuppdateringsplats | Lokal trafik är beroende av konfigurationen av program uppdaterings platsen |
 

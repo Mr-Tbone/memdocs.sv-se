@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: 4093eafe9f8a337ce322165a529f630a759b365f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ff018bc81ecdb3d11ebb71f1850804a5679c67f7
+ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718646"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746586"
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Hantera Express-installationsfiler för Windows 10-uppdateringar
 
@@ -59,7 +59,9 @@ När du har distribuerat klient inställningar för att aktivera den här funkti
 3. Välj lämpliga klient inställningar och klicka på **Egenskaper** i menyfliksområdet.  
 
 4. Välj **program uppdaterings** gruppen. Konfigurera för **att** **aktivera installationen av Express uppdateringar på klienter**. Konfigurera **porten som används för att ladda ned innehåll för Express uppdateringar** med porten som används av http-lyssnaren på klienten.
+    - I version 1902 har **installationen av Express uppdateringar på klienter** ändrats för att **tillåta att klienter laddar ned delta innehåll när det är tillgängligt**.
     - I version 1902 ändrades **porten som används för att ladda ned innehåll för Express uppdateringar** till **den port som klienter använder för att ta emot begär Anden om delta innehåll**.
+    
 
 ## <a name="next-steps"></a>Nästa steg
 

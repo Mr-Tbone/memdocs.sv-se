@@ -2,7 +2,7 @@
 title: Tokenbaserad autentisering för CMG
 titleSuffix: Configuration Manager
 description: Registrera en klient i det interna nätverket för en unik token eller skapa en token för Mass registrering för Internetbaserade enheter.
-ms.date: 04/29/2020
+ms.date: 06/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f0703475-85a4-450d-a4e8-7a18a01e2c47
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5054d44371fd3114a9644f90d37dabf1e81d1997
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: 8146c9c2605f8693ad7375b974a5dd13c089d946
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455029"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715670"
 ---
 # <a name="token-based-authentication-for-cloud-management-gateway"></a>Tokenbaserad autentisering för Cloud Management Gateway
 
@@ -70,6 +70,16 @@ Kontrol lera följande logg fil för att kontrol lera en liknande post:<!-- bug 
 ```ClientLocation.log
 Rotating internet management point, new management point [1] is: https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 (0) with capabilities: <Capabilities SchemaVersion ="1.0"><Property Name="SSL" Version="1" /></Capabilities>
 ```
+
+Du kan felsöka installationen genom att granska `%WinDir%\ccmsetup\logs\ccmsetup.log` på klienten. Efter installationen granskar du `%WinDir%\ccm\logs\ClientIDManagerStartup.log` .
+
+Granska följande loggar på-servern:
+
+- [CMG-loggar](../../plan-design/hierarchy/log-files.md#cloud-management-gateway)
+- Hanteringsplats
+  - CCM_STS. log
+  - MP_RegistrationManager. log
+  - ClientAuth.log
 
 ### <a name="known-issues"></a>Kända problem
 

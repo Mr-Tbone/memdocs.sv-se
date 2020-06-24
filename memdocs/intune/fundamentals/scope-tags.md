@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c447c9187696a8e918886117847dde6421b4014
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 665b88932c88f523b19fec596bfd969bb93ecdd4
+ms.sourcegitcommit: 5f15a3abf33ce7bfd6855ffeef2ec3cd4cd48a7f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990739"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721915"
 ---
 # <a name="use-role-based-access-control-rbac-and-scope-tags-for-distributed-it"></a>Använda rollbaserad åtkomstkontroll (RBAC) och omfångstaggar för distribuerad IT
 
@@ -81,7 +81,6 @@ När du arbetar med omfångstaggar bör du beakta följande:
 - Du kan tilldela omfångstaggar till en Intune-objekttyp om klientorganisationen kan ha flera versioner av det objektet (till exempel rolltilldelningar eller appar).
   Följande Intune-objekt är undantag till den här regeln och stöder för närvarande inte omfångstaggar:
     - Windows ESP-profiler
-    - Enhetskategorier
     - Registreringsbegränsningar
     - Företagsenhetsidentifierare
     - Autopilot-enheter

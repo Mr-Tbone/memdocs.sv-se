@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: fdc15860f2d093a4c9c61b787ba0b780051d3f3d
-ms.sourcegitcommit: 97fbb7db14b0c4049c0fe3a36ee16a5c0cf3407a
+ms.openlocfilehash: db70eab54f319197f267173fe857d0fb147a7eba
+ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83864879"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746569"
 ---
 # <a name="monitor-connection-health"></a>Övervaka anslutningsstatus
 
@@ -217,7 +217,7 @@ Annars kan det Visa något av följande fel:
 
 - Det går inte att konfigurera SetRequestAllAppraiserVersions (Device app Compatibility data insamling). Kontrol lera loggen för undantags informationen  
 
-- Det går inte att skriva RequestAllAppraiserVersions till register nyckeln `HKLM:\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\AppCompatFlags\Appraiser` . Kontrol lera behörigheter  
+- Det går inte att skriva RequestAllAppraiserVersions till register nyckeln `HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Appraiser` . Kontrol lera behörigheter  
 
 Kontrol lera behörigheterna för den här register nyckeln. Kontrol lera att det lokala system kontot har åtkomst till den här nyckeln för att Configuration Manager-klienten ska ställas in.  
 
@@ -226,7 +226,7 @@ Mer information hittar du i M365AHandler. log på klienten.
 ### <a name="minimum-compatibility-update"></a>Lägsta kompatibilitets uppdatering
 
 <!--18,19,32-->
-Kompatibilitetsrapporten (bedömare. dll) är inte installerad eller inaktuell på enheten. Den är äldre än minimi kravet för Skriv bords analys, 10.0.17763.
+Kompatibilitetsrapporten (appraiser.dll) är inte installerad eller inaktuell på enheten. Den är äldre än minimi kravet för Skriv bords analys, 10.0.17763.
 
 Installera den senaste kompatibilitetsrapporten. Mer information finns i [Compatibility updates](enroll-devices.md#update-devices).
 
@@ -248,7 +248,7 @@ Om det inte lyckas kan det Visa något av följande fel:
 
 - Det går inte att samla in RunAppraiser (app Compatibility data). Mer information finns i loggarna  
 
-- Data insamling för programkompatibilitet (CompatTelRunner. exe) avslutades med en felkod  
+- Data insamlingen för programkompatibilitet (CompatTelRunner.exe) avslutades med en felkod  
 
 Mer information hittar du i M365AHandler. log på klienten.
 
@@ -299,7 +299,7 @@ Om det inte lyckas kan det Visa något av följande fel:
 
 - Det går inte att samla in data om enheten och dess konfiguration (RunCensus). Kontrol lera loggen för undantags informationen  
 
-- Det gick inte att hitta data insamlings verktyget för enheter och konfiguration (devicecensus. exe)  
+- Det gick inte att hitta data insamlings verktyget för enheter och konfiguration (devicecensus.exe)  
 
 Mer information hittar du i M365AHandler. log på klienten.
 
@@ -343,7 +343,7 @@ Inställningen DisableEnterpriseAuthProxy är aktive rad som standard för Windo
 
 Den här egenskapen kan visa följande fel:
 
-- Proxyautentisering är aktive rad. Ange DisableEnterpriseAuthProxy till 0 i`HKLM\Software\Policies\Microsoft\Windows\DataCollection`
+- Proxyautentisering är aktive rad. Ange DisableEnterpriseAuthProxy till 0 i`HKLM:\Software\Policies\Microsoft\Windows\DataCollection`
 
 - Det går inte att söka efter status för proxyautentisering. Kontrol lera loggen för undantags informationen
 
@@ -412,12 +412,12 @@ Om den här kontrollen lyckas konfigureras DiagTrack-komponenten korrekt på enh
 
 Annars kan det Visa något av följande fel:
 
-- Komponenten för anslutna användar upplevelser och telemetri (DiagTrack. dll) är inaktuell. Kontrol lera krav  
+- Komponenten för anslutna användar upplevelser och telemetri (diagtrack.dll) är inaktuell. Kontrol lera krav  
 
     > [!TIP]
     > Det finns ett känt problem med den utökade säkerhets uppdateringen från april 2020 (ESU) för Windows 7 som orsakar att enheter rapporterar felet. Mer information finns i [versions anteckningar](../core/servers/deploy/install/release-notes.md#dawin7-diagtrack).<!-- 7283186 -->
 
-- Det går inte att hitta komponenten för anslutna användar upplevelser och telemetri (DiagTrack. dll). Kontrol lera krav  
+- Det går inte att hitta komponenten för anslutna användar upplevelser och telemetri (diagtrack.dll). Kontrol lera krav  
 
 - Aktivera och starta tjänsten anslutna användar upplevelser och telemetri för att skicka data till Microsoft  
 

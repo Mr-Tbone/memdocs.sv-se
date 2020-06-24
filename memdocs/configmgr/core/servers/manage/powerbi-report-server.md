@@ -10,12 +10,12 @@ ms.assetid: 315e2613-dc71-46b1-80cb-26161d08103a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c596ba410adc979b92a000c28d815e89695a9b0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: f4089f52d912491b3b1396906fe391c5c334e061
+ms.sourcegitcommit: 02635469d684d233fef795d2a15615658e62db10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713669"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84814893"
 ---
 # <a name="integrate-with-power-bi-report-server"></a>Integrera med Power BI-rapportserver
 
@@ -43,6 +43,8 @@ Spara Power BI Desktop rapportmallar (. PBIX) och distribuera dem till Power BI-
     > - Använd bara en version av [Power BI Desktop som anger att den är **optimerad för Power BI-rapportserver**](https://docs.microsoft.com/power-bi/report-server/install-powerbi-desktop).
 
 - Power BI integration använder samma rollbaserad administration för rapportering.
+    > [!NOTE]
+    > Power BI-rapportserver stöder inte RBAC-aktiverade rapporter, men alla visnings program för rapporterna kommer att se samma resultat oavsett tilldelad omfattning.
 
 ## <a name="configure-the-reporting-services-point"></a>Konfigurera repor ting Services-platsen
 
@@ -101,7 +103,7 @@ Använd bara den här processen om du inte redan har en repor ting Services-plat
 
 1. När rapporten är klar att spara går du till **Arkiv** -menyn, väljer **Spara som**och väljer **Power BI-rapportserver**.
 
-1. I fönstret **Power BI-rapportserver val** anger du URL: en för repor ting Services-platsen som den **nya rapport Server adressen**. Till exempel `https://rsp.contoso.com/Reports`.
+1. I fönstret **Power BI-rapportserver val** anger du URL: en för repor ting Services-platsen som den **nya rapport Server adressen**. Exempelvis `https://rsp.contoso.com/Reports`.
 
 I Configuration Manager-konsolen visas den nya rapporten i listan över Power BI rapporter.
 

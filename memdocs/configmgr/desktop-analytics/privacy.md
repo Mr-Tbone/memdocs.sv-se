@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 82c8495391dcc22aa2784657bc1461887e412577
-ms.sourcegitcommit: 7b8921d3ea6a751de67315771d68e2d2750fa36f
+ms.openlocfilehash: 34005a63b372198bbc2e3079f8ab560ef6b2b791
+ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223652"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84795643"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Data sekretess för Skriv bords analys
 
@@ -57,6 +57,8 @@ Följande bild visar hur diagnostikdata flödar från enskilda enheter via Diagn
 
 3. Enheter skickar diagnostikdata till Microsoft Diagnostic Datahantering-tjänsten för Windows. Alla diagnostikdata krypteras över HTTPS och använder certifikat för att fästa vid överföring från enheten till den här tjänsten. Tjänsten Microsoft Datahantering finns i USA.
 
+      - Program fel, kernel-fel, program som inte svarar och andra programspecifika problem använder Windows Felrapportering API för att skicka programspecifika problem rapporter till Microsoft. Se [använda WER](https://docs.microsoft.com/windows/win32/wer/using-wer) för detaljerad information om detta data flöde.
+      
 4. Varje dag skapar Microsoft en ögonblicks bild av IT-fokuserade insikter. Den här ögonblicks bilden kombinerar diagnostikdata från Windows med dina indata för registrerade enheter. Den här processen sker i ett tillfälligt lagrings utrymme som bara används av Desktop Analytics. Den tillfälliga lagrings platsen finns i Microsoft Data Center i USA. Alla data skickas via en krypterad SSL-kanal (HTTPS). Ögonblicks bilderna åtskiljs av ett kommersiellt ID.  
 
 5. Ögonblicks bilderna kopieras sedan till din Azure Log Analytics-arbetsyta. Den här data överföringen sker över HTTPS via webhook-inmatnings protokollet, som är en funktion i Log Analytics. Skriv bords analys har inte Läs-eller Skriv behörighet till din Log Analytics-lagring. Skriv bords analys anropar webhook-API: et med en SAS-URI (signatur för delad åtkomst). Log Analytics hämtar sedan data från lagrings tabellerna via HTTPS.
@@ -78,6 +80,8 @@ Mer information om relaterade sekretess aspekter finns i följande artiklar:
 - [Windows 10, version 1809 Basic Level Windows diagnostiska händelser och fält](https://docs.microsoft.com/windows/privacy/basic-level-windows-diagnostic-events-and-fields-1809)  
 
 - [Windows 10, version 1709 Enhanced Diagnostic data events och fält som används av Desktop Analytics](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)  
+
+- [Installationsprogrammet för Windows fel rapportering](https://docs.microsoft.com/windows/deployment/upgrade/windows-error-reporting)
 
 - [Översikt över granskning av diagnostikdata](https://docs.microsoft.com/windows/privacy/diagnostic-data-viewer-overview)  
 

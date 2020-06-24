@@ -6,7 +6,7 @@ keywords: Saaswedo
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/18/2020
+ms.date: 06/08/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0db0c43d60b2b42d35e397924c8555b1ac3d64a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: c3267bf4e59d6745e480a81f8bdc39cfa2827ea4
+ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988621"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84506340"
 ---
 # <a name="set-up-a-telecom-expense-management-service-in-intune"></a>Konfigurera tjänsten för kostnadsuppföljning av telekommunikation i Intune
 
@@ -46,9 +46,6 @@ Om du vill använda Datalert-tjänsten med Intune finns det vissa konfigurations
 ## <a name="supported-platforms"></a>Plattformar som stöds
 
 - Android-enhetsadministratör 4.4 och nyare enheter som är Knox-kompatibla (Samsung)
-
-  [Android-versioner som har stöd för Knox](https://seap.samsung.com/faq/what-versions-android-support-knox-standard-and-knox-premium-sdks-0) (öppnar Samsung webbplats) visar en lista över de Knox-versioner som stöds.
-
 - iOS 8.0 och senare
 - iPadOS 13.0 och senare
 

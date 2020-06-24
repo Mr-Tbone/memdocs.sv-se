@@ -5,17 +5,17 @@ description: Lär dig mer om de olika digitala certifikat som ska användas med 
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 04/15/2020
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 7e9602ef5ea784dd3e97578d5ff585f2ca662c1e
-ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
+ms.openlocfilehash: b5a9a4a7f23942ac06dc16a0b54b657c7fd617a9
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84347210"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715619"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certifikat för Cloud Management Gateway
 
@@ -28,7 +28,8 @@ Beroende på vilket scenario du använder för att hantera klienter på Internet
   - [Certifikat för serverautentisering som utfärdats av en offentlig Provider](#bkmk_serverauthpublic)  
   - [Certifikat för serverautentisering som utfärdats från företags-PKI](#bkmk_serverauthpki)  
 
-- [Certifikat för klientautentisering](#bkmk_clientauth)  
+- [Certifikat för klientautentisering](#bkmk_clientauth)
+  - [CMG kopplings punkt](#bkmk_cmgcp)
   - [Klientens betrodda rot certifikat till CMG](#bkmk_clientroot)  
 
 - [Aktivera hanterings plats för HTTPS](#bkmk_mphttps)  
@@ -59,7 +60,7 @@ Du anger det här certifikatet när du skapar CMG i Configuration Manager-konsol
 CMG skapar en HTTPS-tjänst som Internetbaserade klienter ansluter till. Servern kräver ett certifikat för serverautentisering för att bygga en säker kanal. Hämta ett certifikat för det här syftet från en offentlig leverantör eller utfärda den från din infrastruktur för offentliga nycklar (PKI). Mer information finns i [CMG-betrott rot certifikat till klienter](#bkmk_cmgroot).
 
 > [!NOTE]
-> Certifikatet för CMG-serverautentisering stöder jokertecken. Vissa certifikat utfärdare utfärdar certifikat med hjälp av ett jokertecken för värd namnet. Till exempel `*.contoso.com`. Vissa organisationer använder jokertecken för att förenkla sin PKI och minska underhållskostnaderna.<!--491233-->  
+> Certifikatet för CMG-serverautentisering stöder jokertecken. Vissa certifikat utfärdare utfärdar certifikat med hjälp av ett jokertecken för värd namnet. Exempelvis `*.contoso.com`. Vissa organisationer använder jokertecken för att förenkla sin PKI och minska underhållskostnaderna.<!--491233-->  
 >
 > Mer information om hur du använder ett certifikat med jokertecken med en CMG finns i [Konfigurera en CMG](setup-cloud-management-gateway.md#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
@@ -73,7 +74,7 @@ Det här certifikatet kräver ett globalt unikt namn för att identifiera tjäns
     > [!Important]  
     > Skapa inte tjänsten i portalen. Använd bara den här processen för att kontrol lera namn tillgänglighet.
 
-Om du även vill aktivera CMG för innehåll kontrollerar du att namnet på CMG-tjänsten också är ett unikt namn för Azure Storage-kontot. Om CMG moln tjänst namnet är unikt, men lagrings konto namnet inte är det, Configuration Manager inte att etablera tjänsten i Azure. Upprepa proceduren ovan i Azure Portal med följande ändringar:
+Om du också aktiverar CMG för innehåll kontrollerar du att namnet på CMG-tjänsten också är ett unikt namn för Azure Storage-kontot. Om CMG moln tjänst namnet är unikt, men lagrings konto namnet inte är det, Configuration Manager inte att etablera tjänsten i Azure. Upprepa proceduren ovan i Azure Portal med följande ändringar:
 
 - Sök efter **lagrings konto**
 - Testa ditt namn i fältet **namn på lagrings konto**
@@ -90,7 +91,7 @@ Klienter måste lita på certifikatet för CMG-serverautentisering. Det finns tv
 
   - Du kan också använda Configuration Manager certifikat profiler för att etablera certifikat på klienter. Mer information finns i [Introduktion till certifikat profiler](../../../../protect/deploy-use/introduction-to-certificate-profiles.md).
 
-  - Om du planerar att [installera Configuration Manager-klienten från Intune](../../../../comanage/how-to-prepare-Win10.md#install-the-configuration-manager-client)kan du även använda Intune-certifikat profiler för att etablera certifikat på klienter. Mer information finns i [Konfigurera en certifikat profil](https://docs.microsoft.com/intune/certificates-configure).
+  - Om du planerar att [installera Configuration Manager-klienten från Intune](../../../../comanage/how-to-prepare-Win10.md#install-the-configuration-manager-client)kan du även använda Intune-certifikat profiler för att etablera certifikat på klienter. Mer information finns i [Konfigurera en certifikat profil](../../../../../intune/protect/certificates-configure.md).
 
 ### <a name="server-authentication-certificate-issued-by-public-provider"></a><a name="bkmk_serverauthpublic"></a>Certifikat för serverautentisering som utfärdats av en offentlig Provider
 
@@ -129,18 +130,35 @@ Skapa ett anpassat SSL-certifikat för CMG på samma sätt som för en moln dist
 
 ## <a name="client-authentication-certificate"></a><a name="bkmk_clientauth"></a>Certifikat för klientautentisering
 
-*Detta certifikat krävs för Internetbaserade klienter som kör Windows 8,1 och Windows 10-enheter som inte är anslutna till Azure Active Directory (Azure AD). Det krävs också på CMG-anslutnings punkten. Det krävs inte för Windows 10-klienter som är anslutna till Azure AD.*
+Certifikat krav för klientautentisering:
+
+- Detta certifikat krävs för Internetbaserade klienter som kör Windows 8,1 och Windows 10-enheter som inte är anslutna till Azure Active Directory (Azure AD).
+- Det kan krävas på CMG-anslutnings punkten. Mer information finns i [CMG Connection Point](#bkmk_cmgcp).
+- Det krävs inte för Windows 10-klienter som är anslutna till Azure AD.
+- Om platsen är version 2002 eller senare kan enheter använda en token som utfärdats av platsen. Mer information finns i [tokenbaserad autentisering för CMG](../../deploy/deploy-clients-cmg-token.md).
 
 Klienterna använder det här certifikatet för att autentisera med CMG. Windows 10-enheter som är hybrid-eller molnbaserad domänanslutna kräver inte det här certifikatet eftersom de använder Azure AD för att autentisera sig.
 
 Etablera det här certifikatet utanför Configuration Managers kontext. Använd exempelvis Active Directory Certificate Services och grup princip för att utfärda certifikat för klientautentisering. Mer information finns i [distribuera klient certifikatet för Windows-datorer](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012).
 
-För att på ett säkert sätt vidarebefordra klient begär Anden kräver CMG-anslutningen ett certifikat för klientautentisering som motsvarar certifikatet för serverautentisering på HTTPS-hanterings platsen. Om klienter använder Azure AD-autentisering, eller om du konfigurerar hanterings platsen för utökad HTTP, krävs inte det här certifikatet. Mer information finns i [Aktivera hanterings plats för https](#bkmk_mphttps).
-
 > [!NOTE]
 > Microsoft rekommenderar att du ansluter enheter till Azure AD. Internet-baserade enheter kan använda Azure AD för att autentisera med Configuration Manager. Det aktiverar också både enhets-och användar scenarier oavsett om enheten är ansluten till Internet eller om den är ansluten till det interna nätverket. Mer information finns i [Installera och registrera klienten med hjälp av Azure AD-identitet](../../deploy/deploy-clients-cmg-azure.md#install-and-register-the-client-using-azure-ad-identity).
 >
-> Från och med version 2002,<!--5686290--> Configuration Manager utökar sitt stöd för Internetbaserade enheter som inte ofta ansluter till det interna nätverket, kan inte ansluta Azure Active Directory (Azure AD) och har inte någon metod för att installera ett PKI-utfärdat certifikat. Mer information finns i [tokenbaserad autentisering för CMG](../../deploy/deploy-clients-cmg-token.md).
+> Från och med version 2002,<!--5686290--> Configuration Manager utökar sitt stöd för Internetbaserade enheter som inte ofta ansluter till det interna nätverket, kan inte ansluta till Azure AD och har inte någon metod för att installera ett PKI-utfärdat certifikat. Mer information finns i [tokenbaserad autentisering för CMG](../../deploy/deploy-clients-cmg-token.md).
+
+### <a name="cmg-connection-point"></a><a name="bkmk_cmgcp"></a>CMG kopplings punkt
+
+För att det ska gå att vidarebefordra klient begär Anden på ett säkert sätt kräver CMG-nätverksanslutningen en säker anslutning till hanterings platsen. Beroende på hur du konfigurerar enheterna och hanterings platserna avgör konfigurationen för CMG-anslutningen.
+
+- Hanterings platsen är HTTPS
+
+  - Klienter har ett certifikat för klientautentisering: CMG-anslutningssträngen kräver ett certifikat för klientautentisering som motsvarar certifikatet för serverautentisering på HTTPS-hanterings platsen.
+
+  - Klienter använder Azure AD-autentisering eller en Configuration Manager token: det här certifikatet är inte obligatoriskt.
+
+- Om du konfigurerar hanterings platsen för utökad HTTP: det här certifikatet är inte obligatoriskt.
+
+Mer information finns i [Aktivera hanterings plats för https](#bkmk_mphttps).
 
 ### <a name="client-trusted-root-certificate-to-cmg"></a><a name="bkmk_clientroot"></a>Klientens betrodda rot certifikat till CMG
 
@@ -150,8 +168,8 @@ Du anger det här certifikatet när du skapar CMG i Configuration Manager-konsol
 
 CMG måste lita på certifikat för klientautentisering. Ange den betrodda rot certifikat kedjan för att åstadkomma detta förtroende. Se till att lägga till alla certifikat i förtroende kedjan. Om certifikatet för klientautentisering till exempel utfärdas av en mellanliggande certifikat utfärdare, Lägg till både mellanliggande certifikat och rot certifikat UTFÄRDAre.
 
-> [!Note]  
-> När du skapar en CMG behöver du inte längre ange ett betrott rot certifikat på sidan Inställningar. Detta certifikat krävs inte när du använder Azure Active Directory (Azure AD) för klientautentisering, men som används för att krävas i guiden. Om du använder certifikat för PKI-klientautentisering måste du fortfarande lägga till ett betrott rot certifikat till CMG.<!--SCCMDocs-pr issue #2872 SCCMDocs issue #1319-->
+> [!NOTE]  
+> När du skapar en CMG behöver du inte längre ange ett betrott rot certifikat på sidan Inställningar. Detta certifikat krävs inte när du använder Azure AD för klientautentisering, men som används för att krävas i guiden. Om du använder certifikat för PKI-klientautentisering måste du fortfarande lägga till ett betrott rot certifikat till CMG.<!--SCCMDocs-pr issue #2872 SCCMDocs issue #1319-->
 >
 > I version 1902 och tidigare kan du bara lägga till två betrodda rot certifikat utfärdare och fyra mellanliggande certifikat utfärdare (underordnade).
 
@@ -193,7 +211,7 @@ Etablera det här certifikatet utanför Configuration Managers kontext. Använd 
 
 När du använder alternativet plats för att **använda Configuration Manager-genererade certifikat för HTTP-plats system**kan hanterings platsen vara http. Mer information finns i [Enhanced http](../../../plan-design/hierarchy/enhanced-http.md).
 
-> [!Tip]  
+> [!TIP]
 > Om du inte använder utökat HTTP och din miljö har flera hanterings platser behöver du inte använda HTTPS – aktivera dem för CMG. Konfigurera de CMG-aktiverade hanterings platserna som **endast Internet**. Sedan försöker dina lokala klienter inte använda dem.<!-- SCCMDocs#1676 -->
 
 ### <a name="enhanced-http-certificate-for-management-points"></a>Förbättrat HTTP-certifikat för hanterings platser
@@ -240,14 +258,14 @@ Konfigurera en lokal hanterings plats med följande klient anslutnings läge:
 
 - *Arbets grupp*: enheten är inte ansluten till en domän eller Azure AD, men har ett [certifikat för klientautentisering](#bkmk_clientauth).
 - *AD-* domänansluten: du ansluter enheten till en lokal Active Directory domän.
-- *Azure AD-ansluten*: även känd som molnbaserad domän ansluten, ansluter du enheten till en Azure Active Directory klient. Mer information finns i [Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join).
-- *Hybrid-ansluten*: du ansluter enheten till din lokala Active Directory och registrerar den med din Azure Active Directory. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid).
+- *Azure AD-ansluten*: även känd som molnbaserad domän ansluten, ansluter du enheten till en Azure AD-klient. Mer information finns i [Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join).
+- *Hybrid-anslutna*: du ansluter enheten till din lokala Active Directory och registrerar den med din Azure AD. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid).
 - *Http*: Ange klient anslutningarna till **http**på hanterings platsens egenskaper.
 - *Https*: Ange klient anslutningarna till **https**på hanterings platsens egenskaper.
-- *E-http*: på fliken plats egenskaper, fliken **klient dator kommunikation** , anger du plats system inställningarna till **https eller http**, och du aktiverar alternativet att **använda Configuration Manager-genererade certifikat för http-plats system**. Du konfigurerar hanterings platsen för HTTP, HTTP-hanterings platsen är klar för både HTTP-och HTTPS-kommunikation (token-auth-scenarier).
+- *E-http*: på fliken plats egenskaper, fliken **kommunikations säkerhet** , anger du plats system inställningarna till **https eller http**, och du aktiverar alternativet att **använda Configuration Manager-genererade certifikat för http-plats system**. Du konfigurerar hanterings platsen för HTTP, HTTP-hanterings platsen är klar för både HTTP-och HTTPS-kommunikation (token-auth-scenarier).
 
     > [!Note]
-    > Från och med version 1906 kallas den här fliken **kommunikations säkerhet**.<!-- SCCMDocs#1645 -->
+    > I version 1902 och tidigare kallas den här fliken **klient dator kommunikation**.<!-- SCCMDocs#1645 -->
 
 ## <a name="azure-management-certificate"></a><a name="bkmk_azuremgmt"></a>Hanterings certifikat för Azure
 

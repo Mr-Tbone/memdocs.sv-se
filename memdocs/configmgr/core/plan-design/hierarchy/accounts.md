@@ -4,18 +4,18 @@ titleSuffix: Configuration Manager
 description: Identifiera och hantera de Windows-grupper, konton och SQL-objekt som används i Configuration Manager.
 ms.date: 05/08/2020
 ms.prod: configuration-manager
-ms.technology: Configuration Manager-core
+ms.technology: configmgr-core
 ms.topic: conceptual
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5bd1284b96e1739126b8d6ee19f20699d47e5880
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 176280452039fd42dfef1d63cfdbb48169cda545
+ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268002"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84777032"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Konton som används i Configuration Manager
 
@@ -200,7 +200,7 @@ Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**oc
 Den här gruppen har också **Läs** behörighet till undermapparna på plats servern nedan `C:\Program Files\Microsoft Configuration Manager\OSD\Bin` . 
 
 Den har också följande behörigheter till undermapparna nedan `C:\Program Files\Microsoft Configuration Manager\OSD\boot` :
-- **Läsa**  
+- **Läs**  
 - **Läs & kör**  
 - **Visa mappinnehåll**  
 - **Skriva**  

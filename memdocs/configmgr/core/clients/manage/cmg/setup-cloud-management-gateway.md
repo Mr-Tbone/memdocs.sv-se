@@ -5,17 +5,17 @@ description: Använd den här steg-för-steg-processen för att konfigurera en C
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/26/2019
+ms.date: 06/10/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 8c585473ec80ad4c6dfe49d22e527e99175bfbb4
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 0960637f534bfe1361b55b2d63be87abc7894d7b
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83877417"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715245"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurera Cloud Management Gateway för Configuration Manager
 
@@ -25,7 +25,6 @@ Den här processen innehåller de steg som krävs för att konfigurera en CMG (C
 
 > [!Note]  
 > Configuration Manager aktiverar inte den här valfria funktionen som standard. Du måste aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../../servers/manage/install-in-console-updates.md#bkmk_options).
-
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -39,11 +38,11 @@ Använd följande check lista för att kontrol lera att du har nödvändig infor
 
 - Du behöver följande krav för en [Azure Resource Manager](plan-cloud-management-gateway.md#azure-resource-manager) -distribution av CMG:  
 
-    - Integrering med [Azure AD](../../../servers/deploy/configure/azure-services-wizard.md) för **moln hantering**. Identifiering av Azure AD-användare krävs inte.  
+  - Integrering med [Azure AD](../../../servers/deploy/configure/azure-services-wizard.md) för **moln hantering**. Identifiering av Azure AD-användare krävs inte. Om du vill integrera-platsen med Azure AD för att distribuera CMG med hjälp av Azure Resource Manager behöver du en **Global administratör**.
 
-    - Microsoft **. ClassicCompute**  &  **Microsoft. Storage** Resource providers måste vara registrerade i Azure-prenumerationen. Mer information finns i [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+  - Microsoft **. ClassicCompute**  &  **Microsoft. Storage** Resource providers måste vara registrerade i Azure-prenumerationen. Mer information finns i [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
-    - En prenumerations administratör måste logga in.  
+  - En **prenumerations ägare** måste logga in för att distribuera CMG.
 
 - Ett globalt unikt namn för tjänsten. Det här namnet är från [certifikatet för CMG](certificates-for-cloud-management-gateway.md#bkmk_serverauth).  
 
@@ -60,10 +59,9 @@ Använd följande check lista för att kontrol lera att du har nödvändig infor
     >
     > Från och med Configuration Manager version 1902 är Azure Resource Manager den enda distributions metoden för nya instanser av Cloud Management Gateway.<!-- 3605704 -->
 
-    - ID för Azure-prenumeration  
+  - ID för Azure-prenumeration  
 
-    - Hanterings certifikat för Azure  
-
+  - Hanterings certifikat för Azure  
 
 ## <a name="set-up-a-cmg"></a>Konfigurera en CMG
 
@@ -73,7 +71,7 @@ Gör den här proceduren på platsen på den översta nivån. Platsen är anting
 
 2. Välj **skapa Cloud Management Gateway** i menyfliksområdet.  
 
-3. På sidan Allmänt i guiden väljer du **Logga**in. Autentisera med ett administratörs konto för Azure-prenumeration. Guiden fyller automatiskt i de återstående fälten från den information som lagras under krav för Azure AD-integration. Om du äger flera prenumerationer väljer du det **prenumerations-ID** för önskad prenumeration som du vill använda.
+3. På sidan Allmänt i guiden väljer du **Logga**in. Autentisera med ett ägar konto för Azure- **prenumeration** . Guiden fyller automatiskt i de återstående fälten från den information som lagras under krav för Azure AD-integration. Om du äger flera prenumerationer väljer du **prenumerations-ID** för den prenumeration som du vill använda.
 
     > [!Note]  
     > Från och med version 1810 var klassiska tjänst distributioner i Azure föråldrade i Configuration Manager. I version 1902 och tidigare väljer du **Azure Resource Manager distribution** som distributions metoden CMG.
@@ -100,7 +98,7 @@ Gör den här proceduren på platsen på den översta nivån. Platsen är anting
 10. Välj **certifikat** för att lägga till betrodda rot certifikat för klienter. Lägg till alla certifikat i förtroende kedjan.  
 
     > [!Note]  
-    > Från och med version 1806 behöver du inte längre ange ett betrott rot certifikat på sidan inställningar när du skapar en CMG. Detta certifikat krävs inte när du använder Azure Active Directory (Azure AD) för klientautentisering, men som används för att krävas i guiden. Om du använder certifikat för PKI-klientautentisering måste du fortfarande lägga till ett betrott rot certifikat till CMG.<!--SCCMDocs-pr issue #2872-->  
+    > Ett betrott rot certifikat krävs inte när Azure Active Directory (Azure AD) används för klientautentisering. Om du använder certifikat för PKI-klientautentisering måste du lägga till ett betrott rot certifikat till CMG.<!--SCCMDocs-pr issue #2872-->
     >
     > I version 1902 och tidigare kan du bara lägga till två betrodda rot certifikat utfärdare och fyra mellanliggande certifikat utfärdare (underordnade).<!-- SCCMDocs-pr#4022 -->
 
@@ -108,7 +106,7 @@ Gör den här proceduren på platsen på den översta nivån. Platsen är anting
 
 12. Från och med version 1906 kan du **FRAMTVINGA TLS 1,2**. Den här inställningen gäller endast för den virtuella Azure-moln tjänsten. Den gäller inte för lokala Configuration Manager plats servrar eller klienter. Mer information om TLS 1,2 finns i [så här aktiverar du tls 1,2](../../../plan-design/security/enable-tls-1-2.md).<!-- SCCMDocs-pr#4021 -->
 
-13. Från och med version 1806 aktiverar guiden följande alternativ: **Tillåt CMG att fungera som en moln distributions plats och hantera innehåll från Azure Storage**. Nu kan en CMG också hantera innehåll till klienter. Den här funktionen minskar de nödvändiga certifikaten och kostnaden för virtuella Azure-datorer.  
+13. Som standard aktiverar guiden följande alternativ: **Tillåt CMG att fungera som en moln distributions plats och hantera innehåll från Azure Storage**. En CMG kan också hantera innehåll till klienter. Den här funktionen minskar de nödvändiga certifikaten och kostnaden för virtuella Azure-datorer.
 
 14. Välj **Nästa**.  
 
@@ -116,9 +114,8 @@ Gör den här proceduren på platsen på den översta nivån. Platsen är anting
 
 16. Granska inställningarna och välj **Nästa**. Configuration Manager börjar konfigurera tjänsten. När du har stängt guiden tar det mellan fem och 15 minuter att etablera tjänsten helt i Azure. Kontrol lera kolumnen **status** för den nya CMG för att avgöra när tjänsten är klar.  
 
-    > [!Note]  
+    > [!NOTE]
     > Om du vill felsöka CMG-distributioner använder du **CloudMgr. log** och **CMGSetup. log**. Mer information finns i [loggfiler](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
-
 
 ## <a name="configure-primary-site-for-client-certificate-authentication"></a>Konfigurera primär plats för autentisering av klient certifikat
 
@@ -128,23 +125,21 @@ Om du använder [certifikat för klientautentisering](certificates-for-cloud-man
 
 2. Välj den primära plats som de Internetbaserade klienterna ska tilldelas till och välj **Egenskaper**.  
 
-3. Växla till fliken **klient dator kommunikation** i egenskaps bladet primär plats, markera **Använd PKI-klientcertifikat (klientautentisering) när det är tillgängligt**.  
+3. Växla till fliken **kommunikations säkerhet** i egenskaps sidan primär plats, markera **Använd PKI-klientcertifikat (klientautentisering) när det är tillgängligt**.  
 
-    > [!Note]
-    > Från och med version 1906 kallas den här fliken **kommunikations säkerhet**.<!-- SCCMDocs#1645 -->  
+    > [!NOTE]
+    > I version 1902 och tidigare kallas den här fliken **klient dator kommunikation**.<!-- SCCMDocs#1645 -->
 
 4. Om du inte publicerar en CRL avmarkerar du alternativet för **klienter kontrol lera listan över återkallade certifikat (CRL) för plats system**.  
-
 
 ## <a name="add-the-cmg-connection-point"></a>Lägg till anslutnings punkten CMG
 
 Anslutnings punkten för CMG är plats system rollen för att kommunicera med CMG. Om du vill lägga till anslutnings punkten för CMG följer du de allmänna anvisningarna för att [Installera plats system roller](../../../servers/deploy/configure/install-site-system-roles.md). På sidan urval för system roll i guiden Lägg till plats system roll väljer du **Cloud Management Gateway-anslutnings punkt**. Välj sedan namnet på den **moln hanterings Gateway** som servern ansluter till. Guiden visar regionen för den valda CMG.
 
-> [!Important]
+> [!IMPORTANT]
 > CMG-anslutnings punkten måste ha ett [certifikat för klientautentisering](certificates-for-cloud-management-gateway.md#bkmk_clientauth) i vissa scenarier.
 
 Om du vill felsöka CMG-tjänstens hälsa använder du **CMGService. log** och **SMS_Cloud_ProxyConnector. log**. Mer information finns i [loggfiler](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
-
 
 ## <a name="configure-client-facing-roles-for-cmg-traffic"></a>Konfigurera klient riktade roller för CMG trafik
 
@@ -162,7 +157,6 @@ Konfigurera hanterings platsen och plats systemen för program uppdaterings plat
 
 Upprepa de här stegen för ytterligare hanterings platser vid behov och för alla program uppdaterings platser.
 
-
 ## <a name="configure-boundary-groups"></a>Konfigurera gränser grupper
 
 <!--3640932-->
@@ -172,17 +166,16 @@ Mer information om avgränsnings grupper finns i [Konfigurera gränser grupper](
 
 När du [skapar eller konfigurerar en avgränsnings grupp](../../../servers/deploy/configure/boundary-group-procedures.md), på fliken **referenser** , lägger du till en moln hanterings-Gateway. Den här åtgärden kopplar CMG till den här gränser gruppen.
 
-
 ## <a name="configure-clients-for-cmg"></a>Konfigurera klienter för CMG
 
-När CMG-och plats system rollerna körs hämtar klienterna platsen för CMG-tjänsten automatiskt på nästa plats-begäran. Klienter måste finnas i intranätet för att kunna ta emot platsen för CMG-tjänsten, såvida du inte [installerar och tilldelar Windows 10-klienter med Azure AD för autentisering](../../deploy/deploy-clients-cmg-azure.md). Avsöknings cykeln för plats begär Anden är var 24: e timme. Om du inte vill vänta på den vanliga schemalagda plats förfrågan kan du framtvinga begäran genom att starta om värd tjänsten för SMS-agent (ccmexec. exe) på datorn.  
+När CMG-och plats system rollerna körs hämtar klienterna platsen för CMG-tjänsten automatiskt på nästa plats-begäran. Klienter måste finnas i intranätet för att kunna ta emot platsen för CMG-tjänsten, såvida du inte [installerar och tilldelar Windows 10-klienter med Azure AD för autentisering](../../deploy/deploy-clients-cmg-azure.md). Avsöknings cykeln för plats begär Anden är var 24: e timme. Om du inte vill vänta på den vanliga schemalagda plats förfrågan kan du framtvinga begäran. Om du vill framtvinga begäran startar du om tjänsten värd för SMS-agent (ccmexec.exe) på datorn.
 
-> [!Note]
+> [!NOTE]
 > Som standard tar alla klienter emot CMG-principen. Styr det här beteendet med klient inställningen så att [klienter kan använda en moln hanterings-Gateway](../../deploy/about-client-settings.md#enable-clients-to-use-a-cloud-management-gateway).
 
 Configuration Manager klienten avgör automatiskt om den finns på intranätet eller Internet. Om klienten kan kontakta en domänkontrollant eller en lokal hanterings plats, anger den sin Anslutnings typ till **intranätet för närvarande**. Annars växlar den till **för närvarande Internet**och använder platsen för CMG-tjänsten för att kommunicera med platsen.
 
->[!NOTE]
+> [!NOTE]
 > Du kan tvinga klienten att alltid använda CMG oavsett om den är på intranätet eller Internet. Den här konfigurationen är användbar i testnings syfte eller för klienter som du vill tvinga att alltid använda CMG. Ange följande register nyckel på klienten:
 >
 > `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\Security, ClientAlwaysOnInternet = 1`
@@ -191,17 +184,20 @@ Configuration Manager klienten avgör automatiskt om den finns på intranätet e
 >
 > Den här inställningen gäller alltid, även om klienten växlar till en plats där gränser för gränser grupper annars utnyttjar lokala resurser.
 
+Kontrol lera att klienterna har principen som anger CMG genom att öppna en Windows PowerShell-kommandotolk som administratör på klient datorn och kör följande kommando:
 
-Kontrol lera att klienterna har principen som anger CMG genom att öppna en Windows PowerShell-kommandotolk som administratör på klient datorn och kör följande kommando:`Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}`
+```powershell
+Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}`
+```
 
 Det här kommandot visar alla Internetbaserade hanterings platser som klienten känner till. Även om CMG inte är tekniskt en Internetbaserad hanterings plats kan klienter Visa den som en.
 
-> [!Note]  
+> [!NOTE]  
 > Om du vill felsöka CMG-klient trafiken använder du **CMGHttpHandler. log**, **CMGService. log**och **SMS_Cloud_ProxyConnector. log**. Mer information finns i [loggfiler](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
 
 ### <a name="install-off-premises-clients-using-a-cmg"></a>Installera lokala klienter med en CMG
 
-Om du vill installera klient agenten på system som inte är anslutna till intranätet måste något av följande villkor vara uppfyllt. I samtliga fall krävs ett lokalt administratörs konto på mål systemen.
+Om du vill installera Configuration Manager-klienten på system som inte är anslutna till intranätet måste något av följande villkor vara uppfyllt. I samtliga fall krävs ett lokalt administratörs konto på mål systemen.
 
 1. Den Configuration Manager webbplatsen har kon figurer ATS korrekt för att använda PKI-certifikat för klientautentisering. Dessutom har klient systemen ett giltigt, unikt och betrott certifikat för klientautentisering som tidigare utfärdats till dem.
 
@@ -209,35 +205,37 @@ Om du vill installera klient agenten på system som inte är anslutna till intra
 
 3. Webbplatsen kör Configuration Manager version 2002 eller senare.
 
-För alternativ 1 och 2 använder du parametern **/MP** för att ange URL: en för CMG när du anropar **CCMSetup. exe**. Mer information finns i [om klient installations parametrar och egenskaper](../../deploy/about-client-installation-properties.md#mp).
+För alternativ 1 och 2, när du kör **ccmsetup.exe**använder du parametern **/MP** för att ange URL: en för CMG. Mer information finns i [om klient installations parametrar och egenskaper](../../deploy/about-client-installation-properties.md#mp).
 
-För alternativ 3, från och med Configuration Manager version 2002, kan du installera klient agenten på system som inte är anslutna till intranätet med en token för Mass registrering. Mer information om den här metoden finns i [skapa en token för Mass registrering](../../deploy/deploy-clients-cmg-token.md#create-a-bulk-registration-token).
+För alternativ 3, från och med Configuration Manager version 2002, kan du installera-klienten på system som inte är anslutna till intranätet med hjälp av en token för Mass registrering. Mer information om den här metoden finns i [skapa en token för Mass registrering](../../deploy/deploy-clients-cmg-token.md#create-a-bulk-registration-token).
 
 ### <a name="configure-off-premises-clients-for-cmg"></a>Konfigurera lokala klienter för CMG
 
 Du kan ansluta system till en nyligen konfigurerad CMG där följande villkor är uppfyllda:  
 
-- Configuration Manager klient agenten har redan installerats på system.
+- Configuration Manager-klienten har redan installerats på systemen.
 
 - System är inte anslutna och kan inte anslutas till intranätet.
 
 - System uppfyller något av följande villkor:
 
-  - Varje har ett giltigt, unikt och betrott certifikat för klientautentisering som utfärdats tidigare.
+  - Var och en har ett giltigt, unikt och betrott certifikat för klientautentisering som utfärdats tidigare
 
   - Azure AD-domänansluten
 
-  - Hybrid Azure AD-domänanslutna.
+  - Hybrid Azure AD-domänanslutna
 
-- Du vill inte eller kan du inte fullständigt installera om den befintliga klient agenten.
+- Du vill inte eller kan du inte fullständigt installera om den befintliga klienten.
 
 - Du har en metod för att ändra ett dator register värde och starta om värd tjänsten för **SMS-agenten** med ett lokalt administratörs konto.
 
-Om du vill framtvinga anslutningen på de här systemen skapar du registervärdet **CMGFQDNs** (av typen REG_SZ) under **HKLM\Software\Microsoft\CCM**. Ange det här värdet till URL: en för CMG (till exempel `https://contoso-cmg.contoso.com` ). När du har angett startar du om tjänsten **värd för SMS-agent** på klient systemet.
+Om du vill framtvinga anslutningen på de här systemen skapar du register posten **REG_SZ** `CMGFQDNs` i nyckeln `HKLM\Software\Microsoft\CCM` . Ange dess värde till URL: en för CMG, till exempel `https://contoso-cmg.contoso.com` . Starta sedan om Windows-tjänsten för **värd för SMS-agent** på enheten.
 
-Om Configuration Manager-klienten inte har en aktuell CMG-eller internetbaserad hanterings plats som angetts i registret kontrollerar den automatiskt **CMGFQDNs** -registervärdet. Den här kontrollen sker var 25: e timme, när värd tjänsten för **SMS-agenten** startar eller när den identifierar en nätverks ändring. När klienten ansluter till platsen och lär sig om en CMG, uppdaterar den automatiskt det här värdet.
+Om Configuration Manager-klienten inte har en aktuell CMG-eller internetbaserad hanterings plats som angetts i registret kontrollerar den automatiskt `CMGFQDNs` registervärdet. Den här kontrollen sker var 25: e timme, när värd tjänsten för **SMS-agenten** startar eller när den identifierar en nätverks ändring. När klienten ansluter till platsen och lär sig om en CMG, uppdaterar den automatiskt det här värdet.
 
 ## <a name="modify-a-cmg"></a>Ändra en CMG
+
+### <a name="cmg-properties"></a>Egenskaper för CMG
 
 När du har skapat en CMG kan du ändra vissa inställningar. Välj CMG i Configuration Manager-konsolen och välj **Egenskaper**. Konfigurera inställningar på följande flikar:  
 
@@ -255,12 +253,11 @@ När du har skapat en CMG kan du ändra vissa inställningar. Välj CMG i Config
 
 - **Verifiera åter kallelse av klient certifikat**: om du inte ursprungligen aktiverar den här inställningen när du skapade CMG kan du aktivera den efteråt när du har publicerat listan över återkallade certifikat. Mer information finns i [publicera listan över återkallade certifikat](security-and-privacy-for-cloud-management-gateway.md#bkmk_crl).  
 
-- **Tillåt CMG att fungera som en moln distributions plats och hantera innehåll från Azure Storage**: från och med version 1806 är det här nya alternativet aktiverat som standard. Nu kan en CMG också hantera innehåll till klienter. Den här funktionen minskar de nödvändiga certifikaten och kostnaden för virtuella Azure-datorer.<!--1358651-->  
+- **Tillåt CMG att fungera som en moln distributions plats och hantera innehåll från Azure Storage**: det här alternativet är aktiverat som standard. En CMG kan också hantera innehåll till klienter. Den här funktionen minskar de nödvändiga certifikaten och kostnaden för virtuella Azure-datorer.<!--1358651-->
 
 #### <a name="alerts"></a>Aviseringar
 
-Konfigurera om aviseringarna när som helst när du har skapat CMG.
-
+Konfigurera om aviseringarna när som helst efter att du har skapat CMG.
 
 ### <a name="redeploy-the-service"></a>Distribuera om tjänsten
 
@@ -296,7 +293,7 @@ Om du har en befintlig CMG för den klassiska distributions metoden måste du di
 
     4. Ta bort den klassiska CMG.  
 
-> [!Tip]  
+> [!TIP]
 > Så här fastställer du den aktuella distributions modellen för en CMG:<!--SCCMDocs issue #611-->  
 >
 > 1. I Configuration Manager-konsolen går du till arbets ytan **Administration** , expanderar **Cloud Services**och väljer noden **Cloud Management Gateway** .  
@@ -312,7 +309,6 @@ Om du har en befintlig CMG för den klassiska distributions metoden måste du di
 ### <a name="delete-the-service"></a>Ta bort tjänsten
 
 Om du behöver ta bort CMG ska du också göra det från Configuration Manager-konsolen. Om du tar bort alla komponenter i Azure manuellt blir systemet inkonsekvent. Det här läget lämnar överblivna information och oväntade beteenden kan uppstå.
-
 
 ## <a name="next-steps"></a>Nästa steg
 

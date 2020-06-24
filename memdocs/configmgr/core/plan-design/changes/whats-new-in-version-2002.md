@@ -2,7 +2,7 @@
 title: Nyheter i version 2002
 titleSuffix: Configuration Manager
 description: Få information om ändringar och nya funktioner som introducerats i version 2002 av Configuration Manager aktuella grenen.
-ms.date: 05/26/2020
+ms.date: 06/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: de718cdc-d0a9-47e2-9c99-8fa2cb25b5f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: afdcc608133d306042c9c6dc817396bb2fc3f387
-ms.sourcegitcommit: b0ae4a9972bac3518d0d4f33e033ac492eefe3c1
+ms.openlocfilehash: 4100f8747418bff769a7830fa63383ce545895ce
+ms.sourcegitcommit: 5f15a3abf33ce7bfd6855ffeef2ec3cd4cd48a7f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84126489"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721864"
 ---
 # <a name="whats-new-in-version-2002-of-configuration-manager-current-branch"></a>Vad är nytt i version 2002 av Configuration Manager aktuella grenen
 
@@ -329,7 +329,7 @@ Mer information finns i [synkronisera Office 365-uppdateringar från en frånkop
 <!-- 5229962 -->
 Configuration Manager har utökat sitt stöd för onboarding-enheter till Microsoft Defender ATP. Mer information finns i [Microsoft Defender Avancerat skydd](../../../protect/deploy-use/windows-defender-advanced-threat-protection.md#onboard-devices).
 
-## <a name="onboard-configuration-manager-clients-to-microsoft-defender-atp-via-the-microsoft-endpoint-manager-admin-center"></a><a name="bkmk_atp"></a>Publicera Configuration Manager klienter till Microsoft Defender ATP via administrations Center för Microsoft Endpoint Manager
+### <a name="onboard-configuration-manager-clients-to-microsoft-defender-atp-via-the-microsoft-endpoint-manager-admin-center"></a><a name="bkmk_atp"></a>Publicera Configuration Manager klienter till Microsoft Defender ATP via administrations Center för Microsoft Endpoint Manager
 <!--5691658-->
 Nu kan du distribuera hanterings principer för Microsoft Defender ATP-EDR för att Configuration Manager hanterade klienter. Dessa klienter kräver inte Azure AD eller MDM-registrering och principen riktas mot ConfigMgr-samlingar i stället för Azure AD-grupper.
 
@@ -386,6 +386,16 @@ Mer information finns i [produkt feedback](../../understand/find-help.md#BKMK_18
 <!--5891241-->
 
 Precis som förbättringar i tidigare versioner kan du nu använda sökalternativet **alla undermappar** från noden **konfigurations objekt** och **konfigurations bas linjer** .
+
+### <a name="community-hub"></a>Community-hubb
+
+<!--3555935, 3555936-->
+
+_Först i juni 2020_
+
+IT-administratörs gruppen har utvecklat en enorm mängd kunskap under åren. I stället för att göra om objekt som skript och rapporter från grunden har vi skapat en Configuration Manager **Community-hubb** där du kan dela med varandra. Genom att använda arbetet med andra kan du spara arbets timmar. Community Hub utvecklar kreativitet genom att bygga vidare på andras arbete och låta andra personer bygga på din. GitHub har redan branschspecifika processer och verktyg som skapats för delning. Nu kommer community-navet att utnyttja dessa verktyg direkt i Configuration Manager-konsolen som grundläggande delar för att driva den nya gruppen.
+
+Mer information finns i [Community Hub och GitHub](../../servers/manage/community-hub.md).
 
 ## <a name="tools"></a><a name="bkmk_tools"></a>Formateringsverktyg
 

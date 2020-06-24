@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 361f0ff36b78daddd08954953744f3f95191d4f3
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 5c4b06e8c81e04e067156929dfe7637cf04fb9d1
+ms.sourcegitcommit: bc8c9d957dac46d95070c433d3a83408e5e48d82
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990611"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85289469"
 ---
 # <a name="enroll-windows-devices-in-intune-by-using-the-windows-autopilot"></a>Registrera Windows-enheter i Intune med hjälp av Windows Autopilot  
 Det är enklare att registrera enheter i Intune med Windows Autopilot. Att skapa och underhålla anpassade operativsystemavbildningar är en process som tar tid. Det kan också ta tid att applicera de här anpassade operativsystemavbildningarna till nya enheter för att förbereda dem för användning innan du ger dem till dina slutanvändare. Med Microsoft Intune och Autopilot kan du ge dina slutanvändare nya enheter utan att behöva skapa, underhålla och installera anpassade operativsystemavbildningar på enheterna. Om du använder Intune för att hantera Autopilot-enheter kan du hantera principer, profiler, appar med mera när de har registrerats. I [översikten över Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot) finns en översikt över fördelar, scenarier och förutsättningar.
@@ -83,7 +83,7 @@ Du kan lägga till Windows Autopilot-enheter genom att importera en CSV-fil med 
 3. Om du valde **Tilldelad** för **Medlemstyp** i föregående steg väljer du **Medlemmar** på bladet **Grupp** och lägger till Autopilot-enheter till gruppen.
     Autopilot-enheter som ännu inte har registrerats är enheter där namnet är samma som enhetens serienummer.
 4. Om du väljer **Dynamiska enheter** för **Medlemstyp** ovan väljer du sedan **Dynamiska enhetsmedlemmar** på bladet **Grupp** och anger någon av följande koder i rutan **Avancerad regel**. Det är bara Autopilot-enheter som samlas in av de här reglerna, eftersom de avser attribut som endast finns i Autopilot-enheter. Skapandet av en grupp baserat på icke-Autopilot-attribut garanterar inte att enheter som ingår i gruppen faktiskt registreras till Autopilot.
-    - Om du vill skapa en grupp som innehåller alla dina Autopilot-enheter anger du: `(device.devicePhysicalIDs -any _ -contains "[ZTDId]")`
+    - Om du vill skapa en grupp som innehåller alla dina Autopilot-enheter anger du: `(device.devicePhysicalIDs -any (_ -contains "[ZTDId]"))`
     - Intunes grupptaggfält mappar till OrderID-attributet på Azure AD-enheter. Om du vill skapa en grupp som innehåller alla dina Autopilot-enheter med en viss grupptagg (Azure AD-enhetens OrderID) måste du ange: `(device.devicePhysicalIds -any _ -eq "[OrderID]:179887111881")`
     - Om du vill skapa en grupp som innehåller alla dina Autopilot-enheter med ett visst inköpsorder-ID anger du `(device.devicePhysicalIds -any _ -eq "[PurchaseOrderId]:76222342342")`
     
@@ -222,7 +222,7 @@ Om du inte är intresserad av hantering av mobilenheter kan du använda Autopilo
 
 ## <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot för befintliga enheter
 
-Du kan gruppera Windows-enheter med ett korrelator-ID vid registrering med hjälp av [Autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) via Configuration Manager. Korrelator-ID:t är en parameter i Autopilot-konfigurationsfilen. [Azure Active Directory-enhetsattributet enrollmentProfileName](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) matchas automatiskt med ”OfflineAutopilotprofile-\<korrelator-ID:t\>”. På så sätt kan godtyckliga dynamiska Azure AD-grupper skapas baserat på korrelator-ID med hjälp av attributet enrollmentprofileName.
+Du kan gruppera Windows-enheter med ett korrelator-ID vid registrering med hjälp av [Autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) via Configuration Manager. Korrelator-ID:t är en parameter i Autopilot-konfigurationsfilen. [Azure Active Directory-enhetsattributet enrollmentProfileName](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) ställs automatiskt in till lika med ”OfflineAutopilotprofile-\<correlator ID\>”. På så sätt kan godtyckliga dynamiska Azure AD-grupper skapas baserat på korrelator-ID med hjälp av attributet enrollmentprofileName.
 
 >[!WARNING] 
 > Eftersom korrelator-ID:t inte redan finns i Intune kan enheten rapportera valfritt korrelator-ID. Om du skapar ett korrelator-ID som matchar ett Autopilot- eller Apples ADE-profilnamn, läggs enheten till en dynamisk Azure Active Directory-enhetsgrupp som baseras på enrollmentProfileName-attributet. Så här undviker du konflikten:

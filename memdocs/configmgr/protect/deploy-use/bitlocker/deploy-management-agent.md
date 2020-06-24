@@ -10,12 +10,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e33ba8df84239b4a438ff0c526bb255c5b7d0052
-ms.sourcegitcommit: e618ea7cb864635c838b672bc71a1e926bf7c047
+ms.openlocfilehash: 4a050ab523730adbfdd2ecf541557fabbf95081b
+ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84458159"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84715704"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuera BitLocker-hantering
 
@@ -173,7 +173,7 @@ Mer information finns i [kryptera återställnings data](encrypt-recovery-data.m
 Om du för närvarande använder Microsoft BitLocker administration och övervakning (MBAM) kan du sömlöst migrera hanteringen till Configuration Manager. När du distribuerar BitLocker-hanterings principer i Configuration Manager laddar klienterna automatiskt upp återställnings nycklar och paket till Configuration Manager återställnings tjänsten.
 
 > [!IMPORTANT]
-> När du migrerar från fristående MBAM till Configuration Manager BitLocker-hantering, om du behöver befintliga funktioner i fristående MBAM, återanvänder du inte fristående MBAM-servrar eller-komponenter med Configuration Manager BitLocker-hantering. Om du återanvänder dessa servrar slutar fristående MBAM att fungera när Configuration Manager BitLocker-hanteringen installerar dess komponenter på dessa servrar. Kör inte MBAMWebSiteInstaller. ps1-skriptet för att konfigurera BitLocker-portalerna på fristående MBAM-servrar. När du konfigurerar Configuration Manager BitLocker-hantering använder du separata servrar.
+> När du migrerar från fristående MBAM till Configuration Manager BitLocker-hantering, om du behöver befintliga funktioner i fristående MBAM, återanvänder du inte fristående MBAM-servrar eller-komponenter med Configuration Manager BitLocker-hantering. Om du återanvänder dessa servrar slutar fristående MBAM att fungera när Configuration Manager BitLocker-hanteringen installerar dess komponenter på dessa servrar. Kör inte MBAMWebSiteInstaller.ps1-skriptet för att konfigurera BitLocker-portalerna på fristående MBAM-servrar. När du konfigurerar Configuration Manager BitLocker-hantering använder du separata servrar.
 
 ### <a name="group-policy"></a>Grup princip
 
@@ -191,7 +191,7 @@ Om du för närvarande använder Microsoft BitLocker administration och övervak
 
 Configuration Manager krypterar inte enheter som redan är skyddade med BitLocker-diskkryptering. Om du distribuerar en princip för BitLocker-hantering som inte matchar enhetens nuvarande skydd rapporteras den som icke-kompatibel. Enheten är fortfarande skyddad.
 
-Du använde till exempel MBAM för att kryptera enheten utan PIN-skydd, men Configuration Manager principen kräver en PIN-kod. Enheten är inte kompatibel med principen, även om enheten är krypterad.
+Du använde till exempel MBAM för att kryptera enheten med krypteringsalgoritmen AES-XTS 128, men Configuration Manager principen kräver AES-XTS 256. Enheten är inte kompatibel med principen, även om enheten är krypterad.
 
 Undvik det här problemet genom att först inaktivera BitLocker på enheten. Distribuera sedan en ny princip med de nya inställningarna.
 
@@ -201,7 +201,7 @@ Undvik det här problemet genom att först inaktivera BitLocker på enheten. Dis
 
 Configuration Manager klient hanterare för BitLocker är medveten om samhantering. Om enheten är samhanterad och du växlar [Endpoint Protection arbets belastning](../../../comanage/workloads.md#endpoint-protection) till Intune, ignorerar Configuration Manager klienten dess BitLocker-princip. Enheten hämtar Windows-krypterings princip från Intune.
 
-När du byter krypterings hanterings utfärdare bör du planera för [omkryptering](#re-encryption).
+När du växlar krypterings hanterings utfärdare och önskad krypteringsalgoritm också ändras, måste du planera för [omkryptering](#re-encryption) .
 
 Mer information om hur du hanterar BitLocker med Intune finns i följande artiklar:
 

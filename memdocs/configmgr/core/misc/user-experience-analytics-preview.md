@@ -2,7 +2,7 @@
 title: För hands version av Endpoint Analytics
 titleSuffix: Configuration Manager
 description: Instruktioner för för hands versionen av Endpoint Analytics.
-ms.date: 05/11/2020
+ms.date: 06/12/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: da8c52dabf27ddf0992d9f405400b3ac984f2ecc
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: f33f79d1a2fb6144e25d6153c48caa90d86006e6
+ms.sourcegitcommit: 97f150f8ba8be8746aa32ebc9b909bb47e22121c
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455131"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879750"
 ---
 # <a name="endpoint-analytics-preview"></a><a name="bkmk_uea"></a>För hands version av Endpoint Analytics
 
@@ -67,7 +67,7 @@ I den här för hands versionen kan du registrera enheter via Configuration Mana
 #### <a name="to-enroll-devices-via-configuration-manager-this-preview-requires"></a><a name="bkmk_uea__cm_prereq"></a>För att kunna registrera enheter via Configuration Manager måste den här för hands versionen:
 - Configuration Manager version 2002 eller senare
 - Klienter som uppgraderats till version 2002 eller senare
-- [Microsoft Endpoint Manager-klient ansluter](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions) aktive rad med en Azure-klient plats för Nordamerika eller Europa (vi kommer att utökas till andra regioner snart)
+- [Microsoft Endpoint Manager klient anslutning](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions) är aktive rad.
 
 #### <a name="proactive-remediation-scripting-requires"></a><a name="bkmk_uea__prs_prereq"></a>Proaktiva reparations skript kräver:
 Oavsett om du registrerar enheter via Intune eller Configuration Manager, har [**proaktivt reparations skript**](#bkmk_uea_prs) följande krav:
@@ -136,9 +136,13 @@ Innan du registrerar Configuration Manager enheter kontrollerar du [kraven](#bkm
 ### <a name="onboard-in-the-endpoint-analytics-portal"></a><a name="bkmk_uea_onboard"></a>Publicera i slut punkts Analytics-portalen
 Det krävs registrering från slut punkts analys portalen för både Configuration Manager-och Intune-hanterade enheter.
 
-1. Gå till `https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu`
+1. Gå till `https://aka.ms/endpointanalytics`
 1. Klicka på **Starta**. Detta tilldelar automatiskt en konfigurations profil för att samla in start prestanda data från alla tillgängliga enheter. Du kan [ändra tilldelade enheter](#bkmk_uea_profile) senare. Det kan ta upp till 24 timmar innan start prestanda data fylls från dina Intune-registrerade enheter efter att de startats om.
-   - Mer information om vanliga problem finns i [Felsöka start prestanda enhets registrering](#bkmk_uea_enrollment_tshooter).
+
+> [!Important]  
+> Vi maskera och sammanställer poängen från alla registrerade organisationer så att **alla organisationer (median)** -bas linjen hålls uppdaterade. Du kan när som helst [sluta samla in data](#bkmk_uea_stop) .
+
+   - Mer information om vanliga problem finns i [Felsöka enhets registrering och start prestanda](#bkmk_uea_enrollment_tshooter).
 
 ## <a name="overview-page"></a>Översikts sida
 
@@ -151,8 +155,6 @@ När dina data är klara kan du se viss information på sidan **Översikt** , f�
    - Bas linje markörer visas för din övergripande Poäng och under streck. Om något av poängen har försämrat med fler än det konfigurerbara tröskelvärdet från den valda bas linjen visas poängen i rött och poängen på den översta nivån flaggas som kräver uppmärksamhet.
   - Status för **otillräckliga data** innebär att du inte har tillräckligt med enhets rapportering för att ge en meningsfull poäng. Vi kräver för närvarande minst fem enheter.
 
-- Med **filter** kan du Visa dina poäng på en delmängd av enheter eller användare. Men filter funktionen är inte aktive rad i den här för hands versionen.
-
 - **Insikter och rekommendationer** är en prioriterad lista för att förbättra dina poäng. Den här listan filtreras till undernodens kontext när du navigerar till **bästa praxis** eller **Rekommenderad program vara**.
 
 [![Översikts sida för slut punkts analys](media/overview-page.png)](media/overview-page.png#lightbox)
@@ -160,7 +162,7 @@ När dina data är klara kan du se viss information på sidan **Översikt** , f�
 ## <a name="recommended-software"></a><a name="bkmk_uea_rs"></a>Rekommenderad program vara
 
 > [!Important]  
-> Slut punkts analys beräknar poängen för **program varu införande** för alla dina Intune-hanterade enheter, oavsett om de har registrerats i slut punkts analys eller inte.
+> Slut punkts analys beräknar poängen för **program varu införande** för alla dina Intune-och samhanterade enheter, oavsett om de har kon figurer ATS med [insamlings principen för Intune](#bkmk_uea_profile) eller inte. För Configuration Manager hanterade enheter beräknas poängen bara för [registrerade enheter](#bkmk_uea_cm_enroll) 
 
 Vissa program är kända för att förbättra slutanvändarens upplevelse, oberoende av hälso mått på lägre nivå. Windows 10 har till exempel en mycket högre poäng i net-höjningen än Windows 7. Poängen för **program varu införande** är ett tal mellan 0 och 100 som representerar ett viktat medelvärde för procent andelen enheter som har distribuerat olika rekommenderade program varor. Den aktuella viktningen är högre för Windows än för de andra måtten eftersom användarna ofta interagerar med dem. Måtten beskrivs nedan: 
 
@@ -192,9 +194,11 @@ Dina Microsoft-Intune-hanterade enheter är redan registrerade i Azure AD. Den r
 
 ### <a name="cloud-management"></a><a name="bkmk_uea_intune"></a>Moln hantering
 
-Microsoft Intune ger användarna flera produktivitets förmåner, inklusive att aktivera åtkomst till företags resurser även när de är borta från företags nätverket, och eliminerar behovet av och prestanda för grupprincip, vilket resulterar i en bättre slut användar upplevelse. Det här måttet mäter procent andelen datorer som har registrerats i Microsoft Intune. Se hur [Microsoft aktiverar detta för våra anställda](https://www.microsoft.com/en-us/itshowcase/managing-windows-10-devices-with-microsoft-intune).
+Configuration Manager och Intune tillhandahåller integrerade moln drivna hanterings verktyg och unika alternativ för samhantering för att etablera, distribuera, hantera och säkra slut punkter och program i en organisation. Med moln hanterings kraften kan du uppnå flera produktivitets förmåner, inklusive att aktivera åtkomst till företags resurser även när de är borta från företags nätverket, och eliminera behovet av och prestanda för grupprincip, vilket resulterar i en bättre slut användar upplevelse. 
 
-Den rekommenderade reparations åtgärden för enheter som hanteras av Configuration Manager som ännu inte har registrerats i Intune är att [samhantera dem](../../comanage/overview.md).
+Det här måttet mäter procent andelen datorer som har anslutits till Microsoft 365 molnet för att låsa upp ytterligare funktioner. Se hur [Microsoft aktiverar detta för våra anställda](https://www.microsoft.com/en-us/itshowcase/managing-windows-10-devices-with-microsoft-intune).
+
+Den rekommenderade åtgärden för enheter som hanteras av Configuration Manager som ännu inte har registrerats i Intune är att [samhantera dem](../../comanage/overview.md) för att låsa upp fler moln drivna funktioner som villkorlig åtkomst.
 
 ### <a name="no-commercial-median"></a><a name="bkmk_uea_np"></a>Inget kommersiellt median
 
@@ -203,7 +207,7 @@ Den inbyggda bas linjen för **kommersiell median** har för närvarande inte m�
 ## <a name="startup-performance"></a><a name="bkmk_uea_bp"></a>Start prestanda
 
 > [!NOTE]
-> Om du inte ser start prestanda data från alla dina enheter kan du läsa [fel sökning av enhets registrering för start prestanda](#bkmk_uea_enrollment_tshooter).
+> Om du inte ser start prestanda data från alla dina enheter läser du [Felsöka enhets registrering och start prestanda](#bkmk_uea_enrollment_tshooter).
 
 Start prestanda poängen hjälper IT-användare att komma igång snabbt och produktiviteten snabbt, utan fördröjning av start och inloggning. **Start poängen** är ett tal mellan 0 och 100. Poängen är ett viktat medelvärde för **Start poängen** och **inloggnings** poängen, som beräknas enligt följande:
 
@@ -330,45 +334,52 @@ Du kan jämföra aktuella poäng och del poäng till andra genom att ange en bas
 
 Avsnitten nedan kan användas för att hjälpa till med fel sökning av problem som kan uppstå.
 
-### <a name="troubleshooting-startup-performance-device-enrollment"></a><a name="bkmk_uea_enrollment_tshooter"></a>Felsöka start prestanda enhets registrering
+### <a name="troubleshooting-device-enrollment-and-startup-performance"></a><a name="bkmk_uea_enrollment_tshooter"></a>Felsöka enhets registrering och start prestanda
 
 Om sidan Översikt visar start prestanda poängen noll tillsammans med en banderoll som visar att den väntar på data, eller om fliken enhets prestanda i Start prestanda visar färre enheter än vad du förväntar dig, finns det några steg som du kan vidta för att felsöka problemet.
 
-Först här är en snabb sammanfattning av begränsningarna för insamling av start prestanda data:
-1. Enheter måste vara Windows 10 version 1903 eller senare.
-2. Enheter måste vara Azure AD-anslutna. Vi har för närvarande inte stöd för enheter som är anslutna till arbets platsen, men det är aktivt att undersöka möjligheten att lägga till den här funktionen i Windows.
-3. Enheter måste vara Windows 10 Enterprise Edition. Windows 10 Home och Professional stöds inte för närvarande, men det är aktivt att det är möjligt att lägga till den här funktionen i Windows.
+Kontrol lera först att enheterna uppfyller de [tekniska kraven](#technical-prerequisites)
 
-Observera att de här problemen inte gäller data som kommer från den kommande Configuration Manager anslutningen. den kommer att kunna samla in data från alla Configuration Manager klient datorer, oavsett version, version eller katalog konfiguration.
-
-För det andra är en snabb lista att gå igenom för fel sökning:
-1. Kontrol lera att du har Windows Health Monitoring-profilen som är avsedd för alla enheter som du vill ha prestanda data för. Du kan hitta en länk till den här profilen inifrån inställnings sidan för slut punkts analys, eller så går du till den som en annan Intune-profil. Titta på fliken tilldelning för att se till att den är tilldelad till den förväntade uppsättningen enheter. 
-1. Ta en titt på vilka enheter som har kon figurer ATS för data insamling. Du kan också se den här informationen på sidan profil översikt.  
+För Intune-eller samhanterade enheter som kon figurer ATS med Intune data insamlings princip:
+1. Se till att du har [insamlings](#bkmk_uea_profile) principen för Intune körs mot alla enheter som du vill visa prestanda data för. Titta på fliken tilldelning för att se till att den är tilldelad till den förväntade uppsättningen enheter. 
+1. Leta efter enheter som inte har kon figurer ATS korrekt för data insamling. Du kan också se den här informationen på sidan profil översikt.  
    - Det finns ett känt problem där kunder kan se fel vid profil tilldelning, där berörda enheter visar felkoden `-2016281112 (Remediation failed)` . Vi undersöker aktivt det här problemet.
-1. Enheter som har kon figurer ATS för data insamling måste startas om efter att data insamlingen har Aktiver ATS och du måste vänta upp till 24 timmar efter att enheten har visats på fliken enhets prestanda.
-1. Om enheten har kon figurer ATS för data insamling, har startats om och efter 24 timmar ser du fortfarande att enheten inte kan komma åt våra samlings slut punkter. Det här problemet kan inträffa om ditt företag använder en proxyserver och slut punkterna inte har Aktiver ATS i proxyn. Mer information finns i [fel sökning av slut punkter](#bkmk_uea_endpoints).
+1. Enheter som har kon figurer ATS för data insamling måste startas om efter att data insamlingen har Aktiver ATS och du måste vänta upp till 25 timmar efter att enheten har visats på fliken enhets prestanda. Se [data flöde](#data-flow)
+1. Om enheten har kon figurer ATS för data insamling, har startats om, och efter 25 timmar som du fortfarande inte ser den, kan det hända att enheten inte kan kommunicera med de nödvändiga slut punkterna. Se [proxykonfiguration](#bkmk_uea_endpoints).
 
-### <a name="data-collection-for-intune-managed-devices"></a>Data insamling för Intune-hanterade enheter
+För Configuration Manager-hanterade enheter:
+1. Se till att alla enheter som du vill visa prestanda [data registreras](#bkmk_uea_cm_enroll)
+1. Kontrol lera att data överföringen från Configuration Manager till Gateway-tjänsten lyckades genom att titta på fel meddelandena i filen **UXAnalyticsUploadWorker. log** på plats servern.
+1. Kontrol lera om en administratör har anpassade åsidosättningar för klient inställningar.  I Configuration Manager-konsolen går du till arbets ytan **enheter** , letar rätt på mål enheterna och väljer sedan de **resulterande klient inställningarna**i gruppen **klient inställningar** . Om slut punkts analys är inaktive rad finns det en åsidosättning av klient inställningarna. Hitta de övergripande klient inställningarna och aktivera slut punkts analys på den.  
+1. Kontrol lera om klient enheter som saknas skickar data till plats servern genom att granska filen **SensorEndpoint. log** som finns `C:\Windows\CCM\Logs\` på klient enheter. Sök efter meddelanden som har *skickats* .
+1. Kontrol lera och åtgärda eventuella fel ocurring under bearbetning av start händelser genom att granska filen **SensorManagedProvider. log** som finns `C:\Windows\CCM\Logs\` på klient enheter.
 
-Slut punkts analys utnyttjar Windows 10-och Windows Server-anslutna användar upplevelser och telemetri-komponenten (DiagTrack) för att samla in data från Intune-hanterade enheter. Kontrol lera att tjänsten för **anslutna användar upplevelser och telemetri** på enheten körs.
 
-#### <a name="endpoints"></a><a name="bkmk_uea_endpoints"></a>Slut punkter
+### <a name="proxy-configuration"></a><a name="bkmk_uea_endpoints"></a>Proxykonfiguration
 
-För att registrera enheter till slut punkts analys måste de skicka nödvändiga funktions data till Microsoft. Om din miljö använder en proxyserver använder du den här informationen för att konfigurera proxyn.
+Om din miljö använder en proxyserver konfigurerar du proxyservern så att den tillåter följande slut punkter:
 
-Om du vill aktivera funktionell data delning konfigurerar du proxyservern så att den tillåter följande slut punkter:
+#### <a name="endpoints-required-for-configuration-manager-managed-devices"></a>Slut punkter som krävs för Configuration Manager hanterade enheter
+
+Configuration Manager-hanterade enheter skickar data till Intune via anslutningen i Configuration Manager-rollen och de behöver inte direkt åtkomst till det offentliga Microsoft-molnet.
+
+| Slutpunkt  | Funktion  |
+|-----------|-----------|
+| `https://graph.windows.net` | Används för att automatiskt hämta inställningar när du kopplar din hierarki till Endpoint Analytics på Configuration Manager Server roll. Mer information finns i [Konfigurera proxyservern för en plats system Server](../plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
+| `https://*.manage.microsoft.com` | Används för att synkronisera enhets samling och enheter med slut punkts analys på Configuration Manager Server roll. Mer information finns i [Konfigurera proxyservern för en plats system Server](../plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
+
+#### <a name="endpoints-required-for-intune-managed-devices"></a>Slut punkter som krävs för Intune-hanterade enheter
+
+För att registrera enheter till slut punkts analys måste de skicka nödvändiga funktions data till Microsofts offentliga moln. Slut punkts analys utnyttjar Windows 10-och Windows Server-anslutna användar upplevelser och telemetri-komponenten (DiagTrack) för att samla in data från Intune-hanterade enheter. Kontrol lera att tjänsten för **anslutna användar upplevelser och telemetri** på enheten körs.
+
+| Slutpunkt  | Funktion  |
+|-----------|-----------|
+| `https://*.events.data.microsoft.com` | Används av Intune-hanterade enheter för att skicka [nödvändiga funktions data](#bkmk_uea_datacollection) till data insamlings slut punkten för Intune. |
 
 > [!Important]  
 > För sekretess och data integritet söker Windows efter ett Microsoft SSL-certifikat (certifikat fästning) vid kommunikation med de nödvändiga slut punkterna för funktions data delning. SSL-avlyssning och inspektion är inte möjlig. Om du vill använda slut punkts analys utesluter du dessa slut punkter från SSL-kontroll.<!-- BUG 4647542 -->
 
-| Slutpunkt  | Funktion  |
-|-----------|-----------|
-| `https://*.events.data.microsoft.com` | Används för att skicka [nödvändiga funktions data](#bkmk_uea_datacollection) till data insamlings slut punkten för Intune. |
-| `https://graph.windows.net` | Används för att automatiskt hämta inställningar när du kopplar din hierarki till Endpoint Analytics (på Configuration Manager Server roll). Mer information finns i [Konfigurera proxyservern för en plats system Server](../plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
-| `https://*.manage.microsoft.com` | Används för att synkronisera enhets samling och enheter med slut punkts analys (endast på Configuration Manager Server roll). Mer information finns i [Konfigurera proxyservern för en plats system Server](../plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
-
-
-#### <a name="proxy-server-authentication"></a>Autentisering av proxyserver
+##### <a name="proxy-server-authentication"></a>Autentisering av proxyserver
 
 Om din organisation använder proxyautentisering för Internet åtkomst kontrollerar du att den inte blockerar data på grund av autentisering. Om proxyn inte tillåter att enheter skickar dessa data visas de inte i Skriv bords analys.
 
@@ -443,7 +454,7 @@ I den här tabellen visas skript namn, beskrivningar, identifieringar, reparatio
 
 ## <a name="powershell-scripts"></a><a name="bkmk_uea_ps_scripts"></a>PowerShell-skript
 
-### <a name="detect_stale_group_policiesps1"></a>Detect_stale_Group_Policies. ps1
+### <a name="detect_stale_group_policiesps1"></a>Detect_stale_Group_Policies.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -482,7 +493,7 @@ catch {
 }
 ```
 
-### <a name="remediate_stale_grouppoliciesps1"></a>Remediate_stale_GroupPolicies. ps1
+### <a name="remediate_stale_grouppoliciesps1"></a>Remediate_stale_GroupPolicies.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -505,7 +516,7 @@ catch{
 }
 ```
 
-### <a name="detect_click_to_run_service_stateps1"></a>Detect_Click_To_Run_Service_State. ps1
+### <a name="detect_click_to_run_service_stateps1"></a>Detect_Click_To_Run_Service_State.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -552,7 +563,7 @@ Else{
 }
 ```
 
-### <a name="remediate_click_to_run_service_stateps1"></a>Remediate_Click_To_Run_Service_State. ps1
+### <a name="remediate_click_to_run_service_stateps1"></a>Remediate_Click_To_Run_Service_State.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -614,7 +625,7 @@ Catch{
 Return $curSvcStat
 ```
 
-### <a name="detect_expired_issuer_certificatesps1"></a>Detect_Expired_Issuer_Certificates. ps1
+### <a name="detect_expired_issuer_certificatesps1"></a>Detect_Expired_Issuer_Certificates.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -656,7 +667,7 @@ catch{
 }
 ```
 
-### <a name="remediate_expired_issuer_certificatesps1"></a>Remediate_Expired_Issuer_Certificates. ps1
+### <a name="remediate_expired_issuer_certificatesps1"></a>Remediate_Expired_Issuer_Certificates.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -700,7 +711,7 @@ $toast = New-Object Windows.UI.Notifications.ToastNotification $xml
 [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($APP_ID).Show($toast)
 ```
 
-### <a name="detect_expired_user_certificatesps1"></a>Detect_Expired_User_Certificates. ps1
+### <a name="detect_expired_user_certificatesps1"></a>Detect_Expired_User_Certificates.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -737,7 +748,7 @@ catch{
 }
 ```
 
-### <a name="remediate_expired_user_certificatesps1"></a>Remediate_Expired_User_Certificates. ps1
+### <a name="remediate_expired_user_certificatesps1"></a>Remediate_Expired_User_Certificates.ps1
 
 ```powershell
 #=============================================================================================================================
@@ -767,27 +778,30 @@ catch{
 
 ### <a name="data-flow"></a>Dataflöde
 
-Följande bild visar hur nödvändiga funktionella data flödar från enskilda enheter via våra data tjänster, tillfälliga lagring och till din klient organisation. Data flödar genom våra befintliga företags pipeliner utan att det är beroende av Windows-diagnostikdata.
+Följande bild visar hur nödvändiga funktionella data flödar från enskilda enheter via våra data tjänster, tillfälliga lagring och till din klient organisation. 
 
-[![Data flödes diagram för användar upplevelse](media/dataflow.png)](media/dataflow.png#lightbox)
+[![Data flödes diagram för användar upplevelse](media/endpoint-analytics-dataflow.png)](media/endpoint-analytics-dataflow.png#lightbox)
 
-1. Konfigurera **Intune data insamlings** princip för registrerade enheter. Som standard tilldelas den här principen till "alla enheter" när du **startar** slut punkts analys. Du kan dock [ändra tilldelningen](#bkmk_uea_set) när som helst till en delmängd av enheterna eller inga enheter alls.
+1. En [tjänst administratörs roll för Intune](../../../intune/fundamentals/role-based-access-control.md) [börjar samla in data](#bkmk_uea_start).
 
-2. Enheter skickar nödvändiga funktions data.
+    - För Intune-hanterade enheter konfigurerar det här steget **Intune data insamlings** princip. Som standard tilldelas den här principen till "alla enheter". Du kan när som helst [ändra tilldelningen](#bkmk_uea_set) till en delmängd av enheterna eller inga enheter alls.
 
-    - För Intune-enheter med den tilldelade principen skickas data från Intune Management-tillägget. Mer information finns i [krav](#bkmk_uea_prereq).
-    - För Configuration Manager hanterade enheter kan data även flöda till Microsoft Endpoint Management via ConfigMgr-anslutningen. ConfigMgr-kopplingen är kopplad till molnet. Den kräver bara anslutning till en Intune-klient, som inte aktiverar samhantering.
+    - För Configuration Manager hanterade enheter kan du aktivera [data insamling för slut punkts analys och registrera enheter](#bkmk_uea_cm_enroll).
+
+1. Enheter skickar nödvändiga funktions data.
+
+    - För Intune-och samhanterade enheter med den tilldelade principen kräver enhets sändningen funktionella data direkt till Microsoft Endpoint Management-tjänsten i det offentliga Microsoft-molnet där bearbetas i nära real tid. Mer information finns i [slut punkter som krävs för Intune-hanterade enheter](#bkmk_uea_endpoints).
+
+    - För Configuration Manager-hanterade enheter, flödar data till Microsoft Endpoint Management via ConfigMgr-anslutningen. Enheter behöver inte direkt åtkomst till det offentliga Microsoft-molnet, men ConfigMgr-anslutningen är kopplad till molnet och kräver anslutning till en Intune-klient. Enheter skickar data till den Configuration Manager Server rollen var 24: e timme och Configuration Manager-anslutningen skickar data till Gateway-tjänsten varje timme.
+
+1. Microsoft Endpoint Management-tjänsten bearbetar data för varje enhet och publicerar resultaten för både enskilda enheter och organisations mängder i administrations konsolen med MS Graph API: er. Den längsta svars tiden på slut punkt till slut punkt är 25 timmar och är bryggad av den tid det tar att utföra den dagliga bearbetningen av insikter och rekommendationer.
 
 > [!Note]  
-> De data som krävs för att beräkna start poängen för en enhet genereras under start tiden. Beroende på energi inställningar och användar beteende kan det ta flera veckor efter att en enhet har tilldelats en korrekt princip för att visa start poängen i administratörs konsolen.  
-
-3. Microsoft Endpoint Management-tjänsten bearbetar data för varje enhet och publicerar resultaten för både enskilda enheter och organisations mängder i administrations konsolen med MS Graph API: er.
-
-Den genomsnittliga svars tiden för slut punkt till slut punkt är ungefär 12 timmar och är bryggad efter den tid det tar att utföra den dagliga bearbetningen. Alla andra delar av data flödet är nästan i real tid.
+> När du först konfigurerar slut punkts analys, lägger till nya klienter i [insamlings principen för Intune](#bkmk_uea_profile)eller [aktiverar enhets uppladdning](../../tenant-attach/device-sync-actions.md#enable-device-upload) för en ny samling, kan rapporterna i slut punkts Analytics Portal inte Visa fullständiga data direkt. De data som krävs för att beräkna start poängen för en enhet genereras under start tiden. Beroende på energi inställningar och användar beteende kan det ta flera veckor innan en enhet har registrerats för att visa start poängen i administratörs konsolen.
 
 ### <a name="data-collection"></a><a name="bkmk_uea_datacollection"></a>Datainsamling
 
-De grundläggande funktionerna i slut punkts analys samlar för närvarande in information som är kopplad till Start prestanda poster som hamnar i de [identifierade](https://docs.microsoft.com/mem/intune/protect/privacy-data-collect#identified-data) och [pseudonymized](https://docs.microsoft.com/mem/intune/protect/privacy-data-collect#pseudonymized-data) kategorierna. När vi lägger till ytterligare funktioner över tid, kommer de data som samlas in att variera efter behov. Huvud-Datapoints som för närvarande samlas in:
+De grundläggande funktionerna i slut punkts analys samlar för närvarande in information som är kopplad till Start prestanda poster som hamnar i de [identifierade](../../../intune/protect/privacy-data-collect.md#identified-data) och [pseudonymized](../../../intune/protect/privacy-data-collect.md#pseudonymized-data) kategorierna. När vi lägger till ytterligare funktioner över tid, kommer de data som samlas in att variera efter behov. Huvud-Datapoints som för närvarande samlas in:
 
 #### <a name="identified-data"></a>Identifierade data
 
@@ -809,9 +823,9 @@ De grundläggande funktionerna i slut punkts analys samlar för närvarande in i
   - **totalBootTimeInMilliseconds:** Total start tid
   - **updateTimeInMilliseconds:** Tid för att OS-uppdateringar ska slutföras
   - **gpLogonDurationInMilliseconds**: tid för grup principer som ska bearbetas
-  - **desktopShownDurationInMilliseconds:** Tid för skriv bord (Explorer. exe) som ska läsas in
-  - **desktopUsableDurationInMilliseconds:** Tiden för Skriv bordet (Explorer. exe) ska kunna användas
-  - **topProcesses:** Lista över processer som lästs in under start med namn, med information om processor användnings statistik och appar (namn, utgivare, version). Till exempel *{ \" processname \" : \" svchost \" , \" CpuUsage \" : 43, \" ProcessFullPath \" : \" C: \\ \\ Windows \\ \\ system32 \\ \\ svchost. exe \" , \" ProductName \" : \" Microsoft &reg; Windows &reg; operativ system \" , \" Publisher \" : \" Microsoft Corporation \" , \" ProductVersion \" : \" 10.0.18362.1 \" }*
+  - **desktopShownDurationInMilliseconds:** Tid för skriv bord (explorer.exe) som ska läsas in
+  - **desktopUsableDurationInMilliseconds:** Tid för Skriv bordet (explorer.exe) som ska användas
+  - **topProcesses:** Lista över processer som lästs in under start med namn, med information om processor användnings statistik och appar (namn, utgivare, version). Till exempel *{ \" processname \" : \" svchost \" , \" CpuUsage \" : 43, \" ProcessFullPath \" : \" C: \\ \\ Windows \\ \\ system32 \\ \\svchost.exe\" , \" ProductName \" : \" Microsoft &reg; Windows &reg; operativ system \" , \" Publisher \" : \" Microsoft Corporation \" , \" ProductVersion \" : \" 10.0.18362.1 \" }*
 - Enhetsdata som inte är kopplade till en enhet eller en användare (om dessa data är kopplade till en enhet eller en användare behandlar Intune dem som identifierade data)
   - **ID:** Unikt enhets-ID som används av Windows Update
   - **localId:** Ett lokalt definierat unikt ID för enheten. Detta är inte det läsliga enhets namnet. Troligen lika med värdet som lagras vid HKLM\Software\Microsoft\SQMClient\MachineId.
@@ -819,8 +833,25 @@ De grundläggande funktionerna i slut punkts analys samlar för närvarande in i
   - **orgId:** Unikt GUID som representerar Microsoft O365-klienten
   
 > [!Important]  
-> Våra data hanterings principer beskrivs i [Sekretess policyn för Microsoft Intune](https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). Vi använder bara dina kund uppgifter för att tillhandahålla de tjänster som du har registrerat dig för. Som beskrivs under onboarding-processen maskera vi och sammanställer poängen från alla registrerade organisationer för att hålla bas linjerna uppdaterade.
+> Våra data hanterings principer beskrivs i [Sekretess policyn för Microsoft Intune](https://docs.microsoft.com/legal/intune/microsoft-intune-privacy-statement). Vi använder bara dina kund uppgifter för att tillhandahålla de tjänster som du har registrerat dig för. Som det beskrivs under onboarding-processen maskera vi och sammanställer poängen från alla registrerade organisationer så att **alla organisationer (median)** -bas linjen hålls uppdaterad.
 
+### <a name="stop-gathering-data"></a><a name="bkmk_uea_stop"></a>Sluta samla in data
+
+- Om du bara registrerar Intune-hanterade enheter tar du bort [insamlings principen för Intune](#bkmk_uea_gen) som skapats under registreringen.
+
+- Om du registrerar enheter som hanteras av Configuration Manager måste du utföra följande steg för att inaktivera data uppladdning i Configuration Manager:
+
+   1. I Configuration Manager-konsolen går du till **Administration**  >  **Cloud Services**  >  **samhantering**.
+   1. Välj **CoMgmtSettingsProd** och klicka sedan på **Egenskaper**.
+   1. På fliken **Konfigurera uppladdning** avmarkerar du alternativet för att **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager**.
+
+- Inaktivera data insamling för slut punkts analys i Configuration Manager (valfritt):
+
+   1. I Configuration Manager-konsolen går du till **Administration**  >  **klient inställningar**  >  **standard klient inställningar**.
+   1. Högerklicka och välj **Egenskaper** och välj sedan inställningarna för **dator agent** .
+   1. Ange **Aktivera data insamling för slut punkts analys** till **Nej**.
+   > [!Important]
+   > Om du har en befintlig anpassad klient agent inställning som har distribuerats till dina enheter måste du uppdatera alternativet **Aktivera data insamling för slut punkts analys** i den anpassade inställningen och sedan distribuera det på datorerna så att det börjar gälla.
 
 ### <a name="resources"></a>Resurser
 
