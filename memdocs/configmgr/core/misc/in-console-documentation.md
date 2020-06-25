@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e2ace9e8a0fb8ba9e9071a2dc9db09434fe5279e
-ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
+ms.openlocfilehash: 0e38f35f49e827893be5e7763a52dd3b5a901bf7
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84613953"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353538"
 ---
 <!-- 
 - Feature 1357546
@@ -57,7 +57,7 @@ En granskad lista över viktiga artiklar.
 
 De populäraste artiklarna mellan 1 maj och 31 maj 2020.
 
-| Sid visningar | Rubrik |
+| Sid visningar | Titel |
 |------------|-------|
 | 22624 | [Planera för en molnhanteringsgateway](https://docs.microsoft.com/mem/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) |
 | 18451 | [Nyheter i version 2002](https://docs.microsoft.com/mem/configmgr/core/plan-design/changes/whats-new-in-version-2002) |
@@ -76,7 +76,7 @@ Sidan [Configuration Manager Hub](https://docs.microsoft.com/mem/configmgr/) fic
 
 Artiklar med en senaste och betydande uppdatering.
 
-| Senast granskad | Rubrik |
+| Senast granskad | Titel |
 |---------------|-------|
 | 5/29/2020 | [Teknisk för hands version 2005](https://docs.microsoft.com/mem/configmgr/core/get-started/2020/technical-preview-2005) |
 | 5/27/2020 | [Stöd för Windows 10](https://docs.microsoft.com/mem/configmgr/core/plan-design/configs/support-for-windows-10) |
@@ -107,12 +107,10 @@ Guidad genom gång för att hjälpa till med fel sökning Configuration Manager-
 
 ## <a name="new-and-updated-support-articles"></a>Nya och uppdaterade support artiklar
 
-Support artiklar som är nya eller uppdaterade mellan 20 mars och 15 maj 2020.
+Support artiklar som är nya eller uppdaterade mellan 16 maj och 22 juni 2020.
 
-- [Det går inte att skapa ett Microsoft Edge-program i KB 4561494 i Configuration Manager](https://support.microsoft.com/help/4561494)
-- [KB 4551059-fjärrConfiguration Manager-konsolen låser sig i 20 sekunder var 10: e minut](https://support.microsoft.com/help/4551059)
-- [KB 4556203 Sammanfattning av ändringar i Microsoft-slutpunkt Configuration Manager aktuell gren, version 2002](https://support.microsoft.com/help/4556203)
-- [KB 4553501-uppdatering för Microsoft Endpoint Configuration Manager version 2002, tidig uppdaterings ring](https://support.microsoft.com/help/4553501)
-- [KB 4561945 "den underliggande anslutningen stängdes" visas när tjänst anslutnings verktyget laddar ned filen ConfigMgr. AdminUIContent. cab](https://support.microsoft.com/help/4561945)
+- [KB 4564442 Windows 10-distributioner fungerar inte med Microsoft Deployment Toolkit på datorer med inbyggd program vara för BIOS-typ](https://support.microsoft.com/help/4564442)
+- [KB 4563473 Samlad uppdatering för Configuration Manager version 2002 problem med klient anslutning](https://support.microsoft.com/help/4563473)
+- [KB 4567007 PXE-startfel eller aktivitetssekvenser försenas efter uppdatering till Configuration Manager aktuella grenen, version 2002](https://support.microsoft.com/help/4567007)
 
 Information om hur du prenumererar på atom-eller RSS-meddelanden om nya Configuration Manager Support artiklar finns i [support innehålls uppdateringar](https://support.microsoft.com/help/4089498/) och välj **Microsoft Endpoint Configuration Manager**.  

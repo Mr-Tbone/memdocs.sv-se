@@ -12,16 +12,34 @@ ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
 ROBOTS: NOINDEX
-ms.openlocfilehash: 75dd74e3c1019c9819b44a0ffa8936eeb9eee366
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 18e703691696a2cfc02a5b9715fb6062360229e2
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268359"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353470"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Klar för vanliga frågor och svar om moderna skriv bord
 
 <!-- placeholder -->
+
+## <a name="ready-for-windows-adoption-status"></a>Redo för Windows tillämpnings status
+
+Tillämpnings status baseras på information från kommersiella enheter som delar data med Microsoft. Statusen är integrerad med support satser från program varu leverantörer.
+
+Skriv bords analys ger tillämpnings status för varje version av en till gång som finns på kommersiella enheter. Den här statusen omfattar inte data från konsument enheter eller enheter som inte delar data. Statusen är kanske inte representativ för införande frekvensen på alla Windows 10-enheter.
+
+Möjliga kategorier är:
+
+- **Starkt infört**: minst 100 000 kommersiella Windows 10-enheter har installerat den här appen.
+
+- **Antog**: minst 10 000 kommersiella Windows 10-enheter har installerat den här appen.
+
+- **Otillräckliga data**: det finns för få kommersiella Windows 10-enheter som delar information för den här appen för Microsoft att kategorisera dess införande.
+
+- **Kontakta utvecklaren**: det kan finnas kompatibilitetsproblem med den här versionen av appen. Microsoft rekommenderar att du kontaktar program leverantören och lär dig mer.
+
+- **Okänd**: det finns ingen tillgänglig information för den här versionen av programmet. Information kan vara tillgänglig för andra versioner av programmet.
 
 ## <a name="general"></a>Allmänt
 

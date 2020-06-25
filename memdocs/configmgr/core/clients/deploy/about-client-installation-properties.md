@@ -2,7 +2,7 @@
 title: Parametrar och egenskaper för klient installation
 titleSuffix: Configuration Manager
 description: Lär dig mer om kommando rads parametrar och egenskaper för CCMSetup för att installera Configuration Manager-klienten.
-ms.date: 04/01/2020
+ms.date: 06/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,46 +10,46 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fda1e877f8e0bc211b36e288af13de204305cc5a
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: 4065f320ec27f53e50c64bc7ca0c97d3f6923853
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455046"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353283"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Använd kommandot CCMSetup. exe för att installera Configuration Manager-klienten. Om du anger klient installations *parametrar* på kommando raden ändrar de installations beteendet. Om du anger klient installations *Egenskaper* på kommando raden, ändrar de den inledande konfigurationen för den installerade klient agenten.
+Använd kommandot CCMSetup.exe för att installera Configuration Manager-klienten. Om du anger klient installations *parametrar* på kommando raden ändrar de installations beteendet. Om du anger klient installations *Egenskaper* på kommando raden, ändrar de den inledande konfigurationen för den installerade klient agenten.
 
 ## <a name="about-ccmsetupexe"></a><a name="aboutCCMSetup"></a> Om CCMSetup.exe
 
-Kommandot CCMSetup. exe laddar ned filer som behövs för att installera klienten från en hanterings plats eller en käll plats. De här filerna kan vara:  
+Kommandot CCMSetup.exe hämtar filer som behövs för att installera klienten från en hanterings plats eller en käll plats. De här filerna kan vara:  
 
-- Den Windows Installer Package client. msi som installerar-klient program varan
+- Det Windows Installer paket client.msi som installerar klient programmet
 
 - Klient krav
 
 - Uppdateringar och korrigeringar för den Configuration Manager klienten
 
 > [!NOTE]
-> Du kan inte installera client. msi direkt.  
+> Du kan inte installera client.msi direkt.  
 
-CCMSetup. exe innehåller kommando rads *parametrar* för att anpassa installationen. Parametrar föregås av ett snedstreck ( `/` ) och enligt praxis är gemener. Du anger värdet för en parameter när det behövs med ett kolon ( `:` ) omedelbart följt av värdet. Mer information finns i [kommando rads parametrar för CCMSetup. exe](#ccmsetupexe-command-line-parameters).
+CCMSetup.exe tillhandahåller kommando rads *parametrar* för att anpassa installationen. Parametrar föregås av ett snedstreck ( `/` ) och enligt praxis är gemener. Du anger värdet för en parameter när det behövs med ett kolon ( `:` ) omedelbart följt av värdet. Mer information finns i [CCMSetup.exe kommando rads parametrar](#ccmsetupexe-command-line-parameters).
 
-Du kan också ange *Egenskaper* på kommando raden för CCMSetup. exe för att ändra funktions sättet för Client. msi. egenskaper efter konvention är versaler. Du anger ett värde för en egenskap med ett likhets tecken ( `=` ) omedelbart följt av värdet. Mer information finns i [client. msi-egenskaper](#clientMsiProps).
+Du kan också ange *Egenskaper* på CCMSetup.exe kommando rad för att ändra beteendet för client.msi. Egenskaper per konvention är versaler. Du anger ett värde för en egenskap med ett likhets tecken ( `=` ) omedelbart följt av värdet. Mer information finns i [Client.msi egenskaper](#clientMsiProps).
 
 > [!IMPORTANT]  
-> Ange CCMSetup-parametrar innan du anger egenskaper för Client. msi.  
+> Ange CCMSetup-parametrar innan du anger egenskaper för client.msi.  
 
-CCMSetup. exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager-installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Exempelvis `\\SiteServer\SMS_ABC\Client`.
+CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Exempelvis `\\SiteServer\SMS_ABC\Client`.
 
 I kommandotolken används följande format i CCMSetup.exe-kommandot:  
 
 `CCMSetup.exe [<Ccmsetup parameters>] [<client.msi setup properties>]`  
 
-Ett exempel:  
+Till exempel:  
 
 `CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
@@ -68,11 +68,11 @@ Det här exemplet gör följande:
 
 Om du utökar Active Directory-schemat för Configuration Manager publicerar platsen många klient installations egenskaper i Active Directory Domain Services. Den Configuration Manager klienten läser automatiskt dessa egenskaper. Mer information finns i [om klient installations egenskaper som publiceras till Active Directory Domain Services](about-client-installation-properties-published-to-active-directory-domain-services.md)  
 
-## <a name="ccmsetupexe-command-line-parameters"></a>Kommando rads parametrar för CCMSetup. exe
+## <a name="ccmsetupexe-command-line-parameters"></a>CCMSetup.exe kommando rads parametrar
 
 ### <a name=""></a><a name="bkmk_help"></a> /?
 
-Visar tillgängliga kommando rads parametrar för CCMSetup. exe.  
+Visar tillgängliga kommando rads parametrar för ccmsetup.exe.  
 
 Exempel: `ccmsetup.exe /?`
 
@@ -142,13 +142,13 @@ Följande exempel på kommando raden innehåller andra obligatoriska konfigurati
 
 ### <a name="retry"></a>/retry
 
-Om CCMSetup. exe inte kan ladda ned installationsfiler använder du den här parametern för att ange återförsöksintervall i minuter. CCMSetup fortsätter att försöka igen tills det når gränsen som anges i parametern [**/downloadtimeout**](#downloadtimeout) .
+Om CCMSetup.exe inte kan ladda ned installationsfiler använder du den här parametern för att ange återförsöksintervall i minuter. CCMSetup fortsätter att försöka igen tills det når gränsen som anges i parametern [**/downloadtimeout**](#downloadtimeout) .
 
 Exempel: `ccmsetup.exe /retry:20`  
 
 ### <a name="noservice"></a>/noservice
 
-Den här parametern förhindrar att CCMSetup körs som en tjänst, vilket den gör som standard. När CCMSetup körs som en tjänst körs den i kontexten för det lokala system kontot på datorn. Det här kontot kanske inte har behörighet att komma åt nödvändiga nätverks resurser för installationen. Med **/noservice**körs CCMSetup. exe i kontexten för det användar konto som du använder för att starta installationen.
+Den här parametern förhindrar att CCMSetup körs som en tjänst, vilket den gör som standard. När CCMSetup körs som en tjänst körs den i kontexten för det lokala system kontot på datorn. Det här kontot kanske inte har behörighet att komma åt nödvändiga nätverks resurser för installationen. Med **/noservice**körs CCMSetup.exe i kontexten för det användar konto som du använder för att starta installationen.
 
 Exempel: `ccmsetup.exe /noservice`  
 
@@ -157,7 +157,7 @@ Exempel: `ccmsetup.exe /noservice`
 Anger att CCMSetup ska köras som en tjänst som använder det lokala system kontot.  
 
 > [!TIP]
-> Om du använder ett skript för att köra CCMSetup. exe med parametern **/service** avslutas CCMSetup. exe när tjänsten har startats. Det kanske inte rapporterar installations information till skriptet korrekt.
+> Om du använder ett skript för att köra CCMSetup.exe med parametern **/service** , avslutas CCMSetup.exe när tjänsten har startats. Det kanske inte rapporterar installations information till skriptet korrekt.
 
 Exempel: `ccmsetup.exe /service`  
 
@@ -224,7 +224,7 @@ Den här parametern anger en textfil som visar en lista över klient installatio
 
 - Om CCMSetup körs som en tjänst placerar du filen i mappen CCMSetup-system: `%Windir%\Ccmsetup` .
 
-- Om du anger parametern [**/noservice**](#noservice) placerar du filen i samma mapp som CCMSetup. exe.
+- Om du anger parametern [**/noservice**](#noservice) placerar du filen i samma mapp som CCMSetup.exe.
 
 Exempel: `CCMSetup.exe /config:"configuration file name.txt"`
 
@@ -234,7 +234,7 @@ Exempel på `[Client Install]` avsnitts post:`Install=INSTALL=ALL SMSSITECODE=AB
 
 ### <a name="skipprereq"></a>/skipprereq
 
-Den här parametern anger att CCMSetup. exe inte ska installera den angivna förutsättningen. Du kan ange mer än ett värde. Använd semikolon ( `;` ) för att avgränsa varje värde.
+Den här parametern anger att CCMSetup.exe inte installerar den angivna förutsättningen. Du kan ange mer än ett värde. Använd semikolon ( `;` ) för att avgränsa varje värde.
 
 Exempel:
 
@@ -246,20 +246,35 @@ Mer information om klient krav finns i [krav för Windows-klienten](prerequisite
 
 ### <a name="forceinstall"></a>/forceinstall
 
-Ange att CCMSetup. exe avinstallerar en befintlig klient och installerar en ny klient.  
+Ange att CCMSetup.exe avinstallerar en befintlig klient och installerar en ny klient.  
 
 ### <a name="excludefeatures"></a>/ExcludeFeatures
 
-Den här parametern anger att CCMSetup. exe inte ska installera den angivna funktionen.
+Den här parametern anger att CCMSetup.exe inte installerar den angivna funktionen.
 
 Exempel: `CCMSetup.exe /ExcludeFeatures:ClientUI` installerar inte Software Center på klienten.  
 
 > [!NOTE]  
 > `ClientUI`är det enda värde som parametern **/ExcludeFeatures** stöder.
 
-## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a>Retur koder för CCMSetup. exe
+### <a name="alwaysexcludeupgrade"></a>/AlwaysExcludeUpgrade
 
-Kommandot CCMSetup. exe ger följande retur koder. Du kan felsöka genom att granska `%WinDir%\ccmsetup\ccmsetup.log` klienten för kontext och ytterligare information om retur koder.
+Den här parametern anger om en klient ska uppgraderas automatiskt när du aktiverar [**Automatisk klient uppgradering**](../manage/upgrade/upgrade-clients-for-windows-computers.md#bkmk_autoupdate).
+
+Värden som stöds:
+
+- `TRUE`: Klienten uppgraderas inte automatiskt
+- `FALSE`: Klienten uppgraderas automatiskt (standard)
+
+Till exempel:  
+
+`CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
+
+Mer information finns i [Extended driftskompatibilitet client](../../understand/interoperability-client.md).
+
+## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a>CCMSetup.exe retur koder
+
+Kommandot CCMSetup.exe ger följande retur koder. Du kan felsöka genom att granska `%WinDir%\ccmsetup\ccmsetup.log` klienten för kontext och ytterligare information om retur koder.
 
 |Returkod|Innebörd|  
 |-----------|-------|  
@@ -270,9 +285,9 @@ Kommandot CCMSetup. exe ger följande retur koder. Du kan felsöka genom att gra
 |9|Utvärderingen av krav misslyckades|  
 |10|Installationsmanifestet för hash-verifieringen misslyckades|  
 
-## <a name="ccmsetupmsi-properties"></a><a name="ccmsetupMsiProps"></a>CCMSetup. msi-egenskaper
+## <a name="ccmsetupmsi-properties"></a><a name="ccmsetupMsiProps"></a>Ccmsetup.msi egenskaper
 
-Följande egenskaper kan ändra installations beteendet för CCMSetup. msi.
+Följande egenskaper kan ändra installations beteendet för ccmsetup.msi.
 
 ### <a name="ccmsetupcmd"></a>CCMSETUPCMD
 
@@ -283,9 +298,9 @@ Exempel: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.co
 > [!Tip]
 > Microsoft Intune begränsar kommando raden till 1024 tecken.
 
-## <a name="clientmsi-properties"></a><a name="clientMsiProps"></a>Client. msi-egenskaper
+## <a name="clientmsi-properties"></a><a name="clientMsiProps"></a>Client.msi egenskaper
 
-Följande egenskaper kan ändra installations beteendet för Client. msi, som CCMSetup. exe installerar. Om du använder [push-installation av klienter](plan/client-installation-methods.md#client-push-installation)anger du dessa egenskaper på fliken **klient** i egenskaperna för **push-installation av klienter** i Configuration Manager-konsolen.
+Följande egenskaper kan ändra installations beteendet för client.msi, som ccmsetup.exe installerar. Om du använder [push-installation av klienter](plan/client-installation-methods.md#client-push-installation)anger du dessa egenskaper på fliken **klient** i egenskaperna för **push-installation av klienter** i Configuration Manager-konsolen.
 
 ### <a name="aadclientappid"></a>AADCLIENTAPPID
 
@@ -429,7 +444,7 @@ Mer information finns i [logg filen](../../plan-design/hierarchy/about-log-files
 
 ### <a name="ccmevalinterval"></a>CCMEVALINTERVAL
 
-Frekvensen i minuter då utvärderings verktyget för klient hälsa (ccmeval. exe) körs. Ange ett heltals värde från `1` till `1440` . Som standard körs ccmeval en gång om dagen (1440 minuter).
+Frekvensen i minuter då utvärderings verktyget för klient hälsa (ccmeval.exe) körs. Ange ett heltals värde från `1` till `1440` . Som standard körs ccmeval en gång om dagen (1440 minuter).
 
 Exempel: `CCMSetup.exe CCMEVALINTERVAL=1440`
 
@@ -437,7 +452,7 @@ Mer information om utvärdering av klient hälsa finns i [övervaka klienter](..
 
 ### <a name="ccmevalhour"></a>CCMEVALHOUR
 
-Timmen under dagen då utvärderings verktyget för klient hälsa (ccmeval. exe) körs. Ange ett heltals värde från `0` (midnatt) till `23` (11:00 PM). Som standard körs ccmeval vid midnatt.
+Timmen under dagen då utvärderings verktyget för klient hälsa (ccmeval.exe) körs. Ange ett heltals värde från `0` (midnatt) till `23` (11:00 PM). Som standard körs ccmeval vid midnatt.
 
 Mer information om utvärdering av klient hälsa finns i [övervaka klienter](../manage/monitor-clients.md#bkmk_health).
 
@@ -489,7 +504,7 @@ Exempel: `CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`
 Använd den här egenskapen för att ange att mappen ska installera Configuration Manager-klientens filer. Som standard används `%WinDir%\CCM` .
 
 > [!TIP]
-> Oavsett var du installerar-klient filerna installeras filen **cmcore. dll** alltid i `%WinDir%\System32` mappen. På ett 64-bitars operativ system installerar den en kopia av cmcore. dll i `%WinDir%\SysWOW64` mappen. Den här filen stöder 32-bitars program som använder 32-bitars versionen av-klientens API: er från Configuration Manager SDK.
+> Oavsett var du installerar-klient filerna installeras alltid **ccmcore.dll** -filen i `%WinDir%\System32` mappen. På ett 64-bitars operativ system installerar den en kopia av ccmcore.dll i `%WinDir%\SysWOW64` mappen. Den här filen stöder 32-bitars program som använder 32-bitars versionen av-klientens API: er från Configuration Manager SDK.
 
 Exempel: `CCMSetup.exe CCMINSTALLDIR="C:\ConfigMgr"`
 
@@ -750,7 +765,7 @@ Configuration Manager stöder följande attributvärden för urvalskriterier fö
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Rubrik|  
+|2.5.4.12|T eller Title|Titel|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
 |2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  

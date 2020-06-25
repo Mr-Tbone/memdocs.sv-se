@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 623a8dab52e13c4674b961e825033430d34a8f88
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: fe50aad3cb35ab5908f604560f4dcd22800919a5
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906552"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353453"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Teknisk referens för kryptografiska kontroller
 
@@ -24,7 +24,7 @@ Configuration Manager använder signering och kryptering för att skydda hanteri
 
  Den primära hash-algoritm som Configuration Manager använder för signering är SHA-256. När två Configuration Manager-platser kommunicerar med varandra signerar de sin kommunikation med SHA-256. Den primära krypteringsalgoritm som implementeras i Configuration Manager är 3DES. Detta används för att lagra data i Configuration Manager-databasen och för klient-HTTP-kommunikation. När du använder klient kommunikation via HTTPS kan du konfigurera din PKI (Public Key Infrastructure) att använda RSA-certifikat med de maximala hash-algoritmer och nyckel längder som dokumenteras i [PKI-certifikat krav](../network/pki-certificate-requirements.md).  
 
- För de flesta kryptografiska åtgärder för Windows-baserade operativ system använder Configuration Manager SHA-2, 3DES och AES och RSA-algoritmer från Windows CryptoAPI-biblioteket rsaenh. dll.  
+ För de flesta kryptografiska åtgärder för Windows-baserade operativ system använder Configuration Manager SHA-2, 3DES och AES och RSA-algoritmer från Windows CryptoAPI-biblioteket rsaenh.dll.  
 
 > [!IMPORTANT]  
 >  Visa information om rekommenderade ändringar som svar på SSL-säkerhetsproblem i [About SSL Vulnerabilities](#about-ssl-vulnerabilities).  
@@ -70,7 +70,7 @@ Det är inte alla enheter som har stöd för innehållshashing. Undantagen är:
  För varje distributionspaket till ett operativsystem kan du aktivera kryptering när paketet överförs till datorerna via multicast. För krypteringen används standarden AES (Advanced Encryption Standard). Om du aktiverar kryptering behövs ingen ytterligare certifikatkonfiguration. Den multicast-aktiverade distributionsplatsen genererar automatiskt symmetriska nycklar för kryptering av paketet. Alla paket har olika krypteringsnycklar. Nyckeln sparas på den multicast-aktiverade distributionsplatsen med hjälp av Windows API:er av standardtyp. När klienten ansluter till multicast-sessionen sker nyckelbytet via en kanal som är krypterad med antingen det PKI-utfärdade klientautentiseringscertifikatet (om klienten använder HTTPS) eller det självsignerade certifikatet (om klienten använder HTTP). Klienten sparar nyckeln i minnet enbart under den tid multicast-sessionen varar.  
 
 ### <a name="encryption-for-media-to-deploy-operating-systems"></a>Kryptering för media för att distribuera operativ system  
- När du använder medier för att distribuera operativsystem och anger ett lösenord för att skydda mediet krypteras miljövariablerna med hjälp av AES (Advanced Encryption Standard). Övriga data på mediet, inklusive paket och innehåll för program, krypteras inte.  
+ När du använder medier för att distribuera operativ system och anger ett lösen ord för att skydda mediet krypteras miljövariablerna med hjälp av Advanced Encryption Standard (AES) med en 128-bitars nyckel storlek. Övriga data på mediet, inklusive paket och innehåll för program, krypteras inte.  
 
 ### <a name="encryption-for-content-that-is-hosted-on-cloud-based-distribution-points"></a>Kryptering av innehåll som finns på molnbaserade distributions platser  
  Från och med System Center 2012 Configuration Manager SP1, och när du använder molnbaserade distributions platser, krypteras det innehåll som du överför till dessa distributions platser med hjälp av Advanced Encryption Standard (AES) med en 256-bitars nyckel storlek. Innehållet omkrypteras när du uppdaterar det. När klienterna laddar ned innehållet krypteras det och skyddas av HTTPS-anslutningen.  
@@ -260,5 +260,5 @@ Gör så här för att förbättra säkerheten för dina Configuration Manager-k
 - Inaktivera SSL 3,0, TLS 1,0 och TLS 1,1 
 - Ändra ordning på TLS-relaterade chiffersviter 
 
-Mer information finns i [så här begränsar du användningen av vissa kryptografiska algoritmer och protokoll i Schannel. dll](https://support.microsoft.com/help/245030/) och [prioriterar Schannel cipher-paket](https://docs.microsoft.com/windows/win32/secauthn/prioritizing-schannel-cipher-suites). Dessa procedurer påverkar inte Configuration Manager funktioner.
+Mer information finns i [så här begränsar du användningen av vissa krypteringsalgoritmer och protokoll i Schannel.dll](https://support.microsoft.com/help/245030/) och [prioriterar Schannel-chiffersviter](https://docs.microsoft.com/windows/win32/secauthn/prioritizing-schannel-cipher-suites). Dessa procedurer påverkar inte Configuration Manager funktioner.
 

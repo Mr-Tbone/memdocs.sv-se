@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: a2829c5bd86192c4f2421550af9f27aef64aa353
-ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
+ms.openlocfilehash: 774e77f62ee31daa89eeb4273f3c1e7db68a374d
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428650"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353487"
 ---
 # <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -81,7 +81,7 @@ Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller f
 
     - För att få åtkomst till portalen efter onboarding behöver du:
 
-      - [**Administratörs rollen för Skriv bords Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) och [**ägare**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), eller [**deltagar**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) behörigheter för resurs gruppen där arbets ytan skapades.
+      - [**Administratörs rollen för Skriv bords Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) och [**ägare**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), eller [**deltagar**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) behörigheter på arbets ytan Log Analytics skapades.
 
 - Configuration Manager version 1902 med Samlad uppdatering (4500571) eller senare. Mer information finns i [uppdatera Configuration Manager](connect-configmgr.md#bkmk_hotfix).  
 

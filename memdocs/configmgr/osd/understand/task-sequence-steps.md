@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 385a7222b33275951de294554a870d8e490a5ddc
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 114a0a18b3eb5d416b45379ccb3ac68128e529c5
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719094"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353606"
 ---
 # <a name="task-sequence-steps"></a>Aktivitetssekvenssteg
 
@@ -280,13 +280,13 @@ Steget **Använd operativ Systems avbildning** utför följande åtgärder när 
 
 3. Förbered svars filen:  
 
-    1. Skapa en ny standard svars fil för Installationsprogrammet för Windows (Sysprep. inf eller Unattend. xml) för det distribuerade operativ systemet.  
+    1. Skapa en ny standard svars fil för Installationsprogrammet för Windows (Sysprep. inf eller unattend.xml) för det distribuerade operativ systemet.  
 
     2. Sammanfoga alla värden från den svars fil som användaren angav.  
 
 4. Kopiera Windows Start-inläsare till den aktiva partitionen.  
 
-5. Ange Boot. ini eller start konfigurations databasen (BCD) för att referera till det nyligen installerade operativ systemet.  
+5. Ange boot.ini eller start konfigurations databasen (BCD) för att referera till det nyligen installerade operativ systemet.  
 
 #### <a name="os-upgrade-package-actions"></a>Åtgärder för uppgraderings paket för operativ system
 
@@ -321,10 +321,10 @@ Installerar ett operativ system med ett uppgraderings paket för operativ system
 
 #### <a name="use-an-unattended-or-sysprep-answer-file-for-a-custom-installation"></a>Använda obevakad svarsfil eller sysprep-svarsfil för en anpassad installation
 
-Använd det här alternativet för att tillhandahålla en svarsfil för Windows-installation (**Unattend. XML**, **Unattend. txt**eller **Sysprep. inf**) beroende på operativ systemets version och installations metod. Filen du anger kan innehålla flera av alternativen för standardkonfigurationen som stöds av Windows svarsfiler. Du kan till exempel använda den för att ange startsida för Internet Explorer. Ange det paket som innehåller svars filen och den associerade sökvägen till filen i paketet.  
+Använd det här alternativet om du vill ange en svarsfil för Windows-installation (**unattend.xml**, **unattend.txt**eller **Sysprep. inf**) beroende på operativ systemets version och installations metod. Filen du anger kan innehålla flera av alternativen för standardkonfigurationen som stöds av Windows svarsfiler. Du kan till exempel använda den för att ange startsida för Internet Explorer. Ange det paket som innehåller svars filen och den associerade sökvägen till filen i paketet.  
 
 > [!NOTE]  
-> Svars filen för Windows-installationen som du anger kan innehålla inbäddade variabler för aktivitetssekvenser i formuläret `%varname%` , där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel strängen för variabelns faktiska värde. Du kan inte använda dessa inbäddade variabler för aktivitetssekvenser i ett numeriskt fält i svars filen Unattend. xml.  
+> Svars filen för Windows-installationen som du anger kan innehålla inbäddade variabler för aktivitetssekvenser i formuläret `%varname%` , där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel strängen för variabelns faktiska värde. Du kan inte använda dessa inbäddade variabler för aktivitetssekvenser i ett numeriskt fält i en unattend.xml svarsfil.  
 
 Om du inte anger svars filen för installations programmet för Windows skapas automatiskt en svarsfil i aktivitetssekvensen.  
 
@@ -450,7 +450,7 @@ Konfigurera följande inställningar:
 Mer information om de här svars fil värdena för Windows-installationen finns i [Microsoft-Windows-International-Core](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core).
 
 > [!NOTE]
-> Om du skapar en anpassad svarsfil för Windows-installation (Unattend. xml) skriver det här steget över alla befintliga värden. Om du vill automatisera en dynamisk process för de här inställningarna använder du de relaterade variablerna för aktivitetssekvens. Till exempel [OSDWindowsSettingsInputLocale](task-sequence-variables.md#OSDWindowsSettingsInputLocale). 
+> Om du skapar en anpassad svarsfil för installations programmet för Windows (unattend.xml) skriver det här steget över alla befintliga värden. Om du vill automatisera en dynamisk process för de här inställningarna använder du de relaterade variablerna för aktivitetssekvens. Till exempel [OSDWindowsSettingsInputLocale](task-sequence-variables.md#OSDWindowsSettingsInputLocale). 
 
 ## <a name="auto-apply-drivers"></a><a name="BKMK_AutoApplyDrivers"></a>Använd driv rutiner automatiskt
 
@@ -848,11 +848,11 @@ Från och med version 2002 kontrollerar du om det aktuella operativ systemet är
 
 #### <a name="minimum-os-version"></a>Minsta operativsystemversion
 
-Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en senare version än vad som anges. Ange versionen med huvud version, lägre version och build-nummer. Till exempel `10.0.16299`.
+Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en senare version än vad som anges. Ange versionen med huvud version, lägre version och build-nummer. Exempelvis `10.0.16299`.
 
 #### <a name="maximum-os-version"></a>Högsta version av operativsystemet
 
-Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en tidigare version än den angivna. Ange versionen med huvud version, lägre version och build-nummer. Till exempel `10.0.18356`.
+Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en tidigare version än den angivna. Ange versionen med huvud version, lägre version och build-nummer. Exempelvis `10.0.18356`.
 
 #### <a name="minimum-client-version"></a>Lägsta klient version
 
@@ -1189,7 +1189,7 @@ Typ av disk som ska formateras. Det finns två alternativ att välja i listrutan
 
 Detaljerad information om partitionen eller volymen som aktivitetssekvensen skapar, inklusive följande attribut:  
 
-- Name  
+- Namn  
 - Återstående diskutrymme  
 
 Om du vill skapa en ny partition väljer du **ny** för att öppna dialog rutan **Egenskaper för partition** . Ange partitionstyp och storlek och om det är en startpartition. Om du vill ändra en befintlig partition väljer du den partition som ska ändras och väljer sedan knappen **Egenskaper** . Mer information om hur du konfigurerar hårddiskpartitioner finns i någon av följande artiklar:  
@@ -1869,6 +1869,12 @@ Aktivera det här alternativet för att skapa mer detaljerad information i loggf
 
 Använd det här steget för att köra den angivna kommando raden.  
 
+Kommandot som körs måste uppfylla följande kriterier:  
+
+- Den bör inte samverka med Skriv bordet. Kommandot måste köras tyst eller i obevakat läge.  
+
+- Det får inte initiera en egen omstart. Kommandot måste begära en omstart med hjälp av standard koden för omstart, 3010. Det här beteendet ser till att aktivitetssekvensen korrekt hanterar omstarten. Om kommandot returnerar en avslutnings kod på 3010, startar aktivitetssekvensen om datorn. Efter omstarten fortsätter aktivitetssekvensen automatiskt.
+
 Det här steget kan köras i fullständigt operativ system eller Windows PE.
 
 Om du vill lägga till det här steget i redigeraren för aktivitetssekvens väljer du **Lägg till**, Välj **Allmänt**och välj **Kör kommando rad**.
@@ -1901,7 +1907,7 @@ På fliken **Egenskaper** för det här steget konfigurerar du de inställningar
 
 Anger den kommando rad som aktivitetssekvensen körs på. Det här fältet är obligatoriskt. Inkludera fil namns tillägg, till exempel. vbs och. exe. Ta med alla nödvändiga installationsfiler och kommando rads alternativ.  
 
-Om du inte anger fil namns tillägget Configuration Manager försöker. com,. exe och. bat. Om fil namnet har ett tillägg som inte är av körbar typ försöker Configuration Manager använda en lokal Association. Om kommando raden till exempel är Readme. gif, Configuration Manager startar det program som anges på mål datorn för att öppna. gif-filer.  
+Om du inte anger fil namns tillägget Configuration Manager försöker. com,. exe och. bat. Om fil namnet har ett tillägg som inte är av körbar typ försöker Configuration Manager använda en lokal Association. Om kommando raden till exempel är readme.gif, Configuration Manager startar det program som anges på mål datorn för att öppna. gif-filer.  
 
 Exempel:  
 
@@ -1910,7 +1916,7 @@ Exempel:
 `cmd.exe /c copy Jan98.dat c:\sales\Jan98.dat`  
 
 > [!NOTE]  
-> Kör kommando rads åtgärder med kommandot **cmd. exe/c** för att köra utan problem. Exempel på dessa åtgärder är kommandon för omdirigering av utdata, rör och kopiering.  
+> För att köra utan problem, föregå kommando rads åtgärder med kommandot **cmd.exe/c** . Exempel på dessa åtgärder är kommandon för omdirigering av utdata, rör och kopiering.  
 
 #### <a name="output-to-task-sequence-variable"></a>Utdata till aktivitetssekvens-variabel
 
@@ -1976,6 +1982,12 @@ Inkludera andra slut koder från skriptet som steget ska utvärdera som lyckat.
 ## <a name="run-powershell-script"></a><a name="BKMK_RunPowerShellScript"></a>Kör PowerShell-skript
 
 Använd det här steget för att köra det angivna Windows PowerShell-skriptet.  
+
+Skriptet måste uppfylla följande kriterier:  
+
+- Den bör inte samverka med Skriv bordet. Skriptet måste köras tyst eller i obevakat läge.  
+
+- Det får inte initiera en egen omstart. Sscript måste begära en omstart med hjälp av standard koden för omstart, 3010. Det här beteendet ser till att aktivitetssekvensen korrekt hanterar omstarten. Om skriptet returnerar en 3010-slutkod, startar aktivitetssekvensen om datorn. Efter omstarten fortsätter aktivitetssekvensen automatiskt.
 
 Det här steget kan köras i fullständigt operativ system eller Windows PE. Om du vill köra det här steget i Windows PE aktiverar du PowerShell i Start avbildningen. Aktivera WinPE-PowerShell-komponenten från fliken **valfria komponenter** i egenskaperna för start avbildningen. Mer information om hur du ändrar en start avbildning finns i [Hantera start avbildningar](../get-started/manage-boot-images.md).  
 
@@ -2292,7 +2304,7 @@ Använd det här steget för att utföra över gången från Windows PE till det
 
 Det här steget ansvarar för över gången till aktivitetssekvensen från Windows PE till det fullständiga operativ systemet. Steget körs både i Windows PE och det fullständiga operativ systemet på grund av den här över gången. Men eftersom över gången startar i Windows PE kan det bara läggas till i Windows PE-delen av aktivitetssekvensen.  
 
-Det här steget ersätter Sysprep. inf-eller Unattend. XML-katalogpartitioner, till exempel `%WINDIR%` och `%ProgramFiles%` , med installations katalogen för Windows PE `X:\Windows` . Aktivitetssekvensen ignorerar variabler som anges genom att använda de här miljövariablerna.  
+Det här steget ersätter Sysprep. inf-eller unattend.xml Directory-variabler, till exempel `%WINDIR%` och `%ProgramFiles%` , med installations katalogen för Windows PE `X:\Windows` . Aktivitetssekvensen ignorerar variabler som anges genom att använda de här miljövariablerna.  
 
 Om du vill lägga till det här steget i redigeraren för aktivitetssekvens väljer du **Lägg till**, Välj **avbildningar**och välj sedan **Installera Windows och ConfigMgr**.
 
@@ -2302,7 +2314,7 @@ Det här steget utför följande åtgärder:
 
 #### <a name="preliminaries-windows-pe"></a>Förberedelser: Windows PE  
 
-1. Ersätt variabler för aktivitetssekvens i filen Unattend. xml.  
+1. Ersätt variabler för aktivitetssekvens i unattend.xml-filen.  
 
 2. Ladda ned paketet som innehåller Configuration Manager-klienten. Lägg till paketet i den distribuerade avbildningen.  
 
@@ -2316,7 +2328,7 @@ Det här steget utför följande åtgärder:
 
     3. Starta om till det distribuerade operativ systemet.  
 
-    4. Windows Mini-installation körs med hjälp av den tidigare angivna Sysprep. inf-eller Unattend. XML-svars filen där all slut användar interaktion utelämnas. Om du använder steget **tillämpa nätverks inställningar** för att ansluta till en domän finns den informationen i svars filen. Windows-miniinstallationsprogrammet ansluter datorn till domänen.  
+    4. Windows Mini-installation körs med hjälp av den tidigare angivna Sysprep. inf-eller unattend.xml svarsfil som har all slut användar interaktion under tryckning. Om du använder steget **tillämpa nätverks inställningar** för att ansluta till en domän finns den informationen i svars filen. Windows-miniinstallationsprogrammet ansluter datorn till domänen.  
 
 - Setup.exe-baserad installation. Kör Setup.exe som följer den vanliga Windows-installationsprocessen:  
 
@@ -2324,7 +2336,7 @@ Det här steget utför följande åtgärder:
 
     2. Starta om till det nyligen distribuerade operativ systemet.  
 
-    3. Windows Mini-installation körs med hjälp av den tidigare angivna Sysprep. inf-eller Unattend. XML-svars filen som innehåller alla inställningar för användar gränssnittet ignorerade. Om du använder steget **tillämpa nätverks inställningar** för att ansluta till en domän finns den informationen i svars filen. Windows-miniinstallationsprogrammet ansluter datorn till domänen.  
+    3. Windows Mini-installation körs med hjälp av den tidigare angivna Sysprep. inf-eller unattend.xml svarsfil som har alla inställningar för användar gränssnitt ignorerade. Om du använder steget **tillämpa nätverks inställningar** för att ansluta till en domän finns den informationen i svars filen. Windows-miniinstallationsprogrammet ansluter datorn till domänen.  
 
 #### <a name="set-up-the-configuration-manager-client"></a>Konfigurera Configuration Manager-klienten  
 
@@ -2375,7 +2387,7 @@ Om det finns ett för produktions klient paket tillgängligt, och datorn är med
 
 Steget aktivitetssekvens anger automatiskt platstilldelning och standard konfigurationen. Använd det här fältet för att ange ytterligare installations egenskaper som ska användas när du installerar-klienten. Om du vill ange flera installationsegenskaper avgränsar du dem med ett blanksteg.  
 
-Ange kommando rads alternativ som ska användas vid klient installation. Ange till exempel `/skipprereq: silverlight.exe` för att informera CCMSetup. exe om att inte installera Microsoft Silverlight-krav. Mer information om tillgängliga kommando rads alternativ för CCMSetup. exe finns i [om klient installations egenskaper](../../core/clients/deploy/about-client-installation-properties.md).  
+Ange kommando rads alternativ som ska användas vid klient installation. Ange till exempel `/skipprereq: silverlight.exe` för att informera CCMSetup.exe om att inte installera de nödvändiga komponenterna för Microsoft Silverlight. Mer information om tillgängliga kommando rads alternativ för CCMSetup.exe finns i [om klient installations egenskaper](../../core/clients/deploy/about-client-installation-properties.md).  
 
 ### <a name="options-for-setup-windows-and-configmgr"></a>Alternativ för installation av Windows och ConfigMgr
 
