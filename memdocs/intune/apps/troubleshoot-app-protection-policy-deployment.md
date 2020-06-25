@@ -9,18 +9,17 @@ search.appverid:
 audience: ITPro
 ms.date: 4/17/2020
 ms.service: microsoft-intune
-ms.subservice: apps
-ms.topic: troubleshooting
+ms.topic: conceptual
 ms.author: v-six
 ms.custom: CSSTroubleshoot
 appliesto:
 - Intune
-ms.openlocfilehash: 7f4d3f8193eeaf9597d56c8cf1cd999147915e61
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: 3b4c02e366f4778e65b4fe4c853ed147fcdb1df3
+ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531578"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82072760"
 ---
 # <a name="troubleshooting-app-protection-policy-deployment-in-intune"></a>Felsöka en distribution av appskyddsprincip i Intune
 
@@ -181,7 +180,7 @@ Kontrollera appskyddsstatus med hjälp av följande steg:
 Intune-appskyddsprincipen innehåller stöd för flera identiteter. Intune kan tillämpa appskyddsprinciper på endast det arbets- eller skolkonto som är inloggat i appen. Det finns dock endast stöd för ett arbets- eller skolkonto per enhet.
 
 ### <a name="scenario-the-policy-is-applied-but-ios-users-can-still-transfer-work-files-to-unmanaged-apps"></a>Scenario: Principen tillämpas, men iOS-användare kan fortfarande överföra arbetsfiler till ohanterade appar
-Med funktionen **Öppna i hantering** ( ![knappen Öppna i](media/troubleshoot-app-protection/troubleshoot-app-protection.jpg) ) för iOS-enheter kan du begränsa överförandet av filer mellan appar som är distribuerade via ![MDM-kanalen](media/troubleshoot-app-protection/troubleshoot-app-protection.jpg). Användaren kan kanske överföra arbetsfiler från hanterade platser såsom OneDrive och Exchange till ohanterade appar eller platser, beroende på konfigurationen. Funktionen **Öppna i hantering** i iOS fungerar utanför andra dataöverföringsmetoder. Därför påverkas den inte av inställningarna för **Spara som** och **Kopiera/klistra in**.
+Med funktionen **Öppna i hantering** ( ![knappen Öppna i](media/troubleshoot-app-protection/troubleshoot-app-protection.jpg) ) för iOS-enheter kan du begränsa överförandet av filer mellan appar som är distribuerade via MDM-kanalen Användaren kan kanske överföra arbetsfiler från hanterade platser såsom OneDrive och Exchange till ohanterade appar eller platser, beroende på konfigurationen. Funktionen **Öppna i hantering** i iOS fungerar utanför andra dataöverföringsmetoder. Därför påverkas den inte av inställningarna för **Spara som** och **Kopiera/klistra in**.
 
 Du kan använda Intune-appskyddsprinciper tillsammans med iOS-funktionen **Öppna i hantering** för att skydda företagets data på följande sätt:
 
