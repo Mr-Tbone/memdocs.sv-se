@@ -258,6 +258,8 @@
               href: troubleshoot-scep-certificate-delivery.md
             - name: Rapportering om certifikatdistribution
               href: troubleshoot-scep-certificate-reporting.md
+        - name: Felsök PKCS-certifikatprofiler
+          href: troubleshoot-pkcs-certificate-profiles.md
         - name: Felsöka Exchange Connector
           items:
             - name: Felsöka Exchange Connector
