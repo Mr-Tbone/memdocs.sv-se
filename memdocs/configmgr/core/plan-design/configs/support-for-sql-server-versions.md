@@ -2,7 +2,7 @@
 title: SQL Server-versioner som stöds
 titleSuffix: Configuration Manager
 description: Hämta SQL Server versions-och konfigurations krav för att vara värd för en Configuration Manager plats databas.
-ms.date: 04/03/2020
+ms.date: 06/24/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3c52008089a6d23d5c4efe44f0970bb186eb334a
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: b30380f4e272050b7224b52d092f39aa8ab5bad4
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904638"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383180"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>SQL Server-versioner som stöds för Configuration Manager
 
@@ -74,7 +74,7 @@ Om inget annat anges stöds följande versioner av SQL Server med alla aktiva ve
 
 ### <a name="sql-server-2019-standard-enterprise"></a>SQL Server 2019: standard, Enterprise
 
-Från och med Configuration Manager version 1910 kan du använda den här versionen med en kumulativ uppdatering, så länge den kumulativa uppdaterings versionen stöds av SQL-livscykeln.
+Från och med Configuration Manager version 1910 kan du använda den här versionen med Cumulative Update 5 (CU5) eller senare, så länge din kumulativa uppdaterings version stöds av SQL-livscykeln. CU5 är minimi kravet för SQL Server 2019 eftersom det löser ett problem med [SKALÄR UDF](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining)-inskalning.
 
 Den här versionen av SQL kan användas för följande platser:
 
@@ -82,19 +82,20 @@ Den här versionen av SQL kan användas för följande platser:
 - En primär plats
 - En sekundär plats
 
-#### <a name="known-issue-with-sql-server-2019"></a>Känt problem med SQL Server 2019
+<!--
+#### Known issue with SQL Server 2019
 
-Det finns ett känt problem<!--6436234--> med den nya [skalära UDF](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining) -funktionen i SQL 2019. Undvik det här problemet och inaktivera UDF-beklädnaden genom att köra följande skript på SQL 2019-servern:
+There's a known issue<!--6436234 with the new [scalar UDF inlining](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining) feature in SQL 2019. To work around this issue and disable UDF lining, run the following script on the SQL 2019 server:
 
 ```sql
 ALTER DATABASE SCOPED CONFIGURATION SET TSQL_SCALAR_UDF_INLINING = OFF  
 ```
 
-Även om du inte alltid behöver det kan du behöva starta om SQL Server när du har kört skriptet. Mer information finns i inaktivera skalär UDF-inskalning [utan att ändra kompatibilitetsnivån](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#disabling-scalar-udf-inlining-without-changing-the-compatibility-level).
+While not always necessary, you may need to restart the SQL server after you run this script. For more information, see [Disabling Scalar UDF Inlining without changing the compatibility level](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#disabling-scalar-udf-inlining-without-changing-the-compatibility-level).
 
-Du kan inaktivera den här SQL-funktionen för plats databas servern på ett säkert sätt eftersom Configuration Manager inte använder den.
+You can safely disable this SQL feature for the site database server because Configuration Manager doesn't use it.
 
-Om du inte inaktiverar skalär UDF-inskalning i SQL 2019 kommer plats servern slumpmässigt att inte fråga plats databasen. Du ser till exempel följande fel i **hman. log**:
+If you don't disable scalar UDF inlining in SQL 2019, the site server will randomly fail to query the site database. For example, you'll see the following errors in **hman.log**:
 
 ```hman.log
 *** [HY000][0][Microsoft][SQL Server Native Client 11.0]Unspecified error occurred on SQL Server. Connection may have been terminated by the server.
@@ -103,13 +104,14 @@ Om du inte inaktiverar skalär UDF-inskalning i SQL 2019 kommer plats servern sl
 Failed to execute SQL command select dbo.fnGetSiteMode(dbo.fnGetSiteCode())
 ```
 
-Du kan se liknande fel i andra loggar, till exempel **SmsAdminUI. log**.
+You may see similar errors in other logs, such as **SmsAdminUI.log**.
 
-SQL Server version 2019 loggar följande fel:
+SQL Server version 2019 logs the following error:
 
 `Microsoft SQL Server reported SQL message 596, severity 21: [HY000][596][Microsoft][SQL Server Native Client 11.0][SQL Server]Cannot continue the execution because the session is in the kill state.`
 
-Du ser också krasch dum par ( `.mdump` filer) från SQL i sin logg katalog som standard `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log` .
+You'll also see crash dumps (`.mdump` files) from SQL in its log directory, which by default is `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Log`.
+-->
 
 ### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: standard, Enterprise
 

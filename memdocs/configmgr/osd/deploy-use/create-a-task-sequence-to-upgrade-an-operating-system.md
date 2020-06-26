@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8d87b2cde9a9fadb7326939b7fe473ba2a757e91
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 6ad36978f3f3dc5207068a65d76bf8f5c7c3078c
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430124"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383248"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Skapa en aktivitetssekvens för att uppgradera ett operativ system i Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "83430124"
 Använd aktivitetssekvenser i Configuration Manager för att automatiskt uppgradera ett operativ system på mål datorn. Den här uppgraderingen kan vara från Windows 7 eller senare till Windows 10, eller från Windows Server 2012 eller senare till Windows Server 2016. Skapa en aktivitetssekvens som refererar till uppgraderings paketet för operativ systemet och eventuellt annat innehåll att installera, till exempel program eller program uppdateringar. Aktivitetssekvensen för att uppgradera ett operativ system är en del av [uppgraderings Fönstren till det senaste versions](upgrade-windows-to-the-latest-version.md) scenariot.  
 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Innan du skapar aktivitetssekvensen måste följande krav vara på plats:
 
@@ -124,7 +124,7 @@ Om det returnerar några resultat körs enheten på Wi-Fi. Annars är enheten an
 
 Lägg till steg i den här gruppen för att ta bort alla program som inte är kompatibla med den här versionen av Windows 10. Metoden för att avinstallera ett program varierar.  
 
-Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Ett exempel:
+Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Till exempel:
 
 `msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`  
 
@@ -222,8 +222,10 @@ Ett sådant verktyg är Windows- [SetupDiag](https://docs.microsoft.com/windows/
 - [Skapa ett paket](../../apps/deploy-use/packages-and-programs.md#create-a-package-and-program) för verktyget i Configuration Manager.  
 
 - Lägg till steget [Kör kommando rad](../understand/task-sequence-steps.md#BKMK_RunCommandLine) i den här gruppen av aktivitetssekvensen. Använd alternativet **paket** för att referera till verktyget. Följande sträng är ett exempel på en **kommando rad**:  
-    `SetupDiag.exe /Output:"%_SMSTSLogPath%\SetupDiagResults.log" /Mode:Online`  
+    `SetupDiag.exe /Output:"%_SMSTSLogPath%\SetupDiagResults.log"`  
 
+> [!TIP]
+> Använd alltid den senaste versionen av SetupDiag för de senaste funktionerna och korrigeringarna på kända problem. Mer information finns i [SetupDiag](https://docs.microsoft.com/windows/deployment/upgrade/setupdiag).
 
 ## <a name="additional-recommendations"></a>Ytterligare rekommendationer
 

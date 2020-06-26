@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79e83a7ba111b1d7f96fb623914ffe8e11f22f3d
-ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
+ms.openlocfilehash: 576f909be15a35f4c29e803236c220cdde33c0ac
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84270879"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383163"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Förbered för användning SQL Server Always on-tillgänglighetsgrupper med Configuration Manager
 
@@ -256,11 +256,7 @@ Configuration Manager installationen måste ansluta till varje replik. När du k
 
 - SQL över TCP: **TCP 1433**
 
-När installationen är klar måste följande portar vara öppna för Configuration Manager:  
-
-- SQL Server Service Broker: **TCP 4022**  
-
-- SQL över TCP: **TCP 1433**  
+När installationen är klar måste dessa portar vara öppna för Configuration Manager och Replikeringslänkanalys.<!-- MEMDocs#375 -->
 
 Du kan använda anpassade portar för dessa konfigurationer. Använd samma anpassade portar av slut punkten och alla repliker i tillgänglighets gruppen.
 

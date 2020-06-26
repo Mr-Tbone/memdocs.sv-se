@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4065f320ec27f53e50c64bc7ca0c97d3f6923853
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: 02a281b800c1156cf8492e8a897a5cf1b412006e
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353283"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383044"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -271,6 +271,13 @@ Till exempel:
 `CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
 
 Mer information finns i [Extended driftskompatibilitet client](../../understand/interoperability-client.md).
+
+> [!NOTE]  
+> När du använder parametern **/AlwaysExcludeUpgrade** körs den automatiska uppgraderingen fortfarande. Men när CCMSetup körs för att utföra uppgraderingen, kommer det att Observera att **/AlwaysExcludeUpgrade** -parametern har angetts och kommer att logga följande rad i **CCMSetup. log**:
+>
+> `Client is stamped with /alwaysexcludeupgrade. Stop proceeding.`
+>
+> CCMSetup avslutas omedelbart och utför inte uppgraderingen.
 
 ## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a>CCMSetup.exe retur koder
 
@@ -765,7 +772,7 @@ Configuration Manager stöder följande attributvärden för urvalskriterier fö
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Titel|  
+|2.5.4.12|T eller Title|Rubrik|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
 |2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  

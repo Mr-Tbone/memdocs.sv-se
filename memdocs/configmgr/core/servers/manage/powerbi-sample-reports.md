@@ -1,8 +1,8 @@
 ---
-title: Installera Power BI exempel rapporter
+title: Installera Power BI-exempelrapporter
 titleSuffix: Configuration Manager
 description: Lär dig hur du installerar Power BI exempel rapporter i Configuration Manager
-ms.date: 06/23/2020
+ms.date: 06/25/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: 7e9bc22c-67ac-4a86-b613-944a4928e583
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 340f10a486594f78053dcfd0febde40bb5a6697f
-ms.sourcegitcommit: c5c17af545fd9df94f9b99fd44b56f10ff1f695e
+ms.openlocfilehash: 39bec7e8b01b35a8411400399a74eb352406c023
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85310660"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383197"
 ---
-# <a name="install-power-bi-sample-reports"></a>Installera Power BI exempel rapporter
+# <a name="install-power-bi-sample-reports"></a>Installera Power BI-exempelrapporter
 <!--5679791-->
 *Gäller för: Configuration Manager (aktuell gren)*
 
@@ -34,9 +34,12 @@ Från och med version 2002 kan du integrera [Power BI-rapportserver](https://doc
 
 ## <a name="download-the-sample-reports"></a>Hämta exempel rapporterna
 
+> [!IMPORTANT]
+> Exempel rapporterna är för närvarande inte tillgängliga för hämtning. De togs tillfälligt bort för att åtgärda rapporterade problem.
+
 Så här hämtar du exempel rapporterna:
 
-1. Hämta Power BI exempel rapporter från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=101452).
+1. Ladda ned Power BI exempel rapporter<!-- from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=101452)-->.
 1. Spara filen `ConfigMgrSamplePowerBIReports.exe`. 
 1. Flytta filen till en dator med Microsoft Power BI Desktop (optimerad för Power BI-rapportserver) installerad om du har hämtat den från en annan enhet.
 1. Kör `ConfigMgrSamplePowerBIReports.exe` filen för att extrahera. pbit-filerna.

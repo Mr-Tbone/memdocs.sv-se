@@ -2,7 +2,7 @@
 title: Tekniska för hands versioner
 titleSuffix: Configuration Manager
 description: Lär dig mer om den tekniska för hands versionen för att testa nya funktioner och funktioner i Configuration Manager.
-ms.date: 05/29/2020
+ms.date: 06/25/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e4c0842a3e23eb8503c945073a4be35db5173086
-ms.sourcegitcommit: 0d2f6132428b5fa994e5b770ab1d2bf7d78ac179
+ms.openlocfilehash: 5dfa3b33a46166cfa4e1233eb71125696f5aa39d
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84226245"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383146"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Teknisk för hands version för Configuration Manager
 
@@ -116,28 +116,25 @@ Enable this section if needed to include any broad change to the tech preview br
 This is the full list of new features in the latest TP release
 
 bullet format:
-<!-- - [title](2020/technical-preview-2005.md) <!--ID-->
+<!-- - [title](2020/technical-preview-2006.md) <!--ID-->
 
 Följande funktioner är tillgängliga med den senaste Configuration Manager Technical Preview-versionen:
 
-### <a name="technical-preview-version-2005"></a>Teknisk för hands version 2005
+### <a name="technical-preview-version-2006"></a>Teknisk för hands version 2006
 
-- [Klient anslutning: enhets tids linje i administrations centret](2020/technical-preview-2005.md#bkmk_timeline) <!--7141381-->
-- [Klient anslutning: installera ett program från administrations centret](2020/technical-preview-2005.md#bkmk_apps) <!--6024389-->
-- [Klient anslutning: CMPivot från administrations centret](2020/technical-preview-2005.md#bkmk_cmpivot) <!--6024392-->
-- [Klient anslutning: kör skript från administrations centret](2020/technical-preview-2005.md#bkmk_scripts) <!--6234688-->
-- [VPN-avgränsnings typ](2020/technical-preview-2005.md#bkmk_vpn) <!--7020519-->
-- [Azure AD-autentisering i Software Center](2020/technical-preview-2005.md#bkmk_availapp) <!--6935376-->
-- [Installera och uppgradera klienten på en avgiftsbelagd anslutning](2020/technical-preview-2005.md#bkmk_meter) <!--6976145-->
-- [Medie stöd för aktivitetssekvens för molnbaserad innehåll](2020/technical-preview-2005.md#bkmk_tsmedia) <!--6209223-->
-- [Förbättringar av Cloud Management Gateway-cmdletar](2020/technical-preview-2005.md#bkmk_pwshcmg) <!--6978300-->
-- [Community Hub och GitHub](2020/technical-preview-2005.md#community-hub-and-github) <!--3555935-->
-- [Microsoft 365-appar för företag](2020/technical-preview-2005.md#bkmk_365_apps) <!--6298093-->
-- [Rapportera installations-och uppgraderings problem till Microsoft](2020/technical-preview-2005.md#report-setup-and-upgrade-failures-to-microsoft) <!--5622909-->
-- [Meddelande om förfallo datum för Azure AD-appens hemliga nyckel](2020/technical-preview-2005.md#bkmk_alertkey) <!--6386392-->
-- [Förbättringar av stegen i BitLocker-aktivitetssekvensen](2020/technical-preview-2005.md#bkmk_tsbitlocker) <!--6995601-->
-- [Förbättringar av rensnings verktyget för innehålls bibliotek](2020/technical-preview-2005.md#bkmk_content) <!--6887878-->
-- [Ta bort kommando tolken under uppgraderingen av Windows 10 på plats](2020/technical-preview-2005.md#bkmk_ipucmd) <!--2837795-->
+- [Använd Företagsportal-appen på samhanterade enheter](2020/technical-preview-2006.md#bkmk_portal) <!--3601237-->
+- [Förbättringar av tillgängliga appar via CMG](2020/technical-preview-2006.md#bkmk_availapp) <!--7033501-->
+- [Intranät klienter kan använda en CMG program uppdaterings plats](2020/technical-preview-2006.md#bkmk_cmg-sup) <!--7102873-->
+- [Förbättringar av aktivitetssekvenser via CMG](2020/technical-preview-2006.md#bkmk_osdcmg) <!--6983320-->
+- [Hanterings insikter för att optimera för fjärranslutna arbetare](2020/technical-preview-2006.md#bkmk_wfhmi) <!--6982226-->
+- [Förbättringar av VPN-gränser](2020/technical-preview-2006.md#bkmk_vpn) <!--7020519-->
+- [Klient koppling: förbättringar av Configuration Manager åtgärder i administrations Center för Microsoft Endpoint Manager](2020/technical-preview-2006.md#bkmk_apps) <!--7518897-->
+- [CMG-stöd för Endpoint Protection-principer](2020/technical-preview-2006.md#bkmk_epcmg) <!--4773948-->
+- [Importera tidigare skapade Azure AD-program under klient kopplings registrering](2020/technical-preview-2006.md#bkmk_aad-app) <!--6479246-->
+- [Förbättringar av klient uppgradering på en avgiftsbelagd anslutning](2020/technical-preview-2006.md#bkmk_meter) <!--6976145-->
+- [Förbättringar av hantering av omstarter av enheter](2020/technical-preview-2006.md#bkmk_restart) <!--3601213-->
+- [Förbättrat stöd för virtuella Windows-datorer](2020/technical-preview-2006.md#bkmk_wvd) <!--6527576-->
+- [Direkt länkar till Configuration Manager community Hub-objekt](2020/technical-preview-2006.md#bkmk_deeplink) <!--4224406-->
 
 > [!NOTE]
 > Funktioner som var tillgängliga i en tidigare version av den tekniska för hands versionen är fortfarande tillgängliga i senare versioner. På samma sätt är funktioner som läggs till i Configuration Manager aktuella grenen tillgängliga i den tekniska förhands gransknings grenen.
@@ -154,6 +151,25 @@ Följande funktioner släpptes med tidigare versioner av Configuration Manager T
 
 > [!TIP]
 > När en ny aktuell gren version är tillgänglig visas funktioner som är tillgängliga i den versionen i *den senaste artikeln om nyheter.* Mer information finns i [Nyheter i stegvisa versioner](../plan-design/changes/whats-new-incremental-versions.md#supported-versions).
+
+### <a name="technical-preview-version-2005"></a>Teknisk för hands version 2005
+
+- [Klientkoppling: Enhetstidslinje i administrationscentret](2020/technical-preview-2005.md#bkmk_timeline) <!--7141381-->
+- [Klientkoppling: Installera ett program från administrationscentret](2020/technical-preview-2005.md#bkmk_apps) <!--6024389-->
+- [Klientkoppling: CMPivot från administrationscentret](2020/technical-preview-2005.md#bkmk_cmpivot) <!--6024392-->
+- [Klientkoppling: Kör skript från administrationscentret](2020/technical-preview-2005.md#bkmk_scripts) <!--6234688-->
+- [VPN-avgränsnings typ](2020/technical-preview-2005.md#bkmk_vpn) <!--7020519-->
+- [Azure AD-autentisering i Software Center](2020/technical-preview-2005.md#bkmk_availapp) <!--6935376-->
+- [Installera och uppgradera klienten på en avgiftsbelagd anslutning](2020/technical-preview-2005.md#bkmk_meter) <!--6976145-->
+- [Medie stöd för aktivitetssekvens för molnbaserad innehåll](2020/technical-preview-2005.md#bkmk_tsmedia) <!--6209223-->
+- [Förbättringar av Cloud Management Gateway-cmdletar](2020/technical-preview-2005.md#bkmk_pwshcmg) <!--6978300-->
+- [Community Hub och GitHub](2020/technical-preview-2005.md#community-hub-and-github) <!--3555935-->
+- [Microsoft 365-appar för företag](2020/technical-preview-2005.md#bkmk_365_apps) <!--6298093-->
+- [Rapportera installations-och uppgraderings problem till Microsoft](2020/technical-preview-2005.md#report-setup-and-upgrade-failures-to-microsoft) <!--5622909-->
+- [Meddelande om förfallo datum för Azure AD-appens hemliga nyckel](2020/technical-preview-2005.md#bkmk_alertkey) <!--6386392-->
+- [Förbättringar av stegen i BitLocker-aktivitetssekvensen](2020/technical-preview-2005.md#bkmk_tsbitlocker) <!--6995601-->
+- [Förbättringar av rensnings verktyget för innehålls bibliotek](2020/technical-preview-2005.md#bkmk_content) <!--6887878-->
+- [Ta bort kommando tolken under uppgraderingen av Windows 10 på plats](2020/technical-preview-2005.md#bkmk_ipucmd) <!--2837795-->
 
 ### <a name="technical-preview-version-2004"></a>Teknisk för hands version 2004
 
