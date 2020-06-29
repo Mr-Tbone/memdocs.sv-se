@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 136e11f97849e5fd8a27d9f83ea1bd44791c492e
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: 2d6165678331811f4b04e8b1f540f3dcbb7f015d
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715653"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502263"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planera för Cloud Management Gateway i Configuration Manager
 
@@ -227,15 +227,16 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 | Inventering av maskin- och programvara     | ![Stöds](media/green_check.png) |
 | Klient status och meddelanden     | ![Stöds](media/green_check.png) |
 | Kör skript     | ![Stöds](media/green_check.png) |
+| CMPivot     | ![Stöds](media/green_check.png) |
 | Kompatibilitetsinställningar     | ![Stöds](media/green_check.png) |
-| Klient installation<br>(med Azure AD-integrering)     | ![Stöds](media/green_check.png) |
+| Klient installation<br>(med [Azure AD-integrering](../../deploy/deploy-clients-cmg-azure.md)) | ![Stöds](media/green_check.png) |
+| Klient installation<br>(med [token-autentisering](../../deploy/deploy-clients-cmg-token.md)) | ![Stöds](media/green_check.png) (2002) |
 | Program varu distribution (enhets riktad)     | ![Stöds](media/green_check.png) |
 | Program varu distribution (användar mål, krävs)<br>(med Azure AD-integrering)     | ![Stöds](media/green_check.png) |
 | Program varu distribution (användar mål, tillgänglig)<br>([alla krav](../../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Stöds](media/green_check.png) |
-| Aktivitetssekvens för uppgradering av Windows 10 på plats      | ![Stöds](media/green_check.png) |
-| Aktivitetssekvenser som inte använder start avbildningar och distribueras med ett alternativ: **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas**      | ![Stöds](media/green_check.png) |
-| Aktivitetssekvenser som inte använder start avbildningar  | ![Stöds](media/green_check.png) (1910)|
-| CMPivot     | ![Stöds](media/green_check.png) |
+| [Aktivitetssekvens för uppgradering av Windows 10 på plats](../../../../osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md) | ![Stöds](media/green_check.png) |
+| Aktivitetssekvenser som inte använder start avbildningar och distribueras med ett alternativ: **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas** | ![Stöds](media/green_check.png) |
+| Aktivitetssekvenser som inte använder start avbildningar med [antingen nedladdnings alternativet](../../../../osd/deploy-use/deploy-a-task-sequence.md#deploy-windows-10-in-place-upgrade-via-cmg) | ![Stöds](media/green_check.png) (1910)|
 | Ett annat scenario för aktivitetssekvenser     | ![Stöds inte](media/Red_X.png) |
 | Klient-push     | ![Stöds inte](media/Red_X.png) |
 | Automatisk platstilldelning     | ![Stöds inte](media/Red_X.png) |
@@ -367,7 +368,7 @@ Mer information när du är värd för innehåll i Azure finns i [använda en mo
 
 I den här tabellen listas de nätverks portar och protokoll som krävs. *Klienten* är enheten som initierar anslutningen, vilket kräver en utgående port. *Servern* är den enhet som accepterar anslutningen, vilket kräver en inkommande port.
 
-| Klient | Protokoll | Port | Server | Beskrivning |
+| Klient | Protokoll | Port | Server | Description |
 |--------|----------|------|--------|-------------|
 | Tjänstanslutningspunkt | HTTPS | 443 | Azure | CMG-distribution |
 | CMG kopplings punkt | TCP-TLS | 10140-10155 | CMG-tjänst | Önskat protokoll för att bygga CMG-kanal <sup> [anteckning 1](#bkmk_port-note1)</sup> |

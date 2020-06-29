@@ -2,7 +2,7 @@
 title: Krav för Internet-åtkomst
 titleSuffix: Configuration Manager
 description: Lär dig om Internet-slutpunkter så att du kan använda alla funktioner i Configuration Manager funktioner.
-ms.date: 06/12/2020
+ms.date: 06/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fb965ec6547ff1c06586464780b6db224b943000
-ms.sourcegitcommit: 9a8a9cc7dcb6ca333b87e89e6b325f40864e4ad8
+ms.openlocfilehash: 78958809aeed5db9d2a36d960b91572b91eafe05
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740783"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502365"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
@@ -230,6 +230,8 @@ Om du använder Configuration Manager för att distribuera och uppdatera Microso
 
 - `config.office.com`så här skapar du anpassade konfigurationer för Microsoft 365 appar för företags distributioner
 
+- `contentstorage.osi.office.net`stöd för utvärdering av Office-tillägget för beredskap<!-- MEMDocs#410 -->
+
 ## <a name="configuration-manager-console"></a>Configuration Manager-konsolen
 
 Datorer med Configuration Manager-konsolen kräver åtkomst till följande Internet slut punkter för vissa funktioner:
@@ -267,6 +269,10 @@ Om du använder den **geografiska vyn**ger du åtkomst till följande slut punkt
 ## <a name="desktop-analytics"></a>Desktop Analytics
 
 Mer information om vilka slut punkter som krävs för moln tjänsten för Skriv bords analys finns i [Aktivera data delning](../../../desktop-analytics/enable-data-sharing.md#endpoints).
+
+## <a name="tenant-attach"></a>Klientkoppling
+
+Mer information om vilka slut punkter som krävs för klient kopplings funktioner finns i [Aktivera klient anslutning](../../../tenant-attach/device-sync-actions.md#internet-endpoints).
 
 ## <a name="microsoft-public-ip-addresses"></a>Offentliga IP-adresser från Microsoft
 
