@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/21/2020
+ms.date: 06/03/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfa830f1e7bfd87c20c1aed78b933f81e96b8dca
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 35cf4b3afb766d8729d3438d2d8c61e1d79f4791
+ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988645"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84531748"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
@@ -226,7 +226,17 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
    - **Webbadresser för SCEP-server**:
 
-     Ange en eller flera webbadresser för de NDES-servrar som utfärdar certifikat via SCEP. Ange något i stil med `https://ndes.contoso.com/certsrv/mscep/mscep.dll`. Du kan lägga till ytterligare SCEP-URL:er för belastningsutjämning vid behov eftersom URL:er slumpmässigt skickas till enheten med profilen. Om någon av SCEP-servrarna inte är tillgänglig misslyckas SCEP-begäran, och vid senare enhetsincheckningar är det möjligt att certifikatbegäran kan göras mot samma server som är nere.
+     Ange en eller flera webbadresser för de NDES-servrar som utfärdar certifikat via SCEP. Ange något i stil med `https://ndes.contoso.com/certsrv/mscep/mscep.dll`.
+
+     Du kan lägga till ytterligare SCEP-webbadresser för belastningsutjämning vid behov. Enheter gör tre separata anrop till NDES-servern. Om att hämta serverfunktioner, om att hämta en offentlig nyckel och sedan om att skicka en signeringsförfrågan. När du använder flera webbadresser kan belastningsutjämningen leda till att olika webbadresser används för efterföljande anrop till en NDES-Server. Om en annan server kontaktas vid ett efterföljande anrop under samma förfrågan så utförs inte förfrågan.
+
+     Beteendet för hantering av NDES-serverns webbadress är plattformsspecifikt:
+
+     - **Android**: Enheten ordnar listan med webbadresser som togs emot i SCEP-policyn slumpvis och går sedan igenom listan tills en tillgänglig NDES-server hittas. Enheten fortsätter sedan att använda samma webbadress och server genom hela processen. Om enheten inte kan komma åt någon av NDES-servrarna misslyckas processen.
+     - **iOS/iPadOS**: Intune ordnar webbadresserna slumpvis och tillhandahåller en enda webbadress till enheten. Om enheten inte kan komma åt NDES-servern misslyckas SCEP-förfrågan.
+     - **Windows**: Listan med NDES-webbadresser ordnas slumpvis och skickas sedan till Windows-enheten, som försöker nå dem i den ordning som har tagits emot tills en tillgänglig server hittas. Om enheten inte kan komma åt någon av NDES-servrarna misslyckas processen.
+
+     Om en enhet inte kan komma åt samma NDES-server under något av de tre anropen till NDES-servern misslyckas SCEP-förfrågan. Det här kan till exempel inträffa om belastningsutjämningen skickar en annan webbadress vid det andra eller tredje anropet till NDES-servern, eller tillhandahåller en annan faktisk NDES-server baserat på en virtualiserad webbadress för NDES. Om en förfrågan misslyckas försöker enheten igen i nästa policycykel, med början vid den slumpmässiga listan med NDES-adresser (eller en enda webbadress för iOS/iPadOS).  
 
 8. Välj **Nästa**.
 

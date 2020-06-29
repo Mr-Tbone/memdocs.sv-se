@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 761f46cdf8865694ba8960044954a16c415a3eba
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 4319435b170203f6dfd3763f1d05d2752fc76f8e
+ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988230"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85107521"
 ---
 # <a name="find-the-primary-user-of-an-intune-device"></a>Hitta den primära användaren av en Intune-enhet
 
@@ -45,9 +45,8 @@ Den primära användaren av en enhet kan uppdateras för Windows 10-enheter som 
 När den primära användaren har uppdaterats så uppdateras den även på Intune- och Azure AD-enhetsblad.
 >[!NOTE]
 >1. Det kan ta upp till 10 minuter innan uppdateringar av den primära användaren visas i Endpoint Manager och Azure AD.
->2. Den primära användaren kan för närvarande inte ändras på samhanterade Windows 10-enheter. 
->3. Ändring av enhetens primära användare medför inte att medlemskapet i lokala grupper ändras, som tillägg eller borttagning av användare från den lokala gruppen ”Administratörer”.
->4. Om du ändrar den primära användaren ändras inte ”Registrerat av”-användaren. 
+>2. Ändring av enhetens primära användare medför inte att medlemskapet i lokala grupper ändras, som tillägg eller borttagning av användare från den lokala gruppen ”Administratörer”.
+>3. Om du ändrar den primära användaren ändras inte ”Registrerat av”-användaren. 
 
 
 ## <a name="what-is-the-primary-user"></a>Vad är en primär användare?
@@ -89,6 +88,8 @@ Intune lägger automatiskt till en primär användare till enheter under eller s
 
 ## <a name="primary-user-and-azure-ad-device-owner"></a>Primär användare och Microsoft Azure AD-enhetsägare
 I vissa fall kan den primära Intune-användaren skilja sig åt från egenskapen för Microsoft Azure AD-enhetens **Ägare** (kan visas under **Enheter** > **Azure AD-enheter**). Microsoft Azure AD-enhetsägaren läggs till under en enhets registrering i Azure Active Directory.
+
+Den här kommande funktionen ställer automatiskt in egenskapen **Ägare** på nyregistrerade Hybrid Azure AD-anslutna enheter samtidigt som den primära Intune-användaren anges.
 
 ## <a name="next-steps"></a>Nästa steg
 [Hantera dina Intune-enheter](device-management.md)

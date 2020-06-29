@@ -6,22 +6,23 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/06/2020
+ms.date: 06/09/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
+ms.reviewer: kakyker
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49ecd2a1aaa5408a721b06264703720be601c73c
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: aa3cf14b6afd8504a0918b5d61d2a7cae0c308b9
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83269022"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093676"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för iOS och iPadOS tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -72,7 +73,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   - iOS 9.3 och senare
   - iPadOS 13.0 och senare
 
-- **Skärmvisning utan uppmaning via appen Klassrum**: **Tillåt** låter lärarna tyst övervaka skärmarna på elevernas iOS/iPadOS-enheter med hjälp av appen Klassrum utan att eleverna vet om det. Elevenheter som har registrerats i en klass med appen Classroom ger automatiskt behörighet till kursens lärare. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra den här funktionen.
+- **Skärmvisning utan uppmaning via appen Klassrum**: **Tillåt** gör att lärare tyst kan övervaka skärmarna på elevernas iOS/iPadOS-enheter med hjälp av appen Klassrum utan att eleverna vet om det. Elevenheter som har registrerats i en klass med appen Classroom ger automatiskt behörighet till kursens lärare. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra den här funktionen.
 
   Om du vill använda den här inställningen anger du inställningen **Skärmdump** till **Blockera**.
 
@@ -198,7 +199,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   - **10**: Skärmen låses efter 10 minuters inaktivitet.
   - **15**: Skärmen låses efter 15 minuters inaktivitet.
 
-  Om ett värde inte gäller för iOS och iPad använder Apple närmaste *lägsta* värde. Om du till exempel anger `4` minuter använder iPad-enheter `2` minuter. Om du anger `10` minuter använder iOS-enheter `5` minuter. Detta är en Apple-begränsning.
+  Om ett värde inte gäller för iOS och iPad använder Apple närmaste *lägsta* värde. Om du till exempel anger `4` minuter använder iPad-enheter `2` minuter. Om du anger `10` minuter använder iOS-enheter `5` minuter. Det här beteendet är en Apple-begränsning.
   
   > [!NOTE]
   > Intune-användargränssnittet för den här inställningen skiljer inte de värden som stöds för iOS och iPad. Användargränssnittet kan komma att uppdateras i en framtida version.
@@ -429,6 +430,25 @@ Om du vill lägga till appar i listorna kan du:
 > [!IMPORTANT]
 > Enhetsprofiler som använder inställningar för begränsade appar måste tilldelas grupper av användare.
 
+## <a name="shared-ipad"></a>Delad iPad
+
+Den här funktionen gäller för:
+
+- iPadOS 13.4 och senare
+- Delad iPad
+
+### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
+
+- **Blockera tillfälliga sessioner på delad iPad**: Tillfälliga sessioner gör att användare kan logga in som gäst och att användarna inte behöver ange något hanterat Apple-ID eller lösenord.
+
+  När du anger **Ja**:
+
+  - Användare på en delad iPad kan inte använda tillfälliga sessioner.
+  - Användarna måste logga in på enheten med sitt hanterade Apple-ID och lösenord.
+  - Alternativet Gästkonto visas inte på enheternas låsskärm.
+
+  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard tillåter operativsystemet att användare på en delad iPad loggar in på enheten med gästkontot. När användaren loggar ut sparas inga användardata, och de synkroniseras inte med iCloud.
+
 ## <a name="show-or-hide-apps"></a>Visa eller dölja appar
 
 Den här funktionen gäller för:
@@ -599,12 +619,17 @@ Om du vill lägga till appar kan du:
 
 Använd inställningarna för att konfigurera iOS/iPadOS-enheter så att de kör specifika appar i autonomt enkelt appläge (ASAM). När det här läget har konfigurerats och användaren startar någon av de konfigurerade apparna låses enheten till den appen. Det går inte att byta app/aktivitet förrän användaren avslutar den tillåtna appen.
 
-På en skola eller ett universitet kan du till exempel lägga till en app som gör att användarna kan skriva prov på enheten. Du kan också låsa enheten i företagsportalsappen tills användarna har autentiserats. När appens åtgärder har slutförts av användaren, eller om du tar bort principen, återgår enheten till sitt normala tillstånd.
+- På en skola eller ett universitet kan du till exempel lägga till en app som gör att användarna kan skriva prov på enheten. Du kan också låsa enheten i företagsportalsappen tills användarna har autentiserats. När appens åtgärder har slutförts av användaren, eller om du tar bort principen, återgår enheten till sitt normala tillstånd.
 
-> [!NOTE]
-> Alla appar stöder inte autonomt enkelt appläge. För att kunna använda en app i autonomt enkelt appläge krävs vanligtvis ett paket-ID eller ett nyckel/värde-par som levereras av en appkonfigurationsprincip. Mer information finns i [`autonomousSingleAppModePermittedAppIDs`begränsningen](https://developer.apple.com/documentation/devicemanagement/restrictions) i Apples MDM-dokumentation. Mer information om de specifika inställningar som krävs för den app som du konfigurerar finns i leverantörens dokumentation.
+- Alla appar stöder inte autonomt enkelt appläge. För att kunna använda en app i autonomt enkelt appläge krävs vanligtvis ett paket-ID eller ett nyckel/värde-par som levereras av en appkonfigurationsprincip. Mer information finns i [`autonomousSingleAppModePermittedAppIDs`begränsningen](https://developer.apple.com/documentation/devicemanagement/restrictions) i Apples MDM-dokumentation. Mer information om de specifika inställningar som krävs för den app som du konfigurerar finns i leverantörens dokumentation.
 
-Om du till exempel vill konfigurera Zoom Rooms i autonomt enkelt appläge kan du använda `us.zoom.zpcontroller`-paket-ID:t. I detta fall gör du också en ändring på webbportalen för Zoom. Mer information finns i [hjälpcentret för Zoom](https://support.zoom.us/hc/articles/360021322632-Autonomous-Single-App-Mode-for-Zoom-Rooms-with-a-Third-Party-MDM).
+  Om du till exempel vill konfigurera Zoom Rooms i autonomt enkelt appläge kan du använda `us.zoom.zpcontroller`-paket-ID:t. I detta fall gör du också en ändring på webbportalen för Zoom. Mer information finns i [hjälpcentret för Zoom](https://support.zoom.us/hc/articles/360021322632-Autonomous-Single-App-Mode-for-Zoom-Rooms-with-a-Third-Party-MDM).
+
+- På iOS/iPad-enheter har appen Företagsportal stöd för ASAM. När appen Företagsportal är i ASAM låses enheten i Företagsportal-appen tills användaren autentiseras. När användare loggar in i appen Företagsportal kan de använda andra appar och startknappen på enheten. När de loggar ut från appen Företagsportal återgår enheten till enappsläget och låser appen Företagsportal.
+
+  Om du vill göra appen Företagsportal till en ”logga in/logga ut”-app (aktivera ASAM) anger du namnet på Företagsportal-appen, som `Microsoft Intune Company Portal`, och paket-ID:t (`com.microsoft.CompanyPortal`) i de här inställningarna. När du tilldelar den här profilen måste du öppna appen Företagsportal för att låsa appen så att användarna kan logga in och logga ut från den.
+  
+  När du tar bort profilen för enhetskonfiguration och användaren loggar ut är enheten inte låst i Företagsportal-appen längre.
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/14/2020
+ms.date: 06/10/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea4b196a6b2fade8ca926d13c3436207cb4b764e
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: ee6ccebc9610f74f9f34c08bc8204e652e0a01db
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429777"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85092869"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Lägga till Wi-Fi-inställningar för Windows 10-enheter och senare enheter i Microsoft Intune
 
@@ -34,6 +34,8 @@ Den här artikeln beskriver dessa inställningar.
 [Skapa en enhetsprofil](wi-fi-settings-configure.md).
 
 ## <a name="basic-profile"></a>Grundläggande profil
+
+Grundläggande eller personliga profiler använder WPA/WPA2 till att skydda Wi-Fi-anslutningen på enheter. Normalt används WPA/WPA2 i hemnätverk eller personliga nätverk. Du kan också lägga till en i förväg delad nyckel för att autentisera anslutningen.
 
 - **Wi-Fi-typ**: Välj **Basic**. 
 
@@ -70,6 +72,8 @@ Den här artikeln beskriver dessa inställningar.
   - **Konfigurera automatiskt**: Ange URL:en som pekar på ett PAC-skript (Proxy Auto-Configuration). Ange till exempel `http://proxy.contoso.com/proxy.pac`.
 
 ## <a name="enterprise-profile"></a>Företagsprofil
+
+Företagsprofiler använder EAP (Extensible Authentication Protocol) för autentisering av Wi-Fi-anslutningar. EAP används ofta av företag eftersom du kan använda certifikat till att autentisera och skydda anslutningar och konfigurera fler säkerhetsalternativ.
 
 - **Wi-Fi-typ**: Välj **Företag**.
 
@@ -116,7 +120,7 @@ Den här artikeln beskriver dessa inställningar.
     **Ytterligare inställningar för EAP-TLS, EAP-TTLS och PEAP**:
 
     > [!NOTE]
-    > För närvarande stöds endast SCEP-certifikatprofiler när du använder en EAP-typ. PKCS-certifikatprofiler stöds inte. Varje gång en användare uppmanas att ange ett certifikat ska ett SCEP-certifikat väljas.
+    > Certifikatprofilerna SCEP och PKCS stöds när du använder en EAP-typ.
 
     - **Serverförtroende**  
 

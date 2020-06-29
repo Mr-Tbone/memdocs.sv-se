@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/14/2020
+ms.date: 06/11/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74e365e50d73bb14f20376c92b43061b12d00003
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 886f572212a1af3e38fd5ea10afa21ce24c23411
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988462"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093304"
 ---
 # <a name="create-a-device-profile-in-microsoft-intune"></a>Skapa en enhetsprofil i Microsoft Intune
 
-Med enhetsprofiler kan du lägga till och konfigurera inställningar och sedan skicka dem till enheter i din organisation. [Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler](device-profiles.md) innehåller mer information, inklusive vad du kan göra.
+Med enhetsprofiler kan du lägga till och konfigurera inställningar och sedan skicka dem till enheter i din organisation. Mer information, bland annat om vad du kan göra, finns i [Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler](device-profiles.md).
 
 Den här artikeln:
 
@@ -84,6 +84,7 @@ Välj sedan profiltyp. Vilka inställningar du kan konfigurera varierar beroende
 - [Betrott certifikat](../protect/certificates-configure.md)
 - [VPN](vpn-settings-configure.md)
 - [Wi-Fi](wi-fi-settings-configure.md)
+- [Kabelanslutna nätverk (macOS)](wired-network-settings-macos.md)
 
 Om du till exempel väljer **iOS/iPadOS** som plattform ser profilalternativen ut ungefär så här:
 
@@ -178,7 +179,7 @@ När du skapar profiler bör du tänka på följande rekommendationer:
 
   :::image type="content" source="./media/device-profile-create/setting-applies-to-user-and-device.png" alt-text="Intune-administrationsmall som gäller för användare och enheter.":::
 
-- Varje gång du skapar en begränsad princip bör du informera användarna om detta. Om du till exempel vill ändra lösenordskravet från 4 tecken till 6 tecken, meddelar du användarna detta innan du tilldelar principen.
+- Varje gång du skapar en begränsad princip bör du informera användarna om detta. Om du till exempel vill ändra lösenordskravet från fyra (4) tecken till sex (6) tecken meddelar du användarna detta innan du tilldelar principen.
 
 ## <a name="next-steps"></a>Nästa steg
 

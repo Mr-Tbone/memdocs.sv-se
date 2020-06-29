@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/20/2020
+ms.date: 06/19/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5562199d3490085aca26517170745802a0aef489
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 6fef418394a37f0074ddb17cc170a61603b1d7f8
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989497"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093134"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Ta reda på hur du kan få support för Microsoft Intune
 
@@ -41,9 +41,6 @@ Som Intune-administratör kan du använda alternativet **Hjälp och support** f�
 Hjälp och support-gränssnittet för Intune är tillgängligt från [administrationscentret Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och på alla blad (eller sidor) under Intune i Azure-portalen.
 
 *Hjälp och support*gränssnittet liknar det som finns i [Administrationscenter för Microsoft 365](https://admin.microsoft.com/) och ersätter det tidigare *Hjälp + support*, som blir kvar för andra tjänster i Azure.
-
-> [!TIP]
-> Från och med 18 november 2019 distribueras en uppdaterad och strömlinjeformad konsolupplevelse för att få hjälp och support. Om den nya upplevelsen inte är tillgänglig för dig än, kommer den att bli det inom kort.
 
 ### <a name="options-to-access-help-and-support"></a>Alternativ för att få åtkomst till hjälp och support
 
@@ -66,18 +63,23 @@ Det här problemet uppstår när du inte har autentiserat ditt nya klientkonto v
 
 - **I administrationscentret för Microsoft Endpoint Manager**
 
-  - Från valfri nod i administrationscentret för Microsoft Endpoint Manager väljer du **?** ikonen i det övre högra hörnet i portalen och använder sedan listrutan för att välja den hanteringstyp som du vill ha hjälp med. Administrationscentret för Microsoft Endpoint Manager stöder följande hanteringstyper och du måste välja den som du vill ha hjälp med, som Intune:
+  - Från valfri nod i administrationscentret för Microsoft Endpoint Manager väljer du **?** ikon i det övre högra hörnet av portalen för att öppna **hjälpfönstret**. Välj **Hjälp + support** för att öppna sidan **Välj en hanteringstyp**.
 
-    - Configuration Manager (inkluderar Desktop Analytics)
+    > [!div class="mx-imgBorder"]
+    > ![Öppna sidan för val av hanteringstyp](./media/get-support/management-types.png)
+
+    Använd listrutan till att välja den hanteringstyp du vill ha hjälp med. Då öppnas motsvarande hjälp- och supportsida. Administrationscentret för Microsoft Endpoint Manager stöder följande hanteringstyper och du måste välja den som du vill ha hjälp med, som Intune:
+
+    - Konfigurationshanteraren
     - Intune
-    - Samhantering  
+    - Samhantering
 
     > [!div class="mx-imgBorder"]
     > ![Välj hanteringstyp](./media/get-support/select-management-type.png)
 
-    När du har valt en hanteringstyp visas sidan *Hjälp och support* där du kan ange information för att [hitta lösningar](#find-solutions) på ett specifikt problem. Informationen filtreras baserat på vilken typ av hantering som du väljer.
+    När du har valt en hanteringstyp visas motsvarande *hjälp- och supportsida* där du kan ange information för att [hitta lösningar](#find-solutions) på ett specifikt problem. Informationen filtreras baserat på vilken typ av hantering som du väljer.
 
-     Om rätt hanteringstyp inte har valts **(1)** klickar du på *Välj typ av hantering* **(2)** för att återgå till listrutan för val av hanteringstyp:
+     Om du inte valde rätt hanteringstyp **(1)** klickar du på *Välj hanteringstyp* **(2)** för att återgå till listrutan för val av hanteringstyp:
 
     > [!div class="mx-imgBorder"]
     > ![Bekräfta din hanteringstyp](./media/get-support/confirm-management-selection.png)

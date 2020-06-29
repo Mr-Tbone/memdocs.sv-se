@@ -1,5 +1,5 @@
 ---
-title: Konfigurera en sida för registreringsstatus
+title: Konfigurera sidan för registreringsstatus
 titleSuffix: Microsoft Intune
 description: Konfigurera en hälsningssida för användare som registrerar Windows 10-enheter.
 keywords: ''
@@ -18,34 +18,37 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33c57e5641934200120839ad48a9a4c8b8d0a8fa
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 4f8991b772f5562538403492735f1f4c2fdc87e8
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988896"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093451"
 ---
-# <a name="set-up-an-enrollment-status-page"></a>Konfigurera en sida för registreringsstatus
+# <a name="set-up-the-enrollment-status-page"></a>Konfigurera sidan för registreringsstatus
  
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
  
-På sidan för registreringsstatus (ESP) visas installationsinformation om Windows 10-enheter (version 1803 och senare) under den inledande enhetsregistreringen. Exempel:
-- när du använder [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/) 
-- eller närhelst en hanterad enhet startas för första gången efter att en princip för registreringsstatus har tillämpats. 
+På sidan för registreringsstatus visas etableringsförloppet när en ny enhet har registrerats, samt när nya användare loggar in på enheten.  Det här gör att IT-administratörer kan förhindra (blockera) åtkomst till enheten tills den har etablerats fullständigt, samtidigt som användarna får information om de uppgifter som återstår under etableringsprocessen.
 
-Statussidan för registreringen kan hjälpa användaren att förstå statusen för sina enheter under enhetskonfigurationen. Du kan skapa flera profiler för sidan för registreringsstatus och tillämpa dem på olika grupper som innehåller användare. Profiler kan ställas in att:
-- Visa installationsförloppet.
-- Blockera användningen tills installationen är klar.
-- Ange vad en användare kan göra om enhetskonfigurationen misslyckas.
+Sidan för registreringsstatus kan användas i etableringsscenarier i [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/) och kan även användas separat från Windows Autopilot inom ramen för standardmiljön i Azure AD Join, samt för alla nya användare som loggar in på enheten första gången.
 
-Du kan också ange en prioritetsordning för varje profil om det skulle uppstå konflikter mellan profiltilldelningar för samma användare.
+Du kan skapa flera profiler för sidan för registreringsstatus med olika konfigurationer du anger:
 
-> [!NOTE]
-> Sidan för registreringsstatus kan bara vara riktad mot en användare som tillhör en tilldelad grupp och principen ställs in på enheten vid tidpunkten för registreringen för alla användare som använder enheten.  Enhetsmål för profiler för Statussidan för registrering stöds inte för närvarande.
+- Visar installationsförloppet
+- Blockerar åtkomst tills etableringsprocessen har slutförts
+- Tidsgränser
+- Tillåtna felsökningsåtgärder
+
+De här profilerna anges i prioritetsordning där den högsta tillämpliga prioritetsnivån används.  Varje sådan profil kan riktas mot grupper som innehåller enheter eller användare.  När du bestämmer vilken profil som ska användas följs följande villkor:
+
+- Profilen med den högsta prioriteten som är riktad mot enheten används först.
+- Om det inte finns några profiler riktade mot enheten används profilen med den högsta prioriteten som är riktad mot den aktuella användaren.  (Det här gäller bara i scenarier där det finns en användare. I assisterade och självdistribuerade scenarier kan du endast använda riktade enheter.)
+- Om det inte finns några profiler riktade mot specifika grupper används standardprofilen för sidan för registreringsstatus.
 
 ## <a name="available-settings"></a>Tillgängliga inställningar
 
- Följande inställningar kan konfigureras för att anpassa beteendet för sidan registreringsstatus:
+Följande inställningar kan konfigureras för att anpassa beteendet för sidan för registreringsstatus:
 
 <table>
 <th align="left">Inställningen<th align="left">Ja<th align="left">Nej
@@ -80,7 +83,7 @@ Följ stegen nedan om du vill aktivera sidan för registreringsstatus.
 
 ## <a name="set-the-enrollment-status-page-priority"></a>Ange prioritet för registreringsstatussidan
 
-En användare kan finnas i flera grupper och ha många profiler för registreringsstatussidan. För att lösa dessa konflikter kan du ange prioriteten för varje profil. Om någon har mer än en profil för registreringsstatussidan, tillämpas endast profilen med högst prioritet vid registreringen.
+En enhet eller användare kan tillhöra flera grupper och ha flera riktade profiler för registreringsstatussidan. Om du vill kontrollera vilka profiler som används först kan du ställa in prioriteten för varje profil. De med högre prioritet används först.
 
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Windows** > **Windows-registrering** > **Sidan för registreringsstatus**.
 2. Hovra över profilen i listan.
@@ -88,7 +91,7 @@ En användare kan finnas i flera grupper och ha många profiler för registrerin
 
 ## <a name="block-access-to-a-device-until-a-specific-application-is-installed"></a>Blockera åtkomst till en enhet tills ett visst program har installerats
 
-Du kan ange vilka appar som måste installeras innan användaren kan komma åt skrivbordet.
+Du kan ange vilka appar som måste installeras innan sidan för registreringsstatus anses slutförd.
 
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Windows** > **Windows-registrering** > **Sidan för registreringsstatus**.
 2. Välj en profil > **Inställningar**.
@@ -99,7 +102,7 @@ Du kan ange vilka appar som måste installeras innan användaren kan komma åt s
 
 De appar som ingår i den här listan används av Intune för att filtrera listan som bör betraktas som blockerande.  Den anger inte vilka appar som ska installeras.  Om du till exempel konfigurerar den här listan så att den inkluderar ”app 1”, ”app 2” och ”app 3”, och ”app 3” och ”app 4” är riktade till enheten eller användaren, kommer sidan för registreringsstatus endast att spåra ”app 3”.  ”App 4” kommer fortfarande att installeras, men sidan för registreringsstatus kommer inte att vänta på att den ska slutföras.
 
-Högst 25 appar kan anges.
+Du kan ange högst 100 appar.
 
 ## <a name="enrollment-status-page-tracking-information"></a>Spårningsinformation på statussidan för registrering
 
@@ -108,14 +111,16 @@ Det finns tre faser där statussidan spårar information: enhetsförberedelse, e
 ### <a name="device-preparation"></a>Förberedelse av enheten
 
 När det gäller enhetsförberedelse spårar registreringsstatussidan:
-- Trusted Platform Module-nyckelattesteringar (TPM) (i förekommande fall)
-- förlopp vid anslutning till Azure Active Directory
-- registrera i Intune
-- installera Intune-hanteringstillägg
+
+- Trusted Platform Module-nyckelattestering (TPM) (i förekommande fall)
+- Anslutningsprocess för Azure Active Directory
+- Intune-registrering (MDM)
+- Installation av Intune Management-tillägg (används till att installera Win32-appar)
 
 ### <a name="device-setup"></a>Enhetskonfiguration
 
-Registreringsstatussidan spårar följande enhetsinställningsobjekt (om de är tilldelade till alla enheter eller en enhetsgrupp där den registrerade enheten är medlem):
+På sidan för registreringsstatus spåras följande installationsobjekt på enheten:
+
 - Säkerhetsprinciper
   - En konfigurationstjänstprovider (CSP) för alla registreringar.
   - De faktiska konfigurationstjänstprovidrar som har konfigurerats av Intune spåras inte här.
@@ -129,7 +134,9 @@ Registreringsstatussidan spårar följande enhetsinställningsobjekt (om de är 
 - Certifikatprofiler som har tilldelats **Alla enheter** eller en enhetsgrupp som enheten som registreras är medlem i, men endast för Autopilot-enheter
 
 ### <a name="account-setup"></a>Kontokonfiguration
+
 För kontokonfiguration spårar statussidan för registrering följande objekt om de har tilldelats till den aktuella användaren:
+
 - Säkerhetsprinciper
   - En konfigurationstjänstprovider (CSP) för alla registreringar.
   - De faktiska konfigurationstjänstprovidrar som har konfigurerats av Intune spåras inte här.
@@ -147,7 +154,8 @@ För kontokonfiguration spårar statussidan för registrering följande objekt o
   - Certifikatprofiler som har tilldelats till alla användare eller till en användargrupp som användaren som registrerar enheten är medlem i.
 
 ### <a name="troubleshooting"></a>Felsökning
-Vanliga frågor om felsökning.
+
+Här följer några vanliga frågor om felsökning av problem som rör sidan för registreringsstatus.
 
 - Varför har mina program inte installerats och spårats på sidan för registreringsstatus?
   - För att garantera att program installeras och spåras på sidan för registreringsstatus ska du kontrollera att:
@@ -193,14 +201,16 @@ Vanliga frågor om felsökning.
       ```
 
 ### <a name="known-issues"></a>Kända problem
-Nedan visas kända problem. 
+
+Här följer några kända problem som rör sidan för registreringsstatus.
+
 - Om du inaktiverar ESP-profilen tas inte ESP-principen bort från enheterna och användarna får fortfarande ESP när de loggar in på enheten för första gången. Principen tas inte bort när ESP-profilen är inaktiverad. Du måste distribuera OMA-URI för att inaktivera ESP. Se ovan för instruktioner om hur du inaktiverar ESP med OMA-URI. 
 - En omstart under enhetsinstallationen tvingar användaren att ange sina autentiseringsuppgifter innan de övergår till installationsfasen för kontot. Användarautentiseringsuppgifter bevaras inte under omstarten. Låt användaren ange sina autentiseringsuppgifter. Därefter kan registreringsstatussidan fortsätta. 
 - Registreringsstatussidan kommer alltid att göra ett avbrott under en registrering av arbets- eller skolkonto på enheter med versioner av Windows 10 som är äldre än 1903. Registreringsstatussidan väntar på att Azure AD-registreringen ska slutföras. Problemet åtgärdas i Windows 10-version 1903 och senare.  
 - Hybrid Azure AD-autopilotdistribution med ESP tar längre tid än det avbrott som har definierats i ESP-profilen. I hybriddistributioner av Azure AD-autopilot tar ESP 40 minuter längre än värdet som anges i ESP-profilen. Den här fördröjningen låter det lokala AD-anslutningsprogrammet skapa den nya enhetsposten i Azure AD. 
 - Inloggningssidan för Windows är inte ifylld med användarnamnet i användardrivet Autopilot-läge. Om en omstart sker under enhetskonfigurationsfasen i ESP:
-    - bevaras inte användarautentiseringsuppgifterna
-    - måste användaren ange autentiseringsuppgifterna igen innan de fortsätter från enhetsinstallationsfasen till kontoinstallationsfasen
+  - bevaras inte användarautentiseringsuppgifterna
+  - måste användaren ange autentiseringsuppgifterna igen innan de fortsätter från enhetsinstallationsfasen till kontoinstallationsfasen
 - ESP har fastnat under en längre tid eller så slutförs aldrig fasen "Identifierar". Intune beräknar ESP-principerna under identifieringsfasen. En enhet kan kanske inte slutföra beräkningen av ESP-principerna om den aktuella användaren inte har en tilldelad Intune-licens.  
 - Om du konfigurerar Windows Defender-programreglering kan du bli ombedd att starta om under Autopilot. Konfigurering av Microsoft Defender-programmet (AppLocker CSP) kräver en omstart. När den här principen har konfigurerats kan det leda till att en enhet startas om under autopilot. För närvarande finns det inget sätt att utelämna eller skjuta upp omstarten.
 - När DeviceLock-principen (https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock) är aktiverad som en del av en ESP-profil kan fel på automatisk inloggning med användarskrivbord eller OOBE uppstå oväntat av två orsaker.
@@ -208,4 +218,5 @@ Nedan visas kända problem.
   - Automatisk inloggning kommer att misslyckas om enheten startades om efter att användaren angav sina inloggningsuppgifter för Azure AD men innan ESP-enhetens konfigurationsfas avslutades. Felet uppstår eftersom ESP-konfigurationsfasen inte slutfördes. Lösningen är att återställa enheten.
 
 ## <a name="next-steps"></a>Nästa steg
+
 När du har konfigurerat Windows-registreringssidor kan du gå vidare och lära dig hur du hanterar Windows-enheter. Mer information finns i [Vad är Microsoft Intune-enhetshantering?](../remote-actions/device-management.md)

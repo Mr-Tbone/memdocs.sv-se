@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/22/2020
+ms.date: 06/09/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 228c6758feca348d2caed4eb3b54207cadf7a037
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 09ebf7fde0cedb907e105e42abe7338237d231af
+ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83985839"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84795711"
 ---
 # <a name="configure-microsoft-launcher"></a>Konfigurera Microsoft Launcher
 
@@ -70,7 +70,7 @@ I följande tabell visas tillgängliga konfigurationsnycklar, värdetyper, stand
 |    Aktivera feed    |    Boolesk    |    Sant    |    Gör att du kan aktivera startfeeden på enheten när användaren sveper åt höger på startskärmen.<ul><li>Om den ställs in på **True** (Sant) aktiveras feeden.</li><li>Om den ställs in på **False** (Falskt) inaktiveras feeden.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Feed.Enabled`    |
 |    Användarändring för att aktivera feed tillåts    |    Boolesk    |    Sant    |     Gör att du kan ange om inställningen **Aktivera feed** kan ändras av slutanvändaren.<ul><li>Om den ställs in på **True** (Sant) tillämpas bara feeden för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) tillämpas feeden vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:`com.microsoft.launcher.Feed.Enabled.UserChangeAllowed`    |
 |    Placering av sökfältet   |    Sträng    |    Nedre    |  Gör att du kan ange **sökfältets placering** på startskärmen. <ul><li>Om värdet är inställt på **Nedre** finns sökfältet längst ned på startskärmen.</li><li>Om värdet är inställt på **Övre** finns sökfältet längst upp på startskärmen.</li><li>Om värdet är inställt på **Dölj** tas sökfältet bort från startskärmen.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Search.SearchBar.Placement`    |
-|    Användarändring för sökfältets placering tillåts   |    Bool    |    Sant    |  Gör att du kan ange om inställningen för **sökfältets placering** kan ändras av slutanvändaren. <ul><li>Om den ställs in på **True** (Sant) framtvingas sökfältets placering enbart för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) framtvingas sökfältets placering vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Search.SearchBar.Placement.UserChangeAllowed`    |
+|    Användarändring för sökfältets placering tillåts   |    Bool    |    Sant    |  Gör att du kan ange om inställningen för **sökfältets placering** kan ändras av slutanvändaren. <ul><li>Om den ställs in på **True** (Sant) framtvingas sökfältets placering enbart för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) framtvingas sökfältets placering vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Search.SearchBar.Placement.UserChangeAllowed`<p>**Obs!** För Microsoft Launcher v6.2 och senare tillämpas inte längre den här inställningen. Det har alltså ingen effekt att ange värdet till `True`. Slutanvändarna kan inte anpassa placeringen av sökfältet på sina enheter.    |
 |    Dockningsläge  |    Sträng    |    Visa    | Gör att du kan aktivera dockan på enheten när användaren sveper åt höger på startskärmen.<ul><li>Om den ställs in på **Visa** aktiveras dockan.</li><li>Om den ställs in på **Dölj** döljs dockan från startskärmen, men användaren kan visa den vid behov.</li><li>Om den ställs in på **Inaktiverad** inaktiveras dockan.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Dock.Mode`    |
 |   Användarändring för dockningsläge tillåts   |    Sträng    |    Sant    |  Gör att du kan ange om inställningen Dockningsläge kan ändras av slutanvändaren.<ul><li>Om den ställs in på **True** (Sant) framtvingas inställningen för dockningsläge bara för den första distributionen. Därefter kommer principen inte att tillämpas för att respektera ändringar som användaren har gjort.</li><li>Om den ställs in på **False** (Falskt) framtvingas inställningen för dockningsläge bara vid varje synkronisering.</li></ul><br>JSON-nyckelnamn:<br>`com.microsoft.launcher.Dock.Mode.UserChangeAllowed`    |
 

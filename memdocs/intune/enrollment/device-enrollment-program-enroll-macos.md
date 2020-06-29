@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 196fc4f551596a6146513d25166b1b167aa44186
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: bfcc4a8e867041e0053697bbee605f9798e45bec
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83986684"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093855"
 ---
 # <a name="automatically-enroll-macos-devices-with-the-apple-business-manager-or-apple-school-manager"></a>Registrera macOS-enheter automatiskt med Apple Business Manager eller Apple School Manager
 
@@ -46,7 +46,7 @@ Varken Apple Business Manager-registrering eller Apple School Manager fungerar d
 -->
 ## <a name="prerequisites"></a>Krav
 
-- Enheter som köpts i [Apple School Manager](https://school.apple.com/) eller [Apples enhetsregistreringsprogram](http://deploy.apple.com)
+- Enheter som köpts i [Apple School Manager](https://school.apple.com/) eller [Apples automatiska enhetsregistrering](http://deploy.apple.com)
 - En lista över serienummer eller ett inköpsordernummer.
 - [MDM-utfärdare](../fundamentals/mdm-authority-set.md)
 - [Apple MDM-pushcertifikat](../enrollment/apple-mdm-push-certificate-get.md)
@@ -62,24 +62,25 @@ Du kan skapa en token med hjälp av Apple-portalen. Du kan också använda Apple
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>Steg 1. Ladda ned certifikatet för den offentliga Intune-nyckeln som krävs för att skapa token
 
-1. Gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **macOS** > **macOS-registrering** > **Token för registreringsprogram** > **Lägg till**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **macOS** > **macOS-registrering**. 
+> **Token för registreringsprogram** > **Lägg till**.
 
-    ![Hämta en registreringsprogramtoken.](./media/device-enrollment-program-enroll-macos/image01.png)
+    ![Get an enrollment program token.](./media/device-enrollment-program-enroll-macos/image01.png)
 
 2. Välj **Jag godkänner** för att ge Microsoft behörighet att skicka information om användare och enhet till Apple.
 
-   ![Skärmbild av rutan Registreringsprogramtoken i arbetsytan för Apple-certifikat. Nedladdning av offentlig nyckel.](./media/device-enrollment-program-enroll-macos/add-enrollment-program-token-pane.png)
+   ![Skärmbild av rutan Registreringsprogramtoken i arbetsytan för Apple-certifikat. Nedladdning av offentlig nyckel.](./media/device-enrollment-program-enroll-ios/add-enrollment-program-token-pane.png)
 
 3. Välj **Hämta den offentliga nyckeln** om du vill hämta och spara krypteringsnyckelfilen (.pem) lokalt. .pem-filen används för att begära ett förtroendecertifikat från Apple-portalen.
 
 ### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>Steg 2. Använd din nyckel för att hämta en token från Apple
 
-1. Välj **Skapa en token för Apples enhetsregistreringsprogram** eller **Skapa en token via Apple School Manager** när du vill öppna lämplig Apple-portal och logga in med ditt företags Apple-ID. Du kan förnya din token genom att använda detta Apple-ID.
+1. Välj **Skapa en token via Apple Business Manager** eller **Skapa en token via Apple School Manager** när du vill öppna lämplig Apple-portal och logga in med ditt företags Apple-ID. Du kan förnya din token genom att använda detta Apple-ID.
 2. När det gäller DEP väljer du **Kom igång** i Apple-portalen för **Enhetsregistreringsprogram** > **Hanteringsservrar** > **Lägg till MDM Server**.
 3. När det gäller Apple School Manage väljer du **MDM-servrar** > **Lägg till MDM-server** i Apple-portalen.
 4. Ange **MDM-servernamnet** och välj **Nästa**. Servernamnet är för din egen referens och hjälper dig att identifiera MDM-servern (hantering av mobilenheter). Det är inte namnet eller URL-adressen för Microsoft Intune-servern.
 
-5. Dialogrutan **Lägg till &lt;ServerName&gt;** öppnas med meddelandet **Upload Your Public Key** (Överför din offentliga nyckel). Välj **Välj fil** för att överföra PEM-filen och välj sedan **Nästa**.
+5. Dialogrutan **Lägg till &lt;ServerName&gt;** öppnas med meddelandet **Upload Your Public Key** (Överför din offentliga nyckel). Markera **Välj fil...** för att överföra PEM-filen och välj sedan **Nästa**.
 
 6. Gå till **Distributionsprogram** &gt; **Programmet för enhetsregistrering** &gt; **Hantera enheter**.
 7. Under **Choose Devices By** (Välj enheter efter) anger du hur enheterna ska identifieras:
@@ -95,7 +96,7 @@ Du kan skapa en token med hjälp av Apple-portalen. Du kan också använda Apple
 
 I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) anger du Apple-ID:t för framtida referens.
 
-![Skärmbild av någon som anger det Apple-ID som användes för att skapa registreringsprogramtoken och bläddrat till denna token.](./media/device-enrollment-program-enroll-macos/image03.png)
+![Skärmbild av någon som anger det Apple-ID som användes för att skapa registreringsprogramtoken och bläddrat till denna token.](./media/device-enrollment-program-enroll-ios/image03.png)
 
 ### <a name="step-4-upload-your-token"></a>Steg 4. Överför din token
 I rutan **Apple-token**, bläddrar du till certifikatfilen (.pem), väljer **Öppna** och väljer sedan **Skapa**. Med pushcertifikatet kan Intune registrera och hantera macOS-enheter genom push-överföring av principer till registrerade enheter. Intune synkroniseras automatiskt med Apple och visar ditt registreringsprogramkonto.
@@ -109,24 +110,28 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för en
 
     ![Skärmbild av Skapa en profil.](./media/device-enrollment-program-enroll-macos/image04.png)
 
-3. Under **Skapa profil**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
+3. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices).
 
     ![Profilnamn och beskrivning.](./media/device-enrollment-program-enroll-macos/createprofile.png)
 
 4. För **Plattform**, välj **macOS**.
 
-5. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
+5. Välj **Nästa** för att komma till sidan **Hanteringsinställningar**.
+
+6. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
     - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda Intune-företagsportalappen för tjänster som installation av appar. Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Mer information](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint). Multifaktorautentisering stöds inte för ADE-enheter för macOS med mappning mellan användare och enhet.
 
     - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som Företagsportal fungerar inte.
 
-6. Välj **Enhetshanteringsinställningar** och välj om du vill tillämpa låst registrering för enheter som använder den här profilen. **Låst registrering** inaktiverar macOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Systeminställningar** eller via **Terminal**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten.
+6. Om du väljer **Registrera med användartillhörighet** under **Autentiseringsmetod** väljer du **Installationsassistenten (äldre)** eller **Installationsassistenten med modern autentisering**.
 
-    ![Skärmbild för Enhetshanteringsinställningar.](./media/device-enrollment-program-enroll-macos/devicemanagementsettingsblade-macos.png)
+7. För **Låst registrering** väljer du om du vill ha låst registrering för enheter som använder den här profilen. **Ja** inaktiverar macOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Systeminställningar** eller via **terminalen**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten.
 
-7. Välj **OK**.
+8. Välj **Nästa** för att komma till sidan **Installationsassistenten**.
 
-8. Välj **Inställningar för inställningsassistenten** och konfigurera följande profilinställningar:  ![Anpassning av installationsassistenten.](./media/device-enrollment-program-enroll-macos/setupassistantcustom-macos.png)
+9. På sidan **Installationsassistenten** konfigurerar du följande profilinställningar:
+
+    ![Anpassning av installationsassistenten.](./media/device-enrollment-program-enroll-macos/setupassistantcustom-macos.png)
 
     | Avdelningsinställningar | Beskrivning |
     |---|---|
@@ -139,34 +144,36 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för en
 
     | Inställningar på skärm i Installationsassistenten | Om du väljer **Visa** kommer enheten under installationen att ... |
     |------------------------------------------|------------------------------------------|
-    | <strong>Lösenord</strong> | Fråga användaren om ett lösenord. Kräv alltid ett lösenord om inte enheten är skyddad eller åtkomstkontrolleras på något annat sätt (t.ex. helskärmsläge som begränsar enheten till en app). |
-    | <strong>Platstjänster</strong> | Fråga användaren om deras plats. |
-    | <strong>Återställa</strong> | Visa skärmen Appar och data. På den här skärmen kan användaren återställa eller överföra data från säkerhetskopieringen i iCloud när enheten konfigureras. |
-    | <strong>iCloud och Apple-ID</strong> | Ge användaren möjlighet att logga in med sitt **Apple-ID** och använda **iCloud**.                         |
-    | <strong>Villkor</strong> | Kräva att användaren godkänner Apples användarvillkor. |
-    | <strong>Touch ID</strong> | Ge användaren möjlighet att ställa in identifiering med fingeravtryck för enheten. |
-    | <strong>Apple Pay</strong> | Ge användaren möjlighet att konfigurera Apple Pay på enheten. |
-    | <strong>Zoom</strong> | Ge användaren möjlighet att zooma in på skärmen under konfigurationen. |
-    | <strong>Siri</strong> | Ge användaren möjlighet att ställa in Siri. |
-    | <strong>Diagnostikdata</strong> | Visa skärmen Diagnostik för användaren. På den här skärmen kan användaren välja att skicka diagnostikdata till Apple. |
-    | <strong>FileVault</strong> | Ge användaren möjlighet att ställa in kryptering med FileVault. |
-    | <strong>iCloud Diagnostics</strong> | Ge användaren möjlighet att skicka diagnostikdata för iCloud till Apple. |
-    | <strong>iCloud Storage</strong> | Ge användaren möjlighet att använda iCloud-lagring. |    
-    | <strong>Visningston</strong> | Ge användaren möjlighet att aktivera Visningston. |
-    | <strong>Utseende</strong> | Visa skärmen Utseende för användaren. |
-    | <strong>Registrering</strong>| Kräva att användaren registrerar enheten. |
-    | <strong>Sekretess</strong>| Visa sekretesskärmen för användaren. |
-    | <strong>Skärmtid</strong>| Visa skärmen Skärmtid för användaren. |
+    | <strong>Lösenord</strong> | Fråga användaren om ett lösenord. Kräv alltid ett lösenord för osäkrade enheter om inte åtkomsten kontrolleras på något annat sätt (t.ex. helskärmsläge som begränsar enheten till en app). För iOS/iPadOS 7.0 och senare. |
+    | <strong>Platstjänster</strong> | Fråga användaren om deras plats. För macOS 10.11 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Återställa</strong> | Visa skärmen Appar och data. På den här skärmen kan användaren återställa eller överföra data från säkerhetskopieringen i iCloud när enheten konfigureras. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Apple-ID</strong> | Ge användaren möjlighet att logga in med sitt Apple-ID och använda iCloud. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare.   |
+    | <strong>Villkor</strong> | Kräva att användaren godkänner Apples användarvillkor. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Touch ID</strong> | Ge användaren möjlighet att ställa in identifiering med fingeravtryck för enheten. För macOS 10.12.4 och senare samt iOS/iPadOS 8.1 och senare. |
+    | <strong>Apple Pay</strong> | Ge användaren möjlighet att konfigurera Apple Pay på enheten. För macOS 10.12.4 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Zoom</strong> | Ge användaren möjlighet att zooma in på skärmen under konfigurationen. För iOS/iPadOS 8.3 och senare. |
+    | <strong>Siri</strong> | Ge användaren möjlighet att ställa in Siri. För macOS 10.12 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>Diagnostikdata</strong> | Visa skärmen Diagnostik för användaren. På den här skärmen kan användaren välja att skicka diagnostikdata till Apple. För macOS 10.9 och senare samt iOS/iPadOS 7.0 och senare. |
+    | <strong>FileVault</strong> | Visa FileVault 2-krypteringsskärmen för användaren. För macOS 10.10 och senare. |
+    | <strong>iCloud-diagnostik</strong> | Visa skärmen iCloud-analys för användaren. För macOS 10.12.4 och senare. |
+    | <strong>iCloud Storage</strong> | Visa sidan iCloud-dokument och skrivbord för användaren. För macOS 10.13.4 och senare. |
+    | <strong>Visningston</strong> | Ge användaren möjlighet att aktivera Visningston. För macOS 10.13.6 och senare samt iOS/iPadOS 9.3.2 och senare. |
+    | <strong>Utseende</strong> | Visa skärmen Utseende för användaren. För macOS 10.14 och senare samt iOS/iPadOS 13.0 och senare. |
+    | <strong>Registrering</strong> | Visa registreringsskärmen för användaren. För macOS 10.9 och senare. |
+    | <strong>Skärmtid</strong> | Visa skärmen Skärmtid. För macOS 10.15 och senare samt iOS/iPadOS 12.0 och senare. |
+    | <strong>Sekretess</strong> | Visa sekretesskärmen för användaren. För macOS 10.13.4 och senare samt iOS/iPadOS 11.3 och senare. |
+    
+10. Välj **Nästa** för att gå till sidan **Granska + skapa**.
 
-9. Välj **OK**.
-
-10. Spara profilen genom att välja **Skapa**.
+11. Spara profilen genom att välja **Skapa**.
 
 ## <a name="sync-managed-devices"></a>Synkronisera hanterade enheter
 
 Nu när Intune har fått behörighet att hantera dina enheter, kan du synkronisera Intune med Apple och se dina hanterade enheter i Intune på Azure-portalen.
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **macOS** > **macOS-registrering** > **Token för registreringsprogram** > välj en token i listan > **Enheter** > **Synkronisera**. ![Skärmbild där noden Registreringsprogramenheter har valts och länkvärde håller på att väljas.](./media/device-enrollment-program-enroll-macos/image06.png)
+1. Gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **macOS** > **macOS-registrering** > **Token för registreringsprogram**.
+
+2. Välj en token i listan > **Enheter** > **Synkronisera**. ![Skärmbild där noden Registreringsprogramenheter har valts och länkvärde håller på att väljas.](./media/device-enrollment-program-enroll-macos/image06.png)
 
    För att följa Apples villkor för godkänd registreringsprogramtrafik tillämpar Intune följande begränsningar:
    - En fullständig synkronisering kan inte köras oftare än en gång var sjunde dag. Under en fullständig synkronisering, hämtar Intune den fullständigt uppdaterade listan med serienummer som tilldelats den Apple MDM-server som är ansluten till Intune. Om en registreringsprogramenhet har tagits bort från Intune-portalen utan att tilldelningen till Apple MDM-servern har tagits bort i Apple-portalen så importeras den inte igen förrän den fullständiga synkroniseringen körs.   
@@ -201,10 +208,10 @@ Du har aktiverat hantering och synkronisering mellan Apple och Intune, och har t
 
 4. Välj **Din servertoken**.  
 5. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enhetsregistrering** > **Apple-registrering** > **Token för registreringsprogram** > välj token.
-    ![Skärmbild av registreringsprogramtoken.](./media/device-enrollment-program-enroll-macos/enrollmentprogramtokens.png)
+    ![Skärmbild av registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/enrollmentprogramtokens.png)
 
 6. Välj **Förnya token** och ange det Apple-ID som användes för att skapa den ursprungliga token.  
-    ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-macos/renewtoken.png)
+    ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-ios/renewtoken.png)
 
 7. Överför den nyligen hämtade token.  
 8. Välj **Förnya token**. Du får se en bekräftelse att token har förnyats.

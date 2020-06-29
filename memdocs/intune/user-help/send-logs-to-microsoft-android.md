@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 04/12/2018
+ms.date: 06/16/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 7a842e97e0c276926c07f615a7f9089a64132b50
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: f83b5ae8cc621a6fab813267216900638ff27269
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881048"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094109"
 ---
 # <a name="send-logs-to-the-company-portal-developers-for-android-devices"></a>Skicka loggar till företagsportalens utvecklare för Android-enheter
 
@@ -43,6 +43,9 @@ Så här skickar du loggar till Microsoft:
     > **Meny** kan vara en program- eller maskinvaruknapp, beroende på vilken Android-enhet du har.
 
 3. Tryck på alternativet för att **endast ladda upp loggar**.
+
+    > [!NOTE]
+    > Om du använder en självständig molnmiljö är inte funktionen Skicka loggar tillgänglig i företagsportalen. Du måste skicka loggar via e-post. 
 
 4. När överföringen är klar får du ett incident-ID. Spara ID:t för posterna.
 

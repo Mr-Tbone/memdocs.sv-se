@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic;seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac29e27c85ad43ccc078c54dd9d5b8b659206f57
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: e8f400c946f26de272b782194df3f1b1930ab0b4
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81397772"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093508"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Felsöka enhetsregistrering i Microsoft Intune
 
@@ -339,7 +339,7 @@ Det här problemet kan inträffa om:
 4. Säga till användaren att starta om registreringsprocessen.
 
 #### <a name="determine-if-theres-something-wrong-with-the-vpp-token"></a>Avgöra om det finns något fel med VPP-token
-1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Profiler** > profilnamn > **Hantera** > **Egenskaper**.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **iOS/iPadOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Profiler** > profilnamn > **Hantera** > **Egenskaper**.
 2. Granska egenskaperna för att se om några fel som liknar följande visas:
     - Den här token har upphört att gälla.
     - Den här token ligger utanför Företagsportalens licenser.
@@ -349,7 +349,7 @@ Det här problemet kan inträffa om:
 3. Åtgärda problemen för token.
 
 #### <a name="identify-which-devices-are-blocked-by-the-vpp-token"></a>Identifiera vilka enheter som blockeras av VPP-token
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Enheter**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS-registrering** > **Token för registreringsprogram** > tokennamn > **Enheter**.
 2. Filtrera kolumnen **Profilstatus** efter **Blockerad**.
 3. Anteckna serienummer för alla enheter som är **Blockerade**.
 

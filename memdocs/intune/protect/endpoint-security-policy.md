@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/15/2020
+ms.date: 06/15/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 9c2e6f742610eb8f2f526c6fc7a5afabfbadcbbf
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 071cab69b652193b835282603e187e4f3d0c7b0d
+ms.sourcegitcommit: 97f150f8ba8be8746aa32ebc9b909bb47e22121c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990865"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879719"
 ---
 # <a name="manage-device-security-with-endpoint-security-policies-in-microsoft-intune"></a>Hantera enhetssäkerhet med Endpoint Security-policyer i Microsoft Intune
 
@@ -39,9 +39,9 @@ Nedan ges en kort beskrivning av de olika typerna av Endpoint Security-policyer.
 
 - [Diskkryptering](../protect/endpoint-security-disk-encryption-policy.md) – diskkrypteringsprofilerna för Endpoint Security fokuserar bara på de inställningar som är relevanta för enheters inbyggda krypteringsmetod, som FileVault eller BitLocker. Det här gör att säkerhetsadministratörer enklare kan hantera diskkrypteringsinställningar utan att behöva navigera bland en massa irrelevanta inställningar.
 
-- [Brandvägg](../protect/endpoint-security-firewall-policy.md) – använd Endpoint Security-policyn Brandvägg i Intune till att konfigurera den inbyggda brandväggen för enheter som kör macOS och Windows 10. Inbyggda brandväggar kan vara BitLocker för Windows-enheter och FileVault för macOS.
+- [Brandvägg](../protect/endpoint-security-firewall-policy.md) – använd Endpoint Security-policyn Brandvägg i Intune till att konfigurera den inbyggda brandväggen för enheter som kör macOS och Windows 10. 
 
-- [Slutpunktsidentifiering och svar](../protect/endpoint-security-edr-policy.md) – när du integrerar Defender ATP med Intune kan du använda Endpoint Security-policyn EDR (slutpunktsidentifiering och svar) till att hantera EDR-inställningarna och registrera enheter i Defender ATP.
+- [Slutpunktsidentifiering och svar](../protect/endpoint-security-edr-policy.md) – när du integrerar Microsoft Defender ATP med Intune kan du använda Endpoint Security-policyn EDR (slutpunktsidentifiering och svar) till att hantera EDR-inställningarna och registrera enheter i Microsoft Defender ATP.
 
 - [Minskning av attackytan](../protect/endpoint-security-asr-policy.md) – när du använder Defender Antivirus på dina Windows 10-enheter kan du använda Intunes Endpoint Security-policy Minskning av attackytan till att hantera de här inställningarna på dina enheter.
 

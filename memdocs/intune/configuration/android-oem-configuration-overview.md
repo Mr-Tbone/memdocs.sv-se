@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/12/2020
+ms.date: 06/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8eaa636659cb9e2382f61fb668d8aec2ecd75f7a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 68f8eb2ab3b7e348daa99e982e640e9bd28692d8
+ms.sourcegitcommit: 397ec824f1368dcf06c3870c89f52347852062bd
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990186"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85264132"
 ---
 # <a name="use-and-manage-android-enterprise-devices-with-oemconfig-in-microsoft-intune"></a>Använda och hantera Android Enterprise-enheter med OEMConfig i Microsoft Intune
 
@@ -116,6 +116,8 @@ Kontrollera att enheten har stöd för OEMConfig, att rätt OEMConfig-app läggs
       - Många inställningar har standardvärden som tillhandahålls av OEM-tillverkaren. För att se om det finns ett standardvärde kan du hovra över informationsikonen bredvid inställningen. En knappbeskrivning visar standardvärdena för den inställningen (om tillämpligt) och mer information från OEM-tillverkaren.
 
       - Om du klickar på **Rensa** tas den inställningen bort från profilen. Om en inställning inte finns i profilen ändras inte dess värde på enheten när profilen tillämpas.
+      
+      - Använd knappen **Sök** till att söka efter inställningar. Skriv ett nyckelord på sidopanelen för att se alla relevanta inställningar och deras beskrivningar. Du kan välja inställningar och automatiskt lägga till dem i trädet i Configuration Designer, om de inte redan finns där. Då öppnas även trädet automatiskt så att du kan se inställningen. 
 
       - Om du skapar ett tomt (okonfigurerat) paket i Configuration Designer tas det bort när du växlar till JSON-redigeraren.
 
@@ -155,15 +157,23 @@ Jämfört med standardappar expanderar OEMConfig-appar de hanterade konfiguratio
 
 | OEM | Samlings-ID | OEM-dokumentation (om tillgänglig) |
 | --- | --- | ---|
+| Archos | com.archos.oemconfig | |
 | Ascom | com.ascom.myco.oemconfig | |
+| Bluebird | com.bluebird.android.oemconfig | |
 | Cipherlab | com.cipherlab.oemconfig | |
 | Datalogic | com.datalogic.settings.oemconfig | |
-| Honeywell | com.honeywell.oemconfig |  |
+| Honeywell | com.honeywell.oemconfig | |
 | HMDGlobal – 7.2 | com.hmdglobal.app.oemconfig.n7_2 | 
-| HMDGlobal – 4.2 | com.hmdglobal.app.oemconfig.n4_2 | 
+| HMDGlobal – 4.2 | com.hmdglobal.app.oemconfig.n4_2 |
+| HMDGlobal - 5.3 | com.hmdglobal.app.oemconfig.n5_3 |
+| Lenovo | com.lenovo.oemconfig.rel | |
+| LG | com.lge.android.oemconfig | |
 | Kyocera | jp.kyocera.enterprisedeviceconfig |  |
+| Panasonic | com.panasonic.mobile.oemconfig | |
+| Point Mobile | device.apps.emkitagent | |
 | Samsung | com.samsung.android.knox.kpu | [Administratörsguide för Knox Service plugin-program](https://docs.samsungknox.com/knox-service-plugin/admin-guide/index.htm) |
 | Seuic | com.seuic.seuicoemconfig | |
+| Social Mobile | com.rhinomobility.oemconfig | |
 | Spectralink – streckkoder | com.spectralink.barcode.service |  |
 | Spectralink – knappar | com.spectralink.buttons |  |
 | Spectralink – enhet | com.spectralink.slnkdevicesettings  |  |

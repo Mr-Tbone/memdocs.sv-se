@@ -1,7 +1,7 @@
 ---
-title: Registrera iOS/iPadOS-enheter – Enhetsregistreringsprogrammet
+title: Registrera iOS/iPadOS-enheter – Automatisk enhetsregistrering
 titleSuffix: Microsoft Intune
-description: Läs hur du registrerar företagsägda iOS/iPadOS-enheter med programmet för enhetsregistrering.
+description: Läs om hur du registrerar företagsägda iOS/iPadOS-enheter med automatisk enhetsregistrering.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2db33dbe94ff5aef62563531149250fbd4268acc
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 5cb6b4df9e3834ce447b176b5dfab158deb0d543
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83986979"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094044"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
 > [!IMPORTANT]
 > Apple har nyligen slutat använda programmet för enhetsregistrering (DEP) och övergått till att använda automatisk enhetsregistrering (ADE). Intune-gränssnittet håller på att uppdateras för att återspegla detta. Till dess att vi har slutfört ändringarna kommer det att stå *Programmet för enhetsregistrering* i Intune-portalen. På alla platser där detta visas används nu automatisk enhetsregistrering.
 
-Du kan konfigurera Intune för att registrera iOS/iPadOS-enheter som köpts via [automatisk enhetsregistrering (ADE)](https://deploy.apple.com) (tidigare programmet för enhetsregistrering) från Apple. Med Automatisk enhetsregistrering kan du konfigurera ett stort antal enheter utan att behöva röra dem. Enheter som iPhones, iPads och MacBooks kan levereras direkt till användarna. När användaren sätter på enheten körs installationsassistenten, som innehåller vanliga funktioner för Apple-produkter, med de förkonfigurerade inställningarna och enheten registreras i hanteringen.
+Du kan konfigurera Intune att registrera iOS/iPadOS-enheter som köps in via Apples [ADE-program (automatisk enhetsregistrering)](https://deploy.apple.com). Med Automatisk enhetsregistrering kan du konfigurera ett stort antal enheter utan att behöva röra dem. Enheter som iPhones, iPads och MacBooks kan levereras direkt till användarna. När användaren sätter på enheten körs installationsassistenten, som innehåller vanliga funktioner för Apple-produkter, med de förkonfigurerade inställningarna och enheten registreras i hanteringen.
 
 Om du vill aktivera ADE använder du både Intune-portalen och [Apple Business Manager (ABM)](https://business.apple.com/)- eller [Apple School Manager (ASM)](https://school.apple.com/)-portalen. En lista med serienummer eller inköpsordernummer krävs för att du ska kunna tilldela enheter till Intune för hantering i någon av dessa Apple-portaler. Du kan skapa ADE-registreringsprofiler i Intune med inställningar som tillämpas på enheterna under registreringen. ADE kan inte användas med ett konto för [enhetsregistreringshanterare](device-enrollment-manager-enroll.md).
 
@@ -82,23 +82,25 @@ Du kan också skapa en token med [Apple Business Manager (ABM)](https://business
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>Steg 1. Ladda ned certifikatet för den offentliga Intune-nyckeln som krävs för att skapa token.
 
-1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > **Lägg till**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering**.
 
-    ![Hämta en registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/image01.png)
+    ![Hämta en registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/ios-enroll.png)
 
-2. Välj **Jag godkänner** för att ge Microsoft behörighet att skicka information om användare och enhet till Apple.
+2. Välj **Token för registreringsprogram** > **Lägg till**.
+
+3. Välj **Jag godkänner** för att ge Microsoft behörighet att skicka information om användare och enhet till Apple.
 
    > [!NOTE]
    > När du kommit förbi steg 2 och ska ladda ned certifikatet för den offentliga Intune-nyckeln, ska du inte stänga guiden eller navigera från sidan. Om du gör det ogiltigförklaras det certifikat som du har laddat ned. I så fall måste du utföra den här processen på nytt. Då blir även knappen **Skapa** på fliken **Granska + skapa** nedtonad, och du kan inte slutföra processen.
 
    ![Skärmbild av rutan Registreringsprogramtoken i arbetsytan för Apple-certifikat. Nedladdning av offentlig nyckel.](./media/device-enrollment-program-enroll-ios/add-enrollment-program-token-pane.png)
 
-3. Välj **Hämta den offentliga nyckeln** om du vill hämta och spara krypteringsnyckelfilen (.pem) lokalt. .pem-filen används för att begära ett förtroendecertifikat från Apple-portalen.
+4. Välj **Hämta den offentliga nyckeln** om du vill hämta och spara krypteringsnyckelfilen (.pem) lokalt. .pem-filen används för att begära ett förtroendecertifikat från Apple-portalen.
 
 
 ### <a name="step-2-use-your-key-to-download-a-token-from-apple"></a>Steg 2. Använd din nyckel för att hämta en token från Apple.
 
-1. Välj **Skapa en token för Apples program för enhetsregistrering** för att öppna Apples företagsportal och logga in med ditt företags Apple-ID. Du kan använda detta Apple-ID när du behöver förnya din ADE-token.
+1. Välj **Skapa en token för Apple Business Manager** för att öppna Apples Företagsportal och logga in med ditt företags Apple-ID. Du kan använda detta Apple-ID när du behöver förnya din ADE-token.
 2. Gå till Apples [företagsportal](https://business.apple.com) och välj **Kom igång** för **Enhetsregistreringsprogram**.
 
 3. På sidan **Hantera servrar** väljer du **Lägg till MDM-server**.
@@ -140,8 +142,8 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 > Enheterna kommer att blockeras om det inte finns tillräckligt med licenser i företagsportalen för en VPP-token, eller om token har upphört att gälla. Intune visar en varning när en token snart upphör att gälla, eller om licenserna börjar ta slut.
  
 
-1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken**.
-2. Välj en token, välj **Profiler** > **Skapa profil** > **iOS**.
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram**.
+2. Välj en token, välj **Profiler** > **Skapa profil** > **iOS/iPadOS**.
 
     ![Skärmbild av Skapa en profil.](./media/device-enrollment-program-enroll-ios/image04.png)
 
@@ -154,9 +156,9 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 5. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
     - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda Intune-företagsportalappen för tjänster som installation av appar. Om du använder ADFS och installationsassistenten för att autentisera krävs [WS-Trust 1.3-användarnamn/blandad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints) [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
 
-    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här alternativet för enheter som inte kommer åt lokala användardata. Appar som Företagsportal fungerar inte.
+    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här alternativet för enheter som inte läser lokala användardata och för Apple Shared iPad for Business-enheter. Appar som Företagsportal fungerar inte.
 
-5. Om du väljer **Registrera med användartillhörighet**, kan du låta användare autentisera sig med företagsportalen istället för Apple Installationsassistenten.
+6. Om du väljer **Registrera med användartillhörighet**, kan du låta användare autentisera sig med företagsportalen istället för Apple Installationsassistenten.
 
     ![Autentisera med Företagsportalen.](./media/device-enrollment-program-enroll-ios/authenticatewithcompanyportal.png)
 
@@ -168,16 +170,16 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
     >
     > Dessa stöds inte vid autentisering med Apples installationsassistent.
 
-6. Om du väljer **Företagsportal** för **Välj var användarna måste autentiseras**, kan du använda en VPP-token för att automatiskt installera företagsportalen på enheten. I det här fallet behöver användaren inte ange ett Apple-ID. Om du vill installera Företagsportalen med en VPP-token väljer du en token under **Installera Företagsportalen med VPP**. Kräver att företagsportalen redan har lagts till i VPP-token. Kontrollera att du har konfigurerat appdistribution i Intune (Intune>Klientappar) för att säkerställa att företagsportalappen uppdateras även efter registreringen. Om du vill undvika användarinteraktion bör du skaffa Företagsportal som en iOS/iPadOS VPP-app, göra den till en obligatorisk app och använda enhetslicenser för tilldelningen. Se till att den token du väljer inte upphör att gälla och att du har tillräckligt många enhetslicenser för företagsportalappen. Om token upphör att gälla eller om licenserna tar slut kan Intune installera företagsportalen från App Store istället, och då krävs ett Apple-ID. 
+7. Om du väljer **Företagsportal** för **Välj var användarna måste autentiseras**, kan du använda en VPP-token för att automatiskt installera företagsportalen på enheten. I det här fallet behöver användaren inte ange ett Apple-ID. Om du vill installera Företagsportalen med en VPP-token väljer du en token under **Installera Företagsportalen med VPP**. Kräver att företagsportalen redan har lagts till i VPP-token. Kontrollera att du har konfigurerat appdistribution i Intune (Intune>Klientappar) för att säkerställa att företagsportalappen uppdateras även efter registreringen. Om du vill undvika användarinteraktion bör du skaffa Företagsportal som en iOS/iPadOS VPP-app, göra den till en obligatorisk app och använda enhetslicenser för tilldelningen. Se till att den token du väljer inte upphör att gälla och att du har tillräckligt många enhetslicenser för företagsportalappen. Om token upphör att gälla eller om licenserna tar slut kan Intune installera företagsportalen från App Store istället, och då krävs ett Apple-ID. 
 
     > [!NOTE]
     > När **Välj var användarna måste autentiseras** är inställt till **Företagsportal** måste du se till att enhetsregistreringsprocessen utförs inom de närmsta 24 timmarna efter att företagsportalen laddats ned till ADE-enheten. Annars kan registreringen misslyckas och en fabriksåterställning krävs för att registrera enheten.
     
     ![Skärmbild av installation av Företagsportalen med VPP.](./media/device-enrollment-program-enroll-ios/install-cp-with-vpp.png)
 
-7. Om du väljer **Installationsassistent** för **Välj var användarna måste autentiseras**, men du även vill använda villkorlig åtkomst eller distribuera företagsprogram på enheterna, måste du installera företagsportalen på enheterna. Välj **Ja** för att **Installera Företagsportalen**.  Om du vill att användarna ska kunna ta emot företagsportalen utan att behöva autentisera till App Store väljer du **Installera företagsportalen med VPP** och väljer en VPP-token. Se till att den token du väljer inte upphör att gälla och att du har tillräckligt många enhetslicenser för företagsportalappen för att distribuera den korrekt.
+8. Om du väljer **Installationsassistent** för **Välj var användarna måste autentiseras**, men du även vill använda villkorlig åtkomst eller distribuera företagsprogram på enheterna, måste du installera företagsportalen på enheterna. Välj **Ja** för att **Installera Företagsportalen**.  Om du vill att användarna ska kunna ta emot företagsportalen utan att behöva autentisera till App Store väljer du **Installera företagsportalen med VPP** och väljer en VPP-token. Se till att den token du väljer inte upphör att gälla och att du har tillräckligt många enhetslicenser för företagsportalappen för att distribuera den korrekt.
 
-8. Om du väljer en token för **Installera företagsportalen med VPP** kan du låsa enheten i enkelt appläge (specifikt företagsportalappen) direkt efter att installationsassistenten har slutförts. Välj **Ja** för **Run Company Portal in Single App Mode until authentication** (Kör företagsportalappen i enkelt appläge till autentisering) för att ange detta alternativ. För att kunna använda enheten måste användaren först autentisera genom att logga in med företagsportalen.
+9. Om du väljer en token för **Installera företagsportalen med VPP** kan du låsa enheten i enkelt appläge (specifikt företagsportalappen) direkt efter att installationsassistenten har slutförts. Välj **Ja** för **Run Company Portal in Single App Mode until authentication** (Kör företagsportalappen i enkelt appläge till autentisering) för att ange detta alternativ. För att kunna använda enheten måste användaren först autentisera genom att logga in med företagsportalen.
 
     Multifaktorautentisering stöds inte på en enskild enhet som är låst i ett enkelt appläge. Den här begränsningen finns eftersom enheten inte kan växla till en annan app för att slutföra den andra faktorn för autentisering. Därför måste den andra faktorn vara på en annan enhet om du vill ha multifaktorautentisering på en enhet med enkelt appläge.
 
@@ -185,11 +187,11 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 
    ![Skärmbild av läget för enskilda appar.](./media/device-enrollment-program-enroll-ios/single-app-mode.png)
 
-9. Om du vill att enheter som använder den här profilen ska övervakas väljer du **Ja** för **Övervakade**.
+10. Om du vill att enheter som använder den här profilen ska övervakas väljer du **Ja** för **Övervakade**.
 
     ![Skärmbild för Enhetshanteringsinställningar.](./media/device-enrollment-program-enroll-ios/supervisedmode.png)
 
-    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder ADE som mekanism för att aktivera övervakat läge, särskilt om du distribuerar större antal iOS/iPadOS-enheter.
+    **Övervakade** enheter ger dig fler hanteringsalternativ och inaktiverar aktiveringslåset som standard. Microsoft rekommenderar att du använder ADE som mekanism för att aktivera övervakat läge, särskilt om du distribuerar större antal iOS/iPadOS-enheter. Apple Shared iPad for Business-enheter måste övervakas.
 
     Användare meddelas att deras enheter är övervakade på två sätt:
 
@@ -199,25 +201,36 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
      > [!NOTE]
      > En enhet som registrerats utan övervakning kan bara återställas genom att använda Apple Configurator. Om du återställer enheten på det här sättet, måste du ansluta en iOS/iPadOS-enhet till en Mac-dator med en USB-kabel. Läs mer om detta i [dokumentation för Apple Configurator](http://help.apple.com/configurator/mac/2.3).
 
-10. Välj om du vill ha låst registrering för enheter som använder den här profilen. **Låst registrering** inaktiverar iOS/iPadOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Inställningar**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten. Sådana enheter måste ha hanteringsläget **Övervakad** inställt på *Ja*. 
+11. Välj om du vill ha låst registrering för enheter som använder den här profilen. **Låst registrering** inaktiverar iOS/iPadOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Inställningar**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten. Sådana enheter måste ha hanteringsläget **Övervakad** inställt på *Ja*. 
 
     > [!NOTE]
     > När enheten har registrerats med **Låst registrering** kommer användarna inte att kunna använda **Ta bort enhet** eller **Fabriksåterställning** i Företagsportal-appen. Alternativen kommer inte att vara tillgängliga för användarna. Användarna kan inte heller ta bort enheten på Företagsportal-webbplatsen (https://portal.manage.microsoft.com).
     > Om en BYOD-enhet konverteras till en automatiserad Apple-enhetsregistreringsenhet och registreras med en profil som aktiverats för **låst registrering** kan användare använda **Ta bort enhet** och **Fabriksåterställning** i 30 dagar. Därefter inaktiveras alternativen eller blir otillgängliga. Referens: https://help.apple.com/configurator/mac/2.8/#/cad99bc2a859.
 
-11. Välj om du vill att enheter som använder den här profilen ska kunna **Synkronisera med datorer**. Om du väljer **Tillåt Apple Configurator efter certifikat** måste du välja ett certifikat under **Apple Configurator-certifikat**.
+12. Om du väljer **Registrera utan användartillhörighet** och **Övervakad** ovan måste du bestämma om enheterna ska konfigureras som [Apple Shared iPad for Business-enheter](https://support.apple.com/guide/mdm/shared-ipad-overview-cad7e2e0cf56/web). Om du väljer **Ja** för **Delad iPad** kan flera användare logga in på samma enhet. Användarna autentiseras med sitt Managed Apple ID och förenade autentiseringskonton eller via en tillfällig session (som ett gästkonto). För det här alternativet behöver du iOS/iPad 13.4 eller senare.
+
+    Om du väljer att konfigurera enheterna som Apple Shared iPad for Business-enheter måste du ange **Maximalt antal cachelagrade användare**. Ställ in värdet på det antal användare du förväntar dig ska använda den delade iPad-enheten. Du kan cachelagra upp till 24 användare på en enhet med 32 GB eller 64 GB. Om du väljer ett mycket lågt antal kan det ta en stund innan användarnas data kommer till enheten efter inloggning. Om du väljer ett mycket högt tal kanske inte användarna har tillräckligt med diskutrymme.  
+
+    > [!NOTE]
+    > Om du vill konfigurera Apple Shared iPad for Business anger du följande: 
+    > - **Användartillhörighet** = **Registrera utan användartillhörighet**. 
+    > - **Övervakad** = **Ja**. 
+    > - **Delad iPad** = **Ja**.
+    > Tillfälliga sessioner är aktiverade som standard och gör att användarna kan logga in på en delad iPad utan något Managed Apple ID-konto. Du kan inaktivera tillfälliga sessioner på delade iPad-enheter genom att konfigurera [inställningar för enhetsbegränsnings](../configuration/device-restrictions-ios.md) för delade iPad-enheter i iOS/iPadOS.  
+
+13. Välj om du vill att enheter som använder den här profilen ska kunna **Synkronisera med datorer**. Om du väljer **Tillåt Apple Configurator efter certifikat** måste du välja ett certifikat under **Apple Configurator-certifikat**.
 
      > [!NOTE]
      > Om **Synkronisera med datorer** har angetts till **Neka alla**, är porten begränsad på iOS-och iPad-enheter. Porten kan bara användas för laddning och inget annat. Porten kommer att blockeras från att använda iTunes eller Apple Configurator 2.
      Om **Synkronisera med datorer** har värdet **Tillåt Apple Configurator efter certifikat** ska du spara en lokal kopia av certifikatet som du kan använda senare. Du kan inte göra ändringar i den uppladdade kopian och det är viktigt att du behåller det här certifikatet så att du kan använda det i framtiden. För att ansluta till iOS/iPad-enheten från en macOS-enhet eller PC måste samma certifikat vara installerat på enheten som upprättar anslutningen till iOS/iPad-enheten som registrerades med profilen för automatisk enhetsregistrering med den här konfigurationen och certifikatet.
 
-12. Om du väljer **Tillåt Apple Configurator efter certifikat** i föregående steg, väljer du ett Apple Configurator-certifikat att importera.
+14. Om du väljer **Tillåt Apple Configurator efter certifikat** i föregående steg, väljer du ett Apple Configurator-certifikat att importera.
 
-13. Du kan ange ett namngivningsformat för enheter som tillämpas automatiskt när de registreras och vid varje incheckning. Om du vill skapa en namngivningsmall väljer du **Ja** under **Använd mall för enhetsnamn**. I rutan **Mall för enhetsnamn** anger du sedan den mall som ska användas för de namn som använder den här profilen. Du kan ange ett mallformat som innehåller enhetstyp och serienummer. 
+15. Du kan ange ett namngivningsformat för enheter som tillämpas automatiskt när de registreras och vid varje incheckning. Om du vill skapa en namngivningsmall väljer du **Ja** under **Använd mall för enhetsnamn**. I rutan **Mall för enhetsnamn** anger du sedan den mall som ska användas för de namn som använder den här profilen. Du kan ange ett mallformat som innehåller enhetstyp och serienummer. 
 
-14. Välj **Nästa: Anpassning av installationsassistenten**.
+16. Välj **Nästa: Anpassning av installationsassistenten**.
 
-15. På sidan **Anpassning av installationsassistenten** konfigurerar du följande profilinställningar: ![Anpassning av installationsassistenten.](./media/device-enrollment-program-enroll-ios/setupassistantcustom.png)
+17. På sidan **Anpassning av installationsassistenten** konfigurerar du följande profilinställningar: ![Anpassning av installationsassistenten.](./media/device-enrollment-program-enroll-ios/setupassistantcustom.png)
 
 
     | Avdelningsinställningar | Beskrivning |
@@ -261,9 +274,9 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
     | <strong>iCloud Storage</strong> | Visa sidan iCloud-dokument och skrivbord för användaren. För macOS 10.13.4 och senare. |
     
 
-16. Välj **Nästa** för att gå till sidan **Granska + skapa**.
+18. Välj **Nästa** för att gå till sidan **Granska + skapa**.
 
-17. Spara profilen genom att välja **Skapa**.
+19. Spara profilen genom att välja **Skapa**.
 
 ### <a name="dynamic-groups-in-azure-active-directory"></a>Dynamiska grupper i Azure Active Directory
 
@@ -279,7 +292,9 @@ Om du tilldelar dynamiska grupper till registreringsprofiler kan det leda till e
 ## <a name="sync-managed-devices"></a>Synkronisera hanterade enheter
 Nu när Intune har fått behörighet att hantera dina enheter, kan du synkronisera Intune med Apple och se dina hanterade enheter i Intune på Azure-portalen.
 
-1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj en token i listan > **Enheter** > **Synkronisera**. ![Skärmbild på noden Registreringsprogramenheter och länken Synkronisera.](./media/device-enrollment-program-enroll-ios/image06.png)
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram**.
+
+2. Välj en token i listan > **Enheter** > **Synkronisera**. ![Skärmbild på noden Registreringsprogramenheter och länken Synkronisera.](./media/device-enrollment-program-enroll-ios/image06.png)
 
    För att följa Apples villkor för godkänd registreringsprogramtrafik tillämpar Intune följande begränsningar:
    - En fullständig synkronisering kan inte köras oftare än en gång var sjunde dag. Under en fullständig synkronisering, hämtar Intune den fullständigt uppdaterade listan med serienummer som tilldelats den Apple MDM-server som är ansluten till Intune. Om en ADE-enhet tas bort från Intune-portalen ska den inte vara tilldelad från Apple MDM-servern i ADE-portalen. Om den ej är tilldelad, importeras den inte om till Intune förrän den fullständiga synkroniseringen har körts.   
@@ -292,7 +307,7 @@ Du måste tilldela en registreringsprogramprofil till enheterna innan de kan reg
 >[!NOTE]
 >Du kan även tilldela profiler serienummer från bladet **Apple-serienummer**.
 
-1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > välj en token i listan.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram** > välj en token i listan.
 2. Välj **Enheter** > välj enheter i listan > **Tilldela profil**.
 3. Välj en profil för enheterna under **Tilldela profil** och välj sedan **Tilldela**.
 
@@ -300,7 +315,7 @@ Du måste tilldela en registreringsprogramprofil till enheterna innan de kan reg
 
 Du kan välja en standardprofil som ska tillämpas för alla enheter som registreras med en specifik token.
 
-1. Gå till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431), välj **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramstoken** > välj en token i listan.
+1. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram** > välj en token i listan.
 2. Välj **Ange standardprofil**, välj en profil i listmenyn och välj sedan **Spara**. Den här profilen kommer att tillämpas på alla enheter som registreras med token.
 
 ## <a name="distribute-devices"></a>Distribuera enheter
@@ -320,13 +335,15 @@ Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregi
     ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-ios/generatenewtoken.png)
 
 4. Välj **Din servertoken**.  
-5. I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS** > **iOS-registrering** > **Token för registreringsprogram** > välj token.
+5. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram** och väljer token.
     ![Skärmbild av registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/enrollmentprogramtokens.png)
 
 6. Välj **Förnya token** och ange det Apple-ID som användes för att skapa den ursprungliga token.  
     ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-ios/renewtoken.png)
 
-8. Överför den nyligen hämtade token.  
+7. Välj **Nästa** för att gå till **Omfångstaggar** och tilldela omfångstaggar om du vill.
+
+8. Välj **Nästa** och överför den token du nyss laddade ned.  
 9. Välj **Förnya token**. Du får se en bekräftelse att token har förnyats.   
     ![Skärmbild av bekräftelse.](./media/device-enrollment-program-enroll-ios/confirmation.png)
 

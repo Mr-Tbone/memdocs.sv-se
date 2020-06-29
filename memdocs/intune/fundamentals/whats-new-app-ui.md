@@ -6,7 +6,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 05/26/2020
+ms.date: 06/11/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efa965bc3dff2436a98602e3cb9dda96a1fe580d
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 11aba38d63621472b5e8513b066b96120d649c31
+ms.sourcegitcommit: 9a8a9cc7dcb6ca333b87e89e6b325f40864e4ad8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166197"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740898"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Uppdateringar i användargränssnittet för Intunes slutanvändarappar
 
@@ -34,6 +34,14 @@ Läs mer om de senaste uppdateringarna för Microsoft Intune-apparna. Vi lägger
 
 Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](https://docs.microsoft.com/mem/intune/user-help/use-managed-devices-to-get-work-done).  
 
+
+## <a name="week-of-june-8-2020"></a>Veckan som inleds med 8 juni 2020 
+
+### <a name="updates-to-informational-screen-in-company-portal-for-iosipados----7032452---"></a>Uppdatering av informationsskärmen i företagsportalen för iOS/iPad <!-- 7032452 -->
+Vi uppdaterade en informationsskärm i företagsportalen för iOS/iPad med en bättre förklaring av vad administratörer kan se och göra på enheter. Förtydligandena gäller bara företagsägda enheter. Det är bara texten som har uppdaterats, det har inte gjorts några faktiska ändringar av vad administratörer kan se och göra på användarenheter. Mer information om vad administratörer kan se finns i [Vilken information ser organisationen när jag registrerar min enhet?](../user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
+
+
+[![Skärmbild av informationsskärm i företagsportalen med uppdaterad text.](./media/whats-new-app-ui/device-management-privacy-2005-02.png)](./media/whats-new-app-ui/device-management-privacy-2005-03.png#lightbox)
 
 
 ## <a name="week-of-may-18-2020"></a>Den vecka som börjar 18 maj 2020  
@@ -62,12 +70,6 @@ Användarna ser också den nya länken **Hämta appar** i Företagsportal-lådan
 För att skapa utrymma för dessa nya och förbättrade upplevelser har vi tagit bort fliken **APPAR** i följande bilder.  
 
 ![Exempelbild på den nu borttagna fliken Appar i företagsportalen.](./media/whats-new-app-ui/apps-tab-android-removed-2005.png)  
-
-
-
-
-
-
 
 ## <a name="week-of-march-2-2020"></a>Den vecka som börjar 2 mars 2020   
 ### <a name="improved-sign-in-experience-in-company-portal-for-android"></a>Förbättrad inloggningsupplevelse i Företagsportal för Android   

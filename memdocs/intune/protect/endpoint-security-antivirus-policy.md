@@ -16,18 +16,18 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 2f3a378cdb3b5e24371edb2fd6dc240962f80342
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: bfefdee7e949faf9e484ea20e7fc203ee72a9784
+ms.sourcegitcommit: 97f150f8ba8be8746aa32ebc9b909bb47e22121c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431910"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879662"
 ---
 # <a name="antivirus-policy-for-endpoint-security-in-intune"></a>Antivirusprincip för slutpunktssäkerhet i Intune
 
 Antivirusprinciperna för slutpunktssäkerhet för Intune hjälper säkerhetsadministratörer att fokusera på att hantera olika grupper av antivirusinställningar för hanterade enheter. Om du vill använda en antiviruspolicy ska du integrera Intune med Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP) som en Mobile Threat Defense-lösning.
 
-Antivirusprincipen innehåller flera profiler. Varje profil innehåller bara de inställningar som är relevanta för Defender ATP-antivirusprogram för macOS, Windows 10 eller användarupplevelsen i Windows-säkerhetsappen på Windows 10-enheter.
+Antivirusprincipen innehåller flera profiler. Varje profil innehåller bara de inställningar som är relevanta för Microsoft Defender ATP-antivirusprogram för macOS, Windows 10 eller användarmiljön i Windows-säkerhetsappen på Windows 10-enheter.
 
 Du hittar de här antivirusprinciperna under **Hantera** i noden Slutpunktssäkerhet i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
@@ -37,10 +37,10 @@ I antivirusprinciperna finns samma inställningar som i *Endpoint Protection* el
 
 - **macOS**
   - En version av macOS som stöds
-  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Defender ATP på enheten. Se. [Defender ATP för macOS](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) (i dokumentationen för Defender ATP)
+  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Microsoft Defender ATP på enheten. Se. [Microsoft Defender ATP för macOS](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) (i dokumentationen för Microsoft Defender ATP)
 
 - **Windows 10 och senare**
-  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Defender ATP på enheten. Läs mer i [Microsoft Defender ATP for Windows](../protect/advanced-threat-protection.md) (Använda Microsoft Defender ATP för Windows) i Intune-dokumentationen.
+  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Microsoft Defender ATP på enheten. Läs mer i [Microsoft Defender ATP for Windows](../protect/advanced-threat-protection.md) (Använda Microsoft Defender ATP för Windows) i Intune-dokumentationen.
   - Windows-säkerhetsappen är installerad på alla enheter som kör Windows 10, och inga ytterligare krav finns.
 
 ## <a name="antivirus-profiles"></a>Antivirusprofiler
@@ -89,4 +89,4 @@ Endast enheter med identifierade problem visas i den här vyn. Den här vyn visa
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Konfigurera säkerhetsprinciper för slutpunkt](../protect/endpoint-security-policy.md#create-an-endpoint-security-policy)
+[Konfigurera Endpoint Security-policyer](../protect/endpoint-security-policy.md#create-an-endpoint-security-policy)

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9983eb211b816ae05a1f9d180a7dbb68e3fac505
-ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
+ms.openlocfilehash: be9a4257fec357c3dc124318fda98807df6c26b7
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428661"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093478"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot
 Du kan använda Intune och Windows Autopilot för att konfigurera Azure Active Directory-anslutna hybridenheter. Du gör det genom att följa stegen i den här artikeln.
@@ -111,20 +111,18 @@ Intune Connector för Active Directory måste installeras på en dator som kör 
 
 Intune-anslutningsappen kräver [samma slutpunkter som Intune](../fundamentals/intune-endpoints.md).
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Windows** > **Windows-registrering** > **Intune Connector för Active Directory** > **Lägg till**. 
-2. Följ anvisningarna för att ladda ned Connector.
-3. Öppna den nedladdade konfigurationsfilen för anslutningsappen, *ODJConnectorBootstrapper.exe*, för att installera Connector.
-4. Välj **Konfigurera** i slutet av konfigurationen.
-5. Välj **Logga in.**
-6. Ange autentiseringsuppgifter för rollen Global administratör eller Intune-administratör.  
+1. Inaktivera förbättrad säkerhetskonfiguration i IE. Som standard har Windows Server förbättrad säkerhetskonfiguration i Internet Explorer aktiverat. Om du inte kan logga in i Intune Connector för Active Directory ska du inaktivera Förbättrad säkerhetskonfiguration i IE för administratören. [Så här inaktiverar du Förbättrad säkerhetskonfiguration i Internet Explorer](https://blogs.technet.microsoft.com/chenley/2011/03/10/how-to-turn-off-internet-explorer-enhanced-security-configuration). 
+2. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **Windows** > **Windows-registrering** > **Intune Connector för Active Directory** > **Lägg till**. 
+3. Följ anvisningarna för att ladda ned Connector.
+4. Öppna den nedladdade konfigurationsfilen för anslutningsappen, *ODJConnectorBootstrapper.exe*, för att installera Connector.
+5. Välj **Konfigurera** i slutet av konfigurationen.
+6. Välj **Logga in.**
+7. Ange autentiseringsuppgifter för rollen Global administratör eller Intune-administratör.  
    Användarkontot måste ha en tilldelad Intune-licens.
-7. Gå till **Enheter** > **Windows** > **Windows-registrering** > **Intune Connector för Active Directory** och bekräfta sedan att anslutningsstatusen är **Aktiv**.
+8. Gå till **Enheter** > **Windows** > **Windows-registrering** > **Intune Connector för Active Directory** och bekräfta sedan att anslutningsstatusen är **Aktiv**.
 
 > [!NOTE]
 > När du har loggat in i Connector kan det ta några minuter innan det visas i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Det visas bara om den kan kommunicera med Intune-tjänsten.
-
-### <a name="turn-off-ie-enhanced-security-configuration"></a>Aktivera förbättrad säkerhetskonfiguration i IE
-Som standard har Windows Server förbättrad säkerhetskonfiguration i Internet Explorer aktiverat. Om du inte kan logga in på Intune Connector för Active Directory ska du inaktivera Förbättrad säkerhetskonfiguration i IE för administratören. [Så här inaktiverar du Förbättrad säkerhetskonfiguration i Internet Explorer](https://blogs.technet.microsoft.com/chenley/2011/03/10/how-to-turn-off-internet-explorer-enhanced-security-configuration)
 
 ### <a name="configure-web-proxy-settings"></a>Konfigurera webbproxyinställningar
 
@@ -193,12 +191,13 @@ Autopilot-distributionsprofiler används för att konfigurera Autopilot-enhetern
 4. Välj **Nästa**.
 5. På sidan **Välkomstupplevelse (OOBE)** för **Distributionsläge** väljer du **Användarbaserat**.
 6. I rutan **Anslut till Azure AD som** väljer du **Hybrid Azure AD-ansluten**.
-7. Konfigurera de återstående alternativen på sidan **Välkomstupplevelse (OOBE)** efter behov.
-8. Välj **Nästa**.
-9. På sidan **Omfångstaggar** väljer du [omfångstaggar](../fundamentals/scope-tags.md) för den här profilen.
-10. Välj **Nästa**.
-11. På sidan **Tilldelningar** väljer du **Välj grupper att ta med** > sök efter och välj enhetsgruppen > **Välj**.
-12. Välj **Nästa** > **Skapa**.
+7. Om du distribuerar enheter utanför organisationens nätverk med hjälp av VPN-stöd ställer du in alternativet **Hoppa över kontroll av domänanslutning** på **Ja**.  Mer information finns i [Användardrivet läge för Azure Active Directory-hybridkoppling via VPN](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven#user-driven-mode-for-hybrid-azure-active-directory-join-with-VPN-support).
+8. Konfigurera de återstående alternativen på sidan **Välkomstupplevelse (OOBE)** efter behov.
+9. Välj **Nästa**.
+10. På sidan **Omfångstaggar** väljer du [omfångstaggar](../fundamentals/scope-tags.md) för den här profilen.
+11. Välj **Nästa**.
+12. På sidan **Tilldelningar** väljer du **Välj grupper att ta med** > sök efter och välj enhetsgruppen > **Välj**.
+13. Välj **Nästa** > **Skapa**.
 
 Det tar ungefär 15 minuter innan enhetsprofilens status ändras från *Inte tilldelad* till *Tilldelar* och slutligen till *Tilldelad*.
 

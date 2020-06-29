@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 06/16/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07612080f170c5f2bef448aa616a4422508218d1
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 2b0c65e12349f8b4c887b5a633a1cd94c272ca5a
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326941"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093356"
 ---
 # <a name="troubleshoot-iosipados-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av iOS/iPadOS-enhet i Microsoft Intune
 
@@ -66,25 +66,6 @@ Samla in följande information om problemet:
 4. Under **Begränsningar för enhetstyper**, väljer du den begränsning som du vill ställa in > **Egenskaper** > **Välj plattformar** > väljer **Tillåt** för **iOS**och klickar sedan på **OK**.
 5. Välj **Konfigurera plattformar**, välj **Tillåt** för personligt ägda iOS/iPad-enheter och klicka sedan på **OK**.
 6. Omregistrera enheten.
-
-**Orsak:** De nödvändiga CNAME-posterna i DNS finns inte.
-
-#### <a name="resolution"></a>Lösning
-Skapa CNAME-DNS-resursposter för företagets domän. Om din företagsdomän exempelvis är contoso.com skapar du en CNAME-post i DNS-servern som omdirigerar EnterpriseEnrollment.contoso.com till EnterpriseEnrollment-s.manage.microsoft.com.
-
-Det är valfritt att skapa CNAME DNS-poster, men det blir enklare för användarna om du gör det. Om ingen CNAME-post hittas, uppmanas användarna att manuellt ange MDM-servernamnet, enrollment.manage.microsoft.com.
-
-Om det finns fler än en verifierad domän, skapar du en CNAME-post för varje domän. CNAME-resursposten måste innehålla följande information:
-
-|TYP|Värdnamn|Pekar på|TTL|
-|------|------|------|------|
-|CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com|1 timme|
-|CNAME|EnterpriseRegistration.company_domain.com|EnterpriseRegistration.windows.net|1 timme|
-
-Om ditt företag använder flera domäner för användarautentiseringsuppgifter kan du skapa CNAME-poster för varje domän.
-
-> [!NOTE]
-> Distributionen av DNS-poständringarna kan ta upp till 72 timmar. Du kan inte verifiera DNS-ändringen i Intune förrän DNS-posten har spridits.
 
 **Orsak:** Du registrerar en enhet som tidigare har registrerats med ett annat användarkonto, och den tidigare användaren togs inte bort på rätt sätt från Intune.
 
@@ -239,6 +220,16 @@ När du aktiverar en ADE-hanterad enhet som har tilldelats en registreringsprofi
 #### <a name="resolution"></a>Lösning
 Inaktivera MFA och registrera sedan enheten på nytt.
 
+### <a name="authentication-doesnt-redirect-to-the-government-cloud"></a>Autentisering omdirigeras inte till myndighetsmolnet 
+
+Myndighetsanvändare som loggar in från en annan enhet omdirigeras till det offentliga molnet för autentisering snarare än till myndighetsmolnet. 
+
+**Orsak:** Azure AD har ännu inte stöd för omdirigering till myndighetsmolnet vid inloggning från en annan enhet. 
+
+#### <a name="resolution"></a>Lösning 
+Använd iOS Företagsportal-inställningen **Moln** i appen **Inställningar** till att dirigera om myndighetsanvändares autentisering mot myndighetsmolnet. Som standard är **Moln** inställt på **Automatiskt** och Företagsportal dirigerar autentiseringen till molnet som enheten identifierar automatiskt (till exempel offentligt moln eller myndighetsmoln). Myndighetsanvändare som loggar in från en annan enhet måste välja myndighetsmolnet för autentisering manuellt. 
+
+Öppna appen **Inställningar** och välj Företagsportal. I inställningarna för Företagsportal väljer du **Moln**. Ange Myndighet för **Moln**.  
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6cafadbecbb0e0f0287b8a6ac4db5a1168e5e84
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 0ac6a5d848a0d02b72a4f7275a6b6df47b2cd834
+ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83983085"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85107334"
 ---
 # <a name="remotely-lock-devices-with-intune"></a>Fjärrlåsa enheter med Intune
 
@@ -45,7 +45,7 @@ ms.locfileid: "83983085"
 - Windows 10 desktop
 
 > [!NOTE]
-> För macOS-enheter anger du en 6-siffrig PIN-kod för återställning. När enheten är låst visar **Enhetsöversikt** PIN-koden tills en annan enhetsåtgärd skickas. Se till att skriva ner PIN-koden eftersom den bara är tillgänglig i 7 dagar efter att kommandot för fjärrlås har skickats. Efter sju dagar kommer Intune inte längre att ha PIN-koden. Initiera inte heller det här kommandot igen för samma enhet förrän den ursprungliga PIN-koden används för att låsa upp enheten. Du bör skicka det här kommandot, skriva ned PIN-koden och inte skicka kommandot till samma enhet igen förrän du har använt det för att komma till macOS-enheten.  
+> För macOS-enheter anger du en 6-siffrig PIN-kod för återställning. När enheten är låst visar **Enhetsöversikt** PIN-koden tills en annan enhetsåtgärd skickas. Se till att skriva ner PIN-koden eftersom den bara är tillgänglig i 30 dagar efter att fjärrlåsningskommandot har skickats. Efter 30 dagar har inte Intune PIN-koden längre. Initiera inte heller det här kommandot igen för samma enhet förrän den ursprungliga PIN-koden används för att låsa upp enheten. Du bör skicka det här kommandot, skriva ned PIN-koden och inte skicka kommandot till samma enhet igen förrän du har använt det för att komma till macOS-enheten.  
 
 
 ## <a name="remote-lock-a-device"></a>Fjärrlås på en enhet

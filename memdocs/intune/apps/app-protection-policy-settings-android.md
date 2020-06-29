@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/28/2020
+ms.date: 06/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ce5424dee1b968684a792f594abde18f5223679
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 60fa6177bc127fc36ceb66e7b3a59572f8cfee90
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990026"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85092906"
 ---
 # <a name="android-app-protection-policy-settings-in-microsoft-intune"></a>Inställningar för Android-appskyddsprinciper i Microsoft Intune
 I den här artikeln beskrivs inställningarna för appskyddsprinciper för Android-enheter. Principinställningarna som beskrivs kan [konfigureras](app-protection-policies.md) för en appskyddsprincip i fönstret **Inställningar** i Microsoft Azure-portalen.
@@ -42,7 +42,10 @@ Det finns tre typer av principinställningar: dataskydd, åtkomstkrav och villko
 | **Skicka organisationsdata till andra appar** | Ange vilka appar som kan ta emot data från den här appen: <ul><li> **Principhanterade appar**: Tillåt endast överföring till andra principhanterade appar.</li> <li>**Alla appar**: Tillåt överföring till alla appar. </li> <li>**Inga**: Tillåt inte dataöverföring till någon app, inklusive andra principhanterade appar.</li></ul> <p>Som standard finns vissa undantag för appar och tjänster som Intune kan tillåta dataöverföring till. Du kan också skapa egna undantag om du vill tillåta att data överförs till en app som inte stöder Intune APP. Mer information finns i [Undantag vid dataöverföring](app-protection-policy-settings-android.md#data-transfer-exemptions).<p>Den här principen kan även gälla för Android App-länkar.  Allmänna webblänkar hanteras av principinställningen **Öppna applänkar i Intune Managed Browser**.<p><div class="NOTE"><p>Obs!</p><p>Intune saknar för närvarande stöd för funktionen Android Instant Apps. Intune blockerar alla dataanslutningar till och från appen. I dokumentationen för Android Developer finns mer information om [Android Instant Apps](https://developer.android.com/topic/instant-apps/index.html).</p><p>Om **Skicka organisationsdata till andra appar** är inställd på **Alla appar**, kan textdata fortfarande överföras via OS-delning till Urklipp.</p></div> | **Alla appar** | 
 |<ul><ui>**Välj vilka appar som ska undantas** | Det här alternativet är tillgängligt när du väljer *Principhanterade appar* för det föregående alternativet. | |
 |<ul><ui>**Spara kopior av organisationsdata** | Välj **Blockera** om du vill inaktivera alternativet Spara som i den här appen. Välj **Tillåt** om du vill tillåta att Spara som används. **Obs:** *Den här inställningen stöds i Microsoft Excel, OneNote, PowerPoint och Word. Verksamhetsspecifika appar och appar från tredje part kanske också stöder den.*| **Tillåt** |  
-|<ul><ui>**Tillåt användaren att spara kopior i valda tjänster** |Användare kan spara till de valda tjänsterna (OneDrive för företag, SharePoint och lokal lagring). Alla andra tjänster kommer att blockeras.  | **0 valda** |
+|<ul><ui><ul><ui>**Tillåt användaren att spara kopior i valda tjänster** |Användare kan spara till de valda tjänsterna (OneDrive för företag, SharePoint och lokal lagring). Alla andra tjänster kommer att blockeras.  | **0 valda** |
+|<ul><ui>**Överför telekommunikationsdata till** | När en användare väljer ett hyperlänkat telefonnummer i en app öppnas vanligtvis en uppringningsapp med telefonnumret förifyllt och klart att ringa upp. För den här inställningen väljer du hur du vill hantera den här typen av innehållsöverföring när den initieras från en policyhanterad app:<ul><li>**Inget, överför inte dessa data mellan appar**: Överför inte kommunikationsdata när ett telefonnummer identifieras.</li><li>**En specifik uppringningsapp**: Tillåt att en angiven uppringningsapp initierar kontakt när ett telefonnummer identifieras.</li><li>**Valfri principhanterad uppringningsapp**: Tillåt att valfri policyhanterad uppringningsapp initierar kontakt när ett telefonnummer identifieras.</li><li>**Valfri uppringningsapp**: Tillåt att alla uppringningsappar initierar kontakt när ett telefonnummer identifieras.</li></ul>| **Valfri uppringningsapp** |  
+|<ul><ui><ul><ui>**Paket-id för uppringningsapp** | När du har valt en viss uppringningsapp måste du ange [appaketets ID](../apps/app-configuration-vpn-ae.md#get-the-app-package-id). | **Tom** |
+|<ul><ui><ul><ui>**Namn på uppringningsapp** | När du har valt en viss uppringningsapp måste du ange namnet på uppringningsappen. | **Tom** |
 | **Ta emot data från andra appar** | Ange vilka appar som kan överföra data till den här appen: <ul><li>**Principhanterade appar**: Tillåt endast överföring från andra principhanterade appar.</li><li>**Alla appar**: Tillåt dataöverföring från alla appar.</li><li>**Inga**: Tillåt inte dataöverföring från någon app, inklusive andra principhanterade appar. </li></ul> <p>Det finns vissa undantag för appar och tjänster som Intune kan tillåta dataöverföring från. En fullständig lista över appar och tjänster finns i avsnittet [Undantag vid dataöverföring](app-protection-policy-settings-android.md#data-transfer-exemptions). | **Alla appar** |
 | **Begränsa klipp ut, kopiera och klistra in mellan andra appar** | Ange när åtgärderna klippa ut, kopiera och klistra in kan användas med den här appen. Välj mellan: <ul><li>**Blockerad**:  Tillåt inte åtgärderna klipp ut, kopiera och klistra in mellan den här appen och andra appar.</li><li>**Principhanterade appar**: Tillåt åtgärderna klipp ut, kopiera och klistra in mellan den här appen och andra principhanterade appar.</li><li>**Principhanterade appar med inklistring**: Tillåt åtgärderna klipp ut och kopiera mellan den här appen och andra principhanterade appar. Tillåt att data från en annan app klistras in i den här appen.</li><li>**Alla appar**: Inga begränsningar för klipp ut, kopiera och klistra in till och från den här appen. | **Alla appar** |
 | <ul><ui>**Gräns för att klippa ut och kopiera tecken för alla appar** | Ange det antal tecken som kan klippas ut eller kopieras från organisationens data och konton.  Det här tillåter delning av det angivna antalet tecken när detta annars skulle blockeras av inställningen "Begränsa klipp ut, kopiera och klistra in med andra appar".<p>Standardvärde = 0<p>**Obs!** : Kräver Intune-företagsportalen version 5.0.4364.0 eller senare.  | **0** |

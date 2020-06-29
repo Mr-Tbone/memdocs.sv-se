@@ -1,12 +1,12 @@
 ---
 title: Integrera Windows Hello för företag med Microsoft Intune
 titleSuffix: Microsoft Intune
-description: Läs mer om att skapa en princip för att kontrollera användningen av Windows Hello för företag på hanterade enheter.”
+description: Läs mer om att skapa en policy för att kontrollera användningen av Windows Hello för företag på hanterade enheter under enhetsregistreringen.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/25/2019
+ms.date: 06/08/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,27 +17,25 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: 00f617d91541c1a580f6dec0b6b844abfc8d0d97
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 64a76911725e5d596a80ecc67e42f088666017de
+ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990922"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84531901"
 ---
 # <a name="integrate-windows-hello-for-business-with-microsoft-intune"></a>Integrera Windows Hello för företag med Microsoft Intune  
 
-Du kan integrera Windows Hello för företag (tidigare Microsoft Passport for Work) med Microsoft Intune.
+Du kan integrera Windows Hello för företag (tidigare Microsoft Passport for Work) med Microsoft Intune under enhetsregistreringen.
 
- Hello för företag är en alternativ inloggningsmetod som använder Active Directory eller ett Azure Active Directory-konto för att ersätta ett lösenord, smartkort eller virtuellt smartkort. Du kan använda en *användargest* för att logga in i stället för ett lösenord. En användargest kan vara en PIN-kod, biometrisk autentisering, t.ex. Windows Hello, eller en extern enhet, t.ex. en fingeravtrycksläsare.
+Hello för företag är en alternativ inloggningsmetod som använder Active Directory eller ett Azure Active Directory-konto för att ersätta ett lösenord, smartkort eller virtuellt smartkort. Du kan använda en *användargest* för att logga in i stället för ett lösenord. En användargest kan vara en PIN-kod, biometrisk autentisering, t.ex. Windows Hello, eller en extern enhet, t.ex. en fingeravtrycksläsare.
 
 Intune kan integreras med Hello för företag på två sätt:
 
-- En Intune-princip kan skapas under **Enhetsregistrering**. Den här principen riktar in sig på hela organisationen (klienttäckande). Den har stöd för välkomstprogrammet (OOBE) i Windows AutoPilot och används när en enhet registreras. 
-- En identitetsskyddsprofil kan skapas under **Enhetskonfiguration**. Den här profilen riktar in sig på tilldelade användare och enheter, och tillämpas vid incheckning. 
+- **För hela klientorganisationen**: En Intune-princip kan skapas under *Enhetsregistrering*. Den här principen riktar in sig på hela organisationen (klienttäckande). Den har stöd för välkomstprogrammet (OOBE) i Windows AutoPilot och används när en enhet registreras.
+- **Diskreta grupper**: Du kan distribuera policyer som hanterar Windows Hello för företag till enheter som har registrerats i Intune. Några av policytyperna som kan hantera Windows Hello är profiler för *identitetsskydd* som du skapar under *Enhetskonfiguration*, olika *säkerhetsbaslinjer* och profiler för slutpunktssäkerhet under *Kontoskydd*. De här profiltyperna riktar sig mot tilldelade användare eller enheter och tillämpas vid incheckning.
 
 Använd den här artikeln för att skapa en standardprincip för Windows Hello för företag som riktar in sig på hela organisationen. Om du vill skapa en identitetsskyddsprofil som används för att välja användar- och enhetsgrupper kan du läsa [Konfigurera en identitetsskyddsprofil](identity-protection-configure.md).  
-
-<!--- - You can store authentication certificates in the Windows Hello for Business key storage provider (KSP). For more information, see [Secure resource access with certificate profiles in Microsoft Intune](secure-resource-access-with-certificate-profiles.md). --->
 
 > [!IMPORTANT]
 > Du kunde ange två olika PIN-koder för att autentisera åtkomst till resurser i Windows 10 Desktop- och Mobile-versionerna före Anniversary Update:
@@ -59,8 +57,10 @@ Använd den här artikeln för att skapa en standardprincip för Windows Hello f
 
 3. Välj bland följande alternativ för **Konfigurera Windows Hello för företag**:
 
-    - **Inaktiverad**. Välj den här inställningen om du inte vill använda Windows Hello för företag. Om den är inaktiverad kan användarna inte etablera Windows Hello för företag utom på mobiltelefoner som har sammankopplats med Azure Active Directory där etablering krävs.
-    - **Aktiverad**. Välj den här inställningen om du vill konfigurera inställningarna för Windows Hello för företag.  När du väljer *Aktiverat* blir ytterligare inställningar för Windows Hello synliga.
+     - **Aktiverad**. Välj den här inställningen om du vill konfigurera inställningarna för Windows Hello för företag.  När du väljer *Aktiverad* blir ytterligare inställningar för Windows Hello synliga och du kan konfigurera dem för dina enheter.
+
+    - **Inaktiverad**. Om du inte vill aktivera Windows Hello för företag under enhetsregistreringen väljer du det här alternativet. När det är inaktivt kan inte användarna etablera Windows Hello för företag utom på mobiltelefoner som är kopplade till Azure Active Directory där etablering kan krävas. Om du anger *Inaktiverad* kan du fortfarande konfigurera de efterföljande inställningarna för Windows Hello för företag, även om den här policyn inte aktiverar Windows Hello för företag.
+
     - **Inte konfigurerat**. Välj den här inställningen om du inte vill konfigurera inställningarna för Windows Hello för företag. Eventuella befintliga inställningar för Windows Hello för företag på Windows 10-enheter ändras inte. Alla andra inställningar i fönstret inaktiveras.
 
 4. Om du har valt **Aktiverad** i föregående steg, konfigurerar du de obligatoriska inställningar som kommer att gälla på alla registrerade Windows 10- och Windows 10 Mobile-enheter. Välj **Spara** när du har konfigurerat inställningarna.

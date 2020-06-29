@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/05/2020
+ms.date: 06/15/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d4bc2de9e16cfcf9322cf343badafe3c9a35c70
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 91bf09a122031b7186840bc17cd44cc5738b2ffe
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428904"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093547"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>Funktionsinställningar för macOS-enheter i Intune
 
@@ -106,6 +106,109 @@ Den här funktionen gäller för:
 > [!TIP]
 > Du kan felsöka på din macOS-enhet genom att öppna **Systeminställningar** > **Profiler**. Bekräfta att profilen du skapade finns i enhetens profillista. Om den finns med i listan, såse till att **Associerad domänkonfiguration** finns i profilen och att den innehåller rätt app-ID och domäner.
 
+## <a name="content-caching"></a>Innehållscachelagring
+
+Med innehållscachelagring sparar du en kopia av innehållet lokalt. Andra Apple-enheter kan hämta den här informationen utan att ansluta till internet. Den här cachelagringen gör nedladdningar snabbare genom att programuppdateringar, appar, foton och annat innehåll sparas första gången de laddas ned. Eftersom appar laddas ned en gång och delas till andra enheter kan skolor och organisation med många enheter spara bandbredd.
+
+> [!NOTE]
+> Använd bara en profil för de här inställningarna. Om du tilldelar flera profiler med de här inställningarna uppstår ett fel.
+>
+> Mer information om att övervaka innehållscachelagring finns i [Visa loggar och statistik för innehållscachelagring](https://support.apple.com/guide/mac-help/view-content-caching-logs-statistics-mac-mchl0d8533cd/10.15/mac/10.15) (öppnar Apples webbplats).
+
+Den här funktionen gäller för:
+
+- macOS 10.13.4 och senare
+
+### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
+
+Mer information om de här inställningarna finns i [Inställningar för innehållscachelagring](https://support.apple.com/guide/mdm/content-caching-mdm163612d39/1/web/1) (öppnar Apples webbplats).
+
+**Aktivera innehållscachelagring**: **Ja** aktiverar innehållscachelagring och användarna kan inte inaktivera alternativet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan stänga av den som standard.
+
+- **Typ av innehåll som ska cachelagras**: Alternativen är:
+  - **Allt innehåll**: iCloud-innehåll och delat innehåll cachelagras.
+  - **Endast användarinnehåll**: Användarens iCloud-innehåll som foton och dokument cachelagras.
+  - **Endast delat innehåll**: Appar och programvaruuppdateringar cachelagras.
+
+- **Maximal cachestorlek**: Ange den maximala mängden diskutrymme (i byte) som används för cachelagring av innehåll. När du lämnar fältet tomt (standardinställningen) varken ändrar eller uppdaterar Intune den här inställningen. Operativsystemet kan som standard ange värdet noll (`0`) byte för den här inställningen, vilket ger obegränsat diskutrymme till cachelagringen.
+
+  Se till att du inte överskrider det tillgängliga utrymmet på enheterna. Mer information om enheters lagringskapacitet finns i [Så rapporteras lagringskapacitet i iOS och macOS](https://support.apple.com/HT201402) (öppnar Apples webbplats).
+
+- **Cacheplats**: Ange sökvägen där cacheinnehållet ska lagras. Standardplatsen är `/Library/Application Support/Apple/AssetCache/Data`. Vi rekommenderar att du inte ändrar den här platsen.
+
+  Om du ändrar den här inställningen flyttas inte det cachelagrade innehållet till den nya platsen. Om innehållet ska flyttas automatiskt måste användarna ändra platsen på enheten (**Systeminställningar** > **Delning** > **Innehållscachelagring**).
+
+- **Port**: Ange de TCP-portnummer där cachelagringen ska acceptera förfrågningar om nedladdning och uppladdning som 0–65535. Ange noll (`0`) (standardvärdet) om du vill kunna använda valfri tillgänglig port.
+- **Blockera delning av internetanslutning och cachelagrat innehåll**: Kallas även för bunden cachelagring. **Ja** förhindrar delning av internetanslutningar och delning av cachelagrat innehåll med iOS/iPad-enheter som är anslutna till Mac-datorn via USB. Användarna kan inte aktivera den här funktionen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+
+- **Aktivera delning av internetanslutning**: Kallas även för bunden cachelagring. **Ja** tillåter delning av internetanslutningar och delning av cachelagrat innehåll med iOS/iPad-enheter som är anslutna till Mac-datorn via USB. Användarna kan inte inaktivera den här funktionen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan stänga av den här funktionen som standard.
+
+  Den här funktionen gäller för:
+
+  - macOS 10.15.4 och senare
+
+- **Aktivera cachelagring för att logga klientinformation**: **Ja** loggar IP-adress och portnummer för enheter som begär innehåll. Om du felsöker problem med enheter kan den här loggfilen vara till hjälp. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske inte loggar den här informationen som standard.
+
+- **Behåll alltid innehåll från cachen även när systemet behöver diskutrymme för andra appar**: **Ja** behåller innehållet i cachen och ser till att ingenting tas bort, även om det blir ont om diskutrymme. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard rensa innehåll från cachen automatiskt när det behövs lagringsutrymme för andra appar.
+
+  Den här funktionen gäller för:
+
+  - macOS 10.15 och senare
+
+- **Visa statusaviseringar**: **Ja** visar aviseringar som systemmeddelanden. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske inte visar de här aviseringarna som systemmeddelanden som standard.
+
+  Den här funktionen gäller för:
+
+  - macOS 10.15 och senare
+
+- **Förhindra att enheten är i viloläge när cachelagring är aktiverat**: **Ja** förhindrar att datorn försätts i viloläge när cachelagring är aktiverat. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske tillåter att enheten försätts i viloläge som standard.
+
+  Den här funktionen gäller för:
+
+  - macOS 10.15 och senare
+
+- **Enheter som ska cachelagras**: Välj vilka enheter som ska cachelagra innehåll. Alternativen är:
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. 
+  - **Enheter i samma lokala nätverk**: Innehållscachen tillhandahåller innehåll till enheter i samma omedelbara lokala nätverk. Inget innehåll tillhandahålls till enheter i andra nätverk, inklusive enheter som kan nås av innehållscachen.
+  - **Enheter som använder samma offentliga IP-adress**: Innehållscachen tillhandahåller innehåll till enheter som använder samma offentliga IP-adress. Inget innehåll tillhandahålls till enheter i andra nätverk, inklusive enheter som kan nås av innehållscachen.
+  - **Enheter som använder anpassade lokala nätverk**: Innehållscachen tillhandahåller innehåll till enheter i de IP-adressintervall du anger.
+    - **Lyssnarintervall för klient**: Ange intervallet av IP-adresser som ska ta emot innehåll från cachelagringen.
+  - **Enheter som använder anpassade lokala nätverk med återställning**: Innehållscachen tillhandahåller innehåll till enheter i lyssningsintervall, peer-lyssningsintervall och överordnade IP-adresser.
+    - **Lyssnarintervall för klient**: Ange intervallet av IP-adresser som ska ta emot innehåll från cachelagringen.
+
+- **Anpassade offentliga IP-adresser**: Ange ett intervall med offentliga IP-adresser. Molnservrarna använder det här intervallet till att matcha klientenheter mot cachelagringar.
+
+- **Dela innehåll med annan cachelagring**: När det finns fler än en innehållscache i nätverket blir cacheinnehållet på andra enheter automatiskt peer-enheter. Sådana enheter kan fråga efter och dela cachelagrad programvara. 
+
+  När ett efterfrågat objekt inte finns i en innehållscache kontrolleras peer-enheterna. Om objektet finns där laddas det ned från innehållscachen på peer-enheten. Om objektet fortfarande inte är tillgänglig laddar innehållscachen ned objektet från:
+
+  - en överordnad IP-adress om en sådan är konfigurerad
+  
+    ELLER
+    
+  - från Apple via internet.
+
+  När det finns fler än en innehållscache väljer enheterna rätt innehållscache automatiskt. 
+
+  Alternativen är:
+
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+  - **Innehållscachelagring som använder samma lokala nätverk**: Dela endast cachelagring med peer-enheter i samma omedelbara lokala nätverk.
+  - **Innehållscachelagring med samma offentliga IP-adress**: Dela endast cachelagring med peer-enheter som har samma offentliga IP-adress.
+  - **Innehållscachelagring som använder anpassade lokala nätverk**: Dela endast cachelagring med peer-enheter i de IP-adressintervall du anger:
+
+    - **Lyssnarintervall för peer**: Ange start- och slutadress i IPv4- eller IPv6-format för ditt intervall. Innehållscachen svarar bara på peer-förfrågningar från cachelagring i de IP-adressintervall du anger.
+    - **Filterintervall för peer**: Ange start- och slutadress i IPv4- eller IPv6-format för ditt intervall. Innehållscachen filtrerar listan med peer-datorer enligt de IP-adressintervall du anger.
+
+- **Överordnade IP-adresser**: Ange den lokala IP-adressen till en annan innehållscache som ska läggas till som överordnad cache. Din cachelagring laddar upp och ned innehåll till och från dessa cachelagringar snarare än direkt via Apple. Lägg endast till en överordnad IP-adress en gång.
+- **Princip för val av överordnad**: När det finns flera överordnade cachelagringar anger du hur den överordnade IP-adressen väljs. Alternativen är:
+  - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+  - **Resursallokering**: Använd de överordnade IP-adresserna i turordning. Det här alternativet är bra i scenarier med belastningsutjämning.
+  - **Först tillgänglig**: Använd alltid den första tillgängliga IP-adressen i listan.
+  - **Hash**: Skapar ett hashvärde för sökvägsdelen av den begärda webbadressen. Det här alternativet ser till att samma överordnade IP-adress alltid används för samma webbadress.
+  - **Slumpvis**: Använd en slumpmässigt vald IP-adress i listan. Det här alternativet är bra i scenarier med belastningsutjämning.
+  - **Fästlapp tillgänglig**: Använd alltid den första IP-adressen i listan. Använd den andra IP-adressen i listan om den första inte är tillgänglig. Fortsätt att använda den andra IP-adressen tills den inte är tillgänglig, och så vidare.
+
 ## <a name="login-items"></a>Inloggningsobjekt
 
 ### <a name="settings-apply-to-all-enrollment-types"></a>Inställningarna gäller för: Alla registreringstyper
@@ -124,7 +227,7 @@ Den här funktionen gäller för:
     När du lägger till en app, mapp eller fil måste du ange rätt sökväg. Alla objekt finns inte i `Applications`-mappen. Om användare flyttar ett objekt från en plats till en annan ändras sökvägen. Det här flyttade objektet öppnas inte när användaren loggar in.
 
   - **Dölj**: Välj om du vill visa eller dölja appen. Alternativen är:
-    - **Inte konfigurerad**: Det här är standardinställningen. Intune varken ändrar eller uppdaterar den här inställningen. Som standard visar operativsystemet objektet i listan Användare och grupper med alternativet Dölj avmarkerat.
+    - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemet kanske som standard visar objekt i listan Användare och grupper med alternativet Dölj avmarkerat.
     - **Ja**: Döljer appen i listan Användare och grupper vid inloggning.
 
 ## <a name="login-window"></a>Inloggningsfönstret
@@ -161,7 +264,7 @@ Den här funktionen gäller för:
 
 ### <a name="settings-apply-to-user-approved-device-enrollment-and-automated-device-enrollment"></a>Inställningarna gäller för: Enhetsregistrering som användaren godkänner och automatisk enhetsregistrering
 
-- **Typ av SSO-apptillägg**: Välj typ av inloggningsinformation för SSO-apptillägg. Alternativen är:
+- **Typ av SSO-apptillägg**: Välj typ av SSO-apptillägg. Alternativen är:
 
   - **Inte konfigurerad**: Apptilläggen används inte. Om du vill inaktivera ett apptillägg, så ändra SSO-apptilläggstypen till **Inte konfigurerad**.
   - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Försäkra dig om att du känner till tillägget och grupp-ID:t för din organisations apptillägg.
@@ -186,7 +289,7 @@ Den här funktionen gäller för:
 - **URL:er** (endast omdirigering): Ange URL-prefixen för dina identitetsprovidrar för vilkas räkning apptillägget för omdirigering använder SSO. När användarna omdirigeras till dessa URL:er ingriper SSO-apptillägget och frågar efter SSO.
 
   - Alla URL:er i Intune-apptilläggsprofilerna för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken SSO-apptilläggsprofil som helst, även om du använder olika typer av SSO-tillägg.
-  - URL:erna måste inledas med http://eller https://.
+  - URL:erna måste inledas med `http://` eller `https://`.
 
 - **Ytterligare konfiguration** (omdirigering och autentiseringsuppgift): Ange ytterligare tilläggsspecifika data som ska skickas till SSO-apptillägget:
   - **Nyckel**: Ange namnet på det objekt som du vill lägga till, t.ex. `user name`.
@@ -214,10 +317,10 @@ Den här funktionen gäller för:
 - **Lösenordssynkronisering** (endast Kerberos): Välj **Aktivera** om du vill synkronisera dina användares lokala lösenord med Azure AD. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard inaktivera synkronisering av lösenord med Azure AD. Använd den här inställningen som alternativ till eller säkerhetskopia för SSO. Den här inställningen fungerar inte om användarna är inloggade med ett Apple-mobilkonto.
 - **Lösenordskomplexitet för Windows Server Active Directory** (endast Kerberos): Välj **Kräv** för att tvinga användarlösenorden att uppfylla komplexitetskraven för Active Directory-lösenord. Mer information finns i [Lösenord måste uppfylla komplexitetskraven](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements). När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte kräver att användarna uppfyller Active Directory-lösenordskraven.
 - **Minsta längd på lösenord (tecken)** (endast Kerberos): Ange det minsta antal tecken som användarnas lösenord måste innehålla. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte framtvingar någon minsta längd för användarens lösenord.
-- **Gräns för återanvändning av lösenord** (endast Kerberos): Ange det antal nya lösenord, från 1 till 24, som måste användas innan ett tidigare lösenord kan återanvändas på domänen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kräver kanske inte kräver en gräns för återanvändning av lösenord som standard.
-- **Lägsta lösenordsålder** (endast Kerberos): Ange det antal dagar som ett lösenord måste användas på domänen innan användare kan ändra det. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte framtvingar någon lägsta ålder på lösenord innan de kan ändras.
+- **Gräns för återanvändning av lösenord** (endast Kerberos): Ange det antal nya lösenord, från 1 till 24, som ska användas innan ett tidigare lösenord kan återanvändas på domänen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kräver kanske inte kräver en gräns för återanvändning av lösenord som standard.
+- **Lägsta lösenordsålder** (endast Kerberos): Ange det antal dagar som ett lösenord ska användas på domänen innan användare kan ändra det. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte framtvingar någon lägsta ålder på lösenord innan de kan ändras.
 - **Meddelande om förfallodatum för lösenord** (endast Kerberos): Ange hur många dagar innan lösenordets förfallodatum som användaren ska få ett meddelande om detta. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard använda `15` dagar.
-- **Lösenordets giltighetstid** (endast Kerberos): Ange antalet dagar innan lösenordet måste ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske lösenord aldrig upphör.
+- **Lösenordets giltighetstid** (endast Kerberos): Ange antalet dagar innan enhetslösenordet måste ändras. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske lösenord aldrig upphör.
 - **URL för lösenordsändring** (endast Kerberos): Ange den URL som öppnas när användare startar en Kerberos-lösenordsändring.
 - **Huvudnamn** (endast Kerberos): Ange användarnamnet för Kerberos-huvudkontot. Du behöver inte inkludera sfärnamnet. I `user@contoso.com` är t.ex. `user` huvudkontots namn och `contoso.com` är sfärens namn.
 
@@ -227,7 +330,7 @@ Den här funktionen gäller för:
   
 - **Active Directory-platskod** (endast Kerberos): Ange namnet på den Active Directory-plats som Kerberos-tillägget ska använda. Du kanske inte behöver ändra det här värdet eftersom Kerberos-tillägget kan hitta Active Directory-platskoden automatiskt.
 - **Cachenamn** (endast Kerberos): Ange GSS-namnet (Generic Security Services) för Kerberos-cachen. Du behöver förmodligen inte ange det här värdet.  
-- **Meddelande om lösenordskrav** (endast Kerberos): Ange en textversion av organisationens lösenordskrav som ska visas för användarna. Meddelandet visas om du inte har några krav på Active Directory-lösenordskomplexitet eller på minsta längd för lösenord.  
+- **Meddelande om lösenordskrav** (endast Kerberos): Ange en textversion av organisationens lösenordskrav som ska visas för användarna. Meddelandet visas om du inte har några krav på Active Directory-lösenordens komplexitet eller på minsta längd för lösenord.  
 - **Programpakets-ID:n** (endast Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. Dessa appar beviljas åtkomst till den biljettbeviljande biljetten för Kerberos och autentiseringsbiljetten. Apparna autentiserar även användare för tjänster som de har behörighet till.
 - **Domänsfärsmappning** (endast Kerberos): **Lägg till** DNS-suffixen för den domän som ska mappas till din sfär. Använd den här inställningen när värdarnas DNS-namn inte matchar sfärnamnet. Du behöver förmodligen inte skapa den här anpassade domän-till-sfär-mappningen.
 - **PKINIT-certifikat** (endast Kerberos): **Välj** den kryptering för offentlig nyckel för inledande autentisering (PKINIT) som kan användas för Kerberos-autentisering. Du kan välja mellan [PKCS](../protect/certficates-pfx-configure.md)- eller [SCEP](../protect/certificates-scep-configure.md) -certifikat som du har lagt till i Intune. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).

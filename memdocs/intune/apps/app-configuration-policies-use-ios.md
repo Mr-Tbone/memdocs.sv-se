@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 65ecc658b0a63b943a1008c879ae63cfc2c4e8a1
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 15c1e1e943d9fd03476c0605c4d41cd417354fce
+ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988741"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84973034"
 ---
 # <a name="add-app-configuration-policies-for-managed-iosipados-devices"></a>Lägg till konfigurationsprinciper för hanterade iOS/iPadOS-mobilappar
 
@@ -106,11 +106,11 @@ Tecknen \{\{ och \}\} används endast av tokentyper och får inte användas för
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Tillåt endast konfigurerade organisationskonton i appar med flera identiteter 
 
-Som Microsoft Intune-administratör kan du styra vilka användarkonton som läggs till i Microsoft-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. Använd följande nyckel-/värdepar för iOS/iPadOS-enheter:
+Som Microsoft Intune-administratör kan du styra vilka arbets- eller skolkonton som läggs till i Microsoft-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. För iOS/iPad-enheter använder du följande nyckel/värde-par i konfigurationspolicyn för en app på en hanterad enhet:
 
 | **Nyckel** | **Värden** |
 |----|----|
-| IntuneMAMAllowedAccountsOnly | <ul><li>**Aktiverad**: Det enda kontot med behörighet är det hanterade användarkonto som definierats av nyckeln [IntuneMAMUPN](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).</li><li>**Inaktiverad** (eller ett värde som inte är en skiftlägesokänslig matchning till **aktiverad**): Alla konton är tillåtna.</li></ul> |
+| IntuneMAMAllowedAccountsOnly | <ul><li>**Aktiverad**: Det enda kontot som tillåts är det hanterade användarkonto som definierats av nyckeln [IntuneMAMUPN](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).</li><li>**Inaktiverad** (eller ett värde som inte är en skiftlägesokänslig matchning till **Aktiverad**): Alla konton tillåts.</li></ul> |
 | IntuneMAMUPN | <ul><li>UPN för det konto som tillåts att logga in på appen.</li><li> För Intune-registrerade enheter, kan <code>{{userprincipalname}}</code>-token användas för att representera det registrerade användarkontot.</li></ul>  |
 
    > [!NOTE]

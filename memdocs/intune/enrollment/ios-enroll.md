@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf413dc551d8be8fd646a03826fb3e5507f4d272
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: ba44cca323dd2a3fbf756b86743dea403ce0b156
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988933"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093055"
 ---
 # <a name="enroll-iosipados-devices-in-intune"></a>Registrera iOS/iPadOS-enheter i Intune
 
@@ -61,7 +61,7 @@ Du kan även registrera företagsägda iOS/iPadOS-enheter med ett konto för [en
 
 ## <a name="automated-device-enrollment"></a>Automatisk enhetsregistrering
 
-Företag kan köpa iOS/iPadOS-enheter via Apples automatiserade enhetsregistrering (ADE). Med ADE kan du distribuera en registreringsprofil ”over-the-air” för att hantera enheter. Mer information finns i [Programmet för enhetsregistrering](device-enrollment-program-enroll-ios.md).
+Företag kan köpa iOS/iPadOS-enheter via Apples automatiserade enhetsregistrering (ADE). Med ADE kan du distribuera en registreringsprofil ”over-the-air” för att hantera enheter. Mer information finns i [Registrera iOS/iPadOS-enheter automatiskt med Apples automatiska enhetsregistrering](device-enrollment-program-enroll-ios.md).
 
 ## <a name="user-enrollment"></a>Användarregistrering
 Med Användarregistrering får administratörer tillgång till en deluppsättning hanteringsalternativ jämfört med andra registreringsmetoder. Mer information finns i [Åtgärder, lösenord och andra alternativ som stöds i Användarregistrering](ios-user-enrollment-supported-actions.md) och [Konfigurera Användarregistrering för iOS/iPadOS och iPadOS](ios-user-enrollment.md).

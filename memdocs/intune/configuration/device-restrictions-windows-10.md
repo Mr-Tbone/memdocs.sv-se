@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/02/2020
+ms.date: 06/22/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f469d9646fad3b247743b6017f0ecbc7917f2cdf
-ms.sourcegitcommit: 8a023e941d90c107c9769a1f7519875a31ef9393
+ms.openlocfilehash: 96b547c50cda0ef623370bae20d347d4ccf1976b
+ms.sourcegitcommit: 79ffc8afed164c408db6994806d71f64d1fc0b8f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84311194"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216492"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningar för Windows 10 (och senare) för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -141,6 +141,10 @@ De här inställningarna använder [CSP för Bluetooth-princip](https://docs.mic
 - **Bluetooth-annonsering**: **Blockera** hindrar enheten från att skicka ut Bluetooth-annonsering. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten skickar ut Bluetooth-annonsering.
 
   [CSP:n Bluetooth/AllowAdvertising](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowadvertising)
+
+- **Bluetooth-anslutningar i närheten**: **Blockera** hindrar enhetsanvändare från att använda Snabbkoppling och andra närhetsbaserade scenarier. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta att enheten skickar ut Bluetooth-annonsering.
+
+  [CSP:n Bluetooth/AllowPromptedProximalConnections](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowpromptedproximalconnections)
 
 - **Bluetooth-tillåtna tjänster**: **Lägg till** en lista över tillåtna Bluetooth-tjänster och -profiler som hexadecimala strängar, till exempel `{782AFCFC-7CAA-436C-8BF0-78CD0FFBD4AF}`.
 
@@ -322,6 +326,9 @@ De här inställningarna använder [CSP för meddelandeprincip](https://docs.mic
 ## <a name="microsoft-edge-browser"></a>Microsoft Edge-webbläsaren
 
 De här inställningarna använder [CSP för webbläsarprincip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser), som även visar de Windows-versioner som stöds.
+
+> [!NOTE]
+> Användning av webbläsarpolicyns CSP gäller för Microsoft Edge version 45 och tidigare. För Microsoft Edge Enterprise version 77 och senare kan du läsa [Konfigurera policyinställningar för Microsoft Edge med Microsoft Intune](/DeployEdge/configure-edge-with-intune).
 
 ### <a name="use-microsoft-edge-kiosk-mode"></a>Använda helskärmsläget i Microsoft Edge
 

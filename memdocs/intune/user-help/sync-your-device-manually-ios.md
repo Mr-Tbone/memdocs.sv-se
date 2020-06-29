@@ -1,11 +1,11 @@
 ---
-title: Synkronisera iOS-enheten manuellt | Microsoft Docs
-description: ''
+title: Synkronisera din iOS-enhet med Intune Företagsportal manuellt
+description: Du kan starta en manuell synkronisering från Företagsportal för att åtgärda fördröjningar som långsamma eller avbrutna appinstallationer.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 04/02/2018
+ms.date: 06/18/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -15,32 +15,42 @@ ms.assetid: 2780101b-f703-4b78-9d33-f68490b9382d
 searchScope:
 - User help
 ROBOTS: ''
-ms.reviewer: esmich
+ms.reviewer: kakyker
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 27bf115e6382b429d6555a19f655f0d5ba554ce7
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: f9b4424bc7eed109846b497684e6859c5f407011
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881801"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094150"
 ---
 # <a name="sync-your-ios-device-manually"></a>Synkronisera iOS-enheten manuellt
 
-I vissa fall kan en app ta mycket lång tid på sig att hämta något från Företagsportalen. När detta inträffar kan du försöka synkronisera enheten manuellt. Ett försök görs att hämta den information som enheten inte kunde ladda ned.
+Du kan starta en manuell synkronisering från Företagsportal för att åtgärda fördröjningar som långsamma eller avbrutna appinstallationer. Under en synkronisering kontrollerar Företagsportal att enheten uppfyller organisationens krav. Enheten synkroniseras med policyer och uppdateringar du kanske inte har ännu, och du kan få hjälp att hantera nedladdningar eller andra processer som pågår. 
+
+Företagsportal kontrollerar enheten regelbundet, men du kan använda följande steg till att starta en synkronisering när som helst från appen. 
 
 1. Öppna företagsportalappen.
 
-2. Tryck på **Enheter**. Om du har flera enheter visas en lista med enheterna. Välj den enhet som du använder för närvarande. Om du bara har en enhet kommer du direkt till enhetens informationsskärm.
+2. Tryck på **Enheter**. 
+3. Om du bara har en enhet kommer du direkt till skärmen med enhetsinformation och kan gå till steg 4. Om du har flera enheter visas de i en lista. Tryck på den enhet du använder för närvarande. 
 
-    ![Skärmbild av skärmen Enheter med två enheter. Den övre enheten har en text där det står ”Detta är den iPhone 6 Plus som du använder för närvarande”.](./media/ios_sync_1_CP_after_1804.png)
+    ![Skärmbild av skärmen Enheter med tre enheter och den som används för närvarande markerad. För enheten längst upp visas texten ”Det här är den iPhone du använder för närvarande”.](./media/ios-sync-1-company-portal-2006.png)
 
-3. Tryck på **Kontrollera inställningar** för att synkronisera enheten. En förloppsindikator visas på skärmen tills synkroniseringen är klar.
+4. Tryck på **Kontrollera status** för att synkronisera enheten. 
 
-    ![Skärmbild av Enhetsinformation som visar enhetens senaste incheckningstid och länken Kontrollera inställningar.](./media/ios_sync_2_CP_after_1804.png)  
+    ![Skärmbild av enhetsinformationen med länken Kontrollera status markerad.](./media/ios-sync-2-company-portal-2006.png)  
 
-   ![Skärmbild av Enhetsinformation som visar förloppsfältet när användaren har klickat på Kontrollera inställningar.](./media/ios_sync_3_CP-after_1804.png)
+ 5. Vänta medan Företagsportal bekräftar enhetens status. Statusen uppdateras på skärmen så att du ser om enheten uppfyller organisationens säkerhetskrav. 
 
-Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).
+       ![Skärmbild av enhetsinformationen med förloppsfältet markerat.](./media/ios-sync-3-company-portal-2006.png)
+
+
+## <a name="next-steps"></a>Nästa steg  
+När du har utfört de här stegen kan du kontrollera om det ursprungliga problemet är löst. I annat fall kan det hjälpa att starta om den avbrutna installationen eller uppgiften. Behöver du fortfarande hjälp? Kontakta IT-supporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
+
+
+
 

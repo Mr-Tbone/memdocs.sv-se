@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: fbf352c3bccfb17efc35e34a2a822b6bbbcc215d
-ms.sourcegitcommit: 53bab52e42de28b87e53596646a3532e25eb9c14
+ms.openlocfilehash: 22dc48a60d03a0cc6bc10e04bc3facbf36983ff9
+ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82183064"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84637576"
 ---
 Dessa meddelanden innehåller viktig information som kan hjälpa dig att förbereda dig för framtida ändringar och funktioner i Intune.
 
@@ -32,27 +32,94 @@ Stöd för hantering av äldre datorer upphör den 15 oktober 2020. Uppgradera d
 
 [Läs mer](https://go.microsoft.com/fwlink/?linkid=2107122)
 
+### <a name="move-to-the-microsoft-endpoint-manager-admin-center-for-all-your-intune-management"></a>Flytta all Intune-administration till administrationscentret för Microsoft Endpoint Manager
+I MC208118 som lanserades förra mars introducerade vi en ny enkel webbadress för all administration av Microsoft Endpoint Manager och Intune: [https://endpoint.microsoft.com](https://endpoint.microsoft.com). Microsoft Endpoint Manager är en enhetlig plattform som innehåller Microsoft Intune och Configuration Manager. **Från och med 1 augusti 2020** tar vi bort Intune-administrationen på [https://portal.azure.com](https://portal.azure.com) och rekommenderar att du i stället använder [https://endpoint.microsoft.com](https://endpoint.microsoft.com) för all slutpunktshantering. 
 
-### <a name="decreasing-support-for-android-device-administrator--5857738--"></a>Minskat stöd för Android-enhetsadministratör<!--5857738-->
-Android-enhetsadministratören (kallas ibland för ”äldre” Android-hantering och lanserades med Android 2.2) är ett sätt att hantera Android-enheter. Det finns dock en bättre hanteringsfunktion med [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (lanseras med Android 5.0). För att kunna flytta till en modern, mer omfattande och säkrare enhetshantering,minskar Google stödet för enhetsadministration i nya versioner av Android.
+
+### <a name="decreasing-support-for-android-device-administrator--7371518--"></a>Minskat stöd för Android-enhetsadministratör<!--7371518-->
+Funktionen Android-enhetsadministratör lanserades i Android 2.2 som ett sätt att hantera Android-enheter. Från Android 5 lanserades det mer moderna hanteringsramverket [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (för enheter som kan ansluta till Google Mobile Services). Google uppmuntrar till att användare byter från funktionen enhetsadministratör genom att minska hanteringsstödet i nya Android-versioner.
 
 #### <a name="how-does-this-affect-me"></a>Hur påverkar det här mig?
-På grund av dessa ändringar av Google kommer Intune-användare att påverkas på följande sätt:  
-- Intune kommer bara att kunna erbjuda fullt stöd för enhetsadministratörshanterade Android-enheter som kör Android 10 och senare till och med andra kvartalet 2020. Enheter med Android 10 eller senare som hanteras av enhetsadministratörer efter denna tidpunkt kommer inte längre att kunna hanteras fullt ut. Det innebär exempelvis att berörda enheter inte får de nya lösenordskraven.
-    - Samsung KNOX-enheter påverkas inte av denna tidsram, eftersom utökad support tillhandahålls via Intunes integrering med KNOX-plattformen. Detta ger dig mer tid att planera övergången från enhetsadministratörernas hantering.    
-- Android-enheter som hanteras av en enhetsadministratör som blir kvar på tidigare versioner av Android än Android 10 påverkas inte och kan fortfarande hanteras av en enhetsadministratör.    
-- För alla enheter med Android 10 och senare har Google begränsat möjligheten för hanteringsagenter för enhetsadministratören, t.ex. företagsportalen, att komma åt information om enhetsidentifierare. Den här begränsningen påverkar följande Intune-funktioner när enheten uppdateras till Android 10 eller senare:  
-    - Nätverksåtkomstkontroll för VPN fungerar inte längre.   
-    - Om enheter identifieras som företagsägda med IMEI eller serienummer markeras de inte automatiskt som företagsägda.  
-    - IMEI och serienumret kommer inte längre att vara synligt för IT-administratörer i Intune. 
-        > [!NOTE]
-        > Detta påverkar endast enheter som hanteras av enhetsadministratören på Android 10 och senare och påverkar inte enheter som hanteras som Android Enterprise. 
+Eftersom Google gör de här ändringarna kommer du inte längre att ha tillgång till lika många hanteringsfunktioner på berörda enheter med funktionen enhetsadministratör från det fjärde kvartalet 2020. 
+
+> [!NOTE]
+> Det här datumet angavs tidigare som tredje kvartalet 2020, men det har flyttats fram baserat på [den senaste informationen från Google](https://www.blog.google/products/android-enterprise/da-migration/).
+
+##### <a name="device-types-that-will-be-impacted"></a>Enhetstyper som påverkas
+De enheter som påverkas av det minskade stödet för funktionen enhetsadministratör är de som alla tre villkoren nedan gäller för:
+- registrerad för enhetsadministratörshantering
+- kör Android 10 eller senare
+- inte är en Samsung-enhet.
+
+Enheter påverkas inte om något av följande stämmer:
+- inte registrerad för enhetsadministratörshantering
+- kör en tidigare Android-version än Android 10.
+- är en Samsung-enhet. Samsung KNOX-enheter kommer inte att påverkas av denna tidsram, eftersom utökad support tillhandahålls via Intunes integrering med KNOX-plattformen. Det här ger dig ytterligare tid att planera övergången från enhetsadministratörshantering för Samsung-enheter.
+
+##### <a name="settings-that-will-be-impacted"></a>Inställningar som påverkas
+[Googles minskade stöd för enhetsadministratörshantering](https://developers.google.com/android/work/device-admin-deprecation) hindrar dig att tillämpa följande inställningar på enheter som påverkas.
+
+###### <a name="configuration-profile-device-restriction-settings"></a>Inställningar för enhetsbegränsningar i konfigurationsprofiler
+
+- Blockera **Kamera**
+- Ange **Minsta längd på lösenord**
+- Ange **Antal felaktiga inloggningar innan enheten rensas** (gäller inte för enheter utan något inställt lösenord utan endast enheter med lösenord)
+- Ange **Lösenordets giltighetstid (dagar)**
+- Ange **Lösenordstyp som krävs**
+- Ange **Förhindra återanvändning av tidigare lösenord**
+- Blockera **Smart Lock och andra betrodda agenter**
+
+###### <a name="compliance-policy-settings"></a>Inställningar för efterlevnadsprinciper
+
+- Ange **Lösenordstyp som krävs**
+- Ange **Minsta längd på lösenord**
+- Ange **Antal dagar tills lösenordet går ut**
+- Ange **Antal tidigare lösenord för att förhindra återanvändning**
+
+###### <a name="additional-impacts-based-on-android-os-version"></a>Ytterligare saker som påverkas baserat på Android OS-versionen
+
+**Android 10**: För alla enhetsadministratörshanterade enheter (inklusive Samsung) som kör Android 10 och senare har Google begränsat möjligheten för hanteringsagenter som Företagsportal att komma åt information om enhetsidentifierare. Den här begränsningen påverkar följande Intune-funktioner när enheten uppdateras till Android 10 eller senare:
+- Nätverksåtkomstkontroll för VPN fungerar inte längre
+- När enheter identifieras som företagsägda med IMEI eller serienummer markeras de inte automatiskt som företagsägda
+- IMEI och serienummer är inte längre synliga för IT-administratörer i Intune
+
+**Android 11**: Vi testar för närvarande stödet för Android 11 i den senaste betaversionen för att se hur enhetsadministratörshanterade enheter påverkas.
+
+#### <a name="user-experience-of-impacted-settings-on-impacted-devices"></a>Användarupplevelsen av aktuella inställningar på enheter som påverkas
+
+Konfigurationsinställningar som påverkas:
+- För redan registrerade enheter som redan har tillämpat inställningarna fortsätter de påverkade konfigurationsinställningarna att tillämpas.
+- För nyregistrerade enheter, nyligen tilldelade inställningar och uppdaterade inställningar tillämpas inte de aktuella konfigurationsinställningarna (men alla andra konfigurationsinställningar tillämpas fortfarande).
+
+Efterlevnadsinställningar som påverkas:
+- För redan registrerade enheter som redan har tillämpat inställningarna visas fortfarande de efterlevnadsinställningar som påverkas som inkompatibla på sidan ”Uppdatera enhetsinställningar”. Enheten uppfyller inte efterlevnadskraven och lösenordskrav tillämpas fortfarande i appen Inställningar.
+- För nyregistrerade enheter, nyligen tilldelade inställningar och uppdaterade inställningar visas de efterlevnadsinställningar som påverkas fortfarande som orsaker till inkompatibilitet på sidan ”Uppdatera enhetsinställningar” och enheten uppfyller inte efterlevnadskraven, men striktare lösenordskrav tillämpas inte i appen Inställningar.
+
+#### <a name="cause-of-impact"></a>Orsak till påverkan 
+Enheterna börjar påverkas under det fjärde kvartalet 2020. Då släpper vi även en uppdatering till appen Företagsportal som utökar API-inriktningen för Företagsportal från nivå 28 till nivå 29 ([enligt krav från Google](https://www.blog.google/products/android-enterprise/da-migration/)). 
+
+Enhetsadministratörshanterade enheter från andra tillverkare än Samsung påverkas då såvida inte användaren utför båda de här åtgärderna:
+- Uppdaterar till Android 10 eller senare.
+- Uppdaterar appen Företagsportal till den version som är inriktad på API-nivå 29.
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Vad kan jag göra för att förbereda mig för den här ändringen?
-För att undvika den minskade funktionaliteten i tredje kvartalet 2020, rekommenderar vi följande:
-- Publicera inte nya enheter för hantering av enhetsadministratören.
-- Om en enhet väntar på en Android 10-uppdatering kan du migrera den från enhetsadministratörshantering till Android Enterprise-hantering och/eller appskyddsprinciper.
+För att undvika de kommande funktionsbegränsningarna under fjärde kvartalet 2020 rekommenderar vi följande:
+- **Nya registreringar**: Använd [Android Enterprise](../enrollment/connect-intune-android-enterprise.md)-hantering för nya enheter (där det är tillgängligt) och/eller [appskyddspolicyer](../apps/app-protection-policies.md). Undvik att använda enhetsadministratörshantering för nya enheter. 
+- **Tidigare registrerade enheter**: Om en enhetsadministratörshanterad enhet kör Android 10 eller senare, eller om den uppdateras till Android 10 eller senare (särskilt om den inte är en Samsung-enhet), så kan du flytta den från enhetsadministratörshantering till [Android Enterprise](../enrollment/connect-intune-android-enterprise.md)-hantering och/eller [appskyddspolicyer](../apps/app-protection-policies.md). Du kan använda det smidiga flödet för att [flytta Android-enheter från enhetsadministratör till arbetsprofilhantering](../enrollment/android-move-device-admin-work-profile.md).
 
 #### <a name="additional-information"></a>Ytterligare information
+- [Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering](../enrollment/android-move-device-admin-work-profile.md)
+- [Konfigurera registrering av Android Enterprise-arbetsprofilenheter](../enrollment/android-work-profile-enroll.md)
+- [Konfigurera registrering av dedikerade Android Enterprise-enheter](../enrollment/android-kiosk-enroll.md)
+- [Konfigurera Intune-registrering av helt hanterade Android Enterprise-enheter](../enrollment/android-fully-managed-enroll.md)
+- [Skapa och tilldela appskyddspolicyer](../apps/app-protection-policies.md)
+- [Använda Intune i miljöer utan Google Mobile Services](../apps/manage-without-gms.md)
+- [Förstå appskyddspolicyer och arbetsprofiler på Android Enterprise-enheter](../apps/android-deployment-scenarios-app-protection-work-profiles.md)
+- [Googles blogg om det du behöver veta om indragningen av funktionen Enhetsadministratör](https://www.blog.google/products/android-enterprise/da-migration/)
 - [Googles vägledning för migrering från enhetsadministratören till Android Enterprise](http://static.googleusercontent.com/media/android.com/en/enterprise/static/2016/pdfs/enterprise/Android-Enterprise-Migration-Bluebook_2019.pdf)
-- [Googles dokumentation om tillbakadragningen av API:et för enhetsadministratören](https://developers.google.com/android/work/device-admin-deprecation)
+- [Googles dokumentation om indragna API:er för enhetsadministratörshantering](https://developers.google.com/android/work/device-admin-deprecation)
+
+
+### <a name="plan-for-change-intune-enrollment-flow-update-for-apples-automated-device-enrollment-for-iosipados"></a>Planera för förändring: Uppdaterat registreringsflöde i Intune för Apples automatiska enhetsregistrering för iOS/iPadOS
+I juli-versionen av Företagsportal ändrar vi registreringsflödet för iOS/iPad-enheter i Apples automatiska enhetsregistrering (tidigare kallat DEP). Ändringen av registreringsflödet gäller endast flödet ”Registrera med användartillhörighet”. Om du tidigare angav ”Nej” för ”Installera Företagsportal” i konfigurationen kunde användarna fortfarande installera appen Företagsportal från Store. Då utlöses en registrering där användaren skulle lägga till rätt serienummer. I den nya versionen av Företagsportal tar vi bort den här bekräftelseskärmen för serienummer. Skapa i stället en motsvarande appkonfigurationspolicy som tillämpas vid sidan av Företagsportal så att användarna kan registrera sig, eller ange ”Ja” för ”Installera Företagsportal” i konfigurationen. 
+ - Mer information finns i inlägget [här](https://techcommunity.microsoft.com/t5/intune-customer-success/intune-enrollment-flow-update-for-apple-s-automated-device/ba-p/1431629).

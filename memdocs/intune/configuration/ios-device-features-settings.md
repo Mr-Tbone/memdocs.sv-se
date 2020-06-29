@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/07/2020
+ms.date: 06/08/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 235a79f644bf15b82eb9e8750f04519238760aca
-ms.sourcegitcommit: 5d32dd481e2a944465755ce74e14c835cce2cd1c
+ms.openlocfilehash: 32d46374186596e8c8721b77510738caadcf78b8
+ms.sourcegitcommit: 02635469d684d233fef795d2a15615658e62db10
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551935"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84814949"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -78,6 +78,11 @@ Den här funktionen gäller för:
 - iPadOS 13.0 och senare
 
 ### <a name="settings-apply-to-automated-device-enrollment-supervised"></a>Inställningarna gäller för: Automatisk enhetsregistrering (övervakad)
+
+> [!NOTE]
+> Lägg endast till en app i dockan, på en sida eller i en mapp på en sida. Om du lägger till samma app på alla platserna förhindrar du att appen visas på enheter och fel kan rapporteras.
+>
+> Om du till exempel lägger till kameraappen i en docka och på en sida visas inte kameraappen, och du kan se ett fel för policyn i rapporter. Om du vill lägga till kameraappen på startskärmen ska du bara välja dockan eller en sida, inte båda.
 
 ### <a name="dock"></a>Docka
 
@@ -210,7 +215,7 @@ Den här funktionen gäller för:
 
 - **Fotnot på låsskärmen**: Ange en kommentar som kan hjälpa dig att få tillbaka enheten om den tappas bort eller blir stulen. Du kan ange valfri text. Ange något i stil med `If found, call Contoso at ...`.
 
-  Enhetstoken kan också användas för att lägga till enhetsspecifik information i de här fälten. Ange till exempel `Serial Number: {{serialnumber}}` om du vill visa serienumret. På låsskärmen visas texten ungefär som `Serial Number 123456789ABC`. När du anger variabler ska du använda klammerparenteser `{{ }}`. [Token för appkonfiguration](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) innehåller en lista över variabler som kan användas. Du kan också använda `deviceName` eller andra enhetsspecifika värden.
+  Enhetstoken kan också användas för att lägga till enhetsspecifik information i de här fälten. Ange till exempel `Serial Number: {{serialnumber}}` eller `Device ID: {{DEVICEID}}` om du vill visa serienumret. På låsskärmen visas texten ungefär som `Serial Number 123456789ABC`. När du anger variabler ska du använda klammerparenteser `{{ }}`. [Token för appkonfiguration](../apps/app-configuration-policies-use-ios.md#tokens-used-in-the-property-list) innehåller en lista över variabler som kan användas. Du kan också använda `DEVICENAME` eller andra enhetsspecifika värden.
 
   > [!NOTE]
   > Variablerna är inte validerade i användargränssnittet och är skiftlägeskänsliga. Därför kan du se profiler sparade med felaktiga indata. Om du till exempel anger `{{DeviceID}}` i stället för `{{deviceid}}` eller '{{DEVICEID}}' visas strängliteralen i stället för enhetens unika ID. Se till att du anger rätt information. Du kan använda variabler med endast gemener eller versaler, men inte en blandning. 
@@ -314,6 +319,10 @@ Den här funktionen gäller för:
 - **Läget Delad enhet** (endast Microsoft Azure AD): Välj **Aktivera** om du ska distribuera Microsoft Enterprise SSO-plugin-programmet till iOS/iPad-enheter som konfigurerats för Azure AD:s funktion för läget Delad enhet. Enheter i delat läge gör det möjligt för många användare att logga in och ut globalt på program som stöder läget Delad enhet. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. Som standard är iOS/iPad-enheter inte avsedda att delas mellan flera användare.
 
   Mer information om läget Delad enhet och hur du aktiverar det finns i [Overview of shared device mode](https://docs.microsoft.com/azure/active-directory/develop/msal-shared-devices) (översikt över läget Delad enhet) och [Shared device mode for iOS devices](https://docs.microsoft.com/azure/active-directory/develop/msal-ios-shared-devices) (läget Delad enhet för iOS-enheter).  
+
+  Den här funktionen gäller för:
+  
+  - iOS/iPadOS 13.5 och senare
 
 - **Tilläggs-ID** (omdirigering och autentiseringsuppgift): Ange det paket-ID som identifierar ditt SSO-apptillägg, exempelvis `com.apple.extensiblesso`.
 

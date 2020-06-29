@@ -5,7 +5,7 @@ keywords: Mac OS X, macOS, OS X
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 12/16/2019
+ms.date: 06/18/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,27 +19,27 @@ ms.reviewer: kakyker
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 2f3fe39285542199cf214c4b5bf505a176663657
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: fe405b66892ec7777d8d1572b2fb6ab6ce1aaa91
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882423"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094225"
 ---
 # <a name="enroll-your-macos-device-using-the-company-portal-app"></a>Registrera din macOS-enhet med företagsportalappen  
 
 Registrera din macOS-enhet i Intune-företagsportalappen för att få säker åtkomst till arbetets eller skolans e-post, filer och appar.
 
-Organisationer kräver vanligtvis att din enhet registreras innan du får åtkomst till upphovsrättsskyddade data. När enheten har registrerats blir den *hanterad*. Din organisation kan tilldela principer och appar till enheten via en MDM-provider för hantering av mobilenheter, t.ex. Intune. För att få kontinuerlig tillgång till arbets- eller skolinformation på enheten måste du konfigurera den så att principinställningarna matchar organisationens.  
+Organisationer kräver vanligtvis att din enhet registreras innan du får åtkomst till upphovsrättsskyddade data. När enheten har registrerats blir den *hanterad*. Din organisation kan tilldela principer och appar till enheten via en MDM-provider för hantering av mobilenheter, t.ex. Intune. För att få kontinuerlig tillgång till arbets- eller skolinformation på enheten måste du konfigurera den så att policyinställningarna matchar organisationens.  
 
-Den här artikeln beskriver hur du använder företagsportalappen för macOS för att registrera, konfigurera och underhålla enheten så att du uppfyller organisationens krav.  
+Den här artikeln beskriver hur du använder appen Företagsportal för macOS till att konfigurera och underhålla enheten så att du uppfyller organisationens krav.  
 
 
 ## <a name="what-to-expect-from-the-company-portal-app"></a>Vad du kan förvänta dig av företagsportalappen
 
 Under installationen kräver företagsportalappen att du loggar in och autentiserar dig hos organisationen. Företagsportalen informerar dig sedan om eventuella enhetsinställningar som du behöver konfigurera för att uppfylla organisationens krav. Organisationer anger exempelvis ofta krav på lägsta eller högsta antal tecken i lösenordet som du måste uppfylla.    
 
-När du har registrerat din enhet ser företagsportalen alltid till att enheten är skyddad enligt organisationens krav. Om du till exempel installerar en app från en obetrodd källa, varnar företagsportalen dig och kan även begränsa åtkomsten till organisationens resurser. Appskyddsprinciper som den här är vanligt förekommande. För att få tillbaka åtkomsten måste du troligen avinstallera den app som inte är betrodd. 
+När du har registrerat din enhet ser företagsportalen alltid till att enheten är skyddad enligt organisationens krav. Om du till exempel installerar en app från en obetrodd källa varnar företagsportalen dig och kan även begränsa åtkomsten till organisationens resurser. Appskyddsprinciper som den här är vanligt förekommande. För att få tillbaka åtkomsten måste du troligen avinstallera appen. 
 
 Om organisationen inför ett nytt säkerhetskrav efter registreringen, t.ex. multifaktorautentisering, meddelar företagsportalen dig. Du får möjlighet att justera dina inställningar så att du kan fortsätta arbeta från enheten.  
 
@@ -67,19 +67,20 @@ Utför följande steg när du ska registrera din macOS-enhet i organisationen. E
 
 1. Logga in på företagsportalen med ditt arbets- eller skolkonto.  
 2. När appen öppnas väljer du **Börja**.  
-3. Granska vad din organisation kan och inte kan se på din registrerade enhet. Välj sedan **Fortsätt**.
-4.  Om du uppmanas till det anger du enhetens lösenord på skärmen **Installera hanteringsprofil**.
+3. Granska [vad din organisation kan se och inte kan se](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md) på din registrerade enhet. Välj sedan **Fortsätt**.
+4. På skärmen **Installera hanteringsprofil** väljer du **Ladda ned profil**.  
 
-    ![Exempel på skärmbild av företagsportalen och profilskärmen för installationshantering med lösenordsfrågan markerad.](./media/install-management-profile-macos-1912.PNG)   
-5. På skärmen **Bekräfta enhetshantering** väljer du **Öppna systeminställningar**.  
+    ![Exempel på skärmbild av företagsportalen och profilskärmen för installationshantering med lösenordsfrågan markerad.](./media/install-management-profile-macos-2006.png)   
 
-    ![Exempel på skärmbild av skärmen Bekräfta enhetshantering med knappen ”Öppna systeminställningar” markerad.](./media/confirm-device-management-macos-1912.PNG)  
-6. Enhetens systeminställningar öppnas. Välj **Hanteringsprofil** i listan med enhetsprofiler och välj sedan **Godkänn** > **Godkänn**.  
-    ![Exempel på skärmbild av skärmen Systeminställningar och skärmen Hanteringsprofil, med knappen ”Godkänn” markerad.](./media/management-profile-approve-macos-1912.PNG)   
-1. Gå tillbaka till företagsportalen och välj **Fortsätt**.    
-2. Din organisation kan kräva att du uppdaterar enhetsinställningarna. När du är klar med att uppdatera inställningarna väljer du **Kontrollera inställningar**.  
+5. Enhetens systeminställningar öppnas.  
+    a. Välj **Installera** och sedan **Installera** igen.  
+    b. Om du uppmanas till det anger du enhetens lösenord.   
+6. När profilen har installerats visas den i listan med profiler under **Hanteringsprofil**.
+    ![Exempel på skärmbild av skärmen Systeminställningar och skärmen Hanteringsprofil, med knappen ”Godkänn” markerad.](./media/management-profile-approve-macos-2006.png)   
+7. Logga in i Företagsportal.    
+8. Din organisation kan kräva att du uppdaterar enhetsinställningarna. När du har uppdaterat inställningarna väljer du **Försök igen**.  
 
-    ![Exempel på skärmbild av företagsportalen och skärmen Uppdatera enhetsinställningar, med knappen ”Kontrollera inställningar” markerad.](./media/update-settings-mac-1911.PNG)  
+    ![Skärmbild av företagsportalen och skärmen Uppdatera enhetsinställningar, med knappen Försök igen markerad.](./media/update-settings-mac-2006.png)  
 9. När installationen är klar trycker du på **Klar**.  
 
 

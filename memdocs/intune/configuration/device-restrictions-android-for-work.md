@@ -5,23 +5,23 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/01/2020
+ms.date: 06/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
 ms.localizationpriority: medium
 ms.technology: ''
-ms.reviewer: chmaguir, chrisbal
+ms.reviewer: chmaguir, chrisbal, priyar
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b81686f645d9fce610c39266feb2675fd35cc280
-ms.sourcegitcommit: 6f67c864cf71b4a6a316f4d04a6cc43cf28b4277
+ms.openlocfilehash: 88843cfa1c4f98d87e5eaaefdc0dcd87daf8cb68
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257043"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093702"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -87,93 +87,124 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 
 - **Hotgenomsökning för appar**: Om du väljer **Kräv** (standard) kan Google Play Protect genomsöka appar före de installeras och efter de installerats. Om ett hot identifieras kan användarna varnas och uppmanas att ta bort appen från enheten. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske operativsystemet inte aktiverar eller kör Google Play Protect för genomsökning av appar.
 
-### <a name="dedicated-devices"></a>Särskilda enheter
+### <a name="device-experience"></a>Enhetsmiljö
 
-Använd dessa inställningar om du vill konfigurera en upplevelse i helskärmsformat i dina särskilda enheter. Du kan konfigurera enheter för att köra en app eller flera appar. När en enhet är inställd på helskärmsläge är det bara de appar du lägger till som är tillgängliga. Dessa inställningar gäller för särskilda Android Enterprise-enheter. De gäller inte för fullständigt hanterade Android Enterprise-enheter.
+Använd de här inställningarna till att konfigurera en helskärmsmiljö på dina dedikerade eller helt hanterade enheter. Du kan konfigurera enheter för att köra en app eller flera appar. När en enhet är inställd på helskärmsläge är det bara de appar du lägger till som är tillgängliga.
 
-**Helskärmsläge**: Välj om enheten ska köra en app eller flera appar.
+**Typ av registreringsprofil**: Välj en typ av registreringsprofil för att börja konfigurera Microsoft Launcher eller Microsoft Managed Home Screen på dina enheter. Alternativen är:
 
-- **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
-- **Enstaka app**: Användarna har bara åtkomst till en enda app på enheten. Endast den specifika appen startar när enheten startar. Användarna förhindras att öppna nya appar eller ändra appen som körs.
+- **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard kan användarna se enhetens standardstartskärm.
+- **Dedikerade enheter**: Konfigurera en helskärmsmiljö på dina dedikerade enheter. Innan du konfigurerar de här inställningarna måste du [lägga till](../apps/apps-add-android-for-work.md) och [tilldela](../apps/apps-deploy.md) de appar du vill använda på enheterna.
 
-  - **Välj en hanterad app**: Välj den hanterade Google Play-appen i listan.
+  - **Helskärmsläge**: Välj om enheten ska köra en app eller flera appar. Alternativen är:
 
-    Om du inte har några appar som visas kan du [lägga till Android-appar](../apps/apps-add-android-for-work.md) till enheten. Se till att [tilldela appen till den enhetsgrupp som skapats för dina dedikerade enheter](../apps/apps-deploy.md).
+    - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen.
+    - **Enstaka app**: Användarna har bara åtkomst till en enda app på enheten. Endast den specifika appen startar när enheten startar. Användarna förhindras att öppna nya appar eller ändra appen som körs.
 
-  > [!IMPORTANT]
-  > När du använder helskärmsläge för enskild app fungerar kanske inte uppringnings-/telefonappar som de ska.
+      - **Välj en app att använda i helskärmsläge**: Välj den hanterade Google Play-appen i listan.
+
+      > [!IMPORTANT]
+      > När du använder helskärmsläge kanske inte uppringnings-/telefonappar fungerar som de ska.
   
-- **Flera appar**: Användarna har åtkomst till en begränsad uppsättning appar på enheten. Endast de appar du lägger till startar när enheten startar. Du kan också lägga till webblänkar som användare kan öppna. När principen används ser användarna ikoner för tillåtna appar på startskärmen.
+    - **Flera appar**: Användarna har åtkomst till en begränsad uppsättning appar på enheten. Endast de appar du lägger till startar när enheten startar. Du kan också lägga till webblänkar som användare kan öppna. När principen används ser användarna ikoner för tillåtna appar på startskärmen.
 
-  > [!IMPORTANT]
-  > För dedikerade enheter för flera appar gäller att [appen Hanterade startskärmar](https://play.google.com/work/apps/details?id=com.microsoft.launcher.enterprise) från Google Play **måste vara**:
-  >   - [Tillagt som en klientapp](../apps/apps-add-android-for-work.md) i Intune
-  >   - [Tilldelad till den enhetsgrupp](../apps/apps-deploy.md) som skapats för dina dedikerade enheter
-  >
-  > Appen **Hanterade startskärmar** måste inte finnas i konfigurationsprofilen, men den måste läggas till som klientapp. När appen **Hanterad startskärm** läggs till som en klientapp visas alla andra appar som du lägger till i konfigurationsprofilen som ikoner i **Hanterad startskärm**-appen.
-  >
-  > När du använder helskärmsläge för flera appar kanske inte uppringnings-/telefonappar fungerar som de ska. 
+      > [!IMPORTANT]
+      > För dedikerade enheter för flera appar gäller att [appen Hanterade startskärmar](https://play.google.com/work/apps/details?id=com.microsoft.launcher.enterprise) från Google Play **måste vara**:
+      >   - [Tillagd i Intune](../apps/apps-add-android-for-work.md)
+      >   - [Tilldelad till den enhetsgrupp](../apps/apps-deploy.md) som skapats för dina dedikerade enheter
+      >
+      > Appen **Managed Home Screen** måste inte finnas med i konfigurationsprofilen, men du måste lägga till den som app. När du lägger till appen **Managed Home Screen** visas övriga appar du lägger till i konfigurationsprofilen som ikoner i appen **Managed Home Screen**.
+      >
+      > När du använder helskärmsläge för flera appar kanske inte uppringnings-/telefonappar fungerar som de ska. 
 
-  - **Lägg till**: Välj dina appar i listan.
+      - **Lägg till**: Välj dina appar i listan.
 
-    Om appen **Hanterad startskärm** inte visas kan du [lägga till den från Google Play](https://play.google.com/work/apps/details?id=com.microsoft.launcher.enterprise). Se till att [tilldela appen](../apps/apps-deploy.md) till den enhetsgrupp som skapats för dina dedikerade enheter.
+        Om appen **Hanterad startskärm** inte visas kan du [lägga till den från Google Play](https://play.google.com/work/apps/details?id=com.microsoft.launcher.enterprise). Se till att [tilldela appen](../apps/apps-deploy.md) till den enhetsgrupp som skapats för dina dedikerade enheter.
 
-    Du kan även lägga till andra [Android-appar](../apps/apps-add-android-for-work.md) och [webbappar](../apps/web-app.md) som skapats av din organisation till enheten. Se till att [tilldela appen till den enhetsgrupp som skapats för dina dedikerade enheter](../apps/apps-deploy.md).
+        Du kan även lägga till andra [Android-appar](../apps/apps-add-android-for-work.md) och [webbappar](../apps/web-app.md) som skapats av din organisation till enheten. Se till att [tilldela appen till den enhetsgrupp som skapats för dina dedikerade enheter](../apps/apps-deploy.md).
 
-  - **Virtuell hemknapp**: En programstyrd knapp som tar användarna tillbaka till den hanterade startskärmen så att användarna kan växla mellan appar. Alternativen är:
+      - **Virtuell hemknapp**: En programstyrd knapp som tar användarna tillbaka till den hanterade startskärmen så att användarna kan växla mellan appar. Alternativen är:
+        - **Inte konfigurerat** (standard): Hemknappen visas inte. Användarna måste använda knappen Bakåt för att växla mellan appar.
+        - **Svep uppåt**: En hemknapp visas när en användare sveper uppåt på enheten.
+        - **Flytande**: En beständig flytande hemknapp visas på enheten.
 
-    - **Inte konfigurerat** (standard): Hemknappen visas inte. Användarna måste använda knappen Bakåt för att växla mellan appar.
-    - **Svep uppåt**: En hemknapp visas när en användare sveper uppåt på enheten.
-    - **Flytande**: En beständig flytande hemknapp visas på enheten.
-
-  - **Lämna helskärmsläge**: **Aktivera** tillåter att administratörer tillfälligt kan pausa helskärmsläget för att uppdatera enheten. Om du vill använda den här funktionen kan administratören:
+      - **Lämna helskärmsläge**: **Aktivera** tillåter att administratörer tillfälligt kan pausa helskärmsläget för att uppdatera enheten. Om du vill använda den här funktionen kan administratören:
   
-    1. Fortsätta att välja bakåtknappen tills knappen **Avsluta helskärmsläge** visas. 
-    2. Väljer knappen **Avsluta helskärmsläge** och anger PIN-koden för **Kod för att lämna helskärmsläge**.
-    3. När du är klar väljer du den **hanterade hemskärmsappen**. Det här steget låser enheten i helskärmsläge för flera appar.
+        1. Fortsätta att välja bakåtknappen tills knappen **Avsluta helskärmsläge** visas. 
+        2. Väljer knappen **Avsluta helskärmsläge** och anger PIN-koden för **Kod för att lämna helskärmsläge**.
+        3. När du är klar väljer du den **hanterade hemskärmsappen**. Det här steget låser enheten i helskärmsläge för flera appar.
 
-      När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att administratörer pausar helskärmsläge. Om administratören fortsätter att välja bakåtknappen och väljer knappen **Avsluta helskärmsläge** visas ett meddelande om att ett lösenord krävs.
+        När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att administratörer pausar helskärmsläge. Om administratören fortsätter att välja bakåtknappen och väljer knappen **Avsluta helskärmsläge** visas ett meddelande om att ett lösenord krävs.
 
-    - **Lämna kod för helskärmsläge**: Ange en numerisk PIN-kod på 4–6 siffror. Administratören använder den här PIN-koden för att tillfälligt pausa helskärmsläge.
+      - **Lämna kod för helskärmsläge**: Ange en numerisk PIN-kod på 4–6 siffror. Administratören använder den här PIN-koden för att tillfälligt pausa helskärmsläge.
 
-  - **Ange anpassad URL-bakgrund**: Ange en URL för att anpassa bakgrundsskärmen på den dedikerade enheten. Ange till exempel `http://contoso.com/backgroundimage.jpg`.
+      - **Ange anpassad URL-bakgrund**: Ange en URL för att anpassa bakgrundsskärmen på den dedikerade enheten. Ange till exempel `http://contoso.com/backgroundimage.jpg`.
 
-    > [!NOTE]
-    > I de flesta fall rekommenderar vi att du börjar med bilder med minst följande storlek:
-    >
-    > - Telefon: 1 080 x 1 920 bildpunkter
-    > - Läsplatta: 1 920 x 1 080 bildpunkter
-    >
-    > För bästa möjliga upplevelse och detaljrikedom föreslår vi att du skapar bildresurser till enheternas respektive bildskärmsspecifikationer.
-    >
-    > Moderna bildskärmar har högre bildpunktsdensitet och kan visa bilder i 2K/4K.
+        > [!NOTE]
+        > I de flesta fall rekommenderar vi att du börjar med bilder med minst följande storlek:
+        >
+        > - Telefon: 1 080 x 1 920 bildpunkter
+        > - Läsplatta: 1 920 x 1 080 bildpunkter
+        >
+        > För bästa möjliga upplevelse och detaljrikedom föreslår vi att du skapar bildresurser till enheternas respektive bildskärmsspecifikationer.
+        >
+        > Moderna bildskärmar har högre bildpunktsdensitet och kan visa bilder i 2K/4K.
 
-  - **Wi-Fi-konfiguration**: Om du väljer **Aktivera** visas Wi-Fi-kontrollen på den hanterade startskärmen och användarna kan ansluta enheten till olika Wi-Fi-nätverk. Om du aktiverar den här funktionen aktiveras också enhetsplats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar Wi-Fi-kontrollen på den hanterade startskärmen. Användare hindras från att ansluta till Wi-Fi-nätverk när den hanterade startskärmen används.
+      - **Wi-Fi-konfiguration**: Om du väljer **Aktivera** visas Wi-Fi-kontrollen på den hanterade startskärmen och användarna kan ansluta enheten till olika Wi-Fi-nätverk. Om du aktiverar den här funktionen aktiveras också enhetsplats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar Wi-Fi-kontrollen på den hanterade startskärmen. Användare hindras från att ansluta till Wi-Fi-nätverk när den hanterade startskärmen används.
 
-  - **Bluetooth-konfiguration**: Om du väljer **Aktivera** visas Bluetooth-kontrollen på den hanterade startskärmen och användarna kan koppla enheter över Bluetooth. Om du aktiverar den här funktionen aktiveras också enhetsplats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar Bluetooth-kontrollen på den hanterade startskärmen. Användare hindras från att konfigurera Bluetooth och para ihop enheter när den hanterade startskärmen används.
+      - **Bluetooth-konfiguration**: Om du väljer **Aktivera** visas Bluetooth-kontrollen på den hanterade startskärmen och användarna kan koppla enheter över Bluetooth. Om du aktiverar den här funktionen aktiveras också enhetsplats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar Bluetooth-kontrollen på den hanterade startskärmen. Användare hindras från att konfigurera Bluetooth och para ihop enheter när den hanterade startskärmen används.
 
-  - **Åtkomst till ficklampa**: Om du väljer **Aktivera** visas ficklampekontrollen på den hanterade startskärmen och användarna kan aktivera eller inaktivera ficklampan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar ficklampekontrollen på den hanterade startskärmen. Användare hindras från att använda ficklampan när den hanterade startskärmen används.
+      - **Åtkomst till ficklampa**: Om du väljer **Aktivera** visas ficklampekontrollen på den hanterade startskärmen och användarna kan aktivera eller inaktivera ficklampan. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar ficklampekontrollen på den hanterade startskärmen. Användare hindras från att använda ficklampan när den hanterade startskärmen används.
 
-  - **Medievolymkontroll**: Om du väljer **Aktivera** visas medievolymkontrollen på den hanterade startskärmen och användarna kan justera enhetens medievolym med hjälp av ett skjutreglage. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar medievolymkontrollen på den hanterade startskärmen. Användarna hindras från att justera enhetens medievolym på den hanterade startskärmen, om inte deras maskinvaruknappar stöder det.
+      - **Medievolymkontroll**: Om du väljer **Aktivera** visas medievolymkontrollen på den hanterade startskärmen och användarna kan justera enhetens medievolym med hjälp av ett skjutreglage. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar medievolymkontrollen på den hanterade startskärmen. Användarna hindras från att justera enhetens medievolym på den hanterade startskärmen, om inte deras maskinvaruknappar stöder det.
 
-  - **Skärmsläckarläge**: Om du väljer **Aktivera** visas en skärmsläckare på den hanterade startskärmen när enheten är låst eller när tidsgränsen uppnås. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar en skärmsläckare på den hanterade startskärmen.
+      - **Skärmsläckarläge**: Om du väljer **Aktivera** visas en skärmsläckare på den hanterade startskärmen när enheten är låst eller när tidsgränsen uppnås. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar en skärmsläckare på den hanterade startskärmen.
 
-    När läget är aktiverat konfigurerar du även:
+        När läget är aktiverat konfigurerar du även:
 
-    - **Ställ in anpassad skärmsläckarbild**: Ange URL:en till en anpassad PNG, JPG, JPEG, GIF, BMP, WebP eller ICOimage. Ange till exempel:
+        - **Ställ in anpassad skärmsläckarbild**: Ange URL:en till en anpassad PNG, JPG, JPEG, GIF, BMP, WebP eller ICOimage. Om du inte anger en URL används enhetens standardbild, om det finns en sådan. 
+        
+          Ange till exempel:
 
-      - `http://www.contoso.com/image.jpg`
-      - `www.contoso.com/image.bmp`
-      - `https://www.contoso.com/image.webp`
+          - `http://www.contoso.com/image.jpg`
+          - `www.contoso.com/image.bmp`
+          - `https://www.contoso.com/image.webp`          
 
-      Om du inte anger en URL används enhetens standardbild, om det finns en sådan.
+          > [!TIP]
+          > Alla filresurs-URL:er som kan omvandlas till en bitmapp stöds.
 
-      > [!TIP]
-      > Alla filresurs-URL:er som kan omvandlas till en bitmapp stöds.
+        - **Antal sekunder som skärmsläckaren visas innan skärmen stängs av**: Välj hur länge skärmsläckaren ska visas på enheten. Ange ett värde mellan 0 och 9999999 sekunder. Standardvärdet är `0` sekunder. När värdet är tomt eller är inställt på noll (`0`) är skärmsläckaren aktiv tills en användare interagerar med enheten.
+        - **Antal sekunder som enheten är inaktiv innan skärmsläckaren visas**: Välj hur länge enheten ska vara inaktiv innan skärmsläckaren visas. Ange ett värde mellan 1 och 9999999 sekunder. Standardvärdet är `30` sekunder. Du måste ange ett tal som är större än noll (`0`).
+        - **Identifiera media innan skärmsläckaren startar**: Om du väljer **Aktivera** (standard) visas inte skärmsläckaren om ljud eller video spelas upp på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar skärmsläckaren, även om ljud eller video spelas upp.
 
-    - **Antal sekunder som skärmsläckaren visas innan skärmen stängs av**: Välj hur länge skärmsläckaren ska visas på enheten. Ange ett värde mellan 0 och 9999999 sekunder. Standardvärdet är `0` sekunder. När värdet är tomt eller är inställt på noll (`0`) är skärmsläckaren aktiv tills en användare interagerar med enheten.
-    - **Antal sekunder som enheten är inaktiv innan skärmsläckaren visas**: Välj hur länge enheten ska vara inaktiv innan skärmsläckaren visas. Ange ett värde mellan 1 och 9999999 sekunder. Standardvärdet är `30` sekunder. Du måste ange ett tal som är större än noll (`0`).
-    - **Identifiera media innan skärmsläckaren startar**: Om du väljer **Aktivera** (standard) visas inte skärmsläckaren om ljud eller video spelas upp på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar skärmsläckaren, även om ljud eller video spelas upp.
+- **Helt hanterade**: Konfigurerar appen Microsoft Launcher på dina helt hanterade enheter.
+
+  - **Gör Microsoft Launcher till standardstartprogram**: Med **Aktivera** anges Microsoft Launcher som standardstartprogram på startskärmen. Om du använder Launcher som standardprogram kan användarna inte använda något annat startprogram. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard måste inte Microsoft Launcher användas som standardstartprogram.
+
+<!-- The following settings are in a future release. Per PM, we can leave them in GitHub, not live. Remove comment tags when they release.
+
+  - **Configure custom wallpaper**: **Enable** lets you apply your own image as the home screen wallpaper, and choose if users can change the image. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the device keeps its current wallpaper.
+    - **Enter URL of wallpaper image**: Enter the URL of your wallpaper image. This image shows on the device home screen. For example, enter `http://www.contoso.com/image.jpg`. 
+    - **Allow user to modify wallpaper**: **Enable** allows users to change the wallpaper image. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users are prevented from changing the wallpaper.
+  - **Enable launcher feed**: **Enable** turns on the launcher feed, which shows calendars, documents, and recent activities. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, this feed isn't shown.
+    - **Allow user to enable/disable feed**: **Enable** lets users enable or disable the launcher feed. **Enable** only forces this setting the first time the profile is assigned. Any future profile assignments don't force this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users are prevented from changing the launcher feed settings.
+  - **Dock presence**: The dock gives users quick access to their apps and tools. Your options:
+    - **Not configured** (default): Intune doesn't change or update this setting.
+    - **Show**: The dock is shown on devices.
+    - **Hide**: The dock is hidden. Users must swipe up to access the dock.
+    - **Disabled**: The dock isn't shown on devices, and users are prevented from showing it.
+
+  - **Allow user to change dock presence**: **Enable** allows users to show or hide the dock. **Enable** only forces this setting the first time the profile is assigned. Any future profile assignments don't force this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users aren't allowed to change the device dock configuration.
+
+  - **Search bar replacement**: Choose where to put the search bar. Your options:
+    - **Not configured** (default): Intune doesn't change or update this setting.
+    - **Top**: Search bar is shown at the top of devices.
+    - **Bottom**: Search bar is shown at the bottom of devices.
+    - **Hide**: Search bar is hidden.
+
+  - **Allow user to change search bar placement**: **Enable** allows users to change the location of the search bar. **Enable** only forces this setting the first time the profile is assigned. Any future profile assignments don't force this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users are prevented from changing the location.
+
+End of comment -->
 
 ### <a name="password"></a>lösenordsinställning
 
@@ -231,7 +262,7 @@ Använd dessa inställningar om du vill konfigurera en upplevelse i helskärmsfo
 
 ### <a name="applications"></a>Program
 
-- **Tillåt installation från okända källor**: **Tillåt** tillåter att användare aktiverar **Okända källor**. Den här inställningen gör att appar kan installeras från okända källor, inklusive andra källor än Google Play. De tillåter användare att läsa in appar separat på enheten via andra kanaler än Google Play Store. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att användarna aktiverar **Okända källor**.
+- **Tillåt installation från okända källor**: **Tillåt** tillåter att användare aktiverar **Okända källor**. Den här inställningen gör att appar kan installeras från okända källor, inklusive andra källor än Google Play. Den gör att användare kan läsa in appar separat på enheten via andra kanaler än Google Play Store. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard förhindra att användarna aktiverar **Okända källor**.
 - **Tillåt åtkomst till alla appar i Google Play-butiken**: När **Tillåt** har valts får användarna åtkomst till alla appar i Google Play. De får inte åtkomst till de appar som har blockerats av administratören i [Klientappar](../apps/apps-add-android-for-work.md).
 
   När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard:
@@ -298,8 +329,9 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 
 - **Kopiera och klistra in mellan arbetsprofiler och personliga profiler**: **Blockera** förhindrar att funktionen kopiera och klistra in fungerar mellan arbetsappar och personliga appar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att dela data med hjälp av kopiera och klistra in med appar i den personliga profilen.
 - **Datadelning mellan arbetsprofiler och personliga profiler**: Välj om appar i arbetsprofilen ska kunna dela data med appar i den personliga profilen. Du kan till exempel styra delningsåtgärder i program, så som alternativet **Dela...** i Chrome-webbläsarappen. Den här inställningen gäller inte för kopierings- och inklistringsbeteendet i Urklipp. Alternativen är:
-  - **Standard för enheten**: Detta är standardinställningen för delning av enheten, vilket varierar beroende på Android-version. Som standard tillåts delning från den personliga profilen till arbetsprofilen. Som standard är dessutom delning mellan arbetsprofilen och den personliga profilen blockerad. Den här inställningen förhindrar att arbetsdata delas till den personliga profilen. För enheter som kör version 6.0 och senare blockerar inte Google delning från den personliga profilen till arbetsprofilen.
-  - **Förhindra all delning över gränser**: Förhindrar delning mellan arbetsprofiler och personliga profiler.
+  - **Standard för enheten**: Enhetens standardbeteende för delning beror på Android-versionen.
+    - På enheter som kör Android 6.0 och senare är delning från arbetsprofilen till den personliga profilen blockerad. Delning från den personliga profilen till arbetsprofilen är tillåten.
+    - På enheter som kör Android 5.0 och äldre är delning mellan arbetsprofilen och den personliga profilen blockerad i båda riktningarna.
   - **Appar i arbetsprofilen kan hantera delningsförfrågningar från den personliga profilen**: Aktiverar den inbyggda Android-funktionen som tillåter delning från den personliga profilen till arbetsprofilen. När detta är aktiverat, kan en delningsbegäran från en app i den personliga profilen dela med appar i arbetsprofilen. Det här är standardinställningen för Android-enheter som kör tidigare versioner än 6.0.
   - **Inga delningsbegränsningar**: Aktiverar delning över arbetsprofilgränsen i bägge riktningarna. När du väljer den här inställningen så kommer appar i arbetsprofilen att kunna dela data med omärkta appar i den personliga profilen. Med den här inställningen kan hanterade appar i arbetsprofilen dela med appar på den ohanterade delen av enheten. Använd därför den här inställningen med försiktighet.
 

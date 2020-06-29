@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1bbcfc953945f7e8525cb7dc7edf3b1dd8a2f5c
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: f807eabd2fabd51f7a7bb8eb43225a579784148c
+ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989072"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746501"
 ---
 # <a name="set-enrollment-restrictions"></a>Ange registreringsbegränsningar
 
@@ -64,7 +64,7 @@ Standardbegränsningar tillhandahålls automatiskt för både begränsningar fö
 3. Välj **Nästa** för att gå till sidan **Plattforminställningar**.
 4. Under **Plattform** väljer du **Tillåt** för de plattformar som du vill att begränsningen ska tillåta.
     ![Skärmpunkt för att välja plattformsinställningar](./media/enrollment-restrictions-set/choose-platform-settings.png)
-5. Under **Versioner** väljer du de lägsta och högsta versioner som du vill att de tillåtna plattformarna ska stödja. Versionsbegränsningar gäller endast för enheter som har registrerats med företagsportalen.
+5. Under **Versioner** väljer du de lägsta och högsta versioner som du vill att de tillåtna plattformarna ska stödja. För iOS och Android gäller bara versionsbegränsningar för enheter som har registrerats i företagsportalen.
      Versionsformat som stöds är:
     - Android-enhetsadministratör- och Android Enterprise-arbetsprofilen stöder major.minor.rev.build.
     - iOS/iPadOS stöder major.minor.rev. Operativsystemversionerna gäller inte för Apple-enheter som registreras med programmet för enhetsregistrering, Apple School Manager eller Apple Configurator-appen.

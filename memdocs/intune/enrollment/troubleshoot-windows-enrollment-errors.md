@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f74308e5c59adee6810d54ce44cf104514f83056
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: f5d296137f71b89abf65f20493fbc1151ffebf28
+ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82254783"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84795592"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av Windows-enheter i Microsoft Intune
 
@@ -278,6 +278,12 @@ Kontrollera att namngivningsformatet uppfyller följande krav:
 #### <a name="resolution"></a>Lösning
 Se till att den begärda åtkomsten till internetbaserade tjänster för autopilot inte är blockerad. Mer information finns i [Nätverkskrav för Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-requirements-network).
 
+### <a name="autopilot-device-enrollment-failed-with-error-hresult--0x80180022"></a>Registrering av Autopilot-enhet misslyckades med felet HRESULT = 0x80180022
+
+**Orsak:** Enheten som etableras kör Windows Home Edition
+
+#### <a name="resolution"></a>Lösning
+Uppdatera enheten till version Pro eller högre
 
 ### <a name="registering-your-device-for-mobile-management-failed3-0x801c03ea"></a>Registrera enheten för mobilhantering (misslyckades: 3, 0x801C03EA).
 

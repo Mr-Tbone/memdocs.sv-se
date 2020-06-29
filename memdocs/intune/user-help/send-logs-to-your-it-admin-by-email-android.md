@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 04/19/2019
+ms.date: 06/16/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 8094f9739f05a7e7c0ffc10e9b4835c67c5539b3
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 83a00368c7f47568497669c940e3c2904a479372
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881998"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094036"
 ---
 # <a name="upload-and-email-logs"></a>Ladda upp och skicka loggar med e-post  
 
@@ -34,6 +34,8 @@ Den faktiska felinformationen sparas på din enhet i ett specialdokument som kal
 
 > [!Note]
 > Gör det lättare för företagets support att lösa problemet genom att aktivera _utförlig loggning_ i företagsportalen. Om du använder Microsoft Intune-appen ställer du in **Loggdetaljnivå** till **Utförlig**. Utförlig loggning registrerar all information om ett fel och inkluderar detaljerna i rapporten. Läs hur du kan [aktivera utförlig loggning här](use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android.md).  
+>
+> Om du använder en självständig molnmiljö är inte funktionen Skicka loggar tillgänglig i företagsportalen. Du måste skicka loggar via e-post. 
 
 ## <a name="upload-and-email-logs-from-company-portal"></a>Ladda upp och skicka dina loggar via e-post från Företagsportal  
 

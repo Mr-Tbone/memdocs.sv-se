@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b94146cc429f2a7f7b196f15527e8687368e6d78
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 3031e909b5bd330f9ec84f05f2c83c504022d50e
+ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988242"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746603"
 ---
 # <a name="use-teamviewer-to-remotely-administer-intune-devices"></a>Fjärradministrera Intune-enheter med TeamViewer
 
@@ -69,6 +69,6 @@ När du startar en fjärrsession ser användarna en meddelandeflagga på ikonen 
 > [!NOTE]
 > Windows-enheter som registreras med hjälp av ”användarlösa” metoder, till exempel Device Enrollment Manager (DEM) och Windows Configuration Designer (WCD), visar inte TeamViewer-meddelandet i Företagsportal-appen. I dessa fall rekommenderar vi att TeamViewer-portalen används för att skapa sessionen.
 
-I TeamViewer kan du utföra ett antal åtgärder på enheten, till exempel ta kontroll över enheten. Fullständig information om vad du kan göra finns i [vägledningen för TeamViewer](https://www.teamviewer.com/support/documents/).
+I TeamViewer kan du utföra ett antal åtgärder på enheten, till exempel ta kontroll över enheten. Fullständig information om vad du kan göra finns på [communitysidan för TeamViewer](https://community.teamviewer.com/).
 
 Stäng TeamViewer-fönstret när du är klar.

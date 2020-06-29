@@ -16,20 +16,20 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: d0ba328f1976d0463c6be042dfd6f8a7570d6dac
-ms.sourcegitcommit: eb51bb38d484e8ef2ca3ae3c867561249fa413f3
+ms.openlocfilehash: ae95fb48296f778fb98affa2270ba763d79fb766
+ms.sourcegitcommit: 97f150f8ba8be8746aa32ebc9b909bb47e22121c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84206340"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879676"
 ---
 # <a name="endpoint-detection-and-response-policy-for-endpoint-security-in-intune"></a>Endpoint Security-policyn Slutpunktsidentifiering och svar i Intune
 
-När du integrerar Defender Advanced Threat Protection (Defender ATP) med Intune kan du använda Endpoint Security-policyn Slutpunktsidentifiering och svar (EDR) till att hantera EDR-inställningarna och registrera enheter i Defender ATP.
+När du integrerar Defender Advanced Threat Protection (Microsoft Defender ATP) med Intune kan du använda Endpoint Security-policyn Slutpunktsidentifiering och svar (EDR) till att hantera EDR-inställningarna och registrera enheter i Microsoft Defender ATP.
 
-Funktionerna i Defender ATP Slutpunktsidentifiering och svar identifierar attacker nära nog i realtid så att du kan åtgärda dem. Säkerhetsanalytiker kan effektivt prioritera aviseringar, få insyn i hela omfattningen av ett intrång och vidta svarsåtgärder för att motverka hot.
+Funktionerna i Microsoft Defender ATP Slutpunktsidentifiering och svar identifierar attacker praktiskt taget i realtid så att du kan åtgärda dem. Säkerhetsanalytiker kan effektivt prioritera aviseringar, få insyn i hela omfattningen av ett intrång och vidta svarsåtgärder för att motverka hot.
 
-EDR-policyerna omfattar bland annat plattformsspecifika profiler för hantering av inställningar för EDR. Profilerna innehåller automatiskt ett *registreringspaket* för Defender ATP. Registreringspaket anger hur enheter ska fungera med Defender ATP. När en enhet registrerar sig kan du börja använda hotinformation från enheten.
+EDR-policyerna omfattar bland annat plattformsspecifika profiler för hantering av inställningar för EDR. Profilerna innehåller automatiskt ett *registreringspaket* för Microsoft Defender ATP. Registreringspaket anger hur enheter ska fungera med Microsoft Defender ATP. När en enhet registrerar sig kan du börja använda hotinformation från enheten.
 
 EDR-policyer distribueras till grupper av enheter i Azure Active Directory (Azure AD) som du hanterar med Intune, och till samlingar av lokala enheter som du hanterar med Configuration Manager, inklusive Windows-servrar. Du behöver olika registreringspaket för EDR-policyerna för de olika hanteringsvägarna. Därför ska du skapa separata EDR-policyer för de olika typer av enheter du hanterar.
 
@@ -44,7 +44,7 @@ Visa [inställningar för Slutpunktsidentifiering och svar](endpoint-security-ed
 
 **Allmänt**:
 
-- **Klientorganisation för Microsoft Defender Advanced Threat Protection** – din Defender ATP-klientorganisation måste vara integrerad med Microsoft Endpoint Manager-klientorganisationen (Intune-prenumerationen) innan du kan skapa EDR-principer. Läs mer i [Använda Microsoft Defender ATP](advanced-threat-protection.md) i Intune-dokumentationen.
+- **Klientorganisation för Microsoft Defender Advanced Threat Protection** – din Microsoft Defender ATP-klientorganisation måste vara integrerad med Microsoft Endpoint Manager-klientorganisationen (Intune-prenumerationen) innan du kan skapa EDR-principer. Läs mer i [Använda Microsoft Defender ATP](advanced-threat-protection.md) i Intune-dokumentationen.
 
 **Så här använder du enheter från Configuration Manager**:
 
@@ -258,12 +258,9 @@ Du kan visa information om de EDR-policyer du distribuerar i administrationscent
 
 - För policyer som riktar sig mot plattformen **Windows 10 och senare** (Intune) ser du en översikt över efterlevnaden av policyn. Du kan också välja diagrammet och visa en lista med enheter som har tagit emot policyn och gå vidare till enskilda enheter för att visa mer information.
 
-  I diagrammet **Enheter med ATP-sensor** visas endast enheter som registrerats till Defender ATP med profilen **Windows 10 och senare**. För att se till att du har full representation av dina enheter i det här diagrammet distribuerar du registreringsprofilen till alla dina enheter. Enheter som registrerar till Defender ATP med externa metoder som grupprincip eller PowerShell, räknas som **Enheter utan ATP-sensorn**.
+  I diagrammet **Enheter med ATP-sensor** visas endast enheter som registrerats i Microsoft Defender ATP med profilen **Windows 10 och senare**. För att se till att du har full representation av dina enheter i det här diagrammet distribuerar du registreringsprofilen till alla dina enheter. Enheter som registreras i Microsoft Defender ATP med externa metoder som grupprincip eller PowerShell, räknas som **Enheter utan ATP-sensorn**.
 
 - För policyer som riktar sig mot plattformen **Windows 10 och Windows Server** (Configuration Manager) ser du en översikt över efterlevnaden av policyn, men du kan inte visa mer detaljerad information. Vyn är begränsad eftersom administrationscentret tar emot begränsad statusinformation från Configuration Manager, som hanterar distributionen av policyn till Configuration Manager-enheterna.
-
-
-
 
 
 [Visa inställningarna](endpoint-security-edr-profile-settings.md) du kan konfigurera för både plattformar och profiler.

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/02/2020
+ms.date: 06/22/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abd34733bd27ec150a92bf20cecbf7edc02c2bd6
-ms.sourcegitcommit: 42a4a4454e56fa681f0ad39f5e585492dfbad286
+ms.openlocfilehash: d4beb6c5a91f9f379006df482ff10066831389b6
+ms.sourcegitcommit: 79ffc8afed164c408db6994806d71f64d1fc0b8f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84331009"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216407"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Hur du skapar och tilldelar skyddsprinciper för appar
 
@@ -183,14 +183,14 @@ Om du vill skapa de här principerna, så gå till **Appar** > **Appskyddsprinci
 
 ### <a name="device-types"></a>Enhetstyper
 
-- **Ohanterade**: Ohanterade enheter är enheter där Intune MDM-hantering inte har identifierats. Detta innefattar enheter som hanteras av MDM-leverantörer från tredje part.
+- **Ohanterade**: För iOS/iPad-enheter räknas alla enheter där antingen Intune MDM-hantering eller en MDM/EMM-lösning från tredje part inte skickar nyckeln `IntuneMAMUPN` som ohanterade enheter. För Android-enheter räknas alla enheter där ingen Intune MDM-hantering kan identifieras som ohanterade enheter. Detta innefattar enheter som hanteras av MDM-leverantörer från tredje part.
 - **Intune-hanterade enheter**: Hanterade enheter hanteras av Intune MDM.
 - **Android-enhetsadministratör**: Intune-hanterade enheter som använder Androids enhetsadministrations-API.
 - **Android Enterprise**: Intune-hanterade enheter som använder Android Enterprise-arbetsprofiler eller Android Enterprise fullständig enhetshantering.
 
 När det gäller Android så uppmanar Android-enheter användarna att installera Intune-företagsportalsappen oavsett vilken typ av enhet som valts. Om du till exempel väljer Android Enterprise kommer användare med ohanterade Android-enheter fortfarande att frågas.
 
-Om valet av Enhetstyp ska framtvingas på ohanterade enheter i iOS/iPad så krävs ytterligare appkonfigurationsinställningar. De här konfigurationerna kommunicerar med APP-tjänsten om att en viss app hanteras och att appinställningarna inte gäller:
+Om valet av Enhetstyp ska framtvingas på Intune-hanterade enheter i iOS/iPadOS så krävs ytterligare appkonfigurationsinställningar. De här konfigurationerna kommunicerar med APP-tjänsten om att en viss app hanteras och att appinställningarna inte gäller:
 
 - **IntuneMAMUPN** måste konfigureras för alla MDM-hanterade program. Mer information finns i [Hantera dataöverföring mellan iOS/iPadOS-appar med Microsoft Intune](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm).
 - **IntuneMAMDeviceID** måste konfigureras för alla tredjeparts och verksamhetsspecifika MDM-hanterade program. **IntuneMAMDeviceID** ska konfigureras till enhetens ID-token. Exempelvis `key=IntuneMAMDeviceID, value={{deviceID}}`. Mer information finns i [Lägg till appkonfigurationsprinciper för hanterade iOS/iPadOS-enheter](app-configuration-policies-use-ios.md).

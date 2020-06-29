@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb376e9574dcbbbefca3c089dc4180356b1d5a89
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 0edb497b2dd9e4853f3fbc378992158c0757e1f6
+ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988753"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84973102"
 ---
 # <a name="add-app-configuration-policies-for-managed-android-enterprise-devices"></a>Lägg till konfigurationsprinciper för hanterade Android Enterprise-enheter
 
@@ -103,7 +103,7 @@ Du kan välja följande alternativ om du väljer variabel som värdetyp:
 
 ### <a name="allow-only-configured-organization-accounts-in-multi-identity-apps"></a>Tillåt endast konfigurerade organisationskonton i appar med flera identiteter 
 
-Som Microsoft Intune-administratör kan du styra vilka användarkonton som läggs till i Microsoft-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. Använd följande nyckel-/värdepar för Android-enheter:
+Som Microsoft Intune-administratör kan du styra vilka arbets- eller skolkonton som läggs till i Microsoft-program på hanterade enheter. Du kan begränsa åtkomsten till endast tillåtna användarkonton i organisationen och blockera personliga konton på registrerade enheter. För Android-enheter använder du följande nyckel/värde-par i konfigurationspolicyn för en app på en hanterad enhet:
 
 | **Nyckel** | com.microsoft.intune.mam.AllowedAccountUPNs |
 |---|---|

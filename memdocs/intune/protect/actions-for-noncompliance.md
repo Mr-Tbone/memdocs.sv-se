@@ -1,11 +1,11 @@
 ---
 title: Inkompatibilitetsmeddelande och åtgärder med Microsoft Intune – Azure | Microsoft Docs
-description: Skapa ett e-postmeddelande som ska skickas till inkompatibla enheter. Lägg till åtgärder när en enhet har markerats som inkompatibel, t.ex. en respitperiod för att bli kompatibel, eller skapa ett schema som blockerar åtkomst tills enheten är kompatibel. Gör detta med Microsoft Intune i Azure.
+description: Skapa ett e-postmeddelande som ska skickas till inkompatibla enheter. Lägg till åtgärder som ska utföras för enheter som inte uppfyller dina policyer kring efterlevnad. Det här kan vara åtgärder som att ge en respitperiod för att uppnå efterlevnad, att blockera åtkomsten till nätverksresurser eller att återkalla enheten.
 keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/26/2020
+ms.date: 06/19/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fff21eac61f7b68e00989aefc1f9ea6dc3ad7c0a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 330dd566599d6bdb1fa667d8797878ea8c92f098
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989310"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093721"
 ---
 # <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
@@ -29,11 +29,11 @@ För enheter som inte uppfyller dina principer eller regler för efterlevnad kan
 
 ## <a name="overview"></a>Översikt
 
-Som standard innehåller varje efterlevnadsprincip åtgärden för inkompatibilitet, **Markera enheten som inkompatibel**, med ett schema på noll dagar (**0**). När Intune identifierar en enhet som inte är kompatibel gör standardinställningen att Intune omedelbart markerar enheten som inkompatibel. Sedan kan den [villkorliga åtkomsten](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (AD) blockera enheten.
+Som standard innehåller varje efterlevnadsprincip åtgärden för inkompatibilitet, **Markera enheten som inkompatibel**, med ett schema på noll dagar (**0**). När Intune identifierar en enhet som inte är kompatibel gör standardinställningen att Intune omedelbart markerar enheten som inkompatibel. När en enhet märkts som inkompatibel kan den blockeras med [villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (AD).
 
 Genom att konfigurera **Åtgärder för inkompatibilitet** får du flexibiliteten att bestämma vad du ska göra med inkompatibla enheter, och när du ska göra det. Du kan t.ex. bestämma dig för att inte blockera enheten omedelbart, och sedan ge användaren en respitperiod att åtgärda problemet.
 
-För varje åtgärd du kan ange kan du konfigurera ett schema som avgör när den åtgärden börjar gälla, baserat på antalet dagar efter att enheten har markerats som inkompatibel. Du kan också konfigurera flera instanser av en åtgärd. När du ställer in flera instanser av en åtgärd i en princip körs åtgärden igen vid den senare schemalagda tiden om enheten inte är kompatibel.
+För varje åtgärd du anger kan du konfigurera ett schema som avgör när åtgärden börjar gälla. Schemat är ett antal dagar efter att enheten markerats som inkompatibel. Du kan också konfigurera flera instanser av en åtgärd. När du ställer in flera instanser av en åtgärd i en princip körs åtgärden igen vid den senare schemalagda tiden om enheten inte är kompatibel.
 
 Alla åtgärder är inte tillgängliga för alla plattformar.
 
@@ -100,12 +100,12 @@ När e-postmeddelandet skickas lägger Intune till information om den inkompatib
   
   Du kan till exempel schemalägga den första åtgärden för noll dagar och sedan lägga till en andra instans av åtgärden som är inställd på tre dagar. Den här fördröjningen före det andra meddelandet ger användaren några dagar för att lösa problemet och undvika det andra meddelandet.
 
-  För att undvika att skicka skräppost till användare med för många duplicerade meddelanden kan du granska och effektivisera vilka efterlevnadsprinciper som innehåller ett push-meddelande vid inkompatibilitet, och granska scheman för att undvika upprepade aviseringar för samma problem som skickas för ofta.
+  För att undvika att skicka skräppost till användare med för många dubbletter av meddelanden kan du granska och effektivisera vilka efterlevnadspolicyer som innehåller ett push-meddelande om regelefterlevnad, och granska de scheman som används så att inte samma avisering skickas för ofta.
 
   Tänk på att:
   - För en enda princip som innehåller flera instanser av en push-avisering för samma dag skickas bara ett enda meddelande för den dagen.
 
-  - När flera efterlevnadsprinciper omfattar samma villkor för efterlevnad och inkluderar åtgärden för push-meddelande med samma schema, skickas flera meddelanden till samma enhet samma dag.
+  - När flera efterlevnadspolicyer omfattar samma efterlevnadsvillkor och inkluderar åtgärden för push-meddelande med samma schema skickas flera meddelanden till samma enhet samma dag i Intune.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -126,22 +126,22 @@ Se följande plattformsspecifika vägledning när du ska skapa en efterlevnadspr
 Om du vill skicka ett e-postmeddelande till användarna skapar du en mall för aviseringsmeddelanden. När en enhet är inkompatibel visas informationen som du anger i mallen i e-postmeddelandet som skickas till användarna.
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-2. Välj **Enheter** > **Efterlevnadsprinciper** > **Meddelanden** > **Skapa meddelande**.
+2. Välj **Slutpunktsskydd** > **Enhetsefterlevnad** > **Meddelanden** > **Skapa meddelande**.
 3. Ange följande information under *Grundläggande*:
 
    - **Namn**
    - **Ämne**
    - **Meddelande**
 
-4. Under *Grundläggande* konfigurerar du även följande alternativ för meddelandet, som alla är *aktiverade* som standard:
+4. Under *Grundläggande* konfigurerar du följande alternativ för meddelandet:
 
-   - **E-postsidhuvud – Infoga företagets logotyp**
-   - **E-postsidfot – Infoga företagets namn**
-   - **E-postsidfot – Infoga kontaktinformation**
+   - **E-postsidhuvud – infoga företagets logotyp** (standard = *Aktivera*) – logotypen du laddar upp som en del av varumärkesanpassningen i Företagsportal används i e-postmallar. Läs mer om varumärkesanpassning av företagsportalen i [Varumärkesanpassning för företagsidentitet](../apps/company-portal-app.md#customizing-the-user-experience).
+   - **E-postsidfot – infoga företagets namn** (standard = *Aktivera*)
+   - **E-postsidfot – Infoga kontaktinformation** (standard = *Aktivera*)
+   - **Länk till företagsportalens webbplats** (standard = *Inaktivera*) – om du anger *Aktivera* innehåller e-postmeddelandet en länk till företagsportalens webbplats.
 
-   Den logotyp som du laddar upp som en del av varumärkesanpassningen av företagsportalen används för e-postmallar. Läs mer om varumärkesanpassning av företagsportalen i [Varumärkesanpassning för företagsidentitet](../apps/company-portal-app.md#customizing-the-user-experience).
-
-   ![Exempel på ett kompatibelt aviseringsmeddelande i Intune](./media/actions-for-noncompliance/actionsfornoncompliance-1.PNG)
+   > [!div class="mx-imgBorder"]
+   > ![Exempel på ett meddelande om bristande regelefterlevnad i Intune](./media/actions-for-noncompliance/actionsfornoncompliance-1.PNG)
 
    Fortsätt genom att välja **Nästa**.
 
@@ -185,7 +185,7 @@ Du kan lägga till valfria åtgärder när du skapar en princip för efterlevnad
 
    I efterlevnadsprincipen kanske du även vill meddela användaren. Du kan lägga till åtgärden **Skicka e-post till slutanvändare**. I åtgärden **Skicka e-post** anger du två dagar för **Schema**. Om enheten eller slutanvändaren fortfarande bedöms som icke-kompatibel dag två skickas e-postmeddelandet dag två. Om du vill skicka e-post till användaren på dag fem i lägger du till en annan åtgärd och anger fem dagar för **Schema**.
 
-  Mer information om efterlevnad och de inbyggda åtgärderna finns i [översikt över efterlevnad](device-compliance-get-started.md).
+   Mer information om efterlevnad och de inbyggda åtgärderna finns i [översikt över efterlevnad](device-compliance-get-started.md).
 
 6. När du är klar väljer du **Lägg till** > **OK** för att spara ändringarna.
 

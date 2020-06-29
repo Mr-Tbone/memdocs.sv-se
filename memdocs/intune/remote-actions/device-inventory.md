@@ -5,7 +5,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 03/18/2020
+ms.date: 06/12/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: remote-actions
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c8b8599c7b207900d6e4a14b7580a324a238dfe
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 27d31e64e99e8dc796b0436052f7220260ab1029
+ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989902"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84795677"
 ---
 # <a name="see-device-details-in-intune"></a>Visa enhetsinformation i Intune
 
@@ -48,7 +48,7 @@ Den här artikeln beskriver hur du visar alla dina enheter och deras egenskaper 
       - [Autopilot-återställning](/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset) (endast Windows)
       - [Snabbsökning](../configuration/device-restrictions-windows-10.md) (endast Windows 10)
       - [Fullständig genomsökning](../configuration/device-restrictions-windows-10.md) (endast Windows 10)
-      - Uppdatera Windows Defender-säkerhetsinformation
+      - [Uppdatera Windows Defender-säkerhetsinformation](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-antivirus/manage-protection-updates-microsoft-defender-antivirus)
       - [BitLocker-nyckelrotering](https://docs.microsoft.com/mem/intune/protect/encrypt-devices#to-rotate-the-bitlocker-recovery-key)
       - [Byta namn på en enhet](device-rename.md)
       - [Ny fjärrhjälpsession](https://docs.microsoft.com/mem/intune/remote-actions/teamviewer-support)

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/07/2020
+ms.date: 06/11/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3437a1b9fe3c663844d366bbfda6c0bcb463c3ab
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 5bf114edf17fa1f8959b5f26b83c771b711b83f5
+ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83983802"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85093171"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler i Microsoft Intune
 
@@ -41,7 +41,7 @@ I den här artikeln ges en översikt över de olika profiltyper som du kan skapa
 
 ## <a name="administrative-templates"></a>Administrativa mallar
 
-[Administrativa mallar](administrative-templates-windows.md) innehåller hundratals inställningar som du kan konfigurera för Internet Explorer, OneDrive, fjärrskrivbord, Word, Excel och andra Office-program.
+[Administrativa mallar](administrative-templates-windows.md) innehåller hundratals inställningar som du kan konfigurera för Internet Explorer, Microsoft Edge, OneDrive, fjärrskrivbord, Word, Excel och andra Office-program.
 
 Dessa mallar ger administratörer en förenklad vy över inställningar som liknar grupprinciper, men de är helt molnbaserade.
 
@@ -132,7 +132,7 @@ Den här funktionen stöder:
 
 - Windows 10 och senare
 
-## <a name="edition-upgrade"></a>Versionsuppgradering
+## <a name="edition-upgrade-and-mode-switch"></a>Versionsuppgradering och lägesväxling
 
 Med [Windows 10-versionsuppgraderingar](edition-upgrade-configure-windows-10.md) kan du automatiskt uppgradera enheter som kör vissa versioner av Windows 10 till en senare version.
 
@@ -202,7 +202,15 @@ Den här funktionen stöder:
 
 - Windows 10 och senare
 
-Inställningar för helskärmsläge finns också som enhetsbegränsningar för [Android](device-restrictions-android.md#kiosk), [Android Enterprise](device-restrictions-android-for-work.md#dedicated-devices) och [iOS/iPadOS](device-restrictions-ios.md#kiosk).
+Inställningar för helskärmsläge finns också som enhetsbegränsningar för [Android](device-restrictions-android.md#kiosk), [Android Enterprise](device-restrictions-android-for-work.md#device-experience) och [iOS/iPadOS](device-restrictions-ios.md#kiosk).
+
+## <a name="mx-profile-zebra"></a>MX-profil (Zebra)
+
+[Mobilitetstillägg (MX)](android-zebra-mx-overview.md) utökar de inbyggda Intune-inställningarna för att anpassa eller lägga till fler inställningar specifika för Zebra-enheter. Zebra-enheter används ofta på fabriksgolv och i detaljhandeln. Om du har hundratals eller tusentals Zebra-enheter kan du använda Intune till att konfigurera och hantera enheterna.
+
+Den här funktionen stöder:
+
+- Android-enhetsadministratör
 
 ## <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
 
@@ -214,7 +222,7 @@ Den här funktionen stöder:
 
 ## <a name="oemconfig"></a>OEMConfig
 
-[OEMConfig](android-oem-configuration-overview.md) är en standard som gör det möjligt för OEM-tillverkare (originalutrustningstillverkare) och EMM:er (Enterprise Mobility Management) att bygga och stödja OEM-specifika funktioner på ett standardiserat sätt på Android Enterprise-enheter. Med OEMConfig skapar en OEM ett schema som definierar OEM-/regionsspecifika hanteringsfunktioner och bäddar in dem i en app som laddats upp till Google Play. Intune läser in schemat från appen så att Intune-administratörer kan konfigurera inställningarna i schemat.
+[OEMConfig](android-oem-configuration-overview.md) är en standard som gör att OEM-tillverkare (originalutrustningstillverkare) och EMM:er (Enterprise Mobility Management) kan skapa och stödja OEM-specifika funktioner på ett standardiserat sätt på Android Enterprise-enheter. Med OEMConfig skapar en OEM ett schema som definierar OEM-/regionsspecifika hanteringsfunktioner och bäddar in dem i en app som laddats upp till Google Play. Intune läser in schemat från appen och gör att Intune-administratörer kan konfigurera inställningarna i schemat.
 
 Den här funktionen stöder:
 
@@ -222,7 +230,7 @@ Den här funktionen stöder:
 
 ## <a name="powershell-scripts"></a>PowerShell-skript
 
-[PowerShell-skript på Windows 10-enheter](../apps/intune-management-extension.md) använder Intune Management-tillägget för att ladda upp dina PowerShell-skript i Intune och sedan köra dessa skript på dina enheter. Se även vad som krävs för att använda tillägget, hur du lägger till dem i Intune och annan viktig information.
+[PowerShell-skript](../apps/intune-management-extension.md) använder Intune Management-tillägget till att ladda upp dina PowerShell-skript i Intune och sedan köra skripten på dina enheter. Se även vad som krävs för att använda tillägget, hur du lägger till dem i Intune och annan viktig information.
 
 Den här funktionen stöder:
 
@@ -278,7 +286,7 @@ Den här funktionen stöder:
 
 Med [Wi-Fi-inställningar](wi-fi-settings-configure.md) kan du tilldela trådlösa nätverksinställningar till användare och enheter. När du tilldelar en Wi-Fi-profil får användarna åtkomst till ditt företags trådlösa nätverk utan att de behöver göra några inställningar själva. 
 
-Den här funktionen stöder: 
+Den här funktionen stöder:
 
 - Android-enhetsadministratör
 - Android enterprise
@@ -286,6 +294,16 @@ Den här funktionen stöder:
 - macOS
 - Windows 8.1 (endast import)
 - Windows 10 och senare
+
+## <a name="wired-networks"></a>Kabelanslutna nätverk
+
+Med [kabelanslutna nätverk](wired-networks-configure.md) kan du skapa och hantera trådbundna anslutningar i 802.1 x för stationära datorer med macOS. I din profil väljer du nätverksgränssnitt, godkända EAP-typer och anger inställningar för betrodda servrar, inklusive PKCS- och SCEP-certifikat.
+
+När du tilldelar profilen får macOS-användare åtkomst till ditt företags kabelanslutna nätverk utan att de behöver göra några inställningar själva.
+
+Den här funktionen stöder:
+
+- macOS
 
 ## <a name="zebra-mobility-extensions-mx"></a>Zebra Mobility Extensions (MX)
 
