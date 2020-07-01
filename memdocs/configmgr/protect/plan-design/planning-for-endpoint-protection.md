@@ -9,12 +9,12 @@ ms.assetid: 7610bbd3-a67f-4a09-8115-e35d40d43b42
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 720b5060c913ff3157624c4b6060802af396d221
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2c733ef03482ddfc1f3e6502d7f5fe8ae0d20b76
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722174"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590515"
 ---
 # <a name="planning-for-endpoint-protection-in-configuration-manager"></a>Planera Endpoint Protection i Configuration Manager
 
@@ -81,7 +81,7 @@ Med Endpoint Protection i Configuration Manager kan du skapa principer för prog
 
 ## <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-Från och med version 1606 av Configuration Manager (aktuell gren) kan Endpoint Protection hjälpa till att hantera och övervaka Microsoft Defender Advanced Threat Protection (ATP), tidigare kallat Windows Defender ATP. Microsoft Defender ATP är en tjänst som hjälper företag att upptäcka, undersöka och svara på avancerade attacker i sina nätverk. Se [Microsoft Defender Avancerat skydd](../deploy-use/windows-defender-advanced-threat-protection.md).
+Från och med version 1606 av Configuration Manager (aktuell gren) kan Endpoint Protection hjälpa till att hantera och övervaka Microsoft Defender Advanced Threat Protection (ATP), tidigare kallat Windows Defender ATP. Microsoft Defender ATP är en tjänst som hjälper företag att upptäcka, undersöka och svara på avancerade attacker i sina nätverk. Se [Microsoft Defender Avancerat skydd](../deploy-use/defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Endpoint Protection-arbetsflöde  
  Använd följande diagram för att hjälpa dig att förstå arbets flödet för att implementera Endpoint Protection i din Configuration Manager-hierarki.  

@@ -10,12 +10,12 @@ ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5bdfd566682156e39e1dbed7c55af85b20a78671
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 0a7ee54e3bfa4a4231d0d57b48caa49cf9869b76
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906686"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85591110"
 ---
 # <a name="endpoint-protection"></a>Slutpunktsskydd
 
@@ -80,7 +80,7 @@ Från och med Windows 10-och Windows Server 2016-datorer är Windows Defender re
 
 ## <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
-Endpoint Protection hanterar och övervakar Microsoft Defender Avancerat skydd (ATP), tidigare kallat Windows Defender ATP. Microsoft Defender ATP-tjänsten hjälper företag att upptäcka, undersöka och svara på avancerade attacker i företags nätverket. Mer information finns i [Microsoft Defender Avancerat skydd](windows-defender-advanced-threat-protection.md).
+Endpoint Protection hanterar och övervakar Microsoft Defender Avancerat skydd (ATP), tidigare kallat Windows Defender ATP. Microsoft Defender ATP-tjänsten hjälper företag att upptäcka, undersöka och svara på avancerade attacker i företags nätverket. Mer information finns i [Microsoft Defender Avancerat skydd](defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Endpoint Protection-arbetsflöde  
  Använd följande diagram för att hjälpa dig att förstå arbets flödet för att implementera Endpoint Protection i din Configuration Manager-hierarki.  

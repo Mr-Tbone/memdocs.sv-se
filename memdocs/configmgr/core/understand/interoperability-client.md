@@ -10,12 +10,12 @@ ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 61296321251be45cfa0449a3e4f21ba79a024753
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 78e89307e66107b259d818a84fa4dbca878a843c
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722783"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590906"
 ---
 # <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Använd Configuration Manager klient program vara för utökad interoperabilitet med framtida versioner av en Current Branch webbplats
 
@@ -48,8 +48,10 @@ Planera att uppdatera den utöknings bara klienten på enheter som du hanterar m
 
 1. Hämta en version av EIC som stöds från `\SMSSETUP\Client` mappen för installations mediet för Configuration Manager Update. Se till att du kopierar hela innehållet i mappen.  
 
-    > [!TIP]  
-    > Om du vill hitta Configuration Manager media i [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC) går du till fliken **nedladdningar och nycklar** , söker `System Center Config`efter och väljer sedan **System Center config hanterare (aktuell gren)**.
+<!--
+    > [!TIP]
+    > To find Configuration Manager media in the [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC), go to the **Downloads and Keys** tab, and search for **Microsoft Endpoint Configmgr (current branch)**.
+-->
 
 1. Installera EIC manuellt på dessa enheter. Mer information finns i [Installera klienten manuellt](../clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual).  
 

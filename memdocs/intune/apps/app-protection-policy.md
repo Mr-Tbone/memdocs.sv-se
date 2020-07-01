@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, get-started, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68e337f6315fc6d198e27c494b7689bb1cb9bc97
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 28401c314d70f1d810fe12e815d8558afc8aab89
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989627"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502603"
 ---
 # <a name="app-protection-policies-overview"></a>Översikt över principer för appskydd
 
@@ -312,7 +312,7 @@ Om användaren använder appen när selektiv rensning initieras söker [Intune S
 Intunes appskydd är beroende av att användaridentiteten är stämmer överens mellan programmet och [Intune SDK:n](../developer/app-sdk.md). Det enda sättet att garantera detta är via modern autentisering. Det finns scenarier där appar kan fungera med en lokal konfiguration, men de är varken konsekventa eller garanterade.
 
 **Ett säkert sätt att öppna webblänkar från hanterade appar**<br>
-IT-administratören kan distribuera och ange appskyddsprincip för [Microsoft Edge](app-configuration-managed-browser.md), en webbläsare som enkelt kan hanteras med Intune. IT-administratören kan kräva att alla webblänkar i Intune-hanterade appar ska öppnas med Managed Browser-appen.
+IT-administratören kan distribuera och ange appskyddsprincip för [Microsoft Edge](manage-microsoft-edge.md), en webbläsare som enkelt kan hanteras med Intune. IT-administratören kan kräva att alla webblänkar i Intune-hanterade appar ska öppnas med Managed Browser-appen.
 
 ## <a name="app-protection-experience-for-ios-devices"></a>Appskyddsupplevelse för iOS-enheter
 

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02e07ec75b7c0d07a81a9c6f555cf119310a9a9f
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 62348a4e551112a93f960388d6e21b398c447dfc
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093689"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502382"
 ---
 # <a name="android-and-samsung-knox-standard-device-restriction-settings-lists-in-intune"></a>Inställningar av begränsningar för Android- och Samsung Knox Standard-enheter i Intune
 
@@ -178,7 +178,7 @@ Lägg till appar för varje inställning:
 
 Inställningarna för helskärmsläget gäller endast för Samsung Knox Standard-enheter och enbart för program som du hanterar med Intune.
 
-- Lägg till appar som du vill ska köras när enheten är i helskärmsläge. I helskärmsläge körs bara appar som du lägger till. Appar som inte har lagts till körs inte. Förinstallerade webbläsare körs inte som en app när enheten är i helskärmsläge. Om en webbläsare krävs ska du fundera på att använda den [hanterade webbläsaren](../apps/app-configuration-managed-browser.md).
+- Lägg till appar som du vill ska köras när enheten är i helskärmsläge. I helskärmsläge körs bara appar som du lägger till. Appar som inte har lagts till körs inte. Förinstallerade webbläsare körs inte som en app när enheten är i helskärmsläge. Om en webbläsare krävs ska du fundera på att använda den [hanterade webbläsaren](../apps/manage-microsoft-edge.md).
 
   Alternativ för din app:
 

@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1881e43c1725d92a81d794fa240e6394eff1cbd4
-ms.sourcegitcommit: 397ec824f1368dcf06c3870c89f52347852062bd
+ms.openlocfilehash: 2cf8e493ed1318fbf1e1fee6ca8a50001a586cd6
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85264081"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502399"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>Nyheter i Microsoft Intune – föregående månader
 
@@ -1674,7 +1674,7 @@ Använd den nya [krypteringsrapporten (förhandsversion)](../protect/encryption-
 Du kan nu använda Intune för att [visa information](../protect/encryption-monitor.md) om BitLocker-nyckel-ID och BitLocker-återställningsnycklar från Azure Active Directory.
 
 #### <a name="microsoft-edge-support-for-intune-scenarios-on-ios-and-android-devices---3411007---"></a>Microsoft Edge-stöd för Intune-scenarier i iOS-enheter och Android-enheter<!-- 3411007 -->
-Microsoft Edge kommer att stödja samma hanteringsscenarier som Intune Managed Browser samt förbättringar av användarupplevelsen. Microsoft Edge Enterprise-funktioner som aktiveras av Intune-principer inbegriper dubbel identitet, integrering med appskyddsprincip, integrering av Azure-programproxy samt hanterade favoriter och genvägar för startsidan. Mer information finns i [Microsoft Edge-support](../apps/app-configuration-managed-browser.md#microsoft-edge-support).
+Microsoft Edge kommer att stödja samma hanteringsscenarier som Intune Managed Browser samt förbättringar av användarupplevelsen. Microsoft Edge Enterprise-funktioner som aktiveras av Intune-principer inbegriper dubbel identitet, integrering med appskyddsprincip, integrering av Azure-programproxy samt hanterade favoriter och genvägar för startsidan. Mer information finns i [Microsoft Edge-support](../apps/manage-microsoft-edge.md).
 
 #### <a name="exchange-onlineintune-connector-deprecate-support-for-eas-only-devices--3105122----"></a>Inaktuellt stöd för enheter med endast EAS för Exchange Online/Intune-anslutningsapp<!--3105122  -->
 Intune-konsolen stöder inte längre visning och hantering av enheter med endast EAS som är anslutna till Exchange Online med Intune-anslutningsappen. I stället har du följande alternativ:
@@ -1721,7 +1721,7 @@ Du kan lägga till en omfångstagg till en iOS-appetableringsprofil så att enda
 Du kan lägga till en omfångstagg till en appkonfigurationsprincip så att endast personer med roller som också tilldelats den omfångstaggen har åtkomst till appkonfigurationsprincipen. Appkonfigurationsprincipen kan endast riktas till eller associeras med appar som har tilldelats samma omfångstagg. Mer information finns i [Använda RBAC och omfångstaggar](scope-tags.md).
 
 #### <a name="microsoft-edge-support-for-intune-scenarios-on-ios-and-android-devices---3411007---"></a>Microsoft Edge-stöd för Intune-scenarier i iOS-enheter och Android-enheter<!-- 3411007 -->
-Microsoft Edge kommer att stödja samma hanteringsscenarier som Intune Managed Browser samt förbättringar av användarupplevelsen. Microsoft Edge Enterprise-funktioner som aktiveras av Intune-principer inbegriper dubbel identitet, integrering med appskyddsprincip, integrering av Azure-programproxy samt hanterade favoriter och genvägar för startsidan. Mer information finns i [Microsoft Edge-support](../apps/app-configuration-managed-browser.md#microsoft-edge-support).
+Microsoft Edge kommer att stödja samma hanteringsscenarier som Intune Managed Browser samt förbättringar av användarupplevelsen. Microsoft Edge Enterprise-funktioner som aktiveras av Intune-principer inbegriper dubbel identitet, integrering med appskyddsprincip, integrering av Azure-programproxy samt hanterade favoriter och genvägar för startsidan. Mer information finns i [Microsoft Edge-support](../apps/manage-microsoft-edge.md).
 
 
 
@@ -3927,7 +3927,7 @@ När profilen har pushats till enheten beror nästa steg på profilkonfiguration
 #### <a name="access-to-managed-app-logs-for-ios---1469920---"></a>Åtkomst till loggar för hanterade appar för iOS<!-- 1469920 -->
 Slutanvändare med Managed Browser installerad kan nu se hanteringsstatus för alla appar som har publicerats av Microsoft och kan skicka loggar för felsökning av hanterade iOS-appar.
 
-Om du vill lära dig att aktivera felsökningsläget i Managed Browser på en iOS-enhet kan du läsa [Komma åt loggar för hanterade appar med Managed Browser i iOS](../apps/app-configuration-managed-browser.md).
+Om du vill lära dig att aktivera felsökningsläget i Managed Browser på en iOS-enhet kan du läsa [Komma åt loggar för hanterade appar med Managed Browser i iOS](../apps/manage-microsoft-edge.md).
 
 #### <a name="improvements-to-device-setup-workflow-in-the-company-portal-for-ios-in-version-290---1417174---"></a>Förbättringar av arbetsflödet för enhetskonfiguration i företagsportalen för iOS i version 2.9.0<!-- 1417174 -->
 
@@ -4347,11 +4347,11 @@ Offline-program som du köpt från Microsoft Store för företag kommer nu att s
 Microsoft Teams-appen för iOS och Android finns nu på listan över godkända appar för appbaserade villkorliga åtkomstprinciper för Exchange och SharePoint Online. Appen kan konfigureras via bladet för Intune-appskydd i Azure-portalen för alla klienter som för tillfället använder appbaserad villkorlig åtkomst.
 
 #### <a name="managed-browser-and-app-proxy-integration---1287310---"></a>Integrering av Managed Browser och programproxy<!-- 1287310 -->
-Intune Managed Browser kan nu integreras med programproxy för Azure AD, så att användarna kan komma åt interna webbplatser även när de arbetar på distans. Användarna anger webbadressen i webbläsaren precis som vanligt. Managed Browser skickar begäran via programproxyns webbgateway. Mer information finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper](../apps/app-configuration-managed-browser.md).
+Intune Managed Browser kan nu integreras med programproxy för Azure AD, så att användarna kan komma åt interna webbplatser även när de arbetar på distans. Användarna anger webbadressen i webbläsaren precis som vanligt. Managed Browser skickar begäran via programproxyns webbgateway. Mer information finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper](../apps/manage-microsoft-edge.md).
 
 #### <a name="new-app-configuration-settings-for-the-intune-managed-browser---682951---"></a>Nya appkonfigurationsinställningar för Intune Managed Browser<!-- 682951 -->
 I den här versionen har vi lagt till fler konfigurationer för Intune Managed Browser-appen för iOS och Android. Du kan nu använda en appkonfigurationsprincip för att konfigurera standardstartsidan och bokmärken i webbläsaren.
-Mer information finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper](../apps/app-configuration-managed-browser.md)
+Mer information finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper](../apps/manage-microsoft-edge.md)
 
 #### <a name="bitlocker-settings-for-windows-10----951707---"></a>BitLocker-inställningar för Windows 10 <!-- 951707 -->
 Du kan nu konfigurera BitLocker-inställningar för Windows 10-enheter med hjälp av en ny enhetsprofil i Intune. Du kan t.ex. kräva att enheter krypteras och även ange ytterligare inställningar som ska användas när BitLocker är aktiverat.
@@ -4438,10 +4438,10 @@ Mer information finns i [Principinställningar för iOS-appskydd](../apps/app-pr
 Vissa Android-appar från webbutiken stöder hanterade konfigurationsalternativ som gör att en IT-administratör kan kontrollera hur appen körs i en arbetsprofil. Med Intune kan du nu se de konfigurationer som stöds av ett program och konfigurera dem från Azure-portalen med en konfigurationsdesigner eller en JSON-redigerare. Mer information finns i [Använda appkonfigurationer för Android for Work](../apps/app-configuration-policies-use-android.md).
 
 #### <a name="new-app-configuration-capability-for-mam-without-enrollment---677969---"></a>Ny konfigurationsfunktion för appar för MAM utan registrering<!-- 677969 -->
-Du kan nu skapa appkonfigurationsprinciper via MAM utan registrering. Den här funktionen motsvarar appkonfigurationsprinciper som är tillgängliga i appkonfigurationen för mobil enhetshantering (MDM). Ett exempel på konfiguration av en mobilapp med hjälp av MAM utan registrering finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper med Microsoft Intune](../apps/app-configuration-managed-browser.md).
+Du kan nu skapa appkonfigurationsprinciper via MAM utan registrering. Den här funktionen motsvarar appkonfigurationsprinciper som är tillgängliga i appkonfigurationen för mobil enhetshantering (MDM). Ett exempel på konfiguration av en mobilapp med hjälp av MAM utan registrering finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper med Microsoft Intune](../apps/manage-microsoft-edge.md).
 
 #### <a name="configure-allowed-and-blocked-url-lists-for-the-managed-browser---682960---"></a>Konfigurera listor över tillåtna och blockerade URL:er för Managed Browser<!-- 682960 -->
-Du kan nu konfigurera en lista över tillåtna och blockerade domäner och webbadresser för Intune Managed Browser med konfigurationsinställningarna i Azure-portalen. Detta kan konfigureras oavsett om den används på en hanterad eller ohanterad enhet. Mer information finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper med Microsoft Intune](../apps/app-configuration-managed-browser.md).
+Du kan nu konfigurera en lista över tillåtna och blockerade domäner och webbadresser för Intune Managed Browser med konfigurationsinställningarna i Azure-portalen. Detta kan konfigureras oavsett om den används på en hanterad eller ohanterad enhet. Mer information finns i [Hantera Internetåtkomst med hanterade webbläsarprinciper med Microsoft Intune](../apps/manage-microsoft-edge.md).
 
 #### <a name="app-protection-policy-helpdesk-view---1069473---"></a>Supportvy för appskyddsprinciper<!-- 1069473 -->
 Användare från IT-supportavdelningen kan nu kontrollera licensstatusen för användaren och status för principer för appskydd som är tilldelade till användare i felsökningsbladet. Se [felsökning](./help-desk-operators.md) för mer information.

@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: b988e4ddeb306c7da290c87e8a32fa0571627257
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: a8eeb8263e337fa7427818c05f183fdea3c9dbea
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431676"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353640"
 ---
 # <a name="disk-encryption-policy-for-endpoint-security-in-intune"></a>Principer för diskkryptering i Intunes slutpunktssäkerhet
 
@@ -64,5 +64,5 @@ När du har distribuerat principen för att kryptera en enhetsdisk kan du läsa 
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Så här skapar du en FileVault-profil](../protect/encrypt-devices-filevault.md#create-an-endpoint-security-policy-for-filevault)
+- [Så här skapar du en FileVault-profil](../protect/encrypt-devices-filevault.md#create-endpoint-security-policy-for-filevault)
 - [Så här skapar du en BitLocker-profil](../protect/encrypt-devices.md#create-an-endpoint-security-policy-for-bitlocker)

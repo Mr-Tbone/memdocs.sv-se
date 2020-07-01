@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58c78b43fc90aba68fa20d20153b33e7879636e6
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: c0a732db0adf9d08bf8a453a365002d8e1f8b22d
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166084"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502722"
 ---
 # <a name="microsoft-intune-app-sdk-overview"></a>Översikt över Microsoft Intune App SDK
 Intune App SDK, som finns för både iOS och Android, gör det möjligt för din app att stödja Intune-[appskyddsprinciper](../apps/app-protection-policy.md). När appskyddsprinciper tillämpas på din app kan den hanteras av Intune och identifieras av Intune som en hanterad app. SDK:n arbetar för att minimera mängden kodändringar i programmet som utvecklare behöver göra. Som du märker kan du aktivera de flesta SDK-funktioner utan att ändra appens beteende. För att få en ännu bättre upplevelse för slutanvändare och IT-administratörer kan du använda SDK:ns API:er för att anpassa din apps beteende till att stödja funktioner som kräver medverkan av din app.
@@ -47,7 +47,7 @@ IT-administratörer kan tillämpa en princip som garanterar att data som sparas 
 IT-administratörer kan rensa företagsdata från en Intune-hanterad app via en fjärranslutning. Den här funktionen är identitetsbaserad och tar endast bort filer associerade med slutanvändarens företagsidentitet. För att göra det kräver funktionen medverkan av appen. Appen kan ange identiteten som rensningen ska göras för baserat på användarinställningar. Om dessa användarinställningar inte anges från appen är standardbeteendet att rensa programkatalogen och att meddela slutanvändaren att åtkomsten har återkallats.
 
 ### <a name="enforce-the-use-of-a-managed-browser"></a>Framtvinga användningen av en hanterad webbläsare
-IT-administratörer kan tvinga webblänkar i appen att öppnas i [Intune-appen Managed Browser](../apps/app-configuration-managed-browser.md). Denna funktion säkerställer att länkar som visas i en företagsmiljö hålls inom domänen för Intune-hanterade appar.
+IT-administratörer kan tvinga webblänkar i appen att öppnas i [Intune-appen Managed Browser](../apps/manage-microsoft-edge.md). Denna funktion säkerställer att länkar som visas i en företagsmiljö hålls inom domänen för Intune-hanterade appar.
 
 ### <a name="enforce-a-pin-policy"></a>Tillämpa en PIN-princip
 IT-administratörer kan kräva att slutanvändaren anger en PIN-kod innan de ansluter till företagets data i appen. Detta garanterar att användaren som använder appen är samma användare som ursprungligen loggade in med sitt registrerade arbets- eller skolkonto. När slutanvändarna konfigurerar sina PIN-koder använder Intune App SDK Azure Active Directory för att kontrollera autentiseringsuppgifterna för slutanvändare mot det registrerade Intune-kontot.

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4298a6a66d60d79d05f8b5cdc9ff8caa0e7f4426
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 070c616ed8411bcd90b2d3edb12b04edd57241e1
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82074035"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590481"
 ---
 # <a name="what39s-new-in-version-1606-of-configuration-manager"></a>Vad&#39;s nya i version 1606 av Configuration Manager
 
@@ -198,7 +198,7 @@ Configuration Manager kan hjälpa dig att hantera aktiveringslås på två sätt
 
 Endpoint Protection kan hjälpa dig att hantera och övervaka Microsoft Defender Advanced Threat Protection (ATP). Microsoft Defender ATP är en ny tjänst som hjälper företag att upptäcka, undersöka och svara på avancerade attacker i sina nätverk. Configuration Manager principer kan hjälpa dig att publicera och övervaka hanterade datorer som kör Windows 10, version 1607 (build 14328) eller senare.
 
-Mer information finns i [Microsoft Defender Avancerat skydd](../../../protect/deploy-use/windows-defender-advanced-threat-protection.md).
+Mer information finns i [Microsoft Defender Avancerat skydd](../../../protect/deploy-use/defender-advanced-threat-protection.md).
 
 ### <a name="device-categories"></a>Enhetskategorier
 Du kan skapa enhets kategorier, som kan användas för att placera enheter i enhets samlingar automatiskt när du använder Configuration Manager med Microsoft Intune. Användarna måste sedan välja en enhets kategori när de registrerar en enhet i Intune. Dessutom kan du ändra kategori för en enhet från Configuration Manager-konsolen.

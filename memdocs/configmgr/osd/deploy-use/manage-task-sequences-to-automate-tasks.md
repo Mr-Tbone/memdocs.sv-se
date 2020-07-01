@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b38b0c8f28645fa0aae66058b0c93bd8beffc470
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: f79829b7cd6ec70764a20fb05f4438176c41b470
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078489"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85591042"
 ---
 # <a name="manage-task-sequences-to-automate-tasks"></a>Hantera aktivitetssekvenser för att automatisera uppgifter
 
@@ -190,7 +190,8 @@ När aktivitetssekvensen startar, i de flesta fall, registreras det för närvar
 
 <!-- 5554928 -->
 
-Du måste skapa en ny aktivitetssekvensdistribution för att aktivera eller inaktivera den här inställningen för hög prestanda. Den nya inställningen visas på befintliga distributioner, men den gäller inte.<!-- SCCMDocs#2107 -->
+När du ändrar inställningar i egenskaper för aktivitetssekvens uppdateras vanligt vis alla befintliga distributioner. När du ändrar den här prestanda inställningen i egenskaper för aktivitetssekvens påverkas inte eventuella befintliga distributioner av aktivitetssekvensen. Om du vill aktivera eller inaktivera den här inställningen för hög prestanda skapar du en ny aktivitetssekvensdistribution.
+<!-- MEMDocs#437, SCCMDocs#2107 -->
 
 ## <a name="distribute-referenced-content"></a><a name="BKMK_DistributeTS"></a>Distribuera refererat innehåll  
 

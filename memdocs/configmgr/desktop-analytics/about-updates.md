@@ -11,17 +11,21 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 1c79db413f8e37424b84d98d51fb584d168e3819
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 96a014f4919480854b57bae82e982ce783f5f59b
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268937"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590974"
 ---
 # <a name="updates-in-desktop-analytics"></a>Uppdateringar i Skriv bords analys
 
 Visa status för säkerhets-och funktions uppdateringar i Skriv bords analys portalen. Välj de här noderna i övervaknings gruppen i huvud menyn för Skriv bords analys. Dessa noder ger dig insikter om status för dessa uppdateringar i din miljö.
 
+<!--7362999-->
+
+> [!IMPORTANT]
+> Skriv bords analys visar status för säkerhets-och funktions uppdatering för enheter med det kommersiella ID som är associerat med din arbets yta för Station ära analyser. Detta beror på om du har registrerat enheterna med Configuration Manager. Det totala antalet enheter i dessa paneler kanske inte matchar antalet registrerade enheter i [**anslutna tjänster**](monitor-connection-health.md#commercial-id-configuration).
 
 ## <a name="security-updates"></a>Säkerhetsuppdateringar
 

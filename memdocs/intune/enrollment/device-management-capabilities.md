@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de83a021343b733816330bc9be94c57a57afd9f1
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 43d412fda772fd36710895496087e97d782b8dba
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989835"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502637"
 ---
 # <a name="enrolled-device-management-capabilities-of-microsoft-intune"></a>Funktioner för hantering av registrerade enheter i Microsoft Intune
 
@@ -55,7 +55,7 @@ Användare får tillgång till företagsportalen där de kan installera appar, r
 |Hantering av mobila program|Konfigurerar begränsningar för appar med hjälp av hantering av mobilprogram för alla enheter (både enheter som hanteras med Intune och enheter som inte hanteras med Intune). Du kan öka säkerheten för företagets data genom att begränsa åtgärder, som exempelvis kopiera och klistra in, extern säkerhetskopiering av data och överföring av data mellan appar.|[Konfigurera och distribuera hanteringsprinciper för mobilprogram i konsolen för Microsoft Intune](../developer/app-wrapper-prepare-android.md)|
 |Konfiguration av iOS-mobilapp|Använder konfigurationsprinciper för mobilappar som tillhandahåller de inställningar för iOS/iPadOS-appar som kan krävas när användaren kör appen. En app kan till exempel kräva att användaren anger ett portnummer eller inloggningsinformation. Du kan effektivisera appkonfigurationen och minska antalet supportsamtal.|[Konfigurera iOS/iPadOS-appar med konfigurationsprinciper för mobilappar i Microsoft Intune](../apps/app-configuration-policies-use-ios.md)|
 |Etableringsprofiler för iOS/iPadOS-mobilappar|Hjälper dig att distribuera etableringsprofiler till iOS/iPadOS-appar som snart upphör att gälla. |[Använd etableringsprofilsprinciper för iOS/iPadOS om du vill förhindra att dina appar upphör att gälla](../apps/app-provisioning-profile-ios.md)|
-|Hanterad webbläsare|Konfigurerar principer för hanterade webbläsare för att styra vilka webbplatser som enhetsanvändarna ska kunna besöka. Du kan dessutom använda principer för hantering av mobila appar på den hanterade webbläsaren.|[Hantera Internetåtkomst med hanterade webbläsarprinciper med Microsoft Intune](../apps/app-configuration-managed-browser.md)|
+|Hanterad webbläsare|Konfigurerar principer för hanterade webbläsare för att styra vilka webbplatser som enhetsanvändarna ska kunna besöka. Du kan dessutom använda principer för hantering av mobila appar på den hanterade webbläsaren.|[Hantera Internetåtkomst med hanterade webbläsarprinciper med Microsoft Intune](../apps/manage-microsoft-edge.md)|
 |Windows Hello för företag|Gör att du kan integrera med Microsoft Hello för företag, som är en alternativ inloggningsmetod för Windows 10 som använder Active Directory lokalt eller Azure Active Directory för att ersätta ett lösenord, smartkort eller virtuella smartkort.|[Kontrollera Windows Hello för företag-inställningar på enheter med Microsoft Intune](../protect/windows-hello.md)|
 |Volyminköpsappar|Hjälper dig att hantera appar som du har köpt via ett volyminköpsprogram genom att importera licensinformationen från App Store, spåra hur många licenser som du har använt och hindra dig från att installera fler kopior av appen än du äger.|[Hantera volyminköpta appar med Microsoft Intune](../apps/vpp-apps.md)|
 

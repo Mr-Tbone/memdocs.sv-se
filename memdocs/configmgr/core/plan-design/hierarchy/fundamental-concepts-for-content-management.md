@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cb91e62c4ffce37068b2de5e125865e28ff8c53b
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: ffd6487297bb682ef9bda7c5bf5ee9cb3beede15
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83878960"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590464"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Grundläggande begrepp för innehålls hantering i Configuration Manager
 
@@ -110,7 +110,7 @@ Använd följande tabell för att jämföra huvud funktionerna i dessa tekniker:
 
 | Funktion  | Peer- &nbsp; cache  | Leverans &nbsp; optimering  | BranchCache  |
 |---------|---------|---------|---------|
-| Över undernät | Ja | Ja | Nej |
+| Över undernät | Ja | Ja | Inga |
 | Begränsa bandbredden | Ja (bitar) | Ja (inbyggt) | Ja (bitar) |
 | Partiellt innehåll | Ja | Ja | Ja |
 | Kontrol lera cachestorlek på disk | Ja | Ja | Ja |
@@ -147,7 +147,7 @@ Mer information finns i [stöd för Windows BranchCache](../configs/support-for-
 <!-- 1324696 -->
 Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Konfigurera leverans optimeringen så att den använder dina gränser när du delar innehåll mellan peer-datorer. Klient inställningar tillämpar gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med innehållet. Mer information finns i klient inställningar för [leverans optimering](../../clients/deploy/about-client-settings.md#delivery-optimization) .
 
-Leverans optimering är den rekommenderade tekniken för att optimera Windows 10-uppdateringen av Express-installationsfiler för Windows 10-kvalitets uppdateringar. Från och med Configuration Manager version 1910 är DeliveryInternet åtkomst till moln tjänsten för leverans optimering ett krav för att använda peer-to-peer-funktionerna. Information om vilka Internet-slutpunkter som behövs finns i [vanliga frågor och svar om leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). Optimering kan användas för alla Windows-uppdateringar. Mer information finns i [optimera leverans av Windows 10-uppdateringar](../../../sum/deploy-use/optimize-windows-10-update-delivery.md).
+Leverans optimering är den rekommenderade tekniken för att optimera Windows 10-uppdateringen av Express-installationsfiler för Windows 10-kvalitets uppdateringar. Från och med Configuration Manager version 1910 är Internet åtkomst till moln tjänsten för leverans optimering ett krav för att använda peer-to-peer-funktioner. Information om vilka Internet-slutpunkter som behövs finns i [vanliga frågor och svar om leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). Optimering kan användas för alla Windows-uppdateringar. Mer information finns i [optimera leverans av Windows 10-uppdateringar](../../../sum/deploy-use/optimize-windows-10-update-delivery.md).
 
 
 ## <a name="microsoft-connected-cache"></a>Microsoft Connected Cache

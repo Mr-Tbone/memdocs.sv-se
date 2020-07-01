@@ -10,12 +10,12 @@ ms.assetid: e3e3c97f-5945-49ab-a622-9f6fe6b9737e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b97f9bb6be00129e0b88dc3943af1de166a801d4
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 91b938b5ab64616a35773406cd18b54de80b40e7
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711289"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590401"
 ---
 # <a name="windows-autopilot-with-co-management"></a>Windows Autopilot med samhantering
 
@@ -77,9 +77,9 @@ Med autopilot kan du nu tillhandahålla en kostnads fri OS-distribution till ej 
 
 ## <a name="case-study"></a>Fallstudie
 
-Den tyska logistik-och järn vägs fraktens företags DB-Shenker använder autopilot för att öka den anställdas produktivitet och frigöra IT-team från att arbeta med dagliga support uppgifter. Shenker har flyttats bort från den traditionella avbildningen och ersatt den med etableringen via molnet. De använder nu Azure AD-Join och Intune för att snabbt få igång nya enheter. 
+Den tyska logistik-och järn vägs fraktens företags DB-Schenker använder autopilot för att öka den anställdas produktivitet och frigöra IT-team från att arbeta med dagliga support uppgifter. DB-Schenker har flyttats bort från den traditionella avbildningen och ersatt den med etableringen via molnet. De använder nu Azure AD-Join och Intune för att snabbt få igång nya enheter. 
 
-I stället för att låta deras fjärranställdas avlopps tid resa till en plats med IT-tjänster, använder Shenker nu Windows autopilot. De levererar sina anställdas maskin vara direkt från tillverkaren till sitt lokala fält kontor. Arbets tagaren ansluter den nya enheten till Internet och loggar in med sina autentiseringsuppgifter för Azure AD. Enheten ansluter sedan till de program och tjänster som Schenker IT-avdelningen tilldelar användarens enskilda profil.
+I stället för att låta deras avlopps tid för fjärranställda resa till en plats med IT-tjänster, använder DB Schenker nu Windows autopilot. De levererar sina anställdas maskin vara direkt från tillverkaren till sitt lokala fält kontor. Arbets tagaren ansluter den nya enheten till Internet och loggar in med sina autentiseringsuppgifter för Azure AD. Enheten ansluter sedan till de program och tjänster som DB-Schenker IT-avdelningen tilldelar användarens enskilda profil.
 
 Mer information finns i [globalt logistik företag som centraliserar IT, som bearbetar anställda med modern digital arbets plats](https://customers.microsoft.com/story/db-schenker-travel-transportation-windows-10).
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: apps; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8605b33d8fb83fb4537182127860f0cbb098e620
-ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
+ms.openlocfilehash: 890a42e3668b00a59f12498ab4f2ba3769225a96
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428607"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502705"
 ---
 # <a name="overview-of-the-app-lifecycle-in-microsoft-intune"></a>Översikt över applivscykeln i Microsoft Intune
 
@@ -43,7 +43,7 @@ När du har lagt till appen i Intune kan du sedan [tilldela den till användare 
 Som en del av applivscykeln släpps regelbundet nya versioner av appar. Intune tillhandahåller verktyg för att enkelt [uppdatera appar](apps-add.md) som du har distribuerat till en senare version. Dessutom kan du konfigurera ytterligare funktioner för vissa appar, till exempel:
 
 - [Konfigurationsprinciper för iOS/iPadOS-appar](app-configuration-policies-use-ios.md) tillhandahåller inställningar för kompatibla iOS/iPadOS-appar som används när appen körs. En app kan till exempel kräva specifika inställningar för anpassning eller namnet på en server som den måste ansluta till.
-- [Hanterade webbläsarprinciper](app-configuration-managed-browser.md) hjälper dig att konfigurera inställningar för den hanterade [Microsoft Edge](apps-supported-intune-apps.md#microsoft-apps) som ersätter enhetens standardwebbläsare och du kan begränsa vilka webbplatser som användarna kan besöka.
+- [Hanterade webbläsarprinciper](manage-microsoft-edge.md) hjälper dig att konfigurera inställningar för den hanterade [Microsoft Edge](apps-supported-intune-apps.md#microsoft-apps) som ersätter enhetens standardwebbläsare och du kan begränsa vilka webbplatser som användarna kan besöka.
 
 ## <a name="protect"></a>Skydda
 
