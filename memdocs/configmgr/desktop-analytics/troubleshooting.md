@@ -2,7 +2,7 @@
 title: Felsöka Desktop Analytics
 titleSuffix: Configuration Manager
 description: Teknisk information som hjälper dig att felsöka problem med Desktop Analytics.
-ms.date: 04/01/2020
+ms.date: 07/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: cfd329b7edb695c1e7316323555bfc18a2fd479e
-ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
+ms.openlocfilehash: 68506ba11e356a1e9f14d58880a80bdf3cfcb5f4
+ms.sourcegitcommit: fb03634b8494903fc6855ad7f86c8694ffada8df
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428577"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85828983"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Felsöka Desktop Analytics
 
@@ -53,7 +53,7 @@ Från och med version 2002, om Configuration Manager-platsen inte kan ansluta ti
 
 Mer information finns i [loggfiler för Desktop Analytics](../core/plan-design/hierarchy/log-files.md#desktop-analytics)
 
-Från och med Configuration Manager version 1906 använder du verktyget **DesktopAnalyticsLogsCollector. ps1** från installations katalogen Configuration Manager för att felsöka Desktop Analytics. Den kör vissa grundläggande fel söknings steg och samlar in relevanta loggar i en enda arbets katalog. Mer information finns i [loggar insamlare](log-collector.md).
+Från och med Configuration Manager version 1906 använder du **DesktopAnalyticsLogsCollector.ps1** verktyget från Configuration Manager installations katalog för att felsöka Desktop Analytics. Den kör vissa grundläggande fel söknings steg och samlar in relevanta loggar i en enda arbets katalog. Mer information finns i [loggar insamlare](log-collector.md).
 
 ### <a name="enable-verbose-logging"></a>Aktivera utförlig loggning
 
@@ -205,7 +205,7 @@ I Skriv bords analys portalen finns det två typer av data: **Administratörs da
 
 - **Diagnostikdata** avser systemmetadata som laddats upp från klient enheter till Microsoft. Dessa data ger Skriv bords analys. Den innehåller attribut som enhets inventering och status för säkerhets-och funktions uppdatering.
 
-Som standard uppdateras alla data i Skriv bords analys portalen automatiskt varje dag. Uppdateringen innehåller ändringar i diagnostikdata och eventuella ändringar som du gör i konfigurationen (administratörs data). Den bör vara synlig i din station ära Analytics-Portal med 08:00 AM UTC varje dag.
+Som standard uppdateras alla data i Skriv bords analys portalen automatiskt varje dag. Uppdateringen innehåller ändringar i diagnostikdata från två dagar sedan och eventuella ändringar som du gör i konfigurationen (administratörs data). Den bör vara synlig i din station ära Analytics-Portal med 08:00 AM UTC varje dag.
 
 När du gör ändringar i administratörs data kan du utlösa en uppdatering på begäran av administratörs data i din arbets yta. Från valfri sida i Skriv bords analys portalen öppnar du utfällda data valuta:
 
@@ -221,3 +221,39 @@ Om du inte ser ändringar som uppdaterats inom de tids ramar som anges ovan vän
 
 > [!IMPORTANT]
 > Alternativet Skriv bords analys för att **Visa senaste data** är föråldrat. Den här åtgärden kommer att tas bort i en framtida version av Desktop Analytics-tjänsten. Mer information finns i [föråldrade funktioner](../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).<!--7080949-->  
+
+## <a name="service-notifications"></a>Tjänstmeddelanden
+
+<!-- 4982509 -->
+
+Skriv bords analys portalen kan visa meddelande banderoller för administratörer. Dessa aviseringar gör att Microsoft kan kommunicera med dig om viktiga händelser och problem. Följande avsnitt innehåller information om de meddelanden som du kan se.
+
+### <a name="see-whats-new-this-month-in-desktop-analytics"></a>Se vad som är nytt den här månaden i Skriv bords analys
+
+Detta informations meddelande gör att du kan känna till ändringar i tjänsten. Mer information finns i [Nyheter i Desktop Analytics](whats-new.md) ( `https://aka.ms/danews` ).
+
+### <a name="there-are-new-prerequisites-to-continue-using-desktop-analytics-review-the-new-requirements"></a>Det finns nya krav. Om du vill fortsätta använda Skriv bords analys granskar du de nya kraven
+
+Detta informations meddelande gör att du kan tänka på ändringar i kraven. Till exempel en ny Internet-slutpunkt eller program uppdatering. Mer information finns i [krav](overview.md#prerequisites) ( `https://aka.ms/daprereqs` ).
+
+### <a name="were-investigating-an-issue-that-impacts-desktop-analytics"></a>Vi undersöker ett problem som påverkar Desktop Analytics
+
+Detta varnings meddelande anger att Microsoft är medveten om ett problem som påverkar Desktop Analytics-tjänsten. Problemet är vanligt vis när du skapar ögonblicks bilder. När du ser det här meddelandet undersöker Microsoft problemet för att fastställa omfattningen och källan till påverkan. Du behöver inte kontakta Microsoft Support. Mer information finns i [data flöde](privacy.md#data-flow).
+
+### <a name="were-investigating-an-issue-with-data-latency-if-you-enrolled-new-devices-or-changed-any-assets-in-the-last-24-hours-they-may-not-appear-right-away"></a>Vi undersöker ett problem med data svars tiden. Om du har registrerat nya enheter eller ändrat några till gångar under de senaste 24 timmarna, kanske de inte visas omedelbart
+
+Detta varnings meddelande anger att Microsoft är medveten om ett problem som påverkar Desktop Analytics-tjänsten. Microsoft övervakar kontinuerligt tjänsten för att bekräfta att alla komponenter uppdaterar ögonblicks bilder vid rätt tidpunkt. Under den här övervakningen slutfördes inte någon av dessa komponenter som förväntat. När du ser det här meddelandet undersöker Microsoft problemet. Du behöver inte kontakta Microsoft Support. Mer information finns i [data flöde](privacy.md#data-flow).
+
+Om du nyligen har [registrerat enheter](enroll-devices.md) eller ändrat [till gångar](about-assets.md)väntar du tills Microsoft löser problemet. Du behöver inte upprepa några åtgärder.
+
+### <a name="weve-resolved-a-temporary-issue-with-data-latency-daily-refresh-of-portal-data-is-delayed"></a>Vi har löst ett tillfälligt problem med data fördröjning. Daglig uppdatering av Portal data är försenad
+
+Med det här meddelandet vet du att det uppstod ett problem med data svars tiden. Tjänsten bearbetar fortfarande ögonblicks bilden och uppdatering av data är fördröjd. Mer information finns i [data svars tid](#data-latency).
+
+### <a name="weve-resolved-an-issue-with-data-latency-if-you-enrolled-new-devices-or-changed-any-assets-in-the-last-24-hours-they-may-not-appear-right-away"></a>Vi har löst ett problem med data svars tiden. Om du har registrerat nya enheter eller ändrat några till gångar under de senaste 24 timmarna, kanske de inte visas omedelbart
+
+Med det här meddelandet vet du att Microsoft har löst ett tidigare rapporterat problem med data svars tiden. Du kan se inaktuella data för morgon dagens ögonblicks bilder. Om du har [registrerat enheter](enroll-devices.md) eller gjort ändringar i enhets konfigurationen under de senaste 24 timmarna visas de inte direkt i portalen. Du kan fortsätta att använda Desktop Analytics för att kategorisera [till gångar](about-assets.md) och förbereda [distributions planer](about-deployment-plans.md). De här åtgärderna kan använda data från föregående ögonblicks bild.
+
+### <a name="weve-resolved-an-issue-with-desktop-analytics-daily-refresh-of-the-portal-data-is-on-track"></a>Vi har löst ett problem med Desktop Analytics. Daglig uppdatering av Portal data är på spåret
+
+I det här meddelandet kan du se att Microsoft har identifierat en ögonblicks bilds komponent som slutade fungera under bearbetningen. Microsoft startade om komponenten, vilket tar tid att bearbeta ögonblicks bilden. Microsoft övervakar kontinuerligt tjänsten för att bekräfta att alla komponenter uppdaterar ögonblicks bilder vid rätt tidpunkt.

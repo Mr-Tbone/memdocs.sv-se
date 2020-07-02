@@ -2,7 +2,7 @@
 title: Nyheter i Desktop Analytics
 titleSuffix: Configuration Manager
 description: En sammanfattning av de nya funktionerna i den senaste månads versionen av moln tjänsten för Skriv bords analys.
-ms.date: 06/04/2020
+ms.date: 07/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 5265ee88cbe6dc119d6d14dadd3fadad6a52b253
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: ec554d755b92d1c710def580a34fdbbddc7b4d45
+ms.sourcegitcommit: 2c5fd7c8603b88b753765f3cc298d0a0bacaf521
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84454961"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85819990"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Nyheter i Desktop Analytics
 
@@ -28,7 +28,29 @@ Lär dig vad som är nytt varje månad i Skriv bords analys.
 Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
 <!-- a locale is required for the RSS search string -->
 
-## <a name="june-2020"></a>2020 juni
+## <a name="july-2020"></a>Juli 2020
+
+### <a name="windows-10-version-2004-now-available-in-desktop-analytics"></a>Windows 10, version 2004, nu tillgängligt i Desktop Analytics
+
+<!-- 7370207 -->
+
+När du övervakar säkerhets-och funktions uppdateringar i Skriv bords analys portalen visas nu Windows 10, version 2004. När du skapar en distributions plan kan du välja Windows 10, version 2004, som mål version.
+
+### <a name="improved-support-for-viewing-the-portal-from-any-device"></a>Förbättrat stöd för att Visa portalen från valfri enhet
+
+<!-- 6270240 -->
+
+Nu kan du Visa Skriv bords analys portalen i administrations centret för Microsoft Endpoint Manager från olika enhets typer. Nu uppfyller rikt linjerna för tillgänglighet för webb innehåll (WCAG) 2,1 för en bildskärms upplösning som är låg som 320 x 256 bild punkter. Följande bild är till exempel av portalen från en Apple iPhone 8:
+
+:::image type="content" source="media/dashboard-iphone8.png" alt-text="Skriv bords analys Portal på en iPhone 8":::
+
+### <a name="notifications-for-service-impacting-events"></a>Meddelanden om händelser som påverkar tjänsten
+
+<!-- 4982509 -->
+
+Skriv bords analys portalen kan nu Visa meddelande banderoller. Dessa aviseringar gör att Microsoft kan kommunicera med dig om viktiga händelser och problem. Till exempel kända problem med tjänsten, data fördröjningen eller nya krav. Mer information finns i [tjänst aviseringar](troubleshooting.md#service-notifications).
+
+## <a name="june-2020"></a>Juni 2020
 
 ### <a name="improvement-to-prerequisites"></a>Förbättringar av krav
 

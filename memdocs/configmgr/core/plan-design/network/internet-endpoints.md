@@ -2,7 +2,7 @@
 title: Krav för Internet-åtkomst
 titleSuffix: Configuration Manager
 description: Lär dig om Internet-slutpunkter så att du kan använda alla funktioner i Configuration Manager funktioner.
-ms.date: 06/26/2020
+ms.date: 07/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 78958809aeed5db9d2a36d960b91572b91eafe05
-ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
+ms.openlocfilehash: 986b8d83c705be84b04a89c99d9559471c6345c4
+ms.sourcegitcommit: 2c5fd7c8603b88b753765f3cc298d0a0bacaf521
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85502365"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85819958"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
@@ -273,6 +273,10 @@ Mer information om vilka slut punkter som krävs för moln tjänsten för Skriv 
 ## <a name="tenant-attach"></a>Klientkoppling
 
 Mer information om vilka slut punkter som krävs för klient kopplings funktioner finns i [Aktivera klient anslutning](../../../tenant-attach/device-sync-actions.md#internet-endpoints).
+
+## <a name="endpoint-analytics"></a>Slutpunktsanalys
+
+Mer information om vilka slut punkter som krävs för slut punkts analys finns i [konfiguration av Endpoint Analytics-proxy](../../../../analytics/troubleshoot.md#bkmk_endpoints).
 
 ## <a name="microsoft-public-ip-addresses"></a>Offentliga IP-adresser från Microsoft
 
