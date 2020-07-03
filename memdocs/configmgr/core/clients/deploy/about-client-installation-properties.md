@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 02a281b800c1156cf8492e8a897a5cf1b412006e
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: 388a051f899369aa6a7754f94b0a7727f943f0ec
+ms.sourcegitcommit: efe89408a3948b79b38893174cb19268ee37c8f3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383044"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85854413"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -43,13 +43,13 @@ Du kan också ange *Egenskaper* på CCMSetup.exe kommando rad för att ändra be
 > [!IMPORTANT]  
 > Ange CCMSetup-parametrar innan du anger egenskaper för client.msi.  
 
-CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Exempelvis `\\SiteServer\SMS_ABC\Client`.
+CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Till exempel `\\SiteServer\SMS_ABC\Client`.
 
 I kommandotolken används följande format i CCMSetup.exe-kommandot:  
 
 `CCMSetup.exe [<Ccmsetup parameters>] [<client.msi setup properties>]`  
 
-Till exempel:  
+Ett exempel:  
 
 `CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
@@ -266,7 +266,7 @@ Värden som stöds:
 - `TRUE`: Klienten uppgraderas inte automatiskt
 - `FALSE`: Klienten uppgraderas automatiskt (standard)
 
-Till exempel:  
+Ett exempel:  
 
 `CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
 
@@ -601,7 +601,11 @@ Mer information finns i [så här konfigurerar du klient status](configure-clien
 
 Från och med version 2002 använder du den här egenskapen för att starta en aktivitetssekvens på en klient när den har registrerats på platsen.
 
+> [!NOTE]
+> Om aktivitetssekvensen installerar program uppdateringar eller program måste klienterna ha ett giltigt certifikat för klientautentisering. Enbart token-autentisering fungerar inte. Mer information finns i [versions anmärkningar – OS-distribution](../../servers/deploy/install/release-notes.md#os-deployment).<!--7527072-->
+      
 Du kan till exempel etablera en ny Windows 10-enhet med Windows autopilot, registrera den automatiskt till Microsoft Intune och sedan installera Configuration Manager-klienten för samhantering. Om du anger det här nya alternativet Kör den nyligen etablerade klienten en aktivitetssekvens. Den här processen ger dig ytterligare flexibilitet för att installera program och program uppdateringar eller konfigurera inställningar.
+
 
 Använd följande process:
 
@@ -617,6 +621,8 @@ Använd följande process:
       > Den här metoden kan ha ytterligare krav. Du kan till exempel registrera platsen till Azure Active Directory eller skapa en innehålls aktive rad Cloud Management Gateway.
 
 När klienten har installerats och registrerats på rätt sätt på platsen startar den refererade aktivitetssekvensen. Om klient registreringen Miss lyckas startar inte aktivitetssekvensen.
+
+
 
 ### <a name="resetkeyinformation"></a>RESETKEYINFORMATION
 

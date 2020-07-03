@@ -2,7 +2,7 @@
 title: Distribuera och uppdatera Microsoft Edge, version 77 och senare
 titleSuffix: Configuration Manager
 description: Distribuera och uppdatera Microsoft Edge, version 77 och senare med Configuration Manager
-ms.date: 04/01/2020
+ms.date: 07/02/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 141a60a72038156fff2579419e92e558dab5a9b8
-ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
+ms.openlocfilehash: 2061a6701bf40233593e2e5d683e36f2814d3978
+ms.sourcegitcommit: f999131e513d50967f88795e400d5b089ebc5878
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776947"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85914565"
 ---
 # <a name="microsoft-edge-management"></a>Microsoft Edge-hantering
 
@@ -33,6 +33,8 @@ För klienter riktade till en Microsoft Edge-distribution:
 
 - Det går inte att ange en begränsning för [körnings principen](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) för PowerShell.
   - PowerShell körs för att utföra installationen.
+
+- Installations-och [CMPivot](../../core/servers/manage/cmpivot.md) för Microsoft Edge är signerade med **Microsofts kod signerings** certifikat. Om certifikatet inte visas i arkivet **Betrodda utgivare** måste du lägga till det. Annars körs inte installations programmet för Microsoft Edge och CMPivot när PowerShell-körnings principen är inställd på **AllSigned**. <!--7585106-->
 
 Enheten som kör Configuration Managers konsolen behöver åtkomst till följande slut punkter:
 
@@ -135,6 +137,22 @@ Aktivera följande egenskaper i [maskin varu inventerings](../../core/clients/ma
 I arbets ytan **program bibliotek** klickar du på **Microsoft Edge Management** för att se instrument panelen. Ändra samlingen för diagrammets data genom att klicka på **Bläddra** och välja en annan samling. Som standard är de fem största samlingarna i list rutan. När du väljer en samling som inte finns i listan, visas den nyligen valda samlingen längst ned i list rutan.
 
 [![Instrument panel för Microsoft Edge-hantering](./media/3871913-microsoft-edge-dashboard.png)](./media/3871913-microsoft-edge-dashboard.png#lightbox)
+
+## <a name="known-issues"></a>Kända problem
+
+### <a name="hardware-inventory-may-fail-to-process"></a>Maskin varu inventeringen kanske inte kan bearbeta
+<!--7535675-->
+Maskin varu inventering för enheter kan Miss lyckas. Fel som liknar dem nedan visas i filen Dataldr. log:
+
+```text
+Begin transaction: Machine=<machine>
+*** [23000][2627][Microsoft][SQL Server Native Client 11.0][SQL Server]Violation of PRIMARY KEY constraint 'BROWSER_USAGE_HIST_PK'. Cannot insert duplicate key in object 'dbo.BROWSER_USAGE_HIST'. The duplicate key value is (XXXX, Y). : dbo.dBROWSER_USAGE_DATA
+ERROR - SQL Error in
+ERROR - is NOT retyrable.
+Rollback transaction: XXXX
+```
+
+**Minskning:** Undvik det här problemet genom att inaktivera insamlingen av maskin varu inventerings klassen för webb läsar användning (SMS_BrowerUsage). Den här klassen utnyttjas inte för närvarande.
 
 ## <a name="next-steps"></a>Nästa steg
 

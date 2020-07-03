@@ -5,17 +5,17 @@ description: Lär dig hur du hanterar Windows 10-enheter samtidigt med hjälp av
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 01/24/2020
+ms.date: 07/01/2020
 ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 86bd566e9582c7dd7c83f93c22430edcc8ea0d0d
-ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
+ms.openlocfilehash: a7f38f48946244deb6026d040c44159d0384f7b1
+ms.sourcegitcommit: efe89408a3948b79b38893174cb19268ee37c8f3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84347193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85854447"
 ---
 # <a name="what-is-co-management"></a>Vad är samhantering?
 
@@ -88,7 +88,7 @@ Samhanteringen har följande krav inom följande områden:
     > [!Tip]
     > Se till att tilldela en Intune-licens till det konto som du använder för att logga in på din klient organisation. Annars Miss lyckas inloggningen med fel meddelandet "användaren känns inte igen".
     >
-    > Du behöver inte längre köpa och tilldela enskilda Intune-eller EMS-licenser till dina användare. Mer information finns i [vanliga frågor och svar om produkt och licensiering](../core/understand/product-and-licensing-faq.md#bkmk_mem).
+    > Du kanske inte behöver köpa och tilldela enskilda Intune-eller EMS-licenser till dina användare. Mer information finns i [vanliga frågor och svar om produkt och licensiering](../core/understand/product-and-licensing-faq.md#bkmk_mem).
 
 ### <a name="configuration-manager"></a>Configuration Manager
 

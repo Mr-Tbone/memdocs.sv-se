@@ -2,7 +2,7 @@
 title: Vanliga frågor och svar om produkt och licensiering
 titleSuffix: Configuration Manager
 description: Hitta svar på vanliga produkt-och licens frågor för Configuration Manager.
-ms.date: 02/12/2020
+ms.date: 07/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 63e53c502e67d2bfbfc5f8a706006c6ec14f8fcd
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7b2c785fb41fa78ea0bd5d480560d45a3a7a7eda
+ms.sourcegitcommit: efe89408a3948b79b38893174cb19268ee37c8f3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722685"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85854430"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Vanliga frågor och svar om Configuration Manager grenar och licenser
 
@@ -68,19 +68,54 @@ https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-pla
 > [!IMPORTANT]
 > Configuration Manager ingår inte i [Microsoft 365 businesss](https://www.microsoft.com/microsoft-365/business) planen.
 
-### <a name="does-anything-change-with-the-rebrand-to-microsoft-endpoint-manager"></a><a name="bkmk_mem"></a>Förändras allt med anpassningen till Microsoft Endpoint Manager?
+### <a name="what-changes-with-licensing-for-co-management-in-microsoft-endpoint-manager"></a><a name="bkmk_mem"></a>Vad är ändringar med licensiering för samhantering i Microsoft Endpoint Manager?
 
-Ja. Från den 1 december 2019, om du redan är licensierad för Configuration Manager, licensieras du också automatiskt för Intune för registrering av Windows-datorer i [samhantering](../../comanage/overview.md). Den här ändringen gör det enklare för dig att hantera Windows-enheter med Microsoft Endpoint Manager.
+<!-- 7202432 -->
 
-Nu finns en ny licens som låter Configuration Manager kunder med Software Assurance få Intune-hanterings rättigheter utan att behöva köpa ytterligare en Intune-licens för samhantering. Du behöver inte längre köpa och tilldela enskilda Intune-licenser till dina användare.
+Med licens för samtidig hantering kan Configuration Manager kunder med Software Assurance få Intune-hanterings rättigheter utan att behöva köpa och tilldela enskilda Intune-licenser till användare. Den här licensen gör det enklare för dig att hantera Windows-enheter med Microsoft Endpoint Manager.
 
-- Enheter som hanteras av Configuration Manager och som har registrerats i samhantering har nästan samma rättigheter som en fristående Intune-hanterad dator. När du återställer dem kan du dock inte etablera dem igen med hjälp av autopilot.
+- Enheter som redan hanteras av Configuration Manager som du registrerar till Intune för samhantering har nästan samma rättigheter som en fristående Intune-hanterad dator. Om du återställer Windows på den här enheten kan du inte etablera den med Windows autopilot. Autopilot kräver en fullständig Intune-licens.
 
-- Windows 10-enheter som har registrerats i Intune med hjälp av andra metoder kräver fullständiga Intune-licenser.
+- Om du registrerar en Windows 10-enhet på Intune på annat sätt krävs en fullständig Intune-licens ändå. Du kan t. ex. använda autopilot för att etablera en enhet eller en användare som manuellt hanterar självbetjänings registrering.
 
-- Om du vill använda Intune för att hantera iOS-, Android-eller macOS-enheter behöver du en lämplig Intune-prenumeration genom en fristående Intune-licens, Enterprise Mobility + Security (EMS) eller Microsoft 365.
+- För befintliga Configuration Manager-hanterade enheter som ska registreras i Intune för samhantering i skala utan användar interaktion, använder Co-Management en Azure Active Directory (Azure AD) funktion som kallas Windows 10 Auto-registrering. Automatisk registrering kräver en Azure AD Premium-licens (AADP1), som är separat från Microsoft Endpoint Manager. För att samhantering ska fungera i det här scenariot används det för att kräva att du tilldelar både en AADP1 och en Intune-licens till varje enskild användare. Co-Management-licensen har ändrats från den 1 december 2019. Du behöver nu inte tilldela enskilda Intune-licenser för det här scenariot, men de krävs fortfarande i andra registrerings scenarier. AADP1-licensierings kravet är detsamma för automatisk registrering och samhantering för arbete.
+
+- Om du vill använda Intune för att hantera iOS-, Android-eller macOS-enheter behöver du en lämplig Intune-prenumeration via en fristående Intune-licens, Enterprise Mobility + Security (EMS) eller Microsoft 365.
+
+- Om du inte har någon Intune-relaterad prenumerations plan för att stödja samhantering behöver du köpa minst en Intune-licens. Den här licensen är till för en administratör som har åtkomst till administrations centret för Microsoft Endpoint Manager.
+
+- Om du använder Microsoft 365 inbyggd [grundläggande mobilitet och säkerhet](https://support.microsoft.com/office/capabilities-of-built-in-mobile-device-management-for-microsoft-365-a1da44e5-7475-4992-be91-9ccec25905b0)kan du inte använda den nya Co Management-licensen för en användare som också har enheter som hanteras av grundläggande mobilitet och säkerhet. Gör något av följande om du vill använda den tillsammanss hanterings licensen för användarens Configuration Manager-hanterade enhet:
+
+  - Tilldela användaren en fullständig Intune-licens och hantera deras enheter via Intune.
+  - Avregistrera enheterna från grundläggande mobilitet och säkerhet.
 
 - Den licens som du tidigare hade för System Center Configuration Manager gäller fortfarande för Microsoft Endpoint Configuration Manager. Om du installerar en ny plats ska du använda befintliga produkt nycklar.
+
+|Funktion | Licens för samtidig hantering | Fullständig Intune-licens |
+|---------|---------|---------|
+|Registrering av Windows 10|Ja (endast för befintliga ConfigMgr-hanterade enheter)|Yes|
+|iOS, Android, macOS-registrering|Inga|Yes|
+|Autopilot|Inga|Yes|
+|Hantering av mobil program (MAM)|Inga|Yes|
+|Villkorlig åtkomst<br>(ytterligare AADP1 krävs)|Ja|Ja|
+|Enhetsprofiler|Ja|Ja|
+|Programuppdateringshanteraren|Ja|Ja|
+|Lager|Ja|Ja|
+|Apphantering|Ja|Ja|
+|Fjärrhjälp<br>(TeamViewer-licens krävs)|Ja|Ja|
+|Skriv bords analys<br>(Licenser för Windows-prenumeration krävs|Yes|Ej tillämpligt|
+|Klientkoppling|Yes|Ej tillämpligt|
+|Slutpunktsanalys|Ja|Ja|
+
+Mer information finns i följande artiklar:
+
+- [Krav för samhantering](../../comanage/overview.md#prerequisites)
+- [Windows autopilot-krav](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-requirements)
+- [Krav för Skriv bords analys](../../desktop-analytics/overview.md#prerequisites)
+- [Krav för klient anslutning](../../tenant-attach/device-sync-actions.md#prerequisites)
+- [Krav för slut punkts analys licensiering](../../../analytics/overview.md#licensing-prerequisites)
+- [Använda villkorlig åtkomst med Intune](../../../intune/protect/conditional-access.md#use-conditional-access-with-intune)
+- [Krav för TeamViewer](../../../intune/remote-actions/teamviewer-support.md#prerequisites)
 
 ### <a name="i-have-enterprise-mobility--security-and-it-expired-what-must-i-do-now"></a><a name="bkmk_ems-expires"></a>Jag har Enterprise Mobility + Security och det har gått ut, vad behöver jag göra nu?  
 

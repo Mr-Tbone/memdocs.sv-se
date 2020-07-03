@@ -2,7 +2,7 @@
 title: CMPivot för real tids data
 titleSuffix: Configuration Manager
 description: Lär dig hur du använder CMPivot i Configuration Manager för att fråga klienter i real tid.
-ms.date: 04/08/2020
+ms.date: 07/02/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: dcd441c7f35748f42adc8824c68ec703291a13e0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7bf9d6018acb74ccd1a33b6101d5cceb119ca982
+ms.sourcegitcommit: f999131e513d50967f88795e400d5b089ebc5878
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719143"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85914631"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot för real tids data i Configuration Manager
 
@@ -32,7 +32,7 @@ Till exempel, vid [minskning av problem med spekulativ körnings sidans kanal](h
  > - Vissa program mot skadlig kod kan oavsiktligt utlösa händelser mot Configuration Manager köra skript eller CMPivot-funktioner. Vi rekommenderar att du undantar%windir%\CCM\ScriptStore så att program mot skadlig kod tillåter dessa funktioner att köras utan störningar.
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Följande komponenter krävs för att använda CMPivot:
 
@@ -46,6 +46,7 @@ Följande komponenter krävs för att använda CMPivot:
   - Config
   - SMBConfig
 
+- CMPivot och [Microsoft Edge](../../../apps/deploy-use/deploy-edge.md) -installationsprogrammet är signerade med **Microsofts kod signerings** certifikat. Om certifikatet inte visas i arkivet **Betrodda utgivare** måste du lägga till det. Annars körs inte CMPivot och Microsoft Edge-installationsprogrammet när PowerShell-körnings principen är inställd på **AllSigned**. <!--7585106-->
 
 - Behörigheter för CMPivot:
   - **Läs** behörighet för objektet **SMS-skript**
@@ -56,6 +57,8 @@ Följande komponenter krävs för att använda CMPivot:
 
 >[!NOTE]
 > **Kör skript** är en super-uppsättning som **Kör CMPivot** -behörighet.
+
+CMPivot och Edge-installationsprogrammet är signerade med **Microsofts kod signerings** certifikat. Om certifikatet inte visas i arkivet **Betrodda utgivare** måste du lägga till det. Annars körs inte CMPivot och Edge-installationsprogrammet när körnings principen för PowerShell är inställd på **AllSigned**.
  
 ## <a name="limitations"></a>Begränsningar
 
@@ -129,7 +132,7 @@ Fönstret CMPivot innehåller följande element:
 
     - Klipp ut, kopiera eller klistra in innehåll i frågefönstret.  
     <!-- markdownlint-disable MD038 -->
-    - Som standard används IntelliSense i det här fönstret. Om du exempelvis börjar skriva `D`, föreslår IntelliSense alla entiteter som börjar med den bokstaven. Välj ett alternativ och tryck på TABB för att infoga det. Ange ett vertikalstreck och ett blank steg `| `. sedan föreslår IntelliSense alla tabell operatorer. Infoga `summarize` och skriv ett blank steg, och IntelliSense föreslår alla agg regerings funktioner. Om du vill ha mer information om dessa operatörer och funktioner klickar du på fliken **Start** i CMPivot.  
+    - Som standard används IntelliSense i det här fönstret. Om du exempelvis börjar skriva `D` , föreslår IntelliSense alla entiteter som börjar med den bokstaven. Välj ett alternativ och tryck på TABB för att infoga det. Ange ett vertikalstreck och ett blank steg `| ` . sedan föreslår IntelliSense alla tabell operatorer. Infoga `summarize` och skriv ett blank steg, och IntelliSense föreslår alla agg regerings funktioner. Om du vill ha mer information om dessa operatörer och funktioner klickar du på fliken **Start** i CMPivot.  
 
     - Fönstret fråga innehåller även följande alternativ:  
 
@@ -163,9 +166,9 @@ Fönstret CMPivot innehåller följande element:
 
      - **Kopiera**: texten i cellen kopieras till Urklipp.  
 
-     - **Visa enheter med**: fråga efter enheter med det här värdet för den här egenskapen. Du kan till exempel välja det här alternativet `OS` i en cell på versions raden från resultatet av frågan:`OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ > 0)`  
+     - **Visa enheter med**: fråga efter enheter med det här värdet för den här egenskapen. Du kan till exempel `OS` välja det här alternativet i en cell på versions raden från resultatet av frågan:`OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ > 0)`  
 
-     - **Visa enheter utan**: fråga efter enheter utan detta värde för den här egenskapen. Du kan till exempel välja det här alternativet `OS` i en cell på versions raden från resultatet av frågan:`OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
+     - **Visa enheter utan**: fråga efter enheter utan detta värde för den här egenskapen. Du kan till exempel `OS` välja det här alternativet i en cell på versions raden från resultatet av frågan:`OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
 
      - **Bing IT**: starta standard webbläsaren https://www.bing.com med det här värdet som frågesträng.  
 
@@ -217,7 +220,7 @@ Du väljer flera enheter, högerklickar på markeringen och väljer **Kör skrip
 
 ### <a name="example-2-proactively-resolve-application-failures"></a>Exempel 2: lös program felen proaktivt  
 
-En gång i veckan köra CMPivot mot en samling av servrar som du hanterar och välj **fråga alla** på **AppCrash** entiteten. Du högerklickar på kolumnen **fil namn** och väljer **Sortera stigande**. En enhet returnerar sju resultat för sqlsm. exe med en tidsstämpel om 03:00 varje dag. Du väljer fil namnet på en av raderna, högerklickar på det och väljer **Bing**. Genom att bläddra bland Sök resultaten i webbläsaren hittar du en Support artikel från Microsoft för det här problemet med mer information och lösning. 
+En gång i veckan köra CMPivot mot en samling av servrar som du hanterar och välj **fråga alla** på **AppCrash** entiteten. Du högerklickar på kolumnen **fil namn** och väljer **Sortera stigande**. En enhet returnerar sju resultat för sqlsqm.exe med en tidsstämpel om 03:00 varje dag. Du väljer fil namnet på en av raderna, högerklickar på det och väljer **Bing**. Genom att bläddra bland Sök resultaten i webbläsaren hittar du en Support artikel från Microsoft för det här problemet med mer information och lösning. 
 
 
 ### <a name="example-3-bios-version"></a>Exempel 3: BIOS-version
@@ -385,15 +388,15 @@ Välj till exempel antal enheter med statusen status. Se det detaljerade fel med
 
 ### <a name="cmpivot-audit-status-messages"></a>CMPivot gransknings status meddelanden
 
-Från och med version 1810 skapas ett gransknings status meddelande med **MessageID 40805**när du kör CMPivot. Du kan visa status meddelanden genom att gå till **övervaka** > **system status** > **status meddelande frågor**. Du kan köra **alla gransknings status meddelanden för en enskild användare**, **alla gransknings status meddelanden för en enskild plats**eller skapa en egen status meddelande fråga.
+Från och med version 1810 skapas ett gransknings status meddelande med **MessageID 40805**när du kör CMPivot. Du kan visa status meddelanden genom att gå till **övervaka**  >  **system status**  >  **status meddelande frågor**. Du kan köra **alla gransknings status meddelanden för en enskild användare**, **alla gransknings status meddelanden för en enskild plats**eller skapa en egen status meddelande fråga.
 
 Följande format används för meddelandet:
 
-MessageId 40805: användar &lt;namn> körde skript &lt;skript-GUID> med hash &lt;-skript-hash> för &lt;samlings-ID>.
+MessageId 40805: användar &lt; namn> körde skript &lt; skript-GUID> med hash &lt; -skript-hash> för samlings- &lt; ID>.
 
 - 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 är skript-GUID för CMPivot.
 - Skriptet-hash kan visas i klientens scripts. log-fil.
-- Du kan också se hash-värdet som lagras i klientens skript arkiv. Namnet på klienten är &lt;skript-GUID>_&lt;skriptet-hash>.
+- Du kan också se hash-värdet som lagras i klientens skript arkiv. Namnet på klienten är &lt; skript-Guid>_ &lt; skriptet-hash>.
     - Exempel på fil namn: C:\Windows\CCM\ScriptStore\7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14_abc1d23e45678901fabc123d456ce789fa1b2cd3e456789123fab4c56789d0123. PS
    
 
@@ -476,7 +479,7 @@ Nu har du ytterligare aritmetiska operatorer, agg regeringar och möjlighet att 
 
 #### <a name="table-operators"></a>Tabell operatörer
 
-|Tabell operatörer| Beskrivning|
+|Tabell operatörer| Description|
 |-----|-----|
 | [ansluta](https://docs.microsoft.com/azure/kusto/query/joinoperator)| Sammanfoga raderna i två tabeller för att skapa en ny tabell genom att matcha raden för samma enhet|
 |återge|Återger resultat som grafiska utdata|
@@ -501,14 +504,14 @@ Render-operatorn finns redan i CMPivot. Stöd för flera serier och **with** -sa
 
 #### <a name="aggregation-functions"></a>Aggregeringsfunktioner
 
-|Funktion| Beskrivning|
+|Funktion| Description|
 |-----|-----|
 | percentil ()| Returnerar en uppskattning för den angivna percentilen från närmaste rang för populationen som definieras av expr|
 | sumif() | Returnerar en summa av uttryck för vilka predikatet utvärderas till true|
 
 #### <a name="scalar-functions"></a>Skalärfunktioner
 
-|Funktion| Beskrivning|
+|Funktion| Description|
 |-----|-----|
 | case()| Utvärderar en lista med predikat och returnerar det första resultat uttryck vars predikat är uppfyllt |
 | iff() | Utvärderar det första argumentet och returnerar värdet för antingen det andra eller tredje argumentet beroende på om predikatet utvärderas till sant (sekund) eller falskt (tredje)|
@@ -566,7 +569,7 @@ Du kan dela kraften i CMPivot med andra personer, till exempel supportavdelninge
 #### <a name="install-cmpivot-standalone"></a>Installera fristående CMPivot
 
 1. Ställ in de behörigheter som krävs för att köra CMPivot. Mer information finns i [krav](#prerequisites). Du kan också använda [rollen säkerhets administratör](#bkmk_cmpivot_secadmin1906) om behörigheterna är lämpliga för användaren.
-2. Hitta installations programmet CMPivot på följande sökväg: `<site install path>\tools\CMPivot\CMPivot.msi`. Du kan köra den från den sökvägen eller kopiera den till en annan plats.
+2. Hitta installations programmet CMPivot på följande sökväg: `<site install path>\tools\CMPivot\CMPivot.msi` . Du kan köra den från den sökvägen eller kopiera den till en annan plats.
 3. När du kör den fristående CMPivot-appen uppmanas du att ansluta till en-plats. Ange det fullständigt kvalificerade domän namnet eller dator namnet för antingen den centrala administrations servern eller den primära plats servern.
    - Varje gången du öppnar CMPivot fristående uppmanas du att ansluta till en plats Server.
 4. Bläddra till den samling som du vill köra CMPivot på och kör sedan frågan.
@@ -617,7 +620,7 @@ CMPivot-Optimeringarna minskar drastiskt den nätverks-och Server processor bela
    | project Device, MalwareFound = iif( isnull(FileName), 'No', 'Yes')
    ```
 
-### <a name="wineventlognametimespan"></a><a name="bkmk_WinEvent"></a>WinEvent (\<logname>, [\<TimeSpan>])
+### <a name="wineventlognametimespan"></a><a name="bkmk_WinEvent"></a>WinEvent ( \<logname> , [ \<timespan> ])
 
 Den här entiteten används för att hämta händelser från händelse loggar och loggfiler för händelse spårning. Entiteten hämtar data från händelse loggar som genereras av Windows händelse logg teknik. Entiteten hämtar också händelser i loggfiler som genereras av ETW (Event Tracing for Windows) (ETW). WinEvent tittar på händelser som har inträffat under de senaste 24 timmarna som standard. Standardvärdet för 24 timmar kan dock åsidosättas genom att inkludera ett TimeSpan.
 
@@ -627,7 +630,7 @@ WinEvent('Microsoft-Windows-HelloForBusiness/Operational', 1d)
 | summarize count() by Device
 ```
 
-### <a name="filecontentfilename"></a><a name="bkmk_File"></a>FileContent (\<filename>)
+### <a name="filecontentfilename"></a><a name="bkmk_File"></a>FileContent ( \<filename> )
 
 FileContent används för att hämta innehållet i en textfil.
 
@@ -637,7 +640,7 @@ FileContent('c:\\windows\\SMSCFG.ini')
 | project Device, SMSId= substring(Content,22)
 ```
 
-### <a name="processmoduleprocessname"></a><a name="bkmk_ProcessModule"></a>ProcessModule (\<processname>)  
+### <a name="processmoduleprocessname"></a><a name="bkmk_ProcessModule"></a>ProcessModule ( \<processname> )  
 
 Den här entiteten används för att räkna upp de moduler (dll) som läses in av en specifik process. ProcessModule är användbart när det gäller skadlig kod som döljer i legitima processer.  
 
