@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 63f8ad6827a1aa72c3aaa51e21fecbf639fbb405
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: 0f69b42ce0396148c67eaade967ef4fd87dea7bb
+ms.sourcegitcommit: 03d2331876ad61d0a6bb1efca3aa655b88f73119
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715585"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85946903"
 ---
 # <a name="log-file-reference"></a>Loggfilsreferens
 
@@ -427,6 +427,7 @@ I följande tabell listas loggfilerna som innehåller information som rör tjän
 |objreplmgr.log|Innehåller information om bearbetningen av principer och tilldelningar.|Primär platsserver|  
 |PolicyPV.log|Innehåller information om principgenerering för alla principer.|Platsserver|  
 |outgoingcontentmanager.log|Registrerar innehåll som har överförts till Microsoft Intune.|Dator med tjänstanslutningspunkten|  
+|ServiceConnectionTool. log|Innehåller information om användning av [tjänst anslutnings verktyget](../../servers/manage/use-the-service-connection-tool.md) baserat på den parameter som du använder. Varje gången du kör verktyget ersätts alla befintliga loggfiler.|Samma plats som verktyget|
 |Sitecomp.log|Innehåller information om installation av tjänstanslutningspunkt.|Platsserver|  
 |SmsAdminUI.log|Registrerar Configuration Manager-konsol aktivitet.|Dator som kör Configuration Manager-konsolen|  
 |SMS_CLOUDCONNECTION. log|Registrerar information om moln tjänster.|Dator med tjänstanslutningspunkten|

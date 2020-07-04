@@ -2,7 +2,7 @@
 title: Tjänst anslutnings verktyg
 titleSuffix: Configuration Manager
 description: Lär dig mer om det här verktyget som gör att du kan ansluta till Configuration Manager moln tjänsten för manuell uppladdning av användnings information.
-ms.date: 09/06/2017
+ms.date: 07/02/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,180 +10,250 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e535653e0f31e186a6bdbde8da77750f2afdfdb0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 48aa08f3318aaa4629691bfb30b60580cd3e25f0
+ms.sourcegitcommit: 03d2331876ad61d0a6bb1efca3aa655b88f73119
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710820"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85946852"
 ---
 # <a name="use-the-service-connection-tool-for-configuration-manager"></a>Använd tjänst anslutnings verktyget för Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Använd **tjänst anslutnings verktyget** när tjänst anslutnings punkten är i offlineläge eller när Configuration Manager plats system servrar inte är anslutna till Internet. Verktyget kan hjälpa dig att hålla din webbplats uppdaterad med de senaste uppdateringarna för Configuration Manager.  
+Använd **tjänst anslutnings verktyget** när tjänst anslutnings punkten är i offline-läge. Du kan också använda den när din Configuration Manager plats system servrar inte är anslutna till Internet. Verktyget kan hjälpa dig att hålla din webbplats uppdaterad med de senaste uppdateringarna för Configuration Manager.
 
-När det körs ansluter verktyget manuellt till Configuration Manager moln tjänsten för att ladda upp användnings information för din hierarki och för att hämta uppdateringar. Överföring av användningsdata krävs för att göra det möjligt för molntjänsten att tillhandahålla rätt uppdateringar för distributionen.  
+När du kör verktyget ansluter det till Configuration Manager moln tjänsten, laddar upp användnings information för hierarkin och hämtar uppdateringar. Överföring av användnings data krävs för att moln tjänsten ska kunna tillhandahålla rätt uppdateringar för din miljö.
 
-## <a name="prerequisites-for-using-the-service-connection-tool"></a>Krav för att använda tjänst anslutnings verktyget
-Följande är förutsättningar och kända problem.
+## <a name="prerequisites"></a>Förutsättningar
 
-**Krav**
+- Platsen har en tjänst anslutnings punkt och du konfigurerar den för en offline- **anslutning på begäran**.
 
-- Du har en tjänstanslutningspunkt installerad och den är inställd på **Offline, anslutning på begäran**.  
+- Kör verktyget från en kommando tolk som administratör. Det finns inget användar gränssnitt.
 
-- Verktyget måste köras från en kommandotolk.  
+- Du kör verktyget från tjänst anslutnings punkten och en dator som kan ansluta till Internet. Var och en av dessa datorer måste ha ett x64-bitars operativ system och ha följande komponenter:
 
-- Varje dator där verktyget körs (tjänstanslutningspunktens dator och datorn som är ansluten till Internet) måste vara ett x64-bitarssystem och ha följande installerat:  
+  - Filer för både **Visual C++ Redistributable** x86 och x64. Som standard installerar Configuration Manager x64-versionen på datorn som är värd för tjänst anslutnings punkten. Information om hur du hämtar den här komponenten finns i [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784).
 
-  - Filer för både **Visual C++ Redistributable** x86 och x64.   Som standard installerar Configuration Manager x64-versionen på datorn som är värd för tjänst anslutnings punkten.  
+  - **.NET Framework 4.5.2** eller senare
 
-    Du kan hämta en kopia av Visual C++-filerna genom att gå till [Visual C++ Redistributable-paket för Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784) i Microsoft Download Center.  
+- Det konto som du använder för att köra verktyget måste ha följande behörigheter:
 
-  - .NET Framework 4.5.2 eller senare.  
+  - **Lokal administratör** på den dator som är värd för tjänst anslutnings punkten
 
-- Kontot du använder för att köra verktyget måste ha:
-  - **Lokal administratörs** behörighet på datorn som är värd för tjänstanslutningspunkten (där verktyget körs).
-  - **Läs** -behörighet till platsdatabasen.  
+  - **Läs** behörighet till plats databasen
 
+- Du behöver en metod för att överföra filerna mellan datorn med Internet åtkomst och tjänst anslutnings punkten. Till exempel en USB-enhet med tillräckligt mycket ledigt utrymme för att lagra filer och uppdateringar.
 
+## <a name="overview"></a>Översikt
 
-- Du behöver en USB-enhet med tillräckligt mycket ledigt utrymme för att spara filer och uppdateringar eller någon annan metod för att överföra filer mellan tjänstanslutningspunktens dator och den dator som har åtkomst till Internet. (Det här scenariot förutsätter att platsen och de hanterade datorerna inte har en direktanslutning till Internet.)  
+1. **Förbered**: kör verktyget på tjänst anslutnings punkten. Den placerar dina användnings data i en CAB-fil på den plats du anger. Kopiera data filen till datorn med en Internet anslutning.
 
+2. **Anslut**: kör verktyget på datorn med en Internet anslutning. Den laddar upp dina användnings data och hämtar sedan Configuration Manager uppdateringar. Kopiera hämtade uppdateringar till tjänst anslutnings punkten.
 
+    Du kan ladda upp flera datafiler i taget, var och en från en annan hierarki. Du kan också ange en proxyserver och en användare för proxyservern.
 
-## <a name="use-the-service-connection-tool"></a>Använd tjänstanslutningsverktyget  
+3. **Importera**: kör verktyget på tjänst anslutnings punkten. Uppdateringarna importeras och läggs till på din webbplats. Du kan sedan Visa och [installera uppdateringarna](install-in-console-updates.md) i Configuration Manager-konsolen.
 
- Du hittar tjänst anslutnings verktyget (**serviceconnectiontool. exe**) i mappen Configuration Manager installations medium i **%Path%\smssetup\tools\ServiceConnectionTool** -mappen. Använd alltid tjänst anslutnings verktyget som matchar den version av Configuration Manager som du använder.
+### <a name="upload-multiple-data-files"></a>Ladda upp flera datafiler
 
+- Lägg till alla exporterade datafiler från separata hierarkier i samma mapp. Ge varje fil ett unikt namn. Om det behövs kan du byta namn på dem manuellt.
 
- I den här processen använder kommandoradsexemplen följande filnamn och platser för mappar (du behöver inte använda dessa sökvägar och filnamn utan kan använda alternativ som passar din miljö och dina önskemål):  
+- När du kör verktyget för att ladda upp data till Microsoft anger du den mapp som innehåller datafilerna.
 
-- Sökvägen till ett USB-minne där data har lagrats för överföring mellan servrar: **D:\USB\\**  
+- När du kör verktyget för att importera data importerar verktyget bara data för den hierarkin.
 
-- Namnet på CAB-filen med data som har exporterats från platsen: **UsageData.cab**  
+### <a name="specify-a-proxy-server"></a>Ange en proxyserver
 
-- Namnet på den tomma mapp där hämtade uppdateringar för Configuration Manager sparas för överföring mellan servrar: **UpdatePacks**  
+Om datorn med en Internet anslutning kräver en proxyserver stöder verktyget en grundläggande proxykonfiguration. Använd de valfria parametrarna **-proxyserveruri** och **-proxyusername**. Mer information finns i [kommando rads parametrar](#bkmk_cmd).
 
-På datorn som är värd för tjänstanslutningspunkten:  
+### <a name="specify-the-type-of-updates-to-download"></a>Ange vilken typ av uppdateringar som ska hämtas
 
-- Öppna en kommandotolk med administrativ behörighet och ändra sedan katalogerna till den plats som innehåller **serviceconnectiontool.exe**.  
+Verktyget stöder alternativ för att styra vilka filer som du hämtar. Som standard hämtar verktyget bara den senaste tillgängliga uppdateringen som gäller för din webbplats version. Snabb korrigeringar laddas inte ned.
 
-  Som standard hittar du verktyget i installations mediet för Configuration Manager i **%Path%\smssetup\tools\ServiceConnectionTool** -mappen. Alla filer i den här mappen måste finnas i samma mapp för att tjänstanslutningsverktyget ska fungera.  
+Ändra det här beteendet genom att använda någon av följande parametrar för att ändra vilka filer som hämtas:
 
-När du kör följande kommando förbereds en CAB-fil som innehåller information om användningen och informationen kopieras sedan till en plats du anger. Data i CAB-filen baseras på nivån för diagnostikanvändningsdata som webbplatsen är konfigurerad för att samla in. (se [diagnostik-och användnings data för Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)).  Kör följande kommando för att skapa CAB-filen:  
+- **-DownloadAll**: Ladda ned alla uppdateringar, inklusive uppdateringar och snabb korrigeringar, oavsett vilken version av webbplatsen som används.
+- **-downloadhotfix**: Ladda ned alla snabb korrigeringar oavsett vilken version av webbplatsen du har.
+- **-downloadsiteversion**: hämtar uppdateringar och snabb korrigeringar med en senare version än din webbplats version.
 
-- **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
+    > [!IMPORTANT]
+    > På grund av ett känt problem i Configuration Manager version 2002 fungerar inte standard beteendet som förväntat. Använd parametern **-downloadsiteversion** för att hämta nödvändiga uppdateringar för version 2002.<!-- 7594517 -->
 
-Du måste också kopiera mappen ServiceConnectionTool med dess innehåll till USB-enheten eller på annat sätt göra den tillgänglig på datorn som du ska använda i steg 3 och 4.  
+Mer information finns i [kommando rads parametrar](#bkmk_cmd).
 
-### <a name="overview"></a>Översikt
-#### <a name="there-are-three-primary-steps-to-using-the-service-connection-tool"></a>Det finns tre huvudsakliga steg för att använda tjänst anslutnings verktyget  
+> [!TIP]
+> Verktyget fastställer versionen för din webbplats från data filen. Kontrol lera versionen genom att titta i CAB-filen för text filen med plats versionen.
 
-1.  **Förbered**: det här steget körs på den dator som är värd för tjänst anslutnings punkten. När verktyget körs placeras användnings data i en CAB-fil och lagras på en USB-enhet (eller en alternativ överförings plats som du anger).  
+## <a name="use-the-tool"></a>Använda verktyget  
 
-2.  **Anslut**: i det här steget kör du verktyget på en fjärrdator som ansluter till Internet så att du kan ladda upp dina användnings data och sedan hämta uppdateringar.  
+Tjänst anslutnings verktyget finns på Configuration Manager installations medium på följande sökväg: `SMSSETUP\TOOLS\ServiceConnectionTool\ServiceConnectionTool.exe` . Använd alltid tjänst anslutnings verktyget som matchar den version av Configuration Manager som du använder. Alla dessa filer måste finnas i samma mapp för att tjänst anslutnings verktyget ska fungera.
 
-3.  **Importera**: det här steget körs på den dator som är värd för tjänst anslutnings punkten. När det körs importerar verktyget de uppdateringar som du laddade ned och lägger till dem på platsen så att du kan visa och installera uppdateringarna från Configuration Manager-konsolen.  
+Kopiera mappen **ServiceConnectionTool** med dess innehåll till datorn med en Internet anslutning.
 
-När du ansluter till Microsoft från och med version 1606, kan du överföra flera CAB-filer på en gång (alla från en annan hierarki), samt ange en proxyserver och en användare för proxyservern.   
+I den här proceduren använder kommando rads exemplen följande fil namn och platser för mappar. Du behöver inte använda dessa sökvägar och fil namn. Du kan använda alternativ som matchar din miljö och dina inställningar.
 
-#### <a name="to-upload-multiple-cab-files"></a>Ladda upp flera CAB-filer
-- Placera varje CAB-fil som du har exporterat från olika hierarkier i samma mapp. Namnet på varje fil måste vara unikt och du kan manuellt byta namn på dem vid behov.
-- När du sedan kör kommandot för att överföra data till Microsoft anger du den mapp som innehåller CAB-filerna. (Före uppdateringen 1606 kunde du bara överför data från en hierarki åt gången och i verktyget var du tvungen att ange namnet på CAB-filen i mappen.)
-- Senare, när du importerar i tjänstanslutningspunkten i en hierarki, importerar verktyget automatiskt endast data för den hierarkin.  
+- Sökvägen till källfilerna för Configuration Manager-installationsmedia på tjänst anslutnings punkten:`C:\Source`
 
-#### <a name="to-specify-a-proxy-server"></a>Ange en proxyserver
-Du kan använda följande valfria parametrar för att ange en proxyserver (Mer information om hur du använder dessa parametrar finns i avsnittet med kommandoradsparametrar):
-- **-proxyserveruri [FQDN_of_proxy_server]**  Använd den här parametern för att ange den proxyserver som ska användas för den här anslutningen.
-- **-proxyusername [användarnamn]**  Använd den här parametern om du måste ange en användare för proxyservern.
+- Sökvägen till en USB-enhet där du lagrar data som ska överföras mellan datorer:`D:\USB\`
 
-#### <a name="specify-the-type-of-updates-to-download"></a>Ange vilken typ av uppdateringar som ska hämtas
-Från och med version 1706 har verktygens standard hämtnings beteende ändrats och verktyget stöder alternativ för att styra vilka filer som du hämtar.
-- Som standard hämtar verktyget bara den senaste tillgängliga uppdateringen som gäller för din webbplats version. Snabb korrigeringar laddas inte ned.
+- Namnet på den datafil som du exporterar från webbplatsen:`UsageData.cab`
 
-Ändra det här beteendet genom att använda någon av följande parametrar för att ändra vilka filer som ska laddas ned. 
+- Namnet på den tomma mappen där verktyget lagrar hämtade uppdateringar för Configuration Manager:`UpdatePacks`
 
-> [!NOTE]
-> Din webbplats version bestäms av data i CAB-filen som laddas upp när verktyget körs.
->
-> Du kan kontrol lera versionen genom att leta efter filen *SiteVersion*. txt i CAB-filen.
+### <a name="prepare"></a>Förbereda
 
-- **– DownloadAll**  Med det här alternativet hämtas allt, inklusive uppdateringar och snabb korrigeringar, oavsett vilken version av webbplatsen som används.
-- **– downloadhotfix**  Med det här alternativet hämtas alla snabb korrigeringar oavsett vilken version av webbplatsen du har.
-- **– downloadsiteversion**  Med det här alternativet hämtas uppdateringar och snabb korrigeringar som har en version som är högre än din webbplats version.
+1. På den dator som är värd för tjänst anslutnings punkten öppnar du en kommando tolk som administratör och ändrar katalogen till verktygs platsen. Ett exempel:
 
-Exempel kommando rad som använder *-downloadsiteversion*:
-- **serviceconnectiontool. exe-Connect *-downloadsiteversion* -usagedatasrc D:\USB-updatepackdest D:\USB\UpdatePacks**
+    `cd C:\Source\SMSSETUP\TOOLS\ServiceConnectionTool\`
 
+1. Kör följande kommando för att förbereda data filen:
 
+    `ServiceConnectionTool.exe -prepare -usagedatadest D:\USB\UsageData.cab`
 
+    > [!NOTE]
+    > Om du överför datafiler från fler än en hierarki samtidigt, ger du varje datafil ett unikt namn. Om det behövs kan du byta namn på filer senare.
 
-### <a name="to-use-the-service-connection-tool"></a>Använda tjänsteanslutningsverktyget  
+    Data i filen baseras på den nivå av diagnostik-och användnings data som du konfigurerar för platsen. Mer information finns i [Översikt över diagnostik-och användnings data](../../plan-design/diagnostics/diagnostics-and-usage-data.md). Du kan använda verktyget för att exportera data till en CSV-fil för att visa innehållet. Mer information finns i [-export](#-export).
 
-1. På datorn som är värd för tjänstanslutningspunkten:  
+1. När verktyget har slutfört exporten av användnings data kopierar du data filen till en dator som har åtkomst till Internet.
 
-   - Öppna en kommandotolk med administrativ behörighet och ändra sedan katalogerna till den plats som innehåller **serviceconnectiontool.exe**.   
+### <a name="connect"></a>Anslut
 
-2. När du kör följande kommando förbereder verktyget en CAB-fil som innehåller information om användningen och kopierar den sedan till en plats du anger:  
+1. På datorn med Internet åtkomst öppnar du en kommando tolk som administratör och ändrar katalogen till verktygets plats. Den här platsen är en kopia av hela **ServiceConnectionTool** -mappen. Ett exempel:
 
-   - **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
+    `cd D:\USB\ServiceConnectionTool\`
 
-   Om du kommer att överföra CAB-filer från mer än en hierarki på samma gång, måste varje CAB-fil i mappen ha ett unikt namn. Du kan manuellt byta namn på filer som du lägger till i mappen.
+1. Kör följande kommando för att ladda upp data filen och ladda ned Configuration Manager uppdateringarna:
 
-   Om du vill visa användningsinformation som samlas in och som ska överföras till molntjänsten för Configuration Manager, kör du följande kommando för att exportera samma data som en CSV-fil som du kan visa med hjälp av ett program som t.ex. Excel:  
+    `ServiceConnectionTool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks`
 
-   - **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
+    Fler exempel finns i [kommando rads parametrar](#bkmk_cmd).
 
-3. När förberedelsesteget har slutförts flyttar du USB-enheten (eller överför exporterade data med hjälp av någon annan metod) till en dator som har åtkomst till Internet.  
+    > [!NOTE]  
+    > När du kör den här kommando raden kan du se följande fel:
+    >
+    > **Ohanterat undantag: system. UnauthorizedAccessException: åtkomst till sökvägen ' C:\Users\jqpublic\AppData\Local\Temp\extractmanifestcab\95F8A562.sql ' nekas.**
+    >
+    > Du kan ignorera det här felet på ett säkert sätt. Stäng fel fönstret om du vill fortsätta.
 
-4. På datorn med Internetåtkomst öppnar du en kommandotolk med administrativ behörighet och ändrar sedan sökvägen till den plats som innehåller en kopia av verktyget  **serviceconnectiontool.exe** och de ytterligare filerna från den mappen.  
+1. När verktyget har slutfört hämtningen av uppdateringarna kopierar du dem till tjänst anslutnings punkten.
 
-5. Kör följande kommando för att börja överföra användningsinformation och hämta uppdateringar för Configuration Manager:  
+### <a name="import"></a>Importera
 
-   - **serviceconnectiontool. exe-Connect-usagedatasrc D:\USB-updatepackdest D:\USB\UpdatePacks**
+1. På den dator som är värd för tjänst anslutnings punkten öppnar du en kommando tolk som administratör och ändrar katalogen till verktygs platsen. Ett exempel:
 
-   Fler exempel på kommandoraden finns i [kommandoradsalternativ](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) senare i det här avsnittet.
+    `cd C:\Source\SMSSETUP\TOOLS\ServiceConnectionTool\`
 
-   > [!NOTE]  
-   >  När du kör kommandoraden för att ansluta till molntjänsten för Configuration Manager kan det uppstå ett fel som liknar följande:  
-   >   
-   > - Ohanterat undantag: System.UnauthorizedAccessException:  
-   >   
-   >      Åtkomst till sökvägen 'C:\  
-   >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql' nekas.  
-   >   
-   > Det här felet kan ignoreras och du kan stänga fönstret med felet och fortsätta.  
+1. Kör följande kommando för att importera uppdateringarna:
 
-6. När hämtningen av uppdateringar för Configuration Manager har slutförts flyttar du USB-enheten (eller överför exporterade data på något annat sätt) till den dator som är värd för tjänstanslutningspunkten.  
+    `ServiceConnectionTool.exe -import -updatepacksrc D:\USB\UpdatePacks`
 
-7. På den dator som är värd för tjänstanslutningspunkten öppnar du en kommandotolk med administrativ behörighet, ändrar sökvägen till den plats som innehåller **serviceconnectiontool.exe**och kör sedan följande kommando:  
+1. När importen är klar stänger du kommando tolken. Endast uppdateringar för den aktuella hierarkin importeras.
 
-   - **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
+1. I Configuration Manager-konsolen går du till arbets ytan **Administration** och väljer noden **uppdateringar och underhåll** . Importerade uppdateringar är nu tillgängliga för installation. Mer information finns i [Installera uppdateringar i konsolen](install-in-console-updates.md).
 
-8. Stäng kommandotolken när importen har slutförts. (Endast uppdateringar för tillämplig hierarki importeras).  
+## <a name="log-files"></a>Loggfiler
 
-9. Öppna Configuration Manager-konsolen och gå till **Administration** > **uppdateringar och underhåll**. Uppdateringarna som importerades är nu tillgängliga för installation. (Före version 1702 har uppdateringar och underhåll under **administrations** > **Cloud Services**.)
+- **ServiceConnectionTool. log**: varje gången du kör tjänst anslutnings verktyget skrivs den till logg filen. Sökvägen till logg filen är alltid samma plats som verktyget. Den här logg filen innehåller enkla uppgifter om verktygs användningen baserat på de parametrar som du använder. Varje gången du kör verktyget ersätter verktyget eventuella befintliga loggfiler.
 
-   Information om hur du installerar uppdateringar finns [i installera uppdateringar i konsolen för Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+- **ConfigMgrSetup. log**: under [anslutnings](#connect) fasen skriver verktyget till den här logg filen i roten på system enheten. Den här logg filen innehåller mer detaljerad information. Till exempel vilka filer som hämtas av verktyget och om hash-kontrollerna lyckas.
 
-## <a name="log-files"></a><a name="bkmk_cmd"></a>Loggfiler
+## <a name="command-line-parameters"></a><a name="bkmk_cmd"></a>Kommando rads parametrar
 
-**ServiceConnectionTool. log**
+Det här avsnittet innehåller en lista över alla tillgängliga parametrar för tjänst anslutnings verktyget i alfabetisk ordning.
 
-Varje gången du kör tjänst anslutnings verktyget skapas en loggfil på samma plats som verktyget **ServiceConnectionTool. log**.  Logg filen ger enkel information om körningen av verktyget baserat på vilka kommandon som används.  En befintlig loggfil kommer att ersättas varje gången du kör verktyget.
+### <a name="-connect"></a>– Anslut
 
-**ConfigMgrSetup.log**
+Använd under [anslutnings](#connect) fasen på datorn med Internet åtkomst. Den ansluter till Configuration Manager moln tjänst för att överföra data filen och hämta uppdateringar.
 
-När du använder verktyget för att ansluta och hämta uppdateringar kommer en loggfil att skapas i roten på system enheten som kallas **ConfigMgrSetup. log**.  I den här logg filen får du mer detaljerad information, till exempel vilka filer som hämtas, extraheras och om hash-kontrollerna lyckas.
+Den kräver följande parametrar:
 
-## <a name="command-line-options"></a><a name="bkmk_cmd"></a> kommandoradsalternativ  
-Om du vill se hjälpinformation för verktyget för tjänsteanslutningspunkten öppnar du kommandotolken till den mapp som innehåller verktyget och kör kommandot:  **serviceconnectiontool.exe**.  
+- **-usagedatasrc**: platsen för data filen som ska överföras
+- **-updatepackdest**: en sökväg för hämtade uppdateringar
 
+Du kan också använda följande valfria parametrar:
 
-|Kommandoradsalternativ|Information|  
-|---------------------------|-------------|  
-|**-prepare -usagedatadest [enhet:][sökväg][filnamn.cab]**|Det här kommandot lagrar aktuella användningsdata i en .cab-fil.<br /><br /> Kör det här kommandot som **lokal administratör** på den server som är värd för tjänstanslutningspunkten.<br /><br /> Exempel:   **-prepare -usagedatadest D:\USB\Usagedata.cab**|    
-|**-connect -usagedatasrc [enhet:][sökväg] -updatepackdest [enhet:][sökväg] -proxyserveruri [FQDN för proxyserver] -proxyusername [användarnamn]** <br /> <br /> Om du använder en version av Configuration Manager som är tidigare än 1606, måste du ange namnet på CAB-filen och kan inte använda alternativen för en proxyserver.  Kommandoparametrarna som stöds är: <br /> **-connect -usagedatasrc [enhet:][sökväg][filnamn] -updatepackdest [enhet:][sökväg]** |Det här kommandot ansluter till molntjänsten i Configuration Manager och överför användningsdatans CAB-filer från den angivna platsen. Den hämtar även tillgängliga uppdateringspaket och konsolinnehåll. Alternativen för proxyservrar är valfria.<br /><br /> Kör det här kommandot som **lokal administratör** på en dator som kan ansluta till Internet.<br /><br /> Exempel för att ansluta utan en proxyserver: **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> Exempel för att ansluta när du använder en proxyserver: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> Du måste ange ett filnamn för CAB-filen om du använder en tidigare version än 1606, och du kan inte ange någon proxyserver. Använd följande exempel på en kommandorad: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
-|**-import -updatepacksrc [enhet:][sökväg]**|Det här kommandot importerar uppdateringspaket och konsolinnehåll som du har hämtat tidigare till Configuration Manager-konsolen.<br /><br /> Kör det här kommandot som **lokal administratör** på den server som är värd för tjänstanslutningspunkten.<br /><br /> Exempel:  **-import -updatepacksrc D:\USB\UpdatePacks**|  
-|**-export -dest [enhet:][sökväg][filnamn.csv]**|Det här kommandot exporterar användningsdata till en .csv-fil, som du sedan kan visa.<br /><br /> Kör det här kommandot som **lokal administratör** på den server som är värd för tjänstanslutningspunkten.<br /><br /> Exempel: **-export -dest D:\USB\usagedata.csv**|  
+- **-proxyserveruri**: FQDN för proxyservern
+- **-proxyusername**: ett användar namn för proxyservern
+- **-DownloadAll**: Ladda ned allt, inklusive uppdateringar och snabb korrigeringar, oavsett vilken version av webbplatsen som används.
+- **-downloadhotfix**: Hämta alla snabb korrigeringar, oavsett vilken version av webbplatsen som används.
+- **-downloadsiteversion**: Hämta uppdateringar och snabb korrigeringar som har en senare version än din webbplats version.
+
+#### <a name="example-of-connect-without-a-proxy-server"></a>Exempel på anslutning utan proxyserver
+
+`ServiceConnectionTool.exe -connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks`
+
+#### <a name="example-of-connect-with-a-proxy-server"></a>Exempel på anslutning med en proxyserver
+
+`ServiceConnectionTool.exe -connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itproxy.contoso.com -proxyusername jqpublic`
+
+#### <a name="example-of-connect-to-download-only-site-version-applicable-updates"></a>Exempel på Anslut för att endast hämta uppdateringar av plats version som är tillämpliga
+
+`ServiceConnectionTool.exe -connect -downloadsiteversion -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks`
+
+### <a name="-dest"></a>-mål
+
+En obligatorisk parameter med parametern **-export** för att ange sökväg och fil namn för den CSV-fil som ska exporteras. Mer information finns i [-export](#-export).
+
+### <a name="-downloadall"></a>-downloadall
+
+En valfri parameter med parametern **-Connect** för att ladda ned allt, inklusive uppdateringar och snabb korrigeringar, oavsett vilken version av webbplatsen som används. Mer information finns i [-Connect](#connect).
+
+### <a name="-downloadhotfix"></a>-downloadhotfix
+
+En valfri parameter med parametern **-Connect** för att bara hämta alla snabb korrigeringar, oavsett vilken version av webbplatsen som används. Mer information finns i [-Connect](#-connect).
+
+### <a name="-downloadsiteversion"></a>-downloadsiteversion
+
+En valfri parameter med parametern **-Connect** för att bara hämta uppdateringar och snabb korrigeringar som har en senare version än din webbplats version. Mer information finns i [-Connect](#-connect).
+
+### <a name="-export"></a>– Exportera
+
+Använd under [förberedelse](#prepare) fasen för att exportera användnings data till en CSV-fil. Kör den som administratör på tjänst anslutnings punkten. Med den här åtgärden kan du granska innehållet i användnings data innan du överför till Microsoft. Den kräver parametern **-mål** för att ange platsen för CSV-filen.
+
+#### <a name="example-of-export"></a>Exempel på export
+
+`-export -dest D:\USB\usagedata.csv`
+
+### <a name="-import"></a>– Importera
+
+Använd under [import](#import) fasen av tjänst anslutnings punkten för att importera uppdateringarna till platsen. Den kräver parametern **-updatepacksrc** för att ange platsen för de hämtade uppdateringarna.
+
+#### <a name="example-of-import"></a>Exempel på import
+
+`ServiceConnectionTool.exe -import -updatepacksrc D:\USB\UpdatePacks`
+
+### <a name="-prepare"></a>– Förbered
+
+Använd under [förberedelse](#prepare) fasen av tjänst anslutnings punkten för att exportera användnings data från-platsen. Parametern **-usagedatadest** måste anges för att ange platsen för den exporterade data filen.
+
+#### <a name="example-of-prepare"></a>Exempel på förberedelse
+
+`ServiceConnectionTool.exe -prepare -usagedatadest D:\USB\UsageData.cab`
+
+### <a name="-proxyserveruri"></a>– proxyserveruri
+
+En valfri parameter med parametern **-Connect** för att ange det fullständiga domän namnet för proxyservern. Mer information finns i [-Connect](#-connect).
+
+### <a name="-proxyusername"></a>– proxyusername
+
+En valfri parameter med parametern **-Connect** för att ange användar namnet som ska autentiseras med proxyservern. Mer information finns i [-Connect](#-connect).
+
+### <a name="-updatepackdest"></a>– updatepackdest
+
+En obligatorisk parameter med parametern **-Connect** för att ange en sökväg för de hämtade uppdateringarna. Mer information finns i [-Connect](#-connect).
+
+### <a name="-updatepacksrc"></a>– updatepacksrc
+
+En obligatorisk parameter med parametern **-import** för att ange en sökväg till de hämtade uppdateringarna. Mer information finns i [-import](#-import).
+
+### <a name="-usagedatadest"></a>– usagedatadest
+
+En obligatorisk parameter med parametern **-preping** för att ange en sökväg och ett fil namn för den exporterade data filen. Mer information finns i [-förbereda](#-prepare).
+
+## <a name="next-steps"></a>Nästa steg
+
+[Installera uppdatering i konsolen](install-in-console-updates.md)
+
+[Visa diagnostik- och användningsdata](../../plan-design/diagnostics/view-diagnostics-and-usage-data.md)
