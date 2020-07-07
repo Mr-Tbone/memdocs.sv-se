@@ -10,12 +10,11 @@ ms.assetid: bc7de742-9e5c-4a70-945c-df4153a61cc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c043cfabc411dbd5ae4984110fc2904d37669300
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
-ms.translationtype: MT
+ms.openlocfilehash: 1cf428b479e9311c92f6d14d9c376817ee5e3ab5
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81717827"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022270"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Så här använder du variabler för aktivitetssekvenser i Configuration Manager
 
@@ -37,7 +36,7 @@ Det finns flera typer av variabler:
 - [Åtgärd](#bkmk_action)  
 - [Anpassad](#bkmk_custom)  
 - [Skrivskyddad](#bkmk_read-only)  
-- [Matris](#bkmk_array)  
+- [Lagringsmatriser](#bkmk_array)  
 
 ### <a name="built-in-variables"></a><a name="bkmk_built-in"></a>Inbyggda variabler
 
@@ -45,7 +44,7 @@ Inbyggda variabler ger information om miljön där aktivitetssekvensen körs. De
 
 Till exempel `_SMSTSLogPath` är en miljö variabel som anger den sökväg som Configuration Manager-komponenter skriver loggfiler till. Alla steg i aktivitetssekvensen kan komma åt den här miljövariabeln.
 
-Aktivitetssekvensen utvärderar vissa variabler före varje steg. `_SMSTSCurrentActionName` Visar till exempel namnet på det aktuella steget.
+Aktivitetssekvensen utvärderar vissa variabler före varje steg. Visar till exempel `_SMSTSCurrentActionName` namnet på det aktuella steget.
 
 ### <a name="action-variables"></a><a name="bkmk_action"></a>Action-variabler
 
@@ -53,7 +52,7 @@ Variabler för aktivitetssekvenser anger konfigurations inställningar som anvä
 
 Du kan till exempel lägga till steget **Kör kommando rad** i en aktivitetssekvens. Det här steget innehåller en **Start i** -egenskap. Aktivitetssekvensen lagrar ett standardvärde för den här egenskapen som `WorkingDirectory` variabeln. Aktivitetssekvensen initierar det här värdet innan **körnings kommando rads** steget körs. När det här steget körs får du åtkomst till **Start i** egenskap svärdet från `WorkingDirectory` värdet. När steget har slutförts tar aktivitetssekvensen bort värdet för `WorkingDirectory` variabeln från miljön. Om aktivitetssekvensen innehåller ett annat **kommando rads** steg för körning initieras en ny `WorkingDirectory` variabel. Vid detta tillfälle ställer aktivitetssekvensen variabeln till startvärdet för det aktuella steget. Mer information finns i [WorkingDirectory](task-sequence-variables.md#WorkingDirectory).  
 
-*Standardvärdet* för en åtgärds variabel finns när steget körs. Om du anger ett *nytt* värde är det tillgängligt för flera steg i aktivitetssekvensen. Om du åsidosätter ett standardvärde förblir det nya värdet i miljön. Detta nya värde åsidosätter standardvärdet för andra steg i aktivitetssekvensen. Du kan till exempel lägga till **variabel steget Ange aktivitetssekvens** som det första steget i aktivitetssekvensen. Det här steget anger `WorkingDirectory` variabeln `C:\`till. Alla **körnings kommando rads** steg i aktivitetssekvensen använder det nya Start Katalog svärdet.  
+*Standardvärdet* för en åtgärds variabel finns när steget körs. Om du anger ett *nytt* värde är det tillgängligt för flera steg i aktivitetssekvensen. Om du åsidosätter ett standardvärde förblir det nya värdet i miljön. Detta nya värde åsidosätter standardvärdet för andra steg i aktivitetssekvensen. Du kan till exempel lägga till **variabel steget Ange aktivitetssekvens** som det första steget i aktivitetssekvensen. Det här steget anger `WorkingDirectory` variabeln till `C:\` . Alla **körnings kommando rads** steg i aktivitetssekvensen använder det nya Start Katalog svärdet.  
 
 Vissa steg i aktivitetssekvensen markerar vissa åtgärds variabler som *utdata*. Steg senare i aktivitetssekvensen läser dessa utdata-variabler.
 
@@ -66,11 +65,11 @@ Dessa variabler är de som Configuration Manager inte skapar. Initiera dina egna
 
 Följ dessa rikt linjer när du anger ett namn på en ny aktivitetssekvens:  
 
-- Variabel namnet för aktivitetssekvensen får innehålla bokstäver, siffror, under streck (`_`) och ett bindestreck (`-`).  
+- Variabel namnet för aktivitetssekvensen får innehålla bokstäver, siffror, under streck ( `_` ) och ett bindestreck ( `-` ).  
 
 - Variabel namn för aktivitetssekvenser får innehålla minst en tecken längd och högst 256 tecken.  
 
-- Användardefinierade variabler måste börja med en bokstav (`A-Z` eller `a-z`).  
+- Användardefinierade variabler måste börja med en bokstav ( `A-Z` eller `a-z` ).  
 
 - Användardefinierade variabel namn får inte inledas med under strecks tecknet. Endast skrivskyddade variabler för aktivitetssekvens föregås av under strecks tecknet.  
 
@@ -82,7 +81,7 @@ Det finns ingen angiven gräns för hur många variabler för aktivitetssekvens 
 
 ### <a name="read-only-variables"></a><a name="bkmk_read-only"></a>Skrivskyddade variabler
 
-Du kan inte ändra värdet för vissa variabler, som är skrivskyddade. Vanligt vis börjar namnet med ett under streck (`_`). Aktivitetssekvensen använder dem för driften. Skrivskyddade variabler visas i aktivitetssekvensen.
+Du kan inte ändra värdet för vissa variabler, som är skrivskyddade. Vanligt vis börjar namnet med ett under streck ( `_` ). Aktivitetssekvensen använder dem för driften. Skrivskyddade variabler visas i aktivitetssekvensen.
 
 Dessa variabler är användbara i skript eller kommando rader. Du kan till exempel köra en kommando rad och skicka utdata till en loggfil i `_SMSTSLogPath` med de andra loggfilerna.
 
@@ -126,7 +125,7 @@ Om du ställer in samma variabel med olika metoder, använder modulen för aktiv
 
 - Variabla värden i aktivitetssekvens får innehålla högst 4 000 tecken.  
 
-- Du kan inte ändra en variabel för skrivskyddad aktivitetssekvens. Skrivskyddade variabler har namn som börjar med ett under streck (`_`).  
+- Du kan inte ändra en variabel för skrivskyddad aktivitetssekvens. Skrivskyddade variabler har namn som börjar med ett under streck ( `_` ).  
 
 - Variabla värden i aktivitetssekvensen kan vara Skift läges känsliga beroende på användningen av värdet. I de flesta fall är variabel värden för aktivitetssekvens inte Skift läges känsliga. En variabel som innehåller ett lösen ord är Skift läges känslig.  
 
@@ -157,7 +156,7 @@ Mer information om det här steget finns i [kör PowerShell-skript](task-sequenc
 
 #### <a name="example-scenario-with-run-powershell-script-step"></a>Exempel scenario med kör PowerShell-skript steg
 
-Din miljö har användare i flera länder, så du vill ställa frågor om OS-språket så att det är ett villkor för flera språkspecifika **Apply OS** -steg.
+Din miljö har användare i flera länder/regioner, så du vill ställa frågor om operativ systemets språk för att ange villkor för flera språkspecifika **tillämpade operativ Systems** steg.
 
 1. Lägg till en instans av **Run PowerShell-skriptet** i aktivitetssekvensen innan du **installerar operativ Systems** stegen.
 
@@ -169,7 +168,7 @@ Din miljö har användare i flera länder, så du vill ställa frågor om OS-spr
 
     Mer information om cmdleten finns i [Get-Culture](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture). Mer information om ISO-Språknamnen med två bokstäver finns i [lista över iso 639-1-koder](https://wikipedia.org/wiki/List_of_ISO_639-1_codes).
 
-1. Ange `CurrentOSLanguage`som alternativ för att skriva **utdata till en aktivitetssekvens**.
+1. Ange som alternativ för att skriva **utdata till en aktivitetssekvens** `CurrentOSLanguage` .
 
     ![Skärm bild av exempel på kör PowerShell-skript steg](media/run-powershell-script-example-language.png)
 
@@ -182,7 +181,7 @@ Din miljö har användare i flera länder, så du vill ställa frågor om OS-spr
 
 1. Spara och distribuera aktivitetssekvensen.
 
-När steget **kör PowerShell-skript** körs på en enhet med den engelska språk versionen av Windows, returnerar kommandot värdet `en`. Sedan sparas värdet i den anpassade variabeln. När steget **Använd OS** -steget för den engelska språk avbildningen körs på samma enhet, utvärderas villkoret som sant. Om du har flera instanser av **Apply OS** -steget för olika språk, kör aktivitetssekvensen dynamiskt det steg som matchar OS-språket.
+När steget **kör PowerShell-skript** körs på en enhet med den engelska språk versionen av Windows, returnerar kommandot värdet `en` . Sedan sparas värdet i den anpassade variabeln. När steget **Använd OS** -steget för den engelska språk avbildningen körs på samma enhet, utvärderas villkoret som sant. Om du har flera instanser av **Apply OS** -steget för olika språk, kör aktivitetssekvensen dynamiskt det steg som matchar OS-språket.
 
 ### <a name="collection-and-device-variables"></a><a name="bkmk_set-coll-var"></a>Samlings-och enhets variabler
 
@@ -273,7 +272,7 @@ Använd följande metoder för att få åtkomst till variabel värden i aktivite
   
 ### <a name="use-in-a-step"></a><a name="bkmk_access-step"></a>Använd i ett steg
 
-Ange ett variabel värde för en inställning i ett steg i en aktivitetssekvens. I redigeraren för aktivitetssekvens redigerar du steget och anger variabel namnet som fält värde. Omge variabelns namn i procent tecken (`%`).
+Ange ett variabel värde för en inställning i ett steg i en aktivitetssekvens. I redigeraren för aktivitetssekvens redigerar du steget och anger variabel namnet som fält värde. Omge variabelns namn i procent tecken ( `%` ).
 
 Du kan till exempel använda variabel namnet som en del av **kommando rads** fältet i steget **Kör kommando rad** . Följande kommando rad skriver dator namnet till en textfil.
 
@@ -331,7 +330,7 @@ $tsenv.Value("startTime") = (Get-Date -Format HH:mm:ss) + ".000+000"
 
 ### <a name="windows-setup-answer-file"></a><a name="bkmk_access-answer"></a>Svarsfil för installations programmet för Windows
 
-Svars filen för Windows-installationen som du anger kan ha inbäddade variabler för aktivitetssekvens. Använd formuläret `%varname%`där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel namn strängen för det faktiska variabel värdet. Dessa inbäddade variabler för aktivitetssekvens kan inte användas i ett numeriskt fält i svars filen Unattend. xml.
+Svars filen för Windows-installationen som du anger kan ha inbäddade variabler för aktivitetssekvens. Använd formuläret `%varname%` där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel namn strängen för det faktiska variabel värdet. Dessa inbäddade variabler i aktivitetssekvensen kan inte användas i numeriska fält i en unattend.xml svarsfil.
 
 Mer information finns i avsnittet [Setup Windows and ConfigMgr](task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr).
 
