@@ -6,30 +6,32 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 10/29/2019
+ms.date: 06/23/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
 ms.localizationpriority: high
 ms.technology: ''
 ms.assetid: ac77b590-a7ec-45a0-9516-ebf5243b6210
-ms.reviewer: davidra
+ms.reviewer: aanavath
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0aa02c58f2a2d75389be357ac7c700c2bac99027
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
-ms.translationtype: HT
+ms.openlocfilehash: 1b9aedb7595db5ff0f40f2d12b8cee985fb7be99
+ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79351584"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85332857"
 ---
 # <a name="mobile-threat-defense-integration-with-intune"></a>Mobile Threat Defense-integrering med Intune
 
 Intune kan integrera data från en Mobile Threat Defense-leverantör som informationskälla för enhetsefterlevnadsprinciper samt enhetsregler för villkorsstyrd åtkomst. Du kan använda den här informationen för att skydda företagsresurser som Exchange och SharePoint genom att blockera åtkomst från komprometterade mobila enheter.
 
 Intune kan använda samma data som källa för oregistrerade enheter som använder Intune-appskyddsprinciper. Administratörer kan därför använda den här informationen för att skydda företagsdata i en [Microsoft Intune-skyddad app](../apps/apps-supported-intune-apps.md) och utfärda en blockering eller en selektiv rensning.
+
+> [!NOTE]
+> Integrering av skydd mot mobilhot med Intune-erbjudandet GCC High och DoD stöds för närvarande *inte*. Läs mer om [Microsoft Intune-stöd för US Government GCC High](https://docs.microsoft.com/enterprise-mobility-security/solutions/ems-intune-govt-service-description).
 
 ## <a name="protect-corporate-resources"></a>Skydda företagets resurser
 

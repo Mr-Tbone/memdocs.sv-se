@@ -20,7 +20,6 @@ ms.custom: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 91683280a2e48d82fd145bf19228c33b432b6b49
 ms.sourcegitcommit: a1da477542fb0ff360685d6eb58ef43e37ac3950
-ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/26/2020
 ms.locfileid: "83853578"
@@ -55,7 +54,7 @@ Som anges i tabellen ovan bör alla ändringar av appskyddsprinciper först utf�
 
 När du testar ändringar i en APP bör du vara medveten om [leveranstiming](app-protection-policy-delivery.md). Statusen för APP-leverans för en viss användare kan övervakas. Mer information finns i [Så här övervakar du appskyddsprinciper](app-protection-policies-monitor.md).
 
-Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp av Edge och URL:en *about:Intunehelp*. Mer information finns i [Granska säkerhetsloggar för klientappar](app-protection-policy-settings-log.md) och [Använda Edge för iOS och Android för att komma åt loggar för hanterade appar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
+Enskilda APP-inställningar för varje app kan valideras på enheter med hjälp av Edge och URL:en *about:Intunehelp*. Mer information finns i [Granska säkerhetsloggar för klientappar](app-protection-policy-settings-log.md) och [Använda Microsoft Edge för iOS och Android för att komma åt loggar för hanterade appar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
 
 ## <a name="app-data-protection-framework-settings"></a>Inställningar för ramverket för APP-dataskydd
 

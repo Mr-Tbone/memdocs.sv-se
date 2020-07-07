@@ -5,7 +5,7 @@ keywords: what is Intune
 author: dougeby
 ms.author: dougeby
 manager: dougeby
-ms.date: 10/14/2019
+ms.date: 06/23/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -17,16 +17,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a10709972b0387681d00c8fe848079807c6293a
-ms.sourcegitcommit: 4381afb515c06f078149bd52528d1f24b63a2df9
-ms.translationtype: HT
+ms.openlocfilehash: 28a5bc7a1ee00e9595c50d274605af1b33c1ea90
+ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82538097"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85332798"
 ---
 # <a name="microsoft-intune-is-an-mdm-and-mam-provider-for-your-devices"></a>Microsoft Intune är en MDM- och MAM-provider för dina enheter
 
-Microsoft Intune är en molnbaserad tjänst som fokuserar på hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM). Intune ingår i Microsofts [Enterprise Mobility + Security (EMS)](https://www.microsoft.com/microsoft-365/enterprise-mobility-security) och gör det möjligt för användarna att vara produktiva samtidigt som organisationens data skyddas. Den integreras med andra tjänster, inklusive Microsoft 365 och Azure Active Directory (Azure AD) för att styra vilka som har åtkomst och vad de har åtkomst till, samt Azure Information Protection för dataskydd. När du använder den tillsammans med Microsoft 365 kan dina anställda vara produktiva på alla sina enheter, samtidigt som organisationens information skyddas.
+Microsoft Intune är en molnbaserad tjänst som fokuserar på hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM). Du styr hur din organisationsenheter används, inklusive mobiltelefoner, surfplattor och bärbara datorer. Du kan även konfigurera specifika principer för att kontrollera program. Du kan till exempel förhindra att e-postmeddelanden skickas till personer utanför organisationen. Intune gör det även möjligt för personer i organisationen att använda sina personliga enheter för skola eller arbete. På personliga enheter hjälper Intune till att se till att dina organisationsdata förblir skyddade och kan isolera organisationsdata från personliga data.
+
+Intune är en del av Microsofts [Enterprise Mobility + Security (EMS) paket](https://www.microsoft.com/microsoft-365/enterprise-mobility-security). Intune integreras med Azure Active Directory (Azure AD) för att kontrollera vem som har åtkomst och vad de har åtkomst till. Det integrerar även med Azure Information Protection för dataskydd. Den kan användas med Microsoft 365-serien med produkter. Du kan till exempel distribuera Microsoft Teams, OneNote och andra Microsoft 365-appar till enheter. Den här funktionen gör det möjligt för personer i din organisation att vara produktiva på alla sina enheter, samtidigt som din organisations information skyddas med principer som du skapar.
 
 [![Bild av Intune-arkitektur](./media/what-is-intune/intunearch_sm.png )](./media/what-is-intune/intunearchitecture.svg#lightbox)
 

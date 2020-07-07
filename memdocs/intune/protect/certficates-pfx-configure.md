@@ -17,12 +17,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2694897e0a9e0ebf0744615e65d76f29416811d0
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
-ms.translationtype: HT
+ms.openlocfilehash: 609f7209d79acd944d141930f2287b5572a51c89
+ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990398"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85332844"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>Konfigurera och använda PKCS-certifikat med Intune
 
@@ -247,7 +246,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
    |**Certifikatutfärdare**      |<ul><li>Alla         |Visar det interna fullständiga domännamnet (FQDN) för din Enterprise-CA.  |
    |**Namn på certifikatutfärdare** |<ul><li>Alla         |Anger namnet på din Enterprise-CA, till exempel ”Contoso Certification Authority”. |
    |**Certifikatmallens namn**    |<ul><li>Alla         |Visar namnet på certifikatmallen. |
-   |**Certifikattyp**             |<ul><li>Android Enterprise (*Arbetsprofil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 och senare|Välj en typ: <ul><li> Certifikat av typen **Användare** kan innehålla både användarattribut och enhetsattribut i certifikatets ämne och SAN. </il><li>**Enhetscertifikat** kan endast innehålla enhetsattribut i certifikatets ämne och SAN. Använd Enhet för scenarier såsom användarlösa enheter, till exempel kiosker eller andra delade enheter.  <br><br> Det här valet påverkar ämnesnamnets format. |
+   |**Certifikattyp**             |<ul><li>Android Enterprise (*Arbetsprofil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 och senare|Välj en typ: <ul><li> **Användarcertifikat** kan innehålla både användarattribut och enhetsattribut i certifikatets ämne och SAN. </il><li>**Enhetscertifikat** kan endast innehålla enhetsattribut i certifikatets ämne och SAN. Använd Enhet för scenarier såsom användarlösa enheter, till exempel kiosker eller andra delade enheter.  <br><br> Det här valet påverkar ämnesnamnets format. |
    |**Ämnesnamnets format**          |<ul><li>Alla         |Mer information om hur du konfigurerar ämnesnamnets format finns i [Ämnesnamnets format](#subject-name-format) längre fram i den här artikeln.  <br><br> För de flesta plattformar använder du alternativet **Eget namn** om inget annat krävs. <br><br>För följande plattformar bestäms ämnesnamnets format av certifikattypen: <ul><li>Android Enterprise (*Arbetsprofil*)</li><li>iOS</li><li>macOS</li><li>Windows 10 och senare</li></ul>  <p>  |
    |**Alternativt namn för certifikatmottagare**     |<ul><li>Alla         |Välj **Användarens huvudnamn** som *attribut* (om inget annat krävs), konfigurera ett motsvarande *värde* och klicka sedan på **Lägg till**. <br><br>Mer information finns i [Ämnesnamnets format](#subject-name-format) senare i den här artikeln.|
    |**Förbättrad nyckelanvändning**           |<ul><li> Android-enhetsadministratör </li><li>Android Enterprise (*Enhetsägare*, *Arbetsprofil*) </li><li>Windows 10 |Certifikat kräver vanligtvis *Klientautentisering* så att användaren eller enheten kan autentisera till en server. |
@@ -365,3 +364,5 @@ Uppdateringar för de två certifikatanslutningsapparna släpps regelbundet. Nä
 Profilen har skapats, men den gör inte något än. [Tilldela profilen](../configuration/device-profile-assign.md) och [övervaka dess status](../configuration/device-profile-monitor.md).
 
 [Använda SCEP för certifikat](certificates-scep-configure.md) eller [utfärda PKCS-certifikat från en Symantec PKI Manager-webbtjänst](certificates-digicert-configure.md).
+
+[Felsök PKCS-certifikatprofiler](../protect/troubleshoot-pkcs-certificate-profiles.md)

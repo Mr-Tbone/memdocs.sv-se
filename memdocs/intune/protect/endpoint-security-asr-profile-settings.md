@@ -18,7 +18,6 @@ ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
 ms.openlocfilehash: 7f200e5cb5bb4aa0f29cbd3adc0f177bb14e5476
 ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
-ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/15/2020
 ms.locfileid: "83431702"
@@ -45,9 +44,9 @@ Plattformar och profiler som stöds:
   CSP: [AllowWindowsDefenderApplicationGuard](https://go.microsoft.com/fwlink/?linkid=872350)
 
   - **Ej konfigurerat** (*standard*)
-  - **Aktiverat för Edge** – Application Guard öppnar icke-godkända webbplatser i en Hyper-V-virtualiserad webbläsarcontainer.
+  - **Aktiverat för Microsoft Edge** – Application Guard öppnar icke-godkända webbplatser i en Hyper-V-virtualiserad webbläsarcontainer.
 
-  Följande inställningar är tillgängliga när du anger *Aktiverat för Edge*:
+  Följande inställningar är tillgängliga när du anger *Aktiverat för Microsoft Edge*:
   
   - **Funktionssätt för Urklipp**  
     CSP: [ClipboardSettings](https://go.microsoft.com/fwlink/?linkid=872351)

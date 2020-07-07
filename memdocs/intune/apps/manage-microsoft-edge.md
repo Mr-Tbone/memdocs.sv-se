@@ -1,5 +1,5 @@
 ---
-title: Hantera Edge för iOS och Android med Intune
+title: Hantera Microsoft Edge för iOS och Android med Intune
 titleSuffix: ''
 description: Använd Intunes policyer för appsäkerhet och konfigurering med Edge för iOS och Android till att skydda åtkomsten till företagets webbplatser.
 keywords: ''
@@ -20,7 +20,6 @@ ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4d32c496fc094879943fc15102bbb5061d830092
 ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
-ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 06/17/2020
 ms.locfileid: "84973068"
@@ -37,7 +36,7 @@ Edge för iOS stöds på iOS 12.0 och senare. Edge för Android stöds på Andro
 De mest avancerade och bredaste skyddsfunktionerna för Office 365-data är tillgängliga när du prenumererar på sviten Enterprise Mobility + Security, som innehåller Microsoft Intune och Azure Active Directory Premium-funktioner, till exempel villkorsstyrd åtkomst. Du bör minst distribuera en princip för villkorsstyrd åtkomst som endast tillåter anslutning till Edge för iOS och Android från mobila enheter och en skyddsprincip för Intune-appen som garanterar att webbupplevelsen skyddas.
 
 > [!NOTE]
-> Nya webbklipp (fästa webbappar) på iOS-enheter öppnas i Edge för iOS och Android i stället för Intune Managed Browser om det behövs för att öppna i en skyddad webbläsare. För äldre iOS-webbklipp måste du omdirigera dessa webbklipp för att se till att de öppnas i Edge för iOS och Android i stället för Managed Browser.
+> Nya webbklipp (fästa webbappar) på iOS-enheter öppnas i Microsoft Edge för iOS och Android i stället för Intune Managed Browser om det behövs för att öppna i en skyddad webbläsare. För äldre iOS-webbklipp måste du omdirigera dessa webbklipp för att se till att de öppnas i Microsoft Edge för iOS och Android i stället för Managed Browser.
 
 ## <a name="apply-conditional-access"></a>Tillämpa villkorsstyrd åtkomst
 Organisationer kan använda principer för villkorsstyrd åtkomst i Azure AD för att säkerställa att användarna endast kan komma åt arbets- eller skolinnehåll med hjälp av Edge för iOS och Android. För att göra detta behöver du en princip för villkorsstyrd åtkomst som är riktad mot alla potentiella användare. Information om hur du skapar den här principen finns i [Kräva appskyddsprincip för åtkomst till molnapp med villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/app-protection-based-conditional-access).
@@ -117,7 +116,7 @@ Det här konfigurationsscenariot fungerar bara med registrerade enheter. En UEM-
 Edge för iOS och Android ger administratörer möjlighet att anpassa standardkonfigurationen för flera inställningar i appen. Den här funktionen erbjuds för närvarande bara när Edge för iOS och Android har en Intune-appskyddsprincip tillämpad för det arbets- eller skolkonto som är inloggat i appen.
 
 > [!IMPORTANT]
-> Edge för Android har inte stöd för Chromium-inställningar som är tillgängliga i Managed Google Play.
+> Microsoft Edge för Android har inte stöd för Chromium-inställningar som är tillgängliga i Managed Google Play.
 
 Edge har stöd för följande inställningar för konfiguration:
 
@@ -134,7 +133,7 @@ Edge för iOS och Android erbjuder organisationer flera alternativ för att anpa
 
 #### <a name="organization-logo-and-brand-color"></a>Organisationens logotyp och varumärkesfärg
 
-Med de här inställningarna kan du anpassa sidan Ny flik för Edge för iOS och Android och visa din organisations logotyp och varumärkesfärg som sidbakgrund.
+Med de här inställningarna kan du anpassa sidan Ny flik för Microsoft Edge för iOS och Android och visa din organisations logotyp och varumärkesfärg som sidbakgrund.
 
 För att ladda upp organisationens logotyp och färg utför du först följande steg:
 1. I [Microsoft Endpoint Manager](https://endpoint.microsoft.com) navigerar du till **Administration av klientorganisation** -> **Anpassning** -> **Company Identity Branding (Företagsanpassning)** .

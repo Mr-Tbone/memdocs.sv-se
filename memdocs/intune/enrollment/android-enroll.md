@@ -18,12 +18,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0739b27d5b2b6bb21809b2a9f109c894765ea7e
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
-ms.translationtype: HT
+ms.openlocfilehash: 17f1d045d89df3ad5bb37d85957e872ec6692b7e
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988562"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353504"
 ---
 # <a name="enroll-android-devices"></a>Registrera Android-enheter
 
@@ -39,6 +38,8 @@ Du kan hantera registrera Android-enheter som Intune-administratör på följand
 ## <a name="prerequisites"></a>Krav
 
 Förbered hantering av mobila enheter genom att ange MDM-utfärdare som **Microsoft Intune**. Fler anvisningar finns i [Ange MDM-utfärdare](../fundamentals/mdm-authority-set.md). Du anger det här objektet bara när du konfigurerar Intune för hantering av mobila enheter.
+
+För Android Enterprise, se följande supportartikel från Google för att säkerställa att Android Enterprise är tillgänglig i ditt land eller din region: https://support.google.com/work/android/answer/6270910
 
 För enheter som har tillverkats av Zebra Technologies kan du behöva bevilja ytterligare behörigheter till företagsportalen beroende på kapaciteten hos enheten i fråga. Mer information finns i [Mobility Extensions på Zebra-enheter](../configuration/android-zebra-mx-overview.md).
 

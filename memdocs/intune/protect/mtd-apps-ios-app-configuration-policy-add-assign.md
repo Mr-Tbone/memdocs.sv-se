@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 06/26/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb83a8e5b907ee55dd1c02d3af0dc04002790a18
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
-ms.translationtype: HT
+ms.openlocfilehash: 03dbdccd1626db5ad97bc230a3d6b9a82060ee2e
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83991113"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590498"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Lägg till och tilldela MTD-appar med Intune
 
@@ -49,107 +48,9 @@ För iOS-enheter krävs [Microsoft Authenticator](https://docs.microsoft.com/azu
 
 Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Microsoft Authenticator-apparna](https://itunes.apple.com/us/app/microsoft-authenticator/id983156458?mt=8) när du konfigurerar **appinformation**.
 
-## <a name="configure-mtd-applications"></a>Konfigurera MTD-program
+## <a name="configure-your-mtd-apps-with-an-app-configuration-policy"></a>Konfigurera dina MTD-appar med en appkonfigurationsprincip
 
-Välj det avsnitt som motsvarar din MTD-provider:
-
-- [Lookout for Work](#configure-lookout-for-work-apps)
-- [Symantec Endpoint Protection Mobile (SEP Mobile)](#configure-symantec-endpoint-protection-mobile-apps)
-- [Check Point SandBlast Mobile](#configure-check-point-sandblast-mobile-apps)
-- [Zimperium](#configure-zimperium-apps)
-- [Pradeo](#configure-pradeo-apps)
-- [Better Mobile](#configure-better-mobile-apps)
-- [Sophos Mobile](#configure-sophos-apps)
-- [Wandera](#configure-wandera-apps)
-
-### <a name="configure-lookout-for-work-apps"></a>Konfigurera Lookout for Work-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Lookout for Work-apparna för Google](https://play.google.com/store/apps/details?id=com.lookout.enterprise) som **appbutiksadress**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Lookout for Work-apparna för iOS](https://itunes.apple.com/us/app/lookout-for-work/id997193468?mt=8) som **appbutiksadress**.
-
-- **Lookout for Work-app utanför Apple Store**
-  - Du måste omsignera iOS-appen Lookout for Work. Lookout distribuerar iOS-appen Lookout for Work utanför iOS App Store. Innan du distribuerar appen måste du signera den på nytt med ditt iOS Enterprise Developer-certifikat.  
-  - Detaljerade anvisningar om hur du omsignerar iOS-apparna Lookout for Work finns i [Omsigneringsprocessen för iOS-appen Lookout for Work](https://personal.support.lookout.com/hc/articles/114094038714) på Lookout-webbplatsen.
-
-  - **Aktivera Azure AD-autentisering för användare av Lookout for Work iOS-appen.**
-
-    1. Gå till [Azure-portalen](https://portal.azure.com), logga in med dina autentiseringsuppgifter och gå sedan till appsidan.
-
-    2. Lägg till **Lookout for Work iOS app** (iOS-appen Lookout for Work) som ett **internt klientprogram**.
-
-    3. Ersätt **com.lookout.enterprise.yourcompanyname** med ID:t för kundprogrampaketet som du valde när du registrerade IPA.
-
-    4. Lägg till ytterligare omdirigerings-URI: **&lt;companyportal://code/>** följt av en URL-kodad version av din ursprungliga omdirigerings-URI.
-
-    5. Lägg till **Delegerad behörighet** till din app.
-
-    > [!NOTE]
-    > Mer information finns i [configure a native client application with Azure AD](https://azure.microsoft.com/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/#optional-configure-a-native-client-application) (konfigurera ett Native Client-program med Azure AD).
-
-  - **Lägg till IPA-filen för Lookout for Work.**
-
-    - Ladda upp den omsignerade IPA-filen enligt beskrivningen i artikeln [Add iOS LOB apps with Intune](../apps/lob-apps-ios.md) (Lägg till iOS LOB-appar med Intune). Du måste också ange den lägsta versionen av operativsystemet till iOS 8.0 eller senare.
-
-### <a name="configure-symantec-endpoint-protection-mobile-apps"></a>Konfigurera Symantec Endpoint Protection Mobile-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till SEP Mobile-apparna](https://play.google.com/store/apps/details?id=com.skycure.skycure) som **appbutiksadress**.  Som **Lägsta operativsystem** väljer du **Android 4.0 (Ice Cream Sandwich)** .
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till SEP Mobile-apparna](https://itunes.apple.com/us/app/skycure/id695620821?mt=8) som **appbutiksadress**.
-
-### <a name="configure-check-point-sandblast-mobile-apps"></a>Konfigurera Check Point SandBlast Mobile-appar
-
-- **Android**  
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Check Point SandBlast-apparna](https://play.google.com/store/apps/details?id=com.lacoon.security.fox) som **appbutiksadress**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Check Point SandBlast-apparna](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) som **appbutiksadress**.  
-
-### <a name="configure-zimperium-apps"></a>Konfigurera Zimperium-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Zimperium-apparna](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en) som **appbutiksadress**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Zimperium-apparna](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) som **appbutiksadress**.  
- 
-### <a name="configure-pradeo-apps"></a>Konfigurera Pradeo-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Pradeo-apparna](https://play.google.com/store/apps/details?id=net.pradeo.service&hl=en_US) som **appbutiksadress**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Pradeo-apparna](https://itunes.apple.com/us/app/pradeo-agent/id547979360?mt=8) som **appbutiksadress**.
-
-### <a name="configure-better-mobile-apps"></a>Konfigurera Better Mobile-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Active Shield-apparna](https://play.google.com/store/apps/details?id=com.better.active.shield.enterprise) som **appbutiksadress**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Active Shield-apparna](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) som **appbutiksadress**.
-
-### <a name="configure-sophos-apps"></a>Konfigurera Sophos-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Sophos-apparna](https://play.google.com/store/apps/details?id=com.sophos.smsec) som **appbutiksadress**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Active Shield-apparna](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) som **appbutiksadress**.
-
-### <a name="configure-wandera-apps"></a>Konfigurera Wandera-appar
-
-- **Android**
-  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Wandera Mobile-apparna](https://play.google.com/store/apps/details?id=com.wandera.android) som **appbutiksadress**. Som **Lägsta operativsystem** väljer du **Android 5.0**.
-
-- **iOS**
-  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Wandera Mobile-apparna](https://itunes.apple.com/app/wandera/id605469330) som **appbutiksadress**.
-
-## <a name="configure-your-mtd-apps-with-an-ios-app-configuration-policy"></a>Konfigurera dina MTD-appar med en konfigurationsprincip för iOS-appar
+För att förenkla användarregistrering använder appar för skydd mot mobila hot på MDM-hanterade enheter appkonfiguration. För ej registrerade enheter är MDM-baserad appkonfiguration inte tillgänglig, se [Lägg till skydd mot mobila hot-appar i enheter som inte registrerats](../protect/mtd-add-apps-unenrolled-devices.md).
 
 ### <a name="lookout-for-work-app-configuration-policy"></a>Konfigurationsprincip för Lookout for Work-app
 
@@ -228,32 +129,134 @@ Skapa konfigurationsprincipen för iOS-appar enligt beskrivningen i artikeln om 
 
 ### <a name="wandera-app-configuration-policy"></a>Konfigurationsprincip för Wandera-appar
 
-Se anvisningarna för [användning av Microsoft Intune-appkonfigurationsprinciper för iOS](../apps/app-configuration-policies-use-ios.md) för att lägga till Wandera-konfigurationsprincipen för iOS-appar.
+> [!NOTE]
+> Vid inledande testning, använd en testgrupp när du tilldelar användare och enheter i avsnittet Tilldelningar i konfigurationsprincipen. 
 
-- Välj **Ange XML-data** som **format för konfigurationsinställningarna**.
+- **Android**
+  - Se anvisningarna för [använda av Microsoft Intune-appkonfigurationsprinciper för Android](../apps/app-configuration-policies-use-android.md) för att lägga till Wandera-konfigurationsprincipen för Android-appar med informationen nedan när du ombeds.
 
-Logga in på din RADAR Wandera-portal och bläddra till **Inställningar** > **EMM-integrering** > **App Push**. Välj **Intune** och kopiera innehållet nedan och klistra in det i konfigurationsprincipen.  
+1. I **RADAR Wandera-portalen** klickar du på knappen **Lägg till+** under **Konfigurationsinställningar**-formatet.
+2. Välj **Aktiveringsprofil-URL** i listan över **Konfigurationsnycklar**. Klicka på **OK**.
+3. För **Aktiveringsprofil-URL** väljer du **sträng** från **Värdetyp**-menyn och kopierar och klistrar in **URL för delningsbar länk** från önskad aktiveringsprofil i RADAR.
+4. I **Inställningar** definierar du **konfigurationsinställningsformat > Använd konfigurationsdesignern** och följer stegen nedan.
 
-  ```
-  <dict><key>secretKey</key>
-  <string>SeeRADAR</string>
-  <key>apiKey</key>
-  <string> SeeRADAR </string>
-  <key>customerId</key>
-  <string> SeeRADAR </string>
-  <key>email</key>
-  <string>{{mail}}</string>
-  <key>firstName</key>
-  <string>{{username}}</string>
-  <key>lastName</key>
-  <string></string>
-  <key>activationType</key>
-  <string>PROVISION_THEN_AWP</string></dict>
-  ```
+> [!NOTE] 
+> Till skillnad från iOS måste du definiera en unik appkonfigurationsprincip för Android-Enterprise för varje Wandera-aktiveringsprofil. Om du inte behöver flera Wandera-aktiveringsprofiler kan du använda en enda Android-appkonfiguration för alla målenheter. När du skapar aktiveringsprofiler i Wandera måste du välja Azure Active Directory under den associerade användarkonfigurationen för att säkerställa att Wandera kan synkronisera enheten med Microsoft Endpoint Manager via UEM Connect.
 
-## <a name="assign-apps-to-groups"></a>Tilldela appar till grupper
+- **iOS**
+  - Se anvisningarna för [använda Microsoft Intune-appkonfigurationsprinciper för iOS](../apps/app-configuration-policies-use-ios.md) för att lägga till Wandera-konfigurationsprincipen med informationen nedan när du ombeds.
 
-Det här steget gäller för alla MTD-partner. Se anvisningarna för [tilldelning av appar till grupper med Intune](../apps/apps-deploy.md).
+1. I **RADAR Wandera-portalen** går du till **Enheter > Aktiveringar** och väljer valfri aktiveringsprofil. Klicka på **Distributionsstrategier > Hanterade enheter > Microsoft Intune** och leta upp **Konfigurationsinställningar för iOS-appen**.  
+2. Expandera rutan om du vill visa XML-konfigurationsfilen för iOS-appen och kopiera den till systemets Urklipp.  
+3. I **Inställningar** definierar du **konfigurationsinställningsformat > Ange XML-data** och följer stegen nedan:
+4. Klistra in XML-koden i textrutan för appkonfiguration i Microsoft Endpoint Manager.
+
+> [!NOTE]
+> En enda iOS-konfigurationsprincip kan användas på alla enheter som ska etableras med Wandera.  
+
+## <a name="assigning-mobile-threat-defense-apps-to-end-users-via-intune"></a>Tilldela appar för skydd mot mobilhot till slutanvändare via Intune
+
+Om du vill installera appen för skydd mot mobilhot på slutanvändarens enhet så kan du följa stegen nedan i Azure Portal. Kontrollera att du vet hur man gör för att:
+
+- [Tilldela appar till grupper med Intune](../apps/apps-deploy.md)
+
+Välj det avsnitt som motsvarar din MTD-provider:
+
+- [Lookout for Work](#assigning-lookout-for-work)
+- [Symantec Endpoint Protection Mobile (SEP Mobile)](#assigning-symantec-endpoint-protection-mobile)
+- [Check Point SandBlast Mobile](#assigning-check-point-sandblast-mobile)
+- [Zimperium](#assigning-zimperium)
+- [Pradeo](#assigning-pradeo)
+- [Better Mobile](#assigning-better-mobile)
+- [Sophos Mobile](#assigning-sophos)
+- [Wandera](#assigning-wandera)
+
+### <a name="assigning-lookout-for-work"></a>Tilldela Lookout for Work
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Lookout for Work-apparna för Google](https://play.google.com/store/apps/details?id=com.lookout.enterprise) som **appbutiksadress**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Lookout for Work-apparna för iOS](https://itunes.apple.com/us/app/lookout-for-work/id997193468?mt=8) som **appbutiksadress**.
+
+- **Lookout for Work-app utanför Apple Store**
+  - Du måste omsignera iOS-appen Lookout for Work. Lookout distribuerar iOS-appen Lookout for Work utanför iOS App Store. Innan du distribuerar appen måste du signera den på nytt med ditt iOS Enterprise Developer-certifikat.  
+  - Detaljerade anvisningar om hur du omsignerar iOS-apparna Lookout for Work finns i [Omsigneringsprocessen för iOS-appen Lookout for Work](https://personal.support.lookout.com/hc/articles/114094038714) på Lookout-webbplatsen.
+
+  - **Aktivera Azure AD-autentisering för användare av Lookout for Work iOS-appen.**
+
+    1. Gå till [Azure-portalen](https://portal.azure.com), logga in med dina autentiseringsuppgifter och gå sedan till appsidan.
+
+    2. Lägg till **Lookout for Work iOS app** (iOS-appen Lookout for Work) som ett **internt klientprogram**.
+
+    3. Ersätt **com.lookout.enterprise.yourcompanyname** med ID:t för kundprogrampaketet som du valde när du registrerade IPA.
+
+    4. Lägg till ytterligare omdirigerings-URI: **&lt;companyportal://code/>** följt av en URL-kodad version av din ursprungliga omdirigerings-URI.
+
+    5. Lägg till **Delegerad behörighet** till din app.
+
+    > [!NOTE]
+    > Mer information finns i [configure a native client application with Azure AD](https://azure.microsoft.com/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/#optional-configure-a-native-client-application) (konfigurera ett Native Client-program med Azure AD).
+
+  - **Lägg till IPA-filen för Lookout for Work.**
+
+    - Ladda upp den omsignerade IPA-filen enligt beskrivningen i artikeln [Add iOS LOB apps with Intune](../apps/lob-apps-ios.md) (Lägg till iOS LOB-appar med Intune). Du måste också ange den lägsta versionen av operativsystemet till iOS 8.0 eller senare.
+
+### <a name="assigning-symantec-endpoint-protection-mobile"></a>Tilldela Symantec Endpoint Protection Mobile
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till SEP Mobile-apparna](https://play.google.com/store/apps/details?id=com.skycure.skycure) som **appbutiksadress**.  Som **Lägsta operativsystem** väljer du **Android 4.0 (Ice Cream Sandwich)** .
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till SEP Mobile-apparna](https://itunes.apple.com/us/app/skycure/id695620821?mt=8) som **appbutiksadress**.
+
+### <a name="assigning-check-point-sandblast-mobile"></a>Tilldela Check Point SandBlast Mobile
+
+- **Android**  
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Check Point SandBlast-apparna](https://play.google.com/store/apps/details?id=com.lacoon.security.fox) som **appbutiksadress**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Check Point SandBlast-apparna](https://apps.apple.com/us/app/sandblast-mobile-protect/id1006390797) som **appbutiksadress**.  
+
+### <a name="assigning-zimperium"></a>Tilldela Zimperium
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Zimperium-apparna](https://play.google.com/store/apps/details?id=com.zimperium.zips&hl=en) som **appbutiksadress**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Zimperium-apparna](https://itunes.apple.com/us/app/zimperium-zips/id1030924459?mt=8) som **appbutiksadress**.  
+ 
+### <a name="assigning-pradeo"></a>Tilldela Pradeo
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Pradeo-apparna](https://play.google.com/store/apps/details?id=net.pradeo.service&hl=en_US) som **appbutiksadress**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Pradeo-apparna](https://itunes.apple.com/us/app/pradeo-agent/id547979360?mt=8) som **appbutiksadress**.
+
+### <a name="assigning-better-mobile"></a>Tilldela Better Mobile
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Active Shield-apparna](https://play.google.com/store/apps/details?id=com.better.active.shield.enterprise) som **appbutiksadress**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Active Shield-apparna](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) som **appbutiksadress**.
+
+### <a name="assigning-sophos"></a>Tilldela Sophos
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Sophos-apparna](https://play.google.com/store/apps/details?id=com.sophos.smsec) som **appbutiksadress**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Active Shield-apparna](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) som **appbutiksadress**.
+
+### <a name="assigning-wandera"></a>Tilldela Wandera
+
+- **Android**
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd [webbadressen till Wandera Mobile-apparna](https://play.google.com/store/apps/details?id=com.wandera.android) som **appbutiksadress**. Som **Lägsta operativsystem** väljer du **Android 5.0**.
+
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Wandera Mobile-apparna](https://itunes.apple.com/app/wandera/id605469330) som **appbutiksadress**.
 
 ## <a name="next-steps"></a>Nästa steg
 

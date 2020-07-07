@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 06/23/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87cf4d9fc21b951386c496e49fe482810febcda3
-ms.sourcegitcommit: 397ec824f1368dcf06c3870c89f52347852062bd
-ms.translationtype: HT
+ms.openlocfilehash: 89703c8aec11517417f9459391c431b9db75456c
+ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85263962"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85502297"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -58,18 +57,32 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 
 ## <a name="week-of-june-22-2020"></a>Veckan som inleds med 22 juni 2020
 
+### <a name="app-management"></a>Apphantering
+
+#### <a name="newly-available-protected-apps-for-intune---7248952---"></a>Nyligen tillgängliga skyddade appar för Intune<!-- 7248952 -->
+Följande skyddade appar är nu tillgängliga:
+- BlueJeans-videokonferens
+- Cisco Jabber för Intune
+- Tableau Mobile för Intune
+- ZERO för Intune
+
+Mer information om skyddade appar finns i [Microsoft Intune-skyddade appar](../apps/apps-supported-intune-apps.md).
+
 ### <a name="monitor-and-troubleshoot"></a>Övervaka och felsöka
+
+#### <a name="use-endpoint-analytics-to-improve-user-productivity-and-reduce-it-support-costs---5653063---"></a>Använd slutpunktsanalys för att förbättra användarproduktiviteten och minska kostnader för IT-support<!-- 5653063 --> 
+Den här funktionen kommer att lanseras under nästa vecka. Målet med slutpunktsanalys är att förbättra användarproduktiviteten och minska kostnader för IT-support genom att ge insikter om användarupplevelsen. Insikterna gör det möjligt för IT att optimera slutanvändarupplevelsen med proaktiv support och att identifiera regressioner i användarupplevelsen genom att bedöma användarpåverkan för konfigurationsändringar. Mer information finns i [förhandsversion](https://aka.ms/uea) för slutpunktsanalys.
 
 #### <a name="proactively-remediate-end-user-device-issues-using-script-packages---5933328---"></a>Proaktivt åtgärda problem med slutanvändares enheter via skriptpaket<!-- 5933328 -->
 Du kan skapa och köra skriptpaket på slutanvändares enheter för att proaktivt identifiera och åtgärda de vanligaste supportärendena i organisationen. Genom att distribuera skriptpaket kan du minska antalet supportsamtal. Välj om du vill skapa egna skriptpaket eller distribuera ett av skriptpaketen vi har skrivit och använder i vår miljö för att minska antalet supportärenden. Med Intune kan du se status för dina distribuerade skriptpaket och övervaka identifierings- och åtgärdsresultaten. Gå till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Rapporter** > **Slutpunktsanalys** > **Proaktiva åtgärder**. Mer information finns i [Proaktiva åtgärder](https://aka.ms/uea_prs).
 
 ### <a name="device-security"></a>Enhetssäkerhet
 
-### <a name="use-microsoft-defender-atp-in-compliance-policies-for-android---4425686----"></a>Använd Microsoft Defender ATP i policyer för efterlevnad i Android<!-- 4425686  -->
+#### <a name="use-microsoft-defender-atp-in-compliance-policies-for-android---4425686----"></a>Använd Microsoft Defender ATP i policyer för efterlevnad i Android<!-- 4425686  -->
 
 Nu kan du använda Intune till att [registrera Android-enheter i Microsoft Defender Advanced Threat Protection](../protect/advanced-threat-protection.md#onboard-android-devices) (Microsoft Defender ATP). När dina enheter har registrerats kan dina policyer för efterlevnad i Android använda signaler om *hotnivåer* från Microsoft Defender ATP. Det här är samma signaler som du tidigare kunnat använda för Windows 10-enheter.
 
-### <a name="configure-defender-atp-web-protection-for-android-devices---6185563-wnready---"></a>Konfigurera webbskydd i Defender ATP för Android-enheter<!-- 6185563 WNReady -->
+#### <a name="configure-defender-atp-web-protection-for-android-devices---6185563-wnready---"></a>Konfigurera webbskydd i Defender ATP för Android-enheter<!-- 6185563 WNReady -->
 
 När du använder Microsoft Defender Avancerat skydd (Microsoft Defender ATP) för Android-enheter kan du [konfigurera webbskyddet i Microsoft Defender ATP](../protect/advanced-threat-protection.md#configure-web-protection-on-devices-that-run-android) för att inaktivera nätfiskefunktionen eller förhindra att VPN-nätverket används vid genomsökningar.
 
@@ -624,7 +637,7 @@ En tredje leverantör, DISA Purebred, blir tillgänglig för Android i en framti
 
 #### <a name="microsoft-edge-security-baseline-is-now-generally-available--6586139---"></a>Microsoft Edge säkerhetsbaslinje är nu allmänt tillgängligt<!--6586139 -->
 
-En ny version av [Microsoft Edge säkerhetsbaslinje](../protect/security-baselines.md#available-security-baselines) är nu tillgänglig och släpps som allmänt tillgänglig (GA). Den tidigare Edge-baslinjen fanns som förhandsversion.  Den nya baslinjeversionen är april 2020 (Edge version 80 och senare). 
+En ny version av [Microsoft Edge säkerhetsbaslinje](../protect/security-baselines.md#available-security-baselines) är nu tillgänglig och släpps som allmänt tillgänglig (GA). Den tidigare Edge-baslinjen fanns som förhandsversion.  Den nya baslinjeversionen är april 2020 (Microsoft Edge version 80 och senare). 
 
 I och med lanseringen av den nya baslinjen kan du inte längre skapa profiler baserade på tidigare baslinjeversioner, men du kan fortsätta att använda profiler som du har skapat med dessa versioner. Du kan också välja att [uppdatera dina befintliga profiler så att de använder den senaste baslinjeversionen](../protect/security-baselines.md#change-the-baseline-version-for-a-profile). 
 

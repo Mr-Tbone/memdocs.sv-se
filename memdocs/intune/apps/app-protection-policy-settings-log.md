@@ -20,7 +20,6 @@ ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 63000a7285b2d1d6505a739f186dc9168e7f3fca
 ms.sourcegitcommit: a1da477542fb0ff360685d6eb58ef43e37ac3950
-ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 05/26/2020
 ms.locfileid: "83853595"
@@ -30,9 +29,9 @@ ms.locfileid: "83853595"
 Läs om vilka inställningar du kan granska i appskyddsloggarna. Få åtkomst till loggarna genom att aktivera Intune-diagnostik på en mobil klient. 
 
 Processen för att aktivera och samla in loggar varierar efter plattform:
-- **iOS/iPadOS-enheter** – Använd Microsoft Edge för iOS/iPadOS för att samla in loggar. Mer information finns i [Använda Edge för iOS och Android till att komma åt hanterade apploggar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
+- **iOS/iPadOS-enheter** – Använd Microsoft Edge för iOS/iPadOS för att samla in loggar. Mer information finns i [Använda Microsoft Edge för iOS och Android till att komma åt hanterade apploggar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
 - **Windows 10-enheter** – Använd *MDMDiag* och händelseloggar. Se [Diagnostisera MDM-fel i Windows 10](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) i Windows-klientens hanteringsinnehåll och bloggen [Felsökning av Windows 10 vid Intune-principfel](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/).
-- **Android-enheter** – Använd Microsoft Edge för Android för att samla in loggar. Mer information finns i [Använda Edge för iOS och Android till att komma åt loggar för hanterade appar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
+- **Android-enheter** – Använd Microsoft Edge för Android för att samla in loggar. Mer information finns i [Använda Microsoft Edge för iOS och Android till att komma åt hanterade apploggar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
 
   > [!Note]
   > På fullständigt hanterade Android-enheter kan i vissa fall Intune-företagsportalappen visas under alla appar. Detta kan inträffa när en app som är associerad med en appskyddsprincip inte har installerats eller inte har startats. 

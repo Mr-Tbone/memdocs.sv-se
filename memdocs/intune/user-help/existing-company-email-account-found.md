@@ -1,11 +1,11 @@
 ---
-title: Ett befintligt e-postkonto för företag hittades | Microsoft Docs
-description: Beskriver hur du tillämpar uppdateringar till din enhet så att du kan komma åt din e-post med arbets- eller skolkontot igen.
+title: Ett befintligt e-postkonto för arbete hittades | Microsoft Docs
+description: Beskriver hur du uppdaterar din enhet så att du kan komma åt din e-post för arbete eller skola igen.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 12/17/2018
+ms.date: 06/29/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -15,29 +15,27 @@ ms.assetid: 74c51f7b-7bd8-45cf-99bd-02d1972267cb
 searchScope:
 - User help
 ROBOTS: ''
-ms.reviewer: chrisgre
+ms.reviewer: samyada
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: c6917c2ad2650ae093293ba172934661a4f9863f
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
-ms.translationtype: HT
+ms.openlocfilehash: 78beb08555a9c276bec79a65bb10bb9dad816926
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881276"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85590991"
 ---
-# <a name="an-existing-company-email-account-was-found"></a>Ett befintligt e-postkonto för företag hittades
+# <a name="an-existing-email-account-was-found"></a>Ett befintligt e-postkonto påträffades
 
-Du kan ha haft mobil enhetsåtkomst till ditt arbetes eller din skolas e-postkonto *innan* din enhet hanterades. Om din enhet hanteras nu, rekommenderar vi att du:
+Om du konfigurerat din e-postadress för arbete på din enhet innan du registrerar dig kan din organisation kräva att du tar bort den. 
 
-* Kopplar från arbetets befintliga e-postkonto från din enhet.
-* Gör en ny synkronisering av enhetsinställningarna från företagsportalappen.  
+På så sätt kan din organisation konfigurera dig med en e-postprofil som uppfyller deras nätverks- och säkerhetskrav. När du har kopplat från, behöver du bara synkronisera enheten så får du åtkomst till din e-post igen. 
 
-De här stegen garanterar att enheten uppfyller företagets säkerhetskrav och att dina e-postmeddelanden förblir säkra.
+Slutför följande steg för att koppla från det befintliga kontot och uppdatera enhetsinställningarna. Om du inte slutför de här stegen kan du förlora eller ha begränsad mobil åtkomst till ditt arbetskonto.
 
-1. På din enhet går du till **Inställningar** och letar reda på dina anslutna konton. På en iOS 11+-enhet kan du till exempel välja **Lösenord och konton**.
+1. På din enhet går du till **Inställningar** och letar reda på dina anslutna konton. På en iOS 11+-enhet väljer du exempelvis **Lösenord och konton**.
  
-2. Markera och ta bort ditt e-postkonto för arbetet.
+2. Markera och ta bort det konto som du har länkat till din e-postadress för arbete. 
 
 3. Öppna företagsportalappen på din enhet.  
 
@@ -45,6 +43,8 @@ De här stegen garanterar att enheten uppfyller företagets säkerhetskrav och a
 
 5. Välj **Kontrollera inställningar**. Efter en liten stund synkroniseras enheten med de nya e-postinställningarna.
 
-6. Logga in med ditt arbets- eller skolkonto.
+6. Logga in på ditt e-postkonto. 
+
+## <a name="next-steps"></a>Nästa steg
 
 Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

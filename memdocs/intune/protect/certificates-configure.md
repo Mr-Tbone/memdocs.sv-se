@@ -17,12 +17,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4441fdaf8c3fb8bfb6613805df9eca27cc3ebf0c
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
-ms.translationtype: HT
+ms.openlocfilehash: e5de1268b8b04c98ac7a9cfa96d42349fc0f8890
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990392"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383214"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Använda certifikat för autentisering i Microsoft Intune
 
@@ -104,6 +103,11 @@ Skapa och distribuera en betrodd certifikatprofil innan du skapar en SCEP-, PKCS
 SCEP-certifikatprofiler refererar direkt till en betrodd certifikatprofil. PKCS-certifikatprofiler refererar inte direkt till den betrodda certifikatprofilen, men de refererar direkt till den server som är värd för din certifikatutfärdare. PKCS-importerade certifikatprofiler refererar inte direkt till den betrodda certifikatprofilen men kan använda den på enheten. Distribution av en betrodd certifikatprofil till enheter säkerställer att det här förtroendet upprättas. När en enhet inte litar på rotcertifikatutfärdaren misslyckas SCEP- eller PKCS-certifikatprofilprincipen.
 
 Skapa en separat betrodd certifikatprofil för varje enhetsplattform som du vill stödja, precis som du gör för SCEP-, PKCS- och PKCS-importerade certifikatprofiler.
+
+> [!IMPORTANT]
+> Betrodda rotprofiler som du skapar för plattformen *Windows 10 och senare* visas i administratörscenter för Microsoft Endpoint Manager som profiler för plattformen *Windows 8.1 och senare*. 
+>
+> Detta är ett känt problem med presentationen av plattformen för betrodda certifikatprofiler. När profilen visar en plattform som är Windows 8.1 och senare så fungerar den för Windows 10 och senare.
 
 ### <a name="to-create-a-trusted-certificate-profile"></a>Så här skapar du en betrodd certifikatprofil
 

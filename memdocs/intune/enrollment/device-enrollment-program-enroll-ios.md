@@ -18,12 +18,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5cb6b4df9e3834ce447b176b5dfab158deb0d543
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
-ms.translationtype: HT
+ms.openlocfilehash: 8fe0b1748a40858bca55cc66b250c96725bfd9f1
+ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85094044"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85332874"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -69,7 +68,7 @@ Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11
 - Högsta antalet registreringsprofiler per token: 1,000  
 - Högsta antalet automatiserade enhetsregistreringsenheter per profil: ingen begränsning (inom det högsta antalet enheter per token)
 - Högsta antalet automatiserade enhetsregistreringstoken per Intune-konto: 2,000
-- Högsta antalet automatiserade enhetsregistreringsenheter per token: 75 000
+- Högsta antalet automatiserade enhetsregistreringsenheter per token: Gränsen för den första synkroniseringen är 75 000–80 000 enheter. Intune fortsätter att synkronisera med ABM eller ASM med en incheckning var 12:e timme för att lägga till ytterligare 80 000 enheter varje gång. En manuell synkronisering lägger till ytterligare 80 000 enheter. Synkroniseringarna fortsätter att ske och enheterna kommer att bli synkroniserade från ABM/ASM till Intune i 75 000–80 000 enhetsbatcher. 
 
 ## <a name="get-an-apple-ade-token"></a>Hämta en Apple ADE-token
 

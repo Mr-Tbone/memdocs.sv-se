@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/17/2020
+ms.date: 06/24/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,11 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 99facc87d068239962ab0d40874aa081f5e19189
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
-ms.translationtype: HT
+ms.openlocfilehash: 1f2a6955a430427fe3f4e2791da6bbaecdd90523
+ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989685"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353587"
 ---
 # <a name="use-filevault-disk-encryption-for--macos-with-intune"></a>Använda FileVault-diskkryptering för macOS med Intune
 
@@ -30,18 +29,18 @@ Intune stöder macOS FileVault-diskkryptering. FileVault är ett program för kr
 
 Använd någon av följande principtyper för att konfigurera FileVault på dina hanterade enheter:
 
-- **[Endpoint Security-säkerhetsprincip för macOS FileVault](#create-an-endpoint-security-policy-for-filevault)** . FileVault-profilen i *Endpoint Security* är en fokuserad grupp med inställningar som är dedikerade för att konfigurera FileVault.
+- **[Endpoint Security-säkerhetsprincip för macOS FileVault](#create-endpoint-security-policy-for-filevault)** . FileVault-profilen i *Endpoint Security* är en fokuserad grupp med inställningar som är dedikerade för att konfigurera FileVault.
 
   Visa [FileVault-inställningar som är tillgängliga i profiler för diskkrypteringsprincip](../protect/endpoint-security-disk-encryption-profile-settings.md).
 
-- **[Enhetskonfigurationsprofil för Endpoint Protection för macOS FileVault](#create-an-endpoint-security-policy-for-filevault)** . FileVault-inställningar är en av de tillgängliga inställningskategorierna för macOS-slutpunktsskydd. Mer information om hur du använder en profil för enhetskonfiguration finns [Skapa en enhetsprofil i Intune](../configuration/device-profile-create.md).
+- **[Enhetskonfigurationsprofil för Endpoint Protection för macOS FileVault](#create-endpoint-security-policy-for-filevault)** . FileVault-inställningar är en av de tillgängliga inställningskategorierna för macOS-slutpunktsskydd. Mer information om hur du använder en profil för enhetskonfiguration finns [Skapa en enhetsprofil i Intune](../configuration/device-profile-create.md).
 
   Visa de [FileVault-inställningar som är tillgängliga för i Endpoint Protection-profiler från policyn Enhetskonfiguration](../protect/endpoint-protection-macos.md#filevault).
 
 Information om hur du hanterar BitLocker för Windows 10 finns i [Hantera BitLocker-princip](../protect/encrypt-devices.md).
 
 > [!TIP]
-> [krypteringsrapport](encryption-monitor.md) som visar information om krypteringsstatusen för enheter, för alla dina hanterade enheter.
+> Intune har en inbyggd [krypteringsrapport](encryption-monitor.md) som visar information om krypteringsstatusen för alla dina hanterade enheter.
 
 När du har skapat en princip för att kryptera enheter med FileVault tillämpas principen på enheter i två steg. Först förbereds enheten så att Intune kan hämta och säkerhetskopiera återställningsnyckeln. Den här åtgärden kallas deponering eller deposition. När nyckeln har deponerats kan diskkrypteringen starta.
 
@@ -60,17 +59,15 @@ Nedan visas de FileVault-behörigheter som ingår i kategorin **Fjärruppgifter*
 - **Rotera FileVault-nyckel**
   - Supportavdelningen
 
-## <a name="create-and-deploy-policy"></a>Skapa och distribuera princip
-
-### <a name="create-an-endpoint-security-policy-for-filevault"></a>Skapa en säkerhetsprincip för slutpunkt för FileVault
+## <a name="create-endpoint-security-policy-for-filevault"></a>Skapa en Endpoint Security-princip för FileVault
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 2. Välj **Slutpunktsskydd** > **Diskkryptering** > **Skapa princip**.
 
 3. På sidan **Grundläggande** anger du följande egenskaper och väljer sedan **Nästa**.
-   1. **Plattform**: macOS
-   2. **Profil**: FileVault
+   - **Plattform**: macOS
+   - **Profil**: FileVault
 
    ![Välj FileVault-profilen](./media/encrypt-devices-filevault/select-macos-filevault-es.png)
 
@@ -89,38 +86,54 @@ Nedan visas de FileVault-behörigheter som ingår i kategorin **Fjärruppgifter*
 
    Fortsätt genom att välja **Nästa**.
 
-7. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om hur du tilldelar profiler finns i Tilldela användar- och enhetsprofiler.
+7. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om att tilldela profiler finns i Tilldela profiler till användare och enheter.
 Välj **Nästa**.
 
 8. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
 
-### <a name="create-a-device-configuration-policy-for-filevault"></a>Skapa en princip för enhetskonfiguration för FileVault
+## <a name="create-device-configuration-policy-for-filevault"></a>Skapa en princip för enhetskonfiguration för FileVault
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
 
-3. Ange följande alternativ:
-   1. **Plattform**: macOS
-   2. **Profil**: Endpoint Protection
+3. På sidan **Skapa en profil** anger du följande alternativ och klickar sedan på **Skapa**:
+   - **Plattform**: macOS
+   - **Profil**: Endpoint Protection
 
    ![Välj FileVault-profilen](./media/encrypt-devices-filevault/select-macos-filevault-dc.png)
 
-4. Välj **Inställningar** > **FileVault**.
+4. På sidan **Grundläggande** anger du följande egenskaper:
 
-   ![FileVault-inställningar](./media/encrypt-devices-filevault/filevault-settings.png)
+   - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett bra namn kan till exempel innehålla profiltypen och plattformen.
 
-5. För *FileVault* väljer du **Aktivera**.
+   - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
 
-6. För *Typ av återställningsnyckel* stöds endast **Privat nyckel**.
+5. På sidan **Konfigurationsinställningar** väljer du **FileVault** för att expandera de tillgängliga inställningarna:
 
-   Överväg att lägga till ett meddelande som hjälper användarna att hämta återställningsnyckeln för deras enheter. Den här informationen kan vara användbar för dina användare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
+   > [!div class="mx-imgBorder"]
+   > ![FileVault-inställningar](./media/encrypt-devices-filevault/filevault-settings.png)
 
-   Exempel: Om du vill hämta en förlorad eller nyligen roterad återställningsnyckel loggar du in på webbplatsen för Intune-företagsportalen från valfri enhet. På portalen går du till *Enheter* och väljer den enhet där FileVault är aktiverat och väljer sedan *Hämta återställningsnyckel*. Den aktuella återställningsnyckeln visas.
+6. Konfigurera följande inställningar:
+  
+   - För *Aktivera FileVault* väljer du **Ja**.
 
-7. Konfigurera de återstående [FileVault](endpoint-protection-macos.md#filevault)inställningarna efter dina affärsbehov och välj **OK**.
+   - För *Återställningsnyckeltyp* väljer du **Personlig nyckel**.
 
-8. Slutför konfigurationen av ytterligare inställningar och spara sedan profilen.
+   - För *Beskrivning av depositionsplats för privat återställningsnyckel* lägger du till ett meddelande som hjälper användarna att hämta återställningsnyckeln för sina enheter. Den här informationen kan vara användbar för dina användare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
+
+     Exempel: Om du vill hämta en förlorad eller nyligen roterad återställningsnyckel loggar du in på webbplatsen för Intune-företagsportalen från valfri enhet. På portalen går du till *Enheter* och väljer den enhet där FileVault är aktiverat och väljer sedan *Hämta återställningsnyckel*. Den aktuella återställningsnyckeln visas.
+
+   Konfigurera de återstående [FileVault](endpoint-protection-macos.md#filevault)-inställningarna efter dina affärsbehov och välj **Nästa**.
+
+7. På sidan **Omfång (taggar)** väljer du **Välj omfångstaggar** för att öppna fönstret Välj taggar och tilldela omfångstaggar till profilen.
+
+   Fortsätt genom att välja **Nästa**.
+
+8. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om att tilldela profiler finns i Tilldela profiler till användare och enheter.
+Välj **Nästa**.
+
+9. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
 
 ## <a name="manage-filevault"></a>Hantera FileVault
 

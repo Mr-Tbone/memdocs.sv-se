@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/20/2020
+ms.date: 06/29/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 13824c82b426e1efb00dce2db7c9f4a2dd5bb9ee
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
-ms.translationtype: HT
+ms.openlocfilehash: 9bf55564cabce9a060c15100ad974c59bf858b15
+ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990325"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85591127"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Konfigurera och använda importerade PKCS-certifikat med Intune
 
@@ -271,6 +270,12 @@ Följande partners erbjuder metoder och verktyg som du kan använda för att imp
 Om du använder DigiCert PKI-plattformen kan du använda DigiCerts **importverktyg för Intune S/MIME-certifikat** när du importerar PFX-certifikat till Intune. Om du använder detta verktyg behöver du inte följa anvisningarna i avsnittet [Importera PFX-certifikat till Intune](#import-pfx-certificates-to-intune) tidigare i denna artikel.
 
 Mer information om DigiCert-importverktyget, inklusive hur du hämtar verktyget, finns på https://knowledge.digicert.com/tutorials/microsoft-intune.html i kunskapsbasen för DigiCert.
+
+### <a name="keytalk"></a>KeyTalk
+
+Om du använder KeyTalk-tjänsten så kan du konfigurera deras tjänst att importera PFX-certifikat till Intune. När du slutfört integreringen så behöver du inte följa anvisningarna i avsnittet [Importera PFX-certifikat till Intune](#import-pfx-certificates-to-intune) som det står tidigare i denna artikel.
+
+Mer information om KeyTalks integrering med Intune finns i https://keytalk.com/support i KeyTalk-kunskapsbasen.
 
 ## <a name="next-steps"></a>Nästa steg
 

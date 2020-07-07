@@ -17,12 +17,11 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41b85299057f172fec224873607509aaaec60024
-ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
-ms.translationtype: HT
+ms.openlocfilehash: 5d23eaeee839122bad46cd9619a790b9ca6332a6
+ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84977286"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85383265"
 ---
 # <a name="manage-collaboration-experiences-using-office-for-ios-and-android-with-microsoft-intune"></a>Hantera samarbetsmiljön med Office för iOS och Android med Microsoft Intune
 
@@ -108,7 +107,13 @@ De här inställningarna kan distribueras till appen oavsett status för enhetsr
 
 ### <a name="manage-file-transfers"></a>Hantera filöverföringar
 
-Som standard gör Office så att användare kan dela filer med användare i närheten och överföra filer till stationära system.
+Som standard gör Office för iOS och Android att användare kan dela innehåll med olika metoder:
+
+- Om filen finns i OneDrive eller SharePoint kan användarna initiera en resursbegäran direkt i filen.
+- Användare kan överföra filer till stationära system med hjälp av åtgärden **Överföra filer**.
+- Användare kan dela filer till närliggande mobila enheter med hjälp av åtgärden **Dela närliggande**.
+
+Åtgärderna **Överför filer** och **Dela närliggande** fungerar bara med media, lokala filer och filer som inte skyddas av en appskyddsprincip. 
 
 |    Tangent    |    Värde    |
 |-------------------------------------------------------------------|-------------|
