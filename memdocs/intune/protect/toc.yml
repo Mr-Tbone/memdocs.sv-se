@@ -52,6 +52,8 @@
       items:
         - name: Översikt över efterlevnad
           href: device-compliance-get-started.md
+        - name: Enhetsefterlevnadspartner
+          href: device-compliance-partners.md
         - name: Skapa en policy
           href: create-compliance-policy.md
         - name: Platsbaserad efterlevnad
