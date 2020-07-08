@@ -2,7 +2,7 @@
 title: Orchestration-grupper
 titleSuffix: Configuration Manager
 description: Skapa Orchestration-grupper och distribuera uppdateringar till dem.
-ms.date: 04/28/2020
+ms.date: 07/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: cddbebea-b418-4839-b0a8-7809486c8a4c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e9a307df23900abb985535b2ab59a5ff172cafb7
-ms.sourcegitcommit: 0e62655fef7afa7b034ac11d5f31a2a48bf758cb
+ms.openlocfilehash: 5b42a0260b347fb12444e8611e7ec02be38cc387
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82254919"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088419"
 ---
 # <a name="orchestration-groups-in-configuration-manager"></a>Orchestration-grupper i Configuration Manager
 <!--3098816-->
@@ -89,7 +89,7 @@ Medlemmar i en Orchestration-grupp kan vara alla Configuration Manager-klienter,
 
 1. På sidan **före skript** anger du ett PowerShell-skript som ska köras på varje enhet *innan* distributionen körs. Skriptet ska returnera värdet `0` för lyckad eller `3010` för lyckad omstart.
 
-1. På sidan **efter skript** anger du ett PowerShell-skript som ska köras på varje enhet *när* distributionen har körts. Beteendet är i övrigt samma som för-skriptet.
+1. På sidan **efter skript** anger du ett PowerShell-skript som ska köras på varje enhet *när* distributionen har körts och en omstart, om det behövs, sker. Beteendet är i övrigt samma som för-skriptet.
 
 1. Slutför guiden.
 
@@ -123,7 +123,8 @@ Om du vill ta bort Orchestration-gruppen markerar du den och klickar sedan på *
        - Ange ett PowerShell-skript som körs på varje enhet *innan* distributionen körs. Skriptet ska returnera värdet `0` för lyckad eller `3010` för lyckad omstart.
        
    - **Efter skript**:
-      - Ange ett PowerShell-skript som ska köras på varje enhet *när* distributionen har körts. Skriptet ska returnera värdet `0` för lyckad eller `3010` för lyckad omstart.
+      - Ange ett PowerShell-skript som ska köras på varje enhet *när* distributionen har körts och en omstart, om det behövs, sker. Skriptet ska returnera värdet `0` för lyckad eller `3010` för lyckad omstart.
+  
    > [!WARNING]
    > Se till att för skript och post-skript testas innan du använder dem för Orchestration-grupper. För-skript och post-scripts är inte tids gräns och kommer att köras tills Orchestration-gruppens medlems tids gräns har nåtts.
 
