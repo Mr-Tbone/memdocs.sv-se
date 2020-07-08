@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9e3d03211907f31008b31d68c4ed5cd11ae1a6e
-ms.sourcegitcommit: fb77170957f50aa386ff825fb4183b4fd9e3e488
+ms.openlocfilehash: 2095fdd349437e03c673fb9f7906511c5e3af388
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791732"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088385"
 ---
 # <a name="microsoft-endpoint-manager-overview"></a>Översikt av Microsoft Endpoint Manager
 
@@ -43,7 +43,6 @@ Slutpunktshanteraren innehåller följande tjänster:
   Om du har en lokal infrastruktur, till exempel Exchange eller en Active Directory, är anslutningsprogram för Intune också tillgängliga:
 
   - **Intune Connector för Active Directory** lägger till poster i din lokala Active Directory-domän för datorer som registrerar sig med Windows Autopilot. Mer information finns i [Distribuera Azure AD-anslutna hybridenheter](/mem/intune/enrollment/windows-autopilot-hybrid).
-  - **Intune Exchange Connector** tillåter (eller blockerar) enhetsåtkomst till Exchange-servrarna om enheterna är registrerade i Intune och uppfyller dina principer. Mer information finns i [Konfigurera lokala Intune Exchange Connector](/mem/intune/protect/exchange-connector-install).
   - **Intune Certificate Connector** bearbetar certifikatförfrågningar från enheter som använder certifikat för autentisering och S/MIME-e-postkryptering. Mer information finns i [Använd certifikat för autentisering](/mem/intune/protect/certificates-configure).
 
   Som en del av slutpunktshanteraren kan du använda Intune för att skapa och kontrollera efterlevnad och distribuera appar, funktioner och inställningar till dina enheter med hjälp av molnet.

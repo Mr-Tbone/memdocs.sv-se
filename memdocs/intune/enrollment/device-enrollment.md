@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d907aaac6c37cbe7cad71e850fbc44322c93841
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: d3ca95db3297a6ca251f91a79fda705aebb6d18d
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83986388"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088470"
 ---
 # <a name="what-is-device-enrollment"></a>Vad är enhetsregistrering?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -45,6 +45,7 @@ Som standard Som standard tillåts enheter för alla plattformar registreras i I
 |**[USB-Direct](#usb-direct)**| Nej | Nej | Nej|[Mer information](apple-configurator-enroll-ios.md)|
 
 ## <a name="macos-enrollment-methods"></a>Registreringsmetoder för macOS
+
 | **Metod** |  **Återställning krävs** |  **Användartillhörighet** | **Låst** | **Information**|
 |:---:|:---:|:---:|:---:|:---:|
 |**[BYOD](#bring-your-own-device)** | Nej| Ja | Nej | [Mer information](macos-enroll.md)|
@@ -54,7 +55,7 @@ Som standard Som standard tillåts enheter för alla plattformar registreras i I
 ## <a name="windows-enrollment-methods"></a>Metoder för Windows-registrering
 
 | **Metod** | **Återställning krävs** | **Användartillhörighet** | **Låst** | **Information**|
-|:---:|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|
 |**[BYOD](#bring-your-own-device)** | Nej | Ja | Nej | [Mer information](windows-enroll.md)|
 |**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej |[Mer information](device-enrollment-manager-enroll.md)|
 |**Registrera automatiskt** | Nej |Ja |Nej | [Mer information](windows-enroll.md#enable-windows-10-automatic-enrollment)|
@@ -77,7 +78,7 @@ Som standard Som standard tillåts enheter för alla plattformar registreras i I
 |**Administratör för Android-enhet**|**(Förhandsdeklarerad IMEI eller SN) Användarinitierat via företagsportalen**| Nej | Ja | Nej | [Mer information](corporate-identifiers-add.md)|
 |**Administratör för Android-enhet med Zebra Mobility Extensions**|**Användare eller [DEM](#device-enrollment-manager) initierat via företagsportalen**| Nej | Ja vid användarinitierad, nej vid [DEM](#device-enrollment-manager)-initierad | Nej | [Mer information](../configuration/android-zebra-mx-overview.md)|
 |**Android Enterprise-dedikerad**|**NFC, QR-kod, Zero Touch-token**| Ja | Nej | Kan konfigureras via princip | [Mer information](android-kiosk-enroll.md)|
-|**Fullständigt hanterad Android Enterprise**|**NFC, QR-kod, Zero Touch-token**| Ja | Ja. Nej om [DEM](device-enrollment.md#device-enrollment-manager) initierats | Kan konfigureras via princip | [Mer information](android-dedicated-devices-fully-managed-enroll.md)|
+|**Fullständigt hanterad Android Enterprise**|**NFC, QR-kod, Zero Touch-token**| Ja | Ja | Kan konfigureras via princip | [Mer information](android-dedicated-devices-fully-managed-enroll.md)|
 
 
 ## <a name="bring-your-own-device"></a>Bring Your Own Device
