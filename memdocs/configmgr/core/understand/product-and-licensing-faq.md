@@ -2,7 +2,7 @@
 title: Vanliga frågor och svar om produkt och licensiering
 titleSuffix: Configuration Manager
 description: Hitta svar på vanliga produkt-och licens frågor för Configuration Manager.
-ms.date: 07/01/2020
+ms.date: 07/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b2c785fb41fa78ea0bd5d480560d45a3a7a7eda
-ms.sourcegitcommit: efe89408a3948b79b38893174cb19268ee37c8f3
+ms.openlocfilehash: 1ce9024fa610c6af19eb40ccf0da662a3e99234f
+ms.sourcegitcommit: 01c1ca337e82c5e8e92153079ed89f79e20bde9e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854430"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86157832"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Vanliga frågor och svar om Configuration Manager grenar och licenser
 
@@ -78,11 +78,11 @@ Med licens för samtidig hantering kan Configuration Manager kunder med Software
 
 - Om du registrerar en Windows 10-enhet på Intune på annat sätt krävs en fullständig Intune-licens ändå. Du kan t. ex. använda autopilot för att etablera en enhet eller en användare som manuellt hanterar självbetjänings registrering.
 
-- För befintliga Configuration Manager-hanterade enheter som ska registreras i Intune för samhantering i skala utan användar interaktion, använder Co-Management en Azure Active Directory (Azure AD) funktion som kallas Windows 10 Auto-registrering. Automatisk registrering kräver en Azure AD Premium-licens (AADP1), som är separat från Microsoft Endpoint Manager. För att samhantering ska fungera i det här scenariot används det för att kräva att du tilldelar både en AADP1 och en Intune-licens till varje enskild användare. Co-Management-licensen har ändrats från den 1 december 2019. Du behöver nu inte tilldela enskilda Intune-licenser för det här scenariot, men de krävs fortfarande i andra registrerings scenarier. AADP1-licensierings kravet är detsamma för automatisk registrering och samhantering för arbete.
+- För befintliga Configuration Manager-hanterade enheter som ska registreras i Intune för samhantering i skala utan användar interaktion, använder Co-Management en Azure Active Directory (Azure AD) funktion som kallas Windows 10 Auto-registrering. Automatisk registrering med samhantering kräver licenser för både Azure AD Premium (AADP1) och Intune. Från den 1 december 2019 behöver du inte längre tilldela enskilda Intune-licenser för det här scenariot. Microsoft Endpoint Manager innehåller nu Intune-licenser för samhantering. Det separata licens kravet för AADP1 är detsamma för det här scenariot. Du måste fortfarande tilldela Intune-licenser för andra registrerings scenarier.
 
 - Om du vill använda Intune för att hantera iOS-, Android-eller macOS-enheter behöver du en lämplig Intune-prenumeration via en fristående Intune-licens, Enterprise Mobility + Security (EMS) eller Microsoft 365.
 
-- Om du inte har någon Intune-relaterad prenumerations plan för att stödja samhantering behöver du köpa minst en Intune-licens. Den här licensen är till för en administratör som har åtkomst till administrations centret för Microsoft Endpoint Manager.
+- Om du inte har någon Intune-relaterad prenumerations plan för att stödja samhantering behöver du köpa minst en Intune-licens. Den här licensen är till för en administratör som aktiverar prenumerations planen och får åtkomst till administrations centret för Microsoft Endpoint Manager.
 
 - Om du använder Microsoft 365 inbyggd [grundläggande mobilitet och säkerhet](https://support.microsoft.com/office/capabilities-of-built-in-mobile-device-management-for-microsoft-365-a1da44e5-7475-4992-be91-9ccec25905b0)kan du inte använda den nya Co Management-licensen för en användare som också har enheter som hanteras av grundläggande mobilitet och säkerhet. Gör något av följande om du vill använda den tillsammanss hanterings licensen för användarens Configuration Manager-hanterade enhet:
 
@@ -93,18 +93,18 @@ Med licens för samtidig hantering kan Configuration Manager kunder med Software
 
 |Funktion | Licens för samtidig hantering | Fullständig Intune-licens |
 |---------|---------|---------|
-|Registrering av Windows 10|Ja (endast för befintliga ConfigMgr-hanterade enheter)|Yes|
-|iOS, Android, macOS-registrering|Inga|Yes|
-|Autopilot|Inga|Yes|
-|Hantering av mobil program (MAM)|Inga|Yes|
+|Registrering av Windows 10|Ja (endast för befintliga ConfigMgr-hanterade enheter)|Ja|
+|iOS, Android, macOS-registrering|Nej|Ja|
+|Autopilot|Nej|Ja|
+|Hantering av mobil program (MAM)|Nej|Ja|
 |Villkorlig åtkomst<br>(ytterligare AADP1 krävs)|Ja|Ja|
 |Enhetsprofiler|Ja|Ja|
 |Programuppdateringshanteraren|Ja|Ja|
 |Lager|Ja|Ja|
 |Apphantering|Ja|Ja|
 |Fjärrhjälp<br>(TeamViewer-licens krävs)|Ja|Ja|
-|Skriv bords analys<br>(Licenser för Windows-prenumeration krävs|Yes|Ej tillämpligt|
-|Klientkoppling|Yes|Ej tillämpligt|
+|Skriv bords analys<br>(Licenser för Windows-prenumeration krävs|Ja|E.t.|
+|Klientkoppling|Ja|E.t.|
 |Slutpunktsanalys|Ja|Ja|
 
 Mer information finns i följande artiklar:

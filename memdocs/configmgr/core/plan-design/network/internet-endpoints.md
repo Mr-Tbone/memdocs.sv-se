@@ -2,7 +2,7 @@
 title: Krav för Internet-åtkomst
 titleSuffix: Configuration Manager
 description: Lär dig om Internet-slutpunkter så att du kan använda alla funktioner i Configuration Manager funktioner.
-ms.date: 07/01/2020
+ms.date: 07/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,18 +10,25 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 986b8d83c705be84b04a89c99d9559471c6345c4
-ms.sourcegitcommit: 2c5fd7c8603b88b753765f3cc298d0a0bacaf521
+ms.openlocfilehash: 71f2a75d59af6f8d5c77e96d780e6d02352e5045
+ms.sourcegitcommit: 678104677ad36b789630befdc5e0f1efc572c14b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85819958"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86137354"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
 Vissa Configuration Manager funktioner är beroende av Internet anslutning för fullständig funktionalitet. Om din organisation begränsar nätverkskommunikation med Internet med en brand vägg eller proxyserver, så se till att tillåta dessa slut punkter.
 
 <!-- SCCMDocs-pr #3403 -->
+
+Configuration Manager använder följande Microsoft URL-vidarebefordrings tjänster i produkten:
+
+- `https://aka.ms`
+- `https://go.microsoft.com`
+
+Även om de inte uttryckligen anges i avsnitten nedan, bör du alltid tillåta dessa slut punkter.
 
 ## <a name="service-connection-point"></a><a name="bkmk_scp"></a>Tjänst anslutnings punkt
 
@@ -277,6 +284,14 @@ Mer information om vilka slut punkter som krävs för klient kopplings funktione
 ## <a name="endpoint-analytics"></a>Slutpunktsanalys
 
 Mer information om vilka slut punkter som krävs för slut punkts analys finns i [konfiguration av Endpoint Analytics-proxy](../../../../analytics/troubleshoot.md#bkmk_endpoints).
+
+## <a name="asset-intelligence"></a>Till gångs information
+
+<!-- memdocs#470 -->
+Om du använder [till gångs information](../../clients/manage/asset-intelligence/introduction-to-asset-intelligence.md)kan du tillåta följande slut punkter för tjänsten att synkronisera:
+
+- `https://sc.microsoft.com`
+- `https://ssu2.manage.microsoft.com`
 
 ## <a name="microsoft-public-ip-addresses"></a>Offentliga IP-adresser från Microsoft
 
