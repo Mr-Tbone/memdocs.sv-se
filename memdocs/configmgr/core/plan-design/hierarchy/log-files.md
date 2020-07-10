@@ -2,7 +2,7 @@
 title: Loggfilsreferens
 titleSuffix: Configuration Manager
 description: En referens till alla loggfiler för Configuration Manager klient, server och beroende komponenter.
-ms.date: 06/10/2020
+ms.date: 07/09/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0f69b42ce0396148c67eaade967ef4fd87dea7bb
-ms.sourcegitcommit: 03d2331876ad61d0a6bb1efca3aa655b88f73119
+ms.openlocfilehash: 296ac8448292b46318921cb952b5b8545a34f1fa
+ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "85946903"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86210327"
 ---
 # <a name="log-file-reference"></a>Loggfilsreferens
 
@@ -55,7 +55,7 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
 - [Loggfiler efter funktioner](#BKMK_FunctionLogs)  
 
-  - [Programhantering](#BKMK_AppManageLog)  
+  - [Program hantering](#BKMK_AppManageLog)  
 
   - [Tillgångsinformation](#BKMK_AILog)  
 
@@ -75,13 +75,15 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
   - [Desktop Analytics](#desktop-analytics)
 
-  - [Identifikation](#BKMK_DiscoveryLog)  
+  - [Identifiering](#BKMK_DiscoveryLog)  
 
+  - [Slutpunktsanalys](#bkmk_analytics)
+  
   - [Endpoint Protection](#BKMK_EPLog)  
 
   - [Tillägg](#BKMK_Extensions)  
 
-  - [Lager](#BKMK_InventoryLog)  
+  - [Inventering](#BKMK_InventoryLog)  
 
   - [Migrering](#BKMK_MigrationLog)  
 
@@ -171,7 +173,10 @@ I följande tabell listas loggfilerna som finns på Configuration Manager-klient
 |SCClient_ &lt; *domän* \> @ &lt; *användar namn* \> _2. log|Registrerar den historiska aktiviteten i Software Center för angiven användare på klientdatorn.|  
 |Scheduler.log|Registrerar aktiviteter för schemalagda aktiviteter för alla klientåtgärder.|  
 |SCNotify_ &lt; *domän* \> @ &lt; *användar namn* \> _1. log|Registrerar aktiviteten för att avisera användare om programvara för den angivna användaren.|  
-|SCNotify_ &lt; *domän* \> @ &lt; *användar namn* \> _1- &lt; *Date_Time*>. log|Registrerar den historiska informationen för att avisera användare om programvara för den angivna användaren.|  
+|SCNotify_ &lt; *domän* \> @ &lt; *användar namn* \> _1- &lt; *Date_Time*>. log|Registrerar den historiska informationen för att avisera användare om programvara för den angivna användaren.|
+|SensorWmiProvider. log|Registrerar aktiviteten för WMI-providern för slut punkts analys sensorn.|
+|SensorEndpoint. log|Registrerar körning av slut punkts analys princip och uppladdning av klient data till plats servern.|
+|SensorManagedProvider. log|Registrerar insamling och bearbetning av händelser och information för slut punkts analys.|
 |setuppolicyevaluator.log|Registrerar konfiguration och skapande av inventeringsprincip i WMI.|  
 |SleepAgent_ &lt; *domän*\>@SYSTEM_0.log|Huvud logg filen för Väcknings-proxy.|  
 |smscliui.log|Registrerar användningen av Configuration Manager-klienten i kontroll panelen.|  
@@ -246,7 +251,7 @@ Du hittar mer information om **logrotate** i dokumentationen till de Linux- och 
 
 Configuration Manager-klienten för Mac-datorer registrerar information i följande loggfiler på Mac-datorn:  
 
-|Loggnamn|Information|Location|
+|Loggnamn|Information|Plats|
 |--------------|-------------|-------------|
 |CCMClient- &lt; *Date_Time*>. log|Registrerar aktiviteter som är relaterade till Mac-klienternas åtgärder, inklusive program hantering, inventering och fel loggning.| `/Library/Application Support/Microsoft/CCM/Logs`|  
 |CCMAgent- &lt; *Date_Time*>. log|Registrerar information som rör klient åtgärder, inklusive inloggnings-och inloggnings åtgärder samt Mac-datorns aktivitet.| `~/Library/Logs`|  
@@ -344,7 +349,8 @@ I följande tabell visas de loggfiler som finns på Configuration Manager plats 
 |srsrpsetup.log|Registrerar resultat från installationsprocessen för rapporteringsplatsen.|Platssystemserver|  
 |statesys.log|Registrerar behandling av tillståndssystemmeddelanden.|Platsserver|  
 |statmgr.log|Registrerar skrivning av alla statusmeddelanden till databasen.|Platsserver|  
-|swmproc.log|Registrerar behandling av avläsningsfiler och inställningar.|Platsserver|  
+|swmproc.log|Registrerar behandling av avläsningsfiler och inställningar.|Platsserver|
+|UXAnalyticsUploadWorker. log|Registrerar data uppladdning till tjänsten för slut punkts analys.|Platsserver|   
 
 ### <a name="site-server-installation"></a><a name="BKMK_SiteInstallLog"></a>Installation av plats Server
 
@@ -623,7 +629,7 @@ Använd följande loggfiler för att felsöka problem med Desktop Analytics inte
 Loggfilerna för tjänst anslutnings punkten finns i följande katalog: `%ProgramFiles%\Configuration Manager\Logs\M365A` .
 Loggfilerna på Configuration Manager-klienten finns i följande katalog: `%WinDir%\CCM\logs` .
 
-| Logga | Beskrivning |Dator med loggfil|
+| Loggas | Beskrivning |Dator med loggfil|
 |---------|---------|---------|
 | M365ADeploymentPlanWorker. log | Information om distributions plan synkronisera från Desktop Analytics Cloud service till lokala Configuration Manager |Tjänstanslutningspunkt|
 | M365ADeviceHealthWorker. log | Information om enhetens hälso överföring från Configuration Manager till Microsoft Cloud |Tjänstanslutningspunkt|
@@ -644,6 +650,15 @@ I följande tabell listas loggfilerna som innehåller information som rör ident
 |ddm.log|Registrerar aktiviteter hos identifieringsdatahanteraren.|Platsserver|  
 |InventoryAgent.log|Innehåller information om aktiviteter som rör maskinvaruinventering, programinventering och pulsslagsidentifieringsåtgärder på klienten.|Klient|  
 |netdisc.log|Innehåller information om nätverksidentifieringsåtgärder.|Platsserver|  
+
+### <a name="endpoint-analytics"></a><a name="bkmk_analytics"></a>Slut punkts analys
+
+|Loggnamn|Beskrivning|Dator med loggfil|  
+|--------------|-----------------|----------------------------|  
+|UXAnalyticsUploadWorker. log|Registrerar data uppladdning till tjänsten för slut punkts analys.|Platsserver|  
+|SensorWmiProvider. log|Registrerar aktiviteten för WMI-providern för slut punkts analys sensorn.|Klient|  
+|SensorEndpoint. log|Registrerar körning av slut punkts analys princip och uppladdning av klient data till plats servern.|Klient|
+|SensorManagedProvider. log|Registrerar insamling och bearbetning av händelser och information för slut punkts analys.|Klient|
 
 ### <a name="endpoint-protection"></a><a name="BKMK_EPLog"></a>Endpoint Protection
 

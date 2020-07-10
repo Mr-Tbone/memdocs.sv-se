@@ -10,12 +10,12 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2061a6701bf40233593e2e5d683e36f2814d3978
-ms.sourcegitcommit: f999131e513d50967f88795e400d5b089ebc5878
+ms.openlocfilehash: 423864c2c954cc67da4ef54d55d7263ae346e786
+ms.sourcegitcommit: 24ce7df7dadf2385afe364b817ec58feeb04c700
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85914565"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86212285"
 ---
 # <a name="microsoft-edge-management"></a>Microsoft Edge-hantering
 
@@ -38,7 +38,7 @@ För klienter riktade till en Microsoft Edge-distribution:
 
 Enheten som kör Configuration Managers konsolen behöver åtkomst till följande slut punkter:
 
-|Location|Användning|
+|Plats|Användning|
 |---|---|
 |`https://edgeupdates.microsoft.com/api/products?view=enterprise`|Information om utgåvor av Microsoft Edge|
 |`http://dl.delivery.mp.microsoft.com`|Innehåll för Microsoft Edge-versioner|
@@ -76,7 +76,7 @@ Skapa ett Microsoft Edge-program med hjälp av den inbyggda program upplevelsen 
 
 ### <a name="log-files-for-deployment"></a>Loggfiler för distribution
 
-|Location|Logga|Användning|
+|Plats|Loggas|Användning|
 |---|---|---|
 | Platsserver|SMSProv.log|Visar information om skapandet av appen eller distributionen Miss lyckas.|
 | [Det varierar](../../core/plan-design/hierarchy/log-files.md)|PatchDownloader.log| Visar information om innehålls hämtningen Miss lyckas|
@@ -142,7 +142,7 @@ I arbets ytan **program bibliotek** klickar du på **Microsoft Edge Management**
 
 ### <a name="hardware-inventory-may-fail-to-process"></a>Maskin varu inventeringen kanske inte kan bearbeta
 <!--7535675-->
-Maskin varu inventering för enheter kan Miss lyckas. Fel som liknar dem nedan visas i filen Dataldr. log:
+Maskin varu inventering för enheter kan inte bearbetas. Fel som liknar dem nedan visas i filen Dataldr. log:
 
 ```text
 Begin transaction: Machine=<machine>
@@ -152,7 +152,7 @@ ERROR - is NOT retyrable.
 Rollback transaction: XXXX
 ```
 
-**Minskning:** Undvik det här problemet genom att inaktivera insamlingen av maskin varu inventerings klassen för webb läsar användning (SMS_BrowerUsage). Den här klassen utnyttjas inte för närvarande.
+**Minskning:** Undvik det här problemet genom att inaktivera insamlingen av maskin varu inventerings klassen för webb läsar användning (SMS_BrowerUsage).
 
 ## <a name="next-steps"></a>Nästa steg
 

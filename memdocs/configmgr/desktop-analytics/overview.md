@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 3a1aa67c51998de62f6390db848a458876327ea7
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: 0ef2d09423e7bb51e94cb626bf513aa7e98992c9
+ms.sourcegitcommit: d647eefa23c8849f49584442df568284d51d7525
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85590923"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86195658"
 ---
 # <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -63,16 +63,16 @@ Desktop Analytics ger följande fördelar:
 
 - **Configuration Manager-integrering**: tjänst molnet – möjliggör din befintliga lokala infrastruktur. Använd dessa data och analyser för att distribuera och hantera Windows på dina enheter.  
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller följande krav.
 
-### <a name="technical"></a>Teknik
+### <a name="technical"></a>Teknisk
 
 - En aktiv Global Azure-prenumeration med [globala administratörs](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions) behörigheter. [Microsoft-konton](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) stöds inte.  
 
     > [!IMPORTANT]
-    > Desktop Analytics är en Windows-tjänst som finns i Azure Global och som använder Windows-diagnostikdata. Den globala Azure-tjänsten är tillgänglig för amerikanska myndighets kunder, men den uppfyller inte [gcc-attribut (statligt community compliance)](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc#us-government-community-compliance) . En lista över erbjudanden för regelefterlevnad för Microsofts produkter och tjänster finns i [Microsoft Trust Center](https://docs.microsoft.com/microsoft-365/compliance/offering-home?view=o365-worldwide). Skriv bords analys är inte tillgängligt för GCC-kunder med höga eller DOD-kunder. Det finns inte stöd för att använda Azure Government-prenumerationer på värdbaserade Desktop Analytics-arbetsytor.
+    > Desktop Analytics är en Windows-tjänst som finns i Azure Global och som använder Windows-diagnostikdata. Även om Desktop Analytics är en Azure Global-tjänst som är tillgänglig för amerikanska myndighets kunder, uppfyller den inte [gcc-attribut (community för myndighets efterlevnad)](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc#us-government-community-compliance) . En lista över erbjudanden för regelefterlevnad för Microsofts produkter och tjänster finns i [Microsoft Trust Center](https://docs.microsoft.com/microsoft-365/compliance/offering-home?view=o365-worldwide). Skriv bords analys är inte tillgängligt för GCC-kunder med höga eller DOD-kunder. Det finns inte stöd för att använda Azure Government-prenumerationer på värdbaserade Desktop Analytics-arbetsytor.
 
     - **Ägarens behörigheter för arbets ytan** för att **Konfigurera din arbets yta**och följande roller:  
 

@@ -2,20 +2,20 @@
 title: Ansluta Microsoft Endpoint Manager-klientorganisation
 titleSuffix: Configuration Manager
 description: Ladda upp dina Configuration Manager-enheter till moln tjänsten och vidta åtgärder från administrations centret.
-ms.date: 04/10/2020
+ms.date: 07/10/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
-ms.technology: configmgr-sum
+ms.technology: configmgr-core
 ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: be1c938cfcf332edb37e24e4094567f88f363560
-ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
+ms.openlocfilehash: a9e97c74e4825dc49ce628b3ae176c55f4288966
+ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795626"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86210303"
 ---
 # <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions"></a><a name="bkmk_attach"></a>Microsoft Endpoint Manager-klient ansluter: synkronisering av enhet och enhets åtgärder
 <!--3555758 live 3/4/2020-->
@@ -25,7 +25,7 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Från och med Configuration Manager version 2002 kan du ladda upp dina Configuration Manager-enheter till moln tjänsten och vidta åtgärder från bladet **enheter** i administrations centret.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Ett konto som är en *Global administratör* för att logga in när du tillämpar den här ändringen. Mer information finns i [Administratörs roller för Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-ad-administrator-roles).
    - Onboarding skapar en app från tredje part och ett första parts tjänst objekt i din Azure AD-klient.
@@ -56,8 +56,9 @@ Om du har aktiverat samhantering kan du redigera egenskaper för samhantering f�
 1. Högerklicka på inställningarna för samhantering och välj **Egenskaper**.
 1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Klicka på **Använd**.
    - Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Om det behövs kan du begränsa överföringen till en enda enhets samling.
+1. Markera alternativet om du vill **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager** om du också vill få insikter för att optimera slut användar upplevelsen i [slut punkts analys](../../analytics/overview.md).
 
-   [![Konfigurations guide för samhantering](./media/3555758-configure-upload.png)](./media/3555758-configure-upload.png#lightbox)
+   [![Ladda upp enheter till administrations Center för Microsoft Endpoint Manager](../../analytics/media/6051638-configure-upload-configmgr.png)](../../analytics/media/6051638-configure-upload-configmgr.png#lightbox)
 1. Logga in med ditt *globala administratörskonto* när du uppmanas till det.
 1. Klicka på **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
 1. Klicka på **OK** för att stänga egenskaperna för samhantering när du har gjort dina ändringar.
@@ -77,6 +78,7 @@ Om du inte har samhantering aktive rad använder du guiden **Konfigurera samhant
    [![Konfigurations guide för samhantering](./media/3555758-comanagement-wizard.png)](./media/3555758-comanagement-wizard.png#lightbox)
 1. Klicka på **Nästa** och sedan **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
 1. På sidan **Konfigurera uppladdning** väljer du den rekommenderade inställningen för enhets uppladdning för **alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Om det behövs kan du begränsa överföringen till en enda enhets samling.
+1. Markera alternativet om du vill **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager** om du också vill få insikter för att optimera slut användar upplevelsen i [slut punkts analys](../../analytics/overview.md)
 1. Klicka på **Sammanfattning** för att granska dina val och klicka sedan på **Nästa**.
 1. När guiden är slutförd klickar du på **Stäng**.  
 
@@ -120,4 +122,4 @@ Använd följande loggar som finns på tjänst anslutnings punkten:
 
 ## <a name="next-steps"></a>Nästa steg
 
-Mer information om klient organisationen bifoga loggfiler finns i [Felsöka klient anslutning](technical-reference.md).
+Mer information om klient organisationen bifoga loggfiler finns i [Felsöka klient anslutning](troubleshoot.md).
