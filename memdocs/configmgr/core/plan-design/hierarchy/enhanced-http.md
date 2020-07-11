@@ -2,7 +2,7 @@
 title: Förbättrad HTTP
 titleSuffix: Configuration Manager
 description: Använd modern autentisering för att skydda klient kommunikation utan behov av PKI-certifikat.
-ms.date: 03/28/2020
+ms.date: 07/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bb14830e99600da1b71c516a44d51a0090cdc673
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1a6ec98bd350eb0ac8643254f64a9480f156bb13
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720179"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86239767"
 ---
 # <a name="enhanced-http"></a>Förbättrad HTTP
 
@@ -86,15 +86,13 @@ Följande Configuration Manager funktioner stöder eller kräver utökad HTTP:
 > Program uppdaterings platsen och relaterade scenarier har alltid stöd för säker HTTP-trafik med-klienter samt Cloud Management Gateway. Den använder en mekanism med hanterings platsen som skiljer sig från certifikat-eller tokenbaserad autentisering.<!-- SCCMDocs issue #1148 -->
 
 
-## <a name="prerequisites"></a>Krav  
+## <a name="prerequisites"></a>Förhandskrav  
 
 - En hanterings plats som kon figurer ATS för HTTP-klientanslutningar. Ange det här alternativet på fliken **Allmänt** i egenskaperna för hanterings plats rollen.  
 
 - En distributions plats som kon figurer ATS för HTTP-klientanslutningar. Ange det här alternativet på fliken **kommunikation** i egenskaperna för distributions plats rollen. Aktivera inte alternativet för att **tillåta att klienter ansluter anonymt**.  
 
 - Publicera webbplatsen till Azure AD för moln hantering.  
-
-    - Om du redan har uppfyllt den här förutsättningen för din webbplats måste du uppdatera Azure AD-programmet. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **Cloud Services**och välj **Azure Active Directory klienter**. Välj Azure AD-klienten, Välj webb programmet i fönstret **program** och välj sedan **Uppdatera program inställningar** i menyfliksområdet.  
 
 - *Endast för [Scenario 3](#bkmk_scenario3) *: en klient som kör Windows 10 version 1803 eller senare och som är ansluten till Azure AD. Klienten kräver den här konfigurationen för Azure AD-enhetsautentisering.<!-- SCCMDocs issue 1126 -->
 

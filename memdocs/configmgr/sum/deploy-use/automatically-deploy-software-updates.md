@@ -5,17 +5,17 @@ description: Distribuera program uppdateringar automatiskt med hjälp av regler 
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 05/20/2020
+ms.date: 07/10/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: bf172c4cb34a17ac793ea5568b0505505baf97a0
-ms.sourcegitcommit: dba89b827d7f89067dfa75a421119e0c973bb747
+ms.openlocfilehash: ae1f52b0744f79f79e00e5dfe2d6a76c903cf4a4
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83709442"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240039"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuera programuppdateringar automatiskt  
 
@@ -197,7 +197,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
         -  **Sändningsprioritet**: Ange sändningsprioriteten för distributionspaketet. Configuration Manager använder den här prioriteten när paketet skickas till distributions platser. Distributions paketen skickas i prioritetsordning: hög, medel eller låg. Paket med identisk prioritering skickas i den ordning de skapades. Om det inte finns någon efter släpning bearbetas paketet omedelbart oavsett prioritet.  
 
-        - **Aktivera binär differentiell replikering**: Aktivera den här inställningen för att minimera nätverks trafiken mellan platser. Binär differentiell replikering (BDR) uppdaterar endast det innehåll som har ändrats i paketet, i stället för att uppdatera hela paket innehållet. Mer information finns i [binär differentiell replikering](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#binary-differential-replication).  
+        - **Aktivera binär differentiell replikering**: Aktivera den här inställningen om du vill använda binär differentiell replikering för distributions paketet. Mer information finns i [binär differentiell replikering](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#binary-differential-replication).  
 
     - **Inget distributions paket**: från och med version 1806, distribuera program uppdateringar till enheter utan att först hämta och distribuera innehåll till distributions platser. Den här inställningen är fördelaktig vid hantering av mycket stor uppdaterings innehåll. Använd den även när du alltid vill att klienter ska hämta innehåll från Microsoft Update moln tjänsten. Klienter i det här scenariot kan också hämta innehåll från peer-datorer som redan har det innehåll som krävs. Den Configuration Manager klienten fortsätter att hantera innehålls hämtningen och kan därför använda funktionen Configuration Manager peer-cache eller andra tekniker som leverans optimering. Den här funktionen stöder alla uppdaterings typer som stöds av Configuration Manager hantering av program uppdateringar, inklusive Windows-och Office-uppdateringar.<!--1357933-->  
 

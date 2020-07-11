@@ -2,7 +2,7 @@
 title: Skapa program
 titleSuffix: Configuration Manager
 description: Skapa program med distributions typer, identifierings metoder och krav för att installera program vara.
-ms.date: 04/01/2020
+ms.date: 07/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 33a95ae78fdc80c6c08b59cfe5ec5b2e88485a8f
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 60ca31b73e31ea59b7a854f87262be7fdc4ab5c5
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82074664"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240345"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Skapa program i Configuration Manager
 
@@ -40,7 +40,7 @@ Den här artikeln innehåller också följande information för att konfigurera 
 - [Innehåll](#bkmk_dt-content)
 - [Aktivitetssekvens](#bkmk_dt-ts)
 - [Identifierings metod](#bkmk_dt-detect)
-- [Användarupplevelse](#bkmk_dt-ux)
+- [Användar upplevelse](#bkmk_dt-ux)
 - [Krav](#bkmk_dt-require)
 - [Retur koder](#bkmk_dt-return)
 - [Beroenden](#bkmk_dt-depend)
@@ -63,10 +63,10 @@ Sedan identifierar eller manuellt anger du programinformationen automatiskt:
 
 2. I list rutan **typ** väljer du den programinstallations fil typ som du vill använda för att identifiera programinformation. Mer information om de tillgängliga installations typerna finns i [distributions typer som stöds av Configuration Manager](create-applications.md#bkmk_deploy-types).  
 
-3. I rutan **plats** anger du den programinstallations fil som du vill använda för att identifiera programinformation. Den här platsen är antingen en nätverks Sök`\\server\share\filename`väg () eller en Store-länk. Du måste ha åtkomst till nätverks Sök vägen och eventuella undermappar som innehåller program innehåll.  
+3. I rutan **plats** anger du den programinstallations fil som du vill använda för att identifiera programinformation. Den här platsen är antingen en nätverks Sök väg ( `\\server\share\filename` ) eller en Store-länk. Du måste ha åtkomst till nätverks Sök vägen och eventuella undermappar som innehåller program innehåll.  
 
     > [!IMPORTANT]  
-    > När du väljer **Windows Installer (\*. msi-fil)** som program typ importerar platsen alla filer i den angivna mappen. Den skickar sedan filerna till distributions platser. Kontrol lera att den angivna mappen bara innehåller de filer som krävs för att installera programmet. Microsoft testar Configuration Manager för att stödja upp till 20 000 filer i programpaketet. Om programmet har fler filer bör du överväga att skapa flera program med färre filer.  
+    > När du väljer **Windows Installer ( \* . msi-fil)** som program typ importerar platsen alla filer i den angivna mappen. Den skickar sedan filerna till distributions platser. Kontrol lera att den angivna mappen bara innehåller de filer som krävs för att installera programmet. Microsoft testar Configuration Manager för att stödja upp till 20 000 filer i programpaketet. Om programmet har fler filer bör du överväga att skapa flera program med färre filer.  
 
 4. På sidan **Importera information** i guiden Skapa program granskar du informationen och väljer sedan **Nästa**. Om det behövs väljer du **föregående** för att gå tillbaka och korrigera eventuella fel.  
 
@@ -166,7 +166,7 @@ Om du [automatiskt identifierar programinformation](#bkmk_auto-app)kanske du int
 > - [Innehåll](#bkmk_dt-content)
 > - [Aktivitetssekvens](#bkmk_dt-ts)
 > - [Identifierings metod](#bkmk_dt-detect)
-> - [Användarupplevelse](#bkmk_dt-ux)
+> - [Användar upplevelse](#bkmk_dt-ux)
 > - [Krav](#bkmk_dt-require)
 > - [Retur koder](#bkmk_dt-return)
 > - [Beroenden](#bkmk_dt-depend)
@@ -193,7 +193,7 @@ Använd sedan någon av följande procedurer för att [automatiskt identifiera](
 
     2. Välj **identifiera information om den här distributions typen automatiskt från installationsfiler**.  
 
-    3. I rutan **plats** anger du den programinstallations fil som du vill använda för att identifiera distributions typs informationen. Den här platsen är antingen en nätverks Sök`\\server\share\filename`väg () eller en Store-länk. Du måste ha åtkomst till nätverks Sök vägen och eventuella undermappar som innehåller program innehåll.  
+    3. I rutan **plats** anger du den programinstallations fil som du vill använda för att identifiera distributions typs informationen. Den här platsen är antingen en nätverks Sök väg ( `\\server\share\filename` ) eller en Store-länk. Du måste ha åtkomst till nätverks Sök vägen och eventuella undermappar som innehåller program innehåll.  
 
 2. På sidan **Importera information** i guiden skapa distributions typ granskar du informationen och väljer sedan **Nästa**. Om det behövs väljer du **föregående** för att gå tillbaka och korrigera eventuella fel.  
 
@@ -307,17 +307,17 @@ Den här proceduren ställer in en identifierings metod som anger förekomst av 
 
         - **Typ**: Välj om det är en fil eller mapp.  
 
-        - **Sökväg** (krävs): Ange eller bläddra till den lokala sökvägen på enheten som innehåller filen eller mappen. Till exempel `C:\Program Files`. Du kan inte ange en delad nätverks Sök väg. Om du väljer **Bläddra**bläddrar du till det lokala fil systemet eller ansluter till en representativ klient för att bläddra.  
+        - **Sökväg** (krävs): Ange eller bläddra till den lokala sökvägen på enheten som innehåller filen eller mappen. Ett exempel är `C:\Program Files`. Du kan inte ange en delad nätverks Sök väg. Om du väljer **Bläddra**bläddrar du till det lokala fil systemet eller ansluter till en representativ klient för att bläddra.  
 
         - **Fil-eller mappnamn** (obligatoriskt): Ange den angivna fil-eller mappnamnet som ska identifieras i ovanstående sökväg. Om klienten identifierar den här filen eller mappen på enheten, anses programmet vara installerat på enheten.  
 
-        - **Den här filen eller mappen är associerad med ett 32-bitars program på 64-bitars system**: det här alternativet är valt som standard. Klienten kontrollerar först 32-bitars fil platser för den angivna filen eller mappen. Om filen eller mappen inte hittas söker klienten på 64-bitars platser.  
+        - **Den här filen eller mappen är associerad med ett 32-bitars program på 64-bitars system**: klienten kontrollerar först 32-bitars fil platser för den angivna filen eller mappen. Om filen eller mappen inte hittas söker klienten på 64-bitars platser.  
 
     - **Register**: identifiera om en angiven register nyckel eller register värde finns på en klienten het. Den här identifieringen anger att programmet är installerat. Ange följande ytterligare information:  
 
-        - **Hive** (krävs): Välj en registrerings data fil i list rutan. Till exempel `HKEY_LOCAL_MACHINE`.  
+        - **Hive** (krävs): Välj en registrerings data fil i list rutan. Ett exempel är `HKEY_LOCAL_MACHINE`.  
 
-        - **Nyckel** (obligatoriskt): Ange den register nyckel som ska sökas i stacken ovan. Till exempel `SOFTWARE\Microsoft\Office`.  
+        - **Nyckel** (obligatoriskt): Ange den register nyckel som ska sökas i stacken ovan. Ett exempel är `SOFTWARE\Microsoft\Office`.  
 
         - **Värde** (valfritt): Ange ett angivet värde som ska identifieras i ovanstående nyckel. Om du vill att klienten ska identifiera värdet (standard) aktiverar du alternativet för att **använda register nyckel värde (standard) för identifiering**. När du anger ett värde eller aktiverar det här alternativet måste du välja en **datatyp**.  
 
@@ -343,7 +343,7 @@ När du skapar fler än en identifierings metod för en distributions typ kan du
     |------------|----|------------------|-----|
     |            |    | MSI produkt kod |     |
     | Eller         | (  | fil1. text finns|     |
-    | Och        |    | fil2. txt finns | )   |
+    | Och        |    | file2.txt finns | )   |
 
 3. Om du vill ta bort gruppen väljer du de grupperade satserna och väljer sedan **dela upp grupp**.  
 
@@ -356,7 +356,7 @@ När du skapar fler än en identifierings metod för en distributions typ kan du
 2. I dialog rutan **skript redigeraren** väljer du en **skript typ** för att identifiera distributions typen: PowerShell, VBScript eller JScript.  
 
     > [!Note]  
-    > När ett Windows PowerShell-skript körs som en identifierings metod för appen anropar Configuration Manager klienten PowerShell `-NoProfile` med parametern. Det här alternativet startar PowerShell utan profiler. En PowerShell-profil är ett skript som körs när PowerShell startar. <!--3607762-->  
+    > När ett Windows PowerShell-skript körs som en identifierings metod för appen anropar Configuration Manager klienten PowerShell med `-NoProfile` parametern. Det här alternativet startar PowerShell utan profiler. En PowerShell-profil är ett skript som körs när PowerShell startar. <!--3607762-->  
 
 3. I rutan **skript innehåll** anger du det skript som du vill använda eller klistrar in innehållet i ett befintligt skript. Välj **Öppna** för att bläddra till ett befintligt sparat skript. Välj **Rensa** för att ta bort texten i fältet skript innehåll. Om det behövs kan du aktivera alternativet att **köra skript som 32-bitars process på 64-bitars klienter**.  
 
@@ -540,7 +540,7 @@ Configuration Manager verifierar dessa krav på enheter innan du installerar dis
 
 3. I list rutan **villkor** väljer du villkoret för att utvärdera om användaren eller enheten uppfyller installations kraven. Innehållet i listan varierar beroende på vilken kategori som valts.  
 
-4. I list rutan **operator** väljer du den operator som ska användas. Den här operatorn jämför det valda villkoret med det angivna värdet. Den bedömer om användaren eller enheten uppfyller installations kravet. Tillgängliga operatörer varierar beroende på vilket villkor som valts.  
+4. I list rutan **operator** väljer du den operator som ska användas. Den här operatorn jämför det valda villkoret med det angivna värdet. Den bedömer om användaren eller enheten uppfyller installations kravet. Tillgängliga operatörer varierar beroende på vilket villkor som valts. När du använder `One Of` operatorn, är fältet värden verifierat att du måste ange en post per rad.
 
     > [!Note]  
     > De tillgängliga kraven varierar beroende på vilken enhets typ som används av distributions typen.  
@@ -587,7 +587,7 @@ Ange retur koder för att styra beteenden när distributions typen har slutfört
 
 1. På fliken **RETUR koder** i fönstret Egenskaper för distributions typ väljer du **Lägg till**.  
 
-2. I fönstret Lägg till returkod anger du det **RETUR kods värde** som du förväntar dig från den här distributions typen. Det här värdet är ett positivt eller negativt heltal `-2147483648` mellan `2147483647`och.  
+2. I fönstret Lägg till returkod anger du det **RETUR kods värde** som du förväntar dig från den här distributions typen. Det här värdet är ett positivt eller negativt heltal mellan `-2147483648` och `2147483647` .  
 
 3. Välj en **kodtyp** i list rutan. Den här inställningen definierar hur Configuration Manager tolkar den angivna retur koden från den här distributions typen. De tillgängliga typerna varierar beroende på teknik för distributions typ.  
 
@@ -607,13 +607,13 @@ Ange retur koder för att styra beteenden när distributions typen har slutfört
 
 #### <a name="example-non-zero-success"></a>Exempel: ej noll klart
 
-Du distribuerar ett program som returnerar avslutnings koden `1` när den har installerats. Som standard identifierar Configuration Manager den här retur koden som inte är noll som ett haveri. Ange retur kods värdet för `1`och välj kodtypen **lyckad (ingen omstart)**. Nu Configuration Manager tolkar att RETUR koden är lyckad för den här distributions typen.
+Du distribuerar ett program som returnerar avslutnings koden `1` när den har installerats. Som standard identifierar Configuration Manager den här retur koden som inte är noll som ett haveri. Ange retur kods värdet för `1` och välj kodtypen **lyckad (ingen omstart)**. Nu Configuration Manager tolkar att RETUR koden är lyckad för den här distributions typen.
 
 #### <a name="default-return-codes"></a>Standard retur koder
 
 När du skapar vissa distributions typer lägger Configuration Manager automatiskt till följande retur koder som är gemensamma för den tekniken:  
 
-##### <a name="windows-installer-msi-file"></a>Windows Installer (\*. msi-fil)
+##### <a name="windows-installer-msi-file"></a>Windows Installer ( \* . msi-fil)
 
 |Värde    |Kodtyp|
 |---------|---------|
@@ -632,7 +632,7 @@ När du skapar vissa distributions typer lägger Configuration Manager automatis
 |3010     |Mjuk omstart|
 |1618     |Snabb återförsök|
 
-##### <a name="windows-app-package-appx-appxbundle-msix-msixbundle"></a>Windows-appaket (\*. appx, \*. appxbundle, \*. msix, \*. msixbundle)
+##### <a name="windows-app-package-appx-appxbundle-msix-msixbundle"></a>Windows-appaket ( \* . appx, \* . appxbundle, \* . msix, \* . msixbundle)
 
 |Värde    |Kodtyp|
 |---------|---------|
@@ -679,7 +679,7 @@ Använd följande procedur för att importera ett program till Configuration Man
 
 2. I menyfliksområdet på fliken **Start** och gruppen **skapa** väljer du **importera program**.  
 
-3. På sidan **Allmänt** i guiden Importera program anger du nätverks Sök vägen till **filen** som ska importeras. Till exempel `\\server\share\file.zip`. Den här filen är ett giltigt komprimerat arkiv (ZIP-format) för ett exporterat Configuration Manager-program.  
+3. På sidan **Allmänt** i guiden Importera program anger du nätverks Sök vägen till **filen** som ska importeras. Ett exempel är `\\server\share\file.zip`. Den här filen är ett giltigt komprimerat arkiv (ZIP-format) för ett exporterat Configuration Manager-program.  
 
 4. På sidan **fil innehåll** väljer du den åtgärd som ska vidtas om programmet är en dubblett av ett befintligt program. Skapa ett nytt program eller ignorera dubbletten och Lägg till en ny revision i det befintliga programmet.  
 
@@ -698,17 +698,17 @@ Configuration Manager stöder följande distributions typer för program:
 
 | Namn på distributionstyp | Beskrivning |
 |--------------------------|----------------------|  
-| **Windows Installer (\*. msi-fil)** | En Windows Installer-fil. |  
-| **Windows-appaket (\*. appx, \*. appxbundle, \*. msix, \*. msixbundle)** | En Windows-appaket (. appx), ett paket för Windows-programpaket (. appxbundle), ett Windows 10-appaket (. msix) eller Windows 10-appaket (. msixbundle).<!--1357427--> |  
+| **Windows Installer ( \* . msi-fil)** | En Windows Installer-fil. |  
+| **Windows-appaket ( \* . appx, \* . appxbundle, \* . msix, \* . msixbundle)** | En Windows-appaket (. appx), ett paket för Windows-programpaket (. appxbundle), ett Windows 10-appaket (. msix) eller Windows 10-appaket (. msixbundle).<!--1357427--> |  
 | **Windows-appaket (i Windows Store)** | Ange en länk till appen i Windows Store eller bläddra i butiken för att välja appen.<sup>[Anmärkning 1](#bkmk_note1)</sup> |  
-| **Skriptinstallationsprogram** | Ange ett skript eller program som körs på Windows-klienter för att installera innehåll eller för att utföra en åtgärd. Använd den här distributions typen för setup. exe installations program eller skript omslag. |  
+| **Skriptinstallationsprogram** | Ange ett skript eller program som körs på Windows-klienter för att installera innehåll eller för att utföra en åtgärd. Använd den här distributions typen för setup.exe installations program eller skript omslutningar. |  
 | **Microsoft Application Virtualization 4** | Ett Microsoft App-V v4-manifest. |  
 | **Microsoft Application Virtualization 5** | En paket fil för Microsoft App-V v5. |  
-| **Windows Phone app-paket\*(. xap-fil)** | En paket fil för Windows Phone. |  
+| **Windows Phone app-paket ( \* . xap-fil)** | En paket fil för Windows Phone. |  
 | **Windows Phone-appaket (i Windows Phone Store)** | Ange en länk till appen i Windows Store. |  
 | **Mac OS X** | För macOS-datorer som kör Configuration Manager-klienten. Skapa en. cmmac-fil med **CMAppUtil** -verktyget. |  
 | **Webb program** | Ange en länk till ett webb program. Den här distributions typen installerar en genväg till webb programmet på användarens enhet. |  
-| **Windows Installer via MDM (\*. msi)** | Skapa och distribuera Windows Installer-baserade appar till Windows 10-enheter. Mer information finns i [distribuera Windows Installer appar till MDM-registrerade Windows 10-enheter](../get-started/creating-windows-applications.md#bkmk_mdm-msi). |
+| **Windows Installer via MDM ( \* . msi)** | Skapa och distribuera Windows Installer-baserade appar till Windows 10-enheter. Mer information finns i [distribuera Windows Installer appar till MDM-registrerade Windows 10-enheter](../get-started/creating-windows-applications.md#bkmk_mdm-msi). |
 | **Aktivitetssekvens** | Från och med version 2002 installerar eller avinstallerar du komplexa program med hjälp av aktivitetssekvenser. Mer information finns i [distributions typ för aktivitetssekvens](../get-started/creating-windows-applications.md#bkmk_tsdt). <!--3555953--> |
 
 > [!NOTE]

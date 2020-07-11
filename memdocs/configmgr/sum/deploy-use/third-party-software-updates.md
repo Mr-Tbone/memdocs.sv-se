@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f5461f888bfa2b749061eef4000f0d7c5f756b84
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 2f5aa622ca5d98f2cb5eb0b0c3154625df11a42e
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906747"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240770"
 ---
 # <a name="enable-third-party-updates"></a>Aktivera uppdateringar från tredje part 
 
@@ -27,7 +27,7 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
 > Configuration Manager aktiverar inte den här funktionen som standard. Innan du använder den aktiverar du den valfria funktionen **Aktivera stöd för uppdateringar från tredje part på klienter**. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).
 
 
-## <a name="prerequisites"></a>Förutsättningar 
+## <a name="prerequisites"></a>Förhandskrav 
 - Tillräckligt med disk utrymme på den översta program uppdaterings platsens WSUSContent-mapp för att lagra det binära innehållet för program uppdateringar från tredje part.
     - Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution.
     - Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme kan du läsa [om hur du ändrar platsen där WSUS lagrar uppdateringar lokalt](https://docs.microsoft.com/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally) blogg inlägg.
@@ -35,6 +35,7 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
     - Download.microsoft.com över HTTPS-port 443 krävs för partner förtecknings listan. 
     -  Internet åtkomst till eventuella kataloger från tredje part och uppdatering av innehållsfiler. Ytterligare andra portar än 443 kan behövas.
     - Uppdateringar från tredje part använder samma proxyinställningar som SUP.
+- För Configuration Manager-versioner före 1910 kan säkerhets rollen **program uppdaterings hanteraren** inte synkronisera kataloger från tredje part. Du behöver säkerhets rollen **Fullständig administratör** för att synkronisera katalogerna.
 
 
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Ytterligare krav när SUP är fjärran sluten från plats servern på den översta nivån 

@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 9fcbcc81-cd6f-496e-b075-ef1afa2b8ccc
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 2a99384772895ff2675ade671076163b74cecee2
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.author: mstewart
+ms.openlocfilehash: 51c97ae3cd947e0bdfa82c595cb6446351412d21
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075310"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240379"
 ---
 # <a name="create-user-data-and-profiles-configuration-items-in-configuration-manager"></a>Skapa konfigurations objekt för användar data och profiler i Configuration Manager
 
@@ -37,7 +37,7 @@ Konfigurations objekt för användar data och profiler i Configuration Manager i
 ## <a name="enable-user-data-and-profiles-for-compliance-settings"></a>Aktivera användardata och profiler för kompatibilitetsinställningar  
  Använd följande procedur när du ska konfigurera standardklientinställningen för kompatibilitetsinställningar för användardata och profiler som gäller för alla datorer i hierarkin. Om du vill att den här inställningen bara ska gälla för vissa datorer skapar du en anpassad klientinställning och kopplar den till en samling som innehåller de datorer som du vill använda kompatibilitetsinställningarna för användardata och profiler för. Mer information om hur du skapar anpassade enhets inställningar finns i [Konfigurera klient inställningar](../../core/clients/deploy/configure-client-settings.md).  
 
-1.  I Configuration Manager-konsolen klickar du på **Administration** > **klient inställningar** > **standardinställningar**.  
+1.  I Configuration Manager-konsolen klickar du på **Administration**  >  **klient inställningar**  >  **standardinställningar**.  
 
 4.  På fliken **Start** går du till gruppen **Egenskaper** och klickar på **Egenskaper**.  
 
@@ -49,7 +49,7 @@ Konfigurations objekt för användar data och profiler i Configuration Manager i
 
 ## <a name="create-a-user-data-and-profiles-configuration-item"></a>Skapa ett konfigurations objekt för användar data och profiler  
 
-1. I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad** > **kompatibilitetsinställningar** > **användar data och profiler**.  
+1. I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad**  >  **kompatibilitetsinställningar**  >  **användar data och profiler**.  
 
 2. På fliken **Start** går du till gruppen **Skapa** och klickar på **Skapa konfigurationsobjekt för användardata och profiler**.  
 
@@ -86,7 +86,7 @@ Konfigurations objekt för användar data och profiler i Configuration Manager i
 
 ## <a name="deploy-a-user-data-and-profiles-configuration-item"></a>Distribuera ett konfigurations objekt för användar data och profiler  
 
-1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad** > **kompatibilitetsinställningar** > **användar data och profiler**.  
+1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad**  >  **kompatibilitetsinställningar**  >  **användar data och profiler**.  
 
 3.  Välj det konfigurationsobjekt för användardata och profiler som du vill distribuera. Gå sedan till fliken **Start** . I gruppen **Distribution** klickar du på **Distribuera**.  
 

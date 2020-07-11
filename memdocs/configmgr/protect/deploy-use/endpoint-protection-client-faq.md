@@ -2,7 +2,7 @@
 title: Vanliga frågor och svar om Endpoint Protection klient
 titleSuffix: Configuration Manager
 description: Få svar på vanliga frågor om Windows Defender och Endpoint Protection.
-ms.date: 12/09/2017
+ms.date: 07/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3b206c1556c2e9550ade5c2322acd65ad2b19412
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 0eafa09275220cdf07f837388aa6cb848fbd5e5a
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906835"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240294"
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Vanliga frågor och svar om Endpoint Protection klient
 
@@ -34,7 +34,6 @@ Dessa vanliga frågor och svar är avsedda för datoranvändare vars IT-administ
 -   [Var kommer virus, spionprogram och annan potentiellt oönskad programvara från?](#where-do-viruses-spyware-and-other-potentially-unwanted-software-come-from)  
 -   [Kan jag få skadlig program vara utan att känna till det?](#can-i-get-malicious-software-without-knowing-it)  
 -   [Varför är det viktigt att granska licensavtal innan du installerar programvara?](#why-is-it-important-to-review-license-agreements-before-installing-software)  
--   [Vad är skillnaden mellan Endpoint Protection och Windows Defender?](#whats-the-difference-between-endpoint-protection-and-windows-defender)  
 -   [Varför identifieras inte cookies i Windows Defender?](#why-doesnt-windows-defender-detect-cookies)  
 -   [Hur kan jag förhindra skadlig kod?](#how-can-i-prevent-malware)  
 -   [Vad är virus-och spionprograms definitioner?](#what-are-virus-and-spyware-definitions)  
@@ -132,9 +131,6 @@ Om du vill ta bort alla oönskade eller potentiellt skadliga objekt som Windows 
 ##  <a name="why-is-it-important-to-review-license-agreements-before-installing-software"></a>Varför är det viktigt att granska licensavtal innan du installerar programvara?  
  När du besöker webbplatser ska du inte automatiskt acceptera att ladda ned något som webbplatsen erbjuder. Om du hämtar kostnadsfri programvara, till exempel fildelningsprogram eller skärmsläckare, bör du läsa licensavtalet noggrant. Leta efter villkor som säger att du måste acceptera annonser och popupfönster från företaget, eller att programvaran kommer att skicka viss information tillbaka till programvaruutgivaren.  
 
-##  <a name="whats-the-difference-between-endpoint-protection-and-windows-defender"></a>Vad är skillnaden mellan Endpoint Protection och Windows Defender?  
- Endpoint Protection är en programvara som skyddar mot skadlig programvara, vilket innebär att den har utformats för att identifiera och skydda datorn mot en mängd skadlig programvara, inklusive virus, spionprogram och annan oönskad programvara. Windows Defender, som installeras automatiskt med Windows, är ett program som identifierar och stoppar spionprogram.  
-
 ##  <a name="why-doesnt-windows-defender-detect-cookies"></a> Varför identifieras inte cookies i Windows Defender?  
  Cookies är små textfiler som webbplatser lagrar på datorn för att lagra information om dig och dina inställningar. Webbplatser använder cookies för att erbjuda en anpassad upplevelse och samla in information om webbplats användning. Windows Defender identifierar inte cookies eftersom det inte anses vara ett hot mot din sekretess eller datorns säkerhet. I de flesta webbläsare kan du blockera cookies.  
 
@@ -200,9 +196,8 @@ Om du vill ta bort alla oönskade eller potentiellt skadliga objekt som Windows 
 
   Du kan välja vilka program och inställningar som du vill att Windows Defender ska övervaka, men vi rekommenderar att du slår på realtidsskyddet och aktiverar alla alternativ för realtidsskydd. De tillgängliga alternativen förklaras i följande tabell.  
 
-|||  
-|-|-|  
 |**Realtidsskyddsalternativ**|**Syfte**|  
+|-|-|  
 |Skanna alla hämtningar|Det här alternativet övervakar filer och program som hämtas, inklusive filer som hämtas automatiskt via Windows Internet Explorer och Microsoft Outlook® Express, till exempel ActiveX®-kontroller och installationsprogram. De här filerna kan hämtas, installeras eller köras av webbläsaren. Skadlig programvara, inklusive virus, spionprogram och annan potentiell oönskad programvara kan ingå i dessa filer och installeras utan din vetskap.<br /><br /> Med realtidsskyddsalternativet övervakar Windows Defender din dator ständigt och söker efter skadliga filer eller program som du kan ha råkat hämta. Den här övervakningsfunktionen innebär att Windows Defender inte behöver göra din surfning eller e-postupplevelse långsammare genom att kräva en kontroll av filer eller program som du vill hämta.|  
 |Övervaka fil- och programaktivitet på datorn|Det här alternativet övervakar när filer och program startar på datorn och varnar dig sedan om alla åtgärder de utför och åtgärder som vidtas på dem. Detta är viktig eftersom skadlig programvara kan använda sårbarheter i program som du har installerat för att köra skadlig eller oönskad programvara utan din vetskap. Till exempel kan spionprogram köras automatiskt i bakgrunden när du startar ett program som du ofta använder. Windows Defender övervakar dina program och varnar dig om misstänkt aktivitet.|  
 |Aktivera prestandaövervakning|Det här alternativet övervakar kända beteenden efter misstänkta mönster som inte kan identifieras av traditionella identifieringsmetoder i antivirusprogram.|  

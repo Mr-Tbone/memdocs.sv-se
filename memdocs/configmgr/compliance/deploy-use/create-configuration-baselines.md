@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 1365aec90093ee24ad967e1d68e7c414b4efa254
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.author: mstewart
+ms.openlocfilehash: 01355230d0dc8969555740cc25a08e0b8d2967d0
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906666"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240481"
 ---
 # <a name="create-configuration-baselines-in-configuration-manager"></a>Skapa konfigurations bas linjer i Configuration Manager
 
@@ -96,7 +96,7 @@ Om du vill inkludera anpassade konfigurations bas linjer som en del av utvärder
 
 ### <a name="example-evaluation-scenario"></a>Exempel på utvärderings scenario
 
-När en användare är en del av en samling som är riktad mot en efterlevnadsprincip som innehåller regel villkoret **Inkludera konfigurerade bas linjer i utvärderingen av efterlevnadsprinciper**, alla bas linjer med utgångs punkt i alternativet **utvärdera den här bas linjen som en del av alternativet utvärdering av efterlevnadsprincip** som är markerat och som distribueras till användaren eller användarens enhet utvärderas för kompatibilitet. Ett exempel:
+När en användare är en del av en samling som är riktad mot en efterlevnadsprincip som innehåller regel villkoret **Inkludera konfigurerade bas linjer i utvärderingen av efterlevnadsprinciper**, alla bas linjer med utgångs punkt i alternativet **utvärdera den här bas linjen som en del av alternativet utvärdering av efterlevnadsprincip** som är markerat och som distribueras till användaren eller användarens enhet utvärderas för kompatibilitet. Till exempel:
 
 - `User1`är en del av `User Collection 1` .
 - `User1`använder `Device1` , som finns i `Device Collection 1` och `Device Collection 2` .

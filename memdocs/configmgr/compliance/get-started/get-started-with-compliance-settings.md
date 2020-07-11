@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f0a26d02770ff8460787ee9897bdc8f1218a2c12
-ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
+ms.openlocfilehash: 5d8ae26c5e9cbf9f3a45d3584341e79de8ab3402
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506170"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240719"
 ---
 # <a name="get-started-with-compliance-settings-in-configuration-manager"></a>Kom igång med kompatibilitetsinställningar i Configuration Manager
 
@@ -68,11 +68,11 @@ När du har definierat en konfigurations bas linje distribuerar du den till anv�
 Klientenheter utvärderar sin kompatibilitet mot varje distribuerad konfigurationsbaslinje och rapporterar omedelbart resultatet till platsen med hjälp av tillstånds- och statusmeddelanden. Om en enhet för närvarande är frånkopplad från nätverket, men laddat ned konfigurations bas linjen, utvärderas fortfarande kompatibiliteten för konfigurations objekten. Den skickar kompatibilitetsinformation när den återansluter.  
 
 ### <a name="monitoring-configuration-baselines"></a>Övervaka konfigurations bas linjer
-- Övervaka resultatet av utvärderingen av kompatibiliteten i Configuration Manager-konsolen, under arbets ytan **övervakning** , i noden **distributioner** . Ett exempel:
+- Övervaka resultatet av utvärderingen av kompatibiliteten i Configuration Manager-konsolen, under arbets ytan **övervakning** , i noden **distributioner** . Till exempel:
   - Vanliga orsaker till inkompatibilitet
   - Fel
   - Antalet påverkade användare och enheter
-- Kör rapporter för kompatibilitetsinställningar med ytterligare information. Ett exempel:
+- Kör rapporter för kompatibilitetsinställningar med ytterligare information. Till exempel:
   - Vilka enheter som är kompatibla eller icke-kompatibla
   - Vilket element i konfigurations bas linjen som gör att en dator inte är kompatibel
 - Visa utvärderings resultat för kompatibilitet från Windows-datorer som kör Configuration Manager-klienten. Öppna kontroll panelen **Configuration Manager** och växla till fliken **konfigurationer** .  

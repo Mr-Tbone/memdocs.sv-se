@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
-author: aczechowski
-ms.author: aaroncz
+author: mestew
+ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 63f11066918854d72af0f1160d7d7569a93d7ebe
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 24637862326b029f974843c18ccba835ee5501ba
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712388"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240430"
 ---
 # <a name="create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Skapa anpassade konfigurations objekt för Windows-datorer och serverdatorer som hanteras med Configuration Manager-klienten
 
@@ -84,7 +84,7 @@ En identifierings metod i Configuration Manager innehåller regler som används 
     - **PowerShell**  
 
         > [!Note]  
-        > Från och med version 1810, anropar den Configuration Manager klienten PowerShell med- `-NoProfile` parametern när ett Windows PowerShell-skript körs som en identifierings metod. Det här alternativet startar PowerShell utan profiler. En PowerShell-profil är ett skript som körs när PowerShell startar. <!--3607762-->  
+        > Från och med version 1810, anropar den Configuration Manager klienten PowerShell med-parametern när ett Windows PowerShell-skript körs som en identifierings metod `-NoProfile` . Det här alternativet startar PowerShell utan profiler. En PowerShell-profil är ett skript som körs när PowerShell startar. <!--3607762-->  
 
 3. Välj **Öppna**, bläddra till det skript som du vill använda och välj sedan **Öppna**.  
 
@@ -97,7 +97,7 @@ På sidan **plattformar som stöds** i **guiden skapa konfigurations objekt**vä
 Du kan också **Ange Windows-versionen manuellt**. Välj **Lägg till** och ange varje del av Windows build-numret.
 
 > [!NOTE]
-> När du anger Windows Server 2016 innehåller valet `All Windows Server 2016 and higher 64-bit)` även Windows Server 2019. Om du bara vill ange Windows Server 2016 använder du alternativet för att **Ange Windows Server version manuellt**. <!--5866480-->
+> När du anger Windows Server 2016 `All Windows Server 2016 and higher 64-bit)` innehåller valet även Windows server 2019. Om du bara vill ange Windows Server 2016 använder du alternativet för att **Ange Windows Server version manuellt**. <!--5866480-->
 
 
 
@@ -118,11 +118,11 @@ Inställningarna representerar affärsvillkoren eller de tekniska kriterierna so
     - **Inställnings typ**: i listan väljer du och konfigurerar en av följande inställnings typer som ska användas för den här inställningen:  
         - [Active Directory-fråga](#bkmk_adquery)
         - [Sammansättning](#bkmk_assembly)
-        - [Fil system](#bkmk_file)
+        - [Filsystem](#bkmk_file)
         - [IIS-metabas](#bkmk_iis)
-        - [Registernyckel](#bkmk_regkey)
+        - [Register nyckel](#bkmk_regkey)
         - [Register värde](#bkmk_regval)
-        - [Över](#bkmk_script)
+        - [Skript](#bkmk_script)
         - [SQL-fråga](#bkmk_sql)
         - [WQL-fråga](#bkmk_wql)
         - [XPath-fråga](#bkmk_xpath)
@@ -139,11 +139,11 @@ Inställningarna representerar affärsvillkoren eller de tekniska kriterierna so
 
 ### <a name="active-directory-query"></a><a name="bkmk_adquery"></a>Active Directory fråga
 
-- **LDAP-prefix**: Ange ett giltigt prefix till Active Directory Domain Services-frågan för att utvärdera kompatibiliteten på klient datorer. Om du vill göra en global katalogs ökning `LDAP://` använder `GC://`du antingen eller.  
+- **LDAP-prefix**: Ange ett giltigt prefix till Active Directory Domain Services-frågan för att utvärdera kompatibiliteten på klient datorer. Om du vill göra en global katalogs ökning använder du antingen `LDAP://` eller `GC://` .  
 
 - **Unikt namn (DN)**: Ange det unika namnet på Active Directory Domain Services-objektet som utvärderas för kompatibilitet på klient datorer.  
 
-- **Sök filter**: Ange ett valfritt LDAP-filter för att förfina resultatet från Active Directory Domain Services-frågan för att utvärdera kompatibiliteten på klient datorer. Om du vill returnera alla resultat från frågan anger `(objectclass=*)`du.  
+- **Sök filter**: Ange ett valfritt LDAP-filter för att förfina resultatet från Active Directory Domain Services-frågan för att utvärdera kompatibiliteten på klient datorer. Om du vill returnera alla resultat från frågan anger du `(objectclass=*)` .  
 
 - **Sök omfång**: Ange Sök omfånget i Active Directory Domain Services  
 
@@ -155,7 +155,7 @@ Inställningarna representerar affärsvillkoren eller de tekniska kriterierna so
 
 - **Egenskap**: ange egenskapen för Active Directory Domain Services-objektet som används för att utvärdera kompatibiliteten på klient datorerna.  
 
-    Om du till exempel vill fråga Active Directory-egenskapen som lagrar antalet gånger som en användare felaktigt anger ett lösen ord anger `badPwdCount` du i det här fältet.  
+    Om du till exempel vill fråga Active Directory-egenskapen som lagrar antalet gånger som en användare felaktigt anger ett lösen ord anger du `badPwdCount` i det här fältet.  
 
 - **Fråga**: visar frågan som skapats från posterna i **LDAP-prefix**, **unikt namn (DN)**, **Sök filter** (om det angetts) och **egenskap**.  
 
@@ -188,7 +188,7 @@ En sammansättning är ett stycke kod som flera program kan dela på. Sammansät
 
 - **Ta med undermappar**: Sök också i alla undermappar under den angivna sökvägen.  
 
-- **Den här filen eller mappen är associerad med ett 64-bitars program**: om alternativet är aktiverat genomsöker du bara 64-bitars `%ProgramFiles%` fil platser som på 64-bitars datorer. Om det här alternativet inte är aktiverat kan du söka i `%ProgramFiles(x86)%`både 64-bitars platser och 32-bitars platser, till exempel.  
+- **Den här filen eller mappen är associerad med ett 64-bitars program**: om alternativet är aktiverat genomsöker du bara 64-bitars fil platser som `%ProgramFiles%` på 64-bitars datorer. Om det här alternativet inte är aktiverat kan du söka i både 64-bitars platser och 32-bitars platser, till exempel `%ProgramFiles(x86)%` .  
 
     > [!NOTE]  
     > Om samma fil eller mapp finns på platser för både 64- och 32-bitars systemfiler på samma 64-bitarsdator returneras flera filer av det globala villkoret.  
@@ -198,7 +198,7 @@ En sammansättning är ett stycke kod som flera program kan dela på. Sammansät
 
 ### <a name="iis-metabase"></a><a name="bkmk_iis"></a>IIS-metabas
 
-- **Metabassökväg**: Ange en giltig sökväg till den Internet Information Services (IIS) metabasen. Till exempel `/LM/W3SVC/`.  
+- **Metabassökväg**: Ange en giltig sökväg till den Internet Information Services (IIS) metabasen. Ett exempel är `/LM/W3SVC/`.  
 
 - **Egenskaps-ID**: ange egenskapen numeric för inställningen IIS-metabasen.  
 
@@ -246,7 +246,7 @@ Värdet som skriptet returnerar används för att utvärdera kompatibiliteten f�
 - **Kör skript med hjälp av autentiseringsuppgifterna för den inloggade användaren**: om du aktiverar det här alternativet körs skriptet på klient datorer som använder autentiseringsuppgifterna för den inloggade användaren.  
 
 > [!Note]  
-> Från och med version 1810, när du använder Windows PowerShell som ett identifierings-eller reparations skript, anropar Configuration Manager klienten `-NoProfile` PowerShell med parametern. Det här alternativet startar PowerShell utan profiler. En PowerShell-profil är ett skript som körs när PowerShell startar. <!--3607762-->  
+> Från och med version 1810, när du använder Windows PowerShell som ett identifierings-eller reparations skript, anropar Configuration Manager klienten PowerShell med `-NoProfile` parametern. Det här alternativet startar PowerShell utan profiler. En PowerShell-profil är ett skript som körs när PowerShell startar. <!--3607762-->  
 
 
 ### <a name="sql-query"></a><a name="bkmk_sql"></a>SQL-fråga
@@ -274,18 +274,18 @@ Värdet som skriptet returnerar används för att utvärdera kompatibiliteten f�
 
 - **Egenskap**: Ange mål-WMI-egenskapen i ovanstående klass.  
 
-- **WQL-fråga WHERE-sats**: Ange en kvalificerings sats för att minska resultatet. Om du till exempel bara vill skicka frågor till DHCP-tjänsten i klassen Win32_Service kan WHERE-satsen vara `Name = 'DHCP' and StartMode = 'Auto'`.   
+- **WQL-fråga WHERE-sats**: Ange en kvalificerings sats för att minska resultatet. Om du till exempel bara vill skicka frågor till DHCP-tjänsten i klassen Win32_Service kan WHERE-satsen vara `Name = 'DHCP' and StartMode = 'Auto'` .   
 
 
 ### <a name="xpath-query"></a><a name="bkmk_xpath"></a>XPath-fråga
 
-- **Sökväg**: Ange sökvägen till XML-filen på klient datorer som används för att utvärdera kompatibiliteten. Configuration Manager stöder användningen av alla variabler i Windows-systemmiljön `%USERPROFILE%` och användar variabeln i Sök vägs namnet.  
+- **Sökväg**: Ange sökvägen till XML-filen på klient datorer som används för att utvärdera kompatibiliteten. Configuration Manager stöder användningen av alla variabler i Windows-systemmiljön och `%USERPROFILE%` användar variabeln i Sök vägs namnet.  
 
 - **XML-fil namn**: Ange fil namnet som innehåller XML-frågan i ovanstående sökväg.  
 
 - **Inkludera undermappar**: aktivera det här alternativet om du vill söka i alla undermappar under den angivna sökvägen.  
 
-- **Den här filen är associerad med ett 64-bitars program**: Sök efter platsen för 64-bitars `%Windir%\System32` system filen, förutom den plats `%Windir%\Syswow64` för 32-bitars system som finns på Configuration Manager klienter som kör en 64-bitars version av Windows.  
+- **Den här filen är associerad med ett 64-bitars program**: Sök efter platsen för 64-bitars system filen, `%Windir%\System32` förutom den plats för 32-bitars system `%Windir%\Syswow64` som finns på Configuration Manager klienter som kör en 64-bitars version av Windows.  
 
 - **XPath-fråga**: Ange en giltig fullständig XPath-fråga (XML Path Language).  
 
@@ -348,9 +348,9 @@ Kompatibilitetsregler anger villkoren som definierar ett konfigurationsobjekts k
 - **Rapportera inkompatibilitet om den här inställnings instansen inte hittas**: om den här inställningen inte hittas på klient datorer aktiverar du det här alternativet för konfigurationsobjektet för att rapportera inkompatibilitet.  
 
 - **Allvarlighets grad för inkompatibilitet för rapporter**: Ange allvarlighets graden som rapporteras i Configuration Manager rapporter om denna efterlevnadsprincip inte fungerar. Följande allvarlighets grader är tillgängliga:  
-    - **Inga**  
+    - **Ingen**  
     - **Information**  
-    - **Honom**  
+    - **Varning**  
     - **Kritisk**  
     - **Kritisk med händelse**: datorer som inte uppfyller den här regeln rapporterar allvarlighets graden **kritisk**. Allvarlighetsgraden registreras även som en Windows-händelse i programhändelseloggen.  
 
@@ -367,9 +367,9 @@ Kompatibilitetsregler anger villkoren som definierar ett konfigurationsobjekts k
 - **Inställningen sker följande antal gånger:**  
 
 - **Allvarlighets grad för inkompatibilitet för rapporter**: Ange allvarlighets graden som rapporteras i Configuration Manager rapporter om denna efterlevnadsprincip inte fungerar. Följande allvarlighets grader är tillgängliga:  
-    - **Inga**  
+    - **Ingen**  
     - **Information**  
-    - **Honom**  
+    - **Varning**  
     - **Kritisk**  
     - **Kritisk med händelse**: datorer som inte uppfyller den här regeln rapporterar allvarlighets graden **kritisk**. Allvarlighetsgraden registreras även som en Windows-händelse i programhändelseloggen.  
 
@@ -380,7 +380,7 @@ Kompatibilitetsregler anger villkoren som definierar ett konfigurationsobjekts k
 
 Från och med Configuration Manager version 2002 kan du **spåra reparations historiken när den stöds** i dina efterlevnadsprinciper för konfigurations objekt. När det här alternativet är aktiverat genererar alla åtgärder som sker på klienten för konfigurationsobjektet ett tillstånds meddelande. Historiken lagras i Configuration Manager databasen.
 
-Bygg anpassade rapporter för att Visa reparations historiken med hjälp av den offentliga vyn **v_CIRemediationHistory**. `RemediationDate` Kolumnen är den tid, i UTC, som klienten körde reparationen. `ResourceID` Identifierar enheten. Genom att skapa anpassade rapporter i vyn **v_CIRemediationHistory** kan du:
+Bygg anpassade rapporter för att Visa reparations historiken med hjälp av den offentliga vyn **v_CIRemediationHistory**. `RemediationDate`Kolumnen är den tid, i UTC, som klienten körde reparationen. `ResourceID`Identifierar enheten. Genom att skapa anpassade rapporter i vyn **v_CIRemediationHistory** kan du:
 
 - Identifiera möjliga problem med dina reparations skript
 - Hitta trender i reparationer, till exempel en klient som är konsekvent inkompatibel med varje utvärderings cykel.

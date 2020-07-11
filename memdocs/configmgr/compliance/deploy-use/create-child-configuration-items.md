@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 113984fa-6150-41a1-89ed-d2a83b979732
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: d194d9e80c037a13dde3d694793b695dfa5902e8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: 319f673200244d4451b957dcb778ce378f9569fa
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712871"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240328"
 ---
 # <a name="how-to-create-child-configuration-items-in-configuration-manager"></a>Så här skapar du underordnade konfigurations objekt i Configuration Manager
 
@@ -31,7 +31,7 @@ Ett exempel på att skapa och redigera ett underordnat konfigurations objekt är
 
 ## <a name="to-create-a-child-configuration-item"></a>Så här skapar du ett underordnat konfigurationsobjekt  
 
-1.  I Configuration Manager-konsolen klickar du på **till gångar och** > kompatibilitetsinställningar**kompatibilitetsinställningar** > **konfigurations objekt**.  
+1.  I Configuration Manager-konsolen klickar du på **till gångar och**kompatibilitetsinställningar  >  **kompatibilitetsinställningar**  >  **konfigurations objekt**.  
 
 3.  Välj det konfigurationsobjekt som du vill skapa ett underordnat konfigurationsobjekt för i listan **Konfigurationsobjekt** och klicka på **Skapa underordnat konfigurationsobjekt** i gruppen **Konfigurationsobjekt** på fliken **Start**.  
 

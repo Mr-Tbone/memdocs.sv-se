@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 219ddd4c828cdabd022deb9fe372718184a4c024
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: 9323fc3c1203d20c77af1f2fd27cee0a377e8d68
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713025"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240090"
 ---
 # <a name="create-configuration-items-for-mac-os-x-devices"></a>Skapa konfigurations objekt för Mac OS X-enheter
 Använd det anpassade konfigurationsobjektet Configuration Manager **Mac OS X (anpassat)** för att hantera inställningar för Mac OS X-enheter som hanteras av Configuration Manager klienten.  
@@ -55,7 +55,7 @@ Operativ systemet Mac OS X använder egenskaps List (. plist)-filer för att lag
             > [!IMPORTANT]  
             >  Nyckel namnet är Skift läges känsligt och utvärderas inte om det skiljer sig från nyckel namnet på Mac-datorn. Dessutom kan du inte redigera nyckel namnet när du har angett det. Om du behöver redigera nyckel namnet tar du bort och återskapar sedan inställningen.  
   
-    -   **Över**  
+    -   **Skript**  
   
         -   **Identifierings skript**: Välj **Lägg till skript**och ange sedan ett gränssnitts skript för att utvärdera inställningarna på Mac-datorn för kompatibilitet. Använd **ECHO** -kommandot i Shell-skriptet för att returnera värden till Configuration Manager för efterlevnad. Configuration Manager använder de resultat som returneras i **STDOUT** för att utvärdera kompatibiliteten.  
   
@@ -99,7 +99,7 @@ Operativ systemet Mac OS X använder egenskaps List (. plist)-filer för att lag
   
         -   **Inställningen måste vara kompatibel med följande regel**: Välj en operator och ett värde som utvärderas för kompatibilitet med den valda inställningen. Du kan använda följande operatorer:  
   
-            -   **Är lika med**  
+            -   **Lika med**  
   
             -   **Inte lika med**  
   
@@ -107,7 +107,7 @@ Operativ systemet Mac OS X använder egenskaps List (. plist)-filer för att lag
   
             -   **Mindre än**  
   
-            -   **Mellan**  
+            -   **Delas**  
   
             -   **Större än eller lika med**  
   

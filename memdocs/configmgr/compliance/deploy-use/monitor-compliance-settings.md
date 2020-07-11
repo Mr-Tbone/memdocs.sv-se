@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 92c1ccca-a748-44cd-a52e-e41d34bf981d
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 839c08c8782a815703a19999bf1315fd65980ed8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: e2a378c1f54eb9bccbcc21f50419176bd39cb3ac
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712297"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240056"
 ---
 # <a name="monitor-compliance-settings-in-configuration-manager"></a>Övervaka kompatibilitetsinställningar i Configuration Manager
 
@@ -31,7 +31,7 @@ När du har distribuerat Configuration Manager konfigurations bas linjer till en
 
 ### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Visa kompatibilitetsresultat i Configuration Manager-konsolen  
 
-1.  I Configuration Manager-konsolen klickar du på **övervakning** > av**distributioner**.  
+1.  I Configuration Manager-konsolen klickar du på **övervakning**av  >  **distributioner**.  
 
 3.  Välj den konfigurationsbaslinjedistribution som du vill visa kompatibilitetsinformation om i listan **Distributioner** .  
 
@@ -56,7 +56,7 @@ När du har distribuerat Configuration Manager konfigurations bas linjer till en
  Kompatibilitetsinställningar i Configuration Manager innehåller ett antal inbyggda rapporter som gör att du kan övervaka information om konfigurations objekt, konfigurations bas linjer och distributioner. De här rapporterna tillhör rapportkategorin **Hantering av efterlevnad och inställningar**.  
 
 > [!IMPORTANT]  
->  Du måste använda ett jokertecken**%**() när du använder parametrarna **enhets filter** och användar filter i rapporterna för kompatibilitetsinställningar.  
+>  Du måste använda ett jokertecken ( **%** ) när du använder parametrarna **enhets filter** och användar filter i rapporterna för kompatibilitetsinställningar.  
 
  Mer information om hur du konfigurerar rapportering i Configuration Manager finns i [Introduktion till rapportering](../../core/servers/manage/introduction-to-reporting.md).
 
@@ -94,9 +94,9 @@ När du har distribuerat Configuration Manager konfigurations bas linjer till en
 
 -   **Ej kompatibel**  
 
--   **Okänd**  
+-   **Okänt**  
 
-1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad** > **Compliance Settings** > kompatibilitetsinställningar**konfigurations bas linjer**.  
+1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad**  >  **kompatibilitetsinställningar**  >  **konfigurations bas linjer**.  
 
 3.  Välj den konfigurationsbaslinje i listan **Konfigurationsbaslinjer** som du vill skapa en samling från.  
 

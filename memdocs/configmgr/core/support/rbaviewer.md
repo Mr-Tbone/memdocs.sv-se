@@ -2,7 +2,7 @@
 title: Rollbaserad administrations verktyg
 titleSuffix: Configuration Manager
 description: Använd rollbaserad administration och gransknings verktyg för att modellera och granska säkerhets roller och omfattningar i Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 07/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6372ff17-7f56-4d7b-a21b-87fb8bdd6d3a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ff940db21711aabb5d57a45b05d90d04415639bb
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4cf9d4d3f9d1b2f439d2e87d41cc280e7af0805a
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723189"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86239716"
 ---
 # <a name="role-based-administration-and-auditing-tool"></a>Verktyget för rollbaserad administration och granskning
 
@@ -31,7 +31,7 @@ Det rollbaserade administrations-och gransknings verktyget är ett av de [Config
 
 ## <a name="requirements"></a>Krav
 
-- Kör den på samma dator som Configuration Manager-konsolen  
+- Kör den på samma dator som Configuration Manager plats Server 
 
 - Du har rollen **Fullständig administratör**, **skrivskyddad analytiker**eller **säkerhets administratör**  
 
@@ -50,7 +50,7 @@ Det rollbaserade administrations-och gransknings verktyget är ett av de [Config
 
 Använd följande procedur för att modellera behörigheter för en ny roll som du vill skapa: 
 
-1. Kör **RBAViewer. exe**.  
+1. Kör **RBAViewer.exe**.  
 
 2. Välj de grundläggande säkerhets roller som du vill skapa på eller starta från en tom behörighets uppsättning. Välj de behörigheter som krävs.  
 
@@ -66,7 +66,7 @@ Använd följande procedur för att modellera behörigheter för en ny roll som 
 
 Använd följande procedur för att granska alla befintliga administrativa användare, samlingar och säkerhets omfattningar i Configuration Manager:
 
-1. Kör **RBAViewer. exe**.  
+1. Kör **RBAViewer.exe**.  
 
 2. Välj knappen **Granska RBA** i verktygsfältet.  
 
@@ -79,7 +79,7 @@ Använd följande procedur för att granska alla befintliga administrativa anvä
 
 Använd följande procedur för att granska den rollbaserade administrations konfigurationen för en speciell användare:
 
-1. Kör **RBAViewer. exe**.  
+1. Kör **RBAViewer.exe**.  
 
 2. Välj knappen **Kör som** i verktygsfältet.  
 

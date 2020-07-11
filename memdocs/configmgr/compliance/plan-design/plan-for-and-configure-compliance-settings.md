@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 9ea20b01-676a-4cc2-b328-0098a41b202e
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 73ccec4ca318b522c0714bc8e5cc89f6c8899edd
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: 5e048b6155e9ba7b1f4146498afec6be5af30fba
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712157"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240620"
 ---
 # <a name="plan-for-and-configure-compliance-settings-in-configuration-manager"></a>Planera för och konfigurera kompatibilitetsinställningar i Configuration Manager
 
@@ -25,7 +25,7 @@ Innan du börjar arbeta med Configuration Manager kompatibilitetsinställningar,
 
 ## <a name="prerequisites-for-compliance-settings"></a>Krav för kompatibilitetsinställningar  
 
-|Krav|Mer information|  
+|Förutsättning|Mer information|  
 |------------------|----------------------|  
 |Windows Configuration Manager-klienter måste vara aktiverade och konfigurerade för utvärdering av efterlevnad.|Se nedan|  
 |Om du vill köra rapporter måste du konfigurera rapportering för platsen.|[Introduktion till rapportering](../../core/servers/manage/introduction-to-reporting.md)|  
@@ -38,7 +38,7 @@ Den här proceduren konfigurerar standardklientinställningarna för kompatibili
 > [!TIP]  
 >  Andra typer av enheter kräver ingen specifik konfiguration för utvärderingen av kompatibilitetsinställningar.  
 
-1.  I Configuration Manager-konsolen klickar du på **Administration** > **klient inställningar** > **standardinställningar**.  
+1.  I Configuration Manager-konsolen klickar du på **Administration**  >  **klient inställningar**  >  **standardinställningar**.  
 2.  På fliken **Start** går du till gruppen **Egenskaper** och klickar på **Egenskaper**.  
 3.  Klicka på **Kompatibilitetsinställningar** i dialogrutan **Standardinställningar**.  
 4.  Konfigurera följande klientinställningar för kompatibilitetsinställningar:

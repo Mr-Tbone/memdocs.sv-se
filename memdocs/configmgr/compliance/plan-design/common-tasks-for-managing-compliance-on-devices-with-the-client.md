@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 4e345791-74db-41ad-b472-024ce6521daf
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 1ccb0f0a042a0dd82817e030f96bbbc729e752f0
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: 5920229331bca8d2a47b0bf1ab663530ef63c51e
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712178"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240668"
 ---
 # <a name="common-tasks-for-managing-compliance-on-devices-with-the-configuration-manager-client"></a>Vanliga aktiviteter för att hantera efterlevnad på enheter med Configuration Manager-klienten
 
@@ -30,7 +30,7 @@ Den här artikeln ger dig en introduktion till hur du använder Configuration Ma
 ## <a name="general-information-for-each-scenario"></a>Allmän information för varje scenario  
  I varje scenario skapar du ett konfigurationsobjekt som utför en viss uppgift. Gör så här för att öppna guiden skapa konfigurations objekt och komma igång:  
 
-1.  I Configuration Manager-konsolen väljer du **till gångar och kompatibilitet** > **kompatibilitetsinställningar** > **konfigurations objekt**.  
+1.  I Configuration Manager-konsolen väljer du **till gångar och kompatibilitet**  >  **kompatibilitetsinställningar**  >  **konfigurations objekt**.  
 
 1.  På fliken **Start** går du till gruppen **skapa** och väljer **skapa konfigurations objekt**.  
 
@@ -77,25 +77,25 @@ Den här artikeln ger dig en introduktion till hur du använder Configuration Ma
 
 4. Konfigurera följande inställningar på fliken **Allmänt** i dialog rutan **Skapa inställning** :  
 
-   -   **Namn** > **exempel inställning**  
+   -   **Namn**  >  **Exempel inställning**  
 
-   -   **Anger**register**värde**  >   
+   -   **Inställnings typ**  >  **Register värde**  
 
-   -   **Data typen** > **Integer** (eftersom värdet endast innehåller ett tal)  
+   -   **Datatyp**  >  **Integer** (eftersom värdet endast innehåller ett tal)  
 
-   -   **Hive** > -**HKEY_LOCAL_MACHINE**  
+   -   **Hive**  >  **HKEY_LOCAL_MACHINE**  
 
-   -   **Key** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
+   -   **Nyckel**  >  **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
 
-   -   **Värde** > **1** (det obligatoriska värdet)  
+   -   **Värde**  >  **1** (det obligatoriska värdet)  
 
 5. På fliken **efterlevnadsprinciper** i dialog rutan **Skapa inställning** väljer du **ny**. Konfigurera de här inställningarna i dialog rutan **Skapa regel** :  
 
-   -   **Namn** > **exempel regel**  
+   -   **Namn**  >  **Exempel regel**  
 
    -   **Vald inställning** > verifiera att den valda inställningen är **exempel inställning**.
 
-   -   **Regel typ** > **värde**  
+   -   **Regeltyp**  >  **Värde**  
 
    -   **Inställningen måste vara kompatibel med följande regel** > kontrol lera att Inställningens namn är korrekt och konfigurera alternativet för att ange att inställning svärdet måste vara lika med **1**.  
 

@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 309b9a09-a611-4ba2-90ab-dde51582cf87
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 4f70a956051858fce5b4ba5f519c7e1035600793
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: 3c31f97e2a494fa4b0d3e9e825a81b562859e5dd
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712311"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240362"
 ---
 # <a name="import-configuration-data-with-configuration-manager"></a>Importera konfigurations data med Configuration Manager
 
@@ -47,7 +47,7 @@ Exempel på andra scenarier där importen kan misslyckas är:
 
 ### <a name="import-configuration-data"></a>Importera konfigurationsdata  
 
-1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad** > **konfigurations objekt** eller **konfigurations bas linjer**
+1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad**  >  **konfigurations objekt** eller **konfigurations bas linjer**
 2.  På fliken **Start** går du till gruppen **skapa** och klickar på **Importera konfigurations data**.  
 3.  Klicka på **Lägg till** på sidan **Markera filer**i guiden **Importera konfigurationsdata**och välj de CAB-filer som du vill importera i dialogrutan **Öppna** .  
 4.  Markera kryss rutan **skapa en ny kopia av de importerade konfigurations bas linjerna och konfigurations objekt** om du vill att importerade konfigurations data ska kunna redige ras i Configuration Manager-konsolen.  

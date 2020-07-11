@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: c9a06e1b7c14cda02a8029925785c2109ea4204b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: f9f4e1ffe8b28efda0f59e6a252f39c95e2b7749
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712353"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240124"
 ---
 # <a name="remote-connection-profiles-in-configuration-manager"></a>Fjärr anslutnings profiler i Configuration Manager
 
@@ -31,16 +31,16 @@ Configuration Manager skapar en säkerhets grupp på klienter, **fjärran sluten
 > [!IMPORTANT]  
 > Om tillhörighets förhållandet mellan en användare och en enhet ändras i Configuration Manager inaktive ras fjärr anslutnings profilen och Windows-brandväggens inställningar för att förhindra anslutningar till datorn.
 
-## <a name="prerequisites"></a>Krav  
+## <a name="prerequisites"></a>Förhandskrav  
 
 ### <a name="external-dependencies"></a>Externa beroenden  
 
 - Om du vill att användarna ska kunna ansluta från Internet installerar och konfigurerar du en server för fjärrskrivbordsgateway. Mer information om hur du installerar och konfigurerar en server för Fjärrskrivbordsgateway finns i [Fjärrskrivbordstjänster – åtkomst från var som helst](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-plan-access-from-anywhere).
 
-- Om klienter kör en värdbaserad brand vägg måste den Aktivera programmet Mstsc. exe. När du konfigurerar en fjärr anslutnings profil aktiverar du inställningen för att **tillåta undantag i Windows-brandväggen för anslutningar i Windows-domäner och i privata nätverk**. Med den här inställningen kan Configuration Manager automatiskt konfigurera Windows-brandväggen.
+- Om klienter kör en värdbaserad brand vägg måste den Aktivera mstsc.exe programmet. När du konfigurerar en fjärr anslutnings profil aktiverar du inställningen för att **tillåta undantag i Windows-brandväggen för anslutningar i Windows-domäner och i privata nätverk**. Med den här inställningen kan Configuration Manager automatiskt konfigurera Windows-brandväggen.
 
     > [!TIP]
-    > Inställningar för grupprincip som konfigurerar Windows-brandväggen kan åsidosätta den konfiguration du anger i Configuration Manager. Om du använder grupprincip för att konfigurera Windows-brandväggen måste du se till att grupprincip inställningarna inte blockerar mstsc. exe.
+    > Inställningar för grupprincip som konfigurerar Windows-brandväggen kan åsidosätta den konfiguration du anger i Configuration Manager. Om du använder grupprincip för att konfigurera Windows-brandväggen kontrollerar du att grupprincip inställningarna inte blockerar mstsc.exe.
 
     Om klienterna kör en annan värdbaserad brand vägg konfigurerar du det här brand Väggs beroendet manuellt.  
 
@@ -80,7 +80,7 @@ När en användare ansluter till en arbets dator via fjärr anslutning, laddar d
 
         - Server namnet får inte vara längre än 256 tecken.
         - Det kan innehålla versaler, gemener och numeriska tecken.
-        - Förutom`.`punkter () mellan segment och ett kolon`:`() före porten, är de enda specialtecknen (`–`) och under streck (`_`).
+        - Förutom punkter ( `.` ) mellan segment och ett kolon ( `:` ) före porten, är de enda specialtecknen ( `–` ) och under streck ( `_` ).
         - Configuration Manager stöder inte användning av ett internationellt domän namn för det här värdet.
 
     - **Tillåt bara anslutningar från datorer som kör fjärr skrivbord med autentisering på nätverksnivå**: aktiverat som standard lägger den här inställningen till ytterligare en säkerhets nivå för anslutningen. Mer information finns i [bevilja åtkomst till fjärr skrivbord](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#why-allow-connections-only-with-network-level-authentication).
@@ -160,6 +160,6 @@ I fönstret **till gångs Detaljer** visas enheterna med det valda kompatibilite
 Configuration Manager innehåller inbyggda rapporter som du kan använda för att övervaka information om fjärr anslutnings profiler. De här rapporterna tillhör rapportkategorin **Hantering av efterlevnad och inställningar**.  
 
 > [!IMPORTANT]  
-> Använd jokertecknet (`%`) när du använder parametrarna **enhets filter** och **användar filter** i rapporterna för kompatibilitetsinställningar.  
+> Använd jokertecknet ( `%` ) när du använder parametrarna **enhets filter** och **användar filter** i rapporterna för kompatibilitetsinställningar.  
 
 Mer information om hur du konfigurerar rapportering i Configuration Manager finns i [Introduktion till rapportering](../../core/servers/manage/introduction-to-reporting.md).  

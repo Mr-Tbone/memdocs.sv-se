@@ -2,7 +2,7 @@
 title: Parametrar och egenskaper för klient installation
 titleSuffix: Configuration Manager
 description: Lär dig mer om kommando rads parametrar och egenskaper för CCMSetup för att installera Configuration Manager-klienten.
-ms.date: 06/14/2020
+ms.date: 07/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 388a051f899369aa6a7754f94b0a7727f943f0ec
-ms.sourcegitcommit: efe89408a3948b79b38893174cb19268ee37c8f3
+ms.openlocfilehash: 1de2cd1645687740986cc62514dbc990461cbbf6
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854413"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240583"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -43,13 +43,13 @@ Du kan också ange *Egenskaper* på CCMSetup.exe kommando rad för att ändra be
 > [!IMPORTANT]  
 > Ange CCMSetup-parametrar innan du anger egenskaper för client.msi.  
 
-CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Till exempel `\\SiteServer\SMS_ABC\Client`.
+CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Ett exempel är `\\SiteServer\SMS_ABC\Client`.
 
 I kommandotolken används följande format i CCMSetup.exe-kommandot:  
 
 `CCMSetup.exe [<Ccmsetup parameters>] [<client.msi setup properties>]`  
 
-Ett exempel:  
+Till exempel:  
 
 `CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
@@ -238,9 +238,9 @@ Den här parametern anger att CCMSetup.exe inte installerar den angivna föruts�
 
 Exempel:
 
-- `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe`
+- `CCMSetup.exe /skipprereq:filename.exe`
 
-- `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;windowsupdateagent30_x86.exe`
+- `CCMSetup.exe /skipprereq:filename1.exe;filename2.exe`
 
 Mer information om klient krav finns i [krav för Windows-klienten](prerequisites-for-deploying-clients-to-windows-computers.md).
 
@@ -266,7 +266,7 @@ Värden som stöds:
 - `TRUE`: Klienten uppgraderas inte automatiskt
 - `FALSE`: Klienten uppgraderas automatiskt (standard)
 
-Ett exempel:  
+Till exempel:  
 
 `CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
 
@@ -283,7 +283,7 @@ Mer information finns i [Extended driftskompatibilitet client](../../understand/
 
 Kommandot CCMSetup.exe ger följande retur koder. Du kan felsöka genom att granska `%WinDir%\ccmsetup\ccmsetup.log` klienten för kontext och ytterligare information om retur koder.
 
-|Returkod|Innebörd|  
+|Returkod|Betydelse|  
 |-----------|-------|  
 |0|Klart|  
 |6|Fel|  
@@ -489,7 +489,7 @@ Den här egenskapen kan ange adressen till en CMG (Cloud Management Gateway). An
 
 - Använd det returnerade värdet as-är med egenskapen **CCMHOSTNAME** .
 
-Exempelvis: `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
+Exempel: `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
 > [!Important]
 > När du anger adressen till en CMG för egenskapen **CCMHOSTNAME** ska du inte lägga till ett prefix som `https://` . Använd bara det här prefixet med **/MP** -URL: en för en CMG.
@@ -778,7 +778,7 @@ Configuration Manager stöder följande attributvärden för urvalskriterier fö
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Rubrik|  
+|2.5.4.12|T eller Title|Titel|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
 |2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  

@@ -7,15 +7,15 @@ ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
 ms.assetid: 9be8aaf3-075e-4acd-abd2-7459254e16e2
-author: aczechowski
+author: mestew
 manager: dougeby
-ms.author: aaroncz
-ms.openlocfilehash: 55b559f9b16eabfe2c2096497e6f63816b400803
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.author: mstewart
+ms.openlocfilehash: 94a5d0af5636236ffba3f15c05823ead083f2948
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712339"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240277"
 ---
 # <a name="how-to-deploy-configuration-baselines-in-configuration-manager"></a>Så här distribuerar du konfigurations bas linjer i Configuration Manager
 
@@ -27,7 +27,7 @@ Använd dialogrutan **Distribuera konfigurationsbaslinjer** för att definiera d
 
 ## <a name="deploy-a-configuration-baseline"></a>Distribuera en konfigurationsbaslinje  
 
-1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad** > **Compliance Settings** > kompatibilitetsinställningar**konfigurations bas linjer**.  
+1.  I Configuration Manager-konsolen klickar du på **till gångar och efterlevnad**  >  **kompatibilitetsinställningar**  >  **konfigurations bas linjer**.  
 
 3.  I listan **Konfigurationsbaslinjer** väljer du den konfigurationsbaslinje du vill distribuera. Gå sedan till fliken **Start** . I gruppen **Distribution** klickar du på **Distribuera**.  
 
