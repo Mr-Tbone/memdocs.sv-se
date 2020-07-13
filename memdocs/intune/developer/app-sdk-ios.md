@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b34235f5e8a2badd61e39f43f8a5cc724f64dbd9
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: a69176e347453131c76d669b14fd7ec37b331071
+ms.sourcegitcommit: ba36a60b08bb85d592bfb8c4bbe6d02a47858b09
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383282"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052501"
 ---
 # <a name="microsoft-intune-app-sdk-for-ios-developer-guide"></a>Utvecklarhandbok för Microsoft Intune App SDK för iOS
 
@@ -120,17 +120,17 @@ Följ anvisningarna nedan om du vill aktivera Intune App SDK:
      ![Intune App SDK iOS: kopiera paketresurser](./media/app-sdk-ios/intune-app-sdk-ios-copy-bundle-resources.png)
          
 2. Lägg till dessa iOS-ramverk i projektet:  
--  MessageUI.framework  
--  Security.framework  
--  CoreServices.framework  
--  SystemConfiguration.framework  
--  libsqlite3.TBD  
--  libc ++ .tbd  
--  ImageIO.framework  
--  LocalAuthentication.framework  
--  AudioToolbox.framework  
--  QuartzCore.framework  
--  WebKit.framework
+   -  MessageUI.framework  
+   -  Security.framework  
+   -  CoreServices.framework  
+   -  SystemConfiguration.framework  
+   -  libsqlite3.TBD  
+   -  libc ++ .tbd  
+   -  ImageIO.framework  
+   -  LocalAuthentication.framework  
+   -  AudioToolbox.framework  
+   -  QuartzCore.framework  
+   -  WebKit.framework
 
 3. Aktivera delning av nyckelringar (om det inte redan är aktiverat) genom att välja **Funktioner** i varje projektmål och aktivera reglaget för **delning av nyckelringar**. Delning av nyckelringar krävs för att du ska kunna fortsätta till nästa steg.
 
@@ -177,6 +177,9 @@ Följ anvisningarna nedan om du vill aktivera Intune App SDK:
 Om parametern -o inte anges, kommer indatafilen att ändras på plats. Verktyget är idempotent och ska köras igen när det har gjorts ändringar i appens Info.plist eller rättigheter. Du bör också hämta och köra den senaste versionen av verktyget när du uppdaterar Intune SDK, om konfigurationskraven för Info.plist har ändrats i den senaste versionen.
 
 ## <a name="configure-adalmsal"></a>Konfigurera ADAL/MSAL
+
+> [!NOTE]
+> Azure Active Directory-autentiseringsbibliotek (ADAL) och Azure AD Graph API kommer att bli inaktuella. Mer information finns i [Uppdatera dina program för användning med Microsoft Authentication Library (MSAL) och Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
 
 Intune App SDK kan använda antingen [Azure Active Directory Authentication Library](https://github.com/AzureAD/azure-activedirectory-library-for-objc) eller [Microsoft Authentication Library](https://github.com/AzureAD/microsoft-authentication-library-for-objc) för scenarierna för autentisering och villkorlig start. Den förlitar sig även på ADAL/MSAL för att registrera användarens identitet i MAM-tjänsten för hantering utan enhetsregistreringsscenarier.
 
@@ -287,6 +290,9 @@ För att få appskyddsprincipen för Intune måste apparna starta en registrerin
 > Intune App SDK för iOS använder 256-bitars krypteringsnycklar när kryptering har aktiverats av appskyddsprinciper. Alla appar måste ha den aktuella SDK-versionen för att delning av skyddade data ska vara möjlig.
 
 ### <a name="apps-that-already-use-adal-or-msal"></a>Appar som redan använder ADAL eller MSAL
+
+> [!NOTE]
+> Azure Active Directory-autentiseringsbibliotek (ADAL) och Azure AD Graph API kommer att bli inaktuella. Mer information finns i [Uppdatera dina program för användning med Microsoft Authentication Library (MSAL) och Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
 
 Appar som redan använder ADAL eller MSAL ska anropa `registerAndEnrollAccount`-metoden i `IntuneMAMEnrollmentManager`-instansen när användaren har autentiserats:
 
@@ -467,7 +473,7 @@ Intune App SDK har flera API: er som du kan använda för att hämta information
 Klass | Beskrivning
 ----- | -----------
 IntuneMAMPolicyManager.h | Klassen IntuneMAMPolicyManager visar den Intune APP-princip som distribueras till programmet. Klassen visar främst de API: er som är användbara för att [aktivera flera identiteter](app-sdk-ios.md#enable-multi-identity-optional). |
-IntuneMAMPolicy.h | Klassen IntuneMAMPolicy tillgängliggör vissa MAM-principinställningar som tillämpas på appen. De här principinställningarna blir tillgängliga så att appen kan anpassa sitt användargränssnitt. De flesta principinställningar tillämpas av SDK och inte appen. Den enda som appen ska implementera är Spara som-kontrollen. Den här klassen tillgängliggör vissa API:er som krävs för att implementera Spara som. |
+IntuneMAMPolicy.h | Klassen IntuneMAMPolicy tillgängliggör vissa MAM-principinställningar som tillämpas på appen. De flesta av de här principinställningarna blir tillgängliga så att appen kan anpassa sitt användargränssnitt. De flesta principinställningar tillämpas av SDK och inte appen. Det finns dock vissa undantag. Apputvecklare bör granska kommentarerna i den här rubriken för att avgöra vilka API:er som är tillämpliga för deras programscenarier. |
 IntuneMAMFileProtectionManager.h | Klassen IntuneMAMFileProtectionManager tillgängliggör API:er som appen kan använda för att uttryckligen skydda filer och kataloger baserat på en tillhandahållen identitet. Identiteten kan hanteras av Intune eller vara ohanterad, och SDK tillämpar lämplig MAM-princip. Användning av den här klassen är valfritt. |
 IntuneMAMDataProtectionManager.h | Klassen IntuneMAMDataProtectionManager tillgängliggör API:er som appen kan använda för att skydda databuffertar baserat på en tillhandahållen identitet. Identiteten kan hanteras av Intune eller vara ohanterad, och SDK tillämpar lämplig kryptering. |
 
@@ -478,6 +484,12 @@ Intune tillåter att IT-administratörer anger vilka konton som användare kan l
 För att fråga efter tillåtna konton bör appen kontrollera egenskapen `allowedAccounts` på `IntuneMAMEnrollmentManager`. Egenskapen `allowedAccounts` är antingen en matris som innehåller tillåtna konton eller nil. Om egenskapen är nil har inga tillåtna konton angetts.
 
 Appar kan även reagera på ändringar av egenskapen `allowedAccounts` genom att observera meddelandet `IntuneMAMAllowedAccountsDidChangeNotification`. Meddelandet skickas när värdet för egenskapen `allowedAccounts` ändras.
+
+## <a name="implement-file-encryption-required"></a>Implementering av filkryptering krävs
+
+`isFileEncryptionRequired`-API:et som definierats i `IntuneMAMPolicy.h` informerar programmen när IT-administratören kräver att programmen använder Intune-kryptering för alla filer som sparas på disken. Om `isFileEncryptionRequired` är sant är det appens ansvar att se till att alla filer som sparas på disken av appen krypteras med hjälp av API:erna i `IntuneMAMFile.h`, `IntuneMAMFileProtectionManager.h` och `IntuneMAMFDataProtectionManager.h`.
+
+Appar kan reagera på ändringar i den här principen genom att observera `IntuneMAMDataProtectionDidChangeNotification`-meddelandet som definierats i `IntuneMAMFDataProtectionManager.h`.
 
 ## <a name="implement-save-as-and-open-from-controls"></a>Implementera kontroller för Spara som och Öppna från
 
@@ -496,13 +508,14 @@ När appar använder `isSaveToAllowedForLocation`-API:et eller `isOpenFromAllowe
 * IntuneMAMSaveLocationOneDriveForBusiness
 * IntuneMAMSaveLocationSharePoint
 * IntuneMAMSaveLocationLocalDrive
+* IntuneMAMSaveLocationCameraRoll
 * IntuneMAMSaveLocationAccountDocument
 
 Apparna bör använda konstanterna i `isSaveToAllowedForLocation` för att kontrollera om data kan sparas till platser som betraktas som ”hanterade”, som till exempel OneDrive för företag, eller platser som är ”personliga”. API:et bör dessutom användas när appen inte kan kontrollera om en plats är ”hanterad” eller ”personlig”.
 
-`IntuneMAMSaveLocationLocalDrive`-konstanten bör användas när appen sparar data till en plats på den lokala enheten.
+`IntuneMAMSaveLocationLocalDrive`-konstanten bör användas när appen sparar data till en plats på den lokala enheten. På samma sätt bör konstanten `IntuneMAMSaveLocationCameraRoll` användas om appen sparar ett foto i kamerarullen.
 
-Om kontot för målplatsen är okänt ska `nil` skickas. Platsen `IntuneMAMSaveLocationLocalDrive` bör alltid kombineras med ett `nil`-konto.
+Om kontot för målplatsen är okänt ska `nil` skickas. Platserna `IntuneMAMSaveLocationLocalDrive` och `IntuneMAMSaveLocationCameraRoll` bör alltid kombineras med ett `nil`-konto.
 
 ### <a name="supported-open-locations"></a>Öppna platser som stöds
 

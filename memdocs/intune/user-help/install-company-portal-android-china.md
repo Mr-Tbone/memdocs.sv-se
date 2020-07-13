@@ -1,5 +1,5 @@
 ---
-title: Installera Intune-företagsportalsappen på kinesiska fastlandet | Microsoft Docs
+title: Installera Intune-företagsportalsappen i Folkrepubliken Kina | Microsoft Docs
 description: ''
 keywords: ''
 author: lenewsad
@@ -19,15 +19,16 @@ ms.reviewer: jeyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 39aa0108d160aea74e1ac47b19877763a9ffefa5
-ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
+ms.openlocfilehash: 58ba595b65ade57fee0ff3fe40242b27a2ff8ba4
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85332774"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86021845"
 ---
-# <a name="install-company-portal-app-in-mainland-china"></a>Installera företagsportalappen på kinesiska fastlandet   
+# <a name="install-company-portal-app-in-peoples-republic-of-china"></a>Installera företagsportalsappen i Folkrepubliken Kina
 
-Installera Intune-företagsportalsappen för att få åtkomst till skol- eller arbetsresurser från din Android-enhet. Appen är tillgänglig på kinesiska fastlandet och kan installeras från följande appbutiker: 
+Installera Intune-företagsportalsappen för att få åtkomst till skol- eller arbetsresurser från din Android-enhet. Appen är tillgänglig i Folkrepubliken Kina och kan installeras från följande appbutiker: 
 
 
 * [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947) 

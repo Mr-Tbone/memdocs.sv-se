@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf43608bd6eb9132cef1b97198e724bcada81d30
-ms.sourcegitcommit: a4ec80c5dd51e40f3b468e96a71bbe29222ebafd
+ms.openlocfilehash: afc823a906d76edfe8d3d635bcbfdbe845867266
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693365"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022304"
 ---
 # <a name="mdm-security-baseline-settings-for-intune"></a>Inställningar för MDM-säkerhetsbaslinjer för Intune  
 
@@ -1437,7 +1437,7 @@ Mer information finns i [CSP-princip – RemoteDesktopServices](https://docs.mic
   **Standard**: Aktiverad
   
 - **Block drive redirection** (Blockera omdirigering av enheter)  
-  Med den här principinställningen kan du ange om du vill förhindra mappningen av klientenheter i en session med Fjärrskrivbordstjänster (omdirigering). Som standard mappar en värdserver för fjärrskrivbordssessioner automatiskt klientenheter när anslutningen upprättas. Mappade enheter visas i trädet för sessionsmappar i Utforskaren eller på datorn i formatet *\<enhetsbeteckning >* på *\<datornamn>* . Du kan använda den här principinställningen om du vill åsidosätta detta beteende. Om du aktiverar den här principinställningen tillåts inte omdirigering av klientenheter i sessioner med Fjärrskrivbordstjänster och omdirigeringar av filkopiering med Urklipp tillåts inte på datorer som kör Windows Server 2003, Windows 8 och Windows XP. Om du inaktiverar den här principinställningen tillåts alltid omdirigering av klientenheter. Dessutom tillåts alltid omdirigering av filkopiering med Urklipp om omdirigering av Urklipp är tillåtet. Om du inte konfigurerar den här principinställningen anges inte omdirigering av klientenheter och omdirigering av filkopiering med Urklipp på grupprincipnivå.  
+  Med den här principinställningen kan du ange om du vill förhindra mappningen av klientenheter i en session med Fjärrskrivbordstjänster (omdirigering). Som standard mappar en värdserver för fjärrskrivbordssessioner automatiskt klientenheter när anslutningen upprättas. Mappade enheter visas i trädet för sessionsmappar i Utforskaren eller på datorn i formatet *\<driveletter>* på *\<computername>* . Du kan använda den här principinställningen om du vill åsidosätta detta beteende. Om du aktiverar den här principinställningen tillåts inte omdirigering av klientenheter i sessioner med Fjärrskrivbordstjänster och omdirigeringar av filkopiering med Urklipp tillåts inte på datorer som kör Windows Server 2003, Windows 8 och Windows XP. Om du inaktiverar den här principinställningen tillåts alltid omdirigering av klientenheter. Dessutom tillåts alltid omdirigering av filkopiering med Urklipp om omdirigering av Urklipp är tillåtet. Om du inte konfigurerar den här principinställningen anges inte omdirigering av klientenheter och omdirigering av filkopiering med Urklipp på grupprincipnivå.  
   [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067197)  
   
   **Standard**: Aktiverad
@@ -1521,10 +1521,10 @@ Mer information finns i [CSP-princip – Search](https://docs.microsoft.com/wind
   **Standard**: Ja
   
 ## <a name="smart-screen"></a>Smart skärm  
-Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen) i Windows-dokumentationen.  
+Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen) i Windows-dokumentationen. 
 
 - **Block execution of unverified files** (Blockera körning av overifierade filer)  
-  Blockera användare från att köra overifierade filer. 
+  Blockera användare från att köra overifierade filer.
   - *Inte konfigurerat* – Medarbetare kan ignorera SmartScreen-varningar och köra skadliga filer. 
   - *Ja* – Medarbetare kan inte ignorera SmartScreen-varningar och köra skadliga filer.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5aa91a84b2fe5d8870afc93022ab5a468b30e0db
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 7955afb2aef88e3787546843cc477bce22369a4d
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82074800"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022389"
 ---
 # <a name="how-to-use-intune-in-environments-without-google-mobile-services"></a>Använda Intune i miljöer utan Google Mobile Services
 
@@ -31,13 +31,13 @@ Microsoft Intune använder Google Mobile Services (GMS) för att kommunicera med
 
 ## <a name="install-the-intune-company-portal-app-without-access-to-the-google-play-store"></a>Installera Intune-företagsportalappen utan åtkomst till Google Play Butik 
 
-### <a name="for-users-outside-of-mainland-china"></a>För användare utanför kinesiska fastlandet 
+### <a name="for-users-outside-of-peoples-republic-of-china"></a>För användare utanför Folkrepubliken Kina
 
 Om Google Play inte är tillgängligt kan Android-enheter ladda ned [Microsofts Intune-företagsportalapp för Android](https://www.microsoft.com/en-us/download/details.aspx?id=49140) och läsa in appen separat. När appen installeras på det här sättet får appen inte uppdateringar eller korrigeringar automatiskt. Du måste vara noga med att regelbundet uppdatera och förse appen med korrigeringar. 
 
-### <a name="for-users-in-mainland-china"></a>För användare på kinesiska fastlandet 
+### <a name="for-users-in-peoples-republic-of-china"></a>För användare i Folkrepubliken Kina
 
-Eftersom Google Play Butik för närvarande inte finns på kinesiska fastlandet, måste Android-enheter hämta appar från kinesiska appmarknadsplatser. Mer information finns i [Installera företagsportalappen på kinesiska fastlandet](../user-help/install-company-portal-android-china.md).
+Eftersom Google Play Butik för närvarande inte finns i Folkrepubliken Kina, måste Android-enheter hämta appar från kinesiska appmarknadsplatser. Mer information finns i [Installera företagsportalappen i Folkrepubliken Kina](../user-help/install-company-portal-android-china.md).
 
 ## <a name="limitations-of-intune-device-administrator-management-when-gms-is-unavailable"></a>Begränsningar för administratörshanteringen av Intune-enheter när GMS inte är tillgängligt 
 

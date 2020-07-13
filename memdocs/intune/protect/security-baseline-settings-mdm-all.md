@@ -5,7 +5,7 @@ description: Granska standardinställningarna och de tillgängliga inställninga
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/04/2020
+ms.date: 07/06/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67bb805df6406226c67084ed832f5cc590b1664a
-ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
+ms.openlocfilehash: 9cc2cf4531c2e2d7a2847ccdbce87c8b938a46d6
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82943917"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022236"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>Inställningar för Windows MDM-säkerhetsbaslinjer för Intune
 
@@ -1851,7 +1851,7 @@ Mer information finns i [CSP-princip – RemoteDesktopServices](https://docs.mic
   **Standard**: Aktiverad
 
 - **Blockera omdirigering av enheter**:  
-  Med den här principinställningen kan du ange om du vill förhindra mappningen av klientenheter i en session med Fjärrskrivbordstjänster (omdirigering). Som standard mappar en värdserver för fjärrskrivbordssessioner automatiskt klientenheter när anslutningen upprättas. Mappade enheter visas i trädet för sessionsmappar i Utforskaren eller på datorn i formatet *\<enhetsbeteckning >* på *\<datornamn>* . Du kan använda den här principinställningen om du vill åsidosätta detta beteende. Om du aktiverar den här principinställningen tillåts inte omdirigering av klientenheter i sessioner med Fjärrskrivbordstjänster och omdirigeringar av filkopiering med Urklipp tillåts inte på datorer som kör Windows Server 2003, Windows 8 och Windows XP. Om du inaktiverar den här principinställningen tillåts alltid omdirigering av klientenheter. Dessutom tillåts alltid omdirigering av filkopiering med Urklipp om omdirigering av Urklipp är tillåtet. Om du inte konfigurerar den här principinställningen anges inte omdirigering av klientenheter och omdirigering av filkopiering med Urklipp på grupprincipnivå.  
+  Med den här principinställningen kan du ange om du vill förhindra mappningen av klientenheter i en session med Fjärrskrivbordstjänster (omdirigering). Som standard mappar en värdserver för fjärrskrivbordssessioner automatiskt klientenheter när anslutningen upprättas. Mappade enheter visas i trädet för sessionsmappar i Utforskaren eller på datorn i formatet *\<driveletter>* på *\<computername>* . Du kan använda den här principinställningen om du vill åsidosätta detta beteende. Om du aktiverar den här principinställningen tillåts inte omdirigering av klientenheter i sessioner med Fjärrskrivbordstjänster och omdirigeringar av filkopiering med Urklipp tillåts inte på datorer som kör Windows Server 2003, Windows 8 och Windows XP. Om du inaktiverar den här principinställningen tillåts alltid omdirigering av klientenheter. Dessutom tillåts alltid omdirigering av filkopiering med Urklipp om omdirigering av Urklipp är tillåtet. Om du inte konfigurerar den här principinställningen anges inte omdirigering av klientenheter och omdirigering av filkopiering med Urklipp på grupprincipnivå.  
   [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067197)
 
   **Standard**: Aktiverad
@@ -1968,7 +1968,7 @@ Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com
   **Standard**: Ja
 
 ::: zone-end
-::: zone pivot="mdm-may-201"
+::: zone pivot="mdm-may-2019"
 
 - **Aktivera Windows SmartScreen**  
   CSP: [SmartScreen/EnableSmartScreenInShell](https://go.microsoft.com/fwlink/?linkid=872784)
@@ -1980,7 +1980,9 @@ Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com
 - **Blockera användare från att ignorera SmartScreen-varningar**  
   CSP: [SmartScreen/PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
 
-  Om den här inställningen är inställd på Ja visar SmartScreen inget alternativ för användaren om att bortse från varningen och köra appen. Varningen visas, men användaren kan kringgå den. Om den här inställningen är inställd på Inte konfigurerat används standardinställningen i Windows, som tillåter åsidosättning av användaren. Den här inställningen kräver att inställningen för att framtvinga SmartScreen för appar och filer är aktiverad.
+  När alternativet är Ja är SmartScreen aktiverat och användare kan inte kringgå varningar för filer eller skadliga appar. När alternativet är Inte konfigurerat kan användare ignorera SmartScreen-varningar för filer och skadliga appar.  
+
+  Den här inställningen kräver att inställningen Aktivera Windows SmartScreen är inställd på Ja.
 
   **Standard**: Ja
 

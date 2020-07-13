@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/15/2020
+ms.date: 07/15/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 8171eb3cf484c61e2b99046b36553a633d92044e
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 55a73806e343ac23525dbd2a28950d46285bf9a3
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431468"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088538"
 ---
 # <a name="manage-devices-with-endpoint-security-in-microsoft-intune"></a>Hantera enheter med slutpunktssäkerhet i Microsoft Intune
 
@@ -66,6 +66,8 @@ Titta på följande fält:
     Med samhantering kan du [välja olika arbetsbelastningar i samhanteringen](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) för att avgöra vilka aspekter som ska hanteras av Configuration Manager och av Intune. De här valen påverkar vilka policyer som används för enheten och hur efterlevnadsdata rapporteras till administrationscentret.
 
     Du kan till exempel använda Intune till att konfigurera policyer för antivirusprogram, brandväggar och kryptering. De här policyerna betraktas som policyer för *Endpoint Protection*. Om du vill att en samhanterad enhet ska använda Intune-policyer och inte Configuration Manager-policyer ställer du in samhanteringsreglaget för Endpoint Protection till antingen *Intune* eller *Pilot Intune*. Om reglaget är inställt på Configuration Manager använder enheten policyer och inställningar från Configuration Manager i stället.
+
+  - **Workspace ONE** – Dessa enheter hanteras av tredjepartspartnern för enhetsefterlevnad, Workspace ONE. Mer information finns i [Enhetsefterlevnadspartner](../protect/device-compliance-partners.md).
 
 - **Efterlevnad**: Efterlevnaden utvärderas enligt de efterlevnadspolicyer som har tilldelats till enheten. Källan till de här policyerna och vilken information som visas i konsolen beror på hur enheten hanteras: Intune, Configuration Manager eller samhantering. Om du vill att samhanterade enheter ska rapportera efterlevnad ställer du in samhanteringsreglaget för enhetens efterlevnad på antingen Intune eller Pilot Intune.  
 

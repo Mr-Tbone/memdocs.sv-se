@@ -5,7 +5,7 @@ description: Felsök och åtgärda vanliga problem med det lokala Microsoft Intu
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 07/06/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55f51f94cf26aa2486ef390d5fbb668eaf013e10
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 57f8b8193fd2f4e871f744743b768ec6248ae0b9
+ms.sourcegitcommit: 7de54acc80a2092b17fca407903281435792a77e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79350635"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85972138"
 ---
 # <a name="resolve-common-problems-with-the-intune-exchange-connector"></a>Lös vanliga problem med Intune Exchange Connector
  
@@ -74,7 +74,7 @@ Läs följande avsnitt för att felsöka problem med e-postavisering.
    Du kan också testa tjänsten för automatisk identifiering från Internet på https://testconnectivity.microsoft.com. Eller testa den från en lokal domän med hjälp av Microsoft Connectivity Analyzer-verktyget. Mer information finns i [Microsoft Connectivity Analyzer-verktyget](https://docs.microsoft.com/previous-versions/office/exchange-remote-connectivity/jj851141(v=exchg.80)).
 
 
-### <a name="check-autodiscovery"></a>Kontrollera automatisk identifiering
+### <a name="check-autodiscover"></a>Kontrollera automatisk identifiering
 
 Om automatisk identifiering misslyckas kan du prova följande steg:
 

@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: aa518036aa99d5de003fbc56f99748267f3cc87b
-ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
+ms.openlocfilehash: 5b33be56975713c801d2ad3fdea17e6303687274
+ms.sourcegitcommit: 03d2331876ad61d0a6bb1efca3aa655b88f73119
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776879"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85946920"
 ---
 # <a name="firewall-policy-for-endpoint-security-in-intune"></a>Endpoint Security-policyn Brandvägg i Intune
 
@@ -56,7 +56,7 @@ Planera för tillämpning av brandväggspolicyer så att bara en policy används
 
 - Den här typen av policykonflikt gäller för **Microsoft Defender-brandväggsprofilen**, som kan vara i konflikt med andra Microsoft Defender-brandväggsprofilen eller en brandväggskonfiguration som levereras via en annan policytyp som en enhetskonfiguration.
 
-  Microsoft *Defender-brandväggsprofiler* hamnar inte i konflikt med *Microsoft Defender-brandväggsregelprofiler*.
+  *Microsoft Defender-brandväggsprofiler* hamnar inte i konflikt med *Microsoft Defender-brandväggsregelprofiler*.
 
 När du använder **Microsoft Defender-brandväggsregelprofiler** kan du tillämpa flera regelprofiler på samma enhet. Men när det finns olika regler för samma sak med olika konfigurationer skickas båda till enheten och skapar en konflikt på enheten.
 

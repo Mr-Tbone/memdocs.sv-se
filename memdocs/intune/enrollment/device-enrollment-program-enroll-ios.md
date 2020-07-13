@@ -18,11 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fe0b1748a40858bca55cc66b250c96725bfd9f1
-ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
+ms.openlocfilehash: 299b09c57f0cff44c465102d85628c8f2605adea
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85332874"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088504"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -68,7 +69,7 @@ Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11
 - Högsta antalet registreringsprofiler per token: 1,000  
 - Högsta antalet automatiserade enhetsregistreringsenheter per profil: ingen begränsning (inom det högsta antalet enheter per token)
 - Högsta antalet automatiserade enhetsregistreringstoken per Intune-konto: 2,000
-- Högsta antalet automatiserade enhetsregistreringsenheter per token: Gränsen för den första synkroniseringen är 75 000–80 000 enheter. Intune fortsätter att synkronisera med ABM eller ASM med en incheckning var 12:e timme för att lägga till ytterligare 80 000 enheter varje gång. En manuell synkronisering lägger till ytterligare 80 000 enheter. Synkroniseringarna fortsätter att ske och enheterna kommer att bli synkroniserade från ABM/ASM till Intune i 75 000–80 000 enhetsbatcher. 
+- Högsta antalet automatiserade enhetsregistreringsenheter per token: Gränsen för den första synkroniseringen är 75 000–80 000 enheter. Intune fortsätter att synkronisera med ABM eller ASM med en incheckning var 12:e timme för att lägga till ytterligare enheter varje gång. En manuell synkronisering (som kan utlösas en gång var 15:e minut) kommer också att lägga till ytterligare en grupp enheter i Intune. Synkroniseringarna fortsätter att ske och enheterna kommer att bli synkroniserade från ABM/ASM till Intune i stora kvantiteter. 
 
 ## <a name="get-an-apple-ade-token"></a>Hämta en Apple ADE-token
 

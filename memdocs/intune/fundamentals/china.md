@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 879cb5d1659b886a01e564574452bd9e5370664c
-ms.sourcegitcommit: b0ae4a9972bac3518d0d4f33e033ac492eefe3c1
+ms.openlocfilehash: f82664cbc9f6970d494945cfdf6fc72e8d95ae8b
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84126820"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022355"
 ---
 # <a name="intune-operated-by-21vianet-in-china"></a>Intune som drivs av 21Vianet i Kina  
 
@@ -50,7 +50,7 @@ Att Kina-tjänsterna drivs av en partner från Kina medför vissa funkionella sk
 - Appen Intune-företagsportal för Android använder Google Mobile Services för att kommunicera med Microsoft Intune-tjänsten. Eftersom Google Play-tjänsterna inte är tillgängliga i Kina, kan vissa uppgifter kräva upp till åtta timmar att slutföra. Mer information finns i den här [artikeln](https://docs.microsoft.com/mem/intune/apps/manage-without-gms#limitations-of-intune-device-administrator-management-when-gms-is-unavailable). 
 - Om Intunes klientfunktion (företagsportalappen) ska kunna att följa lokala föreskrifter och tillhandahålla förbättrade funktioner, så kan den avvika något i Kina.
 - Avgränsning är inte tillgängligt.
-- Tillgängligheten av hantering av mobilprogram (MAM) är beroende av att dessa appar är tillgängliga i Kina.
+- Tillgängligheten av hantering av mobilprogram (MAM) är beroende av att dessa appar är tillgängliga i Folkrepubliken Kina.
 
 ## <a name="you-control-customer-data"></a>Du kontrollerar kunddata
 

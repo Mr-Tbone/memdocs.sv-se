@@ -5,7 +5,7 @@ description: Inställningar för säkerhetsbaslinjer som stöds av Intune för a
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/01/2020
+ms.date: 07/06/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 zone_pivot_groups: atp-baseline-versions
-ms.openlocfilehash: 330a4387ef1a079b2a0f691bfb0b887117dd9e4b
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 8046318c55e2a9791f01fca4a5a54de3f1487782
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429343"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022201"
 ---
 <!-- Pivots in use: 
 ::: zone pivot="atp-april-2020"
@@ -859,9 +859,9 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
 - **Blockera användare från att ignorera SmartScreen-varningar**  
   CSP: [SmartScreen/PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
 
-   Den här inställningen kräver att inställningen för att framtvinga SmartScreen för appar och filer är aktiverad.
-  - **Ja** (*standard*) – SmartScreen visar inte ett alternativ för användaren att bortse från varningen och köra appen. Varningen visas, men användaren kan kringgå den.
-  - **Inte konfigurerat** – Inställningen återgår till Windows standardvärde, vilket gör att användaren kan åsidosätta den.
+   Den här inställningen kräver att inställningen Aktivera Windows SmartScreen är inställd på Ja.
+  - **Ja** (*standard*) – SmartScreen är aktiverat och användare kan inte kringgå varningar för filer eller skadliga appar.
+  - **Inte konfigurerat** – Användare kan ignorera SmartScreen-varningar för filer och skadliga appar.
 
 - **Kräv appar endast från Store**  
 

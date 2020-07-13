@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 82272fd4239b50657b887bf6c310b280eeecae7a
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 2ef0cf3909442cec818fd775bef4f848d6be5a83
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83880066"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022321"
 ---
 # <a name="enroll-your-device-with-company-portal"></a>Registrera din enhet med företagsportalen  
 Registrera din personliga eller företagsägda Android-enhet för att få säker åtkomst till företagets e-post, appar och data. Företagsportalen har stöd för Android-enheter, däribland Samsung Knox, som kör Android 4.4 och senare.  
@@ -35,7 +35,7 @@ Registrera din personliga eller företagsägda Android-enhet för att få säker
 > Samsung Knox är en typ av säkerhet som vissa Samsung-enheter använder för ytterligare skydd utöver vad den interna säkerheten i Android ger. Du kan kontrollera om du har en Samsung Knox-enhet genom att gå till **Inställningar** > **Om enheten**. Om du inte ser **Knox version** där har du en ursprunglig Android-enhet.
 
 ## <a name="enroll-device"></a>Registrera enhet  
-Se till att [installera Intune-företagsportalsappen från Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). Se [Installera Intune-företagsportalsappen på kinesiska fastlandet](install-company-portal-android-china.md) för en lista över butiker som erbjuder appen på kinesiska fastlandet.    
+Se till att [installera Intune-företagsportalsappen från Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). Se [Installera företagsportalsappen i Folkrepubliken Kina](install-company-portal-android-china.md) för en lista över butiker som erbjuder appen i Folkrepubliken Kina.
 
 Under registreringen kan du bli ombedd att välja en kategori som bäst beskriver hur du använder enheten. Företagets support använder ditt svar för att se vilka appar du har åtkomst till.  
 

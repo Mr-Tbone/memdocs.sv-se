@@ -15,16 +15,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c65235caa7e53dbe8dee4605803a6e58d6ab31a0
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b9580a5cb99192f81fc83f8d61119f5368f0a5ee
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79344122"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088402"
 ---
 # <a name="overview-of-the-microsoft-intune-mobile-device-management-mdm-lifecycle"></a>Översikt över livscykeln för hantering av mobila enheter (MDM) i Microsoft Intune
 
-Alla enheter du hanterar har en *livscykel*. Intune kan hjälpa dig att hantera livscykeln: från registrering, konfigurering och skydd till pensionering när enheten inte behövs längre.
+Alla enheter du hanterar har en *livscykel*. Intune kan hjälpa dig att hantera livscykeln: från registrering, konfigurering och skydd till pensionering när enheten inte behövs längre. Här är ett exempel: en iPad som köpts av ditt företag måste först registreras med ditt Microsoft Intune-konto så att ditt företag kan hantera den. Sedan måste den konfigureras enligt företagets önskemål, och därefter måste de data som lagrats på den av en användare skyddas. När denna iPad inte längre behövs måste du [dra tillbaka eller rensa](https://docs.microsoft.com/mem/intune/remote-actions/devices-wipe) alla känsliga data på den.
 
 ![Enhetslivscykeln](./media/device-lifecycle/device-lifecycle.png "Intune-enhetslivscykeln")
 

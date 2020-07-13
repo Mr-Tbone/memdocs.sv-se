@@ -1,6 +1,6 @@
 ---
-title: Registrera dig eller logga in i Microsoft Intune
-description: Så här registrerar du dig för en Microsoft Intune-prenumeration, eller loggar in för att starta din prenumeration.
+title: Olicensierade administratörer i Microsoft Intune
+description: Lär dig hur du ger olicensierade administratörer behörighet för åtkomst till Intune.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -17,25 +17,25 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae30e03a03b4d690bdaa9e6a4c73da6ab15226f7
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: c6dcd41377234bbb1b40e513f16c3393d763b17f
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85095815"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088198"
 ---
 # <a name="unlicensed-admins"></a>Administratörer utan licens
 
 Du kan bevilja åtkomst till administrationscentret för Intune/Microsoft Endpoint Manager till administratörer utan Intune-licens.
 
-1. Logga in i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Innehavaradministratör** > **Administratörslicensiering**.
+1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Innehavaradministration** > **Roller** > **Administratörslicensiering**.
 2. Välj **Tillåt åtkomst för administratörer utan licens** > **Ja**.
     >[!WARNING]
     >Du kan inte ångra den här inställningen när du har klickat på **Ja**.
 
 3. Från och med nu behöver inte användare som loggar in i administrationscentret för Microsoft Endpoint Manager någon Intune-licens. Deras åtkomst definieras av de roller som tilldelats dem.
 
-Intune har stöd för upp till 350 olicensierade administratörer per säkerhetsgrupp. Administratörer över den här gränsen kan uppleva oförutsägbara beteenden.
+Intune har stöd för upp till 350 olicensierade administratörer per säkerhetsgrupp och gäller bara för direktmedlemmar. Administratörer över den här gränsen kan uppleva oförutsägbara beteenden.
 
 
 

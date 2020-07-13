@@ -18,11 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03dbdccd1626db5ad97bc230a3d6b9a82060ee2e
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: 4782c2a8f2c8791929ca4e585dab96031bf550fa
+ms.sourcegitcommit: f999131e513d50967f88795e400d5b089ebc5878
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85590498"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85914621"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Lägg till och tilldela MTD-appar med Intune
 
@@ -135,21 +136,21 @@ Skapa konfigurationsprincipen för iOS-appar enligt beskrivningen i artikeln om 
 - **Android**
   - Se anvisningarna för [använda av Microsoft Intune-appkonfigurationsprinciper för Android](../apps/app-configuration-policies-use-android.md) för att lägga till Wandera-konfigurationsprincipen för Android-appar med informationen nedan när du ombeds.
 
-1. I **RADAR Wandera-portalen** klickar du på knappen **Lägg till+** under **Konfigurationsinställningar**-formatet.
+1. I **RADAR Wandera-portalen** klickar du på knappen **Lägg till** under **Konfigurationsinställningar**-formatet.
 2. Välj **Aktiveringsprofil-URL** i listan över **Konfigurationsnycklar**. Klicka på **OK**.
-3. För **Aktiveringsprofil-URL** väljer du **sträng** från **Värdetyp**-menyn och kopierar och klistrar in **URL för delningsbar länk** från önskad aktiveringsprofil i RADAR.
-4. I **Inställningar** definierar du **konfigurationsinställningsformat > Använd konfigurationsdesignern** och följer stegen nedan.
+3. För **Aktiveringsprofil-URL** väljer du **sträng** från **Värdetyp**-menyn och kopierar **URL för delningsbar länk** från önskad aktiveringsprofil i RADAR.
+4. I **Konfigurationsgränssnittet för Intune-administratörskonsolen** väljer du **Inställningar**, definierar **Format för konfigurationsinställningar > Använd Configuration Designer** och klistrar in **URL för delningsbar länk**.  
 
 > [!NOTE] 
-> Till skillnad från iOS måste du definiera en unik appkonfigurationsprincip för Android-Enterprise för varje Wandera-aktiveringsprofil. Om du inte behöver flera Wandera-aktiveringsprofiler kan du använda en enda Android-appkonfiguration för alla målenheter. När du skapar aktiveringsprofiler i Wandera måste du välja Azure Active Directory under den associerade användarkonfigurationen för att säkerställa att Wandera kan synkronisera enheten med Microsoft Endpoint Manager via UEM Connect.
+> Till skillnad från iOS måste du definiera en unik appkonfigurationsprincip för Android-Enterprise för varje Wandera-aktiveringsprofil. Om du inte behöver flera Wandera-aktiveringsprofiler kan du använda en enda Android-appkonfiguration för alla målenheter. När du skapar aktiveringsprofiler i Wandera måste du välja Azure Active Directory under den associerade användarkonfigurationen för att säkerställa att Wandera kan synkronisera enheten med Intune via UEM Connect.
 
 - **iOS**
   - Se anvisningarna för [använda Microsoft Intune-appkonfigurationsprinciper för iOS](../apps/app-configuration-policies-use-ios.md) för att lägga till Wandera-konfigurationsprincipen med informationen nedan när du ombeds.
 
 1. I **RADAR Wandera-portalen** går du till **Enheter > Aktiveringar** och väljer valfri aktiveringsprofil. Klicka på **Distributionsstrategier > Hanterade enheter > Microsoft Intune** och leta upp **Konfigurationsinställningar för iOS-appen**.  
 2. Expandera rutan om du vill visa XML-konfigurationsfilen för iOS-appen och kopiera den till systemets Urklipp.  
-3. I **Inställningar** definierar du **konfigurationsinställningsformat > Ange XML-data** och följer stegen nedan:
-4. Klistra in XML-koden i textrutan för appkonfiguration i Microsoft Endpoint Manager.
+3. I **Inställningar för konfigurationsgränssnittet för Intune-administratörskonsolen** definierar du **Format för konfigurationsinställningar > Ange XML-data**. 
+4. Klistra in XML-koden i textrutan för appkonfiguration.
 
 > [!NOTE]
 > En enda iOS-konfigurationsprincip kan användas på alla enheter som ska etableras med Wandera.  

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/15/2020
+ms.date: 07/06/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,11 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 7f200e5cb5bb4aa0f29cbd3adc0f177bb14e5476
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: ac5b4685249ffa46be63e9ad55ca6067edec1b03
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431702"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022406"
 ---
 # <a name="attack-surface-reduction-policy-settings-for-endpoint-security-in-intune"></a>Inställningar för policyn Minskning av attackytan i slutpunktssäkerheten i Microsoft Intune
 
@@ -113,7 +114,7 @@ Plattformar och profiler som stöds:
   - **Ej konfigurerat** (*standard*)
   - **Ja** – Konfigurera policy för nätverksisolering i Windows.  
   
-  När värdet är *Konfigurera* kan du konfigurera följande inställningar:
+  När värdet är *Ja* kan du konfigurera följande inställningar.
 
   - **IP-intervall**  
     Expandera listrutan, välj **Lägg till** och ange sedan en *undre adress* och en *övre adress*.
@@ -185,9 +186,9 @@ Plattformar och profiler som stöds:
 - **Blockera användare från att ignorera SmartScreen-varningar**  
   [PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
 
-  Den här inställningen kräver att inställningen för att framtvinga SmartScreen för appar och filer är aktiverad.
-  - **Inte konfigurerat** (*standard*) – Inställningen återgår till Windows standardvärde, vilket gör att användaren kan åsidosätta den.
-  - **Ja** – SmartScreen visar inte något alternativ för användaren att bortse från varningen och köra appen. Varningen visas, men användaren kan inte åsidosätta den.
+  - **Inte konfigurerat** (*standard*) – Användare kan ignorera SmartScreen-varningar för filer och skadliga appar.
+  - **Ja** – SmartScreen är aktiverat och användare kan inte kringgå varningar för filer eller skadliga appar.
+
 
 - **Aktivera Windows SmartScreen**  
   CSP: [SmartScreen/EnableSmartScreenInShell](https://go.microsoft.com/fwlink/?linkid=872784)

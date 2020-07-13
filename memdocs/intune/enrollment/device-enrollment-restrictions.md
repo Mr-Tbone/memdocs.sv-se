@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 06/24/2020
+ms.date: 07/02/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,15 +18,17 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d26040c5a009a9c3877abbc25512e317f584f114
-ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
+ms.openlocfilehash: 6629f416dbbc9555514dfc305db8f224f6b76526
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85503030"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088453"
 ---
 # <a name="android-enterprise-device-enrollment-restrictions"></a>Enhetsregisteringsbegränsningar för Android Enterprise
 
-Innan du registrerar enheter för [konfigurationsramverket för Android Enterprise]() måste organisationerna konfigurera lämpliga begränsningar. Dessa begränsningar säkerställer att användare bara kan registrera sig
+Innan du registrerar enheter för [konfigurationsramverket för Android Enterprise](android-configuration-framework.md) måste organisationerna konfigurera lämpliga begränsningar. Dessa begränsningar säkerställer att användare bara kan registrera sig
+
 - godkända enheter.
 - ett angivet antal enheter.
 - enheter med angivna plattformar.
@@ -53,7 +55,12 @@ Följande enhetsbegränsningar måste implementeras för Android Enterprise arbe
 | Android-enhetsadministratör| Blockera | Alla versioner | Ja |
 
 ## <a name="fully-managed-security-restrictions"></a>Fullständigt hanterade säkerhetsbegränsningar
-Se till att organisationen har stöd för en fullständigt hanterad enhetsregistrering för Android Enterprise genom att granska en fullständigt hanterad Android Enterprise-registrering. 
+Se till att organisationen har stöd för en fullständigt hanterad enhetsregistrering för Android Enterprise genom granska [Registrera fullständigt hanterade enheter](android-fully-managed-enroll.md#enroll-the-fully-managed-devices). 
+
+## <a name="conditional-access-policies"></a>Villkorliga åtkomstprinciper
+Organisationer kan använda principer för villkorsstyrd åtkomst i Azure AD för att säkerställa att användarna endast kan komma åt arbets- eller skolinnehåll på registrerade Android-enheter. För att göra detta behöver du en princip för villkorsstyrd åtkomst som är riktad mot alla potentiella användare. Information om hur du skapar den här principen finns i [Kräva hanterade enheter för åtkomst till molnapp med villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices). 
+
+Följ stegen i [Scenario: Kräv enhetsregistrering för iOS- och Android-enheter](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices#scenario-require-device-enrollment-for-ios-and-android-devices), vilket garanterar att endast registrerade mobila enheter som är kompatibla kan ansluta till Office 365-slutpunkter.
 
 ## <a name="next-steps"></a>Nästa steg
 

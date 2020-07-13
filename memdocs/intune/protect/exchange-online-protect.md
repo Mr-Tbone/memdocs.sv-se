@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8746a6dee0b35dec7886a596d0448874dfb04f16
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: f9669625225f8ad3960ece39e2a6b04849421ce6
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79352026"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022200"
 ---
 # <a name="protect-office-365-exchange-online-without-requiring-device-management"></a>Skydda Office 365 Exchange Online utan krav på enhetshantering
 
@@ -36,7 +36,7 @@ Du kan om du vill konfigurera ett system för enhetshantering. Den här typen av
 1. [Läs om Villkorsstyrd åtkomst](conditional-access.md). 
 2. [Läs om appbaserad Villkorsstyrd åtkomst](app-based-conditional-access-intune.md).
 3. [Konfigurera appbaserade principer för Villkorsstyrd åtkomst för Exchange Online](app-based-conditional-access-intune-create.md).
-4. [Blockera appar som inte kan hanteras](app-modern-authentication-block.md), särskilt appar som inte använder Azure Active Directory Authentication Library (ADAL).
+4. [Blockera appar som inte kan hanteras](app-modern-authentication-block.md), särskilt appar som inte använder Azure Active Directory-autentiseringsbibliotek (ADAL) eller Microsoft Authentication Library (MSAL).
 5. (Valfritt) [Konfigurera appbaserade principer för Villkorsstyrd åtkomst för SharePoint Online](app-based-conditional-access-intune-create.md). Dessa principer blockerar åtkomst till företagsdata från appar som inte kan hanteras och skyddas. Principerna kan även begränsa åtkomst via SharePoint Mobile. 
 
 ## <a name="what-to-tell-employees-and-students"></a>Information till anställda och studenter

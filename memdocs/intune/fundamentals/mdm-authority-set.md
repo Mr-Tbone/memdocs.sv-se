@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4209c461877786000e01dd03e4e0dea9f76a6e84
-ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
+ms.openlocfilehash: 9b0fab472f9bef682666d743c8a53b1308f32b40
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84270964"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022440"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
@@ -36,9 +36,9 @@ Möjliga konfigurationerna är:
 
 - **Intune-samhantering** – Integration av Intunes molnlösning med Configuration Manager för Windows 10-enheter. Du kan konfigurera Intune med hjälp av Configuration Manager-konsolen. [Konfigurera automatisk registrering av enheter i Intune](https://docs.microsoft.com/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
 
-- **Hantering av mobila enheter för Office 365** – om du har MDM för Office 365 aktiverat visas MDM-utfärdaren som Office 365. Om du vill börja använda Intune så måste du köpa Intune-licenser.
+- **Basic Mobility and Security for Office 365** – Om du har aktiverat den här konfigurationen visas MDM-utfärdaren som ”Office 365”. Om du vill börja använda Intune så måste du köpa Intune-licenser.
 
-- **Office 365 MDM-samexistens** – Du kan lägga till Intune till din klientorganisation om du redan använder MDM för Office 365 och konfigurera hanteringsbehörigheten till antingen Intune eller MDM för Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av MDM for Office. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av MDM for Office växlar hanteringen till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter MDM for Office innan användarna byts till Intune, annars förlorar enheterna MDM for Office-konfigurationen och får ingen annan konfiguration från Intune.
+- **Basic Mobility and Security for Office 365-samexistens** – Du kan lägga till Intune i din klientorganisation om du redan använder Basic Mobility and Security for Office 365 och konfigurera hanteringsbehörigheten till antingen Intune eller Basic Mobility and Security for Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av Basic Mobility and Security for Office 365. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av Basic Mobility and Security for Office 365, växlar hanteringen av enheterna till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter Basic Mobility and Security for Office 365 innan användarna byts till Intune, annars förlorar enheterna Basic Mobility and Security for Office 365-konfigurationen och får ingen annan konfiguration från Intune.
 
 ## <a name="set-mdm-authority-to-intune"></a>Ange Intune som utfärdare för hantering av mobila enheter
 
@@ -77,7 +77,7 @@ MDM-certifikatet förnyas automatiskt när mobila enheter kommunicerar med Intun
 
 ## <a name="remove-mdm-authority"></a>Ta bort MDM-utfärdare
 
-MDM-utfärdaren kan inte ändras tillbaka till Okänd. MDM-utfärdaren används av tjänsten för att avgöra vilken portal som registrerade enheter rapporterar till (Microsoft Intune eller Office 365 MDM).
+MDM-utfärdaren kan inte ändras tillbaka till Okänd. MDM-utfärdaren används av tjänsten för att avgöra vilken portal som registrerade enheter rapporterar till (Microsoft Intune eller Basic Mobility and Security for Office 365).
 
 ## <a name="what-to-expect-after-changing-the-mdm-authority"></a>Vad som händer MDM-utfärdaren har ändrats
 

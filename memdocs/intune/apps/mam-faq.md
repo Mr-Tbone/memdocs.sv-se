@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c544109b170d25f4d9a2999a11bc47d4b4a090c5
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 81ba50c9822ff5672fd52bab1d89f444aafdb402
+ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989974"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86022338"
 ---
 # <a name="frequently-asked-questions-about-mam-and-app-protection"></a>Vanliga frågor och svar om MAM och appskydd
 
@@ -79,7 +79,7 @@ Alla appar som har integrerats med [Intune App-SDK](../developer/app-sdk.md) ell
 Intune SDK-utvecklingsteamet testar och underhåller aktivt stödet för appar som skapats med de ursprungliga Android-, iOS/iPadOS- (Obj-C, Swift), Xamarin- och Xamarin.Forms-plattformarna. Även om vissa kunder har lyckats integrera Intune SDK med andra plattformar som React Native och NativeScript, tillhandahåller vi inte någon uttrycklig vägledning eller några plugin-program för apputvecklare som använder något annat än våra stödda plattformar.
 
 **Har Intune APP SDK stöd för Microsoft Authentication Library (MSAL)?**<br></br>
-Intune App SDK kan använda antingen Azure Active Directory Authentication Library eller Microsoft Authentication Library för scenarierna med autentisering och villkorlig start. Den förlitar sig även på ADAL/MSAL för att registrera användarens identitet i MAM-tjänsten för hantering utan enhetsregistreringsscenarier.
+Intune App SDK kan använda Microsoft Authentication Library för autentisering och villkorsstyrda startscenarier. Den använder även MSAL för att registrera användaridentiteten med MAM-tjänsten för hantering utan enhetsregistreringsscenarier.
 
 **Vilka är de ytterligare krav som ställs för användning av [Outlook-mobilappen](https://products.office.com/outlook)?**
 

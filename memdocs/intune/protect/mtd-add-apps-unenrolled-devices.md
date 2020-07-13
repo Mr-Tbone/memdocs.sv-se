@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/24/2020
+ms.date: 06/26/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6eea60eec6f36a5ab8a97b5e4402d75b4a8eb54b
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: f667b6ad9ba9f7c353d89b4d3fc4ff749499bfaf
+ms.sourcegitcommit: 7de54acc80a2092b17fca407903281435792a77e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83991153"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85972052"
 ---
 # <a name="add-mobile-threat-defense-apps-to-unenrolled-devices"></a>Lägga till Mobile Threat Defense-appar till oregistrerade enheter
 
@@ -37,9 +37,10 @@ Om du vill kan du använda Intune för att lägga till och distribuera Microsoft
 > Den här artikeln gäller för alla Mobile Threat Defense-partner som har stöd för appskyddsprinciper:
 >
 > - Better Mobile (Android, iOS/iPadOS)
-> - Zimperium (Android, iOS/iPadOS)
 > - Lookout for Work (Android, iOS/iPadOS)
->
+> - Wandera (Android, iOS/iPadOS)
+> - Zimperium (Android, iOS/iPadOS)
+
 > För oregistrerade enheter **behöver du inte någon iOS-appskyddsprincip** som konfigurerar Mobile Threat Defense för iOS-appar som du använder med Intune. Detta är en viktig skillnad jämfört med Intune-registrerade enheter.
 
 ## <a name="configure-microsoft-authenticator-for-ios-via-intune-optional"></a>Konfigurera Microsoft Authenticator för iOS via Intune (valfritt)
@@ -57,8 +58,8 @@ Vid användning av Intune-appskyddsprinciper med Mobile Threat Defense vägleder
 
 Om du dock vill göra appen tillgänglig för slutanvändare via Intune-företagsportalen kan du följa stegen nedan i [Azure-portalen](https://portal.azure.com/). Kontrollera att du vet hur man gör för att:
 
-- [Lägga till en app i Intune](../apps/apps-add.md).
-- [Tilldela en app med Intune](../apps/apps-deploy.md).
+- [Lägga till en app i Intune](../apps/apps-add.md)
+- [Tilldela en app med Intune](../apps/apps-deploy.md)
 
 ### <a name="making-lookout-for-work-available-to-end-users"></a>Göra Lookout for Work tillgängligt för slutanvändare
 
@@ -101,22 +102,22 @@ Om du dock vill göra appen tillgänglig för slutanvändare via Intune-företag
 - **Android**
   - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd denna [Active Shield – Play Store-URL](https://play.google.com/store/apps/details?id=com.better.active.shield.enterprise) när du slutför avsnittet **Konfigurera appinformation**.
 
-<!-- - **iOS**
-  - See the instructions for [adding iOS store apps to Microsoft Intune](../apps/store-apps-ios.md). Use this [ActiveShield - App Store URL](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) when completing the **Configure app information** section. -->
+- **iOS**
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd denna [ActiveShield – App Store-URL](https://itunes.apple.com/us/app/activeshield/id980234260?mt=8&uo=4) när du slutför avsnittet **Konfigurera appinformation**.
 
 <!-- ### Making Sophos available to end users
 - **Android**
   - See the instructions for [adding Android store apps to Microsoft Intune](../apps/store-apps-android.md). Use this [Sophos - Play Store URL](https://play.google.com/store/apps/details?id=com.sophos.smsec) when completing the **Configure app information** section.
 
 - **iOS**
-  - See the instructions for [adding iOS store apps to Microsoft Intune](../apps/store-apps-ios.md). Use this [ActiveShield - App Store URL](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) when completing the **Configure app information** section.
+  - See the instructions for [adding iOS store apps to Microsoft Intune](../apps/store-apps-ios.md). Use this [ActiveShield - App Store URL](https://itunes.apple.com/us/app/sophos-mobile-security/id1086924662?mt=8) when completing the **Configure app information** section.  -->
 
-### Making Wandera available to end users
+### <a name="making-wandera-available-to-end-users"></a>Göra Wandera tillgängligt för slutanvändare
 - **Android**
-  - See the instructions for [adding Android store apps to Microsoft Intune](../apps/store-apps-android.md). Use this [Wandera Mobile - Play Store URL](https://play.google.com/store/apps/details?id=com.wandera.android) when completing the **Configure app information** section. For **Minimum operating system**, select **Android 5.0**.
+  - Se anvisningarna för att [lägga till Android Store-appar i Microsoft Intune](../apps/store-apps-android.md). Använd denna [Wandera Mobile – Play Store-URL](https://play.google.com/store/apps/details?id=com.wandera.android) när du slutför avsnittet **Konfigurera appinformation**.
 
 - **iOS**
-  - See the instructions for [adding iOS store apps to Microsoft Intune](../apps/store-apps-ios.md). Use this [Wandera Mobile - - App Store URL](https://itunes.apple.com/app/wandera/id605469330) when completing the **Configure app information** section. -->
+  - Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd denna [Wandera Mobile – App Store-URL](https://itunes.apple.com/app/wandera/id605469330) när du slutför avsnittet **Konfigurera appinformation**.
 
 ## <a name="next-steps"></a>Nästa steg
 

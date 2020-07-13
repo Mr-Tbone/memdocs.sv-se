@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/28/2020
+ms.date: 07/15/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 227a44436f4490c9b3e2188609a9714a0e842149
-ms.sourcegitcommit: eb51bb38d484e8ef2ca3ae3c867561249fa413f3
+ms.openlocfilehash: 832ddbde9e3cf4782c7d3867ad6a09cc250960c7
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84206323"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088334"
 ---
 # <a name="use-compliance-policies-to-set-rules-for-devices-you-manage-with-intune"></a>Använd efterlevnadsprinciper för att ange regler för enheter som du hanterar med Intune
 
@@ -31,7 +31,9 @@ Efterlevnadsprinciper i Intune:
 
 - Definierar de regler och inställningar som användare och enheter måste följa för att vara kompatibla.
 - Inkludera åtgärder som gäller för enheter som inte är kompatibla. Åtgärder för inkompatibilitet kan varna användare om villkoren för inkompatibilitet och skydda data på icke-kompatibla enheter.
-- Kan [kombineras med villkorsstyrd åtkomst](#integrate-with-conditional-access) vilket därmed kan blockera användare och enheter som inte uppfyller reglerna.
+- Kan [kombineras med villkorsstyrd åtkomst](#integrate-with-conditional-access) för att blockera användare och enheter som inte följer reglerna och har markerats som icke-kompatibla.
+
+  Villkorsstyrd åtkomst kan också användas med data för efterlevnadstillstånd från enheter som du hanterar med partner för hantering av mobilenheter från tredje part. Om du vill aktivera den här funktionen lägger du till stöd för partnern i både Azure AD och Intune. Mer information finns i Lägga till stöd för enhetsefterlevnadspartner. 
 
 Efterlevnadsprinciper i Intune har två delar:
 

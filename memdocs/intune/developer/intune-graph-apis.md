@@ -15,14 +15,14 @@ ms.technology: ''
 ms.assetid: 79A67342-C06D-4D20-A447-678A6CB8D70A
 ms.suite: ems
 search.appverid: MET150
-ms.custom: intune-azure
+ms.custom: intune-azure, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3c83859d56b23974e95299c76b0d65512da0a0e
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: 2d300be679d54a5f565fb2c42f889a7dcd23894a
+ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455097"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86088555"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Använda Azure AD för att få åtkomst till Intune API:er i Microsoft Graph
 
@@ -81,6 +81,10 @@ Registrera en app för att använda Microsoft Graph API:
     2. Värden för **Programtyp** och **Omdirigerings-URI**.
 
         Dessa varierar beroende på dina krav. Om du till exempel använder ett Azure AD-[autentiseringsbibliotek](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) (ADAL), anger du **Programtyp** till `Native` och **Omdirigerings-URI** till `urn:ietf:wg:oauth:2.0:oob`.
+
+        > [!NOTE]
+        > Azure Active Directory-autentiseringsbibliotek (ADAL) och Azure AD Graph API kommer att bli inaktuella. Mer information finns i [Uppdatera dina program för användning med Microsoft Authentication Library (MSAL) och Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
+
 
         <img src="../media/azure-ad-app-new.png" width="209" height="140" alt="New app properties and values" />
 
@@ -185,7 +189,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
 
 ### <a name="devicemanagementconfigurationreadall"></a><a name="cfg-ro"></a>DeviceManagementConfiguration.Read.All
 
-- Inställningen **Aktivera åtkomst**: __Läsa enhetskonfiguration och principer för Microsoft Intune__
+- Inställningen **Aktivera åtkomst**: __Läs Microsoft Intune-enhetskonfiguration och principer__
 
 - Tillåter läsbehörighet till följande entitetsegenskaper och status:
   - Enhetskonfiguration
@@ -194,7 +198,7 @@ Behörighetsomfattningar för Intune kräver för närvarande administratörsåt
 
 ### <a name="devicemanagementconfigurationreadwriteall"></a><a name="cfg-ra"></a>DeviceManagementConfiguration.ReadWrite.All
 
-- Inställningen **Aktivera åtkomst**: __Läsa och skriva enhetskonfiguration och principer för Microsoft Intune__
+- Inställningen **Aktivera åtkomst**: __Läs och skriv Microsoft Intune-enhetskonfiguration och principer__
 
 - Tillåter samma åtgärder som __DeviceManagementConfiguration.Read.All__
 
@@ -342,6 +346,10 @@ I det här exemplet visas hur du använder C# för att hämta en lista med enhet
     <img src="../media/aad-auth-cpp-new-console.png" width="624" height="433" alt="Creating a C# console app project in Visual Studio"  />
 
 3. Använd Solution Explorer för att lägga till Microsoft ADAL NuGet-paketet i projektet.
+
+  > [!NOTE]
+  > Azure Active Directory-autentiseringsbibliotek (ADAL) och Azure AD Graph API kommer att bli inaktuella. Mer information finns i [Uppdatera dina program för användning med Microsoft Authentication Library (MSAL) och Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
+
 
     1. Högerklicka på Solution Explorer.
     2. Välj **Hantera NuGet-paket...** &gt; **Bläddra**.
@@ -602,7 +610,7 @@ Du kan också:
     string authority = "https://login.microsoftonline.com/common/";
     ```
 
-    till
+    på
 
     ``` csharp
     string authority = "https://login.microsoftonline.com/northwind.onmicrosoft.com/";

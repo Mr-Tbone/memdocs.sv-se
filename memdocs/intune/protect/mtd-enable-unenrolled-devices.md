@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 02/20/2020
+ms.date: 06/26/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6c762aafbc1d82e7e51746806f8ba15cc5ad83c
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 933810cb079ac405d15a18a26efd07fb69a6e3f1
+ms.sourcegitcommit: 7de54acc80a2092b17fca407903281435792a77e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83984920"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85972051"
 ---
 # <a name="enable-the-mobile-threat-defense-connector-in-intune-for-unenrolled-devices"></a>Aktivera Mobile Threat Defense-anslutningsprogrammet i Intune för oregistrerade enheter
 
@@ -33,8 +33,9 @@ Vid installationen av Mobile Threat Defense (MTD) konfigurerade du en princip f�
 > Den här artikeln gäller för alla Mobile Threat Defense-partner som har stöd för appskyddsprinciper:
 >
 > - Better Mobile (Android, iOS/iPadOS)
-> - Zimperium (Android, iOS/iPadOS)
 > - Lookout for Work (Android, iOS/iPadOS)
+> - Wandera (Android, iOS/iPadOS)
+> - Zimperium (Android, iOS/iPadOS)
 
 ## <a name="classic-conditional-access-policies-for-mtd-apps"></a>Klassiska principer för villkorlig åtkomst för MTD-appar
 
@@ -74,9 +75,9 @@ Du kan bestämma vilka MTD-växlingsalternativ som behöver aktiveras enligt din
 
 **Inställningar för appskyddsprincip**
 
-- **Anslut Android-enheter med version 4.4 och senare till *\<MTD-partnernamn>* för utvärdering av appskyddsprincip**: När du aktiverar det här alternativet utvärderar appskyddsprinciper som använder regeln för hotnivå för enhet enheter, däribland data från det här anslutningsprogrammet.
+- **Anslut Android-enheter i version 4.4 och högre till *\<MTD partner name>* för utvärdering av appskyddsprincip**: När du aktiverar det här alternativet utvärderar appskyddsprinciper som använder regeln för hotnivå för enhet enheter, däribland data från det här anslutningsprogrammet.
 
-- **Anslut iOS-enheter med version 11 och senare till *\<MTD-partnernamn>* för utvärdering av appskyddsprincip**: När du aktiverar det här alternativet utvärderar appskyddsprinciper som använder regeln för hotnivå för enhet enheter, däribland data från det här anslutningsprogrammet.
+- **Anslut iOS-enheter i version 11 och högre till *\<MTD partner name>* för utvärdering av appskyddsprincip**: När du aktiverar det här alternativet utvärderar appskyddsprinciper som använder regeln för hotnivå för enhet enheter, däribland data från det här anslutningsprogrammet.
 
 **Gemensamma delade inställningar**
 
