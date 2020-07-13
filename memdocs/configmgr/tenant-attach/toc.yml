@@ -4,11 +4,17 @@
   items:
     - name: Aktivera klientkoppling
       href: device-sync-actions.md
-    - name: Felsöka enhetsåtgärder
-      href: technical-reference.md
+    - name: Klientinformation (förhandsversion)
+      href: client-details.md
 - name: CMPivot för enheter anslutna till klientorganisation (förhandsversion)
   items:
     - name: Översikt över CMPivot
       href: cmpivot-overview-attached.md
     - name: CMPivot-exempelskript
       href: cmpivot-samples-attached.md
+- name: Felsöka
+  items:
+    - name: Anslutnings- och enhetsåtgärder för klientorganisation
+      href: troubleshoot.md
+    - name: Klientinformation (förhandsversion)
+      href: troubleshoot-client-details.md
