@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/26/2020
+ms.date: 07/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f79ac0ef70eb9eccf47837517e3e69df3fdb3e8
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 89e3111ef902b0ea0f7f66e6be6aa0c227fdb3c4
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165727"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86239954"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -110,9 +110,7 @@ I den här tabellen visas registreringsspecifik konfigurationsinformation:
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------|--------------------|-----------------------------|--------------------------------------------------------------------|
 |    Tillgänglig, med prompter    |    Standardupplevelsen med prompter för registrering på valfria platser.    |    Ja    |    Ja    |    Ja    |    Ja    |
 |    Tillgängligt, inga prompter    |    Användaren kan registrera sig via statusen i enhetsinformationen för den aktuella enheten eller från appar som kräver registrering.    |    Nej    |    Nej    |    Ja    |    Ja    |
-|    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Nej    |    Nej    |    Nej<sup>(1)</sup>    |
-
-<sup>(1)</sup> **Känt ärende:** Om du konfigurerar appar till att kräva registrering vid installation och även anger enhetsregistreringen som ”Ej tillgänglig”, så kommer Företagsportal-appen på Android fortfarande att hjälpa användarna att registrera sig. Detta kommer att tas bort inom kort.
+|    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Nej    |    Nej    |    Nej    |
 
 ### <a name="privacy"></a>Sekretess
 
@@ -221,7 +219,7 @@ Om du vill anpassa vilka självbetjäningsåtgärder som är tillgängliga för 
 
 Vissa plattformar och konfigurationer tillåter inte självbetjäning av enhetsåtgärder. I tabellen nedan finns mer information om självbetjäningsåtgärder:
 
-|  | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup> | Android<sup>(3)</sup> |
+| Action | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup> | Android<sup>(3)</sup> |
 |----------------------|--------------------------|-------------------|-----------------------------------|-------------------------|
 | Pensionera | Tillgängligt<sup>(1)</sup> | Tillgänglig<sup>(9)</sup> | Tillgänglig | Tillgängligt<sup>(7)</sup> |
 | Rensning | Tillgänglig | Tillgänglig<sup>(5)</sup><sup>(9)</sup> | NA | Tillgängligt<sup>(7)</sup> |

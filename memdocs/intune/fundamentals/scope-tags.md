@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 665b88932c88f523b19fec596bfd969bb93ecdd4
-ms.sourcegitcommit: 5f15a3abf33ce7bfd6855ffeef2ec3cd4cd48a7f
+ms.openlocfilehash: a229b9159c4c3613edc2d718db1fd0931f94cf9f
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721915"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240753"
 ---
 # <a name="use-role-based-access-control-rbac-and-scope-tags-for-distributed-it"></a>Använda rollbaserad åtkomstkontroll (RBAC) och omfångstaggar för distribuerad IT
 
@@ -81,13 +81,11 @@ När du arbetar med omfångstaggar bör du beakta följande:
 - Du kan tilldela omfångstaggar till en Intune-objekttyp om klientorganisationen kan ha flera versioner av det objektet (till exempel rolltilldelningar eller appar).
   Följande Intune-objekt är undantag till den här regeln och stöder för närvarande inte omfångstaggar:
     - Windows ESP-profiler
-    - Registreringsbegränsningar
     - Företagsenhetsidentifierare
     - Autopilot-enheter
     - Platser för enhetsefterlevnad
     - Jamf-enheter
 - VPP-appar och e-böcker som är associerade med VPP-token ärver de omfångstaggar som tilldelats till den associerade VPP-token.
-- DEP-enheter (Device Enrollment Program, programmet för enhetsregistrering) och DEP-profiler som är associerade med DEP-token ärver de omfångstaggar som har tilldelats till den associerade DEP-token.
 - När en administratör skapar ett objekt i Intune tilldelas alla omfångstaggar som tilldelats till den administratören automatiskt till det nya objektet.
 - Intune RBAC gäller inte för Azure Active Directory-roller. Därför har rollerna Intune-tjänstadministratörer och Globala administratörer fullständig administratörsåtkomst till Intune oavsett vilka omfångstaggar de har.
 - Om en rolltilldelning saknar omfångstagg kan IT-administratören se alla objekt baserat på IT-administratörernas behörigheter. Administratörer som saknar omfångstaggar har i princip alla omfångstaggar.

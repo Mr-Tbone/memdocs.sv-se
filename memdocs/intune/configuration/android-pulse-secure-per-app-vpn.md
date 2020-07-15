@@ -17,19 +17,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 367ac927650ebf08c245b1ff554ad01db3bf3792
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: a351255fa0574e9b92d096b3895f9469ed9ced2a
+ms.sourcegitcommit: 678104677ad36b789630befdc5e0f1efc572c14b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990160"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86137373"
 ---
 # <a name="use-a-microsoft-intune-custom-profile-to-create-a-per-app-vpn-profile-for-android-devices"></a>Använd en anpassad Microsoft Intune-profil för att skapa en VPN-profil per app för Android-enheter
 
 Du kan skapa en VPN-profil per app för enheter som kör Android 5.0 och senare som hanteras av Intune. Börja med att skapa en VPN-profil som använder antingen Pulse Secure- eller Citrix-anslutningstypen. Skapa sedan en princip för anpassad konfiguration som associerar VPN-profilen med specifika appar.
 
 > [!NOTE]
-> Om du vill använda VPN per app på Android Enterprise-enheter kan du också använda de här stegen. Men vi rekommenderar att du använder en [konfigurationsprincip för appar](../apps/app-configuration-policies-use-android.md) för VPN-klientprogramvaran.
+> Om du vill använda VPN per app på Android Enterprise-enheter kan du också använda de här stegen. Men vi rekommenderar att du använder en [konfigurationsprincip för appar](../apps/app-configuration-vpn-ae.md) för VPN-klientprogramvaran.
 
 När du har tilldelat principen till din Android-enhet eller till användargrupper måste användarna starta Pulse Secure- eller Citrix VPN-klienten. Därefter tillåter VPN-klienten endast trafik från de angivna apparna att använda den öppna VPN-anslutningen.
 

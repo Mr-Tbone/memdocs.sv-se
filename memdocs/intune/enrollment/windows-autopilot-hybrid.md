@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be9a4257fec357c3dc124318fda98807df6c26b7
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: c26af63691fc4b198d308f39a7c1cc0d719933cb
+ms.sourcegitcommit: 6e9375afc0ba21893f51a40cce16d03a8ed21038
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093478"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86285308"
 ---
 # <a name="deploy-hybrid-azure-ad-joined-devices-by-using-intune-and-windows-autopilot"></a>Distribuera Azure AD-anslutna hybridenheter med hjälp av Intune och Windows Autopilot
 Du kan använda Intune och Windows Autopilot för att konfigurera Azure Active Directory-anslutna hybridenheter. Du gör det genom att följa stegen i den här artikeln.
@@ -35,7 +35,7 @@ Konfigurera [Azure AD-anslutna hybridenheterna](https://docs.microsoft.com/azure
 Enheter som ska registreras måste också:
 - Köra Windows 10, v1809 eller senare.
 - Ha åtkomst till internet [genom att följa de dokumenterade kraven för Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-requirements#networking-requirements).
-- Ha åtkomst till en Active Directory-domänkontrollant. Den måste vara ansluten till organisationens nätverk (Där den kan omvandla DNS-posterna för AD-domänen och AD-domänkontrollanten samt kommunicera med domänkontrollanten för att autentisera användaren. VPN-anslutning stöds inte för tillfället).
+- Ha åtkomst till en Active Directory-domänkontrollant. Den måste vara ansluten till organisationens nätverk (Där den kan omvandla DNS-posterna för AD-domänen och AD-domänkontrollanten samt kommunicera med domänkontrollanten för att autentisera användaren.
 - Kunna pinga domänkontrollanten på den domän som du försöker ansluta till.
 - Om du använder en proxy måste inställningsalternativet WPAD Proxy vara aktiverat och konfigurerat.
 - Gå igenom välkomstupplevelsen (OOBE, Out-of-Box Experience).
