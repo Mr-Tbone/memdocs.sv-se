@@ -2,7 +2,7 @@
 title: Ständig aktivering av SQL Server
 titleSuffix: Configuration Manager
 description: Planera att använda en SQL Server Always on-tillgänglighets grupp med Configuration Manager
-ms.date: 07/26/2019
+ms.date: 07/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 576f909be15a35f4c29e803236c220cdde33c0ac
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: 9ce8c10d9d59d97caa53ece12dd43d90c78546bb
+ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383163"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384850"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Förbered för användning SQL Server Always on-tillgänglighetsgrupper med Configuration Manager
 
@@ -45,7 +45,7 @@ Följande scenarier stöds för att använda tillgänglighets grupper med Config
 - [Flytta en plats databas från en tillgänglighets grupp till en standard-eller namngiven instans av en fristående SQL Server](configure-aoag.md#bkmk_stop)  
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Följande krav gäller för alla scenarier. Om det finns ytterligare krav som gäller för ett speciellt scenario, är de detaljerade med det scenariot.
 
@@ -247,6 +247,9 @@ Varje replik medlem måste ha följande konfiguration:
 #### <a name="replica-member-location"></a>Replik medlems plats
 
 Antingen vara värd för alla repliker i en tillgänglighets grupp lokalt eller var värd för dem på Microsoft Azure. En grupp som innehåller en lokal medlem och en medlem i Azure stöds inte.
+
+> [!NOTE]
+> Om du använder en virtuell Azure-dator för SQL Server aktiverar du **flytande IP**. Mer information finns i [Konfigurera en belastningsutjämnare för en SQL Server Always on-tillgänglighetsgrupper på virtuella Azure-datorer](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/availability-group-load-balancer-portal-configure).<!-- SCCMDocs#1928 -->
 
 Configuration Manager installationen måste ansluta till varje replik. När du konfigurerar en tillgänglighets grupp i Azure och gruppen ligger bakom en intern eller extern belastningsutjämnare, öppnar du följande standard portar:
 

@@ -2,7 +2,7 @@
 title: Grunder i innehållshantering
 titleSuffix: Configuration Manager
 description: Använd verktyg och alternativ i Configuration Manager för att hantera det innehåll som du distribuerar.
-ms.date: 12/17/2019
+ms.date: 07/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ffd6487297bb682ef9bda7c5bf5ee9cb3beede15
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: d8f29ed1e3201da139daeaa1fadca739ff44dc8e
+ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85590464"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384952"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Grundläggande begrepp för innehålls hantering i Configuration Manager
 
@@ -85,7 +85,7 @@ I följande listor sammanfattas skillnaderna mellan BDR ( *Binary differential R
 - Skillnader på *block*nivå
 - Alltid aktive rad för appar
 - Valfritt på äldre paket
-- Om en fil redan finns på distributions platsen och det finns en ändring, använder platsen BDR för att replikera block nivå ändringen i stället för hela filen.
+- Om en fil redan finns på distributions platsen och det finns en ändring, använder platsen BDR för att replikera block nivå ändringen i stället för hela filen. Detta beteende gäller endast när du aktiverar objektet att använda BDR.<!-- SCCMDocs#2026 -->
 
 #### <a name="summary-of-delta-replication"></a>Översikt över delta-replikering
 
@@ -110,7 +110,7 @@ Använd följande tabell för att jämföra huvud funktionerna i dessa tekniker:
 
 | Funktion  | Peer- &nbsp; cache  | Leverans &nbsp; optimering  | BranchCache  |
 |---------|---------|---------|---------|
-| Över undernät | Ja | Ja | Inga |
+| Över undernät | Ja | Ja | Nej |
 | Begränsa bandbredden | Ja (bitar) | Ja (inbyggt) | Ja (bitar) |
 | Partiellt innehåll | Ja | Ja | Ja |
 | Kontrol lera cachestorlek på disk | Ja | Ja | Ja |
@@ -220,7 +220,9 @@ Följande är platser som klienten har åtkomst till innehåll från:
 
 ## <a name="content-source-priority"></a>Innehålls källans prioritet
 
-När en klient behöver innehåll, gör den en innehålls plats förfrågan till hanterings platsen. Hanterings platsen returnerar en lista med käll platser som är giltiga för det begärda innehållet. Den här listan varierar beroende på vilket scenario, vilka tekniker som används, webbplats design, gräns grupper och distributions inställningar. Följande lista innehåller alla tänkbara innehålls käll platser som en klient kan använda, i den ordning som den prioriterar dem:  
+När en klient behöver innehåll, gör den en innehålls plats förfrågan till hanterings platsen. Hanterings platsen returnerar en lista med käll platser som är giltiga för det begärda innehållet. Den här listan varierar beroende på vilket scenario, vilka tekniker som används, webbplats design, gräns grupper och distributions inställningar. Till exempel när en aktivitetssekvens körs, körs inte den fullständiga Configuration Manager klienten alltid, så beteendena kan skilja sig åt.<!-- SCCMDocs#1960 -->
+
+Följande lista innehåller alla tänkbara innehålls käll platser som Configuration Manager-klienten kan använda, i den ordning som den prioriterar dem:  
 
 1. Distributions platsen på samma dator som klienten
 2. En peer-källa i samma undernät i nätverket

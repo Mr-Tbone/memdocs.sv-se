@@ -2,7 +2,7 @@
 title: Dokumentation om konsol
 titleSuffix: Configuration Manager
 description: Den här artikeln visas endast i Configuration Manager-konsolen.
-ms.date: 06/08/2020
+ms.date: 07/14/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0e38f35f49e827893be5e7763a52dd3b5a901bf7
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: 55cecac47accf6dfa2efdc3b0905497260a652e5
+ms.sourcegitcommit: 1edcfb3ce4350ba1a6f36a6150e86301d35c631b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353538"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390882"
 ---
 <!-- 
 - Feature 1357546
@@ -27,7 +27,7 @@ ms.locfileid: "85353538"
 
 # <a name="microsoft-endpoint-configuration-manager-documentation"></a>Dokumentation om Microsoft Endpoint Configuration Manager
 
-*Senaste uppdatering: 8 juni 2020*
+*Senaste uppdatering: 14 juli 2020*
 
 Det här innehållet kan hjälpa dig att lära och stödja Configuration Manager.
 
@@ -42,9 +42,10 @@ Mer information finns i följande artiklar:
 
 En granskad lista över viktiga artiklar.
 
-- [Ansluta Microsoft Endpoint Manager-klientorganisation](https://docs.microsoft.com/mem/configmgr/tenant-attach/device-sync-actions)
-- [Desktop Analytics](https://docs.microsoft.com/mem/configmgr/desktop-analytics/overview)
-- [Samhantering för Windows 10-enheter](https://docs.microsoft.com/mem/configmgr/comanage/overview)  
+- [Ansluta Microsoft Endpoint Manager-klientorganisation](https://docs.microsoft.com/mem/configmgr/tenant-attach/)
+- [Slutpunktsanalys](https://docs.microsoft.com/mem/analytics/)
+- [Desktop Analytics](https://docs.microsoft.com/mem/configmgr/desktop-analytics/)
+- [Samhantering för Windows 10-enheter](https://docs.microsoft.com/mem/configmgr/comanage/)  
 - [CMPivot](https://docs.microsoft.com/mem/configmgr/core/servers/manage/cmpivot)  
 - [Planera för BitLocker-hantering](https://docs.microsoft.com/mem/configmgr/protect/plan-design/bitlocker-management)  
 - [Microsoft Edge-hantering](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge)  
@@ -55,39 +56,39 @@ En granskad lista över viktiga artiklar.
 
 ## <a name="trending"></a>Populära
 
-De populäraste artiklarna mellan 1 maj och 31 maj 2020.
+De populäraste artiklarna från 1 juni och 30 juni 2020.
 
-| Sid visningar | Titel |
+| Sid visningar | Rubrik |
 |------------|-------|
-| 22624 | [Planera för en molnhanteringsgateway](https://docs.microsoft.com/mem/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) |
-| 18451 | [Nyheter i version 2002](https://docs.microsoft.com/mem/configmgr/core/plan-design/changes/whats-new-in-version-2002) |
-| 17763 | [Loggfilsreferens](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/log-files) |
-| 16718 | [Aktivera Transport Layer Security (TLS) 1,2 på klienter](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2-client) |
-| 16004 | [Portar som används för anslutningar](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/ports) |
-| 13965 | [Aktivera Transport Layer Security (TLS) 1,2 – Översikt](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2) |
-| 13398 | [Uppdateringar och service](https://docs.microsoft.com/mem/configmgr/core/servers/manage/updates) |
-| 13279 | [Samhantering för Windows 10-enheter](https://docs.microsoft.com/mem/configmgr/comanage/overview) |
-| 13260 | [Användarhandbok för Software Center](https://docs.microsoft.com/mem/configmgr/core/understand/software-center) |
-| 12624 | [Desktop Analytics](https://docs.microsoft.com/mem/configmgr/desktop-analytics/overview) |
+| 21317 | [Planera för en molnhanteringsgateway](https://docs.microsoft.com/mem/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) |
+| 19402 | [Loggfilsreferens](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/log-files) |
+| 18826 | [Aktivera Transport Layer Security (TLS) 1,2 på klienter](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2-client) |
+| 16525 | [Aktivera Transport Layer Security (TLS) 1,2 – Översikt](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2) |
+| 16142 | [Portar som används för anslutningar](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/ports) |
+| 15834 | [Nyheter i version 2002](https://docs.microsoft.com/mem/configmgr/core/plan-design/changes/whats-new-in-version-2002) |
+| 13963 | [Vad är Configuration Manager?](https://docs.microsoft.com/mem/configmgr/core/understand/introduction) |
+| 13727 | [Desktop Analytics](https://docs.microsoft.com/mem/configmgr/desktop-analytics/overview) |
+| 13603 | [Samhantering för Windows 10-enheter](https://docs.microsoft.com/mem/configmgr/comanage/overview) |
+| 13049 | [Användarhandbok för Software Center](https://docs.microsoft.com/mem/configmgr/core/understand/software-center) |
 
-Sidan [Configuration Manager Hub](https://docs.microsoft.com/mem/configmgr/) fick 34 986 sid visningar under den här tids perioden.
+Sidan [Configuration Manager Hub](https://docs.microsoft.com/mem/configmgr/) fick 36 220 sid visningar under den här tids perioden.
 
 ## <a name="recently-updated"></a>Nyligen uppdaterad
 
 Artiklar med en senaste och betydande uppdatering.
 
-| Senast granskad | Titel |
+| Senast granskad | Rubrik |
 |---------------|-------|
-| 5/29/2020 | [Teknisk för hands version 2005](https://docs.microsoft.com/mem/configmgr/core/get-started/2020/technical-preview-2005) |
-| 5/27/2020 | [Stöd för Windows 10](https://docs.microsoft.com/mem/configmgr/core/plan-design/configs/support-for-windows-10) |
-| 5/26/2020 | [Översikt över CMPivot](https://docs.microsoft.com/mem/configmgr/core/servers/manage/cmpivot-overview) |
-| 5/26/2020 | [Översikt över anslutna CMPivot-innehavare](https://docs.microsoft.com/mem/configmgr/tenant-attach/cmpivot-overview-attached) |
-| 5/26/2020 | [Klient bifogade exempel skript för CMPivot](https://docs.microsoft.com/mem/configmgr/tenant-attach/cmpivot-samples-attached) |
-| 5/26/2020 | [Nyheter i version 2002](https://docs.microsoft.com/mem/configmgr/core/plan-design/changes/whats-new-in-version-2002) |
-| 5/21/2020 | [Viktig information](https://docs.microsoft.com/mem/configmgr/core/servers/deploy/install/release-notes) |
-| 5/14/2020 | [Rekommenderad maskinvara](https://docs.microsoft.com/mem/configmgr/core/plan-design/configs/recommended-hardware) |
-| 2020-05-11 | [Till gångar i Analytics för Station ära datorer](https://docs.microsoft.com/mem/configmgr/desktop-analytics/about-assets) |
-| 2020-05-11 | [Nyheter i Desktop Analytics](https://docs.microsoft.com/mem/configmgr/desktop-analytics/whats-new) |
+| 6/29/2020 | [Teknisk för hands version 2006](https://docs.microsoft.com/mem/configmgr/core/get-started/2020/technical-preview-2006) |
+| 25 juni 2020 | [Installera Power BI-exempelrapporter](https://docs.microsoft.com/mem/configmgr/core/servers/manage/powerbi-sample-reports) |
+| 24 juni 2020 | [SQL Server-versioner som stöds](https://docs.microsoft.com/mem/configmgr/core/plan-design/configs/support-for-sql-server-versions) |
+| 6/18/2020 | [Hantera uppdateringar för Surface-drivrutiner](https://docs.microsoft.com/mem/configmgr/sum/deploy-use/surface-drivers) |
+| 6/17/2020 | [Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/mem/configmgr/protect/deploy-use/defender-advanced-threat-protection) |
+| 10 juni 2020 | [Planera för en molnhanteringsgateway](https://docs.microsoft.com/mem/configmgr/core/clients/manage/cmg/plan-cloud-management-gateway) |
+| 10 juni 2020 | [Användarhandbok för Software Center](https://docs.microsoft.com/mem/configmgr/core/understand/software-center) |
+| 10 juni 2020 | [VANLIGA FRÅGOR OCH SVAR OM CMG](https://docs.microsoft.com/mem/configmgr/core/clients/manage/cmg/cloud-management-gateway-faq) |
+| 6/5/2020 | [Metod tips för samlingar](https://docs.microsoft.com/mem/configmgr/core/clients/manage/collections/best-practices-for-collections) |
+| 6/5/2020 | [Samlingsutvärdering](https://docs.microsoft.com/mem/configmgr/core/clients/manage/collections/collection-evaluation) |
 
 ## <a name="troubleshooting-articles"></a>Felsökningsartiklar
 

@@ -2,7 +2,7 @@
 title: Skapa en aktivitetssekvens för en operativsystemuppgradering
 titleSuffix: Configuration Manager
 description: Använda en aktivitetssekvens för att automatiskt uppgradera från Windows 7 eller senare till Windows 10
-ms.date: 07/26/2019
+ms.date: 07/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6ad36978f3f3dc5207068a65d76bf8f5c7c3078c
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: 84e6ea21f2bb9627ae6b40c62f8f856fb426bdaf
+ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383248"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384900"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Skapa en aktivitetssekvens för att uppgradera ett operativ system i Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "85383248"
 Använd aktivitetssekvenser i Configuration Manager för att automatiskt uppgradera ett operativ system på mål datorn. Den här uppgraderingen kan vara från Windows 7 eller senare till Windows 10, eller från Windows Server 2012 eller senare till Windows Server 2016. Skapa en aktivitetssekvens som refererar till uppgraderings paketet för operativ systemet och eventuellt annat innehåll att installera, till exempel program eller program uppdateringar. Aktivitetssekvensen för att uppgradera ett operativ system är en del av [uppgraderings Fönstren till det senaste versions](upgrade-windows-to-the-latest-version.md) scenariot.  
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du skapar aktivitetssekvensen måste följande krav vara på plats:
 
@@ -63,14 +63,14 @@ Om du vill uppgradera operativ systemet på klienter skapar du en aktivitetssekv
 
     - **Versions index**: om det finns flera tillgängliga OS Edition-index i paketet väljer du det önskade versions indexet. Som standard väljs det första indexet i guiden.  
 
-    - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck ( `-` ). Exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
+    - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck ( `-` ). Här är ett exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
 
         > [!Note]  
         > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
 
     - **Ignorera eventuella meddelanden som kan ignoreras**: Välj den här inställningen om du uppgraderar till Windows Server 2016. Om du inte väljer den här inställningen kan aktivitetssekvensen inte slutföras eftersom Installationsprogrammet för Windows väntar på att användaren ska välja **Bekräfta** i en dialog ruta för Windows-appar.  
 
-6. På sidan **Inkludera uppdateringar** anger du om obligatoriska, alla eller inga program uppdateringar ska installeras. Välj **Nästa**. Om du anger att program uppdateringarna ska installeras, installerar Configuration Manager bara de uppdateringar som är riktade mot de samlingar som mål datorn är medlem i.  
+6. På sidan **Inkludera uppdateringar** anger du om obligatoriska, alla eller inga program uppdateringar ska installeras. Välj sedan **Nästa**. Om du anger att program uppdateringarna ska installeras, installerar Configuration Manager bara de uppdateringar som är riktade mot de samlingar som mål datorn är medlem i.  
 
 7. På sidan **installera program** anger du de program som ska installeras på mål datorn och väljer sedan **Nästa**. Om du väljer fler än ett program anger du även om aktivitetssekvensen ska fortsätta om installationen av ett enskilt program Miss lyckas.  
 
@@ -124,7 +124,7 @@ Om det returnerar några resultat körs enheten på Wi-Fi. Annars är enheten an
 
 Lägg till steg i den här gruppen för att ta bort alla program som inte är kompatibla med den här versionen av Windows 10. Metoden för att avinstallera ett program varierar.  
 
-Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Till exempel:
+Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Exempel:
 
 `msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`  
 
@@ -253,13 +253,17 @@ Använd **SMSTSDownloadRetryCount** - [variabeln](../understand/task-sequence-va
 
     `cmd /c exit %_SMSTSOSUpgradeActionReturnCode%`
 
+    Det här kommandot gör att kommando tolken avslutas med den angivna slutkod som inte är noll, vilket innebär att aktivitetssekvensen anser ett fel.
+
 1. Lägg till följande villkor på fliken **alternativ** :
 
     `Task Sequence Variable _SMSTSOSUpgradeActionReturnCode not equals 3247440400`
 
-Den här retur koden är den decimal som motsvarar MOSETUP_E_COMPAT_SCANONLY (0xC1900210), som är en lyckad kompatibilitetskontroll utan problem. Om steget för *uppgraderings utvärdering* lyckas och returnerar den här koden hoppar aktivitetssekvensen över det här steget. Annars Miss lyckas aktivitetssekvensen med retur koden från Installationsprogrammet för Windows kompatibilitetskontroll, om bedömnings steget returnerar andra retur koder. Mer information om **_SMSTSOSUpgradeActionReturnCode**finns i [variabler för aktivitetssekvensen](../understand/task-sequence-variables.md#SMSTSOSUpgradeActionReturnCode).
+    Det här tillståndet innebär att aktivitetssekvensen bara kör **kommando rads** steget för körning om retur koden inte är en lyckad kod.
 
-Mer information finns i [Uppgradera operativ system](../understand/task-sequence-steps.md#BKMK_UpgradeOS).  
+Retur koden `3247440400` är den decimal som motsvarar MOSETUP_E_COMPAT_SCANONLY (0xC1900210), som är en lyckad kompatibilitetskontroll utan problem. Om steget för *uppgraderings utvärdering* lyckas och returnerar `3247440400` , hoppar aktivitetssekvensen över det här steget för att **köra kommando raden** och fortsätter. Om bedömnings steget returnerar någon annan returkod körs det här **körnings kommando rads** steget. Eftersom kommandot avslutas med en returkod som inte är noll, Miss lyckas även aktivitetssekvensen. Logg-och status meddelanden i aktivitetssekvensen innehåller retur koden från Installationsprogrammet för Windows kompatibilitetskontroll. Mer information om **_SMSTSOSUpgradeActionReturnCode**finns i [variabler för aktivitetssekvensen](../understand/task-sequence-variables.md#SMSTSOSUpgradeActionReturnCode).
+
+Mer information finns i steget [Uppgradera operativ systemets](../understand/task-sequence-steps.md#BKMK_UpgradeOS) aktivitetssekvens.
 
 ### <a name="convert-from-bios-to-uefi"></a>Konvertera från BIOS till UEFI
 

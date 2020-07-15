@@ -2,7 +2,7 @@
 title: Konfigurera klient status
 titleSuffix: Configuration Manager
 description: Välj inställningar för klient status i Configuration Manager.
-ms.date: 04/23/2017
+ms.date: 07/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,100 +10,100 @@ ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5bb77e1e9f55919a03368d549946ee4dd1cda58a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a352e53a672f7fb47416214884fe7adf0fb829cc
+ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713578"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384918"
 ---
 # <a name="how-to-configure-client-status-in-configuration-manager"></a>Konfigurera klient status i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Innan du kan övervaka Configuration Manager klient status och åtgärda problem som hittas måste du konfigurera platsen för att ange de parametrar som används för att markera klienter som inaktiva och konfigurera alternativ för att varna dig om klient aktiviteten sjunker under ett visst tröskelvärde. Du kan också inaktivera datorer från att automatiskt reparera eventuella problem som klient status hittar.  
+Innan du kan övervaka Configuration Manager klienter och åtgärda problem konfigurerar du platsens klient status inställningar. De här inställningarna anger de parametrar som platsen använder för att markera klienter som inaktiva. Konfigurera också alternativ för att varna dig om klient aktiviteten sjunker under ett angivet tröskelvärde.
 
-##  <a name="to-configure-client-status"></a><a name="BKMK_1"></a>Konfigurera klient status  
+## <a name="configure-client-status"></a>Konfigurera klient status
 
-1.  Klicka på **övervakning**i Configuration Manager-konsolen.  
+1. I Configuration Manager-konsolen går du till arbets ytan **övervakning** och väljer noden **klient status** . På fliken **Start** i menyfliksområdet i gruppen **klient status** väljer du **Inställningar för klient status**.
 
-2.  I arbets **ytan övervakning** klickar du **på klient status**och klickar sedan på **Inställningar för klient status**i gruppen **klient** status på fliken **Start** .  
+1. Konfigurera följande inställningar:
 
-3.  I dialog rutan **Egenskaper för klient status inställningar** anger du följande värden för att fastställa klient aktivitet:  
+    > [!NOTE]
+    > Om en klient inte uppfyller någon av inställningarna markerar platsen den som inaktiv.
 
-    > [!NOTE]  
-    >  Om ingen av inställningarna är uppfyllda markeras klienten som inaktiv.  
+    - **Klient princip begär Anden under följande dagar:** Ange antalet dagar sedan klienten begärde en princip från platsen. Standardvärdet är `7` dagar.
 
-    -   **Klient princip begär Anden under följande dagar:** Ange antalet dagar sedan en klient begärde en princip. Standardvärdet är **7** dagar.  
+      Jämför det här värdet med inställningen för **avsöknings intervall för klient princip** i **klient princip** gruppen i klient inställningar. Standardvärdet är 60 minuter. Med andra ord bör en klient söka efter principer varje timme. Om den inte begär en princip efter en vecka markerar platsen den som inaktiv.
 
-    -   **Pulsslags identifiering under följande dagar:** Ange antalet dagar sedan klient datorn skickade en pulsslags identifierings post till plats databasen. Standardvärdet är **7** dagar.  
+    - **Pulsslags identifiering under följande dagar:** Ange antalet dagar sedan klienten skickade en pulsslags identifierings post till platsen. Standardvärdet är `7` dagar.
 
-    -   **Maskin varu inventering under följande dagar:** Ange antalet dagar sedan klient datorn skickade en maskin varu inventerings post till plats databasen. Standardvärdet är **7** dagar.  
+      Jämför det här värdet med schemat för [identifierings metoden för pulsslag](../../servers/deploy/configure/about-discovery-methods.md). Som standard kör platsen pulsslags identifiering en gång i veckan.
 
-    -   **Program varu inventering under följande dagar:** Ange antalet dagar sedan klient datorn skickade en program varu inventerings post till plats databasen. Standardvärdet är **7** dagar.  
+    - **Maskin varu inventering under följande dagar:** Ange antalet dagar sedan klienten skickade en maskin varu inventerings post till platsen. Standardvärdet är `7` dagar.
 
-    -   **Status meddelanden under följande dagar:** Ange antalet dagar sedan klient datorn skickade status meddelanden till plats databasen. Standardvärdet är **7** dagar.  
+      Jämför det här värdet med **schemaläggnings inställningen för maskin varu inventering** i **maskin varu inventerings** gruppen för klient inställningar. Standardvärdet är sju dagar.
 
-4.  I dialog rutan **Egenskaper för klient status inställningar** anger du följande värde för att avgöra hur länge klient status historik data kvarhålls:  
+    - **Program varu inventering under följande dagar:** Ange antalet dagar sedan klienten skickade en program varu inventerings post till platsen. Standardvärdet är `7` dagar.
 
-    -   **Behåll klient status historik i följande antal dagar:** Ange hur länge du vill att klient status historiken ska behållas i plats databasen. Standardvärdet är **31** dagar.  
+      Jämför det här värdet med inställningen **Schemalägg program varu inventering och fil insamling** i **program varu inventerings** gruppen för klient inställningar. Standardvärdet är sju dagar.
 
-5.  Klicka på **OK** för att spara egenskaperna och stänga dialog rutan **Egenskaper för klient status inställningar** .  
+    - **Status meddelanden under följande dagar:** Ange antalet dagar sedan klienten skickade status meddelanden till platsen. Standardvärdet är `7` dagar. Klienten kan skicka status meddelanden för olika typer av aktiviteter, till exempel köra en aktivitetssekvens. Platsen tar bort gamla status meddelanden som en del av underhålls aktiviteten, **ta bort föråldrade status meddelanden**.
 
-##  <a name="to-configure-the-schedule-for-client-status"></a><a name="BKMK_Schedule"></a>Så här konfigurerar du schemat för klient status  
+1. Ange följande värde för att avgöra hur länge platsen behåller klient status historiken:
 
-1.  Klicka på **övervakning**i Configuration Manager-konsolen.  
+    - **Behåll klient status historik i följande antal dagar:** Som standard behåller platsen information om klient status i `31` dagar. Den här inställningen påverkar inte klient-eller plats beteendet. Det liknar en underhålls uppgift för klient status historik.
 
-2.  I arbets **ytan övervakning** klickar du på **klient status**och klickar sedan på **Schemalägg klient status uppdatering**i gruppen **klient status** på fliken **Start** .  
+## <a name="configure-the-schedule"></a>Konfigurera schemat
 
-3.  I dialog rutan **Schemalägg klientens status uppdatering** konfigurerar du intervallet då du vill att klientens status ska uppdateras och klickar sedan på OK.  
+1. I Configuration Manager-konsolen går du till arbets ytan **övervakning** och väljer noden **klient status** . På fliken **Start** i menyfliksområdet i gruppen **klient status** väljer du **Schemalägg klient status uppdatera**.
 
-    > [!NOTE]  
-    >  När du ändrar schemat för klient status uppdateringar börjar uppdateringen inte gälla förrän nästa schemalagda klient status uppdatering (för det tidigare konfigurerade schemat).  
+1. Konfigurera intervallet som du vill att klient status ska uppdateras med.
 
-##  <a name="to-configure-alerts-for-client-status"></a><a name="BKMK_2"></a>Konfigurera aviseringar för klient status  
+    > [!NOTE]
+    > När du ändrar schemat för klient status uppdateringar börjar det inte gälla förrän nästa schemalagda klient status uppdateras enligt föregående schema.
 
-1. Klicka på **Tillgångar och efterlevnad** i Configuration Manager-konsolen.  
+## <a name="configure-alerts"></a>Konfigurera varningar
 
-2. I arbetsytan **Tillgångar och efterlevnad** klickar du på **Enhetssamlingar**.  
+1. I Configuration Manager-konsolen går du till arbets ytan **till gångar och efterlevnad** och väljer noden **enhets samlingar** .
 
-3. Välj i listan **Enhetssamlingar** den samling som du vill konfigurera aviseringar för. Klicka sedan på **Egenskaper** i gruppen **Egenskaper** på fliken **Start**.  
+1. Välj den samling som du vill konfigurera aviseringar för. Välj **Egenskaper**i gruppen **Egenskaper** på fliken **Start** i menyfliksområdet.
 
-   > [!NOTE]  
-   >  Det går inte att konfigurera aviseringar för användarsamlingar.  
+    > [!NOTE]
+    > Det går inte att konfigurera aviseringar för användar samlingar.
 
-4. På fliken **aviseringar** i dialog rutan**Egenskaper** för <em> &lt;\>samlings namn</em>klickar du på **Lägg till**.  
+1. Växla till fliken **aviseringar** och välj **Lägg till**.
 
-   > [!NOTE]  
-   >  Fliken **Aviseringar** visas endast om den säkerhetsroll som du är associerad med har behörighet för aviseringar.  
+   > [!TIP]
+   > Du kan bara visa fliken **aviseringar** om säkerhets rollen har behörighet för aviseringar.
 
-5. I dialogrutan **Lägg till nya samlingsvarningar** väljer du de aviseringar som ska genereras när klientstatusgränsvärdena blir lägre än ett specifikt definierat värde. Klicka sedan på **OK**.  
+    Välj de aviseringar som du vill att webbplatsen ska generera för tröskelvärden för klient status och välj **OK**.
 
-6. I listan **Villkor** på fliken **Aviseringar** markerar du varje klientstatusavisering och anger följande information.  
+1. I listan **villkor** på fliken **aviseringar** markerar du varje klient status avisering och anger följande information:
 
-   -   **Aviserings namn** – acceptera standard namnet eller ange ett nytt namn för aviseringen.  
+    - **Aviserings namn**: acceptera standard namnet eller ange ett nytt namn för aviseringen.
 
-   -   **Allvarlighets grad för avisering** – Välj den aviserings nivå som ska visas i Configuration Managers konsolen i list rutan.  
+    - **Allvarlighets grad för avisering**: Välj den varnings nivå som visas i Configuration Manager-konsolen.
 
-   -   **Generera avisering** – ange tröskel procent andelen för aviseringen.  
+    - **Generera avisering**: Ange tröskel procent andelen för aviseringen.
 
-7. Stäng dialog rutan**Egenskaper** för <em> &lt;samlings\>namn</em>genom att klicka på **OK** .  
+## <a name="automatic-remediation-exclusion"></a>Undantag för automatisk reparation
 
-##  <a name="to-exclude-computers-from-automatic-remediation"></a><a name="BKMK_3"></a>Så här undantar du datorer från automatisk reparation  
+1. Öppna Registereditorn på den klient dator där du vill inaktivera automatisk reparation.
 
-1. Öppna Registereditorn på den klient dator för vilken du vill inaktivera automatisk reparation.  
+    > [!WARNING]
+    > Om du använder Registereditorn på ett felaktigt sätt kan det orsaka allvarliga problem som kräver att du installerar om Windows. Microsoft kan inte garantera att du kan lösa problem som orsakas av felaktig användning av Registereditorn. Använd den på egen risk.
 
-   > [!WARNING]  
-   >  Om du använder Registereditorn på ett felaktigt sätt kan det orsaka allvarliga problem som kräver att du installerar om operativ systemet. Microsoft kan inte garantera att du kan lösa problem som orsakas av felaktig användning av Registereditorn. Du använder Registereditorn på egen risk.  
+1. Navigera till register nyckeln **HKEY_LOCAL_MACHINE \software\microsoft\ccm\ccmeval**.
 
-2. Navigera till **HKEY_LOCAL_MACHINE \software\microsoft\ccm\ccmeval\notifyonly**.  
+1. Ändra värdet för **NOTIFYONLY** -posten:
 
-3. Ange ett av följande värden för den här register nyckeln:  
+    - `TRUE`: Klienten åtgärdar inte automatiskt eventuella problem som hittas. Platsen meddelar fortfarande dig i arbets ytan **övervakning** om eventuella problem med den här klienten.
 
-   -   **True** -klient datorn kommer inte att åtgärda eventuella problem som hittas automatiskt. Du kommer dock fortfarande att bli aviserad i arbets ytan **övervakning** om eventuella problem med den här klienten.  
+    - `FALSE`: Den här inställningen är standard. Klienten åtgärdar automatiskt problem när de hittar dem och platsen meddelar dig i arbets ytan **övervakning** .
 
-   -   **Falskt** – klient datorn åtgärdar automatiskt problem när de hittas och du kommer att bli aviserad i arbets ytan **övervakning** . Det här är standardinställningen.  
+När du installerar klienter kan du undanta dem från automatisk reparation med installations egenskapen **NOTIFYONLY** . Mer information finns i [om klient installations egenskaper](about-client-installation-properties.md).
 
-4. Stäng Registereditorn.  
+## <a name="next-steps"></a>Nästa steg
 
-   Du kan också installera klienter med hjälp av egenskapen CCMSetup **NOTIFYONLY** installation för att utesluta dem från automatisk reparation. Mer information om den här klient installations egenskapen finns i [om klient installations egenskaper](../../../core/clients/deploy/about-client-installation-properties.md).  
+[Övervaka klienter](../manage/monitor-clients.md)

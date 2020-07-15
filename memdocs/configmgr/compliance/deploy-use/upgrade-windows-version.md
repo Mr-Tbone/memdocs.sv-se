@@ -2,7 +2,7 @@
 title: Uppgradera Windows-enheter till en annan version
 titleSuffix: Configuration Manager
 description: Använd Configuration Manager för att automatiskt uppgradera Windows 10-enheter till en annan Windows-version.
-ms.date: 09/03/2019
+ms.date: 07/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b0c9db74-841e-46eb-8924-957cde968bf7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 57f8c503d8a8ac54604a2435641bb29d0b4a1847
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 7a82a635eafcc0ecb5251457db9d4fbb301fce33
+ms.sourcegitcommit: 1edcfb3ce4350ba1a6f36a6150e86301d35c631b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240685"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390848"
 ---
 # <a name="upgrade-windows-devices-to-a-new-edition-with-configuration-manager"></a>Uppgradera Windows-enheter till en ny utgåva med Configuration Manager
 
@@ -37,7 +37,7 @@ Innan du börjar uppgradera enheter till den senaste versionen bör du gå igeno
 
 - För Station ära versioner av Windows 10: en giltig produkt nyckel för den nya versionen av Windows på alla enheter som du riktar principen mot. Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server. <!--496871-->  
 
-- För Windows 10 Mobile: en XML-licensserver från Microsoft Volume Licensing Service Center (VLSC). Den här filen innehåller licens information för den nya versionen av Windows på alla enheter som du riktar principen mot.
+- För Windows 10 Mobile: en XML-licensserver från Microsoft Volume Licensing Service Center (VLSC). Den här filen innehåller licens information för den nya versionen av Windows på alla enheter som du riktar principen mot. Hämta ISO-filen för **Windows 10 Mobile Enterprise**, som innehåller XML för licensiering.<!-- SCCMDocs#2033 -->
 
 - Du måste ha säkerhets rollen Configuration Manager **Fullständig administratör** för att kunna hantera den här princip typen.
 

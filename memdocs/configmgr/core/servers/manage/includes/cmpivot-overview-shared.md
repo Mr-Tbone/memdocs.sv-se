@@ -3,13 +3,13 @@ author: mestew
 ms.author: mstewart
 ms.prod: configuration-manager
 ms.topic: include
-ms.date: 06/05/2020
-ms.openlocfilehash: 3672127798b66d857b4a1dbd5014c02dfed8a7ee
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.date: 07/13/2020
+ms.openlocfilehash: 80302a1c369c36a08cc1a55e20cf339dbc8d2883
+ms.sourcegitcommit: 6d987bb69d0eb9955a3003202864f58d6aaa426a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84466844"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86381057"
 ---
 <!--This file is shared by the CMPivot overview articles for both Microsoft Endpoint Manager tenant attach and Configuration Manager-->
 
@@ -20,7 +20,7 @@ Frågor kan användas för att söka efter termer, identifiera trender, analyser
 I följande exempel är entiteten `CCMRecentlyUsedApplications` (en referens till de senast använda programmen) och operatorn är där (som filtrerar poster från indata enligt vissa predikat per post):
 
 ```
-CCMRecentlyUsedApplications | where CompanyName like '%Microsoft%'
+CCMRecentlyUsedApplications | where CompanyName like '%Microsoft%' | project CompanyName, ExplorerFileName, LastUsedTime, LaunchCount, FolderPath
 ```
 
 ## <a name="entities"></a>Entiteter
@@ -28,7 +28,7 @@ CCMRecentlyUsedApplications | where CompanyName like '%Microsoft%'
 Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande följande entiteter:
 
 
-|Entitet|Beskrivning|
+|Entitet|Description|
 |---|---|
 |AadStatus|Status för Azure Active Directory|
 |Administratörer|Medlemmar i den lokala administratörs gruppen|
@@ -56,7 +56,7 @@ Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande
 |ComputerSystemProduct|Dator System produkt|
 |ConnectedDevice|Ansluten enhet|
 |Anslutning|En aktiv TCP-anslutning in eller ut från enheten|
-|skrivbords-|skrivbords-|
+|Skrivbord|Skrivbord|
 |DesktopMonitor|Skriv bords skärm|
 |Enhet|Grundläggande information om enheten|
 |Disk|Information om lokal lagrings enhet på ett dator system som kör Windows|
@@ -181,7 +181,7 @@ Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande
 
 Tabell operatörer kan använda filter, sammanfatta och transformera data strömmar. För närvarande stöds följande operatorer:
 
-|Tabell operatörer|Beskrivning|
+|Tabell operatörer|Description|
 |---|---|
 |count|Returnerar en tabell med en enda post som innehåller antalet poster|
 |distinct|Skapar en tabell med en distinkt kombination av de angivna kolumnerna i indata-tabellen|
@@ -189,9 +189,9 @@ Tabell operatörer kan använda filter, sammanfatta och transformera data ström
 |Sortera efter|Sortera raderna i indatalistnen i ordning efter en eller flera kolumner|
 |projekt|Markera de kolumner som du vill inkludera, byta namn på eller släppa och infoga nya beräknade kolumner|
 |sammanfatta|Skapar en tabell som sammanställer innehållet i Indataporten|
-|gå|Returnera upp till det angivna antalet rader|
-|överst|Returnerar de första N posterna sorterade efter de angivna kolumnerna|
-|där|Filtrerar en tabell till delmängd av rader som uppfyller ett predikat|
+|take|Returnera upp till det angivna antalet rader|
+|top|Returnerar de första N posterna sorterade efter de angivna kolumnerna|
+|var|Filtrerar en tabell till delmängd av rader som uppfyller ett predikat|
 
 ## <a name="scalar-operators"></a>Skalära operatorer
 
@@ -212,7 +212,7 @@ I följande tabell sammanfattas operatörer:
 |%|Modulo|`2 % 1`|
 |likadan|Vänster sida (LHS) innehåller en matchning för höger sida (RHS)|`'abc' like '%B%'`|
 |! like|LHS innehåller ingen matchning för RHS|`'abc' !like '_d_'`|
-|innehåller|RHS inträffar som en under serie av LHS|`'abc' contains 'b'`|
+|contains|RHS inträffar som en under serie av LHS|`'abc' contains 'b'`|
 |! innehåller|RHS inträffar inte i LHS|`'team' !contains 'i'`|
 |StartsWith|RHS är en inledande delsekvens av LHS|`'team' startswith 'tea'`|
 |! StartsWith|RHS är inte en inledande delsekvens av LHS|`'abc' !startswith 'bc'`|
