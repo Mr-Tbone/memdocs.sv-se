@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 0960637f534bfe1361b55b2d63be87abc7894d7b
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: d1e7b2c359e21ac4a12219d27655603954702fa8
+ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715245"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410884"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurera Cloud Management Gateway för Configuration Manager
 
@@ -246,6 +246,9 @@ När du har skapat en CMG kan du ändra vissa inställningar. Välj CMG i Config
 #### <a name="settings"></a>Inställningar
 
 - **Certifikat fil**: ändra certifikatet för SERVERAUTENTISERING för CMG. Det här alternativet är användbart när du uppdaterar certifikatet innan det upphör att gälla.  
+
+  > [!NOTE]
+  > När du förnyar certifikatet för serverautentisering för CMG är det fullständiga domän namnet som angavs för certifikatets eget namn (CN) Skift läges känsligt.  Om certifikatet som för närvarande används till exempel har ett CN-namn `https://contoso-cmg.contoso.com` , skapar du det nya certifikatet med samma gemena CN. Guiden accepterar inte ett certifikat med CN `https://CONTOSO-CMG.CONTOSO.COM` .
 
 - **Virtuell dator instans**: ändra antalet virtuella datorer som tjänsten använder i Azure. Med den här inställningen kan du dynamiskt skala upp eller ned tjänsten baserat på användnings-eller kostnads överväganden.  
 

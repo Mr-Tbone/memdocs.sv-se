@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 0ef2d09423e7bb51e94cb626bf513aa7e98992c9
-ms.sourcegitcommit: d647eefa23c8849f49584442df568284d51d7525
+ms.openlocfilehash: 09f829bd1695426211ff94381a63b8f23d1b4fe8
+ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86195658"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86411022"
 ---
 # <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -103,7 +103,7 @@ Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller f
     - Enheter måste också ha Configuration Manager-klienten, version 1902 med Samlad uppdatering (4500571) eller senare. Mer information finns i [uppdatera Configuration Manager](connect-configmgr.md#bkmk_hotfix).  
 
     > [!Note]  
-    > Desktop Analytics stöder inte uppgraderingar till Windows 10 långsiktig service Channel (LTSC). Mer information finns i [Översikt över Windows som en tjänst](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+    > Desktop Analytics stöder inte uppgraderingar till eller från Windows 10 långsiktig service Channel (LTSC). Mer information finns i [Översikt över Windows som en tjänst](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
     >
     > Desktop Analytics är utformat för bästa möjliga uppgraderings scenario på plats. Om du behöver göra större ändringar, till exempel från 32-bitars till 64-bitars arkitektur, använder du ett avbildnings scenario. Desktop Analytics Insights är fortfarande värdefulla i de här klassiska scenarierna för operativ Systems distribution, men du kan ignorera den detaljerade vägledningen vid uppgradering på plats. Mer information finns i [scenarier för att distribuera operativ system i företag med Configuration Manager](../osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems.md).
 

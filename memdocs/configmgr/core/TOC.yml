@@ -232,8 +232,6 @@
           href: plan-design/security/plan-for-security.md
         - name: Rekommenderade säkerhetsmetoder och sekretessinformation
           href: plan-design/security/security-best-practices-and-privacy-information.md
-        - name: Sekretesspolicy – Configuration Manager Cmdlet-bibliotek
-          href: plan-design/security/privacy-statement-cmdlet-library.md
         - name: Ytterligare sekretessinformation
           href: plan-design/security/additional-privacy.md
         - name: Konfigurera säkerhet

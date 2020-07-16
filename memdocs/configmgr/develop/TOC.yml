@@ -1,0 +1,998 @@
+- name: Dokumentation i Configuration Manager SDK
+  href: index.yml
+- name: Översikt
+  items:
+    - name: Översikt över Configuration Manager SDK
+      href: core/misc/system-center-configuration-manager-sdk.md
+    - name: Sekretessinformation
+      href: core/misc/privacy/privacy-information.md
+    - name: 'Nyheter i SDK:n'
+      href: core/changes/what-s-new-in-the-system-center-configuration-manager-sdk.md
+- name: Krav
+  items:
+    - name: Om SDK-krav
+      href: core/reqs/about-configuration-manager-sdk-requirements.md
+    - name: Krav för klientkörning
+      href: core/reqs/client-runtime-requirements.md
+    - name: Krav för serverkörning
+      href: core/reqs/server-runtime-requirements.md
+    - name: Krav för klientutveckling
+      href: core/reqs/client-development-requirements.md
+    - name: Krav för serverutveckling
+      href: core/reqs/server-development-requirements.md
+    - name: SDK-bibliotek och huvudfiler
+      href: core/reqs/configuration-manager-sdk-libraries-and-header-files.md
+- name: SDK-exempel
+  href: core/understand/configuration-manager-sdk-samples.md
+- name: Programmeringens grunder
+  items:
+    - name: Kom igång med programmering i Configuration Manager
+      items:
+        - name: Kom igång med programmering i Configuration Manager
+          href: core/understand/getting-started-with-configuration-manager-programming.md
+        - name: Översikt över arkitekturen
+          href: core/understand/architectural-overview.md
+        - name: Introduktion till WBEMTEST
+          href: core/understand/introduction-to-wbemtest.md
+        - name: 'Enkelt exempel på lista, skapa, ändra och ta bort'
+          href: core/understand/simple-example-of-list--create--modify--and-delete.md
+    - name: Anropa Configuration Manager-kodstycken
+      href: core/understand/calling-code-snippets.md
+    - name: Kryptera lösenord eller data för en plats
+      href: core/understand/how-to-encrypt-passwords-or-data-for-a-site.md
+    - name: Fel
+      items:
+        - name: Om fel
+          href: core/understand/about-configuration-manager-errors.md
+        - name: Hantera asynkrona fel med hjälp av hanterad kod
+          href: core/understand/how-to-handle-configuration-manager-asynchronous-errors-by-using-managed-code.md
+        - name: Hantera synkrona fel med hjälp av hanterad kod
+          href: core/understand/how-to-handle-configuration-manager-synchronous-errors-by-using-managed-code.md
+        - name: Hantera asynkrona fel med hjälp av WMI
+          href: core/understand/how-to-handle-configuration-manager-asynchronous-errors-by-using-wmi.md
+        - name: Hantera synkrona fel med hjälp av WMI
+          href: core/understand/how-to-handle-configuration-manager-synchronous-errors-by-using-wmi.md
+    - name: Objekt
+      items:
+        - name: Om objekt
+          items:
+            - name: Översikt över objekt
+              href: core/understand/configuration-manager-objects-overview.md
+            - name: Objektsäkerhet
+              href: core/understand/configuration-manager-object-security.md
+            - name: Inbäddade objekt
+              href: core/understand/embedded-objects.md
+            - name: Associationsklasser
+              href: core/understand/association-classes.md
+            - name: Datum- och tidsformat
+              href: core/understand/date-and-time-formats.md
+            - name: Bitfältegenskaper
+              href: core/understand/configuration-manager-bit-field-properties.md
+            - name: Lazy-egenskaper
+              href: core/understand/configuration-manager-lazy-properties.md
+            - name: Utökat WMI-frågespråk
+              href: core/understand/extended-wmi-query-language.md
+            - name: Resultatuppsättningar
+              href: core/understand/result-sets.md
+            - name: Särskilda frågor
+              href: core/understand/special-queries.md
+        - name: Använda objekt med hanterad kod
+          items:
+            - name: Skapa ett objekt
+              href: core/understand/how-to-create-a-configuration-manager-object-by-using-managed-code.md
+            - name: Läsa ett objekt
+              href: core/understand/how-to-read-a-configuration-manager-object-by-using-managed-code.md
+            - name: Ändra ett objekt
+              href: core/understand/how-to-modify-a-configuration-manager-object-by-using-managed-code.md
+            - name: Ta bort ett objekt
+              href: core/understand/how-to-delete-a-configuration-manager-object-by-using-managed-code.md
+            - name: Köra en asynkron fråga
+              href: core/understand/how-to-perform-an-asynchronous-query-by-using-managed-code.md
+            - name: Köra en synkron fråga
+              href: core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md
+            - name: Läsa Lazy-egenskaper
+              href: core/understand/how-to-read-lazy-properties-by-using-managed-code.md
+            - name: Anropa en objektklassmetod
+              href: core/understand/how-to-call-a-configuration-manager-object-class-method-by-using-managed-code.md
+        - name: Använda objekt med WMI
+          items:
+            - name: Skapa ett objekt
+              href: core/understand/how-to-create-a-configuration-manager-object-by-using-wmi.md
+            - name: Läsa ett objekt
+              href: core/understand/how-to-read-a-configuration-manager-object-by-using-wmi.md
+            - name: Ändra ett objekt
+              href: core/understand/how-to-modify-a-configuration-manager-object-by-using-wmi.md
+            - name: Ta bort ett objekt
+              href: core/understand/how-to-delete-a-configuration-manager-object-by-using-wmi.md
+            - name: Köra en synkron fråga
+              href: core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-wmi.md
+            - name: Köra en asynkron fråga
+              href: core/understand/how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md
+            - name: Läsa Lazy-egenskaper
+              href: core/understand/how-to-read-lazy-properties-by-using-wmi.md
+            - name: Anropa en objektklassmetod
+              href: core/understand/how-to-call-a-configuration-manager-object-class-method-by-using-wmi.md
+    - name: Frågor
+      items:
+        - name: Om frågor
+          href: core/understand/about-configuration-manager-queries.md
+        - name: Köra en fråga
+          href: core/understand/how-to-run-a-query.md
+        - name: Skapa en fråga
+          href: core/understand/how-to-create-a-configuration-manager-query.md
+    - name: SEDO
+      items:
+        - name: Översikt över SEDO
+          href: core/understand/sedo.md
+        - name: Låsa ett SEDO-aktiverat objekt
+          href: core/understand/how-to-acquire-a-lock-on-a-sedo-enabled-object.md
+        - name: Låsa upp ett SEDO-aktiverat objekt
+          href: core/understand/how-to-release-a-lock-on-a-sedo-enabled-object.md
+    - name: Scheman
+      items:
+        - name: Om scheman
+          href: core/understand/about-configuration-manager-schedules.md
+        - name: Skapa en schematoken
+          href: core/understand/how-to-create-a-schedule-token.md
+    - name: Platskontrollfil
+      items:
+        - name: Om platskontrollfilen
+          href: core/understand/about-the-configuration-manager-site-control-file.md
+        - name: Läsa och skriva med hanterad kod
+          href: core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md
+        - name: Läsa och skriva med WMI
+          href: core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md
+        - name: Läsa en lista med inbäddade egenskaper för platskontrollfilen
+          href: core/understand/how-to-read-a-configuration-manager-site-control-file-embedded-property-list.md
+        - name: Distribuera en platssystemroll
+          href: core/understand/how-to-deploy-a-site-system-role--example---fallback-status-point-.md
+    - name: Klasschema
+      items:
+        - name: Översikt över klasscheman
+          href: core/understand/configuration-manager-class-schema.md
+        - name: Datum- och tidsformat
+          href: core/understand/date-and-time-formats.md
+        - name: Tolka bitfältsegenskaper
+          href: core/understand/interpreting-bitfield-properties.md
+        - name: Lazy-egenskaper
+          href: core/understand/lazy-properties.md
+        - name: Längdbegränsningar för SMS-providerfält
+          href: core/understand/sms-provider-field-length-restrictions.md
+    - name: Databasschema och databasvyer
+      items:
+        - name: Om databasschemat
+          items:
+            - name: Översikt över schema
+              href: core/understand/configuration-manager-schema-overview.md
+            - name: SQL-vyer för schema
+              href: core/understand/configuration-manager-schema-sql-views.md
+            - name: Mappning av schemavy
+              href: core/understand/configuration-manager-schema-view-mapping.md
+            - name: Säkerhet för SQL-vy
+              href: core/understand/sql-view-security.md
+        - name: Visa en Configuration Manager-vy med hjälp av SQL Server
+          href: core/understand/how-to-see-a-configuration-manager-view-by-using-sql-server.md
+        - name: Skapa anpassade rapporter med hjälp av SQL Server-vyer
+          items:
+            - name: Översikt
+              href: core/understand/sqlviews/create-custom-reports-using-sql-server-views.md
+            - name: SQL Server-vyer
+              items:
+                - name: Översikt
+                  href: core/understand/sqlviews/sql-server-views-configuration-manager.md
+                - name: Vyer för programhantering
+                  href: core/understand/sqlviews/application-management-views-configuration-manager.md
+                - name: Vyer för klientdistribution
+                  href: core/understand/sqlviews/client-deployment-views-configuration-manager.md
+                - name: Vyer för klientstatus
+                  href: core/understand/sqlviews/client-status-views-configuration-manager.md
+                - name: Vyer för samlingar
+                  href: core/understand/sqlviews/collection-views-configuration-manager.md
+                - name: Vyer för kompatibilitetsinställningar
+                  href: core/understand/sqlviews/compliance-settings-views-configuration-manager.md
+                - name: Vyer för innehållshantering
+                  href: core/understand/sqlviews/content-management-views-configuration-manager.md
+                - name: Vyer för identifiering
+                  href: core/understand/sqlviews/discovery-views-configuration-manager.md
+                - name: Endpoint Protection-vyer
+                  href: core/understand/sqlviews/endpoint-protection-views-configuration-manager.md
+                - name: Vyer för inventering
+                  items:
+                    - name: Översikt över inventeringsvyer
+                      href: core/understand/sqlviews/inventory-views-configuration-manager.md
+                    - name: Vyer för maskinvaruinventering
+                      href: core/understand/sqlviews/hardware-inventory-views-configuration-manager.md
+                    - name: Vyer för programvaruinventering
+                      href: core/understand/sqlviews/software-inventory-views-configuration-manager.md
+                    - name: Vyer för tillgångsinformation
+                      href: core/understand/sqlviews/asset-intelligence-views-configuration-manager.md
+                - name: Vyer för migrering
+                  href: core/understand/sqlviews/migration-views-configuration-manager.md
+                - name: MDM-vyer
+                  href: core/understand/sqlviews/mobile-device-management-views-configuration-manager.md
+                - name: Vyer för OS-distribution
+                  href: core/understand/sqlviews/operating-system-deployment-views-configuration-manager.md
+                - name: Vyer för energisparfunktioner
+                  href: core/understand/sqlviews/power-management-views-configuration-manager.md
+                - name: Frågevyer
+                  href: core/understand/sqlviews/query-views-configuration-manager.md
+                - name: Rapportvyer
+                  href: core/understand/sqlviews/reporting-views-configuration-manager.md
+                - name: Schemavyer
+                  href: core/understand/sqlviews/schema-views-configuration-manager.md
+                - name: Säkerhetsvyer
+                  href: core/understand/sqlviews/security-views-configuration-manager.md
+                - name: Vyer för platsadministration
+                  href: core/understand/sqlviews/site-admin-views-configuration-manager.md
+                - name: Vyer för programmätare
+                  href: core/understand/sqlviews/software-metering-views-configuration-manager.md
+                - name: Vyer för programuppdatering
+                  href: core/understand/sqlviews/software-updates-views-configuration-manager.md
+                - name: Vyer för status och avisering
+                  href: core/understand/sqlviews/status-alert-views-configuration-manager.md
+                - name: Wake On LAN-vyer
+                  href: core/understand/sqlviews/wake-lan-views-configuration-manager.md
+            - name: Arbeta med rapporter
+              items:
+                - name: Utvärdering av befintliga rapporter
+                  items:
+                    - name: Utvärdering av rapporten Alla samlingar
+                      href: core/understand/sqlviews/evaluation-all-collections-report-configuration-manager.md
+                    - name: Utvärdering av rapporten Datorinformation
+                      href: core/understand/sqlviews/evaluation-computer-information-report-configuration-manager.md
+                - name: Visa SQL-instruktionen för rapporter
+                  href: core/understand/sqlviews/how-to-view-sql-statement-configuration-manager-reports.md
+                - name: Ändra rapporter
+                  href: core/understand/sqlviews/how-to-modify-configuration-manager-reports.md
+                - name: Skapa rapporter
+                  href: core/understand/sqlviews/how-to-create-configuration-manager-reports.md
+                - name: Köra rapporter
+                  href: core/understand/sqlviews/how-to-run-configuration-manager-reports.md
+                - name: Övningar för att skapa anpassade rapporter
+                  items:
+                    - name: Övning 1 – Köra en befintlig rapport
+                      href: core/understand/sqlviews/exercise-1-run-existing-configuration-manager-report.md
+                    - name: Övning 2 – Ändra en befintlig rapport
+                      href: core/understand/sqlviews/exercise-2-modify-existing-configuration-manager-report.md
+                    - name: Övning 3 – Skapa en ny rapport
+                      href: core/understand/sqlviews/exercise-3-create-new-configuration-manager-report.md
+                    - name: Avancerad övning 1 – Skapa en ny rapport för kompatibilitetsinställningar
+                      href: core/understand/sqlviews/advanced-exercise-1-create-new-report-compliance-settings-configuration-manager.md
+                    - name: Avancerad övning 1 – Lösning
+                      href: core/understand/sqlviews/advanced-exercise-1-solution-create-new-report-compliance-settings-configuration-manager.md
+                    - name: Avancerad övning 2 – Skapa en ny rapport för maskinvaruinventering
+                      href: core/understand/sqlviews/advanced-exercise-2-create-new-report-hardware-inventory-configuration-manager.md
+                    - name: Avancerad övning 2 – Lösning
+                      href: core/understand/sqlviews/advanced-exercise-2-solution-create-new-report-hardware-inventory-configuration-manager.md
+            - name: Teknisk referens för SQL Server-vyer
+              items:
+                - name: Exempelfrågor med hjälp av SQL-vyer
+                  items:
+                    - name: Programhantering
+                      href: core/understand/sqlviews/sample-queries-application-management-configuration-manager.md
+                    - name: Klientdistribution
+                      href: core/understand/sqlviews/sample-queries-client-deployment-configuration-manager.md
+                    - name: Klientstatus
+                      href: core/understand/sqlviews/sample-queries-client-status-configuration-manager.md
+                    - name: Samlingar
+                      href: core/understand/sqlviews/sample-queries-collections-configuration-manager.md
+                    - name: Kompatibilitetsinställningar
+                      href: core/understand/sqlviews/sample-queries-compliance-settings-configuration-manager.md
+                    - name: Innehållshantering
+                      href: core/understand/sqlviews/sample-queries-content-management-configuration-manager.md
+                    - name: Identifiering
+                      href: core/understand/sqlviews/sample-queries-discovery-configuration-manager.md
+                    - name: Slutpunktsskydd
+                      href: core/understand/sqlviews/sample-queries-endpoint-protection-configuration-manager.md
+                    - name: Inventering
+                      items:
+                        - name: Maskinvaruinventering
+                          href: core/understand/sqlviews/sample-queries-hardware-inventory-configuration-manager.md
+                        - name: Programvaruinventering
+                          href: core/understand/sqlviews/sample-queries-software-inventory-configuration-manager.md
+                        - name: Tillgångsinformation
+                          href: core/understand/sqlviews/sample-queries-asset-intelligence-configuration-manager.md
+                    - name: MDM
+                      href: core/understand/sqlviews/sample-queries-mobile-device-management-configuration-manager.md
+                    - name: Distribution av operativsystem
+                      href: core/understand/sqlviews/sample-queries-operating-system-deployment-configuration-manager.md
+                    - name: Energisparfunktioner
+                      href: core/understand/sqlviews/sample-queries-power-management-configuration-manager.md
+                    - name: Frågor
+                      href: core/understand/sqlviews/sample-queries-for-queries-configuration-manager.md
+                    - name: Säkerhet
+                      href: core/understand/sqlviews/sample-queries-security-configuration-manager.md
+                    - name: Platsadministration
+                      href: core/understand/sqlviews/sample-queries-site-administration-configuration-manager.md
+                    - name: Avläsning av programvara
+                      href: core/understand/sqlviews/sample-queries-software-metering-configuration-manager.md
+                    - name: Programuppdateringar
+                      href: core/understand/sqlviews/sample-queries-software-updates-configuration-manager.md
+                    - name: Status och aviseringar
+                      href: core/understand/sqlviews/sample-queries-status-alerts-configuration-manager.md
+                    - name: Wake on LAN
+                      href: core/understand/sqlviews/sample-queries-wake-lan-views-configuration-manager.md
+                - name: SQL Server-referens för Configuration Manager-rapporter
+                  items:
+                    - name: Referens för SQL-instruktioner för rapporter
+                      href: core/understand/sqlviews/sql-statement-reference-configuration-manager-reports.md
+                    - name: Använda Frågedesigner för att skriva SQL-instruktioner för rapporter
+                      href: core/understand/sqlviews/use-query-designer-write-configuration-manager-report-sql-statements.md
+                    - name: Skapa en SQL-instruktion med hjälp av Frågedesigner
+                      href: core/understand/sqlviews/how-to-create-sql-statement-using-query-designer.md
+                - name: Referens för WMI-schema för SMS-providrar
+                  items:
+                    - name: Översikt
+                      href: core/understand/sqlviews/sms-provider-wmi-schema-reference-configuration-manager.md
+                    - name: WMI-namnrymder och WMI-klasser för rapporter
+                      href: core/understand/sqlviews/wmi-namespaces-classes-configuration-manager-reports.md
+            - name: Lista över rapporter i Configuration Manager
+              href: core/understand/sqlviews/reports-supplied-with-configuration-manager.md
+    - name: SMS-providern
+      items:
+        - name: Om SMS-providern
+          items:
+            - name: Grunderna om SMS-provider
+              href: core/understand/sms-provider-fundamentals.md
+            - name: Grunderna om WMI-provider
+              href: core/understand/wmi-configuration-manager-provider-fundamentals.md
+            - name: Grunderna om hanterad SMS-provider
+              href: core/understand/managed-sms-provider-fundamentals-in-configuration-manager.md
+            - name: Kontextkvalificerare för Configuration Manager
+              href: core/understand/context-qualifiers.md
+            - name: Längdbegränsningar för SMS-providerfält
+              href: core/understand/sms-provider-field-length-restrictions-in-configuration-manager.md
+        - name: Ansluta till en SMS-provider med hjälp av hanterad kod
+          href: core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md
+        - name: Lägga till en kontextkvalificerare med hjälp av hanterad kod
+          href: core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-managed-code.md
+        - name: Ansluta till en SMS-provider med hjälp av WMI
+          href: core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md
+        - name: Lägga till en kontextkvalificerare med hjälp av WMI
+          href: core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md
+    - name: Skydda program i Configuration Manager
+      href: core/understand/securing-configuration-manager-applications.md
+- name: Programhantering
+  items:
+    - name: Skapa ett program med skriptdistributionstypen
+      href: apps/how-to-create-an-application-with-the-script-deployment-type.md
+    - name: Process för programgodkännande
+      href: apps/application-approval-process.md
+    - name: Tillägg för programhantering
+      items:
+        - name: Tilläggsversioner för distributionstyp
+          href: apps/deployment-type-extension-versioning.md
+        - name: Scenario – Utöka programhantering
+          items:
+            - name: Översikt över scenario
+              href: apps/extending-application-management-overview.md
+            - name: Skapa en anpassad SDK-sammansättning
+              items:
+                - name: Definiera distributionstekniken
+                  href: apps/how-to-define-the-deployment-technology.md
+                - name: Definiera värdtekniken
+                  href: apps/how-to-define-the-hosting-technology.md
+                - name: Definiera installationstekniken
+                  href: apps/how-to-define-the-installer-technology.md
+                - name: Definiera innehållsimport
+                  href: apps/how-to-define-the-content-importer.md
+                - name: Definiera installationsprogrammet
+                  href: apps/how-to-define-the-installer.md
+                - name: Definiera resurserna
+                  href: apps/how-to-define-the-resources.md
+            - name: Skapa XML-registreringsfilerna
+              items:
+                - name: Definiera registreringsfilen för distributionsteknik
+                  href: apps/how-to-define-the-deployment-technology-registration-file.md
+                - name: Definiera registreringsfilen för värdteknik
+                  href: apps/how-to-define-the-hosting-technology-registration-file.md
+                - name: Definiera registreringsfilen för installationsteknik
+                  href: apps/how-to-define-the-installer-technology-registration-file.md
+            - name: Skapa UI-tillägget
+              items:
+                - name: Definiera UI-tilläggssammansättningen
+                  href: apps/how-to-define-the-ui-extension-assembly.md
+                - name: Definiera XML-filen för guiden Skapa program
+                  href: apps/how-to-define-the-create-application-wizard-xml-file.md
+                - name: Definiera XML-filen för guiden Skapa distributionstyp
+                  href: apps/how-to-define-the-create-deployment-type-wizard-xml-file.md
+                - name: Definiera XML-filen för distributionstypens egenskapssida
+                  href: apps/how-to-define-the-deployment-type-property-sheet-xml-file.md
+            - name: Skapa klientfilerna
+              items:
+                - name: Definiera MOF-filen för AppSynclet
+                  href: apps/how-to-define-the-appsynclet-mof-file.md
+                - name: Definiera klientsidans hanterare
+                  href: apps/how-to-define-the-client-side-handler.md
+            - name: Installera tillägget för programhantering
+              items:
+                - name: Skapa distributionstypens tilläggsfil (cmdtx)
+                  href: apps/how-to-create-the-deployment-type-extension-file-cmdtx.md
+                - name: Skapa Windows-installationsfilen (msi)
+                  href: apps/how-to-create-the-windows-installer-file-msi.md
+            - name: Verifiera tillägget för programhantering
+              href: apps/verifying-the-application-management-extension.md
+- name: Klientprogrammering
+  items:
+    - name: WMI-programmering för Configuration Manager-klienten
+      items:
+        - name: Om WMI-programmering
+          href: core/clients/programming/about-configuration-manager-wmi-programming.md
+        - name: Ansluta till klientens WMI-namnrymd med hjälp av System.Management
+          href: core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md
+        - name: Läsa ett WMI-objekt med hjälp av System.Management
+          href: core/clients/programming/how-to-read-a-wmi-object-by-using-system.management.md
+        - name: Utföra en synkron fråga med hjälp av System.Management
+          href: core/clients/programming/how-to-perform-a-synchronous-query-by-using-system.management.md
+        - name: Utföra en asynkron fråga med hjälp av System.Management
+          href: core/clients/programming/how-to-perform-an-asynchronous-query-by-using-system.management.md
+        - name: Anropa en WMI-klassmetod med hjälp av System.Management
+          href: core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md
+    - name: Klientresursvillkor
+      href: core/clients/programming/client-resource-conditions.md
+    - name: Tillämpa anpassade klientinställningar
+      href: core/clients/programming/how-to-apply-custom-client-settings.md
+- name: Samlingar
+  items:
+    - name: Skapa en dynamisk samling
+      href: core/clients/collections/how-to-create-a-dynamic-collection.md
+    - name: Skapa en statisk samling
+      href: core/clients/collections/how-to-create-a-static-collection.md
+    - name: Räkna upp medlemmarna i en samling
+      href: core/clients/collections/how-to-enumerate-the-members-of-a-collection.md
+    - name: Ändra en samling
+      href: core/clients/collections/how-to-modify-a-collection.md
+    - name: Ta bort en samling
+      href: core/clients/collections/how-to-delete-a-collection.md
+    - name: Hämta egenskaperna för en samling
+      href: core/clients/collections/how-to-get-the-properties-of-a-collection.md
+    - name: Starta en utvärdering av ett engångsmedlemskap
+      href: core/clients/collections/how-to-initiate-a-one-time-membership-evaluation-for-a-collection.md
+- name: Kompatibilitetsinställningar
+  items:
+    - name: Installation och konfiguration
+      items:
+        - name: Om installation och konfiguration
+          href: compliance/about-compliance-settings--dcm--setup-and-configuration.md
+        - name: Aktivera eller inaktivera agenten för kompatibilitetsinställningar
+          href: compliance/how-to-enable-or-disable-the-compliance-settings--dcm--agent.md
+        - name: Konfigurera standardschemat för kompatibilitetsutvärdering
+          href: compliance/how-to-configure-the-default-compliance-evaluation-schedule.md
+    - name: Konfigurationsbaslinjer och konfigurationsobjekt
+      items:
+        - name: Om konfigurationsbaslinjer och konfigurationsobjekt
+          href: compliance/about-configuration-baselines-and-configuration-items.md
+        - name: Importera konfigurationsbaslinjer och konfigurationsobjekt
+          href: compliance/how-to-import-configuration-baselines-and-configuration-items.md
+        - name: Exportera konfigurationsbaslinjer och konfigurationsobjekt
+          href: compliance/how-to-export-configuration-baselines-and-configuration-items.md
+        - name: Tilldela konfigurationsbaslinjer
+          href: compliance/how-to-assign-configuration-baselines.md
+        - name: Visa en lista över konfigurationstilldelningar
+          href: compliance/how-to-list-configuration-assignments.md
+    - name: Utökningsbarhet för kompatibilitetsinställningar
+      href: compliance/about-compliance-settings--dcm--extensibility.md
+    - name: Skapa konfigurationsbaslinjer och konfigurationsobjekt
+      items:
+        - name: Om att skapa konfigurationsbaslinjer och konfigurationsobjekt
+          href: compliance/about-authoring-configuration-baselines-and-configuration-items.md
+        - name: Exempel på konfigurationsbaslinje
+          items:
+            - name: Om konfigurationsbaslinjer
+              href: compliance/about-configuration-baselines.md
+            - name: Exempel på konfigurationsbaslinje
+              href: compliance/configuration-baseline-example-1.md
+        - name: Exempel på programkonfigurationsobjekt
+          items:
+            - name: Om programkonfigurationsobjekt
+              href: compliance/about-application-configuration-items.md
+            - name: Programkonfigurationsobjekt – exempel 1
+              href: compliance/application-configuration-item-example-1.md
+            - name: Programkonfigurationsobjekt – exempel 2
+              href: compliance/application-configuration-item-example-2.md
+        - name: Exempel på ett OS-konfigurationsobjekt
+          items:
+            - name: Om OS-konfigurationsobjekt
+              href: compliance/about-operating-system-configuration-item-examples.md
+            - name: Exempel på ett OS-konfigurationsobjekt
+              href: compliance/operating-system-configuration-item-example-1.md
+        - name: Exempel på allmänna konfigurationsobjekt
+          items:
+            - name: Om allmänna konfigurationsobjekt
+              href: compliance/about-general-configuration-items.md
+            - name: Exempel på allmänna konfigurationsobjekt
+              href: compliance/general-configuration-item-example-1.md
+- name: Konsoltillägg
+  items:
+    - name: Om konsoltillägg
+      href: core/servers/console/about-configuration-manager-console-extension.md
+    - name: Arkitektur för konsoltillägg
+      href: core/servers/console/console-extension-architecture.md
+    - name: Distribution av konsoltillägg
+      href: core/servers/console/console-extension-deployment.md
+    - name: Konsolåtgärder
+      items:
+        - name: Om konsolåtgärder
+          items:
+            - name: Åtgärder
+              href: core/servers/console/configuration-manager-actions.md
+            - name: Åtgärds-XML
+              href: core/servers/console/configuration-manager-action-xml.md
+            - name: Villkorliga åtgärder
+              href: core/servers/console/conditional-actions.md
+            - name: Körbar åtgärd
+              href: core/servers/console/executable-action.md
+            - name: Åtgärden ShowDialog
+              href: core/servers/console/showdialog-action.md
+            - name: Åtgärden Report
+              href: core/servers/console/report-action.md
+            - name: Åtgärden AssemblyType
+              href: core/servers/console/assemblytype-action.md
+            - name: Åtgärden Group
+              href: core/servers/console/group-action.md
+        - name: Skapa en åtgärd
+          href: core/servers/console/how-to-create-a-configuration-manager-action.md
+    - name: Konsolformulär
+      items:
+        - name: Om konsolformulär
+          href: core/servers/console/about-configuration-manager-console-forms.md
+        - name: Skapa en egenskapssida
+          href: core/servers/console/how-to-create-a-configuration-manager-property-sheet.md
+        - name: Skapa formulär-XML för en egenskapssida
+          href: core/servers/console/how-to-create-form-xml-for-a-configuration-manager-property-sheet.md
+        - name: Lägga till en egenskapssida i en befintlig egenskapssida
+          href: core/servers/console/how-to-add-a-property-page-to-an-existing-configuration-manager-property-sheet.md
+        - name: Skapa åtgärds-XML för en egenskapssida
+          href: core/servers/console/how-to-create-action-xml-for-a-configuration-manager-property-sheet.md
+        - name: Skapa en dialogruta
+          href: core/servers/console/how-to-create-a-configuration-manager-dialog-box.md
+        - name: Skapa formulär-XML för en dialogruta
+          href: core/servers/console/how-to-create-form-xml-for-a-configuration-manager-dialog-box.md
+        - name: Skapa åtgärds-XML för en dialogruta
+          href: core/servers/console/how-to-create-action-xml-for-a-configuration-manager-dialog-box.md
+        - name: Använda objekt som överförs till ett formulär
+          href: core/servers/console/how-to-use-objects-passed-to-a-configuration-manager-form.md
+        - name: Binda data till ett formulär
+          href: core/servers/console/how-to-bind-configuration-manager-data-to-a-form.md
+    - name: Konsolhanteringsklasser
+      items:
+        - name: Om konsolhanteringsklasser
+          href: core/servers/console/about-configuration-manager-console-management-classes.md
+        - name: XML för konsolhanteringsklasser
+          href: core/servers/console/console-management-class-xml.md
+    - name: Konsolnoder
+      items:
+        - name: Om konsolnoder
+          href: core/servers/console/about-configuration-manager-console-nodes.md
+        - name: XML för konsolnoder
+          href: core/servers/console/console-node-xml.md
+        - name: RootNodes-element för konsol
+          href: core/servers/console/console-rootnodes-element.md
+        - name: ResourceAssembly-element för konsol
+          href: core/servers/console/console-resourceassembly-element.md
+        - name: Skapa en konsolnod
+          href: core/servers/console/how-to-create-a-configuration-manager-console-node.md
+        - name: Hitta GUID för en konsolkod
+          href: core/servers/console/how-to-find-a-configuration-manager-console-node-guid.md
+    - name: Konsolvyer
+      items:
+        - name: Om konsolvyer
+          href: core/servers/console/about-configuration-manager-console-views.md
+        - name: Skapa en anpassad vy
+          href: core/servers/console/how-to-create-a-configuration-manager-console-custom-view.md
+        - name: Skapa nod-XML för en rutnätsvy
+          href: core/servers/console/how-to-create-node-xml-for-a-configuration-manager-console-grid-view.md
+- name: Identifiering
+  items:
+    - name: Konfigurera pulsslagsidentifiering
+      href: core/servers/configure/how-to-configure-heartbeat-discovery.md
+    - name: Konfigurera nätverksidentifiering
+      href: core/servers/configure/how-to-configure-network-discovery.md
+    - name: Konfigurera identifiering av Active Directory-grupper
+      href: core/servers/configure/how-to-configure-active-directory-group-discovery.md
+    - name: Konfigurera identifiering av Active Directory-system
+      href: core/servers/configure/how-to-configure-active-directory-system-discovery.md
+    - name: Konfigurera identifiering av Active Directory-användare
+      href: core/servers/configure/how-to-configure-active-directory-user-discovery.md
+    - name: Utöka resursidentifiering
+      items:
+        - name: Använda dataidentifieringsposter i resursidentifiering
+          items:
+            - name: Om egenskaper för dataidentifieringsposter
+              href: core/servers/configure/about-ddr-properties.md
+            - name: Uppdatera en befintlig resursinstans
+              href: core/servers/configure/about-updating-an-existing-resource-instance.md
+            - name: Skapa en dataidentifieringspost (DDR)
+              href: core/servers/configure/about-creating-a-data-discovery-record.md
+            - name: Om det unika identifierarvärdet för en resurs
+              href: core/servers/configure/about-the-unique-identifier-value-for-a-resource.md
+        - name: Hämta det unika identifierarvärdet för en klient
+          href: core/servers/configure/how-to-get-the-unique-identifier-value-for-a-client.md
+        - name: Lägga till nya egenskaper till en befintlig resurstyp
+          href: core/servers/configure/how-to-add-new-properties-to-an-existing-resource-type.md
+        - name: Skapa en dataidentifieringspost
+          href: core/servers/configure/how-to-create-a-data-discovery-record.md
+- name: Inventering
+  items:
+    - name: Om inventering
+      href: core/clients/inventory/about-configuration-manager-inventory.md
+    - name: Maskinvaruinventering
+      items:
+        - name: Aktivera maskinvaruinventering
+          href: core/clients/inventory/how-to-enable-hardware-inventory.md
+        - name: Konfigurera inställningar för maskinvaruinventering
+          href: core/clients/inventory/how-to-configure-hardware-inventory-settings.md
+        - name: Krav för IDMIF-filer
+          href: core/clients/inventory/requirements-of-idmif-files.md
+        - name: Återställa maskinvaruinventeringscache
+          href: core/clients/inventory/how-to-reset-the-hardware-inventory-cache.md
+    - name: Programvaruinventering
+      items:
+        - name: Aktivera programvaruinventering
+          href: core/clients/inventory/how-to-enable-software-inventory.md
+        - name: Konfigurera inställningar för programvaruinventering
+          href: core/clients/inventory/how-to-configure-software-inventory-settings.md
+        - name: Återställa programvaruinventeringscache
+          href: core/clients/inventory/how-to-reset-the-software-inventory-cache.md
+    - name: Importera en MOF-fil för att utöka inventering
+      href: core/clients/inventory/how-to-import-a-mof-file-to-extend-inventory.md
+    - name: Starta synkronisering av tillgångsinformation
+      href: core/clients/asset-intelligence/how-to-initiate-a-synchronization.md
+- name: Äldre MDM-klient
+  items:
+    - name: Konfigurera inställningar för klientagent för mobila enheter
+      href: mdm/how-to-configure-mobile-device-client-agent-settings.md
+    - name: 'Skapa programvarudistributionspaket, program och annonser för mobila enheter'
+      href: mdm/how-to-create-software-distribution-packages-for-mobile-devices.md
+- name: Distribution av operativsystem
+  items:
+    - name: Konfiguration av platsroll för OS-distributioner
+      items:
+        - name: Om konfiguration av platsroll för OS-distributioner
+          href: osd/about-operating-system-deployment-site-role-configuration.md
+        - name: Skapa en platsroll för tillståndsmigrering
+          href: osd/how-to-create-a-state-migration-point-role.md
+        - name: Ta bort en platsroll för tillståndsmigrering
+          href: osd/how-to-delete-a-state-migration-point-role.md
+        - name: Lägga till en platsmapp för tillståndsmigrering
+          href: osd/how-to-add-a-state-migration-point-folder.md
+        - name: Ställa in läget för endast återställning för en tillståndsmigreringsplats
+          href: osd/how-to-set-the-restore-only-mode-for-a-state-migration-point.md
+        - name: Ställa in raderingsprincipen för en tillståndsmigreringsplats
+          href: osd/how-to-set-the-deletion-policy-for-a-state-migration-point.md
+        - name: Aktivera en PXE-aktiverad distributionsplatsroll
+          href: osd/how-to-enable-a-pxe-service-point-role.md
+        - name: Inaktivera en PXE-aktiverad distributionsplatsroll
+          href: osd/how-to-disable-a-pxe-service-point-role.md
+        - name: Aktivera stöd för okända datorer
+          href: osd/how-to-enable-unknown-computer-support-for-a-pxe-service-point.md
+        - name: Konfigurera svaret på PXE-begäranden
+          href: osd/how-to-set-the-pxe-service-point-response-to-pxe-requests.md
+        - name: Konfigurera fördröjning av PXE-svar
+          href: osd/how-to-set-the-response-delay-for-a-pxe-service-point.md
+        - name: Konfigurera PXE-svaret för alla nätverksgränssnitt
+          href: osd/how-to-set-the-pxe-service-point-response-to-all-network-interfaces.md
+        - name: Konfigurera PXE-svaret för ett specifikt nätverksgränssnitt
+          href: osd/how-to-set-the-pxe-service-point-response-for-a-specific-network-interface.md
+        - name: Konfigurera varumärkesinformation för OS-distribution
+          href: osd/how-to-set-operating-system-deployment-branding-information.md
+    - name: Aktivitetssekvens för OS-distribution
+      items:
+        - name: Om aktivitetssekvenser
+          items:
+            - name: Översikt över aktivitetssekvenser
+              href: osd/operating-system-deployment-task-sequences-overview.md
+            - name: Objektmodell för aktivitetssekvenser
+              href: osd/operating-system-deployment-task-sequence-object-model.md
+        - name: Skapa en aktivitetssekvens
+          href: osd/how-to-create-an-operating-system-deployment-task-sequence.md
+        - name: Skapa ett paket för aktivitetssekvenser
+          href: osd/how-to-create-an-operating-system-deployment-task-sequence-package.md
+        - name: Läsa en aktivitetssekvens från ett aktivitetssekvenspaket
+          href: osd/how-to-read-a-task-sequence-from-a-task-sequence-package.md
+        - name: Räkna upp tillgängliga aktivitetssekvenser
+          href: osd/how-to-enumerate-the-available-operating-system-deployment-task-sequences.md
+        - name: Lägga till en åtgärd för aktivitetssekvenser
+          href: osd/how-to-add-an-operating-system-deployment-task-sequence-action.md
+        - name: Ta bort en åtgärd för aktivitetssekvenser
+          href: osd/how-to-delete-an-operating-system-deployment-task-sequence-action.md
+        - name: Lägga till ett villkor till ett steg i en aktivitetssekvens
+          href: osd/how-to-add-a-condition-to-an-operating-system-deployment-task-sequence-step.md
+        - name: Räkna upp stegen i en aktivitetssekvens
+          href: osd/how-to-enumerate-the-steps-in-an-operating-system-deployment-task-sequence.md
+        - name: Ändra ordning på en aktivitetssekvens
+          href: osd/how-to-reorder-an-operating-system-deployment-task-sequence.md
+        - name: Skapa en aktivitetssekvensgrupp
+          href: osd/how-to-create-an-operating-system-deployment-task-sequence-group.md
+        - name: Lägga till ett steg i en aktivitetssekvens
+          href: osd/how-to-add-a-step-to-an-operating-system-deployment-group.md
+        - name: Ta bort ett steg från en aktivitetssekvens
+          href: osd/how-to-remove-a-step-from-an-operating-system-deployment-group.md
+        - name: Flytta ett steg till en annan aktivitetssekvensgrupp
+          href: osd/how-to-move-a-step-to-a-different-task-sequence-group.md
+        - name: Använda aktivitetssekvensvariabler
+          href: osd/how-to-use-task-sequence-variables-in-a-running-task-sequence.md
+        - name: Ange en aktivitetssekvensvariabel
+          href: osd/how-to-set-an-operating-system-deployment-task-sequence-variable.md
+    - name: Datorhantering för OS-distributioner
+      items:
+        - name: Om datorhantering
+          href: osd/about-computer-management.md
+        - name: Importera en ny dator
+          href: osd/how-to-import-a-new-computer-into-configuration-manager.md
+        - name: Skapa en koppling mellan två datorer
+          href: osd/how-to-create-an-association-between-two-computers-in-configuration-manager.md
+        - name: Skapa en samlingsvariabel
+          href: osd/how-to-create-a-collection-variable.md
+        - name: Skapa en datorvariabel
+          href: osd/how-to-create-a-computer-variable.md
+        - name: Spåra migreringar av OS-distributioner
+          href: osd/how-to-track-operating-system-deployment-migrations.md
+    - name: Avbildningshantering för OS-distributioner
+      items:
+        - name: Om avbildningshantering
+          href: osd/about-operating-system-deployment-image-management.md
+        - name: Lägga till ett OS-avbildningspaket
+          href: osd/how-to-add-an-operating-system-image-package-in-configuration-manager.md
+        - name: Uppdatera ett OS-avbildningspaket
+          href: osd/how-to-update-an-operating-system-image-package.md
+        - name: Visa egenskaperna för en OS-avbildning
+          href: osd/how-to-view-the-properties-for-an-operating-system-image.md
+        - name: Lägga till en startavbildning från en WIM-fil
+          href: osd/how-to-add-a-boot-image-from-a-wim-file.md
+        - name: Lägga till ett OS-uppgraderingspaket
+          href: osd/how-to-add-an-operating-system-install-package.md
+        - name: Rensa en PXE-annons för en samling
+          href: osd/how-to-clear-a-pxe-advertisement-for-a-configuration-manager-collection.md
+        - name: Rensa en PXE-annons för en resurs
+          href: osd/how-to-clear-a-pxe-advertisement-for-a-configuration-manager-resource.md
+    - name: Drivrutinshantering för OS-distributioner
+      items:
+        - name: Om drivrutinshantering
+          href: osd/about-operating-system-deployment-driver-management.md
+        - name: Importera en drivrutin som beskrivs i en INF-fil
+          href: osd/how-to-import-a-windows-driver-described-by-an-inf-file.md
+        - name: Importera en drivrutin som beskrivs i en txtsetup.oem-fil
+          href: osd/how-to-import-a-windows-driver-described-by-a-txtsetup-oem-file.md
+        - name: Skapa ett drivrutinspaket för en drivrutin
+          href: osd/how-to-create-a-driver-package-for-a-windows-driver.md
+        - name: Lägga till en drivrutin till en startavbildning
+          href: osd/how-to-add-a-windows-driver-to-a-configuration-manager-boot-image-package.md
+        - name: Ta bort en drivrutin från en startavbildning
+          href: osd/how-to-remove-a-windows-driver-from-a-boot-image-package.md
+        - name: Aktivera eller inaktivera en enhet
+          href: osd/how-to-enable-or-disable-a-windows-driver.md
+        - name: Ta bort en drivrutin
+          href: osd/how-to-delete-a-windows-driver-from-configuration-manager.md
+        - name: Ta bort ett drivrutinspaket
+          href: osd/how-to-delete-a-driver-package-in-configuration-manager.md
+        - name: Ange plattformar som stöds för en drivrutin
+          href: osd/how-to-specify-the-supported-platforms-for-a-driver.md
+        - name: Lägga till en kategori till en drivrutin
+          href: osd/how-to-add-a-category-to-a-windows-driver.md
+        - name: Ta bort en kategori från en drivrutin
+          href: osd/how-to-remove-a-category-from-a-windows-driver.md
+    - name: Utöka OS-distribution
+      items:
+        - name: Om anpassade åtgärder för Configuration Manager
+          href: osd/about-configuration-manager-custom-actions.md
+        - name: Om anpassade åtgärdsklientprogram
+          href: osd/about-configuration-manager-custom-action-client-applications.md
+        - name: Om anpassade åtgärds-MOF-filer
+          href: osd/about-configuration-manager-custom-action-mof-files.md
+        - name: Om rapportering för anpassat åtgärdsförlopp
+          href: osd/about-reporting-configuration-manager-custom-action-progress.md
+        - name: Skapa en anpassad åtgärdskontroll
+          href: osd/how-to-create-a-configuration-manager-custom-action-control.md
+        - name: Skapa en MOF-fil för en anpassad åtgärd
+          href: osd/how-to-create-a-mof-file-for-a-configuration-manager-custom-action.md
+        - name: Använda en anpassad åtgärdskontroll
+          href: osd/how-to-use-a-configuration-manager-custom-action-control.md
+- name: Rollbaserad administration
+  items:
+    - name: Översikt över rollbaserad administration
+      href: core/servers/configure/role-based-administration.md
+    - name: Hantering av administrativ användare
+      items:
+        - name: Kontrollera om en användare har behörighet för ett objekt
+          href: core/servers/configure/how-to-check-if-a-user-has-permissions-for-an-object.md
+        - name: Kontrollera om en användare har behörighet för en resurs
+          href: core/servers/configure/how-to-check-if-a-user-has-permissions-for-a-resource.md
+        - name: Räkna upp administrativa tilldelningar för en användare eller säkerhetsgrupp
+          href: core/servers/configure/how-to-enumerate-the-administrative-assignments-for-a-user-or-security-group.md
+        - name: Skapa en ny administratör
+          href: core/servers/configure/how-to-create-a-new-administrator.md
+        - name: Skapa en ny säkerhetsroll
+          href: core/servers/configure/how-to-create-a-new-security-role.md
+    - name: Hantering av säkerhetsomfattning
+      items:
+        - name: Skapa en ny säkerhetsomfattning
+          href: core/servers/configure/how-to-create-a-new-security-scope.md
+        - name: Ta bort en säkerhetsomfattning
+          href: core/servers/configure/how-to-delete-a-security-scope.md
+        - name: Koppla ett objekt till en säkerhetsomfattning
+          href: core/servers/configure/how-to-associate-an-object-with-a-security-scope.md
+        - name: Ta bort en objektkoppling till en säkerhetsomfattning
+          href: core/servers/configure/how-to-remove-an-object-association-with-a-security-scope.md
+- name: Fjärrverktyg
+  items:
+    - name: Aktivera och inaktivera fjärrverktyg
+      href: core/clients/remote-control/how-to-enable-and-disable-remote-tools.md
+    - name: Konfigurera inställningar för fjärrverktyg
+      href: core/clients/remote-control/how-to-configure-remote-tools-settings.md
+- name: Programvarudistribution
+  items:
+    - name: Översikt över programvarudistribution
+      href: core/servers/configure/software-distribution-overview.md
+    - name: Paket
+      items:
+        - name: Om paketdefinitionsfiler
+          href: core/servers/configure/about-package-definition-files.md
+        - name: Skapa ett paket
+          href: core/servers/configure/how-to-create-a-package.md
+        - name: Skapa ett paket med hjälp av en filmall för paketdefinition
+          href: core/servers/configure/how-to-create-a-package-by-using-a-package-definition-file-template.md
+        - name: Konfigurera paketegenskaper
+          href: core/servers/configure/how-to-configure-package-properties.md
+        - name: Konfigurera ett paket för att använda replikering av binärfilsförändring
+          href: core/servers/configure/how-to-configure-a-package-to-use-binary-delta-replication.md
+        - name: Ta bort ett paket
+          href: core/servers/configure/how-to-delete-a-package.md
+        - name: Tilldela ett paket till en distributionsplats
+          href: core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md
+    - name: Program
+      items:
+        - name: Om program
+          href: core/servers/configure/about-software-distribution-programs.md
+        - name: Skapa ett program
+          href: core/servers/configure/how-to-create-a-program.md
+        - name: Ändra programegenskaper
+          href: core/servers/configure/how-to-modify-program-properties.md
+        - name: Ändra maximal körtid för ett program
+          href: core/servers/configure/how-to-change-the-maximum-run-time-for-a-program.md
+        - name: Visa en lista över alla program och deras värde för maximal körtid
+          href: core/servers/configure/how-to-list-all-programs-and-their-maximum-run-time-value.md
+        - name: Ändra plattformar som stöds för ett program
+          href: core/servers/configure/how-to-modify-the-supported-platforms-for-a-program.md
+    - name: Distributioner
+      items:
+        - name: Om distributioner
+          href: core/servers/configure/about-software-distribution-deployments.md
+        - name: Skapa en distribution
+          href: core/servers/configure/how-to-create-an-advertisement.md
+        - name: Tilldela en distribution till en samling datorer
+          href: core/servers/configure/how-to-assign-an-advertisement-to-a-collection-of-computers.md
+        - name: Ändra distributionsegenskaper
+          href: core/servers/configure/how-to-modify-advertisement-properties.md
+        - name: Konfigurera en distribution för att tillåta omstarter utanför en underhållsperiod
+          href: core/servers/configure/how-to-allow-reboots-outside-of-a-maintenance-window.md
+        - name: Konfigurera en distribution för att åsidosätta en underhållsperiod
+          href: core/servers/configure/how-to-configure-an-advertisement-to-override-a-maintenance-window.md
+    - name: Underhållsfönster
+      items:
+        - name: Om underhållsfönster
+          href: core/servers/configure/about-maintenance-windows.md
+        - name: Skapa en underhållsperiod
+          href: core/servers/configure/how-to-create-a-maintenance-window-for-a-collection.md
+        - name: Ändra egenskaperna för en underhållsperiod
+          href: core/servers/configure/how-to-change-the-maintenance-window-properties-for-a-collection.md
+        - name: Ta bort en underhållsperiod
+          href: core/servers/configure/how-to-delete-a-maintenance-window-for-a-collection.md
+        - name: Visa en lista över underhållsperioder och egenskaper för en specifik samling
+          href: core/servers/configure/how-to-list-the-maintenance-windows-and-properties-for-a-specific-collection.md
+    - name: Installation och konfiguration
+      items:
+        - name: Om inställning och konfiguration av programvarudistribution
+          href: core/servers/configure/about-software-distribution-setup-and-configuration.md
+        - name: Aktivera eller inaktivera klientagenten för annonserade program
+          href: core/servers/configure/how-to-enable-or-disable-the-advertised-programs-client-agent.md
+        - name: Konfigurera klientagentinställningar för annonserade program
+          href: core/servers/configure/how-to-configure-advertised-programs-client-agent-settings.md
+        - name: Anpassa varumärkesinformation för distributioner
+          href: core/servers/configure/how-to-customize-advertisement-branding-information.md
+    - name: Wake on LAN
+      items:
+        - name: Konfigurera en nödvändig distribution för Wake On LAN
+          href: core/servers/configure/how-to-configure-a-mandatory-advertisement-for-wake-on-lan.md
+        - name: Aktivera partnermeddelande-API
+          href: core/servers/configure/how-to-enable-the-partner-notification-api.md
+    - name: Distributionsplatser
+      items:
+        - name: Visa en lista över distributionsplatser för en plats
+          href: core/servers/configure/how-to-list-distribution-points-for-a-site.md
+        - name: Ange flaggan för distribution på begäran
+          href: core/servers/configure/how-to-set-the-distribute-on-demand-flag.md
+- name: Avläsning av programvara
+  items:
+    - name: Aktivera eller inaktivera programmätare
+      href: apps/how-to-enable-or-disable-software-metering.md
+    - name: Konfigurera automatisk generering av regel för programmätare
+      href: apps/how-to-configure-automatic-software-metering-rule-generation.md
+    - name: Skapa en regel för programmätare
+      href: apps/how-to-create-a-software-metering-rule.md
+    - name: Ta bort en regel för programmätare
+      href: apps/how-to-delete-a-software-metering-rule.md
+    - name: Aktivera eller inaktivera en regel för programmätare
+      href: apps/how-to-enable-or-disable-a-software-metering-rule.md
+    - name: Visa sammanfattningsinformation för filanvändning
+      href: apps/how-to-view-file-usage-summary-information.md
+    - name: Visa sammanfattningsinformation för månatlig användning
+      href: apps/how-to-view-monthly-usage-summary-information.md
+- name: Programuppdateringar
+  items:
+    - name: Installation och konfiguration
+      items:
+        - name: Om inställning och konfiguration av programuppdateringar
+          href: sum/about-software-updates-setup-and-configuration.md
+        - name: Konfigurera programuppdateringsplatsen
+          href: sum/how-to-configure-the-software-update-point.md
+        - name: Konfigurera WSUS-inställningar
+          href: sum/how-to-configure-the-wsus-settings.md
+        - name: Aktivera eller inaktivera klientagenten för programuppdateringar
+          href: sum/how-to-enable-or-disable-the-software-updates-client-agent.md
+        - name: Ställa in varumärkesinformation för programuppdateringar
+          href: sum/how-to-set-software-updates-branding-information.md
+    - name: Distributioner
+      items:
+        - name: Om distribution av programuppdateringar
+          href: sum/about-software-updates-deployments.md
+        - name: Räkna upp uppdateringar som matchar ett specifikt villkor
+          href: sum/how-to-enumerate-updates-matching-a-specific-criteria.md
+        - name: Skapa en uppdateringslista
+          href: sum/how-to-create-an-update-list.md
+        - name: Skapa en distributionsmall
+          href: sum/how-to-create-a-deployment-template.md
+        - name: Skapa ett distributionspaket
+          href: sum/how-to-create-a-deployment-package.md
+        - name: Lägga till uppdateringar till ett distributionspaket
+          href: sum/how-to-add-updates-to-a-deployment-package.md
+        - name: Ta bort uppdateringar från ett distributionspaket
+          href: sum/how-to-delete-updates-from-a-deployment-package.md
+        - name: Konfigurera och distribuera uppdateringar
+          href: sum/how-to-configure-and-deploy-updates.md
+        - name: Ändra källan för ett distributionspaket
+          href: sum/how-to-change-the-deployment-package-source.md
+    - name: Synkronisera programuppdateringsplatsen
+      items:
+        - name: Om att synkronisera programuppdateringsplatsen
+          href: sum/about-synchronizing-the-software-update-point.md
+        - name: Synkronisera programuppdateringsplatsen
+          href: sum/how-to-synchronize-with-the-software-update-point.md
+    - name: Konfigurera programuppdateringar för att åsidosätta underhållsperioder
+      href: sum/how-to-configure-software-updates-to-override-maintenance-windows.md
+- name: Status och sammanfattningar
+  items:
+    - name: Om status för Configuration Manager
+      items:
+        - name: Om statusmeddelanden
+          href: core/servers/manage/about-configuration-manager-status-messages.md
+        - name: Om meddelanden om komponentstatus
+          href: core/servers/manage/about-configuration-manager-component-status-messages.md
+        - name: Om att använda SMSCSTAT.DLL för att skapa statusmeddelanden
+          href: core/servers/manage/about-using-smscstat.dll-to-create-status-messages.md
+        - name: Om rapportering av statusmeddelanden från klienter
+          href: core/servers/manage/about-reporting-status-messages-from-configuration-manager-clients.md
+    - name: Om sammanfattningar
+      items:
+        - name: Om statussammanfattningar för Configuration Manager
+          href: core/servers/manage/about-configuration-manager-status-summarizers.md
+        - name: Om beräkningsintervall för Configuration Manager
+          href: core/servers/manage/about-configuration-manager-tally-intervals.md
+    - name: Fastställa hälsan för en plats
+      href: core/servers/manage/how-to-determine-the-health-of-a-configuration-manager-site.md
+    - name: Läs beräkningsintervallen för en plats
+      href: core/servers/manage/how-to-read-the-tally-intervals-for-a-configuration-manager-site.md
+    - name: Läsa användardefinierade statusmeddelanden
+      href: core/servers/manage/how-to-read-user-defined-status-messages.md
+    - name: Rapportera användardefinierade statusmeddelanden
+      href: core/servers/manage/how-to-report-user-defined-status-messages.md
+    - name: Ta bort statusmeddelanden
+      href: core/servers/manage/how-to-delete-status-messages.md
+    - name: Fastställa paketstatus
+      href: core/servers/manage/how-to-determine-package-status.md
+    - name: Fastställa annonsstatus
+      href: core/servers/manage/how-to-determine-advertisement-status.md
+- name: API-referens för Configuration Manager
+  href: reference/configuration-manager-reference.md
+- name: REST-API för administrationstjänsten
+  href: adminservice/index.yml
