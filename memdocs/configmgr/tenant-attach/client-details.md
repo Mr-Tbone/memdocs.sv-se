@@ -10,12 +10,12 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 07b24621fbf12fe7a7c513ea2daaed25abca0f4c
-ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
+ms.openlocfilehash: e8db4a7f877b5bd07f1aac76fc49b6efef31802e
+ms.sourcegitcommit: 16bc2ed5b64eab7f5ae74391bd9d7b66c39d8ca6
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86210794"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86437434"
 ---
 # <a name="tenant-attach-configmgr-client-details-in-the-admin-center-preview"></a><a name="bkmk_mem"></a>Klient anslutning: information om ConfigMgr-klient i administrations Center (för hands version)
 <!--6024387, 6374854, 6521921, intune 7552762 pubpreview July 7, 2020-->
@@ -32,7 +32,7 @@ Du kan nu se information om ConfigMgr-klienter, inklusive samlingar, gräns grup
 - Någon av följande webbläsare:
   - Microsoft Edge, version 77 och senare
   - Google Chrome
-- Användar kontot har identifierats med både [Azure Active Directory (Azure AD) identifiering av användare](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc) och [Active Directory användar identifiering](/../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser).
+- Användar kontot har identifierats med både [Azure Active Directory (Azure AD) identifiering av användare](https://docs.microsoft.com/mem/configmgr/core/servers/deploy/configure/about-discovery-methods#azureaddisc) och [Active Directory användar identifiering](https://docs.microsoft.com/mem/configmgr/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
   - Det innebär att användar kontot måste vara ett synkroniserat användar objekt i Azure.
 
 ## <a name="permissions"></a>Behörigheter

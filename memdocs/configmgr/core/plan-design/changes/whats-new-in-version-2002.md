@@ -2,7 +2,7 @@
 title: Nyheter i version 2002
 titleSuffix: Configuration Manager
 description: Få information om ändringar och nya funktioner som introducerats i version 2002 av Configuration Manager aktuella grenen.
-ms.date: 06/11/2020
+ms.date: 07/15/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: de718cdc-d0a9-47e2-9c99-8fa2cb25b5f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 58819d764f69ab7e1cc928e14189e01470deb73b
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: 3c5107ffe26c72852cbc1dbaa15eb19a990c7939
+ms.sourcegitcommit: 034226b5a60de49a75c7b54e856814f81c03a112
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85590447"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86422848"
 ---
 # <a name="whats-new-in-version-2002-of-configuration-manager-current-branch"></a>Vad är nytt i version 2002 av Configuration Manager aktuella grenen
 
@@ -256,7 +256,7 @@ Mer information finns i [om klient installations egenskaper – etableringar](..
 Nu kan du kontrol lera fler enhets egenskaper i steget **kontrol lera readiness** -åtgärd. Använd det här steget i en aktivitetssekvens för att kontrol lera att mål datorn uppfyller dina krav.
 
 - Arkitektur för aktuellt operativ system
-- Minsta operativsystemversion
+- Lägsta version av operativsystemet
 - Högsta version av operativsystemet
 - Lägsta klient version
 - Språk för aktuellt operativ system
@@ -432,10 +432,7 @@ Mer information om ändringar i administrations tjänsten REST API finns i vikti
 
 Förutom nya funktioner innehåller den här versionen även ytterligare ändringar som fel korrigeringar. Mer information finns i [Sammanfattning av ändringar i Configuration Manager aktuella grenen, version 2002](https://support.microsoft.com/help/4556203).
 
-<!--
-The following update rollup (4517869) is available in the console starting on October 1, 2019: [Update rollup for Configuration Manager current branch, version 1906](https://support.microsoft.com/help/4517869).
-
--->
+Följande samlade uppdateringar (4560496) är tillgängliga i-konsolen från den 15 juli 2020: samlad [uppdatering för Microsoft Endpoint Configuration Manager version 2002](https://support.microsoft.com/help/4560496).
 
 <!--
 ### Hotfixes

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: b991c2ddd0ea121251eb19afbdb032844be8738d
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 15cf7f3621f25a82f0e16d5275369ec93225bbf7
+ms.sourcegitcommit: 034226b5a60de49a75c7b54e856814f81c03a112
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268206"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86422826"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Självstudie: distribuera Windows 10 till pilot
 
@@ -30,7 +30,7 @@ I den här guiden får du lära dig att:
 > * Skapa en distributions plan för Skriv bords analys för Windows 10  
 > * Använd Configuration Manager för att distribuera Windows 10 till pilot gruppen  
 
-Om du inte har någon Azure-prenumeration kan du [skapa ett kostnadsfritt konto](https://azure.microsoft.com/free) innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
+Om du inte har en Azure-prenumeration kan du skapa ett [kostnadsfritt konto](https://azure.microsoft.com/free) innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
 
 Skriv bords analys använder en *Log Analytics arbets yta* i din Azure-prenumeration. En arbetsyta är i grunden en container som innehåller kontoinformation och enkel konfigurationsinformation för kontot. Mer information finns i [hantera arbets ytor](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access?toc=/azure/azure-monitor/toc.json).
 
@@ -94,7 +94,7 @@ Använd den här proceduren för att logga in på Desktop Analytics och konfigur
 
 2. På sidan **Godkänn service avtal** granskar du service avtalet och väljer **Godkänn**.  
 
-3. På sidan **Bekräfta din prenumeration** finns listan över nödvändiga kvalificerings licenser för Windows-enhetens hälso funktioner i Skriv bords analys. Fortsätt genom att välja **Nästa**.  
+3. På sidan **Bekräfta din prenumeration** finns listan över nödvändiga kvalificerings licenser för Windows-enhetens hälso funktioner i Skriv bords analys. Välj **Nästa** för att fortsätta.  
 
 4. På sidan **ge användare åtkomst** :
 
@@ -236,7 +236,7 @@ Använd den här proceduren för att skapa en distributions plan i Desktop Analy
 
     - **Namn**: ett unikt namn för distributions planen, till exempel`Windows 10 pilot`  
 
-    - **Produkter och versioner**: Välj **Windows** -produkten och den senaste tillgängliga rekommenderade versionen. Till exempel **Windows 10, version 1809 (rekommenderas)**.  
+    - **Produkter och versioner**: Välj vilken Windows 10-version som ska distribueras. Microsoft rekommenderar att du skapar distributions planer som använder den senaste versionen.
 
     - **Enhets grupper**: Välj en eller flera grupper på fliken Configuration Manager och välj sedan **Ange som mål grupper**. De här grupperna är samlingar som synkroniseras från Configuration Manager.  
 
@@ -298,10 +298,10 @@ Använd den här proceduren för att distribuera Windows 10 i Configuration Mana
 
 2. Välj **Lägg till uppgraderings paket för operativ system**i gruppen **skapa** på fliken **Start** i menyfliksområdet. Den här åtgärden startar guiden Lägg till uppgradering av operativ system.  
 
-3. På sidan **data källa** anger du nätverks **Sök vägen** till installationskällfilerna för UPPGRADERINGS paketet för operativ systemet. Till exempel `\\server\share\path`.  
+3. På sidan **data källa** anger du nätverks **Sök vägen** till installationskällfilerna för UPPGRADERINGS paketet för operativ systemet. Ett exempel är `\\server\share\path`.  
 
     > [!NOTE]  
-    > Installations källorna innehåller setup. exe och andra filer och mappar för att installera operativ systemet.  
+    > Installations källorna innehåller setup.exe och andra filer och mappar för att installera operativ systemet.  
 
 4. På sidan **Allmänt** anger du ett unikt **namn** för operativ system uppgraderings paketet.  
 
@@ -363,7 +363,7 @@ Distribuera sedan operativ Systems uppgraderings paketet till distributions plat
     >
     > Den här samlingen är reserverad för distributions Plans enheter för Desktop Analytics. Manuella ändringar av den här samlingen stöds inte.<!-- 3866460, SCCMDocs-pr 3544 -->  
 
-5. Välj **Lägg till**på sidan **innehåll** och välj sedan **distributions plats**. Välj en tillgänglig distributions plats som är värd för installations innehållet och välj **OK**. Välj **Nästa**.  
+5. Välj **Lägg till**på sidan **innehåll** och välj sedan **distributions plats**. Välj en tillgänglig distributions plats som är värd för installations innehållet och välj **OK**. Välj sedan **Nästa**.  
 
 6. På sidan **distributions inställningar** väljer du **Nästa** för att godkänna standardinställningarna. (En tillgänglig installation.)  
 
