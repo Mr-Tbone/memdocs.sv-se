@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/01/2020
+ms.date: 07/13/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cc40eb4a8b094cd933a6bb3f4f8c7fdae927f7b
-ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
+ms.openlocfilehash: 8a1ed521067548f43dbcdca3dcbbf7455f255adf
+ms.sourcegitcommit: 6e9375afc0ba21893f51a40cce16d03a8ed21038
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84270899"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86285291"
 ---
 # <a name="troubleshoot-app-installation-issues"></a>Felsöka appinstallationsproblem
 
@@ -119,6 +119,9 @@ De apptyper som stöds på ARM64-enheter är följande:
 - Mobila MSI LOB-appar
 - Win32-appar med en kravregel på 32 bitar.
 - Windows Offices klicka-och-kör-appar om 32-bitars eller x86-arkitektur har valts.
+
+> [!NOTE]
+> För att bättre identifiera ARM64-appar i företagsportalen bör du överväga att lägga till **ARM64** till namnet på dina ARM64-appar. 
 
 ## <a name="troubleshooting-apps-from-the-microsoft-store"></a>Felsöka appar från Microsoft Store
 

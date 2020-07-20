@@ -6,8 +6,8 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 06/25/2020
-ms.topic: conceptual
+ms.date: 07/10/2020
+ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: fundamentals
 ms.localizationpriority: high
@@ -18,11 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89703c8aec11517417f9459391c431b9db75456c
-ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
+ms.openlocfilehash: c9e65171c0eb723f338e87cdf1f7a99601c0833f
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85502297"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240745"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -55,8 +56,26 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 
 <!-- ########################## -->
 
-## <a name="week-of-june-22-2020"></a>Veckan som inleds med 22 juni 2020
 
+## <a name="week-of-july-06-2020"></a>Vecka 28, 2020
+
+### <a name="device-enrollment"></a>Enhetsregistrering
+
+#### <a name="ios-company-portal-will-support-apples-automated-device-enrollment-without-user-affinity---7282707---"></a>iOS Företagsportalen kommer att stödja Apples automatiserade enhetsregistrering utan användartillhörighet<!-- 7282707 --> 
+iOS Företagsportalen kommer att stödjas på enheter som har registrerats med Apples automatiserade enhetsregistrering utan att kräva en tilldelad användare. En slutanvändare kan logga in på iOS Företagsportalen för att etablera sig själva som primär användare på en iOS/iPad-enhet som registrerats utan enhetstillhörighet. Mer information om automatiserad enhetsregistrering finns i [Registrera iOS/iPadOS-enheter automatiskt med Apples automatiska enhetsregistrering](../enrollment/device-enrollment-program-enroll-ios.md).
+
+### <a name="app-management"></a>Apphantering
+
+#### <a name="update-to-device-icons-in-company-portal-and-intune-apps-on-android---6057023---"></a>Uppdatera till enhet-ikoner i Företagsportalen och Intune-appar på Android<!-- 6057023 -->
+Vi uppdaterar enhetsikonerna i Företagsportalen och Intune-appar på Android-enheter för att skapa ett modernt utseende och att anpassa sig till designsystemet Microsoft Fluent. Relaterad information finns i [Uppdatera till ikoner i företagsportalappen för iOS/iPadOS och macOS](../fundamentals/whats-new-app-ui.md#update-to-icons-in-company-portal-app-for-iosipados-and-macos-). 
+
+### <a name="device-management"></a>Enhetshantering
+
+#### <a name="tenant-attach-configmgr-client-details-in-the-admin-center-preview---7552762---"></a>Klientkoppling: ConfigMgr-klientinformation i administrationscenter (förhandsversion)<!-- 7552762 -->
+
+Du kan nu se information om ConfigMgr-klienter, inklusive samlingar, gränsgruppsmedlemskap och klientinformation i realtid för en specifik enhet i administrationscentret för Microsoft Endpoint Manager. Mer information finns i [Anslut klientorganisation: ConfigMgr-klientinformation i administrationscenter (förhandsversion)](../../configmgr/tenant-attach/client-details.md).
+
+## <a name="week-of-june-22-2020"></a>Veckan som inleds med 22 juni 2020
 ### <a name="app-management"></a>Apphantering
 
 #### <a name="newly-available-protected-apps-for-intune---7248952---"></a>Nyligen tillgängliga skyddade appar för Intune<!-- 7248952 -->

@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa3cf14b6afd8504a0918b5d61d2a7cae0c308b9
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: d2c3e663b7bc5dfb263d8caad0a7c21d89ed2a93
+ms.sourcegitcommit: d56e1c84e687fe18810f3b81e0a0617925fe6044
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093676"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303444"
 ---
 # <a name="ios-and-ipados-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för iOS och iPadOS tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -161,6 +161,10 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
   - **Standard för enheten**
   - **Numeriskt**: Lösenordet får bara innehålla siffror, till exempel 123456789.
   - **Alfanumeriskt**: Innehåller versaler, gemener och numeriska tecken.
+
+  > [!NOTE]
+  > Att välja alfanumeriskt kan påverka en parkopplad Apple Watch. Mer information finns i [Ange lösenordsbegränsningar för en Apple Watch](https://support.apple.com/HT204953) (öppnar Apples webbplats).
+
 - **Antal icke-alfanumeriska tecken i lösenord**: Ange antalet symboltecken (till exempel `#` eller `@`) som måste tas med i lösenordet (från 1 till 4 tecken). När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
 - **Minsta lösenordslängd**: Ange den minsta längd som lösenordet måste ha (från 4 till 16 tecken). På användarregistrerade enheter anger du en längd på mellan 4 och 6 tecken.
@@ -414,7 +418,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 - **Lista över typer av begränsade appar**: Skapa en lista över appar som användarna inte får installera eller använda. Alternativen är:
 
   - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Operativsystemet kan som standard tillåta åtkomst till appar som du tilldelar, och till inbyggda appar.
-  - **Otillåtna appar**: Ange de appar (som inte hanteras av Intune) som användarna inte får installera eller köra. Användare hindras inte från att installera en förbjuden app. Om en användare installerar en app från den här listan rapporteras det i Intune.
+  - **Otillåtna appar**: Ange de appar (som inte hanteras av Intune) som användarna inte får installera eller köra. Användare hindras inte från att installera en förbjuden app. Om en användare installerar en app från den här listan, rapporteras enheten i rapporten **Enheter med begränsade appar** ([Administrationscenter för slutpunktshanteraren](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **Övervaka** > **Enheter med begränsade appar**). 
   - **Godkända appar**: Ange de appar som användare tillåts att installera. Om användarna vill fortsätta följa standard får de inte installera andra appar. Appar som hanteras av Intune tillåts automatiskt. Det gäller även företagsportalsappen. Användarna hindras inte från att installera en app som inte finns med i listan över godkända appar. Men om de gör det rapporteras det i Intune.
 
 Om du vill lägga till appar i listorna kan du:
@@ -619,15 +623,17 @@ Om du vill lägga till appar kan du:
 
 Använd inställningarna för att konfigurera iOS/iPadOS-enheter så att de kör specifika appar i autonomt enkelt appläge (ASAM). När det här läget har konfigurerats och användaren startar någon av de konfigurerade apparna låses enheten till den appen. Det går inte att byta app/aktivitet förrän användaren avslutar den tillåtna appen.
 
+För att ASAM-konfigurationen ska gälla måste användare manuellt öppna den specifika appen. Det här avsnittet gäller även för företagsportalappen.
+
 - På en skola eller ett universitet kan du till exempel lägga till en app som gör att användarna kan skriva prov på enheten. Du kan också låsa enheten i företagsportalsappen tills användarna har autentiserats. När appens åtgärder har slutförts av användaren, eller om du tar bort principen, återgår enheten till sitt normala tillstånd.
 
 - Alla appar stöder inte autonomt enkelt appläge. För att kunna använda en app i autonomt enkelt appläge krävs vanligtvis ett paket-ID eller ett nyckel/värde-par som levereras av en appkonfigurationsprincip. Mer information finns i [`autonomousSingleAppModePermittedAppIDs`begränsningen](https://developer.apple.com/documentation/devicemanagement/restrictions) i Apples MDM-dokumentation. Mer information om de specifika inställningar som krävs för den app som du konfigurerar finns i leverantörens dokumentation.
 
   Om du till exempel vill konfigurera Zoom Rooms i autonomt enkelt appläge kan du använda `us.zoom.zpcontroller`-paket-ID:t. I detta fall gör du också en ändring på webbportalen för Zoom. Mer information finns i [hjälpcentret för Zoom](https://support.zoom.us/hc/articles/360021322632-Autonomous-Single-App-Mode-for-Zoom-Rooms-with-a-Third-Party-MDM).
 
-- På iOS/iPad-enheter har appen Företagsportal stöd för ASAM. När appen Företagsportal är i ASAM låses enheten i Företagsportal-appen tills användaren autentiseras. När användare loggar in i appen Företagsportal kan de använda andra appar och startknappen på enheten. När de loggar ut från appen Företagsportal återgår enheten till enappsläget och låser appen Företagsportal.
+- På iOS/iPad-enheter har appen Företagsportal stöd för ASAM. När företagsportalappen är i ASAM måste användare manuellt öppna företagsportalappen. Då blir enheten låst i företagsportalsappen tills dess att användaren har autentiserats. När användare loggar in i appen Företagsportal kan de använda andra appar och startknappen på enheten. När de loggar ut från appen Företagsportal återgår enheten till enappsläget och låser appen Företagsportal.
 
-  Om du vill göra appen Företagsportal till en ”logga in/logga ut”-app (aktivera ASAM) anger du namnet på Företagsportal-appen, som `Microsoft Intune Company Portal`, och paket-ID:t (`com.microsoft.CompanyPortal`) i de här inställningarna. När du tilldelar den här profilen måste du öppna appen Företagsportal för att låsa appen så att användarna kan logga in och logga ut från den.
+  Om du vill göra appen Företagsportal till en ”logga in/logga ut”-app (aktivera ASAM) anger du namnet på Företagsportal-appen, som `Microsoft Intune Company Portal`, och paket-ID:t (`com.microsoft.CompanyPortal`) i de här inställningarna. När du tilldelar den här profilen måste du öppna appen Företagsportal för att låsa appen så att användarna kan logga in och logga ut från den. För att ASAM-konfigurationen ska gälla måste användare öppna företagsportalappen manuellt.
   
   När du tar bort profilen för enhetskonfiguration och användaren loggar ut är enheten inte låst i Företagsportal-appen längre.
 

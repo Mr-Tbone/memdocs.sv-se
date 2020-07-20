@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/30/2020
+ms.date: 07/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,11 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f4fd580a2e36a1cf7a29766c7a5e325e17fc528
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: e6304c35d93d717be13a564b5bf5dd2bdc0f84d5
+ms.sourcegitcommit: d56e1c84e687fe18810f3b81e0a0617925fe6044
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85591076"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303461"
 ---
 # <a name="windows-10-and-newer-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningar för Windows 10 (och senare) för att tillåta eller begränsa funktioner med hjälp av Intune
 
@@ -30,7 +31,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 > [!Note]
 > Alla alternativ finns inte tillgängliga i alla utgåvor av Windows. Information om vilka versioner som stöds finns i [princip-CSP:er](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider) (en annan Microsoft-webbplats öppnas).
 >  
-> De flesta konfigurerbara inställningarna i en profil för Windows 10-enhetsbegränsningar distribueras på enhetsnivå. Principer som distribueras till användargrupper börjar gälla både för den aktuella användaren och andra användare som senare loggar in på enheten och har en Intune-licens.
+> De flesta konfigurerbara inställningarna i en profil för Windows 10-enhetsbegränsningar distribueras på enhetsnivå med enhetsgrupper. Principer som distribueras till användargrupper gäller för de användare de riktar sig mot och för användare som har en Intune-licens och loggar in på den enheten.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -1107,7 +1108,7 @@ De här inställningarna använder [CSP för Defender-princip](https://docs.micr
   - **Aktivera**: Microsoft Defender identifierar potentiellt oönskade program och identifierade objekt blockeras. Dessa objekt visas i historiken tillsammans med andra hot.
   - **Granska**: Microsoft Defender identifierar potentiellt oönskade program, men vidtar ingen åtgärd. Du kan granska information om det program som Microsoft Defender skulle vidta åtgärder mot. Till exempel kan du söka efter händelser som skapats av Microsoft Defender i Loggboken.
 
-  Mer information om potentiellt oönskade appar finns i [Identifiera och blockera potentiellt oönskade program](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/detect-block-potentially-unwanted-apps-windows-defender-antivirus).
+  Mer information om potentiellt oönskade appar finns i [Identifiera och blockera potentiellt oönskade program](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-antivirus/detect-block-potentially-unwanted-apps-microsoft-defender-antivirus).
 
   [CSP för Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
 

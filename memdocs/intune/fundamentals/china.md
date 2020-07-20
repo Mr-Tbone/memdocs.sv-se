@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 05/27/2020
+ms.date: 07/07/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f82664cbc9f6970d494945cfdf6fc72e8d95ae8b
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 1c4e567c7812f53a7497f368ded47d72640443f6
+ms.sourcegitcommit: 678104677ad36b789630befdc5e0f1efc572c14b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022355"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86137386"
 ---
 # <a name="intune-operated-by-21vianet-in-china"></a>Intune som drivs av 21Vianet i Kina  
 
@@ -39,6 +39,7 @@ Att Kina-tjänsterna drivs av en partner från Kina medför vissa funkionella sk
 - Intune som drivs av 21Vianet stöder endast fristående distributioner. Stöd för samhantering med System Center Configuration Manager är för närvarande under utveckling.
 - Migreringar från offentliga moln till nationella moln stöds inte. Kunder som är intresserade av att flytta till Intune som drivs av 21Vianet måste migrera manuellt.
 - Klientanslutningsfunktionen (synkronisering av enheter till Intune utan registrering som stöd för molnkonsolscenarier) stöds inte för närvarande.
+- Härledda autentiseringsuppgifter stöds inte med Intune som drivs av 21Vianet.
 - Intune som drivs av 21Vianet stöder inte Intune-agenten och stöder därför inte äldre datorhantering.
 - Hantering av Windows 10 stöds med hjälp av den moderna MDM-kanalen.
 - Intune som drivs av 21Vianet stöder inte lokalt Exchange-anslutningsprogram.

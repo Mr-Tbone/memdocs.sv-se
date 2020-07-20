@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41be99c94b31c166622ee497d08de438ee59cf23
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 771741ed0e07a6373c63dd2e81745fe53adc4242
+ms.sourcegitcommit: aa876a9b5aa9437ae59a68e1cc6355d7070f89f4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83985702"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86236400"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>Hantera dataöverföring mellan iOS-appar med Microsoft Intune
 
@@ -58,6 +58,10 @@ Inställningen för användar-UPN **måste** konfigureras för enheter som hante
      > [!NOTE]
      > I Intune måste principen för App Configuration vara för registreringstypen **Hanterade enheter**.
      > Dessutom behöver appen antingen installeras från Intune-företagsportalen om den har angetts som tillgänglig eller push-överföras till enheten vid behov. 
+
+     > [!NOTE]
+     > Distribuera konfigurationsinställningarna för IntuneMAMUPN-appen till den hanterade målappen som skickar data, inte den mottagande appen. 
+
 
 4. Distribuera principen **Öppna i hantering** med hjälp av Intune eller MDM-lösningen från tredje part till registrerade enheter.
 

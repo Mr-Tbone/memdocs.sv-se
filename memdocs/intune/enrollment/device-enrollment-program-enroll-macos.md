@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bfcc4a8e867041e0053697bbee605f9798e45bec
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 8c4d66638ffbeded5bf514bba1501e5797e38aac
+ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093855"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86210370"
 ---
 # <a name="automatically-enroll-macos-devices-with-the-apple-business-manager-or-apple-school-manager"></a>Registrera macOS-enheter automatiskt med Apple Business Manager eller Apple School Manager
 
@@ -62,10 +62,9 @@ Du kan skapa en token med hjälp av Apple-portalen. Du kan också använda Apple
 
 ### <a name="step-1-download-the-intune-public-key-certificate-required-to-create-the-token"></a>Steg 1. Ladda ned certifikatet för den offentliga Intune-nyckeln som krävs för att skapa token
 
-1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **macOS** > **macOS-registrering**. 
-> **Token för registreringsprogram** > **Lägg till**.
+1. Gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **macOS** > **macOS-registrering** > **Token för registreringsprogram** > **Lägg till**.
 
-    ![Get an enrollment program token.](./media/device-enrollment-program-enroll-macos/image01.png)
+    ![Hämta en registreringsprogramtoken.](./media/device-enrollment-program-enroll-macos/image01.png)
 
 2. Välj **Jag godkänner** för att ge Microsoft behörighet att skicka information om användare och enhet till Apple.
 
@@ -106,7 +105,7 @@ I rutan **Apple-token**, bläddrar du till certifikatfilen (.pem), väljer **Öp
 Nu när du har installerat din token kan skapa du en registreringsprofil för enheter. En enhetsregistreringsprofil definierar inställningarna som tillämpas på en grupp av enheter vid registreringen.
 
 1. Gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välj **Enheter** > **macOS** > **macOS-registrering** > **Token för registreringsprogram**.
-2. Välj en token, välj **Profiler** och välj sedan **Skapa profil**.
+2. Välj en token, välj **Profiler** och välj sedan **Skapa profil** > **macOS**.
 
     ![Skärmbild av Skapa en profil.](./media/device-enrollment-program-enroll-macos/image04.png)
 
@@ -123,13 +122,11 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för en
 
     - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som Företagsportal fungerar inte.
 
-6. Om du väljer **Registrera med användartillhörighet** under **Autentiseringsmetod** väljer du **Installationsassistenten (äldre)** eller **Installationsassistenten med modern autentisering**.
+6. För **Låst registrering** väljer du om du vill ha låst registrering för enheter som använder den här profilen. **Ja** inaktiverar macOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Systeminställningar** eller via **terminalen**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten.
 
-7. För **Låst registrering** väljer du om du vill ha låst registrering för enheter som använder den här profilen. **Ja** inaktiverar macOS-inställningarna som tillåter att hanteringsprofilen tas bort från menyn **Systeminställningar** eller via **terminalen**. När enhetsregistreringen är klar går det inte att ändra inställningen utan att göra en rensning av enheten.
+7. Välj **Nästa** för att komma till sidan **Installationsassistenten**.
 
-8. Välj **Nästa** för att komma till sidan **Installationsassistenten**.
-
-9. På sidan **Installationsassistenten** konfigurerar du följande profilinställningar:
+8. På sidan **Installationsassistenten** konfigurerar du följande profilinställningar:
 
     ![Anpassning av installationsassistenten.](./media/device-enrollment-program-enroll-macos/setupassistantcustom-macos.png)
 
@@ -163,9 +160,9 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för en
     | <strong>Skärmtid</strong> | Visa skärmen Skärmtid. För macOS 10.15 och senare samt iOS/iPadOS 12.0 och senare. |
     | <strong>Sekretess</strong> | Visa sekretesskärmen för användaren. För macOS 10.13.4 och senare samt iOS/iPadOS 11.3 och senare. |
     
-10. Välj **Nästa** för att gå till sidan **Granska + skapa**.
+9. Välj **Nästa** för att gå till sidan **Granska + skapa**.
 
-11. Spara profilen genom att välja **Skapa**.
+10. Spara profilen genom att välja **Skapa**.
 
 ## <a name="sync-managed-devices"></a>Synkronisera hanterade enheter
 

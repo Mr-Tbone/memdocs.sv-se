@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/16/2020
+ms.date: 07/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88843cfa1c4f98d87e5eaaefdc0dcd87daf8cb68
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 7aee865b2a16ce3a9114433f9e10e185b26997f7
+ms.sourcegitcommit: d56e1c84e687fe18810f3b81e0a0617925fe6044
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093702"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303478"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -89,7 +89,7 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 
 ### <a name="device-experience"></a>Enhetsmiljö
 
-Använd de här inställningarna till att konfigurera en helskärmsmiljö på dina dedikerade eller helt hanterade enheter. Du kan konfigurera enheter för att köra en app eller flera appar. När en enhet är inställd på helskärmsläge är det bara de appar du lägger till som är tillgängliga.
+Använd de här inställningarna till att konfigurera en kioskmiljö på dina dedikerade enheter eller för att anpassa startskärmen på dina helt hanterade enheter. Du kan konfigurera enheter för att köra en app eller flera appar. När en enhet är inställd på helskärmsläge är det bara de appar du lägger till som är tillgängliga.
 
 **Typ av registreringsprofil**: Välj en typ av registreringsprofil för att börja konfigurera Microsoft Launcher eller Microsoft Managed Home Screen på dina enheter. Alternativen är:
 

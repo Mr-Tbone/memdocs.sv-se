@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 02/04/2020
+ms.date: 07/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 299b09c57f0cff44c465102d85628c8f2605adea
-ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.openlocfilehash: 9a7943fb33cf670eedd600db083b77e981da9029
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86088504"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86240787"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -156,7 +156,7 @@ Nu när du har installerat din token kan skapa du en registreringsprofil för AD
 5. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
     - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda Intune-företagsportalappen för tjänster som installation av appar. Om du använder ADFS och installationsassistenten för att autentisera krävs [WS-Trust 1.3-användarnamn/blandad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints) [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
 
-    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här alternativet för enheter som inte läser lokala användardata och för Apple Shared iPad for Business-enheter. Appar som Företagsportal fungerar inte.
+    - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här alternativet för enheter som inte kommer åt lokala användardata. Om du vill att en slutanvändare ska kunna logga in på iOS-företagsportalen och etablera sig själva som enhetens primära användare, skickar du `IntuneUDAUserlessDevice`-nyckeln till iOS-företagsportalen i en appkonfigurationsprincip för hanterade enheter. Observera att endast den första användaren som loggar in upprättas som primär användare. Om den första användaren loggar ut och en andra användare loggar in, förblir den första användaren den primära användaren av enheten. Mer information finns i [Konfigurera företagsportalappen så att den stöder iOS och iPadOS DEP-enheter](../apps/app-configuration-policies-use-ios.md#configure-the-company-portal-app-to-support-ios-and-ipados-dep-devices). 
 
 6. Om du väljer **Registrera med användartillhörighet**, kan du låta användare autentisera sig med företagsportalen istället för Apple Installationsassistenten.
 

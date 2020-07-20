@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b0fab472f9bef682666d743c8a53b1308f32b40
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 974636ae787be0d454cc3a4fea98832aa4400c7c
+ms.sourcegitcommit: d56e1c84e687fe18810f3b81e0a0617925fe6044
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022440"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303495"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
@@ -42,7 +42,9 @@ Möjliga konfigurationerna är:
 
 ## <a name="set-mdm-authority-to-intune"></a>Ange Intune som utfärdare för hantering av mobila enheter
 
-Följ stegen nedan om du inte har angett MDM-utfärdaren än.
+För klienter som använder tjänstversion 1911 och senare anges MDM-utfärdaren automatiskt till Intune.
+
+För klienter med en tjänstversion tidigare än 1911 följer du stegen nedan om du inte har angett MDM-utfärdare än.
 
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du den orangefärgade banderollen för att öppna inställningen **Utfärdare av Hantering av mobila enheter**. Den orangefärgade banderollen visas bara om du inte har angett MDM-utfärdaren än.
 2. Under **Utfärdare av Hantering av mobila enheter** väljer du en utfärdare bland följande alternativ:

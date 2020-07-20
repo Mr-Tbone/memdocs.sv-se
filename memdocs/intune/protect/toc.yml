@@ -52,8 +52,6 @@
       items:
         - name: Översikt över efterlevnad
           href: device-compliance-get-started.md
-        - name: Enhetsefterlevnadspartner
-          href: device-compliance-partners.md
         - name: Skapa en policy
           href: create-compliance-policy.md
         - name: Platsbaserad efterlevnad
@@ -93,6 +91,8 @@
               href: endpoint-security-account-protection-policy.md
         - name: Microsoft Defender ATP
           href: advanced-threat-protection.md
+        - name: Migrering av brandväggsregel
+          href: endpoint-security-firewall-rule-tool.md
         - name: Kryptera diskar
           items:
             - name: Hantera BitLocker-princip

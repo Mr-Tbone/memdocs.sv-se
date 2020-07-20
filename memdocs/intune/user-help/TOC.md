@@ -171,6 +171,7 @@
 
 ## [Använda Intune-företagsportalens webbplats](using-the-intune-company-portal-website.md)
 ### [Hantera appar](manage-apps-cpweb.md)  
+### [Lagra återställningsnyckel](store-recovery-key.md)
 ### [Hämta återställningsnyckel](get-recovery-key-cpweb.md)
 ### [Fjärrlåsa en enhet](remote-lock-your-device-cpwebsite.md)  
 ### [Byta namn på en enhet](rename-your-device-cpwebsite.md)  

@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/11/2020
+ms.date: 07/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15c1e1e943d9fd03476c0605c4d41cd417354fce
-ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
+ms.openlocfilehash: 730a8974753575b2726d821106f7b3c937b30207
+ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84973034"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86239988"
 ---
 # <a name="add-app-configuration-policies-for-managed-iosipados-devices"></a>Lägg till konfigurationsprinciper för hanterade iOS/iPadOS-mobilappar
 
@@ -193,20 +193,33 @@ DEP-registreringar (Apples enhetsregistreringsprogram) är inte kompatibla med A
 2. Om du vill skapa en appkonfigurationsprincip för företagsportalsappen går du till **Appar** > **Appkonfigurationsprinciper**.
 3. Skapa en appkonfigurationsprincip med XML nedan. Mer information om hur du kan skapa en konfigurationsprincip för appar och ange XML-data finns i [Lägga till konfigurationsprinciper för hanterade iOS/iPadOS-enheter](app-configuration-policies-use-ios.md).
 
-    ``` xml
-    <dict>
-        <key>IntuneCompanyPortalEnrollmentAfterUDA</key>
-        <dict>
-            <key>IntuneDeviceId</key>
-            <string>{{deviceid}}</string>
-            <key>UserId</key>
-            <string>{{userid}}</string>
-        </dict>
-    </dict>
-    ```
+    - **Använd företagsportalen på en DEP-enhet som har registrerats med användartillhörighet:**
 
-3. Distribuera företagsportalen till enheter där appkonfigurationsprincipen är riktad mot de önskade grupperna. Se till att endast distribuera principen till enhetsgrupper som redan är DEP-registrerade.
-4. Be slutanvändarna att logga in på företagsportalappen när den installeras automatiskt.
+        ``` xml
+        <dict>
+            <key>IntuneCompanyPortalEnrollmentAfterUDA</key>
+            <dict>
+                <key>IntuneDeviceId</key>
+                <string>{{deviceid}}</string>
+                <key>UserId</key>
+                <string>{{userid}}</string>
+            </dict>
+        </dict>
+        ```
+    - **Använd företagsportalen på en DEP-enhet som registrerats utan användartillhörighet**:
+
+        > [!NOTE]
+        > Användaren som loggar in på företagsportalen anges som enhetens primära användare.
+
+        ``` xml
+        <dict>
+            <key>IntuneUDAUserlessDevice</key>
+            <string>{{SIGNEDDEVICEID}}</string>
+        </dict>
+        ```     
+
+4. Distribuera företagsportalen till enheter där appkonfigurationsprincipen är riktad mot de önskade grupperna. Se till att endast distribuera principen till enhetsgrupper som redan är DEP-registrerade.
+5. Be slutanvändarna att logga in på företagsportalappen när den installeras automatiskt.
 
 ## <a name="monitor-iosipados--app-configuration-status-per-device"></a>Övervaka konfigurationsstatus för iOS/iPadOS-appar per enhet 
 När en konfigurationsprincip har tilldelats kan du övervaka iOS/iPadOS-appens konfigurationsstatus för varje hanterad enhet. Gå till **Microsoft Intune** i Azure Portal och välj **Enheter** > **Alla enheter**. Om du vill visa ett fönster för enheten väljer du en specifik enhet från listan med hanterade enheter. Välj **Appkonfiguration** i enhetens fönster.  
