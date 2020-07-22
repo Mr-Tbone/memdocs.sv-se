@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 55cecac47accf6dfa2efdc3b0905497260a652e5
-ms.sourcegitcommit: 1edcfb3ce4350ba1a6f36a6150e86301d35c631b
+ms.openlocfilehash: e7d80d2f528365e7759ce7ceb50639b0d474e329
+ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390882"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891470"
 ---
 <!-- 
 - Feature 1357546
@@ -108,8 +108,11 @@ Guidad genom gång för att hjälpa till med fel sökning Configuration Manager-
 
 ## <a name="new-and-updated-support-articles"></a>Nya och uppdaterade support artiklar
 
-Support artiklar som är nya eller uppdaterade mellan 16 maj och 22 juni 2020.
+Support artiklar som är nya eller uppdaterade mellan 16 maj och 17 juli 2020.
 
+- [KB 4560496 Samlad uppdatering för Microsoft Endpoint Configuration Manager version 2002](https://support.microsoft.com/help/4560496)
+- [KB 4569513 "hittades inte"-fel när du försöker redigera uppdaterings Programkatalog tabeller](https://support.microsoft.com/help/4569513)
+- [KB 4574419-timeout-fel i Microsoft Endpoint Configuration Manager administrations Center](https://support.microsoft.com/help/4574416)
 - [KB 4564442 Windows 10-distributioner fungerar inte med Microsoft Deployment Toolkit på datorer med inbyggd program vara för BIOS-typ](https://support.microsoft.com/help/4564442)
 - [KB 4563473 Samlad uppdatering för Configuration Manager version 2002 problem med klient anslutning](https://support.microsoft.com/help/4563473)
 - [KB 4567007 PXE-startfel eller aktivitetssekvenser försenas efter uppdatering till Configuration Manager aktuella grenen, version 2002](https://support.microsoft.com/help/4567007)
