@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/26/2020
+ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.technology: ''
 ms.assetid: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc44bb114d6ff9089a01da2d0b7db7aa7527f4b5
-ms.sourcegitcommit: 7de54acc80a2092b17fca407903281435792a77e
+ms.openlocfilehash: b227148a6e16f7c9f8d62cb58eeb628afbd84123
+ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85972155"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86872026"
 ---
 # <a name="integrate-wandera-mobile-threat-protection-with-intune"></a>Integrera Wandera Mobile Threat Protection med Intune  
 
@@ -70,12 +70,10 @@ Att konfigurera integrering mellan Wandera och Intune kräver inte något stöd 
 
    ![Redigera behörigheter](./media/wandera-mtd-connector-integration/permissions.png)
 
-10. Du kommer automatiskt tillbaka till RADAR-administratörskonsolen.  Om auktoriseringen lyckades visas en grön bock bredvid knappen Bevilja.
-11. Upprepa medgivandeprocessen för de återstående integreringarna som visas genom att klicka på motsvarande Bevilja-knappar tills du har en grön bock bredvid var och en.
+9. Du kommer automatiskt tillbaka till RADAR-administratörskonsolen.  Om auktoriseringen lyckades visas en grön bock bredvid knappen Bevilja.
+10. Upprepa medgivandeprocessen för de återstående integreringarna som visas genom att klicka på motsvarande Bevilja-knappar tills du har en grön bock bredvid var och en.
 
-    ![Synkroniseringsgrupp](./media/wandera-mtd-connector-integration/sync-group-name.png)
-
-12. Gå tillbaka till Intune-konsolen och fortsätt att redigera Wandera MTD-anslutningsprogrammet. Ställ alla tillgängliga växlar som På och spara konfigurationen.
+11. Gå tillbaka till Intune-konsolen och fortsätt att redigera Wandera MTD-anslutningsprogrammet. Ställ alla tillgängliga växlar som På och spara konfigurationen.
 
     ![Aktivera Wandera](./media/wandera-mtd-connector-integration/enable-wandera.png)
 

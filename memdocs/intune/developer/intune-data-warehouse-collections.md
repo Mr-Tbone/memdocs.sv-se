@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/16/2020
+ms.date: 07/09/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b58a24340741621a4034ed4f77ad1298251a692
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: f2718c73cb34e01c84ef07d5085c698028ca285c
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165880"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462005"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune-informationslagersamlingar
 
@@ -193,6 +193,8 @@ Entiteten **DeviceConfigurationProfileUserActivity** innehåller en lista över 
 | OSVersion                  | OS-version.                                                                                                                                                                          |
 | JailBroken                 | Om enheten har brutits upp eller rotats.                                                                                                                                         |
 | DeviceCategoryKey          | Nyckeln för attributet enhetskategori för den här enheten.                                                                                                                                    |
+| physicalMemoryInBytes      | Fysiskt minne i bytes.                                                                                                                                    |
+| totalStorageSpaceInBytes      | Total lagringskapacitet i bytes.                                                                                                                                    |
 
 
 ## <a name="deviceregistrationstates"></a>deviceRegistrationStates
@@ -224,6 +226,7 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | DeviceRegistrationState    | Nyckeln för attributet klientregistreringstillstånd för den här enheten.                                                                                                                      |
 | OwnerTypeKey               | Nyckeln för attributet ägartyp för den här enheten: företag, privat eller okänd.                                                                                                    |
 | EnrolledDateTime           | Datum och tid då enheten registrerades.                                                                                                                                         |
+| ethernetMacAddress           | Den unika nätverksidentifieraren för den här enheten.                                                                                                                                         |
 | LastSyncDateTime           | Senast kända incheckning på Intune.                                                                                                                                              |
 | ManagementAgentKey         | Nyckeln för den hanteringsagent som är kopplad till den här enheten.                                                                                                                             |
 | ManagementStateKey         | Nyckeln för det hanteringstillstånd som är kopplat till enheten och som visar det senaste tillståndet för en fjärråtgärd eller om den har brutits upp/rotats.                                                |
@@ -232,6 +235,7 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | DeviceCategoryKey          | Nyckeln för den kategori som är kopplad till den här enheten.                                                                                                                                     |
 | DeviceEnrollmentType       | Nyckeln för den registreringstyp som är kopplad till den här enheten och som visar registreringsmetod.                                                                                             |
 | ComplianceStateKey         | Nyckel för den kompatibilitetsstatus som är kopplad till den här enheten.                                                                                                                             |
+| Office365Version           | Den version av Office 365 som är installerad på enheten.                                                                                                                             |
 | OSVersion                  | Enhetens operativsystemversion.                                                                                                                                                |
 | EasDeviceId                | Exchange ActiveSync-ID för enheten.                                                                                                                                                  |
 | Serienummer               | Serienummer                                                                                                                                                                           |

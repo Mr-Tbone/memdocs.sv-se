@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99b17cc165fc8d24fdf1b0f48525f3b23d8cc9b7
-ms.sourcegitcommit: d647eefa23c8849f49584442df568284d51d7525
+ms.openlocfilehash: 01c8c0ffba349966c99e1cbd90dbdfc10a5c9782
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86195641"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461172"
 ---
 # <a name="android-enterprise-fully-managed-security-configurations"></a>Säkerhetskonfigurationer för fullständigt hanterade Android Enterprise
 
-Som en del av [Säkerhetskonfigurationsramverket för Android Enterprise](android-configuration-framework.md), tillämpa följande inställningar för användare av fullständigt hanterad Android Enterprise. Mer information om varje principinställning finns i [Android Enterprise-inställningar för enhetsägare för att markera enheter som kompatibla eller inte kompatibla med Intune](../protect/compliance-policy-create-android-for-work.md#device-owner) och [Android Enterprise-enhetsinställningar för att tillåta eller begränsa funktioner med Intune](../configuration/device-restrictions-android-for-work.md#device-owner-only).
+Som en del av [Säkerhetskonfigurationsramverket för Android Enterprise](android-configuration-framework.md), tillämpa följande inställningar för användare av fullständigt hanterad Android Enterprise. Mer information om varje principinställning finns i [Android Enterprise-inställningar för enhetsägare för att markera enheter som kompatibla eller inte kompatibla med Intune](../protect/compliance-policy-create-android-for-work.md#fully-managed-dedicated-and-corporate-owned-work-profile) och [Android Enterprise-enhetsinställningar för att tillåta eller begränsa funktioner med Intune](../configuration/device-restrictions-android-for-work.md#fully-managed-dedicated-and-corporate-owned-work-profile).
 
 När du väljer inställningarna måste du granska och kategorisera användningsscenarier. Konfigurera sedan användare enligt riktlinjerna för den valda säkerhetsnivån. Du kan justera de föreslagna inställningarna utifrån organisationens behov. Se till att ditt säkerhetsteam utvärderar hotmiljön, riskbenägenhet och inverkan på användbarhet.
 

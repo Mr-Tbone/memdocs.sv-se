@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16ba955c1d40f0298c17bd9e5826a7674ddc9cab
-ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
+ms.openlocfilehash: 4ebc719d65024f26d1661d311bfbf9077bcdcbe3
+ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84977287"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410920"
 ---
 # <a name="manage-team-collaboration-access-by-using-teams-for-ios-and-android-with-microsoft-intune"></a>Hantera åtkomst till teamfunktioner med Teams för iOS och Android i Microsoft Intune
 
@@ -89,9 +89,6 @@ Du kan lära dig mer om hur du konfigurerar inställningen för organisationens 
 - [iOS-inställning](app-configuration-policies-use-ios.md#allow-only-configured-organization-accounts-in-multi-identity-apps)
 
 Det här konfigurationsscenariot fungerar bara med registrerade enheter. En UEM-leverantör stöds dock. Om du inte använder Microsoft Endpoint Manager måste du titta i UEM-dokumentationen om hur du distribuerar dessa konfigurationsnycklar.
-
-> [!IMPORTANT]
-> Läget för konton som organisationen tillåter stöds i Teams för iOS och Android från slutet av juni. Läs om lägsta tillåtna appversion i artiklarna ovan.
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -5,7 +5,7 @@ description: Granska standardinställningarna och de tillgängliga inställninga
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/06/2020
+ms.date: 07/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cc2cf4531c2e2d7a2847ccdbce87c8b938a46d6
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 0bfbb73772124ded12d520c6c5742d1576f50f82
+ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022236"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86491311"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>Inställningar för Windows MDM-säkerhetsbaslinjer för Intune
 
@@ -322,7 +322,7 @@ Mer information finns i [CSP-princip – DeviceInstallation](https://docs.micros
 
 - **Installation av maskinvaruenheter efter enhets-ID**:  
   Med den här principinställningen kan du ange en lista med ID:n för Plug and Play-maskinvara och kompatibla ID:n för enheter som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen kan Windows inte installera en enhet vars maskinvaru-ID eller kompatibla ID visas i listan som du skapar. Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern. Om du inaktiverar eller inte konfigurerar den här principinställningen kan enheter installera och uppdatera beroende på om de tillåts eller förhindras av andra principinställningar.  
-  [Läs mer](https://go.microsoft.com/fwlink/?linkid=2066794)
+  [Läs mer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids)
 
   **Standard**: Blockera installation av maskinvaruenheter
 
@@ -340,7 +340,7 @@ Mer information finns i [CSP-princip – DeviceInstallation](https://docs.micros
 
 - **Installation av maskinvaruenheter efter installationsklass**:  
   Med den här principinställningen kan du ange en lista med klass-GUID för enhetsinstallation för enhetsdrivrutiner som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen kan inte Windows installera eller uppdatera enhetsdrivrutiner vars klass-GUID för enhetsinstallation visas i listan du skapar. Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern. Om du inaktiverar eller inte konfigurerar den här principinställningen kan Windows installera och uppdatera enheter beroende på om de tillåts eller förhindras av andra principinställningar.  
-  [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067048)
+  [Läs mer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdevicesetupclasses)
 
   **Standard**: Blockera installation av maskinvaruenheter
 

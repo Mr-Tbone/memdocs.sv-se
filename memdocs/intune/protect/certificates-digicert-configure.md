@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/21/2020
+ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99cad94d0d0f56aba94e8d00a091efea914f418e
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: ab862efd37bfeffc392d1d18cbf1f8a2f3deb50e
+ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990344"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565707"
 ---
 # <a name="set-up-intune-certificate-connector-for-digicert-pki-platform"></a>Konfigurera Intune Certificate Connector för DigiCert PKI-plattformen
 
@@ -51,30 +51,32 @@ Om du använder anslutningsprogrammet med endast DigiCert-CA kan du använda ins
 
 1. Spara följande kodfragment som en fil med namnet **certreq.ini** och uppdatera om det behövs (till exempel: *Ämnesnamnet i CN-format*).
 
-        [Version] 
-        Signature="$Windows NT$" 
-        
-        [NewRequest] 
-        ;Change to your,country code, company name and common name 
-        Subject = "Subject Name in CN format"
-        
-        KeySpec = 1 
-        KeyLength = 2048 
-        Exportable = TRUE 
-        MachineKeySet = TRUE 
-        SMIME = False 
-        PrivateKeyArchive = FALSE 
-        UserProtected = FALSE 
-        UseExistingKeySet = FALSE 
-        ProviderName = "Microsoft RSA SChannel Cryptographic Provider" 
-        ProviderType = 12 
-        RequestType = PKCS10 
-        KeyUsage = 0xa0 
-        
-        [EnhancedKeyUsageExtension] 
-        OID=1.3.6.1.5.5.7.3.2 ; Client Authentication  // Uncomment if you need a mutual TLS authentication
-        
-        ;----------------------------------------------- 
+   ```
+   [Version] 
+   Signature="$Windows NT$" 
+
+   [NewRequest] 
+   ;Change to your,country code, company name and common name 
+   Subject = "Subject Name in CN format"
+
+   KeySpec = 1 
+   KeyLength = 2048 
+   Exportable = TRUE 
+   MachineKeySet = TRUE 
+   SMIME = False 
+   PrivateKeyArchive = FALSE 
+   UserProtected = FALSE 
+   UseExistingKeySet = FALSE 
+   ProviderName = "Microsoft RSA SChannel Cryptographic Provider" 
+   ProviderType = 12 
+   RequestType = PKCS10 
+   KeyUsage = 0xa0 
+
+   [EnhancedKeyUsageExtension] 
+   OID=1.3.6.1.5.5.7.3.2 ; Client Authentication  // Uncomment if you need a mutual TLS authentication
+
+   ;----------------------------------------------- 
+   ```
 
 2. Öppna en upphöjd kommandotolk och skapa CSR-innehåll (certifikatsigneringsförfrågan) med följande kommando:
 
@@ -82,13 +84,14 @@ Om du använder anslutningsprogrammet med endast DigiCert-CA kan du använda ins
 
 3. Öppna filen request.csr i anteckningar och kopiera CSR-innehållet till följande format:
 
-        -----BEGIN NEW CERTIFICATE REQUEST-----
-        MIID8TCCAtkCAQAwbTEMMAoGA1UEBhMDVVNBMQswCQYDVQQIDAJXQTEQMA4GA1UE
-        …
-        …
-        fzpeAWo=
-        -----END NEW CERTIFICATE REQUEST-----
-
+   ``` 
+   -----BEGIN NEW CERTIFICATE REQUEST-----
+   MIID8TCCAtkCAQAwbTEMMAoGA1UEBhMDVVNBMQswCQYDVQQIDAJXQTEQMA4GA1UE
+   …
+   …
+   fzpeAWo=
+   -----END NEW CERTIFICATE REQUEST-----
+   ```
 
 4. Logga in på DigiCert CA och bläddra till **Hämta ett RA-certifikat** från aktiviteterna.
 
@@ -136,7 +139,7 @@ Om du använder anslutningsprogrammet med endast DigiCert-CA kan du använda ins
 
    g. Kopiera tumavtrycket för RA-certifikatet utan blanksteg. Följande är ett exempel på ett tumavtryck:
 
-        RA Cert Thumbprint: "EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5"
+      `RA Cert Thumbprint: "EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5"`
 
     > [!NOTE]
     > Kontakta [kundsupporten för DigiCert](mailto:enterprise-pkisupport@digicert.com) om du behöver hjälp med att hämta RA-certifikatet från DigiCert CA:n.
@@ -196,8 +199,10 @@ Som standard installeras Intune Certificate Connector i **%ProgramFiles%\Microso
 
    a. Uppdatera värdet för `RACertThumbprint`-nyckeln med certifikatets tumavtrycksvärde som du kopierade i föregående avsnitt. Exempel:
 
-        <add key="RACertThumbprint"
-        value="EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5"/>
+      ```
+      <add key="RACertThumbprint"
+      value="EA7A4E0CD1A4F81CF0740527C31A57F6020C17C5"/>
+      ```
 
    b. Spara och stäng filen.
 
@@ -272,7 +277,7 @@ Certifikatprofilens OID är associerad med en certifikatprofilsmall i DigiCert C
 3. Välj den certifikatprofil som du vill använda.
 4. Kopiera certifikatprofilens OID. Den liknar följande exempel:
 
-       Certificate Profile OID = 2.16.840.1.113733.1.16.1.2.3.1.1.47196109 
+   `Certificate Profile OID = 2.16.840.1.113733.1.16.1.2.3.1.1.47196109`
 
 > [!NOTE]
 > Kontakta [DigiCerts kundsupport](mailto:enterprise-pkisupport@digicert.com) om du behöver hjälp med att hämta certifikatprofilens OID.
