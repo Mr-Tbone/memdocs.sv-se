@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/29/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: ae95fb48296f778fb98affa2270ba763d79fb766
-ms.sourcegitcommit: 97f150f8ba8be8746aa32ebc9b909bb47e22121c
+ms.openlocfilehash: b1711dad8163409d05c5299e8d3b54ad619b48ec
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84879676"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462073"
 ---
 # <a name="endpoint-detection-and-response-policy-for-endpoint-security-in-intune"></a>Endpoint Security-policyn Slutpunktsidentifiering och svar i Intune
 
@@ -32,9 +32,6 @@ Funktionerna i Microsoft Defender ATP Slutpunktsidentifiering och svar identifie
 EDR-policyerna omfattar bland annat plattformsspecifika profiler för hantering av inställningar för EDR. Profilerna innehåller automatiskt ett *registreringspaket* för Microsoft Defender ATP. Registreringspaket anger hur enheter ska fungera med Microsoft Defender ATP. När en enhet registrerar sig kan du börja använda hotinformation från enheten.
 
 EDR-policyer distribueras till grupper av enheter i Azure Active Directory (Azure AD) som du hanterar med Intune, och till samlingar av lokala enheter som du hanterar med Configuration Manager, inklusive Windows-servrar. Du behöver olika registreringspaket för EDR-policyerna för de olika hanteringsvägarna. Därför ska du skapa separata EDR-policyer för de olika typer av enheter du hanterar.
-
-> [!TIP]
-> Stödet för enheter du hanterar med Configuration Manager finns i *offentlig förhandsversion*.
 
 Du hittar Endpoint Security-policyn Slutpunktsidentifiering och svar under *Hantera* i noden **Endpoint Security** i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
@@ -74,10 +71,10 @@ Om du vill använda EDR-policyer med Configuration Manager-enheter måste du utf
 - Plattform: **Windows 10 och senare** – Intune distribuerar policyn till enheter i dina Azure AD-grupper.
 - Profil: **Slutpunktsidentifiering och svar (MDM)**
 
-**Configuration Manager** *(i förhandsversion)* – följande stöds för enheter du hanterar med Configuration Manager:
+**Configuration Manager** – följande stöds för enheter du hanterar med Configuration Manager:
 
 - Plattform: **Windows 10 och Windows Server** – Configuration Manager distribuerar policyn till enheter i dina Configuration Manager-samlingar.
-- Profil: **Slutpunktsidentifiering och svar (ConfigMgr) (förhandsversion)**
+- Profil: **Slutpunktsidentifiering och svar (ConfigMgr)**
 
 ## <a name="set-up-configuration-manager-to-support-edr-policy"></a>Konfigurera Configuration Manager med stöd för EDR-policyer
 
@@ -223,7 +220,7 @@ Innan du kan distribuera policyer till enheter som hanteras av Configuration Man
 
    - Configuration Manager – Configuration Manager distribuerar policyn till enheter i dina Configuration Manager-samlingar. När du skapar policyn väljer du:
      - Plattform: **Windows 10 och Windows Server**
-     - Profil: **Slutpunktsidentifiering och svar (ConfigMgr) (förhandsversion)**
+     - Profil: **Slutpunktsidentifiering och svar (ConfigMgr)**
 
 4. Välj **Skapa**.
 

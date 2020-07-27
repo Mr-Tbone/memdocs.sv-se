@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bc627e7b9efb68e8d5cb777b5d8e659b06cab92
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 3981f40650544cdfdbfd0208e127a3e0aaecb823
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086809"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462022"
 ---
 # <a name="android-enterprise-device-settings-to-configure-vpn-in-intune"></a>Inställningar för Android Enterprise-enhet för att konfigurera VPN i Intune
 
@@ -37,7 +37,7 @@ Mer information om VPN-profiler i Intune finns i [VPN-profiler](vpn-settings-con
 
 [Skapa en profil för enhetskonfiguration](vpn-settings-configure.md) och välj **Android Enterprise**.
 
-## <a name="device-owner-only"></a>Endast enhetens ägare
+## <a name="fully-managed-dedicated-and-corporate-owned-work-profile"></a>Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil
 
 - **Anslutningsnamn**: Ange ett namn på anslutningen. Slutanvändarna ser det här namnet när de bläddrar på enheten efter tillgängliga VPN-anslutningar. Ange till exempel `Contoso VPN`.
 - **IP-adress eller fullständigt domännamn**: Ange IP-adressen eller det fullständiga domännamnet för VPN-servern som enheterna ska ansluta till. Ange till exempel **192.168.1.1** eller **vpn.contoso.com**.

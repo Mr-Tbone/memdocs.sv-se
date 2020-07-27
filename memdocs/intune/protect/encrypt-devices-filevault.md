@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/24/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,11 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 1f2a6955a430427fe3f4e2791da6bbaecdd90523
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: cdfec1d82d68e97544172c56cecc416846b4a0f6
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353587"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86460492"
 ---
 # <a name="use-filevault-disk-encryption-for--macos-with-intune"></a>Använda FileVault-diskkryptering för macOS med Intune
 
@@ -44,6 +45,8 @@ Information om hur du hanterar BitLocker för Windows 10 finns i [Hantera BitLoc
 
 När du har skapat en princip för att kryptera enheter med FileVault tillämpas principen på enheter i två steg. Först förbereds enheten så att Intune kan hämta och säkerhetskopiera återställningsnyckeln. Den här åtgärden kallas deponering eller deposition. När nyckeln har deponerats kan diskkrypteringen starta.
 
+Förutom att använda Intune-principer för att kryptera en enhet med FileVault, kan du distribuera principer till en hanterad enhet för att Intune ska kunna [hantera FileVault när enheten har krypterats av användaren](#assume-management-of-filevault-on-previously-encrypted-devices). Det här scenariot kräver att enheten tar emot FileVault-principer från Intune, samt att användaren laddar upp sin personliga återställningsnyckel till Intune.
+
 Användargodkänd enhetsregistrering krävs för att FileVault ska fungera på en enhet. Användaren måste godkänna hanteringsprofilen manuellt i systeminställningarna för att registreringen ska betraktas som användargodkänd.
 
 ## <a name="permissions-to-manage-filevault"></a>Behörighet att hantera FileVault
@@ -58,38 +61,6 @@ Nedan visas de FileVault-behörigheter som ingår i kategorin **Fjärruppgifter*
 
 - **Rotera FileVault-nyckel**
   - Supportavdelningen
-
-## <a name="create-endpoint-security-policy-for-filevault"></a>Skapa en Endpoint Security-princip för FileVault
-
-1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-
-2. Välj **Slutpunktsskydd** > **Diskkryptering** > **Skapa princip**.
-
-3. På sidan **Grundläggande** anger du följande egenskaper och väljer sedan **Nästa**.
-   - **Plattform**: macOS
-   - **Profil**: FileVault
-
-   ![Välj FileVault-profilen](./media/encrypt-devices-filevault/select-macos-filevault-es.png)
-
-4. På sidan **Konfigurationsinställningar**:
-   1. Ställ in *Aktivera FileVault* på **Ja**.
-   2. För *Typ av återställningsnyckel* stöds endast **Privat återställningsnyckel**.
-   3. Konfigurera ytterligare inställningar för att uppfylla dina krav.
-
-   Överväg att lägga till ett meddelande som hjälper användarna att hämta återställningsnyckeln för deras enheter. Den här informationen kan vara användbar för dina användare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
-
-   Exempel: Om du vill hämta en förlorad eller nyligen roterad återställningsnyckel loggar du in på webbplatsen för Intune-företagsportalen från valfri enhet. På portalen går du till Enheter och väljer den enhet där FileVault är aktiverat och väljer sedan *Hämta återställningsnyckel*. Den aktuella återställningsnyckeln visas.
-
-5. När du har konfigurerat inställningarna väljer du **Nästa**.
-
-6. På sidan **Omfång (taggar)** väljer du **Välj omfångstaggar** för att öppna fönstret Välj taggar för att tilldela omfångstaggar till profilen.
-
-   Fortsätt genom att välja **Nästa**.
-
-7. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om att tilldela profiler finns i Tilldela profiler till användare och enheter.
-Välj **Nästa**.
-
-8. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
 
 ## <a name="create-device-configuration-policy-for-filevault"></a>Skapa en princip för enhetskonfiguration för FileVault
 
@@ -120,7 +91,7 @@ Välj **Nästa**.
 
    - För *Återställningsnyckeltyp* väljer du **Personlig nyckel**.
 
-   - För *Beskrivning av depositionsplats för privat återställningsnyckel* lägger du till ett meddelande som hjälper användarna att hämta återställningsnyckeln för sina enheter. Den här informationen kan vara användbar för dina användare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
+   - För *Beskrivning av depositionsplats för privat återställningsnyckel* lägger du till ett meddelande som hjälper användarna att [hämta återställningsnyckeln](#retrieve-a-personal-recovery-key) för sina enheter. Den här informationen kan vara användbar för dina användare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
 
      Exempel: Om du vill hämta en förlorad eller nyligen roterad återställningsnyckel loggar du in på webbplatsen för Intune-företagsportalen från valfri enhet. På portalen går du till *Enheter* och väljer den enhet där FileVault är aktiverat och väljer sedan *Hämta återställningsnyckel*. Den aktuella återställningsnyckeln visas.
 
@@ -135,6 +106,38 @@ Välj **Nästa**.
 
 9. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
 
+## <a name="create-endpoint-security-policy-for-filevault"></a>Skapa en Endpoint Security-princip för FileVault
+
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+
+2. Välj **Slutpunktsskydd** > **Diskkryptering** > **Skapa princip**.
+
+3. På sidan **Grundläggande** anger du följande egenskaper och väljer sedan **Nästa**.
+   - **Plattform**: macOS
+   - **Profil**: FileVault
+
+   ![Välj FileVault-profilen](./media/encrypt-devices-filevault/select-macos-filevault-es.png)
+
+4. På sidan **Konfigurationsinställningar**:
+   1. Ställ in *Aktivera FileVault* på **Ja**.
+   2. För *Typ av återställningsnyckel* stöds endast **Privat återställningsnyckel**.
+   3. Konfigurera ytterligare inställningar för att uppfylla dina krav.
+
+   Du kan lägga till ett meddelande som hjälper användarna [att hämta återställningsnyckeln](#retrieve-a-personal-recovery-key) för deras enheter. Den här informationen kan vara användbar för dina användare när du använder inställningen för rotation av personliga återställningsnycklar, som automatiskt kan generera en ny återställningsnyckel för en enhet med jämna mellanrum.
+
+   Exempel: Om du vill hämta en förlorad eller nyligen roterad återställningsnyckel loggar du in på webbplatsen för Intune-företagsportalen från valfri enhet. På portalen går du till Enheter och väljer den enhet där FileVault är aktiverat och väljer sedan *Hämta återställningsnyckel*. Den aktuella återställningsnyckeln visas.
+
+5. När du har konfigurerat inställningarna väljer du **Nästa**.
+
+6. På sidan **Omfång (taggar)** väljer du **Välj omfångstaggar** för att öppna fönstret Välj taggar för att tilldela omfångstaggar till profilen.
+
+   Fortsätt genom att välja **Nästa**.
+
+7. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om att tilldela profiler finns i Tilldela profiler till användare och enheter.
+Välj **Nästa**.
+
+8. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
+
 ## <a name="manage-filevault"></a>Hantera FileVault
 
 Om du vill visa information om enheter som tar emot FileVault-principer läser du [Övervaka diskkryptering](../protect/encryption-monitor.md).
@@ -143,17 +146,60 @@ När Intune först krypterar en macOS-enhet med FileVault skapas en personlig å
 
 För hanterade enheter kan Intune deponera en kopia av den personliga återställningsnyckeln. Deponeringen av nycklar gör att Intune-administratörer kan rotera nycklar för att skydda enheter, och användare för att återställa en förlorad eller roterad personlig återställningsnyckel.
 
-När Intune har krypterat en macOS-enhet med FileVault:
+Intune deponerar en återställningsnyckel när Intune-principen krypterar en enhet, eller när en användare laddar upp sin återställningsnyckel för en enhet som är krypterad manuellt.
 
-- Administratörer kan visa och hantera återställningsnycklar för FileVault med hjälp av Intunes krypteringsrapport.
-- Användare kan visa en enhets personliga återställningsnyckel från webbföretagsportalen på enheten. Från Intune-företagsportalen väljer du den krypterade macOS-enheten och väljer sedan Hämta återställningsnyckel som en fjärrenhetsåtgärd.
+När Intune har deponerat den personliga återställningsnyckeln:
+
+- Administratörer kan hantera och rotera FileVault-återställningsnycklar för alla hanterade macOS-enheter med hjälp av Intunes krypteringsrapport.
+- Administratörer kan endast se den personliga återställningsnyckeln för hanterade macOS-enheter som har markerats som *företag*. De kan inte se återställningsnyckeln för personliga enheter.
+- Användarna kan se och [hämta sin personliga återställningsnyckel från en plats som stöds](#retrieve-a-personal-recovery-key). På företagsportalens webbplats kan användaren till exempel välja att *Hämta återställningsnyckel* som en fjärrenhetsåtgärd.
+
+### <a name="assume-management-of-filevault-on-previously-encrypted-devices"></a>Hantera FileVault på tidigare krypterade enheter
+
+Intune kan hantera FileVault-diskkryptering på macOS-enheter som har krypterats med hjälp av Intune-principer. Intune kan också ta över hanteringen av FileVault på enheter som har krypterats av enhetsanvändarna i stället för Intune-principen.
+
+#### <a name="prerequisites-to-assume-management-of-filevault"></a>Förutsättningar för att kunna hantera FileVault
+
+Följande villkor måste vara uppfyllda för att kunna hantera tidigare krypterade enheter:
+
+1. **Distribuera en FileVault-princip till enheten**. Den tidigare krypterade enheten måste ta emot en princip från Intune som aktiverar FileVault-diskkrypteringen.
+
+   I det här scenariot kommer principen inte att kryptera eller omkryptera enheten. I stället aktiverar principen att Intune börjar hantera den FileVault-kryptering som redan finns på enheten.  Du kan antingen använda en princip för diskkryptering av slutpunktssäkerhet, eller en princip för slutpunktsskydd av enhetskonfigurationer med FileVault.
+
+   Se [Skapa och distribuera principer](#create-device-configuration-policy-for-filevault).
+
+2. **Användarna laddar upp sin personliga återställningsnyckel till Intune**.  När enheten har tagit emot FileVault-principen, uppmanas enhetsanvändaren som krypterade enheten att ladda upp sin personliga återställningsnyckel i Intune. Om nyckeln har angetts börjar Intune hantera FileVault-krypteringen och en ny personlig återställningsnyckel skapas för enheten och användaren.
+
+   > [!IMPORTANT]
+   > Intune varnar inte användarna om att de måste ladda upp sin personliga återställningsnyckel för att slutföra krypteringen. Använd i stället dina vanliga IT-kommunikationskanaler för att varna användare som tidigare har krypterat sin macOS-enhet med FileVault, att de måste ladda upp sin personliga återställningsnyckel i Intune.  
+   >
+   > Beroende på din efterlevnadsprincip kan enheter blockeras från åtkomst till företagsresurser tills Intune har börjat hantera FileVault-kryptering på enheten.
+
+#### <a name="upload-a-personal-recovery-key"></a>Ladda upp en personlig återställningsnyckel
+
+Om du vill att Intune ska kunna hantera FileVault på en tidigare krypterad enhet, måste enhetsanvändarna använda företagsportalens webbplats när de laddar upp sina nuvarande personliga återställningsnycklar för enheten i Intune.  Vid uppladdningen roterar Intune nyckeln för att skapa en ny personlig återställningsnyckel. Den lagras sedan av Intune för eventuell framtida återställning.
+
+På företagsportalens webbplats letar användaren upp sin krypterade macOS-enhet och väljer alternativet **Lagra återställningsnyckel**. Så snart den personliga återställningsnyckeln har angetts, försöker Intune att rotera nyckeln för att generera en ny nyckel. Rotationen görs för att verifiera att den angivna nyckeln är korrekt för den enheten. Den nya nyckeln lagras och hanteras av Intune för framtida användning, om användaren behöver återställa sin enhet.
+
+Om nyckelrotationen misslyckas har enheten inte bearbetat FileVault-principen, eller så är nyckeln som angavs inte korrekt för enheten.
+
+Efter en lyckad rotation kan användaren[hämta sin nya personliga återställningsnyckel från en plats som stöds](#retrieve-a-personal-recovery-key).
+
+ Se [slutanvändarinnehåll för uppladdning av den personliga återställningsnyckeln](../user-help/store-recovery-key.md).
 
 > [!IMPORTANT]
-> Enheter som krypteras av användare, och inte av Intune, kan inte hanteras av Intune. Det innebär att Intune inte kan deponera den personliga återställningsnyckeln för dessa enheter, eller hantera rotationen av återställningsnyckeln. Innan Intune kan hantera FileVault och återställningsnycklar för enheten måste användaren dekryptera enheten och sedan låta Intune kryptera enheten.
+> För enheter som har krypterats av användaren och inte av Intune, kan Intune inte hantera enheternas FileVault-kryptering förrän enheten har tagit emot en FileVault-princip och enhetsanvändaren har laddat upp sin personliga återställningsnyckel.
 
-### <a name="retrieve-personal-recovery-key"></a>Hämta privat återställningsnyckel
+### <a name="retrieve-a-personal-recovery-key"></a>Hämta en personlig återställningsnyckel
 
-För en macOS-enhet som har krypterats av Intune kan slutanvändare hämta sin privata återställningsnyckel (FileVault Key) med hjälp av iOS-företagsportalappen, Android-företagsportalappen eller Android Intune-appen.
+För en macOS-enhet där FileVault-krypteringen hanteras av Intune, kan slutanvändarna hämta sin personliga återställningsnyckel (FileVault-nyckel) från följande platser med hjälp av valfri enhet:
+
+- Företagsportalens webbplats
+- Företagsportalappen i iOS/iPadOS
+- Android-företagsportalsapp
+- Intune-appen
+
+Administratörer kan se personliga återställningsnycklar för krypterade macOS-enheter som har markerats som *företagsenheter*. De kan inte se återställningsnyckeln för personliga enheter.
 
 Den enhet som har den personliga återställningsnyckeln måste registreras med Intune och krypteras med FileVault via Intune. Med hjälp av iOS-företagsportalappen, Android-företagsportalsappen, Android Intune-appen eller företagsportalwebbplatsen kan användaren se den **FileVault**-återställningsnyckel som krävs för att få åtkomst till deras Mac-enheter.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a7943fb33cf670eedd600db083b77e981da9029
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: fa06e5fee4658ad3c7f19ec39bd126ce69d8cd41
+ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240787"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891521"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -71,7 +71,7 @@ Stöd för ej övervakade ADE-enheter upphörde i iOS/iPadOS 11. I iOS/iPadOS 11
 - Högsta antalet automatiserade enhetsregistreringstoken per Intune-konto: 2,000
 - Högsta antalet automatiserade enhetsregistreringsenheter per token: Gränsen för den första synkroniseringen är 75 000–80 000 enheter. Intune fortsätter att synkronisera med ABM eller ASM med en incheckning var 12:e timme för att lägga till ytterligare enheter varje gång. En manuell synkronisering (som kan utlösas en gång var 15:e minut) kommer också att lägga till ytterligare en grupp enheter i Intune. Synkroniseringarna fortsätter att ske och enheterna kommer att bli synkroniserade från ABM/ASM till Intune i stora kvantiteter. 
 
-## <a name="get-an-apple-ade-token"></a>Hämta en Apple ADE-token
+## <a name="get-an-apple-automated-device-enrollment-token"></a>Hämta en token för Apple Automated Device Enrollment
 
 Innan du kan registrera iOS/iPadOS-enheter med ADE behöver du en ADE-tokenfil (.p7m) från Apple. Med denna token kan Intune synkronisera information om ADE-enheter som ditt företag äger. Intune kan även överföra registreringsprofiler till Apple och tilldela enheter till dessa profiler.
 
@@ -323,7 +323,7 @@ Du har aktiverat hantering och synkronisering mellan Apple och Intune, och har t
 
 Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregistreringsprogrammet](../user-help/enroll-your-device-dep-ios.md).
 
-## <a name="renew-an-ade-token"></a>Förnya en ADE-token  
+## <a name="renew-an-automated-device-enrollment-token"></a>Förnya en token för Automated Device Enrollment  
 
 > [!NOTE]
 > Utöver att förnya din ADE-token varje år behöver du även förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager, eller om användaren lämnar din Apple Business Manager-organisation.
@@ -347,7 +347,7 @@ Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregi
 9. Välj **Förnya token**. Du får se en bekräftelse att token har förnyats.   
     ![Skärmbild av bekräftelse.](./media/device-enrollment-program-enroll-ios/confirmation.png)
 
-## <a name="delete-an-ade-token-from-intune"></a>Ta bort en ADE-token från Intune
+## <a name="delete-an-automated-device-enrollment-token-from-intune"></a>Ta bort en token för Automated Device Enrollment från Intune
 
 Du kan ta bort token för registreringsprofiler från Intune förutsatt att
 - inga enheter har tilldelats till token

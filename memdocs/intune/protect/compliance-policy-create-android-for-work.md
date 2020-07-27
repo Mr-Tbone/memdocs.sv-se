@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d419eb341d3d15a8307396d1bcf13235201606f4
-ms.sourcegitcommit: 56bb5419c41c2e150ffed0564350123135ea4592
+ms.openlocfilehash: 9897f824bb1bd13c1d12ff0c705b42cea275b9d4
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729247"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462090"
 ---
 # <a name="android-enterprise-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Android Enterprise-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -42,7 +42,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 [Skapa en efterlevnadsprincip](create-compliance-policy.md#create-the-policy). Välj **Android Enterprise** för **Plattform**.
 
 
-## <a name="device-owner"></a>Enhetens ägare
+## <a name="fully-managed-dedicated-and-corporate-owned-work-profile"></a>Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil
 
 ### <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
 
@@ -67,7 +67,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   - **Hög** – Det här alternativet är det minst säkra då det tillåter alla hotnivåer. Det skulle kunna vara användbart om lösningen endast används i rapporteringssyfte.
   
 > [!NOTE]
-> Alla MTD-leverantörer (Mobile Threat Defense) stöds på Android Enterprise-enhetsägardistributioner med hjälp av appkonfiguration. Kontakta din MTD-leverantör för att få den exakta konfiguration som krävs för att stödja Android Enterprise-enhetsägarplattformar på Intune.
+> Alla MTD-leverantörer (Mobile Threat Defense) stöds för Android Enterprise-distributionerna Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil med hjälp av appkonfiguration. Kontakta din MTD-leverantör för att få den exakta konfiguration som krävs för Android Enterprise-plattformarna Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil i Intune.
 
 #### <a name="google-play-protect"></a>Google Play-skydd
 

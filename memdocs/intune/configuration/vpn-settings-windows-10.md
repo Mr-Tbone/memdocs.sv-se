@@ -1,11 +1,11 @@
 ---
 title: Windows 10 VPN-inställningar i Microsoft Intune – Azure | Microsoft Docs
-description: Läs om alla tillgängliga VPN-inställningar i Microsoft Intune, vad de används till och vad de gör, inklusive trafikregler, villkorlig åtkomst samt DNS- och proxyinställningar för Windows 10- och Windows Holographic for Business-enheter.
+description: Läs om alla tillgängliga VPN-inställningar i Microsoft Intune, vad de används till och vad de gör. Se inställningarna för trafikregler, villkorsstyrd åtkomst, DNS och proxy för enheter med Windows 10 och Windows Holographic for Business.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/14/2020
+ms.date: 06/22/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,16 @@ search.appverid: MET150
 ms.reviewer: tycast
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fbe28a6585fe9fe5cf7772b559924675ac39a30
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 25950311b5a6936340dbdba01961a5dab6f6ff91
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429475"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461360"
 ---
 # <a name="windows-10-and-windows-holographic-device-settings-to-add-vpn-connections-using-intune"></a>Inställningar för Windows 10- och Windows Holographic-enheter för att lägga till VPN-anslutningar med Intune
 
-Du kan lägga till och konfigurera VPN-anslutningar för enheter med Microsoft Intune. Den här artikeln listar och beskriver vanliga inställningar och funktioner när virtuella privata nätverk (VPN) skapas. Dessa VPN-inställningar och -funktioner används i enhetskonfigurationsprofiler i Intune som skickas eller distribueras till enheter.
+Du kan lägga till och konfigurera VPN-anslutningar för enheter med Microsoft Intune. I den här artikeln går vi igenom några vanliga inställningar och funktioner när du skapar virtuella privata nätverk (VPN). Dessa VPN-inställningar och -funktioner används i enhetskonfigurationsprofiler i Intune som skickas eller distribueras till enheter.
 
 Som en del av din MDM-lösning (hantering av mobilenheter) använder du dessa inställningar till att tillåta eller inaktivera funktioner, till exempel att använda en VPN-leverantör, aktivera Alltid på, använda DNS, lägga till en proxy med mera.
 
@@ -65,16 +65,69 @@ Beroende på vilka inställningar du väljer, kanske inte alla värden är konfi
   - **L2TP**
   - **PPTP**
 
-  När du väljer en VPN-anslutningstyp, kan du också efterfrågas om följande inställningar:  
+  När du väljer en VPN-anslutningstyp, kan du också efterfrågas om följande inställningar:
+
   - **Alltid på**: **Aktivera** ansluter automatiskt till VPN-anslutningen när följande händelser inträffar:
     - Användarna loggar in på sina enheter
     - Nätverket på enheten ändras
     - Skärmen på enheten sätts på efter att ha varit avstängd
 
-  - **Autentiseringsmetod**: Välj hur du vill att användarna ska autentiseras mot VPN-servern. Med hjälp av **certifikat** får du utökade funktioner, t.ex. zero-touch-upplevelse, VPN på begäran och VPN per app.
+    Om du vill använda enhetstunnelanslutningar som IKEv2 ska du **aktivera** den här inställningen.
+
+  - **Autentiseringsmetod**: Välj hur du vill att användarna ska autentiseras mot VPN-servern. Alternativen är:
+    - **Användarnamn och lösenord**: Kräv att användarna anger sitt användarnamn och lösenord för domänen som autentisering, som `user@contoso.com` eller `contoso\user`.
+    - **Certifikat**: Välj en befintlig användarprofil för klientcertifikat för att autentisera användaren. Det här alternativet ger tillgång till utökade funktioner, som en zero-touch-miljö, VPN på begäran och VPN per app.
+
+      Läs mer om att skapa certifikatprofiler i Intune i [Använda certifikat för autentisering](../protect/certificates-configure.md).
+
+    - **Datorcertifikat** (endast IKEv2): Välj en befintlig enhetsprofil för klientcertifikat för att autentisera enheten.
+
+      Om du använder [enhetstunnelanslutningar](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config) måste du välja det här alternativet.
+
+      Läs mer om att skapa certifikatprofiler i Intune i [Använda certifikat för autentisering](../protect/certificates-configure.md).
+
+    - **EAP** (endast IKEv2): Välj en befintlig EAP-profil (Extensible Authentication Protocol) för klientcertifikat för autentisering. Ange autentiseringsparametrarna i inställningen **EAP XML**.
   - **Kom ihåg autentiseringsuppgifter vid varje inloggning**: Välj att cachelagra autentiseringsuppgifterna.
   - **Anpassad XML**: Ange anpassade XML-kommandon som konfigurerar VPN-anslutningen.
-  - **EAP XML**: Ange EAP XML-kommandon som konfigurerar VPN-anslutningen
+  - **EAP XML**: Ange eventuella EAP XML-kommandon som konfigurerar VPN-anslutningen. Mer information finns i [EAP-konfiguration](https://docs.microsoft.com/windows/client-management/mdm/eap-configuration).
+
+  - **Enhetstunnel** (endast IKEv2): **Aktivera** ansluter enheten till VPN-nätverket automatiskt utan att användaren behöver göra någonting eller logga in. Den här inställningen gäller för datorer som är anslutna till Azure Active Directory (AD).
+
+    Om du vill använda den här funktionen måste du göra följande:
+
+    - Ställa in **Anslutningstyp** på **IKEv2**.
+    - Ställa in **Alltid på** på **Aktivera**.
+    - Ställa in **Autentiseringsmetod** på **Datorcertifikat**.
+
+    Tilldela bara en profil per enhet när **Enhetstunnel** är aktiverat.
+
+  **Parametrar för IKE-säkerhetsassociationer** (endast IKEv2): De här krypteringsinställningarna används vid förhandlingar om IKE-säkerhetsassociationer (kallas även `main mode` eller `phase 1`) för IKEv2-anslutningar. Inställningarna måste matcha inställningarna för VPN-servern. Om inställningarna inte matchar kan inte VPN-profilen ansluta.
+
+  - **Krypteringsalgoritm**: Välj vilken krypteringsalgoritm som används på VPN-servern. Om VPN-servern till exempel använder AES 128 bitar väljer du **AES-128** i listan.
+
+    När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+  - **Algoritm för integritetskontroll**: Välj vilken integritetsalgoritm som används på VPN-servern. Om VPN-servern till exempel använder SHA1-96 bitar väljer du **SHA1-96** i listan.
+
+    När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+  - **Diffie-Hellman-grupp**: Välj vilken Diffie-Hellman-beräkningsgrupp som används på VPN-servern. Om VPN-servern till exempel använder Group2 (1 024 bitar) väljer du **2** i listan.
+
+    När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+  **Parametrar för underordnade säkerhetsassociationer** (endast IKEv2): De här krypteringsinställningarna används vid förhandlingar om underordnade säkerhetsassociationer (kallas även `quick mode` eller `phase 2`) för IKEv2-anslutningar. Inställningarna måste matcha inställningarna för VPN-servern. Om inställningarna inte matchar kan inte VPN-profilen ansluta.
+
+  - **Algoritm för chifferomvandling**: Välj vilken algoritm som används på VPN-servern. Om VPN-servern till exempel använder AES-CBC 128 bitar väljer du **CBC-AES-128** i listan.
+
+    När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+  - **Algoritm för autentiseringsomvandling**: Välj vilken algoritm som används på VPN-servern. Om VPN-servern till exempel använder AES-GCM 128 bitar väljer du **GCM-AES-128** i listan.
+
+    När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+  - **PFS-grupp (Perfect Forward Secrecy)** : Välj vilken Diffie-Hellman-beräkningsgrupp som används för PFS (Perfect Forward Secrecy) på VPN-servern. Om VPN-servern till exempel använder Group2 (1 024 bitar) väljer du **2** i listan.
+
+    När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
 
 ### <a name="pulse-secure-example"></a>Pulse Secure-exempel
 

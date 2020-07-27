@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f807eabd2fabd51f7a7bb8eb43225a579784148c
-ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
+ms.openlocfilehash: 535def8c7504d8cd1ea1890c419c2f8b98d4f6f6
+ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746501"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86491209"
 ---
 # <a name="set-enrollment-restrictions"></a>Ange registreringsbegränsningar
 
@@ -164,7 +164,7 @@ Följande personliga registreringsmetoder blockeras också:
 
 ## <a name="blocking-personal-iosipados-devices"></a>Blockera personliga iOS/-enheter
 Intune klassificerar iOS/iPadOS-enheter som personligt ägda som standard. För att klassificeras som företagsägd måste iOS/iPadOS-enheten uppfylla något av följande villkor:
-- Registrerad med ett serienummer eller IMEI.
+- [Registrerad med ett serienummer](corporate-identifiers-add.md).
 - Registrerad med automatisk enhetsregistrering (tidigare Programmet för enhetsregistrering)
 
 

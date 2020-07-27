@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/15/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,18 +18,25 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 530d6de8194a1ca74b72567c98c5d2afcb327170
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 6b0a22d24a67364df3d3aa064489db67e2c97e98
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990312"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462243"
 ---
 # <a name="configure-exchange-on-premises-access-for-intune"></a>Konfigurera lokal Exchange-åtkomst för Intune
 
 I den här artikeln beskrivs hur du konfigurerar villkorlig åtkomst för Exchange lokalt baserat på enhetsefterlevnad.
 
 Om du har en Exchange Online Dedicated-miljö och vill veta om den har den nya eller gamla konfigurationen kontaktar du din kontoansvariga. Du kontrollerar e-poståtkomsten till Exchange On-premises eller till den äldre Exchange Online Dedicated-miljön genom att konfigurera villkorlig åtkomst till Exchange On-premises i Intune.
+
+> [!IMPORTANT]
+> Informationen i den här artikeln gäller för kunder som kan använda ett Exchange-anslutningsprogram.
+>
+> Från och med juli 2020 är stödet för Exchange-anslutningsprogrammet inaktuellt och ersätts av [modern hybridautentisering](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview) (HMA) i Exchange.  Om du har konfigurerat ett Exchange-anslutningsprogram i din miljö kan Intune-klientorganisationen fortsätta att använda det, och du fortsätter att ha tillgång till gränssnittet som har stöd för konfigurationen. Du kan fortsätta att använda anslutningsprogrammet eller konfigurera modern hybridanslutning (HMA) och sedan avinstallera anslutningsprogrammet.
+>
+> Om du använder HMA behöver inte Intune installera och använda Exchange-anslutningsprogrammet. Med den här ändringen tas gränssnittet för att konfigurera och hantera Exchange-anslutningsprogram för Intune bort från administrationscentret för Microsoft Endpoint Manager, om du inte redan använder ett Exchange-anslutningsprogram i din prenumeration.
 
 ## <a name="before-you-begin"></a>Innan du börjar
 

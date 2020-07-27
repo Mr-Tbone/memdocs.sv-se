@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 11/08/2017
+ms.date: 07/15/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: shburbid
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: f29cc024b34736a0a6d759179af70ceb51e12ea1
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 2169abf9955446d6299a64c7ce2ae03723faa792
+ms.sourcegitcommit: 5c15b59cde085787b85f032f88add70a11d8e9a2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881104"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447984"
 ---
 # <a name="turn-on-windows-defender-to-access-company-resources"></a>Aktivera Windows Defender för att komma åt företagets resurser
 
@@ -41,12 +41,12 @@ Det är några inställningar som du kan behöva ändra i Windows Defender för 
 
 ## <a name="turn-on-real-time-protection"></a>Starta realtidsskydd
 
-Kontrollera att realtidsskydd är aktiverat genom att gå till **Start** och söka efter **Windows Defender Säkerhetscenter**. Välj **Inställningar för skydd mot virus och hot** och bekräfta att både **Realtidsskydd** och **Molnlevererat skydd** är inställt på **På**. Om dessa alternativ inte visas gör du så här för att aktivera dem:
+Kontrollera att realtidsskydd är aktiverat genom att gå till **Start** och söka efter **Windows-säkerhet**. Välj **Inställningar för skydd mot virus och hot** och bekräfta att både **Realtidsskydd** och **Molnlevererat skydd** är inställt på **På**. Om dessa alternativ inte visas gör du så här för att aktivera dem:
 
 1. Gå till **Start** och öppna **Kontrollpanelen**.
 2. Öppna **Administrativa verktyg** > **Redigera grupprincip**. Då öppnas **Redigeraren för lokala grupprinciper** i ett nytt fönster.
-3. Öppna **Datorkonfiguration** > **Administrativa mallar** > **Windows-komponenter** > **Windows Defender Säkerhetscenter** > **Skydd mot virus & hot**.
-4. Öppna inställningen för **området för skydd mot virus och hot** och ställ in den på **Inaktiverad**.
+3. Öppna **Datorkonfiguration** > **Administrativa mallar** > **Windows-komponenter** > **Windows-säkerhet** > **Skydd mot virus och hot**.
+4. Öppna inställningen **Dölj området för skydd mot virus och hot** och ställ in den som **Inaktiverad**.
 
 ## <a name="update-your-antivirus-definitions"></a>Uppdatera antivirusdefinitionerna
 

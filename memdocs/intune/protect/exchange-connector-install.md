@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 01/24/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,16 +18,26 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 390a80f6333229a99daec9627e3810c27ca6b580
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: e646ce40acaa156910f516c475cd6b0885989941
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990840"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462207"
 ---
 # <a name="set-up-the-on-premises-intune-exchange-connector"></a>Konfigurera lokala Intune Exchange Connector
 
+> [!IMPORTANT]
+> Informationen i den här artikeln gäller för kunder som kan använda ett Exchange-anslutningsprogram.
+>
+> Från och med juli 2020 är stödet för Exchange-anslutningsprogrammet inaktuellt och ersätts av [modern hybridautentisering](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview) (HMA) i Exchange.  Om du har konfigurerat ett Exchange-anslutningsprogram i din miljö kan Intune-klientorganisationen fortsätta att använda det, och du fortsätter att ha tillgång till gränssnittet som har stöd för konfigurationen. Du kan fortsätta att använda anslutningsprogrammet eller konfigurera modern hybridanslutning (HMA) och sedan avinstallera anslutningsprogrammet.
+>
+>Om du använder HMA behöver inte Intune installera och använda Exchange-anslutningsprogrammet. Med den här ändringen tas gränssnittet för att konfigurera och hantera Exchange-anslutningsprogram för Intune bort från administrationscentret för Microsoft Endpoint Manager, om du inte redan använder ett Exchange-anslutningsprogram i din prenumeration.
+
 För att skydda åtkomsten till Exchange använder Intune en lokal komponent kallad Microsoft Intune Exchange Connector. På vissa ställen i Intune-konsolen kallas det här anslutningsprogrammet även för *Exchange ActiveSync On-Premises Connector*.
+
+> [!IMPORTANT]
+> Intune tar bort stödet för funktionen Exchange On-premises Connector från Intune-tjänsten från och med version 2007 (juli). Befintliga kunder med aktiva anslutningsprogram kan fortsätta att använda funktionen. Nya kunder och befintliga kunder som inte har något aktivt anslutningsprogram kan inte längre skapa nya anslutningsprogram eller hantera EAS-enheter (Exchange ActiveSync) från Intune. Microsoft rekommenderar sådana klientorganisationer att skydda åtkomsten till Exchange lokalt med [HMA (modern hybridautentisering)](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview). HMA ger tillgång till både Intune-appskyddspolicyer (kallas även MAM) och villkorsstyrd åtkomst via Outlook Mobile för Exchange lokalt.
 
 Informationen i den här artikeln beskriver hur du installerar och övervakar Intune Exchange Connector. Du kan använda anslutningsprogrammet med [principer för villkorlig åtkomst](conditional-access-exchange-create.md) för att tillåta eller blockera åtkomsten till dina postlådor i Exchange On-Premises.
 
@@ -45,6 +55,35 @@ Följ dessa allmänna steg för att konfigurera en anslutning som gör att Intun
 2. Installera och konfigurera Exchange-anslutningsappen på en dator i den lokala Exchange-organisationen.
 3. Verifiera Exchange-anslutningen.
 4. Upprepa dessa steg för varje ytterligare Exchange-organisation som du vill ansluta till Intune.
+
+## <a name="how-conditional-access-for-exchange-on-premises-works"></a>Hur villkorlig lokal åtkomst för Exchange lokalt fungerar
+
+Villkorlig åtkomst för Exchange lokalt fungerar annorlunda än villkorliga åtkomstprinciper för Azure. Du installerar det lokala Intune Exchange-anslutningsprogrammet för att interagera direkt med Exchange-servern. Intune Exchange Connector tar emot alla Exchange Active Sync-poster (EAS) som finns på Exchange-servern, så att Intune kan ta dessa EAS-poster och mappa den till Intune-enhetsposterna. Dessa poster och enheter har registrerats och identifierats av Intune. Den här processen tillåter eller blockerar åtkomst till e-post.
+
+Om EAS-posten är ny och Intune inte känner till detta, utfärdas en cmdlet som uppmanar Exchange-servern att blockera åtkomsten till e-post. Här följer lite mer information om hur den här processen fungerar:
+
+> [!div class="mx-imgBorder"]
+> ![Flödesschema för Exchange lokalt med CA](./media/exchange-connector-install/ca-intune-common-ways-1.png)
+
+1. Användaren försöker få åtkomst till företagets e-post som finns på Exchange lokalt, version 2010 SP1 eller senare.
+
+2. Om enheten inte hanteras av Intune, blockeras åtkomsten till e-post. Intune skickar ett blockeringsmeddelande till EAS-klienten.
+
+3. EAS får blockeringsmeddelandet, försätter enheten i karantän och skickar karantänsmeddelandet med åtgärdsförslag. Meddelandet innehåller länkar som användarna kan använda för att registrera sina enheter.
+
+4. Den arbetsplatsanslutna processen är det första steget mot att låta enheten hanteras av Intune.
+
+5. Enheten registreras i Intune.
+
+6. Intune mappar EAS-posten till en enhetspost, och sparar enhetens efterlevnadstillstånd.
+
+7. EAS-klient-ID:t registreras i Azure AD:s enhetsregistreringsprocess, i vilken det skapas en relation mellan Intune-enhetsposten och EAS-klient-ID:t.
+
+8. Under Azure AD:s enhetsregistrering sparas enhetens statusinformation.
+
+9. Om användaren uppfyller principerna för villkorsstyrd åtkomst, skickar Intune en cmdlet via Intune Exchange Connector som tillåter att postlådan synkroniseras.
+
+10. Exchange-servern skickar meddelandet till EAS-klienten, så att användaren får åtkomst till e-posten.
 
 ## <a name="intune-exchange-connector-requirements"></a>Krav för Intune Exchange Connector
 

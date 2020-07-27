@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a915ffc908c985b38533a362f2a17ec561ddf6f
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 16b212bde0f46861b8acb1470588b784c6f2a7fb
+ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79351246"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565673"
 ---
 # <a name="use-apis-to-add-third-party-cas-for-scep-to-intune"></a>Använda API:er för att lägga till tredjeparts certifikatutfärdare för SCEP i Intune
 
@@ -78,17 +78,17 @@ Integrering av biblioteket i dina produkter innefattar följande steg. Dessa ste
 5. Inkludera biblioteket i det projekt som skapar din SCEP-server
 6. Utför följande uppgifter på SCEP-servern:
 
-    - Tillåt att administratören konfigurerar [Azure Application-identifierare, Azure Application-nyckel och klientorganisations-ID](#onboard-scep-server-in-azure) (i den här artikeln) som biblioteket använder för autentisering. Administratörer bör tillåtas att uppdatera Application-nyckeln.
-    - Identifiera SCEP-begäranden som innehåller ett Intune-genererat SCEP-lösenord
-    - Använd biblioteket **Validate Request API** (API för att verifiera begäran) för att verifiera Intune-genererade SCEP-lösenord
-    - Använd biblioteksmeddelande-API:er för att meddela Intune om certifikat som utfärdas för SCEP-begäranden som har de Intune-genererade SCEP-lösenorden. Meddela även Intune om fel som kan uppstå vid bearbetning av dessa SCEP-begäranden.
-    - Bekräfta att servern loggar tillräckligt med information för att hjälpa administratörer att felsöka problem
+   - Tillåt att administratören konfigurerar [Azure Application-identifierare, Azure Application-nyckel och klientorganisations-ID](#onboard-scep-server-in-azure) (i den här artikeln) som biblioteket använder för autentisering. Administratörer bör tillåtas att uppdatera Application-nyckeln.
+   - Identifiera SCEP-begäranden som innehåller ett Intune-genererat SCEP-lösenord
+   - Använd biblioteket **Validate Request API** (API för att verifiera begäran) för att verifiera Intune-genererade SCEP-lösenord
+   - Använd biblioteksmeddelande-API:er för att meddela Intune om certifikat som utfärdas för SCEP-begäranden som har de Intune-genererade SCEP-lösenorden. Meddela även Intune om fel som kan uppstå vid bearbetning av dessa SCEP-begäranden.
+   - Bekräfta att servern loggar tillräckligt med information för att hjälpa administratörer att felsöka problem
 
 7. Fullständig [integreringstestning](#integration-testing) (i den här artikeln) och åtgärda eventuella problem
 8. Ge kunden skriftlig vägledning som förklarar:
 
-    - Hur SCEP-servern måste registreras i Azure-portalen
-    - Hur Azure Application-ID och Azure Application-nyckel som behövs för att konfigurera biblioteket ska hämtas
+   - Hur SCEP-servern måste registreras i Azure-portalen
+   - Hur Azure Application-ID och Azure Application-nyckel som behövs för att konfigurera biblioteket ska hämtas
 
 ### <a name="onboard-scep-server-in-azure"></a>Registrera SCEP-server i Azure
 
@@ -108,38 +108,38 @@ Klassen `IntuneScepServiceClient` innehåller metoder som används av SCEP-tjän
 
 ##### <a name="intunescepserviceclient-constructor"></a>Konstruktorn IntuneScepServiceClient
 
-Signatur:
+**Signatur**:
 
 ```java
 IntuneScepServiceClient(
     Properties configProperties)
 ```
 
-Beskrivning:
+**Beskrivning**:
 
 Instansiera och konfigurera ett `IntuneScepServiceClient`-objekt.
 
-Parametrar:
+**Parametrar**:
 
-    - configProperties    Egenskapsobjekt som innehåller klientkonfigurationsinformation
+- **configProperties** – Egenskapsobjekt som innehåller information om klientkonfigurationen
 
 Konfigurationen måste innehålla följande egenskaper:
 
-    - AAD_APP_ID="The Azure Application Id obtained during the onboarding process" (Det Azure Application-ID som hämtas under registreringsprocessen)
-    - AAD_APP_KEY="The Azure Application Key obtained during the onboarding process" (Den Azure Application-nyckel som hämtas under registreringsprocessen)
-    - TENANT="The Tenant Id obtained during the onboarding process" (Det klientorganisations-ID som hämtas under registreringsprocessen)
-    - PROVIDER_NAME_AND_VERSION="Information used to identify your product and its version" (Den information som används för att identifiera din produkt och dess version)
-    
+- AAD_APP_ID="The Azure Application Id obtained during the onboarding process" (Det Azure Application-ID som hämtas under registreringsprocessen)
+- AAD_APP_KEY="The Azure Application Key obtained during the onboarding process" (Den Azure Application-nyckel som hämtas under registreringsprocessen)
+- TENANT="The Tenant Id obtained during the onboarding process" (Det klientorganisations-ID som hämtas under registreringsprocessen)
+- PROVIDER_NAME_AND_VERSION="Information used to identify your product and its version" (Den information som används för att identifiera din produkt och dess version)
+
 Om din lösning kräver en proxyserver med autentisering eller utan autentisering kan du lägga till följande egenskaper:
 
-    - PROXY_HOST = ”värden proxyn finns på”.
-    - PORT = ”porten proxyn lyssnar på”.
-    - PROXY_USER = ”användarnamnet som ska användas om proxyn använder grundläggande autentisering”.
-    - PROXY_PASS = ”lösenordet som ska användas om proxyn använder grundläggande autentisering”.
+- PROXY_HOST = ”värden proxyn finns på”.
+- PORT = ”porten proxyn lyssnar på”.
+- PROXY_USER = ”användarnamnet som ska användas om proxyn använder grundläggande autentisering”.
+- PROXY_PASS = ”lösenordet som ska användas om proxyn använder grundläggande autentisering”.
 
-Returnerar:
+**Genererar**:
 
-    - IllegalArgumentException    Returneras om konstruktorn körs utan ett korrekt egenskapsobjekt.
+- **IllegalArgumentException** – Genereras om konstruktorn körs utan ett korrekt egenskapsobjekt.
 
 > [!IMPORTANT]
 > Det är bäst att instansiera en instans av den här klassen och använda den för att bearbeta flera SCEP-begäranden. Detta minskar overhead eftersom det cachelagrar autentiseringstoken och information om tjänstens plats.
@@ -149,7 +149,7 @@ SCEP-serverns implementerare måste skydda data som anges i konfigurationsegensk
 
 ##### <a name="validaterequest-method"></a>Metoden ValidateRequest
 
-Signatur:
+**Signatur**:
 
 ```java
 void ValidateRequest(
@@ -157,32 +157,32 @@ void ValidateRequest(
     String certificateRequest)
 ```
 
-Beskrivning:
+**Beskrivning**:
 
 Verifiera en SCEP-certifikatförfrågning.
 
-Parametrar:
+**Parametrar**:
 
-    - transactionId         SCEP-transaktions-ID:t
-    - certificateRequest    DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
+- **transactionId** – SCEP-transaktionens ID
+- **certificateRequest** – DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
 
-Returnerar:
+**Genererar**:
 
-    - IllegalArgumentException      Returneras om den anropas med en ogiltig parameter
-    - IntuneScepServiceException    Returneras om det upptäcks att certifikatbegäran är ogiltig
-    - Exception (undantag)                     Returneras om ett oväntat fel uppstår
+- **IllegalArgumentException** – Genereras om den anropas med en ogiltig parameter
+- **IntuneScepServiceException** – Genereras om certifikatbegäran är ogiltig
+- **Exception** – Genereras om ett oväntat fel uppstår
 
 > [!IMPORTANT]
 > Undantag som returneras av den här metoden ska loggas av servern. Observera att `IntuneScepServiceException`-egenskaperna har detaljerad information om varför verifieringen av certifikatbegäran misslyckades.
 
-**Säkerhetskommentarer**  
+**Säkerhetskommentarer**:
 
 - Om den här metoden returnerar ett undantag **får SCEP-servern inte** utfärda ett certifikat till klienten.
 - Fel med verifiering av SCEP-certifikatbegäran kan tyda på ett problem i Intune-infrastrukturen. Eller så det kan tyda på att en angripare försöker hämta ett certifikat.
 
 ##### <a name="sendsuccessnotification-method"></a>Metoden SendSuccessNotification
 
-Signatur:
+**Signatur**:
 
 ```java
 void SendSuccessNotification(
@@ -194,36 +194,36 @@ void SendSuccessNotification(
     String certIssuingAuthority)
 ```
 
-Beskrivning:
+**Beskrivning**:
 
 Meddelar Intune om ett certifikat skapas som en del av bearbetningen av en SCEP-begäran.
 
-Parametrar:
+**Parametrar**:
 
-    - transactionId           SCEP-transaktions-ID:t
-    - certificateRequest      DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
-    - certThumprint           SHA1-hash för tumavtryck för det etablerade certifikatet
-    - certSerialNumber        Serienummer för det etablerade certifikatet
-    - certExpirationDate      Utgångsdatum för det etablerade certifikatet. Strängen för datum och tid ska formateras som webb-UTC-tid (ÅÅÅÅ-MM-DDThh:mm:ss.sssTZD) ISO 8601.
-    - certIssuingAuthority    Namnet på den utfärdare som utfärdade certifikatet
+- **transactionId** – SCEP-transaktionens ID
+- **certificateRequest** – DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
+- **certThumprint** – SHA1-hash för tumavtryck för det etablerade certifikatet
+- **certSerialNumber** – Serienummer för det etablerade certifikatet
+- **certExpirationDate** – Utgångsdatum för det etablerade certifikatet. Strängen för datum och tid ska formateras som webb-UTC-tid (ÅÅÅÅ-MM-DDThh:mm:ss.sssTZD) ISO 8601.
+- **certIssuingAuthority** – Namnet på den utfärdare som utfärdade certifikatet
 
-Returnerar:
+**Genererar**:
 
-    - IllegalArgumentException      Returneras om den anropas med en ogiltig parameter
-    - IntuneScepServiceException    Returneras om det upptäcks att certifikatbegäran är ogiltig
-    - Exception (undantag)                     Returneras om ett oväntat fel uppstår
+- **IllegalArgumentException** – Genereras om den anropas med en ogiltig parameter
+- **IntuneScepServiceException** – Genereras om certifikatbegäran är ogiltig
+- **Exception** – Genereras om ett oväntat fel uppstår
 
 > [!IMPORTANT]
 > Undantag som returneras av den här metoden ska loggas av servern. Observera att `IntuneScepServiceException`-egenskaperna har detaljerad information om varför verifieringen av certifikatbegäran misslyckades.
 
-**Säkerhetskommentarer**
+**Säkerhetskommentarer**:
 
 - Om den här metoden returnerar ett undantag **får SCEP-servern inte** utfärda ett certifikat till klienten.
 - Fel med verifiering av SCEP-certifikatbegäran kan tyda på ett problem i Intune-infrastrukturen. Eller så det kan tyda på att en angripare försöker hämta ett certifikat.
 
 ##### <a name="sendfailurenotification-method"></a>Metoden SendFailureNotification
 
-Signatur:
+**Signatur**:
 
 ```java
 void SendFailureNotification(
@@ -233,51 +233,51 @@ void SendFailureNotification(
     String errorDescription)
 ```
 
-Beskrivning:
+**Beskrivning**:
 
 Meddelar Intune om att ett fel uppstod när en SCEP-begäran bearbetades. Den här metoden ska inte anropas för undantag som returneras av metoderna i den här klassen.
 
-Parametrar:
+**Parametrar**:
 
-    - transactionId         SCEP-transaktions-ID:t
-    - certificateRequest    DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
-    - hResult               Den Win32-felkod som bäst beskriver det fel som inträffade. Se [Win32-felkoder](https://msdn.microsoft.com/library/cc231199.aspx)
-    - errorDescription      Beskrivning av det fel som inträffade
+- **transactionId** – SCEP-transaktionens ID
+- **certificateRequest** – DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
+- **hResult** – Den Win32-felkod som bäst beskriver det fel som inträffade. Se [Win32-felkoder](https://msdn.microsoft.com/library/cc231199.aspx)
+- **errorDescription** – Beskrivning av det fel som inträffade
 
-Returnerar:
+**Genererar**:
 
-    - IllegalArgumentException      Returneras om den anropas med en ogiltig parameter
-    - IntuneScepServiceException    Returneras om det upptäcks att certifikatbegäran är ogiltig
-    - Exception (undantag)                     Returneras om ett oväntat fel uppstår
+- **IllegalArgumentException** – Genereras om den anropas med en ogiltig parameter
+- **IntuneScepServiceException** – Genereras om certifikatbegäran är ogiltig
+- **Exception** – Genereras om ett oväntat fel uppstår
 
 > [!IMPORTANT]
 > Undantag som returneras av den här metoden ska loggas av servern. Observera att `IntuneScepServiceException`-egenskaperna har detaljerad information om varför verifieringen av certifikatbegäran misslyckades.
 
-**Säkerhetskommentarer**
+**Säkerhetskommentarer**:
 
 - Om den här metoden returnerar ett undantag **får SCEP-servern inte** utfärda ett certifikat till klienten.
 - Fel med verifiering av SCEP-certifikatbegäran kan tyda på ett problem i Intune-infrastrukturen. Eller så det kan tyda på att en angripare försöker hämta ett certifikat.
 
 ##### <a name="setsslsocketfactory-method"></a>Metoden SetSslSocketFactory
 
-Signatur:
+**Signatur**:
 
 ```java
 void SetSslSocketFactory(
     SSLSocketFactory factory)
 ```
 
-Beskrivning:
+**Beskrivning**:
 
 Använd den här metoden för att meddela klienten om att den måste använda angiven SSL socket factory (i stället för standard) när den kommunicerar med Intune.
 
-Parametrar:
+**Parametrar**:
 
-    - factory    Den SSL socket factory som klienten ska använda för HTTPS-begäranden
+- **factory** – Den SSL socket factory som klienten ska använda för HTTPS-begäranden
 
-Returnerar:
+**Genererar**:
 
-    - IllegalArgumentException    Returneras om den anropas med en ogiltig parameter
+- **IllegalArgumentException** – Genereras om den anropas med en ogiltig parameter
 
 > [!NOTE]
 > SSL Socket factory måste anges om den behövs innan de andra metoderna i den här klassen körs.

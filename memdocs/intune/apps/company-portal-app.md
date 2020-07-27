@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/10/2020
+ms.date: 07/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89e3111ef902b0ea0f7f66e6be6aa0c227fdb3c4
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 0ad862ff1f04558bd699db2ef0c09d4da4654e23
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86239954"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461971"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -157,6 +157,17 @@ Följande alternativ är tillgängliga:
 
 > [!NOTE]
 > De här åtgärderna kan användas till att begränsa enhetsåtgärder i appen Företagsportal och på webbplatsen, och implementerar inte några policyer för enhetsbegränsning. Om du vill förhindra att användare fabriksåterställer eller tar bort MDM från inställningarna måste du konfigurera policyer för enhetsbegränsning. 
+
+## <a name="opening-web-company-portal-applications"></a>Öppna appar i Företagsportal på webben
+Om slutanvändaren har appen Företagsportal installerad visas en dialogruta för appar i Företagsportal på webben där användaren kan välja att öppna appen utanför webbläsaren. Om appen inte finns med i sökvägen för appen Företagsportal öppnar Företagsportal startsidan. Om appen finns med i sökvägen öppnar Företagsportal den aktuella appen. 
+
+När användaren väljer Företagsportal öppnas motsvarande sida i appen när URI-sökvägen är något av följande:
+
+- `/apps` – Företagsportal på webben öppnar sidan Appar med samtliga appar.
+- `/apps/[appID]` – Företagsportal på webben öppnar sidan Information för motsvarande app.
+- *URI-sökvägen är en annan eller oväntad* – Företagsportal på webben visar startsidan.
+
+Om användaren inte har installerat appen Företagsportal öppnas Företagsportal på webben.
 
 ## <a name="company-portal-derived-credentials-for-iosipados-devices"></a>Företagsportal-härledda autentiseringsuppgifter för iOS/iPadOS-enheter
 

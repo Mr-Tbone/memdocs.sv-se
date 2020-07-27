@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: db23ee1742934e8545c03c529d6a05c13cc59f1a
-ms.sourcegitcommit: 6ca5e75ed7a6fd2186fbe51c177960004d5ec81f
+ms.openlocfilehash: 3760aa9820495db6c2460bf2e6d2e9a08d705a10
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83633291"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462039"
 ---
 # <a name="disk-encryption-policy-settings-for-endpoint-security-in-intune"></a>Policyinställningar för diskkryptering i Intunes slutpunktssäkerhet
 
@@ -66,6 +66,11 @@ Plattformar och profiler som stöds:
     Förhindra uppmaningen till användare att aktivera FileVault när de loggar ut. När det här anges till Inaktivera visas inget meddelande vid utloggning. I stället får användarna en uppmaning när de loggar in.
     - **Ej konfigurerat** (*standard*)
     - **Ja** – inaktivera uppmaningen att aktivera FileVault som visas vid utloggning.
+
+  - **Dölj återställningsnyckel**  
+     Dölj den personliga återställningsnyckeln från användaren av macOS-enheten vid kryptering. När disken är krypterad kan en användare använda valfri enhet till att visa sin personliga återställningsnyckel via Företagsportal-webbplatsen för Intune eller appen Företagsportal på en plattform som stöds.
+    - **Ej konfigurerat** (*standard*)
+    - **Ja** – Dölj den personliga återställningsnyckeln när enheten krypteras.
 
 ## <a name="bitlocker"></a>BitLocker
 

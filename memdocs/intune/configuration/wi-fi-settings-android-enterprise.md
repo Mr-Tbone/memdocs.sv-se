@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38c3c4adb7029303eaad34b1d5a9fdef774c0f00
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 65b5c7c0b9cb8a587213d237854e69705b5a7f63
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80086437"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461699"
 ---
 # <a name="add-wi-fi-settings-for-android-enterprise-dedicated-and-fully-managed-devices-in-microsoft-intune"></a>Lägg till Wi-Fi-inställningar för dedikerade och fullständigt hanterade Android Enterprise-enheter i Microsoft Intune
 
@@ -33,14 +33,14 @@ Den här artikeln beskriver dessa inställningar. I [Använda Wi-Fi på dina enh
 
 [Skapa en enhetsprofil](wi-fi-settings-configure.md).
 
-## <a name="device-owner-only"></a>Endast enhetens ägare
+## <a name="fully-managed-dedicated-and-corporate-owned-work-profile"></a>Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil
 
 Välj det här alternativet om du distribuerar till en dedikerad eller fullständigt hanterad Android Enterprise-enhet.  Dedikerade och fullständigt hanterade Android Enterprise-enheter stöder för närvarande SCEP-certifikatdistribution men inte PKCS.
 
 ### <a name="basic"></a>Basic
 
 - **Wi-Fi-typ**: Välj **Grundläggande**.
-- **Nätverksnamn**: Ange ett namn på Wi-Fi-anslutningen. Slutanvändarna ser det här namnet när de bläddrar på enheten efter tillgängliga Wi-FI-anslutningar. Ange till exempel **Contoso WiFi**.
+- **Nätverksnamn**: Ange ett namn på Wi-Fi-anslutningen. Slutanvändarna ser det här namnet när de bläddrar efter tillgängliga Wi-FI-anslutningar på enheten. Ange till exempel **Contoso WiFi**.
 - **SSID**: Ange **nätverksnamn**, som är det verkliga namnet på det trådlösa nätverk som enheterna ansluter till. Användarna ser dock bara det **nätverksnamn** som du konfigurerade när de väljer anslutningen.
 - **Dolt nätverk**: Välj **Aktivera** för att dölja nätverket i listan med tillgängliga nätverk på enheten. SSID skickas inte. Välj **Inaktivera** för att visa nätverket i listan med tillgängliga nätverk på enheten.
 - **Wi-Fi-typ**: Välj det säkerhetsprotokoll som ska autentiseras med Wi-Fi-nätverket. Alternativen är:

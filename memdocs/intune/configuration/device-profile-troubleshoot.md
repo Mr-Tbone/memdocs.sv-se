@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 07/20/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,32 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7893e845d2f4c73d4fc6fdecd8691b288c33bb48
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: b6004526d8c9340e70e5149f2261eea07a916ed7
+ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078251"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871991"
 ---
-# <a name="common-questions-issues-and-resolutions-with-device-policies-and-profiles-in-microsoft-intune"></a>Vanliga frågor, problem och lösningar med enhetsprinciper och profiler i Microsoft Intune
+# <a name="common-questions-and-answers-with-device-policies-and-profiles-in-microsoft-intune"></a>Vanliga frågor och svar kring enhetsprinciper och profiler i Microsoft Intune
 
 Få svar på vanliga frågor när du arbetar med enhetsprofiler och principer i Intune. I denna artikel visas också listor med incheckningsintervall, mer information om konflikter och mycket mer.
-
-## <a name="why-doesnt-a-user-get-a-new-profile-when-changing-a-password-or-passphrase-on-an-existing-wi-fi-profile"></a>Varför får inte en användare en ny profil vid ändring av lösenord eller lösenfras i en befintlig Wi-Fi-profil?
-
-Anta att du skapar en Wi-Fi-profil för ett företag, distribuerar profilen till en grupp, ändrar lösenordet och sparar profilen. När profilen ändras får vissa användare inte den nya profilen.
-
-Du kan undvika det här problemet genom att ställa in gäst-Wi-Fi. Om inte företagets Wi-Fi fungerar kan användarna ansluta till gäst-Wi-Fi. Se till att du aktiverar inställningarna för automatisk anslutning. Distribuera gäst-Wi-Fi-profilen till alla användare.
-
-Ytterligare rekommendationer:  
-
-- Om Wi-Fi-nätverket som du ansluter till använder ett lösenord eller en lösenfras, ser du till att du kan ansluta direkt till Wi-Fi-routern. Du kan testa med en iOS/iPadOS-enhet.
-- När du har lyckats ansluta till Wi-Fi-slutpunkten (Wi-Fi-routern) noterar du SSID och autentiseringsuppgifter som används (det här värdet är lösenordet eller lösenfrasen).
-- Ange SSID och autentiseringsuppgifter (lösenord eller lösenfras) i fältet I förväg delad nyckel. 
-- Distribuera till en testgrupp som har ett begränsat antal användare, gärna endast till IT-avdelningen. 
-- Synkronisera iOS/iPadOS-enheten mot Intune. Registrera om du inte redan har gjort det. 
-- Testa att ansluta till samma Wi-Fi-slutpunkt (som nämns i det första steget) igen.
-- Distribuera till större grupper och till slut till alla förväntade användare i organisationen. 
 
 ## <a name="how-long-does-it-take-for-devices-to-get-a-policy-profile-or-app-after-they-are-assigned"></a>Hur lång tid tar det innan principerna, profilerna eller apparna når enheterna efter att de har tilldelats?
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/01/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 038dfccd49b25546b5edddc785c7ee4c86bf83a3
-ms.sourcegitcommit: fb03634b8494903fc6855ad7f86c8694ffada8df
+ms.openlocfilehash: 25d3813d79ec20cc396c3127be6be5371c20247f
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85829000"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461192"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Använda härledda autentiseringsuppgifter i Microsoft Intune
 
-*Den här artikeln gäller iOS/iPad och fullständigt hanterade Android-enheter som kör version 7.0 och senare*
+*Den här artikeln avser iOS/iPad och fullständigt hanterade Android-enheter som kör version 7.0 och senare, samt enheter som kör Windows*
 
 I en miljö där smartkort krävs för autentisering eller kryptering och signering kan du nu använda Intune för att etablera mobila enheter med ett certifikat som härleds från en användares smartkort. Det certifikatet kallas för en *härledd autentiseringsuppgift*. Intune [stöder flera utfärdare av härledda autentiseringsuppgifter](#supported-issuers), men du kan bara använda en enda utfärdare per klientorganisation åt gången.
 
@@ -37,16 +37,19 @@ Härledda autentiseringsuppgifter är en implementering av riktlinjerna från Na
 - Intune-administratören konfigurerar sin klientorganisation så att den fungerar med en utfärdare av härledda autentiseringsuppgifter som stöds. Du behöver inte konfigurera några Intune-specifika inställningar i systemet för utfärdaren av härledda autentiseringsuppgifter.
 - Intune-administratören anger **Härledda autentiseringsuppgifter** som *autentiseringsmetod* för följande objekt:
   
+  **För fullständigt hanterade Android Enterprise-enheter**:
+  - Vanliga profiltyper såsom Wi-Fi och VPN
+  - Appautentisering
+
   **För iOS/iPadOS**:
   - Vanliga profiltyper som Wi-Fi, VPN och e-post, som innehåller den inbyggda e-postappen för iOS/iPadOS
   - Appautentisering
   - S/MIME-signering och -kryptering
 
-  **För fullständigt hanterade Android Enterprise-enheter**:
+  **För Windows**:
   - Vanliga profiltyper såsom Wi-Fi och VPN
-  - Appautentisering
   
-- Användare hämtar en härledd autentiseringsuppgift med hjälp av sitt smartkort på en dator för att autentisera till utfärdaren av härledda autentiseringsuppgifter. Utfärdaren utfärdar sedan ett certifikat som har härletts från smartkortet till den mobila enheten.
+- För Android och iOS/iPadOS hämtar användarna en härledd autentiseringsuppgift med hjälp av sitt smartkort på en dator, för att autentisera till utfärdaren av härledda autentiseringsuppgifter. Utfärdaren utfärdar sedan ett certifikat som har härletts från smartkortet till den mobila enheten. För Windows installerar användarna appen från leverantören av den härledda autentiseringsuppgiften, som i sin tur installerar certifikatet på enheten för senare användning.
 - När enheten har tagit emot den härledda autentiseringsuppgiften används den för autentisering samt för S/MIME-signering och -kryptering när appar eller resursåtkomstprofiler kräver den härledda autentiseringsuppgiften.
 
 ## <a name="prerequisites"></a>Krav
@@ -59,6 +62,8 @@ Intune har stöd för härledda autentiseringsuppgifter på följande plattforma
 
 - iOS/iPadOS
 - Android Enterprise – fullständigt hanterade enheter (version 7.0 och senare)
+- Android Enterprise – företagsägd arbetsprofiler
+- Windows 10 och senare
 
 ### <a name="supported-issuers"></a>Utfärdare som stöds
 
@@ -84,7 +89,9 @@ Planera för distribution av Intune-företagsportalappen till enheter som ska re
 
 ## <a name="plan-for-derived-credentials"></a>Planera för härledda autentiseringsuppgifter
 
-Förstå följande överväganden innan du konfigurerar en utfärdare av härledda autentiseringsuppgifter.
+Förstå följande överväganden innan du konfigurerar en utfärdare av härledda autentiseringsuppgifter för Android och iOS/iPadOS.
+
+För Windows-enheter, se [Härledda autentiseringsuppgifter för Windows](#derived-credentials-for-windows) senare i den här artikeln.
 
 ### <a name="1-review-the-documentation-for-your-chosen-derived-credential-issuer"></a>1) Granska dokumentationen för din valda utfärdare av härledda autentiseringsuppgifter
 
@@ -274,7 +281,7 @@ Använd härledda autentiseringsuppgifter för certifikatbaserad autentisering t
    - **Namn**: Ange ett beskrivande namn på profilen. Namnge dina profiler så att du enkelt kan identifiera dem senare. Ett bra profilnamn är till exempel **Härledd autentiseringsuppgift för Android Enterprise-enhetsprofil**.
    - **Beskrivning**: Ange en beskrivning som ger en översikt över inställningen, samt annan viktig information.
    - **Plattform**: Välj **Android Enterprise**.
-   - **Profiltyp**: Under *Endast enhetens ägare* väljer du **Härledd autentiseringsuppgift**.
+   - **Profiltyp**: Under *Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil* väljer du **Härledd autentiseringsuppgift**.
 
 4. Klicka på **OK** för att spara ändringarna.
 5. När du är klar väljer du **OK** > **Skapa** för att skapa Intune-profilen. När du är klar visas din profil i listan **Enhetskonfiguration – profiler**.
@@ -282,9 +289,29 @@ Använd härledda autentiseringsuppgifter för certifikatbaserad autentisering t
 
 Användare får appen eller e-postaviseringen beroende på vilka inställningar du angav när du konfigurerade utfärdaren av härledda autentiseringsuppgifter. Meddelandet uppmanar användaren att starta Företagsportalen så att de härledda autentiseringsuppgifterna kan bearbetas.
 
+## <a name="derived-credentials-for-windows"></a>Härledda autentiseringsuppgifter för Windows
+
+Du kan använda härledda certifikat som autentiseringsmetod för Wi-Fi- och VPN-profiler på Windows-enheter. Samma leverantörer som stöds av Android- och iOS/iPad-enheter, stöds som leverantörer för Windows:
+
+- **DISA Purebred**
+- **Entrust Datacard**
+- **Intercede**
+
+För Windows behöver inte användarna använda någon registreringsprocess med smartkort för att få ett certifikat som kan användas som en härledd autentiseringsuppgift. I stället måste användaren installera appen för Windows, som hämtas från leverantören av härledda autentiseringsuppgifter. Om du vill använda härledda autentiseringsuppgifter med Windows, slutför du följande konfigurationer:
+
+1. **Installera appen från leverantörer av härledda autentiseringsuppgifter på Windows-enheten**.
+
+   När du installerar Windows-appen från en leverantör av härledda autentiseringsuppgifter på en Windows-enhet, läggs det härledda certifikatet till i enhetens Windows-certifikatarkiv. När certifikatet har lagts till på enheten blir det tillgängligt för användning av en härledd autentiseringsmetod.
+
+   När du har skaffat appen från din valda leverantör, kan den distribueras till användarna, eller installeras direkt av enhetsanvändaren.
+
+2. **Konfigurera Wi-Fi- och VPN-profiler för att använda härledda autentiseringsuppgifter som autentiseringsmetod**.
+
+   När du konfigurerar en Windows-profil för Wi-Fi eller VPN, väljer du **Härledd autentiseringsuppgift** som *Autentiseringsmetod*. Med den här konfigurationen använder profilen det certifikat som installerades på enheten när leverantörsappen installerades.
+
 ## <a name="renew-a-derived-credential"></a>Förnya en härledd autentiseringsuppgift
 
-Härledda autentiseringsuppgifter kan inte utökas eller förnyas. Användarna måste i stället använda arbetsflödet för begäran om autentiseringsuppgifter för att begära en ny härledd autentiseringsuppgift för enheten.
+Härledda autentiseringsuppgifter för Android- eller iOS/iPad-enheter kan inte utökas eller förnyas. Användarna måste i stället använda arbetsflödet för begäran om autentiseringsuppgifter för att begära en ny härledd autentiseringsuppgift för enheten. För Windows-enheter kan du läsa appdokumentationen från din leverantör av härledda autentiseringsuppgifter.
 
 Om du konfigurerar en eller flera metoder för **Meddelandetyp** meddelar Intune automatiskt användare när den aktuella härledda autentiseringsuppgiften når 80 % av sin livslängd. Meddelandet instruerar användarna att gå igenom processen för begäran om autentiseringsuppgifter för att få en ny härledd autentiseringsuppgift.
 

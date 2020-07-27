@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b9cd6d0292c07b2f1a987efba6d1ad9f8d81d99
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 8404c475bc5a84177abeba3a96fb613f04b9aa2b
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989574"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461954"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Lägg till Google Play för företag-appar till Android enterprise-enheter med Intune
 
-Google Play för företag är Googles appbutik för företag och den enda källan till appar för Android Enterprise. Du kan använda Intune för att samordna distributionen av appar via Google Play för företag för alla Android Enterprise-scenarier (inklusive arbetsprofilregistreringar, samt dedikerade och fullständigt hanterade registreringar). Tillvägagångssättet för att lägga till Google Play för företag-appar i Intune skiljer sig från hur Android-appar läggs till på Android-enheter som inte är för företag. Store-appar, branschspecifika appar (LOB) och webbappar godkänns i eller läggs till i Google Play för företag och synkroniseras sedan till Intune så att de visas i listan över klientappar. När de visas i listan med klientappar kan du hantera tilldelning av alla Google Play för företag-appar på samma sätt som du gör med andra appar.
+Google Play för företag är Googles appbutik för företag och den enda källan till appar för Android Enterprise. Du kan använda Intune till att samordna distributionen av appar via Google Play i valfritt Android Enterprise-scenario (inklusive registreringar av typerna arbetsprofil, dedikerad, fullständigt hanterad och företagsägd arbetsprofil). Tillvägagångssättet för att lägga till Google Play för företag-appar i Intune skiljer sig från hur Android-appar läggs till på Android-enheter som inte är för företag. Store-appar, branschspecifika appar (LOB) och webbappar godkänns i eller läggs till i Google Play för företag och synkroniseras sedan till Intune så att de visas i listan över klientappar. När de visas i listan med klientappar kan du hantera tilldelning av alla Google Play för företag-appar på samma sätt som du gör med andra appar.
 
 Intune lägger automatiskt till fyra vanliga Android Enterprise-relaterade appar till Intune-administratörskonsolen när du ansluter din Intune-klient till Google Play för företag för att göra det enklare för dig att konfigurera och använda Android Enterprise-hantering. De fyra apparna är följande:
 
@@ -179,7 +179,7 @@ Om du har godkänt en app från butiken men inte ser den i arbetsbelastningen **
 6. Välj  **Appar** > **Alla appar** i administrationscentret för Microsoft Endpoint Manager.  
     Den nya tillgängliga Managed Google Play-appen visas.
 
-## <a name="assigning-a-managed-google-play-app-to-android-enterprise-work-profile-devices"></a>Tilldela en hanterad Google Play-app för Android Enterprise-arbetsprofilenheter
+## <a name="assigning-a-managed-google-play-app-to-android-enterprise-work-profile-and-corporate-owned-work-profile-devices"></a>Tilldela en hanterad Google Play-app för Android Enterprise-enheter med arbetsprofil och företagsägd arbetsprofil
 
 När appen visas i noden **Applicenser** i arbetsbelastningsfönstret **Appar** kan du [tilldela den på samma sätt som du gör med andra appar](/mem/intune/apps/apps-deploy) genom att tilldela användargrupper appen.
 
@@ -219,7 +219,7 @@ För Managed Google Play-appar som distribueras till Android Enterprise-arbetspr
 
 ## <a name="working-with-managed-google-play-closed-testing-tracks"></a>Arbeta med testspår på Hanterad Google Play
 
-Du kan distribuera en icke-produktionsversion av en hanterad Google Play-app till enheter som registrerats i ett Android Enterprise-scenario (**Android Enterprise-arbetsprofil**, **Fullständigt hanterad** och **Dedikerad**) för att utföra testningen. I Intune kan du se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med AAD-användargrupper eller -enheter. Arbetsflödet för att tilldela en produktionsversion till en grupp som för närvarande finns är detsamma som att tilldela en icke-produktionskanal. Efter distributionen motsvarar installationsstatus för varje spår spårets versionsnummer i hanterad Google Play. Mer information finns i [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213).
+Du kan distribuera en icke-produktionsversion av en hanterad Google Play-app till enheter som registrerats i ett Android Enterprise-scenario (**Android Enterprise-arbetsprofil**, **Fullständigt hanterad**, **Dedikerad** och **Företagsägd arbetsprofil**) för att utföra testningen. I Intune kan du se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med AAD-användargrupper eller -enheter. Arbetsflödet för att tilldela en produktionsversion till en grupp som för närvarande finns är detsamma som att tilldela en icke-produktionskanal. Efter distributionen motsvarar installationsstatus för varje spår spårets versionsnummer i hanterad Google Play. Mer information finns i [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213).
 
 ## <a name="delete-managed-google-play-apps"></a>Radera hanterade Google Play-appar
 Du kommer att kunna ta bort hanterade Google Play-appar från Microsoft Intune om nödvändigt. Om du vill ta bort en hanterad Google Play-app öppnar du Microsoft Intune i Azure Portal och väljer **Appar** > **Alla appar**. Från listan över appar väljer du ellipserna (...) till höger om den hanterade Google Play-appen och väljer sedan **Ta bort** från den visade listan. När du tar bort en hanterad Google Play-app från applistan blir den hanterade Google Play-appen automatiskt ej godkänd.

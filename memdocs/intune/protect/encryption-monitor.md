@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 1199c6db96325a103394cfb53a4ca70092cd3767
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: c20d2ef806df46036d3a785bb5f8603d485d3880
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989659"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86460475"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Övervaka enhetskryptering med Intune
 
@@ -118,7 +118,7 @@ När du väljer en enhet från krypteringsrapporten visas fönstret **Enhetens k
 
   - Enheten är redan krypterad. Enhetsanvändaren måste dekryptera enheten för att kunna fortsätta.
 
-    *Tänk på att: Intune kan inte konfigurera FileVault på en enhet som redan är krypterad. I stället måste användaren dekryptera enheten manuellt innan den kan hanteras av en enhetskonfigurationsprincip och Intune*.
+    *Tänk på att: Intune kan inte konfigurera FileVault på en enhet som redan är krypterad. När en enhet tar emot en policy om att aktivera FileVault kan en användare [ladda upp sin personliga återställningsnyckel för att aktivera Intune och sedan hantera kryptering på enheten](../protect/encrypt-devices-filevault.md#assume-management-of-filevault-on-previously-encrypted-devices). Användaren kan även dekryptera enheten manuellt så att den kan krypteras av Intune-policyn, men det här rekommenderas inte eftersom enheten då är okrypterad en tid.*
 
   - FileVault kräver att användaren godkänner sin hanteringsprofil i macOS Catalina och senare.
 
@@ -174,7 +174,7 @@ Den här rapporten kan användas för att identifiera problem för grupper av en
 Mer information om att hantera återställningsnycklar finns i följande avsnitt i Intune-dokumentationen:
 
 macOS FileVault:
-- [Hämta privat återställningsnyckel](../protect/encrypt-devices-filevault.md#retrieve-personal-recovery-key)
+- [Hämta privat återställningsnyckel](../protect/encrypt-devices-filevault.md#retrieve-a-personal-recovery-key)
 - [Rotera återställningsnycklar](../protect/encrypt-devices-filevault.md#rotate-recovery-keys)
 - [Återställa återställningsnycklar](../protect/encrypt-devices-filevault.md#recover-recovery-keys)
 

@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/23/2019
+ms.date: 07/17/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,17 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c8c78106125b45f52b45cb5fc6494b8e13b7a15
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 9c1d4dacf29aa0c87a8356306d10bf05acbf3afb
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80084939"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462175"
 ---
 # <a name="what-are-common-ways-to-use-conditional-access-with-intune"></a>Hur används villkorlig åtkomst vanligtvis med Intune?
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
-
 
 Det finns två typer av villkorlig åtkomst som används med Intune: enhetsbaserad villkorlig åtkomst och appbaserad villkorlig åtkomst. Du måste konfigurera de relaterade efterlevnadsprinciperna för att få en villkorlig åtkomst som följer standard i din organisation. Villkorlig åtkomst används vanligtvis för att tillåta eller blockera åtkomst till Exchange, styra åtkomsten till nätverket eller integrering med en Mobile Thread Defense-lösning.
  
@@ -113,34 +110,44 @@ Efterlevnaden för alla enheter som används för att få åtkomst till Exchange
 
 När en enhet inte uppfyller de angivna villkoren leds slutanvändaren genom en process för att registrera enheten och åtgärda de problem som gör att enheten inte är kompatibel.
 
-#### <a name="how-conditional-access-for-exchange-on-premises-works"></a>Hur villkorlig lokal åtkomst för Exchange lokalt fungerar
+> [!NOTE]
+> Från och med juli 2020 är stödet för Exchange-anslutningsprogrammet inaktuellt och ersätts av [modern hybridautentisering](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview) (HMA) i Exchange. Om du använder HMA behöver inte Intune installera och använda Exchange-anslutningsprogrammet. Med den här ändringen tas gränssnittet för att konfigurera och hantera Exchange-anslutningsprogram för Intune bort från administrationscentret för Microsoft Endpoint Manager, om du inte redan använder ett Exchange-anslutningsprogram i din prenumeration.
+>
+> Om du har konfigurerat ett Exchange-anslutningsprogram i din miljö kan Intune-klientorganisationen fortsätta att använda det, och du fortsätter att ha tillgång till gränssnittet som har stöd för konfigurationen. Mer information finns i [Installera Exchange-anslutningsprogram lokalt](../protect/exchange-connector-install.md). Du kan fortsätta att använda anslutningsprogrammet eller konfigurera modern hybridanslutning (HMA) och sedan avinstallera anslutningsprogrammet.
+>
+> Modern hybridautentisering ger tillgång till funktioner som tidigare fanns i Exchange Connector för Intune: Mappning av en enhets identitet till Exchange-posten.  Den här mappningen sker nu utanför konfigurationer du skapar i Intune eller kravet på att Intune-anslutningsprogrammet ska vara en brygga mellan Intune och Exchange. Med HMA behöver du inte längre använda den Intune-specifika konfigurationen (anslutningsprogrammet).
 
-Villkorlig åtkomst för Exchange lokalt fungerar annorlunda än villkorliga åtkomstprinciper för Azure. Du installerar det lokala Intune Exchange-anslutningsprogrammet för att interagera direkt med Exchange-servern. Intune Exchange Connector tar emot alla Exchange Active Sync-poster (EAS) som finns på Exchange-servern, så att Intune kan ta dessa EAS-poster och mappa den till Intune-enhetsposterna. Dessa poster och enheter har registrerats och identifierats av Intune. Den här processen tillåter eller blockerar åtkomst till e-post.
 
-Om EAS-posten är ny och Intune inte känner till detta, utfärdas en cmdlet som uppmanar Exchange-servern att blockera åtkomsten till e-post. Här följer lite mer information om hur den här processen fungerar:
+<!-- Deprecated with change from the connector to Exchange hybrid modern authentication)
 
-![Exchange lokalt med CA-flödesschema](./media/conditional-access-intune-common-ways-use/ca-intune-common-ways-1.png)
+#### How conditional access for Exchange on-premises works
 
-1. Användaren försöker få åtkomst till företagets e-post som finns på Exchange lokalt, version 2010 SP1 eller senare.
+Conditional access for Exchange on-premises works differently than Azure Conditional Access based policies. You install the Intune Exchange on-premises connector to directly interact with Exchange server. The Intune Exchange connector pulls in all the Exchange Active Sync (EAS) records that exist at the Exchange server so Intune can take these EAS records and map them to Intune device records. These records are devices enrolled and recognized by Intune. This process allows or blocks e-mail access.
 
-2. Om enheten inte hanteras av Intune, blockeras åtkomsten till e-post. Intune skickar ett blockeringsmeddelande till EAS-klienten.
+If the EAS record is new and Intune isn't aware of it, Intune issues a cmdlet (pronounced "command-let") that directs the Exchange server to block access to e-mail. Following are more details on how this process works:
 
-3. EAS får blockeringsmeddelandet, försätter enheten i karantän och skickar karantänsmeddelandet med åtgärdsförslag. Meddelandet innehåller länkar som användarna kan använda för att registrera sina enheter.
+![Exchange on-premises with CA flow-chart](./media/conditional-access-intune-common-ways-use/ca-intune-common-ways-1.png)
 
-4. Den arbetsplatsanslutna processen är det första steget mot att låta enheten hanteras av Intune.
+1. User tries to access corporate email, which is hosted on Exchange on-premises 2010 SP1 or later.
 
-5. Enheten registreras i Intune.
+2. If the device is not managed by Intune, access to email will be blocked. Intune sends a block notification to the EAS client.
 
-6. Intune mappar EAS-posten till en enhetspost, och sparar enhetens efterlevnadstillstånd.
+3. EAS receives the block notification, moves the device to quarantine, and sends the quarantine email with remediation steps that contain links so the users can enroll their devices.
 
-7. EAS-klient-ID:t registreras i Azure AD:s enhetsregistreringsprocess, i vilken det skapas en relation mellan Intune-enhetsposten och EAS-klient-ID:t.
+4. The Workplace join process happens, which is the first step to have the device managed by Intune.
 
-8. Under Azure AD:s enhetsregistrering sparas enhetens statusinformation.
+5. The device gets enrolled into Intune.
 
-9. Om användaren uppfyller principerna för villkorsstyrd åtkomst, skickar Intune en cmdlet via Intune Exchange Connector som tillåter att postlådan synkroniseras.
+6. Intune maps the EAS record to a device record, and saves the device compliance state.
 
-10. Exchange-servern skickar meddelandet till EAS-klienten, så att användaren får åtkomst till e-posten.
+7. The EAS client ID gets registered by the Azure AD Device Registration process, which creates a relationship between the Intune device record, and the EAS client ID.
 
+8. The Azure AD Device Registration saves the device state information.
+
+9. If the user meets the conditional access policies, Intune issues a cmdlet through the Intune Exchange connector that allows the mailbox to sync.
+
+10. Exchange server sends the notification to EAS client so the user can access e-mail.
+-->
 
 #### <a name="whats-the-intune-role"></a>Vad är Intune-rollen?
 
@@ -158,7 +165,5 @@ Exchange-servern tillhandahåller det API och den infrastruktur som krävs för 
 [Konfigurera villkorlig åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)
 
 [Konfigurera principer för appbaserad villkorlig åtkomst](app-based-conditional-access-intune-create.md)
-
-[Så här installerar du Exchange Connector lokalt med Intune](exchange-connector-install.md).
 
 [Skapa en princip för villkorlig åtkomst för Exchange lokalt](conditional-access-exchange-create.md)

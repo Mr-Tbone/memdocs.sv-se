@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69940fc8e3f495a1738f2b7b4c6769e431821f30
-ms.sourcegitcommit: 7a5196d4d9736c5cd52a23155c479523e52a097d
+ms.openlocfilehash: c10738d20b793de2ba1adbca548290a517ca5d9e
+ms.sourcegitcommit: 764142960005ea0cb5afa00757f2b403ce5032c6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436813"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405927"
 ---
 # <a name="prepare-ios-apps-for-app-protection-policies-with-the-intune-app-wrapping-tool"></a>Förbered iOS-appar för appskyddsprinciper med Intunes programhanteringsverktyg
 
@@ -225,7 +225,7 @@ I mappen IntuneMAMPackager/Contents/MacOS öppnar du `Parameters.plist` (en tom 
 | ADAL-klient-ID |Sträng|tomt| Samma som -ac|
 | ADAL-svars-URI |Sträng|tomt| Samma som -ar|
 | Utförlig aktiverad |Boolesk|falskt| Samma som -v|
-| Ta bort rättigheter som saknas |Boolesk|falskt| Samma som -c|
+| Ta bort rättigheter som saknas |Boolesk|falskt| Samma som -e|
 | Förhindra uppdatering av standardversion |Boolesk|falskt| Likvärdigt med att använda -b utan argument|
 | Åsidosättning av versionssträng |Sträng|tomt| Anpassad CFBundleVersion för den omslutna utdataappen|
 | Inkludera app-SDK för Citrix XenMobile (endast nätverksvariant)|Boolesk|falskt| Samma som -citrix|

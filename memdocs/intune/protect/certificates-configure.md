@@ -17,11 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5de1268b8b04c98ac7a9cfa96d42349fc0f8890
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: 0242e7725afa23ed94400c79eae27118b7dbb8c5
+ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383214"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86491192"
 ---
 # <a name="use-certificates-for-authentication-in-microsoft-intune"></a>Använda certifikat för autentisering i Microsoft Intune
 
@@ -108,6 +109,9 @@ Skapa en separat betrodd certifikatprofil för varje enhetsplattform som du vill
 > Betrodda rotprofiler som du skapar för plattformen *Windows 10 och senare* visas i administratörscenter för Microsoft Endpoint Manager som profiler för plattformen *Windows 8.1 och senare*. 
 >
 > Detta är ett känt problem med presentationen av plattformen för betrodda certifikatprofiler. När profilen visar en plattform som är Windows 8.1 och senare så fungerar den för Windows 10 och senare.
+
+> [!NOTE]
+> Profilen *Betrott certifikat* i Intune kan bara användas till att leverera antingen rotcertifikat eller mellanliggande certifikat. Syftet med att distribuera sådana certifikat är att upprätta en förtroendekedja. Du kan inte använda profilen Betrott certifikat till att leverera andra certifikat än rotcertifikat eller mellanliggande certifikat, det stöds inte av Microsoft. Du kan blockeras från att importera certifikat som inte anses vara rotcertifikat eller mellanliggande certifikat när du väljer profilen Betrott certifikat i Intune-portalen. Även om du kan importera och distribuera ett certifikat som varken är ett rotcertifikat eller mellanliggande certifikat med den här profiltypen så stöter du förmodligen på oväntade resultat mellan olika plattformar som iOS och Android.
 
 ### <a name="to-create-a-trusted-certificate-profile"></a>Så här skapar du en betrodd certifikatprofil
 

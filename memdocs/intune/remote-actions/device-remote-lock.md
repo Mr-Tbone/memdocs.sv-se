@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ac6a5d848a0d02b72a4f7275a6b6df47b2cd834
-ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
+ms.openlocfilehash: 220a2ac92d46c1279d4498c8673e2ceef28c470f
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85107334"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462056"
 ---
 # <a name="remotely-lock-devices-with-intune"></a>Fjärrlåsa enheter med Intune
 
@@ -34,8 +34,10 @@ ms.locfileid: "85107334"
 **Fjärrlås** stöds på följande plattformar:
 
 - Android
-- Android enterprise-kioskenheter
-- Android enterprise-arbetsprofilenheter
+- Android Enterprise-kioskenheter
+- Android Enterprise-arbetsprofilenheter
+- Fullständigt hanterade Android Enterprise-enheter
+- Företagsägda Android Enterprise-enheter med arbetsprofil
 - iOS
 - macOS
 - Windows 10 Mobil
@@ -45,7 +47,7 @@ ms.locfileid: "85107334"
 - Windows 10 desktop
 
 > [!NOTE]
-> För macOS-enheter anger du en 6-siffrig PIN-kod för återställning. När enheten är låst visar **Enhetsöversikt** PIN-koden tills en annan enhetsåtgärd skickas. Se till att skriva ner PIN-koden eftersom den bara är tillgänglig i 30 dagar efter att fjärrlåsningskommandot har skickats. Efter 30 dagar har inte Intune PIN-koden längre. Initiera inte heller det här kommandot igen för samma enhet förrän den ursprungliga PIN-koden används för att låsa upp enheten. Du bör skicka det här kommandot, skriva ned PIN-koden och inte skicka kommandot till samma enhet igen förrän du har använt det för att komma till macOS-enheten.  
+> För macOS-enheter anger du en 6-siffrig PIN-kod för återställning. När enheten är låst visar **Enhetsöversikt** PIN-koden tills en annan enhetsåtgärd skickas. Se till att skriva ner PIN-koden eftersom den bara är tillgänglig i 30 dagar efter att fjärrlåsningskommandot har skickats. Efter 30 dagar har inte Intune PIN-koden längre. Du ser även en misslyckad status i rapporten om du kör kommandot igen för samma enhet medan den ursprungliga PIN-koden inte har använts till att låsa upp enheten. Du bör bara köra det här kommandot en gång, skriva ned PIN-koden och inte skicka kommandot till samma enhet igen förrän du har använt koden till att komma åt macOS-enheten.
 
 
 ## <a name="remote-lock-a-device"></a>Fjärrlås på en enhet

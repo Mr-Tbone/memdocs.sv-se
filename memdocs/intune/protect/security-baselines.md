@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/21/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.reviewer: laarrizz
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d533acfa60672bed3d6919116f11f43d525b6551
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: a3a9ae0c697cb6cd60f0f9bddce50057bcfcd3a3
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988324"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86462107"
 ---
 # <a name="use-security-baselines-to-configure-windows-10-devices-in-intune"></a>Använd baslinjer för säkerhet för att konfigurera Windows 10-enheter i Intune
 
@@ -76,11 +76,11 @@ Varje ny versioninstans av en baslinje kan lägga till eller ta bort inställnin
 
 I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) under **Slutpunktssäkerhet** > **Säkerhetsbaslinjer** visas en lista över tillgängliga baslinjer. Listan innehåller:
 - namnet på baslinjemallen
-- antalet profiler som använder den här baslinjetypen
+- antalet profiler som använder baslinjetypen
 - antalet separata instanser (versioner) av baslinjetypen som är tillgängliga
 - datumet *Senaste publicering* som anger när den senaste versionen av baslinjemallen blev tillgänglig.
 
-Om du vill visa mer information om de baslinjeversioner du använder väljer du en baslinjepanel för att öppna fönstret *Översikt* och väljer sedan **Versioner**. Intune visar information om versionerna av den baslinje som används av dina profiler. I informationen anges den senaste och aktuella baslinjeversionen. Du kan välja en version för att visa mer information om de profiler som använder den versionen.
+Om du vill visa mer information om de baslinjeversioner du använder väljer du en baslinjetyp som *MDM-säkerhetsbaslinje* för att öppna fönstret *Profiler* och väljer sedan **Versioner**. Intune visar information om versionerna av den baslinje som används av dina profiler. I informationen anges den senaste och aktuella baslinjeversionen. Du kan välja en version för att visa mer information om de profiler som använder den versionen.
 
 Du kan välja att [ändra versionen](#change-the-baseline-version-for-a-profile) för en baslinje som används med en specifik profil. När du byter version behöver du inte skapa någon ny baslinjeprofil för att använda den uppdaterade versionen. I stället kan du välja en baslinjeprofil och sedan använda det inbyggda alternativet för att ändra instansversionen för profilen till en ny.
 
