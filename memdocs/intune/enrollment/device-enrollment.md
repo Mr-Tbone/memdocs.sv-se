@@ -17,14 +17,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3ca95db3297a6ca251f91a79fda705aebb6d18d
-ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.openlocfilehash: e5d673c5688c4ab4f3219256412a098855af63ec
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86088470"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461887"
 ---
-# <a name="what-is-device-enrollment"></a>Vad är enhetsregistrering?
+# <a name="what-is-device-enrollment-in-intune"></a>Vad är enhetsregistrering i Intune?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Med Intune kan du hantera personalens enheter och appar, samt hur de kommer åt företagsdata. Enheterna måste först registreras i Intune-tjänsten innan du kan använda MDM-hanteringen. När en enhet registreras utfärdas ett MDM-certifikat till den. Certifikatet används för att kommunicera med Intune-tjänsten.
@@ -72,6 +72,8 @@ Som standard Som standard tillåts enheter för alla plattformar registreras i I
 |**Android Enterprise-arbetsprofil**|**Användarinitierat via företagsportalen**| Nej | Ja | Nej | [Mer information](android-work-profile-enroll.md)|
 
 
+&nbsp;
+
 | **Företag** | **Registreringsmetoder** | **Återställning krävs** | **Användartillhörighet** | **Låst** | **Information**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |**Administratör för Android-enhet**|**[DEM](#device-enrollment-manager) initierat via företagsportalen**| Nej | Nej | Nej |[Mer information](device-enrollment-manager-enroll.md)|
@@ -79,7 +81,7 @@ Som standard Som standard tillåts enheter för alla plattformar registreras i I
 |**Administratör för Android-enhet med Zebra Mobility Extensions**|**Användare eller [DEM](#device-enrollment-manager) initierat via företagsportalen**| Nej | Ja vid användarinitierad, nej vid [DEM](#device-enrollment-manager)-initierad | Nej | [Mer information](../configuration/android-zebra-mx-overview.md)|
 |**Android Enterprise-dedikerad**|**NFC, QR-kod, Zero Touch-token**| Ja | Nej | Kan konfigureras via princip | [Mer information](android-kiosk-enroll.md)|
 |**Fullständigt hanterad Android Enterprise**|**NFC, QR-kod, Zero Touch-token**| Ja | Ja | Kan konfigureras via princip | [Mer information](android-dedicated-devices-fully-managed-enroll.md)|
-
+|**Företagsägd Android Enterprise-enhet med arbetsprofil** | **NFC, QR-kod, Zero Touch-token** | Ja | Ja | Kan konfigureras via princip | [Mer information](android-corporate-owned-work-profile-enroll.md)|
 
 ## <a name="bring-your-own-device"></a>Bring Your Own Device
 BYOD (Bring Your Own Device) innefattar personligt ägda telefoner, surfplattor och datorer. Användarna installerar och kör appen Företagsportal för att registrera sina BYOD-enheter. Det här programmet låter användare komma åt företagsresurser som e-post.

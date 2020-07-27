@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/06/2020
+ms.date: 07/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: ac5b4685249ffa46be63e9ad55ca6067edec1b03
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 3ebca81f459f0e49345db08f992c288514a7331a
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022406"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461614"
 ---
 # <a name="attack-surface-reduction-policy-settings-for-endpoint-security-in-intune"></a>Inställningar för policyn Minskning av attackytan i slutpunktssäkerheten i Microsoft Intune
 
@@ -188,7 +188,6 @@ Plattformar och profiler som stöds:
 
   - **Inte konfigurerat** (*standard*) – Användare kan ignorera SmartScreen-varningar för filer och skadliga appar.
   - **Ja** – SmartScreen är aktiverat och användare kan inte kringgå varningar för filer eller skadliga appar.
-
 
 - **Aktivera Windows SmartScreen**  
   CSP: [SmartScreen/EnableSmartScreenInShell](https://go.microsoft.com/fwlink/?linkid=872784)
@@ -385,7 +384,65 @@ Plattformar och profiler som stöds:
 
   - **Inte konfigurerat** (*standard*) – Inställningen återgår till klientens standardvärde som är att söka igenom flyttbara enheter, men användaren kan inaktivera den här genomsökningen.
   - **Ja** – Under en fullständig genomsökning genomsöks flyttbara enheter (som USB-minnen).
-  
+
+- **Block direct memory access** (Blockera direkt minnesåtkomst)  
+  CSP: [DataProtection/AllowDirectMemoryAccess](https://go.microsoft.com/fwlink/?linkid=2067031)
+
+  Den här principinställningen tillämpas endast när BitLocker- eller enhetskryptering är aktiverat.
+
+  - **Ej konfigurerat** (*standard*)
+  - **Ja** – Blockera direkt minnesåtkomst (DMA) för alla underordnade PCI-portar med enhetsbyte vid drift tills en användare loggar in i Windows. När en användare har loggat in räknar Windows upp PCI-enheterna som är anslutna till PCI-portarna med hot plug-stöd. Varje gång användaren låser datorn blockeras DMA på PCI-portarna med hot plug-stöd utan underordnade enheter tills användaren loggar in igen. Enheter som räknades upp när datorn var upplåst fortsätter att fungera tills de kopplas från.
+
+- **Uppräkning av externa enheter som är inkompatibla med Kernel DMA-skydd**  
+  CSP: [DmaGuard/DeviceEnumerationPolicy](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
+
+  Den här principen kan ge ökad säkerhet mot externa DMA-kompatibla enheter. Det möjliggör större kontroll över uppräkning av externa DMA-kompatibla enheter som inte är kompatibla med minnesisolering och sandbox-miljö för DMA-mappning/-enhet.
+
+  Den här principen börjar bara gälla när Kernel DMA-skydd stöds och aktiveras av datorns inbyggda programvara. Kernel DMA-skydd är en plattformsfunktion som måste kunna hanteras av systemet vid tidpunkten för tillverkningen. Om du vill kontrollera om systemet har stöd för kernel DMA-skydd kontrollerar du fältet Kernel DMA-skydd på sammanfattningssidan i MSINFO32.exe.
+
+  - **Inte konfigurerat** – (*standard*)
+  - **Blockera alla**
+  - **Tillåt alla**
+
+- **Blockera Bluetooth-anslutningar**  
+  CSP: [Bluetooth/AllowDiscoverableMode](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowdiscoverablemode)
+
+  - **Ej konfigurerat** (*standard*)
+  - **Ja** – Blockera Bluetooth-anslutningar till och från enheten.
+
+- **Blockera Bluetooth-identifiering**  
+  CSP: [Bluetooth/AllowDiscoverableMode](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowdiscoverablemode)
+
+  - **Ej konfigurerat** (*standard*)
+  - **Ja** – Hindrar enheten från att identifieras av andra Bluetooth-aktiverade enheter.
+
+- **Blockera Bluetooth-förhandsparkoppling**  
+  CSP: [Bluetooth/AllowPrepairing](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowprepairing)
+
+  - **Ej konfigurerat** (*standard*)
+  - **Ja** – Hindrar specifika Bluetooth-enheter från att automatiskt parkopplas med värdenheten.
+
+- **Blockera Bluetooth-annonsering**  
+  CSP: [Bluetooth/AllowAdvertising](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowadvertising)
+
+  - **Ej konfigurerat** (*standard*)
+  - **Ja** – Hindrar enheten från att skicka ut Bluetooth-annonsering.  
+
+- **Blockera Bluetooth-anslutningar i närheten**  
+  CSP: [Bluetooth/AllowPromptedProximalConnections](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowpromptedproximalconnections) Blockera användare från att använda Snabbkoppling och andra närhetsbaserade scenarier
+
+  - **Ej konfigurerat** (*standard*)
+  - **Ja** – Hindrar enhetsanvändare från att använda Snabbkoppling och andra närhetsbaserade scenarier.  
+
+  [CSP:n Bluetooth/AllowPromptedProximalConnections](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-allowpromptedproximalconnections)
+
+- **Bluetooth-tillåtna tjänster**  
+  CSP: [Bluetooth/ServicesAllowedList](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#bluetooth-servicesallowedlist).  
+  [Användningsguiden för ServicesAllowedList](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bluetooth#servicesallowedlist-usage-guide) innehåller information om tjänstlistan
+
+  - **Lägg till** – Ange en lista över tillåtna Bluetooth-tjänster och -profiler som hexadecimala strängar, till exempel `{782AFCFC-7CAA-436C-8BF0-78CD0FFBD4AF}`.
+  - **Importera** – Importera en .csv-fil som innehåller en lista över Bluetooth-tjänster och -profiler, som hexadecimala strängar, till exempel `{782AFCFC-7CAA-436C-8BF0-78CD0FFBD4AF}`
+
 ## <a name="exploit-protection-profile"></a>Profilen Sårbarhetsskydd
 
 ### <a name="exploit-protection"></a>Sårbarhetsskydd

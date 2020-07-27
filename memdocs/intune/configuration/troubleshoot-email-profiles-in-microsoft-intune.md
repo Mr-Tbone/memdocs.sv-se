@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 07/20/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -18,36 +18,48 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d7e3b5b9a169baf336b0d4e7d8d66b06af38061
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 717ad28625b5eac97c26bcd09a21ef34250a7d39
+ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79361425"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565724"
 ---
 # <a name="common-issues-and-resolutions-with-email-profiles-in-microsoft-intune"></a>Vanliga problem och lösningar med e-postprofiler i Microsoft Intune
 
 Se några vanliga problem med e-postprofiler samt hur du felsöker och löser dem.
 
-## <a name="what-you-need-to-know"></a>Vad du behöver veta
+## <a name="users-are-repeatedly-prompted-to-enter-their-password"></a>Användare uppmanas att ange sitt lösenord upprepade gånger
 
-- E-postprofiler distribueras för den användare som har registrerat enheten. För att konfigurera e-postprofilen använder Intune egenskaperna Azure Active Directory (AD) i användarens e-postprofil under registreringen. Det kan vara en lämplig resurs att [lägga till e-postinställningar till enheter](email-settings-configure.md).
-- För Android Enterprise, distribuera Gmail eller Nine for Work med hjälp av Google Play Butik. [Lägg till hanterade Google Play-appar](../apps/apps-add-android-for-work.md) anger stegen.
-- Microsoft Outlook för iOS/iPad och Android stöder inte e-postprofiler. Distribuera i stället en konfigurationsprincip för appar. Mer information finns i [Konfigurationsinställning för Outlook](../apps/app-configuration-policies-outlook.md).
-- E-postprofiler som är riktade till enhetsgrupper (inte användargrupper) kan inte levereras till enheten. När enheten har en primär användare bör enhetsmålen fungera. Om e-postprofilen innehåller användarcertifikat, måste du vara säker på att rikta in användargrupper.
-- Användare kan uppmanas att ange sitt lösenord för e-postprofilen upprepade gånger. I det här scenariot markerar du alla certifikat som refereras i e-postprofilen. Om något av certifikaten inte är riktat mot en användare, försöker Intune att distribuera e-postprofilen igen.
+Användare kan uppmanas att ange sitt lösenord för e-postprofilen upprepade gånger. Om certifikat används för att autentisera och auktorisera användaren kontrollerar du tilldelningarna för alla certifikatprofiler. Certifikatprofilerna tilldelas vanligtvis till användargrupper, inte enhetsgrupper. Om något av certifikatprofilerna inte är riktad mot en användare försöker Intune att distribuera e-postprofilen igen.
+
+Om e-postprofilkedjan är tilldelad till användargrupper måste du även vara säker på att dina certifikatprofiler har tilldelats till användargrupper.
+
+## <a name="profiles-deployed-to-device-groups-show-errors-and-latency"></a>Profiler som distribueras till enhetsgrupper visar fel och svarstid
+
+E-postprofiler tilldelas vanligtvis till användargrupper. Det kan finnas fall när de är tilldelade till enhetsgrupper.
+
+- Om du till exempel vill distribuera en certifikatbaserad e-postprofil till endast Surface-enheter, inte stationära datorer. I det här scenariot kan enhetsgrupper passa bra. Observera att enheterna kan visas som icke-kompatibla, kan returnera fel och inte få dina e-postprofiler omedelbart.
+
+  I det här exemplet skapar du e-postprofilen och tilldelar profilen till enhetsgrupper. Enheten startas om och det uppstår en fördröjning innan användaren loggar in. Under den här fördröjningen distribueras din PKCS-certifikatprofil, som är tilldelad till användargrupper. Eftersom det inte finns någon användare än gör PKCS-certifikatprofilen att enheten inte är kompatibel. Loggboken kan också visa fel på enheten.
+
+  För att det ska bli kompatibelt loggar användaren in på enheten och synkroniserar med Intune för att ta emot principerna. Användare kan omsynkronisera manuellt eller vänta på nästa synkronisering.
+
+- Du använder exempelvis dynamiska grupper. Om Azure AD inte uppdaterar de dynamiska grupperna omedelbart kan dessa enheter visas som inkompatibla.
+
+I sådana scenarier bestämmer du om det är viktigast att använda enhetsgrupper eller viktigast att visa alla principer som kompatibla.
 
 ## <a name="device-already-has-an-email-profile-installed"></a>Enheten har redan en e-postprofil installerad
 
 Om användare skapar en e-postprofil innan de registreras i Intune eller Office 365 MDM, kanske e-postprofilen som distribueras av Intune inte fungerar som förväntat:
 
-- **iOS/iPadOS**: Intune identifierar en befintlig, duplicerad e-postprofil baserat på värdnamn och e-postadress. Den användarskapade e-postprofilen blockerar distributionen av den Intune-skapade profilen. Det här är ett vanligt problem eftersom iOS/iPadOS-användare vanligtvis skapar en e-postprofil först och sedan registrerar sig. Företagsportalappen visar att användaren inte är kompatibel och kan uppmana användaren att ta bort e-postprofilen.
+- **iOS/iPadOS**: Intune identifierar en befintlig, duplicerad e-postprofil baserat på värdnamn och e-postadress. Den användarskapade e-postprofilen blockerar distributionen av den Intune-skapade profilen. Det här scenariot är ett vanligt problem eftersom iOS/iPadOS-användare vanligtvis skapar en e-postprofil först och sedan registrerar sig. Företagsportalappen visar att användaren inte är kompatibel och kan uppmana användaren att ta bort e-postprofilen.
 
   Användaren bör ta bort sin e-postprofil så att Intune-profilen kan distribueras. Förhindra det här problemet genom att be dina användare att registrera sig så att Intune kan distribuera e-postprofilen. Användarna kan därefter skapa sin e-postprofil.
 
 - **Windows**: Intune identifierar en befintlig, duplicerad e-postprofil baserat på värdnamn och e-postadress. Intune skriver över den befintliga e-postprofilen som skapats av användaren.
 
-- **Samsung KNOX Standard**: Intune identifierar ett duplicerat e-postkonto baserat på e-postadressen och skriver över det med Intune-profilen. Om användaren konfigurerar kontot skrivs det över igen av Intune-profilen. Detta kan orsaka förvirring för användaren vars kontokonfiguration skrivs över.
+- **Samsung KNOX Standard**: Intune identifierar ett duplicerat e-postkonto baserat på e-postadressen och skriver över det med Intune-profilen. Om användaren konfigurerar kontot skrivs det över igen av Intune-profilen. Detta beteende kan orsaka förvirring för användaren vars kontokonfiguration skrivs över.
 
 Samsung KNOX använder inte värdnamn för att identifiera profilen. Vi rekommenderar att du inte skapar flera e-postprofiler som ska distribueras till samma e-postadress på olika värdar, eftersom de kommer att skriva över varandra.
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b80527921172201dc86c5f3241e9978525afa083
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 665e06e6aca0a4ba4f71147325eb587b1b8b4d40
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83984817"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461546"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Tilldela appar till grupper med Microsoft Intune
 
@@ -36,16 +36,16 @@ När du har [lagt till en app](apps-add.md) till Microsoft Intune kan du tilldel
 
 I följande tabell visas de olika alternativen för att tilldela appar till användare och enheter:
 
-|   | Enheter registrerade med Intune | Enheter ej registrerade med Intune |
+| Alternativ  | Enheter registrerade med Intune | Enheter ej registrerade med Intune |
 |-------------------------------------------------------------------------------------------|------------------------------|----------------------------------|
 | Tilldela till användare | Ja | Ja |
-| Tilldela till enheter | Ja | Nej |
+| Tilldela till enheter | Ja | Inga |
 | Tilldela omslutna appar eller appar med Intune SDK (för skydd av apprinciper) | Ja | Ja |
 | Tilldela appar som är tillgängliga | Ja | Ja |
-| Tilldela appar vid behov | Ja | Nej |
-| Avinstallera appar | Ja | Nej |
-| Ta emot appuppdateringar från Intune | Ja | Nej |
-| Slutanvändare installerar tillgängliga appar från företagsportalappen | Ja | Nej |
+| Tilldela appar vid behov | Ja | Inga |
+| Avinstallera appar | Ja | Inga |
+| Ta emot appuppdateringar från Intune | Ja | Inga |
+| Slutanvändare installerar tillgängliga appar från företagsportalappen | Ja | Inga |
 | Slutanvändare installerar tillgängliga appar från den webbaserade företagsportal | Ja | Ja |
 
 > [!NOTE]
@@ -71,7 +71,7 @@ I följande tabell visas de olika alternativen för att tilldela appar till anv�
      > - Om du vill konfigurera vad som händer i hanterade appar när enheter inte längre hanteras kan du välja önskad inställning under **Avinstallera vid borttagning av enhet**. Mer information finns i [Avinstallationsinställningar för iOS/iPadOS-hanterade appar](apps-deploy.md#app-uninstall-setting-for-ios-managed-apps).
      > - Om du har skapat en iOS/iPadOS VPN-profil som innehåller VPN-inställningar per app, kan du välja VPN-profilen under **VPN**. VPN-anslutningen öppnas när appen körs. Mer information finns i [VPN-inställningar för iOS/iPadOS-enheter](../configuration/vpn-settings-ios.md).
      >
-     > **Endast för Android-appar**: Om du distribuerar en Android-app som **Tillgänglig med eller utan registrering**, blir den rapporterade statusen endast tillgänglig på registrerade enheter.
+     > **Endast för Android-appar**: Om du distribuerar en Android-app som **Tillgänglig med eller utan registrering** blir den rapporterade statusen endast tillgänglig på registrerade enheter.
      >
      > För **Tillgänglig för registrerade enheter**: Appen visas bara som tillgänglig om användaren som är inloggad på företagsportalen är samma primära användare som registrerade enheten och om appen är tillämplig på enheten.
 
@@ -122,7 +122,7 @@ Om du har Android-enheter i ett distributionsscenario med en appskyddsprincip ut
 
 Anvisningar för att tilldela en hanterad Google Play-app till ohanterade enheter:
 
-1. Anslut Intune-klientorganisationen till hanterade Google Play. Om du redan har gjort detta för att kunna hantera arbetsprofilen för Android Enterprise, dedikerade eller fullständigt hanterade enheter, behöver du inte göra det igen.
+1. Anslut Intune-klientorganisationen till hanterade Google Play. Om du redan har gjort detta för att kunna hantera arbetsprofilen för Android Enterprise, dedikerade eller fullständigt hanterade enheter eller företagsägda arbetsprofilenheter behöver du inte göra det igen.
 2. Lägg till appar från hanterad Google Play i Intune-konsolen.
 3. Rikta hanterade Google Play-appar som **Tillgänglig med eller utan registrering** till önskad användargrupp. Appriktningarna **Obligatorisk** och **Avinstallera** stöds inte för icke-registrerade enheter.
 4. Tilldela en appskyddsprincip till användargruppen.

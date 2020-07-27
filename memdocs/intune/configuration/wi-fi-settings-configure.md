@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/19/2020
+ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca2a5ddd3d2b4c0aa93c7c955d0d688944ee8f95
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 25b07dcbb76f6d4a8aae964d0123a880d179784e
+ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83985513"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871941"
 ---
 # <a name="add-and-use-wi-fi-settings-on-your-devices-in-microsoft-intune"></a>Lägga till och använda Wi-Fi-inställningar på dina enheter i Microsoft Intune
 
@@ -68,7 +68,7 @@ Wi-Fi-profiler stöder följande enhetsplattformar:
 
       > [!TIP]
       >
-      > - För **Android Enterprise**-enheter som körs i en dedikerad enhet (helskärmsläge) kan du välja **Endast enhetsägare** > **Wi-Fi**.
+      > - För **Android Enterprise**-enheter som körs som en dedikerad enhet (kiosk) väljer du **Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil** > **Wi-Fi**.
       > - För **Windows 8.1 och senare** kan du välja **Wi-Fi-import**. Med det alternativet kan du importera en XML-fil med Wi-Fi-inställningarna, som du tidigare har exporterat från en annan enhet.
 
 4. Välj **Skapa**.
@@ -101,9 +101,8 @@ Wi-Fi-profiler stöder följande enhetsplattformar:
 > [!TIP]
 > Om du använder certifikatbaserad autentisering för din Wi-Fi-profil distribuerar du Wi-Fi-profilen, certifikatprofilen och profilen för betrodd rot till samma grupper för att säkerställa att varje enhet kan verifiera din certifikatutfärdare.  Mer information finns i [Konfigurera certifikat med Microsoft Intune](../protect/certificates-configure.md).
 
-
 ## <a name="next-steps"></a>Nästa steg
 
-Profilen har skapats, men den gör inte något än. Därefter [tilldelar du profilen](device-profile-assign.md) och [övervakar dess status.](device-profile-monitor.md)
+Profilen skapas, men den kanske inte gör någonting. Därefter [tilldelar du profilen](device-profile-assign.md) och [övervakar dess status.](device-profile-monitor.md)
 
 [Problem med Wi-Fi-profiler i Intune](troubleshoot-wi-fi-profiles.md).

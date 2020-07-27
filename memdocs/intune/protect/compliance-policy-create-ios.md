@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/01/2020
+ms.date: 07/20/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 536ad36120a8fb5dc4ad0d16b8f265e56260d461
-ms.sourcegitcommit: 56bb5419c41c2e150ffed0564350123135ea4592
+ms.openlocfilehash: e57cd425ca89fa875b89c73a9eba30cecb7516d7
+ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729265"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871924"
 ---
 # <a name="iosipados-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>iOS-/iPadOS-inställningar för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -149,7 +149,7 @@ Mer information om e-postprofiler finns i [Använda e-postprofiler med Intune f�
   Du kan begränsa appar genom att lägga till deras samlings-ID:n i principen. Om appen är installerad på en enhet markeras enheten som inkompatibel.
 
   - **Appnamn** – Ange ett användarvänligt namn som hjälper dig att identifiera samlings-ID:t.
-  - **Appsamlings-ID** – Ange det unika samlings-ID som tilldelats av appleverantören. Information om hur du hittar paket-ID:t finns i [Hitta paket-ID:t för en iOS-/iPadOS-app](https://support.microsoft.com/help/4294074/how-to-find-the-bundle-id-for-an-ios-app) (en annan Microsoft-webbplats öppnas).  
+  - **Appsamlings-ID** – Ange det unika samlings-ID som tilldelats av appleverantören. Om du vill hitta paket-ID:t kan du läsa [Bundle IDs for native iOS and iPadOS apps](https://support.apple.com/guide/mdm/native-ios-and-ipados-app-bundle-ids-mdm90f60c1ce/web) (Samlings-ID för inbyggda iOS- och iPad-appar) på Support.apple.com, eller kontakta appens programvaruleverantör.
 
 ## <a name="next-steps"></a>Nästa steg
 

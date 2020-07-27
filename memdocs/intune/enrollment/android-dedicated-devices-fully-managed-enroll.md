@@ -1,7 +1,7 @@
 ---
-title: Registrera dedikerade Android Enterprise-enheter eller fullständigt hanterade enheter i Intune
+title: Registrera dedikerade eller fullständigt hanterade Android Enterprise-enheter eller företagsägda arbetsprofilsenheter i Intune
 titleSuffix: Microsoft Intune
-description: Lär dig hur du registrerar dedikerade Android Enterprise-enheter eller fullständigt hanterade enheter i Intune.
+description: Lär dig att registrera dedikerade eller fullständigt hanterade Android Enterprise-enheter eller företagsägda arbetsprofilsenheter i Intune.
 keywords: ''
 author: ErikjeMS
 ms.author: erikje
@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93cd7c7e852e3d8d8fe576cec66ce7a7020f06b7
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 858d813d3df2b020a869e1f18327d35e68bde7e0
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990212"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461733"
 ---
-# <a name="enroll-your-android-enterprise-dedicated-devices-or-fully-managed-devices"></a>Registrera dina dedikerade Android Enterprise-enheter eller fullständigt hanterade enheter
+# <a name="enroll-your-android-enterprise-dedicated-fully-managed-or-corporate-owned-with-work-profile-devices"></a>Registrera dina dedikerade eller fullständigt hanterade Android Enterprise-enheter eller företagsägda med arbetsprofilsenheter
 
-När du har konfigurerat dina [dedikerade Android Enterprise-enheter](android-kiosk-enroll.md) eller [fullständigt hanterade enheter](android-fully-managed-enroll.md) i Intune kan du registrera enheterna. Intune-registrering för både dedikerade enheter och fullständigt hanterade enheter börjar med en fabriksåterställning. Hur du registrerar dina Android Enterprise-enheter beror på operativsystemet.
+När du har konfigurerat dina [dedikerade Android Enterprise-enheter](android-kiosk-enroll.md) eller [fullständigt hanterade enheter](android-fully-managed-enroll.md) eller [företagsägda med arbetsprofilenheter](android-corporate-owned-work-profile-enroll.md) i Intune kan du registrera enheterna. Intune-registrering för både dedikerade enheter och fullständigt hanterade enheter börjar med en fabriksåterställning. Hur du registrerar dina Android Enterprise-enheter beror på operativsystemet.
 
 | Registreringsmetod | Lägsta Android OS-version för dedikerade och fullständigt hanterade enheter |
 | ----- | ----- |

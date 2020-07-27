@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/15/2020
+ms.date: 07/20/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: bfefdee7e949faf9e484ea20e7fc203ee72a9784
-ms.sourcegitcommit: 97f150f8ba8be8746aa32ebc9b909bb47e22121c
+ms.openlocfilehash: b0d0bbeb174d8f90d47ea6242ce6bd4be2dcfac6
+ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84879662"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86491175"
 ---
 # <a name="antivirus-policy-for-endpoint-security-in-intune"></a>Antivirusprincip för slutpunktssäkerhet i Intune
 
@@ -40,8 +40,7 @@ I antivirusprinciperna finns samma inställningar som i *Endpoint Protection* el
   - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Microsoft Defender ATP på enheten. Se. [Microsoft Defender ATP för macOS](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) (i dokumentationen för Microsoft Defender ATP)
 
 - **Windows 10 och senare**
-  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Microsoft Defender ATP på enheten. Läs mer i [Microsoft Defender ATP for Windows](../protect/advanced-threat-protection.md) (Använda Microsoft Defender ATP för Windows) i Intune-dokumentationen.
-  - Windows-säkerhetsappen är installerad på alla enheter som kör Windows 10, och inga ytterligare krav finns.
+  - Inga ytterligare krav finns. 
 
 ## <a name="antivirus-profiles"></a>Antivirusprofiler
 

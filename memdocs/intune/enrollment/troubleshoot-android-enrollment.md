@@ -16,12 +16,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcc524a69d0fb41da84a2e882b81a205fe7192cc
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b51ed6653dff5b7d0aeef40892e16e2826f30204
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79363336"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461257"
 ---
 # <a name="troubleshoot-android-enterprise-device-problems-in-microsoft-intune"></a>Felsöka problem med Android Enterprise-enheter i Microsoft Intune
 
@@ -76,6 +76,8 @@ Samsung började framtvinga denna begränsning på enheter med Android 8.0+. Mic
 
 ### <a name="wipe-factory-reset-option-isnt-available-for-work-profile-enrolled-device"></a>Alternativet Rensa (fabriksåterställning) är inte tillgängligt för arbetsprofilsregistrerad enhet
 Det här beteendet är förväntat. I scenariot för arbetsprofil har MDM-leverantören inte full kontroll över enheten. Det enda tillgängliga alternativet är Dra tillbaka (ta bort företagsdata), som tar bort hela arbetsprofilen och allt dess innehåll.
+
+Rensning stöds för [Företagsägd Android Enterprise med arbetsprofilenheter](android-corporate-owned-work-profile-enroll.md).
 
 ### <a name="is-device-passcode-reset-supported"></a>Stöds återställning av enhetens lösenord?
 För arbetsprofilsregistrerade enheter kan du endast återställa arbetsprofilens lösenord på enheter med Android 8.0 eller senare när:

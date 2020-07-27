@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a1c47a157e4ee5bd4337d840515a340dcf1fd9c
-ms.sourcegitcommit: d647eefa23c8849f49584442df568284d51d7525
+ms.openlocfilehash: 8073cb1dbe872d9c7fd1ad05235707be4b969519
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86195726"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461427"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>Nyheter i Microsoft Intune – föregående månader
 
@@ -801,7 +801,7 @@ Vi har lagt till följande support för fullständigt hanterade Android-enheter:
     - länka SCEP-certifikat till DO VPN-profiler för autentisering
 - Systemappar stöds på Android Enterprise-enheter. I Intune lägger du till en Android Enterprise-systemapp genom att välja **Klientappar** > **Appar** > **Lägg till**. I listan **Apptyp** väljer du **Android Enterprise-systemapp**. Du hittar mer information i [Lägg till Android Enterprise-systemappar i Microsoft Intune](../apps/apps-ae-system.md). <!-- 4062195 -->
 - I **Enhetsefterlevnad** > **Android Enterprise** > **Enhetsägare** kan du skapa en efterlevnadsprincip som ställer in Google SafetyNet-attesteringsnivån.   <!-- 4631425 -->
-- På fullständigt hanterade Android Enterprise-enheter stöds providers för skydd mot mobilhot. I **Enhetsefterlevnad** > **Android Enterprise** > **Enhetsägare** kan du välja en acceptabel hotnivå. <!-- 4631440 --> [Android Enterprise-inställningar för att markera enheter som kompatibla eller icke-kompatibla med Intune](../protect/compliance-policy-create-android-for-work.md#device-owner) listar de aktuella inställningarna.
+- På fullständigt hanterade Android Enterprise-enheter stöds providers för skydd mot mobilhot. I **Enhetsefterlevnad** > **Android Enterprise** > **Enhetsägare** kan du välja en acceptabel hotnivå. <!-- 4631440 --> [Android Enterprise-inställningar för att markera enheter som kompatibla eller icke-kompatibla med Intune](../protect/compliance-policy-create-android-for-work.md) listar de aktuella inställningarna.
 - På fullständigt hanterade Android Enterprise-enheter kan Microsoft Launcher-appen nu konfigureras via appkonfigurationsprinciper för att tillåta en standardiserad slutanvändarupplevelse på den fullständigt hanterade enheten. Appen Microsoft Launcher kan användas till att anpassa Android-enheten. Med hjälp av appen tillsammans med ett Microsoft-konto eller ett arbets-/skolkonto kan du komma åt din kalender, dina dokument och senaste aktiviteter i det personliga flödet. <!-- 5334044 -->
 
 Med den här uppdateringen är Intune-stödet för Android Enterprise fullständigt hanterad nu allmänt tillgängligt.
@@ -833,7 +833,7 @@ Använd Intune Endpoint Protection-inställningar för att konfigurera [Klientba
 Den här inställningen initierar en klientbaserad uppdatering av återställningslösenord efter återställning av en operativsystemenhet (med bootmgr eller WinRE) och upplåsning av återställningslösenord på en fast dataenhet. Den är inställningen uppdaterar det specifika återställningslösenordet som har använts och andra oanvända lösenord på volymen förblir oförändrade. Mer information finns i BitLocker CSP-dokumentationen för [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp).
 
 #### <a name="tamper-protection-for-windows-defender-antivirus---4705448----------"></a>Manipulationsskydd för Windows Defender Antivirus<!-- 4705448        -->
-Använd Intune för att hantera *Manipulationsskydd* för Windows Defender Antivirus. Du hittar [inställningen för Manipulationsskydd](../protect/endpoint-protection-windows-10.md#microsoft-defender-security-center) i Microsoft Defender Säkerhetscenter-gruppen när du använder enhetskonfigurationsprofiler för Windows 10-slutpunktsskydd. Du kan ställa in manipulationsskydd på *Aktiverad* för att aktivera begränsningar för manipulationsskydd, *Inaktiverad* för att stänga av dem eller *Inte konfigurerad* för att lämna en enhetskonfiguration på plats.  
+Använd Intune för att hantera *Manipulationsskydd* för Windows Defender Antivirus. Du hittar [inställningen för Manipulationsskydd](../protect/endpoint-protection-windows-10.md#microsoft-defender-security-center) i Microsoft Defender Säkerhetscenter-gruppen när du använder enhetskonfigurationsprofiler för Windows 10-slutpunktsskydd. Du kan ställa in manipulationsskydd på **Aktiverad** för att aktivera begränsningar för manipulationsskydd, **Inaktiverad** för att stänga av dem eller **Inte konfigurerad** för att lämna en enhetskonfiguration på plats.  
 
 Mer information om Manipulationsskydd finns i [Prevent security settings changes with tamper protection](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/prevent-changes-to-security-settings-with-tamper-protection) (Förhindara ändringar av säkerhetsinställningar med manipulationsskydd) i Windows-dokumentationen.
 
@@ -1603,7 +1603,7 @@ Den här funktionen har försenats och kommer i en framtida version.
 När V1.0 introducerades i 1808 skiljde den sig från beta-API:et på några betydande sätt. I 1903 återspeglas ändringarna tillbaka till beta-API-versionen. Om du har viktiga rapporter som använder beta-API-versionen rekommenderar vi starkt att du växlar de rapporterna till V1.0 för att undvika icke-bakåtkompatibla ändringar. Mer information finns i [ändringsloggen för Intune Data Warehouse API](../developer/reports-changelog.md#1903-part-2).
 
 #### <a name="monitor-security-baseline-status-public-preview----3082047---"></a>Övervaka status för säkerhetsbaslinje (offentlig förhandsversion) <!-- 3082047 --> 
-Vi har lagt till en [per kategori-vy](../protect/security-baselines-monitor.md#per-category-view) i övervakningen av säkerhetsbaslinjer. (Säkerhetsbaslinjer är fortfarande i förhandsversion). Per kategori-vyn visar varje kategori från baslinjen tillsammans med procentandelen enheter som hamnar i varje statusgrupp för respektive kategori. Nu kan du se hur många enheter som inte matchar de enskilda kategorierna, är felkonfigurerade eller inte kan användas.
+Vi har lagt till en [per kategori-vy](../protect/security-baselines-monitor.md) i övervakningen av säkerhetsbaslinjer. (Säkerhetsbaslinjer är fortfarande i förhandsversion). Per kategori-vyn visar varje kategori från baslinjen tillsammans med procentandelen enheter som hamnar i varje statusgrupp för respektive kategori. Nu kan du se hur många enheter som inte matchar de enskilda kategorierna, är felkonfigurerade eller inte kan användas.
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="role-based-access-control"></a>Rollbaserad åtkomstkontroll
@@ -1623,7 +1623,7 @@ Du kan nu distribuera Microsoft Visio Pro för Office 365 och skrivbordsklienten
 **Microsoft Visio Pro för Office 365** kommer nu att kallas **Microsoft Visio Online, abonnemang 2**.  Mer information om Microsoft Visio finns i [Visio Online, abonnemang 2](https://products.office.com/visio/visio-online-plan-2). Mer information om Office 365-appar för Windows 10-enheter finns i [Tilldela Office 365-appar till Windows 10-enheter med Microsoft Intune](../apps/apps-add-office365.md).
 
 #### <a name="intune-app-protection-policy-app-character-limit-setting---3291302----"></a>Inställning för teckengräns för Intune-appskyddsprincip (APP)<!-- 3291302  -->
-Intune-administratörer kan ange ett undantag till principinställningen **Begränsa klipp ut, kopiera och klistra in med andra appar** för Intune APP.  Som administratör kan du ange det antal tecken som kan klippas ut eller kopieras från en hanterad app. Den här inställningen tillåter delning av det angivna antalet tecken till valfri app oavsett inställningen ”Begränsa klipp ut, kopiera och klistra in med andra appar”. Observera att versionen av Intune-företagsportalappen för Android kräver version 5.0.4364.0 eller senare. Mer information finns i [iOS-dataskydd](../apps/app-protection-policy-settings-ios.md#data-protection), [Android-dataskydd](../apps/app-protection-policy-settings-android.md#data-protection) och [Granska loggarna för klientappskydd](../apps/app-protection-policy-settings-log.md#app-protection-policy-settings).
+Intune-administratörer kan ange ett undantag till principinställningen **Begränsa klipp ut, kopiera och klistra in med andra appar** för Intune APP.  Som administratör kan du ange det antal tecken som kan klippas ut eller kopieras från en hanterad app. Den här inställningen tillåter delning av det angivna antalet tecken till valfri app oavsett inställningen ”Begränsa klipp ut, kopiera och klistra in med andra appar”. Observera att versionen av Intune-företagsportalappen för Android kräver version 5.0.4364.0 eller senare. Mer information finns i [iOS-dataskydd](../apps/app-protection-policy-settings-ios.md#data-protection), [Android-dataskydd](../apps/app-protection-policy-settings-android.md#data-protection) och [Granska loggarna för klientappskydd](../apps/app-protection-policy-settings-log.md).
 
 #### <a name="office-deployment-tool-odt-xml-for-office-proplus-deployment---3192477-----"></a>ODT-XML (Distributionsverktyg för Office) för Office ProPlus-distribution<!-- 3192477   -->
 Du kommer att kunna tillhandahålla ODT-XML (Distributionsverktyg för Office) när du skapar en instans av Office Pro Plus i Intune-administratörskonsolen. Detta ger större anpassningsbarhet om de befintliga alternativen för användargränssnittet i Intune inte uppfyller dina behov. Mer information finns i [Tilldela Office 365-appar till Windows 10-enheter med Microsoft Intune](../apps/apps-add-office365.md) och [Konfigurationsalternativ för distributionsverktyget för Office](https://docs.microsoft.com/DeployOffice/configuration-options-for-the-office-2016-deployment-tool).
@@ -3897,7 +3897,7 @@ Du kan definiera företagets molnresurser, IP-adressintervall och interna proxys
 #### <a name="two-additional-settings-for-windows-defender-antivirus---1338409---"></a>Ytterligare två inställningar för Windows Defender Antivirus<!-- 1338409 -->  
 **Filblockeringsnivå**
 
-| | |
+| Inställningen | Information |
 |---|---|
 | Inte konfigurerat | **Ej konfigurerad** använder standardnivån för Windows Defender Antivirus-blockering och ger ett starkt skydd utan att öka risken för att upptäcka legitima filer. |
 | Hög | **Hög** tillämpar en hög skyddsnivå.
@@ -3909,7 +3909,7 @@ Vi rekommenderar att du ställer in filblockeringsnivån på standardläget **Ej
 
 **Tidsgränstillägg för filgenomsökning av molnet**  
 
-| | |
+| Inställningen | Information |
 |--|--|
 | Antal sekunder (0–50) | Ange den längsta tid som Windows Defender Antivirus ska blockera en fil under väntan på ett resultat från molnet. Standardvärdet är 10 sekunder: ytterligare tid som anges här (upp till 50 sekunder) läggs på för de 10 sekunderna. I de flesta fall går genomsökningen mycket snabbare än maxvärdet. En utökning av tiden gör att molnet kan undersöka misstänkta filer noggrant. Vi rekommenderar att du aktiverar den här inställningen och anger minst 20 ytterligare sekunder. |
 

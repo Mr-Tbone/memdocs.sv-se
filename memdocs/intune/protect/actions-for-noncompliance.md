@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 330dd566599d6bdb1fa667d8797878ea8c92f098
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 9e5786289e54071d54c11fbb08790e95e54a9377
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093721"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461869"
 ---
 # <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
@@ -58,7 +58,7 @@ När e-postmeddelandet skickas lägger Intune till information om den inkompatib
   Följande plattformar stöder den här åtgärden:
   - Android:
     - Android-enhetsadministratör
-    - Ägare av Android Enterprise-enhet
+    - Fullständigt hanterad, dedikerad och företagsägd arbetsprofil för Android
     - Android Enterprise-arbetsprofil
     - Android Enterprise-kioskenheter
   - iOS/iPadOS

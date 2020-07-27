@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/03/2020
+ms.date: 07/21/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35cf4b3afb766d8729d3438d2d8c61e1d79f4791
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: ebf6a71a4d462e1025b6c44557a9513887488673
+ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531748"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891538"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
@@ -40,15 +40,15 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
    - **Plattform**: Välj plattform för dina enheter.
    - **Profil**: Välj **SCEP-certifikat**
 
-     För **Android Enterprise**-plattformen är *Profiltyp* indelad i två kategorier: *Endast enhetens ägare* och *Endast arbetsprofil*. Se till att välja rätt SCEP-certifikatprofil för de enheter du hanterar.  
+     För **Android Enterprise**-plattformen är *Profiltyp* indelad i två kategorier: *Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil* och *Endast arbetsprofil*. Se till att välja rätt SCEP-certifikatprofil för de enheter du hanterar.  
 
-     SCEP-certifikatprofiler för profilen *Endast enhetens ägare* har följande begränsningar:
+     SCEP-certifikatprofiler för *Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil* har följande begränsningar:
 
       1. Under Övervakning är inte certifikatsrapportering tillgängligt för SCEP-certifikatprofiler för enhetsägare.
 
       2. Du kan inte använda Intune för att återkalla certifikat som etablerades av SCEP-certifikatprofiler för enhetsägare. Du kan hantera återkallning via en extern process eller direkt med certifikatutfärdaren.
 
-      3. För dedikerade Android Enterprise-enheter stöds SCEP-certifikatprofiler endast för Wi-Fi-nätverksanslutning och -autentisering.  SCEP-certifikatprofiler på dedikerade Android Enterprise-enheter stöds inte för VPN- eller appautentisering.
+      3. För dedikerade Android Enterprise-enheter stöds SCEP-certifikatprofiler endast för Wi-Fi-nätverksanslutning, VPN och autentisering. SCEP-certifikatprofiler på dedikerade Android Enterprise-enheter stöds inte för appautentisering.
 
 4. Välj **Skapa**.
 
@@ -71,6 +71,9 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
        Använd **Enhet** för scenarier såsom användarlösa enheter, till exempel kiosker, eller för Windows-enheter. På Windows-enheter placeras certifikatet i den lokala datorns certifikatarkiv.
 
+     > [!NOTE]
+     > I macOS placeras certifikat som du etablerar med SCEP alltid i enhetens systemnyckelring (systemarkiv).
+ 
    - **Ämnesnamnets format**:
 
      Välj hur ämnesnamnet i certifikatbegäran ska skapas automatiskt av Intune. Alternativen för ämnesnamnets format beror på den certifikattyp du väljer, antingen **Användare** eller **Enhet**.
@@ -112,7 +115,7 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
          Det exemplet omfattar ett format för ämnesnamnet som använder variablerna CN och E samt strängar för värdena för organisationsenhet, organisation, plats, tillstånd och land/region. [CertStrToName-funktionen](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) beskriver den här funktionen och dess strängar som stöds.
          
-         \* För profiler av typen Endast Android-enhetens ägare fungerar inte inställningen **CN={{UserPrincipalName}}** . Profiler av typen Endast Android-enhetsägare kan användas för enheter utan användare, och därför kan den här profilen inte hämta användarens huvudnamn för användaren. Om du verkligen behöver det här alternativet för enheter med användare kan du använda en lösning som följande: **CN={{UserName}}\@contoso.com** Anger användarnamnet och den domän som du lade till manuellt, till exempel janedoe@contoso.com
+         \* För fullständigt hanterade och dedikerade Android-enheter och företagsägda arbetsprofiler fungerar inte inställningen **CN = {{UserPrincipalName}}** . Fullständigt hanterade och dedikerade Android-enheter och företagsägda arbetsprofiler kan användas för enheter utan användare, och därför kan den här profilen inte hämta användarens huvudnamn för användaren. Om du verkligen behöver det här alternativet för enheter med användare kan du använda en lösning som följande: **CN={{UserName}}\@contoso.com** Anger användarnamnet och den domän som du lade till manuellt, till exempel janedoe@contoso.com
 
       - **Certifikattypen Enhet**
 

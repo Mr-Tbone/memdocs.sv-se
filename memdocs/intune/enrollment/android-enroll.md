@@ -18,11 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17f1d045d89df3ad5bb37d85957e872ec6692b7e
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: d8506661c49fa4f9c8481a3caa96883c91e6d8bb
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353504"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461767"
 ---
 # <a name="enroll-android-devices"></a>Registrera Android-enheter
 
@@ -32,7 +33,8 @@ Du kan hantera registrera Android-enheter som Intune-administratör på följand
 - Android Enterprise (erbjuder en uppsättning registreringsalternativ som ger användarna de mest aktuella och säkra funktionerna):
     - [**Android Enterprise-arbetsprofil**](android-work-profile-enroll.md): För personliga enheter som har åtkomst till företagets data. Administratörer kan hantera arbetskonton, appar och data. Personliga data på enheten lagras separat från arbetsdata och administratörer har ingen kontroll över personliga inställningar eller data. 
     - [**Android Enterprise-dedikerad**](android-kiosk-enroll.md): För företagsägda enheter med ett enda användningsområde, till exempel digital signering, biljettutskrift eller lagerhantering. Administratörer låser användningen av enheten för en begränsad uppsättning appar och webblänkar. Användarna kan heller inte lägga till andra appar eller att vidta andra åtgärder på enheten.
-    - [**Fullständigt hanterad Android Enterprise**](android-fully-managed-enroll.md): För företagsägda enheter med enskilda användare som används enbart för arbete och inte för personligt bruk. Administratörer kan hantera hela enheten och tillämpa principkontroller som inte är tillgängliga för arbetsprofiler. 
+    - [**Fullständigt hanterad Android Enterprise**](android-fully-managed-enroll.md): För företagsägda enheter med enskilda användare som används enbart för arbete och inte för personligt bruk. Administratörer kan hantera hela enheten och tillämpa principkontroller som inte är tillgängliga för arbetsprofiler.
+    - [**Android Enterprise – företagsägd med arbetsprofil**](android-corporate-owned-work-profile-enroll.md): För företagsägda enheter är enheter för enkelanvändare avsedda för företagsbruk och personligt bruk.
 - [**Android-enhetsadministratör**](android-enroll-device-administrator.md), inklusive Samsung Knox Standard-enheter och [Zebra-enheter](../configuration/android-zebra-mx-overview.md). 
 
 ## <a name="prerequisites"></a>Krav

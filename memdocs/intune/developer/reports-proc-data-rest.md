@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fa3f6e96b46b27be4f6cbbe475d03eed007b0d4
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 4f00ba5049401c07f5112061172dc3e7cda4f46c
+ms.sourcegitcommit: 16bc2ed5b64eab7f5ae74391bd9d7b66c39d8ca6
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022423"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86437369"
 ---
 # <a name="get-data-from-the-intune-data-warehouse-api-with-a-rest-client"></a>Hämta data från API för Intune-informationslagret med en REST-klient
 
@@ -63,6 +63,7 @@ Nu har du definierat en app i Azure. Bevilja åtkomst från inbyggda klientappen
 6. Välj rutan **Delegerade behörigheter** och klicka på rutan **Hämta informationslagerdata från Microsoft Intune**.
 7. Klicka på **Lägg till behörigheter**.
 8. Du kan även välja **Bevilja administratörens godkännande för Microsoft** i rutan Konfigurerade behörigheter och sedan välja **Ja**. Då får alla konton i den aktuella katalogen åtkomst. Dialogrutan för medgivande visas inte för användarna i klientorganisationen. Mer information finns i [Integrating applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications) (Integrera program med Azure Active Directory).
+9. Välj **Certifikat och hemligheter** >  **+ Ny klienthemlighet** och generera en ny hemlighet. Se till att kopiera den till en säker plats eftersom du inte kan komma åt den igen.
 
 ## <a name="get-data-from-the-microsoft-intune-api-with-postman"></a>Hämta data från Microsoft Intune-API med Postman
 
@@ -79,6 +80,7 @@ Du behöver följande information för att skicka ett REST-anrop via Postman:
 | Auth URL (Auktoriseringswebbadress)         | Webbadressen som används för autentisering. | https://login.microsoftonline.com/common/oauth2/authorize?resource=https://api.manage.microsoft.com/ |
 | Access Token URL (Webbadress för åtkomsttoken) | Webbadressen som används för att bevilja token.                                                                                                                                              | https://login.microsoftonline.com/common/oauth2/token |
 | Klient-ID        | Du skapade och antecknade det här när du skapade den inbyggda appen i Azure.                                                                                               | 4184c61a-e324-4f51-83d7-022b6a81b991                                                          |
+| Client Secret (Klienthemlighet)        | Du skapade och antecknade det här när du skapade den inbyggda appen i Azure.                                                                                               | Ksml3dhDJs+jfK1f8Mwc8                                                          |
 | Scope (Optional) (Omfång, valfritt) | Tom                                                                                                                                                                               | Du kan lämna fältet tomt.                                                                     |
 | Grant Type (Typ av beviljande)       | Token är en auktoriseringskod.                                                                                                                                                  | Authorization code (Auktoriseringskod)                                                                            |
 
@@ -122,14 +124,18 @@ Om du vill hämta en ny åtkomsttoken för Postman måste du lägga till Azure A
 
      `88C8527B-59CB-4679-A9C8-324941748BB4`
 
-11. Välj **Authorization Code** (Auktoriseringskod) och Request access token locally (Begär åtkomsttoken lokalt).
+11. Lägg till **klienthemligheten** som du genererade från den inbyggda app du skapade i Azure. Det bör se ut ungefär så här:  
 
-12. Välj **Request Token** (Begär token).
+     `Ksml3dhDJs+jfK1f8Mwc8 `
+
+12. Välj **Auktoriseringskod** som beviljandetyp.
+
+13. Välj **Request Token** (Begär token).
 
     ![Information för åtkomsttoken](./media/reports-proc-data-rest/reports-postman_getnewtoken.png)
 
-13. Ange dina autentiseringsuppgifter på auktoriseringssidan i Active AD. I listan över token i Postman finns nu token med namnet `Bearer`.
-14. Välj **Använd token**. Listan över sidhuvuden innehåller det nya nyckelvärdet för auktorisering och värdet `Bearer <your-authorization-token>`.
+14. Ange dina autentiseringsuppgifter på auktoriseringssidan i Active AD. I listan över token i Postman finns nu token med namnet `Bearer`.
+15. Välj **Använd token**. Listan över sidhuvuden innehåller det nya nyckelvärdet för auktorisering och värdet `Bearer <your-authorization-token>`.
 
 #### <a name="send-the-call-to-the-endpoint-using-postman"></a>Skicka anropet till slutpunkten via Postman
 

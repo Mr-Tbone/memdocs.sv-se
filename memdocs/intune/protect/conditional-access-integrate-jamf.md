@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b70d1e8b64a9000d10e46a17b0d3cb6133088f5
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 479dd1fede23c902d7be0f38ad0f16aa9f4917cf
+ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989120"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565508"
 ---
 # <a name="integrate-jamf-pro-with-intune-for-compliance"></a>Integrera Jamf Pro med Intune för kompatibilitet
 
@@ -102,7 +102,7 @@ Så här ansluter du Intune till Jamf Pro:
 
 9. På sidan **Begär API-behörigheter** väljer du **Intune** och väljer sedan **Programbehörigheter**. Markera enbart kryssrutan för **update_device_attributes** och spara den nya behörigheten.
 
-10. Bevilja sedan administratörsgodkännande för den här appen genom att välja **Bevilja administratörsgodkännande för _\<din klientorganisation>_** längst upp till vänster på sidan **API-behörigheter**. Du kan behöva autentisera ditt konto i det nya fönstret och ge programmet åtkomst genom att följa instruktionerna.  
+10. Bevilja sedan administratörsgodkännande för den här appen genom att välja **Bevilja administratörsgodkännande för _\<your tenant>_** längst upp till vänster på sidan **API-behörigheter**. Du kan behöva autentisera ditt konto i det nya fönstret och ge programmet åtkomst genom att följa instruktionerna.  
 
 11. Uppdatera genom att klicka på knappen **Uppdatera** överst på sidan. Kontrollera att ett administratörsmedgivande har beviljats för behörigheten **update_device_attributes**. 
 
@@ -110,10 +110,10 @@ Så här ansluter du Intune till Jamf Pro:
 
    ![Lyckade behörigheter](./media/conditional-access-integrate-jamf/sucessfull-app-registration.png)
 
-   Registreringsprocessen i Azure AD har slutförts.
+Registreringsprocessen i Azure AD har slutförts.
 
-    > [!NOTE]
-    > Om klienthemligheten upphör att gälla måste du skapa en ny klienthemlighet i Microsoft Azure och uppdatera data för villkorlig åtkomst i Jamf Pro. Azure låter dig ha både den gamla och nya hemligheten aktiv för att förhindra tjänsteavbrott.
+> [!NOTE]
+> Om klienthemligheten upphör att gälla måste du skapa en ny klienthemlighet i Microsoft Azure och uppdatera data för villkorlig åtkomst i Jamf Pro. Azure låter dig ha både den gamla och nya hemligheten aktiv för att förhindra tjänsteavbrott.
 
 ### <a name="enable-intune-to-integrate-with-jamf-pro"></a>Låt Intune integreras med Jamf Pro
 

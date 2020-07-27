@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/28/2020
+ms.date: 07/09/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,18 +18,37 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90d1ab0792e329616fce525cfe672c07219908b5
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: d6f460039aaff282476c3e8e3d074a332cde716f
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165863"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461223"
 ---
 # <a name="change-log-for-the-intune-data-warehouse-api"></a>Ändringslogg för Intunes informationslager-API
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Håll dig uppdaterad om uppdateringar för Intune-informationslagret.
+
+## <a name="2007"></a>2007 
+_Lanserades i juli 2020_
+
+### <a name="v10-changes"></a>Ändringar i v1.0
+
+I den här tabellen visas egenskapen som lagts till för entiteten [device](../developer/intune-data-warehouse-collections.md#devices) i Intune Data Warehouse.
+
+|    Samling                          |    Ändra     |    Beskrivningsinformation                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    ethernetMacAddress    |    Tillagd    |    Den unika nätverksidentifieraren för den här enheten.                                                                                                                                                                                                                                                                     |
+|    Office365Version    |    Tillagd    |    Den version av Office 365 som är installerad på enheten.                                                                                                                                                                                                                                                                     |
+
+I den här tabellen visas egenskapen som lagts till för entiteten [devicePropertyHistories](../developer/intune-data-warehouse-collections.md#devicepropertyhistories) i Intune Data Warehouse.
+
+|    Samling                          |    Ändra     |    Beskrivningsinformation                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    physicalMemoryInBytes    |    Tillagd    |    Fysiskt minne i bytes.                                                                                                                                                                                                                                                                     |
+|    totalStorageSpaceInBytes    |    Tillagd    |    Total lagringskapacitet i bytes.                                                                                                                                                                                                                                                                     |
 
 ## <a name="2004"></a>2004 
 _Utgiven i april 2020_

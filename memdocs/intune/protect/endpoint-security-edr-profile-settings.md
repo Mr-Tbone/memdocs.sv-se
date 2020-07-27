@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/22/2020
+ms.date: 07/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: dd53ec47435ba9dc416d2b152719b393d1647f90
-ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
+ms.openlocfilehash: e26719bb9bf322e3e4bf11b39911e98788707629
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83824009"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86460424"
 ---
 # <a name="endpoint-detection-and-response-policy-settings-for-endpoint-security-in-intune"></a>Inställningar för Endpoint Security-policyn Slutpunktsidentifiering och svar i Intune
 
@@ -33,9 +33,7 @@ Plattformar och profiler som stöds:
   - Profil: **Slutpunktsidentifiering och svar (MDM)**
 
 - **Windows 10 och Windows Server**: Använd den här plattformen för policyer du distribuerar till enheter som hanteras av Configuration Manager.
-  - Profil: **Slutpunktsidentifiering och svar (ConfigMgr) (förhandsversion)**
-  
-  *Den här plattformen och profilen finns i offentlig förhandsversion*.
+  - Profil: **Slutpunktsidentifiering och svar (ConfigMgr)**
 
 ## <a name="endpoint-detection-and-response-mdm"></a>Slutpunktsidentifiering och svar (MDM)
 
@@ -70,7 +68,7 @@ Plattformar och profiler som stöds:
   - **Inte konfigurerat** (*standard*)
   - **Ja** – öka frekvensen för telemetrirapportering från Microsoft Defender Advanced Threat Protection.
 
-## <a name="endpoint-detection-and-response-configmgr-preview"></a>Slutpunktsidentifiering och svar (ConfigMgr) (förhandsversion)
+## <a name="endpoint-detection-and-response-configmgr"></a>Slutpunktsidentifiering och svar (ConfigMgr)
 
 **Slutpunktsidentifiering och svar**:
 

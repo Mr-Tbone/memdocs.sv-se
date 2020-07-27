@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/10/2020
+ms.date: 07/13/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 730a8974753575b2726d821106f7b3c937b30207
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: b60d37c4da0b706dc109b5800b362d448224f116
+ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86239988"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410980"
 ---
 # <a name="add-app-configuration-policies-for-managed-iosipados-devices"></a>Lägg till konfigurationsprinciper för hanterade iOS/iPadOS-mobilappar
 
@@ -117,7 +117,8 @@ Som Microsoft Intune-administratör kan du styra vilka arbets- eller skolkonton 
    > Följande appar bearbetar appkonfigurationen ovan och tillåter endast organisationskonton:
    > - Edge för iOS (44.8.7 och senare)
    > - OneDrive för iOS (10.34 och senare)
-   > - Outlook för (iOS 2.99.0 eller senare)
+   > - Outlook för iOS (2.99.0 och senare)
+   > - Teams för iOS (2.0.15 och senare)
 
 ## <a name="enter-xml-data"></a>Ange XML-data
 

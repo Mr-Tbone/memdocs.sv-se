@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 07/13/2020
+ms.date: 07/16/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7aee865b2a16ce3a9114433f9e10e185b26997f7
-ms.sourcegitcommit: d56e1c84e687fe18810f3b81e0a0617925fe6044
+ms.openlocfilehash: 7f49ba4fffd84ffae3e5b47ad74088b65d599533
+ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86303478"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86491260"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -31,9 +31,18 @@ Den här artikeln beskriver de olika inställningar som du kan styra på Android
 
 [Skapa en enhetskonfigurationsprofil](device-restrictions-configure.md).
 
-## <a name="device-owner-only"></a>Endast enhetens ägare
+## <a name="fully-managed-dedicated-and-corporate-owned-work-profile"></a>Fullständigt hanterad, dedikerad och företagsägd arbetsprofil
 
-Dessa inställningar gäller för Android Enterprise-registreringstyper där Intune styr hela enheten, till exempel fullständigt hanterade Android Enterprise-enheter eller dedikerade Android Enterprise-enheter.
+Dessa inställningar gäller för Android Enterprise-registreringstyper där Intune styr hela enheten, till exempel fullständigt hanterade Android Enterprise-enheter eller dedikerade Android Enterprise-enheter och företagsägda arbetsprofilenheter.
+
+Vissa inställningar stöds inte av alla registreringstyper. Information om vilka inställningar som stöds av vilka registreringstyper finns i användargränssnittet. Varje inställning finns under en rubrik som anger vilka registreringstyper som kan använda den inställningen.
+
+![Ange rubriker.](./media/device-restrictions-android-for-work/setting-headers.png)
+
+Vissa inställningar gäller endast på arbetsprofilnivå för företagsägda enheter med en arbetsprofil. De här inställningarna gäller fortfarande hela enheten för fullständigt hanterade och dedikerade enheter. De här inställningarna markeras med beskrivningen *(arbetsprofilnivå)* i användargränssnittet.
+
+![Ange rubriker.](./media/device-restrictions-android-for-work/work-profile-level.png)
+
 
 ### <a name="general"></a>Allmänt
 
@@ -115,7 +124,9 @@ Använd de här inställningarna till att konfigurera en kioskmiljö på dina de
       >
       > Appen **Managed Home Screen** måste inte finnas med i konfigurationsprofilen, men du måste lägga till den som app. När du lägger till appen **Managed Home Screen** visas övriga appar du lägger till i konfigurationsprofilen som ikoner i appen **Managed Home Screen**.
       >
-      > När du använder helskärmsläge för flera appar kanske inte uppringnings-/telefonappar fungerar som de ska. 
+      > När du använder helskärmsläge för flera appar kanske inte uppringnings-/telefonappar fungerar som de ska.
+      >
+      > Mer information om den hanterade startskärmen finns i [setup Microsoft Managed Home Screen on Dedicated devices in multi-app kiosk mode](https://techcommunity.microsoft.com/t5/intune-customer-success/how-to-setup-microsoft-managed-home-screen-on-dedicated-devices/ba-p/1388060) (konfigurera Microsofts hanterade startskärm på dedikerade enheter i helskärmsläge för flera appar).
 
       - **Lägg till**: Välj dina appar i listan.
 
@@ -123,6 +134,28 @@ Använd de här inställningarna till att konfigurera en kioskmiljö på dina de
 
         Du kan även lägga till andra [Android-appar](../apps/apps-add-android-for-work.md) och [webbappar](../apps/web-app.md) som skapats av din organisation till enheten. Se till att [tilldela appen till den enhetsgrupp som skapats för dina dedikerade enheter](../apps/apps-deploy.md).
 
+      - **Mappikon**: Välj färg och form för mappikonen som visas på den hanterade startskärmen. Alternativen är:
+        - Inte konfigurerat 
+        - Mörkt tema, rektangel
+        - Mörkt tema, cirkel
+        - Ljust tema, rektangel
+        - Ljust tema, cirkel
+      - **Storlek på app- och mappsymbol**: Välj storleken på mappikonen som visas på den hanterade startskärmen. Alternativen är:
+        - Inte konfigurerat 
+        - Extra liten
+        - Liten
+        - Genomsnitt
+        - Stor
+        - Extra stor
+
+          Beroende på storleken på skärmen kan den faktiska ikonstorleken vara annorlunda.
+
+      - **Skärmorientering**: Välj i vilken riktning Hanterad startskärm ska visas på enheter. Alternativen är:
+        - Inte konfigurerat
+        - Stående
+        - Landskap
+        - Rotera automatiskt
+      - **Appaviseringsbrickor**: **Aktivera** visar antalet nya och olästa meddelanden på appikoner. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
       - **Virtuell hemknapp**: En programstyrd knapp som tar användarna tillbaka till den hanterade startskärmen så att användarna kan växla mellan appar. Alternativen är:
         - **Inte konfigurerat** (standard): Hemknappen visas inte. Användarna måste använda knappen Bakåt för att växla mellan appar.
         - **Svep uppåt**: En hemknapp visas när en användare sveper uppåt på enheten.
@@ -150,7 +183,31 @@ Använd de här inställningarna till att konfigurera en kioskmiljö på dina de
         >
         > Moderna bildskärmar har högre bildpunktsdensitet och kan visa bilder i 2K/4K.
 
+      - **Genväg till inställningsmenyn**: **Inaktivera** döljer genvägen för hanterade inställningar på den hanterade startskärmen. Användarna kan fortfarande svepa nedåt för att få åtkomst till inställningarna. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard visas genvägen för hanterade inställningar på enheter. Användarna kan även svepa nedåt för att få åtkomst till inställningarna.
+
+      - **Snabbåtkomst till felsökningsmeny**: Den här inställningen styr hur användare kommer åt felsökningsmenyn. Alternativen är:
+
+        - **Aktivera**: Användare kan få åtkomst till felsökningsmenyn enklare. Mer specifikt kan de svepa nedåt eller använda genvägen för hanterade inställningar. Som vanligt kan de fortsätta att välja bakåtknappen 15 gånger.
+        - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen. Som standard är enkel åtkomst till felsökningsmenyn avstängd. Användarna måste välja bakåtknappen 15 gånger för att öppna felsökningsmenyn.
+
+        Med hjälp av felsökningsmenyn kan användare:
+
+        - Se och ladda upp loggar för Hanterad startskärm
+        - Öppna Googles Android Device Policy Manager-app
+        - Öppna [Microsoft Intune-appen](https://play.google.com/store/apps/details?id=com.microsoft.intune)
+        - Avsluta helskärmsläge
+
       - **Wi-Fi-konfiguration**: Om du väljer **Aktivera** visas Wi-Fi-kontrollen på den hanterade startskärmen och användarna kan ansluta enheten till olika Wi-Fi-nätverk. Om du aktiverar den här funktionen aktiveras också enhetsplats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar Wi-Fi-kontrollen på den hanterade startskärmen. Användare hindras från att ansluta till Wi-Fi-nätverk när den hanterade startskärmen används.
+
+        - **Lista över tillåten Wi-Fi**: Skapa en lista med giltiga namn på trådlösa nätverk, även kallat SSID (Service Set Identifier). Användare av Hanterad startskärm kan bara ansluta till de SSID:n som du anger.
+
+          När det är tomt varken ändrar eller uppdaterar Intune den här inställningen. Som standard är alla tillgängliga Wi-Fi-nätverk tillåtna.
+
+          **Importera** en .csv-fil som innehåller en lista över giltiga SSID:n.
+
+          **Exportera** din aktuella lista till en .csv-fil.
+
+        - **SSID**: Du kan också ange de Wi-Fi-nätverksnamn (SSID) som Hanterad startskärm-användare kan ansluta till. Var noga med att ange giltiga SSID:n.
 
       - **Bluetooth-konfiguration**: Om du väljer **Aktivera** visas Bluetooth-kontrollen på den hanterade startskärmen och användarna kan koppla enheter över Bluetooth. Om du aktiverar den här funktionen aktiveras också enhetsplats. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar Bluetooth-kontrollen på den hanterade startskärmen. Användare hindras från att konfigurera Bluetooth och para ihop enheter när den hanterade startskärmen används.
 
@@ -158,17 +215,19 @@ Använd de här inställningarna till att konfigurera en kioskmiljö på dina de
 
       - **Medievolymkontroll**: Om du väljer **Aktivera** visas medievolymkontrollen på den hanterade startskärmen och användarna kan justera enhetens medievolym med hjälp av ett skjutreglage. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar medievolymkontrollen på den hanterade startskärmen. Användarna hindras från att justera enhetens medievolym på den hanterade startskärmen, om inte deras maskinvaruknappar stöder det.
 
+      - **Snabbåtkomst till enhetsinformation**: **Aktivera** tillåter att användare sveper nedåt för att se enhetsinformationen på Hanterad startskärm, till exempel serienummer, märke och modellnummer och SDK-nivå. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard kanske enhetsinformationen inte visas.
+
       - **Skärmsläckarläge**: Om du väljer **Aktivera** visas en skärmsläckare på den hanterade startskärmen när enheten är låst eller när tidsgränsen uppnås. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kanske som standard inte visar en skärmsläckare på den hanterade startskärmen.
 
         När läget är aktiverat konfigurerar du även:
 
-        - **Ställ in anpassad skärmsläckarbild**: Ange URL:en till en anpassad PNG, JPG, JPEG, GIF, BMP, WebP eller ICOimage. Om du inte anger en URL används enhetens standardbild, om det finns en sådan. 
-        
+        - **Ställ in anpassad skärmsläckarbild**: Ange URL:en till en anpassad PNG, JPG, JPEG, GIF, BMP, WebP eller ICOimage. Om du inte anger en URL används enhetens standardbild, om det finns en sådan.
+
           Ange till exempel:
 
           - `http://www.contoso.com/image.jpg`
           - `www.contoso.com/image.bmp`
-          - `https://www.contoso.com/image.webp`          
+          - `https://www.contoso.com/image.webp`
 
           > [!TIP]
           > Alla filresurs-URL:er som kan omvandlas till en bitmapp stöds.
@@ -180,30 +239,27 @@ Använd de här inställningarna till att konfigurera en kioskmiljö på dina de
 - **Helt hanterade**: Konfigurerar appen Microsoft Launcher på dina helt hanterade enheter.
 
   - **Gör Microsoft Launcher till standardstartprogram**: Med **Aktivera** anges Microsoft Launcher som standardstartprogram på startskärmen. Om du använder Launcher som standardprogram kan användarna inte använda något annat startprogram. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard måste inte Microsoft Launcher användas som standardstartprogram.
+  - **Konfigurera anpassade skrivbordsunderlägg**: **Aktivera** gör att du kan använda din egen avbildning som skrivbordsunderlägg på startskärmen och välja om användarna ska kunna ändra bilden. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard behåller enheten det aktuella skrivbordsunderlägget.
+    - **Ange URL till skrivbordsunderläggsbild**: Ange URL till skrivbordsunderläggsbilden. Den här bilden visas på enhetens startskärm. Ange till exempel `http://www.contoso.com/image.jpg`. 
+    - **Tillåt användare att ändra skrivbordsunderlägg**: **Aktivera** tillåter att användarna ändrar skrivbordsunderläggsbilden. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard hindras användare från att ändra skrivbordsunderlägg.
+  - **Aktivera startfeed**: **Aktivera** aktiverar startfeeden, som visar kalendrar, dokument och senaste aktiviteter. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Denna feed visas som standard inte.
+    - **Tillåt att användaren aktiverar/inaktiverar feed**: **Aktivera** tillåter att användare aktiverar eller inaktiverar startfeeden. **Aktivera** tvingar bara den här inställningen den första gången profilen tilldelas. Alla framtida profiltilldelningar tvingar inte den här inställningen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard hindras användare från att ändra inställningar för startfeeden.
+  - **Docknärvaro**: Dockan ger användarna snabb åtkomst till sina appar och verktyg. Alternativen är:
+    - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+    - **Visa**: Dockan visas på enheter.
+    - **Dölj**: Dockan är dold. Användarna måste svepa upp för att få åtkomst till dockan.
+    - **Inaktiverad**: Dockan visas inte på enheter och användare hindras från att visa den.
 
-<!-- The following settings are in a future release. Per PM, we can leave them in GitHub, not live. Remove comment tags when they release.
+  - **Tillåt användaren att ändra dockans närvaro**: **Aktivera** tillåter användare att visa eller dölja dockan. **Aktivera** tvingar bara den här inställningen den första gången profilen tilldelas. Alla framtida profiltilldelningar tvingar inte den här inställningen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Som standard tillåts inte användare att ändra konfigurationen för enhetsdockan.
 
-  - **Configure custom wallpaper**: **Enable** lets you apply your own image as the home screen wallpaper, and choose if users can change the image. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the device keeps its current wallpaper.
-    - **Enter URL of wallpaper image**: Enter the URL of your wallpaper image. This image shows on the device home screen. For example, enter `http://www.contoso.com/image.jpg`. 
-    - **Allow user to modify wallpaper**: **Enable** allows users to change the wallpaper image. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users are prevented from changing the wallpaper.
-  - **Enable launcher feed**: **Enable** turns on the launcher feed, which shows calendars, documents, and recent activities. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, this feed isn't shown.
-    - **Allow user to enable/disable feed**: **Enable** lets users enable or disable the launcher feed. **Enable** only forces this setting the first time the profile is assigned. Any future profile assignments don't force this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users are prevented from changing the launcher feed settings.
-  - **Dock presence**: The dock gives users quick access to their apps and tools. Your options:
-    - **Not configured** (default): Intune doesn't change or update this setting.
-    - **Show**: The dock is shown on devices.
-    - **Hide**: The dock is hidden. Users must swipe up to access the dock.
-    - **Disabled**: The dock isn't shown on devices, and users are prevented from showing it.
+  - **Ersättning av sökfältet**: Välj var sökfältet ska läggas till. Alternativen är:
+    - **Inte konfigurerat** (standard): Intune varken ändrar eller uppdaterar den här inställningen.
+    - **Överst**: Sökfältet visas längst upp på enheterna.
+    - **Nedre**: Sökfältet visas längst ned på enheterna.
+    - **Dölj**: Sökfältet är dolt.
 
-  - **Allow user to change dock presence**: **Enable** allows users to show or hide the dock. **Enable** only forces this setting the first time the profile is assigned. Any future profile assignments don't force this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users aren't allowed to change the device dock configuration.
-
-  - **Search bar replacement**: Choose where to put the search bar. Your options:
-    - **Not configured** (default): Intune doesn't change or update this setting.
-    - **Top**: Search bar is shown at the top of devices.
-    - **Bottom**: Search bar is shown at the bottom of devices.
-    - **Hide**: Search bar is hidden.
-
+<!-- MandiA (7.16.2020) The following settings may be in a future release. Per PM, we can leave it in GitHub, not live. Remove comment tags if/when it releases.
   - **Allow user to change search bar placement**: **Enable** allows users to change the location of the search bar. **Enable** only forces this setting the first time the profile is assigned. Any future profile assignments don't force this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, users are prevented from changing the location.
-
 End of comment -->
 
 ### <a name="password"></a>lösenordsinställning
@@ -240,7 +296,7 @@ End of comment -->
 - **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan enheten rensas (från 4 till 11). `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 
   > [!NOTE]
-  > Enhetsägarens enheter uppmanas inte att ställa in ett lösen ord. Inställningarna tillämpas och du måste ange lösenordet manuellt. Principen som framtvingar detta rapporterar att åtgärden misslyckades tills du anger lösenordet som uppfyller dina krav.
+  > Fullständigt hanterade, dedikerade och företagsägda arbetsprofilenheter uppmanas inte att ange ett lösenord. Inställningarna tillämpas och du måste ange lösenordet manuellt. Principen som framtvingar detta rapporterar att åtgärden misslyckades tills du anger lösenordet som uppfyller dina krav.
 
 ### <a name="power-settings"></a>Energiinställningar
 
@@ -255,7 +311,7 @@ End of comment -->
 - **Kontoändringar** (endast dedikerade enheter): **Blockera** förhindrar att användarna ändrar konton. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att uppdatera användarkonton på enheten.
 
   > [!NOTE]
-  > Den här inställningen gäller inte för enhetsägares (fullständigt hanterade) enheter. Om du konfigurerar den här inställningen ignoreras inställningen och har ingen effekt.
+  > Den här inställningen gäller inte för fullständigt hanterade, dedikerade och företagsägda arbetsprofilenheter. Om du konfigurerar den här inställningen ignoreras inställningen och har ingen effekt.
 
 - **Användaren kan ställa in autentiseringsuppgifter**: Om du väljer **Blockera** hindras användare från att konfigurera certifikat som har tilldelats till enheter. Det gäller även enheter som inte är associerade med ett användarkonto. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att konfigurera eller ändra sina autentiseringsuppgifter i nyckellagret.
 - **Personliga Google-konton**: Om du väljer **Blockera** hindras användare från att lägga till privata Google-konton på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användare att lägga till sina personliga Google-konton.

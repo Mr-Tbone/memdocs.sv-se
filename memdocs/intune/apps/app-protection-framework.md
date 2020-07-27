@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/19/2020
+ms.date: 07/09/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,11 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91683280a2e48d82fd145bf19228c33b432b6b49
-ms.sourcegitcommit: a1da477542fb0ff360685d6eb58ef43e37ac3950
+ms.openlocfilehash: 444fb116150cf3d7a3ab4dcfe4eb450b20119df0
+ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83853578"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410937"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Dataskyddsramverk med appskyddsprinciper 
 
@@ -147,8 +148,10 @@ I policyinställningarna som tillämpas på nivå 2 ingår alla policyinställni
 |---------------|----------------------------------------------------------|-----------------------------------------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Dataöverföring |       Säkerhetskopiera organisationsdata till …  |          Blockera  |          iOS/iPadOS, Android  |                  |
 | Dataöverföring |       Skicka organisationsdata till andra appar  |          Principhanterade appar  |          iOS/iPadOS, Android  |          <p>Med iOS/iPad kan administratörer konfigurera det här värdet så att det blir "Principhanterade appar", "Principhanterade appar med operativsystemdelning" eller "Principhanterade appar med Öppna i/Dela-filtrering". </p><p>Principhanterade appar med operativsystemdelning är tillgängliga när enheten också har registrerats med Intune. Den här inställningen tillåter dataöverföring till andra principhanterade appar samt filöverföringar till andra appar som hanteras av Intune. </p><p>Principhanterade appar med Öppna i/Dela-filtrering filtrerar dialogrutorna Öppna i/Dela i operativsystemet så att endast principhanterade appar visas. </p><p> Mer information finns i [Inställningar för iOS-appskyddsprinciper](app-protection-policy-settings-ios.md).</p> |
+| Dataöverföring |       Välj vilka appar som ska undantas  |          Standard / skype;app-settings;calshow;itms;itmss;itms-apps;itms-appss;itms-services;  |          iOS/iPadOS  |                  |
 | Dataöverföring |       Spara kopior av organisationsdata  |          Blockera  |          iOS/iPadOS, Android  |                  |
 | Dataöverföring |       Tillåt användare att spara kopior i utvalda tjänster  |          OneDrive för företag, SharePoint Online |          iOS/iPadOS, Android  |                  |
+| Dataöverföring |       Överför telekommunikationsdata till  |          Alla appar |          iOS/iPadOS, Android  |                  |
 | Dataöverföring |       Begränsa klipp ut, kopiera och klistra in mellan appar  |          Principhanterade appar med inklistring  |          iOS/iPadOS, Android  |                  |
 | Dataöverföring |       Skärmdump och Google Assistant  |          Blockera  |          Android  |                  |
 | Funktioner |       Begränsa överföring av webbinnehåll till andra appar  |          Microsoft Edge  |          iOS/iPadOS, Android  |                  |
@@ -172,15 +175,18 @@ I policyinställningarna som tillämpas på nivå 3 ingår alla policyinställni
 
 | Inställningen | Beskrivning av inställning |             Värde  |             Plattform        | Obs! |
 |---------------|---------------------------------------|----------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------|
+| Dataöverföring |       Överför telekommunikationsdata till  |          Valfri principhanterad uppringningsapp |          Android  | Administratörer kan också konfigurera den här inställningen för att använda en uppringningsapp som inte har stöd för appskyddsprinciper genom att välja **En specifik uppringningsapp** och tillhandahålla värden för **Paket-id för uppringningsapp** och **Namn på uppringningsapp**.   |
+| Dataöverföring |       Överför telekommunikationsdata till  |          En specifik uppringningsapp |          iOS/iPadOS  |  |
+| Dataöverföring |       Webbadresschema för uppringningsapp  |          *replace_with_dialer_app_url_scheme* |          iOS/iPadOS  | På iOS/iPadOS måste det här värdet ersättas med URL-schemat för den anpassade uppringningsappen som används. Om URL-schemat är okänt kontaktar du appens utvecklare för mer information. Mer information om URL-scheman finns [Defining a Custom URL Scheme for Your App](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app) (Definiera ett anpassat URL-schema för appen).|
 | Dataöverföring |       Ta emot data från andra appar  |          Principhanterade appar  |          iOS/iPadOS, Android         |  |
-| Dataöverföring |       Tangentbord från tredje part  |          Blockera  |          iOS/iPadOS        | På iOS blockeras alla tangentbord från tredje part från att fungera i appen.  |
-| Dataöverföring |       Godkända tangentbord  |          Kräver  |          Android        | Med Android måste tangentbord väljas för att kunna användas baserat på dina distribuerade Android-enheter.  |
+| Dataöverföring |       Tangentbord från tredje part  |          Blockera  |          iOS/iPadOS        | På iOS/iPadOS blockeras alla tangentbord från tredje part i appen.  |
+| Dataöverföring |       Godkända tangentbord  |          Kräver  |          Android        |  |
 | Dataöverföring |       Välj tangentbord som ska godkännas  |          *lägg till/ta bort tangentbord*  |          Android        | Med Android måste tangentbord väljas för att kunna användas baserat på dina distribuerade Android-enheter.  |
 | Funktioner |       Utskrift av organisationsdata  |          Blockera  |          iOS/iPadOS, Android         |  |
 
 #### <a name="access-requirements"></a>Åtkomstkrav
 
-|       Inställningen  |          Värde  |          Plattform  |
+|       Inställning  |          Värde  |          Plattform  |
 |-----------------------------------------------------------|--------------------|---------------------------------|
 |       Enkel PIN-kod  |          Blockera  |          iOS/iPadOS, Android  |
 |       Välj minimilängd för PIN-kod  |          6  |          iOS/iPadOS, Android  |

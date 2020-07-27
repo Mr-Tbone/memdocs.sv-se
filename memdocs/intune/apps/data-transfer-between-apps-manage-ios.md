@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/09/2020
+ms.date: 07/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 771741ed0e07a6373c63dd2e81745fe53adc4242
-ms.sourcegitcommit: aa876a9b5aa9437ae59a68e1cc6355d7070f89f4
+ms.openlocfilehash: cdb8ca0ca24d196bb21f9d7e484374555d6fefd2
+ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86236400"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86410852"
 ---
 # <a name="how-to-manage-data-transfer-between-ios-apps-in-microsoft-intune"></a>Hantera dataöverföring mellan iOS-appar med Microsoft Intune
 
 För att skydda företagets data bör du begränsa överförandet av filer till de appar som du hanterar. Du kan hantera iOS-appar på följande sätt:
 
-- Skydda organisationsdata för arbets- eller skolkonton genom att konfigurera en appskyddsprincip för apparna. som vi kallar för *principhanterade appar*.  Se [alla Intune-hanterade appar som du kan hantera med appskyddsprinciper](https://www.microsoft.com/cloud-platform/microsoft-intune-apps)
+- Skydda organisationsdata för arbets- eller skolkonton genom att konfigurera en appskyddsprincip för apparna. som vi kallar för *principhanterade appar*.  Se [Skyddade appar i Microsoft Intune](apps-supported-intune-apps.md).
 
 - Distribuera och hantera apparna via iOS-enhetshantering, vilket kräver att enheterna registreras i en MDM-lösning (Mobile Device Management). De appar som du distribuerar kan vara *principhanterade* appar eller andra iOS-hanterade appar.
 
@@ -40,10 +40,10 @@ Använd appskyddsprinciper med iOS-funktionen **Öppna i hantering** för att sk
 
 - **Enheter som inte hanteras av en MDM-lösning:** Du kan ange inställningarna för appskyddsprinciper för att styra delning av data med andra program via tilläggen *Öppna i* eller *Dela*.  För att göra det konfigurerar du inställningen **Skicka organisationsdata till annan app** med värdet **Principhanterade appar med Öppna i/Dela-filtrering**.  Beteendet *Öppna i/Dela* i den *principhanterade appen* presenterar bara andra *principhanterade appar* som alternativ för delning. 
 
-- **Enheter som hanteras av en MDM-lösning**: För enheter som registrerats i Intune eller tredje parts MDM-lösningar styrs datadelning mellan appar med appskyddsprinciper och andra hanterade iOS-appar som distribuerats via MDM av principer för Intune APP och iOS-funktionen **Open in management**. För att säkerställa att appar som du distribuerar med en MDM-lösningockså är associerade med dina Intune-appskyddsprinciper måste du konfigurera användarinställningen för UPN enligt beskrivningen i följande avsnitt: [Konfigurera användarinställningar för UPN](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm). Om du vill ange hur dataöverföring till andra appar ska tillåtas så aktiverar du inställningen **Skicka organisationsdata till andra appar** och väljer önskad nivå för delningen. Om du vill ange hur en app ska ta emot data från andra appar så aktiverar du inställningen **Ta emot data från andra appar** och väljer önskad nivå för datamottagning. Mer information om hur du tar emot och delar appdata finns i [Inställningar för dataflytt](app-protection-policy-settings-ios.md#data-protection).
+- **Enheter som hanteras av en MDM-lösning**: För enheter som registrerats i Intune eller tredje parts MDM-lösningar styrs datadelning mellan appar med appskyddsprinciper och andra hanterade iOS-appar som distribuerats via MDM av principer för Intune APP och iOS-funktionen **Open in management**. För att säkerställa att appar som du distribuerar med en MDM-lösningockså är associerade med dina Intune-appskyddsprinciper måste du konfigurera användarinställningen för UPN enligt beskrivningen i följande avsnitt: [Konfigurera användarinställningar för UPN](data-transfer-between-apps-manage-ios.md#configure-user-upn-setting-for-microsoft-intune-or-third-party-emm). För att ange hur du vill tillåta dataöverföring till andra *principhanterade appar* och iOS-hanterade appar konfigurerar du inställningen **Skicka organisationsdata till andra appar** till **Principhanterade appar med operativsystemdelning**. Om du vill ange hur en app ska ta emot data från andra appar så aktiverar du inställningen **Ta emot data från andra appar** och väljer önskad nivå för datamottagning. Mer information om hur du tar emot och delar appdata finns i [Inställningar för dataflytt](app-protection-policy-settings-ios.md#data-protection).
 
 ## <a name="configure-user-upn-setting-for-microsoft-intune-or-third-party-emm"></a>Konfigurera inställningen för användar-UPN för Microsoft Intune eller en EMM-lösning från tredje part
-Inställningen för användar-UPN **måste** konfigureras för enheter som hanteras av Intune eller en EMM-lösning från tredje part för att identifiera det registrerade användarkontot. UPN-konfigurationen används med de appskyddsprinciper som du distribuerar från Intune. Proceduren nedan beskriver det allmänna flödet för att konfigurera UPN-inställningen, samt den resulterande användarupplevelsen:
+Inställningen för användar-UPN **måste** konfigureras för enheter som hanteras av Intune eller en EMM-lösning från tredje part för att identifiera det registrerade användarkontot för den sändande *principhanterade appen* när du överför data till en iOS-hanterad app. UPN-konfigurationen används med de appskyddsprinciper som du distribuerar från Intune. Proceduren nedan beskriver det allmänna flödet för att konfigurera UPN-inställningen, samt den resulterande användarupplevelsen:
 
 1. På [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du [skapa och tilldela en appskyddsprincip](app-protection-policies.md) för iOS/iPadOS. Konfigurera principinställningar enligt företagets krav och välj de iOS-appar som ska ha principen.
 
@@ -70,7 +70,7 @@ Inställningen för användar-UPN **måste** konfigureras för enheter som hante
 
 1. Gå till administratörskonsolen i Intune eller MDM-lösningen från tredje part. Gå till det avsnitt i konsolen där du kan distribuera inställningar för programkonfiguration till registrerade iOS-enheter.
 
-2. Ange följande inställning i avsnittet för programkonfiguration:
+2. I avsnittet Programkonfiguration anger du följande inställning för varje *principhanterad app* som ska överföra data till iOS-hanterade appar:
 
    **nyckel** = IntuneMAMUPN, **värde** = <username@company.com>
 

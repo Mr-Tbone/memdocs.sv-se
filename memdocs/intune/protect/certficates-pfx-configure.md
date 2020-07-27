@@ -17,11 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 609f7209d79acd944d141930f2287b5572a51c89
-ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
+ms.openlocfilehash: 29cb970dd7148496f1a4f200ba32505e6f2c0e16
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85332844"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461597"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>Konfigurera och använda PKCS-certifikat med Intune
 
@@ -220,7 +221,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 3. Ange följande egenskaper:
    - **Plattform**: Välj plattform för dina enheter. Alternativen är:
      - Android-enhetsadministratör
-     - Android Enterprise > Endast enhetens ägare
+     - Android Enterprise > Fullständigt hanterad och dedikerad Android Enterprise och företagsägd arbetsprofil
      - Android Enterprise > Endast arbetsprofil
      - iOS/iPadOS
      - macOS

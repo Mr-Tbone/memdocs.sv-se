@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 02/18/2020
+ms.date: 07/20/2020
 ms.topic: troubleshooting
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82706356f82008798dc8c9b9de02ad55606ee87b
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 78b7a0ea6e25754e2839e1fda788b3440eaf3880
+ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83987844"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86872060"
 ---
 # <a name="troubleshoot-wi-fi-device-configuration-profiles-in-microsoft-intune"></a>Felsöka WiFi-enhetens konfigurationsprofiler i Microsoft Intune
 
@@ -177,7 +177,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
 
 ## <a name="common-issues"></a>Vanliga problem
 
-### <a name="issue-1-the-wi-fi-profile-isnt-deployed-to-the-device"></a>Problem 1: WiFi-profilen distribueras inte till enheten
+### <a name="the-wi-fi-profile-isnt-deployed-to-the-device"></a>WiFi-profilen distribueras inte till enheten
 
 - Kontrollera att WiFi-profilen har tilldelats till rätt grupp:
 
@@ -248,7 +248,7 @@ WiFiConfigurationServiceProvider: Node set value, type: (0x4), Result: (The oper
 
     Om du ser ett fel i loggen kopierar du tidsstämpeln för felet och avfiltrerar loggen. Använd sedan alternativet ”Sök” med tidsstämpeln för att se vad som hände strax före felet.
 
-### <a name="issue-2-the-wi-fi-profile-is-deployed-to-the-device-but-the-device-cant-connect-to-the-network"></a>Problem 2: WiFi-profilen har distribuerats till enheten, men enheten kan inte ansluta till nätverket
+### <a name="the-wi-fi-profile-is-deployed-to-the-device-but-the-device-cant-connect-to-the-network"></a>WiFi-profilen har distribuerats till enheten, men enheten kan inte ansluta till nätverket
 
 Det här problemet beror vanligtvis på något utanför Intune. Följande uppgifter kan hjälpa dig att förstå och felsöka anslutningsproblem:
 
@@ -256,6 +256,22 @@ Det här problemet beror vanligtvis på något utanför Intune. Följande uppgif
 
   Om du kan ansluta, tittar du på certifikategenskaperna i den manuella anslutningen. Uppdatera sedan Intunes WiFi-profil med samma certifikategenskaper.
 - Anslutningsfel loggas vanligtvis i Radius-serverloggen. Du bör till exempel kunna se om enheten försökte ansluta till WiFi-profilen.
+
+### <a name="users-dont-get-new-profile-after-changing-password-on-existing-profile"></a>Användare får inte en ny profil när de har ändrat lösenordet i en befintlig profil
+
+Anta att du skapar en Wi-Fi-profil för ett företag, distribuerar profilen till en grupp, ändrar lösenordet och sparar profilen. När profilen ändras får vissa användare inte den nya profilen.
+
+Du kan undvika det här problemet genom att ställa in gäst-Wi-Fi. Om inte företagets Wi-Fi fungerar kan användarna ansluta till gäst-Wi-Fi. Se till att du aktiverar inställningarna för automatisk anslutning. Distribuera gäst-Wi-Fi-profilen till alla användare.
+
+Ytterligare rekommendationer:  
+
+- Om Wi-Fi-nätverket som du ansluter till använder ett lösenord eller en lösenfras, ser du till att du kan ansluta direkt till Wi-Fi-routern. Du kan testa med en iOS/iPadOS-enhet.
+- När du har lyckats ansluta till Wi-Fi-slutpunkten (Wi-Fi-routern) noterar du SSID och autentiseringsuppgifter som används (det här värdet är lösenordet eller lösenfrasen).
+- Ange SSID och autentiseringsuppgifter (lösenord eller lösenfras) i fältet I förväg delad nyckel. 
+- Distribuera till en testgrupp som har ett begränsat antal användare, gärna endast till IT-avdelningen. 
+- Synkronisera iOS/iPadOS-enheten mot Intune. Registrera om du inte redan har gjort det. 
+- Testa att ansluta till samma Wi-Fi-slutpunkt (som nämns i det första steget) igen.
+- Distribuera till större grupper och till slut till alla förväntade användare i organisationen. 
 
 ## <a name="need-more-help"></a>Behöver du mer hjälp?
 

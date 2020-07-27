@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/13/2020
+ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08d53bd7ffedc2679fca675b88e021301d15fb62
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 5259fe84b11ce5d1ec4a3110dcbc188afb2e6d3e
+ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989017"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565690"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Tilldela användar- och enhetsprofiler i Microsoft Intune
 
@@ -85,11 +85,13 @@ Exempel:
 
 - På vissa Windows-enheter vill du alltid kunna kontrollera vissa inställningar för Microsoft Edge, oavsett vem som använder enheten. Du vill till exempel blockera alla hämtningar, begränsa alla cookies till den aktuella webbläsarsessionen och ta bort webbhistoriken. I det här scenariot sätter du in dessa Windows-enheter i en enhetsgrupp. Skapa sedan en [Administrativ mall i Intune](administrative-templates-windows.md), lägg till dessa enhetsinställningar och tilldela sedan profilen till enhetsgruppen.
 
-För att sammanfatta använder du enhetsgrupper när du inte bryr dig om vem som är inloggad på enheten eller om någon är inloggad alls. Du vill att inställningarna alltid ska finnas på enheten.
+För att sammanfatta använder du enhetsgrupper när du inte bryr dig om vem som är inloggad på enheten eller om någon loggar in. Du vill att inställningarna alltid ska finnas på enheten.
 
 ### <a name="user-groups"></a>Användargrupper
 
 Profilinställningar som tillämpas på användargrupper följer alltid med användaren och går sedan till användaren när de loggar in på olika enheter. Det är vanligt att användare har många enheter, till exempel en Surface Pro för arbete och en personlig iOS/iPadOS-enhet. Och det är vanligt att en person får åtkomst till e-post och andra organisationsresurser från dessa enheter.
+
+Följ den här allmänna regeln: Om en funktion tillhör en användare, till exempel e-post eller användarcertifikat, tilldelar du användargrupper.
 
 Exempel:
 

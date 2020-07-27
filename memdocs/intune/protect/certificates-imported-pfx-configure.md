@@ -17,11 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bf55564cabce9a060c15100ad974c59bf858b15
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: d09f3a2e734709f769aebcd4e8aab4fec774d4fc
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85591127"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461835"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Konfigurera och använda importerade PKCS-certifikat med Intune
 
@@ -44,6 +45,7 @@ Intune stöder import av PFX-certifikat för följande plattformar:
 - Android – enhetsadministratör
 - Android Enterprise – fullständigt hanterad
 - Android Enterprise – arbetsprofil
+- Android Enterprise – företagsägd arbetsprofil
 - iOS/iPadOS
 - macOS
 - Windows 10

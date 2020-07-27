@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/01/2020
+ms.date: 07/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,88 +16,99 @@ ms.reviewer: laarrizz
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c6e18bb6c58138d42565d70ab69a6cbd7169ff0
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: cecd39bcba7e16cc933086c99bbc0b403381d75d
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988367"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461801"
 ---
-# <a name="monitor-security-baseline-and-profiles-in-microsoft-intune"></a>Övervaka säkerhetsbaslinje och profil i Microsoft Intune
+# <a name="monitor-security-baselines-and-profiles-in-microsoft-intune"></a>Övervaka säkerhetsbaslinjer och profiler i Microsoft Intune
 
-Intune tillhandahåller flera alternativ för att övervaka dina säkerhetsbaslinjer. Du kan övervaka den profil för säkerhetsbaslinjer som gäller för dina användare och enheter. Du kan också övervaka den faktiska baslinjen och alla enheter som matchar (eller inte matchar) de rekommenderade värdena.
+Intune tillhandahåller flera alternativ för att övervaka dina säkerhetsbaslinjer. Du kan:
 
-Den här artikeln beskriver båda övervakningsalternativen.
+- Övervaka en säkerhetsbaslinje och alla enheter som matchar (eller inte matchar) de rekommenderade värdena.
+- Övervaka den profil för säkerhetsbaslinjer som gäller för dina användare och enheter.
+- Visa hur inställningarna från en vald profil ställs in på en vald enhet.
+
+Du kan också visa *konfiguration av slutpunktssäkerhet* som gäller för enskilda enheter, som innehåller säkerhetsbaslinjer.
+
+Den här artikeln beskriver övervakningsalternativen.
 
 [Säkerhetsbaslinjer i Intune](security-baselines.md) innehåller mer information om funktionen säkerhetsbaslinjer i Microsoft Intune.
 
 ## <a name="monitor-the-baseline-and-your-devices"></a>Övervaka baslinjen och dina enheter
 
-När du övervakar en baslinje kan få du inblick i säkerhetstillståndet för dina enheter baserat på Microsofts rekommendationer. Du kan visa de insikterna från översiktsfönstret för säkerhetsbaslinjen i Intune-konsolen.  Det tar upp till 24 timmar innan data visas när du först har tilldelat en baslinje. Senare ändringar tar upp till sex timmar att visas.
+När du övervakar en baslinje kan få du inblick i säkerhetstillståndet för dina enheter baserat på Microsofts rekommendationer. Om du vill visa insikterna loggar du in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), går till **Slutpunktsskydd** > **Säkerhetsbaslinjer** och väljer en säkerhetsbaslinjetyp, till exempel *Säkerhetsbaslinje för mobilenhetshantering*. Välj sedan den profilinstans som du vill visa information om i fönstret *Profil*. Detta öppnas i profilernas *egenskapsfönster* där du sedan kan välja någon av profilrapporterna i avsnittet *Övervaka*. 
 
-Om du vill se övervakningsdata för baslinjen och enheterna loggar du in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Sedan väljer du **Slutpunktssäkerhet** > **Säkerhetsbaslinjer**, en baslinje och öppnar fönstret **Översikt**.
+Det tar upp till 24 timmar innan data visas när du först har tilldelat en baslinje. Senare ändringar tar upp till sex timmar att visas.
 
-I fönstret **Översikt** finns två metoder för att övervaka status:
+När du går in på rapporter och enheter är olika uppgifter tillgängliga.
 
-- **Enhetsvy** – en sammanfattning av hur många enheter som finns i varje statuskategori för baslinjen.
-- **Per kategori** – en vy som visar varje kategori i baslinjen och innehåller procentandelen enheter för varje statusgrupp för varje baslinjekategori.
+<!-- UI is changing, unclear how yet: 
 
-Varje enhet visas med någon av följande statusar (som används i både *enhetsvyn* och *per kategori-vyerna*):
 
-- **Matchar baslinjen** – alla inställningarna i baslinjen överensstämmer med de rekommenderade inställningarna.
-- **Matchar inte baslinjen** – en eller flera inställningar i baslinjen ändrades från standardvärdena i den ursprungliga baslinjen. Standardvärdena i varje säkerhetsbaslinje är de rekommenderade värdena för den baslinjen.
+- **Device view** – A summary of how many devices are in each status category for the baseline.
+- **Per-category** - A view that displays each category in the baseline and includes the percentage of devices for each status group for each baseline category.
+
+Each device is represented by one of the following statuses (used in the *device* view and also the *per-category* views):
+
+- **Matches baseline** - All the settings in the baseline match the recommended settings.
+- **Does not match baseline** - One or more settings in the baseline were modified from their default values in the original baseline. The default values in each security baseline are the recommended values for that baseline.
 
   > [!NOTE]
-  > När du skapar eller redigerar en baslinjeprofil gör alla ändringar av ett standardvärde eller en konfigurationsinställning att statusen *Matchar inte baslinjen* visas. Kontakta Microsoft Support om du vill ha hjälp med att avgöra vilka inställningar som har ändrats. 
+  > When you create or edit a baseline profile, any change that is made to a default value or configuration setting causes a *Does not match baseline* status to occur. For help to determine the settings that were changed, contact Microsoft Support. 
 
-- **Felkonfigurerad** – minst en inställning har inte konfigurerats korrekt. Denna status innebär att inställningen är i en konflikt, fel eller i ett väntande tillstånd.
-- **Ej tillämpligt** – minst en inställning är inte tillämplig och används inte.
+- **Misconfigured** - At least one setting isn't correctly configured. This status means that the setting is in a conflict, error, or pending state.
+- **Not applicable** - At least one setting isn't applicable and isn't applied.
 
-### <a name="device-view"></a>Enhetsvyn
+### Device view
 
-I översiktsfönstret visas en diagrambaserad sammanfattning av hur många enheter som har en viss status för baslinjen: **Säkerhetsbaslinjeposition för tilldelade Windows 10-enheter**.
+The Overview pane displays a chart-based summary of how many devices have a specific status for the baseline; **Security baseline posture for assigned Windows 10 devices**.
 
-![Kontrollera enheternas status](./media/security-baselines-monitor/overview.png)
+![Check the status of the devices](./media/security-baselines-monitor/overview.png)
 
-När en enhet har olika status från olika kategorier i baslinjen representeras enheten av en enda status. Den status som representerar enheten hämtas från följande prioritetsordning: **Felkonfigurerad**, **Matchar inte baslinjen**, **Ej tillämpligt**, **Matchar baslinjen**.
+When a device has different status from different categories in the baseline, the device is represented by a single status. The status that represents the device is taken from the following order of precedence: **Misconfigured**, **Does not match baseline**, **Not applicable**, **Matches baseline**.
 
-Om en enhet till exempel har en inställning klassificerad som *Felkonfigurerad* och en eller flera inställningar klassificerade som *Matchar inte baslinjen* så klassificeras enheten som *Felkonfigurerad*.
+For example, if a device has a setting that's classified as *misconfigured* and one or more settings that are classified as *Does not match baseline*, the device is classified as *Misconfigured*.
 
-Du kan klicka på diagrammet för att visa detaljerad information och en lista över enheter med olika statusar. Sedan kan du välja enskilda enheter från den listan för att visa information om enskilda enheter. Exempel:
+You can click on the chart to drill through and view a list of devices with various statuses. You can then select individual devices from that list to view details about individual devices. For example:
 
-- Välj **Enhetskonfiguration** > Välj profilen med ett feltillstånd:
+- Select **Device configuration** > Select the profile with an Error state:
 
-  ![Visa status för en profil](./media/security-baselines-monitor/device-configuration-profile-list.png)
+  ![View the status of a profile](./media/security-baselines-monitor/device-configuration-profile-list.png)
 
-- Välj felprofilen. En lista över alla inställningar i profilen, samt deras status visas. Du kan nu bläddra för att hitta den inställning som orsakar felet:
+- Select the Error profile. A list of all settings in the profile, and their state is shown. Now, you can scroll to find the setting causing the error:
 
-  ![Visa inställningen som orsakar felet](./media/security-baselines-monitor/profile-with-error-status.png)
+  ![See the setting causing the error](./media/security-baselines-monitor/profile-with-error-status.png)
 
-Använd den här rapporteringen för att se alla inställningar i en profil som orsakar problem. Få även mer information om principer och profiler som distribuerats till enheter.
+Use this reporting to see any settings in a profile that are causing an issue. Also get more details of policies and profiles deployed to devices.
 
 > [!NOTE]
-> När en egenskap är inställd till **Inte konfigurerad** ignoreras inställningen i baslinjen och inga begränsningar tillämpas. Egenskapen visas inte i någon rapportering.
+> When a property is set to **Not configured** in the baseline, the setting is ignored, and no restrictions are enforced. The property isn't shown in any reporting.
 
-### <a name="per-category-view"></a>Per kategori-vy
+### Per category view
 
-I översiktsfönstret visas ett per kategori-diagram för baslinjen: **Säkerhetsbaslinjeposition efter kategori**.  Den här vyn visar varje kategori från baslinjen och identifierar procentandelen enheter som faller inom en statusklassificering för var och en av dessa kategorier.
+The Overview pane displays a per-category chart for the baseline named **Security baseline posture by category**.  This view displays each category from the baseline, and identifies the percentage of devices that fall into a status classification for each of those categories.
 
-![Per kategori-vy över status](./media/security-baselines-monitor/monitor-baseline-per-category.png)
+![Per-Category view of status](./media/security-baselines-monitor/monitor-baseline-per-category.png)
 
-Status för **Matchar baslinjen** visas inte förrän 100 % av enheterna rapporterar den statusen för kategorin.
+Status for **Matches baseline** doesn't display until 100% of devices report that status for the category.
 
-Du kan sortera per kategori-vyn efter varje kolumn genom att välja uppåt-nedåt-pilikonen överst i kolumnen.
+You can sort the by-category view by each column, by selecting up-down arrow icon at the top of the column.
+-->
 
 ## <a name="monitor-the-profile"></a>Övervaka profilen
 
 Övervakning av profilen ger dig insikt i distributionsstatusen för dina enheter, men inte säkerhetsstatusen baserad på baslinjerekommendationerna.
 
-1. I Intune väljer du **Säkerhetsbaslinjer** > välj en baslinje > **Profiler skapade**.
+1. I Intune väljer du **Säkerhetsbaslinjer** > välj en baslinje > för att öppna fönstret *Profiler*.
 
-2. Välj en profil. I **Översikt** visar bilden hur många enheter och användare som har den här profilen tilldelad:
+<!-- More churn  
+2. Select a profile. In **Overview**, the image shows how many devices and users have this profile assigned:
 
-   ![Se hur många enheter och användare som är tilldelade profilen för säkerhetsbaslinjer](./media/security-baselines-monitor/existing-profile-overview.png)
-
+   ![See how many devices and users are assigned the security baselines profile](./media/security-baselines-monitor/existing-profile-overview.png)
+--> 
 3. Under **Hantera** > **Egenskaper**, visas en lista över alla inställningar i baslinjen. Du kan också ändra någon av dessa inställningar:
 
    ![Visa och uppdatera inställningarna i profilen för säkerhetsbaslinjer](./media/security-baselines-monitor/manage-settings.png)
@@ -106,11 +117,24 @@ Du kan sortera per kategori-vyn efter varje kolumn genom att välja uppåt-nedå
 
    ![Se de olika alternativen för övervakare för en profil för säkerhetsbaslinjer](./media/security-baselines-monitor/monitor-status-options.png)
 
+## <a name="view-settings-from-profiles-that-apply-to-a-device"></a>Visa inställningar från profiler som gäller för en enhet
+
+Du kan välja en profil för en säkerhetsbaslinje och visa en detaljerad lista över inställningar från profilen som de gäller för en enskild enhet.  Om du vill visa listan går du till **Slutpunktsskydd** > **Säkerhetsbaslinjer** >  *, väljer säkerhetsbaslinjetypen*  > *och väljer profilen du vill visa* > **Enhetsstatus** för. Du kan också visa listan genom att gå till **Slutpunktsskydd** > **Alla enheter** > *välja en enhet* > **Konfiguration av slutpunktssäkerhet** > *välja en baslinjeversion*.
+
+När du har valt en enhet visar administrationscentret för Microsoft Endpoint Manager en lista över inställningarna från profilen, inklusive den kategori som inställningen är från, och konfigureringstillståndet på enheten. Konfigureringstillstånd innehåller följande värden:
+
+- **Klart** – Inställningen på enheten matchar värdet enligt konfigurationen i profilen. Detta är antingen standardbaslinjen och det rekommenderade värdet, eller ett anpassat värde som angavs av en administratör när profilen konfigurerades.
+- **Konflikt** – Inställningen är i konflikt med en annan princip, innehåller ett fel eller väntar på en uppdatering.
+- **Inte tillämpligt** – Inställningen är inte tillämpad av profilen.
+
+> [!NOTE]
+> Statusvärden för inställningarna uppdateras i en framtida version för att ge mer detaljerad information.
+
 ## <a name="view-endpoint-security-configurations-per-device"></a>Visa konfiguration av slutpunktssäkerhet per enhet
 
 Visa information om de säkerhetskonfigurationer som gäller för en enskild enhet. Detta kan hjälpa dig att isolera inställningar som är felkonfigurerade.
 
-1. Logga in på [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 2. Gå till **Enheter** > **Alla enheter** och välj den enhet du vill visa.
 
@@ -122,7 +146,7 @@ Visa information om de säkerhetskonfigurationer som gäller för en enskild enh
 
 Du har distribuerat en säkerhetsbaslinje, men distributionsstatusen visar ett fel. I följande steg får du vägledning om hur du felsöker felet.
 
-1. I Intune väljer du **Säkerhetsbaslinjer** > välj en baslinje > **Profiler skapade**.
+1. I Intune väljer du **Säkerhetsbaslinjer** > väljer en baslinje > **Profiler**.
 
 2. Välj en profil > under **Övervakare** > **Status per inställning**.
 

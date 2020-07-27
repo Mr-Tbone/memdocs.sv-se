@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1d994960e28deb3e48e4f778b6b496440037052
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 4ee71bdcf45c4dc99b9c6b3eb889ba373ecadca9
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83984739"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461852"
 ---
 # <a name="add-android-enterprise-system-apps-to-microsoft-intune"></a>Lägg till Android Enterprise-systemappar i Microsoft Intune
 
-Innan du tilldelar en app till en enhet eller en grupp av användare måste du först lägga till appen i Microsoft Intune. Systemappar stöds på Android Enterprise-enheter. Du kan aktivera en systemapp för [dedikerade Android Enterprise-enheter](../enrollment/android-kiosk-enroll.md) eller [fullständigt hanterade enheter](../enrollment/android-fully-managed-enroll.md).
+Innan du tilldelar en app till en enhet eller en grupp av användare måste du först lägga till appen i Microsoft Intune. Systemappar stöds på Android Enterprise-enheter. Du kan aktivera en systemapp för [dedikerade Android Enterprise-enheter](../enrollment/android-kiosk-enroll.md), [fullständigt hanterade enheter](../enrollment/android-fully-managed-enroll.md) eller [företagsägd Android Enterprise med arbetsprofil](../enrollment/android-corporate-owned-work-profile-enroll.md).
 
 ## <a name="add-the-app"></a>Lägg till appen
 

@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/07/2020
+ms.date: 07/20/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1c92220fabf8d1cb2a34ac702dd4157ef848762b
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 1916004d8e61239d7de92a77769ee970cc7a3118
+ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990270"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86565610"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>Skapa VPN-profiler för att ansluta till VPN-servrar i Intune
 
@@ -49,6 +49,7 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 - Check Point Capsule VPN
   - Android-enhetsadministratör
   - Android Enterprise-arbetsprofiler
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
   - iOS/iPadOS
   - macOS
   - Windows 10
@@ -58,7 +59,7 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 - Cisco AnyConnect
   - Android-enhetsadministratör
   - Android Enterprise-arbetsprofiler
-  - Ägare av Android Enterprise-enhet (helt hanterad)
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil
   - iOS/iPadOS
   - macOS
 
@@ -67,8 +68,8 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 
 - Citrix SSO
   - Android-enhetsadministratör
-  - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-policies-use-android.md)
-  - Ägare av Android Enterprise-enhet (helt hanterad): Använd [konfigurationsprincip för app](../apps/app-configuration-policies-use-android.md)
+  - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
+  - Fullständigt hanterad Android Enterprise och företagsägda arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
   - iOS/iPadOS
   - Windows 10
 
@@ -81,7 +82,7 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 - F5 Access
   - Android-enhetsadministratör
   - Android Enterprise-arbetsprofiler
-  - Ägare av Android Enterprise-enhet (helt hanterad)
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil
   - iOS/iPadOS
   - macOS
   - Windows 10
@@ -96,7 +97,8 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - Windows 10
 
 - Palo Alto Networks GlobalProtect
-  - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-policies-use-android.md)
+  - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
   - iOS/iPadOS
   - Windows 10
 
@@ -106,7 +108,7 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 - Pulse Secure
   - Android-enhetsadministratör
   - Android Enterprise-arbetsprofiler
-  - Ägare av Android Enterprise-enhet (helt hanterad)
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil
   - iOS/iPadOS
   - Windows 10
   - Windows 8,1
@@ -115,6 +117,7 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 - SonicWall Mobile Connect
   - Android-enhetsadministratör
   - Android Enterprise-arbetsprofiler
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil
   - iOS/iPadOS
   - macOS
   - Windows 10
@@ -122,7 +125,8 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - Windows Phone 8.1
 
 - Zscaler
-  - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-policies-use-android.md)
+  - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
+  - Fullständigt hanterad Android Enterprise och företagsägd arbetsprofil: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
   - iOS/iPadOS
 
 > [!IMPORTANT]
@@ -136,8 +140,8 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
 
     - **Plattform**: Välj plattform för dina enheter. Alternativen är:
       - **Android-enhetsadministratör**
-      - **Android Enterprise** > **endast enhetsägare**
-      - **Android Enterprise** > **endast arbetsprofil**
+      - **Android Enterprise** > **Fullständigt hanterad och dedikerad Android Enterprise och företagsägd arbetsprofil**
+      - **Android Enterprise** > **Arbetsprofil**
       - **iOS/iPadOS**
       - **macOS**
       - **Windows 10 och senare**

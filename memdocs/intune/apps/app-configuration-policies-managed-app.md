@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 01/23/2020
+ms.date: 07/09/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ed731cdb4efddaedbfcde47acce3fc24d344d80
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: b493443a86d7cd1769ce6f66c77acc87063521f6
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988798"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461648"
 ---
 # <a name="add-app-configuration-policies-for-managed-apps-without-device-enrollment"></a>Lägg till appkonfigurationsprinciper för hanterade appar utan enhetsregistrering
 
@@ -39,11 +39,19 @@ Du kan använda appkonfigurationsprinciper med hanterade appar som har stöd fö
     - **Enhetsregistreringstyp**: Hanterade appar har valts.
 4. Välj den app du vill konfigurera genom att välja **Välj offentliga appar** eller **Välj anpassade appar**. Välj appen i listan över appar som du har godkänt och synkroniserat med Intune.
 5. Visa sidan **Inställningar** genom att klicka på **Nästa**.
-6. Ange **Namn** och **Värde** för varje konfigurationsinställning som stöds av appen. 
+6. På sidan **Inställningar** visas alternativ som varierar beroende på vilken app du konfigurerar:
 
-   Intune App SDK-aktiverade appar har stöd för konfigurationer i nyckel/värde-par. Läs dokumentationen för varje app om du vill lära dig mer om vilka nyckel/värde-konfigurationer som stöds. Observera att du kan använda token som fylls i dynamiskt med data som skapas av programmet. Mer information finns i [Konfigurationsvärden för att använda token](app-configuration-policies-managed-app.md#configuration-values-for-using-tokens). Information om principinställningar för Outlook för iOS/iPadOS-appen finns i [Hantera appkonfiguration för Outlook för iOS/iPadOS med Microsoft Intune](https://technet.microsoft.com/library/mt813789(v=exchg.150).aspx).
+    - **Allmänna konfigurationsinställningar** – Ange **Namn** och **Värde** för varje allmän konfigurationsinställning som stöds av appen. 
+ 
+        Intune App SDK-aktiverade appar har stöd för konfigurationer i nyckel/värde-par. Läs dokumentationen för varje app om du vill lära dig mer om vilka nyckel/värde-konfigurationer som stöds. Observera att du kan använda token som fylls i dynamiskt med data som skapas av programmet. Välj ellipsen ( **...** ) och sedan **Ta bort** om du vill ta bort en allmän konfigurationsinställning. Mer information finns i [Konfigurationsvärden för att använda token](app-configuration-policies-managed-app.md#configuration-values-for-using-tokens). 
 
-    Välj ellipsen ( **...** ) och välj **Ta bort** för att ta bort en konfiguration.  
+    - **Konfigurationsinställningar för Outlook** – I Outlook för iOS och Android kan administratörer anpassa standardkonfigurationen för flera inställningar i appen. Mer information finns i [Outlook för iOS och Android – Allmänna scenarier för appkonfiguration](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#general-app-configuration-scenarios).
+   
+    - **S/MIME** – S/MIME (Secure Multipurpose Internet Mail Extensions) är en specifikation som gör att användarna kan skicka och ta emot digitalt signerad och krypterad e-post.
+        - **Aktivera S/MIME** – Ange om S/MIME-kontroller ska aktiveras när du skriver e-post. Standardvärde: **Inte konfigurerat**.
+        - **Tillåt att användaren ändrar inställningen** – Ange om användaren får ändra inställningen. S/MIME måste vara aktiverat. Standardvärde: **Ja**.
+        
+    Mer information om Outlook-policyinställningar för appkonfiguration finns i [Distriburera appkonfigurationsinställningar för Outlook för iOS och Android](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 7. Klicka på **Nästa** för att visa sidan **Tilldelningar**.
 8. Klicka på **Välj de grupper som ska inkluderas**.
@@ -55,7 +63,7 @@ Du kan använda appkonfigurationsprinciper med hanterade appar som har stöd fö
     >Om någon annan grupp redan har inkluderats för en viss tilldelning när du lägger till en grupp så blir den förvald och kan inte ändras för andra tilldelningstyper för inkludering. Gruppen som har använts kan därför inte användas som en undantagen grupp.
 
 12. Visa sidan **Granska och skapa** genom att klicka på **Nästa**.
-13. Lägg till konfigurationsprincipen i Intune genom att klicka på **Skapa**.
+13. Klicka på **Skapa** för att lägga till konfigurationsprincipen i Intune.
 
 ## <a name="configuration-values-for-using-tokens"></a>Konfigurationsvärden för att använda token
 

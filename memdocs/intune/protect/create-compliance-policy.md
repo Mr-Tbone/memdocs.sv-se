@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de23dc438ac176383cf5f5fbfac4da22f91bd4b2
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: e541eb04f8de689ee76a68556bb1b2eb90914b96
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988826"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461444"
 ---
 # <a name="create-a-compliance-policy-in-microsoft-intune"></a>Skapa en efterlevnadsprincip i Microsoft Intune
 
@@ -75,7 +75,7 @@ Om du vill använda enhetsefterlevnadsprinciper måste du:
    - *Windows 10 och senare*
 
     För *Android Enterprise* väljer du även en **principtyp**:
-     - *Efterlevnadsprincip för ägare av Android-enhet*
+     - *Princip för fullständigt hanterade och dedikerade enheter och företagsägd arbetsprofil för Android*
      - *Efterlevnadsprincip för Android-arbetsprofil*
 
     Öppna sedan konfigurationsfönstret **Skapa princip** genom att välja **Skapa**.

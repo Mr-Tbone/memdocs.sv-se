@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e99922c920966f4f0bb1037b5fc74799cfca7c5
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: eeab1155a7a0035c5e0db15c3a5402d3636edaca
+ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988780"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86461665"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Appkonfigurationsprinciper för Microsoft Intune
 
@@ -75,15 +75,15 @@ Val av **Hanterade appar** som **Enhetsregistreringstyp** syftar specifikt på a
 
 ## <a name="android-app-configuration-policies"></a>Konfigurationsprinciper för Android-appar
 
-För konfigurationsprinciper för Android-appar kan du välja typ av enhetsregistrering innan du skapar en konfigurationsprofil för appar. Du kan redovisa certifikatprofiler som baseras på registreringstyp (arbetsprofil eller enhetsägare). Den här uppdateringen innehåller följande:
+För konfigurationsprinciper för Android-appar kan du välja typ av enhetsregistrering innan du skapar en konfigurationsprofil för appar. Du kan redovisa certifikatprofiler som baseras på registreringstyp (arbetsprofilen fullständigt hanterad, dedikerad eller företagsägd). Den här uppdateringen innehåller följande:
 
-1. Om en ny profil skapas och arbetsprofil och enhetsägarprofil väljs som enhetsregistreringstyp kan du inte associera en certifikatprofil med appkonfigurationsprincipen.
+1. Om du skapar en ny profil och väljer **Alla profiltyper** som enhetsregistreringstyp kan du inte associera en certifikatprofil med appkonfigurationsprincipen.
 2. Om en ny profil skapas och Endast arbetsprofil har valts kan de certifikatprinciper för arbetsprofil som skapats under Enhetskonfiguration användas.
-3. Om en ny profil skapas och Endast enhetens ägare har valts kan de certifikatprinciper för enhetsägare som skapats under Enhetskonfiguration användas. 
+3. Om du skapar en ny profil och väljer **Endast arbetsprofilerna Fullständigt hanterad, Dedikerad och Företagsägd** kan du använda certifikatprinciperna **Fullständigt hanterad, Dedikerad och Företagsägd arbetsprofil** som skapas under Enhetskonfiguration. 
 4. Om du distribuerar en Gmail- eller Nine-konfigurationsprofil till en dedikerad Android Enterprise-enhet som inte involverar en användare misslyckas det eftersom Intune inte kan matcha användaren.
 
 > [!IMPORTANT]
-> För de befintliga principer som skapats före lanseringen av den här funktionen (april 2020, version 2004) och som inte har några associerade certifikatprofiler, används som standard arbetsprofil och enhetsägarprofil som enhetsregistreringstyp. Även för de befintliga principer som skapats före lanseringen av den här funktionen och som har associerade certifikatprofiler, används som standard endast arbetsprofil.
+> För befintliga principer som skapats före lanseringen av den här funktionen (april 2020, version 2004) och inte har några associerade certifikatprofiler används **Alla profiltyper** som standard som enhetsregistreringstyp. Även för de befintliga principer som skapats före lanseringen av den här funktionen och som har associerade certifikatprofiler, används som standard endast arbetsprofil.
 > 
 > Befintliga principer kan inte åtgärda eller utfärda nya certifikat.
 
