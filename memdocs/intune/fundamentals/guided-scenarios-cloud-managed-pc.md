@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c43b74b6ca20fa3f140ad688be49daa928c54b5f
-ms.sourcegitcommit: 397ec824f1368dcf06c3870c89f52347852062bd
+ms.openlocfilehash: 4991ced4517ffe5902f876c196b47c2c2b50a8a6
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85264047"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262769"
 ---
 # <a name="guided-scenario---cloud-managed-modern-desktop"></a>Guidat scenario – Molnhanterat modernt skrivbord
 
@@ -47,7 +47,7 @@ Om du vill utvärdera ett molnhanterat modernt skrivbord i din organisation hitt
 
 ## <a name="step-1---introduction"></a>Steg 1 – Introduktion
 
-Med hjälp av det här guidade scenariot konfigurerar du en testanvändare, registrerar en enhet i Intune och distribuerar enheten med Intune-rekommenderade inställningar samt Windows 10 och Microsoft 365-appar. Enheten kommer även att konfigureras för Microsoft Defender Advanced Threat Protection om du väljer att [aktivera detta skydd i Intune](../protect/advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune). Den användare som du konfigurerar samt den enhet som du registrerar kommer att läggas till i en ny säkerhetsgrupp och konfigureras med de rekommenderade inställningarna för säkerhet och produktivitet.
+Med hjälp av det här guidade scenariot konfigurerar du en testanvändare, registrerar en enhet i Intune och distribuerar enheten med Intune-rekommenderade inställningar samt Windows 10 och Microsoft 365-appar. Enheten kommer även att konfigureras för Microsoft Defender Advanced Threat Protection om du väljer att [aktivera detta skydd i Intune](../protect/advanced-threat-protection-configure.md#enable-microsoft-defender-atp-in-intune). Den användare som du konfigurerar samt den enhet som du registrerar kommer att läggas till i en ny säkerhetsgrupp och konfigureras med de rekommenderade inställningarna för säkerhet och produktivitet.
 
 ### <a name="what-you-will-need-to-continue"></a>Det här behöver du för att fortsätta
 
@@ -127,5 +127,5 @@ När användaren ansluter enheten till Azure Active Directory tillämpas följan
 
 ## <a name="next-steps"></a>Nästa steg
 
-- Om du använder Microsoft Defender Advanced Threat Detection skapar du en [Intune-efterlevnadsprincip](../protect/advanced-threat-protection.md#create-and-assign-compliance-policy-to-set-device-risk-level) för att kräva att hotanalysen i Defender uppfyller efterlevnad.
-- Skapa en [enhetsbaserad princip för villkorsstyrd åtkomst](../protect/advanced-threat-protection.md#create-a-conditional-access-policy) för att blockera åtkomst om enheten inte uppfyller Intune-efterlevnad.
+- Om du använder Microsoft Defender Advanced Threat Detection skapar du en [Intune-efterlevnadsprincip](../protect/advanced-threat-protection-configure.md#create-and-assign-compliance-policy-to-set-device-risk-level) för att kräva att hotanalysen i Defender uppfyller efterlevnad.
+- Skapa en [enhetsbaserad princip för villkorsstyrd åtkomst](../protect/advanced-threat-protection-configure.md#create-a-conditional-access-policy) för att blockera åtkomst om enheten inte uppfyller Intune-efterlevnad.

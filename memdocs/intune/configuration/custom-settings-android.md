@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43107ce98ee1c9d002b07470c224b2291819069b
-ms.sourcegitcommit: 397ec824f1368dcf06c3870c89f52347852062bd
+ms.openlocfilehash: 8012b11557971ff8a7e3a05360243010d891fa2e
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85264115"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262786"
 ---
 # <a name="use-custom-settings-for-android-devices-in-microsoft-intune"></a>Använda anpassade inställningar för Android-enheter i Microsoft Intune
 
@@ -35,7 +35,7 @@ Med hjälp av en anpassad profil kan du konfigurera och tilldela följande Andro
 - [Skapa en Wi-Fi-profil med en i förväg delad nyckel](/intune/wi-fi-profile-shared-key)
 - [Skapa en VPN-profil per app](/intune/android-pulse-secure-per-app-vpn)
 - [Tillåta och blockera appar för Samsung Knox Standard-enheter](/intune/samsung-knox-apps-allow-block)
-- [Konfigurera webbskydd i Microsoft Defender Advanced Threat Protection för Android](../protect/advanced-threat-protection.md#configure-web-protection-on-devices-that-run-android)
+- [Konfigurera webbskydd i Microsoft Defender Advanced Threat Protection för Android](../protect/advanced-threat-protection-manage-android.md)
 
 >[!IMPORTANT]
 > Endast de inställningar som anges kan konfigureras med hjälp av en anpassad profil. Android-enheter visar inte hela listan med OMA-URI-inställningar som du kan konfigurera. Om du vill se fler inställningar kan du rösta på detta på [Intunes UserVoice-webbplats](https://microsoftintune.uservoice.com/forums/291681-ideas).

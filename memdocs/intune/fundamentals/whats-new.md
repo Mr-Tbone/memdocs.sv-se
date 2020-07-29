@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da2f2b1155e6760d23d4ead65899b82e277fbd3e
-ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
+ms.openlocfilehash: 2cd5e8f6e1975adf33131ca47049eb2d4a6f68cd
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891555"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262888"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -290,11 +290,11 @@ Du kan skapa och köra skriptpaket på slutanvändares enheter för att proaktiv
 
 #### <a name="use-microsoft-defender-atp-in-compliance-policies-for-android---4425686----"></a>Använd Microsoft Defender ATP i policyer för efterlevnad i Android<!-- 4425686  -->
 
-Nu kan du använda Intune till att [registrera Android-enheter i Microsoft Defender Advanced Threat Protection](../protect/advanced-threat-protection.md#onboard-android-devices) (Microsoft Defender ATP). När dina enheter har registrerats kan dina policyer för efterlevnad i Android använda signaler om *hotnivåer* från Microsoft Defender ATP. Det här är samma signaler som du tidigare kunnat använda för Windows 10-enheter.
+Nu kan du använda Intune till att [registrera Android-enheter i Microsoft Defender Advanced Threat Protection](../protect/advanced-threat-protection-configure.md#onboard-devices) (Microsoft Defender ATP). När dina enheter har registrerats kan dina policyer för efterlevnad i Android använda signaler om *hotnivåer* från Microsoft Defender ATP. Det här är samma signaler som du tidigare kunnat använda för Windows 10-enheter.
 
 #### <a name="configure-defender-atp-web-protection-for-android-devices---6185563----"></a>Konfigurera webbskydd i Defender ATP för Android-enheter<!-- 6185563  -->
 
-När du använder Microsoft Defender Avancerat skydd (Microsoft Defender ATP) för Android-enheter kan du [konfigurera webbskyddet i Microsoft Defender ATP](../protect/advanced-threat-protection.md#configure-web-protection-on-devices-that-run-android) för att inaktivera nätfiskefunktionen eller förhindra att VPN-nätverket används vid genomsökningar.
+När du använder Microsoft Defender Avancerat skydd (Microsoft Defender ATP) för Android-enheter kan du [konfigurera webbskyddet i Microsoft Defender ATP](../protect/advanced-threat-protection-manage-android.md) för att inaktivera nätfiskefunktionen eller förhindra att VPN-nätverket används vid genomsökningar.
 
 Beroende på hur din Android-enhet är registrerad i Intune är följande alternativ tillgängliga:
 

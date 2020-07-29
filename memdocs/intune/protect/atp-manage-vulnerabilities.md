@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72fb278070e2d5b8581fb1b2e263aa06c90b5df9
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: a1d410da2cbedb9bcd2418fac1ddb783529ee8c6
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989752"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262599"
 ---
 # <a name="use-intune-to-remediate-vulnerabilities-identified-by-microsoft-defender-atp"></a>Använda Intune för att åtgärda sårbarheter som upptäckts av Microsoft Defender ATP
 
@@ -75,7 +75,7 @@ Ett exempel på ett arbetsflöde:
 - Konfigurera en tjänst-till-tjänst-anslutning med Microsoft Defender ATP.
 - Distribuera en princip för enhetskonfiguration med profiltypen **Microsoft Defender ATP (Windows 10 Desktop)** till enheter med risk som utvärderas av ATP.
 
-  Information om hur du ställer in Intune för att arbeta med ATP finns i [Tvinga fram kompatibilitet för Microsoft Defender ATP med villkorlig åtkomst i Intune](advanced-threat-protection.md#enable-microsoft-defender-atp-in-intune).
+  Information om hur du ställer in Intune för att arbeta med ATP finns i [Tvinga fram kompatibilitet för Microsoft Defender ATP med villkorlig åtkomst i Intune](advanced-threat-protection-configure.md#enable-microsoft-defender-atp-in-intune).
 
 ## <a name="work-with-security-tasks"></a>Arbeta med säkerhetsuppgifter
 
@@ -103,6 +103,7 @@ Ett exempel på ett arbetsflöde:
 När åtgärden har genomförts kan riskexponeringsbedömningen i ATP minska baserat på ny information från de åtgärdade enheterna.
 
 ## <a name="next-steps"></a>Nästa steg
+
 Läs mer om Intune och [Microsoft Defender ATP](advanced-threat-protection.md).
 
 Titta närmare på Intune [Mobile Threat Defense](mobile-threat-defense.md).

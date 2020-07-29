@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8073cb1dbe872d9c7fd1ad05235707be4b969519
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 0c1029c4641d9ff07bf4254427cb08dfa583b5f8
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461427"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262633"
 ---
 # <a name="whats-new-in-the-microsoft-intune---previous-months"></a>Nyheter i Microsoft Intune – föregående månader
 
@@ -2562,7 +2562,7 @@ Med den här funktionsuppdateringen kan du skapa en profil för enhetskonfigurat
 Gäller för: senaste [Windows Insider](https://docs.microsoft.com/windows-insider/at-work-pro/)-version (medan förhandsversion används).
 
 #### <a name="windows-defender-atp-configuration-package-automatically-added-to-configuration-profile---2144658---"></a>ATP-konfigurationspaketet för Windows Defender läggs automatiskt till i konfigurationsprofilen<!-- 2144658 -->
-När du använder enheter med [Advanced Threat Protection och registrering](../protect/advanced-threat-protection.md#onboard-windows-devices-by-using-a-configuration-profile) i Intune behövde du tidigare ladda ned ett konfigurationspaket och lägga till det i din konfigurationsprofil. Med den här uppdateringen hämtar Intune paketet automatiskt från Windows Defender Säkerhetscenter och lägger till det i din profil.
+När du använder enheter med [Advanced Threat Protection och registrering](../protect/advanced-threat-protection-configure.md#onboard-devices) i Intune behövde du tidigare ladda ned ett konfigurationspaket och lägga till det i din konfigurationsprofil. Med den här uppdateringen hämtar Intune paketet automatiskt från Windows Defender Säkerhetscenter och lägger till det i din profil.
 Gäller för Windows 10 och senare.
 
 #### <a name="require-users-to-connect-during-device-setup--2311457--"></a>Kräv att användare ansluter under enhetskonfiguration<!--2311457-->
