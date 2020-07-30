@@ -10,12 +10,12 @@ ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b9111e3be82424425561e0a664fee955d73ee63
-ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
+ms.openlocfilehash: b6d1ee82e116a6d4375e37ccca84c8b35707f8e1
+ms.sourcegitcommit: e8076576f5c0ea7e72358d233782f8c38c184c8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84270828"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334597"
 ---
 # <a name="how-to-manage-clients-in-configuration-manager"></a>Hantera klienter i Configuration Manager
 
@@ -249,22 +249,24 @@ Standard platsen för Configuration Manager-klientcachen är `%windir%\ccmcache`
 
 ### <a name="about-the-client-cache"></a>Om klientcachen  
 
-Configuration Manager-klienten hämtar innehållet för nödvändig program vara strax efter att den tagit emot distributionen, men väntar på att köra den tills distributionen har schemalagts. Vid den schemalagda tiden kontrollerar Configuration Manager klienten om innehållet är tillgängligt i cacheminnet. Om innehållet finns i cacheminnet och det är rätt version, använder klienten det cachelagrade innehållet. När den nödvändiga versionen av innehållet ändras, eller om klienten tar bort innehållet för att göra rummet för ett annat paket, laddar klienten ned innehållet till cacheminnet igen.  
+Configuration Manager-klienten hämtar innehållet för nödvändig program vara strax efter distributionens tillgängliga tid men väntar på att köra den tills distributionens schemalagda tid. Vid den schemalagda tiden kontrollerar Configuration Manager klienten om innehållet är tillgängligt i cacheminnet. Om innehållet finns i cacheminnet och det är rätt version, använder klienten det cachelagrade innehållet. När den nödvändiga versionen av innehållet ändras, eller om klienten tar bort innehållet för att göra rummet för ett annat paket, laddar klienten ned innehållet till cacheminnet igen.  
 
 Om klienten försöker ladda ned innehåll för ett program eller program som är större än cachens storlek, så Miss lyckas distributionen på grund av otillräcklig cachestorlek. Klienten genererar status meddelandet 10050 för otillräcklig cachestorlek. Om du ökar cachestorleken senare är resultatet:  
 
 - För ett obligatoriskt program: klienten gör inget nytt försök att ladda ned innehållet automatiskt. Distribuera om paketet och programmet till klienten.  
 - För ett obligatoriskt program: klienten försöker automatiskt att ladda ned innehållet när dess klient princip laddas ned.  
 
-Om klienten försöker ladda ned ett paket som är mindre än cachens storlek, men cachen är full, fortsätter alla *nödvändiga* distributioner att försöka igen tills:
+Om klienten försöker ladda ned innehåll som är mindre än cachens storlek, men cachen är full, fortsätter alla *nödvändiga* distributioner att försöka igen tills:
 
 - Cache-utrymmet är tillgängligt
 - Timeout för hämtning
 - Antalet återförsök når gränsen
 
-Om du senare ökar storleken på cacheminnet försöker klienten Ladda ned paketet igen under nästa återförsöksintervall. Klienten försöker ladda ned innehållet var fjärde timme tills det försöker 18 gånger.  
+Om du senare ökar storleken på cacheminnet försöker klienten Ladda ned innehållet igen under nästa återförsöksintervall. Klienten försöker ladda ned innehållet var fjärde timme tills det försöker 18 gånger.  
 
-Cachelagrat innehåll tas inte bort automatiskt. Den finns kvar i cacheminnet i minst en dag efter att klienten har använt det innehållet. Om du konfigurerar paket egenskaperna med alternativet att Kvarhåll innehåll i klientcachen, tar klienten inte bort den automatiskt. Om cache-utrymmet används av paket som har hämtats under de senaste 24 timmarna och klienten måste ladda ned nya paket, ökar du storleken på cacheminnet eller väljer alternativet för att ta bort beständigt cache-innehåll.  
+Cachelagrat innehåll tas inte bort automatiskt. Den finns kvar i cacheminnet i minst en dag efter att klienten har använt det innehållet. Om du konfigurerar innehållet med alternativet att Kvarhåll innehåll i klientcachen, tar klienten inte bort den automatiskt. Om cacheminnet används av innehåll som hämtats under de senaste 24 timmarna och klienten måste ladda ned nytt innehåll, ökar du storleken på cacheminnet eller väljer alternativet för att ta bort beständigt cache-innehåll.
+
+För program, om innehållet för en relaterad distribution för närvarande finns i cacheminnet, hämtar klienten bara nya eller ändrade filer. Relaterade distributioner inkluderar för äldre revisioner av samma distributions typ och ersatta program.
 
 Använd följande procedurer för att konfigurera klientcacheutrymmet under manuell klientinstallation eller efter att klienten har installerats.  
 
@@ -283,7 +285,7 @@ Kör kommandot CCMSetup.exe från installationskällan och ange följande egensk
     > [!NOTE]
     > Använd de cache-storlekar som är tillgängliga i **klient inställningarna** i Configuration Manager-konsolen i stället för SMSCACHESIZE. Mer information finns i [Inställningar för klient-cache](../deploy/about-client-settings.md#client-cache-settings).
 
-Mer information om hur du använder de här kommando rads egenskaperna för CCMSetup. exe finns i [om klient installations egenskaper](../deploy/about-client-installation-properties.md).
+Mer information om hur du använder dessa kommando rads egenskaper för CCMSetup.exe finns i [om klient installations egenskaper](../deploy/about-client-installation-properties.md).
 
 ### <a name="configure-the-cache-during-client-push-installation"></a>Konfigurera cachen under push-installationen av klienten  
 
@@ -304,13 +306,13 @@ Mer information om hur du använder de här kommando rads egenskaperna för CCMS
      > [!NOTE]
      > Använd de cache-storlekar som är tillgängliga i **klient inställningarna** i Configuration Manager-konsolen i stället för SMSCACHESIZE. Mer information finns i [Inställningar för klient-cache](../deploy/about-client-settings.md#client-cache-settings).
 
-     Mer information om hur du använder de här kommando rads egenskaperna för CCMSetup. exe finns i [om klient installations egenskaper](../deploy/about-client-installation-properties.md).  
+     Mer information om hur du använder dessa kommando rads egenskaper för CCMSetup.exe finns i [om klient installations egenskaper](../deploy/about-client-installation-properties.md).  
 
 ### <a name="configure-the-cache-on-the-client-computer"></a>Konfigurera cachen på klient datorn  
 
 1. På klient datorn öppnar du **Configuration Manager** kontroll panelen.  
 
-2. Växla till fliken **cache** . Ange egenskaper för utrymme och plats. Standard platsen är `%windir%\ccmcache` .  
+2. Växla till fliken **cache** . Ange egenskaper för utrymme och plats. Standardplatsen är `%windir%\ccmcache`.  
 
 3. Om du vill ta bort filerna i cache-mappen väljer du **ta bort filer**.  
 
@@ -321,12 +323,12 @@ Justera storleken på klientens cacheminne utan att behöva installera om klient
 
 ## <a name="uninstall-the-client"></a><a name="BKMK_UninstalClient"></a>Avinstallera klienten
 
-Du kan avinstallera Configuration Manager klient program varan från en dator med hjälp av **CCMSetup. exe** med egenskapen **/Uninstall** . Kör CCMSetup. exe på en enskild dator från kommando tolken eller distribuera ett paket för att avinstallera klienten för en samling datorer.  
+Du kan avinstallera Configuration Manager klient program varan från en dator genom att använda **CCMSetup.exe** med egenskapen **/Uninstall** . Kör CCMSetup.exe på en enskild dator från kommando tolken eller distribuera ett paket för att avinstallera klienten för en samling datorer.  
 
 > [!NOTE]  
 > Det går inte att avinstallera Configuration Manager-klienten från en mobil enhet. Om du måste ta bort Configuration Manager-klienten från en mobil enhet måste du rensa enheten, som tar bort alla data på den mobila enheten.  
 
-1. Öppna en Windows-kommandotolk som administratör. Ändra mappen till den plats där CCMSetup. exe finns, till exempel:`cd %windir%\ccmsetup`
+1. Öppna en Windows-kommandotolk som administratör. Ändra mappen till den plats där CCMSetup.exe finns, till exempel:`cd %windir%\ccmsetup`
 
 2. Kör följande kommando:`CCMSetup.exe /uninstall`
 

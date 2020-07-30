@@ -2,7 +2,7 @@
 title: Klientinställningar
 titleSuffix: Configuration Manager
 description: Lär dig mer om standard-och anpassade inställningar för att styra klient beteenden
-ms.date: 04/21/2020
+ms.date: 07/28/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 21e837d5d97c42f095159a87e015f181c5e53419
-ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
+ms.openlocfilehash: 9f6bb29930a6e2d4faf4ffdd141d3c9cd1831305
+ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84347176"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87365516"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Om klient inställningar i Configuration Manager
 
@@ -328,6 +328,11 @@ Om klienterna måste installera nödvändiga program uppdateringar vid distribut
 Ange ett värde för det här alternativet om du vill ge användare mer tid för att installera nödvändiga program eller program uppdaterings distributioner utanför tids gränsen. Den här Grace-perioden är för en dator avstängd under en längre tid och användaren måste installera många program eller uppdaterings distributioner. Den här inställningen är till exempel användbar om en användare returnerar semestern och måste vänta en stund medan klienten installerar förfallna program distributioner.
 
 Ange en respitperiod på 0 till 120 timmar. Använd den här inställningen tillsammans med distributions egenskapen **fördröjd tillämpning av distributionen enligt användar inställningar**. Mer information finns i [distribuera program](../../../apps/deploy-use/deploy-applications.md#delay-enforcement-with-a-grace-period).
+
+
+### <a name="enable-endpoint-analytics-data-collection"></a>Aktivera data insamling för slut punkts analys
+
+Aktiverar lokal data insamling på klienten för uppladdning till slut punkts analys. Ange till **Ja** för att konfigurera enheter för lokal data insamling. Ange till **Nej** om du vill inaktivera lokal data insamling. Mer information finns i [registrera Configuration Manager enheter i slut punkts analys](../../../../analytics/enroll-configmgr.md).
 
 ## <a name="computer-restart"></a>Omstart av dator
 
@@ -919,15 +924,15 @@ Från och med Configuration Manager version 1902 kan du justera prioriteten med 
 
 Den här klient inställningen ger följande alternativ:
 
-- **Inte konfigurerad**: Configuration Manager ändrar inte inställningen. Administratörer kan i förväg mellanlagra sin egen setupconfig. ini-fil. Detta värde är standard.
+- **Inte konfigurerad**: Configuration Manager ändrar inte inställningen. Administratörer kan i förväg mellanlagra sin egen setupconfig.ini-fil. Det här är standardvärdet.
 
 - **Normal**: installationsprogrammet för Windows använder mer system resurser och uppdateringar snabbare. Det använder mer processor tid, så den totala installations tiden är kortare, men användarens avbrott är längre.  
 
-    - Konfigurerar filen setupconfig. ini på enheten med `/Priority Normal` [kommando rads alternativet Windows-installation](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
+    - Konfigurerar setupconfig.ini-filen på enheten med `/Priority Normal` [kommando rads alternativet Windows-installation](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
 
 - **Låg**: du kan fortsätta att arbeta med enheten medan den laddas ned och uppdateras i bakgrunden. Den totala installations tiden är längre, men användarens avbrott är kortare. Du kan behöva öka uppdateringens maximala kör tid för att undvika timeout när du använder det här alternativet.  
 
-    - Tar bort `/Priority` [kommando rads alternativet för installations programmet för Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från filen setupconfig. ini.
+    - Tar bort `/Priority` [kommando rads alternativet för installations programmet för Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från setupconfig.ini-filen.
 
 
 ### <a name="enable-third-party-software-updates"></a>Aktivera program uppdateringar från tredje part

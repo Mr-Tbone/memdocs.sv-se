@@ -2,7 +2,7 @@
 title: Distributions planer i Desktop Analytics
 titleSuffix: Configuration Manager
 description: Lär dig mer om distributions planer i Desktop Analytics.
-ms.date: 05/11/2020
+ms.date: 07/28/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: ccc325ac4b8e02142a1442862ad661a77b0561f2
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: acaa7c8a906edd78f0c54c5735c97c55434d848b
+ms.sourcegitcommit: 7ee69b207261ffc282e535f793a536540d160557
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268495"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87400723"
 ---
 # <a name="about-deployment-plans-in-desktop-analytics"></a>Om distributions planer i Desktop Analytics
 
@@ -47,6 +47,8 @@ Som en del av din distributions plan utför du följande åtgärder:
 Som standard uppdaterar Desktop Analytics distributions plan data dagligen. Alla ändringar du gör i en distributions plan, till exempel tilldelning av prioritet för en app eller att välja en enhet som ska ingå i en pilot, tar upp till 24 timmar att bearbeta. För att påskynda processen, begär en data uppdatering på begäran. Mer information finns i [vanliga frågor och svar om Desktop Analytics](faq.md#can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal).  
 
 När du har anslutit Skriv bords analys till Configuration Manager väljer du samlingarna i distributions planerna. Med den här integrationen kan du distribuera Windows till en samling baserat på Desktop Analytics-data.
+
+Distributions planer stöder anpassning av de tre senaste versionerna av Windows 10. Desktop Analytics lägger till stöd för en ny Windows 10-version inom 45 dagar efter att den är tillgänglig. Vid detta tillfälle kommer tjänsten också att ta bort den äldsta versionen. Du kommer inte att kunna använda några distributions planer som är riktade till den äldsta versionen. Om du har några pågående distributions planer som är riktade till den äldsta versionen som stöds i Desktop Analytics, slutför du distributionen inom 45 dagar efter att en ny Windows 10-version är tillgänglig.
 
 ## <a name="readiness-rules"></a>Beredskaps regler
 

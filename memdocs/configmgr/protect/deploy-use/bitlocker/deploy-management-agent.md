@@ -2,7 +2,7 @@
 title: Distribuera BitLocker-hantering
 titleSuffix: Configuration Manager
 description: Distribuera hanterings agenten för BitLocker till Configuration Manager klienter och återställnings tjänsten till hanterings platser
-ms.date: 04/01/2020
+ms.date: 07/27/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4a050ab523730adbfdd2ecf541557fabbf95081b
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: 786a7a528c027ab46237dac92378224705b0e026
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715704"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262837"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuera BitLocker-hantering
 
@@ -179,7 +179,13 @@ Om du för närvarande använder Microsoft BitLocker administration och övervak
 
 - Inställningarna för BitLocker-hantering är helt kompatibla med MBAM grup princip inställningar. Om enheterna tar emot både grup princip inställningar och Configuration Manager principer konfigurerar du dem att matcha.
 
+  > [!NOTE]
+  > Om det finns en grup princip inställning för fristående MBAM, kommer den att åsidosätta motsvarande inställning som görs av Configuration Manager. Fristående MBAM använder domän grup principer, medan Configuration Manager anger lokala principer för BitLocker-hantering. Domän principer åsidosätter de lokala Configuration Manager hanterings principerna för BitLocker. Om den fristående MBAM domän grup principen inte matchar den Configuration Manager principen kommer Configuration Manager BitLocker-hanteringen att Miss Missing. Om en domän grup princip till exempel anger den fristående MBAM-servern för nyckel återställnings tjänster kan Configuration Manager BitLocker-hanteringen inte ange samma inställning för hanterings platsen. Det här beteendet gör att klienter inte rapporterar sina återställnings nycklar till Configuration Manager BitLocker Management Key Recovery-tjänsten på hanterings platsen.
+
 - Configuration Manager implementerar inte alla grup princip inställningar för MBAM. Om du konfigurerar ytterligare inställningar i en grup princip, kommer BitLocker-hanteringsservern på Configuration Manager klienter att respektera dessa inställningar.
+
+  > [!IMPORTANT]
+  > Ange inte en grup princip för en inställning som Configuration Manager BitLocker-hanteringen redan anger. Ange bara grup principer för inställningar som för närvarande inte finns i Configuration Manager BitLocker-hantering. Configuration Manager version 2002 har funktions paritet med fristående MBAM. I de flesta fall bör det inte finnas någon anledning att ange domän grup principer för att konfigurera BitLocker-principer med Configuration Manager version 2002 och senare. Undvik att använda grup principer för BitLocker för att förhindra konflikter och problem. Konfigurera alla inställningar genom att Configuration Manager BitLocker-hanterings principer.
 
 ### <a name="tpm-password-hash"></a>Hash för TPM-lösenord
 

@@ -10,12 +10,12 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1a6ec98bd350eb0ac8643254f64a9480f156bb13
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 79b4119a12826596fcc91fa1b4ead4e151e2ddd8
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86239767"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262106"
 ---
 # <a name="enhanced-http"></a>Förbättrad HTTP
 
@@ -53,10 +53,10 @@ Följande scenarier drar nytta av dessa förbättringar:
 ### <a name="scenario-1-client-to-management-point"></a><a name="bkmk_scenario1"></a>Scenario 1: klient till hanterings plats
 
 <!--1356889-->
-[Azure Active Directory (Azure AD)-anslutna enheter](/azure/active-directory/devices/concept-azure-ad-join) kan kommunicera med en hanterings plats som är KONFIGURERAD för http. Plats servern genererar ett certifikat för hanterings platsen så att den kan kommunicera via en säker kanal.
+[Azure Active Directory (Azure AD) – anslutna enheter](/azure/active-directory/devices/concept-azure-ad-join) och enheter med en [Configuration Manager Utfärdad token](../../clients/deploy/deploy-clients-cmg-token.md) kan kommunicera med en hanterings plats som är konfigurerad för http om du aktiverar utökat http för webbplatsen. Med utökad HTTP aktive rad genererar plats servern ett certifikat för hanterings platsen så att den kan kommunicera via en säker kanal.
 
 > [!Note]  
-> Det här beteendet ändras från Configuration Manager nuvarande gren version 1802, som kräver en HTTPS-aktiverad hanterings plats för Azure AD-anslutna klienter som kommunicerar via en Cloud Management Gateway. Mer information finns i [Aktivera hanterings plats för https](../../clients/manage/cmg/certificates-for-cloud-management-gateway.md#bkmk_mphttps).  
+> Det här scenariot kräver inte användning av en HTTPS-aktiverad hanterings plats, men stöds som ett alternativ till att använda utökad HTTP. Mer information om hur du använder en HTTPS-aktiverad hanterings plats finns i [Aktivera hanterings plats för https](../../clients/manage/cmg/certificates-for-cloud-management-gateway.md#bkmk_mphttps).  
 
 ### <a name="scenario-2-client-to-distribution-point"></a><a name="bkmk_scenario2"></a>Scenario 2: klient till distributions plats
 
@@ -86,7 +86,7 @@ Följande Configuration Manager funktioner stöder eller kräver utökad HTTP:
 > Program uppdaterings platsen och relaterade scenarier har alltid stöd för säker HTTP-trafik med-klienter samt Cloud Management Gateway. Den använder en mekanism med hanterings platsen som skiljer sig från certifikat-eller tokenbaserad autentisering.<!-- SCCMDocs issue #1148 -->
 
 
-## <a name="prerequisites"></a>Förhandskrav  
+## <a name="prerequisites"></a>Förutsättningar  
 
 - En hanterings plats som kon figurer ATS för HTTP-klientanslutningar. Ange det här alternativet på fliken **Allmänt** i egenskaperna för hanterings plats rollen.  
 
