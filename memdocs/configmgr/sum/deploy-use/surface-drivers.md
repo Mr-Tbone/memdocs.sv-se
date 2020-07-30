@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9f9f4e6-5b4f-4b8f-94d6-db9b2b239113
-ms.openlocfilehash: 04793a053e85be051ce9ffafd2f15d274cf166f0
-ms.sourcegitcommit: c7afcc3a2232573091c8f36d295a803595708b6c
+ms.openlocfilehash: f276db618a2e67832ffa5575622e00eea02c7422
+ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84973085"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438619"
 ---
 # <a name="manage-surface-drivers-with-configuration-manager"></a>Hantera Surface-drivrutiner med Configuration Manager
 
@@ -93,19 +93,19 @@ Följande tabell innehåller de funktions modeller och versioner av Windows 10 d
 |----|----|----|----|----|----|
 |Surface Pro 3|Ja| Ja| Ja |Ja|Ja|
 |Surface Pro 4|Ja| Ja| Ja |Ja|Ja|
-|Surface Pro 6|Ej tillämpligt| Ja| Ja |Ja|Ja|
-|Surface Pro 7|Ej tillämpligt| Ej tillämpligt| Ej tillämpligt |Ja|Ja|
-|Yta Pro X|Ej tillämpligt| Ej tillämpligt| Ej tillämpligt |Ja|Ja|
+|Surface Pro 6|E.t.| Ja| Ja |Ja|Ja|
+|Surface Pro 7|E.t.| E.t.| E.t. |Ja|Ja|
+|Yta Pro X|E.t.| E.t.| E.t. |Ja|Ja|
 |Surface Book|Ja| Ja| Ja |Ja|Ja|
 |Surface Book 2|Ja| Ja| Ja |Ja|Ja|
-|Surface Book 3|Ej tillämpligt| Ej tillämpligt| Ej tillämpligt |Ja|Ja|
+|Surface Book 3|E.t.| E.t.| E.t. |Ja|Ja|
 |Surface-dator|Ja, med produkten "Windows 10 S version 1709 och senare service driv rutiner" valt| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
-|Surface laptop 2|Ej tillämpligt| Ja |Ja|Ja|Ja|
-|Surface laptop 3|Ej tillämpligt| Ej tillämpligt|Ej tillämpligt|Ja |Ja|
-|Surface go|Ej tillämpligt| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
-|Surface Go 2|Ej tillämpligt| Ej tillämpligt| Ja |Ja|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
+|Surface laptop 2|E.t.| Ja |Ja|Ja|Ja|
+|Surface laptop 3|E.t.| E.t.|E.t.|Ja |Ja|
+|Surface go|E.t.| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
+|Surface Go 2|E.t.| E.t.| Ja |Ja|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
 |Surface Studio|Ja| Ja| Ja |Ja|Ja|
-|Surface Studio 2|Ej tillämpligt| Ja| Ja |Ja|Ja|
+|Surface Studio 2|E.t.| Ja| Ja |Ja|Ja|
 
 ## <a name="verify-the-configuration"></a>Kontrollera konfigurationen
 
@@ -138,7 +138,7 @@ Kontrol lera att program uppdaterings platsen är korrekt konfigurerad genom att
 
 ##  <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a>Vanliga frågor och svar
 
-### <a name="after-i-follow-the-steps-in-this-article-my-surface-drivers-are-still-not-synchronized-why"></a>När jag har följt stegen i den här artikeln synkroniseras inte mina Surface-drivrutiner. Varför?
+### <a name="after-i-follow-the-steps-in-this-article-my-surface-drivers-are-still-not-synchronized-why"></a>När jag har följt stegen i den här artikeln synkroniseras inte mina Surface-drivrutiner. Varför det?
 
 Om du synkroniserar från en överordnad Windows Server Update Services (WSUS)-Server, i stället för Microsoft Update, kontrollerar du att den överordnade WSUS-servern är konfigurerad för att stödja och synkronisera uppdateringar av Surface-drivrutiner. Alla underordnade servrar är begränsade till uppdateringar som finns i den överordnade WSUS-serverdatabasen.
 
@@ -162,4 +162,4 @@ Mer information om Surface-drivrutiner finns i följande artiklar:
 
 - [Överväganden för Surface och System Center Configuration Manager](https://docs.microsoft.com/surface/considerations-for-surface-and-system-center-configuration-manager#deploy-surface-app-with-configuration-manager)
 - [Uppdaterings historik för yta](https://support.microsoft.com/help/4036283/surface-surface-update-history)
-- [Ladda ned den senaste inbyggda program varan och driv rutinerna för Surface-enheter](https://docs.microsoft.com/surface/deploy-the-latest-firmware-and-drivers-for-surface-devices)
+- [Ladda ned den senaste inbyggda program varan och driv rutinerna för Surface-enheter](/surface/manage-surface-driver-and-firmware-updates)

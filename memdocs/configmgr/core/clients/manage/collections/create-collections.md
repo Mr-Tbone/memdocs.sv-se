@@ -10,12 +10,12 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: def7a40091f6c9a45e67f5e4de7d7dca94b3cba2
-ms.sourcegitcommit: 034226b5a60de49a75c7b54e856814f81c03a112
+ms.openlocfilehash: 7eccc3bf6b7ded9db93f5af78d55f090e9704cbc
+ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86422824"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438609"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Skapa samlingar i Configuration Manager
 
@@ -136,13 +136,13 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 
 1. Ange följande information på sidan **Sök efter resurser** i **guiden Skapa regel för direkt medlemskap**.  
 
-    - **Resurs klass**: Välj den typ av resurs som du vill söka efter och lägga till i samlingen. Exempel:
+    - **Resurs klass**: Välj den typ av resurs som du vill söka efter och lägga till i samlingen. Ett exempel:
         - **System resurs**: Sök efter inventerings data som har returnerats från klient datorer.
         - **Okänd dator**: Välj från värden som returneras av okända datorer.
         - **Användar resurs**: Sök efter användar information som samlats in av Configuration Manager.
         - **Användar grupp resurs**: Sök efter användar grupps information som samlats in av Configuration Manager.
 
-    - **Attributnamn**: Välj det attribut som är associerat med den valda resurs klass som du vill söka efter. Exempel:  
+    - **Attributnamn**: Välj det attribut som är associerat med den valda resurs klass som du vill söka efter. Ett exempel:  
 
         - Om du vill välja datorer efter deras NetBIOS-namn väljer du **system resurs** i listan **resurs klass** och **NetBIOS-namn** i listan **attributnamn** .  
 
@@ -152,7 +152,7 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 
     - **Exkludera resurser som inte har Configuration Manager-klienten installerad**: dessa resurser visas inte i Sök resultaten.  
 
-    - **Värde**: Ange ett värde för att söka efter det valda attributnamnet. Använd procent tecknen (%) som jokertecken. Exempel:  
+    - **Värde**: Ange ett värde för att söka efter det valda attributnamnet. Använd procent tecknen (%) som jokertecken. Ett exempel:  
         - Om du vill söka efter datorer som har ett NetBIOS-namn som börjar med "M" anger du **m%** i det här fältet.  
         - Om du vill söka efter användare i Contoso OU, anger du **contoso** i det här fältet.
 
@@ -234,6 +234,7 @@ Azure AD-synkroniseringen sker var femte minut. Det är en enkelriktad process, 
 - Integrering med Azure AD för [moln hantering](../../../servers/deploy/configure/azure-services-wizard.md)
 - [Azure Active Directory användar identifiering](../../../servers/deploy/configure/about-discovery-methods.md#azureaddisc)
 - En HTTPS [-eller utökad HTTP-](../../../plan-design/hierarchy/enhanced-http.md) aktiverad hanterings plats
+- Åtkomst till samlingen **alla system**
 
 ### <a name="create-a-group-and-set-the-owner-in-azure-ad"></a>Skapa en grupp och ange ägaren i Azure AD
 
@@ -255,7 +256,7 @@ Azure AD-synkroniseringen sker var femte minut. Det är en enkelriktad process, 
 
 1. I Configuration Manager-konsolen går du till **till gångar och efterlevnad**  >  **Översikt över**  >  **enhets samlingar**.
 1. Högerklicka på den samling som du vill synkronisera och klicka sedan på **Egenskaper**. 
-1. Klicka på **Lägg till**i fliken för att **Synkronisera AAD-grupp** .
+1. Klicka på **Lägg till**på fliken **molnbaserad synkronisering** .
 1. På den nedrullningsbara menyn väljer du den **klient** där du skapade din Azure AD-grupp.
 1. Skriv dina Sök kriterier i fältet **namn börjar med** och klicka sedan på **Sök**.
   - Om du uppmanas att logga in använder du den identitet som du har angett som ägare för Azure AD-gruppen.

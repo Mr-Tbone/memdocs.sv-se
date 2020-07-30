@@ -10,12 +10,12 @@ ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c12372325573c6795396ff0832ca60cba68b8c29
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: c9d398d7fddab61014547fc0f8f64cd180e58ab6
+ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078506"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438570"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager på Azure – vanliga frågor och svar
 
@@ -27,7 +27,7 @@ Följande frågor och svar kan hjälpa dig att förstå när du ska använda och
 ### <a name="my-company-is-trying-to-move-as-many-physical-servers-as-possible-to-microsoft-azure-can-i-move-configuration-manager-servers-to-azure"></a>Mitt företag försöker flytta så många fysiska servrar som möjligt att Microsoft Azure, kan jag flytta Configuration Manager servrar till Azure?
 Det här är ett scenario som stöds.  Se [stöd för virtualiseringslösningar för Configuration Manager](../plan-design/configs/support-for-virtualization-environments.md).
 
-### <a name="great-my-environment-requires-multiple-sites-should-all-child-primary-sites-be-in-azure-with-the-central-administration-site-or-on-premises-what-about-secondary-sites"></a>Bra! Min miljö kräver flera-platser. Bör alla underordnade primära platser finnas i Azure med den centrala administrations platsen eller lokalt? Vad gäller sekundära platser?
+### <a name="great-my-environment-requires-multiple-sites-should-all-child-primary-sites-be-in-azure-with-the-central-administration-site-or-on-premises-what-about-secondary-sites"></a>Toppen! Min miljö kräver flera-platser. Bör alla underordnade primära platser finnas i Azure med den centrala administrations platsen eller lokalt? Vad gäller sekundära platser?
 Plats-till-plats-kommunikation (filbaserad och databasreplikering) fördelar från närhet av att vara värd i Azure. All klient relaterad trafik kan dock vara fjärran sluten till plats servrar och plats system. Om du använder en snabb och tillförlitlig nätverks anslutning mellan Azure och intranätet med ett obegränsat data abonnemang är det ett alternativ som är värd för all infrastruktur i Azure.
 
 Men om du använder en mätnings data plan och tillgänglig bandbredd eller kostnad är ett problem, eller om nätverks anslutningen mellan Azure och intranätet inte är fast eller är otillförlitlig, kan du överväga att placera vissa platser (och plats system) lokalt och sedan använda de inbyggda bandbredds kontrollerna i Configuration Manager.
@@ -71,7 +71,7 @@ Nej, Azure Active Directory stöds inte för tillfället. Plats servrarna måste
 
 ## <a name="availability"></a>Tillgänglighet
 ### <a name="one-of-the-reasons-i-am-moving-infrastructure-to-azure-is-the-promise-of-high-availability-can-i-take-advantage-of-high-availability-options-like-azure-vm-availability-sets-for-vms-that-i-will-use-for-configuration-manager"></a>En av orsakerna till att vi flyttar infrastruktur till Azure är ett löfte om hög tillgänglighet. Kan jag dra nytta av alternativ för hög tillgänglighet, t. ex. tillgänglighets uppsättningar för Azure VM för virtuella datorer som jag ska använda för Configuration Manager?
-Ja! Tillgänglighets uppsättningar för Azure VM kan användas för redundanta plats system roller som distributions platser eller hanterings platser.
+Japp! Tillgänglighets uppsättningar för Azure VM kan användas för redundanta plats system roller som distributions platser eller hanterings platser.
 
 Du kan också använda dem för Configuration Manager plats servrar. Centrala administrations platser och primära platser kan till exempel vara i samma tillgänglighets uppsättning som kan hjälpa dig att se till att de inte startas om på samma gång.
 
@@ -84,7 +84,7 @@ Medan Configuration Manager inte testas med Azure Load Balancer, om funktionen �
 
 ## <a name="performance"></a>Prestanda
 ### <a name="what-factors-affect-performance-in-this-scenario"></a>Vilka faktorer påverkar prestanda i det här scenariot?
-[Azure VM-storlek och-typ](https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs), Azure VM-diskar (Premium Storage rekommenderas, särskilt för SQL Server), nätverks fördröjning och hastighet är de viktigaste områdena.
+[Azure VM-storlek och-typ](/azure/virtual-machines/sizes), Azure VM-diskar (Premium Storage rekommenderas, särskilt för SQL Server), nätverks fördröjning och hastighet är de viktigaste områdena.
 
 ### <a name="so-tell-me-more-about-azure-virtual-machines-what-size-vms-should-i-use"></a>Så berätta mer om virtuella datorer i Azure. vilken storlek ska jag använda för virtuella datorer?
 I allmänhet måste din beräknings kraft (CPU och minne) uppfylla den [rekommenderade maskin varan för Configuration Manager](../plan-design/configs/recommended-hardware.md). Men det finns vissa skillnader mellan vanliga dator maskin vara och virtuella Azure-datorer, särskilt när de kommer till de diskar som de virtuella datorerna använder.  Vilken storlek som de virtuella datorer du använder beror på storleken på din miljö, men här är några rekommendationer:
@@ -113,7 +113,7 @@ I följande tabeller visas de första föreslagna disk antal som används på pr
 |**25k till 50 000**      | Plats Server: F4-enheter </br>Databas server: DS13_V2 | Plats Server: 1xP30 </br>Databas server: 2xP30 (Striped)   |
 |**50 000 till 100 000**     | Plats Server: F8-enheter </br>Databas server: DS14_V2 | Plats Server: 2xP30 (Striped)   </br>Databas server: 3xP30 (Striped)   |
 
-Följande visar en exempel konfiguration för 50 000 till 100 000-klienter på DS14_V2 med 3xP30-diskar i en stripe-volym med separata logiska volymer för Configuration Manager installations-och databasfiler ![: VM-diskar](media/vm_disks.png)  
+Följande visar en exempel konfiguration för 50 000 till 100 000-klienter på DS14_V2 med 3xP30-diskar i en stripe-volym med separata logiska volymer för Configuration Manager installations-och databasfiler: ![ VM-diskar](media/vm_disks.png)  
 
 
 
@@ -137,7 +137,7 @@ Metoden för innehålls hantering är ungefär samma som för plats servrar och 
 
 
 ### <a name="while-i-am-ok-with-the-limitations-of-cloud-based-distribution-points-i-dont-want-to-put-my-management-point-into-a-dmz-even-though-that-is-needed-to-support-my-internet-based-clients-do-i-have-any-other-options"></a>Jag är OK med begränsningarna för molnbaserade distributions platser, jag vill inte placera min hanterings plats i en DMZ trots att det behövs för att stödja mina Internetbaserade klienter. Finns det några andra alternativ?
-Ja! Med Configuration Manager version 1610 introducerade vi [Cloud Management Gateway](../clients/manage/manage-clients-internet.md#cloud-management-gateway) som en för hands versions funktion. (Den här funktionen visades först i den tekniska för hands version 1606 som [Cloud proxy-tjänsten](../get-started/capabilities-in-technical-preview-1606.md#cloud_proxy)).
+Japp! Med Configuration Manager version 1610 introducerade vi [Cloud Management Gateway](../clients/manage/manage-clients-internet.md#cloud-management-gateway) som en för hands versions funktion. (Den här funktionen visades först i den tekniska för hands version 1606 som [Cloud proxy-tjänsten](../get-started/capabilities-in-technical-preview-1606.md#cloud_proxy)).
 
 **Cloud Management Gateway** är ett enkelt sätt att hantera Configuration Manager-klienter på Internet. Tjänsten, som distribueras till Microsoft Azure och kräver en Azure-prenumeration, ansluter till din lokala Configuration Manager-infrastruktur med hjälp av en ny roll som kallas för Cloud Management Gateway anslutnings punkt. När den har distribuerats och kon figurer ATS kan klienter komma åt lokala Configuration Manager plats system roller oavsett om de är anslutna till det interna privata nätverket eller Internet.
 
@@ -157,7 +157,7 @@ Svårt att säga eftersom varje miljö är annorlunda. Det bästa att göra är 
 **Grundläggande:**https://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
 **Typer av virtuella Azure-datorer:**
-- Azure-dator storlekar:https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
+- Azure-dator storlekar:https://docs.microsoft.com/azure/virtual-machines/sizes  
 - Prissättning för virtuella datorer:https://azure.microsoft.com/pricing/details/virtual-machines/  
 - Lagrings priser:https://azure.microsoft.com/pricing/details/storage/
 
@@ -169,7 +169,7 @@ Svårt att säga eftersom varje miljö är annorlunda. Det bästa att göra är 
 
 **Offlinetillgänglighet**
 - SLA för Azure IaaS-drift tid:https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
-- Förklarad tillgänglighets uppsättning:https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
+- Förklarad tillgänglighets uppsättning:https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability
 
 **Koppling**
 - Express Route jämfört med Azure VPN:https://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
