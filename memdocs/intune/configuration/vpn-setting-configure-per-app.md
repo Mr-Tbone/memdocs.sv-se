@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 24663f8338f03fab53369689b4a61b5bd1bec63f
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 1d52e968b5e35490027c7887b597608e25476e24
+ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83991214"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87365465"
 ---
 # <a name="set-up-per-app-virtual-private-network-vpn-for-iosipados-devices-in-intune"></a>Konfigurera ett virtuellt privat nätverk (VPN) per app för iOS/iPadOS-enheter i Intune
 
@@ -38,6 +38,9 @@ Kontrollera VPN-leverantörens dokumentation för att se om VPN stöder per app-
 Den här artikeln visar hur du skapar en per app-VPN-profil och tilldelar profilen till dina appar. Använd dessa steg för att skapa en sömlös per app-VPN-miljö för dina slutanvändare. För de flesta VPN:er som stöder per app-VPN öppnar användaren en app och ansluter automatiskt till VPN.
 
 Vissa VPN:er tillåter autentisering med användarnamn och lösenord med per app-VPN. Det betyder att användarna måste ange ett användarnamn och lösenord för anslutning till VPN.
+
+> [!IMPORTANT]
+> Det finns ett känt problem i iOS 13 som förhindrar per app-VPN-profiler från att ansluta i användarregistreringsmiljöer när certifikatbaserad autentisering används. Apple planerar att åtgärda detta i en framtida version av iOS.
 
 > [!IMPORTANT]
 > Per app-VPN stöds inte för IKEv2 VPN-profiler för iOS/iPadOS.

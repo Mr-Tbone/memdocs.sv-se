@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/08/2020
+ms.date: 07/27/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: 64a76911725e5d596a80ecc67e42f088666017de
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: d120ee0f55651ab1661e426e5889aaf8a4c7e670
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531901"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262871"
 ---
 # <a name="integrate-windows-hello-for-business-with-microsoft-intune"></a>Integrera Windows Hello för företag med Microsoft Intune  
 
@@ -32,13 +32,21 @@ Hello för företag är en alternativ inloggningsmetod som använder Active Dire
 
 Intune kan integreras med Hello för företag på två sätt:
 
-- **För hela klientorganisationen**: En Intune-princip kan skapas under *Enhetsregistrering*. Den här principen riktar in sig på hela organisationen (klienttäckande). Den har stöd för välkomstprogrammet (OOBE) i Windows AutoPilot och används när en enhet registreras.
-- **Diskreta grupper**: Du kan distribuera policyer som hanterar Windows Hello för företag till enheter som har registrerats i Intune. Några av policytyperna som kan hantera Windows Hello är profiler för *identitetsskydd* som du skapar under *Enhetskonfiguration*, olika *säkerhetsbaslinjer* och profiler för slutpunktssäkerhet under *Kontoskydd*. De här profiltyperna riktar sig mot tilldelade användare eller enheter och tillämpas vid incheckning.
+- **Klientomfattande** (*den här artikeln)* : En Intune-princip kan skapas under *Enhetsregistrering*. Den här principen riktar in sig på hela organisationen (klienttäckande). Den har stöd för välkomstprogrammet (OOBE) i Windows AutoPilot och används när en enhet registreras.
+- **Diskreta grupper**: För enheter som tidigare har registrerats med Intune använder du en [**Identitetsskydd**](../protect/identity-protection-configure.md)-profil för att konfigurera enheter för Windows Hello för företag. Identitetsskyddsprofiler kan rikta sig mot tilldelade användare eller enheter och tillämpas vid incheckning.
 
-Använd den här artikeln för att skapa en standardprincip för Windows Hello för företag som riktar in sig på hela organisationen. Om du vill skapa en identitetsskyddsprofil som används för att välja användar- och enhetsgrupper kan du läsa [Konfigurera en identitetsskyddsprofil](identity-protection-configure.md).  
+Dessutom stöder Intune följande typer av principer för att hantera vissa inställningar för Windows Hello för företag:
+
+- [**Säkerhetsbaslinjer**](../protect/security-baselines.md). Följande baslinjer innehåller inställningar för Windows Hello för företag:
+  - [Baslinjeinställningar för Microsoft Defender Advanced Threat Protection](../protect/security-baseline-settings-defender-atp.md#windows-hello-for-business)
+  - [Inställningar för Windows MDM-säkerhetsbaslinjer](../protect/security-baseline-settings-mdm-all.md#windows-hello-for-business)
+- Slutpunktssäkerhet [**Kontoskydd**](../protect/endpoint-security-account-protection-policy.md)-princip. Visa [Kontoskyddsinställningar](../protect/endpoint-security-account-protection-profile-settings.md#account-protection).
+
+Återstoden av den här artikeln fokuserar på hur man skapar en standardprincip för Windows Hello för företag som riktar in sig på hela organisationen.
 
 > [!IMPORTANT]
 > Du kunde ange två olika PIN-koder för att autentisera åtkomst till resurser i Windows 10 Desktop- och Mobile-versionerna före Anniversary Update:
+>
 > - **PIN-koden för enheten** kunde användas för att låsa upp enheten och ansluta till molnresurser.
 > - **PIN-koden för arbetsplatsen** användes för att komma åt resurser i Azure AD på användarnas personliga enheter (BYOD).
 > 

@@ -6,7 +6,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/11/2020
+ms.date: 07/28/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,16 +17,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41b11a29cdfd61382e68130479a1ab465bf354c6
-ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
+ms.openlocfilehash: 1da738611dd5fe114054645170d2b49ef12f0523
+ms.sourcegitcommit: e8076576f5c0ea7e72358d233782f8c38c184c8f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85107423"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334614"
 ---
 # <a name="add-wired-network-settings-for-macos-devices-in-microsoft-intune"></a>Lägga till inställningar för kabelanslutna nätverk för macOS-enheter i Microsoft Intune
 
-Du kan skapa en profil med specifika inställningar för fast nätverk och sedan distribuera profilen till dina macOS-enheter. Microsoft Intune innehåller många funktioner, inklusive autentisering till ditt nätverk, lägga till ett PKCS- eller ett SCEP-certifikat och mycket mer.
+Du kan skapa en profil med specifika inställningar för fast nätverk och sedan distribuera profilen till dina macOS-enheter. Microsoft Intune innehåller många funktioner, inklusive autentisering till ditt nätverk, lägga till ett SCEP-certifikat och mycket mer.
 
 I den här artikeln beskrivs de inställningar du kan konfigurera.
 
@@ -63,8 +63,8 @@ I den här artikeln beskrivs de inställningar du kan konfigurera.
 
     - **Serverförtroende** - **Certifikatservernamn**: **Lägg till** ett eller flera gemensamma namn som används i de certifikat som utfärdats av en betrodd certifikatutfärdare (CA). När du anger den här informationen kan du hoppa över fönstret för dynamiskt förtroende som visas på användarenheter när de ansluter till det här nätverket.
     - **Rotcertifikat för serververifiering**: Välj en befintlig betrodd rotcertifikatsprofil. Det här certifikatet presenteras för servern när klienten ansluter till nätverket. Det används till att autentisera anslutningen.
-    - **Klientautentisering** - **Certifikat**: Välj den profil för SCEP- eller PKCS-klientcertifikatet som även distribueras till enheten. Det här certifikatet är den identitet som presenterades av enheten till servern när anslutningen autentiserades.
-    - **Identitetssekretess (yttre identitet)** : Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst, t.ex. `anonymous`. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
+    - **Klientautentisering** - **Certifikat**: Välj den profil för SCEP-klientcertifikatet som även distribueras till enheten. Det här certifikatet är den identitet som presenterades av enheten till servern när anslutningen autentiserades. PKCS-certifikat stöds inte.
+    - **Identitetsskydd (yttre identitet)** : Ange den text som skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst, t.ex. `anonymous`. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
 
   - **EAP-TTLS**: Ange även:
 
@@ -77,8 +77,8 @@ I den här artikeln beskrivs de inställningar du kan konfigurera.
           - **CHAP (Challenge Handshake Authentication Protocol)**
           - **Microsoft CHAP (MS-CHAP)**
           - **Microsoft CHAP Version 2 (MS-CHAP v2)**
-      - **Certifikat**: Välj den profil för SCEP- eller PKCS-klientcertifikatet som även distribueras till enheten. Det här certifikatet är den identitet som presenterades av enheten till servern när anslutningen autentiserades.
-      - **Identitetssekretess (yttre identitet)** : Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst, t.ex. `anonymous`. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
+      - **Certifikat**: Välj den profil för SCEP-klientcertifikatet som även distribueras till enheten. Det här certifikatet är den identitet som presenterades av enheten till servern när anslutningen autentiserades. PKCS-certifikat stöds inte.
+      - **Identitetsskydd (yttre identitet)** : Ange den text som skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst, t.ex. `anonymous`. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
 
   - **LEAP**
 
@@ -88,8 +88,8 @@ I den här artikeln beskrivs de inställningar du kan konfigurera.
     - **Rotcertifikat för serververifiering**: Välj en befintlig betrodd rotcertifikatsprofil. Det här certifikatet presenteras för servern när klienten ansluter till nätverket. Det används till att autentisera anslutningen.
     - **Klientautentisering**: Välj en **autentiseringsmetod**. Alternativen är:
       - **Användarnamn och lösenord**: Be användaren om ett användarnamn och lösenord för att autentisera anslutningen.
-      - **Certifikat**: Välj den profil för SCEP- eller PKCS-klientcertifikatet som även distribueras till enheten. Det här certifikatet är den identitet som presenterades av enheten till servern när anslutningen autentiserades.
-      - **Identitetssekretess (yttre identitet)** : Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst, t.ex. `anonymous`. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
+      - **Certifikat**: Välj den profil för SCEP-klientcertifikatet som även distribueras till enheten. Det här certifikatet är den identitet som presenterades av enheten till servern när anslutningen autentiserades. PKCS-certifikat stöds inte.
+      - **Identitetsskydd (yttre identitet)** : Ange den text som skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst, t.ex. `anonymous`. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
 
 ## <a name="next-steps"></a>Nästa steg
 

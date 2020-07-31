@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/21/2020
+ms.date: 07/22/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29cb970dd7148496f1a4f200ba32505e6f2c0e16
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: d71326dc46d404925bdd94bd5d1140f23151748c
+ms.sourcegitcommit: 24fcf19054dcd62429f6181cdc568d894e01b99a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461597"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946651"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>Konfigurera och använda PKCS-certifikat med Intune
 
@@ -59,7 +59,7 @@ Om du vill använda PKCS-certifikat med Intune behöver du följande infrastrukt
 - **Microsoft Intune Certificate Connector** (kallas även *NDES Certificate Connector*):  
   I Intune-portalen går du till **Enhetskonfiguration** > **Certifikatanslutningsappar** > **Lägg till** och följer *stegen för att installera anslutningsappen för PKCS #12*. Använd nedladdningslänken i portalen för att påbörja nedladdningen av installationsprogrammet för certifikatanslutningsappen: **NDESConnectorSetup.exe**.  
 
-  Intune har stöd för upp till 100 instanser av det här anslutningsprogrammet per klientorganisation. Varje instans av anslutningsprogrammet måste finnas på en separat Windows-server. Du kan installera en instans av den här anslutningen på samma server som en instans av PFX-certifikatanslutningsappen för Microsoft Intune. När du använder flera anslutningsprogram stöder kopplingsinfrastrukturen hög tillgänglighet och belastningsutjämning eftersom alla tillgängliga anslutningsinstanser kan bearbeta dina PKCS-certifikatbegäranden. 
+  Intune har stöd för upp till 100 instanser av det här anslutningsprogrammet per klientorganisation. Varje instans av anslutningsprogrammet måste finnas på en separat Windows-server. Du kan installera en instans av den här anslutningen på samma server som en instans av PFX-certifikatanslutningsappen för Microsoft Intune. När du använder flera anslutningsprogram stöder kopplingsinfrastrukturen redundans och belastningsutjämning eftersom alla tillgängliga anslutningsinstanser kan bearbeta dina PKCS-certifikatbegäranden. 
 
   Anslutningsappen bearbetar PKCS-certifikatbegäranden som används för autentisering eller S/MIME-signering för e-post.
 
@@ -68,9 +68,7 @@ Om du vill använda PKCS-certifikat med Intune behöver du följande infrastrukt
 - **PFX-certifikatanslutningsprogram för Microsoft Intune**:  
   Om du planerar att använda S/MIME-kryptering för e-post använder du Intune-portalen för att ladda ned *PFX-anslutningsappen* som stöder import av PFX-certifikat.  Gå till **Enhetskonfiguration** > **Certifikatanslutningsappar** > **Lägg till** och följer *stegen för att installera anslutningsapp för importerade PFX-certifikat*. Använd nedladdningslänken i portalen för att påbörja nedladdningen av installationsprogrammet **PfxCertificateConnectorBootstrapper.exe**.
 
-  Varje Intune-klient har stöd för en enda instans av den här anslutningen. Du kan installera den här anslutningen på samma server som en instans av Microsoft Intune Certificate Connector.
-
-  Anslutningsappen hanterar begäranden för PFX-filer som importeras till Intune för S/MIME-kryptering av e-post för en specifik användare.  
+  Anslutningsappen hanterar begäranden för PFX-filer som importeras till Intune för S/MIME-kryptering av e-post för en specifik användare. Du kan installera den här anslutningen på samma server som en instans av Microsoft Intune Certificate Connector. 
 
   Den här anslutningsappen kan uppdatera sig automatiskt när nya versioner blir tillgängliga. För att kunna uppdatera kapaciteten behöver du:
   - Installera anslutningsappen för PFX-certifikat för Microsoft Intune på din server.  
@@ -260,7 +258,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 
    Välj **Nästa**.
 
-10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Planera för att distribuera den här certifikatprofilen till samma grupper som tar emot den betrodda certifikatprofilen. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+10. Under **Tilldelningar** väljer du de användare eller grupper som ska ta emot din profil. Planera för att distribuera den här certifikatprofilen till samma grupper som tar emot det betrodda certifikatets profil. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
 
     Välj **Nästa**.
 

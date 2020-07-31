@@ -1,12 +1,12 @@
 ---
-title: Konfigurera VPN för Android Enterprise-enheter
+title: Konfigurera ett VPN eller ett per app-VPN för Android Enterprise-enheter i Microsoft Intune | Microsoft Docs
 titleSuffix: Microsoft Intune
-description: Använd en appskyddsprincip för att konfigurera VPN för Android Enterprise-enheter.
+description: Använd en appkonfigurationsprincip när du ska lägga till eller skapa en VPN- eller per app-VPN-profil för Android Enterprise-enheter i Microsoft Intune.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/01/2020
+ms.date: 07/23/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,155 +18,209 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcb7bd506d92befa3c73faf7270de28765f5b192
-ms.sourcegitcommit: d498e5eceed299f009337228523d0d4be76a14c2
+ms.openlocfilehash: 7e869ad933e86d9330dbb8d6a26b1886a71cee07
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84347424"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262905"
 ---
-# <a name="configure-a-vpn-for-android-enterprise-devices"></a>Konfigurera VPN för Android Enterprise-enheter
+# <a name="use-a-vpn-and-per-app-vpn-policy-on-android-enterprise-devices-in-microsoft-intune"></a>Använd en VPN- och per app-VPN-princip på Android Enterprise-enheter i Microsoft Intune
 
-I det här avsnittet beskrivs hur du skapar en appkonfigurationsprincip som kan distribueras tillsammans med en VPN-klient på Android Enterprise-enheter. Den här konfigurationen gör att nätverkstrafiken för utvalda program får åtkomst till företagsresurser.
+Med virtuella privata nätverk (VPN) kan användarna få åtkomst till organisationens resurser via en fjärranslutning, från t. ex. hemmet, ett hotell, ett kafé eller något annat ställe. I Microsoft Intune kan du konfigurera VPN-klientappar på Android Enterprise-enheter med hjälp av en konfigurationsprincip för appar. Distribuera sedan den här principen med VPN-konfigurationen till enheter i din organisation.
+
+Du kan också skapa VPN-principer som används av vissa appar. Den här funktionen kallas för per app-VPN. När appen är aktiv kan den ansluta till VPN-nätverket och få åtkomst till resurser via det virtuella privata nätverket. När appen inte är aktiv används inte VPN.
+
+Den här funktionen gäller för:
+
+- Android enterprise
+
+Det finns två sätt att skapa appkonfigurationsprincipen för VPN-klientappen:
+
+- Configuration Designer
+- JSON-data
+
+I den här artikeln visas hur du kan skapa en konfigurationsprincip för ett per app-VPN och en VPN-app med båda alternativen.
 
 > [!NOTE]
-> Android-plattformen stöder för närvarande inte automatisk utlösning av en VPN-klientanslutning när något av de valda programmen öppnas. VPN-anslutningen måste först initieras manuellt, eller så kan du använda [VPN alltid på](../configuration/vpn-settings-android-enterprise.md).
+> Många av VPN-klientkonfigurationssparametrarna liknar varandra. Men varje app har sina egna unika nycklar och alternativ. Kontakta din VPN-leverantör om du har några frågor.
 
-Förhandskraven för att skapa en konfigurationsprincip som ger VPN-åtkomst inkluderar att den valda VPN-klienten har stöd för hanterade programkonfigurationsprofiler. VPN-klienter som har stöd för konfigurationsprincipen för Intune-appar omfattar för närvarande:
-- Cisco AnyConnect
-- Citrix SSO
-- F5 Access
-- Palo Alto Global Connect
-- Pulse Secure
-- SonicWall Mobile Connect
+## <a name="before-you-begin"></a>Innan du börjar
 
-Om metoden för autentiserad åtkomst till VPN-slutpunkten kräver att klientcertifikat används måste certifikatprofilerna skapas i förväg för att få hjälp att fylla i de värden som krävs för appkonfigurationsprincipen.
+- Android utlöser inte automatiskt någon VPN-klientanslutning när en app öppnas. VPN-anslutningen måste startas manuellt. Du kan också starta anslutningen genom att använda [Always-on VPN](../configuration/vpn-settings-android-enterprise.md).
 
-> [!NOTE]
-> Även om scenarier för Android Enterprise-arbetsprofiler stöder både SCEP- och PKCS-certifikat, stöder Android Enterprise-enhetsägarscenarier endast SCEP-certifikat. 
+- Följande VPN-klienter stöder konfigurationsprinciperna för Intune-appar:
 
-Det grundläggande flödet för att skapa och testa VPN-profilen per app är följande:
-1.  Välj lämpligt VPN-klientprogram för din infrastruktur.
-2.  Identifiera programpaket-ID:na för de produktivitetsprogram som du vill använda med VPN-anslutningen.
-3.  Distribuera eventuella certifikatprofiler som krävs för att uppfylla kraven på autentisering för VPN-anslutningen. Kontrollera att distributionen lyckades.
-4.  Distribuera VPN-klientprogrammet.
-5.  Förbered den appkonfigurationsbaserade VPN-profilen med hjälp av informationen som samlats in under tidigare steg.
-6.  Distribuera den nyligen skapade VPN-profilen.
-7.  Verifiera att VPN-klientappen ansluter till din VPN-serverinfrastruktur.
-8.  Verifiera att trafiken från dina valda produktivitetsappar överför VPN-nätverket när det är aktivt.
+  - Cisco AnyConnect
+  - Citrix SSO
+  - F5 Access
+  - Palo Alto Networks GlobalProtect
+  - Pulse Secure
+  - SonicWall Mobile Connect
+
+- När du skapar VPN-principen i Intune väljer du olika nycklar som ska konfigureras. Dessa nyckelnamn varierar beroende på de olika VPN-klientappararna. Nyckelnamnen i din miljö kan alltså skilja sig från exemplen i den här artikeln.
+
+- Konfigurationsdesignerdata och JSON-data kan använda certifikatbaserad autentisering. Om VPN-autentiseringen kräver klientcertifikat måste du skapa certifikatprofilerna innan du skapar VPN-principen. VPN-appkonfigurationsprinciperna använder värden från certifkatprofilerna.
+
+  Android Enterprise-arbetsprofilenheterna stöder SCEP- och PKCS-certifikat. Fullständigt Android Enterprise-hanterade, dedikerade och företagsägda profilenheter stöder endast SCEP-certifikat. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
+
+## <a name="per-app-vpn-overview"></a>Översikt över per app-VPN
+
+När du skapar och testar per app-VPN så inkluderar det grundläggande flödet följande steg:
+
+1. Välj VPN-klientprogrammet. [Innan du börjar](#before-you-begin) (i den här artikeln) listar de appar som stöds.
+2. Hämta programpakets-ID:na för de appar som ska använda VPN-anslutningen. [Hämta appakets-ID](#get-the-app-package-id) (i den här artikeln) visar hur du gör detta.
+3. Om du använder certifikat för att autentisera VPN-anslutningen, så skapa och distribuera sedan certifikatprofilerna innan du distribuerar VPN-principen. Kontrollera att certifikatprofilerna distribueras korrekt. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
+4. Lägg till [VPN-klientprogrammet](apps-add-android-for-work.md) till Intune och distribuera appen till dina användare och enheter.
+5. Skapa VPN-appkonfigurationsprincipen. Använd appakets-ID:na och certifikatsinformationen i principen.
+6. Distribuera den nya VPN-principen.
+7. Bekräfta att VPN-klientprogramvaran ansluter till VPN-servern.
+8. När appen är aktiv bekräftar du att trafik från din app har genomförts via VPN.
 
 ## <a name="get-the-app-package-id"></a>Hämta appaketets ID
 
-Identifiera paket-ID för varje program som du vill ge VPN-åtkomst till. För allmänt tillgängliga program kan du fundera på att hämta paket-ID:n för vart och ett av programmen i Google Play Butik. Den URL som visas för varje program inkluderar paket-ID. Paket-ID för Android-versionen av Microsoft Edge-webbläsaren är till exempel `com.microsoft.emmx`. Paket-ID ingår som en del av URL:en.
+Hämta paket-ID:t för varje program som ska använda VPN. För allmänt tillgängliga program kan du hämta appakets-ID:t i Google Play-butiken. Den URL som visas för varje program inkluderar paket-ID.
 
-![Ett exempel på hur du hittar programpaket-ID:t.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-01.png)
+I följande exempel är paket-ID:t för Microsoft Edge-webbläsarappen `com.microsoft.emmx`. Paket-ID:t ingår som en del av URL:en:
 
-När det gäller verksamhetsspecifika appar kan du be leverantören eller programutvecklingsteamet att tillhandahålla relevant paket-ID.
+:::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-01.png" alt-text="Hämta appakets-ID:t i URL:en i Google Play-butiken.":::
+
+För branschspecifika appar (LOB) hämtar du paket-ID:t från leverantören eller programutvecklaren.
 
 ## <a name="certificates"></a>Certifikat
 
-I det här avsnittet förutsätter vi att din VPN-anslutning kommer att använda certifikatbaserad autentisering och att du har distribuerat alla certifikat i kedjan som krävs för att klientautentisering ska fungera. Detta är vanligtvis klientcertifikatet, alla mellanliggande certifikat samt rotcertifikatet.
-Om du vill ha mer information om certifikatdistribution för Android Enterprise kan du börja med avsnittet [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
+Den här artikeln förutsätter att din VPN-anslutning använder certifikatbaserad autentisering. Det förutsätter också att du har distribuerat alla certifikat i kedjan som krävs för att klienter ska kunna autentisera sig. Den här certifikatkedjan innehåller vanligtvis klientcertifikatet, alla mellanliggande certifikat samt rotcertifikatet.
 
-När din certifikatprofil för klientautentisering har distribuerats behöver du viss information om profilen för att skapa konfigurationsprincipen för VPN-appen.
-Om du inte vet hur du skapar konfigurationsprofiler för appar går du till avsnittet [Lägga till appkonfigurationsprinciper för hanterade Android Enterprise-enheter](../apps/app-configuration-policies-use-android.md).
- 
+Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
 
-## <a name="build-the-vpn-profile"></a>Skapa VPN-profilen
+När din certifikatprofil för klientautentisering distribueras skapas en certifikattoken i certifikatprofilen. Den här token används för att skapa VPN-appkonfigurationsprincipen.
 
-Det finns två sätt att skapa appkonfigurationsprincipen för VPN-appen. Du kan använda **Configuration Designer** eller alternativet **JSON-data**. Alternativet **JSON-data** krävs om inte alla nödvändiga VPN-inställningar är tillgängliga i **Configuration Designer**-metoden. Kontakta VPN-leverantören om du anser att JSON-alternativet krävs för support. I det här avsnittet visas exempel på båda metoderna. I båda metoderna **JSON-data** och **Configuration Designer** kan du lägga till certifikatbaserad autentisering. När du använder metoden **JSON-data** kan du börja genom att använda **Configuration Designer** för att extrahera de nödvändiga profilvärdena.
+Om du inte vet hur man skapar appkonfigurationsprinciper, så läs informationen i [Lägga till appkonfigurationsprinciper för hanterade Android Enterprise-enheter](app-configuration-policies-use-android.md).
 
-> [!NOTE]
-> Även om många av konfigurationsparametrarna för VPN-klienten är likartade, har varje app sina unika nycklar och alternativ. Kontakta din VPN-leverantör om det uppstår några frågor. 
+## <a name="use-the-configuration-designer"></a>Använd Configuration Designer
 
-## <a name="use-the-configuration-designer-flow"></a>Använda Configuration Designer-flödet
+1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Välj **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade enheter**.
+3. Ange följande egenskaper i **Grundinställningar**:
 
-1.  Börja med att lägga till en ny appkonfigurationsprincip för **Hanterade enheter**.
-2.  Ange ett lämpligt namn.
-3.  Välj **Android Enterprise** som plattform.
-4.  Välj antingen **Endast arbetsprofil** eller **Endast enhetens ägare** som profiltyp om certifikatbaserad autentisering krävs. **Profilen för arbetsägare och enhetsägare** är inte kompatibel med certifikatbaserad autentisering.
-5.  För målprogrammet väljer du den VPN-klient som du har distribuerat. I det här exemplet använder vi den tidigare distribuerade VPN-klienten Cisco AnyConnect
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett bra principnamn kan t. ex. vara **Appkonfigurationsprincip: Cisco AnyConnect VPN-princip för Android Enterprise-arbetsprofilsenheter**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
+    - **Plattform**: Välj **Android Enterprise**.
+    - **Profiltyp**: Alternativen är:
+      - **Alla profiltyper**: Det här alternativet stöder autentisering med användarnamn och lösenord. Använd inte det här alternativet om du använder certifikatbaserad autentisering.
+      - **Endast fullständigt hanterade, dedikerade och företagsägda arbetsprofilsenheter**: Det här alternativet har stöd för certifikatbaserad autentisering och autentisering med användarnamn och lösenord.
+      - **Endast arbetsprofil**: Det här alternativet har stöd för certifikatbaserad autentisering och autentisering med användarnamn och lösenord.
+    - **Målapp**: Välj den VPN-app som du lade till tidigare. I följande exempel används Cisco AnyConnect VPN-klientappen:
 
-  ![Exempel på hur du skapar en appkonfigurationsprincip – Grunderna.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-02.png)
+      :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-02.png" alt-text="Skapa en konfigurationsprincip för appar så att du kan konfigurera VPN eller per app-VPN i Microsoft Intune":::
 
-6. På nästa sida använder du listrutan Konfigurationsinställningar och väljer alternativet **Använd Configuration Designer**.
+4. Välj **Nästa**.
+5. Ange följande egenskaper i **Inställningar**:
 
-  ![Exempel på hur du använder Configuration Designer-flödet – Inställningar.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-03.png)
+    - **Format för konfigurationsinställningar**: Välj **Använd Configuration Designer**:
 
-7. Klicka på **Lägg till** för att ta fram listan över konfigurationsnycklar.
-8.  Välj alla konfigurationsnycklar du behöver för den valda konfigurationen. I det här exemplet använder vi en minimal lista att ange för en AnyConnect VPN, inklusive certifikatbaserad autentisering och per app-VPN.
+      :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-03.png" alt-text="Skapa en VPN-princip för programkonfiguration i Microsoft Intune med hjälp av Configuration Designer-exempel.":::
+
+    - **Lägg till**: Visar listan över konfigurationsnycklar. Välj alla konfigurationsnycklar du behöver för konfigurationen > **OK**.
+
+      I följande exempel använder vi en minimal lista för AnyConnect VPN, inklusive certifikatbaserad autentisering och per app-VPN:
   
-  <img alt="Example of using the Configuration Designer Flow - Configuration keys." src="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-04.png" width="350">
+      :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-04.png" alt-text="Lägg till konfigurationsnycklar till en VPN-appskonfigurationsprincip i Microsoft Intune med hjälp av Configuration Designer-exempel.":::
 
-9. Ange lämpliga värden för nycklarna **Anslutningsnamn**, **Värd** och **Protokoll**.
+    - **Konfigurationsvärde**: Ange värdena för de konfigurationsnycklar som du har valt. Kom ihåg att nyckelnamnen varierar beroende på vilken VPN-klient som du använder. I de nycklar som valts i vårt exempel:
 
-  ![Exempel på hur du använder Configuration Designer-flödet – Val av konfigurationsnyckel.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-05.png)  
+      - **Per app-VPN-tillåtna appar**: Ange det eller de programpakets-ID:n som du samlade in tidigare. Exempel:
 
-  > [!NOTE]
-  > Namnen på dessa nycklar kan variera beroende på vilket VPN-klientprogram som du skapar principen för.
+        :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-06.png" alt-text="Lägg till de tillåtna appakets-ID:na till en VPN-appskonfigurationsprincip i Microsoft Intune med hjälp av Configuration Designer-exempel.":::
 
-10. Ange det/de programpaket-ID som du samlade in tidigare i nyckeln **Tillåtna appar för per app VPN**.
+      - **KeyChain-certifikatalias** (valfritt): Ändra **Värdetyp** från **sträng** till **certifikat**. Välj den klientcertifikatsprofil som ska användas med VPN-autentisering. Exempel:
 
-  ![Exempel på hur du använder Configuration Designer-flödet – Programpaket-ID:n.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-06.png)  
+        :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-07.png" alt-text="Ändra KeyChain-klientcertifikatets alias i en konfigurationsprincip för VPN-appar i Microsoft Intune med hjälp av Configuration Designer-exempel.":::
 
-11. I nyckeln **Nyckelringscertifikatets alias** (valfritt) växlar du **Värdetyp** från **sträng** till **certifikat**. Detta gör att du kan välja rätt klientcertifikatprofil som ska användas med VPN-autentisering.
+      - **Protokoll**: Välj **SSL**- eller **IPsec**-tunnelprotokoll för VPN.
+      - **Anslutningens namn**: Ange ett användarvänligt namn för den här VPN-anslutningen. Användarna ser det här anslutningsnamnet på sina enheter. Ange till exempel `ContosoVPN`.
+      - **Värd**: Ange värdnamnets URL till Headend-routern. Ange till exempel `vpn.contoso.com`.
 
-  ![Exempel på hur du använder Configuration Designer-flödet – Uppdatera nyckelringscertifikatets alias.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-07.png)  
+        :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-05.png" alt-text="Exempel på protokoll, anslutningsnamn och värdnamn i en konfigurationsprincip för VPN-appar i Microsoft Intune som använder Configuration Designer":::
 
-12. På nästa sida väljer du lämpliga omfångstaggar.
-13. På nästa sida anger du lämpliga grupper som du vill distribuera appkonfigurationsprincipen till.
-14. Välj **Skapa** för att skapa och distribuera principen.
+6. Välj **Nästa**.
+7. Välj i **Tilldelningar** de grupper som ska tilldelas VPN-appskonfigurationsprincipen.
 
-  ![Exempel på hur du använder Configuration Designer-flödet – Granska.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-08.png)  
+    Välj **Nästa**.
 
-## <a name="use-the-json-flow"></a>Använda JSON-flödet
+8. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och principen distribueras till dina grupper. Principen visas också i listan med appkonfigurationsprinciper.
 
-Skapa en tillfällig profil:
-1.  Börja med att lägga till en ny appkonfigurationsprincip för **Hanterade enheter**.
-2.  Ange ett lämpligt namn (användningen av den här profilen är tillfällig eftersom den INTE kommer att sparas).
-3.  Välj **Android Enterprise** som plattform.
-4.  För målprogrammet väljer du den VPN-klient som du har distribuerat.
-5.  Välj antingen **Endast arbetsprofil** eller **Endast enhetens ägare** som profiltyp om certifikatbaserad autentisering krävs. **Profilen för arbetsägare och enhetsägare** är inte kompatibel med certifikatbaserad autentisering.
+    :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-08.png" alt-text="Granska appkonfigurationsprincipen med hjälp av Configuration Designer-flödet i Microsoft Intune-exemplet.":::
 
-  ![Exempel på hur du använder JSON-flödet – Grunderna.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-09.png)  
+## <a name="use-json"></a>Använd JSON
 
-6.  På nästa sida använder du listrutan **Konfigurationsinställningar** och väljer alternativet **Använd Configuration Designer**.
+Använd det här alternativet om du inte har, eller om du inte känner till alla nödvändiga VPN-inställningar som används i **Configuration Designer**. Om du behöver hjälp kan du kontakta din VPN-leverantör.
 
-  ![Exempel på hur du använder JSON-flödet – Format för konfigurationsinställningar.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-10.png)  
+### <a name="get-the-certificate-token"></a>Hämta certifikatstoken
 
-7.  Klicka på **Lägg till** för att ta fram listan över konfigurationsnycklar.
-8.  Välj någon av nycklarna med **värdetypen** **sträng** och klicka på **OK**.
+I de här stegen skapar du en tillfällig princip. Det går inte att spara principen. Avsikten är att kopiera certifikattoken. Du använder den här token när du skapar VPN-principen med JSON (nästa avsnitt).
 
-  <img alt="Example of using the JSON Flow - Select a key." src="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-11.png" width="350">
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade enheter**.
+2. Ange följande egenskaper i **Grundinställningar**:
 
-9.  Ändra nu **Värdetyp** från **sträng** till **certifikat**. Detta gör att du kan välja rätt klientcertifikatprofil som ska användas med VPN-autentisering.
+    - **Namn**: Ange valfritt namn. Den här principen är temporär och kommer inte att sparas.
+    - **Plattform**: Välj **Android Enterprise**.
+    - **Profiltyp**: Välj **Endast arbetsprofil**.
+    - **Målapp**: Välj den VPN-app som du lade till tidigare.
 
-  ![Exempel på hur du använder JSON-flödet – Anslutningsnamn.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-12.png)  
+3. Välj **Nästa**.
+4. Ange följande egenskaper i **Inställningar**:
 
-10. Ändra omedelbart tillbaka **Värdetyp** till **sträng**. Observera att **Konfigurationsvärde** ändras till en token i formatet `{{cert:GUID}}`.
-11. Välj och kopiera certifikatets tokenrepresentation till en annan plats, till exempel en textredigerare.
+    - **Format för konfigurationsinställningar**: Välj **Använd Configuration Designer**.
+    - **Lägg till**: Visar listan över konfigurationsnycklar. Välj en nyckel med **värdetyp** för **sträng**. Välj **OK**.
 
-  ![Exempel på hur du använder JSON-flödet – konfigurationsvärde.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-13.png)  
+      :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-11.png" alt-text="I Configuration Designer väljer du en nyckel av strängvärdestyp i Microsoft Intune VPN-appens konfigurationsprincip":::
 
-12. Ta bort profilen som skapas – det enda syftet med föregående steg var att fastställa certifikatets token.
+5. Ändra **Värdetyp** från **sträng** till **certifikat**. I det här steget kan du välja rätt klientcertifikatsprofil som autentiserar VPN:
 
-### <a name="create-the-vpn-profile"></a>Skapa VPN-profilen
+    :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-12.png" alt-text="Ändra anslutningsnamnet i en konfigurationsprincip för VPN-appar i Microsoft Intune-exemplet":::
 
-1.  Börja med att lägga till en ny appkonfigurationsprofil för **Hanterade enheter**.
-2.  Ange ett lämpligt namn.
-3.  Välj **Android Enterprise** som plattform.
-4.  För målprogrammet väljer du den VPN-klient som du har distribuerat.
-5.  Välj antingen **Endast arbetsprofil** eller **Endast enhetens ägare** som profiltyp om certifikatbaserad autentisering krävs. **Profilen för arbetsägare och enhetsägare** är inte kompatibel med certifikatbaserad autentisering.
-6.  Använd listrutan **Konfigurationsinställningar** och välj alternativet **Ange JSON-data**.
-7.  Du kan redigera JSON direkt eller, om du vill, använda knappen **Ladda ned JSON-mall** för att ladda ned och sedan ändra mallen i en valfri extern redigerare. Var försiktig med textredigerare som har alternativet att använda **Typografiska citattecken**, eftersom de skulle resultera i att JSON blir ogiltig.
+6. Ändra omedelbart tillbaka **Värdetyp** till **sträng**. Observera att **Konfigurationsvärde** ändras till en token `{{cert:GUID}}`:
 
-  ![Exempel på hur du använder JSON-flödet – Redigera JSON.](./media/app-configuration-vpn-ae/app-configuration-vpn-ae-14.png)  
+    :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-13.png" alt-text="Konfigurationsvärdet visar certifikatets token i en VPN-appskonfigurationsprincip i Microsoft Intune":::
 
-8.  Oavsett vilken metod du använder måste du ta bort alla återstående inställningar med värdet "STRING_VALUE" eller STRING_VALUE i hela JSON när du har fyllt i de värden som krävs för den önskade konfigurationen.
+7. Kopiera och klistra in den här certifikattoken i en annan fil, t. ex. en textredigerare.
 
-#### <a name="example-json-for-f5-access-vpn"></a>Exempel på JSON för F5 Access VPN
+8. Ta bort den här principen. Spara den inte. Det enda syftet är att kopiera och klistra in certifikattoken.
 
-Följande är ett exempel på JSON-data för F5 Access VPN.
+### <a name="create-the-vpn-policy-using-json"></a>Skapa VPN-principen med JSON
+
+1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade enheter**.
+
+2. Ange följande egenskaper i **Grundinställningar**:
+
+    - **Namn**: Ange ett beskrivande namn på principen. Namnge dina principer så att du enkelt kan identifiera dem senare. Ett bra principnamn kan t. ex. vara **Appkonfigurationsprincip: JSON Cisco AnyConnect VPN-princip för Android Enterprise-arbetsprofilsenheter i hela företaget**.
+    - **Beskrivning**: Ange en beskrivning av principen. Denna inställning är valfri, men rekommenderas.
+    - **Plattform**: Välj **Android Enterprise**.
+    - **Profiltyp**: Alternativen är:
+      - **Alla profiltyper**: Det här alternativet stöder autentisering med användarnamn och lösenord. Använd inte det här alternativet om du använder certifikatbaserad autentisering.
+      - **Endast fullständigt hanterade, dedikerade och företagsägda arbetsprofilsenheter**: Det här alternativet har stöd för certifikatbaserad autentisering och autentisering med användarnamn och lösenord.
+      - **Endast arbetsprofil**: Det här alternativet har stöd för certifikatbaserad autentisering och autentisering med användarnamn och lösenord.
+    - **Målapp**: Välj den VPN-app som du lade till tidigare. 
+
+3. Välj **Nästa**.
+4. Ange följande egenskaper i **Inställningar**:
+
+    - **Format för konfigurationsinställningar**: Välj **Ange JSON-data**. Du kan redigera JSON direkt.
+    - **Ladda ned JSON-mall**: Använd det här alternativet när du ska ladda ned och uppdatera mallen i ett valfritt externt redigeringsprogram. Var försiktig med textredigeringsprogram som använder **typografiska citattecken**, eftersom de kan skapa ogiltig JSON.
+
+    När du har angett de värden som krävs för konfigurationen tar du bort alla inställningar med `"STRING_VALUE"` eller `STRING_VALUE`.
+
+    :::image type="content" source="./media/app-configuration-vpn-ae/app-configuration-vpn-ae-14.png" alt-text="Exempel på hur du använder JSON-flödet – Redigera JSON.":::
+
+5. Välj **Nästa**.
+6. Välj i **Tilldelningar** de grupper som ska tilldelas VPN-appskonfigurationsprincipen.
+
+    Välj **Nästa**.
+
+7. Granska inställningarna under **Granska + skapa**. När du väljer **Skapa** sparas dina ändringar och principen distribueras till dina grupper. Principen visas också i listan med appkonfigurationsprinciper.
+
+#### <a name="json-example-for-f5-access-vpn"></a>Exempel på JSON för F5 Access VPN
 
 ``` JSON
 {
@@ -238,14 +292,9 @@ Följande är ett exempel på JSON-data för F5 Access VPN.
 }
 ```
 
-## <a name="summary"></a>Sammanfattning
-
-Med hjälp av en appkonfigurationsprincip för Android Enterprise kan du med registrerade enheter utnyttja VPN-beteende per app trots att det inte finns direkt stöd för det på plattformen. 
-
 ## <a name="additional-information"></a>Ytterligare information
 
-Relaterad information finns i följande avsnitt:
-- [Lägga till konfigurationsprinciper för hanterade Android Enterprise-enheter](../apps/app-configuration-policies-use-android.md)
+- [Lägga till konfigurationsprinciper för hanterade Android Enterprise-enheter](app-configuration-policies-use-android.md)
 - [Inställningar för Android Enterprise-enhet för att konfigurera VPN i Intune](../configuration/vpn-settings-android-enterprise.md)
 
 ## <a name="next-steps"></a>Nästa steg

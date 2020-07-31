@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/29/2020
+ms.date: 07/27/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7ba3c7397298ea25eecc1147319760892434720
-ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
+ms.openlocfilehash: a6cabb4f89d1ad105b88f54ac7a1c43405d1a65d
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84270998"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262582"
 ---
 # <a name="connect-to-the-data-warehouse-with-power-bi"></a>Ansluta till informationslagret med Power BI
 
@@ -52,6 +52,9 @@ Installera den senaste versionen av [Power BI Desktop](https://aka.ms/intune/dat
 ## <a name="load-the-data-and-reports-using-the-power-bi-intune-compliance-data-warehouse-app"></a>Läsa in data och rapporter med Intune Compliance Data Warehouse-appen i Power BI
 
 [Intune Compliance-appen (Data Warehouse)](https://aka.ms/intune/datawarehouseapi/getpowerbiapp) i Power BI innehåller information för din klientorganisation och en uppsättning fördefinierade rapporter baserade på Data Warehouse-datamodellen.
+
+> [!NOTE]
+> Appen Power BI Intune Compliance Data Warehouse stöds inte för Azure Government-molnmiljöer.
 
 1. Navigera till **AppSource-sidan** i [Intune Compliance-appen (Data Warehouse)](https://aka.ms/intune/datawarehouseapi/getpowerbiapp) för att påbörja installationen.
 2. Klicka på knappen **Hämta nu** och klicka sedan på **Fortsätt**.

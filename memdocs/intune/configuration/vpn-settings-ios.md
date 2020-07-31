@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e4bf8a9327f43efc613c7210370e29c46551182
-ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
+ms.openlocfilehash: e74817c21f7869fdfdabcc2947766b5af9dea335
+ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506204"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87365499"
 ---
 # <a name="add-vpn-settings-on-ios-and-ipados-devices-in-microsoft-intune"></a>Lägg till VPN-inställningar på iOS- och iPadOS-enheter i Microsoft Intune
 
@@ -31,7 +31,7 @@ Microsoft Intune innehåller många VPN-inställningar som kan distribueras till
 [Skapa en enhetskonfigurationsprofil](vpn-settings-configure.md).
 
 > [!NOTE]
-> De här inställningarna är tillgängliga för alla registreringstyper. Mer information om de olika registreringstyperna finns i [iOS/iPadOS-registrering](../enrollment/ios-enroll.md).
+> De här inställningarna är tillgängliga för alla registreringstyper med undantag för användarregistrering. Användarregistreringen är begränsad till [per app-VPN](/vpn-setting-configure-per-app.md). Mer information om de olika registreringstyperna finns i [iOS/iPadOS-registrering](../enrollment/ios-enroll.md).
 
 ## <a name="connection-type"></a>Anslutningstyp
 

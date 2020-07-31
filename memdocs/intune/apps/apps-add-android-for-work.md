@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/13/2020
+ms.date: 07/27/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8404c475bc5a84177abeba3a96fb613f04b9aa2b
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: bc8fb5b50475c523741128d64582be29d4bf5ffe
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461954"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262667"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Lägg till Google Play för företag-appar till Android enterprise-enheter med Intune
 
@@ -122,6 +122,8 @@ Det finns två sätt att lägga till LOB-appar i Google Play för företag:
 5. Välj **Privata appar** (bredvid *lås*ikonen) i Google Play-fönstret. 
 6. Lägg till en ny app genom att klicka på knappen **"+"** längst ned till höger.
 7. Lägg till et **Appnamn**, klicka på **Ladda upp APK** och lägg till APK-appaketet.
+   > [!NOTE]
+   > Ditt appakets namn måste vara globalt unikt i Google Play (inte bara unikt i ditt Enterprise- eller Google Play Developer-konto). I annat fall får du ett fel av typen **Ladda upp en ny APK-fil med ett annat paketnamn**.
 8. Klicka på **Skapa**.
 9. Stäng fönstret Google Play för företag om du är färdig med att lägga till appar.
 10. Klicka på **Synkronisera** i **app**fönstret för att synkronisera med den hanterade Google Play-tjänsten. 

@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 05/18/2020
+ms.date: 07/28/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.reviewer: annovich
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: 16a2558a0f4b002528e749f4a66d3341e83c8576
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: a9fad599342cf358409c7be09ebb8b4eb1c0c4a5
+ms.sourcegitcommit: e8076576f5c0ea7e72358d233782f8c38c184c8f
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989664"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334631"
 ---
 # <a name="manage-bitlocker-policy-for-windows-10-in-intune"></a>Hantera BitLocker-policy för Windows 10 i Intune
 
@@ -168,11 +168,11 @@ Enheter måste uppfylla följande krav för att stödja rotation av BitLocker-å
 
 - Enheterna måste köra Windows 10 version 1909 eller senare
 
-- Azure Active Directory-anslutna och hybridanslutna enheter måste ha stöd för nyckelrotation aktiverat:
+- Azure Active Directory-anslutna och hybridanslutna enheter måste ha stöd för nyckelrotation aktiverat via BitLocker-principkonfiguration:
 
-  - **Klientbaserad rotering av återställningslösenord**
-
-  Den här inställningen finns under *Windows-kryptering* som en del av en enhetskonfigurationsprincip för Windows 10 slutpunktsskydd.
+  - **Lösenordsrotation för klientdriven återställning** till *Aktivera rotation på Azure AD-anslutna enheter* eller *Aktivera rotation på Azure AD- och Hybrid-anslutna enheter*
+  - **Spara BitLocker-återställningsinformation i Azure Active Directory** till *Aktiverad*
+  - **Lagra återställningsinformation i Azure Active Directory innan du aktiverar BitLocker** till *Krävs*
 
 #### <a name="to-rotate-the-bitlocker-recovery-key"></a>Så här roterar du BitLocker-återställningsnycklar
 

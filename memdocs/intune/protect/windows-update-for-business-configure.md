@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d246ea2811e0fb561bc623ae29d3fb5ef0de66f9
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 70f8033f694dfafefc92696df0b0e6ea652e2feb
+ms.sourcegitcommit: 24fcf19054dcd62429f6181cdc568d894e01b99a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989389"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946668"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Hantera Windows 10-programuppdateringar i Intune
 
@@ -221,6 +221,8 @@ Följande krav måste uppfyllas för att Windows-uppdateringar för Windows 10 i
   - Uppdateringsringens funktionsuppdateringar måste vara *aktiva*. De får inte pausas.
 
 - Policyer för funktionsuppdateringar för Windows 10 kan inte tillämpas samtidigt som Autopilot-välkomstprogrammet körs och tillämpas endast vid den första Windows Update-genomsökningen när en enhet har etablerats färdigt (detta tar vanligtvis en dag).
+
+- Även om funktionsuppdateringar i Windows 10 fortfarande finns i en offentlig förhandsversion när du samhanterar enheter med Configuration Manager och Intune, så innebär det en begränsning där funktionsuppdateringsprinciperna inte omedelbart börjar gälla, vilket gör att enheter kan uppdateras till en senare funktionsuppdatering än vad som konfigurerats i Intune. Den här begränsningen tas bort i en framtida uppdatering av Configuration Manager.
 
 ### <a name="create-and-assign-windows-10-feature-updates"></a>Skapa och tilldela Windows 10-funktionsuppdateringar
 

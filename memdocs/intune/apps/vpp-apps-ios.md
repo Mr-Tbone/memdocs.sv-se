@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9012cf55bcd74ab0786c3d961bc60914f9ade04e
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 89f6c1d4498151eed87cf90ae24d0cc7a846d3f7
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093313"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262565"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>Så här hanterar du iOS- och MacOS-appar som har köpts via ett Apples volymköpsprogram med Microsoft Intune
 
@@ -177,7 +177,7 @@ Du kan ta bort en Apple-token för volyminköpsprogrammet (VPP) med hjälp av ko
 <!-- 820870 -->  
 Om du vill återkalla en licens för alla VPP-appar för en specifik VPP-token, måste du först återkalla licenser för alla appar som är associerade med token och sedan ta bort token.
 
-## <a name="renewing-app-licenses"></a>Förnya applicenser
+## <a name="renewing-vpp-tokens"></a>Förnya VPP-token
 
 Du kan förnya en Apple VPP-token genom att ladda ned en ny token från [Apple Business Manager](https://business.apple.com/) eller [Apple School Manager](https://school.apple.com/) och sedan uppdatera befintlig token i Intune. 
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/19/2020
+ms.date: 07/27/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e5786289e54071d54c11fbb08790e95e54a9377
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 2e881dc386fa0fe0b98b5e3d4480e1957c251808
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461869"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262684"
 ---
 # <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
@@ -147,8 +147,12 @@ Om du vill skicka ett e-postmeddelande till användarna skapar du en mall för a
 
 5. Under **Granska + skapa** granskar du dina konfigurationer för att säkerställa att meddelandemallen är redo att användas. Välj **Skapa** för att skapa meddelandet.
 
-> [!NOTE]
-> Du kan också välja en befintlig meddelandemall som du skapat tidigare och uppdatera den genom att **redigera** informationen i den.
+### <a name="view-and-edit-notifications"></a>Visa och redigera meddelanden
+
+Meddelanden som har skapats är tillgängliga på sidan *Efterlevnadsprinciper* > *Meddelanden*. På denna sida kan du välja ett meddelande vars konfiguration du vill se:
+
+- Välj **Skicka förhandsgranskad e-post** om du vill skicka en förhandsversion av meddelandet till det konto som du använder för att logga in till Intune. 
+- Gör en ändring genom att välja **Redigera** för *Grundläggande inställningar* eller *Omfångstaggar*.
 
 ## <a name="add-actions-for-noncompliance"></a>Lägga till åtgärder vid inkompatibilitet
 

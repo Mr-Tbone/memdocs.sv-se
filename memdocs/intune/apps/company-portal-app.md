@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/14/2020
+ms.date: 07/27/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ad862ff1f04558bd699db2ef0c09d4da4654e23
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: d979001f159b427314f8bc53788ccce0acd13d11
+ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461971"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87365550"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -178,9 +178,9 @@ Intune stöder PIV- (Personal Identity Verification) och CAC-härledda (Common A
 
 Mer information om härledda autentiseringsuppgifter för iOS/iPadOS-enheter finns i [Använda härledda autentiseringsuppgifter i Microsoft Intune](../protect/derived-credentials.md).
 
-## <a name="dark-mode-for-iosipados-company-portal"></a>Mörkt läge för iOS/iPadOS-företagsportalen
+## <a name="dark-mode-for-the-company-portal"></a>Mörkt läge för företagsportalen
 
-Mörkt läge är tillgängligt för iOS/iPadOS-företagsportalen. Användarna kan ladda ned appar, hantera sina enheter och få IT-support i valfritt färgschema baserat på enhetsinställningarna. iOS/iPadOS-företagsportalen matchar automatiskt slutanvändarens enhetsinställningar för mörkt eller ljust läge.
+Mörkt läge är tillgängligt för företagsportalen i iOS/iPadOS, macOS och Windows. Användarna kan ladda ned appar, hantera sina enheter och få IT-support i valfritt färgschema baserat på enhetsinställningarna. Företagsportalen i iOS/iPadOS, macOS och Windows matchar automatiskt slutanvändarens enhetsinställningar för mörkt eller ljust läge.
 
 ## <a name="windows-company-portal-keyboard-shortcuts"></a>Kortkommandon för Windows-företagsportalen
 

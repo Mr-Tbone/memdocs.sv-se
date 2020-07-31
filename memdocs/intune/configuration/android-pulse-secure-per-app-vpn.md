@@ -1,11 +1,11 @@
 ---
-title: Per-app-anpassad VPN-profil för Android i Microsoft Intune – Azure | Microsoft Docs
-description: Läs mer om att skapa en VPN-profil per app för Android-enhetsadministratörers enheter som hanteras av Microsoft Intune.
+title: Anpassad per app-VPN-profil för Android-enhetsadministratör i Microsoft Intune – Azure | Microsoft Docs
+description: Använd en anpassad profil för per app-VPN-profiler för Android-enhetsadministratören med anslutningstyperna Pulse Secure eller Citrix VPN i Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 03/19/2020
+ms.date: 07/22/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,25 +17,28 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a351255fa0574e9b92d096b3895f9469ed9ced2a
-ms.sourcegitcommit: 678104677ad36b789630befdc5e0f1efc572c14b
+ms.openlocfilehash: 3c8e09b6010f7fc846fd81281053eaaa722e5ef4
+ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86137373"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87262803"
 ---
 # <a name="use-a-microsoft-intune-custom-profile-to-create-a-per-app-vpn-profile-for-android-devices"></a>Använd en anpassad Microsoft Intune-profil för att skapa en VPN-profil per app för Android-enheter
 
 Du kan skapa en VPN-profil per app för enheter som kör Android 5.0 och senare som hanteras av Intune. Börja med att skapa en VPN-profil som använder antingen Pulse Secure- eller Citrix-anslutningstypen. Skapa sedan en princip för anpassad konfiguration som associerar VPN-profilen med specifika appar.
 
-> [!NOTE]
-> Om du vill använda VPN per app på Android Enterprise-enheter kan du också använda de här stegen. Men vi rekommenderar att du använder en [konfigurationsprincip för appar](../apps/app-configuration-vpn-ae.md) för VPN-klientprogramvaran.
+Den här funktionen gäller för:
+
+- Android-enhetsadministratör
+
+Om du vill använda per app-VPN på Android Enterprise-enheter, så använd en [appkonfigurationsprincip](../apps/app-configuration-vpn-ae.md). Konfigurationsprinciper för appar stöder fler VPN-klientappar. På Android Enterprise-enheter kan du följa stegen i den här artikeln. Men vir rekommenderar inte detta, och du är begränsad till endast Pulse Secure- och Citrix VPN-anslutningar.
 
 När du har tilldelat principen till din Android-enhet eller till användargrupper måste användarna starta Pulse Secure- eller Citrix VPN-klienten. Därefter tillåter VPN-klienten endast trafik från de angivna apparna att använda den öppna VPN-anslutningen.
 
 > [!NOTE]
 >
-> Endast anslutningstyperna Pulse Secure och Citrix stöds för den här profilen.
+> Endast anslutningstyperna Pulse Secure och Citrix stöds för Android-enhetsadministratörer. Använd en [appkonfigurationsprincip](../apps/app-configuration-vpn-ae.md) på Android Enterprise-enheter.
 
 ## <a name="step-1-create-a-vpn-profile"></a>Steg 1: Skapa en VPN-profil
 
@@ -80,10 +83,9 @@ När du har tilldelat principen till din Android-enhet eller till användargrupp
     - **Datatyp**: Ange **String**.
     - **Värde**: Ange en semikolonavgränsad lista med paket som ska associeras med profilen. Om du till exempel vill att Excel och webbläsaren Google Chrome ska använda VPN-anslutningen anger du `com.microsoft.office.excel;com.android.chrome`.
 
-    > [!div class="mx-imgBorder"]
-    >![Exempel på anpassad princip för VPN per app för Android-enhetsadministratör](./media/android-pulse-secure-per-app-vpn/android_per_app_vpn_oma_uri.png)
+    :::image type="content" source="./media/android-pulse-secure-per-app-vpn/android_per_app_vpn_oma_uri.png" alt-text="Anpassad princip för Android-enhetsadministratör per-app VPN i Microsoft Intune":::
 
-### <a name="set-your-app-list-to-blacklist-or-whitelist-optional"></a>Ange applistan som svartlistad eller vitlistad (valfritt)
+### <a name="set-your-blocked-and-allowed-app-list-optional"></a>Konfigurera listan över blockerade och tillåtna appar (valfritt)
 
 Du kan ange en lista över appar som *inte* kan använda VPN-anslutningen med hjälp av värdet **BLACKLIST** (svartlistat). Alla andra appar ansluter via VPN. Eller så kan du använda värdet **WHITELIST** (vitlistat) för att ange en lista över appar som *får* använda VPN-anslutningen. Appar som inte finns med i listan ansluter inte via VPN-anslutningen.
 
