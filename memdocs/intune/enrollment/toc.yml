@@ -136,5 +136,7 @@
           href: troubleshoot-ios-enrollment-errors.md
         - name: Felsöka Windows-enhetsregistrering
           href: troubleshoot-windows-enrollment-errors.md
+        - name: Felsöka automatisk Windows-registrering
+          href: troubleshoot-windows-auto-enrollment.md
         - name: Felsöka Android-enhetsregistrering
           href: troubleshoot-android-enrollment.md
