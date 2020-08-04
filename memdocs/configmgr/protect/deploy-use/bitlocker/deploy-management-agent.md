@@ -10,12 +10,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 786a7a528c027ab46237dac92378224705b0e026
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: ba72e9accb7cbc5a7dc1149c6c9d947cb3e0692b
+ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262837"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87526091"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuera BitLocker-hantering
 
@@ -131,6 +131,10 @@ När du skapar fler än en princip kan du konfigurera deras relativa prioritet. 
 1. Välj **OK** för att distribuera principen.
 
 Du kan skapa flera distributioner av samma princip. Om du vill visa mer information om varje distribution väljer du principen i noden **BitLocker-hantering** och växlar sedan till fliken **distributioner** i informations fönstret.
+
+> [!IMPORTANT]
+> MBAM-klienten startar inte BitLocker-diskkryptering åtgärder om en anslutning till fjärr skrivbords protokoll är aktiv. Alla anslutningar till fjärr konsolen måste vara stängda och en användare måste vara inloggad på en fysisk konsolsession innan BitLocker-diskkryptering börjar.
+
 
 ## <a name="monitor"></a>Övervaka
 

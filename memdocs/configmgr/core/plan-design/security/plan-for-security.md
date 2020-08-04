@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 53a30f376bd288e8d50d88ea8f33af37f3cd599e
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: b15b3017dd49c75f4281a3c0bfd1c8a695ab8bae
+ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110159"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87526006"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Planera för säkerhet i Configuration Manager
 
@@ -97,7 +97,7 @@ Klienterna kan inte säkert få en kopia av plats Server certifikatet i följand
 
 2.  Exportera certifikatet utan den privata nyckeln, lagra filen på ett säkert sätt och få åtkomst till den från en säker kanal.  
 
-3.  Installera klienten med hjälp av följande client. msi-egenskap:`SMSSIGNCERT=<full path and file name>`  
+3.  Installera klienten med hjälp av följande client.msi-egenskap:`SMSSIGNCERT=<full path and file name>`  
 
 
 ###  <a name="plan-for-pki-certificate-revocation"></a><a name="BKMK_PlanningForCRLs"></a>Planera för åter kallelse av PKI-certifikat  
@@ -160,9 +160,11 @@ I många fall räcker standard konfigurationen och beteendet. Configuration Mana
 
 3.  Certifikatet är giltigt, inte återkallat och har inte upphört att gälla. Giltighets kontrollen verifierar också att den privata nyckeln är tillgänglig.  
 
-4.  Certifikatet har funktioner för klientautentisering, eller så har det utfärdats till dator namnet.  
+4.  Certifikatet har funktioner för klientautentisering.
 
-5.  Certifikatet har den längsta giltighetsperioden.  
+5.  Certifikatets ämnes namn innehåller namnet på den lokala datorn som en under sträng.  
+
+6.  Certifikatet har den längsta giltighetsperioden.  
 
 Konfigurera klienterna så att de använder listan med certifikat utfärdare med hjälp av följande mekanismer:  
 
@@ -172,7 +174,7 @@ Konfigurera klienterna så att de använder listan med certifikat utfärdare med
 
 - Klienterna hämtar den från hanterings platsen efter att de har tilldelats sin plats.  
 
-- Ange det under klient installationen som en CCMSetup Client. msi-egenskap för CCMCERTISSUERS.  
+- Ange det under klient installationen som en CCMSetup client.msi-egenskap för CCMCERTISSUERS.  
 
 Klienter som inte har listan med certifikat utfärdare när de installeras och ännu inte har tilldelats till platsen, hoppar över den här kontrollen. När klienterna har listan med certifikat utfärdare och inte har ett PKI-certifikat som är kopplat till ett betrott rot certifikat i listan med certifikat utfärdare, Miss lyckas certifikat urvalet. Klienterna fortsätter inte med de andra urvalskriterierna för certifikat.  
 
@@ -205,10 +207,13 @@ I följande tabell visas de attributvärden som Configuration Manager stöder f�
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Titel|  
+|2.5.4.12|T eller Title|Rubrik|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
-|2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  
+|2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare| 
+
+  > [!NOTE]
+  > Om du konfigurerar någon av ovanstående metoder för val av certifikat behöver certifikat mottagar namnet inte innehålla namnet på den lokala datorn.
 
 Om fler än ett lämpligt certifikat hittas när urvals villkoren har tillämpats kan du åsidosätta standard konfigurationen för att välja det certifikat som har den längsta giltighets perioden och i stället ange att inget certifikat har valts. I det här scenariot kommer klienten inte att kunna kommunicera med IIS-plats system med ett PKI-certifikat. Klienten skickar ett fel meddelande till den tilldelade återställnings status platsen för att varna dig om att certifikat urvalet Miss lyckas, så att du kan ändra eller förfina urvalskriterierna för certifikat. Klientens funktionssätt därefter beror på om den felande anslutningen skedde över HTTPS eller HTTP:  
 
@@ -242,15 +247,15 @@ På grund av antalet konfigurations alternativ och alternativ i Configuration Ma
 
 6. Spåra hur många klienter som använder ett PKI-klientcertifikat genom att titta i kolumnen **Klientcertifikat** i arbetsytan **Tillgångar och efterlevnad** , noden **Enheter** .  
 
-    Du kan också distribuera verktyget Configuration Manager HTTPS readiness Assessment (**cmHttpsReadiness. exe**) till datorer. Använd sedan rapporterna för att se hur många datorer som kan använda ett PKI-klientcertifikat med Configuration Manager.  
+    Du kan också distribuera Configuration Manager HTTPS readiness Assessment-verktyget (**cmHttpsReadiness.exe**) till datorer. Använd sedan rapporterna för att se hur många datorer som kan använda ett PKI-klientcertifikat med Configuration Manager.  
 
    > [!NOTE]
-   >  När du installerar Configuration Manager-klienten installeras verktyget **CMHttpsReadiness. exe** i `%windir%\CCM` mappen. Följande kommando rads alternativ är tillgängliga när du kör det här verktyget:  
+   >  När du installerar Configuration Manager-klienten installeras **CMHttpsReadiness.exe** -verktyget i `%windir%\CCM` mappen. Följande kommando rads alternativ är tillgängliga när du kör det här verktyget:  
    > 
-   > - `/Store:<name>`: Det här alternativet är detsamma som **CCMCERTSTORE** client. msi-egenskapen  
-   > - `/Issuers:<list>`: Det här alternativet är detsamma som **CCMCERTISSUERS** client. msi-egenskapen    
-   > - `/Criteria:<criteria>`: Det här alternativet är detsamma som **CCMCERTSEL** client. msi-egenskapen    
-   > - `/SelectFirstCert`: Det här alternativet är detsamma som **CCMFIRSTCERT** client. msi-egenskapen    
+   > - `/Store:<name>`: Det här alternativet är samma som egenskapen **CCMCERTSTORE** client.msi  
+   > - `/Issuers:<list>`: Det här alternativet är samma som egenskapen **CCMCERTISSUERS** client.msi    
+   > - `/Criteria:<criteria>`: Det här alternativet är samma som egenskapen **CCMCERTSEL** client.msi    
+   > - `/SelectFirstCert`: Det här alternativet är samma som egenskapen **CCMFIRSTCERT** client.msi    
    > 
    >   Mer information finns i [om klient installations egenskaper](../../clients/deploy/about-client-installation-properties.md).  
 
@@ -315,10 +320,10 @@ Använd följande procedurer för att företablera och kontrol lera den betrodda
 
 4.  Spara filen på en plats där alla datorer har åtkomst till den, men var filen är säker mot manipulering.  
 
-5.  Installera klienten med hjälp av en installations metod som godkänner client. msi-egenskaper. Ange följande egenskap:`SMSROOTKEYPATH=<full path and file name>`  
+5.  Installera klienten med hjälp av en installations metod som godkänner client.msi egenskaper. Ange följande egenskap:`SMSROOTKEYPATH=<full path and file name>`  
 
     > [!IMPORTANT]  
-    > När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client. msi-egenskap:`SMSSITECODE=<site code>`   
+    > När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client.msi egenskap:`SMSSITECODE=<site code>`   
 
 
 ### <a name="pre-provision-a-client-with-the-trusted-root-key-without-using-a-file"></a><a name="bkmk_trk-provision-nofile"></a>Företablera en klient med den betrodda rot nyckeln utan att använda en fil  
@@ -327,10 +332,10 @@ Använd följande procedurer för att företablera och kontrol lera den betrodda
 
 2.  Leta upp posten **SMSPublicRootKey =**. Kopiera nyckeln från den raden och Stäng filen utan några ändringar.  
 
-3.  Installera klienten med hjälp av en installations metod som godkänner client. msi-egenskaper. Ange följande client. msi-egenskap: `SMSPublicRootKey=<key>` där `<key>` är strängen som du kopierade från filen mobileclient. TCF.  
+3.  Installera klienten med hjälp av en installations metod som godkänner client.msi egenskaper. Ange följande client.msi egenskap: `SMSPublicRootKey=<key>` där `<key>` är strängen som du kopierade från filen mobileclient. TCF.  
 
     > [!IMPORTANT]  
-    >  När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client. msi-egenskap:`SMSSITECODE=<site code>`   
+    >  När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client.msi egenskap:`SMSSITECODE=<site code>`   
 
 
 ### <a name="verify-the-trusted-root-key-on-a-client"></a><a name="bkmk_trk-verify"></a>Verifiera den betrodda rot nyckeln på en klient  
@@ -348,9 +353,9 @@ Den returnerade strängen är den betrodda rot nyckeln. Kontrol lera att den mat
 
 ### <a name="remove-or-replace-the-trusted-root-key"></a><a name="bkmk_trk-reset"></a>Ta bort eller Ersätt den betrodda rot nyckeln  
 
-Ta bort den betrodda rot nyckeln från en klient genom att använda client. msi-egenskapen **RESETKEYINFORMATION = True**. 
+Ta bort den betrodda rot nyckeln från en klient med hjälp av egenskapen client.msi **RESETKEYINFORMATION = True**. 
 
-Om du vill ersätta den betrodda rot nyckeln installerar du om klienten tillsammans med den nya betrodda rot nyckeln. Använd till exempel klient-push eller ange Client. msi-egenskapen **SMSPublicRootKey**.  
+Om du vill ersätta den betrodda rot nyckeln installerar du om klienten tillsammans med den nya betrodda rot nyckeln. Använd till exempel klient-push eller ange client.msi egenskapen **SMSPublicRootKey**.  
 
 Mer information om dessa installations egenskaper finns i [om klient installations parametrar och egenskaper](../../clients/deploy/about-client-installation-properties.md).
 

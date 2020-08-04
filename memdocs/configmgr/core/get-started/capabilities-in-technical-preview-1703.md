@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: fb13844dd05049b9186909884aa0c457a8cfacd9
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 98a82d118442a7ca37ff7b2df62bf4702c15ba2c
+ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428411"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87526023"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-configuration-manager"></a>Funktioner i Technical Preview 1703 för Configuration Manager
 
@@ -31,24 +31,23 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
 Nu kan du distribuera licensierade appar till enheter samt användare. Beroende på apparnas förmåga att stödja enhets licensiering kommer en lämplig licens att krävas när du distribuerar den, enligt följande:
 
-|||||
-|-|-|-|-|
-|Configuration Manager version|App har stöd för enhets licensiering?|Distributions samlings typ|Ansökan om licens|
-|Tidigare än 1702|Ja|Användare|Användar licens|
-|Tidigare än 1702|Nej|Användare|Användar licens|
-|Tidigare än 1702|Ja|Enhet|Användar licens|
-|Tidigare än 1702|Nej|Enhet|Användar licens|
-|1702 och senare|Ja|Användare|Användar licens|
-|1702 och senare|Nej|Användare|Användar licens|
-|1702 och senare|Ja|Enhet|Enhets licens|
-|1702 och senare|Nej|Enhet|Användar licens|
+| Configuration Manager version | App har stöd för enhets licensiering? | Distributions samlings typ | Ansökan om licens |
+| ----------------------------- | ------------------------------ | -------------------------- | --------------- |
+|Tidigare än 1702|Yes|Användare|Användar licens|
+|Tidigare än 1702|No|Användare|Användar licens|
+|Tidigare än 1702|Yes|Enhet|Användar licens|
+|Tidigare än 1702|No|Enhet|Användar licens|
+|1702 och senare|Yes|Användare|Användar licens|
+|1702 och senare|No|Användare|Användar licens|
+|1702 och senare|Yes|Enhet|Enhets licens|
+|1702 och senare|No|Enhet|Användar licens|
 
 
 ## <a name="direct-links-to-applications-in-software-center"></a>Direkt länkar till program i Software Center
 
 Nu kan du ge slutanvändarna en direkt länk till ett program i Software Center. Det innebär att de inte längre måste öppna Software Center och söka efter ett program innan de kan installera det. Detta är endast tillgängligt för Configuration Manager-program, inte paket och program eller aktivitetssekvenser.
 
-### <a name="try-it-out"></a>Prova nu                 
+### <a name="try-it-out"></a>Prova                 
 
 Använd följande URL-format för att öppna Software Center för ett visst program:
 
@@ -70,7 +69,7 @@ Genom att använda den här länken kan slutanvändare öppna Software Center di
 
 Nu kan du distribuera PFX-certifikat profiler som du har importerat till Configuration Manager klient datorer som kör Windows 10.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 
 Följ anvisningarna i [så här skapar du profiler för PFX-certifikat](../../mdm/deploy-use/create-pfx-certificate-profiles.md) för att importera en PFX-profil, distribuera profilen och kontrol lera sedan om certifikatet har installerats för mål användaren.
 

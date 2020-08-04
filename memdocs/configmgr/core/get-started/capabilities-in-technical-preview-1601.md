@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ed3f53b6e2e9557def20fc459dfcf4641b0e396d
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: be1401f28ccbd15de2561a19169ed67a81a91550
+ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905830"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87526040"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-configuration-manager"></a>Funktioner i Technical Preview 1601 för Configuration Manager
 
@@ -130,8 +130,8 @@ En klient är online om den är ansluten till en plats system roll för en Confi
 
 ### <a name="icons-for-client-status"></a>Ikoner för klient status  
 
-|||  
-|-|-|  
+| Ikon | Description |
+| ---- | ----------- |
 |![ikon för onlinestatus för klienter](media/online-status-icon.png)|Klienten är online.|  
 |![ikon för offlinestatus för klienter](media/offline-status-icon.png)|Klienten är offline.|  
 |![ikon för okänd status för klienter](media/unknown-status-icon.png)|Klientens status är okänd.|  
