@@ -1,5 +1,5 @@
 ---
-title: Hur hittar jag serienumret på iOS-enheten? | Microsoft Docs
+title: Hur hittar jag serienumret på iOS-enheten?
 description: ''
 keywords: ''
 author: lenewsad
@@ -19,14 +19,14 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 68eb6055e8002697ae312f7ddc52ee1a235d54fd
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: d4c994d7664331b817de05d20ff64155415f86c8
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881229"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546679"
 ---
-# <a name="how-do-i-find-the-serial-number-on-my-device"></a>Hur hittar jag serienumret på enheten?
+# <a name="how-do-i-find-the-serial-number-on-my-ios-device"></a>Hur hittar jag serienumret på iOS-enheten?
 
 Serienumret för enheten är en unik identifierare som kan hjälpa företagets support med vissa åtgärder, t.ex. att ersätta din enhet med en ny. Du hittar serienumret så här:
 

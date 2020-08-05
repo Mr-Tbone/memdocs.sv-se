@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d300be679d54a5f565fb2c42f889a7dcd23894a
-ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.openlocfilehash: 7acbd455ef720dd0ab17cce40eae8060c7a68c87
+ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86088555"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438645"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Använda Azure AD för att få åtkomst till Intune API:er i Microsoft Graph
 
@@ -351,11 +351,11 @@ I det här exemplet visas hur du använder C# för att hämta en lista med enhet
   > Azure Active Directory-autentiseringsbibliotek (ADAL) och Azure AD Graph API kommer att bli inaktuella. Mer information finns i [Uppdatera dina program för användning med Microsoft Authentication Library (MSAL) och Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
 
 
-    1. Högerklicka på Solution Explorer.
-    2. Välj **Hantera NuGet-paket...** &gt; **Bläddra**.
-    3. Välj `Microsoft.IdentityModel.Clients.ActiveDirectory` och sedan **Installera**.
+   1. Högerklicka på Solution Explorer.
+   2. Välj **Hantera NuGet-paket...** &gt; **Bläddra**.
+   3. Välj `Microsoft.IdentityModel.Clients.ActiveDirectory` och sedan **Installera**.
 
-    <img src="../media/aad-auth-cpp-install-package.png" width="624" height="458" alt="Selecting the Azure AD identity model module" />
+   <img src="../media/aad-auth-cpp-install-package.png" width="624" height="458" alt="Selecting the Azure AD identity model module" />
 
 4. Lägg till följande uttryck överst i **Program.cs**:
 
@@ -447,7 +447,7 @@ namespace IntuneGraphExample
 
 ### <a name="authenticate-azure-ad-powershell"></a>Autentisera Azure AD (PowerShell)
 
-Följande PowerShell-skript använder AzureAD PowerShell-modulen för autentisering.  Läs mer i [Azure Active Directory PowerShell Version 2](https://docs.microsoft.com/powershell/azure/install-adv2?view=azureadps-2.0) och [Intune PowerShell-exempel](https://github.com/microsoftgraph/powershell-intune-samples).
+Följande PowerShell-skript använder AzureAD PowerShell-modulen för autentisering.  Läs mer i [Azure Active Directory PowerShell Version 2](/powershell/azure/active-directory/install-adv2) och [Intune PowerShell-exempel](https://github.com/microsoftgraph/powershell-intune-samples).
 
 I det här exemplet uppdateras värdet för `$clientID` så att det matchar ett giltigt program-ID.
 
