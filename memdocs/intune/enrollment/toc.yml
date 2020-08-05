@@ -56,10 +56,6 @@
           href: windows-bulk-enroll.md
         - name: Registreringsstatussida
           href: windows-enrollment-status.md
-        - name: Windows Autopilot-distributionsprogram
-          href: enrollment-autopilot.md
-        - name: Hybrid Azure AD med Autopilot
-          href: windows-autopilot-hybrid.md
         - name: Konfigurera proxy för Intune AD Connector
           href: autopilot-hybrid-connector-proxy.md
     - name: Konfigurera Android-registrering

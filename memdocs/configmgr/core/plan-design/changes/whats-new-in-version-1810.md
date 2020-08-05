@@ -2,7 +2,7 @@
 title: Nyheter i version 1810
 titleSuffix: Configuration Manager
 description: Få information om ändringar och nya funktioner som introducerats i version 1810 av Configuration Manager aktuella grenen.
-ms.date: 04/23/2019
+ms.date: 07/06/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2a3b322f868c5c203114de4d974ba6682272c5d7
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: f08b7449b4232d55c4be6227d23965231aa7a273
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906255"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546458"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Vad är nytt i version 1810 av Configuration Manager aktuella grenen
 
@@ -237,7 +237,7 @@ Mer information finns i [skapa program](../../../apps/deploy-use/create-applicat
 <!--3607717, fka 1358333-->
 [Windows autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) är nu tillgängligt med Windows 10, version 1809 eller senare. Med den här nya funktionen kan du återställa avbildningen och etablera en Windows 7-enhet för [Windows autopilot-](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) användarläge med hjälp av en enda, inbyggd Configuration Manager-aktivitetssekvens.
 
-Mer information finns i [Windows Autopilot för befintliga enheter](../../../osd/deploy-use/windows-autopilot-for-existing-devices.md).
+Mer information finns i [Windows Autopilot för befintliga enheter](../../../../autopilot/existing-devices.md).
 
 
 ### <a name="specify-the-drive-for-offline-os-image-servicing"></a>Ange enhet för etablering av OS-avbildning offline
@@ -435,7 +435,7 @@ Följande samlade uppdateringar (4488598) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Titel | Datum | I-konsolen |
+| ID | Rubrik | Date | I-konsolen |
 |---------|---------|---------|---------|
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
 | [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Ja |

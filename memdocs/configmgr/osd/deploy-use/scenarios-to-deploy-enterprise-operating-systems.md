@@ -2,7 +2,7 @@
 title: Scenarier för att distribuera operativsystem i företag
 titleSuffix: Configuration Manager
 description: Lär dig mer om flera scenarier för att distribuera operativ system i företag med Configuration Manager.
-ms.date: 02/22/2019
+ms.date: 07/06/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f74fdb86-c7c2-447f-91f6-b42df6370d7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 07e8623928cbfe0bcd562d3d6efdf3a9ceee85ae
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 8304ba7384eba2fc7bfa41d4caf5a256380931c5
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723770"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546645"
 ---
 # <a name="scenarios-to-deploy-enterprise-operating-systems-with-configuration-manager"></a>Scenarier för att distribuera operativ system i företag med Configuration Manager
 
@@ -28,13 +28,11 @@ Det här scenariot uppgraderar operativ systemet på datorer som kör Windows 7,
 
 Mer information finns i [uppgradera Windows till den senaste versionen](upgrade-windows-to-the-latest-version.md).
 
-
 #### <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot för befintliga enheter
 <!--3607717, fka 1358333-->
 Från och med version 1810 finns Windows autopilot för befintliga enheter med Windows 10 version 1809 eller senare. Med den här funktionen kan du återställa avbildningen och etablera en Windows 7-enhet för Windows autopilot-användarläge med hjälp av en enda Configuration Manager-aktivitetssekvens.
 
-Mer information finns i [Windows Autopilot för befintliga enheter](windows-autopilot-for-existing-devices.md).
-
+Mer information finns i [Windows Autopilot för befintliga enheter](../../../autopilot/existing-devices.md).
 
 #### <a name="refresh-an-existing-computer-with-a-new-version-of-windows"></a>Uppdatera en befintlig dator med en ny version av Windows
 Det här scenariot partitionerar och formaterar (raderar) en befintlig dator och installerar ett nytt operativ system på datorn. Du kan migrera inställningar och användar data när operativ systemet har installerats.  

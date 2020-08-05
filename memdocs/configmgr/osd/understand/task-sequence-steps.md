@@ -2,7 +2,7 @@
 title: Aktivitetssekvenssteg
 titleSuffix: Configuration Manager
 description: Lär dig mer om de steg som du kan lägga till i en Configuration Manager-aktivitetssekvens.
-ms.date: 04/01/2020
+ms.date: 07/06/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 114a0a18b3eb5d416b45379ccb3ac68128e529c5
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: 61070d98c5b7d453f493cf7ea2995705ee43f325
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353606"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546628"
 ---
 # <a name="task-sequence-steps"></a>Aktivitetssekvenssteg
 
@@ -156,7 +156,7 @@ När du aktiverar det här alternativet kan du även ange ytterligare kommando r
 
 Ange eventuella driv rutiner för Mass lagring som krävs för att installera ett klassiskt operativ system.  
 
-##### <a name="driver"></a>Drivrutin
+##### <a name="driver"></a>Drivrutinen
 
 Välj den driv rutin för Mass lagrings enhet som ska installeras före installationen av ett klassiskt OS. List rutan fylls i från det angivna paketet.  
 
@@ -846,13 +846,13 @@ Kontrol lera att det operativ system som är installerat på mål datorn uppfyll
 
 Från och med version 2002 kontrollerar du om det aktuella operativ systemet är **32-bitars** eller **64-bitars**.
 
-#### <a name="minimum-os-version"></a>Minsta operativsystemversion
+#### <a name="minimum-os-version"></a>Lägsta version av operativsystemet
 
-Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en senare version än vad som anges. Ange versionen med huvud version, lägre version och build-nummer. Exempelvis `10.0.16299`.
+Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en senare version än vad som anges. Ange versionen med huvud version, lägre version och build-nummer. Till exempel `10.0.16299`.
 
 #### <a name="maximum-os-version"></a>Högsta version av operativsystemet
 
-Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en tidigare version än den angivna. Ange versionen med huvud version, lägre version och build-nummer. Exempelvis `10.0.18356`.
+Från och med version 2002 kontrollerar du att det aktuella operativ systemet kör en tidigare version än den angivna. Ange versionen med huvud version, lägre version och build-nummer. Till exempel `10.0.18356`.
 
 #### <a name="minimum-client-version"></a>Lägsta klient version
 
@@ -1599,7 +1599,7 @@ Välj det här alternativet för att förhindra att Sysprep återställer produk
 <!--SCCMDocs-pr issue 2695-->
 Det här alternativet instruerar Sysprep att stänga av datorn i stället för dess standard beteende för omstart.
 
-Aktivitetssekvensen [Windows autopilot för befintliga enheter](../deploy-use/windows-autopilot-for-existing-devices.md) använder det här steget med det här alternativet.
+Aktivitetssekvensen [Windows autopilot för befintliga enheter](../../../autopilot/existing-devices.md) använder det här steget med det här alternativet.
 
 - Lämna det här alternativet om du vill att aktivitetssekvensen ska uppdatera enheten och sedan omedelbart starta OOBE för autopilot.  
 
@@ -2064,7 +2064,7 @@ Följande exempel innehåller ogiltiga parametrar. De första två objekten är 
 <!-- SCCMDocs-pr issue 3561 -->
 Använd enkla citat tecken () runt värdet om ett parameter värde innehåller ett specialtecken `'` . Om du använder dubbla citat tecken ( `"` ) kan det leda till att aktivitetssekvensen felaktigt bearbetar parametern.
 
-Exempelvis: `-Arg1 '%TSVar1%' -Arg2 '%TSVar2%'`
+Exempel: `-Arg1 '%TSVar1%' -Arg2 '%TSVar2%'`
 
 Från och med version 2002 ställer du in den här egenskapen till en variabel.<!-- 5690481 --> Om du till exempel anger `%MyScriptVariable%` När aktivitetssekvensen kör skriptet, läggs värdet för den här anpassade variabeln till i PowerShell-kommandoraden.
 

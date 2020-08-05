@@ -5,17 +5,17 @@ description: Lär dig hur du förbereder dina Windows 10 Internet-baserade enhet
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 05/14/2020
+ms.date: 07/06/2020
 ms.topic: how-to
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: d58faa57fa1459bbc8d821d117d20b3f404dc8e0
-ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
+ms.openlocfilehash: 076a4b6d1bf5773287d4a0b32109023039a3b399
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776896"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546424"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Förbereda Internet-baserade enheter för samhantering
 
@@ -25,7 +25,7 @@ Den här artikeln fokuserar på den andra sökvägen till samhantering, för nya
 
 För nya Windows 10-enheter kan du använda autopilot-tjänsten för att konfigurera OOBE (out of Box Experience). Den här processen omfattar att ansluta enheten till Azure AD och registrera enheten i Intune.  
 
-Mer information finns i [Översikt över Windows autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot).
+Mer information finns i [Översikt över Windows autopilot](../../autopilot/windows-autopilot.md).
 
 Om du vill konfigurera enheterna så att de registreras automatiskt i Intune när de ansluter till Azure AD, se [registrera Windows-enheter för Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
 
@@ -46,9 +46,9 @@ Mer information finns i [lägga till enheter i Intune](https://docs.microsoft.co
 ### <a name="autopilot-for-existing-devices"></a>Autopilot för befintliga enheter
 <!--1358333-->
 
-[Windows autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) är tillgängligt i Windows 10, version 1809 eller senare. Med den här funktionen kan du återställa avbildningen och etablera en Windows 7-enhet för [Windows autopilot-](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) användarläge med hjälp av en enda, inbyggd Configuration Manager-aktivitetssekvens.
+[Windows autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) är tillgängligt i Windows 10, version 1809 eller senare. Med den här funktionen kan du återställa avbildningen och etablera en Windows 7-enhet för [Windows autopilot-](../../autopilot/user-driven.md) användarläge med hjälp av en enda, inbyggd Configuration Manager-aktivitetssekvens.
 
-Mer information finns i [aktivitetssekvens för Windows autopilot för befintliga enheter](../osd/deploy-use/windows-autopilot-for-existing-devices.md).
+Mer information finns i [aktivitetssekvens för Windows autopilot för befintliga enheter](../../autopilot/existing-devices.md).
 
 ## <a name="install-the-configuration-manager-client"></a>Installera Configuration Manager-klienten
 

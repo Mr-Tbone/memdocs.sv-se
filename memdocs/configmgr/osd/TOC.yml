@@ -17,7 +17,7 @@
         - name: Uppgradera Windows till den senaste versionen
           href: deploy-use/upgrade-windows-to-the-latest-version.md
         - name: Windows Autopilot för befintliga enheter
-          href: deploy-use/windows-autopilot-for-existing-devices.md
+          href: ../../autopilot/existing-devices.md
         - name: Uppdatera en befintlig dator med en ny version av Windows
           href: deploy-use/refresh-an-existing-computer-with-a-new-version-of-windows.md
         - name: Installera en ny version av Windows på en ny dator (utan operativsystem)
