@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 22dc48a60d03a0cc6bc10e04bc3facbf36983ff9
-ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
+ms.openlocfilehash: 79e2694cfd34f1db8bf11969506ec3d8cbc453d4
+ms.sourcegitcommit: 8a9b85d1c879060ea541f7c8ad1ae34a4ed33ed0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84637576"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87507658"
 ---
 Dessa meddelanden innehåller viktig information som kan hjälpa dig att förbereda dig för framtida ändringar och funktioner i Intune.
 
@@ -75,6 +75,9 @@ Enheter påverkas inte om något av följande stämmer:
 - Ange **Minsta längd på lösenord**
 - Ange **Antal dagar tills lösenordet går ut**
 - Ange **Antal tidigare lösenord för att förhindra återanvändning**
+
+
+![Skärmbild av sidan Android-efterlevnadspolicy](../fundamentals/media/notices/android-compliance-settings.png)
 
 ###### <a name="additional-impacts-based-on-android-os-version"></a>Ytterligare saker som påverkas baserat på Android OS-versionen
 

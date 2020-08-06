@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/17/2020
+ms.date: 07/30/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cd5e8f6e1975adf33131ca47049eb2d4a6f68cd
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: 46c58437fab66b0a4fd22ea8452856ca701e9eb7
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262888"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546817"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -54,6 +54,14 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 ### Role-based access control
 ### Scripts
 
+<!-- ########################## -->
+## <a name="week-of-july-27-2020"></a>Veckan som inleds med den 27 juli 2020
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="monitor-and-troubleshoot"></a>Övervaka och felsöka
+
+#### <a name="power-bi-compliance-report-template-v20---636958---"></a>Mall för Power BI-efterlevnadsrapport V2.0<!-- 636958 -->
+Med Power BI-mallar kan Power BI-partner skapa Power BI-appar med lite eller ingen kodning och distribuera dem till olika Power BI-kunder. Administratörer kan uppdatera mallversionen för Power BI-efterlevnadsrapporten från V1.0 till V2.0. V2.0 har en ny och bättre design samt ändringar av de beräkningar och data som visas i mallen. Mer information finns i [Ansluta till Data Warehouse med Power BI](../developer/reports-proc-get-a-link-powerbi.md) och [Uppdatera en mallapp](https://docs.microsoft.com/power-bi/service-template-apps-install-distribute#update-a-template-app). Dessutom kan du läsa blogginlägget om [den nya versionen av PowerBI-efterlevnadsrapporten med Intune Data Warehouse](https://aka.ms/new_compliance_report).
 
 <!-- ########################## -->
 ## <a name="week-of-july-13-2020--2007-service-release"></a>Veckan som inleds den 13 juli 2020 (2007 Service Release)
@@ -67,8 +75,8 @@ Slutanvändare kan nu bestämma om apparna som visas i [Microsoft Intune-företa
 #### <a name="exchange-on-premises-connector-support---7138486----"></a>Stöd för Exchange On-Premises Connector<!-- 7138486  -->
 Intune tar bort stödet för funktionen Exchange On-premises Connector från Intune-tjänsten från och med version 2007 (juli). Befintliga kunder med aktiva anslutningsprogram kan fortsätta att använda funktionen. Nya kunder och befintliga kunder som inte har något aktivt anslutningsprogram kan inte längre skapa nya anslutningsprogram eller hantera EAS-enheter (Exchange ActiveSync) från Intune. Microsoft rekommenderar sådana kunder att skydda åtkomsten till Exchange lokalt med [HMA (modern hybridautentisering)](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview). HMA ger tillgång till både Intune-appskyddspolicyer (kallas även MAM) och villkorsstyrd åtkomst via Outlook Mobile för Exchange lokalt.
 
-#### <a name="smime-for-outlook-on-ios-and-android-enterprise-devices-managed-without-enrollment---6517155----"></a>S/MIME för Outlook på iOS- och Android Enterprise-enheter som hanteras utan registrering<!-- 6517155  -->
-Nu kan du aktivera S/MIME för Outlook på iOS- och Android Enterprise-enheter med appkonfigurationsprinciper för enheter som hanteras utan registrering. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), väljer du **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade appar**. Dessutom kan du välja om du vill tillåta användare att ändra den här inställningen i Outlook. Allmän information om S/MIME finns i [S/MIME-översikt om att signera och kryptera e-post i Intune](../protect/certificates-s-mime-encryption-sign.md). Mer information om konfigurationsinställningarna för Outlook finns i [Konfigurationsinställningar för Microsoft Outlook](../apps/app-configuration-policies-outlook.md) och [Lägg till appkonfigurationsprinciper för hanterade appar utan enhetsregistrering](../apps/app-configuration-policies-managed-app.md). Microsoft Exchange-specifik information om S/MIME finns i [S/MIME-scenarier](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#smime-scenarios) och [Konfigurationsnycklar – S/MIME-inställningar](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#smime-settings).
+#### <a name="smime-for-outlook-on-ios-and-android-devices-without-enrollment---6517155---"></a>S/MIME för Outlook på iOS- och Android-enheter utan registrering<!-- 6517155 -->
+Nu kan du aktivera S/MIME för Outlook på iOS- och Android-enheter med en policy för appkonfiguration av hanterade appar. På så sätt kan du leverera policyn oavsett enhetens registreringsstatus. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), väljer du **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade appar**. Dessutom kan du välja om du vill tillåta användare att ändra den här inställningen i Outlook. För automatisk distribution av S/MIME-certifikat till Outlook för iOS och Android måste enheten dock vara registrerad. Allmän information om S/MIME finns i [S/MIME-översikt om att signera och kryptera e-post i Intune](https://docs.microsoft.com/mem/intune/protect/certificates-s-mime-encryption-sign). Mer information om konfigurationsinställningarna för Outlook finns i [Konfigurationsinställningar för Microsoft Outlook](../apps/app-configuration-policies-outlook.md) och [Lägg till appkonfigurationsprinciper för hanterade appar utan enhetsregistrering](../apps/app-configuration-policies-managed-app.md). Information om S/MIME i Outlook för iOS och Android finns i [S/MIME-scenarier](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#smime-scenarios) och [Konfigurationsnycklar – S/MIME-inställningar](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#smime-settings). 
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="device-configuration"></a>Enhetskonfiguration
