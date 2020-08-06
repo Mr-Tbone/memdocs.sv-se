@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f49ba4fffd84ffae3e5b47ad74088b65d599533
-ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
+ms.openlocfilehash: c23044b912b7f0edf2852477aad80dd9be66cf54
+ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86491260"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87526074"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -440,7 +440,7 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 
   Användare kan inte ange ett tidsvärde på enheten som är större än den konfigurerade tiden i profilen. Användarna kan dock ange ett lägre tidsvärde. Om profilen t.ex. är inställd på `15` minuter, kan användare ange värdet till 5 minuter. Användarna kan inte ange värdet till 30 minuter.
 
-- **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan enheten rensas (från 4 till 11). `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
+- **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan arbetsprofilen på enheten rensas, från 4 till 11. `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 
 - **Lösenordets giltighetstid (dagar)** : Ange antalet dagar innan användarlösenordet måste ändras (från **1**-**365**).
 - **Lösenordstyp som krävs**: Anger den komplexitetsnivå som krävs för lösenordet och om biometriska enheter kan användas. Alternativen är:
@@ -468,7 +468,7 @@ Lösenordsinställningarna gäller för personliga profiler på enheter som anv�
 
   Användare kan inte ange ett tidsvärde på enheten som är större än den konfigurerade tiden i profilen. Användarna kan dock ange ett lägre tidsvärde. Om profilen t.ex. är inställd på `15` minuter, kan användare ange värdet till 5 minuter. Användarna kan inte ange värdet till 30 minuter.
 
-- **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan enheten rensas (från 4 till 11). `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
+- **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan arbetsprofilen på enheten rensas, från 4 till 11. `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Lösenordets giltighetstid (dagar)** : Ange antalet dagar innan enhetslösenordet måste ändras (från 1 till 365 dagar). Ange till exempel `90` om lösenordet ska upphöra efter 90 dagar. När lösenordet upphör att gälla uppmanas användarna att skapa ett nytt lösenord. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Lösenordstyp som krävs**: Anger den komplexitetsnivå som krävs för lösenordet och om biometriska enheter kan användas. Alternativen är:
   - **Standard för enheten**

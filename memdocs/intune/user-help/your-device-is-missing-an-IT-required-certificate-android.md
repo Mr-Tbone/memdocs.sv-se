@@ -1,5 +1,5 @@
 ---
-title: Din enhet saknar ett certifikat | Microsoft Docs
+title: Installera nödvändiga certifikat som saknas
 description: ''
 keywords: ''
 author: lenewsad
@@ -19,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 1cd3309ebe05d48fd2b28988ffc09702901c470a
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 162a5c2ff02a762578fb6f52b60b6ff404862329
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881061"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546716"
 ---
 # <a name="install-missing-certificate-required-by-your-organization"></a>Installera saknat certifikat som krävs av din organisation  
 

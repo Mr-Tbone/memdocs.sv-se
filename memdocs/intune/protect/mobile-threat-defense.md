@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/23/2020
+ms.date: 07/29/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,15 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b9aedb7595db5ff0f40f2d12b8cee985fb7be99
-ms.sourcegitcommit: 411e9d93cbafc7585f5a0f9a05097fe589de804f
+ms.openlocfilehash: 7bc7f526db4cb9fd269d2d48845cc5dc4096b5df
+ms.sourcegitcommit: 0c5d09bfefbedeb561658cf7274483896e84e5d3
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85332857"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87412349"
 ---
 # <a name="mobile-threat-defense-integration-with-intune"></a>Mobile Threat Defense-integrering med Intune
 
 Intune kan integrera data från en Mobile Threat Defense-leverantör som informationskälla för enhetsefterlevnadsprinciper samt enhetsregler för villkorsstyrd åtkomst. Du kan använda den här informationen för att skydda företagsresurser som Exchange och SharePoint genom att blockera åtkomst från komprometterade mobila enheter.
+
+> [!NOTE]
+> Den här artikeln gäller tredjepartsleverantörer av Mobile Threat Defense, mer information om Microsoft Defender finns i [Microsoft Defender ATP](../protect/advanced-threat-protection.md).
 
 Intune kan använda samma data som källa för oregistrerade enheter som använder Intune-appskyddsprinciper. Administratörer kan därför använda den här informationen för att skydda företagsdata i en [Microsoft Intune-skyddad app](../apps/apps-supported-intune-apps.md) och utfärda en blockering eller en selektiv rensning.
 
@@ -96,3 +100,4 @@ Lär dig hur du skyddar åtkomsten till företagets resurser baserat på enhet, 
 - [Better Mobile](better-mobile-threat-defense-connector.md)
 - [Sophos Mobile](sophos-mtd-connector.md)
 - [Wandera skydd mot mobila hot](wandera-mtd-connector.md)
+- [Microsoft Defender](../protect/advanced-threat-protection.md)

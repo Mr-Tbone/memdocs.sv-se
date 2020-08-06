@@ -1,5 +1,5 @@
 ---
-title: Skicka loggar till företagets support för Windows 10-enheter | Microsoft Docs
+title: Skicka loggar med appen Inställningar för Windows
 description: Registrera en Windows 10 1511-enhet i Intune
 keywords: ''
 author: lenewsad
@@ -19,12 +19,12 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: ef75b3a678c60fd2683feb269210d70baed9c46a
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 4d7ae7fd722918d6d88d96b0c2114dd6c9dd49fc
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881963"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546733"
 ---
 # <a name="send-logs-to-your-company-support-from-the-settings-app-for-windows-10"></a>Skicka loggar till företagets support från inställningsappen för Windows 10
 

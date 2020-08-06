@@ -19,16 +19,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e031acf6964c2e43bb355db85dd5e365db1a08ad
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 619974819575936912b6a5c386116bdf26448252
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80326904"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546851"
 ---
 # <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Självstudie: Använda Autopilot till att registrera Windows-enheter i Intune
 
-Med Windows Autopilot blir det enklare att registrera enheter. Med Microsoft Intune och Autopilot kan du ge dina slutanvändare nya enheter utan att behöva skapa, underhålla och tillämpa anpassade operativsystemavbildningar.
+Med [Windows Autopilot](../../autopilot/index.yml) är det enklare att registrera enheter. Med Microsoft Intune och Autopilot kan du ge dina slutanvändare nya enheter utan att behöva skapa, underhålla och tillämpa anpassade operativsystemavbildningar.
 
 I den här självstudien får du lära dig att:
 > [!div class="checklist"]
@@ -127,6 +127,6 @@ Om du inte vill använda Autopilot-enheter mer kan du ta bort dem.
 Det finns mer information om andra alternativ som är tillgängliga för Windows Autopilot.
 
 > [!div class="nextstepaction"]
-> [Fördjupande artikel om Autopilot-registrering](enrollment-autopilot.md)
+> [Fördjupande artikel om Autopilot-registrering](../../autopilot/enrollment-autopilot.md)
 
 

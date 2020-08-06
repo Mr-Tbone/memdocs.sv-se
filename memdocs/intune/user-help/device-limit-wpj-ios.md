@@ -1,5 +1,5 @@
 ---
-title: Gränsen för den registrerade enheten har nåtts | Microsoft Docs
+title: Gränsen för antalet registrerade iOS-enheter har uppnåtts
 titlesuffix: Intune Company Portal
 description: ''
 keywords: ''
@@ -19,14 +19,14 @@ ms.reviewer: elocholi
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 7920450185bbc3d198777893a303f4fdec1cd5f7
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 9e808ced9ad2d4f8ce8aded4fe572fea8d55884f
+ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83880492"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87546407"
 ---
-# <a name="the-limit-of-devices-you-can-register-has-been-reached"></a>Gränsen för antalet enheter du kan registrera har nåtts
+# <a name="the-limit-of-ios-devices-you-can-register-has-been-reached"></a>Gränsen för antalet iOS-enheter du kan registrera har uppnåtts
 
 Alla företag anger en gräns för antalet enheter som varje användare kan använda för att få åtkomst till företagets resurser. Detta bidrar till att skydda företagets information och säkerställer att varje användare har behörighet att komma åt informationen från specifika enheter och platser. Det finns tre saker som du kan göra om det visas ett meddelande om att **det inte gick inte att registrera din enhet** eftersom du har nått gränsen för antalet enheter:
 

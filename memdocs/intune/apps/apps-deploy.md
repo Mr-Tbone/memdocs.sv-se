@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/27/2020
+ms.date: 07/30/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 665e06e6aca0a4ba4f71147325eb587b1b8b4d40
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: cafc7549dfb04bff14b0cdfe8c737ee4971d4db1
+ms.sourcegitcommit: 45657123a5db50aaecdb96d068712623d775f31c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461546"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87443812"
 ---
 # <a name="assign-apps-to-groups-with-microsoft-intune"></a>Tilldela appar till grupper med Microsoft Intune
 
@@ -32,7 +32,7 @@ ms.locfileid: "86461546"
 När du har [lagt till en app](apps-add.md) till Microsoft Intune kan du tilldela appen till användare och enheter. Lägg märke till att du kan tilldela en app till en enhet oavsett om enheten hanteras av Intune eller inte.
 
 > [!NOTE]
-> Tillgänglig distributionsavsikt stöds inte för enhetsgrupper – det är bara användargrupper som stöds.
+> Distributionsavsikten **Tillgänglig** stöds bara för **enhetsgrupper** när målet är fullständigt hanterade Android Enterprise-enheter (COBO) och företagsägda och personligt aktiverade Android Enterprise-enheter (COPE).
 
 I följande tabell visas de olika alternativen för att tilldela appar till användare och enheter:
 

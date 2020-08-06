@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8405ef9c8d83583fe2ceb5da668ccfd79d23a39a
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: b91751e9879d06b40bdd9518926759da2331115f
+ms.sourcegitcommit: 41b2b50d5870dc127a8848a6657d56112f92515a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79334099"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87758269"
 ---
 # <a name="troubleshoot-mobile-application-management"></a>Felsök hantering av mobilprogram
 
@@ -102,7 +102,7 @@ Dialogruta/felmeddelande | Orsak | Åtgärder |
 -- | --- | --- |
 **Appen konfigureras inte**: Den här appen har inte ställts in för att du ska använda den. Kontakta IT-administratören om du behöver hjälp. | Det gick inte att identifiera en obligatorisk appskyddsprincip för appen. |Kontrollera att en appskyddsprincip för Android har distribuerats till användarens säkerhetsgrupp och att den riktar sig mot den här appen.
 **Det gick inte att starta appen**: Det uppstod ett problem när din app skulle startas. Försök att uppdatera appen eller Intunes företagsportalapp. Kontakta IT-administratören om du behöver hjälp. | Intune har upptäckt giltig appskyddsprincip för appen, men appen kraschar under MAM-initieringen. | Kontrollera att appversionen är uppdaterad. <br><br> Kontrollera att företagsportalappen är installerad och uppdaterad på enheten. <br><br> Om felet kvarstår kan du använda företagsportalappen och skicka loggar till Intune, eller skapa en [supportbegäran](../fundamentals/get-support.md#create-an-online-support-ticket).
-**Inga appar hittades**: Din organisation tillåter inte att det här innehållet öppnas av några appar på den här enheten. Kontakta IT-administratören om du behöver hjälp. | Användaren försökte öppna arbets- eller skoldata med en annan app, men Intune kan inte hitta några andra hanterade appar som ska kunna öppna data. | Kontrollera att en appskyddsprincip för Android har distribuerats till användarens säkerhet och att den riktar sig till minst en annan MAM-aktiverad app som kan öppna datan det gäller.
+**Inga appar hittades**: Din organisation tillåter inte att det här innehållet öppnas av några appar på den här enheten. Kontakta IT-administratören om du behöver hjälp. | Användaren försökte öppna arbets- eller skoldata med en annan app, men Intune kan inte hitta några andra hanterade appar som ska kunna öppna data. | Se till att en appskyddsprincip för Android har distribuerats till användarens säkerhetsgrupp och att den riktar sig till minst en annan MAM-aktiverad app som kan öppna aktuella data.
 **Inloggningen misslyckades**: Försök att logga in igen. Om problemet kvarstår kontaktar du IT-administratören för hjälp. | Det gick inte att autentisera kontot som användaren försökte logga in på. | Kontrollera att användaren loggar in med arbets- eller skolkontot som redan har registrerats med Intune MAM-tjänsten (det första arbets- eller skolkonto som har loggat in i den här appen). <br><br> Rensa appens data. <br><br> Kontrollera att appversionen är uppdaterad. <br><br> Kontrollera att företagsportalens version är uppdaterad.
 **Internetanslutning krävs**: Du måste vara ansluten till Internet för att kunna verifiera att du får använda den här appen. | Enheten är inte ansluten till Internet. | Anslut enheten till ett WiFi- eller datanätverk.
 **Enheten är inte kompatibel**: Den här appen kan inte användas eftersom du använder en rotad enhet. Kontakta IT-administratören om du behöver hjälp. | Intune har upptäckt att användaren finns på en rotad enhet. | Återställ enheten till fabriksinställningarna.

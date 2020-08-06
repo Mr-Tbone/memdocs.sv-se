@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9796df0da4974b860348bf52ef06db202219136
-ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
+ms.openlocfilehash: b90051e9062978fbc016e461d67fbf081f50c616
+ms.sourcegitcommit: 5a58af4f7d40bbde88a273fba859bf69eeff6107
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86491124"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87473686"
 ---
 # <a name="identify-devices-as-corporate-owned"></a>Identifiera enheter som företagsägda
 
@@ -52,7 +52,10 @@ Den här funktionen stöds på följande plattformar:
 | Windows | Stöds (Windows Phone) | Stöds inte |
 | iOS/macOS | Stöds inte (se Viktig nedan)  | Stöds |
 | Enhetsadministratörhanterad Android OS-v10 | Stöds inte | Stöds inte |
-| Annan Android | Stöds inte | Stöds |
+| Android Enterprise-arbetsprofil | Stöds inte | Stöds |
+| Fullständigt hanterad Android Enterprise | Stöds inte | Stöds |
+| Dedikerade Android Enterprise-enheter | Stöds inte | Stöds inte |
+| Företagsägd Android Enterprise-arbetsprofil | Stöds inte | Stöds |
 
 <!-- When you upload serial numbers for corporate-owned iOS/iPadOS devices, they must be paired with a corporate enrollment profile. Devices must then be enrolled using either Apple's Automated Device Enrollment or Apple Configurator to have them appear as corporate-owned. -->
 
@@ -63,11 +66,6 @@ Den här funktionen stöds på följande plattformar:
 För att skapa listan, skapar du en lista med kommateckenavgränsade fält (.csv) i två kolumner men utan rubrik. Lägg till 14-siffrigt IMEI-numren eller serienumren i den vänstra kolumnen och informationen i den högra kolumnen. Endast en typ av ID kan importeras till en CSV-fil, antingen IMEI-nummer eller serienummer. Informationen är begränsad till 128 tecken och används endast i administrationssyfte. Informationen visas inte på enheten. Den aktuella gränsen är 5 000 rader per CSV-fil.
 
 **Överför en CSV-fil med serienummer** – Skapa en lista med två kolumner och kommaavgränsade värden (CSV-fil) utan sidhuvud och begränsa listan till 5 000 enheter eller 5 MB per CSV-fil.
-
-|||
-|-|-|
-|&lt;ID #1&gt;|&lt;Information om enhet nr 1&gt;|
-|&lt;ID #2&gt;|&lt;Information om enhet nr 2&gt;|
 
 CSV-filen när den visas i en textredigerare:
 

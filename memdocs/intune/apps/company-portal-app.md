@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/27/2020
+ms.date: 08/04/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d979001f159b427314f8bc53788ccce0acd13d11
-ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
+ms.openlocfilehash: 33977676b4c144573965477154a7939f6061280a
+ms.sourcegitcommit: 41b2b50d5870dc127a8848a6657d56112f92515a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87365550"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87758354"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -105,12 +105,14 @@ I den här tabellen visas registreringsspecifik konfigurationsinformation:
 
 > [!IMPORTANT]
 > Följande inställningar gäller inte för iOS/iPad-enheter som är konfigurerade att registreras med [automatisk enhetsregistrering](../enrollment/device-enrollment-program-enroll-ios.md). Oavsett hur de här inställningarna konfigureras så kommer iOS/iPad-enheter som är konfigurerade att registreras med automatisk enhetsregistrering att registreras i det inledande flödet, och användarna uppmanas att logga in när de startar Företagsportal.
+> 
+> Följande inställningar gäller för Android-enheter som konfigurerats med [Samsung Knox Mobile Enrollment](../enrollment/android-samsung-knox-mobile-enroll.md) (KME). Om en enhet har konfigurerats för KME och enhetsregistreringen är inställd på Ej tillgänglig kan inte enheten registreras i det initiala flödet.
 
 |    Alternativ för enhetsregistrering    |    Beskrivning    |    Checklisteprompter    |    Meddelande    |    Enhetsstatusinformation    |    Appstatusinformation (om en app som kräver registrering)    |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------|--------------------|-----------------------------|--------------------------------------------------------------------|
 |    Tillgänglig, med prompter    |    Standardupplevelsen med prompter för registrering på valfria platser.    |    Ja    |    Ja    |    Ja    |    Ja    |
-|    Tillgängligt, inga prompter    |    Användaren kan registrera sig via statusen i enhetsinformationen för den aktuella enheten eller från appar som kräver registrering.    |    Nej    |    Nej    |    Ja    |    Ja    |
-|    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Nej    |    Nej    |    Nej    |
+|    Tillgängligt, inga prompter    |    Användaren kan registrera sig via statusen i enhetsinformationen för den aktuella enheten eller från appar som kräver registrering.    |    Inga    |    Inga    |    Ja    |    Ja    |
+|    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Nej    |    Inga    |    Inga    |
 
 ### <a name="privacy"></a>Sekretess
 
