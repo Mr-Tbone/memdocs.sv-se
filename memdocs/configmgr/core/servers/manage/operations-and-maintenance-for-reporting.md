@@ -10,12 +10,12 @@ ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 5e154f2859a7541ac8f67b8588da7dfb8877c940
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 414d1138a7682d6b9acbc7731035fff1842a1fe7
+ms.sourcegitcommit: c1afc8abd0d7da48815bd2b0e45147774c72c2df
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713718"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87815420"
 ---
 # <a name="operations-and-maintenance-for-reporting-in-configuration-manager"></a>Åtgärder och underhåll för rapportering i Configuration Manager
 
@@ -33,7 +33,7 @@ Configuration Manager lagrar sina rapporter i SQL Server Reporting Services. Rap
 När du kör en rapport visas rapportens rubrik, beskrivning och kategori på det lokala operativ systemets språk. Mer information finns i [språk för-rapporter](configuring-reporting.md#-languages-for-reports).
 
 > [!NOTE]  
-> Rapporthanteraren är ett webbaserat verktyg för åtkomst och hantering av rapporter. Du kan använda den för att administrera en enskild rapport Server instans via en HTTPS-anslutning. Använd Rapporthanteraren för operativa uppgifter: Visa rapporter, ändra rapport egenskaper och hantera associerade rapport prenumerationer. Den här artikeln innehåller anvisningar för att visa en rapport och ändra rapport egenskaper i Rapporthanteraren. Mer information om andra alternativ i Rapporthanteraren finns [Rapporthanteraren?](https://docs.microsoft.com/sql/reporting-services/report-manager-ssrs-native-mode)
+> Rapporthanteraren är ett webbaserat verktyg för åtkomst och hantering av rapporter. Du kan använda den för att administrera en enskild rapport Server instans via en HTTPS-anslutning. Använd Rapporthanteraren för operativa uppgifter: Visa rapporter, ändra rapport egenskaper och hantera associerade rapport prenumerationer. Den här artikeln innehåller anvisningar för att visa en rapport och ändra rapport egenskaper i Rapporthanteraren. Mer information om andra alternativ i Rapporthanteraren finns [Rapporthanteraren?](https://docs.microsoft.com/sql/reporting-services/report-server/manage-a-reporting-services-native-mode-report-server)
 
 Använd följande procedurer för att köra en Configuration Manager-rapport.
 
@@ -50,7 +50,7 @@ Använd följande procedurer för att köra en Configuration Manager-rapport.
 
 ### <a name="run-a-report-in-a-web-browser"></a>Köra en rapport i en webbläsare
 
-1. I webbläsaren går du till Rapporthanteraren URL, till exempel `https://Server1/Reports`. Hitta den här adressen på sidan **RAPPORTHANTERAREN URL** i repor ting Services-Configuration Manager.
+1. I webbläsaren går du till Rapporthanteraren URL, till exempel `https://Server1/Reports` . Hitta den här adressen på sidan **RAPPORTHANTERAREN URL** i repor ting Services-Configuration Manager.
 
 1. I Rapporthanteraren väljer du rapportmappen för Configuration Manager, till exempel **ConfigMgr_CAS**.
 
@@ -67,7 +67,7 @@ Rapport egenskaperna inkluderar rapportens namn och beskrivning. Du kan visa ege
 
 Om du vill ändra egenskaperna använder Rapporthanteraren:
 
-1. I webbläsaren går du till Rapporthanteraren URL, till exempel `https://Server1/Reports`.
+1. I webbläsaren går du till Rapporthanteraren URL, till exempel `https://Server1/Reports` .
 
 1. I Rapporthanteraren väljer du rapportmappen för Configuration Manager, till exempel **ConfigMgr_CAS**.
 
@@ -84,7 +84,7 @@ När en befintlig Configuration Manager rapport inte hämtar den information som
 Om du vill redigera en rapport måste du ha behörigheten **plats ändring** och **Ändra rapport** behörigheter för de enskilda objekten i rapporten.
 
 > [!IMPORTANT]
-> Plats uppdateringar Behåll inbyggda rapporter. Om du ändrar en standard rapport och platsen uppdateras, byter den namn på rapporten med ett under streck (`_`). Det här beteendet ser till att plats uppdateringen inte skriver över den ändrade rapporten i standard rapporten.
+> Plats uppdateringar Behåll inbyggda rapporter. Om du ändrar en standard rapport och platsen uppdateras, byter den namn på rapporten med ett under streck ( `_` ). Det här beteendet ser till att plats uppdateringen inte skriver över den ändrade rapporten i standard rapporten.
 >
 > Om du ändrar fördefinierade rapporter måste du säkerhetskopiera dina anpassade rapporter innan du installerar en plats uppdatering. Efter uppdateringen återställer du rapporten i repor ting Services. Om du gör betydande ändringar i en fördefinierad rapport ska du skapa en ny rapport i stället. Nya rapporter som du skapar innan du uppgraderar en plats skrivs inte över.
 
@@ -141,9 +141,9 @@ Använd följande procedur för att skapa en modellbaserade Configuration Manage
 
 ### <a name="create-a-sql-based-report"></a>Skapa en SQL-baserad rapport
 
-När du skapar ett SQL-uttryck för en anpassad rapport ska du inte direkt referera till SQL Server tabeller. Referens som stöds SQL Server vyer från plats databasen alltid. Dessa vyer har namn som börjar med `v_`. Mer information finns i [skapa anpassade rapporter med hjälp av SQL Server vyer i Configuration Manager](../../../develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views.md).
+När du skapar ett SQL-uttryck för en anpassad rapport ska du inte direkt referera till SQL Server tabeller. Referens som stöds SQL Server vyer från plats databasen alltid. Dessa vyer har namn som börjar med `v_` . Mer information finns i [skapa anpassade rapporter med hjälp av SQL Server vyer i Configuration Manager](../../../develop/core/understand/sqlviews/create-custom-reports-using-sql-server-views.md).
 
-Du kan också referera till offentliga lagrade procedurer från plats databasen. Dessa lagrade procedurer har namn som börjar med `sp_`.
+Du kan också referera till offentliga lagrade procedurer från plats databasen. Dessa lagrade procedurer har namn som börjar med `sp_` .
 
 Använd följande procedur för att skapa en SQL-baserad Configuration Manager-rapport.
 
@@ -181,7 +181,7 @@ Med rapport prenumerationer i SQL Server Reporting Services kan du konfigurera a
 
 När du skapar en rapport prenumeration för att leverera en rapport till en fil resurs, kopierar repor ting Services rapporten i angivet format till den fil resurs som du anger. Du kan prenumerera på och begära leverans för endast en rapport i taget.
 
-När du skapar en prenumeration som använder en fil resurs måste du ange en befintlig delad mapp som mål. Rapport servern skapar inte mappen eller nätverks resursen. När du anger målmappen i en prenumeration ska du använda en UNC-sökväg och ta inte med avslutande omvänt snedstreck`\`() i mappsökvägen. Följande exempel är en giltig UNC-sökväg för målmappen: `\\server\reportfiles\operations\2001`.
+När du skapar en prenumeration som använder en fil resurs måste du ange en befintlig delad mapp som mål. Rapport servern skapar inte mappen eller nätverks resursen. När du anger målmappen i en prenumeration ska du använda en UNC-sökväg och ta inte med avslutande omvänt snedstreck ( `\` ) i mappsökvägen. Följande exempel är en giltig UNC-sökväg för målmappen: `\\server\reportfiles\operations\2001` .
 
 > [!NOTE]
 > När du skapar prenumerationen anger du ett användar namn och lösen ord. Kontot måste ha åtkomst till den här resursen med **Skriv** behörighet till målmappen.
@@ -286,7 +286,7 @@ Använd följande procedur för att skapa en rapport prenumeration för att leve
     - **Till**: Ange en giltig e-postadress som mottagare.
 
         > [!NOTE]
-        > Ange flera mottagare genom att avgränsa varje e-postadress med semikolon (`;`).
+        > Ange flera mottagare genom att avgränsa varje e-postadress med semikolon ( `;` ).
 
     - **CC**: Alternativt kan du ange en e-postadress för att få en kopia av den här rapporten.
 

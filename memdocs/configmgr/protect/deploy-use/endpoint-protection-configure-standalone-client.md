@@ -10,12 +10,12 @@ ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a7640fade49c70c013cf1d7c0939957a07f223fd
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ms.openlocfilehash: f8d116879b0a85f3276d848b01c69d575b8b69fd
+ms.sourcegitcommit: 41b2b50d5870dc127a8848a6657d56112f92515a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546904"
+ms.locfileid: "87758320"
 ---
 # <a name="configure-endpoint-protection-on-a-standalone-client"></a>Konfigurera Endpoint Protection på en fristående klient
 
@@ -101,3 +101,7 @@ C:\Program Files\Microsoft Security Client\ConfigSecurityPolicy.exe <full path>\
 ```
 
 Ersätt `full path` med sökvägen där du sparade den nya XML-filen för program mot skadlig kod och `policy file` med princip fil namnet för program mot skadlig kod.
+
+## <a name="next-steps"></a>Nästa steg
+
+Information om hur du använder Endpoint Protection för att hantera säkerhet och skadlig kod på Configuration Manager klient datorer finns i [konfigurera Endpoint Protection](endpoint-protection-configure.md).

@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 67d86850dc0440481916984af8635d9e005044c6
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 742cd1e86ac0bff6563c0d3ee4edce7324629480
+ms.sourcegitcommit: c1afc8abd0d7da48815bd2b0e45147774c72c2df
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428608"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87815471"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Självstudie: Aktivera samhantering för nya Internetbaserade enheter
 
@@ -96,14 +96,14 @@ Om det här certifikatet:
 
 ### <a name="identify-a-unique-name-for-your-cloud-management-gateway-in-azure"></a>Identifiera ett unikt namn för din Cloud Management Gateway i Azure
 
-När du begär certifikatet för CMG, anger du vad som måste vara ett unikt namn för att identifiera din *moln tjänst (klassisk)* i Azure. Som standard använder det offentliga Azure-molnet *cloudapp.net*och CMG finns i cloudapp.net-domänen som * \< YourUniqueDnsName>. cloudapp.net*.  
+När du begär certifikatet för CMG, anger du vad som måste vara ett unikt namn för att identifiera din *moln tjänst (klassisk)* i Azure. Som standard använder det offentliga Azure-molnet *cloudapp.net*och CMG finns i cloudapp.net-domänen som * \<YourUniqueDnsName> . cloudapp.net*.  
 
 > [!TIP]  
 > I den här självstudien använder **certifikatet för CMG Server-autentisering** ett fullständigt domän namn som slutar på *contoso.com*.  När vi har skapat CMG konfigurerar vi en kanonisk namn post (CNAME) i vår organisations offentliga DNS. Den här posten skapar ett alias för den CMG som mappar till det namn som vi använder i det offentliga certifikatet.  
 
 Innan du begär ditt offentliga certifikat kontrollerar du att det namn som du vill använda är tillgängligt i Azure. Du skapar inte tjänsten direkt i Azure. I stället används det namn som anges i det offentliga certifikatet som du begär i Configuration Manager för att skapa moln tjänsten när du installerar CMG.  
 
-1. Logga in på [Microsoft Azure Portal](https://portal.azure.com/).  
+1. Logga in på [Microsoft Azure-portalen](https://portal.azure.com/).  
 
 2. Välj **skapa en resurs**, Välj **beräknings** kategori och välj sedan **moln tjänst**. Sidan moln tjänst (klassisk) öppnas.
 
@@ -125,7 +125,9 @@ Begär en version 2 nyckel leverantörs typ när du skapar en CSR. Endast versio
 > [!TIP]  
 > När vi distribuerar CMG kommer vi även att installera en moln distributions plats (CDP) på samma gång. Som standard när du distribuerar en CMG kan alternativet **Tillåt att CMG fungerar som en moln distributions plats och hantera innehåll från Azure Storage** . Att samplacera CDP på servern med CMG tar bort behovet av separata certifikat och konfigurationer för att stödja CDP. Även om CDP inte krävs för att använda samhantering, är det användbart i de flesta miljöer.  
 >
-> Om du ska använda ytterligare moln distributions platser för samhantering måste du begära separata certifikat för varje ytterligare Server. Om du vill begära ett offentligt certifikat för CDP använder du samma information som för Cloud Management Gateway CSR. Du behöver bara ändra det egna namnet så att det är unikt för varje CDP.  
+> Om du använder ytterligare separata CRL måste du begära separata certifikat för varje ytterligare CDP. Om du vill begära ett offentligt certifikat för en CDP använder du samma information som för Cloud Management Gateway CSR. Du behöver bara ändra det egna namnet så att det är unikt för varje CDP.
+>
+> Om du använder ett ytterligare, separat CDP är föråldrat och rekommenderas inte längre. Mer information finns i [föråldrade funktioner](../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md#deprecated-features).
 
 #### <a name="details-for-the-cloud-management-gateway-csr"></a>Information om Cloud Management Gateway CSR
 
@@ -387,7 +389,7 @@ Sedan, när en tidigare ohanterad Windows 10-enhet registreras med Intune, insta
 
 2. För typ av app väljer du **branschspecifika appar** under **övrigt**.
 
-3. För **appaket-filen**bläddrar du till platsen för Configuration Manager filen **CCMSetup. msi**och väljer sedan **Öppna > OK**.
+3. För **appaket-filen**bläddrar du till platsen för den Configuration Manager filen **ccmsetup.msi**och väljer sedan **Öppna > OK**.
 Till exempel *C:\Program\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
 4. Välj **app-information**och ange sedan följande information:
@@ -395,7 +397,7 @@ Till exempel *C:\Program\Microsoft Configuration Manager\bin\i386\ccmsetup.msi*
 
    - **Utgivare**: Microsoft  
 
-   - **Kommando rads argument**: * \< ange kommando raden **CCMSETUPCMD** . Du kan använda kommando raden som du sparade från* *sidan aktivering i konfigurations guiden för samhantering. Den här kommando raden innehåller namnen på moln tjänsten och ytterligare värden som gör det möjligt för enheter att installera Configuration Manager klient program varan. >*  
+   - **Kommando rads argument**:*\<Specify the **CCMSETUPCMD** command line. You can use the command line you saved from the* Enablement *page of the Co-management Configuration Wizard. This command line includes the names of your cloud service and additional values that enable devices to install the Configuration Manager client software.>*  
 
      Kommando rads strukturen bör likna det här exemplet endast med parametrarna CCMSETUPCMD och SMSSiteCode:  
 
@@ -414,7 +416,7 @@ Följande procedur distribuerar appen för att installera Configuration Manager-
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://endpoint.microsoft.com). Välj **appar**  >  **alla appar** och välj **Start programmet för ConfigMgr-klient installation**, den app som du skapade för att distribuera Configuration Manager-klienten.  
 
-2. Klicka på **Egenskaper** och sedan på **Redigera** för **tilldelningar**. Välj **Lägg till grupp** under **obligatoriska** tilldelningar för att ange de Azure Active Directory (AD) grupper som har användare och enheter som du vill delta i samhantering.  
+2. Välj **Egenskaper** och sedan **Redigera** för **tilldelningar**. Välj **Lägg till grupp** under **obligatoriska** tilldelningar för att ange de Azure Active Directory (AD) grupper som har användare och enheter som du vill delta i samhantering.  
 
 3. Välj **Granska + Spara** och **Spara** konfigurationen.
 Appen krävs nu av användare och enheter som du har tilldelat den till. När appen har installerat Configuration Manager-klienten på en enhet hanteras den av samhantering.
