@@ -10,12 +10,12 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7eccc3bf6b7ded9db93f5af78d55f090e9704cbc
-ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
+ms.openlocfilehash: 5e81bc9b2135d17c445f8a86ff2214db394f63db
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438609"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865497"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Skapa samlingar i Configuration Manager
 
@@ -136,13 +136,13 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 
 1. Ange följande information på sidan **Sök efter resurser** i **guiden Skapa regel för direkt medlemskap**.  
 
-    - **Resurs klass**: Välj den typ av resurs som du vill söka efter och lägga till i samlingen. Ett exempel:
+    - **Resurs klass**: Välj den typ av resurs som du vill söka efter och lägga till i samlingen. Exempel:
         - **System resurs**: Sök efter inventerings data som har returnerats från klient datorer.
         - **Okänd dator**: Välj från värden som returneras av okända datorer.
         - **Användar resurs**: Sök efter användar information som samlats in av Configuration Manager.
         - **Användar grupp resurs**: Sök efter användar grupps information som samlats in av Configuration Manager.
 
-    - **Attributnamn**: Välj det attribut som är associerat med den valda resurs klass som du vill söka efter. Ett exempel:  
+    - **Attributnamn**: Välj det attribut som är associerat med den valda resurs klass som du vill söka efter. Exempel:  
 
         - Om du vill välja datorer efter deras NetBIOS-namn väljer du **system resurs** i listan **resurs klass** och **NetBIOS-namn** i listan **attributnamn** .  
 
@@ -152,7 +152,7 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 
     - **Exkludera resurser som inte har Configuration Manager-klienten installerad**: dessa resurser visas inte i Sök resultaten.  
 
-    - **Värde**: Ange ett värde för att söka efter det valda attributnamnet. Använd procent tecknen (%) som jokertecken. Ett exempel:  
+    - **Värde**: Ange ett värde för att söka efter det valda attributnamnet. Använd procent tecknen (%) som jokertecken. Exempel:  
         - Om du vill söka efter datorer som har ett NetBIOS-namn som börjar med "M" anger du **m%** i det här fältet.  
         - Om du vill söka efter användare i Contoso OU, anger du **contoso** i det här fältet.
 
@@ -171,9 +171,8 @@ Ange följande information i dialog rutan **Egenskaper för frågeregel** .
 
 - **Redigera frågeuttryck**: öppnar dialog rutan **Egenskaper för frågeuttryck** där du kan skriva en fråga som ska användas som regel för samlingen. Mer information om frågor finns i [Introduktion till frågor](../../../servers/manage/introduction-to-queries.md).  
 
-        
-        > [!TIP]  
-        > On the General tab, selecting the checkbox to **Omit duplicate rows (select distinct)** may result in less rows returned and potentially quicker results. 
+    > [!TIP]  
+    > Om du markerar kryss rutan för att **utelämna dubblettrader (Select DISTINCT)** på fliken Allmänt kan det leda till att färre rader returneras och eventuella snabbare resultat.
 
 ### <a name="device-category-rule"></a><a name="bkmk-category"></a>Enhets kategori regel
 
