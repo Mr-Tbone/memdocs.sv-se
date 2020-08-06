@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1ce9024fa610c6af19eb40ccf0da662a3e99234f
-ms.sourcegitcommit: 01c1ca337e82c5e8e92153079ed89f79e20bde9e
+ms.openlocfilehash: 7c92423316f83841875aed2493442881bc3a1d74
+ms.sourcegitcommit: 9eebe77af18045fceb3d41b43d76b370fe92b30e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86157832"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87821605"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Vanliga frågor och svar om Configuration Manager grenar och licenser
 
@@ -58,7 +58,7 @@ Configuration Manager ingår i följande planer:
 - EMS E5
 - Microsoft 365 E3
 - Microsoft 365 E5
-- Microsoft 365 F1
+- Microsoft 365 F3 (tidigare Microsoft 365 F1)
 
 <!-- Sources:
 https://www.microsoft.com/microsoft-365/compare-all-microsoft-365-plans
@@ -100,7 +100,7 @@ Med licens för samtidig hantering kan Configuration Manager kunder med Software
 |Villkorlig åtkomst<br>(ytterligare AADP1 krävs)|Ja|Ja|
 |Enhetsprofiler|Ja|Ja|
 |Programuppdateringshanteraren|Ja|Ja|
-|Lager|Ja|Ja|
+|Inventering|Ja|Ja|
 |Apphantering|Ja|Ja|
 |Fjärrhjälp<br>(TeamViewer-licens krävs)|Ja|Ja|
 |Skriv bords analys<br>(Licenser för Windows-prenumeration krävs|Ja|E.t.|
