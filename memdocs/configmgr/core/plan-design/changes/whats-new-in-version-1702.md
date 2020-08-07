@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: eacf64245f4cfc779dc92be73e8d7e387b34f909
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: fa29c1b2474d6a0a42b7ff8e3624a3ec8d6a090e
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427928"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912302"
 ---
 # <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Vad&#39;s nya i version 1702 av Configuration Manager
 
@@ -271,9 +271,8 @@ Från och med 1702 stöder hybrid hantering av mobila enheter med Microsoft Intu
 
 Nu kan du distribuera licensierade appar till enheter samt användare. Beroende på apparnas förmåga att stödja enhets licensiering kommer en lämplig licens att krävas när du distribuerar den, enligt följande:
 
-|||||
-|-|-|-|-|
-|Configuration Manager version|App har stöd för enhets licensiering?|Distributions samlings typ|Ansökan om licens|
+| Configuration Manager version | App har stöd för enhets licensiering? | Distributions samlings typ | Ansökan om licens |
+| ----------------------------- | ------------------------------ | -------------------------- | --------------- |
 |Tidigare än 1702|Ja|Användare|Användar licens|
 |Tidigare än 1702|Nej|Användare|Användar licens|
 |Tidigare än 1702|Ja|Enhet|Användar licens|

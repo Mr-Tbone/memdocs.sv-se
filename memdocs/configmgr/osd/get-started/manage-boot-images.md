@@ -10,12 +10,12 @@ ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4403c8d0c57fba8fb63e3df729fb8a48ff123362
-ms.sourcegitcommit: d8dc05476ecd5db7ecb36dc649b566b349ba263d
+ms.openlocfilehash: 76e0fd3ad8ceaecb43d2a61c3abe15accda5e5d8
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83732881"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912378"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Hantera start avbildningar med Configuration Manager
 
@@ -80,8 +80,8 @@ När en start avbildning baseras på en annan version av Windows ADK som är ins
 
 Under plats installationen lägger Configuration Manager automatiskt till Start avbildningar som baseras på en WinPE-version från den version av Windows ADK som stöds. Beroende på vilken version av Configuration Manager kan du lägga till Start avbildningar baserat på en annan WinPE-version än den version av Windows ADK som stöds. Ett fel inträffar när du försöker lägga till en start avbildning som innehåller en version av WinPE som inte stöds. Följande lista är de Windows ADK-och WinPE-versioner som stöds för närvarande:
 
-|  |  |
-|---------|---------|
+| Windows-typ | Versioner som stöds |
+|--------------|--------------------|
 | Windows ADK-version | Windows ADK för Windows 10 |
 | Windows PE-versioner för start avbildningar som går att anpassa från Configuration Manager-konsolen | Windows PE 10 |
 | Windows PE-versioner som stöds för start avbildningar som *inte kan anpassas* från Configuration Manager-konsolen | – Windows PE 3,1<sup>[Anmärkning 1](#bkmk_note1)</sup> <br> – Windows PE 5 |
@@ -105,7 +105,7 @@ Använd exempelvis Configuration Manager-konsolen för att anpassa start avbildn
 
 3. På sidan **data källa** anger du följande alternativ:  
 
-    - I rutan **Sökväg** anger du sökvägen till WIM-filen med startavbildningen. Den angivna sökvägen måste vara en giltig nätverkssökväg i UNC-format. Exempelvis: `\\ServerName\ShareName\BootImageName.wim`
+    - I rutan **Sökväg** anger du sökvägen till WIM-filen med startavbildningen. Den angivna sökvägen måste vara en giltig nätverkssökväg i UNC-format. Exempel: `\\ServerName\ShareName\BootImageName.wim`
 
     - Välj startavbildningen i den nedrullningsbara listan **Startavbildningsfil**. Om WIM-filen innehåller flera start avbildningar väljer du lämplig avbildning.  
 
@@ -297,6 +297,6 @@ Använd följande procedur för att ställa in WinPE-språket för PXE-eller med
 
 ### <a name="set-the-windows-pe-language-for-a-pxe-or-media-initiated-os-deployment"></a>Ange Windows PE-språk för en PXE-eller distribution av operativ system som initieras av media  
 
-1. Innan du uppdaterar start avbildningen måste du kontrol lera att rätt resurs fil för aktivitetssekvensen (tsres. dll) finns i motsvarande språkmapp på plats servern. Till exempel finns den engelska resurs filen på följande plats:`<ConfigMgrInstallationFolder>\OSD\bin\x64\00000409\tsres.dll`  
+1. Innan du uppdaterar start avbildningen måste du kontrol lera att rätt resurs fil för aktivitetssekvensen (tsres.dll) finns i motsvarande språkmapp på plats servern. Till exempel finns den engelska resurs filen på följande plats:`<ConfigMgrInstallationFolder>\OSD\bin\x64\00000409\tsres.dll`  
 
 2. Som en del av ditt för inläsnings kommando ställer du in miljövariabeln **SMSTSLanguageFolder** till rätt språk-ID. Språk-ID: t måste anges med decimal och inte hexadecimalt format. Om du till exempel vill ange språk-ID: t till engelska anger du decimal värdet **1033**, inte det hexadecimala värdet 00000409 på mappnamnet.  
