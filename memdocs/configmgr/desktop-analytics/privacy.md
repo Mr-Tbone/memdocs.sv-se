@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 34005a63b372198bbc2e3079f8ab560ef6b2b791
-ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
+ms.openlocfilehash: eb393b05e1ee93239b43725a67b9a1b3e54e71ed
+ms.sourcegitcommit: 693932432270ab3df1df9f5e6783c7f5c6f31252
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795643"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997962"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Data sekretess för Skriv bords analys
 
@@ -94,7 +94,5 @@ Mer information om relaterade sekretess aspekter finns i följande artiklar:
 - [Förtroende i det betrodda molnet](https://azure.microsoft.com/overview/trusted-cloud/)  
 
 - [Säkerhetscenter](https://www.microsoft.com/trustcenter)  
-
-- [Sekretess sköld](https://www.privacyshield.gov/)  
 
 Configuration Manager skickar diagnostik-och användnings data till Microsoft separat från Desktop Analytics. Microsoft använder dessa data för att förbättra installations upplevelsen, kvaliteten och säkerheten i framtida versioner av Configuration Manager. Mer information finns i [diagnostik-och användnings data för Configuration Manager](../core/plan-design/diagnostics/diagnostics-and-usage-data.md).

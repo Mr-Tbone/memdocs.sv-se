@@ -2,7 +2,7 @@
 title: Förbättrad HTTP
 titleSuffix: Configuration Manager
 description: Använd modern autentisering för att skydda klient kommunikation utan behov av PKI-certifikat.
-ms.date: 07/10/2020
+ms.date: 08/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79b4119a12826596fcc91fa1b4ead4e151e2ddd8
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: 5d28e0ccef767770092d03898489104ae6f8c674
+ms.sourcegitcommit: 693932432270ab3df1df9f5e6783c7f5c6f31252
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262106"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997914"
 ---
 # <a name="enhanced-http"></a>Förbättrad HTTP
 
@@ -118,6 +118,11 @@ Du kan se dessa certifikat i Configuration Manager-konsolen. Gå till arbets yta
 
 Mer information om hur klienten kommunicerar med hanterings platsen och distributions platsen med den här konfigurationen finns i [kommunikation från klienter till plats system och tjänster](communications-between-endpoints.md#Planning_Client_to_Site_System).
 
+## <a name="validate-the-certificate"></a>Verifiera certifikatet
+
+När du aktiverar utökat HTTP genererar plats servern ett självsignerat certifikat med namnet **SMS-roll SSL-certifikat**. Certifikatet utfärdas av rot certifikatet för **utfärdande** av rot certifikat. Hanterings platsen lägger till det här certifikatet på IIS standard webbplats som är kopplad till port 443.
+
+Om du vill se status för konfigurationen granskar du **mpcontrol. log**.
 
 ## <a name="see-also"></a>Se även
 

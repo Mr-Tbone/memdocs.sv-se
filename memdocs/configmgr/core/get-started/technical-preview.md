@@ -2,7 +2,7 @@
 title: Tekniska för hands versioner
 titleSuffix: Configuration Manager
 description: Lär dig mer om den tekniska för hands versionen för att testa nya funktioner och funktioner i Configuration Manager.
-ms.date: 07/14/2020
+ms.date: 08/07/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 64e784ec7313dfa778ee39f6e1f52e7c09fcfd95
-ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
+ms.openlocfilehash: 1d67ba33e2f2f9783b903e60aa64170e1fbb61a5
+ms.sourcegitcommit: 693932432270ab3df1df9f5e6783c7f5c6f31252
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86384833"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997924"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Teknisk för hands version för Configuration Manager
 
@@ -94,7 +94,6 @@ Microsoft stöder varje teknisk för hands version fram till tre efterföljande 
 Installera en bas linje version i upp till ett år efter lanseringen. Använd den senaste bas linje versionen när du installerar en ny Technical Preview-webbplats. Följande Configuration Manager-versioner av teknisk för hands version är tillgängliga som både uppdateringar i konsolen och nya bas linje versioner:
 
 - **Teknisk för hands version 2007**
-- **Teknisk för hands version 2002**
 
 Hämta en bas linje version från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
@@ -121,13 +120,15 @@ bullet format:
 
 Följande funktioner är tillgängliga med den senaste Configuration Manager Technical Preview-versionen:
 
-### <a name="technical-preview-version-2007"></a>Teknisk för hands version 2007
+### <a name="technical-preview-version-2008"></a>Teknisk för hands version 2008
 
-- [Klient anslutning: Visa maskin varu inventering i administrations Center för Microsoft Endpoint Manager](2020/technical-preview-2007.md#bkmk_mem) <!--6479284-->
-- [Förbättringar av instrument panelen för klient data källor](2020/technical-preview-2007.md#bkmk_content) <!--7102084-->
-- [Teckensnitt med fast bredd som nu används i vissa konsol områden](2020/technical-preview-2007.md#bkmk_font) <!--7632637-->
-- [Hantera princip storlek för aktivitetssekvens](2020/technical-preview-2007.md#bkmk_tspol) <!--6888853-->
-- [Förbättringar av enhets tids linjen i administrations centret](2020/technical-preview-2007.md#bkmk_timeline)<!--7141381-->
+- [Förhands granskning av samlings fråga](2020/technical-preview-2008.md#collection-query-preview) <!--7380401-->
+- [Analysera SetupDiag-fel för funktions uppdateringar](2020/technical-preview-2008.md#bkmk_setupdiag) <!--4385028-->
+- [Övervaka hälso tillstånd för hälsa](2020/technical-preview-2008.md#bkmk_health) <!--7699463-->
+- [Vy för samlings utvärdering](2020/technical-preview-2008.md#bkmk_colleval) <!--6251274-->
+- [Se storlek på aktivitetssekvens i-konsolen](2020/technical-preview-2008.md#bkmk_tssize) <!--7645732-->
+- [Ta bort föråldrade diagnostikdata](2020/technical-preview-2008.md#bkmk_logs) <!--6503308-->
+- [Importera objekt till aktuell mapp](2020/technical-preview-2008.md#bkmk_folder) <!--6601203-->
 
 > [!NOTE]
 > Funktioner som var tillgängliga i en tidigare version av den tekniska för hands versionen är fortfarande tillgängliga i senare versioner. På samma sätt är funktioner som läggs till i Configuration Manager aktuella grenen tillgängliga i den tekniska förhands gransknings grenen.
@@ -144,6 +145,14 @@ Följande funktioner släpptes med tidigare versioner av Configuration Manager T
 
 > [!TIP]
 > När en ny aktuell gren version är tillgänglig visas funktioner som är tillgängliga i den versionen i *den senaste artikeln om nyheter.* Mer information finns i [Nyheter i stegvisa versioner](../plan-design/changes/whats-new-incremental-versions.md#supported-versions).
+
+### <a name="technical-preview-version-2007"></a>Teknisk för hands version 2007
+
+- [Klient anslutning: Visa maskin varu inventering i administrations Center för Microsoft Endpoint Manager](2020/technical-preview-2007.md#bkmk_mem) <!--6479284-->
+- [Förbättringar av instrument panelen för klient data källor](2020/technical-preview-2007.md#bkmk_content) <!--7102084-->
+- [Teckensnitt med fast bredd som nu används i vissa konsol områden](2020/technical-preview-2007.md#bkmk_font) <!--7632637-->
+- [Hantera princip storlek för aktivitetssekvens](2020/technical-preview-2007.md#bkmk_tspol) <!--6888853-->
+- [Förbättringar av enhets tids linjen i administrations centret](2020/technical-preview-2007.md#bkmk_timeline)<!--7141381-->
 
 ### <a name="technical-preview-version-2006"></a>Teknisk för hands version 2006
 
