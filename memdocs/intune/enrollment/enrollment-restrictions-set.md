@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 535def8c7504d8cd1ea1890c419c2f8b98d4f6f6
-ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
+ms.openlocfilehash: 1f706b2bb898f0969bf33d118291551d0f98d9ef
+ms.sourcegitcommit: 45657123a5db50aaecdb96d068712623d775f31c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86491209"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87443899"
 ---
 # <a name="set-enrollment-restrictions"></a>Ange registreringsbegränsningar
 
@@ -175,6 +175,10 @@ Prioritet används när en användare befinner sig i flera grupper som tilldelas
 När du skapar en begränsning läggs den till i listan precis ovanför den som är standard.
 
 Enhetsregistrering inkluderar standardbegränsningar för både enhetstyp och för enhetsgränsbegränsningar. De här två begränsningarna gäller för alla användare om de inte åsidosätts av begränsningar med högre prioritet.
+
+>[!NOTE]
+>Registreringsbegränsningarna gäller för användare. I registreringsscenarier som inte är användardrivna (som läget för egen distribution i Windows Autopilot eller assisterad etablering) används endast standardprioritetsbegränsningarna (riktade till ”alla användare”).
+
 
 Du kan ändra prioriteten för begränsningar som inte är standard.
 
