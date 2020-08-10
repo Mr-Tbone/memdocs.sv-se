@@ -58,6 +58,8 @@
               href: deploy-use/endpoint-protection-configure-client.md
             - name: Konfigurera Endpoint Protection på en fristående klient
               href: deploy-use/endpoint-protection-configure-standalone-client.md
+            - name: Hantera Endpoint Protection med gruppprinciper
+              href: deploy-use/endpoint-protection-group-policies.md
         - name: Principer för Windows-brandväggen
           href: deploy-use/create-windows-firewall-policies.md
         - name: Microsoft Defender Advanced Threat Protection

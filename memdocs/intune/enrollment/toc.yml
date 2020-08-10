@@ -121,6 +121,8 @@
       items:
         - name: Automatisk enhetsregistrering
           href: device-enrollment-program-enroll-macos.md
+        - name: Direktregistrering för macOS-enheter
+          href: device-enrollment-direct-enroll-macos.md
     - name: Ofullständig registreringsrapport
       href: enrollment-report-company-portal-abandon.md
     - name: Felsöka registrering
