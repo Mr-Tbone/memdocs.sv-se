@@ -2,7 +2,7 @@
 title: Felsöka Desktop Analytics
 titleSuffix: Configuration Manager
 description: Teknisk information som hjälper dig att felsöka problem med Desktop Analytics.
-ms.date: 07/01/2020
+ms.date: 08/10/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 68506ba11e356a1e9f14d58880a80bdf3cfcb5f4
-ms.sourcegitcommit: fb03634b8494903fc6855ad7f86c8694ffada8df
+ms.openlocfilehash: e83e8d5d967b4cd3bbcb817c149cd40284bb5f9c
+ms.sourcegitcommit: 66c58078a32af3872d98f7c62af4f8047ee81b50
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85828983"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88089953"
 ---
 # <a name="troubleshoot-desktop-analytics"></a>Felsöka Desktop Analytics
 
@@ -73,6 +73,9 @@ Desktop Analytics lägger till följande program i Azure AD:
 Om du behöver etablera dessa appar när du har slutfört installationen går du till fönstret **anslutna tjänster** . Välj **Konfigurera användare och appar åtkomst**och etablera apparna.  
 
 - **Azure AD-App för Configuration Manager**. Om du behöver etablera eller felsöka anslutnings problem när du har slutfört installationen, se [skapa och importera app för Configuration Manager](#create-and-import-app-for-configuration-manager). Den här appen kräver data för att **skriva cm-samling** och **läsa cm-samlings data** i **Configuration Manager tjänst-** API: et.  
+
+    > [!NOTE]
+    > Desktop Analytics stöder flera Configuration Manager hierarkier som rapporterar till en enda Azure AD-klient.<!-- 4814075 --> Om du har flera hierarkier i din miljö som kon figurer ATS med samma handels-ID kan du använda [olika appar](connect-configmgr.md#bkmk_connect) för varje hierarki för att dela Azure AD-klienten och Desktop Analytics-instansen.
 
 ### <a name="create-and-import-app-for-configuration-manager"></a>Skapa och importera app för Configuration Manager
 
