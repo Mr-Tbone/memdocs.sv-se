@@ -10,15 +10,17 @@ ms.assetid: 44c2eb8a-3ccc-471f-838b-55d7971bb79e
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 2a30e141bb5ea4d7508bf81f53f173e2a3154f08
-ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
+ms.openlocfilehash: d983e0c3d84f5bcbf411af1243ddc045d66d9199
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86210779"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051585"
 ---
 # <a name="troubleshoot-configmgr-client-details-in-the-admin-center-preview"></a>Felsöka klient information för ConfigMgr i administrations Center (för hands version)
 <!--6374854, 6521921-->
+*Gäller för: Configuration Manager (aktuell gren)*
+
 Använd följande för att felsöka information om ConfigMgr-klienten i administrations centret för Microsoft Endpoint Manager:
 
 > [!Important]
@@ -50,7 +52,7 @@ När du visar information om ConfigMgr-klienten kan du köra något av dessa fel
 
     - **Azure Active Directory klient-ID**: det här värdet ska vara ett GUID för Azure AD-klienten.
     - **Azure Active Directory användar-ID**: det här värdet ska vara ett GUID för det här kontot i Azure AD.
-    - **Användarens huvud namn**: formatet för det här värdet är user@domain . Ett exempel är `jqpublic@contoso.com`.
+    - **Användarens huvud namn**: formatet för det här värdet är user@domain . Till exempel `jqpublic@contoso.com`.
 
     Om Azure AD-egenskaperna är tomma kontrollerar du konfigurationen för platsens identifiering av [Azure AD-användare](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc).
 
@@ -63,7 +65,7 @@ När du visar information om ConfigMgr-klienten kan du köra något av dessa fel
 
 1. Kontrol lera att tjänst anslutnings punkten är ansluten till molnet med hjälp av **CMGatewayNotificationWorker. log**.
 1. Kontrol lera att den administrativa tjänsten är felfri genom att granska SMS_REST_PROVIDER-komponenten från plats komponent övervakning på den centrala platsen.
-1. IIS måste vara installerat på en-leverantörs dator. Mer information finns i [krav för administrations tjänsten](../develop/adminservice/overview.md#prerequisites)
+1. IIS måste vara installerat på en-leverantörs dator. Mer information finns i [krav för administrations tjänsten](../develop/adminservice/overview.md#prerequisites).
 1. Kontrol lera att klockan på tjänst anslutnings punkten är synkroniserad. Om tjänst anslutnings punktens klocka är något bakom, använder du [KB4563473-Samlad uppdatering för Configuration Manager version 2002 klient kopplings problem](https://support.microsoft.com/help/4563473). Kontrol lera **AdminService. log** på leverantörs datorn för eventuella fel.
 
 ## <a name="known-issues"></a>Kända problem

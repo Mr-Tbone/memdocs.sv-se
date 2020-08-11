@@ -10,17 +10,18 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: e8db4a7f877b5bd07f1aac76fc49b6efef31802e
-ms.sourcegitcommit: 16bc2ed5b64eab7f5ae74391bd9d7b66c39d8ca6
+ms.openlocfilehash: d966f0a509f5402846d0e671dbfaed571ac70d2a
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86437434"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051704"
 ---
 # <a name="tenant-attach-configmgr-client-details-in-the-admin-center-preview"></a><a name="bkmk_mem"></a>Klient anslutning: information om ConfigMgr-klient i administrations Center (för hands version)
 <!--6024387, 6374854, 6521921, intune 7552762 pubpreview July 7, 2020-->
+*Gäller för: Configuration Manager (aktuell gren)*
 
-Du kan nu se information om ConfigMgr-klienter, inklusive samlingar, gräns grupps medlemskap och klient information i real tid för en speciell enhet i administrations centret för Microsoft Endpoint Manager.
+Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina enheter. Microsoft sammanför Configuration Manager och Intune i en enda konsol som kallas **administrations Center för Microsoft Endpoint Manager**. Du kan se information om ConfigMgr-klienter, inklusive samlingar, gräns grupps medlemskap och klient information i real tid för en speciell enhet i administrations centret.
 
 > [!Important]
 > - Den här informationen är relaterad till en förhands gransknings funktion som kan ändras avsevärt innan den släpps kommersiellt. Microsoft lämnar inga garantier, uttryckliga eller underförstådda, avseende informationen som visas här.
@@ -42,6 +43,8 @@ Användar kontot måste ha följande behörigheter:
 - Behörigheten **läsa** för enhetens **samling** i Configuration Manager.
 - **Användar rollen administratör** för det Configuration Manager mikrotjänst programmet i Azure AD.
   - Lägg till rollen i Azure AD från **företags program**  >  **Configuration Manager mikrotjänst**  >  **användare och grupper**  >  **Lägg till användare**. Grupper stöds om du har Azure AD Premium.
+   > [!TIP]
+   > [Rollen program administratör i Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) har tillräcklig behörighet för att lägga till en användare i programmets **Administratörs användar** roll.
 
 ## <a name="view-configmgr-client-details"></a>Visa information om ConfigMgr-klient
 
