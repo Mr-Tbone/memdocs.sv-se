@@ -2,7 +2,7 @@
 title: Klient koppling – program (för hands version) i administrations centret
 titleSuffix: Configuration Manager
 description: Installera program för att ladda upp Configuration Manager enheter från administrations centret.
-ms.date: 08/10/2020
+ms.date: 08/11/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-core
@@ -10,12 +10,12 @@ ms.assetid: 963dda08-87b8-4e80-90a7-25625efe8861
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: c82feac1b9c841d90be66989c220c7b528597b7d
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: ca71d40b29a9dcd9c239ccd06a8a28321f50f62c
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057603"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127686"
 ---
 # <a name="tenant-attach-install-an-application-from-the-admin-center-preview"></a><a name="bkmk_apps"></a>Klient anslutning: installera ett program från administrations centret (för hands version)
 <!--cm 6024389, in 7220536 pubpreview Aug 10, 2020-->
@@ -35,6 +35,11 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 - Aktivera den valfria funktionen **Godkänn program begär Anden för användare per enhet**. Mer information finns i avsnittet [Enable optional features from updates](../core/servers/manage/install-in-console-updates.md#bkmk_options).
 - Minst ett program som distribueras till en enhets samling med **en administratör måste godkänna en begäran om detta program på enhets** alternativ uppsättningen i distributionen. Mer information finns i [godkänna program](../apps/deploy-use/app-approval.md#bkmk_opt).
    - Användarens mål program eller program utan godkännande alternativ uppsättningen visas inte i program listan när du använder Configuration Manager version 2002.
+
+Dessutom behöver du följande för att installera [användarens mål program](#bkmk_user):<!--7518897-->
+
+- Configuration Manager version 2006 och motsvarande version av konsolen installerad.
+
 
 ## <a name="permissions"></a>Behörigheter
 
@@ -72,7 +77,16 @@ Du kan filtrera program listan baserat på statusen. Program status kan vara nå
 - **Misslyckades**: det gick inte att installera programmet.
 - **Kraven är inte uppfyllda**: program kraven har inte uppfyllts.
 - **Inte installerat**: programmet är inte installerat. Normalt sett visas denna status om en annan distribution eller en användare har tagit bort programmet.
+- **Omstart väntar**: programmet installeras men måste startas om för att slutföras (från och med version 2006).
 
+## <a name="deploy-an-application-to-a-user"></a><a name="bkmk_user"></a>Distribuera ett program till en användare
+<!--7518897-->
+Från och med Configuration Manager version 2006 visas användare tillgängliga program i noden **program** för en ConfigMgr-enhet. I listan över program som är tillgängliga för enheten ingår även program som distribuerats till enhetens aktuella inloggade användare.
+
+Att distribuera program till en användare har följande begränsningar:
+- Scenarier med flera användare stöds inte.
+- Azure AD-anslutna enheter stöds inte för närvarande.
+   - Enheter som både är domänanslutna och Azure AD-anslutna stöds.
 
 ## <a name="next-steps"></a>Nästa steg
 

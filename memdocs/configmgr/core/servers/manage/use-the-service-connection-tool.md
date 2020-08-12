@@ -2,20 +2,20 @@
 title: Tjänst anslutnings verktyg
 titleSuffix: Configuration Manager
 description: Lär dig mer om det här verktyget som gör att du kan ansluta till Configuration Manager moln tjänsten för manuell uppladdning av användnings information.
-ms.date: 07/02/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 48aa08f3318aaa4629691bfb30b60580cd3e25f0
-ms.sourcegitcommit: 03d2331876ad61d0a6bb1efca3aa655b88f73119
+ms.openlocfilehash: 8b56b849be6abd2634e29d35e58494d4d3215857
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "85946852"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126094"
 ---
 # <a name="use-the-service-connection-tool-for-configuration-manager"></a>Använd tjänst anslutnings verktyget för Configuration Manager
 
@@ -78,7 +78,7 @@ Verktyget stöder alternativ för att styra vilka filer som du hämtar. Som stan
 - **-downloadsiteversion**: hämtar uppdateringar och snabb korrigeringar med en senare version än din webbplats version.
 
     > [!IMPORTANT]
-    > På grund av ett känt problem i Configuration Manager version 2002 fungerar inte standard beteendet som förväntat. Använd parametern **-downloadsiteversion** för att hämta nödvändiga uppdateringar för version 2002.<!-- 7594517 -->
+    > På grund av ett känt problem i Configuration Manager version 2002 fungerar inte standard beteendet som förväntat. Uppdatera till version 2006 eller Använd parametern **-downloadsiteversion** för att hämta nödvändiga uppdateringar för version 2002.<!-- 7594517 -->
 
 Mer information finns i [kommando rads parametrar](#bkmk_cmd).
 
@@ -103,7 +103,7 @@ I den här proceduren använder kommando rads exemplen följande fil namn och pl
 
 ### <a name="prepare"></a>Förbereda
 
-1. På den dator som är värd för tjänst anslutnings punkten öppnar du en kommando tolk som administratör och ändrar katalogen till verktygs platsen. Ett exempel:
+1. På den dator som är värd för tjänst anslutnings punkten öppnar du en kommando tolk som administratör och ändrar katalogen till verktygs platsen. Till exempel:
 
     `cd C:\Source\SMSSETUP\TOOLS\ServiceConnectionTool\`
 
@@ -118,9 +118,9 @@ I den här proceduren använder kommando rads exemplen följande fil namn och pl
 
 1. När verktyget har slutfört exporten av användnings data kopierar du data filen till en dator som har åtkomst till Internet.
 
-### <a name="connect"></a>Anslut
+### <a name="connect"></a>Ansluta
 
-1. På datorn med Internet åtkomst öppnar du en kommando tolk som administratör och ändrar katalogen till verktygets plats. Den här platsen är en kopia av hela **ServiceConnectionTool** -mappen. Ett exempel:
+1. På datorn med Internet åtkomst öppnar du en kommando tolk som administratör och ändrar katalogen till verktygets plats. Den här platsen är en kopia av hela **ServiceConnectionTool** -mappen. Till exempel:
 
     `cd D:\USB\ServiceConnectionTool\`
 
@@ -141,7 +141,7 @@ I den här proceduren använder kommando rads exemplen följande fil namn och pl
 
 ### <a name="import"></a>Importera
 
-1. På den dator som är värd för tjänst anslutnings punkten öppnar du en kommando tolk som administratör och ändrar katalogen till verktygs platsen. Ett exempel:
+1. På den dator som är värd för tjänst anslutnings punkten öppnar du en kommando tolk som administratör och ändrar katalogen till verktygs platsen. Till exempel:
 
     `cd C:\Source\SMSSETUP\TOOLS\ServiceConnectionTool\`
 

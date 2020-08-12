@@ -2,20 +2,20 @@
 title: Parametrar och egenskaper för klient installation
 titleSuffix: Configuration Manager
 description: Lär dig mer om kommando rads parametrar och egenskaper för CCMSetup för att installera Configuration Manager-klienten.
-ms.date: 07/10/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1de2cd1645687740986cc62514dbc990461cbbf6
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 2d26be4d3e3381a80fcbaa547cfcc7a3b8db42f5
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240583"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127026"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -36,14 +36,14 @@ Kommandot CCMSetup.exe hämtar filer som behövs för att installera klienten fr
 > [!NOTE]
 > Du kan inte installera client.msi direkt.  
 
-CCMSetup.exe tillhandahåller kommando rads *parametrar* för att anpassa installationen. Parametrar föregås av ett snedstreck ( `/` ) och enligt praxis är gemener. Du anger värdet för en parameter när det behövs med ett kolon ( `:` ) omedelbart följt av värdet. Mer information finns i [CCMSetup.exe kommando rads parametrar](#ccmsetupexe-command-line-parameters).
+CCMSetup.exe tillhandahåller kommando rads *parametrar* för att anpassa installationen. Parametrar föregås av ett snedstreck ( `/` ) och är vanligt vis gemener. Du anger värdet för en parameter när det behövs med ett kolon ( `:` ) omedelbart följt av värdet. Mer information finns i [CCMSetup.exe kommando rads parametrar](#ccmsetupexe-command-line-parameters).
 
 Du kan också ange *Egenskaper* på CCMSetup.exe kommando rad för att ändra beteendet för client.msi. Egenskaper per konvention är versaler. Du anger ett värde för en egenskap med ett likhets tecken ( `=` ) omedelbart följt av värdet. Mer information finns i [Client.msi egenskaper](#clientMsiProps).
 
 > [!IMPORTANT]  
 > Ange CCMSetup-parametrar innan du anger egenskaper för client.msi.  
 
-CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Ett exempel är `\\SiteServer\SMS_ABC\Client`.
+CCMSetup.exe och stödfilerna finns på plats servern i mappen **klient** i mappen Configuration Manager installation. Configuration Manager delar den här mappen i nätverket under plats resursen. Till exempel `\\SiteServer\SMS_ABC\Client`.
 
 I kommandotolken används följande format i CCMSetup.exe-kommandot:  
 
@@ -76,16 +76,100 @@ Visar tillgängliga kommando rads parametrar för ccmsetup.exe.
 
 Exempel: `ccmsetup.exe /?`
 
-### <a name="source"></a>/source
+### <a name="allowmetered"></a>/AllowMetered
 
-Anger fil hämtnings platsen. Använd en lokal sökväg eller UNC-sökväg. Enheten laddar ned filer med SMB-protokollet (Server Message Block). Om du vill använda **/Source**måste Windows-användarkontot för klient installationen ha **Läs** behörighet till platsen.
+<!--6976145-->
 
-Mer information om hur CCMSetup laddar ned innehåll finns i [gränser grupper – klient installation](../../servers/deploy/configure/boundary-groups.md#bkmk_ccmsetup). Artikeln innehåller också information om CCMSetup-beteende om du använder både parametrarna **/MP** och **/Source** .
+Från och med version 2006 använder du den här parametern för att styra klientens beteende i ett nätverk med datapriser. Den här parametern använder inga värden. När du tillåter klient kommunikation i ett nätverk med datapriser för CCMSetup, laddar den ned innehållet, registrerar på platsen och laddar ned den ursprungliga principen. All ytterligare klient kommunikation följer konfigurationen av klient inställningen från den principen. Mer information finns i [om klient inställningar](../../clients/deploy/about-client-settings.md#client-communication-on-metered-internet-connections).
 
-> [!TIP]  
-> Du kan använda parametern **/Source** mer än en gång på en kommando rad för att ange alternativa hämtnings platser.  
+Om du installerar om klienten på en befintlig enhet används följande prioritetsordning för att fastställa konfigurationen:
 
-Exempel: `ccmsetup.exe /source:"\\server\share"`
+1. Befintlig lokal klient princip
+1. Den sista kommando raden som lagras i Windows-registret
+1. Parametrar på kommando raden för CCMSetup
+
+### <a name="alwaysexcludeupgrade"></a>/AlwaysExcludeUpgrade
+
+Den här parametern anger om en klient ska uppgraderas automatiskt när du aktiverar [**Automatisk klient uppgradering**](../manage/upgrade/upgrade-clients-for-windows-computers.md#bkmk_autoupdate).
+
+Värden som stöds:
+
+- `TRUE`: Klienten uppgraderas inte automatiskt
+- `FALSE`: Klienten uppgraderas automatiskt (standard)
+
+Till exempel:  
+
+`CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
+
+Mer information finns i [Extended driftskompatibilitet client](../../understand/interoperability-client.md).
+
+> [!NOTE]  
+> När du använder parametern **/AlwaysExcludeUpgrade** körs den automatiska uppgraderingen fortfarande. Men när CCMSetup körs för att utföra uppgraderingen, kommer det att Observera att **/AlwaysExcludeUpgrade** -parametern har angetts och kommer att logga följande rad i **CCMSetup. log**:
+>
+> `Client is stamped with /alwaysexcludeupgrade. Stop proceeding.`
+>
+> CCMSetup avslutas omedelbart och utför inte uppgraderingen.
+
+### <a name="bitspriority"></a>/BITSPriority
+
+När enheten laddar ned klientens installationsfiler över en HTTP-anslutning använder du den här parametern för att ange hämtnings prioriteten. Ange ett av följande möjliga värden:
+
+- `FOREGROUND`
+
+- `HIGH`
+
+- `NORMAL`objekt
+
+- `LOW`
+
+Exempel: `ccmsetup.exe /BITSPriority:HIGH`
+
+### <a name="config"></a>/config
+
+Den här parametern anger en textfil som visar en lista över klient installations egenskaper.
+
+- Om CCMSetup körs som en tjänst placerar du filen i mappen CCMSetup-system: `%Windir%\Ccmsetup` .
+
+- Om du anger parametern [**/noservice**](#noservice) placerar du filen i samma mapp som CCMSetup.exe.
+
+Exempel: `CCMSetup.exe /config:"configuration file name.txt"`
+
+Använd filen **filen mobileclienttemplate. TCF** i `\bin\<platform>` mappen i Configuration Manager installations katalog på plats servern för att ange rätt fil format. Den här filen innehåller kommentarer om avsnitten och hur de används. Ange klient installations egenskaperna i `[Client Install]` avsnittet efter följande text: `Install=INSTALL=ALL` .
+
+Exempel på `[Client Install]` avsnitts post:`Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
+
+### <a name="downloadtimeout"></a>/downloadtimeout
+
+Om CCMSetup inte kan hämta klientens installationsfiler anger den här parametern den maximala tids gränsen i minuter. Efter denna tids gräns slutar CCMSetup att försöka ladda ned installationsfilerna. Standardvärdet är **1440** minuter (en dag).
+
+Använd parametern [**/retry**](#retry) för att ange intervallet mellan nya försök.
+
+Exempel: `ccmsetup.exe /downloadtimeout:100`
+
+### <a name="excludefeatures"></a>/ExcludeFeatures
+
+Den här parametern anger att CCMSetup.exe inte installerar den angivna funktionen.
+
+Exempel: `CCMSetup.exe /ExcludeFeatures:ClientUI` installerar inte Software Center på klienten.  
+
+> [!NOTE]  
+> `ClientUI`är det enda värde som parametern **/ExcludeFeatures** stöder.
+
+### <a name="forceinstall"></a>/forceinstall
+
+Ange att CCMSetup.exe avinstallerar en befintlig klient och installerar en ny klient.  
+
+### <a name="forcereboot"></a>/forcereboot
+
+Använd den här parametern för att tvinga datorn att starta om vid behov för att slutföra installationen. Om du inte anger den här parametern avslutas CCMSetup när en omstart krävs. Den fortsätter sedan efter nästa manuella omstart.
+
+Exempel: `CCMSetup.exe /forcereboot`
+
+### <a name="logon"></a>/logon
+
+Om någon version av klienten redan är installerad anger den här parametern att klient installationen ska stoppas.  
+
+Exempel: `ccmsetup.exe /logon`  
 
 ### <a name="mp"></a>/MP
 
@@ -123,6 +207,18 @@ Exempel för när du använder URL: en för Cloud Management Gateway:`ccmsetup.e
 > [!Important]
 > När du anger URL: en för en moln hanterings-Gateway för **/MP** -parametern måste den börja med `https://` .
 
+### <a name="nocrlcheck"></a>/NoCRLCheck
+
+Anger att en klient inte ska kontrol lera listan över återkallade certifikat (CRL) när den kommunicerar via HTTPS med ett PKI-certifikat. När du inte anger den här parametern kontrollerar klienten listan över återkallade certifikat innan en HTTPS-anslutning upprättas. Mer information om CRL-kontroll för klienter finns i [Planera för återkallning av PKI-certifikat](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs).
+
+Exempel: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
+
+### <a name="noservice"></a>/noservice
+
+Den här parametern förhindrar att CCMSetup körs som en tjänst, vilket den gör som standard. När CCMSetup körs som en tjänst körs den i kontexten för det lokala system kontot på datorn. Det här kontot kanske inte har behörighet att komma åt nödvändiga nätverks resurser för installationen. Med **/noservice**körs CCMSetup.exe i kontexten för det användar konto som du använder för att starta installationen.
+
+Exempel: `ccmsetup.exe /noservice`  
+
 ### <a name="regtoken"></a>/regtoken
 
 <!--5686290-->
@@ -146,12 +242,6 @@ Om CCMSetup.exe inte kan ladda ned installationsfiler använder du den här para
 
 Exempel: `ccmsetup.exe /retry:20`  
 
-### <a name="noservice"></a>/noservice
-
-Den här parametern förhindrar att CCMSetup körs som en tjänst, vilket den gör som standard. När CCMSetup körs som en tjänst körs den i kontexten för det lokala system kontot på datorn. Det här kontot kanske inte har behörighet att komma åt nödvändiga nätverks resurser för installationen. Med **/noservice**körs CCMSetup.exe i kontexten för det användar konto som du använder för att starta installationen.
-
-Exempel: `ccmsetup.exe /noservice`  
-
 ### <a name="service"></a>/service
 
 Anger att CCMSetup ska köras som en tjänst som använder det lokala system kontot.  
@@ -160,77 +250,6 @@ Anger att CCMSetup ska köras som en tjänst som använder det lokala system kon
 > Om du använder ett skript för att köra CCMSetup.exe med parametern **/service** , avslutas CCMSetup.exe när tjänsten har startats. Det kanske inte rapporterar installations information till skriptet korrekt.
 
 Exempel: `ccmsetup.exe /service`  
-
-### <a name="uninstall"></a>/uninstall
-
-Använd den här parametern om du vill avinstallera Configuration Manager-klienten. Mer information finns i [Avinstallera-klienten](../manage/manage-clients.md#BKMK_UninstalClient).
-
-Exempel: `ccmsetup.exe /uninstall`  
-
-### <a name="logon"></a>/logon
-
-Om någon version av klienten redan är installerad anger den här parametern att klient installationen ska stoppas.  
-
-Exempel: `ccmsetup.exe /logon`  
-
-### <a name="forcereboot"></a>/forcereboot
-
-Använd den här parametern för att tvinga datorn att starta om vid behov för att slutföra installationen. Om du inte anger den här parametern avslutas CCMSetup när en omstart krävs. Den fortsätter sedan efter nästa manuella omstart.
-
-Exempel: `CCMSetup.exe /forcereboot`
-
-### <a name="bitspriority"></a>/BITSPriority
-
-När enheten laddar ned klientens installationsfiler över en HTTP-anslutning använder du den här parametern för att ange hämtnings prioriteten. Ange ett av följande möjliga värden:
-
-- `FOREGROUND`
-
-- `HIGH`
-
-- `NORMAL`objekt
-
-- `LOW`
-
-Exempel: `ccmsetup.exe /BITSPriority:HIGH`
-
-### <a name="downloadtimeout"></a>/downloadtimeout
-
-Om CCMSetup inte kan hämta klientens installationsfiler anger den här parametern den maximala tids gränsen i minuter. Efter denna tids gräns slutar CCMSetup att försöka ladda ned installationsfilerna. Standardvärdet är **1440** minuter (en dag).
-
-Använd parametern [**/retry**](#retry) för att ange intervallet mellan nya försök.
-
-Exempel: `ccmsetup.exe /downloadtimeout:100`
-
-### <a name="usepkicert"></a>/UsePKICert
-
-Ange den här parametern för att klienten ska använda ett certifikat för PKI-klientautentisering. Om du inte tar med den här parametern, eller om klienten inte kan hitta ett giltigt certifikat, använder den en HTTP-anslutning med ett självsignerat certifikat.
-
-Exempel: `CCMSetup.exe /UsePKICert`  
-
-> [!NOTE]
-> I vissa fall behöver du inte ange den här parametern, men du kan fortfarande använda ett klient certifikat. Till exempel klient-push-installation och program uppdatering – baserad klient installation. Använd den här parametern när du installerar en klient manuellt och använder parametern **/MP** med en HTTPS-aktiverad hanterings plats.
->
-> Ange även den här parametern när du installerar en klient för kommunikation via Internet. Använd egenskapen **CCMALWAYSINF = 1** tillsammans med egenskaperna för den Internetbaserade hanterings platsen (**CCMHOSTNAME**) och plats koden (**SMSSITECODE**). Mer information om Internetbaserad klient hantering finns i [överväganden för klient kommunikation från Internet eller en ej betrodd skog](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
-
-### <a name="nocrlcheck"></a>/NoCRLCheck
-
-Anger att en klient inte ska kontrol lera listan över återkallade certifikat (CRL) när den kommunicerar via HTTPS med ett PKI-certifikat. När du inte anger den här parametern kontrollerar klienten listan över återkallade certifikat innan en HTTPS-anslutning upprättas. Mer information om CRL-kontroll för klienter finns i [Planera för återkallning av PKI-certifikat](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs).
-
-Exempel: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
-
-### <a name="config"></a>/config
-
-Den här parametern anger en textfil som visar en lista över klient installations egenskaper.
-
-- Om CCMSetup körs som en tjänst placerar du filen i mappen CCMSetup-system: `%Windir%\Ccmsetup` .
-
-- Om du anger parametern [**/noservice**](#noservice) placerar du filen i samma mapp som CCMSetup.exe.
-
-Exempel: `CCMSetup.exe /config:"configuration file name.txt"`
-
-Använd filen **filen mobileclienttemplate. TCF** i `\bin\<platform>` mappen i Configuration Manager installations katalog på plats servern för att ange rätt fil format. Den här filen innehåller kommentarer om avsnitten och hur de används. Ange klient installations egenskaperna i `[Client Install]` avsnittet efter följande text: `Install=INSTALL=ALL` .
-
-Exempel på `[Client Install]` avsnitts post:`Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
 ### <a name="skipprereq"></a>/skipprereq
 
@@ -244,46 +263,39 @@ Exempel:
 
 Mer information om klient krav finns i [krav för Windows-klienten](prerequisites-for-deploying-clients-to-windows-computers.md).
 
-### <a name="forceinstall"></a>/forceinstall
+### <a name="source"></a>/source
 
-Ange att CCMSetup.exe avinstallerar en befintlig klient och installerar en ny klient.  
+Anger fil hämtnings platsen. Använd en lokal sökväg eller UNC-sökväg. Enheten laddar ned filer med SMB-protokollet (Server Message Block). Om du vill använda **/Source**måste Windows-användarkontot för klient installationen ha **Läs** behörighet till platsen.
 
-### <a name="excludefeatures"></a>/ExcludeFeatures
+Mer information om hur CCMSetup laddar ned innehåll finns i [gränser grupper – klient installation](../../servers/deploy/configure/boundary-groups.md#bkmk_ccmsetup). Artikeln innehåller också information om CCMSetup-beteende om du använder både parametrarna **/MP** och **/Source** .
 
-Den här parametern anger att CCMSetup.exe inte installerar den angivna funktionen.
+> [!TIP]  
+> Du kan använda parametern **/Source** mer än en gång på en kommando rad för att ange alternativa hämtnings platser.  
 
-Exempel: `CCMSetup.exe /ExcludeFeatures:ClientUI` installerar inte Software Center på klienten.  
+Exempel: `ccmsetup.exe /source:"\\server\share"`
 
-> [!NOTE]  
-> `ClientUI`är det enda värde som parametern **/ExcludeFeatures** stöder.
+### <a name="uninstall"></a>/uninstall
 
-### <a name="alwaysexcludeupgrade"></a>/AlwaysExcludeUpgrade
+Använd den här parametern om du vill avinstallera Configuration Manager-klienten. Mer information finns i [Avinstallera-klienten](../manage/manage-clients.md#BKMK_UninstalClient).
 
-Den här parametern anger om en klient ska uppgraderas automatiskt när du aktiverar [**Automatisk klient uppgradering**](../manage/upgrade/upgrade-clients-for-windows-computers.md#bkmk_autoupdate).
+Exempel: `ccmsetup.exe /uninstall`  
 
-Värden som stöds:
+### <a name="usepkicert"></a>/UsePKICert
 
-- `TRUE`: Klienten uppgraderas inte automatiskt
-- `FALSE`: Klienten uppgraderas automatiskt (standard)
+Ange den här parametern för att klienten ska använda ett certifikat för PKI-klientautentisering. Om du inte tar med den här parametern, eller om klienten inte kan hitta ett giltigt certifikat, använder den en HTTP-anslutning med ett självsignerat certifikat.
 
-Till exempel:  
+Exempel: `CCMSetup.exe /UsePKICert`  
 
-`CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
-
-Mer information finns i [Extended driftskompatibilitet client](../../understand/interoperability-client.md).
-
-> [!NOTE]  
-> När du använder parametern **/AlwaysExcludeUpgrade** körs den automatiska uppgraderingen fortfarande. Men när CCMSetup körs för att utföra uppgraderingen, kommer det att Observera att **/AlwaysExcludeUpgrade** -parametern har angetts och kommer att logga följande rad i **CCMSetup. log**:
+> [!NOTE]
+> I vissa fall behöver du inte ange den här parametern, men du kan fortfarande använda ett klient certifikat. Till exempel klient-push-installation och program uppdatering – baserad klient installation. Använd den här parametern när du installerar en klient manuellt och använder parametern **/MP** med en HTTPS-aktiverad hanterings plats.
 >
-> `Client is stamped with /alwaysexcludeupgrade. Stop proceeding.`
->
-> CCMSetup avslutas omedelbart och utför inte uppgraderingen.
+> Ange även den här parametern när du installerar en klient för kommunikation via Internet. Använd egenskapen **CCMALWAYSINF = 1** tillsammans med egenskaperna för den Internetbaserade hanterings platsen (**CCMHOSTNAME**) och plats koden (**SMSSITECODE**). Mer information om Internetbaserad klient hantering finns i [överväganden för klient kommunikation från Internet eller en ej betrodd skog](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
 ## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a>CCMSetup.exe retur koder
 
 Kommandot CCMSetup.exe ger följande retur koder. Du kan felsöka genom att granska `%WinDir%\ccmsetup\ccmsetup.log` klienten för kontext och ytterligare information om retur koder.
 
-|Returkod|Betydelse|  
+|Returkod|Innebörd|  
 |-----------|-------|  
 |0|Klart|  
 |6|Fel|  
@@ -329,7 +341,7 @@ Anger ID för Azure AD-klient. Configuration Manager länkar till den här klien
 
 - Öppna en kommando tolk på en Windows 10-enhet som är ansluten till samma Azure AD-klient.
 - Kör följande kommando:`dsregcmd.exe /status`
-- I avsnittet enhets status söker du efter **TenantId** -värdet. Till exempel, `TenantId : 607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
+- I avsnittet enhets status söker du efter **TenantId** -värdet. Till exempel `TenantId : 607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
   > [!Note]
   > En Azure-administratör kan också hämta det här värdet i Azure Portal. Mer information finns i [Hämta klient-ID](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
@@ -778,7 +790,7 @@ Configuration Manager stöder följande attributvärden för urvalskriterier fö
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Titel|  
+|2.5.4.12|T eller Title|Rubrik|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
 |2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  

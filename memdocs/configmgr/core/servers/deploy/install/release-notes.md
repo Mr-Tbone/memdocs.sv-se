@@ -2,20 +2,20 @@
 title: Viktig information
 titleSuffix: Configuration Manager
 description: Läs om brådskande problem som ännu inte har åtgärd ATS i produkten eller som omfattas av en Microsoft Support kunskaps bas artikel.
-ms.date: 05/21/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 131b6104d5724c8a4eeb0bb68c4afd9a5319abb7
-ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
+ms.openlocfilehash: 9c1152b14da7c0a473e266b1ac1e6da2778aa105
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83823970"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126299"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Viktig information för Configuration Manager
 
@@ -29,10 +29,10 @@ Den här artikeln innehåller viktig information om den aktuella grenen av Confi
 
 Information om de nya funktionerna som introducerades med olika versioner finns i följande artiklar:
 
+- [Vad är nytt i version 2006](../../../plan-design/changes/whats-new-in-version-2006.md)
 - [Nyheter i version 2002](../../../plan-design/changes/whats-new-in-version-2002.md)
 - [Nyheter i version 1910](../../../plan-design/changes/whats-new-in-version-1910.md)
 - [Nyheter i version 1906](../../../plan-design/changes/whats-new-in-version-1906.md)  
-- [Nyheter i version 1902](../../../plan-design/changes/whats-new-in-version-1902.md)
 
 Information om de nya funktionerna i Desktop Analytics finns i [Nyheter i Desktop Analytics](../../../../desktop-analytics/whats-new.md).
 
@@ -121,24 +121,15 @@ Det finns två instanser där aktivitetssekvenser inte kan köras på en enhet s
 
 - Du konfigurerar platsen för utökad HTTP och hanterings platsen är HTTP.<!-- 6358851 -->
 
-    Undvik det här problemet genom att konfigurera hanterings platsen för HTTPS.
+    Undvik det här problemet genom att uppdatera till version 2006. Du kan också konfigurera hanterings platsen för HTTPS.
 
 - Du har installerat och registrerat klienten med en Mass registrerings-token för autentisering.<!-- 6377921 -->
 
-    Undvik det här problemet genom att använda någon av följande autentiseringsmetoder:
+    Undvik det här problemet genom att uppdatera till version 2006. Du kan också använda någon av följande autentiseringsmetoder:
 
   - Registrera enheten i det interna nätverket i förväg
   - Konfigurera enheten med ett certifikat för klientautentisering
   - Anslut enheten till Azure AD
-
-### <a name="after-passive-site-server-is-promoted-the-default-boot-image-packages-still-have-package-source-on-the-previous-active-server"></a>När passiv plats Server har uppgraderats har standard start avbildnings paketen fortfarande paket källa på den tidigare aktiva servern
-
-<!--3453224, SCCMDocs-pr issue 3097-->
-*Gäller för: Configuration Manager version 1810*
-
-Om du har en plats server i passivt läge (Server B) och du befordrar den till aktiv, fortsätter innehålls platsen för standard start avbildningarna att referera till den tidigare aktiva servern (Server A). Om Server A har ett maskin varu problem kan du inte uppdatera eller ändra standard start avbildningarna.
-
-Det finns ingen lösning för det här problemet.
 
 ## <a name="software-updates"></a>Programuppdateringar
 
@@ -171,9 +162,9 @@ Mer information finns i [skapa anpassade säkerhets roller](../configure/configu
 ### <a name="an-extended-security-update-for-windows-7-causes-them-to-show-as-unable-to-enroll"></a><a name="dawin7-diagtrack"></a>En utökad säkerhets uppdatering för Windows 7 gör att de visas som **det inte går att registrera**
 
 <!-- 7283186 -->
-_Gäller för: Configuration Manager version 1902, 1906, 1910 och 2002_
+_Gäller för: Configuration Manager version 2002 och tidigare_
 
-Den utökade säkerhets uppdateringen (ESU) från april 2020 för Windows 7 ändrade den lägsta version som krävs för DiagTrack. dll från 10586 till 10240. Den här ändringen gör att Windows 7-enheter visas som **det inte går att registrera** i instrument panelen för **anslutnings hälsa** för Skriv bords analys. När du ökar detalj nivån till enhets läget för den här statusen visas följande tillstånd i **DiagTrack-tjänstens konfigurations** egenskap:`Connected User Experience and Telemetry (diagtrack.dll) component is outdated. Check requirements.`
+Den utökade säkerhets uppdateringen (ESU) från april 2020 för Windows 7 ändrade den minsta version som krävs av diagtrack.dll från 10586 till 10240. Den här ändringen gör att Windows 7-enheter visas som **det inte går att registrera** i instrument panelen för **anslutnings hälsa** för Skriv bords analys. När du ökar detalj nivån till enhets läget för den här statusen visas följande tillstånd i **DiagTrack-tjänstens konfigurations** egenskap:`Connected User Experience and Telemetry (diagtrack.dll) component is outdated. Check requirements.`
 
 Det krävs ingen lösning för det här problemet. Avinstallera inte april-ESU. Om detta är felaktigt konfigurerat rapporterar Windows 7-enheterna fortfarande diagnostikdata till Skriv bords analys tjänsten och visas fortfarande i portalen.
 

@@ -2,7 +2,7 @@
 title: Föråldrade funktioner
 titleSuffix: Configuration Manager
 description: Lär dig mer om de funktioner som Configuration Manager inte längre stöder.
-ms.date: 05/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 40eda7184d7be5010bf51e3ac0d30d6d9442203c
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 5ee84a41a5c47ce554e4618b897c8e4933bdbe73
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905066"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129060"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Borttagna och föråldrade funktioner för Configuration Manager
 
@@ -31,7 +31,6 @@ Följande funktioner är föråldrade. Du kan fortfarande använda dem nu, men M
 
 |Funktion|Första meddelande om utfasning|Stöd har &nbsp; tagits bort|
 |-----------|---|--------------|
-| Skriv bords analys om du vill **Visa senaste data** för enhets registrering och säkerhets uppdateringar.<!-- 7080949 --> Mer information finns i [data svars tid](../../../../desktop-analytics/troubleshooting.md#data-latency).|Maj 2020|Juli 2020|
 |Implementeringen av delning av innehåll från Azure har ändrats. Använd en Content-aktiverad Cloud Management Gateway. Du kommer inte att kunna skapa en traditionell moln distributions plats i framtiden.|Februari 2019|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 |Klassisk tjänst distribution till Azure för Cloud Management Gateway och en moln distributions plats. Mer information finns i [plan for CMG](../../../clients/manage/cmg/plan-cloud-management-gateway.md#azure-resource-manager).|November 2018|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 
@@ -45,6 +44,7 @@ Följande funktioner stöds inte längre. I vissa fall är de inte längre i pro
 
 |Funktion|Första meddelande om utfasning|Stöd har &nbsp; tagits bort|  
 |-----------|---|--------------|  
+| Skriv bords analys om du vill **Visa senaste data** för enhets registrering och säkerhets uppdateringar.<!-- 7080949 --> Mer information finns i [data svars tid](../../../../desktop-analytics/troubleshooting.md#data-latency).|Maj 2020|Juli 2020|
 | Windows Analytics och Uppgraderingsberedskap-integrering. Mer information finns i [KB 4521815: pensionering i Windows Analytics den 31 januari 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement). | 14 oktober 2019 | 31 januari 2020 |
 | Utvärdering av enhetens hälsoattestering för efterlevnadsprinciper för villkorlig åtkomst <!--1235616 aka 3608202--> Mer information finns i [vad hände med hybrid MDM](../../../../mdm/understand/what-happened-to-hybrid.md).| 3 juli 2019 | Version 1910 |
 | Configuration Manager Företagsportal-appen | 21 maj, 2019 | Version 1910 |

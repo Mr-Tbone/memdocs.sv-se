@@ -10,12 +10,12 @@ ms.assetid: de718cdc-d0a9-47e2-9c99-8fa2cb25b5f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4a9eac25de66eb4fb94ea1c5b4b8d0d46caa05d7
-ms.sourcegitcommit: 532a06163f462527254d23e7dc505b18c0c4f938
+ms.openlocfilehash: 66fcd9b7d4d25decb3aeef7cf38b469363eeb1fa
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88110723"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128907"
 ---
 # <a name="whats-new-in-version-2002-of-configuration-manager-current-branch"></a>Vad är nytt i version 2002 av Configuration Manager aktuella grenen
 
@@ -147,7 +147,7 @@ Mer information finns i [övervaka anslutnings hälsa](../../../desktop-analytic
 
 Vi har gjort det enklare att navigera i CMPivot-entiteter. Nu kan du söka efter CMPivot-entiteter. Nya ikoner har också lagts till för att enkelt särskilja entiteter och objekt typer för entiteten.
 
-Mer information finns i [CMPivot](../../servers/manage/cmpivot.md#bkmk_2002).
+Mer information finns i [CMPivot](../../servers/manage/cmpivot-changes.md#bkmk_2002).
 
 ## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
 
@@ -391,9 +391,9 @@ Precis som förbättringar i tidigare versioner kan du nu använda sökalternati
 
 <!--3555935, 3555936-->
 
-_Först i juni 2020_
+*(Först infördes i juni 2020)*
 
-IT-administratörs gruppen har utvecklat en enorm mängd kunskap under åren. I stället för att göra om objekt som skript och rapporter från grunden har vi skapat en Configuration Manager **Community-hubb** där du kan dela med varandra. Genom att använda arbetet med andra kan du spara arbets timmar. Community Hub utvecklar kreativitet genom att bygga vidare på andras arbete och låta andra personer bygga på din. GitHub har redan branschspecifika processer och verktyg som skapats för delning. Nu kommer community-navet att utnyttja dessa verktyg direkt i Configuration Manager-konsolen som grundläggande delar för att driva den nya gruppen.
+IT-administratörs gruppen har utvecklat en enorm mängd kunskap under åren. I stället för att göra om objekt som skript och rapporter från grunden har vi skapat en Configuration Manager **Community-hubb** där du kan dela med varandra. Genom att använda arbetet med andra kan du spara arbets timmar. Community Hub utvecklar kreativitet genom att bygga vidare på andras arbete och låta andra personer bygga på din. GitHub har redan branschspecifika processer och verktyg som skapats för delning. Nu kommer community-navet att utnyttja dessa verktyg direkt i Configuration Manager-konsolen som grundläggande delar för att driva den nya gruppen. För den första versionen kommer det innehåll som görs tillgängligt i Community Hub endast att överföras av Microsoft.
 
 Mer information finns i [Community Hub och GitHub](../../servers/manage/community-hub.md).
 

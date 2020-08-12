@@ -5,17 +5,17 @@ description: Använd fristående media för att distribuera operativ systemet p�
 ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0e477d08ed97fe46bbe51b62a0ed024d437c2626
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 62c667706a9d77b3bb7d2b6bbdfde3cde8bb8365
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711009"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125193"
 ---
 # <a name="create-stand-alone-media"></a>Skapa fristående media
 
@@ -39,7 +39,7 @@ Fristående media innehåller den aktivitetssekvens som automatiserar stegen fö
 När du skapar fristående media på en central administrations plats hämtar klienten den tilldelade plats koden från Active Directory. Fristående media som skapas på underordnade platser tilldelas automatiskt till klienten plats koden för platsen.  
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du skapar fristående media med hjälp av guiden skapa aktivitetssekvens måste du se till att alla dessa villkor är uppfyllda.
 
@@ -121,7 +121,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
 
         - **Formatera en flyttbar USB-enhet (FAT32) och gör startbara**: som standard låter Configuration Manager förbereda USB-enheten. Många nyare UEFI-enheter kräver en startbar FAT32-partition. Detta format begränsar dock också storleken på filer och den övergripande kapaciteten för enheten. Inaktivera det här alternativet om du redan har formaterat och konfigurerat den flyttbara enheten.
 
-    - Om du väljer **CD/DVD-uppsättning**anger du mediets kapacitet (**medie storlek**) och namn och sökväg för utdatafilen (**medie fil**). Guiden skriver utdatafilerna till den här platsen. Exempelvis: `\\servername\folder\outputfile.iso`  
+    - Om du väljer **CD/DVD-uppsättning**anger du mediets kapacitet (**medie storlek**) och namn och sökväg för utdatafilen (**medie fil**). Guiden skriver utdatafilerna till den här platsen. Exempel: `\\servername\folder\outputfile.iso`  
 
         Om mediets kapacitet är för liten för att lagra hela innehållet skapas flera filer. Sedan måste du lagra innehållet på flera CD-eller DVD-skivor. När det krävs flera mediafiler Configuration Manager lägger till ett sekvensnummer till namnet på alla utdatafiler som skapas.  
 
@@ -130,7 +130,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
         > [!IMPORTANT]  
         > Om du väljer en befintlig .iso-avbildning raderar guiden för aktivitetssekvensmedium den avbildningen från enheten eller resursen så fort du går vidare till nästa sida i guiden. Den befintliga avbildningen tas bort även om du avbryter guiden.  
 
-    - **Mellanlagringsplats**<!--1359388-->: Processen för att skapa media kan kräva mycket temporärt enhets utrymme. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp`. Från och med version 1902, för att ge dig större flexibilitet med var de här temporära filerna ska lagras, ändra värdet till en annan enhet och sökväg.  
+    - **Mellanlagringsplats**<!--1359388-->: Processen för att skapa media kan kräva mycket temporärt enhets utrymme. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp` . Från och med version 1902, för att ge dig större flexibilitet med var de här temporära filerna ska lagras, ändra värdet till en annan enhet och sökväg.  
 
     - **Medie etikett**<!--1359388-->: Från och med version 1902 lägger du till en etikett i mediet för aktivitetssekvenser. Med den här etiketten kan du bättre identifiera mediet när du har skapat det. Standardvärdet är `Configuration Manager`. Det här textfältet visas på följande platser:  
 
@@ -138,7 +138,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
 
         - Om du formaterar en USB-enhet används de första 11 tecknen i etiketten som namn  
 
-        - Configuration Manager skriver en textfil som kallas `MediaLabel.txt` för roten på mediet. Som standard innehåller filen en enskild rad med text: `label=Configuration Manager`. Om du anpassar etiketten för Media använder den här raden den anpassade etiketten i stället för standardvärdet.  
+        - Configuration Manager skriver en textfil som kallas `MediaLabel.txt` för roten på mediet. Som standard innehåller filen en enskild rad med text: `label=Configuration Manager` . Om du anpassar etiketten för Media använder den här raden den anpassade etiketten i stället för standardvärdet.  
 
     - **Inkludera filen autorun. inf på mediet**<!-- 4090666 -->: Från och med version 1906 lägger Configuration Manager inte till en autorun. inf-fil som standard. Den här filen blockeras vanligt vis av program mot skadlig kod. Mer information om AutoRun-funktionen i Windows finns i [skapa ett autorun-aktiverat CD-ROM-program](https://docs.microsoft.com/windows/desktop/shell/autoplay). Om det fortfarande behövs för ditt scenario väljer du det här alternativet för att inkludera filen.  
 
@@ -151,7 +151,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
         >
         > På fristående media krypterar den bara stegen i aktivitetssekvensen och deras variabler. Det krypterar inte det återstående innehållet på mediet. Ta inte med känslig information i aktivitetssekvenser. Lagra och implementera all känslig information med hjälp av variabler i aktivitetssekvensen.  
 
-    - **Välj datum intervall för att det här fristående mediet ska vara giltigt**: Ange valfria start-och förfallo datum för mediet. Den här inställningen är inaktive rad som standard. Datumen jämförs med system klockan på datorn innan det fristående mediet körs. När system tiden infaller före start tiden eller senare än förfallo tiden startar inte det fristående mediet. Dessa alternativ är också tillgängliga med hjälp av PowerShell-cmdleten [New-CMStandaloneMedia](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmstandalonemedia?view=sccm-ps) .  
+    - **Välj datum intervall för att det här fristående mediet ska vara giltigt**: Ange valfria start-och förfallo datum för mediet. Den här inställningen är avaktiverad som standard. Datumen jämförs med system klockan på datorn innan det fristående mediet körs. När system tiden infaller före start tiden eller senare än förfallo tiden startar inte det fristående mediet. Dessa alternativ är också tillgängliga med hjälp av PowerShell-cmdleten [New-CMStandaloneMedia](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmstandalonemedia?view=sccm-ps) .  
 
 6. På sidan **fristående CD/DVD** väljer du den aktivitetssekvens som distribuerar operativ systemet. Du kan bara välja de aktivitetssekvenser som är associerade med en start avbildning. Verifiera listan över innehåll som aktivitetssekvensen refererar till.  
 

@@ -10,12 +10,12 @@ ms.assetid: 97e23075-549c-4e45-ab1e-0671027edacf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2db1a719aaf1cb79973f1af8e2de3c1bbb91d605
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 378a5de5633d7a526004d84ec5e6885e165eaadb
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83879095"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128992"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Vad är nytt i version 1906 av Configuration Manager aktuella grenen
 
@@ -136,7 +136,7 @@ Mer information finns [i kompatibilitetskontroll i Desktop Analytics](../../../d
 ### <a name="dalogscollector-tool"></a>DALogsCollector-verktyg
 
 <!--4622989-->
-Använd verktyget DesktopAnalyticsLogsCollector. ps1 från Configuration Manager installations katalog för att felsöka Desktop Analytics. Den kör vissa grundläggande fel söknings steg och samlar in relevanta loggar i en enda arbets katalog.
+Använd DesktopAnalyticsLogsCollector.ps1-verktyget från Configuration Manager installations katalog för att felsöka Desktop Analytics. Den kör vissa grundläggande fel söknings steg och samlar in relevanta loggar i en enda arbets katalog.
 
 Mer information finns i [loggar insamlare](../../../desktop-analytics/log-collector.md).
 
@@ -149,7 +149,7 @@ Mer information finns i [loggar insamlare](../../../desktop-analytics/log-collec
 
 För CMPivot har du nu ytterligare aritmetiska operatorer, agg regeringar och möjlighet att lägga till frågor, till exempel att använda register och filer tillsammans.
 
-Mer information finns i [CMPivot](../../servers/manage/cmpivot.md#bkmk_cmpivot1906).
+Mer information finns i [CMPivot](../../servers/manage/cmpivot-changes.md#bkmk_cmpivot1906).
 
 ### <a name="cmpivot-standalone"></a>Fristående CMPivot
 
@@ -171,7 +171,7 @@ Följande behörigheter har lagts till i Configuration Manager den inbyggda roll
 - Kör CMPivot för samling
 - Läs vidare på inventerings rapport
 
-Mer information finns i [CMPivot](../../servers/manage/cmpivot.md#bkmk_cmpivot_secadmin1906).
+Mer information finns i [CMPivot](../../servers/manage/cmpivot-changes.md#bkmk_cmpivot_secadmin1906).
 
 
 ## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
@@ -505,7 +505,7 @@ Hyperlänken för **obligatorisk vy** är tillgänglig på följande platser:
    - **Program varu bibliotek**  >  **Windows 10-Underhåll**  >  **Alla Windows 10-uppdateringar**
    - **Program varu bibliotek**  >  **Office 365-klient hantering**  >  **Office 365-uppdateringar**
 
-Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md#drill-through-required-updates), [hantera Windows som en tjänst](../../../osd/deploy-use/manage-windows-as-a-service.md#drill-through-required-updates)och [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#drill-through-required-office-365-updates).
+Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md#drill-through-required-updates), [hantera Windows som en tjänst](../../../osd/deploy-use/manage-windows-as-a-service.md#drill-through-required-updates)och [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 
 ## <a name="office-management"></a><a name="bkmk_o365"></a>Office-hantering
@@ -538,7 +538,7 @@ Mer information finns i [skapa och distribuera Windows Defender Application Guar
 
 Nu kan du ange säkerhets omfattningar i mappar. Om du har åtkomst till ett objekt i mappen men inte har åtkomst till mappen kan du inte se objektet. Om du har åtkomst till en mapp men inte ett objekt i den, ser du inte det objektet. Högerklicka på en mapp, Välj **Ange säkerhets omfattningar**och välj sedan de säkerhets omfattningar som du vill använda.
 
-Mer information finns i [använda Configuration Manager-konsolen](../../servers/manage/admin-console.md#tips) och [Konfigurera rollbaserad administration](../../servers/deploy/configure/configure-role-based-administration.md#bkmk_config-folder).
+Mer information finns i [Configuration Manager-konsol tips](../../servers/manage/admin-console-tips.md) och [Konfigurera rollbaserad administration](../../servers/deploy/configure/configure-role-based-administration.md#bkmk_config-folder).
 
 ### <a name="add-smbios-guid-column-to-device-and-device-collection-nodes"></a>Lägg till SMBIOS GUID-kolumn till noder i enhet och enhets samling
 
@@ -562,7 +562,7 @@ Gå till noden **enheter** på arbets ytan **till gångar och efterlevnad** och 
 
 > [!Note]  
 > - Den här fliken är för närvarande inte tillgänglig från en undernoden enheter under noden **enhets samlingar** . Till exempel när du väljer alternativet för att **Visa medlemmar** i en samling.
-> - Den här fliken kanske inte är ifylld som förväntat för vissa användare. Om du vill se en fullständig lista över samlingar som en enhet tillhör måste du ha säkerhets rollen **Fullständig administratör** . Detta är ett känt fel. <!--5107309-->
+> - Den här fliken kanske inte är ifylld som förväntat för vissa användare. Om du vill se en fullständig lista över samlingar som en enhet tillhör måste du ha säkerhets rollen **Fullständig administratör** . Detta är ett känt problem. <!--5107309-->
 
 ### <a name="task-sequences-tab-in-applications-node"></a>Fliken aktivitetssekvenser i noden program
 

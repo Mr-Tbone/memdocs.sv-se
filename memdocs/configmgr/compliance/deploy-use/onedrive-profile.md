@@ -10,20 +10,20 @@ ms.assetid: e217699a-28b2-471a-b421-8fbd1d1fd638
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 47d44c96e0ae63504278c58a5838c54648665505
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4d13d9dfd75abb656a765ce8c91ce6f177636cd3
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712241"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127179"
 ---
 # <a name="onedrive-for-business-profiles"></a>OneDrive för företag-profiler
 
 Från och med Configuration Manager version 1902 kan du skapa OneDrive för företag-profiler för att flytta Windows-kända mappar till OneDrive för företag. Dessa mappar innehåller Skriv bord, dokument och bilder. I varje profil kan du ange inställningar för att flytta de kända Windows-mapparna. Mer information om OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](https://docs.microsoft.com/onedrive/redirect-known-folders). <!--3556021-->
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
-- [Hitta ditt Office 365-klient-ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)  
+- [Hitta Microsoft 365 klient-ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)  
 
 - Distribuera version 18.111.0603.0004 eller senare av OneDrive sync-klient. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
 
@@ -44,7 +44,7 @@ Använd Configuration Manager för att flytta Windows-kända mappar till OneDriv
 
 5. På sidan **Inställningar** :
 
-    1. Ange ditt Office 365-klient-ID.  
+    1. Ange Microsoft 365 klient-ID.  
 
     2. Välj något av följande alternativ för att flytta de kända mapparna till OneDrive:  
 

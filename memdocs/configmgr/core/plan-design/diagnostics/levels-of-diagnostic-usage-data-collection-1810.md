@@ -5,17 +5,18 @@ description: Läs mer om vilka data som Configuration Manager samlar in på varj
 ms.date: 05/13/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: bce9e299-7b3a-4f51-8863-a322877daa2c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e3790e9eaf864a991bc23ee8b55dace2c6a59833
-ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
+ROBOTS: NOINDEX
+ms.openlocfilehash: eb6f1b9c97d017d7aaabb41075aaf68b6c1d7b45
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506147"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128652"
 ---
 # <a name="diagnostic-and-usage-data-for-version-1810"></a>Diagnostik-och användnings data för version 1810
 
@@ -501,7 +502,7 @@ För Configuration Manager version 1810 omfattar den här nivån följande data:
 - ***[Ny]*** Mätning av prestanda räknare för hanterings plats  
 
 
-### <a name="miscellaneous"></a>Övrigt  
+### <a name="miscellaneous"></a>Övriga farliga ämnen  
 
 - Konfiguration av informations lager service punkt, inklusive synkroniseringsschema och genomsnittlig tid  
 

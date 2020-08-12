@@ -10,12 +10,12 @@ ms.assetid: 5d388399-07ca-431c-a9b2-56c69771aa87
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5cdd0a9497f07d80813aca5dc169c4d61944e85d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 74b150b5a2157104b6a380489202fd309224a3bb
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722377"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129043"
 ---
 # <a name="features-and-capabilities-of-configuration-manager"></a>Funktioner och funktioner i Configuration Manager
 
@@ -49,7 +49,7 @@ Använd CMPivot för att omedelbart fråga online-enheter och filtrera sedan och
 
 ## <a name="application-management"></a>Programhantering
 
-Hjälper dig att skapa, hantera, distribuera och övervaka program på en rad olika enheter som du hanterar. Distribuera, uppdatera och hantera Office 365 från Configuration Manager-konsolen. Dessutom kan Configuration Manager integreras med Microsoft Store för företag och utbildning för att leverera molnbaserade appar. Mer information finns i [Introduktion till program hantering](../../../apps/understand/introduction-to-application-management.md).
+Hjälper dig att skapa, hantera, distribuera och övervaka program på en rad olika enheter som du hanterar. Distribuera, uppdatera och hantera Microsoft 365-appar från Configuration Manager-konsolen. Dessutom kan Configuration Manager integreras med Microsoft Store för företag och utbildning för att leverera molnbaserade appar. Mer information finns i [Introduktion till program hantering](../../../apps/understand/introduction-to-application-management.md).
 
 ## <a name="os-deployment"></a>Distribution av operativsystem
 

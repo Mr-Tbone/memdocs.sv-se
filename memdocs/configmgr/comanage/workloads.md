@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
-ms.openlocfilehash: 928ef8a8ebc90807912f22901743725df9aa67e7
-ms.sourcegitcommit: 79fb3b0f0486de1644904be348b7e08048e93b18
+ms.openlocfilehash: b03b57ff9797eb4fbe5a269723e98d39ae438803
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82842231"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127230"
 ---
 # <a name="co-management-workloads"></a>Arbets belastningar för samhantering
 
@@ -25,7 +25,7 @@ Om du växlar en arbets belastning till Intune, men ändrar dig senare, kan du v
 
 Samhantering har stöd för följande arbets belastningar:
 
-- [Efterlevnadsprinciper](#compliance-policies)  
+- [Efterlevnadspolicyer](#compliance-policies)  
 
 - [Windows Update principer](#windows-update-policies)  
 
@@ -37,7 +37,7 @@ Samhantering har stöd för följande arbets belastningar:
 
 - [Office Klicka-och-kör-appar](#office-click-to-run-apps)  
 
-- [Klientappar](#client-apps)  
+- [Klient program](#client-apps)  
 
 ## <a name="compliance-policies"></a>Efterlevnadsprinciper
 
@@ -104,7 +104,7 @@ Mer information om Intune-funktionen finns [i skapa en enhets profil i Microsoft
 
 <!--1357841-->
 
-Den här arbets belastningen hanterar Office 365-appar på samhanterade enheter.
+Den här arbets belastningen hanterar Microsoft 365 appar på samhanterade enheter.
 
 - När arbets belastningen har flyttats visas appen i **företagsportal** på enheten  
 
@@ -139,7 +139,7 @@ Från och med version 1910 kan de nu hantera Microsoft Intune Win32-appar till s
 
 När Endpoint Protection arbets belastningen flyttas över till Intune kanske klienten fortfarande följer principer som angetts av Configuration Manager och Microsoft Defender. <!--5024559-->
 
-Undvik det här problemet genom att använda CleanUpPolicy. xml med hjälp av ConfigSecurityPolicy. exe när Intune-principerna har tagits emot av klienten med hjälp av stegen nedan:
+Undvik det här problemet genom att använda CleanUpPolicy.xml med ConfigSecurityPolicy.exe när Intune-principerna har tagits emot av klienten med hjälp av stegen nedan:
 
 1. Kopiera och spara texten nedan som `CleanUpPolicy.xml` .
 

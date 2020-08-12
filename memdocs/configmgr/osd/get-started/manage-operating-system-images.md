@@ -5,17 +5,17 @@ description: Läs om metoderna för att hantera OS-avbildningar som lagras i WIM
 ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 190a203494cecfd28c198197f3a582adff745265
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: aa574cd3db2e7a3d3277912ed4a383f71d33e59c
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724120"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124295"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Hantera OS-avbildningar med Configuration Manager
 
@@ -30,7 +30,7 @@ Du kan använda en [standard operativ system avbildning](#default-image)eller by
 
 ### <a name="default-image"></a>Standardavbildning
 
-Windows-installationsfilerna innehåller standard operativ system avbildningen. Den här avbildningen är en grundläggande operativ system avbildning som innehåller en standard uppsättning med driv rutiner. När du använder standard avbildningen av operativ systemet använder du stegen i aktivitetssekvensen för att installera appar och göra andra konfigurationer efter att operativ systemet har installerats på en enhet. Leta upp standard operativ system avbildningen i Windows-källfilerna: `\Sources\install.wim`.  
+Windows-installationsfilerna innehåller standard operativ system avbildningen. Den här avbildningen är en grundläggande operativ system avbildning som innehåller en standard uppsättning med driv rutiner. När du använder standard avbildningen av operativ systemet använder du stegen i aktivitetssekvensen för att installera appar och göra andra konfigurationer efter att operativ systemet har installerats på en enhet. Leta upp standard operativ system avbildningen i Windows-källfilerna: `\Sources\install.wim` .  
 
 #### <a name="default-image-advantages"></a>Fördelar med standard avbildning
 

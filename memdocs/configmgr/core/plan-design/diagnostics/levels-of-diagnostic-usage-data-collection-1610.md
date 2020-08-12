@@ -5,18 +5,18 @@ description: Lär dig mer om de nivåer av diagnostik-och användnings data som 
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: eb20eb90-bcc0-41de-bfea-638ea470c0dd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 87049bb9799ba5764a3cdd5a14fbf622e7056f3c
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 02b1eb010cc874e75b733b567ce4f41e59eab82e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81716322"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128805"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-configuration-manager"></a>Nivåer av diagnostik användnings data insamling för version 1610 av Configuration Manager
 
@@ -33,7 +33,7 @@ Configuration Manager version 1610 samlar in tre nivåer av diagnostik-och anvä
 ##  <a name="how-to-change-the-level"></a><a name="bkmk_change"></a> Ändra nivån
  Administratörer som har en rollbaserad administrativ omfattning som inkluderar **ändrings** behörigheter för objekt klassen **plats** kan ändra nivån på data som samlas in i inställningarna för diagnostik-och användnings data i Configuration Manager-konsolen.
 
-Från och med version 1610 kan du ändra data insamlings nivå i-konsolen genom att gå till **Administration** > **Översikt** > **plats konfiguration** > **platser**. Öppna **Inställningar för hierarki**och välj sedan den data nivå som du vill använda.  
+Från och med version 1610 kan du ändra data insamlings nivå i-konsolen genom att gå till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**. Öppna **Inställningar för hierarki**och välj sedan den data nivå som du vill använda.  
 
 ##  <a name="level-1---basic"></a><a name="bkmk_level1"></a> Nivå 1 – Grundläggande
  Nivån Basic innehåller data om hierarkin, data som krävs för att förbättra installations-eller uppgraderings upplevelsen och data som hjälper dig att fastställa de Configuration Manager uppdateringar som är tillämpliga för hierarkin.

@@ -5,17 +5,17 @@ description: Alla inställningar för BitLocker-hantering som är tillgängliga 
 ms.date: 04/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: f7ade768-2b2b-4aab-8ee1-73624d03a9c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9ce6a9c566fec22e69c0a4a7fde01b911330ec1d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: cb95a05fd3d347b70dd5d53ce972bce0c23c18cc
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723931"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127891"
 ---
 # <a name="bitlocker-settings-reference"></a>Referens för BitLocker-inställningar
 
@@ -60,10 +60,10 @@ För Windows 8,1-enheter aktiverar du alternativet för **enhets krypterings met
 
 För Windows 10-enheter aktiverar du alternativet för **enhets krypterings metod och krypterings styrka (Windows 10)**. Välj individuellt en av följande krypterings metoder för OS-enheter, fasta data enheter och flyttbara data enheter:
 
-- AES-CBC 128-bit
-- AES-CBC 256-bit
+- AES-CBC 128 bitar
+- AES-CBC 256 bitar
 - XTS-AES 128-bit (standard)
-- XTS-AES 256-bit
+- XTS-AES 256 bitar
 
 > [!TIP]
 > BitLocker använder avancerad krypteringsstandard (AES) som krypteringsalgoritm med konfigurerbar nyckllängd på 128 eller 256 bitar. På Windows 10-enheter stöder AES-krypteringen CBC (cipher block chainion) eller chiffertexten stjäla (XTS).
@@ -125,10 +125,10 @@ På enheter med en kompatibel TPM kan två typer av autentiseringsmetoder använ
 
 - **Välj skydd för operativ system enhet**: Konfigurera den att använda en TPM och PIN-kod eller bara TPM.
 
-- **Konfigurera minimilängd för PIN-kod för start**: om du behöver en PIN-kod är det här värdet den kortaste längd som användaren kan ange. Användaren anger denna PIN-kod när datorn startar för att låsa upp enheten. Som standard är `4`minimilängd för PIN-kod.
+- **Konfigurera minimilängd för PIN-kod för start**: om du behöver en PIN-kod är det här värdet den kortaste längd som användaren kan ange. Användaren anger denna PIN-kod när datorn startar för att låsa upp enheten. Som standard är minimilängd för PIN-kod `4` .
 
 > [!TIP]
-> Om du vill ha högre säkerhet bör du *inaktivera* följande grup princip inställningar i**ström spar läge**för **systemets** > **energi** > spar läge när du aktiverar enheter med TPM + PIN-skydd:
+> Om du vill ha högre säkerhet bör du *inaktivera* följande grup princip inställningar i **System**  >  **Power Management**  >  **ström spar läge**för systemets energi spar läge när du aktiverar enheter med TPM + PIN-skydd:
 >
 > - Tillåt vänte lägen (S1-S3) vid ström spar läge (nätdrift)
 >
@@ -157,7 +157,7 @@ Använd de här inställningarna för att ange begränsningar för lösen ord f�
 
 - **Konfigurera lösen ords komplexitet för operativ system enheter**: om du vill framtvinga komplexitets krav på lösen ordet väljer du **Kräv lösen ords komplexitet**.
 
-- **Minsta längd på lösen ord för operativ systemen het**: den minsta längden är `8`som standard.
+- **Minsta längd på lösen ord för operativ systemen het**: den minsta längden är som standard `8` .
 
 - **Kräv endast ASCII-lösenord för flyttbara OS-enheter**
 
@@ -165,7 +165,7 @@ Om du aktiverar den här inställningen kan användarna konfigurera ett lösen o
 
 #### <a name="general-usage-notes-for-os-drive-password-policy"></a>Allmän användnings information för lösen ords princip för operativ system enhet
 
-- För att de här komplexitets kraven ska vara effektiva måste du också aktivera grup princip inställningen **lösen ord måste uppfylla komplexitets kraven** i **dator konfiguration** > **Windows-inställningar** > **säkerhets inställningar** > **konto principer** > **lösen ords princip**.
+- För att de här komplexitets kraven ska vara effektiva måste du också aktivera grup princip inställningen **lösen ord måste uppfylla komplexitets kraven** i **dator konfiguration**  >  **Windows-inställningar**  >  **säkerhets inställningar**  >  **konto principer**  >  **lösen ords princip**.
 
 - BitLocker tillämpar dessa inställningar när du aktiverar den, inte när du låser upp en volym. Med BitLocker kan du låsa upp en enhet med någon av de skydds enheter som är tillgängliga på enheten.
 
@@ -214,7 +214,7 @@ Om BitLocker inte kräver användar interaktion för att lägga till en skydds t
 
 Om du inaktiverar eller inte konfigurerar den här inställningen kräver Configuration Manager inte att användare följer BitLocker-principer.
 
-Om du vill genomdriva principen omedelbart ställer du in en `0`respitperiod på.
+Om du vill genomdriva principen omedelbart ställer du in en respitperiod på `0` .
 
 ## <a name="fixed-drive"></a>Fast enhet
 
@@ -264,7 +264,7 @@ För högre säkerhet aktiverar du den här inställningen och konfigurerar seda
 
 - **Konfigurera lösen ords komplexitet för fasta data enheter**: om du vill framtvinga komplexitets krav på lösen ordet väljer du **Kräv lösen ords komplexitet**.
 
-- **Minsta längd på lösen ord för fast data enhet**: den minsta längden är `8`som standard.
+- **Minsta längd på lösen ord för fast data enhet**: den minsta längden är som standard `8` .
 
 Om du inaktiverar den här inställningen kan användarna inte konfigurera ett lösen ord.
 
@@ -272,7 +272,7 @@ När principen inte har kon figurer ATS stöder BitLocker lösen ord med standar
 
 #### <a name="general-usage-notes-for-fixed-data-drive-password-policy"></a>Allmän användnings information för lösen ords princip för fast data enhet
 
-- För att de här komplexitets kraven ska vara effektiva måste du också aktivera grup princip inställningen **lösen ord måste uppfylla komplexitets kraven** i **dator konfiguration** > **Windows-inställningar** > **säkerhets inställningar** > **konto principer** > **lösen ords princip**.
+- För att de här komplexitets kraven ska vara effektiva måste du också aktivera grup princip inställningen **lösen ord måste uppfylla komplexitets kraven** i **dator konfiguration**  >  **Windows-inställningar**  >  **säkerhets inställningar**  >  **konto principer**  >  **lösen ords princip**.
 
 - BitLocker tillämpar dessa inställningar när du aktiverar den, inte när du låser upp en volym. Med BitLocker kan du låsa upp en enhet med någon av de skydds enheter som är tillgängliga på enheten.
 
@@ -290,7 +290,7 @@ Om BitLocker inte kräver användar interaktion för att lägga till en skydds t
 
 Om du inaktiverar eller inte konfigurerar den här inställningen kräver Configuration Manager inte att användare följer BitLocker-principer.
 
-Om du vill genomdriva principen omedelbart ställer du in en `0`respitperiod på.
+Om du vill genomdriva principen omedelbart ställer du in en respitperiod på `0` .
 
 ## <a name="removable-drive"></a>Flyttbar enhet
 
@@ -312,7 +312,7 @@ När du aktiverar den här inställningen:
 
 - Aktivera inställningarna för **lösen ords princip för flyttbara data enheter**
 
-- *Inaktivera* följande grup princip inställningar i **systemet** > **flyttbara lagrings utrymme** för både användare & datorkonfigurationer:
+- *Inaktivera* följande grup princip inställningar i **systemet**  >  **flyttbara lagrings utrymme** för både användare & datorkonfigurationer:
 
   - **Alla klasser för flyttbara lagringsmedia: neka all åtkomst**
   - **Flyttbara diskar: neka skriv åtkomst**
@@ -337,7 +337,7 @@ När du aktiverar den här inställningen:
 När du inaktiverar eller inte konfigurerar den här inställningen monterar Windows alla flyttbara enheter med Läs-och skriv åtkomst.
 
 > [!NOTE]
-> Du kan åsidosätta den här inställningen med grup princip inställningar i **systemets** > **flyttbara lagrings åtkomst**. Om du aktiverar grup princip inställningen **flyttbara diskar: neka skriv åtkomst**ignorerar BitLocker den här Configuration Manager inställningen.
+> Du kan åsidosätta den här inställningen med grup princip inställningar i **systemets**  >  **flyttbara lagrings åtkomst**. Om du aktiverar grup princip inställningen **flyttbara diskar: neka skriv åtkomst**ignorerar BitLocker den här Configuration Manager inställningen.
 
 <!-- ### Allow access to BitLocker-protected removable data drives from earlier versions of Windows -->
 
@@ -355,7 +355,7 @@ För högre säkerhet aktiverar du den här inställningen och konfigurerar seda
 
 - **Konfigurera lösen ords komplexitet för flyttbara data enheter**: om du vill framtvinga komplexitets krav på lösen ordet väljer du **Kräv lösen ords komplexitet**.
 
-- **Minsta längd på lösen ord för flyttbar data enhet**: som standard är `8`den minimala längden.
+- **Minsta längd på lösen ord för flyttbar data enhet**: som standard är den minimala längden `8` .
 
 Om du inaktiverar den här inställningen kan användarna inte konfigurera ett lösen ord.
 
@@ -363,7 +363,7 @@ När principen inte har kon figurer ATS stöder BitLocker lösen ord med standar
 
 #### <a name="general-usage-notes-for-removable-data-drive-password-policy"></a>Allmän användnings information för lösen ords princip för flyttbara data enheter
 
-- För att de här komplexitets kraven ska vara effektiva måste du också aktivera grup princip inställningen **lösen ord måste uppfylla komplexitets kraven** i **dator konfiguration** > **Windows-inställningar** > **säkerhets inställningar** > **konto principer** > **lösen ords princip**.
+- För att de här komplexitets kraven ska vara effektiva måste du också aktivera grup princip inställningen **lösen ord måste uppfylla komplexitets kraven** i **dator konfiguration**  >  **Windows-inställningar**  >  **säkerhets inställningar**  >  **konto principer**  >  **lösen ords princip**.
 
 - BitLocker tillämpar dessa inställningar när du aktiverar den, inte när du låser upp en volym. Med BitLocker kan du låsa upp en enhet med någon av de skydds enheter som är tillgängliga på enheten.
 
@@ -393,17 +393,17 @@ Konfigurera en kontakt metod för användarna att begära ett undantag från Bit
 
 Om du aktiverar den här inställningen anger du följande information:
 
-- **Maximalt antal dagar att skjuta upp**: hur många dagar användaren kan skjuta upp en Tvingad princip. Som standard är `7` det här värdet dagar (en vecka).
+- **Maximalt antal dagar att skjuta upp**: hur många dagar användaren kan skjuta upp en Tvingad princip. Som standard är det här värdet `7` dagar (en vecka).
 
 - **Kontakt metod**: Ange hur användare kan begära undantag: URL, e-postadress eller telefonnummer.
 
 - **Kontakt**: Ange URL, e-postadress eller telefonnummer. När en användare begär ett undantag från BitLocker-skyddet visas en dialog ruta i Windows med instruktioner om hur du använder. Configuration Manager verifierar inte den information du anger.
 
-  - **URL**: Använd standard-URL- `https://website.domain.tld`formatet. Windows visar URL: en som en hyperlänk.
+  - **URL**: Använd standard-URL-formatet `https://website.domain.tld` . Windows visar URL: en som en hyperlänk.
 
-  - **E-post adress**: Använd standardformat för `user@domain.tld`e-postadress. Windows visar adressen som följande hyperlänk: `mailto:user@domain.tld?subject=Request exemption from BitLocker protection`.
+  - **E-post adress**: Använd standardformat för e-postadress `user@domain.tld` . Windows visar adressen som följande hyperlänk: `mailto:user@domain.tld?subject=Request exemption from BitLocker protection` .
 
-  - **Telefonnummer**: Ange det nummer som du vill att användarna ska anropa. Windows visar talet med följande beskrivning: `Please call <your number> for applying exemption`.
+  - **Telefonnummer**: Ange det nummer som du vill att användarna ska anropa. Windows visar talet med följande beskrivning: `Please call <your number> for applying exemption` .
 
 Om du inaktiverar eller inte konfigurerar den här inställningen visas inte instruktionerna för undantags begär anden till användare i Windows.
 

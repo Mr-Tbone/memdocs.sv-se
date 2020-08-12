@@ -2,20 +2,20 @@
 title: Kryptera återställningsdata
 titleSuffix: Configuration Manager
 description: Kryptera BitLocker-återställningsnyckel, återställnings paket och TPM-lösenords-hashvärden i nätverket och i Configuration Manager databasen.
-ms.date: 04/15/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 1ee6541a-e243-43ea-be16-d0349f7f0c6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79f50cf4b0d241df2fc8d12dc46c833af278bd5a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: e887d594e80c0f92340081d9b922bfc334d1b3a5
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724442"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129196"
 ---
 # <a name="encrypt-recovery-data"></a>Kryptera återställningsdata
 
@@ -36,7 +36,7 @@ Med hänsyn till den känsliga typen av information måste du skydda den under f
     > [!NOTE]
     > Den har för närvarande inte stöd för utökad HTTP.
 
-- Överväg också att kryptera dessa data när de lagras i plats databasen. Du kan använda SQL Server kryptering på cell nivå med ditt eget certifikat.
+- Överväg också att kryptera dessa data när de lagras i plats databasen. Om du installerar ett SQL-certifikat kan Configuration Manager kryptera dina data i SQL.
 
     Om du inte vill skapa ett certifikat för BitLocker-hanterings kryptering kan du välja att använda oformaterad text lagring av återställnings data. När du skapar en princip för BitLocker-hantering aktiverar du alternativet för att **tillåta att återställnings information lagras som oformaterad text**.
 
@@ -68,7 +68,7 @@ Nu kan hanterings platsens egenskap för **klient anslutningar** vara **http** e
 > [!TIP]
 > De enda klienter som behöver kommunicera med återställnings tjänsten är de klienter som du planerar att rikta mot en BitLocker-hanterings princip och som innehåller en **klient hanterings** regel.
 
-Använd **BitLockerManagementHandler. log** för att felsöka den här anslutningen på klienten. För anslutning till återställnings tjänsten visar loggen den URL som klienten använder. Leta upp en post som börjar `Checking for Recovery Service at`med.
+Använd **BitLockerManagementHandler. log** för att felsöka den här anslutningen på klienten. För anslutning till återställnings tjänsten visar loggen den URL som klienten använder. Leta upp en post som börjar med `Checking for Recovery Service at` .
 
 > [!NOTE]
 > Om platsen har fler än en hanterings plats aktiverar du HTTPS på alla hanterings platser på den plats som en BitLocker-hanterad klient kan kommunicera med. Om HTTPS-hanterings platsen inte är tillgänglig kan klienten redundansväxla till en HTTP-hanterings plats och sedan inte depositions sin återställnings nyckel.
@@ -77,9 +77,9 @@ Använd **BitLockerManagementHandler. log** för att felsöka den här anslutnin
 
 ### <a name="sql-encryption-certificate"></a>SQL-krypterings certifikat
 
-Använd det här certifikatet för att aktivera SQL Server kryptering av BitLocker-återställnings data på cell nivå. Du kan använda din egen process för att skapa och distribuera BitLocker Management Encryption-certifikatet, så länge det uppfyller följande krav:
+Använd det här SQL-certifikatet för Configuration Manager för att kryptera återställnings data för BitLocker i plats databasen. Du kan använda din egen process för att skapa och distribuera BitLocker Management Encryption-certifikatet, så länge det uppfyller följande krav:
 
-- Namnet på krypterings certifikatet för BitLocker-hanteringen måste `BitLockerManagement_CERT`vara.
+- Namnet på krypterings certifikatet för BitLocker-hanteringen måste vara `BitLockerManagement_CERT` .
 
 - Kryptera det här certifikatet med en huvud nyckel för databasen.
 
@@ -90,7 +90,7 @@ Använd det här certifikatet för att aktivera SQL Server kryptering av BitLock
 
 - Distribuera samma certifikat vid varje plats databas i hierarkin.
 
-- Skapa certifikatet med den senaste versionen av SQL Server i din miljö. Ett exempel:
+- Skapa certifikatet med den senaste versionen av SQL Server i din miljö. Till exempel:
   - Certifikat som skapats med SQL Server 2016 eller senare är kompatibla med SQL Server 2014 eller tidigare.
   - Certifikat som skapats med SQL Server 2014 eller tidigare är inte kompatibla med SQL Server 2016 eller senare.
 
@@ -108,9 +108,9 @@ Det här exempel skriptet utför följande åtgärder:
 
 Innan du använder det här skriptet i en produktions miljö ändrar du följande värden:
 
-- Plats databasens namn`CM_ABC`()
-- Lösen ord för att skapa huvud nyckeln`MyMasterKeyPassword`()
-- Förfallo datum för certifikat (`20391022`)
+- Plats databasens namn ( `CM_ABC` )
+- Lösen ord för att skapa huvud nyckeln ( `MyMasterKeyPassword` )
+- Förfallo datum för certifikat ( `20391022` )
 
 ``` SQL
 USE CM_ABC
@@ -136,9 +136,9 @@ Det här exempel skriptet säkerhetskopierar ett certifikat. När du sparar cert
 
 Innan du använder det här skriptet i en produktions miljö ändrar du följande värden:
 
-- Plats databasens namn`CM_ABC`()
-- Fil Sök väg och namn`C:\BitLockerManagement_CERT_KEY`()
-- Exportera nyckel lösen ord`MyExportKeyPassword`()
+- Plats databasens namn ( `CM_ABC` )
+- Fil Sök väg och namn ( `C:\BitLockerManagement_CERT_KEY` )
+- Exportera nyckel lösen ord ( `MyExportKeyPassword` )
 
 ``` SQL
 USE CM_ABC
@@ -156,10 +156,10 @@ Det här exempel skriptet återställer ett certifikat från en fil. Använd den
 
 Innan du använder det här skriptet i en produktions miljö ändrar du följande värden:
 
-- Plats databasens namn`CM_ABC`()
-- Huvud nyckel lösen ord`MyMasterKeyPassword`()
-- Fil Sök väg och namn`C:\BitLockerManagement_CERT_KEY`()
-- Exportera nyckel lösen ord`MyExportKeyPassword`()
+- Plats databasens namn ( `CM_ABC` )
+- Huvud nyckel lösen ord ( `MyMasterKeyPassword` )
+- Fil Sök väg och namn ( `C:\BitLockerManagement_CERT_KEY` )
+- Exportera nyckel lösen ord ( `MyExportKeyPassword` )
 
 ``` SQL
 USE CM_ABC
@@ -197,7 +197,7 @@ if(@count >= 3) select 1
 else select 0
 ```
 
-Om certifikatet är giltigt returnerar skriptet värdet `1`.
+Om certifikatet är giltigt returnerar skriptet värdet `1` .
 
 ## <a name="see-also"></a>Se även
 

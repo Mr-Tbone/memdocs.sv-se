@@ -2,7 +2,7 @@
 title: Planera för en molnhanteringsgateway
 titleSuffix: Configuration Manager
 description: Planera och utforma Cloud Management Gateway (CMG) för att förenkla hanteringen av Internetbaserade klienter.
-ms.date: 06/10/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d6165678331811f4b04e8b1f540f3dcbb7f015d
-ms.sourcegitcommit: b4b75876839e86357ef5804e5a0cf7a16c8a0414
+ms.openlocfilehash: 7c57e6568ce60680d9febc533c60533055595bc3
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85502263"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126941"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planera för Cloud Management Gateway i Configuration Manager
 
@@ -125,6 +125,8 @@ Du kan skapa flera CMG-tjänster i Azure och du kan skapa flera CMG-anslutnings 
 
 Från och med version 1902 kan du associera en CMG med en avgränsnings grupp. Den här konfigurationen gör det möjligt för klienter att default eller återgå till CMG för klient kommunikation baserat på [gränser grupp relationer](../../../servers/deploy/configure/boundary-groups.md). Det här beteendet är särskilt användbart i avdelnings kontor och VPN-scenarier. Du kan dirigera klient trafiken bort från dyra och långsamma WAN-länkar för att i stället använda snabbare tjänster i Microsoft Azure.<!--3640932-->
 
+Från och med version 2006 kan intranät klienter komma åt en CMG program uppdaterings plats när den tilldelas en avgränsnings grupp. Mer information finns i [Konfigurera gränser grupper](../../../servers/deploy/configure/boundary-groups.md#bkmk_cmg-sup). <!--7102873-->
+
 > [!NOTE]
 > Internetbaserade klienter omfattas inte av någon avgränsnings grupp.
 >
@@ -223,7 +225,7 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 |Funktion  |Support  |
 |---------|---------|
 | Programuppdateringar     | ![Stöds](media/green_check.png) |
-| Endpoint Protection     | ![](media/green_check.png) <sup> [Anmärkning 1](#bkmk_note1) som stöds</sup> |
+| Endpoint Protection     | ![](media/green_check.png) <sup> [Anmärkning &nbsp; 1](#bkmk_note1) som stöds</sup> |
 | Inventering av maskin- och programvara     | ![Stöds](media/green_check.png) |
 | Klient status och meddelanden     | ![Stöds](media/green_check.png) |
 | Kör skript     | ![Stöds](media/green_check.png) |
@@ -233,10 +235,11 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 | Klient installation<br>(med [token-autentisering](../../deploy/deploy-clients-cmg-token.md)) | ![Stöds](media/green_check.png) (2002) |
 | Program varu distribution (enhets riktad)     | ![Stöds](media/green_check.png) |
 | Program varu distribution (användar mål, krävs)<br>(med Azure AD-integrering)     | ![Stöds](media/green_check.png) |
-| Program varu distribution (användar mål, tillgänglig)<br>([alla krav](../../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Stöds](media/green_check.png) |
+| Program varu distribution (användar mål, tillgänglig)<br>([alla krav](../../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications)) | ![Stöds](media/green_check.png) |
 | [Aktivitetssekvens för uppgradering av Windows 10 på plats](../../../../osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md) | ![Stöds](media/green_check.png) |
-| Aktivitetssekvenser som inte använder start avbildningar och distribueras med ett alternativ: **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas** | ![Stöds](media/green_check.png) |
-| Aktivitetssekvenser som inte använder start avbildningar med [antingen nedladdnings alternativet](../../../../osd/deploy-use/deploy-a-task-sequence.md#deploy-windows-10-in-place-upgrade-via-cmg) | ![Stöds](media/green_check.png) (1910)|
+| Aktivitetssekvens utan en start avbildning, distribuerad med alternativet att **Ladda ned allt innehåll lokalt innan aktivitetssekvensen startas** | ![Stöds](media/green_check.png) |
+| Aktivitetssekvens utan en start avbildning, distribuerad med [antingen nedladdnings alternativet](../../../../osd/deploy-use/deploy-a-task-sequence.md#deploy-windows-10-in-place-upgrade-via-cmg) | ![Stöds](media/green_check.png) (1910) |
+| Aktivitetssekvens med en start avbildning som startas från Software Center | ![Stöds](media/green_check.png) (2006) |
 | Ett annat scenario för aktivitetssekvenser     | ![Stöds inte](media/Red_X.png) |
 | Klient-push     | ![Stöds inte](media/Red_X.png) |
 | Automatisk platstilldelning     | ![Stöds inte](media/Red_X.png) |
@@ -257,12 +260,18 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 |![Stöds inte](media/Red_X.png) = Den här funktionen stöds inte med CMG |
 
 #### <a name="note-1-support-for-endpoint-protection"></a><a name="bkmk_note1"></a>Anmärkning 1: stöd för Endpoint Protection
+
+Från och med version 2006 kan klienter som kommunicerar via en CMG omedelbart tillämpa Endpoint Protection-principer utan en aktiv anslutning till Active Directory.<!--4773948-->
+
 <!-- 4350561 -->
-För domänanslutna enheter som använder Endpoint Protection-principen måste de ha åtkomst till domänen. Enheter med frekvent åtkomst till det interna nätverket kan uppleva fördröjningar i tillämpningen av Endpoint Protection-principer. Om du kräver att enheterna omedelbart tillämpar Endpoint Protection-principer när de får den, bör du överväga något av följande alternativ:
+I version 2002 och tidigare var domänanslutna enheter till att tillämpa Endpoint Protection-principer, men de kräver åtkomst till domänen. Enheter med frekvent åtkomst till det interna nätverket kan uppleva fördröjningar i tillämpningen av Endpoint Protection-principer. Om du kräver att enheterna omedelbart tillämpar Endpoint Protection-principer när de får den, bör du överväga något av följande alternativ:
+
+- Uppdatera-platsen och-klienterna till version 2006.
 
 - Använd Co-Management och Byt [Endpoint Protection arbets belastning](../../../../comanage/workloads.md#endpoint-protection) till Intune och hantera [Microsoft Defender Antivirus](https://docs.microsoft.com/mem/intune/configuration/device-restrictions-windows-10#microsoft-defender-antivirus) från molnet.
 
 - Använd [konfigurations objekt](../../../../compliance/deploy-use/create-configuration-items.md) i stället för de interna [principerna för program mot skadlig kod](../../../../protect/deploy-use/endpoint-antimalware-policies.md) för att tillämpa Endpoint Protection-principen.
+
 
 ## <a name="cost"></a>Kostnad
 
@@ -368,7 +377,7 @@ Mer information när du är värd för innehåll i Azure finns i [använda en mo
 
 I den här tabellen listas de nätverks portar och protokoll som krävs. *Klienten* är enheten som initierar anslutningen, vilket kräver en utgående port. *Servern* är den enhet som accepterar anslutningen, vilket kräver en inkommande port.
 
-| Klient | Protokoll | Port | Server | Description |
+| Klient | Protokoll | Port | Server | Beskrivning |
 |--------|----------|------|--------|-------------|
 | Tjänstanslutningspunkt | HTTPS | 443 | Azure | CMG-distribution |
 | CMG kopplings punkt | TCP-TLS | 10140-10155 | CMG-tjänst | Önskat protokoll för att bygga CMG-kanal <sup> [anteckning 1](#bkmk_port-note1)</sup> |

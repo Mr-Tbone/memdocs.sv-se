@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: 00accfc5150226830b68beb194fa168c08148b84
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: 2adf22fd9c17863d7c29e2a29d2125d22f2d944f
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110431"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127679"
 ---
 # <a name="deploy-software-updates"></a>Distribuera programuppdateringar  
 
@@ -70,7 +70,7 @@ Mer information och detaljerade anvisningar finns i [distribuera program uppdate
 
 > [!Note]
 > - Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
-> - När du distribuerar Office 365-klient uppdateringar manuellt hittar du dem i noden **office 365 updates** under **Office 365-klient hantering** av arbets ytan **program varu bibliotek** . 
+> - När du distribuerar uppdateringar för Microsoft 365-appar manuellt hittar du dem i noden **office 365-uppdateringar** under **Office 365-klient hantering** av arbets ytan **program varu bibliotek** . 
 
 ## <a name="automatically-deploy-software-updates"></a><a name="bkmk_auto"></a>Distribuera program uppdateringar automatiskt
 

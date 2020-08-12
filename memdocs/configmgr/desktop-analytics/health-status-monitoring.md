@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 119f787f15b8c907d0c760a12b973ca984f4348c
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: b4663ca5640bcfea4338912ff471a3253b744d5f
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268546"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125839"
 ---
 # <a name="health-status-monitoring-in-desktop-analytics"></a>Övervakning av hälso status i Skriv bords analys
 
@@ -27,7 +27,7 @@ Mer information om hur du använder den här funktionen finns i [övervaka häls
 ![Skärm bild av sidan övervaka hälso tillstånd i Skriv bords analys](media/monitor-health.png)
 
 > [!NOTE]  
-> Skriv bords analys samlar endast in hälso data från enheter som tillhandahåller användnings data som den kan använda som en nämnare. Det innebär att den inte innehåller enheter som kör Windows 7 och Windows 10 och som inte är inställda på att dela diagnostikdata på nivån utökad (begränsad). Om mer än 10% av enheter som kör Windows 10 är inställda på att dela diagnostikdata på andra nivåer än utökad (begränsad), visar sidan **övervaka hälsa** en varning i informations området.  
+> Skriv bords analys samlar endast in hälso data från enheter som tillhandahåller användnings data som den kan använda som en nämnare. Det innebär att den inte innehåller enheter som kör Windows 7 och Windows 10 och som inte är inställda på att dela diagnostikdata på nivån valfri (begränsad). Om mer än 10% av enheter som kör Windows 10 är inställda på att dela diagnostikdata på andra nivåer än valfria (begränsat) visas en varning i informations området på sidan **övervaka hälsa** .  
 
 Om du vill visa mer information om en speciell app markerar du den i listan.
 

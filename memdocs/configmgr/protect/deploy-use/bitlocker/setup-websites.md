@@ -2,20 +2,20 @@
 title: Konfigurera BitLocker-portaler
 titleSuffix: Configuration Manager
 description: Installera hanterings komponenter för BitLocker för självbetjänings portalen och webbplatsen för administration och övervakning
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 1cd8ac9f-b7ba-4cf4-8cd2-d548b0d6b1df
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 53fc4f694579fb8c53a4aea1054cf49dff21e1d2
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: 5dbd782c97d11f8077c18796c87c7880eb26f3f3
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715687"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129162"
 ---
 # <a name="set-up-bitlocker-portals"></a>Konfigurera BitLocker-portaler
 
@@ -31,9 +31,46 @@ Om du vill använda följande komponenter för BitLocker-hantering i Configurati
 Du kan installera portalerna på en befintlig plats Server eller plats system server med IIS installerat eller använda en fristående webb server för att vara värd för dem.
 
 > [!NOTE]
-> Installera endast självbetjänings portalen och webbplatsen för administration och övervakning med en primär plats databas. I en-hierarki installerar du de här webbplatserna för varje primär plats.
+> Från och med version 2006 kan du installera tjänsten BitLocker-självbetjänings Portal och webbplatsen för administration och övervakning på den centrala administrations webbplatsen.<!-- 5925693 -->
+>
+> I version 2002 och tidigare installerar du bara självbetjänings portalen och webbplatsen för administration och övervakning med en primär plats databas. I en-hierarki installerar du de här webbplatserna för varje primär plats.
 
 Innan du börjar ska du kontrol lera [kraven](../../plan-design/bitlocker-management.md#prerequisites) för de här komponenterna.
+
+## <a name="run-the-script"></a>Kör skriptet
+
+Utför följande åtgärder på mål webb servern:
+
+> [!NOTE]
+> Beroende på din webbplats design kan du behöva köra skriptet flera gånger. Du kan till exempel köra skriptet på hanterings platsen för att installera webbplatsen för administration och övervakning. Kör den sedan igen på en fristående webb server för att installera självbetjänings portalen.
+
+1. Kopiera följande filer från `SMSSETUP\BIN\X64` mappen Configuration Manager-installationsmapp på plats servern till en lokal mapp på mål servern:
+
+    - `MBAMWebSite.cab`
+    - `MBAMWebSiteInstaller.ps1`
+
+1. Kör PowerShell som administratör och kör skriptet som liknar följande kommando rad:
+
+    ``` PowerShell
+    .\MBAMWebSiteInstaller.ps1 -SqlServerName <ServerName> -SqlInstanceName <InstanceName> -SqlDatabaseName <DatabaseName> -ReportWebServiceUrl <ReportWebServiceUrl> -HelpdeskUsersGroupName <DomainUserGroup> -HelpdeskAdminsGroupName <DomainUserGroup> -MbamReportUsersGroupName <DomainUserGroup> -SiteInstall Both
+    ```
+
+    Exempel:
+
+    ``` PowerShell
+    .\MBAMWebSiteInstaller.ps1 -SqlServerName sql.contoso.com -SqlInstanceName instance1 -SqlDatabaseName CM_ABC -ReportWebServiceUrl https://rsp.contoso.com/ReportServer -HelpdeskUsersGroupName "contoso\BitLocker help desk users" -HelpdeskAdminsGroupName "contoso\BitLocker help desk admins" -MbamReportUsersGroupName "contoso\BitLocker report users" -SiteInstall Both
+    ```
+
+    > [!IMPORTANT]
+    > I det här kommando rads exemplet används alla möjliga parametrar för att visa deras användning. Justera din användning enligt dina krav i din miljö.
+
+Efter installationen får du åtkomst till portalerna via följande URL: er:
+
+- Självbetjänings Portal:`https://webserver.contoso.com/SelfService`
+- Webbplatsen för administration och övervakning:`https://webserver.contoso.com/HelpDesk`
+
+> [!NOTE]
+> Microsoft rekommenderar men kräver inte användning av HTTPS. Mer information finns i [så här konfigurerar du SSL i IIS](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 ## <a name="script-usage"></a>Skript användning
 
@@ -71,42 +108,6 @@ Den här processen använder ett PowerShell-skript MBAMWebSiteInstaller.ps1 för
 - `-InstallDirectory`: Sökvägen där skriptet installerar filerna för webb programmet. Den här sökvägen är som standard `C:\inetpub` . Skapa den anpassade katalogen innan du använder den här parametern.
 
 - `-Uninstall`: Avinstallerar webb Portal webbplatser för BitLocker-hantering på en webb server där de redan har installerats.
-
-
-## <a name="run-the-script"></a>Kör skriptet
-
-Utför följande åtgärder på mål webb servern:
-
-> [!NOTE]
-> Beroende på din webbplats design kan du behöva köra skriptet flera gånger. Du kan till exempel köra skriptet på hanterings platsen för att installera webbplatsen för administration och övervakning. Kör den sedan igen på en fristående webb server för att installera självbetjänings portalen.
-
-1. Kopiera följande filer från `SMSSETUP\BIN\X64` mappen Configuration Manager-installationsmapp på plats servern till en lokal mapp på mål servern:
-
-    - `MBAMWebSite.cab`
-    - `MBAMWebSiteInstaller.ps1`
-
-1. Kör PowerShell som administratör och kör skriptet som liknar följande kommando rad:
-
-    ``` PowerShell
-    .\MBAMWebSiteInstaller.ps1 -SqlServerName <ServerName> -SqlInstanceName <InstanceName> -SqlDatabaseName <DatabaseName> -ReportWebServiceUrl <ReportWebServiceUrl> -HelpdeskUsersGroupName <DomainUserGroup> -HelpdeskAdminsGroupName <DomainUserGroup> -MbamReportUsersGroupName <DomainUserGroup> -SiteInstall Both
-    ```
-
-    Exempel:
-
-    ``` PowerShell
-    .\MBAMWebSiteInstaller.ps1 -SqlServerName sql.contoso.com -SqlInstanceName instance1 -SqlDatabaseName CM_ABC -ReportWebServiceUrl https://rsp.contoso.com/ReportServer -HelpdeskUsersGroupName "contoso\BitLocker help desk users" -HelpdeskAdminsGroupName "contoso\BitLocker help desk admins" -MbamReportUsersGroupName "contoso\BitLocker report users" -SiteInstall Both
-    ```
-
-    > [!IMPORTANT]
-    > I det här kommando rads exemplet används alla möjliga parametrar för att visa deras användning. Justera din användning enligt dina krav i din miljö.
-
-Efter installationen får du åtkomst till portalerna via följande URL: er:
-
-- Självbetjänings Portal:`https://webserver.contoso.com/SelfService`
-- Webbplatsen för administration och övervakning:`https://webserver.contoso.com/HelpDesk`
-
-> [!NOTE]
-> Microsoft rekommenderar men kräver inte användning av HTTPS. Mer information finns i [så här konfigurerar du SSL i IIS](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 ## <a name="verify"></a>Verifiera
 

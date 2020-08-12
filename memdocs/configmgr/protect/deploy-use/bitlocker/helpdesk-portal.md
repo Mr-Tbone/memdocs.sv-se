@@ -5,17 +5,17 @@ description: Så här använder du webbplatsen för administration och övervakn
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 81f03922-90f6-4e8f-be65-da64ccb21cf2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 84725ac494e1d9497524303b841207bd05cd3859
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7b64e09561def3d19c306b9cfcd4f7eb808763fd
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81717512"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129264"
 ---
 # <a name="bitlocker-administration-and-monitoring-website"></a>Webbplatsen för administration och övervakning av BitLocker
 
@@ -53,7 +53,7 @@ Mer information om TPM-ägarskap finns i [Configure MBAM to depositions The TPM 
 > [!NOTE]
 > Från och med Windows 10, version 1607, behåller Windows inte TPM-ägarens lösen ord vid etablering av TPM.
 
-1. Gå till webbplatsen för administration och övervakning i webbläsaren, till exempel `https://webserver.contoso.com/HelpDesk`.
+1. Gå till webbplatsen för administration och övervakning i webbläsaren, till exempel `https://webserver.contoso.com/HelpDesk` .
 
 1. I det vänstra fönstret väljer du **hantera TPM** -ytan.
 
@@ -70,7 +70,7 @@ Mer information om TPM-ägarskap finns i [Configure MBAM to depositions The TPM 
     - Inaktivera TPM
     - Ändra TPM-lösenord
     - Rensa TPM
-    - Annat
+    - Övrigt
 
     När du har **skickat** formuläret returnerar webbplatsen något av följande svar:
 
@@ -103,7 +103,7 @@ Om du vill få ett återställnings lösen ord använder du avsnittet **enhets �
 > [!IMPORTANT]
 > Återställnings lösen ord upphör att gälla efter ett och samma tillfälle. På OS-enheter och fasta data enheter gäller regeln för enkel användning automatiskt. På flyttbara enheter gäller den när du tar bort och sätter på enheten igen.
 
-1. Gå till webbplatsen för administration och övervakning i webbläsaren, till exempel `https://webserver.contoso.com/HelpDesk`.
+1. Gå till webbplatsen för administration och övervakning i webbläsaren, till exempel `https://webserver.contoso.com/HelpDesk` .
 
 1. I det vänstra fönstret väljer du **enhets återställnings** ytan.
 
@@ -123,7 +123,7 @@ Om du vill få ett återställnings lösen ord använder du avsnittet **enhets �
     - Återställning av TPM
     - Förlorad lösen fras
     - Förlorat smartkort
-    - Annat
+    - Övrigt
 
     När du har **skickat** formuläret returnerar webbplatsen något av följande svar:
 
@@ -180,7 +180,7 @@ Använd återställnings nyckel-ID: t för att hämta ett återställnings nycke
     - `<key package>`: Platsen för återställnings nyckel paketet
     - `<recovery password>`: Det associerade återställnings lösen ordet
 
-    Ett exempel:
+    Till exempel:
 
     `repair-bde C: D: -kp F:\RecoveryKeyPackage -rp 111111-222222-333333-444444-555555-666666-777777-888888`
 
@@ -190,7 +190,7 @@ Mer information om det här kommandot finns i [Repair-BDE](https://docs.microsof
 
 Webbplatsen för administration och övervakning innehåller **rapporten återställnings granskning**. Andra rapporter är tillgängliga från Configuration Manager repor ting Services-platsen. Mer information finns i [Visa BitLocker-rapporter](view-reports.md).
 
-1. Gå till webbplatsen för administration och övervakning i webbläsaren, till exempel `https://webserver.contoso.com/HelpDesk`.
+1. Gå till webbplatsen för administration och övervakning i webbläsaren, till exempel `https://webserver.contoso.com/HelpDesk` .
 
 1. I det vänstra fönstret väljer du **rapport** områden.
 

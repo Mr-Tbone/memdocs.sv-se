@@ -2,40 +2,49 @@
 title: Använd multicast för att distribuera Windows via nätverket
 titleSuffix: Configuration Manager
 description: Använd multicast i Configuration Managers miljö så att flera datorer samtidigt kan hämta operativ system avbildningen.
-ms.date: 10/06/2016
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 4cafb7fc-380b-41b1-b83e-045aebfb7131
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f81b23d3783d397d83a3925b98c0c8f601fa4012
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 9f580467ccb26209ed20666733e30959bbf50128
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720123"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124713"
 ---
 # <a name="use-multicast-to-deploy-windows-over-the-network-with-configuration-manager"></a>Använd multicast för att distribuera Windows via nätverket med Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Multicast är en nätverks optimerings metod som du kan använda i din Configuration Manager-miljö där flera klienter sannolikt kommer att hämta samma operativ system avbildning på samma tidpunkt. När multicast används hämtar flera datorer operativsystemavbildningen samtidigt när den skickas med multicast av distributionsplatsen istället för att distributionspunkten skickar en kopia av data till varje klient via en separat anslutning.  
+Multicast är en nätverks optimerings metod som du kan använda när flera klienter sannolikt kommer att ladda ned samma OS-avbildning på samma gång. När du använder multicast hämtar flera datorer samtidigt operativ system avbildningen som den är multicast av distributions platsen. Det här beteendet är i stället för varje klient som laddar ned en kopia av avbildningen över en separat anslutning från distributions platsen.
 
- Du kan distribuera operativsystem via nätverket genom att använda multicast i följande scenarier vid operativsystemsdistribution:  
+Distribuera operativ system över nätverket med hjälp av multicast i följande scenarier för operativ Systems distribution:
 
-- [Uppdatera en befintlig dator med en ny version av Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+- [Uppdatera en befintlig dator med en ny version av Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
 
-- [Installera en ny version av Windows på en ny dator (utan operativsystem)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Installera en ny version av Windows på en ny dator (utan operativsystem)](install-new-windows-version-new-computer-bare-metal.md)
 
-  Utför stegen i ett av scenarierna för operativsystemsdistribution och använd sedan följande avsnitt för att skapa stöd för multicast.  
+Slutför stegen i något av de här distributions scenarierna för operativ systemet. Använd sedan följande avsnitt för att stöda multicast.
 
-##  <a name="configure-a-distribution-point-to-support-multicast"></a><a name="BKMK_Configure"></a> Konfigurera en distributionsplats för att stöda multicast  
- Innan du använder multicast för att distribuera operativsystem måste du konfigurera en distributionsplats som har stöd för multicast. Mer information finns i [Installera och konfigurera distributions platser](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_config-multicast). En lista över portar som krävs för att stödja multicast finns i [portar](../../core/plan-design/hierarchy/ports.md#BKMK_PortsClient-DP2).  
+## <a name="configure-distribution-points-for-multicast"></a><a name="BKMK_Configure"></a>Konfigurera distributions platser för multicast
 
-## <a name="prepare-an-operating-system-image-for-multicast-deployments"></a>Förbereda en operativsystemavbildning för multicastdistributioner  
- Information om hur du konfigurerar operativsystemavbildningspaketet för att ha stöd för multicast finns i [Prepare the operating system image for multicast deployments](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast).  
+Om du vill använda multicast måste du konfigurera minst en distributions plats som stöder multicast. Mer information finns i [Installera och konfigurera distributions platser](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_config-multicast).
 
-##  <a name="deploy-the-task-sequence"></a><a name="BKMK_Deploy"></a> Distribuera aktivitetssekvensen  
- Distribuera operativsystemet till en målsamling. Mer information finns i [Distribuera en aktivitetssekvens](deploy-a-task-sequence.md).  
+En lista över portar som krävs för att stödja multicast finns i [portar](../../core/plan-design/hierarchy/ports.md#BKMK_PortsClient-DP2).
+
+## <a name="prepare-an-os-image-for-multicast"></a>Förbereda en OS-avbildning för multicast
+
+Du måste konfigurera operativ system avbildningen så att den stöder multicast. Mer information finns i [förbereda operativ Systems avbildningen för multicast-distributioner](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast).
+
+## <a name="deploy-the-task-sequence"></a><a name="BKMK_Deploy"></a> Distribuera aktivitetssekvensen
+
+Distribuera operativ systemet till en mål samling. Mer information finns i [Distribuera en aktivitetssekvens](deploy-a-task-sequence.md).
+
+## <a name="next-steps"></a>Nästa steg
+
+[Användarupplevelser för distribution av operativsystem](../understand/user-experience.md)

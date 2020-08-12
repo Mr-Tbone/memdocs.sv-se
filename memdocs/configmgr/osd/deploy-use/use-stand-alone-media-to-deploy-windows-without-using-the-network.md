@@ -1,77 +1,89 @@
 ---
-title: Använd fristående media för att distribuera Windows
+title: Använda fristående media för att distribuera Windows
 titleSuffix: Configuration Manager
 description: Använd fristående media i Configuration Manager för att distribuera Windows där bandbredden är begränsad som ett alternativ för att uppdatera, installera eller uppgradera datorer.
-ms.date: 10/06/2016
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 58a0d2ae-de76-401f-b854-7a5243949033
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a840636ae1be0d8d38819d0465be1211ff6d2f60
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 51b39e450fb5f8ffd7d83b4122d7514489383dfb
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724225"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124660"
 ---
-# <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network"></a>Använda fristående media för att distribuera Windows utan att använda nätverket
+# <a name="use-standalone-media-to-deploy-windows-without-using-the-network"></a>Använda fristående media för att distribuera Windows utan att använda nätverket
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Fristående media i Configuration Manager innehåller allt som krävs för att distribuera ett operativ system på en dator. Detta omfattar startavbildningen, operativsystemavbildningen och aktivitetssekvensen för att installera operativsystemet, inklusive program, drivrutiner och så vidare. Med fristående mediedistribution kan du distribuera operativsystem under följande betingelser:  
+Fristående media i Configuration Manager innehåller allt som krävs för att distribuera ett operativ system på en dator. Mediet innehåller start avbildningen, OS-avbildningen, aktivitetssekvensen, program, driv rutiner och mycket annat. Med fristående medie distributioner kan du distribuera operativ system under följande omständigheter:
 
--   I miljöer där det inte är praktiskt att kopiera en operativsystemsavbildning eller andra stora paket via nätverket.  
+- I miljöer där det inte är praktiskt att kopiera en operativ system avbildning eller andra stora paket över nätverket.
 
--   I miljöer utan nätverksanslutning eller i nätverk med låg bandbredd.  
+- I miljöer utan nätverks anslutning eller nätverks anslutning med låg bandbredd.
 
-Du kan använda fristående media i följande scenarier för operativsystemsdistribution:  
+Använd fristående media i följande distributions scenarier för operativ system:
 
-- [Uppdatera en befintlig dator med en ny version av Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+- [Uppdatera en befintlig dator med en ny version av Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
 
-- [Installera en ny version av Windows på en ny dator (utan operativsystem)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Installera en ny version av Windows på en ny dator (utan operativsystem)](install-new-windows-version-new-computer-bare-metal.md)
 
-- [Uppgradera Windows till den senaste versionen](upgrade-windows-to-the-latest-version.md)  
+- [Uppgradera Windows till den senaste versionen](upgrade-windows-to-the-latest-version.md)
 
-  Utför stegen i ett av scenarierna för operativsystemsdistribution och använd sedan följande avsnitt för att förbereda för och skapa fristående media.  
+Slutför stegen i något av de här distributions scenarierna för operativ systemet. Använd sedan följande avsnitt för att förbereda för och skapa det fristående mediet.
 
-## <a name="task-sequence-actions-not-supported-when-using-stand-alone-media"></a>Aktivitetssekvensåtgärderna stöds inte när du använder fristående media  
- Om du har utfört stegen i ett av de scenarier för operativsystemsdistribution som stöds, aktivitetssekvensen som ska distribueras eller uppgraderas, har operativsystemet skapats och allt tillhörande innehåll har distribuerats till en distributionsplats. När du använder fristående media stöds inte följande åtgärder i aktivitetssekvensen:  
+## <a name="unsupported-task-sequence-actions"></a>Åtgärder som inte stöds av aktivitetssekvensen
 
--   Steget Använd drivrutiner automatiskt i aktivitetssekvensen. Automatisk tillämpning av enhetsdrivrutiner från drivrutinskatalogen stöds inte, men du kan välja steget Använd drivrutinspaket för att göra en angiven uppsättning drivrutiner tillgänglig för Windows-installationsprogrammet.  
+När du använder fristående medier stöder Configuration Manager inte följande åtgärder i aktivitetssekvensen:
 
--   Installera programuppdateringar.  
+- Steget [Använd driv rutiner automatiskt](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) . Automatisk tillämpning av enhets driv rutiner från driv rutins katalogen stöds inte. Använd steget [Använd driv rutins paket](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage) för att göra en speciell uppsättning driv rutiner tillgängliga för installationsprogrammet för Windows.
 
--   Installera programvara innan operativsystemet har distribuerats.  
+- Installera programuppdateringar.
 
--   Associera användare med måldatorn som stöd för mappning mellan användare och enhet.  
+- Installera program vara innan du distribuerar operativ systemet.
 
--   Dynamiska paket installerar via aktiviteten Installationspaket.  
+- Associera användare med mål datorn för mappning mellan användare och enhet.
 
--   Dynamiska program installerar via aktiviteten Installera program.  
+- Dynamiskt paket installeras med steget [installera paket](../understand/task-sequence-steps.md#BKMK_InstallPackage) .
 
-> [!NOTE]  
->  Om aktivitetssekvensen för att distribuera ett operativsystem omfattar steget [Install Package](../understand/task-sequence-steps.md#BKMK_InstallPackage) och du skapar fristående media på en central administrationsplats kan ett fel uppstå. Den centrala administrationsplatsen har inte de nödvändiga klientkonfigurationsprinciper som krävs för att aktivera programdistributionsagenten under genomförandet av aktivitetssekvensen. Följande fel kan visas i filen CreateTsMedia.log:  
->   
->  `"WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"`
->   
->  För fristående media som innefattar steget **Installera paket** måste du skapa fristående media på en primär plats som har programdistributionsagenten aktiverad eller lägga till steget [Run Command Line](../understand/task-sequence-steps.md#BKMK_RunCommandLine) efter steget [Setup Windows and ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) och före det första **Installera paket** -steget i aktivitetssekvensen. Steget **Kör kommandorad** kör ett WMIC-kommando för att aktivera programdistributionsagenten innan det första Installera paket-steget körs. Du kan använda följande i ditt aktivitetssekvenssteg **Kör kommandorad** :  
->   
->  **Kommandorad**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
+- Dynamiska program installeras med steget [installera program](../understand/task-sequence-steps.md#BKMK_InstallApplication) .
 
-## <a name="configure-deployment-settings"></a>Konfigurera distributionsinställningar  
- När du använder fristående media för att starta operativsystemsdistributionen måste du konfigurera distributionen för att göra operativsystemet tillgängligt för media. Du kan konfigurera detta på sidan **Distributionsinställningar** i guiden Distribuera programvara eller på fliken **Distributionsinställningar** i egenskaperna för distributionen.  Konfigurera något av följande för inställningen **Gör tillgängligt för följande** :  
+> [!NOTE]
+> Om aktivitetssekvensen för att distribuera ett operativ system omfattar steget **installera paket** och du skapar det fristående mediet på en central administrations plats (ca) kan ett fel uppstå. Certifikat utfärdaren har inte de nödvändiga klient konfigurations principerna för att aktivera program distributions agenten när aktivitetssekvensen körs. Följande fel kan visas i filen **CreateTSMedia. log** :
+>
+> `"WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"`
+>
+> För fristående media som innefattar steget **installera paket** skapar du det fristående mediet på en primär plats som har program distributions agenten aktive rad
+>
+> Du kan också redigera aktivitetssekvensen för att lägga till steget [Kör kommando rad](../understand/task-sequence-steps.md#BKMK_RunCommandLine) efter steget [Installera Windows och ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) . Detta **Kör kommando rads** steg kör följande WMI-kommando för att aktivera program distributions agenten innan steget första **installations paketet** körs:
+>
+> ```command
+> WMIC /namespace:\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE
+> ```
 
--   **Configuration Manager-klienter, media och PXE**  
+## <a name="configure-deployment-settings"></a>Konfigurera distributionsinställningar
 
--   **Endast media och PXE**  
+När du använder fristående media för att starta operativ Systems distributions processen konfigurerar du distributionen så att operativ systemet blir tillgängligt för mediet. På sidan **distributions inställningar** i distributionen väljer du något av följande alternativ för inställningen **gör tillgängligt för följande** :
 
--   **Endast media och PXE (dolt)**  
+- Configuration Manager klienter, media och PXE
 
-## <a name="create-the-stand-alone-media"></a>Skapa fristående media  
- Du kan ange om det fristående mediet är ett USB-minne eller en cd-/dvd-skiva. Den dator som startar mediet måste stödja alternativet som du väljer som startbar enhet. Mer information finns i [skapa fristående media](create-stand-alone-media.md).  
+- Endast media och PXE
 
-## <a name="install-the-operating-system-from-stand-alone-media"></a>Installera operativsystemet från fristående media  
- Infoga det fristående mediet i en startbar enhet på datorn och starta den sedan för att installera operativsystemet.  
+- Endast media och PXE (dolt)
+
+## <a name="create-the-standalone-media"></a>Skapa det fristående mediet
+
+Du kan ange om det fristående mediet är ett USB-minne eller en CD-/DVD-uppsättning. Datorn som ska starta mediet måste ha stöd för det alternativ som du väljer som startbar enhet. Mer information finns i [skapa fristående media](create-stand-alone-media.md).
+
+## <a name="install-the-os-from-standalone-media"></a>Installera operativ systemet från fristående media
+
+Om du vill installera operativ systemet sätter du in det fristående mediet på datorn och sätter sedan på det.
+
+## <a name="next-steps"></a>Nästa steg
+
+[Användarupplevelser för distribution av operativsystem](../understand/user-experience.md#task-sequence-wizard)

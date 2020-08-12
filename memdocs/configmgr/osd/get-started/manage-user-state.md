@@ -1,27 +1,27 @@
 ---
-title: 'Hantera användartillstånd '
+title: Hantera användartillstånd
 titleSuffix: Configuration Manager
 description: Configuration Manager använder User State Migration Tool för att avbilda och återställa användar tillstånds data i distributions scenarier för operativ system.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: d8d5c345-1e91-410b-b8a9-0170dcfa846e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 70c15fb3a108b22ffacad69d6a67bef3b2d29952
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 0a720c68fc705187dedb6ff04fc3898a8b0b21c8
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724078"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124371"
 ---
 # <a name="manage-user-state-in-configuration-manager"></a>Hantera användar tillstånd i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Du kan använda Configuration Manager aktivitetssekvenser för att avbilda och återställa användar tillstånds data vid distributions scenarier för operativ system där du vill behålla användar statusen för det aktuella operativ systemet. Ett exempel:  
+Du kan använda Configuration Manager aktivitetssekvenser för att avbilda och återställa användar tillstånds data vid distributions scenarier för operativ system där du vill behålla användar statusen för det aktuella operativ systemet. Till exempel:  
 
 - Distributioner där du vill avbilda användartillståndet på en dator för att återställa det på en annan.  
 

@@ -5,17 +5,17 @@ description: Redigera en anpassad aktivitetssekvens i Configuration Manager för
 ms.date: 04/01/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: b9800a66-7541-47ca-8276-da8ef6cb6d1b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9107e9787cf7f12cab624101c37344ea20684112
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: f390c3857ad5a277002839c4c14ab1307d9ab281
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720620"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125584"
 ---
 # <a name="create-a-custom-task-sequence-with-configuration-manager"></a>Skapa en anpassad aktivitetssekvens med Configuration Manager
 

@@ -10,12 +10,12 @@ ms.assetid: 230be984-d2cd-4d53-bd7a-bc24dd93fc22
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 1aae76845d18d8191b6f773df5491d3a144940c1
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d28638cdf332adbb1d57526179222bb96d6d5c92
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713809"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128077"
 ---
 # <a name="introduction-to-reporting-in-configuration-manager"></a>Introduktion till rapportering i Configuration Manager
 
@@ -93,7 +93,7 @@ När du kör en rapport begär prompten ett värde för en obligatorisk paramete
 
 Rapport länkar i Configuration Manager används i en käll rapport för att ge enkel åtkomst till ytterligare data. Den kan till exempel länka till mer detaljerad information om varje objekt i käll rapporten. Om målrapporten kräver att en eller flera prompter körs måste källrapporten innehålla en kolumn med lämpliga värden för varje prompt.
 
-Länken måste ange kolumn numret med värdet för prompten. Ett exempel:
+Länken måste ange kolumn numret med värdet för prompten. Till exempel:
 
 - Det finns en rapport som visar datorer som platsen nyligen har identifierat.
 - Du länkar från den till en annan rapport som visar de senaste meddelanden som platsen tar emot för en speciell dator.
@@ -124,7 +124,7 @@ För repor ting Services-baserade rapporter använder Configuration Manager Micr
 
  Report Builder-installation tillför stöd för över 20 språk. När du kör Report Builder visas data på språket för den lokala datorns operativ system. Om Report Builder inte stöder språket visas informationen på engelska. Report Builder har stöd för alla funktioner i SQL Server Reporting Services som innehåller följande funktioner:
 
-- Levererar en intuitiv rapportredigeringsmiljö som liknar Microsoft Office.  
+- Ger en intuitiv rapport redigerings miljö med ett utseende som liknar Microsoft 365 appar.  
 
 - Erbjuder den flexibla rapportlayouten i SQL Server Report Definition Language (RDL).  
 

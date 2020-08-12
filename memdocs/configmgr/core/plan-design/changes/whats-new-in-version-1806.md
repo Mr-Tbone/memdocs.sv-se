@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 295940337f191b791d8c7a86de4003466213df6b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ae2846c2a5f7fea86287a05c8cc8f6013d660df6
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719318"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128958"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Vad är nytt i version 1806 av Configuration Manager aktuella grenen
 
@@ -183,7 +183,7 @@ Mer information finns i [Enhanced http](../hierarchy/enhanced-http.md).
 
 ### <a name="cmtrace-installed-with-client"></a>CMTrace installeras med klienten
 <!--1357971-->
-CMTrace-logg visnings verktyget installeras nu automatiskt tillsammans med Configuration Manager-klienten. Den läggs till i klient installations katalogen, vilket som standard är `%WinDir%\ccm\cmtrace.exe`. 
+CMTrace-logg visnings verktyget installeras nu automatiskt tillsammans med Configuration Manager-klienten. Den läggs till i klient installations katalogen, vilket som standard är `%WinDir%\ccm\cmtrace.exe` . 
 
 Mer information finns i [CMTrace](../../support/cmtrace.md).
 
@@ -235,7 +235,7 @@ Följande arbets belastningar kan nu övergå från Configuration Manager till I
 
 - **Enhetskonfiguration**<!--1357903-->: Med den här arbets belastningen kan du använda Intune för att distribuera MDM-principer och fortsätta att använda Configuration Manager för att distribuera program.  
 
-- **Office 365**<!--1357841-->: Enheter installerar inte Office 365-distributioner från Configuration Manager.  
+- **Office 365**<!--1357841-->: Enheter installerar inte Office 365-distributioner från Configuration Manager.  
 
 - **Mobilappar**<!--1357892-->: Alla tillgängliga appar som distribueras från Intune finns tillgängliga i Företagsportal. Appar som du distribuerar från Configuration Manager är tillgängliga i Software Center. Den här funktionen är en [för hands versions funktion](../../servers/manage/pre-release-features.md).  
 
@@ -296,7 +296,7 @@ Mer information finns i [skapa Windows-program](../../../apps/get-started/creati
 <!--1358149-->
 Office-verktyget för anpassning är nu integrerat med Office 365-installations programmet i Configuration Manager-konsolen. När du skapar en distribution för Office 365 konfigurerar du de senaste Office-hanterbarhets inställningarna dynamiskt. Microsoft uppdaterar Office-anpassnings verktyget när nya versioner av Office 365 lanseras. Med den här integreringen kan du dra nytta av nya inställningar för hantering i Office 365 så snart de är tillgängliga. 
 
-Mer information finns i [distribuera Office 365-appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#deploy-office-365-apps).
+Mer information finns i [distribuera Office 365-appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 
 ### <a name="support-for-new-windows-app-package-formats"></a>Stöd för nya paket format för Windows-appar
@@ -544,9 +544,9 @@ Följande områden i arbets ytan **övervakning** stöder nu kopiering av text:
 
 - Expandera noden **distributions status** och välj **innehålls status**. Välj en program varu enhet och klicka på **Visa status**. I fönstret **till gångs information** i vyn innehålls status väljer du en eller flera distributions platser. 
 
-Högerklicka på till gången och välj **Kopiera**. Den här åtgärden kopierar de valda till gångarna som en kommaavgränsad lista som innehåller all information. Kortkommandot **CTRL** + **C** fungerar också i dessa vyer. 
+Högerklicka på till gången och välj **Kopiera**. Den här åtgärden kopierar de valda till gångarna som en kommaavgränsad lista som innehåller all information. Kortkommandot **CTRL**  +  **C** fungerar också i dessa vyer. 
 
-Mer information finns i [konsol förbättringar i version 1806](../../servers/manage/admin-console.md#copy-details-in-monitoring-views).
+Mer information finns i [konsol förbättringar i version 1806](../../servers/manage/admin-console-tips.md#copy-details-in-monitoring-views).
 
 
 ### <a name="improvements-to-the-surface-dashboard"></a>Förbättringar av Surface-instrumentpanelen
@@ -568,7 +568,7 @@ Mer information finns i [instrument panelen för Surface](../../clients/manage/s
 <!--1358202-->
 Nu visar noden **enheter** i arbets ytan **till gångar och efterlevnad** en kolumn för den **för tillfället inloggade användaren**. Den visas också för alla samlingar med olika enhets listor. Värdet är lika aktuellt som [klientens status](../../clients/manage/monitor-clients.md#bkmk_indStatus). När användaren loggar ut rensas detta värde av klienten. Om ingen användare är inloggad är värdet tomt. 
 
-Mer information finns i [konsol förbättringar i version 1806](../../servers/manage/admin-console.md#view-users-for-a-device).
+Mer information finns i [konsol förbättringar i version 1806](../../servers/manage/admin-console-tips.md#view-users-for-a-device).
 
 
 ### <a name="submit-feedback-from-the-configuration-manager-console"></a>Skicka feedback från Configuration Manager-konsolen  
@@ -576,7 +576,7 @@ Mer information finns i [konsol förbättringar i version 1806](../../servers/ma
 
 Skicka ett leende! Nu kan du direkt tala om för Configuration Manager teamet om dina upplevelser. Det är enkelt att skicka feedback från Configuration Manager-konsolen. Vi vill gärna höra all feedback: Praise, problem och förslag. I Configuration Manager-konsolen klickar du på knappen leende i det övre högra hörnet ovanför menyfliksområdet. Den här feedbacken går direkt till Microsofts produkt team för Configuration Manager. När du använder Windows 10 feedback Hub, rekommenderar vi att du använder återkopplings funktionen i konsolen.  
 
-Mer information finns i [konsol förbättringar i version 1806](../../servers/manage/admin-console.md#send-feedback) och [produkt feedback](../../understand/find-help.md#BKMK_1806Feedback).
+Mer information finns i [konsol förbättringar i version 1806](../../servers/manage/admin-console-tips.md#send-feedback) och [produkt feedback](../../understand/find-help.md#BKMK_1806Feedback).
 
 
 
@@ -593,11 +593,11 @@ Följande samlade uppdateringar (4462978) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Titel | Date | I-konsolen |
+| ID | Rubrik | Datum | I-konsolen |
 |---------|---------|---------|---------|
 | [4346645](https://support.microsoft.com/help/4346645) | Uppdatering för Configuration Manager version 1806, första vågen | 31 augusti 2018 | Ja |
 | [4465865](https://support.microsoft.com/help/4465865) | Program uppdateringar laddas inte ned i Configuration Managers miljö om WSUS är frånkopplat<br><br>Den här uppdateringen ingår också i den samlade uppdateringen (4462978) | 01 oktober 2018 | Ja |
-| [4471892](https://support.microsoft.com/help/4471892) | PXE-Responder fungerar inte över undernät i Configuration Manager 1806 | 23 november 2018 | Inga |
+| [4471892](https://support.microsoft.com/help/4471892) | PXE-Responder fungerar inte över undernät i Configuration Manager 1806 | 23 november 2018 | No |
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
 
 

@@ -5,17 +5,17 @@ description: Rekommendationer för att använda steget aktivitetssekvens install
 ms.date: 05/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.assetid: 72d1ccd5-3763-4f88-9273-e1a73e8f4286
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6528e979222bc6ecea2a57a003ff5266b5c096c5
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2c5fdc15ba05786c25361c394bc0aa8dc305d666
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719997"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124261"
 ---
 # <a name="install-software-updates"></a>Installera programuppdateringar
 
@@ -104,7 +104,7 @@ Mer information finns i [tillämpa program uppdateringar på en avbildning](../g
 
 - Manuellt val av uppdateringar
 - Ökad tid för att distribuera avbildningen till distributions platser
-- Stöder endast CBS-baserade uppdateringar. Det går inte att använda Office-uppdateringar
+- Stöder endast CBS-baserade uppdateringar. Det går inte att tillämpa uppdateringar för Microsoft 365 appar
 
 > [!Tip]  
 > Du kan automatisera valet av program uppdateringar med hjälp av PowerShell. Använd cmdleten [Get-CMSoftwareUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmsoftwareupdate?view=sccm-ps) för att hämta en lista över uppdateringar. Använd sedan cmdleten [New-CMOperatingSystemImageUpdateSchedule](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmoperatingsystemimageupdateschedule?view=sccm-ps) för att skapa ett schema för offline-underhåll. I följande exempel visas en metod för att automatisera den här åtgärden:
@@ -207,7 +207,7 @@ Använd följande resurser och ytterligare information som hjälper dig att fels
 
 - Information om hur du felsöker hanterings processen för program uppdateringar finns i [hantering av programuppdateringar fel sökning](https://support.microsoft.com/help/10680/software-update-management-troubleshooting-in-configuration-manager).  
 
-- Minska storleken på program uppdaterings katalogen för att förbättra den övergripande prestandan. Ett exempel:  
+- Minska storleken på program uppdaterings katalogen för att förbättra den övergripande prestandan. Till exempel:  
 
     - Ta bort onödiga klassificeringar, produkter och språk. Mer information finns i [Konfigurera klassificeringar och produkter som ska synkroniseras](../../sum/get-started/configure-classifications-and-products.md).  
 

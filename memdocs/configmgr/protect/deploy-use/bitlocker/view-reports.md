@@ -2,20 +2,20 @@
 title: Se BitLocker-rapporter
 titleSuffix: Configuration Manager
 description: Lär dig mer om hanterings rapporter i BitLocker i Configuration Manager
-ms.date: 11/29/2019
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: 0bae9477-0500-41cf-8aa3-5e6efadd0554
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d10717f980922e1f6d1fca9224e288b4df709da2
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7c44ec9a9ed91d8543fedbdd5fba191b3989da19
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81717358"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129228"
 ---
 # <a name="view-bitlocker-reports"></a>Se BitLocker-rapporter
 
@@ -49,7 +49,7 @@ Du kan komma åt alla dessa rapporter direkt från webbplatsen repor ting Servic
 
 Använd den här rapporten om du vill samla in information som är unik för en dator. Den ger detaljerad krypterings information om operativ system enheten och eventuella fasta data enheter. Om du vill visa information om varje enhet expanderar du posten dator namn. Den anger också principen som används för varje enhets typ på datorn.
 
-[![Exempel skärm bild av rapporten om kompatibilitet för BitLocker-dator](media/bitlocker-computer-compliance.png)](media/bitlocker-computer-compliance.png#lightbox)
+:::image type="content" source="media/bitlocker-computer-compliance.png" alt-text="Exempel skärm bild av rapporten om kompatibilitet för BitLocker-dator" lightbox="media/bitlocker-computer-compliance.png":::
 
 Du kan också använda den här rapporten för att avgöra den senaste kända BitLocker-krypterings statusen för borttappade eller stulna datorer. Configuration Manager fastställer enhetens efterlevnad baserat på de BitLocker-principer som du distribuerar. Innan du försöker fastställa BitLocker-krypterings statusen för en enhet kontrollerar du de principer som du har distribuerat till den.
 
@@ -58,7 +58,7 @@ Du kan också använda den här rapporten för att avgöra den senaste kända Bi
 
 ### <a name="computer-details"></a>Dator information
 
-|Kolumn&nbsp;namn|Beskrivning|
+|Kolumn &nbsp; namn|Beskrivning|
 |----------------|----|
 |Datornamn|Användardefinierat DNS-datornamn.|
 |Domännamn|Fullständigt kvalificerat domän namn för datorn.|
@@ -81,7 +81,7 @@ Du kan också använda den här rapporten för att avgöra den senaste kända Bi
 
 ### <a name="computer-volume"></a><a name="bkmk_volume"></a>Dator volym
 
-|Kolumn&nbsp;namn|Beskrivning|
+|Kolumn &nbsp; namn|Beskrivning|
 |----------------|----|
 |Enhetsbeteckning|Datorns enhets beteckning.|
 |Enhetstyp|Typ av enhet. Giltiga värden är **operativ systemen het** och **fast data enhet**. Dessa poster är fysiska enheter snarare än logiska volymer.|
@@ -100,7 +100,7 @@ Den här rapporten innehåller följande grafer som visar status för BitLocker-
 
 - Distribution av kompatibilitetsstatus per enhets typ
 
-[![Exempel skärm bild av instrument panelen för BitLocker Enterprise Compliance](media/bitlocker-enterprise-compliance-dashboard.png)](media/bitlocker-enterprise-compliance-dashboard.png#lightbox)
+:::image type="content" source="media/bitlocker-enterprise-compliance-dashboard.png" alt-text="Exempel skärm bild av instrument panelen för BitLocker Enterprise Compliance" lightbox="media/bitlocker-enterprise-compliance-dashboard.png":::
 
 ### <a name="compliance-status-distribution"></a>Distribution av kompatibilitetsstatus
 
@@ -148,7 +148,7 @@ Det här stapeldiagrammet visar den aktuella status för BitLocker-kompatibilite
 
 Den här rapporten visar information om den övergripande kompatibiliteten i BitLocker i organisationen för den samling datorer som du har distribuerat hanterings principen för BitLocker till.
 
-[![Exempel skärm bild av kompabilitet för BitLocker Enterprise](media/bitlocker-enterprise-compliance-details.png)](media/bitlocker-enterprise-compliance-details.png#lightbox)
+:::image type="content" source="media/bitlocker-enterprise-compliance-details.png" alt-text="Exempel skärm bild av kompabilitet för BitLocker Enterprise" lightbox="media/bitlocker-enterprise-compliance-details.png":::
 
 |Kolumnnamn|Beskrivning|
 |--- |--- |
@@ -170,7 +170,7 @@ Den här rapporten visar information om den övergripande kompatibiliteten i Bit
 |--- |--- |
 |Datornamn|Den hanterade enhetens DNS-datornamn.|
 |Domännamn|Fullständigt kvalificerat domän namn för datorn.|
-|Kompatibilitetsstatus|Datorns övergripande kompatibilitetsstatus. Giltiga tillstånd är **kompatibla** och **icke-kompatibla**.|
+|efterlevnadsstatus|Datorns övergripande kompatibilitetsstatus. Giltiga tillstånd är **kompatibla** och **icke-kompatibla**.|
 |Undantag|Anger om användaren är undantagen eller icke-undantagen från BitLocker-principen.|
 |Enhets användare|Användare av enheten.|
 |Status information för efterlevnad|Fel-och status meddelanden om datorns kompatibilitetstillstånd från den angivna principen.|
@@ -180,7 +180,7 @@ Den här rapporten visar information om den övergripande kompatibiliteten i Bit
 
 Använd den här rapporten för att visa den övergripande kompatibiliteten för BitLocker i organisationen. Det visar även kompatibiliteten för enskilda datorer som du har distribuerat hanterings principen för BitLocker till.
 
-[![Exempel skärm bild av översikt över kompatibilitet för BitLocker Enterprise](media/bitlocker-enterprise-compliance-summary.png)](media/bitlocker-enterprise-compliance-summary.png#lightbox)
+:::image type="content" source="media/bitlocker-enterprise-compliance-summary.png" alt-text="Exempel skärm bild av översikt över kompatibilitet för BitLocker Enterprise" lightbox="media/bitlocker-enterprise-compliance-summary.png":::
 
 |Kolumnnamn|Beskrivning|
 |--- |--- |
@@ -199,9 +199,7 @@ Använd den här rapporten för att visa den övergripande kompatibiliteten för
 ## <a name="recovery-audit-report"></a><a name="bkmk-audit"></a>Återställnings gransknings rapport
 
 > [!NOTE]
-> Den här rapporten är även tillgänglig på [webbplatsen för administration och övervakning av BitLocker](helpdesk-portal.md#reports).
->
-> Om du vill visa den här rapporten i Configuration Manager-konsolen går du till arbets ytan **övervakning** . Expandera noden **rapportering** i navigerings fönstret, expandera **rapporter**och expandera sedan mappen **BitLocker-hantering** . Välj undermappen för den lokaliserade versionen av rapporten, till exempel **en-US**.
+> Från och med version 2002 är den här rapporten endast tillgänglig på [webbplatsen för administration och övervakning av BitLocker](helpdesk-portal.md#reports).<!-- 7629549 -->
 
 Använd den här rapporten om du vill granska användare som har begärt åtkomst till återställnings nycklar för BitLocker. Du kan filtrera efter följande kriterier:
 
@@ -210,9 +208,9 @@ Använd den här rapporten om du vill granska användare som har begärt åtkoms
 - Den angivna typen av nyckel: lösen ord för återställnings nyckel, ID för återställnings nyckel eller hash för TPM-lösenord
 - Ett datum intervall då hämtningen utfördes
 
-[![Exempel skärm bild av gransknings rapport för BitLocker-återställning](media/bitlocker-recovery-audit-report.png)](media/bitlocker-recovery-audit-report.png#lightbox)
+:::image type="content" source="media/bitlocker-recovery-audit-report.png" alt-text="Exempel skärm bild av gransknings rapport för BitLocker-återställning" lightbox="media/bitlocker-recovery-audit-report.png":::
 
-|Kolumn&nbsp;namn|Beskrivning|
+|Kolumn &nbsp; namn|Beskrivning|
 |----------------|----|
 |Datum och tid för begäran|Datum och tid då användaren begärde en nyckel för slutanvändaren eller supportavdelningen.|
 |Källa för gransknings begär Anden|Den plats som begäran kom ifrån. Giltiga värden är **Självbetjäningsportal** eller **supportavdelningen**.|

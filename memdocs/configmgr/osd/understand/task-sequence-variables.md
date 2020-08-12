@@ -2,20 +2,20 @@
 title: Variabelreferens för aktivitetssekvens
 titleSuffix: Configuration Manager
 description: Lär dig mer om variablerna för att styra och anpassa en Configuration Manager aktivitetssekvens.
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b3ddd1a4b59ba750e9fca5f8386762b4a5dddb13
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 667d7451f467592bd0645b54d7068a20628ec98e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429832"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124149"
 ---
 # <a name="task-sequence-variables"></a>Aktivitetssekvensvariabler
 
@@ -373,6 +373,13 @@ En skrivskyddad variabel för om den **nätström** som är ansluten check retur
 
 En skrivskyddad variabel för om kontrollen nätverkskort **anslutet** returnerade true ( `1` ) eller false ( `0` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
 
+### <a name="_ts_cruefi"></a><a name="TSCRUEFI"></a>_TS_CRUEFI
+
+*Från och med version 2006* <!--6452769-->
+*Gäller för steget [kontrol lera beredskap](task-sequence-steps.md#BKMK_CheckReadiness) .*
+
+En skrivskyddad variabel för om **datorn är i UEFI-läge** som returnerar BIOS ( `0` ) eller UEFI ( `1` ). Om du inte aktiverar kontrollen är värdet för den här skrivskyddade variabeln tomt.
+
 ### <a name="_ts_crwired"></a><a name="TSCRWIRED"></a>_TS_CRWIRED
 
 *Från och med version 2002* <!--6005561-->  
@@ -416,7 +423,7 @@ Använd följande variabel namn för att definiera egenskaperna för det *först
 
 #### <a name="osdadapter0enabledhcp"></a>OSDAdapter0EnableDHCP
 
-Denna inställning är obligatorisk. Möjliga värden är `True` eller `False`. Ett exempel:
+Denna inställning är obligatorisk. Möjliga värden är `True` eller `False`. Till exempel:
 
 `true`: Aktivera Dynamic Host Configuration Protocol (DHCP) för kortet
 

@@ -2,7 +2,7 @@
 title: Använda aktivitetssekvensvariabler
 titleSuffix: Configuration Manager
 description: Lär dig mer om hur du använder variablerna i en Configuration Manager aktivitetssekvens.
-ms.date: 11/29/2019
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: bc7de742-9e5c-4a70-945c-df4153a61cc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1cf428b479e9311c92f6d14d9c376817ee5e3ab5
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 433896e55b7701009e2870af8b0015fb15c1eda3
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022270"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88123944"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Så här använder du variabler för aktivitetssekvenser i Configuration Manager
 
@@ -77,7 +78,7 @@ Följ dessa rikt linjer när du anger ett namn på en ny aktivitetssekvens:
 
 - Variabel namn för aktivitetssekvens får inte börja eller sluta med ett blank steg. De får inte heller innehålla inbäddade blank steg. Aktivitetssekvensen ignorerar blank steg i början eller slutet av ett variabel namn.  
 
-Det finns ingen angiven gräns för hur många variabler för aktivitetssekvens som du kan skapa. Men antalet variabler är begränsat av storleken på aktivitetssekvensmiljön. Den totala storleksgränsen för aktivitetssekvensmiljön är 32 MB.  
+Det finns ingen angiven gräns för hur många variabler för aktivitetssekvens som du kan skapa. Men antalet variabler är begränsat av storleken på aktivitetssekvensmiljön. Den totala storleks gränsen för aktivitetssekvensen är 8 KB. Mer information finns i [minska storleken på en aktivitetssekvens](../deploy-use/manage-task-sequences-to-automate-tasks.md#bkmk_policysize).
 
 ### <a name="read-only-variables"></a><a name="bkmk_read-only"></a>Skrivskyddade variabler
 
@@ -189,10 +190,10 @@ Du kan definiera anpassade variabler för aktivitetssekvens för enheter och sam
 
 Till exempel är enhet XYZ medlem i samlingen ABC. Du tilldelar en variabel till samling ABC med värdet 1. Du tilldelar också en variabel till enhet XYZ med värdet 2. Variabeln som är tilldelad XYZ har högre prioritet än variabeln som har tilldelats till samlingen ABC. När en aktivitetssekvens med denna variabel körs på XYZ, har variabeln värdet 2.
 
-Du kan dölja variabler per enhet och per samling så att de inte visas i Configuration Manager-konsolen. Om du använder alternativet **Visa inte det här värdet i Configuration Manager-konsolen**, visas inte värdet för variabeln i-konsolen. Variabeln kan fortfarande användas av aktivitetssekvensen när den körs. Om du inte längre vill att dessa variabler ska vara dolda tar du bort dem först. Definiera sedan om variablerna utan att välja alternativet att dölja dem.  
+Du kan dölja variabler per enhet och per samling så att de inte visas i Configuration Manager-konsolen. Om du använder alternativet **Visa inte det här värdet i Configuration Manager-konsolen**, visas inte värdet för variabeln i-konsolen. Logg filen för aktivitetssekvensen (**Smsts. log**) eller fel sökaren för aktivitetssekvensen visar inte variabelvärdet. Variabeln kan fortfarande användas av aktivitetssekvensen när den körs. Om du inte längre vill att dessa variabler ska vara dolda tar du bort dem först. Definiera sedan om variablerna utan att välja alternativet att dölja dem.  
 
 > [!WARNING]  
-> Inställningen för att **inte Visa det här värdet i Configuration Manager-konsolen** gäller bara för Configuration Manager-konsolen. Värdena för variablerna visas fortfarande i logg filen för aktivitetssekvensen (**Smsts. log**).
+> Om du inkluderar variabler i kommando raden **Kör kommando rads** steg, visar logg filen för aktivitetssekvensen den fullständiga kommando raden inklusive variabel värden. För att förhindra att potentiellt känsliga data visas i logg filen ställer du in variabeln **OSDDoNotLogCommand** till `TRUE` .
 
 Du kan hantera variabler per enhet på en primär plats eller på en central administrations plats. Configuration Manager stöder inte fler än 1 000 tilldelade variabler för en enhet.  
 

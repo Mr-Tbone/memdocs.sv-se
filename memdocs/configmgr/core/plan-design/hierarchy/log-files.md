@@ -2,7 +2,7 @@
 title: Loggfilsreferens
 titleSuffix: Configuration Manager
 description: En referens till alla loggfiler för Configuration Manager klient, server och beroende komponenter.
-ms.date: 07/09/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 296ac8448292b46318921cb952b5b8545a34f1fa
-ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
+ms.openlocfilehash: 7fa4fbc7cb4e66a1ad47cb0c14a5f7e52abb5bf5
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86210327"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126435"
 ---
 # <a name="log-file-reference"></a>Loggfilsreferens
 
@@ -55,7 +55,7 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
 - [Loggfiler efter funktioner](#BKMK_FunctionLogs)  
 
-  - [Program hantering](#BKMK_AppManageLog)  
+  - [Programhantering](#BKMK_AppManageLog)  
 
   - [Tillgångsinformation](#BKMK_AILog)  
 
@@ -99,11 +99,11 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
   - [Rollbaserad administration](#BKMK_RBALog)  
 
-  - [Avläsning av program vara](#BKMK_MeteringLog)  
+  - [Avläsning av programvara](#BKMK_MeteringLog)  
 
   - [Programuppdateringar](#BKMK_SU_NAPLog)  
 
-  - [Wake On LAN](#BKMK_WOLLog)  
+  - [Wake on LAN](#BKMK_WOLLog)  
 
   - [Windows 10-underhåll](#BKMK_WindowsServicingLog)
 
@@ -331,6 +331,7 @@ I följande tabell visas de loggfiler som finns på Configuration Manager plats 
 |sitestat.log|Registrerar tillgänglighet och processen för övervakning av diskutrymme för alla platssystem.|Platsserver|
 |SMS_AZUREAD_DISCOVERY_AGENT. log| Loggfil för användar-och användar grupp identifiering i Azure Active Directory (Azure AD). I version 1910 och tidigare innehöll den även synkronisering av medlemskaps resultat för samlingar till Azure AD.| Platsserver|
 |SMS_BUSINESS_APP_PROCESS_MANAGER. log|Loggfil för komponent som synkroniserar appar från Microsoft Store för företag.|Platsserver|
+|SMS_DataEngine. log|Loggfil för hanterings insikter.|Platsserver|
 |SMS_ISVUPDATES_SYNCAGENT. log| Loggfil för synkronisering av program uppdateringar från tredje part.| Program uppdaterings plats på den översta nivån i Configuration Manager hierarkin.|
 |SMS_OrchestrationGroup. log| Loggfil för Orchestration-grupper|Platsserver|
 |SMS_PhasedDeployment. log| Loggfil för stegvisa distributioner|Platsen på den översta nivån i Configuration Manager hierarkin|
@@ -350,7 +351,7 @@ I följande tabell visas de loggfiler som finns på Configuration Manager plats 
 |statesys.log|Registrerar behandling av tillståndssystemmeddelanden.|Platsserver|  
 |statmgr.log|Registrerar skrivning av alla statusmeddelanden till databasen.|Platsserver|  
 |swmproc.log|Registrerar behandling av avläsningsfiler och inställningar.|Platsserver|
-|UXAnalyticsUploadWorker. log|Registrerar data uppladdning till tjänsten för slut punkts analys.|Platsserver|   
+|UXAnalyticsUploadWorker. log|Registrerar data uppladdning till tjänsten för slut punkts analys.|Platsserver|
 
 ### <a name="site-server-installation"></a><a name="BKMK_SiteInstallLog"></a>Installation av plats Server
 

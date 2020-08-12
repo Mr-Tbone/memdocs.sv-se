@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: fa29c1b2474d6a0a42b7ff8e3624a3ec8d6a090e
-ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
+ms.openlocfilehash: f2486e838e01415786e24c077af1997b3dfb7638
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87912302"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129077"
 ---
 # <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Vad&#39;s nya i version 1702 av Configuration Manager
 
@@ -121,7 +121,7 @@ Använd [rensnings verktyget för innehålls bibliotek](../hierarchy/content-lib
 Du kan använda OMS-anslutningen för att ansluta till OMS Log Analytics i Microsoft Azure Government molnet. Detta kräver att du ändrar en konfigurations fil innan du installerar OMS-anslutningsprogrammet så att kopplingen kan arbeta med det offentliga molnet. Mer information finns i [använda OMS-anslutningen med Azure Government molnet](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm).
 
 ### <a name="software-update-points-are-added-to-boundary-groups"></a>Program uppdaterings platser läggs till i gränser grupper
-Från och med version 1702 använder klienterna gränser grupper för att hitta en ny program uppdaterings plats, och för att återgå och hitta en ny program uppdaterings plats om den aktuella inte längre är tillgänglig. Du kan lägga till enskilda program uppdaterings platser i olika gränser grupper för att kontrol lera vilka servrar som en klient kan hitta. Mer information finns i [program uppdaterings platser](../../servers/deploy/configure/boundary-groups.md#software-update-points) i avsnittet [Konfigurera gränser grupper](../../servers/deploy/configure/boundary-groups.md) .
+Från och med version 1702 använder klienterna gränser grupper för att hitta en ny program uppdaterings plats, och för att återgå och hitta en ny program uppdaterings plats om den aktuella inte längre är tillgänglig. Du kan lägga till enskilda program uppdaterings platser i olika gränser grupper för att kontrol lera vilka servrar som en klient kan hitta. Mer information finns i [program uppdaterings platser](../../servers/deploy/configure/boundary-groups.md#bkmk_sup) i avsnittet [Konfigurera gränser grupper](../../servers/deploy/configure/boundary-groups.md) .
 
 
 <!-- ## Migration  -->
@@ -221,7 +221,7 @@ Från och med den här versionen, när du uppgraderar Windows ADK-versionen och 
 ## <a name="software-updates"></a>Programuppdateringar
 
 ### <a name="deploy-office-365-apps-to-clients"></a>Distribuera Office 365-appar till klienter
-Från och med version 1702 kan du från instrument panelen för Office 365-klient hantering starta Office 365-installations programmet där du kan konfigurera installations inställningar för Office 365, ladda ned filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#deploy-office-365-apps).
+Från och med version 1702 kan du från instrument panelen för Office 365-klient hantering starta Office 365-installations programmet där du kan konfigurera installations inställningar för Office 365, ladda ned filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#bkmk_deploy).
 
 > [!IMPORTANT]
 > Office 365-appen som du skapar och distribuerar med hjälp av guiden Office 365-program i Configuration Manager hanteras inte automatiskt av Configuration Manager förrän du aktiverar inställningen **aktivera hantering av klient agenten för office 365-klienten igen** . Mer information finns i [om klient inställningar](../../clients/deploy/about-client-settings.md).
@@ -274,13 +274,13 @@ Nu kan du distribuera licensierade appar till enheter samt användare. Beroende 
 | Configuration Manager version | App har stöd för enhets licensiering? | Distributions samlings typ | Ansökan om licens |
 | ----------------------------- | ------------------------------ | -------------------------- | --------------- |
 |Tidigare än 1702|Ja|Användare|Användar licens|
-|Tidigare än 1702|Nej|Användare|Användar licens|
+|Tidigare än 1702|No|Användare|Användar licens|
 |Tidigare än 1702|Ja|Enhet|Användar licens|
-|Tidigare än 1702|Nej|Enhet|Användar licens|
+|Tidigare än 1702|No|Enhet|Användar licens|
 |1702 och senare|Ja|Användare|Användar licens|
-|1702 och senare|Nej|Användare|Användar licens|
+|1702 och senare|No|Användare|Användar licens|
 |1702 och senare|Ja|Enhet|Enhets licens|
-|1702 och senare|Nej|Enhet|Användar licens|
+|1702 och senare|No|Enhet|Användar licens|
 
 ### <a name="support-for-ios-volume-purchase-program-for-education"></a>Stöd för iOS-volym köps program för utbildning
 

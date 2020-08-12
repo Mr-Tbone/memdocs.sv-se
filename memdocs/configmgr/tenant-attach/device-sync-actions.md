@@ -2,7 +2,7 @@
 title: Ansluta Microsoft Endpoint Manager-klientorganisation
 titleSuffix: Configuration Manager
 description: Ladda upp dina Configuration Manager-enheter till moln tjänsten och vidta åtgärder från administrations centret.
-ms.date: 07/10/2020
+ms.date: 08/11/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-core
@@ -10,12 +10,12 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: a9e97c74e4825dc49ce628b3ae176c55f4288966
-ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
+ms.openlocfilehash: 784a287176066ce34c3499ecdc91a450e2d6160c
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86210303"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127553"
 ---
 # <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions"></a><a name="bkmk_attach"></a>Microsoft Endpoint Manager-klient ansluter: synkronisering av enhet och enhets åtgärder
 <!--3555758 live 3/4/2020-->
@@ -38,88 +38,98 @@ Från och med Configuration Manager version 2002 kan du ladda upp dina Configura
 
 ## <a name="internet-endpoints"></a>Internet slut punkter
 
-- `https://aka.ms/configmgrgateway`
-- `https://*.manage.microsoft.com` <!--7424742-->
+[!INCLUDE [Internet endpoints for tenant attach](../core/plan-design/network/includes/internet-endpoints-tenant-attach.md)]
 
-## <a name="enable-device-upload"></a>Aktivera enhets uppladdning
+## <a name="enable-device-upload-when-co-management-is-already-enabled"></a><a name="bkmk_edit"></a>Aktivera enhets uppladdning när samtidig hantering redan har Aktiver ATS
 
-- Om du har aktiverat samhantering kan du [Redigera egenskaper för samhantering](#bkmk_edit) för att aktivera enhets uppladdning.
-- Om du inte har samhantering aktive rad [använder du guiden **Konfigurera samhantering** ](#bkmk_config) för att aktivera enhets uppladdning.
-   - Du kan ladda upp dina enheter utan att aktivera automatisk registrering för samhantering eller för att växla arbets belastningar till Intune.
-- Alla enheter som hanteras av Configuration Manager som har **Ja** i kolumnen **klient** kommer att överföras. Om det behövs kan du begränsa överföringen till en enda enhets samling.
+Om du har aktiverat samhantering för närvarande använder du egenskaper för samhantering för att aktivera enhets uppladdning. När samhantering inte redan har Aktiver ATS [använder du guiden **Konfigurera samhantering** ](#bkmk_config) för att aktivera enhets uppladdning i stället.
 
-### <a name="edit-co-management-properties-to-enable-device-upload"></a><a name="bkmk_edit"></a>Redigera egenskaper för samhantering för att aktivera enhets uppladdning
-
-Om du har aktiverat samhantering kan du redigera egenskaper för samhantering för att aktivera enhets uppladdning enligt anvisningarna nedan:
+När samhantering redan har Aktiver ATS redigerar du egenskaperna för samhantering för att aktivera enhets uppladdning enligt anvisningarna nedan:
 
 1. Gå till **Administration** > **Översikt** > **Molntjänster** > **Samhantering** i administrationskonsolen för Configuration Manager.
-1. Högerklicka på inställningarna för samhantering och välj **Egenskaper**.
-1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Klicka på **Använd**.
+1. I menyfliksområdet väljer du **Egenskaper** för produktions principen för samhantering.
+1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Välj **Använd**.
    - Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Om det behövs kan du begränsa överföringen till en enda enhets samling.
 1. Markera alternativet om du vill **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager** om du också vill få insikter för att optimera slut användar upplevelsen i [slut punkts analys](../../analytics/overview.md).
 
    [![Ladda upp enheter till administrations Center för Microsoft Endpoint Manager](../../analytics/media/6051638-configure-upload-configmgr.png)](../../analytics/media/6051638-configure-upload-configmgr.png#lightbox)
 1. Logga in med ditt *globala administratörskonto* när du uppmanas till det.
-1. Klicka på **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
-1. Klicka på **OK** för att stänga egenskaperna för samhantering när du har gjort dina ändringar.
+1. Välj **Ja** om du vill acceptera meddelandet om att **skapa AAD-program** . Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
+1. Välj **OK** för att avsluta egenskaperna för samhantering när du är klar med att göra ändringar.
 
 
-### <a name="use-the-configure-co-management-wizard-to-enable-device-upload"></a><a name="bkmk_config"></a>Använd guiden Konfigurera gemensam hantering för att aktivera enhets uppladdning
-Om du inte har samhantering aktive rad använder du guiden **Konfigurera samhantering** för att aktivera enhets uppladdning. Du kan ladda upp dina enheter utan att aktivera automatisk registrering för samhantering eller för att växla arbets belastningar till Intune. Aktivera enhets uppladdning genom att följa anvisningarna nedan:
+## <a name="enable-device-upload-when-co-management-isnt-enabled"></a><a name="bkmk_config"></a>Aktivera enhets uppladdning när samtidig hantering inte är aktiverat
+
+Om du inte har samhantering aktive rad använder du guiden **Konfigurera samhantering** för att aktivera enhets uppladdning. Du kan ladda upp dina enheter utan att aktivera automatisk registrering för samhantering eller för att växla arbets belastningar till Intune. Alla enheter som hanteras av Configuration Manager som har **Ja** i kolumnen **klient** kommer att överföras. Om det behövs kan du begränsa överföringen till en enda enhets samling. Om samhantering redan har Aktiver ATS i din miljö kan du [Redigera egenskaper för samhantering](#bkmk_edit) för att aktivera enhets uppladdning i stället.
+
+När samhantering inte har Aktiver ATS kan du använda instruktionerna nedan för att aktivera enhets uppladdning:
 
 1. Gå till **Administration** > **Översikt** > **Molntjänster** > **Samhantering** i administrationskonsolen för Configuration Manager.
-1. Klicka på **Konfigurera samhantering** i menyfliksområdet för att öppna guiden.
-1. På sidan **Registrering av klientorganisation** väljer du **AzurePublicCloud** som miljö. Du kan inte använda molnet Azure Government.
-1. Klicka på **Logga in**. Logga in med ditt *globala administratörskonto*.
+1. I menyfliksområdet väljer du **Konfigurera samhantering** för att öppna guiden.
+1. På sidan **Registrering av klientorganisation** väljer du **AzurePublicCloud** som miljö. Azure Government Cloud och Azure Kina 21Vianet stöds inte.
+1. Välj **Logga in.** Logga in med ditt *globala administratörskonto*.
 1. Se till att alternativet **Ladda upp till Microsoft Endpoint Manager Admin Center** är markerat på sidan **innehavaradministration** .
    - Se till att alternativet **Aktivera automatisk klient registrering för samhantering** inte är markerat om du inte vill aktivera samhantering nu. Om du vill aktivera samhantering väljer du alternativet.
    - Om du aktiverar samhantering tillsammans med enhets uppladdning får du ytterligare sidor i guiden att slutföra. Mer information finns i [Aktivera samhantering](../comanage/how-to-enable.md).
 
    [![Konfigurations guide för samhantering](./media/3555758-comanagement-wizard.png)](./media/3555758-comanagement-wizard.png#lightbox)
-1. Klicka på **Nästa** och sedan **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
+1. Välj **Nästa** och sedan **Ja** för att godkänna funktionen för att **skapa AAD-program** . Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
+     - Du kan också importera ett tidigare skapat Azure AD-program under klient kopplings etableringen (från och med version 2006). Mer information finns i avsnittet [Importera ett tidigare skapat Azure AD-program](#bkmk_aad_app) .
 1. På sidan **Konfigurera uppladdning** väljer du den rekommenderade inställningen för enhets uppladdning för **alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Om det behövs kan du begränsa överföringen till en enda enhets samling.
 1. Markera alternativet om du vill **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager** om du också vill få insikter för att optimera slut användar upplevelsen i [slut punkts analys](../../analytics/overview.md)
-1. Klicka på **Sammanfattning** för att granska dina val och klicka sedan på **Nästa**.
-1. När guiden är slutförd klickar du på **Stäng**.  
-
-
-## <a name="review-your-upload"></a><a name="bkmk_review"></a>Granska din uppladdning
-
-1. Öppna **CMGatewaySyncUploadWorker. log** från &lt; installations katalogen för ConfigMgr> \Loggar.
-1. Nästa synkroniseringstid anges av logg poster som liknar `Next run time will be at approximately: 02/28/2020 16:35:31` .
-1. Sök efter logg poster som liknar för enhets uppladdningar `Batching N records` . **N** är antalet enheter som har överförts till molnet. 
-1. Uppladdningen sker var 15: e minut för ändringar. När ändringarna har laddats upp kan det ta ytterligare 5 till 10 minuter innan klient ändringarna visas i **administrations centret för Microsoft Endpoint Manager**.
+1. Välj **Sammanfattning** för att granska ditt val och välj sedan **Nästa**.
+1. När guiden är klar väljer du **Stäng**.  
 
 ## <a name="perform-device-actions"></a>Utföra enhets åtgärder
 
 1. I en webbläsare navigerar du till`endpoint.microsoft.com`
 1. Välj **enheter** och sedan **alla enheter** för att se de överförda enheterna. Du ser **ConfigMgr** i kolumnen **hanterad av** för uppladdade enheter.
    [![Alla enheter i administrations Center för Microsoft Endpoint Manager](./media/3555758-all-devices.png)](./media/3555758-all-devices.png#lightbox)
-1. Klicka på en enhet för att läsa in sidan **Översikt** .
-1. Klicka på någon av följande åtgärder:
+1. Välj en enhet för att läsa in sidan **Översikt** .
+1. Välj någon av följande åtgärder:
    - **Synkronisera enhetsprincip**
    - **Synkronisera användarprincip**
    - **Apputvärderingscykel**
 
    [![Enhets översikt i administrations Center för Microsoft Endpoint Manager](./media/3555758-device-overview-actions.png)](./media/3555758-device-overview-actions.png#lightbox)
 
-## <a name="known-issues"></a>Kända problem
+## <a name="import-a-previously-created-azure-ad-application-optional"></a><a name="bkmk_aad_app"></a>Importera ett tidigare skapat Azure AD-program (valfritt)
+<!--6479246-->
+*(Lanseras i version 2006)*
 
-### <a name="specific-devices-dont-synchronize"></a>Vissa enheter synkroniseras inte
+Under en [ny onboarding](#bkmk_config)kan en administratör ange ett program som skapats tidigare under onboarding to klient anslutning. Dela eller Återanvänd inte Azure AD-program över flera hierarkier. Om du har flera hierarkier kan du skapa separata Azure AD-program för var och en.
 
-<!--7099564-->
-Det är möjligt att vissa enheter, som är Configuration Manager klienter, inte överförs till tjänsten.
+På sidan **klient** integrering i **guiden för konfiguration av samhantering**väljer **du om du vill importera en separat webbapp för att synkronisera Configuration Manager klient data till Microsoft Endpoint Manager administrations Center**. Med det här alternativet uppmanas du att ange följande information för din Azure AD-App:
 
-**Påverkade enheter:** Om en enhet är en distributions plats som använder samma PKI-certifikat för både distributions plats funktionerna och dess klient agent, kommer enheten inte att tas med i synkroniseringen av klient anslutningens enhet.
+- Namn på Azure AD-klient
+- Azure AD-klient-ID
+- Programnamn
+- Klient-ID
+- Hemlig nyckel
+- Förfallo datum för hemlig nyckel
+- URI för app-id
 
-**Beteende:** När du utför en klient anslutning under den här fasen utförs en fullständig synkronisering första gången. Efterföljande synkroniseringsförsök är delta i synkroniseringar. Eventuella uppdateringar av de påverkade enheterna gör att enheten tas bort från synkroniseringen.
+### <a name="azure-ad-application-permissions-and-configuration"></a>Behörigheter och konfiguration för Azure AD-program
 
-## <a name="log-files"></a>Loggfiler
-Använd följande loggar som finns på tjänst anslutnings punkten:
+Att använda ett tidigare skapat program vid registrering till klient anslutning kräver följande behörigheter:
 
-- **CMGatewaySyncUploadWorker. log**
-- **CMGatewayNotificationWorker. log**
+- Configuration Manager mikrotjänstens behörigheter:
+   - CmCollectionData. Read
+   - CmCollectionData. Write
+
+- Microsoft Graph behörigheter:
+   - Directory. Read. all [program behörighet](https://docs.microsoft.com/graph/permissions-reference#application-permissions)
+   - Directory. Read. alla [delegerade katalog behörigheter](https://docs.microsoft.com/graph/permissions-reference#directory-permissions)
+
+- Se till att **bevilja administratörs medgivande för klient organisationen** valt för Azure AD-programmet. Mer information finns i [Granting admin medgivande i Appregistreringar](https://docs.microsoft.com/azure/active-directory/manage-apps/grant-admin-consent).
+
+- Det importerade programmet måste konfigureras på följande sätt:
+   - Endast registrerat för **konton i den här organisations katalogen**. Mer information finns i [ändra vem som har åtkomst till ditt program](https://docs.microsoft.com/azure/active-directory/develop/quickstart-modify-supported-accounts#to-change-who-can-access-your-application).
+   -  Har en giltig program-ID-URI och hemlighet
+
+
 
 ## <a name="next-steps"></a>Nästa steg
 
-Mer information om klient organisationen bifoga loggfiler finns i [Felsöka klient anslutning](troubleshoot.md).
+- [Registrera Configuration Manager enheter i slut punkts analys](../../analytics/enroll-configmgr.md#bkmk_cm_enroll)
+- Information om klient organisationen bifoga loggfiler finns i [Felsöka klient anslutning](troubleshoot.md).

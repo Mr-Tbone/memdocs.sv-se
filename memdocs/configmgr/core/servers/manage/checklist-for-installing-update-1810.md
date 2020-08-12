@@ -10,12 +10,13 @@ ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7f4acb19d1b3a28a4a53b30dd7838d24eda6c260
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ROBOTS: NOINDEX
+ms.openlocfilehash: a0e20915a8f3cda71fa3b23170ad6d3a6a34a756
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723210"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126196"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Check lista för att installera uppdatering 1810 för Configuration Manager
 
@@ -31,7 +32,7 @@ För att hämta uppdateringen för version 1810 måste du använda en tjänst an
 
     -   Dmpdownloader. log kan indikera att dmpdownloader-processen väntar i ett intervall innan den söker efter uppdateringar. Starta om den **SMS_EXECUTIVE** tjänsten på plats servern för att starta om nedladdningen av uppdateringens omdistributions filer.
 
-    -   En annan vanlig hämtnings fråga inträffar när proxyserverinställningar förhindrar nedladdning från `silverlight.dlservice.microsoft.com`, `download.microsoft.com`och `go.microsoft.com`.
+    -   En annan vanlig hämtnings fråga inträffar när proxyserverinställningar förhindrar nedladdning från `silverlight.dlservice.microsoft.com` , `download.microsoft.com` och `go.microsoft.com` .
 
 Mer information om hur du installerar uppdateringar finns [i uppdateringar och underhåll i konsolen](updates.md#bkmk_inconsole).
 
@@ -126,7 +127,7 @@ Innan du installerar uppdateringen inaktiverar du alla plats underhålls aktivit
 
 Om en underhållsaktivitet för platsdatabasen körs under installationen av uppdateringen kan installationen av uppdateringen misslyckas. Innan du inaktiverar en aktivitet registrerar du schemat för aktiviteten så att du kan återställa dess konfiguration när uppdateringen har installerats.
 
-Mer information finns i [underhålls aktiviteter](maintenance-tasks.md) och [referens för underhålls aktiviteter](reference-for-maintenance-tasks.md).
+Mer information finns i [underhålls aktiviteter](maintenance-tasks.md)   och [referens för underhålls aktiviteter](reference-for-maintenance-tasks.md).
 
 #### <a name="temporarily-stop-any-antivirus-software"></a>Stoppa alla antivirus program tillfälligt 
 Innan du uppdaterar en plats måste du stoppa antivirus programmet på Configuration Manager-servrarna. <!--SMS.503481--> 
@@ -139,7 +140,7 @@ Mer information finns i [säkerhets kopiering och återställning](backup-and-r
 #### <a name="plan-for-client-piloting"></a>Planera för klient pilot   
 När du installerar en uppdatering som uppdaterar klienten kan du testa den nya klient uppdateringen i för produktion innan den distribueras och uppgraderar alla dina aktiva klienter. Om du vill utnyttja det här alternativet måste du konfigurera platsen så att den stöder automatiska uppgraderingar för för produktion innan du påbörjar installationen av uppdateringen.
 
-Mer information finns i [Uppgradera klienter](../../clients/manage/upgrade/upgrade-clients.md) och [testa klient uppgraderingar i en för produktions samling](../../clients/manage/upgrade/test-client-upgrades.md).
+Mer information finns i [Uppgradera klienter](../../clients/manage/upgrade/upgrade-clients.md)   och [testa klient uppgraderingar i en för produktions samling](../../clients/manage/upgrade/test-client-upgrades.md).
 
 #### <a name="plan-to-use-service-windows"></a>Planera att använda service fönster   
 Om du vill definiera en period under vilken uppdateringar till en plats Server kan installeras använder du Service Windows. De kan hjälpa dig att styra när platser i hierarkin installerar uppdateringen. Mer information finns i [Service Windows for Site servers](service-windows.md).
@@ -156,7 +157,7 @@ Om du vill köra en krav kontroll från konsolen går du till arbets ytan **Admi
 Mer information finns i avsnittet **köra krav kontrollen innan du installerar en uppdatering** i [innan du installerar en uppdatering i konsolen](install-in-console-updates.md#bkmk_beforeinstall).
 
 > [!IMPORTANT]  
-> När krav kontrollen körs uppdaterar processen vissa produkt käll filer som används för plats underhålls aktiviteter. När du har kört krav kontrollen men innan du installerar uppdateringen måste du därför köra **setupwpf. exe** (Configuration Manager installationen) från CD: n för att utföra en plats underhålls uppgift. Den senaste mappen på plats servern.
+> När krav kontrollen körs uppdaterar processen vissa produkt käll filer som används för plats underhålls aktiviteter. När du har kört krav kontrollen men innan du installerar uppdateringen måste du därför köra **Setupwpf.exe**   (Configuration Manager installationen) från CD: n för att utföra en plats underhålls åtgärd. Den senaste mappen på plats servern.
 
 #### <a name="update-sites"></a>Uppdatera platser   
 Du är nu redo att starta installationen av uppdateringen för hierarkin. Mer information om hur du installerar uppdateringen finns [i installera uppdateringar i konsolen](install-in-console-updates.md#bkmk_install).

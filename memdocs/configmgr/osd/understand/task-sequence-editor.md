@@ -5,17 +5,17 @@ description: Förstå hur du använder redigeraren för aktivitetssekvenser i Co
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: a4e8bb56-ee85-49fd-8b1c-c8f513cec671
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2047ae9e276ac94b633d1dc30814ed641cd34d03
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 405617277953eae61fbfce4fdb9b3a7d280aedcf
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711429"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124456"
 ---
 # <a name="use-the-task-sequence-editor"></a>Använda redigeringsprogrammet för aktivitetssekvenser
 
@@ -121,9 +121,9 @@ Använd följande procedur om du vill ändra en befintlig aktivitetssekvens:
 
         Du kan klippa ut, kopiera och klistra in en grupp eller ett steg. Högerklicka på objektet och Välj åtgärden. Du kan också använda standard kortkommandon för varje åtgärd:
 
-        - Klipp ut: **CTRL** + **X**
-        - Kopiera: **CTRL** + **+ C**
-        - Klistra in: **CTRL** + **V**
+        - Klipp ut: **CTRL**  +  **X**
+        - Kopiera: **CTRL**  +  **+ C**
+        - Klistra in: **CTRL**  +  **V**
 
     - **Ta bort ett steg eller en grupp**: Välj steget eller gruppen och välj **ta bort**.  
 
@@ -155,7 +155,7 @@ Följande typer av villkor är tillgängliga:
 - **Variabel för aktivitetssekvens**. Utvärdera det aktuella värdet för en inbyggd variabel, åtgärd, anpassad eller skrivskyddad [aktivitetssekvens](task-sequence-variables.md) i aktivitetssekvensen. Mer information finns i [steg villkor](using-task-sequence-variables.md#bkmk_access-condition).
 
     > [!NOTE]
-    > Du kan använda en mat ris variabel i det här tillståndet, men du måste ange den angivna mat ris medlemmen. `OSDAdapter0EnableDHCP` Anger till exempel om det *första* nätverkskortet aktiverar DHCP. Mer information finns i [array-variabler](using-task-sequence-variables.md#bkmk_array).
+    > Du kan använda en mat ris variabel i det här tillståndet, men du måste ange den angivna mat ris medlemmen. Anger till exempel `OSDAdapter0EnableDHCP` om det *första* nätverkskortet aktiverar DHCP. Mer information finns i [array-variabler](using-task-sequence-variables.md#bkmk_array).
 
 - **OS-version**: utvärdera operativ system versionen för enheten där aktivitetssekvensen körs. Den här listan är de allmänna OS-versioner som används i Configuration Manager. Om du vill utvärdera en mer detaljerad OS-version, till exempel en angiven version av Windows 10, använder du **frågan WMI-** villkor.
 
@@ -194,7 +194,7 @@ Om du vill återanvända villkor från ett steg till ett annat, från och med ve
 - Klistra in efter
 - Klistra in under (gäller endast kapslade villkor)
 
-Använd standard tangent bords gen vägar för att kopiera (**CTRL** + **+ C**) och klipp ut (**CTRL** + **X**). Standard kortkommandot för **CTRL** + **V** gör att **Klistra in efter** -åtgärd.
+Använd standard tangent bords gen vägar för att kopiera (**CTRL**  +  **+ C**) och klipp ut (**CTRL**  +  **X**). Standard kortkommandot för **CTRL**  +  **V** gör att **Klistra in efter** -åtgärd.
 
 Det finns också nya alternativ för att flytta upp eller ned i listan.
 
@@ -243,10 +243,10 @@ När du söker i redigerings fönstret, markeras i gult de steg som matchar Sök
 
 Kom snabbt åt de här Sök fälten och navigera bland Sök resultaten med följande kortkommandon:
 
-- **CTRL** + **F**: Ange en Sök sträng
-- **CTRL** + **O**: Välj sökalternativ för att begränsa resultaten
+- **CTRL**  +  **F**: Ange en Sök sträng
+- **CTRL**  +  **O**: Välj sökalternativ för att begränsa resultaten
 - **F3** eller **RETUR**: stega framåt genom resultaten
-- **Shift** + **F3**: steg bakåt i resultatet
+- **Shift**  +  **F3**: stega bakåt i resultatet
 
 ## <a name="see-also"></a>Se även
 

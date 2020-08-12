@@ -10,12 +10,12 @@ ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
 author: mestew
 manager: dougeby
 ms.author: mstewart
-ms.openlocfilehash: 01355230d0dc8969555740cc25a08e0b8d2967d0
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 4c96a7636902bd313f8e8868917b45d8fa49e1f7
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240481"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127145"
 ---
 # <a name="create-configuration-baselines-in-configuration-manager"></a>Skapa konfigurations bas linjer i Configuration Manager
 
@@ -84,7 +84,7 @@ Använd följande procedur för att skapa en konfigurations bas linje med hjälp
 <!--3608345-->
 *(Lanseras i version 1910)*
 
-Från och med version 1910 kan du lägga till utvärdering av anpassade konfigurations bas linjer som en bedömnings regel för efterlevnadsprinciper. När du skapar eller redigerar en konfigurations bas linje har du ett alternativ för att **utvärdera den här bas linjen som en del av utvärderingen av efterlevnadsprinciper**. När du lägger till eller redigerar en regel för efterlevnadsprinciper har du ett villkor som kallas **Inkludera konfigurerade bas linjer i utvärderingen av efterlevnadsprinciper**. För samhanterade enheter, och när du konfigurerar Intune att ta Configuration Manager utvärderings resultat för efterlevnad som en del av den övergripande kompatibilitetsstatus, skickas den här informationen till Azure AD. Du kan sedan använda den för villkorlig åtkomst till dina Office 365-resurser. Mer information finns i [villkorlig åtkomst med samhantering](../../comanage/quickstart-conditional-access.md).
+Från och med version 1910 kan du lägga till utvärdering av anpassade konfigurations bas linjer som en bedömnings regel för efterlevnadsprinciper. När du skapar eller redigerar en konfigurations bas linje har du ett alternativ för att **utvärdera den här bas linjen som en del av utvärderingen av efterlevnadsprinciper**. När du lägger till eller redigerar en regel för efterlevnadsprinciper har du ett villkor som kallas **Inkludera konfigurerade bas linjer i utvärderingen av efterlevnadsprinciper**. För samhanterade enheter, och när du konfigurerar Intune att ta Configuration Manager utvärderings resultat för efterlevnad som en del av den övergripande kompatibilitetsstatus, skickas den här informationen till Azure AD. Du kan sedan använda den för villkorlig åtkomst till dina Microsoft 365 Apps-resurser. Mer information finns i [villkorlig åtkomst med samhantering](../../comanage/quickstart-conditional-access.md).
 
 Om du vill inkludera anpassade konfigurations bas linjer som en del av utvärderingen av efterlevnadsprinciper gör du följande:
 

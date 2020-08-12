@@ -5,17 +5,17 @@ description: Använd aktivitetssekvenser i Configuration Manager för att automa
 ms.date: 07/26/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 217c8a0e-5112-420e-a325-2a6d75326290
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e1b298856edea3f81cab2e9cd5ab75af49dff51
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: dae4287b1e4a4a69209672f01f45eeaeb3b540d7
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723014"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125482"
 ---
 # <a name="create-a-task-sequence-to-install-an-os"></a>Skapa en aktivitetssekvens för att installera ett operativsystem
 
@@ -27,11 +27,11 @@ Använd aktivitetssekvenser i Configuration Manager för att automatiskt install
 
 Det finns flera scenarier för att distribuera ett operativ system till datorer i din miljö. I de flesta fall skapar du en aktivitetssekvens och väljer **Installera ett befintligt avbildnings paket** i guiden skapa aktivitetssekvens. Med det här alternativet skapas en aktivitetssekvens som installerar operativ systemet, migrerar användar inställningar, tillämpar program uppdateringar och installerar program.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 Innan du skapar en aktivitetssekvens för att installera ett operativ system måste följande krav vara på plats:
 
-#### <a name="required"></a>Krävs
+#### <a name="required"></a>Obligatorisk
 
 - En [Start avbildning](../get-started/manage-boot-images.md)  
 
@@ -70,7 +70,7 @@ Innan du skapar en aktivitetssekvens för att installera ett operativ system må
 
     - **Partitionera och formatera mål datorn installera operativ systemet**: Ange om du vill att aktivitetssekvensen ska partitionera och formatera mål datorn innan operativ systemet installeras.  
 
-    - **Produkt nyckel**: Ange produkt nyckeln för Windows, om det behövs. Du kan ange kodade volymlicensnycklar och standardproduktnycklar. Om du använder en icke-kodad produkt nyckel måste varje grupp med fem tecken avgränsas med ett streck`-`(). Till exempel: *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*  
+    - **Produkt nyckel**: Ange produkt nyckeln för Windows, om det behövs. Du kan ange kodade volymlicensnycklar och standardproduktnycklar. Om du använder en icke-kodad produkt nyckel måste varje grupp med fem tecken avgränsas med ett streck ( `-` ). Till exempel: *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*  
 
     - **Serverlicensieringsläge**: Ange att serverlicensen är **Per plats**, **Per server**eller att ingen licens har angetts. Om serverlicensen gäller **Per server** anger du också det högsta antalet serveranslutningar.  
 

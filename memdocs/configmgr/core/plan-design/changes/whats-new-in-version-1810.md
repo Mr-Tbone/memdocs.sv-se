@@ -10,12 +10,13 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f08b7449b4232d55c4be6227d23965231aa7a273
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ROBOTS: NOINDEX
+ms.openlocfilehash: a0d7f561a324d20f503b8fee3e8a869774c70d89
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546458"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128975"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Vad är nytt i version 1810 av Configuration Manager aktuella grenen
 
@@ -435,7 +436,7 @@ Följande samlade uppdateringar (4488598) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Rubrik | Date | I-konsolen |
+| ID | Rubrik | Datum | I-konsolen |
 |---------|---------|---------|---------|
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
 | [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Ja |

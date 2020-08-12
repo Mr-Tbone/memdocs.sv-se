@@ -5,17 +5,17 @@ description: Lär dig hur du felsöker problem med BitLocker-hantering i Configu
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.assetid: 134c5b50-edeb-4d60-aaca-944d26deb9ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ed8e464e0ab7c17e87e3de2bf72aa0dfb0acd071
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 0158738f77a0070835bec2385dd85c42dfd763fd
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723924"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127822"
 ---
 # <a name="troubleshoot-bitlocker"></a>Felsöka BitLocker
 
@@ -25,7 +25,7 @@ Använd informationen i den här artikeln för att felsöka problem med BitLocke
 
 ## <a name="server-error-in-self-service"></a>Server fel i självbetjäning
 
-När du försöker öppna självbetjänings portalen (`https://webserver.contoso.com/SelfService`) för första gången visas följande fel meddelande:
+När du försöker öppna självbetjänings portalen ( `https://webserver.contoso.com/SelfService` ) för första gången visas följande fel meddelande:
 
 ``` error
 Configuration Error - Server Error in '/SelfService' Application

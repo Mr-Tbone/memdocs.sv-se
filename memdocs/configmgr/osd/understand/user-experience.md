@@ -10,12 +10,12 @@ ms.assetid: 58849e40-30d5-4153-84b3-ca4af3a4f09d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5f92e76047a70f6d86406b1a364603163d902e62
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7ad20f80f4727fe18947bed05ded6e7b107fab12
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719934"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124092"
 ---
 # <a name="user-experiences-for-os-deployment"></a>Användarupplevelser för distribution av operativsystem
 
@@ -37,7 +37,7 @@ För en distribution med hög effekt kan du anpassa det meddelande som visas i S
 
 Mer information om hur du anpassar meddelandet i det här fönstret finns i [skapa ett anpassat meddelande för distributioner med hög risk](../deploy-use/manage-task-sequences-to-automate-tasks.md#create-a-custom-notification-for-high-risk-deployments).
 
-Du kan också anpassa organisationens namn längst upp i fönstret. (Exemplet ovan visar standardvärdet `IT Organization`). Ändra klient inställningen för **organisations namn** i **dator agent** gruppen. Mer information finns i [om klient inställningar](../../core/clients/deploy/about-client-settings.md#computer-agent).
+Du kan också anpassa organisationens namn längst upp i fönstret. (Exemplet ovan visar standardvärdet `IT Organization` ). Ändra klient inställningen för **organisations namn** i **dator agent** gruppen. Mer information finns i [om klient inställningar](../../core/clients/deploy/about-client-settings.md#computer-agent).
 
 <!--
 optional vs required
@@ -111,12 +111,12 @@ När aktivitetssekvensen körs visas fönstret **installations förlopp** :
 
 - Det här fönstret är alltid överst. Du kan flytta den, men du kan inte stänga eller minimera den.
 
-- Du kan anpassa organisationens namn längst upp i fönstret. (Exemplet ovan visar standardvärdet `IT Organization`). Ändra klient inställningen för **organisations namn** i **dator agent** gruppen. Mer information finns i [om klient inställningar](../../core/clients/deploy/about-client-settings.md#computer-agent).
+- Du kan anpassa organisationens namn längst upp i fönstret. (Exemplet ovan visar standardvärdet `IT Organization` ). Ändra klient inställningen för **organisations namn** i **dator agent** gruppen. Mer information finns i [om klient inställningar](../../core/clients/deploy/about-client-settings.md#computer-agent).
 
     > [!TIP]
     > Aktivitetssekvensen lagrar det här värdet i den skrivskyddade variabeln [_SMSTSOrgName](task-sequence-variables.md#SMSTSOrgName).
 
-- Du kan anpassa under rubriken. (Exemplet ovan visar standardvärdet, `Running: <task sequence name>`.) I egenskaperna för aktivitetssekvensen väljer du alternativet för att **använda anpassad text** för förlopps meddelande texten. Det får innehålla högst 255 tecken.
+- Du kan anpassa under rubriken. (Exemplet ovan visar standardvärdet, `Running: <task sequence name>` .) I egenskaperna för aktivitetssekvensen väljer du alternativet för att **använda anpassad text** för förlopps meddelande texten. Det får innehålla högst 255 tecken.
 
 - **Kör åtgärd**: den första raden visar namnet på det aktuella steget i aktivitetssekvensen. Förlopps indikatorn nedan visar den övergripande slut för ande av aktivitetssekvensen.
 
@@ -146,8 +146,7 @@ Det totala antalet steg omfattar inte följande objekt i aktivitetssekvensen:
 
 - Steg som du inaktiverar. Ett inaktiverat steg körs inte under aktivitetssekvensen.
 
-    > [!NOTE]
-    > Aktiverade steg i en inaktive rad grupp ingår fortfarande i det totala antalet.
+- Från och med version 2006 räknas inte de aktiverade stegen in i en inaktive rad grupp.<!--6448412--> I version 2002 ingår de aktiverade stegen i en inaktive rad grupp fortfarande i det totala antalet.
 
 ## <a name="task-sequence-error"></a>Fel i aktivitetssekvens
 
@@ -157,6 +156,6 @@ Om aktivitetssekvensen Miss lyckas visas fel fönstret i **aktivitetssekvensen**
 
 - Du anpassar huvud informationen på samma sätt som förlopps fönstret för aktivitetssekvensen.
 
-- Den visar namnet på aktivitetssekvensen, en felkod och ett allmänt meddelande för användare. Exempelvis: `Task sequence: Upgrade to Windows 10 Enterprise has failed with the error code (0x80004005). For more information, contact your system administrator or helpdesk operator.`
+- Den visar namnet på aktivitetssekvensen, en felkod och ett allmänt meddelande för användare. Exempel: `Task sequence: Upgrade to Windows 10 Enterprise has failed with the error code (0x80004005). For more information, contact your system administrator or helpdesk operator.`
 
 - Fönstret stängs automatiskt efter en tids gräns. Som standard är denna timeout 15 minuter. Du kan anpassa det här värdet med variabeln [SMSTSErrorDialogTimeout](task-sequence-variables.md#SMSTSErrorDialogTimeout)i aktivitetssekvensen.

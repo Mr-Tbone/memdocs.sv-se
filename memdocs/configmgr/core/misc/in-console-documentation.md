@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e7d80d2f528365e7759ce7ceb50639b0d474e329
-ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
+ms.openlocfilehash: f38e2fec40629b9ed6fc0b02f522092ce7fc2dc6
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891470"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129111"
 ---
 <!-- 
 - Feature 1357546
@@ -49,7 +49,7 @@ En granskad lista över viktiga artiklar.
 - [CMPivot](https://docs.microsoft.com/mem/configmgr/core/servers/manage/cmpivot)  
 - [Planera för BitLocker-hantering](https://docs.microsoft.com/mem/configmgr/protect/plan-design/bitlocker-management)  
 - [Microsoft Edge-hantering](https://docs.microsoft.com/mem/configmgr/apps/deploy-use/deploy-edge)  
-- [Hantera uppdateringar för Office 365-ProPlus](https://docs.microsoft.com/mem/configmgr/sum/deploy-use/manage-office-365-proplus-updates)  
+- [Hantera uppdateringar för Microsoft 365 appar](https://docs.microsoft.com/mem/configmgr/sum/deploy-use/manage-office-365-proplus-updates)  
 - [Grunderna i Configuration Manager aktuella grenen och Windows som en tjänst](https://docs.microsoft.com/mem/configmgr/core/understand/configuration-manager-and-windows-as-service)
 - [Optimera Windows 10-uppdaterings leverans med Configuration Manager](https://docs.microsoft.com/mem/configmgr/sum/deploy-use/optimize-windows-10-update-delivery)
 - [Tekniska för hands versioner](https://docs.microsoft.com/mem/configmgr/core/get-started/technical-preview)

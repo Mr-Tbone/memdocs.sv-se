@@ -10,12 +10,12 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a52b70b0a753036c506e5d515cbac048d6771295
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 1567531ed83586f47ba2f79372e0b7962c1341dc
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83879060"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128924"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Vad är nytt i version 1910 av Configuration Manager aktuella grenen
 
@@ -98,19 +98,19 @@ Mer information om de månatliga ändringarna i moln tjänsten för Station ära
 <!--3197353-->
 Vi har lagt till några betydande optimeringar i CMPivot-motorn. Nu kan du push-överföra mer av bearbetningen till ConfigMgr-klienten. Optimeringarna minskar drastiskt nätverks-och Server CPU-belastningen som krävs för att köra CMPivot-frågor. Med dessa optimeringar kan du nu gå igenom flera gigabyte av klient data i real tid. 
 
-Mer information finns i [optimeringar till CMPivot-motorn](../../servers/manage/cmpivot.md#bkmk_optimization).
+Mer information finns i [optimeringar till CMPivot-motorn](../../servers/manage/cmpivot-changes.md#bkmk_optimization).
 
 ### <a name="additional-cmpivot-entities-and-enhancements"></a>Ytterligare CMPivot-enheter och-förbättringar
 <!--5410930-->
 Vi har lagt till ett antal nya CMPivot-enheter och förbättringar av enheten för att hjälpa till med fel sökning och jakt. Vi har inkluderat följande entiteter för att fråga:
 
-- Windows-händelseloggar ([WinEvent](../../servers/manage/cmpivot.md#bkmk_WinEvent))
-- Fil innehåll ([FileContent](../../servers/manage/cmpivot.md#bkmk_File))
-- DLL-filer som lästs in av processer ([ProcessModule](../../servers/manage/cmpivot.md#bkmk_ProcessModule))
-- Azure Active Directory information ([AADStatus](../../servers/manage/cmpivot.md#bkmk_AadStatus))
-- Endpoint Protection-status ([EPStatus](../../servers/manage/cmpivot.md#bkmk_EPStatus))
+- Windows-händelseloggar ([WinEvent](../../servers/manage/cmpivot-changes.md#bkmk_WinEvent))
+- Fil innehåll ([FileContent](../../servers/manage/cmpivot-changes.md#bkmk_File))
+- DLL-filer som lästs in av processer ([ProcessModule](../../servers/manage/cmpivot-changes.md#bkmk_ProcessModule))
+- Azure Active Directory information ([AADStatus](../../servers/manage/cmpivot-changes.md#bkmk_AadStatus))
+- Endpoint Protection-status ([EPStatus](../../servers/manage/cmpivot-changes.md#bkmk_EPStatus))
 
-Den här versionen innehåller även flera [andra förbättringar](../../servers/manage/cmpivot.md#bkmk_Other) av CMPivot. Mer information finns i [CMPivot från och med version 1910](../../servers/manage/cmpivot.md#bkmk_cmpivot1910).
+Den här versionen innehåller även flera [andra förbättringar](../../servers/manage/cmpivot-changes.md#bkmk_Other) av CMPivot. Mer information finns i [CMPivot från och med version 1910](../../servers/manage/cmpivot-changes.md#bkmk_cmpivot1910).
 
 ## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
 

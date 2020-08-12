@@ -5,17 +5,17 @@ description: En teknisk referens för möjliga koder från en Configuration Mana
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: 6c28fa29-fc97-49ef-9fc3-cb062bdba908
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e8ee130929605f8087eb7fbef55e8a27618c3aed
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2cb6c17802319b0d559474fa8ff208346c2811e0
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722055"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127941"
 ---
 # <a name="non-compliance-codes"></a>Inkompatibel kod
 
@@ -34,7 +34,7 @@ Det finns olika metoder för att Visa WMI. Använd till exempel följande PowerS
 > [!TIP]
 > Om enheten är kompatibel returnerar inte det här kommandot något.
 >
-> Du kan också kontrol lera `Compliant` attributet för den här klassen, som `1` är om enheten är kompatibel.
+> Du kan också kontrol lera `Compliant` attributet för den här klassen, som är `1` om enheten är kompatibel.
 
 |Kod som inte uppfyller kraven|Orsak till inkompatibilitet|
 |--- |--- |

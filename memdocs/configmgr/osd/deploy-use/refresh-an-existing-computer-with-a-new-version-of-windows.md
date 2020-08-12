@@ -5,17 +5,17 @@ description: Du kan använda flera metoder i Configuration Manager för att part
 ms.date: 08/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: b189a346-8c0d-4870-a876-0719fbb0ab04
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9582d6840e1f750d53504da4e8e7f6bf54f44965
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: b635301d9d5bd8a0fb81771255acddb21097f23b
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723784"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124910"
 ---
 # <a name="refresh-an-existing-computer-with-a-new-version-of-windows"></a>Uppdatera en befintlig dator med en ny version av Windows
 

@@ -2,7 +2,7 @@
 title: Felsöka programinstallation
 titleSuffix: Configuration Manager
 description: Felsöka programinstallationen för Configuration Manager klient anslutning
-ms.date: 08/10/2020
+ms.date: 08/11/2020
 ms.topic: troubleshooting
 ms.prod: configuration-manager
 ms.technology: configmgr-core
@@ -10,12 +10,12 @@ ms.assetid: 75f47456-cd8d-4c83-8dc5-98b336a7c6c8
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 6960c85f8e01e3686541e537dfb4823826a77920
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: 93b793dfbc6d7d0b5f4b24db65588ee1390604e9
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88057600"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129288"
 ---
 # <a name="troubleshoot-application-installation-for-devices-uploaded-to-the-admin-center-preview"></a>Felsöka programinstallationen för enheter som har överförts till administrations centret (för hands version)
 <!--6374854, 6521921-->
@@ -60,11 +60,28 @@ När du visar eller installerar program från administrations centret för Micro
 
 **Fel meddelande:** Ett oväntat fel uppstod
 
-**Möjliga orsaker:** Oväntade fel orsakas vanligt vis av antingen [tjänst anslutnings punkt](../core/servers/deploy/configure/about-the-service-connection-point.md), [administrations tjänst](../develop/adminservice/overview.md)eller anslutnings problem.
+#### <a name="error-code-500-with-an-unexpected-error-occurred-message"></a>Felkod 500 med ett oväntat fel inträffade meddelande
+
+1. Om du ser `System.Security.SecurityException` i **AdminService. log**kontrollerar du att din User Principal Name (UPN) som identifieras av [Active Directory User Discovery](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser) inte har angetts till ett moln-UPN i stället för ett lokalt UPN. Ett tomt UPN-värde är också acceptabelt eftersom det innebär att det Active Directory identifierade domän namnet används. Om du ser enbart molnbaserad UPN (exempel: onmicrosoft.com) som inte är ett giltigt domän-UPN (contoso.com), har du ett problem och kan behöva [Ange UPN-suffixet i Active Directory](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization#add-upn-suffixes-and-update-your-users-to-them).
+1. Installera [KB4576782 – tids gränsen för program bladet är i administrations Center för Microsoft Endpoint Manager](https://support.microsoft.com/help/4576782) om du ser felet nedan i **AdminService. log**:
+   ```log 
+   System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details.
+   System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+   System.ComponentModel.Win32Exception: The wait operation timed out
+   ```
+
+#### <a name="error-code-3-with-an-unexpected-error-occurred-message"></a>Felkod 3 med ett oväntat fel inträffade meddelande
+
+Admin-tjänsten körs inte eller IIS är inte installerat. IIS måste vara installerat på en-leverantörs dator. Mer information finns i [krav för administrations tjänsten](../develop/adminservice/overview.md#prerequisites).
+
+#### <a name="other-possible-causes-of-unexpected-errors"></a>Andra möjliga orsaker till oväntade fel
+
+Oväntade fel orsakas vanligt vis av antingen [tjänst anslutnings punkt](../core/servers/deploy/configure/about-the-service-connection-point.md), [administrations tjänst](../develop/adminservice/overview.md)eller anslutnings problem.
 
 1. Kontrol lera att tjänst anslutnings punkten är ansluten till molnet med hjälp av **CMGatewayNotificationWorker. log**.
 1. Kontrol lera att den administrativa tjänsten är felfri genom att granska SMS_REST_PROVIDER-komponenten från plats komponent övervakning på den centrala platsen.
 1. IIS måste vara installerat på en-leverantörs dator. Mer information finns i [krav för administrations tjänsten](../develop/adminservice/overview.md#prerequisites).
+
 
 ### <a name="the-site-information-hasnt-yet-synchronized"></a><a name="bkmk_sync"></a>Plats informationen har ännu inte synkroniserats
 
@@ -89,20 +106,6 @@ När du visar eller installerar program från administrations centret för Micro
 **Möjlig orsak:**  Se till att den [samlade uppdateringen för Microsoft Endpoint Configuration Manager version 2002](https://support.microsoft.com/help/4560496/) och motsvarande version av konsolen är installerad. Mer information finns i [krav för att installera ett program från administrations centret](applications.md#prerequisites).
 
 ## <a name="known-issues"></a>Kända problem
-
-### <a name="unexpected-error-occurred-when-gettingapplications"></a>Ett oväntat fel uppstod när program hämtades
-
-**Scenario:** Hämtning av listan över program tar längre tid än förväntat när du kör Configuration Manager version 2002 och du ser `unexpected error occurred` .
-
-**Fel meddelande:** AdminService. log kommer att innehålla:
-
-```log 
-System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details.
-System.Data.SqlClient.SqlException: Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
-System.ComponentModel.Win32Exception: The wait operation timed out
-```
-
-**Lösning:** En lösning är för närvarande inte tillgänglig.
 
 ### <a name="application-installation-times-out-if-application-requires-restart"></a>Tids gränsen uppnåddes för program installationen om programmet kräver omstart
 

@@ -2,20 +2,20 @@
 title: Distribuera en aktivitetssekvens
 titleSuffix: Configuration Manager
 description: Använd den här informationen för att distribuera en aktivitetssekvens till datorerna i en samling.
-ms.date: 11/29/2019
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: b2abcdb0-72e0-4c70-a4b8-7827480ba5b2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 13c16e89cc75bff1ccecd03a98cd12782c419a40
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: fea9088a11310aedc95d2fdbeacdb98650eef361
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455209"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125210"
 ---
 # <a name="deploy-a-task-sequence"></a>Distribuera en aktivitetssekvens
 
@@ -146,9 +146,21 @@ Använd följande procedur för att distribuera en aktivitetssekvens till datore
 
     - **Skriv filter hantering för Windows Embedded-enheter**: den här inställningen styr installations beteendet på Windows Embedded-enheter som är aktiverade med ett Skriv filter. Välj alternativet för att genomföra ändringar vid installationens tids gräns eller under en underhålls period. När du väljer det här alternativet krävs en omstart och ändringarna sparas på enheten. Annars installeras programmet på det tillfälliga överlägget och genomförs senare. När du distribuerar en aktivitetssekvens till en Windows Embedded-enhet ser du till att enheten är medlem i en samling som har en konfigurerad underhålls period.  
 
-    - **Tillåt att aktivitetssekvensen körs för klient på Internet**: Ange om aktivitetssekvensen tillåts köras på en Internetbaserad klient. Åtgärder som kräver ett start medium, till exempel installation av ett operativ system, stöds inte med den här inställningen. Använd endast det här alternativet för allmänna program varu installationer eller skriptbaserade aktivitetssekvenser som kör åtgärder i standard operativ systemet.  
+    - **Tillåt att aktivitetssekvensen körs för klient på Internet**: Ange om aktivitetssekvensen tillåts köras på en Internetbaserad klient.
 
-        - Den här inställningen stöds för distribution av en aktivitetssekvens för Windows 10-uppgradering till Internetbaserade klienter via Cloud Management Gateway. Mer information finns i [distribuera uppgradering av Windows 10 på plats via CMG](#deploy-windows-10-in-place-upgrade-via-cmg).  
+        Den här inställningen stöds för distribution av en aktivitetssekvens för Windows 10-uppgradering på plats till Internetbaserade klienter via Cloud Management Gateway (CMG). Mer information finns i [distribuera uppgradering av Windows 10 på plats via CMG](#deploy-windows-10-in-place-upgrade-via-cmg).
+
+        Från och med version 2006 kan du distribuera en aktivitetssekvens med en start avbildning till en enhet som kommunicerar via CMG. Användaren måste starta aktivitetssekvensen från Software Center.<!--6997525-->
+
+        > [!NOTE]
+        > När en Azure Active Directory (Azure AD)-ansluten klient kör en aktivitetssekvens för operativ Systems distribution kommer klienten i det nya operativ systemet inte att ansluta automatiskt till Azure AD. Även om den inte är Azure AD-ansluten, hanteras klienten fortfarande.
+        >
+        > När du kör en aktivitetssekvens för operativ system distribution på en Internetbaserad klient, som antingen är Azure AD-ansluten eller använder tokenbaserad autentisering, måste du ange egenskapen **CCMHOSTNAME** i steget [Installera Windows och ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) .
+
+        I version 2002 och tidigare stöds inte åtgärder som kräver ett start medium med den här inställningen. Använd endast det här alternativet för allmänna program varu installationer eller skriptbaserade aktivitetssekvenser som kör åtgärder i standard operativ systemet.
+
+        > [!NOTE]
+        > Starta aktivitetssekvensen från Software Center för alla Internetbaserade scenarier för aktivitetssekvenser. De stöder inte Windows PE-, PXE-eller aktivitetssekvens-media.
 
 8. På sidan **aviseringar** anger du de aviserings inställningar som du vill använda för den här distributionen av aktivitetssekvensen.  
 

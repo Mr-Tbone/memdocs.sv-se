@@ -5,17 +5,17 @@ description: Använda en aktivitetssekvens för att automatiskt uppgradera från
 ms.date: 07/13/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 84e6ea21f2bb9627ae6b40c62f8f856fb426bdaf
-ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
+ms.openlocfilehash: 907c36b6f06bbf4fbbabb9ee1b2df6cadb0acb75
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86384900"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125465"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Skapa en aktivitetssekvens för att uppgradera ett operativ system i Configuration Manager
 
@@ -63,7 +63,7 @@ Om du vill uppgradera operativ systemet på klienter skapar du en aktivitetssekv
 
     - **Versions index**: om det finns flera tillgängliga OS Edition-index i paketet väljer du det önskade versions indexet. Som standard väljs det första indexet i guiden.  
 
-    - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck ( `-` ). Här är ett exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
+    - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck ( `-` ). Till exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
 
         > [!Note]  
         > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
@@ -124,7 +124,7 @@ Om det returnerar några resultat körs enheten på Wi-Fi. Annars är enheten an
 
 Lägg till steg i den här gruppen för att ta bort alla program som inte är kompatibla med den här versionen av Windows 10. Metoden för att avinstallera ett program varierar.  
 
-Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Exempel:
+Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Till exempel:
 
 `msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`  
 

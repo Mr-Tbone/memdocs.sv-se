@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 8bfd535c93cb9f1dcfc42705f3cce61874dfe226
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 8ea95a04977038514c00f0199df42c8070e813c3
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724421"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127662"
 ---
 # <a name="integrate-with-windows-update-for-business"></a>Integrera med Windows Update för företag
 
@@ -38,7 +38,7 @@ Windows Update for Business (WUfB) gör att du kan hålla Windows 10-baserade en
 
 - Övergripande Endpoint Protection rapportering för Defender baserat på uppdateringens kompatibilitetsstatus returnerar inte korrekta resultat på grund av de data som saknas.  
 
-- Configuration Manager kan inte distribuera Microsoft-uppdateringar, till exempel Office, IE och Visual Studio till klienter som är anslutna till WUfB för att ta emot uppdateringar.  
+- Configuration Manager kan inte distribuera Microsoft-uppdateringar, till exempel Microsoft 365 appar, IE och Visual Studio till klienter som är anslutna till WUfB för att ta emot uppdateringar.  
 
 - Configuration Manager kan fortfarande distribuera uppdateringar från tredje part som publiceras i WSUS och hanteras via Configuration Manager till klienter som är anslutna till WUfB för att ta emot uppdateringar. Om du inte vill att uppdateringar från tredje part ska installeras på klienter som ansluter till WUfB inaktiverar du klient inställningen [Aktivera program uppdateringar på klienter](../../core/clients/deploy/about-client-settings.md#software-updates).
 
@@ -70,7 +70,7 @@ Använd följande procedur för att identifiera klienter som använder WUfB för
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Konfigurera Windows Update för principer för avstängning av företag
 <!-- 1290890 -->
-Från och med Configuration Manager version 1706 kan du konfigurera uppskjutnings principer för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag. Du kan hantera uppskjutnings principerna i noden nya **Windows Update för affärs principer** under **program varu bibliotek** > **Windows 10-Underhåll**.
+Från och med Configuration Manager version 1706 kan du konfigurera uppskjutnings principer för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag. Du kan hantera uppskjutnings principerna i noden nya **Windows Update för affärs principer** under **program varu bibliotek**  >  **Windows 10-Underhåll**.
 
 > [!NOTE]
 > Från och med Configuration Manager version 1802 kan du ange regler för avstängning för Windows Insider. <!--507201-->  
@@ -83,7 +83,7 @@ Mer information om Windows Insider program finns i [komma igång med Windows Ins
 
 #### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Så här skapar du en princip för avstängning av Windows Update för företag
 
-1. I **program varu biblioteket** > **Windows 10 Servicing** > **Windows Update for Business policies**
+1. I **program varu biblioteket**  >  **Windows 10 Servicing**  >  **Windows Update for Business policies**
 1. På fliken **Start** går du till gruppen **skapa** och väljer **skapa Windows Update för företag** för att öppna guiden skapa Windows Update för företag-princip.
 1. På sidan **Allmänt** anger du ett namn och en beskrivning för principen.
 1. På sidan **regler för avstängning** anger du om du vill skjuta upp eller pausa funktions uppdateringar. Funktionsuppdateringarna är för det mesta nya funktioner i Windows. När du har konfigurerat inställningen **gren beredskaps nivå** kan du definiera om, och hur länge, du vill skjuta upp att ta emot funktions uppdateringar efter deras tillgänglighet från Microsoft.
@@ -105,7 +105,7 @@ Mer information om Windows Insider program finns i [komma igång med Windows Ins
 
 #### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Så här distribuerar du en princip för avstängning av Windows Update för företag
 
-1. I **program varu biblioteket** > **Windows 10 Servicing** > **Windows Update for Business policies**
+1. I **program varu biblioteket**  >  **Windows 10 Servicing**  >  **Windows Update for Business policies**
 1. På fliken **Start** går du till gruppen **distribution** och väljer **distribuera Windows Update for Business-princip**.
 1. Konfigurera följande inställningar:
     - **Konfigurations princip som ska distribueras**: välj den Windows Update för företags princip som du vill distribuera.

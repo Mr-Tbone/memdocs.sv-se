@@ -2,7 +2,7 @@
 title: Stöd för Windows 10
 titleSuffix: Configuration Manager
 description: Lär dig mer om de Windows 10-versioner som stöds som klienter eller för OSD med Configuration Manager
-ms.date: 05/27/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a67a22f788af39dacb9f3a39e91e0f28444c6988
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 6a30fc55fb4129b8ea3493b76fd6871a2a62f881
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83879064"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126747"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Stöd för Windows 10 i Configuration Manager  
 
@@ -26,7 +26,7 @@ Lär dig mer om de Windows 10-versioner som Configuration Manager stöder, inklu
 - [Windows 10 som en Configuration Manager-klient](#windows-10-as-a-client)
 - [Windows Assessment and Deployment Kit (ADK) för Windows 10](#windows-10-adk)
 
-> [!Tip]
+> [!TIP]
 > Windows Server-versioner som en-klient stöds på samma sätt som den associerade Windows 10-versionen. Windows Server 2016 är till exempel samma versions version som Windows 10 LTSB 2016 och Windows Server version 1803 är samma version som Windows 10 version 1803.
 >
 > Mer information om Windows Server som ett plats system finns i [operativ system som stöds för Configuration Manager plats system servrar](supported-operating-systems-for-site-system-servers.md#bkmk_core).
@@ -39,7 +39,7 @@ En Configuration Manager-version sjunker från matrisen när [stöd för den ver
 
 - Den senaste versionen av Configuration Manager aktuella grenen tar emot både säkerhets uppdateringar och viktiga uppdateringar, som kan innehålla korrigeringar för problem med Windows 10-versioner. När Microsoft släpper en ny version av Configuration Manager aktuella grenen, tar tidigare versioner bara emot säkerhets uppdateringar. Mer information finns i [stöd för Configuration Manager aktuella gren versioner](../../servers/manage/current-branch-versions-supported.md).  
 
-    > [!Note]  
+    > [!NOTE]
     > Det bästa sättet att hålla sig uppdaterad med Windows 10 är att hålla dig uppdaterad med Configuration Manager. Mer information finns i [Configuration Manager och Windows som en tjänst](../../understand/configuration-manager-and-windows-as-service.md).  
 
 - Den här informationen kompletterar [operativ system som stöds för klienter och enheter](supported-operating-systems-for-clients-and-devices.md).  
@@ -48,21 +48,22 @@ En Configuration Manager-version sjunker från matrisen när [stöd för den ver
 
 I följande tabell visas de versioner av Windows 10 som du kan använda som en klient med olika versioner av Configuration Manager.
 
-| Windows 10-version | ConfigMgr 1810 | ConfigMgr 1902 | ConfigMgr 1906 | ConfigMgr 1910 | ConfigMgr 2002 |
-|---------------------|-----|-----|-----|-----|-----|
-| **Enterprise 2015-LTSB** <!--10/14/2025-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **Enterprise 2016-LTSB** <!--10/13/2026-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **Enterprise LTSC 2019** <!--01/09/2029-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1709**<br>(10.0.16299)   <!--10/13/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1803**<br>(10.0.17134)   <!--11/10/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1809**<br>(10.0.17763)   <!--05/11/2021-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1903**<br>(10.0.18362)   <!--12/08/2020-->   | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **1909**<br>(10.0.18363)   <!--05/10/2022-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **2004**<br>(10.0.19041)   <!--??/??/2021-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) |
+| Windows 10-version | ConfigMgr 1810 | ConfigMgr 1902 | ConfigMgr 1906 | ConfigMgr 1910 | ConfigMgr 2002 | ConfigMgr 2006 |
+|---------------------|-----|-----|-----|-----|-----|-----|
+| **1709**<br>(10.0.16299)   <!--10/13/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **1803**<br>(10.0.17134)   <!--11/10/2020-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **1809**<br>(10.0.17763)   <!--05/11/2021-->   | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **1903**<br>(10.0.18362)   <!--12/08/2020-->   | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **1909**<br>(10.0.18363)   <!--05/10/2022-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
+| **2004**<br>(10.0.19041)   <!--12/14/2021-->   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 
-<!-- lifecycle reference: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet -->
+Alla versioner av Configuration Manager aktuella grenen som stöds för närvarande stöder följande utgåvor av Windows 10 LTSB/LTSC:
 
-Mer information om Windows-livscykel finns i [fakta bladet för Windows-livscykel](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)
+- **Enterprise 2015-LTSB** <!--10/14/2025-->
+- **Enterprise 2016-LTSB** <!--10/13/2026-->
+- **Enterprise LTSC 2019** <!--01/09/2029-->
+
+Mer information om Windows-livscykel finns i [fakta bladet Windows Lifecycle](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 | Nyckel |
 |--|
@@ -107,13 +108,13 @@ När du distribuerar operativ system med Configuration Manager är Windows ADK e
 
 I följande tabell visas de versioner av Windows 10 ADK som du kan använda med olika versioner av Configuration Manager.
 
-| Windows 10 ADK-version  | ConfigMgr 1810 | ConfigMgr 1902 | ConfigMgr 1906 | ConfigMgr 1910 | ConfigMgr 2002 |
-|--------------------|-----|-----|-----|-----|-----|
-| **1709**<br>(10.1.16299) | ![Stöds inte](media/Red_X.png)   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) |
-| **1803**<br>(10.1.17134) | ![Bakåtkompatibla](media/blue_compat.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) |
-| **1809**<br>(10.1.17763) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Stöds inte](media/Red_X.png) |
-| **1903**<br>(10.1.18362) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
-| **2004**<br>(10.1.19041) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) |
+| Windows 10 ADK-version  | ConfigMgr 1810 | ConfigMgr 1902 | ConfigMgr 1906 | ConfigMgr 1910 | ConfigMgr 2002 | ConfigMgr 2006 |
+|--------------------|-----|-----|-----|-----|-----|-----|
+| **1709**<br>(10.1.16299) | ![Stöds inte](media/Red_X.png)   | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) |
+| **1803**<br>(10.1.17134) | ![Bakåtkompatibla](media/blue_compat.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) |
+| **1809**<br>(10.1.17763) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Bakåtkompatibla](media/blue_compat.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) |
+| **1903**<br>(10.1.18362) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) | ![Bakåtkompatibla](media/blue_compat.png) |
+| **2004**<br>(10.1.19041) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds inte](media/Red_X.png) | ![Stöds](media/green_check.png) | ![Stöds](media/green_check.png) |
 
 |Nyckel|
 |--|

@@ -5,17 +5,17 @@ description: I Configuration Manager kan du läsa om hur du hanterar de Windows 
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 76e0fd3ad8ceaecb43d2a61c3abe15accda5e5d8
-ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
+ms.openlocfilehash: e68a3274a32d28ac0b4ad2a611c59870ee338472
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87912378"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124549"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Hantera start avbildningar med Configuration Manager
 
@@ -80,11 +80,15 @@ När en start avbildning baseras på en annan version av Windows ADK som är ins
 
 Under plats installationen lägger Configuration Manager automatiskt till Start avbildningar som baseras på en WinPE-version från den version av Windows ADK som stöds. Beroende på vilken version av Configuration Manager kan du lägga till Start avbildningar baserat på en annan WinPE-version än den version av Windows ADK som stöds. Ett fel inträffar när du försöker lägga till en start avbildning som innehåller en version av WinPE som inte stöds. Följande lista är de Windows ADK-och WinPE-versioner som stöds för närvarande:
 
-| Windows-typ | Versioner som stöds |
-|--------------|--------------------|
-| Windows ADK-version | Windows ADK för Windows 10 |
-| Windows PE-versioner för start avbildningar som går att anpassa från Configuration Manager-konsolen | Windows PE 10 |
-| Windows PE-versioner som stöds för start avbildningar som *inte kan anpassas* från Configuration Manager-konsolen | – Windows PE 3,1<sup>[Anmärkning 1](#bkmk_note1)</sup> <br> – Windows PE 5 |
+- Windows ADK-version: Windows ADK för Windows 10
+
+- Windows PE-versioner för start avbildningar som går att anpassa från Configuration Manager-konsolen: Windows PE 10
+
+- Windows PE-versioner som stöds för start avbildningar som *inte kan anpassas* från Configuration Manager-konsolen
+
+  - Windows PE 3,1<sup>[Anmärkning 1](#bkmk_note1)</sup>
+
+  - Windows PE 5
 
 Använd exempelvis Configuration Manager-konsolen för att anpassa start avbildningar baserade på Windows PE 10 från Windows ADK för Windows 10. För en start avbildning som baseras på Windows PE 5, anpassar du den från en annan dator med hjälp av DISM-versionen från Windows ADK för Windows 8. Lägg sedan till den anpassade Start avbildningen i Configuration Manager-konsolen. Mer information finns i följande artiklar:
 

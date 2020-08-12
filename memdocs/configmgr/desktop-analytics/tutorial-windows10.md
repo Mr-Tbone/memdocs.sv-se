@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 15cf7f3621f25a82f0e16d5275369ec93225bbf7
-ms.sourcegitcommit: 034226b5a60de49a75c7b54e856814f81c03a112
+ms.openlocfilehash: fc4309d3d09cd35c17b23bc46dcb1a28d210aa8e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86422826"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125754"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Självstudie: distribuera Windows 10 till pilot
 
@@ -30,7 +30,7 @@ I den här guiden får du lära dig att:
 > * Skapa en distributions plan för Skriv bords analys för Windows 10  
 > * Använd Configuration Manager för att distribuera Windows 10 till pilot gruppen  
 
-Om du inte har en Azure-prenumeration kan du skapa ett [kostnadsfritt konto](https://azure.microsoft.com/free) innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
+Om du inte har någon Azure-prenumeration kan du skapa ett [kostnadsfritt konto](https://azure.microsoft.com/free) innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
 
 Skriv bords analys använder en *Log Analytics arbets yta* i din Azure-prenumeration. En arbetsyta är i grunden en container som innehåller kontoinformation och enkel konfigurationsinformation för kontot. Mer information finns i [hantera arbets ytor](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access?toc=/azure/azure-monitor/toc.json).
 
@@ -56,7 +56,7 @@ Innan du börjar den här självstudien måste du kontrol lera att du har följa
 
     - Configuration Manager-klient version 1902 med Samlad uppdatering (4500571) eller senare  
 
-- Affärs godkännande för att konfigurera Windows-diagnostikdata till **förbättrad (begränsad)** på pilot enheterna  
+- Affärs godkännande för att konfigurera Windows-diagnostikdata till **valfri (begränsad)** på pilot enheterna  
 
     Mer information finns i [Sekretess för Desktop Analytics](privacy.md).
 
@@ -193,7 +193,7 @@ Installera Configuration Manager version 1902 Samlad uppdatering (4500571) för 
 
     - **Kommersiellt ID**: det här värdet ska automatiskt fyllas i med ORGANISATIONens ID  
 
-    - **Windows 10-diagnostisk datanivå**: Välj minst **utökad (begränsad)**  
+    - **Windows 10-diagnostisk data nivå**: Välj minst **valfritt (begränsat)**  
 
     - **Tillåt enhets namn i diagnostikdata**: Välj **Aktivera**  
   
@@ -298,7 +298,7 @@ Använd den här proceduren för att distribuera Windows 10 i Configuration Mana
 
 2. Välj **Lägg till uppgraderings paket för operativ system**i gruppen **skapa** på fliken **Start** i menyfliksområdet. Den här åtgärden startar guiden Lägg till uppgradering av operativ system.  
 
-3. På sidan **data källa** anger du nätverks **Sök vägen** till installationskällfilerna för UPPGRADERINGS paketet för operativ systemet. Ett exempel är `\\server\share\path`.  
+3. På sidan **data källa** anger du nätverks **Sök vägen** till installationskällfilerna för UPPGRADERINGS paketet för operativ systemet. Till exempel `\\server\share\path`.  
 
     > [!NOTE]  
     > Installations källorna innehåller setup.exe och andra filer och mappar för att installera operativ systemet.  

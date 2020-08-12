@@ -1,8 +1,8 @@
 ---
-title: Synkronisera Office 365-uppdateringar utan Internet anslutning
+title: Synkronisera uppdateringar av Microsoft 365 appar utan Internet anslutning
 titleSuffix: Configuration Manager
-description: Synkronisera Office 365-uppdateringar på den översta nivån för program uppdaterings platsen som är frånkopplad från Internet.
-ms.date: 04/21/2020
+description: Synkronisera uppdateringar av Microsoft 365-appar på den översta program uppdaterings platsen som är frånkopplad från Internet.
+ms.date: 08/11/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -10,105 +10,105 @@ ms.assetid: a8fa7e7a-bf55-42de-b0c2-c56777dc1508
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 3627d2f7772b7b9e133d742b0ee4f94dba6e457a
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: 4739703436d7feec7c4c899e60b33d38ce28babf
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110363"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125737"
 ---
-# <a name="synchronize-office-365-updates-from-a-disconnected-software-update-point"></a><a name="bkmk_O365"></a>Synkronisera Office 365-uppdateringar från en frånkopplad program uppdaterings plats
+# <a name="synchronize-microsoft-365-apps-updates-from-a-disconnected-software-update-point"></a><a name="bkmk_O365"></a>Synkronisera uppdateringar av Microsoft 365 appar från en frånkopplad program uppdaterings plats
 
 *Gäller för: Configuration Manager (aktuell gren)*
 <!--4065163-->
-Från och med Configuration Manager version 2002 kan du använda ett verktyg för att importera Office 365-uppdateringar från en ansluten WSUS-server till en frånkopplad Configuration Manager-miljö. Tidigare när du exporterade och importerade metadata för program som har uppdaterats i frånkopplade miljöer kunde du inte distribuera Office 365-uppdateringar. Office 365-uppdateringar kräver ytterligare metadata som hämtats från ett Office API och Office CDN, vilket inte är möjligt för frånkopplade miljöer.
+Från och med Configuration Manager version 2002 kan du använda ett verktyg för att importera uppdateringar av Microsoft 365 appar från en ansluten WSUS-server till en frånkopplad Configuration Manager-miljö. Tidigare när du exporterade och importerade metadata för program som har uppdaterats i frånkopplade miljöer kunde du inte distribuera uppdateringar av Microsoft 365 appar. Uppdateringar för Microsoft 365-appar kräver ytterligare metadata som hämtats från ett Office API och Office CDN, vilket inte är möjligt för frånkopplade miljöer.
 
 > [!Note]
 > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - En ansluten WSUS-server med Internet som kör minst Windows Server 2012.
 - WSUS-servern behöver anslutning till följande två Internet slut punkter:
    - `officecdn.microsoft.com`
    - `config.office.com`
 - Kopiera verktyget OfflineUpdateExporter och dess beroenden till den Internet anslutna WSUS-servern.
-  - Verktyget och dess beroenden finns i katalogen ** &lt;ConfigMgrInstallDir>/tools/offlineupdateexporter** .
+  - Verktyget och dess beroenden finns i katalogen ** &lt; ConfigMgrInstallDir>/tools/offlineupdateexporter** .
 - Användaren som kör verktyget måste vara en del av gruppen **WSUS-administratörer** .
-- Katalogen som har skapats för att lagra Office-uppdateringarnas metadata och innehåll måste ha lämpliga åtkomst kontrol listor (ACL: er) för att skydda filerna.
+- Katalogen som har skapats för att lagra Microsoft 365 appar uppdatera metadata och innehåll bör ha lämpliga åtkomst kontrol listor (ACL: er) för att skydda filerna.
     - Katalogen måste också vara tom.
 - Data som flyttas från WSUS-servern online till den frånkopplade miljön bör flyttas på ett säkert sätt.
 
 > [!IMPORTANT]
-> Innehållet kommer att hämtas för alla Office 365-språk. Varje uppdatering kan ha cirka 10 GB innehåll.
+> Innehållet kommer att hämtas för alla Microsoft 365-programmeringsspråk. Varje uppdatering kan ha cirka 10 GB innehåll.
 
-## <a name="synchronize-then-decline-unneeded-office-365-updates"></a>Synkronisera och Avböj sedan onödiga Office 365-uppdateringar
+## <a name="synchronize-then-decline-unneeded-microsoft-365-apps-updates"></a>Synkronisera sedan neka onödiga Microsoft 365 uppdateringar av appar
 
 1. Öppna WSUS-konsolen på din Internet-anslutna WSUS.
 1. Välj **alternativ** **och sedan produkter och klassificeringar**.
-1. På fliken **produkter** väljer du **Office 365-klient** och väljer **uppdateringar** på fliken **klassificeringar** . [ ![produkter och klassificeringar för Office 365-uppdateringar i WSUS](./media/4065163-o365-updates-product-classification.png)](./media/4065163-o365-updates-product-classification.png#lightbox)
-1. Gå till **synkroniseringar** och välj **Synkronisera nu** för att hämta Office 365-uppdateringarna till WSUS.
-1. När synkroniseringen är klar avvisar du eventuella Office 365-uppdateringar som du inte vill distribuera med Configuration Manager. Du behöver inte godkänna Office 365-uppdateringar så att de kan laddas ned.  
-   - Om du avböjer oönskade Office 365-uppdateringar i WSUS hindras de inte från att exporteras under en WsusUtil. exe-export, men OfflineUpdateExporter-verktyget stoppas från att hämta innehållet för dem.
-   - Verktyget OfflineUpdateExporter hämtar uppdateringar av Office 365-uppdateringar åt dig. Andra produkter måste fortfarande godkännas för nedladdning om du exporterar uppdateringar för dem.
-    - Skapa en [ny uppdaterings vy i WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/viewing-and-managing-updates#to-create-a-new-update-view-on-wsus) för att enkelt se och avböja onödiga Office 365-uppdateringar i WSUS.
-1. Om du godkänner andra produkt uppdateringar för hämtning och export väntar du tills innehålls hämtningen har slutförts innan du kör WsusUtil. exe exportera och kopierar innehållet i mappen WSUSContent. Mer information finns i avsnittet om att [Synkronisera program uppdateringar från en frånkopplad program uppdaterings plats](synchronize-software-updates-disconnected.md)
+1. På fliken **produkter** väljer du **Office 365-klient** och väljer **uppdateringar** på fliken **klassificeringar** . [ ![ produkter och klassificeringar för uppdateringar av Microsoft 365 appar i WSUS](./media/4065163-o365-updates-product-classification.png)](./media/4065163-o365-updates-product-classification.png#lightbox)
+1. Gå till **synkroniseringar** och välj **Synkronisera nu** för att hämta uppdateringar för Microsoft 365 appar till WSUS.
+1. När synkroniseringen är klar avvisar du eventuella uppdateringar av Microsoft 365 appar som du inte vill distribuera med Configuration Manager. Du behöver inte godkänna uppdateringar av Microsoft 365 appar för att de ska kunna laddas ned.  
+   - Om du avböjer oönskade uppdateringar av Microsoft 365 appar i WSUS så hindras de inte från att exporteras under en WsusUtil.exe export, men den stoppar OfflineUpdateExporter-verktyget från att hämta innehållet för dem.
+   - OfflineUpdateExporter-verktyget hämtar uppdateringar för Microsoft 365 appar åt dig. Andra produkter måste fortfarande godkännas för nedladdning om du exporterar uppdateringar för dem.
+    - Skapa en [ny uppdaterings vy i WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/viewing-and-managing-updates#to-create-a-new-update-view-on-wsus) för att enkelt se och neka onödiga Microsoft 365 uppdateringar av appar i WSUS.
+1. Om du godkänner andra produkt uppdateringar för hämtning och export väntar du tills innehålls hämtningen har slutförts innan du kör WsusUtil.exe exportera och kopiera innehållet i mappen WSUSContent. Mer information finns i avsnittet om att [Synkronisera program uppdateringar från en frånkopplad program uppdaterings plats](synchronize-software-updates-disconnected.md)
 
-## <a name="exporting-the-office-365-updates"></a>Exportera Office 365-uppdateringar
+## <a name="exporting-the-microsoft-365-apps-updates"></a>Exportera uppdateringar för Microsoft 365-appar
 
 1. Kopiera mappen OfflineUpdateExporter från Configuration Manager till den anslutna Internet-WSUS-servern.
-    - Verktyget och dess beroenden finns i katalogen ** &lt;ConfigMgrInstallDir>/tools/offlineupdateexporter** .
-1. Från en kommando tolk på den Internet anslutna WSUS-servern kör du verktyget med följande användning: **OfflineUpdateExporter. exe-O-D &lt;mål Sök väg>**
+    - Verktyget och dess beroenden finns i katalogen ** &lt; ConfigMgrInstallDir>/tools/offlineupdateexporter** .
+1. Från en kommando tolk på den Internet anslutna WSUS-servern kör du verktyget med följande användning: **OfflineUpdateExporter.exe-O-D &lt; mål sök väg>**
 
    |OfflineUpdateExporter-parameter|Beskrivning|
    |---|---|
-   |**-O**|  **-Kontor**. Anger att produkten för uppdaterings export är Office 365|
+   |**-O**|  **-Kontor**. Anger att produkten för uppdaterings export är Office 365 eller Microsoft 365 appar|
    |**-D**|**-Destination**. Målet är en obligatorisk parameter och hela sökvägen till målmappen behövs.|
 
    - **OfflineUpdateExporter** -verktyget gör följande:
       - Ansluter till WSUS
-      - Läser Office 365-uppdateringens metadata i WSUS
-      - Laddar ned innehållet och eventuella ytterligare metadata som krävs av Office 365-uppdateringar till målmappen
+      - Läser Microsoft 365 appar uppdatera metadata i WSUS
+      - Laddar ned innehållet och eventuella ytterligare metadata som krävs av Microsoft 365 appar uppdateringar till målmappen
 
-1. Gå till den mapp som innehåller WsusUtil. exe i kommando tolken på den Internet-anslutna WSUS-servern. Som standard finns verktyget i%*ProgramFiles*% \ Update Services\Tools. Om verktyget exempelvis finns på standardplatsen skriver du **cd %ProgramFiles%\Update Services\Tools**.
+1. I kommando tolken på den Internet anslutna WSUS-servern navigerar du till mappen som innehåller WsusUtil.exe. Som standard finns verktyget i%*ProgramFiles*% \ Update Services\Tools. Om verktyget exempelvis finns på standardplatsen skriver du **cd %ProgramFiles%\Update Services\Tools**.
    - Om du använder Windows Server 2012 kontrollerar du att [KB2819484](https://support.microsoft.com/help/2819484/cab-file-that-is-exported-by-using-the-wsusutil-exe-command-is-display) är installerat på WSUS-servrarna.
    - Användaren som kör WsusUtil-verktyget måste vara medlem i den lokala gruppen Administratörer på-servern.
 
 1. Skriv följande för att exportera metadata för program uppdateringar till en GZIP-fil:  
 
-    **WsusUtil. exe export**  *PackageName*  *logfile*  
+    **WsusUtil.exe exportera***PackageName*-*loggfil*      
 
-    Ett exempel:  
+    Till exempel:  
 
-    **WsusUtil. exe export export. xml. gz export. log**
+    **WsusUtil.exe exportera export.xml. gz export. log**
 
-1. Kopiera filen **export. xml. gz** till WSUS-servern på den översta nivån på det frånkopplade nätverket.
+1. Kopiera filen **export.xml. gz** till WSUS-servern på den översta nivån på det frånkopplade nätverket.
 1. Om du har godkänt uppdateringar för andra produkter kopierar du innehållet i mappen WSUSContent till den mappade mappen WSUSContent i den översta nivån.
 1. Kopiera målmappen som används för **OfflineUpdateExporter** till den översta nivån Configuration Manager plats Server på det frånkopplade nätverket.
 
-## <a name="import-the-office-365-updates"></a>Importera Office 365-uppdateringar
+## <a name="import-the-microsoft-365-apps-updates"></a>Importera uppdateringar för Microsoft 365 appar
 
-1. På den frånkopplade WSUS-servern på den översta nivån importerar du metadata för uppdateringen från **export. xml. gz** som du genererade på den Internet anslutna WSUS-servern.
+1. På den frånkopplade WSUS-servern på den översta nivån importerar du metadata för uppdateringen från den **export.xml. gz** som du genererade på den Internet anslutna WSUS-servern.
    
-    Ett exempel:  
+    Till exempel:  
 
-    **WsusUtil. exe import export. xml. gz import. log**
+    **WsusUtil.exe importera export.xml. gz import. log**
     
-    Som standard finns verktyget WsusUtil. exe i%*ProgramFiles*% \ Update Services\Tools.
+    Som standard finns WsusUtil.exe-verktyget i%*ProgramFiles*% \ Update Services\Tools.
 
-1. När importen är klar måste du konfigurera en plats kontroll egenskap på den frånkopplade Configuration Manager plats servern på den översta nivån. Den här konfigurations ändringen pekar Configuration Manager innehållet för Office 365. Ändra egenskapens konfiguration:
+1. När importen är klar måste du konfigurera en plats kontroll egenskap på den frånkopplade Configuration Manager plats servern på den översta nivån. Den här konfigurations ändringen pekar Configuration Manager till innehållet för Microsoft 365 appar. Ändra egenskapens konfiguration:
    1. Kopiera [PowerShell-skriptet O365OflBaseUrlConfigured](#bkmk_o365_script) till den översta nivån frånkopplade Configuration Manager plats servern.
-   1. Ändra `"D:\Office365updates\content"` till den fullständiga sökvägen till den kopierade katalogen som innehåller det Office-innehåll och metadata som genererats av OfflineUpdateExporter.
+   1. Ändra `"D:\Office365updates\content"` till den fullständiga sökvägen till den kopierade katalogen som innehåller Microsoft 365 Apps innehåll och metadata som genererats av OfflineUpdateExporter.
       > [!IMPORTANT]
       > Endast lokala sökvägar fungerar för egenskapen O365OflBaseUrlConfigured.
    1. Spara skriptet som`O365OflBaseUrlConfigured.ps1`
-   1. Kör `.\O365OflBaseUrlConfigured.ps1`på en upphöjd PowerShell-period på den frånkopplade Configuration Manager plats servern på den översta nivån.
+   1. Kör på en upphöjd PowerShell-period på den frånkopplade Configuration Manager plats servern på den översta nivån `.\O365OflBaseUrlConfigured.ps1` .
    1. Starta om **SMS_EXECUTIVE** -tjänsten på plats servern.
-1. I **Configuration Manager** -konsolen navigerar du till **Administration** > **plats konfiguration** > **platser**.
-1. Högerklicka på platsen på den högsta nivån och välj sedan **Konfigurera plats komponenter** > **program uppdaterings plats**.
+1. I **Configuration Manager** -konsolen navigerar du till **Administration**  >  **plats konfiguration**  >  **platser**.
+1. Högerklicka på platsen på den högsta nivån och välj sedan **Konfigurera plats komponenter**  >  **program uppdaterings plats**.
 1. På fliken **klassificeringar** väljer du *uppdateringar*. På fliken **produkter** väljer du *Office 365-klient*.
 1. [Synkronisera program uppdateringar](synchronize-software-updates.md#manually-start-software-updates-synchronization) för Configuration Manager
-1. När synkroniseringen är klar använder du din normala process för att distribuera Office 365-uppdateringar.
+1. När synkroniseringen är klar använder du din normala process för att distribuera uppdateringar för Microsoft 365 appar.
 
 ## <a name="proxy-configuration"></a><a name="bkmk_O365_ki"></a>Proxykonfiguration
 

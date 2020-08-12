@@ -2,7 +2,7 @@
 title: Aktivera delning av data
 titleSuffix: Configuration Manager
 description: En referens guide för att dela diagnostikdata med Desktop Analytics.
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 7403dc26f5fe1789fcda6b3eddf30136a4cd6e68
-ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
+ms.openlocfilehash: 40ebeabaaf236377388660a2a1a328e308a708ab
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795660"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125973"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Aktivera data delning för Skriv bords analys
 
@@ -24,32 +24,43 @@ För att registrera enheter till Skriv bords analys måste de skicka diagnostikd
 
 ## <a name="diagnostic-data-levels"></a>Diagnostiska data nivåer
 
-![Diagram över diagnostiska data nivåer för Skriv bords analys](media/diagnostic-data-levels.png)
+:::image type="content" source="media/diagnostic-data-levels.png" alt-text="Diagram över diagnostiska data nivåer för Skriv bords analys":::
 
 När du integrerar Configuration Manager med Desktop Analytics använder du även den för att hantera den diagnostiska data nivån på enheter. Använd Configuration Manager för bästa möjliga upplevelse.
 
-> [!Important]  
+> [!IMPORTANT]
 > I de flesta fall använder du endast Configuration Manager för att konfigurera de här inställningarna. Använd inte heller de här inställningarna i domänens grup princip objekt. Mer information finns i [konflikt lösning](enroll-devices.md#conflict-resolution).
 
-De grundläggande funktionerna i Desktop Analytics fungerar på nivån **grundläggande** [diagnostikdata](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels). Om du inte konfigurerar den **utökade nivån (begränsad)** i Configuration Manager får du inte följande funktioner i Desktop Analytics:
+De grundläggande funktionerna i Skriv bords analys fungerar på den **önskade** [nivån för diagnostikdata](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels). Om du inte konfigurerar den **valfria nivån (begränsad)** i Configuration Manager får du inte följande funktioner i Desktop Analytics:
 
 - Användning av appar
 - [Ytterligare App Insights](compat-assessment.md#additional-insights)
 - [Distributions status data](deploy-prod.md#address-deployment-alerts)
 - [Hälso övervaknings data](health-status-monitoring.md)
 
-Microsoft rekommenderar att du aktiverar den **förbättrade (begränsade)** diagnostikdata med Desktop Analytics för att maximera de fördelar du får från den.
+Microsoft rekommenderar att du aktiverar den **valfria (begränsade)** diagnostiska data nivån med Desktop Analytics för att maximera de fördelar du får från den.
 
-> [!Tip]
-> Inställningen **utökad (begränsad)** i Configuration Manager är samma inställning som **begränsa utökade diagnostikdata till minimi kravet för Windows Analytics** -princip som är tillgänglig på enheter som kör windows 10, version 1709 och senare.
+> [!TIP]
+> Den **valfria inställningen (begränsad)** i Configuration Manager är samma inställning som **begränsa utökade diagnostikdata till minimi kravet för Windows Analytics** -princip som är tillgänglig på enheter som kör windows 10, version 1709 och senare.
 >
-> Enheter som kör Windows 10, version 1703 och tidigare, Windows 8,1 eller Windows 7 har inte den här inställningen. När du konfigurerar den **förbättrade inställningen (begränsad)** i Configuration Manager, återställs dessa enheter till nivån **Basic** .
+> Enheter som kör Windows 10, version 1703 och tidigare, Windows 8,1 eller Windows 7 har inte den här inställningen. När du konfigurerar den **valfria inställningen (begränsad)** i Configuration Manager, så återgår enheterna till den nivå som **krävs** .
 >
-> Enheter som kör Windows 10, version 1709 har denna princip inställning. Men när du konfigurerar inställningen **utökad (begränsad)** i Configuration Manager, så kommer dessa enheter också att återställas till nivån **Basic** .
+> Enheter som kör Windows 10, version 1709 har denna princip inställning. Men när du konfigurerar den **valfria inställningen (begränsad)** i Configuration Manager, kommer dessa enheter också att återgå till den nivå som **krävs** .
+>
+> I Configuration Manager version 2002 och tidigare hade inställningarna olika namn:<!-- 7363467 -->
+>
+> | Version 2006 och senare | Version 2002 och tidigare |
+> |---------|---------|
+> | Obligatorisk | Grundläggande |
+> | Valfritt (begränsat) | Utökad (begränsad) |
+> | Ej tillämpligt | Optimerad |
+> | Valfritt | Fullständig |
+>
+> Om du tidigare har konfigurerat några enheter på den **förbättrade** nivån, kommer de att återgå till **valfria (begränsat)** när du uppgraderar till version 2006. De skickar då mindre data till Microsoft. Den här ändringen påverkar inte vad du ser i Skriv bords analys.
 
-Mer information om diagnostikdata som delas med Microsoft med **utökad (begränsad)** finns i [Windows 10 Enhanced Diagnostic data Events and Fields](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
+Mer information om diagnostikdata som delas med Microsoft med **valfritt (begränsat)** finns i [Windows 10 Enhanced Diagnostic data Events and Fields](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
 
-> [!Important]
+> [!IMPORTANT]
 > Microsoft har ett kraftfullt engagemang för att tillhandahålla de verktyg och resurser som hjälper dig att kontrol lera din integritet. Som ett resultat, medan Desktop Analytics stöder Windows 8,1-enheter samlar Microsoft inte in Windows-diagnostikdata från Windows 8,1-enheter som finns i Europeiska länder (EES och Schweiz).
 
 Mer information finns i [Sekretess för Desktop Analytics](privacy.md).
@@ -60,8 +71,8 @@ Följande artiklar är också bra för att bättre förstå Windows-diagnostikda
 
 - [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
 
-> [!Note]  
-> Klienter som är konfigurerade för att begränsa utökade diagnostikdata skickar ungefär 2 MB data till Microsoft-molnet på den första fullständiga genomsökningen. Den dagliga delta varierar mellan 250-400 KB per dag.
+> [!NOTE]
+> Klienter som kon figurer ATS för att skicka **valfria (begränsade)** diagnostikdata skickar ungefär 2 MB data till Microsoft-molnet på den första fullständiga genomsökningen. Den dagliga delta varierar mellan 250-400 KB per dag.
 >
 > Daglig delta-genomsökning sker kl. 3:00 AM (lokal tid för enhet). Vissa händelser skickas vid den första tillgängliga tiden under dagen. Dessa tider kan inte konfigureras.
 >
@@ -71,7 +82,7 @@ Följande artiklar är också bra för att bättre förstå Windows-diagnostikda
 
 Om du vill aktivera data delning konfigurerar du proxyservern så att den tillåter följande Internet slut punkter.
 
-> [!Important]  
+> [!IMPORTANT]
 > För sekretess och data integritet kontrollerar Windows om ett Microsoft SSL-certifikat (certifikat fästning) vid kommunikation med slut punkter för diagnostikdata. SSL-avlyssning och inspektion är inte möjlig. Om du vill använda Desktop Analytics utesluter du dessa slut punkter från SSL-inspektion.<!-- BUG 4647542 -->
 
 Från och med version 2002, om Configuration Manager-platsen inte kan ansluta till obligatoriska slut punkter för en moln tjänst, genererar den en kritisk status meddelande-ID 11488. När den inte kan ansluta till tjänsten ändras SMS_SERVICE_CONNECTOR komponent status till kritisk. Visa detaljerad status i noden [komponent status](../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorSystemStatus) i Configuration Manager-konsolen.<!-- 5566763 -->
@@ -79,47 +90,7 @@ Från och med version 2002, om Configuration Manager-platsen inte kan ansluta ti
 > [!NOTE]
 > Mer information om IP-adressintervall för Microsoft finns i [Microsofts offentliga IP-utrymme](https://www.microsoft.com/download/details.aspx?id=53602). Dessa adresser uppdateras regelbundet. Det finns ingen kornig het för tjänsten. alla IP-adresser i dessa intervall kan användas.
 
-### <a name="server-connectivity-endpoints"></a>Slut punkter för Server anslutning
-
-Tjänst anslutnings punkten måste kommunicera med följande slut punkter:
-
-| Slutpunkt  | Funktion  |
-|-----------|-----------|
-| `https://aka.ms` | Används för att hitta tjänsten |
-| `https://graph.windows.net` | Används för att automatiskt hämta inställningar som CommercialId när du kopplar din hierarki till Desktop Analytics (på Configuration Manager Server roll). Mer information finns i [Konfigurera proxyservern för en plats system Server](../core/plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
-| `https://*.manage.microsoft.com` | Används för att synkronisera medlemskap i enhets samlingar, distributions planer och status för enhets beredskap med Desktop Analytics (endast på Configuration Manager Server roll). Mer information finns i [Konfigurera proxyservern för en plats system Server](../core/plan-design/network/proxy-server-support.md#configure-the-proxy-for-a-site-system-server). |
-
-### <a name="user-experience-and-diagnostic-component-endpoints"></a>Slut punkter för användar upplevelse och diagnostisk komponent
-
-Klient enheter måste kommunicera med följande slut punkter:
-
-| Slutpunkt  | Funktion  |
-|-----------|-----------|
-| `https://v10c.events.data.microsoft.com` | Slut punkt för anslutna användar upplevelser och diagnostisk komponent. Används av enheter som kör Windows 10, version 1809 eller senare, eller version 1803 med den kumulativa uppdateringen för 2018-09 eller senare installerad. |
-| `https://v10.events.data.microsoft.com` | Slut punkt för anslutna användar upplevelser och diagnostisk komponent. Används av enheter som kör Windows 10, version 1803 _utan_ den kumulativa uppdateringen av 2018-09. |
-| `https://v10.vortex-win.data.microsoft.com` | Slut punkt för anslutna användar upplevelser och diagnostisk komponent. Används av enheter som kör Windows 10, version 1709 eller tidigare. |
-| `https://vortex-win.data.microsoft.com` | Slut punkt för anslutna användar upplevelser och diagnostisk komponent. Används av enheter som kör Windows 7 och Windows 8,1 |
-
-### <a name="client-connectivity-endpoints"></a>Klient anslutnings slut punkter
-
-Klient enheter måste kommunicera med följande slut punkter:
-
-| Index | Slutpunkt  | Funktion  |
-|-------|-----------|-----------|
-| 1 | `https://settings-win.data.microsoft.com` | Aktiverar kompatibilitetsrapporten för att skicka data till Microsoft. |
-| 2 | `http://adl.windows.com` | Tillåter att kompatibilitetsrapporten tar emot de senaste kompatibilitetsinställningarna från Microsoft. |
-| 3 | `https://watson.telemetry.microsoft.com` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1803 eller tidigare. |
-| 4 | `https://umwatsonc.events.data.microsoft.com` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för enhetens hälso rapporter i Windows 10, version 1809 eller senare. |
-| 5 | `https://ceuswatcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 6 | `https://ceuswatcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 7 | `https://eaus2watcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 8 | `https://eaus2watcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 9 | `https://weus2watcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 10 | `https://weus2watcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 11 | `https://kmwatsonc.events.data.microsoft.com` | [Online Crash Analysis (OCA)](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Krävs för enhetens hälso rapporter i Windows 10, version 1809 eller senare. |
-| 12 | `https://oca.telemetry.microsoft.com`  | [Online Crash Analysis (OCA)](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Krävs för att övervaka distributions hälsan i Windows 10, version 1803 eller tidigare. |
-| 13 | `https://login.live.com` | Krävs för att ge en mer tillförlitlig enhets identitet för Skriv bords analys. <br> <br>Om du vill inaktivera slut användar Microsoft-konto åtkomst använder du princip inställningar i stället för att blockera slut punkten. Mer information finns i [Microsoft-konto i företaget](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
-| 14 | `https://v20.events.data.microsoft.com` | Slut punkt för anslutna användar upplevelser och diagnostisk komponent. |
+[!INCLUDE [Internet endpoints for Desktop Analytics](../core/plan-design/network/includes/internet-endpoints-desktop-analytics.md)]
 
 ## <a name="proxy-server-authentication"></a>Autentisering av proxyserver
 

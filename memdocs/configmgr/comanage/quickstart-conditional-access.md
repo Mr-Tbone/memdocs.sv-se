@@ -10,12 +10,12 @@ ms.assetid: 4cf640b3-610c-4c3c-b966-c62e9f5654ff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 94f002ecd12d08ffd5f3d4767e315e0d83714929
-ms.sourcegitcommit: 9a700a72735f9a316bdb51c44f86f9cc3bfb7be2
+ms.openlocfilehash: f2ada7bfcef5714d8df3c476a6bbba695dc398e0
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83764058"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127281"
 ---
 # <a name="conditional-access-with-co-management"></a>Villkorlig åtkomst med samhantering
 
@@ -81,7 +81,7 @@ Andra exempel är:
 
 - Nestlé, som använder app-baserad villkorlig åtkomst för över 150 000 anställda  
 
-- Automatiserings program varu företaget takt, som nu kan se till att "endast hanterade enheter har åtkomst till Office 365-appar som team och företagets intranät." De kan också erbjuda sin personal "säkrare åtkomst till andra molnbaserade appar, till exempel Workday och Salesforce." Mer information om takt-upplevelsen med Intune finns i [takt ökar affärs takten med verktyg för mobil samarbete i Microsoft 365](https://customers.microsoft.com/story/cadence-partner-professional-services-microsoft-365).
+- Automation Software-företaget takt, som nu kan se till att "endast hanterade enheter har åtkomst till Microsoft 365 appar som team och företagets intranät." De kan också erbjuda sin personal "säkrare åtkomst till andra molnbaserade appar, till exempel Workday och Salesforce." Mer information om takt-upplevelsen med Intune finns i [takt ökar affärs takten med verktyg för mobil samarbete i Microsoft 365](https://customers.microsoft.com/story/cadence-partner-professional-services-microsoft-365).
 
 Intune är också fullständigt integrerat med partners som Cisco ISE, Aruba Clear pass och Citrix NetScaler. Med dessa partner kan du upprätthålla åtkomst kontroller baserat på Intune-registreringen och enhetens kompatibilitetstillstånd på dessa plattformar.
 

@@ -4,15 +4,17 @@ ms.author: mstewart
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.topic: include
-ms.date: 08/23/2019
-ms.openlocfilehash: d8eaaa403bd1dd97214b4eff82be79d5c2a6566e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.date: 08/11/2020
+ms.openlocfilehash: 4c669bbbd9f996ae820f695925ba63cd6a92da2a
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710890"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127329"
 ---
 <!--Don't apply H2/H3 in this include file since they are context driven by article-->
+Följ anvisningarna nedan om du vill aktivera samhantering för Configuration Manager version 1902 och tidigare:
+
 1. I Configuration Manager-konsolen går du till arbets ytan **Administration** , expanderar **Cloud Services**och väljer noden för **samtidig hantering** . Klicka på **Konfigurera samhantering** i menyfliksområdet för att öppna **konfigurations guiden för samhantering**.
 
 2. På sidan **prenumeration** i guiden väljer du **Logga**in. Logga in på din Intune-klient och välj sedan **Nästa**.  
@@ -21,8 +23,7 @@ ms.locfileid: "81710890"
 
     Den här åtgärden aktiverar automatisk klient registrering i Intune för befintliga Configuration Manager-klienter. När du väljer **pilot**registreras bara de Configuration Manager klienter som är medlemmar i pilot samlingen automatiskt i Intune. Med det här alternativet kan du aktivera samhantering på en delmängd av klienter för att först testa samhantering och distribuera samhantering med hjälp av en stegvis metod. 
 
-    > [!Note]  
-    > Från och med version 1806 är automatisk registrering inte omedelbart för alla klienter. Det här beteendet hjälper till att förbättra registreringen i stora miljöer. Configuration Manager slumpar registrering baserat på antalet klienter. Om din miljö till exempel har 100 000 klienter när du aktiverar den här inställningen sker registreringen över flera dagar.<!--1358003-->  
+    Automatisk registrering är inte omedelbart för alla klienter. Det här beteendet hjälper till att förbättra registreringen i stora miljöer. Configuration Manager slumpar registrering baserat på antalet klienter. Om din miljö till exempel har 100 000 klienter när du aktiverar den här inställningen sker registreringen över flera dagar.<!--1358003-->  
 
 4. För Internetbaserade enheter som redan har registrerats i Intune kopierar du och sparar kommando raden på sidan för **aktivering** . Du kan använda den här kommando raden för att installera Configuration Manager-klienten som en app i Intune. Om du inte sparar den här kommando raden nu kan du när som helst granska samhanterings konfigurationen för att hämta den här kommando raden.
 

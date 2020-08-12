@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 7fb02a5c-e286-46b1-a972-6335c858429a
-ms.openlocfilehash: 742cd1e86ac0bff6563c0d3ee4edce7324629480
-ms.sourcegitcommit: c1afc8abd0d7da48815bd2b0e45147774c72c2df
+ms.openlocfilehash: 0d7122942fe6a1455518b56159b48a11a2519d3e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87815471"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127330"
 ---
 # <a name="tutorial-enable-co-management-for-new-internet-based-devices"></a>Självstudie: Aktivera samhantering för nya Internetbaserade enheter
 
@@ -272,7 +272,7 @@ Använd den här proceduren för att installera en Cloud Management Gateway som 
   
    3. **Logga in** på din Azure-prenumeration. Configuration Manager fyller i ytterligare information baserat på den information som du konfigurerade när du aktiverade Azure Cloud Services för Configuration Manager.  
 
-   Fortsätt genom att välja **Nästa**.  
+   Välj **Nästa** för att fortsätta.  
 
 3. På sidan **Inställningar** bläddrar du till och väljer den fil som heter **ConfigMgrCloudMGServer. pfx**, som är den fil som du exporterade efter att du importerat certifikatet för CMG-serverautentisering. När du har angett lösen ordet fylls **tjänst namnet** och **distributions namnet** i automatiskt baserat på informationen i. PFX-certifikat filen.
 
@@ -286,7 +286,7 @@ Använd den här proceduren för att installera en Cloud Management Gateway som 
 
 8. Aktivera kryss rutan för **att tillåta att CMG fungerar som en moln distributions plats och hantera innehåll från Azure Storage** om du vill distribuera en moln distributions plats med CMG.
 
-9. Fortsätt genom att välja **Nästa**.
+9. Välj **Nästa** för att fortsätta.
 
 10. Granska värdena på **aviserings** sidan och välj sedan **Nästa**.
 
@@ -329,7 +329,7 @@ Konfigurera platsen så att den stöder utökad HTTP.
 
 5. Välj **Cloud Management Gateway-anslutningssträngen** och välj sedan **Nästa** för att fortsätta.  
 
-6. Granska standard valen på sidan för **anslutning punkt för Cloud Management Gateway** och se till att rätt CMG är markerat. Om du har flera moln hanterings-gatewayer kan du använda List rutan för att ange en annan CMG. Du kan också ändra de CMG som används, efter installationen. Fortsätt genom att välja **Nästa**.
+6. Granska standard valen på sidan för **anslutning punkt för Cloud Management Gateway** och se till att rätt CMG är markerat. Om du har flera moln hanterings-gatewayer kan du använda List rutan för att ange en annan CMG. Du kan också ändra de CMG som används, efter installationen. Välj **Nästa** för att fortsätta.
 
 7. Välj **Nästa** för att starta installationen och Visa sedan resultaten på sidan slut för ande.  Välj **Stäng** för att slutföra installationen av anslutnings punkten.
 
@@ -367,13 +367,9 @@ Med Azure-konfiguration, plats system roller och klient inställningar på plats
 
 ### <a name="enable-co-management-starting-in-version-1906"></a>Aktivera samtidig hantering från och med version 1906
 
-Om du vill aktivera samhantering från Configuration Manager version 1906 följer du anvisningarna nedan:
-
 [!INCLUDE [Enable Co-management in version 1906 and later](includes/enable-co-management-1906-and-higher.md)]
 
 ### <a name="enable-co-management-in-version-1902-and-earlier"></a>Aktivera samhantering i version 1902 och tidigare
-
-Följ anvisningarna nedan om du vill aktivera samhantering för Configuration Manager version 1902 och tidigare:
 
 [!INCLUDE [Enable Co-management in version 1902 and earlier](includes/enable-co-management-1902-and-earlier.md)]
 

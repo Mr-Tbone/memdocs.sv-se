@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: a8a4ce1c3d54311db18decc85f57d3e03298d339
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: f6087011a0390997d704278af6ffd5e6071bf031
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904681"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129026"
 ---
 # <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Vad&#39;s nya i version 1706 av Configuration Manager
 
@@ -65,7 +65,7 @@ Mer information finns i [förbereda för att använda Always on-tillgänglighets
 
 ### <a name="update-reset-tool"></a>Uppdateringsverktyg för återställning
 <!-- 1324589 -->
-Från och med version 1706 innehåller Configuration Manager primära platser och centrala administrations platser verktyget Configuration Manager uppdaterings återställning, **CMUpdateReset. exe**. Använd det här verktyget med alla versioner av den aktuella grenen som finns kvar i supporten för att åtgärda problem när uppdateringar i konsolen har problem med att ladda ned eller replikera. Mer information finns i [Uppdatera återställnings verktyget](../../servers/manage/update-reset-tool.md).
+Från och med version 1706 innehåller Configuration Manager primära platser och Central administrations plats verktyget Configuration Manager uppdaterings återställning **CMUpdateReset.exe**. Använd det här verktyget med alla versioner av den aktuella grenen som finns kvar i supporten för att åtgärda problem när uppdateringar i konsolen har problem med att ladda ned eller replikera. Mer information finns i [Uppdatera återställnings verktyget](../../servers/manage/update-reset-tool.md).
 
 ### <a name="high-dpi-console-support"></a>Stöd för hög DPI-konsol  
 <!-- 1353476 -->
@@ -78,7 +78,7 @@ Den här versionen innehåller förbättringar för hur program uppdaterings pla
 - Oberoende av återställnings konfigurationen försöker en klient komma åt den senaste program uppdaterings platsen som den använde i 120 minuter. Efter att ha misslyckats med att kontakta servern i 120 minuter, kontrollerar klienten sin pool med tillgängliga program uppdaterings platser så att den kan hitta en ny.
 - Efter att ha misslyckats med att komma åt den ursprungliga servern i två timmar växlar klienten till en kortare cykel för att kontakta en ny program uppdaterings plats. Det innebär att om en klient inte kan ansluta till en ny server, väljer den snabbt nästa server från poolen med tillgängliga servrar och försöker kontakta den.
 
-Mer information finns i [program uppdaterings platser](../../servers/deploy/configure/boundary-groups.md#software-update-points) i avsnittet gränser grupper för Current Branch.
+Mer information finns i [program uppdaterings platser](../../servers/deploy/configure/boundary-groups.md#bkmk_sup) i avsnittet gränser grupper för Current Branch.
 
 ### <a name="azure-ad-integration-with-configuration-manager"></a>Azure AD-integrering med Configuration Manager
 <!-- 1248187, 1290765, 1258052, 1298097, 1319334, 1319883, 1352135, 1353331 -->
@@ -125,7 +125,7 @@ I den här versionen har vi lagt till nya inställningar för konfigurations obj
   - Ändra språk inställningar
   - Ändring av system tid
   - Ändring av enhets namn
-- **Lager**
+- **Lagringsplats**
   - Uppdatera appar automatiskt från Store
   - Använd endast privat lagring
   - Start av app från Store-app
@@ -228,7 +228,7 @@ Nu kan du konfigurera regler för avstängning för Windows 10-funktions uppdate
 Mer information finns i [integration med Windows Update för företag i Windows 10](../../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md#configure-windows-update-for-business-deferral-policies).
 
 ### <a name="improved-user-notifications-for-office-365-updates"></a>Förbättrade användar meddelanden för Office 365-uppdateringar
-Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Office 365-uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Mer information finns i [starta om beteende och klient meddelanden för Office 365-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#restart-behavior-and-client-notifications-for-office-365-updates)
+Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Office 365-uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Mer information finns i [starta om beteende och klient meddelanden för Office 365-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md)
 
 ## <a name="reporting"></a>Rapportering
 

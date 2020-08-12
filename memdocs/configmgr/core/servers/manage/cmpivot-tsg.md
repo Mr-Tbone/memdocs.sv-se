@@ -10,12 +10,12 @@ ms.assetid: 36385bea-f05e-4300-947f-cb3927b3bac5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 69178f9ac1c1acb1ee2a2931c88a55a0784435b8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 6bddf46df63eac70a536faaee04a2ac7243e534a
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723511"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128281"
 ---
 # <a name="troubleshoot-cmpivot"></a>Felsöka CMPivot
 
@@ -27,14 +27,14 @@ Ibland kan du behöva felsöka CMPivot. Om ett tillstånds meddelande från en k
 
 I Configuration Manager version 1902 och senare kan du köra CMPivot från den centrala administrations platsen (CAS) i en hierarki. Den primära platsen hanterar fortfarande kommunikationen till klienten.
 
-När du kör CMPivot från certifikat utfärdare används prenumerations kanalen för höghastighets meddelande för att kommunicera med den primära platsen. CMPivot använder inte standard-SQL-replikering mellan platser. Om din SQL Server instans eller din SQL-Provider är fjärran sluten, eller om du använder SQL Server Always on, har du ett "dubbelt hopp"-scenario för CMPivot. Information om hur du definierar begränsad delegering för ett "dubbel hopp"-scenario finns i [CMPivot från och med version 1902](cmpivot.md#bkmk_cmpivot1902).
+När du kör CMPivot från certifikat utfärdare används prenumerations kanalen för höghastighets meddelande för att kommunicera med den primära platsen. CMPivot använder inte standard-SQL-replikering mellan platser. Om din SQL Server instans eller din SQL-Provider är fjärran sluten, eller om du använder SQL Server Always on, har du ett "dubbelt hopp"-scenario för CMPivot. Information om hur du definierar begränsad delegering för ett "dubbel hopp"-scenario finns i [CMPivot från och med version 1902](cmpivot-changes.md#bkmk_cmpivot1902).
 
 >[!IMPORTANT]
 > När du felsöker CMPivot ska du Aktivera utförlig loggning på hanterings platserna (MPs) och på plats serverns SMS_MESSAGE_PROCESSING_ENGINE för att få mer information. Om klientens utdata är större än 80 KB, aktiverar du utförlig loggning på MP och plats serverns SMS_STATE_SYSTEM komponent. Information om hur du aktiverar utförlig loggning finns i alternativ för [plats Server loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_reg-site).
 
 ### <a name="get-information-from-the-site-server"></a>Hämta information från plats servern
 
-Som standard finns plats serverns loggfiler i `C:\Program Files\Microsoft Configuration Manager\logs`. Den här platsen kan vara annorlunda om du har angett en installations katalog som inte är standard eller avlästa objekt som SMS-providern till en annan server. Om du kör CMPivot från certifikat utfärdarna finns loggarna på den primära plats servern.
+Som standard finns plats serverns loggfiler i `C:\Program Files\Microsoft Configuration Manager\logs` . Den här platsen kan vara annorlunda om du har angett en installations katalog som inte är standard eller avlästa objekt som SMS-providern till en annan server. Om du kör CMPivot från certifikat utfärdarna finns loggarna på den primära plats servern.
 
 Sök i `smsprov.log` efter följande rader:
 
@@ -45,19 +45,19 @@ Sök i `smsprov.log` efter följande rader:
   <pre><code lang="Log">Type parameter is 135.
   Auditing: User &ltusername> ran script 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 with hash dc6c2ad05f1bfda88d880c54121c8b5cea6a394282425a88dd4d8714547dc4a2 on collection &ltCollectionId>. </code></pre>
 
- `7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14`är skript-GUID för CMPivot. Du kan också se detta GUID i [CMPivot gransknings status meddelanden](cmpivot.md#cmpivot-audit-status-messages).
+ `7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14`är skript-GUID för CMPivot. Du kan också se detta GUID i [CMPivot gransknings status meddelanden](cmpivot-changes.md#cmpivot-audit-status-messages).
 
-Leta sedan upp ID: t i fönstret CMPivot. Detta ID är `ClientOperationID`.
+Leta sedan upp ID: t i fönstret CMPivot. Detta ID är `ClientOperationID` .
 
 ![CMPivot-fönster med ClientOperationID markerat](media/cmpivot-client-operationid-1902.png)
 
-Hitta `TaskID` från tabellen ClientAction. `TaskID` Motsvarar `UniqueID` i ClientAction-tabellen.
+Hitta `TaskID` från tabellen ClientAction. `TaskID`Motsvarar `UniqueID` i ClientAction-tabellen.
 
 ``` SQL
 select * from ClientAction where ClientOperationId=<id>
 ```
 
-I `BgbServer.log`söker du efter den `TaskID` som du har samlat in från `PushID`SQL och noterar. `TaskID` Är märkt `TaskGUID`. Ett exempel:
+I `BgbServer.log` söker du efter den `TaskID` som du har samlat in från SQL och noterar `PushID` . `TaskID`Är märkt `TaskGUID` . Till exempel:
 
 <pre><code lang="Log">Starting to send push task (<b>PushID: 9</b> TaskID: 12 <b>TaskGUID: 9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0</b> TaskType: 15 TaskParam: PFNjcmlwdENvbnRlbnQgU2NyaXB0R3VpZD0nN0RDNkI2RjEtRTdGNi00M0MxL (truncated log entry)
 Finished sending push task (<b>PushID: 9</b> TaskID: 12) to 2 clients
@@ -65,28 +65,28 @@ Finished sending push task (<b>PushID: 9</b> TaskID: 12) to 2 clients
 
 ### <a name="client-logs"></a>Klient loggar
 
-När du har information från plats servern kontrollerar du klient loggarna. Klient loggarna finns som standard i `C:\Windows\CCM\Logs`.
+När du har information från plats servern kontrollerar du klient loggarna. Klient loggarna finns som standard i `C:\Windows\CCM\Logs` .
 
-I `CcmNotificationAgent.log`kan du leta efter logg poster som ser ut som följande rader:  
+I `CcmNotificationAgent.log` kan du leta efter logg poster som ser ut som följande rader:  
 
 <pre><code lang="Log">Receive task from server with <b>pushid=9</b>, taskid=12, <b>taskguid=9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0</b>, tasktype=15 and taskParam=PFNjcmlwdEhhc2ggU2NyaXB0SGF (truncated log entry)
 Send Task response message &ltBgbResponseMessage TimeStamp="2019-09-13T17:29:09Z"><b>&ltPushID>5</b>&lt/PushID>&ltTaskID>4&lt/TaskID>&ltReturnCode>1&lt/ReturnCode>&lt/BgbResponseMessage> successfuly.
  </code></pre>
 
-Sök `Scripts.log` efter `TaskID`. I följande exempel visas `Task ID` `{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}`:  
+Sök `Scripts.log` efter `TaskID` . I följande exempel visas `Task ID` `{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}` :  
 
 <pre><code lang="Log">Sending script state message (fast): <b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 Result are sent for ScriptGuid: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14 and <b>TaskID: {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 </code></pre>
 
 > [!NOTE]
-> Om du inte ser "(fast)" i `Scripts.log`är data troligen över 80 kB. I det här fallet skickas informationen till plats servern som ett tillstånds meddelande. Använd klientens `StateMessage.log` och plats serverns `Statesys.log`.
+> Om du inte ser "(fast)" i är `Scripts.log` data troligen över 80 kB. I det här fallet skickas informationen till plats servern som ett tillstånds meddelande. Använd klientens `StateMessage.log` och plats serverns `Statesys.log` .
 
 ### <a name="review-messages-on-the-site-server"></a>Granska meddelanden på plats servern
 
-Om [utförlig loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_reg-client) har Aktiver ATS på hanterings platsen kan du se hur inkommande klient meddelanden hanteras. I `MP_RelayMsgMgr.log`tittar du `TaskID`på.
+Om [utförlig loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_reg-client) har Aktiver ATS på hanterings platsen kan du se hur inkommande klient meddelanden hanteras. I `MP_RelayMsgMgr.log` tittar du på `TaskID` .
 
-I `MP_RelayMsgMgr.log` exemplet kan du se klientens ID `(GUID:83F67728-2E6D-4E4F-8075-ED035C31B783)` och. `Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}` Ett meddelande-ID tilldelas till klientens svar innan det skickas till motorn för meddelande hantering:
+I `MP_RelayMsgMgr.log` exemplet kan du se klientens ID `(GUID:83F67728-2E6D-4E4F-8075-ED035C31B783)` och `Task ID {9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}` . Ett meddelande-ID tilldelas till klientens svar innan det skickas till motorn för meddelande hantering:
 
 <pre><code lang="Log">MessageKey: GUID:83F67728-2E6D-4E4F-8075-ED035C31B783<b>{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}</b>
 Create message succeeded for <b>message id 22f00adf-181e-4bad-b35e-d18912f39f89</b>
@@ -95,7 +95,7 @@ Put message succeeded for message id 22f00adf-181e-4bad-b35e-d18912f39f89
 CRelayMsgMgrHandler::HandleMessage(): ExecuteTask() succeeded
 </code></pre>
 
-När [utförlig loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_logoptions) är aktiverat `SMS_MESSAGE_PROCESSING_ENGINE.log`bearbetas klient resultatet. Använd det meddelande-ID som du hittade `MP_RelayMsgMgr.log`i. Bearbetnings logg posterna liknar följande exempel:
+När [utförlig loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_logoptions) är aktiverat `SMS_MESSAGE_PROCESSING_ENGINE.log` bearbetas klient resultatet. Använd det meddelande-ID som du hittade i `MP_RelayMsgMgr.log` . Bearbetnings logg posterna liknar följande exempel:
 
 <pre><code lang="Log">Processing 2 messages with type Instant and IDs <b>22f00adf-181e-4bad-b35e-d18912f39f89[19]</b>, 434d80ae-09d4-4d84-aebf-28a4a29a9852[20]...
 Processed 2 messages with type Instant. Failed to process 0 messages. All message IDs <b>22f00adf-181e-4bad-b35e-d18912f39f89[19]</b>, 434d80ae-09d4-4d84-aebf-28a4a29a9852[20]
@@ -108,18 +108,18 @@ Processed 2 messages with type Instant. Failed to process 0 messages. All messag
 > select * from MPE_RequestMessages_Instant where MessageID=<ID from SMS_MESSAGE_PROCESSING_ENGINE.log>
 > ```
 
-I `BgbServer.log`tittar du på för `PushID` att se hur många klienter som rapporter ATS eller misslyckats.
+I `BgbServer.log` tittar du på för `PushID` att se hur många klienter som rapporter ATS eller misslyckats.
 
 <pre><code lang="Log">Generated BGB task status report c:\ConfigMgr\inboxes\bgb.box\Bgb5c1db.BTS at 09/16/2019 16:46:39. (<b>PushID: 9</b> ReportedClients: 2 FailedClients: 0)
 </code></pre>
 
-Kontrol lera vyn övervakning för CMPivot från SQL med hjälp av `TaskID`.
+Kontrol lera vyn övervakning för CMPivot från SQL med hjälp av `TaskID` .
 
 ``` SQL
 select * from vSMS_CMPivotStatus where TaskID='{9A4E59D2-2F5B-4067-A9FA-B99602A3A4A0}'
 ```
 
-[![CMPivot SQL-frågor för fel sökning i version 1902](media/cmpivot-sql-queries-1902.png)](media/cmpivot-sql-queries-1902.png#lightbox)
+[![CMPIVOT SQL-frågor för fel sökning i version 1902](media/cmpivot-sql-queries-1902.png)](media/cmpivot-sql-queries-1902.png#lightbox)
 
 ## <a name="troubleshoot-cmpivot-in-1810-and-earlier"></a><a name="bkmk_CMPivot-1810"></a>Felsöka CMPivot i 1810 och tidigare
 
@@ -127,24 +127,24 @@ I Configuration Manager version 1810 och tidigare hanterar plats servern kommuni
 
 ### <a name="get-information-from-the-site-server"></a>Hämta information från plats servern
 
-Som standard finns plats serverns loggfiler i `C:\Program Files\Microsoft Configuration Manager\logs`. Den här platsen kan vara annorlunda om du har angett en installations katalog som inte är standard eller avlästa objekt som SMS-providern till en annan server.
+Som standard finns plats serverns loggfiler i `C:\Program Files\Microsoft Configuration Manager\logs` . Den här platsen kan vara annorlunda om du har angett en installations katalog som inte är standard eller avlästa objekt som SMS-providern till en annan server.
 
 Sök i `smsprov.log` för den här raden:
 
 <pre><code lang="Log">Auditing: User <username> initiated client operation 135 to collection &ltCollectionId>.
 </code></pre>
 
-Hitta ID: t i fönstret CMPivot. Detta ID är `ClientOperationID`.
+Hitta ID: t i fönstret CMPivot. Detta ID är `ClientOperationID` .
 
 ![CMPivot-fönster med ClientOperationID markerat](media/cmpivot-clientoperationid.png)
 
-Hitta `TaskID` från tabellen ClientAction. `TaskID` Motsvarar `UniqueID` i ClientAction-tabellen.
+Hitta `TaskID` från tabellen ClientAction. `TaskID`Motsvarar `UniqueID` i ClientAction-tabellen.
 
 ``` SQL
 select * from ClientAction where ClientOperationId=<id>
 ```
 
-I `BgbServer.log`söker du efter den `TaskID` som du har samlat in från SQL. Den är märkt `TaskGUID`. Ett exempel:
+I `BgbServer.log` söker du efter den `TaskID` som du har samlat in från SQL. Den är märkt `TaskGUID` . Till exempel:
 
 <pre><code lang="Log">Starting to send push task (PushID: 260 TaskID: 258 TaskGUID: <b>F8C7C37F-B42B-4C0A-B050-2BB44DF1098A</b> TaskType: 15
 TaskParam: PFNjcmlwdEhhc2ggU2NyaXB0SGF...truncated...to 5 clients with throttling (strategy: 1 param: 42)
@@ -153,21 +153,21 @@ Finished sending push task (PushID: 260 TaskID: 258) to 5 clients
 
 ### <a name="client-logs"></a>Klient loggar
 
-När du har information från plats servern kontrollerar du klient loggarna. Klient loggarna finns som standard i `C:\Windows\CCM\Logs`.
+När du har information från plats servern kontrollerar du klient loggarna. Klient loggarna finns som standard i `C:\Windows\CCM\Logs` .
 
-I `CcmNotificationAgent.log`söker du efter loggar som liknar följande post:  
+I `CcmNotificationAgent.log` söker du efter loggar som liknar följande post:  
 
 <pre><code lang="Log"><b>Error! Bookmark not defined.</b>+PFNjcmlwdEhhc2ggU2NyaXB0SGFzaEFsZz0nU0hBMjU2Jz42YzZmNDY0OGYzZjU3M2MyNTQyNWZiNT
 g2ZDVjYTIwNzRjNmViZmQ1NTg5MDZlMWI5NDRmYTEzNmFiMDE0ZGNjPC9TY3JpcHRIYXNoPjxTY3Jp (truncated log entry)
 </code></pre>
 
-Leta i `Scripts.log` efter `TaskID`. I följande exempel ser `Task ID {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}`vi:
+Leta i `Scripts.log` efter `TaskID` . I följande exempel ser vi `Task ID {F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}` :
 
 <pre><code lang="Log">Sending script state message: 7DC6B6F1-E7F6-43C1-96E0-E1D16BC25C14
 State message: Task Id <b>{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}</b>
 </code></pre>
 
-Leta i `StateMessage.log`. I följande exempel ser du att `TaskID` är längst ned i meddelandet bredvid: `<Param>`
+Leta i `StateMessage.log` . I följande exempel ser du att `TaskID` är längst ned i meddelandet bredvid `<Param>` :
 
 ``` XML
 StateMessage body: <?xml version="1.0" encoding="UTF-16"?>
@@ -186,7 +186,7 @@ Successfully forwarded State Messages to the MP StateMessage 7/3/2018 11:44:47 A
 
 ### <a name="review-messages-on-the-site-server"></a>Granska meddelanden på plats servern
 
-Öppna `statesys.log` för att se om meddelandet tas emot och bearbetas. I följande exempel visas `TaskID` nästan längst ned i meddelandet bredvid. `<Param>` Aktivera [utförlig loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_logoptions) på SMS_STATE_SYSTEM-komponenten för att se dessa logg poster.
+Öppna `statesys.log` för att se om meddelandet tas emot och bearbetas. I följande exempel visas `TaskID` nästan längst ned i meddelandet bredvid `<Param>` . Aktivera [utförlig loggning](../../plan-design/hierarchy/about-log-files.md#bkmk_logoptions) på SMS_STATE_SYSTEM-komponenten för att se dessa logg poster.
 
 ``` XML
 CMessageProcessor - the cmdline to DB exec dbo.spProcessStateReport N'?<?xml version="1.0" encoding="UTF-
@@ -201,13 +201,13 @@ CMessageProcessor - the cmdline to DB exec dbo.spProcessStateReport N'?<?xml ver
 <Param>{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}</Param><Param>0</Param></UserParameters></StateMessage></ReportBody></Report>~~'
 ```
 
-Om meddelandet inte har bearbetats kontrollerar du Inkorgen för tillstånds meddelanden. Standard platsen för Inkorgen är `C:\Program Files\Microsoft Configuration Manager\inboxes\auth\statesys.box\`. Sök efter filerna på följande platser:
+Om meddelandet inte har bearbetats kontrollerar du Inkorgen för tillstånds meddelanden. Standard platsen för Inkorgen är `C:\Program Files\Microsoft Configuration Manager\inboxes\auth\statesys.box\` . Sök efter filerna på följande platser:
 
 - Inkommande
 - Felaktigt
 - Process
 
-Kontrol lera vyn övervakning för CMPivot från SQL med hjälp `TaskID`av.
+Kontrol lera vyn övervakning för CMPivot från SQL med hjälp av `TaskID` .
 
 ``` SQL
 select * from vSMS_CMPivotStatus where TaskID='{F8C7C37F-B42B-4C0A-B050-2BB44DF1098A}'

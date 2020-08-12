@@ -10,12 +10,12 @@ ms.assetid: d17e1188-d277-438f-9236-db9cd213b421
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0665c6378ac81d6f6f254501760647048ce66b0b
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4e43f5a36f2a1bf44959b9645c2fb48a22cc71f1
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81714355"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126781"
 ---
 # <a name="introduction-to-collections-in-configuration-manager"></a>Introduktion till samlingar i Configuration Manager
 
@@ -34,11 +34,11 @@ Här följer några exempel på samlings användning:
 |Åtgärd|Exempel|  
 |---------|-------|  
 |Gruppera resurser|Du kan skapa samlingar som grupperar resurser baserat på organisationens hierarki.<br /><br /> Du kan till exempel skapa en samling med alla datorer i "London Headquarters" Active Directory organisationsenhet (OU). Mer information om hur du skapar den här typen av samling finns i [så här skapar du samlingar](../../../../core/clients/manage/collections/create-collections.md).<br /><br /> Du kan använda den här samlingen för åtgärder som att konfigurera Endpoint Protection inställningar, konfigurera inställningar för enhets energispar funktioner eller installera Configuration Manager-klienten.|  
-|Appdistribution|Du kan skapa en samling med alla datorer som inte har Microsoft Office 2013 installerat och sedan distribuera den till alla datorer i samlingen.<br /><br /> Du kan också använda programkrav för att utföra den här uppgiften. Mer information finns i [så här skapar du program med Configuration Manager](../../../../apps/deploy-use/create-applications.md).|  
+|Appdistribution|Du kan skapa en samling med alla datorer som inte har Microsoft Microsoft 365-appar installerade och sedan distribuera dem till alla datorer i samlingen.<br /><br /> Du kan också använda programkrav för att utföra den här uppgiften. Mer information finns i [så här skapar du program med Configuration Manager](../../../../apps/deploy-use/create-applications.md).|  
 |[Hantera klientinställningar](../../../../core/clients/deploy/about-client-settings.md)|Även om standardinställningarna för klienten i Configuration Manager gäller alla enheter och alla användare kan du skapa anpassade klientinställningar som gäller för en samling med enheter eller en samling med användare.<br /><br /> Om du till exempel vill att fjärr styrning ska vara tillgängligt på alla utom ett fåtal enheter konfigurerar du standard klient inställningarna så att de tillåter fjärr styrning och konfigurerar sedan anpassade klient inställningar som inte tillåter fjärr styrning och distribuerar dem till samlingen med exceptionella klienter. |  
 |[Energisparfunktioner](../power/introduction-to-power-management.md)|Du kan konfigurera specifika energi inställningar per samling.|  
 |[Rollbaserad administration](../../../../core/servers/deploy/configure/configure-role-based-administration.md)|Använd samlingar för att kontrol lera vilka grupper av användare som har åtkomst till olika funktioner i Configuration Manager-konsolen.|  
-|[Underhållsperioder](../../../../core/clients/manage/collections/use-maintenance-windows.md)|Med underhålls perioder kan du definiera en tids period när olika Configuration Manager-åtgärder kan utföras på medlemmar i en enhets samling. |  
+|[Underhålls fönster](../../../../core/clients/manage/collections/use-maintenance-windows.md)|Med underhålls perioder kan du definiera en tids period när olika Configuration Manager-åtgärder kan utföras på medlemmar i en enhets samling. |  
 
 
 ## <a name="collection-types-in-configuration-manager"></a>Samlingstyper i Configuration Manager  

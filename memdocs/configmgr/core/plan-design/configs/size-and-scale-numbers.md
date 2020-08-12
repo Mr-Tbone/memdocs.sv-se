@@ -2,7 +2,7 @@
 title: Storlek och skala
 titleSuffix: Configuration Manager
 description: Fastställ antalet plats system roller och platser som du behöver för att stödja enheterna i din miljö.
-ms.date: 11/29/2019
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5109ababd00011784618f9c989e1d2b756a322d9
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: 0d8057d61ebaaa8a545d21b31331faec1c04884e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715636"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126706"
 ---
 # <a name="size-and-scale-numbers-for-configuration-manager"></a>Antal och gränsvärden för Configuration Manager
 
@@ -177,13 +177,15 @@ Använd följande kapacitets information för att planera för program uppdateri
 - **Gräns för 580 säkerhets omfattningar för regler för automatisk distribution** -<!--ado 4962928-->
 Begränsa antalet säkerhets omfattningar i regler för automatisk distribution (automatisk distribution) till mindre än 580. När du skapar en ADR läggs de säkerhets omfattningar som har åtkomst till den automatiskt. Om du har angett fler än 580 säkerhets omfattningar kommer inte ADR att köras och ett fel loggas i RuleEngine. log.
 
-### <a name="sms-provider"></a>SMS-provider
+### <a name="sms-provider"></a>SMS-providern
 
 <!-- SCCMDocs#1958 -->
 
 Varje instans av SMS-providern stöder samtidiga anslutningar från flera begär Anden. De enda begränsningarna för dessa anslutningar är antalet Server anslutningar som är tillgängliga för Windows och de tillgängliga resurserna på servern för att betjäna anslutnings begär Anden.
 
 Mer information finns i [Planera för SMS-providern](../hierarchy/plan-for-the-sms-provider.md).
+
+Administrations tjänsten är en REST API på varje instans av SMS-providern. Den har stöd för upp till 5 000 begär Anden per sekund och 200 begär Anden per klient-IP-adress.
 
 ## <a name="client-numbers-for-sites-and-hierarchies"></a><a name="bkmk_clientnumbers"></a>Klient nummer för platser och hierarkier
 

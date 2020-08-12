@@ -5,17 +5,17 @@ description: En teknisk referens för möjliga BitLocker (MBAM)-Server poster i 
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: c3279b7d-654d-444b-bd17-1262894590c3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8d49a24b6fea08f12d1fe70c1e0b7415adf98719
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: fe7d24bc1cad27094d720a5cb5aa487caec9199d
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82074817"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127873"
 ---
 # <a name="server-event-logs"></a>Serverhändelseloggar
 
@@ -33,7 +33,7 @@ Använd Windows-Loggboken för att visa händelse loggar för följande BitLocke
 
 Följande avsnitt innehåller meddelanden och felsöknings information för händelse-ID: n som kan uppstå med BitLocker-komponenter för hanterings servern.
 
-## <a name="admin"></a>Admin
+## <a name="admin"></a>Administratör
 
 ### <a name="1-webappspnerror"></a>1: WebAppSpnError
 
@@ -83,7 +83,7 @@ Möjliga fel meddelanden:
 
 - Det gick inte att identifiera klient dator kontot eller datamigreringens användar konto.
 
-    `PostKeyRecoveryInfo`När ett anrop görs till `IsRecoveryKeyResetRequired`-,- `CommitRecoveryKeyRest`,-eller `GetTpmHash` -webb metoderna hämtar den anropare kontext för att hämta autentiseringsuppgifter för anroparen. Om anrops kontexten är null eller tom loggar tjänsten det här meddelandet.
+    När ett anrop görs till-, `PostKeyRecoveryInfo` - `IsRecoveryKeyResetRequired` `CommitRecoveryKeyRest` ,-eller `GetTpmHash` -webb metoderna hämtar den anropare kontext för att hämta autentiseringsuppgifter för anroparen. Om anrops kontexten är null eller tom loggar tjänsten det här meddelandet.
 
 - Konto verifieringen misslyckades för anroparens identitet.
 
@@ -93,7 +93,7 @@ Möjliga fel meddelanden:
 
 Databas anslutnings strängen för efterlevnad i registret är tom.
 
-Detta meddelande loggas när databas anslutnings strängen för regelefterlevnad är ogiltig. Verifiera värdet i register nyckeln `HKLM\Software\Microsoft\MBAM Server\Web\ComplianceDBConnectionString`.
+Detta meddelande loggas när databas anslutnings strängen för regelefterlevnad är ogiltig. Verifiera värdet i register nyckeln `HKLM\Software\Microsoft\MBAM Server\Web\ComplianceDBConnectionString` .
 
 ### <a name="105-statusservicecompliancedberror"></a>105: StatusServiceComplianceDbError
 
@@ -137,7 +137,7 @@ Kända fel och möjliga orsaker:
 
 - Ett fel uppstod vid matchning av domän namnet {domän namn}, ett minnesallokeringsfel uppstod.
 
-    För att lösa domän namnet anropas `DsGetDcName` Windows-API: et. Det här meddelandet loggas när det här `ERROR_NOT_ENOUGH_MEMORY`API: et returnerar, vilket indikerar ett minnes tilldelnings fel.
+    För att lösa domän namnet anropas `DsGetDcName` Windows-API: et. Det här meddelandet loggas när det här API: et returnerar `ERROR_NOT_ENOUGH_MEMORY` , vilket indikerar ett minnes tilldelnings fel.
 
 - Det gick inte att anropa DsGetDcName-metoden
 
@@ -149,7 +149,7 @@ Kända fel och möjliga orsaker:
 
 - Ett fel uppstod när återställnings databasens konfiguration lästes. Anslutnings strängen till återställnings databasen har inte kon figurer ATS.
 
-    Det här meddelandet anger att information om anslutnings strängen för `HKLM\Software\Microsoft\MBAM Server\Web\RecoveryDBConnectionString` återställnings databasen på är ogiltig. Verifiera värdet för register nyckeln.
+    Det här meddelandet anger att information om anslutnings strängen för återställnings databasen på `HKLM\Software\Microsoft\MBAM Server\Web\RecoveryDBConnectionString` är ogiltig. Verifiera värdet för register nyckeln.
 
 Om du ser något av följande meddelanden kontrollerar du om autentiseringsuppgifterna för programpoolen från IIS-servern kan upprätta en anslutning till återställnings databasen:
 
@@ -164,7 +164,7 @@ Kända fel och möjliga orsaker:
 
 - Ett fel uppstod när konfigurationen av Compliance-databasen lästes. Anslutnings strängen till Compliance-databasen har inte kon figurer ATS.
 
-    Det här meddelandet anger att information om databas anslutnings strängen `HKLM\Software\Microsoft\MBAM Server\Web\ComplianceDBConnectionString` för efterlevnad är ogiltig. Verifiera värdet för den här register nyckeln.
+    Det här meddelandet anger att information om databas anslutnings strängen för efterlevnad `HKLM\Software\Microsoft\MBAM Server\Web\ComplianceDBConnectionString` är ogiltig. Verifiera värdet för den här register nyckeln.
 
 Om du ser något av följande meddelanden kontrollerar du om autentiseringsuppgifterna för programpoolen från IIS-servern kan upprätta en anslutning till Compliance-databasen:
 
@@ -177,7 +177,7 @@ Om du ser något av följande meddelanden kontrollerar du om autentiseringsuppgi
 Dessa fel indikerar något av följande två villkor
 
 - MBAM-webbplatser/WebService kunde inte ansluta till efterlevnad eller återställnings databas
-- MBAM webbplatser/WebServices-körnings konto (konto för programpool) `GetVersion` kunde inte köra den lagrade proceduren för efterlevnad eller återställnings databas
+- MBAM webbplatser/WebServices-körnings konto (konto för programpool) kunde inte köra den `GetVersion` lagrade proceduren för efterlevnad eller återställnings databas
 
 I meddelandet i händelsen finns mer information om undantaget.
 
@@ -187,11 +187,11 @@ Verifiera att programpoolskontot kan ansluta till databaserna för efterlevnad e
 
 Ett fel uppstod när SPN-registreringen (Service Principal Name) verifierades.
 
-För att verifiera SPN frågar den Active Directory att hämta en lista över SPN-mappat körnings konto. Den frågar också `ApplicationHost.config` för att hämta webbplats bindningar. Det här fel meddelandet anger att det inte gick att kommunicera med Active Directory eller att `ApplicationHost.config` filen inte kunde läsas in.
+För att verifiera SPN frågar den Active Directory att hämta en lista över SPN-mappat körnings konto. Den frågar också `ApplicationHost.config` för att hämta webbplats bindningar. Det här fel meddelandet anger att det inte gick att kommunicera med Active Directory eller att filen inte kunde läsas in `ApplicationHost.config` .
 
 Verifiera att programpoolskontot har behörighet att fråga Active Directory eller `ApplicationHost.config` filen. Kontrol lera också plats bindnings posterna i `ApplicationHost.config` filen.
 
-## <a name="operational"></a>Verksamhetsrelaterade
+## <a name="operational"></a>Operativ
 
 ### <a name="4-performancecountererror"></a>4: PerformanceCounterError
 
@@ -212,7 +212,7 @@ Spårnings meddelandet innehåller det faktiska undantags meddelandet, som visas
 
 Meddelandet i händelsen innehåller mer information om undantaget.
 
-För kontrollerar `System.UnauthorizedAccessException`du att programpoolskontot har åtkomst till API: er för prestanda räknare.
+För `System.UnauthorizedAccessException` kontrollerar du att programpoolskontot har åtkomst till API: er för prestanda räknare.
 
 ### <a name="200-helpdeskinformation"></a>200: HelpDeskInformation
 

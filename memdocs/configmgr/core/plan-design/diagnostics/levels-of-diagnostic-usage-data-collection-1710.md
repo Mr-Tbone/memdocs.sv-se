@@ -5,18 +5,18 @@ description: Lär dig mer om de nivåer av diagnostik-och användnings data som 
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: 8fce5391-8e75-4f99-813a-76f8842be5bc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: fcc3d2e34c9387e158b3b35cd104c9fc43136ace
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 925595b0e810f89bed6d79de1e0cd89450e45e9a
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81715552"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128754"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1710-of-configuration-manager"></a>Nivåer av diagnostik användnings data insamling för version 1710 av Configuration Manager
 
@@ -35,7 +35,7 @@ Configuration Manager version 1710 samlar in tre nivåer av diagnostik-och anvä
 ##  <a name="how-to-change-the-level"></a><a name="bkmk_change"></a> Ändra nivån
  Administratörer som har en rollbaserad administrativ omfattning som inkluderar **ändrings** behörigheter för objekt klassen **plats** kan ändra nivån på data som samlas in i inställningarna för diagnostik-och användnings data i Configuration Manager-konsolen.
 
-Du ändrar data insamlings nivån från-konsolen genom att gå till **Administration** > **Översikt** > **plats konfiguration** > **platser**. Öppna **Inställningar för hierarki**och välj sedan den data nivå som du vill använda.  
+Du ändrar data insamlings nivån från-konsolen genom att gå till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**. Öppna **Inställningar för hierarki**och välj sedan den data nivå som du vill använda.  
 
 
 

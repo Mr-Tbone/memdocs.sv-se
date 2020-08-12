@@ -2,7 +2,7 @@
 title: Använda gränser och gräns grupper
 titleSuffix: Configuration Manager
 description: Använd gränser och gräns grupper för att definiera nätverks platser och tillgängliga plats system för enheter som du hanterar.
-ms.date: 06/18/2019
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 54aa20d5-791e-4416-9db4-5aaea472c0b7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0b1a6bb6ff9fdffad65db884fe8c3b68d3fc3263
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 385dc1b2f542c964b52515e755a9202ee951bc5c
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711247"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126383"
 ---
 # <a name="define-site-boundaries-and-boundary-groups"></a>Definiera plats gränser och gräns grupper
 
@@ -29,6 +29,7 @@ En hierarki kan innehålla valfritt antal gränser grupper. Varje avgränsnings 
 - Active Directory-platsnamn  
 - IPv6-prefix  
 - IP-adressintervall  
+- VPN (från och med version 2006)
 
 Klienter i intranätet utvärderar sin aktuella nätverksplats och använder sedan informationen för att identifiera gränsgrupper som de tillhör.  
 

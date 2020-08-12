@@ -2,20 +2,20 @@
 title: Krav för Internet-åtkomst
 titleSuffix: Configuration Manager
 description: Lär dig om Internet-slutpunkter så att du kan använda alla funktioner i Configuration Manager funktioner.
-ms.date: 07/07/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 71f2a75d59af6f8d5c77e96d780e6d02352e5045
-ms.sourcegitcommit: 678104677ad36b789630befdc5e0f1efc572c14b
+ms.openlocfilehash: bc3e1312c214f871635a65d8d0031e06ea4ad8d9
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86137354"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126481"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
@@ -201,8 +201,6 @@ Tillåt att den aktiva program uppdaterings platsen får åtkomst till följande
 
 - `http://*.download.windowsupdate.com`  
 
-- `http://test.stats.update.microsoft.com`  
-
 - `http://ntservicepack.microsoft.com`  
 
 Mer information om program uppdateringar finns i [Planera för program uppdateringar](../../../sum/plan-design/plan-for-software-updates.md).
@@ -224,7 +222,7 @@ Du kan behöva lägga till slut punkter till en brand vägg som är mellan två 
 
 - `https://<FQDN for software update point on parent site>`  
 
-## <a name="manage-office-365"></a>Hantera Office 365
+## <a name="manage-microsoft-365-apps"></a>Hantera Microsoft 365 appar
 
 > [!NOTE]
 > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
@@ -275,15 +273,21 @@ Om du använder den **geografiska vyn**ger du åtkomst till följande slut punkt
 
 ## <a name="desktop-analytics"></a>Desktop Analytics
 
-Mer information om vilka slut punkter som krävs för moln tjänsten för Skriv bords analys finns i [Aktivera data delning](../../../desktop-analytics/enable-data-sharing.md#endpoints).
+Mer information finns i [Aktivera data delning](../../../desktop-analytics/enable-data-sharing.md#endpoints).
+
+[!INCLUDE [Internet endpoints for Desktop Analytics](includes/internet-endpoints-desktop-analytics.md)]
 
 ## <a name="tenant-attach"></a>Klientkoppling
 
-Mer information om vilka slut punkter som krävs för klient kopplings funktioner finns i [Aktivera klient anslutning](../../../tenant-attach/device-sync-actions.md#internet-endpoints).
+Mer information finns i [Aktivera klient anslutning](../../../tenant-attach/device-sync-actions.md).
+
+[!INCLUDE [Internet endpoints for tenant attach](includes/internet-endpoints-tenant-attach.md)]
 
 ## <a name="endpoint-analytics"></a>Slutpunktsanalys
 
-Mer information om vilka slut punkter som krävs för slut punkts analys finns i [konfiguration av Endpoint Analytics-proxy](../../../../analytics/troubleshoot.md#bkmk_endpoints).
+Mer information finns i [konfiguration av Endpoint Analytics-proxy](../../../../analytics/troubleshoot.md#bkmk_endpoints).
+
+[!INCLUDE [Internet endpoints for Endpoint analytics](includes/internet-endpoints-endpoint-analytics.md)]
 
 ## <a name="asset-intelligence"></a>Till gångs information
 

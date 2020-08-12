@@ -2,20 +2,20 @@
 title: Aktivitetssekvenssteg
 titleSuffix: Configuration Manager
 description: Lär dig mer om de steg som du kan lägga till i en Configuration Manager-aktivitetssekvens.
-ms.date: 07/06/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 61070d98c5b7d453f493cf7ea2995705ee43f325
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ms.openlocfilehash: bab2050448e1c870aac8f3237c21b19498cdb674
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546628"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124244"
 ---
 # <a name="task-sequence-steps"></a>Aktivitetssekvenssteg
 
@@ -215,7 +215,10 @@ Välj det här alternativet för att ansluta måldatorn till den angivna arbetsg
 
 #### <a name="join-a-domain"></a>Ansluta till en domän
 
-Välj det här alternativet för att ansluta måldatorn till den angivna domänen. Ange eller bläddra till domänen, till exempel `fabricam.com` . Ange eller bläddra till en LDAP-sökväg (Lightweight Directory Access Protocol) för en organisationsenhet. Exempel: `LDAP//OU=computers, DC=Fabricam.com, C=com`.  
+Välj det här alternativet för att ansluta måldatorn till den angivna domänen. Ange eller bläddra till domänen, till exempel `fabricam.com` . Ange eller bläddra till en LDAP-sökväg (Lightweight Directory Access Protocol) för en organisationsenhet. Till exempel: `LDAP//OU=computers, DC=Fabricam.com, C=com`.  
+
+> [!NOTE]
+> När en Azure Active Directory (Azure AD)-ansluten klient kör en aktivitetssekvens för operativ Systems distribution kommer klienten i det nya operativ systemet inte att ansluta automatiskt till Azure AD. Även om den inte är Azure AD-ansluten, hanteras klienten fortfarande.
 
 #### <a name="account"></a>Konto
 
@@ -773,7 +776,6 @@ Avbilda registrerade användar-och organisations namn från datorn.
 Avbilda tids zons inställningen på datorn.  
 
 
-
 ## <a name="check-readiness"></a><a name="BKMK_CheckReadiness"></a>Kontrol lera beredskap
 
 Använd det här steget för att kontrol lera att mål datorn uppfyller de angivna kraven för distributions krav.  
@@ -791,6 +793,8 @@ Från och med version 2002 innehåller det här steget åtta nya kontroller. Ing
 - **Nätverkskort anslutet**
   - **Nätverkskortet är inte trådlöst**
 
+Från och med version 2006 inkluderar det här steget en kontroll för att avgöra om enheten använder UEFI, **datorn är i UEFI-läge**.<!--6452769-->
+
 > [!IMPORTANT]
 > Om du vill dra nytta av den nya Configuration Manager-funktionen kan du, när du har uppdaterat platsen, även uppdatera klienter till den senaste versionen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.
 
@@ -804,14 +808,15 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 - [_TS_CRSPEED](task-sequence-variables.md#TSCRSPEED)
 - [_TS_CRDISK](task-sequence-variables.md#TSCRDISK)
 - [_TS_CROSTYPE](task-sequence-variables.md#TSCROSTYPE)
-- [_TS_CRARCH](task-sequence-variables.md#TSCRARCH)
-- [_TS_CRMINOSVER](task-sequence-variables.md#TSCRMINOSVER)
-- [_TS_CRMAXOSVER](task-sequence-variables.md#TSCRMAXOSVER)
-- [_TS_CRCLIENTMINVER](task-sequence-variables.md#TSCRCLIENTMINVER)
-- [_TS_CROSLANGUAGE](task-sequence-variables.md#TSCROSLANGUAGE)
-- [_TS_CRACPOWER](task-sequence-variables.md#TSCRACPOWER)
-- [_TS_CRNETWORK](task-sequence-variables.md#TSCRNETWORK)
-- [_TS_CRWIRED](task-sequence-variables.md#TSCRWIRED)
+- [_TS_CRARCH](task-sequence-variables.md#TSCRARCH) (från och med version 2002)
+- [_TS_CRMINOSVER](task-sequence-variables.md#TSCRMINOSVER) (från och med version 2002)
+- [_TS_CRMAXOSVER](task-sequence-variables.md#TSCRMAXOSVER) (från och med version 2002)
+- [_TS_CRCLIENTMINVER](task-sequence-variables.md#TSCRCLIENTMINVER) (från och med version 2002)
+- [_TS_CROSLANGUAGE](task-sequence-variables.md#TSCROSLANGUAGE) (från och med version 2002)
+- [_TS_CRACPOWER](task-sequence-variables.md#TSCRACPOWER) (från och med version 2002)
+- [_TS_CRNETWORK](task-sequence-variables.md#TSCRNETWORK) (från och med version 2002)
+- [_TS_CRUEFI](task-sequence-variables.md#TSCRUEFI) (från och med version 2006)
+- [_TS_CRWIRED](task-sequence-variables.md#TSCRWIRED) (från och med version 2002)
 
 ### <a name="cmdlets-for-check-readiness"></a>Cmdletar för att kontrol lera beredskap
 
@@ -869,6 +874,10 @@ Från och med version 2002 kontrollerar du att enheten är ansluten och inte vid
 #### <a name="network-adapter-connected"></a>Nätverkskort anslutet
 
 Från och med version 2002 kontrollerar du att enheten har ett nätverkskort som är anslutet till nätverket. Du kan också markera kryss rutan beroende för att kontrol lera att **nätverkskortet inte är trådlöst**.
+
+#### <a name="computer-is-in-uefi-mode"></a>Datorn är i UEFI-läge
+
+Från och med version 2006 bestämmer du om enheten har kon figurer ATS för UEFI eller BIOS.
 
 ### <a name="options-for-check-readiness"></a>Alternativ för att kontrol lera beredskap
 
@@ -1054,12 +1063,9 @@ Om du konfigurerar [Egenskaper för aktivitetssekvens](../deploy-use/manage-task
 
 ## <a name="enable-bitlocker"></a><a name="BKMK_EnableBitLocker"></a>Aktivera BitLocker
 
-Använd det här steget för att aktivera BitLocker-kryptering på minst två partitioner på hård disken. Den första aktiva partitionen innehåller startkoden för Windows. En annan partition innehåller operativ systemet. Startpartitionen måste vara okrypterad.  
+BitLocker-kryptering ger den lägsta krypteringnivån av innehållet på en volym. Använd det här steget för att aktivera BitLocker-kryptering på minst två partitioner på hård disken. Den första aktiva partitionen innehåller startkoden för Windows. En annan partition innehåller operativ systemet. Startpartitionen måste vara okrypterad.  
 
-Använd steget **Företablera BitLocker** för att aktivera BitLocker på en enhet i Windows PE. Mer information finns i avsnittet [Pre-provision BitLocker](#BKMK_PreProvisionBitLocker).  
-
-> [!NOTE]  
-> BitLocker-kryptering ger den lägsta krypteringnivån av innehållet på en volym.  
+Om du vill aktivera BitLocker på en enhet i Windows PE använder du steget [för företablering av BitLocker](#BKMK_PreProvisionBitLocker) .
 
 Det här steget körs bara i det fullständiga operativ systemet. Den körs inte i Windows PE.
 
@@ -1071,7 +1077,9 @@ När du anger **endast TPM**, **TPM och start nyckel på USB**eller **TPM och PI
 - Aktiverad  
 - Ägarskap tillåts  
 
-I det här steget slutförs eventuell återstående TPM-initiering. De återstående stegen kräver inte fysisk närvaro eller omstarter. Steget **Aktivera BitLocker** Slutför transparent följande återstående initierings steg för TPM vid behov:  
+Från och med version 2006 kan du hoppa över det här steget för datorer som inte har TPM eller när TPM inte har Aktiver ATS. En ny inställning gör det lättare att hantera aktivitetssekvenser på enheter som inte har fullständigt stöd för BitLocker.<!--6995601-->
+
+I det här steget slutförs eventuell återstående TPM-initiering. De återstående åtgärderna kräver inte fysisk närvaro eller omstarter. Med steget **Aktivera BitLocker** slutförs transparent följande återstående åtgärder vid TPM-initiering vid behov:
 
 - Skapa bekräftelsenyckelpar  
 - Skapa ägarauktoriseringsvärde och deposition till Active Directory, vilket måste har utökats för att stödja det här värdet  
@@ -1118,6 +1126,18 @@ Anger vilken enhet som ska krypteras. Om du vill kryptera den aktuella operativ 
 
 Om du vill kryptera en speciell data enhet som inte är en OS-enhet väljer du en **speciell enhet**. Välj sedan enheten i listan.  
 
+#### <a name="disk-encryption-mode"></a>Disk krypterings läge
+
+<!--6995601-->
+Från och med version 2006 väljer du någon av följande krypteringsalgoritmer:
+
+- AES_128
+- AES_256
+- XTS_AES256
+- XTS_AES128
+
+Som standard fortsätter steget att använda standard krypterings metoden för operativ system versionen. Om steget körs på en version av Windows som inte stöder den angivna algoritmen, går den tillbaka till standard operativ systemet. I detta fall skickar aktivitetssekvensen status meddelande 11911.
+
 #### <a name="use-full-disk-encryption"></a>Använd fullständig disk kryptering
 
 <!--SCCMDocs-pr issue 2671-->
@@ -1136,6 +1156,10 @@ Välj det här alternativet om du vill att BitLocker-diskkryptering ska slutför
 
 Krypterings processen kan ta timmar att slutföra när en stor hård disk krypteras. Om du inte väljer det här alternativet kan aktivitetssekvensen fortsätta direkt.  
 
+#### <a name="skip-this-step-for-computers-that-do-not-have-a-tpm-or-when-tpm-is-not-enabled"></a>Hoppa över det här steget för datorer som inte har TPM, eller där TPM inte är aktiverat
+
+<!--6995601-->
+Från och med version 2006 väljer du det här alternativet för att hoppa över enhets kryptering på en dator som inte innehåller en eller aktiverat TPM som stöds. Använd till exempel det här alternativet när du distribuerar ett operativ system till en virtuell dator. Som standard är den här inställningen inaktive rad för steget **Aktivera BitLocker** . Om du aktiverar den här inställningen och enheten inte har en fungerande TPM, loggar aktivitetssekvensen ett fel för Smsts. log och skickar status meddelandet 11912. Aktivitetssekvensen fortsätter att passera det här steget.
 
 
 ## <a name="format-and-partition-disk"></a><a name="BKMK_FormatandPartitionDisk"></a>Formatera och partitionera disk
@@ -1175,6 +1199,31 @@ På fliken **Egenskaper** för det här steget konfigurerar du de inställningar
 
 Det fysiska disk numret för disken som ska formateras. Antalet baseras på Windows diskuppräkningsordning.  
 
+#### <a name="variable-name-to-store-disk-number"></a>Variabel namn som ska lagra disk nummer
+
+<!--6610288-->
+
+Från och med version 2006 använder du en aktivitetssekvens-variabel för att ange den mål disk som ska formateras. Detta variabel alternativ stöder mer komplexa aktivitetssekvenser med dynamiska beteenden. Ett anpassat skript kan till exempel identifiera disken och ange variabeln baserat på maskin varu typen. Sedan kan du använda flera instanser av det här steget för att konfigurera olika typer av maskin vara och partitioner.
+
+Om du väljer den här egenskapen anger du ett namn på en anpassad variabel. Lägg till ett tidigare steg i aktivitetssekvensen för att ange värdet för den här anpassade variabeln till ett heltals värde för den fysiska disken.
+
+Följande modeller steg visar ett exempel:
+
+- **Kör PowerShell-skript**: ett anpassat skript för att samla in mål diskar
+  - Uppsättningar `myOSDisk` till`1`
+  - Uppsättningar `myDataDisk` till`2`
+
+- **Formatera och partitionera disk** för OS-disk: anger `myOSDisk` variabel
+  - Konfigurerar disk 1 som system disk
+
+- **Formatera och partitionera disk** för data disk: anger `myDataDisk` variabel
+  - Konfigurerar disk 2 för RAW-lagring
+
+En variant av det här exemplet använder disk nummer och partitionerings planer för olika maskin varu typer.
+
+> [!NOTE]
+> Du kan fortfarande använda den befintliga variabeln **OSDDiskIndex**i en aktivitetssekvens. Varje instans av **disk steget format och partition** använder dock samma index värde. Använd den här variabel egenskapen om du vill ange disk numret program mässigt för flera instanser av det här steget.
+
 #### <a name="disk-type"></a>Disktyp
 
 Typ av disk som ska formateras. Det finns två alternativ att välja i listrutan:
@@ -1189,7 +1238,7 @@ Typ av disk som ska formateras. Det finns två alternativ att välja i listrutan
 
 Detaljerad information om partitionen eller volymen som aktivitetssekvensen skapar, inklusive följande attribut:  
 
-- Namn  
+- Name  
 - Återstående diskutrymme  
 
 Om du vill skapa en ny partition väljer du **ny** för att öppna dialog rutan **Egenskaper för partition** . Ange partitionstyp och storlek och om det är en startpartition. Om du vill ändra en befintlig partition väljer du den partition som ska ändras och väljer sedan knappen **Egenskaper** . Mer information om hur du konfigurerar hårddiskpartitioner finns i någon av följande artiklar:  
@@ -1489,6 +1538,9 @@ Om en av uppdateringarna startar om datorn, gör om det här steget. Steget akti
 
 Använd det här steget för att lägga till mål datorn i en arbets grupp eller domän.  
 
+> [!NOTE]
+> När en Azure Active Directory (Azure AD)-ansluten klient kör en aktivitetssekvens för operativ Systems distribution kommer klienten i det nya operativ systemet inte att ansluta automatiskt till Azure AD. Även om den inte är Azure AD-ansluten, hanteras klienten fortfarande.
+
 Detta steg i aktivitetssekvensen körs bara i det fullständiga operativ systemet. Den körs inte i Windows PE.
 
 Lägg till det här steget i redigeraren för aktivitetssekvens genom att välja **Lägg till**, Välj **Allmänt**och välj **Anslut domän eller arbets grupp**.
@@ -1635,6 +1687,18 @@ På fliken **Egenskaper** för det här steget konfigurerar du de inställningar
 
 Ange den enhet du vill aktivera BitLocker för. BitLocker krypterar bara det använda utrymmet på enheten.  
 
+#### <a name="disk-encryption-mode"></a>Disk krypterings läge
+
+<!--6995601-->
+Från och med version 2006 väljer du någon av följande krypteringsalgoritmer:
+
+- AES_128
+- AES_256
+- XTS_AES256
+- XTS_AES128
+
+Som standard fortsätter steget att använda standard krypterings metoden för operativ system versionen. Om steget körs på en version av Windows som inte stöder den angivna algoritmen, går den tillbaka till standard operativ systemet. I detta fall skickar aktivitetssekvensen status meddelande 11911.
+
 #### <a name="use-full-disk-encryption"></a>Använd fullständig disk kryptering
 
 <!--SCCMDocs-pr issue 2671-->
@@ -1642,7 +1706,7 @@ Som standard krypterar det här steget bara använt utrymme på enheten. Detta �
 
 #### <a name="skip-this-step-for-computers-that-do-not-have-a-tpm-or-when-tpm-is-not-enabled"></a>Hoppa över det här steget för datorer som inte har TPM, eller där TPM inte är aktiverat
 
-Välj det här alternativet om du vill hoppa över enhets kryptering på en dator som inte innehåller en eller aktiverat TPM som stöds. Använd till exempel det här alternativet när du distribuerar ett operativ system till en virtuell dator.  
+Välj det här alternativet om du vill hoppa över enhets kryptering på en dator som inte innehåller en eller aktiverat TPM som stöds. Använd till exempel det här alternativet när du distribuerar ett operativ system till en virtuell dator. Som standard är den här inställningen aktive rad för steget för **Företablera BitLocker** . Steget kan inte utföras på en enhet utan TPM eller TPM som inte initieras. Från och med version 2006, om enheten inte har en fungerande TPM, loggar aktivitetssekvensen en varning till Smsts. log och skickar status meddelandet 11912.
 
 
 
@@ -2169,10 +2233,10 @@ Tänk på följande när du lägger till en underordnad aktivitetssekvens till e
 
 Från och med version 1906, hantera det här steget med följande PowerShell-cmdletar:<!-- 2839943, SCCMDocs#1118 -->
 
-- **Get-CMTSStepRunTaskSequence**
-- **New-CMTSStepRunTaskSequence**
-- **Remove-CMTSStepRunTaskSequence**
-- **Set-CMTSStepRunTaskSequence**
+- [Get-CMTSStepRunTaskSequence](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepruntasksequence?view=sccm-ps)
+- [New-CMTSStepRunTaskSequence](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepruntasksequence?view=sccm-ps)
+- [Remove-CMTSStepRunTaskSequence](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepruntasksequence?view=sccm-ps)
+- [Set-CMTSStepRunTaskSequence](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepruntasksequence?view=sccm-ps)
 
 Mer information finns i [versions anmärkningar för 1906 – nya cmdletar](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps#new-cmdlets).
 
@@ -2241,15 +2305,19 @@ Lägg till en regel för att ange en dynamisk variabel som ska användas i aktiv
 
     Ange en eller flera variabler som ska anges för en regel som utvärderas till true, eller ange variabler utan att använda en regel. Välj en befintlig variabel eller skapa en anpassad variabel.  
 
-    - **Befintliga variabler för aktivitetssekvens**: Välj en eller flera variabler i en lista med befintliga variabler för aktivitetssekvens. Det går inte att välja mat ris variabler.  
+  - **Befintliga variabler för aktivitetssekvens**: Välj en eller flera variabler i en lista med befintliga variabler för aktivitetssekvens. Det går inte att välja mat ris variabler.  
 
-    - **Variabler för anpassad**aktivitetssekvens: definiera en anpassad aktivitetssekvens. Du kan även ange en befintlig aktivitetssekvensvariabel. Den här inställningen är användbar för att ange en befintlig variabel mat ris, till exempel **OSDAdapter**, eftersom variabla matriser inte finns i listan över befintliga variabler för aktivitetssekvens.  
+  - **Variabler för anpassad**aktivitetssekvens: definiera en anpassad aktivitetssekvens. Du kan även ange en befintlig aktivitetssekvensvariabel. Den här inställningen är användbar för att ange en befintlig variabel mat ris, till exempel **OSDAdapter**, eftersom variabla matriser inte finns i listan över befintliga variabler för aktivitetssekvens.  
 
-När du har valt variablerna för en regel anger du ett värde för varje variabel. Variabeln har angetts till det angivna värdet när regeln utvärderas till sant. För varje variabel kan du välja **Hemligt värde** för att dölja variabelvärdet. Som standard döljer vissa befintliga variabler värden, t. ex. **aktivitetssekvensvariabeln OSDCaptureAccountPassword** -variabeln.  
+När du har valt variablerna för en regel anger du ett värde för varje variabel. Variabeln har angetts till det angivna värdet när regeln utvärderas till sant. För varje variabel kan du välja **Visa inte det här värdet** för att dölja värdet för variabeln. Som standard döljer vissa befintliga variabler värden, t. ex. **aktivitetssekvensvariabeln OSDCaptureAccountPassword** -variabeln.  
 
 > [!IMPORTANT]  
-> Configuration Manager tar bort alla variabel värden som marker ATS som ett **hemligt värde** när du importerar en aktivitetssekvens med steget **Ange dynamiska variabler** . Ange värdet för den dynamiska variabeln igen när du har importerat aktivitetssekvensen.  
+> När du importerar en aktivitetssekvens med steget **Ange dynamiska variabler** tar Configuration Manager bort alla variabel värden som marker ATS som **Visa inte det här värdet**. När du har importerat aktivitetssekvensen anger du värdet för den dynamiska variabeln igen.
 
+Om du använder alternativet **Visa inte det här värdet visas inte**värdet för variabeln i redigeraren för aktivitetssekvens. Logg filen för aktivitetssekvensen (**Smsts. log**) eller fel sökaren för aktivitetssekvensen visar inte variabelvärdet. Variabeln kan fortfarande användas av aktivitetssekvensen när den körs. Om du inte längre vill att dessa variabler ska vara dolda tar du bort dem först. Definiera sedan om variablerna utan att välja alternativet att dölja dem.  
+
+> [!WARNING]  
+> Om du inkluderar variabler i kommando raden **Kör kommando rads** steg, visar logg filen för aktivitetssekvensen den fullständiga kommando raden inklusive variabel värden. För att förhindra att potentiellt känsliga data visas i logg filen ställer du in variabeln **OSDDoNotLogCommand** till `TRUE` .
 
 
 ## <a name="set-task-sequence-variable"></a><a name="BKMK_SetTaskSequenceVariable"></a>Ange variabel för aktivitetssekvens
@@ -2289,8 +2357,13 @@ Ange namnet på en inbyggd eller åtgärds variabel i en aktivitetssekvens eller
 <!--1358330-->
 Aktivera det här alternativet om du vill maskera känsliga data som lagras i variabler för aktivitetssekvens. Till exempel när du anger ett lösen ord.
 
-> [!Note]  
+> [!NOTE]
 > Aktivera det här alternativet och ange värdet för variabeln aktivitetssekvens. Annars anges inte variabelvärdet som du planerar, vilket kan orsaka oväntade beteenden när aktivitetssekvensen körs.<!--SCCMdocs issue #800-->
+
+Om du använder alternativet **Visa inte det här värdet visas inte**värdet för variabeln i redigeraren för aktivitetssekvens. Logg filen för aktivitetssekvensen (**Smsts. log**) eller fel sökaren för aktivitetssekvensen visar inte variabelvärdet. Variabeln kan fortfarande användas av aktivitetssekvensen när den körs. Om du inte längre vill att den här variabeln ska vara dold tar du bort den först. Definiera sedan om variabeln utan att välja alternativet att dölja den.
+
+> [!WARNING]
+> Om du inkluderar variabler i kommando raden **Kör kommando rads** steg, visar logg filen för aktivitetssekvensen den fullständiga kommando raden inklusive variabel värden. För att förhindra att potentiellt känsliga data visas i logg filen ställer du in variabeln **OSDDoNotLogCommand** till `TRUE` .<!-- 6963278 -->
 
 #### <a name="value"></a>Värde  
 
@@ -2388,6 +2461,8 @@ Om det finns ett för produktions klient paket tillgängligt, och datorn är med
 Steget aktivitetssekvens anger automatiskt platstilldelning och standard konfigurationen. Använd det här fältet för att ange ytterligare installations egenskaper som ska användas när du installerar-klienten. Om du vill ange flera installationsegenskaper avgränsar du dem med ett blanksteg.  
 
 Ange kommando rads alternativ som ska användas vid klient installation. Ange till exempel `/skipprereq: silverlight.exe` för att informera CCMSetup.exe om att inte installera de nödvändiga komponenterna för Microsoft Silverlight. Mer information om tillgängliga kommando rads alternativ för CCMSetup.exe finns i [om klient installations egenskaper](../../core/clients/deploy/about-client-installation-properties.md).  
+
+När du kör en aktivitetssekvens för operativ system distribution på en Internetbaserad klient, som antingen är Azure AD-ansluten eller använder tokenbaserad autentisering, måste du ange egenskapen [CCMHOSTNAME](../../core/clients/deploy/about-client-installation-properties.md#ccmhostname) i steget **Installera Windows och ConfigMgr** . Till exempel `CCMHOSTNAME=OTTERFALLS.CLOUDAPP.NET/CCM_Proxy_MutualAuth/12345678907927939`.
 
 ### <a name="options-for-setup-windows-and-configmgr"></a>Alternativ för installation av Windows och ConfigMgr
 

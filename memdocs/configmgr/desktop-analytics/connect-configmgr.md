@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: c7bb6d01a35ce42002207d57d27fc41c37646d15
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 7015ab4c180ed56b00149ffbff99c9e5a8112e95
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268869"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126009"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Så här ansluter du Configuration Manager med Desktop Analytics
 
@@ -84,8 +84,11 @@ Använd den här proceduren för att ansluta Configuration Manager till Desktop 
 
     - **Kommersiellt ID**: det här värdet ska automatiskt fyllas i med organisationens ID. Om den inte gör det kontrollerar du att proxyservern har kon figurer ATS för att tillåta alla nödvändiga [slut punkter](enable-data-sharing.md#endpoints) innan du fortsätter. Du kan också hämta ditt kommersiella ID manuellt från [Skriv bords analys portalen](monitor-connection-health.md#bkmk_ViewCommercialID).
 
-    - **Windows 10-diagnostisk datanivå**: Välj minst **Basic**. Se [diagnostiska data nivåer](enable-data-sharing.md#diagnostic-data-levels)
-  
+    - **Windows 10-diagnostisk datanivå**: Välj minst **obligatoriskt**. Mer information finns i [nivåer för diagnostikdata](enable-data-sharing.md#diagnostic-data-levels).
+
+        > [!TIP]
+        > I Configuration Manager version 2002 och tidigare kallades det här värdet **Basic**.<!-- 7363467 -->
+
     - **Tillåt enhets namn i diagnostikdata**: Välj **Aktivera**
 
         > [!NOTE]

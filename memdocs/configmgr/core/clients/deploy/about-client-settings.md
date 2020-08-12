@@ -2,20 +2,20 @@
 title: Klientinställningar
 titleSuffix: Configuration Manager
 description: Lär dig mer om standard-och anpassade inställningar för att styra klient beteenden
-ms.date: 07/28/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
-ms.topic: conceptual
+ms.topic: reference
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f6bb29930a6e2d4faf4ffdd141d3c9cd1831305
-ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
+ms.openlocfilehash: e70a44fee7b4805884faeda0a5fb1eab72d3371e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87365516"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127009"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Om klient inställningar i Configuration Manager
 
@@ -139,7 +139,7 @@ Ställ in det här alternativet på **Ja** för att användarna ska kunna ta emo
 
 - Den Internetbaserad hanterings platsen autentiserar användaren med hjälp av Windows-autentisering (Kerberos eller NTLM). Mer information finns i [överväganden för klient kommunikation från Internet](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
-- Cloud Management Gateway har autentiserat användaren med hjälp av Azure Active Directory. Mer information finns i [distribuera användar tillgängliga program på Azure AD-anslutna enheter](../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications-on-azure-ad-joined-devices).  
+- Cloud Management Gateway har autentiserat användaren med hjälp av Azure Active Directory. Mer information finns i [distribuera användar tillgängliga program](../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications).
 
 Om du ställer in det här alternativet på **Nej**, eller om något av de tidigare kraven inte uppfylls, så tar en dator på Internet bara emot dator principer. I det här scenariot kan användarna fortfarande se, begära och installera program från en Internetbaserad program katalog. Om den här inställningen är **Nej**men **Aktivera användar princip på klienter** är **Ja**, får användarna inga användar principer förrän datorn är ansluten till intranätet.  
 
@@ -244,7 +244,7 @@ Mer information om den här inställningen finns i [certifikat för Microsoft Si
 
 ### <a name="organization-name-displayed-in-software-center"></a>Organisationsnamn som visas i Software Center
 
-Skriv det namn som användarna ser i Software Center. Den här informationen hjälper användarna att identifiera programmet som en pålitlig källa. Mer information om prioriteten för den här inställningen finns i [Software Center](../../../apps/plan-design/plan-for-software-center.md#branding-software-center).  
+Skriv det namn som användarna ser i Software Center. Den här informationen hjälper användarna att identifiera programmet som en pålitlig källa. Mer information om prioriteten för den här inställningen finns i [Software Center](../../../apps/plan-design/plan-for-software-center.md#brand-software-center).  
 
 ### <a name="use-new-software-center"></a>Använd nya Software Center
 
@@ -468,41 +468,40 @@ För att en MIF-fil ska kunna samlas in av maskin varu inventeringen måste den 
 > [!NOTE]  
 > Den här inställningen är endast tillgänglig i standard klient inställningarna.
 
+## <a name="metered-internet-connections"></a>Avgiftsbelagda Internet anslutningar
 
+Hantera hur Windows 8-datorer och senare datorer använder avgiftsbelagda Internet anslutningar för att kommunicera med Configuration Manager. Internet leverantörer debiteras ibland av den mängd data som du skickar och tar emot när du använder en avgiftsbelagd Internet-anslutning.
 
-## <a name="metered-internet-connections"></a>Avgiftsbelagda Internet anslutningar  
-
-Hantera hur Windows 8-datorer och senare datorer använder avgiftsbelagda Internet anslutningar för att kommunicera med Configuration Manager. Internet leverantörer debiteras ibland av den mängd data som du skickar och tar emot när du använder en avgiftsbelagd Internet-anslutning.  
-
-> [!NOTE]  
-> Den konfigurerade klient inställningen tillämpas inte i följande scenarier:  
+> [!NOTE]
+> Den konfigurerade klient inställningen tillämpas inte i följande scenarier:
 >
 > - Om datorn är på en central data anslutning utför Configuration Manager-klienten inga aktiviteter som kräver att data överförs till Configuration Manager platser.  
 > - Om nätverks anslutnings egenskaperna för Windows har kon figurer ATS som icke-avgiftsbelagda fungerar Configuration Manager-klienten som om anslutningen inte är avgiftsbelagd och överför sedan data till platsen.  
 
 ### <a name="client-communication-on-metered-internet-connections"></a>Klient kommunikation i Internet anslutningar med datapriser
 
-Välj något av följande alternativ för den här inställningen:  
+Välj något av följande alternativ för den här inställningen:
 
-- **Tillåt**: all klient kommunikation tillåts via den avgiftsbelagda Internet anslutningen, om inte klient enheten använder en data anslutning med nätverks växling.  
+- **Tillåt**: all klient kommunikation tillåts via den avgiftsbelagda Internet anslutningen, om inte klient enheten använder en data anslutning med nätverks växling.
 
-- **Gräns**: endast följande klient kommunikation tillåts via den avgiftsbelagda Internet anslutningen:  
+- **Gräns**: klienten kommunicerar bara via den avgiftsbelagda Internet anslutningen för följande beteenden:
 
-    - Återställning av klientprincip  
+  - Hämta klient princip
 
-    - Klienttillståndsmeddelanden som ska skickas till platsen  
+  - Skicka klient tillstånds meddelanden
 
-    - Program varu installations förfrågningar från Software Center  
+  - Begära program varu installationer från Software Center
 
-    - Nödvändiga distributioner (om tidsgränsen för installationen uppnås)  
+  - Hämta ytterligare princip och innehåll för nödvändiga distributioner vid installationens tids gräns
 
-    Om klienten når data överförings gränsen för den avgiftsbelagda Internet anslutningen försöker klienten inte längre kommunicera med Configuration Manager-platser.  
+  Om klienten når data överförings gränsen för den avgiftsbelagda Internet anslutningen, kommunicerar klienten inte längre med-platsen.
 
-- **Blockera**: Configuration Manager klienten försöker inte kommunicera med Configuration Manager platser när den är på en avgiftsbelagd Internet-anslutning. Det här alternativet är standardinställningen.  
+- **Blockera**: när enheten är på en avgiftsbelagd Internet-anslutning försöker Configuration Manager klienten inte kommunicera med platsen. Det här alternativet är standardinställningen.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Klienten tillåter alltid programinstallationer från Software Center, oavsett inställningarna för avgiftsbelagd Internet anslutning. Om användaren begär en program varu installation medan enheten är i ett nätverk med datapriser, följer Software Center användarens avsikt.<!-- MEMDocs#285 -->
 
+Från och med version 2006 fungerar klient installation och uppdatering både när du konfigurerar den här klient inställningen för att **tillåta** eller **begränsa**. Detta gör att klienten hålls aktuell, men hanterar fortfarande klient kommunikationen i ett nätverk med datapriser. Du kan styra det här beteendet under klient installationen med CCMSetup-parametern **/AllowMetered**. Mer information finns i [om klient installations parametrar och egenskaper](../../clients/deploy/about-client-installation-properties.md#allowmetered).<!--6976145-->
 
 ## <a name="power-management"></a>Energisparfunktioner  
 
@@ -894,7 +893,7 @@ Den här inställningen konfigurerar den lokala porten för HTTP-lyssnaren att l
 
 ### <a name="enable-management-of-the-office-365-client-agent"></a>Aktivera hantering av klient agenten för Office 365
 
-När du ställer in det här alternativet på **Ja**, aktive ras konfigurationen av installations inställningar för Office 365. Du kan också hämta filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [Hantera Office 365 ProPlus](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
+När du ställer in det här alternativet på **Ja**, aktive ras konfigurationen av installations inställningarna för Microsoft 365 Apps. Du kan också hämta filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [hantera Microsoft 365 appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 ### <a name="enable-installation-of-software-updates-in-all-deployments-maintenance-window-when-software-update-maintenance-window-is-available"></a><a name="bkmk_SUMMaint"></a>Aktivera installation av program uppdateringar i underhålls fönstret för alla distributioner när underhålls fönstret program uppdatering är tillgängligt
 
@@ -980,9 +979,9 @@ Välj **Ja** för att skapa automatisk mappning mellan användare och enhet base
 <!--3485366-->
 När den här inställningen är **Ja**kan användarna identifiera sina egna primära enheter i Software Center. Mer information finns i [användar handboken för Software Center](../../understand/software-center.md#work-information).
 
-## <a name="windows-analytics"></a>Windows Analytics
+## <a name="windows-diagnostic-data"></a>Windows-diagnostikdata
 
-> [!Important]  
-> Windows Analytics-tjänsten dras tillbaka den 31 januari 2020. Mer information finns i [KB 4521815: pensionering i Windows Analytics den 31 januari 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
+> [!IMPORTANT]
+> Den här gruppen kallades tidigare **Windows Analytics**. Microsoft drog tillbaka Windows Analytics-tjänsten den 31 januari 2020. Mer information finns i [KB 4521815: pensionering i Windows Analytics den 31 januari 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 >
-> Desktop Analytics är utvecklingen av Windows Analytics. Mer information finns i [Vad är Desktop Analytics](../../../desktop-analytics/overview.md).
+> Desktop Analytics är utvecklingen av Windows Analytics. Använd Skriv bords analys för att hantera inställningar för Windows-diagnostikdata. Mer information finns i [Vad är Desktop Analytics](../../../desktop-analytics/overview.md).

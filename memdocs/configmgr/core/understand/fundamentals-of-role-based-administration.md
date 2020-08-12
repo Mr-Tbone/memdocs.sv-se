@@ -10,12 +10,12 @@ ms.assetid: 0a2d6c3f-a4e4-4c19-b087-3caada480de9
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 62faf2fd736f9751e8b33e821cb814f527a1197c
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c39d3380212debe97c2d2f33de6a98fecfb8402e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722860"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126060"
 ---
 # <a name="fundamentals-of-role-based-administration-for-configuration-manager"></a>Grunderna i rollbaserad administration för Configuration Manager
 
@@ -27,7 +27,7 @@ Med Configuration Manager använder du rollbaserad administration för att skydd
 
 - *Säkerhets roller* tilldelas till administrativa användare för att ge användare (eller grupper av användare) behörighet till olika Configuration Manager objekt. Till exempel behörighet att skapa eller ändra klient inställningar.  
 
-- *Säkerhets omfattningar* används för att gruppera specifika instanser av objekt som en administrativ användare ansvarar för att hantera, till exempel ett program som installerar Microsoft Office 2010.  
+- *Säkerhets omfattningar* används för att gruppera specifika instanser av objekt som en administrativ användare ansvarar för att hantera, till exempel ett program som installerar Microsoft 365 appar.  
 
 - *Samlingar* används för att ange grupper med användare och enhets resurser som den administrativa användaren kan hantera.  
 
@@ -44,7 +44,7 @@ Med Configuration Manager använder du rollbaserad administration för att skydd
 
 När du utformar och implementerar administrativ säkerhet för Configuration Manager använder du följande för att skapa en *administrativ omfattning* för en administrativ användare:  
 
-- [Säkerhets roller](#bkmk_Planroles)  
+- [Säkerhetsroller](#bkmk_Planroles)  
 
 - [Samlingar](#bkmk_planCol)  
 
@@ -160,7 +160,7 @@ Objekt som inte är begränsade av säkerhets omfattningar omfattar följande ob
 - Statusmeddelanden  
 - Mappningar mellan användare och enheter  
 
-Skapa säkerhetsomfattningar när du vill begränsa åtkomsten till separata instanser av objekt. Ett exempel:  
+Skapa säkerhetsomfattningar när du vill begränsa åtkomsten till separata instanser av objekt. Till exempel:  
 
 - Anta att du har en grupp av administrativa användare som måste kunna visa produktionsprogram men inte testprogram. Skapa en säkerhetsomfattning för produktionsprogram och en annan omfattning för testprogrammen.  
 

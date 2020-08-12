@@ -2,7 +2,7 @@
 title: Uppdateringar och service
 titleSuffix: Configuration Manager
 description: Lär dig mer om tjänst metoden i konsolen kallas uppdateringar och underhåll som gör det enkelt att hitta och installera rekommenderade uppdateringar.
-ms.date: 07/17/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a177c51aad6bfd85adc0da8019646453eb969517
-ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
+ms.openlocfilehash: 3d8d9097b95a5daf06dc0260173e616fa2f88eb4
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871981"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126145"
 ---
 # <a name="updates-and-servicing-for-configuration-manager"></a>Uppdateringar och underhåll för Configuration Manager
 
@@ -60,13 +60,14 @@ Följande versioner av Configuration Manager som stöds är för närvarande til
 
 | Version | Tillgänglighetsdatum | [Slutdatum för support](current-branch-versions-supported.md) | Baslinje | Uppdatering i konsolen |  
 |-------------|-----------|------------|--------------|------------------------|  
-| [**2002**](../../plan-design/changes/whats-new-in-version-2002.md)<br /> (5.00.8968) | Den 1 april 2020 | 1 oktober 2021 | Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup> | Yes |
-| [**1910**](../../plan-design/changes/whats-new-in-version-1910.md)<br /> (5.00.8913) | 29 november 2019 | Den 29 maj, 2021 | Inga | Yes |
-| [**1906**](../../plan-design/changes/whats-new-in-version-1906.md)<br /> (5.00.8853) | 26 juli 2019 | 26 januari 2021 | Inga | Yes |
+| [**2006**](../../plan-design/changes/whats-new-in-version-2006.md)<br /> (5.00.9012) | 11 augusti 2020 | 11 februari 2022 | Inga | Ja |
+| [**2002**](../../plan-design/changes/whats-new-in-version-2002.md)<br /> (5.00.8968) | Den 1 april 2020 | 1 oktober 2021 | Ja,<sup>[Anmärkning 1](#bkmk_note1)</sup> | Ja |
+| [**1910**](../../plan-design/changes/whats-new-in-version-1910.md)<br /> (5.00.8913) | 29 november 2019 | Den 29 maj, 2021 | Inga | Ja |
+| [**1906**](../../plan-design/changes/whats-new-in-version-1906.md)<br /> (5.00.8853) | 26 juli 2019 | 26 januari 2021 | Inga | Ja |
 | [**1902**](../../plan-design/changes/whats-new-in-version-1902.md)<br /> (5.00.8790) | 27 mars 2019 | 27 september 2020 | Ja | Ja |
-| [**1810**](../../plan-design/changes/whats-new-in-version-1810.md)<br /> (5.00.8740) | 27 november 2018 | Den 1 december 2020 | Inga | Yes |
+| [**1810**](../../plan-design/changes/whats-new-in-version-1810.md)<br /> (5.00.8740) | 27 november 2018 | Den 1 december 2020 | Inga | Ja |
 
-**Tillgänglighets datumet** är när [tidig uppdaterings ringen](checklist-for-installing-update-2002.md#early-update-ring) släpps. Du kommer att få ett bas linje medium tillgängligt i Volume licens Service Center när uppdateringen är globalt tillgänglig.
+**Tillgänglighets datumet** är när [tidig uppdaterings ringen](checklist-for-installing-update-2006.md#early-update-ring) släpps. Du kommer att få ett bas linje medium tillgängligt i Volume licens Service Center när uppdateringen är globalt tillgänglig.
 
 <a name="bkmk_note1"></a>
 
@@ -85,16 +86,16 @@ I följande tabell visas tidigare versioner av Configuration Manager aktuella gr
 
 | Version | Tillgänglighetsdatum | Stöds till och med | Baslinje | Uppdatering i konsolen |  
 |-------------|-----------|------------|--------------|------------------------|  
-| **1806** <br /> (5.00.8692) | 31 juli 2018 | 31 januari 2020 | Inga | Yes |
+| **1806** <br /> (5.00.8692) | 31 juli 2018 | 31 januari 2020 | Inga | Ja |
 | **1802** <br /> (5.00.8634) | Den 22 mars 2018 | Den 22 september 2019 | Ja | Ja |
-| **1710** <br /> (5.00.8577) | 20 november 2017 | 20 maj, 2019 | Inga | Yes |
-| **1706** <br /> (5.00.8540) | 31 juli 2017 | 31 juli 2018 | Inga | Yes |
+| **1710** <br /> (5.00.8577) | 20 november 2017 | 20 maj, 2019 | Inga | Ja |
+| **1706** <br /> (5.00.8540) | 31 juli 2017 | 31 juli 2018 | Inga | Ja |
 | **1702** <br /> (5.00.8498) | 27 mars 2017 | 27 mars 2018 | Ja | Ja |
-| **1610** <br /> (5.00.8458) | 18 november 2016 | 18 november 2017 | Inga | Yes |
-| **1606** <br /> (5.00.8412.1000) | Den 22 juli 2016 | Den 22 juli 2017 | Inga | Yes |
-| **1606 med KB3186654** <br />5.00.8412.1307) | 12 oktober 2016 | 12 oktober 2017 | Yes | Inga |
-| **1602** <br /> (5.00.8355) | 11 mars 2016 | 11 mars 2017 | Inga | Yes |
-| **1511** <br /> (5.00.8325) | 8 december 2015 | 8 december 2016 | Yes | Inga |  
+| **1610** <br /> (5.00.8458) | 18 november 2016 | 18 november 2017 | Inga | Ja |
+| **1606** <br /> (5.00.8412.1000) | Den 22 juli 2016 | Den 22 juli 2017 | Inga | Ja |
+| **1606 med KB3186654** <br />5.00.8412.1307) | 12 oktober 2016 | 12 oktober 2017 | Ja | Inga |
+| **1602** <br /> (5.00.8355) | 11 mars 2016 | 11 mars 2017 | Inga | Ja |
+| **1511** <br /> (5.00.8325) | 8 december 2015 | 8 december 2016 | Ja | Inga |  
 
 #### <a name="how-to-check-the-version"></a>Kontrol lera versionen
 
@@ -109,7 +110,7 @@ När du använder en produktions klar installation av Configuration Manager aktu
 
 Dessa uppdateringar omfattar:  
 
-- Nya versioner, som version 1906, 1910 eller 2002.
+- Nya versioner, som version 1910, 2002 eller 2006.
 
 - Uppdateringar som innehåller nya funktioner för den aktuella versionen.
 

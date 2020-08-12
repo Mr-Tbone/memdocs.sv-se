@@ -10,19 +10,19 @@ ms.assetid: 035b7f73-8b78-4ed1-835e-a31f9a5c4a02
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 95b8bf41d74e7011eed40116f4fe34e2c356d67e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 6c702916f73d1fbc842966161a6958a61d24044a
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722839"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126077"
 ---
 # <a name="fundamentals-of-security-for-configuration-manager"></a>Grundläggande säkerhet för Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
 I den här artikeln sammanfattas följande grundläggande säkerhets komponenter i Configuration Managers miljö:
-- [Säkerhetslager](#bkmk_layers)
+- [Säkerhetsnivåer](#bkmk_layers)
 - [Rollbaserad administration](#bkmk_rba)
 - [Säkra klientslutpunkter](#bkmk_endpoints)
 - [Konton och grupper i Configuration Manager](#bkmk_accounts)
@@ -34,7 +34,7 @@ Säkerhet för Configuration Manager består av följande skikt:
 - [Windows operativ system och nätverks säkerhet](#bkmk_layer-windows)
 - [Nätverks infrastruktur: brand väggar, intrångs identifiering, PKI (Public Key Infrastructure)](#bkmk_layer-network)
 - [Configuration Manager säkerhets kontroller](#bkmk_layer-cm)
-- [SMS-provider](#bkmk_layer-provider)
+- [SMS-providern](#bkmk_layer-provider)
 - [Behörigheter för plats databas](#bkmk_layer-db)
 
 #### <a name="windows-os-and-network-security"></a><a name="bkmk_layer-windows"></a>Windows operativ system och nätverks säkerhet
@@ -82,7 +82,7 @@ Det sista säkerhetslagret baseras på behörighet till objekt i platsdatabasen.
 
  En administratör tilldelar *säkerhets roller* till administrativa användare och grupp behörigheter. Behörigheterna är anslutna till olika Configuration Manager objekt typer, till exempel för att skapa eller ändra klient inställningar. 
 
- *Säkerhets omfattningar* grupperar specifika instanser av objekt som en administrativ användare ansvarar för att hantera, till exempel ett program som installerar Microsoft Office. 
+ *Säkerhets omfattningar* grupperar specifika instanser av objekt som en administrativ användare ansvarar för att hantera, till exempel ett program som installerar Microsoft 365 appar. 
 
  Kombinationen av säkerhets roller, säkerhets omfattningar och samlingar definierar de objekt som en administrativ användare kan visa och hantera. Configuration Manager installerar vissa standard säkerhets roller för vanliga hanterings uppgifter. Skapa dina egna säkerhets roller för att stödja dina specifika affärs behov.  
 

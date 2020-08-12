@@ -5,17 +5,17 @@ description: En aktivitetssekvens för att bygga och avbilda skapar en referens 
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ceb63560c6000b1a76116d0791c98219a66066b8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 349ae2b8d574904d25f6f23bfb1707bb11df8af0
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723070"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125516"
 ---
 # <a name="create-a-task-sequence-to-capture-an-os"></a>Skapa en aktivitetssekvens för att avbilda ett operativsystem
 
@@ -40,7 +40,7 @@ De paket som är kopplade till aktivitetssekvensen, t. ex. program, måste finna
 
 Innan du skapar en aktivitetssekvens för att installera ett operativ system måste du kontrol lera att följande komponenter finns på plats:  
 
-### <a name="required"></a>Krävs
+### <a name="required"></a>Obligatorisk
 
 - [Startavbildning](../get-started/manage-boot-images.md)
 
@@ -81,7 +81,7 @@ Använd följande procedur för att använda en aktivitetssekvens för att bygga
 
     - **Avbildnings index**: Ange index för det operativ system som ska installeras i avbildningen. Om operativ system avbildningen innehåller flera versioner väljer du den version som du vill installera.  
 
-    - **Produkt nyckel**: Ange produkt nyckeln för det Windows-operativsystem som ska installeras vid behov. Du kan ange kodade volymlicensnycklar och standardproduktnycklar. Om du använder en icke-kodad produkt nyckel separerar du varje grupp med fem tecken med ett`-`bindestreck (). Exempelvis: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`  
+    - **Produkt nyckel**: Ange produkt nyckeln för det Windows-operativsystem som ska installeras vid behov. Du kan ange kodade volymlicensnycklar och standardproduktnycklar. Om du använder en icke-kodad produkt nyckel separerar du varje grupp med fem tecken med ett bindestreck ( `-` ). Exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`  
 
     - **Server licensierings läge**: om det behövs anger du att Server licensen är **per plats**, **per server**eller att ingen licens har angetts. Om serverlicensen gäller **Per server** anger du också det högsta antalet serveranslutningar.  
 
@@ -102,7 +102,7 @@ Använd följande procedur för att använda en aktivitetssekvens för att bygga
 
         Du kan också ange en organisationsenhet. Den här inställningen är valfri och anger det unika LDAP X. 500-namnet för den ORGANISATIONSENHET där dator kontot ska skapas, om det inte redan finns.  
 
-    - **Konto**: Ange användarnamn och lösenord för det konto som har behörighet att ansluta till den angivna domänen. Till exempel: `domain\user` eller `%variable%`.  
+    - **Konto**: Ange användarnamn och lösenord för det konto som har behörighet att ansluta till den angivna domänen. Till exempel: `domain\user` eller `%variable%` .  
 
         > [!IMPORTANT]  
         > Om du planerar att migrera domän inställningarna eller arbets grupps inställningarna under distributionen kontrollerar du att du anger rätt domänautentiseringsuppgifter här.  
@@ -116,7 +116,7 @@ Använd följande procedur för att använda en aktivitetssekvens för att bygga
 1. På sidan **installera program** anger du de program som ska installeras på mål datorn. Om du anger flera program kan du också ange att aktivitetssekvensen ska fortsätta om något program inte går att installera.  
 
     > [!NOTE]
-    > Sidan **system förberedelse** visas härnäst i guiden, men den används inte längre. Fortsätt genom att välja **Nästa**.
+    > Sidan **system förberedelse** visas härnäst i guiden, men den används inte längre. Välj **Nästa** för att fortsätta.
 
 1. På sidan **avbildnings egenskaper** anger du följande inställningar för operativ system avbildningen:
 
@@ -208,15 +208,15 @@ Den här gruppen innehåller de åtgärder som krävs för att bygga en referens
 
 |Aktivitetssekvenssteg|Beskrivning|  
 |-------------------------------|---------------|  
-|**Starta om i Windows PE**|Starta om mål datorn till den Start avbildning som är tilldelad i aktivitetssekvensen. Det här steget visar ett meddelande för användaren om att datorn kommer att startas om så att installationen kan fortsätta.<br /><br />I det här steget används variabeln `_SMSTSInWinPE` skrivskyddad aktivitetssekvens. Om det associerade värdet är lika `false`med, fortsätter steget i aktivitetssekvensen.|
-|**Partitionsdisk 0 - BIOS**|Partitionera och formatera hård disken på mål datorn i BIOS-läge. Standard disk numret är `0`.<br /><br />Det här steget använder flera variabler för skrivskyddad aktivitetssekvens. Den körs till exempel bara om Configuration Manager-klientcachen inte finns och inte körs om datorn har kon figurer ATS för UEFI.|
-|**Partitionsdisk 0 - UEFI**|Partitionera och formatera hård disken på mål datorn i UEFI-läge. Standard disk numret är `0`.<br /><br />Det här steget använder flera variabler för skrivskyddad aktivitetssekvens. Den körs till exempel bara om den Configuration Manager klientcachen inte finns och körs bara om datorn är konfigurerad för UEFI.|
+|**Starta om i Windows PE**|Starta om mål datorn till den Start avbildning som är tilldelad i aktivitetssekvensen. Det här steget visar ett meddelande för användaren om att datorn kommer att startas om så att installationen kan fortsätta.<br /><br />I det här steget används `_SMSTSInWinPE` variabeln skrivskyddad aktivitetssekvens. Om det associerade värdet är lika med `false` , fortsätter steget i aktivitetssekvensen.|
+|**Partitionsdisk 0 - BIOS**|Partitionera och formatera hård disken på mål datorn i BIOS-läge. Standard disk numret är `0` .<br /><br />Det här steget använder flera variabler för skrivskyddad aktivitetssekvens. Den körs till exempel bara om Configuration Manager-klientcachen inte finns och inte körs om datorn har kon figurer ATS för UEFI.|
+|**Partitionsdisk 0 - UEFI**|Partitionera och formatera hård disken på mål datorn i UEFI-läge. Standard disk numret är `0` .<br /><br />Det här steget använder flera variabler för skrivskyddad aktivitetssekvens. Den körs till exempel bara om den Configuration Manager klientcachen inte finns och körs bara om datorn är konfigurerad för UEFI.|
 |**Använd operativsystem**|Installera den angivna OS-avbildningen på mål datorn. Det här steget tar först bort alla filer på volymen, förutom Configuration Manager-/regionsspecifika styr filer. Den använder sedan alla volym avbildningar som finns i WIM-filen för motsvarande sekventiell disk volym på mål datorn.|
 |**Använd Windows-inställningar**|Konfigurera Windows-inställningar för mål datorn.|
 |**Använd nätverksinställningar**|Ange konfigurations information för nätverks-eller arbets grupp för mål datorn.|
-|**Använda enhetsdrivrutiner**|Matcha och installera driv rutiner som en del av distributionen av operativ systemet. Mer information finns i avsnittet [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers).<br /><br />I det här steget används variabeln `_SMSTSMediaType` skrivskyddad aktivitetssekvens. Om det associerade värdet inte är `FullMedia`lika körs inte det här steget.|
+|**Använda enhetsdrivrutiner**|Matcha och installera driv rutiner som en del av distributionen av operativ systemet. Mer information finns i avsnittet [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers).<br /><br />I det här steget används `_SMSTSMediaType` variabeln skrivskyddad aktivitetssekvens. Om det associerade värdet inte är lika `FullMedia` körs inte det här steget.|
 |**Konfigurera Windows och Configuration Manager**|Installera Configuration Manager klient program varan. Configuration Manager installerar och registrerar Configuration Manager-klientens GUID. Inkludera eventuella nödvändiga **installations egenskaper**.|
-|**Installera uppdateringar**|Ange hur program uppdateringar installeras på mål datorn. Mål datorn utvärderas inte för tillämpliga program uppdateringar förrän det här steget körs. I det här läget liknar utvärderingen en annan Configuration Manager-hanterad klient. Mer information finns i [installera program uppdateringar](../understand/install-software-updates.md).<br /><br />I det här steget används variabeln `_SMSTSMediaType` skrivskyddad aktivitetssekvens. Om det associerade värdet inte är `FullMedia`lika körs inte det här steget.|
+|**Installera uppdateringar**|Ange hur program uppdateringar installeras på mål datorn. Mål datorn utvärderas inte för tillämpliga program uppdateringar förrän det här steget körs. I det här läget liknar utvärderingen en annan Configuration Manager-hanterad klient. Mer information finns i [installera program uppdateringar](../understand/install-software-updates.md).<br /><br />I det här steget används `_SMSTSMediaType` variabeln skrivskyddad aktivitetssekvens. Om det associerade värdet inte är lika `FullMedia` körs inte det här steget.|
 |**Installera program**|Anger alla program som ska installeras på referens datorn.|
 
 ### <a name="group-capture-the-reference-machine"></a>Grupp: avbilda referens datorn

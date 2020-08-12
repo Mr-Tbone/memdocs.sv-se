@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e7bc30c4350d96654a0f6a6ae548d63c2928e791
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 87056482f098a440e5950b76520ab410844a1888
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904660"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129009"
 ---
 # <a name="whats-new-in-version-1802-of-configuration-manager"></a>Vad är nytt i version 1802 av Configuration Manager
 
@@ -125,7 +125,7 @@ När du skapar en instans av CMG ( [Cloud Management Gateway](../../clients/mana
 - Från och med den här versionen är **Cloud Management Gateway** inte längre en för hands versions funktion.  
 
 - Funktions dokumentationen har ändrats och förbättrats. Mer information finns i följande artiklar:
-    - [Planera för Cloud Management Gateway](../../clients/manage/cmg/plan-cloud-management-gateway.md)
+    - [Planera för molnhanteringsgatewayen](../../clients/manage/cmg/plan-cloud-management-gateway.md)
     - [Storlek och skalnings nummer för Cloud Management Gateway](../configs/size-and-scale-numbers.md#bkmk_cmg)
     - [Säkerhet och sekretess för molnhanteringsgateway](../../clients/manage/cmg/security-and-privacy-for-cloud-management-gateway.md)
     - [Vanliga frågor och svar om Cloud Management Gateway](../../clients/manage/cmg/cloud-management-gateway-faq.md)
@@ -208,7 +208,7 @@ Standard mal len för aktivitetssekvenser för Windows 10 uppgradering på plats
 
 ### <a name="improvements-to-operating-system-deployment"></a>Förbättringar av operativ Systems distribution
 Den här versionen innehåller följande förbättringar av operativ Systems distributionen:
-- När du startar CMTrace. exe i Windows PE uppmanas du inte längre att välja om programmet ska vara standard visnings programmet för loggfiler. <!-- SMS 500897 -->
+- När du startar cmtrace.exe i Windows PE uppmanas du inte längre att välja om programmet ska vara standard visnings programmet för loggfiler. <!-- SMS 500897 -->
 - Lägg till Start avbildningar i steget [Ladda ned paket innehåll](../../../osd/understand/task-sequence-steps.md#BKMK_DownloadPackageContent) i aktivitetssekvensen.
 - Förbättringar av steget [Kör aktivitetssekvens](../../../osd/understand/task-sequence-steps.md#child-task-sequence) : <!-- 1261338 -->   
   - Stöd för alla distributions scenarier för operativ system från Software Center, PXE och media.
@@ -236,7 +236,7 @@ Om en slutanvändare eller Skriv bords tekniker behöver installera flera progra
 
 ### <a name="use-software-center-to-browse-and-install-user-available-applications-on-azure-ad-joined-devices"></a>Använd Software Center för att söka efter och installera användar tillgängliga program på Azure AD-anslutna enheter
 <!-- 1322613 -->
-Om du distribuerar program som tillgängliga för användare kan de nu bläddra och installera dem via Software Center på Azure Active Directory (Azure AD)-enheter. Mer information finns i [distribuera användar tillgängliga program på Azure AD-anslutna enheter](../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications-on-azure-ad-joined-devices).
+Om du distribuerar program som tillgängliga för användare kan de nu bläddra och installera dem via Software Center på Azure Active Directory (Azure AD)-enheter. Mer information finns i [distribuera användar tillgängliga program](../../../apps/deploy-use/deploy-applications.md#deploy-user-available-applications).
 
 ### <a name="hide-installed-applications-in-software-center"></a>Dölj installerade program i Software Center
 <!--1357592-->

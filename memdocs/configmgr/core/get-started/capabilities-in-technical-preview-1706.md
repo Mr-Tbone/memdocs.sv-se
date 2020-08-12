@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d554f4f6e0c68912f4fac91bc1a8db2807b26a04
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 79258786b56cc3e7fe4971391903772700768a89
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078795"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126764"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-configuration-manager"></a>Funktioner i Technical Preview 1706 för Configuration Manager
 
@@ -72,7 +72,7 @@ Den här versionen innehåller förbättringar för hur program uppdaterings pla
   - Den här cykeln fortsätter tills klienten ansluter till en program uppdaterings plats som den kan använda.
   - Tills klienten hittar en program uppdaterings plats läggs ytterligare servrar till i poolen med tillgängliga servrar när återställnings tiden för varje intilliggande gräns grupp uppfylls.
 
-Mer information finns i [program uppdaterings platser](../servers/deploy/configure/boundary-groups.md#software-update-points) i avsnittet gränser grupper för Current Branch.
+Mer information finns i [program uppdaterings platser](../servers/deploy/configure/boundary-groups.md#bkmk_sup) i avsnittet gränser grupper för Current Branch.
 
 
 ## <a name="site-server-role-high-availability"></a>Plats server roll hög tillgänglighet
@@ -129,7 +129,7 @@ I den här versionen visas **status** för följande villkor i-konsolen som nume
 - 851967 – det gick inte att redundansväxla
 
 ### <a name="add-a-site-server-in-passive-mode"></a>Lägga till en plats server i passivt läge
-1. I-konsolen går du till **Administration** > **plats konfiguration** > **platser** och startar [guiden Lägg till plats system roller](../servers/deploy/configure/install-site-system-roles.md). Du kan också använda **guiden skapa plats system Server**.
+1. I-konsolen går du till **Administration**  >  **plats konfiguration**  >  **platser** och startar [guiden Lägg till plats system roller](../servers/deploy/configure/install-site-system-roles.md). Du kan också använda **guiden skapa plats system Server**.
 
 2. På sidan **Allmänt** anger du den server som ska vara värd för plats servern för passivt läge. Den server du anger kan inte vara värd för några plats system roller innan du installerar en plats server i passivt läge.
 
@@ -142,7 +142,7 @@ I den här versionen visas **status** för följande villkor i-konsolen som nume
 
 5. Configuration Manager installerar sedan plats servern i passivt läge på den angivna servern.
 
-Om du vill ha en detaljerad installations status går du till **Administration** > **plats konfiguration** > **platser**.
+Om du vill ha en detaljerad installations status går du till **Administration**  >  **plats konfiguration**  >  **platser**.
 - Status för plats servern i passivt läge visas som **installation**.
 
 - Välj servern och klicka sedan på **Visa status** för att öppna **installations status för plats Server** för mer detaljerad information.
@@ -150,15 +150,15 @@ Om du vill ha en detaljerad installations status går du till **Administration**
 
 
 ### <a name="promote-the-passive-mode-site-server-to-active-mode"></a>Flytta upp plats servern för passivt läge till aktivt läge
-När du vill ändra plats servern för passivt läge till aktivt läge gör du det från fönstret **noder** i **Administration** > **plats konfiguration** > **platser**. Så länge du kan komma åt en instans av SMS_Provider, kan du komma åt platsen för att göra den här ändringen.
+När du vill ändra plats servern för passivt läge till aktivt läge gör du det från fönstret **noder** i **Administration**  >  **plats konfiguration**  >  **platser**. Så länge du kan komma åt en instans av SMS_Provider, kan du komma åt platsen för att göra den här ändringen.
 1. I fönstret **noder** i Configuration Manager-konsolen väljer du plats servern i passivt läge och väljer sedan **befordra till aktiv**i menyfliksområdet.
 
 2. Den enkla **statusen** för den server som du befordrar visas i fönstret **noder** som **befordran**.
 
 3. När befordran är slutförd visas i kolumnen **status** **OK** för både den nya *aktiva* läges plats servern och för den nya plats servern för *passivt* läge.
 
-4. På plats för **administrations** > **plats konfiguration** > **Sites**visar namnet på den primära plats servern nu namnet på den nya plats servern för *aktiva* läge.
-För detaljerad status, gå till **övervakning** > **plats Server status**.
+4. På plats för **administrations**  >  **plats konfiguration**  >  **Sites**visar namnet på den primära plats servern nu namnet på den nya plats servern för *aktiva* läge.
+För detaljerad status, gå till **övervakning**  >  **plats Server status**.
     - I kolumnen **mode** identifieras vilken server som är *aktiv* eller *passiv*.
 
     - När du befordrar en server från passivt läge till aktivt läge väljer du den plats server som du befordrar till aktiv och väljer sedan **Visa status** från menyfliksområdet. Då öppnas fönstret **plats Server befordran status** som visar mer information om processen.
@@ -167,7 +167,7 @@ När en plats server i aktivt läge växlar över till passivt läge görs bara 
 
 
 ### <a name="daily-monitoring"></a>Daglig övervakning
-När du har en primär plats i passivt läge kan du övervaka den dagligen för att säkerställa att den är synkroniserad med den aktiva läges plats servern och är redo att användas. Det gör du genom att gå till **övervakning** > **plats Server status**. Här kan du Visa plats servrar för både aktivt läge och passivt läge.
+När du har en primär plats i passivt läge kan du övervaka den dagligen för att säkerställa att den är synkroniserad med den aktiva läges plats servern och är redo att användas. Det gör du genom att gå till **övervakning**  >  **plats Server status**. Här kan du Visa plats servrar för både aktivt läge och passivt läge.
 
 Fliken **Sammanfattning** :
 - I kolumnen **mode** identifieras vilken server som är aktiv eller passiv.
@@ -231,7 +231,7 @@ För att lösa det här problemet kan du nu ange både en installations innehål
 
 ## <a name="accessibility-improvements"></a>Förbättrad användbarhet  
 <!--1253000 -->
-Den här för hands versionen innehåller flera förbättringar av [hjälpmedels funktionerna](../understand/accessibility-features.md) i Configuration Manager-konsolen. Exempel på dessa är:     
+Den här för hands versionen innehåller flera förbättringar av [hjälpmedels funktionerna](../understand/accessibility-features.md) i Configuration Manager-konsolen. Dessa omfattar:     
 
 **Nya kortkommandon för att flytta runt i-konsolen:**
 - Ctrl + M – anger fokus i huvud fönstret (Central).
@@ -271,7 +271,7 @@ Kraven för en anslutning till Uppgraderingsberedskap är oförändrade från de
 När kraven har kon figurer ATS är du redo att använda guiden för att skapa anslutningen.
 
 ### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Använd guiden Azure-tjänster för att konfigurera Uppgraderingsberedskap
-1. I-konsolen går du till **administrations** > **Översikt** > **Cloud Services** > **Azure-tjänster**och väljer **sedan konfigurera Azure-tjänster** på fliken **Start** i menyfliksområdet för att starta **guiden Azure-tjänster**.
+1. I-konsolen går du till **administrations**  >  **Översikt**  >  **Cloud Services**  >  **Azure-tjänster**och väljer sedan **Konfigurera Azure-tjänster** på fliken **Start** i menyfliksområdet för att starta **guiden Azure-tjänster**.
 
 2. På sidan **Azure-tjänster** väljer du **uppgraderingsberedskap anslutningen**och klickar sedan på **Nästa**.
 
@@ -309,7 +309,7 @@ Om du tar bort anslutningen avregistreras inte enheterna, men inga nya enheter r
    - **Gör det möjligt för klienter att använda en Cloud Management Gateway** – Ställ in på **Ja** (standard) eller **Nej**.
 2. Distribuera klient inställningarna till den obligatoriska samlingen av enheter.
 
-För att bekräfta att enheten är ansluten till Azure AD kör du kommandot **dsregcmd. exe/status** i kommando tolkens fönster. I fältet **AzureAdjoined** i resultatet visas **Ja** om enheten är Azure AD-ansluten.
+Bekräfta att enheten är ansluten till Azure AD genom att köra kommandot **dsregcmd.exe/status** i kommando tolkens fönster. I fältet **AzureAdjoined** i resultatet visas **Ja** om enheten är Azure AD-ansluten.
 
 ## <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Skapa och kör PowerShell-skript från Configuration Manager-konsolen
 <!-- 1236459 -->
@@ -323,7 +323,7 @@ I Configuration Manager kan du distribuera skript till klient enheter med hjälp
 - Granska resultaten som returnerades av skriptet i Configuration Manager-konsolen.
 
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 Om du vill använda skript måste du vara medlem i lämplig Configuration Manager säkerhets roll.
 
@@ -396,14 +396,14 @@ Nu kan du aktivera PXE-nätverkets start stöd för IPv6 för att starta en akti
 #### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Så här aktiverar du stöd för PXE-start för IPv6
 Använd följande procedur för att aktivera alternativet för IPv6-stöd för PXE.
 
-1. I Configuration Manager-konsolen går du till **Administration** > **Översikt** > **distributions platser**och klickar på **Egenskaper** för PXE-aktiverade distributions platser.
+1. I Configuration Manager-konsolen går du till **Administration**  >  **Översikt**  >  **distributions platser**och klickar på **Egenskaper** för PXE-aktiverade distributions platser.
 2. På fliken **PXE** väljer du **stöd för IPv6** för att aktivera stöd för IPv6 för PXE.
 
 ## <a name="manage-microsoft-surface-driver-updates"></a>Hantera uppdateringar av Microsoft Surface-drivrutiner
 <!-- 1098490 -->
 Du kan nu använda Configuration Manager för att hantera uppdateringar av Microsoft Surface-drivrutiner.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 Alla program uppdaterings platser måste köra Windows Server 2016.
 
 ### <a name="try-it-out"></a>prova!
@@ -414,13 +414,13 @@ Försök att utföra följande uppgifter och skicka sedan oss **feedback** från
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Konfigurera Windows Update för principer för avstängning av företag
 <!-- 1290890 -->
-Nu kan du konfigurera regler för avstängning för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag. Du kan hantera uppskjutnings principerna i noden nya **Windows Update för affärs principer** under **program varu bibliotek** > **Windows 10-Underhåll**.
+Nu kan du konfigurera regler för avstängning för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag. Du kan hantera uppskjutnings principerna i noden nya **Windows Update för affärs principer** under **program varu bibliotek**  >  **Windows 10-Underhåll**.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 Windows 10-enheter som hanteras av Windows Update för företag måste ha Internet anslutning.
 
 #### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Så här skapar du en princip för avstängning av Windows Update för företag
-1. I **program varu biblioteket** > **Windows 10 Servicing** > **Windows Update for Business policies**
+1. I **program varu biblioteket**  >  **Windows 10 Servicing**  >  **Windows Update for Business policies**
 2. På fliken **Start** går du till gruppen **skapa** och väljer **skapa Windows Update för företag** för att öppna guiden skapa Windows Update för företag-princip.
 3. På sidan **Allmänt** anger du ett namn och en beskrivning för principen.
 4. På sidan **regler för avstängning** anger du om du vill skjuta upp eller pausa funktions uppdateringar.    
@@ -437,7 +437,7 @@ Windows 10-enheter som hanteras av Windows Update för företag måste ha Intern
 8. Slutför guiden för att skapa den nya avstängnings principen.
 
 #### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Så här distribuerar du en princip för avstängning av Windows Update för företag
-1. I **program varu biblioteket** > **Windows 10 Servicing** > **Windows Update for Business policies**
+1. I **program varu biblioteket**  >  **Windows 10 Servicing**  >  **Windows Update for Business policies**
 2. På fliken **Start** går du till gruppen **distribution** och väljer **distribuera Windows Update for Business-princip**.
 3. Konfigurera följande inställningar:
     - **Konfigurations princip som ska distribueras**: välj den Windows Update för företags princip som du vill distribuera.
@@ -483,7 +483,7 @@ I den här versionen har vi lagt till följande nya inställningar som du kan an
 - **Ändring av system tid**
 - **Ändring av enhets namn**
 
-### <a name="store"></a>Lager
+### <a name="store"></a>Lagringsplats
 
 - **Uppdatera appar automatiskt från Store**
 - **Använd endast privat lagring**
@@ -543,7 +543,7 @@ Från och med den här versionen kan du använda tre nya princip inställningar 
 <!-- 1290826 -->
 Från och med den här versionen kan administratörer nu ange att användare inte kan registrera personliga Android-eller iOS-enheter i sin hybrid miljö. På så sätt kan du begränsa registrerade enheter till fördeklarerade, företagsägda enheter eller iOS-enheter som har registrerats med Programmet för enhetsregistrering bara.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 1. Gå till **Molntjänster** Microsoft Intune-prenumeration **i arbetsytan** > **Administration**i Configuration Manager-konsolen.
 2. Välj **Konfigurera plattformar** på fliken **Start** i gruppen **prenumeration** och välj sedan **Android** eller **iOS**.
 3. Välj **blockera personligt ägda enheter**.
@@ -564,8 +564,8 @@ Inget av de här alternativen förhindrar kopiera-inklistring-beteende. Vi har l
 
 Genom att ange DisallowCrossProfileCopyPaste till True förhindras kopierings inklistring mellan Android for Work-profiler och arbets profiler.
 
-### <a name="try-it-out"></a>Prova nu
-1. I Configuration Manager-konsolen väljer du **till gångar och efterlevnad** > **–** > **Compliance settings** > **konfigurations objekt**för kompatibilitetsinställningar.
+### <a name="try-it-out"></a>Prova
+1. I Configuration Manager-konsolen väljer du **till gångar och efterlevnad**  >  **–**  >  **Compliance settings**  >  **konfigurations objekt**för kompatibilitetsinställningar.
 2. Välj **skapa** för att skapa ett nytt konfigurations objekt och ange **namn** och **Android for Work**.
 3. I enhets inställnings grupperna som ska konfigureras väljer du **arbets profil**och **sedan nästa**.
 4. Välj värdet för **Tillåt data delning mellan arbets profiler och personliga profiler**och slutför sedan guiden.
@@ -574,5 +574,5 @@ Genom att ange DisallowCrossProfileCopyPaste till True förhindras kopierings in
 <!-- 1097546 -->
 Från och med den här versionen kan du använda Hälsoattestering för enhet status som en regel för efterlevnadsprinciper för villkorlig åtkomst till företags resurser.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 Välj en Hälsoattestering för enhet regel som en del av en utvärdering av efterlevnadsprinciper.

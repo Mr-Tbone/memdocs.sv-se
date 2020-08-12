@@ -2,20 +2,20 @@
 title: Konfigurera Azure-tjänster
 titleSuffix: Configuration Manager
 description: Anslut din Configuration Manager-miljö med Azure-tjänster för moln hantering, Microsoft Store för företag och Log Analytics.
-ms.date: 06/10/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6ca5307de5c7df54c3cf7924bc91b0175b1bfa39
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: ebdd07874f09ff6d97747826d6056df177e2c735
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715330"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128485"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Konfigurera Azure-tjänster för användning med Configuration Manager
 
@@ -229,6 +229,17 @@ När du har angett webb-och interna appar på sidan appar, fortsätter guiden Az
 Slutligen avslutar du guiden Azure-tjänster via sidorna Sammanfattning, förlopp och slut för ande. Du har slutfört konfigurationen av en Azure-tjänst i Configuration Manager. Upprepa den här processen om du vill konfigurera andra Azure-tjänster.
 
 ## <a name="renew-secret-key"></a><a name="bkmk_renew"></a>Förnya hemlig nyckel
+
+Du måste förnya Azure AD-appens hemliga nyckel innan giltighets perioden är slut. Om du låter nyckeln förfalla kan Configuration Manager inte autentiseras med Azure AD, vilket gör att dina anslutna Azure-tjänster slutar fungera.
+
+Från och med version 2006 visar Configuration Manager-konsolen aviseringar under följande omständigheter:<!--6386392-->
+
+- En eller flera Azure AD-appens hemliga nycklar upphör snart att gälla
+- En eller flera Azure AD-appens hemliga nycklar har upphört att gälla
+
+Förnya den hemliga nyckeln för att minimera båda fallen.
+
+Mer information om hur du interagerar med dessa meddelanden finns i [Configuration Manager konsol meddelanden](../../manage/admin-console-notifications.md).
 
 ### <a name="renew-key-for-created-app"></a>Förnya nyckel för den skapade appen
 

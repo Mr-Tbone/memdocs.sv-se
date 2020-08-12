@@ -2,7 +2,7 @@
 title: Uppdateringar i konsolen
 titleSuffix: Configuration Manager
 description: Installera uppdateringar till Configuration Manager från Microsoft-molnet
-ms.date: 06/02/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a0d7f36c921f782c0baad740d8e643f54cee0309
-ms.sourcegitcommit: 5e339c07001e911cf75ef922e6c66a7efdeab6f1
+ms.openlocfilehash: 65071493834c33dac7581075b835e023c74f5706
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84637677"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128094"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installera uppdateringar i konsolen för Configuration Manager
 
@@ -96,13 +96,13 @@ Granska följande steg innan du installerar en uppdatering från Configuration M
 
 Granska tillämplig check lista för uppdateringar för åtgärder som ska vidtas innan du startar uppdateringen:
 
+- [Check lista för att installera uppdatering 2006](checklist-for-installing-update-2006.md)
+
 - [Checklista för att installera uppdatering 2002](checklist-for-installing-update-2002.md)
 
 - [Checklista för att installera uppdatering 1910](checklist-for-installing-update-1910.md)  
 
 - [Checklista för att installera uppdatering 1906](checklist-for-installing-update-1906.md)  
-
-- [Checklista för att installera uppdatering 1902](checklist-for-installing-update-1902.md)
 
 ### <a name="step-2-run-the-prerequisite-checker-before-installing-an-update"></a><a name="bkmk_step2"></a>Steg 2: kör krav kontrollen innan du installerar en uppdatering  
 
@@ -362,13 +362,13 @@ Gå till arbets ytan **övervakning** och välj noden **plats underhålls status
 
 När platsen har uppdaterats granskar du check listan efter uppdatering för den aktuella versionen:  
 
+- [Check lista för uppdatering efter uppdatering för version 2006](checklist-for-installing-update-2006.md#post-update-checklist)
+
 - [Check lista för uppdatering efter uppdatering för version 2002](checklist-for-installing-update-2002.md#post-update-checklist)
 
 - [Check lista för uppdatering efter uppdatering för version 1910](checklist-for-installing-update-1910.md#post-update-checklist)  
 
 - [Check lista för uppdatering efter uppdatering för version 1906](checklist-for-installing-update-1906.md#post-update-checklist)  
-
-- [Check lista för uppdatering efter uppdatering för version 1902](checklist-for-installing-update-1902.md#post-update-checklist)  
 
 ## <a name="enable-optional-features-from-updates"></a><a name="bkmk_options"></a>Aktivera valfria funktioner från uppdateringar  
 
@@ -378,7 +378,7 @@ Om du vill visa tillgängliga funktioner och deras status går du till arbets yt
 
 När en funktion inte är valfri installeras den automatiskt. Den visas inte i noden **funktioner** .  
 
-> [!Important]  
+> [!IMPORTANT]
 > I en hierarki med flera platser aktiverar du valfria eller för hands versions funktioner enbart från den centrala administrations platsen. Det här beteendet garanterar att det inte finns några konflikter i hierarkin. <!--507197-->  
 
 När du aktiverar en ny funktion eller för hands versions funktion måste Configuration Manager Hierarchy Manager (HMAN) bearbeta ändringen innan funktionen blir tillgänglig. Bearbetningen av ändringen är ofta omedelbar. Beroende på bearbetnings cykeln för HMAN kan det ta upp till 30 minuter att slutföra. När ändringen har bearbetats startar du om-konsolen innan du kan använda funktionen.
@@ -391,19 +391,20 @@ Följande funktioner är valfria i den senaste versionen av Configuration Manage
 
 <!--Note to include in target articles
 
-> [!Note]  
+> [!NOTE]
 > Configuration Manager doesn't enable this optional feature by default. You must enable this feature before using it. For more information, see [Enable optional features from updates](install-in-console-updates.md#bkmk_options).  
 
 -->
 
 - [Community-hubb](community-hub.md)<!--3555935, C098DA03-C33C-4E15-B337-6C0FEEB3CB8A-->
+- [Orkestreringsgrupper](../../../sum/deploy-use/orchestration-groups.md)<!--3098816, 290B66D8-C735-4895-B59A-DD732D84A697-->
+- [Distributions typ för aktivitetssekvens](../../../apps/get-started/creating-windows-applications.md#bkmk_tsdt) <!-- 3555953, CB0CDFFB-9C6F-4B18-8954-A43A387302A2-->
 - [BitLocker-hantering](../../../protect/plan-design/bitlocker-management.md) <!-- 3601034,6DD56E46-C3EC-4E38-A16F-E98644BB6434 -->
 - [Synkronisera samlings medlemskaps resultat till Azure Active Directory](../../clients/manage/collections/create-collections.md#bkmk_aadcollsync) <!--3607475,C2127144-C8DE-49F6-9CB3-D4F5B59F9515-->
 - [Azure Active Directory användar grupp identifiering](../deploy/configure/configure-discovery-methods.md#bkmk_azuregroupdisco) <!--3611956,023715E7-BFBA-4E9E-A80F-B5B626464ADD-->
 - [Program grupper](../../../apps/deploy-use/create-app-groups.md) <!--3555907,EE16A1D8-EF1B-4094-845F-AC107E7C621D-->
 - [Fel sökare för aktivitetssekvens](../../../osd/deploy-use/debug-task-sequence.md) <!--3612274,C3F37661-69E4-4D53-A39C-5D02F97E0E71-->
 - [Paket konverterings hanterare](../../../apps/pcm/package-conversion-manager.md) <!--1357861,4E0C09AF-7FC1-4412-A8BB-166D9BCD0093-->
-- [Klient program för samhanterade enheter](../../../comanage/workloads.md#client-apps) (kallades tidigare *mobilappar för samhanterade enheter*) <!--1357892,CC3AE625-BF72-49B1-8AB1-AF0DCF2D6F4C-->
 - [Programuppdateringar från tredje part](../../../sum/deploy-use/third-party-software-updates.md)<!--1357605,1352101,1358714;B5E192AE-C81F-4348-9EF9-07A3C0FBE597-->
 - [Godkänn program begär Anden för användare per enhet](../../../apps/deploy-use/deploy-applications.md#bkmk_deploy-settings) <!--1357015,4BA987C9-08FC-48E2-BFFE-C9DCF35B496A-->  
 - [Skapa och köra skript](../../../apps/deploy-use/create-deploy-scripts.md) <!--1236459,566F8720-F415-4E10-9A51-CDE682BA2B2E-->
@@ -416,7 +417,7 @@ Följande funktioner är valfria i den senaste versionen av Configuration Manage
 - [Underhålla en kluster medveten samling (Server grupper)](../../../sum/deploy-use/service-a-server-group.md) <!--1081776,290B66D8-C735-4895-B59A-DD732D84A697-->
 - [Windows Hello för företag](../../../protect/deploy-use/windows-hello-for-business-settings.md) (kallades tidigare *Passport for Work*) <!--1245704,8BCA2642-3719-4862-A355-9D39C979E1B4-->
 
-> [!Tip]  
+> [!TIP]
 > Mer information om funktioner som kräver medgivande för att aktivera finns i [för hands versions funktioner](pre-release-features.md).  
 >
 > Mer information om funktioner som endast är tillgängliga i den tekniska för hands versionen finns i [Technical Preview](../../get-started/technical-preview.md).

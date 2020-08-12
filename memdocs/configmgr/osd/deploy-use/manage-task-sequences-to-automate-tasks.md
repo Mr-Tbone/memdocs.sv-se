@@ -2,20 +2,20 @@
 title: Hantera aktivitetssekvenser
 titleSuffix: Configuration Manager
 description: Skapa, redigera, distribuera, importera och exportera aktivitetssekvenser för att hantera dem och automatisera aktiviteter i din miljö.
-ms.date: 02/26/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f79829b7cd6ec70764a20fb05f4438176c41b470
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: 609f5d010018fa23dd4a533b2f1079f07d8c2283
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85591042"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125073"
 ---
 # <a name="manage-task-sequences-to-automate-tasks"></a>Hantera aktivitetssekvenser för att automatisera uppgifter
 
@@ -40,6 +40,30 @@ Aktivitetssekvenser skapas med hjälp av guiden Skapa aktivitetssekvens. I den h
 ## <a name="edit"></a><a name="BKMK_ModifyTaskSequence"></a>Ras  
 
 Ändra en aktivitetssekvens genom att lägga till eller ta bort steg, lägga till eller ta bort grupper eller genom att ändra ordningen på stegen. Mer information finns i [använda redigeraren för aktivitetssekvens](../understand/task-sequence-editor.md).
+
+## <a name="reduce-the-size-of-task-sequence-policy"></a><a name="bkmk_policysize"></a>Minska storleken på aktivitetssekvensen
+
+<!--6982275-->
+När storleken på aktivitetssekvensen överskrider 32 MB, kan klienten inte bearbeta den stora principen. Klienten kan sedan inte köra distribution av aktivitetssekvensen.
+
+Storleken på aktivitetssekvensen som lagras i plats databasen är mindre, men kan fortfarande orsaka problem om den är för stor. När klienten bearbetar hela aktivitetssekvensen kan den utökade storleken orsaka problem över 32 MB.
+
+Från och med version 2006 kan du använda [Management Insights](../../core/servers/manage/management-insights.md#operating-system-deployment)för att kontrol lera om det finns 32-MB på klienternas princip storlek för aktivitetssekvens.
+
+Utför följande åtgärder för att minska den övergripande storleken på principen för en aktivitetssekvensdistribution:
+
+- Separera funktionella segment till underordnade aktivitetssekvenser och Använd steget [Kör aktivitetssekvens](../understand/task-sequence-steps.md#child-task-sequence) . Varje aktivitetssekvens har en separat gräns på 32 MB för princip storleken.
+
+    > [!NOTE]
+    > Att minska det totala antalet steg och grupper i en aktivitetssekvens har minimal inverkan på princip storleken. Varje steg är vanligt vis ett par KB i principen. Att flytta grupper av steg till en underordnad aktivitetssekvens är mer påverkan.
+
+- Minska antalet program uppdateringar i distributioner till samma samling som aktivitetssekvensen.
+
+- I stället för att ange ett skript i steget [kör PowerShell-skript](../understand/task-sequence-steps.md#BKMK_RunPowerShellScript) kan du referera till det via ett paket.
+
+- Det finns en gräns på 8 KB för storleken på aktivitetssekvensen när den körs. Granska användningen av variabler för anpassad aktivitetssekvens, som också kan bidra till princip storleken.
+
+- Som en sista utväg delar du en komplex, dynamisk aktivitetssekvens i separata aktivitetssekvenser med olika distributioner till olika samlingar.
 
 ## <a name="software-center-properties"></a><a name="bkmk_prop-general"></a>Egenskaper för Software Center
 
@@ -368,7 +392,7 @@ Välj säkerhets omfattningar för den valda aktivitetssekvensen. Mer informatio
 
 Mer information finns i [Konfigurera Software Center-egenskaper](#bkmk_prop-general) och [Konfigurera avancerade inställningar för aktivitetssekvens](#bkmk_prop-advanced).
 
-### <a name="view"></a>Visa
+### <a name="view"></a>Vy
 
 <!--3633146-->
 Från och med version 1902 är **visnings** åtgärden för aktivitetssekvenser standardvärdet. Med den här åtgärden kan du se stegen i aktivitetssekvensen utan att låsa den för redigering. Mer information finns i [använda redigeraren för aktivitetssekvens](../understand/task-sequence-editor.md#bkmk_view).

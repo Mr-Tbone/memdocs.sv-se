@@ -5,17 +5,17 @@ description: Använd stegvisa distributioner för att automatisera distributione
 ms.date: 04/21/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: b634ff68-b909-48d2-9e2c-0933486673c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5af0b7c90225a1f42d55767a0296d7e2263f956f
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: 1845b381d8b37fed3a785475e961cd39c54cf42d
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110465"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125278"
 ---
 # <a name="create-phased-deployments-with-configuration-manager"></a>Skapa stegvisa distributioner med Configuration Manager
 
@@ -35,7 +35,7 @@ Skapa stegvisa distributioner för följande objekt:
 
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 #### <a name="security-scope"></a>Säkerhets omfattning
 Distributioner som skapats av stegvisa distributioner kan inte visas för administrativa användare som inte har säkerhets omfattningen **alla** . Mer information finns i [Säkerhetsomfattningar](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope).

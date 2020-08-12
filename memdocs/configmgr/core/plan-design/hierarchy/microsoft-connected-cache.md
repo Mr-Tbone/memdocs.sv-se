@@ -10,12 +10,12 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5bea4fab3b32464cc0d03469d4966fe3611d2f76
-ms.sourcegitcommit: 02635469d684d233fef795d2a15615658e62db10
+ms.openlocfilehash: 0103ba8923698a31b86e7d34119caaeb54d54c90
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84814916"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128536"
 ---
 # <a name="microsoft-connected-cache-in-configuration-manager"></a>Microsoft Connected cache i Configuration Manager
 
@@ -132,7 +132,7 @@ När klienter laddar ned moln hanterat innehåll använder de leverans optimerin
 - Om du aktiverar [Windows Update för affärs principer](../../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md): Windows 10-funktions-och kvalitets uppdateringar
 - För [samhanterings arbets belastningar](../../../comanage/workloads.md):
   - Windows Update för företag: Windows 10 funktions-och kvalitets uppdateringar
-  - Office Klicka-och-kör-appar: Office-appar och uppdateringar
+  - Office Klicka-och-kör-appar: Microsoft 365 appar och uppdateringar
   - Klient program: Microsoft Store appar och uppdateringar
   - Endpoint Protection: definitions uppdateringar för Windows Defender
 
@@ -148,7 +148,7 @@ Mer detaljerad information finns i [felsöka Microsoft Connected cache i Configu
 
 Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samhanterade klienter när du aktiverar ansluten cache på Configuration Manager distributions platser.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 #### <a name="client"></a>Klient
 

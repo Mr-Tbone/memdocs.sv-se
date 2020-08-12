@@ -10,12 +10,12 @@ ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: bb770a559904421f6bf01616504331dbebb9b549
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 9cb8097fbdd57184e5cd0e229cf96dcb317cf1e5
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268087"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127349"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Självstudie: Aktivera samhantering för befintliga Configuration Manager-klienter
 
@@ -169,13 +169,9 @@ Med hybrid Azure AD-konfiguration och Configuration Manager-klientkonfiguratione
 
 ### <a name="enable-co-management-starting-in-version-1906"></a>Aktivera samtidig hantering från och med version 1906
 
-Om du vill aktivera samhantering från Configuration Manager version 1906 följer du anvisningarna nedan:
-
 [!INCLUDE [Enable Co-management in version 1906 and later](includes/enable-co-management-1906-and-higher.md)]
 
 ### <a name="enable-co-management-in-version-1902-and-earlier"></a>Aktivera samhantering i version 1902 och tidigare
-
-Följ anvisningarna nedan om du vill aktivera samhantering för Configuration Manager version 1902 och tidigare:
 
 [!INCLUDE [Enable Co-management in version 1902 and earlier](includes/enable-co-management-1902-and-earlier.md)]
 

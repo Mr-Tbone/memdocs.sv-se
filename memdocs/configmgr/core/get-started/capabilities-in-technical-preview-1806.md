@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2168f844f1c9ef98ea21da68b73531bca7aad999
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 4708c0d8e9a7d2a3b87310b64311d67d8b84a16a
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905181"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126798"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-configuration-manager"></a>Funktioner i Technical Preview 1806 för Configuration Manager
 
@@ -68,7 +68,7 @@ Den här versionen itererar ytterligare om support för program uppdateringar fr
 
 Följande program uppdaterings kataloger från tredje part är tillgängliga i den här versionen:
 
- | Utgivare | Katalog namn |
+ | Publisher | Katalog namn |
  |--------|---------------------|
  | HP | HP-katalogen för klient uppdateringar |
 
@@ -240,7 +240,7 @@ Office-verktyget för anpassning är nu integrerat med Office 365-installations 
  Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-technical-preview-1804.md#bkmk_feedback) för att berätta hur det fungerade.
 
 1. I Configuration Manager-konsolen går du till arbets ytan **program varu bibliotek** och väljer noden **Office 365 klient hantering** .
-2. Klicka på installations panelen för **office 365** i instrument panelen för att starta installations guiden för Office 365-klienten. Mer information finns i [distribuera Office 365-appar](../../sum/deploy-use/manage-office-365-proplus-updates.md#deploy-office-365-apps).
+2. Klicka på installations panelen för **office 365** i instrument panelen för att starta installations guiden för Office 365-klienten. Mer information finns i [distribuera Office 365-appar](../../sum/deploy-use/manage-office-365-proplus-updates.md).
 3. På sidan **Office-inställning** klickar **du på gå till Office-webb sida**. Använd verktyget för anpassning av Office Online för att ange inställningar för den här distributionen. 
 4. Klicka på **Skicka** i det övre högra hörnet när du är klar. Slutför installations guiden för Office 365-klienten.
 

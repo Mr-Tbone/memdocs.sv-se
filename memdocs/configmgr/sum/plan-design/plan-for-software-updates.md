@@ -5,17 +5,17 @@ description: En plan för program uppdaterings platsens infrastruktur är nödv�
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 10/22/2019
+ms.date: 08/11/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: dca6f3e4bf67ac4c947f785016d781e538ee0a4e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: b7b3ef78924389232ea292d16c6840fbef9bb321
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724022"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88123599"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Planera för program uppdateringar i Configuration Manager
 
@@ -71,7 +71,7 @@ Klienten väljer slumpmässigt en program uppdaterings plats i listan. Den prior
 ###  <a name="software-update-point-switching"></a><a name="BKMK_SUPSwitching"></a> Växling till annan programuppdateringsplats  
 
 > [!NOTE]  
-> Klienter använder gränser grupper för att hitta en ny program uppdaterings plats. Om deras aktuella program uppdaterings plats inte längre är tillgänglig, använder de också gränser grupper för att komma igång och hitta en ny. Lägg till enskilda program uppdaterings platser i olika gränser grupper för att kontrol lera vilka servrar som en klient kan hitta. Mer information finns i [program uppdaterings platser](../../core/servers/deploy/configure/boundary-groups.md#software-update-points).  
+> Klienter använder gränser grupper för att hitta en ny program uppdaterings plats. Om deras aktuella program uppdaterings plats inte längre är tillgänglig, använder de också gränser grupper för att komma igång och hitta en ny. Lägg till enskilda program uppdaterings platser i olika gränser grupper för att kontrol lera vilka servrar som en klient kan hitta. Mer information finns i [program uppdaterings platser](../../core/servers/deploy/configure/boundary-groups.md#bkmk_sup).  
 
 Om du har flera program uppdaterings platser på en plats och en Miss lyckas eller blir otillgänglig, ansluter klienter till en annan program uppdaterings plats. Med den nya servern fortsätter klienterna att söka efter de senaste program uppdateringarna. När en klient först tilldelas en program uppdaterings plats förblir den tilldelad till den program uppdaterings platsen om den inte kan genomsökas.  
 
@@ -111,7 +111,7 @@ Växla Configuration Manager klienter till en ny program uppdaterings plats när
 > [!IMPORTANT]    
 > När du växlar enheter till att använda en ny server använder enheterna reserv för att hitta den nya servern. Klienter växlar till den nya program uppdaterings platsen under nästa genomsöknings cykel för program uppdateringar.<!-- SCCMDocs#1537 -->
 >
-> Innan du börjar den här ändringen granskar du konfigurationerna för gränser-gruppen för att se till att program uppdaterings platserna finns i rätt gränser grupper. Mer information finns i [program uppdaterings platser](../../core/servers/deploy/configure/boundary-groups.md#software-update-points).  
+> Innan du börjar den här ändringen granskar du konfigurationerna för gränser-gruppen för att se till att program uppdaterings platserna finns i rätt gränser grupper. Mer information finns i [program uppdaterings platser](../../core/servers/deploy/configure/boundary-groups.md#bkmk_sup).  
 >
 > Om du växlar till en ny program uppdaterings plats genereras ytterligare nätverks trafik. Mängden trafik beror på inställningarna för WSUS-konfigurationen, till exempel synkroniserade klassificeringar och produkter, eller användning av en delad WSUS-databas. Om du planerar att byta flera enheter bör du göra det under underhålls perioder. Den här tids inställningen minskar påverkan på nätverket när klienterna genomsöks med den nya program uppdaterings platsen.  
 
@@ -151,7 +151,7 @@ När du behöver hantera enheter som roamas av nätverket på Internet utvecklar
 #### <a name="cloud-management-gateway"></a>Gateway för molnhantering
 Skapa en Cloud Management Gateway i Microsoft Azure och aktivera minst en lokal program uppdaterings plats för att tillåta trafik från Internetbaserade klienter. När klienter växlar till Internet, fortsätter de att söka mot dina program uppdaterings platser. Alla Internetbaserade klienter får alltid innehåll från Microsoft Update moln tjänsten. 
 
-Mer information finns i [Planera för Cloud Management Gateway](../../core/clients/manage/cmg/plan-cloud-management-gateway.md).  
+Mer information finns i [Planera för Cloud Management Gateway](../../core/clients/manage/cmg/plan-cloud-management-gateway.md) och [Konfigurera gränser grupper](../../core/servers/deploy/configure/boundary-groups.md#bkmk_sup).  
 
 #### <a name="internet-based-client-management"></a>Internetbaserad klienthantering
 Placera en program uppdaterings plats i ett nätverk som riktas mot Internet och gör det möjligt att tillåta trafik från Internetbaserade klienter. När klienter växlar till Internet växlar de till den här program uppdaterings platsen för genomsökning. Alla Internetbaserade klienter får alltid innehåll från Microsoft Update moln tjänsten.
@@ -290,7 +290,7 @@ Det här avsnittet innehåller följande underavsnitt:
 - [Synkroniseringskälla](#BKMK_SyncSource)
 - [Synkroniseringsschema](#BKMK_SyncSchedule)
 - [Uppdaterings klassificeringar](#BKMK_UpdateClassifications)
-- [Produkter](#BKMK_UpdateProducts)
+- [Läkemedle](#BKMK_UpdateProducts)
 - [Ersättningsregler](#BKMK_SupersedenceRules)
 - [Språk](#BKMK_UpdateLanguages)  
 - [Maximal kör tid](#bkmk_maxruntime)
@@ -372,7 +372,7 @@ En programuppdatering som ersätter en annan fungerar vanligtvis på något av f
 
 -   Förbättrar effektiviteten för det ersatta uppdaterings fil paketet, som installeras på klienter om uppdateringen har godkänts för installation. Till exempel kan den ersatta uppdateringen innehålla filer som inte längre är relevanta för korrigeringen eller för de operativ system som stöds av den nya uppdateringen. Filerna ingår inte i det ersättande fil paketet för uppdateringen.  
 
--   Uppdaterar senare versioner av en produkt. Det innebär att versioner som inte kan användas för äldre versioner eller konfigurationer av en produkt uppdateras. Uppdateringar kan även ersätta andra uppdateringar om det har gjorts ändringar för utökat språkstöd. Till exempel kan en senare revision av en produkt uppdatering för Microsoft Office ta bort stödet för ett äldre operativ system, men det kan lägga till ytterligare stöd för nya språk i den ursprungliga uppdaterings versionen.  
+-   Uppdaterar senare versioner av en produkt. Det innebär att versioner som inte kan användas för äldre versioner eller konfigurationer av en produkt uppdateras. Uppdateringar kan även ersätta andra uppdateringar om det har gjorts ändringar för utökat språkstöd. Till exempel kan en senare revision av en produkt uppdatering för Microsoft 365 appar ta bort stödet för ett äldre operativ system, men det kan lägga till ytterligare stöd för nya språk i den ursprungliga uppdaterings versionen.  
 
 I egenskaperna för program uppdaterings platsen anger du att de ersatta program uppdateringarna ska upphöra att gälla omedelbart. Den här inställningen förhindrar att de inkluderas i nya distributioner. Den flaggar även befintliga distributioner för att ange att de innehåller en eller flera program uppdateringar som har upphört att gälla. Eller ange en tids period innan de ersatta program uppdateringarna upphör att gälla. Med den här åtgärden kan du fortsätta att distribuera dem. 
 
@@ -427,7 +427,7 @@ Från och med version 1906 kan du ange den maximala tid som en program uppdateri
   - **Funktions uppdateringar** – en uppdatering som finns i någon av dessa tre klassificeringar:
     - Uppgraderingen
     - Samlade uppdateringar
-    - Service pack
+    - Service Pack
 
 - **Maximal kör tid för Office 365-uppdateringar och uppdateringar som inte är av funktioner för Windows (minuter)**
   - **Icke-funktions uppdateringar** – en uppdatering som inte är funktions uppgradering och vars produkt visas som en av följande:
@@ -461,7 +461,8 @@ När det finns en väntande omstart för en Configuration Manager program uppdat
 
 ## <a name="evaluate-software-updates-after-a-servicing-stack-update"></a><a name="bkmk_ssu"></a>Utvärdera program uppdateringar efter en underhålls stack uppdatering
 <!--4639943-->
-Från och med version 2002 identifierar Configuration Manager om en service stack Update (SJÄLVBETJÄNINGS) är en del av en installation av flera uppdateringar. När en SJÄLVBETJÄNINGS identifieras installeras den först. Efter installationen av SJÄLVBETJÄNINGS körs en utvärderings cykel för program uppdateringar för att installera de återstående uppdateringarna. Den här ändringen gör att en beroende ackumulerad uppdatering installeras efter uppdateringen av underhålls stacken. Enheten behöver inte startas om mellan installationer, och du behöver inte skapa ytterligare en underhålls period. SSUs installeras först endast för icke-användarinitierade installationer. Om en användare till exempel initierar en installation för flera uppdateringar från Software Center, kanske SJÄLVBETJÄNINGS inte installeras först.
+Från och med version 2002 identifierar Configuration Manager om en service stack Update (SJÄLVBETJÄNINGS) är en del av en installation av flera uppdateringar. När en SJÄLVBETJÄNINGS identifieras installeras den först. Efter installationen av SJÄLVBETJÄNINGS körs en utvärderings cykel för program uppdateringar för att installera de återstående uppdateringarna. Den här ändringen gör att en beroende ackumulerad uppdatering installeras efter uppdateringen av underhålls stacken. Enheten behöver inte startas om mellan installationer, och du behöver inte skapa ytterligare en underhålls period. SSUs installeras först endast för icke-användarinitierade installationer. Om en användare till exempel initierar en installation för flera uppdateringar från Software Center, kanske SJÄLVBETJÄNINGS inte installeras först. Installationen av SSUs först är inte tillgänglig för Windows Server-operativsystem när du använder Configuration Manager version 2002. <!--7813007-->Den här funktionen har lagts till i Configuration Manager version 2006 för Windows Server-operativsystem.
+
 
 
 ## <a name="next-steps"></a>Nästa steg

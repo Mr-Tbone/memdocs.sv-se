@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: ae1f52b0744f79f79e00e5dfe2d6a76c903cf4a4
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 1a64d49edca146c70a56b07cb304d1744b86a1bf
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240039"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127754"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuera programuppdateringar automatiskt  
 
@@ -47,7 +47,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
          - I mallen **Korrigeringstisdag** finns vanliga inställningar du kan använda när du distribuerar programuppdateringar månadsvis.  
 
-         - **Office 365-klientens uppdaterings** mall innehåller vanliga inställningar som används när du distribuerar uppdateringar för Office 365 Pro plus-klienter.
+         - **Office 365-klientens uppdaterings** mall innehåller vanliga inställningar som används när du distribuerar uppdateringar för Microsoft 365 Apps-klienter.
              > [!Note]
              > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Om din automatisk distribution förlitar sig på egenskapen "title" måste du redigera den från den 9 juni 2020. `Microsoft 365 Apps Update - Semi-annual Channel Version 1908 for x64 based Edition (Build 11929.50000)`är ett exempel på den nya titeln. Mer information om hur du ändrar din automatisk distribution för rubrik ändringen finns i [Uppdatera kanaler för Microsoft 365 appar](manage-office-365-proplus-updates.md#bkmk_channel). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change).
 
@@ -199,7 +199,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
         - **Aktivera binär differentiell replikering**: Aktivera den här inställningen om du vill använda binär differentiell replikering för distributions paketet. Mer information finns i [binär differentiell replikering](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#binary-differential-replication).  
 
-    - **Inget distributions paket**: från och med version 1806, distribuera program uppdateringar till enheter utan att först hämta och distribuera innehåll till distributions platser. Den här inställningen är fördelaktig vid hantering av mycket stor uppdaterings innehåll. Använd den även när du alltid vill att klienter ska hämta innehåll från Microsoft Update moln tjänsten. Klienter i det här scenariot kan också hämta innehåll från peer-datorer som redan har det innehåll som krävs. Den Configuration Manager klienten fortsätter att hantera innehålls hämtningen och kan därför använda funktionen Configuration Manager peer-cache eller andra tekniker som leverans optimering. Den här funktionen stöder alla uppdaterings typer som stöds av Configuration Manager hantering av program uppdateringar, inklusive Windows-och Office-uppdateringar.<!--1357933-->  
+    - **Inget distributions paket**: från och med version 1806, distribuera program uppdateringar till enheter utan att först hämta och distribuera innehåll till distributions platser. Den här inställningen är fördelaktig vid hantering av mycket stor uppdaterings innehåll. Använd den även när du alltid vill att klienter ska hämta innehåll från Microsoft Update moln tjänsten. Klienter i det här scenariot kan också hämta innehåll från peer-datorer som redan har det innehåll som krävs. Den Configuration Manager klienten fortsätter att hantera innehålls hämtningen och kan därför använda funktionen Configuration Manager peer-cache eller andra tekniker som leverans optimering. Den här funktionen stöder alla uppdaterings typer som stöds av Configuration Manager hantering av program uppdateringar, inklusive uppdateringar av Windows och Microsoft 365 appar.<!--1357933-->  
 
         > [!Note]  
         > När du har valt det här alternativet och tillämpar inställningarna kan du inte längre ändra det. De andra alternativen är nedtonade.<!--SCCMDocs-pr issue 3003-->  

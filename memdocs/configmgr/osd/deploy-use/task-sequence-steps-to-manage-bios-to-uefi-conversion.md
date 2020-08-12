@@ -5,17 +5,17 @@ description: Lär dig hur du anpassar en aktivitetssekvens för distribution av 
 ms.date: 05/14/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: bd3df04a-902f-4e91-89eb-5584b47d9efa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0118dd448520a6f0c21bfeea5f8509bd8e49fd46
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 761270fe9419330e2d60d0483554ee6c932c1b26
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429419"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88124893"
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Aktivitetssekvenssteg för att hantera konvertering av BIOS till UEFI
 
@@ -89,9 +89,9 @@ Windows 10 innehåller ett enkelt konverterings verktyg, **MBR2GPT**. Den automa
     1. Lägg till steget **Kör kommando rad** . Ange kommando raden för MBR2GPT-verktyget. När du kör i det fullständiga operativ systemet konfigurerar du det för att konvertera disken från MBR till GPT utan att ändra eller ta bort data. I **kommando rad**anger du följande kommando:`MBR2GPT.exe /convert /disk:0 /AllowFullOS`
 
     > [!TIP]
-    > Du kan också välja att köra MBR2GPT. EXE-verktyget i Windows PE i stället för i det fullständiga operativ systemet. Lägg till ett steg för att starta om datorn till Windows PE innan steget för att köra MBR2GPT. EXE-verktyget. Ta sedan bort alternativet **/AllowFullOS** från kommando raden.
+    > Du kan också välja att köra verktyget MBR2GPT.EXE när du är i Windows PE i stället för i det fullständiga operativ systemet. Lägg till ett steg för att starta om datorn till Windows PE innan du kör MBR2GPT.EXE-verktyget. Ta sedan bort alternativet **/AllowFullOS** från kommando raden.
 
-    Mer information om verktyget och tillgängliga alternativ finns i [MBR2GPT. EXE](https://docs.microsoft.com/windows/deployment/mbr-to-gpt).
+    Mer information om verktyget och tillgängliga alternativ finns i [MBR2GPT.EXE](https://docs.microsoft.com/windows/deployment/mbr-to-gpt).
 
     1. Lägg till ett steg för att köra OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI. Det här steget Kör vanligt vis **kommando raden**, med en kommando rad för att köra OEM-verktyget.
 

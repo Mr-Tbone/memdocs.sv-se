@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 4536adad3114b944baa6c75ac4e246ecddf4a2d2
-ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
+ms.openlocfilehash: 2ee472b89f45e744e43915e51e98f11841208b73
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153462"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125810"
 ---
 # <a name="group-policy-settings-for-desktop-analytics"></a>Grup princip inställningar för Skriv bords analys
 
@@ -37,7 +37,7 @@ Configuration Manager anger Windows-principer i en eller båda av följande regi
 | Policy | Sökväg | Gäller för | Värde |
 |--------|------|------------|-------|
 | **CommercialId** | Lokal | Alla Windows-versioner | För att en enhet ska kunna visas i Skriv bords analys konfigurerar du den med din organisations kommersiella ID. |
-| **AllowTelemetry**  | GPO | Windows 10 | Ange `1` för **Basic**, `2` för **förbättrad**eller `3` **fullständig** diagnostikdata. Desktop Analytics kräver minst grundläggande diagnostikdata. Microsoft rekommenderar att du använder den förbättrade nivån (begränsad) med Desktop Analytics. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization). |
+| **AllowTelemetry**  | GPO | Windows 10 | Ange `1` för **grundläggande** (krävs), `2` för **förbättrad**eller `3` **fullständig** (valfritt) diagnostikdata. Desktop Analytics kräver minst grundläggande diagnostikdata. Microsoft rekommenderar att du använder nivån **valfri (begränsad** ) (utökad (begränsad)) med Desktop Analytics. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization). |
 | **LimitEnhancedDiagnosticDataWindowsAnalytics** | GPO | Windows 10, version 1803 och senare | Den här inställningen gäller endast när AllowTelemetry-inställningen är `2` . Den begränsar de utökade diagnostikdata som skickas till Microsoft till enbart de händelser som krävs av Desktop Analytics. Mer information finns i [data händelser och fält för Windows 10-diagnostikdata som samlas in via principen begränsa förbättrad diagnostikdata](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields). |
 | **AllowDeviceNameInTelemetry** | GPO | Windows 10, version 1803 och senare | Gör det möjligt för enheter att skicka enhets namnet. Enhets namnet skickas inte till Microsoft som standard. Om du inte skickar enhets namnet visas det i Skriv bords analys som "okänt". Mer information finns i [enhets namn](enroll-devices.md#device-name). |
 | **CommercialDataOptIn** | Lokal | Windows 8,1 och tidigare | Desktop Analytics kräver värdet `1` . Mer information finns i [Välj kommersiella data i Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
@@ -62,7 +62,7 @@ Om du körde Uppgraderingsberedskap onboarding-skriptet på en enhet kan de här
 
 I allmänhet använder du Configuration Manager samlingar för att ange inställningar för Skriv bords analys och registrering. Använd direkt medlemskap eller frågor för att ta med eller undanta enheter från samlingen. Mer information finns i [så här skapar du samlingar](../core/clients/manage/collections/create-collections.md).
 
-Configuration Manager konfigurerar inställningar för affärs-ID och diagnostikdata i mål samlingen. Om du behöver konfigurera olika inställningar för diagnostikdata för olika grupper av enheter använder du grup princip inställningar för att åsidosätta Configuration Manager inställningar. Du måste till exempel ange **förbättrad (begränsad)** nivå för vissa enheter och **Basic** för andra. Vissa enheter kan ha olika [autentiseringsinställningar för proxyservern](enable-data-sharing.md#proxy-server-authentication) .
+Configuration Manager konfigurerar inställningar för affärs-ID och diagnostikdata i mål samlingen. Om du behöver konfigurera olika inställningar för diagnostikdata för olika grupper av enheter använder du grup princip inställningar för att åsidosätta Configuration Manager inställningar. Du måste till exempel ange **valfri (begränsad)** nivå för vissa enheter och som **krävs** för andra. Vissa enheter kan ha olika [autentiseringsinställningar för proxyservern](enable-data-sharing.md#proxy-server-authentication) .
 
 Relevanta grup princip inställningar finns på följande sökväg: **dator konfiguration**  >  **administrativa mallar**  >  **Windows-komponenter**  >  **data insamling och för hands versioner**.
 

@@ -2,7 +2,7 @@
 title: Planera för BitLocker-hantering
 titleSuffix: Configuration Manager
 description: Planera för att hantera BitLocker-diskkryptering med Configuration Manager
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a4d8cda2-bc9b-4fb4-aa0d-23c31b4fc60b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c03d5d06dc6b49ceff6af8ce862eb19cb4a517a
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: 8370c3352778fa6bb7c6229beb1c7610c419a86d
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531476"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129305"
 ---
 # <a name="plan-for-bitlocker-management"></a>Planera för BitLocker-hantering
 
@@ -25,7 +25,7 @@ ms.locfileid: "84531476"
 
 Från och med version 1910 använder Configuration Manager för att hantera BitLocker-diskkryptering (BDE) för lokala Windows-klienter som är anslutna till Active Directory. Azure Active Directory anslutna eller arbets grupps klienter stöds inte. Den ger fullständig livs cykel hantering i BitLocker som kan ersätta användningen av Microsoft BitLocker administration and Monitoring (MBAM).
 
-> [!Note]  
+> [!NOTE]
 > Configuration Manager aktiverar inte den här valfria funktionen som standard. Du måste aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).  
 
 Mer information finns i [Översikt över BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview).
@@ -81,6 +81,8 @@ Låt användarna hjälpa sig att använda en enda nyckel för att låsa upp en B
   - Konfigurera hanterings platsen för HTTPS. Det här alternativet gäller för Configuration Manager version 1910 eller 2002.
 
   Mer information finns i [kryptera återställnings data](../deploy-use/bitlocker/encrypt-recovery-data.md).
+
+- Även om BitLocker-återställningsnyckeln installeras på en hanterings plats som använder en databas replik, kan inte klienterna depositions återställnings nycklar. Sedan krypterar BitLocker inte enheten. Om du vill använda återställnings tjänsten måste du ha minst en hanterings plats som inte har en replik konfiguration. Inaktivera återställnings tjänsten i BitLocker på alla hanterings platser med en databas replik.<!-- 7813149 -->
 
 - Installera repor ting Services-platsens plats system roll om du vill använda BitLocker-hanterings rapporter. Mer information finns i [Konfigurera rapportering](../../core/servers/manage/configuring-reporting.md).
 

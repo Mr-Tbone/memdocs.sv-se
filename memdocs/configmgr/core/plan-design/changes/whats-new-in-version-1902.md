@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4972f6e8689ad44dbd1a19adcde104cd5f59038c
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c192db8ccab336d05ef965e837fe17fc16a19200
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719360"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128941"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Vad är nytt i version 1902 av Configuration Manager aktuella grenen
 
@@ -121,7 +121,7 @@ Mer information finns i [CMG-hierarki](../../clients/manage/cmg/plan-cloud-manag
 <!--3610960-->
 Configuration Manager stöder nu att köra CMPivot från den centrala administrations platsen i en hierarki. Den primära platsen hanterar fortfarande kommunikationen till klienten. När du kör CMPivot från den centrala administrations platsen kommunicerar den med den primära platsen via prenumerations kanalen för snabb meddelanden. Den här kommunikationen är inte beroende av standard-SQL-replikering mellan platser.
 
-Mer information finns i [CMPivot för real tids data](../../servers/manage/cmpivot.md#bkmk_cmpivot1902).
+Mer information finns i [CMPivot för real tids data](../../servers/manage/cmpivot-changes.md#bkmk_cmpivot1902).
 
 ### <a name="edit-or-copy-powershell-scripts"></a>Redigera eller kopiera PowerShell-skript
 
@@ -224,7 +224,7 @@ Den här versionen innehåller flera förbättringar som hjälper dig att skapa 
 
 När du skapar media för aktivitetssekvenser kan du nu anpassa platsen som platsen använder för tillfällig data lagring. Den här processen kan kräva mycket temporärt enhets utrymme. Den här ändringen ger dig större flexibilitet att välja var de här temporära filerna ska lagras.
 
-I **guiden skapa aktivitetssekvens**anger du en plats för **mellanlagringsmappen**. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp`.
+I **guiden skapa aktivitetssekvens**anger du en plats för **mellanlagringsmappen**. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp` .
 
 #### <a name="add-a-label-to-the-media"></a>Lägg till en etikett till mediet
 
@@ -413,7 +413,7 @@ Baserat på kundfeedback på Mellanvästern Management Summit (MMS) Desert Editi
 - Vyer sorteras efter heltals värden i noden **distributioner** på arbets ytan **övervakning**
 - Flytta varningen för ett stort antal resultat
 
-Mer information finns i [använda Configuration Manager-konsolen](../../servers/manage/admin-console.md#tips).
+Mer information finns i [Configuration Manager-konsol tips](../../servers/manage/admin-console-tips.md).
 
 ### <a name="configuration-manager-console-notifications"></a>Configuration Manager konsol meddelanden
 
@@ -425,7 +425,7 @@ För att hålla dig informerad så att du kan vidta lämpliga åtgärder, kommer
 
 Det här meddelandet är ett fält överst i konsol fönstret under menyfliksområdet. Den tidigare upplevelsen ersätts när Configuration Manager uppdateringar är tillgängliga. Dessa meddelanden i konsolen visar fortfarande viktig information, men stör inte ditt arbete i-konsolen. Du kan inte ignorera viktiga meddelanden. I-konsolen visas alla meddelanden i ett nytt meddelande fält i namn listen.
 
-Mer information finns i [använda Configuration Manager-konsolen](../../servers/manage/admin-console.md).
+Mer information finns i [Configuration Manager konsol meddelanden](../../servers/manage/admin-console-notifications.md).
 
 ### <a name="confirmation-of-console-feedback"></a>Bekräftelse av konsol kommentarer
 
@@ -453,7 +453,7 @@ Mer information finns i [använda Configuration Manager-konsolen](../../servers/
 <!--3600878-->
 Nu kan du söka efter en MAC-adress i en enhets vy i Configuration Manager-konsolen. Den här egenskapen är användbar för distributions administratörer för operativ system medan PXE-baserade distributioner felsöks. När du visar en lista över enheter, lägger du till kolumnen **MAC-adress** i vyn. Använd Sök fältet för att lägga till Sök kriterierna för **MAC-adressen** .
 
-Mer information finns i [använda Configuration Manager-konsolen](../../servers/manage/admin-console.md#tips).
+Mer information finns i [Configuration Manager-konsol tips](../../servers/manage/admin-console-tips.md).
 
 ### <a name="use-net-47-for-improved-console-accessibility"></a>Använd .NET 4,7 för förbättrad konsol tillgänglighet
 
@@ -467,10 +467,10 @@ Mer information finns [i hjälpmedels funktioner i Configuration Manager](../../
 <!-- 3612513 -->
 Det krävs nya komponenter när du installerar Configuration Manager-konsolen. Om du skapar ett paket för att installera-konsolen på andra datorer måste du kontrol lera att paketet innehåller följande filer:
 
-- ConsoleSetup. exe
-- AdminConsole. msi
-- ConfigMgr. AC_Extension. i386. cab
-- ConfigMgr. AC_Extension. amd64. cab
+- ConsoleSetup.exe
+- AdminConsole.msi
+- ConfigMgr.AC_Extension.i386.cab
+- ConfigMgr.AC_Extension.amd64.cab
 
 När du installerar eller uppdaterar en plats Server kopieras installationsfilerna och de språk paket som stöds för platsen till undermappen **Tools\ConsoleSetup** . Mer information finns i [installera Configuration Manager-konsolen](../../servers/deploy/install/install-consoles.md).
 

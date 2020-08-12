@@ -5,17 +5,17 @@ description: Lär dig mer om hur du arbetar med BitLocker-information i Windows-
 ms.date: 11/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.assetid: a9ece9e8-37ec-441d-937c-be4941afce7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4875e7875321294d815bfcd8a25a805d3e085aab
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ef1d5f9a7e8f3c009d1993b82ddef22ce22e235d
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722104"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128009"
 ---
 # <a name="bitlocker-event-logs"></a>BitLocker-händelseloggar
 
@@ -40,7 +40,7 @@ I varje nod ser du som standard två logg kanaler: **admin** och **drift**. För
 
 I Windows Loggboken väljer du en speciell logg. Till exempel **admin**. Gå till **åtgärd** -menyn och välj **Egenskaper**. Konfigurera följande inställningar:
 
-- **Maximal logg storlek (KB)**: den här inställningen är `1028` som standard (1 MB) för alla loggar.
+- **Maximal logg storlek (KB)**: den här inställningen är som standard `1028` (1 MB) för alla loggar.
 - **När den maximala logg storleken nås**: som standard är **Administratörs** -och **drift** loggarna inställda på att **skriva över händelser vid behov (äldsta händelserna först)**.
 
 ## <a name="analytic-and-debug-logs"></a><a name="bkmk_debug"></a>Analytiska loggar och fel söknings loggar

@@ -2,7 +2,7 @@
 title: Konfigurera Wake on LAN
 titleSuffix: Configuration Manager
 description: Välj Wake On LAN inställningar i Configuration Manager.
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b475a0c8-85d6-4cc4-b11f-32c0cc98239e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 512d942d79d11178f010c4f0adb41a25ee432743
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: dcf6005d0364106df8717a1151dbad617e455ff9
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713508"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88127043"
 ---
 # <a name="how-to-configure-wake-on-lan-in-configuration-manager"></a>Så här konfigurerar du Wake on LAN i Configuration Manager
 
@@ -28,7 +28,7 @@ Ange inställningar för Wake-on-LAN för Configuration Manager när du vill ta 
 Från och med Configuration Manager 1810 är det ett nytt sätt att aktivera datorer i vilo läge. Du kan aktivera klienter från Configuration Manager-konsolen även om klienten inte finns i samma undernät som plats servern. Om du behöver utföra underhåll eller fråga enheter är du inte begränsad av fjärranslutna klienter som är i ström spar läge. Plats servern använder klient aviserings kanalen för att identifiera andra klienter som är aktiva på samma fjärrundernät och använder sedan dessa klienter för att skicka en Wake-on-LAN-begäran (Magic Packet). Genom att använda klienten meddelande kanal kan du undvika MAC-klaffar som kan orsaka att porten stängs av av routern. Den nya versionen av Wake on LAN kan aktive ras samtidigt som den [äldre versionen](#bkmk_wol-previous).
 
 ### <a name="limitations"></a>Begränsningar
-
+<!--7323898, 7363492-->
 - Minst en klient i mål under nätet måste vara aktiv.
 - Den här funktionen har inte stöd för följande nät verks tekniker:
    - IPv6
@@ -38,12 +38,6 @@ Från och med Configuration Manager 1810 är det ett nytt sätt att aktivera dat
 - Datorer som bara aktive ras när du meddelar dem genom **aktivering** av klient meddelanden.
     - För aktivering när ett tids gräns inträffar används den äldre versionen av Wake on LAN.
     -  Om den äldre versionen inte är aktive rad sker inte klient aktivering för distributioner som skapats med inställningarna **Använd Wake-on-LAN för att väcka klienter för nödvändiga distributioner** eller **Skicka väcknings paket**.  
-
-> [!IMPORTANT]
-> Funktionen Wake On LAN rekommenderas endast för användning på en begränsad mängd enheter (100) i taget.
->
-> När du använder funktionen Wake On LAN för att väcka datorer från Configuration Manager-administratörskonsolen, placeras aktiverings begär anden i en intern kö som delas av andra funktioner i real tid. Exempel på de andra funktionerna är körning av skript, CMPivot och andra klient meddelanden med snabb kanal. Aktiverings åtgärder kan ta lång tid, beroende på plats systemets prestanda, och försena den andra real tids åtgärden. Vi rekommenderar att du inte aktiverar fler än 100 datorer på samma gång. Om du vill veta om du får en efter släpning i det här avsnittet som kan orsaka fördröjningar kan du titta i katalogen. ..\inboxes\objmgr.Box för att se om det finns ett stort antal filer med. OPA-tillägg.
-
 
 ### <a name="security-role-permissions"></a>Säkerhets roll behörigheter
 

@@ -2,7 +2,7 @@
 title: Nivåer av diagnostikens användnings data
 titleSuffix: Configuration Manager
 description: Lär dig mer om de nivåer av diagnostik-och användnings data som Configuration Manager samlar in
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 3c46bdb2-5bda-47c8-b5f4-9365a4b3521c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9de63280786d620229c7d408f09ef2fe583e231d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 0d27e4a2f82de75cde853f3ce95c98ea8a12c465
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720340"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126515"
 ---
 # <a name="levels-of-diagnostic-usage-data"></a>Nivåer av diagnostikens användnings data
 
@@ -29,7 +29,7 @@ Configuration Manager samlar in tre nivåer av diagnostik-och användnings data:
 
 ## <a name="levels"></a>Nivåer
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>Grundläggande
 
 Nivån Basic innehåller data om hierarkin. Det krävs för att hjälpa till att förbättra installations-och uppgraderings upplevelsen. Med den här informationen kan du också avgöra vilka Configuration Manager uppdateringar som är tillämpliga för hierarkin.
 
@@ -63,11 +63,11 @@ Om du vill ändra data insamlings nivån måste du **ändra** behörigheter för
 
 Följande artiklar innehåller information om vilka data som Configuration Manager samlas in på varje nivå med varje version som stöds:
 
+- [Diagnostik-och användnings data för 2006](levels-of-diagnostic-usage-data-collection-2006.md)
 - [Diagnostik-och användnings data för 2002](levels-of-diagnostic-usage-data-collection-2002.md)
 - [Diagnostik-och användnings data för 1910](levels-of-diagnostic-usage-data-collection-1910.md)
 - [Diagnostik-och användnings data för 1906](levels-of-diagnostic-usage-data-collection-1906.md)
 - [Diagnostik-och användnings data för 1902](levels-of-diagnostic-usage-data-collection-1902.md)
-- [Diagnostik-och användnings data för 1810](levels-of-diagnostic-usage-data-collection-1810.md)
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: d1e7b2c359e21ac4a12219d27655603954702fa8
-ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
+ms.openlocfilehash: 9ba4466a40d49c4b78b75e6f85137dfd0a4ff5ce
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410884"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129145"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurera Cloud Management Gateway för Configuration Manager
 
@@ -141,7 +141,7 @@ Anslutnings punkten för CMG är plats system rollen för att kommunicera med CM
 
 Om du vill felsöka CMG-tjänstens hälsa använder du **CMGService. log** och **SMS_Cloud_ProxyConnector. log**. Mer information finns i [loggfiler](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
 
-## <a name="configure-client-facing-roles-for-cmg-traffic"></a>Konfigurera klient riktade roller för CMG trafik
+## <a name="configure-client-facing-roles-for-cmg-traffic"></a><a name="bkmk_role"></a>Konfigurera klient riktade roller för CMG trafik
 
 Konfigurera hanterings platsen och plats systemen för program uppdaterings platsen så att de accepterar CMG-trafik. Gör den här proceduren på den primära platsen för alla hanterings platser och program uppdaterings platser som hanterar Internetbaserade klienter.  
 
@@ -158,7 +158,7 @@ Konfigurera hanterings platsen och plats systemen för program uppdaterings plat
 Upprepa de här stegen för ytterligare hanterings platser vid behov och för alla program uppdaterings platser.
 
 ## <a name="configure-boundary-groups"></a>Konfigurera gränser grupper
-
+ 
 <!--3640932-->
 Från och med version 1902 kan du associera en CMG med en avgränsnings grupp. Den här konfigurationen gör det möjligt för klienter att default eller återgå till CMG för klient kommunikation baserat på gränser grupp relationer.
 

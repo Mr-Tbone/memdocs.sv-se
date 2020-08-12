@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 835dcd0c86244c1731cb6c6e040d577160759614
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 6c42015880cae09be48feff9c42b6b2a0d2c8544
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83267798"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129322"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Optimera Windows 10-uppdaterings leverans med Configuration Manager
 
@@ -70,7 +70,7 @@ Om du vill använda leverans optimering för alla installationsfiler för Window
 > [!IMPORTANT]
 > - Leverans optimering måste vara aktive rad (standard) och inte kringgås. Mer information finns i [referens för Windows Delivery Optimization](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference).
 > - Verifiera [inställningarna för leverans optimerings klient](../../core/clients/deploy/about-client-settings.md#delivery-optimization) när du ändrar [klient inställningarna för program uppdateringar](../../core/clients/deploy/about-client-settings.md#software-updates) för delta innehåll.
-> - Det går inte att använda leverans optimering för Office 365-klient uppdateringar om Office COM är aktiverat. Office COM används av Configuration Manager för att hantera uppdateringar för Office 365-klienter. Du kan avregistrera Office COM för att tillåta användning av leverans optimering för Office 365-uppdateringar. När Office COM är inaktiverat hanteras program uppdateringar för Office 365 av den schemalagda uppgiften standard Office automatiska uppdateringar 2,0. Det innebär att Configuration Manager inte dikterar eller övervakar installations processen för Office 365-uppdateringar. Configuration Manager fortsätter att samla in information från maskin varu inventeringen för att fylla i instrument panelen för Office 365-klient hantering i-konsolen. Information om hur du avregistrerar Office COM finns i [Aktivera office 365-klienter för att ta emot uppdateringar från Office CDN i stället för Configuration Manager](https://docs.microsoft.com/deployoffice/manage-office-365-proplus-updates-with-configuration-manager#enable-office-365-clients-to-receive-updates-from-the-office-cdn-instead-of-configuration-manager).
+> - Det går inte att använda leverans optimering för Microsoft 365 appars klient uppdateringar om Office COM är aktiverat. Office COM används av Configuration Manager för att hantera uppdateringar för Microsoft 365 Apps-klienter. Du kan avregistrera Office COM för att tillåta användning av leverans optimering för uppdateringar av Microsoft 365 appar. När Office COM är inaktiverat hanteras program uppdateringar för Microsoft 365 appar av den schemalagda uppgiften standard Office automatiska uppdateringar 2,0. Det innebär att Configuration Manager inte dikterar eller övervakar installations processen för uppdateringar av Microsoft 365 appar. Configuration Manager fortsätter att samla in information från maskin varu inventeringen för att fylla i instrument panelen för Office 365-klient hantering i-konsolen. Information om hur du avregistrerar Office COM finns i [Aktivera office 365-klienter för att ta emot uppdateringar från Office CDN i stället för Configuration Manager](https://docs.microsoft.com/deployoffice/manage-office-365-proplus-updates-with-configuration-manager#enable-office-365-clients-to-receive-updates-from-the-office-cdn-instead-of-configuration-manager).
 > - När du använder en CMG för innehålls lagring laddas inte innehållet för uppdateringar från tredje part ned till klienter om inställningen **Hämta delta innehåll när den tillgängliga** [klienten](../../core/clients/deploy/about-client-settings.md#allow-clients-to-download-delta-content-when-available) är aktive rad. <!--6598587-->
 
 
@@ -96,10 +96,10 @@ Att välja rätt peer caching-teknik för Express-installationsfiler beror på d
 
 | Funktioner  | Leveransoptimering  | Peer-cache  | BranchCache  |
 |---------|---------|---------|---------|
-| Stöds över undernät | Ja | Ja | Nej |
+| Stöds över undernät | Ja | Ja | Inga |
 | Bandbredds begränsning | Ja (inbyggt) | Ja (via BITS) | Ja (via BITS) |
-| Stöd för delar av innehåll | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. | Endast för Office 365 och Express-uppdateringar | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. |
-| Innehålls typer som stöds | **Via ConfigMgr:** </br> -Express uppdateringar </br> – Alla Windows-uppdateringar (från och med version 1910). Detta omfattar inte Office-uppdateringar.</br> </br> **Via Microsoft Cloud:**</br> – Windows-och säkerhets uppdateringar</br> – Driv rutiner</br> – Windows Store-appar</br> – Windows Store för företag-appar | Alla innehålls typer för ConfigMgr, inklusive bilder som hämtats i [Windows PE](../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) | Alla innehålls typer i ConfigMgr, förutom bilder |
+| Stöd för delar av innehåll | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. | Endast för Microsoft 365 appar och Express uppdateringar | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. |
+| Innehålls typer som stöds | **Via ConfigMgr:** </br> -Express uppdateringar </br> – Alla Windows-uppdateringar (från och med version 1910). Detta omfattar inte uppdateringar av Microsoft 365-appar.</br> </br> **Via Microsoft Cloud:**</br> – Windows-och säkerhets uppdateringar</br> – Driv rutiner</br> – Windows Store-appar</br> – Windows Store för företag-appar | Alla innehålls typer för ConfigMgr, inklusive bilder som hämtats i [Windows PE](../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) | Alla innehålls typer i ConfigMgr, förutom bilder |
 | Cachestorlek på disk kontroll | Ja | Ja | Ja |
 | Identifiering av en peer-källa | Automatiskt | Manuell (klient agent inställning) | Automatiskt |
 | Peer-identifiering | Via moln tjänsten för leverans optimering (kräver Internet åtkomst) | Via hanterings plats (baserat på klient gränser grupper) | Multicast |

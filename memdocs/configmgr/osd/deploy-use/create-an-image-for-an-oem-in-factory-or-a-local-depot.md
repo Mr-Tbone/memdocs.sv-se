@@ -1,53 +1,66 @@
 ---
 title: Skapa en avbildning för en OEM-tillverkare i fabriken eller lokal anläggning
 titleSuffix: Configuration Manager
-description: Använd förinstallerade medie distributioner för att minska nätverks trafiken när du distribuerar ett operativ system till en dator som inte är helt etablerad.
-ms.date: 10/06/2016
+description: Använd förinstallerade medie distributioner för att minska nätverks trafiken medan du distribuerar ett operativ system till en dator som inte är helt etablerad.
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5c4d445d18b9e239ace673199f6a7d0f26d10a42
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 15145cccf73e517d0e49444fbdaf834de342865e
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723000"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125448"
 ---
 # <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-configuration-manager"></a>Skapa en avbildning för en OEM-tillverkare i fabriken eller ett lokalt lager med Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Med förinstallerade medie distributioner i Configuration Manager kan du distribuera ett operativ system till en dator som inte är helt etablerad. Det förinstallerade mediet är en WIM-fil (Windows Imaging format) som kan installeras på en dator utan operativ system av tillverkaren (OEM) eller till ett företag som inte är anslutet till Configuration Managers miljön. Senare i Configuration Managers miljön startar datorn med hjälp av den Start avbildning som tillhandahålls av mediet, en hash-kontroll körs på det förinstallerade mediet för att kontrol lera att den är giltig och sedan ansluter datorn till plats hanterings platsen för tillgängliga aktivitetssekvenser som slutför nedladdnings processen.
+Med förinstallerade medie distributioner i Configuration Manager kan du distribuera ett operativ system till en dator som inte är helt etablerad. Det förinstallerade mediet är en WIM-fil (Windows Image). Tillverkaren (OEM) kan installera den på en dator utan operativ system, eller så kan du använda den i ett fristående Center som är separat från produktions miljön.
 
+Den här distributions metoden kan minska nätverks trafiken, eftersom start avbildningen och operativ system avbildningen redan finns på mål datorn. Du kan ange program, paket och driv rutins paket så att de också ingår i det för beredda mediet. När operativ systemet har installerats på datorn kontrollerar aktivitetssekvensen först det förinstallerade cacheminnet för program, paket eller driv rutins paket. Om det inte går att hitta det nödvändiga innehållet, eller om det finns en nyare revision tillgänglig online, laddar aktivitetssekvensen ned innehållet från en distributions plats.
 
-Den här distributionsmetoden kan minska nätverkstrafiken, eftersom startavbildningen och operativsystemsavbildningen redan finns på måldatorn. Du kan ange vilka program, paket och drivrutinspaket som du vill ha med på förinstallerade media. När operativsystemet har installerats på datorn kontrolleras den lokala aktivitetssekvenscachen först för program, paket och drivrutinspaket och om innehållet inte kan hittas eller har ändrats, hämtas innehållet från en distributionsplats som har konfigurerats i det förinstallerade mediet och installeras därefter.  
+Använd förinstallerade medier i följande distributions scenarier för operativ system:
 
- Du kan använda förinstallerade medier i följande scenarier för operativ Systems distribution:  
+- [Installera en ny version av Windows på en ny dator (utan operativsystem)](install-new-windows-version-new-computer-bare-metal.md)
 
-- [Installera en ny version av Windows på en ny dator (utan operativsystem)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Ersätta en befintlig dator och överföra inställningar](replace-an-existing-computer-and-transfer-settings.md)
 
-- [Ersätta en befintlig dator och överföra inställningar](replace-an-existing-computer-and-transfer-settings.md)  
+Slutför stegen i något av de här distributions scenarierna för operativ systemet. Använd sedan följande avsnitt för att förbereda för och skapa de förinstallerade medierna.
 
-  Utför stegen i ett av scenarierna för distribution av operativsystem och använd sedan följande avsnitt för att förbereda för och skapa förinstallerade medier.  
+## <a name="configure-deployment-settings"></a>Konfigurera distributionsinställningar
 
-## <a name="configure-deployment-settings"></a>Konfigurera distributionsinställningar  
- När du använder förinstallerade medier för att starta operativsystemsdistributionen måste du konfigurera distributionen för att göra operativsystemet tillgängligt för media. Du kan konfigurera detta på sidan **Distributionsinställningar** i guiden Distribuera programvara eller på fliken **Distributionsinställningar** i egenskaperna för distributionen.  Konfigurera något av följande för inställningen **Gör tillgängligt för följande** :  
+På sidan **distributions inställningar** i distributionen väljer du något av följande alternativ för inställningen **gör tillgängligt för följande** :
 
--   **Configuration Manager-klienter, media och PXE**  
+- Configuration Manager klienter, media och PXE
 
--   **Endast media och PXE**  
+- Endast media och PXE
 
--   **Endast media och PXE (dolt)**  
+- Endast media och PXE (dolt)
 
-## <a name="create-the-prestaged-media"></a>Skapa förinstallerade medier  
- Skapa den förinstallerade mediefilen som ska skickas till OEM eller den lokala anläggningen. Mer information finns i [Skapa förinstallerade media med Configuration Manager](create-prestaged-media.md).  
+## <a name="create-the-prestaged-media"></a>Skapa förinstallerade medier
 
-## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Skicka den förinstallerade mediefilen till OEM eller den lokala anläggningen  
- Skicka mediet till OEM eller den lokala anläggningen som ska förinstalleras på datorerna. Den förinstallerade mediefilen används på en formaterad hårddisk på datorn.  
+Skapa den förinstallerade mediefilen som ska skickas till OEM eller den lokala anläggningen. Mer information finns i [Skapa förinstallerade media med Configuration Manager](create-prestaged-media.md).
 
-## <a name="start-the-computer-to-install-the-operating-system"></a>Starta datorn för att installera operativsystemet  
- Den förinstallerade mediefilen används på datorer. Processen för installation av operativsystem startar när datorn startas för första gången.  
+## <a name="send-the-prestaged-media-file"></a>Skicka den förinstallerade medie filen
+
+Skicka mediet till OEM-tillverkaren eller ditt lokala lager för att förinstallera på datorerna. De tillämpar avbildnings filen på en formaterad hård disk på datorn.
+
+## <a name="deliver-the-computer"></a>Leverera datorn
+
+När du levererar datorn till en användare och aktiverar den för första gången:
+
+1. Datorn startar med den förinstallerade start avbildningen.
+
+1. Den kontrollerar en hash på det förinstallerade mediet för att kontrol lera att den är giltig.
+
+1. Datorn ansluter till hanterings platsen för att de tillgängliga aktivitetssekvenserna ska kunna slutföra processen.
+
+## <a name="next-steps"></a>Nästa steg
+
+[Användarupplevelser för distribution av operativsystem](../understand/user-experience.md)

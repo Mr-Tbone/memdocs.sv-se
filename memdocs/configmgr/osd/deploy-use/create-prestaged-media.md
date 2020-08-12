@@ -5,17 +5,17 @@ description: Använd förinstallerade medier i Configuration Manager för att f�
 ms.date: 05/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: ff6e7267-302a-4563-815e-cdc0d1a4b60f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d5219b518d46ccca174c7aa3fef62fe3334def35
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 82bb02d8154939b4b0e0ee89bcc6637e9393acff
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711114"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88125227"
 ---
 # <a name="create-prestaged-media"></a>Skapa förinstallerade media
 
@@ -37,7 +37,7 @@ Använd förinstallerade medier för följande distributions scenarier för oper
 När datorn startas första gången efter att du har tillämpat det förinstallerade mediet startar datorn i Windows PE. Den ansluter till en hanterings plats för att hitta aktivitetssekvensen som slutför distributions processen för operativ systemet. När du distribuerar en aktivitetssekvens som använder för beredda medier kontrollerar klienten om det finns giltigt innehåll i den lokala aktivitetssekvensen. Om innehållet inte hittas eller har ändrats laddar klienten ned innehållet från en distributions plats eller en peer.  
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Innan du skapar för beredda medier med hjälp av guiden skapa aktivitetssekvens måste du se till att alla villkor är uppfyllda.
 
@@ -98,9 +98,9 @@ Mål datorns hård disk måste vara formaterad innan det förinstallerade mediet
 
     - **Kommentar**: Ange en unik beskrivning av mediets avsedda användning.  
 
-    - **Mediefil**: Ange namn och sökväg för utdatafilerna. Guiden skriver utdatafilerna till den här platsen. Exempelvis: `\\servername\folder\outputfile.wim`  
+    - **Mediefil**: Ange namn och sökväg för utdatafilerna. Guiden skriver utdatafilerna till den här platsen. Exempel: `\\servername\folder\outputfile.wim`  
 
-    - **Mellanlagringsplats**<!--1359388-->: Processen för att skapa media kan kräva mycket temporärt enhets utrymme. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp`. Från och med version 1902, för att ge dig större flexibilitet med var de här temporära filerna ska lagras, ändra värdet till en annan enhet och sökväg.  
+    - **Mellanlagringsplats**<!--1359388-->: Processen för att skapa media kan kräva mycket temporärt enhets utrymme. Som standard liknar den här platsen följande sökväg: `%UserProfile%\AppData\Local\Temp` . Från och med version 1902, för att ge dig större flexibilitet med var de här temporära filerna ska lagras, ändra värdet till en annan enhet och sökväg.  
 
 6. På sidan **säkerhet** anger du följande alternativ:  
 

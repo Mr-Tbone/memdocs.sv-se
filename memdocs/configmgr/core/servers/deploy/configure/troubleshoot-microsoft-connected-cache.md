@@ -10,12 +10,12 @@ ms.assetid: 121e0341-4f51-4d54-a357-732c26caf7c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a8c975798c506339a981e8648003387dc1e9838
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: a08b74552d5d17a737ec9e1802e10c87621f5b97
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83878100"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126366"
 ---
 # <a name="troubleshoot-microsoft-connected-cache-in-configuration-manager"></a>Felsök Microsoft Connected cache i Configuration Manager
 
@@ -36,7 +36,7 @@ Verifiera detta beteende [på en klient](#bkmk_verify-client) eller [på servern
 
 2. Öppna PowerShell och kör följande kommando:`Get-DeliveryOptimizationStatus`
 
-Ett exempel:
+Till exempel:
 
 ```PowerShell
 PS C:\> Get-DeliveryOptimizationStatus
@@ -137,7 +137,7 @@ När Configuration Manager installerar den anslutna cache-komponenten på distri
 | 0x00D00001 | Det går bara att köra installations programmet för anslutna cacheminnen om Internet Information Services (IIS) har installerats |
 | 0x00D00002 | Det går bara att köra installations programmet för anslutna cacheminnen om en "standard webbplats" finns på servern |
 | 0x00D00003 | Du kan inte installera den anslutna cachen om du redan har installerat programbegärans dirigering (ARR) |
-| 0x00D00004 | Det går bara att köra installations programmet för anslutna cache om ARR (Application Request routing) har installerats av install. ps1-skriptet |
+| 0x00D00004 | Det går bara att köra installations programmet för anslutna cache om ARR (Application Request routing) har installerats av Install.ps1-skriptet |
 | 0x00D00005 | Installationen av den anslutna cachen kräver en PowerShell-session som körs som administratör |
 | 0x00D00006 | Det går bara att köra installations programmet för anslutna cacheminnen från en 64-bitars PowerShell-miljö |
 | 0x00D00007 | Det går bara att köra installations programmet för anslutna cacheminnen på en Windows Server |
@@ -148,21 +148,21 @@ När Configuration Manager installerar den anslutna cache-komponenten på distri
 | 0x00D0000C | Ett problem: en giltig cachestorlek i procent eller cache-hårddisk storlek i GB måste anges |
 | 0x00D0000D | Det gick inte att ange en giltig storlek för cache-enheten och cache-enhetens storlek i GB kan inte båda anges |
 | 0x00D0000E | Fel: antalet angivna cache-enheter måste matcha antalet cache-enheter i GB som anges |
-| 0x00D0000F | Problem: det gick inte att säkerhetskopiera ApplicationHost. config-filen från $AppHostConfig till $AppHostConfigDestinationName |
-| 0x00D00010 | Problem: det gick inte att säkerhetskopiera standard webbplatsens Web. config-fil från $WebsiteConfigFilePath till $WebConfigDestinationName |
-| 0x00D00011 | Fel: ett undantag inträffade i SetupARRWebFarm. ps1 |
-| 0x00D00012 | Fel: ett undantag inträffade i SetupARRWebFarmRewriteRules. ps1 |
-| 0x00D00013 | Fel: ett undantag inträffade i SetupARRWebFarmProperties. ps1 |
-| 0x00D00014 | Fel: ett undantag inträffade i SetupAllowableServerVariables. ps1 |
-| 0x00D00015 | Fel: ett undantag inträffade i SetupFirewallRules. ps1 |
-| 0x00D00016 | Fel: ett undantag inträffade i SetupAppPoolProperties. ps1 |
-| 0x00D00017 | Fel: ett undantag inträffade i SetupARROutboundRules. ps1 |
-| 0x00D00018 | Fel: ett undantag inträffade i SetupARRDiskCache. ps1 |
-| 0x00D00019 | Fel: ett undantag inträffade i SetupARRProperties. ps1 |
-| 0x00D0001A | Fel: ett undantag inträffade i SetupARRHealthProbes. ps1 |
-| 0x00D0001B | Fel: ett undantag inträffade i VerifyIISSItesStarted. ps1 |
-| 0x00D0001C | Fel: ett undantag inträffade i SetDrivesToHealthy. ps1 |
-| 0x00D0001D | Fel: ett undantag inträffade i VerifyCacheNodeSetup. ps1 |
+| 0x00D0000F | Problem: det gick inte att säkerhetskopiera applicationhost.config filen från $AppHostConfig till $AppHostConfigDestinationName |
+| 0x00D00010 | Problem: det gick inte att säkerhetskopiera standard webbplatsen web.config filen från $WebsiteConfigFilePath till $WebConfigDestinationName |
+| 0x00D00011 | Fel: ett undantag inträffade i SetupARRWebFarm.ps1 |
+| 0x00D00012 | Fel: ett undantag inträffade i SetupARRWebFarmRewriteRules.ps1 |
+| 0x00D00013 | Fel: ett undantag inträffade i SetupARRWebFarmProperties.ps1 |
+| 0x00D00014 | Fel: ett undantag inträffade i SetupAllowableServerVariables.ps1 |
+| 0x00D00015 | Fel: ett undantag inträffade i SetupFirewallRules.ps1 |
+| 0x00D00016 | Fel: ett undantag inträffade i SetupAppPoolProperties.ps1 |
+| 0x00D00017 | Fel: ett undantag inträffade i SetupARROutboundRules.ps1 |
+| 0x00D00018 | Fel: ett undantag inträffade i SetupARRDiskCache.ps1 |
+| 0x00D00019 | Fel: ett undantag inträffade i SetupARRProperties.ps1 |
+| 0x00D0001A | Fel: ett undantag inträffade i SetupARRHealthProbes.ps1 |
+| 0x00D0001B | Fel: ett undantag inträffade i VerifyIISSItesStarted.ps1 |
+| 0x00D0001C | Fel: ett undantag inträffade i SetDrivesToHealthy.ps1 |
+| 0x00D0001D | Fel: ett undantag inträffade i VerifyCacheNodeSetup.ps1 |
 | 0x00D0001E | Du kan inte installera den anslutna cachen om standard webbplatsen inte finns på port 80 |
 | 0x00D0001F | Problem: allokeringen av cache-enheten i procent får inte överstiga 100 |
 | 0x00D00020 | Failure: allokeringen av cache-enheten i GB får inte överskrida enhetens lediga utrymme |
@@ -223,7 +223,7 @@ Den gör cache-servern lägger till följande omskrivnings regler:
 Disk utrymme som krävs för varje server-cache kan variera beroende på organisationens uppdaterings krav. 100 GB ska vara tillräckligt med utrymme för att cachelagra följande innehåll:
 
 - En funktions uppdatering
-- Två till tre månaders kvalitet och Office-uppdateringar
+- Två till tre månaders kvalitet och Microsoft 365 uppdateringar av appar
 - Microsoft Intune appar och appar för Windows-Inkorgen
 
 Server-cachen ska inte förbruka mycket system minne eller processor tid. När du har installerat kör cache-servern kan du analysera loggfilerna för IIS och ARR om du upptäcker betydande process-eller minnes resursförbrukning.

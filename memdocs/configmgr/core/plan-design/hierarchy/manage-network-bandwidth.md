@@ -10,12 +10,12 @@ ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b8ee7d00f3b5c98528d9999b83b07aa393b72e36
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: df3188e827623db8faa0b27be2fe282031e9fa50
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720592"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88126400"
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Hantera nätverks bandbredd för innehåll
 Du kan använda inbyggda kontroller för schemaläggning och begränsning för att hjälpa dig att hantera nätverks bandbredd som används för innehålls hanterings processen för Configuration Manager. Du kan också använda förinstallerat innehåll. I följande avsnitt beskrivs dessa alternativ mer utförligt.
@@ -61,7 +61,7 @@ Du kan också konfigurera distributions platsen som **förinstallerad** för att
 
     -   **Hämta innehåll automatiskt när paket tilldelas distributions platser**: Använd det här alternativet om du har mindre paket och inställningarna för schemaläggning och begränsning ger tillräckligt med kontroll för innehålls distribution.  
 
-    -   **Hämta endast innehålls ändringar till distributions platsen**: Använd det här alternativet om du förväntar dig att framtida uppdateringar av innehållet i paketet ska vara allmänt mindre än det ursprungliga paketet. Du kan till exempel förinstallera ett program som Microsoft Office, eftersom den ursprungliga paket storleken är över 700 MB och är för stor för att skickas över nätverket. Innehålls uppdateringar av det här paketet kan dock vara mindre än 10 MB och kan användas för att distribuera över nätverket. Ett annat exempel kan vara driv rutins paket, där den ursprungliga paket storleken är stor, men stegvisa driv rutins tillägg till paketet kan vara små.  
+    -   **Hämta endast innehålls ändringar till distributions platsen**: Använd det här alternativet om du förväntar dig att framtida uppdateringar av innehållet i paketet ska vara allmänt mindre än det ursprungliga paketet. Du kan till exempel förinstallera ett program som Microsoft 365 appar, eftersom den ursprungliga paket storleken är över 700 MB och är för stor för att skickas över nätverket. Innehålls uppdateringar av det här paketet kan dock vara mindre än 10 MB och kan användas för att distribuera över nätverket. Ett annat exempel kan vara driv rutins paket, där den ursprungliga paket storleken är stor, men stegvisa driv rutins tillägg till paketet kan vara små.  
 
     -   **Kopiera innehållet i det här paketet manuellt till distributions platsen**: Använd det här alternativet när du har stora paket, med innehåll, till exempel ett operativ system, och du aldrig vill använda nätverket för att distribuera innehållet till distributions platsen. När du väljer det här alternativet måste du förinstallera innehållet på distributions platsen.  
 
