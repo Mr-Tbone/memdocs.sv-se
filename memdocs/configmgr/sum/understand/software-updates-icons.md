@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 3843dd4ab4fe5a9aecaae8e6f207c3d037fc1950
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ff616c9ee61e85e4e77aeef6254ca9922427270c
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81717715"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129431"
 ---
 # <a name="icons-used-for-software-updates-in-configuration-manager"></a>Ikoner som används för program uppdateringar i Configuration Manager
 
@@ -59,7 +59,7 @@ Synkroniserade program uppdateringar visas i Configuration Manager-konsolen och 
 
 - Förbättrar effektiviteten för det ersatta uppdateringsfilpaketet, som klienten installerar om programuppdateringen godkänns för installation. Till exempel kan den ersatta program uppdateringen innehålla filer som inte längre är relevanta för korrigeringen eller för de operativ system som nu stöds av den nya program uppdateringen, så dessa filer ingår inte i den ersättande program uppdateringens fil paket.  
 
-- Uppdateringar för nyare versioner av en produkt kan alltså inte längre användas för äldre versioner eller konfigurationer av en produkt. Programuppdateringar kan även ersätta andra programuppdateringar om det har gjorts ändringar för utökat språkstöd. Till exempel kan en senare revision av en produktuppdatering för Microsoft Office eliminera stödet för ett äldre operativsystem men lägga till stöd för nya språk i den ursprungliga programuppdateringsutgåvan.  
+- Uppdateringar för nyare versioner av en produkt kan alltså inte längre användas för äldre versioner eller konfigurationer av en produkt. Programuppdateringar kan även ersätta andra programuppdateringar om det har gjorts ändringar för utökat språkstöd. Till exempel kan en senare revision av en produkt uppdatering för Microsoft 365 appar ta bort stöd för ett äldre operativ system, men lägga till ytterligare stöd för nya språk i den ursprungliga program uppdaterings versionen.  
 
   På fliken Ersättningsregler i egenskaperna för Komponent för programuppdateringsplats kan du ange hur ersatta programuppdateringar ska hanteras. Mer information finns i [Ersättningsregler](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 

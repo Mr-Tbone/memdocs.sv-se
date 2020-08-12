@@ -1,8 +1,8 @@
 ---
-title: Felsöka klient anslutnings-och enhets åtgärder
+title: Felsöka anslutnings- och enhetsåtgärder för klientorganisation
 titleSuffix: Configuration Manager
 description: Felsöka klient anslutnings-och enhets åtgärder för Configuration Manager
-ms.date: 07/07/2020
+ms.date: 08/11/2020
 ms.topic: troubleshooting
 ms.prod: configuration-manager
 ms.technology: configmgr-core
@@ -10,12 +10,12 @@ ms.assetid: 44c2eb8a-3ccc-471f-838b-55d7971bb79e
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 67daa42fa6a8c107e7563302ccbcf8d7b2b4f69f
-ms.sourcegitcommit: 3806a1850813b7a179d703e002bcc5c7eb1cb621
+ms.openlocfilehash: 6dfe7bb44a70d26a68c6d3743ecdb05e5d55e3f1
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86210776"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88129329"
 ---
 # <a name="troubleshooting-tenant-attach-and-device-actions"></a>Felsöka klient kopplings-och enhets åtgärder
 
@@ -33,13 +33,36 @@ Tillgängliga åtgärder är:
   
 När en administratör kör en åtgärd från administrations centret för Microsoft Endpoint Manager vidarebefordras meddelande förfrågan till Configuration Manager plats och från platsen till klienten.
 
-## <a name="configuration-manager-components"></a>Configuration Manager-komponenter
+## <a name="log-files"></a>Loggfiler
+
+Använd följande loggar som finns på tjänst anslutnings punkten:
+
+- **CMGatewaySyncUploadWorker. log**
+- **CMGatewayNotificationWorker. log**
+
+Använd följande loggar som finns på hanterings platsen:
+
+- **BgbServer. log**
+
+Använd följande loggar som finns på klienten:
+
+- **CcmNotificationAgent.log**
+
+## <a name="review-your-upload"></a><a name="bkmk_review"></a>Granska din uppladdning
+
+1. Öppna **CMGatewaySyncUploadWorker. log** från &lt; installations katalogen för ConfigMgr> \Loggar.
+1. Nästa synkroniseringstid anges av logg poster som liknar `Next run time will be at approximately: 02/28/2020 16:35:31` .
+1. Sök efter logg poster som liknar för enhets uppladdningar `Batching N records` . **N** är antalet ändrade enheter som har överförts sedan den senaste överföringen.
+1. Uppladdningen sker var 15: e minut för ändringar. När ändringarna har laddats upp kan det ta ytterligare 5 till 10 minuter innan klient ändringarna visas i **administrations centret för Microsoft Endpoint Manager**.
+
+
+## <a name="configuration-manager-components-and-log-flow"></a>Configuration Manager-komponenter och logg flöde
 
 - **SMS_SERVICE_CONNECTOR**: använder Gateway Notification Worker för att bearbeta meddelandet från administrations Center för Microsoft Endpoint Manager.
 - **SMS_NOTIFICATION_SERVER**: hämtar meddelandet och skapar ett klient meddelande.
 - **BgbAgent**: klienten hämtar uppgiften och kör den begärda åtgärden.
 
-## <a name="sms_service_connector"></a>SMS_SERVICE_CONNECTOR
+### <a name="sms_service_connector"></a>SMS_SERVICE_CONNECTOR
 
 När en åtgärd initieras från administrations centret för Microsoft Endpoint Manager, bearbetar **CMGatewayNotificationWorker. log** begäran.  
 
@@ -70,7 +93,7 @@ Forwarded BGB remote task. TemplateID: 1 TaskGuid: a43dd1b3-a006-4604-b012-55293
     ```
 
 
-## <a name="sms_notification_server"></a>SMS_NOTIFICATION_SERVER
+### <a name="sms_notification_server"></a>SMS_NOTIFICATION_SERVER
 
 När meddelandet har skickats till SMS_NOTIFICATION_SERVER skickas en uppgift från hanterings platsen till motsvarande klient. Du ser följande i **BgbServer. log**, som finns på hanterings platsen:
 
@@ -79,7 +102,7 @@ Get one push message from database.
 Starting to send push task (PushID: 7 TaskID: 8 TaskGUID: A43DD1B3-A006-4604-B012-5529380B3B6F TaskType: 1 TaskParam: ) to 1 clients  with throttling (strategy: 1 param: 42)
 ```
 
-## <a name="bgbagent"></a>BgbAgent
+### <a name="bgbagent"></a>BgbAgent
 
 Det sista steget inträffar på klienten och kan visas i **CcmNotificationAgent. log**. När uppgiften tas emot begär Schemaläggaren att utföra åtgärden. När åtgärden utförs visas ett bekräftelse meddelande:
 
@@ -102,6 +125,17 @@ Unauthorized to perform client action. TemplateID: RequestMachinePolicy TenantId
 ```  
 
 Se till att användaren som kör åtgärden från administrations centret för Microsoft Endpoint Manager har de behörigheter som krävs på Configuration Manager-platsen. Mer information finns i [Microsoft Endpoint Manager-klient anslutning för krav](device-sync-actions.md#prerequisites).
+
+## <a name="known-issues"></a>Kända problem
+
+### <a name="specific-devices-dont-synchronize"></a>Vissa enheter synkroniseras inte
+
+<!--7099564-->
+Det är möjligt att vissa enheter, som är Configuration Manager klienter, inte överförs till tjänsten.
+
+**Påverkade enheter:** Om en enhet är en distributions plats som använder samma PKI-certifikat för både distributions plats funktionerna och dess klient agent, kommer enheten inte att tas med i synkroniseringen av klient anslutningens enhet.
+
+**Beteende:** När du utför en klient anslutning under den här fasen utförs en fullständig synkronisering första gången. Efterföljande synkroniseringsförsök är delta i synkroniseringar. Eventuella uppdateringar av de påverkade enheterna gör att enheten tas bort från synkroniseringen.
 
 
 ## <a name="next-steps"></a>Nästa steg

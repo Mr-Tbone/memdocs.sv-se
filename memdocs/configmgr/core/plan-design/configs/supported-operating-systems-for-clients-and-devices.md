@@ -2,7 +2,7 @@
 title: Klienter och enheter som stöds
 titleSuffix: Configuration Manager
 description: Lär dig vilka versioner av operativ systemet Configuration Manager stöder för klienter och enheter.
-ms.date: 02/19/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e9e0ec6df5f80b318cb78ed8cddc986b613230e1
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 497a43fe6647f1dc2787f16a76f45ddd26d24796
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904534"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128856"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>OS-versioner som stöds för klienter och enheter för Configuration Manager
 
@@ -58,6 +58,16 @@ Om du behöver en användar princip i det här scenariot och godkänner eventuel
 
 > [!Note]  
 > Du kan inte använda samhantering med en klient som kör Windows 10 Enterprise multi-session. <!-- SCCMDocs-pr#3950 -->
+
+Från och med version 2006 finns **Windows 10 Enterprise multi-session** -plattformen i listan över OS-versioner som stöds på objekt med krav regler eller tillämplighets listor.<!--6527576-->
+
+> [!NOTE]
+> Om du tidigare har valt **Windows 10** -plattformen på den översta nivån, markeras automatiskt alla underordnade plattformar i den här åtgärden. Den här nya plattformen väljs inte automatiskt. Om du vill lägga till **Windows 10 Enterprise multi-session**väljer du det manuellt i listan.
+
+Mer information finns i följande artiklar:
+
+- [Stöd för virtualiseringsmiljöer](support-for-virtualization-environments.md)
+- [Hantera Configuration Manager klienter i en VDI-infrastruktur (Virtual Desktop Infrastructure)](../../clients/deploy/plan/considerations-for-managing-clients-in-a-vdi.md)
 
 ### <a name="supported-server-os-versions"></a>OS-versioner som stöds
 
@@ -151,8 +161,8 @@ Hantera Windows CE enheter med Configuration Manager äldre klient för mobila e
 
 - Windows CE 7,0 (ARM-och x86-processorer)  
 
-    > [!Note]
-    > Stöd är föråldrat för Windows CE 7,0 i Configuration Manager. Mer information finns i [borttagna och föråldrade objekt för Configuration Manager klienter](../changes/deprecated/removed-and-deprecated-client.md).
+    > [!IMPORTANT]
+    > Configuration Manager version 2006 släpper stöd för Windows CE 7,0 som en klient. Utfasningen presenterades av [version 1906](../changes/whats-new-in-version-1906.md#bkmk_deprecated).
 
 #### <a name="supported-languages-include"></a>Språk som stöds är
 
@@ -335,9 +345,8 @@ Configuration Manager har inbyggda funktioner för att hantera mobila enheter so
 
 - **Windows 10 Mobile Enterprise**  
 
-    > [!Note]
-    > Support är föråldrad för Windows 10 Mobile och Windows 10 Mobile Enterprise i Configuration Manager. Mer information finns i [borttagna och föråldrade objekt för Configuration Manager klienter](../changes/deprecated/removed-and-deprecated-client.md).
-
+    > [!IMPORTANT]
+    > Configuration Manager version 2006 släpper stöd för Windows 10 Mobile och Windows 10 Mobile Enterprise som en klient. Utfasningen presenterades av [version 1906](../changes/whats-new-in-version-1906.md#bkmk_deprecated).
 
 ## <a name="exchange-server-connector"></a><a name="bkmk_ExSrvConOS"></a>Exchange Server-anslutning  
 

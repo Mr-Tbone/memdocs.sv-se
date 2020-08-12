@@ -2,7 +2,7 @@
 title: Konfigurera gränser grupper
 titleSuffix: Configuration Manager
 description: Hjälp klienter att hitta plats system genom att använda gräns grupper för att logiskt organisera relaterade nätverks platser som kallas gränser
-ms.date: 04/01/2020
+ms.date: 08/11/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c9567cc441636bbda31262e0857e2fc6484c2af7
-ms.sourcegitcommit: 555cb8102715afbe06c4de5fdbc943608f00b52c
+ms.openlocfilehash: 7a925c29b5d186f3ca6f320741f5ca602b0bbb79
+ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84153402"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88128400"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Konfigurera gränser grupper för Configuration Manager
 
@@ -157,7 +157,7 @@ Om du konfigurerar innehållet för att distribuera på begäran och det inte ä
 Installations programmet för Configuration Manager-klienten, CCMSetup, kan hämta installations innehåll från en lokal källa eller via en hanterings plats. Det ursprungliga beteendet beror på vilka kommando rads parametrar du använder för att installera klienten:<!-- MEMDocs#286 -->
 
 - Om du inte använder någon av **/MP** -eller **/Source** -parametrarna försöker CCMSetup hämta en lista över hanterings platser från Active Directory eller DNS.
-- Om du bara anger **/Source**tvingar den installationen från den angivna sökvägen. Det identifierar inte hanterings platser. Om det inte går att hitta CCMSetup. cab på den angivna sökvägen, Miss lyckas CCMSetup.
+- Om du bara anger **/Source**tvingar den installationen från den angivna sökvägen. Det identifierar inte hanterings platser. Om det inte går att hitta ccmsetup.cab på den angivna sökvägen, Miss lyckas CCMSetup.
 - Om du anger både **/MP** och **/Source**kontrol leras de angivna hanterings platserna och de identifieras. Om den inte kan hitta en giltig hanterings plats går den tillbaka till den angivna käll Sök vägen.
 
 Mer information om de här CCMSetup-parametrarna finns i [parametrar och egenskaper för klient installation](../../../clients/deploy/about-client-installation-properties.md).
@@ -312,7 +312,7 @@ I version 1902 är den här inställningen nu med rubriken **prioriterade molnba
 - Moln distributions platser
 - Microsoft Update (lades till i version 1902)
 
-## <a name="software-update-points"></a>Program uppdaterings platser
+## <a name="software-update-points"></a><a name="bkmk_sup"></a>Program uppdaterings platser 
 
 Klienter använder gränser grupper för att hitta en ny program uppdaterings plats. Om du vill styra vilka servrar som en klient kan hitta lägger du till enskilda program uppdaterings platser i olika gränser grupper.
 
@@ -366,6 +366,13 @@ Granska konfigurationerna för din gränser grupp. Innan du börjar den här än
 
 Mer information finns i [Växla klienter manuellt till en ny program uppdaterings plats](../../../../sum/plan-design/plan-for-software-updates.md#BKMK_ManuallySwitchSUPs).
 
+### <a name="intranet-clients-can-use-a-cmg-software-update-point"></a><a name="bkmk_cmg-sup"></a>Intranät klienter kan använda en CMG program uppdaterings plats
+<!--7102873-->
+Från och med version 2006 kan intranät klienter komma åt en CMG program uppdaterings plats när den tilldelas en begränsnings grupp och [ **trafik alternativet Tillåt Configuration Manager Cloud Management Gateway** är aktiverat](../../../clients/manage/cmg/setup-cloud-management-gateway.md#bkmk_role) på program uppdaterings platsen. Du kan tillåta att intranät enheter genomsöker mot en CMG program uppdaterings plats i följande scenarier:
+
+- När en Internet-dator ansluter till VPN-servern fortsätter den att söka mot CMG program uppdaterings plats via Internet.
+- Om den enda program uppdaterings platsen för den begränsande gruppen är den CMG program uppdaterings platsen, kommer alla intranät-och Internet enheter att sökas mot den.
+
 ## <a name="management-points"></a>Hanterings platser
 
 <!-- 1324594 -->
@@ -378,7 +385,7 @@ Tidigare uppstod ett vanligt problem när du hade en skyddad hanterings plats i 
 
 Om en klient finns i en avgränsnings grupp som inte har någon tilldelad hanterings plats, ger platsen klienten hela listan över hanterings platser. Det här beteendet ser till att en klient alltid får en lista över hanterings platser.
 
-Återställningen av hanterings platsens gränser påverkar inte beteendet vid klient installation (CCMSetup. exe). Om kommando raden inte anger den första hanterings platsen med hjälp av parametern/MP får den nya klienten fullständig lista över tillgängliga hanterings platser. Vid den första start processen använder klienten den första hanterings plats som den kan komma åt. När klienten registrerar sig på platsen får den hanterings plats listan korrekt sorterad med det nya beteendet.
+Återställningen av hanterings platsens gränser påverkar inte funktions sättet under klient installationen (ccmsetup.exe). Om kommando raden inte anger den första hanterings platsen med hjälp av parametern/MP får den nya klienten fullständig lista över tillgängliga hanterings platser. Vid den första start processen använder klienten den första hanterings plats som den kan komma åt. När klienten registrerar sig på platsen får den hanterings plats listan korrekt sorterad med det nya beteendet.
 
 Mer information om klientens beteende för att hämta innehåll under installationen finns i [klient installation](#bkmk_ccmsetup).
 
