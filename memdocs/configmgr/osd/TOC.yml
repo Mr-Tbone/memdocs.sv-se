@@ -24,22 +24,6 @@
           href: deploy-use/install-new-windows-version-new-computer-bare-metal.md
         - name: Ersätta en befintlig dator och överföra inställningar
           href: deploy-use/replace-an-existing-computer-and-transfer-settings.md
-    - name: Metoder för att distribuera operativsystem i företag
-      items:
-        - name: Distributionsmetoder för operativsystem
-          href: deploy-use/methods-to-deploy-enterprise-operating-systems.md
-        - name: Använda PXE för att distribuera Windows via nätverket
-          href: deploy-use/use-pxe-to-deploy-windows-over-the-network.md
-        - name: Använda Software Center för att distribuera Windows via nätverket
-          href: deploy-use/use-software-center-to-deploy-windows-over-the-network.md
-        - name: Använda startbara media för att distribuera Windows via nätverket
-          href: deploy-use/use-bootable-media-to-deploy-windows-over-the-network.md
-        - name: Använda fristående media för att distribuera Windows utan att använda nätverket
-          href: deploy-use/use-stand-alone-media-to-deploy-windows-without-using-the-network.md
-        - name: Använd multicast för att distribuera Windows via nätverket
-          href: deploy-use/use-multicast-to-deploy-windows-over-the-network.md
-        - name: Skapa en avbildning för en OEM-tillverkare i fabriken eller lokal anläggning
-          href: deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md
     - name: Säkerhet och sekretess för distribution av operativsystem
       href: plan-design/security-and-privacy-for-operating-system-deployment.md
     - name: Planera kompatibilitet för distribution av operativsystem
@@ -78,6 +62,26 @@
       href: get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md
 - name: Distribuera och använda
   items:
+    - name: Metoder för att distribuera operativsystem i företag
+      items:
+        - name: Distributionsmetoder för operativsystem
+          href: deploy-use/methods-to-deploy-enterprise-operating-systems.md
+        - name: Använda PXE för att distribuera Windows via nätverket
+          href: deploy-use/use-pxe-to-deploy-windows-over-the-network.md
+        - name: Använda Software Center för att distribuera Windows via nätverket
+          href: deploy-use/use-software-center-to-deploy-windows-over-the-network.md
+        - name: Använda startbara media för att distribuera Windows via nätverket
+          href: deploy-use/use-bootable-media-to-deploy-windows-over-the-network.md
+        - name: Använda fristående media för att distribuera Windows utan att använda nätverket
+          href: deploy-use/use-stand-alone-media-to-deploy-windows-without-using-the-network.md
+        - name: Använd multicast för att distribuera Windows via nätverket
+          href: deploy-use/use-multicast-to-deploy-windows-over-the-network.md
+        - name: Skapa en avbildning för en OEM-tillverkare i fabriken eller lokal anläggning
+          href: deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md
+        - name: Skapa en aktivitetssekvens för annat än distributioner av operativsystem
+          href: deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md
+        - name: Distribuera Windows to Go
+          href: deploy-use/deploy-windows-to-go.md
     - name: Hantera och skapa aktivitetssekvenser
       href: deploy-use/manage-task-sequences-to-automate-tasks.md
     - name: Skapa aktivitetssekvenser för att automatisera uppgifter
@@ -94,8 +98,6 @@
           href: deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md
         - name: Skapa en anpassad aktivitetssekvens
           href: deploy-use/create-a-custom-task-sequence.md
-        - name: Skapa en aktivitetssekvens för annat än distributioner av operativsystem
-          href: deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md
     - name: Distribuera en aktivitetssekvens
       href: deploy-use/deploy-a-task-sequence.md
     - name: Skapa en fasindelad distribution
@@ -104,8 +106,6 @@
       href: deploy-use/manage-monitor-phased-deployments.md
     - name: Hantera Windows som en tjänst
       href: deploy-use/manage-windows-as-a-service.md
-    - name: Distribuera Windows to Go
-      href: deploy-use/deploy-windows-to-go.md
     - name: Övervaka distribution av operativsystem
       href: deploy-use/monitor-operating-system-deployments.md
     - name: Felsök en aktivitetssekvens

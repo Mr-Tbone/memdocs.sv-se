@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 010bbd18c09424ed2434dc19405851bb5c254591
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: f71bbc2022068616b90f37c209d41d28ea5970d0
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990772"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912536"
 ---
 # <a name="send-log-data-to-storage-event-hubs-or-log-analytics-in-intune-preview"></a>Skicka data till lagring, händelsehubbar eller logganalys i Intune (förhandsversion)
 
@@ -139,51 +139,51 @@ Följande tabeller visar en kostnadsuppskattning beroende på storleken på klie
 
 **Granskningslogg med 100 000 användare**
 
-| | |
-|---|---|
-|Händelser per dag| 1,5 miljon|
+| Kategori | Värde |
+| -------- | ----- |
+|Händelser per dag| 1,5 miljoner|
 |Uppskattad mängd data per månad| 90 GB|
-|Uppskattad kostnad per månad (USD)| 1,93 $|
-|Uppskattad kostnad per år (USD)| 23,12 $|
+|Uppskattad kostnad per månad (USD)| 1,93 USD|
+|Uppskattad kostnad per år (USD)| 23,12 USD|
 
 **Granskningslogg med 1 000 användare**
 
-| | |
-|---|---|
-|Händelser per dag| 15 000|
+| Kategori | Värde |
+| -------- | ----- |
+|Händelser per dag| 15 000|
 |Uppskattad mängd data per månad| 900 MB|
-|Uppskattad kostnad per månad (USD)| 0,02 $|
-|Uppskattad kostnad per år (USD)| 0,24 $|
+|Uppskattad kostnad per månad (USD)| 0,02 USD|
+|Uppskattad kostnad per år (USD)| 0,24 USD|
 
-### <a name="event-hub-messages-for-activity-logs"></a>Meddelanden från händelsehubbar för aktivitetsloggar
+### <a name="event-hub-messages-for-activity-logs"></a>Händelsehubbmeddelanden för aktivitetsloggar
 
 Händelser grupperas vanligtvis med fem minuters intervall och skickas som ett enda meddelande med alla händelser inom denna tidsram. Ett meddelande i en händelsehubb har en maximal storlek på 256 KB. Om den totala storleken på alla meddelanden under tidsperioden överstiger den volymen, skickas flera meddelanden.
 
 Exempelvis inträffar cirka 18 händelser per sekund vanligtvis för en stor klient med fler än 100 000 användare. Detta motsvarar 5 400 händelser var femte minut (300 sekunder x 18 händelser). Granskningsloggarna är cirka 2 KB per händelse. Detta motsvarar 10,8 MB data. Därför skickas 43 meddelanden till händelsehubben i detta femminutersintervall.
 
-Följande tabell innehåller beräknade kostnader per månad för en grundläggande händelsehubb i västra USA, beroende på mängden händelsedata. För att få en uppfattning om datavolymen som du förväntar dig för dina loggar, kan du använda [Priskalkylatorn för Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/).
+Följande tabell innehåller uppskattad kostnad per månad för en grundläggande händelsehubb i USA, västra, beroende på mängden händelsedata. För att få en uppfattning om datavolymen som du förväntar dig för dina loggar, kan du använda [Priskalkylatorn för Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/).
 
 **Granskningslogg med 100 000 användare**
 
-| | |
-|---|---|
+| Kategori | Värde |
+| -------- | ----- |
 |Händelser per sekund| 18|
-|Händelser per femminutersintervall| 5 400|
+|Händelser per femminutsintervall| 5 400|
 |Volym per intervall| 10,8 MB|
 |Meddelanden per intervall| 43|
-|Meddelanden per månad| 371 520|
-|Uppskattad kostnad per månad (USD)| 10,83 $|
+|Meddelanden per månad| 371 520|
+|Uppskattad kostnad per månad (USD)| 10,83 USD|
 
 **Granskningslogg med 1 000 användare**
 
-| | |
-|---|---|
-|Händelser per sekund|0,1 |
-|Händelser per femminutersintervall| 52|
+| Kategori | Värde |
+| -------- | ----- |
+|Händelser per sekund|0.1 |
+|Händelser per femminutsintervall| 52|
 |Volym per intervall|104 KB |
 |Meddelanden per intervall|1 |
-|Meddelanden per månad|8 640 |
-|Uppskattad kostnad per månad (USD)|10,80 $ |
+|Meddelanden per månad|8 640 |
+|Uppskattad kostnad per månad (USD)|10,80 USD |
 
 ### <a name="log-analytics-cost-considerations"></a>Kostnadsöverväganden för Log Analytics
 
@@ -219,15 +219,15 @@ Strömningskostnaderna beror på hur många meddelanden du får per minut. Mer i
 
 ### <a name="how-do-i-integrate-intune-audit-logs-with-my-siem-system"></a>Hur gör jag för att integrera granskningsloggar för Intune med mitt SIEM-system?
 
-Använd Azure Monitor med Event Hubs för att strömma loggar till ditt SIEM-system. Först [strömma loggarna till en händelsehubb](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub). Sedan [konfigurera SIEM-verktyget](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) med den konfigurerade händelsehubben. 
+Använd Azure Monitor med Event Hubs för att streama loggar till ditt SIEM-system. Först [strömma loggarna till en händelsehubb](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub). Sedan [konfigurera SIEM-verktyget](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) med den konfigurerade händelsehubben. 
 
 ### <a name="what-siem-tools-are-currently-supported"></a>Vilka SIEM-verktyg stöds för närvarande?
 
-Azure Monitor stöds för närvarande av [Splunk](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), QRadar och [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) (öppnar en ny webbplats). Mer information om hur anslutningsapparna fungerar finns i [Strömma Azure-övervakningsdata till en händelsehubb med ett externt verktyg](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs).
+Azure Monitor stöds för närvarande av [Splunk](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), QRadar och [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) (öppnar en ny webbplats). Mer information om hur anslutningsapparna fungerar finns på sidan om att [strömma Azure-övervakningsdata till en händelsehubb för användning av ett externt verktyg](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs).
 
 ### <a name="can-i-access-the-data-from-an-event-hub-without-using-an-external-siem-tool"></a>Kan jag komma åt data från en händelsehubb utan att använda något externt SIEM-verktyg?
 
-Ja. Om du vill komma åt loggarna från ditt anpassade program måste du använda [Event Hubs API](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
+Ja. Om du vill komma åt loggarna från ditt anpassade program kan du använda [Event Hub API](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
 
 ### <a name="what-data-is-stored"></a>Vilka data lagras?
 

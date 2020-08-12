@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 11/26/2019
+ms.date: 08/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: enrollment
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f8991b772f5562538403492735f1f4c2fdc87e8
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 75f6585144f62636033c94f701a57cb70e018c26
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093451"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051600"
 ---
 # <a name="set-up-the-enrollment-status-page"></a>Konfigurera sidan för registreringsstatus
  
@@ -31,7 +31,7 @@ ms.locfileid: "85093451"
  
 På sidan för registreringsstatus visas etableringsförloppet när en ny enhet har registrerats, samt när nya användare loggar in på enheten.  Det här gör att IT-administratörer kan förhindra (blockera) åtkomst till enheten tills den har etablerats fullständigt, samtidigt som användarna får information om de uppgifter som återstår under etableringsprocessen.
 
-Sidan för registreringsstatus kan användas i etableringsscenarier i [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/) och kan även användas separat från Windows Autopilot inom ramen för standardmiljön i Azure AD Join, samt för alla nya användare som loggar in på enheten första gången.
+Sidan för registreringsstatus kan användas i etableringsscenarier i [Windows Autopilot](../../autopilot/index.yml) och kan även användas separat från Windows Autopilot inom ramen för standardmiljön i Azure AD Join, samt för alla nya användare som loggar in på enheten första gången.
 
 Du kan skapa flera profiler för sidan för registreringsstatus med olika konfigurationer du anger:
 

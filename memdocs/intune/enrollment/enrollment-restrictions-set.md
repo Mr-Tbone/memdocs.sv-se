@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f706b2bb898f0969bf33d118291551d0f98d9ef
-ms.sourcegitcommit: 45657123a5db50aaecdb96d068712623d775f31c
+ms.openlocfilehash: e5ed799d01ea4fdae1f9ecb013b4cf73deb0e6f0
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87443899"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051663"
 ---
 # <a name="set-enrollment-restrictions"></a>Ange registreringsbegränsningar
 
@@ -147,7 +147,7 @@ Följande metoder räknas som auktoriserade som Windows-företagsregistrering:
 - Den registrerande användaren använder ett [konto för enhetsregistreringshanteraren]( device-enrollment-manager-enroll.md).
 - Enheten registreras via [Windows Autopilot](enrollment-autopilot.md).
 - Enheten registreras med Windows Autopilot, men är inte det enda MDM-registreringsalternativet i Windows-inställningarna.
-- Enhetens IMEI-nummer anges i **Enhetsregistrering** >  **[ID:n för företagsenheter](corporate-identifiers-add.md)** . (Stöds inte för Windows Phone 8.1.)
+- Enhetens IMEI-nummer anges i **Enhetsregistrering** >  **[ID:n för företagsenheter](corporate-identifiers-add.md)** .
 - Enheten registreras via ett [bulketableringspaket](windows-bulk-enroll.md).
 - Enheten registreras via GPO eller [automatisk registrering från Configuration Manager för samhantering](https://docs.microsoft.com/configmgr/comanage/quickstart-paths#bkmk_path1).
  

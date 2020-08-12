@@ -29,7 +29,7 @@ Från och med version 1906 är aktivitetssekvensen fel söknings verktyg ett nyt
 > I den här versionen av Configuration Manager är aktivitetssekvensen fel sökare en för hands versions funktion. För att aktivera den, se [för hands versions funktioner](../../core/servers/manage/pre-release-features.md).  
 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Uppdatera Configuration Manager-klienten på mål enheten
 

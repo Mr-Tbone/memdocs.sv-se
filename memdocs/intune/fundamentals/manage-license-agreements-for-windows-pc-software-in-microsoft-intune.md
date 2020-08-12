@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f1bd1b5da0a45ce4291eba765742405e1e4ba43
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 080b7237eb95ba729e4152e646ff8de7466309a0
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82077896"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912285"
 ---
 # <a name="manage-license-agreements-for-windows-pc-software-in-microsoft-intune"></a>Hantera licensavtal för Windows-datorprogram i Microsoft Intune
 
@@ -178,10 +178,8 @@ Du kan också lägga till andra typer av licensavtal i Intune utöver Microsofts
 ## <a name="manage-license-agreements"></a>Hantera licensavtal
 Avtal för mjukvaruprogram kan läggas till licensgrupper. Du kan använda licensgrupper för att organisera licensavtal i enheter som är logiska för din organisation. Dessutom kan du ta bort licensavtal som du har skapat tidigare.
 
-
-|                            |                                                                                                                                                                                                                                                                                                                                                                          |
-|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|            Uppgift            |                                                                                                                                                                                 Information                                                                                                                                                                                  |
+| Uppgift | Information |
+| ---- | ------- |
 |   Skapa en licensgrupp   |                                                            På sidan <strong>Översikt</strong> i arbetsytan <strong>Licenser</strong> väljer du <strong>Skapa licensgrupp</strong> på menyn <strong>Aktiviteter</strong> . <strong>Obs:</strong> Du kan skapa max 500 licensgrupper totalt.                                                             |
 |   Byta namn på en licensgrupp   |                                                                                                      Välj en licensgrupp i arbetsytan <strong>Licenser</strong> och välj sedan <strong>Redigera licensgrupp</strong> på menyn <strong>Aktiviteter</strong> .                                                                                                       |
 |   Ta bort en licensgrupp   |                                 Välj en licensgrupp i arbetsytan <strong>Licenser</strong> och välj sedan <strong>Ta bort licensgrupp</strong> på menyn <strong>Aktiviteter</strong> . <strong>Tips:</strong> Eventuella licenser som fanns i den borttagna gruppen flyttas till licensgruppen <strong>Otilldelade avtal</strong>.                                 |

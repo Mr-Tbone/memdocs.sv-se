@@ -25,7 +25,7 @@ Använd **tjänst anslutnings verktyget** när tjänst anslutnings punkten är i
 
 När du kör verktyget ansluter det till Configuration Manager moln tjänsten, laddar upp användnings information för hierarkin och hämtar uppdateringar. Överföring av användnings data krävs för att moln tjänsten ska kunna tillhandahålla rätt uppdateringar för din miljö.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Platsen har en tjänst anslutnings punkt och du konfigurerar den för en offline- **anslutning på begäran**.
 

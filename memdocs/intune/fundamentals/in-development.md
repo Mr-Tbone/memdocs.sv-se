@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/24/2020
+ms.date: 08/06/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e76816768090a624247db7a84da8c6bdffb800bc
-ms.sourcegitcommit: 45657123a5db50aaecdb96d068712623d775f31c
+ms.openlocfilehash: 0b7f1a4280b409ec4a12c6371fd2e6cba8a571ca
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87443832"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048029"
 ---
 # <a name="in-development-for-microsoft-intune"></a>Under utveckling för Microsoft Intune
 
@@ -125,9 +125,6 @@ Om du vill se de aktuella inställningarna för SSO-tillägg som du kan konfigur
 
 Gäller för:
 - iOS/iPadOS
-
-### <a name="improvement-to-update-device-settings-page-in-company-portal-app-for-android-to-show-descriptions---7414768---"></a>Förbättring av visning av beskrivningar på sidan Uppdatera enhetsinställningar i företagsportalsappen för Android<!-- 7414768 -->
-I företagsportalsappen på Android-enheter visar sidan **Uppdatera enhetsinställningar** de inställningar som en användare behöver uppdatera för att följa standard. Vi har förbättrat användarupplevelsen så att listade inställningar utökas som standard så att beskrivningen och knappen **Lös** (om tillämpligt) visas. Tidigare doldes dessa som standard. Det nya standardbeteendet minskar antalet klick, så att användarna kan lösa problem snabbare.
 
 <!-- ***********************************************-->
 <!-- ## Device enrollment-->

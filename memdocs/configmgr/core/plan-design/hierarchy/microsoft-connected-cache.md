@@ -148,7 +148,7 @@ Mer detaljerad information finns i [felsöka Microsoft Connected cache i Configu
 
 Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samhanterade klienter när du aktiverar ansluten cache på Configuration Manager distributions platser.
 
-### <a name="prerequisites"></a>Förutsättningar
+### <a name="prerequisites"></a>Krav
 
 #### <a name="client"></a>Klient
 

@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b0c65e12349f8b4c887b5a633a1cd94c272ca5a
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 37724c4d9acdfcdb9e371a21a7b15c509de78c60
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093356"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865480"
 ---
 # <a name="troubleshoot-iosipados-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av iOS/iPadOS-enhet i Microsoft Intune
 
@@ -109,8 +109,9 @@ Samla in följande information om problemet:
 1. Ta bort företagsportalappen från enheten.
 2. Ladda ner och installera **Microsoft Intune-företagsportalappen** från **App Store**.
 3. Omregistrera enheten.
- > [!NOTE]
-    > Det här felet kan också inträffa om användaren försöker registrera fler enheter än enhetsregistreringen har konfigurerats för att tillåta. Följ lösningsstegen för **Enhetstaket har nåtts** nedan om de här stegen inte löser problemet.
+
+> [!NOTE]
+> Det här felet kan också inträffa om användaren försöker registrera fler enheter än enhetsregistreringen har konfigurerats för att tillåta. Följ lösningsstegen för **Enhetstaket har nåtts** nedan om de här stegen inte löser problemet.
 
 ### <a name="device-cap-reached"></a>Enhetstaket har nåtts
 
@@ -186,7 +187,7 @@ Förnya APNs-certifikatet och registrera sedan enheten på nytt.
 
 När du aktiverar en ADE-hanterad enhet som har tilldelats en registreringsprofil, misslyckas registreringen och du får följande felmeddelande:
 
-```
+```output
 asciidoc
 mobileassetd[83] <Notice>: 0x1a49aebc0 Client connection: XPC_TYPE_ERROR Connection invalid <error: 0x1a49aebc0> { count = 1, transaction: 0, voucher = 0x0, contents = "XPCErrorDescription" => <string: 0x1a49aee18> { length = 18, contents = "Connection invalid" } }
 iPhone mobileassetd[83] <Notice>: Client connection invalid (Connection invalid); terminating connection
