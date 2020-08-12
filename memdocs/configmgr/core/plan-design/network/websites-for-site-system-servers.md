@@ -10,12 +10,12 @@ ms.assetid: 681f0893-e83b-476e-9ec0-a5dc7c9deeb6
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 344ba7f6a6b0ee7683c3ac7661338f01be601a10
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a8091ecf4abc113d41f053c1152152262131a4bb
+ms.sourcegitcommit: 8999e197f10fb72d1b82f30a599d1e588db237b7
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718695"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88146090"
 ---
 # <a name="websites-for-site-system-servers-in-configuration-manager"></a>Webbplatser för plats system servrar i Configuration Manager
 
@@ -47,10 +47,10 @@ Flera Configuration Manager plats system roller kräver att Microsoft Internet I
 
 -   Konfigurera den anpassade webbplatsen att svara på samma port som du konfigurerade för Configuration Manager klient kommunikation (klient begär ande port).  
 
--   För varje anpassad eller standard webbplats som använder en anpassad mapp placerar du en kopia av den standard dokument typ som du använder i rotmappen som är värd för webbplatsen. Till exempel, på en Windows Server 2008 R2-dator med standardkonfigurationer, är **iisstart. htm** en av flera standard dokument typer som är tillgängliga. Du kan hitta filen i roten på standard webbplatsen och sedan placera en kopia av den här filen (eller en kopia av den standard dokument typ som du använder) i rotmappen som är värd för den anpassade webbplatsen för SMSWEB. Mer information om standard dokument typer finns i [standard dokument &lt;defaultDocument\> för IIS](https://www.iis.net/configreference/system.webserver/defaultdocument).  
+-   För varje anpassad eller standard webbplats som använder en anpassad mapp placerar du en kopia av den standard dokument typ som du använder i rotmappen som är värd för webbplatsen. Till exempel är en Windows Server 2008 R2-dator med standardkonfigurationer **iisstart.htm** en av flera standard dokument typer som är tillgängliga. Du kan hitta filen i roten på standard webbplatsen och sedan placera en kopia av den här filen (eller en kopia av den standard dokument typ som du använder) i rotmappen som är värd för den anpassade webbplatsen för SMSWEB. Mer information om standard dokument typer finns i [standard dokument &lt; DEFAULTDOCUMENT \> för IIS](https://www.iis.net/configreference/system.webserver/defaultdocument).  
 
-**Om IIS-krav:**
-**följande plats system roller kräver att IIS och en webbplats är värd för plats system tjänsterna:**  
+**Om IIS-krav:** 
+ **Följande plats system roller kräver IIS och en webbplats som värd för plats system tjänsterna:**  
 
 -   Webbservicepunkt för programkatalog  
 
@@ -83,7 +83,7 @@ Fler saker att ha i åtanke:
 -   De TCP/IP-portar som du konfigurerar i IIS för den anpassade webbplatsen måste matcha klient begär ande portarna för platsen.  
 
 ## <a name="switch-between-default-and-custom-websites"></a>Växla mellan standard webbplatser och anpassade webbplatser  
-Även om du kan markera eller avmarkera kryss rutan för att använda anpassade webbplatser på en primär plats när som helst (rutan finns på fliken Allmänt i platsens egenskaper) bör du planera noggrant innan du gör den här ändringen. När den här konfigurationen ändras måste alla tillämpliga plats system roller på den primära platsen och underordnade sekundära platser avinstalleras och sedan installeras om:  
+Även om du kan markera eller avmarkera kryss rutan för att använda anpassade webbplatser på en primär plats när som helst (rutan finns på fliken portar i platsens egenskaper) bör du planera noggrant innan du gör den här ändringen. När den här konfigurationen ändras måste alla tillämpliga plats system roller på den primära platsen och underordnade sekundära platser avinstalleras och sedan installeras om:  
 
 Följande roller **ominstalleras automatiskt**:  
 
