@@ -135,7 +135,6 @@
 #### [Komma igång med Windows-registrering](windows-enrollment-company-portal.md)
 #### [Registrera en Windows 10-enhet](enroll-windows-10-device.md)
 #### [Registrera en Windows 8.1- eller Windows RT 8.1-enhet](enroll-your-w81-or-rt81-windows.md)
-#### [Registrera en Windows Phone 8.1-enhet](enroll-your-wp81-windows.md)
 ### [Kryptera din enhet](encrypt-your-device-windows.md)
 ### [Ange eller ändra enhetens lösenord](set-or-change-your-password-windows.md)
 ### [Ta bort enheten från Intune](unenroll-your-device-from-intune-windows.md)
