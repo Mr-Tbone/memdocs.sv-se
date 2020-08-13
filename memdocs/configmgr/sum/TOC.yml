@@ -32,7 +32,7 @@
       items:
         - name: Synkronisera programuppdateringar från en frånkopplad plats för programuppdatering
           href: get-started/synchronize-software-updates-disconnected.md
-        - name: Synkronisera Office 365-uppdateringar från en frånkopplad programuppdateringsplats
+        - name: Synkronisera uppdateringar till Microsoft 365-appar från en frånkopplad plats för programuppdatering
           href: get-started/synchronize-office-updates-disconnected.md
 - name: Distribuera och använda
   items:
@@ -62,7 +62,7 @@
       href: deploy-use/service-a-server-group.md
     - name: Instrumentpanel för Office 365-klienthantering
       href: deploy-use/office-365-dashboard.md
-    - name: Hantera uppdateringar för Office 365-ProPlus
+    - name: Hantera uppdateringar till Microsoft 365-appar
       href: deploy-use/manage-office-365-proplus-updates.md
     - name: Optimera leverans för Windows 10-uppdatering
       href: deploy-use/optimize-windows-10-update-delivery.md

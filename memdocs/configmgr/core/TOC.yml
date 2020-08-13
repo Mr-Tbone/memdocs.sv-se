@@ -14,12 +14,18 @@
           href: understand/find-help.md
         - name: Så här använder du dokumenten
           href: understand/use-docs.md
-        - name: Så här använder du konsolen
-          href: servers/manage/admin-console.md
         - name: Hjälpmedelsfunktioner
           href: understand/accessibility-features.md
         - name: Användarhandbok för Software Center
           href: understand/software-center.md
+    - name: Så här använder du konsolen
+      items:
+        - name: Så här använder du konsolen
+          href: servers/manage/admin-console.md
+        - name: Konsolmeddelanden
+          href: servers/manage/admin-console-notifications.md
+        - name: Konsol – ändringar och tips
+          href: servers/manage/admin-console-tips.md
     - name: Grunderna
       items:
         - name: Grunder i Configuration Manager
@@ -76,6 +82,8 @@
           href: plan-design/changes/features-and-capabilities.md
         - name: Nyheter i senare versioner
           href: plan-design/changes/whats-new-incremental-versions.md
+        - name: Nyheter i version 2006
+          href: plan-design/changes/whats-new-in-version-2006.md
         - name: Nyheter i version 2002
           href: plan-design/changes/whats-new-in-version-2002.md
         - name: Nyheter i version 1910
@@ -84,8 +92,6 @@
           href: plan-design/changes/whats-new-in-version-1906.md
         - name: Nyheter i version 1902
           href: plan-design/changes/whats-new-in-version-1902.md
-        - name: Nyheter i version 1810
-          href: plan-design/changes/whats-new-in-version-1810.md
         - name: Vad har förändrats från Configuration Manager 2012
           href: plan-design/changes/what-has-changed-from-configuration-manager-2012.md
         - name: Borttaget och inaktuellt
@@ -212,6 +218,8 @@
           items:
             - name: Nivåöversikt
               href: plan-design/diagnostics/levels-overview.md
+            - name: Data för version 2006
+              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-2006.md
             - name: Data för version 2002
               href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-2002.md
             - name: Data för version 1910
@@ -220,8 +228,6 @@
               href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1906.md
             - name: Data för version 1902
               href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1902.md
-            - name: Data för version 1810
-              href: plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810.md
         - name: Vanliga frågor och svar
           href: plan-design/diagnostics/frequently-asked-questions.md
     - name: Säkerhet och sekretess för Configuration Manager
@@ -470,6 +476,8 @@
           href: servers/manage/cmpivot-overview.md
         - name: Använda CMPivot
           href: servers/manage/cmpivot.md
+        - name: CMPivot – ändringar
+          href: servers/manage/cmpivot-changes.md
         - name: Felsöka CMPivot
           href: servers/manage/cmpivot-tsg.md
     - name: Underhållsaktiviteter
@@ -512,6 +520,8 @@
           href: servers/manage/use-the-update-registration-tool-to-import-hotfixes.md
         - name: Använda installationsprogrammet för snabbkorrigeringar
           href: servers/manage/use-the-hotfix-installer-to-install-updates.md
+        - name: Checklista för att installera uppdatering 2006
+          href: servers/manage/checklist-for-installing-update-2006.md
         - name: Checklista för att installera uppdatering 2002
           href: servers/manage/checklist-for-installing-update-2002.md
         - name: Checklista för att installera uppdatering 1910
@@ -520,8 +530,6 @@
           href: servers/manage/checklist-for-installing-update-1906.md
         - name: Checklista för att installera uppdatering 1902
           href: servers/manage/checklist-for-installing-update-1902.md
-        - name: Checklista för att installera uppdatering 1810
-          href: servers/manage/checklist-for-installing-update-1810.md
         - name: Stöd för versioner i den aktuella grenen
           href: servers/manage/current-branch-versions-supported.md
     - name: Säkerhetskopiering och återställning
