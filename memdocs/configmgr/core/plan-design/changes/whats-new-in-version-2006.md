@@ -10,12 +10,12 @@ ms.assetid: 4b071746-61e1-404b-8053-60978de028a7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7dd8daa7d41a6ad335f7c2d8a2a53e5ccbdf7b04
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: f624a207b5e9afded9b86312d1608a35005355f6
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129716"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179349"
 ---
 # <a name="whats-new-in-version-2006-of-configuration-manager-current-branch"></a>Vad är nytt i version 2006 av Configuration Manager aktuella grenen
 
@@ -284,6 +284,18 @@ Du kan enkelt navigera till och referens objekt i noden Configuration Manager-ko
 Du kan nu välja att ta emot meddelanden från Microsoft i Configuration Manager-konsolen. De här aviseringarna hjälper dig att hålla dig informerad om nya eller uppdaterade funktioner, ändringar av Configuration Manager och anslutna tjänster och problem som kräver åtgärder för att åtgärda problemet.
 
 Mer information finns i [Konfigurera en plats för att ta emot meddelanden från Microsoft](../../servers/manage/admin-console-notifications.md#bkmk_msft).
+
+### <a name="power-bi-sample-reports"></a>Power BI exempel rapporter
+<!--5679791-->
+
+*(Först infördes i juni 2020)*
+
+När du integrerar Power BI-rapportserver med Configuration Manager repor ting finns nu exempel på Power BI rapporter tillgängliga. Hämta och installera följande exempel rapporter:
+
+- Status för program Uppdateringsefterlevnad
+- Distributions status för program uppdatering
+
+Mer information finns i [installera Power BI exempel rapporter](../../servers/manage/powerbi-sample-reports.md).
 
 <!-- Unused sections in this release:
 ## Reporting
