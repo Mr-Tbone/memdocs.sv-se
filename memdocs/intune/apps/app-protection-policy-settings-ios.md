@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/10/2020
+ms.date: 08/05/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c90e25469927bc4fc435ad4cbd36e09b1cf0a3af
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: b862a65ca087c5dbd0c47baf7af9cf369caac9e4
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262650"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912569"
 ---
 # <a name="ios-app-protection-policy-settings"></a>Principinställningar för iOS-appskydd
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -45,7 +45,7 @@ Det finns tre typer av principinställningar: *Dataflytt*, *åtkomstkrav* och *v
 | <ul><ui>**Välj vilka appar som ska undantas** | Det här alternativet är tillgängligt när du väljer *Principhanterade appar* för det föregående alternativet.   |   |
 | <ul><ui>**Spara kopior av organisationsdata** | Välj **Blockera** om du vill inaktivera alternativet *Spara som* i den här appen. Välj **Tillåt** om du vill tillåta att *Spara som* används. <br><br>**Obs:** *Den här inställningen stöds för Microsoft Excel, OneNote, Outlook, PowerPoint och Word. Den kan även stödjas av verksamhetsspecifika appar och appar från tredje part.* <br><br> När värdet är *Blockera* kan du konfigurera följande inställning: *Tillåt användaren att spara kopior i valda tjänster*.   | <br><br> **Tillåt**   |
 | <ul><ui><ul><ui>**Tillåt användaren att spara kopior i valda tjänster** | Användare kan spara till de valda tjänsterna (OneDrive för företag, SharePoint och lokal lagring). Alla övriga tjänster blockeras. OneDrive för företag: du kan spara filer till OneDrive för företag och SharePoint Online. SharePoint: du kan spara filer till en lokal SharePoint. Lokal lagring: du kan spara filer till lokal lagring.| **0 valda**  |
-|<ul><ui>**Överför telekommunikationsdata till** | När en användare väljer ett hyperlänkat telefonnummer i en app öppnas vanligtvis en uppringningsapp med telefonnumret förifyllt och klart att ringa upp. För den här inställningen väljer du hur du vill hantera den här typen av innehållsöverföring när den initieras från en policyhanterad app:<ul><li>**Inget, överför inte dessa data mellan appar**: Överför inte kommunikationsdata när ett telefonnummer identifieras.</li><li>**En specifik uppringningsapp**: Tillåt att en angiven uppringningsapp initierar kontakt när ett telefonnummer identifieras.</li><li>**Valfri uppringningsapp**: Tillåt att alla uppringningsappar initierar kontakt när ett telefonnummer identifieras.</li></ul>| **Valfri uppringningsapp** |  
+|<ul><ui>**Överför telekommunikationsdata till** | När en användare väljer ett hyperlänkat telefonnummer i en app öppnas vanligtvis en uppringningsapp med telefonnumret förifyllt och klart att ringa upp. För den här inställningen väljer du hur du vill hantera den här typen av innehållsöverföring när den initieras från en policyhanterad app:<ul><li>**Inget, överför inte dessa data mellan appar**: Överför inte kommunikationsdata när ett telefonnummer identifieras.</li><li>**En specifik uppringningsapp**: Tillåt att en angiven uppringningsapp initierar kontakt när ett telefonnummer identifieras.</li><li>**Valfri uppringningsapp**: Tillåt att alla uppringningsappar initierar kontakt när ett telefonnummer identifieras.</li></ul> <p>**Obs!** : *Den här inställningen kräver Intune SDK 12.7.0 eller senare. Om dina appar använder uppringningsfunktioner och inte använder rätt Intune SDK-version bör du överväga att lägga till "tel;telprompt" som ett undantag för dataöverföring. När apparna stöder rätt Intune SDK-version tar du bort undantaget.*| **Valfri uppringningsapp** |  
 |<ul><ui><ul><ui>**Webbadresschema för uppringningsapp** | När du väljer Valfri uppringningsapp måste du ange webbadresschemat för uppringningsappen som används till att starta appen på iOS-enheter. Mer information finns i Apples dokumentation och [telefonlänkar](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/PhoneLinks/PhoneLinks.html#//apple_ref/doc/uid/TP40007899-CH6-SW1). | **Tom** |
 | **Ta emot data från andra appar** | Ange vilka appar som kan överföra data till den här appen: <ul><li>**Alla appar**: Tillåt dataöverföring från alla appar.</li><li>**Inga**: Tillåt inte dataöverföring från någon app, inklusive andra principhanterade appar.</li><li>**Principhanterade appar**: Tillåt endast överföring från andra principhanterade appar.</li><li>**Alla appar med inkommande organisationsdata**: Tillåt dataöverföring från alla appar. Hantera alla inkommande data utan en användaridentitet som data från din organisation. Data kommer att markeras med den MDM-registrerade användarens identitet så som det definierats i inställningen `IntuneMAMUPN`.<p><p>**Obs:** _Värdet för **Alla appar med inkommande organisationsdata** gäller endast för MDM-registrerade enheter. Om den här inställningen används för en användare på en oregistrerad enhet tillämpas beteendet från värdet **Valfri app**._</li></ul> Det finns vissa undantag för appar och tjänster som Intune kan tillåta dataöverföring från. En fullständig lista över appar och tjänster finns i avsnittet [undantag vid dataöverföring](#data-transfer-exemptions). MAM-aktiverade program med flera identiteter på icke-registrerade iOS/iPadOS-enheter ignorerar den här principen och tillåter alla inkommande data.<br><br> | **Alla appar**    |
 | **Begränsa klipp ut, kopiera och klistra in mellan andra appar** | Ange när åtgärderna klippa ut, kopiera och klistra in kan användas med den här appen. Välj: <ul><li>**Blockerad**:  Tillåt inte åtgärderna klipp ut, kopiera och klistra in mellan den här appen och andra appar.</li><li>**Principhanterade appar**: Tillåt åtgärderna klipp ut, kopiera och klistra in mellan den här appen och andra principhanterade appar.</li><li>**Principhanterade appar med inklistring**: Tillåt åtgärderna klipp ut och kopiera mellan den här appen och andra principhanterade appar. Tillåt att data från en annan app klistras in i den här appen.</li><li>**Alla appar**: Inga begränsningar för klipp ut, kopiera och klistra in till och från den här appen.</ul> | **Alla appar**   |
@@ -80,6 +80,8 @@ Det finns vissa undantag för appar och plattformstjänster som Intune-appskydds
 | <code>itms; itmss; itms-apps; itms-appss; itms-services</code> | Appbutik |
 | <code>calshow</code> | Intern kalender |
 
+> [!IMPORTANT]
+> Appskyddsprinciper som skapats före den 15 juni 2020 inkluderar URL-schemat *tel* och *telprompt* som en del av standardundantagen för dataöverföring. Dessa URL-scheman gör att hanterade appar kan initiera uppringaren. Inställningen **Överför telekommunikationsdata till** för appskyddsprincip har ersatt denna funktion. Administratörer bör ta bort *tfn;telprompt;* från undantagen för dataöverföring och förlita sig på inställningen för appskyddsprincip, förutsatt att de hanterade appar som initierar uppringningsfunktioner inkluderar Intune SDK 12.7.0 eller senare.
 
 ## <a name="access-requirements"></a>Åtkomstkrav
 

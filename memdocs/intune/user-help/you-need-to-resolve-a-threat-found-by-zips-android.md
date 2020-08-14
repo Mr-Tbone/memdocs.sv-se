@@ -17,14 +17,14 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 6d9507b5aaefce58df9e4ce0c833c1da88e7e93f
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 8421ee84c38727b9732dddf0ed63c62e940eab66
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882559"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866153"
 ---
-# <a name="resolve-a-threat-found-by-zimperium-zips"></a>Åtgärda ett hot som Zimperium zIPS har påträffat
+# <a name="resolve-a-threat-found-by-zimperium-zips-on-android"></a>Åtgärda ett hot som Zimperium zIPS har påträffat på Android
 
 Zimperium zIPS är en tjänst för skydd mot mobila hot som identifierar potentiella hot på Android-enheter. Dessa hot rapporteras till företagsportalappen och visas som olösta, ej kompatibla problem. Om enheten identifieras som ej kompatibel kanske du inte kan:
 

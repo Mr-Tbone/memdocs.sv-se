@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 06/23/2020
+ms.date: 07/17/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,22 +19,23 @@ ms.reviewer: jeyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 58ba595b65ade57fee0ff3fe40242b27a2ff8ba4
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: 2880ef5ba044f616f3b14e54c5e42b89eb58912a
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86021845"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048012"
 ---
 # <a name="install-company-portal-app-in-peoples-republic-of-china"></a>Installera företagsportalsappen i Folkrepubliken Kina
 
 Installera Intune-företagsportalsappen för att få åtkomst till skol- eller arbetsresurser från din Android-enhet. Appen är tillgänglig i Folkrepubliken Kina och kan installeras från följande appbutiker: 
 
-
+* [Google Play](https://go.microsoft.com/fwlink/?linkid=871947) (inte tillgängligt överallt)
 * [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947) 
 * OPPO
 * [Lenovo](https://go.microsoft.com/fwlink/?linkid=2125082)
 * [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
+
 
 Företagsportalen är även tillgänglig från [Baidu App Store](https://go.microsoft.com/fwlink/?linkid=2133565). Så här hittar du den:  
  

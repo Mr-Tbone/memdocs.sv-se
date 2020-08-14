@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc8fb5b50475c523741128d64582be29d4bf5ffe
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: b8ce02a86236e390983b4e1ecca8d48d4767e49e
+ms.sourcegitcommit: 9eebe77af18045fceb3d41b43d76b370fe92b30e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262667"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87821639"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Lägg till Google Play för företag-appar till Android enterprise-enheter med Intune
 
@@ -175,8 +175,8 @@ Webblänkar öppnas med Microsoft Edge eller någon annan webbläsarapp som du v
 Om du har godkänt en app från butiken men inte ser den i arbetsbelastningen **Appar** kan du framtvinga en omedelbar synkronisering genom att göra följande:
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
-3. Välj **Appar** > **Klientadministration** > **Anslutningsappar och token** > **Hanterat Google Play-konto**.
-5. I fönstret **Hanterat Google Play-konto** väljer du **Uppdatera**.  
+3. Välj **Administration av klientorganisation** > **Anslutningsprogram och token** > **Hanterat Google Play**.
+5. I fönstret **Hanterat Google Play** väljer du **Synkronisera**.  
     Sidan uppdaterar tid och status för den senaste synkroniseringen.
 6. Välj  **Appar** > **Alla appar** i administrationscentret för Microsoft Endpoint Manager.  
     Den nya tillgängliga Managed Google Play-appen visas.

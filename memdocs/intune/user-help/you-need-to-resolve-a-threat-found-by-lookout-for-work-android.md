@@ -17,14 +17,14 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 225006df484d0e65d6a78960d96a7fc70f251991
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 38f5b4ba6d243af74462046c243de34dc5cd8544
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83878120"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866051"
 ---
-# <a name="resolve-a-threat-found-by-lookout-for-work"></a>Lösa ett hot som upptäckts av Lookout for Work  
+# <a name="resolve-a-threat-found-by-lookout-for-work-on-android"></a>Lösa ett hot som upptäckts av Lookout for Work på Android
 
 Lookout for Work-appen är en tjänst för skydd mot mobila hot som identifierar potentiella hot på Android-enheter. Dessa hot rapporteras till företagsportalappen och visas där som olösta, ej kompatibla problem. Så länge dessa hot finns kvar kan du inte:
 

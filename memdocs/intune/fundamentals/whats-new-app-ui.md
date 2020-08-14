@@ -1,12 +1,12 @@
 ---
-title: Uppdateringar i användargränssnittet för Intunes slutanvändarappar
+title: UI-uppdateringar för Intune-appar för slutanvändare | Microsoft Docs
 titleSuffix: Microsoft Intune
 description: Ta reda på vad som har ändrats i användargränssnittet för appar som används på slutanvändarenheter med Microsoft Intune.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 06/11/2020
+ms.date: 08/06/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11aba38d63621472b5e8513b066b96120d649c31
-ms.sourcegitcommit: 9a8a9cc7dcb6ca333b87e89e6b325f40864e4ad8
+ms.openlocfilehash: cbb66833397d16ec18ce015d26a19bd28a1113c4
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740898"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048165"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Uppdateringar i användargränssnittet för Intunes slutanvändarappar
 
@@ -34,6 +34,13 @@ Läs mer om de senaste uppdateringarna för Microsoft Intune-apparna. Vi lägger
 
 Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](https://docs.microsoft.com/mem/intune/user-help/use-managed-devices-to-get-work-done).  
 
+## <a name="week-of-august-10-2020"></a>Den vecka som börjar 10 augusti 2020
+
+### <a name="improvement-to-update-device-settings-page-in-company-portal-app-for-android-to-shows-descriptions---7414768---"></a>Förbättring av visning av beskrivningar på sidan Uppdatera enhetsinställningar i företagsportalappen för Android<!-- 7414768 -->
+
+I företagsportalappen på Android-enheter visar sidan **Uppdatera enhetsinställningar** de inställningar som behöver uppdateras för efterlevnad. Användare expanderar problemet för att visa mer information och ser då knappen **Lös**.
+
+Den här användarupplevelsen har förbättrats. De visade inställningarna utökas som standard så att beskrivningen och knappen **Lös** visas om så är tillämpligt. Tidigare minimerades problemen som standard. Det nya standardbeteendet minskar antalet klick, så att användarna kan lösa problem snabbare.
 
 ## <a name="week-of-june-8-2020"></a>Veckan som inleds med 8 juni 2020 
 

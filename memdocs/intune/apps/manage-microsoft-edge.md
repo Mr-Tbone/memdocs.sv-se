@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/08/2020
+ms.date: 08/05/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35ee8b225abe48aa4b8b0ca78b9e5b137d0721f6
-ms.sourcegitcommit: 41b2b50d5870dc127a8848a6657d56112f92515a
+ms.openlocfilehash: 49d731ef6e9508367ded8ed5d711b744be7d2db1
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758371"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912545"
 ---
 # <a name="manage-web-access-by-using-edge-for-ios-and-android-with-microsoft-intune"></a>Hantera webbåtkomst med Edge för iOS och Android med Microsoft Intune
 
@@ -114,7 +114,7 @@ Det här konfigurationsscenariot fungerar bara med registrerade enheter. En UEM-
 
 ## <a name="general-app-configuration-scenarios"></a>Allmänna appkonfigurationsscenarier
 
-Edge för iOS och Android ger administratörer möjlighet att anpassa standardkonfigurationen för flera inställningar i appen. Den här funktionen erbjuds för närvarande bara när Edge för iOS och Android har en Intune-appskyddsprincip tillämpad för det arbets- eller skolkonto som är inloggat i appen.
+Edge för iOS och Android ger administratörer möjlighet att anpassa standardkonfigurationen för flera inställningar i appen. Den här funktionen erbjuds för närvarande bara när Edge för iOS och Android har en Intune-appskyddsprincip tillämpad för det arbets- eller skolkonto som är inloggat i appen och principinställningarna levereras via en appkonfigurationsprincip för hanterade appar.
 
 > [!IMPORTANT]
 > Microsoft Edge för Android har inte stöd för Chromium-inställningar som är tillgängliga i Managed Google Play.
@@ -246,12 +246,12 @@ Edge för Android kan aktiveras som en helskärmsapp med följande inställninga
 |    Tangent    |    Värde    |
 |-----------|-------------|
 |    com.microsoft.intune.mam.managedbrowser.enableKioskMode    |    Värdet **true** aktiverar helskärmsläge för Edge för Android<br>Värdet **false** (standard) inaktiverar helskärmsläge    |
-|    com.microsoft.intune.mam.managedbrowser.showAddressBarInKioskMode    |    Värdet **true** visar adressfältet i helskärmsläge<br> Värdet **false** (standard) döljer adressfältet i helskärmsläge    |
-|    com.microsoft.intune.mam.managedbrowser.showBottomBarInKioskMode    |    Värdet **true** visar det nedersta åtgärdsfältet i helskärmsläge<br> Värdet **false** (standard) döljer det nedersta fältet i helskärmsläge    |
+|    com.microsoft.intune.mam.managedbrowser.showAddressBarInKioskMode    |    Värdet **true** visar adressfältet i helskärmsläge<br> Värdet **false** (standard) döljer adressfältet när helskärmsläge är aktiverat    |
+|    com.microsoft.intune.mam.managedbrowser.showBottomBarInKioskMode    |    Värdet **true** visar det nedersta åtgärdsfältet i helskärmsläge<br> Värdet **false** (standard) döljer det nedersta fältet när helskärmsläge är aktiverat    |
 
 ## <a name="data-protection-app-configuration-scenarios"></a>Appkonfigurationsscenarier för dataskydd
 
-Edge för iOS och Android stöder appkonfigurationsprinciper för följande inställningar för dataskydd när appen hanteras av Microsoft Endpoint Manager med en Intune-appskyddsprincip tillämpad på arbets- eller skolkontot som är inloggat i appen:
+Edge för iOS och Android stöder appkonfigurationsprinciper för följande inställningar för dataskydd när appen hanteras av Microsoft Endpoint Manager med en Intune-appskyddsprincip tillämpad på arbets- eller skolkontot som är inloggat i appen och principinställningarna levereras via en appkonfigurationsprincip för hanterade appar:
 
 - Hantera kontosynkronisering
 - Hantera begränsade webbplatser

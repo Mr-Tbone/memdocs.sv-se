@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 09/05/2019
+ms.date: 08/07/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -17,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: aed17d518213f875e15f2261ec1a18640357203a
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 4f53aa731dbe7483f7fbe97c509a82677072c25c
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83880943"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88047986"
 ---
 # <a name="device-password-requirements-for-enrolled-devices"></a>Krav på enhetslösenord för registrerade enheter
 
@@ -89,13 +89,15 @@ Kontakta din IT-support om du behöver ytterligare hjälp eller för att ta reda
 | Lösenordet har upphört att gälla. | Ange ett nytt lösenord. Din organisation kräver att du ändrar ditt lösenord efter ett visst antal dagar. |
 | Lösenordet har använts nyligen. | Välj ett lösenord som du inte har använt tidigare. Din organisation kräver att en viss tidsperiod passerar innan du återanvänder ett lösenord. |
 
-## <a name="next-steps"></a>Nästa steg
+## <a name="update-password-passcode-pin"></a>Uppdatera lösenord, lösenkod och PIN-kod
 
-Se följande artiklar för att byta enhetens lösenord eller PIN-kod.  
+Följande artiklar ger vägledning om hur du ändrar enhetens lösenord, lösenkod eller PIN-kod. De senaste anvisningarna finns i hjälpdokumentationen från enhetstillverkaren. 
 
 - [Ange lösenord för Windows 10-enhet](set-or-change-your-password-windows.md)  
 - [Konfigurera lösenord för iOS-enhet](set-or-change-your-passcode-ios.md)  
 - [Ställ in en PIN-kod eller ett lösenord för en Android-enhet](set-your-pin-or-password-android.md)  
+
+## <a name="next-steps"></a>Nästa steg
 
 Behöver du fortfarande hjälp? Kontakta supporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
 

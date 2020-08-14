@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 617c6b89bfc52d926e2ddb422c36db39edec6908
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 99dc504f8fc3148463288820dc810bab892e3081
+ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093041"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87912403"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>Vad är apphantering i Microsoft Intune?
 
@@ -51,22 +51,22 @@ Intune MAM stöder två konfigurationer:
 
 Intune erbjuder en mängd funktioner som hjälper dig att få de appar som du behöver, på de enheter som du önskar köra dem på. Följande tabell innehåller en sammanfattning av apphanteringsfunktionerna.
 
-|  | Android/Android Enterprise | iOS/iPadOS | macOS | Windows 10 | Windows Phone 8.1 |
-|-------------------------------------------------------------------------------------|---------|-----|-------|------------|-------------------|
+| Funktioner för apphantering | Android/Android Enterprise | iOS/iPadOS | macOS | Windows 10 | Windows Phone 8.1 |
+|-------------------------- | -------------------------- | ---------- | ----- | ---------- | ----------------- |
 | Lägga till och tilldela appar till enheter och användare | Ja | Ja | Ja | Ja | Ja |
 | Tilldela appar till enheter som inte registrerats i Intune | Ja | Ja | Nej | Nej | Nej |
 | Använda principer för appkonfigurering som styr apparnas startfunktion | Ja | Ja | Nej | Nej | Nej |
 | Använda principer för etablering av mobilappar för att förnya utgångna appar | Nej | Ja | Nej | Nej | Nej |
 | Skydda företagets data i appar med appskyddsprinciper | Ja | Ja | Nej | Nej <sup>1</sup> | Nej |
-| Ta bort endast företagsdata från installerade appar (selektiv rensning) | Ja | Ja | Nej | Ja | Ja |
+| Ta bort endast företagsdata från installerade appar (selektiv rensning) | Ja | Ja | Inga | Ja | Ja |
 | Övervaka apptilldelningar | Ja | Ja | Ja | Ja | Ja |
-| Tilldela och spåra volyminköpta appar från en appbutik | Nej | Nej | Nej | Ja | Nej |
+| Tilldela och spåra volyminköpta appar från en appbutik | Nej | Nej | Inga | Ja | Nej |
 | Obligatorisk installation av appar på enheter (obligatoriskt) <sup>2</sup> | Ja | Ja | Ja | Ja | Ja |
 | Valfri installation på enheter från Företagsportalen (tillgänglig installation) | Ja <sup>3</sup> | Ja | Ja | Ja | Ja |
 | Installera genvägar till appar på webben (webblänk) | Ja <sup>4</sup> | Ja | Ja | Ja | Ja |
 | Verksamhetsspecifika appar | Ja | Ja | Ja | Ja | Nej |
-| Appar från en butik | Ja | Ja | Nej | Ja | Ja |
-| Uppdatera appar | Ja | Ja | Nej | Ja | Ja |
+| Appar från en butik | Ja | Ja | Inga | Ja | Ja |
+| Uppdatera appar | Ja | Ja | Inga | Ja | Ja |
 
 <sup>1</sup> Överväg att använda [Windows informationsskydd](../protect/windows-information-protection-configure.md) för att skydda appar på enheter som kör Windows 10.<br>
 <sup>2</sup> Gäller enheter som hanteras av Intune endast.<br>

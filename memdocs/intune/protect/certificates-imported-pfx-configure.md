@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d09f3a2e734709f769aebcd4e8aab4fec774d4fc
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 630d270202f1064c9e80e7cb87df3929138ee54a
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461835"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048114"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Konfigurera och använda importerade PKCS-certifikat med Intune
 
@@ -56,7 +56,8 @@ Om du vill använda importerade PKCS-certifikat med Intune behöver du följande
 
 - **PFX-certifikatanslutningsprogram för Microsoft Intune**:
 
-  Varje Intune-klient har stöd för en enda instans av den här anslutningen. Du kan installera den här anslutningen på samma server som en instans av Microsoft Intune Certificate Connector.
+  Varje Intune-klientorganisation har stöd för flera instanser av det här anslutningsprogrammet. Se till att varje anslutningsprogram har åtkomst till den privata nyckel som används för att kryptera lösenorden för de uppladdade PFX-filerna.
+  Du kan installera den här anslutningen på samma server som en instans av Microsoft Intune Certificate Connector.
 
   Anslutningsappen hanterar begäranden för PFX-filer som importeras till Intune för S/MIME-kryptering av e-post för en specifik användare.
 

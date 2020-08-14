@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/17/2020
+ms.date: 08/05/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,19 +18,19 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e646ce40acaa156910f516c475cd6b0885989941
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: db9f275254a7b392491d01769db71d42f04c33f2
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86462207"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048131"
 ---
 # <a name="set-up-the-on-premises-intune-exchange-connector"></a>Konfigurera lokala Intune Exchange Connector
 
 > [!IMPORTANT]
 > Informationen i den här artikeln gäller för kunder som kan använda ett Exchange-anslutningsprogram.
 >
-> Från och med juli 2020 är stödet för Exchange-anslutningsprogrammet inaktuellt och ersätts av [modern hybridautentisering](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview) (HMA) i Exchange.  Om du har konfigurerat ett Exchange-anslutningsprogram i din miljö kan Intune-klientorganisationen fortsätta att använda det, och du fortsätter att ha tillgång till gränssnittet som har stöd för konfigurationen. Du kan fortsätta att använda anslutningsprogrammet eller konfigurera modern hybridanslutning (HMA) och sedan avinstallera anslutningsprogrammet.
+> Från och med juli 2020 är stödet för Exchange-anslutningsprogrammet inaktuellt och ersätts av [modern hybridautentisering](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview) (HMA) i Exchange.  Om du har konfigurerat ett Exchange-anslutningsprogram i din miljö kan Intune-klientorganisationen fortsätta att använda det, och du fortsätter att ha tillgång till det gränssnitt som har stöd för konfigurationen. Du kan fortsätta att använda anslutningsprogrammet eller konfigurera modern hybridanslutning (HMA) och sedan avinstallera anslutningsprogrammet.
 >
 >Om du använder HMA behöver inte Intune installera och använda Exchange-anslutningsprogrammet. Med den här ändringen tas gränssnittet för att konfigurera och hantera Exchange-anslutningsprogram för Intune bort från administrationscentret för Microsoft Endpoint Manager, om du inte redan använder ett Exchange-anslutningsprogram i din prenumeration.
 

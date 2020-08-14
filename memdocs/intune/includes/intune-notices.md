@@ -4,27 +4,24 @@ description: inkludera fil
 author: ErikjeMS
 ms.service: microsoft-intune
 ms.topic: include
-ms.date: 03/30/2020
+ms.date: 08/10/2020
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: 79e2694cfd34f1db8bf11969506ec3d8cbc453d4
-ms.sourcegitcommit: 8a9b85d1c879060ea541f7c8ad1ae34a4ed33ed0
+ms.openlocfilehash: af506f9eee80d167b42827f93958fc2a3a5741a4
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87507658"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051644"
 ---
 Dessa meddelanden innehåller viktig information som kan hjälpa dig att förbereda dig för framtida ändringar och funktioner i Intune.
 
-### <a name="microsoft-intune-support-for-windows-10-mobile-ending--3544938--"></a>Microsoft Intunes support för Windows 10 Mobile upphör<!--3544938-->
-Microsofts mainstream-support för Windows 10 Mobile upphörde i december 2019. Som vi har nämnt i den här supportinstruktionen kommer Windows 10 Mobile-användare inte längre att kunna ta emot nya säkerhetsuppdateringar, snabbkorrigeringar som inte är av säkerhetstyp, kostnadsfria supportalternativ eller onlineuppdateringar av tekniskt innehåll från Microsoft. Microsoft Intune kommer nu även att upphöra med all support för både företagsportalen för Windows 10 Mobile-appen och Windows 10 Mobile-operativsystemet den 10 augusti 2020.
+### <a name="microsoft-intune-ends-support-for-windows-phone-81-and-windows-10-mobile---3544938-3544909---"></a>Microsoft Intune avslutar supporten för Windows Phone 8.1 och Windows 10 Mobile<!-- 3544938, 3544909 -->
+Microsofts mainstream-support för Windows Phone 8.1 upphörde under juli 2017 och utökad support upphörde under juni 2019. Företagsportalappen för Windows Phone 8.1 har varit i berett läge sedan oktober 2017. Därutöver avslutade Microsoft Intune supporten den 20 februari 2020 för Windows Phone 8.1. 
 
-#### <a name="how-does-this-affect-me"></a>Hur påverkar det här mig?
-Om du har Windows 10 Mobile-enheter distribuerade i din organisation kan du mellan nu och den 10 augusti 2020 registrera nya enheter, lägga till eller ta bort principer och appar eller uppdatera eventuella hanteringsinställningar. Efter den 10 augusti kommer vi att stoppa nya registreringar och slutligen ta bort hanteringen av Windows 10 Mobile från Intune-användargränssnittet. Enheter kommer inte längre att checka in till Intune-tjänsten och vi kommer att ta bort enhets- och principdata.  
+Microsofts mainstream-support för Windows 10 Mobile upphörde i december 2019. Som vi har nämnt i den här supportinstruktionen kommer Windows 10 Mobile-användare inte längre att kunna ta emot nya säkerhetsuppdateringar, snabbkorrigeringar som inte är av säkerhetstyp, kostnadsfria supportalternativ eller onlineuppdateringar av tekniskt innehåll från Microsoft. Baserat på den totala Mobile OS-supporten upphör Microsoft Intune med all support för både företagsportalen för Windows 10 Mobile-appen och operativsystemet Windows 10 Mobile den 10 augusti 2020.
 
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Vad kan jag göra för att förbereda mig för den här ändringen?
-Du kan kontrollera din Intune-rapportering för att se vilka enheter eller användare som kan påverkas. Gå till **Enheter** > **Alla enheter** och filtrera efter operativsystem. Du kan lägga till fler kolumner för att hjälpa till att identifiera vilka i din organisation som har enheter som kör Windows 10 Mobile. Begär att dina slutanvändare uppgraderar sina enheter eller slutar att använda enheterna för företagsåtkomst.
-
+Från och med den 10 augusti kommer registreringar för enheter med Windows Phone 8.1 och Windows 10 Mobile att misslyckas, och Windows Mobile-profiltyper tas bort från användargränssnittet i Intune. Enheter som redan har registrerats kommer inte längre att checka in till Intune-tjänsten, och vi kommer att ta bort enhets- och principdata.
 
 ### <a name="end-of-support-for-legacy-pc-management"></a>Stöd för hantering av äldre datorer upphör
 

@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 3ebca81f459f0e49345db08f992c288514a7331a
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: a0d1ee33e3aca6dbb6ff6e349eb9a578aad6ae88
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461614"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048080"
 ---
 # <a name="attack-surface-reduction-policy-settings-for-endpoint-security-in-intune"></a>Inställningar för policyn Minskning av attackytan i slutpunktssäkerheten i Microsoft Intune
 
@@ -181,10 +181,10 @@ Plattformar och profiler som stöds:
   - **Tvinga komponenter och Store-appar**
   - **Granska komponenter och Store-appar**
   - **Tvinga komponenter, Store-appar och Smartlocker**
-  - **Granska komponenter, Store-appar och Smartlocker**
+  - CSP: **Granska komponenter, Store-appar och Smartlocker** [CSP:n AppLocker](https://docs.microsoft.com/windows/client-management/mdm/applocker-csp)
 
 - **Blockera användare från att ignorera SmartScreen-varningar**  
-  [PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
+  CSP: [SmartScreen/PreventOverrideForFilesInShell](https://go.microsoft.com/fwlink/?linkid=872783)
 
   - **Inte konfigurerat** (*standard*) – Användare kan ignorera SmartScreen-varningar för filer och skadliga appar.
   - **Ja** – SmartScreen är aktiverat och användare kan inte kringgå varningar för filer eller skadliga appar.

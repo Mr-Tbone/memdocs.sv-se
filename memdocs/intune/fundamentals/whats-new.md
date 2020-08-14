@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46c58437fab66b0a4fd22ea8452856ca701e9eb7
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ms.openlocfilehash: 894ef12107b8e8b520ca69a463be47ef339bd9b4
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546817"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051645"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -55,6 +55,15 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 ### Scripts
 
 <!-- ########################## -->
+## <a name="week-of-august-10-2020"></a>Den vecka som börjar 10 augusti 2020
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-management"></a>Enhetshantering
+
+#### <a name="tenant-attach-install-an-application-from-the-admin-center----in7220536-cm6024389--"></a>Klientkoppling: Installera ett program från administrationscentret <!-- IN7220536 CM6024389-->
+Du kan nu initiera en programinstallation i realtid för en klientorganisationsansluten enhet från administrationscentret för Microsoft Endpoint Manager. Mer information finns i [Anslut klientorganisation: Installera ett program från administrationscentret](../../configmgr/tenant-attach/applications.md).
+
+<!-- ########################## -->
 ## <a name="week-of-july-27-2020"></a>Veckan som inleds med den 27 juli 2020
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
@@ -68,9 +77,6 @@ Med Power BI-mallar kan Power BI-partner skapa Power BI-appar med lite eller ing
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="app-management"></a>Apphantering
-
-#### <a name="win32-app-installation-notifications-and-the-company-portal---7485945----"></a>Installationsmeddelanden för Win32-appar och Företagsportalen<!-- 7485945  -->
-Slutanvändare kan nu bestämma om apparna som visas i [Microsoft Intune-företagsportal på webben](https://portal.manage.microsoft.com/) ska öppnas i appen Företagsportal eller på webbplatsen Företagsportal. Det här alternativet är bara tillgängligt om slutanvändaren har installerat Företagsportal-appen och startar ett webbföretagsportal-program utanför en webbläsare. 
 
 #### <a name="exchange-on-premises-connector-support---7138486----"></a>Stöd för Exchange On-Premises Connector<!-- 7138486  -->
 Intune tar bort stödet för funktionen Exchange On-premises Connector från Intune-tjänsten från och med version 2007 (juli). Befintliga kunder med aktiva anslutningsprogram kan fortsätta att använda funktionen. Nya kunder och befintliga kunder som inte har något aktivt anslutningsprogram kan inte längre skapa nya anslutningsprogram eller hantera EAS-enheter (Exchange ActiveSync) från Intune. Microsoft rekommenderar sådana kunder att skydda åtkomsten till Exchange lokalt med [HMA (modern hybridautentisering)](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview). HMA ger tillgång till både Intune-appskyddspolicyer (kallas även MAM) och villkorsstyrd åtkomst via Outlook Mobile för Exchange lokalt.

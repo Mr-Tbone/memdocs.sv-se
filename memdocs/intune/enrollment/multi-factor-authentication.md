@@ -17,12 +17,12 @@ ROBOTS: ''
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8df3c23417f146821d6f9b73e8b68f59c71a31df
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 28eaf0462a91f20bb6a3c5bc5d6de65845e1f06b
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988962"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051612"
 ---
 # <a name="require-multi-factor-authentication-for-intune-device-enrollments"></a>Kräv multifaktorautentisering för enhetsregistreringar i Intune
 
@@ -36,7 +36,7 @@ MFA fungerar genom att kräva två eller flera av följande verifieringsmetoder:
 - Något du har (betrodda enheter som inte enkelt dupliceras, t.ex. en telefon).
 - Något du är (biometrik, till exempel ett fingeravtryck).
 
-MFA stöds för iOS/iPadOS, Android, Windows 8.1 eller senare, eller Windows Phone 8.1 eller Windows 10 Mobile eller senare enheter.
+MFA stöds för enheter med iOS/iPadOS, Android eller Windows 8.1 eller senare.
 
 När du aktiverar MFA måste slutanvändarna ange två typer av autentiseringsuppgifter för att registrera en enhet.
 

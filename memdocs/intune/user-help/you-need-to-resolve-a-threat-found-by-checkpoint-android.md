@@ -17,14 +17,14 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 86e2305692c1e50af7cc2518f394b5c91cfed4f3
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 2f6ba59ccc2832a66eb1a7b081008aa43b0c75bc
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882279"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866238"
 ---
-# <a name="resolve-a-threat-found-by-sandblast-mobile-protect"></a>Åtgärda ett hot som har upptäckts av SandBlast Mobile Protect
+# <a name="resolve-a-threat-found-by-sandblast-mobile-protect-on-android"></a>Åtgärda ett hot som har upptäckts av SandBlast Mobile Protect på Android
 
 SandBlast Mobile Protect är en tjänst för skydd mot mobila hot som identifierar potentiella hot på Android-enheter. Det rapporterar hot som du sedan kan se i företagsportalappen. Hot visas i appen som olösta, ej kompatibla problem. Så länge dessa hot finns kvar kanske du inte kan:   
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa06e5fee4658ad3c7f19ec39bd126ce69d8cd41
-ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
+ms.openlocfilehash: 05a0c4e5a78281f78a986d0512abfeca155494dd
+ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891521"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051680"
 ---
 # <a name="automatically-enroll-iosipados-devices-with-apples-automated-device-enrollment"></a>Registrera iOS/iPadOS-enheter automatiskt med automatisk enhetsregistrering från Apple
 
@@ -328,23 +328,28 @@ Mer information finns i [Registrera din iOS/iPadOS-enhet i Intune med enhetsregi
 > [!NOTE]
 > Utöver att förnya din ADE-token varje år behöver du även förnya din registreringsprogramtoken i Intune och Apple Business Manager när det hanterade Apple-ID-lösenordet ändras för den användare som konfigurerade token i Apple Business Manager, eller om användaren lämnar din Apple Business Manager-organisation.
 
-1. Gå till business.apple.com.  
-2. Under **Hantera servrar**, väljer du din MDM-server som är associerad med den tokenfil som du vill förnya.
-3. Välj **Skapa ny Token**.
+1. Gå till business.apple.com.
+2. Klicka på **Inställningar** (längst ned till vänster)
+3. Under **MDM-servrar** väljer du din MDM-server som är associerad med den ADE/DEP-token som du vill förnya.
+4. Klicka på **Ladda ned token**.
 
     ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-ios/generatenewtoken.png)
 
-4. Välj **Din servertoken**.  
-5. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram** och väljer token.
+5. I prompten väljer du "Ladda ned servertoken"
+> [!NOTE]
+> Klicka inte på **"Ladda ned servertoken"** om du inte vill förnya token. Som nämns i prompten kommer detta att ogiltiggöra den token som för närvarande används av Intune (eller någon annan MDM-lösning). Om du redan har laddat ned token ser du till att fortsätta med nästa steg tills token har förnyats.
+
+6. När du har laddat ned token går du till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Där väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram** > välj token.
     ![Skärmbild av registreringsprogramtoken.](./media/device-enrollment-program-enroll-ios/enrollmentprogramtokens.png)
 
-6. Välj **Förnya token** och ange det Apple-ID som användes för att skapa den ursprungliga token.  
+7. Välj **Förnya token** och ange det Apple-ID som användes för att skapa den ursprungliga token (om det inte fylls i automatiskt).  
     ![Skärmbild av Skapa ny token.](./media/device-enrollment-program-enroll-ios/renewtoken.png)
 
-7. Välj **Nästa** för att gå till **Omfångstaggar** och tilldela omfångstaggar om du vill.
+8. Överför den nyligen hämtade token.
 
-8. Välj **Nästa** och överför den token du nyss laddade ned.  
-9. Välj **Förnya token**. Du får se en bekräftelse att token har förnyats.   
+9. Välj **Nästa** för att gå till **Omfångstaggar** och tilldela omfångstaggar om du vill.
+
+10. Välj **Förnya token**. Du får se en bekräftelse att token har förnyats.   
     ![Skärmbild av bekräftelse.](./media/device-enrollment-program-enroll-ios/confirmation.png)
 
 ## <a name="delete-an-automated-device-enrollment-token-from-intune"></a>Ta bort en token för Automated Device Enrollment från Intune

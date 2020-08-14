@@ -19,14 +19,14 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 9b29f8378cf2c3c25e0e830bb97f6363ff0740af
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 9f41bc7a67551f9820fbb3764f64d828fcbb51b3
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881135"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866000"
 ---
-# <a name="how-to-turn-off-microsoft-data-collection"></a>Så här stänger du av Microsofts datainsamling
+# <a name="how-to-turn-off-microsoft-data-collection-for-windows"></a>Så här stänger du av Microsofts datainsamling för Windows
 
 Microsoft samlar automatiskt in vissa data om våra produkter och tjänster. Det gör vi för att förbättra tillförlitlighet och prestanda hos våra produkter, inklusive företagsportalappen. Även om dessa data är maskerade är vissa användare inte bekväma med den här insamlingen. Företagets support har ingen kontroll över denna datainsamling och kan inte ändra din valda inställning.
 

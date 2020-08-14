@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 12/18/2019
+ms.date: 08/07/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: tisilv
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: a8d48235141c0b5ad07fbdce4d24e894f8103e6f
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 2e32b6e1c5e976669e78d3cf00610fbd57b68dd1
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882395"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048046"
 ---
 # <a name="set-up-ios-device-access-to-your-company-resources"></a>Konfigurera iOS-enhetsåtkomst till företagsresurser  
 
@@ -35,12 +35,12 @@ När enheten har registrerats blir den *hanterad*. Din organisation kan tilldela
 > [!NOTE]
 > Vi säljer inte några data som samlas in av vår tjänst till någon tredje part av någon anledning.  
 
-För att kunna komma åt arbets- eller skolinformation från din enhet måste du konfigurera enheten så att den matchar organisationens önskade inställningar. Den här artikeln beskriver hur du använder Företagsportalen för att registrera enheten och underhålla organisationens inställningskrav.  
+För att kunna komma åt arbets- eller skolinformation från din enhet måste du konfigurera enheten så att den matchar organisationens önskade inställningar. Den här artikeln beskriver hur du använder Företagsportalen för att registrera enheten och underhålla åtkomstkrav.  
 </br>
 > [!VIDEO https://www.youtube.com/embed/mJyv6YcHi7c?rel=0]
 
 > [!NOTE]
-> Om du försökte komma åt företagets e-post i e-postprogrammet och du fick ett meddelande om att enheten måste vara hanterad, är du på rätt plats. Följ anvisningarna nedan för att få åtkomst till din e-post och andra företagsresurser på iOS-enheten.  
+> Om du försökte komma åt din e-post för arbete i e-postappen, och fick ett meddelande om att enheten måste vara hanterad, är du på rätt plats. Följ anvisningarna nedan för att återfå åtkomst till din e-post och andra arbetsresurser på iOS-enheten.  
 
 
 ## <a name="what-to-expect-from-the-company-portal-app"></a>Vad du kan förvänta dig av företagsportalappen  
@@ -56,13 +56,17 @@ Om organisationen inför ett nytt säkerhetskrav efter registreringen, t.ex. mul
 
 Mer information om registrering finns i [Vad händer när jag installerar företagsportalappen och registrerar min enhet?](https://docs.microsoft.com//mem/intune/user-help/what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-ios).  
 
+## <a name="prerequisties"></a>Förutsättningar  
+
+* Gå till appbutiken för att ladda ned och installera [Intune-företagsportalappen ](install-and-sign-in-to-the-intune-company-portal-app-ios.md) på din enhet. 
+* Upprätthåll en Wi-Fi-anslutning tills alla steg har slutförts.
+* Ha åtkomst till webbläsaren Safari på din enhet.
+
 ## <a name="enroll-your-ios-device"></a>Registrera din iOS-enhet  
 
-Gå till appbutiken för att ladda ned och installera [Intune-företagsportalappen ](install-and-sign-in-to-the-intune-company-portal-app-ios.md) på din enhet. Du måste även ha en Wi-Fi-anslutning och åtkomst till Safari under registreringen. 
+En paus på mer än några minuter under registreringen göra att företagsportalappen stängs eller att installationen avslutas. Om detta händer öppnar du appen på nytt och försöker igen.  
 
-En paus på mer än några minuter under registreringen göra att appen stängs eller att installationen avslutas. Om detta inträffar öppnar du företagsportalappen och försöker igen.  
-
-1. Öppna företagsportalen och logga in med ditt arbets- eller skolkonto.  
+1. Öppna företagsportalappen och logga in med ditt arbets- eller skolkonto.  
 
 2. När du uppmanas att ta emot meddelanden från företagsportalappen trycker du på **Tillåt**. Företagsportalen använder meddelanden för att avisera dig, t.ex. om dina enhetsinställningar behöver uppdateras.  
 

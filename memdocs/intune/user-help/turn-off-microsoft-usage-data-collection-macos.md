@@ -19,14 +19,14 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 0c3254fb6e02bedd416f370f4cadcc16cab87d85
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 7eeb784f8deaf1cf74866e90aabaee99554faa8d
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881166"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865847"
 ---
-# <a name="how-to-turn-off-microsoft-data-collection"></a>Så här stänger du av Microsofts datainsamling
+# <a name="how-to-turn-off-microsoft-data-collection-for-macos-devices"></a>Så här stänger du av Microsofts datainsamling för macOS-enheter
 
 Microsoft samlar automatiskt in vissa data om våra produkter och tjänster. Det gör vi för att förbättra tillförlitlighet och prestanda hos våra produkter, inklusive företagsportalappen. Även om dessa data är maskerade är vissa användare inte bekväma med den här insamlingen. Företagets support har ingen kontroll över denna datainsamling och kan inte ändra din valda inställning.
 

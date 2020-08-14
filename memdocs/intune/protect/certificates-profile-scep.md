@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/21/2020
+ms.date: 08/10/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebf6a71a4d462e1025b6c44557a9513887488673
-ms.sourcegitcommit: 4dc2e3c54a18fca98553dd46703e91819e2433d7
+ms.openlocfilehash: 77a69af395aee293f927682f9d1a095c11a1d8a5
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891538"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048097"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
@@ -315,6 +315,8 @@ Tänk dock på följande innan du fortsätter:
 
 > [!NOTE]
 > - När en SCEP- eller PKCS-certifikatprofil är associerad med en annan profil på enheter med iOS/iPadOS, som en Wi-Fi- eller VPN-profil, tar enheten emot ett certifikat för var och en av de ytterligare profilerna. Det här gör att iOS-/iPad-enheten har flera certifikat som levereras via SCEP- eller PKCS-certifikatbegäran. 
+> 
+>   Certifikat som levereras av SCEP är unika. Certifikat som levereras av PKCS är samma certifikat, men de ser olika ut eftersom varje profilinstans representeras av en separat rad i hanteringsprofilen.
 > - På iOS 13 och macOS 10.15 finns det [ytterligare några säkerhetskrav som dokumenteras av Apple](https://support.apple.com/HT210176) att ta hänsyn till.  
 
 

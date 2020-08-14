@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 05/08/2020
+ms.date: 08/07/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,16 +19,18 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 2be81c19a48d89876f71293e6f868d8cee0e1192
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: 39d68f7cec9cdd4baef84d07d7284f6407f659c5
+ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531408"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88048063"
 ---
 # <a name="enroll-device-with-android-work-profile"></a>Registrera enhet med Android-arbetsprofil
 
-Registrera din personliga Android-enhet för att få åtkomst till företagets eller skolans e-post, appar och andra data. Under registreringen konfigurerar du en Android-arbetsprofil. Den här profilen avgränsar personliga data på enheten från dina arbetsdata. Din organisation hanterar arbetsprofilen, som består av arbetsfiler och data. Företagets support kan inte hantera personliga data på enheten.  
+Registrera din personliga Android-enhet för att få åtkomst till företagets eller skolans e-post, appar och andra data. Under registreringen skapar du en Android-arbetsprofil som avgränsar personliga data på enheten från dina arbetsdata. Om den här typen av installation är något du måste göra kommer din organisation att meddela dig via den önskade kommunikationskanalen eller Intune-företagsportalappen. 
+
+När din profil har konfigurerats hanterar din organisation arbetsaspekten, som endast består av arbetsfiler och arbetsdata. Företagets support kan inte hantera personliga data på enheten.  
 </br>
 > [!VIDEO https://www.youtube.com/embed/9Dl8HsGk4tI]
 

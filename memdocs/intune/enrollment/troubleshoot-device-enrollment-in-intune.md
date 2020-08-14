@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic;seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8f400c946f26de272b782194df3f1b1930ab0b4
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 87f81c9f33fd267bcd57a14b59c88d36a937fecd
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093508"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865830"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Felsöka enhetsregistrering i Microsoft Intune
 
@@ -67,7 +67,7 @@ Kontrollera att användaren inte är tilldelad mer än det maximala antalet enhe
 
 2. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Användare** > **Alla användare** > välj användaren > **Enheter**. Notera antalet enheter.
 
-3. Om användarens antal registrerade enheter redan är lika med enhetsgränsen kan de inte registrera fler innan:
+3. Om användarnas antal registrerade enheter redan är lika med enhetsgränsen kan de inte registrera fler förrän:
     - [Befintliga enheter tas bort](../remote-actions/devices-wipe.md), eller
     - Du ökar enhetsgränsen genom att [ställa in enhetsbegränsningar](enrollment-restrictions-set.md).
 
@@ -290,7 +290,9 @@ När de registrerats återgår enheterna till ett felfritt tillstånd och återf
 
 Registrering av ADE-enheter med användartillhörighet kräver att WS-Trust 1.3 användarnamn/kombinerad slutpunkt är aktiverat för att begära användartokens. Active Directory aktiverar den här slutpunkten som standard. Hämta en lista med aktiverade slutpunkter med hjälp av PowerShell-cmdleten Get-AdfsEndpoint och sök efter slutpunkten trust/13/UsernameMixed. Exempel:
 
-      Get-AdfsEndpoint -AddressPath "/adfs/services/trust/13/UsernameMixed"
+```powershell
+Get-AdfsEndpoint -AddressPath "/adfs/services/trust/13/UsernameMixed"
+```
 
 Mer information finns i [dokumentationen för Get-AdfsEndpoint](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
 

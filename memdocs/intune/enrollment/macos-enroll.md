@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1de1b015daad50837142ce9628543f0b2d7587d7
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 7c0973805a0646ec7df87f36eea183a9456f7e39
+ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093757"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87865514"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Konfigurera registrering för macOS-enheter i Intune
 
@@ -62,6 +62,7 @@ Information om andra slutanvändaraktiviteter finns i de här artiklarna:
 Intune har stöd för följande registreringsmetoder för macOS-enheter som ägs av företaget, i organisationer som köper enheter till sina användare:
 - [Automatisk enhetsregistrering för Apple (ADE)](device-enrollment-program-enroll-macos.md): Organisationer kan köpa macOS-enheter via ADE. Med ADE kan du distribuera en registreringsprofil ”over-the-air” för att hantera enheter.
 - [Enhetsregistreringshanteraren (DEM)](device-enrollment-manager-enroll.md): Du kan använda ett DEM-konto till att registrera upp till 1 000 enheter.
+- [Direktregistrering](device-enrollment-direct-enroll-macos.md): Direktregistrering rensar inte enheten.
 
 ## <a name="block-macos-enrollment"></a>Blockera macOS-registrering
 Som standard kan macOS-enheter registreras i Intune. Se [Ange begränsningar för enhetstyp](enrollment-restrictions-set.md) för att blockera macOS-enheter från registrering.
