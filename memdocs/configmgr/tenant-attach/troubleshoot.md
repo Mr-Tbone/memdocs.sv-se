@@ -10,12 +10,12 @@ ms.assetid: 44c2eb8a-3ccc-471f-838b-55d7971bb79e
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 6dfe7bb44a70d26a68c6d3743ecdb05e5d55e3f1
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: f89bf241410838fd98c8895ced6d49dbf3e99597
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129329"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252479"
 ---
 # <a name="troubleshooting-tenant-attach-and-device-actions"></a>Felsöka klient kopplings-och enhets åtgärder
 
@@ -48,7 +48,7 @@ Använd följande loggar som finns på klienten:
 
 - **CcmNotificationAgent.log**
 
-## <a name="review-your-upload"></a><a name="bkmk_review"></a>Granska din uppladdning
+## <a name="review-your-upload"></a><a name="bkmk_review"></a> Granska din uppladdning
 
 1. Öppna **CMGatewaySyncUploadWorker. log** från &lt; installations katalogen för ConfigMgr> \Loggar.
 1. Nästa synkroniseringstid anges av logg poster som liknar `Next run time will be at approximately: 02/28/2020 16:35:31` .
@@ -114,7 +114,7 @@ Send Task response message <BgbResponseMessage TimeStamp="2020-01-21T15:43:43Z">
 
 ## <a name="common-issues"></a>Vanliga problem
 
-### <a name="unauthorized-to-perform-client-action"></a><a name="bkmk_noauth"></a>Saknar behörighet att utföra klient åtgärder
+### <a name="unauthorized-to-perform-client-action"></a><a name="bkmk_noauth"></a> Saknar behörighet att utföra klient åtgärder
 
 Om administratören inte har de behörigheter som krävs i Configuration Manager, ser du ett `Unauthorized` svar i **CMGatewayNotificationWorker. log**.
 
@@ -125,6 +125,8 @@ Unauthorized to perform client action. TemplateID: RequestMachinePolicy TenantId
 ```  
 
 Se till att användaren som kör åtgärden från administrations centret för Microsoft Endpoint Manager har de behörigheter som krävs på Configuration Manager-platsen. Mer information finns i [Microsoft Endpoint Manager-klient anslutning för krav](device-sync-actions.md#prerequisites).
+
+
 
 ## <a name="known-issues"></a>Kända problem
 
@@ -137,6 +139,7 @@ Det är möjligt att vissa enheter, som är Configuration Manager klienter, inte
 
 **Beteende:** När du utför en klient anslutning under den här fasen utförs en fullständig synkronisering första gången. Efterföljande synkroniseringsförsök är delta i synkroniseringar. Eventuella uppdateringar av de påverkade enheterna gör att enheten tas bort från synkroniseringen.
 
+[!INCLUDE [Known issues shared across tenant attach features](includes/known-issues-shared.md)]
 
 ## <a name="next-steps"></a>Nästa steg
 

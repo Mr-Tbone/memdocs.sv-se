@@ -10,14 +10,14 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: d966f0a509f5402846d0e671dbfaed571ac70d2a
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: dd997508f34b02ef7d2824ffd3a4dfec9cb9066a
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051704"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88251886"
 ---
-# <a name="tenant-attach-configmgr-client-details-in-the-admin-center-preview"></a><a name="bkmk_mem"></a>Klient anslutning: information om ConfigMgr-klient i administrations Center (för hands version)
+# <a name="tenant-attach-configmgr-client-details-in-the-admin-center-preview"></a><a name="bkmk_mem"></a> Klient anslutning: information om ConfigMgr-klient i administrations Center (för hands version)
 <!--6024387, 6374854, 6521921, intune 7552762 pubpreview July 7, 2020-->
 *Gäller för: Configuration Manager (aktuell gren)*
 
@@ -27,7 +27,7 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 > - Den här informationen är relaterad till en förhands gransknings funktion som kan ändras avsevärt innan den släpps kommersiellt. Microsoft lämnar inga garantier, uttryckliga eller underförstådda, avseende informationen som visas här.
 > - Fliken gränser grupper fungerar endast för fristående platser. Fliken kommer att vara tom i administrations centret för något annat än en fristående primär plats.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - En miljö som är [ansluten till uppladdade enheter](device-sync-actions.md).
 - Någon av följande webbläsare:
@@ -59,7 +59,7 @@ Användar kontot måste ha följande behörigheter:
 
    :::image type="content" source="media/6024387-device-details.png" alt-text="Klient information i administrations Center för Microsoft Endpoint Manager" lightbox="media/6024387-device-details.png":::
 
-1. Välj **samlingarna (för hands version)** för att visa klientens samlingar.
+1. Välj **samlingarna (för hands version)** för att visa klientens samlingar. <!--6024390-->
 
    :::image type="content" source="media/6024387-device-collections.png" alt-text="Klient samlingar i administrations Center för Microsoft Endpoint Manager" lightbox="media/6024387-device-collections.png":::
 

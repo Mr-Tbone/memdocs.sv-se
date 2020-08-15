@@ -10,12 +10,12 @@ ms.assetid: 44c2eb8a-3ccc-471f-838b-55d7971bb79e
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: d983e0c3d84f5bcbf411af1243ddc045d66d9199
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: 9ca99afa60ed5f8b9a1491381767ec4f6359826f
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051585"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252504"
 ---
 # <a name="troubleshoot-configmgr-client-details-in-the-admin-center-preview"></a>Felsöka klient information för ConfigMgr i administrations Center (för hands version)
 <!--6374854, 6521921-->
@@ -30,13 +30,13 @@ Använd följande för att felsöka information om ConfigMgr-klienten i administ
 
 När du visar information om ConfigMgr-klienten kan du köra något av dessa fel.  
 
-### <a name="the-necessary-configuration-is-missing-in-azure-active-directory"></a><a name="bkmk_aad"></a>Nödvändig konfiguration saknas i Azure Active Directory
+### <a name="the-necessary-configuration-is-missing-in-azure-active-directory"></a><a name="bkmk_aad"></a> Nödvändig konfiguration saknas i Azure Active Directory
 
 **Fel meddelande:** Nödvändig konfiguration saknas i Azure Active Directory. Se till att koppla Configuration Manager-platsen till din Azure-klient och tilldela rätt användar roll i Azure AD.
 
 **Möjlig orsak:** Användar kontot saknar antagligen **Administratörs användar** rollen för Configuration Manager mikrotjänstprogram i Azure AD. Lägg till rollen i Azure AD från **företags program**  >  **Configuration Manager mikrotjänst**  >  **användare och grupper**  >  **Lägg till användare**. Grupper stöds om du har Azure AD Premium. Det kan ta upp till en timme innan ändringar av den här behörigheten börjar gälla.
 
-### <a name="unable-to-get-device-or-collection-information"></a><a name="bkmk_noinfo"></a>Det gick inte att hämta enhets-eller samlings information
+### <a name="unable-to-get-device-or-collection-information"></a><a name="bkmk_noinfo"></a> Det gick inte att hämta enhets-eller samlings information
 
 **Fel meddelande 1:** Det gick inte att hämta information om klient information (eller insamling). Kontrol lera att Azure AD och AD-identifiering av användare har kon figurer ATS och att användaren identifieras av båda. Kontrol lera att användaren har rätt behörigheter i Configuration Manager.
 
@@ -57,7 +57,7 @@ När du visar information om ConfigMgr-klienten kan du köra något av dessa fel
     Om Azure AD-egenskaperna är tomma kontrollerar du konfigurationen för platsens identifiering av [Azure AD-användare](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc).
 
 
-### <a name="unexpected-error-occurred"></a><a name="bkmk_1603"></a>Ett oväntat fel uppstod
+### <a name="unexpected-error-occurred"></a><a name="bkmk_1603"></a> Ett oväntat fel uppstod
 
 **Fel meddelande:** Ett oväntat fel uppstod
 
@@ -85,6 +85,8 @@ När du visar information om ConfigMgr-klienten kan du köra något av dessa fel
 Den tomma listan är ett känt problem i Configuration Manager version 2002 om du har en hierarki med Configuration Manager-platser.
 
 :::image type="content" source="media/6024387-known-issue-device-details.png" alt-text="Listan över gränser grupper är tom" lightbox="media/6024387-known-issue-device-details.png":::
+
+[!INCLUDE [Known issues shared across tenant attach features](includes/known-issues-shared.md)]
 
 ## <a name="next-steps"></a>Nästa steg
 

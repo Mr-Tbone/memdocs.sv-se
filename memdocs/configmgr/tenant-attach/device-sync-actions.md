@@ -10,14 +10,14 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 784a287176066ce34c3499ecdc91a450e2d6160c
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 676ae288003b257802eea495c4101a95129eaf34
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127553"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88251872"
 ---
-# <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions"></a><a name="bkmk_attach"></a>Microsoft Endpoint Manager-klient ansluter: synkronisering av enhet och enhets åtgärder
+# <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions"></a><a name="bkmk_attach"></a> Microsoft Endpoint Manager-klient ansluter: synkronisering av enhet och enhets åtgärder
 <!--3555758 live 3/4/2020-->
 *Gäller för: Configuration Manager (aktuell gren)*
 
@@ -25,7 +25,7 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Från och med Configuration Manager version 2002 kan du ladda upp dina Configuration Manager-enheter till moln tjänsten och vidta åtgärder från bladet **enheter** i administrations centret.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Ett konto som är en *Global administratör* för att logga in när du tillämpar den här ändringen. Mer information finns i [Administratörs roller för Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-ad-administrator-roles).
    - Onboarding skapar en app från tredje part och ett första parts tjänst objekt i din Azure AD-klient.
@@ -34,13 +34,13 @@ Från och med Configuration Manager version 2002 kan du ladda upp dina Configura
    - Har identifierats med både [Azure Active Directory användar identifiering](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc) och [Active Directory användar identifiering](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser).
       - Det innebär att användar kontot måste vara ett synkroniserat användar objekt i Azure AD.
    - Behörigheten **initiera Configuration Managers åtgärd** under **fjärraktiviteter** i administrations centret för Microsoft Endpoint Manager.
-
+- Om den centrala administrations platsen har en [fjärran sluten leverantör](../core/plan-design/hierarchy/plan-for-the-sms-provider.md), följer du anvisningarna för [CAS](../core/servers/manage/cmpivot-changes.md#cas-has-a-remote-provider) i CMPivot-artikeln. <!--7796824-->
 
 ## <a name="internet-endpoints"></a>Internet slut punkter
 
 [!INCLUDE [Internet endpoints for tenant attach](../core/plan-design/network/includes/internet-endpoints-tenant-attach.md)]
 
-## <a name="enable-device-upload-when-co-management-is-already-enabled"></a><a name="bkmk_edit"></a>Aktivera enhets uppladdning när samtidig hantering redan har Aktiver ATS
+## <a name="enable-device-upload-when-co-management-is-already-enabled"></a><a name="bkmk_edit"></a> Aktivera enhets uppladdning när samtidig hantering redan har Aktiver ATS
 
 Om du har aktiverat samhantering för närvarande använder du egenskaper för samhantering för att aktivera enhets uppladdning. När samhantering inte redan har Aktiver ATS [använder du guiden **Konfigurera samhantering** ](#bkmk_config) för att aktivera enhets uppladdning i stället.
 
@@ -58,7 +58,7 @@ När samhantering redan har Aktiver ATS redigerar du egenskaperna för samhanter
 1. Välj **OK** för att avsluta egenskaperna för samhantering när du är klar med att göra ändringar.
 
 
-## <a name="enable-device-upload-when-co-management-isnt-enabled"></a><a name="bkmk_config"></a>Aktivera enhets uppladdning när samtidig hantering inte är aktiverat
+## <a name="enable-device-upload-when-co-management-isnt-enabled"></a><a name="bkmk_config"></a> Aktivera enhets uppladdning när samtidig hantering inte är aktiverat
 
 Om du inte har samhantering aktive rad använder du guiden **Konfigurera samhantering** för att aktivera enhets uppladdning. Du kan ladda upp dina enheter utan att aktivera automatisk registrering för samhantering eller för att växla arbets belastningar till Intune. Alla enheter som hanteras av Configuration Manager som har **Ja** i kolumnen **klient** kommer att överföras. Om det behövs kan du begränsa överföringen till en enda enhets samling. Om samhantering redan har Aktiver ATS i din miljö kan du [Redigera egenskaper för samhantering](#bkmk_edit) för att aktivera enhets uppladdning i stället.
 
@@ -82,7 +82,7 @@ När samhantering inte har Aktiver ATS kan du använda instruktionerna nedan fö
 
 ## <a name="perform-device-actions"></a>Utföra enhets åtgärder
 
-1. I en webbläsare navigerar du till`endpoint.microsoft.com`
+1. I en webbläsare navigerar du till `endpoint.microsoft.com`
 1. Välj **enheter** och sedan **alla enheter** för att se de överförda enheterna. Du ser **ConfigMgr** i kolumnen **hanterad av** för uppladdade enheter.
    [![Alla enheter i administrations Center för Microsoft Endpoint Manager](./media/3555758-all-devices.png)](./media/3555758-all-devices.png#lightbox)
 1. Välj en enhet för att läsa in sidan **Översikt** .
@@ -93,7 +93,7 @@ När samhantering inte har Aktiver ATS kan du använda instruktionerna nedan fö
 
    [![Enhets översikt i administrations Center för Microsoft Endpoint Manager](./media/3555758-device-overview-actions.png)](./media/3555758-device-overview-actions.png#lightbox)
 
-## <a name="import-a-previously-created-azure-ad-application-optional"></a><a name="bkmk_aad_app"></a>Importera ett tidigare skapat Azure AD-program (valfritt)
+## <a name="import-a-previously-created-azure-ad-application-optional"></a><a name="bkmk_aad_app"></a> Importera ett tidigare skapat Azure AD-program (valfritt)
 <!--6479246-->
 *(Lanseras i version 2006)*
 
