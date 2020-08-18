@@ -2,7 +2,7 @@
 title: Översikt över anslutna CMPivot-innehavare
 titleSuffix: Configuration Manager
 description: Översikt över CMPivot för Microsoft Endpoint Manager-klient anslutna enheter.
-ms.date: 08/11/2020
+ms.date: 08/17/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: reference
@@ -10,12 +10,12 @@ ms.assetid: 31bf1359-54e5-4416-9f39-6bb0070db542
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 048309c40718f091d2d232d90bf8d77a0d56c7b7
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 93460b08b7ba47951656e1107aae56e687acf4e8
+ms.sourcegitcommit: f6b14e6fe694a2a05c6ed92e67089e80a00a0908
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127628"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501199"
 ---
 # <a name="tenant-attach-cmpivot-overview"></a>Klient anslutning: CMPivot-översikt
 
@@ -26,7 +26,7 @@ ms.locfileid: "88127628"
 
 Med CMPivot kan du snabbt bedöma status för en enhet i din miljö och vidta åtgärder. När du anger en fråga kommer CMPivot att köra en fråga i real tid på den aktuella anslutna enheten. De data som returneras kan sedan filtreras, grupperas och finjusteras för att besvara affärs frågor, felsöka problem i din miljö eller reagera på säkerhetshot. Mer information om hur du använder CMPivot finns i [använda CMPivot](../core/servers/manage/cmpivot.md).
 
-## <a name="refine-cmpivot-queries"></a><a name="bkmk_refine"></a>Förfina CMPivot-frågor
+## <a name="refine-cmpivot-queries"></a><a name="bkmk_refine"></a> Förfina CMPivot-frågor
 
 När du använder CMPivot från administratörs konsolen för Microsoft Endpoint Manager ser du till att dina frågor är justerade för prestanda. Om du begär en fråga med en data uppsättning som är för stor kan du få `Error: The query result is too large, retry with additional filters` . Förfina frågan så att den blir mer detaljerad om du ser det här felet. Följande operatorer används ofta för att förfina frågor:
 
@@ -40,6 +40,19 @@ När du använder CMPivot från administratörs konsolen för Microsoft Endpoint
 
 
 [!INCLUDE [Overview article sections for both Microsoft Endpoint Manager and Configuration Manager use](../core/servers/manage/includes/cmpivot-overview-shared.md)]
+
+## <a name="known-issues"></a>Kända problem
+
+### <a name="inconsistent-results-for-some-operators-with-configuration-manager-version-2002"></a>Inkonsekventa resultat för vissa operatorer med Configuration Manager version 2002
+<!--7784718, 7884272-->
+När du använder CMPivot från administrations centret för Microsoft Endpoint Manager med Configuration Manager version 2002 kan du få inkonsekventa resultat för följande operatorer:
+
+- Sammanfatta med
+- Gå
+- Sortera efter
+- Överkant
+- Count
+- Distinct
 
 ## <a name="next-steps"></a>Nästa steg
 
