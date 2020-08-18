@@ -2,7 +2,7 @@
 title: Check lista för 2006
 titleSuffix: Configuration Manager
 description: Lär dig mer om åtgärder som ska vidtas innan du uppdaterar till Configuration Manager version 2006.
-ms.date: 08/11/2020
+ms.date: 08/17/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6d359306-69ae-4873-ba90-964b6ae51d79
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7a3c66863e7768c5ca90151bf85d61aa1e3a0e17
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 97ad8c947c634f43a53e1fac68f0a3255aa89809
+ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129693"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512758"
 ---
 # <a name="checklist-for-installing-update-2006-for-configuration-manager"></a>Check lista för att installera uppdatering 2006 för Configuration Manager
 
@@ -81,7 +81,11 @@ Microsoft signerar skriptet digitalt och paketerar det i en signerad självextra
 
 Så här anmäler du dig till tidig uppdaterings ringen:
 
-1. Öppna Windows PowerShell och **Kör som administratör**
+1. Öppna en Windows PowerShell version 5-session **som administratör**
+
+    > [!IMPORTANT]
+    > Configuration Manager aktuella grenen har för närvarande inte stöd för PowerShell version 7. Om du redan har installerat PowerShell version 7 kan du fortfarande använda PowerShell version 5. Mer information finns i [använda PowerShell 7 sida-vid-sida med Windows PowerShell 5,1](https://docs.microsoft.com/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7#using-powershell-7-side-by-side-with-windows-powershell-51).
+
 1. Kör **EnableEarlyUpdateRing2006.ps1** -skriptet med följande syntax:
 
     `EnableEarlyUpdateRing2006.ps1 <SiteServer_Name> | SiteServer_IP>`

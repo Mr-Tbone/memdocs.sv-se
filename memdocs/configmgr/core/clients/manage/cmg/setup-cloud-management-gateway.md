@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 9ba4466a40d49c4b78b75e6f85137dfd0a4ff5ce
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 6b56f9848f497b7167b478b427f37a00bb2656b9
+ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129145"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512724"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurera Cloud Management Gateway för Configuration Manager
 
@@ -141,7 +141,7 @@ Anslutnings punkten för CMG är plats system rollen för att kommunicera med CM
 
 Om du vill felsöka CMG-tjänstens hälsa använder du **CMGService. log** och **SMS_Cloud_ProxyConnector. log**. Mer information finns i [loggfiler](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
 
-## <a name="configure-client-facing-roles-for-cmg-traffic"></a><a name="bkmk_role"></a>Konfigurera klient riktade roller för CMG trafik
+## <a name="configure-client-facing-roles-for-cmg-traffic"></a><a name="bkmk_role"></a> Konfigurera klient riktade roller för CMG trafik
 
 Konfigurera hanterings platsen och plats systemen för program uppdaterings platsen så att de accepterar CMG-trafik. Gör den här proceduren på den primära platsen för alla hanterings platser och program uppdaterings platser som hanterar Internetbaserade klienter.  
 
@@ -207,7 +207,7 @@ Om du vill installera Configuration Manager-klienten på system som inte är ans
 
 För alternativ 1 och 2, när du kör **ccmsetup.exe**använder du parametern **/MP** för att ange URL: en för CMG. Mer information finns i [om klient installations parametrar och egenskaper](../../deploy/about-client-installation-properties.md#mp).
 
-För alternativ 3, från och med Configuration Manager version 2002, kan du installera-klienten på system som inte är anslutna till intranätet med hjälp av en token för Mass registrering. Mer information om den här metoden finns i [skapa en token för Mass registrering](../../deploy/deploy-clients-cmg-token.md#create-a-bulk-registration-token).
+För alternativ 3, från och med Configuration Manager version 2002, kan du installera-klienten på system som inte är anslutna till intranätet med hjälp av en token för Mass registrering. Mer information om den här metoden finns i [skapa en token för Mass registrering](../../deploy/deploy-clients-cmg-token.md#bulk-registration-token).
 
 ### <a name="configure-off-premises-clients-for-cmg"></a>Konfigurera lokala klienter för CMG
 

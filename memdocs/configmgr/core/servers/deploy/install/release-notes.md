@@ -2,7 +2,7 @@
 title: Viktig information
 titleSuffix: Configuration Manager
 description: Läs om brådskande problem som ännu inte har åtgärd ATS i produkten eller som omfattas av en Microsoft Support kunskaps bas artikel.
-ms.date: 08/11/2020
+ms.date: 08/17/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: troubleshooting
@@ -10,12 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9c1152b14da7c0a473e266b1ac1e6da2778aa105
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: a29c165e13e82144d7fea767ca719a0c84c88023
+ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126299"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512656"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Viktig information för Configuration Manager
 
@@ -29,7 +29,7 @@ Den här artikeln innehåller viktig information om den aktuella grenen av Confi
 
 Information om de nya funktionerna som introducerades med olika versioner finns i följande artiklar:
 
-- [Vad är nytt i version 2006](../../../plan-design/changes/whats-new-in-version-2006.md)
+- [Nyheter i version 2006](../../../plan-design/changes/whats-new-in-version-2006.md)
 - [Nyheter i version 2002](../../../plan-design/changes/whats-new-in-version-2002.md)
 - [Nyheter i version 1910](../../../plan-design/changes/whats-new-in-version-1910.md)
 - [Nyheter i version 1906](../../../plan-design/changes/whats-new-in-version-1906.md)  
@@ -37,7 +37,7 @@ Information om de nya funktionerna som introducerades med olika versioner finns 
 Information om de nya funktionerna i Desktop Analytics finns i [Nyheter i Desktop Analytics](../../../../desktop-analytics/whats-new.md).
 
 > [!Tip]  
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22release+notes+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22release+notes+-+Configuration+Manager%22&locale=en-us`
 
 ## <a name="set-up-and-upgrade"></a>Konfigurera och uppgradera  
 
@@ -113,6 +113,20 @@ Undvik det här problemet genom att skapa en mapp `scripts` som heter i `AdminCo
 
 ## <a name="os-deployment"></a>Distribution av operativsystem
 
+### <a name="client-policy-error-when-you-deploy-a-task-sequence"></a>Klient princip fel när du distribuerar en aktivitetssekvens
+
+<!-- 7970134 -->
+
+*Gäller för: Configuration Manager version 2006 tidig uppdaterings ring*
+
+När du distribuerar en aktivitetssekvens till en klient, installeras inte en obligatorisk aktivitetssekvens vid tids gränsen och en tillgänglig aktivitetssekvens visas inte i Software Center. Du ser status meddelande 10803 med en beskrivning som liknar följande fel meddelande:
+
+*Klienten kunde inte hämta principen. Data överförings tjänsten returnerade "BITS-fel:" serverns svar var inte giltigt. Servern följer inte det definierade protokollet. (-2145386469).*
+
+Det här problemet uppstår när du konfigurerar hanterings platsen för HTTPS, och enheten använder Configuration Manager klient version 1906 eller tidigare.
+
+Undvik det här problemet genom att uppdatera Configuration Manager-klienten på enheten till version 1910 eller senare.
+
 ### <a name="task-sequences-cant-run-over-cmg"></a>Aktivitetssekvenser kan inte köras över CMG
 
 *Gäller för: Configuration Manager version 2002*
@@ -159,12 +173,12 @@ Mer information finns i [skapa anpassade säkerhets roller](../configure/configu
 
 ## <a name="desktop-analytics"></a>Desktop Analytics
 
-### <a name="an-extended-security-update-for-windows-7-causes-them-to-show-as-unable-to-enroll"></a><a name="dawin7-diagtrack"></a>En utökad säkerhets uppdatering för Windows 7 gör att de visas som **det inte går att registrera**
+### <a name="an-extended-security-update-for-windows-7-causes-them-to-show-as-unable-to-enroll"></a><a name="dawin7-diagtrack"></a> En utökad säkerhets uppdatering för Windows 7 gör att de visas som **det inte går att registrera**
 
 <!-- 7283186 -->
 _Gäller för: Configuration Manager version 2002 och tidigare_
 
-Den utökade säkerhets uppdateringen (ESU) från april 2020 för Windows 7 ändrade den minsta version som krävs av diagtrack.dll från 10586 till 10240. Den här ändringen gör att Windows 7-enheter visas som **det inte går att registrera** i instrument panelen för **anslutnings hälsa** för Skriv bords analys. När du ökar detalj nivån till enhets läget för den här statusen visas följande tillstånd i **DiagTrack-tjänstens konfigurations** egenskap:`Connected User Experience and Telemetry (diagtrack.dll) component is outdated. Check requirements.`
+Den utökade säkerhets uppdateringen (ESU) från april 2020 för Windows 7 ändrade den minsta version som krävs av diagtrack.dll från 10586 till 10240. Den här ändringen gör att Windows 7-enheter visas som **det inte går att registrera** i instrument panelen för **anslutnings hälsa** för Skriv bords analys. När du ökar detalj nivån till enhets läget för den här statusen visas följande tillstånd i **DiagTrack-tjänstens konfigurations** egenskap: `Connected User Experience and Telemetry (diagtrack.dll) component is outdated. Check requirements.`
 
 Det krävs ingen lösning för det här problemet. Avinstallera inte april-ESU. Om detta är felaktigt konfigurerat rapporterar Windows 7-enheterna fortfarande diagnostikdata till Skriv bords analys tjänsten och visas fortfarande i portalen.
 

@@ -2,7 +2,7 @@
 title: Tokenbaserad autentisering för CMG
 titleSuffix: Configuration Manager
 description: Registrera en klient i det interna nätverket för en unik token eller skapa en token för Mass registrering för Internetbaserade enheter.
-ms.date: 06/10/2020
+ms.date: 08/17/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: f0703475-85a4-450d-a4e8-7a18a01e2c47
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8146c9c2605f8693ad7375b974a5dd13c089d946
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: 55997c9185a221d105aa8ad40bbb14021463d07b
+ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715670"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512707"
 ---
 # <a name="token-based-authentication-for-cloud-management-gateway"></a>Tokenbaserad autentisering för Cloud Management Gateway
 
@@ -25,13 +25,13 @@ ms.locfileid: "84715670"
 
 CMG (Cloud Management Gateway) stöder många typer av klienter, men även med [utökad http](../../plan-design/hierarchy/enhanced-http.md)kräver dessa klienter ett certifikat för [klientautentisering](../manage/cmg/certificates-for-cloud-management-gateway.md#for-internet-based-clients-communicating-with-the-cloud-management-gateway). Detta certifikat krav kan vara svårt att etablera på Internetbaserade klienter som inte ofta ansluter till det interna nätverket, inte kan ansluta Azure Active Directory (Azure AD) och inte har någon metod för att installera ett PKI-utfärdat certifikat.
 
-För att lösa dessa utmaningar, från och med version 2002, utökar Configuration Manager enhetens support med följande metoder:
+För att lösa dessa utmaningar, från och med version 2002, utökar Configuration Manager sin enhets support genom att utfärda egna autentiseringstoken till enheter. För att dra full nytta av den här funktionen kan du, när du har uppdaterat platsen, även uppdatera klienter till den senaste versionen. Det fullständiga scenariot fungerar inte förrän klient versionen också är den senaste. Om det behövs kontrollerar du att du [befordrar den nya klient versionen till produktion](../manage/upgrade/test-client-upgrades.md#to-promote-the-new-client-to-production).
 
-- Registrera i det interna nätverket för en unik token
+ Klienter registrerar sig ursprungligen för dessa token med någon av följande två metoder:
 
-- Skapa en token för Mass registrering för Internetbaserade enheter
+- Internt nätverk
 
-För att dra full nytta av den här funktionen kan du, när du har uppdaterat platsen, även uppdatera klienter till den senaste versionen. Det fullständiga scenariot fungerar inte förrän klient versionen också är den senaste. Om det behövs kontrollerar du att du [befordrar den nya klient versionen till produktion](../manage/upgrade/test-client-upgrades.md#to-promote-the-new-client-to-production).
+- Mass registrering
 
 Configuration Manager-klienten tillsammans med hanterings platsen hanterar denna token, så det finns inget versions beroende för operativ system. Den här funktionen är tillgänglig för alla [klient-OS-versioner som stöds](../../plan-design/configs/supported-operating-systems-for-clients-and-devices.md).
 
@@ -40,21 +40,26 @@ Configuration Manager-klienten tillsammans med hanterings platsen hanterar denna
 >
 > Microsoft rekommenderar att du ansluter enheter till Azure AD. Internet-baserade enheter kan använda Azure AD för att autentisera med Configuration Manager. Det aktiverar också både enhets-och användar scenarier oavsett om enheten är ansluten till Internet eller om den är ansluten till det interna nätverket. Mer information finns i [Installera och registrera klienten med hjälp av Azure AD-identitet](deploy-clients-cmg-azure.md#install-and-register-the-client-using-azure-ad-identity).
 
-## <a name="register-on-the-internal-network"></a>Registrera dig för det interna nätverket
+## <a name="internal-network-registration"></a>Intern nätverks registrering
 
-Den här metoden kräver att klienten först registreras med hanterings platsen i det interna nätverket. Klient registrering sker vanligt vis direkt efter installationen. Hanterings platsen ger klienten en unik token som visar att den använder ett självsignerat certifikat. När klienten växlar till Internet, för att kommunicera med CMG, paras det självsignerade certifikatet med hanterings platsens utfärdade token. Klienten förnyar token en gång i månaden och den är giltig i 90 dagar.
+Den här metoden kräver att klienten först registreras med hanterings platsen i det interna nätverket. Klient registrering sker vanligt vis direkt efter installationen. Hanterings platsen ger klienten en unik token som visar att den använder ett självsignerat certifikat. När klienten växlar till Internet, för att kommunicera med CMG, paras det självsignerade certifikatet med hanterings platsens utfärdade token.
 
 Platsen aktiverar den här funktionen som standard.
 
-## <a name="create-a-bulk-registration-token"></a>Skapa en token för Mass registrering
+## <a name="bulk-registration-token"></a>Token för Mass registrering
 
 Om du inte kan installera och registrera klienter i det interna nätverket skapar du en token för Mass registrering. Använd den här token när klienten installeras på en Internetbaserad enhet och registreras via CMG. Token för Mass registrering har en kort giltighets tid och lagras inte på klienten eller platsen. Det gör att klienten kan generera en unik token, som parats ihop med det självsignerade certifikatet, som gör det möjligt att autentisera med CMG.
+
+> [!NOTE]
+> Blanda inte ihop token för Mass registrering med dem som Configuration Manager problem med enskilda klienter. Token för Mass registrering gör att klienten kan börja installera och kommunicera med platsen. Den här inledande kommunikationen är tillräckligt lång för att platsen ska kunna utfärda klientens egna, unika token för klientautentisering. Klienten använder sedan sin autentiseringstoken för all kommunikation med platsen när den är på Internet. Efter den inledande registreringen använder klienten inte eller lagrar token för Mass registrering.
+
+Utför följande åtgärder för att skapa en token för gruppregistrering som ska användas vid klient installation på Internetbaserade enheter:
 
 1. Logga in på plats servern på den översta nivån i hierarkin med lokal administratörs behörighet.
 
 1. Öppna en kommandotolk som administratör.
 
-1. Kör verktyget från `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern: `BulkRegistrationTokenTool.exe` . Skapa en ny token med `/new` parametern. Exempelvis `BulkRegistrationTokenTool.exe /new`. Mer information finns i [användning av token för Mass registrering](#bulk-registration-token-tool-usage).
+1. Kör verktyget från `\bin\X64` mappen i installations katalogen för Configuration Manager på plats servern: `BulkRegistrationTokenTool.exe` . Skapa en ny token med `/new` parametern. Till exempel `BulkRegistrationTokenTool.exe /new`. Mer information finns i [användning av token för Mass registrering](#bulk-registration-token-tool-usage).
 
 1. Kopiera token och spara den på en säker plats.
 
@@ -140,6 +145,12 @@ Du kan filtrera eller sortera i kolumnen **typ** . Identifiera vissa token för 
 2. Expandera **säkerhet**, välj noden **certifikat** och välj den token för Mass registrering som ska blockeras.
 
 3. På fliken **Start** i menyfliksområdet eller snabb menyn på snabb menyn väljer du **blockera**. Om du vill avblockera tidigare blockerade Mass registrerings tokens väljer du åtgärden **Häv blockering** .
+
+## <a name="token-renewal"></a>Förnya token
+
+Klienten förnyar sin unika Configuration Manager-utfärdade token en gång i månaden och den är giltig i 90 dagar. En klient behöver inte ansluta till det interna nätverket för att förnya dess token. Så länge token fortfarande är giltigt räcker det att ansluta till platsen med en CMG. Om token inte förnyas inom 90 dagar måste klienten ansluta direkt till en hanterings plats i ett internt nätverk för att få en ny token.
+
+Du kan inte förnya en token för Mass registrering. När en token för Mass registrering upphör att gälla genererar du en ny för internetbaserad enhets registrering med hjälp av en CMG.
 
 ## <a name="see-also"></a>Se även
 
