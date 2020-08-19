@@ -48,12 +48,12 @@
         - name: Distribuera programuppdateringar automatiskt
           href: deploy-use/automatically-deploy-software-updates.md
         - name: Skapa en fasindelad distribution
-          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
+          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json
     - name: Övervaka programuppdateringar
       href: deploy-use/monitor-software-updates.md
       items:
         - name: Hantera och övervaka fasindelade distributioner
-          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json
+          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json
     - name: Underhåll för programuppdatering
       href: deploy-use/software-updates-maintenance.md
     - name: Orkestreringsgrupper

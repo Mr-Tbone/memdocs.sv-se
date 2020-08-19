@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3259bd1b20740046e70b1ef53281b0ff235a3896
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: d4594a50f42d6b8e6ea0b88b83920eda11615815
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905470"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591010"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-configuration-manager"></a>Funktioner i Technical Preview 1705 för Configuration Manager
 
@@ -49,7 +49,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 -->
 
 ## <a name="update-reset-tool"></a>Uppdateringsverktyg för återställning  
-Du kan använda verktyget Configuration Manager uppdaterings återställning, **CMUpdateReset. exe**, för att åtgärda problem när uppdateringar i konsolen har problem med att hämta eller replikera. Det här verktyget ingår i teknisk för hands version 1705. Du hittar den på plats servern för den tekniska för hands versionen när du har installerat förhands granskningen i mappen ***\CD.latest\SMSSETUP\TOOLS*** .
+Du kan använda verktyget Configuration Manager uppdaterings återställning, **CMUpdateReset.exe**för att åtgärda problem när uppdateringar i konsolen har problem med att hämta eller replikera. Det här verktyget ingår i teknisk för hands version 1705. Du hittar den på plats servern för den tekniska för hands versionen när du har installerat förhands granskningen i mappen ***\CD.latest\SMSSETUP\TOOLS*** .
 
 Du kan använda det här verktyget med teknisk för hands version 1606 eller senare. Detta stöd för bakåtkompatibilitet har angetts så att verktyget kan användas med en rad tekniska för hands versions uppdaterings scenarier och utan att behöva vänta tills nästa tekniska för hands version blir tillgänglig.
 
@@ -92,9 +92,9 @@ När verktyget har körts:
 |                       **-FDELETE**                       |                      *Valfritt* <br> Använd detta för att framtvinga borttagning av ett uppdaterings paket som har hämtats.                      |
 
  **Exempel:**  
- I ett typiskt scenario vill du återställa en uppdatering som har hämtnings problem. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset. exe-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+ I ett typiskt scenario vill du återställa en uppdatering som har hämtnings problem. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset.exe-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- I ett mer extrema scenario vill du framtvinga borttagning av problem med uppdaterings paketet. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset. exe-FDELETE-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+ I ett mer extrema scenario vill du framtvinga borttagning av problem med uppdaterings paketet. Dina SQL Server-FQDN är *server1.fabrikam.com*, plats databasen är *CM_XYZ*och paketets GUID är *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Du kör: ***CMUpdateReset.exe-FDELETE-S server1.fabrikam.com-D CM_XYZ-P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
 ### <a name="test-the-tool-with-the-technical-preview"></a>Testa verktyget med teknisk för hands version  
 Du kan använda det här verktyget med teknisk för hands version 1606 eller senare. Detta finns i så fall att du kan använda verktyget med ett större antal uppdaterings scenarier för tekniska för hands versioner, utan att behöva vänta tills nästa tekniska för hands version är tillgänglig.
@@ -131,7 +131,7 @@ Om du vill lägga till en asynkron replik i en [tillgänglighets grupp som du an
 ### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Använd den asynkrona repliken för att återställa din webbplats
 Innan du använder en asynkron replik för att återställa plats databasen måste du stoppa den aktiva primära platsen för att förhindra ytterligare skrivningar till plats databasen. När du har stoppat platsen kan du använda en asynkron replik i stället för att använda en [manuellt återställd databas](../servers/manage/recover-sites.md#use-a-site-database-that-has-been-manually-recovered).
 
-För att stoppa-platsen kan du använda [verktyget underhåll av hierarki](../servers/manage/hierarchy-maintenance-tool-preinst.exe.md) för att stoppa viktiga tjänster på plats servern. Använd kommando raden: **Preinst. exe/STOPSITE**   
+För att stoppa-platsen kan du använda [verktyget underhåll av hierarki](../servers/manage/hierarchy-maintenance-tool-preinst.exe.md) för att stoppa viktiga tjänster på plats servern. Använd kommando raden: **Preinst.exe/STOPSITE**   
 
 Att stoppa-platsen är detsamma som att stoppa Platskomponenthanteraren tjänsten (sitecomp) följt av SMS_Executive-tjänsten på plats servern.
 
@@ -175,7 +175,7 @@ Så här skapar du en princip och bläddrar bland de tillgängliga inställninga
 4.  Med blogg inlägget som referens kan du bläddra bland och konfigurera de tillgängliga inställningarna för att testa funktionen.
 5.  När du är klar slutför du guiden och distribuerar principen till en eller flera Windows 10-enheter.
 
-### <a name="further-reading"></a>Mer information
+### <a name="further-reading"></a>Ytterligare läsning
 
 Läs mer om Windows Defender Application Guard i [det här blogg inlägget]( https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97).
 Mer information om fristående läge för Windows Defender Application Guard finns i [det här blogg inlägget](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
@@ -246,14 +246,14 @@ Nu har du anslutit din Configuration Manager-plats till Azure AD.
 Innan du börjar ska du kontrol lera att källfilerna för klient installationen lagras lokalt på den enhet som du vill installera klienten på.
 Följ sedan anvisningarna i [Distribuera klienter till Windows-datorer](../clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual) med följande installations kommando rad (ersätt värdena i exemplet med dina egna värden):
 
-**CCMSetup. exe/NoCrlCheck/Source: C:\CLIENT CCMHOSTNAME = SCCMPROXYCONTOSO. CLOUDAPP. NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode = HEC AADTENANTID = 780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME = contoso AADCLIENTAPPID = \< GUID > AADRESOURCEURI =<https://contososerver>**
+**ccmsetup.exe/NoCrlCheck/Source: C:\CLIENT CCMHOSTNAME = SCCMPROXYCONTOSO. CLOUDAPP. NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode = HEC AADTENANTID = 780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME = contoso AADCLIENTAPPID = \<GUID> AADRESOURCEURI =<code>https://contososerver</code>**
 
 - **/NoCrlCheck**: om hanterings platsen eller Cloud Management Gateway använder ett icke-offentligt Server certifikat, kanske klienten inte kan komma åt CRL-platsen.
 - **/Source**: lokal mapp: platsen för klientens installationsfiler.
 - **CCMHOSTNAME**: namnet på din Internet hanterings plats. Du kan hitta detta genom att köra **gwmi-namespace root\ccm\locationservices SMS_ActiveMPCandidate** från en kommando tolk på en hanterad klient.
 - **SMSMP**: namnet på din uppslags hanterings plats – detta kan finnas på intranätet.
 - **SMSSiteCode**: plats koden för din Configuration Manager webbplats.
-- **AADTENANTID**, **AADTENANTNAME**: ID och namn för den Azure AD-klient som du länkade till Configuration Manager. Du kan hitta detta genom att köra dsregcmd. exe/status från en kommando tolk på en Azure AD-ansluten enhet.
+- **AADTENANTID**, **AADTENANTNAME**: ID och namn för den Azure AD-klient som du länkade till Configuration Manager. Du hittar detta genom att köra dsregcmd.exe/status från en kommando tolk på en Azure AD-ansluten enhet.
 - **AADCLIENTAPPID**: ID för Azure AD-klientens app. Information om hur du hittar detta finns i [använda portalen för att skapa ett Azure Active Directory program och tjänstens huvud namn som kan komma åt resurser](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
 - **AADResourceUri**: ID-URI för den inbyggda Azure AD server-appen.
 

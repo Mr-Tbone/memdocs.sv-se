@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6c42015880cae09be48feff9c42b6b2a0d2c8544
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 2e832feb6f5a56225cd63a0b0d6290fc0c70e53a
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129322"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591562"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Optimera Windows 10-uppdaterings leverans med Configuration Manager
 
@@ -58,7 +58,7 @@ För bästa resultat kan du behöva ange [hämtnings läget](https://docs.micros
 
 Det är svårt att konfigurera dessa grupp-ID: n manuellt när klienterna växlar över olika nätverk. Configuration Manager version 1802 lade till en ny funktion för att förenkla hanteringen av den här processen genom att [integrera gränser grupper med leverans optimering](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#delivery-optimization). När en klient aktive ras, kommunicerar den med hanterings platsen för att hämta principer och ger dess nätverks-och gränser grupp information. Configuration Manager skapar ett unikt ID för varje avgränsnings grupp. Platsen använder klientens plats information för att automatiskt konfigurera klientens ID för leverans optimerings grupp med Configuration Manager gränser-ID. När klienten växlar till en annan avgränsnings grupp pratar den med sin hanterings plats och konfigureras automatiskt på nytt med ett nytt avgränsnings grupps-ID. Med den här integrationen kan leverans optimering använda Configuration Manager gränser för att hitta en peer som uppdateringar ska hämtas från.
 
-### <a name="delivery-optimization-starting-in-version-1910"></a><a name="bkmk_DO-1910"></a>Leverans optimering från och med version 1910
+### <a name="delivery-optimization-starting-in-version-1910"></a><a name="bkmk_DO-1910"></a> Leverans optimering från och med version 1910
 <!--4699118-->
 Från och med Configuration Manager version 1910 kan du använda leverans optimering för distribution av allt Windows Update-innehåll för klienter som kör Windows 10 version 1709 eller senare, inte bara Express-installationsfiler.
 
@@ -66,13 +66,22 @@ Om du vill använda leverans optimering för alla installationsfiler för Window
 
 - **Tillåt att klienter laddar ned delta innehåll när det är tillgängligt** på **Ja**.
 - **Port som klienter använder för att ta emot begär Anden om delta-innehåll** som är inställt på 8005 (standard) eller ett anpassat port nummer.
-
+ 
 > [!IMPORTANT]
 > - Leverans optimering måste vara aktive rad (standard) och inte kringgås. Mer information finns i [referens för Windows Delivery Optimization](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-reference).
 > - Verifiera [inställningarna för leverans optimerings klient](../../core/clients/deploy/about-client-settings.md#delivery-optimization) när du ändrar [klient inställningarna för program uppdateringar](../../core/clients/deploy/about-client-settings.md#software-updates) för delta innehåll.
 > - Det går inte att använda leverans optimering för Microsoft 365 appars klient uppdateringar om Office COM är aktiverat. Office COM används av Configuration Manager för att hantera uppdateringar för Microsoft 365 Apps-klienter. Du kan avregistrera Office COM för att tillåta användning av leverans optimering för uppdateringar av Microsoft 365 appar. När Office COM är inaktiverat hanteras program uppdateringar för Microsoft 365 appar av den schemalagda uppgiften standard Office automatiska uppdateringar 2,0. Det innebär att Configuration Manager inte dikterar eller övervakar installations processen för uppdateringar av Microsoft 365 appar. Configuration Manager fortsätter att samla in information från maskin varu inventeringen för att fylla i instrument panelen för Office 365-klient hantering i-konsolen. Information om hur du avregistrerar Office COM finns i [Aktivera office 365-klienter för att ta emot uppdateringar från Office CDN i stället för Configuration Manager](https://docs.microsoft.com/deployoffice/manage-office-365-proplus-updates-with-configuration-manager#enable-office-365-clients-to-receive-updates-from-the-office-cdn-instead-of-configuration-manager).
 > - När du använder en CMG för innehålls lagring laddas inte innehållet för uppdateringar från tredje part ned till klienter om inställningen **Hämta delta innehåll när den tillgängliga** [klienten](../../core/clients/deploy/about-client-settings.md#allow-clients-to-download-delta-content-when-available) är aktive rad. <!--6598587-->
 
+#### <a name="configuration-recommendations-for-clients-downloading-delta-content"></a>Konfigurations rekommendationer för klienter som laddar ned delta innehåll
+<!--7913814-->
+När inställningen **Tillåt klienter att ladda ned delta innehåll när den tillgängliga** [klienten](../../core/clients/deploy/about-client-settings.md#allow-clients-to-download-delta-content-when-available) är aktive rad på klienter för program uppdaterings innehåll, finns det begränsningar i [återställnings beteendet för distributions platsen](../../core/servers/deploy/configure/boundary-group-procedures.md#bkmk_site-fallback) . För att säkerställa att dessa klienter kan hämta program uppdaterings innehåll korrekt rekommenderar vi följande konfigurationer:
+
+- Se till att klienterna finns i en avgränsnings grupp och att det finns en tillförlitlig distributions plats som har det innehåll som krävs för den aktuella avgränsnings gruppen.
+- Distribuera program uppdateringar med återställning till Microsoft Update aktiverat för klienter som kan ladda ned direkt från Internet.
+   - Distributions inställningen för detta återställnings beteende är **om program uppdateringar inte är tillgängliga på distributions platsen i aktuella, intilliggande eller plats gränser grupper, laddar ned innehåll från Microsoft Updates** och finns på sidan **hämtnings inställningar** . Mer information finns i [distribuera program uppdateringar](manually-deploy-software-updates.md#process-to-manually-deploy-the-software-updates-in-a-software-update-group).
+
+Om något av alternativen ovan inte är livskraftigt kan du **tillåta att klienter laddar ned delta innehåll när det är tillgängligt** kan inaktive ras i klient inställningarna för att tillåta återställnings funktioner. Leverans optimerings-peering utnyttjas inte i det här fallet eftersom klienten inte använder delta kanalen.
 
 ### <a name="configuration-manager-peer-cache"></a>Configuration Manager peer-cache
 
@@ -96,7 +105,7 @@ Att välja rätt peer caching-teknik för Express-installationsfiler beror på d
 
 | Funktioner  | Leveransoptimering  | Peer-cache  | BranchCache  |
 |---------|---------|---------|---------|
-| Stöds över undernät | Ja | Ja | Inga |
+| Stöds över undernät | Ja | Ja | Nej |
 | Bandbredds begränsning | Ja (inbyggt) | Ja (via BITS) | Ja (via BITS) |
 | Stöd för delar av innehåll | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. | Endast för Microsoft 365 appar och Express uppdateringar | Ja, för alla innehålls typer som stöds visas i nästa rad i den här kolumnen. |
 | Innehålls typer som stöds | **Via ConfigMgr:** </br> -Express uppdateringar </br> – Alla Windows-uppdateringar (från och med version 1910). Detta omfattar inte uppdateringar av Microsoft 365-appar.</br> </br> **Via Microsoft Cloud:**</br> – Windows-och säkerhets uppdateringar</br> – Driv rutiner</br> – Windows Store-appar</br> – Windows Store för företag-appar | Alla innehålls typer för ConfigMgr, inklusive bilder som hämtats i [Windows PE](../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) | Alla innehålls typer i ConfigMgr, förutom bilder |
@@ -119,7 +128,7 @@ Om Server sidans kompromisser med större storleks uppdateringar är block för 
 
 
 
-## <a name="frequently-asked-questions"></a><a name="bkmk_faq"></a>Vanliga frågor och svar
+## <a name="frequently-asked-questions"></a><a name="bkmk_faq"></a> Vanliga frågor och svar
 
 #### <a name="how-do-windows-express-downloads-work-with-configuration-manager"></a>Hur fungerar Windows Express-hämtningar med Configuration Manager?
 

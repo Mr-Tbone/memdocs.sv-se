@@ -750,7 +750,7 @@
         - name: Hantera Linux- och UNIX-klienter
           href: clients/manage/manage-clients-for-linux-and-unix-servers.md
         - name: Synkronisera data till Azure Monitor
-          href: 'https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm?context=sccm/core/context/core-context'
+          href: 'https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm?context=/mem/configmgr/core/context/core-context'
         - name: Underhåll Mac-klienter
           href: clients/manage/maintain-mac-clients.md
         - name: Instrumentpanel för Surface-enhet

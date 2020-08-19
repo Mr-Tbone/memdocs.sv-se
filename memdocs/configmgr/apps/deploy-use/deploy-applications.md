@@ -10,12 +10,12 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6c2fcd583e860273e2fbfc9fcda1e08053336345
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: a4afb066a5f07ff2347bc64b7811c2f09f3bd548
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127528"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88590942"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuera program med Configuration Manager
 
@@ -34,7 +34,7 @@ Du kan också simulera en programdistribution. Den här simuleringen testar till
 >
 > MDM-registrerade enheter stöder inte simulerade distributioner, användar upplevelser eller schemaläggnings inställningar.
 
-## <a name="deploy-an-application"></a><a name="bkmk_deploy"></a>Distribuera ett program
+## <a name="deploy-an-application"></a><a name="bkmk_deploy"></a> Distribuera ett program
 
 1. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **program hantering**och välj antingen noden **program** eller **program grupper** .
 
@@ -110,7 +110,7 @@ På sidan **distributions inställningar** anger du följande information:
     >
     > För **tillgängligt** installations syfte kan du aktivera eller inaktivera det här alternativet. <!--1351266-->
 
-#### <a name="approval-settings"></a><a name="bkmk_approval"></a>Inställningar för godkännande
+#### <a name="approval-settings"></a><a name="bkmk_approval"></a> Inställningar för godkännande
 
 Program godkännande beteendet beror på om du aktiverar den rekommenderade valfria funktionen, **godkänner program begär Anden för användare per enhet**.
 
@@ -169,22 +169,22 @@ På sidan **användar upplevelse** anger du information om hur användarna kan i
 
   - När du distribuerar en program uppdatering till en Windows Embedded-enhet ser du till att enheten är medlem i en samling som har en konfigurerad underhålls period. Mer information om underhålls Windows-och Windows Embedded-enheter finns i [skapa Windows Embedded-program](../get-started/creating-windows-embedded-applications.md).  
 
-### <a name="deployment-alerts"></a><a name="bkmk_deploy-alerts"></a>Distributions **aviseringar**
+### <a name="deployment-alerts"></a><a name="bkmk_deploy-alerts"></a> Distributions **aviseringar**
 
 På sidan **aviseringar** konfigurerar du hur Configuration Manager genererar aviseringar för den här distributionen. Om du också använder System Center Operations Manager konfigurerar du även aviseringarna. Du kan bara konfigurera aviseringar för nödvändiga distributioner.
 
-## <a name="create-a-phased-deployment"></a><a name="bkmk_phased"></a>Skapa en stegvis distribution
+## <a name="create-a-phased-deployment"></a><a name="bkmk_phased"></a> Skapa en stegvis distribution
 
 <!--1358147-->
 Med stegvisa distributioner kan du dirigera en samordnad, sekvenserad distribution av program vara utifrån anpassningsbara kriterier och grupper. Du kan t. ex. distribuera programmet till en pilot samling och sedan fortsätta distributionen automatiskt baserat på lyckade villkor.
 
 Mer information finns i följande artiklar:  
 
-- [Skapa en fasindelad distribution](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+- [Skapa en fasindelad distribution](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json)  
 
-- [Hantera och övervaka fasindelade distributioner](../../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+- [Hantera och övervaka fasindelade distributioner](../../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json)  
 
-## <a name="delete-a-deployment"></a><a name="bkmk_delete"></a>Ta bort en distribution
+## <a name="delete-a-deployment"></a><a name="bkmk_delete"></a> Ta bort en distribution
 
 1. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **program hantering**och välj antingen noden **program** eller **program grupper** .  
 
@@ -196,7 +196,7 @@ Mer information finns i följande artiklar:
 
 När du tar bort en program distribution tas alla instanser av programmet som klienten redan har installerat bort. Om du vill ta bort de här programmen distribuerar du programmet till datorer att **Avinstallera**. Om du tar bort en program distribution visas inte längre programmet i Software Center. Samma sak inträffar när du tar bort en resurs från mål samlingen för distributionen.
 
-## <a name="user-notifications-for-required-deployments"></a><a name="bkmk_notify"></a>Användar meddelanden för nödvändiga distributioner
+## <a name="user-notifications-for-required-deployments"></a><a name="bkmk_notify"></a> Användar meddelanden för nödvändiga distributioner
 
 När användarna får nödvändig program vara och väljer inställningen **vilo läge och Påminn mig** , kan de välja mellan följande alternativ:  
 
@@ -206,7 +206,7 @@ När användarna får nödvändig program vara och väljer inställningen **vilo
 
 :::image type="content" source="media/ComputerAgentSettings.png" alt-text="Dator agent grupp i inställningar för standard klient":::
 
-Den maximala tiden för vilo läge baseras alltid på de aviserings värden som kon figurer ATS i klient inställningarna vid varje tidpunkt längs drift tids linjen. Till exempel:  
+Den maximala tiden för vilo läge baseras alltid på de aviserings värden som kon figurer ATS i klient inställningarna vid varje tidpunkt längs drift tids linjen. Exempel:  
 
 - Du konfigurerar **distributions tids gränsen på mer än 24 timmar, Påminn användarna var som än är (timmar)** på sidan **dator agent** under 10 timmar.  
 
@@ -220,7 +220,7 @@ För en distribution med hög risk, till exempel en aktivitetssekvens som distri
 
 :::image type="content" source="media/client-toast-notification.png" alt-text="Dialog rutan nödvändig program vara meddelar dig om kritiskt program varu underhåll":::
 
-## <a name="check-for-running-executable-files"></a><a name="bkmk_exe-check"></a>Sök efter körning av körbara filer
+## <a name="check-for-running-executable-files"></a><a name="bkmk_exe-check"></a> Sök efter körning av körbara filer
 
 Konfigurera en distribution för att kontrol lera om vissa körbara filer körs på klienten. Använd det här alternativet om du vill söka efter processer som kan störa installationen av programmet. Om någon av dessa körbara filer körs, blockerar klienten installationen av distributions typen. Användaren måste stänga den körbara fil som körs innan klienten kan installera distributions typen. För distributioner med syftet obligatorisk kan klienten automatiskt stänga den körbara filen som körs.
 

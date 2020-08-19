@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ae2846c2a5f7fea86287a05c8cc8f6013d660df6
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: d6703f0889590b3d37d05b7c9b283a16c0150649
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128958"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591640"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Vad är nytt i version 1806 av Configuration Manager aktuella grenen
 
@@ -165,7 +165,7 @@ När klientens push-metod används för att installera Configuration Manager-kli
 Mer information finns i [så här installerar du klienter med klient-push](../../clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).
 
 
-### <a name="enhanced-http-site-system"></a><a name="bkmk_ehttp"></a>Förbättrat HTTP-platssystem
+### <a name="enhanced-http-site-system"></a><a name="bkmk_ehttp"></a> Förbättrat HTTP-platssystem
 <!--1356889,1358228-->
 Att använda HTTPS-kommunikation rekommenderas för alla Configuration Manager kommunikations vägar, men kan vara utmanande för vissa kunder på grund av omkostnader för hantering av PKI-certifikat.
 
@@ -280,9 +280,9 @@ Skapa en stegvis distribution för ett program. Med stegvisa distributioner kan 
 
 Mer information finns i följande artiklar:  
 
-- [Skapa en fasindelad distribution](../../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+- [Skapa en fasindelad distribution](../../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json)  
 
-- [Hantera och övervaka fasindelade distributioner](../../../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+- [Hantera och övervaka fasindelade distributioner](../../../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json)  
 
 
 ### <a name="provision-windows-app-packages-for-all-users-on-a-device"></a>Etablera Windows-appaket för alla användare på en enhet
@@ -505,7 +505,7 @@ Mer information finns i [program uppdaterings rapporter](../../../sum/deploy-use
 
 ## <a name="inventory"></a>Inventering
 
-### <a name="improvement-to-hardware-inventory-for-large-integer-values"></a><a name="bkmk_bigint"></a>Förbättring av maskin varu inventering för stora heltals värden
+### <a name="improvement-to-hardware-inventory-for-large-integer-values"></a><a name="bkmk_bigint"></a> Förbättring av maskin varu inventering för stora heltals värden
 <!--1357880-->
 Maskin varu inventeringen hade tidigare en gräns för heltal som är större än 4 294 967 296 (2 ^ 32). Den här gränsen kan nås för attribut som hård disk storlekar i byte. Hanterings platsen bearbetar inte heltals värden över den här gränsen, vilket innebär att inget värde lagrades i databasen. I den här versionen ökas gränsen till 18446744073709551616 (2 ^ 64). 
 
@@ -593,10 +593,10 @@ Följande samlade uppdateringar (4462978) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Rubrik | Datum | I-konsolen |
+| ID | Title | Datum | I-konsolen |
 |---------|---------|---------|---------|
-| [4346645](https://support.microsoft.com/help/4346645) | Uppdatering för Configuration Manager version 1806, första vågen | 31 augusti 2018 | Ja |
-| [4465865](https://support.microsoft.com/help/4465865) | Program uppdateringar laddas inte ned i Configuration Managers miljö om WSUS är frånkopplat<br><br>Den här uppdateringen ingår också i den samlade uppdateringen (4462978) | 01 oktober 2018 | Ja |
+| [4346645](https://support.microsoft.com/help/4346645) | Uppdatering för Configuration Manager version 1806, första vågen | 31 augusti 2018 | Yes |
+| [4465865](https://support.microsoft.com/help/4465865) | Program uppdateringar laddas inte ned i Configuration Managers miljö om WSUS är frånkopplat<br><br>Den här uppdateringen ingår också i den samlade uppdateringen (4462978) | 01 oktober 2018 | Yes |
 | [4471892](https://support.microsoft.com/help/4471892) | PXE-Responder fungerar inte över undernät i Configuration Manager 1806 | 23 november 2018 | No |
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
 

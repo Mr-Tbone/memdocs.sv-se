@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: a0d7f561a324d20f503b8fee3e8a869774c70d89
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 05a6950708da04effe230d0d5637c4e3bcedd7e6
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128975"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591589"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Vad är nytt i version 1810 av Configuration Manager aktuella grenen
 
@@ -34,11 +34,11 @@ Om du vill dra nytta av nya Configuration Manager funktioner måste du först up
 -->  
 
 > [!Tip]  
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1810+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1810+-+Configuration+Manager%22&locale=en-us`
 
 
 
-## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a>Föråldrade funktioner och operativ system
+## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a> Föråldrade funktioner och operativ system
 
 Läs om support ändringar innan de implementeras i [borttagna och föråldrade objekt](deprecated/removed-and-deprecated.md).
 
@@ -50,7 +50,7 @@ Klassiska tjänst distributioner i Azure är nu föråldrade i Configuration Man
 
 
 
-## <a name="site-infrastructure"></a><a name="bkmk_infra"></a>Plats infrastruktur
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Plats infrastruktur
 
 ### <a name="support-for-windows-server-2019"></a>Stöd för Windows Server 2019
 
@@ -95,7 +95,7 @@ Mer information finns i [klient meddelanden](../../clients/manage/client-notific
 
 
 
-## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
+## <a name="content-management"></a><a name="bkmk_content"></a> Innehålls hantering
 
 ### <a name="new-boundary-group-options"></a>Nya alternativ för gränser grupp
 
@@ -118,7 +118,7 @@ Mer information finns i [hanterings insikter](../../servers/manage/management-in
 
 
 
-## <a name="client-management"></a><a name="bkmk_client"></a>Klient hantering
+## <a name="client-management"></a><a name="bkmk_client"></a> Klient hantering
 
 ### <a name="new-client-notification-action-to-wake-up-device"></a>Ny klient meddelande åtgärd för aktivering av enhet
 
@@ -156,7 +156,7 @@ Mer information finns i [Konfigurera gränser grupper](../../servers/deploy/conf
 
 
 
-## <a name="co-management"></a><a name="bkmk_comgmt"></a>Samhantering
+## <a name="co-management"></a><a name="bkmk_comgmt"></a> Samhantering
 
 ### <a name="required-app-compliance-policy-for-co-managed-devices"></a>Nödvändig app-efterlevnadsprincip för samhanterade enheter
 
@@ -191,7 +191,7 @@ Mer information finns i [förbereda Internet-baserade enheter för samhantering]
 
 
 
-## <a name="application-management"></a><a name="bkmk_app"></a>Program hantering
+## <a name="application-management"></a><a name="bkmk_app"></a> Program hantering
 
 ### <a name="convert-applications-to-msix"></a>Konvertera program till MSIX
 
@@ -231,7 +231,7 @@ Mer information finns i [skapa program](../../../apps/deploy-use/create-applicat
 
 
 
-## <a name="os-deployment"></a><a name="bkmk_osd"></a>OS-distribution
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> OS-distribution
 
 ### <a name="task-sequence-support-of-windows-autopilot-for-existing-devices"></a>Aktivitetssekvens stöd för Windows autopilot för befintliga enheter
 
@@ -280,14 +280,14 @@ Mer information finns i [variabler för aktivitetssekvens](../../../osd/understa
 
 
 
-## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Program uppdateringar
 
 ### <a name="phased-deployment-of-software-updates"></a>Stegvis distribution av program uppdateringar
 
 <!--1358146-->
 Skapa stegvisa distributioner för program uppdateringar. Med stegvisa distributioner kan du dirigera en samordnad, sekvenserad distribution av program vara utifrån anpassningsbara kriterier och grupper.
 
-Mer information finns i skapa stegvisa [distributioner](../../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
+Mer information finns i skapa stegvisa [distributioner](../../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json).
 
 
 ### <a name="improvement-to-maintenance-windows-for-software-updates"></a>Förbättringar av underhålls fönster för program uppdateringar
@@ -314,7 +314,7 @@ Nu kan du ange ersättnings regler för funktions uppdateringar separat från up
 
 Mer information finns i [Ersättningsregler](../../../sum/get-started/install-a-software-update-point.md#supersedence-rules).
 
-## <a name="reporting"></a><a name="bkmk_report"></a>Uppgiftslämn
+## <a name="reporting"></a><a name="bkmk_report"></a> Uppgiftslämn
 
 ### <a name="improvement-to-lifecycle-dashboard"></a>Förbättra livs cykelns instrument panel
 
@@ -335,7 +335,7 @@ Mer information finns i [informations lager](../../servers/manage/data-warehouse
 
 
 
-## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a>Configuration Manager-konsol
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Configuration Manager-konsol
 
 ### <a name="configuration-manager-administrator-authentication"></a>Configuration Manager administratörs autentisering
 
@@ -385,7 +385,7 @@ Mer information om ytterligare prestanda och fel sökning av CMPivot finns i [f�
 Mer information om CMPivot finns i [CMPivot](../../servers/manage/cmpivot.md).
 
 
-### <a name="improvements-to-scripts"></a><a name="bkmk_scripts"></a>Förbättringar av skript
+### <a name="improvements-to-scripts"></a><a name="bkmk_scripts"></a> Förbättringar av skript
 
 <!--1358239-->
 Nu kan du Visa detaljerade skript utdata i oformaterat eller strukturerat JSON-format. Den här formateringen gör det lättare att läsa och analysera utdata.
@@ -414,7 +414,7 @@ Mer information finns i [Planera för SMS-providern](../hierarchy/plan-for-the-s
 
 
 
-## <a name="on-premises-mdm"></a><a name="bkmk_opmdm"></a>Lokal MDM
+## <a name="on-premises-mdm"></a><a name="bkmk_opmdm"></a> Lokal MDM
 
 ### <a name="an-intune-connection-is-no-longer-required-for-new-on-premises-mdm-deployments"></a>En Intune-anslutning krävs inte längre för nya lokala MDM-distributioner
 
@@ -436,10 +436,10 @@ Följande samlade uppdateringar (4488598) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Rubrik | Datum | I-konsolen |
+| ID | Title | Datum | I-konsolen |
 |---------|---------|---------|---------|
-| [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
-| [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Ja |
+| [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Yes |
+| [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Yes |
 | [4490575](https://support.microsoft.com/help/4490575) | Uppdaterings installationer slutar svara eller aldrig visar slut för ande i Configuration Manager version 1810 | 22 februari 2019 | Ja |
 
 

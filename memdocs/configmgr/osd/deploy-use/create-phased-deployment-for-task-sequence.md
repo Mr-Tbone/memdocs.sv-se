@@ -10,12 +10,12 @@ ms.assetid: b634ff68-b909-48d2-9e2c-0933486673c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1845b381d8b37fed3a785475e961cd39c54cf42d
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 36da7d35b75d2675fc775ed46e49e8adf2e6af3f
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125278"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591743"
 ---
 # <a name="create-phased-deployments-with-configuration-manager"></a>Skapa stegvisa distributioner med Configuration Manager
 
@@ -51,7 +51,7 @@ Innan du skapar en stegvis distribution distribuerar du det associerade innehål
 
 
 
-## <a name="phase-settings"></a><a name="bkmk_settings"></a>Fas inställningar
+## <a name="phase-settings"></a><a name="bkmk_settings"></a> Fas inställningar
 
 De här inställningarna är unika för stegvisa distributioner. Konfigurera de här inställningarna när du skapar eller redigerar faser för att styra schemaläggningen och beteendet för den stegvisa distributions processen. 
 
@@ -91,7 +91,7 @@ Include a timeline diagram
 
 
 
-## <a name="automatically-create-a-default-two-phase-deployment"></a><a name="bkmk_auto"></a>Skapa automatiskt en standard distribution i två faser
+## <a name="automatically-create-a-default-two-phase-deployment"></a><a name="bkmk_auto"></a> Skapa automatiskt en standard distribution i två faser
 
 1. Starta guiden skapa stegvis distribution i Configuration Manager-konsolen. Den här åtgärden varierar beroende på vilken typ av program vara som du distribuerar:  
 
@@ -124,7 +124,7 @@ Include a timeline diagram
 > [!NOTE]
 > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kanske fortfarande ser det gamla namnet i Configuration Manager-produkten och dokumentationen medan-konsolen uppdateras.  
 
-## <a name="create-a-phased-deployment-with-manually-configured-phases"></a><a name="bkmk_manual"></a>Skapa en stegvis distribution med manuellt konfigurerade faser
+## <a name="create-a-phased-deployment-with-manually-configured-phases"></a><a name="bkmk_manual"></a> Skapa en stegvis distribution med manuellt konfigurerade faser
 <!--1358148--> 
 
 Från och med version 1806 kan du skapa en stegvis distribution med manuellt konfigurerade faser för en aktivitetssekvens. Lägg till upp till 10 faser från fliken **faser** i guiden skapa stegvis distribution. 
@@ -187,7 +187,7 @@ När du har skapat en stegvis distribution öppnar du dess egenskaper för att g
 ## <a name="next-steps"></a>Nästa steg
 
 Hantera och övervaka stegvisa distributioner:
-- [Program](manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)
-- [Program uppdatering](manage-monitor-phased-deployments.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)  
+- [Program](manage-monitor-phased-deployments.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json)
+- [Program uppdatering](manage-monitor-phased-deployments.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json)  
 - [Aktivitetssekvens](manage-monitor-phased-deployments.md)  
 

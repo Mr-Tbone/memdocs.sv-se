@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: 2adf22fd9c17863d7c29e2a29d2125d22f2d944f
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 5cee950e2b42d73f20921c2baf08b98d2d206586
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127679"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591196"
 ---
 # <a name="deploy-software-updates"></a>Distribuera programuppdateringar  
 
@@ -48,7 +48,7 @@ Normalt börjar du med att distribuera program uppdateringar manuellt för att s
 
 
 
-## <a name="manually-deploy-software-updates"></a><a name="BKMK_ManualDeployment"></a>Distribuera program uppdateringar manuellt
+## <a name="manually-deploy-software-updates"></a><a name="BKMK_ManualDeployment"></a> Distribuera program uppdateringar manuellt
 Välj program uppdateringar i Configuration Manager-konsolen och starta distributions processen manuellt. Du använder vanligt vis den här distributions metoden för att:  
 
 - Hämta klienterna uppdaterade med nödvändiga program uppdateringar innan du skapar regler för automatisk distribution som hanterar månatliga distributioner  
@@ -72,7 +72,7 @@ Mer information och detaljerade anvisningar finns i [distribuera program uppdate
 > - Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 > - När du distribuerar uppdateringar för Microsoft 365-appar manuellt hittar du dem i noden **office 365-uppdateringar** under **Office 365-klient hantering** av arbets ytan **program varu bibliotek** . 
 
-## <a name="automatically-deploy-software-updates"></a><a name="bkmk_auto"></a>Distribuera program uppdateringar automatiskt
+## <a name="automatically-deploy-software-updates"></a><a name="bkmk_auto"></a> Distribuera program uppdateringar automatiskt
 
 Konfigurera automatisk distribution av program uppdateringar med hjälp av en regel för automatisk distribution (ADR). Den här distributions metoden är vanlig för månatliga program uppdateringar (kallas vanligt vis "korrigerings tisdag") och för att hantera definitions uppdateringar. Du definierar villkoren för en ADR för att automatisera distributions processen. I följande lista visas det allmänna arbets flödet för automatisk distribution av program uppdateringar:  
 
@@ -110,10 +110,10 @@ Mer information och detaljerade anvisningar finns i [distribuera program uppdate
 
 
 
-## <a name="deploy-software-updates-in-phases"></a><a name="bkmk_phased"></a>Distribuera program uppdateringar i faser
+## <a name="deploy-software-updates-in-phases"></a><a name="bkmk_phased"></a> Distribuera program uppdateringar i faser
 
 <!--1358146-->
 Från och med version 1810 skapar du stegvisa distributioner för program uppdateringar. Med stegvisa distributioner kan du dirigera en samordnad, sekvenserad distribution av program vara utifrån anpassningsbara kriterier och grupper.
 
-Mer information finns i skapa stegvisa [distributioner](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
+Mer information finns i skapa stegvisa [distributioner](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json).
 

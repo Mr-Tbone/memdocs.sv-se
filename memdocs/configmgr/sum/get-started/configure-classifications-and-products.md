@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: 4f13ff305ba5fc2b5c5080bafb6fed2412ff8366
-ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
+ms.openlocfilehash: a5254ba5a25b10df2943eaa7f80b32b17ea3680f
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84614071"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591501"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurera klassificeringar och produkter som ska synkroniseras  
 
@@ -106,7 +106,7 @@ När du godkänner funktions uppdateringar för Windows 10, version 1909, finns 
 
 ### <a name="windows-10-version-1903-and-later"></a>Windows 10, version 1903 och senare
 
-**Windows 10, version 1903 och senare** har lagts till i Microsoft Update som sin egen produkt, i stället för att vara en del av **Windows 10** -produkten som tidigare versioner. Den här ändringen gjorde att du utför ett antal manuella åtgärder för att se till att dina klienter ser dessa uppdateringar. Vi har hjälpt till att minska antalet manuella åtgärder som du behöver vidta för den nya produkten i Configuration Manager version 1906. <!--4682946-->
+**Windows 10, version 1903 och senare** har lagts till i Microsoft Update som sin egen produkt, i stället för att vara en del av **Windows 10**  -produkten som tidigare versioner. Den här ändringen gjorde att du utför ett antal manuella åtgärder för att se till att dina klienter ser dessa uppdateringar. Vi har hjälpt till att minska antalet manuella åtgärder som du behöver vidta för den nya produkten i Configuration Manager version 1906. <!--4682946-->
 
 #### <a name="windows-10-version-1903-and-later-with-configuration-manager-version-1906"></a>Windows 10, version 1903 och senare med Configuration Manager version 1906
 När du uppdaterar till Configuration Manager version 1906 och har **Windows 10** -produkten vald för synkronisering sker följande åtgärder automatiskt:
@@ -120,13 +120,13 @@ Om du använder Configuration Manager 1902 med Windows 10, version 1903-klienter
 - Uppdatera eventuella [automatiska distributions regler](../deploy-use/automatically-deploy-software-updates.md#bkmk_adr-process) för Windows 10, version 1903-klienter.
 - Uppdatera [Service planer](../../osd/deploy-use/manage-windows-as-a-service.md#servicing-plan-workflow) för Windows 10, version 1903-klienter.
 
-## <a name="windows-insider-program"></a><a name="bkmk_WIfB"></a>Windows Insider program
+## <a name="windows-insider-program"></a><a name="bkmk_WIfB"></a> Windows Insider program
 <!--3556023-->
 Från och med september 2019 kan du underhålla och uppdatera enheter som kör Windows Insider Preview-versioner med Configuration Manager. Den här ändringen innebär att du kan hantera dessa enheter utan att ändra dina normala processer eller aktivera Windows Update för företag. Du kan hämta funktions uppdateringar och kumulativa uppdateringar för Windows Insider Preview-versioner till Configuration Manager precis som med andra Windows 10-uppdateringar eller uppgraderingar. Mer information finns i avsnittet [Publicera för hands version av Windows 10-funktions uppdateringar till WSUS](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Publishing-pre-release-Windows-10-feature-updates-to-WSUS/ba-p/845054) -blogg inlägget.
 
 För ytterligare information om stöd för Windows Insider i Configuration Manager, se [stöd för Windows 10](../../core/plan-design/configs/support-for-windows-10.md#bkmk_WIfB-support).
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
 - Configuration Manager version 1906 eller högre, konfigurerad för [hantering av program uppdateringar](../plan-design/plan-for-software-updates.md).
 - Windows 10-enheter som kör [Windows Insider Preview-version](https://docs.microsoft.com/windows-insider/at-work-pro/wip-4-biz-get-started).
@@ -160,7 +160,7 @@ Distribuera funktions uppdateringar för Windows Insider till din mål samling p
 - Det finns licens villkor, distributionen måste godkänna villkoren för att kunna installeras.
 - Överväg att använda [tråd prioritet i klient inställningar](../../core/clients/deploy/about-client-settings.md#bkmk_thread-priority).
 - Dynamisk uppdatering installerar automatiskt viktiga uppdateringar, inklusive den senaste kumulativa uppdateringen, direkt från Microsoft Update. Det här beteendet startas med funktions uppdateringar för Windows 10 version 1903. 
-  - Du kan uttryckligen [inaktivera dynamisk uppdatering i klient inställningar](../../core/clients/deploy/about-client-settings.md#bkmk_du) eller med en [setupconfig. ini-fil](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options). 
+  - Du kan uttryckligen [inaktivera dynamisk uppdatering i klient inställningar](../../core/clients/deploy/about-client-settings.md#bkmk_du) eller med en [setupconfig.ini-fil](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options). 
   - Mer information finns i blogg inlägget för [dynamisk uppdatering i Windows 10](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-benefits-of-Windows-10-Dynamic-Update/ba-p/467847) .
 
 Mer information om hur du distribuerar uppgraderingar finns i [hantera Windows som en tjänst](../../osd/deploy-use/manage-windows-as-a-service.md).
@@ -168,9 +168,9 @@ Mer information om hur du distribuerar uppgraderingar finns i [hantera Windows s
 
 ### <a name="keeping-insider-devices-up-to-date"></a>Hålla Insider-enheter aktuella
 
-Kumulativa uppdateringar för Windows Insider är tillgängliga för WSUS och efter tillägg för Configuration Manager. Dessa ackumulerade uppdateringar publiceras med en frekvens som liknar Windows 10 version 1903 kumulativa uppdateringar. Kumulativa Windows Insider-uppdateringar finns i produkt kategorin **Windows Insider för hands version** och klassificeras som antingen **säkerhets uppdateringar** eller **uppdateringar**. Du kan distribuera de kumulativa uppdateringarna för Windows Insider med en vanlig program uppdaterings process som att använda [automatiska distributions regler](../deploy-use/automatically-deploy-software-updates.md) eller stegvisa [distributioner](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
+Kumulativa uppdateringar för Windows Insider är tillgängliga för WSUS och efter tillägg för Configuration Manager. Dessa ackumulerade uppdateringar publiceras med en frekvens som liknar Windows 10 version 1903 kumulativa uppdateringar. Kumulativa Windows Insider-uppdateringar finns i produkt kategorin **Windows Insider för hands version** och klassificeras som antingen **säkerhets uppdateringar** eller **uppdateringar**. Du kan distribuera de kumulativa uppdateringarna för Windows Insider med en vanlig program uppdaterings process som att använda [automatiska distributions regler](../deploy-use/automatically-deploy-software-updates.md) eller stegvisa [distributioner](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json).
 
-## <a name="extended-security-updates-and-configuration-manager"></a><a name="bkmk_ESU"></a>Utökade säkerhets uppdateringar och Configuration Manager
+## <a name="extended-security-updates-and-configuration-manager"></a><a name="bkmk_ESU"></a> Utökade säkerhets uppdateringar och Configuration Manager
 
 [ESU-programmet (Extended Security updates)](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) är ett sista utväg-alternativ för kunder som behöver köra vissa äldre Microsoft-produkter efter Supportens slut. Den innehåller viktiga och/eller viktiga säkerhets uppdateringar (enligt definitionen i [Microsoft Security Response Center (MSRC)](https://www.microsoft.com/msrc)) i högst tre år efter produktens slut på datum för utökad support.
 

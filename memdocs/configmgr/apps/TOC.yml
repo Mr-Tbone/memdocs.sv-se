@@ -42,7 +42,7 @@
         - name: Distribuera program
           href: deploy-use/deploy-applications.md
         - name: Skapa en fasindelad distribution
-          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
+          href: ../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json
         - name: Godkänna program
           href: deploy-use/app-approval.md
         - name: Installera program för en enhet
@@ -62,7 +62,7 @@
         - name: Övervaka program från konsolen
           href: deploy-use/monitor-applications-from-the-console.md
         - name: Hantera och övervaka fasindelade distributioner
-          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json
+          href: ../osd/deploy-use/manage-monitor-phased-deployments.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json
         - name: Övervaka appanvändningen med avläsning av programvara
           href: deploy-use/monitor-app-usage-with-software-metering.md
     - name: Hantera program

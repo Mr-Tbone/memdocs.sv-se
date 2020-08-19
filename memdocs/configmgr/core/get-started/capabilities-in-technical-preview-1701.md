@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: f100d28b3fd4ce0d310ddb2f0b4e777c72f72881
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 20c560925b2c1abec282b8c5f8dae3f6f42f4d64
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82076211"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591213"
 ---
 # <a name="capabilities-in-technical-preview-1701-for-configuration-manager"></a>Funktioner i Technical Preview 1701 för Configuration Manager
 
@@ -61,7 +61,7 @@ Här följer en beskrivning av beteendet för program uppdaterings platser med d
   När en klient använder reserv använder den gränser grupp konfigurationerna för återställning för att skapa en pool med tillgängliga program uppdaterings platser. Den här poolen innehåller alla program uppdaterings platser från klientens *aktuella gränser grupp*, *intilliggande gränser grupper*och klient *platsens standard gränser grupp*.
 
 - **Konfigurera standard platsens gränser grupp:**  
-  Överväg att lägga till en program uppdaterings plats till *platsen för standardsite-gränser&lt;-grupp>*. Detta säkerställer att klienter som inte är medlemmar i en annan avgränsnings grupp kan återgå till att hitta en program uppdaterings plats.
+  Överväg att lägga till en program uppdaterings plats till *platsen för standardsite-gränser-grupp &lt;>*. Detta säkerställer att klienter som inte är medlemmar i en annan avgränsnings grupp kan återgå till att hitta en program uppdaterings plats.
 
 
 Om du vill hantera program uppdaterings platser för gränser grupper kan du använda [procedurerna i Current Branch dokumentationen](../servers/deploy/configure/boundary-group-procedures.md), men kom ihåg att återställnings tider som du kan konfigurera inte används för program uppdaterings platser än.
@@ -94,10 +94,10 @@ Information om hur du använder molnbaserade distributions platser finns i [anv�
 
 Från och med den här för hands versionen kan du konfigurera hanterings platser för att validera rapporterings data för hälsoattestering för moln tjänster eller lokala hälsoattesterings tjänster. På fliken nya **Avancerade alternativ** i dialog **rutan Egenskaper för hanterings plats komponent** kan du **lägga till**, **Redigera**eller **ta bort** den **lokala webb adressen för tjänsten hälsoattestering för enhet**. Du kan också ange **anpassade enhets inställningar** för klient agenten för att **använda tjänsten för lokal hälsoattestering**.  Om du anger **Ja** för den här inställningen aktive ras rapportering till den lokala hanterings platsen i stället för den molnbaserade tjänsten.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 
-- **Aktivera lokal hälsoattestering för enhet på en hanterings plats**<br>  I Configuration Manager-konsolen navigerar du till hanterings platsen och öppnar **Egenskaper för hanterings plats komponent** och klickar sedan på fliken **Avancerade alternativ** . Klicka på **Lägg till** och ange den lokala URL: https://10.10.10.10) en (till exempel för **URL: er för tjänsten hälsoattestering för den lokala enheten**.
-- **Aktivera rapportering av hälso deklaration för lokal hanterings plats för klient agenten**<br>I Configuration Manager-konsolen väljer du **Administration** > **klient inställningar** och dubbelklickar på eller skapar en ny **anpassad enhets inställning**. Välj **dator agent** och konfigurera **tjänsten för lokal hälsoattestering** till **Ja**. Om **Aktivera kommunikation med Hälsoattestering för enhet tjänsten** är inställt på **Ja** och **Använd lokal hälsoattestering** är inställt på **Nej**, använder hanterings platsen den molnbaserade tjänsten hälsoattestering för enhet.
+- **Aktivera lokal hälsoattestering för enhet på en hanterings plats**<br>  I Configuration Manager-konsolen navigerar du till hanterings platsen och öppnar **Egenskaper för hanterings plats komponent** och klickar sedan på fliken **Avancerade alternativ** . Klicka på **Lägg till** och ange den lokala URL: en (till exempel https://10.10.10.10) för **URL: er för tjänsten hälsoattestering för den lokala enheten**.
+- **Aktivera rapportering av hälso deklaration för lokal hanterings plats för klient agenten**<br>I Configuration Manager-konsolen väljer du **Administration**  >  **klient inställningar** och dubbelklickar på eller skapar en ny **anpassad enhets inställning**. Välj **dator agent** och konfigurera **tjänsten för lokal hälsoattestering** till **Ja**. Om **Aktivera kommunikation med Hälsoattestering för enhet tjänsten** är inställt på **Ja** och **Använd lokal hälsoattestering** är inställt på **Nej**, använder hanterings platsen den molnbaserade tjänsten hälsoattestering för enhet.
 
 ## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>Använd OMS-anslutningen för Microsoft Azure Government Cloud
 Med den här tekniska för hands versionen kan du nu använda Microsoft Operations Management Suite (OMS) Connector för att ansluta till en OMS-arbetsyta som finns på Microsoft Azure Government molnet.  
@@ -105,27 +105,27 @@ Med den här tekniska för hands versionen kan du nu använda Microsoft Operatio
 Det gör du genom att ändra en konfigurations fil så att den pekar på det offentliga molnet och sedan installera OMS-anslutaren.
 
 ### <a name="set-up-an-oms-connector-to-microsoft-azure-government-cloud"></a>Konfigurera en OMS-anslutning till Microsoft Azure Government Cloud
-1. På alla datorer där Configuration Manager-konsolen är installerad redigerar du följande konfigurations fil så att den pekar på det offentliga molnet: *** &lt;cm installations Sök väg> \adminconsole\bin\microsoft.configurationmanagmenet.exe.config***
+1. På alla datorer där Configuration Manager-konsolen är installerad redigerar du följande konfigurations fil så att den pekar på det offentliga molnet: *** &lt; cm installations Sök väg # C0\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config***
 
    **Redigeringar**
 
    Ändra värdet för inställnings namnet *FairFaxArmResourceID* till "<https://management.usgovcloudapi.net/">
 
-   - **Original:** &lt;inställnings namn = "FairFaxArmResourceId" serializeAs = "String" >   
-     &lt;värde>&lt;/Value>   
+   - **Original:** &lt; inställnings namn = "FairFaxArmResourceId" serializeAs = "String" >   
+     &lt;värde>&lt; /value>   
      &lt;/Setting>
 
    - **Ändra**     
-     &lt;inställnings namn = "FairFaxArmResourceId" serializeAs = "String" &lt;> värde><https://management.usgovcloudapi.net/&lt;/value>>  
+     &lt;inställnings namn = "FairFaxArmResourceId" serializeAs = "sträng" > &lt; värde &gt; https://management.usgovcloudapi.net/&lt ;/Value&gt;  
      &lt;/Setting>
 
-   Ändra värdet för inställnings namnet *FairFaxAuthorityResource* till "<https://login.microsoftonline.com/>"
+   Ändra värdet för inställnings namnet *FairFaxAuthorityResource* till " <https://login.microsoftonline.com/> "
 
-   - **Original:** &lt;inställnings namn = "FairFaxAuthorityResource" serializeAs = "String" >   
-     &lt;värde>&lt;/Value>
+   - **Original:** &lt; inställnings namn = "FairFaxAuthorityResource" serializeAs = "String" >   
+     &lt;värde>&lt; /value>
 
-   - **Redige rad:** &lt;inställnings namn = "FairFaxAuthorityResource" serializeAs = "String" >   
-     &lt;värde><https://login.microsoftonline.com/&lt;/value>>
+   - **Redige rad:** &lt; inställnings namn = "FairFaxAuthorityResource" serializeAs = "String" >   
+     &lt;värde &gt; [https://login.microsoftonline.com](https://login.microsoftonline.com) &lt; /Value&gt;
 
 2. När du har sparat filen med de två ändringarna startar du om Configuration Manager-konsolen på samma dator och använder sedan konsolen för att installera OMS-anslutaren. Om du vill installera anslutningen använder du informationen i [synkronisera data från Configuration Manager till Microsoft Operations Management Suite](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm)och väljer sedan **Operations Management Suite-arbetsytan** som finns i Microsoft Azure Government molnet.
 
@@ -143,7 +143,7 @@ Från och med den här tekniska för hands versionen av hantering av mobila enhe
 Den här ändringen påverkar guiderna för att skapa följande objekt:
 
 - Konfigurationsobjekt
-- Compliance principer
+- Efterlevnadsprinciper
 - Certifikatprofiler
 - E-postprofiler
 - VPN-profiler

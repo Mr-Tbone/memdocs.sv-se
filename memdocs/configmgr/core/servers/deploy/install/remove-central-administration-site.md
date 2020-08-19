@@ -10,12 +10,12 @@ ms.assetid: 16975644-8dfa-4f22-b45a-c54a9250dbd2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 237c326c4420aec13ad6c9ca9b07d9f5304b6945
-ms.sourcegitcommit: 52dd59bdbad07b414db9e4209da0f4c957cf5d6e
+ms.openlocfilehash: 5b8b7ee17077c859a1f0a9eb41c5f9d0857db550
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84613979"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591518"
 ---
 # <a name="remove-the-central-administration-site"></a>Ta bort den centrala administrations platsen
 
@@ -67,7 +67,7 @@ Från och med version 2002, om hierarkin består av den centrala administrations
 
 - Granska program vara från tredje part som kan ha ett beroende på ca: erna.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Den administrativa användare som kör Configuration Manager-installationen behöver följande säkerhets behörigheter:
 
@@ -119,7 +119,7 @@ När installationen är klar återställs den primära platsen. Mer information 
 
 Granska följande loggar under installationen:
 
-- `C:\ConfigMgrSetup.log`på CAS-servern
+- `C:\ConfigMgrSetup.log` på CAS-servern
 
 - **hman. log** i katalogen Configuration Manager loggar på den primära plats servern
 
@@ -141,7 +141,7 @@ När du har tagit bort certifikat utfärdarna går du igenom följande steg som 
 
   - Återskapa [mediet för operativ Systems distribution](../../../../osd/deploy-use/create-task-sequence-media.md).
 
-- Om du ansluter Configuration Manager med [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm?context=configmgr/core/context/core-context)måste du återställa anslutningen. Det första steget för att lösa eventuella problem är att [förnya den hemliga nyckeln](../configure/azure-services-wizard.md#bkmk_renew). Om det inte löser problemet återskapar du anslutningen.<!-- 5584635 -->
+- Om du ansluter Configuration Manager med [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm?context=/mem/configmgr/core/context/core-context)måste du återställa anslutningen. Det första steget för att lösa eventuella problem är att [förnya den hemliga nyckeln](../configure/azure-services-wizard.md#bkmk_renew). Om det inte löser problemet återskapar du anslutningen.<!-- 5584635 -->
 
 - Om du aktiverar synkronisering av Surface-drivrutiner i version 2002 konfigurerar du om den här funktionen när du har tagit bort certifikat utfärdarna. Mer information finns i [uppdateringar för Microsoft-Surface-drivrutiner och inbyggd program vara](../../../../sum/deploy-use/surface-drivers.md).<!-- 5728727 -->
 

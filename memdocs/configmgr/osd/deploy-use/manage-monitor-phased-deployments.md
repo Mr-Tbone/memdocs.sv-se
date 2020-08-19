@@ -10,25 +10,25 @@ ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 66f31983e34ff37cd2df8532cd9d45d372ef1f3b
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: fe8bbbf311baa335640ca7dea90ccd46da4fa5ea
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125108"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591718"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Hantera och övervaka fasindelade distributioner
 
 Den här artikeln beskriver hur du hanterar och övervakar stegvisa distributioner. Hanterings uppgifter omfattar manuellt inledningen av nästa fas, och pausar eller återupptar en fas. 
 
 Först måste du skapa en stegvis distribution: 
-- [Program](create-phased-deployment-for-task-sequence.md?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
-- [Program uppdatering](create-phased-deployment-for-task-sequence.md?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)  
+- [Program](create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json)  
+- [Program uppdatering](create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/sum/toc.json&bc=/mem/configmgr/sum/breadcrumb/toc.json)  
 - [Aktivitetssekvens](create-phased-deployment-for-task-sequence.md)  
 
 
 
-## <a name="move-to-the-next-phase"></a><a name="bkmk_move"></a>Gå vidare till nästa fas
+## <a name="move-to-the-next-phase"></a><a name="bkmk_move"></a> Gå vidare till nästa fas
 
 När du väljer inställningen **börjar den andra fasen av distributionen manuellt**, platsen startar inte automatiskt nästa fas baserat på lyckade kriterier. Du måste flytta fasen stegvis distribution till nästa fas.  
 
@@ -55,7 +55,7 @@ När du väljer inställningen **börjar den andra fasen av distributionen manue
 
 
 
-## <a name="suspend-and-resume-phases"></a><a name="bkmk_suspend"></a>Pausa och återuppta faser 
+## <a name="suspend-and-resume-phases"></a><a name="bkmk_suspend"></a> Pausa och återuppta faser 
 
 Du kan pausa eller återuppta en stegvis distribution manuellt. Du kan till exempel skapa en stegvis distribution för en aktivitetssekvens. När du övervakar fasen i din pilot grupp, märker du ett stort antal felaktiga försök. Du inaktiverar stegvis distribution för att stoppa ytterligare enheter från att köra aktivitetssekvensen. När du har löst problemet återupptar du den stegvisa distributionen för att fortsätta med distributionen. 
 
@@ -86,7 +86,7 @@ When you suspend a phased deployment, it sets the available and deadline times o
 -->
 
 
-## <a name="monitor"></a><a name="bkmk_monitor"></a>Övervakningsprogrammet
+## <a name="monitor"></a><a name="bkmk_monitor"></a> Övervakningsprogrammet
 <!--1358577-->
 Från och med version 1902 har stegvisa distributioner en egen dedikerad övervaknings nod, vilket gör det enklare att identifiera stegvisa distributioner som du har skapat och navigera till vyn övervakning av stegvis distribution. I arbets ytan **övervakning** väljer du stegvisa **distributioner**och dubbelklickar sedan på en av de stegvisa distributionerna för att se statusen. <!--3555949-->
 
