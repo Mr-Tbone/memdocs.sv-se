@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 05/21/2019
+ms.date: 08/12/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: cffdadab0518fbc6a52d0f2bf60752c165fd1c3e
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: cb9812505bb1a4560c7b5668aee5b83d5cc0aec7
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881499"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179595"
 ---
 # <a name="enroll-windows-10-devices-with-intune-company-portal"></a>Registrera Windows 10-enheter med Intune-företagsportalen
 
@@ -37,7 +37,7 @@ Windows 10 stöds på olika typer av enheter såsom stationära datorer, telefon
 ## <a name="enroll-windows-10-version-1607-and-later-device"></a>Registrera enhet med Windows 10 version 1607 och senare 
 Dessa steg beskriver hur du registrerar en enhet som kör Windows 10 version 1607 och senare.  
 
-1. Gå till **Start**. Om du har en Windows 10 Mobile-enhet fortsätter du till listan **Alla appar**.
+1. Gå till **Start**. 
 
 2. Öppna appen **Inställningar**. Om appen inte är tillgänglig applistan går du till sökfältet och skriver ”inställningar”.
 
@@ -72,7 +72,7 @@ Kan du fortfarande inte komma åt din e-post, dina filer eller andra data för s
 ## <a name="enroll-windows-10-version-1511-and-earlier-device"></a>Registrera enhet med Windows 10 version 1511 och tidigare  
 Dessa steg beskriver hur du registrerar en enhet som kör Windows 10 version 1511 och tidigare.  
 
-1. Gå till **Start**. Om du har en Windows 10 Mobile-enhet fortsätter du till listan **Alla appar**.
+1. Gå till **Start**. 
 
 2. Öppna appen **Inställningar**. Om appen inte är tillgänglig applistan går du till sökfältet och skriver ”inställningar”.
 

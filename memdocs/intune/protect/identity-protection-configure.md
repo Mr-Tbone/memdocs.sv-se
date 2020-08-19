@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 11/18/2019
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 896574f956353c526858356fea40c2248ce70dd3
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 835105b12da44f34f23c3d1162ced27a7eca6868
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990799"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252545"
 ---
 # <a name="use-windows-hello-for-business-on-windows-10-devices-with-microsoft-intune"></a>Använd Windows Hello för företag på Windows 10 på enheter med Microsoft Intune
 
@@ -33,7 +33,6 @@ Windows Hello för företag är en metod för att logga in till Windows-enheter 
 Den här funktionen gäller för enheter som kör:
 
 - Windows 10 och senare
-- Windows 10 Mobil
 - Windows 10 Holographic for Business
 
 Intune använder ”konfigurationsprofiler” till att skapa och anpassa inställningarna efter din organisations behov. När du har lagt till dessa funktioner i en profil, push-överför eller distribuerar du dessa inställningar till användare och enhetsgrupper i din organisation.

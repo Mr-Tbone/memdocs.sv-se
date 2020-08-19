@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 07/28/2020
+ms.date: 08/11/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72d0345c91f525fb6dc28adeabe8522801c51a9f
-ms.sourcegitcommit: 19f5838eb3eb8724d22382f36f9564ac9a978b97
+ms.openlocfilehash: 649b9417f349509e4d1630d0cfecfe8e5b6b1430
+ms.sourcegitcommit: 8999e197f10fb72d1b82f30a599d1e588db237b7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87365431"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88146498"
 ---
 # <a name="create-vpn-profiles-to-connect-to-vpn-servers-in-intune"></a>Skapa VPN-profiler för att ansluta till VPN-servrar i Intune
 
@@ -37,9 +37,7 @@ Exempel: Du vill konfigurera alla enheter som kör iOS/iPadOS med de inställnin
 >
 > * Android 4 och senare
 > * Registrerade enheter som kör Windows 8.1 och senare
-> * Windows Phone 8.1 och senare
 > * Registrerade enheter som kör Windows 10 desktop och senare
-> * Windows 10 Mobil
 > * Windows 10 Holographic for Business
 
 ## <a name="vpn-connection-types"></a>VPN-anslutningstyper
@@ -57,7 +55,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - macOS
   - Windows 10
   - Windows 8,1
-  - Windows Phone 8.1
 
 - Cisco AnyConnect
   - Android-enhetsadministratör
@@ -90,7 +87,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - macOS
   - Windows 10
   - Windows 8,1
-  - Windows Phone 8.1
 
 - IKEv2
   - iOS/iPadOS
@@ -115,7 +111,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - iOS/iPadOS
   - Windows 10
   - Windows 8,1
-  - Windows Phone 8.1
 
 - SonicWall Mobile Connect
   - Android-enhetsadministratör
@@ -125,7 +120,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
   - macOS
   - Windows 10
   - Windows 8,1
-  - Windows Phone 8.1
 
 - Zscaler
   - Android Enterprise-arbetsprofiler: Använd [konfigurationsprincip för app](../apps/app-configuration-vpn-ae.md)
@@ -149,7 +143,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
       - **macOS**
       - **Windows 10 och senare**
       - **Windows 8.1 och senare**
-      - **Windows Phone 8.1**
     - **Profil**: Välj **VPN**.
 
 4. Välj **Skapa**.
@@ -167,7 +160,6 @@ Du kan skapa VPN-profiler med följande anslutningstyper:
     - [macOS](vpn-settings-macos.md)
     - [Windows 10](vpn-settings-windows-10.md) (inklusive Windows Holographic for Business)
     - [Windows 8.1](vpn-settings-windows-8-1.md)
-    - [Windows Phone 8.1](vpn-settings-windows-phone-8-1.md)
 
 8. Välj **Nästa**.
 9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).

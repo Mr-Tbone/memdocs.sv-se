@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/08/2018
+ms.date: 08/12/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: dd1a5f5e20e810cfc393417d9a2bb98a2e080fec
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 481113dc64418b1579dbf9b478cd3ebd85b6cb72
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882090"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179332"
 ---
 # <a name="using-your-windows-device-with-intune-company-portal"></a>Använda din Windows-enhet med Intune-företagsportalen
 
@@ -40,9 +40,8 @@ Detaljerade steg och skärmbilder finns i [Logga in på företagsportalen](https
 Företagsportalen har för närvarande stöd för enheter som kör följande versioner av Windows:
 
 * Windows 10 (Home, Pro, Education, S-läge och Enterprise-versioner)
-* Windows Phone 8.1 och senare
 * Windows 8.1 RT
-* Windows 8.1
+* Windows 8,1
 
 Andra versioner av Windows, till exempel [Windows 10 Holographic](https://www.microsoft.com/hololens), stöds på företagsportalen. Dessa versioner omfattas dock inte i den här artikeln eftersom de används för mycket specifika områden.
 

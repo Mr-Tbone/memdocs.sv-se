@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 03/31/2020
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70f8033f694dfafefc92696df0b0e6ea652e2feb
-ms.sourcegitcommit: 24fcf19054dcd62429f6181cdc568d894e01b99a
+ms.openlocfilehash: e4425178dde820bc1f9b0503d50406c007d090ca
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946668"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252579"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Hantera Windows 10-programuppdateringar i Intune
 
@@ -60,7 +60,6 @@ Följande krav måste uppfyllas för att Windows-uppdateringar för Windows 10-e
 
   > [!NOTE]
   > **Versioner och utgåvor som inte stöds**:
-  > - Windows 10 Mobil  
   > - Windows 10 Enterprise LTSC. Windows Update for Business (WUfB) stöder för närvarande inte versioner av *Långsiktig servicekanal*. Planera att använda alternativa uppdateringsmetoder som WSUS eller Configuration Manager.
 
 - På Windows-enheter måste du **Feedback och diagnostik** > **Diagnostik och användningsdata** vara inställt på **Grundläggande**, **Utökad** eller **Fullständig**.

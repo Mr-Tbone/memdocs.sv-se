@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b90051e9062978fbc016e461d67fbf081f50c616
-ms.sourcegitcommit: 5a58af4f7d40bbde88a273fba859bf69eeff6107
+ms.openlocfilehash: 3e999cb66c42bd0e04c76cb13689122df187f2f6
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87473686"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252732"
 ---
 # <a name="identify-devices-as-corporate-owned"></a>Identifiera enheter som företagsägda
 
@@ -49,7 +49,7 @@ Den här funktionen stöds på följande plattformar:
 
 | Plattform | IMEI-nummer | Serienummer |
 |---|---|---|
-| Windows | Stöds (Windows Phone) | Stöds inte |
+| Windows | Stöds inte | Stöds inte |
 | iOS/macOS | Stöds inte (se Viktig nedan)  | Stöds |
 | Enhetsadministratörhanterad Android OS-v10 | Stöds inte | Stöds inte |
 | Android Enterprise-arbetsprofil | Stöds inte | Stöds |

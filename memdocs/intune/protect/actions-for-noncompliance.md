@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/27/2020
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e881dc386fa0fe0b98b5e3d4480e1957c251808
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: d262041c982d3d9a629ccb550a1376e5e479a759
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262684"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252783"
 ---
 # <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
@@ -63,8 +63,6 @@ När e-postmeddelandet skickas lägger Intune till information om den inkompatib
     - Android Enterprise-kioskenheter
   - iOS/iPadOS
   - macOS
-  - Windows 10 Mobil
-  - Windows Phone 8.1 och senare
 
 - **Ta den icke-kompatibla enheten ur bruk**: Den här åtgärden tar bort alla företagets data från enheten och tar bort enheten från Intune-hanteringen. För att förhindra oavsiktlig rensning av en enhet har den här åtgärden stöd för ett schema på minst **30** dagar.
 
@@ -75,8 +73,6 @@ När e-postmeddelandet skickas lägger Intune till information om den inkompatib
     - Android Enterprise-arbetsprofil
   - iOS/iPadOS
   - macOS
-  - Windows 10 Mobil
-  - Windows Phone 8.1 och senare
 
   Läs mer om att [ta bort enheter](../remote-actions/devices-wipe.md#retire).
 

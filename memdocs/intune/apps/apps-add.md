@@ -6,8 +6,8 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/11/2020
-ms.topic: how-to
+ms.date: 08/12/2020
+ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: apps
 ms.localizationpriority: high
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f01baaf8ca48229242b6f65d10ef28a294a632bc
-ms.sourcegitcommit: 92e6d2899b1cf986c29c532d0cd0555cad32bc0c
+ms.openlocfilehash: ccbd923ba1110f99c57b499115a41a03ec3317c1
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428620"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252817"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Lägg till appar i Microsoft Intune 
 
@@ -54,7 +54,6 @@ I följande tabell visas de specifika apptyperna och hur du kan lägga till dem 
 | Android Store-appar  | Store-app  | Välj **Android** som **apptyp** och ange appens webbadress på Google Play. |
 | Android Enterprise-appar  | Store-app  | Välj **Android** som **apptyp** och ange appens hanterade webbadress på Google Play. <sup>1</sup> |
 | Store-appar för iOS/iPadOS  | Store-app  | Välj **iOS** som **apptyp**, sök efter appen och välj appen i Intune. |
-| Windows Phone 8.1 Store-appar  | Store-app  | Välj **Windows Phone 8.1** som **apptyp** och ange appens webbadress på Microsoft Store. |
 | Microsoft Store-appar  | Store-app  | Välj **Windows** som **apptyp** och ange appens webbadress på Microsoft Store. |
 | Google Play-appar som hanteras | Store-app  | Välj **Hanterad Google Play** som **apptyp**, sök efter appen och välj appen i Intune. |
 | Office 365-appar för Windows 10  | Store-app (Office 365) | Välj **Windows 10** under **Microsoft 365 Apps** som **apptyp** och välj sedan den Office 365-app du vill installera.  |
@@ -63,7 +62,6 @@ I följande tabell visas de specifika apptyperna och hur du kan lägga till dem 
 | Microsoft Edge version 77 och senare för Windows 10 | Store-app | Välj **macOS** under **Microsoft Edge, version 77 och senare** som **apptyp**. |
 | Verksamhetsspecifika appar för Android | Verksamhetsspecifik app | Välj **Branschspecifik app** som **apptyp**, välj **Appaketfil** och ange sedan en Android-installationsfil med tillägget **.apk**.  |
 | Verksamhetsspecifika appar för iOS/iPadOS | Verksamhetsspecifik app | Välj **Branschspecifik app** som **apptyp**, välj **Appaketfil** och ange sedan en iOS/iPadOS-installationsfil med tillägget **.ipa**.  |
-| Windows Phone LOB-appar | Verksamhetsspecifik app | Välj **Branschspecifik app** som **apptyp**, välj **Appaketfil** och ange sedan en Windows Phone-installationsfil med tillägget **.xap**.  |
 | Verksamhetsspecifika Windows-appar | Verksamhetsspecifik app | Välj **Branschspecifik** app som apptyp, välj **Appaketfil** och ange sedan en Windows-installationsfil med tillägget **.msi**, **.appx**, **.appxbundle**, **.msix** eller **.msixbundle**. |
 | Inbyggd iOS/iPadOS-app  | Inbyggd app | Välj **Inbyggd app** som **apptyp** och välj sedan den inbyggda appen i listan med appar.  |
 | Inbyggd Android-app  | Inbyggd app | Välj **Inbyggd app** som **apptyp** och välj sedan den inbyggda appen i listan med appar.  |
@@ -221,8 +219,6 @@ Information om hur du lägger till appar för varje plattform till Intune finns 
 - [iOS LOB-appar](lob-apps-ios.md)
 - [macOS LOB apps](lob-apps-macos.md)
 - [Webbappar (för alla plattformar)](web-app.md)
-- [Windows Phone 8.1 Store-appar](store-apps-windows-phone-8-1.md)
-- [Windows Phone LOB-appar](lob-apps-windows-phone.md)
 - [Microsoft Store-appar](store-apps-windows.md)
 - [Windows LOB-appar](lob-apps-windows.md)
 - [Office 365-appar för Windows 10](apps-add-office365.md)
