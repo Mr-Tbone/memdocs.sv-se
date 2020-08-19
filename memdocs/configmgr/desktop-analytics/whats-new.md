@@ -2,7 +2,7 @@
 title: Nyheter i Desktop Analytics
 titleSuffix: Configuration Manager
 description: En sammanfattning av de nya funktionerna i den senaste månads versionen av moln tjänsten för Skriv bords analys.
-ms.date: 07/01/2020
+ms.date: 08/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: ec554d755b92d1c710def580a34fdbbddc7b4d45
-ms.sourcegitcommit: 2c5fd7c8603b88b753765f3cc298d0a0bacaf521
+ms.openlocfilehash: c41c6333cfee1b6a24bb84c0f020c14c303fd904
+ms.sourcegitcommit: 62b451396eae660f2d5289ae3666b19ed1cc666d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85819990"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614749"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Nyheter i Desktop Analytics
 
@@ -25,8 +25,20 @@ Lär dig vad som är nytt varje månad i Skriv bords analys.
 > [!TIP]
 > Varje månads uppdatering kan ta upp till tre dagar innan distributionen. Vissa funktioner kan distribueras över flera veckor och kanske inte är tillgängliga för alla kunder den första veckan.
 
-Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
+Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+desktop+analytics+-+Configuration+Manager%22&locale=en-us`
 <!-- a locale is required for the RSS search string -->
+
+## <a name="august-2020"></a>Augusti 2020
+
+### <a name="apps-deployed-from-configuration-manager-are-important-by-default"></a>Appar som distribueras från Configuration Manager är viktiga som standard
+
+<!-- 4859763 -->
+
+**Prioritets** konfigurationen för en app är nödvändig för Skriv bords analys för att fastställa vilka enheter som ska ingå i pilot distributioner. En administratör behövde manuellt konfigurera prioriteten för alla appar i Skriv bords analys. Endast när du har validerat piloten kan du fortsätta med en produktions distribution.
+
+Nu för alla appar som du distribuerar med Configuration Manager konfigureras Skriv bords analys automatiskt som standard. Med det här beteendet kan du konfigurera apparna i din miljö snabbare, så att de fortskrider snabbare med en produktions distribution.
+
+Mer information finns i [Asset-Apps](about-assets.md#apps).
 
 ## <a name="july-2020"></a>Juli 2020
 

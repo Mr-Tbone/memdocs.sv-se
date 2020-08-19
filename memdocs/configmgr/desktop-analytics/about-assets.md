@@ -2,7 +2,7 @@
 title: Till gångar i Analytics för Station ära datorer
 titleSuffix: Configuration Manager
 description: Lär dig om enheter, driv rutiner och appar i Skriv bords analys.
-ms.date: 05/11/2020
+ms.date: 08/19/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: f87c4cc1bcbe8039acb5876dc8e26ac597f12e59
-ms.sourcegitcommit: 3217778ebe7fd0318810696e8931e427a85da897
+ms.openlocfilehash: d4328aee2bc08054fbeaa7147ceed30fe61b61a7
+ms.sourcegitcommit: 62b451396eae660f2d5289ae3666b19ed1cc666d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85107296"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614810"
 ---
 # <a name="assets-in-desktop-analytics"></a>Till gångar i Analytics för Station ära datorer
 
@@ -42,6 +42,9 @@ Fliken **appar** visar alla installerade appar som tjänsten identifierar på di
 
 Viktiga **appar är** installerade på fler än 2% av registrerade enheter.
 
+> [!TIP]
+> Du kan konfigurera det här värdet för en speciell distributions plan. I egenskaperna för en distributions plan, i **beredskaps regler**, anger du värdet för att **definiera ett tröskelvärde för låg installations antal för dina appar**.
+
 **Informationen om program versioner** är inaktive rad som standard, så den här fliken kombinerar alla versioner av appar med samma namn och utgivare.<!-- 5542186 --> Standard beteendet hjälper till att minska det totala antalet appar som visas, vilket hjälper dig att minska dina ansträngningar att kommentera apparna. Antalet appar i panelen för att ange **appar visas också** i den här inställningen. I stället för hundratals instanser av Microsoft Edge finns det till exempel en instans för alla versioner. Du kan fatta beslut en gång för alla versioner. Om du behöver fatta beslut om vissa versioner av en app aktiverar du den här inställningen. Du kan också konfigurera den här inställningen när du arbetar med en distributions plan. Mer information finns i [planera till gångar](about-deployment-plans.md#plan-assets).
 
 Välj appen i listan och välj **Redigera**. Den här åtgärden visar information om appen. Välj den **viktiga** List menyn och ange ett värde. Du kan också tilldela en **ägare**. Om du gör några ändringar väljer du **Spara**.
@@ -53,6 +56,9 @@ Konfigurera **betydelsen** av appar genom att ställa in en av följande kategor
 - Ignorera
 - Ej granskad
 - Inte viktigt<!-- 3587232 -->
+
+> [!NOTE]
+> Om du har distribuerat appen med Configuration Manager konfigurerar Desktop Analytics automatiskt den som **viktig** som standard. Med det här beteendet kan du konfigurera apparna i din miljö snabbare, så att de fortskrider snabbare med en produktions distribution.<!-- 4859763 -->
 
 När **information om program versioner** är inaktive rad, visar fönstret programinformation antalet program versioner och språk som den kombinerar. Om du sparar ändringar i appens information gäller den för alla versioner. Ange till exempel **prioritet** eller **ägare**. Vissa värden visar flera, vilket innebär att det inte finns ett konsekvent värde för alla versioner.
 
