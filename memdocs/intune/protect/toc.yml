@@ -60,6 +60,8 @@
           href: actions-for-noncompliance.md
         - name: Övervaka enhetsefterlevnad
           href: compliance-policy-monitor.md
+        - name: Enhetsefterlevnadspartner
+          href: device-compliance-partners.md
     - name: Slutpunktsskydd
       href: endpoint-security.md
       items:
