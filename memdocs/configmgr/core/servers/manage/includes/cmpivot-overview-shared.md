@@ -4,18 +4,18 @@ ms.author: mstewart
 ms.prod: configuration-manager
 ms.topic: include
 ms.date: 07/13/2020
-ms.openlocfilehash: 80302a1c369c36a08cc1a55e20cf339dbc8d2883
-ms.sourcegitcommit: 6d987bb69d0eb9955a3003202864f58d6aaa426a
+ms.openlocfilehash: 8e95fce122a3e153f2aa391dcd5e40439f8e5820
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86381057"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88703886"
 ---
 <!--This file is shared by the CMPivot overview articles for both Microsoft Endpoint Manager tenant attach and Configuration Manager-->
 
 ## <a name="queries"></a>Frågor
 
-Frågor kan användas för att söka efter termer, identifiera trender, analysera mönster och tillhandahålla många andra insikter baserade på dina data. CMPivot använder en delmängd av [Azure Log Analytics](https://docs.microsoft.com/azure/kusto/query) Data Flow-modellen för tabell uttrycks instruktionen. Den typiska strukturen i en tabell uttrycks instruktion är en sammansättning av klient enheter och tabell data operatörer (till exempel filter och projektioner). Sammansättningen representeras av vertikalstreck (|), vilket ger instruktionen ett vanligt formulär som visuellt representerar flödet av tabell data från vänster till höger. Varje operator accepterar en tabell data uppsättning från pipe och ytterligare indata (inklusive andra tabell data uppsättningar) från huvud delen av operatorn och genererar sedan en tabell data uppsättning till nästa operator som följer:`entity | operator1 | operator2 | ...`
+Frågor kan användas för att söka efter termer, identifiera trender, analysera mönster och tillhandahålla många andra insikter baserade på dina data. CMPivot använder en delmängd av [Azure Log Analytics](/azure/kusto/query) Data Flow-modellen för tabell uttrycks instruktionen. Den typiska strukturen i en tabell uttrycks instruktion är en sammansättning av klient enheter och tabell data operatörer (till exempel filter och projektioner). Sammansättningen representeras av vertikalstreck (|), vilket ger instruktionen ett vanligt formulär som visuellt representerar flödet av tabell data från vänster till höger. Varje operator accepterar en tabell data uppsättning från pipe och ytterligare indata (inklusive andra tabell data uppsättningar) från huvud delen av operatorn och genererar sedan en tabell data uppsättning till nästa operator som följer: `entity | operator1 | operator2 | ...`
 
 I följande exempel är entiteten `CCMRecentlyUsedApplications` (en referens till de senast använda programmen) och operatorn är där (som filtrerar poster från indata enligt vissa predikat per post):
 
@@ -28,7 +28,7 @@ CCMRecentlyUsedApplications | where CompanyName like '%Microsoft%' | project Com
 Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande följande entiteter:
 
 
-|Entitet|Description|
+|Entitet|Beskrivning|
 |---|---|
 |AadStatus|Status för Azure Active Directory|
 |Administratörer|Medlemmar i den lokala administratörs gruppen|
@@ -181,9 +181,9 @@ Entiteter är objekt som kan frågas från klienten. Vi stöder för närvarande
 
 Tabell operatörer kan använda filter, sammanfatta och transformera data strömmar. För närvarande stöds följande operatorer:
 
-|Tabell operatörer|Description|
+|Tabell operatörer|Beskrivning|
 |---|---|
-|count|Returnerar en tabell med en enda post som innehåller antalet poster|
+|antal|Returnerar en tabell med en enda post som innehåller antalet poster|
 |distinct|Skapar en tabell med en distinkt kombination av de angivna kolumnerna i indata-tabellen|
 |join|Sammanfoga raderna i två tabeller för att skapa en ny tabell genom att matcha raden för samma enhet|
 |Sortera efter|Sortera raderna i indatalistnen i ordning efter en eller flera kolumner|
@@ -258,7 +258,7 @@ Skalära funktioner kan användas i uttryck. För närvarande stöds följande s
 |substring()|Extraherar en under sträng från en käll sträng som börjar från ett index till slutet av strängen|
 |tostring()|Konverterar inmatad till en sträng representation|
 
-## <a name="additional-entities-operators-and-functions-for-cmpivot-from-configuration-manager"></a><a name="bkmk_onprem_only"></a>Ytterligare entiteter, operatorer och funktioner för CMPivot från Configuration Manager
+## <a name="additional-entities-operators-and-functions-for-cmpivot-from-configuration-manager"></a><a name="bkmk_onprem_only"></a> Ytterligare entiteter, operatorer och funktioner för CMPivot från Configuration Manager
 
 > [!Important]
 > Dessa objekt stöds inte när du kör CMPivot från Microsoft Endpoint Manager administrations Center.
