@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 497a43fe6647f1dc2787f16a76f45ddd26d24796
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: e573a2887bd527daac9a05fec2e83ef39fbfc4e1
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128856"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700324"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>OS-versioner som stöds för klienter och enheter för Configuration Manager
 
@@ -44,7 +44,7 @@ Om du vill hantera följande versioner av Windows OS använder du klienten som i
 #### <a name="windows-virtual-desktop"></a>Windows Virtual Desktop
 
 <!--3556025-->
-[Windows Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/) är en Desktop-och app Virtualization-tjänst som körs på Microsoft Azure. Från och med version 1906 använder Configuration Manager för att hantera dessa virtuella enheter som kör Windows i Azure.
+[Windows Virtual Desktop](/azure/virtual-desktop/) är en Desktop-och app Virtualization-tjänst som körs på Microsoft Azure. Från och med version 1906 använder Configuration Manager för att hantera dessa virtuella enheter som kör Windows i Azure.
 
 På samma sätt som en Terminal-Server tillåter vissa av dessa virtuella enheter flera samtidiga aktiva användarsessioner. För att hjälpa till med klient prestanda inaktiverar Configuration Manager nu användar principer på alla enheter som tillåter dessa flera användarsessioner. Även om du aktiverar användar principer inaktive RAS klienten som standard på dessa enheter, som omfattar Windows 10 Enterprise multi-session och Terminal-servrar.
 
@@ -100,15 +100,15 @@ Windows Server-halvårs kanal versioner är Server Core-installationer, till exe
 
 - **Windows Server 2012** (x64) <sup> [Anmärkning 2](#bkmk_note2)</sup>
 
-#### <a name="note-1"></a><a name="bkmk_note1"></a>Anmärkning 1
+#### <a name="note-1"></a><a name="bkmk_note1"></a> Anmärkning 1
 
 Configuration Manager test och stöder Windows Server Data Center-versioner, men är inte officiellt certifierat för Windows Server. Stöd för Configuration Manager Hotfix erbjuds inte för problem som är specifika för Windows Server Data Center Edition. Mer information om certifierings programmet för Windows Server finns i [Windows Server-katalogen](https://www.windowsservercatalog.com/).
 
-#### <a name="note-2"></a><a name="bkmk_note2"></a>Anmärkning 2
+#### <a name="note-2"></a><a name="bkmk_note2"></a> Anmärkning 2
 
-Om du vill använda [push-installation av klienter](../../clients/deploy/plan/client-installation-methods.md#client-push-installation)lägger du till fil Server tjänsten för Server rollen fil-och lagrings tjänster. Mer information om hur du installerar Windows-funktioner på Server Core finns i [Installera roller, roll tjänster och funktioner med hjälp av Windows PowerShell-cmdletar](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets).  
+Om du vill använda [push-installation av klienter](../../clients/deploy/plan/client-installation-methods.md#client-push-installation)lägger du till fil Server tjänsten för Server rollen fil-och lagrings tjänster. Mer information om hur du installerar Windows-funktioner på Server Core finns i [Installera roller, roll tjänster och funktioner med hjälp av Windows PowerShell-cmdletar](/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets).  
 
-#### <a name="note-3"></a><a name="bkmk_note3"></a>Anmärkning 3
+#### <a name="note-3"></a><a name="bkmk_note3"></a> Anmärkning 3
 
 Den nya Software Center-appen stöds inte på någon version av Windows Server Core.<!--SCCMDocs issue 683-->
 
@@ -135,7 +135,7 @@ Hantera Windows Embedded-enheter genom att installera Configuration Manager-klie
 - **Windows 10 Enterprise** (x86, x64)  
 
 - **Windows 10 IoT Enterprise** (x86, x64)  
-    Den här versionen omfattar LTSC (Long-term Servicing Channel). Mer information finns i [Översikt över Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
+    Den här versionen omfattar LTSC (Long-term Servicing Channel). Mer information finns i [Översikt över Windows 10 IoT Enterprise](/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
 
 - **Windows Embedded 8,1-bransch** (x86, x64)
 
@@ -186,7 +186,7 @@ Hantera Windows CE enheter med Configuration Manager äldre klient för mobila e
 
 - Spanska (Spanien)  
 
-## <a name="extended-security-updates-and-configuration-manager"></a><a name="bkmk_ESU"></a>Utökade säkerhets uppdateringar och Configuration Manager
+## <a name="extended-security-updates-and-configuration-manager"></a><a name="bkmk_ESU"></a> Utökade säkerhets uppdateringar och Configuration Manager
 
 [ESU-programmet (Extended Security updates)](https://support.microsoft.com/help/4497181/lifecycle-faq-extended-security-updates) är ett sista utväg-alternativ för kunder som behöver köra vissa äldre Microsoft-produkter efter Supportens slut. Till exempel Windows 7. Den innehåller viktiga och/eller viktiga säkerhets uppdateringar (enligt definitionen i [Microsoft Security Response Center (MSRC)](https://www.microsoft.com/msrc)) i högst tre år efter produktens slut på datum för utökad support.
 
@@ -324,7 +324,7 @@ Följande versioner stöds med den angivna. tar-filen.
 |Version 16,04 LTS x64|CCM-Universalx64. &lt; bygge \> . tar|  
 
 
-## <a name="on-premises-mdm"></a><a name="bkmk_OnpremOS"></a>Lokal MDM
+## <a name="on-premises-mdm"></a><a name="bkmk_OnpremOS"></a> Lokal MDM
 
 Configuration Manager har inbyggda funktioner för att hantera mobila enheter som finns lokalt utan att installera klient program vara. Mer information finns i [Hantera mobila enheter med lokal infrastruktur](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
@@ -335,7 +335,7 @@ Configuration Manager har inbyggda funktioner för att hantera mobila enheter so
 - **Windows 10 Pro Enterprise** (x86, x64)  
 
 - **Windows 10 IoT Enterprise** (x86, x64)  
-    Den här versionen omfattar LTSC (Long-term Servicing Channel). Mer information finns i [Översikt över Windows 10 IoT Enterprise](https://docs.microsoft.com/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
+    Den här versionen omfattar LTSC (Long-term Servicing Channel). Mer information finns i [Översikt över Windows 10 IoT Enterprise](/windows/iot-core/windows-iot-enterprise).<!--SCCMDocs issue 560-->  
 
 - **Windows 10 IoT Mobile Enterprise**  
 
@@ -348,7 +348,7 @@ Configuration Manager har inbyggda funktioner för att hantera mobila enheter so
     > [!IMPORTANT]
     > Configuration Manager version 2006 släpper stöd för Windows 10 Mobile och Windows 10 Mobile Enterprise som en klient. Utfasningen presenterades av [version 1906](../changes/whats-new-in-version-1906.md#bkmk_deprecated).
 
-## <a name="exchange-server-connector"></a><a name="bkmk_ExSrvConOS"></a>Exchange Server-anslutning  
+## <a name="exchange-server-connector"></a><a name="bkmk_ExSrvConOS"></a> Exchange Server-anslutning  
 
 Configuration Manager stöder begränsad hantering av enheter som ansluter till Exchange-servern, utan att installera Configuration Manager-klienten. Mer information finns i [Hantera mobila enheter med Configuration Manager och Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 

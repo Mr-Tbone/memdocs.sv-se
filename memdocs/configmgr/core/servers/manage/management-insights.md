@@ -10,12 +10,12 @@ ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3d65c83d0a9fd009fa21a3b9e623145f87cc9498
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: de3c75982e19e6183260a2a5f99f65b9c785d27f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128141"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700522"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Hanterings insikter i Configuration Manager
 
@@ -67,7 +67,7 @@ Med vissa insikter kan du vidta åtgärder. Välj en insikt, Välj **Mer informa
 
 - Navigera till en filtrerad vy baserat på en fråga. Exempelvis visar insikterna i de tomma samlingarna bara de här samlingarna i listan över samlingar. Vidta sedan ytterligare åtgärder, till exempel ta bort en samling eller ändra dess medlemskaps regler.
 
-## <a name="management-insights-dashboard"></a><a name="bkmk_insights"></a>Instrument panel för hanterings insikter
+## <a name="management-insights-dashboard"></a><a name="bkmk_insights"></a> Instrument panel för hanterings insikter
 
 <!--1357979-->
 
@@ -131,7 +131,7 @@ Hjälper dig att integrera med många moln tjänster, vilket möjliggör modern 
 
 - **Aktivera Cloud Management Gateway**: Cloud Management Gateway (CMG) är ett enkelt sätt att hantera Configuration Manager klienter via Internet. Genom att distribuera CMG som en moln tjänst i Microsoft Azure kan du fortsätta att hantera och hantera innehåll till klienter som är centralt på Internet. Med CMG behöver du inte någon ytterligare lokal infrastruktur som exponeras för Internet. Mer information finns i [plan for CMG](../../clients/manage/cmg/plan-cloud-management-gateway.md).<!-- 451B9B3A-D86A-4EF1-ACC3-FE6A207886BA -->
 
-- **Göra det möjligt för enheter att hybrid Azure Active Directory anslutna**: Azure AD-anslutna enheter gör att användarna kan logga in med sina domänautentiseringsuppgifter och se till att enheterna uppfyller organisationens standarder för säkerhet och efterlevnad. Mer information finns i [design överväganden för Azure AD hybrid Identity](https://docs.microsoft.com/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-overview).<!-- 6DC6B149-8B48-45E9-B189-F1E12A62D994 -->
+- **Göra det möjligt för enheter att hybrid Azure Active Directory anslutna**: Azure AD-anslutna enheter gör att användarna kan logga in med sina domänautentiseringsuppgifter och se till att enheterna uppfyller organisationens standarder för säkerhet och efterlevnad. Mer information finns i [design överväganden för Azure AD hybrid Identity](/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-overview).<!-- 6DC6B149-8B48-45E9-B189-F1E12A62D994 -->
 
 - **Platser som inte har rätt https-konfiguration**: från och med version 2002, visar den här insikten platser i hierarkin som inte är korrekt konfigurerade för https. Den här konfigurationen förhindrar att platsen [synkroniserar samlings medlemskaps resultat till Azure AD-grupper](../../clients/manage/collections/create-collections.md#bkmk_aadcollsync). Det kan medföra att Azure AD Sync inte överför alla enheter. Hantering av dessa klienter kanske inte fungerar korrekt.<!--6268489--> Konfigurera [utökad http](../../plan-design/hierarchy/enhanced-http.md)eller aktivera minst en hanterings plats för https. Om du redan har konfigurerat platsen för HTTPS-kommunikation visas inte den här insikten.<!-- 73884047-3395-430E-B971-F853806D4349 -->
 
@@ -162,7 +162,7 @@ Insikter som fören klar hanteringen genom att rensa och konfigurera om samlinga
 
 <!--3607758-->
 
-Från och med version 2002 är den här gruppen av Microsoft Premier Field Engineering. Dessa insikter är ett exempel på de många fler kontroller som Microsoft Premier tillhandahåller i [hubben tjänster](https://docs.microsoft.com/services-hub/health/getting_started_with_on_demand_assessments).
+Från och med version 2002 är den här gruppen av Microsoft Premier Field Engineering. Dessa insikter är ett exempel på de många fler kontroller som Microsoft Premier tillhandahåller i [hubben tjänster](/services-hub/health/getting_started_with_on_demand_assessments).
 
 - **Active Directory säkerhets grupp identifiering har kon figurer ATS för att köras för ofta**: du behöver vanligt vis inte konfigurera Active Directory identifiering av säkerhets grupper så att den inträffar oftare än var tredje timme. En frekvent konfiguration kan ha en negativ inverkan på Active Directory, nätverket och Configuration Manager. Aktivera stegvis synkronisering i stället för att använda ett fullständigt synkroniseringsschema. Mer information finns i [Active Directory Group Discovery](../deploy/configure/about-discovery-methods.md#bkmk_aboutGroup).<!-- 4E739B65-AEC9-4B1D-8B36-AC6AC4A72022 -->
 
@@ -182,7 +182,7 @@ Från och med version 2002 är den här gruppen av Microsoft Premier Field Engin
 
 - **Uppdatera alla platser till samma version**: Använd samma version av Configuration Manager i en hierarki. Den här konfigurationen ser till att alla platser ger samma funktioner. Platser med olika versioner i samma hierarki introducerar samverkans scenarier. Senare versioner av Configuration Manager innehåller nya funktioner och löser kända problem. Mer information finns i [samverkan mellan olika versioner](../../plan-design/hierarchy/interoperability-between-different-versions.md).<!-- 88C630A5-6D6B-4DDB-95D7-78E12107970D -->
 
-Mer information om dessa insikter finns i [reparations steg för Configuration Manager Management Insights](https://docs.microsoft.com/services-hub/health/remediation-steps-configmgr).
+Mer information om dessa insikter finns i [reparations steg för Configuration Manager Management Insights](/services-hub/health/remediation-steps-configmgr).
 
 > [!TIP]
 > Om du redan är kund av Microsoft Unified eller Microsoft Premium loggar du in på [tjänstens hubb](https://serviceshub.microsoft.com/assessments/) för ytterligare utvärdering på begäran.

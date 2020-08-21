@@ -10,12 +10,12 @@ ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f7d774d620916f3d735a3545db5fe1e41988731d
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 4d2977fc34e9c398e9e266cbc9b223ea74a1dd18
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126689"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700239"
 ---
 # <a name="support-for-virtualization-environments-with-configuration-manager"></a>Stöd för virtualiseringslösningar med Configuration Manager
 
@@ -37,7 +37,7 @@ Du kan till exempel använda Microsoft Hyper-V Server 2016 för att vara värd f
 <a name="bkmk_note1"></a>
 
 > [!NOTE]
-> Configuration Manager stöder inte [kapslad virtualisering](https://docs.microsoft.com/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), som är ny i Windows Server 2016.
+> Configuration Manager stöder inte [kapslad virtualisering](/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), som är ny i Windows Server 2016.
 
 ### <a name="virtualization-environment-support"></a>Stöd för Virtualization Environment
 
@@ -51,7 +51,7 @@ I allmänhet ger Configuration Manager inga särskilda överväganden för virtu
 
 För att hjälpa till med Configuration Manager klient prestanda i virtuella miljöer som stöder flera användarsessioner inaktive ras användar principer som standard. Från och med version 1910 kan du aktivera användar principer i det här scenariot. Mer information finns i [om klient inställningar – aktivera användar princip för flera](../../clients/deploy/about-client-settings.md#enable-user-policy-for-multiple-user-sessions)användarsessioner.
 
-## <a name="microsoft-azure-vms"></a><a name="bkmk_Azure"></a>Microsoft Azure virtuella datorer
+## <a name="microsoft-azure-vms"></a><a name="bkmk_Azure"></a> Microsoft Azure virtuella datorer
 
 Configuration Manager kan köras på virtuella datorer i Azure precis som den körs lokalt i ditt data Center. Använd Configuration Manager med virtuella Azure-datorer i följande scenarier:
 
@@ -70,7 +70,7 @@ Mer information finns i [Configuration Manager på Azure](../../understand/confi
 
 ## <a name="windows-virtual-desktop"></a>Windows Virtual Desktop
 
-[Windows Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/) är en Desktop-och app Virtualization-tjänst som körs på Microsoft Azure. Från och med version 1906 använder Configuration Manager för att hantera dessa virtuella enheter som kör Windows i Azure. Mer information finns i [operativ system som stöds för klienter och enheter](supported-operating-systems-for-clients-and-devices.md#windows-virtual-desktop).
+[Windows Virtual Desktop](/azure/virtual-desktop/) är en Desktop-och app Virtualization-tjänst som körs på Microsoft Azure. Från och med version 1906 använder Configuration Manager för att hantera dessa virtuella enheter som kör Windows i Azure. Mer information finns i [operativ system som stöds för klienter och enheter](supported-operating-systems-for-clients-and-devices.md#windows-virtual-desktop).
 
 ## <a name="next-steps"></a>Nästa steg
 

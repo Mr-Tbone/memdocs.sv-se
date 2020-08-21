@@ -10,12 +10,12 @@ ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: fe8bbbf311baa335640ca7dea90ccd46da4fa5ea
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: efc43258e65752e7371c9baadf61598aac820062
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591718"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698001"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Hantera och övervaka fasindelade distributioner
 
@@ -79,7 +79,7 @@ Du kan pausa eller återuppta en stegvis distribution manuellt. Du kan till exem
 4. Välj fasen stegvis distribution och klicka på **pausa** eller **återuppta** i menyfliksområdet. 
 
 > [!NOTE]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kanske fortfarande ser det gamla namnet i Configuration Manager-produkten och dokumentationen medan-konsolen uppdateras. 
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kanske fortfarande ser det gamla namnet i Configuration Manager-produkten och dokumentationen medan-konsolen uppdateras. 
 
 <!-- Removed for 1806, need to clarify behavior with engineering
 When you suspend a phased deployment, it sets the available and deadline times on the active deployments to a future time. When you resume, it generates a new schedule based on when you resume the phased deployment. The new schedule helps to avoid problems if you resume after the original deadline. For example, the initial schedule has the required deadline seven days after the deployment is available. You suspend it on the second day. If you aren't ready to resume it until day eight, you don't want the deployment to be immediately past the deadline. So it generates a new deadline starting from when you resume the phased deployment on day eight. 
@@ -128,4 +128,3 @@ Fas målet är detsamma som **procent andelen lyckade distributioner** i fas ins
 
 Till exempel är följande egenskaper för samma fas som panelen efterföljande villkor som visas ovan där kriterierna är 65%:  
 ![Fliken fas inställningar i fas egenskaper](media/phase-properties-phase-settings.png)
-

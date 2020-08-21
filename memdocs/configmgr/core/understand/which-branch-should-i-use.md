@@ -10,12 +10,12 @@ ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 542069b82ea4c68a48ccc47b79007fd2fa25322a
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 1c54648f1f98ad5fef8efd16d2abe53f204a38f5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906016"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700675"
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Vilken gren av Configuration Manager bör jag använda?
 
@@ -85,7 +85,7 @@ LTSB baseras på version 1606. Den här grenen tar inte emot uppdateringar i kon
 Om du vill installera LTSB som en ny plats eller som en uppgradering från en System Center 2012 Configuration Manager-plats som stöds, använder du det 1606 versions-och [bas linje medium](../servers/manage/updates.md#bkmk_Baselines) som du får med system Center 2016. Du kan använda bas linje medier för att installera en ny plats som kör version 1606 av den aktuella grenen, eller en ny plats som kör den långsiktiga service grenen.
 
 > [!TIP]  
-> Läs mer om System Center 2016 i [dokumentationen för system center 2016](https://docs.microsoft.com/system-center/index). Den här dokumentationen identifierar också hur du hämtar System Center 2016, som kräver ett licens avtal för Microsoft eller liknande rättigheter.  
+> Läs mer om System Center 2016 i [dokumentationen för system center 2016](/system-center/index). Den här dokumentationen identifierar också hur du hämtar System Center 2016, som kräver ett licens avtal för Microsoft eller liknande rättigheter.  
 >  
 > Om du vill hitta Configuration Manager version 1606 i Volume Licensing Service Center (VLSC) går du till fliken **nedladdningar och nycklar** i [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), söker efter `System Center 2016` och väljer sedan antingen **System Center 2016 Data Center** eller **System Center 2016 standard**.  
 >  

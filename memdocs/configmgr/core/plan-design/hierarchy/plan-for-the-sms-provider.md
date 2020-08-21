@@ -10,12 +10,12 @@ ms.assetid: 5d5d6273-0d8a-43c7-865a-cdb1736dcae3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b01ea9b089da3cfcfc3e8d23e7ad25d27ab2fec7
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c83d0da07474c8b078ee226d249b73f00562e0f5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712556"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700171"
 ---
 # <a name="plan-for-the-sms-provider"></a>Planera för SMS-providern
 
@@ -67,7 +67,7 @@ För att stödja SMS-providern måste mål servern uppfylla följande krav:
     > [!Note]  
     > Varje SMS-provider försöker installera administrations tjänsten, som kräver ett certifikat. Den här tjänsten har ett beroende på IIS för att binda certifikatet till HTTPS-port 443. Om du aktiverar [utökat http](enhanced-http.md)binder platsen det certifikatet med IIS-API: er. Om din webbplats använder PKI måste du manuellt binda ett PKI-certifikat i IIS på SMS-providern. Från och med version 2002 använder platsen automatiskt platsens självsignerade certifikat.
 
-## <a name="locations"></a><a name="bkmk_location"></a>Platser  
+## <a name="locations"></a><a name="bkmk_location"></a> Platser  
 
 När du installerar en-plats installerar du automatiskt den första SMS-providern för platsen. Du kan ange någon av följande platser som stöds för SMS-providern:  
 
@@ -135,7 +135,7 @@ I följande avsnitt beskrivs fördelarna och nack delarna med att installera en 
 
   - Den här platsen kan använda systemresurser som annars skulle dedikeras till andra tjänster.  
 
-## <a name="authentication"></a><a name="bkmk_auth"></a>Anspråksautentisering
+## <a name="authentication"></a><a name="bkmk_auth"></a> Anspråksautentisering
 
 <!--1357013-->
 Från och med version 1810 kan du ange den lägsta autentiseringsnivån som administratörer kan använda för att komma åt Configuration Manager-platser. Den här funktionen tvingar administratörer att logga in på Windows med den nivå som krävs. Den gäller för alla komponenter som har åtkomst till SMS-providern. Till exempel Configuration Manager-konsolen, SDK-metoder och Windows PowerShell-cmdletar.
@@ -165,13 +165,13 @@ Följande nivåer är tillgängliga:
 
 - **Certifikatautentisering**: Kräv autentisering med ett giltigt certifikat som har utfärdats av en betrodd PKI-certifikatutfärdare. Du konfigurerar inte det här certifikatet i Configuration Manager. Configuration Manager kräver att administratören är inloggad i Windows med PKI.  
 
-- **Windows Hello för företag-autentisering**: Kräv autentisering med stark tvåfaktorautentisering som är knutet till en enhet och använder biometrik eller en PIN-kod. Mer information finns i [Windows Hello för företag](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).  
+- **Windows Hello för företag-autentisering**: Kräv autentisering med stark tvåfaktorautentisering som är knutet till en enhet och använder biometrik eller en PIN-kod. Mer information finns i [Windows Hello för företag](/windows/security/identity-protection/hello-for-business/hello-identity-verification).  
 
 ### <a name="exclusions"></a>Undantag
 
 På fliken **autentisering** i inställningar för hierarki kan du även utesluta vissa användare eller grupper. Använd det här alternativet sparsamt. Till exempel när vissa användare behöver åtkomst till Configuration Manager-konsolen, men inte kan autentisera till Windows på den nivå som krävs. Det kan också vara nödvändigt för Automation eller tjänster som körs under ett system kontos kontext.
 
-## <a name="about-sms-provider-languages"></a><a name="BKMK_SMSProvLanguages"></a>Om SMS-providerns språk  
+## <a name="about-sms-provider-languages"></a><a name="BKMK_SMSProvLanguages"></a> Om SMS-providerns språk  
 
 SMS-providern fungerar oberoende av visnings språket för den server där du installerar den.  
 
@@ -185,7 +185,7 @@ När Configuration Manager lagrar data för ett objekt i databasen beror de till
 
 - Configuration Manager lagrar objekt som en administrativ användare skapar med hjälp av det språk som användes för att skapa objektet. Dessa objekt visas i Configuration Manager-konsolen på samma språk. SMS-providern kan inte översätta dem och de har inte flera språk alternativ.  
 
-## <a name="use-multiple-sms-providers"></a><a name="BKMK_MultiSMSProv"></a>Använd flera SMS-providers  
+## <a name="use-multiple-sms-providers"></a><a name="BKMK_MultiSMSProv"></a> Använd flera SMS-providers  
 
 När installationen har slutförts för en plats kan du installera ytterligare SMS-providers för platsen. Om du vill installera ytterligare SMS-providers kör Configuration Manager-installationen på plats servern.
 
@@ -204,7 +204,7 @@ När du installerar flera SMS-providrar på en plats och en anslutningsbegäran 
 
 När du först ansluter en Configuration Manager-konsol till en plats, frågar anslutningen WMI på plats servern. Den här frågan identifierar en instans av SMS-providern som konsolen använder. Den här speciella instansen av SMS-providern är fortfarande använda av-konsolen tills sessionen avslutas. Om sessionen avslutas eftersom SMS-providern inte är tillgänglig i nätverket, upprepas den första frågan när du återansluter-konsolen till platsen. Det är möjligt att platsen tilldelar samma instans av SMS-providern som inte är tillgänglig. Om det här problemet inträffar försöker du att återansluta-konsolen tills platsen returnerar en tillgänglig SMS-provider.  
 
-## <a name="about-the-sms-provider-namespace"></a><a name="BKMK_SMSProvNamespace"></a>Om SMS-Providerns namn område  
+## <a name="about-the-sms-provider-namespace"></a><a name="BKMK_SMSProvNamespace"></a> Om SMS-Providerns namn område  
 
 Configuration Manager WMI-schemat definierar strukturen för SMS-providern. Schema namn rymder beskriver platsen för Configuration Manager data i SMS-providerns schema. Följande tabell innehåller några av de vanliga namn rymder som SMS-providern använder:  
 
@@ -216,7 +216,7 @@ Configuration Manager WMI-schemat definierar strukturen för SMS-providern. Sche
 |`Root\CCM`|Configuration Manager klient konfigurations principer och klient data.|  
 |`Root\CIMv2\SMS`|Platsen för de inventerings rapporterings klasser som inventerings klient agenten samlar in. Klienterna kompilerar de här inställningarna under utvärderingen av dator principer. De här inställningarna baseras på klient inställnings konfigurationen för datorn.|  
 
-## <a name="os-deployment-requirements"></a><a name="BKMK_WAIKforSMSProv"></a>Krav för operativ Systems distribution
+## <a name="os-deployment-requirements"></a><a name="BKMK_WAIKforSMSProv"></a> Krav för operativ Systems distribution
 
 Datorn där du installerar en instans av SMS-providern kräver en version av Windows ADK som stöds.  
 
@@ -232,7 +232,7 @@ När du hanterar operativ system distributioner kan SMS-providern utföra olika 
 
 Installationen av Windows ADK kan kräva upp till 650 MB ledigt diskutrymme på varje dator där SMS-providern installeras. Kravet på högt disk utrymme krävs för att Configuration Manager ska kunna installera Windows PE-startavbildningarna.  
 
-## <a name="administration-service"></a><a name="bkmk_admin-service"></a>Administrations tjänst
+## <a name="administration-service"></a><a name="bkmk_admin-service"></a> Administrations tjänst
 
 <!--3607711, fka 1321523-->
 

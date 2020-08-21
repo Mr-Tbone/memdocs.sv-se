@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7fa4fbc7cb4e66a1ad47cb0c14a5f7e52abb5bf5
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 1e24a7fe6a81408de48a73889db923cc8c5094ea
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126435"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700556"
 ---
 # <a name="log-file-reference"></a>Loggfilsreferens
 
@@ -111,11 +111,11 @@ I följande avsnitt finns information om de olika loggfilerna som är tillgängl
 
   - [WSUS-Server](#BKMK_WSUSLog)  
 
-## <a name="client-log-files"></a><a name="BKMK_ClientLogs"></a>Loggfiler för klienter
+## <a name="client-log-files"></a><a name="BKMK_ClientLogs"></a> Loggfiler för klienter
 
 I följande avsnitt listas loggfilerna som rör klient åtgärder och klient installation.  
 
-### <a name="client-operations"></a><a name="BKMK_ClientOpLogs"></a>Klient åtgärder
+### <a name="client-operations"></a><a name="BKMK_ClientOpLogs"></a> Klient åtgärder
 
 I följande tabell listas loggfilerna som finns på Configuration Manager-klienten.  
 
@@ -189,7 +189,7 @@ I följande tabell listas loggfilerna som finns på Configuration Manager-klient
 |wakeprxy-install.log|Registrerar installations information när klienter tar emot klient inställnings alternativet för aktivering av Väcknings proxy.|  
 |wakeprxy-uninstall.log|Innehåller information om avinstallation av Wake-up-proxy när klienter tar emot klient inställnings alternativet för att inaktivera Wake-up-proxy, om Wake-up proxy tidigare har Aktiver ATS.|  
 
-### <a name="client-installation"></a><a name="BKMK_ClientInstallLog"></a>Klient installation
+### <a name="client-installation"></a><a name="BKMK_ClientInstallLog"></a> Klient installation
 
 I följande tabell listas loggfilerna som innehåller information som rör installationen av Configuration Manager-klienten.  
 
@@ -200,7 +200,7 @@ I följande tabell listas loggfilerna som innehåller information som rör insta
 |CcmRepair.log|Registrerar klientagentens reparationsaktiviteter.|  
 |client.msi.log|Registrerar konfigurations uppgifter som har utförts av client.msi. Kan användas för att felsöka problem med installation eller borttagning av klient.|  
 
-### <a name="client-for-linux-and-unix"></a><a name="BKMK_LogFilesforLnU"></a>Klient för Linux och UNIX
+### <a name="client-for-linux-and-unix"></a><a name="BKMK_LogFilesforLnU"></a> Klient för Linux och UNIX
 
 > [!Important]  
 > Från och med version 1902 stöder Configuration Manager inte Linux-eller UNIX-klienter.
@@ -219,7 +219,7 @@ Configuration Manager-klienten för Linux och UNIX registrerar information i fö
 
 Båda loggfiler stöder flera loggningsnivåer:  
 
-- **scxcm. log**. Ändra loggnings nivån genom att redigera **/opt/Microsoft/ConfigMgr/etc/scxcm.conf** och ändra varje instans av taggen **modul** till den logg nivå som du vill använda:  
+- **scxcm. log**. Ändra loggnings nivån genom att redigera **/opt/Microsoft/ConfigMgr/etc/scxcm.conf** och ändra varje instans av taggen  **modul** till den logg nivå som du vill använda:  
 
   - FEL: anger problem som kräver åtgärd  
 
@@ -239,7 +239,7 @@ Båda loggfiler stöder flera loggningsnivåer:
 
 Under normala drifts förhållanden använder du fel loggnings nivån. Den här logg nivån skapar den minsta logg filen. När logg nivån ökas från fel till varning, till information och sedan till spårning, skapas en större loggfil när mer data skrivs till filen.  
 
-#### <a name="manage-log-files-for-the-linux-and-unix-client"></a><a name="BKMK_ManageLinuxLogs"></a>Hantera loggfiler för Linux-och UNIX-klienten
+#### <a name="manage-log-files-for-the-linux-and-unix-client"></a><a name="BKMK_ManageLinuxLogs"></a> Hantera loggfiler för Linux-och UNIX-klienten
 
 Klienten för Linux och UNIX begränsar inte den maximala storleken för klientens loggfiler. Innehållet i dess. log-filer kopieras inte heller automatiskt till en annan fil, till exempel en. lo_-fil. Om du vill kontrol lera den maximala storleken på loggfiler implementerar du en process för att hantera loggfilerna oberoende av Configuration Manager-klienten för Linux och UNIX.  
 
@@ -247,7 +247,7 @@ Du kan till exempel använda standard kommandot **logrotate** i Linux och UNIX f
 
 Du hittar mer information om **logrotate** i dokumentationen till de Linux- och UNIX-distributioner du använder.  
 
-### <a name="client-for-mac-computers"></a><a name="BKMK_LogfilesforMac"></a>Klient för Mac-datorer
+### <a name="client-for-mac-computers"></a><a name="BKMK_LogfilesforMac"></a> Klient för Mac-datorer
 
 Configuration Manager-klienten för Mac-datorer registrerar information i följande loggfiler på Mac-datorn:  
 
@@ -260,11 +260,11 @@ Configuration Manager-klienten för Mac-datorer registrerar information i följa
 
 Logg filen **SMS_DM. log** på plats system servern registrerar även kommunikationen mellan Mac-datorer och hanterings platsen som har kon figurer ATS för mobila enheter och Mac-datorer.  
 
-## <a name="server-log-files"></a><a name="BKMK_ServerLogs"></a>Serverns loggfiler
+## <a name="server-log-files"></a><a name="BKMK_ServerLogs"></a> Serverns loggfiler
 
 I följande avsnitt listas loggfiler som finns på plats servern eller som är relaterade till vissa plats system roller.  
 
-### <a name="site-server-and-site-systems"></a><a name="BKMK_SiteSiteServerLog"></a>Plats Server och plats system
+### <a name="site-server-and-site-systems"></a><a name="BKMK_SiteSiteServerLog"></a> Plats Server och plats system
 
 I följande tabell visas de loggfiler som finns på Configuration Manager plats Server och plats system servrar.  
 
@@ -353,7 +353,7 @@ I följande tabell visas de loggfiler som finns på Configuration Manager plats 
 |swmproc.log|Registrerar behandling av avläsningsfiler och inställningar.|Platsserver|
 |UXAnalyticsUploadWorker. log|Registrerar data uppladdning till tjänsten för slut punkts analys.|Platsserver|
 
-### <a name="site-server-installation"></a><a name="BKMK_SiteInstallLog"></a>Installation av plats Server
+### <a name="site-server-installation"></a><a name="BKMK_SiteInstallLog"></a> Installation av plats Server
 
 Följande tabell listar de loggfiler som innehåller information relaterad till platsinstallationen.  
 
@@ -365,7 +365,7 @@ Följande tabell listar de loggfiler som innehåller information relaterad till 
 |SMS_BOOTSTRAP.log|Registrerar information om förloppet för att starta installationen av en sekundär plats. Detaljer om själva installationsprocessen finns i ConfigMgrSetup.log.|Platsserver|  
 |smstsvc.log|Registrerar information om installation, användning och borttagning av en Windows-tjänst. Windows använder den här tjänsten för att testa nätverks anslutningar och behörigheter mellan servrar. Det använder dator kontot för den server som skapar anslutningen.|Plats Server och plats system Server|  
 
-### <a name="data-warehouse-service-point"></a><a name="BKMK_DataWarehouse"></a>Informations lager service punkt
+### <a name="data-warehouse-service-point"></a><a name="BKMK_DataWarehouse"></a> Informations lager service punkt
 
 I följande tabell listas loggfilerna som innehåller information som rör informations lager tjänst platsen.  
 
@@ -375,7 +375,7 @@ I följande tabell listas loggfilerna som innehåller information som rör infor
 |DWSSSetup. log|Registrerar meddelanden som genereras av installationen av en service punkt för informations lager.|Platssystemserver|  
 |Microsoft.ConfigMgrDataWarehouse. log|Registrerar information om datasynkronisering mellan plats databasen och informations lager databasen.|Platssystemserver|  
 
-### <a name="fallback-status-point"></a><a name="BKMK_FSPLog"></a>Återställnings status punkt
+### <a name="fallback-status-point"></a><a name="BKMK_FSPLog"></a> Återställnings status punkt
 
 Följande tabell listar de loggfiler som innehåller information relaterad till återställningsstatusplatsen.  
 
@@ -385,7 +385,7 @@ Följande tabell listar de loggfiler som innehåller information relaterad till 
 |fspMSI.log|Registrerar meddelanden som skapas av installation av en återställningsstatusplats.|Platssystemserver|  
 |fspmgr.log|Registrerar status för platssystemrollen återställningsstatusplats.|Platssystemserver|  
 
-### <a name="management-point"></a><a name="BKMK_MPLog"></a>Hanterings plats
+### <a name="management-point"></a><a name="BKMK_MPLog"></a> Hanterings plats
 
 Följande tabell listar de loggfiler som innehåller information relaterad till hanteringsplatsen.  
 
@@ -415,7 +415,7 @@ Följande tabell listar de loggfiler som innehåller information relaterad till 
 |MPSetup.log|Registrerar adapterprocessen för installationen av hanteringsplatsen.|Platsserver|  
 |UserService. log|Registrerar användar förfrågningar från Software Center, hämtar/installerar användar tillgängliga program från servern.|Platssystemserver|
 
-### <a name="service-connection-point"></a><a name="BKMK_WITLog"></a>Tjänst anslutnings punkt
+### <a name="service-connection-point"></a><a name="BKMK_WITLog"></a> Tjänst anslutnings punkt
 
 I följande tabell listas loggfilerna som innehåller information som rör tjänstanslutningspunkten.  
 
@@ -442,7 +442,7 @@ I följande tabell listas loggfilerna som innehåller information som rör tjän
 |SrvBoot.log|Innehåller information om installationstjänsten för tjänstanslutningspunkt.|Dator med tjänstanslutningspunkten|  
 |Statesys.log|Innehåller information om bearbetningen av hanteringsmeddelanden för mobila enheter.|Primär plats och central administrationswebbplats|  
 
-### <a name="software-update-point"></a><a name="BKMK_SUPLog"></a>Program uppdaterings plats
+### <a name="software-update-point"></a><a name="BKMK_SUPLog"></a> Program uppdaterings plats
 
 I följande tabell listas loggfilerna som innehåller information som rör program uppdaterings platsen.  
 
@@ -459,26 +459,26 @@ I följande tabell listas loggfilerna som innehåller information som rör progr
 |WUSSyncXML.log|Innehåller information om inventerings verktyget för Sync-processen för Microsoft Updates.|En klient dator som är konfigurerad som Sync-värd för inventerings verktyget för Microsoft Updates|  
 
 
-## <a name="log-files-by-functionality"></a><a name="BKMK_FunctionLogs"></a>Loggfiler efter funktioner
+## <a name="log-files-by-functionality"></a><a name="BKMK_FunctionLogs"></a> Loggfiler efter funktioner
 
 I följande avsnitt listas loggfiler relaterade till Configuration Manager functions.  
 
-### <a name="application-management"></a><a name="BKMK_AppManageLog"></a>Program hantering
+### <a name="application-management"></a><a name="BKMK_AppManageLog"></a> Program hantering
 
 I följande tabell listas loggfilerna som innehåller information som rör program hantering.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|AppIntentEval.log|Innehåller information om det aktuella och avsedda programtillståndet, huruvida kraven var uppfyllda, distributionstyper och beroenden.|Klient|  
-|AppDiscovery.log|Innehåller information om identifieringen eller detekteringen av program på klientdatorer.|Klient|  
-|AppEnforce.log|Innehåller information om verkställningsåtgärder (installation och avinstallation) som har vidtagits med program på klienten.|Klient|  
-|AppGroupHandler. log|Från och med version 1906, identifiering och tillämpnings information för program grupper|Klient|
+|AppIntentEval.log|Innehåller information om det aktuella och avsedda programtillståndet, huruvida kraven var uppfyllda, distributionstyper och beroenden.|Client|  
+|AppDiscovery.log|Innehåller information om identifieringen eller detekteringen av program på klientdatorer.|Client|  
+|AppEnforce.log|Innehåller information om verkställningsåtgärder (installation och avinstallation) som har vidtagits med program på klienten.|Client|  
+|AppGroupHandler. log|Från och med version 1906, identifiering och tillämpnings information för program grupper|Client|
 |awebsctl.log|Registrerar övervaknings aktiviteter för plats system rollen Programkatalog-webbtjänst punkt.|Platssystemserver|  
 |awebsvcMSI.log|Innehåller detaljerad installationsinformation om programkatalogens webbtjänstplats platssystemsroll.|Platssystemserver|  
 |BusinessAppProcessWorker. log|Bearbetar bearbetning för Microsoft Store för företags program.|Platsserver|
-|Ccmsdkprovider.log|Innehåller information om aktiviteterna som genomförs med programhanteringens SDK.|Klient|  
+|Ccmsdkprovider.log|Innehåller information om aktiviteterna som genomförs med programhanteringens SDK.|Client|  
 |colleval.log|Registrerar information när samlingar skapas, ändras och tas bort av Samlingsutvärderaren.|Platssystemserver|  
-|ConfigMgrSoftwareCatalog.log|Innehåller information om programkatalogens aktiviteter, däribland hur den använder Silverlight.|Klient|  
+|ConfigMgrSoftwareCatalog.log|Innehåller information om programkatalogens aktiviteter, däribland hur den använder Silverlight.|Client|  
 |MSfBSyncWorker. log|Registrerar information om kommunikationen med Microsoft Store för företag.|Dator med tjänstanslutningspunkten|
 |NotiCtrl. log|Meddelanden om program begär Anden.|Platsserver|  
 |portlctl.log|Innehåller information om övervakningsaktiviteter för programkatalogens webbplats platssystemsroll.|Platssystemserver|  
@@ -486,13 +486,13 @@ I följande tabell listas loggfilerna som innehåller information som rör progr
 |PrestageContent.log|Innehåller information om användningen av ExtractContent.exe-verktyget på en fjärr, förinstallerad distributions plats. Det här verktyget packar upp innehåll som har exporterats till en fil.|Platssystemserver|  
 |ServicePortalWebService.log|Innehåller information om programkatalogens webbtjänsts aktiviteter.|Platssystemserver|  
 |ServicePortalWebSite.log|Innehåller information programkatalogens webbplats aktiviteter.|Platssystemserver|  
-|SettingsAgent. log|Tillämpning av specifika program, registrerar dirigering av program grupps utvärdering och information om samhanterings principer.|Klient|
+|SettingsAgent. log|Tillämpning av specifika program, registrerar dirigering av program grupps utvärdering och information om samhanterings principer.|Client|
 |SMS_BUSINESS_APP_PROCESS_MANAGER. log|Loggfil för komponent som synkroniserar appar från Microsoft Store för företag.|Platsserver|
 |SMS_CLOUDCONNECTION. log|Registrerar information om moln tjänster.|Dator med tjänstanslutningspunkten|
 |SMSdpmon.log|Innehåller information om den schemalagda aktiviteten för övervakning av distributionsplatsens hälsa som är konfigurerad på en distributionsplats.|Platsserver|  
-|SoftwareCatalogUpdateEndpoint.log|Registrerar aktiviteter för att hantera URL: en för Programkatalog som visas i Software Center.|Klient|  
-|SoftwareCenterSystemTasks.log|Innehåller information om aktiviteter som är relaterade till den nödvändiga komponent valideringen av Software Center.|Klient|  
-|TSDTHandler. log|För distributions typen för aktivitetssekvensen. Den loggar processen från App-tvång (installera eller avinstallera) till påstarten av aktivitetssekvensen. Använd den med AppEnforce. log och Smsts. log.|Klient|<!-- MEMDocs#336 -->
+|SoftwareCatalogUpdateEndpoint.log|Registrerar aktiviteter för att hantera URL: en för Programkatalog som visas i Software Center.|Client|  
+|SoftwareCenterSystemTasks.log|Innehåller information om aktiviteter som är relaterade till den nödvändiga komponent valideringen av Software Center.|Client|  
+|TSDTHandler. log|För distributions typen för aktivitetssekvensen. Den loggar processen från App-tvång (installera eller avinstallera) till påstarten av aktivitetssekvensen. Använd den med AppEnforce. log och Smsts. log.|Client|<!-- MEMDocs#336 -->
 
 #### <a name="packages-and-programs"></a>Paket och program
 
@@ -501,15 +501,15 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
 |colleval.log|Registrerar information när samlingar skapas, ändras och tas bort av Samlingsutvärderaren.|Platsserver|  
-|execmgr.log|Innehåller information om paket och aktivitetssekvenser som körs.|Klient|  
+|execmgr.log|Innehåller information om paket och aktivitetssekvenser som körs.|Client|  
 
-### <a name="asset-intelligence"></a><a name="BKMK_AILog"></a>Tillgångsinformation
+### <a name="asset-intelligence"></a><a name="BKMK_AILog"></a> Tillgångsinformation
 
 I den följande tabellen listas loggfilerna som innehåller information som rör Tillgångsinformation.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|AssetAdvisor.log|Innehåller information om aktiviteter som rör Tillgångsinformations inventeringsåtgärder.|Klient|  
+|AssetAdvisor.log|Innehåller information om aktiviteter som rör Tillgångsinformations inventeringsåtgärder.|Client|  
 |aikbmgr.log|Innehåller information om bearbetningen av XML-filer från inkorgen för uppdateringen av Tillgångsinformations katalog.|Platsserver|  
 |AIUpdateSvc.log|Registrerar interaktionen för Tillgångsinformation-platsen för synkronisering med moln tjänsten.|Platssystemserver|  
 |AIUSMSI.log|Innehåller information om installationen av plats system rollen för Tillgångsinformation-synkroniseringstjänsten.|Platssystemserver|  
@@ -517,7 +517,7 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |ManagedProvider.log|Innehåller information om identifiering av program med en motsvarande programidentifieringstagg. Registrerar även aktiviteter som rör maskin varu inventering.|Platssystemserver|  
 |MVLSImport.log|Innehåller information om bearbetningen av importerade licensfiler.|Platssystemserver|  
 
-### <a name="backup-and-recovery"></a><a name="BKMK_BnRLog"></a>Säkerhets kopiering och återställning
+### <a name="backup-and-recovery"></a><a name="BKMK_BnRLog"></a> Säkerhets kopiering och återställning
 
 I följande tabell listas loggfiler som innehåller information som rör säkerhets kopierings-och återställnings åtgärder, inklusive webbplats återställning och ändringar av SMS-providern.  
 
@@ -528,7 +528,7 @@ I följande tabell listas loggfiler som innehåller information som rör säkerh
 |smssqlbkup.log|Innehåller utdata från säkerhets kopierings processen för plats databasen när SQL Server installeras på en server som inte är plats Server.|Platsdatabasserver|  
 |Smswriter.log|Registrerar information om status för den Configuration Manager VSS-skrivaren som används av säkerhets kopierings processen.|Platsserver|  
 
-### <a name="certificate-enrollment"></a><a name="BKMK_CertificateEnrollment"></a>Certifikat registrering
+### <a name="certificate-enrollment"></a><a name="BKMK_CertificateEnrollment"></a> Certifikat registrering
 
 I följande tabell visas Configuration Manager loggfiler som innehåller information som rör certifikat registrering. Certifikat registrering använder certifikat registrerings platsen och Configuration Manager-principmodulen på den server som kör registrerings tjänsten för nätverks enheter (NDES).  
 
@@ -553,7 +553,7 @@ Du kan även använda de följande loggfilerna:
     > [!NOTE]  
     > Den här filen finns i mappen för NDES-konto profilen, till exempel i C:\Users\SCEPSvc. Mer information om hur du aktiverar NDES-loggning finns i avsnittet [Aktivera loggning](https://social.technet.microsoft.com/wiki/contents/articles/9063.active-directory-certificate-services-ad-cs-network-device-enrollment-service-ndes.aspx#Enable_Logging) i NDES-wikin.  
 
-### <a name="client-notification"></a><a name="BKMK_BGB"></a>Klient meddelande
+### <a name="client-notification"></a><a name="BKMK_BGB"></a> Klient meddelande
 
 I den följande tabellen listas loggfilerna som innehåller information som rör klientmeddelanden.  
 
@@ -563,8 +563,8 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |BGBServer.log|Registrerar meddelande serverns aktiviteter, till exempel klient-server-kommunikation och skickar uppgifter till klienter. Registrerar också information om genereringen av online-och uppgifts status-filer som ska skickas till plats servern.|Hanteringsplats|  
 |BgbSetup.log|Registrerar aktiviteter för installations omslutningen av aviserings servern under installation och avinstallation.|Hanteringsplats|  
 |bgbisapiMSI.log|Registrerar information om installation och avinstallation av meddelande servern.|Hanteringsplats|  
-|BgbHttpProxy.log|Innehåller information om HTTP-meddelandeproxyns aktiviteter då den vidarebefordrar meddelanden från klienter som använder HTTP till och från meddelandeservern.|Klient|  
-|CcmNotificationAgent.log|Registrerar meddelande agentens aktiviteter, till exempel kommunikation mellan klienter och information om uppgifter som tagits emot och skickas till andra klient agenter.|Klient|  
+|BgbHttpProxy.log|Innehåller information om HTTP-meddelandeproxyns aktiviteter då den vidarebefordrar meddelanden från klienter som använder HTTP till och från meddelandeservern.|Client|  
+|CcmNotificationAgent.log|Registrerar meddelande agentens aktiviteter, till exempel kommunikation mellan klienter och information om uppgifter som tagits emot och skickas till andra klient agenter.|Client|  
 
 ### <a name="cloud-management-gateway"></a>Gateway för molnhantering
 
@@ -572,7 +572,7 @@ I följande tabell listas loggfilerna som innehåller information som rör Cloud
 
 |Loggnamn|Beskrivning|Dator med loggfil|
 |--------------|-----------------|----------------------------|  
-|CloudMgr.log|Innehåller information om hur du distribuerar tjänsten Cloud Management Gateway, kontinuerlig tjänst status och använder data som är kopplade till tjänsten. Om du vill konfigurera loggnings nivån redigerar du **loggnings nivå** svärdet i följande register nyckel:`HKLM\SOFTWARE\ Microsoft\SMS\COMPONENTS\ SMS_CLOUD_ SERVICES_MANAGER`|Mappen *INSTALLDIR* på den primära plats servern eller certifikat utfärdaren.|
+|CloudMgr.log|Innehåller information om hur du distribuerar tjänsten Cloud Management Gateway, kontinuerlig tjänst status och använder data som är kopplade till tjänsten. Om du vill konfigurera loggnings nivån redigerar du **loggnings nivå** svärdet i följande register nyckel: `HKLM\SOFTWARE\ Microsoft\SMS\COMPONENTS\ SMS_CLOUD_ SERVICES_MANAGER`|Mappen *INSTALLDIR* på den primära plats servern eller certifikat utfärdaren.|
 |CMGSetup. log <sup> [Anmärkning 1](#bkmk_note1)</sup>|Innehåller information om den andra fasen av distributionen av moln hanterings Gateway (lokal distribution i Azure). Om du vill konfigurera loggnings nivån använder du inställningen **spåra nivå** (**information** (standard), **utförligt**, **fel**) på fliken **konfiguration av Azure portal\Cloud Services** .|**%AppRoot%\Logs** på din Azure-Server eller mappen SMS/logs på plats system servern|
 |CMGService. log <sup> [Anmärkning 1](#bkmk_note1)</sup>|Innehåller information om kärn komponenten för Cloud Management Gateway-tjänsten i Azure. Om du vill konfigurera loggnings nivån använder du inställningen **spåra nivå** (**information** (standard), **utförligt**, **fel**) på fliken **konfiguration av Azure portal\Cloud Services** .|**%AppRoot%\Logs** på din Azure-Server eller mappen SMS/logs på plats system servern|
 |SMS_Cloud_ProxyConnector. log|Innehåller information om hur du konfigurerar anslutningar mellan Cloud Management Gateway-tjänsten och anslutnings punkten för Cloud Management Gateway.|Platssystemserver|
@@ -582,23 +582,23 @@ I följande tabell listas loggfilerna som innehåller information som rör Cloud
 - Använd **CMGService. log** och **SMS_Cloud_ProxyConnector. log**för fel sökning av tjänstens hälsa.
 - Vid fel sökning av klient trafik använder du **CMGHttpHandler. log**, **CMGService. log**och **SMS_Cloud_ProxyConnector. log**.
 
-#### <a name="note-1-logs-synchronized-from-azure"></a><a name="bkmk_note1"></a>Anmärkning 1: loggar synkroniserade från Azure
+#### <a name="note-1-logs-synchronized-from-azure"></a><a name="bkmk_note1"></a> Anmärkning 1: loggar synkroniserade från Azure
 
 Dessa är lokala Configuration Manager loggfiler som Cloud Service Manager synkroniserar från Azure Storage var femte minut. Cloud Management Gateway pushar loggar till Azure Storage var femte minut. Den maximala fördröjningen är 10 minuter. Utförliga växlar påverkar både lokala och fjärranslutna loggar. De faktiska fil namnen inkluderar tjänst namnet och roll instans identifieraren. Till exempel CMG-*ServiceName* - *RoleInstanceID*-CMGSetup. log
 
-### <a name="compliance-settings-and-company-resource-access"></a><a name="BKMK_CompSettingsLog"></a>Kompatibilitetsinställningar och åtkomst till företags resurser
+### <a name="compliance-settings-and-company-resource-access"></a><a name="BKMK_CompSettingsLog"></a> Kompatibilitetsinställningar och åtkomst till företags resurser
 
 I den följande tabellen listas loggfilerna som innehåller information som rör efterlevnadsinställningar och åtkomst till företagets resurser.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|CIAgent.log|Innehåller information om processen för reparation och efterlevnad för efterlevnadsinställningar, programuppdateringar och programhantering.|Klient|  
-|CITaskManager.log|Innehåller information om schemaläggning av konfigurationsobjekt.|Klient|  
-|DCMAgent.log|Innehåller översiktlig information om utvärderingen, konfliktrapporteringen och reparationen av konfigurationsobjekt och program.|Klient|  
-|DCMReporting.log|Innehåller information om rapporteringen av principplattformsresultat till tillståndsmeddelanden för konfigurationsobjekt.|Klient|  
-|DcmWmiProvider.log|Registrerar information om att läsa konfigurations objekt konfigurationsobjektssynkroniseringsprogram från WMI.|Klient|  
+|CIAgent.log|Innehåller information om processen för reparation och efterlevnad för efterlevnadsinställningar, programuppdateringar och programhantering.|Client|  
+|CITaskManager.log|Innehåller information om schemaläggning av konfigurationsobjekt.|Client|  
+|DCMAgent.log|Innehåller översiktlig information om utvärderingen, konfliktrapporteringen och reparationen av konfigurationsobjekt och program.|Client|  
+|DCMReporting.log|Innehåller information om rapporteringen av principplattformsresultat till tillståndsmeddelanden för konfigurationsobjekt.|Client|  
+|DcmWmiProvider.log|Registrerar information om att läsa konfigurations objekt konfigurationsobjektssynkroniseringsprogram från WMI.|Client|  
 
-### <a name="configuration-manager-console"></a><a name="BKMK_ConsoleLog"></a>Configuration Manager-konsol
+### <a name="configuration-manager-console"></a><a name="BKMK_ConsoleLog"></a> Configuration Manager-konsol
 
 I följande tabell listas loggfilerna som innehåller information som rör Configuration Manager-konsolen.  
 
@@ -608,7 +608,7 @@ I följande tabell listas loggfilerna som innehåller information som rör Confi
 |SmsAdminUI.log|Innehåller information om driften av Configuration Manager-konsolen.|Dator som kör Configuration Manager-konsolen|  
 |Smsprov.log|Registrerar SMS-providerns aktiviteter. Configuration Manager-konsol aktiviteter använder SMS-providern.|Platsserver eller platssystemsserver|  
 
-### <a name="content-management"></a><a name="BKMK_ContentLog"></a>Innehålls hantering
+### <a name="content-management"></a><a name="BKMK_ContentLog"></a> Innehålls hantering
 
 I den följande tabellen listas loggfilerna som innehåller information som rör innehållshantering.  
 
@@ -634,11 +634,11 @@ Loggfilerna på Configuration Manager-klienten finns i följande katalog: `%WinD
 |---------|---------|---------|
 | M365ADeploymentPlanWorker. log | Information om distributions plan synkronisera från Desktop Analytics Cloud service till lokala Configuration Manager |Tjänstanslutningspunkt|
 | M365ADeviceHealthWorker. log | Information om enhetens hälso överföring från Configuration Manager till Microsoft Cloud |Tjänstanslutningspunkt|
-| M365AHandler. log | Information om inställnings principen för Skriv bords analys |Klient|
+| M365AHandler. log | Information om inställnings principen för Skriv bords analys |Client|
 | M365AUploadWorker. log | Information om samling och enhets uppladdning från Configuration Manager till Microsoft Cloud |Tjänstanslutningspunkt|
 | SmsAdminUI.log | Information om Configuration Manager-konsol aktivitet som att konfigurera Azure Cloud Services  |Tjänstanslutningspunkt|
 
-### <a name="discovery"></a><a name="BKMK_DiscoveryLog"></a>Identifikation
+### <a name="discovery"></a><a name="BKMK_DiscoveryLog"></a> Identifikation
 
 I följande tabell listas loggfilerna som innehåller information som rör identifiering.  
 
@@ -649,30 +649,30 @@ I följande tabell listas loggfilerna som innehåller information som rör ident
 |adusrdis.log|Innehåller information om åtgärder som rör Identifiering av Active Directory-användare.|Platsserver|  
 |ADForestDisc.Log|Innehåller information om åtgärder som rör Identifiering av Active Directory-skogar.|Platsserver|  
 |ddm.log|Registrerar aktiviteter hos identifieringsdatahanteraren.|Platsserver|  
-|InventoryAgent.log|Innehåller information om aktiviteter som rör maskinvaruinventering, programinventering och pulsslagsidentifieringsåtgärder på klienten.|Klient|  
+|InventoryAgent.log|Innehåller information om aktiviteter som rör maskinvaruinventering, programinventering och pulsslagsidentifieringsåtgärder på klienten.|Client|  
 |netdisc.log|Innehåller information om nätverksidentifieringsåtgärder.|Platsserver|  
 
-### <a name="endpoint-analytics"></a><a name="bkmk_analytics"></a>Slut punkts analys
+### <a name="endpoint-analytics"></a><a name="bkmk_analytics"></a> Slut punkts analys
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
 |UXAnalyticsUploadWorker. log|Registrerar data uppladdning till tjänsten för slut punkts analys.|Platsserver|  
-|SensorWmiProvider. log|Registrerar aktiviteten för WMI-providern för slut punkts analys sensorn.|Klient|  
-|SensorEndpoint. log|Registrerar körning av slut punkts analys princip och uppladdning av klient data till plats servern.|Klient|
-|SensorManagedProvider. log|Registrerar insamling och bearbetning av händelser och information för slut punkts analys.|Klient|
+|SensorWmiProvider. log|Registrerar aktiviteten för WMI-providern för slut punkts analys sensorn.|Client|  
+|SensorEndpoint. log|Registrerar körning av slut punkts analys princip och uppladdning av klient data till plats servern.|Client|
+|SensorManagedProvider. log|Registrerar insamling och bearbetning av händelser och information för slut punkts analys.|Client|
 
-### <a name="endpoint-protection"></a><a name="BKMK_EPLog"></a>Endpoint Protection
+### <a name="endpoint-protection"></a><a name="BKMK_EPLog"></a> Endpoint Protection
 
 I den följande tabellen listas loggfilerna som innehåller information som rör Endpoint Protection.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|EndpointProtectionAgent.log|Innehåller information om installationen av Endpoint Protection-klienten och tillämpningen av principer mot skadlig kod på den klienten.|Klient|  
+|EndpointProtectionAgent.log|Innehåller information om installationen av Endpoint Protection-klienten och tillämpningen av principer mot skadlig kod på den klienten.|Client|  
 |EPCtrlMgr.log|Innehåller information om synkronisering av information om hot från skadlig kod från Endpoint Protection roll server med Configuration Manager-databasen.|Platssystemserver|  
 |EPMgr.log|Övervakar statusen för Endpoint Protections platssystemsroll.|Platssystemserver|  
 |EPSetup.log|Ger information om installationen av Endpoint Protections platssystemsroll.|Platssystemserver|  
 
-### <a name="extensions"></a><a name="BKMK_Extensions"></a>Tillägg
+### <a name="extensions"></a><a name="BKMK_Extensions"></a> Tillägg
 
 I följande tabell listas loggfilerna som innehåller information som rör tillägg.  
 
@@ -682,7 +682,7 @@ I följande tabell listas loggfilerna som innehåller information som rör till�
 |FeatureExtensionInstaller.log|Registrerar information om installation och borttagning av enskilda tillägg när de är aktiverade eller inaktiverade i Configuration Manager-konsolen.|Dator som kör Configuration Manager-konsolen|  
 |SmsAdminUI.log|Registrerar Configuration Manager-konsol aktivitet.|Dator som kör Configuration Manager-konsolen|  
 
-### <a name="inventory"></a><a name="BKMK_InventoryLog"></a>Hantering
+### <a name="inventory"></a><a name="BKMK_InventoryLog"></a> Hantering
 
 I den följande tabellen listas loggfilerna som innehåller information som rör bearbetning av inventeringsdata.  
 
@@ -692,17 +692,17 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |invproc.log|Innehåller information om vidarebefordran av MIF-filer från en sekundär plats till dess överordnade plats.|Sekundär platsserver|  
 |sinvproc.log|Innehåller information om bearbetningen av programinventeringsdata till platsdatabasen.|Platsserver|  
 
-### <a name="metering"></a><a name="BKMK_MeteringLog"></a>Avläsning
+### <a name="metering"></a><a name="BKMK_MeteringLog"></a> Avläsning
 
 I den följande tabellen listas loggfiler som innehåller information som rör mätning.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|mtrmgr.log|Övervakar alla programmätningsprocesser.|Klient|  
-|SWMTRReportGen.log|Genererar en användnings data rapport som samlas in av mätar agenten. Dessa data loggas i Mtrmgr.log.|Klient|
+|mtrmgr.log|Övervakar alla programmätningsprocesser.|Client|  
+|SWMTRReportGen.log|Genererar en användnings data rapport som samlas in av mätar agenten. Dessa data loggas i Mtrmgr.log.|Client|
 |swmproc.log|Registrerar behandling av avläsningsfiler och inställningar.|Platsserver|
 
-### <a name="migration"></a><a name="BKMK_MigrationLog"></a>Migreringsarkivet
+### <a name="migration"></a><a name="BKMK_MigrationLog"></a> Migreringsarkivet
 
 I den följande tabellen listas loggfiler som innehåller information som rör migrering.  
 
@@ -710,11 +710,11 @@ I den följande tabellen listas loggfiler som innehåller information som rör m
 |--------------|-----------------|----------------------------|  
 |migmctrl.log|Innehåller information om migreringsåtgärder som inbegriper migreringsjobb, delade distributionsplatser och uppgraderingar av distributionsplatser.|Platsen på den översta nivån i Configuration Manager hierarkin och varje underordnad primär plats. Använd loggfilen som skapades på den centrala administrationswebbplatsen i en hierarki med flera primära platser.|  
 
-### <a name="mobile-devices"></a><a name="BKMK_MDMLog"></a>Mobila enheter
+### <a name="mobile-devices"></a><a name="BKMK_MDMLog"></a> Mobila enheter
 
 I följande avsnitt listas loggfilerna som innehåller information som rör hantering av mobila enheter.  
 
-#### <a name="enrollment"></a><a name="BKMK_EnrollmentLog"></a>Registrerings
+#### <a name="enrollment"></a><a name="BKMK_EnrollmentLog"></a> Registrerings
 
 I den följande tabellen finns det loggar med information som rör registrering av mobila enheter.  
 
@@ -729,7 +729,7 @@ I den följande tabellen finns det loggar med information som rör registrering 
 |enrollmentservice.log|Innehåller kommunikationen mellan en registreringsproxyplats och en registreringsplats.|Platssystemserver|  
 |SMS_DM.log|Registrerar kommunikationen mellan mobila enheter, Mac-datorer och hanterings platsen som är aktive rad för mobila enheter och Mac-datorer.|Platssystemserver|  
 
-#### <a name="exchange-server-connector"></a><a name="BKMK_ExchSrvLog"></a>Exchange Server-anslutning
+#### <a name="exchange-server-connector"></a><a name="BKMK_ExchSrvLog"></a> Exchange Server-anslutning
 
 Följande loggar innehåller information som rör Exchange Server-anslutningen.  
 
@@ -737,20 +737,20 @@ Följande loggar innehåller information som rör Exchange Server-anslutningen.
 |--------------|-----------------|----------------------------|  
 |easdisc.log|Innehåller Exchange Server-anslutningens aktiviteter och status.|Platsserver|  
 
-#### <a name="mobile-device-legacy"></a><a name="BKMK_MDLegLog"></a>Äldre mobil enhet
+#### <a name="mobile-device-legacy"></a><a name="BKMK_MDLegLog"></a> Äldre mobil enhet
 
 I den följande tabellen finns det loggar med information som rör äldre klienters mobila enheter.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|DmCertEnroll.log|Innehåller information om certifikatregistreringsdata på äldre klienters mobila enheter.|Klient|  
-|DMCertResp.htm|Innehåller HTML-svaret från certifikatservern när programmet för registrering av äldre mobila enheter begär ett PKI-certifikat.|Klient|  
+|DmCertEnroll.log|Innehåller information om certifikatregistreringsdata på äldre klienters mobila enheter.|Client|  
+|DMCertResp.htm|Innehåller HTML-svaret från certifikatservern när programmet för registrering av äldre mobila enheter begär ett PKI-certifikat.|Client|  
 |DmClientHealth.log|Registrerar GUID för alla äldre mobila enhets klienter som kommunicerar med hanterings platsen som är aktive rad för mobila enheter.|Platssystemserver|  
 |DmClientRegistration.log|Innehåller registreringsbegäranden och svar till och från äldre mobila klienter.|Platssystemserver|  
-|DmClientSetup.log|Innehåller klientkonfigurationsdata för äldre mobila klienter.|Klient|  
-|DmClientXfer.log|Innehåller information om klientöverföringsdata för äldre mobila klienter och för ActiveSync-distributioner.|Klient|  
-|DmCommonInstaller.log|Innehåller information om installationen av klientöverföringsfilen för konfiguration av äldre mobila enheters överföringsfiler.|Klient|  
-|DmInstaller.log|Innehåller information om huruvida DMInstaller anropar DmClientSetup korrekt, och om huruvida DmClientSetup avslutas korrekt eller inte för äldre mobila klienter.|Klient|  
+|DmClientSetup.log|Innehåller klientkonfigurationsdata för äldre mobila klienter.|Client|  
+|DmClientXfer.log|Innehåller information om klientöverföringsdata för äldre mobila klienter och för ActiveSync-distributioner.|Client|  
+|DmCommonInstaller.log|Innehåller information om installationen av klientöverföringsfilen för konfiguration av äldre mobila enheters överföringsfiler.|Client|  
+|DmInstaller.log|Innehåller information om huruvida DMInstaller anropar DmClientSetup korrekt, och om huruvida DmClientSetup avslutas korrekt eller inte för äldre mobila klienter.|Client|  
 |DmpDatastore.log|Innehåller alla anslutningar och frågor till platsdatabasen från hanteringsplatsen som är aktiverad för mobila enheter.|Platssystemserver|  
 |DmpDiscovery.log|Innehåller information om alla identifieringsdata från äldre mobila klienter på hanteringsplatsen som är aktiverad för mobila enheter.|Platssystemserver|  
 |DmpHardware.log|Innehåller information om maskinvaruinventeringen från äldre mobila klienter på hanteringsplatsen som är aktiverad för mobila enheter.|Platssystemserver|  
@@ -759,17 +759,17 @@ I den följande tabellen finns det loggar med information som rör äldre klient
 |DMPSetup.log|Registrerar konfigurationen av hanterings platsen när den är aktive rad för mobila enheter.|Platssystemserver|  
 |DmpSoftware.log|Innehåller information om programdistribution från äldre mobila klienter på en hanteringsplats som är aktiverad för mobila enheter.|Platssystemserver|  
 |DmpStatus.log|Innehåller information om statusmeddelanden från äldre mobila klienter på en hanteringsplats som är aktiverad för mobila enheter.|Platssystemserver|  
-|DmSvc.log|Innehåller klientkommunikationen mellan äldre mobila enheter och en hanteringsplats som är aktiverad för mobila enheter.|Klient|  
+|DmSvc.log|Innehåller klientkommunikationen mellan äldre mobila enheter och en hanteringsplats som är aktiverad för mobila enheter.|Client|  
 |FspIsapi.log|Innehåller information om kommunikationen till återställningsstatusplatsen från äldre mobila klienter och klientdatorer.|Platssystemserver|  
 
-### <a name="os-deployment"></a><a name="BKMK_OSDLog"></a>OS-distribution
+### <a name="os-deployment"></a><a name="BKMK_OSDLog"></a> OS-distribution
 
 I följande tabell listas loggfilerna som innehåller information som rör operativ Systems distribution.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|CAS.log|Innehåller information om när distributionsplatser hittas för innehåll som refereras till.|Klient|  
-|ccmsetup.log|Registrerar ccmsetup-aktiviteter för klientkonfiguration, klientuppgradering och borttagning av klienter. Kan användas för att felsöka problem med klientinstallation.|Klient|  
+|CAS.log|Innehåller information om när distributionsplatser hittas för innehåll som refereras till.|Client|  
+|ccmsetup.log|Registrerar ccmsetup-aktiviteter för klientkonfiguration, klientuppgradering och borttagning av klienter. Kan användas för att felsöka problem med klientinstallation.|Client|  
 |CreateTSMedia.log|Innehåller information om skapandet av aktivitetssekvensmedier.|Dator som kör Configuration Manager-konsolen|  
 |Dism.log|Registrerar installations åtgärder för driv rutiner eller uppdaterar program åtgärder för offlineunderhåll.|Platssystemserver|  
 |Distmgr.log|Innehåller information om konfigurationen för att aktivera en distributions plats för PXE (Pre-Boot Execution Environment).|Platssystemserver|  
@@ -784,31 +784,31 @@ I följande tabell listas loggfilerna som innehåller information som rör opera
 |MP_ClientIDManager.log|Registrerar hanterings plats svar på klient-ID-begäranden som aktivitetssekvenser startar från PXE eller start medier.|Platssystemserver|  
 |MP_DriverManager.log|Innehåller hanteringsplatsens svar på Använd drivrutinspaket-aktivitetssekvensens åtgärdssvar.|Platssystemserver|  
 |OfflineServicingMgr.log|Registrerar information om offline-etablerings scheman och uppdaterar tillämpa åtgärder på operativ systemets WIM-filer (Windows Imaging format).|Platssystemserver|  
-|Setupact.log|Registrerar information om Windows Sysprep och installationsloggar. Mer information finns i [loggfiler](https://docs.microsoft.com/windows/deployment/upgrade/log-files).|Klient|  
-|Setupapi.log|Registrerar information om Windows Sysprep och installationsloggar.|Klient|  
-|Setuperr.log|Registrerar information om Windows Sysprep och installationsloggar.|Klient|  
-|smpisapi.log|Innehåller information om åtgärder för att spara och återställa klienttillstånd, och tröskelinformation.|Klient|  
+|Setupact.log|Registrerar information om Windows Sysprep och installationsloggar. Mer information finns i [loggfiler](/windows/deployment/upgrade/log-files).|Client|  
+|Setupapi.log|Registrerar information om Windows Sysprep och installationsloggar.|Client|  
+|Setuperr.log|Registrerar information om Windows Sysprep och installationsloggar.|Client|  
+|smpisapi.log|Innehåller information om åtgärder för att spara och återställa klienttillstånd, och tröskelinformation.|Client|  
 |Smpmgr.log|Innehåller information om resultatet av tillståndsmigreringsplatsers hälsokontroller och konfigurationsändringar.|Platssystemserver|  
 |smpmsi.log|Innehåller information om installations- och konfigurationsuppgifter som rör tillståndsmigreringsplatsen.|Platssystemserver|  
 |smpperf.log|Innehåller uppdateringar av tillståndsmigreringspunktens prestandaräknare.|Platssystemserver|  
 |smspxe.log|Innehåller information om svar på klienter som använder PXE-start och information om utökningen av start avbildningar och startfiler.|Platssystemserver|  
 |smssmpsetup.log|Innehåller information om installations- och konfigurationsuppgifter som rör tillståndsmigreringsplatsen.|Platssystemserver|
 | SMS_PhasedDeployment. log| Loggfil för stegvisa distributioner|Platsen på den översta nivån i Configuration Manager hierarkin|
-|Smsts.log|Innehåller information om aktivitetssekvensaktiviteter.|Klient|  
-|TSAgent.log|Innehåller information om resultatet av aktivitetssekvensberoenden innan en aktivitetssekvens startas.|Klient|  
+|Smsts.log|Innehåller information om aktivitetssekvensaktiviteter.|Client|  
+|TSAgent.log|Innehåller information om resultatet av aktivitetssekvensberoenden innan en aktivitetssekvens startas.|Client|  
 |TaskSequenceProvider.log|Registrerar Detaljer om aktivitetssekvenser när de importeras, exporteras eller redige ras.|Platssystemserver|  
-|loadstate.log|Innehåller information om USMT (User State Migration Tool) och återställningen av användartillståndsdata.|Klient|  
-|scanstate.log|Innehåller information om USMT (User State Migration Tool) och sparandet av användartillståndsdata.|Klient|  
+|loadstate.log|Innehåller information om USMT (User State Migration Tool) och återställningen av användartillståndsdata.|Client|  
+|scanstate.log|Innehåller information om USMT (User State Migration Tool) och sparandet av användartillståndsdata.|Client|  
 
-### <a name="power-management"></a><a name="BKMK_PowerMgmtLog"></a>Energispar funktioner
+### <a name="power-management"></a><a name="BKMK_PowerMgmtLog"></a> Energispar funktioner
 
 I den följande tabellen listas loggfilerna som innehåller information som rör energisparfunktioner.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|pwrmgmt.log|Innehåller information om Energis par aktiviteter på klient datorn, inklusive övervakning och verk ställandet av inställningar av klient agenten för energispar funktioner.|Klient|  
+|pwrmgmt.log|Innehåller information om Energis par aktiviteter på klient datorn, inklusive övervakning och verk ställandet av inställningar av klient agenten för energispar funktioner.|Client|  
 
-### <a name="remote-control"></a><a name="BKMK_RCLog"></a>Fjärr styrning
+### <a name="remote-control"></a><a name="BKMK_RCLog"></a> Fjärr styrning
 
 I den följande tabellen listas loggfilerna som innehåller information som rör fjärrstyrning.  
 
@@ -816,7 +816,7 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |--------------|-----------------|----------------------------|  
 |CMRcViewer.log|Innehåller information om fjärrstyrningsvisarens aktiviteter.|På den dator som kör visaren för fjärr styrning, i mappen% Temp%.|  
 
-### <a name="reporting"></a><a name="BKMK_ReportLog"></a>Uppgiftslämn
+### <a name="reporting"></a><a name="BKMK_ReportLog"></a> Uppgiftslämn
 
 I följande tabell visas Configuration Manager loggfiler som innehåller information som rör rapportering.  
 
@@ -826,7 +826,7 @@ I följande tabell visas Configuration Manager loggfiler som innehåller informa
 |srsrpMSI.log|Innehåller detaljerade resultat från installationen av rapporttjänstplatsen från MSI-utdata.|Platssystemserver|  
 |srsrpsetup.log|Innehåller resultatet från rapporttjänstplatsens installationsprocess.|Platssystemserver|  
 
-### <a name="role-based-administration"></a><a name="BKMK_RBALog"></a>Rollbaserad administration
+### <a name="role-based-administration"></a><a name="BKMK_RBALog"></a> Rollbaserad administration
 
 I den följande tabellen listas loggfilerna som innehåller information som rör hantering av rollbaserad administration.  
 
@@ -835,7 +835,7 @@ I den följande tabellen listas loggfilerna som innehåller information som rör
 |hman.log|Registrerar information om ändringar i plats konfigurationen och publicering av plats information till Active Directory Domain Services.|Platsserver|  
 |SMSProv.log|Innehåller information om WMI-providerns åtkomst till platsdatabasen.|Dator med SMS-provider|  
 
-### <a name="software-metering"></a><a name="BKMK_MeteringLog"></a>Avläsning av program vara
+### <a name="software-metering"></a><a name="BKMK_MeteringLog"></a> Avläsning av program vara
 
 I följande tabell listas loggfilerna som innehåller information som rör Avläsning av program vara.  
 
@@ -843,35 +843,35 @@ I följande tabell listas loggfilerna som innehåller information som rör Avlä
 |--------------|-----------------|----------------------------|  
 |mtrmgr.log|Övervakar alla programmätningsprocesser.|Platsserver|  
 
-### <a name="software-updates"></a><a name="BKMK_SU_NAPLog"></a>Program uppdateringar
+### <a name="software-updates"></a><a name="BKMK_SU_NAPLog"></a> Program uppdateringar
 
 Följande tabell listar de loggfiler som innehåller information relaterad till programuppdateringar.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|AlternateHandler. log|Registrerar information när klienten anropar COM-gränssnittet i Office Klicka-och-kör för att ladda ned och installera Microsoft 365 appar för företags klient uppdateringar. Det liknar användningen av WuaHandler när den anropar Windows Update Agent-API: n för att ladda ned och installera Windows-uppdateringar.<!-- SCCMDocs#888 -->|Klient|
-|ccmperf.log|Innehåller information om aktiviteter som rör underhållet och insamlingen av data som rör klienters prestandaräknare.|Klient|
-|DeltaDownload. log|Registrerar information om hämtning av Express uppdateringar och uppdateringar som hämtats med hjälp av leverans optimering.|Klient|  
+|AlternateHandler. log|Registrerar information när klienten anropar COM-gränssnittet i Office Klicka-och-kör för att ladda ned och installera Microsoft 365 appar för företags klient uppdateringar. Det liknar användningen av WuaHandler när den anropar Windows Update Agent-API: n för att ladda ned och installera Windows-uppdateringar.<!-- SCCMDocs#888 -->|Client|
+|ccmperf.log|Innehåller information om aktiviteter som rör underhållet och insamlingen av data som rör klienters prestandaräknare.|Client|
+|DeltaDownload. log|Registrerar information om hämtning av Express uppdateringar och uppdateringar som hämtats med hjälp av leverans optimering.|Client|  
 |PatchDownloader.log|Innehåller information om processen för att hämta programuppdateringar från uppdateringskällan till nedladdningsmålet på platsservern.|När du hämtar uppdateringar manuellt finns logg filen i% Temp%-katalogen för användaren som kör-konsolen på den dator som du kör-konsolen på. För automatiska distributions regler finns logg filen på plats servern i%windir%\CCM\Logs om ConfigMgr-klienten är installerad på plats servern.|  
-|PolicyEvaluator.log|Innehåller information om utvärderingen av principer på klientdatorer, däribland principer från programuppdateringar.|Klient|  
-|RebootCoordinator.log|Innehåller information om koordinationen av systemomstarter på klientdatorer efter installation av programuppdateringar.|Klient|  
-|ScanAgent.log|Innehåller information om avsökningsbegäranden om programuppdateringar, WSUS-platsen och relaterade åtgärder.|Klient|  
-|SdmAgent.log|Registrerar information om spårning av reparation och efterlevnad. Men logg filen för program uppdateringar, Updateshandler. log, innehåller mer information om hur du installerar program uppdateringar som krävs för efterlevnad. Den här loggfilen delas med efterlevnadsinställningarna.|Klient|  
-|ServiceWindowManager.log|Innehåller information om utvärderingen av underhållsperioder.|Klient|
+|PolicyEvaluator.log|Innehåller information om utvärderingen av principer på klientdatorer, däribland principer från programuppdateringar.|Client|  
+|RebootCoordinator.log|Innehåller information om koordinationen av systemomstarter på klientdatorer efter installation av programuppdateringar.|Client|  
+|ScanAgent.log|Innehåller information om avsökningsbegäranden om programuppdateringar, WSUS-platsen och relaterade åtgärder.|Client|  
+|SdmAgent.log|Registrerar information om spårning av reparation och efterlevnad. Men logg filen för program uppdateringar, Updateshandler. log, innehåller mer information om hur du installerar program uppdateringar som krävs för efterlevnad. Den här loggfilen delas med efterlevnadsinställningarna.|Client|  
+|ServiceWindowManager.log|Innehåller information om utvärderingen av underhållsperioder.|Client|
 |SMS_ISVUPDATES_SYNCAGENT. log| Loggfil för synkronisering av program uppdateringar från tredje part.| Program uppdaterings plats på den översta nivån i Configuration Manager hierarkin.|
 |SMS_OrchestrationGroup. log| Loggfil för Orchestration-grupper|Platsserver|
-|SmsWusHandler.log|Innehåller information om genomsökningsprocessen för inventeringsverktyget för Microsoft Updates.|Klient|  
-|StateMessage.log|Innehåller information om program uppdaterings tillstånds meddelanden som skapas och skickas till hanterings platsen.|Klient|  
+|SmsWusHandler.log|Innehåller information om genomsökningsprocessen för inventeringsverktyget för Microsoft Updates.|Client|  
+|StateMessage.log|Innehåller information om program uppdaterings tillstånds meddelanden som skapas och skickas till hanterings platsen.|Client|  
 |SUPSetup.log|Innehåller information om installation av programuppdateringsplatsen. När installationen av programuppdateringsplatsen är klar skrivs texten **Installationen slutfördes** till denna loggfil.|Platssystemserver|  
-|UpdatesDeployment.log|Innehåller information om distribution på klienten, däribland aktivering, utvärdering och verkställandet av programuppdateringar. Vid utförlig loggning visas ytterligare information om samspelet med klientens användargränssnitt.|Klient|  
-|UpdatesHandler.log|Innehåller information om efterlevnadssökning av programuppdateringar och om nedladdning och installation av programuppdateringar på klienten.|Klient|  
-|UpdatesStore.log|Innehåller information om efterlevnadsstatusen för programuppdateringarna som analyserades under efterlevnadssökningscykeln.|Klient|  
+|UpdatesDeployment.log|Innehåller information om distribution på klienten, däribland aktivering, utvärdering och verkställandet av programuppdateringar. Vid utförlig loggning visas ytterligare information om samspelet med klientens användargränssnitt.|Client|  
+|UpdatesHandler.log|Innehåller information om efterlevnadssökning av programuppdateringar och om nedladdning och installation av programuppdateringar på klienten.|Client|  
+|UpdatesStore.log|Innehåller information om efterlevnadsstatusen för programuppdateringarna som analyserades under efterlevnadssökningscykeln.|Client|  
 |WCM.log|Registrerar information om program uppdaterings platsens konfigurationer och anslutningar till WSUS-servern för prenumerationer på uppdaterings kategorier, klassificeringar och språk.|Platsserver|  
 |WSUSCtrl.log|Innehåller information om konfigurationen, databasanslutningarna och hälsotillståndet hos platsens WSUS-server.|Platssystemserver|  
 |wsyncmgr.log|Innehåller information om synkronisering av program uppdaterings processen.|Platsserver|  
-|WUAHandler.log|Innehåller information om Windows Update-agenten på klienten när den söker efter programuppdateringar.|Klient|  
+|WUAHandler.log|Innehåller information om Windows Update-agenten på klienten när den söker efter programuppdateringar.|Client|  
 
-### <a name="wake-on-lan"></a><a name="BKMK_WOLLog"></a>Wake On LAN
+### <a name="wake-on-lan"></a><a name="BKMK_WOLLog"></a> Wake On LAN
 
 I följande tabell listas loggfilerna som innehåller information som rör hur du använder Wake On LAN.  
 
@@ -883,30 +883,30 @@ I följande tabell listas loggfilerna som innehåller information som rör hur d
 |wolcmgr.log|Innehåller information om vilka klienter som behöver tillsändas aktiveringspaket, antalet aktiveringspaket som har skickats samt antalet aktiveringspaket som har skickats igen.|Platsserver|  
 |wolmgr.log|Innehåller information om aktiveringsprocedurer, t.ex. när distributioner som är konfigurerade för Wake On LAN ska aktiveras.|Platsserver|  
 
-### <a name="windows-10-servicing"></a><a name="BKMK_WindowsServicingLog"></a>Windows 10-underhåll
+### <a name="windows-10-servicing"></a><a name="BKMK_WindowsServicingLog"></a> Windows 10-underhåll
 
 I följande tabell listas loggfilerna som innehåller information som rör Windows 10-underhåll.  
 Underhåll använder samma infrastruktur och process som program uppdateringar. Andra loggar som gäller för underhålls scenariot finns i [program uppdateringar](#BKMK_SU_NAPLog).
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|CBS. log|Registrerar etablerings problem som rör ändringar i Windows-uppdateringar eller-roller och-funktioner.|Klient|
-|DISM. log|Registrerar alla åtgärder med DISM. Om det behövs kommer DISM. log att peka på CBS. log för mer information.|Klient|
-|Setupact. log|Primär logg fil för de flesta fel som inträffar under Windows-installationen. Logg filen finns i mappen% windir% \$ Windows. ~ BT\sources\panther.|Klient|
+|CBS. log|Registrerar etablerings problem som rör ändringar i Windows-uppdateringar eller-roller och-funktioner.|Client|
+|DISM. log|Registrerar alla åtgärder med DISM. Om det behövs kommer DISM. log att peka på CBS. log för mer information.|Client|
+|Setupact. log|Primär logg fil för de flesta fel som inträffar under Windows-installationen. Logg filen finns i mappen% windir% \$ Windows. ~ BT\sources\panther.|Client|
 
-Mer information finns i [online Servicing-relaterade loggfiler](https://docs.microsoft.com/windows-hardware/manufacture/desktop/deployment-troubleshooting-and-log-files#online-servicing-related-log-files).
+Mer information finns i [online Servicing-relaterade loggfiler](/windows-hardware/manufacture/desktop/deployment-troubleshooting-and-log-files#online-servicing-related-log-files).
 
-### <a name="windows-update-agent"></a><a name="BKMK_WULog"></a>Windows Update Agent
+### <a name="windows-update-agent"></a><a name="BKMK_WULog"></a> Windows Update Agent
 
 I den följande tabellen listas loggfilerna som innehåller information som rör Windows Update-agenten.  
 
 |Loggnamn|Beskrivning|Dator med loggfil|  
 |--------------|-----------------|----------------------------|  
-|WindowsUpdate.log|Innehåller information om när Windows Update-agenten ansluter till WSUS-servern och hämtar program uppdateringarna för kompatibilitetskontroll och om det finns uppdateringar av agent komponenterna.|Klient|  
+|WindowsUpdate.log|Innehåller information om när Windows Update-agenten ansluter till WSUS-servern och hämtar program uppdateringarna för kompatibilitetskontroll och om det finns uppdateringar av agent komponenterna.|Client|  
 
-Mer information finns i [Windows Update loggfiler](https://docs.microsoft.com/windows/deployment/update/windows-update-logs).
+Mer information finns i [Windows Update loggfiler](/windows/deployment/update/windows-update-logs).
 
-### <a name="wsus-server"></a><a name="BKMK_WSUSLog"></a>WSUS-Server
+### <a name="wsus-server"></a><a name="BKMK_WSUSLog"></a> WSUS-Server
 
 I den följande tabellen listas loggfilerna som innehåller information som rör WSUS-servern.  
 

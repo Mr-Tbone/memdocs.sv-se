@@ -11,12 +11,12 @@ ms.assetid: e179e30a-a1fc-461e-8087-ff3a55803450
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3d854e4b70a59a364b8611947feea89d4678e7e6
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: e0db550369ca2d81f42a25e68960b5f8f27be168
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721957"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700488"
 ---
 # <a name="install-and-configure-the-exchange-connector"></a>Installera och konfigurera Exchange Connector
 
@@ -76,10 +76,10 @@ Följande Exchange Server-hanterings roller innehåller dessa cmdlet: ar:
 - Visa endast organisations hantering
 - Serverhantering
 
-Mer information finns i [förstå roll grupper för hantering](https://docs.microsoft.com/exchange/understanding-management-role-groups-exchange-2013-help) i Exchange Server 2013-dokumentationen.
+Mer information finns i [förstå roll grupper för hantering](/exchange/understanding-management-role-groups-exchange-2013-help) i Exchange Server 2013-dokumentationen.
 
 > [!TIP]  
-> Om du försöker installera eller använda Exchange Server-anslutningen utan nödvändiga cmdletar visas följande fel i filen EasDisc. log på plats serverdatorn: `Invoking cmdlet <cmdlet> failed`.
+> Om du försöker installera eller använda Exchange Server-anslutningen utan nödvändiga cmdletar visas följande fel i filen EasDisc. log på plats serverdatorn: `Invoking cmdlet <cmdlet> failed` .
 
 ## <a name="install-the-connector"></a>Installera anslutningen
 
@@ -91,7 +91,7 @@ Mer information finns i [förstå roll grupper för hantering](https://docs.micr
 
     - **Lokal Exchange Server**: Ange en enskild server eller en klient åtkomst Server mat ris för varje Active Directory plats.
 
-        Om servern eller matrisen är offline försöker Configuration Manager identifiera en klient åtkomst server att använda. Om detta Miss lyckas går Configuration Manager tillbaka till att använda en post låda-Server för att upprätta en anslutning till en klient åtkomst Server. När den försöker ansluta igen loggar den följande varningar i filen EasDisc. log på plats serverdatorn: `Failed to open runspace for site <site_name>`.
+        Om servern eller matrisen är offline försöker Configuration Manager identifiera en klient åtkomst server att använda. Om detta Miss lyckas går Configuration Manager tillbaka till att använda en post låda-Server för att upprätta en anslutning till en klient åtkomst Server. När den försöker ansluta igen loggar den följande varningar i filen EasDisc. log på plats serverdatorn: `Failed to open runspace for site <site_name>` .
 
     - **Värdbaserad Exchange Server**: Ange Server adressen till Exchange Online-miljön.
 
@@ -123,7 +123,7 @@ Verifiera installationen av Exchange Server-anslutningen med status meddelanden 
 
     Det går inte att installera om den angivna klient åtkomst servern är offline. Om Configuration Manager inte kan installera anslutningen kan Configuration Manager försöka installera igen var 60: e minut. Det fortsätter att försöka tills installationen lyckas eller också tar du bort Exchange Server-anslutningen.
 
-- På plats serverdatorn granskar du **SiteComp. log** efter följande post: `Component SMS_EXCHANGE_CONNECTOR flagged for installation`. Därefter loggas den slutförda installationen med följande text: `STATMSG: ID=1015`.
+- På plats serverdatorn granskar du **SiteComp. log** efter följande post: `Component SMS_EXCHANGE_CONNECTOR flagged for installation` . Därefter loggas den slutförda installationen med följande text: `STATMSG: ID=1015` .
 
 När du har slutfört installationen övervakar du de mobila enheter som hittas och hanteras av anslutnings tjänsten. Visa samlingarna med mobila enheter och Använd rapporterna för mobila enheter.
 

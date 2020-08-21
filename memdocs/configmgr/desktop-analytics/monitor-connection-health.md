@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: db70eab54f319197f267173fe857d0fb147a7eba
-ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
+ms.openlocfilehash: ecd8b83224cbcbfe367a3b1db160d680952a4407
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746569"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700845"
 ---
 # <a name="monitor-connection-health"></a>Övervaka anslutningsstatus
 
@@ -130,7 +130,7 @@ Kontrol lera att enheten kan kommunicera med tjänsten. Mer information finns i 
 
 Configuration Manager konfigurerar fortfarande enheten, eller så har den inte tillräckligt med data från enheten för att fastställa dess tillstånd.
 
-### <a name="missing-data"></a>Data som saknas
+### <a name="missing-data"></a>Data saknas
 
 Configuration Manager har konfigurerat enheten, men det går inte att skapa en kompatibilitetskontroll med Desktop Analytics. Den har ingen fullständig data uppsättning för enhetens konfiguration (inventering) eller installerade appar (inventering).
 
@@ -154,7 +154,7 @@ Dessa kolumner motsvarar de viktiga [kraven](overview.md#prerequisites) för att
 
 Välj en enhet om du vill se en fullständig lista över tillgängliga egenskaper i informations fönstret. Du kan också lägga till någon av dessa egenskaper som kolumner i enhets listan.
 
-## <a name="device-properties"></a><a name="bkmk_config-issues"></a>Enhets egenskaper
+## <a name="device-properties"></a><a name="bkmk_config-issues"></a> Enhets egenskaper
 
 Följande enhets egenskaper för Desktop Analytics är tillgängliga som kolumner i listan Configuration Manager enhet:
 
@@ -198,7 +198,7 @@ Du ser fel som liknar följande i logg filen:
 
 Där `%s` är URL: en för en obligatorisk slut punkt.
 
-Du kan också se icke-deterministiska fel meddelanden som inte behöver åtgärdas förrän enheterna har problem med registreringen. Ett exempel:
+Du kan också se icke-deterministiska fel meddelanden som inte behöver åtgärdas förrän enheterna har problem med registreringen. Exempel:
 
 `This status is not related to proxy configuration, consider to investigate only if you are experiencing device enrollment or configuration alert issues.`
 
@@ -334,7 +334,7 @@ Mer information hittar du i M365AHandler. log på klienten.
 <!--1004-->
 Om den här kontrollen inte lyckas har en användare valt en lägre Windows-diagnostikdata på enheten. Det kan också orsakas av ett grup princip objekt som står i konflikt. Mer information finns i [Windows-inställningar](enroll-devices.md#windows-settings).
 
-Beroende på dina affärs behov kan du inaktivera användar val via grup principer. Använd inställningen för att **Konfigurera inställningar för att välja användar gränssnitt i telemetri**. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management).
+Beroende på dina affärs behov kan du inaktivera användar val via grup principer. Använd inställningen för att **Konfigurera inställningar för att välja användar gränssnitt i telemetri**. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management).
 
 ### <a name="check-user-proxy"></a>Kontrol lera användar proxy
 
@@ -343,7 +343,7 @@ Inställningen DisableEnterpriseAuthProxy är aktive rad som standard för Windo
 
 Den här egenskapen kan visa följande fel:
 
-- Proxyautentisering är aktive rad. Ange DisableEnterpriseAuthProxy till 0 i`HKLM:\Software\Policies\Microsoft\Windows\DataCollection`
+- Proxyautentisering är aktive rad. Ange DisableEnterpriseAuthProxy till 0 i `HKLM:\Software\Policies\Microsoft\Windows\DataCollection`
 
 - Det går inte att söka efter status för proxyautentisering. Kontrol lera loggen för undantags informationen
 
@@ -364,7 +364,7 @@ Annars kan det Visa något av följande fel:
 
 - Det går inte att uppdatera CommercialId i register nyckeln `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection` . Kontrol lera loggen för undantags informationen  
 
-- Ange rätt CommercialId-värde vid`HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`  
+- Ange rätt CommercialId-värde vid `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`  
 
 Mer information hittar du i M365AHandler. log på klienten.  
 
@@ -372,7 +372,7 @@ Kontrol lera behörigheterna för den här register nyckeln. Kontrol lera att de
 
 Det finns ett annat ID för enheten. Den här register nyckeln används av en grup princip. Det har företräde framför det ID som tillhandahålls av Configuration Manager.  
 
-<a name="bkmk_ViewCommercialID"></a>Gör så här om du vill visa det kommersiella ID: t i Skriv bords analys portalen:
+<a name="bkmk_ViewCommercialID"></a> Gör så här om du vill visa det kommersiella ID: t i Skriv bords analys portalen:
 
 1. Gå till Skriv bords analys portalen och välj **anslutna tjänster** i den globala inställnings gruppen.  
 
@@ -455,7 +455,7 @@ Skriv bords analys använder Microsoft-konto tjänsten för en mer tillförlitli
 
 Kontrol lera att tjänsten **inloggnings assistent för Microsoft-konto** inte är inaktive rad. Start typen ska vara **Manuell (utlösare start)**.
 
-Om du vill inaktivera slut användar Microsoft-konto åtkomst använder du princip inställningar i stället för att blockera slut punkten. Mer information finns i [Microsoft-konto i företaget](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication).
+Om du vill inaktivera slut användar Microsoft-konto åtkomst använder du princip inställningar i stället för att blockera slut punkten. Mer information finns i [Microsoft-konto i företaget](/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication).
 
 ### <a name="windows-diagnostic-data-opt-in"></a>Deltagande i Windows-diagnostikdata
 

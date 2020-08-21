@@ -10,12 +10,12 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 676ae288003b257802eea495c4101a95129eaf34
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 4bdfbabf27906eb8a79ec8ba24f51c3e176dc028
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88251872"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700413"
 ---
 # <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions"></a><a name="bkmk_attach"></a> Microsoft Endpoint Manager-klient ansluter: synkronisering av enhet och enhets åtgärder
 <!--3555758 live 3/4/2020-->
@@ -25,9 +25,9 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Från och med Configuration Manager version 2002 kan du ladda upp dina Configuration Manager-enheter till moln tjänsten och vidta åtgärder från bladet **enheter** i administrations centret.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
-- Ett konto som är en *Global administratör* för att logga in när du tillämpar den här ändringen. Mer information finns i [Administratörs roller för Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-ad-administrator-roles).
+- Ett konto som är en *Global administratör* för att logga in när du tillämpar den här ändringen. Mer information finns i [Administratörs roller för Azure Active Directory (Azure AD)](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-ad-administrator-roles).
    - Onboarding skapar en app från tredje part och ett första parts tjänst objekt i din Azure AD-klient.
 - En offentlig Azure-moln miljö.
 - De användar konton som utlöser enhets åtgärder har följande krav:
@@ -48,7 +48,7 @@ När samhantering redan har Aktiver ATS redigerar du egenskaperna för samhanter
 
 1. Gå till **Administration** > **Översikt** > **Molntjänster** > **Samhantering** i administrationskonsolen för Configuration Manager.
 1. I menyfliksområdet väljer du **Egenskaper** för produktions principen för samhantering.
-1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Välj **Använd**.
+1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Välj **Tillämpa**.
    - Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Om det behövs kan du begränsa överföringen till en enda enhets samling.
 1. Markera alternativet om du vill **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager** om du också vill få insikter för att optimera slut användar upplevelsen i [slut punkts analys](../../analytics/overview.md).
 
@@ -118,13 +118,13 @@ Att använda ett tidigare skapat program vid registrering till klient anslutning
    - CmCollectionData. Write
 
 - Microsoft Graph behörigheter:
-   - Directory. Read. all [program behörighet](https://docs.microsoft.com/graph/permissions-reference#application-permissions)
-   - Directory. Read. alla [delegerade katalog behörigheter](https://docs.microsoft.com/graph/permissions-reference#directory-permissions)
+   - Directory. Read. all [program behörighet](/graph/permissions-reference#application-permissions)
+   - Directory. Read. alla [delegerade katalog behörigheter](/graph/permissions-reference#directory-permissions)
 
-- Se till att **bevilja administratörs medgivande för klient organisationen** valt för Azure AD-programmet. Mer information finns i [Granting admin medgivande i Appregistreringar](https://docs.microsoft.com/azure/active-directory/manage-apps/grant-admin-consent).
+- Se till att **bevilja administratörs medgivande för klient organisationen** valt för Azure AD-programmet. Mer information finns i [Granting admin medgivande i Appregistreringar](/azure/active-directory/manage-apps/grant-admin-consent).
 
 - Det importerade programmet måste konfigureras på följande sätt:
-   - Endast registrerat för **konton i den här organisations katalogen**. Mer information finns i [ändra vem som har åtkomst till ditt program](https://docs.microsoft.com/azure/active-directory/develop/quickstart-modify-supported-accounts#to-change-who-can-access-your-application).
+   - Endast registrerat för **konton i den här organisations katalogen**. Mer information finns i [ändra vem som har åtkomst till ditt program](/azure/active-directory/develop/quickstart-modify-supported-accounts#to-change-who-can-access-your-application).
    -  Har en giltig program-ID-URI och hemlighet
 
 

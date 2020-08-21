@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: ebdd07874f09ff6d97747826d6056df177e2c735
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 7cb0a2c71a3ea326348b87d6b34e3109a8ef9f20
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128485"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700137"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Konfigurera Azure-tjänster för användning med Configuration Manager
 
@@ -39,10 +39,10 @@ Konfigurera följande Azure-tjänster med hjälp av den här guiden:
 
   - [E-postmeddelanden för app-godkännande](../../../../apps/deploy-use/app-approval.md#bkmk_email-approve)
 
-- **Log Analytics koppling**: [anslut till Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm). Synkronisera samlings data till Log Analytics.  
+- **Log Analytics koppling**: [anslut till Azure Log Analytics](/azure/azure-monitor/platform/collect-sccm). Synkronisera samlings data till Log Analytics.  
 
     > [!Note]  
-    > Den här artikeln hänvisar till *Log Analytics-anslutningen*, som tidigare kallades *OMS-anslutningen*. Det finns ingen funktionell skillnad. Mer information finns i [hantering av Azure-övervakning](https://docs.microsoft.com/azure/azure-monitor/terminology#log-analytics).  
+    > Den här artikeln hänvisar till *Log Analytics-anslutningen*, som tidigare kallades *OMS-anslutningen*. Det finns ingen funktionell skillnad. Mer information finns i [hantering av Azure-övervakning](/azure/azure-monitor/terminology#log-analytics).  
 
 - **Microsoft Store för företag**: anslut till [Microsoft Store för företag](../../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md). Få Store-appar för din organisation som du kan distribuera med Configuration Manager.  
 
@@ -78,10 +78,10 @@ Mer information om vilka program behörigheter och konfigurationer som krävs f�
 
 Om du vill ha mer information om Azure Apps börjar du med följande artiklar:
 
-- [Autentisering och auktorisering i Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
-- [Översikt över Web Apps](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview)
+- [Autentisering och auktorisering i Azure App Service](/azure/app-service/app-service-authentication-overview)
+- [Översikt över Web Apps](/azure/app-service-web/app-service-web-overview)
 - [Grunderna i att registrera ett program i Azure AD](/azure/active-directory/develop/authentication-scenarios)  
-- [Registrera ditt program med din Azure Active Directory-klient](https://docs.microsoft.com/azure/active-directory/active-directory-app-registration)
+- [Registrera ditt program med din Azure Active Directory-klient](/azure/active-directory/active-directory-app-registration)
 
 ## <a name="before-you-begin"></a>Innan du börjar
 
@@ -93,7 +93,7 @@ När du har bestämt vilken tjänst du vill ansluta till, se tabellen i [tjänst
 
 Vissa tjänster kräver att Azure AD-apparna har särskilda behörigheter. Granska informationen för varje tjänst för att avgöra vilka behörigheter som krävs. Innan du kan importera en webbapp måste du till exempel först skapa en Azure-administratör i [Azure Portal](https://portal.azure.com).
 
-När du konfigurerar Log Analytics-anslutningen ger du den nya behörigheten för webb program *deltagare* i resurs gruppen som innehåller den relevanta arbets ytan. Med den här behörigheten kan Configuration Manager komma åt arbets ytan. När du tilldelar behörigheten söker du efter namnet på appens registrering i avsnittet **Lägg till användare** i Azure Portal. Den här processen är samma som när [du tillhandahåller Configuration Manager med behörighet att Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics). En Azure-administratör måste tilldela dessa behörigheter innan du importerar appen till Configuration Manager.
+När du konfigurerar Log Analytics-anslutningen ger du den nya behörigheten för webb program *deltagare* i resurs gruppen som innehåller den relevanta arbets ytan. Med den här behörigheten kan Configuration Manager komma åt arbets ytan. När du tilldelar behörigheten söker du efter namnet på appens registrering i avsnittet **Lägg till användare** i Azure Portal. Den här processen är samma som när [du tillhandahåller Configuration Manager med behörighet att Log Analytics](/azure/log-analytics/log-analytics-sccm#grant-configuration-manager-with-permissions-to-log-analytics). En Azure-administratör måste tilldela dessa behörigheter innan du importerar appen till Configuration Manager.
 
 ## <a name="start-the-azure-services-wizard"></a>Starta guiden Azure-tjänster
 
@@ -174,7 +174,7 @@ Välj **Logga** in för att autentisera till Azure som en administrativ använda
 Välj **OK** för att skapa webbappen i Azure AD och Stäng dialog rutan skapa serverprogram. Den här åtgärden återgår till [serverns app-dialogruta](#server-app-dialog).
 
 > [!NOTE]
-> Om du har definierat en princip för villkorlig åtkomst för Azure AD och gäller **alla molnappar** , måste du exkludera det skapade Server programmet från den här principen. Mer information om hur du undantar vissa appar finns i [dokumentationen för villkorlig åtkomst för Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/).
+> Om du har definierat en princip för villkorlig åtkomst för Azure AD och gäller **alla molnappar** , måste du exkludera det skapade Server programmet från den här principen. Mer information om hur du undantar vissa appar finns i [dokumentationen för villkorlig åtkomst för Azure AD](/azure/active-directory/conditional-access/).
 
 ### <a name="native-client-app"></a>Inbyggd klient app
 
@@ -222,13 +222,13 @@ När du har angett webb-och interna appar på sidan appar, fortsätter guiden Az
 
 - **Moln hanterings** tjänst, **Discovery** -sida: [Konfigurera identifiering av Azure AD-användare](configure-discovery-methods.md#azureaadisc)  
 
-- **Log Analytics anslutnings** tjänst, **konfigurations** sida: [Konfigurera anslutningen till Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm)  
+- **Log Analytics anslutnings** tjänst, **konfigurations** sida: [Konfigurera anslutningen till Log Analytics](/azure/azure-monitor/platform/collect-sccm)  
 
 - Sidan **Microsoft Store for Business** service, **Configurations** : [Konfigurera Microsoft Store för affärs synkronisering](../../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md#bkmk_config)  
 
 Slutligen avslutar du guiden Azure-tjänster via sidorna Sammanfattning, förlopp och slut för ande. Du har slutfört konfigurationen av en Azure-tjänst i Configuration Manager. Upprepa den här processen om du vill konfigurera andra Azure-tjänster.
 
-## <a name="renew-secret-key"></a><a name="bkmk_renew"></a>Förnya hemlig nyckel
+## <a name="renew-secret-key"></a><a name="bkmk_renew"></a> Förnya hemlig nyckel
 
 Du måste förnya Azure AD-appens hemliga nyckel innan giltighets perioden är slut. Om du låter nyckeln förfalla kan Configuration Manager inte autentiseras med Azure AD, vilket gör att dina anslutna Azure-tjänster slutar fungera.
 

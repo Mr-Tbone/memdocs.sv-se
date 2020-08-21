@@ -10,12 +10,12 @@ ms.assetid: 4a9dc4d9-e114-42ec-ae2b-73bee14ab04f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 41c0d08c5f445cd6d643542cfaa646bc2d89de76
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 13312c20edbda290daaa0d51908adeb7ab4a6860
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128434"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700069"
 ---
 # <a name="define-network-locations-as-boundaries-for-configuration-manager"></a>Definiera nätverks platser som gränser för Configuration Manager
 
@@ -35,9 +35,9 @@ Du kan skapa enskilda gränser manuellt eller använda [Active Directory skogs i
 
 Om en enhet inte är inom gränsen som du förväntar dig, kan det bero på att du inte har definierat nätverks platsen som en gräns. När nätverks platsen för en enhet är tveksam använder du följande Windows-kommandon på enheten för att bekräfta:
 
-- IP-adress:`ipconfig`
-- Active Directory webbplats:`nltest /dsgetsite`
-- Konfigurera`ipconfig /all`
+- IP-adress: `ipconfig`
+- Active Directory webbplats: `nltest /dsgetsite`
+- Konfigurera `ipconfig /all`
 
 ## <a name="boundary-types"></a>Avgränsnings typer
 
@@ -59,7 +59,7 @@ Active Directory plats gränser fungerar inte för rena Azure Active Directory (
 > [!TIP]
 > Använd följande Windows-kommando om du vill se en enhets aktuella Active Directory webbplats: `nltest /dsgetsite` .
 >
-> Använd följande Windows-kommando för att avgöra om en klient är ansluten till en molnbaserad domän: `dsregcmd /status` . Mer information finns i [dsregcmd-kommando enhets tillstånd](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd).
+> Använd följande Windows-kommando för att avgöra om en klient är ansluten till en molnbaserad domän: `dsregcmd /status` . Mer information finns i [dsregcmd-kommando enhets tillstånd](/azure/active-directory/devices/troubleshoot-device-dsregcmd).
 
 ### <a name="ipv6-prefix"></a>IPv6-prefix
 

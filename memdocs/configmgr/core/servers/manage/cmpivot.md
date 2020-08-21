@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 06e2a90e8c481fba834cbd1b6b1f5233572e4b17
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 11b5a58a6d9501b0368fcb0b47bf31df1bd8a6af
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128347"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700590"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot för real tids data i Configuration Manager
 
@@ -90,7 +90,7 @@ Följande behörigheter krävs för CMPivot:
 
      - Klicka på en av **entiteterna** för att lägga till den i frågesträngen.  
 
-     - Länkarna för **tabell operatorer**, **agg regerings funktioner**och **skalära funktioner** öppnar språk referens dokumentation i webbläsaren. CMPivot använder [KQL (Kusto Query Language)](https://docs.microsoft.com/azure/kusto/query/).  
+     - Länkarna för **tabell operatorer**, **agg regerings funktioner**och **skalära funktioner** öppnar språk referens dokumentation i webbläsaren. CMPivot använder [KQL (Kusto Query Language)](/azure/kusto/query/).  
 
 3. Låt fönstret CMPivot vara öppet för att visa resultat från klienter. När du stänger fönstret CMPivot slutförs sessionen.
    - Om frågan har skickats skickar klienterna fortfarande ett tillstånds meddelande svar till servern.  
@@ -123,7 +123,7 @@ Fönstret CMPivot innehåller följande element:
 
 5. I fönstret fråga kan du skapa eller ange en fråga som ska köras på klienter i samlingen.  
 
-    - CMPivot använder en delmängd av [KQL (Kusto Query Language)](https://docs.microsoft.com/azure/kusto/query/).  
+    - CMPivot använder en delmängd av [KQL (Kusto Query Language)](/azure/kusto/query/).  
 
     - Klipp ut, kopiera eller klistra in innehåll i frågefönstret.  
     <!-- markdownlint-disable MD038 -->
@@ -162,9 +162,9 @@ Fönstret CMPivot innehåller följande element:
 
      - **Kopiera**: texten i cellen kopieras till Urklipp.  
 
-     - **Visa enheter med**: fråga efter enheter med det här värdet för den här egenskapen. Du kan till exempel `OS` välja det här alternativet i en cell på versions raden från resultatet av frågan:`OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ > 0)`  
+     - **Visa enheter med**: fråga efter enheter med det här värdet för den här egenskapen. Du kan till exempel `OS` välja det här alternativet i en cell på versions raden från resultatet av frågan: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ > 0)`  
 
-     - **Visa enheter utan**: fråga efter enheter utan detta värde för den här egenskapen. Du kan till exempel `OS` välja det här alternativet i en cell på versions raden från resultatet av frågan:`OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
+     - **Visa enheter utan**: fråga efter enheter utan detta värde för den här egenskapen. Du kan till exempel `OS` välja det här alternativet i en cell på versions raden från resultatet av frågan: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
 
      - **Bing IT**: starta standard webbläsaren https://www.bing.com med det här värdet som frågesträng.  
 
@@ -233,7 +233,7 @@ Du måste tillfälligt lagra en stor fil på en nätverks fil server, men är in
 `Disk | where (Description == 'Local Fixed Disk') | where isnotnull( FreeSpace ) | order by FreeSpace asc`
 
 
-## <a name="cmpivot-standalone"></a><a name="bkmk_standalone"></a>Fristående CMPivot
+## <a name="cmpivot-standalone"></a><a name="bkmk_standalone"></a> Fristående CMPivot
 
 [!INCLUDE [CMPivot standalone](includes/cmpivot-standalone.md)]
 
@@ -272,5 +272,3 @@ Mer information finns i [loggfiler](../../plan-design/hierarchy/log-files.md) oc
 - [Ändringar i CMPivot](cmpivot-changes.md)
 - [Felsöka CMPivot](cmpivot-tsg.md)
 - [Skapa och kör PowerShell-skript](../../../apps/deploy-use/create-deploy-scripts.md)
-
-

@@ -10,12 +10,12 @@ ms.assetid: 230be984-d2cd-4d53-bd7a-bc24dd93fc22
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d28638cdf332adbb1d57526179222bb96d6d5c92
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 25ccc3936d156a4d9b5442190ea957b2d1eaf1f6
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128077"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699712"
 ---
 # <a name="introduction-to-reporting-in-configuration-manager"></a>Introduktion till rapportering i Configuration Manager
 
@@ -39,7 +39,7 @@ Configuration Manager använder SQL Server Reporting Services som primär rappor
 
 - Exportera rapporter i olika typer av populära format.  
 
-Mer information finns i [Vad är SQL Server Reporting Services (SSRS)?](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports?view=sql-server-ver15)
+Mer information finns i [Vad är SQL Server Reporting Services (SSRS)?](/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports?view=sql-server-ver15)
 
 ## <a name="power-bi-report-server"></a>Power BI-rapportserver
 
@@ -47,7 +47,7 @@ Mer information finns i [Vad är SQL Server Reporting Services (SSRS)?](https://
 
 Från och med version 2002, integrera Power BI-rapportserver med Configuration Manager repor ting. Den här integrationen ger modern visualisering och bättre prestanda. Det lägger till konsol stöd för Power BI rapporter på liknande sätt som redan finns med SQL Server Reporting Services. Mer information finns i [integrera med Power BI-rapportserver](powerbi-report-server.md).
 
-Power BI-rapportserver är en lokal rapport server med en webb portal där du kan visa och hantera rapporter. Den innehåller verktyg för att skapa Power BI rapporter, sid brytnings rapporter, mobila rapporter och KPI: er. Mer information finns i [Vad är Power BI-rapportserver?](https://docs.microsoft.com/power-bi/report-server/get-started).
+Power BI-rapportserver är en lokal rapport server med en webb portal där du kan visa och hantera rapporter. Den innehåller verktyg för att skapa Power BI rapporter, sid brytnings rapporter, mobila rapporter och KPI: er. Mer information finns i [Vad är Power BI-rapportserver?](/power-bi/report-server/get-started).
 
 ## <a name="reporting-services-point"></a>Rapporteringstjänstpunkt
 
@@ -93,7 +93,7 @@ När du kör en rapport begär prompten ett värde för en obligatorisk paramete
 
 Rapport länkar i Configuration Manager används i en käll rapport för att ge enkel åtkomst till ytterligare data. Den kan till exempel länka till mer detaljerad information om varje objekt i käll rapporten. Om målrapporten kräver att en eller flera prompter körs måste källrapporten innehålla en kolumn med lämpliga värden för varje prompt.
 
-Länken måste ange kolumn numret med värdet för prompten. Till exempel:
+Länken måste ange kolumn numret med värdet för prompten. Exempel:
 
 - Det finns en rapport som visar datorer som platsen nyligen har identifierat.
 - Du länkar från den till en annan rapport som visar de senaste meddelanden som platsen tar emot för en speciell dator.

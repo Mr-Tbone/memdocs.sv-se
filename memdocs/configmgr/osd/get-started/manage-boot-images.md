@@ -10,20 +10,20 @@ ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e68a3274a32d28ac0b4ad2a611c59870ee338472
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 74b8b0f29172140a19c402c79b7ea9b7339cf3e5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124549"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697644"
 ---
 # <a name="manage-boot-images-with-configuration-manager"></a>Hantera start avbildningar med Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-En start avbildning i Configuration Manager är en [Windows PE](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-intro) -avbildning (WinPE) som används under en operativ Systems distribution. Start avbildningar används för att starta en dator i WinPE. Detta minimala operativ system innehåller begränsade komponenter och tjänster. Configuration Manager använder WinPE för att förbereda mål datorn för Windows-installation.
+En start avbildning i Configuration Manager är en [Windows PE](/windows-hardware/manufacture/desktop/winpe-intro) -avbildning (WinPE) som används under en operativ Systems distribution. Start avbildningar används för att starta en dator i WinPE. Detta minimala operativ system innehåller begränsade komponenter och tjänster. Configuration Manager använder WinPE för att förbereda mål datorn för Windows-installation.
 
-## <a name="default-boot-images"></a><a name="BKMK_BootImageDefault"></a>Standard start avbildningar
+## <a name="default-boot-images"></a><a name="BKMK_BootImageDefault"></a> Standard start avbildningar
 
 Configuration Manager tillhandahåller två standard start avbildningar: en som stöder x86-plattformar och en som stöder x64-plattformar. De här avbildningarna lagras i mapparna *x64* eller *i386* i följande resurs på plats servern: `\\<SiteServerName>\SMS_<sitecode>\osd\boot\` . Standard start avbildningarna uppdateras eller återskapas beroende på vilken åtgärd du utför.
 
@@ -70,13 +70,13 @@ Om versionerna i Start avbildningen är inaktuella använder du alternativet fö
 
 Noden **Start avbildningar** innehåller också en ny kolumn för (**klient version**). Använd den här kolumnen för att snabbt Visa Configuration Manager klient version i varje start avbildning.
 
-## <a name="customize-a-boot-image"></a><a name="BKMK_BootImageCustom"></a>Anpassa en start avbildning  
+## <a name="customize-a-boot-image"></a><a name="BKMK_BootImageCustom"></a> Anpassa en start avbildning  
 
 När en start avbildning baseras på WinPE-versionen från den version av Windows ADK som stöds, kan du anpassa eller [ändra en start avbildning](#BKMK_ModifyBootImages) från-konsolen. När du uppgraderar en plats och installerar en ny version av Windows ADK, uppdateras inte anpassade Start avbildningar med den nya versionen av Windows ADK. När det händer kan du inte anpassa start avbildningarna i Configuration Manager-konsolen. De fortsätter dock att fungera som de gjorde före uppgraderingen.  
 
 När en start avbildning baseras på en annan version av Windows ADK som är installerad på en plats måste du anpassa start avbildningarna. Använd en annan metod för att anpassa de här start avbildningarna, till exempel genom att använda kommando rads verktyget DISM (Deployment Image Servicing and Management). DISM är en del av Windows ADK. Mer information finns i [Anpassa Start avbildningar](customize-boot-images.md).  
 
-## <a name="add-a-boot-image"></a><a name="BKMK_AddBootImages"></a>Lägg till en start avbildning  
+## <a name="add-a-boot-image"></a><a name="BKMK_AddBootImages"></a> Lägg till en start avbildning  
 
 Under plats installationen lägger Configuration Manager automatiskt till Start avbildningar som baseras på en WinPE-version från den version av Windows ADK som stöds. Beroende på vilken version av Configuration Manager kan du lägga till Start avbildningar baserat på en annan WinPE-version än den version av Windows ADK som stöds. Ett fel inträffar när du försöker lägga till en start avbildning som innehåller en version av WinPE som inte stöds. Följande lista är de Windows ADK-och WinPE-versioner som stöds för närvarande:
 
@@ -94,7 +94,7 @@ Använd exempelvis Configuration Manager-konsolen för att anpassa start avbildn
 
 - [Anpassa startavbildningar](customize-boot-images.md)
 - [Stöd för Windows 10 ADK](../../core/plan-design/configs/support-for-windows-10.md#windows-10-adk)
-- [Plattformar som stöds av DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms)
+- [Plattformar som stöds av DISM](/windows-hardware/manufacture/desktop/dism-supported-platforms)
 
 <a name="bkmk_note1"></a>
 
@@ -128,7 +128,7 @@ Start avbildningen visas nu i noden **Start avbildning** . Innan du använder st
 > [!Tip]  
 > I noden **Start avbildning** i-konsolen visar kolumnen **storlek (KB)** den okomprimerade storleken för varje start avbildning. När platsen skickar en start avbildning över nätverket skickas en komprimerad kopia. Den här kopian är vanligt vis mindre än den storlek som anges i kolumnen **storlek (KB)** .  
 
-## <a name="distribute-boot-images"></a><a name="BKMK_DistributeBootImages"></a>Distribuera start avbildningar  
+## <a name="distribute-boot-images"></a><a name="BKMK_DistributeBootImages"></a> Distribuera start avbildningar  
 
 Du distribuerar startavbildningar till distributionsplatser på samma sätt som du distribuerar annat innehåll. Innan du distribuerar ett operativ system eller skapar media måste du distribuera start avbildningen till minst en distributions plats.
 
@@ -142,7 +142,7 @@ Om du vill använda PXE för att distribuera ett operativ system bör du tänka 
   
 Mer information om hur du använder PXE för att distribuera operativ system finns i [använda PXE för att distribuera Windows via nätverket](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-## <a name="modify-a-boot-image"></a><a name="BKMK_ModifyBootImages"></a>Ändra en start avbildning  
+## <a name="modify-a-boot-image"></a><a name="BKMK_ModifyBootImages"></a> Ändra en start avbildning  
 
 Lägg till eller ta bort enhets driv rutiner i avbildningen eller redigera egenskaperna för start avbildningen. De driv rutiner som du lägger till eller tar bort kan omfatta nätverks-eller lagrings driv rutiner. Tänk på följande när du ändrar startavbildningar:  
 
@@ -206,11 +206,11 @@ På fliken **Anpassning** väljer du någon av följande inställningar:
 - **Ange standard tangentbordslayout i WinPE**: <!--4910348-->Från och med version 1910 konfigurerar du standard tangentbordslayouten för en start avbildning. Om du väljer ett annat språk än en-US, kan Configuration Manager fortfarande innehålla en-us i tillgängliga språk. På enheten är den första tangentbordslayouten det valda språket, men användaren kan byta enhet till en-US om det behövs.
 
 > [!Tip]
-> Använd cmdleten [set-CMBootImage](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmbootimage?view=sccm-ps) PowerShell-cmdlet för att konfigurera inställningarna från ett skript.
+> Använd cmdleten [set-CMBootImage](/powershell/module/configurationmanager/set-cmbootimage?view=sccm-ps) PowerShell-cmdlet för att konfigurera inställningarna från ett skript.
 
 #### <a name="optional-components"></a>Valfria komponenter
 
-På fliken **valfria komponenter** anger du de komponenter som ska läggas till i Windows PE för användning med Configuration Manager. Mer information om tillgängliga valfria komponenter finns i [WinPE: Lägga till paket (referens för valfria komponenter)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
+På fliken **valfria komponenter** anger du de komponenter som ska läggas till i Windows PE för användning med Configuration Manager. Mer information om tillgängliga valfria komponenter finns i [WinPE: Lägga till paket (referens för valfria komponenter)](/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
 
 Följande komponenter krävs av Configuration Manager och har alltid lagts till i Start avbildningar:
 
@@ -271,7 +271,7 @@ På fliken **innehålls platser** väljer du distributions platsen eller distrib
 
 På fliken **säkerhet** visar du de administrativa användare som har behörighet till objektet.
 
-## <a name="configure-a-boot-image-for-pxe"></a><a name="BKMK_BootImagePXE"></a>Konfigurera en start avbildning för PXE  
+## <a name="configure-a-boot-image-for-pxe"></a><a name="BKMK_BootImagePXE"></a> Konfigurera en start avbildning för PXE  
 
 Innan du kan använda en start avbildning för en PXE-baserad distribution konfigurerar du Start avbildningen så att den distribueras från en PXE-aktiverad distributions plats.  
 
@@ -283,7 +283,7 @@ Innan du kan använda en start avbildning för en PXE-baserad distribution konfi
 
 4. Markera **Distribuera den här avbildningen från den PXE-aktiverade distributionsplatsen** på fliken **Datakälla**. Mer information finns i [använda PXE för att distribuera Windows via nätverket](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-## <a name="configure-multiple-languages"></a><a name="BKMK_BootImageLanguage"></a>Konfigurera flera språk
+## <a name="configure-multiple-languages"></a><a name="BKMK_BootImageLanguage"></a> Konfigurera flera språk
 
 > [!TIP]
 > Från och med version 1910 konfigurerar du standard tangentbordslayouten för egenskaperna för en start avbildning. Mer information finns i avsnittet [anpassning](#customization).<!--4910348-->
@@ -301,6 +301,6 @@ Använd följande procedur för att ställa in WinPE-språket för PXE-eller med
 
 ### <a name="set-the-windows-pe-language-for-a-pxe-or-media-initiated-os-deployment"></a>Ange Windows PE-språk för en PXE-eller distribution av operativ system som initieras av media  
 
-1. Innan du uppdaterar start avbildningen måste du kontrol lera att rätt resurs fil för aktivitetssekvensen (tsres.dll) finns i motsvarande språkmapp på plats servern. Till exempel finns den engelska resurs filen på följande plats:`<ConfigMgrInstallationFolder>\OSD\bin\x64\00000409\tsres.dll`  
+1. Innan du uppdaterar start avbildningen måste du kontrol lera att rätt resurs fil för aktivitetssekvensen (tsres.dll) finns i motsvarande språkmapp på plats servern. Till exempel finns den engelska resurs filen på följande plats: `<ConfigMgrInstallationFolder>\OSD\bin\x64\00000409\tsres.dll`  
 
-2. Som en del av ditt för inläsnings kommando ställer du in miljövariabeln **SMSTSLanguageFolder** till rätt språk-ID. Språk-ID: t måste anges med decimal och inte hexadecimalt format. Om du till exempel vill ange språk-ID: t till engelska anger du decimal värdet **1033**, inte det hexadecimala värdet 00000409 på mappnamnet.  
+2. Som en del av ditt för inläsnings kommando ställer du in miljövariabeln **SMSTSLanguageFolder** till rätt språk-ID. Språk-ID: t måste anges med decimal och inte hexadecimalt format. Om du till exempel vill ange språk-ID: t till engelska anger du decimal värdet **1033**, inte det hexadecimala värdet 00000409 på mappnamnet.

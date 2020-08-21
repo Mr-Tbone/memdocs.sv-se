@@ -10,12 +10,12 @@ ms.assetid: d09a82c6-bbd1-49ca-8ffe-e3ce87b85d33
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d035e6fbd776a03ce38a4cd0fc12755100b60c91
-ms.sourcegitcommit: 2aa97d1b6409575d731c706faa2bc093c2b298c4
+ms.openlocfilehash: 988a9c31fca8d06104ce317f4709ee990089d723
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82643252"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699151"
 ---
 # <a name="use-a-sql-server-cluster-for-the-site-database"></a>Använd ett SQL Server-kluster för plats databasen
 
@@ -49,7 +49,7 @@ Följande alternativ stöds för SQL Server redundanskluster som används som pl
 
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Tänk på följande krav:  
 
@@ -63,7 +63,7 @@ Tänk på följande krav:
 - För att stödja Kerberos-autentisering aktiverar du **TCP/IP-** nätverkets kommunikations protokoll för nätverks anslutningen för varje SQL Server klusternod. **Namngivna pipes** -protokollet krävs inte, men kan användas för att felsöka problem med Kerberos-autentisering. Inställningarna för nätverks protokoll konfigureras i **Konfigurationshanteraren för SQL Server**under **SQL Server nätverks konfiguration**.  
 
 - Det finns särskilda certifikat krav när du använder ett SQL Server-kluster för plats databasen. Mer information finns i följande artiklar:
-  - [Installera ett certifikat i ett SQL-kluster för växling vid fel](https://docs.microsoft.com/sql/database-engine/configure-windows/manage-certificates?view=sql-server-ver15#provision-failover-cluster-cert)
+  - [Installera ett certifikat i ett SQL-kluster för växling vid fel](/sql/database-engine/configure-windows/manage-certificates?view=sql-server-ver15#provision-failover-cluster-cert)
   - [PKI-certifikatkrav för Configuration Manager](../../../plan-design/network/pki-certificate-requirements.md#BKMK_PKIcertificates_for_servers)
 
   > [!NOTE]
@@ -81,7 +81,7 @@ Tänk på följande begränsningar:
 - När du anger ett SQL Server kluster är alternativet för att ange fil platser som inte är standard för plats databasen inte tillgängligt.  
 
 
-### <a name="sms-provider"></a>SMS-provider
+### <a name="sms-provider"></a>SMS-providern
 
 Du kan inte installera en instans av SMS-providern på ett SQL Server kluster. Det stöds inte heller på en dator som kör som en klustrad SQL Server nod.  
 
@@ -97,11 +97,11 @@ Configuration Manager stöder inte Data Protection Manager (DPM) säkerhets kopi
 
 
 
-## <a name="prepare-a-clustered-sql-server-instance"></a><a name="bkmk_prepare"></a>Förbereda en klustrad SQL Server instans  
+## <a name="prepare-a-clustered-sql-server-instance"></a><a name="bkmk_prepare"></a> Förbereda en klustrad SQL Server instans  
 
 Här är de viktigaste uppgifterna som slutförs för att förbereda plats databasen:
 
-- Skapa det virtuella SQL Server-klustret som ska vara värd för platsdatabasen i en befintlig Windows Server-klustermiljö. Information om hur du installerar och konfigurerar ett SQL Server kluster finns i dokumentationen som är speciell för din version av SQL Server. Mer information finns i [skapa ett nytt SQL Server redundanskluster](https://docs.microsoft.com/sql/sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup?view=sql-server-2017).  
+- Skapa det virtuella SQL Server-klustret som ska vara värd för platsdatabasen i en befintlig Windows Server-klustermiljö. Information om hur du installerar och konfigurerar ett SQL Server kluster finns i dokumentationen som är speciell för din version av SQL Server. Mer information finns i [skapa ett nytt SQL Server redundanskluster](/sql/sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup?view=sql-server-2017).  
 
 - På varje dator i SQL Server klustret placerar du en fil i rotmappen på varje enhet där du inte vill att Configuration Manager ska installera plats komponenter. Ge filen namnet `NO_SMS_ON_DRIVE.SMS`. Som standard installerar Configuration Manager vissa komponenter på varje fysisk nod för att stödja åtgärder som säkerhets kopiering.  
 
@@ -117,4 +117,4 @@ Om du vill installera en plats som använder en klustrad plats databas kör du C
 - Ange namnet på den virtuella SQL Server-klusterinstans där platsdatabasen ska finnas på sidan **Databasinformation** . Den virtuella instansen ersätter namnet på datorn som kör SQL Server.  
 
     > [!IMPORTANT]  
-    > När du anger namnet på den virtuella SQL Server kluster instansen ska du inte ange det virtuella Windows Server-namnet som skapats av Windows Server-klustret. Om du använder det virtuella Windows Server-namnet installeras plats databasen på den lokala hård disken på noden aktiva Windows Server-klusternoder. Detta förhindrar en lyckad redundansväxling i händelse av problem på noden.  
+    > När du anger namnet på den virtuella SQL Server kluster instansen ska du inte ange det virtuella Windows Server-namnet som skapats av Windows Server-klustret. Om du använder det virtuella Windows Server-namnet installeras plats databasen på den lokala hård disken på noden aktiva Windows Server-klusternoder. Detta förhindrar en lyckad redundansväxling i händelse av problem på noden.

@@ -10,12 +10,12 @@ ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7e8e65571a3902661176ca3840690c159faef416
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4f9266668a488b6331857bf860d874a48161fcd0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709623"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700222"
 ---
 # <a name="support-for-windows-features-and-networks-in-configuration-manager"></a>Stöd för Windows-funktioner och nätverk i Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "81709623"
 
 Den här artikeln beskriver Configuration Manager stöd för vanliga funktioner i Windows och nätverksfunktioner.  
 
-## <a name="branchcache"></a><a name="bkmk_branchcache"></a>BranchCache  
+## <a name="branchcache"></a><a name="bkmk_branchcache"></a> BranchCache  
 
 Använd Windows BranchCache med Configuration Manager när du aktiverar den på distributions platser och konfigurera klienterna så att de använder den i läget för distribuerad cache.
 
@@ -49,13 +49,13 @@ Lägg till **Windows BranchCache** -funktionen på den plats system server som h
 - Klienter som har stöd för BranchCache måste konfigureras för BranchCache-läget för distribuerad cache.  
 - OS-inställningen för BITS-klientinställningar måste aktive ras för att stöda BranchCache.  
 
-Mer information finns i [Konfigurera klienter för BranchCache](https://docs.microsoft.com/windows/deployment/update/waas-branchcache#configure-clients-for-branchcache) i Windows-dokumentationen.
+Mer information finns i [Konfigurera klienter för BranchCache](/windows/deployment/update/waas-branchcache#configure-clients-for-branchcache) i Windows-dokumentationen.
 
 Alla Configuration Manager-versioner som stöds av Windows stöder BranchCache som standard.
 
-Mer information finns i [BranchCache för Windows](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) i Windows Server-dokumentationen.  
+Mer information finns i [BranchCache för Windows](/windows-server/networking/branchcache/branchcache) i Windows Server-dokumentationen.  
 
-## <a name="computers-in-workgroups"></a><a name="bkmk_Workgroups"></a>Datorer i arbets grupper  
+## <a name="computers-in-workgroups"></a><a name="bkmk_Workgroups"></a> Datorer i arbets grupper  
 
 Configuration Manager ger stöd för klienter i arbets grupper.  
 
@@ -64,7 +64,7 @@ Configuration Manager ger stöd för klienter i arbets grupper.
 > [!NOTE]
 > Även om klienter i arbets grupper stöds måste alla plats system vara medlemmar i en Active Directory-domän som stöds.  
 
-## <a name="data-deduplication"></a><a name="bkmmk_datadedup"></a>Datadeduplicering
+## <a name="data-deduplication"></a><a name="bkmmk_datadedup"></a> Datadeduplicering
 
 Configuration Manager stöder användning av datadeduplicering med distributions platser på Windows Server 2012 eller senare.
 
@@ -75,9 +75,9 @@ Mer information finns i följande inlägg:
 
 - [Configuration Manager distributions platser och Windows Server 2012-datadeduplicering](https://techcommunity.microsoft.com/t5/configuration-manager-archive/configuration-manager-distribution-points-and-windows-server/ba-p/273385) på Configuration Manager teamets blogg
 
-- [Översikt över datadeduplicering](https://docs.microsoft.com/windows-server/storage/data-deduplication/overview) i Windows Server-dokumentationen
+- [Översikt över datadeduplicering](/windows-server/storage/data-deduplication/overview) i Windows Server-dokumentationen
 
-## <a name="directaccess"></a><a name="bkmk_DA"></a>DirectAccess  
+## <a name="directaccess"></a><a name="bkmk_DA"></a> DirectAccess  
 
 Configuration Manager stöder DirectAccess-funktionen för kommunikation mellan klienter och plats server system.  
 
@@ -93,11 +93,11 @@ Configuration Manager stöder inte följande funktioner i DirectAccess:
 
 - Kommunikation mellan Configuration Manager plats system servrar inom en plats  
 
-## <a name="dual-boot-computers"></a><a name="bkmk_dualboot"></a>Datorer med flervalsstart  
+## <a name="dual-boot-computers"></a><a name="bkmk_dualboot"></a> Datorer med flervalsstart  
 
 Configuration Manager kan inte hantera mer än ett operativ system på samma dator. Om det finns fler än ett operativ system på en dator som ska hanteras justerar du platsens identifierings-och klient installations metoder för att säkerställa att Configuration Manager-klienten endast installeras på det operativ system som måste hanteras.  
 
-## <a name="ipv6"></a><a name="bkmk_IPv6"></a>IPv6  
+## <a name="ipv6"></a><a name="bkmk_IPv6"></a> IPv6  
 
 Utöver Internet Protocol version 4 (IPv4) stöder Configuration Manager Internet Protocol version 6 (IPv6), med följande undantag:  
 
@@ -111,11 +111,11 @@ Utöver Internet Protocol version 4 (IPv4) stöder Configuration Manager Interne
 |Kommunikation med aktiveringsproxy|IPv4 krävs för klientens aktiveringsproxypaket.|  
 |Windows CE|IPv4 krävs för att stödja Configuration Manager-klienten på Windows CE enheter.|  
 
-## <a name="network-address-translation"></a><a name="bkmk_NAT"></a>Översättning av nätverks adresser  
+## <a name="network-address-translation"></a><a name="bkmk_NAT"></a> Översättning av nätverks adresser  
 
 NAT (Network Address Translation) stöds inte i Configuration Manager, om inte platsen stöder klienter som finns på Internet och klienten identifierar att den är ansluten till Internet. Mer information om Internetbaserad klient hantering finns i [Planera för att hantera Internetbaserade klienter](../../clients/manage/plan-internet-based-client-management.md).  
 
-## <a name="specialized-storage-technology"></a><a name="bkmk_storage"></a>Specialiserad lagrings teknik  
+## <a name="specialized-storage-technology"></a><a name="bkmk_storage"></a> Specialiserad lagrings teknik  
 
 Configuration Manager fungerar med all maskin vara som är certifierad i listan Windows-maskinvarukompatibilitet för den version av operativ systemet som Configuration Manager-komponenten är installerad på.
 
@@ -129,4 +129,4 @@ Plats Server roller kräver NTFS, så att Configuration Manager kan ange katalog
 
      Dessutom stöds inte cache för en Configuration Manager-klient på en SIS-aktiverad volym.  
 
-- **Flyttbar disk enhet**: Configuration Manager stöder inte installation av Configuration Manager plats system eller klienter på en flyttbar disk enhet.  
+- **Flyttbar disk enhet**: Configuration Manager stöder inte installation av Configuration Manager plats system eller klienter på en flyttbar disk enhet.

@@ -10,12 +10,12 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 31f9b1cb083400abd36858a177e87804a916362c
-ms.sourcegitcommit: 7a099ff53668f50b37adab97ecd7ba98c5324676
+ms.openlocfilehash: aca3322c245fa22a7c87f30e328833d8a8a128bc
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746530"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699049"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Använda Configuration Manager dokument
 
@@ -30,7 +30,7 @@ Den här artikeln innehåller resurser och tips för att använda Configuration 
 
 Allmän hjälp med produkten finns i [hitta hjälp](find-help.md).
 
-## <a name="search"></a><a name="bkmk_searchtips"></a>Sök
+## <a name="search"></a><a name="bkmk_searchtips"></a> Sök
 
 Använda följande söktips för att hitta den information du behöver:
 
@@ -59,9 +59,9 @@ Använda följande söktips för att hitta den information du behöver:
 > [!TIP]
 > Från och med Configuration Manager version 1902 finns en noden **dokumentation** i den nya **Community** -arbetsytan i Configuration Manager-konsolen. Den här noden innehåller uppdaterad information om Configuration Manager dokumentation och support artiklar. Mer information finns i [använda Configuration Manager-konsolen](../servers/manage/admin-console.md#bkmk_doc-dashboard).
 
-## <a name="feedback"></a><a name="bkmk_docfeedback"></a>Oss
+## <a name="feedback"></a><a name="bkmk_docfeedback"></a> Oss
 
-Välj länken **feedback** högst upp till höger om en artikel för att gå till feedback-avsnittet längst ned. Det här avsnittet är integrerat med GitHub-problem. Mer information om integrering med GitHub-problem finns i [blogg inlägget dokumentations plattform](https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs).
+Välj länken **feedback** högst upp till höger om en artikel för att gå till feedback-avsnittet längst ned. Det här avsnittet är integrerat med GitHub-problem. Mer information om integrering med GitHub-problem finns i [blogg inlägget dokumentations plattform](/teamblog/a-new-feedback-system-is-coming-to-docs).
 
 Om du vill dela feedback om själva Configuration Manager själva produkten väljer du **produkt feedback**. Mer information finns i [produkt feedback](find-help.md#product-feedback).
 
@@ -81,23 +81,23 @@ Använd GitHub-problem för att skicka in följande typer av feedback:
 - Lokalisering: feedback om översättning av innehåll.
 - Sökmotor optimering (SEO): feedback om problem med att söka efter innehåll. Lägg till sökmotorn, nyckelorden och mål artikeln i kommentarerna.
 
-Om du skapar ett problem för icke-doc-relaterade ämnen kommer Microsoft att stänga problemen. Ett exempel:
+Om du skapar ett problem för icke-doc-relaterade ämnen kommer Microsoft att stänga problemen. Exempel:
 
-- [Produkt feedback](find-help.md#product-feedback)
+- [Produktfeedback](find-help.md#product-feedback)
 - [Produkt frågor](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)
 - [Supportförfrågningar](https://aka.ms/cmcbsupport)
 
 Information om hur du delar feedback om den grundläggande docs.microsoft.com-plattformen finns i [feedback om dokument](https://aka.ms/sitefeedback). Plattformen innehåller alla omslutnings komponenter, till exempel sidhuvud, innehålls förteckning och höger meny. Även hur artiklarna återges i webbläsaren, till exempel teckensnitt, varnings rutor och sid ankare.
 
-## <a name="notifications"></a><a name="bkmk_notifications"></a>Ansökningar
+## <a name="notifications"></a><a name="bkmk_notifications"></a> Ansökningar
 
 Använd följande steg för att ta emot meddelanden när innehålls ändringar i dokumentations biblioteket:
 
-1. Använd [dokument Sök funktionen](https://docs.microsoft.com/search/index?scope=ConfigMgr) för att hitta en artikel eller en uppsättning artiklar. Ett exempel:
+1. Använd [dokument Sök funktionen](/search/index?scope=ConfigMgr) för att hitta en artikel eller en uppsättning artiklar. Exempel:
 
-    - Sök efter en enskild artikel efter rubrik, ["loggfiler för fel sökning – Configuration Manager"](https://docs.microsoft.com/search/index?search=%22Log+files+for+troubleshooting+-+Configuration+Manager%22&scope=ConfigMgr)
+    - Sök efter en enskild artikel efter rubrik, ["loggfiler för fel sökning – Configuration Manager"](/search/index?scope=ConfigMgr&search=%22Log+files+for+troubleshooting+-+Configuration+Manager%22)
 
-    - Sök efter en artikel om [SQL](https://docs.microsoft.com/search/index?search=SQL&scope=ConfigMgr)
+    - Sök efter en artikel om [SQL](/search/index?scope=ConfigMgr&search=SQL)
 
 2. I det övre högra hörnet väljer du **RSS** -länken.
 
@@ -106,9 +106,9 @@ Använd följande steg för att ta emot meddelanden när innehålls ändringar i
 > [!TIP]
 > Du kan också **titta** på [SCCMdocs-lagringsplatsen](https://github.com/MicrosoftDocs/SCCMdocs) på GitHub. Den här metoden genererar många meddelanden. Det inkluderar inte heller ändringar från en privat databas som används av Microsoft.
 
-## <a name="contribute"></a><a name="bkmk_contribute"></a>Ger
+## <a name="contribute"></a><a name="bkmk_contribute"></a> Ger
 
-Configuration Manager dokumentations biblioteket, t. ex. merparten av innehållet på docs.microsoft.com, har öppen källkod på GitHub. Det här biblioteket godkänner och uppmuntrar community-bidrag. Mer information om hur du kommer igång finns i [deltagar guiden](https://docs.microsoft.com/contribute). Den enda förutsättningen är att skapa ett [GitHub-konto](https://github.com/join).
+Configuration Manager dokumentations biblioteket, t. ex. merparten av innehållet på docs.microsoft.com, har öppen källkod på GitHub. Det här biblioteket godkänner och uppmuntrar community-bidrag. Mer information om hur du kommer igång finns i [deltagar guiden](/contribute). Den enda förutsättningen är att skapa ett [GitHub-konto](https://github.com/join).
 
 ### <a name="basic-steps-to-contribute-to-sccmdocs"></a>Grundläggande steg för att bidra till SCCMdocs
 
@@ -116,7 +116,7 @@ Configuration Manager dokumentations biblioteket, t. ex. merparten av innehålle
 
 2. Om du vill redigera käll filen väljer du Penn ikonen.
 
-3. Gör ändringar i markdown-källan. Mer information finns i [så här använder du markdown för att skriva dokument](https://docs.microsoft.com/contribute/markdown-reference).
+3. Gör ändringar i markdown-källan. Mer information finns i [så här använder du markdown för att skriva dokument](/contribute/markdown-reference).
 
 4. I avsnittet föreslå fil ändring anger du den offentliga inchecknings kommentaren som beskriver *vad* du har ändrat. Välj sedan **föreslå fil ändring**.
 
@@ -148,7 +148,7 @@ Följ dessa allmänna rikt linjer när du bidrar till Configuration Manager doku
 
 - Överraskning oss inte med stora pull-begäranden. Ange i stället [ett problem](#bkmk_docfeedback) och starta en diskussion. Sedan kan vi enas om en riktning innan du investerar en stor del av tiden.
 
-- Läs [Microsofts stil guide](https://aka.ms/MicrosoftStyle). Ta reda på de [10 viktigaste tipsen för Microsofts stil och röst](https://docs.microsoft.com/style-guide/top-10-tips-style-voice).
+- Läs [Microsofts stil guide](https://aka.ms/MicrosoftStyle). Ta reda på de [10 viktigaste tipsen för Microsofts stil och röst](/style-guide/top-10-tips-style-voice).
 
 - Använd [mallen för pull-begäran](https://github.com/MicrosoftDocs/SCCMdocs/blob/master/PULL_REQUEST_TEMPLATE.md) som start punkt för ditt arbete.
 
@@ -160,7 +160,7 @@ Följ dessa allmänna rikt linjer när du bidrar till Configuration Manager doku
 
 ## <a name="consolidation-of-documentation-for-microsoft-endpoint-manager"></a>Konsolidering av dokumentation för Microsoft Endpoint Manager
 
-För att bättre stödja kombinerade scenarier för Intune och Configuration Manager samlas deras dokumentations bibliotek på [webbplatsen för Microsoft Endpoint Manager](https://docs.microsoft.com/mem). Intune-dokumentationen finns nu på [docs.Microsoft.com/MEM/Intune](https://docs.microsoft.com/mem/intune)och Configuration Manager-dokumentationen finns nu på [docs.Microsoft.com/MEM/ConfigMgr](https://docs.microsoft.com/mem/configmgr). Om du fortfarande använder en gammal URL kommer den automatiskt att omdirigeras, så du behöver inte göra några ändringar för att läsa det här innehållet.
+För att bättre stödja kombinerade scenarier för Intune och Configuration Manager samlas deras dokumentations bibliotek på [webbplatsen för Microsoft Endpoint Manager](/mem). Intune-dokumentationen finns nu på [docs.Microsoft.com/MEM/Intune](../../../intune/index.yml)och Configuration Manager-dokumentationen finns nu på [docs.Microsoft.com/MEM/ConfigMgr](../../index.yml). Om du fortfarande använder en gammal URL kommer den automatiskt att omdirigeras, så du behöver inte göra några ändringar för att läsa det här innehållet.
 
 Om du ger feedback eller bidrar till artiklar, är vissa ändringar nödvändiga:
 

@@ -10,12 +10,12 @@ ms.assetid: a95bc292-af10-4beb-ab56-2a815fc69304
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c60f30e306c6ff52849cfcdd4696d67a7d26f395
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4c8029cdda80d327cbed2a4c60c71ff1811e4723
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722237"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698705"
 ---
 # <a name="windows-hello-for-business-settings-in-configuration-manager"></a>Inställningar för Windows Hello för företag i Configuration Manager
 
@@ -31,7 +31,7 @@ Configuration Manager integreras med Windows Hello för företag. (Den här funk
 >
 > Överväg att flytta [arbets belastningen för **resurs åtkomst principer** ](../../comanage/workloads.md#resource-access-policies) till Intune för samhanterade enheter. Använd sedan Intune-principer för att hantera dessa certifikat. Mer information finns i [så här växlar du arbets belastningar](../../comanage/how-to-switch-workloads.md).
 
-Mer information finns i [Windows Hello för företag](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
+Mer information finns i [Windows Hello för företag](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
 > [!Note]  
 > Configuration Manager aktiverar inte den här valfria funktionen som standard. Du måste aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).<!--505213-->  
@@ -69,9 +69,9 @@ Configuration Manager integreras med Windows Hello för företag på följande s
         > [!NOTE]
         > Från och med version 1910 stöds inte certifikatbaserad autentisering med Windows Hello för företag-inställningar i Configuration Manager.
 
-    - **Konfigurera minsta längd på PIN-kod**: om du vill kräva en minimilängd för användarens PIN-kod aktiverar du det här alternativet och anger ett värde. När det är aktiverat är `4`standardvärdet.
+    - **Konfigurera minsta längd på PIN-kod**: om du vill kräva en minimilängd för användarens PIN-kod aktiverar du det här alternativet och anger ett värde. När det är aktiverat är standardvärdet `4` .
 
-    - **Konfigurera maximal längd för PIN-kod**: om du vill kräva en maximal längd för användarens PIN-kod aktiverar du det här alternativet och anger ett värde. När aktive rad är `127`standardvärdet.
+    - **Konfigurera maximal längd för PIN-kod**: om du vill kräva en maximal längd för användarens PIN-kod aktiverar du det här alternativet och anger ett värde. När aktive rad är standardvärdet `127` .
 
     - **Kräv förfallo datum för PIN-kod (dagar)**: anger antalet dagar innan användaren måste ändra PIN-koden för enheten.
 
@@ -145,7 +145,7 @@ Följande skärm bild är ett exempel på profil inställningar för Windows Hel
 
 1. Välj **Lägg till**.
 
-1. Välj **Välj ett huvud konto** och `Key Admins`ange.
+1. Välj **Välj ett huvud konto** och ange `Key Admins` .
 
 1. I listan **gäller för väljer du** **underordnade användar objekt**.
 

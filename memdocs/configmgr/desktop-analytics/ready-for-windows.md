@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
 ROBOTS: NOINDEX
-ms.openlocfilehash: 18e703691696a2cfc02a5b9715fb6062360229e2
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: 63aba639eea221c3a13f7ebeabaa1b96a8439a72
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353470"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700777"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Klar för vanliga frågor och svar om moderna skriv bord
 
@@ -49,10 +49,10 @@ Många kunder har utmaningar med att hämta och hålla dig uppdaterad med Window
 
 Det *färdiga för modern Skriv bords* katalog som listas program varu lösningar som stöds och används på kommersiella enheter som kör Windows 10 och Office 365 ProPlus. Katalogen hjälper IT-chefer som överväger de senaste versionerna av Windows 10 och Office 365 för sina distributioner.
 
-Feedback från IT-chefer är att de vill att dessa insikter integreras med de verktyg som redan används för att planera sina distributions planer. Använd funktionerna [Desktop Analytics](https://aka.ms/dadocs) och [Office 365 ProPlus readiness](https://docs.microsoft.com/deployoffice/readiness-tools#office-365-proplus-readiness-features-in-configuration-manager-current-branch) i Configuration Manager för att planera och hantera dina Windows 10-och Office 365 ProPlus-uppgraderings projekt. 
+Feedback från IT-chefer är att de vill att dessa insikter integreras med de verktyg som redan används för att planera sina distributions planer. Använd funktionerna [Desktop Analytics](https://aka.ms/dadocs) och [Office 365 ProPlus readiness](/deployoffice/readiness-tools#office-365-proplus-readiness-features-in-configuration-manager-current-branch) i Configuration Manager för att planera och hantera dina Windows 10-och Office 365 ProPlus-uppgraderings projekt. 
 
 > [!Note]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
 ### <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -114,12 +114,12 @@ Kontakta din Microsoft-kontakt om dina support rapporter inte är korrekt koppla
 
 Utvärdera prestanda för dina lösningar med hälso-och mått rapporter via Developer Center: 
 
-- [Windows Store](https://docs.microsoft.com/windows/uwp/publish/health-report)
-- [Skrivbord](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)
-- [Office Add-ins](https://docs.microsoft.com/office/dev/store/update-unpublish-and-view-metrics) 
+- [Windows Store](/windows/uwp/publish/health-report)
+- [Skrivbord](/windows/desktop/appxpkg/windows-desktop-application-program)
+- [Office Add-ins](/office/dev/store/update-unpublish-and-view-metrics) 
 
 ### <a name="how-can-i-develop-compatible-assets-for-windows-10-and-office-365-proplus"></a>Hur kan jag utveckla kompatibla till gångar för Windows 10 och Office 365 ProPlus?
 
 Kontrol lera att dina Skriv bords program är kompatibla nu och håll dem kompatibla med Windows 10 i framtiden. Mer information finns i [programkompatibilitet för utvecklare](https://developer.microsoft.com/windows/desktop/app-compatibility).
 
-Om du utvecklar lösningar för Office 365 ProPlus, se [metod tips för utveckling för com, VSTO och VBA-tillägg i Office](https://docs.microsoft.com/visualstudio/vsto/development-best-practices-for-com-vsto-and-vba-add-ins-in-office).
+Om du utvecklar lösningar för Office 365 ProPlus, se [metod tips för utveckling för com, VSTO och VBA-tillägg i Office](/visualstudio/vsto/development-best-practices-for-com-vsto-and-vba-add-ins-in-office).

@@ -10,12 +10,12 @@ ms.assetid: c5cb5753-5728-4f81-b830-a6fd1a3e105c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0103ba8923698a31b86e7d34119caaeb54d54c90
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: cd44270d8662d9e7b1b26db92e2f66035edc24f1
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128536"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699338"
 ---
 # <a name="microsoft-connected-cache-in-configuration-manager"></a>Microsoft Connected cache i Configuration Manager
 
@@ -61,7 +61,7 @@ När du konfigurerar klienter att använda den anslutna cache-servern, begär de
 
   - Standard webbplatsen som är aktive rad på port 80
 
-  - Förinstallera inte funktionen för IIS- [programbegäran](https://docs.microsoft.com/iis/extensions/planning-for-arr/application-request-routing-version-2-overview) (arr). Den anslutna cachen installerar ARR och konfigurerar dess inställningar. Microsoft kan inte garantera att den anslutna cachens ARR-konfiguration inte hamnar i konflikt med andra program på servern som också använder den här funktionen.
+  - Förinstallera inte funktionen för IIS- [programbegäran](/iis/extensions/planning-for-arr/application-request-routing-version-2-overview) (arr). Den anslutna cachen installerar ARR och konfigurerar dess inställningar. Microsoft kan inte garantera att den anslutna cachens ARR-konfiguration inte hamnar i konflikt med andra program på servern som också använder den här funktionen.
 
   - Distributions platsen kräver Internet åtkomst till Microsoft-molnet. De speciella URL: erna kan variera beroende på det aktuella molnbaserade innehållet. Se till att även tillåta slut punkter för leverans optimering. Mer information finns i [krav för Internet åtkomst](../network/internet-endpoints.md).
 
@@ -97,7 +97,7 @@ När du konfigurerar klienter att använda den anslutna cache-servern, begär de
 
 1. I klient inställningar i gruppen för **leverans optimering** konfigurerar du inställningen för att **Aktivera enheter som hanteras av Configuration Manager att använda Microsoft-anslutna cache-servrar för innehålls hämtning**.  
 
-### <a name="note-1-about-drive-selection"></a><a name="bkmk_note1"></a>Anmärkning 1: om val av enhet
+### <a name="note-1-about-drive-selection"></a><a name="bkmk_note1"></a> Anmärkning 1: om val av enhet
 
 Om du väljer **Automatisk**används **No_sms_on_drive. SMS** -filen när Configuration Manager installerar den anslutna cache-komponenten. Distributions platsen har till exempel filen `C:\no_sms_on_drive.sms` . Även om enheten C: har mest ledigt utrymme, Configuration Manager konfigurerar det anslutna cacheminnet för att använda en annan enhet för cacheminnet.
 
@@ -109,7 +109,7 @@ Om du väljer en speciell enhet som redan har **No_sms_on_drive. SMS** -filen ig
 
 - Om värdet är inställt på automatisk skapar du först filen **No_sms_on_drive. SMS** . Gör sedan några ändringar i egenskaperna för distributions platsen för att utlösa en konfigurations ändring.
 
-### <a name="automation"></a>Automation
+### <a name="automation"></a>Automatisering
 
 <!-- SCCMDocs#1911 -->
 
@@ -118,10 +118,10 @@ Du kan använda Configuration Manager SDK för att automatisera konfigurationen 
 När du uppdaterar **SMS_SCI_SysResUse** -instansen för distributions platsen anger du följande egenskaper:
 
 - **AgreeDOINCLicense**: ange att `1` accepterar licens villkoren.
-- **Flaggor**: aktivera `|= 4` , inaktivera`&= ~4`
-- **DiskSpaceDOINC**: Ange till `Percentage` eller`GB`
-- **RetainDOINCCache**: Ange till `0` eller`1`
-- **LocalDriveDOINC**: Ange till `Automatic` , eller en speciell enhets beteckning, till exempel `C:` eller`D:`
+- **Flaggor**: aktivera `|= 4` , inaktivera `&= ~4`
+- **DiskSpaceDOINC**: Ange till `Percentage` eller `GB`
+- **RetainDOINCCache**: Ange till `0` eller `1`
+- **LocalDriveDOINC**: Ange till `Automatic` , eller en speciell enhets beteckning, till exempel `C:` eller `D:`
 
 ## <a name="verify"></a>Verifiera
 
@@ -136,21 +136,21 @@ När klienter laddar ned moln hanterat innehåll använder de leverans optimerin
   - Klient program: Microsoft Store appar och uppdateringar
   - Endpoint Protection: definitions uppdateringar för Windows Defender
 
-I Windows 10 version 1809 eller senare kontrollerar du det här beteendet med Windows PowerShell-cmdleten **Get-DeliveryOptimizationStatus** . I cmdlet-utdata granskar du **BytesFromCacheServer** -värdet. Mer information finns i [övervaka leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization-setup#monitor-delivery-optimization).
+I Windows 10 version 1809 eller senare kontrollerar du det här beteendet med Windows PowerShell-cmdleten **Get-DeliveryOptimizationStatus** . I cmdlet-utdata granskar du **BytesFromCacheServer** -värdet. Mer information finns i [övervaka leverans optimering](/windows/deployment/update/waas-delivery-optimization-setup#monitor-delivery-optimization).
 
 Om cache-servern returnerar HTTP-problem går leverans optimerings klienten tillbaka till den ursprungliga moln källan.
 
 Mer detaljerad information finns i [felsöka Microsoft Connected cache i Configuration Manager](../../servers/deploy/configure/troubleshoot-microsoft-connected-cache.md).
 
-## <a name="support-for-intune-win32-apps"></a><a name="bkmk_intune"></a>Stöd för Intune Win32-appar
+## <a name="support-for-intune-win32-apps"></a><a name="bkmk_intune"></a> Stöd för Intune Win32-appar
 
 <!--5032900-->
 
 Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samhanterade klienter när du aktiverar ansluten cache på Configuration Manager distributions platser.
 
-### <a name="prerequisites"></a>Krav
+### <a name="prerequisites"></a>Förutsättningar
 
-#### <a name="client"></a>Klient
+#### <a name="client"></a>Client
 
 - Uppdatera klienten till den senaste versionen.
 
@@ -184,7 +184,7 @@ Från och med version 1910 kan de hantera Microsoft Intune Win32-appar till samh
 
 - Den här funktionen stöder endast typen Intune Win32-app.
 
-  - Skapa och tilldela (distribuera) en ny app i Intune för detta ändamål. (Appar som skapats innan Intune version 1811 fungerar inte.) Mer information finns i [Intune Win32 app Management](https://docs.microsoft.com/intune/apps/apps-win32-app-management).
+  - Skapa och tilldela (distribuera) en ny app i Intune för detta ändamål. (Appar som skapats innan Intune version 1811 fungerar inte.) Mer information finns i [Intune Win32 app Management](/intune/apps/apps-win32-app-management).
 
   - Appen måste vara minst 100 MB stor.
   

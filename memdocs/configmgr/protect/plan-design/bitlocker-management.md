@@ -10,12 +10,12 @@ ms.assetid: a4d8cda2-bc9b-4fb4-aa0d-23c31b4fc60b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8370c3352778fa6bb7c6229beb1c7610c419a86d
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 22e78fdba1c004554d671ba2db96c61395f95ca2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129305"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699967"
 ---
 # <a name="plan-for-bitlocker-management"></a>Planera för BitLocker-hantering
 
@@ -28,7 +28,7 @@ Från och med version 1910 använder Configuration Manager för att hantera BitL
 > [!NOTE]
 > Configuration Manager aktiverar inte den här valfria funktionen som standard. Du måste aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).  
 
-Mer information finns i [Översikt över BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview).
+Mer information finns i [Översikt över BitLocker](/windows/security/information-protection/bitlocker/bitlocker-overview).
 
 > [!TIP]
 > Om du vill hantera kryptering på samhanterade Windows 10-enheter med hjälp av moln tjänsten i Microsoft Endpoint Manager byter du [ **Endpoint Protection** arbets belastning](../../comanage/workloads.md#endpoint-protection) till Intune. Mer information om hur du använder Intune finns i [Windows-kryptering](/intune/protect/endpoint-protection-windows-10#windows-encryption).
@@ -70,7 +70,7 @@ Tillåt andra personer i din organisation utanför Configuration Manager-konsole
 
 Låt användarna hjälpa sig att använda en enda nyckel för att låsa upp en BitLocker-krypterad enhet. När den här nyckeln används skapas en ny nyckel för enheten.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Om du vill skapa en princip för BitLocker-hantering behöver du rollen **Fullständig administratör** i Configuration Manager.
 
@@ -94,7 +94,7 @@ Låt användarna hjälpa sig att använda en enda nyckel för att låsa upp en B
     > [!NOTE]
     > Installera endast självbetjänings portalen och webbplatsen för administration och övervakning med en primär plats databas. I en-hierarki installerar du de här webbplatserna för varje primär plats.
 
-- På webb servern som ska vara värd för självbetjänings portalen installerar du [Microsoft ASP.NET MVC 4,0](https://docs.microsoft.com/aspnet/mvc/mvc4) och .NET Framework 3,5-funktionen innan du avinstallerar installations processen. Andra nödvändiga Windows Server-roller och-funktioner installeras automatiskt under installations processen för portalen.
+- På webb servern som ska vara värd för självbetjänings portalen installerar du [Microsoft ASP.NET MVC 4,0](/aspnet/mvc/mvc4) och .NET Framework 3,5-funktionen innan du avinstallerar installations processen. Andra nödvändiga Windows Server-roller och-funktioner installeras automatiskt under installations processen för portalen.
 
 - Det användar konto som kör Portal installations skriptet måste ha SQL **sysadmin** -behörighet på plats databas servern. Under installationen anger skriptet inloggnings-, användar-och SQL-roll rättigheter för webb serverns dator konto. Du kan ta bort det här användar kontot från sysadmin-rollen när du har slutfört installationen av självbetjänings portalen och webbplatsen för administration och övervakning.
 

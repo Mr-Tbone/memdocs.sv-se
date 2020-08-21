@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 05a6950708da04effe230d0d5637c4e3bcedd7e6
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: 04630815b3d10a232d7fc0eea50296062c823194
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591589"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699848"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Vad är nytt i version 1810 av Configuration Manager aktuella grenen
 
@@ -236,7 +236,7 @@ Mer information finns i [skapa program](../../../apps/deploy-use/create-applicat
 ### <a name="task-sequence-support-of-windows-autopilot-for-existing-devices"></a>Aktivitetssekvens stöd för Windows autopilot för befintliga enheter
 
 <!--3607717, fka 1358333-->
-[Windows autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) är nu tillgängligt med Windows 10, version 1809 eller senare. Med den här nya funktionen kan du återställa avbildningen och etablera en Windows 7-enhet för [Windows autopilot-](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) användarläge med hjälp av en enda, inbyggd Configuration Manager-aktivitetssekvens.
+[Windows autopilot för befintliga enheter](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) är nu tillgängligt med Windows 10, version 1809 eller senare. Med den här nya funktionen kan du återställa avbildningen och etablera en Windows 7-enhet för [Windows autopilot-](/windows/deployment/windows-autopilot/user-driven) användarläge med hjälp av en enda, inbyggd Configuration Manager-aktivitetssekvens.
 
 Mer information finns i [Windows Autopilot för befintliga enheter](../../../../autopilot/existing-devices.md).
 
@@ -427,7 +427,7 @@ Den lokala MDM-förutsättningen för att konfigurera en Microsoft Intune prenum
 
 Förutom nya funktioner innehåller den här versionen även ytterligare ändringar som fel korrigeringar. Mer information finns i [Sammanfattning av ändringar i Configuration Manager aktuella grenen, version 1810](https://support.microsoft.com/help/4482169).
 
-Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1810](https://docs.microsoft.com/powershell/sccm/1810-release-notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1810](/powershell/sccm/1810-release-notes?view=sccm-ps).
 
 Följande samlade uppdateringar (4488598) är tillgängliga i-konsolen från och med 25 mars 2019: Samlad uppdatering [2 för Configuration Manager aktuella grenen, version 1810](https://support.microsoft.com/help/4488598). Detta ersätter den tidigare samlade uppdateringen, KB 4486457.
 
@@ -438,8 +438,8 @@ Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda s
 
 | ID | Title | Datum | I-konsolen |
 |---------|---------|---------|---------|
-| [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Yes |
-| [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Yes |
+| [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
+| [4490434](https://support.microsoft.com/help/4490434) | Dubbletter av användar identifierings kolumner skapas i Configuration Manager | 22 februari 2019 | Ja |
 | [4490575](https://support.microsoft.com/help/4490575) | Uppdaterings installationer slutar svara eller aldrig visar slut för ande i Configuration Manager version 1810 | 22 februari 2019 | Ja |
 
 

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2e398795a14f5073141f103d93ccd82e61d4d7a8
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 9a54ee5fb427f276ec755e748513b178d0c026ab
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904899"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698579"
 ---
 # <a name="what39s-new-in-version-1602-of-configuration-manager"></a>Vad&#39;s nya i version 1602 av Configuration Manager
 
@@ -36,17 +36,17 @@ Uppdatering 1602 för Configuration Manager är bara tillgänglig som en uppdate
 
 ## <a name="site-infrastructure"></a>Plats infrastruktur  
 
-###  <a name="in-place-upgrade-the-operating-system-of-site-servers-that-run-windows-server-2008-r2"></a><a name="bkmk_UpgradeOS"></a>Uppgradering på plats av operativ systemet för plats servrar som kör Windows Server 2008 R2  
+###  <a name="in-place-upgrade-the-operating-system-of-site-servers-that-run-windows-server-2008-r2"></a><a name="bkmk_UpgradeOS"></a> Uppgradering på plats av operativ systemet för plats servrar som kör Windows Server 2008 R2  
  Configuration Manager-platser som kör version 1602 eller senare har stöd för uppgradering på plats av operativ systemet för plats servrar från Windows Server 2008 R2 till Windows Server 2012 R2.  
 
 > [!WARNING]  
 >  Innan du uppgraderar till Windows Server 2012 R2 måste du avinstallera WSUS 3.2 från servern.  
 >   
->  Mer information om det här viktiga steget finns i avsnittet "nya och ändrade funktioner" i [Windows Server Update Services översikt](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345(v=ws.11)#new-and-changed-functionality).  
+>  Mer information om det här viktiga steget finns i avsnittet "nya och ändrade funktioner" i [Windows Server Update Services översikt](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345(v=ws.11)#new-and-changed-functionality).  
 
- Om du vill uppgradera en server använder du uppgraderings procedurerna för Windows Server 2012 R2. Du behöver inte köra en återställning av Configuration Manager plats Server efter uppgraderingen. Information om uppgraderingsprocesser finns i [Uppgraderingsalternativ för Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)) i dokumentationen för Windows Server.  
+ Om du vill uppgradera en server använder du uppgraderings procedurerna för Windows Server 2012 R2. Du behöver inte köra en återställning av Configuration Manager plats Server efter uppgraderingen. Information om uppgraderingsprocesser finns i [Uppgraderingsalternativ för Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)) i dokumentationen för Windows Server.  
 
-###  <a name="sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a>SQL Server AlwaysOn-tillgänglighetsgrupper  
+###  <a name="sql-server-alwayson-availability-groups"></a><a name="bkmk_AOAG"></a> SQL Server AlwaysOn-tillgänglighetsgrupper  
  Använd SQL Server AlwaysOn-tillgänglighetsgrupper för att vara värd för plats databasen på primära platser och den centrala administrations platsen som en lösning för hög tillgänglighet och katastrof återställning.  
 
  Mer information finns i [SQL Server AlwaysOn för en plats databas med hög tillgänglighet för Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
@@ -128,7 +128,7 @@ De här apparna finns i noden **program** i Configuration Manager-konsolen.
 
 
 ### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Se till att registrerade och kompatibla enheter alltid har åtkomst till Exchange On-premises  
- När du markerar följande alternativ tillåts enheter som är registrerade i Intune och som är kompatibla med efterlevnadsprinciper åtkomst till Exchange On-premises: **Åsidosätt standard regel – Tillåt alltid att Intune-registrerade och kompatibla enheter får åtkomst till Exchange lokalt:**. Den här regeln finns på **sidan Allmänt** i **guiden Konfigurera princip för villkorlig åtkomst** för Exchange lokalt.
+ När du markerar följande alternativ tillåts enheter som är registrerade i Intune och som är kompatibla med efterlevnadsprinciper åtkomst till Exchange On-premises: **Åsidosätt standard regel – Tillåt alltid att Intune-registrerade och kompatibla enheter får åtkomst till Exchange lokalt:**. Den här regeln finns på  **sidan Allmänt** i **guiden Konfigurera princip för villkorlig åtkomst** för Exchange lokalt.
 
  Den här regeln åsidosätter standard regeln, vilket innebär att även om du ställer in standard regeln för karantän eller blockera åtkomst, kommer registrerade och kompatibla enheter fortfarande att kunna komma åt Exchange lokalt. Använd den här inställningen när du vill att registrerade och kompatibla enheter alltid ska ha åtkomst till e-post via Exchange lokalt.   
 
@@ -209,4 +209,4 @@ Configuration Manager kan begära Aktiveringslås status för både övervakade 
 
 -   **Inkompatibel**: användare har godkänt en version av de allmänna villkoren, men inte den senaste versionen.  
 
--   **Okänd**: användare har aldrig godkänt villkoren, inklusive de som saknar en registrerad enhet.  
+-   **Okänd**: användare har aldrig godkänt villkoren, inklusive de som saknar en registrerad enhet.

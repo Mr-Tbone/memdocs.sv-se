@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: a90f3260782f08fdf8f7424a95e09b34e38e97d3
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: facfb2be1972933524c7ad632537fc8306939c1c
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268161"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700760"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Konfigurera Skriv bords analys
 
@@ -39,7 +39,7 @@ Använd den här proceduren för att logga in på Desktop Analytics och konfigur
 
         Om du inte väljer det här alternativet lägger Desktop Analytics fortfarande till användare som medlemmar i säkerhets gruppen. En **Global administratör** måste tilldela rollen **Desktop Analytics-administratör** manuellt för användarna.
 
-        Mer information om hur du tilldelar administratörs roll behörigheter i Azure Active Directory och de behörigheter som tilldelats **Desktop Analytics-administratörer**finns [i administratörs roll behörigheter i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+        Mer information om hur du tilldelar administratörs roll behörigheter i Azure Active Directory och de behörigheter som tilldelats **Desktop Analytics-administratörer**finns [i administratörs roll behörigheter i Azure Active Directory](/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
     - Desktop Analytics förkonfigurerar säkerhets gruppen **ägare till arbets ytan** i Azure Active Directory för att skapa och hantera arbets ytor och distributions planer.
 
@@ -82,4 +82,4 @@ Azure Portal visar **Start** sidan för Skriv bords analys.
 
 Fortsätt till nästa artikel för att ansluta Configuration Manager med Desktop Analytics.
 > [!div class="nextstepaction"]  
-> [Ansluta Configuration Manager](connect-configmgr.md)  
+> [Ansluta Configuration Manager](connect-configmgr.md)

@@ -10,12 +10,12 @@ ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f9aff29d2773c4994272317d5fcd486b83cba8d7
-ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
+ms.openlocfilehash: 0dcd519a7703b5de94f779dc5dbe48aa0d34a3bc
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82210187"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700471"
 ---
 # <a name="windows-defender-application-control-management-with-configuration-manager"></a>Windows Defender program kontroll hantering med Configuration Manager
 
@@ -26,7 +26,7 @@ Windows Defender Application Control är utformat för att skydda datorer mot sk
 
 Windows Defender Application Control är ett programvarubaserad säkerhets lager som tillämpar en explicit lista över program som tillåts köras på en dator. Program kontroll har ingen egen maskin-eller firmware-förutsättning. Program kontroll principer som distribueras med Configuration Manager aktivera en princip på datorer i mål samlingar som uppfyller minimi kraven för Windows-version och SKU som beskrivs i den här artikeln. Du kan också aktivera hypervisor-baserat skydd av program kontroll principer som distribueras via Configuration Manager genom att grupprincip på kompatibel maskin vara.
 
-Läs mer om Windows Defender Application Control i [Windows Defender Application Control Deployment Guide](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
+Läs mer om Windows Defender Application Control i [Windows Defender Application Control Deployment Guide](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide).
 
    > [!NOTE]
    > - Från och med Windows 10, version 1709, kallas kod integritets principer för Windows Defender för program kontroll.
@@ -59,7 +59,7 @@ När du distribuerar en princip kan följande körbara filer köras:
     - Windows Update
     - Windows Update för företag
     - Windows Server Update Services
-    - Konfigurationshanteraren
+    - Configuration Manager
     - Valfritt, program vara med goda rykte som bestäms av Microsoft Intelligent Security Graph (ISG). ISG innehåller Windows Defender SmartScreen och andra Microsoft-tjänster. Enheten måste köra Windows Defender SmartScreen och Windows 10 version 1709 eller senare för att program varan ska vara betrodd.
 
 >[!IMPORTANT]
@@ -125,13 +125,13 @@ Om du vill övervaka bearbetningen av en Windows Defender Application Control-pr
 
 För att kontrol lera att den angivna program varan blockeras eller granskas, se följande händelse loggar för lokal klient:
 
-1. Om du vill blockera och granska körbara filer använder **du program och tjänster för att logga** > **Microsoft** > **Windows** > **kod integritet** > **.**
-2. Om du vill blockera och granska Windows Installer-och skriptfiler använder du **program-och tjänst loggar** > **Microsoft** > **Windows** > **AppLocker** > **MSI och skript**.
+1. Om du vill blockera och granska körbara filer använder du **program och tjänster för att logga**  >  **Microsoft**  >  **Windows**  >  **kod integritet**  >  **Operational**.
+2. Om du vill blockera och granska Windows Installer-och skriptfiler använder du **program-och tjänst loggar**  >  **Microsoft**  >  **Windows**  >  **AppLocker**  >  **MSI och skript**.
 
 <!--Reworked article to put this inline while working on VSO 1355092
 ## Automatically let software run if it is trusted by Intelligent Security Graph
 
-You can let locked-down devices run software with a good reputation as determined by the Microsoft Intelligent Security Graph (ISG). The ISG includes [Windows Defender SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) and other Microsoft services. The devices must be running Windows Defender SmartScreen for this software to be trusted.
+You can let locked-down devices run software with a good reputation as determined by the Microsoft Intelligent Security Graph (ISG). The ISG includes [Windows Defender SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) and other Microsoft services. The devices must be running Windows Defender SmartScreen for this software to be trusted.
 
 1. Open the **Create Windows Defender Application Policy** wizard.
 2. On the **Inclusions** page, check the box for **Authorize software that is trusted by the Intelligent Security Graph**.
@@ -153,6 +153,3 @@ I den här situationen kan program varan fortsätta att kunna köras även om en
 ## <a name="next-steps"></a>Nästa steg
 
  [Hantera principer för program mot skadlig kod och brandväggsinställningar](endpoint-antimalware-firewall.md)
-
-
-

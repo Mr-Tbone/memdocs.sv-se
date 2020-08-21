@@ -10,12 +10,12 @@ ms.assetid: 315e2613-dc71-46b1-80cb-26161d08103a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f4089f52d912491b3b1396906fe391c5c334e061
-ms.sourcegitcommit: 02635469d684d233fef795d2a15615658e62db10
+ms.openlocfilehash: eaceea5f83bd93fee8261a94147383cde001f90b
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84814893"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699593"
 ---
 # <a name="integrate-with-power-bi-report-server"></a>Integrera med Power BI-rapportserver
 
@@ -23,13 +23,13 @@ ms.locfileid: "84814893"
 
 <!--3721603-->
 
-Från och med version 2002 kan du integrera [Power BI-rapportserver](https://docs.microsoft.com/power-bi/report-server/get-started) med Configuration Manager repor ting. Den här integrationen ger modern visualisering och bättre prestanda. Det lägger till konsol stöd för Power BI rapporter på liknande sätt som redan finns med SQL Server Reporting Services.
+Från och med version 2002 kan du integrera [Power BI-rapportserver](/power-bi/report-server/get-started) med Configuration Manager repor ting. Den här integrationen ger modern visualisering och bättre prestanda. Det lägger till konsol stöd för Power BI rapporter på liknande sätt som redan finns med SQL Server Reporting Services.
 
 Spara Power BI Desktop rapportmallar (. PBIX) och distribuera dem till Power BI-rapportserver. Den här processen liknar SQL Server Reporting Services rapport-filer (. RDL). Du kan också starta rapporterna i webbläsaren direkt från Configuration Manager-konsolen.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
-- Power BI-rapportserver licens. Mer information finns i [licens Power BI-rapportserver](https://docs.microsoft.com/power-bi/report-server/get-started#licensing-power-bi-report-server).
+- Power BI-rapportserver licens. Mer information finns i [licens Power BI-rapportserver](/power-bi/report-server/get-started#licensing-power-bi-report-server).
 
 - Ladda ned [Microsoft Power BI-rapportserver – September 2019](https://www.microsoft.com/download/details.aspx?id=57270)eller senare.
 
@@ -40,7 +40,7 @@ Spara Power BI Desktop rapportmallar (. PBIX) och distribuera dem till Power BI-
 
     > [!IMPORTANT]
     > - Använd inte en version från Microsoft Store för att endast använda versioner av Power BI Desktop från [Microsoft Download Center](https://www.microsoft.com/download/).
-    > - Använd bara en version av [Power BI Desktop som anger att den är **optimerad för Power BI-rapportserver**](https://docs.microsoft.com/power-bi/report-server/install-powerbi-desktop).
+    > - Använd bara en version av [Power BI Desktop som anger att den är **optimerad för Power BI-rapportserver**](/power-bi/report-server/install-powerbi-desktop).
 
 - Power BI integration använder samma rollbaserad administration för rapportering.
     > [!NOTE]
@@ -54,7 +54,7 @@ Den här processen varierar beroende på om du redan har den här rollen på-pla
 
 Använd bara den här processen om du redan har en repor ting Services-plats på platsen. Gör alla steg i den här processen på samma server:
 
-1. Säkerhetskopiera **krypterings nycklarna**i **Configuration Manager rapport Server**. Mer information finns i [SSRS-krypterings nycklar – säkerhetskopiera och återställa krypterings nycklar](https://docs.microsoft.com/sql/reporting-services/install-windows/ssrs-encryption-keys-back-up-and-restore-encryption-keys).
+1. Säkerhetskopiera **krypterings nycklarna**i **Configuration Manager rapport Server**. Mer information finns i [SSRS-krypterings nycklar – säkerhetskopiera och återställa krypterings nycklar](/sql/reporting-services/install-windows/ssrs-encryption-keys-back-up-and-restore-encryption-keys).
 
     > [!WARNING]
     > Om du hoppar över det här steget förlorar du åtkomsten till anpassade rapporter i SQL Server Reporting Services.
@@ -103,7 +103,7 @@ Använd bara den här processen om du inte redan har en repor ting Services-plat
 
 1. När rapporten är klar att spara går du till **Arkiv** -menyn, väljer **Spara som**och väljer **Power BI-rapportserver**.
 
-1. I fönstret **Power BI-rapportserver val** anger du URL: en för repor ting Services-platsen som den **nya rapport Server adressen**. Exempelvis `https://rsp.contoso.com/Reports`.
+1. I fönstret **Power BI-rapportserver val** anger du URL: en för repor ting Services-platsen som den **nya rapport Server adressen**. Till exempel `https://rsp.contoso.com/Reports`.
 
 I Configuration Manager-konsolen visas den nya rapporten i listan över Power BI rapporter.
 
@@ -111,7 +111,7 @@ I Configuration Manager-konsolen visas den nya rapporten i listan över Power BI
 
 När du har skapat en rapport använder du följande åtgärder i Configuration Manager-konsolen:
 
-- **Kör i webbläsare**: öppnar Power BI rapporten i webbläsaren. Dela denna URL med andra, till exempel:`https://rsp.contoso.com/Reports/POWERBI/ConfigMgr_ABC/Windows%2010/Windows10%20Dashboard?rs:embed=true`
+- **Kör i webbläsare**: öppnar Power BI rapporten i webbläsaren. Dela denna URL med andra, till exempel: `https://rsp.contoso.com/Reports/POWERBI/ConfigMgr_ABC/Windows%2010/Windows10%20Dashboard?rs:embed=true`
 
     > [!TIP]
     > Du kan bara visa rapporterna i webbläsaren.

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 8ea95a04977038514c00f0199df42c8070e813c3
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 51e64f8f815c4ba90522acf6529cff4d971dd553
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127662"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699814"
 ---
 # <a name="integrate-with-windows-update-for-business"></a>Integrera med Windows Update för företag
 
@@ -24,7 +24,7 @@ ms.locfileid: "88127662"
 Windows Update for Business (WUfB) gör att du kan hålla Windows 10-baserade enheter i din organisation alltid uppdaterade med de senaste säkerhets försvars-och Windows-funktionerna när dessa enheter ansluter direkt till tjänsten Windows Update (WU). Configuration Manager kan skilja mellan Windows 10-datorer som använder WUfB och WSUS för att hämta program uppdateringar.  
 
 > [!WARNING]
-> Om du använder samhantering för dina enheter och du har flyttat [Windows Update-principerna](../../comanage/workloads.md#windows-update-policies) till Intune, kommer dina enheter att få sina [Windows Update för affärs principer från Intune](https://docs.microsoft.com/intune/windows-update-for-business-configure).
+> Om du använder samhantering för dina enheter och du har flyttat [Windows Update-principerna](../../comanage/workloads.md#windows-update-policies) till Intune, kommer dina enheter att få sina [Windows Update för affärs principer från Intune](/intune/windows-update-for-business-configure).
 > - Om Configuration Manager-klienten fortfarande är installerad på den samhanterade enheten, hanteras inställningarna för kumulativa uppdateringar och funktions uppdateringar av Intune. Uppdatering av tredje part, om aktive rad i [**klient inställningar**](../../core/clients/deploy/about-client-settings.md#enable-third-party-software-updates), hanteras dock fortfarande av Configuration Manager.  
 
  Vissa Configuration Manager-funktioner är inte längre tillgängliga när Configuration Manager-klienter har kon figurer ATS för att ta emot uppdateringar från WU, som omfattar WUfB eller Windows Insiders:  
@@ -52,7 +52,7 @@ Använd följande procedur för att identifiera klienter som använder WUfB för
 
 - Klienter som kör Windows 10 Desktop Pro eller Windows 10 Enterprise Edition version 1511 eller senare
 
-- [Windows Update för företag](https://docs.microsoft.com/windows/deployment/update/waas-manage-updates-wufb) har distribuerats och klienterna använder WUfB för att hämta Windows 10-uppdateringar och -uppgraderingar.  
+- [Windows Update för företag](/windows/deployment/update/waas-manage-updates-wufb) har distribuerats och klienterna använder WUfB för att hämta Windows 10-uppdateringar och -uppgraderingar.  
 
 ### <a name="to-identify-clients-that-use-wufb"></a>Identifiera klienter som använder WUfB  
 
@@ -74,7 +74,7 @@ Från och med Configuration Manager version 1706 kan du konfigurera uppskjutning
 
 > [!NOTE]
 > Från och med Configuration Manager version 1802 kan du ange regler för avstängning för Windows Insider. <!--507201-->  
-Mer information om Windows Insider program finns i [komma igång med Windows Insider program för företag](https://docs.microsoft.com/windows/deployment/update/waas-windows-insider-for-business).
+Mer information om Windows Insider program finns i [komma igång med Windows Insider program för företag](/windows/deployment/update/waas-windows-insider-for-business).
 
 ### <a name="prerequisites-for-deferral-policies"></a>Krav för regler för avstängning
 

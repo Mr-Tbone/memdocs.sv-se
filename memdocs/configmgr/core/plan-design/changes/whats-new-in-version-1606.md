@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 070c616ed8411bcd90b2d3edb12b04edd57241e1
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: 2fa46770adfbf3e688bbdc561d8193967f3913cd
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85590481"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698596"
 ---
 # <a name="what39s-new-in-version-1606-of-configuration-manager"></a>Vad&#39;s nya i version 1606 av Configuration Manager
 
@@ -79,14 +79,14 @@ När uppdatering 1606 har installerats, nästa gång du installerar en uppdateri
 
 
 
-## <a name="accessibility"></a><a name="accessibility"></a>Tågen
+## <a name="accessibility"></a><a name="accessibility"></a> Tågen
 Om du vill navigera mellan olika noder i en arbets yta kan du nu ange den första bokstaven i namnet på en nod. Varje tangenttryckning flyttar markören till nästa nod som börjar med den bokstaven. För användare som har en skärm läsare läser läsaren ut namnet på den noden. Mer information om hjälpmedels alternativ finns i [hjälpmedels funktioner](../../../core/understand/accessibility-features.md).
 
 ## <a name="administration"></a><a name="administration"></a>Administration
 Följande är ändringar i Administration i Configuration Manager-konsolen:
 ### <a name="oms-connector"></a>OMS-koppling
 
-Nu kan du ansluta Configuration Manager som samlingar från Configuration Manager till [Microsoft Operations Management Suite (OMS)](https://azure.microsoft.com/documentation/articles/operations-management-suite-overview/). Detta gör data som samlingar från din Configuration Manager-distribution synlig i OMS. Du hittar mer information i [synkronisera data från Configuration Manager till Microsoft Operations Management Suite här](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm).
+Nu kan du ansluta Configuration Manager som samlingar från Configuration Manager till [Microsoft Operations Management Suite (OMS)](/azure/azure-monitor/overview). Detta gör data som samlingar från din Configuration Manager-distribution synlig i OMS. Du hittar mer information i [synkronisera data från Configuration Manager till Microsoft Operations Management Suite här](/azure/azure-monitor/platform/collect-sccm).
 
 OMS-kopplingen är en för hands versions funktion. Information om hur du aktiverar det finns i [använda för hands versions funktioner från uppdateringar](../../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 

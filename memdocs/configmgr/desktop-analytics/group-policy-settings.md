@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 2ee472b89f45e744e43915e51e98f11841208b73
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: d00edbfc30a87660adc65758dc9fbcb9113197f0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125810"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700658"
 ---
 # <a name="group-policy-settings-for-desktop-analytics"></a>Grup princip inställningar för Skriv bords analys
 
@@ -30,17 +30,17 @@ När Configuration Manager registrerar enheter i Desktop Analytics, ställer den
 
 Configuration Manager anger Windows-principer i en eller båda av följande register nycklar:
 
-- Grup princip objekt (**GPO**):`HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
+- Grup princip objekt (**GPO**): `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
 
-- **Lokal** princip inställning:`HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
+- **Lokal** princip inställning: `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
 
 | Policy | Sökväg | Gäller för | Värde |
 |--------|------|------------|-------|
 | **CommercialId** | Lokal | Alla Windows-versioner | För att en enhet ska kunna visas i Skriv bords analys konfigurerar du den med din organisations kommersiella ID. |
-| **AllowTelemetry**  | GPO | Windows 10 | Ange `1` för **grundläggande** (krävs), `2` för **förbättrad**eller `3` **fullständig** (valfritt) diagnostikdata. Desktop Analytics kräver minst grundläggande diagnostikdata. Microsoft rekommenderar att du använder nivån **valfri (begränsad** ) (utökad (begränsad)) med Desktop Analytics. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/configuration/configure-windows-diagnostic-data-in-your-organization). |
-| **LimitEnhancedDiagnosticDataWindowsAnalytics** | GPO | Windows 10, version 1803 och senare | Den här inställningen gäller endast när AllowTelemetry-inställningen är `2` . Den begränsar de utökade diagnostikdata som skickas till Microsoft till enbart de händelser som krävs av Desktop Analytics. Mer information finns i [data händelser och fält för Windows 10-diagnostikdata som samlas in via principen begränsa förbättrad diagnostikdata](https://docs.microsoft.com/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields). |
+| **AllowTelemetry**  | GPO | Windows 10 | Ange `1` för **grundläggande** (krävs), `2` för **förbättrad**eller `3` **fullständig** (valfritt) diagnostikdata. Desktop Analytics kräver minst grundläggande diagnostikdata. Microsoft rekommenderar att du använder nivån **valfri (begränsad** ) (utökad (begränsad)) med Desktop Analytics. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](/windows/configuration/configure-windows-diagnostic-data-in-your-organization). |
+| **LimitEnhancedDiagnosticDataWindowsAnalytics** | GPO | Windows 10, version 1803 och senare | Den här inställningen gäller endast när AllowTelemetry-inställningen är `2` . Den begränsar de utökade diagnostikdata som skickas till Microsoft till enbart de händelser som krävs av Desktop Analytics. Mer information finns i [data händelser och fält för Windows 10-diagnostikdata som samlas in via principen begränsa förbättrad diagnostikdata](/windows/configuration/enhanced-diagnostic-data-windows-analytics-events-and-fields). |
 | **AllowDeviceNameInTelemetry** | GPO | Windows 10, version 1803 och senare | Gör det möjligt för enheter att skicka enhets namnet. Enhets namnet skickas inte till Microsoft som standard. Om du inte skickar enhets namnet visas det i Skriv bords analys som "okänt". Mer information finns i [enhets namn](enroll-devices.md#device-name). |
-| **CommercialDataOptIn** | Lokal | Windows 8,1 och tidigare | Desktop Analytics kräver värdet `1` . Mer information finns i [Välj kommersiella data i Windows 7](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
+| **CommercialDataOptIn** | Lokal | Windows 8,1 och tidigare | Desktop Analytics kräver värdet `1` . Mer information finns i [Välj kommersiella data i Windows 7](/previous-versions/windows/it-pro/windows-7/ee126127\(v=ws.10\)). |
 | **RequestAllAppraiserVersions** | Båda | Windows 8,1 och tidigare | Desktop Analytics kräver ett värde för `1` att data insamling ska fungera korrekt. |
 | **DisableEnterpriseAuthProxy** | GPO | Alla Windows-versioner | Om din miljö kräver en autentiserad proxy med Windows-integrerad autentisering för Internet åtkomst, kräver Desktop Analytics ett värde för `0` att data insamling ska fungera korrekt. Mer information finns i [Proxy Server-autentisering](enable-data-sharing.md#proxy-server-authentication). |
 
@@ -66,7 +66,7 @@ Configuration Manager konfigurerar inställningar för affärs-ID och diagnostik
 
 Relevanta grup princip inställningar finns på följande sökväg: **dator konfiguration**  >  **administrativa mallar**  >  **Windows-komponenter**  >  **data insamling och för hands versioner**.
 
-Grup princip inställningar ändrar bara register inställningar i följande nyckel:`HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
+Grup princip inställningar ändrar bara register inställningar i följande nyckel: `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
 
 > [!IMPORTANT]
 > När du använder grup princip inställningar för att aktivera komplexa scenarier bör du särskilt uppmärksamma princip inställningar som kan orsaka konfigurations konflikter. Configuration Manager konfigurerar bara [Windows-inställningar](#windows-settings) *om värdet inte redan finns*. Grup princip inställningar har företräde framför Configuration Manager inställningar, så vissa grup princip konfigurationer kan orsaka problem med Desktop Analytics.
@@ -103,6 +103,6 @@ Dessa grup princip inställningar krävs inte av Configuration Manager eller Skr
 | Visningsnamn | Registervärde | Påverkan på enheter som har registrerats i Skriv bords analys |
 |--------------|----------------|-------------------------------------------------|
 | **Konfigurera anmälan om ändring av telemetri** | DisableTelemetryOptInChangeNotification | Från och med Windows 10, version 1803 meddelar Windows användare när nivån för diagnostikdata ändras. Använd den här principen för att inaktivera meddelanden. |
-| **Konfigurera alternativet för att välja användar gränssnitt för telemetri** | DisableTelemetryOptInSettingsUx | När du konfigurerar den diagnostiska data nivån ställer du in den övre gräns värdet för enheten. Från och med Windows 10, version 1803, kan användarna ange en lägre nivå. Använd den här principen för att hindra användare från att ändra diagnostisk nivå. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management). |
+| **Konfigurera alternativet för att välja användar gränssnitt för telemetri** | DisableTelemetryOptInSettingsUx | När du konfigurerar den diagnostiska data nivån ställer du in den övre gräns värdet för enheten. Från och med Windows 10, version 1803, kan användarna ange en lägre nivå. Använd den här principen för att hindra användare från att ändra diagnostisk nivå. Mer information finns i [Konfigurera Windows-diagnostikdata i din organisation](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enterprise-management). |
 | **Inaktivera borttagning av diagnostikdata** | DisableDeviceDelete | Från och med Windows 10, version 1809, kan användare ta bort diagnostikdata från sidan med inställningar för **feedback & feedback** . Använd den här principen för att förhindra borttagning av diagnostikdata som Microsoft samlar in från enheten. |
 | **Inaktivera visning av diagnostikdata** | DisableDiagnosticDataViewer | Från och med Windows 10, version 1809, kan användare aktivera och öppna visnings programmet för diagnostikdata från sidan Inställningar för **feedback för diagnostik &** . Använd den här principen för att inaktivera visnings programmet för diagnostikdata i Windows-inställningar och förhindra att det visar diagnostikdata som Microsoft samlar in från enheten.|

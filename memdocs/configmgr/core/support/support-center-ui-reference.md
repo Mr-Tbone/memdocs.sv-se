@@ -10,12 +10,12 @@ ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 43bb35243b4f7e7b1e45b66319efd4ec21e92542
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 79d483f95c12c1da1e34ca556836a1f42bbffbef
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718618"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699457"
 ---
 # <a name="support-center-user-interface-reference"></a>Användar gränssnitts referens för Support Center
 
@@ -41,7 +41,7 @@ I det här avsnittet beskrivs användar gränssnittet för **Support Center** -v
 - [Fliken loggar](#bkmk_support-logs)  
 
 
-### <a name="window-menu"></a><a name="bkmk_support-window"></a>Fönster-menyn
+### <a name="window-menu"></a><a name="bkmk_support-window"></a> Fönster-menyn
 
 I det övre vänstra hörnet i Support Center-fönstret väljer du pilen i den blå rutan för att öppna den här menyn.
 
@@ -60,14 +60,14 @@ I dialog rutan **alternativ** kan du:
 - Ändra standard platsen för att spara filer för data paket  
 - Ändra platsen för temporära filer    
 - Återställ varningar. Eventuella varnings meddelanden som du tidigare ignorerat visas igen när de utlöses.  
-- Återställ temporär fil Sök väg till standardvärdet,`%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenter`
+- Återställ temporär fil Sök väg till standardvärdet, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenter`
 
 #### <a name="exit"></a>Avsluta
 Stäng Support Center.
 
 
 
-### <a name="home-tab"></a><a name="bkmk_support-home"></a>Fliken Start
+### <a name="home-tab"></a><a name="bkmk_support-home"></a> Fliken Start
 
 #### <a name="collect-selected-data"></a>Samla in markerade data
 Support Center samlar in information från Configuration Manager-klienten. Som standard samlar den in följande typer:
@@ -114,7 +114,7 @@ När du markerar kryss rutan för ett alternativ samlar Support Center in den ty
 
 
 
-### <a name="client-tab"></a><a name="bkmk_support-client"></a>Fliken klient
+### <a name="client-tab"></a><a name="bkmk_support-client"></a> Fliken klient
 
 #### <a name="load-or-refresh"></a>Läs in eller uppdatera
 Support Center läser in eller uppdaterar information för den Configuration Manager klienten.
@@ -163,7 +163,7 @@ När du läser in klient information visar Support Center följande egenskaper:
 
 
 
-### <a name="policy-tab"></a><a name="bkmk_support-policy"></a>Fliken princip
+### <a name="policy-tab"></a><a name="bkmk_support-policy"></a> Fliken princip
 
 Använd åtgärderna på den här fliken i stället för det äldre [PolicySpy](policy-spy.md) -verktyget.
 
@@ -208,7 +208,7 @@ Support Center tar bort alla princip händelser.
 
 
 
-### <a name="content-tab"></a><a name="bkmk_support-content"></a>Fliken innehåll
+### <a name="content-tab"></a><a name="bkmk_support-content"></a> Fliken innehåll
 
 Visa innehåll på klienten, inklusive cachelagrat innehåll. Övervaka förloppet för program uppdatering och program distributioner. 
 
@@ -278,7 +278,7 @@ För varje händelse visar vyn följande egenskaper:
 
 
 
-### <a name="inventory-tab"></a><a name="bkmk_support-inventory"></a>Fliken inventering
+### <a name="inventory-tab"></a><a name="bkmk_support-inventory"></a> Fliken inventering
 
 #### <a name="load-or-refresh"></a>Läs in eller uppdatera
 Support Center läser in eller uppdaterar klient inventerings listan för den aktuella vyn.
@@ -330,12 +330,12 @@ Om en funktion inte är aktive rad visas inte några data i vyn.
 
 
 
-### <a name="troubleshooting-tab"></a><a name="bkmk_support-troubleshoot"></a>Fliken fel sökning
+### <a name="troubleshooting-tab"></a><a name="bkmk_support-troubleshoot"></a> Fliken fel sökning
 
 Felsök några av de vanligaste problemen med Configuration Manager-klienter:  
 - Problem med Active Directory  
 - Windows-nätverk  
-- Konfigurationshanteraren   
+- Configuration Manager   
     - Hanterings platser  
     - Principtilldelning  
     - Registrering  
@@ -364,7 +364,7 @@ Om du felsöker klienten och sedan vill försöka felsöka igen väljer du det h
 
 
 
-### <a name="logs-tab"></a><a name="bkmk_support-logs"></a>Fliken loggar
+### <a name="logs-tab"></a><a name="bkmk_support-logs"></a> Fliken loggar
 
 I det här avsnittet visas objekten på fliken **loggar** i Support Center-verktyget. 
 
@@ -385,15 +385,15 @@ Ange följande alternativ:
 I stället för att manuellt välja loggfiler med knappen **Öppna loggar** använder du den här List rutan för att öppna alla loggfiler som är associerade med följande funktions områden: 
 - **Desired Configuration Management**
 - **Inventering**
-- **Programvarudistribution**
+- **Program varu distribution**
 - **Program uppdateringar**
-- **Programhantering**
+- **Program hantering**
 - **Princip**
 - **Klient registrering**
-- **Distribution av operativ system**
+- **Distribution av operativsystem**
 
 
-## <a name="support-center-log-viewer-reference"></a><a name="bkmk_log-viewer"></a>Logg visnings referens för Support Center
+## <a name="support-center-log-viewer-reference"></a><a name="bkmk_log-viewer"></a> Logg visnings referens för Support Center
 
 I det här avsnittet beskrivs användar gränssnittet för **logg visnings verktyget för Support Center** . 
 
@@ -403,7 +403,7 @@ I det här avsnittet beskrivs användar gränssnittet för **logg visnings verkt
 **Logg visnings** verktyget är nästan identiskt med fliken **loggar** i **Support Center**. **Logg visnings** verktyget innehåller inte alternativen för att **Konfigurera klient loggning** och **logg grupper**.
 
 
-### <a name="window-menu"></a><a name="bkmk_log-window"></a>Fönster-menyn
+### <a name="window-menu"></a><a name="bkmk_log-window"></a> Fönster-menyn
 
 I det övre vänstra hörnet i fönstret logg visaren för Support Center väljer du pilen i den blå rutan för att öppna den här menyn.
 
@@ -423,7 +423,7 @@ Visar information om logg visaren för Support Center
 Stänger logg visaren för Support Center
 
 
-### <a name="home-tab"></a><a name="bkmk_log-home"></a>Fliken Start
+### <a name="home-tab"></a><a name="bkmk_log-home"></a> Fliken Start
 
 #### <a name="open-logs"></a>Öppna loggar 
 I Support Center kan du välja en eller flera loggfiler som ska öppnas.
@@ -468,31 +468,31 @@ När du har hittat två eller flera matchningar för strängen som du söker eft
 
 #### <a name="error-lookup"></a>Fel sökning
 Ange en felkod för att söka efter felkoden i för tillfället öppna loggfiler. Använd följande fel kods format:
-- **32-bitars heltal (signerat)**: till exempel`-2147024891`  
-- **32-bitars heltal (osignerat)**: till exempel`2147942405`  
-- **32-bitars hexadecimalt**: till exempel`0x80070005`  
+- **32-bitars heltal (signerat)**: till exempel `-2147024891`  
+- **32-bitars heltal (osignerat)**: till exempel `2147942405`  
+- **32-bitars hexadecimalt**: till exempel `0x80070005`  
 
 #### <a name="decode-certificate"></a>Avkoda certifikat
 I dialog rutan **avkoda certifikat** klistrar du in det serialiserade certifikat svärdet för alla certifikat på klienten. Hitta det här värdet i registret, i loggfiler eller i WMI. Välj **process** för att visa allmän information och information om certifikatet. Den här informationen omfattar certifierings Sök vägen. Välj **Exportera** för att exportera certifikatet som en **CER** -fil.
 
 
 
-## <a name="advanced-log-file-filters"></a><a name="bkmk_adv-filters"></a>Avancerade logg fils filter
+## <a name="advanced-log-file-filters"></a><a name="bkmk_adv-filters"></a> Avancerade logg fils filter
 
 Med avancerade logg fils filter kan du inkludera, undanta eller markera vissa strängar. De här strängarna kan förekomma i en loggfil eller logg fil grupp när du tittar på logg fils poster. Använd jokertecken för att söka när du skapar ett filter. När du har en användbar kombination av filter sparar du dem som en *filter uppsättning*. 
 
 Avancerade logg fils filter ersätter snabb filter. Använd både tillsammans, men snabb filter gäller endast för visade loggdata. Avancerade filter avgör vilka data som visas först innan alla eventuella snabb filter används.
 
-I dialog rutan Avancerade filter kan du skapa komplexa filter uppsättningar. Dessa filter anger Sök efter strängar i flera logg fil komponenter. Dessa komponenter innehåller meddelanden, trådar, loggnings nivåer och komponenter. En filter uppsättning innehåller flera filter instruktioner som du använder för att inkludera, undanta eller Markera Logg fils meddelanden. Ett filter definierar en logg fils kolumn att söka i, en operator och ett värde. Värdet kan innehålla reguljära uttryck, till exempel *jokertecknet* `*`.
+I dialog rutan Avancerade filter kan du skapa komplexa filter uppsättningar. Dessa filter anger Sök efter strängar i flera logg fil komponenter. Dessa komponenter innehåller meddelanden, trådar, loggnings nivåer och komponenter. En filter uppsättning innehåller flera filter instruktioner som du använder för att inkludera, undanta eller Markera Logg fils meddelanden. Ett filter definierar en logg fils kolumn att söka i, en operator och ett värde. Värdet kan innehålla reguljära uttryck, till exempel *jokertecknet* `*` .
 
 
-### <a name="add-a-filter"></a>Lägg till ett filter
+### <a name="add-a-filter"></a>Lägga till ett filter
 
 1. I fönstret **logg visare** eller på fliken Support Center- **loggar** väljer du **Avancerade filter**.  
 
 2. I dialog rutan Avancerade filter väljer du **Lägg till**. Välj sedan ett av följande alternativ för att arbeta med logg poster som matchar ditt filter:  
     - **Inkludera**  
-    - **Exclude**  
+    - **Ingå**  
     - **Höjdpunkt**  
 
 3. I dialog rutan **Avancerad filter konfiguration** väljer du en kolumn och en operator:  
@@ -528,7 +528,7 @@ I dialog rutan Avancerade filter kan du skapa komplexa filter uppsättningar. De
 
 
 
-## <a name="support-center-viewer-reference"></a><a name="bkmk_viewer"></a>Referens för Support Center Viewer
+## <a name="support-center-viewer-reference"></a><a name="bkmk_viewer"></a> Referens för Support Center Viewer
 
 I det här avsnittet beskrivs användar gränssnittet (UI) för verktyget Configuration Manager **Support Center Viewer** . De tillgängliga flikarna varierar beroende på innehållet i fel söknings paketet. [Fönster-menyn](#bkmk_viewer-window) och [fliken Start](#bkmk_viewer-home) visas som standard.
 - [Fönster-menyn](#bkmk_viewer-window)
@@ -543,7 +543,7 @@ I det här avsnittet beskrivs användar gränssnittet (UI) för verktyget Config
 - [Fliken fel sökning](#bkmk_viewer-troubleshoot)
 
 
-### <a name="window-menu"></a><a name="bkmk_viewer-window"></a>Fönster-menyn
+### <a name="window-menu"></a><a name="bkmk_viewer-window"></a> Fönster-menyn
 
 I det övre vänstra hörnet i fönstret Support Center Viewer väljer du pilen i den blå rutan för att öppna den här menyn.
 
@@ -558,14 +558,14 @@ I dialog rutan **alternativ** kan du:
 - Minska förflyttningen av animerade användar gränssnitts element  
 - Ändra platsen för temporära filer    
 - Återställ varningar. Eventuella varnings meddelanden som du tidigare ignorerat visas igen när de utlöses.  
-- Återställ temporär fil Sök väg till standardvärdet,`%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenterViewer`  
+- Återställ temporär fil Sök väg till standardvärdet, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenterViewer`  
 
 
 #### <a name="exit"></a>Avsluta
 Avslutar Support Center Viewer
 
 
-### <a name="home-tab"></a><a name="bkmk_viewer-home"></a>Fliken Start
+### <a name="home-tab"></a><a name="bkmk_viewer-home"></a> Fliken Start
 
 #### <a name="open-bundle"></a>Öppna paket
 Bläddra till platsen för ett data paket som skapats av Support Center.
@@ -577,27 +577,27 @@ Välj en eller flera loggfiler som ska öppnas.
 I dialog rutan **avkoda certifikat** klistrar du in det serialiserade certifikat svärdet för alla certifikat på klienten. Hitta det här värdet i registret, i loggfiler eller i WMI. Välj **process** för att visa allmän information och information om certifikatet. Den här informationen omfattar certifierings Sök vägen. Välj **Exportera** för att exportera certifikatet som en **CER** -fil.
 
 
-### <a name="configuration-tab"></a><a name="bkmk_viewer-config"></a>Fliken konfiguration
+### <a name="configuration-tab"></a><a name="bkmk_viewer-config"></a> Fliken konfiguration
 
 Fliken **konfiguration** i verktyget Support Center Viewer innehåller följande vyer som använder data som hämtats från WMI-providers:
 
-#### <a name="client"></a>Klient
+#### <a name="client"></a>Client
 Den här vyn visar samma information som visas på fliken **klient** i Support Center.
 
 #### <a name="operating-system"></a>Operativsystem
-Information om klientens operativ system. Den använder klassen [Win32_OperatingSystem](https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-operatingsystem) .
+Information om klientens operativ system. Den använder klassen [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) .
 
 #### <a name="computer"></a>Dator
-Information för klient datorn. Den använder klassen [Win32_OperatingSystem](https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-operatingsystem) .
+Information för klient datorn. Den använder klassen [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) .
 
 #### <a name="services"></a>Tjänster
-Information om tjänster som körs på klient datorn. Den använder klassen [Win32_Service](https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-service) .
+Information om tjänster som körs på klient datorn. Den använder klassen [Win32_Service](/windows/desktop/CIMWin32Prov/win32-service) .
 
 #### <a name="network-adapters"></a>Nätverkskort
-Information om nätverkskort som är installerade på klient datorn. Den använder klassen [Win32_NetworkAdapterConfiguration](https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-networkadapterconfiguration) .
+Information om nätverkskort som är installerade på klient datorn. Den använder klassen [Win32_NetworkAdapterConfiguration](/windows/desktop/CIMWin32Prov/win32-networkadapterconfiguration) .
 
 
-### <a name="logs-tab"></a><a name="bkmk_viewer-logs"></a>Fliken loggar
+### <a name="logs-tab"></a><a name="bkmk_viewer-logs"></a> Fliken loggar
 
 På fliken **loggar** visas en lista över de loggfiler som ingår i paketet. Varje rad på den här fliken innehåller sökvägen, namnet och storleken på logg filen. 
 
@@ -608,7 +608,7 @@ När du har valt en loggfil väljer du den här knappen för att öppna **logg v
 I dialog rutan **avkoda certifikat** klistrar du in det serialiserade certifikat svärdet för alla certifikat på klienten. Hitta det här värdet i registret, i loggfiler eller i WMI. Välj **process** för att visa allmän information och information om certifikatet. Den här informationen omfattar certifierings Sök vägen. Välj **Exportera** för att exportera certifikatet som en **CER** -fil.
 
 
-### <a name="debug-dumps-tab"></a><a name="bkmk_viewer-debug"></a>Fliken fel söknings dum par
+### <a name="debug-dumps-tab"></a><a name="bkmk_viewer-debug"></a> Fliken fel söknings dum par
 
 Varje rad på den här fliken innehåller information om de fel söknings dum par som är tillgängliga för export. Använd den här fliken för att exportera fel söknings dum par filer (. dmp) för ytterligare analys. I den här analysen används ett fel söknings verktyg som WinDbg. 
 
@@ -619,7 +619,7 @@ Varje rad på den här fliken innehåller information om de fel söknings dum pa
 Spara en kopia av den valda felsöknings dumpnings filen.
 
 
-### <a name="wmi-tab"></a><a name="bkmk_viewer-wmi"></a>Fliken WMI
+### <a name="wmi-tab"></a><a name="bkmk_viewer-wmi"></a> Fliken WMI
 
 På den här fliken visas en uppsättning WMI-data från den Configuration Manager klienten som data paketet innehåller. 
 
@@ -639,7 +639,7 @@ Den här knappen öppnar nästa instans av strängen som du angav i dialog rutan
 I dialog rutan **avkoda certifikat** klistrar du in det serialiserade certifikat svärdet för alla certifikat på klienten. Hitta det här värdet i registret, i loggfiler eller i WMI. Välj **process** för att visa allmän information och information om certifikatet. Den här informationen omfattar certifierings Sök vägen. Välj **Exportera** för att exportera certifikatet som en **CER** -fil.
 
 
-### <a name="registry-tab"></a><a name="bkmk_viewer-registry"></a>Fliken register
+### <a name="registry-tab"></a><a name="bkmk_viewer-registry"></a> Fliken register
 
 Använd **registret** -fliken för att Visa register data som ingår i data paketet och för att exportera data för ytterligare analys.
 
@@ -662,7 +662,7 @@ Den här knappen öppnar nästa instans av strängen som du angav i dialog rutan
 I dialog rutan **avkoda certifikat** klistrar du in det serialiserade certifikat svärdet för alla certifikat på klienten. Hitta det här värdet i registret, i loggfiler eller i WMI. Välj **process** för att visa allmän information och information om certifikatet. Den här informationen omfattar certifierings Sök vägen. Välj **Exportera** för att exportera certifikatet som en **CER** -fil.
 
 
-### <a name="policy-tab"></a><a name="bkmk_viewer-policy"></a>Fliken princip
+### <a name="policy-tab"></a><a name="bkmk_viewer-policy"></a> Fliken princip
 
 Fliken **princip** används för att Visa princip data som ingår i data paketet. 
 
@@ -682,7 +682,7 @@ Den här knappen öppnar nästa instans av strängen som du angav i dialog rutan
 I dialog rutan **avkoda certifikat** klistrar du in det serialiserade certifikat svärdet för alla certifikat på klienten. Hitta det här värdet i registret, i loggfiler eller i WMI. Välj **process** för att visa allmän information och information om certifikatet. Den här informationen omfattar certifierings Sök vägen. Välj **Exportera** för att exportera certifikatet som en **CER** -fil.
 
 
-### <a name="certificates-tab"></a><a name="bkmk_viewer-certs"></a>Fliken certifikat
+### <a name="certificates-tab"></a><a name="bkmk_viewer-certs"></a> Fliken certifikat
 
 Fliken **certifikat** används för att Visa certifikat som ingår i data paketet och för att exportera dem.
 
@@ -693,7 +693,7 @@ Visar information om ett valt certifikat.
 Öppnar dialog rutan **Spara som** för att spara en kopia av det certifikat som du väljer.
 
 
-### <a name="troubleshooting-tab"></a><a name="bkmk_viewer-troubleshoot"></a>Fliken fel sökning
+### <a name="troubleshooting-tab"></a><a name="bkmk_viewer-troubleshoot"></a> Fliken fel sökning
 
 Använd fliken **fel sökning** om du vill visa loggfiler som skapats med hjälp av fliken fel sökning i Support Center.
 

@@ -1,5 +1,5 @@
 ---
-title: Hantera Endpoint Protection med grup principer
+title: Hantera Endpoint Protection med gruppprinciper
 titleSuffix: Configuration Manager
 description: Lär dig hur du hanterar Endpoint Protection med hjälp av grup principer.
 ms.date: 08/05/2020
@@ -10,12 +10,12 @@ ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6c43ca9e1007c62835015a8c26a478af7da34ebb
-ms.sourcegitcommit: c1afc8abd0d7da48815bd2b0e45147774c72c2df
+ms.openlocfilehash: d028dc6149ae1fee2d61634b96ccf450fc8f4b24
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87820013"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700607"
 ---
 # <a name="use-group-policy-settings-to-manage-endpoint-protection-in-previous-versions-of-windows"></a>Använd grupprincip inställningar för att hantera Endpoint Protection i tidigare versioner av Windows
 
@@ -42,7 +42,7 @@ Du kan hantera Endpoint Protection på sådana enheter med grupprincip inställn
     - [Lokal enhet](#load-endpoint-protection-group-policy-settings-into-your-local-device)
 
 > [!NOTE]
-> Information om hur du använder grupprincip inställningar för att hantera Microsoft Defender Antivirus i Windows 10, Windows Server 2019 och Windows Server 2016 finns i [använda grupprincip inställningar för att konfigurera och hantera Microsoft Defender Antivirus](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-antivirus/use-group-policy-microsoft-defender-antivirus).
+> Information om hur du använder grupprincip inställningar för att hantera Microsoft Defender Antivirus i Windows 10, Windows Server 2019 och Windows Server 2016 finns i [använda grupprincip inställningar för att konfigurera och hantera Microsoft Defender Antivirus](/windows/security/threat-protection/microsoft-defender-antivirus/use-group-policy-microsoft-defender-antivirus).
 
 ## <a name="copy-endpoint-protection-policy-definitions"></a>Kopiera Endpoint Protection princip definitioner
 
@@ -75,7 +75,7 @@ Om du använder en [Central lagrings plats för grupprincip administrativa malla
     
     där **domänkontrollant** är namnet på domänkontrollanten och **contoso.com** är din domän.
 
-3. Öppna [konsolen Grupprinciphantering](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/group-policy-and-group-policy-mgmt-console-ie11) och skapa ett nytt Grupprincip objekt (GPO) i din domän, till exempel **Endpoint Protection**.
+3. Öppna [konsolen Grupprinciphantering](/internet-explorer/ie11-deploy-guide/group-policy-and-group-policy-mgmt-console-ie11) och skapa ett nytt Grupprincip objekt (GPO) i din domän, till exempel **Endpoint Protection**.
 4. Högerklicka på GRUPPRINCIPOBJEKTet för Endpoint Protection och klicka på **Redigera**.
 5. I redigeraren Grupprinciphantering går du till **dator konfiguration**  >  **principer**  >  **administrativa mallar: princip definitioner**  >  **Windows-komponenter**  >  **Endpoint Protection**.
 

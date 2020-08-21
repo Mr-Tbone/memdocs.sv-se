@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 05553af3e973805eed62c68f13afc3cf7d3d2ee3
-ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
+ms.openlocfilehash: c9cf8e74793213e47dd503de1fdf1284bdc7d6a9
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438590"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699236"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Förbered för användning SQL Server Always on-tillgänglighetsgrupper med Configuration Manager
 
@@ -76,13 +76,13 @@ Använd en *Enterprise* -version av SQL Server.
 
 Varje instans av SQL Server kan köras under ett domän användar konto (**tjänst konto**) eller ett konto som inte är ett domän konto. Varje replik i en grupp kan ha en annan konfiguration.
 
-- Använd ett konto med lägsta möjliga behörighet. Mer information finns i [säkerhets överväganden för en SQL Server-installation](https://docs.microsoft.com/sql/sql-server/install/security-considerations-for-a-sql-server-installation).  
+- Använd ett konto med lägsta möjliga behörighet. Mer information finns i [säkerhets överväganden för en SQL Server-installation](/sql/sql-server/install/security-considerations-for-a-sql-server-installation).  
 
-- Mer information om hur du konfigurerar tjänst konton och behörigheter för SQL Server finns i [Konfigurera Windows tjänst konton och behörigheter](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions).  
+- Mer information om hur du konfigurerar tjänst konton och behörigheter för SQL Server finns i [Konfigurera Windows tjänst konton och behörigheter](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions).  
 
-- Om du vill använda ett konto som inte är ett domän konto måste du använda certifikat. Mer information finns i [använda certifikat för en databas speglings slut punkt (Transact-SQL)](https://docs.microsoft.com/sql/database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql).  
+- Om du vill använda ett konto som inte är ett domän konto måste du använda certifikat. Mer information finns i [använda certifikat för en databas speglings slut punkt (Transact-SQL)](/sql/database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql).  
 
-- Mer information finns i [skapa en slut punkt för databas spegling för Always on Availability groups](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell).  
+- Mer information finns i [skapa en slut punkt för databas spegling för Always on Availability groups](/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell).  
 
 
 ### <a name="database"></a>Databas
@@ -104,7 +104,7 @@ Konfigurera databasen för varje replik med följande inställningar:
     GO
     ```
 
-    Mer information finns i [CLR-integrering](https://docs.microsoft.com/sql/relational-databases/clr-integration/clr-integration-enabling).  
+    Mer information finns i [CLR-integrering](/sql/relational-databases/clr-integration/clr-integration-enabling).  
 
 - Ange **Max storleken för text repl** till `2147483647` :  
 
@@ -120,7 +120,7 @@ Konfigurera databasen för varje replik med följande inställningar:
     ALTER DATABASE [CM_xxx] SET TRUSTWORTHY ON;
     ```
 
-    Mer information finns i [egenskapen betrodd databas](https://docs.microsoft.com/sql/relational-databases/security/trustworthy-database-property).
+    Mer information finns i [egenskapen betrodd databas](/sql/relational-databases/security/trustworthy-database-property).
 
 - Aktivera **Service Broker**:  
 
@@ -217,9 +217,9 @@ Kör följande SQL-skript för att kontrol lera databas konfigurationerna för b
 - Du kan använda en asynkron commit-replik för att återställa din synkrona replik. Mer information finns i [återställnings alternativ för plats databas](../../manage/recover-sites.md#site-database-recovery-options).  
 
     > [!Warning]  
-    > Configuration Manager stöder inte *redundans* för att använda den asynkrona commit-repliken som plats databas. Mer information finns i [lägen för redundans och redundans (alltid på tillgänglighets grupper)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups).  
+    > Configuration Manager stöder inte *redundans* för att använda den asynkrona commit-repliken som plats databas. Mer information finns i [lägen för redundans och redundans (alltid på tillgänglighets grupper)](/sql/database-engine/availability-groups/windows/failover-and-failover-modes-always-on-availability-groups).  
 
-Configuration Manager validerar inte statusen för den asynkrona commit-repliken för att bekräfta att den är aktuell. Användning av en asynkron commit-replik som plats databasen kan skydda din webbplats och data på risk. Den här repliken kan vara osynkroniserade genom design. Mer information finns i [Översikt över SQL Server Always on-tillgänglighetsgrupper](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server).
+Configuration Manager validerar inte statusen för den asynkrona commit-repliken för att bekräfta att den är aktuell. Användning av en asynkron commit-replik som plats databasen kan skydda din webbplats och data på risk. Den här repliken kan vara osynkroniserade genom design. Mer information finns i [Översikt över SQL Server Always on-tillgänglighetsgrupper](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server).
 
 Varje replik medlem måste ha följande konfiguration:
 
@@ -239,17 +239,17 @@ Varje replik medlem måste ha följande konfiguration:
     > - Du kör Configuration Manager-installationen för att ange användning av plats databasen i tillgänglighets gruppen.  
     > - Du installerar en uppdatering för Configuration Manager. (Inte bara uppdateringar som gäller plats databasen).  
 
-- Alla medlemmar behöver samma [seeding-läge](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas).<!-- SCCMDocs-pr#3899 --> Configuration Manager-installationen innehåller en krav kontroll för att verifiera konfigurationen när du skapar en databas via installation eller återställning.
+- Alla medlemmar behöver samma [seeding-läge](/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas).<!-- SCCMDocs-pr#3899 --> Configuration Manager-installationen innehåller en krav kontroll för att verifiera konfigurationen när du skapar en databas via installation eller återställning.
 
     > [!Note]  
-    > När installations programmet skapar-databasen och du konfigurerar **Automatisk** initiering måste tillgänglighets gruppen ha behörighet att skapa databasen. Detta krav gäller både för en ny databas eller återställning. Mer information finns i [automatisk dirigering för sekundär replik](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas#security).<!-- SCCMDocs-pr#3900 -->
+    > När installations programmet skapar-databasen och du konfigurerar **Automatisk** initiering måste tillgänglighets gruppen ha behörighet att skapa databasen. Detta krav gäller både för en ny databas eller återställning. Mer information finns i [automatisk dirigering för sekundär replik](/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas#security).<!-- SCCMDocs-pr#3900 -->
 
 #### <a name="replica-member-location"></a>Replik medlems plats
 
 Antingen vara värd för alla repliker i en tillgänglighets grupp lokalt eller var värd för dem på Microsoft Azure. En grupp som innehåller en lokal medlem och en medlem i Azure stöds inte.
 
 > [!NOTE]
-> Om du använder en virtuell Azure-dator för SQL Server aktiverar du **flytande IP**. Mer information finns i [Konfigurera en belastningsutjämnare för en SQL Server Always on-tillgänglighetsgrupper på virtuella Azure-datorer](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/availability-group-load-balancer-portal-configure).<!-- SCCMDocs#1928 -->
+> Om du använder en virtuell Azure-dator för SQL Server aktiverar du **flytande IP**. Mer information finns i [Konfigurera en belastningsutjämnare för en SQL Server Always on-tillgänglighetsgrupper på virtuella Azure-datorer](/azure/azure-sql/virtual-machines/windows/availability-group-load-balancer-portal-configure).<!-- SCCMDocs#1928 -->
 
 Configuration Manager installationen måste ansluta till varje replik. När du konfigurerar en tillgänglighets grupp i Azure och gruppen ligger bakom en intern eller extern belastningsutjämnare, öppnar du följande standard portar:
 
@@ -263,11 +263,11 @@ När installationen är klar måste dessa portar vara öppna för Configuration 
 
 Du kan använda anpassade portar för dessa konfigurationer. Använd samma anpassade portar av slut punkten och alla repliker i tillgänglighets gruppen.
 
-Skapa en belastnings Utjämnings regel för varje port i Azure Load Balancer för SQL för att replikera data mellan platser. Mer information finns i [Konfigurera portar med hög tillgänglighet för en intern belastningsutjämnare](https://docs.microsoft.com/azure/load-balancer/load-balancer-configure-ha-ports).<!-- MEMDocs#252 -->
+Skapa en belastnings Utjämnings regel för varje port i Azure Load Balancer för SQL för att replikera data mellan platser. Mer information finns i [Konfigurera portar med hög tillgänglighet för en intern belastningsutjämnare](/azure/load-balancer/load-balancer-configure-ha-ports).<!-- MEMDocs#252 -->
 
 #### <a name="listener"></a>Lyssnare
 
-Tillgänglighetsgruppen måste ha minst en *lyssnare i tillgänglighetsgruppen*. När du konfigurerar Configuration Manager att använda plats databasen i tillgänglighets gruppen, använder den den här lyssnaren virtuella namn. Även om en tillgänglighets grupp kan innehålla flera lyssnare kan Configuration Manager bara använda en. Mer information finns i [skapa eller konfigurera en lyssnare för en SQL Server tillgänglighets grupp](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server).
+Tillgänglighetsgruppen måste ha minst en *lyssnare i tillgänglighetsgruppen*. När du konfigurerar Configuration Manager att använda plats databasen i tillgänglighets gruppen, använder den den här lyssnaren virtuella namn. Även om en tillgänglighets grupp kan innehålla flera lyssnare kan Configuration Manager bara använda en. Mer information finns i [skapa eller konfigurera en lyssnare för en SQL Server tillgänglighets grupp](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server).
 
 #### <a name="file-paths"></a>Fil Sök vägar
 
@@ -294,7 +294,7 @@ Betrakta till exempel följande scenario:
 #### <a name="multi-subnet-failover"></a>Redundans för flera undernät
 
 <!-- SCCMDocs-pr#3734 -->
-Från och med version 1906 kan du aktivera [nyckelordet MultiSubnetFailover-anslutningssträng](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) i SQL Server. Du måste också lägga till följande värden manuellt i Windows-registret på plats servern:
+Från och med version 1906 kan du aktivera [nyckelordet MultiSubnetFailover-anslutningssträng](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) i SQL Server. Du måste också lägga till följande värden manuellt i Windows-registret på plats servern:
 
 ``` Registry
 HKLM:\SOFTWARE\Microsoft\SMS\Identification
@@ -315,11 +315,11 @@ Följande begränsningar gäller för alla scenarier.
 
 ### <a name="unsupported-sql-server-options-and-configurations"></a>SQL Server alternativ och konfigurationer som inte stöds
 
-- **Grundläggande tillgänglighets grupper**: introducerades med SQL Server 2016 Standard Edition, så stöder inte grundläggande tillgänglighets grupper Läs åtkomst till sekundära repliker. Konfigurationen kräver den här åtkomsten. Mer information finns i [grundläggande SQL Server tillgänglighets grupper](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/basic-availability-groups-always-on-availability-groups?view=sql-server-2017).  
+- **Grundläggande tillgänglighets grupper**: introducerades med SQL Server 2016 Standard Edition, så stöder inte grundläggande tillgänglighets grupper Läs åtkomst till sekundära repliker. Konfigurationen kräver den här åtkomsten. Mer information finns i [grundläggande SQL Server tillgänglighets grupper](/sql/database-engine/availability-groups/windows/basic-availability-groups-always-on-availability-groups?view=sql-server-2017).  
 
-- **Kluster instans för växling vid fel**: det finns inte stöd för kluster instanser för replikering som du använder med Configuration Manager. Mer information finns i [SQL Server Always on Cluster instances](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server).  
+- **Kluster instans för växling vid fel**: det finns inte stöd för kluster instanser för replikering som du använder med Configuration Manager. Mer information finns i [SQL Server Always on Cluster instances](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server).  
 
-- **MultiSubnetFailover**: i version 1902 och tidigare finns det inte stöd för att använda en tillgänglighets grupp med Configuration Manager i en konfiguration för flera undernät. Du kan inte heller använda anslutnings strängen [MutliSubnetFailover](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) för nyckelord.
+- **MultiSubnetFailover**: i version 1902 och tidigare finns det inte stöd för att använda en tillgänglighets grupp med Configuration Manager i en konfiguration för flera undernät. Du kan inte heller använda anslutnings strängen [MutliSubnetFailover](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) för nyckelord.
 
     Om du vill ha stöd för den här konfigurationen uppdaterar du Configuration Manager till version 1906 eller senare. Mer information finns i krav för [redundans för flera undernät](sql-server-alwayson-for-a-highly-available-site-database.md#multi-subnet-failover) .
 
@@ -382,7 +382,7 @@ När en plats databas använder en tillgänglighets grupp kör du den inbyggda u
 
 ### <a name="transaction-log"></a>Transaktions logg  
 
-Ange att plats databasens återställnings modell är **fullständig**. Den här konfigurationen är ett krav för Configuration Manager används i en tillgänglighets grupp. Planera för att övervaka och underhålla storleken på transaktions loggen för plats databasen. I den fullständiga återställnings modellen är transaktionerna inte skärpta förrän den gör en fullständig säkerhets kopia av databasen eller transaktions loggen. Mer information finns i [säkerhetskopiera och återställa SQL Server-databaser](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases).
+Ange att plats databasens återställnings modell är **fullständig**. Den här konfigurationen är ett krav för Configuration Manager används i en tillgänglighets grupp. Planera för att övervaka och underhålla storleken på transaktions loggen för plats databasen. I den fullständiga återställnings modellen är transaktionerna inte skärpta förrän den gör en fullständig säkerhets kopia av databasen eller transaktions loggen. Mer information finns i [säkerhetskopiera och återställa SQL Server-databaser](/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases).
 
 
 ## <a name="changes-for-site-recovery"></a>Ändringar för webbplats återställning

@@ -10,12 +10,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b30380f4e272050b7224b52d092f39aa8ab5bad4
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: bda64f11d5d2ee9498ce69224ec9a52efc0df902
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383180"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700341"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>SQL Server-versioner som stöds för Configuration Manager
 
@@ -63,9 +63,9 @@ I en hierarki med flera platser kan olika platser använda olika versioner av SQ
 
 - Configuration Manager stöder de versioner av SQL Server som du använder.
 - De SQL Server-versioner som du använder finns kvar i supporten av Microsoft.
-- SQL Server stöder replikering mellan de två versionerna av SQL Server. Mer information finns i [SQL Server replikering bakåt](https://docs.microsoft.com/sql/relational-databases/replication/replication-backward-compatibility).
+- SQL Server stöder replikering mellan de två versionerna av SQL Server. Mer information finns i [SQL Server replikering bakåt](/sql/relational-databases/replication/replication-backward-compatibility).
 
-För SQL Server 2016 och tidigare, stöd för varje SQL-version och service pack följer [Microsofts livs cykel princip](https://aka.ms/sqllifecycle). Stöd för en speciell SQL Server service pack innehåller ackumulerade uppdateringar om de inte bryter mot den grundläggande service pack versionen. Från och med SQL Server 2017 frigörs inte service packs eftersom det följer en [modern underhålls modell](https://docs.microsoft.com/archive/blogs/sqlreleaseservices/announcing-the-modern-servicing-model-for-sql-server). SQL Servers teamet rekommenderar kontinuerlig, [proaktiv installation av ackumulerade uppdateringar](https://docs.microsoft.com/archive/blogs/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism) när de blir tillgängliga.
+För SQL Server 2016 och tidigare, stöd för varje SQL-version och service pack följer [Microsofts livs cykel princip](https://aka.ms/sqllifecycle). Stöd för en speciell SQL Server service pack innehåller ackumulerade uppdateringar om de inte bryter mot den grundläggande service pack versionen. Från och med SQL Server 2017 frigörs inte service packs eftersom det följer en [modern underhålls modell](/archive/blogs/sqlreleaseservices/announcing-the-modern-servicing-model-for-sql-server). SQL Servers teamet rekommenderar kontinuerlig, [proaktiv installation av ackumulerade uppdateringar](/archive/blogs/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism) när de blir tillgängliga.
 
 Om inget annat anges stöds följande versioner av SQL Server med alla aktiva versioner av Configuration Manager. Om stöd för en ny SQL Server-version läggs till, anges Configuration Manager-versionen som lägger till det stödet. Om stödet är inaktuellt kan du se mer information om berörda versioner av Configuration Manager.
 
@@ -74,7 +74,7 @@ Om inget annat anges stöds följande versioner av SQL Server med alla aktiva ve
 
 ### <a name="sql-server-2019-standard-enterprise"></a>SQL Server 2019: standard, Enterprise
 
-Från och med Configuration Manager version 1910 kan du använda den här versionen med Cumulative Update 5 (CU5) eller senare, så länge din kumulativa uppdaterings version stöds av SQL-livscykeln. CU5 är minimi kravet för SQL Server 2019 eftersom det löser ett problem med [SKALÄR UDF](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining)-inskalning.
+Från och med Configuration Manager version 1910 kan du använda den här versionen med Cumulative Update 5 (CU5) eller senare, så länge din kumulativa uppdaterings version stöds av SQL-livscykeln. CU5 är minimi kravet för SQL Server 2019 eftersom det löser ett problem med [SKALÄR UDF](/sql/relational-databases/user-defined-functions/scalar-udf-inlining)-inskalning.
 
 Den här versionen av SQL kan användas för följande platser:
 
@@ -85,13 +85,13 @@ Den här versionen av SQL kan användas för följande platser:
 <!--
 #### Known issue with SQL Server 2019
 
-There's a known issue<!--6436234 with the new [scalar UDF inlining](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining) feature in SQL 2019. To work around this issue and disable UDF lining, run the following script on the SQL 2019 server:
+There's a known issue<!--6436234 with the new [scalar UDF inlining](/sql/relational-databases/user-defined-functions/scalar-udf-inlining) feature in SQL 2019. To work around this issue and disable UDF lining, run the following script on the SQL 2019 server:
 
 ```sql
 ALTER DATABASE SCOPED CONFIGURATION SET TSQL_SCALAR_UDF_INLINING = OFF  
 ```
 
-While not always necessary, you may need to restart the SQL server after you run this script. For more information, see [Disabling Scalar UDF Inlining without changing the compatibility level](https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#disabling-scalar-udf-inlining-without-changing-the-compatibility-level).
+While not always necessary, you may need to restart the SQL server after you run this script. For more information, see [Disabling Scalar UDF Inlining without changing the compatibility level](/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=sql-server-ver15#disabling-scalar-udf-inlining-without-changing-the-compatibility-level).
 
 You can safely disable this SQL feature for the site database server because Configuration Manager doesn't use it.
 
@@ -187,7 +187,7 @@ Configuration Manager stöder två undantag till den här sorteringen för Kina 
 
 ### <a name="database-compatibility-level"></a>Kompatibilitetsnivå för databas
 
-Configuration Manager kräver att plats databasens kompatibilitetsnivå är mindre än den lägsta SQL Server versionen som stöds för din Configuration Manager version. Till exempel, från och med version 1702, måste du ha en kompatibilitetsnivå för [databas](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) som är större än eller lika med 110. <!-- SMS.506266-->
+Configuration Manager kräver att plats databasens kompatibilitetsnivå är mindre än den lägsta SQL Server versionen som stöds för din Configuration Manager version. Till exempel, från och med version 1702, måste du ha en kompatibilitetsnivå för [databas](/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) som är större än eller lika med 110. <!-- SMS.506266-->
 
 ### <a name="sql-server-features"></a>SQL Server funktioner
 
@@ -205,7 +205,7 @@ Använd en dedikerad instans av SQL Server för varje plats. Instansen kan vara 
 
 ### <a name="sql-server-memory"></a>SQL Server minne
 
-Reservera minne för SQL Server med SQL Server Management Studio. Ange minimi inställningen för **Server minne** under **alternativ för server minne**. Mer information om hur du konfigurerar den här inställningen finns [SQL Server konfigurations alternativ för minnes Server](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
+Reservera minne för SQL Server med SQL Server Management Studio. Ange minimi inställningen för **Server minne** under **alternativ för server minne**. Mer information om hur du konfigurerar den här inställningen finns [SQL Server konfigurations alternativ för minnes Server](/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
 - **För en databas server som du installerar på samma dator som plats servern**: begränsa minnet för SQL Server till 50 till 80 procent av det tillgängliga, adresser bara system minnet.  
 
@@ -219,11 +219,11 @@ Reservera minne för SQL Server med SQL Server Management Studio. Ange minimi in
 
 ### <a name="sql-nested-triggers"></a>SQL-kapslade utlösare
 
-Kapslade SQL-utlösare måste vara aktiverat. Mer information finns i [Konfigurera Server konfigurations alternativet kapslade utlösare](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option)
+Kapslade SQL-utlösare måste vara aktiverat. Mer information finns i [Konfigurera Server konfigurations alternativet kapslade utlösare](/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option)
 
 ### <a name="sql-server-clr-integration"></a>CLR-integrering i SQL Server
 
-Platsdatabasen kräver att CLR (Common Language Runtime) är aktiverat i SQL Server. Det här alternativet aktive ras automatiskt när Configuration Manager installeras. Mer information om CLR finns i [Introduktion till SQL Server CLR-integrering](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration).  
+Platsdatabasen kräver att CLR (Common Language Runtime) är aktiverat i SQL Server. Det här alternativet aktive ras automatiskt när Configuration Manager installeras. Mer information om CLR finns i [Introduktion till SQL Server CLR-integrering](/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration).  
 
 ### <a name="sql-server-service-broker-ssb"></a>SQL Server Service Broker (SSB)
 
@@ -231,7 +231,7 @@ SQL Server Service Broker krävs både för replikering mellan platser och för 
 
 ### <a name="trustworthy-setting"></a>BETRODD inställning
 
-Configuration Manager aktiverar automatiskt SQL- [betrodd databas egenskap](https://docs.microsoft.com/sql/relational-databases/security/trustworthy-database-property). Den här egenskapen krävs för att Configuration Manager ska vara **på**.
+Configuration Manager aktiverar automatiskt SQL- [betrodd databas egenskap](/sql/relational-databases/security/trustworthy-database-property). Den här egenskapen krävs för att Configuration Manager ska vara **på**.
 
 ## <a name="optional-configurations-for-sql-server"></a><a name="bkmk_optional"></a> Valfria konfigurationer för SQL Server
 
@@ -255,7 +255,7 @@ När datorn som kör SQL Server inte använder det lokala system kontot för att
 
 Information om SPN för plats databasen finns i [Hantera SPN för plats databas servern](../../servers/manage/modify-your-infrastructure.md#bkmk_SPN).  
 
-Information om hur du ändrar det konto som används av SQL Server-tjänsten finns i [SCM-tjänster-ändra tjänstens start konto](https://docs.microsoft.com/sql/database-engine/configure-windows/scm-services-change-the-service-startup-account).  
+Information om hur du ändrar det konto som används av SQL Server-tjänsten finns i [SCM-tjänster-ändra tjänstens start konto](/sql/database-engine/configure-windows/scm-services-change-the-service-startup-account).  
 
 ### <a name="sql-server-reporting-services"></a>SQL Server Reporting Services
 
@@ -290,7 +290,7 @@ När en dator som kör SQL Server är värd för en databas från mer än en pla
 
 Om du har en brand vägg aktive rad på den dator som kör SQL Server, kontrollerar du att den har kon figurer ATS för att tillåta portarna som används av distributionen och på alla platser i nätverket mellan datorer som kommunicerar med SQL Server.  
 
-Ett exempel på hur du konfigurerar SQL Server att använda en speciell port finns i [Konfigurera en server för att lyssna på en angiven TCP-port](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port).  
+Ett exempel på hur du konfigurerar SQL Server att använda en speciell port finns i [Konfigurera en server för att lyssna på en angiven TCP-port](/sql/database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port).  
 
 ## <a name="upgrade-options-for-sql-server"></a>Uppgraderings alternativ för SQL Server
 

@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: b70a375eb35599a487eeeee95235d638de35e5e1
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: b24369f2c2f21208f188cf5c0c2ef3a28db83c04
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125873"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700828"
 ---
 # <a name="desktop-analytics-faq"></a>Vanliga frågor och svar om Desktop Analytics
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-### <a name="can-i-use-cloud-enabled-analytics-with-intune-managed-devices"></a><a name="bkmk_intune"></a>Kan jag använda molnbaserad analys med Intune-hanterade enheter?
+### <a name="can-i-use-cloud-enabled-analytics-with-intune-managed-devices"></a><a name="bkmk_intune"></a> Kan jag använda molnbaserad analys med Intune-hanterade enheter?
 
 Inte idag, men se meddelandet från Microsoft antändning 2019 on [Insights-driven enhets hantering](https://myignite.techcommunity.microsoft.com/sessions/81690?source=sessions). Den här planerade lösningen är efterföljande till Enhetens hälsotillstånd och Uppgraderingsberedskap.
 
@@ -73,7 +73,7 @@ Ja. Mer information finns i [konvertera från BIOS till UEFI under en uppgraderi
 
 ### <a name="can-i-use-desktop-analytics-with-windows-10-ltsc"></a>Kan jag använda Desktop Analytics med Windows 10-LTSC?
 
-Desktop Analytics stöder inte LTSC-enheter (Long-term Servicing Channel) för Windows 10. Mer information finns i [Översikt över Windows som en tjänst](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+Desktop Analytics stöder inte LTSC-enheter (Long-term Servicing Channel) för Windows 10. Mer information finns i [Översikt över Windows som en tjänst](/windows/deployment/update/waas-overview#long-term-servicing-channel).
 
 ### <a name="can-i-reduce-the-amount-of-time-it-takes-for-data-to-refresh-in-my-desktop-analytics-portal"></a>Kan jag minska hur lång tid det tar att uppdatera data i min Skriv bords analys Portal?
 
@@ -106,7 +106,7 @@ Windows-diagnostikdata från dina datorer krypteras, skickas till och bearbetas 
 
 ### <a name="can-i-use-update-compliance-together-with-desktop-analytics"></a>Kan jag använda Uppdateringsefterlevnad tillsammans med Desktop Analytics?
 
-Ja. Om du använder [uppdateringsefterlevnad](https://docs.microsoft.com/windows/deployment/update/update-compliance-get-started) i Azure Portal idag kan du fortsätta att göra det nu och utöver 2020 januari.
+Ja. Om du använder [uppdateringsefterlevnad](/windows/deployment/update/update-compliance-get-started) i Azure Portal idag kan du fortsätta att göra det nu och utöver 2020 januari.
 
 Mer information finns i [KB 4521815: pensionering i Windows Analytics den 31 januari 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 
@@ -149,9 +149,9 @@ Ja, följande Windows Analytics-funktioner har antingen tagits bort eller är ä
 - Windows informationsskydd
 - Stöd för Windows Server
 
-## <a name="other"></a>Övrigt
+## <a name="other"></a>Annat
 
-### <a name="can-i-use-desktop-analytics-for-my-microsoft-365-apps-upgrades"></a><a name="bkmk_office"></a>Kan jag använda Desktop Analytics för att uppgradera mina Microsoft 365-appar?
+### <a name="can-i-use-desktop-analytics-for-my-microsoft-365-apps-upgrades"></a><a name="bkmk_office"></a> Kan jag använda Desktop Analytics för att uppgradera mina Microsoft 365-appar?
 
 Nej, Desktop Analytics fokuserar på Windows. Microsoft utvecklade Desktop Analytics i nära samarbete med många kunder. Kundfeedback är om hur Desktop Analytics förbättrar sin förmåga att hantera Windows-distributioner på ett säkert sätt. De berättar också för oss att de vill att [Microsoft 365 Apps](../sum/deploy-use/office-365-dashboard.md#bkmk_o365_readiness) är mer nära integrerad med hanterings verktygen för Microsoft 365-appar i Configuration Manager och Intune. Microsoft fortsätter att investera i dessa områden, samtidigt som vi fokuserar på Windows-scenarier i Desktop Analytics.
 

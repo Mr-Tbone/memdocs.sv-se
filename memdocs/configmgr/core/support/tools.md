@@ -10,12 +10,12 @@ ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 06e308a54ee9636a7781667823e7b7f98ae6f25c
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: cb2529dbbe923a5035f0b7586dab696cd6fc917e
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718569"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699423"
 ---
 # <a name="configuration-manager-tools"></a>Configuration Manager-verktyg
 
@@ -25,7 +25,7 @@ Configuration Managers verktygen omfattar [klientbaserade](#client-tools) och [s
 
 Från och med Configuration Manager version 1806 ingår dessa verktyg i `CD.Latest\SMSSETUP\Tools` mappen på plats servern. Ingen ytterligare installation krävs.<!--1357145--> Använd de här versionerna av verktygen med Configuration Manager version 1806 och senare.
 
-Alla Windows-operativsystem som har stöd för klienter i [operativ system som stöds för klienter och enheter](https://docs.microsoft.com/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) stöds för användning med dessa verktyg.
+Alla Windows-operativsystem som har stöd för klienter i [operativ system som stöds för klienter och enheter](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) stöds för användning med dessa verktyg.
 
 > [!Note]  
 > [System Center 2012 R2 Configuration Manager Toolkit](https://www.microsoft.com/download/details.aspx?id=50012) är fortfarande tillgängligt från Microsoft Download Center. För Configuration Manager version 1806 och senare använder du versionerna av verktygen på CD: n. Den senaste mappen på plats servern. Vissa verktyg fanns tidigare i Toolkit men ingår inte i version 1806. Dessa äldre verktyg stöds inte längre.
@@ -48,7 +48,7 @@ Dessa verktyg finns i `ClientTools` undermappen:
 - [Verktyget Skicka schema](send-schedule-tool.md): utlöser scheman och utvärderingar av konfigurations bas linjer  
 
 > [!Note]  
-> `ClientTools` Mappen innehåller också filen Microsoft. Diagnostics. tracing. EventSource. dll. Flera klient verktyg kräver det här biblioteket. Du kan inte använda den direkt.  
+> `ClientTools`Mappen innehåller också filen Microsoft.Diagnostics.Tracing.EventSource.dll. Flera klient verktyg kräver det här biblioteket. Du kan inte använda den direkt.  
 
 
 ## <a name="server-tools"></a>Server verktyg
@@ -72,9 +72,9 @@ Dessa verktyg finns i `ServerTools` undermappen:
 > [!Note]  
 > Mappen ServerTools innehåller också följande filer:
 >
-> - AdminUI. WqlQueryEngine. dll
-> - Microsoft. ConfigurationManagement. ManagementProvider. dll
-> - Microsoft. Diagnostics. tracing. EventSource. dll
+> - AdminUI.WqlQueryEngine.dll
+> - Microsoft.ConfigurationManagement.ManagementProvider.dll
+> - Microsoft.Diagnostics.Tracing.EventSource.dll
 >
 > Flera Server verktyg kräver dessa bibliotek. Du kan inte använda dem direkt.  
 
@@ -86,13 +86,13 @@ Dessa verktyg finns i `ServerTools` undermappen:
 
 - [Utöka och migrera lokala platser till Microsoft Azure](azure-migration-tool.md): hjälper dig att program mässigt skapa virtuella Azure-datorer (VM) för Configuration Manager. <!--3556022--> 
 
-- [Rensnings verktyg för innehålls bibliotek](../plan-design/hierarchy/content-library-cleanup-tool.md): Använd **ContentLibraryCleanup. exe** i `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` om du vill ta bort överblivna innehåll från en distributions plats.  
+- [Rensnings verktyg för innehålls bibliotek](../plan-design/hierarchy/content-library-cleanup-tool.md): Använd **ContentLibraryCleanup.exe** i `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` om du vill ta bort överblivna innehåll från en distributions plats.  
 
-- [Verktyget underhåll av hierarki](../servers/manage/hierarchy-maintenance-tool-preinst.exe.md): Använd **Preinst. exe** i `\<SiteServerName>\SMS_<SiteCode>\bin\X64\00000409` den delade mappen på plats servern för att skicka kommandon till hierarki Manager-komponenten.  
+- [Verktyget underhåll av hierarki](../servers/manage/hierarchy-maintenance-tool-preinst.exe.md): Använd **Preinst.exe** i den `\<SiteServerName>\SMS_<SiteCode>\bin\X64\00000409` delade mappen på plats servern för att skicka kommandon till hierarki Manager-komponenten.  
 
-- [Verktyget uppdatera återställning](../servers/manage/update-reset-tool.md): Använd **CMUpdateReset. exe** i `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` för att åtgärda problem när uppdateringar i konsolen har problem med att hämta eller replikera.  
+- [Uppdatera återställnings verktyget](../servers/manage/update-reset-tool.md): Använd **CMUpdateReset.exe** i `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` för att åtgärda problem när uppdateringar i konsolen har problem med att hämta eller replikera.  
 
-- [Tjänst anslutnings verktyg](../servers/manage/hierarchy-maintenance-tool-preinst.exe.md): Använd **ServiceConnectionTool. exe** i `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` för att hålla din webbplats uppdaterad när tjänst anslutnings punkten är offline.   
+- [Tjänst anslutnings verktyg](../servers/manage/hierarchy-maintenance-tool-preinst.exe.md): Använd **ServiceConnectionTool.exe** i `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` för att hålla platsen uppdaterad när tjänst anslutnings punkten är offline.   
 
 - [Microsoft Deployment Toolkit (MDT)](../../mdt/use-the-mdt.md): en samling verktyg, processer och vägledning för automatisering av distributioner av Desktop-och Server-operativsystem.
 

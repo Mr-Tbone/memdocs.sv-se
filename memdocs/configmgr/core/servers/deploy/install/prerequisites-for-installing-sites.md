@@ -10,12 +10,12 @@ ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a7f7853b006d4ac8b11a30217d1b05b1eedd69dc
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: bf9ad15266c4e6615ba100d5ea5270e23b93ece7
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268988"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699134"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Krav för att installera Configuration Manager-platser
 
@@ -34,7 +34,7 @@ Följande krav gäller för att installera någon av följande typer:
 
 Om du installerar en central administrations plats som en del av en hierarki för en hierarki, se [expandera en fristående primär plats](#bkmk_expand).
 
-### <a name="prerequisites-for-installing-a-primary-site-or-a-central-administration-site"></a><a name="bkmk_PrereqPri"></a>Krav för att installera en primär plats eller en central administrations plats  
+### <a name="prerequisites-for-installing-a-primary-site-or-a-central-administration-site"></a><a name="bkmk_PrereqPri"></a> Krav för att installera en primär plats eller en central administrations plats  
 
 - De nödvändiga Windows Server-rollerna, funktionerna och Windows-komponenterna måste vara installerade. Mer information finns i [krav för plats system](../../../plan-design/configs/site-and-site-system-prerequisites.md#bkmk_2012sspreq)  
 
@@ -73,7 +73,7 @@ Om du installerar en central administrations plats som en del av en hierarki fö
 
 - Plats servern och plats databas servern måste uppfylla alla nödvändiga konfigurationer. [Kör krav kontrollen manuellt](prerequisite-checker.md) för att identifiera och åtgärda problem innan du påbörjar installationen av Configuration Manager.  
 
-### <a name="prerequisites-to-expand-a-stand-alone-primary-site"></a><a name="bkmk_expand"></a>Krav för att expandera en fristående primär plats
+### <a name="prerequisites-to-expand-a-stand-alone-primary-site"></a><a name="bkmk_expand"></a> Krav för att expandera en fristående primär plats
 
 En fristående primär plats måste uppfylla följande krav innan du kan expandera den till en hierarki med en central administrations plats:
 
@@ -133,7 +133,7 @@ För att kunna replikera data mellan en central administrations plats och en pri
 
 När du har expanderat platsen måste du konfigurera om följande Azure-tjänster med Configuration Manager:
 
-- [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm)  
+- [Log Analytics](/azure/azure-monitor/platform/collect-sccm)  
 - [Microsoft Store för företag](../../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md)  
 - [Gateway för molnhantering](../../../clients/manage/cmg/plan-cloud-management-gateway.md)
 
@@ -148,7 +148,7 @@ Du kan också ta bort och återskapa anslutningen till tjänsten:
 3. Konfigurera om anslutningen till Azure-tjänsten för användning med Configuration Manager.  
 
 
-## <a name="secondary-sites"></a><a name="bkmk_secondary"></a>Sekundära platser
+## <a name="secondary-sites"></a><a name="bkmk_secondary"></a> Sekundära platser
 
 Följande är förutsättningar för att installera sekundära platser:  
 

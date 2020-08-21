@@ -10,12 +10,12 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: dd997508f34b02ef7d2824ffd3a4dfec9cb9066a
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 066a7517700d85315a04bec55b6f8254d3e49255
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88251886"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700396"
 ---
 # <a name="tenant-attach-configmgr-client-details-in-the-admin-center-preview"></a><a name="bkmk_mem"></a> Klient anslutning: information om ConfigMgr-klient i administrations Center (för hands version)
 <!--6024387, 6374854, 6521921, intune 7552762 pubpreview July 7, 2020-->
@@ -27,13 +27,13 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 > - Den här informationen är relaterad till en förhands gransknings funktion som kan ändras avsevärt innan den släpps kommersiellt. Microsoft lämnar inga garantier, uttryckliga eller underförstådda, avseende informationen som visas här.
 > - Fliken gränser grupper fungerar endast för fristående platser. Fliken kommer att vara tom i administrations centret för något annat än en fristående primär plats.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - En miljö som är [ansluten till uppladdade enheter](device-sync-actions.md).
 - Någon av följande webbläsare:
   - Microsoft Edge, version 77 och senare
   - Google Chrome
-- Användar kontot har identifierats med både [Azure Active Directory (Azure AD) identifiering av användare](https://docs.microsoft.com/mem/configmgr/core/servers/deploy/configure/about-discovery-methods#azureaddisc) och [Active Directory användar identifiering](https://docs.microsoft.com/mem/configmgr/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser).
+- Användar kontot har identifierats med både [Azure Active Directory (Azure AD) identifiering av användare](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc) och [Active Directory användar identifiering](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser).
   - Det innebär att användar kontot måste vara ett synkroniserat användar objekt i Azure.
 
 ## <a name="permissions"></a>Behörigheter
@@ -44,7 +44,7 @@ Användar kontot måste ha följande behörigheter:
 - **Användar rollen administratör** för det Configuration Manager mikrotjänst programmet i Azure AD.
   - Lägg till rollen i Azure AD från **företags program**  >  **Configuration Manager mikrotjänst**  >  **användare och grupper**  >  **Lägg till användare**. Grupper stöds om du har Azure AD Premium.
    > [!TIP]
-   > [Rollen program administratör i Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) har tillräcklig behörighet för att lägga till en användare i programmets **Administratörs användar** roll.
+   > [Rollen program administratör i Azure AD](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) har tillräcklig behörighet för att lägga till en användare i programmets **Administratörs användar** roll.
 
 ## <a name="view-configmgr-client-details"></a>Visa information om ConfigMgr-klient
 

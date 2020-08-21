@@ -10,26 +10,26 @@ ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a8eed671b723091f2a43350f42ca82d90e0d9da3
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 8c5cc09b7c2723a5dbdd1030cb0053ae75b1ff22
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906139"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699474"
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-configuration-manager"></a>Använd installations programmet för snabb korrigeringar för att installera uppdateringar för Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
 Vissa uppdateringar för Configuration Manager är inte tillgängliga från Microsofts moln tjänst och hämtas endast out-of-band. Ett exempel är en begränsad version av en snabbkorrigering för att lösa ett specifikt problem.   
-När du måste installera en uppdatering (eller snabb korrigering) som du får från Microsoft och uppdateringen har ett fil namn som slutar med fil namns tillägget **. exe** (inte **Update. exe**), använder du installations programmet för snabb korrigeringar som ingår i den här snabb korrigeringen för att installera uppdateringen direkt på Configuration Manager plats Server.  
+När du måste installera en uppdatering (eller snabb korrigering) som du får från Microsoft och uppdateringen har ett fil namn som slutar med fil namns tillägget **. exe** (inte **update.exe**), använder du installations programmet för snabb korrigeringar som ingår i den här snabb korrigeringen för att installera uppdateringen direkt på Configuration Manager plats Server.  
 
-Om snabb korrigerings filen har fil namns tillägget **. Update. exe** , kan du läsa mer i [använda verktyget uppdatera registrering för att importera snabb korrigeringar till Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
+Om snabb korrigerings filen har **.update.exe** fil namns tillägget läser du [använda verktyget uppdatera registrering för att importera snabb korrigeringar till Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
 
 > [!NOTE]  
 > Det här avsnittet innehåller allmän vägledning om hur du installerar snabb korrigeringar som uppdaterar Configuration Manager. Detaljerad information om en viss uppdatering finns i motsvarande KB-artikel på Microsoft Support.  
 
-##  <a name="overview-of-hotfixes-for-configuration-manager"></a><a name="bkmk_Overview"></a>Översikt över snabb korrigeringar för Configuration Manager  
+##  <a name="overview-of-hotfixes-for-configuration-manager"></a><a name="bkmk_Overview"></a> Översikt över snabb korrigeringar för Configuration Manager  
 Snabb korrigeringar för Configuration Manager liknar dem för andra Microsoft-produkter, till exempel SQL Server, innehåller antingen en enskild korrigering eller ett paket (en samlad korrigering) och beskrivs i en Microsoft Knowledge Base-artikel.  
 
 Enskilda uppdateringar innehåller en enda fokuserad uppdatering för en viss version av Configuration Manager.  
@@ -75,14 +75,14 @@ Varje uppdaterings paket för Configuration Manager är en självextraherande. e
 
 |Fil|Information|  
 |----------|-------------|  
-|&lt;Produkt version \> – QFE – KB &lt; KB-artikel- \> - &lt; Platform \> - &lt; language \> . exe|Detta är uppdateringsfiler. Kommandoraden för denna fil hanteras av Updatesetup.exe.<br /><br /> Ett exempel:<br />Cm1511rtm. exe|  
+|&lt;Produkt version \> – QFE – KB &lt; KB-artikel- \> - &lt; Platform \> - &lt; language \> . exe|Detta är uppdateringsfiler. Kommandoraden för denna fil hanteras av Updatesetup.exe.<br /><br /> Exempel:<br />CM1511RTM-QFE-KB123456-X64-ENU.exe|  
 |Updatesetup.exe|Denna .msi-omslutning hanterar installationen av uppdateringspaketet.<br /><br /> När uppdateringen körs, identifierar Updatesetup.exe visningsspråket på datorn. Uppdateringens standardspråk är engelska. Men om andra visningsspråk stöds, visas användargränssnitt på datorns lokala språk.|  
 |License_&lt;language\>.rtf|Eventuellt innehåller varje uppdatering en eller flera licensfiler för de språk som stöds.|  
-|&lt;Produkt&uppdateringstyp>- &lt; produkt version \> - &lt; KB-artikel-ID \> - &lt; Platform \> . msp|När uppdateringen gäller Configuration Manager-konsolen eller-klienter, innehåller uppdaterings paketet separata Windows Installer-korrigeringsfiler (MSP).<br /><br /> Ett exempel:<br /><br /> **Configuration Manager-konsoluppdatering:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **Klient uppdatering:** Configmgr1511. msp<br />Configmgr1511. msp|  
+|&lt;Produkt&uppdateringstyp>- &lt; produkt version \> - &lt; KB-artikel-ID \> - &lt; Platform \> . msp|När uppdateringen gäller Configuration Manager-konsolen eller-klienter, innehåller uppdaterings paketet separata Windows Installer-korrigeringsfiler (MSP).<br /><br /> Exempel:<br /><br /> **Configuration Manager-konsoluppdatering:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **Klient uppdatering:** Configmgr1511. msp<br />Configmgr1511. msp|  
 
 Uppdateringspaketet loggar normalt vad det gör i en loggfil på platsservern. Loggfilen har samma namn som uppdateringspaketet och sparas i mappen **%SystemRoot%/Temp** .  
 
-När du kör uppdateringspaketet extraherar det en fil med samma namn som paketet till en temporär mapp på datorn, och därefter körs Updatesetup.exe. Updatesetup. exe startar program uppdateringen för guiden Configuration Manager &lt; produkt version \> &lt; KB-nummer \> .  
+När du kör uppdateringspaketet extraherar det en fil med samma namn som paketet till en temporär mapp på datorn, och därefter körs Updatesetup.exe. Updatesetup.exe startar program uppdateringen för guiden Configuration Manager &lt; produkt version \> &lt; KB-nummer \> .  
 
 När det gäller uppdateringens omfattning skapar guiden en serie mappar under mappen Configuration Manager installation på plats servern. Mappstrukturen liknar följande:   
 ** \\ \\ &lt; Server namn \> \ SMS_- &lt; platskod \> \snabbkorrigering \\ &lt; KB-nummer \> \\ &lt; uppdaterings typ \> \\ &lt; plattform \> **.  
@@ -123,15 +123,15 @@ Om du installerar om en klient, Configuration Manager-konsol eller SMS-provider 
 
 Använd informationen i följande avsnitt för att installera uppdateringar av varje komponent för Configuration Manager.  
 
-###  <a name="update-servers"></a><a name="bkmk_servers"></a>Uppdatera servrar  
+###  <a name="update-servers"></a><a name="bkmk_servers"></a> Uppdatera servrar  
 Uppdateringar för servrar kan innehålla uppdateringar av **platser**, **site database**och datorer som kör en instans av **SMS-providern**:  
 
-####  <a name="update-a-site"></a><a name="bkmk_site"></a>Uppdatera en plats  
+####  <a name="update-a-site"></a><a name="bkmk_site"></a> Uppdatera en plats  
 Om du vill uppdatera en Configuration Manager plats kan du installera uppdaterings paketet direkt på plats servern, eller så kan du distribuera uppdateringarna till en plats Server efter att du har installerat uppdaterings paketet på en annan plats.  
 
 När du installerar en uppdatering på en platsserver, hanterar installationsprocessen de övriga åtgärder som krävs för att tillämpa uppdateringen, t.ex. att uppdatera platssystemsroller. Undantaget till detta är platsdatabasen. Det följande avsnittet innehåller information om hur du uppdaterar platsdatabasen.  
 
-####  <a name="update-a-site-database"></a><a name="bkmk_database"></a>Uppdatera en plats databas  
+####  <a name="update-a-site-database"></a><a name="bkmk_database"></a> Uppdatera en plats databas  
 För att kunna uppdatera plats databasen kör installations processen en fil med namnet **Update. SQL** på plats databasen. Du kan konfigurera uppdateringsprocessen så att platsdatabasen uppdateras automatiskt, eller så kan du uppdatera den manuellt senare.  
 
 **Automatisk uppdatering av plats databasen**  
@@ -163,12 +163,12 @@ Om du väljer att inte uppdatera plats databasen automatiskt när du installerar
 
 5.  När uppdaterings paketet installeras extraheras **Update. SQL** till följande plats på plats servern: ** \\ \\ &lt; Server namn \> \ SMS_ &lt; plats kod \> \snabbkorrigering \\ &lt; KB-nummer \> \Update.SQL**  
 
-####  <a name="update-a-computer-that-runs-the-sms-provider"></a><a name="bkmk_provider"></a>Uppdatera en dator som kör SMS-providern  
+####  <a name="update-a-computer-that-runs-the-sms-provider"></a><a name="bkmk_provider"></a> Uppdatera en dator som kör SMS-providern  
 När du har installerat ett uppdaterings paket som innehåller uppdateringar för SMS-providern måste du distribuera uppdateringen till varje dator som kör SMS-providern. Det enda undantaget är instansen av SMS-providern som tidigare har installerats på platsservern där du installerar uppdateringspaketet. Den lokala instansen av SMS-providern på plats servern uppdateras när du installerar uppdaterings paketet.  
 
 Om du tar bort och sedan installerar om SMS-providern på en dator måste du installera om uppdateringen för SMS-providern på den datorn.  
 
-###  <a name="update-clients"></a><a name="BKMK_clients"></a>Uppdatera klienter  
+###  <a name="update-clients"></a><a name="BKMK_clients"></a> Uppdatera klienter  
 När du installerar en uppdatering som innehåller uppdateringar för Configuration Manager klienten visas alternativet för att automatiskt uppgradera klienter med uppdateringen eller manuellt uppgradera klienter vid ett senare tillfälle. Mer information om hur du uppgraderar klienten automatiskt finns i [Uppgradera klienter för Windows-datorer](../../clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
 Du kan distribuera uppdateringar med Updates Publisher eller ett programdistributionspaket eller så kan du välja att installera uppdateringen manuellt på varje klient. Mer information om hur du använder distributioner för att installera uppdateringar finns i [Distribuera uppdateringar av Configuration Manager](#BKMK_Deploy) i den här artikeln.  
@@ -176,11 +176,11 @@ Du kan distribuera uppdateringar med Updates Publisher eller ett programdistribu
 > [!IMPORTANT]  
 > När du installerar uppdateringar för klienter och uppdaterings paketet innehåller uppdateringar för servrar, måste du även installera Server uppdateringarna på den primära platsen som klienterna är tilldelade till.  
 
-Om du vill installera klient uppdateringen manuellt på varje Configuration Manager-klient måste du köra **msiexec. exe** och referera till den plattformsspecifika klient uppdaterings filen. msp.  
+Om du vill installera klient uppdateringen manuellt på varje Configuration Manager-klient måste du köra **Msiexec.exe** och referera till den plattformsspecifika. msp-filen för klient uppdatering.  
 
-Du kan till exempel använda följande kommando rad för en klient uppdatering. Den här kommando raden kör msiexec på klient datorn och refererar till. msp-filen som uppdaterings paketet extraherade på plats servern: **msiexec. exe/p \\ \\ &lt; servername \> \ SMS_ &lt; platskod \> \snabbkorrigering \\ &lt; KB Number \> \Client \\ &lt; Platform \> \\ &lt; MSP \> /l \* v &lt; logfile \> REINSTALLMODE = MOUS REINSTALL = ALL**  
+Du kan till exempel använda följande kommando rad för en klient uppdatering. Den här kommando raden kör msiexec på klient datorn och refererar till. msp-filen som uppdaterings paketet extraherade på plats servern: **msiexec.exe/p \\ \\ &lt; servername \> \ SMS_ &lt; SiteCode \> \snabbkorrigering \\ &lt; KB Number \> \Client \\ &lt; Platform \> \\ &lt; MSP \> /l \* v &lt; logfile \> REINSTALLMODE = MOUS REINSTALL = ALL**  
 
-###  <a name="update-configuration-manager-consoles"></a><a name="BKMK_console"></a>Uppdatera Configuration Manager-konsoler  
+###  <a name="update-configuration-manager-consoles"></a><a name="BKMK_console"></a> Uppdatera Configuration Manager-konsoler  
 Om du vill uppdatera en Configuration Manager-konsol måste du installera uppdateringen på den dator som kör-konsolen efter att konsol installationen har slutförts.  
 
 > [!IMPORTANT]  
@@ -192,30 +192,30 @@ Om datorn som du uppdaterar kör Configuration Manager-klienten:
 
 - Om du är inloggad direkt på klientdatorn, kan du köra installationen interaktivt.  
 
-- Du kan installera uppdateringen manuellt på varje dator. Om du vill installera Configuration Manager-konsolens uppdatering manuellt på varje dator som kör Configuration Manager-konsolen kan du köra Msiexec. exe och referera till Configuration Manager-konsolens uppdatering. msp-fil.  
+- Du kan installera uppdateringen manuellt på varje dator. Om du vill installera Configuration Manager-konsolens uppdatering manuellt på varje dator som kör Configuration Manager-konsolen kan du köra Msiexec.exe och referera till Configuration Manager-konsolens uppdatering. msp-fil.  
 
-Du kan till exempel använda följande kommando rad för att uppdatera en Configuration Manager-konsol. Den här kommando raden kör msiexec på datorn och refererar till. msp-filen som uppdaterings paketet extraherade på plats servern: **msiexec. exe/p \\ \\ &lt; servername \> \ SMS_ &lt; platskod \> \snabbkorrigering \\ &lt; KB Number \> \AdminConsole \\ &lt; Platform \> \\ &lt; MSP \> /l \* v &lt; logfile \> REINSTALLMODE = MOUS REINSTALL = ALL**  
+Du kan till exempel använda följande kommando rad för att uppdatera en Configuration Manager-konsol. Den här kommando raden kör msiexec på datorn och refererar till. msp-filen som uppdaterings paketet extraherade på plats servern: **msiexec.exe/p \\ \\ &lt; servername \> \ SMS_ &lt; platskod \> \snabbkorrigering \\ &lt; KB Number \> \AdminConsole \\ &lt; Platform \> \\ &lt; MSP \> /l \* v &lt; logfile \> REINSTALLMODE = MOUS REINSTALL = ALL**  
 
 ##  <a name="deploy-updates-for-configuration-manager"></a><a name="BKMK_Deploy"></a> Distribuera uppdateringar av Configuration Manager  
 När du har installerat uppdaterings paketet på en plats Server kan du använda någon av följande tre metoder för att distribuera uppdateringar till ytterligare datorer.  
 
-###  <a name="use-updates-publisher-2011-to-install-updates"></a><a name="BKMK_DeploySCUP"></a>Använd Updates Publisher 2011 för att installera uppdateringar  
+###  <a name="use-updates-publisher-2011-to-install-updates"></a><a name="BKMK_DeploySCUP"></a> Använd Updates Publisher 2011 för att installera uppdateringar  
 När du installerar uppdaterings paketet på en plats Server skapar installations guiden en katalog fil för Updates Publisher som du kan använda för att distribuera uppdateringarna på tillämpliga datorer. Den här guiden skapar alltid den här katalogen, även när du väljer alternativet **Använd paket och program för att distribuera den här uppdateringen**.  
 
-Katalogen för Updates Publisher heter **SCUPCatalog. cab** och finns på följande plats på den dator där uppdaterings paketet körs: ** \\ \\ &lt; servername \> \ SMS_ &lt; SiteCode \> \snabbkorrigering \\ &lt; KB Number \> \SCUP\SCUPCatalog.cab**  
+Katalogen för Updates Publisher heter **SCUPCatalog.cab** och finns på följande plats på den dator där uppdaterings paketet körs: ** \\ \\ &lt; servername \> \ SMS_ &lt; SiteCode \> \snabbkorrigering \\ &lt; KB-nummer \>\SCUP\SCUPCatalog.cab**  
 
 > [!IMPORTANT]  
-> Eftersom filen SCUPCatalog. cab skapas med sökvägar som är speciella för plats servern där uppdaterings paketet är installerat, kan den inte användas på andra plats servrar.  
+> Eftersom SCUPCatalog.cab-filen skapas med hjälp av sökvägar som är speciella för plats servern där uppdaterings paketet är installerat, kan den inte användas på andra plats servrar.  
 
-När guiden har slutförts kan du importera katalogen till Updates Publisher och sedan använda Configuration Manager program uppdateringar för att distribuera uppdateringarna. Information om Updates Publisher finns i [updates publisher 2011](https://docs.microsoft.com/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
+När guiden har slutförts kan du importera katalogen till Updates Publisher och sedan använda Configuration Manager program uppdateringar för att distribuera uppdateringarna. Information om Updates Publisher finns i [updates publisher 2011](/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
 
-Använd följande procedur för att importera filen SCUPCatalog. cab till Updates Publisher och publicera uppdateringarna.  
+Använd följande procedur för att importera SCUPCatalog.cab-filen till Updates Publisher och publicera uppdateringarna.  
 
 ##### <a name="to-import-the-updates-to-updates-publisher-2011"></a>Så här importerar du uppdateringarna till Updates Publisher 2011  
 
 1.  Starta Updates Publisher-konsolen och klicka på **Importera**.  
 
-2.  På sidan **import typ** i guiden Importera program uppdaterings katalog väljer du **Ange sökvägen till katalogen som ska importeras**och anger sedan filen SCUPCatalog. cab.  
+2.  På sidan **import typ** i guiden Importera program uppdaterings katalog väljer du **Ange sökvägen till katalogen som ska importeras**och anger sedan SCUPCatalog.cab-filen.  
 
 3.  Klicka på **Nästa**och sedan på **Nästa** igen.  
 
@@ -227,7 +227,7 @@ Använd följande procedur för att importera filen SCUPCatalog. cab till Update
 
 7.  Publicera uppdateringarna genom att slutföra guiden.  
 
-###  <a name="use-software-deployment-to-install-updates"></a><a name="BKMK_DeploySWDist"></a>Använd program varu distribution för att installera uppdateringar  
+###  <a name="use-software-deployment-to-install-updates"></a><a name="BKMK_DeploySWDist"></a> Använd program varu distribution för att installera uppdateringar  
 När du installerar uppdaterings paketet på plats servern för en primär plats eller en central administrations plats kan du konfigurera installations guiden för att skapa uppdaterings paket för program distribution. Du kan sedan distribuera varje paket till en samling datorer som du vill uppdatera.  
 
 Om du vill skapa ett program distributions paket går du till sidan **Konfigurera distribution av program uppdateringar** i guiden och markerar kryss rutan för varje uppdaterings paket typ som du vill uppdatera. Tillgängliga typer kan vara servrar, Configuration Manager konsoler och klienter. Ett separat paket skapas för varje typ av uppdatering som du väljer.  
@@ -236,7 +236,7 @@ Om du vill skapa ett program distributions paket går du till sidan **Konfigurer
 > Paketet för servrar innehåller uppdateringar för följande komponenter:  
 >   
 > - Platsserver  
-> - SMS-provider  
+> - SMS-providern  
 > - Platsdatabas  
 
 Därefter öppnar du sidan **Konfigurera distributionsmetod för programuppdatering** i guiden och väljer alternativet **Jag använder programdistribution**. Det här valet instruerar guiden att skapa program distributions paketen.  
@@ -245,7 +245,7 @@ När guiden har slutförts kan du Visa paketen som skapas i Configuration Manage
 
 Information om hur du distribuerar paket till Configuration Manager-klienter finns i [paket och program](../../../apps/deploy-use/packages-and-programs.md).  
 
-###  <a name="create-collections-for-deploying-updates-to-configuration-manager"></a><a name="BKMK_DeployCollections"></a>Skapa samlingar för att distribuera uppdateringar till Configuration Manager  
+###  <a name="create-collections-for-deploying-updates-to-configuration-manager"></a><a name="BKMK_DeployCollections"></a> Skapa samlingar för att distribuera uppdateringar till Configuration Manager  
 Du kan distribuera vissa uppdateringar på tillämpliga klienter. Följande information kan hjälpa dig att skapa enhets samlingar för de olika komponenterna för Configuration Manager.  
 
 |Komponent i Configuration Manager|Instruktioner|  
@@ -253,12 +253,12 @@ Du kan distribuera vissa uppdateringar på tillämpliga klienter. Följande info
 |Central administrationsplatsserver|Skapa en direkt medlemskapsfråga och lägg till datorn för central administrationsplatsserver.|  
 |Alla primära platsservrar|Skapa en direkt medlemskapsfråga och lägg till varje primär platsserverdator.|  
 |Alla sekundära platsservrar|Skapa en direkt medlemskapsfråga och lägg till varje sekundär platsserverdator.|  
-|Alla x86-klienter|Skapa en samling med följande frågevillkor:<br /><br /> **Välj \* från sms_r_system inre koppling SMS_G_System_SYSTEM på SMS_G_System_SYSTEM. ResourceID = SMS_R_System. ResourceId där SMS_G_System_SYSTEM. SystemType = "x86-based PC"**|  
-|Alla x64-klienter|Skapa en samling med följande frågevillkor:<br /><br /> **Välj \* från sms_r_system inre koppling SMS_G_System_SYSTEM på SMS_G_System_SYSTEM. ResourceID = SMS_R_System. ResourceId där SMS_G_System_SYSTEM. SystemType = "x64-based PC"**|  
+|Alla x86-klienter|Skapa en samling med följande frågevillkor:<br /><br /> **Välj \* från sms_r_system inre koppling SMS_G_System_SYSTEM på SMS_G_System_SYSTEM. ResourceID = SMS_R_System. ResourceId där SMS_G_System_SYSTEM.SystemType = "x86-based PC"**|  
+|Alla x64-klienter|Skapa en samling med följande frågevillkor:<br /><br /> **Välj \* från sms_r_system inre koppling SMS_G_System_SYSTEM på SMS_G_System_SYSTEM. ResourceID = SMS_R_System. ResourceId där SMS_G_System_SYSTEM.SystemType = "x64-baserad dator"**|  
 |Alla datorer som kör Configuration Manager-konsolen|Skapa en direkt medlemskapsfråga och lägg till varje dator.|  
 |Fjärrdatorer som kör en instans av SMS-providern|Skapa en direkt medlemskapsfråga och lägg till varje dator.|  
 
 > [!NOTE]  
 > Om du vill uppdatera en platsdatabas distribuerar du platsservern för den platsen.  
 
-Information om hur du skapar samlingar finns i [skapa samlingar](../../../core/clients/manage/collections/create-collections.md).  
+Information om hur du skapar samlingar finns i [skapa samlingar](../../../core/clients/manage/collections/create-collections.md).

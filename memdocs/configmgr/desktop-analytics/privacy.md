@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: eb393b05e1ee93239b43725a67b9a1b3e54e71ed
-ms.sourcegitcommit: 693932432270ab3df1df9f5e6783c7f5c6f31252
+ms.openlocfilehash: 5250d3296df19c454f55ed166e998f8c940c98db
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997962"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700809"
 ---
 # <a name="desktop-analytics-data-privacy"></a>Data sekretess för Skriv bords analys
 
 Skriv bords analys allokeras fullständigt till kundens data sekretess, centrerat på dessa Tenets:
 
-- **Transparens:** Vi har fullständigt dokumenterat Windows Diagnostic-händelser. Granska dem med ditt företags team för säkerhet och efterlevnad. I visnings programmet för Windows-diagnostikdata kan du se diagnostikdata som skickas från en specifik enhet. Mer information finns i [Översikt över Diagnostic data Viewer](https://docs.microsoft.com/windows/configuration/diagnostic-data-viewer-overview).  
+- **Transparens:** Vi har fullständigt dokumenterat Windows Diagnostic-händelser. Granska dem med ditt företags team för säkerhet och efterlevnad. I visnings programmet för Windows-diagnostikdata kan du se diagnostikdata som skickas från en specifik enhet. Mer information finns i [Översikt över Diagnostic data Viewer](/windows/configuration/diagnostic-data-viewer-overview).  
 
 - **Kontroll:** Du styr vilken nivå av diagnostikdata som ska delas med Microsoft. Windows 10, version 1709, lägger till en ny princip för att begränsa utökade diagnostikdata till minimi kravet för Skriv bords analys.  
 
@@ -30,7 +30,7 @@ Skriv bords analys allokeras fullständigt till kundens data sekretess, centrera
 
 - **Förtroende:** Desktop Analytics stöder Microsofts [sekretess policy](https://privacy.microsoft.com/privacystatement) och [online service villkoren](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=46).  
 
-Mer information finns i [Windows-tjänster där Microsoft är processorn under GDPR](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance#windows-services-where-microsoft-is-the-processor-under-the-gdpr).<!-- 5353168 -->
+Mer information finns i [Windows-tjänster där Microsoft är processorn under GDPR](/windows/privacy/gdpr-it-guidance#windows-services-where-microsoft-is-the-processor-under-the-gdpr).<!-- 5353168 -->
 
 ## <a name="data-flow"></a>Dataflöde
 
@@ -57,7 +57,7 @@ Följande bild visar hur diagnostikdata flödar från enskilda enheter via Diagn
 
 3. Enheter skickar diagnostikdata till Microsoft Diagnostic Datahantering-tjänsten för Windows. Alla diagnostikdata krypteras över HTTPS och använder certifikat för att fästa vid överföring från enheten till den här tjänsten. Tjänsten Microsoft Datahantering finns i USA.
 
-      - Program fel, kernel-fel, program som inte svarar och andra programspecifika problem använder Windows Felrapportering API för att skicka programspecifika problem rapporter till Microsoft. Se [använda WER](https://docs.microsoft.com/windows/win32/wer/using-wer) för detaljerad information om detta data flöde.
+      - Program fel, kernel-fel, program som inte svarar och andra programspecifika problem använder Windows Felrapportering API för att skicka programspecifika problem rapporter till Microsoft. Se [använda WER](/windows/win32/wer/using-wer) för detaljerad information om detta data flöde.
       
 4. Varje dag skapar Microsoft en ögonblicks bild av IT-fokuserade insikter. Den här ögonblicks bilden kombinerar diagnostikdata från Windows med dina indata för registrerade enheter. Den här processen sker i ett tillfälligt lagrings utrymme som bara används av Desktop Analytics. Den tillfälliga lagrings platsen finns i Microsoft Data Center i USA. Alla data skickas via en krypterad SSL-kanal (HTTPS). Ögonblicks bilderna åtskiljs av ett kommersiellt ID.  
 
@@ -71,23 +71,23 @@ Vanliga frågor och svar om vanliga frågor och svar om Desktop Analytics finns 
 
 Mer information om relaterade sekretess aspekter finns i följande artiklar:
 
-- [Windows 10 och GDPR för IT-besluts fattare](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance)  
+- [Windows 10 och GDPR för IT-besluts fattare](/windows/privacy/gdpr-it-guidance)  
 
-- [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
+- [Konfigurera Windows-diagnostikdata i din organisation](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
 
-- [Windows 7, Windows 8 och Windows 8,1-bedömning av diagnostikdata för data och fält](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/appraiser-diagnostic-data-events-and-fields)  
+- [Windows 7, Windows 8 och Windows 8,1-bedömning av diagnostikdata för data och fält](/previous-versions/windows/it-pro/windows-8.1-and-8/appraiser-diagnostic-data-events-and-fields)  
 
-- [Windows 10, version 1809 Basic Level Windows diagnostiska händelser och fält](https://docs.microsoft.com/windows/privacy/basic-level-windows-diagnostic-events-and-fields-1809)  
+- [Windows 10, version 1809 Basic Level Windows diagnostiska händelser och fält](/windows/privacy/basic-level-windows-diagnostic-events-and-fields-1809)  
 
-- [Windows 10, version 1709 Enhanced Diagnostic data events och fält som används av Desktop Analytics](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)  
+- [Windows 10, version 1709 Enhanced Diagnostic data events och fält som används av Desktop Analytics](/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields)  
 
-- [Installationsprogrammet för Windows fel rapportering](https://docs.microsoft.com/windows/deployment/upgrade/windows-error-reporting)
+- [Installationsprogrammet för Windows fel rapportering](/windows/deployment/upgrade/windows-error-reporting)
 
-- [Översikt över granskning av diagnostikdata](https://docs.microsoft.com/windows/privacy/diagnostic-data-viewer-overview)  
+- [Översikt över granskning av diagnostikdata](/windows/privacy/diagnostic-data-viewer-overview)  
 
 - [Licens villkor och dokumentation](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)  
 
-- [Log Analytics data säkerhet](https://docs.microsoft.com/azure/azure-monitor/platform/data-security)
+- [Log Analytics data säkerhet](/azure/azure-monitor/platform/data-security)
 
 - [Säkerhet och sekretess på Microsoft Azure Data Center](https://azure.microsoft.com/global-infrastructure/)  
 

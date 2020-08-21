@@ -10,12 +10,12 @@ ms.assetid: b36f5e4a-2b57-4d18-83f6-197081ac2a0a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bfe2d395187f8af86e2d09156a45f7398a5bc670
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: 474d59ec22d1edaf8e662298e90555e6772d302b
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720683"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698804"
 ---
 # <a name="how-to-bulk-enroll-devices-with-on-premises-mdm-in-configuration-manager"></a>Så här registrerar du enheter med lokal MDM i Configuration Manager
 
@@ -31,7 +31,7 @@ När du förbereder platsen för lokal MDM exporterar du det betrodda rot certif
 
 Använd det exporterade certifikatet för att skapa en certifikat profil. Mer information finns i [så här skapar du certifikat profiler](../../protect/deploy-use/create-certificate-profiles.md).
 
-## <a name="create-a-wi-fi-profile"></a><a name="CreateWifi"></a>Skapa en Wi-Fi-profil
+## <a name="create-a-wi-fi-profile"></a><a name="CreateWifi"></a> Skapa en Wi-Fi-profil
 
 En annan komponent i Mass registrerings paketet är en Wi-Fi-profil. Den här profilen kan se till att enheten har nätverks anslutningen som stöd för registrering.
 
@@ -59,7 +59,7 @@ Den aktuella grenen av Configuration Manager har endast stöd för följande Wi-
 
 - Skapa ett andra paket med Windows-avbildningen och Configuration designer (ICD) och distribuera det sedan tillsammans med Mass registrerings paketet.
 
-## <a name="create-an-enrollment-profile"></a><a name="bkmk_createEnroll"></a> Skapa en registreringsprofil
+## <a name="create-an-enrollment-profile"></a><a name="bkmk_createEnroll"></a> Skapa en registrerings profil
 
 Med registrerings profilen kan du ange inställningar som krävs för enhets registrering. Inställningarna omfattar en [certifikat profil](#bkmk_createCert) och en [Wi-Fi-profil](#CreateWifi).
 
@@ -88,11 +88,11 @@ Med registrerings profilen kan du ange inställningar som krävs för enhets reg
 
 1. Slutför guiden.
 
-## <a name="create-an-enrollment-package"></a><a name="bkmk_createPpkg"></a>Skapa ett registrerings paket
+## <a name="create-an-enrollment-package"></a><a name="bkmk_createPpkg"></a> Skapa ett registrerings paket
 
 Registrerings paketet (ppkg) är den fil som du använder för att registrera enheter för lokal MDM. Skapa den här filen med Configuration Manager. Även om du kan skapa liknande typer av paket med Windows-ICD kan endast paket som du skapar i Configuration Manager användas för att registrera enheter för lokal MDM. Ett paket som du skapar med Windows-ICD kan bara tillhandahålla den User Principal Name (UPN) som krävs för registreringen, det kan inte starta den faktiska registrerings processen.
 
-Processen för att skapa registreringspaketet kräver Windows Assessment and Deployment Toolkit (ADK) för Windows 10. På den dator som kör Configuration Manager-konsolen installerar du den senaste versionen av Windows ADK. Välj **Imaging and Configuration designer (ICD)-** funktionen och eventuella beroenden. (Den här versionen behöver inte matcha den version som används för operativ Systems distribution av Configuration Manager-platsen.) Mer information finns i [Ladda ned Windows ADK för Windows 10](https://docs.microsoft.com/windows-hardware/get-started/adk-install).
+Processen för att skapa registreringspaketet kräver Windows Assessment and Deployment Toolkit (ADK) för Windows 10. På den dator som kör Configuration Manager-konsolen installerar du den senaste versionen av Windows ADK. Välj **Imaging and Configuration designer (ICD)-** funktionen och eventuella beroenden. (Den här versionen behöver inte matcha den version som används för operativ Systems distribution av Configuration Manager-platsen.) Mer information finns i [Ladda ned Windows ADK för Windows 10](/windows-hardware/get-started/adk-install).
 
 1. I Configuration Manager-konsolen går du till arbets ytan **till gångar och efterlevnad** , expanderar **alla företagsägda enheter**, expanderar **Windows**och väljer noden **registrerings profiler** .
 
@@ -116,7 +116,7 @@ Configuration Manager håller reda på giltiga registrerings paket. I-konsolen e
 > [!TIP]
 > Om du tar bort ett registrerings paket från Configuration Manager-konsolen kan du inte använda det för att registrera enheter. Använd den här metoden för att hantera registrerings paket som du inte vill att andra ska använda för Mass registrering.
 
-## <a name="bulk-enroll-a-device"></a><a name="bkmk_getPpkg"></a>Mass registrering av en enhet
+## <a name="bulk-enroll-a-device"></a><a name="bkmk_getPpkg"></a> Mass registrering av en enhet
 
 Du kan använda ett paket för att registrera enheter före eller efter enhetens OOBE-process (out-of-Box Experience). Registrerings paketet kan också ingå som en del av ett OEM-etablerings paket (Original Equipment Manufacturer).
 
@@ -144,7 +144,7 @@ Om du vill använda paketet för Mass registrering måste du leverera det fysisk
 
 Registrerings processen startar.
 
-## <a name="verify-enrollment"></a><a name="bkmk_verifyEnroll"></a>Verifiera registrering
+## <a name="verify-enrollment"></a><a name="bkmk_verifyEnroll"></a> Verifiera registrering
 
 ### <a name="verify-bulk-enrollment-on-the-device"></a>Verifiera Mass registrering på enheten
 

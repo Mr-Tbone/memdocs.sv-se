@@ -10,12 +10,12 @@ ms.assetid: de718cdc-d0a9-47e2-9c99-8fa2cb25b5f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 66fcd9b7d4d25decb3aeef7cf38b469363eeb1fa
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: d54354c82a6487690aa571eb72554f4eee45747b
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128907"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700573"
 ---
 # <a name="whats-new-in-version-2002-of-configuration-manager-current-branch"></a>Vad är nytt i version 2002 av Configuration Manager aktuella grenen
 
@@ -28,17 +28,17 @@ Läs alltid den senaste check listan för att installera den här uppdateringen.
 För att dra full nytta av nya Configuration Manager funktioner kan du även uppdatera klienter till den senaste versionen när du har uppdaterat platsen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.
 
 > [!TIP]
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+2002+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+2002+-+Configuration+Manager%22&locale=en-us`
 
-## <a name="microsoft-endpoint-manager-tenant-attach"></a><a name="bkmk_tenant"></a>Microsoft Endpoint Manager-klient anslutning
+## <a name="microsoft-endpoint-manager-tenant-attach"></a><a name="bkmk_tenant"></a> Microsoft Endpoint Manager-klient anslutning
 
-### <a name="device-sync-and-device-actions"></a><a name="bkmk_attach"></a>Enhets synkronisering och enhets åtgärder
+### <a name="device-sync-and-device-actions"></a><a name="bkmk_attach"></a> Enhets synkronisering och enhets åtgärder
 <!--3555758-->
 Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina enheter. Microsoft sammanför Configuration Manager och Intune i en enda konsol som kallas **administrations Center för Microsoft Endpoint Manager**. Från och med den här versionen kan du ladda upp dina Configuration Manager-enheter till moln tjänsten och vidta åtgärder från bladet **enheter** i administrations centret.
 
 Mer information finns i [Microsoft Endpoint Manager-klient anslutning](../../../tenant-attach/device-sync-actions.md).
 
-## <a name="site-infrastructure"></a><a name="bkmk_infra"></a>Plats infrastruktur
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Plats infrastruktur
 
 ### <a name="remove-a-central-administration-site"></a>Ta bort en central administrations plats
 <!-- 3607277 -->
@@ -98,7 +98,7 @@ Plats systemets proxyinställningar, inklusive autentisering, används nu av:
 
 Mer information finns i [stöd för proxy server](../network/proxy-server-support.md#bkmk_other).
 
-## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a>Molnbaserad hantering
+## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Molnbaserad hantering
 
 ### <a name="critical-status-message-shows-server-connection-errors-to-required-endpoints"></a>Meddelande om kritisk status visar Server anslutnings fel till obligatoriska slut punkter
 
@@ -125,7 +125,7 @@ Mer information finns i [tokenbaserad autentisering för CMG](../../clients/depl
 
 När nya molnbaserade funktioner är tillgängliga i administrations centret för Microsoft Endpoint Manager, eller andra anslutna moln tjänster för din lokala Configuration Manager-installation, kan du nu välja dessa nya funktioner i Configuration Manager-konsolen. Mer information om hur du aktiverar funktioner i Configuration Manager-konsolen finns i [Aktivera valfria funktioner från uppdateringar](../../servers/manage/install-in-console-updates.md#bkmk_options).
 
-## <a name="desktop-analytics"></a><a name="bkmk_da"></a>Skriv bords analys
+## <a name="desktop-analytics"></a><a name="bkmk_da"></a> Skriv bords analys
 
 Mer information om de månatliga ändringarna i moln tjänsten för Station ära datorer finns i [Nyheter i Skriv bords analys](../../../desktop-analytics/whats-new.md).
 
@@ -139,7 +139,7 @@ Använd instrument panelen för anslutnings hälsa för Skriv bords analys i Con
 
 Mer information finns i [övervaka anslutnings hälsa](../../../desktop-analytics/monitor-connection-health.md).
 
-## <a name="real-time-management"></a><a name="bkmk_real"></a>Real tids hantering
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Real tids hantering
 
 ### <a name="improvements-to-cmpivot"></a>Förbättringar av CMPivot
 
@@ -149,7 +149,7 @@ Vi har gjort det enklare att navigera i CMPivot-entiteter. Nu kan du söka efter
 
 Mer information finns i [CMPivot](../../servers/manage/cmpivot-changes.md#bkmk_2002).
 
-## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
+## <a name="content-management"></a><a name="bkmk_content"></a> Innehålls hantering
 
 ### <a name="exclude-certain-subnets-for-peer-content-download"></a>Undanta vissa undernät för nedladdning av peer-innehåll
 
@@ -165,7 +165,7 @@ Mer information finns i [alternativ för avgränsnings grupper](../../servers/de
 
 Om din miljö använder en oautentiserad proxyserver för Internet åtkomst, nu när du aktiverar en Configuration Manager distributions plats för Microsoft Connected cache, kan den kommunicera via proxyservern. Mer information finns i [Microsoft Connected cache](../hierarchy/microsoft-connected-cache.md).
 
-## <a name="client-management"></a><a name="bkmk_client"></a>Klient hantering
+## <a name="client-management"></a><a name="bkmk_client"></a> Klient hantering
 
 ### <a name="client-log-collection"></a>Klient logg samling
 
@@ -202,7 +202,7 @@ Mer information om den här inställningen finns i [skapa anpassade konfiguratio
 
 <!-- ## <a name="bkmk_comgmt"></a> Co-management -->
 
-## <a name="application-management"></a><a name="bkmk_app"></a>Program hantering
+## <a name="application-management"></a><a name="bkmk_app"></a> Program hantering
 
 ### <a name="microsoft-edge-management-dashboard"></a>Instrument panel för Microsoft Edge-hantering
 
@@ -239,7 +239,7 @@ Nu kan du installera komplexa program med hjälp av aktivitetssekvenser via prog
 
 Mer information finns i [skapa Windows-program](../../../apps/get-started/creating-windows-applications.md#bkmk_tsdt).
 
-## <a name="os-deployment"></a><a name="bkmk_osd"></a>OS-distribution
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> OS-distribution
 
 ### <a name="bootstrap-a-task-sequence-immediately-after-client-registration"></a>Starta en aktivitetssekvens omedelbart efter klient registrering
 
@@ -290,7 +290,7 @@ Den här versionen innehåller följande förbättringar av OS-distributionen:
 
 <!-- ## <a name="bkmk_userxp"></a> Software Center -->
 
-## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Program uppdateringar
 
 ### <a name="orchestration-groups"></a>Orkestreringsgrupper
 
@@ -322,14 +322,14 @@ Mer information finns i [synkronisera Office 365-uppdateringar från en frånkop
 
 <!-- ## <a name="bkmk_o365"></a> Office management -->
 
-## <a name="protection"></a><a name="bkmk_protect"></a>Skyddas
+## <a name="protection"></a><a name="bkmk_protect"></a> Skyddas
 
 ### <a name="expand-microsoft-defender-advanced-threat-protection-atp-onboarding"></a>Expandera Microsoft Defender Advanced Threat Protection (ATP) onboarding
  
 <!-- 5229962 -->
 Configuration Manager har utökat sitt stöd för onboarding-enheter till Microsoft Defender ATP. Mer information finns i [Microsoft Defender Avancerat skydd](../../../protect/deploy-use/defender-advanced-threat-protection.md).
 
-### <a name="onboard-configuration-manager-clients-to-microsoft-defender-atp-via-the-microsoft-endpoint-manager-admin-center"></a><a name="bkmk_atp"></a>Publicera Configuration Manager klienter till Microsoft Defender ATP via administrations Center för Microsoft Endpoint Manager
+### <a name="onboard-configuration-manager-clients-to-microsoft-defender-atp-via-the-microsoft-endpoint-manager-admin-center"></a><a name="bkmk_atp"></a> Publicera Configuration Manager klienter till Microsoft Defender ATP via administrations Center för Microsoft Endpoint Manager
 <!--5691658-->
 Nu kan du distribuera hanterings principer för Microsoft Defender ATP-EDR för att Configuration Manager hanterade klienter. Dessa klienter kräver inte Azure AD eller MDM-registrering och principen riktas mot ConfigMgr-samlingar i stället för Azure AD-grupper.
 
@@ -346,7 +346,7 @@ Med den här funktionen kan kunder hantera både Intune MDM och Configuration Ma
 
     Från och med den här versionen är HTTPS-kravet för IIS-webbplatsen som är värd för återställnings tjänsten, inte hela hanterings plats rollen. Den här ändringen sänker certifikat kraven och krypterar fortfarande återställnings nycklarna vid överföring.<!-- 5925660 --> Mer information finns i [kryptera återställnings data](../../../protect/deploy-use/bitlocker/encrypt-recovery-data.md).
 
-## <a name="reporting"></a><a name="bkmk_report"></a>Uppgiftslämn
+## <a name="reporting"></a><a name="bkmk_report"></a> Uppgiftslämn
 
 ### <a name="integrate-with-power-bi-report-server"></a>Integrera med Power BI-rapportserver
 
@@ -356,7 +356,7 @@ Nu kan du integrera Power BI-rapportserver med Configuration Manager repor ting.
 
 Mer information finns i [integrera med Power BI-rapportserver](../../servers/manage/powerbi-report-server.md).
 
-## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a>Configuration Manager-konsol
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Configuration Manager-konsol
 
 ### <a name="show-boundary-groups-for-devices"></a>Visa gränser grupper för enheter
 
@@ -397,7 +397,7 @@ IT-administratörs gruppen har utvecklat en enorm mängd kunskap under åren. I 
 
 Mer information finns i [Community Hub och GitHub](../../servers/manage/community-hub.md).
 
-## <a name="tools"></a><a name="bkmk_tools"></a>Formateringsverktyg
+## <a name="tools"></a><a name="bkmk_tools"></a> Formateringsverktyg
 
 ### <a name="onetrace-log-groups"></a>OneTrace logg grupper
 
@@ -411,7 +411,7 @@ OneTrace stöder nu anpassningsbara logg grupper som liknar funktionen i Support
 
 Mer information finns i [Support Center OneTrace](../../support/support-center-onetrace.md).
 
-### <a name="improvements-to-extend-and-migrate-on-premises-site-to-microsoft-azure"></a><a name="bkmk_extend"></a>Förbättringar för att utöka och migrera lokal plats till Microsoft Azure
+### <a name="improvements-to-extend-and-migrate-on-premises-site-to-microsoft-azure"></a><a name="bkmk_extend"></a> Förbättringar för att utöka och migrera lokal plats till Microsoft Azure
 <!--5665775, 6307931-->
 Verktyget för att utöka och migrera den lokala platsen till Microsoft Azure nu har stöd för etablering av flera plats system roller på en enda virtuell Azure-dator. Du kan lägga till plats system roller när den första distributionen av virtuella Azure-datorer har slutförts.
 
@@ -426,7 +426,7 @@ Från och med den här versionen är följande funktioner inte längre [för han
 - [Fristående CMPivot](../../servers/manage/cmpivot.md#bkmk_standalone)<!--3555890/4692885-->
 - [Klient program för samhanterade enheter](../../../comanage/workloads.md#client-apps) (kallades tidigare *mobilappar för samhanterade enheter*)<!-- 1357892/3600959 -->
 
-Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 2002](https://docs.microsoft.com/powershell/sccm/2002-release-notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 2002](/powershell/sccm/2002-release-notes?view=sccm-ps).
 
 Mer information om ändringar i administrations tjänsten REST API finns i viktig information om [administrations tjänsten](../../../develop/adminservice/release-notes.md#bkmk_2002).
 
@@ -438,10 +438,10 @@ Följande samlade uppdateringar (4560496) är tillgängliga i-konsolen från den
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Rubrik | Datum | I-konsolen |
+| ID | Title | Datum | I-konsolen |
 |---------|---------|---------|---------|
-| [4575339](https://support.microsoft.com/help/4575339) | Enheter visas två gånger i Microsoft Endpoint Configuration Manager administrations Center | 23 juli 2020 | No |
-| [4575774](https://support.microsoft.com/help/4575774) | Cmdleten New-CMTSStepPrestartCheck Miss lyckas i Configuration Manager version 2002 | 24 juli 2020 | No |
+| [4575339](https://support.microsoft.com/help/4575339) | Enheter visas två gånger i Microsoft Endpoint Configuration Manager administrations Center | 23 juli 2020 | Nej |
+| [4575774](https://support.microsoft.com/help/4575774) | Cmdleten New-CMTSStepPrestartCheck Miss lyckas i Configuration Manager version 2002 | 24 juli 2020 | Nej |
 | [4576782](https://support.microsoft.com/help/4576782) | Tids gränsen för program bladet i Microsoft Endpoint Manager administrations Center | 11 augusti 2020 | Nej |
 
 <!--

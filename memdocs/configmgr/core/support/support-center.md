@@ -10,12 +10,12 @@ ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: da2fe2ad66617ffb5ad3058011f111b0aaf9e9ae
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 788c48599ac8a94b8690f3a88f9761b9ae8ac742
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903916"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699440"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center för Configuration Manager
 
@@ -52,7 +52,7 @@ Från och med version 1906 är **OneTrace** ett nytt logg visnings program med S
 
 ### <a name="powershell-cmdlets"></a>PowerShell-cmdletar
 
-Support Center innehåller också [PowerShell-cmdletar](https://docs.microsoft.com/powershell/sccm/overview?view=sccm-ps). Använd dessa cmdletar för att skapa en fjärr anslutning till en annan Configuration Manager-klient, för att konfigurera data insamlings alternativ och för att starta data insamling.
+Support Center innehåller också [PowerShell-cmdletar](/powershell/sccm/overview?view=sccm-ps). Använd dessa cmdletar för att skapa en fjärr anslutning till en annan Configuration Manager-klient, för att konfigurera data insamlings alternativ och för att starta data insamling.
 
 
 ## <a name="prerequisites"></a>Förutsättningar
@@ -70,9 +70,9 @@ Hitta installations programmet för Support Center på plats servern på följan
 
 När du har installerat den hittar du följande objekt på Start-menyn i **Microsoft System Center** -gruppen:  
 
-- Support Center (ConfigMgrSupportCenter. exe)  
-- Logg fils visaren för Support Center (CMLogViewer. exe)  
-- Support Center Viewer (ConfigMgrSupportCenterViewer. exe)  
+- Support Center (ConfigMgrSupportCenter.exe)  
+- Logg fils visnings program för Support Center (CMLogViewer.exe)  
+- Support Center Viewer (ConfigMgrSupportCenterViewer.exe)  
 
 
 ## <a name="known-issues"></a>Kända problem
@@ -95,7 +95,7 @@ Undvik det här problemet genom att använda följande format för användar nam
 
 ### <a name="scripted-server-message-block-connections-to-remote-clients-might-require-removal"></a>Skriptbaserade Server Message Block-anslutningar till fjärrklienter kan kräva borttagning
 
-När du ansluter till fjärrklienter med hjälp av PowerShell-cmdleten [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) skapar Support Center en SMB-anslutning (Server Message Block) till varje fjärran sluten klient. Dessa anslutningar behålls när du har slutfört data insamlingen. För att undvika att överskrida det maximala antalet fjärr anslutningar för Windows kan du använda `net use` kommandot för att se den aktiva uppsättningen fjärr anslutningar. Inaktivera sedan alla onödiga anslutningar med hjälp av följande kommando:`net use <connection_name> /d`
+När du ansluter till fjärrklienter med hjälp av PowerShell-cmdleten [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) skapar Support Center en SMB-anslutning (Server Message Block) till varje fjärran sluten klient. Dessa anslutningar behålls när du har slutfört data insamlingen. För att undvika att överskrida det maximala antalet fjärr anslutningar för Windows kan du använda `net use` kommandot för att se den aktiva uppsättningen fjärr anslutningar. Inaktivera sedan alla onödiga anslutningar med hjälp av följande kommando: `net use <connection_name> /d`
 där `<connection_name>` är namnet på fjärr anslutningen.
 
 ### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>Begäran om utvärderings cykel för program distribution skickas inte korrekt till fjärrdatorer

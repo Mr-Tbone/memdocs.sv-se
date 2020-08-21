@@ -10,12 +10,12 @@ ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 65071493834c33dac7581075b835e023c74f5706
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: f22a28c173c980bdf598a5afc8a969a86ec96cc2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128094"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699780"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installera uppdateringar i konsolen för Configuration Manager
 
@@ -88,15 +88,15 @@ Som standard är klassen **uppdaterings paket** (SMS_CM_Updatepackages) en del a
 
 - Tilldela kontot till området **alla** .  
 
-## <a name="before-you-install-an-in-console-update"></a><a name="bkmk_beforeinstall"></a>Innan du installerar en uppdatering i konsolen  
+## <a name="before-you-install-an-in-console-update"></a><a name="bkmk_beforeinstall"></a> Innan du installerar en uppdatering i konsolen  
 
 Granska följande steg innan du installerar en uppdatering från Configuration Manager-konsolen.  
 
-### <a name="step-1-review-the-update-checklist"></a><a name="bkmk_step1"></a>Steg 1: granska check lista för uppdateringar  
+### <a name="step-1-review-the-update-checklist"></a><a name="bkmk_step1"></a> Steg 1: granska check lista för uppdateringar  
 
 Granska tillämplig check lista för uppdateringar för åtgärder som ska vidtas innan du startar uppdateringen:
 
-- [Check lista för att installera uppdatering 2006](checklist-for-installing-update-2006.md)
+- [Checklista för att installera uppdatering 2006](checklist-for-installing-update-2006.md)
 
 - [Checklista för att installera uppdatering 2002](checklist-for-installing-update-2002.md)
 
@@ -104,7 +104,7 @@ Granska tillämplig check lista för uppdateringar för åtgärder som ska vidta
 
 - [Checklista för att installera uppdatering 1906](checklist-for-installing-update-1906.md)  
 
-### <a name="step-2-run-the-prerequisite-checker-before-installing-an-update"></a><a name="bkmk_step2"></a>Steg 2: kör krav kontrollen innan du installerar en uppdatering  
+### <a name="step-2-run-the-prerequisite-checker-before-installing-an-update"></a><a name="bkmk_step2"></a> Steg 2: kör krav kontrollen innan du installerar en uppdatering  
 
 Överväg att köra kravkontrollen för en uppdatering innan du installerar en den. Om du kör kravkontrollen innan du installerar en uppdatering:  
 
@@ -135,7 +135,7 @@ När du senare installerar uppdateringen kan du konfigurera uppdateringen att ig
 
     3. Mer information finns i **ConfigMgrPrereq. log** på plats servern.  
 
-## <a name="install-in-console-updates"></a><a name="bkmk_install"></a>Installera uppdateringar i konsolen  
+## <a name="install-in-console-updates"></a><a name="bkmk_install"></a> Installera uppdateringar i konsolen  
 
 När du är redo att installera uppdateringar inifrån Configuration Manager-konsolen börjar du med platsen på den översta nivån i hierarkin. Den här platsen är antingen den centrala administrations platsen eller en fristående primär plats.  
 
@@ -149,7 +149,7 @@ Installera uppdateringen utanför normal kontors tid för varje plats för att m
 
 - När plats servern har slutfört installationen av en uppdatering uppdaterar den automatiskt alla tillämpliga plats system roller. Alla distributions platser installeras dock inte om och går inte att uppdatera på samma gång. Plats servern använder i stället platsens innehålls distributions inställningar för att distribuera uppdateringen till en delmängd av distributions platserna i taget. Resultatet är att endast vissa distributions platser går offline för att installera uppdateringen. Distributions platser som inte har börjat uppdateras eller som har slutfört uppdateringen är online och kan tillhandahålla innehåll till klienter.
 
-### <a name="overview-of-in-console-update-installation"></a><a name="bkmk_overview"></a>Översikt över uppdaterings installation i konsolen  
+### <a name="overview-of-in-console-update-installation"></a><a name="bkmk_overview"></a> Översikt över uppdaterings installation i konsolen  
 
 #### <a name="1-when-the-update-installation-starts"></a>1. När installationen av uppdateringen startar
 
@@ -235,11 +235,11 @@ När konsolen har uppdaterats kontrollerar du att konsolen och plats versionerna
 > [!Note]  
 > Konsol versionen skiljer sig något från plats versionen. Den lägre versionen av konsolen motsvarar Configuration Manager version. I Configuration Manager version 1802 är till exempel den första plats versionen 5.0.8634.1000 och den inledande konsol versionen är 5. **1802**. 1082,1700. Versions numren för build (1082) och revision (1700) kan ändras med framtida snabb korrigeringar.
 
-### <a name="to-start-the-update-installation-at-the-top-level-site"></a><a name="bkmk_toptier"></a>Starta installationen av uppdateringen på platsen på den översta nivån  
+### <a name="to-start-the-update-installation-at-the-top-level-site"></a><a name="bkmk_toptier"></a> Starta installationen av uppdateringen på platsen på den översta nivån  
 
 På platsen på den översta nivån i hierarkin går du till arbets ytan **Administration** i Configuration Manager-konsolen och väljer noden **uppdateringar och underhåll** . Välj en uppdatering med den **tillgängliga**statusen och välj sedan **Installera uppdaterings paket** i menyfliksområdet.  
 
-### <a name="to-start-the-update-installation-at-a-secondary-site"></a><a name="bkmk_secondary"></a>Starta installationen av uppdateringen på en sekundär plats  
+### <a name="to-start-the-update-installation-at-a-secondary-site"></a><a name="bkmk_secondary"></a> Starta installationen av uppdateringen på en sekundär plats  
 
 När den sekundära platsens överordnade primära plats uppdateras uppdaterar du den sekundära platsen från Configuration Manager-konsolen. För att göra det använder du **Uppgraderingsguiden för sekundära platser**.  
 
@@ -315,7 +315,7 @@ Uppgifterna efter installationen är:
   - Startar inte förrän alla platser i hierarkin har slutfört installationen av uppdateringen.
   - Enskilda funktioner visas inte.
 
-## <a name="retry-installation-of-a-failed-update"></a><a name="bkmk_retry"></a>Gör om installationen av en misslyckad uppdatering  
+## <a name="retry-installation-of-a-failed-update"></a><a name="bkmk_retry"></a> Gör om installationen av en misslyckad uppdatering  
 
 Granska feedbacken i konsolen för att identifiera lösningar för varningar och fel när en installation av en uppdatering misslyckas. Mer information finns i **ConfigMgrPrereq. log** på plats servern. Innan du försöker installera en uppdatering igen måste du åtgärda felen och åtgärda varningar.  
 
@@ -358,7 +358,7 @@ Gå till arbets ytan **övervakning** och välj noden **plats underhålls status
 
 - **Ignorera krav kontroll varningar**: om installationen av uppdateringen stoppas på grund av en varning kan du välja **Ignorera krav varningar**. Den här åtgärden gör att uppdateringen kan fortsätta efter några minuter och använder alternativet för att ignorera krav kontroll varningar.  
 
-## <a name="after-a-site-installs-an-update"></a><a name="bkmk_after"></a>När en plats har installerat en uppdatering  
+## <a name="after-a-site-installs-an-update"></a><a name="bkmk_after"></a> När en plats har installerat en uppdatering  
 
 När platsen har uppdaterats granskar du check listan efter uppdatering för den aktuella versionen:  
 
@@ -370,7 +370,7 @@ När platsen har uppdaterats granskar du check listan efter uppdatering för den
 
 - [Check lista för uppdatering efter uppdatering för version 1906](checklist-for-installing-update-1906.md#post-update-checklist)  
 
-## <a name="enable-optional-features-from-updates"></a><a name="bkmk_options"></a>Aktivera valfria funktioner från uppdateringar  
+## <a name="enable-optional-features-from-updates"></a><a name="bkmk_options"></a> Aktivera valfria funktioner från uppdateringar  
 
 När en uppdatering innehåller en eller flera valfria funktioner har du möjlighet att aktivera de funktionerna i hierarkin. Aktivera funktioner när uppdateringen installeras eller gå tillbaka till konsolen senare för att aktivera de valfria funktionerna.
 
@@ -411,7 +411,7 @@ Följande funktioner är valfria i den senaste versionen av Configuration Manage
 - [Uppdateringar av Surface-drivrutin](../../../sum/get-started/configure-classifications-and-products.md) <!--1098490,82AD973A-7CDF-4B67-A665-72875D6E099A-->
 - [Gateway för molnhantering](../../clients/manage/cmg/plan-cloud-management-gateway.md) <!--1101764,DD043119-789C-4158-AC79-725E999F385A-->
 - [Skapa PFX](../../../protect/deploy-use/introduction-to-certificate-profiles.md) <!--1321368,CED76B79-929C-4C45-981F-B9BCA6D38A17-->
-- [Azure Log Analytics-anslutning](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm) <!--1258052,73A7EC4D-EF22-4EA4-82A9-419C2A8CFC4D-->
+- [Azure Log Analytics-anslutning](/azure/azure-monitor/platform/collect-sccm) <!--1258052,73A7EC4D-EF22-4EA4-82A9-419C2A8CFC4D-->
 - [Windows Defender sårbarhet Guard-princip](../../../protect/deploy-use/create-deploy-exploit-guard-policy.md) <!--1355468,8491D4C8-8484-46B8-BCD6-17DC2CADBAEB-->
 - [VPN för Windows 10](../../../protect/deploy-use/vpn-profiles.md) <!--1283610,EDBEBA3D-3A4D-4465-84D9-D71EB811E7F6-->
 - [Underhålla en kluster medveten samling (Server grupper)](../../../sum/deploy-use/service-a-server-group.md) <!--1081776,290B66D8-C735-4895-B59A-DD732D84A697-->
@@ -422,11 +422,11 @@ Följande funktioner är valfria i den senaste versionen av Configuration Manage
 >
 > Mer information om funktioner som endast är tillgängliga i den tekniska för hands versionen finns i [Technical Preview](../../get-started/technical-preview.md).
 
-## <a name="use-pre-release-features-from-updates"></a><a name="bkmk_prerelease"></a>Använd för hands versions funktioner från uppdateringar
+## <a name="use-pre-release-features-from-updates"></a><a name="bkmk_prerelease"></a> Använd för hands versions funktioner från uppdateringar
 
 Den aktuella grenen innehåller för hands versions funktioner för tidig testning i en produktions miljö. Mer information finns i [för hands versions funktioner](pre-release-features.md).
 
-## <a name="frequently-asked-questions"></a><a name="bkmk_faq"></a>Vanliga frågor och svar
+## <a name="frequently-asked-questions"></a><a name="bkmk_faq"></a> Vanliga frågor och svar
 
 ### <a name="why-dont-i-see-certain-updates-in-my-console"></a>Varför visas inte vissa uppdateringar i konsolen?
 
@@ -436,4 +436,4 @@ Om du inte kan hitta en speciell uppdatering i konsolen efter en lyckad synkroni
 
     Om du tror att du har nödvändiga konfigurationer och krav för en saknad uppdatering kontrollerar du att tjänst anslutnings punkten är i onlineläge. Använd sedan alternativet **Sök efter uppdateringar** i noden **uppdateringar och underhåll** för att tvinga en kontroll. Om tjänst anslutnings punkten är i offlineläge använder du tjänst anslutnings verktyget för att synkronisera manuellt med moln tjänsten.  
 
-- Ditt konto saknar rätt rollbaserade administrations behörigheter för att visa uppdateringar i Configuration Manager-konsolen. Mer information finns i [behörigheter för att hantera uppdateringar](#assign-permissions-to-view-and-manage-updates-and-features).  
+- Ditt konto saknar rätt rollbaserade administrations behörigheter för att visa uppdateringar i Configuration Manager-konsolen. Mer information finns i [behörigheter för att hantera uppdateringar](#assign-permissions-to-view-and-manage-updates-and-features).

@@ -10,12 +10,12 @@ ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 176280452039fd42dfef1d63cfdbb48169cda545
-ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
+ms.openlocfilehash: 17c22027ffc28f2e04e95b8223de27b8f26489fd
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84777032"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698494"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Konton som används i Configuration Manager
 
@@ -88,7 +88,7 @@ Använd följande information för att identifiera de Windows-grupper, konton oc
   - [smsdbrole_WebPortal](#smsdbrole_webportal)
   - [smsschm_users](#smsschm_users)
 
-## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a><a name="bkmk_groups"></a>Windows-grupper som Configuration Manager skapar och använder  
+## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a><a name="bkmk_groups"></a> Windows-grupper som Configuration Manager skapar och använder  
 
 Configuration Manager skapas automatiskt och i många fall upprätthålls automatiskt följande Windows-grupper:  
 
@@ -96,7 +96,7 @@ Configuration Manager skapas automatiskt och i många fall upprätthålls automa
 > När Configuration Manager skapar en grupp på en dator som är en domän medlem är gruppen en lokal säkerhets grupp. Om datorn är en domänkontrollant är gruppen en lokal domän grupp. Den här typen av grupp delas mellan alla domänkontrollanter i domänen.  
 
 
-### <a name="configuration-manager_collectedfilesaccess"></a><a name="configmgr_collectedfilesaccess"></a>Konfigurations Manager_CollectedFilesAccess
+### <a name="configuration-manager_collectedfilesaccess"></a><a name="configmgr_collectedfilesaccess"></a> Konfigurations Manager_CollectedFilesAccess
 
 Configuration Manager använder den här gruppen för att ge åtkomst till att visa filer som samlats in av program varu inventering.  
 
@@ -111,7 +111,7 @@ När du avinstallerar en plats tas inte gruppen bort automatiskt. Ta bort den ma
 Configuration Manager hanterar grupp medlemskapet automatiskt. Medlemmar är administrativa användare som fått behörighet att **Visa insamlade filer** för det skyddbara objektet **Samling** genom en tilldelad säkerhetsroll.
 
 #### <a name="permissions"></a>Behörigheter
-Den här gruppen har som standard behörigheten **läsa** till följande mapp på plats servern:`C:\Program Files\Microsoft Configuration Manager\sinv.box\FileCol`  
+Den här gruppen har som standard behörigheten **läsa** till följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\sinv.box\FileCol`  
 
 
 ### <a name="configuration-manager_dviewaccess"></a><a name="configmgr_dviewaccess"></a>Konfigurations Manager_DViewAccess  
@@ -121,7 +121,7 @@ Den här gruppen är en lokal säkerhets grupp som Configuration Manager skapar 
 Mer information finns i [data överföringar mellan platser](data-transfers-between-sites.md).
 
 
-### <a name="configuration-manager-remote-control-users"></a><a name="configmgr_rcusers"></a>Configuration Manager fjärr styrnings användare  
+### <a name="configuration-manager-remote-control-users"></a><a name="configmgr_rcusers"></a> Configuration Manager fjärr styrnings användare  
 
 Configuration Manager fjärrverktyg använder den här gruppen för att lagra de konton och grupper som du har skapat i listan över **behöriga användare** . Platsen tilldelar varje klient den här listan.  
 
@@ -166,7 +166,7 @@ Du kan visa rättigheter och behörigheter för gruppen SMS-administratörer i M
 När du använder en fjärran sluten Configuration Manager-konsol konfigurerar du DCOM-behörigheter för **fjärraktivering** på både plats SERVERDATORN och SMS-providern. Bevilja behörighet till **SMS Admins** -gruppen. Den här åtgärden fören klar administrationen i stället för att ge rättigheterna direkt till användare eller grupper. Mer information finns i [Konfigurera DCOM-behörigheter för fjärranslutna Configuration Manager-konsoler](../../servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole). 
 
 
-### <a name="sms_sitesystemtositeserverconnection_mp_ltsitecode"></a><a name="bkmk_remotemp"></a>SMS_SiteSystemToSiteServerConnection_MP_ &lt; SiteCode\>  
+### <a name="sms_sitesystemtositeserverconnection_mp_ltsitecode"></a><a name="bkmk_remotemp"></a> SMS_SiteSystemToSiteServerConnection_MP_ &lt; SiteCode\>  
  
 Hanterings platser som är fjärranslutna från plats servern använder den här gruppen för att ansluta till plats databasen. Gruppen ger hanteringsplatsåtkomst till inkorgsmapparna på platsservern och platsdatabasen.  
 
@@ -182,7 +182,7 @@ Configuration Manager hanterar grupp medlemskapet automatiskt. Medlemmar är som
 Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**och **Visa** mappinnehåll i följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes` . Den här gruppen har ytterligare behörighet att **skriva** till undermappar under **inkorgar**, till vilken hanterings platsen skriver klient data.
 
 
-### <a name="sms_sitesystemtositeserverconnection_smsprov_ltsitecode"></a><a name="bkmk_remoteprov"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_ &lt; SiteCode\>  
+### <a name="sms_sitesystemtositeserverconnection_smsprov_ltsitecode"></a><a name="bkmk_remoteprov"></a> SMS_SiteSystemToSiteServerConnection_SMSProv_ &lt; SiteCode\>  
  
 Fjärranslutna SMS-providers använder den här gruppen för att ansluta till plats servern.  
 
@@ -200,14 +200,14 @@ Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**oc
 Den här gruppen har också **Läs** behörighet till undermapparna på plats servern nedan `C:\Program Files\Microsoft Configuration Manager\OSD\Bin` . 
 
 Den har också följande behörigheter till undermapparna nedan `C:\Program Files\Microsoft Configuration Manager\OSD\boot` :
-- **Läs**  
+- **Läsa**  
 - **Läs & kör**  
 - **Visa mappinnehåll**  
 - **Skriva**  
-- **Ändra**   
+- **Modify** (Ändra)   
 
 
-### <a name="sms_sitesystemtositeserverconnection_stat_ltsitecode"></a><a name="bkmk_remotestat"></a>SMS_SiteSystemToSiteServerConnection_Stat_ &lt; SiteCode\>  
+### <a name="sms_sitesystemtositeserverconnection_stat_ltsitecode"></a><a name="bkmk_remotestat"></a> SMS_SiteSystemToSiteServerConnection_Stat_ &lt; SiteCode\>  
 
 Filen Dispatch Manager-komponenten på Configuration Manager fjärrplatssystem använder den här gruppen för att ansluta till plats servern.  
 
@@ -225,7 +225,7 @@ Den här gruppen har som standard behörigheterna **läsa**, **läsa & köra**oc
 Den här gruppen har ytterligare behörighet att **skriva** och **ändra** till följande mapp på plats servern: `C:\Program Files\Microsoft Configuration Manager\inboxes\statmgr.box` .
 
 
-### <a name="sms_sitetositeconnection_ltsitecode"></a><a name="bkmk_filerepl"></a>SMS_SiteToSiteConnection_ &lt; SiteCode\>  
+### <a name="sms_sitetositeconnection_ltsitecode"></a><a name="bkmk_filerepl"></a> SMS_SiteToSiteConnection_ &lt; SiteCode\>  
 Configuration Manager använder den här gruppen för att aktivera filbaserad replikering mellan platser i en hierarki. För varje fjärrplats som överför filer direkt till den här platsen, har den här gruppen konton som har kon figurer ATS som ett **filreplikeringsflöde**.  
 
 #### <a name="type-and-location"></a>Typ och plats
@@ -241,7 +241,7 @@ Den här gruppen har som standard **fullständig behörighet** till följande ma
 
 
 
-## <a name="accounts-that-configuration-manager-uses"></a><a name="bkmk_accounts"></a>Konton som Configuration Manager använder  
+## <a name="accounts-that-configuration-manager-uses"></a><a name="bkmk_accounts"></a> Konton som Configuration Manager använder  
 
 Du kan konfigurera följande konton för Configuration Manager.  
 
@@ -553,7 +553,7 @@ Om du har Configuration Manager 2007-distributions platser eller sekundära plat
 > [!NOTE]  
 > Både käll plats kontot och [käll plats databas kontot](#source-site-database-account) identifieras som **Migration Manager** i noden **konton** i arbets ytan **Administration** i Configuration Manager-konsolen.  
 
-Mer information finns i [migrera data mellan hierarkier](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies).
+Mer information finns i [migrera data mellan hierarkier](/sccm/core/migration/migrate-data-between-hierarchies).
 
 
 ### <a name="source-site-database-account"></a>Konto för käll plats databas  
@@ -569,7 +569,7 @@ Om du använder dator kontot Configuration Manager (aktuell gren) ser du till at
 > [!NOTE]  
 > Både käll plats kontot och [käll plats databas kontot](#source-site-database-account) identifieras som **Migration Manager** i noden **konton** i arbets ytan **Administration** i Configuration Manager-konsolen.  
 
-Mer information finns i [migrera data mellan hierarkier](https://docs.microsoft.com/sccm/core/migration/migrate-data-between-hierarchies).
+Mer information finns i [migrera data mellan hierarkier](/sccm/core/migration/migrate-data-between-hierarchies).
 
 
 ### <a name="task-sequence-domain-join-account"></a>Konto för domän anslutning för aktivitetssekvens 
@@ -620,7 +620,7 @@ Konfigurera kontot så att det har de lägsta behörigheter som krävs för att 
 > Om kommando raden kräver administrativ åtkomst på datorn kan du överväga att endast skapa ett lokalt administratörs konto för det här kontot på alla datorer där aktivitetssekvensen körs. Ta bort kontot när du inte längre behöver det.  
 
 
-## <a name="user-objects-that-configuration-manager-uses-in-sql"></a><a name="bkmk_sqlusers"></a>Användar objekt som Configuration Manager använder i SQL 
+## <a name="user-objects-that-configuration-manager-uses-in-sql"></a><a name="bkmk_sqlusers"></a> Användar objekt som Configuration Manager använder i SQL 
 <!--SCCMDocs issue #1160-->
 Configuration Manager skapar och underhåller automatiskt följande användar objekt i SQL.  De här objekten finns i Configuration Manager-databasen under säkerhet/användare.  
 

@@ -10,12 +10,12 @@ ms.assetid: 92aaec8a-8751-442a-b64b-62ab05b5bf50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1fcae4d520b1e81d0ef3470cd12ee68488b4f589
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 1c5ef6d4a17623428f299ff9df676dcba49e7f0c
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125534"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698167"
 ---
 # <a name="create-a-task-sequence-for-non-os-deployments"></a>Skapa en aktivitetssekvens för annat än distributioner av operativsystem
 
@@ -32,7 +32,7 @@ Aktivitetssekvenser i Configuration Manager används för att automatisera olika
 
 - [Ställer in konfiguration](../../compliance/understand/ensure-device-compliance.md)
 
-Överväg också andra automatiserings tekniker för Microsoft System Center, till exempel [Orchestrator](https://docs.microsoft.com/system-center/orchestrator/) och [Service Management Automation](https://docs.microsoft.com/system-center/sma/).  
+Överväg också andra automatiserings tekniker för Microsoft System Center, till exempel [Orchestrator](/system-center/orchestrator/) och [Service Management Automation](/system-center/sma/).  
 
 Kraften i aktivitetssekvenser är i sin flexibilitet och hur du använder dem. De kan konfigurera klient inställningar, distribuera program vara, uppdatera driv rutiner, redigera användar tillstånd och utföra andra uppgifter som är oberoende av operativ Systems distributionen. Du kan skapa en anpassad aktivitetssekvens för att lägga till ett antal olika uppgifter. Användning av anpassade aktivitetssekvenser för distribution utan operativ system stöds i Configuration Manager. Men om en aktivitetssekvens resulterar i oönskade eller inkonsekventa resultat, kan du se hur du fören klar åtgärden:
 

@@ -10,12 +10,12 @@ ms.assetid: 3e1ddb65-1193-46ce-a7c0-a48dfd9fd833
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1567531ed83586f47ba2f79372e0b7962c1341dc
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 6406a208de448e40e1d686440f41610266cde042
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128924"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700307"
 ---
 # <a name="whats-new-in-version-1910-of-configuration-manager-current-branch"></a>Vad är nytt i version 1910 av Configuration Manager aktuella grenen
 
@@ -28,9 +28,9 @@ Läs alltid den senaste check listan för att installera den här uppdateringen.
 För att dra full nytta av nya Configuration Manager funktioner kan du även uppdatera klienter till den senaste versionen när du har uppdaterat platsen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.
 
 > [!TIP]
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1910+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1910+-+Configuration+Manager%22&locale=en-us`
 
-## <a name="microsoft-endpoint-configuration-manager"></a><a name="bkmk_mem"></a>Microsoft Endpoint Configuration Manager
+## <a name="microsoft-endpoint-configuration-manager"></a><a name="bkmk_mem"></a> Microsoft Endpoint Configuration Manager
 
 <!--4960084-->
 
@@ -42,10 +42,10 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Följande Microsoft-hanterings lösningar är nu en del av Microsoft Endpoint Manager-varumärket:
 
-- [Configuration Manager](https://docs.microsoft.com/configmgr)
-- [Intune](https://docs.microsoft.com/intune)
+- [Configuration Manager](/configmgr)
+- [Intune](/intune)
 - [Desktop Analytics](../../../desktop-analytics/overview.md)
-- [Autopilot](https://docs.microsoft.com/intune/enrollment/enrollment-autopilot)
+- [Autopilot](/intune/enrollment/enrollment-autopilot)
 - Andra funktioner i [administrations konsolen för enhets hantering](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/microsoft-intune-rolls-out-an-improved-streamlined-endpoint/ba-p/937760)
 
 Mer information finns i följande inlägg från Bengt Anderson, Microsoft corporate vice president för Microsoft 365:
@@ -69,7 +69,7 @@ Se till att uppdatera all intern dokumentation som du upprätthåller för att i
 > [!TIP]
 > När du öppnar Start-menyn i Windows 10 skriver du namnet för att hitta ikonen. Ange till exempel `Configuration Manager` eller `Software Center`.
 
-## <a name="site-infrastructure"></a><a name="bkmk_infra"></a>Plats infrastruktur
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Plats infrastruktur
 
 ### <a name="reclaim-sedo-lock"></a>Frigör SEDO-lås
 
@@ -88,11 +88,11 @@ Mer information finns i [utöka och migrera en lokal plats till Microsoft Azure]
 
 <!-- ## <a name="bkmk_cloud"></a> Cloud-attached management -->
 
-## <a name="desktop-analytics"></a><a name="bkmk_da"></a>Skriv bords analys
+## <a name="desktop-analytics"></a><a name="bkmk_da"></a> Skriv bords analys
 
 Mer information om de månatliga ändringarna i moln tjänsten för Station ära datorer finns i [Nyheter i Skriv bords analys](../../../desktop-analytics/whats-new.md).
 
-## <a name="real-time-management"></a><a name="bkmk_real"></a>Real tids hantering
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Real tids hantering
 
 ### <a name="optimizations-to-the-cmpivot-engine"></a>Optimeringar till CMPivot-motorn
 <!--3197353-->
@@ -112,7 +112,7 @@ Vi har lagt till ett antal nya CMPivot-enheter och förbättringar av enheten f�
 
 Den här versionen innehåller även flera [andra förbättringar](../../servers/manage/cmpivot-changes.md#bkmk_Other) av CMPivot. Mer information finns i [CMPivot från och med version 1910](../../servers/manage/cmpivot-changes.md#bkmk_cmpivot1910).
 
-## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
+## <a name="content-management"></a><a name="bkmk_content"></a> Innehålls hantering
 
 ### <a name="microsoft-connected-cache-support-for-intune-win32-apps"></a>Stöd för Microsoft Connected cache för Intune Win32-appar
 
@@ -127,7 +127,7 @@ Mer information finns [i Microsoft Connected cache i Configuration Manager](../h
 >
 > När du installerar den anslutna cachen på en Configuration Manager distributions plats avlastar den leverans optimerings tjänstens trafik till lokala källor. Ansluten cache gör detta genom att effektivt cachelagra innehåll på byte-intervall-nivån.
 
-## <a name="client-management"></a><a name="bkmk_client"></a>Klient hantering
+## <a name="client-management"></a><a name="bkmk_client"></a> Klient hantering
 
 ### <a name="include-custom-configuration-baselines-as-part-of-compliance-policy-assessment"></a>Inkludera anpassade konfigurations bas linjer som en del av utvärderingen av efterlevnadsprinciper
 <!--3608345-->
@@ -152,7 +152,7 @@ Mer information finns i [så här konfigurerar du klient inställningar](../../c
 <!-- ## <a name="bkmk_comgmt"></a> Co-management -->
 
 
-## <a name="application-management"></a><a name="bkmk_app"></a>Program hantering
+## <a name="application-management"></a><a name="bkmk_app"></a> Program hantering
 
 ### <a name="deploy-microsoft-edge-version-77-and-later"></a>Distribuera Microsoft Edge, version 77 eller senare
 <!--4561024-->
@@ -172,7 +172,7 @@ Från och med den aktuella gren versionen 1906 kan du skapa en grupp med program
 Mer allmän information finns i [skapa program grupper](../../../apps/deploy-use/create-app-groups.md).
 
 
-## <a name="os-deployment"></a><a name="bkmk_osd"></a>OS-distribution
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> OS-distribution
 
 ### <a name="improvements-to-the-task-sequence-editor"></a>Förbättringar av redigeraren för aktivitetssekvens
 
@@ -264,7 +264,7 @@ Mer information finns i [variabler för aktivitetssekvens-SetupCompletePause](..
 
 <!-- ## <a name="bkmk_userxp"></a> Software Center -->
 
-## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Program uppdateringar
 
 ### <a name="additional-options-for-third-party-update-catalogs"></a>Ytterligare alternativ för uppdaterings kataloger från tredje part
 <!--4469002-->
@@ -287,7 +287,7 @@ Nu kan du använda **distribuerat** som ett uppdaterings filter för reglerna f�
 
 Mer information finns i [distribuera program uppdateringar automatiskt](../../../sum/deploy-use/automatically-deploy-software-updates.md#bkmk_adr-process).
 
-## <a name="office-management"></a><a name="bkmk_o365"></a>Office-hantering
+## <a name="office-management"></a><a name="bkmk_o365"></a> Office-hantering
 
 
 ### <a name="office-365-proplus-pilot-and-health-dashboard"></a>Instrument panel för Office 365 ProPlus pilot och hälso tillstånd
@@ -297,7 +297,7 @@ Instrument panelen för Office 365 ProPlus pilot och hälso tillstånd hjälper 
 
 Mer information finns i [instrument panelen för Office 365 ProPlus pilot och hälso tillstånd](../../../sum/deploy-use/office-365-dashboard.md#bkmk_pilot).
 
-## <a name="protection"></a><a name="bkmk_protect"></a>Skyddas
+## <a name="protection"></a><a name="bkmk_protect"></a> Skyddas
 
 ### <a name="bitlocker-management"></a>BitLocker-hantering
 
@@ -313,7 +313,7 @@ Configuration Manager har nu följande hanterings funktioner för BitLocker-disk
 
 Mer information finns i [Planera för BitLocker-hantering](../../../protect/plan-design/bitlocker-management.md).
 
-## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a>Configuration Manager-konsol
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Configuration Manager-konsol
 
 ### <a name="view-active-consoles-and-message-administrators-through-console-connections"></a>Visa aktiva konsoler och meddelande administratörer via konsol anslutningar
 <!--4923997-->
@@ -346,7 +346,7 @@ Den här versionen innehåller följande förbättringar för sökning i Configu
 
 ## <a name="other-updates"></a>Övriga uppdateringar
 
-Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1910](https://docs.microsoft.com/powershell/sccm/1910-release-notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1910](/powershell/sccm/1910-release-notes?view=sccm-ps).
 
 Mer information om ändringar i administrations tjänsten REST API finns i viktig information om [administrations tjänsten](../../../develop/adminservice/release-notes.md#bkmk_1910).
 

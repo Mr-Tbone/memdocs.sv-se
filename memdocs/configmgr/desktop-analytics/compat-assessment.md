@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 7b2bff4f8365693c86540c9b0578307340f13a49
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: c9268514b43f4f728d3fff4715d4d71308a712f3
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83268903"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699083"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Kompatibilitetskontroll i Desktop Analytics
 
@@ -180,13 +180,13 @@ När du uppdaterar Configuration Manager-platsen och-klienterna till version 190
 
 #### <a name="16-bit-apps"></a>16-bitars appar
 
-Ta bort alla 16-bitars komponenter från program och Ersätt med 32-bitars eller 64-bitars motsvarigheter. Mer information finns i [Developer-artikeln för Windows Vista och Windows Server 2008: Application Compatibility Cookbook](https://docs.microsoft.com/previous-versions/aa480152\(v=msdn.10\)).
+Ta bort alla 16-bitars komponenter från program och Ersätt med 32-bitars eller 64-bitars motsvarigheter. Mer information finns i [Developer-artikeln för Windows Vista och Windows Server 2008: Application Compatibility Cookbook](/previous-versions/aa480152\(v=msdn.10\)).
 
 Det andra alternativet är att aktivera NT Virtual DOS Machine (NTVDM) för support i Windows 10.
 
 #### <a name="requires-admin-privileges"></a>Kräver administratörs behörighet
 
-Appen kräver att användaren har administrativ åtkomst till enheten. Använd ett app-manifest för de här apparna som kräver administratörs behörighet. Mer information finns i [skapa och bädda in ett applikations manifest](https://docs.microsoft.com/previous-versions/bb756929\(v=msdn.10\)).
+Appen kräver att användaren har administrativ åtkomst till enheten. Använd ett app-manifest för de här apparna som kräver administratörs behörighet. Mer information finns i [skapa och bädda in ett applikations manifest](/previous-versions/bb756929\(v=msdn.10\)).
 
 Skriv bords analys rekommenderar appen för pilot testning att upptäcka eventuella regressioner.
 
@@ -196,7 +196,7 @@ Många Java-program förlitar sig på en separat installerad Java Runtime Enviro
 
 #### <a name="not-dpi-aware"></a>Inte DPI-medveten
 
-Appen kan ha visnings problem med avancerade skärm lösningar i Windows 10. Använd ett app-manifest för att undvika problem med hög DPI-upplösning. Mer information finns i [program manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests).
+Appen kan ha visnings problem med avancerade skärm lösningar i Windows 10. Använd ett app-manifest för att undvika problem med hög DPI-upplösning. Mer information finns i [program manifest](/windows/desktop/SbsCs/application-manifests).
 
 Skriv bords analys rekommenderar appen för pilot testning att upptäcka eventuella regressioner.
 
@@ -220,13 +220,13 @@ Skriv bords analys rekommenderar appen för pilot testning att upptäcka eventue
 
 #### <a name="net-framework-2030"></a>.NET Framework 2.0/3.0
 
-.NET 2,0-och 3,5-ramverk stöds i Windows 10. Du kan behöva aktivera Windows-funktionen. Mer information finns i [installera .NET Framework 3,5 på Windows 10](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10).
+.NET 2,0-och 3,5-ramverk stöds i Windows 10. Du kan behöva aktivera Windows-funktionen. Mer information finns i [installera .NET Framework 3,5 på Windows 10](/dotnet/framework/install/dotnet-35-windows-10).
 
 #### <a name="ui-access"></a>GRÄNSSNITTs åtkomst
 
 Program med UI-åtkomst kan kringgå användar gränssnittets kontroll nivåer för att enhetens indata till högre privilegierade fönster på Skriv bordet. Använd endast den här inställningen för teknik program för användar gränssnitt.
 
-Om du inte använder hjälpmedels funktionerna i appen ställer du in flaggan UI Access i app-manifestet på falskt. Mer information finns i [skapa och bädda in ett applikations manifest](https://docs.microsoft.com/previous-versions/bb756929\(v=msdn.10\)).
+Om du inte använder hjälpmedels funktionerna i appen ställer du in flaggan UI Access i app-manifestet på falskt. Mer information finns i [skapa och bädda in ett applikations manifest](/previous-versions/bb756929\(v=msdn.10\)).
 
 Skriv bords analys rekommenderar appen för pilot testning att upptäcka eventuella regressioner.
 
@@ -245,4 +245,4 @@ Du hittar utvärderingen av driv rutinen i Skriv bords analys. I listan över dr
 
 ## <a name="see-also"></a>Se även
 
-FastTrack Center-förmånen för Windows 10 ger åtkomst till **Desktop-appen**. Den här förmånen är en ny tjänst som är utformad för att åtgärda problem med Windows 10 och Microsoft 365 appar för företags kompatibilitet. Mer information finns i [Desktop app garanterar](https://docs.microsoft.com/fasttrack/win-10-desktop-app-assure).
+FastTrack Center-förmånen för Windows 10 ger åtkomst till **Desktop-appen**. Den här förmånen är en ny tjänst som är utformad för att åtgärda problem med Windows 10 och Microsoft 365 appar för företags kompatibilitet. Mer information finns i [Desktop app garanterar](/fasttrack/win-10-desktop-app-assure).

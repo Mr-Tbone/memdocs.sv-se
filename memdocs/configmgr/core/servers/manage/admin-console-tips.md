@@ -10,12 +10,12 @@ ms.assetid: 2162d67d-31a9-45b2-bb9e-835f3ac6e6fe
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7f46c283bd533d67387ab0abac35e7625438addc
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: a0a434f013da48d660efa78f5e2cdca6ced0826d
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129698"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700726"
 ---
 # <a name="configuration-manager-console-changes-and-tips"></a>Configuration Manager-konsolens ändringar och tips
 
@@ -25,7 +25,7 @@ Använd informationen nedan om du vill veta mer om ändringar i Configuration Ma
 
 ## <a name="general-tips"></a>Allmänna tips
 
-### <a name="improvements-to-console-search"></a><a name="bkmk_search"></a>Förbättringar av konsols ökning
+### <a name="improvements-to-console-search"></a><a name="bkmk_search"></a> Förbättringar av konsols ökning
 <!--4640570-->
 *(Lanseras i version 1910)*
 
@@ -148,7 +148,7 @@ Mer information om hur du visar en kolumn som inte är standard finns i [använd
 <!-- 3614690 -->
 Från och med version 1806 söker den inte igenom nyckelordet mot alla objekt egenskaper vid sökning i en enhets samling. När du inte är mer information om vad du ska söka efter söker den igenom följande fyra egenskaper:
 
-- Name
+- Namn
 - Primära användare
 - Användare som är inloggad
 - Senaste användar namn för inloggning
@@ -181,12 +181,12 @@ I arbets ytan **program bibliotek** expanderar du **program hantering**, går ti
    - **Program varu bibliotek**  >  **Office 365-klient hantering**  >  **Office 365-uppdateringar**
 
 1. Välj en uppdatering som krävs av minst en enhet.
-1. Titta på fliken **Sammanfattning** och hitta cirkel diagrammet under **statistik**.
+1. Titta på fliken **Sammanfattning** och hitta cirkel diagrammet under  **statistik**.
 1. Välj hyperlänken **vy som krävs** bredvid cirkel diagrammet för att öka detalj nivån i enhets listan.
 1. Den här åtgärden tar dig till en tillfällig nod under **enheter** där du kan se vilka enheter som kräver uppdateringen. Du kan också utföra åtgärder för noden, till exempel skapa en ny samling från listan.
 
 > [!NOTE]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
 ### <a name="maximize-the-browse-registry-window"></a>Maximera fönstret bläddra i registret
 
@@ -245,7 +245,7 @@ Kopiera information från fönstret **till gångs information** för följande �
 
 - **Status för innehålls distribution**  
 
-- **Distributions status**  
+- **Distributionsstatus**  
 
 ![Vyn distributions status, kopiera till gångs information](media/1810-deployment-status.PNG)
 
@@ -257,5 +257,5 @@ Från och med version 1906 kan du aktivera vissa noder under noden **säkerhet**
 ## <a name="next-steps"></a>Nästa steg
 
 - [Använda konsolen](admin-console.md)
-- [Konsol meddelanden](admin-console-notifications.md)
+- [Konsolmeddelanden](admin-console-notifications.md)
 - [Hjälpmedelsfunktioner](../../understand/accessibility-features.md)

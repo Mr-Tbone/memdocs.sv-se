@@ -10,14 +10,14 @@ ms.assetid: 963dda08-87b8-4e80-90a7-25625efe8861
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: ca71d40b29a9dcd9c239ccd06a8a28321f50f62c
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 4c535cc41e1351b334e8eb7bb942de04ebbd00a2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127686"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700437"
 ---
-# <a name="tenant-attach-install-an-application-from-the-admin-center-preview"></a><a name="bkmk_apps"></a>Klient anslutning: installera ett program från administrations centret (för hands version)
+# <a name="tenant-attach-install-an-application-from-the-admin-center-preview"></a><a name="bkmk_apps"></a> Klient anslutning: installera ett program från administrations centret (för hands version)
 <!--cm 6024389, in 7220536 pubpreview Aug 10, 2020-->
 *Gäller för: Configuration Manager (aktuell gren)*
 
@@ -51,9 +51,9 @@ Användar kontot måste ha följande behörigheter:
 - **Användar rollen administratör** för det Configuration Manager mikrotjänst programmet i Azure AD. 
   - Lägg till rollen i Azure AD från **företags program**  >  **Configuration Manager mikrotjänst**  >  **användare och grupper**  >  **Lägg till användare**. Grupper stöds om du har Azure AD Premium.
    > [!TIP]
-   > [Rollen program administratör i Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) har tillräcklig behörighet för att lägga till en användare i programmets **Administratörs användar** roll.
+   > [Rollen program administratör i Azure AD](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) har tillräcklig behörighet för att lägga till en användare i programmets **Administratörs användar** roll.
 
-## <a name="deploy-an-application-to-a-device"></a><a name="bkmk_deploy"></a>Distribuera ett program till en enhet
+## <a name="deploy-an-application-to-a-device"></a><a name="bkmk_deploy"></a> Distribuera ett program till en enhet
 
 1. Navigera till i en webbläsare [https://endpoint.microsoft.com](https://endpoint.microsoft.com) .
 1. Välj **enheter** och sedan **alla enheter**.
@@ -79,7 +79,7 @@ Du kan filtrera program listan baserat på statusen. Program status kan vara nå
 - **Inte installerat**: programmet är inte installerat. Normalt sett visas denna status om en annan distribution eller en användare har tagit bort programmet.
 - **Omstart väntar**: programmet installeras men måste startas om för att slutföras (från och med version 2006).
 
-## <a name="deploy-an-application-to-a-user"></a><a name="bkmk_user"></a>Distribuera ett program till en användare
+## <a name="deploy-an-application-to-a-user"></a><a name="bkmk_user"></a> Distribuera ett program till en användare
 <!--7518897-->
 Från och med Configuration Manager version 2006 visas användare tillgängliga program i noden **program** för en ConfigMgr-enhet. I listan över program som är tillgängliga för enheten ingår även program som distribuerats till enhetens aktuella inloggade användare.
 

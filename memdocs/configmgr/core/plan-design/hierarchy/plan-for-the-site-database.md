@@ -10,12 +10,12 @@ ms.assetid: 104fb4cc-6e83-40a3-8e6b-ac909fb9ec7d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a32f0a59a0b3ce3ad864fecf61fe7281b8ebbdd2
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 068511c5b3b0c15eb355c484b241a76d9dd512e2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81720816"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700188"
 ---
 # <a name="plan-for-the-site-database-for-configuration-manager"></a>Planera för plats databasen för Configuration Manager
 
@@ -31,7 +31,7 @@ Plats databas servern är en dator som kör en version av Microsoft SQL Server s
 
 -  För användnings gruppen för icke-SQL-tillgänglighet måste databas återställnings modellen vara inställd på enkel  
 
-Mer information om SQL-återställnings läge finns i [återställnings modeller (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server).
+Mer information om SQL-återställnings läge finns i [återställnings modeller (SQL Server)](/sql/relational-databases/backup-restore/recovery-models-sql-server).
 
 Du kan använda följande SQL Server-konfigurationer för platsdatabasen:  
 
@@ -61,4 +61,4 @@ Om du använder en fjärran sluten databas serverdator måste du se till att den
 -   Du kan inte använda en grupperad SQL Server för platsdatabaservern när platsdatabasen är samordnad med platsservern.  
 
 
-Normalt har en plats system server bara stöd för plats system roller från en enda Configuration Manager plats. Du kan dock använda olika instanser av SQL Server på klustrade eller icke-klustrade servrar som kör SQL Server, som värd för en databas från olika Configuration Manager-platser. Om du vill stödja databaser från olika platser måste du konfigurera varje instans av SQL Server att använda unika portar förkommunikation.  
+Normalt har en plats system server bara stöd för plats system roller från en enda Configuration Manager plats. Du kan dock använda olika instanser av SQL Server på klustrade eller icke-klustrade servrar som kör SQL Server, som värd för en databas från olika Configuration Manager-platser. Om du vill stödja databaser från olika platser måste du konfigurera varje instans av SQL Server att använda unika portar förkommunikation.

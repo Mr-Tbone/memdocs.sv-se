@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: bd384edafd6464073b33a593a56bc88ba2fb0b87
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 3cb8d07c9bcc31353e16f01de9e60857d47d49e4
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906769"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700430"
 ---
 # <a name="introduction-to-software-updates-in-configuration-manager"></a>Introduktion till program uppdateringar i Configuration Manager
 
@@ -25,7 +25,7 @@ Program uppdateringar i Configuration Manager innehåller en uppsättning verkty
 
 Ett exempel scenario som visar hur du kan distribuera program uppdateringar i din miljö finns i [exempel scenario för att distribuera säkerhets program uppdateringar](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md).  
 
-##  <a name="software-updates-synchronization"></a><a name="BKMK_Synchronization"></a>Synkronisering av program uppdateringar  
+##  <a name="software-updates-synchronization"></a><a name="BKMK_Synchronization"></a> Synkronisering av program uppdateringar  
  Synkronisering av program uppdateringar i Configuration Manager ansluter till Microsoft Update för att hämta metadata för program uppdateringar. Platsen på den översta nivån (den centrala administrations platsen eller en fristående primär plats) synkroniseras med Microsoft Update enligt ett schema eller när du startar synkroniseringen manuellt från Configuration Manager-konsolen. När Configuration Manager Slutför synkroniseringen av program uppdateringar på platsen på den översta nivån, börjar synkroniseringen av program uppdateringar på underordnade platser, om de finns. När synkroniseringen är klar på alla primära eller sekundära platser skapas en platsomfattande princip som tillhandahåller placeringen för programuppdateringsplatserna till klientdatorerna.  
 
 > [!NOTE]  
@@ -79,7 +79,7 @@ Ett exempel scenario som visar hur du kan distribuera program uppdateringar i di
 
 7.  Synkroniseringshanteraren för WSUS skickar en begäran i taget till WSUS som körs på andra programuppdateringsplatser på platsen. WSUS-servrarna på de andra programuppdateringsplatserna har konfigurerats att vara repliker av WSUS som körs på platsens standardprogramuppdateringsplats.  
 
-##  <a name="software-updates-compliance-assessment"></a><a name="BKMK_SUMCompliance"></a>Utvärdering av kompatibilitet för program uppdateringar  
+##  <a name="software-updates-compliance-assessment"></a><a name="BKMK_SUMCompliance"></a> Utvärdering av kompatibilitet för program uppdateringar  
  Innan du distribuerar program uppdateringar till klient datorer i Configuration Manager startar du en sökning efter program uppdateringarnas kompatibilitet på klient datorer. För varje programuppdatering skapas ett tillståndsmeddelande som innehåller kompatibilitetsstatus för uppdateringen. Tillståndsmeddelandena skickas i grupp till hanteringsplatsen och sedan till platsservern, där kompatibilitetstillståndet lagras i platsdatabasen. Kompatibilitetstillstånd för program uppdateringar visas i Configuration Manager-konsolen. Du kan distribuera och installera programuppdateringar på datorer som kräver uppdateringarna. I följande stycken finns information om kompatibilitetstillstånden och en beskrivning av processen för att söka efter kompatibilitet för programuppdateringar.  
 
 ### <a name="software-updates-compliance-states"></a>Tillstånd för programuppdateringskompatibilitet  
@@ -251,7 +251,7 @@ Ett exempel scenario som visar hur du kan distribuera program uppdateringar i di
 
   -   Separata aviseringar för den här distributionen  
 
-##  <a name="software-update-deployment-process"></a><a name="BKMK_DeploymentProcess"></a>Distributions process för program uppdatering  
+##  <a name="software-update-deployment-process"></a><a name="BKMK_DeploymentProcess"></a> Distributions process för program uppdatering  
  När du har distribuerat programuppdateringar eller när en regel för automatisk distribution körs och distribuerar programuppdateringar, läggs en distributionstilldelningsprincip till i platsens datorprincip. Programuppdateringarna laddas ned från nedladdningsplatsen, Internet eller en delad nätverksmapp, till paketkällan. Programuppdateringarna kopieras från paketkällan till innehållsbiblioteket på platsservern och kopieras sedan till innehållsbiblioteket på distributionsplatsen.  
 
  När en klientdator i målsamlingen för distributionen tar emot datorprincipen startar klientagenten för programuppdateringen en utvärderingssökning. Klient agenten laddar ned innehållet för obligatoriska program uppdateringar från en distributions plats till den lokala klientcachen vid inställningen **tillgänglig tid för program vara** för distributionen och sedan är program uppdateringarna tillgängliga för installation. Programuppdateringarna i valfria distributioner (distributioner som inte har någon installationstidsgräns) laddas inte ned förrän en användare startar installationen manuellt.  
@@ -264,7 +264,7 @@ Ett exempel scenario som visar hur du kan distribuera program uppdateringar i di
 ### <a name="deployment-reevaluation-cycle"></a>Omvärderingscykel för distribution  
  Som standard startar klientdatorer en omvärderingscykel för distribution var 7:e dag. Under den här omvärderingscykeln söker klientdatorn efter programuppdateringar som tidigare har distribuerats och installerats. Om några programuppdateringar saknas installeras programuppdateringarna om från den lokala cachen. Om en programuppdatering inte längre är tillgänglig i den lokala cachen laddas den ned från en distributionsplats och installeras sedan om. Du kan konfigurera omvärderingsschemat på sidan **Programuppdateringar** i klientinställningar för platsen.  
 
-##  <a name="support-for-windows-embedded-devices-that-use-write-filters"></a><a name="BKMK_EmbeddedDevices"></a>Stöd för Windows Embedded-enheter som använder Skriv filter  
+##  <a name="support-for-windows-embedded-devices-that-use-write-filters"></a><a name="BKMK_EmbeddedDevices"></a> Stöd för Windows Embedded-enheter som använder Skriv filter  
  När du distribuerar programuppdateringar till Windows Embedded-enheter med aktiverat skrivfilter, kan du ange om skrivfiltret ska inaktiveras på enheten under distributionen och sedan starta om enheten efter distributionen. Om skrivfiltret inte är inaktiverat distribueras programvaran till ett tillfälligt överlägg och programvaran kommer inte längre att installeras när enheten startas om, om inte en annan distribution framtvingar att ändringar ska sparas.  
 
 > [!NOTE]  
@@ -272,10 +272,10 @@ Ett exempel scenario som visar hur du kan distribuera program uppdateringar i di
 
  Den inställning för användarupplevelse som styr skrivfilterbeteendet är en kryssruta med namnet **Genomför ändringar efter deadline eller under ett underhållsfönster (omstart krävs)**.  
 
- Mer information om hur Configuration Manager hanterar inbäddade enheter som använder Skriv filter, finns i [Planera för klient distribution till Windows Embedded-enheter](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
+ Mer information om hur Configuration Manager hanterar inbäddade enheter som använder Skriv filter, finns i  [Planera för klient distribution till Windows Embedded-enheter](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
-##  <a name="extend-software-updates-in-configuration-manager"></a><a name="BKMK_ExtendSoftwareUpdates"></a>Utöka program uppdateringar i Configuration Manager  
- Använd System Center Updates Publisher för att hantera program uppdateringar som inte är tillgängliga från Microsoft Update. När du har publicerat program uppdateringar till uppdaterings servern och synkroniserar program uppdateringarna i Configuration Manager kan du distribuera program uppdateringarna till Configuration Manager klienter. Mer information om Updates Publisher finns i [updates publisher 2011](https://docs.microsoft.com/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
+##  <a name="extend-software-updates-in-configuration-manager"></a><a name="BKMK_ExtendSoftwareUpdates"></a> Utöka program uppdateringar i Configuration Manager  
+ Använd System Center Updates Publisher för att hantera program uppdateringar som inte är tillgängliga från Microsoft Update. När du har publicerat program uppdateringar till uppdaterings servern och synkroniserar program uppdateringarna i Configuration Manager kan du distribuera program uppdateringarna till Configuration Manager klienter. Mer information om Updates Publisher finns i [updates publisher 2011](/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
 
 ## <a name="next-steps"></a>Nästa steg
 [Planera programuppdateringar](../plan-design/plan-for-software-updates.md)

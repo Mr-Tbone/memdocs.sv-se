@@ -10,12 +10,12 @@ ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aa574cd3db2e7a3d3277912ed4a383f71d33e59c
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 2f8b8a45ff83ce903f5737c94144e6ca5ab50826
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124295"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697661"
 ---
 # <a name="manage-os-images-with-configuration-manager"></a>Hantera OS-avbildningar med Configuration Manager
 
@@ -43,7 +43,7 @@ Windows-installationsfilerna innehåller standard operativ system avbildningen. 
 - OS-installationen kan ta längre tid. Programinstallationen och andra konfigurationer sker när OS-installationen har slutförts.  
 
 
-### <a name="captured-image-from-a-reference-computer"></a><a name="bkmk_capture"></a>Avbildning från en referens dator
+### <a name="captured-image-from-a-reference-computer"></a><a name="bkmk_capture"></a> Avbildning från en referens dator
 
 Skapa en anpassad operativ system avbildning genom att skapa en referens dator med önskat operativ system. Installera sedan program och konfigurera inställningar. Skapa WIM-filen genom att avbilda operativ system avbildningen från referens datorn. Bygg referens datorn manuellt eller Använd en aktivitetssekvens för att automatisera några eller alla Bygg steg. Mer information finns i [Anpassa OS-avbildningar](customize-operating-system-images.md).  
 
@@ -58,7 +58,7 @@ Skapa en anpassad operativ system avbildning genom att skapa en referens dator m
 - Du måste skapa en ny avbildning om du behöver uppdateringar för program och verktyg.  
 
 
-## <a name="add-an-os-image"></a><a name="BKMK_AddOSImages"></a>Lägg till en OS-avbildning  
+## <a name="add-an-os-image"></a><a name="BKMK_AddOSImages"></a> Lägg till en OS-avbildning  
 
 Innan du kan använda en operativ system avbildning kan du lägga till den på Configuration Manager-platsen.
 
@@ -89,12 +89,12 @@ Innan du kan använda en operativ system avbildning kan du lägga till den på C
 
 5. Slutför guiden.  
 
-För PowerShell-cmdlet motsvarigheten till den här konsol guiden, se [New-CMOperatingSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmoperatingsystemimage?view=sccm-ps).
+För PowerShell-cmdlet motsvarigheten till den här konsol guiden, se [New-CMOperatingSystemImage](/powershell/module/configurationmanager/new-cmoperatingsystemimage?view=sccm-ps).
 
 Distribuera sedan OS-avbildningen till distributions platser.  
 
 
-## <a name="distribute-content-to-distribution-points"></a><a name="BKMK_DistributeBootImages"></a>Distribuera innehåll till distributions platser  
+## <a name="distribute-content-to-distribution-points"></a><a name="BKMK_DistributeBootImages"></a> Distribuera innehåll till distributions platser  
 
 Distribuera OS-avbildningar till distributions platser på samma sätt som andra innehåll. Innan du distribuerar aktivitetssekvensen distribuerar du operativ system avbildningen till minst en distributions plats. Mer information finns i avsnittet [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
 
@@ -102,7 +102,7 @@ Distribuera OS-avbildningar till distributions platser på samma sätt som andra
 [!INCLUDE [Apply software updates to an image](includes/wim-apply-updates.md)]
 
 
-## <a name="prepare-the-os-image-for-multicast-deployments"></a><a name="BKMK_OSImageMulticast"></a>Förbered OS-avbildningen för multicast-distributioner  
+## <a name="prepare-the-os-image-for-multicast-deployments"></a><a name="BKMK_OSImageMulticast"></a> Förbered OS-avbildningen för multicast-distributioner  
 
 Använd multicast-distributioner om du vill att mer än en dator ska kunna hämta en operativ system avbildning samtidigt. Avbildningen är multicast till klienter av distributions platsen, i stället för varje klient som laddar ned en kopia av avbildningen från distributions platsen via en separat anslutning. När du väljer distributions metoden för operativ systemet för att [använda multicast för att distribuera Windows via nätverket](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md)konfigurerar du operativ system avbildningen så att den stöder multicast. Distribuera sedan avbildningen till en multicast-aktiverad distributions plats.
 
@@ -122,4 +122,4 @@ Använd multicast-distributioner om du vill att mer än en dator ska kunna hämt
 
          Om du väljer **överför det här paketet endast via multicast**måste du också ange distributions alternativet för aktivitetssekvensen för att **Ladda ned innehåll lokalt när det behövs för aktivitetssekvensen som körs**. Mer information finns i [Distribuera en aktivitetssekvens](../deploy-use/deploy-a-task-sequence.md).  
 
-5. Välj **OK** för att spara inställningarna och Stäng avbildnings egenskaperna.  
+5. Välj **OK** för att spara inställningarna och Stäng avbildnings egenskaperna.

@@ -10,12 +10,12 @@ ms.assetid: 1c975c5e-efd1-4d47-a315-39ccb32633dc
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 00f07e20c24ea9bb7d06b18f300e0206696c5e20
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 4d5f0c9127cc5c5819368eb0454d7bc63546ccc1
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723455"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699508"
 ---
 # <a name="extend-and-migrate-on-premises-site-to-microsoft-azure"></a>Utöka och migrera lokal plats till Microsoft Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "81723455"
 
 Det här verktyget introducerades i version 1910 och hjälper dig att program mässigt skapa virtuella Azure-datorer (VM) för Configuration Manager. <!--3556022--> Den kan installeras med standardinställningar webbplats roller som en passiv plats Server, hanterings platser och distributions platser. När du har validerat de nya rollerna kan du använda dem som ytterligare plats system för hög tillgänglighet. Du kan också ta bort den lokala plats system rollen och bara behålla rollen för den virtuella Azure-datorn.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - En Azure-prenumeration
 
@@ -68,15 +68,15 @@ Microsoft. nyckel valv/valv/distribution/åtgärd <br>
 Microsoft. nyckel valv/valv/läsa <br>
 
 
-Mer information om behörigheter och tilldelning av roller finns i [Hantera åtkomst till Azure-resurser med RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
+Mer information om behörigheter och tilldelning av roller finns i [Hantera åtkomst till Azure-resurser med RBAC](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="run-the-tool"></a>Kör verktyget
 
-1. Logga in på den primära plats servern och kör följande verktyg i Configuration Manager installations katalog:`Cd.Latest\SMSSETUP\TOOLS\ExtendMigrateToAzure\ExtendMigrateToAzure.exe`
+1. Logga in på den primära plats servern och kör följande verktyg i Configuration Manager installations katalog: `Cd.Latest\SMSSETUP\TOOLS\ExtendMigrateToAzure\ExtendMigrateToAzure.exe`
 
 1. Granska informationen på fliken **Allmänt** och växla sedan till fliken **Azure-information** .
 
-1. På fliken **Azure information** väljer du din **Azure-miljö**och loggar sedan **in**.
+1. På fliken  **Azure information** väljer du din **Azure-miljö**och loggar sedan **in**.
 
     > [!TIP]
     > Du kan behöva lägga till `https://*.microsoft.com` i listan över betrodda webbplatser för att logga in korrekt.
@@ -93,27 +93,27 @@ Mer information om behörigheter och tilldelning av roller finns i [Hantera åtk
 
 2. Om du vill utöka eller migrera plats servern till Azure väljer du **skapa en plats server i Azure**. Fyll sedan i följande fält:
 
-    |Name|Beskrivning|
+    |Namn|Beskrivning|
     |---|---|
     |**Prenumeration**|Skrivskyddad. Visar prenumerationens namn och ID.|
     |**Resursgrupp**| Visar en lista över tillgängliga resurs grupper. Om du behöver skapa en ny resurs grupp använder du [Azure Portal](https://portal.azure.com)och kör sedan verktyget igen.|
-    |**Position**| Skrivskyddad. Bestäms av det virtuella nätverkets plats|
-    |**VM-storlek**|Välj en storlek som passar din arbets belastning. Microsoft rekommenderar **Standard_DS3_v2**.|
+    |**Plats**| Skrivskyddad. Bestäms av det virtuella nätverkets plats|
+    |**Storlek på virtuell dator**|Välj en storlek som passar din arbets belastning. Microsoft rekommenderar **Standard_DS3_v2**.|
     |**Operativsystem**|Skrivskyddad. Verktyget använder Windows Server 2019.|
     |**Disktyp**|Skrivskyddad. Verktyget använder Premium SSD för bästa prestanda.|
     |**Virtuellt nätverk**|Skrivskyddad.|
-    |**Delnät**|Välj det undernät som ska användas. Om du behöver skapa ett nytt undernät använder du [Azure Portal](https://portal.azure.com).|
+    |**Undernät**|Välj det undernät som ska användas. Om du behöver skapa ett nytt undernät använder du [Azure Portal](https://portal.azure.com).|
     |**Dator namn**|Ange namnet på den virtuella datorn för den passiva plats servern i Azure. Det är samma namn som visas i [Azure Portal](https://portal.azure.com).|
     |**Lokalt administratörs användar namn**|Ange namnet på den lokala administrativa användaren som den virtuella Azure-datorn skapar innan den ansluter till domänen.|
-    |**Lokalt administratörs lösen ord**|Lösen ordet för den lokala administrativa användaren. Skydda lösen ordet vid Azure-distribution genom att lagra lösen ordet som en hemlighet i [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview). Använd sedan referensen här. Om det behövs skapar du en ny från [Azure Portal](https://portal.azure.com).|
+    |**Lokalt administratörs lösen ord**|Lösen ordet för den lokala administrativa användaren. Skydda lösen ordet vid Azure-distribution genom att lagra lösen ordet som en hemlighet i [Azure Key Vault](/azure/key-vault/key-vault-overview). Använd sedan referensen här. Om det behövs skapar du en ny från [Azure Portal](https://portal.azure.com).|
     |**Domän-FQDN**|Det fullständigt kvalificerade domän namnet för den Active Directory domänen som ska anslutas. Som standard hämtar verktyget det här värdet från den aktuella datorn.|
     |**Domän användar namn**|Namnet på den domän användare som har behörighet att ansluta till domänen. Som standard använder verktyget namnet på den för tillfället inloggade användaren.|
-    |**Domän lösen ord**|Lösen ordet för domän användaren att ansluta till domänen. Verktyget verifierar det när du har valt **Starta**. Skydda lösen ordet vid Azure-distribution genom att lagra lösen ordet som en hemlighet i [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview). Använd sedan referensen här. Om det behövs skapar du en ny från [Azure Portal](https://portal.azure.com).|
+    |**Domän lösen ord**|Lösen ordet för domän användaren att ansluta till domänen. Verktyget verifierar det när du har valt **Starta**. Skydda lösen ordet vid Azure-distribution genom att lagra lösen ordet som en hemlighet i [Azure Key Vault](/azure/key-vault/key-vault-overview). Använd sedan referensen här. Om det behövs skapar du en ny från [Azure Portal](https://portal.azure.com).|
     |**Domänens DNS-IP**|Används för att ansluta till domänen. Som standard använder verktyget den aktuella DNS-servern från den aktuella datorn.|
     |**Typ**|Skrivskyddad. Den visar *passiv plats Server* som typ.|
 
     > [!IMPORTANT]
-    > Som standard är de virtuella datorerna inställda på **Nej** för **Använd befintlig Windows Server-licens**. Om du vill använda dina lokala Windows Server-licenser med Software Assurance konfigurerar du den här inställningen i [Azure Portal](https://portal.azure.com) när de virtuella datorerna har tillhandahållits. Mer information finns i [Azure Hybrid-förmån för Windows Server](https://docs.microsoft.com/windows-server/get-started/azure-hybrid-benefit).
+    > Som standard är de virtuella datorerna inställda på **Nej** för **Använd befintlig Windows Server-licens**. Om du vill använda dina lokala Windows Server-licenser med Software Assurance konfigurerar du den här inställningen i [Azure Portal](https://portal.azure.com) när de virtuella datorerna har tillhandahållits. Mer information finns i [Azure Hybrid-förmån för Windows Server](/windows-server/get-started/azure-hybrid-benefit).
 
 1. Starta etableringen av den virtuella Azure-datorn genom att välja **Start**. Om du vill övervaka distributions statusen växlar du till fliken **distributioner i Azure** i verktyget. Om du vill hämta den senaste statusen väljer du **Uppdatera distributions status**.
 
@@ -157,7 +157,7 @@ Verktyget har för närvarande inga aktiviteter för att migrera databasen från
 
 1. När distributionen är klar går du till Configuration Manager-konsolen för att göra ytterligare ändringar i plats rollen.
 
-## <a name="deployments-in-azure"></a><a name="bkmk_deploy-azure"></a>Distributioner i Azure
+## <a name="deployments-in-azure"></a><a name="bkmk_deploy-azure"></a> Distributioner i Azure
 
 1. När Azure har skapat den virtuella datorn växlar du till fliken **distributioner på Azure** i verktyget. Välj **distribuera** om du vill konfigurera rollen med standardinställningarna.
 
@@ -167,7 +167,7 @@ Verktyget har för närvarande inga aktiviteter för att migrera databasen från
 
 1. Upprepa den här processen om du vill konfigurera fler roller.
 
-## <a name="add-site-roles-to-an-existing-virtual-machine-deployment"></a><a name="bkmk_add_role"></a>Lägg till plats roller i en befintlig distribution av virtuell dator
+## <a name="add-site-roles-to-an-existing-virtual-machine-deployment"></a><a name="bkmk_add_role"></a> Lägg till plats roller i en befintlig distribution av virtuell dator
 <!--5665775, 6307931-->
 Från och med Configuration Manager version 2002 har verktyget utöka och migrera lokal plats till Microsoft Azure stöd för etablering av flera plats system roller på en enda virtuell Azure-dator. Du kan lägga till plats system roller när den första distributionen av virtuella Azure-datorer har slutförts. Gör så här om du vill lägga till en ny roll till en befintlig virtuell dator:
 1. På fliken **distributioner på Azure** klickar du på en distribution av virtuell dator som har statusen **slutförd** .

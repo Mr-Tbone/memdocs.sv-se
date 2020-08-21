@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6fa5ebf25de0f695661b18c4379c080dad42cf08
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 0cdb14d282cbfa93655d6678b12b5f0837a225aa
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128502"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699287"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Planera för säkerhet i Configuration Manager
 
@@ -45,7 +45,7 @@ I den här artikeln beskrivs de koncept som du bör tänka på när du planerar 
 
 
 
-##  <a name="plan-for-certificates-self-signed-and-pki"></a><a name="BKMK_PlanningForCertificates"></a>Planera för certifikat (självsignerade och PKI)  
+##  <a name="plan-for-certificates-self-signed-and-pki"></a><a name="BKMK_PlanningForCertificates"></a> Planera för certifikat (självsignerade och PKI)  
 
 Configuration Manager använder en kombination av självsignerade certifikat och PKI-certifikat (Public Key Infrastructure).  
 
@@ -58,24 +58,24 @@ När du använder en PKI kan du också använda IPsec för att skydda server-til
 När PKI-certifikat inte är tillgängliga genererar Configuration Manager automatiskt självsignerade certifikat. Vissa certifikat i Configuration Manager är alltid självsignerade. I de flesta fall hanterar Configuration Manager automatiskt de självsignerade certifikaten och du behöver inte vidta ytterligare åtgärder. Ett exempel är signerings certifikatet för plats servern. Det här certifikatet är alltid egensignerat. Det säkerställer att principerna som klienterna laddar ned från hanterings platsen skickades från plats servern och inte har manipulerats.  
 
 
-### <a name="cryptography-next-generation-cng-certificates"></a><a name="bkmk_plan-cng"></a>Kryptografi: CNG-certifikat (Next Generation)  
+### <a name="cryptography-next-generation-cng-certificates"></a><a name="bkmk_plan-cng"></a> Kryptografi: CNG-certifikat (Next Generation)  
 
 Configuration Manager stöder kryptografi: CNG-certifikat (Next Generation). Configuration Manager klienter kan använda certifikat för PKI-klientautentisering med privat nyckel i CNG Key Storage Provider (KSP). Med KSP-stöd har Configuration Manager-klienter stöd för maskinvarubaserad privat nyckel, t. ex. TPM-KSP för certifikat för PKI-klientautentisering. Mer information finns i [Översikt över CNG-certifikat](../network/cng-certificates-overview.md).
 
 
-### <a name="enhanced-http"></a><a name="bkmk_plan-ehttp"></a>Förbättrad HTTP  
+### <a name="enhanced-http"></a><a name="bkmk_plan-ehttp"></a> Förbättrad HTTP  
 
 Att använda HTTPS-kommunikation rekommenderas för alla Configuration Manager kommunikations vägar, men är utmanande för vissa kunder på grund av omkostnader för hantering av PKI-certifikat. Införandet av Azure Active Directory (Azure AD)-integration minskar vissa, men inte alla certifikat krav. Från och med version 1806 kan du aktivera platsen för att använda **utökad http**. Den här konfigurationen har stöd för HTTPS på plats system med hjälp av en kombination av självsignerade certifikat och Azure AD. Det kräver inte PKI. Mer information finns i [Enhanced http](../hierarchy/enhanced-http.md).  
 
 
-### <a name="certificates-for-cmg-and-cdp"></a><a name="bkmk_plan-cmgcdp"></a>Certifikat för CMG och CDP
+### <a name="certificates-for-cmg-and-cdp"></a><a name="bkmk_plan-cmgcdp"></a> Certifikat för CMG och CDP
 
 Att hantera klienter på Internet via Cloud Management Gateway (CMG) och Cloud distribution Point (CDP) kräver att certifikat används. Antalet och typen av certifikat varierar beroende på dina speciella scenarier. Mer information finns i följande artiklar:
 - [Certifikat för Cloud Management Gateway](../../clients/manage/cmg/certificates-for-cloud-management-gateway.md)  
 - [Certifikat för moln distributions platsen](../hierarchy/use-a-cloud-based-distribution-point.md#bkmk_certs)  
 
 
-### <a name="plan-for-the-site-server-signing-certificate-self-signed"></a><a name="bkmk_plansitesign"></a>Planera för plats serverns signerings certifikat (självsignerat)  
+### <a name="plan-for-the-site-server-signing-certificate-self-signed"></a><a name="bkmk_plansitesign"></a> Planera för plats serverns signerings certifikat (självsignerat)  
 
 Klienter kan få en kopia av plats serverns signerings certifikat på ett säkert sätt från Active Directory Domain Services och från push-installation av klienter. Om klienterna inte kan hämta en kopia av det här certifikatet med någon av dessa metoder installerar du det när du installerar-klienten. Den här processen är särskilt viktig om klientens första kommunikation med platsen är baserad på en Internetbaserad hanterings plats. Eftersom den här servern är ansluten till ett ej betrott nätverk är det mer sårbart för angrepp. Om du inte gör detta ytterligare steg, laddar klienterna automatiskt ned en kopia av plats serverns signerings certifikat från hanterings platsen.  
 
@@ -97,10 +97,10 @@ Klienterna kan inte säkert få en kopia av plats Server certifikatet i följand
 
 2.  Exportera certifikatet utan den privata nyckeln, lagra filen på ett säkert sätt och få åtkomst till den från en säker kanal.  
 
-3.  Installera klienten med hjälp av följande client.msi-egenskap:`SMSSIGNCERT=<full path and file name>`  
+3.  Installera klienten med hjälp av följande client.msi-egenskap: `SMSSIGNCERT=<full path and file name>`  
 
 
-###  <a name="plan-for-pki-certificate-revocation"></a><a name="BKMK_PlanningForCRLs"></a>Planera för åter kallelse av PKI-certifikat  
+###  <a name="plan-for-pki-certificate-revocation"></a><a name="BKMK_PlanningForCRLs"></a> Planera för åter kallelse av PKI-certifikat  
 
 När du använder PKI-certifikat med Configuration Manager planera du för användning av en lista över återkallade certifikat (CRL). Enheter använder CRL: en för att verifiera certifikatet på den anslutande datorn. CRL är en fil som en certifikat utfärdare (CA) skapar och signerar. Den innehåller en lista över certifikat som certifikat utfärdaren har utfärdat men som har återkallats. När en certifikat administratör återkallar certifikat läggs dess tumavtryck till i listan över återkallade certifikat. Om ett utfärdat certifikat till exempel är känt eller misstänks vara komprometterat.
 
@@ -123,7 +123,7 @@ Kontakta PKI-administratörerna innan du bestämmer om Configuration Manager kli
   - Risken för att klienterna inte kan ansluta till servrar om det inte går att hitta listan  
 
 
-###  <a name="plan-for-the-pki-trusted-root-certificates-and-the-certificate-issuers-list"></a><a name="BKMK_PlanningForRootCAs"></a>Planera för betrodda PKI-rotcertifikat och listan certifikat utfärdare  
+###  <a name="plan-for-the-pki-trusted-root-certificates-and-the-certificate-issuers-list"></a><a name="BKMK_PlanningForRootCAs"></a> Planera för betrodda PKI-rotcertifikat och listan certifikat utfärdare  
 
 Om dina IIS-platssystem använder PKI-klientcertifikat för klientautentisering över HTTP, eller för klientautentisering och kryptering över HTTPS, kan du behöva importera certifikat från rot certifikat utfärdaren som en plats egenskap. Här är de två scenarierna:  
 
@@ -145,7 +145,7 @@ De här importerade rot certifikat utfärdarens certifikat och rot certifikat UT
 - När klienter väljer ett PKI-certifikat och har en lista med certifikat utfärdare, väljer de ett certifikat som är kopplat till ett betrott rot certifikat i listan med certifikat utfärdare. Om det inte finns någon matchning väljer klienten inget PKI-certifikat. Mer information finns i [Planera för val av PKI-klientcertifikat](#BKMK_PlanningForClientCertificateSelection).  
 
 
-###  <a name="plan-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a>Planera för val av PKI-klientcertifikat  
+###  <a name="plan-for-pki-client-certificate-selection"></a><a name="BKMK_PlanningForClientCertificateSelection"></a> Planera för val av PKI-klientcertifikat  
 
 Om dina IIS-platssystem använder PKI-klientcertifikat för klientautentisering över HTTP eller för klientautentisering och kryptering över HTTPS, bör du planera för hur Windows-klienter väljer det certifikat som ska användas för Configuration Manager.  
 
@@ -207,7 +207,7 @@ I följande tabell visas de attributvärden som Configuration Manager stöder f�
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Rubrik|  
+|2.5.4.12|T eller Title|Title|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
 |2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare| 
@@ -226,7 +226,7 @@ För att hjälpa till att identifiera ett unikt PKI-klientcertifikat kan du ocks
 Mer information finns i [Konfigurera inställningar för klient-PKI-certifikat](configure-security.md#BKMK_ConfigureClientPKI).  
 
 
-###  <a name="plan-a-transition-strategy-for-pki-certificates-and-internet-based-client-management"></a><a name="BKMK_PlanningForPKITransition"></a>Planera en över gångs strategi för PKI-certifikat och Internetbaserad klient hantering  
+###  <a name="plan-a-transition-strategy-for-pki-certificates-and-internet-based-client-management"></a><a name="BKMK_PlanningForPKITransition"></a> Planera en över gångs strategi för PKI-certifikat och Internetbaserad klient hantering  
 
 Med de flexibla konfigurations alternativen i Configuration Manager kan du gradvis överföra klienter och platsen till att använda PKI-certifikat för att skydda klient slut punkter. PKI-certifikat ger bättre säkerhet och gör att du kan hantera Internet-klienter.  
 
@@ -278,7 +278,7 @@ På grund av antalet konfigurations alternativ och alternativ i Configuration Ma
 
     Den här planen introducerar först PKI-certifikat för autentisering över HTTP och sedan för autentisering och kryptering över HTTPS. När du följer den här planen för att gradvis införa dessa certifikat minskar risken för att klienterna blir ohanterade. Du kan också dra nytta av den högsta säkerhet som Configuration Manager stöder.  
 
-##  <a name="plan-for-the-trusted-root-key"></a><a name="BKMK_PlanningForRTK"></a>Planera för den betrodda rot nyckeln  
+##  <a name="plan-for-the-trusted-root-key"></a><a name="BKMK_PlanningForRTK"></a> Planera för den betrodda rot nyckeln  
 
 Den Configuration Manager betrodda rot nyckeln ger en mekanism för Configuration Manager klienter för att kontrol lera att plats system tillhör deras hierarki. Varje platsserver genererar en platsutbytesnyckel för kommunikation med andra platser. Platsutbytesnyckeln på den översta platsen i hierarkin kallas den betrodda rotnyckeln.  
 
@@ -310,9 +310,9 @@ Använd följande procedurer för att företablera och kontrol lera den betrodda
   > När klienter använder HTTPS-kommunikation till hanterings platser behöver du inte Företablera den betrodda rot nyckeln. De upprättar förtroende av PKI-certifikaten.  
 
 
-### <a name="pre-provision-a-client-with-the-trusted-root-key-by-using-a-file"></a><a name="bkmk_trk-provision-file"></a>Företablera en klient med den betrodda rot nyckeln med hjälp av en fil  
+### <a name="pre-provision-a-client-with-the-trusted-root-key-by-using-a-file"></a><a name="bkmk_trk-provision-file"></a> Företablera en klient med den betrodda rot nyckeln med hjälp av en fil  
 
-1.  Öppna följande fil på plats servern i en text redigerare:`<Configuration Manager install directory>\bin\mobileclient.tcf`  
+1.  Öppna följande fil på plats servern i en text redigerare: `<Configuration Manager install directory>\bin\mobileclient.tcf`  
 
 2.  Leta upp posten **SMSPublicRootKey =**. Kopiera nyckeln från den raden och Stäng filen utan några ändringar.  
 
@@ -320,25 +320,25 @@ Använd följande procedurer för att företablera och kontrol lera den betrodda
 
 4.  Spara filen på en plats där alla datorer har åtkomst till den, men var filen är säker mot manipulering.  
 
-5.  Installera klienten med hjälp av en installations metod som godkänner client.msi egenskaper. Ange följande egenskap:`SMSROOTKEYPATH=<full path and file name>`  
+5.  Installera klienten med hjälp av en installations metod som godkänner client.msi egenskaper. Ange följande egenskap: `SMSROOTKEYPATH=<full path and file name>`  
 
     > [!IMPORTANT]  
-    > När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client.msi egenskap:`SMSSITECODE=<site code>`   
+    > När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client.msi egenskap: `SMSSITECODE=<site code>`   
 
 
-### <a name="pre-provision-a-client-with-the-trusted-root-key-without-using-a-file"></a><a name="bkmk_trk-provision-nofile"></a>Företablera en klient med den betrodda rot nyckeln utan att använda en fil  
+### <a name="pre-provision-a-client-with-the-trusted-root-key-without-using-a-file"></a><a name="bkmk_trk-provision-nofile"></a> Företablera en klient med den betrodda rot nyckeln utan att använda en fil  
 
-1.  Öppna följande fil på plats servern i en text redigerare:`<Configuration Manager install directory>\bin\mobileclient.tcf`  
+1.  Öppna följande fil på plats servern i en text redigerare: `<Configuration Manager install directory>\bin\mobileclient.tcf`  
 
 2.  Leta upp posten **SMSPublicRootKey =**. Kopiera nyckeln från den raden och Stäng filen utan några ändringar.  
 
 3.  Installera klienten med hjälp av en installations metod som godkänner client.msi egenskaper. Ange följande client.msi egenskap: `SMSPublicRootKey=<key>` där `<key>` är strängen som du kopierade från filen mobileclient. TCF.  
 
     > [!IMPORTANT]  
-    >  När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client.msi egenskap:`SMSSITECODE=<site code>`   
+    >  När du anger den betrodda rot nyckeln under klient installationen anger du även plats koden. Använd följande client.msi egenskap: `SMSSITECODE=<site code>`   
 
 
-### <a name="verify-the-trusted-root-key-on-a-client"></a><a name="bkmk_trk-verify"></a>Verifiera den betrodda rot nyckeln på en klient  
+### <a name="verify-the-trusted-root-key-on-a-client"></a><a name="bkmk_trk-verify"></a> Verifiera den betrodda rot nyckeln på en klient  
 
 1. Öppna en Windows PowerShell-konsol som administratör.  
 
@@ -351,7 +351,7 @@ Använd följande procedurer för att företablera och kontrol lera den betrodda
 Den returnerade strängen är den betrodda rot nyckeln. Kontrol lera att den matchar **SMSPublicRootKey** -värdet i filen filen mobileclient. TCF på plats servern.  
 
 
-### <a name="remove-or-replace-the-trusted-root-key"></a><a name="bkmk_trk-reset"></a>Ta bort eller Ersätt den betrodda rot nyckeln  
+### <a name="remove-or-replace-the-trusted-root-key"></a><a name="bkmk_trk-reset"></a> Ta bort eller Ersätt den betrodda rot nyckeln  
 
 Ta bort den betrodda rot nyckeln från en klient med hjälp av egenskapen client.msi **RESETKEYINFORMATION = True**. 
 
@@ -361,7 +361,7 @@ Mer information om dessa installations egenskaper finns i [om klient installatio
 
 
 
-##  <a name="plan-for-signing-and-encryption"></a><a name="BKMK_PlanningForSigningEncryption"></a>Planera för signering och kryptering  
+##  <a name="plan-for-signing-and-encryption"></a><a name="BKMK_PlanningForSigningEncryption"></a> Planera för signering och kryptering  
  
 När du använder PKI-certifikat för all klient kommunikation behöver du inte planera för signering och kryptering för att skydda kommunikationen mellan klienterna. Om du konfigurerar ett plats system som kör IIS för att tillåta HTTP-klientanslutningar, bestämmer du hur du ska skydda klient kommunikationen för platsen.  
 
@@ -373,17 +373,17 @@ Mer information om hur du konfigurerar inställningarna för signering och krypt
 
 
 
-##  <a name="plan-for-role-based-administration"></a><a name="BKMK_PlanningForRBA"></a>Planera för rollbaserad administration  
+##  <a name="plan-for-role-based-administration"></a><a name="BKMK_PlanningForRBA"></a> Planera för rollbaserad administration  
 
 Mer information finns i [grunderna i rollbaserad administration](../../understand/fundamentals-of-role-based-administration.md).  
 
 
 
-## <a name="plan-for-azure-active-directory"></a><a name="bkmk_planazuread"></a>Planera för Azure Active Directory
+## <a name="plan-for-azure-active-directory"></a><a name="bkmk_planazuread"></a> Planera för Azure Active Directory
 
 Configuration Manager integreras med Azure Active Directory (Azure AD) för att låta platsen och klienterna använda modern autentisering. Att publicera din webbplats med Azure AD har stöd för följande Configuration Manager scenarier:
 
-**Klient**  
+**Client**  
 
 - [Hantera klienter på Internet via Cloud Management Gateway](../../clients/manage/cmg/plan-cloud-management-gateway.md#scenarios)  
 
@@ -404,7 +404,7 @@ Configuration Manager integreras med Azure Active Directory (Azure AD) för att 
 
 - [Desktop Analytics](../../../desktop-analytics/overview.md)  
 
-- [Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm)  
+- [Azure Log Analytics](/azure/azure-monitor/platform/collect-sccm)  
 
 - [Community-hubb](../../get-started/capabilities-in-technical-preview-1807.md#bkmk_hub)  
 
@@ -416,11 +416,11 @@ Configuration Manager integreras med Azure Active Directory (Azure AD) för att 
 Mer information om hur du ansluter din webbplats till Azure AD finns i [Konfigurera Azure-tjänster](../../servers/deploy/configure/azure-services-wizard.md).
 
 
-Mer information om Azure AD finns i [Azure Active Directory-dokumentationen](https://docs.microsoft.com/azure/active-directory/).
+Mer information om Azure AD finns i [Azure Active Directory-dokumentationen](/azure/active-directory/).
 
 
 
-## <a name="plan-for-sms-provider-authentication"></a><a name="bkmk_auth"></a>Planera för autentisering av SMS-provider
+## <a name="plan-for-sms-provider-authentication"></a><a name="bkmk_auth"></a> Planera för autentisering av SMS-provider
 <!--1357013--> 
 
 Från och med version 1810 kan du ange den lägsta autentiseringsnivån som administratörer kan använda för att komma åt Configuration Manager-platser. Den här funktionen tvingar administratörer att logga in på Windows med den nivå som krävs. Den gäller för alla komponenter som har åtkomst till SMS-providern. Till exempel Configuration Manager-konsolen, SDK-metoder och Windows PowerShell-cmdletar. 
@@ -448,5 +448,4 @@ Mer information finns i [Planera för SMS-providern](../hierarchy/plan-for-the-s
 
 - [Teknisk referens för kryptografiska kontroller](cryptographic-controls-technical-reference.md)  
 
-- [Certifikatkrav för PKI](../network/pki-certificate-requirements.md)  
-
+- [Certifikatkrav för PKI](../network/pki-certificate-requirements.md)

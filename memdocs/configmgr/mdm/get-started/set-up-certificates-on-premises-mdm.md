@@ -10,12 +10,12 @@ ms.assetid: 2a7d7170-1933-40e9-96d6-74a6eb7278e2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bc63a21970bb522407c86d027690b83894b3cb99
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: 4ac8d416e05b97b824ae236c2b1a2ff958b946b5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721831"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700035"
 ---
 # <a name="set-up-certificates-for-trusted-communications-with-on-premises-mdm"></a>Konfigurera certifikat för betrodd kommunikation med lokal MDM
 
@@ -34,9 +34,9 @@ För Mass registrering av enheter kan du inkludera certifikatet i registrerings 
 Om du använder en välkänd offentlig certifikat utfärdare som VeriSign eller GoDaddy för att utfärda Server certifikat, kan du undvika att behöva installera det betrodda rot certifikatet manuellt på varje enhet. De flesta enheter litar internt på dessa offentliga myndigheter. Den här metoden är ett användbart alternativ för användar registrerade enheter, i stället för att installera certifikatet på annat sätt.
 
 > [!IMPORTANT]  
-> Det finns många sätt att ställa in certifikat för betrodd kommunikation mellan enheter och plats system servrar för lokal MDM. Informationen i den här artikeln är ett exempel på ett sätt att göra det. Den här metoden kräver Active Directory certifikat tjänster, med en certifikat utfärdare och webb registrerings rollen för certifikat utfärdare. Mer information finns i [Active Directory Certificate Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740\(v=ws.11\)).
+> Det finns många sätt att ställa in certifikat för betrodd kommunikation mellan enheter och plats system servrar för lokal MDM. Informationen i den här artikeln är ett exempel på ett sätt att göra det. Den här metoden kräver Active Directory certifikat tjänster, med en certifikat utfärdare och webb registrerings rollen för certifikat utfärdare. Mer information finns i [Active Directory Certificate Services](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740\(v=ws.11\)).
 
-## <a name="publish-the-crl"></a><a name="bkmk_configCa"></a>Publicera CRL
+## <a name="publish-the-crl"></a><a name="bkmk_configCa"></a> Publicera CRL
 
 Som standard använder Active Directory certifikat utfärdare (CA) LDAP-baserade listor över återkallade certifikat (CRL). Den tillåter anslutningar till listan över återkallade certifikat för domänanslutna enheter. Lägg till en HTTP-baserad CRL om du vill att icke-domänanslutna enheter ska kunna lita på certifikat som utfärdats från certifikat utfärdaren.
 
@@ -60,7 +60,7 @@ Som standard använder Active Directory certifikat utfärdare (CA) LDAP-baserade
 
 1. I fönstret publicera CRL väljer du **endast delta-CRL**och väljer sedan **OK** för att stänga fönstret.
 
-## <a name="create-the-certificate-template"></a><a name="bkmk_certTempl"></a>Skapa certifikat mal len
+## <a name="create-the-certificate-template"></a><a name="bkmk_certTempl"></a> Skapa certifikat mal len
 
 CA: n använder webb server certifikat mal len för att utfärda certifikat för de servrar som är värdar för plats system rollerna. Dessa servrar kommer att vara SSL-slutpunkter för betrodd kommunikation mellan plats system rollerna och registrerade enheter.
 
@@ -85,7 +85,7 @@ CA: n använder webb server certifikat mal len för att utfärda certifikat för
 
     1. Ta bort behörigheten **Registrera** från säkerhets grupperna **domän administratörer** och **företags administratörer** .
 
-    1. Välj **Lägg till**och ange namnet på din säkerhets grupp. Till exempel **CONFIGMGR MDM-servrar**. Välj **OK** för att stänga fönstret.
+    1. Välj **Lägg till**och ange namnet på din säkerhets grupp. Till exempel **CONFIGMGR MDM-servrar**. Välj **OK**, så stängs fönstret.
 
     1. Välj behörigheten **Registrera** för den här gruppen. Ta inte bort behörigheten **läsa** .
 
@@ -95,7 +95,7 @@ CA: n använder webb server certifikat mal len för att utfärda certifikat för
 
 1. I fönstret **Aktivera certifikatmallar** väljer du den nya mallen. Till exempel **webb server för CONFIGMGR MDM**. Välj **OK** för att spara och stänga fönstret.
 
-## <a name="request-the-certificate"></a><a name="bkmk_requestCert"></a>Begär certifikatet
+## <a name="request-the-certificate"></a><a name="bkmk_requestCert"></a> Begär certifikatet
 
 I den här processen beskrivs hur du begär webb Server certifikatet för IIS. Gör den här processen för varje plats system server som är värd för en av rollerna för lokal MDM.
 
@@ -121,7 +121,7 @@ I den här processen beskrivs hur du begär webb Server certifikatet för IIS. G
 
 Varje server behöver ett unikt webb server certifikat. Upprepa den här processen för varje server som är värd för en av de nödvändiga plats system rollerna. Om en server är värd för alla platssystemroller behöver du bara begära ett webbservercertifikat.
 
-## <a name="bind-the-certificate"></a><a name="bkmk_bindCert"></a>Bind certifikatet
+## <a name="bind-the-certificate"></a><a name="bkmk_bindCert"></a> Bind certifikatet
 
 Nästa steg är att binda det nya certifikatet till webb servern. Följ den här processen för varje server som är värd för *registrerings platsen* och plats system roller för *proxyservern* . Om en server är värd för alla plats system roller behöver du bara utföra den här processen en gång.
 
@@ -138,7 +138,7 @@ Nästa steg är att binda det nya certifikatet till webb servern. Följ den här
 
 1. I konsolen IIS-hanteraren, i listan över anslutningar, väljer du webb servern. I Åtgärds panelen på höger sida väljer du **starta om**. Den här åtgärden startar om webb Server tjänsten.
 
-## <a name="export-the-trusted-root-certificate"></a><a name="bkmk_exportCert"></a>Exportera det betrodda rot certifikatet
+## <a name="export-the-trusted-root-certificate"></a><a name="bkmk_exportCert"></a> Exportera det betrodda rot certifikatet
 
 Active Directory Certificate Services installerar automatiskt det begärda certifikatet från certifikat utfärdaren på alla domänanslutna enheter. Om du vill hämta det certifikat som krävs för icke-domänanslutna enheter för att kommunicera med plats system rollerna kan du exportera det från certifikatet som är kopplat till webb servern.
 

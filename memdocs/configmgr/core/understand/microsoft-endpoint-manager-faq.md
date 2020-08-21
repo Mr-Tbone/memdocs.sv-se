@@ -10,12 +10,12 @@ ms.assetid: be276b34-e283-4386-8b45-5629e431c50d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 63f6c7321301e5705c4188012ba53b50f4c37b57
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: e0b59ffa73bb2c7524f2eed29326f238d856adef
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906038"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699321"
 ---
 # <a name="microsoft-endpoint-configuration-manager-faq"></a>Vanliga frågor och svar om Microsoft Endpoint Configuration Manager
 
@@ -37,10 +37,10 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Följande Microsoft-hanterings lösningar är nu en del av **Microsoft Endpoint Manager** -varumärket:
 
-- [Configuration Manager](https://docs.microsoft.com/configmgr)
-- [Intune](https://docs.microsoft.com/intune)
+- [Configuration Manager](/configmgr)
+- [Intune](/intune)
 - [Desktop Analytics](../../desktop-analytics/overview.md)
-- [Autopilot](https://docs.microsoft.com/intune/enrollment/enrollment-autopilot)
+- [Autopilot](/intune/enrollment/enrollment-autopilot)
 - Andra funktioner i [administrations konsolen för enhets hantering](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/microsoft-intune-rolls-out-an-improved-streamlined-endpoint/ba-p/937760)
 
 Mer information finns i följande inlägg från Bengt Anderson, Microsoft corporate vice president för Microsoft 365:
@@ -65,7 +65,7 @@ I de flesta fall har mappen Start-menyns mappnamn ändrats för vanliga komponen
 
 ### <a name="are-there-any-licensing-changes"></a>Finns det några licens ändringar?
 
-Ja! Som lanseras på Microsoft antändning 2019, om du är licensierad för Configuration Manager, licensieras du nu även för Intune för att [Hantera](../../comanage/overview.md) dina Windows-datorer. Mer information finns i [vanliga frågor och svar om produkt och licensiering](product-and-licensing-faq.md#bkmk_mem).
+Javisst! Som lanseras på Microsoft antändning 2019, om du är licensierad för Configuration Manager, licensieras du nu även för Intune för att [Hantera](../../comanage/overview.md) dina Windows-datorer. Mer information finns i [vanliga frågor och svar om produkt och licensiering](product-and-licensing-faq.md#bkmk_mem).
 
 ### <a name="why-do-i-still-see-system-center-configuration-manager-some-places"></a>Varför ser jag fortfarande "System Center Configuration Manager" några platser?
 

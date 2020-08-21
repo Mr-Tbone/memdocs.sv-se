@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 87056482f098a440e5950b76520ab410844a1888
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: aaba31a8a017f75338cf4d6dee3c2f2d80d7e377
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129009"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698528"
 ---
 # <a name="whats-new-in-version-1802-of-configuration-manager"></a>Vad är nytt i version 1802 av Configuration Manager
 
@@ -267,7 +267,7 @@ Nu finns det en ny rapport för att visa antalet klienter med en speciell webbl�
 
 ### <a name="report-on-windows-autopilot-device-information"></a>Rapport om Windows autopilot-enhets information
 <!-- 1351442 -->
-Windows autopilot är en lösning för att onboarding och konfigurera nya Windows 10-enheter på ett modernt sätt. Mer information finns i [Översikt över Windows autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). En metod för att registrera befintliga enheter med Windows autopilot är att överföra enhets information till Microsoft Store för företag och utbildning. Den här informationen omfattar enhetens serie nummer, Windows produkt identifierare och en maskin varu identifierare. Använd Configuration Manager för att samla in och rapportera denna enhets information med den nya rapporten, **enhets information för Windows autopilot**, i noden **maskin vara – allmänt** rapporter. Mer information finns i [så här förbereder du Internet-baserade enheter för samhantering](../../../comanage/how-to-prepare-Win10.md#windows-autopilot) i förbereda för samhantering.
+Windows autopilot är en lösning för att onboarding och konfigurera nya Windows 10-enheter på ett modernt sätt. Mer information finns i [Översikt över Windows autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot). En metod för att registrera befintliga enheter med Windows autopilot är att överföra enhets information till Microsoft Store för företag och utbildning. Den här informationen omfattar enhetens serie nummer, Windows produkt identifierare och en maskin varu identifierare. Använd Configuration Manager för att samla in och rapportera denna enhets information med den nya rapporten, **enhets information för Windows autopilot**, i noden **maskin vara – allmänt** rapporter. Mer information finns i [så här förbereder du Internet-baserade enheter för samhantering](../../../comanage/how-to-prepare-Win10.md#windows-autopilot) i förbereda för samhantering.
 
 ### <a name="report-on-windows-10-servicing-details-for-a-specific-collection"></a>Rapportera om service uppgifter för Windows 10 för en speciell samling
 <!--1357653-->
@@ -287,7 +287,7 @@ Windows autopilot är en lösning för att onboarding och konfigurera nya Window
 
 ### <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Förbättringar av Configuration Manager principer för Windows Defender sårbarhet Guard
 <!-- 1356220 -->
-Ytterligare princip inställningar för komponenten för [minskning av attack ytan](../../../protect/deploy-use/create-deploy-exploit-guard-policy.md#bkmk_ASR) och [reglerad mappåtkomst](../../../protect/deploy-use/create-deploy-exploit-guard-policy.md#bkmk_CFA) har lagts till i Configuration Manager för [Windows Defender sårbarhet Guard](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-attack-surface-reduction).
+Ytterligare princip inställningar för komponenten för [minskning av attack ytan](../../../protect/deploy-use/create-deploy-exploit-guard-policy.md#bkmk_ASR) och [reglerad mappåtkomst](../../../protect/deploy-use/create-deploy-exploit-guard-policy.md#bkmk_CFA) har lagts till i Configuration Manager för [Windows Defender sårbarhet Guard](/windows/security/threat-protection/microsoft-defender-atp/configure-attack-surface-reduction).
 
 ### <a name="new-host-interaction-settings-for-windows-defender-application-guard"></a>Nya interaktions inställningar för värd för Windows Defender Application Guard
 <!-- 1356256 -->
@@ -309,5 +309,5 @@ I den här versionen ingår följande förbättringar i Configuration Manager-ko
 
 
 
-## <a name="next-steps"></a>Efterföljande moment
+## <a name="next-steps"></a>Nästa steg
 När du är redo att installera den här versionen, se [uppdateringar för Configuration Manager](../../servers/manage/updates.md).

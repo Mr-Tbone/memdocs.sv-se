@@ -10,12 +10,12 @@ ms.assetid: 61f5c774-7667-44ae-b8e4-a4951318b183
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 102d07f29b9addd1f2c37dd741db09e972cd5802
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 30b57de75e637aa083070832783647b8ad35b4a7
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718842"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700539"
 ---
 # <a name="install-site-system-roles-for-configuration-manager"></a>Installera plats system roller för Configuration Manager
 
@@ -38,7 +38,7 @@ När Configuration Manager installerar en plats system roll installeras som stan
 
 Configuration Manager använder **kontot för installation av plats system** för att installera roller. Du anger det här kontot när du installerar rollen. Som standard är det här kontot det lokala system kontot för plats serverdatorn. Du kan ange ett domän användar konto som konto för installation av plats system. Mer information finns i [konton-plats system installations konto](../../../plan-design/hierarchy/accounts.md#site-system-installation-account).
 
-## <a name="install-roles-on-an-existing-site-system-server"></a><a name="bkmk_addrole"></a>Installera roller på en befintlig plats system Server
+## <a name="install-roles-on-an-existing-site-system-server"></a><a name="bkmk_addrole"></a> Installera roller på en befintlig plats system Server
 
 1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen. Expandera **plats konfiguration**och välj noden **servrar och plats system roller** . Välj den befintliga plats system server där du vill installera nya plats system roller.
 
@@ -56,9 +56,9 @@ Configuration Manager använder **kontot för installation av plats system** fö
 1. Slutför guiden. Ytterligare sidor kan visas för vissa roller. Mer information finns i [konfigurations alternativ för plats system roller](configuration-options-for-site-system-roles.md).
 
 > [!TIP]
-> Windows PowerShell-cmdleten **New-CMSiteSystemServer**utför samma funktion som den här proceduren. Mer information finns i [New-CMSiteSystemServer](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmsitesystemserver?view=sccm-ps).
+> Windows PowerShell-cmdleten **New-CMSiteSystemServer**utför samma funktion som den här proceduren. Mer information finns i [New-CMSiteSystemServer](/powershell/module/configurationmanager/new-cmsitesystemserver?view=sccm-ps).
 
-## <a name="install-roles-on-a-new-site-system-server"></a><a name="bkmk_createnew"></a>Installera roller på en ny plats system Server
+## <a name="install-roles-on-a-new-site-system-server"></a><a name="bkmk_createnew"></a> Installera roller på en ny plats system Server
 
 1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen. Expandera **plats konfiguration**och välj noden **servrar och plats system roller** .
 
@@ -76,7 +76,7 @@ Configuration Manager använder **kontot för installation av plats system** fö
 1. Slutför guiden. Ytterligare sidor kan visas för vissa roller. Mer information finns i [konfigurations alternativ för plats system roller](configuration-options-for-site-system-roles.md).
 
 > [!TIP]
-> Windows PowerShell-cmdleten **New-CMSiteSystemServer**utför samma funktion som den här proceduren. Mer information finns i [New-CMSiteSystemServer](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmsitesystemserver?view=sccm-ps).
+> Windows PowerShell-cmdleten **New-CMSiteSystemServer**utför samma funktion som den här proceduren. Mer information finns i [New-CMSiteSystemServer](/powershell/module/configurationmanager/new-cmsitesystemserver?view=sccm-ps).
 
 ## <a name="next-steps"></a>Nästa steg
 

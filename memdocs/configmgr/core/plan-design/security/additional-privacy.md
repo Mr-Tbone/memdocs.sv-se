@@ -10,12 +10,12 @@ ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f877de32c9915f91d1e2d7f2d90b9b40ab69df11
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: f6d3f6dbbbb407ee63eb8253cbf3ca740a10479c
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906579"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699797"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Ytterligare information om sekretess för Configuration Manager
 
@@ -47,7 +47,7 @@ Mer information om nivåer och inställningar för användnings data finns i [di
 
 Log Analytics Connector synkroniserar data, till exempel samlingar, från Configuration Manager till Azures moln tjänst. ID för Azure-prenumerationen och den hemliga nyckeln lagras i Configuration Manager-databasen när en administratör konfigurerar funktionen. Både den Azure Active Directory klient hemligheten och Azure-arbetsytans delade nyckel lagras i den lokala Configuration Managers databasen. All kommunikation mellan Configuration Manager och Azure använder HTTPS. Ingen ytterligare information om samlingarna tillhandahålls till Microsoft utanför slumpmässig diagnostik och användnings data. 
 
-Mer information om den information som Log Analytics samlar in finns i [logg analys data säkerhet](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-security).
+Mer information om den information som Log Analytics samlar in finns i [logg analys data säkerhet](/azure/log-analytics/log-analytics-data-security).
 
 
 

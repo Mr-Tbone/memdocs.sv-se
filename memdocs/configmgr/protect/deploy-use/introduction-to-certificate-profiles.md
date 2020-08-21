@@ -10,12 +10,12 @@ ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 35269e7c727031a9cd66072985f3d9ec362978cf
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 3598c95d1431915431d96b16c10c7c913741fe3d
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81722307"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700001"
 ---
 # <a name="introduction-to-certificate-profiles-in-configuration-manager"></a>Introduktion till certifikat profiler i Configuration Manager
 
@@ -59,11 +59,11 @@ Det finns tre typer av certifikat profiler:
 
 ## <a name="requirements"></a>Krav
 
-Om du vill distribuera certifikat profiler som använder SCEP måste du installera certifikat registrerings platsen på en plats system Server. Installera även en principmodul för NDES, Configuration Manager-principmodulen på en server som kör Windows Server 2012 R2 eller senare. Den här servern kräver rollen Active Directory certifikat tjänster. Det kräver också en fungerande NDES som är tillgänglig för de enheter som kräver certifikaten. Om dina enheter behöver registrera sig för certifikat från Internet, måste NDES-servern vara tillgänglig från Internet. Om du till exempel vill aktivera trafik till NDES-servern från Internet kan du använda [Azure Application Proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy).
+Om du vill distribuera certifikat profiler som använder SCEP måste du installera certifikat registrerings platsen på en plats system Server. Installera även en principmodul för NDES, Configuration Manager-principmodulen på en server som kör Windows Server 2012 R2 eller senare. Den här servern kräver rollen Active Directory certifikat tjänster. Det kräver också en fungerande NDES som är tillgänglig för de enheter som kräver certifikaten. Om dina enheter behöver registrera sig för certifikat från Internet, måste NDES-servern vara tillgänglig från Internet. Om du till exempel vill aktivera trafik till NDES-servern från Internet kan du använda [Azure Application Proxy](/azure/active-directory/manage-apps/application-proxy).
 
 PFX-certifikat kräver också en certifikat registrerings plats. Ange även certifikat utfärdare (CA) för certifikatet och de relevanta autentiseringsuppgifterna för åtkomst. Du kan ange antingen Microsoft eller entrustet som certifikat utfärdare.  
 
-Mer information om hur NDES stöder en principmodul så att Configuration Manager kan distribuera certifikat finns i [använda en principmodul med registrerings tjänsten för nätverks enheter](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn473016\(v=ws.11\)).
+Mer information om hur NDES stöder en principmodul så att Configuration Manager kan distribuera certifikat finns i [använda en principmodul med registrerings tjänsten för nätverks enheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn473016\(v=ws.11\)).
 
 Beroende på kraven har Configuration Manager stöd för distribution av certifikat till olika certifikat Arkiv på olika enhets typer och operativ system. Följande enheter och operativsystem stöds:  
 

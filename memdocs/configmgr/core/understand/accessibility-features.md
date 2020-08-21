@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b25b0137e24212cbad2ba688735e45d9fe9aac0
-ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
+ms.openlocfilehash: a6e406d55524caca71bf75b087c9fd78a470c939
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83556038"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699389"
 ---
 # <a name="accessibility-features-in-configuration-manager"></a>Hjälpmedels funktioner i Configuration Manager
 
@@ -28,7 +28,7 @@ Configuration Manager innehåller funktioner som hjälper dig att göra den till
 > [!Note]  
 > Från och med version 1902 kan du uppdatera .NET till version 4,7 eller senare på datorn som kör-konsolen för att förbättra hjälpmedels funktionerna i Configuration Manager-konsolen. <!-- SCCMDocs-pr issue #3228 -->  
 > 
-> Mer information om de hjälpmedels ändringar som görs i .NET-4.7.1 och 4.7.2 finns i [Nyheter i hjälpmedel i .NET Framework](https://docs.microsoft.com/dotnet/framework/whats-new/whats-new-in-accessibility).  
+> Mer information om de hjälpmedels ändringar som görs i .NET-4.7.1 och 4.7.2 finns i [Nyheter i hjälpmedel i .NET Framework](/dotnet/framework/whats-new/whats-new-in-accessibility).  
 
 
 
@@ -57,14 +57,14 @@ Använd följande kortkommandon för att få åtkomst till en arbets yta:
 |CTRL + D|Ange fokus till informations fönstret när det är tillgängligt.|
 |Alt     |Ändra fokus till och från menyfliksområdet.|
 
-### <a name="cmpivot-shortcuts"></a><a name="bkmk_cmpshortcuts"></a>CMPivot-genvägar
+### <a name="cmpivot-shortcuts"></a><a name="bkmk_cmpshortcuts"></a> CMPivot-genvägar
 
 De flesta kortkommandona för [webb läsar tangenter](https://support.microsoft.com/help/17456/windows-internet-explorer-ease-of-access-options) kommer att fungera i CMPivot.
 
 |Kortkommando|Syfte|
 |--------|--------|  
 |Ctrl + 1|Ange fokus på den första fliken.|
-|Alt +&lt;|Tillbaka till adressen|
+|Alt + &lt;|Tillbaka till adressen|
 
 
 ## <a name="other-accessibility-features"></a>Andra hjälpmedels funktioner
@@ -98,5 +98,4 @@ Mer information om grunderna i hur du navigerar Configuration Manager användar 
 - [Användarhandbok för Software Center](software-center.md)
 
 > [!NOTE]  
-> Informationen i den här artikeln kan endast gälla användare som har licens för Microsoft-produkter i USA. Om du har köpt den här produkten utanför USA kan du använda informations kortet för dotter bolag som medföljde ditt program varu paket eller besöka [webbplatsen Microsoft Accessibility](https://www.microsoft.com/accessibility/) för kontakt information för Microsoft Support Services. Du kan kontakta ditt dotter bolag för att ta reda på om den typ av produkter och tjänster som beskrivs i det här avsnittet är tillgängliga i ditt område. Informationen om hjälpmedelsfunktioner är tillgänglig på andra språk, däribland japanska och franska.  
-
+> Informationen i den här artikeln kan endast gälla användare som har licens för Microsoft-produkter i USA. Om du har köpt den här produkten utanför USA kan du använda informations kortet för dotter bolag som medföljde ditt program varu paket eller besöka [webbplatsen Microsoft Accessibility](https://www.microsoft.com/accessibility/) för kontakt information för Microsoft Support Services. Du kan kontakta ditt dotter bolag för att ta reda på om den typ av produkter och tjänster som beskrivs i det här avsnittet är tillgängliga i ditt område. Informationen om hjälpmedelsfunktioner är tillgänglig på andra språk, däribland japanska och franska.

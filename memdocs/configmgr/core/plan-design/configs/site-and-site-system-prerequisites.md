@@ -10,12 +10,12 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d4fb94d0ab64cb7c3dc3128c982b0c2b162b22b7
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: ce3420a6e229b5987616c5c0c1c41d50cdc499c8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719192"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700358"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Krav för plats och plats system för Configuration Manager
 
@@ -28,7 +28,7 @@ För vissa produkter som Windows Server Update Services (WSUS) för program uppd
 Mer information om .NET Framework finns i [vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework).
 
 
-## <a name="general-requirements-and-limitations"></a><a name="bkmk_generalprerewq"></a>Allmänna krav och begränsningar
+## <a name="general-requirements-and-limitations"></a><a name="bkmk_generalprerewq"></a> Allmänna krav och begränsningar
 
 Följande krav gäller för alla plats system servrar:
 
@@ -52,7 +52,7 @@ Följande krav gäller för alla plats system servrar:
 
 - Det finns inte stöd för att ändra start typen eller "logga in som"-inställningar för någon Configuration Manager-tjänst. Om du gör det kan du förhindra att viktiga tjänster körs på rätt sätt.  
 
-### <a name="prerequisites-for-windows-server-2012-and-later-operating-systems"></a><a name="bkmk_2012Prereq"></a>Krav för Windows Server 2012 och senare operativ system  
+### <a name="prerequisites-for-windows-server-2012-and-later-operating-systems"></a><a name="bkmk_2012Prereq"></a> Krav för Windows Server 2012 och senare operativ system  
 
 Se huvud avsnitten i den här artikeln för särskilda krav för plats system servrar och roller i Windows Server 2012 och senare:
 
@@ -75,7 +75,7 @@ Se huvud avsnitten i den här artikeln för särskilda krav för plats system se
 - [Program uppdaterings plats](#bkmk_2012SUPpreq)
 - [Plats för tillståndsmigrering](#bkmk_2012SMPpreq)
 
-## <a name="central-administration-site-and-primary-site-servers"></a><a name="bkmk_2012sspreq"></a>Central administrations plats och primära plats servrar
+## <a name="central-administration-site-and-primary-site-servers"></a><a name="bkmk_2012sspreq"></a> Central administrations plats och primära plats servrar
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -93,7 +93,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="windows-adk"></a>Windows ADK  
@@ -113,7 +113,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="secondary-site-server"></a><a name="bkmk_2012secpreq"></a>Sekundär plats Server
+## <a name="secondary-site-server"></a><a name="bkmk_2012secpreq"></a> Sekundär plats Server
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -129,7 +129,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="visual-c-redistributable"></a>Visual C++ Redistributable
@@ -149,7 +149,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="database-server"></a><a name="bkmk_2012dbpreq"></a>Databas server  
+## <a name="database-server"></a><a name="bkmk_2012dbpreq"></a> Databas server  
 
 ### <a name="remote-registry-service"></a>Tjänsten Remote Registry  
 
@@ -168,7 +168,7 @@ När du installerar en ny plats installeras Configuration Manager automatiskt SQ
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="sms-provider-server"></a><a name="bkmk_2012smsprovpreq"></a>SMS-provider-Server  
+## <a name="sms-provider-server"></a><a name="bkmk_2012smsprovpreq"></a> SMS-provider-Server  
 
 ### <a name="windows-adk"></a>Windows ADK
 
@@ -190,7 +190,7 @@ När du installerar en ny plats installeras Configuration Manager automatiskt SQ
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="application-catalog-website-point"></a><a name="bkmk_2012acwspreq"></a>Plats för program katalog  
+## <a name="application-catalog-website-point"></a><a name="bkmk_2012acwspreq"></a> Plats för program katalog  
 
 > [!Important]  
 > Program katalogens Silverlight-användar upplevelse stöds inte av den aktuella gren versionen 1806. Från och med version 1906 använder uppdaterade klienter automatiskt hanterings platsen för program distributioner som är tillgängliga för användare. Du kan inte heller installera nya program katalog roller. Support upphör för program katalog rollerna med version 1910.  
@@ -214,7 +214,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration  
@@ -244,7 +244,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
     - IIS 6-metabaskompatibilitet  
 
 
-## <a name="application-catalog-web-service-point"></a><a name="bkmk_2012ACwsitepreq"></a>Webb service punkt för program katalog  
+## <a name="application-catalog-web-service-point"></a><a name="bkmk_2012ACwsitepreq"></a> Webb service punkt för program katalog  
 
 > [!Important]  
 > Program katalogens Silverlight-användar upplevelse stöds inte av den aktuella gren versionen 1806. Från och med version 1906 använder uppdaterade klienter automatiskt hanterings platsen för program distributioner som är tillgängliga för användare. Du kan inte heller installera nya program katalog roller. Support upphör för program katalog rollerna med version 1910.  
@@ -270,7 +270,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration
@@ -304,7 +304,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="asset-intelligence-synchronization-point"></a><a name="bkmk_2012AIpreq"></a>Tillgångsinformation plats för synkronisering  
+## <a name="asset-intelligence-synchronization-point"></a><a name="bkmk_2012AIpreq"></a> Tillgångsinformation plats för synkronisering  
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -312,7 +312,7 @@ Installera en version som stöds av .NET Framework version 4,5 eller senare. Fr�
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="sql-server-native-client"></a>SQL Server Native Client
@@ -320,7 +320,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="certificate-registration-point"></a><a name="bkmk_2012crppreq"></a>Certifikat registrerings plats  
+## <a name="certificate-registration-point"></a><a name="bkmk_2012crppreq"></a> Certifikat registrerings plats  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -334,7 +334,7 @@ Installera en version som stöds av .NET Framework version 4,5 eller senare. Fr�
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration
@@ -356,7 +356,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="distribution-point"></a><a name="bkmk_2012dppreq"></a>Distributions plats  
+## <a name="distribution-point"></a><a name="bkmk_2012dppreq"></a> Distributions plats  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -410,7 +410,7 @@ Mer information finns i [Installera och konfigurera distributions platser](../..
 > När distributions platsen överför innehåll överförs den med den **Background Intelligent Transfer Service** (bitar) som är inbyggd i Windows. Distributions plats rollen kräver inte den valfria funktionen BITS IIS-servertillägg för att installeras, eftersom klienten inte överför information till den.  
 
 
-## <a name="endpoint-protection-point"></a><a name="bkmk_2012EPPpreq"></a>Endpoint Protection Point  
+## <a name="endpoint-protection-point"></a><a name="bkmk_2012EPPpreq"></a> Endpoint Protection Point  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server  
 
@@ -423,7 +423,7 @@ Mer information finns i [Installera och konfigurera distributions platser](../..
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="enrollment-point"></a><a name="bkmk_2012Enrollpreq"></a>Registrerings plats  
+## <a name="enrollment-point"></a><a name="bkmk_2012Enrollpreq"></a> Registrerings plats  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -446,7 +446,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration
@@ -480,7 +480,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="enrollment-proxy-point"></a><a name="bkmk_2012EnrollProxpreq"></a>Proxy för registrerings plats  
+## <a name="enrollment-proxy-point"></a><a name="bkmk_2012EnrollProxpreq"></a> Proxy för registrerings plats  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -497,7 +497,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration
@@ -533,7 +533,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 - När den här plats system rollen samplaceras med en annan plats system roll som har samma krav, ökar inte det här minnes kravet för datorn, men förblir minst 5%.  
 
 
-## <a name="fallback-status-point"></a><a name="bkmk_2012FSPpreq"></a>Återställnings status punkt
+## <a name="fallback-status-point"></a><a name="bkmk_2012FSPpreq"></a> Återställnings status punkt
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -548,7 +548,7 @@ Standard konfigurationen för IIS krävs med följande tillägg:
     - IIS 6-metabaskompatibilitet  
 
 
-## <a name="management-point"></a><a name="bkmk_2012MPpreq"></a>Hanterings plats  
+## <a name="management-point"></a><a name="bkmk_2012MPpreq"></a> Hanterings plats  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -560,7 +560,7 @@ Installera en version som stöds av .NET Framework version 4,5 eller senare. Fr�
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration
@@ -584,7 +584,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="reporting-services-point"></a><a name="bkmk_2012RSpoint"></a>Repor ting Services-plats  
+## <a name="reporting-services-point"></a><a name="bkmk_2012RSpoint"></a> Repor ting Services-plats  
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -592,7 +592,7 @@ Installera en version som stöds av .NET Framework version 4,5 eller senare. Fr�
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="sql-server-reporting-services"></a>SQL Server Reporting Services  
@@ -608,7 +608,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="service-connection-point"></a><a name="bkmk_SCPpreq"></a>Tjänst anslutnings punkt  
+## <a name="service-connection-point"></a><a name="bkmk_SCPpreq"></a> Tjänst anslutnings punkt  
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -621,7 +621,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="visual-c-redistributable"></a>Visual C++ Redistributable
@@ -635,7 +635,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="software-update-point"></a><a name="bkmk_2012SUPpreq"></a>Program uppdaterings plats  
+## <a name="software-update-point"></a><a name="bkmk_2012SUPpreq"></a> Program uppdaterings plats  
 
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
 
@@ -651,7 +651,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="windows-server-update-services"></a>Windows Server Update Services  
@@ -668,7 +668,7 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 
-## <a name="state-migration-point"></a><a name="bkmk_2012SMPpreq"></a>Plats för tillståndsmigrering
+## <a name="state-migration-point"></a><a name="bkmk_2012SMPpreq"></a> Plats för tillståndsmigrering
 
 <!--SCCMDocs issue 645-->
 ### <a name="windows-server-roles-and-features"></a>Roller och funktioner i Windows Server
@@ -690,7 +690,7 @@ Installera även en version som stöds av .NET Framework version 4,5 eller senar
 
 Mer information om .NET Framework-versioner finns i följande artiklar:
 
-- [.NET Framework versioner och beroenden](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
+- [.NET Framework versioner och beroenden](/dotnet/framework/migration-guide/versions-and-dependencies)
 - [Vanliga frågor och svar om livs cykeln – .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
 
 ### <a name="iis-configuration"></a>IIS-konfiguration
@@ -716,4 +716,3 @@ Mer information om .NET Framework-versioner finns i följande artiklar:
 ### <a name="sql-server-native-client"></a>SQL Server Native Client
 
 När du installerar en ny plats installeras Configuration Manager automatiskt SQL Server Native Client som en distribuerbar komponent. Configuration Manager uppgraderar inte SQL Server Native Client när platsen har installerats. Kontrol lera att den här komponenten är aktuell. Mer information finns i [krav kontroll-SQL Server Native Client](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
-

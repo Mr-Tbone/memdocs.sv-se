@@ -10,12 +10,12 @@ ms.assetid: 75f47456-cd8d-4c83-8dc5-98b336a7c6c8
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 0d081c79a6267495a9738efcb19ceb8b7aa74958
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 6fb487b590773afd1b59133f647696d9f858b439
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252511"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700382"
 ---
 # <a name="troubleshoot-application-installation-for-devices-uploaded-to-the-admin-center-preview"></a>Felsöka programinstallationen för enheter som har överförts till administrations centret (för hands version)
 <!--6374854, 6521921-->
@@ -62,7 +62,7 @@ När du visar eller installerar program från administrations centret för Micro
 
 #### <a name="error-code-500-with-an-unexpected-error-occurred-message"></a>Felkod 500 med ett oväntat fel inträffade meddelande
 
-1. Om du ser `System.Security.SecurityException` i **AdminService. log**kontrollerar du att din User Principal Name (UPN) som identifieras av [Active Directory User Discovery](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser) inte har angetts till ett moln-UPN i stället för ett lokalt UPN. Ett tomt UPN-värde är också acceptabelt eftersom det innebär att det Active Directory identifierade domän namnet används. Om du ser enbart molnbaserad UPN (exempel: onmicrosoft.com) som inte är ett giltigt domän-UPN (contoso.com), har du ett problem och kan behöva [Ange UPN-suffixet i Active Directory](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization#add-upn-suffixes-and-update-your-users-to-them).
+1. Om du ser `System.Security.SecurityException` i **AdminService. log**kontrollerar du att din User Principal Name (UPN) som identifieras av [Active Directory User Discovery](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser) inte har angetts till ett moln-UPN i stället för ett lokalt UPN. Ett tomt UPN-värde är också acceptabelt eftersom det innebär att det Active Directory identifierade domän namnet används. Om du ser enbart molnbaserad UPN (exempel: onmicrosoft.com) som inte är ett giltigt domän-UPN (contoso.com), har du ett problem och kan behöva [Ange UPN-suffixet i Active Directory](/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization#add-upn-suffixes-and-update-your-users-to-them).
 1. Installera [KB4576782 – tids gränsen för program bladet är i administrations Center för Microsoft Endpoint Manager](https://support.microsoft.com/help/4576782) om du ser felet nedan i **AdminService. log**:
    ```log 
    System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details.

@@ -10,12 +10,12 @@ ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d36e29f0f915c0f2a35070c667525853e5981564
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 877345e64045530193a4cdd735cdd399235b90c7
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719269"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700273"
 ---
 # <a name="choose-a-device-management-solution"></a>Välja en lösning för enhetshantering
 
@@ -36,19 +36,19 @@ Använd följande tabell som hjälp för att jämföra dessa hanterings tekniker
 |  | Enbart molnet | Molnbaserad | Lokal | Frånkopplad |
 |---------|---------|---------|---------|---------|
 | **Hyper-V-värd** | Inte tillämpligt | -Azure Stack<br/> – Windows administrations Center<br/> -Virtual Machine Manager | -Azure Stack<br/> – Windows administrations Center<br/> -Virtual Machine Manager | -Azure Stack<br/> – Windows administrations Center<br/> -Virtual Machine Manager |
-| **Windows Server** | – Azure-hantering<br/> -Configuration Manager | – Azure-hantering<br/> -Configuration Manager | – Azure-hantering<br/> -Configuration Manager | Konfigurationshanteraren |
+| **Windows Server** | – Azure-hantering<br/> -Configuration Manager | – Azure-hantering<br/> -Configuration Manager | – Azure-hantering<br/> -Configuration Manager | Configuration Manager |
 | **Linux-Server** | Azure-hantering | Azure-hantering | Azure-hantering |  |
-| **Windows 10** | – Intune<br/> -Configuration Manager | – Intune<br/> -Configuration Manager | – Intune<br/> -Configuration Manager | Konfigurationshanteraren |
-| **Windows 7 eller 8,1** | Konfigurationshanteraren | Konfigurationshanteraren | Konfigurationshanteraren | Konfigurationshanteraren |
-| **Windows Virtual Desktop** | Konfigurationshanteraren | Inte tillämpligt | Inte tillämpligt | Inte tillämpligt |
+| **Windows 10** | – Intune<br/> -Configuration Manager | – Intune<br/> -Configuration Manager | – Intune<br/> -Configuration Manager | Configuration Manager |
+| **Windows 7 eller 8,1** | Configuration Manager | Configuration Manager | Configuration Manager | Configuration Manager |
+| **Windows Virtual Desktop** | Configuration Manager | Inte tillämpligt | Inte tillämpligt | Inte tillämpligt |
 
 Mer information finns i följande artiklar:
 
-- [Vad är Azure Stack?](https://docs.microsoft.com/azure-stack/operator/azure-stack-overview)
-- [Vad är Windows administrations Center?](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/what-is)
-- [Vad är Virtual Machine Manager?](https://docs.microsoft.com/system-center/vmm/overview)
-- [Azure-hanterings produkter](https://docs.microsoft.com/azure/)
-- [Vad är Windows Virtual Desktop?](https://docs.microsoft.com/azure/virtual-desktop/overview)
+- [Vad är Azure Stack?](/azure-stack/operator/azure-stack-overview)
+- [Vad är Windows administrations Center?](/windows-server/manage/windows-admin-center/understand/what-is)
+- [Vad är Virtual Machine Manager?](/system-center/vmm/overview)
+- [Azure-hanterings produkter](/azure/)
+- [Vad är Windows Virtual Desktop?](/azure/virtual-desktop/overview)
 
 Om du vill ha mer information om Configuration Manager-och Intune-lösningar kan du fortsätta till nästa avsnitt.
 
@@ -68,31 +68,31 @@ Det finns också två tabeller som jämför hanterings lösningarna med följand
 - [Jämför med plattformar som stöds](#bkmk_comp1)
 - [Jämför med hanterings funktioner](#bkmk_comp2)
 
-### <a name="configuration-manager-client"></a><a name="bkmk_sccm"></a>Configuration Manager-klient  
+### <a name="configuration-manager-client"></a><a name="bkmk_sccm"></a> Configuration Manager-klient  
 
 Det här alternativet kräver installation av Configuration Manager-klienten på enheter. Den innehåller de flesta funktioner för att hantera datorer, servrar och andra enheter i din miljö.
 
 Mer information finns i [klient installations metoder](../clients/deploy/plan/client-installation-methods.md).  
 
-### <a name="on-premises-mdm"></a><a name="bkmk_opmdm"></a>Lokal MDM  
+### <a name="on-premises-mdm"></a><a name="bkmk_opmdm"></a> Lokal MDM  
 
 Det här alternativet använder de enhets hanterings funktioner som är inbyggda i Windows 10. Även om det inte är en fullständig hantering av klientbaserade hanterings funktioner ger lokala MDM en lättare touch-metod för hantering. Den använder lokala Configuration Manager resurser för att hantera enheter.  
 
 Mer information finns i [Hantera mobila enheter med lokal infrastruktur](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
-### <a name="co-management-with-microsoft-intune"></a><a name="bkmk_comanage"></a>Samhantering med Microsoft Intune
+### <a name="co-management-with-microsoft-intune"></a><a name="bkmk_comanage"></a> Samhantering med Microsoft Intune
 
 Samhantering är ett av de främsta sätten att koppla din befintliga Configuration Manager-distribution till Microsoft 365 molnet. Det gör att du kan hantera Windows 10-enheter samtidigt genom att använda både Configuration Manager och Microsoft Intune. Med samhantering kan du Cloud-ansluta din befintliga investering i Configuration Manager genom att lägga till nya funktioner.
 
 Mer information finns i [Vad är samhantering?](../../comanage/overview.md).  
 
-### <a name="microsoft-exchange"></a><a name="bkmk_exchange"></a>Microsoft Exchange  
+### <a name="microsoft-exchange"></a><a name="bkmk_exchange"></a> Microsoft Exchange  
 
 Det här alternativet använder Exchange Server-anslutningen för att ansluta flera Exchange-servrar till Configuration Manager. Den centraliserar hanteringen av enheter som kan ansluta till Exchange ActiveSync. Du kan konfigurera hanterings funktioner för mobila enheter i Exchange från Configuration Manager-konsolen. Exempel på funktioner är fjär rensning av enheter och inställnings kontroll för flera Exchange-servrar.
 
 Mer information finns i [Hantera mobila enheter med Configuration Manager och Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-### <a name="compare-solutions-by-supported-platforms"></a><a name="bkmk_comp1"></a>Jämför lösningar med plattformar som stöds  
+### <a name="compare-solutions-by-supported-platforms"></a><a name="bkmk_comp1"></a> Jämför lösningar med plattformar som stöds  
 
 |Plattform|Configuration Manager-klient|Lokal MDM|Configuration Manager med Exchange| Intune |
 |--------|----------------------------|---------------|-----------------------------------|--------|
@@ -108,11 +108,11 @@ Mer information finns i [Hantera mobila enheter med Configuration Manager och Ex
 En fullständig lista över plattformar som stöds finns i följande artiklar:
 
 - [Operativ system som stöds för klienter och enheter för Configuration Manager](configs/supported-operating-systems-for-clients-and-devices.md)
-- [Konfigurationer som stöds av Intune](https://docs.microsoft.com/intune/supported-devices-browsers)
+- [Konfigurationer som stöds av Intune](/intune/supported-devices-browsers)
 
-Microsoft rekommenderar att du använder Intune för att hantera Android-, iOS-och Windows 10 Mobile-enheter. Mer information finns i [Vad är Microsoft Intune?](https://docs.microsoft.com/intune/what-is-intune).
+Microsoft rekommenderar att du använder Intune för att hantera Android-, iOS-och Windows 10 Mobile-enheter. Mer information finns i [Vad är Microsoft Intune?](/intune/what-is-intune).
 
-### <a name="compare-solutions-by-management-functionality"></a><a name="bkmk_comp2"></a>Jämför lösningar efter hanterings funktioner  
+### <a name="compare-solutions-by-management-functionality"></a><a name="bkmk_comp2"></a> Jämför lösningar efter hanterings funktioner  
 
 |Hanterings funktioner|Configuration Manager-klient|Lokal MDM|Configuration Manager med Exchange|  
 |--------|----------------------------|---------------|-----------------------------------|  

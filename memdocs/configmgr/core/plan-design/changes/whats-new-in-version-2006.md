@@ -1,8 +1,8 @@
 ---
-title: Vad är nytt i version 2006
+title: Nyheter i version 2006
 titleSuffix: Configuration Manager
 description: Få information om ändringar och nya funktioner som introducerats i version 2006 av Configuration Manager aktuella grenen.
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4b071746-61e1-404b-8053-60978de028a7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f624a207b5e9afded9b86312d1608a35005355f6
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: bdfb122173c913274373f41c3932f1ac094ec953
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179349"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700290"
 ---
 # <a name="whats-new-in-version-2006-of-configuration-manager-current-branch"></a>Vad är nytt i version 2006 av Configuration Manager aktuella grenen
 
@@ -27,23 +27,20 @@ Läs alltid den senaste check listan för att installera den här uppdateringen.
 
 För att dra full nytta av nya Configuration Manager funktioner kan du även uppdatera klienter till den senaste versionen när du har uppdaterat platsen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.
 
-<!-- commenting this for now as it doesn't work 7422960
 > [!TIP]
-> To get notified when this page is updated, copy and paste the following URL into your RSS feed reader:
-> `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+2006+-+Configuration+Manager%22&locale=en-us`
- -->
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+2006+-+Configuration+Manager%22&locale=en-us`
 
-## <a name="microsoft-endpoint-manager-tenant-attach"></a><a name="bkmk_tenant"></a>Microsoft Endpoint Manager-klient anslutning
+## <a name="microsoft-endpoint-manager-tenant-attach"></a><a name="bkmk_tenant"></a> Microsoft Endpoint Manager-klient anslutning
 
 ### <a name="install-applications-from-the-admin-center"></a>Installera program från administrations centret
 <!--7518897, 6024389-->
-Du kan starta en programinstallation i real tid för en klient som har anslutits till en enhet från administrations centret för Microsoft Endpoint Manager. Från och med Configuration Manager version 2006 innehåller listan över program som är tillgängliga för enheten även program som distribuerats till den inloggade användarens enhet. Mer information finns i [klient anslutning: installera ett program från administrations centret](../../../tenant-attach/applications.md).  
+Du kan starta en programinstallation i real tid för en klient som har anslutits till en enhet från administrations centret för Microsoft Endpoint Manager. Från och med Configuration Manager version 2006 innehåller listan över program som är tillgängliga för enheten även program som distribuerats till den inloggade användarens enhet. Mer information finns i [Anslut klientorganisation: Installera ett program från administrationscentret](../../../tenant-attach/applications.md).  
 
 ### <a name="import-previously-created-azure-ad-application-during-tenant-attach-onboarding"></a>Importera tidigare skapade Azure AD-program under klient kopplings registrering
 <!--6479246-->
 Under en ny onboarding kan en administratör ange ett program som skapats tidigare under onboarding to klient anslutning. Mer information finns i [Microsoft Endpoint Manager-klientorganisation: Enhetssynkronisering och enhetsåtgärder](../../../tenant-attach/device-sync-actions.md#bkmk_aad_app).
 
-## <a name="endpoint-analytics"></a><a name="bkmk_ea"></a>Slut punkts analys
+## <a name="endpoint-analytics"></a><a name="bkmk_ea"></a> Slut punkts analys
 
 ### <a name="endpoint-analytics-data-collection-enabled-by-default"></a>Slut punkts analys data insamling aktiverat som standard
 <!--7065447, 7741111-->
@@ -54,7 +51,7 @@ Klient inställningen **Aktivera slut punkts analys data insamling** är nu akti
 
 Mer information finns i [Konfigurera data insamling för slut punkts analys i Configuration Manager](../../../../analytics/enroll-configmgr.md#bkmk_cm_upload).
 
-## <a name="site-infrastructure"></a><a name="bkmk_infra"></a>Plats infrastruktur
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Plats infrastruktur
 
 ### <a name="vpn-boundary-type"></a>VPN-avgränsnings typ
 
@@ -90,7 +87,15 @@ Mer information om Configuration Manager Support för virtuella Windows-datorer 
 <!--7102873-->
 Intranät klienter kan nu komma åt en CMG program uppdaterings plats när den tilldelas en avgränsnings grupp. Mer information finns i [Konfigurera gränser grupper](../../servers/deploy/configure/boundary-groups.md#bkmk_cmg-sup).
 
-## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a>Molnbaserad hantering
+## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Molnbaserad hantering
+
+### <a name="use-the-company-portal-app-on-co-managed-devices"></a>Använd Företagsportal-appen på samhanterade enheter
+
+<!--CMADO-3601237,INADO-4297660-->
+
+Företagsportal är nu den plattforms oberoende applikations portalen för Microsoft Endpoint Manager. Genom att konfigurera samhanterade enheter så att de också använder Företagsportal kan du ge en konsekvent användar upplevelse på alla enheter.
+
+Mer information finns i [Använd Företagsportalappen på samhanterade enheter](../../../comanage/company-portal.md).
 
 ### <a name="use-microsoft-azure-china-21vianet-for-co-management"></a>Använd Microsoft Azure Kina för samhantering
 <!--7133238-->
@@ -119,7 +124,7 @@ För att bättre justera med kraven för Skriv bords analys för Windows-diagnos
 
 | Version 2006 och senare | Version 2002 och tidigare |
 |---------|---------|
-| Obligatorisk | Grundläggande |
+| Obligatorisk | Basic |
 | Valfritt (begränsat) | Utökad (begränsad) |
 | Ej tillämpligt | Optimerad |
 | Valfritt | Fullständig |
@@ -128,7 +133,7 @@ Om du tidigare har konfigurerat några enheter på den **förbättrade** nivån,
 
 Mer information finns i [Aktivera data delning för Skriv bords analys](../../../desktop-analytics/enable-data-sharing.md).
 
-## <a name="real-time-management"></a><a name="bkmk_real"></a>Real tids hantering
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Real tids hantering
 
 ### <a name="improvements-to-cmpivot"></a>Förbättringar av CMPivot
 <!--6518631-->
@@ -140,7 +145,7 @@ Följande förbättringar har gjorts i CMPivot:
 
 Mer information finns i [CMPivot från och med version 2006](../../servers/manage/cmpivot-changes.md#bkmk_2006).
 
-## <a name="client-management"></a><a name="bkmk_client"></a>Klient hantering
+## <a name="client-management"></a><a name="bkmk_client"></a> Klient hantering
 
 ### <a name="install-and-upgrade-the-client-on-a-metered-connection"></a>Installera och uppgradera klienten på en avgiftsbelagd anslutning
 
@@ -163,7 +168,7 @@ Configuration Manager innehåller många alternativ för att hantera omstarter a
 
 Mer information finns i [meddelanden om omstart av enhet](../../clients/deploy/device-restart-notifications.md).
 
-## <a name="application-management"></a><a name="bkmk_app"></a>Program hantering
+## <a name="application-management"></a><a name="bkmk_app"></a> Program hantering
 
 ### <a name="improvements-to-available-apps-via-cmg"></a>Förbättringar av tillgängliga appar via CMG
 
@@ -182,7 +187,7 @@ Office 365 ProPlus har bytt namn till Microsoft 365 appar för företag den 21 a
 
 Mer information finns i [Microsoft 365 Apps kanal namn](../../../sum/deploy-use/manage-office-365-proplus-updates.md#bkmk_channel) och [instrument panel för instrument paneler för Microsoft 365 Apps](../../../sum/deploy-use/office-365-dashboard.md#bkmk_readiness-dash).
 
-## <a name="os-deployment"></a><a name="bkmk_osd"></a>OS-distribution
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> OS-distribution
 
 ### <a name="task-sequence-media-support-for-cloud-based-content"></a>Medie stöd för aktivitetssekvens för molnbaserad innehåll
 
@@ -264,7 +269,7 @@ Nu kan du installera självbetjänings portalen för BitLocker och webbplatsen f
 
 Mer information finns i [Konfigurera BitLocker-portaler](../../../protect/deploy-use/bitlocker/setup-websites.md).
 
-## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a>Configuration Manager-konsol
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Configuration Manager-konsol
 
 ### <a name="community-hub-and-github"></a>Community Hub och GitHub
 <!--3555935, 3555936, deep link included 4224406-->
@@ -275,7 +280,7 @@ IT-administratörs gruppen har utvecklat en enorm mängd kunskap under åren. I 
 
 Mer information finns i [Community Hub och GitHub](../../servers/manage/community-hub.md).
 
-### <a name="direct-links-to-community-hub-items"></a><a name="bkmk_deeplink"></a>Direkta länkar till community Hub-objekt
+### <a name="direct-links-to-community-hub-items"></a><a name="bkmk_deeplink"></a> Direkta länkar till community Hub-objekt
 <!--4224406-->
 Du kan enkelt navigera till och referens objekt i noden Configuration Manager-konsolen community Hub med en direkt länk. Mer information finns i [direkt länkar till community Hub-objekt](../../servers/manage/community-hub.md#bkmk_deeplink).
 
@@ -306,7 +311,7 @@ Mer information finns i [installera Power BI exempel rapporter](../../servers/ma
 ## <a name="bkmk_comgmt"></a> Co-management
 -->
 
-## <a name="deprecated-operating-systems"></a><a name="bkmk_deprecated"></a>Föråldrade operativ system
+## <a name="deprecated-operating-systems"></a><a name="bkmk_deprecated"></a> Föråldrade operativ system
 
 Läs om support ändringar innan de implementeras i [borttagna och föråldrade objekt](deprecated/removed-and-deprecated.md).
 
@@ -324,7 +329,7 @@ Starting with this version, the following features are no longer [pre-release](.
 ### Azure Active Directory user group discovery](../../servers/deploy/configure/configure-discovery-methods.md#bkmk_azuregroupdisco)<!--3611956
 -->
 
-Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 2006](https://docs.microsoft.com/powershell/sccm/2006-release-notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 2006](/powershell/sccm/2006-release-notes?view=sccm-ps).
 
 Mer information om ändringar i administrations tjänsten REST API finns i viktig information om [administrations tjänsten](../../../develop/adminservice/release-notes.md#bkmk_2006).
 

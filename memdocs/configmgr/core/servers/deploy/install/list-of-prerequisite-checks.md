@@ -10,12 +10,12 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9f0ed1d5913154d90242d1aa2a47efbcf7d22282
-ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
+ms.openlocfilehash: 2dd722ddcf0e5ea6e944a76366204ac83ede05ec
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82943798"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698964"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Lista över nödvändiga kontroller för Configuration Manager
 
@@ -161,7 +161,7 @@ Den primära platsen som du planerar att expandera är en fristående primär pl
 
 Windows-brandväggen är inaktive rad eller också finns det ett undantag i Windows-brandväggen för SQL Server.
 
-Tillåt att Sqlservr. exe eller nödvändiga TCP-portar kan nås via fjärr anslutning. SQL Server lyssnar som standard på TCP-port 1433 och SQL Server Service Broker (SSB) använder TCP-port 4022.
+Tillåt att Sqlservr.exe eller de TCP-portar som krävs kan nås via fjärr anslutning. SQL Server lyssnar som standard på TCP-port 1433 och SQL Server Service Broker (SSB) använder TCP-port 4022.
 
 ### <a name="free-disk-space-on-site-server"></a>Ledigt disk utrymme på plats servern
 
@@ -279,7 +279,7 @@ Mer information finns i Microsoft Support artikel om [problem när du installera
 
 Instansen för SQL Server har kon figurer ATS för att använda **SQL_Latin1_General_CP1_CI_AS** sorteringen.
 
-Om Configuration Manager plats databasen redan är installerad gäller den här kontrollen även för-databasen. Information om hur du ändrar SQL Server-instansen och databas sorteringar finns i [stöd för SQL-sortering och Unicode](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support).
+Om Configuration Manager plats databasen redan är installerad gäller den här kontrollen även för-databasen. Information om hur du ändrar SQL Server-instansen och databas sorteringar finns i [stöd för SQL-sortering och Unicode](/sql/relational-databases/collations/collation-and-unicode-support).
 
 Om du använder ett kinesiskt operativ system och behöver stöd för GB18030, gäller inte den här kontrollen. Mer information om hur du aktiverar stöd för GB18030 finns i [internationell support](../../../plan-design/hierarchy/international-support.md).
 
@@ -379,7 +379,7 @@ När du använder SQL Server Always On är tillgänglighets grupps repliker på 
 <!-- SCCMDocs-pr#3899 -->
 *Gäller för: plats databas server*
 
-Från och med version 1906 måste du konfigurera tillgänglighets grupp repliker med samma [seeding-läge](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas)när du använder SQL Server Always On.
+Från och med version 1906 måste du konfigurera tillgänglighets grupp repliker med samma [seeding-läge](/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas)när du använder SQL Server Always On.
 
 ### <a name="sql-availability-group-replicas-must-be-healthy"></a>SQL tillgänglighets grupps repliker måste vara felfria
 
@@ -633,7 +633,7 @@ Den Configuration Manager datorn är medlem i en Windows-domän.
 
 Windows-brandväggen är inaktive rad eller också finns det ett undantag i Windows-brandväggen för SQL Server.
 
-Tillåt att Sqlservr. exe eller nödvändiga TCP-portar kan nås via fjärr anslutning. SQL Server lyssnar som standard på TCP-port 1433 och Server Service Broker (SSB) använder TCP-port 4022.
+Tillåt att Sqlservr.exe eller de TCP-portar som krävs kan nås via fjärr anslutning. SQL Server lyssnar som standard på TCP-port 1433 och Server Service Broker (SSB) använder TCP-port 4022.
 
 ### <a name="firewall-exception-for-sql-server-for-management-point"></a>Brand Väggs undantag för SQL Server för hanterings plats
 
@@ -673,7 +673,7 @@ Det finns inga aktiverade program uppdateringar för NAP.
 
 Disk enheten är formaterad med fil systemet NTFS. Installera plats Server komponenter på disk enheter som är formaterade med NTFS-filsystem för bättre säkerhet.
 
-### <a name="pending-configuration-item-policy-updates"></a><a name="bkmk_pending-policy"></a>Väntande uppdateringar av konfigurations objekts princip
+### <a name="pending-configuration-item-policy-updates"></a><a name="bkmk_pending-policy"></a> Väntande uppdateringar av konfigurations objekts princip
 
 <!--SCCMDocs-pr issue 2814-->
 
@@ -735,13 +735,13 @@ Paketen innehåller inte ogiltiga tecken i resurs namnet, t `#` . ex..
 
 Det konto som du konfigurerade för att köra SQL Server-tjänsten för plats databas instansen har ett giltigt SPN (Service Principal Name) i Active Directory Domain Services. Registrera ett giltigt SPN i Active Directory som stöder Kerberos-autentisering.
 
-### <a name="sql-server-change-tracking-cleanup"></a><a name="bkmk_changetracking"></a>Rensning av SQL Server ändrings spårning
+### <a name="sql-server-change-tracking-cleanup"></a><a name="bkmk_changetracking"></a> Rensning av SQL Server ändrings spårning
 
 *Gäller för: plats databas server*
 
 Från och med version 1810 kontrollerar du om plats databasen har en efter släpning av SQL Change tracking-data.<!--SCCMDocs-pr issue 3023-->  
 
-Verifiera den här kontrollen manuellt genom att köra en Diagnostisk lagrad procedur i plats databasen. Skapa först en [diagnostisk anslutning](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) till din plats databas. Den enklaste metoden är att använda SQL Server Management Studio databas motorns Frågeredigeraren och ansluta till `admin:<instance name>` .
+Verifiera den här kontrollen manuellt genom att köra en Diagnostisk lagrad procedur i plats databasen. Skapa först en [diagnostisk anslutning](/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) till din plats databas. Den enklaste metoden är att använda SQL Server Management Studio databas motorns Frågeredigeraren och ansluta till `admin:<instance name>` .
 
 Kör följande kommandon i ett dedikerat fönster för anslutnings frågor för administratörer:
 
@@ -786,7 +786,7 @@ Configuration Manager använder SQL Server Native Client på följande plats sys
 - Hanteringsplats
 - Enhets hanterings plats
 - Plats för tillståndsmigrering
-- SMS-provider
+- SMS-providern
 - Programuppdateringsplats
 - Multicast-aktiverad distributionsplats
 - Tillgångsinformation uppdaterings tjänst punkt
@@ -804,7 +804,7 @@ Configuration Manager använder SQL Server Native Client på följande plats sys
 
 SQL Server reserverar minst 8 GB minne för den centrala administrations platsen och den primära platsen, och minst 4 GB minne för den sekundära platsen.
 
-Mer information finns i [så här konfigurerar du minnes alternativ med SQL Server Management Studio](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options#how-to-configure-memory-options-using-).
+Mer information finns i [så här konfigurerar du minnes alternativ med SQL Server Management Studio](/sql/database-engine/configure-windows/server-memory-server-configuration-options#how-to-configure-memory-options-using-).
 
 > [!NOTE]  
 > Den här kontrollen kan inte användas för SQL Server Express på en sekundär plats. Den här versionen är begränsad till 1 GB reserverat minne.  
@@ -849,7 +849,7 @@ Mer information finns i [förbereda Active Directory för webbplats publicering]
 
 WinRM 1,1 installeras på den primära plats servern eller på den Configuration Manager-konsol datorn för att köra out-of-band-hanteringskonsolen.
 
-WinRM installeras automatiskt med alla versioner av Windows som stöds. Mer information finns i [installation och konfiguration för Windows Remote Management](https://docs.microsoft.com/windows/win32/winrm/installation-and-configuration-for-windows-remote-management).
+WinRM installeras automatiskt med alla versioner av Windows som stöds. Mer information finns i [installation och konfiguration för Windows Remote Management](/windows/win32/winrm/installation-and-configuration-for-windows-remote-management).
 
 ### <a name="wsus-on-site-server"></a>WSUS på plats Server
 
@@ -857,4 +857,4 @@ WinRM installeras automatiskt med alla versioner av Windows som stöds. Mer info
 
 En version av Windows Server Update Services (WSUS) som stöds har installerats på plats servern.
 
-När du använder en program uppdaterings plats på en annan server än plats servern måste du installera WSUS-administrationskonsolen på plats servern. Mer information om WSUS finns [Windows Server Update Services](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus).
+När du använder en program uppdaterings plats på en annan server än plats servern måste du installera WSUS-administrationskonsolen på plats servern. Mer information om WSUS finns [Windows Server Update Services](/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus).

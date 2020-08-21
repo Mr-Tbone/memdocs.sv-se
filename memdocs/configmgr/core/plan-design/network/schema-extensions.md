@@ -10,12 +10,12 @@ ms.assetid: 95c13c00-909f-4fbb-bbaa-1eba9d54d8c5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 1ace560130e43fd5675b51b6d507e84043c01407
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 81371828078264e185dc0a1883dd383257949ef4
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904076"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700103"
 ---
 # <a name="schema-extensions-for-configuration-manager"></a>Schemautökningar för Configuration Manager
 
@@ -25,7 +25,7 @@ Du kan utöka Active Directory-schemat så att det stöder Configuration Manager
 
 -   Det är en bra idé att utöka Active Directory schema, men det är inte obligatoriskt.  
 
-Innan du [utökar Active Directory-schemat](https://docs.microsoft.com/sccm/core/plan-design/network/extend-the-active-directory-schema) bör du vara bekant med Active Directory Domain Services och känna dig bekväm med att [ändra Active Directory-schemat](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)).  
+Innan du [utökar Active Directory-schemat](/sccm/core/plan-design/network/extend-the-active-directory-schema) bör du vara bekant med Active Directory Domain Services och känna dig bekväm med att [ändra Active Directory-schemat](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)).  
 
 ## <a name="considerations-for-extending-the-active-directory-schema-for-configuration-manager"></a>Att tänka på när du utökar Active Directory schema för Configuration Manager  
 
@@ -88,7 +88,7 @@ Innan du [utökar Active Directory-schemat](https://docs.microsoft.com/sccm/core
 
 -   **Provisorisk lösning**: Om du inte utökar Active Directory-schemat kan du använda underhållsverktyget för hierarkier, **preinst.exe**, för att utbyta säker nyckelinformation mellan platser.  
 
-     Om du till exempel planerar att skapa innehåll på en primär plats och distribuerar innehållet till en sekundär plats under en annan primär plats måste du antingen utöka Active Directory-schemat för att den sekundära platsen ska kunna hämta den primära käll platsens offentliga nyckel eller använda Preinst. exe för att dela nycklar mellan de två platserna direkt.  
+     Om du till exempel planerar att skapa innehåll på en primär plats och distribuerar innehållet till en sekundär plats under en annan primär plats måste du antingen utöka Active Directory-schemat så att den sekundära platsen hämtar den primära käll platsens offentliga nyckel eller använder preinst.exe för att dela nycklar mellan de två platserna direkt.  
 
 ## <a name="active-directory-attributes-and-classes"></a>Active Directory attribut och klasser  
 När du utökar schemat för Configuration Manager läggs följande klasser och attribut till i schemat och är tillgängliga för alla Configuration Manager platser i den Active Directory skogen.  
@@ -136,10 +136,10 @@ När du utökar schemat för Configuration Manager läggs följande klasser och 
 
 > [!NOTE]
 > 
->  Schema tilläggen kan innehålla attribut och klasser som överförs från tidigare versioner av produkten men som inte används av Configuration Manager. Ett exempel:  
+>  Schema tilläggen kan innehålla attribut och klasser som överförs från tidigare versioner av produkten men som inte används av Configuration Manager. Exempel:  
 > 
 > 
 > - Attribut: CN = MS-SMS-plats-gränser  
 >   -   Klass: CN = MS-SMS-server-Locator-Point  
 
-Du kan se till att föregående listor är aktuella genom att visa **ConfigMgr_ad_schema. LDF** -filen från mappen **\SMSSETUP\BIN\x64** på installations mediet för Configuration Manager.  
+Du kan se till att föregående listor är aktuella genom att visa **ConfigMgr_ad_schema. LDF** -filen från mappen **\SMSSETUP\BIN\x64** på installations mediet för Configuration Manager.

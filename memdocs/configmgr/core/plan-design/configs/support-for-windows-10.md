@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6a30fc55fb4129b8ea3493b76fd6871a2a62f881
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 1e35a66c05a09455b3f2aded3d81daa2ccd5eff0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126747"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700256"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Stöd för Windows 10 i Configuration Manager  
 
@@ -70,7 +70,7 @@ Mer information om Windows-livscykel finns i [fakta bladet Windows Lifecycle](ht
 | ![Stöds ](media/green_check.png)  =  **Supported**  |
 | ![Stöds inte ](media/Red_X.png)  =  **Not supported** |
 
-### <a name="windows-10-client-support-notes"></a><a name="bkmk_win10-notes"></a>Support anteckningar för Windows 10-klienten
+### <a name="windows-10-client-support-notes"></a><a name="bkmk_win10-notes"></a> Support anteckningar för Windows 10-klienten
 
 - Stöd för Windows 10-halvårs kanal versioner innehåller följande utgåvor: Enterprise, Pro, Education och Pro Education.  
 
@@ -78,7 +78,7 @@ Mer information om Windows-livscykel finns i [fakta bladet Windows Lifecycle](ht
 
 - För Windows 10, version 1909, visar operativ Systems distributions mediet versionen som 10.0.18362.418.
 
-### <a name="windows-10-on-arm64"></a><a name="bkmk_arm64"></a>Windows 10 på ARM64
+### <a name="windows-10-on-arm64"></a><a name="bkmk_arm64"></a> Windows 10 på ARM64
 
 Configuration Manager stöder klienten på Windows 10 ARM64-enheter. OS-distribution stöds inte.<!-- 1353704 -->
 
@@ -87,11 +87,11 @@ Från och med version 2002,<!--5954175--> **alla Windows 10-plattformar (arm64)*
 > [!NOTE]
 > Om du tidigare har valt **Windows 10** -plattformen på den översta nivån, markeras den här åtgärden automatiskt både **alla windows 10 (64-bitars)** och **alla Windows 10 (32-bitars)**. Den här nya plattformen väljs inte automatiskt. Om du vill lägga till **alla Windows 10 (arm64)** väljer du det manuellt i listan.
 
-### <a name="support-for-windows-insider"></a><a name="bkmk_WIfB-support"></a>Stöd för Windows Insider
+### <a name="support-for-windows-insider"></a><a name="bkmk_WIfB-support"></a> Stöd för Windows Insider
 
 Från och med Configuration Manager version 1906 kan du [Uppdatera och underhålla Windows Insider-](../../../sum/get-started/configure-classifications-and-products.md#bkmk_WIfB) versioner. Den här funktionen tillhandahålls som en bekvämlighet för våra kunder. Även om den här funktionen ska fungera är supporten för den bästa ansträngningen. Configuration Manager kanske inte utfärdar någon snabb korrigering för den här funktionen om den upphör att fungera.  
 
-Om du vill ge feedback om Windows Insider använder du [feedback Hub](https://docs.microsoft.com/windows-insider/at-work-pro/wip-4-biz-feedback).
+Om du vill ge feedback om Windows Insider använder du [feedback Hub](/windows-insider/at-work-pro/wip-4-biz-feedback).
 
 ## <a name="windows-10-adk"></a>Windows 10 ADK
 
@@ -99,7 +99,7 @@ När du distribuerar operativ system med Configuration Manager är Windows ADK e
 
 - [Infrastrukturkrav för distribution av operativsystem](../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md#windows-adk-for-windows-10)
 
-- [Hämta Windows ADK för Windows 10](https://docs.microsoft.com/windows-hardware/get-started/adk-install)
+- [Hämta Windows ADK för Windows 10](/windows-hardware/get-started/adk-install)
 
     > [!IMPORTANT]
     > Från och med Windows 10 version 1809 är Windows PE ett separat installations program. Annars finns det ingen funktionell skillnad.
@@ -118,11 +118,11 @@ I följande tabell visas de versioner av Windows 10 ADK som du kan använda med 
 
 |Nyckel|
 |--|
-| ![Stöds ](media/green_check.png)  =  **Supported** <br/> I den här tabellen visas endast stöd för Windows ADK i relation till versionen av Configuration Manager. Microsoft rekommenderar att du använder Windows ADK som matchar den version av Windows som du distribuerar. Använd den senaste Windows ADK-versionen när du distribuerar den senaste versionen av Windows 10. Den senaste versionen av Windows ADK kan ha stöd för distribution av äldre OS-versioner, t. ex. Windows 8,1.<!-- SCCMDocs issue 1229 --> Mer information om stöd för Windows ADK-komponenter finns i [DISM-plattformar som stöds](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-supported-platforms) och [USMT-krav](https://docs.microsoft.com/windows/deployment/usmt/usmt-requirements#bkmk-1). |
+| ![Stöds ](media/green_check.png)  =  **Supported** <br/> I den här tabellen visas endast stöd för Windows ADK i relation till versionen av Configuration Manager. Microsoft rekommenderar att du använder Windows ADK som matchar den version av Windows som du distribuerar. Använd den senaste Windows ADK-versionen när du distribuerar den senaste versionen av Windows 10. Den senaste versionen av Windows ADK kan ha stöd för distribution av äldre OS-versioner, t. ex. Windows 8,1.<!-- SCCMDocs issue 1229 --> Mer information om stöd för Windows ADK-komponenter finns i [DISM-plattformar som stöds](/windows-hardware/manufacture/desktop/dism-supported-platforms) och [USMT-krav](/windows/deployment/usmt/usmt-requirements#bkmk-1). |
 | ![Bakåtkompatibelt bakåtkompatibla ](media/blue_compat.png)   =  **Backward compatible** <br/> Den här kombinationen testas inte utan bör fungera. Vi kommer att dokumentera eventuella kända problem eller varningar. |
 | ![Stöds inte ](media/Red_X.png)  =  **Not supported** |
 
-### <a name="windows-10-adk-support-notes"></a><a name="bkmk_adk-notes"></a>Support anteckningar för Windows 10 ADK
+### <a name="windows-10-adk-support-notes"></a><a name="bkmk_adk-notes"></a> Support anteckningar för Windows 10 ADK
 
 - Configuration Manager stöder endast x86-och amd64-komponenter i Windows 10 ADK. Det stöder för närvarande inte ARM-eller ARM64-komponenter.
 

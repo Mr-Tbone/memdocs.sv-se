@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: c192db8ccab336d05ef965e837fe17fc16a19200
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: f758456ad75c4acde1b050be75d653cc0e1dcfa1
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128941"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700375"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Vad är nytt i version 1902 av Configuration Manager aktuella grenen
 
@@ -32,10 +32,10 @@ För att dra full nytta av nya Configuration Manager funktioner kan du även upp
  -->
 
 > [!Tip]  
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1902+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1902+-+Configuration+Manager%22&locale=en-us`
 
 
-## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a>Föråldrade funktioner och operativ system
+## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a> Föråldrade funktioner och operativ system
 
 Läs om support ändringar innan de implementeras i [borttagna och föråldrade objekt](deprecated/removed-and-deprecated.md).
 
@@ -46,7 +46,7 @@ Version 1902 släpper stöd för följande produkter:
 - Linux och UNIX som en klient. Utfasningen presenterades av [version 1802](whats-new-in-version-1802.md#deprecation-announcement-for-linux-and-unix-client-support). Överväg Microsoft Azure hantering för hantering av Linux-servrar. Azure-lösningar har omfattande Linux-support som i de flesta fall överskrider Configuration Manager-funktioner, inklusive slut punkt till slut punkt för korrigerings hantering för Linux.
 
 
-## <a name="site-infrastructure"></a><a name="bkmk_infra"></a>Plats infrastruktur
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Plats infrastruktur
 
 ### <a name="client-health-dashboard"></a>Instrument panel för klient hälsa
 
@@ -88,7 +88,7 @@ När du installerar eller uppdaterar till version 1902 innehåller Configuration
 - **Väntande omstart av systemet på fjärrSQL Server**: den här krav kontrollen liknar den **väntande systemomstarts** regeln, men den kontrollerar en fjärran sluten SQL Server. Mer information finns i [lista över krav kontroller](../../servers/deploy/install/list-of-prerequisite-checks.md#pending-system-restart-on-the-remote-sql-server). <!--SCCMDocs-pr issue 3377-->  
 
 
-## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a>Molnbaserad hantering
+## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Molnbaserad hantering
 
 ### <a name="stop-cloud-service-when-it-exceeds-threshold"></a>Stoppa moln tjänsten när den överskrider tröskelvärdet
 
@@ -114,7 +114,7 @@ Nu kan du associera en Cloud Management Gateway (CMG) med en avgränsnings grupp
 Mer information finns i [CMG-hierarki](../../clients/manage/cmg/plan-cloud-management-gateway.md#hierarchy-design) och [Konfigurera CMG](../../clients/manage/cmg/setup-cloud-management-gateway.md#configure-boundary-groups).
 
 
-## <a name="real-time-management"></a><a name="bkmk_real"></a>Real tids hantering
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Real tids hantering
 
 ### <a name="run-cmpivot-from-the-central-administration-site"></a>Kör CMPivot från den centrala administrations platsen
 
@@ -131,7 +131,7 @@ Nu kan du **redigera** eller **Kopiera** ett befintligt PowerShell-skript som an
 Mer information finns i [köra skript](../../../apps/deploy-use/create-deploy-scripts.md#bkmk_psedit).
 
 
-## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
+## <a name="content-management"></a><a name="bkmk_content"></a> Innehålls hantering
 
 ### <a name="distribution-point-maintenance-mode"></a>Underhålls läge för distributions punkt
 
@@ -156,7 +156,7 @@ Mer information om den här funktionen finns i [underhålls läge](../../servers
 Mer information om hur du automatiserar den här processen med Configuration Manager SDK finns [i SetDPMaintenanceMode-metoden i klassen SMS_DistributionPointInfo](../../../develop/reference/core/servers/configure/setdpmaintenancemode-method-in-class-sms-distributionpointinfo.md).
 
 
-## <a name="client-management"></a><a name="bkmk_client"></a>Klient hantering
+## <a name="client-management"></a><a name="bkmk_client"></a> Klient hantering
 
 ### <a name="client-provisioning-mode-timeout"></a>Timeout för klient etablerings läge
 
@@ -180,7 +180,7 @@ Nu kan du ange ett anpassat port nummer för Wake-up-proxy. I klient inställnin
 Mer information finns i [så här konfigurerar du Wake on LAN](../../clients/deploy/configure-wake-on-lan.md).
 
 
-## <a name="application-management"></a><a name="bkmk_app"></a>Program hantering
+## <a name="application-management"></a><a name="bkmk_app"></a> Program hantering
 
 ### <a name="improvements-to-application-approvals-via-email"></a>Förbättringar av program godkännanden via e-post
 
@@ -199,7 +199,7 @@ Den här versionen innehåller följande förbättringar av [Package Conversion 
 - Allmänna fel korrigeringar och förbättringar
 
 
-## <a name="os-deployment"></a><a name="bkmk_osd"></a>OS-distribution
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> OS-distribution
 
 ### <a name="progress-status-during-in-place-upgrade-task-sequence"></a>Förlopps status under aktivitetssekvensen plats uppgradering
 
@@ -292,7 +292,7 @@ Den här versionen innehåller följande förbättringar av OS-distributionen:
 - När du aktiverar en PXE-svarare på en distributions plats utan Windows Deployment-tjänst kan den nu finnas på samma server som DHCP-tjänsten. <!--3734270--> Mer information finns i [Konfigurera minst en distributions plats att acceptera PXE-begäranden](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md#BKMK_Configure).
 
 
-## <a name="software-center"></a><a name="bkmk_userxp"></a>Software Center
+## <a name="software-center"></a><a name="bkmk_userxp"></a> Software Center
 
 ### <a name="replace-toast-notifications-with-dialog-window"></a>Ersätt popup-meddelanden med dialog fönster
 
@@ -330,7 +330,7 @@ Ange de här inställningarna i **Software Center** -gruppen med klient inställ
 Mer information finns i [om klient inställningar](../../clients/deploy/about-client-settings.md#bkmk_swctr_defaults).
 
 
-## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Program uppdateringar
 
 ### <a name="specify-priority-for-feature-updates-in-windows-10-servicing"></a>Ange prioritet för funktions uppdateringar i Windows 10-underhåll
 
@@ -342,16 +342,16 @@ Använd klient inställningar för att konfigurera det här alternativet. Konfig
 Mer information finns i [om klient inställningar](../../clients/deploy/about-client-settings.md#software-updates).
 
 
-## <a name="office-management"></a><a name="bkmk_o365"></a>Office-hantering
+## <a name="office-management"></a><a name="bkmk_o365"></a> Office-hantering
 
 ### <a name="redirect-windows-known-folders-to-onedrive"></a>Omdirigera Windows-kända mappar till OneDrive
 
 <!--3556021-->
 Använd Configuration Manager för att flytta Windows-kända mappar till OneDrive för företag. Dessa mappar innehåller Skriv bord, dokument och bilder. För att förenkla dina Windows 10-uppgraderingar distribuerar du inställningarna till Windows 7-klienter innan du distribuerar en aktivitetssekvens.
 
-Mer information om den här funktionen i OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](https://docs.microsoft.com/onedrive/redirect-known-folders).
+Mer information om den här funktionen i OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](/onedrive/redirect-known-folders).
 
-Börja [med att hitta ditt Office 365-klient-ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id). Distribuera sedan 18.111.0603.0004 för OneDrive-synkronisering eller senare. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
+Börja [med att hitta ditt Office 365-klient-ID](/onedrive/find-your-office-365-tenant-id). Distribuera sedan 18.111.0603.0004 för OneDrive-synkronisering eller senare. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](/onedrive/deploy-on-windows).  
 
 Om du vill skapa och distribuera en OneDrive för företag-profil går du till arbets ytan **till gångar och efterlevnad** i Configuration Manager-konsolen. Expandera **kompatibilitetsinställningar och välj**noden **OneDrive för företag-profiler** .  
 
@@ -381,7 +381,7 @@ Instrument panelen för produktens livs cykel innehåller nu information om inst
 Mer information finns i [använda instrument panelen för produktens livs cykel](../../clients/manage/asset-intelligence/product-lifecycle-dashboard.md).
 
 
-## <a name="phased-deployments"></a><a name="bkmk_pod"></a>Stegvisa distributioner
+## <a name="phased-deployments"></a><a name="bkmk_pod"></a> Stegvisa distributioner
 
 ### <a name="dedicated-monitoring-for-phased-deployments"></a>Dedikerad övervakning för stegvisa distributioner
 
@@ -400,9 +400,9 @@ Skapa en stegvis distribution för en aktivitetssekvens, program uppdatering ell
 Mer information finns i skapa stegvisa [distributioner](../../../osd/deploy-use/create-phased-deployment-for-task-sequence.md).
 
 
-## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a>Configuration Manager-konsol
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Configuration Manager-konsol
 
-### <a name="improvements-to-configuration-manager-console"></a><a name="bkmk_console"></a>Förbättringar i Configuration Manager-konsolen
+### <a name="improvements-to-configuration-manager-console"></a><a name="bkmk_console"></a> Förbättringar i Configuration Manager-konsolen
 
 <!--3594151-->
 Baserat på kundfeedback på Mellanvästern Management Summit (MMS) Desert Edition 2018, innehåller den här versionen följande förbättringar av Configuration Manager-konsolen:
@@ -479,7 +479,7 @@ När du installerar eller uppdaterar en plats Server kopieras installationsfiler
 
 Förutom nya funktioner innehåller den här versionen även ytterligare ändringar som fel korrigeringar. Mer information finns i [Sammanfattning av ändringar i Configuration Manager aktuella grenen, version 1902](https://support.microsoft.com/help/4498910).
 
-Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1902](https://docs.microsoft.com/powershell/sccm/1902-release-notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1902](/powershell/sccm/1902-release-notes?view=sccm-ps).
 
 Följande samlade uppdateringar (4500571) är tillgängliga i-konsolen från och med 17 juni 2019: [Samlad uppdatering för Configuration Manager aktuell gren, version 1902](https://support.microsoft.com/help/4500571).
 

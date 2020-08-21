@@ -10,12 +10,12 @@ ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 37e4db2ad801c5923ba3db54554af0bb13968048
-ms.sourcegitcommit: 64727a4b025a589e270842da39516c4c42563a34
+ms.openlocfilehash: 9e71baef06349a00d49bc7fdc799d078c29939d8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84301443"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699525"
 ---
 # <a name="recover-a-configuration-manager-site"></a>Återställa en Configuration Manager-plats
 
@@ -49,8 +49,8 @@ Använd någon av följande procedurer för att rensa en befintlig server:
 
 #### <a name="clean-an-existing-server-for-site-server-recovery-only"></a>Rensa en befintlig server för återställning av plats Server
 
-1. Ta bort SMS-registernycklar:`HKLM\Software\Microsoft\SMS`
-2. Ta bort alla register poster som börjar med `SMS` från `HKLM\System\CurrentControlSet\Services` . Ett exempel:
+1. Ta bort SMS-registernycklar: `HKLM\Software\Microsoft\SMS`
+2. Ta bort alla register poster som börjar med `SMS` från `HKLM\System\CurrentControlSet\Services` . Exempel:
     - SMS_DISCOVERY_DATA_MANAGER
     - SMS_EXECUTIVE
     - SMS_INBOX_MONITOR
@@ -181,7 +181,7 @@ Använd det här alternativet om du redan har återställt Configuration Manager
     När du har återställt plats databasen med hjälp av en metod utanför Configuration Manager kör du installations programmet och väljer det här alternativet för att slutföra återställningen av plats databasen.  
 
     > [!NOTE]  
-    > När du använder DPM för att säkerhetskopiera plats databasen använder du DPM-procedurerna för att återställa plats databasen till en angiven plats innan du fortsätter med återställnings processen i Configuration Manager. Mer information om DPM finns i dokumentations biblioteket för [Data Protection Manager](https://docs.microsoft.com/system-center/dpm) .  
+    > När du använder DPM för att säkerhetskopiera plats databasen använder du DPM-procedurerna för att återställa plats databasen till en angiven plats innan du fortsätter med återställnings processen i Configuration Manager. Mer information om DPM finns i dokumentations biblioteket för [Data Protection Manager](/system-center/dpm) .  
 
 - När du återställer en primär plats databas i en-hierarki, hämtas återställnings processen från CAS till alla ändringar som görs i plats databasen efter den senaste säkerhets kopieringen. När du återställer CAS hämtar återställnings processen dessa ändringar från en primär referens plats. När du återställer plats databasen för en fristående primär plats förlorar du plats ändringarna efter den senaste säkerhets kopieringen.  
 
@@ -193,7 +193,7 @@ Använd det här alternativet om ingen data förlust har inträffat på Configur
 
 Configuration Manager aktiverar ändrings spårning för plats databasen i SQL Server. Med ändrings spårning kan Configuration Manager fråga efter information om de ändringar som gjorts i databas tabellerna efter en tidigare tidpunkt. Kvarhållningsperioden anger hur länge informationen om ändrings spårningen ska behållas. Som standard är plats databasen konfigurerad för att ha en kvarhållningsperiod på fem dagar. När du återställer en platsdatabas fortsätter återställningsprocessen på olika sätt beroende på om din säkerhetskopia görs inom kvarhållningsperioden eller inte. Om din SQL Server till exempel Miss lyckas och den senaste säkerhets kopieringen är sju dagar gammal, är den utanför kvarhållningsperioden.
 
-Mer information om SQL Server ändrings spårning av intern information finns i följande blogg inlägg från SQL Server-teamet: [ändringsspårning rensa-del 1](https://docs.microsoft.com/archive/blogs/sql_server_team/change-tracking-cleanup-part-1) och [ändringsspårning rensning-del 2](https://docs.microsoft.com/archive/blogs/sql_server_team/change-tracking-cleanup-part-2).
+Mer information om SQL Server ändrings spårning av intern information finns i följande blogg inlägg från SQL Server-teamet: [ändringsspårning rensa-del 1](/archive/blogs/sql_server_team/change-tracking-cleanup-part-1) och [ändringsspårning rensning-del 2](/archive/blogs/sql_server_team/change-tracking-cleanup-part-2).
 
 ### <a name="reinitialization-of-site-or-global-data"></a>Initiera om plats-eller globala data
 
@@ -263,7 +263,7 @@ Använd någon av följande procedurer för att få hjälp att återställa plat
 
 1. Förbered det obevakade installationsskriptet för de alternativ som du behöver för platsåterställningen. Mer information finns i [obevakad plats återställning](unattended-recovery.md).  
 
-2. Kör Configuration Manager-installationen med hjälp av `/script` kommando rads alternativet. Du kan till exempel skapa en initierings fil för installations programmet **namnet ConfigMgrUnattend. ini**. Du sparar den i `C:\Temp` katalogen på den dator där du kör installations programmet. Ange följande kommando:  
+2. Kör Configuration Manager-installationen med hjälp av `/script` kommando rads alternativet. Du kan till exempel skapa en initierings fil för installationen **ConfigMgrUnattend.ini**. Du sparar den i `C:\Temp` katalogen på den dator där du kör installations programmet. Ange följande kommando:  
 
     `setup.exe /script C:\temp\ConfigMgrUnattend.ini`  
 
@@ -378,7 +378,7 @@ Efter en plats återställning måste du installera om eventuella [out-of-band-s
 
 ### <a name="recover-custom-reports"></a>Återställa anpassade rapporter
 
-Vissa kunder skapar anpassade rapporter i SQL Server Reporting Services. När den här komponenten Miss lyckas återställer du rapporterna från en säkerhets kopia av rapport servern. Mer information om hur du återställer dina anpassade rapporter i repor ting Services finns i [säkerhets kopierings-och återställnings åtgärder för repor ting Services](https://docs.microsoft.com/sql/reporting-services/install-windows/backup-and-restore-operations-for-reporting-services).
+Vissa kunder skapar anpassade rapporter i SQL Server Reporting Services. När den här komponenten Miss lyckas återställer du rapporterna från en säkerhets kopia av rapport servern. Mer information om hur du återställer dina anpassade rapporter i repor ting Services finns i [säkerhets kopierings-och återställnings åtgärder för repor ting Services](/sql/reporting-services/install-windows/backup-and-restore-operations-for-reporting-services).
 
 ### <a name="recover-content-files"></a>Återställa innehållsfiler
 
@@ -410,7 +410,7 @@ Som en del av egenskaperna för tillståndsmigrering anger du de mappar som lagr
 
 ### <a name="regenerate-the-certificates-for-distribution-points"></a>Återskapa certifikatet för distributionsplatser
 
-När du har återställt en plats kan **Distmgr. log** ange följande post för en eller flera distributions platser: `Failed to decrypt cert PFX data` . Den här posten anger att distributions platsens certifikat data inte kan dekrypteras av platsen. Lös problemet genom att återskapa eller importera certifikatet för berörda distributions platser igen. Använd cmdleten [set-CMDistributionPoint](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmdistributionpoint) PowerShell.
+När du har återställt en plats kan **Distmgr. log** ange följande post för en eller flera distributions platser: `Failed to decrypt cert PFX data` . Den här posten anger att distributions platsens certifikat data inte kan dekrypteras av platsen. Lös problemet genom att återskapa eller importera certifikatet för berörda distributions platser igen. Använd cmdleten [set-CMDistributionPoint](/powershell/module/configurationmanager/set-cmdistributionpoint) PowerShell.
 
 ### <a name="update-certificates-used-for-cloud-based-distribution-points"></a>Uppdatera certifikat som används för molnbaserade distributions platser
 

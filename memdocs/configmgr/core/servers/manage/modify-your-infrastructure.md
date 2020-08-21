@@ -10,12 +10,12 @@ ms.assetid: a7975dc8-46ab-4dae-86b6-dc3e3cf3b2f0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 92bf86225cf869622fd4b496fd3e8e852b651a70
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: aae6db43a03f524773cad4c26ff11817da02a323
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713676"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699678"
 ---
 # <a name="modify-your-configuration-manager-infrastructure"></a>Ändra din Configuration Manager-infrastruktur
 
@@ -23,7 +23,7 @@ ms.locfileid: "81713676"
 
 När du har installerat en eller flera platser kan du behöva ändra konfigurationer eller vidta åtgärder som påverkar din infrastruktur.
 
-## <a name="manage-the-sms-provider"></a><a name="BKMK_ManageSMSprovider"></a>Hantera SMS-providern
+## <a name="manage-the-sms-provider"></a><a name="BKMK_ManageSMSprovider"></a> Hantera SMS-providern
 
 SMS-providern tillhandahåller den administrativa kontakt punkten för en eller flera Configuration Manager-konsoler. När du installerar flera SMS-providrar kan du tillhandahålla redundans för kontakt punkter för att administrera din plats och hierarki.
 
@@ -39,7 +39,7 @@ Innan du ändrar SMS-providern på en plats, se [Planera för SMS-providern](../
 
 ### <a name="manage-the-sms-provider-configuration-for-a-site"></a>Hantera konfigurationen av SMS-providern för en plats  
 
-1. Kör **Configuration Manager** -installationen `\BIN\X64\setup.exe` från i mappen Configuration Manager plats installation.
+1. Kör **Configuration Manager-installationen** från `\BIN\X64\setup.exe` i mappen Configuration Manager plats installation.
 
 1. På sidan **komma igång** väljer du **utför plats underhåll eller Återställ den här platsen**.
 
@@ -56,7 +56,7 @@ Innan du ändrar SMS-providern på en plats, se [Planera för SMS-providern](../
 
 När installations guiden har slutförts slutförs konfigurationen av SMS-providern. I plats **egenskaperna**går du till fliken **Allmänt** och kontrollerar de datorer som har en SMS-provider installerad för en plats.
 
-## <a name="manage-the-configuration-manager-console"></a><a name="bkmk_Console"></a>Hantera Configuration Manager-konsolen
+## <a name="manage-the-configuration-manager-console"></a><a name="bkmk_Console"></a> Hantera Configuration Manager-konsolen
 
 Följande uppgifter hjälper dig att hantera Configuration Manager-konsolen:
 
@@ -68,7 +68,7 @@ Följande uppgifter hjälper dig att hantera Configuration Manager-konsolen:
 
 - Information om hur du ändrar administrativa behörigheter för att begränsa vad användarna kan se och göra i konsolen finns i [ändra den administrativa användarens administrativa omfattning](../deploy/configure/configure-role-based-administration.md#BKMK_ModAdminUser).
 
-### <a name="manage-configuration-manager-console-language"></a><a name="BKMK_ManageConsoleLanguages"></a>Hantera Configuration Manager-konsolens språk
+### <a name="manage-configuration-manager-console-language"></a><a name="BKMK_ManageConsoleLanguages"></a> Hantera Configuration Manager-konsolens språk
 
 Under installationen av plats servern kopieras installationsfilerna för Configuration Manager-konsolen och de språk paket som stöds för platsen till `\Tools\ConsoleSetup` undermappen i Configuration Manager installations Sök väg på plats servern.
 
@@ -94,7 +94,7 @@ Använd följande procedurer för att starta Configuration Manager-konsolen på 
 
 1. I Utforskaren bläddrar du till `\Tools\ConsoleSetup\LanguagePack` i Configuration Manager installations Sök väg.
 
-1. Byt namn på **.msp**- och **.mst**-filerna. Du kan till exempel ändra ** &lt;fil namn\>. MSP** till ** &lt;fil namn\>. MSP. disabled**.
+1. Byt namn på **.msp**- och **.mst**-filerna. Du kan till exempel ändra ** &lt; fil namn \> . MSP** till ** &lt; fil namn \> . MSP. disabled**.
 
 1. Installera Configuration Manager-konsolen på datorn.
 
@@ -111,7 +111,7 @@ Använd följande procedurer för att starta Configuration Manager-konsolen på 
 
 1. Om du vill öppna Configuration Manager-konsolen på det språk som har kon figurer ATS för datorn byter du namn på mappen till det ursprungliga namnet. Byt till exempel namnet **de.disabled** till **de**.  
 
-## <a name="configure-dcom-permissions-for-remote-consoles"></a><a name="BKMK_ConfigDCOMforRemoteConsole"></a>Konfigurera DCOM-behörigheter för fjärranslutna konsoler
+## <a name="configure-dcom-permissions-for-remote-consoles"></a><a name="BKMK_ConfigDCOMforRemoteConsole"></a> Konfigurera DCOM-behörigheter för fjärranslutna konsoler
 
 Det användar konto som kör Configuration Manager-konsolen måste ha behörighet att komma åt plats databasen med hjälp av SMS-providern. En administrativ användare som använder en fjärran sluten Configuration Manager-konsol kräver dock även DCOM-behörigheter för **fjärraktivering** på:
 
@@ -138,7 +138,7 @@ Använd följande procedur för att konfigurera varje central administrations we
 
 1. I fönstret **Start-och aktiverings behörigheter** väljer du **Lägg till**.
 
-1. I fönstret **Välj användare, datorer, tjänst konton eller grupper** , i fältet **Ange de objekt namn som ska väljas** , skriver `SMS Admins`du och väljer sedan **OK**.
+1. I fönstret **Välj användare, datorer, tjänst konton eller grupper** , i fältet **Ange de objekt namn som ska väljas** , skriver du `SMS Admins` och väljer sedan **OK**.
 
    > [!TIP]
    > För att hitta gruppen SMS-administratörer kan du behöva ändra inställningen: **från den här platsen**. Den här gruppen är lokal på datorn när SMS-providern körs på en medlems Server och är en domän lokal grupp när SMS-providern körs på en domänkontrollant.
@@ -151,7 +151,7 @@ Datorn har nu kon figurer ATS för att tillåta fjärråtkomst till Configuratio
 
 Upprepa proceduren på varje SMS-provider som stöder fjärrConfiguration Manager-konsoler.
 
-## <a name="modify-the-site-database-configuration"></a><a name="bkmk_dbconfig"></a>Ändra plats databasens konfiguration
+## <a name="modify-the-site-database-configuration"></a><a name="bkmk_dbconfig"></a> Ändra plats databasens konfiguration
 
 När du har installerat en-plats kan du ändra konfigurationen för plats databasen och plats databas servern. Kör Configuration Manager-installationen på en CAS-server eller primär plats Server för att göra ändringar. Du kan flytta platsdatabasen till en ny instans av SQL Server på samma dator, eller till en annan dator som kör en version av SQL Server som stöds. Dessa ändringar stöds inte för databas konfigurationen på sekundära platser.
 
@@ -180,14 +180,14 @@ Om du flyttar plats databasen granskar du även följande konfigurationer:
 
 - När du flyttar plats databasen till en ny dator lägger du till dator kontot för plats servern i den lokala gruppen **Administratörer** på den dator som kör SQL Server. Om du använder ett SQL Server-kluster för plats databasen lägger du till dator kontot i gruppen lokala **Administratörer** på varje Windows Server-klusternod.
 
-- När du flyttar databasen till en ny instans på SQL Server, eller till en ny SQL Server dator, aktiverar du integrering med Common Language Runtime (CLR). Använd **SQL Server Management Studio** för att ansluta till den instans av SQL Server som är värd för plats databasen. Kör sedan följande lagrade procedur som en fråga:`sp_configure 'clr enabled',1; reconfigure`
+- När du flyttar databasen till en ny instans på SQL Server, eller till en ny SQL Server dator, aktiverar du integrering med Common Language Runtime (CLR). Använd **SQL Server Management Studio** för att ansluta till den instans av SQL Server som är värd för plats databasen. Kör sedan följande lagrade procedur som en fråga: `sp_configure 'clr enabled',1; reconfigure`
 
 - Kontrol lera att den nya SQL Server har åtkomst till säkerhets kopierings platsen. När du använder en UNC för att lagra säkerhets kopian av plats databasen efter att ha flyttat databasen till en ny server, kontrollerar du att dator kontot för den nya SQL Server har **Skriv** behörighet till UNC-platsen. Den här konfigurationen omfattar när du flyttar till en SQL Server AlwaysOn-tillgänglighetsgruppen eller ett SQL Server-kluster.
 
 > [!IMPORTANT]
 > Innan du flyttar en databas som har en eller flera databas repliker för hanterings platser måste du först ta bort databas replikerna. När du har slutfört flyttningen av databasen kan du konfigurera om databasreplikerna. Mer information finns i [databas repliker för hanterings platser](../deploy/configure/database-replicas-for-management-points.md).
 
-## <a name="manage-the-spn-for-the-site-database-server"></a><a name="bkmk_SPN"></a>Hantera SPN för plats databas servern
+## <a name="manage-the-spn-for-the-site-database-server"></a><a name="bkmk_SPN"></a> Hantera SPN för plats databas servern
 
 Du kan välja det konto som kör SQL-tjänster för plats databasen:
 
@@ -195,11 +195,11 @@ Du kan välja det konto som kör SQL-tjänster för plats databasen:
 
 - När tjänsterna körs med ett lokalt domän användar konto registrerar du SPN manuellt. SPN gör det möjligt för SQL-klienter och andra plats system att autentisera med Kerberos. Utan Kerberos-autentisering kan kommunikationen med databasen misslyckas.
 
-Mer information om SPN-namn och Kerberos-anslutningar finns i [Registrera ett tjänst huvud namn för Kerberos-anslutningar](https://docs.microsoft.com/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections).
+Mer information om SPN-namn och Kerberos-anslutningar finns i [Registrera ett tjänst huvud namn för Kerberos-anslutningar](/sql/database-engine/configure-windows/register-a-service-principal-name-for-kerberos-connections).
 
 Registrera ett SPN för SQL Server tjänst kontot för plats databas servern med hjälp av verktyget **setspn** . Kör Setspn som domän administratör på en dator i samma domän som SQL Server.
 
-Följande procedurer är exempel på hur du hanterar SPN för SQL Server tjänst konto. Mer information om Setspn finns i [Översikt över Setspn](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731241\(v=ws.11\)).
+Följande procedurer är exempel på hur du hanterar SPN för SQL Server tjänst konto. Mer information om Setspn finns i [Översikt över Setspn](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731241\(v=ws.11\)).
 
 ### <a name="manually-create-a-domain-user-spn-for-the-sql-server-service-account"></a>Skapa ett SPN för domän användare för SQL Server tjänst kontot manuellt
 
@@ -210,13 +210,13 @@ Följande procedurer är exempel på hur du hanterar SPN för SQL Server tjänst
     > [!IMPORTANT]
     > När du skapar ett SPN för en klustrad SQL Server anger du det virtuella namnet på SQL Server klustret som SQL Server dator namn.
 
-    - NetBIOS-namn:`setspn -A MSSQLSvc/<SQL Server computer name>:<port> <Domain\Account>`
+    - NetBIOS-namn: `setspn -A MSSQLSvc/<SQL Server computer name>:<port> <Domain\Account>`
 
-        Exempelvis: `setspn -A MSSQLSvc/sqlserver:1433 contoso\sqlservice`
+        Exempel: `setspn -A MSSQLSvc/sqlserver:1433 contoso\sqlservice`
 
-    - KVALIFICERADE`setspn -A MSSQLSvc/<SQL Server FQDN>:<port> <Domain\Account>`
+    - KVALIFICERADE `setspn -A MSSQLSvc/<SQL Server FQDN>:<port> <Domain\Account>`
 
-        Exempelvis: `setspn -A MSSQLSvc/sqlserver.contoso.com:1433 contoso\sqlservice`
+        Exempel: `setspn -A MSSQLSvc/sqlserver.contoso.com:1433 contoso\sqlservice`
 
     > [!NOTE]
     > Kommandot för att registrera ett SPN för en SQL Server namngiven instans är detsamma som du använder när du registrerar ett SPN för en standard instans. Det enda undantaget är att port numret måste matcha porten som den namngivna instansen använder.
@@ -225,9 +225,9 @@ Följande procedurer är exempel på hur du hanterar SPN för SQL Server tjänst
 
 1. Öppna en kommandotolk som administratör.
 
-1. Ange följande kommando:`setspn -L <domain\SQL service account>`
+1. Ange följande kommando: `setspn -L <domain\SQL service account>`
 
-    Exempelvis: `setspn -L contoso\sqlservice`
+    Exempel: `setspn -L contoso\sqlservice`
 
 1. Granska registrerade **servicePrincipalName**. Se till att du har skapat ett giltigt SPN för SQL Server.
 
@@ -237,13 +237,13 @@ Följande procedurer är exempel på hur du hanterar SPN för SQL Server tjänst
 
 1. Öppna **SQL Server Configuration Manager**.
 
-1. Välj **SQL Server tjänster**och öppna **SQL Server&lt;\>instans namnet**.
+1. Välj **SQL Server tjänster**och öppna **SQL Server &lt; instans namnet \> **.
 
 1. Växla till fliken **Logga in** . Välj **det här kontot**och ange sedan användar namn och lösen ord för domän användar kontot från steg 1.
 
 1. Bekräfta ändringen av tjänst kontot och starta om SQL Server tjänsten.
 
-## <a name="run-a-site-reset"></a><a name="bkmk_reset"></a>Kör en plats återställning
+## <a name="run-a-site-reset"></a><a name="bkmk_reset"></a> Kör en plats återställning
 
 När en plats återställning körs på en certifikat utfärdare eller primär plats, platsen:
 
@@ -253,7 +253,7 @@ När en plats återställning körs på en certifikat utfärdare eller primär p
 
 Sekundära platser har inte stöd för plats återställning.
 
-Du kan manuellt återställa en plats. De kan också köras automatiskt när du har ändrat plats konfigurationen. Ett exempel:
+Du kan manuellt återställa en plats. De kan också köras automatiskt när du har ändrat plats konfigurationen. Exempel:
 
 - Om kontona som används av Configuration Manager-komponenter har ändrats bör du överväga en manuell plats återställning. Den här åtgärden kontrollerar att plats komponenterna uppdateras för att använda den nya konto informationen.
 
@@ -306,9 +306,9 @@ Om hierarkin är konfigurerad för att stödja [test av klient uppgraderingar i 
 
     - På **Start** -menyn väljer du **Configuration Manager installationen**.
 
-    - I katalogen för *installations mediet*för Configuration Manager öppnar `\SMSSETUP\BIN\X64\setup.exe`du. Kontrol lera att den här versionen är samma som plats versionen.
+    - I katalogen för *installations mediet*för Configuration Manager öppnar du `\SMSSETUP\BIN\X64\setup.exe` . Kontrol lera att den här versionen är samma som plats versionen.
 
-    - I katalogen där Configuration Manager har *installerats*öppnar `\BIN\X64\setup.exe`du.
+    - I katalogen där Configuration Manager har *installerats*öppnar du `\BIN\X64\setup.exe` .
 
 1. På sidan **komma igång** väljer du **utför plats underhåll eller Återställ den här platsen**.
 
@@ -316,7 +316,7 @@ Om hierarkin är konfigurerad för att stödja [test av klient uppgraderingar i 
 
 1. Välj **Ja** för att påbörja plats återställningen.
 
-## <a name="manage-language-packs-at-a-site"></a><a name="bkmk_sitelang"></a>Hantera språk paket på en plats
+## <a name="manage-language-packs-at-a-site"></a><a name="bkmk_sitelang"></a> Hantera språk paket på en plats
 
 När en plats har installerats kan du ändra server-och klient språk paketen som används.
 
@@ -342,9 +342,9 @@ Mer information om de klient-och Server språk som Configuration Manager stöder
 
     - På **Start** -menyn väljer du **Configuration Manager installationen**.
 
-    - I katalogen för *installations mediet*för Configuration Manager öppnar `\SMSSETUP\BIN\X64\setup.exe`du. Kontrol lera att den här versionen är samma som plats versionen.
+    - I katalogen för *installations mediet*för Configuration Manager öppnar du `\SMSSETUP\BIN\X64\setup.exe` . Kontrol lera att den här versionen är samma som plats versionen.
 
-    - I katalogen där Configuration Manager har *installerats*öppnar `\BIN\X64\setup.exe`du.
+    - I katalogen där Configuration Manager har *installerats*öppnar du `\BIN\X64\setup.exe` .
 
 1. På sidan **komma igång** väljer du **utför plats underhåll eller Återställ den här platsen**.
 
@@ -365,7 +365,7 @@ Mer information om de klient-och Server språk som Configuration Manager stöder
     > [!NOTE]
     > Configuration Manager initierar en plats återställning som också installerar om alla plats system roller på platsen.
 
-## <a name="modify-the-database-server-alert-threshold"></a><a name="BKMK_ModDBAlert"></a>Ändra aviserings tröskeln för databas servern
+## <a name="modify-the-database-server-alert-threshold"></a><a name="BKMK_ModDBAlert"></a> Ändra aviserings tröskeln för databas servern
 
 Som standard genererar Configuration Manager aviseringar när det lediga disk utrymmet på en plats databas server är lågt:
 

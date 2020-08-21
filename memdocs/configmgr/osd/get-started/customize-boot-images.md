@@ -10,12 +10,12 @@ ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b16ba822cb538b62fac06ee550dd17cfa8f077be
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 0e4fc5b019de25234ae964137f6b374ecbbca7d8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124569"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697797"
 ---
 # <a name="customize-boot-images-with-configuration-manager"></a>Anpassa Start avbildningar med Configuration Manager
 
@@ -49,7 +49,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
 - **WinPE-WDS-Tools**: Installerar Windows Deployment Services-verktyg.  
 
-  Det finns andra Windows PE-paket som du också kan lägga till. Mer information om valfria komponenter som du kan lägga till i Start avbildningen finns i [WinPE: lägga till paket (alternativ referens för valfria komponenter)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).
+  Det finns andra Windows PE-paket som du också kan lägga till. Mer information om valfria komponenter som du kan lägga till i Start avbildningen finns i [WinPE: lägga till paket (alternativ referens för valfria komponenter)](/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).
 
 > [!NOTE]
 >När du startar i WinPE från en anpassad startavbildning som innehåller verktyg som du har lagt till kan du öppna en kommandotolk från WinPE och ange filnamnet i verktyget för att köra den. Platsen för dessa verktyg läggs automatiskt till i variabeln Path. Kommando tolken kan bara läggas till om inställningen **Aktivera kommando stöd (endast testning)** är markerad på fliken **anpassning** i Start avbildningens egenskaper.
@@ -72,7 +72,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     Där C:\WinPEWAIK är den mapp som innehåller startavbildningen och där C:\WinPEMount är den monterade mappen.  
 
    > [!NOTE]
-   >  Mer information finns i referens för [DISM (Deployment Image Servicing and Management)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-reference--deployment-image-servicing-and-management).
+   >  Mer information finns i referens för [DISM (Deployment Image Servicing and Management)](/windows-hardware/manufacture/desktop/dism-reference--deployment-image-servicing-and-management).
 
 5. När du har monterat startavbildningen använder du DISM för att lägga till valfria komponenter i startavbildningen. I Windows PE 5 finns de valfria 64-bitarskomponenterna i <*Installationssökväg*>\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs.  
 
@@ -108,7 +108,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files (x86)\Windows Kits\8.1\Assessment and Deployment Kit\Windows Preinstallation Environment\amd64\WinPE_OCs\en-us\WinPE-WDS-Tools_en-us.cab"**  
 
    > [!TIP]
-   >  Mer information om valfria komponenter som du kan lägga till i Start avbildningen finns i referens för [valfria Windows PE-komponenter](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).
+   >  Mer information om valfria komponenter som du kan lägga till i Start avbildningen finns i referens för [valfria Windows PE-komponenter](/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).
 
 6. Använd DISM om drivrutiner måste läggas till i startavbildningen. Skriv följande om du måste lägga till drivrutiner i startavbildningen:  
 
@@ -194,7 +194,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     Där C:\WinPEWAIK är den mapp som innehåller startavbildningen och där C:\WinPEMount är den monterade mappen.  
 
    > [!NOTE]
-   > Mer information finns i referens för [DISM (Deployment Image Servicing and Management)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-reference--deployment-image-servicing-and-management).
+   > Mer information finns i referens för [DISM (Deployment Image Servicing and Management)](/windows-hardware/manufacture/desktop/dism-reference--deployment-image-servicing-and-management).
 
 5. När du har monterat startavbildningen använder du DISM för att lägga till valfria komponenter i startavbildningen. I till exempel Windows PE 3.1 finns de valfria komponenterna i <*Installationssökväg*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
@@ -224,7 +224,7 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
     **dism.exe /image:C:\WinPEMount /add-package /packagepath:"C:\Program Files\Windows AIK\Tools\PETools\amd64\WinPE_FPs\en-us\winpe-wds-tools_en-us.cab"**  
 
    > [!TIP]
-   >  Mer information om de olika paket som du kan lägga till i Start avbildningen finns i [lägga till ett paket i en Windows PE-avbildning](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-7/dd799312(v=ws.10)).
+   >  Mer information om de olika paket som du kan lägga till i Start avbildningen finns i [lägga till ett paket i en Windows PE-avbildning](/previous-versions/windows/it-pro/windows-7/dd799312(v=ws.10)).
 
 6. Använd DISM om drivrutiner måste läggas till i startavbildningen. Skriv följande om du måste lägga till drivrutiner i startavbildningen:  
 
@@ -290,4 +290,4 @@ Varje version av Configuration Manager har stöd för en speciell version av Win
 
     3.  Klicka på den startavbildning som identifierades i steg 3.  
 
-    4.  På fliken **Start** går du till gruppen **Distribution** och klickar på **Uppdatera distributionsplatser**.  
+    4.  På fliken **Start** går du till gruppen **Distribution** och klickar på **Uppdatera distributionsplatser**.

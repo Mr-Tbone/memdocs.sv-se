@@ -10,12 +10,12 @@ ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 63f815394414167ad4f887c5970538eab22c931a
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 8d15252c3b3c93c7e90e517c502c4c3dd2dfcf20
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906150"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700052"
 ---
 # <a name="create-queries-in-configuration-manager"></a>Skapa frågor i Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "82906150"
 
 I den här artikeln beskrivs hur du skapar och importerar frågor i Configuration Manager.  
 
-##  <a name="create-a-query"></a><a name="BKMK_Create"></a>Skapa en fråga  
+##  <a name="create-a-query"></a><a name="BKMK_Create"></a> Skapa en fråga  
  Använd den här proceduren för att skapa en fråga i Configuration Manager.  
 
 1.  I Configuration Manager-konsolen väljer du **övervakning**.  
@@ -49,9 +49,9 @@ I den här artikeln beskrivs hur du skapar och importerar frågor i Configuratio
     > [!TIP]  
     > Du kan använda följande referens dokumentation som hjälp för att skapa egna WQL-frågor:  
     >   
-    > -   [WQL (SQL för WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wql-sql-for-wmi)  
-    > -   [WHERE-sats](https://docs.microsoft.com/windows/win32/wmisdk/where-clause)  
-    > -   [WQL-operatorer](https://docs.microsoft.com/windows/win32/wmisdk/wql-operators)  
+    > -   [WQL (SQL för WMI)](/windows/win32/wmisdk/wql-sql-for-wmi)  
+    > -   [WHERE-sats](/windows/win32/wmisdk/where-clause)  
+    > -   [WQL-operatorer](/windows/win32/wmisdk/wql-operators)  
 
 8.  På fliken **villkor** i &lt; \> dialog rutan **Egenskaper** för frågeuttryck anger du villkor som används för att förfina frågeresultatet. Du kan till exempel bara returnera resurser som har plats koden **XYZ**. Du kan konfigurera flera villkor för en fråga.  
 
@@ -75,7 +75,7 @@ I den här artikeln beskrivs hur du skapar och importerar frågor i Configuratio
 
 12. Skapa frågan genom att slutföra guiden. Den nya frågan visas på noden **frågor** på arbets ytan **övervakning** .  
 
-##  <a name="import-a-query"></a><a name="BKMK_Import"></a>Importera en fråga  
+##  <a name="import-a-query"></a><a name="BKMK_Import"></a> Importera en fråga  
  Använd den här proceduren för att importera en fråga till Configuration Manager. Information om hur du exporterar frågor finns i [hantera frågor](../../../core/servers/manage/manage-queries.md).  
 
 1.  I Configuration Manager-konsolen väljer du **övervakning**.  

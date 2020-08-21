@@ -10,12 +10,12 @@ ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7de7d562131f97ac21d1c394b176d3b7f4ce7747
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: b72e0a14abd2b468056d4303497625633b8f64a8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906437"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698930"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Konfigurationer som stöds för långsiktig etablerings gren i System Center Configuration Manager
 
@@ -72,7 +72,7 @@ Du kan använda LTSB för att hantera följande operativ system för Windows-dat
 - Server Core-installationen av Windows Server 2012 (x64) (anmärkning 2)
 
 **(Anmärkning 1)** Data Center-versioner stöds men är inte certifierade för Configuration Manager.  
-**(Anmärkning 2)** För att stödja push-installation av klienter måste datorn som kör den här operativ system versionen köra roll tjänsten fil server för Server rollen fil-och lagrings tjänster. Information om hur du installerar Windows-funktioner på en Server Core-dator finns i [Installera Server roller och funktioner på en Server Core-server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574158(v=ws.11)).
+**(Anmärkning 2)** För att stödja push-installation av klienter måste datorn som kör den här operativ system versionen köra roll tjänsten fil server för Server rollen fil-och lagrings tjänster. Information om hur du installerar Windows-funktioner på en Server Core-dator finns i [Installera Server roller och funktioner på en Server Core-server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574158(v=ws.11)).
 
 ### <a name="windows-embedded"></a>Windows Embedded
 Du kan använda LTSB för att hantera följande Windows Embedded-enheter genom att installera-klient program varan på enheten.  Mer information finns i [Planera för klient distribution till Windows Embedded-enheter](../clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).
@@ -91,7 +91,7 @@ Du kan använda LTSB för att hantera följande Windows Embedded-enheter genom a
 
 -   Programkatalog stöds inte för någon Windows Embedded-enhet.  
 
--   Innan du kan övervaka identifierad skadlig kod på Windows Embedded-enheter som baseras på Windows XP måste du installera Microsoft Windows WMI Scripting-paketet på den inbäddade enheten. Använd Windows Embedded Target designer för att installera det här paketet. *WBEMDISP. DLL* och *WBEMDISP. TLB* -filer måste finnas och vara registrerade i mappen%windir%\System32\WBEM på den inbäddade enheten för att säkerställa att identifierad skadlig kod rapporteras.  
+-   Innan du kan övervaka identifierad skadlig kod på Windows Embedded-enheter som baseras på Windows XP måste du installera Microsoft Windows WMI Scripting-paketet på den inbäddade enheten. Använd Windows Embedded Target designer för att installera det här paketet. *WBEMDISP.DLL* -och *WBEMDISP. TLB* -filer måste finnas och vara registrerade i mappen%windir%\System32\WBEM på den inbäddade enheten för att säkerställa att identifierad skadlig kod rapporteras.  
 
 **Operativ system som stöds:**  
 -   Windows 10 Enterprise 2016-LTSB (x86, x64)  
@@ -311,7 +311,7 @@ Alla LTSB-plats system måste vara medlemmar i en Windows Active Directory-domä
 Informationen i följande Current Branch avsnitt gäller för LTSB:
 - [Antal och gränsvärden](../plan-design/configs/size-and-scale-numbers.md)
 - [Plats och krav för platssystem](../plan-design/configs/site-and-site-system-prerequisites.md)
-- [Alternativ för hög tillgänglighet](../servers/deploy/configure/high-availability-options.md)
+- [Alternativ med hög tillgänglighet](../servers/deploy/configure/high-availability-options.md)
 - [Rekommenderad maskinvara](../plan-design/configs/recommended-hardware.md)
 - [Stöd för Windows-funktioner och nätverk](../plan-design/configs/support-for-windows-features-and-networks.md)
 - [Stöd för virtualiseringsmiljöer](../plan-design/configs/support-for-virtualization-environments.md)

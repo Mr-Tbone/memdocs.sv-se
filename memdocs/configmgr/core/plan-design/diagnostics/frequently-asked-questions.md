@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60634ed8e275ff8496a08969054aa912a81b9d07
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: eb14f909238e86a7aa4a87493b17a218a21f0909
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709546"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700205"
 ---
 # <a name="frequently-asked-questions-about-diagnostics-and-usage-data"></a>Vanliga frågor om diagnostik och användningsdata
 
@@ -24,7 +24,7 @@ ms.locfileid: "81709546"
 
 Den här artikeln innehåller svar på vanliga frågor om diagnostik-och användnings data i Configuration Manager.
 
-## <a name="can-i-turn-off-diagnostic-and-usage-data"></a><a name="bkmk_off"></a>Kan jag stänga av diagnostik-och användnings data?
+## <a name="can-i-turn-off-diagnostic-and-usage-data"></a><a name="bkmk_off"></a> Kan jag stänga av diagnostik-och användnings data?
 
 Använd tjänst anslutnings punkten i offline-läge för att hjälpa till att hantera när platsen skickar data. Använd sedan tjänst anslutnings verktyget för att skicka data manuellt. Mer information finns i följande artiklar:
 
@@ -41,7 +41,7 @@ Du kan också välja den data nivå som Configuration Manager samlar in. Mer inf
 
 Microsoft lagrar Configuration Manager diagnostik-och användnings data i ett år.
 
-## <a name="is-diagnostics-and-usage-data-sent-when-setup-runs"></a><a name="bkmk_update"></a>Skickas diagnostik-och användnings data när installations programmet körs?
+## <a name="is-diagnostics-and-usage-data-sent-when-setup-runs"></a><a name="bkmk_update"></a> Skickas diagnostik-och användnings data när installations programmet körs?
 
 Nej. Diagnostik och användningsdata skickas endast efter att platsen har installerats och är i drift.
 
@@ -59,25 +59,25 @@ Nej. Dessa data omfattar inga nätverks uppgifter, till exempel IP-adresser elle
 
 Data innehåller tids zons information från varje plats. Den här informationen kan ge insikter om bred plats och global spridning av platser i en hierarki.
 
-## <a name="can-you-see-data-in-custom-sql-tables"></a><a name="bkmk_tables"></a>Kan du se data i anpassade SQL-tabeller?
+## <a name="can-you-see-data-in-custom-sql-tables"></a><a name="bkmk_tables"></a> Kan du se data i anpassade SQL-tabeller?
 
 Nej. Configuration Manager samlar in diagnostik-och användnings data via lagrade SQL-procedurer. Dessa lagrade procedurer körs mot standard produkt tabeller i databasen. Alla dessa SQL-tabeller har prefixet **TEL_**. Som en del av SQL-schemaidentifieringsfrågan hashas alla tabellnamn för jämförelse med kända standardvärden. Det här beteendet avgör att anpassade tabeller finns i databasen. Förekomsten av anpassade tabeller informerar Microsoft att du utökade databasschemat från standardvärdet. Den innehåller inte några av de data som lagras i dessa tabeller.
 
-## <a name="can-you-see-other-databases"></a><a name="bkmk_databases"></a>Kan du se andra databaser?
+## <a name="can-you-see-other-databases"></a><a name="bkmk_databases"></a> Kan du se andra databaser?
 
 Nej. De lagrade procedurerna för att samla in data är begränsade till Configuration Manager plats databasen. Microsoft kan inte se namnen på andra databaser eller data i andra databaser.
 
-## <a name="is-any-data-sent-to-other-integrated-cloud-services"></a><a name="bkmk_cloud"></a>Skickas alla data till andra integrerade moln tjänster?
+## <a name="is-any-data-sent-to-other-integrated-cloud-services"></a><a name="bkmk_cloud"></a> Skickas alla data till andra integrerade moln tjänster?
 
 Ja, när du integrerar dessa tjänster med Configuration Manager. Som en del av interaktionen med valfri moln tjänst skickar Configuration Manager vissa data till den tjänsten. Dessa data är bara aktuella för moln tjänsten och skiljer sig från Configuration Manager diagnostik-och användnings data. Mer information om de data som används i interaktionen med en annan moln tjänst finns i dokumentationen för den tjänsten.
 
 Följande moln tjänster är till exempel en del av Microsoft Endpoint Manager:
 
 - [Data sekretess för Skriv bords analys](../../../desktop-analytics/privacy.md)
-- [Sekretess och personliga data i Intune](https://docs.microsoft.com/intune/protect/privacy-personal-data)
-- [Windows autopilot-krav](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-requirements)
+- [Sekretess och personliga data i Intune](/intune/protect/privacy-personal-data)
+- [Windows autopilot-krav](/windows/deployment/windows-autopilot/windows-autopilot-requirements)
 
-## <a name="does-configuration-manager-collect-any-personal-data"></a><a name="bkmk_personal"></a>Samlar Configuration Manager in personliga data?
+## <a name="does-configuration-manager-collect-any-personal-data"></a><a name="bkmk_personal"></a> Samlar Configuration Manager in personliga data?
 
 Nej. Konfigurationen samlar inte in eller överför inga personliga data eller kund uppgifter. Det är en lokal produkt som du direkt distribuerar, hanterar och använder. Diagnostik-och användnings data som Microsoft samlar in förbättrar installations upplevelsen, kvaliteten och säkerheten i framtida versioner.
 

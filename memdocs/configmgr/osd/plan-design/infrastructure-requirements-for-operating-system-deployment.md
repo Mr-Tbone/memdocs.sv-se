@@ -10,12 +10,12 @@ ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f34c803cb2b43a2c69cee4c16f5029474e318eb2
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c9bb07bd2b82a9411bc527d04a9a64a0bb6e12f8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724435"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697678"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Infrastruktur krav för operativ Systems distribution i Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "81724435"
 
 OS-distribution i Configuration Manager har externa beroenden och beroenden inom produkten. Använd den här artikeln som hjälp för att förbereda infrastrukturen för operativ Systems distribution.  
 
-##  <a name="dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a>Externa beroenden till Configuration Manager  
+##  <a name="dependencies-external-to-configuration-manager"></a><a name="BKMK_ExternalDependencies"></a> Externa beroenden till Configuration Manager  
 
 Det här avsnittet innehåller information om externa verktyg, installations paket och OS-versioner som krävs för att distribuera operativ system i Configuration Manager.  
 
@@ -33,9 +33,9 @@ Windows Assessment and Deployment Kit (ADK) är en uppsättning verktyg och doku
 
 Mer information finns i följande artiklar:  
 
-- [Windows ADK för Windows 10-scenarier för IT-specialister](https://docs.microsoft.com/windows/deployment/windows-adk-scenarios-for-it-pros)  
+- [Windows ADK för Windows 10-scenarier för IT-specialister](/windows/deployment/windows-adk-scenarios-for-it-pros)  
 
-- [Hämta Windows ADK för Windows 10](https://docs.microsoft.com/windows-hardware/get-started/adk-install)  
+- [Hämta Windows ADK för Windows 10](/windows-hardware/get-started/adk-install)  
 
     > [!IMPORTANT]
     > Se till att ladda ned både **Windows ADK för Windows 10** och **Windows PE-tillägget för ADK**.
@@ -79,7 +79,7 @@ Configuration Manager använder ett USMT-paket som innehåller USMT 10-källfile
 
 Mer information finns i följande artiklar:  
 
-- [Vanliga migreringsscenarier för USMT 10](https://docs.microsoft.com/windows/deployment/usmt/usmt-common-migration-scenarios)  
+- [Vanliga migreringsscenarier för USMT 10](/windows/deployment/usmt/usmt-common-migration-scenarios)  
 
 - [Hantera användartillstånd](../get-started/manage-user-state.md)  
 
@@ -133,7 +133,7 @@ Windows enhets driv rutiner kan användas när du installerar operativ systemet 
 
 
 
-##  <a name="configuration-manager-dependencies"></a><a name="BKMK_InternalDependencies"></a>Configuration Manager beroenden  
+##  <a name="configuration-manager-dependencies"></a><a name="BKMK_InternalDependencies"></a> Configuration Manager beroenden  
 
 Det här avsnittet innehåller information om Configuration Manager distributions krav för operativ system.  
 
@@ -207,7 +207,7 @@ Använd säkerhets omfattningar för att ge administrativa användare åtkomst t
 
 
 
-##  <a name="windows-deployment-services"></a><a name="BKMK_WDS"></a>Windows Deployment Services  
+##  <a name="windows-deployment-services"></a><a name="BKMK_WDS"></a> Windows Deployment Services  
 
 I version 1802 och tidigare måste Windows Deployment Services (WDS) installeras på samma server som de distributions platser som du konfigurerar för att stödja PXE eller multicast. WDS ingår i serverns operativ system. För PXE-distributioner är WDS den tjänst som utför PXE-starten. När distributions platsen har installerats och Aktiver ATS för PXE, Configuration Manager installerar en provider i WDS som använder WDS PXE-startfunktionerna.  
 
@@ -227,7 +227,7 @@ Från och med version 1806 kan du aktivera PXE på en distributions plats utan W
 -   Om providern är installerad på en fjärrserver måste du installera WDS på plats servern och fjärrprovidern.  
 
 
-###  <a name="considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a>Att tänka på när du har WDS och DHCP på samma server  
+###  <a name="considerations-when-you-have-wds-and-dhcp-on-the-same-server"></a><a name="BKMK_WDSandDHCP"></a> Att tänka på när du har WDS och DHCP på samma server  
 
 Om du planerar att samköra distributions platsen på en server som kör DHCP bör du tänka på följande konfigurations problem:  
 
@@ -266,13 +266,13 @@ Om du planerar att samköra distributions platsen på en server som kör DHCP b�
 > Från och med version 1902 kan den nu finnas på samma server som DHCP-tjänsten när du aktiverar en PXE-svarare på en distributions plats utan Windows Deployment-tjänst. Mer information finns i [Konfigurera minst en distributions plats att acceptera PXE-begäranden](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md#BKMK_Configure).
 
 
-##  <a name="supported-operating-systems"></a><a name="BKMK_SupportedOS"></a>Operativ system som stöds  
+##  <a name="supported-operating-systems"></a><a name="BKMK_SupportedOS"></a> Operativ system som stöds  
 
 Alla Windows-operativsystem som har stöd för klienter i [operativ system som stöds för klienter och enheter](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) stöds för distribution av operativ system.  
 
 
 
-##  <a name="supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a>Diskkonfigurationer som stöds  
+##  <a name="supported-disk-configurations"></a><a name="BKMK_SupportedDiskConfig"></a> Diskkonfigurationer som stöds  
 
 Kombinationer av hård disk konfiguration på referens-och mål datorerna som stöds för Configuration Manager OS-distribution visas i följande tabell:  
 

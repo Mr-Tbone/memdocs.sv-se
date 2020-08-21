@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: 1a64d49edca146c70a56b07cb304d1744b86a1bf
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 3f49d7d001de07a7d3d6a7bdbb5f9ff90de018c9
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127754"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699882"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuera programuppdateringar automatiskt  
 
@@ -31,7 +31,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 >  Innan du skapar en ADR för första gången kontrollerar du att platsen har slutfört synkroniseringen av program uppdateringar. Det här steget är viktigt när du kör Configuration Manager med ett annat språk än engelska. Program uppdaterings klassificeringar visas på engelska före den första synkroniseringen och visas sedan i de lokaliserade språken när synkroniseringen av program uppdateringen har slutförts. Regler som du skapar innan du synkroniserar program uppdateringar kanske inte fungerar korrekt efter synkroniseringen eftersom text strängen kanske inte matchar.  
 
 
-### <a name="process-to-create-an-adr"></a><a name="bkmk_adr-process"></a>Process för att skapa en ADR  
+### <a name="process-to-create-an-adr"></a><a name="bkmk_adr-process"></a> Process för att skapa en ADR  
 
 1.  I Configuration Manager-konsolen går du till arbets ytan **program varu bibliotek** , expanderar **program uppdateringar**och väljer noden **regler för automatisk distribution** .  
 
@@ -49,7 +49,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
 
          - **Office 365-klientens uppdaterings** mall innehåller vanliga inställningar som används när du distribuerar uppdateringar för Microsoft 365 Apps-klienter.
              > [!Note]
-             > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Om din automatisk distribution förlitar sig på egenskapen "title" måste du redigera den från den 9 juni 2020. `Microsoft 365 Apps Update - Semi-annual Channel Version 1908 for x64 based Edition (Build 11929.50000)`är ett exempel på den nya titeln. Mer information om hur du ändrar din automatisk distribution för rubrik ändringen finns i [Uppdatera kanaler för Microsoft 365 appar](manage-office-365-proplus-updates.md#bkmk_channel). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change).
+             > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Om din automatisk distribution förlitar sig på egenskapen "title" måste du redigera den från den 9 juni 2020. `Microsoft 365 Apps Update - Semi-annual Channel Version 1908 for x64 based Edition (Build 11929.50000)` är ett exempel på den nya titeln. Mer information om hur du ändrar din automatisk distribution för rubrik ändringen finns i [Uppdatera kanaler för Microsoft 365 appar](manage-office-365-proplus-updates.md#bkmk_channel). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change).
 
          - **Uppdaterings mal len SCEP och Windows Defender Antivirus** innehåller vanliga inställningar som används när du distribuerar Endpoint Protection definitions uppdateringar.  
 
@@ -92,7 +92,7 @@ Godkänn och distribuera program uppdateringar automatiskt med hjälp av en ADR.
      - Från och med version 1806 är ett egenskaps filter för **arkitektur** nu tillgängligt. Använd det här filtret för att utesluta arkitekturer som Itanium och ARM64 som är mindre vanliga. Kom ihåg att det finns 32-bitars (x86) program och komponenter som körs på 64-bitars (x64) system. Om du inte är säker på att du inte behöver x86 kan du aktivera det även när du väljer x64.<!--1322266-->  
 
     > [!NOTE]  
-    > **Windows 10, version 1903 och senare** har lagts till i Microsoft Update som sin egen produkt, i stället för att vara en del av **Windows 10** -produkten som tidigare versioner. Den här ändringen gjorde att du utför ett antal manuella åtgärder för att se till att dina klienter ser dessa uppdateringar. Vi har hjälpt till att minska antalet manuella åtgärder som du behöver vidta för den nya produkten i Configuration Manager version 1906. Mer information finns i [Konfigurera produkter för versioner av Windows 10](../get-started/configure-classifications-and-products.md#windows-10-version-1903-and-later) <!--4682946-->
+    > **Windows 10, version 1903 och senare** har lagts till i Microsoft Update som sin egen produkt, i stället för att vara en del av **Windows 10**  -produkten som tidigare versioner. Den här ändringen gjorde att du utför ett antal manuella åtgärder för att se till att dina klienter ser dessa uppdateringar. Vi har hjälpt till att minska antalet manuella åtgärder som du behöver vidta för den nya produkten i Configuration Manager version 1906. Mer information finns i [Konfigurera produkter för versioner av Windows 10](../get-started/configure-classifications-and-products.md#windows-10-version-1903-and-later) <!--4682946-->
 
 
 6. På sidan **utvärderings schema** anger du om du vill aktivera ADR för att köras enligt ett schema. När detta är aktivt klickar du på **Anpassa** för att ange det återkommande schemat.  
@@ -225,7 +225,7 @@ När du har slutfört guiden körs ADR. Den lägger till de program uppdateringa
 
 
 
-##  <a name="add-a-new-deployment-to-an-existing-adr"></a><a name="BKMK_AddDeploymentToADR"></a>Lägg till en ny distribution i en befintlig ADR  
+##  <a name="add-a-new-deployment-to-an-existing-adr"></a><a name="BKMK_AddDeploymentToADR"></a> Lägg till en ny distribution i en befintlig ADR  
 
 När du har skapat en ADR lägger du till ytterligare distributioner till regeln. Den här åtgärden hjälper dig att hantera komplexiteten vid distribution av olika uppdateringar till olika samlingar. Varje ny distribution har en fullständig uppsättning funktioner och distributionsövervakning.  
 
@@ -244,7 +244,7 @@ När du har skapat en ADR lägger du till ytterligare distributioner till regeln
      - Aviseringar
      - Hämtningsinställningar  
 
-Distributioner kan också läggas till program mässigt med Windows PowerShell-cmdlets. En fullständig beskrivning av hur du använder den här metoden finns i [New-CMSoftwareUpdateDeployment](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmsoftwareupdatedeployment) .
+Distributioner kan också läggas till program mässigt med Windows PowerShell-cmdlets. En fullständig beskrivning av hur du använder den här metoden finns i [New-CMSoftwareUpdateDeployment](/powershell/module/configurationmanager/new-cmsoftwareupdatedeployment) .
 
 Mer information om distributionsprocessen finns i avsnittet [Distributionsprocess för programuppdatering](../understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 

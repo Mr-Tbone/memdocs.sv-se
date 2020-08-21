@@ -10,12 +10,12 @@ ms.assetid: 95033a9b-ff13-4b70-b1de-bcb25bcb6024
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 652a0c5e36ce7c4bacf40531a82fdf4e16197d95
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 4f1d89707fa3e1765067c264d2abec12116bde88
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906919"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697729"
 ---
 # <a name="customize-operating-system-images-with-configuration-manager"></a>Anpassa operativ system avbildningar med Configuration Manager
 
@@ -23,10 +23,10 @@ ms.locfileid: "82906919"
 
 Operativ system avbildningar i Configuration Manager är WIM-filer och representerar en komprimerad samling med säkerhetskopierade filer och mappar som krävs för att installera och konfigurera ett operativ system på en dator. En anpassad operativsystemavbildning byggs och sammanställs från en referensdator som du konfigurerar med alla nödvändiga operativsystemsfiler, stödfiler, programvaruuppdateringar, verktyg och andra filer och appar. Du bestämmer själv i vilken grad du konfigurerar referensdatorn manuellt. Du kan automatisera konfigurationen av referensdatorn helt och hållet genom att använda en aktivitetssekvens för att skapa och göra en avbildning. Du kan också konfigurera vissa aspekter av referensdatorn manuellt och automatisera resten med hjälp av aktivitetssekvenser. Om du vill kan du även konfigurera referensdatorn helt manuellt, utan aktivitetssekvenser. Använd följande avsnitt för att anpassa ett operativ system.
 
-##  <a name="prepare-for-the--reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a>Förbereda för referens datorn  
+##  <a name="prepare-for-the--reference-computer"></a><a name="BKMK_PrepareReferenceComputer"></a> Förbereda för referens datorn  
  Innan du hämtar en operativsystemavbildning från en referensdator finns det några saker som du bör tänka på.  
 
-###  <a name="decide-between-an-automated-or-manual-configuration"></a><a name="BKMK_RefComputerDecide"></a>Bestäm mellan en automatiserad eller manuell konfiguration  
+###  <a name="decide-between-an-automated-or-manual-configuration"></a><a name="BKMK_RefComputerDecide"></a> Bestäm mellan en automatiserad eller manuell konfiguration  
  Här beskrivs för- och nackdelar med automatisk och manuell konfiguration av referensdatorn.  
 
 #### <a name="automated-configuration"></a>Automatiserad konfigurering  
@@ -61,7 +61,7 @@ Operativ system avbildningar i Configuration Manager är WIM-filer och represent
 
 - Kräver att en person är aktivt inblandad under hela processen.  
 
-###  <a name="considerations-for-the-reference-computer"></a><a name="BKMK_RefComputerConsiderations"></a>Att tänka på för referens datorn  
+###  <a name="considerations-for-the-reference-computer"></a><a name="BKMK_RefComputerConsiderations"></a> Att tänka på för referens datorn  
  Här visas grundläggande saker att tänka på när du konfigurerar en referensdator.  
 
 -   **Operativsystem som ska distribueras**  
@@ -95,7 +95,7 @@ Operativ system avbildningar i Configuration Manager är WIM-filer och represent
     > [!IMPORTANT]  
     >  Aktivitetssekvenssteget [Förbered Windows för avbildning](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) försöker återställa det lokala administratörslösenordet på referensdatorn till ett tomt värde innan Sysprep körs. Om den lokala säkerhetsprincipen **Lösenord måste uppfylla krav på komplexitet** aktiverats återställer det här aktivitetssekvenssteget inte administratörslösenordet. Inaktivera i så fall säkerhetsprincipen innan du kör aktivitetssekvensen.  
 
-     Mer information om Sysprep finns i [Översikt över Sysprep (System preparation)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).  
+     Mer information om Sysprep finns i [Översikt över Sysprep (System preparation)](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).  
 
 -   **Lämpliga verktyg och skript som krävs för att underlätta installationsscenarier**  
 
@@ -105,7 +105,7 @@ Operativ system avbildningar i Configuration Manager är WIM-filer och represent
 
      Du kan konfigurera referensdatorn med de egenskaper för skrivbordsanpassning som du vill ta med när du skapar operativsystemavbildningen från referensdatorn. Exempel på skrivbordsegenskaper är bakgrund, företagsprofilering och en standardanvändarprofil.  
 
-##  <a name="manually-build-a-reference-computer"></a><a name="BKMK_ManuallyBuildReference"></a>Bygga en referens dator manuellt  
+##  <a name="manually-build-a-reference-computer"></a><a name="BKMK_ManuallyBuildReference"></a> Bygga en referens dator manuellt  
  Följ stegen nedan om du vill bygga en referensdator manuellt.  
 
 > [!NOTE]  
@@ -128,7 +128,7 @@ Operativ system avbildningar i Configuration Manager är WIM-filer och represent
 
    När referensdatorn är klar använder du en aktivitetssekvens för att skapa operativsystemavbildningen från referensdatorn.  Detaljerade anvisningar finns i [Skapa en operativsystemavbildning från en befintlig referensdator](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
-##  <a name="use-a-task-sequence-to-build-a-reference-computer"></a><a name="BKMK_UseTSToBuildReference"></a>Använda en aktivitetssekvens för att bygga en referens dator  
+##  <a name="use-a-task-sequence-to-build-a-reference-computer"></a><a name="BKMK_UseTSToBuildReference"></a> Använda en aktivitetssekvens för att bygga en referens dator  
  Du kan automatisera processen med att skapa en referensdator genom att använda en aktivitetssekvens för att distribuera operativsystemet, drivrutiner, program och så vidare.  När referensdatorn är klar använder du följande steg för att skapa operativsystemavbildningen från referensdatorn.  
 
--   Använd en aktivitetssekvens för att bygga och avbilda operativsystemavbildningen från referensdatorn.  Mer detaljerad information finns i [Använd en aktivitetssekvens för att bygga och avbilda en referensdator](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).  
+-   Använd en aktivitetssekvens för att bygga och avbilda operativsystemavbildningen från referensdatorn.  Mer detaljerad information finns i [Använd en aktivitetssekvens för att bygga och avbilda en referensdator](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).

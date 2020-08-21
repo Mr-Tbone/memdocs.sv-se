@@ -10,12 +10,12 @@ ms.assetid: 121e0341-4f51-4d54-a357-732c26caf7c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a08b74552d5d17a737ec9e1802e10c87621f5b97
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: b24ed0aa963373fc0933a2c34b7b036d77cc9a2b
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126366"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699219"
 ---
 # <a name="troubleshoot-microsoft-connected-cache-in-configuration-manager"></a>Felsök Microsoft Connected cache i Configuration Manager
 
@@ -30,13 +30,13 @@ När du installerar cache-servern för leverans optimering korrekt och konfigure
 
 Verifiera detta beteende [på en klient](#bkmk_verify-client) eller [på servern](#bkmk_verify-server).
 
-### <a name="verify-on-a-client"></a><a name="bkmk_verify-client"></a>Verifiera på en klient
+### <a name="verify-on-a-client"></a><a name="bkmk_verify-client"></a> Verifiera på en klient
 
 1. På klienten som kör Windows 10, version 1809 eller senare, laddar du ned moln hanterat innehåll. Mer information om vilka typer av innehåll som anslöt till cacheminnet finns i [Verifiera ansluten cache](../../../plan-design/hierarchy/microsoft-connected-cache.md#verify).
 
-2. Öppna PowerShell och kör följande kommando:`Get-DeliveryOptimizationStatus`
+2. Öppna PowerShell och kör följande kommando: `Get-DeliveryOptimizationStatus`
 
-Till exempel:
+Exempel:
 
 ```PowerShell
 PS C:\> Get-DeliveryOptimizationStatus
@@ -74,7 +74,7 @@ Observera att `BytesFromCacheServer` attributet inte är noll.
 
 Om klienten inte har kon figurer ATS korrekt, eller om cache-servern inte är korrekt installerad, kommer leverans optimerings klienten tillbaka till den ursprungliga moln källan. Sedan kommer BytesFromCacheServer-attributet att vara noll.
 
-### <a name="verify-on-the-server"></a><a name="bkmk_verify-server"></a>Verifiera på servern
+### <a name="verify-on-the-server"></a><a name="bkmk_verify-server"></a> Verifiera på servern
 
 Kontrol lera först att register egenskaperna är korrekt konfigurerade: `HKLM\SOFTWARE\Microsoft\Delivery Optimization In-Network Cache` . Till exempel är enhetens cache-plats `PrimaryDrivesInput\DOINC-E77D08D0-5FEA-4315-8C95-10D359D59294` , där `PrimaryDrivesInput` kan vara flera enheter, till exempel `C,D,E` .
 
@@ -114,13 +114,13 @@ Följande attribut indikerar att det är klart:
 
 ## <a name="log-files"></a>Loggfiler
 
-- Installations logg för ARR:`%temp%\arr_setup.log`
+- Installations logg för ARR: `%temp%\arr_setup.log`
 
 - Server installations logg för cachelagring: `SMS_DP$\Ms.Dsp.Do.Inc.Setup\DoincSetup.log` på distributions platsen och `DistMgr.log` på plats servern
 
-- Drift loggar i IIS: som standard`%SystemDrive%\inetpub\logs\LogFiles`
+- Drift loggar i IIS: som standard `%SystemDrive%\inetpub\logs\LogFiles`
 
-- Kör cache-serverns operativa logg:`C:\Doinc\Product\Install\Logs`
+- Kör cache-serverns operativa logg: `C:\Doinc\Product\Install\Logs`
 
     > [!TIP]
     > I den här loggen kan du använda den här loggen för att identifiera anslutnings problem med Microsoft-molnet.
@@ -228,7 +228,7 @@ Disk utrymme som krävs för varje server-cache kan variera beroende på organis
 
 Server-cachen ska inte förbruka mycket system minne eller processor tid. När du har installerat kör cache-servern kan du analysera loggfilerna för IIS och ARR om du upptäcker betydande process-eller minnes resursförbrukning.
 
-Om IIS-och ARR-loggfilerna tar upp för mycket utrymme på servern finns det flera metoder som du kan använda för att hantera loggfilerna. Mer information finns i [Hantera IIS-logg File Storage](https://docs.microsoft.com/iis/manage/provisioning-and-managing-iis/managing-iis-log-file-storage#overview).
+Om IIS-och ARR-loggfilerna tar upp för mycket utrymme på servern finns det flera metoder som du kan använda för att hantera loggfilerna. Mer information finns i [Hantera IIS-logg File Storage](/iis/manage/provisioning-and-managing-iis/managing-iis-log-file-storage#overview).
 
 ## <a name="see-also"></a>Se även
 

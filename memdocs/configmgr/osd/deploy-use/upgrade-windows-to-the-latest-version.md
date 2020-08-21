@@ -10,12 +10,12 @@ ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a9ed8e1ece27117993761a3ce52c462e94e9f79a
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: eb7e2e5c564263c7172d70ec33bb33c0dd73409c
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124781"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697831"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-configuration-manager"></a>Uppgradera Windows till den senaste versionen med Configuration Manager
 
@@ -55,7 +55,7 @@ Enheter måste köra en av följande OS-versioner för att rikta en aktivitetsse
 - Windows 8,1
 - En tidigare version av Windows 10. Du kan till exempel uppgradera Windows 10, version 1809 till Windows 10, version 1903.  
 
-Mer information finns i [uppgraderings vägar för Windows 10](https://docs.microsoft.com/windows/deployment/upgrade/windows-10-upgrade-paths).
+Mer information finns i [uppgraderings vägar för Windows 10](/windows/deployment/upgrade/windows-10-upgrade-paths).
 
 #### <a name="windows-server"></a>Windows Server
 
@@ -64,10 +64,10 @@ Mer information finns i [uppgraderings vägar för Windows 10](https://docs.micr
 - En tidigare version av Windows Server 2016
 - En tidigare version av Windows Server 2019
 
-Mer information om uppgraderings vägar för Windows Server som stöds finns i [Windows server 2016-uppgraderings vägar som stöds](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016) och [Windows Server Upgrade Center](https://aka.ms/upgradecenter).
+Mer information om uppgraderings vägar för Windows Server som stöds finns i [Windows server 2016-uppgraderings vägar som stöds](/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016) och [Windows Server Upgrade Center](https://aka.ms/upgradecenter).
 
 
-## <a name="plan"></a><a name="BKMK_Plan"></a>Projektplan  
+## <a name="plan"></a><a name="BKMK_Plan"></a> Projektplan  
 
 ### <a name="task-sequence-requirements-and-limitations"></a>Krav och begränsningar för aktivitetssekvens
 
@@ -95,7 +95,7 @@ Följande uppgifter är inte kompatibla med uppgradering på plats. De kräver a
 Det enda krav som krävs för uppgraderings scenariot är att en distributions plats är tillgänglig. Distribuera uppgraderings paketet för operativ systemet och eventuella andra paket som du tar med i aktivitetssekvensen. Mer information finns i [Install or modify a distribution point](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
 
 
-## <a name="configure"></a><a name="BKMK_Configure"></a>Konfigurera  
+## <a name="configure"></a><a name="BKMK_Configure"></a> Konfigurera  
 
 ### <a name="prepare-the-os-upgrade-package"></a>Förbered uppgraderings paketet för operativ systemet  
 
@@ -111,7 +111,7 @@ Använd stegen i [skapa en aktivitetssekvens för att uppgradera ett operativ sy
 > Du kan skapa en anpassad aktivitetssekvens och lägga till steget [Uppgradera operativ system](../understand/task-sequence-steps.md#BKMK_UpgradeOS) . Det här steget är det enda som krävs för att uppgradera operativ systemet till Windows 10. Om du väljer den här metoden, för att slutföra uppgraderingen, lägger du även till steget [starta om datorn](../understand/task-sequence-steps.md#BKMK_RestartComputer) efter steget **Uppgradera operativ system** . Se till att använda den **aktuella installerade standard operativ system** inställningen för att starta om datorn i det installerade operativ systemet och inte till Windows PE.  
 
 
-## <a name="deploy"></a><a name="BKMK_Deploy"></a>Distribuera  
+## <a name="deploy"></a><a name="BKMK_Deploy"></a> Distribuera  
 
 Använd någon av följande distributions metoder för att distribuera operativ systemet:  
 
@@ -125,4 +125,4 @@ Använd någon av följande distributions metoder för att distribuera operativ 
 
 ## <a name="monitor"></a>Övervaka  
 
-Information om hur du övervakar aktivitetssekvensdistribution för att uppgradera operativ systemet finns i [övervaka OS-distributioner](monitor-operating-system-deployments.md).  
+Information om hur du övervakar aktivitetssekvensdistribution för att uppgradera operativ systemet finns i [övervaka OS-distributioner](monitor-operating-system-deployments.md).

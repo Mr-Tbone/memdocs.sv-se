@@ -10,24 +10,24 @@ ms.assetid: d8d5c345-1e91-410b-b8a9-0170dcfa846e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a720c68fc705187dedb6ff04fc3898a8b0b21c8
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: b4975f67c84c2354d13457981ac90ba4481d292f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124371"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697593"
 ---
 # <a name="manage-user-state-in-configuration-manager"></a>Hantera användar tillstånd i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Du kan använda Configuration Manager aktivitetssekvenser för att avbilda och återställa användar tillstånds data vid distributions scenarier för operativ system där du vill behålla användar statusen för det aktuella operativ systemet. Till exempel:  
+Du kan använda Configuration Manager aktivitetssekvenser för att avbilda och återställa användar tillstånds data vid distributions scenarier för operativ system där du vill behålla användar statusen för det aktuella operativ systemet. Exempel:  
 
 - Distributioner där du vill avbilda användartillståndet på en dator för att återställa det på en annan.  
 
 - Distributioner av uppdateringar där du vill avbilda och återställa användartillståndet på samma dator.  
 
-Configuration Manager använder User State Migration Tool (USMT) 10,0 för att hantera migreringen av användar tillstånds data från en käll dator till en måldator när installationen av operativ systemet har slutförts. Mer information om vanliga migreringsscenarier för USMT 10.0 finns i  [Vanliga migreringsscenarier](https://docs.microsoft.com/windows/deployment/usmt/usmt-common-migration-scenarios).
+Configuration Manager använder User State Migration Tool (USMT) 10,0 för att hantera migreringen av användar tillstånds data från en käll dator till en måldator när installationen av operativ systemet har slutförts. Mer information om vanliga migreringsscenarier för USMT 10.0 finns i  [Vanliga migreringsscenarier](/windows/deployment/usmt/usmt-common-migration-scenarios).
 
 Använd följande avsnitt för att få hjälp att avbilda och återställa användar data.
 
@@ -80,7 +80,7 @@ När informationen om användartillståndet samlas in, kan den lagras på ett av
     > [!NOTE]
     > De användartillståndsdata som de hårda länkar hänvisar till är kvar på datorn när det gamla operativsystemet har tagits bort genom aktivitetssekvensen. Det här är de data som används för att återställa användartillståndet när det nya operativsystemet distribueras.  
 
-## <a name="configure-a-state-migration-point"></a><a name="BKMK_StateMigrationPoint"></a>Konfigurera en plats för tillståndsmigrering
+## <a name="configure-a-state-migration-point"></a><a name="BKMK_StateMigrationPoint"></a> Konfigurera en plats för tillståndsmigrering
 
 Tillståndsmigreringsplatsen använder tillståndsdata som har avbildats på en dator och därefter återställts på en annan dator. När du avbildar användarinställningar för ett operativsystem på samma dator, t.ex. en distribution där du uppdaterar operativsystemet på måldatorn, kan du lagra data på samma dator med hårda länkar eller använda en tillståndsmigreringsplats. För vissa dator distributioner skapar Configuration Manager automatiskt en association mellan tillstånds lagret och mål datorn när du skapar tillstånds lagret. Du kan konfigurera en tillståndsmigreringsplats för att lagra användartillståndsdata på följande sätt:  
 
@@ -102,7 +102,7 @@ Tillståndsmigreringsplatsen använder tillståndsdata som har avbildats på en 
 
   Mer information om tillståndsmigreringsplatsen och hur du konfigurerar den finns i [State migration point](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
-## <a name="create-a-computer-association"></a><a name="BKMK_ComputerAssociation"></a>Skapa en dator koppling
+## <a name="create-a-computer-association"></a><a name="BKMK_ComputerAssociation"></a> Skapa en dator koppling
 
 Skapa en datorkoppling för att definiera ett förhållande mellan en källdator och en måldator när du installerar ett operativsystem på ny maskinvara och vill avbilda och återställa inställningar för användardata. Käll datorn är en befintlig dator som Configuration Manager hanterar. När du distribuerar det nya operativsystemet på måldatorn innehåller källdatorn det användartillstånd som migreras till måldatorn.  
 
@@ -127,6 +127,6 @@ Skapa en datorkoppling för att definiera ett förhållande mellan en källdator
 
     - **Fånga och återställ angivna användarkonton**: Med den här inställningen avbildas och återställs endast de konton du anger. Du kan inte skapa flera kopplingar till samma källdator när du har valt den här inställningen.  
 
-## <a name="restore-user-state-data-when-an-operating-system-deployment-fails"></a><a name="BKMK_MigrationFails"></a>Återställa användar tillstånds data när det inte går att distribuera operativ system
+## <a name="restore-user-state-data-when-an-operating-system-deployment-fails"></a><a name="BKMK_MigrationFails"></a> Återställa användar tillstånds data när det inte går att distribuera operativ system
 
-Om distributionen av operativsystemet misslyckas använder du USMT 10.0-funktionen LoadState för att hämta de användartillståndsdata som avbildades under distributionsprocessen. Detta inbegriper data som har lagrats på en tillståndsmigreringsplats och data som har sparats lokalt på en måldator. Mer information om den här USMT-funktionen finns i [LoadState Syntax (Syntax för LoadState)](https://docs.microsoft.com/windows/deployment/usmt/usmt-loadstate-syntax).
+Om distributionen av operativsystemet misslyckas använder du USMT 10.0-funktionen LoadState för att hämta de användartillståndsdata som avbildades under distributionsprocessen. Detta inbegriper data som har lagrats på en tillståndsmigreringsplats och data som har sparats lokalt på en måldator. Mer information om den här USMT-funktionen finns i [LoadState Syntax (Syntax för LoadState)](/windows/deployment/usmt/usmt-loadstate-syntax).

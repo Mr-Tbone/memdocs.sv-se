@@ -10,12 +10,12 @@ ms.assetid: 694bc29f-a7fd-4e06-815a-1a9c5e9ac563
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d4f5ff0e1c8c92fbadc286e9909388eb66aa8f7b
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 1370c1bf80283ff30ad54378ad58ecd9a5d24d47
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906108"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699372"
 ---
 # <a name="introduction-to-the-long-term-servicing-branch-of-configuration-manager"></a>Introduktion till långsiktig service gren för Configuration Manager
 
@@ -26,7 +26,7 @@ LTSB (Long-term Servicing Branch) för Configuration Manager är en distinkt gre
 Baserat på Configuration Manager version 1606 har LTSB minskat funktioner jämfört med den aktuella grenen av Configuration Manager.
 
 > [!TIP]   
-> Configuration Manager-LTSB är inte relaterat till LTSC (System Center Suite Long term Servicing Channel). Mer information finns i [Översikt över versions alternativ för System Center](https://docs.microsoft.com/system-center/ltsc-and-sac-overview).
+> Configuration Manager-LTSB är inte relaterat till LTSC (System Center Suite Long term Servicing Channel). Mer information finns i [Översikt över versions alternativ för System Center](/system-center/ltsc-and-sac-overview).
 
 ## <a name="features-that-arent-available"></a>Funktioner som inte är tillgängliga
 
@@ -53,7 +53,7 @@ Moln integrering, samt funktioner som ingår i Configuration Manager nuvarande g
 
 ## <a name="find-ltsb-documentation"></a>Hitta LTSB-dokumentation
 
-LTSB baseras på den aktuella gren versionen 1606. Använd den [aktuella gren dokumentationen](https://docs.microsoft.com/mem/configmgr/), med varningar och begränsningar som är begränsade till LTSB. Dessa varningar och begränsningar identifieras i följande artiklar:
+LTSB baseras på den aktuella gren versionen 1606. Använd den [aktuella gren dokumentationen](../../index.yml), med varningar och begränsningar som är begränsade till LTSB. Dessa varningar och begränsningar identifieras i följande artiklar:
 
 - [Installera LTSB](install-the-ltsb.md)
 - [Uppgradera LTSB till aktuell gren](convert-to-current-branch.md)
@@ -72,6 +72,6 @@ Mer information om de här licenserna finns i de [fullständiga villkoren för d
 
 Mer information om licensiering för Configuration Manager grenar finns i [Configuration Manager licensiering och grenar](learn-more-editions.md).
 
-## <a name="next-steps"></a>Efterföljande moment
+## <a name="next-steps"></a>Nästa steg
 
 Om du bestämmer att Configuration Manager LTSB är rätt gren för din miljö, installerar du [en ny LTSB](install-the-ltsb.md#install-a-new-site) -plats som en del av en ny hierarki eller [uppgraderar en System Center 2012-Configuration Manager plats](install-the-ltsb.md#upgrade-from-system-center-2012-configuration-manager) och hierarki.

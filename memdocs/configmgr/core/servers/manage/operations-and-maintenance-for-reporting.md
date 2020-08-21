@@ -10,12 +10,12 @@ ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 414d1138a7682d6b9acbc7731035fff1842a1fe7
-ms.sourcegitcommit: c1afc8abd0d7da48815bd2b0e45147774c72c2df
+ms.openlocfilehash: 21bb81e9851ab80d7807df337a67005e5b6b292a
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87815420"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699661"
 ---
 # <a name="operations-and-maintenance-for-reporting-in-configuration-manager"></a>Åtgärder och underhåll för rapportering i Configuration Manager
 
@@ -33,7 +33,7 @@ Configuration Manager lagrar sina rapporter i SQL Server Reporting Services. Rap
 När du kör en rapport visas rapportens rubrik, beskrivning och kategori på det lokala operativ systemets språk. Mer information finns i [språk för-rapporter](configuring-reporting.md#-languages-for-reports).
 
 > [!NOTE]  
-> Rapporthanteraren är ett webbaserat verktyg för åtkomst och hantering av rapporter. Du kan använda den för att administrera en enskild rapport Server instans via en HTTPS-anslutning. Använd Rapporthanteraren för operativa uppgifter: Visa rapporter, ändra rapport egenskaper och hantera associerade rapport prenumerationer. Den här artikeln innehåller anvisningar för att visa en rapport och ändra rapport egenskaper i Rapporthanteraren. Mer information om andra alternativ i Rapporthanteraren finns [Rapporthanteraren?](https://docs.microsoft.com/sql/reporting-services/report-server/manage-a-reporting-services-native-mode-report-server)
+> Rapporthanteraren är ett webbaserat verktyg för åtkomst och hantering av rapporter. Du kan använda den för att administrera en enskild rapport Server instans via en HTTPS-anslutning. Använd Rapporthanteraren för operativa uppgifter: Visa rapporter, ändra rapport egenskaper och hantera associerade rapport prenumerationer. Den här artikeln innehåller anvisningar för att visa en rapport och ändra rapport egenskaper i Rapporthanteraren. Mer information om andra alternativ i Rapporthanteraren finns [Rapporthanteraren?](/sql/reporting-services/report-server/manage-a-reporting-services-native-mode-report-server)
 
 Använd följande procedurer för att köra en Configuration Manager-rapport.
 
@@ -77,7 +77,7 @@ Om du vill ändra egenskaperna använder Rapporthanteraren:
 
 Rapporthanteraren sparar rapport egenskaperna på rapport servern. I Configuration Manager-konsolen visas uppdaterade rapport egenskaper för rapporten.
 
-## <a name="edit-a-report"></a><a name="bkmk_edit"></a>Redigera en rapport
+## <a name="edit-a-report"></a><a name="bkmk_edit"></a> Redigera en rapport
 
 När en befintlig Configuration Manager rapport inte hämtar den information som du vill ha, redigerar du den i Report Builder. Du kan också använda Report Builder för att ändra layouten eller designen för rapporten. Även om du kan redigera en standard rapport direkt är det bäst att klona den. Öppna rapporten för att redigera och välj sedan **Spara som**.
 
@@ -173,7 +173,7 @@ Använd följande procedur för att skapa en SQL-baserad Configuration Manager-r
 
 1. Välj **Spara** för att spara rapporten på rapport servern.
 
-## <a name="manage-report-subscriptions"></a><a name="bkmk_subscription"></a>Hantera rapport prenumerationer
+## <a name="manage-report-subscriptions"></a><a name="bkmk_subscription"></a> Hantera rapport prenumerationer
 
 Med rapport prenumerationer i SQL Server Reporting Services kan du konfigurera automatisk leverans av angivna rapporter via e-post eller till en fil resurs med schemalagda intervall. Om du vill konfigurera rapport prenumerationer använder du **guiden Skapa prenumeration** i Configuration Manager.
 
@@ -256,12 +256,12 @@ Använd följande procedur för att skapa en rapport prenumeration för att leve
 
 1. Kontrol lera att Configuration Manager har skapat rapport prenumerationen. Välj noden **prenumerationer** om du vill visa och ändra rapport prenumerationer.
 
-### <a name="create-a-report-subscription-to-deliver-a-report-by-email"></a><a name="bkmk_subscription-email"></a>Skapa en rapport prenumeration för att leverera en rapport via e-post
+### <a name="create-a-report-subscription-to-deliver-a-report-by-email"></a><a name="bkmk_subscription-email"></a> Skapa en rapport prenumeration för att leverera en rapport via e-post
 
 När du skapar en rapport prenumeration för att leverera en rapport via e-post skickar repor ting Services ett e-postmeddelande till de mottagare som du konfigurerar. E-postmeddelandet innehåller rapporten som en bifogad fil. Rapport servern validerar inte e-postadresser eller hämtar dem från en e-postserver. Du kan skicka rapporter till alla giltiga e-postkonton i eller utanför organisationen.
 
 > [!NOTE]
-> Om du vill aktivera alternativet för **e-** postprenumeration måste du konfigurera e-postinställningarna i repor ting Services. Mer information finns i [e-postleverans i repor ting Services](https://docs.microsoft.com/sql/reporting-services/subscriptions/e-mail-delivery-in-reporting-services).
+> Om du vill aktivera alternativet för **e-** postprenumeration måste du konfigurera e-postinställningarna i repor ting Services. Mer information finns i [e-postleverans i repor ting Services](/sql/reporting-services/subscriptions/e-mail-delivery-in-reporting-services).
 
 Du kan välja ett eller båda av följande alternativ för e-postleverans:
 

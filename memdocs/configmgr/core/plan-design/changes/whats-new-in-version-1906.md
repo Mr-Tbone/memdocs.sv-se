@@ -10,12 +10,12 @@ ms.assetid: 97e23075-549c-4e45-ab1e-0671027edacf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 378a5de5633d7a526004d84ec5e6885e165eaadb
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 0401207ec98331c33e87a0ac03b5cd7f750c17e7
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128992"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698722"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Vad är nytt i version 1906 av Configuration Manager aktuella grenen
 
@@ -28,7 +28,7 @@ Läs alltid den senaste check listan för att installera den här uppdateringen.
 För att dra full nytta av nya Configuration Manager funktioner kan du även uppdatera klienter till den senaste versionen när du har uppdaterat platsen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.
 
 > [!Tip]  
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1906+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1906+-+Configuration+Manager%22&locale=en-us`
 
 
 ## <a name="requirement-changes"></a>Krav ändringar
@@ -45,7 +45,7 @@ På grund av svagheter i SHA-1-algoritmen och för att justera till bransch stan
 Mer information finns i [krav för Windows-klienter](../../clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md#bkmk_sha2).
 
 
-## <a name="site-infrastructure"></a><a name="bkmk_infra"></a>Plats infrastruktur
+## <a name="site-infrastructure"></a><a name="bkmk_infra"></a> Plats infrastruktur
 
 ### <a name="site-server-maintenance-task-improvements"></a>Förbättringar av plats serverns underhålls uppgift
 
@@ -87,7 +87,7 @@ Mer information finns i [hanterings insikter](../../servers/manage/management-in
 
 - Lägg till en ny synkron replik från installations programmet<!--3127336-->: Nu kan du lägga till en ny sekundär replik-nod till en befintlig SQL Always on-tillgänglighetsgruppen. Använd Configuration Manager-installationsprogrammet i stället för en manuell process för att göra den här ändringen. Mer information finns i [konfigurera SQL Server Always on Availability groups](../../servers/deploy/configure/configure-aoag.md#bkmk_sync).
 
-- Redundans för flera undernät<!-- SCCMDocs-pr#3734 -->: Nu kan du aktivera [nyckelordet MultiSubnetFailover-anslutningssträng](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) i SQL Server. Du måste också konfigurera plats servern manuellt. Mer information finns i krav för [redundans för flera undernät](../../servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md#multi-subnet-failover) .
+- Redundans för flera undernät<!-- SCCMDocs-pr#3734 -->: Nu kan du aktivera [nyckelordet MultiSubnetFailover-anslutningssträng](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) i SQL Server. Du måste också konfigurera plats servern manuellt. Mer information finns i krav för [redundans för flera undernät](../../servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md#multi-subnet-failover) .
 
 - Stöd för distribuerade vyer<!-- SCCMDocs-pr#3792 -->: Plats databasen kan finnas på en SQL Server Always on-tillgänglighetsgrupper och du kan aktivera Länkar för databasreplikering för att använda [distribuerade vyer](../hierarchy/data-transfers-between-sites.md#bkmk_dbrep).
 
@@ -101,7 +101,7 @@ Mer information finns i [hanterings insikter](../../servers/manage/management-in
     - SQL tillgänglighets grupps repliker måste ha samma seeding-läge
     - SQL tillgänglighets grupps repliker måste vara felfria
 
-## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a>Molnbaserad hantering
+## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Molnbaserad hantering
 
 ### <a name="azure-active-directory-user-group-discovery"></a>Azure Active Directory användar grupp identifiering
 
@@ -122,7 +122,7 @@ Med synkroniseringen kan du använda dina befintliga regler för lokal grupperin
 Mer information finns i [skapa samlingar](../../clients/manage/collections/create-collections.md#bkmk_aadcollsync).
 
 
-## <a name="desktop-analytics"></a><a name="bkmk_da"></a>Skriv bords analys
+## <a name="desktop-analytics"></a><a name="bkmk_da"></a> Skriv bords analys
 
 ### <a name="readiness-insights-for-desktop-apps"></a>Readiness Insights för skrivbordsappar
 
@@ -141,7 +141,7 @@ Använd DesktopAnalyticsLogsCollector.ps1-verktyget från Configuration Manager 
 Mer information finns i [loggar insamlare](../../../desktop-analytics/log-collector.md).
 
 
-## <a name="real-time-management"></a><a name="bkmk_real"></a>Real tids hantering
+## <a name="real-time-management"></a><a name="bkmk_real"></a> Real tids hantering
 
 ### <a name="add-joins-additional-operators-and-aggregators-in-cmpivot"></a>Lägg till kopplingar, ytterligare operatorer och agg regeringar i CMPivot
 
@@ -174,7 +174,7 @@ Följande behörigheter har lagts till i Configuration Manager den inbyggda roll
 Mer information finns i [CMPivot](../../servers/manage/cmpivot-changes.md#bkmk_cmpivot_secadmin1906).
 
 
-## <a name="content-management"></a><a name="bkmk_content"></a>Innehålls hantering
+## <a name="content-management"></a><a name="bkmk_content"></a> Innehålls hantering
 
 ### <a name="delivery-optimization-download-data-in-client-data-sources-dashboard"></a>Leverans optimering hämta data i instrument panelen för klient data källor
 
@@ -193,12 +193,12 @@ Den här cache-servern fungerar som en transparent cache på begäran för inneh
 Mer information finns i [leverans optimering i-Network cache i Configuration Manager](../hierarchy/microsoft-connected-cache.md).
 
 
-## <a name="client-management"></a><a name="bkmk_client"></a>Klient hantering
+## <a name="client-management"></a><a name="bkmk_client"></a> Klient hantering
 
 ### <a name="support-for-windows-virtual-desktop"></a>Stöd för virtuella Windows-datorer
 
 <!--3556025-->
-[Windows Virtual Desktop](https://docs.microsoft.com/azure/virtual-desktop/) är en förhands gransknings funktion i Microsoft Azure och Microsoft 365. Du kan nu använda Configuration Manager för att hantera dessa virtuella enheter som kör Windows i Azure.
+[Windows Virtual Desktop](/azure/virtual-desktop/) är en förhands gransknings funktion i Microsoft Azure och Microsoft 365. Du kan nu använda Configuration Manager för att hantera dessa virtuella enheter som kör Windows i Azure.
 
 På samma sätt som en Terminal-Server tillåter de här virtuella enheterna flera samtidiga aktiva användarsessioner. För att hjälpa till med klient prestanda inaktiverar Configuration Manager nu användar principer på alla enheter som tillåter dessa flera användarsessioner. Även om du aktiverar användar principer inaktive RAS klienten som standard på dessa enheter, vilket innefattar virtuella Windows-datorer och Terminal-servrar.
 
@@ -231,7 +231,7 @@ Nu kan du ange den minsta tiden som den Configuration Manager klienten ska behå
 Mer information finns i [Inställningar för klient-cache](../../clients/deploy/about-client-settings.md#client-cache-settings).
 
 
-## <a name="co-management"></a><a name="bkmk_comgmt"></a>Samhantering
+## <a name="co-management"></a><a name="bkmk_comgmt"></a> Samhantering
 
 ### <a name="improvements-to-co-management-auto-enrollment"></a>Förbättringar av automatisk registrering för samhantering
 
@@ -263,7 +263,7 @@ Mer information finns i [Aktivera samhantering](../../../comanage/how-to-enable.
 Amerikanska myndighets kunder kan nu använda samhantering med Azures moln för amerikanska myndigheter (portal.azure.us). Mer information finns i [Aktivera samhantering](../../../comanage/how-to-enable.md).
 
 
-## <a name="application-management"></a><a name="bkmk_app"></a>Program hantering
+## <a name="application-management"></a><a name="bkmk_app"></a> Program hantering
 
 ### <a name="filter-applications-deployed-to-devices"></a>Filtrera program som har distribuerats till enheter
 
@@ -311,7 +311,7 @@ Den här versionen innehåller följande förbättringar av appens godkännanden
 Mer information finns i [godkänna program](../../../apps/deploy-use/app-approval.md).
 
 
-## <a name="os-deployment"></a><a name="bkmk_osd"></a>OS-distribution
+## <a name="os-deployment"></a><a name="bkmk_osd"></a> OS-distribution
 
 ### <a name="task-sequence-debugger"></a>Fel sökare för aktivitetssekvens
 
@@ -377,7 +377,7 @@ Den här versionen innehåller följande förbättringar av OS-distributionen:
 Alternativet 82 under PXE DHCP-handskakningen stöds nu med PXE-svarare utan WDS. Alternativet 82 stöds inte med WDS.
 
 
-## <a name="software-center"></a><a name="bkmk_userxp"></a>Software Center
+## <a name="software-center"></a><a name="bkmk_userxp"></a> Software Center
 
 ### <a name="improvements-to-software-center-tab-customizations"></a>Förbättringar av anpassningar av fliken i Software Center
 
@@ -449,7 +449,7 @@ Du kan också använda den här syntaxen för att öppna standard flikar i Softw
 
 Mer information finns i [Software Center-fliken synlighet](../../clients/deploy/about-client-settings.md#software-center-tab-visibility).
 
-## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Program uppdateringar
 
 ### <a name="additional-options-for-wsus-maintenance"></a>Ytterligare alternativ för WSUS-underhåll
 
@@ -484,7 +484,7 @@ Mer information finns i [klient inställningar för program uppdatering](../../c
 
 <!--4682946-->
 
-**Windows 10, version 1903 och senare** har lagts till i Microsoft Update som sin egen produkt, i stället för att vara en del av **Windows 10** -produkten som tidigare versioner. Den här ändringen gjorde att du utför ett antal manuella åtgärder för att se till att dina klienter ser dessa uppdateringar. Vi har hjälpt till att minska antalet manuella åtgärder som du behöver vidta för den nya produkten.
+**Windows 10, version 1903 och senare** har lagts till i Microsoft Update som sin egen produkt, i stället för att vara en del av **Windows 10**  -produkten som tidigare versioner. Den här ändringen gjorde att du utför ett antal manuella åtgärder för att se till att dina klienter ser dessa uppdateringar. Vi har hjälpt till att minska antalet manuella åtgärder som du behöver vidta för den nya produkten.
 
 När du uppdaterar till Configuration Manager version 1906 och har **Windows 10** -produkten vald för synkronisering sker följande åtgärder automatiskt:
 
@@ -508,7 +508,7 @@ Hyperlänken för **obligatorisk vy** är tillgänglig på följande platser:
 Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md#drill-through-required-updates), [hantera Windows som en tjänst](../../../osd/deploy-use/manage-windows-as-a-service.md#drill-through-required-updates)och [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 
-## <a name="office-management"></a><a name="bkmk_o365"></a>Office-hantering
+## <a name="office-management"></a><a name="bkmk_o365"></a> Office-hantering
 
 ### <a name="office-365-proplus-upgrade-readiness-dashboard"></a>Instrument panel för Office 365 ProPlus Upgrade readiness
 
@@ -519,7 +519,7 @@ För att hjälpa dig att avgöra vilka enheter som är klara att uppgradera till
 Mer information om instrument panelen, krav och hur du använder dessa data finns i [integrering för Office 365 ProPlus readiness](../../../sum/deploy-use/office-365-dashboard.md#bkmk_readiness-dash).
 
 
-## <a name="protection"></a><a name="bkmk_protect"></a>Skyddas
+## <a name="protection"></a><a name="bkmk_protect"></a> Skyddas
 
 ### <a name="windows-defender-application-guard-file-trust-criteria"></a>Villkor för fil förtroende för Windows Defender Application Guard
 
@@ -530,7 +530,7 @@ Det finns en ny princip inställning som gör det möjligt för användare att l
 Mer information finns i [skapa och distribuera Windows Defender Application Guard-princip](../../../protect/deploy-use/create-deploy-application-guard-policy.md#bkmk_FM).
 
 
-## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a>Configuration Manager-konsol
+## <a name="configuration-manager-console"></a><a name="bkmk_admin"></a> Configuration Manager-konsol
 
 ### <a name="role-based-access-for-folders"></a>Rollbaserad åtkomst för mappar
 
@@ -598,7 +598,7 @@ I arbets ytan **program bibliotek** expanderar du **operativ system**och väljer
 I arbets ytan **övervakning** väljer du **klient åtgärder**. Åtgärden att **byta till nästa program uppdaterings plats** har nu rätt namn.
 
 
-## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a>Föråldrade funktioner och operativ system
+## <a name="deprecated-features-and-operating-systems"></a><a name="bkmk_deprecated"></a> Föråldrade funktioner och operativ system
 
 Läs om support ändringar innan de implementeras i [borttagna och föråldrade objekt](deprecated/removed-and-deprecated.md).
 
@@ -622,7 +622,7 @@ Från och med den här versionen är följande funktioner inte längre för hand
 
 Förutom nya funktioner innehåller den här versionen även ytterligare ändringar som fel korrigeringar. Mer information finns i [Sammanfattning av ändringar i Configuration Manager aktuella grenen, version 1906](https://support.microsoft.com/help/4514258).
 
-Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1906](https://docs.microsoft.com/powershell/sccm/1906-release-notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdlets för Configuration Manager finns i [versions anteckningar för PowerShell version 1906](/powershell/sccm/1906-release-notes?view=sccm-ps).
 
 Följande samlade uppdateringar (4517869) är tillgängliga i-konsolen från den 1 oktober 2019: samlad [uppdatering för Configuration Manager aktuell gren, version 1906](https://support.microsoft.com/help/4517869).
 

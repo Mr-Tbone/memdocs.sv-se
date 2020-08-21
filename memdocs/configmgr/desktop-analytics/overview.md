@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 09f829bd1695426211ff94381a63b8f23d1b4fe8
-ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
+ms.openlocfilehash: 59f3d1a8a7b217a794440e2f75e0bb09e28634a9
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86411022"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700810"
 ---
 # <a name="what-is-desktop-analytics"></a>Vad är Desktop Analytics?
 
@@ -69,22 +69,22 @@ Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller f
 
 ### <a name="technical"></a>Teknisk
 
-- En aktiv Global Azure-prenumeration med [globala administratörs](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions) behörigheter. [Microsoft-konton](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts) stöds inte.  
+- En aktiv Global Azure-prenumeration med [globala administratörs](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#company-administrator-permissions) behörigheter. [Microsoft-konton](/windows/security/identity-protection/access-control/microsoft-accounts) stöds inte.  
 
     > [!IMPORTANT]
-    > Desktop Analytics är en Windows-tjänst som finns i Azure Global och som använder Windows-diagnostikdata. Även om Desktop Analytics är en Azure Global-tjänst som är tillgänglig för amerikanska myndighets kunder, uppfyller den inte [gcc-attribut (community för myndighets efterlevnad)](https://docs.microsoft.com/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc#us-government-community-compliance) . En lista över erbjudanden för regelefterlevnad för Microsofts produkter och tjänster finns i [Microsoft Trust Center](https://docs.microsoft.com/microsoft-365/compliance/offering-home?view=o365-worldwide). Skriv bords analys är inte tillgängligt för GCC-kunder med höga eller DOD-kunder. Det finns inte stöd för att använda Azure Government-prenumerationer på värdbaserade Desktop Analytics-arbetsytor.
+    > Desktop Analytics är en Windows-tjänst som finns i Azure Global och som använder Windows-diagnostikdata. Även om Desktop Analytics är en Azure Global-tjänst som är tillgänglig för amerikanska myndighets kunder, uppfyller den inte [gcc-attribut (community för myndighets efterlevnad)](/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc#us-government-community-compliance) . En lista över erbjudanden för regelefterlevnad för Microsofts produkter och tjänster finns i [Microsoft Trust Center](/microsoft-365/compliance/offering-home?view=o365-worldwide). Skriv bords analys är inte tillgängligt för GCC-kunder med höga eller DOD-kunder. Det finns inte stöd för att använda Azure Government-prenumerationer på värdbaserade Desktop Analytics-arbetsytor.
 
     - **Ägarens behörigheter för arbets ytan** för att **Konfigurera din arbets yta**och följande roller:  
 
-      - [**Administratörs roll för Skriv bords analys**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) .
+      - [**Administratörs roll för Skriv bords analys**](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) .
 
-      - [**Log Analytics deltagare**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-contributor) och [**användar åtkomst administratör**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) i resurs gruppen för att använda en befintlig arbets yta eller skapa en ny arbets yta i en befintlig resurs grupp.
+      - [**Log Analytics deltagare**](/azure/role-based-access-control/built-in-roles#log-analytics-contributor) och [**användar åtkomst administratör**](/azure/role-based-access-control/built-in-roles#user-access-administrator) i resurs gruppen för att använda en befintlig arbets yta eller skapa en ny arbets yta i en befintlig resurs grupp.
 
-      - [**Ägare**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner)eller [**deltagare**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) och [**administratörs behörighet för användar åtkomst**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) på prenumerationen för att skapa en arbets yta i en ny resurs grupp.  
+      - [**Ägare**](/azure/role-based-access-control/built-in-roles#owner)eller [**deltagare**](/azure/role-based-access-control/built-in-roles#contributor) och [**administratörs behörighet för användar åtkomst**](/azure/role-based-access-control/built-in-roles#user-access-administrator) på prenumerationen för att skapa en arbets yta i en ny resurs grupp.  
 
     - För att få åtkomst till portalen efter onboarding behöver du:
 
-      - [**Administratörs rollen för Skriv bords Analytics**](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) och [**ägare**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner), eller [**deltagar**](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) behörigheter på arbets ytan Log Analytics skapades.
+      - [**Administratörs rollen för Skriv bords Analytics**](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#desktop-analytics-administrator-permissions) och [**ägare**](/azure/role-based-access-control/built-in-roles#owner), eller [**deltagar**](/azure/role-based-access-control/built-in-roles#contributor) behörigheter på arbets ytan Log Analytics skapades.
 
 - Configuration Manager version 1902 med Samlad uppdatering (4500571) eller senare. Mer information finns i [uppdatera Configuration Manager](connect-configmgr.md#bkmk_hotfix).  
 
@@ -103,7 +103,7 @@ Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller f
     - Enheter måste också ha Configuration Manager-klienten, version 1902 med Samlad uppdatering (4500571) eller senare. Mer information finns i [uppdatera Configuration Manager](connect-configmgr.md#bkmk_hotfix).  
 
     > [!Note]  
-    > Desktop Analytics stöder inte uppgraderingar till eller från Windows 10 långsiktig service Channel (LTSC). Mer information finns i [Översikt över Windows som en tjänst](https://docs.microsoft.com/windows/deployment/update/waas-overview#long-term-servicing-channel).
+    > Desktop Analytics stöder inte uppgraderingar till eller från Windows 10 långsiktig service Channel (LTSC). Mer information finns i [Översikt över Windows som en tjänst](/windows/deployment/update/waas-overview#long-term-servicing-channel).
     >
     > Desktop Analytics är utformat för bästa möjliga uppgraderings scenario på plats. Om du behöver göra större ändringar, till exempel från 32-bitars till 64-bitars arkitektur, använder du ett avbildnings scenario. Desktop Analytics Insights är fortfarande värdefulla i de här klassiska scenarierna för operativ Systems distribution, men du kan ignorera den detaljerade vägledningen vid uppgradering på plats. Mer information finns i [scenarier för att distribuera operativ system i företag med Configuration Manager](../osd/deploy-use/scenarios-to-deploy-enterprise-operating-systems.md).
 
@@ -139,7 +139,7 @@ Om du vill använda Desktop Analytics kontrollerar du att din miljö uppfyller f
   - Windows Virtual Desktop Access E3 eller E5  
 
 > [!NOTE]
-> Utöver kostnaden för dessa licens prenumerationer finns det ingen extra kostnad för att använda Desktop Analytics i Azure Log Analytics. De data typer som matas in av Skriv bords analys är kostnads fria från alla Log Analytics data inhämtning och avgifter för kvarhållning. Som data typer som inte är fakturerbara, omfattas dessa data inte heller av Log Analytics dagliga data inmatnings tak. Mer information finns i [Log Analytics användning och kostnader](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage).
+> Utöver kostnaden för dessa licens prenumerationer finns det ingen extra kostnad för att använda Desktop Analytics i Azure Log Analytics. De data typer som matas in av Skriv bords analys är kostnads fria från alla Log Analytics data inhämtning och avgifter för kvarhållning. Som data typer som inte är fakturerbara, omfattas dessa data inte heller av Log Analytics dagliga data inmatnings tak. Mer information finns i [Log Analytics användning och kostnader](/azure/azure-monitor/platform/manage-cost-storage).
 
 ## <a name="next-steps"></a>Nästa steg
 

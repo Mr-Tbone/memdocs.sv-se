@@ -10,12 +10,12 @@ ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 46d2af2d89e41e931add0f77931b442b68835235
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 8d766a172f934e27398ec2633ef0ec23ba4ade5e
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906468"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700692"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Säkerhetskopiera en Configuration Manager-plats
 
@@ -47,7 +47,7 @@ Avsnitten i den här artikeln kan hjälpa dig att säkerhetskopiera dina webbpla
 ####  <a name="using-data-protection-manager-to-back-up-your-site-database"></a>Säkerhetskopiera platsdatabasen med Data Protection Manager
 Du kan använda System Center-Data Protection Manager (DPM) för att säkerhetskopiera Configuration Manager-platsdatabasen.
 
-Skapa en ny skydds grupp i DPM för plats databasens dator. På sidan **Välj grupp medlemmar** i fönstret Skapa guiden Ny skyddsgrupp väljer du tjänsten SMS Writer från listan data källa. Välj sedan plats databasen som en lämplig medlem. Mer information om hur du använder DPM finns i dokumentations biblioteket för [Data Protection Manager](https://docs.microsoft.com/system-center/dpm) .  
+Skapa en ny skydds grupp i DPM för plats databasens dator. På sidan **Välj grupp medlemmar** i fönstret Skapa guiden Ny skyddsgrupp väljer du tjänsten SMS Writer från listan data källa. Välj sedan plats databasen som en lämplig medlem. Mer information om hur du använder DPM finns i dokumentations biblioteket för [Data Protection Manager](/system-center/dpm) .  
 
 > [!IMPORTANT]  
 >  Configuration Manager har inte stöd för DPM-säkerhetskopiering för ett SQL Server-kluster som använder en namngiven instans. Det stöder DPM-säkerhetskopiering på ett SQL Server kluster som använder standard instansen av SQL Server.  
@@ -67,7 +67,7 @@ Du kan automatisera säkerhets kopieringen för Configuration Manager platser ge
 
 Planera att köra standard aktiviteten för säkerhets kopiering av plats minst var femte dag. Det här schemat beror på att Configuration Manager använder en *SQL Server kvarhållningsperiod för ändrings spårning* på fem dagar. Mer information finns i [SQL Server kvarhållningsperiod för ändrings spårning](recover-sites.md#sql-server-change-tracking-retention-period).
 
-För att förenkla säkerhets kopierings processen kan du skapa en **AfterBackup. bat** -fil. Det här skriptet kör automatiskt åtgärder efter säkerhets kopiering när säkerhets kopierings åtgärden har slutförts. Använd filen AfterBackup. bat för att arkivera ögonblicks bilden av säkerhets kopian på en säker plats. Du kan också använda filen AfterBackup. bat för att kopiera filer till säkerhetskopieringsmappen eller starta andra säkerhets kopierings aktiviteter.  
+För att förenkla säkerhets kopierings processen kan du skapa en **AfterBackup.bat** -fil. Det här skriptet kör automatiskt åtgärder efter säkerhets kopiering när säkerhets kopierings åtgärden har slutförts. Använd AfterBackup.bat-filen för att arkivera ögonblicks bilden av säkerhets kopian på en säker plats. Du kan också använda AfterBackup.bat-filen för att kopiera filer till säkerhetskopieringsmappen eller starta andra säkerhets kopierings aktiviteter.  
 
 Du kan säkerhetskopiera en central administrations plats och en primär plats. Sekundära platser eller plats system servrar har inte säkerhets kopierings aktiviteter.
 
@@ -137,16 +137,16 @@ Behåll flera Arkiv av ögonblicks bilden av säkerhets kopian av följande anle
 
 
 ## <a name="using-the-afterbackupbat-file"></a>Använda filen AfterBackup.bat  
-När platsen har säkerhetskopierats försöker säkerhets kopierings aktiviteten automatiskt att köra ett skript med namnet **AfterBackup. bat**. Skapa filen AfterBackup. bat manuellt på plats servern i `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box` . Om det finns en AfterBackup. bat-fil i rätt mapp, körs den automatiskt när säkerhets kopierings åtgärden har slutförts.
+När platsen har säkerhetskopierats försöker säkerhets kopierings aktiviteten automatiskt att köra ett skript med namnet **AfterBackup.bat**. Skapa AfterBackup.bat-filen på plats servern manuellt i `<ConfigMgrInstallationFolder>\Inboxes\Smsbkup.box` . Om det finns en AfterBackup.bat fil i rätt mapp, körs den automatiskt när säkerhets kopierings åtgärden har slutförts.
 
-AfterBackup. bat-filen låter dig arkivera ögonblicks bilden av säkerhets kopian i slutet av varje säkerhets kopierings åtgärd. Den kan utföra andra uppgifter efter säkerhets kopieringen som inte är en del av underhålls uppgiften plats Server för säkerhets kopiering. AfterBackup.bat-filen integrerar arkivet och säkerhetskopieringsåtgärderna, och säkerställer härigenom att varje ny ögonblicksbild av säkerhetskopian arkiveras.
+Med AfterBackup.bat-filen kan du arkivera ögonblicks bilden av säkerhets kopian i slutet av varje säkerhets kopierings åtgärd. Den kan utföra andra uppgifter efter säkerhets kopieringen som inte är en del av underhålls uppgiften plats Server för säkerhets kopiering. AfterBackup.bat-filen integrerar arkivet och säkerhetskopieringsåtgärderna, och säkerställer härigenom att varje ny ögonblicksbild av säkerhetskopian arkiveras.
 
-Om AfterBackup. bat-filen inte finns hoppar säkerhets kopierings åtgärden över den utan att det påverkar säkerhets kopieringen. Kontrol lera att säkerhets kopierings uppgiften har kört det här skriptet genom att gå till noden **komponent status** i arbets ytan **övervakning** och granska status meddelanden för **SMS_SITE_BACKUP**. När du har startat kommando filen AfterBackup. bat visas meddelande-ID **5040**.  
+Om AfterBackup.bat-filen inte finns hoppar säkerhets kopierings aktiviteten över den utan att det påverkar säkerhets kopierings åtgärden. Kontrol lera att säkerhets kopierings uppgiften har kört det här skriptet genom att gå till noden **komponent status** i arbets ytan **övervakning** och granska status meddelanden för **SMS_SITE_BACKUP**. När du har startat kommando filen AfterBackup.bat visas meddelande-ID **5040**.  
 
 > [!TIP]  
->  Om du vill arkivera säkerhets kopiorna av plats servern med AfterBackup. bat måste du använda ett kopierings kommando verktyg i kommando filen. Ett sådant verktyg är [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) i Windows Server. Skapa till exempel filen AfterBackup. bat med följande kommando:`Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
+>  Om du vill arkivera säkerhets kopiorna av plats servern med AfterBackup.bat måste du använda ett kopierings kommando verktyg i kommando filen. Ett sådant verktyg är [Robocopy](/windows-server/administration/windows-commands/robocopy) i Windows Server. Skapa till exempel filen AfterBackup.bat med följande kommando: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
 
-Även om den avsedda användningen av AfterBackup. bat är att arkivera ögonblicks bilder av säkerhets kopior kan du skapa en AfterBackup. bat-fil för att köra ytterligare aktiviteter i slutet av varje säkerhets kopierings åtgärd.  
+Även om den avsedda användningen av AfterBackup.bat är att arkivera ögonblicks bilder av säkerhets kopior kan du skapa en AfterBackup.bat-fil för att köra ytterligare aktiviteter i slutet av varje säkerhets kopierings åtgärd.  
 
 
 
@@ -165,7 +165,7 @@ Om du ändrar fördefinierade eller skapade anpassade rapporter i SQL Server Rep
 > [!IMPORTANT]  
 >  När Configuration Manager uppdateringar till en nyare version kan de fördefinierade rapporterna skrivas över av nya rapporter. Om du ändrar en fördefinierad rapport, se till att säkerhetskopiera rapporten och sedan återställa den i repor ting Services.  
 
-Mer information om hur du säkerhetskopierar dina anpassade rapporter i repor ting Services finns i [säkerhets kopierings-och återställnings åtgärder för repor ting Services](https://docs.microsoft.com/sql/reporting-services/install-windows/backup-and-restore-operations-for-reporting-services).  
+Mer information om hur du säkerhetskopierar dina anpassade rapporter i repor ting Services finns i [säkerhets kopierings-och återställnings åtgärder för repor ting Services](/sql/reporting-services/install-windows/backup-and-restore-operations-for-reporting-services).  
 
 ### <a name="back-up-content-files"></a>Säkerhetskopiera innehållsfiler  
 Innehålls biblioteket i Configuration Manager är den plats där alla innehållsfiler lagras för alla program distributioner. Innehålls biblioteket finns på plats servern och på varje distributions plats. Underhålls uppgiften plats Server för säkerhets kopiering säkerhetskopierar inte innehålls biblioteket eller paketets källfiler. När en plats server kraschar återställs informationen om innehålls biblioteket till plats databasen, men du måste återställa innehålls biblioteket och paketets källfiler.  
@@ -231,9 +231,9 @@ Skrivar-ID: t för SMS Writer är **03ba67dd-dc6d-4729-A038-251f7018463b**.
 Tjänsten SMS Writer måste köras med kontot Lokalt system.  
 
 ### <a name="volume-shadow-copy-service"></a>Tjänsten Volume Shadow Copy  
-VSS är ett antal COM API:er som implementerar ett ramverk som gör det möjligt att ta säkerhetskopior av volymer medan programmen på systemet fortsätter att skriva till volymerna. VSS erbjuder ett konsekvent gränssnitt som möjliggör samordning mellan användarprogram som ändrar data på hårddisken (tjänsten SMS Writer) och dem som säkerhetskopierar program (tjänsten Backup Manager). Mer information finns i [tjänsten Volume Shadow Copy](https://docs.microsoft.com/windows-server/storage/file-server/volume-shadow-copy-service).  
+VSS är ett antal COM API:er som implementerar ett ramverk som gör det möjligt att ta säkerhetskopior av volymer medan programmen på systemet fortsätter att skriva till volymerna. VSS erbjuder ett konsekvent gränssnitt som möjliggör samordning mellan användarprogram som ändrar data på hårddisken (tjänsten SMS Writer) och dem som säkerhetskopierar program (tjänsten Backup Manager). Mer information finns i [tjänsten Volume Shadow Copy](/windows-server/storage/file-server/volume-shadow-copy-service).  
 
 
 
 ## <a name="next-steps"></a>Nästa steg
-När du har skapat en säkerhets kopia kan du öva [webbplats återställning](recover-sites.md) med säkerhets kopian. Den här metoden kan hjälpa dig att bekanta dig med återställnings processen innan du måste förlita dig på den. Det kan också hjälpa att bekräfta att säkerhets kopieringen lyckades för det avsedda syftet.  
+När du har skapat en säkerhets kopia kan du öva [webbplats återställning](recover-sites.md) med säkerhets kopian. Den här metoden kan hjälpa dig att bekanta dig med återställnings processen innan du måste förlita dig på den. Det kan också hjälpa att bekräfta att säkerhets kopieringen lyckades för det avsedda syftet.

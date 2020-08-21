@@ -10,12 +10,12 @@ ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 53aa7e932e782254f63b422526b315f3ce91f397
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 2f07f1277a9e87ea3266473fc54dc96907a0f0e6
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906160"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698981"
 ---
 # <a name="language-packs-in-configuration-manager"></a>Språk paket i Configuration Manager
 
@@ -42,7 +42,7 @@ När du kör Configuration Manager installationen laddar den ned språk paket fi
 
 ## <a name="server-languages"></a>Server språk  
 
-Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på servrar. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).  
+Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på servrar. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).  
 
 |Serverspråk|Språkvariant-ID (LCID)|Kod med tre bokstäver|  
 |---------------------|------------------------|-----------------------|  
@@ -69,7 +69,7 @@ Använd följande tabell för att mappa ett språk-ID till ett språk som du vil
 
 ## <a name="client-languages"></a>Klient språk  
 
-Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på klient datorer. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).  
+Använd följande tabell för att mappa ett språk-ID till ett språk som du vill stödja på klient datorer. Mer information om språkvariant-ID finns i [språkvariant-ID: n som tilldelats av Microsoft](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).  
 
 |Klientspråk|Språkvariant-ID (LCID)|Kod med tre bokstäver|  
 |---------------------|------------------------|-----------------------|  

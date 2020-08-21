@@ -10,12 +10,12 @@ ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b012dd1e7da0d6a3efb4d1cc33b8a79ef319bc0a
-ms.sourcegitcommit: fddbb6c20cf7e19944944d4f81788adf249c963f
+ms.openlocfilehash: 262234edbd6fac6973653ca6cac62853fde23b2d
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83269005"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700120"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-configuration-manager"></a>Lär dig hur klienter hittar plats resurser och tjänster för Configuration Manager
 
@@ -31,7 +31,7 @@ Exempel på plats system roller som tillhandahåller tjänster är:
 
 
 
-##  <a name="fundamentals-of-service-location"></a><a name="bkmk_fund"></a>Grunderna för tjänst lokalisering  
+##  <a name="fundamentals-of-service-location"></a><a name="bkmk_fund"></a> Grunderna för tjänst lokalisering  
  En klient utvärderar sin aktuella nätverks plats, inställningar för kommunikations protokoll och tilldelad plats när den använder tjänst lokalisering för att hitta en hanterings plats som den kan kommunicera med.  
 
 **En klient kommunicerar med en hanterings plats för att:**  
@@ -43,16 +43,16 @@ Exempel på plats system roller som tillhandahåller tjänster är:
 **En Configuration Manager-klient gör en tjänst plats förfrågan:**  
 - Var 25: e timme med kontinuerlig åtgärd.  
 - När klienten identifierar en ändring i dess nätverks konfiguration eller plats.  
-- När tjänsten **ccmexec. exe** på datorn (kärn klient tjänsten) startar.  
+- När **ccmexec.exe** tjänsten på datorn (kärn klient tjänsten) startar.  
 - När klienten måste hitta en plats system roll som tillhandahåller en nödvändig tjänst.  
 
 **När en klient försöker hitta servrar som är värdar för plats system roller**använder den tjänst lokalisering för att hitta en plats system roll som stöder klientens protokoll (http eller https). Som standard använder klienter den säkraste metoden som är tillgänglig för dem. Tänk också på följande:  
 
 - Om du vill använda HTTPS måste du ha en PKI (public key infrastructure) och installera PKI-certifikat på klienterna och servrarna. Information om hur du använder certifikat finns i avsnittet [om krav för PKI-certifikat för Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-- När du distribuerar en platssystemsroll som använder IIS (Internet Information Services) och stöder kommunikation från klienter, måste du ange om klienterna ansluter till platssystemet via HTTP eller HTTPS. Om du använder HTTP, måste du även fundera på signerings- och krypteringsval. Mer information finns i [Planera för signering och kryptering](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) i [planen för säkerhet](../../../core/plan-design/security/plan-for-security.md).  
+- När du distribuerar en platssystemsroll som använder IIS (Internet Information Services) och stöder kommunikation från klienter, måste du ange om klienterna ansluter till platssystemet via HTTP eller HTTPS. Om du använder HTTP, måste du även fundera på signerings- och krypteringsval. Mer information finns i  [Planera för signering och kryptering](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) i [planen för säkerhet](../../../core/plan-design/security/plan-for-security.md).  
 
-##  <a name="service-location-and-how-clients-determine-their-assigned-management-point"></a><a name="BKMK_Plan_Service_Location"></a>Tjänst lokalisering och hur klienter avgör sina tilldelade hanterings platser  
+##  <a name="service-location-and-how-clients-determine-their-assigned-management-point"></a><a name="BKMK_Plan_Service_Location"></a> Tjänst lokalisering och hur klienter avgör sina tilldelade hanterings platser  
 När en klient först tilldelas till en primär plats väljer den en standard hanterings plats för platsen. Primära platser har stöd för flera hanterings platser, och varje klient identifierar oberoende av en hanterings plats som standard hanterings plats. Den här standard hanterings platsen blir sedan klientens tilldelade hanterings plats. (Du kan också använda kommandon för klient installation för att ange den tilldelade hanterings platsen för en klient när den installeras.)  
 
 En klient väljer en hanterings plats för att kommunicera med baserat på klientens aktuella nätverks plats och konfiguration av gränser grupper. Även om den har en tilldelad hanterings plats kanske det inte är den hanterings plats som klienten använder.  
@@ -62,7 +62,7 @@ En klient väljer en hanterings plats för att kommunicera med baserat på klien
 
 Du kan använda prioriterade, eller önskade, hanteringsplatser. Prioriterade hanterings platser är hanterings platser från en klients tilldelade plats som är associerade med en avgränsnings grupp som klienten använder för att hitta plats system servrar. En prioriterad hanterings platss koppling med en avgränsnings grupp som plats system Server liknar hur distributions platser eller platser för tillståndsmigrering är kopplade till en avgränsnings grupp. Om du aktiverar önskade hanteringsplatser för hierarkin kommer en klient att försöka använda en önskad hanteringsplats innan den använder andra hanteringsplatser från den tilldelade webbplatsen när den använder en hanteringsplats från den tilldelade webbplatsen.  
 
-Du kan också använda informationen i bloggen för [hanterings plats tillhörighet](https://docs.microsoft.com/archive/blogs/jchalfant/management-point-affinity-added-in-configmgr-2012-r2-cu3) för att konfigurera tillhörighet mellan hanterings platser. Mappning mellan hanterings platser åsidosätter standard beteendet för tilldelade hanterings platser och gör att klienten kan använda en eller flera olika hanterings platser.  
+Du kan också använda informationen i bloggen för [hanterings plats tillhörighet](/archive/blogs/jchalfant/management-point-affinity-added-in-configmgr-2012-r2-cu3) för att konfigurera tillhörighet mellan hanterings platser. Mappning mellan hanterings platser åsidosätter standard beteendet för tilldelade hanterings platser och gör att klienten kan använda en eller flera olika hanterings platser.  
 
 Varje gång en klient behöver kontakta en hanterings plats kontrollerar den MP-listan, som den lagrar lokalt i Windows Management Instrumentation (WMI). Klienten skapar en första MP-lista när den installeras. Klienten uppdaterar sedan regelbundet listan med information om varje hanterings plats i hierarkin.  
 
@@ -79,7 +79,7 @@ Om till exempel en Configuration Manager-klient som finns på Internet ansluter 
 
 En klient som inte har kon figurer ATS för Internet har inte någon hanterings plats som endast är riktad mot Internet. Arbets grupps klienter som kon figurer ATS för Internet kommunicerar bara med Internet-riktade hanterings platser.  
 
-##  <a name="the-mp-list"></a><a name="BKMK_MPList"></a>MP-listan  
+##  <a name="the-mp-list"></a><a name="BKMK_MPList"></a> MP-listan  
 MP-listan är den prioriterade tjänst lokaliserings källan för en klient, eftersom det är en prioriterad lista med hanterings platser som klienten identifierade tidigare. Den här listan sorteras efter respektive klient baserat på dess nätverksplats när klienten uppdaterar listan och sedan sparas lokalt på klienten i WMI.  
 
 ### <a name="building-the-initial-mp-list"></a>Skapa den första MP-listan  
@@ -130,7 +130,7 @@ När en klient upprättar kommunikation med en hanterings plats fortsätter den 
 
 Klienten väljer slumpmässigt en ny hanterings plats som ska användas.  
 
-##  <a name="active-directory"></a><a name="bkmk_ad"></a>Active Directory  
+##  <a name="active-directory"></a><a name="bkmk_ad"></a> Active Directory  
 Klienter som är domänanslutna kan använda AD DS för tjänstlokalisering. Detta kräver att webbplatserna [publicerar data till Active Directory](../../servers/deploy/configure/publish-site-data.md).  
 
 En klient kan använda AD DS för tjänst lokalisering när samtliga följande villkor är uppfyllda:  
@@ -141,7 +141,7 @@ En klient kan använda AD DS för tjänst lokalisering när samtliga följande v
 
 Om en klient inte kan hitta en hanterings plats som ska användas för tjänst lokalisering från AD DS försöker den använda DNS.  
 
-##  <a name="dns"></a><a name="bkmk_dns"></a>DNS  
+##  <a name="dns"></a><a name="bkmk_dns"></a> DNS  
 Klienter på intranätet kan använda DNS för tjänstlokalisering. Detta kräver minst en plats i en hierarki för att publicera information om hanteringsplatser till DNS.  
 
 Överväg att använda DNS för tjänstlokalisering när något av följande villkor är uppfyllt:
@@ -170,7 +170,7 @@ Följande villkor måste vara uppfyllda för att publicera hanteringsplatser i D
 > [!IMPORTANT]  
 > Configuration Manager DNS-publicering stöder inte en åtskild namnrymd. Om du har en uppdelad namnrymd kan du publicera hanterings platser manuellt till DNS eller använda någon av de andra tjänst lokaliserings metoderna som beskrivs i det här avsnittet.  
 
-**När DNS-servrarna har stöd för automatiska uppdateringar**kan du konfigurera Configuration Manager att automatiskt publicera hanterings platser på intranätet till DNS, eller så kan du publicera posterna manuellt till DNS. När hanteringsplatser publiceras i DNS publiceras deras fullständiga intranätdomännamn och portnummer i posten för att hitta en tjänst (SRV). Du konfigurerar DNS-publicering på en plats i platsens komponent egenskaper för hanterings platsen. Mer information finns i [plats komponenter för Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
+**När DNS-servrarna har stöd för automatiska uppdateringar**kan du konfigurera Configuration Manager att automatiskt publicera hanterings platser på intranätet till DNS, eller så kan du publicera posterna manuellt till DNS. När hanteringsplatser publiceras i DNS publiceras deras fullständiga intranätdomännamn och portnummer i posten för att hitta en tjänst (SRV). Du konfigurerar DNS-publicering på en plats i platsens komponent egenskaper för hanterings platsen. Mer information finns i  [plats komponenter för Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
 **När DNS-zonen är inställd på "endast säker" för dynamiska uppdateringar**kan bara den första hanterings platsen som ska publiceras till DNS göra det med standard behörighet.
 
@@ -179,7 +179,7 @@ Om endast en hanterings plats kan publicera och ändra sin DNS-post och hanterin
 
 **Om DNS-servrarna inte har stöd för automatiska uppdateringar men har stöd för tjänstlokaliseringsposter**, kan du publicera hanteringsplatser manuellt till DNS. Det gör du genom att manuellt ange resursposten för att hitta en tjänst (SRV RR) i DNS.  
 
-Configuration Manager stöder RFC 2782 för tjänst lokaliserings poster. Dessa poster har följande format: *_Service. _Proto. namn TTL-klass SRV prioritet vikt port mål*  
+Configuration Manager stöder RFC 2782 för tjänst lokaliserings poster. Dessa poster har följande format:   *_Service. _Proto. namn TTL-klass SRV prioritet vikt port mål*  
 
 Om du vill publicera en hanterings plats till Configuration Manager anger du följande värden:  
 
@@ -239,9 +239,9 @@ Om du använder Windows Server-DNS kan du ange DNS-posten för intranäthanterin
 
 Upprepa de här stegen för alla hanteringsplatser på intranätet som du vill publicera i DNS.  
 
-##  <a name="wins"></a><a name="bkmk_wins"></a>UPPTÄCKT  
+##  <a name="wins"></a><a name="bkmk_wins"></a> UPPTÄCKT  
 Om andra metoder för att hitta en tjänst misslyckas kan klienterna hitta en första hanteringsplats genom att söka i WINS.  
 
 En primär plats publiceras som standard till WINS den första hanterings platsen på den plats som är konfigurerad för HTTP och den första hanterings platsen som är konfigurerad för HTTPS.  
 
-Om du inte vill att klienter ska hitta en HTTP-hanteringsplats i WINS konfigurerar du klienterna med CCMSetup.exe-egenskapen Client.msi **SMSDIRECTORYLOOKUP=NOWINS**.  
+Om du inte vill att klienter ska hitta en HTTP-hanteringsplats i WINS konfigurerar du klienterna med CCMSetup.exe-egenskapen Client.msi **SMSDIRECTORYLOOKUP=NOWINS**.

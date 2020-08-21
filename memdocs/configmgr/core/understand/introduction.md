@@ -10,12 +10,12 @@ ms.assetid: 3343eccf-bf09-41cd-9e68-03e893c7f904
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 13c3be302ecefad36d7be8617a4cc9354db1b685
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 99e02c190e02a5e017fe2c3f41682ad1624b6051
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906063"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88699355"
 ---
 # <a name="what-is-configuration-manager"></a>Vad är Configuration Manager?
 
@@ -29,10 +29,10 @@ Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina
 
 Följande Microsoft-hanterings lösningar är nu en del av **Microsoft Endpoint Manager** -varumärket:
 
-- [Configuration Manager](https://docs.microsoft.com/configmgr)
-- [Intune](https://docs.microsoft.com/intune)
+- [Configuration Manager](/configmgr)
+- [Intune](/intune)
 - [Desktop Analytics](../../desktop-analytics/overview.md)
-- [Autopilot](https://docs.microsoft.com/intune/enrollment/enrollment-autopilot)
+- [Autopilot](/intune/enrollment/enrollment-autopilot)
 - Andra funktioner i [administrations konsolen för enhets hantering](https://techcommunity.microsoft.com/t5/enterprise-mobility-security/microsoft-intune-rolls-out-an-improved-streamlined-endpoint/ba-p/937760)
 
 Mer information finns i [vanliga frågor och svar om Microsoft Endpoint Configuration Manager](microsoft-endpoint-manager-faq.md).
@@ -77,7 +77,7 @@ För att lyckas med Configuration Manager i en produktions miljö bör du planer
 
 ## <a name="user-interfaces"></a>Användar gränssnitt
 
-### <a name="the-configuration-manager-console"></a><a name="BKMK_Console"></a>Configuration Manager-konsolen
+### <a name="the-configuration-manager-console"></a><a name="BKMK_Console"></a> Configuration Manager-konsolen
 
 När du har installerat Configuration Manager använder du Configuration Manager-konsolen för att konfigurera platser och klienter och för att köra och övervaka hanterings uppgifter. Den här konsolen är den viktigaste administrations punkten och låter dig hantera flera platser.  
 
@@ -85,7 +85,7 @@ Du kan installera Configuration Manager-konsolen på ytterligare datorer och beg
 
 Mer information finns i [använda Configuration Manager-konsolen](../servers/manage/admin-console.md).
 
-### <a name="software-center"></a><a name="BKMK_ApplicationCatalog"></a>Software Center
+### <a name="software-center"></a><a name="BKMK_ApplicationCatalog"></a> Software Center
 
 **Software Center** är ett program som installeras när du installerar Configuration Manager-klienten på en Windows-enhet. Användare använder Software Center för att begära och installera program vara som du distribuerar. I Software Center kan användarna utföra följande åtgärder:  
 
@@ -110,4 +110,4 @@ När du är bekant med de grundläggande begreppen kan du använda det här doku
 - [Funktioner och funktioner i Configuration Manager](../plan-design/changes/features-and-capabilities.md)  
 - [Välja en lösning för enhetshantering](../plan-design/choose-a-device-management-solution.md)  
 - [Utvärdera Configuration Manager genom att skapa en egen labb miljö](../get-started/set-up-your-lab.md)
-- [Få hjälp med att använda Configuration Manager](find-help.md)  
+- [Få hjälp med att använda Configuration Manager](find-help.md)

@@ -10,12 +10,12 @@ ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 62c667706a9d77b3bb7d2b6bbdfde3cde8bb8365
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 57b353dd9dd9fcf7f97d10480f4067bd65a1f483
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125193"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697984"
 ---
 # <a name="create-stand-alone-media"></a>Skapa fristående media
 
@@ -140,7 +140,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
 
         - Configuration Manager skriver en textfil som kallas `MediaLabel.txt` för roten på mediet. Som standard innehåller filen en enskild rad med text: `label=Configuration Manager` . Om du anpassar etiketten för Media använder den här raden den anpassade etiketten i stället för standardvärdet.  
 
-    - **Inkludera filen autorun. inf på mediet**<!-- 4090666 -->: Från och med version 1906 lägger Configuration Manager inte till en autorun. inf-fil som standard. Den här filen blockeras vanligt vis av program mot skadlig kod. Mer information om AutoRun-funktionen i Windows finns i [skapa ett autorun-aktiverat CD-ROM-program](https://docs.microsoft.com/windows/desktop/shell/autoplay). Om det fortfarande behövs för ditt scenario väljer du det här alternativet för att inkludera filen.  
+    - **Inkludera filen autorun. inf på mediet**<!-- 4090666 -->: Från och med version 1906 lägger Configuration Manager inte till en autorun. inf-fil som standard. Den här filen blockeras vanligt vis av program mot skadlig kod. Mer information om AutoRun-funktionen i Windows finns i [skapa ett autorun-aktiverat CD-ROM-program](/windows/desktop/shell/autoplay). Om det fortfarande behövs för ditt scenario väljer du det här alternativet för att inkludera filen.  
 
 5. På sidan **säkerhet** anger du följande alternativ:
 
@@ -151,7 +151,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
         >
         > På fristående media krypterar den bara stegen i aktivitetssekvensen och deras variabler. Det krypterar inte det återstående innehållet på mediet. Ta inte med känslig information i aktivitetssekvenser. Lagra och implementera all känslig information med hjälp av variabler i aktivitetssekvensen.  
 
-    - **Välj datum intervall för att det här fristående mediet ska vara giltigt**: Ange valfria start-och förfallo datum för mediet. Den här inställningen är avaktiverad som standard. Datumen jämförs med system klockan på datorn innan det fristående mediet körs. När system tiden infaller före start tiden eller senare än förfallo tiden startar inte det fristående mediet. Dessa alternativ är också tillgängliga med hjälp av PowerShell-cmdleten [New-CMStandaloneMedia](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmstandalonemedia?view=sccm-ps) .  
+    - **Välj datum intervall för att det här fristående mediet ska vara giltigt**: Ange valfria start-och förfallo datum för mediet. Den här inställningen är avaktiverad som standard. Datumen jämförs med system klockan på datorn innan det fristående mediet körs. När system tiden infaller före start tiden eller senare än förfallo tiden startar inte det fristående mediet. Dessa alternativ är också tillgängliga med hjälp av PowerShell-cmdleten [New-CMStandaloneMedia](/powershell/module/configurationmanager/new-cmstandalonemedia?view=sccm-ps) .  
 
 6. På sidan **fristående CD/DVD** väljer du den aktivitetssekvens som distribuerar operativ systemet. Du kan bara välja de aktivitetssekvenser som är associerade med en start avbildning. Verifiera listan över innehåll som aktivitetssekvensen refererar till.  
 

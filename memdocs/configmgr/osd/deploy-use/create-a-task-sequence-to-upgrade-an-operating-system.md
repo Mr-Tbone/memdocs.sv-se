@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 907c36b6f06bbf4fbbabb9ee1b2df6cadb0acb75
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: ca002664bd55dbac79ace5cfe4bf88cd41d65b89
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125465"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698103"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Skapa en aktivitetssekvens för att uppgradera ett operativ system i Configuration Manager
 
@@ -41,7 +41,7 @@ Innan du skapar aktivitetssekvensen måste följande krav vara på plats:
 - [Program](../../apps/deploy-use/create-applications.md) måste läggas till i Configuration Manager-konsolen.  
 
 
-## <a name="create-a-task-sequence-to-upgrade-an-os"></a><a name="BKMK_UpgradeOS"></a>Skapa en aktivitetssekvens för att uppgradera ett operativ system  
+## <a name="create-a-task-sequence-to-upgrade-an-os"></a><a name="BKMK_UpgradeOS"></a> Skapa en aktivitetssekvens för att uppgradera ett operativ system  
 
 Om du vill uppgradera operativ systemet på klienter skapar du en aktivitetssekvens och väljer **uppgradera ett operativ system från uppgraderings paket** i guiden skapa aktivitetssekvens. Guiden lägger till aktivitetssekvenser för att uppgradera operativ systemet, tillämpa program uppdateringar och installera program.
 
@@ -66,7 +66,7 @@ Om du vill uppgradera operativ systemet på klienter skapar du en aktivitetssekv
     - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck ( `-` ). Till exempel: `XXXXX-XXXXX-XXXXX-XXXXX-XXXXX`. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
 
         > [!Note]  
-        > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
+        > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
 
     - **Ignorera eventuella meddelanden som kan ignoreras**: Välj den här inställningen om du uppgraderar till Windows Server 2016. Om du inte väljer den här inställningen kan aktivitetssekvensen inte slutföras eftersom Installationsprogrammet för Windows väntar på att användaren ska välja **Bekräfta** i en dialog ruta för Windows-appar.  
 
@@ -124,7 +124,7 @@ Om det returnerar några resultat körs enheten på Wi-Fi. Annars är enheten an
 
 Lägg till steg i den här gruppen för att ta bort alla program som inte är kompatibla med den här versionen av Windows 10. Metoden för att avinstallera ett program varierar.  
 
-Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Till exempel:
+Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Exempel:
 
 `msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`  
 
@@ -217,7 +217,7 @@ Lägg till steg i den här gruppen om du vill samla in loggar från klienten.
 
 Lägg till steg i den här gruppen om du vill köra ytterligare diagnostiska verktyg. Automatisera de här verktygen för att samla in ytterligare information från systemet direkt efter att det har misslyckats.  
 
-Ett sådant verktyg är Windows- [SetupDiag](https://docs.microsoft.com/windows/deployment/upgrade/setupdiag). Det är ett fristående diagnostikverktyg för att få information om varför en Windows 10-uppgradering misslyckades.  
+Ett sådant verktyg är Windows- [SetupDiag](/windows/deployment/upgrade/setupdiag). Det är ett fristående diagnostikverktyg för att få information om varför en Windows 10-uppgradering misslyckades.  
 
 - [Skapa ett paket](../../apps/deploy-use/packages-and-programs.md#create-a-package-and-program) för verktyget i Configuration Manager.  
 
@@ -225,13 +225,13 @@ Ett sådant verktyg är Windows- [SetupDiag](https://docs.microsoft.com/windows/
     `SetupDiag.exe /Output:"%_SMSTSLogPath%\SetupDiagResults.log"`  
 
 > [!TIP]
-> Använd alltid den senaste versionen av SetupDiag för de senaste funktionerna och korrigeringarna på kända problem. Mer information finns i [SetupDiag](https://docs.microsoft.com/windows/deployment/upgrade/setupdiag).
+> Använd alltid den senaste versionen av SetupDiag för de senaste funktionerna och korrigeringarna på kända problem. Mer information finns i [SetupDiag](/windows/deployment/upgrade/setupdiag).
 
 ## <a name="additional-recommendations"></a>Ytterligare rekommendationer
 
 ### <a name="windows-documentation"></a>Windows-dokumentation
 
-Läs igenom Windows-dokumentationen för att [lösa Windows 10-uppgraderings fel](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors). Den här artikeln innehåller även detaljerad information om uppgraderings processen.  
+Läs igenom Windows-dokumentationen för att [lösa Windows 10-uppgraderings fel](/windows/deployment/upgrade/resolve-windows-10-upgrade-errors). Den här artikeln innehåller även detaljerad information om uppgraderings processen.  
 
 ### <a name="check-minimum-disk-space"></a>Kontrol lera minsta disk utrymme
 
@@ -272,12 +272,12 @@ Om du vill ändra enheten från BIOS till UEFI under den här aktivitetssekvense
 ### <a name="manage-bitlocker"></a>Hantera BitLocker
 
 <!--SCCMDocs issue #494-->
-Om du använder BitLocker Disk Encryption inaktive ras som standard Installationsprogrammet för Windows automatiskt under uppgraderingen. Från och med Windows 10 version 1803 innehåller Installationsprogrammet för Windows `/BitLocker` kommando rads parametern för att styra det här beteendet. Om dina säkerhets krav gör att du alltid måste ha en aktiv disk kryptering, använder du **OSDSetupAdditionalUpgradeOptions** - [variabeln](../understand/task-sequence-variables.md#OSDSetupAdditionalUpgradeOptions) i gruppen **Förbered för uppgradering** för att inkludera `/BitLocker TryKeepActive` . Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#bitlocker).
+Om du använder BitLocker Disk Encryption inaktive ras som standard Installationsprogrammet för Windows automatiskt under uppgraderingen. Från och med Windows 10 version 1803 innehåller Installationsprogrammet för Windows `/BitLocker` kommando rads parametern för att styra det här beteendet. Om dina säkerhets krav gör att du alltid måste ha en aktiv disk kryptering, använder du **OSDSetupAdditionalUpgradeOptions** - [variabeln](../understand/task-sequence-variables.md#OSDSetupAdditionalUpgradeOptions) i gruppen **Förbered för uppgradering** för att inkludera `/BitLocker TryKeepActive` . Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](/windows-hardware/manufacture/desktop/windows-setup-command-line-options#bitlocker).
 
 ### <a name="remove-default-apps"></a>Ta bort standard appar
 
 <!--SCCMDocs issue #526-->
-Vissa kunder tar bort standard etablerade appar i Windows 10. Till exempel Bing väder-appen eller Microsoft Harpan-samlingen. I vissa situationer returneras dessa appar efter uppdatering av Windows 10. Mer information finns i [så här håller du appar borttagna från Windows 10](https://docs.microsoft.com/windows/application-management/remove-provisioned-apps-during-update).
+Vissa kunder tar bort standard etablerade appar i Windows 10. Till exempel Bing väder-appen eller Microsoft Harpan-samlingen. I vissa situationer returneras dessa appar efter uppdatering av Windows 10. Mer information finns i [så här håller du appar borttagna från Windows 10](/windows/application-management/remove-provisioned-apps-during-update).
 
 Lägg till steget **Kör kommando rad** i aktivitetssekvensen i **förberedelse för uppgraderings** gruppen. Ange en kommando rad som liknar följande exempel:
 

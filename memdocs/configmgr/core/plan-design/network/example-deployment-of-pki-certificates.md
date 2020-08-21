@@ -10,12 +10,12 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 45ef103645630b8e203710ec0ff36a71b3cef4cf
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 7781c20ca542d19c562574c554a08c38493911f6
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904250"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700086"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-configuration-manager-windows-server-2008-certification-authority"></a>Steg för steg-distribution av PKI-certifikaten för Configuration Manager: Windows Server 2008-certifikat utfärdare
 
@@ -31,7 +31,7 @@ Eftersom det inte finns någon distributions metod för de certifikat som krävs
 > - **Certifikatutfärdare**: **Windows Server 2003**  
 >   - **Certifikatmottagare**: **Windows XP / Server 2003**  
 
-## <a name="test-network-requirements"></a><a name="BKMK_testnetworkenvironment"></a>Testa nätverks krav
+## <a name="test-network-requirements"></a><a name="BKMK_testnetworkenvironment"></a> Testa nätverks krav
 
 De detaljerade anvisningarna är förknippade med de följande kraven:  
 
@@ -45,20 +45,20 @@ De detaljerade anvisningarna är förknippade med de följande kraven:
 
 - Du kan logga in med ett rot domän administratörs konto eller ett företags domän administratörs konto och använda det här kontot för alla procedurer i den här exempel distributionen.  
 
-## <a name="overview-of-the-certificates"></a><a name="BKMK_overview2008"></a>Översikt över certifikaten
+## <a name="overview-of-the-certificates"></a><a name="BKMK_overview2008"></a> Översikt över certifikaten
 
 I följande tabell visas de typer av PKI-certifikat som kan krävas för Configuration Manager och beskriver hur de används.  
 
 |Certifikatkrav|Beskrivning av certifikatet|  
 |-----------------------------|-----------------------------|  
 |Webbservercertifikat för platssystem som kör IIS|Det här certifikatet används för att kryptera data och autentisera servern för klienter. Den måste installeras externt från Configuration Manager på plats system servrar som kör Internet Information Services (IIS) och som har kon figurer ATS i Configuration Manager för att använda HTTPS.<br /><br /> Anvisningar om hur du konfigurerar och installerar det här certifikatet finns i [distribuera webb Server certifikatet för plats system som kör IIS](#BKMK_webserver2008_cm2012) i den här artikeln.|  
-|Tjänstcertifikat för klienter som ansluter till molnbaserade distributionsplatser|Anvisningar om hur du konfigurerar och installerar det här certifikatet finns i [distribuera tjänst certifikatet för molnbaserade distributions platser](#BKMK_clouddp2008_cm2012) i den här artikeln.<br /><br /> **Viktigt:** Detta certifikat används tillsammans med Windows Azure-hanteringscertifikatet. Mer information om hanterings certifikatet finns i [så här skapar du ett hanterings certifikat](https://docs.microsoft.com/azure/cloud-services/cloud-services-certs-create#create-a-new-self-signed-certificate) och [hur du lägger till ett hanterings certifikat i en Windows Azure-prenumeration](https://docs.microsoft.com/azure/cloud-services/cloud-services-configure-ssl-certificate-portal#step-3-upload-a-certificate).|  
+|Tjänstcertifikat för klienter som ansluter till molnbaserade distributionsplatser|Anvisningar om hur du konfigurerar och installerar det här certifikatet finns i [distribuera tjänst certifikatet för molnbaserade distributions platser](#BKMK_clouddp2008_cm2012) i den här artikeln.<br /><br /> **Viktigt:** Detta certifikat används tillsammans med Windows Azure-hanteringscertifikatet. Mer information om hanterings certifikatet finns i [så här skapar du ett hanterings certifikat](/azure/cloud-services/cloud-services-certs-create#create-a-new-self-signed-certificate) och [hur du lägger till ett hanterings certifikat i en Windows Azure-prenumeration](/azure/cloud-services/cloud-services-configure-ssl-certificate-portal#step-3-upload-a-certificate).|  
 |Klientcertifikat för Windows-datorer|Det här certifikatet används för att autentisera Configuration Manager klient datorer för plats system som har kon figurer ATS för att använda HTTPS. Den kan också användas för hanterings platser och tillståndsmigrering för att övervaka deras drift status när de har kon figurer ATS för att använda HTTPS. Den måste installeras externt från Configuration Manager på datorer.<br /><br /> Anvisningar för hur du konfigurerar och installerar det här certifikatet finns i [distribuera klient certifikatet för Windows-datorer](#BKMK_client2008_cm2012) i det här avsnittet.|  
 |Klientcertifikat för distributionsplatser|Certifikatet har två syften:<br /><br /> Certifikatet används för att autentisera distributionsplatsen för en HTTPS-aktiverad hanteringsplats innan distributionsplatsen skickar statusmeddelanden.<br /><br /> När distributionsplatsalternativet **Aktivera PXE-stöd för klienter** är valt, skickas certifikatet till datorer som startas med PXE så att de kan ansluta till en HTTPS-aktiverad hanteringsplats då operativsystemet distribueras.<br /><br /> Anvisningar för hur du konfigurerar och installerar det här certifikatet finns i [distribuera klient certifikatet för distributions platser](#BKMK_clientdistributionpoint2008_cm2012) i den här artikeln.|  
 |Registreringscertifikat för mobila enheter|Det här certifikatet används för att autentisera Configuration Manager mobila enhets klienter till plats system som är konfigurerade att använda HTTPS. Den måste installeras som en del av registreringen av mobila enheter i Configuration Manager och du väljer den konfigurerade certifikat mal len som en inställning för mobila enhets klienter.<br /><br /> Anvisningar för hur du konfigurerar det här certifikatet finns i [distribuera registrerings certifikatet för mobila enheter](#BKMK_mobiledevices2008_cm2012) i det här avsnittet.|  
 |Klientcertifikat för Mac-datorer|Du kan begära och installera det här certifikatet från en Mac-dator när du använder Configuration Manager registrering och väljer den konfigurerade certifikat mal len som en inställning för mobila enhets klienter.<br /><br /> Anvisningar för hur du konfigurerar det här certifikatet finns i [distribuera klient certifikatet för Mac-datorer](#BKMK_MacClient_SP1) i den här artikeln.|  
 
-## <a name="deploy-the-web-server-certificate-for-site-systems-that-run-iis"></a><a name="BKMK_webserver2008_cm2012"></a>Distribuera webb Server certifikatet för plats system som kör IIS
+## <a name="deploy-the-web-server-certificate-for-site-systems-that-run-iis"></a><a name="BKMK_webserver2008_cm2012"></a> Distribuera webb Server certifikatet för plats system som kör IIS
 
 Den här certifikatdistributionen sker i följande steg:  
 
@@ -68,7 +68,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 - Konfigurera IIS att använda webb Server certifikatet  
 
-### <a name="create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_webserver22008"></a>Skapa och utfärda webb server certifikat mal len på certifikat utfärdaren
+### <a name="create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_webserver22008"></a> Skapa och utfärda webb server certifikat mal len på certifikat utfärdaren
 
 Den här proceduren skapar en certifikatmall för Configuration Manager plats system och lägger till den i certifikat utfärdaren.  
 
@@ -103,14 +103,14 @@ Den här proceduren skapar en certifikatmall för Configuration Manager plats sy
 
 13. Om du inte behöver skapa och utfärda fler certifikat stänger du **certifikat utfärdare**.  
 
-###  <a name="request-the-web-server-certificate"></a><a name="BKMK_webserver32008"></a>Begär webb Server certifikatet  
+###  <a name="request-the-web-server-certificate"></a><a name="BKMK_webserver32008"></a> Begär webb Server certifikatet  
  Med den här proceduren kan du ange de FQDN-värden för intranät och Internet som ska konfigureras i egenskaperna för plats system servern och sedan installera webb Server certifikatet på den medlems server som kör IIS.  
 
 ##### <a name="to-request-the-web-server-certificate"></a>Begära webbservercertifikatet  
 
 1.  Starta om medlems servern som kör IIS för att se till att datorn har åtkomst till den certifikatmall som du skapade genom att använda behörigheterna **Läs** och **Registrera** som du konfigurerade.  
 
-2.  Välj **Start**, Välj **Kör**och skriv sedan **MMC. exe.** Välj **Arkiv**i den tomma konsolen och välj sedan **Lägg till/ta bort snapin-modul**.  
+2.  Välj **Start**, Välj **kör**och skriv **mmc.exe.** Välj **Arkiv**i den tomma konsolen och välj sedan **Lägg till/ta bort snapin-modul**.  
 
 3.  I dialog rutan **Lägg till eller ta bort snapin-moduler** väljer du **certifikat** i listan över **Tillgängliga snapin-moduler**och väljer sedan **Lägg till**.  
 
@@ -153,7 +153,7 @@ Den här proceduren skapar en certifikatmall för Configuration Manager plats sy
 
 16. Stäng **Certifikat (lokal dator)**.  
 
-###  <a name="configure-iis-to-use-the-web-server-certificate"></a><a name="BKMK_webserver42008"></a>Konfigurera IIS att använda webb Server certifikatet  
+###  <a name="configure-iis-to-use-the-web-server-certificate"></a><a name="BKMK_webserver42008"></a> Konfigurera IIS att använda webb Server certifikatet  
  Den här proceduren binder det installerade certifikatet till IIS **Standardwebbplats**.  
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Konfigurera IIS att använda webb Server certifikatet  
@@ -178,7 +178,7 @@ Den här proceduren skapar en certifikatmall för Configuration Manager plats sy
 > [!IMPORTANT]  
 >  När du installerar Configuration Manager-plats system servern på den här datorn måste du kontrol lera att du anger samma FQDN i plats system egenskaperna som du angav när du begärde certifikatet.  
 
-##  <a name="deploy-the-service-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddp2008_cm2012"></a>Distribuera tjänst certifikatet för molnbaserade distributions platser  
+##  <a name="deploy-the-service-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddp2008_cm2012"></a> Distribuera tjänst certifikatet för molnbaserade distributions platser  
 
 Den här certifikatdistributionen sker i följande steg:  
 
@@ -188,7 +188,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 - [Exportera det anpassade webb Server certifikatet för molnbaserade distributions platser](#BKMK_clouddpexporting2008)  
 
-###  <a name="create-and-issue-a-custom-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_clouddpcreating2008"></a>Skapa och utfärda en anpassad webb server certifikat mal len på certifikat utfärdaren  
+###  <a name="create-and-issue-a-custom-web-server-certificate-template-on-the-certification-authority"></a><a name="BKMK_clouddpcreating2008"></a> Skapa och utfärda en anpassad webb server certifikat mal len på certifikat utfärdaren  
  Den här proceduren skapar en anpassad certifikatmall som baseras på certifikat mal len webb server. Certifikatet är för Configuration Manager molnbaserade distributions platser och den privata nyckeln måste kunna exporteras. När certifikatmallen skapats läggs den till i certifikatutfärdaren.  
 
 > [!NOTE]
@@ -233,14 +233,14 @@ Den här certifikatdistributionen sker i följande steg:
 
 14. Om du inte behöver skapa och utfärda fler certifikat stänger du **certifikat utfärdare**.  
 
-###  <a name="request-the-custom-web-server-certificate"></a><a name="BKMK_clouddprequesting2008"></a>Begär det anpassade webb Server certifikatet  
+###  <a name="request-the-custom-web-server-certificate"></a><a name="BKMK_clouddprequesting2008"></a> Begär det anpassade webb Server certifikatet  
  Den här proceduren begär och installerar sedan det anpassade webb Server certifikatet på den medlems server som ska köra plats servern.  
 
 ##### <a name="to-request-the-custom-web-server-certificate"></a>Begära det anpassade webbservercertifikatet  
 
 1.  Starta om medlems servern efter att du har skapat och konfigurerat säkerhets gruppen **ConfigMgr plats servrar** för att se till att datorn har åtkomst till den certifikatmall som du skapade genom att använda behörigheterna **Läs** och **Registrera** som du konfigurerade.  
 
-2.  Välj **Start**, Välj **Kör**och ange sedan **MMC. exe.** Välj **Arkiv**i den tomma konsolen och välj sedan **Lägg till/ta bort snapin-modul**.  
+2.  Välj **Start**, Välj **kör**och ange **mmc.exe.** Välj **Arkiv**i den tomma konsolen och välj sedan **Lägg till/ta bort snapin-modul**.  
 
 3.  I dialog rutan **Lägg till eller ta bort snapin-moduler** väljer du **certifikat** i listan över **Tillgängliga snapin-moduler**och väljer sedan **Lägg till**.  
 
@@ -275,7 +275,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 17. Stäng **Certifikat (lokal dator)**.  
 
-###  <a name="export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddpexporting2008"></a>Exportera det anpassade webb Server certifikatet för molnbaserade distributions platser  
+###  <a name="export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a><a name="BKMK_clouddpexporting2008"></a> Exportera det anpassade webb Server certifikatet för molnbaserade distributions platser  
  Den här proceduren exporterar det anpassade webbservercertifikatet till en fil, så att det kan importeras när du skapar den molnbaserade distributionsplatsen.  
 
 ##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Exportera det anpassade webbservercertifikatet för molnbaserade distributionsplatser  
@@ -303,7 +303,7 @@ Den här certifikatdistributionen sker i följande steg:
 
    Certifikatet är nu klart att importera när du skapar en molnbaserad distributionsplats.  
 
-##  <a name="deploy-the-client-certificate-for-windows-computers"></a><a name="BKMK_client2008_cm2012"></a>Distribuera klient certifikatet för Windows-datorer  
+##  <a name="deploy-the-client-certificate-for-windows-computers"></a><a name="BKMK_client2008_cm2012"></a> Distribuera klient certifikatet för Windows-datorer  
  Den här certifikatdistributionen sker i följande steg:  
 
 - Skapa och utfärda certifikat mal len för autentisering av arbets Station på certifikat utfärdaren  
@@ -312,7 +312,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 - Registrera certifikatet för autentisering av arbets Station automatiskt och verifiera installationen på datorer  
 
-###  <a name="create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_client02008"></a>Skapa och utfärda certifikat mal len för autentisering av arbets Station på certifikat utfärdaren  
+###  <a name="create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_client02008"></a> Skapa och utfärda certifikat mal len för autentisering av arbets Station på certifikat utfärdaren  
  Den här proceduren skapar en certifikatmall för Configuration Manager klient datorer och lägger till den i certifikat utfärdaren.  
 
 ##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Skapa och utfärda certifikatmallen för autentisering av arbetsstation på certifikatutfärdaren  
@@ -338,7 +338,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 9. Om du inte behöver skapa och utfärda fler certifikat stänger du **certifikat utfärdare**.  
 
-###  <a name="configure-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a><a name="BKMK_client12008"></a>Konfigurera automatisk registrering av mallen för autentisering av arbets station med hjälp av grupprincip  
+###  <a name="configure-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a><a name="BKMK_client12008"></a> Konfigurera automatisk registrering av mallen för autentisering av arbets station med hjälp av grupprincip  
  Den här proceduren konfigurerar grupprincip att automatiskt registrera klient certifikatet på datorer.  
 
 ##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Konfigurera automatisk registrering av mallen för autentisering av arbets station genom att använda grupprincip  
@@ -362,7 +362,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 8.  Stäng **Grupprincip hantering**.  
 
-###  <a name="automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-computers"></a><a name="BKMK_client22008"></a>Registrera certifikatet för autentisering av arbets Station automatiskt och verifiera installationen på datorer  
+###  <a name="automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-computers"></a><a name="BKMK_client22008"></a> Registrera certifikatet för autentisering av arbets Station automatiskt och verifiera installationen på datorer  
  Den här proceduren installerar klientcertifikatet på datorer och verifierar installationen.  
 
 ##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Registrera certifikatet för autentisering av arbets Station automatiskt och verifiera installationen på klient datorn  
@@ -374,7 +374,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 2. Logga in med ett konto som har administratörs behörighet.  
 
-3. I rutan Sök anger du **MMC. exe.** och trycker sedan på **RETUR**.  
+3. I sökrutan anger du **mmc.exe.** och trycker sedan på **RETUR**.  
 
 4. I den tomma hanterings konsolen väljer du **fil**och sedan **Lägg till/ta bort snapin-modul**.  
 
@@ -396,7 +396,7 @@ Den här certifikatdistributionen sker i följande steg:
 
     Datorn har nu kon figurer ATS med ett Configuration Manager klient certifikat.  
 
-##  <a name="deploy-the-client-certificate-for-distribution-points"></a><a name="BKMK_clientdistributionpoint2008_cm2012"></a>Distribuera klient certifikatet för distributions platser  
+##  <a name="deploy-the-client-certificate-for-distribution-points"></a><a name="BKMK_clientdistributionpoint2008_cm2012"></a> Distribuera klient certifikatet för distributions platser  
 
 > [!NOTE]  
 >  Det här certifikatet kan också användas för medieavbildningar som inte använder PXE-start, eftersom kraven på certifikaten är desamma.  
@@ -409,7 +409,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 - Exportera klient certifikatet för distributions platser  
 
-###  <a name="create-and-issue-a-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_clientdistributionpoint02008"></a>Skapa och utfärda en anpassad certifikatmall för autentisering av arbets Station på certifikat utfärdaren  
+###  <a name="create-and-issue-a-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a><a name="BKMK_clientdistributionpoint02008"></a> Skapa och utfärda en anpassad certifikatmall för autentisering av arbets Station på certifikat utfärdaren  
  Den här proceduren skapar en anpassad certifikatmall för Configuration Manager distributions platser så att den privata nyckeln kan exporteras och lägger till certifikat mal len i certifikat utfärdaren.  
 
 > [!NOTE]
@@ -450,12 +450,12 @@ Den här certifikatdistributionen sker i följande steg:
 
 12. Om du inte behöver skapa och utfärda fler certifikat stänger du **certifikat utfärdare**.  
 
-###  <a name="request-the-custom-workstation-authentication-certificate"></a><a name="BKMK_clientdistributionpoint12008"></a>Begär det anpassade certifikatet för autentisering av arbets Station  
+###  <a name="request-the-custom-workstation-authentication-certificate"></a><a name="BKMK_clientdistributionpoint12008"></a> Begär det anpassade certifikatet för autentisering av arbets Station  
  Den här proceduren begär och installerar sedan det anpassade klient certifikatet på den medlems server som kör IIS och som ska konfigureras som en distributions plats.  
 
 ##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Begära det anpassade certifikatet för arbetsstationsautentisering  
 
-1.  Välj **Start**, Välj **Kör**och ange sedan **MMC. exe.** Välj **Arkiv**i den tomma konsolen och välj sedan **Lägg till/ta bort snapin-modul**.  
+1.  Välj **Start**, Välj **kör**och ange **mmc.exe.** Välj **Arkiv**i den tomma konsolen och välj sedan **Lägg till/ta bort snapin-modul**.  
 
 2.  I dialog rutan **Lägg till eller ta bort snapin-moduler** väljer du **certifikat** i listan över **Tillgängliga snapin-moduler**och väljer sedan **Lägg till**.  
 
@@ -481,7 +481,7 @@ Den här certifikatdistributionen sker i följande steg:
 
 13. Stäng inte **Certifikat (lokal dator)**.  
 
-###  <a name="export-the-client-certificate-for-distribution-points"></a><a name="BKMK_exportclientdistributionpoint22008"></a>Exportera klient certifikatet för distributions platser  
+###  <a name="export-the-client-certificate-for-distribution-points"></a><a name="BKMK_exportclientdistributionpoint22008"></a> Exportera klient certifikatet för distributions platser  
  Den här proceduren exporterar det anpassade certifikatet för autentisering av arbets station till en fil så att det kan importeras i egenskaperna för distributions platsen.  
 
 ##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Exportera klientcertifikatet för distributionsplatser  
@@ -512,7 +512,7 @@ Den här certifikatdistributionen sker i följande steg:
 > [!TIP]  
 >  Du kan använda samma certifikat fil när du konfigurerar medie avbildningar för en operativ Systems distribution som inte använder PXE-start, och aktivitetssekvensen för att installera avbildningen måste kontakta en hanterings plats som kräver HTTPS-klientanslutningar.  
 
-##  <a name="deploy-the-enrollment-certificate-for-mobile-devices"></a><a name="BKMK_mobiledevices2008_cm2012"></a>Distribuera registrerings certifikatet för mobila enheter  
+##  <a name="deploy-the-enrollment-certificate-for-mobile-devices"></a><a name="BKMK_mobiledevices2008_cm2012"></a> Distribuera registrerings certifikatet för mobila enheter  
  Den här certifikatdistributionen har en enda procedur för att skapa och utfärda en registreringscertifikatsmall på certifikatutfärdaren.  
 
 ### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Skapa och utfärda registrerings certifikat mal len på certifikat utfärdaren  
@@ -547,11 +547,11 @@ Den här certifikatdistributionen sker i följande steg:
 
     Certifikat mal len för registrering av mobila enheter är nu klar att väljas när du konfigurerar en profil för registrering av mobila enheter i klient inställningarna.  
 
-##  <a name="deploy-the-client-certificate-for-mac-computers"></a><a name="BKMK_MacClient_SP1"></a>Distribuera klient certifikatet för Mac-datorer  
+##  <a name="deploy-the-client-certificate-for-mac-computers"></a><a name="BKMK_MacClient_SP1"></a> Distribuera klient certifikatet för Mac-datorer  
 
 Den här certifikatdistributionen har en enda procedur för att skapa och utfärda en registreringscertifikatsmall på certifikatutfärdaren.  
 
-###  <a name="create-and-issue-a-mac-client-certificate-template-on-the-certification-authority"></a><a name="BKMK_MacClient_CreatingIssuing"></a>Skapa och utfärda en Mac-certifikatmall på certifikat utfärdaren  
+###  <a name="create-and-issue-a-mac-client-certificate-template-on-the-certification-authority"></a><a name="BKMK_MacClient_CreatingIssuing"></a> Skapa och utfärda en Mac-certifikatmall på certifikat utfärdaren  
  Den här proceduren skapar en anpassad certifikatmall för Configuration Manager Mac-datorer och lägger till certifikat mal len i certifikat utfärdaren.  
 
 > [!NOTE]  

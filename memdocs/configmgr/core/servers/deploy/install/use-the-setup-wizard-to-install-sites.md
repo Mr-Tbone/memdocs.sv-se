@@ -9,41 +9,41 @@ ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: e32956d2ca9385c22e9073cfa2665e1f61b3ebd3
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 8325102e9a818191eae5061b7adf60dbbb7269b5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82078642"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88700709"
 ---
 # <a name="use-the-setup-wizard-to-install-configuration-manager-sites"></a>Använd installations guiden för att installera Configuration Manager-platser
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Om du vill installera en ny Configuration Manager webbplats med hjälp av ett guidat användar gränssnitt använder du installations guiden för Configuration Manager (Setup. exe). Guiden stöder installation av en primär plats eller en central administrations plats. Du kan också använda guiden för att [uppgradera en utvärderings installation](upgrade-an-evaluation-install-to-a-full-install.md) av Configuration Manager till en fullt licensierad installation. När du inte vill använda guiden kan du i stället använda ett [installations skript](use-a-command-line-to-install-sites.md) och köra en obevakad kommando rads installation.
+Om du vill installera en ny Configuration Manager webbplats med hjälp av ett guidat användar gränssnitt använder du installations guiden för Configuration Manager (setup.exe). Guiden stöder installation av en primär plats eller en central administrations plats. Du kan också använda guiden för att [uppgradera en utvärderings installation](upgrade-an-evaluation-install-to-a-full-install.md) av Configuration Manager till en fullt licensierad installation. När du inte vill använda guiden kan du i stället använda ett [installations skript](use-a-command-line-to-install-sites.md) och köra en obevakad kommando rads installation.
 
 Installera en sekundär plats inifrån Configuration Manager-konsolen. Sekundära platser har inte stöd för en kommando rads installation med skript.
 
 > [!Note]  
 > Från och med version 1906 finns inte längre filen **Start. HTA** i roten på installations mediet. Den tillhandahöll länkar till följande information:<!--SCCMDocs-pr#3545-->
 >
-> - **Installera webbplats**: `smssetup\bin\x64\setup.exe`. Mer information finns i [installera en central administration eller en primär plats](#bkmk_primary).
+> - **Installera webbplats**: `smssetup\bin\x64\setup.exe` . Mer information finns i [installera en central administration eller en primär plats](#bkmk_primary).
 > - **Innan du börjar**: [utforma en hierarki med platser](../../../plan-design/hierarchy/design-a-hierarchy-of-sites.md) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626543 -->
 > - **Utvärdera Server beredskap**: [krav kontroll](prerequisite-checker.md) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626546 -->
-> - **Hämta nödvändiga nödvändiga filer**: `smssetup\bin\x64\setupdl.exe`. Mer information finns i [installations hämtaren](setup-downloader.md).
-> - **Installera Configuration Manager**-konsolen `smssetup\bin\i386\consolesetup.exe`:. Mer information finns i [Installera konsoler](install-consoles.md).
+> - **Hämta nödvändiga nödvändiga filer**: `smssetup\bin\x64\setupdl.exe` . Mer information finns i [installations hämtaren](setup-downloader.md).
+> - **Installera Configuration Manager-konsolen**: `smssetup\bin\i386\consolesetup.exe` . Mer information finns i [Installera konsoler](install-consoles.md).
 > - [**Ladda ned System Center Updates Publisher**](../../../../sum/tools/updates-publisher.md) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626548 -->
 > - **Ladda ned klienter för ytterligare operativ system**: <!-- https://go.microsoft.com/fwlink/p/?LinkId=626550 -->
 >   - [Microsoft Endpoint Configuration Manager-macOS-klient (64-bitars)](https://www.microsoft.com/download/details.aspx?id=100850)
 >   - [Klienter för UNIX och Linux](https://www.microsoft.com/download/details.aspx?id=47719)
-> - [**Versionsanmärkningar**](release-notes.md) <!-- https://go.microsoft.com/fwlink/?LinkID=626571 -->
-> - [**Läs dokumentation**](https://docs.microsoft.com/sccm)<!-- https://go.microsoft.com/fwlink/p/?LinkId=626547 -->
+> - [**Viktig information**](release-notes.md) <!-- https://go.microsoft.com/fwlink/?LinkID=626571 -->
+> - [**Läs dokumentation**](/sccm)<!-- https://go.microsoft.com/fwlink/p/?LinkId=626547 -->
 > - **Få installations hjälp**: [TechNet-forum: Configuration Manager (Current Branch) – plats-och klient distribution](https://social.technet.microsoft.com/Forums/en-us/home?forum=ConfigMgrDeployment) <!--NOTE: this link requires en-us locale to work-->   <!-- https://go.microsoft.com/fwlink/p/?LinkId=626549 -->
 > - **Configuration Manager community**: [System Center-community: hur man deltar](https://social.technet.microsoft.com/wiki/contents/articles/11504.system-center-community-how-to-participate.aspx) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626544 -->
 > - [**Configuration Manager start**](https://www.microsoft.com/cloud-platform/system-center-configuration-manager) <!-- https://go.microsoft.com/fwlink/p/?LinkId=626545 -->
 
 
-## <a name="install-a-central-administration-or-primary-site"></a><a name="bkmk_primary"></a>Installera en central administrations plats eller en primär plats
+## <a name="install-a-central-administration-or-primary-site"></a><a name="bkmk_primary"></a> Installera en central administrations plats eller en primär plats
 
 Använd följande procedur för att installera en central administrations plats eller en primär plats. Du kan också använda den för att uppgradera en utvärderings plats till en fullständigt licensierad Configuration Manager webbplats.
 
@@ -54,7 +54,7 @@ Innan du startar plats installationen bör du vara bekant med informationen i f�
 
 Om du installerar en central administrations plats som en del av scenariot för plats expansion bör du granska utökningen av [en fristående primär plats](use-the-setup-wizard-to-install-sites.md#bkmk_expand) innan du använder följande procedur.
 
-### <a name="process-to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a>Process för att installera en primär eller Central administrations plats
+### <a name="process-to-install-a-primary-or-central-administration-site"></a><a name="bkmk_installpri"></a> Process för att installera en primär eller Central administrations plats
 
 1. På den dator där du vill installera platsen kör `<InstallationMedia>\SMSSETUP\BIN\X64\Setup.exe` du för att starta **installations guiden för Configuration Manager**.  
 
@@ -166,11 +166,11 @@ Om du installerar en central administrations plats som en del av scenariot för 
 
     - **SQL Server namn (FQDN)**: som standard är det här värdet inställt på plats serverdatorn.  
 
-        Om du använder en anpassad port lägger du till den porten i det fullständiga domän namnet för SQL Server. Följ det fullständiga domän namnet för SQL Server med ett kommatecken och sedan port numret. För Server *SQLServer1.fabrikam.com*använder du till exempel följande för att ange port *1551*:`SQLServer1.fabrikam.com,1551`  
+        Om du använder en anpassad port lägger du till den porten i det fullständiga domän namnet för SQL Server. Följ det fullständiga domän namnet för SQL Server med ett kommatecken och sedan port numret. För Server *SQLServer1.fabrikam.com*använder du till exempel följande för att ange port *1551*: `SQLServer1.fabrikam.com,1551`  
 
     - **Instans namn**: som standard är det här värdet tomt. Den använder standard instansen av SQL på plats serverdatorn.  
 
-    - **Databas namn**: som standard är det här värdet inställt på `CM_<Sitecode>`. Du kan anpassa det här värdet.  
+    - **Databas namn**: som standard är det här värdet inställt på `CM_<Sitecode>` . Du kan anpassa det här värdet.  
 
     - **Service Broker port**: som standard är det här värdet inställt på att använda standard porten för SQL Server Service BROKER (SSB) på 4022. SQL använder den för att kommunicera direkt med plats databasen på andra platser.  
 
@@ -244,7 +244,7 @@ Om du installerar en central administrations plats som en del av scenariot för 
     - När installationen är klar kan du ansluta en konsol som kan redigera objekt och inställningar.  
 
 
-## <a name="expand-a-stand-alone-primary-site"></a><a name="bkmk_expand"></a>Expandera en fristående primär plats
+## <a name="expand-a-stand-alone-primary-site"></a><a name="bkmk_expand"></a> Expandera en fristående primär plats
 
 När du har installerat en fristående primär plats som din första plats kan du välja att utöka platsen till en större hierarki genom att installera en central administrations plats.
 
@@ -271,7 +271,7 @@ Om du vill expandera platsen använder du installations guiden för Configuratio
 För att expandera en fristående primär plats måste du först se för [förutsättningarna för att expandera en plats](prerequisites-for-installing-sites.md#bkmk_expand). Använd sedan proceduren [för att installera en primär eller Central administrations plats](use-the-setup-wizard-to-install-sites.md#bkmk_installpri) tidigare i den här artikeln.
 
 
-## <a name="install-a-secondary-site"></a><a name="bkmk_secondary"></a>Installera en sekundär plats
+## <a name="install-a-secondary-site"></a><a name="bkmk_secondary"></a> Installera en sekundär plats
 
 Använd Configuration Manager-konsolen för att installera en sekundär plats.  
 
@@ -281,7 +281,7 @@ Använd Configuration Manager-konsolen för att installera en sekundär plats.
 
 - När du installerar den sekundära platsen Configuration Manager konfigurerar den nya platsen att använda klient kommunikations portarna som har kon figurer ATS på den överordnade primära platsen.  
 
-### <a name="process-to-install-a-secondary-site"></a><a name="bkmk_installsecondary"></a>Process för att installera en sekundär plats  
+### <a name="process-to-install-a-secondary-site"></a><a name="bkmk_installsecondary"></a> Process för att installera en sekundär plats  
 
 1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **plats konfiguration**och välj noden **platser** . Välj den plats som ska vara den överordnade primära platsen för den nya sekundära platsen.  
 
@@ -330,9 +330,9 @@ Använd Configuration Manager-konsolen för att installera en sekundär plats.
         - CD: n. Den senaste käll fils platsen innehåller en mapp med namnet **Redist**. Flytta den här **Redist** -mappen som en undermapp under mappen **SMSSETUP**  
 
         - Kopiera följande filer från **Redist** -mappen till mappen **SMSSETUP\BIN\X64** :  
-            - SharedManagementObjects. msi
-            - SQLSysClrTypes. msi
-            - SQLNCLI. msi
+            - SharedManagementObjects.msi
+            - SQLSysClrTypes.msi
+            - sqlncli.msi
 
     - Om någon av filerna från **Redist** inte är tillgänglig, kan inte installations programmet installera den sekundära platsen.  
 
@@ -411,11 +411,11 @@ Använd Configuration Manager-konsolen för att installera en sekundär plats.
 
 11. På sidan **Sammanfattning** kontrollerar du inställningarna och väljer sedan **Nästa** för att installera den sekundära platsen. När sidan **slut för ande** visas i guiden kan du stänga guiden. Installationen av den sekundära platsen fortsätter i bakgrunden.  
 
-### <a name="how-to-verify-the-secondary-site-installation-status"></a><a name="bkmk_verify"></a>Verifiera installations status för den sekundära platsen  
+### <a name="how-to-verify-the-secondary-site-installation-status"></a><a name="bkmk_verify"></a> Verifiera installations status för den sekundära platsen  
 
 1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **plats konfiguration**och välj noden **platser** .  
 
 2. Välj den sekundära plats som du vill installera och välj sedan **Visa installations status** i menyfliksområdet.  
 
     > [!TIP]  
-    > När du installerar fler än en sekundär plats i taget körs krav kontrollen mot en enskild plats i taget. Du måste slutföra en plats innan den börjar kontrol lera nästa plats.  
+    > När du installerar fler än en sekundär plats i taget körs krav kontrollen mot en enskild plats i taget. Du måste slutföra en plats innan den börjar kontrol lera nästa plats.

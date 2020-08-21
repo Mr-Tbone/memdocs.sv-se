@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d8f29ed1e3201da139daeaa1fadca739ff44dc8e
-ms.sourcegitcommit: 488db8a6ab272f5d639525d70718145c63d0de8f
+ms.openlocfilehash: 11649452012de33ef1e62007d71466d5a45c56ca
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86384952"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88698613"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Grundläggande begrepp för innehålls hantering i Configuration Manager
 
@@ -132,7 +132,7 @@ Använd följande tabell för att jämföra huvud funktionerna i dessa tekniker:
 
 ## <a name="branchcache"></a>BranchCache
 
-[BranchCache](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) är en Windows-teknik. Klienter som har stöd för BranchCache och har hämtat en distribution som du konfigurerar för BranchCache och som sedan fungerar som en innehålls källa till andra BranchCache-aktiverade klienter.  
+[BranchCache](/windows-server/networking/branchcache/branchcache) är en Windows-teknik. Klienter som har stöd för BranchCache och har hämtat en distribution som du konfigurerar för BranchCache och som sedan fungerar som en innehålls källa till andra BranchCache-aktiverade klienter.  
 
 Du kan till exempel ha en distributions plats som kör Windows Server 2012 eller senare och som har kon figurer ATS som en BranchCache-server. När den första BranchCache-aktiverade klienten begär innehåll från den här servern laddar klienten ned innehållet och cachelagrar det.  
 
@@ -145,9 +145,9 @@ Mer information finns i [stöd för Windows BranchCache](../configs/support-for-
 ## <a name="delivery-optimization"></a>Leveransoptimering
 
 <!-- 1324696 -->
-Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Konfigurera leverans optimeringen så att den använder dina gränser när du delar innehåll mellan peer-datorer. Klient inställningar tillämpar gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med innehållet. Mer information finns i klient inställningar för [leverans optimering](../../clients/deploy/about-client-settings.md#delivery-optimization) .
+Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Konfigurera leverans optimeringen så att den använder dina gränser när du delar innehåll mellan peer-datorer. Klient inställningar tillämpar gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med innehållet. Mer information finns i klient inställningar för [leverans optimering](../../clients/deploy/about-client-settings.md#delivery-optimization) .
 
-Leverans optimering är den rekommenderade tekniken för att optimera Windows 10-uppdateringen av Express-installationsfiler för Windows 10-kvalitets uppdateringar. Från och med Configuration Manager version 1910 är Internet åtkomst till moln tjänsten för leverans optimering ett krav för att använda peer-to-peer-funktioner. Information om vilka Internet-slutpunkter som behövs finns i [vanliga frågor och svar om leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). Optimering kan användas för alla Windows-uppdateringar. Mer information finns i [optimera leverans av Windows 10-uppdateringar](../../../sum/deploy-use/optimize-windows-10-update-delivery.md).
+Leverans optimering är den rekommenderade tekniken för att optimera Windows 10-uppdateringen av Express-installationsfiler för Windows 10-kvalitets uppdateringar. Från och med Configuration Manager version 1910 är Internet åtkomst till moln tjänsten för leverans optimering ett krav för att använda peer-to-peer-funktioner. Information om vilka Internet-slutpunkter som behövs finns i [vanliga frågor och svar om leverans optimering](/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions). Optimering kan användas för alla Windows-uppdateringar. Mer information finns i [optimera leverans av Windows 10-uppdateringar](../../../sum/deploy-use/optimize-windows-10-update-delivery.md).
 
 
 ## <a name="microsoft-connected-cache"></a>Microsoft Connected Cache

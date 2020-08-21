@@ -10,12 +10,12 @@ ms.assetid: bd3df04a-902f-4e91-89eb-5584b47d9efa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 761270fe9419330e2d60d0483554ee6c932c1b26
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: bf108cec074129f9b70e7cd2658cf2b1c8c10bc2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124893"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697916"
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Aktivitetssekvenssteg för att hantera konvertering av BIOS till UEFI
 
@@ -70,7 +70,7 @@ I en befintlig aktivitetssekvens för att installera ett operativ system lägger
     > [!TIP]
     > Som standard är storleken på EFI-partitionen 500 MB. I vissa miljöer är start avbildningen för stor för att lagra på den här partitionen. Undvik det här problemet genom att öka storleken på EFI-partitionen. Ange till exempel 1 GB.<!-- SCCMDocs#1024 -->
 
-## <a name="convert-from-bios-to-uefi-during-in-place-upgrade"></a><a name="bkmk_ipu"></a>Konvertera från BIOS till UEFI vid uppgradering på plats
+## <a name="convert-from-bios-to-uefi-during-in-place-upgrade"></a><a name="bkmk_ipu"></a> Konvertera från BIOS till UEFI vid uppgradering på plats
 
 Windows 10 innehåller ett enkelt konverterings verktyg, **MBR2GPT**. Den automatiserar processen för att partitionera om hård disken för UEFI-aktiverad maskin vara. Du kan integrera konverterings verktyget i uppgraderings processen på plats till Windows 10. Kombinera det här verktyget med din uppgraderings aktivitetssekvens och OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI.
 
@@ -86,12 +86,12 @@ Windows 10 innehåller ett enkelt konverterings verktyg, **MBR2GPT**. Den automa
 
 1. Redigera aktivitetssekvensen. I gruppen **efter bearbetning** gör du följande ändringar:
 
-    1. Lägg till steget **Kör kommando rad** . Ange kommando raden för MBR2GPT-verktyget. När du kör i det fullständiga operativ systemet konfigurerar du det för att konvertera disken från MBR till GPT utan att ändra eller ta bort data. I **kommando rad**anger du följande kommando:`MBR2GPT.exe /convert /disk:0 /AllowFullOS`
+    1. Lägg till steget **Kör kommando rad** . Ange kommando raden för MBR2GPT-verktyget. När du kör i det fullständiga operativ systemet konfigurerar du det för att konvertera disken från MBR till GPT utan att ändra eller ta bort data. I **kommando rad**anger du följande kommando: `MBR2GPT.exe /convert /disk:0 /AllowFullOS`
 
     > [!TIP]
     > Du kan också välja att köra verktyget MBR2GPT.EXE när du är i Windows PE i stället för i det fullständiga operativ systemet. Lägg till ett steg för att starta om datorn till Windows PE innan du kör MBR2GPT.EXE-verktyget. Ta sedan bort alternativet **/AllowFullOS** från kommando raden.
 
-    Mer information om verktyget och tillgängliga alternativ finns i [MBR2GPT.EXE](https://docs.microsoft.com/windows/deployment/mbr-to-gpt).
+    Mer information om verktyget och tillgängliga alternativ finns i [MBR2GPT.EXE](/windows/deployment/mbr-to-gpt).
 
     1. Lägg till ett steg för att köra OEM-verktyget som konverterar den inbyggda program varan från BIOS till UEFI. Det här steget Kör vanligt vis **kommando raden**, med en kommando rad för att köra OEM-verktyget.
 

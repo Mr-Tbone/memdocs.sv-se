@@ -10,12 +10,12 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3cf735dfa2dd73ed39a24c2d674a966acddf05a
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: c2861214bcdc9162b0121304b342d1d9d48be170
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125125"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697950"
 ---
 # <a name="deploy-windows-to-go-with-configuration-manager"></a>Distribuera Windows To Go med Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "88125125"
 
 Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i Configuration Manager. Windows To Go är en företagsfunktion i Windows 8 som gör att du kan skapa en Windows To Go-arbetsyta som kan startas från ett USB-minne på datorer som uppfyller certifikatkraven för Windows 7 eller Windows 8, oavsett vilket operativsystem som körs på datorn. Windows To Go-arbetsytor kan använda samma avbildning som företag använder för sina skrivbordsdatorer och bärbara datorer, och kan hanteras på samma sätt.  
 
- Mer information om Windows To Go finns i [funktions översikt över Windows To Go](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh831833(v=ws.11)).  
+ Mer information om Windows To Go finns i [funktions översikt över Windows To Go](/previous-versions/windows/it-pro/windows-8.1-and-8/hh831833(v=ws.11)).  
 
 ## <a name="provision-windows-to-go"></a>Etablera Windows To Go  
  Windows To Go är ett operativsystem som är lagrat på ett USB-minne. Du kan etablera Windows To Go-enheten på ungefär samma sätt som du etablerar andra distributioner av operativsystem. Men eftersom Windows To Go är utformat som en användarorienterad och i hög grad mobil lösning måste du gå till väga på ett något annat sätt när du etablerar de här enheterna.  
@@ -67,7 +67,7 @@ Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i
 
      Du måste skapa en aktivitetssekvens för en Windows 8-distribution som du sedan hänvisar till när du skapar ett förberett medium. Mer information finns i [Hantera aktivitetssekvenser för att automatisera uppgifter](manage-task-sequences-to-automate-tasks.md).  
 
-###  <a name="create-prestaged-media"></a><a name="BKMK_CreatePrestagedMedia"></a>Skapa för beredda medier  
+###  <a name="create-prestaged-media"></a><a name="BKMK_CreatePrestagedMedia"></a> Skapa för beredda medier  
  Ett förberett medium innehåller den startavbildning som används för att starta måldatorn och den operativsystemavbildning som används på måldatorn. Den dator som du etablerar med förberedda medier kan startas med hjälp av startavbildningen. Datorn kan sedan köra en aktivitetssekvens för distribution av det befintliga operativsystemet för att installera en fullständig operativsystemdistribution. Den aktivitetssekvens som distribuerar operativsystemet ingår inte i mediet.  
 
  Du kan lägga till innehåll, till exempel program och enhetsdrivrutiner, förutom operativsystemavbildningen och startavbildningen under förberedelsefasen. På så vis går det snabbare att distribuera ett operativsystem och nätverkstrafiken minskar, eftersom innehållet redan finns på enheten.  
@@ -208,7 +208,7 @@ Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i
     > [!NOTE]  
     >  Det kan ta lång tid för guiden att skapa den förberedda mediefilen.  
 
-###  <a name="create-a-windows-to-go-creator-package"></a><a name="BKMK_CreatePackage"></a>Skapa ett Windows To Go Creator-paket  
+###  <a name="create-a-windows-to-go-creator-package"></a><a name="BKMK_CreatePackage"></a> Skapa ett Windows To Go Creator-paket  
  Under distributionen av Windows To Go måste du skapa ett paket för att distribuera den förberedda mediefilen. Paketet måste innehålla verktyget som konfigurerar Windows To Go-enheten och extraherar det förberedda mediet till enheten. Skapa Windows To Go Creator-paketet på följande sätt.  
 
 #### <a name="to-create-the-windows-to-go-creator-package"></a>Skapa Windows To Go Creator-paketet  
@@ -273,7 +273,7 @@ Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i
 
       Klicka på **Nästa** och slutför guiden.  
 
-###  <a name="update-the-task-sequence-to-enable-bitlocker-for-windows-to-go"></a><a name="BKMK_UpdateTaskSequence"></a>Uppdatera aktivitetssekvensen för att aktivera BitLocker för Windows To Go  
+###  <a name="update-the-task-sequence-to-enable-bitlocker-for-windows-to-go"></a><a name="BKMK_UpdateTaskSequence"></a> Uppdatera aktivitetssekvensen för att aktivera BitLocker för Windows To Go  
  Windows To Go aktiverar BitLocker på en extern startbar enhet utan att använda TPM-modulen. Du måste därför använda ett separat verktyg för att konfigurera BitLocker på Windows To Go-enheten. Om du vill aktivera BitLocker måste du lägga till en åtgärd i aktivitetssekvensen efter steget **Installera Windows och ConfigMgr** .  
 
 > [!NOTE]  
@@ -460,5 +460,5 @@ Det här avsnittet innehåller anvisningar för hur du etablerar Windows To Go i
 ###  <a name="configuration-manager-configures-and-stages-the-windows-to-go-drive"></a><a name="BKMK_ConfigureStageDrive"></a> Configuration Manager konfigurerar och skapar nivåer av Windows To Go-enheten  
  När datorn har startats om till Windows To Go-enheten, startar enheten upp till Windows PE och ansluter till hanteringsplatsen för att få principen att slutföra operativsystemsdistributionen. Configuration Manager konfigurerar och skapar en fas av enheten. När Configuration Manager stadier i enheten kan användaren starta om datorn för att slutföra etablerings processen (till exempel för att ansluta till en domän eller installera appar). Den här processen är densamma för alla förinstallerade medier.  
 
-###  <a name="user-logs-in-to-windows-8"></a><a name="BKMK_UserLogsIn"></a>Användaren loggar in på Windows 8  
- När Configuration Manager har slutfört etablerings processen och lås skärmen för Windows 8 visas kan användaren logga in till operativ systemet.  
+###  <a name="user-logs-in-to-windows-8"></a><a name="BKMK_UserLogsIn"></a> Användaren loggar in på Windows 8  
+ När Configuration Manager har slutfört etablerings processen och lås skärmen för Windows 8 visas kan användaren logga in till operativ systemet.
