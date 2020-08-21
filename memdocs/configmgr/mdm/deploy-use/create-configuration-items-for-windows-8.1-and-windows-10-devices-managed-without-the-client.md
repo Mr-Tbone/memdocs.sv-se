@@ -10,12 +10,12 @@ ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1987ba504630ab1d4b23cdb54710f0cbaa3db28a
-ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
+ms.openlocfilehash: 26846066aa713d40fdacfe75810d43cafd1c3f04
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506266"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693683"
 ---
 # <a name="create-configuration-items-for-windows-devices-with-on-premises-mdm-in-configuration-manager"></a>Skapa konfigurations objekt för Windows-enheter med lokal MDM i Configuration Manager
 
@@ -75,7 +75,7 @@ Mer allmän information om kompatibilitetsinställningar i Configuration Manager
 
 Du kan visa det nya konfigurationsobjektet i noden **Konfigurationsobjekt** på arbetsytan **Tillgångar och efterlevnad** .
 
-## <a name="settings-reference"></a><a name="bkmk_setref"></a>Inställnings referens  
+## <a name="settings-reference"></a><a name="bkmk_setref"></a> Inställnings referens  
 
 I följande avsnitt beskrivs de olika inställningarna som är tillgängliga i varje grupp. Konfigurera de här inställningarna på sidan **enhets inställningar** i **guiden skapa konfigurations objekt** för **Windows 8,1-och Windows 10** -enheter som hanteras *utan* Configuration Manager-klienten.
 
@@ -127,7 +127,7 @@ Dessa inställningar gäller för enheter som kör Windows 8.1 och Windows 10.
 - **Anpassat e-postkonto**: Tillåt eller förhindra användning av ett e-postkonto som inte är ett organisations konto på enheten.
 - **Gör Microsoft-konto valfritt i Windows Mail-app**: aktivera det här alternativet om du inte behöver ett Microsoft-konto i Windows Mail.
 
-### <a name="store"></a>Lager
+### <a name="store"></a>Lagringsplats
 
 Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.
 
@@ -169,7 +169,7 @@ Dessa inställningar gäller för enheter som kör Windows 8.1 och Windows 10.
   - **Loggnings rapport plats (URL)**: när Enterprise-läget är aktivt anger du en URL för att logga besökta webbplatser.
 - **Plats för webbplats lista för företags läge (URL)**: när Enterprise-läget är aktivt anger du listan över webbplatser som använder den.
 
-### <a name="cloud"></a>Molnet
+### <a name="cloud"></a>Moln
 
 Dessa inställningar gäller för enheter som kör Windows 8.1 och Windows 10.
 
@@ -242,7 +242,7 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.
         - **WPA2**
         - **WPA2-PSK**
     - **Data kryptering**: Välj den krypterings metod som används av den här anslutningen. De tillgängliga värdena ändras baserat på den **autentiseringsmetod** du väljer:
-        - **Inaktiverad**
+        - **Disabled** (Inaktiverat)
         - **WEP**
         - **TKIP**
         - **AES**
@@ -325,7 +325,7 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 team.
 
 ### <a name="windows-information-protection"></a>Windows informationsskydd  
 
-Mer information om hur du konfigurerar företags data skydd med Configuration Manager finns i [skydda företags data med Windows information Protection (Pia)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
+Mer information om hur du konfigurerar företags data skydd med Configuration Manager finns i [skydda företags data med Windows information Protection (Pia)](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
 
 ### <a name="microsoft-edge-legacy"></a>Microsoft Edge-bakåtkompatibelt
 
@@ -369,14 +369,14 @@ Dessa inställningar gäller endast för enheter som kör Windows 10 och senare.
 - **Sök igenom e-postmeddelanden**: Defender söker igenom e-postmeddelanden när de tas emot på enheten.
 - **Genomsök flyttbara enheter**: Defender söker igenom flyttbara enheter, till exempel USB-käppar.
 - **Sök igenom mappade enheter**: Defender söker igenom enheter som är mappade till nätverks resurser. Till exempel `H:` mappas till en användares personliga enhet. Om filerna på enheten är skrivskyddade kan inte Defender ta bort skadlig kod som hittas där.
-- **Sök igenom filer öppnade från delade**nätverksmappar: Defender söker igenom filer när en användare öppnar dem från en delad nätverks Sök väg. Exempelvis `\\server\share\file.doc`. Om filen på resursen är skrivskyddad kan inte Defender ta bort skadlig kod som hittas.
+- **Sök igenom filer öppnade från delade**nätverksmappar: Defender söker igenom filer när en användare öppnar dem från en delad nätverks Sök väg. Till exempel `\\server\share\file.doc`. Om filen på resursen är skrivskyddad kan inte Defender ta bort skadlig kod som hittas.
 - **Uppdaterings intervall för signatur**: Välj det tidsintervall då Defender söker efter nya signaturfiler.
 - **Tillåt moln skydd**: Defender använder Microsoft-molnet för att ta emot information om aktivitet för skadlig kod och aktivera funktioner som blockera vid första sikten.
 - **Uppmana användarna att skicka exempel**: Välj beteende för Defender när filer kan kräva ytterligare analys. Till exempel kan Defender automatiskt skicka filer till Microsoft för att avgöra om de är skadliga.
 - **Identifiering av potentiellt oönskade program**: skyddar enheten mot att köra program vara som klassificeras av Defender som potentiellt oönskade. Du kan skydda dig mot dessa program som körs eller använda gransknings läget för att rapportera när en användare installerar ett potentiellt oönskat program.
 - **Filer och**mappar som ska undantas: Lägg till en eller flera filer och mappar i undantags listan. Exempel: `C:\Path` eller `%ProgramFiles%\Path\filename.exe`. Defender inkluderar inte dessa filer och mappar i real tids-eller schemalagda genomsökningar.
 - **Undantag för fil tillägg**: Lägg till ett eller flera fil namns tillägg i undantags listan. Exempel: `java` eller `exe`. Defender inkluderar inga filer med dessa fil namns tillägg i real tids-eller schemalagda genomsökningar.
-- **Process undantag**: Lägg till vissa processer i undantags listan. Exempelvis `C:\path\myproc.exe`. Den här typen av undantag stöder endast följande tillägg: `exe` , `com` , eller `scr` . Defender inkluderar inte dessa processer i real tids-eller schemalagda genomsökningar.
+- **Process undantag**: Lägg till vissa processer i undantags listan. Till exempel `C:\path\myproc.exe`. Den här typen av undantag stöder endast följande tillägg: `exe` , `com` , eller `scr` . Defender inkluderar inte dessa processer i real tids-eller schemalagda genomsökningar.
 
 ### <a name="additional-settings"></a>Ytterligare inställningar
 

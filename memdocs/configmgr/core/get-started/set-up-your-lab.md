@@ -10,12 +10,12 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 216c61a671d7d06e434fa399bb3bae12e12f7275
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: c8159928e5fe3e8524c3282cfd1eb543dc9537da
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905171"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696505"
 ---
 # <a name="set-up-a-configuration-manager-lab"></a>Konfigurera ett Configuration Manager labb
 
@@ -24,7 +24,7 @@ ms.locfileid: "82905171"
 Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb för att utvärdera Configuration Manager med simulerade aktiviteter i real tid.  
 
 > [!NOTE]
-> Microsoft erbjuder en förkonfigurerad version av labbet med en utvärderings version av Configuration Manager. Mer information finns i [distributions-och hanterings labb paket för Windows och Office](https://docs.microsoft.com/microsoft-365/enterprise/modern-desktop-deployment-and-management-lab). 
+> Microsoft erbjuder en förkonfigurerad version av labbet med en utvärderings version av Configuration Manager. Mer information finns i [distributions-och hanterings labb paket för Windows och Office](/microsoft-365/enterprise/modern-desktop-deployment-and-management-lab). 
 
 ##  <a name="core-components"></a><a name="BKMK_LabCore"></a> Huvudkomponenter  
  Att konfigurera din miljö för Configuration Manager kräver vissa kärn komponenter för att stödja installationen av Configuration Manager.    
@@ -33,7 +33,7 @@ Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb 
 
      Du kan ladda ned en utvärderings version av Windows Server 2012 R2 från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012).  
 
-     Överväg att ändra eller inaktivera Förbättrad säkerhets konfiguration i Internet Explorer för att lättare komma åt några av de hämtade filerna som refereras till under de här övningarna. Mer information finns i [Internet Explorer: förbättrad säkerhets konfiguration](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd883248(v=ws.10)).  
+     Överväg att ändra eller inaktivera Förbättrad säkerhets konfiguration i Internet Explorer för att lättare komma åt några av de hämtade filerna som refereras till under de här övningarna. Mer information finns i [Internet Explorer: förbättrad säkerhets konfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd883248(v=ws.10)).  
 
 -   **I labbmiljön används SQL Server 2012 SP2** för platsdatabasen.  
 
@@ -45,7 +45,7 @@ Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb 
 
     -   **SQL_Latin1_General_CP1_CI_AS** som klassen **SQL-sortering** .  
 
-    -   **Windows-autentisering**, [och inte SQL-autentisering](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15), krävs.  
+    -   **Windows-autentisering**, [och inte SQL-autentisering](/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15), krävs.  
 
     -   En dedikerad **SQL Server instans** krävs.  
 
@@ -61,11 +61,11 @@ Genom att följa anvisningarna i det här avsnittet kan du konfigurera ett labb 
 
 -   Domänkontrollanten **använder Windows Server 2008 R2** med Active Directory Domain Services installerat. Domänkontrollanten fungerar även som värd för DHCP-och DNS-servrarna för användning med ett fullständigt kvalificerat domän namn.  
 
-     Mer information finns i [Översikt över Active Directory Domain Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11)).  
+     Mer information finns i [Översikt över Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11)).  
 
 -   **Hyper-V används med ett fåtal virtuella datorer** för att kontrol lera att de hanterings steg som vidtas i de här övningarna fungerar som förväntat. Minst tre virtuella datorer rekommenderas med Windows 10 installerat.  
 
-     Mer information finns i [Översikt över Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).  
+     Mer information finns i [Översikt över Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).  
 
 -   **Administratörsbehörighet** krävs för samtliga komponenter.  
 
@@ -95,7 +95,7 @@ När du har installerat alla dessa komponenter måste du vidta ytterligare åtg�
 Nästa steg som krävs för att göra det möjligt för Configuration Manager klienter att fråga Active Directory Domain Services för att hitta plats resurser visas i nästa procedur.  
 
 ##  <a name="create-the-system-management-container"></a><a name="BKMK_CreateSysMgmtLab"></a> Skapa System Management-containern  
- Configuration Manager skapar inte automatiskt den begärda System Management-behållaren i Active Directory Domain Services när schemat utökas. Du måste därför själv skapa den för övningen. Det här steget kräver att du [installerar ADSI Edit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10)).
+ Configuration Manager skapar inte automatiskt den begärda System Management-behållaren i Active Directory Domain Services när schemat utökas. Du måste därför själv skapa den för övningen. Det här steget kräver att du [installerar ADSI Edit](/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10)).
 
  Kontrollera att du är inloggad som ett konto med behörighet för att **Skapa alla underordnade objekt** för **System**-containern i Active Directory Domain Services.  
 
@@ -139,7 +139,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 #### <a name="to-extend-the-active-directory-schema-using-extadschexe"></a>Utöka Active Directory-schemat med extadsch.exe:  
 
-1.  Skapa en säkerhets kopia av system tillstånd för schemats huvuddomänkontrollant. Mer information om hur du säkerhetskopierar huvud domänkontrollanten finns [Windows Server Backup](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770757(v=ws.11))  
+1.  Skapa en säkerhets kopia av system tillstånd för schemats huvuddomänkontrollant. Mer information om hur du säkerhetskopierar huvud domänkontrollanten finns [Windows Server Backup](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770757(v=ws.11))  
 
 2.  Gå till **\SMSSETUP\BIN\X64** på installationsmediet.  
 
@@ -158,7 +158,7 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
  **Installera .NET och aktivera Windows Communication Foundation**  
 
- Du måste installera två .NET Framework-program: först .NET 3.5.1 och sedan .NET 4.5.2+. Du måste också aktivera WCF (Windows Communication Foundation). WCF är utformat för att göra det lättare att hantera distribuerad datorbehandling, med bred samverkan och direktstöd för tjänstorientering, och underlättar dessutom utvecklingen av anslutna program via en tjänstorienterad programmeringsmodell. Mer information finns i [Vad är Windows Communication Foundation?](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms731082(v=vs.90)).
+ Du måste installera två .NET Framework-program: först .NET 3.5.1 och sedan .NET 4.5.2+. Du måste också aktivera WCF (Windows Communication Foundation). WCF är utformat för att göra det lättare att hantera distribuerad datorbehandling, med bred samverkan och direktstöd för tjänstorientering, och underlättar dessutom utvecklingen av anslutna program via en tjänstorienterad programmeringsmodell. Mer information finns i [Vad är Windows Communication Foundation?](/previous-versions/dotnet/netframework-3.5/ms731082(v=vs.90)).
 
 #### <a name="to-install-net-and-activate-windows-communication-foundation"></a>Installera .NET och aktivera Windows Communication Foundation:  
 
@@ -200,13 +200,13 @@ Nästa steg som krävs för att göra det möjligt för Configuration Manager kl
 
 **Aktivera BITS, IIS och RDC**  
 
-[BITS (Background Intelligent Transfer Service)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282296(v=ws.11)) används för program där filer måste överföras asynkront mellan en klient och en server. Med BITS bevaras svarstiden hos andra nätverksprogram genom att flödet av överföringar mäts i förgrunden och bakgrunden. Filöverföringar återupptas automatiskt om en överföring avbryts.  
+[BITS (Background Intelligent Transfer Service)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282296(v=ws.11)) används för program där filer måste överföras asynkront mellan en klient och en server. Med BITS bevaras svarstiden hos andra nätverksprogram genom att flödet av överföringar mäts i förgrunden och bakgrunden. Filöverföringar återupptas automatiskt om en överföring avbryts.  
 
 För den här övningen installerar du BITS eftersom platsservern även ska användas som hanteringsplats.  
 
 IIS (Internet Information Services) är en flexibel och skalbar webbserver som kan användas som värd för vad som helst på webben. Den används av Configuration Manager för ett antal plats system roller. Om du vill ha mer information om IIS granskar du [webbplatser för plats system servrar](../../core/plan-design/network/websites-for-site-system-servers.md).  
 
-[RDC (Remote Differential Compression)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754372(v=ws.11)) är en uppsättning API:er som kan användas av program för att ta reda på om några ändringar gjorts i en grupp filer. Tack vare RDC replikeras endast de ändrade delarna av en fil vilket håller nere nätverkstrafiken till et minimum.  
+[RDC (Remote Differential Compression)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754372(v=ws.11)) är en uppsättning API:er som kan användas av program för att ta reda på om några ändringar gjorts i en grupp filer. Tack vare RDC replikeras endast de ändrade delarna av en fil vilket håller nere nätverkstrafiken till et minimum.  
 
 #### <a name="to-enable-bits-iis-and-rdc-site-server-roles"></a>Aktivera BITS-, IIS- och RDC-platssystemroller:  
 
@@ -356,7 +356,7 @@ Innan du påbörjar installationen startar du  [Prerequisite Checker](../servers
     |Steg 15: **Klientkommunikationsinställningar**|Kontrollera att **Alla roller för platssystem accepterar endast HTTPS-kommunikation från kunder** är avmarkerat|  
     |Steg 16: **Platssystemroller**|Ange fullständigt domännamn och kontrollera att alternativet **Alla roller för platssystem accepterar endast HTTPS-kommunikation från kunder** fortfarande är avmarkerat.|  
 
-##  <a name="enable-publishing-for-the-configuration-manager-site"></a><a name="BKMK_EnablePubLab"></a>Aktivera publicering för den Configuration Manager webbplatsen  
+##  <a name="enable-publishing-for-the-configuration-manager-site"></a><a name="BKMK_EnablePubLab"></a> Aktivera publicering för den Configuration Manager webbplatsen  
 Varje Configuration Manager-plats publicerar sin egen sitespecifika information till System Management-behållaren inom dess katalogpartition i Active Directory schemat. Dubbelriktade kanaler för kommunikation mellan Active Directory och Configuration Manager måste öppnas för att hantera den här trafiken. Du aktiverar dessutom Forest Discovery för att avgöra vissa komponenter i din Active Directory- och nätverksinfrastruktur.  
 
 #### <a name="to-configure-active-directory-forests-for-publishing"></a>Konfigurera Active Directory-skogar för publicering:  

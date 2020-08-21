@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4ddae3e4c4cf31cb05376bfa437d722f16652fad
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 6ff280a01b7388f3e4d296625a94c0184a0e6b09
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721320"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692986"
 ---
 # <a name="capabilities-in-technical-preview-1707-for-configuration-manager"></a>Funktioner i Technical Preview 1707 för Configuration Manager
 
@@ -85,11 +85,11 @@ För att kunna skapa och distribuera Windows Defender Application Guard-principe
 3. På fliken **Start** går du till gruppen **skapa** och klickar på **skapa Windows Defender Application Guard-princip**.
 4. Med blogg inlägget som referens kan du bläddra bland och konfigurera de tillgängliga inställningarna för att testa funktionen.
 5. I den här versionen har vi lagt till den nya **nätverks definitions** sidan i guiden. På den här sidan anger du företagets identitet och definierar företagets nätverks gränser.<br>Windows 10-datorer lagrar bara en lista över nätverks isolering på klienten. I den här versionen kan du skapa två olika typer av nätverks isolerings listor (en från Windows Information Protection och en från Windows Defender Application Guard) och distribuera dem till klienten. Om du distribuerar båda principerna måste dessa listor för nätverks isolering matcha. Om du distribuerar listor som inte matchar samma klient kommer distributionen att Miss Don.
-Du hittar mer information om hur du anger nätverks definitioner i [Windows information Protection-dokumentationen](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr).
+Du hittar mer information om hur du anger nätverks definitioner i [Windows information Protection-dokumentationen](/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr).
 
 6. När du är klar slutför du guiden och distribuerar principen till en eller flera Windows 10-enheter.
 
-### <a name="further-reading"></a>Mer information
+### <a name="further-reading"></a>Ytterligare läsning
 Läs mer om Windows Defender Application Guard i [det här blogg inlägget](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97). Mer information om fristående läge för Windows Defender Application Guard finns i [det här blogg inlägget](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
 
 ## <a name="add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager"></a>Lägg till parametrar när du distribuerar PowerShell-skript från Configuration Manager

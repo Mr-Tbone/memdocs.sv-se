@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2113baf43c377379a2a996c59fd13e55072cf898
-ms.sourcegitcommit: d05b1472385c775ebc0b226e8b465dbeb5bf1f40
+ms.openlocfilehash: db3a673d99efc40bd6fa0da7930c66c648136e03
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605192"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695375"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Skapa och kör PowerShell-skript från Configuration Manager-konsolen
 
@@ -40,7 +40,7 @@ Med den här integreringen i Configuration Manager kan du använda funktionen *K
 > - Med tanke på kraften i skript, påminner vi om att du är avsiktlig och försiktig med deras användning. Vi har byggt ytterligare skydd för att hjälpa dig. åtskiljda roller och omfång. Kontrol lera att skripten är korrekta innan du kör dem och bekräfta att de kommer från en betrodd källa, för att förhindra oavsiktlig skript körning. Var mindful utökade tecken eller andra döljande och lär dig mer om att skydda skript. [Läs mer om PowerShell-skript säkerhet](learn-script-security.md)
 > - Vissa program mot skadlig kod kan oavsiktligt utlösa händelser mot Configuration Manager köra skript eller CMPivot-funktioner. Vi rekommenderar att du undantar%windir%\CCM\ScriptStore så att program mot skadlig kod tillåter dessa funktioner att köras utan störningar.
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - För att köra PowerShell-skript måste klienten köra PowerShell version 3,0 eller senare. Men om ett skript som du kör innehåller funktioner från en senare version av PowerShell måste klienten som kör skriptet köra den versionen av PowerShell.
 - Configuration Manager klienter måste köra-klienten från 1706-versionen eller senare för att kunna köra skript.
@@ -101,10 +101,10 @@ Detta godkännande används främst för test fasen vid skript utveckling.
   
 Kör skript använder säkerhets omfattningar, en befintlig funktion i Configuration Manager, för att styra skript redigering och körning genom att tilldela taggar som representerar användar grupper. Mer information om hur du använder säkerhets omfattningar finns i [Konfigurera rollbaserad administration för Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
 
-## <a name="create-security-roles-for-scripts"></a><a name="bkmk_ScriptRoles"></a>Skapa säkerhets roller för skript
+## <a name="create-security-roles-for-scripts"></a><a name="bkmk_ScriptRoles"></a> Skapa säkerhets roller för skript
 De tre säkerhets rollerna som används för att köra skript skapas inte som standard i Configuration Manager. Följ stegen nedan om du vill skapa skript utlöpare, skript författare och roller för god kännare av skript.
 
-1. I Configuration Manager-konsolen går du till **Administration** >**säkerhets** >**säkerhets roller**
+1. I Configuration Manager-konsolen går du till **Administration**  > **säkerhets**  > **säkerhets roller**
 2. Högerklicka på en roll och klicka på **Kopiera**. Rollen som du kopierar har redan tilldelats behörigheter. Se till att du bara tar med de behörigheter som du vill använda. 
 3. Ge den anpassade rollen ett **namn** och en **Beskrivning**. 
 4. Tilldela säkerhets rollen behörigheterna som beskrivs nedan.  
@@ -118,7 +118,7 @@ De tre säkerhets rollerna som används för att köra skript skapas inte som st
 |Kategori|Behörighet|Status|
 |---|---|---|
 |Samling|Kör skript|Ja|
-|Plats|Läsa|Ja|
+|Webbplats|Läsa|Ja|
 |SMS-skript|Läsa|Ja|
 
 
@@ -128,8 +128,8 @@ De tre säkerhets rollerna som används för att köra skript skapas inte som st
  
 |Kategori|Behörighet|Status|
 |---|---|---|
-|Samling|Kör skript|Inga|
-|Plats|Läsa|Ja|
+|Samling|Kör skript|Nej|
+|Webbplats|Läsa|Ja|
 |SMS-skript|Skapa|Ja|
 |SMS-skript|Läsa|Ja|
 |SMS-skript|Ta bort|Ja|
@@ -142,8 +142,8 @@ De tre säkerhets rollerna som används för att köra skript skapas inte som st
 
 |Kategori|Behörighet|Status|
 |---|---|---|
-|Samling|Kör skript|Inga|
-|Plats|Läsa|Ja|
+|Samling|Kör skript|Nej|
+|Webbplats|Läsa|Ja|
 |SMS-skript|Läsa|Ja|
 |SMS-skript|Godkänn|Ja|
 |SMS-skript|Ändra|Ja|
@@ -203,9 +203,9 @@ Avsnittet validering i dialog rutan **Egenskaper för skript parameter** innehå
 
 #### <a name="using-regular-expression-validation"></a>Använda verifiering av reguljära uttryck
 
-Ett reguljärt uttryck är en kompakt form av programmering för att kontrol lera en sträng med tecken mot en kodad verifiering. Du kan till exempel kontrol lera att det inte finns något versalt alfabetiskt tecken i fältet *FirstName* genom att `[^A-Z]` placera i fältet *regex* .
+Ett reguljärt uttryck är en kompakt form av programmering för att kontrol lera en sträng med tecken mot en kodad verifiering. Du kan till exempel kontrol lera att det inte finns något versalt alfabetiskt tecken i fältet *FirstName* genom `[^A-Z]` att placera i fältet *regex* .
 
-Den reguljära uttrycks bearbetningen för den här dialog rutan stöds av .NET Framework. Vägledning om hur du använder reguljära uttryck finns i [reguljära uttryck för .net](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions) och [reguljära uttryck](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference).
+Den reguljära uttrycks bearbetningen för den här dialog rutan stöds av .NET Framework. Vägledning om hur du använder reguljära uttryck finns i [reguljära uttryck för .net](/dotnet/standard/base-types/regular-expressions) och [reguljära uttryck](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 
 ## <a name="script-examples"></a>Skriptexempel
@@ -236,7 +236,7 @@ Det här skriptet använder WMI för att fråga datorn om dess OS-version.
 Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 ```
 
-## <a name="edit-or-copy-powershell-scripts"></a><a name="bkmk_psedit"></a>Redigera eller kopiera PowerShell-skript
+## <a name="edit-or-copy-powershell-scripts"></a><a name="bkmk_psedit"></a> Redigera eller kopiera PowerShell-skript
 <!--3705507-->
 *(Lanserades med version 1902)*  
 Du kan **redigera** eller **Kopiera** ett befintligt PowerShell-skript som används med funktionen **Kör skript** . I stället för att skapa ett skript som du behöver ändra direkt redigerar du det nu. Båda åtgärderna använder samma guide upplevelse som när du skapar ett nytt skript. När du redigerar eller kopierar ett skript behåller Configuration Manager inte godkännande statusen.
@@ -294,7 +294,7 @@ När du har initierat körningen av ett skript på en samling av enheter kan du 
 
 ## <a name="script-output"></a>Skriptets utdata
 
-Klientens retur skript utdata med JSON-formatering genom att skicka in skript resultatet till [ConvertTo-JSON-](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json) cmdleten. JSON-formatet returnerar konsekvent läsbara utdata från skriptet. För skript som inte returnerar objekt som utdata konverterar cmdleten ConvertTo-JSON utdata till en enkel sträng som klienten returnerar i stället för JSON.  
+Klientens retur skript utdata med JSON-formatering genom att skicka in skript resultatet till [ConvertTo-JSON-](/powershell/module/microsoft.powershell.utility/convertto-json) cmdleten. JSON-formatet returnerar konsekvent läsbara utdata från skriptet. För skript som inte returnerar objekt som utdata konverterar cmdleten ConvertTo-JSON utdata till en enkel sträng som klienten returnerar i stället för JSON.  
 
 - Skript som får ett okänt resultat eller där klienten var offline visas inte i diagrammen eller data uppsättningen. <!--507179-->
 - Undvik att returnera stora utdata i skriptet eftersom det trunkeras till 4 KB. <!--508488-->
@@ -302,11 +302,11 @@ Klientens retur skript utdata med JSON-formatering genom att skicka in skript re
 
    ![Omvandla Enum-objekt till ett sting-värde](./media/run-scripts/enum-tostring-JSON.png)
 
-Du kan visa detaljerad skript utmatning i oformaterat eller strukturerat JSON-format. Den här formateringen gör det lättare att läsa och analysera utdata. Om skriptet returnerar en giltig JSON-formaterad text eller om utdata kan konverteras till JSON med PowerShell [-cmdleten ConvertTo-JSON](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json) , visar du de detaljerade utdata som antingen **JSON-utdata** eller **rå utdata**. I annat fall är det enda alternativet **skript-utdata**.
+Du kan visa detaljerad skript utmatning i oformaterat eller strukturerat JSON-format. Den här formateringen gör det lättare att läsa och analysera utdata. Om skriptet returnerar en giltig JSON-formaterad text eller om utdata kan konverteras till JSON med PowerShell [-cmdleten ConvertTo-JSON](/powershell/module/microsoft.powershell.utility/convertto-json) , visar du de detaljerade utdata som antingen **JSON-utdata** eller **rå utdata**. I annat fall är det enda alternativet **skript-utdata**.
 
 ### <a name="example-script-output-is-convertible-to-valid-json"></a>Exempel: skriptets utdata kan konverteras till giltig JSON
 
-Kommandoprompt`$PSVersionTable.PSVersion`  
+Kommandoprompt `$PSVersionTable.PSVersion`  
 
 ``` Output
 Major  Minor  Build  Revision
@@ -316,7 +316,7 @@ Major  Minor  Build  Revision
 
 ### <a name="example-script-output-isnt-valid-json"></a>Exempel: skriptets utdata är inte giltig JSON
 
-Kommandoprompt`Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
+Kommandoprompt `Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
 
 ``` Output
 Microsoft Windows 10 Enterprise

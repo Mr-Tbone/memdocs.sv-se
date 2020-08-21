@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 6b56f9848f497b7167b478b427f37a00bb2656b9
-ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
+ms.openlocfilehash: a5800b40b581f2a65c4adcea0d229977ae61f774
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512724"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693343"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurera Cloud Management Gateway för Configuration Manager
 
@@ -40,7 +40,7 @@ Använd följande check lista för att kontrol lera att du har nödvändig infor
 
   - Integrering med [Azure AD](../../../servers/deploy/configure/azure-services-wizard.md) för **moln hantering**. Identifiering av Azure AD-användare krävs inte. Om du vill integrera-platsen med Azure AD för att distribuera CMG med hjälp av Azure Resource Manager behöver du en **Global administratör**.
 
-  - Microsoft **. ClassicCompute**  &  **Microsoft. Storage** Resource providers måste vara registrerade i Azure-prenumerationen. Mer information finns i [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+  - Microsoft **. ClassicCompute**  &  **Microsoft. Storage** Resource providers måste vara registrerade i Azure-prenumerationen. Mer information finns i [Azure Resource Manager](/azure/azure-resource-manager/resource-manager-supported-services).
 
   - En **prenumerations ägare** måste logga in för att distribuera CMG.
 

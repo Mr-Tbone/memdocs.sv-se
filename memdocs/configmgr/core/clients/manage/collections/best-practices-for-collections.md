@@ -10,12 +10,12 @@ ms.assetid: 7a2abb79-9ae5-4a25-9e18-5dcf528de3bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3ee640a70eea9f2e8470e852409911d28e542bc2
-ms.sourcegitcommit: 1d8bf691780b94a945e94945115d4d1df4242808
+ms.openlocfilehash: b1bc72a3691e4a6f47c29a5a91ef11c92f0f7e7c
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663389"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693292"
 ---
 # <a name="best-practices-for-collections-in-configuration-manager"></a>Metod tips för samlingar i Configuration Manager
 
@@ -45,7 +45,7 @@ I en upptagen Configuration Managers miljö kan du förbättra prestanda för sa
 
 Tänk på hur samlings utvärderings diagrammet fungerar så att du kan utforma en lämplig samlings struktur. Förlita dig inte på fullständig samlings utvärdering för att alltid uppdatera alla samlingar. Om det finns en stegvis uppdaterad samlings uppdatering enligt ett schema, kan det hända att referens samlingar som inte är aktiverade för stegvisa uppdateringar inte uppdateras. Eftersom uppdateringar troligen uppstod under stegvisa utvärderingar, kan en fullständig utvärdering inte uppdatera samlingen, vilket avslutar samlings utvärderings diagrammet för den cykeln. I så fall sker inga utvärderingar av insamlings samlingar. Mer information finns i [diagram över samlings utvärdering](collection-evaluation.md#collection-evaluation-graph).
 
-## <a name="limit-incremental-updates"></a><a name="bkmk_incremental"></a>Begränsa stegvisa uppdateringar
+## <a name="limit-incremental-updates"></a><a name="bkmk_incremental"></a> Begränsa stegvisa uppdateringar
 
 Att aktivera stegvisa uppdateringar för många samlingar kan orsaka fördröjningar i utvärderingen. Det är bäst att begränsa antalet stegvis uppdaterade samlingar till 200. Det exakta antalet beror på:
 
@@ -96,7 +96,7 @@ Ingå
 
 ## <a name="use-ceviewer-to-monitor-collection-evaluation"></a>Använd CEViewer för att övervaka samlings utvärdering
 
-Du kan använda [CEViewer (Collection Evaluation Viewer)](https://docs.microsoft.com/mem/configmgr/core/support/ceviewer) för att övervaka hur många samlingar som utvärderas och hur lång tid varje samling tar att uppdatera. CEViewer finns i *CD-skivan. Den senaste* mappen på plats servern.
+Du kan använda [CEViewer (Collection Evaluation Viewer)](../../../support/ceviewer.md) för att övervaka hur många samlingar som utvärderas och hur lång tid varje samling tar att uppdatera. CEViewer finns i *CD-skivan. Den senaste* mappen på plats servern.
 
 Om du vill utföra en liknande kontroll med SQL manuellt kan du använda följande fråga:
 
@@ -111,5 +111,3 @@ FROM (
 WHERE ([t2].[IncrementalEvaluationStartTime] IS NOT NULL) AND ([t2].[LastIncrementalRefreshTime] IS NOT NULL) and (refreshtype='4' or refreshtype='6')
 ORDER BY [t2].[value] DESC
 ```
-
-

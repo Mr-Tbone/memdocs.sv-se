@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
-ms.openlocfilehash: 560b432bb90f99207fd15bc07e7aff98ffd59ebf
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: a327d50a2743f81407530355b6fd5101ce6a8b02
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719787"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696913"
 ---
 # <a name="software-updates-maintenance"></a>Underhåll för programuppdatering
 
@@ -27,7 +27,7 @@ Du kan schemalägga och köra rensnings uppgifter för WSUS från Configuration 
 
 Schemalägg rensnings jobbet för WSUS genom att köra följande steg:
 
-1. I Configuration Manager-konsolen navigerar du till **Administration** > **Översikt** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen navigerar du till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**.
 2. Välj platsen överst i Configuration Manager hierarkin.
 
 3. Klicka på **Konfigurera platskomponenter** i gruppen **Inställningar** och klicka sedan på **Plats för programuppdatering** för att öppna Egenskaper för platskomponent för programuppdatering.  
@@ -109,7 +109,7 @@ Följande alternativ i **guiden Rensa WSUS-Server** körs inte på CAS-, primär
 
 Om du avböjer uppdateringar i WSUS förbättras prestanda genom att de uppdateringarna tas bort från katalogerna som skickas till klienter. Att minimera uppdateringar som Configuration Manager markerar som ersatta minimerar ytterligare kataloger och förbättrar prestandan.
 
-1. I Configuration Manager-konsolen navigerar du till **Administration** > **Översikt** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen navigerar du till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**.
 2. Välj platsen överst i Configuration Manager hierarkin.
 3. Klicka på **Konfigurera platskomponenter** i gruppen Inställningar och klicka sedan på **Plats för programuppdatering** för att öppna Egenskaper för platskomponent för programuppdatering.
 4. På fliken **WSUS-underhåll** väljer du **neka utgångna uppdateringar i WSUS enligt ersättnings regler**.
@@ -118,7 +118,7 @@ Om du avböjer uppdateringar i WSUS förbättras prestanda genom att de uppdater
 
 Om du lägger till icke-grupperade index förbättras prestanda för WSUS-rensning som Configuration Manager gör.
 
-1. I Configuration Manager-konsolen navigerar du till **Administration** > **Översikt** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen navigerar du till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**.
 2. Välj platsen överst i Configuration Manager hierarkin.
 3. Klicka på **Konfigurera platskomponenter** i gruppen Inställningar och klicka sedan på **Plats för programuppdatering** för att öppna Egenskaper för platskomponent för programuppdatering.
 4. På fliken **WSUS-underhåll** väljer du **Lägg till icke-grupperade index i WSUS-databasen**.
@@ -130,17 +130,17 @@ Om du lägger till icke-grupperade index förbättras prestanda för WSUS-rensni
 
 När WSUS-databasen finns på en fjärran sluten SQL Server kan du behöva lägga till behörigheter i SQL för att skapa index. Det konto som används för att ansluta till WSUS-databasen och skapa index kan variera. Om du anger ett [anslutnings konto för WSUS-servern i egenskaperna för program uppdaterings platsen](../get-started/install-a-software-update-point.md#wsus-server-connection-account)kontrollerar du att anslutnings kontot har SQL-behörighet. Om du inte anger ett anslutnings konto för en WSUS-server måste plats serverns dator konto ha SQL-behörighet.
 
-- För att skapa ett `ALTER` index krävs behörighet för tabellen eller vyn. Kontot måste vara medlem i den `sysadmin` fasta Server rollen eller de `db_ddladmin` fasta databas rollerna och. `db_owner` Mer information om att skapa och indexera och behörigheter finns i [create index (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-index-transact-sql?view=sql-server-2017#permissions).
-- `CONNECT SQL` Server behörigheten måste beviljas till kontot. Mer information finns i [Granting Server Permissions (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
+- För att skapa ett index krävs `ALTER` behörighet för tabellen eller vyn. Kontot måste vara medlem i den `sysadmin` fasta Server rollen eller de `db_ddladmin` `db_owner` fasta databas rollerna och. Mer information om att skapa och indexera och behörigheter finns i [create index (Transact-SQL)](/sql/t-sql/statements/create-index-transact-sql?view=sql-server-2017#permissions).
+- `CONNECT SQL`Server behörigheten måste beviljas till kontot. Mer information finns i [Granting Server Permissions (Transact-SQL)](/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
 
 > [!NOTE]  
->  Om WSUS-databasen finns på en fjärran sluten SQL Server med en annan port än standard porten, kan det hända att index inte läggs till. Du kan skapa ett [Server Ali Aset med Konfigurationshanteraren för SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/create-or-delete-a-server-alias-for-use-by-a-client?view=sql-server-2017) för det här scenariot. När aliaset har lagts till och Configuration Manager kan upprätta en anslutning till WSUS-databasen, läggs indexen till.
+>  Om WSUS-databasen finns på en fjärran sluten SQL Server med en annan port än standard porten, kan det hända att index inte läggs till. Du kan skapa ett [Server Ali Aset med Konfigurationshanteraren för SQL Server](/sql/database-engine/configure-windows/create-or-delete-a-server-alias-for-use-by-a-client?view=sql-server-2017) för det här scenariot. När aliaset har lagts till och Configuration Manager kan upprätta en anslutning till WSUS-databasen, läggs indexen till.
 
 ### <a name="remove-obsolete-updates-from-the-wsus-database"></a>Ta bort föråldrade uppdateringar från WSUS-databasen
 
 Föråldrade uppdateringar är oanvända uppdateringar och uppdaterings revisioner i WSUS-databasen. I allmänhet anses en uppdatering vara föråldrad när den inte längre finns i [Microsoft Update katalogen](https://www.catalog.update.microsoft.com/) och det behövs inga andra uppdateringar som ett krav eller beroende.
 
-1. I Configuration Manager-konsolen navigerar du till **Administration** > **Översikt** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen navigerar du till **Administration**  >  **Översikt**  >  **plats konfiguration**  >  **platser**.
 2. Välj platsen överst i Configuration Manager hierarkin.
 3. Klicka på **Konfigurera platskomponenter** i gruppen Inställningar och klicka sedan på **Plats för programuppdatering** för att öppna Egenskaper för platskomponent för programuppdatering.
 4. På fliken **WSUS-underhåll** väljer du **ta bort föråldrade uppdateringar från WSUS-databasen**.
@@ -150,8 +150,8 @@ Föråldrade uppdateringar är oanvända uppdateringar och uppdaterings revision
 
 När WSUS-databasen finns på en fjärran sluten SQL Server måste plats serverns dator konto ha följande SQL-behörigheter:
 
-- De `db_datareader` fasta `db_datawriter` databas rollerna och. Mer information finns i [roller på databas nivå](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-2017#fixed-database-roles).
-- `CONNECT SQL` Server behörigheten måste beviljas till plats serverns dator konto. Mer information finns i [Granting Server Permissions (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
+- De `db_datareader` `db_datawriter` fasta databas rollerna och. Mer information finns i [roller på databas nivå](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-2017#fixed-database-roles).
+- `CONNECT SQL`Server behörigheten måste beviljas till plats serverns dator konto. Mer information finns i [Granting Server Permissions (Transact-SQL)](/sql/t-sql/statements/grant-server-permissions-transact-sql?view=sql-server-2017).
 
 #### <a name="wsus-cleanup-wizard"></a>Guiden rensning av WSUS
 
@@ -173,7 +173,7 @@ Föreställ dig följande scenario:
    - Lägg till icke-grupperade index i WSUS-databasen
    - Ta bort föråldrade uppdateringar från WSUS-databasen
 
-I det här scenariot kan Configuration Manager inte utföra ovanstående WSUS-underhåll för program uppdaterings platser med hjälp av en intern Windows-databas. Det här problemet uppstår eftersom Windows Internal Database inte tillåter fjärr anslutningar. Följande fel `WSyncMgr.log` visas på plats servern:
+I det här scenariot kan Configuration Manager inte utföra ovanstående WSUS-underhåll för program uppdaterings platser med hjälp av en intern Windows-databas. Det här problemet uppstår eftersom Windows Internal Database inte tillåter fjärr anslutningar. Följande fel visas på `WSyncMgr.log` plats servern:
 
 ```text
 Indexing Failed. Could not connect to SUSDB.
@@ -188,8 +188,8 @@ Du kan lösa problemet genom att automatisera WSUS-underhållet för fjärrprogr
 
 Du kan kontrol lera den här rensningen genom att granska wsyncmgr. log för följande poster:
 
-- Nekande av ersatta uppdateringar i WSUS är slutförd när du ser den här logg posten:`Cleanup processed <number> total updates and declined <number>`
-- Rensningen av WSUS startar när du ser den här posten:`Calling WSUS Cleanup.`
-- WSUS-rensningen för utgångna uppdateringar är klar när du ser den här posten:`Successfully completed WSUS Cleanup.`
-- Rensningen av konfigurations objekt för Configuration Manager inaktuella uppdateringar startar när du ser den här posten:`Deleting old expired updates...`
-- Rensningen av konfigurations objekt för Configuration Manager inaktuella uppdateringar är slutförd när du ser den här posten:`Deleted <number> expired updates total`
+- Nekande av ersatta uppdateringar i WSUS är slutförd när du ser den här logg posten: `Cleanup processed <number> total updates and declined <number>`
+- Rensningen av WSUS startar när du ser den här posten: `Calling WSUS Cleanup.`
+- WSUS-rensningen för utgångna uppdateringar är klar när du ser den här posten: `Successfully completed WSUS Cleanup.`
+- Rensningen av konfigurations objekt för Configuration Manager inaktuella uppdateringar startar när du ser den här posten: `Deleting old expired updates...`
+- Rensningen av konfigurations objekt för Configuration Manager inaktuella uppdateringar är slutförd när du ser den här posten: `Deleted <number> expired updates total`

@@ -10,12 +10,12 @@ ms.assetid: ddcad9f2-a542-4079-83ca-007d7cb44995
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: df6f550b21523e365055f6a4cdafadca7603c4bf
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 63db181bd145ea2fa14f206e94c521b65f7e7354
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906376"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695162"
 ---
 # <a name="deploy-app-v-virtual-applications-with-configuration-manager"></a>Distribuera virtuella App-V-program med Configuration Manager
 
@@ -31,7 +31,7 @@ När du använder Configuration Manager för att hantera virtuella program får 
 
 -   Distribution av operativ system, program vara och maskin varu inventering, avläsning av program vara och till gångs information för att stödja virtuella program  
 
-Mer information om hur du skapar och sekvenserar program med Microsoft Application Virtualization (App-V) finns i [Application Virtualization 4-dokumentationen](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v4/).  
+Mer information om hur du skapar och sekvenserar program med Microsoft Application Virtualization (App-V) finns i [Application Virtualization 4-dokumentationen](/microsoft-desktop-optimization-pack/appv-v4/).  
 
 Förutom de andra Configuration Manager krav och procedurer för att skapa ett program måste du tänka på följande när du skapar och distribuerar virtuella program:
 
@@ -65,9 +65,9 @@ Förutom de andra Configuration Manager krav och procedurer för att skapa ett p
 
 Mer information om App-V i Windows 10 finns i följande avsnitt:
 
-- [Vad är nytt i App-V](https://docs.microsoft.com/windows/application-management/app-v/appv-about-appv)
-- [Komma igång med App-V för Windows 10](https://docs.microsoft.com/windows/application-management/app-v/appv-getting-started)
-- [Uppgradera till App-V för Windows 10 från en befintlig installation](https://docs.microsoft.com/windows/application-management/app-v/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation)
+- [Vad är nytt i App-V](/windows/application-management/app-v/appv-about-appv)
+- [Komma igång med App-V för Windows 10](/windows/application-management/app-v/appv-getting-started)
+- [Uppgradera till App-V för Windows 10 från en befintlig installation](/windows/application-management/app-v/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation)
 
 ##  <a name="steps-to-manage-app-v-virtual-applications"></a>Steg för att hantera virtuella App-V-program  
  Följ dessa steg om du vill hantera virtuella App-V-program:  
@@ -147,7 +147,7 @@ För att du ska kunna använda den här funktionen med Configuration Manager må
 Mer information om App-V Dynamic Suite Composition finns i dokumentationen till App-V.  
 
 ##  <a name="converting-app-v-46-applications-to-app-v-5-applications"></a>Konvertera App-V 4.6-program till App-V 5-program  
-Programpaketsformatet har ändrats mellan App-V 4.6 och App-V 5. Program som har sekvenserats med App-V 4.6 stöds inte längre. Men App-V 5 har ett paket konverterings verktyg som du kan använda för att konvertera program. Mer information finns i [så här konverterar du ett paket som skapats i en tidigare version av App-V](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v5/how-to-convert-a-package-created-in-a-previous-version-of-app-v).  
+Programpaketsformatet har ändrats mellan App-V 4.6 och App-V 5. Program som har sekvenserats med App-V 4.6 stöds inte längre. Men App-V 5 har ett paket konverterings verktyg som du kan använda för att konvertera program. Mer information finns i [så här konverterar du ett paket som skapats i en tidigare version av App-V](/microsoft-desktop-optimization-pack/appv-v5/how-to-convert-a-package-created-in-a-previous-version-of-app-v).  
 
 Följ dessa anvisningar när du konverterar App-V 4.6-program till App-V 5-program:  
 
@@ -178,7 +178,7 @@ Distributions konfigurations filen innehåller inställningar som gäller för d
 
 Om du vill distribuera virtuella App-V 5-program med Configuration Manager måste alla tre filerna finnas i samma mapp när du skapar distributions typen App-V 5. Om det finns flera filer i mappen kommer Configuration Manager använda den senaste.  
 
-Mer information finns i om den [dynamiska konfigurationen av App-V 5,0](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v5/about-app-v-50-dynamic-configuration).  
+Mer information finns i om den [dynamiska konfigurationen av App-V 5,0](/microsoft-desktop-optimization-pack/appv-v5/about-app-v-50-dynamic-configuration).  
 
 ##  <a name="app-v-local-interaction"></a> Local Interaction i App-V  
 I vissa program distributions scenarier installeras program lokalt på klient datorerna och andra program distribueras som virtuella program till samma klient dator. Som standard kan inte program som installeras lokalt se eller kommunicera direkt med virtualiserade program. Detta är det avsedda beteendet för program isoleringen som App-V tillhandahåller. Lokal interaktion är en funktion i App-V-klienten som du kan aktivera för varje program så att lokalt installerade program som körs på en klient dator kan se och kommunicera med virtualiserade program. Configuration Manager och App-V har fullt stöd för lokal interaktion.  
@@ -186,7 +186,7 @@ I vissa program distributions scenarier installeras program lokalt på klient da
 Mer information om funktionen App-V Local Interaction finns i dokumentationen till App-V.  
 
 ##  <a name="app-v-5-shared-content-store"></a>Shared Content Store i App-V 5  
-Configuration Manager stöder den delade innehålls lagrings funktionen i App-V 5. Mer information finns i [Planera för App-V 5.0 Shared Content Store (SCS)](https://docs.microsoft.com/microsoft-desktop-optimization-pack/appv-v5/planning-for-the-app-v-50-sequencer-and-client-deployment#planning-for-the-app-v-50-shared-content-store-scs).  
+Configuration Manager stöder den delade innehålls lagrings funktionen i App-V 5. Mer information finns i [Planera för App-V 5.0 Shared Content Store (SCS)](/microsoft-desktop-optimization-pack/appv-v5/planning-for-the-app-v-50-sequencer-and-client-deployment#planning-for-the-app-v-50-shared-content-store-scs).  
 
 ##  <a name="monitoring-virtual-applications"></a>Övervaka virtuella program  
 
@@ -206,4 +206,4 @@ Du kan använda följande rapporter för att övervaka App-V i din Configuration
 ### <a name="log-files"></a>Loggfiler  
 Configuration Manager registrerar information om virtuella program distributioner i loggfiler. Information om loggfiler som virtuella program och Configuration Manager program hantering använder finns i [loggfiler](../../core/plan-design/hierarchy/log-files.md).  
 
-För Windows 8,1 hittar du loggar för App-V-klienten i C:\ProgramData\Microsoft\Application Virtualization-klienten.  
+För Windows 8,1 hittar du loggar för App-V-klienten i C:\ProgramData\Microsoft\Application Virtualization-klienten.

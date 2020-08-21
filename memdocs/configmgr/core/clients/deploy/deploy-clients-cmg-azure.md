@@ -10,12 +10,12 @@ ms.assetid: a44006eb-8650-49f6-94e1-18fa0ca959ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 39d6bf22cb24492a0f4e3f59313184ce522b5d09
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: e15f8511464b6d8b8486bb874a256df1c375e31b
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455012"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694584"
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Installera och tilldela Configuration Manager Windows 10-klienter med Azure AD för autentisering
 
@@ -40,7 +40,7 @@ Det kan vara enklare för vissa kunder att konfigurera Azure AD än att konfigur
 
   - Den inloggade användaren måste vara en Azure AD-identitet.
 
-  - Om användaren är en federerad eller synkroniserad identitet konfigurerar du både Configuration Manager [Active Directory identifiering av användare](../../servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser) och [identifiering av Azure AD-användare](../../servers/deploy/configure/about-discovery-methods.md#azureaddisc). Mer information om Hybrid identiteter finns i [definiera en strategi för Hybrid identitets införande](https://docs.microsoft.com/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->
+  - Om användaren är en federerad eller synkroniserad identitet konfigurerar du både Configuration Manager [Active Directory identifiering av användare](../../servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser) och [identifiering av Azure AD-användare](../../servers/deploy/configure/about-discovery-methods.md#azureaddisc). Mer information om Hybrid identiteter finns i [definiera en strategi för Hybrid identitets införande](/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->
 
 - Förutom de [befintliga kraven](../../plan-design/configs/site-and-site-system-prerequisites.md#bkmk_2012MPpreq) för hanterings platsens plats system roll aktiverar du även **ASP.NET 4,5** på den här servern. Inkludera andra alternativ som väljs automatiskt när du aktiverar ASP.NET 4,5.  
 
@@ -70,13 +70,13 @@ Dessa klient inställningar hjälper till att konfigurera Windows 10-enheter så
     - **Registrera automatiskt nya Windows 10-domänanslutna enheter med Azure Active Directory**: ange **Ja** eller **Nej**. Standardinställningen är **Ja**. Detta är också standardvärdet i Windows 10, version 1709.
 
         > [!TIP]
-        > Hybrid-anslutna enheter är anslutna till en lokal Active Directory-domän och är registrerad i Azure AD. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid).<!-- MEMDocs#325 -->
+        > Hybrid-anslutna enheter är anslutna till en lokal Active Directory-domän och är registrerad i Azure AD. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](/azure/active-directory/devices/concept-azure-ad-join-hybrid).<!-- MEMDocs#325 -->
 
     - **Gör det möjligt för klienter att använda en Cloud Management Gateway**: Ange som **Ja** (standard) eller **Nej**.  
 
 2. Distribuera klient inställningarna till den obligatoriska samlingen av enheter. Distribuera inte inställningarna till användar samlingar.
 
-För att bekräfta att enheten är hybrid-ansluten, kör du `dsregcmd.exe /status` i en kommando tolk. Om enheten är Azure AD-ansluten eller hybrid-ansluten visas **Ja**i fältet **AzureAdjoined** i resultatet. Mer information finns i [dsregcmd-kommando enhets tillstånd](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd).
+För att bekräfta att enheten är hybrid-ansluten, kör du `dsregcmd.exe /status` i en kommando tolk. Om enheten är Azure AD-ansluten eller hybrid-ansluten visas **Ja**i fältet **AzureAdjoined** i resultatet. Mer information finns i [dsregcmd-kommando enhets tillstånd](/azure/active-directory/devices/troubleshoot-device-dsregcmd).
 
 ## <a name="install-and-register-the-client-using-azure-ad-identity"></a>Installera och registrera klienten med hjälp av Azure AD-identitet
 
@@ -85,7 +85,7 @@ Om du vill installera klienten manuellt med Azure AD-identitet läser du först 
 > [!Note]  
 > Enheten behöver åtkomst till Internet för att kontakta Azure AD, men behöver inte vara Internet-baserad.
 
-I följande exempel visas den allmänna strukturen för kommando raden:`ccmsetup.exe /mp:<source management point> CCMHOSTNAME=<internet-based management point> SMSSiteCode=<site code> SMSMP=<initial management point> AADTENANTID=<Azure AD tenant identifier> AADCLIENTAPPID=<Azure AD client app identifier> AADRESOURCEURI=<Azure AD server app identifier>`
+I följande exempel visas den allmänna strukturen för kommando raden: `ccmsetup.exe /mp:<source management point> CCMHOSTNAME=<internet-based management point> SMSSiteCode=<site code> SMSMP=<initial management point> AADTENANTID=<Azure AD tenant identifier> AADCLIENTAPPID=<Azure AD client app identifier> AADRESOURCEURI=<Azure AD server app identifier>`
 
 Mer information finns i [Egenskaper för klient installation](about-client-installation-properties.md).
 
@@ -97,7 +97,7 @@ Mer information finns i [Egenskaper för klient installation](about-client-insta
 
 Egenskapen **SMSMP** anger den lokala hanterings platsen. Det är inte obligatoriskt. Det rekommenderas för Azure AD-anslutna enheter som är centralt på intranätet, så att de kan hitta en lokal hanterings plats.
 
-I det här exemplet används en gateway för moln hantering. Den ersätter exempel värden:`ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
+I det här exemplet används en gateway för moln hantering. Den ersätter exempel värden: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver`
 
 Platsen publicerar ytterligare Azure AD-information till Cloud Management Gateway (CMG). En Azure AD-ansluten klient hämtar den här informationen från CMG under CCMSetup-processen och använder samma klient organisation som den är ansluten till. Med det här beteendet blir det enklare att installera klienten i en miljö med fler än en Azure AD-klient. De enda två obligatoriska CCMSetup-egenskaperna är **CCMHOSTNAME** och **SMSSiteCode**.<!--3607731-->
 

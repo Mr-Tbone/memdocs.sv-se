@@ -2,7 +2,7 @@
 title: Klientinställningar
 titleSuffix: Configuration Manager
 description: Lär dig mer om standard-och anpassade inställningar för att styra klient beteenden
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: reference
@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e70a44fee7b4805884faeda0a5fb1eab72d3371e
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 8045df681560972a353e08ee43c10b6ae86dc50f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127009"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693428"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Om klient inställningar i Configuration Manager
 
@@ -167,7 +167,7 @@ Ställ in det här alternativet på **Ja** för att klienter ska kunna hämta in
 
 ### <a name="automatically-register-new-windows-10-domain-joined-devices-with-azure-active-directory"></a>Registrera automatiskt nya Windows 10-domänanslutna enheter med Azure Active Directory
 
-När du konfigurerar Azure Active Directory att stödja hybrid anslutning, Configuration Manager konfigurerar Windows 10-enheter för den här funktionen. Mer information finns i [så här konfigurerar du hybrid Azure Active Directory anslutna enheter](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup).
+När du konfigurerar Azure Active Directory att stödja hybrid anslutning, Configuration Manager konfigurerar Windows 10-enheter för den här funktionen. Mer information finns i [så här konfigurerar du hybrid Azure Active Directory anslutna enheter](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup).
 
 ### <a name="enable-clients-to-use-a-cloud-management-gateway"></a>Gör det möjligt för klienter att använda en Cloud Management Gateway
 
@@ -341,11 +341,11 @@ Mer information om de här inställningarna finns i [meddelanden om omstart av e
 ## <a name="delivery-optimization"></a>Leveransoptimering
 
 <!-- 1324696 -->
-Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Konfigurera leverans optimeringen så att den använder dina gränser när du delar innehåll mellan peer-datorer.
+Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Konfigurera leverans optimeringen så att den använder dina gränser när du delar innehåll mellan peer-datorer.
 
 > [!Note]
 > - Leverans optimering är endast tillgänglig på Windows 10-klienter.
-> - Internet åtkomst till moln tjänsten för leverans optimering är ett krav för att använda peer-to-peer-funktioner. Information om vilka Internet-slutpunkter som behövs finns i [vanliga frågor och svar om leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions).
+> - Internet åtkomst till moln tjänsten för leverans optimering är ett krav för att använda peer-to-peer-funktioner. Information om vilka Internet-slutpunkter som behövs finns i [vanliga frågor och svar om leverans optimering](/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions).
 > - När du använder en CMG för innehålls lagring laddas inte innehållet för uppdateringar från tredje part ned till klienter om inställningen **Hämta delta innehåll när den tillgängliga** [klienten](#allow-clients-to-download-delta-content-when-available) är aktive rad. <!--6598587--> 
 
 ### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Använd Configuration Manager gränser grupper för grupp-ID för leverans optimering
@@ -641,6 +641,17 @@ Ställ in det här alternativet på **Ja** om du vill använda autentisering på
 
 ## <a name="software-center"></a>Software Center
 
+### <a name="select-the-user-portal"></a>Välj användar portalen
+
+<!--CMADO-3601237,INADO-4297660-->
+Från och med version 2006 konfigurerar du den här inställningen till **företagsportal**om du distribuerar företagsportal till samhanterade enheter. Den här inställningen ser till att användarna endast får meddelanden från Företagsportal.
+
+Om du installerar Företagsportal på en samhanterad enhet, men konfigurerar den här inställningen till **Software Center**, kommer användarna att se meddelanden från båda portalerna. Den här upplevelsen kan vara förvirrande för användare.
+
+Om du ändrar klient inställningen för Företagsportal när en användare väljer ett Configuration Manager meddelande, startas Företagsportal. Om meddelandet är ett scenario som Företagsportal inte stöder, väljer du meddelandet startar Software Center.
+
+Hur Företagsportal fungerar beror på konfigurationen av arbets belastningen för samhantering. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](../../../comanage/company-portal.md).
+
 ### <a name="select-these-new-settings-to-specify-company-information"></a>Välj de här nya inställningarna för att ange företags information
 
 Ställ in det här alternativet på **Ja**och ange sedan följande inställningar för att anpassa Software Center för din organisation:
@@ -651,15 +662,15 @@ Ställ in det här alternativet på **Ja**och ange sedan följande inställninga
 
 - **Välj en logo typ för Software Center**: Klicka på **Bläddra** och välj en bild som ska visas i Software Center. Logo typen måste vara en JPEG, PNG eller BMP med 400 x 100 pixlar, med en maximal storlek på 750 KB. Logo typ filens namn får inte innehålla blank steg.  
 
-### <a name="hide-unapproved-applications-in-software-center"></a><a name="bkmk_HideUnapproved"></a>Dölj ej godkända program i Software Center
+### <a name="hide-unapproved-applications-in-software-center"></a><a name="bkmk_HideUnapproved"></a> Dölj ej godkända program i Software Center
 
 När du aktiverar det här alternativet döljs användar tillgängliga program som kräver godkännande i Software Center.<!--1355146-->
 
-### <a name="hide-installed-applications-in-software-center"></a><a name="bkmk_HideInstalled"></a>Dölj installerade program i Software Center
+### <a name="hide-installed-applications-in-software-center"></a><a name="bkmk_HideInstalled"></a> Dölj installerade program i Software Center
 
 När du aktiverar det här alternativet visas inte längre program som redan är installerade på fliken program. Det här alternativet anges som standard när du installerar eller uppgraderar till Configuration Manager. Installerade program är fortfarande tillgängliga för granskning på fliken installations status. <!--1357592-->
 
-### <a name="hide-application-catalog-link-in-software-center"></a><a name="bkmk_HideAppCat"></a>Dölj Programkatalog länk i Software Center
+### <a name="hide-application-catalog-link-in-software-center"></a><a name="bkmk_HideAppCat"></a> Dölj Programkatalog länk i Software Center
 
 Ange synlighet för länken till program katalogens webbplats i Software Center. När det här alternativet är inställt kan användarna inte se länken till program katalogens webbplats i noden installations status i Software Center. <!--1358214-->
 
@@ -671,7 +682,7 @@ Ange synlighet för länken till program katalogens webbplats i Software Center.
 #### <a name="starting-in-version-1906"></a>Från och med version 1906
 <!--4063773-->
 
-Välj vilka flikar som ska visas i Software Center. Använd knappen **Lägg** till för att flytta en flik till **synliga flikar**. Använd knappen **ta bort** för att flytta den till listan med **dolda flikar** . Ordna flikarna med knapparna **Flytta upp** eller **Flytta ned** . 
+Välj vilka flikar som ska visas i Software Center. Använd knappen **Lägg** till för att flytta en flik till **synliga flikar**. Använd knappen **ta bort**  för att flytta den till listan med **dolda flikar** . Ordna flikarna med knapparna **Flytta upp** eller **Flytta ned** . 
 
 Tillgängliga flikar:
 - **Program**
@@ -709,7 +720,7 @@ Konfigurera de ytterligare inställningarna i den här gruppen till **Ja** så a
 
 Om din organisation till exempel inte använder efterlevnadsprinciper och du vill dölja fliken för enhets efterlevnad i Software Center, anger du fliken för att **Aktivera enhets** efterlevnad på **Nej**.
 
-### <a name="configure-default-views-in-software-center"></a><a name="bkmk_swctr_defaults"></a>Konfigurera standardvyer i Software Center
+### <a name="configure-default-views-in-software-center"></a><a name="bkmk_swctr_defaults"></a> Konfigurera standardvyer i Software Center
 <!--3612112-->
 *(Lanseras i version 1902)*
 
@@ -895,7 +906,7 @@ Den här inställningen konfigurerar den lokala porten för HTTP-lyssnaren att l
 
 När du ställer in det här alternativet på **Ja**, aktive ras konfigurationen av installations inställningarna för Microsoft 365 Apps. Du kan också hämta filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [hantera Microsoft 365 appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
-### <a name="enable-installation-of-software-updates-in-all-deployments-maintenance-window-when-software-update-maintenance-window-is-available"></a><a name="bkmk_SUMMaint"></a>Aktivera installation av program uppdateringar i underhålls fönstret för alla distributioner när underhålls fönstret program uppdatering är tillgängligt
+### <a name="enable-installation-of-software-updates-in-all-deployments-maintenance-window-when-software-update-maintenance-window-is-available"></a><a name="bkmk_SUMMaint"></a> Aktivera installation av program uppdateringar i underhålls fönstret för alla distributioner när underhålls fönstret program uppdatering är tillgängligt
 
 När du ställer in det här alternativet på **Ja**och klienten har minst en definierad underhålls period för program uppdatering, kommer program uppdateringar att installeras under ett underhålls fönster för "alla distributioner".
 
@@ -916,7 +927,7 @@ Du kan till exempel konfigurera följande underhålls fönster:
 Som standard installerar klienten bara program uppdateringar i den andra underhålls perioden. Underhålls perioden ignoreras för alla distributioner i det här scenariot. När du ändrar den här inställningen till **Ja**installerar klienten program uppdateringar mellan 02:00-06:00.
 
 
-### <a name="specify-thread-priority-for-feature-updates"></a><a name="bkmk_thread-priority"></a>Ange tråd prioritet för funktions uppdateringar
+### <a name="specify-thread-priority-for-feature-updates"></a><a name="bkmk_thread-priority"></a> Ange tråd prioritet för funktions uppdateringar
 
 <!--3734525-->
 Från och med Configuration Manager version 1902 kan du justera prioriteten med vilken Windows 10-version 1709 eller senare klienter installerar en funktions uppdatering via [Windows 10-Underhåll](../../../osd/deploy-use/manage-windows-as-a-service.md). Den här inställningen har ingen inverkan på Windows 10 på plats-uppgradering av aktivitetssekvenser.
@@ -927,11 +938,11 @@ Den här klient inställningen ger följande alternativ:
 
 - **Normal**: installationsprogrammet för Windows använder mer system resurser och uppdateringar snabbare. Det använder mer processor tid, så den totala installations tiden är kortare, men användarens avbrott är längre.  
 
-    - Konfigurerar setupconfig.ini-filen på enheten med `/Priority Normal` [kommando rads alternativet Windows-installation](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
+    - Konfigurerar setupconfig.ini-filen på enheten med `/Priority Normal` [kommando rads alternativet Windows-installation](/windows-hardware/manufacture/desktop/windows-setup-command-line-options).
 
 - **Låg**: du kan fortsätta att arbeta med enheten medan den laddas ned och uppdateras i bakgrunden. Den totala installations tiden är längre, men användarens avbrott är kortare. Du kan behöva öka uppdateringens maximala kör tid för att undvika timeout när du använder det här alternativet.  
 
-    - Tar bort `/Priority` [kommando rads alternativet för installations programmet för Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från setupconfig.ini-filen.
+    - Tar bort `/Priority` [kommando rads alternativet för installations programmet för Windows](/windows-hardware/manufacture/desktop/windows-setup-command-line-options) från setupconfig.ini-filen.
 
 
 ### <a name="enable-third-party-software-updates"></a>Aktivera program uppdateringar från tredje part
@@ -940,7 +951,7 @@ När du ställer in det här alternativet på **Ja**ställer det in principen f�
 
 ### <a name="enable-dynamic-update-for-feature-updates"></a><a name="bkmk_du"></a>Aktivera dynamisk uppdatering för funktions uppdateringar
 <!--4062619-->
-Från och med Configuration Manager version 1906 kan du konfigurera [dynamisk uppdatering för Windows 10](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-benefits-of-Windows-10-Dynamic-Update/ba-p/467847). Dynamisk uppdatering installerar språk paket, funktioner på begäran, driv rutiner och ackumulerade uppdateringar under Windows-installationen genom att dirigera klienten för att ladda ned uppdateringarna från Internet. När den här inställningen är inställd på **Ja** eller **Nej**ändrar Configuration Manager den [setupconfig](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) -fil som används under installationen av funktions uppdateringen.
+Från och med Configuration Manager version 1906 kan du konfigurera [dynamisk uppdatering för Windows 10](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-benefits-of-Windows-10-Dynamic-Update/ba-p/467847). Dynamisk uppdatering installerar språk paket, funktioner på begäran, driv rutiner och ackumulerade uppdateringar under Windows-installationen genom att dirigera klienten för att ladda ned uppdateringarna från Internet. När den här inställningen är inställd på **Ja** eller **Nej**ändrar Configuration Manager den [setupconfig](/windows-hardware/manufacture/desktop/windows-setup-command-line-options) -fil som används under installationen av funktions uppdateringen.
 
 - **Inte konfigurerad** – standardvärdet. Inga ändringar har gjorts i setupconfig-filen.
   - Dynamisk uppdatering är aktiverat som standard i alla versioner av Windows 10 som stöds.

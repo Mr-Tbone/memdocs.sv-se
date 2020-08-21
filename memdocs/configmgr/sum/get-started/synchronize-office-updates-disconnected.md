@@ -10,21 +10,21 @@ ms.assetid: a8fa7e7a-bf55-42de-b0c2-c56777dc1508
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 4739703436d7feec7c4c899e60b33d38ce28babf
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 49e0f5e1dff466e62cdba0def917dd34510e48ee
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125737"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696777"
 ---
-# <a name="synchronize-microsoft-365-apps-updates-from-a-disconnected-software-update-point"></a><a name="bkmk_O365"></a>Synkronisera uppdateringar av Microsoft 365 appar från en frånkopplad program uppdaterings plats
+# <a name="synchronize-microsoft-365-apps-updates-from-a-disconnected-software-update-point"></a><a name="bkmk_O365"></a> Synkronisera uppdateringar av Microsoft 365 appar från en frånkopplad program uppdaterings plats
 
 *Gäller för: Configuration Manager (aktuell gren)*
 <!--4065163-->
 Från och med Configuration Manager version 2002 kan du använda ett verktyg för att importera uppdateringar av Microsoft 365 appar från en ansluten WSUS-server till en frånkopplad Configuration Manager-miljö. Tidigare när du exporterade och importerade metadata för program som har uppdaterats i frånkopplade miljöer kunde du inte distribuera uppdateringar av Microsoft 365 appar. Uppdateringar för Microsoft 365-appar kräver ytterligare metadata som hämtats från ett Office API och Office CDN, vilket inte är möjligt för frånkopplade miljöer.
 
 > [!Note]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
 ## <a name="prerequisites"></a>Förutsättningar
 
@@ -51,7 +51,7 @@ Från och med Configuration Manager version 2002 kan du använda ett verktyg fö
 1. När synkroniseringen är klar avvisar du eventuella uppdateringar av Microsoft 365 appar som du inte vill distribuera med Configuration Manager. Du behöver inte godkänna uppdateringar av Microsoft 365 appar för att de ska kunna laddas ned.  
    - Om du avböjer oönskade uppdateringar av Microsoft 365 appar i WSUS så hindras de inte från att exporteras under en WsusUtil.exe export, men den stoppar OfflineUpdateExporter-verktyget från att hämta innehållet för dem.
    - OfflineUpdateExporter-verktyget hämtar uppdateringar för Microsoft 365 appar åt dig. Andra produkter måste fortfarande godkännas för nedladdning om du exporterar uppdateringar för dem.
-    - Skapa en [ny uppdaterings vy i WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/viewing-and-managing-updates#to-create-a-new-update-view-on-wsus) för att enkelt se och neka onödiga Microsoft 365 uppdateringar av appar i WSUS.
+    - Skapa en [ny uppdaterings vy i WSUS](/windows-server/administration/windows-server-update-services/manage/viewing-and-managing-updates#to-create-a-new-update-view-on-wsus) för att enkelt se och neka onödiga Microsoft 365 uppdateringar av appar i WSUS.
 1. Om du godkänner andra produkt uppdateringar för hämtning och export väntar du tills innehålls hämtningen har slutförts innan du kör WsusUtil.exe exportera och kopiera innehållet i mappen WSUSContent. Mer information finns i avsnittet om att [Synkronisera program uppdateringar från en frånkopplad program uppdaterings plats](synchronize-software-updates-disconnected.md)
 
 ## <a name="exporting-the-microsoft-365-apps-updates"></a>Exportera uppdateringar för Microsoft 365-appar
@@ -78,7 +78,7 @@ Från och med Configuration Manager version 2002 kan du använda ett verktyg fö
 
     **WsusUtil.exe exportera***PackageName*-*loggfil*      
 
-    Till exempel:  
+    Exempel:  
 
     **WsusUtil.exe exportera export.xml. gz export. log**
 
@@ -90,7 +90,7 @@ Från och med Configuration Manager version 2002 kan du använda ett verktyg fö
 
 1. På den frånkopplade WSUS-servern på den översta nivån importerar du metadata för uppdateringen från den **export.xml. gz** som du genererade på den Internet anslutna WSUS-servern.
    
-    Till exempel:  
+    Exempel:  
 
     **WsusUtil.exe importera export.xml. gz import. log**
     
@@ -101,7 +101,7 @@ Från och med Configuration Manager version 2002 kan du använda ett verktyg fö
    1. Ändra `"D:\Office365updates\content"` till den fullständiga sökvägen till den kopierade katalogen som innehåller Microsoft 365 Apps innehåll och metadata som genererats av OfflineUpdateExporter.
       > [!IMPORTANT]
       > Endast lokala sökvägar fungerar för egenskapen O365OflBaseUrlConfigured.
-   1. Spara skriptet som`O365OflBaseUrlConfigured.ps1`
+   1. Spara skriptet som `O365OflBaseUrlConfigured.ps1`
    1. Kör på en upphöjd PowerShell-period på den frånkopplade Configuration Manager plats servern på den översta nivån `.\O365OflBaseUrlConfigured.ps1` .
    1. Starta om **SMS_EXECUTIVE** -tjänsten på plats servern.
 1. I **Configuration Manager** -konsolen navigerar du till **Administration**  >  **plats konfiguration**  >  **platser**.
@@ -110,14 +110,14 @@ Från och med Configuration Manager version 2002 kan du använda ett verktyg fö
 1. [Synkronisera program uppdateringar](synchronize-software-updates.md#manually-start-software-updates-synchronization) för Configuration Manager
 1. När synkroniseringen är klar använder du din normala process för att distribuera uppdateringar för Microsoft 365 appar.
 
-## <a name="proxy-configuration"></a><a name="bkmk_O365_ki"></a>Proxykonfiguration
+## <a name="proxy-configuration"></a><a name="bkmk_O365_ki"></a> Proxykonfiguration
 
 - Proxykonfigurationen är inte inbyggt i verktyget. Om proxy anges i Internet alternativen på den server där verktyget körs, så kommer det i teorin att användas och ska fungera korrekt.
    - Från en kommando tolk kör `netsh winhttp show proxy` du för att se den konfigurerade proxyn.
 
 
 
-## <a name="modify-o365oflbaseurlconfigured-property"></a><a name="bkmk_o365_script"></a>Ändra egenskapen O365OflBaseUrlConfigured
+## <a name="modify-o365oflbaseurlconfigured-property"></a><a name="bkmk_o365_script"></a> Ändra egenskapen O365OflBaseUrlConfigured
 
 ```powershell
 # Name: O365OflBaseUrlConfigured.ps1

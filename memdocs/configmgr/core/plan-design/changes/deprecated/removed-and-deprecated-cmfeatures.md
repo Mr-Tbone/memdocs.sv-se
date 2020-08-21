@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5ee84a41a5c47ce554e4618b897c8e4933bdbe73
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 29b5dd8fdceb803de77aff9adbd0614d1e201b18
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129060"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694268"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Borttagna och föråldrade funktioner för Configuration Manager
 
@@ -34,7 +34,7 @@ Följande funktioner är föråldrade. Du kan fortfarande använda dem nu, men M
 |Implementeringen av delning av innehåll från Azure har ändrats. Använd en Content-aktiverad Cloud Management Gateway. Du kommer inte att kunna skapa en traditionell moln distributions plats i framtiden.|Februari 2019|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 |Klassisk tjänst distribution till Azure för Cloud Management Gateway och en moln distributions plats. Mer information finns i [plan for CMG](../../../clients/manage/cmg/plan-cloud-management-gateway.md#azure-resource-manager).|November 2018|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 
-### <a name="note-1-support-removed-tbd"></a><a name="bkmk_note1"></a>Anmärkning 1: stöd borttagen TBD
+### <a name="note-1-support-removed-tbd"></a><a name="bkmk_note1"></a> Anmärkning 1: stöd borttagen TBD
 
 Den angivna tids ramen måste bestämmas (TBD). Microsoft rekommenderar att du ändrar till den nya processen eller funktionen, men du kan fortsätta att använda den inaktuella processen eller funktionen för nära framtid.
 
@@ -68,7 +68,7 @@ Följande funktioner stöds inte längre. I vissa fall är de inte längre i pro
 
 Följande avsnitt innehåller ytterligare information om funktioner som har tagits bort med version 1511:
 
-#### <a name="out-of-band-management"></a><a name="bkmk_amt"></a>Out-of-band-hantering  
+#### <a name="out-of-band-management"></a><a name="bkmk_amt"></a> Out-of-band-hantering  
 
 Med Configuration Manager har det inbyggda stödet för AMT-baserade datorer inifrån Configuration Manager-konsolen tagits bort.  
 
@@ -76,11 +76,11 @@ Med Configuration Manager har det inbyggda stödet för AMT-baserade datorer ini
 
 - Out-of-band-hantering i System Center 2012 Configuration Manager påverkas inte av den här ändringen.  
 
-#### <a name="network-access-protection"></a><a name="bkmk_nap"></a>Network Access Protection
+#### <a name="network-access-protection"></a><a name="bkmk_nap"></a> Network Access Protection
 
 Configuration Manager har tagit bort stöd för Network Access Protection. Funktionen är föråldrad i Windows Server 2012 R2 och har tagits bort från Windows 10.  
 
-För alternativ till nätverksåtkomstskydd, se avsnittet *Föråldrade funktioner* i [Översikt över nätverkspolicy och åtkomsttjänster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831683(v=ws.11)).
+För alternativ till nätverksåtkomstskydd, se avsnittet *Föråldrade funktioner* i [Översikt över nätverkspolicy och åtkomsttjänster](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831683(v=ws.11)).
 
 ## <a name="see-also"></a>Se även
 

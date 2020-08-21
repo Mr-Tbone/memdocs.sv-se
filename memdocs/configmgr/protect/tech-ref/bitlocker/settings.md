@@ -10,12 +10,12 @@ ms.assetid: f7ade768-2b2b-4aab-8ee1-73624d03a9c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cb95a05fd3d347b70dd5d53ce972bce0c23c18cc
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: be9db7d0ee68f22073a3537e53fc93bf8faff9e0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127891"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693530"
 ---
 # <a name="bitlocker-settings-reference"></a>Referens för BitLocker-inställningar
 
@@ -119,7 +119,7 @@ Om du aktiverar den här inställningen måste användaren skydda operativ syste
 > [!NOTE]
 > Om enheten redan är krypterad och du inaktiverar den här inställningen dekrypterar BitLocker enheten.  
 
-Om du har enheter utan en [Trusted Platform Module (TPM)](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-top-node)använder du alternativet för att **tillåta BitLocker utan en kompatibel TPM (kräver ett lösen ord)**. Med den här inställningen kan BitLocker kryptera operativ system enheten, även om enheten inte har någon TPM. Om du tillåter det här alternativet, så begär Windows användaren att ange ett BitLocker-lösenord.
+Om du har enheter utan en [Trusted Platform Module (TPM)](/windows/security/information-protection/tpm/trusted-platform-module-top-node)använder du alternativet för att **tillåta BitLocker utan en kompatibel TPM (kräver ett lösen ord)**. Med den här inställningen kan BitLocker kryptera operativ system enheten, även om enheten inte har någon TPM. Om du tillåter det här alternativet, så begär Windows användaren att ange ett BitLocker-lösenord.
 
 På enheter med en kompatibel TPM kan två typer av autentiseringsmetoder användas vid start för att ge extra skydd för krypterade data. När datorn startas kan den endast använda TPM: en för autentisering, eller så kan du också kräva att en PIN-kod tas med på en personlig kod. Konfigurera följande inställningar:
 

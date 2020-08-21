@@ -1,5 +1,5 @@
 ---
-title: Samlings utvärdering
+title: Samlingsutvärdering
 titleSuffix: Configuration Manager
 description: Lär dig mer om processen för samlings utvärdering, typer och utlösare. Förstå diagrammet och hierarkin för samlings utvärdering.
 ms.date: 06/05/2020
@@ -10,12 +10,12 @@ ms.assetid: d17e1188-d277-438f-9236-db9cd213b421
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: af90154b848ddcd7cbff21917ef122ab10585098
-ms.sourcegitcommit: 1d8bf691780b94a945e94945115d4d1df4242808
+ms.openlocfilehash: 15b58b841ca87cf2b5e04c98dfd35c487c941e78
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663915"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693326"
 ---
 # <a name="collection-evaluation-in-configuration-manager"></a>Samlings utvärdering i Configuration Manager
 
@@ -27,7 +27,7 @@ Det är viktigt att förstå beteendet för samlings utvärdering så att du kan
 
 ## <a name="evaluation-process"></a>Utvärderings process
 
-[Colleval. log](https://docs.microsoft.com/mem/configmgr/core/plan-design/hierarchy/log-files#BKMK_ServerLogs) -posterna när samlings utvärderaren skapar, ändrar och tar bort samlingar.
+[Colleval. log](../../../plan-design/hierarchy/log-files.md#BKMK_ServerLogs) -posterna när samlings utvärderaren skapar, ändrar och tar bort samlingar.
 
 Varje enskild samlings utvärdering och uppdatering följer dessa steg på hög nivå:
 
@@ -59,7 +59,7 @@ De här typerna av trådar hanterar samlings utvärdering, beroende på utvärde
 
 I följande tabell beskrivs utlösare för samlings utvärdering och deras motsvarande utvärderings typer. 
 
-| Utlösare | Utvärderings typ | Description |
+| Utlösare | Utvärderings typ | Beskrivning |
 |---------|-----------------|-------------|
 |Manuell|Enkel eller extra|Manuell är den högsta prioriterings utvärderingen. När en administratör begär en manuell samlings utvärdering tilldelar samlings utvärderaren nästa tillgängliga utvärderings tråd till utvärderingen.|
 |Schemalagd|Primär|Processen för schemalagd utvärdering är densamma som för manuell utvärdering, förutom att utvärderingen är tids driven i stället för händelse driven.|
@@ -105,5 +105,5 @@ I följande exempel gör installationen av DNS på den befintliga servern medlem
 ## <a name="next-steps"></a>Nästa steg
 - [Skapa samlingar](create-collections.md)
 - [Metodtips för samlingar](best-practices-for-collections.md)
-- [Visningsprogrammet för mängdutvärdering](https://docs.microsoft.com/mem/configmgr/core/support/ceviewer)
+- [Visningsprogrammet för mängdutvärdering](../../../support/ceviewer.md)
 - [ConfigMgrDogs Felsök ConfigMgr 2012](https://channel9.msdn.com/Events/TechEd/Australia/2014/DCI411) -sessionen i TechEd Australien

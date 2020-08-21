@@ -10,12 +10,12 @@ ms.assetid: bc7de742-9e5c-4a70-945c-df4153a61cc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 433896e55b7701009e2870af8b0015fb15c1eda3
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 7013ae10de753cbcb664771bd30dc51b259aa390
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88123944"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697559"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Så här använder du variabler för aktivitetssekvenser i Configuration Manager
 
@@ -29,7 +29,7 @@ ms.locfileid: "88123944"
 
 En referens för alla tillgängliga variabler för aktivitetssekvenser finns i [variabler](task-sequence-variables.md)för aktivitetssekvens.
 
-## <a name="types-of-variables"></a><a name="bkmk_types"></a>Typer av variabler
+## <a name="types-of-variables"></a><a name="bkmk_types"></a> Typer av variabler
 
 Det finns flera typer av variabler:  
 
@@ -39,7 +39,7 @@ Det finns flera typer av variabler:
 - [Skrivskyddad](#bkmk_read-only)  
 - [Lagringsmatriser](#bkmk_array)  
 
-### <a name="built-in-variables"></a><a name="bkmk_built-in"></a>Inbyggda variabler
+### <a name="built-in-variables"></a><a name="bkmk_built-in"></a> Inbyggda variabler
 
 Inbyggda variabler ger information om miljön där aktivitetssekvensen körs. Deras värden är tillgängliga i hela aktivitetssekvensen. Vanligt vis initierar modulen för aktivitetssekvenser de inbyggda variablerna innan du kör några steg.
 
@@ -47,7 +47,7 @@ Till exempel `_SMSTSLogPath` är en miljö variabel som anger den sökväg som C
 
 Aktivitetssekvensen utvärderar vissa variabler före varje steg. Visar till exempel `_SMSTSCurrentActionName` namnet på det aktuella steget.
 
-### <a name="action-variables"></a><a name="bkmk_action"></a>Action-variabler
+### <a name="action-variables"></a><a name="bkmk_action"></a> Action-variabler
 
 Variabler för aktivitetssekvenser anger konfigurations inställningar som används i ett enda steg i en aktivitetssekvens. Som standard initierar steget sina inställningar innan det körs. De här inställningarna är bara tillgängliga när det associerade steget körs. Aktivitetssekvensen lägger till variabeln åtgärds värde i miljön innan steget körs. Den tar sedan bort värdet från miljön när steget har körts.
 
@@ -60,7 +60,7 @@ Vissa steg i aktivitetssekvensen markerar vissa åtgärds variabler som *utdata*
 > [!Note]  
 > Inte alla steg i aktivitetssekvensen har åtgärds variabler. Även om det till exempel finns variabler som är associerade med åtgärden **Aktivera BitLocker** , finns det inga variabler som är kopplade till åtgärden **inaktivera BitLocker** .  
 
-### <a name="custom-variables"></a><a name="bkmk_custom"></a>Anpassade variabler
+### <a name="custom-variables"></a><a name="bkmk_custom"></a> Anpassade variabler
 
 Dessa variabler är de som Configuration Manager inte skapar. Initiera dina egna variabler för användning som villkor, i kommando rader eller i skript.
 
@@ -80,7 +80,7 @@ Följ dessa rikt linjer när du anger ett namn på en ny aktivitetssekvens:
 
 Det finns ingen angiven gräns för hur många variabler för aktivitetssekvens som du kan skapa. Men antalet variabler är begränsat av storleken på aktivitetssekvensmiljön. Den totala storleks gränsen för aktivitetssekvensen är 8 KB. Mer information finns i [minska storleken på en aktivitetssekvens](../deploy-use/manage-task-sequences-to-automate-tasks.md#bkmk_policysize).
 
-### <a name="read-only-variables"></a><a name="bkmk_read-only"></a>Skrivskyddade variabler
+### <a name="read-only-variables"></a><a name="bkmk_read-only"></a> Skrivskyddade variabler
 
 Du kan inte ändra värdet för vissa variabler, som är skrivskyddade. Vanligt vis börjar namnet med ett under streck ( `_` ). Aktivitetssekvensen använder dem för driften. Skrivskyddade variabler visas i aktivitetssekvensen.
 
@@ -89,7 +89,7 @@ Dessa variabler är användbara i skript eller kommando rader. Du kan till exemp
 > [!NOTE]  
 > Skrivskyddade variabler för aktivitetssekvens kan läsas av steg i en aktivitetssekvens, men de kan inte anges. Använd till exempel en skrivskyddad variabel som en del av kommando raden för steget **Kör kommando rad** . Du kan inte ange en skrivskyddad variabel med hjälp av **variabel steget Ange aktivitetssekvens** .  
 
-### <a name="array-variables"></a><a name="bkmk_array"></a>Mat ris variabler
+### <a name="array-variables"></a><a name="bkmk_array"></a> Mat ris variabler
 
 Aktivitetssekvensen lagrar vissa variabler som en matris. Varje element i matrisen representerar inställningarna för ett enskilt objekt. Använd de här variablerna när en enhet har fler än ett objekt att konfigurera. Följande steg i aktivitetssekvensen använder array-variabler:
 
@@ -97,7 +97,7 @@ Aktivitetssekvensen lagrar vissa variabler som en matris. Varje element i matris
 
 - [Formatera och partitionera disk](task-sequence-steps.md#BKMK_FormatandPartitionDisk)  
 
-## <a name="how-to-set-variables"></a><a name="bkmk_set"></a>Ange variabler
+## <a name="how-to-set-variables"></a><a name="bkmk_set"></a> Ange variabler
 
 För anpassade variabler eller variabler som inte är skrivskyddade finns det flera metoder för att initiera och ange värdet för variabeln:  
 
@@ -130,19 +130,19 @@ Om du ställer in samma variabel med olika metoder, använder modulen för aktiv
 
 - Variabla värden i aktivitetssekvensen kan vara Skift läges känsliga beroende på användningen av värdet. I de flesta fall är variabel värden för aktivitetssekvens inte Skift läges känsliga. En variabel som innehåller ett lösen ord är Skift läges känslig.  
 
-### <a name="set-task-sequence-variable"></a><a name="bkmk_set-ts-step"></a>Ange variabel för aktivitetssekvens
+### <a name="set-task-sequence-variable"></a><a name="bkmk_set-ts-step"></a> Ange variabel för aktivitetssekvens
 
 Använd det här steget i aktivitetssekvensen för att ange en enskild variabel till ett enda värde.
 
 Mer information finns i [ange variabel](task-sequence-steps.md#BKMK_SetTaskSequenceVariable)för aktivitetssekvens.
 
-### <a name="set-dynamic-variables"></a><a name="bkmk_set-dyn-step"></a>Ange dynamiska variabler
+### <a name="set-dynamic-variables"></a><a name="bkmk_set-dyn-step"></a> Ange dynamiska variabler
 
 Använd det här steget i aktivitetssekvensen för att ange en eller flera variabler för aktivitetssekvens. Du definierar regler i det här steget för att avgöra vilka variabler och värden som ska användas.
 
 Mer information finns i [Ange dynamiska variabler](task-sequence-steps.md#BKMK_SetDynamicVariables).
 
-### <a name="run-powershell-script"></a><a name="bkmk_run-ps"></a>Kör PowerShell-skript
+### <a name="run-powershell-script"></a><a name="bkmk_run-ps"></a> Kör PowerShell-skript
 
 <!-- 6315548 -->
 
@@ -167,13 +167,13 @@ Din miljö har användare i flera länder/regioner, så du vill ställa frågor 
     (Get-Culture).TwoLetterISOLanguageName
     ```
 
-    Mer information om cmdleten finns i [Get-Culture](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture). Mer information om ISO-Språknamnen med två bokstäver finns i [lista över iso 639-1-koder](https://wikipedia.org/wiki/List_of_ISO_639-1_codes).
+    Mer information om cmdleten finns i [Get-Culture](/powershell/module/microsoft.powershell.utility/get-culture). Mer information om ISO-Språknamnen med två bokstäver finns i [lista över iso 639-1-koder](https://wikipedia.org/wiki/List_of_ISO_639-1_codes).
 
 1. Ange som alternativ för att skriva **utdata till en aktivitetssekvens** `CurrentOSLanguage` .
 
     ![Skärm bild av exempel på kör PowerShell-skript steg](media/run-powershell-script-example-language.png)
 
-1. Skapa följande villkor i steget **Använd operativ system** för den engelska språk bilden:`Task Sequence Variable CurrentOSLanguage equals "en"`
+1. Skapa följande villkor i steget **Använd operativ system** för den engelska språk bilden: `Task Sequence Variable CurrentOSLanguage equals "en"`
 
     ![Skärm bild av ett exempel på villkor för att tillämpa OS-steg](media/condition-custom-task-sequence-variable.png)
 
@@ -184,7 +184,7 @@ Din miljö har användare i flera länder/regioner, så du vill ställa frågor 
 
 När steget **kör PowerShell-skript** körs på en enhet med den engelska språk versionen av Windows, returnerar kommandot värdet `en` . Sedan sparas värdet i den anpassade variabeln. När steget **Använd OS** -steget för den engelska språk avbildningen körs på samma enhet, utvärderas villkoret som sant. Om du har flera instanser av **Apply OS** -steget för olika språk, kör aktivitetssekvensen dynamiskt det steg som matchar OS-språket.
 
-### <a name="collection-and-device-variables"></a><a name="bkmk_set-coll-var"></a>Samlings-och enhets variabler
+### <a name="collection-and-device-variables"></a><a name="bkmk_set-coll-var"></a> Samlings-och enhets variabler
 
 Du kan definiera anpassade variabler för aktivitetssekvens för enheter och samlingar. Variabler som du definierar för en enhet kallas för variabler för aktivitetssekvens för enheter. Variabler som definieras för en samling kallas aktivitetssekvensvariabler per samling. Om det finns en konflikt prioriteras variabler per enhet framför variabler per samling. Detta innebär att aktivitetssekvenser som tilldelas en speciell enhet automatiskt har högre prioritet än variabler som har tilldelats den samling som innehåller enheten.  
 
@@ -228,23 +228,23 @@ Du kan hantera variabler per enhet på en primär plats eller på en central adm
 
 5. När du har lagt till alla variabler i samlings egenskaperna väljer du **OK**.  
 
-### <a name="tsenvironment-com-object"></a><a name="bkmk_set-com"></a>TSEnvironment COM-objekt
+### <a name="tsenvironment-com-object"></a><a name="bkmk_set-com"></a> TSEnvironment COM-objekt
 
 Använd **TSEnvironment** -objektet om du vill arbeta med variabler från ett skript.
 
 Mer information finns i [så här använder du variabler i en](../../develop/osd/how-to-use-task-sequence-variables-in-a-running-task-sequence.md) aktivitetssekvens som körs i Configuration Manager SDK.
 
-### <a name="prestart-command"></a><a name="bkmk_set-prestart"></a>För inläsnings kommando
+### <a name="prestart-command"></a><a name="bkmk_set-prestart"></a> För inläsnings kommando
 
 För inläsnings kommandot är ett skript eller en körbar fil som körs i Windows PE innan användaren väljer aktivitetssekvensen. För inläsnings kommandot kan fråga en variabel eller fråga användaren om information och sedan spara den i-miljön. Använd [TSEnvironment](#bkmk_set-com) com-objekt för att läsa och skriva variabler från för inläsnings kommandot.
 
 Mer information finns i [för inläsnings kommandon för media i aktivitetssekvensen](prestart-commands-for-task-sequence-media.md).
 
-### <a name="task-sequence-wizard"></a><a name="bkmk_set-tswiz"></a>Guiden aktivitetssekvens
+### <a name="task-sequence-wizard"></a><a name="bkmk_set-tswiz"></a> Guiden aktivitetssekvens
 
 Från och med version 1906, när du har valt en aktivitetssekvens i fönstret aktivitetssekvens, innehåller sidan för att redigera variabler för aktivitetssekvens en **redigerings** knapp. Du kan använda tillgängliga kortkommandon för att redigera variablerna. Den här ändringen hjälper i fall där musen inte är tillgänglig.<!-- 4668846 -->
 
-### <a name="task-sequence-media-wizard"></a><a name="bkmk_set-media"></a>Guiden media för aktivitetssekvens
+### <a name="task-sequence-media-wizard"></a><a name="bkmk_set-media"></a> Guiden media för aktivitetssekvens
 
 Ange variabler för aktivitetssekvenser som körs från media. När du använder medier för att distribuera operativ systemet lägger du till variablerna för aktivitetssekvens och anger deras värden när du skapar mediet. Variablerna och deras värden lagras på mediet.  
 
@@ -260,7 +260,7 @@ Använd medievariablerna som finns för variabler per samling eller per dator. O
 
 Mer information finns i [skapa media för aktivitetssekvens](../deploy-use/create-task-sequence-media.md).
 
-## <a name="how-to-access-variables"></a><a name="bkmk_access"></a>Så här använder du variabler
+## <a name="how-to-access-variables"></a><a name="bkmk_access"></a> Så här använder du variabler
 
 När du har angett variabeln och dess värde genom att använda någon av metoderna från föregående avsnitt, använder du den i dina aktivitetssekvenser. Du kan till exempel få åtkomst till standardvärden för inbyggda variabler i aktivitetssekvensen eller göra ett steg beroende av värdet för en variabel.  
 
@@ -271,7 +271,7 @@ Använd följande metoder för att få åtkomst till variabel värden i aktivite
 - [Anpassat skript](#bkmk_access-script)  
 - [Svarsfil för installations programmet för Windows](#bkmk_access-answer)  
   
-### <a name="use-in-a-step"></a><a name="bkmk_access-step"></a>Använd i ett steg
+### <a name="use-in-a-step"></a><a name="bkmk_access-step"></a> Använd i ett steg
 
 Ange ett variabel värde för en inställning i ett steg i en aktivitetssekvens. I redigeraren för aktivitetssekvens redigerar du steget och anger variabel namnet som fält värde. Omge variabelns namn i procent tecken ( `%` ).
 
@@ -279,7 +279,7 @@ Du kan till exempel använda variabel namnet som en del av **kommando rads** fä
 
 `cmd.exe /c %_SMSTSMachineName% > C:\File.txt`
 
-### <a name="step-condition"></a><a name="bkmk_access-condition"></a>Steg villkor
+### <a name="step-condition"></a><a name="bkmk_access-condition"></a> Steg villkor
 
 Använd inbyggda eller anpassade variabler för aktivitetssekvens som en del av ett villkor i ett steg eller en grupp. Aktivitetssekvensen utvärderar variabelvärdet innan det kör steget eller gruppen.
 
@@ -305,7 +305,7 @@ Se det här tillståndet i gruppen **avbilda filer och inställningar** i standa
 
 Mer information om villkor finns i [Redigeraren för aktivitetssekvens-villkor](task-sequence-editor.md#bkmk_conditions).
 
-### <a name="custom-script"></a><a name="bkmk_access-script"></a>Anpassat skript
+### <a name="custom-script"></a><a name="bkmk_access-script"></a> Anpassat skript
 
 Läs och skriv variabler genom att använda **Microsoft. SMS. TSEnvironment** com-objektet medan aktivitetssekvensen körs.
 
@@ -329,7 +329,7 @@ Write-Output "Hello world!" | Out-File -FilePath "$_SMSTSLogPath\mylog.log" -Enc
 $tsenv.Value("startTime") = (Get-Date -Format HH:mm:ss) + ".000+000"
 ```
 
-### <a name="windows-setup-answer-file"></a><a name="bkmk_access-answer"></a>Svarsfil för installations programmet för Windows
+### <a name="windows-setup-answer-file"></a><a name="bkmk_access-answer"></a> Svarsfil för installations programmet för Windows
 
 Svars filen för Windows-installationen som du anger kan ha inbäddade variabler för aktivitetssekvens. Använd formuläret `%varname%` där *varname* är namnet på variabeln. Steget **Installera Windows och ConfigMgr** ersätter variabel namn strängen för det faktiska variabel värdet. Dessa inbäddade variabler i aktivitetssekvensen kan inte användas i numeriska fält i en unattend.xml svarsfil.
 

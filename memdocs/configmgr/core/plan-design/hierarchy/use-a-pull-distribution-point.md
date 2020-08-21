@@ -10,12 +10,12 @@ ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c243897a4c52eff04263325b998c4b23d6b3dde4
-ms.sourcegitcommit: ad4b3e4874a797b755e774ff84429b5623f17c5c
+ms.openlocfilehash: 5f0993f6120735f8a614801f9ac14c29870ffefe
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166595"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692595"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Använd en mottagar distributions plats med Configuration Manager
 
@@ -134,7 +134,7 @@ När du konfigurerar mottagar distributions platsen anger du en eller flera käl
 
 - För att hantera överföringen av innehåll använder mottagar distributions platser **CCMFramework** -komponenten. Den Configuration Manager klienten innehåller den här komponenten.  
 
-- När du aktiverar mottagar distributions platsen installerar platsen **pulldp. msi**. Den här installations programmet lägger också till CCMFramework-komponenten. Ramverket kräver inte Configuration Manager-klienten.  
+- När du aktiverar mottagar distributions platsen installerar platsen **pulldp.msi**. Den här installations programmet lägger också till CCMFramework-komponenten. Ramverket kräver inte Configuration Manager-klienten.  
 
 - När mottagar distributions platsen har installerats använder den främst tjänsten **ccmexec** för att fungera.  
 
@@ -148,10 +148,10 @@ När du konfigurerar mottagar distributions platsen anger du en eller flera käl
 > [!TIP]
 > Om du ser HTTP 403-fel i loggfilerna när du har lagt till en mottagar distributions plats, gör du följande ändring:
 >
-> 1. Ange följande register värde på käll distributions platsen:`HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL, ClientAuthTrustMode = 2 (REG_DWORD)`
+> 1. Ange följande register värde på käll distributions platsen: `HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL, ClientAuthTrustMode = 2 (REG_DWORD)`
 > 1. Starta om käll distributions plats servern.
 >
-> Sedan ska mottagar distributions platsen börja hämta innehåll från källan. Mer information om den här register nyckeln finns i [Översikt över TLS-SSL (Schannel SSP)](https://docs.microsoft.com/windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview).<!-- SCCMDocs#1973 -->
+> Sedan ska mottagar distributions platsen börja hämta innehåll från källan. Mer information om den här register nyckeln finns i [Översikt över TLS-SSL (Schannel SSP)](/windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview).<!-- SCCMDocs#1973 -->
 
 ## <a name="see-also"></a>Se även  
 

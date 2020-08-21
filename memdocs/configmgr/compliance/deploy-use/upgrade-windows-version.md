@@ -10,12 +10,12 @@ ms.assetid: b0c9db74-841e-46eb-8924-957cde968bf7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7a82a635eafcc0ecb5251457db9d4fbb301fce33
-ms.sourcegitcommit: 1edcfb3ce4350ba1a6f36a6150e86301d35c631b
+ms.openlocfilehash: 920f3c9aabcdec1242a6f5e5fc8e6b65c5cc0b53
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390848"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694618"
 ---
 # <a name="upgrade-windows-devices-to-a-new-edition-with-configuration-manager"></a>Uppgradera Windows-enheter till en ny utgåva med Configuration Manager
 
@@ -35,7 +35,7 @@ Enheterna måste köra Configuration Manager-klient program varan. Enheter som h
 
 Innan du börjar uppgradera enheter till den senaste versionen bör du gå igenom följande krav:  
 
-- För Station ära versioner av Windows 10: en giltig produkt nyckel för den nya versionen av Windows på alla enheter som du riktar principen mot. Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server. <!--496871-->  
+- För Station ära versioner av Windows 10: en giltig produkt nyckel för den nya versionen av Windows på alla enheter som du riktar principen mot. Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server. <!--496871-->  
 
 - För Windows 10 Mobile: en XML-licensserver från Microsoft Volume Licensing Service Center (VLSC). Den här filen innehåller licens information för den nya versionen av Windows på alla enheter som du riktar principen mot. Hämta ISO-filen för **Windows 10 Mobile Enterprise**, som innehåller XML för licensiering.<!-- SCCMDocs#2033 -->
 
@@ -43,7 +43,7 @@ Innan du börjar uppgradera enheter till den senaste versionen bör du gå igeno
 
 ## <a name="configure-the-policy"></a>Konfigurera principen  
 
-1. I Configuration Manager-konsolen går du till arbets ytan **till gångar och efterlevnad** , **expanderar kompatibilitetsinställningar och**väljer noden **Windows 10-uppgradering** .  
+1. I Configuration Manager-konsolen går du till arbets ytan **till gångar och efterlevnad** , **expanderar kompatibilitetsinställningar och**väljer noden  **Windows 10-uppgradering** .  
 
 2. Välj **skapa uppgraderings princip för utgåva**i gruppen **skapa** på fliken **Start** i menyfliksområdet.  
 
@@ -70,7 +70,7 @@ Innan du börjar uppgradera enheter till den senaste versionen bör du gå igeno
 
 ## <a name="deploy-the-policy"></a>Distribuera principen  
 
-1. I Configuration Manager-konsolen går du till arbets ytan **till gångar och efterlevnad** , **expanderar kompatibilitetsinställningar och**väljer noden **Windows 10-uppgradering** .  
+1. I Configuration Manager-konsolen går du till arbets ytan **till gångar och efterlevnad** , **expanderar kompatibilitetsinställningar och**väljer noden  **Windows 10-uppgradering** .  
 
 2. Välj den uppgraderings princip för Windows 10-versionen som du vill distribuera. På fliken **Start** i menyfliksområdet väljer du **distribuera**i gruppen **distribution** .  
 
@@ -89,16 +89,16 @@ Innan du börjar uppgradera enheter till den senaste versionen bör du gå igeno
 
 Dessa fel innebär inte att distributionen misslyckades. Verifiera att uppgraderingen har slutförts på den mål enheten.
 
-När klienten utvärderar mål principen tillämpas uppgraderingen inom två timmar. [Vissa versioner av Windows](https://docs.microsoft.com/windows/deployment/upgrade/windows-10-edition-upgrades) kan kräva en omstart vid detta tillfälle. Se till att du meddelar alla användare som du distribuerar principen till eller schemalägger att principen ska köras utanför användarnas arbets tid.
+När klienten utvärderar mål principen tillämpas uppgraderingen inom två timmar. [Vissa versioner av Windows](/windows/deployment/upgrade/windows-10-edition-upgrades) kan kräva en omstart vid detta tillfälle. Se till att du meddelar alla användare som du distribuerar principen till eller schemalägger att principen ska köras utanför användarnas arbets tid.
 
-Om följande fel visas i **DcmWmiProvider. log** på klienten kontrollerar du att du använder rätt nyckel för ditt aktiverings scenario. Mer information finns i avsnittet [innan du börjar](#before-you-start) . Om du använder en nyckel hanterings tjänst (KMS) för aktivering ska du se till att använda en [konfigurations nyckel för KMS-klienten](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys).  <!-- 496871 -->
+Om följande fel visas i **DcmWmiProvider. log** på klienten kontrollerar du att du använder rätt nyckel för ditt aktiverings scenario. Mer information finns i avsnittet [innan du börjar](#before-you-start) . Om du använder en nyckel hanterings tjänst (KMS) för aktivering ska du se till att använda en [konfigurations nyckel för KMS-klienten](/windows-server/get-started/kmsclientkeys).  <!-- 496871 -->
 
 `Failed to execute CheckApplicabilityMethod with error = 0x80041001 OsEditionUpgradeProvider`
 
 ## <a name="see-also"></a>Se även
 
-- [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)
+- [Planera för volym aktivering](/windows/deployment/volume-activation/plan-for-volume-activation-client)
 
-- [Windows 10-utgåveuppgradering](https://docs.microsoft.com/windows/deployment/upgrade/windows-10-edition-upgrades)
+- [Windows 10-utgåveuppgradering](/windows/deployment/upgrade/windows-10-edition-upgrades)
 
-- [Uppgradera Windows 10-utgåvor eller växla från S-läge på enheter med Microsoft Intune](https://docs.microsoft.com/intune/edition-upgrade-configure-windows-10)
+- [Uppgradera Windows 10-utgåvor eller växla från S-läge på enheter med Microsoft Intune](/intune/edition-upgrade-configure-windows-10)

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3871b51c85d0474c4bea2da24fc5a2f31d02f59f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c37fab775cdb90667ff1bc9f77dbbcaa1864b6f0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81719738"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696794"
 ---
 # <a name="uup-private-preview-instructions"></a>UUP privata för hands versions instruktioner
 
@@ -62,7 +62,7 @@ $config.ServerId
 $config.MUUrl
 ```
 
-Egenskapen **MUUrl** ska vara `https://sws.update.microsoft.com`. Information om hur du ändrar det finns i lösningen i följande Support artikel: [WSUS-synkroniseringen Miss lyckas med SoapException](https://support.microsoft.com/help/4482416/wsus-synchronization-fails-with-soapexception).
+Egenskapen **MUUrl** ska vara `https://sws.update.microsoft.com` . Information om hur du ändrar det finns i lösningen i följande Support artikel: [WSUS-synkroniseringen Miss lyckas med SoapException](https://support.microsoft.com/help/4482416/wsus-synchronization-fails-with-soapexception).
 
 ### <a name="2-update-configuration-manager"></a>2. uppdatera Configuration Manager
 
@@ -155,15 +155,15 @@ När du har synkroniserat UUP-uppdateringar i din miljö kan du söka efter dem 
 
 - Eftersom de här för hands versions uppdateringarna finns i en separat produkt använder du produkten för att filtrera för att hitta uppdateringarna. Använd service planens produkt filter för att distribuera antingen UUP eller icke-UUP funktions uppdateringar.  
 
-- I noden **alla uppdateringar av program uppdateringar** och **alla Windows 10-uppdateringar** i **program varu biblioteket**finns det en ny valfri kolumn- **tagg**. Den här egenskapen är även tillgänglig som ett filter i automatisk distribution. Sök i det här fältet för `UUP`UUP-uppdateringar. Det är tomt för icke-UUP uppdateringar.  
+- I noden **alla uppdateringar av program uppdateringar** och **alla Windows 10-uppdateringar** i **program varu biblioteket**finns det en ny valfri kolumn- **tagg**. Den här egenskapen är även tillgänglig som ett filter i automatisk distribution. Sök i det här fältet för UUP-uppdateringar `UUP` . Det är tomt för icke-UUP uppdateringar.  
 
 ### <a name="updates-available-during-preview"></a>Uppdateringar som är tillgängliga under för hands versionen
 
-Mer information om alla Windows 10-uppdateringar som publicerats av Microsoft finns i [Windows 10 versions information](https://docs.microsoft.com/windows/release-information/).
+Mer information om alla Windows 10-uppdateringar som publicerats av Microsoft finns i [Windows 10 versions information](/windows/release-information/).
 
 #### <a name="cumulative-updates-to-test"></a>Kumulativa uppdateringar som ska testas
 
-Även om du kan se flera UUP-märkta uppdateringar som är tillgängliga, börjar du med uppdateringen **September 2019** (2019-09) eller en senare version. Ett exempel:
+Även om du kan se flera UUP-märkta uppdateringar som är tillgängliga, börjar du med uppdateringen **September 2019** (2019-09) eller en senare version. Exempel:
 
 - 2019-09 kumulativ uppdatering för Windows 10 version 1809 för x64-baserade system (KB4512578)
 - 2019-09 kumulativ uppdatering för Windows 10 version 1803 för x64-baserade system (KB4516058)
@@ -171,7 +171,7 @@ Mer information om alla Windows 10-uppdateringar som publicerats av Microsoft fi
 
 #### <a name="feature-updates-to-test"></a>Funktions uppdateringar som ska testas
 
-Även om du kan se flera UUP-märkta uppdateringar som är tillgängliga, börjar du med uppdateringen **September 2019** (2019-vara 09B) eller en senare version. Ett exempel:
+Även om du kan se flera UUP-märkta uppdateringar som är tillgängliga, börjar du med uppdateringen **September 2019** (2019-vara 09B) eller en senare version. Exempel:
 
 - Funktions uppdatering för Windows 10, version 1809 x64 2019-vara 09B
 - Funktions uppdatering för Windows 10, version 1803 x64 2019-vara 09B

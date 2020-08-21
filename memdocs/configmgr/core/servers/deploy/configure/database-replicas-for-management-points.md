@@ -10,12 +10,12 @@ ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3daf23f17719e111dacd45e6176c5f697a3d3224
-ms.sourcegitcommit: 4c129bb04ea4916c78446e89fbff956397cbe828
+ms.openlocfilehash: e647672b02c0122709b3c80fc012ed1fb82b1519
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83343124"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696437"
 ---
 # <a name="database-replicas-for-management-points-for-configuration-manager"></a>Databas repliker för hanterings platser för Configuration Manager
 
@@ -28,7 +28,7 @@ Configuration Manager primära platser kan använda en databas replik för att m
 -   Det kan minska kraven på processorbelastningen på platsdatabasservern genom att avlasta ofta förekommande bearbetningsuppgifter som är relaterade till klienterna.  Ett exempel på ofta förekommande bearbetningsuppgifter för klienter är platser där det finns ett stort antal klienter som ofta begär klientprincipen  
 
 
-##  <a name="prepare-to-use-database-replicas"></a><a name="bkmk_Prepare"></a>Förbereda användningen av databas repliker  
+##  <a name="prepare-to-use-database-replicas"></a><a name="bkmk_Prepare"></a> Förbereda användningen av databas repliker  
 **Om databasrepliker för hanteringsplatser:**  
 
 -   Repliker är till viss del en kopia av platsdatabasen som replikeras till en separat instans av SQL Server:  
@@ -57,7 +57,7 @@ Configuration Manager primära platser kan använda en databas replik för att m
 
     -   Platsdatabasen måste **publicera** databasrepliken och varje fjärransluten databasreplikserver måste **prenumerera** på publicerade data.  
 
-    -   Både SQL Server som är värd för platsdatabasen och databasreplikservern måste konfigureras så att de stöder 2 GB som **Max Text Repl Size** . Ett exempel på hur du konfigurerar detta för SQL Server 2012 finns i [Configure the max text repl size Server Configuration Option ](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option?view=sql-server-ver15).  
+    -   Både SQL Server som är värd för platsdatabasen och databasreplikservern måste konfigureras så att de stöder 2 GB som **Max Text Repl Size** . Ett exempel på hur du konfigurerar detta för SQL Server 2012 finns i [Configure the max text repl size Server Configuration Option ](/sql/database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option?view=sql-server-ver15).  
 
 -   **Självsignerat certifikat:** Om du vill konfigurera en databas replik måste du skapa ett självsignerat certifikat på databas replik servern och göra det tillgängligt för varje hanterings plats som ska använda databas replik servern.  
 
@@ -85,7 +85,7 @@ Configuration Manager primära platser kan använda en databas replik för att m
 
 - Användar distributioner i Software Center fungerar inte mot en hanterings plats med hjälp av en SQL-replik. <!--sccmdocs-1011-->
 
-##  <a name="configure-database-replicas"></a><a name="BKMK_DBReplica_Config"></a>Konfigurera databas repliker  
+##  <a name="configure-database-replicas"></a><a name="BKMK_DBReplica_Config"></a> Konfigurera databas repliker  
 Om du vill konfigurera en databasreplik följer du stegen nedan:  
 
 -   [Steg 1 – Konfigurera platsdatabasservern för publicering av databasrepliken](#BKMK_DBReplica_ConfigSiteDB)  
@@ -98,7 +98,7 @@ Om du vill konfigurera en databasreplik följer du stegen nedan:
 
 -   [Steg 5 – Konfigurera SQL Server Service Broker för databasreplikservern](#BKMK_DBreplica_SSB)  
 
-###  <a name="step-1---configure-the-site-database-server-to-publish-the-database-replica"></a><a name="BKMK_DBReplica_ConfigSiteDB"></a>Steg 1 – Konfigurera plats databas servern för publicering av databas repliken  
+###  <a name="step-1---configure-the-site-database-server-to-publish-the-database-replica"></a><a name="BKMK_DBReplica_ConfigSiteDB"></a> Steg 1 – Konfigurera plats databas servern för publicering av databas repliken  
  Använd proceduren nedan som exempel på hur du konfigurerar platsdatabasservern på en dator med Windows Server 2008 R2 så att den publicerar databasrepliken. Läs dokumentationen om operativsystemet och anpassa stegen i den här proceduren efter behov om du har en annan operativsystemsversion.  
 
 ##### <a name="to-configure-the-site-database-server"></a>Konfigurera platsdatabasservern  
@@ -158,7 +158,7 @@ Använd proceduren nedan som exempel på hur du konfigurerar en databasreplikser
 
       -   Välj **New database** om du vill skapa en ny databas för databasrepliken. Ange ett databasnamn på sidan **New Database** och klicka sedan på **OK**.  
 
-   5. Fortsätt genom att klicka på **Next** .  
+   5. Klicka på **Nästa** för att fortsätta.  
 
    6. På sidan **distributions agent säkerhet** klickar du på knappen Egenskaper **(.** ..) i raden prenumerant anslutning i dialog rutan och konfigurerar sedan säkerhets inställningarna för anslutningen.  
 
@@ -174,7 +174,7 @@ Använd proceduren nedan som exempel på hur du konfigurerar en databasreplikser
         -   Om SQL Server Agent körs med ett annat konto väljer du **Run under the following Windows account**, och konfigurerar sedan kontot. Du kan ange ett Windows-konto eller ett SQL Server-konto.  
 
         > [!IMPORTANT]  
-        >  Du måste ge det konto som kör distributionsagenten behörigheter till utgivaren i form av en pull-prenumeration. Information om hur du konfigurerar dessa behörigheter finns i [säkerhet för distributions agent](https://docs.microsoft.com/sql/relational-databases/replication/distribution-agent-security?view=sql-server-ver15).  
+        >  Du måste ge det konto som kör distributionsagenten behörigheter till utgivaren i form av en pull-prenumeration. Information om hur du konfigurerar dessa behörigheter finns i [säkerhet för distributions agent](/sql/relational-databases/replication/distribution-agent-security?view=sql-server-ver15).  
 
       - Välj **By impersonating the process account**för **Connect to the Distributor**.  
 
@@ -211,7 +211,7 @@ Använd proceduren nedan som exempel på hur du konfigurerar en databasreplikser
 
    Databasrepliken är nu redo att användas av hanteringsplatsen.  
 
-###  <a name="step-3---configure-management-points-to-use-the-database-replica"></a><a name="BKMK_DBReplica_ConfigMP"></a>Steg 3 – Konfigurera hanterings platser för att använda databas repliken  
+###  <a name="step-3---configure-management-points-to-use-the-database-replica"></a><a name="BKMK_DBReplica_ConfigMP"></a> Steg 3 – Konfigurera hanterings platser för att använda databas repliken  
  Du kan konfigurera en hanteringsplats på en primär plats att använda en databasreplik när du installerar hanteringsplatsrollen, eller så kan du konfigurera om en befintlig hanteringsplats så att den använder en databasreplik.  
 
  Använd följande information för att konfigurera en hanteringsplats att använda en databasreplik:  
@@ -230,7 +230,7 @@ Utöver att konfigurera hanteringsplatsen så att den använder databasreplikser
 
 3.  Ange **Windows-autentisering** som **aktive rad**och stäng sedan **Internet Information Services (IIS) Manager**.  
 
-###  <a name="step-4--configure-a-self-signed-certificate-for-the-database-replica-server"></a><a name="BKMK_DBReplica_Cert"></a>Steg 4 – Konfigurera ett självsignerat certifikat för databas replik servern  
+###  <a name="step-4--configure-a-self-signed-certificate-for-the-database-replica-server"></a><a name="BKMK_DBReplica_Cert"></a> Steg 4 – Konfigurera ett självsignerat certifikat för databas replik servern  
  Du måste skapa ett självsignerat certifikat på databas replik servern och göra det tillgängligt för varje hanterings plats som ska använda databas replik servern.  
 
  Certifikatet är automatiskt tillgängligt för en hanteringsplats som är installerad på databasreplikservern. Men om detta certifikat ska vara tillgängligt för fjärrhanteringsplatser, måste du exportera det och sedan lägga till det i certifikatarkivet Betrodda personer på fjärrhanteringsplatsen.  
@@ -373,9 +373,9 @@ Utöver att konfigurera hanteringsplatsen så att den använder databasreplikser
 
 3.  Kör följande kommando på databasreplikservern. Det gäller konfigurationen av SQL Server:  
 
-    -   För en standard instans av SQL Server: Högerklicka på filen **CreateMPReplicaCert. ps1** och välj **Kör med PowerShell**. När skriptet körs skapar det ett självsignerat certifikat och konfigurerar SQL Server att använda certifikatet.  
+    -   För en standard instans av SQL Server: Högerklicka på filen **CreateMPReplicaCert.ps1** och välj **Kör med PowerShell**. När skriptet körs skapar det ett självsignerat certifikat och konfigurerar SQL Server att använda certifikatet.  
 
-    -   För en namngiven instans av SQL Server: Använd PowerShell för att köra kommandot **%Path%\CreateMPReplicaCert.ps1 xxxxxx** där **xxxxxx** är namnet på SQL Server-instansen.  
+    -   För en namngiven instans av SQL Server: Använd PowerShell för att köra kommandot **% Path% \CreateMPReplicaCert.ps1 xxxxxx** där **xxxxxx** är namnet på SQL Server-instansen.  
 
     -   När skriptet är klart kontrollerar du att SQL Server Agent körs. Om inte, startar du om SQL Server Agent.  
 
@@ -383,7 +383,7 @@ Utöver att konfigurera hanteringsplatsen så att den använder databasreplikser
 
 1.  Utför följande steg på databas replik servern för att exportera serverns självsignerade certifikat:  
 
-    1.  Klicka på **Start**, klicka på **Kör**och skriv **MMC. exe**. Klicka på **Arkiv**i den tomma konsolen och klicka sedan på **Lägg till/ta bort snapin-moduler**.  
+    1.  Klicka på **Start**, klicka på **kör**och skriv **mmc.exe**. Klicka på **Arkiv**i den tomma konsolen och klicka sedan på **Lägg till/ta bort snapin-moduler**.  
 
     2.  I dialogrutan **Lägg till/ta bort snapin-modul** väljer du **Certifikat** i listan över **Tillgängliga snapin-moduler**och klickar sedan på **Lägg till**.  
 
@@ -411,7 +411,7 @@ Utöver att konfigurera hanteringsplatsen så att den använder databasreplikser
 
     5.  Klicka på **Slutför** för att stänga guiden och slutföra certifikatkonfigureringen på hanteringsplatsen.  
 
-###  <a name="step-5---configure-the-sql-server-service-broker-for-the-database-replica-server"></a><a name="BKMK_DBreplica_SSB"></a>Steg 5 – Konfigurera SQL Server Service Broker för databas replik servern  
+###  <a name="step-5---configure-the-sql-server-service-broker-for-the-database-replica-server"></a><a name="BKMK_DBreplica_SSB"></a> Steg 5 – Konfigurera SQL Server Service Broker för databas replik servern  
 Om du vill använda klientmeddelanden med en databasreplik för en hanteringsplats, måste du konfigurera SQL Server Service Broker för kommunikationen mellan platsdatabasservern och databasreplikservern. Det innebär att du konfigurerar varje databas med information om den andra databasen, och att certifikaten utväxlas mellan de två databaserna, så att kommunikationen skyddas.  
 
 > [!NOTE]  
@@ -451,15 +451,15 @@ Om du vill använda klientmeddelanden med en databasreplik för en hanteringspla
 
    Några minuter efter att du har slutfört konfigureringen av platsdatabasen och databasreplikdatabasen, konfigureras Service Broker-konversation för klientmeddelanden från den primära platsdatabasen till databasrepliken.  
 
-###  <a name="supplemental-script-for-additional-database-replicas-on-a-single-sql-server"></a><a name="bkmk_supscript"></a>Kompletterande skript för ytterligare databas repliker på en enda SQL Server  
+###  <a name="supplemental-script-for-additional-database-replicas-on-a-single-sql-server"></a><a name="bkmk_supscript"></a> Kompletterande skript för ytterligare databas repliker på en enda SQL Server  
  När du använder skriptet från steg 4 för att konfigurera ett självsignerat certifikat för databas replik servern på en SQL Server som redan har en databas replik som du planerar att använda, måste du använda en modifierad version av det ursprungliga skriptet. Följande ändringar förhindrar att skriptet tar bort ett befintligt certifikat på servern och skapar efterföljande certifikat med unika egna namn.  Redigera det ursprungliga skriptet på följande sätt:  
 
--   Kommentera ut (förhindra att den körs) varje rad mellan skript posterna **# ta bort befintligt certifikat om det finns ett sådant** och **# skapa det nya certifikatet**. Det gör du genom att lägga till ett **#** som första bokstaven för varje tillämplig rad.  
+-   Kommentera ut (förhindra att den körs) varje rad mellan skript posterna **# ta bort befintligt certifikat om det finns ett sådant** och **# skapa det nya certifikatet**. Det gör du genom att lägga till ett  **#**  som första bokstaven för varje tillämplig rad.  
 
--   För varje efterföljande databasreplik använder du det här skriptet för att konfigurera och uppdatera det egna namnet för certifikatet.  Det gör du genom att redigera rad **$Enrollment. CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** och Ersätt **configmgr-SQL Server identifierings certifikat** med ett nytt namn, t. ex. **ConfigMgr SQL Server Identification Certificate1**.  
+-   För varje efterföljande databasreplik använder du det här skriptet för att konfigurera och uppdatera det egna namnet för certifikatet.  Det gör du genom att redigera rad **$Enrollment. CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** och Ersätt **configmgr-SQL Server identifierings certifikat** med ett nytt namn, t. ex.  **ConfigMgr SQL Server Identification Certificate1**.  
 
-##  <a name="manage-database-replica-configurations"></a><a name="BKMK_DBReplicaOps"></a>Hantera konfigurationer av databas repliker  
- När en databasreplik används på en plats kan du använda följande avsnitt om du behöver information om hur du avinstallerar en databasreplik, avinstallerar en plats där en databasreplik används eller flyttar en platsdatabas till en ny installation av SQL Server. Om du använder informationen i nedanstående avsnitt när du tar bort publiceringar, ska du följa instruktionerna för borttagning av transaktionsreplikering för databasreplikeringens SQL Server-version. Mer information finns i [ta bort en publikation](https://docs.microsoft.com/sql/relational-databases/replication/publish/delete-a-publication?view=sql-server-ver15).  
+##  <a name="manage-database-replica-configurations"></a><a name="BKMK_DBReplicaOps"></a> Hantera konfigurationer av databas repliker  
+ När en databasreplik används på en plats kan du använda följande avsnitt om du behöver information om hur du avinstallerar en databasreplik, avinstallerar en plats där en databasreplik används eller flyttar en platsdatabas till en ny installation av SQL Server. Om du använder informationen i nedanstående avsnitt när du tar bort publiceringar, ska du följa instruktionerna för borttagning av transaktionsreplikering för databasreplikeringens SQL Server-version. Mer information finns i [ta bort en publikation](/sql/relational-databases/replication/publish/delete-a-publication?view=sql-server-ver15).  
 
 > [!NOTE]  
 >  När du har återställt en platsdatabas som var konfigurerad för databasreplikeringar, måste du konfigurera om alla databasreplikeringar innan du kan använda dem. Du måste då återskapa både publiceringarna och prenumerationerna.  
@@ -507,4 +507,4 @@ Om du vill använda klientmeddelanden med en databasreplik för en hanteringspla
 
 4.  Återskapa publiceringen av databasreplikeringen på platsdatabasservern. Mer information finns i [Steg 1 – Konfigurera platsdatabasservern för publicering av databasrepliken](#BKMK_DBReplica_ConfigSiteDB) i det här avsnittet.  
 
-5.  Återskapa prenumerationerna för databasreplikeringen på varje databasreplikserver. Mer information finns i [Steg 2 – Konfigurera databasreplikservern](#BKMK_DBReplica_ConfigSrv) i det här avsnittet.  
+5.  Återskapa prenumerationerna för databasreplikeringen på varje databasreplikserver. Mer information finns i [Steg 2 – Konfigurera databasreplikservern](#BKMK_DBReplica_ConfigSrv) i det här avsnittet.

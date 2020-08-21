@@ -10,12 +10,12 @@ ms.assetid: 1ee6541a-e243-43ea-be16-d0349f7f0c6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e887d594e80c0f92340081d9b922bfc334d1b3a5
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 2c74f1ac74b120fac2dabcd5f84f288b41368324
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129196"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697304"
 ---
 # <a name="encrypt-recovery-data"></a>Kryptera återställningsdata
 
@@ -90,7 +90,7 @@ Använd det här SQL-certifikatet för Configuration Manager för att kryptera �
 
 - Distribuera samma certifikat vid varje plats databas i hierarkin.
 
-- Skapa certifikatet med den senaste versionen av SQL Server i din miljö. Till exempel:
+- Skapa certifikatet med den senaste versionen av SQL Server i din miljö. Exempel:
   - Certifikat som skapats med SQL Server 2016 eller senare är kompatibla med SQL Server 2014 eller tidigare.
   - Certifikat som skapats med SQL Server 2014 eller tidigare är inte kompatibla med SQL Server 2016 eller senare.
 
@@ -203,9 +203,9 @@ Om certifikatet är giltigt returnerar skriptet värdet `1` .
 
 Mer information om dessa SQL-kommandon finns i följande artiklar:
 
-- [SQL Server-och databas krypterings nycklar](https://docs.microsoft.com/sql/relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine)
-- [Skapa certifikat](https://docs.microsoft.com/sql/t-sql/statements/create-certificate-transact-sql)
-- [Säkerhetskopiera certifikat](https://docs.microsoft.com/sql/t-sql/statements/backup-certificate-transact-sql)
-- [Skapa huvud nyckel](https://docs.microsoft.com/sql/t-sql/statements/create-master-key-transact-sql)
-- [Säkerhets kopierings huvud nyckel](https://docs.microsoft.com/sql/t-sql/statements/backup-master-key-transact-sql)
-- [Bevilja certifikat behörigheter](https://docs.microsoft.com/sql/t-sql/statements/grant-certificate-permissions-transact-sql)
+- [SQL Server-och databas krypterings nycklar](/sql/relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine)
+- [Skapa certifikat](/sql/t-sql/statements/create-certificate-transact-sql)
+- [Säkerhetskopiera certifikat](/sql/t-sql/statements/backup-certificate-transact-sql)
+- [Skapa huvud nyckel](/sql/t-sql/statements/create-master-key-transact-sql)
+- [Säkerhets kopierings huvud nyckel](/sql/t-sql/statements/backup-master-key-transact-sql)
+- [Bevilja certifikat behörigheter](/sql/t-sql/statements/grant-certificate-permissions-transact-sql)

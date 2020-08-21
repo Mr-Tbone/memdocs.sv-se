@@ -10,12 +10,12 @@ ms.assetid: 6bc26e36-9914-4606-ae8d-f7b23218942f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 220ebb558a0e01f701cab621381ad951a8fd0738
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: aa7f95e18775862427254839a2aab2c229e31057
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88123909"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697338"
 ---
 # <a name="customize-the-self-service-portal"></a>Anpassa självbetjäningsportalen
 
@@ -48,7 +48,7 @@ Anpassa självbetjänings portalen med organisationens namn, supportavdelningen 
 
 De värden som du kan ange finns i följande tabell:
 
-|Name|Beskrivning|Standardvärde &nbsp;|
+|Namn|Beskrivning|Standardvärde &nbsp;|
 |--- |--- |--- |
 |CompanyName|Organisations namnet som självbetjänings portalen visar som rubrik överst på varje sida.|`Contoso IT`|
 |DisplayNotice|Visa ett inledande meddelande om att användaren måste bekräfta.|`true`|
@@ -80,7 +80,7 @@ Om du vill att användarens session ska upphöra att gälla efter en angiven per
 
 1. I fönstret **åtgärder** väljer du **tillämpa**.
 
-## <a name="localize-helpdesk-text-and-url"></a><a name="bkmk_localize"></a>Lokalisera supportavdelningen-text och webb adress
+## <a name="localize-helpdesk-text-and-url"></a><a name="bkmk_localize"></a> Lokalisera supportavdelningen-text och webb adress
 
 Du kan konfigurera lokaliserade versioner av självbetjänings portalens `HelpdeskText` instruktion och `HelpdeskUrl` länk. Den här strängen informerar användarna om hur de får ytterligare hjälp när de använder portalen. Om du konfigurerar lokaliserad text visar portalen den lokaliserade versionen för webbläsare på det språket. Om ingen lokaliserad version hittas visas standardvärdet i `HelpdeskText` `HelpdeskUrl` inställningarna och.
 
@@ -128,7 +128,7 @@ Självbetjänings portalen visar meddelande texten baserat på följande regler:
 
 1. Skapa en `<language>` mapp för varje språk som stöds i `Self Service Website` program Sök vägen. Till exempel `es-es` för spanska (Spanien). Den fullständiga sökvägen är som standard `C:\inetpub\Microsoft BitLocker Management Solution\Self Service Website\es-es` .
 
-    En lista över giltiga språk koder som du kan använda finns i [API-referens för National language support (NLS)](https://docs.microsoft.com/windows/win32/intl/locale-identifiers#predefined-locale-identifiers).
+    En lista över giltiga språk koder som du kan använda finns i [API-referens för National language support (NLS)](/windows/win32/intl/locale-identifiers#predefined-locale-identifiers).
 
     > [!TIP]
     > Namnet på språkmappen kan också vara det språk oberoende namnet. Till exempel **es** för spanska, i stället för **es-es** för spanska (Spanien) och **es-p.a.** för spanska (Argentina). Om användaren anger sina webbläsare till **es**och den språkmappen inte finns, kontrollerar webb servern rekursivt den överordnade mappen (**es**). (De överordnade språken definieras i .NET.) Till exempel `Self Service Website\es\Notice.txt` . Den här rekursiva återställningen imiterar reglerna för .NET-resurs inläsning.

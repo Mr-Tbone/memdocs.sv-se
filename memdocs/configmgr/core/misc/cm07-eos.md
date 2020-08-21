@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: dc954a3c2047d8f4b90a95003c2830fb727d35ac
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 1f57cc205ce0e705deaed2de3510699d65307e65
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81712990"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696522"
 ---
 # <a name="product-end-of-support"></a>Produkt slut för support
 
@@ -47,4 +47,4 @@ Mer information finns i följande artiklar:
 - [Dokumentation om hur du migrerar till Configuration Manager aktuella grenen](../migration/migrate-data-between-hierarchies.md)  
     Den här artikeln innehåller också en video som diskuterar och visar vanliga scenarier för migrering.
 
-[Dokumentations biblioteket för Configuration Manager 2007](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb735860\(v=technet.10\)) är fortfarande tillgängligt.
+[Dokumentations biblioteket för Configuration Manager 2007](/previous-versions/system-center/configuration-manager-2007/bb735860\(v=technet.10\)) är fortfarande tillgängligt.

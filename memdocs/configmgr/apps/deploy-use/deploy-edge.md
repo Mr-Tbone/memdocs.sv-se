@@ -10,20 +10,20 @@ ms.assetid: 73b420be-5d6a-483a-be66-c4d274437508
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 423864c2c954cc67da4ef54d55d7263ae346e786
-ms.sourcegitcommit: 24ce7df7dadf2385afe364b817ec58feeb04c700
+ms.openlocfilehash: cc10f262e4639ffdd8513bece662116f5ed39516
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86212285"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695383"
 ---
 # <a name="microsoft-edge-management"></a>Microsoft Edge-hantering
 
 *Gäller för: Configuration Manager (Current Branch)*
 
-Det nya Microsoft Edge är klart för företag. Från och med Configuration Manager version 1910 kan du nu distribuera [Microsoft Edge, version 77 och senare](https://docs.microsoft.com/deployedge/) till dina användare. Ett PowerShell-skript används för att installera Edge-versionen som valts. Skriptet stänger också av automatiska uppdateringar för kant så att de kan hanteras med Configuration Manager.
+Det nya Microsoft Edge är klart för företag. Från och med Configuration Manager version 1910 kan du nu distribuera [Microsoft Edge, version 77 och senare](/deployedge/) till dina användare. Ett PowerShell-skript används för att installera Edge-versionen som valts. Skriptet stänger också av automatiska uppdateringar för kant så att de kan hanteras med Configuration Manager.
 
-## <a name="deploy-microsoft-edge"></a><a name="bkmk_Microsoft_Edge"></a>Distribuera Microsoft Edge
+## <a name="deploy-microsoft-edge"></a><a name="bkmk_Microsoft_Edge"></a> Distribuera Microsoft Edge
 <!--4561024-->
 Administratörer kan välja beta-, dev-eller stabil kanal, tillsammans med en version av Microsoft Edge-klienten som ska distribueras. I varje utgåva ingår information och förbättringar från våra kunder och community.
 
@@ -31,7 +31,7 @@ Administratörer kan välja beta-, dev-eller stabil kanal, tillsammans med en ve
 
 För klienter riktade till en Microsoft Edge-distribution:
 
-- Det går inte att ange en begränsning för [körnings principen](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) för PowerShell.
+- Det går inte att ange en begränsning för [körnings principen](/powershell/module/microsoft.powershell.core/about/about_execution_policies) för PowerShell.
   - PowerShell körs för att utföra installationen.
 
 - Installations-och [CMPivot](../../core/servers/manage/cmpivot.md) för Microsoft Edge är signerade med **Microsofts kod signerings** certifikat. Om certifikatet inte visas i arkivet **Betrodda utgivare** måste du lägga till det. Annars körs inte installations programmet för Microsoft Edge och CMPivot när PowerShell-körnings principen är inställd på **AllSigned**. <!--7585106-->
@@ -43,11 +43,11 @@ Enheten som kör Configuration Managers konsolen behöver åtkomst till följand
 |`https://edgeupdates.microsoft.com/api/products?view=enterprise`|Information om utgåvor av Microsoft Edge|
 |`http://dl.delivery.mp.microsoft.com`|Innehåll för Microsoft Edge-versioner|
 
-### <a name="verify-microsoft-edge-update-policies"></a><a name="bkmk_autoupdate"></a>Verifiera uppdaterings principer för Microsoft Edge
+### <a name="verify-microsoft-edge-update-policies"></a><a name="bkmk_autoupdate"></a> Verifiera uppdaterings principer för Microsoft Edge
 
 #### <a name="configuration-manager-version-1910"></a>Configuration Manager version 1910
 
-När Microsoft Edge distribueras i version 1910 stänger installations skriptet av automatiska uppdateringar för Microsoft Edge så att de kan hanteras med Configuration Manager. Du kan ändra det här beteendet med hjälp av grupprincip. Mer information finns i [Planera distributionen av Microsoft Edge](https://docs.microsoft.com/deployedge/deploy-edge-plan-deployment#define-and-configure-policies) -och [Microsoft Edge-uppdaterings principer](https://docs.microsoft.com/DeployEdge/microsoft-edge-update-policies).
+När Microsoft Edge distribueras i version 1910 stänger installations skriptet av automatiska uppdateringar för Microsoft Edge så att de kan hanteras med Configuration Manager. Du kan ändra det här beteendet med hjälp av grupprincip. Mer information finns i [Planera distributionen av Microsoft Edge](/deployedge/deploy-edge-plan-deployment#define-and-configure-policies) -och [Microsoft Edge-uppdaterings principer](/DeployEdge/microsoft-edge-update-policies).
 
 #### <a name="configuration-manager-version-2002-and-later"></a>Configuration Manager version 2002 och senare
 <!--4561024-->
@@ -80,7 +80,7 @@ Skapa ett Microsoft Edge-program med hjälp av den inbyggda program upplevelsen 
 |---|---|---|
 | Platsserver|SMSProv.log|Visar information om skapandet av appen eller distributionen Miss lyckas.|
 | [Det varierar](../../core/plan-design/hierarchy/log-files.md)|PatchDownloader.log| Visar information om innehålls hämtningen Miss lyckas|
-| Klient|  AppEnforce.log|Visar installations information|
+| Client|  AppEnforce.log|Visar installations information|
 
 ## <a name="update-microsoft-edge"></a>Uppdatera Microsoft Edge
 <!--4831871-->
@@ -103,7 +103,7 @@ Från och med Configuration Manager version 1910 ser du en nod som kallas **alla
    - [Distribuera programuppdateringar manuellt](../../sum/deploy-use/manually-deploy-software-updates.md)
    - [Hämta programuppdateringar](../../sum/deploy-use/download-software-updates.md)
 
-## <a name="microsoft-edge-management-dashboard"></a><a name="bkmk_edge-dash"></a>Instrument panel för Microsoft Edge-hantering
+## <a name="microsoft-edge-management-dashboard"></a><a name="bkmk_edge-dash"></a> Instrument panel för Microsoft Edge-hantering
 <!--3871913-->
 *(Lanseras i version 2002)*
 

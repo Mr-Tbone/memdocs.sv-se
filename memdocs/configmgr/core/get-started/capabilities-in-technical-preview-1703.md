@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 98a82d118442a7ca37ff7b2df62bf4702c15ba2c
-ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
+ms.openlocfilehash: 9209a1a948c43a21f097ba836a6761b53ddc9530
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87526023"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692969"
 ---
 # <a name="capabilities-in-technical-preview-1703-for-configuration-manager"></a>Funktioner i Technical Preview 1703 för Configuration Manager
 
@@ -33,14 +33,14 @@ Nu kan du distribuera licensierade appar till enheter samt användare. Beroende 
 
 | Configuration Manager version | App har stöd för enhets licensiering? | Distributions samlings typ | Ansökan om licens |
 | ----------------------------- | ------------------------------ | -------------------------- | --------------- |
-|Tidigare än 1702|Yes|Användare|Användar licens|
-|Tidigare än 1702|No|Användare|Användar licens|
-|Tidigare än 1702|Yes|Enhet|Användar licens|
-|Tidigare än 1702|No|Enhet|Användar licens|
-|1702 och senare|Yes|Användare|Användar licens|
-|1702 och senare|No|Användare|Användar licens|
-|1702 och senare|Yes|Enhet|Enhets licens|
-|1702 och senare|No|Enhet|Användar licens|
+|Tidigare än 1702|Ja|Användare|Användar licens|
+|Tidigare än 1702|Nej|Användare|Användar licens|
+|Tidigare än 1702|Ja|Enhet|Användar licens|
+|Tidigare än 1702|Nej|Enhet|Användar licens|
+|1702 och senare|Ja|Användare|Användar licens|
+|1702 och senare|Nej|Användare|Användar licens|
+|1702 och senare|Ja|Enhet|Enhets licens|
+|1702 och senare|Nej|Enhet|Användar licens|
 
 
 ## <a name="direct-links-to-applications-in-software-center"></a>Direkt länkar till program i Software Center
@@ -82,7 +82,7 @@ Med teknisk för hands version 1703 konfigureras endast Windows Store för före
 
 - Använd informationen i det här förhands gransknings avsnittet för att ersätta de konfigurations steg som finns i avsnittet [Konfigurera Windows Store för företag](../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md#bkmk_setup) i avsnittet Current Branch [Hantera appar från Windows Store för företag med Configuration Manager](../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md).
 
-- Mer information om Web Apps finns [i autentisering och auktorisering i Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)och [Web Apps översikt](https://docs.microsoft.com/azure/app-service-web/app-service-web-overview).
+- Mer information om Web Apps finns [i autentisering och auktorisering i Azure App Service](/azure/app-service/app-service-authentication-overview)och [Web Apps översikt](/azure/app-service-web/app-service-web-overview).
 
 ### <a name="prerequisites-and-planning"></a>Krav och planering
 När du skapar en anslutning mellan Configuration Manager och Windows Store för företag, måste du ange en mapp där app-innehåll som synkroniseras från Store kommer att behållas. Se till att den här mappen är säker och att dess innehåll kan distribueras till enheter genom att kontrol lera att följande behörigheter är på plats:

@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 60ca31b73e31ea59b7a854f87262be7fdc4ab5c5
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 42dc0f65e9e3765de35e6db7f5272aeeaab63fa2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240345"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695298"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Skapa program i Configuration Manager
 
@@ -45,7 +45,7 @@ Den här artikeln innehåller också följande information för att konfigurera 
 - [Retur koder](#bkmk_dt-return)
 - [Beroenden](#bkmk_dt-depend)
 
-## <a name="create-an-application"></a><a name="bkmk_create"></a>Skapa ett program  
+## <a name="create-an-application"></a><a name="bkmk_create"></a> Skapa ett program  
 
 1. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **program hantering**och välj noden **program** .  
 
@@ -57,7 +57,7 @@ Sedan identifierar eller manuellt anger du programinformationen automatiskt:
 
 - [Ange](#bkmk_manual-app) programinformation manuellt om du vill skapa mer komplexa program. Definiera fler än en distributions typ, beroenden, identifierings metoder eller krav.  
 
-### <a name="automatically-detect-application-information"></a><a name="bkmk_auto-app"></a>Identifiera programinformation automatiskt  
+### <a name="automatically-detect-application-information"></a><a name="bkmk_auto-app"></a> Identifiera programinformation automatiskt  
 
 1. På sidan **Allmänt** i guiden Skapa program väljer du **hitta automatiskt information om det här programmet i installationsfiler**.  
 
@@ -97,7 +97,7 @@ Det nya programmet visas nu i noden **program** i Configuration Manager-konsolen
 
 Om du vill lägga till fler distributions typer eller konfigurera andra inställningar, se [skapa distributions typer för programmet](#bkmk_create-dt).  
 
-### <a name="manually-specify-application-information"></a><a name="bkmk_manual-app"></a>Ange programinformation manuellt  
+### <a name="manually-specify-application-information"></a><a name="bkmk_manual-app"></a> Ange programinformation manuellt  
 
 1. På sidan **Allmänt** i guiden Skapa program väljer du **Ange programinformationen manuellt**och väljer sedan **Nästa**.  
 
@@ -156,7 +156,7 @@ Om du vill lägga till fler distributions typer eller konfigurera andra inställ
 
 Det nya programmet visas nu i noden **program** i Configuration Manager-konsolen.  
 
-## <a name="create-deployment-types-for-the-application"></a><a name="bkmk_create-dt"></a>Skapa distributions typer för programmet  
+## <a name="create-deployment-types-for-the-application"></a><a name="bkmk_create-dt"></a> Skapa distributions typer för programmet  
 
 Om du [automatiskt identifierar programinformation](#bkmk_auto-app)kanske du inte behöver slutföra några av stegen i det här avsnittet.  
 
@@ -185,7 +185,7 @@ Det finns tre sätt att starta guiden skapa distributions typ:
 
 Använd sedan någon av följande procedurer för att [automatiskt identifiera](#bkmk_auto-dt) eller [manuellt ange](#bkmk_manual-dt) distributions typs information.  
 
-### <a name="automatically-identify-deployment-type-information"></a><a name="bkmk_auto-dt"></a>Identifiera information om distributions typ automatiskt  
+### <a name="automatically-identify-deployment-type-information"></a><a name="bkmk_auto-dt"></a> Identifiera information om distributions typ automatiskt  
 
 1. På sidan **Allmänt** i guiden skapa distributions typ:  
 
@@ -217,7 +217,7 @@ Använd sedan någon av följande procedurer för att [automatiskt identifiera](
 
 4. Välj **Nästa**och fortsätt sedan till [alternativ för distributions typ innehåll](#bkmk_dt-content).  
 
-### <a name="manually-specify-the-deployment-type-information"></a><a name="bkmk_manual-dt"></a>Ange distributions typs informationen manuellt  
+### <a name="manually-specify-the-deployment-type-information"></a><a name="bkmk_manual-dt"></a> Ange distributions typs informationen manuellt  
 
 1. På sidan **Allmänt** i guiden skapa distributions typ väljer du programmets installations fil typ för den här distributions typen i list rutan **typ** .
 
@@ -290,14 +290,14 @@ Ange följande information på sidan **aktivitetssekvens** :
 > [!TIP]  
 > Om aktivitetssekvensen inte visas i listan, kontrollerar du att den inte innehåller några OS-distributioner eller steg för uppgradering av operativ system. Bekräfta också att den inte har marker ATS som en högpåverkad aktivitetssekvens. Mer information hittar du i kraven för [distributions typen för aktivitetssekvensen](../get-started/creating-windows-applications.md#bkmk_tsdt).
 
-### <a name="deployment-type-detection-method-options"></a><a name="bkmk_dt-detect"></a>Alternativ för **identifierings metod** för distributions typ
+### <a name="deployment-type-detection-method-options"></a><a name="bkmk_dt-detect"></a> Alternativ för **identifierings metod** för distributions typ
 
 Den här proceduren ställer in en identifierings metod som anger förekomst av distributions typen. Med andra ord, om Windows-enheten redan har programmet installerat. Använd någon av följande metoder för att skapa en identifierings metod:
 
 - [Konfigurera regler för att identifiera förekomst av den här distributions typen](#bkmk_detect-rule)
 - [Använd ett anpassat skript för att identifiera förekomst av den här distributions typen](#bkmk_detect-script)
 
-#### <a name="configure-rules-to-detect-the-presence-of-this-deployment-type"></a><a name="bkmk_detect-rule"></a>Konfigurera regler för att identifiera förekomst av den här distributions typen
+#### <a name="configure-rules-to-detect-the-presence-of-this-deployment-type"></a><a name="bkmk_detect-rule"></a> Konfigurera regler för att identifiera förekomst av den här distributions typen
 
 1. På sidan **identifierings metod** är alternativet för att **Konfigurera regler för att identifiera förekomst av den här distributions typen** markerad som standard. Välj **Lägg till sats**.  
 
@@ -307,7 +307,7 @@ Den här proceduren ställer in en identifierings metod som anger förekomst av 
 
         - **Typ**: Välj om det är en fil eller mapp.  
 
-        - **Sökväg** (krävs): Ange eller bläddra till den lokala sökvägen på enheten som innehåller filen eller mappen. Ett exempel är `C:\Program Files`. Du kan inte ange en delad nätverks Sök väg. Om du väljer **Bläddra**bläddrar du till det lokala fil systemet eller ansluter till en representativ klient för att bläddra.  
+        - **Sökväg** (krävs): Ange eller bläddra till den lokala sökvägen på enheten som innehåller filen eller mappen. Till exempel `C:\Program Files`. Du kan inte ange en delad nätverks Sök väg. Om du väljer **Bläddra**bläddrar du till det lokala fil systemet eller ansluter till en representativ klient för att bläddra.  
 
         - **Fil-eller mappnamn** (obligatoriskt): Ange den angivna fil-eller mappnamnet som ska identifieras i ovanstående sökväg. Om klienten identifierar den här filen eller mappen på enheten, anses programmet vara installerat på enheten.  
 
@@ -315,9 +315,9 @@ Den här proceduren ställer in en identifierings metod som anger förekomst av 
 
     - **Register**: identifiera om en angiven register nyckel eller register värde finns på en klienten het. Den här identifieringen anger att programmet är installerat. Ange följande ytterligare information:  
 
-        - **Hive** (krävs): Välj en registrerings data fil i list rutan. Ett exempel är `HKEY_LOCAL_MACHINE`.  
+        - **Hive** (krävs): Välj en registrerings data fil i list rutan. Till exempel `HKEY_LOCAL_MACHINE`.  
 
-        - **Nyckel** (obligatoriskt): Ange den register nyckel som ska sökas i stacken ovan. Ett exempel är `SOFTWARE\Microsoft\Office`.  
+        - **Nyckel** (obligatoriskt): Ange den register nyckel som ska sökas i stacken ovan. Till exempel `SOFTWARE\Microsoft\Office`.  
 
         - **Värde** (valfritt): Ange ett angivet värde som ska identifieras i ovanstående nyckel. Om du vill att klienten ska identifiera värdet (standard) aktiverar du alternativet för att **använda register nyckel värde (standard) för identifiering**. När du anger ett värde eller aktiverar det här alternativet måste du välja en **datatyp**.  
 
@@ -349,7 +349,7 @@ När du skapar fler än en identifierings metod för en distributions typ kan du
 
 *Fortsätt* till nästa avsnitt om hur du använder ett anpassat skript som en identifierings metod. Eller *gå vidare* till alternativen för [användar upplevelse](#bkmk_dt-ux) för distributions typen.
 
-#### <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a><a name="bkmk_detect-script"></a>Använd ett anpassat skript för att söka efter en distributions typ  
+#### <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a><a name="bkmk_detect-script"></a> Använd ett anpassat skript för att söka efter en distributions typ  
 
 1. På sidan **identifierings metod** markerar du kryss rutan **Använd ett anpassat skript för att identifiera förekomst av den här distributions typen** . Välj sedan **Redigera**.  
 
@@ -549,7 +549,7 @@ Configuration Manager verifierar dessa krav på enheter innan du installerar dis
 
 6. Välj **OK** för att spara kravet och stänga dialog rutan **Skapa krav** .  
 
-### <a name="deployment-type-dependencies"></a><a name="bkmk_dt-depend"></a>Distributions typ **beroenden**  
+### <a name="deployment-type-dependencies"></a><a name="bkmk_dt-depend"></a> Distributions typ **beroenden**  
 
 Beroenden definierar en eller flera distributions typer från ett annat program som klienten måste installera innan den här distributions typen installeras.
 
@@ -639,7 +639,7 @@ När du skapar vissa distributions typer lägger Configuration Manager automatis
 |15605    |Snabb återförsök|
 |15618    |Snabb återförsök|
 
-## <a name="additional-options-for-app-v-deployment-types"></a><a name="bkmk_appv"></a>Ytterligare alternativ för App-V-distributions typer  
+## <a name="additional-options-for-app-v-deployment-types"></a><a name="bkmk_appv"></a> Ytterligare alternativ för App-V-distributions typer  
 
 Konfigurera ytterligare alternativ som är unika för distributions typer för virtuella program (App-V).  
 
@@ -671,7 +671,7 @@ Konfigurera ytterligare alternativ som är unika för distributions typer för v
 
 5. Välj **OK** för att stänga egenskaperna för distributions typen. Välj **OK** för att stänga program egenskaperna.  
 
-## <a name="import-an-application"></a><a name="bkmk_import"></a>Importera ett program  
+## <a name="import-an-application"></a><a name="bkmk_import"></a> Importera ett program  
 
 Använd följande procedur för att importera ett program till Configuration Manager:
 
@@ -679,7 +679,7 @@ Använd följande procedur för att importera ett program till Configuration Man
 
 2. I menyfliksområdet på fliken **Start** och gruppen **skapa** väljer du **importera program**.  
 
-3. På sidan **Allmänt** i guiden Importera program anger du nätverks Sök vägen till **filen** som ska importeras. Ett exempel är `\\server\share\file.zip`. Den här filen är ett giltigt komprimerat arkiv (ZIP-format) för ett exporterat Configuration Manager-program.  
+3. På sidan **Allmänt** i guiden Importera program anger du nätverks Sök vägen till **filen** som ska importeras. Till exempel `\\server\share\file.zip`. Den här filen är ett giltigt komprimerat arkiv (ZIP-format) för ett exporterat Configuration Manager-program.  
 
 4. På sidan **fil innehåll** väljer du den åtgärd som ska vidtas om programmet är en dubblett av ett befintligt program. Skapa ett nytt program eller ignorera dubbletten och Lägg till en ny revision i det befintliga programmet.  
 
@@ -688,11 +688,11 @@ Använd följande procedur för att importera ett program till Configuration Man
 Det nya programmet visas i noden **Program**.  
 
 > [!TIP]  
-> Windows PowerShell-cmdleten **import-CMApplication** har samma funktion som den här proceduren. Mer information finns i [import-CMApplication](https://docs.microsoft.com/powershell/module/configurationmanager/import-cmapplication?view=sccm-ps).  
+> Windows PowerShell-cmdleten **import-CMApplication** har samma funktion som den här proceduren. Mer information finns i [import-CMApplication](/powershell/module/configurationmanager/import-cmapplication?view=sccm-ps).  
 
 Mer information om hur du exporterar ett program finns i [hanterings aktiviteter för program](management-tasks-applications.md).
 
-## <a name="supported-deployment-types"></a><a name="bkmk_deploy-types"></a>Distributions typer som stöds  
+## <a name="supported-deployment-types"></a><a name="bkmk_deploy-types"></a> Distributions typer som stöds  
 
 Configuration Manager stöder följande distributions typer för program:
 
@@ -714,7 +714,7 @@ Configuration Manager stöder följande distributions typer för program:
 > [!NOTE]
 > Configuration Manager-konsolen kan visa andra distributions typer, men de är för plattformar som inte längre stöds. Mer information finns i [vad hände med hybrid?](../../mdm/understand/what-happened-to-hybrid.md).
 
-### <a name="note-1-windows-app-package-in-the-windows-store"></a><a name="bkmk_note1"></a>Anmärkning 1: Windows-appaket (i Windows Store)
+### <a name="note-1-windows-app-package-in-the-windows-store"></a><a name="bkmk_note1"></a> Anmärkning 1: Windows-appaket (i Windows Store)
 
 Om du vill distribuera appen som en länk till Windows Store konfigurerar du grup principen **inaktivera Store-programmet**. Ange att den här principen är **inaktive rad** eller **inte konfigurerad**. Om du aktiverar den här inställningen kan klienterna inte ansluta till Windows Store för att hämta och installera program.
 

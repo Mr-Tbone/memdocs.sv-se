@@ -10,12 +10,12 @@ ms.assetid: 3393db41-900a-44c5-b950-2d46a35a198c
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 3825ef9b9b1efd576a31742e0fdbe7c2bc3b1628
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: f73a556f28f8ebe4abf6e762104776b40b0cd0e8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906851"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697032"
 ---
 # <a name="security-and-privacy-for-certificate-profiles-in-configuration-manager"></a>Säkerhet och sekretess för certifikat profiler i Configuration Manager
 
@@ -27,7 +27,7 @@ ms.locfileid: "82906851"
 
 |Regelverk för säkerhet|Mer information|  
 |----------------------------|----------------------|  
-|Identifiera och följ rekommenderade säkerhetsmetoder för registreringstjänsten för nätverksenheter. Det innefattar att i Internet Information Services (IIS) konfigurera att webbplatsen för registreringstjänsten ska begära SSL och ignorera klientcertifikat.|Mer information finns i [rikt linjer för registrerings tjänsten för nätverks enheter](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v=ws.11)).|  
+|Identifiera och följ rekommenderade säkerhetsmetoder för registreringstjänsten för nätverksenheter. Det innefattar att i Internet Information Services (IIS) konfigurera att webbplatsen för registreringstjänsten ska begära SSL och ignorera klientcertifikat.|Mer information finns i [rikt linjer för registrerings tjänsten för nätverks enheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v=ws.11)).|  
 |När du konfigurerar SCEP-certifikatprofiler ska du välja det säkraste alternativet som enheterna och infrastrukturen har stöd för.|Identifiera, implementera och följ de säkerhetsmetoder som har rekommenderats för enheterna och infrastrukturen.|  
 |Definiera mappning mellan användare och enhet manuellt i stället för att tillåta att användarna identifierar sina primära enheter. Aktivera inte användningsbaserad konfigurering.|Om du klickar på alternativet **Tillåt endast certifikatregistering på användarens primära enhet** i en SCEP-certifikatprofil ska information som samlas in från användare eller enheten inte betraktas som auktoriserande. Om du distribuerar SCEP-certifikatprofiler med den här konfigurationen och en betrodd administrativ användare inte anger mappning mellan användare och enhet, kan ej auktoriserade användare få förhöjda behörigheter och tilldelas autentiseringscertifikat.<br /><br /> **Obs:** Om du aktiverar användnings baserad konfiguration samlas den här informationen in med hjälp av tillstånds meddelanden som inte skyddas av Configuration Manager. Minimera hotrisken genom att använda SMB-signering eller IPsec mellan klientdatorerna och hanteringsplatsen.|  
 |Lägg inte till läs- och registreringsbehörigheter för användare av certifikatmallar, och konfigurera inte certifikatregistreringsplatsen att hoppa över certifikatmallskontrollen.|Även om Configuration Manager stöder ytterligare kontroll om du lägger till säkerhets behörigheterna för läsa och registrera för användare, och du kan konfigurera certifikat registrerings platsen att hoppa över den här kontrollen om autentisering inte är möjlig, är ingen av säkerhets skäl säkerhets praxis. Mer information finns i [Planera för certifikat mal len behörigheter för certifikat profiler](../../protect/plan-design/planning-for-certificate-template-permissions.md).|  
@@ -42,4 +42,4 @@ ms.locfileid: "82906851"
 
  Som standard utvärderas inte certifikatprofiler av enheter. Du måste också konfigurera certifikatprofilerna och sedan distribuera dem till användare eller enheter.  
 
- Innan du konfigurerar certifikatprofiler bör du tänka igenom dina sekretesskrav.  
+ Innan du konfigurerar certifikatprofiler bör du tänka igenom dina sekretesskrav.

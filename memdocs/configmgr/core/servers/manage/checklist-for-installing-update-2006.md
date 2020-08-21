@@ -10,12 +10,12 @@ ms.assetid: 6d359306-69ae-4873-ba90-964b6ae51d79
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 97ad8c947c634f43a53e1fac68f0a3255aa89809
-ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
+ms.openlocfilehash: 05264780ef3971a7aa8b2d1778f0fe27c90b0b71
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512758"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696471"
 ---
 # <a name="checklist-for-installing-update-2006-for-configuration-manager"></a>Check lista för att installera uppdatering 2006 för Configuration Manager
 
@@ -84,7 +84,7 @@ Så här anmäler du dig till tidig uppdaterings ringen:
 1. Öppna en Windows PowerShell version 5-session **som administratör**
 
     > [!IMPORTANT]
-    > Configuration Manager aktuella grenen har för närvarande inte stöd för PowerShell version 7. Om du redan har installerat PowerShell version 7 kan du fortfarande använda PowerShell version 5. Mer information finns i [använda PowerShell 7 sida-vid-sida med Windows PowerShell 5,1](https://docs.microsoft.com/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7#using-powershell-7-side-by-side-with-windows-powershell-51).
+    > Configuration Manager aktuella grenen har för närvarande inte stöd för PowerShell version 7. Om du redan har installerat PowerShell version 7 kan du fortfarande använda PowerShell version 5. Mer information finns i [använda PowerShell 7 sida-vid-sida med Windows PowerShell 5,1](/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7#using-powershell-7-side-by-side-with-windows-powershell-51).
 
 1. Kör **EnableEarlyUpdateRing2006.ps1** -skriptet med följande syntax:
 

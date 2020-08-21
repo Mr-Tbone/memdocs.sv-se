@@ -10,12 +10,12 @@ ms.assetid: 5b30b0d5-722d-4d4b-9ed7-5a43de315461
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2e74f969016d79254ceb8e8323b6e3914969ecc7
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 8e1a55efa6b23aa489ea65b3296e33847163a5c4
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710099"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695247"
 ---
 # <a name="link-users-and-devices-with-user-device-affinity-in-configuration-manager"></a>Länka användare och enheter med mappning mellan användare och enhet i Configuration Manager
 
@@ -96,7 +96,7 @@ Om du vill skapa flera relationer samtidigt importerar du en fil som innehåller
 
 1. På sidan **Välj mappning** i guiden Importera mappning mellan användare och enhet anger du följande information:  
 
-    - **Fil namn**. Ange en fil med kommaavgränsade värden (CSV) som innehåller en lista över användare och enheter som du vill skapa en tillhörighet mellan. I den här filen måste varje användar-och enhets par finnas på en egen rad, med värden avgränsade med kommatecken. Använd det här formatet:`<domain>\<username>,<device NetBIOS name>`  
+    - **Fil namn**. Ange en fil med kommaavgränsade värden (CSV) som innehåller en lista över användare och enheter som du vill skapa en tillhörighet mellan. I den här filen måste varje användar-och enhets par finnas på en egen rad, med värden avgränsade med kommatecken. Använd det här formatet: `<domain>\<username>,<device NetBIOS name>`  
 
     - **Den här filen har kolumn rubriker i referens syfte**. Om CSV-filen har en rubrik på översta raden väljer du det här alternativet. Platsen ignorerar rubrik raden under importen.  
 
@@ -162,4 +162,4 @@ När du inaktiverar klient inställningen för att **automatiskt konfigurera map
 
 ## <a name="next-steps"></a>Nästa steg
 
-Du kan också använda Microsoft Intune för att hitta den primära användningen av en registrerad enhet. Mer information finns i [hitta den primära användaren av en Intune-enhet](https://docs.microsoft.com/intune/find-primary-user) i Intune-dokumentationen.
+Du kan också använda Microsoft Intune för att hitta den primära användningen av en registrerad enhet. Mer information finns i [hitta den primära användaren av en Intune-enhet](/intune/find-primary-user) i Intune-dokumentationen.

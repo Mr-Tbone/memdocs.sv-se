@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 076a4b6d1bf5773287d4a0b32109023039a3b399
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ms.openlocfilehash: c20f5e883c1b33c90218532dd6ae31f510fd8294
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546424"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695043"
 ---
 # <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Förbereda Internet-baserade enheter för samhantering
 
@@ -27,7 +27,7 @@ För nya Windows 10-enheter kan du använda autopilot-tjänsten för att konfigu
 
 Mer information finns i [Översikt över Windows autopilot](../../autopilot/windows-autopilot.md).
 
-Om du vill konfigurera enheterna så att de registreras automatiskt i Intune när de ansluter till Azure AD, se [registrera Windows-enheter för Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
+Om du vill konfigurera enheterna så att de registreras automatiskt i Intune när de ansluter till Azure AD, se [registrera Windows-enheter för Microsoft Intune](/intune/windows-enroll).  
 
 ### <a name="gather-information-from-configuration-manager"></a>Samla in information från Configuration Manager
 
@@ -41,7 +41,7 @@ Använd Configuration Manager för att samla in och rapportera enhets informatio
 
 4. När du har sparat filen laddar du upp data till Intune.  
 
-Mer information finns i [lägga till enheter i Intune](https://docs.microsoft.com/intune/enrollment-autopilot#add-devices).
+Mer information finns i [lägga till enheter i Intune](/intune/enrollment-autopilot#add-devices).
 
 ### <a name="autopilot-for-existing-devices"></a>Autopilot för befintliga enheter
 <!--1358333-->
@@ -65,7 +65,7 @@ För Internetbaserade enheter i den andra sökvägen måste du skapa en app i In
 
 3. På fliken **aktivering** kopierar du kommando raden. Klistra in den i anteckningar och spara den för nästa process.  
 
-Följande kommando rad är ett exempel:`CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSITECODE=ABC"`
+Följande kommando rad är ett exempel: `CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSITECODE=ABC"`
 
 <!--1358215-->
 Bestäm vilka kommando rads egenskaper du behöver för din miljö:  

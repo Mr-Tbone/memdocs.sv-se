@@ -5,17 +5,17 @@ description: Lär dig mer om arbets belastningarna som du kan växla från Confi
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 04/15/2020
+ms.date: 08/20/2020
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
-ms.openlocfilehash: b03b57ff9797eb4fbe5a269723e98d39ae438803
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: e44576401d601c8c510aaf50b28e5924f5c4d6db
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127230"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694873"
 ---
 # <a name="co-management-workloads"></a>Arbets belastningar för samhantering
 
@@ -43,19 +43,19 @@ Samhantering har stöd för följande arbets belastningar:
 
 Efterlevnadsprinciper definierar de regler och inställningar som en enhet måste följa för att anses vara kompatibla med principer för villkorlig åtkomst. Du kan också använda efterlevnadsprinciper för att övervaka och åtgärda kompatibilitetsproblem med enheter oberoende av villkorlig åtkomst. Från och med Configuration Manager version 1910 kan du lägga till utvärdering av anpassade konfigurations bas linjer som en bedömnings regel för efterlevnadsprinciper. Mer information finns i [Inkludera anpassade konfigurations bas linjer som en del av utvärderingen av efterlevnadsprinciper](../compliance/deploy-use/create-configuration-baselines.md#bkmk_CAbaselines).
 
-Mer information om Intune-funktionen finns i [efterlevnadsprinciper för enheter](https://docs.microsoft.com/intune/device-compliance-get-started).  
+Mer information om Intune-funktionen finns i [efterlevnadsprinciper för enheter](/intune/device-compliance-get-started).  
 
 ## <a name="windows-update-policies"></a>Windows Update principer
 
 Med Windows Update för affärs principer kan du konfigurera regler för avstängning för Windows 10-funktions uppdateringar eller kvalitets uppdateringar för Windows 10-enheter som hanteras direkt av Windows Update för företag.
 
-Mer information om Intune-funktionen finns i [Konfigurera principer för avstängning av Windows Update för företag](https://docs.microsoft.com/intune/windows-update-for-business-configure).  
+Mer information om Intune-funktionen finns i [Konfigurera principer för avstängning av Windows Update för företag](/intune/windows-update-for-business-configure).  
 
 ## <a name="resource-access-policies"></a>Resurs åtkomst principer
 
 Resurs åtkomst principer konfigurera VPN, Wi-Fi, e-post och certifikat inställningar på enheter.
 
-Mer information om Intune-funktionen finns i [distribuera resurs åtkomst profiler](https://docs.microsoft.com/intune/device-profiles).
+Mer information om Intune-funktionen finns i [distribuera resurs åtkomst profiler](/intune/device-profiles).
 
 > [!Note]  
 > Resurs åtkomst arbets belastningen ingår också i enhets konfigurationen. Dessa principer hanteras av Intune när du växlar arbets belastningen för [enhets konfigurationen](#device-configuration) .
@@ -76,7 +76,7 @@ Endpoint Protection arbets belastningen omfattar Windows Defender Suite för sky
 - Windows Defender Säkerhetscenter  
 - Windows Defender Avancerat skydd (nu kallat Microsoft Defender Threat Protection)
 
-Mer information om Intune-funktionen finns i [Endpoint Protection för Microsoft Intune](https://docs.microsoft.com/intune/endpoint-protection-windows-10).
+Mer information om Intune-funktionen finns i [Endpoint Protection för Microsoft Intune](/intune/endpoint-protection-windows-10).
 
 > [!Note]  
 > När du växlar den här arbets belastningen finns Configuration Manager-principerna kvar på enheten tills Intune-principerna skriver över dem. Det här beteendet ser till att enheten fortfarande har skydds principer under över gången.
@@ -95,7 +95,7 @@ Arbets belastningen enhets konfiguration innehåller inställningar som du hante
 
 Du kan fortfarande distribuera inställningar från Configuration Manager till samhanterade enheter även om Intune är enhets konfigurations utfärdaren. Detta undantag kan användas för att konfigurera inställningar som din organisation kräver men som ännu inte är tillgängliga i Intune. Ange detta undantag i en [Configuration Manager konfigurations bas linje](../compliance/deploy-use/create-configuration-baselines.md). Aktivera alternativet att **alltid tillämpa den här bas linjen även för samhanterade klienter** när du skapar bas linjen. Du kan ändra den senare på fliken **Allmänt** i egenskaperna för en befintlig bas linje.  
 
-Mer information om Intune-funktionen finns [i skapa en enhets profil i Microsoft Intune](https://docs.microsoft.com/intune/device-profile-create).  
+Mer information om Intune-funktionen finns [i skapa en enhets profil i Microsoft Intune](/intune/device-profile-create).  
 
 > [!NOTE]
 > När du växlar arbets belastningen för enhets konfigurationen innehåller den också principer för Windows Information Protection-funktionen, som inte ingår i arbets belastningen för Endpoint Protection.<!-- 4184095 -->
@@ -112,7 +112,7 @@ Den här arbets belastningen hanterar Microsoft 365 appar på samhanterade enhet
 
 - Det finns ett nytt globalt villkor, **Office 365-program som hanteras av Intune på enheten**. Det här villkoret läggs till som standard som ett krav på nya Office 365-program. När du flyttar den här arbets belastningen uppfyller inte samhanterade klienter kraven på programmet. Sedan installerar de inte Office 365 som distribueras via Configuration Manager.  
 
-Mer information om Intune-funktionen finns i [tilldela Office 365-appar till Windows 10-enheter med Microsoft Intune](https://docs.microsoft.com/intune/apps-add-office365).
+Mer information om Intune-funktionen finns i [tilldela Office 365-appar till Windows 10-enheter med Microsoft Intune](/intune/apps-add-office365).
 
 ## <a name="client-apps"></a>Klientappar
 
@@ -120,7 +120,7 @@ Mer information om Intune-funktionen finns i [tilldela Office 365-appar till Win
 
 Använd Intune för att hantera klient program och PowerShell-skript på samhanterade Windows 10-enheter. När du har övergått till den här arbets belastningen är alla tillgängliga appar som distribueras från Intune tillgängliga i Företagsportal. Appar som du distribuerar från Configuration Manager är tillgängliga i Software Center.
 
-Mer information om Intune-funktionen finns i [Vad är Microsoft Intune App Management?](https://docs.microsoft.com/intune/app-management).
+Mer information om Intune-funktionen finns i [Vad är Microsoft Intune App Management?](/intune/app-management).
 
 > [!Tip]  
 > Den här funktionen introducerades först i version 1806 som en [för hands versions funktion](../core/servers/manage/pre-release-features.md). Från och med version 2002 är det inte längre en för hands versions funktion.  
@@ -131,9 +131,10 @@ Från och med version 1910 kan de nu hantera Microsoft Intune Win32-appar till s
 
 ## <a name="diagram-for-app-workloads"></a>Diagram över app-arbetsbelastningar
 
-![Diagram över arbets belastningar för samhantering av appar](media/co-management-apps.svg)
+:::image type="content" source="media/co-management-apps.svg" alt-text="Diagram över arbets belastningar för samhantering av appar" lightbox="media/co-management-apps.svg":::
 
-[Visa diagrammet i full storlek](media/co-management-apps.svg)
+> [!TIP]
+> Från och med version 2006 kan du konfigurera Företagsportal så att du även kan visa Configuration Manager appar. Om du ändrar den här app Portal-upplevelsen ändras de beteenden som beskrivs i diagrammet ovan. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](company-portal.md).<!--CMADO-3601237,INADO-4297660-->
 
 ## <a name="known-issues"></a>Kända problem
 
@@ -147,11 +148,13 @@ Undvik det här problemet genom att använda CleanUpPolicy.xml med ConfigSecurit
    <?xml version="1.0" encoding="UTF-8"?>
    <SecurityPolicy xmlns="http://forefront.microsoft.com/FEP/2010/01/PolicyData" Name="FEP clean-up policy"><PolicySection Name="FEP.AmPolicy"><LocalGroupPolicySettings><IgnoreKey Name="SOFTWARE\Policies\Microsoft\Microsoft Antimalware"/><IgnoreKey Name="SOFTWARE\Policies\Microsoft\Windows Defender"/></LocalGroupPolicySettings></PolicySection></SecurityPolicy>
    ```
+
 1. Öppna en upphöjd kommando tolk för `ConfigSecurityPolicy.exe` . Den här körbara filen är vanligt vis i någon av följande kataloger:
    - C:\Program\Windows Defender
    - C:\Program\Microsoft säkerhets klient
+
 1. I kommando tolken skickar du i XML-filen för att rensa principen. Till exempel `ConfigSecurityPolicy.exe C:\temp\CleanUpPolicy.xml`.  
 
 ## <a name="next-steps"></a>Nästa steg
 
-[Så här växlar du arbets belastningar](how-to-switch-workloads.md)  
+[Så här växlar du arbets belastningar](how-to-switch-workloads.md)

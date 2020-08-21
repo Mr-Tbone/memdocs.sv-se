@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: f2486e838e01415786e24c077af1997b3dfb7638
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: a947b332addbc3404617abdbbe199ede4e74dc63
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129077"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692799"
 ---
 # <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Vad&#39;s nya i version 1702 av Configuration Manager
 
@@ -83,7 +83,7 @@ Följande är ändringar för uppdateringar och underhåll:
 - **Nya uppdaterings tillstånd**  
   När du visar tillgängliga uppdateringar i-konsolen finns det två nya tillstånd:  
   - **Tillgänglig för installation** – det här är en uppdatering som har hämtats och är redo att installeras.
-  - **Klar för hämtning** – den här uppdateringen är tillgänglig, men har inte hämtats. Du kan välja att ladda ned uppdateringen, men den har ersatts av en nyare uppdatering.
+  - **Klar för hämtning**  – den här uppdateringen är tillgänglig, men har inte hämtats. Du kan välja att ladda ned uppdateringen, men den har ersatts av en nyare uppdatering.
 
 
 - **Enklare uppdaterings alternativ**  
@@ -118,7 +118,7 @@ Använd [rensnings verktyget för innehålls bibliotek](../hierarchy/content-lib
 
 
 ### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>Använda OMS-anslutningen med Azure Government molnet
-Du kan använda OMS-anslutningen för att ansluta till OMS Log Analytics i Microsoft Azure Government molnet. Detta kräver att du ändrar en konfigurations fil innan du installerar OMS-anslutningsprogrammet så att kopplingen kan arbeta med det offentliga molnet. Mer information finns i [använda OMS-anslutningen med Azure Government molnet](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm).
+Du kan använda OMS-anslutningen för att ansluta till OMS Log Analytics i Microsoft Azure Government molnet. Detta kräver att du ändrar en konfigurations fil innan du installerar OMS-anslutningsprogrammet så att kopplingen kan arbeta med det offentliga molnet. Mer information finns i [använda OMS-anslutningen med Azure Government molnet](/azure/azure-monitor/platform/collect-sccm).
 
 ### <a name="software-update-points-are-added-to-boundary-groups"></a>Program uppdaterings platser läggs till i gränser grupper
 Från och med version 1702 använder klienterna gränser grupper för att hitta en ny program uppdaterings plats, och för att återgå och hitta en ny program uppdaterings plats om den aktuella inte längre är tillgänglig. Du kan lägga till enskilda program uppdaterings platser i olika gränser grupper för att kontrol lera vilka servrar som en klient kan hitta. Mer information finns i [program uppdaterings platser](../../servers/deploy/configure/boundary-groups.md#bkmk_sup) i avsnittet [Konfigurera gränser grupper](../../servers/deploy/configure/boundary-groups.md) .
@@ -274,13 +274,13 @@ Nu kan du distribuera licensierade appar till enheter samt användare. Beroende 
 | Configuration Manager version | App har stöd för enhets licensiering? | Distributions samlings typ | Ansökan om licens |
 | ----------------------------- | ------------------------------ | -------------------------- | --------------- |
 |Tidigare än 1702|Ja|Användare|Användar licens|
-|Tidigare än 1702|No|Användare|Användar licens|
+|Tidigare än 1702|Nej|Användare|Användar licens|
 |Tidigare än 1702|Ja|Enhet|Användar licens|
-|Tidigare än 1702|No|Enhet|Användar licens|
+|Tidigare än 1702|Nej|Enhet|Användar licens|
 |1702 och senare|Ja|Användare|Användar licens|
-|1702 och senare|No|Användare|Användar licens|
+|1702 och senare|Nej|Användare|Användar licens|
 |1702 och senare|Ja|Enhet|Enhets licens|
-|1702 och senare|No|Enhet|Användar licens|
+|1702 och senare|Nej|Enhet|Användar licens|
 
 ### <a name="support-for-ios-volume-purchase-program-for-education"></a>Stöd för iOS-volym köps program för utbildning
 

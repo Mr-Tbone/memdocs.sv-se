@@ -10,12 +10,12 @@ ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5690e4fe003939d00dee1185e6f6551813c346e5
-ms.sourcegitcommit: 578ad1e8088f7065b565e8a4f4619f5a26b94001
+ms.openlocfilehash: 60139e3e26195f2feb8b5533c1d26e3e8fb8c3d0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721852"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693751"
 ---
 # <a name="plan-for-on-premises-mdm-in-configuration-manager"></a>Planera för lokal MDM i Configuration Manager
 
@@ -29,15 +29,15 @@ Det finns flera viktiga områden att granska när du planerar att implementera l
 - Enhetsregistrering
 
 > [!IMPORTANT]
-> Även om platsen eller någon annan mobil enhet inte ansluter till Microsoft Intune, kräver din organisation fortfarande Intune-licenser för att använda den här funktionen. Mer information finns i [Microsoft Intune licensiering](https://docs.microsoft.com/intune/fundamentals/licenses).
+> Även om platsen eller någon annan mobil enhet inte ansluter till Microsoft Intune, kräver din organisation fortfarande Intune-licenser för att använda den här funktionen. Mer information finns i [Microsoft Intune licensiering](/intune/fundamentals/licenses).
 
 Beakta följande krav innan du förbereder Configuration Manager-infrastrukturen för att hantera lokal MDM.
 
-## <a name="supported-devices"></a><a name="bkmk_devices"></a>Enheter som stöds  
+## <a name="supported-devices"></a><a name="bkmk_devices"></a> Enheter som stöds  
 
 Den aktuella grenen av Configuration Manager stöder registrering i lokal hantering av mobila enheter för enheter som kör Windows 10. Dessa enhets typer omfattar främst bärbara datorer, IoT och Surface Hub. Mer information och listan över vissa versioner finns i [operativ system versioner som stöds för klienter och enheter](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md#bkmk_OnpremOS).
 
-## <a name="site-system-roles"></a><a name="bkmk_roles"></a>Plats system roller
+## <a name="site-system-roles"></a><a name="bkmk_roles"></a> Plats system roller
 
 Lokal MDM kräver minst en av följande plats system roller:
 
@@ -56,7 +56,7 @@ Beroende på organisationens behov kan du installera dessa roller på en enskild
 
 Mer allmän information finns i [Planera för plats system servrar och roller](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
 
-## <a name="trusted-communications"></a><a name="bkmk_trustedComs"></a>Betrodd kommunikation
+## <a name="trusted-communications"></a><a name="bkmk_trustedComs"></a> Betrodd kommunikation
 
 Lokal MDM kräver att du aktiverar plats system roller för HTTPS-kommunikation. Du kan använda din organisations certifikat utfärdare (CA) för att upprätta betrodda anslutningar mellan servrar och enheter, beroende på dina behov. Du kan också använda en offentligt tillgänglig certifikat utfärdare som betrodd utfärdare. Båda sätten måste du konfigurera följande certifikat:
 
@@ -66,7 +66,7 @@ Lokal MDM kräver att du aktiverar plats system roller för HTTPS-kommunikation.
 
 Mer information finns i [Konfigurera certifikat för betrodd kommunikation i lokal MDM](../get-started/set-up-certificates-on-premises-mdm.md).
 
-## <a name="device-enrollment"></a><a name="bkmk_enrollment"></a>Enhets registrering
+## <a name="device-enrollment"></a><a name="bkmk_enrollment"></a> Enhets registrering
 
 Aktivera enhets registrering för lokal MDM:
 

@@ -10,12 +10,12 @@ ms.assetid: 066caf00-e419-4efb-93d3-ba4ba878297c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 93c3887307c32ea636a6dbb064cda13f4b9130c6
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 996cff4b8b333a59b774afb979bbdd89aae536a1
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905134"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692901"
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-configuration-manager-current-branch"></a>Planera för migrering av Configuration Manager objekt till Configuration Manager aktuella grenen
 
@@ -23,7 +23,7 @@ ms.locfileid: "82905134"
 
 Med Configuration Manager aktuella grenen kan du migrera många av de olika objekt som är associerade med olika funktioner som finns på en käll plats.
 
-##  <a name="plan-to-migrate-software-updates"></a><a name="Plan_migrate_Software_updates"></a>Planera migreringen av program uppdateringar  
+##  <a name="plan-to-migrate-software-updates"></a><a name="Plan_migrate_Software_updates"></a> Planera migreringen av program uppdateringar  
  Du kan migrera program uppdaterings objekt, t. ex. program uppdaterings paket och program uppdaterings distributioner.  
 
  För att kunna migrera program uppdaterings objekt måste du först ställa in målhierarkin med konfigurationer som matchar din källhierarki-miljö. Detta kräver följande åtgärder:  
@@ -54,7 +54,7 @@ När du migrerar från en Configuration Manager 2007-källhierarki ändrar migre
 
 När du migrerar objekt från ett System Center 2012 Configuration Manager eller Configuration Manager aktuell Branch-källhierarki, ändras inte program uppdaterings objekt.  
 
-##  <a name="plan-to-migrate-content"></a><a name="Plan_Migrate_content"></a>Planera att migrera innehåll  
+##  <a name="plan-to-migrate-content"></a><a name="Plan_Migrate_content"></a> Planera att migrera innehåll  
  Du kan migrera innehåll från en källhierarki som stöds till en målhierarki. För en Configuration Manager 2007-källhierarki innehåller det här innehållet program distributions paket och program och virtuella program, t. ex. Microsoft Application Virtualization (App-V). För System Center 2012 Configuration Manager och Configuration Manager aktuella Branch source-hierarkier, innehåller det här innehållet program och App-V virtuella program. När du migrerar innehåll mellan hierarkier migreras de komprimerade källfilerna till målhierarkin.  
 
 ### <a name="packages-and-programs"></a>Paket och program  
@@ -96,12 +96,12 @@ Du kan migrera annonser från en Configuration Manager 2007-datakälla som stöd
 ### <a name="applications"></a>Program  
  Du kan migrera program från en System Center 2012 Configuration Manager eller Configuration Manager aktuell Branch-källhierarki till en målhierarkin. Om du omtilldelar en klient från käll- till målhierarkin, behåller den historiken över tidigare installerade program, för att hindra klienten från att köra ett migrerat program igen.  
 
-##  <a name="plan-to-migrate-collections"></a><a name="BKMK_MigrateCollections"></a>Planera migreringen av samlingar  
+##  <a name="plan-to-migrate-collections"></a><a name="BKMK_MigrateCollections"></a> Planera migreringen av samlingar  
  Du kan migrera villkoren för samlingar från en System Center 2012 Configuration Manager eller Configuration Manager aktuell Branch-källhierarki. För detta använder du ett Objektbaserade migreringsjobb. När du migrerar en samling migrerar du reglerna för samlingen, inte information om samlingens medlemmar eller information eller objekt som hör till samlingens medlemmar.  
 
  Migrering av samlingsobjektet stöds inte när du migrerar från en Configuration Manager 2007-källhierarki.  
 
-##  <a name="plan-to-migrate-operating-system-deployments"></a><a name="Plan_migrate_OSD"></a>Planera att migrera operativ Systems distributioner  
+##  <a name="plan-to-migrate-operating-system-deployments"></a><a name="Plan_migrate_OSD"></a> Planera att migrera operativ Systems distributioner  
 Du kan migrera följande operativsystemdistributionsobjekt från en källhierarki som stöds:  
 
 -   Operativsystemavbildningar och paket Käll Sök vägen för start avbildningarna uppdateras till standard avbildnings platsen för Windows AIK (Windows Administrative Installation Kit) på mål platsen. Följande är krav och begränsningar för migrering av operativsystemavbildningar och paket:  
@@ -119,22 +119,22 @@ Du kan migrera följande operativsystemdistributionsobjekt från en källhierark
 
 -   Drivrutiner och drivrutinspaket. När du migrerar driv rutins paket måste dator kontot för SMS-providern i målhierarkin ha fullständig behörighet till paket källan.
 
-##  <a name="plan-to-migrate-desired-configuration-management"></a><a name="Plan_Migrate_Compliance_settings"></a>Planera att migrera önskad konfigurations hantering  
+##  <a name="plan-to-migrate-desired-configuration-management"></a><a name="Plan_Migrate_Compliance_settings"></a> Planera att migrera önskad konfigurations hantering  
 Du kan migrera konfigurationsobjekt och konfigurationsbaslinjer.  
 
 > [!NOTE]  
->  Feltolkade konfigurations objekt från Configuration Manager 2007-käll-hierarkier stöds inte för migrering. Du kan inte migrera eller importera dessa konfigurationsobjekt till målhierarkin. Mer information om feltolkade konfigurations objekt finns i avsnittet [om konfigurations objekt i Desired Configuration Management](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694136(v=technet.10)#uninterpreted-configuration-item) i dokumentations biblioteket för Configuration Manager 2007.  
+>  Feltolkade konfigurations objekt från Configuration Manager 2007-käll-hierarkier stöds inte för migrering. Du kan inte migrera eller importera dessa konfigurationsobjekt till målhierarkin. Mer information om feltolkade konfigurations objekt finns i avsnittet [om konfigurations objekt i Desired Configuration Management](/previous-versions/system-center/configuration-manager-2007/bb694136(v=technet.10)#uninterpreted-configuration-item) i dokumentations biblioteket för Configuration Manager 2007.  
 
 Du kan importera Configuration Manager 2007-konfigurations paket. Import processen konverterar automatiskt konfigurations paketen så att de är kompatibla med Configuration Manager aktuella grenen.  
 
-##  <a name="plan-to-migrate-boundaries"></a><a name="Plan_migrate_Boundaries"></a>Planera för att migrera gränser  
+##  <a name="plan-to-migrate-boundaries"></a><a name="Plan_migrate_Boundaries"></a> Planera för att migrera gränser  
  Du kan migrera gränser mellan hierarkier. När du migrerar gränser från Configuration Manager 2007 migreras varje gräns från käll platsen samtidigt och läggs till i en ny gräns grupp som skapas i målhierarkin. När du migrerar gränser från ett System Center 2012 Configuration Manager eller Configuration Manager aktuell Branch-hierarki läggs varje gräns du väljer till i en ny gräns grupp i målhierarkin.  
 
  Alla automatiskt skapade gränsgrupper aktiveras för innehållsplats men inte för platstilldelning. Det här förhindrar överlappande gränser för platstilldelning mellan käll- och målhierarkierna. När du migrerar från en Configuration Manager 2007-käll plats hjälper detta till att förhindra nya Configuration Manager 2007-klienter som installeras från felaktigt tilldelade till målhierarkin. Configuration Manager aktuella gren klienter tilldelas som standard inte automatiskt till Configuration Manager 2007-platser.  
 
  Om du under migreringen delar en distributionsplats med målhierarkin migreras alla gränser som är associerade med den distributionen automatiskt till målhierarkin. I målhierarkin skapar migreringen en ny skrivskyddad gränser grupp för varje delad distributions plats. Om du ändrar gränserna för distributionsplasten i källhierarkin uppdateras gränsgruppen i målhierarkin med ändringarna vid nästa datainsamlingscykel.  
 
-##  <a name="plan-to-migrate-reports"></a><a name="Plan_Migrate_reports"></a>Planera att migrera rapporter  
+##  <a name="plan-to-migrate-reports"></a><a name="Plan_Migrate_reports"></a> Planera att migrera rapporter  
 Configuration Manager stöder inte migrering av rapporter. Exportera i stället rapporter från källhierarkin med SQL Server Reporting Services Report Builder och importera dem sedan till målhierarkin.  
 
 > [!NOTE]  
@@ -142,7 +142,7 @@ Configuration Manager stöder inte migrering av rapporter. Exportera i stället 
 
 Mer information om rapportering finns i [Introduktion till rapportering](../servers/manage/introduction-to-reporting.md).  
 
-##  <a name="plan-to-migrate-organizational-and-search-folders"></a><a name="Plan_Migrate_Org_Folders"></a>Planera för att migrera organisations-och sökmappar  
+##  <a name="plan-to-migrate-organizational-and-search-folders"></a><a name="Plan_Migrate_Org_Folders"></a> Planera för att migrera organisations-och sökmappar  
  Du kan migrera organisationsmappar och sökmappar från en källhierarki som stöds till en målhierarki. Från ett System Center 2012 Configuration Manager eller Configuration Manager aktuell Branch-källhierarki kan du dessutom migrera villkoren för en sparad sökning till en målhierarkin.  
 
  När du migrerar behålls som standard sökmappen och strukturerna för administrationsmappar för objekt och samlingar. I guiden Skapa migreringsjobb, på sidan **Inställningar** , kan du dock konfigurera ett migreringsjobb så att organisations strukturen för objekt inte migreras genom att avmarkera kryss rutan för det här alternativet. Samlingarnas organisationsstrukturer behålls alltid.  
@@ -151,13 +151,13 @@ Mer information om rapportering finns i [Introduktion till rapportering](../serv
 
  När du migrerar en sparad sökning från en System Center 2012 Configuration Manager eller Configuration Manager aktuell Branch-källhierarki migrerar du villkoren för sökningen och inte informationen om Sök resultaten. Migrering av en sparad sökning kan inte tillämpas från en Configuration Manager 2007-käll plats.  
 
-##  <a name="plan-to-migrate-asset-intelligence-customizations"></a><a name="Plan_Migrate_AI"></a>Planera för att migrera Tillgångsinformation anpassningar  
+##  <a name="plan-to-migrate-asset-intelligence-customizations"></a><a name="Plan_Migrate_AI"></a> Planera för att migrera Tillgångsinformation anpassningar  
  Du kan migrera anpassningar för tillståndsinformation från en källhierarki som stöds till en målhierarki. Det finns inga betydande ändringar i strukturen för Tillgångsinformation anpassningar mellan Configuration Manager 2007 och Configuration Manager aktuella grenen.  
 
 > [!NOTE]  
 > Configuration Manager aktuella grenen har inte stöd för migrering av Tillgångsinformation objekt från en Configuration Manager 2007-webbplats som använder Tillgångsinformation service 2,0 (AIS 2,0).  
 
-##  <a name="plan-to-migrate-software-metering-rules-customizations"></a><a name="Plan_Migrate_SWM_Rules"></a>Planera att migrera anpassningar av regler för avläsning av program vara  
+##  <a name="plan-to-migrate-software-metering-rules-customizations"></a><a name="Plan_Migrate_SWM_Rules"></a> Planera att migrera anpassningar av regler för avläsning av program vara  
  Det finns inga betydande ändringar i avläsning av program vara mellan Configuration Manager 2007 och Configuration Manager aktuella grenen. Du kan migrera anpassningar för regler för avläsning av programvara från en källhierarki som stöds till en målhierarki.  
 
- Som standard associeras inte regler för avläsning av programvara som du migrerar till en målhierarki med en specifik plats i målhierarkin, utan gäller i stället för alla klienter i hierarkin. Om du vill tillämpa en regel för avläsning av programvara på klienter på en specifik plats måste du redigera avläsningsregeln när den har migrerats.  
+ Som standard associeras inte regler för avläsning av programvara som du migrerar till en målhierarki med en specifik plats i målhierarkin, utan gäller i stället för alla klienter i hierarkin. Om du vill tillämpa en regel för avläsning av programvara på klienter på en specifik plats måste du redigera avläsningsregeln när den har migrerats.

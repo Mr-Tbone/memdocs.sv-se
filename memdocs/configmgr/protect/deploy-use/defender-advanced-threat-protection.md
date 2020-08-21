@@ -10,28 +10,28 @@ ms.assetid: a5fc033e-828e-4e45-9097-bbbd0697ebdf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: cbf7dd3e35db8d2020e96e2511017e43863f724e
-ms.sourcegitcommit: f3f2632df123cccd0e36b2eacaf096a447022b9d
+ms.openlocfilehash: 5feaf05a6829d902b1d8dcbe57722dfce410de6f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85613502"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693547"
 ---
 # <a name="microsoft-defender-advanced-threat-protection"></a>Microsoft Defender Advanced Threat Protection
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-Endpoint Protection kan hjälpa dig att hantera och övervaka [Microsoft Defender Advanced Threat Protection (ATP)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) (tidigare Windows Defender ATP). Microsoft Defender ATP hjälper företag att upptäcka, undersöka och reagera på avancerade attacker i sina nätverk. Configuration Managers principer kan hjälpa dig att publicera och övervaka Windows 10-klienter.
+Endpoint Protection kan hjälpa dig att hantera och övervaka [Microsoft Defender Advanced Threat Protection (ATP)](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) (tidigare Windows Defender ATP). Microsoft Defender ATP hjälper företag att upptäcka, undersöka och reagera på avancerade attacker i sina nätverk. Configuration Managers principer kan hjälpa dig att publicera och övervaka Windows 10-klienter.
 
-Microsoft Defender ATP är en tjänst i [Microsoft Defender-Security Center](https://securitycenter.windows.com). Genom att lägga till och distribuera en konfigurations fil för klient-onboarding kan Configuration Manager övervaka distributions status och Microsoft Defender ATP-agent hälsa. Microsoft Defender ATP stöds på datorer som kör Configuration Manager-klienten eller [hanteras av Microsoft Intune](https://docs.microsoft.com/intune/protect/advanced-threat-protection).
+Microsoft Defender ATP är en tjänst i [Microsoft Defender-Security Center](https://securitycenter.windows.com). Genom att lägga till och distribuera en konfigurations fil för klient-onboarding kan Configuration Manager övervaka distributions status och Microsoft Defender ATP-agent hälsa. Microsoft Defender ATP stöds på datorer som kör Configuration Manager-klienten eller [hanteras av Microsoft Intune](/intune/protect/advanced-threat-protection).
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 - Prenumeration på online tjänsten Microsoft Defender Advanced Threat Protection  
 - Klient datorer som kör Configuration Manager-klienten
 - Klienter som använder ett operativ system som anges i avsnittet [klient operativ system som stöds](#bkmk_os) nedan.
 
-### <a name="supported-client-operating-systems"></a><a name="bkmk_os"></a>Klient operativ system som stöds
+### <a name="supported-client-operating-systems"></a><a name="bkmk_os"></a> Klient operativ system som stöds
 
 Följande klient operativ system kan registreras baserat på den version av Configuration Manager du kör:
 
@@ -74,7 +74,7 @@ När du registrerar enheter till ATP med Configuration Manager distribuerar du A
 > - Om mål samlingen innehåller enheter på upp-nivå, och du använder instruktionerna för äldre enheter, så kommer inte enheter på den översta nivån att publiceras.
 > - Om mål samlingen innehåller enheter som är äldre, och du använder instruktionerna för att installera-nivå enheter, så kommer inte de äldre enheterna att publiceras.
 
-## <a name="onboard-devices-with-any-supported-operating-system-to-atp-recommended"></a><a name="bkmk_any_os"></a>Publicera enheter med alla operativ system som stöds till ATP (rekommenderas)
+## <a name="onboard-devices-with-any-supported-operating-system-to-atp-recommended"></a><a name="bkmk_any_os"></a> Publicera enheter med alla operativ system som stöds till ATP (rekommenderas)
  Du kan publicera enheter som kör något av de [operativ system som stöds](#bkmk_os) till ATP genom att ange konfigurations filen, **arbets ytans nyckel**och **arbetsyte-ID** för att Configuration Manager.
 
 ### <a name="get-the-configuration-file-workspace-id-and-workspace-key"></a>Hämta konfigurations filen, arbetsyte-ID och nyckel för arbets ytan
@@ -112,7 +112,7 @@ När du registrerar enheter till ATP med Configuration Manager distribuerar du A
 1. Granska sammanfattningen och Slutför guiden.  
 1. Högerklicka på principen som du skapade och välj sedan **distribuera** för att rikta in dig mot Microsoft Defender ATP-principen till klienter.
 
-## <a name="onboard-devices-running-up-level-operating-systems-to-atp"></a><a name="bkmk_uplevel"></a>Onboard-enheter som kör operativ system på upp-nivå till ATP
+## <a name="onboard-devices-running-up-level-operating-systems-to-atp"></a><a name="bkmk_uplevel"></a> Onboard-enheter som kör operativ system på upp-nivå till ATP
 
 Klient datorer kräver en onboarding-konfigurationsfil för onboarding till ATP. Operativ systemen på upp-nivån är:
 - Windows 10, version 1607 och senare 
@@ -147,7 +147,7 @@ Om mål samlingen innehåller både på-nivå-och-nivå-enheter, eller om du int
 1. Granska sammanfattningen och Slutför guiden.  
 1. Högerklicka på principen som du skapade och välj sedan **distribuera** för att rikta in dig mot Microsoft Defender ATP-principen till klienter.
 
-## <a name="onboard-devices-running-down-level-operating-systems-to-atp"></a><a name="bkmk_downlevel"></a>Onboard-enheter som kör äldre operativ system till ATP
+## <a name="onboard-devices-running-down-level-operating-systems-to-atp"></a><a name="bkmk_downlevel"></a> Onboard-enheter som kör äldre operativ system till ATP
 
 Äldre klienter kräver nyckel för **arbets yta** och **arbetsyte-ID** för ATP-onboarding. Äldre operativ system är:
 - Windows 8,1
@@ -220,6 +220,6 @@ Välj **distribuera** för att rikta in dig på Microsoft Defender ATP-principen
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)
+- [Microsoft Defender Advanced Threat Protection](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection)
 
-- [Felsöka onboarding-problem i Microsoft Defender Advanced Threat Protection](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/troubleshoot-onboarding)
+- [Felsöka onboarding-problem i Microsoft Defender Advanced Threat Protection](/windows/security/threat-protection/microsoft-defender-atp/troubleshoot-onboarding)

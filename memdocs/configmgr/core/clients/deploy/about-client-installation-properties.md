@@ -10,12 +10,12 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d26be4d3e3381a80fcbaa547cfcc7a3b8db42f5
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: efc2cc22dc4edeacc00e521233eda383314b0b92
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127026"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693445"
 ---
 # <a name="about-client-installation-parameters-and-properties-in-configuration-manager"></a>Om parametrar och egenskaper för klient installation i Configuration Manager
 
@@ -49,7 +49,7 @@ I kommandotolken används följande format i CCMSetup.exe-kommandot:
 
 `CCMSetup.exe [<Ccmsetup parameters>] [<client.msi setup properties>]`  
 
-Till exempel:  
+Exempel:  
 
 `CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
@@ -97,7 +97,7 @@ Värden som stöds:
 - `TRUE`: Klienten uppgraderas inte automatiskt
 - `FALSE`: Klienten uppgraderas automatiskt (standard)
 
-Till exempel:  
+Exempel:  
 
 `CCMSetup.exe /AlwaysExcludeUpgrade:TRUE`
 
@@ -118,7 +118,7 @@ När enheten laddar ned klientens installationsfiler över en HTTP-anslutning an
 
 - `HIGH`
 
-- `NORMAL`objekt
+- `NORMAL` objekt
 
 - `LOW`
 
@@ -136,7 +136,7 @@ Exempel: `CCMSetup.exe /config:"configuration file name.txt"`
 
 Använd filen **filen mobileclienttemplate. TCF** i `\bin\<platform>` mappen i Configuration Manager installations katalog på plats servern för att ange rätt fil format. Den här filen innehåller kommentarer om avsnitten och hur de används. Ange klient installations egenskaperna i `[Client Install]` avsnittet efter följande text: `Install=INSTALL=ALL` .
 
-Exempel på `[Client Install]` avsnitts post:`Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
+Exempel på `[Client Install]` avsnitts post: `Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
 ### <a name="downloadtimeout"></a>/downloadtimeout
 
@@ -153,7 +153,7 @@ Den här parametern anger att CCMSetup.exe inte installerar den angivna funktion
 Exempel: `CCMSetup.exe /ExcludeFeatures:ClientUI` installerar inte Software Center på klienten.  
 
 > [!NOTE]  
-> `ClientUI`är det enda värde som parametern **/ExcludeFeatures** stöder.
+> `ClientUI` är det enda värde som parametern **/ExcludeFeatures** stöder.
 
 ### <a name="forceinstall"></a>/forceinstall
 
@@ -186,9 +186,9 @@ Du kan använda kommando rads parametern **/MP** för att ange fler än en hante
 
 Om klienten ansluter till en hanterings plats med hjälp av HTTPS anger du FQDN inte dator namnet. Värdet måste matcha hanterings platsens PKI-certifikatets **ämne** eller **Alternativt namn för certifikat mottagare**. Även om Configuration Manager stöder användning av ett dator namn i certifikatet för anslutningar på intranätet, rekommenderas att du använder ett fullständigt domän namn.
 
-Exempel med dator namn:`ccmsetup.exe /mp:SMSMP01`  
+Exempel med dator namn: `ccmsetup.exe /mp:SMSMP01`  
 
-Exempel med FQDN:`ccmsetup.exe /mp:smsmp01.contoso.com`  
+Exempel med FQDN: `ccmsetup.exe /mp:smsmp01.contoso.com`  
 
 Den här parametern kan också ange URL: en för en CMG (Cloud Management Gateway). Använd den här URL: en för att installera-klienten på en Internetbaserad enhet. Använd följande steg för att hämta värdet för den här parametern:
 
@@ -202,7 +202,7 @@ Den här parametern kan också ange URL: en för en CMG (Cloud Management Gatewa
 
 - Lägg till `https://` prefixet som ska användas med **/MP** -parametern.
 
-Exempel för när du använder URL: en för Cloud Management Gateway:`ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
+Exempel för när du använder URL: en för Cloud Management Gateway: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
 > [!Important]
 > När du anger URL: en för en moln hanterings-Gateway för **/MP** -parametern måste den börja med `https://` .
@@ -265,7 +265,7 @@ Mer information om klient krav finns i [krav för Windows-klienten](prerequisite
 
 ### <a name="source"></a>/source
 
-Anger fil hämtnings platsen. Använd en lokal sökväg eller UNC-sökväg. Enheten laddar ned filer med SMB-protokollet (Server Message Block). Om du vill använda **/Source**måste Windows-användarkontot för klient installationen ha **Läs** behörighet till platsen.
+Anger fil hämtnings platsen. Använd en lokal sökväg eller UNC-sökväg. Enheten laddar ned filer med SMB-protokollet (Server Message Block). Om du vill använda  **/Source**måste Windows-användarkontot för klient installationen ha **Läs** behörighet till platsen.
 
 Mer information om hur CCMSetup laddar ned innehåll finns i [gränser grupper – klient installation](../../servers/deploy/configure/boundary-groups.md#bkmk_ccmsetup). Artikeln innehåller också information om CCMSetup-beteende om du använder både parametrarna **/MP** och **/Source** .
 
@@ -291,7 +291,7 @@ Exempel: `CCMSetup.exe /UsePKICert`
 >
 > Ange även den här parametern när du installerar en klient för kommunikation via Internet. Använd egenskapen **CCMALWAYSINF = 1** tillsammans med egenskaperna för den Internetbaserade hanterings platsen (**CCMHOSTNAME**) och plats koden (**SMSSITECODE**). Mer information om Internetbaserad klient hantering finns i [överväganden för klient kommunikation från Internet eller en ej betrodd skog](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
-## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a>CCMSetup.exe retur koder
+## <a name="ccmsetupexe-return-codes"></a><a name="ccmsetupReturnCodes"></a> CCMSetup.exe retur koder
 
 Kommandot CCMSetup.exe ger följande retur koder. Du kan felsöka genom att granska `%WinDir%\ccmsetup\ccmsetup.log` klienten för kontext och ytterligare information om retur koder.
 
@@ -304,7 +304,7 @@ Kommandot CCMSetup.exe ger följande retur koder. Du kan felsöka genom att gran
 |9|Utvärderingen av krav misslyckades|  
 |10|Installationsmanifestet för hash-verifieringen misslyckades|  
 
-## <a name="ccmsetupmsi-properties"></a><a name="ccmsetupMsiProps"></a>Ccmsetup.msi egenskaper
+## <a name="ccmsetupmsi-properties"></a><a name="ccmsetupMsiProps"></a> Ccmsetup.msi egenskaper
 
 Följande egenskaper kan ändra installations beteendet för ccmsetup.msi.
 
@@ -317,13 +317,13 @@ Exempel: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.co
 > [!Tip]
 > Microsoft Intune begränsar kommando raden till 1024 tecken.
 
-## <a name="clientmsi-properties"></a><a name="clientMsiProps"></a>Client.msi egenskaper
+## <a name="clientmsi-properties"></a><a name="clientMsiProps"></a> Client.msi egenskaper
 
 Följande egenskaper kan ändra installations beteendet för client.msi, som ccmsetup.exe installerar. Om du använder [push-installation av klienter](plan/client-installation-methods.md#client-push-installation)anger du dessa egenskaper på fliken **klient** i egenskaperna för **push-installation av klienter** i Configuration Manager-konsolen.
 
 ### <a name="aadclientappid"></a>AADCLIENTAPPID
 
-Anger Azure Active Directory (Azure AD)-klientens app-ID. Du skapar eller importerar klient appen när du [konfigurerar Azure-tjänster](../../servers/deploy/configure/azure-services-wizard.md) för moln hantering. En Azure-administratör kan hämta värdet för den här egenskapen från Azure Portal. Mer information finns i [Hämta program-ID](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in). Detta program-ID är för den **interna** program typen för egenskapen **AADCLIENTAPPID** .
+Anger Azure Active Directory (Azure AD)-klientens app-ID. Du skapar eller importerar klient appen när du [konfigurerar Azure-tjänster](../../servers/deploy/configure/azure-services-wizard.md) för moln hantering. En Azure-administratör kan hämta värdet för den här egenskapen från Azure Portal. Mer information finns i [Hämta program-ID](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in). Detta program-ID är för den **interna** program typen för egenskapen **AADCLIENTAPPID** .
 
 Exempel: `ccmsetup.exe AADCLIENTAPPID=aa28e7f1-b88a-43cd-a2e3-f88b257c863b`
 
@@ -340,11 +340,11 @@ Exempel: `ccmsetup.exe AADRESOURCEURI=https://contososerver`
 Anger ID för Azure AD-klient. Configuration Manager länkar till den här klienten när du [konfigurerar Azure-tjänster](../../servers/deploy/configure/azure-services-wizard.md) för moln hantering. Använd följande steg för att hämta värdet för den här egenskapen:
 
 - Öppna en kommando tolk på en Windows 10-enhet som är ansluten till samma Azure AD-klient.
-- Kör följande kommando:`dsregcmd.exe /status`
+- Kör följande kommando: `dsregcmd.exe /status`
 - I avsnittet enhets status söker du efter **TenantId** -värdet. Till exempel `TenantId : 607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
   > [!Note]
-  > En Azure-administratör kan också hämta det här värdet i Azure Portal. Mer information finns i [Hämta klient-ID](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
+  > En Azure-administratör kan också hämta det här värdet i Azure Portal. Mer information finns i [Hämta klient-ID](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
 
 Exempel: `ccmsetup.exe AADTENANTID=607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
@@ -654,7 +654,7 @@ Anger platsen för mappen för klientcachen på klient datorn. Som standard är 
 
 Exempel: `CCMSetup.exe SMSCACHEDIR="C:\Temp"`  
 
-Använd den här egenskapen med egenskapen [**SMSCACHEFLAGS**](#smscacheflags) för att styra platsen för klientcachen. Om du till exempel vill installera mappen client cache på den största tillgängliga klient disk enheten:`CCMSetup.exe SMSCACHEDIR=Cache SMSCACHEFLAGS=MAXDRIVE`
+Använd den här egenskapen med egenskapen [**SMSCACHEFLAGS**](#smscacheflags) för att styra platsen för klientcachen. Om du till exempel vill installera mappen client cache på den största tillgängliga klient disk enheten: `CCMSetup.exe SMSCACHEDIR=Cache SMSCACHEFLAGS=MAXDRIVE`
 
 ### <a name="smscacheflags"></a>SMSCACHEFLAGS
 
@@ -773,7 +773,7 @@ Den här egenskapen anger en Configuration Manager plats som du tilldelar klient
 
 Exempel: `CCMSetup.exe SMSSITECODE=XZY`
 
-## <a name="attribute-values-for-certificate-selection-criteria"></a><a name="BKMK_attributevalues"></a>Attributvärden för urvalskriterier för certifikat
+## <a name="attribute-values-for-certificate-selection-criteria"></a><a name="BKMK_attributevalues"></a> Attributvärden för urvalskriterier för certifikat
 
 Configuration Manager stöder följande attributvärden för urvalskriterier för PKI-certifikat:
 
@@ -790,7 +790,7 @@ Configuration Manager stöder följande attributvärden för urvalskriterier fö
 |2.5.4.9|STREET|Gatuadress|  
 |2.5.4.10|O|Organisationsnamn|  
 |2.5.4.11|OU|Organisationsenhet|  
-|2.5.4.12|T eller Title|Rubrik|  
+|2.5.4.12|T eller Title|Title|  
 |2.5.4.42|G eller GN eller GivenName|Tilltalsnamn|  
 |2.5.4.43|I eller Initials|Initialer|  
-|2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|  
+|2.5.29.17|(inget värde)|Alternativt namn för certifikatmottagare|

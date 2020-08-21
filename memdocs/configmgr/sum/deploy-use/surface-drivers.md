@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9f9f4e6-5b4f-4b8f-94d6-db9b2b239113
-ms.openlocfilehash: f276db618a2e67832ffa5575622e00eea02c7422
-ms.sourcegitcommit: 8a4a86ee8044f273dcece26155132a801f3d8f9a
+ms.openlocfilehash: c0b4942e8a6e81477814e24281e0d9e3752c5f90
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438619"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696879"
 ---
 # <a name="manage-surface-drivers-with-configuration-manager"></a>Hantera Surface-drivrutiner med Configuration Manager
 
@@ -52,7 +52,7 @@ Gör så här för att aktivera synkronisering av Surface-drivrutiner:
 1. [Synkronisera program uppdaterings platsen](../get-started/synchronize-software-updates.md) för att ta med Surface-drivrutinerna i Configuration Manager.
 1. När du har synkroniserat Surface-drivrutinerna distribuerar du dem på samma sätt som du distribuerar andra uppdateringar.
 
-## <a name="products-for-surface-drivers"></a><a name="bkmk_prod"></a>Produkter för Surface-drivrutiner
+## <a name="products-for-surface-drivers"></a><a name="bkmk_prod"></a> Produkter för Surface-drivrutiner
 
 De flesta driv rutiner tillhör följande produkt grupper:
 
@@ -83,7 +83,7 @@ De flesta driv rutiner tillhör följande produkt grupper:
 > [!NOTE]
 > De flesta Surface-drivrutinerna tillhör flera Windows 10-produktsortiment. Du kanske inte behöver välja alla produkter som anges här. För att minska antalet produkter som fyller din uppdaterings katalog rekommenderar vi att du bara väljer de produkter som krävs av din miljö för synkronisering.
 
-## <a name="surface-models"></a><a name="bkmk_models"></a>Surface-modeller
+## <a name="surface-models"></a><a name="bkmk_models"></a> Surface-modeller
 
 Följande tabell innehåller de funktions modeller och versioner av Windows 10 där Configuration Manager kan installera driv rutiner. Uppdateringar av Surface-drivrutiner är inte tillgängliga i Configuration Manager samma dag som de publiceras i Microsoft Updates katalogen. Configuration Manager upprätthåller en egen lista över vilka Surface-drivrutiner som ska importeras. Enheter som behöver Windows 10 S-produkter noteras. Microsoft syftar till att hämta de Surface-drivrutiner som lagts till i listan över tillåtna den andra tisdagen varje månad för att göra dem tillgängliga för synkronisering till Configuration Manager. Mer information finns i [vanliga frågor och svar](#bkmk_faq).
 
@@ -93,21 +93,21 @@ Följande tabell innehåller de funktions modeller och versioner av Windows 10 d
 |----|----|----|----|----|----|
 |Surface Pro 3|Ja| Ja| Ja |Ja|Ja|
 |Surface Pro 4|Ja| Ja| Ja |Ja|Ja|
-|Surface Pro 6|E.t.| Ja| Ja |Ja|Ja|
-|Surface Pro 7|E.t.| E.t.| E.t. |Ja|Ja|
-|Yta Pro X|E.t.| E.t.| E.t. |Ja|Ja|
+|Surface Pro 6|Ej tillämpligt| Ja| Ja |Ja|Ja|
+|Surface Pro 7|Saknas| Saknas| Saknas |Ja|Ja|
+|Yta Pro X|Saknas| Saknas| Saknas |Ja|Ja|
 |Surface Book|Ja| Ja| Ja |Ja|Ja|
 |Surface Book 2|Ja| Ja| Ja |Ja|Ja|
-|Surface Book 3|E.t.| E.t.| E.t. |Ja|Ja|
+|Surface Book 3|Saknas| Saknas| Saknas |Ja|Ja|
 |Surface-dator|Ja, med produkten "Windows 10 S version 1709 och senare service driv rutiner" valt| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
-|Surface laptop 2|E.t.| Ja |Ja|Ja|Ja|
-|Surface laptop 3|E.t.| E.t.|E.t.|Ja |Ja|
-|Surface go|E.t.| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
-|Surface Go 2|E.t.| E.t.| Ja |Ja|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
+|Surface laptop 2|Ej tillämpligt| Ja |Ja|Ja|Ja|
+|Surface laptop 3|Saknas| Saknas|Saknas|Ja |Ja|
+|Surface go|Ej tillämpligt| Ja, med produkten "Windows 10 S version 1803 och senare service driv rutiner" valt|Ja, med produkten "Windows 10 S version 1809 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
+|Surface Go 2|Saknas| Saknas| Ja |Ja|Ja, med produkten "Windows 10 S version 1903 och senare uppgradera & Servicing-drivrutiner" valt|
 |Surface Studio|Ja| Ja| Ja |Ja|Ja|
-|Surface Studio 2|E.t.| Ja| Ja |Ja|Ja|
+|Surface Studio 2|Ej tillämpligt| Ja| Ja |Ja|Ja|
 
-## <a name="verify-the-configuration"></a>Kontrollera konfigurationen
+## <a name="verify-the-configuration"></a>Verifiera konfigurationen
 
 Kontrol lera att program uppdaterings platsen är korrekt konfigurerad genom att använda **WsyncMgr. log** och **WCM. log**.
 
@@ -136,9 +136,9 @@ Kontrol lera att program uppdaterings platsen är korrekt konfigurerad genom att
    Den här posten är ett XML-element som visar varje produkt grupp och klassificering som är synkroniserad av program uppdaterings plats servern. Om du inte hittar de produkter som du har valt, så sparas dubbla kontroller av produkterna för program uppdaterings platsen.
 1. Du kan också vänta tills nästa synkronisering har slutförts. Kontrol lera sedan om uppdateringar för Surface-drivrutinen och inbyggd program vara visas i program uppdateringar i Configuration Manager-konsolen. Konsolen kan till exempel visa följande information: ![ synkroniserade Surface-drivrutiner i Configuration Manager-konsolen](media/synchronized-surface-drivers.png)
 
-##  <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a>Vanliga frågor och svar
+##  <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a> Vanliga frågor och svar
 
-### <a name="after-i-follow-the-steps-in-this-article-my-surface-drivers-are-still-not-synchronized-why"></a>När jag har följt stegen i den här artikeln synkroniseras inte mina Surface-drivrutiner. Varför det?
+### <a name="after-i-follow-the-steps-in-this-article-my-surface-drivers-are-still-not-synchronized-why"></a>När jag har följt stegen i den här artikeln synkroniseras inte mina Surface-drivrutiner. Varför?
 
 Om du synkroniserar från en överordnad Windows Server Update Services (WSUS)-Server, i stället för Microsoft Update, kontrollerar du att den överordnade WSUS-servern är konfigurerad för att stödja och synkronisera uppdateringar av Surface-drivrutiner. Alla underordnade servrar är begränsade till uppdateringar som finns i den överordnade WSUS-serverdatabasen.
 
@@ -154,12 +154,12 @@ Nej. Även om uppdateringen importeras till WSUS importeras inte uppdateringen t
 
 ### <a name="what-alternative-methods-do-i-have-to-deploy-surface-driver-and-firmware-updates"></a>Vilka alternativa metoder behöver jag för att distribuera uppdateringar för Surface-drivrutiner och inbyggd program vara?
 
-Information om hur du distribuerar uppdateringar för Surface-drivrutiner och inbyggd program vara via alternativa kanaler finns i [Hantera uppdateringar av Surface-drivrutiner och inbyggd program vara](https://docs.microsoft.com/surface/manage-surface-driver-and-firmware-updates). Om du vill ladda ned MSI-eller. exe-filen och sedan distribuera via traditionella program varu distributions kanaler, se [behålla den inbyggda program varan för den aktuella arbets ytan med Configuration Manager](https://docs.microsoft.com/archive/blogs/thejoncallahan/keeping-surface-firmware-updated-with-configuration-manager).
+Information om hur du distribuerar uppdateringar för Surface-drivrutiner och inbyggd program vara via alternativa kanaler finns i [Hantera uppdateringar av Surface-drivrutiner och inbyggd program vara](/surface/manage-surface-driver-and-firmware-updates). Om du vill ladda ned MSI-eller. exe-filen och sedan distribuera via traditionella program varu distributions kanaler, se [behålla den inbyggda program varan för den aktuella arbets ytan med Configuration Manager](/archive/blogs/thejoncallahan/keeping-surface-firmware-updated-with-configuration-manager).
 
 ## <a name="next-steps"></a>Nästa steg
 
 Mer information om Surface-drivrutiner finns i följande artiklar:
 
-- [Överväganden för Surface och System Center Configuration Manager](https://docs.microsoft.com/surface/considerations-for-surface-and-system-center-configuration-manager#deploy-surface-app-with-configuration-manager)
+- [Överväganden för Surface och System Center Configuration Manager](/surface/considerations-for-surface-and-system-center-configuration-manager#deploy-surface-app-with-configuration-manager)
 - [Uppdaterings historik för yta](https://support.microsoft.com/help/4036283/surface-surface-update-history)
 - [Ladda ned den senaste inbyggda program varan och driv rutinerna för Surface-enheter](/surface/manage-surface-driver-and-firmware-updates)

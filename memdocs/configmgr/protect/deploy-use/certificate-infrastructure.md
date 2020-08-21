@@ -10,12 +10,12 @@ ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 590c6fd336ec19949b5f5b99b25b3104524a52d6
-ms.sourcegitcommit: f94cdca69981627d6a3471b04ac6f0f5ee8f554f
+ms.openlocfilehash: 656cc80c929eb7e829dd06b642a83cb174d3b0c8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82210119"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697253"
 ---
 # <a name="configure-certificate-infrastructure"></a>Konfigurera infrastrukturen för certifikat
 
@@ -34,7 +34,7 @@ Använd de här stegen för att konfigurera din infrastruktur för SCEP-eller PF
 
 ### <a name="to-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>Installera och konfigurera registreringstjänsten för nätverksenheter och beroenden  
 
-1. Installera och konfigurera rolltjänsten Registreringstjänsten för nätverksenheter för serverrollen Active Directory-certifikattjänster på en server som kör Windows Server 2012 R2. Mer information finns i [rikt linjer för registrerings tjänsten för nätverks enheter](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498\(v=ws.11\)).
+1. Installera och konfigurera rolltjänsten Registreringstjänsten för nätverksenheter för serverrollen Active Directory-certifikattjänster på en server som kör Windows Server 2012 R2. Mer information finns i [rikt linjer för registrerings tjänsten för nätverks enheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498\(v=ws.11\)).
 
 2. Kontrollera och, om det behövs, ändra säkerhetsbehörigheten för de certifikatmallar som används i registreringstjänsten för nätverksenheter.  
 
@@ -44,7 +44,7 @@ Använd de här stegen för att konfigurera din infrastruktur för SCEP-eller PF
 
    -   För det SCEP-tjänstkonto som används i programpoolen för registreringstjänsten för nätverksenheter: behörigheterna **Läs** och **Registrera**.  
 
-        Detta krav är inte bara för Configuration Manager men är en del av konfigurationen av registrerings tjänsten för nätverks enheter. Mer information finns i [rikt linjer för registrerings tjänsten för nätverks enheter](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498\(v=ws.11\)).  
+        Detta krav är inte bara för Configuration Manager men är en del av konfigurationen av registrerings tjänsten för nätverks enheter. Mer information finns i [rikt linjer för registrerings tjänsten för nätverks enheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498\(v=ws.11\)).  
 
    > [!TIP]  
    >  Du kan se vilka certifikatmallar som används i registreringstjänsten för nätverksenheter med hjälp av följande registernyckel på den server som kör registreringstjänsten för nätverksenheter: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP.  
@@ -69,7 +69,7 @@ Använd de här stegen för att konfigurera din infrastruktur för SCEP-eller PF
 
    - Ställ in nyckeln **MaxRequestBytes** på**16777216**.  
 
-     Mer information finns i Microsoft Support artikel [820129: register inställningar för http. sys för Windows](https://support.microsoft.com/help/820129).
+     Mer information finns i Microsoft Support artikel [820129: Http.sys register inställningar för Windows](https://support.microsoft.com/help/820129).
 
 6. På samma server går du till IIS-hanteraren (Internet Information Services), ändrar begäransfiltreringsinställningarna för programmet /certsrv/mscep och startar sedan om datorn. I dialogrutan **Redigera inställningar för begärandefiltrering** ska inställningarna för **Begärandebegränsningar** vara följande:  
 
@@ -79,7 +79,7 @@ Använd de här stegen för att konfigurera din infrastruktur för SCEP-eller PF
 
    - **Maximal frågesträng (byte):**: **65534**  
 
-     Mer information om de här inställningarna och hur du konfigurerar dem finns i [begränsningar för IIS-begäranden](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
+     Mer information om de här inställningarna och hur du konfigurerar dem finns i [begränsningar för IIS-begäranden](/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
 
 7. Om du vill kunna begära ett certifikat som har kortare giltighetstid än den certifikatmall som du använder: Den här konfigurationen är inaktiverad som standard för företagscertifikatutfärdare. Om du vill aktivera det här alternativet för företagscertifikatutfärdare använder du kommandoradsverktyget Certutil och stoppar och startar sedan om certifikattjänsten med följande kommandon:  
 
@@ -89,9 +89,9 @@ Använd de här stegen för att konfigurera din infrastruktur för SCEP-eller PF
 
    3. **net start certsvc**  
 
-      Mer information finns i [verktyg och inställningar för certifikat tjänster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780742\(v=ws.10\)).
+      Mer information finns i [verktyg och inställningar för certifikat tjänster](/previous-versions/windows/it-pro/windows-server-2003/cc780742\(v=ws.10\)).
 
-8. Kontrol lera att registrerings tjänsten för nätverks enheter fungerar genom att använda följande länk som exempel: `https://server.contoso.com/certsrv/mscep/mscep.dll`. Nu bör den inbyggda webbsidan för registreringstjänsten för nätverksenheter visas. På den här webbsidan förklaras vad tjänsten är och hur nätverksenheter kan använda webbadressen för att skicka certifikatförfrågningar.  
+8. Kontrol lera att registrerings tjänsten för nätverks enheter fungerar genom att använda följande länk som exempel: `https://server.contoso.com/certsrv/mscep/mscep.dll` . Nu bör den inbyggda webbsidan för registreringstjänsten för nätverksenheter visas. På den här webbsidan förklaras vad tjänsten är och hur nätverksenheter kan använda webbadressen för att skicka certifikatförfrågningar.  
 
    Nu när du har konfigurerat registreringstjänsten för nätverksenheter och beroenden är det dags att installera och konfigurera certifikatregistreringsplatsen.
 
@@ -125,7 +125,7 @@ Du måste installera och konfigurera minst en certifikat registrerings plats i C
    - Om du har valt **bearbeta SCEP-certifikat begär Anden**konfigurerar du följande:
      -   **Webbplats namn**, **https-portnummer**och **virtuellt program namn** för certifikat registrerings platsen. Dessa fält fylls i automatiskt med standardvärden. 
      -   **URL för registrerings tjänsten för nätverks enheter och rotcertifikatutfärdarcertifikat** – Klicka på **Lägg till**och ange följande i dialog rutan **Lägg till URL och rot** certifikat för certifikat utfärdare:
-         - **URL för registreringstjänsten för nätverksenheter**: Ange webbadressen i följande format: https://*<server_FQDN>*/certsrv/mscep/mscep.dll. Om det fullständiga domän namnet för den server som kör registrerings tjänsten för nätverks enheter till exempel är server1.contoso.com, skriver `https://server1.contoso.com/certsrv/mscep/mscep.dll`du.
+         - **URL för registreringstjänsten för nätverksenheter**: Ange webbadressen i följande format: https://*<server_FQDN>*/certsrv/mscep/mscep.dll. Om det fullständiga domän namnet för den server som kör registrerings tjänsten för nätverks enheter till exempel är server1.contoso.com, skriver du `https://server1.contoso.com/certsrv/mscep/mscep.dll` .
          - **Rotcertifikatutfärdarcertifikat**: Bläddra till och välj certifikatfilen (.cer) som du skapade och sparade i **Steg 1: Installera och konfigurera registreringstjänsten för nätverksenheter och beroenden**. Det här rot certifikat utfärdarens certifikat tillåter certifikat registrerings platsen att verifiera det certifikat för klientautentisering som Configuration Manager-Principmodulen kommer att använda.  
 
    - Om du har valt **bearbeta PFX-certifikat begär Anden**, konfigurerar du anslutnings informationen och autentiseringsuppgifterna för den valda certifikat utfärdaren.
@@ -171,7 +171,7 @@ Du måste installera och konfigurera modulen Configuration Manager-princip på v
 
 ##### <a name="to-install-the-policy-module"></a>Installera principmodulen  
 
-1. Logga in som domän administratör på den server som kör registrerings tjänsten för nätverks enheter och kopiera följande filer från mappen <ConfigMgrInstallationMedia\>\SMSSETUP\POLICYMODULE\X64 på installations mediet för Configuration Manager till en tillfällig mapp:  
+1. Logga in som domän administratör på den server som kör registrerings tjänsten för nätverks enheter och kopiera följande filer från mappen <ConfigMgrInstallationMedia \> \SMSSETUP\POLICYMODULE\X64 på installations mediet för Configuration Manager till en tillfällig mapp:  
 
    -   PolicyModule.msi  
 
@@ -179,13 +179,13 @@ Du måste installera och konfigurera modulen Configuration Manager-princip på v
 
    Om det finns en språkpaketmapp på installationsmediet kopierar du även den mappen och dess innehåll.  
 
-2. Från den tillfälliga mappen kör du PolicyModuleSetup. exe för att starta installations guiden för Configuration Manager-principmodulen.  
+2. Kör PolicyModuleSetup.exe i den tillfälliga mappen för att starta installations guiden för Configuration Manager-principmodulen.  
 
 3. Klicka på **Nästa** på den första sidan i guiden, godkänn licensavtalet och klicka sedan på **Nästa**.  
 
 4. På sidan **Installationsmapp** godkänner du standardinstallationsmappen för principmodulen eller anger en annan mapp. Klicka sedan på **Nästa**.  
 
-5. På sidan **Certifikatregistreringsplats** anger du webbadressen för certifikatregistreringsplatsen genom att använda den fullständiga domännamnet för platssystemservern och namnet på det virtuella program som står i egenskaperna för certifikatregistreringsplatsen. Standardnamnet för det virtuella programmet är CMCertificateRegistration. Om plats system servern till exempel har ett fullständigt domän namn för server1.contoso.com och du använde det virtuella standard program namnet anger `https://server1.contoso.com/CMCertificateRegistration`du.
+5. På sidan **Certifikatregistreringsplats** anger du webbadressen för certifikatregistreringsplatsen genom att använda den fullständiga domännamnet för platssystemservern och namnet på det virtuella program som står i egenskaperna för certifikatregistreringsplatsen. Standardnamnet för det virtuella programmet är CMCertificateRegistration. Om plats system servern till exempel har ett fullständigt domän namn för server1.contoso.com och du använde det virtuella standard program namnet anger du `https://server1.contoso.com/CMCertificateRegistration` .
 
 6. Godkänn standardporten **443** eller ange det alternativa portnummer som används av certifikatregistreringsplatsen och klicka sedan på **Nästa**.  
 
@@ -201,4 +201,4 @@ Du måste installera och konfigurera modulen Configuration Manager-princip på v
    Om du vill avinstallera Configuration Manager-Principmodulen använder du **program och funktioner** på kontroll panelen. 
 
  
-Nu när du har slutfört konfigurations stegen är du redo att distribuera certifikat till användare och enheter genom att skapa och distribuera certifikat profiler. Mer information om hur du skapar certifikat profiler finns i [så här skapar du certifikat profiler](../../protect/deploy-use/create-certificate-profiles.md).  
+Nu när du har slutfört konfigurations stegen är du redo att distribuera certifikat till användare och enheter genom att skapa och distribuera certifikat profiler. Mer information om hur du skapar certifikat profiler finns i [så här skapar du certifikat profiler](../../protect/deploy-use/create-certificate-profiles.md).

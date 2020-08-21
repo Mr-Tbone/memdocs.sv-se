@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: b5a9a4a7f23942ac06dc16a0b54b657c7fd617a9
-ms.sourcegitcommit: 2f1963ae208568effeb3a82995ebded7b410b3d4
+ms.openlocfilehash: a2e032e2aecfd53dc3a92cfb9c40798b4dcd1db9
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715619"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692782"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certifikat för Cloud Management Gateway
 
@@ -51,7 +51,7 @@ Certifikat för Cloud Management Gateway stöder följande konfigurationer:
 
 - **TLS 1,2**. Mer information finns i [så här aktiverar du TLS 1,2](../../../plan-design/security/enable-tls-1-2.md).  
 
-## <a name="cmg-server-authentication-certificate"></a><a name="bkmk_serverauth"></a>Certifikat för CMG-serverautentisering
+## <a name="cmg-server-authentication-certificate"></a><a name="bkmk_serverauth"></a> Certifikat för CMG-serverautentisering
 
 *Detta certifikat krävs i alla scenarier.*
 
@@ -60,7 +60,7 @@ Du anger det här certifikatet när du skapar CMG i Configuration Manager-konsol
 CMG skapar en HTTPS-tjänst som Internetbaserade klienter ansluter till. Servern kräver ett certifikat för serverautentisering för att bygga en säker kanal. Hämta ett certifikat för det här syftet från en offentlig leverantör eller utfärda den från din infrastruktur för offentliga nycklar (PKI). Mer information finns i [CMG-betrott rot certifikat till klienter](#bkmk_cmgroot).
 
 > [!NOTE]
-> Certifikatet för CMG-serverautentisering stöder jokertecken. Vissa certifikat utfärdare utfärdar certifikat med hjälp av ett jokertecken för värd namnet. Exempelvis `*.contoso.com`. Vissa organisationer använder jokertecken för att förenkla sin PKI och minska underhållskostnaderna.<!--491233-->  
+> Certifikatet för CMG-serverautentisering stöder jokertecken. Vissa certifikat utfärdare utfärdar certifikat med hjälp av ett jokertecken för värd namnet. Till exempel `*.contoso.com`. Vissa organisationer använder jokertecken för att förenkla sin PKI och minska underhållskostnaderna.<!--491233-->  
 >
 > Mer information om hur du använder ett certifikat med jokertecken med en CMG finns i [Konfigurera en CMG](setup-cloud-management-gateway.md#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
@@ -81,7 +81,7 @@ Om du också aktiverar CMG för innehåll kontrollerar du att namnet på CMG-tj�
 
 DNS-namnets prefix, till exempel *GraniteFalls*, ska vara 3 till 24 tecken långt och endast använda alfanumeriska tecken. Använd inte specialtecken, t. ex. ett bindestreck ( `-` ).<!-- SCCMDocs#1080 -->
 
-### <a name="cmg-trusted-root-certificate-to-clients"></a><a name="bkmk_cmgroot"></a>CMG betrodda rot certifikat till klienter
+### <a name="cmg-trusted-root-certificate-to-clients"></a><a name="bkmk_cmgroot"></a> CMG betrodda rot certifikat till klienter
 
 Klienter måste lita på certifikatet för CMG-serverautentisering. Det finns två metoder för att göra detta förtroende:
 
@@ -93,7 +93,7 @@ Klienter måste lita på certifikatet för CMG-serverautentisering. Det finns tv
 
   - Om du planerar att [installera Configuration Manager-klienten från Intune](../../../../comanage/how-to-prepare-Win10.md#install-the-configuration-manager-client)kan du även använda Intune-certifikat profiler för att etablera certifikat på klienter. Mer information finns i [Konfigurera en certifikat profil](../../../../../intune/protect/certificates-configure.md).
 
-### <a name="server-authentication-certificate-issued-by-public-provider"></a><a name="bkmk_serverauthpublic"></a>Certifikat för serverautentisering som utfärdats av en offentlig Provider
+### <a name="server-authentication-certificate-issued-by-public-provider"></a><a name="bkmk_serverauthpublic"></a> Certifikat för serverautentisering som utfärdats av en offentlig Provider
 
 En tredjeparts-certifikat leverantör kan inte skapa ett certifikat för CloudApp.net, eftersom den domänen ägs av Microsoft. Du kan bara få ett certifikat utfärdat för en domän som du äger. Det främsta skälet till att skaffa ett certifikat från en tredjepartsleverantör är att klienterna redan har förtroende för providerns rot certifikat.
 
@@ -116,7 +116,7 @@ Contoso använder till exempel **GraniteFalls.contoso.com** för certifikatets C
 
 När du skapar CMG-instansen i Configuration Manager, och certifikatet har GraniteFalls.Contoso.com, extraherar Configuration Manager bara värd namnet, till exempel: GraniteFalls. Den lägger till detta värdnamn till CloudApp.net, som Azure kräver när en moln tjänst skapas. CNAME-aliaset i DNS-namnområdet för din domän, Contoso.com, mappar samman dessa två FQDN. Configuration Manager ger klienterna en princip för att få åtkomst till den här CMG. DNS-mappningen kopplar ihop den så att de kan få säker åtkomst till tjänsten i Azure.<!--SCCMDocs issue #565-->  
 
-### <a name="server-authentication-certificate-issued-from-enterprise-pki"></a><a name="bkmk_serverauthpki"></a>Certifikat för serverautentisering som utfärdats från företags-PKI
+### <a name="server-authentication-certificate-issued-from-enterprise-pki"></a><a name="bkmk_serverauthpki"></a> Certifikat för serverautentisering som utfärdats från företags-PKI
 
 Skapa ett anpassat SSL-certifikat för CMG på samma sätt som för en moln distributions plats. Följ anvisningarna för att [distribuera tjänst certifikatet för molnbaserade distributions platser](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clouddp2008_cm2012) , men gör följande saker på olika sätt:
 
@@ -128,7 +128,7 @@ Skapa ett anpassat SSL-certifikat för CMG på samma sätt som för en moln dist
 
   - Använd ett namn som slutar på **usgovcloudapp.net** för Azures Azures myndigheter för amerikanska myndigheter  
 
-## <a name="client-authentication-certificate"></a><a name="bkmk_clientauth"></a>Certifikat för klientautentisering
+## <a name="client-authentication-certificate"></a><a name="bkmk_clientauth"></a> Certifikat för klientautentisering
 
 Certifikat krav för klientautentisering:
 
@@ -146,7 +146,7 @@ Etablera det här certifikatet utanför Configuration Managers kontext. Använd 
 >
 > Från och med version 2002,<!--5686290--> Configuration Manager utökar sitt stöd för Internetbaserade enheter som inte ofta ansluter till det interna nätverket, kan inte ansluta till Azure AD och har inte någon metod för att installera ett PKI-utfärdat certifikat. Mer information finns i [tokenbaserad autentisering för CMG](../../deploy/deploy-clients-cmg-token.md).
 
-### <a name="cmg-connection-point"></a><a name="bkmk_cmgcp"></a>CMG kopplings punkt
+### <a name="cmg-connection-point"></a><a name="bkmk_cmgcp"></a> CMG kopplings punkt
 
 För att det ska gå att vidarebefordra klient begär Anden på ett säkert sätt kräver CMG-nätverksanslutningen en säker anslutning till hanterings platsen. Beroende på hur du konfigurerar enheterna och hanterings platserna avgör konfigurationen för CMG-anslutningen.
 
@@ -160,7 +160,7 @@ För att det ska gå att vidarebefordra klient begär Anden på ett säkert sät
 
 Mer information finns i [Aktivera hanterings plats för https](#bkmk_mphttps).
 
-### <a name="client-trusted-root-certificate-to-cmg"></a><a name="bkmk_clientroot"></a>Klientens betrodda rot certifikat till CMG
+### <a name="client-trusted-root-certificate-to-cmg"></a><a name="bkmk_clientroot"></a> Klientens betrodda rot certifikat till CMG
 
 *Det här certifikatet krävs när du använder certifikat för klientautentisering. När alla klienter använder Azure AD för autentisering krävs inte det här certifikatet.*
 
@@ -205,7 +205,7 @@ När du har utfärdat ett certifikat för klientautentisering till en dator, anv
 
 8. Exportera alla certifikat i certifierings Sök vägen för det ursprungliga certifikatet för klientautentisering. Anteckna vilka exporterade certifikat som är mellanliggande certifikat utfärdare och vilka som är betrodda rot certifikat utfärdare.  
 
-## <a name="enable-management-point-for-https"></a><a name="bkmk_mphttps"></a>Aktivera hanterings plats för HTTPS
+## <a name="enable-management-point-for-https"></a><a name="bkmk_mphttps"></a> Aktivera hanterings plats för HTTPS
 
 Etablera det här certifikatet utanför Configuration Managers kontext. Använd exempelvis Active Directory Certificate Services och grup princip för att utfärda ett webb server certifikat. Mer information finns i [krav på PKI-certifikat](../../../plan-design/network/pki-certificate-requirements.md) och [distribuera webb Server certifikatet för plats system som kör IIS](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012).
 
@@ -258,8 +258,8 @@ Konfigurera en lokal hanterings plats med följande klient anslutnings läge:
 
 - *Arbets grupp*: enheten är inte ansluten till en domän eller Azure AD, men har ett [certifikat för klientautentisering](#bkmk_clientauth).
 - *AD-* domänansluten: du ansluter enheten till en lokal Active Directory domän.
-- *Azure AD-ansluten*: även känd som molnbaserad domän ansluten, ansluter du enheten till en Azure AD-klient. Mer information finns i [Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join).
-- *Hybrid-anslutna*: du ansluter enheten till din lokala Active Directory och registrerar den med din Azure AD. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid).
+- *Azure AD-ansluten*: även känd som molnbaserad domän ansluten, ansluter du enheten till en Azure AD-klient. Mer information finns i [Azure AD-anslutna enheter](/azure/active-directory/devices/concept-azure-ad-join).
+- *Hybrid-anslutna*: du ansluter enheten till din lokala Active Directory och registrerar den med din Azure AD. Mer information finns i avsnittet om [hybrid Azure AD-anslutna enheter](/azure/active-directory/devices/concept-azure-ad-join-hybrid).
 - *Http*: Ange klient anslutningarna till **http**på hanterings platsens egenskaper.
 - *Https*: Ange klient anslutningarna till **https**på hanterings platsens egenskaper.
 - *E-http*: på fliken plats egenskaper, fliken **kommunikations säkerhet** , anger du plats system inställningarna till **https eller http**, och du aktiverar alternativet att **använda Configuration Manager-genererade certifikat för http-plats system**. Du konfigurerar hanterings platsen för HTTP, HTTP-hanterings platsen är klar för både HTTP-och HTTPS-kommunikation (token-auth-scenarier).
@@ -267,7 +267,7 @@ Konfigurera en lokal hanterings plats med följande klient anslutnings läge:
     > [!Note]
     > I version 1902 och tidigare kallas den här fliken **klient dator kommunikation**.<!-- SCCMDocs#1645 -->
 
-## <a name="azure-management-certificate"></a><a name="bkmk_azuremgmt"></a>Hanterings certifikat för Azure
+## <a name="azure-management-certificate"></a><a name="bkmk_azuremgmt"></a> Hanterings certifikat för Azure
 
 *Detta certifikat krävs för klassiska tjänst distributioner. Det krävs inte för Azure Resource Manager-distributioner.*
 
@@ -282,9 +282,9 @@ För att skapa CMG i Azure måste Configuration Manager tjänst anslutnings punk
 
 Mer information och anvisningar om hur du laddar upp ett hanterings certifikat finns i följande artiklar i Azure-dokumentationen:
 
-- [Cloud Services och hanterings certifikat](https://docs.microsoft.com/azure/cloud-services/cloud-services-certs-create#what-are-management-certificates)  
+- [Cloud Services och hanterings certifikat](/azure/cloud-services/cloud-services-certs-create#what-are-management-certificates)  
 
-- [Ladda upp ett Azure Service Management-certifikat](https://docs.microsoft.com/azure/azure-api-management-certs)  
+- [Ladda upp ett Azure Service Management-certifikat](/azure/azure-api-management-certs)  
 
 > [!IMPORTANT]
 > Se till att kopiera det prenumerations-ID som är associerat med hanterings certifikatet. Du använder den för att skapa CMG i Configuration Manager-konsolen.
@@ -295,4 +295,4 @@ Mer information och anvisningar om hur du laddar upp ett hanterings certifikat f
 
 - [Vanliga frågor och svar om Cloud Management Gateway](cloud-management-gateway-faq.md)  
 
-- [Säkerhet och sekretess för molnhanteringsgateway](security-and-privacy-for-cloud-management-gateway.md)  
+- [Säkerhet och sekretess för molnhanteringsgateway](security-and-privacy-for-cloud-management-gateway.md)

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3dd4c3f22a0f2c24153e6d26be2e3098511c5dc4
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: e408bbe7ea88d70c5a9d02368c2d820584cae2b8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905310"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694448"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-configuration-manager"></a>Funktioner i Technical Preview 1710 för Configuration Manager
 
@@ -97,17 +97,17 @@ Den här versionen lägger till stöd för Windows Defender sårbarhet Guard. Du
 
 Efterlevnadsprinciper för distribution av sårbarhets Guard-principer är tillgänglig i Configuration Manager-konsolen.
 
-Mer information om sårbarhets skydd och vissa komponenter och regler finns i [Windows Defender sårbarhet Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard) i dokumentations biblioteket för Windows.
+Mer information om sårbarhets skydd och vissa komponenter och regler finns i [Windows Defender sårbarhet Guard](/windows/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard) i dokumentations biblioteket för Windows.
 
 ### <a name="prerequisites"></a>Förutsättningar
 Hanterade enheter måste köra Windows 10 1709 är Creators Update eller senare och uppfyller följande krav beroende på de komponenter och regler som har kon figurer ATS:
 
 |Sårbarhets skydds komponent |Ytterligare krav|
 |------------------------|------------------------|
-| Minska attackytan  | [Windows Defender av real tids skydd]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.  |
-| Reglerad mappåtkomst  | [Windows Defender av real tids skydd]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.   |
-| Sårbarhetsskydd  | Inga  |
-| Nätverks skydd  |  [Windows Defender av real tids skydd]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.  |
+| Minska attackytan  | [Windows Defender av real tids skydd]( /windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.  |
+| Reglerad mappåtkomst  | [Windows Defender av real tids skydd]( /windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.   |
+| Sårbarhetsskydd  | Inget  |
+| Nätverks skydd  |  [Windows Defender av real tids skydd]( /windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) måste vara aktiverat på enheterna.  |
 
 ### <a name="create-an-exploit-guard-policy----1355468---"></a>Skapa en princip för sårbarhets skydd  <!--1355468 -->
 1. Gå till **till gångar och efterlevnad**Endpoint Protection i Configuration Manager-konsolen  >  **Endpoint Protection**och klicka sedan på **Windows Defender sårbarhets skydd**.
@@ -125,7 +125,7 @@ När du har skapat principer för sårbarhets skydd kan du distribuera dem med h
 
 ## <a name="limited-support-for-cng-certificates"></a>Begränsat stöd för CNG-certifikat
 <!-- 1356191 -->
-Från och med den här versionen kan du nu använda [Cryptography-API: t. ex. CNG-](https://docs.microsoft.com/windows/win32/seccng/cng-features) certifikatmallar för följande scenarier:
+Från och med den här versionen kan du nu använda [Cryptography-API: t. ex. CNG-](/windows/win32/seccng/cng-features) certifikatmallar för följande scenarier:
 
 - Klient registrering och kommunikation med en HTTPS-hanterings plats.   
 - Program distribution och program distribution med en HTTPS-distributions plats.   
@@ -210,13 +210,13 @@ Så här skapar du en princip och bläddrar bland de tillgängliga inställninga
     > [!NOTE]
     > Windows 10-datorer lagrar bara en lista över nätverks isolering på klienten. I den här versionen kan du skapa två olika typer av nätverks isolerings listor (en från Windows Information Protection och en från Windows Defender Application Guard) och distribuera dem till klienten. Om du distribuerar båda principerna måste dessa listor för nätverks isolering matcha. Om du distribuerar listor som inte matchar samma klient kommer distributionen att Miss Don.
 
-    Du hittar mer information om hur du anger nätverks definitioner i [Windows Information Protection-dokumentationen] – [skydda dina företags data med Windows information Protection (Pia)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr).
+    Du hittar mer information om hur du anger nätverks definitioner i [Windows Information Protection-dokumentationen] – [skydda dina företags data med Windows information Protection (Pia)](/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr).
 
 6. När du är klar slutför du guiden och distribuerar principen till en eller flera Windows 10-enheter.
 
-### <a name="further-reading"></a>Mer information
+### <a name="further-reading"></a>Ytterligare läsning
 
 Läs mer om Windows Defender Application Guard i [det här blogg inlägget](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97). Mer information om fristående läge för Windows Defender Application Guard finns i [det här blogg inlägget](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
 
-## <a name="next-steps"></a>Efterföljande moment
-Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).    
+## <a name="next-steps"></a>Nästa steg
+Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).

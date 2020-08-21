@@ -10,12 +10,12 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 35379aed71544a25a98ec4dfa421be70c1bae851
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 4a1e19025af82c9beeed8c227871df94b4674791
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427743"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692714"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installera en moln distributions plats för Configuration Manager
 
@@ -34,11 +34,11 @@ Den här artikeln beskriver stegen för att installera en Configuration Manager 
 - [Konfigurera plats serverns proxy](#bkmk_proxy)
 - [Distribuera innehåll och konfigurera klienter](#bkmk_client)
 - [Hantera och övervaka](#bkmk_monitor)
-- [Ändra](#bkmk_modify)
+- [Modify](#bkmk_modify) (Ändra)
 - [Avancerad felsökning](#bkmk_tshoot)
 
 
-## <a name="before-you-begin"></a><a name="bkmk_before"></a>Innan du börjar
+## <a name="before-you-begin"></a><a name="bkmk_before"></a> Innan du börjar
 
 Börja med att läsa artikeln [Använd en moln distributions plats](../../../plan-design/hierarchy/use-a-cloud-based-distribution-point.md). Den artikeln hjälper dig att planera och utforma dina moln distributions platser.
 
@@ -91,14 +91,14 @@ Om du vill aktivera en moln distributions plats för att använda Windows Branch
 
 - Om plats servern har en plats system roll för en lokal distributions plats konfigurerar du alternativet i rollens egenskaper för att **Aktivera och konfigurera BranchCache**. Mer information finns i [Konfigurera en distributions plats](install-and-configure-distribution-points.md#bkmk_config-general).
 
-- Om plats servern inte har en distributions plats roll, installerar du funktionen BranchCache i Windows. Mer information finns i [installera BranchCache-funktionen](https://docs.microsoft.com/windows-server/networking/branchcache/deploy/install-the-branchcache-feature).
+- Om plats servern inte har en distributions plats roll, installerar du funktionen BranchCache i Windows. Mer information finns i [installera BranchCache-funktionen](/windows-server/networking/branchcache/deploy/install-the-branchcache-feature).
 
 Om du redan har distribuerat innehåll till en moln distributions plats och sedan bestämmer dig för att aktivera BranchCache måste du först installera funktionen. Distribuera sedan om innehållet till moln distributions platsen.
 
 > [!NOTE]  
 > Om du har fler än en moln distributions plats i Configuration Manager version 1810 och senare, måste du manuellt ange lösen frasen för BranchCache-nyckeln. Mer information finns i [Microsoft Support KB 4458143](https://support.microsoft.com/help/4458143).
 
-## <a name="set-up"></a><a name="bkmk_setup"></a>Konfigurera  
+## <a name="set-up"></a><a name="bkmk_setup"></a> Konfigurera  
 
 Utför den här proceduren på webbplatsen som värd för den här moln distributions platsen enligt din [design](../../../plan-design/hierarchy/use-a-cloud-based-distribution-point.md#bkmk_topology).  
 
@@ -134,7 +134,7 @@ Utför den här proceduren på webbplatsen som värd för den här moln distribu
         > [!NOTE]  
         > Certifikat för moln distributions plats serverns autentisering stöder jokertecken. Om du använder ett jokertecken, ersätter du asterisken ( `*` ) i fältet för **tjänstens FQDN** med det önskade värd namnet för tjänsten.  
 
-5. På sidan **aviseringar** ställer du in lagrings kvoter, överförings kvoter och i vilken procent andel av kvoterna som du vill Configuration Manager generera aviseringar. Välj **Nästa**.  
+5. På sidan **aviseringar** ställer du in lagrings kvoter, överförings kvoter och i vilken procent andel av kvoterna som du vill Configuration Manager generera aviseringar. Välj sedan **Nästa**.  
 
 6. Slutför guiden.  
 
@@ -158,7 +158,7 @@ Kontrol lera att installationen av moln distributions platsen har slutförts med
 - Om det behövs går du till Azure Portal. **Distributionen** av moln distributions platsen visar statusen **klar**.  
 
 
-## <a name="configure-dns"></a><a name="bkmk_dns"></a>Konfigurera DNS  
+## <a name="configure-dns"></a><a name="bkmk_dns"></a> Konfigurera DNS  
 
 Innan klienter kan använda moln distributions platsen måste de kunna matcha namnet på moln distributions platsen med en IP-adress som hanteras av Azure. Hanterings platsen ger dem **tjänstens FQDN** för moln distributions platsen. Moln distributions platsen finns i Azure som **tjänst namnet**. Se de här värdena på fliken **Inställningar** i egenskaperna för moln distributions platsen.
 
@@ -190,14 +190,14 @@ Följande process visar hur en klient matchar namnet på moln distributions plat
 5. Moln distributions platsen visar certifikatet för serverautentisering till klienten. Klienten använder förtroende kedjan för certifikatet som ska verifieras.  
 
 
-## <a name="set-up-site-server-proxy"></a><a name="bkmk_proxy"></a>Konfigurera plats serverns proxy  
+## <a name="set-up-site-server-proxy"></a><a name="bkmk_proxy"></a> Konfigurera plats serverns proxy  
 
 Den primära plats servern som hanterar moln distributions platsen måste kommunicera med Azure. Om din organisation använder en proxyserver för att kontrol lera Internet åtkomst konfigurerar du den primära plats servern så att den använder den här proxyn.  
 
 Mer information finns i [stöd för proxy server](../../../plan-design/network/proxy-server-support.md).  
 
 
-## <a name="distribute-content-and-configure-clients"></a><a name="bkmk_client"></a>Distribuera innehåll och konfigurera klienter
+## <a name="distribute-content-and-configure-clients"></a><a name="bkmk_client"></a> Distribuera innehåll och konfigurera klienter
 
 Distribuera innehåll till moln distributions platsen på samma sätt som andra lokala distributions platser. Hanterings platsen omfattar inte moln distributions platsen i listan över innehålls platser om den inte har det innehåll som klienten begär. Mer information finns i [distribuera och hantera innehåll](deploy-and-manage-content.md).
 
@@ -212,13 +212,13 @@ Standard klient inställningarna gör att klienterna automatiskt kan använda mo
     - Ändra och distribuera den här inställningen för både användare och enheter.  
 
 
-## <a name="manage-and-monitor"></a><a name="bkmk_monitor"></a>Hantera och övervaka  
+## <a name="manage-and-monitor"></a><a name="bkmk_monitor"></a> Hantera och övervaka  
 
 Övervaka innehåll som du distribuerar till en moln distributions plats på samma sätt som med andra lokala distributions platser. Mer information finns i [Övervaka innehåll](monitor-content-you-have-distributed.md).
 
 När du visar listan över moln distributions platser i-konsolen kan du lägga till fler kolumner i listan. Kolumnen **data utgående** visar t. ex. mängden data klienter som hämtats från tjänsten under de senaste 30 dagarna.<!-- SCCMDocs#755 -->
 
-### <a name="alerts"></a><a name="bkmk_alerts"></a>Aviseringar  
+### <a name="alerts"></a><a name="bkmk_alerts"></a> Aviseringar  
 
 Configuration Manager kontrollerar regelbundet Azure-tjänsten. Om tjänsten inte är aktiv eller om det finns problem med prenumerationer eller certifikat genererar Configuration Manager en avisering.
 
@@ -234,7 +234,7 @@ Konfigurera tröskelvärden för den mängd data som du vill lagra på moln dist
 Ange tröskelvärden för varje distributions plats i molnet under installationen eller Använd fliken **aviseringar** i egenskaperna för moln distributions platsen.  
 
 > [!NOTE]  
-> Aviseringar för en moln distributions plats beror på användnings statistik från Azure, som kan ta upp till 24 timmar innan den blir tillgänglig. Mer information om Lagringsanalys för Azure finns i [Lagringsanalys](https://docs.microsoft.com/rest/api/storageservices/storage-analytics).  
+> Aviseringar för en moln distributions plats beror på användnings statistik från Azure, som kan ta upp till 24 timmar innan den blir tillgänglig. Mer information om Lagringsanalys för Azure finns i [Lagringsanalys](/rest/api/storageservices/storage-analytics).  
 
 Den primära plats som övervakar moln distributions platsen laddar ned transaktions data från Azure i en Tim cykel. Dessa transaktions data lagras i `CloudDP-<ServiceName>.log` filen på plats servern. Configuration Manager utvärderar sedan denna information mot lagrings-och överförings kvoterna för varje distributions plats i molnet. När överföringen av data når eller överskrider den angivna volymen för varningar eller kritiska aviseringar, genererar Configuration Manager lämplig avisering.  
 
@@ -242,7 +242,7 @@ Den primära plats som övervakar moln distributions platsen laddar ned transakt
 > Eftersom platsen hämtar information om data överföringar från Azure varje timme kan användningen överskrida en varning eller ett kritiskt tröskelvärde innan Configuration Manager kan komma åt data och utlösa en avisering.  
 
 
-## <a name="modify"></a><a name="bkmk_modify"></a>Gör
+## <a name="modify"></a><a name="bkmk_modify"></a> Gör
 
 Visa information på hög nivå om distributions platsen i noden **distributions platser i molnet** under **Cloud Services** i arbets ytan **Administration** i Configuration Manager-konsolen. Välj en distributions plats och välj **Egenskaper** för att se mer information.  
 
@@ -319,7 +319,7 @@ När du tar bort en moln distributions plats från en-hierarki tar Configuration
 Om du tar bort alla komponenter i Azure manuellt blir systemet inkonsekvent. Det här läget lämnar överblivna information och oväntade beteenden kan uppstå.
 
 
-## <a name="advanced-troubleshooting"></a><a name="bkmk_tshoot"></a>Avancerad fel sökning
+## <a name="advanced-troubleshooting"></a><a name="bkmk_tshoot"></a> Avancerad fel sökning
 
 Om du behöver samla in diagnostikloggning från virtuella Azure-datorer för att felsöka problem med moln distributions platsen, använder du följande PowerShell-exempel för att aktivera tjänstens diagnostiska tillägg för prenumerationen:<!--514275-->  
 
@@ -345,7 +345,7 @@ Select-AzureSubscription $azureSubscriptionName
 Set-AzureServiceDiagnosticsExtension -StorageAccountName $storage_name -StorageAccountKey $key -DiagnosticsConfigurationPath $public_config –ServiceName $service_name -Slot 'Production' -Verbose
 ```
 
-Följande exempel är en **Diagnostics. wadcfgx** -fil som refereras till i **public_config** -variabeln i PowerShell-skriptet ovan. Mer information finns i [konfigurations schema för Azure-diagnostik-tillägg](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics-schema).  
+Följande exempel är en **Diagnostics. wadcfgx** -fil som refereras till i **public_config** -variabeln i PowerShell-skriptet ovan. Mer information finns i [konfigurations schema för Azure-diagnostik-tillägg](/azure/monitoring-and-diagnostics/azure-diagnostics-schema).  
 
 ``` XML
 <?xml version="1.0" encoding="utf-8"?>

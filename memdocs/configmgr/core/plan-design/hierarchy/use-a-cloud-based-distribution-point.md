@@ -10,12 +10,12 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 52c2b70d2b094d5a89d80aafa61f1db67a53816f
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: b488e0953648b42baa59dc347b0bc942bac291fe
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83987708"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692578"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Använd en moln distributions plats i Configuration Manager
 
@@ -47,7 +47,7 @@ Den här artikeln hjälper dig att lära dig om moln distributions platsen, plan
 - [Vanliga frågor och svar (FAQ)](#bkmk_faq)
 
 
-## <a name="features-and-benefits"></a><a name="bkmk_features"></a>Funktioner och fördelar
+## <a name="features-and-benefits"></a><a name="bkmk_features"></a> Funktioner och fördelar
 
 ### <a name="features"></a>Funktioner
 
@@ -72,7 +72,7 @@ Moln distributions platsen ger följande ytterligare fördelar:
 - Från och med version 1806 använder du moln distributions platser som käll platser för mottagar distributions platser.  
 
 
-## <a name="topology-design"></a><a name="bkmk_topology"></a>Topologins design
+## <a name="topology-design"></a><a name="bkmk_topology"></a> Topologins design
 
 Distribution och drift av moln distributions platsen innehåller följande komponenter:  
 
@@ -89,7 +89,7 @@ Distribution och drift av moln distributions platsen innehåller följande kompo
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 
 <!--1322209-->
-Från och med version 1806 skapar du en moln distributions plats med hjälp av en **Azure Resource Manager distribution**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) är en modern plattform för att hantera alla lösnings resurser som en enda entitet, som kallas för en [resurs grupp](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). När du distribuerar en moln distributions plats med Azure Resource Manager använder platsen Azure Active Directory (Azure AD) för att autentisera och skapa nödvändiga moln resurser. Den här moderna distributionen kräver inte det klassiska hanterings certifikatet för Azure.  
+Från och med version 1806 skapar du en moln distributions plats med hjälp av en **Azure Resource Manager distribution**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) är en modern plattform för att hantera alla lösnings resurser som en enda entitet, som kallas för en [resurs grupp](/azure/azure-resource-manager/resource-group-overview#resource-groups). När du distribuerar en moln distributions plats med Azure Resource Manager använder platsen Azure Active Directory (Azure AD) för att autentisera och skapa nödvändiga moln resurser. Den här moderna distributionen kräver inte det klassiska hanterings certifikatet för Azure.  
 
 > [!Note]  
 > Den här funktionen aktiverar inte stöd för Azure Cloud Service-leverantörer (CSP). Distributions platsen för moln distribution med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av CSP: n. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services).  
@@ -130,7 +130,7 @@ När du använder en moln distributions plats i-hierarkin använder du följande
 - Säkerhetskopiera och spara en kopia av certifikatet för serverautentisering. Om du använder den klassiska tjänst distributionen i Azure bör du även säkerhetskopiera och spara en kopia av hanterings certifikatet för Azure. När du återställer Configuration Manager primära platsen till en annan server måste du importera certifikaten på nytt.  
 
 
-## <a name="requirements"></a><a name="bkmk_requirements"></a>Signaturkrav
+## <a name="requirements"></a><a name="bkmk_requirements"></a> Signaturkrav
 
 - Du behöver en **Azure-prenumeration** som värd för tjänsten.  
 
@@ -156,7 +156,7 @@ När du använder en moln distributions plats i-hierarkin använder du följande
 - Klient enheter kräver **Internet anslutning**och måste använda **IPv4**.  
 
 
-## <a name="specifications"></a><a name="bkmk_spec"></a>Krav
+## <a name="specifications"></a><a name="bkmk_spec"></a> Krav
 
 - Moln distributions platsen har stöd för alla Windows-versioner som visas i [operativ system som stöds för klienter och enheter](../configs/supported-operating-systems-for-clients-and-devices.md).  
 
@@ -191,7 +191,7 @@ När du använder en moln distributions plats i-hierarkin använder du följande
 - Du kan inte konfigurera en moln distributions plats som en mottagar distributions plats.  
 
 
-## <a name="cost"></a><a name="bkmk_cost"></a>Kostnader
+## <a name="cost"></a><a name="bkmk_cost"></a> Kostnader
 
 <!--501018-->
 > [!IMPORTANT]  
@@ -244,16 +244,16 @@ En moln distributions plats använder följande Azure-komponenter, som debiteras
 
 - Moln distributions platser använder följande standard-blob-lagring beroende på distributions modellen:  
 
-    - En Azure Resource Manager distribution använder Azure lokalt redundant lagring (LRS). Den här ändringen minskar kostnaden för lagrings kontot. Den klassiska distributionen använde inte ytterligare funktioner i GRS. Mer information finns i [Lokalt Redundant lagring](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).  
+    - En Azure Resource Manager distribution använder Azure lokalt redundant lagring (LRS). Den här ändringen minskar kostnaden för lagrings kontot. Den klassiska distributionen använde inte ytterligare funktioner i GRS. Mer information finns i [Lokalt Redundant lagring](/azure/storage/common/storage-redundancy-lrs).  
 
-    - En klassisk distribution med Configuration Manager version 1810 eller tidigare använder Azure Geo-redundant lagring (GRS). Mer information finns i [Geo-redundant lagring](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs).  
+    - En klassisk distribution med Configuration Manager version 1810 eller tidigare använder Azure Geo-redundant lagring (GRS). Mer information finns i [Geo-redundant lagring](/azure/storage/common/storage-redundancy-grs).  
 
 #### <a name="other-costs"></a>Andra kostnader
 
 - Varje moln tjänst har en dynamisk IP-adress. Varje distinkt distributions plats i molnet använder en ny dynamisk IP-adress. Att lägga till ytterligare virtuella datorer per moln tjänst ökar inte dessa adresser.  
 
 
-## <a name="ports-and-data-flow"></a><a name="bkmk_dataflow"></a>Portar och data flöde
+## <a name="ports-and-data-flow"></a><a name="bkmk_dataflow"></a> Portar och data flöde
 
 Det finns två primära data flöden för moln distributions platsen:  
 
@@ -288,7 +288,7 @@ När en klient använder en moln distributions plats som en innehålls plats:
 6. Om klienten litar på moln distributions platsens certifikat för serverautentisering ansluter den till Azure Storage för att hämta innehållet.
 
 
-## <a name="performance-and-scale"></a><a name="bkmk_perf"></a>Prestanda och skalning
+## <a name="performance-and-scale"></a><a name="bkmk_perf"></a> Prestanda och skalning
 
 <!--494872-->
 
@@ -308,7 +308,7 @@ Moln distributions platsen använder två virtuella Azure-datorer som klient del
 Azure Storage-tjänsten stöder 500-begäranden per sekund för en enskild fil. Prestandatest av en distributions plats med en enda distributions plats som stöds av en enskild 100-MB-fil till 50 000-klienter på 24 timmar.<!--512106-->  
 
 
-## <a name="certificates"></a><a name="bkmk_certs"></a>Intyg  
+## <a name="certificates"></a><a name="bkmk_certs"></a> Intyg  
 
 Beroende på moln distributions platsens design behöver du ett eller flera digitala certifikat.  
 
@@ -357,7 +357,7 @@ Om du använder den klassiska Azure-distributions metoden med Configuration Mana
 Om du vill minska komplexiteten använder du samma Azure-hanterings certifikat för alla klassiska distributioner av moln distributions platser och moln hanterings-gatewayer, över alla Azure-prenumerationer och alla Configuration Manager-platser.
 
 
-## <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a>Vanliga frågor och svar
+## <a name="frequently-asked-questions-faq"></a><a name="bkmk_faq"></a> Vanliga frågor och svar
 
 ### <a name="does-a-client-need-a-certificate-to-download-content-from-a-cloud-distribution-point"></a>Behöver en klient ett certifikat för att ladda ned innehåll från en distributions plats i molnet?
 
@@ -375,11 +375,11 @@ Om din organisation använder ExpressRoute isolerar du Azure-prenumerationen fö
 
 ### <a name="do-i-need-to-maintain-the-azure-virtual-machines"></a>Behöver jag underhålla Azure Virtual Machines?
 
-Inget underhåll krävs. Designen av moln distributions platsen använder Azure Platform as a Service (PaaS). Med den prenumeration du anger skapar Configuration Manager nödvändiga virtuella datorer, lagring och nätverk. Azure säkrar och uppdaterar de virtuella datorerna. De här virtuella datorerna är inte en del av din lokala miljö, som är fallet med IaaS (Infrastructure as a Service). Moln distributions platsen är en PaaS som utökar din Configuration Manager miljö till molnet. Mer information finns i [säkerhets fördelarna med en PaaS Cloud Service-modell](https://docs.microsoft.com/azure/security/security-paas-deployments#security-advantages-of-a-paas-cloud-service-model).  
+Inget underhåll krävs. Designen av moln distributions platsen använder Azure Platform as a Service (PaaS). Med den prenumeration du anger skapar Configuration Manager nödvändiga virtuella datorer, lagring och nätverk. Azure säkrar och uppdaterar de virtuella datorerna. De här virtuella datorerna är inte en del av din lokala miljö, som är fallet med IaaS (Infrastructure as a Service). Moln distributions platsen är en PaaS som utökar din Configuration Manager miljö till molnet. Mer information finns i [säkerhets fördelarna med en PaaS Cloud Service-modell](/azure/security/security-paas-deployments#security-advantages-of-a-paas-cloud-service-model).  
 
 ### <a name="does-the-cloud-distribution-point-use-azure-cdn"></a>Använder moln distributions platsen Azure CDN?
 
-Azure Content Delivery Network (CDN) är en global lösning för att snabbt leverera innehåll med hög bandbredd genom att cachelagra innehållet på strategiskt placerade fysiska noder över hela världen. Mer information finns i [Vad är Azure CDN?](https://docs.microsoft.com/azure/cdn/cdn-overview).
+Azure Content Delivery Network (CDN) är en global lösning för att snabbt leverera innehåll med hög bandbredd genom att cachelagra innehållet på strategiskt placerade fysiska noder över hela världen. Mer information finns i [Vad är Azure CDN?](/azure/cdn/cdn-overview).
 
 Den Configuration Manager moln distributions platsen stöder för närvarande inte Azure CDN.
 

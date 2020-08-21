@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 94208da3eda33cba69f04bbbf42edd08b585c1c4
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 1f8af5975d623161e05e168192ee102bd0d072dc
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428197"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694397"
 ---
 # <a name="capabilities-in-technical-preview-1802-for-configuration-manager"></a>Funktioner i Technical Preview 1802 för Configuration Manager
 
@@ -56,7 +56,7 @@ I den här versionen kan du nu överföra Endpoint Protection arbets belastninge
  
 ## <a name="configure-windows-delivery-optimization-to-use-configuration-manager-boundary-groups"></a>Konfigurera Windows leverans optimering att använda Configuration Manager gränser grupper
 <!-- 1324696 -->
-Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Från och med den här versionen konfigurerar du leverans optimeringen så att du kan använda dina gränser när du delar innehåll mellan peer-datorer. En ny klient inställning tillämpar gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med det önskade innehållet. 
+Du använder Configuration Manager gränser grupper för att definiera och reglera innehålls distribution i företags nätverket och på fjärranslutna kontor. [Windows-leverans optimering](/windows/deployment/update/waas-delivery-optimization) är en molnbaserad, peer-to-peer-teknik för att dela innehåll mellan Windows 10-enheter. Från och med den här versionen konfigurerar du leverans optimeringen så att du kan använda dina gränser när du delar innehåll mellan peer-datorer. En ny klient inställning tillämpar gränserna för den begränsade gruppen som ID för leverans optimerings grupp på klienten. När klienten kommunicerar med moln tjänsten för leverans optimering används den här identifieraren för att hitta peer-datorer med det önskade innehållet. 
 
 ### <a name="prerequisites"></a>Förutsättningar
 - Leverans optimering är endast tillgänglig på Windows 10-klienter
@@ -68,7 +68,7 @@ Du använder Configuration Manager gränser grupper för att definiera och regle
 2. Välj den nya gruppen för **leverans optimering** .
 3. Aktivera inställningen **använd Configuration Manager gränser grupper för grupp-ID för leverans optimering**.
 
-Mer information finns i alternativet **grupp** leverans läge i alternativ för [leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#how-microsoft-uses-delivery-optimization).
+Mer information finns i alternativet **grupp** leverans läge i alternativ för [leverans optimering](/windows/deployment/update/waas-delivery-optimization#how-microsoft-uses-delivery-optimization).
 
 
 
@@ -93,19 +93,19 @@ Standard mal len för aktivitetssekvenser för Windows 10 uppgradering på plats
 ### <a name="new-groups-under-prepare-for-upgrade"></a>Nya grupper under **förbereda för uppgradering**
 - **Batteri kontroller**: Lägg till steg i den här gruppen för att kontrol lera om datorn använder batteri eller kabelansluten ström. Den här åtgärden kräver ett anpassat skript eller verktyg för att utföra den här kontrollen.
 - **Kontroller för nätverks-/kabelanslutna anslutningar**: Lägg till steg i den här gruppen för att kontrol lera om datorn är ansluten till ett nätverk och inte använder en trådlös anslutning. Den här åtgärden kräver ett anpassat skript eller verktyg för att utföra den här kontrollen.
-- **Ta bort inkompatibla program**: Lägg till steg i den här gruppen för att ta bort alla program som inte är kompatibla med den här versionen av Windows 10. Metoden för att avinstallera ett program varierar. Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Ett exempel: </br>`msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`</br> 
+- **Ta bort inkompatibla program**: Lägg till steg i den här gruppen för att ta bort alla program som inte är kompatibla med den här versionen av Windows 10. Metoden för att avinstallera ett program varierar. Om programmet använder Windows Installer kopierar du kommando raden **Avinstallera program** från fliken **program** i egenskaperna för Windows Installer distributions typ för programmet. Lägg sedan till steget **Kör kommando rad** i den här gruppen med kommando raden avinstallera program. Exempel: </br>`msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`</br> 
 - **Ta bort inkompatibla driv rutiner**: Lägg till steg i den här gruppen för att ta bort driv rutiner som inte är kompatibla med den här versionen av Windows 10.
 - **Ta bort/pausa säkerhet från tredje part**: Lägg till steg i den här gruppen för att ta bort eller pausa säkerhets program från tredje part, till exempel Antivirus.
-   - Om du använder ett disk krypterings program från tredje part, anger du dess krypterings driv rutin för Installationsprogrammet för Windows med [kommando rads alternativet](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options) **/ReflectDrivers** . Lägg till [variabel steget Ställ in](../../osd/understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) aktivitetssekvens i aktivitetssekvensen i den här gruppen. Ange variabeln för aktivitetssekvensen till **OSDSetupAdditionalUpgradeOptions**. Ange värdet **/ReflectDriver** med sökvägen till driv rutinen. Den här [Åtgärds variabeln](../../osd/understand/task-sequence-steps.md#BKMK_UpgradeOS) för aktivitetssekvensen lägger till installationsprogrammet för Windows kommando raden som används av aktivitetssekvensen. Kontakta program varu leverantören om du behöver ytterligare vägledning om den här processen.
+   - Om du använder ett disk krypterings program från tredje part, anger du dess krypterings driv rutin för Installationsprogrammet för Windows med [kommando rads alternativet](/windows-hardware/manufacture/desktop/windows-setup-command-line-options) **/ReflectDrivers** . Lägg till [variabel steget Ställ in](../../osd/understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) aktivitetssekvens i aktivitetssekvensen i den här gruppen. Ange variabeln för aktivitetssekvensen till **OSDSetupAdditionalUpgradeOptions**. Ange värdet **/ReflectDriver** med sökvägen till driv rutinen. Den här [Åtgärds variabeln](../../osd/understand/task-sequence-steps.md#BKMK_UpgradeOS) för aktivitetssekvensen lägger till installationsprogrammet för Windows kommando raden som används av aktivitetssekvensen. Kontakta program varu leverantören om du behöver ytterligare vägledning om den här processen.
 
 ### <a name="new-groups-under-post-processing"></a>Nya grupper under **efter bearbetning**
 - **Använd installationsbaserade driv rutiner**: Lägg till steg i den här gruppen för att installera installationsbaserade driv rutiner (. exe) från paket.
 - **Installera/Aktivera säkerhet från tredje part**: Lägg till steg i den här gruppen för att installera eller aktivera säkerhets program från tredje part, till exempel antivirus program. 
-- **Ange standardappar och associationer för Windows**: Lägg till steg i den här gruppen för att ange Windows standard-appar och fil associationer. Förbered först en referens dator med önskade app-associationer. Kör sedan följande kommando rad för att exportera: </br>`dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`</br>Lägg till XML-filen i ett paket. Lägg sedan till steget [Kör kommando rad](../../osd/understand/task-sequence-steps.md#BKMK_RunCommandLine) i den här gruppen. Ange det paket som innehåller XML-filen och ange följande kommando rad: </br>`dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`</br> Mer information finns i [Exportera eller importera standard program associationer](https://docs.microsoft.com/windows-hardware/manufacture/desktop/export-or-import-default-application-associations).
-- **Tillämpa anpassningar och**anpassningar: Lägg till steg i den här gruppen för att tillämpa anpassningar av Start-menyn, till exempel ordna program grupper. Mer information finns i [Anpassa Start skärmen](https://docs.microsoft.com/windows-hardware/manufacture/desktop/customize-the-start-screen).
+- **Ange standardappar och associationer för Windows**: Lägg till steg i den här gruppen för att ange Windows standard-appar och fil associationer. Förbered först en referens dator med önskade app-associationer. Kör sedan följande kommando rad för att exportera: </br>`dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`</br>Lägg till XML-filen i ett paket. Lägg sedan till steget [Kör kommando rad](../../osd/understand/task-sequence-steps.md#BKMK_RunCommandLine) i den här gruppen. Ange det paket som innehåller XML-filen och ange följande kommando rad: </br>`dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`</br> Mer information finns i [Exportera eller importera standard program associationer](/windows-hardware/manufacture/desktop/export-or-import-default-application-associations).
+- **Tillämpa anpassningar och**anpassningar: Lägg till steg i den här gruppen för att tillämpa anpassningar av Start-menyn, till exempel ordna program grupper. Mer information finns i [Anpassa Start skärmen](/windows-hardware/manufacture/desktop/customize-the-start-screen).
 
 ### <a name="additional-recommendations"></a>Ytterligare rekommendationer
-- Läs igenom Windows-dokumentationen för att [lösa Windows 10-uppgraderings fel](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors). Den här artikeln innehåller även detaljerad information om uppgraderings processen.
+- Läs igenom Windows-dokumentationen för att [lösa Windows 10-uppgraderings fel](/windows/deployment/upgrade/resolve-windows-10-upgrade-errors). Den här artikeln innehåller även detaljerad information om uppgraderings processen.
 - I steget standard **kontroll beredskap** aktiverar du **minsta ledigt disk utrymme (MB)**. Ange värdet till minst **16384** (16 GB) för ett 32-bitars uppgraderings paket för operativ system, eller **20480** (20 GB) för 64-bitars. 
 - Använd den **SMSTSDownloadRetryCount** [inbyggda variabeln](../../osd/understand/task-sequence-variables.md) SMSTSDownloadRetryCount för att försöka hämta principen igen. Som standard försöker klienten igen två gånger; den här variabeln anges till två (2). Om klienterna inte är på en kabelansluten företags nätverks anslutning, kommer ytterligare försök att hjälpa klienten att hämta principer. Om den här variabeln används får ingen negativ sido effekt, förutom fördröjt fel om den inte kan hämta principen.<!-- 501016 --> Öka också **SMSTSDownloadRetryDelay** -variabeln från standardvärdet på 15 sekunder.
 - Utför en intern kompatibilitetskontroll. 
@@ -227,14 +227,14 @@ Listan över [scenarier som inte stöds](../plan-design/network/cng-certificates
 
 ## <a name="cloud-management-gateway-support-for-azure-resource-manager"></a>Stöd för Cloud Management Gateway för Azure Resource Manager
 <!-- 1324735 -->
-När du skapar en instans av CMG ( [Cloud Management Gateway](../clients/manage/cmg/plan-cloud-management-gateway.md) ) ger guiden nu möjlighet att skapa en **Azure Resource Manager distribution**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) är en modern plattform för att hantera alla lösnings resurser som en enda entitet, som kallas för en [resurs grupp](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). När du distribuerar CMG med Azure Resource Manager använder platsen Azure Active Directory (Azure AD) för att autentisera och skapa nödvändiga moln resurser. Den här moderna distributionen kräver inte det klassiska hanterings certifikatet för Azure.  
+När du skapar en instans av CMG ( [Cloud Management Gateway](../clients/manage/cmg/plan-cloud-management-gateway.md) ) ger guiden nu möjlighet att skapa en **Azure Resource Manager distribution**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) är en modern plattform för att hantera alla lösnings resurser som en enda entitet, som kallas för en [resurs grupp](/azure/azure-resource-manager/resource-group-overview#resource-groups). När du distribuerar CMG med Azure Resource Manager använder platsen Azure Active Directory (Azure AD) för att autentisera och skapa nödvändiga moln resurser. Den här moderna distributionen kräver inte det klassiska hanterings certifikatet för Azure.  
 
 Guiden CMG ger fortfarande möjlighet att använda en **klassisk tjänst distribution** med ett hanterings certifikat för Azure. För att förenkla distributionen och hanteringen av resurser rekommenderar vi att du använder Azure Resource Manager distributions modell för alla nya CMG-instanser. Distribuera om möjligt Befintliga CMG-instanser via Resource Manager.
 
 Configuration Manager migrerar inte befintliga klassiska CMG-instanser till Azure Resource Manager distributions modell. Skapa nya CMG-instanser med Azure Resource Manager-distributioner och ta sedan bort klassiska CMG-instanser. 
 
 > [!IMPORTANT]
-> Den här funktionen aktiverar inte stöd för Azure Cloud Service-leverantörer (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services).  
+> Den här funktionen aktiverar inte stöd för Azure Cloud Service-leverantörer (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services).  
 
 ### <a name="prerequisites"></a>Förutsättningar
 - Integrering med [Azure AD](../clients/deploy/deploy-clients-cmg-azure.md). Identifiering av Azure AD-användare krävs inte.
@@ -300,7 +300,7 @@ Om du distribuerar program som tillgängliga för användare kan de nu bläddra 
 
 ## <a name="report-on-windows-autopilot-device-information"></a>Rapport om Windows autopilot-enhets information
 <!-- 1351442 -->
-Windows autopilot är en lösning för att onboarding och konfigurera nya Windows 10-enheter på ett modernt sätt. Mer information finns i [Översikt över Windows autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). En metod för att registrera befintliga enheter med Windows autopilot är att överföra enhets information till Microsoft Store för företag och utbildning. Den här informationen omfattar enhetens serie nummer, Windows produkt identifierare och en maskin varu identifierare. Använd Configuration Manager för att samla in och rapportera den här enhets informationen. 
+Windows autopilot är en lösning för att onboarding och konfigurera nya Windows 10-enheter på ett modernt sätt. Mer information finns i [Översikt över Windows autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot). En metod för att registrera befintliga enheter med Windows autopilot är att överföra enhets information till Microsoft Store för företag och utbildning. Den här informationen omfattar enhetens serie nummer, Windows produkt identifierare och en maskin varu identifierare. Använd Configuration Manager för att samla in och rapportera den här enhets informationen. 
 
 ### <a name="prerequisites"></a>Förutsättningar
 - Den här enhets informationen gäller endast för klienter i Windows 10, version 1703 och senare
@@ -311,13 +311,13 @@ Windows autopilot är en lösning för att onboarding och konfigurera nya Window
 1. I Configuration Manager-konsolen, **övervaknings** arbets ytan, expanderar du noden **rapportering** , expanderar **rapporter**och väljer **maskin vara-allmänt-** noden.
 2. Kör den nya rapporten, **enhets information för Windows autopilot** och visa resultatet. 
 3. I rapport visnings programmet klickar du på **export** ikonen och väljer **CSV (kommaavgränsad)** .
-4. När du har sparat filen laddar du upp data till Microsoft Store för företag och utbildning. Mer information finns i [lägga till enheter i Microsoft Store för företag och utbildning](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile). 
+4. När du har sparat filen laddar du upp data till Microsoft Store för företag och utbildning. Mer information finns i [lägga till enheter i Microsoft Store för företag och utbildning](/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile). 
 
 
 
 ## <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Förbättringar av Configuration Manager principer för Windows Defender sårbarhet Guard
 <!-- 1356220 -->
-Ytterligare princip inställningar för komponenten för minskning av attack ytan och reglerad mappåtkomst har lagts till i Configuration Manager för [Windows Defender sårbarhet Guard](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection).
+Ytterligare princip inställningar för komponenten för minskning av attack ytan och reglerad mappåtkomst har lagts till i Configuration Manager för [Windows Defender sårbarhet Guard](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection).
 
 **Nya inställningar för reglerad mappåtkomst**<br/>
 Det finns två ytterligare alternativ när du konfigurerar reglerad mappåtkomst: **Blockera endast disk sektorer** och **Granska endast disk sektorer**. De här två inställningarna tillåter regler för kontrollerad mappåtkomst att endast aktive ras för start sektorer och aktiverar inte skydd av vissa mappar eller de skyddade standardmapparna. 
@@ -334,18 +334,18 @@ Det finns två ytterligare alternativ när du konfigurerar reglerad mappåtkomst
 <!-- 1357310 -->
 För kunder som använder [Microsoft Edge](https://www.microsoft.com/itpro/microsoft-edge) -webbläsaren på Windows 10-klienter kan du nu skapa en princip för Configuration Manager kompatibilitetsinställningar för att konfigurera flera Microsoft Edge-inställningar. Den här principen innehåller för närvarande följande inställningar:
 - **Ange Microsoft Edge-webbläsare som standard**: konfigurerar Windows 10-standardappens inställning för webbläsare till Microsoft Edge
-- **Tillåt listruta för adress fält**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för AllowAddressBarDropdown-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
-- **Tillåt synkronisering av favoriter mellan Microsoft-webbläsare**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för SyncFavoritesBetweenIEAndMicrosoftEdge-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
-- **Tillåt rensning av webb data vid avslut**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för ClearBrowsingDataOnExit-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
-- **Tillåt Not Track-huvuden**: Mer information finns i [AllowDoNotTrack Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
-- **Tillåt Autofyll**: Mer information finns i [AllowAutofill Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
-- **Tillåt cookies**: Mer information finns i [AllowCookies Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
-- **Tillåt blockering av popup-fönster**: Mer information finns i [AllowPopups Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
-- **Tillåt Sök förslag i adress fältet**: Mer information finns i [AllowSearchSuggestionsinAddressBar Browser policy](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
-- **Tillåt sändning av intranäts trafik till Internet Explorer**: Mer information finns i [SendIntranetTraffictoInternetExplorer Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
-- **Tillåt lösen ords hanteraren**: Mer information finns i [AllowPasswordManager Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
-- **Tillåt utvecklarverktyg**: Mer information finns i [princip för AllowDeveloperTools-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
-- **Tillåt tillägg**: Mer information finns i [AllowExtensions Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
+- **Tillåt listruta för adress fält**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för AllowAddressBarDropdown-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
+- **Tillåt synkronisering av favoriter mellan Microsoft-webbläsare**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för SyncFavoritesBetweenIEAndMicrosoftEdge-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
+- **Tillåt rensning av webb data vid avslut**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för ClearBrowsingDataOnExit-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
+- **Tillåt Not Track-huvuden**: Mer information finns i [AllowDoNotTrack Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
+- **Tillåt Autofyll**: Mer information finns i [AllowAutofill Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
+- **Tillåt cookies**: Mer information finns i [AllowCookies Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
+- **Tillåt blockering av popup-fönster**: Mer information finns i [AllowPopups Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
+- **Tillåt Sök förslag i adress fältet**: Mer information finns i [AllowSearchSuggestionsinAddressBar Browser policy](/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
+- **Tillåt sändning av intranäts trafik till Internet Explorer**: Mer information finns i [SendIntranetTraffictoInternetExplorer Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
+- **Tillåt lösen ords hanteraren**: Mer information finns i [AllowPasswordManager Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
+- **Tillåt utvecklarverktyg**: Mer information finns i [princip för AllowDeveloperTools-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
+- **Tillåt tillägg**: Mer information finns i [AllowExtensions Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
 
 ### <a name="prerequisites"></a>Förutsättningar
 - Windows 10-klient som är Azure Active Directory ansluten. 
@@ -424,4 +424,4 @@ Stegvisa distributioner automatiserar en samordnad, sekvenserad distribution av 
 
 
 ## <a name="next-steps"></a>Nästa steg
-Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).    
+Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).

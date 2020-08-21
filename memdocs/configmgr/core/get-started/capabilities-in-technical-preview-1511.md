@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 337b494bdce24463c19dd22ae975af5e99d6d895
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 59d343d09f827edec5db0dd5302c75c00a0c8455
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905850"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694516"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-configuration-manager"></a>Funktioner i Technical Preview 1511 för Configuration Manager
 
@@ -26,7 +26,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
 Följande är nya funktioner som du kan prova med den här versionen.  
 
-##  <a name="integration-with-windows-update-for-business-in-windows-10"></a><a name="BKMK_WUfB"></a>Integrering med Windows Update för företag i Windows 10  
+##  <a name="integration-with-windows-update-for-business-in-windows-10"></a><a name="BKMK_WUfB"></a> Integrering med Windows Update för företag i Windows 10  
  Configuration Manager kan nu skilja en Windows 10-dator som är direkt ansluten via Windows Update for Business (WUfB) jämfört med de som är anslutna till WSUS för att hämta uppdateringar och uppgraderingar för Windows 10.  För datorer som är anslutna via WUfB kan uppdateringar och uppgraderingar hanteras på takt som anges av en administrativ användare via grup principer eller MDM-principer och dessa uppdateringar/uppgraderingar kan installeras direkt från WUfB.    
 För datorer som är anslutna via WUfB kommer Configuration Manager inte att kunna rapportera om kompatibilitetsstatus (inklusive Windows-uppdateringar eller definitions uppdateringar). Configuration Manager kommer heller inte att kunna distribuera Microsoft-uppdateringar eller uppdateringar från tredje part till dessa datorer.  
 
@@ -34,7 +34,7 @@ För datorer som är anslutna via WUfB kommer Configuration Manager inte att kun
 
 -   Windows 10 Desktop Pro eller Windows 10 Enterprise Edition version 1511 eller senare  
 
--   Datorer som ska hanteras via [Windows Update för företag](https://docs.microsoft.com/windows/deployment/update/waas-manage-updates-wufb).  
+-   Datorer som ska hanteras via [Windows Update för företag](/windows/deployment/update/waas-manage-updates-wufb).  
 
 ### <a name="try-it-out"></a>prova!  
  Försök att utföra följande uppgift och Använd sedan feedback-informationen nära överst i det här avsnittet för att berätta för oss hur det fungerade:  
@@ -50,7 +50,7 @@ För datorer som är anslutna via WUfB kommer Configuration Manager inte att kun
 
 5.  De datorer som hanteras via WUfB visas som **okända** i kompatibilitetsstatus och räknas inte som en del av den övergripande kompatibiliteten i procent.  
 
-##  <a name="managing-office-365-proplus-client-update-through-configuration-manager"></a><a name="BKMK_Office365ProPlus"></a>Hantera Office 365 ProPlus-klient uppdatering via Configuration Manager  
+##  <a name="managing-office-365-proplus-client-update-through-configuration-manager"></a><a name="BKMK_Office365ProPlus"></a> Hantera Office 365 ProPlus-klient uppdatering via Configuration Manager  
  Configuration Manager har nu möjlighet att hantera uppdateringar för Office 365 Desktop-klienter med hjälp av Configuration Manager hantering av programuppdateringar-arbetsflöde.    
 När Microsoft publicerar en ny uppdatering för Office 365-skrivbordet till WSUS (Windows Server Update Services), kommer Configuration Manager att kunna synkronisera uppdateringen till sin katalog om Office 365-uppdateringen har kon figurer ATS att ingå i katalog synkroniseringen.  Plats servern för Configuration Manager hämtar Office 365-klient uppdateringarna och distribuerar paketet till Configuration Manager distributions platser.  Den Configuration Manager klienten informerar sedan Office 365 Desktop-klienter där uppdateringarna ska hämtas och när installations processen för uppdateringen startas.  
 
@@ -67,9 +67,9 @@ När Microsoft publicerar en ny uppdatering för Office 365-skrivbordet till WSU
 
 4. Du kan kontrol lera efterlevnaden för Office 365-uppdateringar med hjälp av övervakning eller rapporter i konsolen.  
 
-   Detaljerade anvisningar finns i [Hantera Office 365-klient uppdateringar med Configuration Manager Technical Preview](https://docs.microsoft.com/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
+   Detaljerade anvisningar finns i [Hantera Office 365-klient uppdateringar med Configuration Manager Technical Preview](/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
 
-##  <a name="support-for-sql-server-alwayson-for-highly-available-databases"></a><a name="BKMK_AlwasyOn"></a>Stöd för SQL Server AlwaysOn för databaser med hög tillgänglighet  
+##  <a name="support-for-sql-server-alwayson-for-highly-available-databases"></a><a name="BKMK_AlwasyOn"></a> Stöd för SQL Server AlwaysOn för databaser med hög tillgänglighet  
  Configuration Manager har nu stöd för att använda en SQL Server AlwaysOn-tillgänglighetsgrupper som värd för plats databasen.  När du installerar en ny plats kan du direkt konfigurera installationen att använda tillgänglighets gruppen i stället för en normal instans av SQL Server.  
 
 > [!NOTE]  
@@ -110,7 +110,7 @@ Försök att utföra följande uppgifter och Använd sedan feedback-informatione
  Använd följande procedurer för att först skapa och konfigurera tillgänglighets gruppen och sedan installera en ny Configuration Manager-plats som använder tillgänglighets gruppen.  
 
 #### <a name="to-create-a-sql-server-alwayson-availability-group"></a>Så här skapar du en SQL Server AlwaysOn-tillgänglighetsgruppen  
-Processen för att [skapa en SQL Server tillgänglighets grupp](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-ver15) dokumenteras i SQL Server-dokumentations biblioteket.  När du skapar tillgänglighets gruppen ser du till att följande krav för användning med Configuration Manager är uppfyllda:  
+Processen för att [skapa en SQL Server tillgänglighets grupp](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-ver15) dokumenteras i SQL Server-dokumentations biblioteket.  När du skapar tillgänglighets gruppen ser du till att följande krav för användning med Configuration Manager är uppfyllda:  
 
 -   Högst tre medlemmar:  
 
@@ -145,7 +145,7 @@ Installera en plats som använder en SQL Server tillgänglighets grupp:
 
 3.  När du har angett den här informationen slutför du installationen med din normala process och dina vanliga konfigurationer.  
 
-##  <a name="service-a--server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a>Underhålla ett Server kluster  
+##  <a name="service-a--server-cluster"></a><a name="BKMK_ClusterServerUpdates"></a> Underhålla ett Server kluster  
 Nu kan du skapa en samling som innehåller servrar i ett kluster och sedan konfigurera de kluster inställningar som ska användas när du distribuerar uppdateringar till klustret. Du kan styra den procent andel av servrar som är online vid en viss tidpunkt, samt konfigurera PowerShell-skript för för distribution och efter distribution för att köra anpassade åtgärder.  
 
 **Kända problem för den här versionen:**  
@@ -161,7 +161,7 @@ Försök att utföra följande uppgift och Använd sedan feedback-informationen 
 
 -   Jag kan ange att endast 50% av servrar i klustret kan vara offline när som helst i kluster underhåll. Använd exempel skripten i proceduren för att ange skript för för distribution och efter distribution.  
 
--   Distribuera en uppdatering i den här samlingen. Granska filerna start. txt och End. txt i C:\Temp och kontrol lera start-och slut tider för distributionen på servrarna i klustret. Se filen UpdatesDeployment. log för mer information.  
+-   Distribuera en uppdatering i den här samlingen. Granska start.txt och end.txt filer i C:\Temp och kontrol lera start-och slut tider för distributionen på servrarna i klustret. Se filen UpdatesDeployment. log för mer information.  
 
 #### <a name="to-create-a-collection-for-a-server-cluster"></a>Så här skapar du en samling för ett Server kluster  
 
@@ -202,4 +202,4 @@ Försök att utföra följande uppgift och Använd sedan feedback-informationen 
 
 1.  [Distribuera program uppdateringar](../../sum/deploy-use/deploy-software-updates.md) till Server kluster samlingen.  
 
-2.  [Övervaka program uppdaterings distributionen](../../sum/deploy-use/monitor-software-updates.md).  
+2.  [Övervaka program uppdaterings distributionen](../../sum/deploy-use/monitor-software-updates.md).

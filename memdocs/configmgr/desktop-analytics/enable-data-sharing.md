@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: 40ebeabaaf236377388660a2a1a328e308a708ab
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 999d8441e8c97f0a4b7ad4a92c8175300dcc4ead
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125973"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696454"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Aktivera data delning för Skriv bords analys
 
@@ -31,7 +31,7 @@ När du integrerar Configuration Manager med Desktop Analytics använder du äve
 > [!IMPORTANT]
 > I de flesta fall använder du endast Configuration Manager för att konfigurera de här inställningarna. Använd inte heller de här inställningarna i domänens grup princip objekt. Mer information finns i [konflikt lösning](enroll-devices.md#conflict-resolution).
 
-De grundläggande funktionerna i Skriv bords analys fungerar på den **önskade** [nivån för diagnostikdata](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels). Om du inte konfigurerar den **valfria nivån (begränsad)** i Configuration Manager får du inte följande funktioner i Desktop Analytics:
+De grundläggande funktionerna i Skriv bords analys fungerar på den **önskade** [nivån för diagnostikdata](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-levels). Om du inte konfigurerar den **valfria nivån (begränsad)** i Configuration Manager får du inte följande funktioner i Desktop Analytics:
 
 - Användning av appar
 - [Ytterligare App Insights](compat-assessment.md#additional-insights)
@@ -51,14 +51,14 @@ Microsoft rekommenderar att du aktiverar den **valfria (begränsade)** diagnosti
 >
 > | Version 2006 och senare | Version 2002 och tidigare |
 > |---------|---------|
-> | Obligatorisk | Grundläggande |
+> | Obligatorisk | Basic |
 > | Valfritt (begränsat) | Utökad (begränsad) |
 > | Ej tillämpligt | Optimerad |
 > | Valfritt | Fullständig |
 >
 > Om du tidigare har konfigurerat några enheter på den **förbättrade** nivån, kommer de att återgå till **valfria (begränsat)** när du uppgraderar till version 2006. De skickar då mindre data till Microsoft. Den här ändringen påverkar inte vad du ser i Skriv bords analys.
 
-Mer information om diagnostikdata som delas med Microsoft med **valfritt (begränsat)** finns i [Windows 10 Enhanced Diagnostic data Events and Fields](https://docs.microsoft.com/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
+Mer information om diagnostikdata som delas med Microsoft med **valfritt (begränsat)** finns i [Windows 10 Enhanced Diagnostic data Events and Fields](/windows/privacy/enhanced-diagnostic-data-windows-analytics-events-and-fields).
 
 > [!IMPORTANT]
 > Microsoft har ett kraftfullt engagemang för att tillhandahålla de verktyg och resurser som hjälper dig att kontrol lera din integritet. Som ett resultat, medan Desktop Analytics stöder Windows 8,1-enheter samlar Microsoft inte in Windows-diagnostikdata från Windows 8,1-enheter som finns i Europeiska länder (EES och Schweiz).
@@ -67,9 +67,9 @@ Mer information finns i [Sekretess för Desktop Analytics](privacy.md).
 
 Följande artiklar är också bra för att bättre förstå Windows-diagnostikdata:
 
-- [Windows 10 och GDPR för IT-besluts fattare](https://docs.microsoft.com/windows/privacy/gdpr-it-guidance)  
+- [Windows 10 och GDPR för IT-besluts fattare](/windows/privacy/gdpr-it-guidance)  
 
-- [Konfigurera Windows-diagnostikdata i din organisation](https://docs.microsoft.com/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
+- [Konfigurera Windows-diagnostikdata i din organisation](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)  
 
 > [!NOTE]
 > Klienter som kon figurer ATS för att skicka **valfria (begränsade)** diagnostikdata skickar ungefär 2 MB data till Microsoft-molnet på den första fullständiga genomsökningen. Den dagliga delta varierar mellan 250-400 KB per dag.
@@ -111,7 +111,7 @@ Konfigurera enheter så att de använder den inloggade användarens kontext för
 - Se till att användarna har proxy-behörighet för att få åtkomst till slut punkterna för diagnostikdata. Det här alternativet kräver att enheterna har konsol användare med proxy-behörigheter, så att du inte kan använda den här metoden med hjälp av omdirigerings enheter.
 
 > [!IMPORTANT]
-> Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen är beroende av register nyckeln **DisableEnterpriseAuthProxy** `0` , medan Microsoft Defender ATP kräver att den är inställd på `1` . Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
+> Autentiseringsmetoden för användarautentisering är inte kompatibel med användning av Microsoft Defender Avancerat skydd. Det här problemet beror på att den här autentiseringen är beroende av register nyckeln **DisableEnterpriseAuthProxy** `0` , medan Microsoft Defender ATP kräver att den är inställd på `1` . Mer information finns i [Konfigurera inställningar för Machine proxy och Internet anslutning i Microsoft Defender ATP](/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection).
 
 ### <a name="device-proxy-authentication"></a>Enhets-proxy-autentisering
 
@@ -127,7 +127,7 @@ Den här metoden är den mest komplexa eftersom den kräver följande konfigurat
 
 - Se till att enheterna kan komma åt proxyservern via WinHTTP i lokalt system sammanhang. Använd något av följande alternativ för att konfigurera det här beteendet:
 
-  - Kommando raden`netsh winhttp set proxy`
+  - Kommando raden `netsh winhttp set proxy`
 
   - WPAD-protokoll (Web Proxy Auto-Discovery)
 
@@ -137,4 +137,4 @@ Den här metoden är den mest komplexa eftersom den kräver följande konfigurat
 
   - Dirigerad anslutning eller som använder Network Address Translation (NAT)
 
-- Konfigurera proxyservrar så att dator kontona i Active Directory kan komma åt data slut punkterna för diagnostikdata. Den här konfigurationen kräver att proxyservrar har stöd för Windows-integrerad autentisering.  
+- Konfigurera proxyservrar så att dator kontona i Active Directory kan komma åt data slut punkterna för diagnostikdata. Den här konfigurationen kräver att proxyservrar har stöd för Windows-integrerad autentisering.

@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d6703f0889590b3d37d05b7c9b283a16c0150649
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: 3b153dad513107b118d11fa95e3feaa035a1bc90
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591640"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692646"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Vad är nytt i version 1806 av Configuration Manager aktuella grenen
 
@@ -308,7 +308,7 @@ Mer information finns i [skapa Windows-program](../../../apps/get-started/creati
 
 ### <a name="uninstall-application-on-approval-revocation"></a>Avinstallera program för åter kallelse av godkännande
 <!--1357891-->
-Beteendet har ändrats när du återkallar godkännande för ett program. Nu när du nekar begäran för programmet, avinstallerar klienten programmet från användarens enhet. Det här beteendet kräver att du aktiverar den [valfria funktionen](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Godkänn program begär Anden för användare per enhet**. 
+Beteendet har ändrats när du återkallar godkännande för ett program. Nu när du nekar begäran för programmet, avinstallerar klienten programmet från användarens enhet. Det här beteendet kräver att du aktiverar den [valfria funktionen](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) **Godkänn program begär Anden för användare per enhet**. 
 
 Mer information finns i [distribuera program](../../../apps/deploy-use/deploy-applications.md#bkmk_approval).
 
@@ -348,7 +348,7 @@ Mer information finns i [fas inställningar](../../../osd/deploy-use/create-phas
 
 ### <a name="improvements-to-windows-10-in-place-upgrade-task-sequence"></a>Förbättringar av aktivitetssekvens för Windows 10-uppgradering på plats
 <!--1358500-->
-Standard mal len för aktivitetssekvenser för Windows 10 uppgradering på plats innehåller nu en annan ny grupp med rekommenderade åtgärder som du kan lägga till om uppgraderingen Miss lyckas. De här åtgärderna gör det enklare att felsöka. Ett sådant verktyg är Windows- [SetupDiag](https://docs.microsoft.com/windows/deployment/upgrade/setupdiag). Det är ett fristående diagnostikverktyg för att få information om varför en Windows 10-uppgradering misslyckades. 
+Standard mal len för aktivitetssekvenser för Windows 10 uppgradering på plats innehåller nu en annan ny grupp med rekommenderade åtgärder som du kan lägga till om uppgraderingen Miss lyckas. De här åtgärderna gör det enklare att felsöka. Ett sådant verktyg är Windows- [SetupDiag](/windows/deployment/upgrade/setupdiag). Det är ett fristående diagnostikverktyg för att få information om varför en Windows 10-uppgradering misslyckades. 
 
 Mer information finns i [skapa en aktivitetssekvens för att uppgradera ett operativ system](../../../osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md#recommended-task-sequence-steps-on-failure).
 
@@ -584,7 +584,7 @@ Mer information finns i [konsol förbättringar i version 1806](../../servers/ma
 
 Förutom nya funktioner innehåller den här versionen även ytterligare ändringar som fel korrigeringar. Mer information finns i [Sammanfattning av ändringar i Configuration Manager aktuella grenen, version 1806](https://support.microsoft.com/help/4459701).
 
-Mer information om ändringar i Windows PowerShell-cmdletar för Configuration Manager finns i [versions anmärkningar för PowerShell 1806](https://docs.microsoft.com/powershell/sccm/1806_release_notes?view=sccm-ps).
+Mer information om ändringar i Windows PowerShell-cmdletar för Configuration Manager finns i [versions anmärkningar för PowerShell 1806](/powershell/sccm/1806_release_notes?view=sccm-ps).
 
 Följande samlade uppdateringar (4462978) är tillgängliga i-konsolen från och med 24 oktober 2018: [Samlad uppdatering för Configuration Manager aktuell gren, version 1806](https://support.microsoft.com/help/4462978).
 
@@ -595,9 +595,9 @@ Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda s
 
 | ID | Title | Datum | I-konsolen |
 |---------|---------|---------|---------|
-| [4346645](https://support.microsoft.com/help/4346645) | Uppdatering för Configuration Manager version 1806, första vågen | 31 augusti 2018 | Yes |
-| [4465865](https://support.microsoft.com/help/4465865) | Program uppdateringar laddas inte ned i Configuration Managers miljö om WSUS är frånkopplat<br><br>Den här uppdateringen ingår också i den samlade uppdateringen (4462978) | 01 oktober 2018 | Yes |
-| [4471892](https://support.microsoft.com/help/4471892) | PXE-Responder fungerar inte över undernät i Configuration Manager 1806 | 23 november 2018 | No |
+| [4346645](https://support.microsoft.com/help/4346645) | Uppdatering för Configuration Manager version 1806, första vågen | 31 augusti 2018 | Ja |
+| [4465865](https://support.microsoft.com/help/4465865) | Program uppdateringar laddas inte ned i Configuration Managers miljö om WSUS är frånkopplat<br><br>Den här uppdateringen ingår också i den samlade uppdateringen (4462978) | 01 oktober 2018 | Ja |
+| [4471892](https://support.microsoft.com/help/4471892) | PXE-Responder fungerar inte över undernät i Configuration Manager 1806 | 23 november 2018 | Nej |
 | [4487960](https://support.microsoft.com/help/4487960) | Microsoft Intune anslutnings certifikat förnyas inte i Configuration Manager | 18 januari 2019 | Ja |
 
 

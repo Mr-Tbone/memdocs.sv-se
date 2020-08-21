@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 51a974247d7281d6134b699a5865f801d1ed6094
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 9d58ffee30986efeda1716358ab7aa6c1d36cbf5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905711"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695689"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-configuration-manager"></a>Funktioner i Technical Preview 1609 för Configuration Manager
 
@@ -91,7 +91,7 @@ Proceduren för att skapa och distribuera ett Configuration Manager program frå
 
 Vi har lagt till många nya inställningar som du kan använda i konfigurations objekt för olika enhets plattformar.
 Detta är inställningar som tidigare fanns i Microsoft Intune i en fristående konfiguration och som nu är tillgängliga när du använder Intune med Configuration Manager.
-Om du behöver hjälp med någon av dessa inställningar öppnar du [Hantera inställningar och funktioner på dina enheter med Microsoft Intune principer](/mem/intune/configuration/device-profiles) och väljer sedan underavsnittet inställningar för den plattform som du vill använda.
+Om du behöver hjälp med någon av dessa inställningar öppnar du [Hantera inställningar och funktioner på dina enheter med Microsoft Intune principer](../../../intune/configuration/device-profiles.md) och väljer sedan underavsnittet inställningar för den plattform som du vill använda.
 
 
 ### <a name="new-settings-for-android-devices"></a>Nya inställningar för Android-enheter
@@ -238,7 +238,7 @@ I följande avsnitt beskrivs de ändringar som introduceras i den här för hand
 ### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Ändringar i användar gränssnittet och beteendet för gränser grupper och innehålls platser
 Följande är viktiga ändringar i gränser grupper och hur klienter hittar innehåll. Många av dessa ändringar och koncept fungerar tillsammans.
 - **Konfigurationer för snabb eller långsam tas bort:** Du kan inte längre konfigurera enskilda distributions platser så att de blir snabba eller långsamma.  I stället behandlas alla plats system som är kopplade till en avgränsnings grupp. På grund av den här ändringen stöder fliken **referenser** för gränser grupp egenskaperna inte längre konfigurationen av snabb eller långsam.
-- **Ny standard gränser grupp på varje plats:**  Varje primär plats har en ny standard gränser grupp med namnet ***default-site-bounds-group \<>***.  Om en klient inte finns på en nätverks plats som är tilldelad en avgränsnings grupp, kommer klienten att använda de plats system som är kopplade till standard gruppen från dess tilldelade plats. Planera att använda den här gränser gruppen som ersättning till begreppet återställnings innehålls plats.    
+- **Ny standard gränser grupp på varje plats:**  Varje primär plats har en ny standard avgränsnings grupp som heter ***standard-site-Enbounds \<sitecode> Group***.  Om en klient inte finns på en nätverks plats som är tilldelad en avgränsnings grupp, kommer klienten att använda de plats system som är kopplade till standard gruppen från dess tilldelade plats. Planera att använda den här gränser gruppen som ersättning till begreppet återställnings innehålls plats.    
   -  **Tillåt borttagning av återställnings käll platser för innehåll** : du behöver inte längre konfigurera en distributions plats som ska användas för återställningen och alternativen för att ange detta tas bort från användar gränssnittet.
 
   Resultatet av inställningen **tillåter att klienter använder en återställnings käll plats för innehåll** på en distributions typ för program har ändrats. Den här inställningen för en distributions typ gör nu att en klient kan använda standard platsens gränser-grupp som en innehålls käll plats.
@@ -317,8 +317,8 @@ Genom att konfigurera de olika grann grupperna så att de blir tillgängliga vid
 
 ### <a name="update-existing-boundary-groups-to-the-new-model"></a><a name="bkmk_update"></a>Uppdatera befintliga gränser grupper till den nya modellen
 När du installerar version 1609 och uppdaterar platsen görs följande konfigurationer automatiskt. Dessa är avsedda för att säkerställa att det aktuella återställnings beteendet är tillgängligt tills du konfigurerar nya gränser grupper och relationer.  
-- Oskyddade distributions platser på en plats läggs till i *standardvärdet för plats gränser-grupp för \< platskod>* gränser för den platsen.
-- En kopia görs av varje befintlig avgränsnings grupp som innehåller en plats server som kon figurer ATS med en långsam anslutning. Namnet på den nya gruppen är namnet på den *** \< ursprungliga avgränsnings gruppen>-långsamma-tmp***:  
+- Oskyddade distributions platser på en plats läggs till i *standard plats \<sitecode> * gränsers gruppen för den platsen.
+- En kopia görs av varje befintlig avgränsnings grupp som innehåller en plats server som kon figurer ATS med en långsam anslutning. Namnet på den nya gruppen är *** \<original boundary group name> -långsam – tmp***:  
   -   Plats system som har en snabb anslutning finns kvar i den ursprungliga avgränsnings gruppen.
   -   En kopia av plats system som har en långsam anslutning läggs till i kopian av gränser gruppen. De ursprungliga plats systemen som kon figurer ATS som långsamma finns kvar i den ursprungliga gränser-gruppen för bakåtkompatibilitet, men används inte från den aktuella gränser gruppen.
   -   Det finns inga associerade gränser för den här kopian av gräns gruppen. En återställnings länk skapas dock mellan den ursprungliga gruppen och den nya kopian av gräns gruppen som har återställnings tiden inställd på noll.
@@ -327,10 +327,10 @@ När du installerar version 1609 och uppdaterar platsen görs följande konfigur
 
 Ursprunglig distributions konfiguration för "kör inte program" i långsamt nätverk  |Ursprunglig distributions plats konfiguration för "Tillåt att klienten använder en återställnings käll plats för innehåll"  |Nytt återställnings beteende  
 ---------|---------|---------
-Vald     |  Vald    |  **Ingen återställnings** punkt Använd endast distributions platser i den aktuella gränser gruppen       
-Vald     |  Inte valt|  **Ingen återställnings** punkt Använd endast distributions platser i den aktuella gränser gruppen       
+Markerat     |  Markerat    |  **Ingen återställnings** punkt Använd endast distributions platser i den aktuella gränser gruppen       
+Markerat     |  Inte valt|  **Ingen återställnings** punkt Använd endast distributions platser i den aktuella gränser gruppen       
 Inte valt |  Inte valt|  **Återgå till granne** – Använd distributions platserna i den aktuella gränser gruppen och Lägg sedan till distributions platserna från intilliggande avgränsnings grupp. Om inte en explicit länk till standard platsens gränser grupp konfigureras, kommer klienterna inte att återgå till den gruppen.    
-Inte valt | Vald |   **Normal reserv** -Använd distributions platser i den aktuella gränser gruppen, sedan de från intilliggande och plats standard gränser grupper
+Inte valt | Markerat |   **Normal reserv** -Använd distributions platser i den aktuella gränser gruppen, sedan de från intilliggande och plats standard gränser grupper
 
  Alla andra distributions konfigurationer resulterar i **Normal reserv**.  
 
@@ -347,7 +347,7 @@ På instrument panelen visas diagram med följande:
 - Office 365-klient versioner
 - Office 365-klient språk
 - Office 365-klient kanaler     
-Mer information finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/overview-update-channels).
+Mer information finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](/deployoffice/overview-update-channels).
 - Regler för automatisk distribution som har Office 365-klienten valt i uppsättningen tillgängliga produkter.
 
 Du kan vidta följande åtgärder på instrument panelen:
@@ -424,7 +424,7 @@ I den här versionen får du en snabb överblick över övergripande kompatibili
 - Det går inte att öka detalj nivån för diagrammets **allmänna enhets kompatibilitetstillstånd** .
 - Diagrammet **över de vanligaste orsakerna till inkompatibiliteten** visar princip namnet och inte de enskilda orsakerna till inkompatibiliteten. Du kan klicka på principen för att öka detalj nivån och se vilka enheter som inte är kompatibla med principen.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 Slutför följande avsnitt i ordning:
 
 #### <a name="check-overall-compliance-chart"></a>Kontrol lera diagrammet för övergripande efterlevnad

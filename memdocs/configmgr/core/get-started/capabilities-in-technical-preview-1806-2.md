@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: b7643c73d2e9dad00e926bdc3db905016c45860a
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 062ae289ff53952d670592be6ff0027a91a627d4
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905224"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694414"
 ---
 # <a name="capabilities-in-technical-preview-18062-for-configuration-manager"></a>Funktioner i Technical Preview 1806,2 för Configuration Manager
 
@@ -40,7 +40,7 @@ Steps to workaround, if any.
 
 ## <a name="known-issues-in-this-technical-preview"></a>Kända problem i den här tekniska för hands versionen
 
-### <a name="clients-dont-automatically-update"></a><a name="ki_sqlncli"></a>Klienterna uppdateras inte automatiskt
+### <a name="clients-dont-automatically-update"></a><a name="ki_sqlncli"></a> Klienterna uppdateras inte automatiskt
 <!--518760-->
 När du uppdaterar till version 1806,2 uppdaterar platsen även SQL Native Client, vilket kan orsaka en väntande omstart på plats servern. Den här fördröjningen medför att vissa filer inte uppdateras, vilket påverkar automatisk klient uppgradering.
 
@@ -49,13 +49,13 @@ Undvik det här problemet genom att uppgradera SQL Native Client manuellt *innan
 
 Om du redan har uppdaterat platsen fungerar inte automatisk klient uppgradering och klient-push. Du måste uppdatera klienter för att testa de flesta nya funktionerna fullständigt. Uppdatera dina Technical Preview-klienter manuellt med följande process:  
 
-1. Leta reda på källfilerna för klienten i mappen **CMUClient** i installations katalogen för Configuration Manager på plats servern. Till exempel, `C:\Program Files\Configuration Manager\CMUClient`  
+1. Leta reda på källfilerna för klienten i mappen **CMUClient** i installations katalogen för Configuration Manager på plats servern. Till exempel `C:\Program Files\Configuration Manager\CMUClient`  
 
-2. Kopiera hela CMUClient-mappen till klient enheten. Till exempel, `C:\Temp\CMUClient`  
+2. Kopiera hela CMUClient-mappen till klient enheten. Till exempel `C:\Temp\CMUClient`  
 
     Den här platsen kan vara en nätverks resurs som är tillgänglig från klienterna.  
 
-3. Kör följande kommando rad från en upphöjd kommando tolk:`C:\Temp\CMUClient\ccmsetup.exe /source:C:\Temp\CMUClient`  
+3. Kör följande kommando rad från en upphöjd kommando tolk: `C:\Temp\CMUClient\ccmsetup.exe /source:C:\Temp\CMUClient`  
 
 Om du installerar en ny klient i den tekniska för hands version 1806,2-platsen använder du samma process. 
 
@@ -65,7 +65,7 @@ Om du installerar en ny klient i den tekniska för hands version 1806,2-platsen 
 > Kommando rads egenskaper, till exempel SMSSITECODE eller CCMLOGLEVEL, är OK att använda, men bör inte vara nödvändiga när du uppgraderar en befintlig klient. 
 
 
-### <a name="version-18062-shows-version-1806-in-about-configuration-manager"></a><a name="ki_version"></a>Version 1806,2 visar version 1806 i om Configuration Manager
+### <a name="version-18062-shows-version-1806-in-about-configuration-manager"></a><a name="ki_version"></a> Version 1806,2 visar version 1806 i om Configuration Manager
 <!--518148-->
 När du har uppgraderat till Technical Preview version 1806,2, om du öppnar fönstret **om Configuration Manager** från det övre vänstra hörnet i konsolen, visas fortfarande **version 1806**. 
 
@@ -84,7 +84,7 @@ Använd egenskapen **plats version** för att fastställa skillnaden mellan 1806
 **Följande är nya funktioner som du kan prova med den här versionen.**  
 
 
-## <a name="improvements-to-phased-deployments"></a><a name="bkmk_pod"></a>Förbättringar i stegvisa distributioner
+## <a name="improvements-to-phased-deployments"></a><a name="bkmk_pod"></a> Förbättringar i stegvisa distributioner
 
 I den här versionen ingår följande förbättringar i stegvisa [distributioner](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md):
 - [Status för stegvis distribution](#bkmk_pod-monitor)
@@ -92,7 +92,7 @@ I den här versionen ingår följande förbättringar i stegvisa [distributioner
 - [Gradvis distribution under stegvis distribution](#bkmk_pod-throttle)
 
 
-### <a name="phased-deployment-status"></a><a name="bkmk_pod-monitor"></a>Status för stegvis distribution
+### <a name="phased-deployment-status"></a><a name="bkmk_pod-monitor"></a> Status för stegvis distribution
 <!--1358577-->
 Stegvisa distributioner har nu en inbyggd övervaknings upplevelse. Välj en stegvis distribution i noden **distributioner** på arbets ytan **övervakning** och klicka sedan på status för stegvis **distribution** i menyfliksområdet.
 
@@ -117,7 +117,7 @@ Den här instrument panelen visar följande information för varje fas i distrib
 Instrument panelen för stegvis distributions status kan visa flera rader för samma fas.<!--518510-->
 
 
-### <a name="phased-deployment-of-applications"></a><a name="bkmk_pod-app"></a>Stegvis distribution av program
+### <a name="phased-deployment-of-applications"></a><a name="bkmk_pod-app"></a> Stegvis distribution av program
 <!--1358147-->
 Skapa stegvisa distributioner för program. Med stegvisa distributioner kan du dirigera en samordnad, sekvenserad distribution av program vara utifrån anpassningsbara kriterier och grupper.
 
@@ -132,7 +132,7 @@ Distribuera innehållet för programmet till en distributions plats innan du ska
 Du kan inte skapa faser för ett program manuellt. Guiden skapar automatiskt två faser för program distributioner.
 
 
-### <a name="gradual-rollout-during-phased-deployments"></a><a name="bkmk_pod-throttle"></a>Gradvis distribution under stegvis distribution
+### <a name="gradual-rollout-during-phased-deployments"></a><a name="bkmk_pod-throttle"></a> Gradvis distribution under stegvis distribution
 <!--1358578-->
 Under en stegvis distribution kan distributionen i varje fas nu ske gradvis. Det här beteendet minskar risken för distributions problem och minskar belastningen på nätverket som orsakas av distribution av innehåll till klienter. Platsen kan gradvis göra program varan tillgänglig beroende på konfigurationen för varje fas. Varje klient i en fas har en tids gräns i förhållande till den tid då program varan görs tillgänglig. Tidsfönstret mellan den tillgängliga tiden och tids gränsen är samma för alla klienter i en fas. 
 
@@ -143,11 +143,11 @@ När du skapar en stegvis distribution och konfigurerar en fas manuellt, på sid
 
 
 
-## <a name="support-for-new-windows-app-package-formats"></a><a name="bkmk_msix"></a>Stöd för nya paket format för Windows-appar
+## <a name="support-for-new-windows-app-package-formats"></a><a name="bkmk_msix"></a> Stöd för nya paket format för Windows-appar
 <!--1357427-->
 Configuration Manager stöder nu distribution av nya Windows 10-appaket (. msix) och app-paket (. msixbundle). Den senaste versionen av [Windows Insider Preview](https://insider.windows.com/) stöder för närvarande dessa nya format.
 
-En översikt över MSIX finns i [en närmare titt på MSIX](https://docs.microsoft.com/archive/blogs/sgern/a-closer-look-at-msix).
+En översikt över MSIX finns i [en närmare titt på MSIX](/archive/blogs/sgern/a-closer-look-at-msix).
 
 Information om hur du skapar en ny MSIX-app finns [i stöd för MSIX som introducerades i Insider Build 17682](https://techcommunity.microsoft.com/t5/MSIX-Blog/MSIX-support-introduced-in-Insider-Build-17682/ba-p/202376).
 
@@ -164,11 +164,11 @@ Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-tech
 
 
 
-## <a name="improvement-to-client-push-security"></a><a name="bkmk_client-push"></a>Förbättra push-säkerhet för klienter
+## <a name="improvement-to-client-push-security"></a><a name="bkmk_client-push"></a> Förbättra push-säkerhet för klienter
 <!--1358204-->
 När [klientens push](../clients/deploy/plan/client-installation-methods.md#client-push-installation) -metod används för att installera Configuration Manager-klienten, skapar plats servern en fjärr anslutning till klienten för att starta installationen. Från och med den här versionen kan platsen kräva ömsesidig Kerberos-autentisering genom att inte tillåta återställning till NTLM innan anslutningen upprättas. Den här förbättringen hjälper till att skydda kommunikationen mellan servern och klienten. 
 
-Beroende på dina säkerhets principer kanske din miljö redan föredrar eller kräver Kerberos över äldre NTLM-autentisering. Mer information om säkerhets överväganden för dessa autentiseringsprotokoll finns i [säkerhets princip inställningen i Windows för att begränsa NTLM](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers#security-considerations).
+Beroende på dina säkerhets principer kanske din miljö redan föredrar eller kräver Kerberos över äldre NTLM-autentisering. Mer information om säkerhets överväganden för dessa autentiseringsprotokoll finns i [säkerhets princip inställningen i Windows för att begränsa NTLM](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers#security-considerations).
 
 
 ### <a name="prerequisite"></a>Förutsättning
@@ -190,7 +190,7 @@ När du uppgraderar platsen kvarstår det befintliga beteendet. När du har *öp
 
 
 
-## <a name="management-insights-for-proactive-maintenance"></a><a name="bkmk_insights"></a>Hanterings insikter för proaktiv underhåll
+## <a name="management-insights-for-proactive-maintenance"></a><a name="bkmk_insights"></a> Hanterings insikter för proaktiv underhåll
 <!--1352184,et al-->
 Ytterligare hanterings insikter finns i den här versionen för att markera potentiella konfigurations problem. Granska följande regler i den nya **proaktiva underhålls** gruppen:  
 
@@ -208,7 +208,7 @@ Ytterligare hanterings insikter finns i den här versionen för att markera pote
 
 
 
-## <a name="transition-mobile-apps-workload-for-co-managed-devices"></a><a name="bkmk_comgmt"></a>Över gången till arbets belastning för mobila appar för samhanterade enheter
+## <a name="transition-mobile-apps-workload-for-co-managed-devices"></a><a name="bkmk_comgmt"></a> Över gången till arbets belastning för mobila appar för samhanterade enheter
 <!--1357892-->
 Hantera mobilappar med Microsoft Intune samtidigt som du fortsätter att använda Configuration Manager för att distribuera Windows-skrivbordet. Om du vill överföra arbets belastningen för moderna appar går du till sidan Egenskaper för samhantering. Flytta skjutreglaget från Configuration Manager till pilot eller alla. 
 
@@ -218,11 +218,11 @@ Mer information finns i följande artiklar:
 
 - [Samhantering för Windows 10-enheter](../../comanage/overview.md)  
 
-- [Vad är apphantering i Microsoft Intune?](https://docs.microsoft.com/intune/app-management)  
+- [Vad är apphantering i Microsoft Intune?](/intune/app-management)  
 
 
 
-## <a name="boundary-group-options-for-peer-downloads"></a><a name="bkmk_bgoptions"></a>Alternativ för gränser-grupp för peer-nedladdningar
+## <a name="boundary-group-options-for-peer-downloads"></a><a name="bkmk_bgoptions"></a> Alternativ för gränser-grupp för peer-nedladdningar
 <!--1356193-->
 Gränser grupper innehåller nu ytterligare inställningar för att ge dig mer kontroll över innehålls distribution i din miljö. Den här versionen lägger till följande alternativ:  
 
@@ -248,7 +248,7 @@ Om peer-källans klient har fler än en IP-adress (IPv4, IPv6 eller båda) funge
 
 
 
-## <a name="third-party-software-updates-support-for-custom-catalogs"></a><a name="bkmk_3pupdate"></a>Stöd för program uppdateringar från tredje part för anpassade kataloger
+## <a name="third-party-software-updates-support-for-custom-catalogs"></a><a name="bkmk_3pupdate"></a> Stöd för program uppdateringar från tredje part för anpassade kataloger
 <!--1358714-->
 Den här versionen itererar ytterligare om support för program uppdateringar från tredje part på grund av din [feedback från UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). [Teknisk för hands version 1806](capabilities-in-technical-preview-1806.md#bkmk-3pupdate) tillhandahöll support för *partner kataloger*, som är registrerade kataloger från program varu leverantörer. Kataloger som du anger, som inte är registrerade hos Microsoft, kallas *anpassade kataloger*. Lägg till anpassade kataloger i Configuration Manager-konsolen.  
 
@@ -307,7 +307,7 @@ Borttagnings åtgärden för anpassade kataloger är nedtonad och du kan därfö
 
 
 
-## <a name="improvements-to-cloud-management-features"></a><a name="bkmk_cloud"></a>Förbättringar av moln hanterings funktioner
+## <a name="improvements-to-cloud-management-features"></a><a name="bkmk_cloud"></a> Förbättringar av moln hanterings funktioner
 
 Den här versionen innehåller följande förbättringar:  
 
@@ -319,11 +319,11 @@ Den här versionen innehåller följande förbättringar:
 
     - Distribuera en [moln distributions plats med Azure Resource Manager](capabilities-in-technical-preview-1805.md#cloud-distribution-point-support-for-azure-resource-manager)  
 
-- Kunder använder Windows autopilot för att etablera Windows 10 på Azure Active Directory anslutna enheter som är anslutna till det lokala nätverket. För att installera eller uppgradera Configuration Manager-klienten på dessa enheter behöver du inte en distributions plats för moln eller en lokal distributions plats som kon figurer ATS för att **tillåta klienter att ansluta anonymt**. Aktivera i stället alternativet plats för att **använda Configuration Manager-genererade certifikat för http-platssystem**, vilket gör att en molnbaserad klient som är ansluten till en klient kan kommunicera med en lokal http-aktiverad distributions plats. Mer information finns i [förbättrad säker klient kommunikation](https://docs.microsoft.com/sccm/core/get-started/capabilities-in-technical-preview-1805#improved-secure-client-communications).<!--515854-->  
+- Kunder använder Windows autopilot för att etablera Windows 10 på Azure Active Directory anslutna enheter som är anslutna till det lokala nätverket. För att installera eller uppgradera Configuration Manager-klienten på dessa enheter behöver du inte en distributions plats för moln eller en lokal distributions plats som kon figurer ATS för att **tillåta klienter att ansluta anonymt**. Aktivera i stället alternativet plats för att **använda Configuration Manager-genererade certifikat för http-platssystem**, vilket gör att en molnbaserad klient som är ansluten till en klient kan kommunicera med en lokal http-aktiverad distributions plats. Mer information finns i [förbättrad säker klient kommunikation](/sccm/core/get-started/capabilities-in-technical-preview-1805#improved-secure-client-communications).<!--515854-->  
 
 
 
-## <a name="new-software-updates-compliance-report"></a><a name="bkmk_report"></a>Ny Kompatibilitetsrapport för program uppdateringar
+## <a name="new-software-updates-compliance-report"></a><a name="bkmk_report"></a> Ny Kompatibilitetsrapport för program uppdateringar
 <!--1357775-->
 Att visa rapporter om kompatibilitet med program uppdateringar innehåller traditionellt sett data från klienter som inte nyligen har kontaktat platsen. Med en ny rapport kan du filtrera kompabilitets resultat för en bestämd program uppdaterings grupp med "friska" klienter. Den här rapporten visar det mer realistiska kompatibilitetstillstånd för aktiva klienter i din miljö. 
  
@@ -338,4 +338,4 @@ Rapporten innehåller följande delar:
 
 
 ## <a name="next-steps"></a>Nästa steg
-Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).    
+Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).

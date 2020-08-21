@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: d52725e0127f7129a3962cd3ef178d2540bb785a
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 1836a4c7d08547405dad08d7e60eb108d0dfd00f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905738"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695723"
 ---
 # <a name="capabilities-in-technical-preview-1605-for-configuration-manager"></a>Funktioner i Technical Preview 1605 för Configuration Manager
 
@@ -32,7 +32,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
   **Följande är nya funktioner som du kan prova med den här versionen.**  
 
-##  <a name="per-app-vpn-for-windows-10-devices"></a><a name="BKMK_PerAppVPN"></a>Per app-VPN för Windows 10-enheter  
+##  <a name="per-app-vpn-for-windows-10-devices"></a><a name="BKMK_PerAppVPN"></a> Per app-VPN för Windows 10-enheter  
  För Windows 10-enheter som hanteras med Configuration Manager med Intune kan du lägga till en lista över appar som automatiskt öppnar en VPN-anslutning som du har konfigurerat via Configuration Manager-administratörskonsolen. Du kan välja att begränsa VPN-trafik till dessa appar, eller så kan du fortsätta att tillåta all trafik via VPN-anslutningen.  
 
  **Krav**:  
@@ -41,17 +41,17 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
 -   En Windows 10 VPN-profil som har distribuerats till minst en enhet  
 
-##  <a name="improvements-to-the-install-software-updates-task-sequence"></a><a name="BKMK_InstallSU"></a>Förbättringar av aktivitetssekvensen installera program uppdateringar  
+##  <a name="improvements-to-the-install-software-updates-task-sequence"></a><a name="BKMK_InstallSU"></a> Förbättringar av aktivitetssekvensen installera program uppdateringar  
  Följande förbättringar har gjorts i aktivitetssekvensen installera program uppdateringar:  
 
 -   En ny aktivitetssekvens variabel, SMSTSSoftwareUpdateScanTimeout, är tillgänglig för att ge dig möjlighet att styra tids gränsen för genomsökningen av program uppdateringar under steget installera program uppdateringar. Standardvärdet är 30 minuter.  
 
 -   Det har gjorts förbättringar av loggningen. Logg filen Smsts. log innehåller nya logg poster som hänvisar till andra loggfiler som kan hjälpa dig att felsöka problem under installationen av program uppdateringar.  
 
-##  <a name="improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step"></a><a name="BKMK_PrepareConfigMgrClient"></a>Förbättringar av steget förbereda ConfigMgr-klienten för att avbilda en aktivitetssekvens  
+##  <a name="improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step"></a><a name="BKMK_PrepareConfigMgrClient"></a> Förbättringar av steget förbereda ConfigMgr-klienten för att avbilda en aktivitetssekvens  
  Steget Förbered ConfigMgr-klient tar nu bort Configuration Manager-klienten fullständigt, i stället för att bara ta bort viktig information. När aktivitetssekvensen distribuerar den avbildade operativ Systems avbildningen kommer den att installera en ny Configuration Manager-klient varje gång.  
 
-##  <a name="grace-period-for-required-application-deployments"></a><a name="BKMK_Grace"></a>Respitperiod för obligatoriska program distributioner  
+##  <a name="grace-period-for-required-application-deployments"></a><a name="BKMK_Grace"></a> Respitperiod för obligatoriska program distributioner  
  I vissa fall kanske du vill ge användare mer tid att installera nödvändiga program distributioner utöver de tids gränser som du har konfigurerat. Om en slutanvändare till exempel precis har returnerat från semestern kan de vänta en stund medan förfallna program distributioner installeras. De kan dock fortfarande installera programmet direkt när de vill.  
 
  För att hjälpa till att lösa det här problemet kan du nu definiera en **respitperiod** genom att distribuera Configuration Manager klient inställningar till en samling.  
@@ -68,7 +68,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
    Liknande alternativ har lagts till i guiden distribution av program uppdateringar, guiden automatiska distributions regler och egenskaps sidor. Dessa är dock inte implementerade i den här tekniska för hands versionen.  
 
-##  <a name="new-experience-for-remote-device-actions"></a><a name="BKMK_Remote"></a>Ny upplevelse för fjär renhets åtgärder  
+##  <a name="new-experience-for-remote-device-actions"></a><a name="BKMK_Remote"></a> Ny upplevelse för fjär renhets åtgärder  
  Upplevelsen för att utföra fjär renhets åtgärder från Configuration Manager-konsolen har förbättrats.  
 Vanliga åtgärder som att ta bort **/Rensa**, **återställa lösen ord**, **fjärrlåsning**och **kringgå Aktiveringslås** finns nu i den **fjärranslutna enhet åtgärder** -menyn som nås från arbets ytan **till gångar och efterlevnad** .  
 
@@ -82,7 +82,7 @@ Vanliga åtgärder som att ta bort **/Rensa**, **återställa lösen ord**, **fj
 
 - På huvud sidan i noden **enheter** (alla kolumner kan inte visas som standard).  
 
-##  <a name="windows-store-for-business-apps"></a><a name="BKMK_WSFB"></a>Windows Store för företag-appar  
+##  <a name="windows-store-for-business-apps"></a><a name="BKMK_WSFB"></a> Windows Store för företag-appar  
  [Windows Store för företag](https://www.microsoft.com/business-store) är där du kan hitta och köpa appar för din organisation, enskilt eller i volym. Genom att ansluta butiken till Configuration Manager kan du hantera volym köpta appar från Configuration Manager-konsolen, till exempel:  
 
 - Du kan synkronisera listan med köpta appar med Configuration Manager  
@@ -153,7 +153,7 @@ Vanliga åtgärder som att ta bort **/Rensa**, **återställa lösen ord**, **fj
 >   
 >  Du kan för närvarande inte distribuera licensierade appar online med Configuration Manager.  
 
-##  <a name="general-improvements-for-volume-purchased-apps"></a><a name="BKMK_VPP2"></a>Allmänna förbättringar för appar som har köpts i volym  
+##  <a name="general-improvements-for-volume-purchased-apps"></a><a name="BKMK_VPP2"></a> Allmänna förbättringar för appar som har köpts i volym  
 
 -   I den här versionen har volym inköpta appar från Windows Store för företag och iOS App Store samlats in i samma vy, **licens information för Store-appar**.  
 
@@ -165,14 +165,14 @@ Vanliga åtgärder som att ta bort **/Rensa**, **återställa lösen ord**, **fj
 
 -   Den plats du använder för att hämta och ladda upp en Apple VPP-token för volym köps appar i Configuration Manager-konsolen har ändrats. Du kan nu göra detta på arbets ytan **admin** under noden **Cloud Services**  >  **Apples volymköpsprogram tokens** .  
 
-##  <a name="enterprise-data-protection-edp"></a><a name="BKMK_VPP"></a>Enterprise Data Protection (EDP)  
+##  <a name="enterprise-data-protection-edp"></a><a name="BKMK_VPP"></a> Enterprise Data Protection (EDP)  
  Du kan skapa konfigurations objekt som du kan använda för att distribuera EDP-principer (Enterprise Data Protection), inklusive att låta dig välja dina skyddade appar, din EDP-skydds nivå och hur du hittar företags data i nätverket. Mer information om EDP finns i följande avsnitt:  
 
-- [Skydda dina företags data med Windows Information Protection (Pia)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
-- [Skapa och distribuera en princip för Windows Information Protection (Pia) med Configuration Manager](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr)
+- [Skydda dina företags data med Windows Information Protection (Pia)](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [Skapa och distribuera en princip för Windows Information Protection (Pia) med Configuration Manager](/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr)
 
 
-##  <a name="end-users-can-install-apps-from-the-company-portal"></a><a name="BKMK_End"></a>Slutanvändare kan installera appar från Företagsportal  
+##  <a name="end-users-can-install-apps-from-the-company-portal"></a><a name="BKMK_End"></a> Slutanvändare kan installera appar från Företagsportal  
  Lokal MDM introducerades i Configuration Manager version 1511. I tidigare versioner kan du distribuera program till MDM-hanterade Windows 10-enheter med distributions syftet **obligatorisk** installation för lokala MDM-hanterade enheter.  
 
  I den här versionen kan du nu distribuera appar med ett distributions syfte som **är tillgängligt** för användare av lokala MDM-hanterade Windows 10-datorer och användare kan nu installera apparna från företagsportal.
@@ -263,12 +263,12 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
      När du har öppnat Företagsportal visas en dialog ruta med namnet **Configuration Manager** ange användarens Active Directory autentiseringsuppgifter (antingen i formatet user@domain eller domän \ användare) för att logga in.  
 
-##  <a name="new-tabs-for-updates-and-operating-systems-in-software-center"></a><a name="BKMK_SW1"></a>Nya flikar för uppdateringar och operativ system i Software Center  
+##  <a name="new-tabs-for-updates-and-operating-systems-in-software-center"></a><a name="BKMK_SW1"></a> Nya flikar för uppdateringar och operativ system i Software Center  
  I den här versionen har följande ändringar gjorts för att förbättra layouten för Software Center-programmet:  
 
 -   Fliken **program** har delats in i tre separata flikar för **uppdateringar**, **operativ system** (som båda fanns tidigare i listan med **filter** ) och **program**.  
 
-##  <a name="service-a--server-group"></a><a name="BKMK_ServerGroups"></a>Underhålla en Server grupp  
+##  <a name="service-a--server-group"></a><a name="BKMK_ServerGroups"></a> Underhålla en Server grupp  
  Technical Preview för Configuration Manager, version 1511, innehöll möjlighet att skapa en samling där alla enheter i samlingen utgör en Server grupp. Sedan kan du konfigurera de Server grupps inställningar som ska användas när du distribuerar program uppdateringar till Server gruppen, styra procent andelen datorer som uppdateras vid en viss tidpunkt och konfigurera PowerShell-skript för för distribution och efter distribution för att köra anpassade åtgärder.  
 
  Technical Preview för Configuration Manager, version 1605, lägger till möjligheten att uppdatera datorerna i Server gruppen i en angiven ordning som du definierar, lägger till förbättrad övervakning för att visa status för datorerna i Server gruppen och ger möjlighet att ta bort de distributions lås som är användbara när klienter har misslyckats med att installera program uppdateringarna och hindrar andra klienter från att installera sina program uppdateringar.  
@@ -280,7 +280,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 -   Jag kan ange att datorer i Server gruppen ska installera program uppdateringar i en speciell ordning baserat på Server grupps inställningarna för samlingen. Använd exempel skripten i proceduren för att ange skript för för distribution och efter distribution.  
 
--   Jag kan distribuera en program uppdatering till den här samlingen. Granska filerna start. txt och End. txt (skapade från exempel skripten) i C:\Temp och kontrol lera start-och slut tider för distributionen på datorerna i Server gruppen. Se filen UpdatesDeployment. log för mer information.  
+-   Jag kan distribuera en program uppdatering till den här samlingen. Granska start.txt och end.txt filer (som skapats från exempel skripten) i C:\Temp och kontrol lera start-och slut tider för distributionen på datorerna i Server gruppen. Se filen UpdatesDeployment. log för mer information.  
 
 #### <a name="to-create-a-collection-for-a-server-group"></a>Så här skapar du en samling för en Server grupp  
 
@@ -335,7 +335,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 2.  På fliken **Start** går du till gruppen **distribution** och klickar på **ta bort Server grupp distributions lås**. När klienterna har misslyckats med att installera program uppdateringarna och hindrar andra klienter från att installera sina program uppdateringar, kan distributions låsen rensas manuellt.  
 
-##  <a name="support-for-microsoft-defender-advanced-threat-protection-service"></a><a name="BKMK_ATP"></a>Stöd för tjänsten Microsoft Defender Avancerat skydd  
+##  <a name="support-for-microsoft-defender-advanced-threat-protection-service"></a><a name="BKMK_ATP"></a> Stöd för tjänsten Microsoft Defender Avancerat skydd  
  Microsoft Defender Avancerat skydd (ATP) är en tjänst som hjälper företag att upptäcka, undersöka och svara på avancerade attacker i sina nätverk. Microsoft Defender ATP kallas tidigare Windows Defender ATP. Läs mer om [Microsoft Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager kan hjälpa dig att publicera och övervaka hanterade klient enheter för Windows 10 jubileums version.  
 
 ### <a name="try-it-now"></a>Prova nu!  
@@ -402,7 +402,7 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
         -   **Ingen onboarding** – principen tillämpades men agenten har inte rapporterat någon princip  
 
-##  <a name="on-premises-device-health-attestation"></a><a name="BKMK_DHA"></a>Lokala Hälsoattestering för enhet  
+##  <a name="on-premises-device-health-attestation"></a><a name="BKMK_DHA"></a> Lokala Hälsoattestering för enhet  
  Hälsoattestering för Windows 10-enheter kan nu konfigureras för att kommunicera med den lokala infrastrukturen. Administratörer kan ange om rapportering görs via molnet eller lokala resurser. Om lokalt har valts för rapportering av hälso deklarationen kan du ange en URL för tjänsten. Detta gör att klient datorer utan Internet åtkomst kan aktivera och hantera enheter med hälsoattestering.  
 
 ### <a name="enable-health-attestation-for-on-premises-devices"></a>Aktivera hälsoattestering för lokala enheter  
@@ -412,10 +412,10 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
 2.  Ange **URL till lokal hälsoattesteringstjänst**och klicka sedan på **OK**.  
 
-##  <a name="new-restart-options-for-windows-10-clients-after-software-update-installation"></a><a name="BKMK_RestartOptions"></a>Nya alternativ för omstart för Windows 10-klienter efter installation av program uppdatering  
+##  <a name="new-restart-options-for-windows-10-clients-after-software-update-installation"></a><a name="BKMK_RestartOptions"></a> Nya alternativ för omstart för Windows 10-klienter efter installation av program uppdatering  
  När en program uppdatering som kräver en omstart distribueras med hjälp av Configuration Manager och installeras på en dator, är en väntande omstart schemalagd och en dialog ruta för omstart visas. För närvarande, för Windows 8 och senare, om du stänger av eller startar om datorn med hjälp av Windows energi alternativ (i stället för från dialog rutan Starta om), förblir starta om-dialog rutan efter det att datorn startats om och datorn måste startas om vid den konfigurerade tids gränsen. I den här tekniska för hands versionen kommer alternativet att **Uppdatera och starta om** och **Uppdatera och stänga** av att vara tillgängligt på Windows 10-datorer i Windows energi alternativ när det finns en väntande omstart för en Configuration Manager program uppdatering. När du använder något av dessa alternativ visas inte omstartsdialogrutan efter omstarten av datorn.  
 
-##  <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a><a name="BKMK_IMEI"></a>Fördeklarera företagsägda enheter med IMEI-eller iOS-serienummer  
+##  <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a><a name="BKMK_IMEI"></a> Fördeklarera företagsägda enheter med IMEI-eller iOS-serienummer  
  Nu kan du identifiera företagsägda enheter genom att importera sina ID-nummer (International Station Mobile Equipment Identity). Du kan ladda upp en fil med kommaavgränsade värden (. csv) som innehåller IMEI-nummer för enheten, eller så kan du ange enhets information manuellt.  Du kan också importera serie nummer för iOS-enheter.  Importerade information anger ägarskap för de enheter som registreras som "företag".  En Intune-licens krävs fortfarande för varje användare som har åtkomst till tjänsten.  
 
 ### <a name="try-it-out"></a>prova!  
@@ -463,4 +463,4 @@ Om Företagsportal är öppen i mer än 15 minuter i den här tekniska för hand
 
      Klicka på **Nästa**.  
 
-4. Granska resultatet av fil importen. Tidigare importerade IMEI-eller serie nummer kommer att ha information uppdaterad med nya uppgifter.  Klicka på **Nästa** för att fortsätta eller **tillbaka** för att bevara uppdaterad information och slutför sedan guiden.  
+4. Granska resultatet av fil importen. Tidigare importerade IMEI-eller serie nummer kommer att ha information uppdaterad med nya uppgifter.  Klicka på **Nästa** för att fortsätta eller **tillbaka** för att bevara uppdaterad information och slutför sedan guiden.

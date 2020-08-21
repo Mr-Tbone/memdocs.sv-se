@@ -10,12 +10,12 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5e81bc9b2135d17c445f8a86ff2214db394f63db
-ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
+ms.openlocfilehash: 5606d7bb5656fe4616ba416836dab2c04c490cfa
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865497"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693309"
 ---
 # <a name="how-to-create-collections-in-configuration-manager"></a>Skapa samlingar i Configuration Manager
 
@@ -72,7 +72,7 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 
 
 
-## <a name="create-a-collection"></a><a name="bkmk_create"></a>Skapa en samling  
+## <a name="create-a-collection"></a><a name="bkmk_create"></a> Skapa en samling  
 
 1. Gå till arbets ytan **till gångar och efterlevnad** i Configuration Manager-konsolen.  
 
@@ -132,7 +132,7 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 > Du måste uppdatera eller läsa in Configuration Manager-konsolen för att se medlemmarna i samlingen. De visas inte i samlingen förrän efter den första schemalagda uppdateringen. Du kan också välja **uppdaterings medlemskap** för samlingen manuellt. Det kan ta några minuter innan en samlings uppdatering har slutförts.  
 
         
-### <a name="configure-a-direct-rule"></a><a name="bkmk-direct"></a>Konfigurera en direkt regel  
+### <a name="configure-a-direct-rule"></a><a name="bkmk-direct"></a> Konfigurera en direkt regel  
 
 1. Ange följande information på sidan **Sök efter resurser** i **guiden Skapa regel för direkt medlemskap**.  
 
@@ -159,7 +159,7 @@ Du skapar en samling som har en regel för att inkludera samlingar och en regel 
 2. På sidan **Välj resurser** väljer du de resurser som du vill lägga till i samlingen i listan **resurser** och väljer sedan **Nästa**.  
 
 
-### <a name="configure-a-query-rule"></a><a name="bkmk-query"></a>Konfigurera en frågeregel  
+### <a name="configure-a-query-rule"></a><a name="bkmk-query"></a> Konfigurera en frågeregel  
 
 Ange följande information i dialog rutan **Egenskaper för frågeregel** .  
 
@@ -174,7 +174,7 @@ Ange följande information i dialog rutan **Egenskaper för frågeregel** .
     > [!TIP]  
     > Om du markerar kryss rutan för att **utelämna dubblettrader (Select DISTINCT)** på fliken Allmänt kan det leda till att färre rader returneras och eventuella snabbare resultat.
 
-### <a name="device-category-rule"></a><a name="bkmk-category"></a>Enhets kategori regel
+### <a name="device-category-rule"></a><a name="bkmk-category"></a> Enhets kategori regel
 
 Följande åtgärder är tillgängliga i fönstret **Välj enhets kategorier** .
 
@@ -185,18 +185,18 @@ Följande åtgärder är tillgängliga i fönstret **Välj enhets kategorier** .
 Mer information finns i [kategorisera enheter automatiskt i samlingar](automatically-categorize-devices-into-collections.md).<!-- SCCMDocs issue 552 -->
 
 
-### <a name="configure-an-include-collection-rule"></a><a name="bkmk-include"></a>Konfigurera en regel för Inkludera samling  
+### <a name="configure-an-include-collection-rule"></a><a name="bkmk-include"></a> Konfigurera en regel för Inkludera samling  
 
 I dialog rutan **Välj samlingar** väljer du de samlingar som du vill inkludera i den nya samlingen och väljer sedan **OK**.  
 
 
-### <a name="configure-an-exclude-collection-rule"></a><a name="bkmk-exclude"></a>Konfigurera en regel för att utesluta samlingar  
+### <a name="configure-an-exclude-collection-rule"></a><a name="bkmk-exclude"></a> Konfigurera en regel för att utesluta samlingar  
 
 I dialog rutan **Välj samlingar** väljer du de samlingar som du vill undanta från den nya samlingen och väljer sedan **OK**.  
 
 
 
-## <a name="import-a-collection"></a><a name="bkmk_import"></a>Importera en samling  
+## <a name="import-a-collection"></a><a name="bkmk_import"></a> Importera en samling  
 
 När du exporterar en samling från en plats Configuration Manager sparar den som en Managed Object Format fil (MOF). Använd den här proceduren för att importera filen till din plats databas. För att slutföra den här proceduren måste du **skapa** behörigheter för klassen Collections.
 
@@ -218,7 +218,7 @@ Mer information om hur du exporterar samlingar finns i [hantera samlingar](manag
 
 5. Importera samlingen genom att slutföra guiden. Den nya samlingen visas under noden **Användarsamlingar** eller noden **Enhetssamlingar** på arbetsytan **Tillgångar och efterlevnad** . Uppdatera eller Läs in Configuration Manager-konsolen igen för att se medlemmarna i samlingen för den nyligen importerade samlingen.  
 
-## <a name="synchronize-collection-membership-results-to-azure-active-directory-groups"></a><a name="bkmk_aadcollsync"></a>Synkronisera samlings medlemskaps resultat till Azure Active Directory grupper
+## <a name="synchronize-collection-membership-results-to-azure-active-directory-groups"></a><a name="bkmk_aadcollsync"></a> Synkronisera samlings medlemskaps resultat till Azure Active Directory grupper
 
 <!--3607475-->
 > [!Tip]  
@@ -275,13 +275,13 @@ Azure AD-synkroniseringen sker var femte minut. Det är en enkelriktad process, 
 
 ![Synkronisera samlingar till Azure AD](media/3607475-sync-collection-to-azuread.png)
 
-## <a name="using-powershell"></a><a name="bkmk_powershell"></a>Använda PowerShell
+## <a name="using-powershell"></a><a name="bkmk_powershell"></a> Använda PowerShell
 
 Du kan använda PowerShell för att skapa och importera samlingar. Mer information finns i:
 
-* [New-CMCollection](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmcollection)
-* [Set-CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Set-CMCollection)
-* [Importera – CMCollection](https://docs.microsoft.com/powershell/module/ConfigurationManager/Import-CMCollection)
+* [New-CMCollection](/powershell/module/configurationmanager/new-cmcollection)
+* [Set-CMCollection](/powershell/module/ConfigurationManager/Set-CMCollection)
+* [Importera – CMCollection](/powershell/module/ConfigurationManager/Import-CMCollection)
 
 ## <a name="next-steps"></a>Nästa steg
 

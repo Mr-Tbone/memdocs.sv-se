@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 20c560925b2c1abec282b8c5f8dae3f6f42f4d64
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: a9d0beeee1e00315a913adfc5dde6bd69f75cd6f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591213"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693003"
 ---
 # <a name="capabilities-in-technical-preview-1701-for-configuration-manager"></a>Funktioner i Technical Preview 1701 för Configuration Manager
 
@@ -127,7 +127,7 @@ Det gör du genom att ändra en konfigurations fil så att den pekar på det off
    - **Redige rad:** &lt; inställnings namn = "FairFaxAuthorityResource" serializeAs = "String" >   
      &lt;värde &gt; [https://login.microsoftonline.com](https://login.microsoftonline.com) &lt; /Value&gt;
 
-2. När du har sparat filen med de två ändringarna startar du om Configuration Manager-konsolen på samma dator och använder sedan konsolen för att installera OMS-anslutaren. Om du vill installera anslutningen använder du informationen i [synkronisera data från Configuration Manager till Microsoft Operations Management Suite](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm)och väljer sedan **Operations Management Suite-arbetsytan** som finns i Microsoft Azure Government molnet.
+2. När du har sparat filen med de två ändringarna startar du om Configuration Manager-konsolen på samma dator och använder sedan konsolen för att installera OMS-anslutaren. Om du vill installera anslutningen använder du informationen i [synkronisera data från Configuration Manager till Microsoft Operations Management Suite](/azure/azure-monitor/platform/collect-sccm)och väljer sedan **Operations Management Suite-arbetsytan** som finns i Microsoft Azure Government molnet.
 
 3. När OMS-anslutningen har installerats är anslutningen till det offentliga molnet tillgängligt när du använder en-konsol som ansluts till platsen.
 

@@ -10,12 +10,12 @@ ms.assetid: 1cd8ac9f-b7ba-4cf4-8cd2-d548b0d6b1df
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5dbd782c97d11f8077c18796c87c7880eb26f3f3
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: d1b07d30c7a593ec0bd70e6c330c57364186f2c8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129162"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697270"
 ---
 # <a name="set-up-bitlocker-portals"></a>Konfigurera BitLocker-portaler
 
@@ -66,21 +66,21 @@ Utför följande åtgärder på mål webb servern:
 
 Efter installationen får du åtkomst till portalerna via följande URL: er:
 
-- Självbetjänings Portal:`https://webserver.contoso.com/SelfService`
-- Webbplatsen för administration och övervakning:`https://webserver.contoso.com/HelpDesk`
+- Självbetjänings Portal: `https://webserver.contoso.com/SelfService`
+- Webbplatsen för administration och övervakning: `https://webserver.contoso.com/HelpDesk`
 
 > [!NOTE]
-> Microsoft rekommenderar men kräver inte användning av HTTPS. Mer information finns i [så här konfigurerar du SSL i IIS](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+> Microsoft rekommenderar men kräver inte användning av HTTPS. Mer information finns i [så här konfigurerar du SSL i IIS](/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 ## <a name="script-usage"></a>Skript användning
 
 Den här processen använder ett PowerShell-skript MBAMWebSiteInstaller.ps1 för att installera dessa komponenter på webb servern. Den accepterar följande parametrar:
 
-- `-SqlServerName <ServerName>`(obligatoriskt): det fullständigt kvalificerade domän namnet för den primära platsens databas server.
+- `-SqlServerName <ServerName>` (obligatoriskt): det fullständigt kvalificerade domän namnet för den primära platsens databas server.
 
 - `-SqlInstanceName <InstanceName>`: SQL Server instans namnet för den primära plats databasen. Ta inte med den här parametern om SQL använder standard instansen.
 
-- `-SqlDatabaseName <DatabaseName>`(obligatoriskt): namnet på den primära plats databasen, till exempel `CM_ABC` .
+- `-SqlDatabaseName <DatabaseName>` (obligatoriskt): namnet på den primära plats databasen, till exempel `CM_ABC` .
 
 - `-ReportWebServiceUrl <ReportWebServiceUrl>`: Webb tjänstens URL för den primära platsens rapporterings tjänst plats. Det är **URL-värdet för webb tjänsten** i **repor ting Services Configuration Manager**.
 
@@ -117,9 +117,9 @@ Den här processen använder ett PowerShell-skript MBAMWebSiteInstaller.ps1 för
 
 - Spårnings loggar för varje komponent finns på följande standard platser:
 
-  - Självbetjänings Portal:`C:\inetpub\Microsoft BitLocker Management Solution\Logs\Self Service Website`
+  - Självbetjänings Portal: `C:\inetpub\Microsoft BitLocker Management Solution\Logs\Self Service Website`
 
-  - Webbplatsen för administration och övervakning:`C:\inetpub\Microsoft BitLocker Management Solution\Logs\Help Desk Website`
+  - Webbplatsen för administration och övervakning: `C:\inetpub\Microsoft BitLocker Management Solution\Logs\Help Desk Website`
 
 Mer felsöknings information finns i [Felsöka BitLocker](../../tech-ref/bitlocker/troubleshoot.md).
 

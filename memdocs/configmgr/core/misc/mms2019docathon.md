@@ -9,12 +9,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e671118578d059e2b8416e6854a701ce7c405c0f
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c6e4c0f7c6a1be519a33343508da3bd72cd2cd48
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718527"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695587"
 ---
 # <a name="mms-2019-docathon"></a>MMS 2019-Docathon
 
@@ -51,7 +51,7 @@ Skapa ett [GitHub-konto](https://github.com/join)
 
 - Microsoft-anställda har några mer obligatoriska engångs steg och en något annorlunda bidrags process  
 
-Mer information finns i [GitHub Account Setup](https://docs.microsoft.com/contribute/get-started-setup-github) i guiden docs.Microsoft.com Contributor.
+Mer information finns i [GitHub Account Setup](/contribute/get-started-setup-github) i guiden docs.Microsoft.com Contributor.
 
 ## <a name="scope"></a>Omfång
 
@@ -68,7 +68,7 @@ Du är också välkommen och uppmuntrar till att göra ändringar i annat docs.m
 Läs information om [hur du skickar problem](../understand/use-docs.md#bkmk_docfeedback) och [hur du kan bidra](../understand/use-docs.md#bkmk_contribute). De flesta grundläggande ändringar kan göras via GitHub Browser-upplevelsen.  
 
 > [!Note]  
-> Om du är intresse rad av mer komplexa arbets flöden med git och VSCode kan du läsa [Installera verktyg för innehålls redigering](https://docs.microsoft.com/contribute/get-started-setup-tools). Och/eller be Aaron/Erik om hjälp. Följande åtgärder är några av orsakerna till att använda det mer komplexa arbets flödet:
+> Om du är intresse rad av mer komplexa arbets flöden med git och VSCode kan du läsa [Installera verktyg för innehålls redigering](/contribute/get-started-setup-tools). Och/eller be Aaron/Erik om hjälp. Följande åtgärder är några av orsakerna till att använda det mer komplexa arbets flödet:
 >
 > - Skapa en ny artikel
 > - Lägg till bilder
@@ -79,8 +79,8 @@ Läs information om [hur du skickar problem](../understand/use-docs.md#bkmk_docf
 
 Börja fundera över och planera målet för den här händelsen. Vad vill du göra?
 
-- Titta igenom befintliga problem i databaserna i det aktuella området. Etiketter som till exempel **första utfärdande** eller hjälp som **önskas** kan identifiera lämpliga start punkter. Om du vill ta itu med ett av dessa problem kan du kommentera det med **#MMS2019Docathon** och tagga @authordet, och be dem att tilldela ärendet till dig. Du kan med andra ord [anropa DIBS](https://www.merriam-webster.com/words-at-play/word-origin-dibs) på den. Upprepa den här processen så många gånger du vill.  
-    Till exempel, i SCCMDocs, där Aaron är artikel författaren:`@aczechowski I'm claiming this issue for #MMS2019Docathon`
+- Titta igenom befintliga problem i databaserna i det aktuella området. Etiketter som till exempel **första utfärdande** eller hjälp som **önskas** kan identifiera lämpliga start punkter. Om du vill ta itu med ett av dessa problem kan du kommentera det med **#MMS2019Docathon** och tagga det @author , och be dem att tilldela ärendet till dig. Du kan med andra ord [anropa DIBS](https://www.merriam-webster.com/words-at-play/word-origin-dibs) på den. Upprepa den här processen så många gånger du vill.  
+    Till exempel, i SCCMDocs, där Aaron är artikel författaren: `@aczechowski I'm claiming this issue for #MMS2019Docathon`
 
 - Du känner till ett problem med en artikel, men det har inte arkiverats någon feedback. Det finns med andra ord inget i avsnittet **feedback** längst ned i artikeln. Skapa ett nytt problem och Använd sedan samma instruktioner som ovan för att kräva det.  
 
@@ -134,13 +134,13 @@ Följande priser beräknas efter antalet legitima bidrag till lagrings platser i
 
 - [Microsoft-stil](https://aka.ms/MicrosoftStyle)
 
-    - [Snabb start](https://docs.microsoft.com/contribute/style-quick-start)
+    - [Snabbstart](/contribute/style-quick-start)
 
-    - [De 10 viktigaste tipsen för Microsofts stil och röst](https://docs.microsoft.com/style-guide/top-10-tips-style-voice)
+    - [De 10 viktigaste tipsen för Microsofts stil och röst](/style-guide/top-10-tips-style-voice)
 
-- [Deltagarguide](https://docs.microsoft.com/contribute)
+- [Deltagarguide](/contribute)
 
-- [Använda Markdown för att skriva i Docs](https://docs.microsoft.com/contribute/markdown-reference)
+- [Använda Markdown för att skriva i Docs](/contribute/markdown-reference)
 
 ## <a name="official-rules"></a>Officiella regler
 
@@ -166,7 +166,7 @@ Microsoft Cloud + AI Developer Relations innehåll & Learning MMS 2019 Docathon 
 
 5. SÅ HÄR ANGER DU
 
-    Om du vill skapa en post skickar du ändringar till artiklar i följande GitHub-databaser: IntuneDocs, SCCMDocs, SCCM-dok-PowerShell-Ref. Mer information om sändnings processen finns i [så här bidrar du till](https://docs.microsoft.com/sccm/core/understand/use-docs#bkmk_contribute).
+    Om du vill skapa en post skickar du ändringar till artiklar i följande GitHub-databaser: IntuneDocs, SCCMDocs, SCCM-dok-PowerShell-Ref. Mer information om sändnings processen finns i [så här bidrar du till](/sccm/core/understand/use-docs#bkmk_contribute).
 
     Skicka en pull-begäran på GitHub för att skicka in en post.
 
@@ -254,4 +254,4 @@ Microsoft Cloud + AI Developer Relations innehåll & Learning MMS 2019 Docathon 
 
     På Microsoft strävar vi efter att skydda din integritet. Microsoft använder den information som du anger i det här formuläret för att meddela dig om viktig information om våra produkter, uppgraderingar och förbättringar och för att skicka information om andra produkter och tjänster från Microsoft. Microsoft delar inte den information som du tillhandahåller med tredje part utan ditt tillstånd, om det behövs för att slutföra de tjänster eller transaktioner som du har begärt, eller som krävs enligt lag. Microsoft förbinder sig att skydda säkerheten för din personliga information. Vi använder en rad säkerhetstekniker och -metoder för att skydda din personliga information från obehörig åtkomst, användning eller avslöjande. Din personliga information delas aldrig utanför företaget utan ditt tillstånd, förutom under villkor som beskrivs ovan.
 
-    Om du anser att Microsoft inte har följt den här policyn kontaktar du Microsoft genom att skicka ett e- privrc@microsoft.com postmeddelande till eller post-till Microsoft Privacy Response Center, Microsoft Corporation, One Microsoft Way, REDMOND, WA 98052.
+    Om du anser att Microsoft inte har följt den här policyn kontaktar du Microsoft genom att skicka ett e-postmeddelande till privrc@microsoft.com eller post-till Microsoft Privacy Response Center, Microsoft Corporation, One Microsoft Way, Redmond, WA 98052.

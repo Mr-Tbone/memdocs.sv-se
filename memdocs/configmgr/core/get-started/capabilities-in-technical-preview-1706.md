@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 79258786b56cc3e7fe4971391903772700768a89
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 8c3624f9fc903395b36846170ff3552f32db59dd
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126764"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692952"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-configuration-manager"></a>Funktioner i Technical Preview 1706 för Configuration Manager
 
@@ -104,7 +104,7 @@ Om du vill installera en plats Server för passivt läge använder du **guiden s
 
 - Datorn som ska köra plats servern för passivt läge:
 
-    - Måste uppfylla [kraven för att installera en primär plats](https://docs.microsoft.com/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
+    - Måste uppfylla [kraven för att installera en primär plats](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
 
     - Installerar med källfiler som matchar versionen av plats servern för det aktiva läget.
 
@@ -231,7 +231,7 @@ För att lösa det här problemet kan du nu ange både en installations innehål
 
 ## <a name="accessibility-improvements"></a>Förbättrad användbarhet  
 <!--1253000 -->
-Den här för hands versionen innehåller flera förbättringar av [hjälpmedels funktionerna](../understand/accessibility-features.md) i Configuration Manager-konsolen. Dessa omfattar:     
+Den här för hands versionen innehåller flera förbättringar av [hjälpmedels funktionerna](../understand/accessibility-features.md) i Configuration Manager-konsolen. Exempel på dessa är:     
 
 **Nya kortkommandon för att flytta runt i-konsolen:**
 - Ctrl + M – anger fokus i huvud fönstret (Central).
@@ -261,7 +261,7 @@ Kraven för en anslutning till Uppgraderingsberedskap är oförändrade från de
 
 **Förutsättningar**
 - För att du ska kunna lägga till anslutningen måste din Configuration Managers miljö först konfigurera en [tjänst anslutnings punkt](../servers/deploy/configure/about-the-service-connection-point.md) i ett [online-läge](../servers/deploy/configure/about-the-service-connection-point.md#bkmk_modes). När du lägger till anslutningen till din miljö kommer den också att installera Microsoft Monitoring Agent på den dator som kör den här plats system rollen.
-- Registrera Configuration Manager som ett hanterings verktyg för webb program och/eller webb-API och hämta [klient-ID: t från den här registreringen](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
+- Registrera Configuration Manager som ett hanterings verktyg för webb program och/eller webb-API och hämta [klient-ID: t från den här registreringen](/azure/active-directory/develop/quickstart-register-app).
 - Skapa en klient nyckel för det registrerade hanterings verktyget i Azure Active Directory.
 - I Azure Portal anger du den registrerade webbappen med behörighet att komma åt OMS.
 

@@ -10,12 +10,12 @@ ms.assetid: 81f03922-90f6-4e8f-be65-da64ccb21cf2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b64e09561def3d19c306b9cfcd4f7eb808763fd
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: bf9301e4fcb279b7d79a6f6c3d0a90ab3d15e277
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129264"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697321"
 ---
 # <a name="bitlocker-administration-and-monitoring-website"></a>Webbplatsen för administration och övervakning av BitLocker
 
@@ -29,7 +29,7 @@ Webbplatsen för administration och övervakning av BitLocker är ett administra
 
 Installera den här komponenten på en webb server innan du kan använda den. Mer information finns i [Konfigurera BitLocker-rapporter och portaler](setup-websites.md).
 
-Gå till webbplatsen för administration och övervakning via följande URL:`https://webserver.contoso.com/HelpDesk`
+Gå till webbplatsen för administration och övervakning via följande URL: `https://webserver.contoso.com/HelpDesk`
 
 > [!NOTE]
 > Du kan visa **rapporten för återställnings granskning** på webbplatsen för administration och övervakning. Du lägger till andra BitLocker Management-rapporter till repor ting Services-platsen. Mer information finns i [Visa BitLocker-rapporter](view-reports.md).
@@ -48,7 +48,7 @@ För att få åtkomst till vissa områden på webbplatsen för administration oc
 
 Om en användare anger en felaktig PIN-kod för många gånger kan de låsa TPM: en. Antalet gånger som en användare kan ange en felaktig PIN-kod innan TPM: ens låser sig mellan tillverkare och tillverkare. Från webbplatsen **hantera TPM** på webbplatsen för administration och övervakning får du åtkomst till det centrala nyckel återställnings data systemet.
 
-Mer information om TPM-ägarskap finns i [Configure MBAM to depositions The TPM and Store OwnerAuth passwords](https://docs.microsoft.com/microsoft-desktop-optimization-pack/mbam-v25/mbam-25-security-considerations#bkmk-tpm).
+Mer information om TPM-ägarskap finns i [Configure MBAM to depositions The TPM and Store OwnerAuth passwords](/microsoft-desktop-optimization-pack/mbam-v25/mbam-25-security-considerations#bkmk-tpm).
 
 > [!NOTE]
 > Från och med Windows 10, version 1607, behåller Windows inte TPM-ägarens lösen ord vid etablering av TPM.
@@ -70,7 +70,7 @@ Mer information om TPM-ägarskap finns i [Configure MBAM to depositions The TPM 
     - Inaktivera TPM
     - Ändra TPM-lösenord
     - Rensa TPM
-    - Övrigt
+    - Annat
 
     När du har **skickat** formuläret returnerar webbplatsen något av följande svar:
 
@@ -91,7 +91,7 @@ Mer information om TPM-ägarskap finns i [Configure MBAM to depositions The TPM 
 
 ## <a name="drive-recovery"></a>Enhets återställning
 
-### <a name="recover-a-drive-in-recovery-mode"></a><a name="bkmk_recovery"></a>Återställa en enhet i återställnings läge
+### <a name="recover-a-drive-in-recovery-mode"></a><a name="bkmk_recovery"></a> Återställa en enhet i återställnings läge
 
 Enheter går in i återställnings läge i följande scenarier:
 
@@ -123,7 +123,7 @@ Om du vill få ett återställnings lösen ord använder du avsnittet **enhets �
     - Återställning av TPM
     - Förlorad lösen fras
     - Förlorat smartkort
-    - Övrigt
+    - Annat
 
     När du har **skickat** formuläret returnerar webbplatsen något av följande svar:
 
@@ -142,7 +142,7 @@ Om du vill få ett återställnings lösen ord använder du avsnittet **enhets �
 
 För att låsa upp enheten, ange återställnings lösen ordet eller Använd återställnings paketet.
 
-### <a name="recover-a-moved-drive"></a><a name="bkmk_moved"></a>Återställa en flyttad enhet
+### <a name="recover-a-moved-drive"></a><a name="bkmk_moved"></a> Återställa en flyttad enhet
 
 När du flyttar en enhet till en ny dator, eftersom TPM: en är annorlunda, accepterar BitLocker inte den tidigare PIN-koden. För att återställa den flyttade enheten hämtar du återställnings nyckel-ID: t för att hämta återställnings lösen ordet.
 
@@ -159,11 +159,11 @@ Om du vill återställa en flyttad enhet använder du **enhets återställnings*
 
 Om du konfigurerade den flyttade enheten för att använda ett TPM-chip på den ursprungliga datorn utför du följande steg. Annars slutförs återställnings processen.
 
-1. När du har låst upp enheten startar du datorn i WinRE-läge. Öppna en kommando tolk i WinRE och Använd `manage-bde` kommandot för att dekryptera enheten. Det här verktyget är det enda sättet att ta bort **TPM + PIN-** skyddet utan det ursprungliga TPM-kretsen. Mer information om det här kommandot finns i [manage-bde](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-drive-encryption-tools-to-manage-bitlocker#bkmk-managebde).
+1. När du har låst upp enheten startar du datorn i WinRE-läge. Öppna en kommando tolk i WinRE och Använd `manage-bde` kommandot för att dekryptera enheten. Det här verktyget är det enda sättet att ta bort **TPM + PIN-** skyddet utan det ursprungliga TPM-kretsen. Mer information om det här kommandot finns i [manage-bde](/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-drive-encryption-tools-to-manage-bitlocker#bkmk-managebde).
 
 1. När den är klar startar du datorn på vanligt sätt. Configuration Manager tvingar BitLocker-principen att kryptera enheten med den nya datorns TPM och PIN-kod.
 
-### <a name="recover-a-corrupted-drive"></a><a name="bkmk_corrupted"></a>Återställa en skadad enhet
+### <a name="recover-a-corrupted-drive"></a><a name="bkmk_corrupted"></a> Återställa en skadad enhet
 
 Använd återställnings nyckel-ID: t för att hämta ett återställnings nyckel paket från webbplatsen för administration och övervakning. Mer information finns i [återställa en enhet i återställnings läge](#bkmk_recovery).
 
@@ -175,16 +175,16 @@ Använd återställnings nyckel-ID: t för att hämta ett återställnings nycke
 
     Ersätt följande värden:
 
-    - `<corrupted drive>`: Enhets beteckningen för den skadade enheten, till exempel`D:`
+    - `<corrupted drive>`: Enhets beteckningen för den skadade enheten, till exempel `D:`
     - `<fixed drive>`: Enhets beteckningen för en tillgänglig hård disk med samma eller större storlek än den skadade enheten. BitLocker återställer och flyttar data på den skadade enheten till den angivna enheten. Alla data på den här enheten skrivs över.
     - `<key package>`: Platsen för återställnings nyckel paketet
     - `<recovery password>`: Det associerade återställnings lösen ordet
 
-    Till exempel:
+    Exempel:
 
     `repair-bde C: D: -kp F:\RecoveryKeyPackage -rp 111111-222222-333333-444444-555555-666666-777777-888888`
 
-Mer information om det här kommandot finns i [Repair-BDE](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-drive-encryption-tools-to-manage-bitlocker#bkmk-repairbde).
+Mer information om det här kommandot finns i [Repair-BDE](/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-drive-encryption-tools-to-manage-bitlocker#bkmk-repairbde).
 
 ## <a name="reports"></a>Rapporter
 

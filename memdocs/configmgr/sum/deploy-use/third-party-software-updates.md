@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 2f5aa622ca5d98f2cb5eb0b0c3154625df11a42e
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 3192cd8177075542ffc86ab236b817db5befca1d
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240770"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696896"
 ---
 # <a name="enable-third-party-updates"></a>Aktivera uppdateringar från tredje part 
 
@@ -27,10 +27,10 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
 > Configuration Manager aktiverar inte den här funktionen som standard. Innan du använder den aktiverar du den valfria funktionen **Aktivera stöd för uppdateringar från tredje part på klienter**. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).
 
 
-## <a name="prerequisites"></a>Förhandskrav 
+## <a name="prerequisites"></a>Förutsättningar 
 - Tillräckligt med disk utrymme på den översta program uppdaterings platsens WSUSContent-mapp för att lagra det binära innehållet för program uppdateringar från tredje part.
     - Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution.
-    - Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme kan du läsa [om hur du ändrar platsen där WSUS lagrar uppdateringar lokalt](https://docs.microsoft.com/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally) blogg inlägg.
+    - Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme kan du läsa [om hur du ändrar platsen där WSUS lagrar uppdateringar lokalt](/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally) blogg inlägg.
 - Tjänsten för synkronisering av program uppdateringar från tredje part kräver Internet åtkomst.
     - Download.microsoft.com över HTTPS-port 443 krävs för partner förtecknings listan. 
     -  Internet åtkomst till eventuella kataloger från tredje part och uppdatering av innehållsfiler. Ytterligare andra portar än 443 kan behövas.
@@ -41,7 +41,7 @@ Från och med version 1806 kan du med hjälp av noden **program uppdaterings kat
 ## <a name="additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server"></a>Ytterligare krav när SUP är fjärran sluten från plats servern på den översta nivån 
 
 1. SSL måste vara aktiverat på SUP när den är fjärran sluten. Detta kräver ett certifikat för serverautentisering som skapats från en intern certifikat utfärdare eller via en offentlig Provider.
-    - [Konfigurera SSL på WSUS](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol)
+    - [Konfigurera SSL på WSUS](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol)
         - Observera att vissa av webb tjänsterna och de virtuella katalogerna alltid är HTTP och inte HTTPS när du konfigurerar SSL på WSUS. 
         - Configuration Manager laddar ned innehåll från tredje part för program uppdaterings paket från WSUS-innehålls katalogen via HTTP.   
     - [Konfigurera SSL på SUP](../get-started/install-a-software-update-point.md#configure-ssl-communications-to-wsus)
@@ -93,7 +93,7 @@ Om du behöver konfigurera certifikatet manuellt, till exempel för att behöva 
 
 
 ## <a name="enable-third-party-updates-on-the-clients"></a>Aktivera uppdateringar från tredje part på klienterna
-Aktivera uppdateringar från tredje part på klienterna i klient inställningarna. Inställningen anger principen för Windows Update Agent för [Tillåt signerade uppdateringar för en Microsoft-uppdateringstjänst på intranätet](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#allow-signed-updates-from-an-intranet-microsoft-update-service-location). Den här klient inställningen installerar även WSUS-signeringscertifikat till arkivet för betrodda utgivare på klienten. Loggningen av certifikat hanteringen visas `updatesdeployment.log` på klienterna.  Kör de här stegen för varje anpassad klient inställning som du vill använda för uppdateringar från tredje part. Mer information finns i artikeln [om klient inställningar](../../core/clients/deploy/about-client-settings.md#enable-third-party-software-updates) .
+Aktivera uppdateringar från tredje part på klienterna i klient inställningarna. Inställningen anger principen för Windows Update Agent för [Tillåt signerade uppdateringar för en Microsoft-uppdateringstjänst på intranätet](/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#allow-signed-updates-from-an-intranet-microsoft-update-service-location). Den här klient inställningen installerar även WSUS-signeringscertifikat till arkivet för betrodda utgivare på klienten. Loggningen av certifikat hanteringen visas `updatesdeployment.log` på klienterna.  Kör de här stegen för varje anpassad klient inställning som du vill använda för uppdateringar från tredje part. Mer information finns i artikeln [om klient inställningar](../../core/clients/deploy/about-client-settings.md#enable-third-party-software-updates) .
 
 1. I Configuration Manager-konsolen går du till arbets ytan **Administration** och väljer noden **klient inställningar** .
 2. Välj en befintlig anpassad klient inställning eller skapa en ny. 
@@ -157,7 +157,7 @@ När uppdateringar från tredje part finns i noden **alla uppdateringar** kan du
 8. Klienterna måste köra en genomsökning och utvärdera uppdateringar innan du kan se resultatet av efterlevnaden.  Du kan aktivera den här cykeln manuellt från Configuration Manager kontroll panelen på en klient genom att köra åtgärden **genomsöknings cykel för program uppdateringar** .
 
 
-## <a name="improvements-for-third-party-updates-starting-in-1910"></a><a name="bkmk_1910"></a>Förbättringar för uppdateringar från tredje part från 1910
+## <a name="improvements-for-third-party-updates-starting-in-1910"></a><a name="bkmk_1910"></a> Förbättringar för uppdateringar från tredje part från 1910
 <!--4469002-->
 Nu har du fler detaljerade kontroller över synkroniseringen av uppdaterings kataloger från tredje part. Från och med Configuration Manager version 1910 kan du konfigurera synkroniseringsschemat för varje katalog oberoende av varandra. När du använder kataloger som innehåller kategoriserade uppdateringar kan du konfigurera synkroniseringen så att den endast innehåller vissa uppdaterings kategorier för att undvika synkronisering av hela katalogen. När du är säker på att du ska distribuera en kategori med kategoriserade kataloger kan du konfigurera den för automatisk nedladdning och publicering till WSUS.
 
@@ -235,7 +235,7 @@ Synkronisering av program uppdateringar från tredje part hanteras av SMS_ISVUPD
 -  Configuration Manager har en ny version för katalogens CAB-filformat. Den nya versionen innehåller certifikaten för leverantörens binära filer. Dessa certifikat läggs till i noden **certifikat** under **säkerhet** i arbets ytan **Administration** när du godkänner och litar på katalogen.  
      - Du kan fortfarande använda den äldre katalogen CAB-filversion så länge nedladdnings-URL: en är https och uppdateringarna signeras. Innehållet kan inte publiceras eftersom certifikaten för binärfilerna inte finns i CAB-filen och redan har godkänts. Du kan undvika det här problemet genom att söka efter certifikatet i noden **certifikat** , ta bort blockeringen och sedan publicera uppdateringen igen. Om du publicerar flera uppdateringar som är signerade med olika certifikat måste du avblockera varje certifikat som används.
      - Mer information finns i status meddelanden 11523 och 11524 i tabellen nedan status meddelande.
--  När program uppdaterings tjänsten från tredje part på den översta nivån för program uppdaterings platsen på den översta nivån kräver en proxyserver för Internet åtkomst, kan det hända att kontroller av digitala signaturer Miss lyckas. Du kan åtgärda det här problemet genom att konfigurera inställningarna för WinHTTP-proxyn på plats systemet. Mer information finns i [netsh-kommandon för WinHTTP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731131(v=ws.10)).
+-  När program uppdaterings tjänsten från tredje part på den översta nivån för program uppdaterings platsen på den översta nivån kräver en proxyserver för Internet åtkomst, kan det hända att kontroller av digitala signaturer Miss lyckas. Du kan åtgärda det här problemet genom att konfigurera inställningarna för WinHTTP-proxyn på plats systemet. Mer information finns i [netsh-kommandon för WinHTTP](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731131(v=ws.10)).
 - När du använder en CMG för innehålls lagring laddas inte innehållet för uppdateringar från tredje part ned till klienter om inställningen **Hämta delta innehåll när den tillgängliga** [klienten](../../core/clients/deploy/about-client-settings.md#allow-clients-to-download-delta-content-when-available) är aktive rad. <!--6598587-->
 
 ## <a name="status-messages"></a>Statusmeddelanden

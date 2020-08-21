@@ -1,5 +1,5 @@
 ---
-title: Hantera uppdateringar för Microsoft 365 appar
+title: Hantera uppdateringar till Microsoft 365-appar
 titleSuffix: Configuration Manager
 description: Configuration Manager synkroniserar Microsoft 365 appars klient uppdateringar från WSUS-katalogen till plats servern för att göra uppdateringar tillgängliga för distribution till klienter.
 author: mestew
@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: d2a7f5ec31359cdd1a69bad3204d5119f8998e92
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 907c8d63d68ee4f34b9d22be24f32ffb1878b715
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129179"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696182"
 ---
 # <a name="manage-microsoft-365-apps-with-configuration-manager"></a>Hantera Microsoft 365 appar med Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
 > [!Note]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
 Med Configuration Manager kan du hantera Microsoft 365 appar på följande sätt:
 
@@ -39,8 +39,8 @@ Med Configuration Manager kan du hantera Microsoft 365 appar på följande sätt
 
 Om du vill granska Microsoft 365 Apps-klient information och påbörja några av dessa hanterings åtgärder för Microsoft 365 appar använder du [instrument panelen för Office 365-klient hantering](office-365-dashboard.md).
 
-## <a name="deploy-microsoft-365-apps"></a><a name="bkmk_deploy"></a>Distribuera Microsoft 365 appar
-Starta installations programmet för Microsoft 365 Apps från instrument panelen för Office 365-klient hantering för den inledande Microsoft 365 Apps-installationen. Med guiden kan du konfigurera installations inställningar för Microsoft 365 appar, ladda ned filer från Office Content Delivery Network (CDN) och skapa och distribuera ett skript program för filerna. Innan Microsoft 365-appar har installerats på klienterna och [aktiviteten Microsoft 365 appar automatiska uppdateringar](https://docs.microsoft.com/deployoffice/overview-update-process-microsoft-365-apps) inte är tillämpliga, är uppdateringar av Microsoft 365 program inte tillämpliga. I test syfte kan du köra uppdaterings aktiviteten manuellt.
+## <a name="deploy-microsoft-365-apps"></a><a name="bkmk_deploy"></a> Distribuera Microsoft 365 appar
+Starta installations programmet för Microsoft 365 Apps från instrument panelen för Office 365-klient hantering för den inledande Microsoft 365 Apps-installationen. Med guiden kan du konfigurera installations inställningar för Microsoft 365 appar, ladda ned filer från Office Content Delivery Network (CDN) och skapa och distribuera ett skript program för filerna. Innan Microsoft 365-appar har installerats på klienterna och [aktiviteten Microsoft 365 appar automatiska uppdateringar](/deployoffice/overview-update-process-microsoft-365-apps) inte är tillämpliga, är uppdateringar av Microsoft 365 program inte tillämpliga. I test syfte kan du köra uppdaterings aktiviteten manuellt.
 
 För tidigare Configuration Manager-versioner måste du utföra följande steg för att installera Microsoft 365 appar för första gången på klienter:
 - Hämta Office Deployment Tool (ODT)
@@ -76,7 +76,7 @@ Från och med Configuration Manager 1806 är Office-anpassnings verktyget integr
 
     När du har en befintlig konfigurations fil anger du platsen för filen och hoppar till steg 7. Du måste ange platsen i formatet &#92;&#92;*server*&#92;*dela*&#92;*fil namn*. Fil.
     > [!IMPORTANT]    
-    > XML-konfigurationsfilen får bara innehålla [språk som stöds av Office 2016](https://docs.microsoft.com/deployoffice/office2016/language-identifiers-and-optionstate-id-values-in-office-2016).
+    > XML-konfigurationsfilen får bara innehålla [språk som stöds av Office 2016](/deployoffice/office2016/language-identifiers-and-optionstate-id-values-in-office-2016).
 
 5. På sidan **klient produkter** väljer du den Microsoft 365 Apps-svit som du använder. Välj de program som du vill inkludera. Välj ytterligare produkter som ska inkluderas och klicka sedan på **Nästa**.
 6. På sidan **klient inställningar** väljer du de inställningar som ska inkluderas och klickar sedan på **Nästa**.
@@ -98,12 +98,12 @@ Du kan gå igenom efterlevnads statistik för att se vilka enheter som kräver e
 
 1. Gå till **program varu bibliotek**  >  **kontor 365 klient hantering**  >  **Office 365 uppdateringar**.
 1. Välj en uppdatering som krävs av minst en enhet.
-1. Titta på fliken **Sammanfattning** och hitta cirkel diagrammet under **statistik**.
+1. Titta på fliken **Sammanfattning** och hitta cirkel diagrammet under  **statistik**.
 1. Välj hyperlänken **vy som krävs** bredvid cirkel diagrammet för att öka detalj nivån i enhets listan.
 1. Den här åtgärden tar dig till en tillfällig nod under **enheter** där du kan se vilka enheter som kräver uppdateringen. Du kan också utföra åtgärder för noden, till exempel skapa en ny samling från listan.
 
 
-## <a name="deploy-microsoft-365-apps-updates"></a><a name="bkmk_update"></a>Distribuera uppdateringar för Microsoft 365 appar
+## <a name="deploy-microsoft-365-apps-updates"></a><a name="bkmk_update"></a> Distribuera uppdateringar för Microsoft 365 appar
 
 Använd följande steg för att distribuera uppdateringar för Microsoft 365 appar med Configuration Manager:
 
@@ -120,13 +120,13 @@ Använd följande steg för att distribuera uppdateringar för Microsoft 365 app
 
       3. Klicka på **program uppdateringar** och välj **Ja** för inställningen **aktivera hantering av klient agenten för Office 365** .  
 
-    **Metod 2**: [aktivera Microsoft 365 appar klienter att ta emot uppdateringar](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) från Configuration Manager med hjälp av distributions verktyget för Office eller Grupprincip.  
+    **Metod 2**:  [aktivera Microsoft 365 appar klienter att ta emot uppdateringar](/DeployOffice/manage-updates-to-office-365-proplus-with-system-center-configuration-manager#BKMK_EnableClient) från Configuration Manager med hjälp av distributions verktyget för Office eller Grupprincip.  
 
 4. [Distribuera uppdateringar för Microsoft 365-appar](deploy-software-updates.md) till klienter.
 
 > [!NOTE]  
 >
-> Om Microsoft 365 appar installerades nyligen, och beroende på hur det har installerats, är det möjligt att uppdaterings kanalen inte har kon figurer ATS ännu. I så fall identifieras distribuerade uppdateringar som ej tillämpliga. Det finns en [schemalagd automatisk uppdaterings uppgift](https://docs.microsoft.com/deployoffice/overview-of-the-update-process-for-office-365-proplus) som skapas när Microsoft 365 appar installeras. I den här situationen måste den här uppgiften köras minst en gång för att uppdaterings kanalen ska kunna konfigureras och uppdateringar identifieras som tillämpliga.
+> Om Microsoft 365 appar installerades nyligen, och beroende på hur det har installerats, är det möjligt att uppdaterings kanalen inte har kon figurer ATS ännu. I så fall identifieras distribuerade uppdateringar som ej tillämpliga. Det finns en [schemalagd automatisk uppdaterings uppgift](/deployoffice/overview-of-the-update-process-for-office-365-proplus) som skapas när Microsoft 365 appar installeras. I den här situationen måste den här uppgiften köras minst en gång för att uppdaterings kanalen ska kunna konfigureras och uppdateringar identifieras som tillämpliga.
 >
 > Om Microsoft 365 appar har installerats nyligen och distribuerade uppdateringar inte identifieras, kan du i test syfte starta Office automatiska uppdateringar manuellt och sedan starta [utvärderings cykeln för program uppdaterings distribution](../understand/software-updates-introduction.md#scan-for-software-updates-compliance-process) på klienten. Instruktioner för hur du gör detta i en aktivitetssekvens finns i [uppdatera Microsoft 365 appar i en](manage-office-365-proplus-updates.md#bkmk_ts)aktivitetssekvens.
 
@@ -151,10 +151,10 @@ När du distribuerar en uppdatering till en Microsoft 365 Apps-klient, är omsta
 >- Om användaren installerar en uppdatering för Microsoft 365-appar före deadline, kontrollerar Configuration Manager att uppdateringen installeras när tids gränsen nås. Om uppdateringen inte identifieras på enheten installeras uppdateringen. 
 >- Aviserings fältet i appen visas inte i en app som körs innan uppdateringen laddas ned. När uppdateringen har hämtats visas meddelandet i appen endast för nyligen öppnade appar.
 >- För uppdateringar av Microsoft 365-appar som har utlösts av ett tjänst fönster eller som är schemalagda för icke-kontors tid kan det hända att Office-appar som körs kan tvingas att stängas för att installera uppdateringen utan meddelanden. 
->- Mer information finns i [meddelanden om slut användar uppdatering för Microsoft 365 appar](https://docs.microsoft.com/deployoffice/end-user-update-notifications-microsoft-365-apps)
+>- Mer information finns i [meddelanden om slut användar uppdatering för Microsoft 365 appar](/deployoffice/end-user-update-notifications-microsoft-365-apps)
 
 
-## <a name="add-languages-for-microsoft-365-apps-update-downloads"></a><a name="bkmk_o365_lang"></a>Lägg till språk för uppdaterings nedladdning för Microsoft 365-appar
+## <a name="add-languages-for-microsoft-365-apps-update-downloads"></a><a name="bkmk_o365_lang"></a> Lägg till språk för uppdaterings nedladdning för Microsoft 365-appar
 Du kan lägga till stöd för Configuration Manager för att hämta uppdateringar för alla språk som stöds av Microsoft 365 appar.
 
 ### <a name="download-updates-for-additional-languages-in-version-1902"></a>Hämta uppdateringar för ytterligare språk i version 1902
@@ -197,7 +197,7 @@ Använd följande procedur på program uppdaterings platsen på den centrala adm
 11. Nu när du hämtar uppdateringar för Microsoft 365 appar laddas uppdateringarna ned på de språk som du väljer i guiden och konfigureras i den här proceduren. För att kontrol lera att uppdateringarna laddas ned på rätt språk går du till paket källan för uppdateringen och letar efter filer med språk koden i fil namnet.  
     ![Fil namn med ytterligare språk](../media/5-verification.png)
 
-## <a name="updating-microsoft-365-apps-in-a-task-sequence"></a><a name="bkmk_ts"></a>Uppdatera Microsoft 365 appar i en aktivitetssekvens
+## <a name="updating-microsoft-365-apps-in-a-task-sequence"></a><a name="bkmk_ts"></a> Uppdatera Microsoft 365 appar i en aktivitetssekvens
 När du använder steget [installera program uppdateringar](../../osd/understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates) för att installera uppdateringar av Microsoft 365 appar, är det möjligt att distribuerade uppdateringar identifieras som ej tillämpliga.  Detta kan inträffa om aktiviteten schemalagda Office automatiska uppdateringar inte körs minst en gång (se kommentaren i [distribuera uppdateringar för Microsoft 365 appar](manage-office-365-proplus-updates.md#bkmk_update)). Detta kan till exempel inträffa om Microsoft 365-appar har installerats direkt innan du kör det här steget.
 
 För att se till att uppdaterings kanalen är inställd så att distribuerade uppdateringar identifieras korrekt, använder du någon av följande metoder:
@@ -220,7 +220,7 @@ För att se till att uppdaterings kanalen är inställd så att distribuerade up
     Exempel: `schtasks /run /tn "\Microsoft\Office\Office Automatic Updates 2.0"`
 5. Klicka på **OK**. 
 
-## <a name="update-channels-for-microsoft-365-apps"></a><a name="bkmk_channel"></a>Uppdatera kanaler för Microsoft 365 appar
+## <a name="update-channels-for-microsoft-365-apps"></a><a name="bkmk_channel"></a> Uppdatera kanaler för Microsoft 365 appar
 <!--6298093-->
 När Office 365 ProPlus har bytt namn till **Microsoft 365 appar för företag**, ändrades även uppdaterings kanalernas namn. Om du använder en automatisk distributions regel (ADR) för att distribuera uppdateringar måste du göra ändringar i automatisk distribution om de är beroende av egenskapen **title** . Det beror på att namnet på uppdaterings paketen i Microsoft Updates katalogen ändras.
 
@@ -238,17 +238,17 @@ För uppdaterings paket som släpps den 9 juni kommer rubriken att börja med "M
 |--|--|
 |Halvårs årlig företags kanal|Halvårskanal|
 |Halvårs visare för företags kanal (för hands version)|Halvårskanal (riktad)|
-|Månatlig företags kanal|NA|
+|Månatlig företags kanal|Ej tillämpligt|
 |Aktuell kanal|Månads kanal|
 |Aktuell kanal (förhands granskning)|Månads kanal (riktad)|
 |Beta kanal|Insider|
 
-Mer information om hur du ändrar din automatisk distribution finns i [distribuera program uppdateringar automatiskt](automatically-deploy-software-updates.md). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change).
+Mer information om hur du ändrar din automatisk distribution finns i [distribuera program uppdateringar automatiskt](automatically-deploy-software-updates.md). Mer information om namn ändringen finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change).
 
 
 ## <a name="change-the-update-channel-after-you-enable-microsoft-365-apps-clients-to-receive-updates-from-configuration-manager"></a>Ändra uppdaterings kanalen när du har aktiverat Microsoft 365 Apps-klienter för att ta emot uppdateringar från Configuration Manager
 
-När du har distribuerat Microsoft 365 appar kan du ändra uppdaterings kanalen med grupprincip eller Office Deployment Tool (ODT). Du kan till exempel flytta en enhet från halvårs kanal till halvårs kanal (riktad). När du byter kanal uppdateras Office automatiskt utan att du behöver installera om eller ladda ned den fullständiga versionen. Mer information finns i [ändra Microsoft 365 Apps uppdaterings kanal för enheter i din organisation](https://docs.microsoft.com//deployoffice/change-update-channels).
+När du har distribuerat Microsoft 365 appar kan du ändra uppdaterings kanalen med grupprincip eller Office Deployment Tool (ODT). Du kan till exempel flytta en enhet från halvårs kanal till halvårs kanal (riktad). När du byter kanal uppdateras Office automatiskt utan att du behöver installera om eller ladda ned den fullständiga versionen. Mer information finns i [ändra Microsoft 365 Apps uppdaterings kanal för enheter i din organisation](//deployoffice/change-update-channels).
 
 
 ## <a name="next-steps"></a>Nästa steg

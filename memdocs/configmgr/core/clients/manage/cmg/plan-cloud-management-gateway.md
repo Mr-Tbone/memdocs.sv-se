@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7c57e6568ce60680d9febc533c60533055595bc3
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: d5b9a65b768d02d02084d778fd36255341a808b2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126941"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692850"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planera för Cloud Management Gateway i Configuration Manager
 
@@ -105,10 +105,10 @@ Distribution och drift av CMG innehåller följande komponenter:
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 
 <!-- 1324735 -->
-Skapa CMG med hjälp av en **Azure Resource Manager-distribution**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) är en modern plattform för att hantera alla lösnings resurser som en enda entitet, som kallas för en [resurs grupp](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). När du distribuerar CMG med Azure Resource Manager använder platsen Azure Active Directory (Azure AD) för att autentisera och skapa nödvändiga moln resurser. Den här moderna distributionen kräver inte det klassiska hanterings certifikatet för Azure.  
+Skapa CMG med hjälp av en **Azure Resource Manager-distribution**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) är en modern plattform för att hantera alla lösnings resurser som en enda entitet, som kallas för en [resurs grupp](/azure/azure-resource-manager/resource-group-overview#resource-groups). När du distribuerar CMG med Azure Resource Manager använder platsen Azure Active Directory (Azure AD) för att autentisera och skapa nödvändiga moln resurser. Den här moderna distributionen kräver inte det klassiska hanterings certifikatet för Azure.  
 
 > [!NOTE]
-> Den här funktionen aktiverar inte stöd för Azure Cloud Service-leverantörer (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services).
+> Den här funktionen aktiverar inte stöd för Azure Cloud Service-leverantörer (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [tillgängliga Azure-tjänster i Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services).
 
 Från och med Configuration Manager version 1902 är Azure Resource Manager den enda distributions metoden för nya instanser av Cloud Management Gateway. Befintliga distributioner fortsätter att fungera.<!-- 3605704 -->
 
@@ -216,7 +216,7 @@ Mer information finns i följande vanliga frågor och svar: [användar kontona m
 
 - Program uppdaterings platser som använder en utjämning av nätverks belastning fungerar inte med CMG. <!--505311-->  
 
-- CMG-distributioner som använder Azures resurs modell aktiverar inte stöd för Azure Cloud Service Providers (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [Azure-tjänster som är tillgängliga i Azure CSP-programmet](https://docs.microsoft.com/partner-center/azure-plan-available).
+- CMG-distributioner som använder Azures resurs modell aktiverar inte stöd för Azure Cloud Service Providers (CSP). CMG-distributionen med Azure Resource Manager fortsätter att använda den klassiska moln tjänsten som inte stöds av KRYPTOGRAFIPROVIDERn. Mer information finns i [Azure-tjänster som är tillgängliga i Azure CSP-programmet](/partner-center/azure-plan-available).
 
 ### <a name="support-for-configuration-manager-features"></a>Stöd för Configuration Manager funktioner
 
@@ -259,7 +259,7 @@ I följande tabell visas CMG-stöd för Configuration Manager-funktioner:
 |![Stöds ](media/green_check.png) (*YYMM*) = den här funktionen stöds med CMG från och med *version YYMM* av Configuration Manager  |
 |![Stöds inte](media/Red_X.png) = Den här funktionen stöds inte med CMG |
 
-#### <a name="note-1-support-for-endpoint-protection"></a><a name="bkmk_note1"></a>Anmärkning 1: stöd för Endpoint Protection
+#### <a name="note-1-support-for-endpoint-protection"></a><a name="bkmk_note1"></a> Anmärkning 1: stöd för Endpoint Protection
 
 Från och med version 2006 kan klienter som kommunicerar via en CMG omedelbart tillämpa Endpoint Protection-principer utan en aktiv anslutning till Active Directory.<!--4773948-->
 
@@ -268,12 +268,12 @@ I version 2002 och tidigare var domänanslutna enheter till att tillämpa Endpoi
 
 - Uppdatera-platsen och-klienterna till version 2006.
 
-- Använd Co-Management och Byt [Endpoint Protection arbets belastning](../../../../comanage/workloads.md#endpoint-protection) till Intune och hantera [Microsoft Defender Antivirus](https://docs.microsoft.com/mem/intune/configuration/device-restrictions-windows-10#microsoft-defender-antivirus) från molnet.
+- Använd Co-Management och Byt [Endpoint Protection arbets belastning](../../../../comanage/workloads.md#endpoint-protection) till Intune och hantera [Microsoft Defender Antivirus](../../../../../intune/configuration/device-restrictions-windows-10.md#microsoft-defender-antivirus) från molnet.
 
 - Använd [konfigurations objekt](../../../../compliance/deploy-use/create-configuration-items.md) i stället för de interna [principerna för program mot skadlig kod](../../../../protect/deploy-use/endpoint-antimalware-policies.md) för att tillämpa Endpoint Protection-principen.
 
 
-## <a name="cost"></a>Kostnad
+## <a name="cost"></a>Cost
 
 > [!IMPORTANT]  
 > Följande kostnads information är endast avsedd för uppskattnings syfte. Din miljö kan ha andra variabler som påverkar den totala kostnaden för att använda CMG.
@@ -325,7 +325,7 @@ CMG använder följande Azure-komponenter, som debiteras för Azure-prenumeratio
 
 - En CMG kan också vara en moln distributions plats för att betjäna innehåll till klienter. Den här funktionen minskar de nödvändiga certifikaten och kostnaden för virtuella Azure-datorer. Mer information finns i [ändra en CMG](setup-cloud-management-gateway.md#modify-a-cmg).<!--1358651-->  
 
-- CMG använder Azure lokalt redundant lagring (LRS). Mer information finns i [Lokalt Redundant lagring](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).  
+- CMG använder Azure lokalt redundant lagring (LRS). Mer information finns i [Lokalt Redundant lagring](/azure/storage/common/storage-redundancy-lrs).  
 
 ### <a name="other-costs"></a>Andra kostnader
 
@@ -377,26 +377,26 @@ Mer information när du är värd för innehåll i Azure finns i [använda en mo
 
 I den här tabellen listas de nätverks portar och protokoll som krävs. *Klienten* är enheten som initierar anslutningen, vilket kräver en utgående port. *Servern* är den enhet som accepterar anslutningen, vilket kräver en inkommande port.
 
-| Klient | Protokoll | Port | Server | Beskrivning |
+| Client | Protokoll | Port | Server | Beskrivning |
 |--------|----------|------|--------|-------------|
 | Tjänstanslutningspunkt | HTTPS | 443 | Azure | CMG-distribution |
 | CMG kopplings punkt | TCP-TLS | 10140-10155 | CMG-tjänst | Önskat protokoll för att bygga CMG-kanal <sup> [anteckning 1](#bkmk_port-note1)</sup> |
 | CMG kopplings punkt | HTTPS | 443 | CMG-tjänst | Återställnings protokoll för att bygga CMG-kanalen till endast en instans av virtuell dator instans <sup> [2](#bkmk_port-note2)</sup> |
 | CMG kopplings punkt | HTTPS | 10124-10139 | CMG-tjänst | Reserv protokoll för att bygga CMG-kanalen till två eller flera VM-instanser <sup> [Anmärkning 3](#bkmk_port-note3)</sup> |
-| Klient | HTTPS | 443 | CMG | Allmän klient kommunikation |
-| Klient | HTTPS | 443 | Blob Storage | Hämta molnbaserad innehåll |
+| Client | HTTPS | 443 | CMG | Allmän klient kommunikation |
+| Client | HTTPS | 443 | Blob Storage | Hämta molnbaserad innehåll |
 | CMG kopplings punkt | HTTPS eller HTTP | 443 eller 80 | Hanteringsplats | Lokal trafik, Port beror på hanterings platsens konfiguration |
 | CMG kopplings punkt | HTTPS eller HTTP | 443 eller 80 | Programuppdateringsplats | Lokal trafik är beroende av konfigurationen av program uppdaterings platsen |
 
-#### <a name="note-1-cmg-connection-point-tcp-tls-ports"></a><a name="bkmk_port-note1"></a>Anmärkning 1: CMG TCP-TLS ports för anslutnings punkt
+#### <a name="note-1-cmg-connection-point-tcp-tls-ports"></a><a name="bkmk_port-note1"></a> Anmärkning 1: CMG TCP-TLS ports för anslutnings punkt
 
 CMG anslutnings punkt försöker först upprätta en TCP-TLS-anslutning med lång livs längd med varje CMG VM-instans. Den ansluter till den första virtuella dator instansen på port 10140. Den andra virtuella dator instansen använder port 10141, upp till 16 på port 10155. En TCP-TLS-anslutning fungerar bäst, men stöder inte Internet-proxy. Om anslutnings punkten för CMG inte kan ansluta via TCP-TLS går den tillbaka till HTTPS-<sup>[anteckning 2](#bkmk_port-note2)</sup>.
 
-#### <a name="note-2-cmg-connection-point-https-ports-for-one-vm"></a><a name="bkmk_port-note2"></a>Anmärkning 2: HTTPS-portar för CMG-anslutning för en virtuell dator
+#### <a name="note-2-cmg-connection-point-https-ports-for-one-vm"></a><a name="bkmk_port-note2"></a> Anmärkning 2: HTTPS-portar för CMG-anslutning för en virtuell dator
 
 Om anslutnings punkten för CMG inte kan ansluta till CMG via TCP-TLS<sup>[Anmärkning 1](#bkmk_port-note1)</sup>ansluter den till Azure Network Load Balancer via https 443 bara för en VM-instans.  
 
-#### <a name="note-3-cmg-connection-point-https-ports-for-two-or-more-vms"></a><a name="bkmk_port-note3"></a>Anmärkning 3: CMG HTTPS-portar för två eller flera virtuella datorer
+#### <a name="note-3-cmg-connection-point-https-ports-for-two-or-more-vms"></a><a name="bkmk_port-note3"></a> Anmärkning 3: CMG HTTPS-portar för två eller flera virtuella datorer
 
 Om det finns två eller flera virtuella dator instanser använder CMG-anslutnings punkten HTTPS 10124 för den första virtuella dator instansen, inte HTTPS 443. Den ansluter till den andra virtuella dator instansen på HTTPS 10125, upp till sextonde HTTPS-port 10139.
 

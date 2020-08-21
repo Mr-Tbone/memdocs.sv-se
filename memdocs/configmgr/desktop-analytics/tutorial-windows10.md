@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: fc4309d3d09cd35c17b23bc46dcb1a28d210aa8e
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 5c5337433b0d64ec1f6bf1efae97bd2391031f2e
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125754"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694277"
 ---
 # <a name="tutorial-deploy-windows-10-to-pilot"></a>Självstudie: distribuera Windows 10 till pilot
 
@@ -32,7 +32,7 @@ I den här guiden får du lära dig att:
 
 Om du inte har någon Azure-prenumeration kan du skapa ett [kostnadsfritt konto](https://azure.microsoft.com/free) innan du börjar. När den är korrekt konfigurerad, kostar inte användningen av Desktop Analytics någon Azure-kostnad.
 
-Skriv bords analys använder en *Log Analytics arbets yta* i din Azure-prenumeration. En arbetsyta är i grunden en container som innehåller kontoinformation och enkel konfigurationsinformation för kontot. Mer information finns i [hantera arbets ytor](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-access?toc=/azure/azure-monitor/toc.json).
+Skriv bords analys använder en *Log Analytics arbets yta* i din Azure-prenumeration. En arbetsyta är i grunden en container som innehåller kontoinformation och enkel konfigurationsinformation för kontot. Mer information finns i [hantera arbets ytor](/azure/log-analytics/log-analytics-manage-access?toc=%2fazure%2fazure-monitor%2ftoc.json).
 
 
 
@@ -76,8 +76,8 @@ Innan du börjar den här självstudien måste du kontrol lera att du har följa
     - `https://kmwatsonc.events.data.microsoft.com`  
     - `https://oca.telemetry.microsoft.com`  
     - `https://login.live.com`  
-    - `https://graph.windows.net`(endast på Configuration Manager Server roll)
-    - `https://*.manage.microsoft.com`(endast på Configuration Manager Server roll)
+    - `https://graph.windows.net` (endast på Configuration Manager Server roll)
+    - `https://*.manage.microsoft.com` (endast på Configuration Manager Server roll)
 
     Mer information finns i [så här aktiverar du data delning för Skriv bords analys](enable-data-sharing.md#endpoints).  
 
@@ -102,7 +102,7 @@ Använd den här proceduren för att logga in på Desktop Analytics och konfigur
 
         Om du inte väljer det här alternativet lägger Desktop Analytics fortfarande till användare som medlemmar i säkerhets gruppen. En **Global administratör** måste tilldela rollen **Desktop Analytics-administratör** manuellt för användarna.  
 
-        Mer information om hur du tilldelar administratörs roll behörigheter i Azure Active Directory och de behörigheter som tilldelats **Desktop Analytics-administratörer**finns [i administratörs roll behörigheter i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
+        Mer information om hur du tilldelar administratörs roll behörigheter i Azure Active Directory och de behörigheter som tilldelats **Desktop Analytics-administratörer**finns [i administratörs roll behörigheter i Azure Active Directory](/azure/active-directory/users-groups-roles/directory-assign-admin-roles).  
 
     - Desktop Analytics förkonfigurerar säkerhets gruppen **ägare till arbets ytan** i Azure Active Directory för att skapa och hantera arbets ytor och distributions planer. 
 
@@ -234,7 +234,7 @@ Använd den här proceduren för att skapa en distributions plan i Desktop Analy
 
 4. Konfigurera följande inställningar i fönstret **skapa distributions plan** :  
 
-    - **Namn**: ett unikt namn för distributions planen, till exempel`Windows 10 pilot`  
+    - **Namn**: ett unikt namn för distributions planen, till exempel `Windows 10 pilot`  
 
     - **Produkter och versioner**: Välj vilken Windows 10-version som ska distribueras. Microsoft rekommenderar att du skapar distributions planer som använder den senaste versionen.
 
@@ -292,7 +292,7 @@ Använd den här proceduren för att distribuera Windows 10 i Configuration Mana
 - [Monitor](#bkmk_monitor-ts) status in Configuration Manager  
  -->
 
-### <a name="create-an-os-upgrade-package-for-windows-10"></a><a name="bkmk_create-package"></a>Skapa ett uppgraderings paket för operativ system för Windows 10
+### <a name="create-an-os-upgrade-package-for-windows-10"></a><a name="bkmk_create-package"></a> Skapa ett uppgraderings paket för operativ system för Windows 10
 
 1. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **operativ system**och välj sedan noden **uppgraderings paket för operativ system** .  
 
@@ -320,7 +320,7 @@ Distribuera sedan operativ Systems uppgraderings paketet till distributions plat
 4. Slutför guiden Distribuera innehåll.  
 
 
-### <a name="create-an-os-upgrade-task-sequence-for-windows-10"></a><a name="bkmk_create-ts"></a>Skapa en aktivitetssekvens för operativ system uppgradering för Windows 10
+### <a name="create-an-os-upgrade-task-sequence-for-windows-10"></a><a name="bkmk_create-ts"></a> Skapa en aktivitetssekvens för operativ system uppgradering för Windows 10
 
 1. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **operativ system**och välj sedan **aktivitetssekvenser**.  
 
@@ -339,7 +339,7 @@ Distribuera sedan operativ Systems uppgraderings paketet till distributions plat
     - **Produkt nyckel**: Ange produkt nyckeln för Windows för det operativ system som ska installeras. Ange kodade volym licens nycklar eller standard produkt nycklar. Om du använder en standard produkt nyckel separerar du varje grupp om fem tecken med ett bindestreck (-). Till exempel: *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*. När uppgraderingen är för en volym licens version kanske produkt nyckeln inte krävs.  
 
         > [!Note]  
-        > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
+        > Den här produkt nyckeln kan vara en MAK (Multiple Activation Key) eller en allmän volym licens nyckel (GVLK). En GVLK kallas även för en klient installations nyckel för nyckel hanterings tjänst (KMS). Mer information finns i [Planera för volym aktivering](/windows/deployment/volume-activation/plan-for-volume-activation-client). En lista över konfigurations nycklar för KMS-klienter finns i [bilaga a](/windows-server/get-started/kmsclientkeys) i aktiverings guiden för Windows Server.
 
 6. På sidan **Inkludera uppdateringar** väljer du **Nästa** om du inte vill installera några program uppdateringar.  
 
@@ -348,7 +348,7 @@ Distribuera sedan operativ Systems uppgraderings paketet till distributions plat
 8. Slutför guiden skapa aktivitetssekvens.  
 
 
-### <a name="deploy-the-task-sequence-using-the-desktop-analytics-deployment-plan"></a><a name="bkmk_deploy-ts"></a>Distribuera aktivitetssekvensen med hjälp av distributions planen för Skriv bords analys
+### <a name="deploy-the-task-sequence-using-the-desktop-analytics-deployment-plan"></a><a name="bkmk_deploy-ts"></a> Distribuera aktivitetssekvensen med hjälp av distributions planen för Skriv bords analys
 
 1. I Configuration Manager-konsolen går du till **program biblioteket**, expanderar **underhåll av Skriv bords analys**och väljer noden **distributions planer** .  
 
@@ -376,7 +376,7 @@ Distribuera sedan operativ Systems uppgraderings paketet till distributions plat
 10. Slutför guiden.  
 
 
-### <a name="install-the-task-sequence-from-software-center"></a><a name="bkmk_install-ts"></a>Installera aktivitetssekvensen från Software Center
+### <a name="install-the-task-sequence-from-software-center"></a><a name="bkmk_install-ts"></a> Installera aktivitetssekvensen från Software Center
 
 1. Logga in på en enhet som är medlem i pilot distributions planen.  
 

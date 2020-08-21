@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: be1401f28ccbd15de2561a19169ed67a81a91550
-ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
+ms.openlocfilehash: 1e86f331531d166e30ec7284d3852930fb3e62af
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87526040"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695825"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-configuration-manager"></a>Funktioner i Technical Preview 1601 för Configuration Manager
 
@@ -57,7 +57,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
 **Följande är nya funktioner som du kan prova med den här versionen.**  
 
-##  <a name="improvements-to-microsoft-intune-integration"></a><a name="bkmk_hybrid1"></a>Förbättringar av Microsoft Intune-integrering  
+##  <a name="improvements-to-microsoft-intune-integration"></a><a name="bkmk_hybrid1"></a> Förbättringar av Microsoft Intune-integrering  
 I 1601 Technical Preview har vi lagt till stöd för följande funktioner:  
 
 ### <a name="improvements-to-conditional-access"></a>Förbättringar av villkorlig åtkomst  
@@ -75,11 +75,11 @@ I 1601 Technical Preview har vi lagt till stöd för följande funktioner:
 
     -   En Microsoft Intune-prenumeration. Microsoft Intune prenumerationen ska konfigureras i Configuration Manager-konsolen.  
 
-    -   [Krav för automatisk registrering av Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   [Krav för automatisk registrering av Azure AD](/azure/active-directory/devices/hybrid-azuread-join-plan?rnd=1).  
 
     Om du vill använda alternativet måste du skapa en efterlevnadsprincip i Configuration Manager med vissa regler som beskrivs nedan och ange en princip för villkorlig åtkomst i Intune-konsolen.  För att se till att endast kompatibla datorer är tillåtna, måste du också ställa in krav för Windows-dator på alternativet **enheter måste vara kompatibelt** . Nedan följer de regler för kompatibla principer som gäller för datorer som hanteras av Configuration Manager.  
 
-    -   **Kräv registrering i Azure ActiveDirectory:** Den här regeln kontrollerar om användarens enhet är arbets plats ansluten till Azure AD, och om den inte är det registreras enheten automatiskt i Azure AD. Automatisk registrering stöds bara på Windows 8.1. Distribuera en MSI för att utföra automatisk registrering för Windows 7-datorer. Mer information finns [här](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   **Kräv registrering i Azure ActiveDirectory:** Den här regeln kontrollerar om användarens enhet är arbets plats ansluten till Azure AD, och om den inte är det registreras enheten automatiskt i Azure AD. Automatisk registrering stöds bara på Windows 8.1. Distribuera en MSI för att utföra automatisk registrering för Windows 7-datorer. Mer information finns [här](/azure/active-directory/devices/hybrid-azuread-join-plan?rnd=1).  
 
     -   **Alla begärda uppdateringar har installerats med en tids gräns som är äldre än ett visst antal dagar:** Den här regeln kontrollerar om användarens enhet har alla uppdateringar som krävs (anges i regeln för **obligatoriska automatiska uppdateringar** ) inom en tids gräns och respittid som du anger och installerar automatiskt eventuella väntande uppdateringar som krävs.  
 
@@ -98,7 +98,7 @@ I 1601 Technical Preview har vi lagt till stöd för följande funktioner:
 
     -   **Kräv automatiska uppdateringar:** Du kan kräva enheter med Windows 8,1 eller senare för att tillåta automatisk installation av uppdateringar och även ange klassen för uppdateringar som är installerade.  Du kan antingen välja att: Installera endast uppdateringar som marker ATS som viktiga eller installera alla rekommenderade uppdateringar.  
 
-         Om du vill skapa en regel för automatiska uppdateringar öppnar du **guiden skapa efterlevnadsprincip**och lägger till en ny regel.  Välj **minsta klassificering för nödvändiga uppdateringar** som villkor och ange värdet till något av de tillgängliga värdena: **ingen**, **rekommenderas**och **viktigt**.  
+         Om du vill skapa en regel för automatiska uppdateringar öppnar du **guiden skapa efterlevnadsprincip**och lägger till en ny regel.  Välj  **minsta klassificering för nödvändiga uppdateringar** som villkor och ange värdet till något av de tillgängliga värdena: **ingen**, **rekommenderas**och **viktigt**.  
 
         -   **Ingen:** Uppdateringar installeras inte automatiskt.  
 
@@ -123,14 +123,14 @@ I 1601 Technical Preview har vi lagt till stöd för följande funktioner:
 
      Om du vill använda det här alternativet går du till sidan **Allmänt** i **guiden Konfigurera princip för villkorlig åtkomst** för Exchange lokalt.  
 
-##  <a name="client-online-status"></a><a name="bkmk_clientStatus"></a>Status för klient online  
+##  <a name="client-online-status"></a><a name="bkmk_clientStatus"></a> Status för klient online  
 Från och med Technical Preview 1601 kan du snabbt identifiera om en klient är online eller offline i Configuration Manager-konsolen. Med uppdaterade ikoner och kolumner i konsolens enhets listor kan du utvärdera status för klienter i din miljö för att identifiera problemområden och andra problem som kan behöva åtgärdas.  
 
 En klient är online om den är ansluten till en plats system roll för en Configuration Manager hanterings plats. Så länge hanterings platsen tar emot ping-liknande meddelanden från klienten, är dess status online. Om hanteringen inte tar emot ett meddelande i 5 minuter, ändras klientens status till offline.  
 
 ### <a name="icons-for-client-status"></a>Ikoner för klient status  
 
-| Ikon | Description |
+| Ikon | Beskrivning |
 | ---- | ----------- |
 |![ikon för onlinestatus för klienter](media/online-status-icon.png)|Klienten är online.|  
 |![ikon för offlinestatus för klienter](media/offline-status-icon.png)|Klienten är offline.|  
@@ -156,7 +156,7 @@ En klient är online om den är ansluten till en plats system roll för en Confi
 
    Uppdatera-konsolen om du vill visa de senaste ändringarna i klient status.  
 
-##  <a name="improvements-to-application-management"></a><a name="bkmk_appmgmt1601"></a>Förbättringar av program hantering  
+##  <a name="improvements-to-application-management"></a><a name="bkmk_appmgmt1601"></a> Förbättringar av program hantering  
  I 1601 Technical Preview har vi lagt till stöd för följande funktioner:  
 
 ### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Hantera appar som köpts genom volyminköpsprogrammet för iOS-enheter  
@@ -191,7 +191,7 @@ En klient är online om den är ansluten till en plats system roll för en Confi
 
 -   I guiden **distribuera program vara** , på sidan **konfigurations princip för appar** , associerar du den konfigurations princip för appar som du skapade med en kompatibel distributions typ från programmet.  
 
-##  <a name="improvements-to-compliance-settings"></a><a name="bkmk_compliance1601"></a>Förbättringar av kompatibilitetsinställningar  
+##  <a name="improvements-to-compliance-settings"></a><a name="bkmk_compliance1601"></a> Förbättringar av kompatibilitetsinställningar  
  I 1601 Technical Preview har vi lagt till stöd för följande funktioner:  
 
 ### <a name="microsoft-edge-browser-settings"></a>Inställningar för Microsoft Edge-webbläsare  
@@ -213,4 +213,4 @@ En klient är online om den är ansluten till en plats system roll för en Confi
 
  Om du vill se de nya inställningarna väljer du **hel skärms läge – Samsung KNOX** på sidan **enhets inställningar** för konfigurations objekt i guiden **skapa konfigurations objekt** .  
 
- Mer information finns i [så här skapar du konfigurations objekt för windows 8,1-och Windows 10-enheter som hanteras utan Configuration Manager-klienten](../../mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Mer information finns i [så här skapar du konfigurations objekt för windows 8,1-och Windows 10-enheter som hanteras utan Configuration Manager-klienten](../../mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).

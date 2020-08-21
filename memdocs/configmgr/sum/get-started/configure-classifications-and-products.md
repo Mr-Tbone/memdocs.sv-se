@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: a5254ba5a25b10df2943eaa7f80b32b17ea3680f
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: 7dc3ef2ceb22f1c15c96127c593965ea31bdd7eb
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591501"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696828"
 ---
 # <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurera klassificeringar och produkter som ska synkroniseras  
 
@@ -129,7 +129,7 @@ För ytterligare information om stöd för Windows Insider i Configuration Manag
 ### <a name="prerequisites"></a>Förutsättningar
 
 - Configuration Manager version 1906 eller högre, konfigurerad för [hantering av program uppdateringar](../plan-design/plan-for-software-updates.md).
-- Windows 10-enheter som kör [Windows Insider Preview-version](https://docs.microsoft.com/windows-insider/at-work-pro/wip-4-biz-get-started).
+- Windows 10-enheter som kör [Windows Insider Preview-version](/windows-insider/at-work-pro/wip-4-biz-get-started).
 - En samling som innehåller Windows Insider-enheter.
 
 ### <a name="enable-windows-insider-upgrades-and-updates"></a>Aktivera Windows Insider-uppgraderingar och uppdateringar
@@ -160,7 +160,7 @@ Distribuera funktions uppdateringar för Windows Insider till din mål samling p
 - Det finns licens villkor, distributionen måste godkänna villkoren för att kunna installeras.
 - Överväg att använda [tråd prioritet i klient inställningar](../../core/clients/deploy/about-client-settings.md#bkmk_thread-priority).
 - Dynamisk uppdatering installerar automatiskt viktiga uppdateringar, inklusive den senaste kumulativa uppdateringen, direkt från Microsoft Update. Det här beteendet startas med funktions uppdateringar för Windows 10 version 1903. 
-  - Du kan uttryckligen [inaktivera dynamisk uppdatering i klient inställningar](../../core/clients/deploy/about-client-settings.md#bkmk_du) eller med en [setupconfig.ini-fil](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options). 
+  - Du kan uttryckligen [inaktivera dynamisk uppdatering i klient inställningar](../../core/clients/deploy/about-client-settings.md#bkmk_du) eller med en [setupconfig.ini-fil](/windows-hardware/manufacture/desktop/windows-setup-command-line-options). 
   - Mer information finns i blogg inlägget för [dynamisk uppdatering i Windows 10](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/The-benefits-of-Windows-10-Dynamic-Update/ba-p/467847) .
 
 Mer information om hur du distribuerar uppgraderingar finns i [hantera Windows som en tjänst](../../osd/deploy-use/manage-windows-as-a-service.md).

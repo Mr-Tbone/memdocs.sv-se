@@ -10,12 +10,12 @@ ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5f441bc277f9c91cb1a83ce97879bd29b6349481
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: dc8e31245212136cd67f6f8cac062723c2cabefb
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718807"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696012"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Hantera certifikat och säkerhet för Updates Publisher
 
@@ -76,7 +76,7 @@ Följande finns som ett exempel på hur du konfigurerar signerings certifikatet 
    -   För certifikat utfärdare (CA) utfärdade certifikat: Lägg till certifikatet i certifikat arkivet **Betrodda utgivare** .
 
    > [!NOTE]
-   > WUA kontrollerar också om inställningen **Tillåt signerat innehåll från tjänsten Microsoft Update på intranätet** Grupprincip är aktive rad på den lokala datorn. Denna principinställning måste aktiveras för att Windows Update-agenten ska söka efter de uppdateringar som har skapats och publicerats med Updates Publisher. Mer information om hur du aktiverar den här grupprincip inställningen finns i [så här konfigurerar du Grupprincip på klient datorer](https://docs.microsoft.com/previous-versions/bb530967(v=technet.10)).
+   > WUA kontrollerar också om inställningen **Tillåt signerat innehåll från tjänsten Microsoft Update på intranätet** Grupprincip är aktive rad på den lokala datorn. Denna principinställning måste aktiveras för att Windows Update-agenten ska söka efter de uppdateringar som har skapats och publicerats med Updates Publisher. Mer information om hur du aktiverar den här grupprincip inställningen finns i [så här konfigurerar du Grupprincip på klient datorer](/previous-versions/bb530967(v=technet.10)).
 
 
 

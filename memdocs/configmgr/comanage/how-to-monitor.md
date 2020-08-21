@@ -10,12 +10,12 @@ ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: eab91146ec21bbee888d496012419f47bca4b599
-ms.sourcegitcommit: 7b2f7918d517005850031f30e705e5a512959c3d
+ms.openlocfilehash: ac3bbb7c755be82b171f35442d2dbaf446dfea84
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776981"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695128"
 ---
 # <a name="how-to-monitor-co-management-in-configuration-manager"></a>Övervaka samhantering i Configuration Manager
 
@@ -77,7 +77,7 @@ Visar en uppdelning av enhets status i följande kategorier:
     > [!NOTE]
     > Från och med version 1906, för att minska antalet enheter i det här väntande läget, registreras en ny samhanterad enhet nu automatiskt i Microsoft Intune tjänst baserat på dess Azure AD- *enhets* -token. Användaren behöver inte vänta på att en användare loggar in på enheten för automatisk registrering för att starta. För att det ska fungera måste enheten köra Windows 10, version 1803 eller senare.
     >
-    > Om enhetens token Miss lyckas går den tillbaka till föregående beteende med användartoken. Sök efter följande post i **ComanagementHandler. log** :`Enrolling device with RegisterDeviceWithManagementUsingAADDeviceCredentials`
+    > Om enhetens token Miss lyckas går den tillbaka till föregående beteende med användartoken. Sök efter följande post i **ComanagementHandler. log** : `Enrolling device with RegisterDeviceWithManagementUsingAADDeviceCredentials`
 
 Välj ett tillstånd i panelen om du vill gå till en lista över enheter i det aktuella läget.  
 
@@ -102,8 +102,8 @@ Det finns hundratals möjliga fel. I följande tabell visas de vanligaste felen.
 
 | Fel | Beskrivning |
 |---------|---------|
-| 2147549183 (0x8000FFFF) | MDM-registreringen har inte kon figurer ATS ännu på Azure AD eller också förväntas registrerings-URL: en.<br><br>[Aktivera automatisk registrering i Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) |
-| 2149056536 (0x80180018)<br>MENROLL_E_USERLICENSE | Licensen för användaren är i ett felaktigt tillstånd som blockerar registreringen<br><br>[Tilldela licenser till användare](https://docs.microsoft.com/intune/licenses-assign) |
+| 2147549183 (0x8000FFFF) | MDM-registreringen har inte kon figurer ATS ännu på Azure AD eller också förväntas registrerings-URL: en.<br><br>[Aktivera automatisk registrering i Windows 10](/intune/windows-enroll#enable-windows-10-automatic-enrollment) |
+| 2149056536 (0x80180018)<br>MENROLL_E_USERLICENSE | Licensen för användaren är i ett felaktigt tillstånd som blockerar registreringen<br><br>[Tilldela licenser till användare](/intune/licenses-assign) |
 | 2149056555 (0x8018002B)<br>MENROLL_E_MDM_NOT_CONFIGURED | Vid försök att automatiskt registrera till Intune, men Azure AD-konfigurationen används inte fullt ut. Det här problemet bör vara tillfälligt när enheten försöker igen efter en kort tid. |
 | 2149056554 (0x 8018002A)<br>&nbsp; | Användaren avbröt åtgärden<br><br>Om MDM-registrering kräver Multi-Factor Authentication och användaren inte har loggat in med en andra faktor som stöds, visar Windows ett popup-meddelande till användaren att registrera sig. Om användaren inte svarar på popup-meddelanden uppstår det här felet. Det här problemet bör vara övergående, eftersom Configuration Manager försöker igen och uppmana användaren. Användarna bör använda Multi-Factor Authentication när de loggar in på Windows. Utbilda dem också för att förvänta detta beteende och om du uppmanas att göra det. |
 | 2149056532 (0x80180014)<br>MENROLL_E_DEVICENOTSUPPORTED | Hantering av mobila enheter stöds inte. Kontrol lera enhets begränsningar. |
@@ -114,7 +114,7 @@ Det finns hundratals möjliga fel. I följande tabell visas de vanligaste felen.
 | 3399548929 | Behöver användar inloggning<br><br>Det här problemet bör vara tillfälligt. Det inträffar när användaren snabbt loggar ut innan registrerings aktiviteten sker. |
 | 3400073236 | Begäran om ADAL-säkerhetstoken misslyckades.<br><br>Kontrol lera Azure AD-konfigurationen och se till att användarna kan autentisera sig. |
 | 2149122477 | Allmänt HTTP-problem |
-| 3400073247 | ADAL-integrerad Windows-autentisering stöds endast i federerade flöden<br><br>[Planera implementeringen av Azure Active Directory-hybridanslutning](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan) |
+| 3400073247 | ADAL-integrerad Windows-autentisering stöds endast i federerade flöden<br><br>[Planera implementeringen av Azure Active Directory-hybridanslutning](/azure/active-directory/devices/hybrid-azuread-join-plan) |
 | 3399942148 | Servern eller proxyn hittades inte.<br><br>Det här problemet bör vara tillfälligt när klienten inte kan kommunicera med molnet. Om den kvarstår kontrollerar du att klienten har en konsekvent anslutning till Azure. | 
 | 2149056532 | En speciell plattform eller version stöds inte<br><br>Kontrol lera att enheten uppfyller [minimi kraven](overview.md#windows-10) för samhantering. |
 | 2147943568 | Elementet hittades inte<br><br>Det här problemet bör vara tillfälligt. Kontakta Microsoft Support om den kvarstår. |
@@ -124,7 +124,7 @@ Det finns hundratals möjliga fel. I följande tabell visas de vanligaste felen.
 | 2149134055 | Okänt WinHTTP-namn<br><br>Klienten kan inte matcha namnet på tjänsten. Kontrol lera DNS-konfigurationen. |
 | 2149134050 | Internet-timeout<br><br>Det här problemet bör vara tillfälligt när klienten inte kan kommunicera med molnet. Om den kvarstår kontrollerar du att klienten har en konsekvent anslutning till Azure. |
 
-Mer information finns i [fel värden för MDM-registrering](https://docs.microsoft.com/windows/desktop/mdmreg/mdm-registration-constants).
+Mer information finns i [fel värden för MDM-registrering](/windows/desktop/mdmreg/mdm-registration-constants).
 
 ## <a name="deployment-policies"></a>Distributions principer
 

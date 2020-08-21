@@ -10,24 +10,24 @@ ms.assetid: e217699a-28b2-471a-b421-8fbd1d1fd638
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4d13d9dfd75abb656a765ce8c91ce6f177636cd3
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: ca7d81ba112c9eb79fb8bcfff96fb213b87b44c3
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127179"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694822"
 ---
 # <a name="onedrive-for-business-profiles"></a>OneDrive för företag-profiler
 
-Från och med Configuration Manager version 1902 kan du skapa OneDrive för företag-profiler för att flytta Windows-kända mappar till OneDrive för företag. Dessa mappar innehåller Skriv bord, dokument och bilder. I varje profil kan du ange inställningar för att flytta de kända Windows-mapparna. Mer information om OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](https://docs.microsoft.com/onedrive/redirect-known-folders). <!--3556021-->
+Från och med Configuration Manager version 1902 kan du skapa OneDrive för företag-profiler för att flytta Windows-kända mappar till OneDrive för företag. Dessa mappar innehåller Skriv bord, dokument och bilder. I varje profil kan du ange inställningar för att flytta de kända Windows-mapparna. Mer information om OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](/onedrive/redirect-known-folders). <!--3556021-->
 
 ## <a name="prerequisites"></a>Förutsättningar
 
-- [Hitta Microsoft 365 klient-ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id)  
+- [Hitta Microsoft 365 klient-ID](/onedrive/find-your-office-365-tenant-id)  
 
-- Distribuera version 18.111.0603.0004 eller senare av OneDrive sync-klient. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
+- Distribuera version 18.111.0603.0004 eller senare av OneDrive sync-klient. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](/onedrive/deploy-on-windows).  
 
-## <a name="move-windows-known-folders-to-onedrive"></a><a name="bkmk_odfb"></a>Flytta Windows-kända mappar till OneDrive
+## <a name="move-windows-known-folders-to-onedrive"></a><a name="bkmk_odfb"></a> Flytta Windows-kända mappar till OneDrive
 <!--3556021-->
 Använd Configuration Manager för att flytta Windows-kända mappar till OneDrive för företag. Dessa mappar innehåller Skriv bord, dokument och bilder. För att förenkla dina Windows 10-uppgraderingar distribuerar du inställningarna till Windows 7-klienter innan du distribuerar en aktivitetssekvens. 
 

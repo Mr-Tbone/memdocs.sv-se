@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 73b8111cbada129997cec965ca685f1ef22b1f3a
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 7a4c42891276b36fd888f0f70495bdcd504f23a1
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721439"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693020"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-configuration-manager"></a>Funktioner i Technical Preview 1702 för Configuration Manager
 
@@ -38,7 +38,7 @@ I den här för hands versionen introduceras nya alternativ för feedback i Conf
 -  När du högerklickar på ett objekt i-konsolen.   
     ![Skärmdumpsverktygen – Klicka på alternativ](./media/feedback-option.png)   
 
-Om du väljer **feedback** öppnas webbläsaren på webbplatsen för Configuration Manager UserVoice feedback på https://configurationmanager.uservoice.com/forums/300492-ideas.
+Om du väljer **feedback** öppnas webbläsaren på webbplatsen för Configuration Manager UserVoice feedback på https://configurationmanager.uservoice.com/forums/300492-ideas .
 ##  <a name="changes-for-updates-and-servicing"></a>Ändringar för uppdateringar och underhåll
 Följande introduceras i den här för hands versionen.
 
@@ -62,7 +62,7 @@ Du kan konfigurera de här inställningarna med hjälp av klient agentens konfig
 
 När datorn avvisar en begäran om innehållet fortsätter den begär ande datorn att söka efter innehålls formulär alternativa källor i sin pool med tillgängliga innehålls käll platser.   
 
-## <a name="use-azure-active-directory-domain-services-to-manage-devices-users-and-groups"></a><a name="azurediscovery"></a>Använd Azure Active Directory Domain Services för att hantera enheter, användare och grupper
+## <a name="use-azure-active-directory-domain-services-to-manage-devices-users-and-groups"></a><a name="azurediscovery"></a> Använd Azure Active Directory Domain Services för att hantera enheter, användare och grupper
 
 Med den här tekniska för hands versionen kan du hantera enheter som är anslutna till en Azure Active Directory (AD) Domain Services-hanterad domän. Du kan också identifiera enheter, användare och grupper i den domänen med olika Configuration Manager identifierings metoder.
 
@@ -76,7 +76,7 @@ Om du vill använda Azure AD med Configuration Manager behöver du följande:
 - En Configuration Manager plats som körs på en virtuell Azure-dator som är ansluten till Azure AD.
 - Configuration Manager klienter som körs i samma Azure AD-miljö.
 
-Information om hur du konfigurerar Azure AD Domain Service finns i [Kom igång med Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/create-instance).
+Information om hur du konfigurerar Azure AD Domain Service finns i [Kom igång med Azure AD Domain Services](/azure/active-directory-domain-services/create-instance).
 
 ### <a name="discover-resources"></a>Identifiera resurser
 När du har konfigurerat Configuration Manager att köras i Azure AD kan du använda följande Active Directory identifierings metoder för att söka efter resurser i Azure AD:  
@@ -101,7 +101,7 @@ Azure AD har ingen ORGANISATIONSENHET som lagrar grupper. Använd i stället sam
 
 Se följande om du vill ha mer information om Azure AD:  
 - [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds) på Azure.Microsoft.com.
-- [Active Directory Domain Services dokumentation](https://docs.microsoft.com/azure/active-directory-domain-services) på docs.Microsoft.com.
+- [Active Directory Domain Services dokumentation](/azure/active-directory-domain-services) på docs.Microsoft.com.
 
 ## <a name="conditional-access-device-compliance-policy-improvements"></a>Förbättringar av efterlevnadsprinciper för villkorlig åtkomst
 
@@ -109,17 +109,17 @@ En ny regel för efterlevnadsprinciper är tillgänglig för att hjälpa dig att
 
 Dessutom hjälper organisationerna att undvika data läckage via oskyddade appar och förhindra onödig data förbrukning via vissa appar.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 
 **Scenario:** Identifiera appar som kan orsaka data läckage genom att skicka företags data utanför företaget eller som orsakar överdriven data förbrukning, och sedan [skapa en efterlevnadsprincip för villkorlig åtkomst](../../mdm/understand/what-happened-to-hybrid.md) som lägger till dessa appar i listan över appar som inte är kompatibla. Detta kommer att blockera åtkomst till företags resurser som har stöd för villkorlig åtkomst tills användaren kan ta bort den blockerade appen.
 
 ## <a name="antimalware-client-version-alert"></a>Klient versions avisering för program mot skadlig kod
 Från och med den här för hands versionen ger Configuration Manager Endpoint Protection en avisering om mer än 20% (standard) av hanterade klienter använder en utgången version av klienten för program mot skadlig kod (t. ex. Windows Defender eller Endpoint Protection klient).
 
-### <a name="try-it-out"></a>Prova nu
-Se till att Endpoint Protection är aktiverat på alla Skriv bords-och Server klienter med hjälp av klient inställnings principen. Nu kan du Visa **klient versionen av program mot skadlig kod** och **Endpoint Protection distributions status** genom att gå **till till gångar och efterlevnad** > **Översikt** > **enheter** > **alla datorer och betjäna klienter**. Om du vill söka efter en avisering kan du Visa **aviseringar** i arbets ytan **övervakning** . Om fler än 20% av de hanterade klienterna kör en inaktuell version av program mot skadlig kod, visas en inaktuell varning i klient versionen av program mot skadlig kod. Den här aviseringen visas inte på fliken **övervakning** > **Översikt** . Aktivera program uppdateringar för klienter för program mot skadlig kod för att uppdatera utgångna klienter för program mot skadlig kod.
+### <a name="try-it-out"></a>Prova
+Se till att Endpoint Protection är aktiverat på alla Skriv bords-och Server klienter med hjälp av klient inställnings principen. Nu kan du Visa **klient versionen av program mot skadlig kod** och **Endpoint Protection distributions status** genom att gå **till till gångar och efterlevnad**  >  **Översikt**  >  **enheter**  >  **alla datorer och betjäna klienter**. Om du vill söka efter en avisering kan du Visa **aviseringar** i arbets ytan **övervakning** . Om fler än 20% av de hanterade klienterna kör en inaktuell version av program mot skadlig kod, visas en inaktuell varning i klient versionen av program mot skadlig kod. Den här aviseringen visas inte på fliken **övervakning**  >  **Översikt** . Aktivera program uppdateringar för klienter för program mot skadlig kod för att uppdatera utgångna klienter för program mot skadlig kod.
 
-Om du vill konfigurera den procent andel som aviseringen genereras vid expanderar du **övervaknings** > **aviseringar** > **alla aviseringar**, dubbelklickar på **klienter för program mot skadlig kod** och ändrar **varningen om procent andelen hanterade klienter med en inaktuell klient version av program mot skadlig kod är mer än** alternativet.
+Om du vill konfigurera den procent andel som aviseringen genereras vid expanderar du **övervaknings**  >  **aviseringar**  >  **alla aviseringar**, dubbelklickar på **klienter för program mot skadlig kod** och ändrar **varningen om procent andelen hanterade klienter med en inaktuell klient version av program mot skadlig kod är mer än** alternativet.
 
 ## <a name="compliance-assessment-for-windows-update-for-business-updates"></a>Kompatibilitetskontroll för Windows Update för affärs uppdateringar
 Nu kan du konfigurera en uppdaterings regel för efterlevnadsprinciper för att inkludera ett Windows Update för företags utvärderings resultat som en del av utvärderingen av villkorlig åtkomst.
@@ -128,11 +128,11 @@ Nu kan du konfigurera en uppdaterings regel för efterlevnadsprinciper för att 
 
 ### <a name="allow-windows-update-for-business-to-manage-windows-10-updates"></a>Tillåt Windows Update för företag att hantera Windows 10-uppdateringar
 Om du vill samla in information om bedömning av efterlevnad för Windows Update för affärs uppdateringar använder du följande procedur för att konfigurera klient agent inställningen för att uttryckligen tillåta Windows Update för företag att hantera Windows 10-uppdateringar.
-1. I Configuration Manager-konsolen går du till **Administration** > **klient inställningar**.
+1. I Configuration Manager-konsolen går du till **Administration**  >  **klient inställningar**.
 2. I egenskaperna för klient inställningarna går du till **program uppdateringar**och väljer **Ja** för inställningen **hantera Windows 10-uppdateringar med Windows Update för företag** .
 
 ### <a name="create-a-compliance-policy-for-windows-update-for-business-assessment"></a>Skapa en policy för efterlevnad för Windows Update för företags utvärdering
-1. I Configuration Manager-konsolen går du till **till gångar och** > **Compliance Settings** > **Compliance policies**efterlevnadsprinciper kompatibilitetsinställningar.
+1. I Configuration Manager-konsolen går du till **till gångar och**  >  **efterlevnadsprinciper kompatibilitetsinställningar**  >  **Compliance policies**.
 2. Klicka på **skapa policy för efterlevnad** eller Välj en befintlig efterlevnadsprincip som ska ändras.
 3. På sidan Allmänt anger du ett namn och en beskrivning. Välj **regler för efterlevnad för enheter som hanteras med Configuration Manager-klienten**, ange allvarlighets grad för inkompatibilitet för rapportering och klicka på **Nästa**.
 4. På sidan plattformar som stöds väljer du **Windows 10**och klickar sedan på **Nästa**.
@@ -141,7 +141,7 @@ Om du vill samla in information om bedömning av efterlevnad för Windows Update
 Den nya principen visas i noden **Efterlevnadsprinciper** på arbetsytan **Tillgångar och efterlevnad**.
 
 ### <a name="deploy-a-compliance-policy"></a>Distribuera en efterlevnadsprincip
-1. I Configuration Manager-konsolen går du till **till gångar och efterlevnad** > **kompatibilitetsinställningar och**klickar sedan på **efterlevnadsprinciper**.
+1. I Configuration Manager-konsolen går du till **till gångar och efterlevnad**  >  **kompatibilitetsinställningar**och klickar sedan på **efterlevnadsprinciper**.
 2. På fliken **Start** går du till gruppen **Distribution** och klickar på **Distribuera**.
 3. I dialogrutan **Distribuera efterlevnadsprincip** klickar du på **Bläddra** för att välja användarsamlingen som principen ska distribueras i.
    Du kan också välja alternativ för att generera aviseringar när principen inte är kompatibel samt konfigurera schemat som den här efterlevnadsprincipen ska utvärderas efter.
@@ -164,12 +164,12 @@ Använd följande procedur för att ange en aktivitetssekvens som hög påverkan
 > [!NOTE]
 > En aktivitetssekvens som uppfyller vissa villkor definieras automatiskt som hög påverkan. Mer information finns i [Hantera distributioner med hög risk](../servers/manage/settings-to-manage-high-risk-deployments.md).
 
-1. I Configuration Manager-konsolen går du till**aktivitetssekvenser**för **program biblioteks** > **operativ system** > .
+1. I Configuration Manager-konsolen går du till aktivitetssekvenser för **program biblioteks**  >  **operativ system**  >  **Task Sequences**.
 2. Välj den aktivitetssekvens som du vill redigera och klicka på **Egenskaper**.
 3. På fliken **användar meddelande** väljer du **det här är en aktivitetssekvens med hög effekt**.
 
 ### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Skapa ett anpassat meddelande för distributioner med hög risk
-1. I Configuration Manager-konsolen går du till**aktivitetssekvenser**för **program biblioteks** > **operativ system** > .
+1. I Configuration Manager-konsolen går du till aktivitetssekvenser för **program biblioteks**  >  **operativ system**  >  **Task Sequences**.
 2. Välj den aktivitetssekvens som du vill redigera och klicka på **Egenskaper**.
 3. På fliken **användar meddelande** väljer du **Använd anpassad text**.
    > [!NOTE]
@@ -194,7 +194,7 @@ Använd följande procedur för att ange en aktivitetssekvens som hög påverkan
 
 ### <a name="configure-software-center-properties"></a>Konfigurera Software Center-egenskaper
 Använd följande procedur för att konfigurera information om aktivitetssekvensen som visas i Software Center. Informationen är endast för information.  
-1. I Configuration Manager-konsolen går du till**aktivitetssekvenser**för **program biblioteks** > **operativ system** > .
+1. I Configuration Manager-konsolen går du till aktivitetssekvenser för **program biblioteks**  >  **operativ system**  >  **Task Sequences**.
 2. Välj den aktivitetssekvens som du vill redigera och klicka på **Egenskaper**.
 3. På fliken **Allmänt** finns följande inställningar för Software Center:
    - **Omstart krävs**: låter användaren veta om en omstart krävs under installationen.
@@ -204,7 +204,7 @@ Använd följande procedur för att konfigurera information om aktivitetssekvens
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Sök efter körning av körbara filer innan du installerar ett program
 
-I dialog rutan * \<namn på distributions typ>* **Egenskaper** för en distributions typ, på fliken installations beteende, kan du nu ange en eller flera körbara filer som, om den körs, blockerar installationen av distributions typen. Användaren måste stänga den körbara filen som körs (eller så kan den stängas automatiskt för distributioner med syftet obligatorisk) innan distributions typen kan installeras.
+I *\<deployment type name>* dialog rutan **Egenskaper** för en distributions typ, på fliken installations beteende, kan du nu ange en eller flera körbara filer som, om den körs, ska blockera installationen av distributions typen. Användaren måste stänga den körbara filen som körs (eller så kan den stängas automatiskt för distributioner med syftet obligatorisk) innan distributions typen kan installeras.
 
 ### <a name="try-it-out"></a>Prova.
 
@@ -214,7 +214,7 @@ I dialog rutan * \<namn på distributions typ>* **Egenskaper** för en distribut
 
 Om programmet har distribuerats som **tillgängligt**och en användare försöker installera ett program uppmanas de att stänga alla körbara körbara filer som du har angett innan de kan fortsätta med installationen.
 
-Om programmet har distribuerats vid **behov**, och alternativet **automatiskt stänger alla körbara filer som du har angett på fliken installations beteende i dialog rutan Egenskaper för distributions typ** , visas en dialog ruta som informerar dem om att körbara filer som du har angett ska stängas automatiskt när tids gränsen för programinstallationen har uppnåtts. Du kan schemalägga dessa dialog rutor i **klient inställningar** > **dator agent**. Om du inte vill att slutanvändaren ska se dessa meddelanden väljer du **Dölj i Software Center och alla meddelanden** på fliken **användar upplevelse** i distributionens egenskaper.
+Om programmet har distribuerats vid **behov**, och alternativet **automatiskt stänger alla körbara filer som du har angett på fliken installations beteende i dialog rutan Egenskaper för distributions typ** , visas en dialog ruta som informerar dem om att körbara filer som du har angett ska stängas automatiskt när tids gränsen för programinstallationen har uppnåtts. Du kan schemalägga dessa dialog rutor i **klient inställningar**  >  **dator agent**. Om du inte vill att slutanvändaren ska se dessa meddelanden väljer du **Dölj i Software Center och alla meddelanden** på fliken **användar upplevelse** i distributionens egenskaper.
 
 Om programmet har distribuerats vid **behov** och alternativet **stängde automatiskt körning av körbara filer som du har angett på fliken installations beteende i dialog rutan Egenskaper för distributions typ** inte är markerat, kommer installationen av appen att Miss sen Miss sen om ett eller flera av de angivna programmen körs.
 
@@ -226,12 +226,12 @@ Dessutom kan du nu ange flera certifikat utfärdare (ca) på flera plats system 
 
 För iOS-enheter kan du koppla en PFX-certifikat profil till en e-postprofil och aktivera S/MIME-kryptering.  Detta aktiverar sedan S/MIME i den interna e-postklienten på iOS och kopplar rätt S/MIME-krypteringsnyckel till den.
 
-Mer information om certifikat i Configuration Manager finns i [Introduktion till certifikat profiler]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+Mer information om certifikat i Configuration Manager finns i [Introduktion till certifikat profiler]( /sccm/protect/deploy-use/introduction-to-certificate-profiles).
 
 
 ## <a name="new-compliance-settings-for-ios-devices"></a>Nya kompatibilitetsinställningar för iOS-enheter
 
-Vi har lagt till nya inställningar som du kan använda i konfigurations objekt för iOS-enheter. Detta är inställningar som tidigare fanns i Microsoft Intune i en fristående konfiguration och som nu är tillgängliga när du använder Intune med Configuration Manager. Om du behöver hjälp med någon av dessa inställningar går du till [princip inställningar för iOS i Microsoft Intune](/mem/intune/configuration/device-restrictions-ios).
+Vi har lagt till nya inställningar som du kan använda i konfigurations objekt för iOS-enheter. Detta är inställningar som tidigare fanns i Microsoft Intune i en fristående konfiguration och som nu är tillgängliga när du använder Intune med Configuration Manager. Om du behöver hjälp med någon av dessa inställningar går du till [princip inställningar för iOS i Microsoft Intune](../../../intune/configuration/device-restrictions-ios.md).
 
 - **Synkronisera data från hanterade appar till iCloud**
 - **Leverans för att fortsätta aktiviteter på en annan enhet**
@@ -294,11 +294,11 @@ Android for Work är en separat plattform från Android och du måste bestämma 
 I följande avsnitt beskrivs Android for Work-hantering.
 
 #### <a name="enable-android-for-work-management"></a>Aktivera hantering av Android for Work
-1. Skapa ett Google-konto https://accounts.google.com/SignUp som ska användas som administratörs konto för Android for Work som ska associeras med alla hanterings uppgifter för Android for Work för den här Intune-klienten. Detta kan vara ett Google-konto som delas mellan administratörer som hanterar Android-enheter. Det här är det Google-konto som används i din organisation för att hantera och publicera appar i Play for Work-konsolen. Du kommer att använda det här kontot för att godkänna appar i Play for Work-butiken, så håll koll på kontots namn och lösen ord.
+1. Skapa ett Google-konto som https://accounts.google.com/SignUp ska användas som administratörs konto för Android for Work som ska associeras med alla hanterings uppgifter för Android for Work för den här Intune-klienten. Detta kan vara ett Google-konto som delas mellan administratörer som hanterar Android-enheter. Det här är det Google-konto som används i din organisation för att hantera och publicera appar i Play for Work-konsolen. Du kommer att använda det här kontot för att godkänna appar i Play for Work-butiken, så håll koll på kontots namn och lösen ord.
 2. Aktivera Android-registrering genom att binda Google-kontot till Intune-klienten som hanteras i Configuration Manager:
-   1. Gå till **administrations** > **Översikt** > **Cloud Services** > **Microsoft Intune prenumerationer** och välj din Intune-prenumeration.
-   2. I menyfliksområdet klickar du på **Konfigurera plattformar** > **Android** och kontrollerar att **Aktivera Android-registrering** är markerat.
-   3. I menyfliksområdet klickar du på **Konfigurera plattformar** > **Android for Work**.
+   1. Gå till **administrations**  >  **Översikt**  >  **Cloud Services**  >  **Microsoft Intune prenumerationer** och välj din Intune-prenumeration.
+   2. I menyfliksområdet klickar du på **Konfigurera plattformar**  >  **Android** och kontrollerar att **Aktivera Android-registrering** är markerat.
+   3. I menyfliksområdet klickar du på **Konfigurera plattformar**  >  **Android for Work**.
    4. I dialog rutan klickar du på **Konfigurera Android for Work i Intune-konsolen**. Intune-konsolen öppnas i webbläsaren.
    5. Använd dina autentiseringsuppgifter för Intune-administratören för att logga in på Intune-portalen.
    6. Klicka på **Konfigurera** för att öppna Google Plays Android for Work-webbplats.
@@ -319,14 +319,14 @@ Du ser konto namnet och organisations namnet i Intune-portalen när bindningen �
 #### <a name="approve-and-deploy-android-for-work-apps"></a>Godkänn och distribuera Android for Work-appar
 Följ de här stegen för att godkänna appar i Play for Work-butiken, synkronisera dem till Configuration Manager-konsolen och distribuera dem till hanterade Android for Work-enheter. Om du vill distribuera appar till användarnas arbets profiler måste du godkänna apparna i Play for Work och sedan synkronisera apparna med Configuration Manager-konsolen.
 
-1. Öppna en webbläsare och gå till: https://play.google.com/work.
+1. Öppna en webbläsare och gå till: https://play.google.com/work .
 2. Logga in med det Google admin-konto som du har kopplat till din Intune-klient.
 3. Bläddra efter appar som du vill distribuera i din miljö och klicka på **Godkänn** för var och en av dem.
-4. Gå till **Administratörs** > **Översikt** > **Cloud Services** > **Android for Work** i Configuration Manager-konsolen och klicka på **Synkronisera**.
-5. Vänta i upp till 10 minuter för appar att synkronisera och gå sedan till översikt över **program bibliotek** > **Översikt över** > **program hantering** > **licens information för Store-appar**.
+4. Gå till **Administratörs**  >  **Översikt**  >  **Cloud Services**  >  **Android for Work** i Configuration Manager-konsolen och klicka på **Synkronisera**.
+5. Vänta i upp till 10 minuter för appar att synkronisera och gå sedan till översikt över **program bibliotek**  >  **Översikt över**  >  **program hantering**  >  **licens information för Store-appar**.
 6. Klicka på en app som har synkroniserats från spela upp för arbete och klicka sedan på **skapa program**.
 7. Slutför guiden och klicka på **Stäng**.
-8. Gå till **program bibliotek** > **Översikt** > program**hantering** > **program**, Välj en Android for Work-app och distribuera som vanligt.
+8. Gå till **program bibliotek**  >  **Översikt**program  >  **hantering**  >  **program**, Välj en Android for Work-app och distribuera som vanligt.
 
 Om du vill synkronisera Play for Work-appar med Configuration Manager måste du godkänna minst en app på webbplatsen Play for Work.
 
@@ -336,7 +336,7 @@ Hur du registrerar Android for Work-enheter liknar registrering för Android. H�
 #### <a name="create-and-deploy-a-configuration-item"></a>Skapa och distribuera ett konfigurations objekt
 Android for Work har två inställnings grupper för konfigurations objekt:
 - lösenordsinställning
-- Arbetsprofil
+- Arbets profil
 
 Du kan konfigurera innehålls delning mellan arbets profiler, samt följande konfigurations objekt på enheter som kör Android 6 eller senare:
 - Beteendet för appar som efterfrågar vissa behörigheter
@@ -347,7 +347,7 @@ Du kan prova detta genom att skapa ett konfigurations objekt via standard arbets
 #### <a name="perform-selective-wipe"></a>Utför selektiv rensning
 Enheter som har registrerats som Android for Work kan bara rensas selektivt eftersom du bara hanterar arbets profilen. Detta skyddar den personliga profilen från att rensas. Att utföra en selektiv rensning på en Android for Work-enhet tar bort arbets profilen, inklusive alla appar och data, och avregistrerar enheten.
 
-Om du vill rensa en Android for Work-enhet selektivt, använder du den normala [selektiva rensnings processen](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe) i Configuration Manager-konsolen.
+Om du vill rensa en Android for Work-enhet selektivt, använder du den normala [selektiva rensnings processen](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe) i Configuration Manager-konsolen.
 
 #### <a name="known-issues-for-android-for-work"></a>Kända problem för Android for Work
 Om **du konfigurerar synkroniseringsschemat i Android for Work-e-postprofiler kan de inte distribueras** Ett av alternativen i ConfigMgr-gränssnittet för e-postprofiler för Android for Work är "schema". På andra plattformar gör det möjligt för administratören att konfigurera ett schema för synkronisering av e-post och andra e-postkonton till de mobila enheter som den distribueras till. Det fungerar dock inte för Android for Work-e-postprofiler och om du väljer andra alternativ än "inte konfigurerad" kommer profilen inte att distribueras till några enheter.

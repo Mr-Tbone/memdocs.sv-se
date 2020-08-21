@@ -10,22 +10,22 @@ ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7848e3c0c38391ab61d10ad46cbb772c812539c7
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: c3f069225ec1af364a8580559ac4019e1bdd5f0f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906648"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693360"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-configuration-manager"></a>Planera för klient distribution till Windows Embedded-enheter i Configuration Manager
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
-<a name="BKMK_DeployClientEmbedded"></a>Om din Windows Embedded-enhet inte innehåller Configuration Manager-klienten, kan du använda valfri klient installations metod om enheten uppfyller de nödvändiga beroendena. Om den inbäddade enheten har stöd för skrivfilter måste du inaktivera dessa filer innan du installerar klienten, och sedan återaktivera filtren igen när klienten har installerats och tilldelats en plats.  
+<a name="BKMK_DeployClientEmbedded"></a> Om din Windows Embedded-enhet inte innehåller Configuration Manager-klienten, kan du använda valfri klient installations metod om enheten uppfyller de nödvändiga beroendena. Om den inbäddade enheten har stöd för skrivfilter måste du inaktivera dessa filer innan du installerar klienten, och sedan återaktivera filtren igen när klienten har installerats och tilldelats en plats.  
 
  Tänk på att om du inaktiverar filtren bör du inte inaktivera filterdrivrutinerna. Dessa drivrutiner startas normalt automatiskt när datorn startas. Om drivrutinerna inaktiveras kan det antingen förhindra att klienten installeras eller så kan det störa orkestrering av skrivfilter, vilket gör att klientåtgärderna misslyckas. Det här är de tjänster som är kopplade till varje skrivfiltertyp som måste fortsätta att köras:  
 
-|Skrivfiltertyp|Drivrutin|Typ|Beskrivning|  
+|Skrivfiltertyp|Drivrutinen|Typ|Beskrivning|  
 |-----------------------|------------|----------|-----------------|  
 |EWF|EWF|Kernel|Implementerar I/O-omdirigering på sektornivå på skyddade volymer.|  
 |FBWF|FBWF|Filsystem|Implementerar I/O-omdirigering på filnivå på skyddade volymer.|  
@@ -46,11 +46,11 @@ ms.locfileid: "82906648"
 
  Configuration Manager stöder hantering av följande typer av Skriv filter:  
 
-- Filbaserat Skriv filter (FBWF) – mer information finns i [filbaserat Skriv filter](https://docs.microsoft.com/previous-versions/windows/embedded/aa940926(v=winembedded.5)).  
+- Filbaserat Skriv filter (FBWF) – mer information finns i [filbaserat Skriv filter](/previous-versions/windows/embedded/aa940926(v=winembedded.5)).  
 
-- Förbättrat Skriv filter (EWF) RAM – mer information finns i [förbättrat Skriv filter](https://docs.microsoft.com/previous-versions/windows/embedded/ms912906(v=winembedded.5)).  
+- Förbättrat Skriv filter (EWF) RAM – mer information finns i [förbättrat Skriv filter](/previous-versions/windows/embedded/ms912906(v=winembedded.5)).  
 
-- Enhetligt Skriv filter (UWF) – mer information finns i [enhetligt Skriv filter](https://docs.microsoft.com/windows-hardware/customize/enterprise/unified-write-filter).  
+- Enhetligt Skriv filter (UWF) – mer information finns i [enhetligt Skriv filter](/windows-hardware/customize/enterprise/unified-write-filter).  
 
   Configuration Manager stöder inte Skriv filter åtgärder när Windows Embedded-enheten är i EWF RAM-läge.  
 

@@ -10,14 +10,14 @@ ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 2b851c03424af0ba0f826716b401705879338855
-ms.sourcegitcommit: 7a5196d4d9736c5cd52a23155c479523e52a097d
+ms.openlocfilehash: e0395d41c2886bca1d623fb2736bfc86012f89b4
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84436677"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696760"
 ---
-#  <a name="manage-settings-for-software-updates"></a><a name="BKMK_ManageSUSettings"></a>Hantera inställningar för program uppdateringar  
+#  <a name="manage-settings-for-software-updates"></a><a name="BKMK_ManageSUSettings"></a> Hantera inställningar för program uppdateringar  
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
@@ -40,7 +40,7 @@ Det finns specifika grupprincipinställningar som används av Windows Update Age
 När programuppdateringsplatsen har skapats för en plats tar klienterna emot en datorprincip som förser dem med programuppdateringsplatsens servernamn och konfigurerar den lokala principen **Ange sökväg till tjänsten Microsoft Update på intranätet** på datorn. WUA hämtar servernamnet som anges i inställningen **Ange intranätserver för identifiering av uppdateringar**, och sedan ansluter WUA till denna server när den söker igenom programuppdateringarnas kompatibiliteter. När en domänprincip skapas för inställningen **Ange sökväg till tjänsten Microsoft Update på intranätet** åsidosätts den lokala principen så att WUA kan ansluta till en annan server än platsen för programuppdatering. Om detta inträffar kan det hända att klienten söker efter programuppdateringarnas kompatibilitet med utgångspunkt i olika produkter, klassificeringar och språk. Därför bör du inte konfigurera Active Directory-principen för klientdatorerna.  
 
 ### <a name="allow-signed-content-from-intranet-microsoft-update-service-location-group-policy"></a>Grupprincipen Tillåt signerat innehåll från tjänsten Microsoft Update på intranätet  
-Du måste aktivera grupprincipinställningen **Tillåt signerat innehåll från Microsoft-uppdateringstjänst på intranätet** innan WUA (på datorerna) söker efter programuppdateringar som har skapats och publicerats med System Center Updates Publisher. När principinställningen har aktiverats godtar WUA programuppdateringar som tas emot via en plats i intranätet, om programuppdateringarna har signerats i certifikatarkivet **Betrodda utgivare** på den lokala datorn. Mer information om vilka grupprincipinställningar som krävs för Updates Publisher finns i [dokumentationsbiblioteket för Updates Publisher 2011](https://docs.microsoft.com/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
+Du måste aktivera grupprincipinställningen **Tillåt signerat innehåll från Microsoft-uppdateringstjänst på intranätet** innan WUA (på datorerna) söker efter programuppdateringar som har skapats och publicerats med System Center Updates Publisher. När principinställningen har aktiverats godtar WUA programuppdateringar som tas emot via en plats i intranätet, om programuppdateringarna har signerats i certifikatarkivet **Betrodda utgivare** på den lokala datorn. Mer information om vilka grupprincipinställningar som krävs för Updates Publisher finns i [dokumentationsbiblioteket för Updates Publisher 2011](/previous-versions/system-center/updates-publisher-2011/hh134742(v=technet.10)).  
 
 ### <a name="automatic-updates-configuration"></a>Konfiguration av automatiska uppdateringar  
 Automatiska uppdateringar gör att säkerhetsuppdateringar och andra viktiga uppdateringar kan hämtas till klientdatorerna. Automatiska uppdateringar konfigureras i grupprincipinställningen **Konfigurera automatiska uppdateringar** eller på kontrollpanelen på den lokala datorn. När Automatiska uppdateringar har aktiverats kan klientdatorerna ta emot uppdateringsaviseringar, och om inställningarna har konfigurerats rätt kan klientdatorerna hämta och installera nödvändiga uppdateringar. När Automatiska uppdateringar används samtidigt som programuppdateringar kan varje klientdator visa både aviseringsikoner och meddelandefönster om samma uppdatering. När klientdatorn måste startas om kan varje klientdator dessutom visa en dialogruta om omstarten för samma uppdatering.  
@@ -62,7 +62,7 @@ Använd följande procedur för att öppna egenskaper för programuppdatering.
    > [!NOTE]  
    >  I noden **alla program uppdateringar** visar Configuration Manager endast de program uppdateringar som har klassificeringen **kritisk** och **säkerhet** och som har släppts under de senaste 30 dagarna.  
 
-###  <a name="review-software-updates-information"></a><a name="BKMK_SoftwareUpdatesInformation"></a>Granska information om program uppdateringar  
+###  <a name="review-software-updates-information"></a><a name="BKMK_SoftwareUpdatesInformation"></a> Granska information om program uppdateringar  
 I egenskaperna för programuppdatering kan du granska detaljerad information om en programuppdatering. Den detaljerade informationen visas inte när du väljer fler än en programuppdatering. I följande avsnitt beskrivs informationen som är tillgänglig för en vald programuppdatering.  
 
 ####  <a name="software-update-details"></a><a name="BKMK_SoftwareUpdateDetails"></a> Programuppdateringsinformation  
@@ -124,7 +124,7 @@ På fliken **Maximal körningstid** kan du visa och konfigurera följande instä
 > [!IMPORTANT]  
 >  Se till att ange det maximala kör tids värde som är mindre än den konfigurerade underhålls perioden eller öka tiden för underhålls perioden till ett värde som är större än den maximala körnings tiden. Annars initieras aldrig installationen av programuppdateringen.  
 
-####  <a name="set-custom-severity"></a><a name="BKMK_SetCustomSeverity"></a>Ange anpassad allvarlighets grad  
+####  <a name="set-custom-severity"></a><a name="BKMK_SetCustomSeverity"></a> Ange anpassad allvarlighets grad  
 I egenskaperna för en programuppdatering kan du använda fliken **Anpassad allvarlighetsnivå** om du vill konfigurera anpassade allvarlighetsgrader för programuppdateringarna. Detta kan vara nödvändigt om de fördefinierade allvarlighetsgraderna inte motsvarar dina behov. De anpassade värdena visas i kolumnen **anpassad allvarlighets grad** i Configuration Manager-konsolen. Du kan sortera programuppdateringarna efter de anpassade allvarlighetsgraderna och kan även skapa frågor och rapporter som kan filtrera enligt dessa värden. Du kan konfigurera den här inställningen enbart för den centrala administrationsplatsen eller för en fristående primär plats.  
 
 Du kan konfigurera följande inställningar på fliken **Anpassad allvarlighetsnivå** .  
@@ -139,4 +139,4 @@ Om CRL-kontrollen används måste den vara aktive rad på de Configuration Manag
 #### <a name="to-enable-crl-checking"></a>Aktivera CRL-kontroll  
 På den dator som utför CRL-kontrollen går du till produkt-DVD: n och kör följande från en kommando tolk: **\SMSSETUP\BIN\X64 \\ ** < *language* > **\UpdDwnldCfg.exe/checkrevocation**.  
 
-Till exempel för engelska (US) kör **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe/checkrevocation**  
+Till exempel för engelska (US) kör **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe/checkrevocation**

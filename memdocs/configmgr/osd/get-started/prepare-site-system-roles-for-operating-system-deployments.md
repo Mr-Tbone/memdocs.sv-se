@@ -10,12 +10,12 @@ ms.assetid: 0ef5f3ce-b0e4-4775-b5c2-b245e45b4194
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1beec2f5ef7b6da9f1f093300ec6c2b239e7396e
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 5d9331ce452e40944e4a9b363773d254a32f2c58
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81724057"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697491"
 ---
 # <a name="prepare-site-system-roles-for-os-deployments-with-configuration-manager"></a>Förbereda plats system roller för operativ Systems distributioner med Configuration Manager
 
@@ -25,14 +25,14 @@ Om du vill distribuera operativ system i Configuration Manager måste du först 
 
 
 
-##  <a name="distribution-points"></a><a name="BKMK_DistributionPoints"></a>Distributions platser  
+##  <a name="distribution-points"></a><a name="BKMK_DistributionPoints"></a> Distributions platser  
 
 Distributions platsens plats system roll innehåller källfiler som kan hämtas av klienter. Det här innehållet gäller för program, program uppdateringar, OS-avbildningar, start avbildningar och driv rutins paket. Styra innehålls distribution med hjälp av alternativ för bandbredd, begränsning och schemaläggning.  
 
 Det är viktigt att du har tillräckligt med distributions platser för att stödja distribution av operativ system till datorer. Det är också viktigt att du planerar för placeringen av dessa distributions platser i hierarkin. Mer information finns i [Hantera innehåll och innehålls infrastruktur](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md). Den här artikeln innehåller några ytterligare planerings överväganden för distributions platser som är speciella för distribution av operativ system.  
 
 
-###  <a name="additional-planning-considerations-for-distribution-points"></a><a name="BKMK_AdditionalPlanning"></a>Ytterligare planerings överväganden för distributions platser  
+###  <a name="additional-planning-considerations-for-distribution-points"></a><a name="BKMK_AdditionalPlanning"></a> Ytterligare planerings överväganden för distributions platser  
 
 Följande objekt är ytterligare planerings saker att överväga för distributions platser:  
 
@@ -58,12 +58,12 @@ Om du måste distribuera ett operativ system till ett angivet antal datorer inom
 Du kan distribuera ett operativ system till en distributions plats, men operativ system avbildningen måste tas emot från en annan distributions plats.  
 
 
-###  <a name="configuring-distribution-points-to-accept-pxe-requests"></a><a name="BKMK_PXEDistributionPoint"></a>Konfigurera distributions platser för att godkänna PXE-begäranden  
+###  <a name="configuring-distribution-points-to-accept-pxe-requests"></a><a name="BKMK_PXEDistributionPoint"></a> Konfigurera distributions platser för att godkänna PXE-begäranden  
 
 Om du vill distribuera operativ system till Configuration Manager klienter som gör PXE-startbegäranden konfigurerar du en eller flera distributions platser så att PXE-begäranden accepteras. När du har konfigurerat distributions platsen svarar den på PXE-startbegäranden och avgör vilken distributions åtgärd som ska vidtas. Mer information finns i [Install or modify a distribution point](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_config-pxe).  
 
 
-###  <a name="customize-the-ramdisk-tftp-block-and-window-sizes-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a>Anpassa RamDisk TFTP-block och fönster storlekar på PXE-aktiverade distributions platser  
+###  <a name="customize-the-ramdisk-tftp-block-and-window-sizes-on-pxe-enabled-distribution-points"></a><a name="BKMK_RamDiskTFTP"></a> Anpassa RamDisk TFTP-block och fönster storlekar på PXE-aktiverade distributions platser  
 
 Du kan anpassa RamDisk TFTP-block och fönster storlekar för PXE-aktiverade distributions platser. Om du har anpassat nätverket kan en stor block-eller fönster storlek medföra att hämtningen av start avbildningen inte kan slutföras med ett timeout-fel. Med anpassningarna av RamDisk TFTP-block och fönster storlek kan du optimera TFTP-trafik när du använder PXE för att uppfylla dina särskilda nätverks krav. Testa de anpassade inställningarna i din miljö för att avgöra vilken konfiguration som är mest effektiv.  
 
@@ -75,7 +75,7 @@ Du kan anpassa RamDisk TFTP-block och fönster storlekar för PXE-aktiverade dis
 #### <a name="modify-the-ramdisk-tftp-window-size"></a>Ändra storlek på RamDisk TFTP-fönstret  
 Om du vill anpassa storleken på RamDisk TFTP-fönstret lägger du till följande register nyckel på PXE-aktiverade distributions platser:  
 
-- **Plats**:`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP`  
+- **Plats**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP`  
 - **Namn**: RamDiskTFTPWindowSize  
 - **Typ**: REG_DWORD  
 - **Värde**: (anpassad fönster storlek)  
@@ -84,7 +84,7 @@ Om du vill anpassa storleken på RamDisk TFTP-fönstret lägger du till följand
 #### <a name="modify-the-ramdisk-tftp-block-size"></a>Ändra storlek på RamDisk TFTP-blocket  
 Om du vill anpassa storleken på RamDisk TFTP-fönstret lägger du till följande register nyckel på PXE-aktiverade distributions platser:  
 
-- **Plats**:`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP`  
+- **Plats**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP`  
 - **Namn**: RamDiskTFTPBlockSize  
 - **Typ**: REG_DWORD  
 - **Värde**: (anpassad block storlek)  
@@ -94,7 +94,7 @@ Om du vill anpassa storleken på RamDisk TFTP-fönstret lägger du till följand
 > Både Windows Deployment Services och Configuration Manager PXE responder-tjänsten har stöd för dessa TFTP-konfigurationer.  
 
 
-###  <a name="configure-distribution-points-to-support-multicast"></a><a name="BKMK_DPMulticast"></a>Konfigurera distributions platser som stöder multicast  
+###  <a name="configure-distribution-points-to-support-multicast"></a><a name="BKMK_DPMulticast"></a> Konfigurera distributions platser som stöder multicast  
 
 Multicast är en nätverks optimerings metod. Använd den på distributions platser när flera klienter sannolikt kommer att ladda ned samma OS-avbildning på samma gång. När du använder multicast kan flera datorer samtidigt hämta operativ system avbildningen som den är multicast av distributions platsen. Utan multicast skickar distributions platsen en kopia av data till varje klient via en separat anslutning. Mer information finns i [använda multicast för att distribuera Windows via nätverket](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
@@ -102,7 +102,7 @@ Innan du distribuerar operativ systemet måste du konfigurera en distributions p
 
 
 
-##  <a name="state-migration-point"></a><a name="BKMK_StateMigrationPoints"></a>Plats för tillståndsmigrering  
+##  <a name="state-migration-point"></a><a name="BKMK_StateMigrationPoints"></a> Plats för tillståndsmigrering  
 
 Platsen för tillståndsmigrering lagrar användar tillstånds data som USMT samlar in på en dator och sedan återställs på en annan dator. Men när du fångar in användar inställningar för en OS-distribution på samma dator, till exempel en distribution där du uppdaterar Windows på mål datorn, kan du välja om du vill lagra data på samma dator med hjälp av hårda länkar eller använda en plats för tillståndsmigrering. För vissa dator distributioner skapar Configuration Manager automatiskt en association mellan tillstånds lagret och mål datorn när du skapar tillstånds lagret. Tänk på följande faktorer när du planerar för platsen för tillståndsmigrering:    
 
@@ -114,9 +114,9 @@ Storleken på användartillståndet har en direkt inverkan på diskutrymmet på 
 
 ### <a name="user-state-migration-tool"></a>Migreringsverktyg för användartillstånd  
 
-Om du vill avbilda och återställa användar tillstånd under distributionen av operativ systemen använder du ett User State Migration Tool-paket (USMT) som pekar på USMT-källfilerna. Configuration Manager skapar automatiskt det här paketet i Configuration Manager-konsolen i program **biblioteks** > **program hanterings** > **paket**. Configuration Manager använder USMT 10 för att avbilda användar tillstånd från ett operativ system och sedan återställa det till ett annat. Windows Assessment and Deployment Kit (Windows ADK) för Windows 10 innehåller USMT 10.
+Om du vill avbilda och återställa användar tillstånd under distributionen av operativ systemen använder du ett User State Migration Tool-paket (USMT) som pekar på USMT-källfilerna. Configuration Manager skapar automatiskt det här paketet i Configuration Manager-konsolen i program **biblioteks**  >  **program hanterings**  >  **paket**. Configuration Manager använder USMT 10 för att avbilda användar tillstånd från ett operativ system och sedan återställa det till ett annat. Windows Assessment and Deployment Kit (Windows ADK) för Windows 10 innehåller USMT 10.
 
-En beskrivning av olika migrerings scenarier för USMT 10 finns i [vanliga scenarier för migrering](https://docs.microsoft.com/windows/deployment/usmt/usmt-common-migration-scenarios) i Windows-dokumentationen.  
+En beskrivning av olika migrerings scenarier för USMT 10 finns i [vanliga scenarier för migrering](/windows/deployment/usmt/usmt-common-migration-scenarios) i Windows-dokumentationen.  
 
 
 ### <a name="retention-policy"></a>Retention-principen  
@@ -156,4 +156,4 @@ När du använder dessa guider uppmanas du att ange följande information för p
 
 -   Huruvida tillståndsmigreringsplatsen bara svarar på förfrågningar om att återställa användartillståndsdata. När du aktiverar det här alternativet kan du inte använda platsen för tillståndsmigrering för att lagra användar tillstånds data.  
 
-Anvisningar för hur du installerar en plats system roll finns i [lägga till plats system roller](../../core/servers/deploy/configure/add-site-system-roles.md).  
+Anvisningar för hur du installerar en plats system roll finns i [lägga till plats system roller](../../core/servers/deploy/configure/add-site-system-roles.md).

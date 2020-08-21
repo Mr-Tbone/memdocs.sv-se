@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 69f234a2-b04b-445a-b81f-6b4acfc00eaf
-ms.openlocfilehash: ce3947c8ca3c562869fdfed2ddba4d9b160902be
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: bae995b0704e2b2774d5f002cbf907777a3edcf0
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129406"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697049"
 ---
 # <a name="office-365-client-management-dashboard"></a>Instrument panel för Office 365-klient hantering
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
 > [!Note]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
 Från och med Configuration Manager version 1802 kan du granska Microsoft 365 Apps-klient information från instrument panelen för klient hantering i Office 365. Instrument panelen för Office 365-klient hantering visar en lista över relevanta enheter när diagram avsnitt har marker ATS. <!--1357281 -->
 
@@ -57,9 +57,9 @@ Plats servern på den högsta nivån måste ha åtkomst till följande slut punk
 
 *(Lanseras i version 1910 som ett krav)*
 
-Från och med version 1910 måste du aktivera data insamling för Microsoft 365 appar för att fylla i informationen i **instrument panelen för Office 365 ProPlus pilot och hälso tillstånd**. Data lagras i Configuration Manager plats databasen och skickas inte till Microsoft.
+Från och med version 1910 måste du aktivera data insamling för Microsoft 365 appar för att fylla i informationen i  **instrument panelen för Office 365 ProPlus pilot och hälso tillstånd**. Data lagras i Configuration Manager plats databasen och skickas inte till Microsoft.
 
-Dessa data skiljer sig från diagnostikdata, som beskrivs i [diagnostikdata som skickas från Microsoft 365-appar till Microsoft](https://docs.microsoft.com/deployoffice/privacy/overview-privacy-controls#diagnostic-data-sent-from-office-365-proplus-to-microsoft).
+Dessa data skiljer sig från diagnostikdata, som beskrivs i [diagnostikdata som skickas från Microsoft 365-appar till Microsoft](/deployoffice/privacy/overview-privacy-controls#diagnostic-data-sent-from-office-365-proplus-to-microsoft).
 
 Du kan aktivera data insamling antingen med hjälp av grupprincip eller genom att redigera registret.
 
@@ -67,7 +67,7 @@ Du kan aktivera data insamling antingen med hjälp av grupprincip eller genom at
 
 1. Hämta de senaste [administrativa mallarna från Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49030).
 2. Aktivera princip inställningen Aktivera **telemetri för data insamling** under `User Configuration\Policies\Administrative Templates\Microsoft Office 2016\Telemetry Dashboard` .
-    - Du kan också använda princip inställningen med [Office Cloud policy service](https://docs.microsoft.com/DeployOffice/overview-office-cloud-policy-service).
+    - Du kan också använda princip inställningen med [Office Cloud policy service](/DeployOffice/overview-office-cloud-policy-service).
     - Princip inställningen används också av instrument panelen för Office-telemetri, som du inte behöver distribuera för den här data insamlingen.
 
 #### <a name="enable-data-collection-from-the-registry"></a>Aktivera data insamling från registret
@@ -90,7 +90,7 @@ Instrument panelen för Office 365-klient hantering innehåller diagram med föl
 - Microsoft 365 Apps klient kanaler mer information finns i [Översikt över uppdaterings kanaler för Microsoft 365 appar](/DeployOffice/overview-of-update-channels-for-office-365-proplus).
 
 
-## <a name="integration-for-microsoft-365-apps-readiness"></a><a name="bkmk_o365_readiness"></a>Integrering av beredskap för Microsoft 365 Apps
+## <a name="integration-for-microsoft-365-apps-readiness"></a><a name="bkmk_o365_readiness"></a> Integrering av beredskap för Microsoft 365 Apps
 <!--3735402-->
 Från och med Configuration Manager version 1902 kan du använda instrument panelen för att identifiera enheter med hög exakthet som är klara att uppgraderas till Microsoft 365 appar. Den här integrationen ger insikter om potentiella kompatibilitetsproblem med tillägg och makron i din miljö. Använd sedan Configuration Manager för att distribuera Microsoft 365 appar till klara enheter.
 
@@ -105,12 +105,12 @@ Välj ett tillstånd att gå igenom till en enhets lista. Den här beredskap rap
 
 - Aktivera maskin varu inventering i klient inställningar. Mer information finns i avsnittet [krav](#prerequisites) .  
 
-- Enheten behöver anslutning till Office Content Delivery Network (CDN) för att kunna hämta en tilläggs fil. Mer information finns i [nätverk för innehålls leverans](https://docs.microsoft.com/office365/enterprise/content-delivery-networks). Om enheten inte kan ladda ned den här filen måste tilläggets tillstånd *granskas*.  
+- Enheten behöver anslutning till Office Content Delivery Network (CDN) för att kunna hämta en tilläggs fil. Mer information finns i [nätverk för innehålls leverans](/office365/enterprise/content-delivery-networks). Om enheten inte kan ladda ned den här filen måste tilläggets tillstånd *granskas*.  
 
     > [!Note]  
     > Inga data skickas till Microsoft för den här funktionen.  
 
-### <a name="detailed-macro-readiness"></a><a name="bkmk_ort"></a>Detaljerad makro beredskap
+### <a name="detailed-macro-readiness"></a><a name="bkmk_ort"></a> Detaljerad makro beredskap
 
 Som standard tittar skannings agenten på listan över senast använda filer (MRU) på varje enhet. Den räknar filerna i den här listan som stöder makron. Dessa filer innehåller följande typer:
 - Makroaktiverade Office-filformat, till exempel Excel-makroaktiverade arbets böcker (. xlsm) eller Word-Makroaktiverat dokument (. docm)  
@@ -126,7 +126,7 @@ ReadinessReportCreator.exe -mru -output c:\temp -silent
 
 Mer information finns i [Hämta beredskaps information för flera användare i ett företag](/deployoffice/use-the-readiness-toolkit-to-assess-application-compatibility-for-office-365-pro#getting-readiness-information-for-multiple-users-in-an-enterprise).
 
-## <a name="microsoft-365-apps-readiness-dashboard"></a><a name="bkmk_readiness-dash"></a>Instrument panel för Microsoft 365 Apps-beredskap
+## <a name="microsoft-365-apps-readiness-dashboard"></a><a name="bkmk_readiness-dash"></a> Instrument panel för Microsoft 365 Apps-beredskap
 
 *(Lanseras i version 1906)*
 
@@ -185,7 +185,7 @@ Den här rapporten kan användas för att identifiera vilka enheter som har nyli
 
 Mer information om hur du utför genomsökningen finns i [detaljerad makro beredskap](#bkmk_ort).
 
-## <a name="office-365-proplus-pilot-and-health-dashboard"></a><a name="bkmk_pilot"></a>Instrument panel för Office 365 ProPlus pilot och hälso tillstånd
+## <a name="office-365-proplus-pilot-and-health-dashboard"></a><a name="bkmk_pilot"></a> Instrument panel för Office 365 ProPlus pilot och hälso tillstånd
 <!--4488272, 4488301-->
 *(Lanseras i version 1910)*
 
@@ -248,7 +248,7 @@ Den här panelen sammanfattar enheter som har problem med tillägg, makron eller
 
 ### <a name="known-issues"></a>Kända problem
 
-Det finns ett känt problem med panelen **distribuera pilot** . Vid detta tillfälle kan det inte användas för att distribuera till en pilot. Lösningen är det befintliga arbets flödet för att distribuera ett program med hjälp av guiden stegvis distribution. <!--5525871-->
+Det finns ett känt problem med panelen **distribuera pilot**  . Vid detta tillfälle kan det inte användas för att distribuera till en pilot. Lösningen är det befintliga arbets flödet för att distribuera ett program med hjälp av guiden stegvis distribution. <!--5525871-->
 
 ## <a name="next-steps"></a>Nästa steg
 

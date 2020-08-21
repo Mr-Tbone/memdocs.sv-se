@@ -2,7 +2,7 @@
 title: Planera för Software Center
 titleSuffix: Configuration Manager
 description: Bestäm hur du vill konfigurera och anpassa Software Center för att användare ska kunna interagera med Configuration Manager.
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c6826794-aa19-469d-ae47-1a0db68a1ff1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5b32fc2de3c945ff2292f119a10d84d982d08677
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 802dbaa4188199e555a5cc0143ed599ad454e27e
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127366"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695179"
 ---
 # <a name="plan-for-software-center"></a>Planera för Software Center
 
@@ -25,7 +25,7 @@ Användare ändrar inställningar, söker efter program och installerar program 
 
 Mer information om andra funktioner i Software Center finns i [användar handboken för Software Center](../../core/understand/software-center.md).  
 
-## <a name="configure-software-center"></a><a name="bkmk_userex"></a>Konfigurera Software Center  
+## <a name="configure-software-center"></a><a name="bkmk_userex"></a> Konfigurera Software Center  
 
 Uppdatera Configuration Manager-platser och-klienter till version 1906 eller senare för att dra nytta av de senaste funktionerna i Software Center.
 
@@ -44,6 +44,8 @@ Uppdatera Configuration Manager-platser och-klienter till version 1906 eller sen
 
 - Användare kan konfigurera mappning mellan användare och enhet i Software Center. Mer information finns i [Länka användare och enheter med mappning mellan användare och enhet](../deploy-use/link-users-and-devices-with-user-device-affinity.md).
 
+- Från och med version 2006 kan du konfigurera samhanterade enheter så att de använder Företagsportal för både Intune-och Configuration Manager-appar. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](../../comanage/company-portal.md).<!--CMADO-3601237,INADO-4297660-->
+
 > [!IMPORTANT]
 > Om du vill dra nytta av nya Configuration Manager funktioner måste du först uppdatera klienter till den senaste versionen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.
 
@@ -57,7 +59,7 @@ Uppdatera Configuration Manager-platser och-klienter till version 1906 eller sen
 
 - Tidigare valde Software Center den första hanterings platsen från listan över tillgängliga servrar. Från och med version 1906 använder den samma hanterings plats som klienten använder. Den här ändringen gör att Software Center kan använda samma hanterings plats från den tilldelade primära platsen som klienten.
 
-## <a name="replace-toast-notifications-with-dialog-window"></a><a name="bkmk_impact"></a>Ersätt popup-meddelanden med dialog fönster
+## <a name="replace-toast-notifications-with-dialog-window"></a><a name="bkmk_impact"></a> Ersätt popup-meddelanden med dialog fönster
 
 <!--3555947-->
 Användare ser ibland inte Windows popup-meddelanden om en omstart eller en nödvändig distribution. Sedan visas inte upplevelsen för att försätta påminnelsen i vilo läge. Det här beteendet kan leda till en låg användar upplevelse när klienten når en tids gräns.
@@ -141,4 +143,7 @@ Om du använder program katalogen följer anpassningen följande prioriteringar:
 ## <a name="see-also"></a>Se även
 
 - [Användarhandbok för Software Center](../../core/understand/software-center.md)
+
 - [Planera för och konfigurera programhantering](plan-for-and-configure-application-management.md)
+
+- [Använd Företagsportal-appen på samhanterade enheter](../../comanage/company-portal.md)

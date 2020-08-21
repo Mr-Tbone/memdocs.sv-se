@@ -10,12 +10,12 @@ ms.assetid: 140c522f-d09a-40b6-a4b0-e0d14742834a
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 9cb8097fbdd57184e5cd0e229cf96dcb317cf1e5
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: cc05ae5a9be6c437fab60f8c4c5a45d61e8c3e65
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127349"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694890"
 ---
 # <a name="tutorial-enable-co-management-for-existing-configuration-manager-clients"></a>Självstudie: Aktivera samhantering för befintliga Configuration Manager-klienter
 
@@ -50,7 +50,7 @@ Använd den här självstudien när:
 
 Om du inte redan finns i din miljö kan du under den här självstudien:
 
-- Konfigurera [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-select-installation) mellan din lokala Active Directory och din Azure Active Directory-klient (AD).
+- Konfigurera [Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-select-installation) mellan din lokala Active Directory och din Azure Active Directory-klient (AD).
 
 > [!TIP]
 > Du behöver inte längre köpa och tilldela enskilda Intune-eller EMS-licenser till dina användare. Mer information finns i [vanliga frågor och svar om produkt och licensiering](../core/understand/product-and-licensing-faq.md#bkmk_mem).
@@ -78,10 +78,10 @@ När du konfigurerar en hybrid Azure AD konfigurerar du verkligen integrering av
 >
 > Om du vill ha mer information om hybrid Azure AD börjar du med följande artiklar i Azure Active Directory-dokumentationen:
 >
-> - [Planera implementeringen av Azure AD-anslutningen](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan)
-> - [Planera implementering av Azure AD-anslutningshybriden](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
-> - [Kontrollera Azure AD-anslutningshybriden för dina enheter](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-control)
-> - [Konfigurera Azure AD-anslutningshybrid för federerade domäner](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-federated-domains)  
+> - [Planera implementeringen av Azure AD-anslutningen](/azure/active-directory/devices/azureadjoin-plan)
+> - [Planera implementering av Azure AD-anslutningshybriden](/azure/active-directory/devices/hybrid-azuread-join-plan)
+> - [Kontrollera Azure AD-anslutningshybriden för dina enheter](/azure/active-directory/devices/hybrid-azuread-join-control)
+> - [Konfigurera Azure AD-anslutningshybrid för federerade domäner](/azure/active-directory/devices/hybrid-azuread-join-federated-domains)  
 
 ### <a name="set-up-azure-ad-connect"></a>Konfigurera Azure AD Connect
 
@@ -92,7 +92,7 @@ Från och med version 1.1.819.0 tillhandahåller Azure AD Connect en guide för 
 Om du vill konfigurera Azure AD Connect behöver du autentiseringsuppgifterna för en global administratör för Azure AD.  
 
 > [!TIP]  
-> Följande procedur bör inte betraktas som auktoritativ för installation av Azure AD Connect, men tillhandahålls här för att effektivisera konfigurationen av samhantering mellan Intune och Configuration Manager. Information om det auktoritativa innehållet på denna och relaterade procedurer för konfiguration av Azure AD finns i [Konfigurera hybrid Azure AD-anslutning för hanterade domäner](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-managed-domains) i Azure AD-dokumentationen.  
+> Följande procedur bör inte betraktas som auktoritativ för installation av Azure AD Connect, men tillhandahålls här för att effektivisera konfigurationen av samhantering mellan Intune och Configuration Manager. Information om det auktoritativa innehållet på denna och relaterade procedurer för konfiguration av Azure AD finns i [Konfigurera hybrid Azure AD-anslutning för hanterade domäner](/azure/active-directory/devices/hybrid-azuread-join-managed-domains) i Azure AD-dokumentationen.  
 
 #### <a name="configure-a-hybrid-azure-ad-join-using-azure-ad-connect"></a>Konfigurera en hybrid Azure AD-anslutning med hjälp av Azure AD Connect
 
@@ -107,7 +107,7 @@ Om du vill konfigurera Azure AD Connect behöver du autentiseringsuppgifterna f�
    Du kan välja alternativet för att stöda domänanslutna Windows-enheter med äldre versioner, men tänk på att samhantering av enheter bara stöds för Windows 10.
 8. På sidan **SCP** , för varje lokal skog som du vill Azure AD Connect konfigurera tjänst anslutnings punkten (SCP), utför följande steg och välj sedan **Nästa**:  
    1. Välj skogen.  
-   2. Välj autentiseringstjänst.  Om du har en federerad domän väljer du AD FS server om inte din organisation har enbart Windows 10-klienter och du har konfigurerat synkronisering av dator/enhet eller om din organisation använder [SeamlessSSO](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).  
+   2. Välj autentiseringstjänst.  Om du har en federerad domän väljer du AD FS server om inte din organisation har enbart Windows 10-klienter och du har konfigurerat synkronisering av dator/enhet eller om din organisation använder [SeamlessSSO](/azure/active-directory/hybrid/how-to-connect-sso).  
    3. Klicka på **Lägg till** för att ange autentiseringsuppgifter för företagsadministratör.  
 9. Hoppa över det här steget om du har en hanterad domän.  
 
@@ -115,7 +115,7 @@ Om du vill konfigurera Azure AD Connect behöver du autentiseringsuppgifterna f�
 10. På sidan **klar att konfigurera** väljer du **Konfigurera**.
 11. På sidan **konfigurationen har slutförts** väljer du **Avsluta**.
 
-Om du får problem med att slutföra hybrid Azure AD-anslutning för domänanslutna Windows-enheter läser du [Felsöka hybrid Azure AD-anslutning för aktuella Windows-enheter](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-hybrid-join-windows-current).
+Om du får problem med att slutföra hybrid Azure AD-anslutning för domänanslutna Windows-enheter läser du [Felsöka hybrid Azure AD-anslutning för aktuella Windows-enheter](/azure/active-directory/devices/troubleshoot-hybrid-join-windows-current).
 
 ## <a name="configure-client-settings-to-direct-clients-to-register-with-azure-ad"></a>Konfigurera klient inställningar för att dirigera klienter att registrera med Azure AD
 
@@ -155,7 +155,7 @@ Med automatisk registrering kan användarna registrera sina Windows 10-enheter t
     > [!NOTE]
     > Vissa klienter kanske inte har dessa alternativ för att konfigurera.<!-- SCCMDocs#1230 -->
     >
-    > **Microsoft Intune** hur du konfigurerar MDM-appen för Azure AD. **Microsoft Intune registreringen** är en särskild Azure AD-app som skapas när du tillämpar Multi-Factor Authentication-principer för iOS-och Android-registrering. Mer information finns i [Kräv Multi-Factor Authentication för enhets registrering i Intune](https://docs.microsoft.com/intune/enrollment/multi-factor-authentication).
+    > **Microsoft Intune** hur du konfigurerar MDM-appen för Azure AD. **Microsoft Intune registreringen** är en särskild Azure AD-app som skapas när du tillämpar Multi-Factor Authentication-principer för iOS-och Android-registrering. Mer information finns i [Kräv Multi-Factor Authentication för enhets registrering i Intune](/intune/enrollment/multi-factor-authentication).
 
 5. För MDM-användar omfång väljer du **alla**och sedan **Spara**.  
 

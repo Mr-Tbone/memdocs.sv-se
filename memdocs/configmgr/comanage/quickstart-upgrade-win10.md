@@ -10,16 +10,16 @@ ms.assetid: 561eb5b6-f90c-485a-91c2-e45bb0ce7877
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e11a6130fb9f7d86b7d3377cc4120d4e61c43d2d
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: d41a0806a33ac627eceaafab54c73c31ea013365
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711464"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694839"
 ---
 # <a name="upgrade-windows-10-for-co-management"></a>Uppgradera Windows 10 för samhantering
 
-När du arbetar för att registrera din organisation för samhantering, är det viktigt att bli en betydande Hurdle för vissa kunder. Co-Management kräver [Windows 10 version 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) eller senare. När du uppdaterar Windows och konfigurerar automatisk registrering registreras dina klienter automatiskt för samhantering.
+När du arbetar för att registrera din organisation för samhantering, är det viktigt att bli en betydande Hurdle för vissa kunder. Co-Management kräver [Windows 10 version 1709](/windows/whats-new/whats-new-windows-10-version-1709) eller senare. När du uppdaterar Windows och konfigurerar automatisk registrering registreras dina klienter automatiskt för samhantering.
 
 I följande videoklipp är Senior program hanterare Anders York och produkt marknadsförings hanterarens låsnings-Ainley diskutera och demo som uppgraderar till Windows 10 för samhantering:
 
@@ -31,7 +31,7 @@ I följande videoklipp är Senior program hanterare Anders York och produkt mark
 
 Bland andra plattforms framsteg, Windows 10 version 1709 och senare har stöd för automatisk registrering. Det här beteendet gör att en enhet registreras automatiskt i Intune när den anslöts Azure Active Directory (Azure AD). 
 
-Mer information finns i [Aktivera automatisk registrering i Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment).
+Mer information finns i [Aktivera automatisk registrering i Windows 10](/intune/windows-enroll#enable-windows-10-automatic-enrollment).
 
 
 ## <a name="how-to-do-it"></a>Gör så här
@@ -61,5 +61,4 @@ En stor europeisk program varu tillverkare har använt en tidig antagande grupp.
 
 Om du behöver hjälp med uppgraderingen av Windows 10 när som helst i processen går du till [Microsoft FastTrack](https://Microsoft.com/FastTrack/), loggar in och ber om hjälp. 
 
-Mer information finns i [få hjälp från FastTrack](quickstart-fasttrack.md). 
-
+Mer information finns i [få hjälp från FastTrack](quickstart-fasttrack.md).

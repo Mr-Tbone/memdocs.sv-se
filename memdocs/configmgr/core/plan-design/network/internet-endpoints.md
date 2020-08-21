@@ -10,12 +10,12 @@ ms.assetid: b34fe701-5d05-42be-b965-e3dccc9363ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bc3e1312c214f871635a65d8d0031e06ea4ad8d9
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: fbb5d524551f5ff2c0a04b62b0f494046eee7a45
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126481"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692696"
 ---
 # <a name="internet-access-requirements"></a>Krav för Internet-åtkomst
 
@@ -30,7 +30,7 @@ Configuration Manager använder följande Microsoft URL-vidarebefordrings tjäns
 
 Även om de inte uttryckligen anges i avsnitten nedan, bör du alltid tillåta dessa slut punkter.
 
-## <a name="service-connection-point"></a><a name="bkmk_scp"></a>Tjänst anslutnings punkt
+## <a name="service-connection-point"></a><a name="bkmk_scp"></a> Tjänst anslutnings punkt
 
 Dessa konfigurationer gäller för den dator som är värd för tjänst anslutnings punkten och eventuella brand väggar mellan datorn och Internet. Båda måste tillåta kommunikation via utgående port **tcp 443** för https och utgående port **TCP 80** för http till nedanstående Internet platser.
 
@@ -45,7 +45,7 @@ Andra Configuration Manager-funktioner kan kräva ytterligare slut punkter från
 
 Från och med version 2002, om Configuration Manager-platsen inte kan ansluta till obligatoriska slut punkter för en moln tjänst, genererar den en kritisk status meddelande-ID 11488. När den inte kan ansluta till tjänsten ändras SMS_SERVICE_CONNECTOR komponent status till kritisk. Visa detaljerad status i noden [komponent status](../../servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorSystemStatus) i Configuration Manager-konsolen.<!-- 5566763 -->
 
-### <a name="updates-and-servicing"></a><a name="bkmk_scp-updates"></a>Uppdateringar och underhåll
+### <a name="updates-and-servicing"></a><a name="bkmk_scp-updates"></a> Uppdateringar och underhåll
 
 Mer information om den här funktionen finns i [uppdateringar och underhåll för Configuration Manager](../../servers/manage/updates.md).
 
@@ -84,30 +84,30 @@ Mer information om den här funktionen finns i [hantera Windows som en tjänst](
 
 Mer information om den här funktionen finns i [Konfigurera Azure-tjänster för användning med Configuration Manager](../../servers/deploy/configure/azure-services-wizard.md).
 
-- `management.azure.com`(Offentligt Azure-moln)
-- `management.usgovcloudapi.net`(Azure-moln för amerikanska myndigheter)
+- `management.azure.com` (Offentligt Azure-moln)
+- `management.usgovcloudapi.net` (Azure-moln för amerikanska myndigheter)
 
 ## <a name="co-management"></a>Samhantering
 
-Om du registrerar Windows 10-enheter till Microsoft Intune för samhantering kontrollerar du att enheterna kan komma åt de slut punkter som krävs av Intune. Mer information finns i [nätverks slut punkter för Microsoft Intune](https://docs.microsoft.com/intune/intune-endpoints).
+Om du registrerar Windows 10-enheter till Microsoft Intune för samhantering kontrollerar du att enheterna kan komma åt de slut punkter som krävs av Intune. Mer information finns i [nätverks slut punkter för Microsoft Intune](/intune/intune-endpoints).
 
 ## <a name="microsoft-store-for-business"></a>Microsoft Store för företag
 
-Om du integrerar Configuration Manager med [Microsoft Store för företag](../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md)kontrollerar du att tjänst anslutnings punkten och de riktade enheterna har åtkomst till moln tjänsten. Mer information finns i [konfiguration av Microsoft Store för företag-proxy](https://docs.microsoft.com/microsoft-store/prerequisites-microsoft-store-for-business#proxy-configuration).
+Om du integrerar Configuration Manager med [Microsoft Store för företag](../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md)kontrollerar du att tjänst anslutnings punkten och de riktade enheterna har åtkomst till moln tjänsten. Mer information finns i [konfiguration av Microsoft Store för företag-proxy](/microsoft-store/prerequisites-microsoft-store-for-business#proxy-configuration).
 
 ## <a name="delivery-optimization"></a>Leveransoptimering
 
-Om du använder leverans optimering måste klienterna kommunicera med sin moln tjänst:`*.do.dsp.mp.microsoft.com`
+Om du använder leverans optimering måste klienterna kommunicera med sin moln tjänst: `*.do.dsp.mp.microsoft.com`
 
 Distributions platser som har stöd för Microsoft Connected cache kräver även dessa slut punkter.
 
 Mer information finns i följande artiklar:
 
-- [Vanliga frågor och svar om leverans optimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions)
+- [Vanliga frågor och svar om leverans optimering](/windows/deployment/update/waas-delivery-optimization#frequently-asked-questions)
 - [Grundläggande begrepp för innehålls hantering i Configuration Manager](../hierarchy/fundamental-concepts-for-content-management.md#delivery-optimization)
 - [Microsoft Connected cache i Configuration Manager](../hierarchy/microsoft-connected-cache.md)
 
-## <a name="cloud-services"></a><a name="bkmk_cloud"></a>Moln tjänster
+## <a name="cloud-services"></a><a name="bkmk_cloud"></a> Moln tjänster
 
 <!-- SCCMDocs-pr #3402 -->
 
@@ -132,23 +132,23 @@ För distribution av CMG/CDP-tjänst behöver tjänst anslutnings punkten åtkom
 
 - För identifiering av Azure AD-användare:
 
-  - Version 1902 och senare: Microsoft Graph slut punkt`https://graph.microsoft.com/`
+  - Version 1902 och senare: Microsoft Graph slut punkt `https://graph.microsoft.com/`
 
-  - Version 1810 och tidigare: Azure AD Graph-slutpunkt`https://graph.windows.net/`  
+  - Version 1810 och tidigare: Azure AD Graph-slutpunkt `https://graph.windows.net/`  
 
 ### <a name="cmg-connection-point"></a>CMG kopplings punkt
 
 CMG-anslutnings punkten behöver åtkomst till följande tjänst slut punkter:
 
 - Namn på moln tjänst (för CMG eller CDP):
-  - `<name>.cloudapp.net`(Offentligt Azure-moln)
-  - `<name>.usgovcloudapp.net`(Azure-moln för amerikanska myndigheter)
+  - `<name>.cloudapp.net` (Offentligt Azure-moln)
+  - `<name>.usgovcloudapp.net` (Azure-moln för amerikanska myndigheter)
 
-- Service Management-slut punkt:`https://management.core.windows.net/`  
+- Service Management-slut punkt: `https://management.core.windows.net/`  
 
 - Lagrings slut punkt (för innehålls aktive rad CMG eller CDP):
-  - `<name>.blob.core.windows.net`(Offentligt Azure-moln)
-  - `<name>.blob.core.usgovcloudapi.net`(Azure-moln för amerikanska myndigheter)
+  - `<name>.blob.core.windows.net` (Offentligt Azure-moln)
+  - `<name>.blob.core.usgovcloudapi.net` (Azure-moln för amerikanska myndigheter)
 <!--  and `<name>.table.core.windows.net` per DC, only used internally -->
 
 Plats systemet för CMG-anslutnings punkten stöder användning av en webbproxy. Mer information om hur du konfigurerar den här rollen för en proxy finns i [stöd för proxy server](proxy-server-support.md#configure-the-proxy-for-a-site-system-server). Anslutnings punkten för CMG måste bara ansluta till CMG-tjänstens slut punkter. Den behöver inte åtkomst till andra Azure-slutpunkter.
@@ -156,16 +156,16 @@ Plats systemet för CMG-anslutnings punkten stöder användning av en webbproxy.
 ### <a name="configuration-manager-client"></a>Configuration Manager-klient
 
 - Namn på moln tjänst (för CMG eller CDP):
-  - `<name>.cloudapp.net`(Offentligt Azure-moln)
-  - `<name>.usgovcloudapp.net`(Azure-moln för amerikanska myndigheter)
+  - `<name>.cloudapp.net` (Offentligt Azure-moln)
+  - `<name>.usgovcloudapp.net` (Azure-moln för amerikanska myndigheter)
 
 - Lagrings slut punkt (för innehålls aktive rad CMG eller CDP):
-  - `<name>.blob.core.windows.net`(Offentligt Azure-moln)
-  - `<name>.blob.core.usgovcloudapi.net`(Azure-moln för amerikanska myndigheter)
+  - `<name>.blob.core.windows.net` (Offentligt Azure-moln)
+  - `<name>.blob.core.usgovcloudapi.net` (Azure-moln för amerikanska myndigheter)
 
 - För Azure AD-token hämtar Azure AD-slut punkten:
-  - `login.microsoftonline.com`(Offentligt Azure-moln)
-  - `login.microsoftonline.us`(Azure-moln för amerikanska myndigheter)
+  - `login.microsoftonline.com` (Offentligt Azure-moln)
+  - `login.microsoftonline.us` (Azure-moln för amerikanska myndigheter)
 
 ### <a name="configuration-manager-console"></a>Configuration Manager-konsolen
 
@@ -179,7 +179,7 @@ Plats systemet för CMG-anslutnings punkten stöder användning av en webbproxy.
   - Azure-moln för amerikanska myndigheter
     - `login.microsoftonline.us`
 
-## <a name="software-updates"></a><a name="bkmk_sum"></a>Program uppdateringar
+## <a name="software-updates"></a><a name="bkmk_sum"></a> Program uppdateringar
 
 Tillåt att den aktiva program uppdaterings platsen får åtkomst till följande slut punkter så att WSUS och automatiska uppdateringar kan kommunicera med Microsoft Update moln tjänsten:  
 
@@ -225,17 +225,17 @@ Du kan behöva lägga till slut punkter till en brand vägg som är mellan två 
 ## <a name="manage-microsoft-365-apps"></a>Hantera Microsoft 365 appar
 
 > [!NOTE]
-> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](https://docs.microsoft.com/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
+> Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
 
 Om du använder Configuration Manager för att distribuera och uppdatera Microsoft 365 appar för företag kan du tillåta följande slut punkter:
 
 <!-- SCCMDocs#929 -->
 
-- `officecdn.microsoft.com`Synkronisera program uppdaterings platsen för Microsoft 365 appar för företags klient uppdateringar
+- `officecdn.microsoft.com` Synkronisera program uppdaterings platsen för Microsoft 365 appar för företags klient uppdateringar
 
-- `config.office.com`så här skapar du anpassade konfigurationer för Microsoft 365 appar för företags distributioner
+- `config.office.com` så här skapar du anpassade konfigurationer för Microsoft 365 appar för företags distributioner
 
-- `contentstorage.osi.office.net`stöd för utvärdering av Office-tillägget för beredskap<!-- MEMDocs#410 -->
+- `contentstorage.osi.office.net` stöd för utvärdering av Office-tillägget för beredskap<!-- MEMDocs#410 -->
 
 ## <a name="configuration-manager-console"></a>Configuration Manager-konsolen
 

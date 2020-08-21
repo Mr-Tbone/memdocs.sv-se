@@ -10,12 +10,12 @@ ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 07c5488b0ea28f37f7f8a07b532c67fb64aad810
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2eea75f39430f1cc38ff994280425ca918eaa432
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713431"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694567"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Distribuera klienter till Windows-datorer i Configuration Manager
 
@@ -29,7 +29,7 @@ Den här artikeln innehåller information om hur du distribuerar Configuration M
 - [Metodtips för klientdistribution](plan/best-practices-for-client-deployment.md)  
 
 
-## <a name="client-push-installation"></a><a name="BKMK_ClientPush"></a>Push-installation av klient
+## <a name="client-push-installation"></a><a name="BKMK_ClientPush"></a> Push-installation av klient
 
 Det finns tre huvudsakliga sätt att använda klient-push:  
 
@@ -63,7 +63,7 @@ Klient logg filen innehåller mer detaljerad information om fel sökning. Loggfi
     > [!NOTE]  
     > När klient-push används för att installera Configuration Manager-klienten, skapar plats servern en fjärr anslutning till klienten. Från och med version 1806 kan platsen kräva ömsesidig Kerberos-autentisering genom att inte tillåta återställning till NTLM innan anslutningen upprättas. Den här förbättringen hjälper till att skydda kommunikationen mellan servern och klienten.  
     >
-    > Beroende på dina säkerhets principer kanske din miljö redan föredrar eller kräver Kerberos över den äldre NTLM-autentiseringen. Mer information om säkerhets överväganden för dessa autentiseringsprotokoll finns i [säkerhets princip inställningen i Windows för att begränsa NTLM](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers#security-considerations).  
+    > Beroende på dina säkerhets principer kanske din miljö redan föredrar eller kräver Kerberos över den äldre NTLM-autentiseringen. Mer information om säkerhets överväganden för dessa autentiseringsprotokoll finns i [säkerhets princip inställningen i Windows för att begränsa NTLM](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers#security-considerations).  
     >
     > Om du vill använda den här funktionen måste klienterna vara i en betrodd Active Directory skog. Kerberos i Windows förlitar sig på Active Directory för ömsesidig autentisering.  
 
@@ -114,7 +114,7 @@ Klient logg filen innehåller mer detaljerad information om fel sökning. Loggfi
 > [!NOTE]  
 > Använd den här guiden för att installera klienter även om platsen inte är konfigurerad för push-installation av klienter.  
 
-## <a name="software-update-based-installation"></a><a name="BKMK_ClientSUP"></a>Installation baserad på program uppdatering  
+## <a name="software-update-based-installation"></a><a name="BKMK_ClientSUP"></a> Installation baserad på program uppdatering  
 
 Klient installation baserad på program uppdatering publicerar klienten till en program uppdaterings plats som en program uppdatering. Använd den här metoden för att installera eller uppgradera vid första tiden.  
 
@@ -151,7 +151,7 @@ Använd följande procedurer för att konfigurera datorer utan en Configuration 
     > [!TIP]  
     > Information om hur du fastställer port numret finns i [så här avgör du vilka port inställningar som används av WSUS](../../../sum/plan-design/plan-for-software-updates.md).
 
-    Exempel i FQDN-format:`http://server1.contoso.com:8530`  
+    Exempel i FQDN-format: `http://server1.contoso.com:8530`  
 
 5. **Ange intranäts statistik Server**: den här inställningen konfigureras vanligt vis med samma server namn.
 
@@ -174,11 +174,11 @@ Använd följande procedurer för att konfigurera datorer utan en Configuration 
 
 Program uppdateringen för den Configuration Manager klienten uppdateras inte automatiskt när det finns en ny version. När du uppdaterar platsen upprepar du proceduren för att uppdatera klienten.  
 
-## <a name="group-policy-installation"></a><a name="BKMK_ClientGP"></a>grupprincip installation
+## <a name="group-policy-installation"></a><a name="BKMK_ClientGP"></a> grupprincip installation
 
 Använd grupprincip i Active Directory Domain Services för att publicera eller tilldela Configuration Manager-klienten. Klienten installeras när datorn startas. När du använder grupprincip visas klienten i **Lägg till eller ta bort program** på kontroll panelen. Användaren kan installera den därifrån.  
 
-Använd Windows Installer Package CCMSetup. msi för grupprincip-baserade installationer. Den här filen finns i `<ConfigMgr installation directory>\bin\i386` mappen på plats servern. Du kan inte lägga till egenskaper i den här filen för att ändra installations beteendet.  
+Använd Windows Installer paket CCMSetup.msi för grupprincip-baserade installationer. Den här filen finns i `<ConfigMgr installation directory>\bin\i386` mappen på plats servern. Du kan inte lägga till egenskaper i den här filen för att ändra installations beteendet.  
 
 > [!IMPORTANT]  
 > Du måste ha administratörs behörighet för att få åtkomst till installationsfilerna för-klienten.  
@@ -189,20 +189,20 @@ Använd Windows Installer Package CCMSetup. msi för grupprincip-baserade instal
 
 Mer information finns i [så här använder Grupprincip för att installera program vara på distans](https://support.microsoft.com/help/816102/how-to-use-group-policy-to-remotely-install-software-in-windows-server).  
 
-## <a name="manual-installation"></a><a name="BKMK_Manual"></a>Manuell installation
+## <a name="manual-installation"></a><a name="BKMK_Manual"></a> Manuell installation
 
-Installera klient program varan på datorer manuellt med hjälp av CCMSetup. exe. Du kan hitta det här programmet och dess stödfiler i mappen klient i mappen Configuration Manager-installation på plats servern. Platsen delar den här mappen i nätverket som:  
+Installera klient program varan på datorer manuellt med hjälp av CCMSetup.exe. Du kan hitta det här programmet och dess stödfiler i mappen klient i mappen Configuration Manager-installation på plats servern. Platsen delar den här mappen i nätverket som:  
 
 `\\<site server name>\SMS_<site code>\Client\`  
 
-`<site server name>`är namnet på den primära plats servern. `<site code>`är den primära plats koden som klienten är tilldelad till. Om du vill köra CCMSetup. exe från kommando raden på klienten ansluter du till den här nätverks platsen och kör sedan kommandot.  
+`<site server name>` är namnet på den primära plats servern. `<site code>` är den primära plats koden som klienten är tilldelad till. Om du vill köra CCMSetup.exe från kommando raden på klienten ansluter du till den här nätverks platsen och kör sedan kommandot.  
 
 > [!IMPORTANT]  
 > Du måste ha administratörs behörighet för att få åtkomst till installationsfilerna för-klienten.  
 
-CCMSetup. exe kopierar alla nödvändiga komponenter till klient datorn och anropar Windows Installer-paketet (Client. msi) för att installera-klienten. Du kan inte köra Client. msi direkt.  
+CCMSetup.exe kopierar alla nödvändiga komponenter till klient datorn och anropar Windows Installer-paketet (Client.msi) för att installera-klienten. Du kan inte köra Client.msi direkt.  
 
-Ändra klient installationens beteende genom att ange kommando rads alternativ för både CCMSetup. exe och client. msi. Se till att du anger CCMSetup-parametrar som börjar `/` med innan du anger client. msi-egenskaper. Ett exempel:  
+Ändra klient installationens beteende genom att ange kommando rads alternativ för både CCMSetup.exe och Client.msi. Se till att du anger CCMSetup-parametrar som börjar med `/` innan du anger Client.msi egenskaper. Exempel:  
 
 `CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=AUTO FSP=SMSFP01`
 
@@ -212,8 +212,8 @@ I det här exemplet installeras klienten med följande alternativ:
 |--------------|-----------------|  
 |`/mp:SMSMP01`|Den här CCMSetup-parametern anger hanterings platsens SMSMP01 för hämtning av de nödvändiga installationsfilerna för klienter.|  
 |`/logon`|Den här CCMSetup-parametern anger att installationen ska avbrytas om en befintlig Configuration Manager-klient hittas på datorn.|  
-|`SMSSITECODE=AUTO`|Den här client. msi-egenskapen anger att klienten försöker hitta Configuration Manager platskod som ska användas, genom att använda Active Directory Domain Services, till exempel.|  
-|`FSP=SMSFP01`|Den här client. msi-egenskapen anger att återställnings status punkten med namnet SMSFP01 används för att ta emot tillstånds meddelanden som skickas från klient datorn.|  
+|`SMSSITECODE=AUTO`|Den här Client.msi egenskapen anger att klienten försöker hitta Configuration Manager platskod som ska användas, genom att använda Active Directory Domain Services, till exempel.|  
+|`FSP=SMSFP01`|Den här Client.msi egenskapen anger att återställnings status punkten med namnet SMSFP01 används för att ta emot tillstånds meddelanden som skickas från klient datorn.|  
 
 Mer information finns i [om klient installations parametrar och egenskaper](about-client-installation-properties.md).  
 
@@ -234,7 +234,7 @@ Anta att du har konfigurerat alla plats system servrar med ett intranät-FQDN oc
 Börja med följande steg på klient datorn:  
 
 1. Logga in som lokal administratör.  
-2. Mappa enhet Z till `\\MPSERVER\SMS_ABC\Client`.  
+2. Mappa enhet Z till `\\MPSERVER\SMS_ABC\Client` .  
 3. Växla kommando tolken till enhet Z.  
 
 Kör sedan ett av följande kommandon:  
@@ -264,15 +264,15 @@ Det här kommandot åsidosätter den automatiska konfiguration som Active Direct
 - Återställnings status plats som tar emot anslutningar från Internet
 - Använd ett PKI-certifikat (Public Key Infrastructure) för klienter (om tillgängligt) som har den längsta giltighets perioden
 
-## <a name="logon-script-installation"></a><a name="BKMK_ClientLogonScript"></a>Installation av inloggnings skript
+## <a name="logon-script-installation"></a><a name="BKMK_ClientLogonScript"></a> Installation av inloggnings skript
 
-Configuration Manager stöder inloggnings skript för att installera Configuration Manager-klient program varan. Använd program filen CCMSetup. exe i ett inloggnings skript för att utlösa klient installationen.  
+Configuration Manager stöder inloggnings skript för att installera Configuration Manager-klient program varan. Använd program filen CCMSetup.exe i ett inloggnings skript för att utlösa klient installationen.  
 
-Vid installation med inloggningsskript går samma metoder att använda som vid manuell installation av klienter. Ange `/logon` installations parametern för CCMSsetup. exe. Om någon version av klienten redan finns på datorn förhindrar den här parametern klienten från att installeras. Det här beteendet förhindrar ominstallation av klienten varje gången inloggnings skriptet körs.  
+Vid installation med inloggningsskript går samma metoder att använda som vid manuell installation av klienter. Ange `/logon` installations parametern för CCMSsetup.exe. Om någon version av klienten redan finns på datorn förhindrar den här parametern klienten från att installeras. Det här beteendet förhindrar ominstallation av klienten varje gången inloggnings skriptet körs.  
 
-Om du inte anger en installations källa med hjälp av `/Source` parametern och ingen hanterings plats från vilken du vill hämta installationen anges av `/MP` -parametern, kommer CCMSetup. exe att hitta hanterings platsen genom att söka Active Directory Domain Services. Detta inträffar endast om du har utökat schemat för Configuration Manager och publicerat platsen till Active Directory Domain Services. Alternativt kan klienten lokalisera en hanteringsplats via DNS eller WINS.  
+Om du inte anger en installations källa med hjälp av `/Source` parametern och ingen hanterings plats från vilken du vill hämta installationen anges av `/MP` parametern, CCMSetup.exe letar upp hanterings platsen genom att söka Active Directory Domain Services. Detta inträffar endast om du har utökat schemat för Configuration Manager och publicerat platsen till Active Directory Domain Services. Alternativt kan klienten lokalisera en hanteringsplats via DNS eller WINS.  
 
-## <a name="package-and-program-installation"></a><a name="BKMK_ClientApp"></a>Paket-och program installation
+## <a name="package-and-program-installation"></a><a name="BKMK_ClientApp"></a> Paket-och program installation
 
 Använd Configuration Manager för att skapa och distribuera ett paket och program som uppgraderar klient programmet för valda enheter. Configuration Manager tillhandahåller en paket definitions fil som fyller i paket egenskaperna med vanliga värden. Anpassa klient installationens beteende genom att ange ytterligare kommando rads parametrar och egenskaper.  
 
@@ -298,11 +298,11 @@ Använd följande procedur för att skapa ett Configuration Manager-paket och-pr
     > [!NOTE]  
     > Den dator där Configuration Manager distributionen körs måste ha åtkomst till den angivna nätverksmappen. Annars Miss lyckas klient installationen.  
 
-    Ändra någon av klient installations egenskaperna genom att ändra kommando raden CCMSetup. exe på fliken **Allmänt** i dialog rutan **Configuration Manager egenskaper för tyst uppgradering** av program agent. Standard egenskaperna för installationen är `/noservice SMSSITECODE=AUTO`.  
+    Om du vill ändra någon av klient installations egenskaperna ändrar du kommando raden CCMSetup.exe på fliken **Allmänt** i dialog rutan **Egenskaper för tyst uppgradering av Configuration Manager agent** . Standard egenskaperna för installationen är `/noservice SMSSITECODE=AUTO` .  
 
 6. Distribuera paketet till alla distributionsplatser där du vill ha klientuppgraderingspaketet. Distribuera sedan paketet till enhets samlingar som innehåller klienter som du vill uppgradera.  
 
-## <a name="intune-mdm-managed-windows-devices"></a><a name="bkmk_mdm"></a>Intune MDM-hanterade Windows-enheter
+## <a name="intune-mdm-managed-windows-devices"></a><a name="bkmk_mdm"></a> Intune MDM-hanterade Windows-enheter
 
 Distribuera Configuration Manager-klienten till enheter som har registrerats med Microsoft Intune.
 
@@ -317,7 +317,7 @@ När du har installerat Configuration Manager-klienten avregistreras inte enhete
 
 ### <a name="install-the-configuration-manager-client-by-using-intune"></a>Installera Configuration Manager-klienten med hjälp av Intune
 
-1. I Intune [lägger du till en branschspecifika Windows-app](https://docs.microsoft.com/mem/intune/apps/lob-apps-windows) som innehåller Configuration Manager klient installations filen **CCMSetup. msi**. Du hittar den här filen i `\bin\i386` mappen i installations katalogen för Configuration Manager på plats servern.  
+1. I Intune [lägger du till en branschspecifika Windows-app](https://docs.microsoft.com/mem/intune/apps/lob-apps-windows) som innehåller Configuration Manager-klientens installations fil **CCMSetup.msi**. Du hittar den här filen i `\bin\i386` mappen i installations katalogen för Configuration Manager på plats servern.  
 
 2. I Intune Software Publisher anger du kommando rads parametrar. Använd till exempel det här kommandot med en traditionell klient på ett intranät:  
 
@@ -326,9 +326,9 @@ När du har installerat Configuration Manager-klienten avregistreras inte enhete
     > [!NOTE]  
     > Ett exempel på ett kommando som kan användas med en modern Windows 10-klient med Azure AD-autentisering finns i [så här förbereder du Internetbaserade enheter för samhantering](../../../comanage/how-to-prepare-Win10.md#install-the-configuration-manager-client).  
 
-3. [Tilldela appen](https://docs.microsoft.com/mem/intune/apps/apps-deploy) till en grupp med de registrerade Windows-datorerna.  
+3. [Tilldela appen](../../../../intune/apps/apps-deploy.md) till en grupp med de registrerade Windows-datorerna.  
 
-## <a name="os-image-installation"></a><a name="BKMK_ClientImage"></a>Installation av operativ system avbildning
+## <a name="os-image-installation"></a><a name="BKMK_ClientImage"></a> Installation av operativ system avbildning
 
 Förinstallera Configuration Manager-klienten på en referens dator som du använder för att skapa en operativ system avbildning.
 
@@ -340,11 +340,11 @@ Förinstallera Configuration Manager-klienten på en referens dator som du anvä
 1. Installera klient programmet för Configuration Manager manuellt på referens datorn. Mer information finns i [så här installerar du Configuration Manager klienter manuellt](#BKMK_Manual).  
 
     > [!IMPORTANT]  
-    > Ange inte en Configuration Manager Platskod för klienten i kommando rads egenskaperna för CCMSetup. exe.  
+    > Ange inte en Configuration Manager Platskod för klienten i CCMSetup.exe kommando rads egenskaper.  
 
-2. I en kommando tolk skriver `net stop ccmexec` du för att stoppa tjänsten värd för SMS-agent (ccmexec. exe) på referens datorn.  
+2. I en kommando tolk skriver `net stop ccmexec` du för att stoppa tjänsten för SMS-agenttjänsten (CcmExec.exe) på referens datorn.  
 
-3. Ta bort SMSCFG. INI-fil från Windows-mappen på referens datorn.  
+3. Ta bort SMSCFG.INI-filen från Windows-mappen på referens datorn.  
 
 4. Ta bort alla certifikat som lagras i det lokala dator arkivet på referens datorn. Om du t. ex. använder PKI-certifikat måste du ta bort certifikaten i det **personliga** arkivet för **dator** och **användare**innan du avbildar datorn.  
 
@@ -359,11 +359,11 @@ Förinstallera Configuration Manager-klienten på en referens dator som du anvä
 
 7. Distribuera avbildningen till mål datorerna.  
 
-## <a name="workgroup-computers"></a><a name="BKMK_ClientWorkgroup"></a>Arbets grupps datorer
+## <a name="workgroup-computers"></a><a name="BKMK_ClientWorkgroup"></a> Arbets grupps datorer
 
 Configuration Manager stöder klient installation för datorer i arbets grupper. Installera klienten på arbets grupps datorer med hjälp av metoden som anges i [så här installerar du Configuration Manager klienter manuellt](#BKMK_Manual).  
 
-### <a name="prerequisites"></a>Krav  
+### <a name="prerequisites"></a>Förutsättningar  
 
 - Installera klienten manuellt på varje arbets grupps dator. Under installationen måste den interaktiva användaren ha lokal administratörs behörighet.  
 
@@ -405,14 +405,14 @@ Det här exemplet kräver att klienten finns på en nätverks plats som har kon 
 
 `CCMSetup.exe FSP=fspserver.constoso.com`  
 
-## <a name="internet-based-client-management"></a><a name="BKMK_ClientInternet"></a>Internetbaserad klient hantering  
+## <a name="internet-based-client-management"></a><a name="BKMK_ClientInternet"></a> Internetbaserad klient hantering  
 
 > [!NOTE]  
 > Det här avsnittet gäller inte för klienter som använder en [Gateway för moln hantering](../manage/cmg/plan-cloud-management-gateway.md). Om du vill installera Internetbaserade klienter med hjälp av en Cloud Management Gateway, se [Installera och tilldela Configuration Manager Windows 10-klienter med Azure AD för autentisering](deploy-clients-cmg-azure.md).  
 
 Om Configuration Manager-platsen stöder [Internetbaserad klient hantering](../manage/plan-internet-based-client-management.md) för klienter som ibland finns på ett intranät och ibland på Internet, har du två alternativ när du installerar klienter på intranätet:  
 
-- Ta med Client. msi- `CCMHOSTNAME=<internet FQDN of the internet-based management point>` egenskapen när du installerar-klienten med hjälp av manuell installation eller klient-push, till exempel. När du använder den här metoden tilldelar du klienten en plats direkt. Du kan inte använda automatisk platstilldelning. Se avsnittet [så här installerar du Configuration Manager klienter manuellt](#BKMK_Manual) , som innehåller ett exempel på den här konfigurations metoden.  
+- Ta med egenskapen Client.msi `CCMHOSTNAME=<internet FQDN of the internet-based management point>` när du installerar-klienten genom att använda manuell installation eller klient-push, till exempel. När du använder den här metoden tilldelar du klienten en plats direkt. Du kan inte använda automatisk platstilldelning. Se avsnittet [så här installerar du Configuration Manager klienter manuellt](#BKMK_Manual) , som innehåller ett exempel på den här konfigurations metoden.  
 
 - Installera klienten för intranäts klient hantering och tilldela klienten en Internetbaserad klient hanterings plats. Ändra hanterings platsen genom att använda klient egenskaperna på sidan **Configuration Manager** på kontroll panelen eller genom att använda ett skript. När du använder den här metoden kan du använda automatisk klienttilldelning. Mer information finns i avsnittet [så här konfigurerar du klienter för internetbaserad klient hantering efter klient installation](#BKMK_ConfigureIBCM_MP) .  
 
@@ -420,7 +420,7 @@ Om du vill installera klienter som finns på Internet väljer du någon av följ
 
 - Tillhandahålla en mekanism för dessa klienter att tillfälligt ansluta till intranätet med ett VPN. Installera sedan klienten genom att använda valfri lämplig klient installations metod.  
 
-- Använd en installations metod som är oberoende av Configuration Manager. Paketera till exempel källfilerna för klient installationen till ett flyttbart medium och skicka mediet till användarna. Källfilerna för klient installation finns i `<installation path>\Client` mappen på Configuration Manager plats Server. På mediet lägger du till ett skript som kan kopieras manuellt över mappen client. I den här mappen installerar du klienten med hjälp av CCMSetup. exe och alla lämpliga kommando rads egenskaper för CCMSetup.  
+- Använd en installations metod som är oberoende av Configuration Manager. Paketera till exempel källfilerna för klient installationen till ett flyttbart medium och skicka mediet till användarna. Källfilerna för klient installation finns i `<installation path>\Client` mappen på Configuration Manager plats Server. På mediet lägger du till ett skript som kan kopieras manuellt över mappen client. I den här mappen installerar du klienten med hjälp av CCMSetup.exe och alla lämpliga kommando rads egenskaper för CCMSetup.  
 
 > [!NOTE]  
 > Configuration Manager stöder inte installation av en klient direkt från den Internetbaserade hanterings platsen eller från den Internetbaserade program uppdaterings platsen.
@@ -431,24 +431,24 @@ Klienter som hanteras via Internet måste kommunicera med Internetbaserade plats
 
 1. Följ anvisningarna i avsnittet [så här installerar du Configuration Manager-klienter manuellt](#BKMK_Manual). Inkludera alltid följande alternativ:  
 
-    - Kommando rads parameter för CCMSetup`/source:<local path of the copied Client folder>`  
+    - Kommando rads parameter för CCMSetup `/source:<local path of the copied Client folder>`  
 
-    - Kommando rads parameter för CCMSetup`/UsePKICert`  
+    - Kommando rads parameter för CCMSetup `/UsePKICert`  
 
-    - Client. msi-egenskap`CCMHOSTNAME=<FQDN of internet-based management point>`  
+    - Client.msi egenskap `CCMHOSTNAME=<FQDN of internet-based management point>`  
 
-    - Client. msi-egenskap`SMSSIGNCERT=<local path of exported site server signing certificate>`  
+    - Client.msi egenskap `SMSSIGNCERT=<local path of exported site server signing certificate>`  
 
-    - Client. msi-egenskap`SMSSITECODE=<site code of internet-based management point>`  
+    - Client.msi egenskap `SMSSITECODE=<site code of internet-based management point>`  
 
     > [!NOTE]  
     > Om platsen har fler än en Internetbaserad hanterings plats spelar det ingen roll vilken som du anger för `CCMHOSTNAME` egenskapen. När en Configuration Manager-klient ansluter till den angivna Internetbaserade hanterings platsen skickar den en lista över tillgängliga Internetbaserade hanterings platser på platsen. Klienten väljer slumpmässigt en i listan.
 
-2. Om du inte vill att klienten ska kontrol lera listan över återkallade certifikat (CRL) anger du kommando rads parametern `/NoCRLCheck`CCMSetup.  
+2. Om du inte vill att klienten ska kontrol lera listan över återkallade certifikat (CRL) anger du kommando rads parametern CCMSetup `/NoCRLCheck` .  
 
-3. Om du använder en Internetbaserad återställnings status plats anger du client. msi-egenskapen `FSP=<internet FQDN of the internet-based fallback status point>`.  
+3. Om du använder en Internetbaserad återställnings status plats anger du egenskapen Client.msi `FSP=<internet FQDN of the internet-based fallback status point>` .  
 
-4. Om du installerar klienten för klient hantering enbart för Internet anger du client. msi-egenskapen `CCMALWAYSINF=1`.  
+4. Om du installerar klienten för klient hantering enbart för Internet anger du egenskapen Client.msi `CCMALWAYSINF=1` .  
 
 5. Avgör om du måste ange ytterligare kommando rads parametrar för CCMSetup. Om klienten till exempel har mer än ett giltigt PKI-certifikat kan du behöva ange ett kriterium för val av certifikat. En lista över tillgängliga egenskaper finns i [om klient installations parametrar och egenskaper](about-client-installation-properties.md).  
 
@@ -466,7 +466,7 @@ I det här exemplet installeras klienten med följande beteenden:
 - Tilldela den Internetbaserade återställnings status punkten i contoso.com-domänen.
 - Tilldela klienten till ABC-webbplatsen.  
 
-### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation"></a><a name="BKMK_ConfigureIBCM_MP"></a>Konfigurera klienter för internetbaserad klient hantering efter klient installation  
+### <a name="to-configure-clients-for-internet-based-client-management-after-client-installation"></a><a name="BKMK_ConfigureIBCM_MP"></a> Konfigurera klienter för internetbaserad klient hantering efter klient installation  
 
 Använd någon av dessa procedurer för att tilldela den Internetbaserade hanterings platsen när du har installerat-klienten. Den första konfigurationen kräver manuell konfiguration och är lämplig för ett fåtal klienter. Den andra är lämpligare för att konfigurera många klienter.  
 
@@ -500,7 +500,7 @@ Använd någon av dessa procedurer för att tilldela den Internetbaserade hanter
     > [!NOTE]  
     > Den sista raden är bara att verifiera det nya värdet för Internet hanterings platsen.
     >
-    > Om du vill ta bort en specifik Internetbaserad hanterings plats tar du bort serverns FQDN-värde inom citat tecken. Raden blir `$newInternetBasedManagementPointFQDN = ''`.
+    > Om du vill ta bort en specifik Internetbaserad hanterings plats tar du bort serverns FQDN-värde inom citat tecken. Raden blir `$newInternetBasedManagementPointFQDN = ''` .
 
 3. Spara filen med fil namns tillägget. ps1.  
 
@@ -512,7 +512,7 @@ Använd någon av dessa procedurer för att tilldela den Internetbaserade hanter
 
 Du kanske måste starta om klienten för att ändringarna ska börja gälla.  
 
-## <a name="provision-client-installation-properties"></a><a name="BKMK_Provision"></a>Etablera klient installations egenskaper
+## <a name="provision-client-installation-properties"></a><a name="BKMK_Provision"></a> Etablera klient installations egenskaper
 
 Etablera klient installations egenskaper för grup princip och klient installationer som baseras på program uppdatering. Använd Windows grupprincip för att etablera datorer med Configuration Manager klient installations egenskaper. Egenskaperna lagras i datorns register. Klienten läser dem när den installeras. Den här proceduren krävs normalt inte, men kan krävas för vissa klient installations scenarier, till exempel:  
 
@@ -521,17 +521,17 @@ Etablera klient installations egenskaper för grup princip och klient installati
 - Du vill åsidosätta klientinstallationsegenskaper på vissa specifika datorer.  
 
 > [!NOTE]  
-> Om några installations egenskaper anges på kommando raden för CCMSetup. exe, används inte installations egenskaper som är etablerade på datorer.
+> Om några installations egenskaper anges på CCMSetup.exe kommando rad används inte installations egenskaper som är etablerade på datorer.
 
 En administrativ mall för grup princip `ConfigMgrInstallation.adm` som heter anges på installations mediet för Configuration Manager. Använd den här mallen för att etablera klient datorer med installations egenskaper.
 
 > [!TIP]
-> Som standard stöder `ConfigMgrInstallation.adm` inte strängar som är större än 255 tecken. Den här konfigurationen kan påverka hur du lägger till flera parametrar eller parametrar med långa värden, till exempel CCMCERTISSUERS.<!-- SCCMDocs#1648 -->
+> Som standard `ConfigMgrInstallation.adm` stöder inte strängar som är större än 255 tecken. Den här konfigurationen kan påverka hur du lägger till flera parametrar eller parametrar med långa värden, till exempel CCMCERTISSUERS.<!-- SCCMDocs#1648 -->
 >
 > Så här löser du det här problemet:
 >
 > 1. Redigera `ConfigMgrInstallation.adm` i anteckningar.
-> 2. Ändra `MAXLEN` värdet till `VALUENAME SetupParameters`ett större heltal för egenskapen. Till exempel `MAXLEN 511`.
+> 2. `VALUENAME SetupParameters`Ändra `MAXLEN` värdet till ett större heltal för egenskapen. Till exempel `MAXLEN 511`.
 
 ### <a name="configure-and-assign-client-installation-properties-by-using-a-group-policy-object"></a>Konfigurera och tilldela klient installations egenskaper med hjälp av ett grup princip objekt  
 
@@ -543,4 +543,4 @@ En administrativ mall för grup princip `ConfigMgrInstallation.adm` som heter an
 
 4. I rutan **CCMSetup** anger du de CCMSetup-kommandoradsegenskaper som krävs. En lista över alla kommando rads egenskaper för CCMSetup och exempel på hur de används finns i [om klient installations parametrar och egenskaper](about-client-installation-properties.md).  
 
-5. Tilldela GRUPPRINCIPOBJEKTet till de datorer som du vill etablera med Configuration Manager klient installations egenskaper.  
+5. Tilldela GRUPPRINCIPOBJEKTet till de datorer som du vill etablera med Configuration Manager klient installations egenskaper.

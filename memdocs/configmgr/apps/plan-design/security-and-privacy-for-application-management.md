@@ -10,12 +10,12 @@ ms.assetid: 4d26deed-3b16-4116-b640-f618f2c20f5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7f7085b7ee6f0f723c9bcf9d10cb85b03f990a44
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: e3ceb036180d002956eb0f62348ad317dfce6e7e
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81709959"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695145"
 ---
 # <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Säkerhet och sekretess för program hantering i Configuration Manager
 
@@ -75,7 +75,7 @@ Om du konfigurerar distributionen så att den körs direkt från en distribution
 
 Om du måste köra distributioner direkt från distributions platser bör du använda minst NTFS-behörigheter på paketen på distributions platserna. Använd också IPsec (Internet Protocol Security) för att skydda kanalen mellan klienten och distributions platserna och mellan distributions platserna och plats servern.
 
-### <a name="dont-let-users-interact-with-elevated-processes"></a><a name="bkmk_interact"></a>Låt inte användarna interagera med utökade processer
+### <a name="dont-let-users-interact-with-elevated-processes"></a><a name="bkmk_interact"></a> Låt inte användarna interagera med utökade processer
   
 Om du aktiverar alternativen för att **köra med administratörs behörighet** eller **Installera för system**ska du inte låta användarna interagera med dessa program. När du konfigurerar ett program kan du ställa in alternativet så att **användarna kan visa och interagera med programinstallationen**. Med den här inställningen kan användarna svara på eventuella obligatoriska meddelanden i användar gränssnittet. Om du även konfigurerar programmet att **köras med administratörs behörighet**, eller från och med version 1802 **Installera för system**, kan en angripare på datorn som kör programmet använda användar gränssnittet för att eskalera privilegier på klient datorn.
 
@@ -91,7 +91,7 @@ Du kan t.ex. skapa en anpassad klientinställning där **Installationsbehörighe
 
 Distribuera bara mobila enhets program om de är kod-signerade av en certifikat utfärdare (CA) som den mobila enheten litar på.
 
-Ett exempel:
+Exempel:
 
 - Ett program från en leverantör som är signerat av en välkänd certifikat utfärdare som VeriSign.  
 
@@ -168,7 +168,7 @@ Om du konfigurerar en distributions typ för webb program använder du HTTPS fö
      När ett App-V-program publiceras på en dator, kan alla användare som loggar in på den datorn installera programmet. Du kan inte begränsa vilka användare som kan installera programmet när det har publicerats.  
 
 
-## <a name="certificates-for-microsoft-silverlight-5-and-elevated-trust-mode-required-for-the-application-catalog"></a><a name="BKMK_CertificatesSilverlight5"></a>Certifikat för Microsoft Silverlight 5 och förhöjt förtroende krävs för program katalogen  
+## <a name="certificates-for-microsoft-silverlight-5-and-elevated-trust-mode-required-for-the-application-catalog"></a><a name="BKMK_CertificatesSilverlight5"></a> Certifikat för Microsoft Silverlight 5 och förhöjt förtroende krävs för program katalogen  
 
 > [!Important]  
 > Support upphör för program katalog rollerna med version 1910. Mer information finns i [ta bort program katalogen](plan-for-and-configure-application-management.md#bkmk_remove-appcat).  
@@ -182,7 +182,7 @@ När du installerar plats system rollen webbplats för program katalog installer
 
 Om du ställer in inställningen **Tillåt att Silverlight-program körs med förhöjt förtroende läge** till **Nej**tar klienterna inte bort Microsofts signerings certifikat.  
 
-Mer information om betrodda program i Silverlight finns i [betrodda program](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ee721083\(v=vs.95\)).  
+Mer information om betrodda program i Silverlight finns i [betrodda program](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ee721083\(v=vs.95\)).  
 
 
 ## <a name="privacy-information-for-application-management"></a> Sekretessinformation för programhantering  
@@ -208,7 +208,7 @@ Följande funktioner hjälper till att effektivt program varu distribution:
     > [!Important]  
     > Support upphör för program katalog rollerna med version 1910. Mer information finns i [ta bort program katalogen](plan-for-and-configure-application-management.md#bkmk_remove-appcat).  
 
-### <a name="user-device-affinity-privacy-information"></a><a name="bkmk_privacy-uda"></a>Sekretess information för mappning mellan användare och enhet
+### <a name="user-device-affinity-privacy-information"></a><a name="bkmk_privacy-uda"></a> Sekretess information för mappning mellan användare och enhet
 
 - Configuration Manager kan överföra information mellan klienter och hanterings plats system. Informationen kan identifiera datorn och inloggnings kontot och den sammanfattade användningen av inloggnings konton.  
 
@@ -220,7 +220,7 @@ Följande funktioner hjälper till att effektivt program varu distribution:
 
 - Information om dator-och inloggnings användning som används för att upprätta användar-och enhets tillhörighet är alltid aktive rad. Användare och administrativa användare kan ange information om mappning mellan användare och enhet.  
 
-### <a name="software-center-privacy-information"></a><a name="bkmk_privacy-userex"></a>Sekretess information för Software Center
+### <a name="software-center-privacy-information"></a><a name="bkmk_privacy-userex"></a> Sekretess information för Software Center
 
 - Med Software Center kan Configuration Manager-administratören publicera alla program eller program eller skript som användarna kan köra. Configuration Manager har ingen kontroll över vilka typer av program eller skript som publiceras i katalogen eller vilken typ av information som de skickar.  
 
@@ -239,4 +239,4 @@ Följande funktioner hjälper till att effektivt program varu distribution:
 
 - Med program katalogen kan Configuration Manager-administratören publicera alla program eller program eller skript som användarna kan köra. Configuration Manager har ingen kontroll över vilka typer av program eller skript som publiceras i katalogen eller vilken typ av information som de skickar.  
 
-- Configuration Manager kan överföra information mellan klienter och program katalogens plats system roller. Informationen kan identifiera dator-och inloggnings konton. Den information som överförs mellan klienten och servrarna är inte krypterad, om inte plats system rollerna är konfigurerade för att kräva att klienter ansluter med hjälp av HTTPS.  
+- Configuration Manager kan överföra information mellan klienter och program katalogens plats system roller. Informationen kan identifiera dator-och inloggnings konton. Den information som överförs mellan klienten och servrarna är inte krypterad, om inte plats system rollerna är konfigurerade för att kräva att klienter ansluter med hjälp av HTTPS.

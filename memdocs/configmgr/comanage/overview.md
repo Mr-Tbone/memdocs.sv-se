@@ -10,12 +10,12 @@ ms.topic: overview
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: a7f38f48946244deb6026d040c44159d0384f7b1
-ms.sourcegitcommit: efe89408a3948b79b38893174cb19268ee37c8f3
+ms.openlocfilehash: f9e1809447f8d8ea8f6e0382575b71bfdec71fac
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854447"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695060"
 ---
 # <a name="what-is-co-management"></a>Vad är samhantering?
 
@@ -102,15 +102,15 @@ Om du aktiverar samhantering behöver du inte publicera din webbplats med Azure 
 
 - Windows 10-enheter måste vara anslutna till Azure AD. De kan vara någon av följande typer:  
 
-  - [Hybrid Azure AD-ansluten](https://docs.microsoft.com/azure/active-directory/devices/concept-azure-ad-join-hybrid), där enheten är ansluten till din lokala Active Directory och registrerad med din Azure Active Directory.
+  - [Hybrid Azure AD-ansluten](/azure/active-directory/devices/concept-azure-ad-join-hybrid), där enheten är ansluten till din lokala Active Directory och registrerad med din Azure Active Directory.
 
-  - Endast [Azure AD-ansluten](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan) . (Den här typen kallas ibland "molnbaserad domän ansluten")<!--SCCMDocs issue 605-->  
+  - Endast [Azure AD-ansluten](/azure/active-directory/devices/azureadjoin-plan) . (Den här typen kallas ibland "molnbaserad domän ansluten")<!--SCCMDocs issue 605-->  
 
 ### <a name="intune"></a>Intune
 
-- [Konfigurera Intune](https://docs.microsoft.com/intune/setup-steps)  
+- [Konfigurera Intune](/intune/setup-steps)  
 
-- [Aktivera automatisk registrering i Windows 10](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment)  
+- [Aktivera automatisk registrering i Windows 10](/intune/windows-enroll#enable-windows-10-automatic-enrollment)  
 
 ### <a name="windows-10"></a>Windows 10
 
@@ -129,7 +129,7 @@ Uppgradera dina enheter till Windows 10, version 1709 eller senare. Mer informat
 | Importera Azure-appar i Configuration Manager | Configuration Manager **Fullständig administratör**<br>Inga ytterligare Azure-roller behövs |
 | Aktivera samhantering i Configuration Manager | En Azure AD-användare<br>Configuration Manager **Fullständig administratör** med **alla** omfångs rättigheter.<!--SCCMDoc issue 626--> |
 
-Mer information om Azure-roller finns i [förstå de olika rollerna](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles).
+Mer information om Azure-roller finns i [förstå de olika rollerna](/azure/role-based-access-control/rbac-and-directory-admin-roles).
 
 Mer information om Configuration Manager roller finns i [grunderna i rollbaserad administration](../core/understand/fundamentals-of-role-based-administration.md).
 
@@ -167,4 +167,4 @@ Mer information finns i [så här övervakar du samhantering](how-to-monitor.md)
 
 - [Lär dig mer om omedelbar värde och kom igång med samhantering](quickstarts.md)  
 
-- [Självstudie: Aktivera samhantering för befintliga Configuration Manager-klienter](tutorial-co-manage-clients.md)  
+- [Självstudie: Aktivera samhantering för befintliga Configuration Manager-klienter](tutorial-co-manage-clients.md)

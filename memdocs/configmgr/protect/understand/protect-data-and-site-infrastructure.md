@@ -10,12 +10,12 @@ ms.assetid: 2117f786-d521-4790-9e8d-ec096c63c9d7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 381f9d190b1d73bbbab6142fd9587e881d0870ce
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 2a73fff7fd2eb5d630d6047a7da6f131188f06c5
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81723917"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693496"
 ---
 # <a name="protect-data-and-site-infrastructure"></a>Skydda data och platsinfrastruktur
 
@@ -28,12 +28,12 @@ Du vill att dina användare ska ha åtkomst till organisationens resurser på et
   - Microsoft Defender program mot skadlig kod
   - Microsoft Defender-brandväggen
   - Microsoft Defender Advanced Threat Protection
-  - Microsoft Defender sårbarhets skydd
+  - Microsoft Defender Exploit Guard
   - Microsoft Defender Application Guard
   - Microsoft Defender Application Control
 
   > [!TIP]
-  > Om du vill hantera Endpoint Protection på samhanterade Windows 10-enheter med hjälp av moln tjänsten i Microsoft Endpoint Manager, byter du [ **Endpoint Protection** arbets belastning](../../comanage/workloads.md#endpoint-protection) till Intune. Mer information finns i [Endpoint Protection för Microsoft Intune](https://docs.microsoft.com/intune/endpoint-protection-windows-10).
+  > Om du vill hantera Endpoint Protection på samhanterade Windows 10-enheter med hjälp av moln tjänsten i Microsoft Endpoint Manager, byter du [ **Endpoint Protection** arbets belastning](../../comanage/workloads.md#endpoint-protection) till Intune. Mer information finns i [Endpoint Protection för Microsoft Intune](/intune/endpoint-protection-windows-10).
 
 - Skydda data som lagras på lokala Windows-klienter med BitLocker-diskkryptering (BDE). Configuration Manager tillhandahåller fullständig livs cykel hantering i BitLocker som kan ersätta användningen av Microsoft BitLocker administration och övervakning (MBAM). Mer information finns i [Planera för BitLocker-hantering](../plan-design/bitlocker-management.md).
 
@@ -43,4 +43,4 @@ Du vill att dina användare ska ha åtkomst till organisationens resurser på et
 
 - Wi-Fi-profiler tillhandahåller en uppsättning verktyg och resurser som hjälper dig att hantera trådlösa nätverks inställningar på enheter i din organisation. Genom att distribuera de här inställningarna minimerar du den ansträngning som slutanvändarna behöver för att ansluta till trådlösa nätverk. Mer information finns i [Wi-Fi-profiler](../deploy-use/create-wifi-profiles.md).  
 
-- Etablera enheter med de certifikat som användarna behöver för att ansluta till resurser. Mer information finns i [certifikat profiler](../deploy-use/introduction-to-certificate-profiles.md).  
+- Etablera enheter med de certifikat som användarna behöver för att ansluta till resurser. Mer information finns i [certifikat profiler](../deploy-use/introduction-to-certificate-profiles.md).

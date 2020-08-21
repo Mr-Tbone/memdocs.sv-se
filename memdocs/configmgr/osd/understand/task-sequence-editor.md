@@ -10,12 +10,12 @@ ms.assetid: a4e8bb56-ee85-49fd-8b1c-c8f513cec671
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 405617277953eae61fbfce4fdb9b3a7d280aedcf
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 6a4aaaab8eb9195f4f5dce4deb890540b0837852
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124456"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697467"
 ---
 # <a name="use-the-task-sequence-editor"></a>Använda redigeringsprogrammet för aktivitetssekvenser
 
@@ -78,7 +78,7 @@ Redigeraren för aktivitetssekvens innehåller följande komponenter:
 
 Du kan ändra storlek på redigeraren för aktivitetssekvens med hjälp av standard kontroller i Windows. Om du vill ändra storlek på de två huvud Fönstren använder du musen för att markera stapeln mellan aktivitetssekvensen och steg egenskaperna. Dra den sedan åt vänster eller höger.
 
-## <a name="view-a-task-sequence"></a><a name="bkmk_view"></a>Visa en aktivitetssekvens
+## <a name="view-a-task-sequence"></a><a name="bkmk_view"></a> Visa en aktivitetssekvens
 
 1. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **operativ system**och välj noden **aktivitetssekvenser** .  
 
@@ -140,7 +140,7 @@ En lista över de tillgängliga stegen för aktivitetssekvenser finns i [stegen 
 
 Du kan öppna fler än en instans av redigeraren för aktivitetssekvens samtidigt. Med det här beteendet kan du jämföra flera aktivitetssekvenser eller kopiera och klistra in steg mellan dem. Du kan **Redigera** en aktivitetssekvens och **Visa** en annan, men du kan inte utföra båda åtgärderna på samma aktivitetssekvens.
 
-## <a name="conditions"></a><a name="bkmk_conditions"></a>Kraven
+## <a name="conditions"></a><a name="bkmk_conditions"></a> Kraven
 
 Använd villkor för att styra hur aktivitetssekvensen beter sig. Lägg till villkor i ett enskilt steg eller en grupp med steg. Aktivitetssekvensen utvärderar villkoren innan steget körs på enheten. Det kör bara steget om villkoren utvärderas som true. Om ett villkor utvärderas som falskt, hoppar aktivitetssekvensen över gruppen eller steget.
 
@@ -175,14 +175,14 @@ Följande typer av villkor är tillgängliga:
 
 Hantera villkor med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepConditionFile](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionFile?view=sccm-ps)
-- [Get-CMTSStepConditionFolder](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionFolder?view=sccm-ps)
-- [Get-CMTSStepConditionIfStatement](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionIfStatement?view=sccm-ps)
-- [Get-CMTSStepConditionOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionOperatingSystem?view=sccm-ps)
-- [Get-CMTSStepConditionQueryWmi](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionQueryWmi?view=sccm-ps)
-- [Get-CMTSStepConditionRegistry](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionRegistry?view=sccm-ps)
-- [Get-CMTSStepConditionSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionSoftware?view=sccm-ps)
-- [Get-CMTSStepConditionVariable](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConditionVariable?view=sccm-ps)
+- [Get-CMTSStepConditionFile](/powershell/module/configurationmanager/Get-CMTSStepConditionFile?view=sccm-ps)
+- [Get-CMTSStepConditionFolder](/powershell/module/configurationmanager/Get-CMTSStepConditionFolder?view=sccm-ps)
+- [Get-CMTSStepConditionIfStatement](/powershell/module/configurationmanager/Get-CMTSStepConditionIfStatement?view=sccm-ps)
+- [Get-CMTSStepConditionOperatingSystem](/powershell/module/configurationmanager/Get-CMTSStepConditionOperatingSystem?view=sccm-ps)
+- [Get-CMTSStepConditionQueryWmi](/powershell/module/configurationmanager/Get-CMTSStepConditionQueryWmi?view=sccm-ps)
+- [Get-CMTSStepConditionRegistry](/powershell/module/configurationmanager/Get-CMTSStepConditionRegistry?view=sccm-ps)
+- [Get-CMTSStepConditionSoftware](/powershell/module/configurationmanager/Get-CMTSStepConditionSoftware?view=sccm-ps)
+- [Get-CMTSStepConditionVariable](/powershell/module/configurationmanager/Get-CMTSStepConditionVariable?view=sccm-ps)
 
 ### <a name="copy-and-paste-conditions"></a>Kopiera och klistra in villkor
 
@@ -201,7 +201,7 @@ Det finns också nya alternativ för att flytta upp eller ned i listan.
 > [!Note]  
 > Du kan kopiera och klistra in villkor mellan stegen i en aktivitetssekvens. Den här åtgärden stöds inte mellan olika aktivitetssekvenser.
 
-## <a name="reclaim-lock-for-editing"></a><a name="bkmk_sedo"></a>Frigör lås för redigering
+## <a name="reclaim-lock-for-editing"></a><a name="bkmk_sedo"></a> Frigör lås för redigering
 
 <!--3699337-->
 Om Configuration Manager-konsolen slutar svara kan du vara utelåst från att göra ytterligare ändringar tills låset upphör att gälla efter 30 minuter. Det här låset är en del av Configuration Manager SEDO (serialiserad redigering av distribuerade objekt). Mer information finns i [Configuration Manager Sedo](../../develop/core/understand/sedo.md).
@@ -211,7 +211,7 @@ Från och med version 1906 kan du rensa låset på en aktivitetssekvens. Den hä
 > [!TIP]
 > Från och med version 1910 kan du rensa låset för alla objekt i Configuration Manager-konsolen. Mer information finns i [använda Configuration Manager-konsolen](../../core/servers/manage/admin-console.md#bkmk_sedo).<!--4786915-->
 
-## <a name="search"></a><a name="bkmk_search"></a>Sök
+## <a name="search"></a><a name="bkmk_search"></a> Sök
 
 <!-- 4621085 -->
 

@@ -10,12 +10,12 @@ ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 7e4e84b55c929dd878cb0720b3f61dfceedcf449
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 8585f04e6cedf9cb5158dbebc41b00565eabd989
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904098"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692731"
 ---
 # <a name="prepare-windows-servers-to-support-configuration-manager"></a>Förbereda Windows-servrar för att hantera Configuration Manager
 
@@ -29,7 +29,7 @@ Innan du kan använda en Windows-dator som plats system Server för Configuratio
 
 Informationen i den här artikeln ger en översikt över de typer av Windows-konfigurationer som krävs för att stödja Configuration Manager-plats system. Konfigurations information för särskilda plats system roller finns i [krav för plats och plats system](../configs/site-and-site-system-prerequisites.md).
 
-##  <a name="windows-features-and-roles"></a><a name="BKMK_WinFeatures"></a>Windows-funktioner och-roller  
+##  <a name="windows-features-and-roles"></a><a name="BKMK_WinFeatures"></a> Windows-funktioner och-roller  
 När du konfigurerar Windows-funktioner och-roller på en dator kan du behöva starta om datorn för att slutföra konfigurationen. Därför är det en bra idé att identifiera datorer som ska vara värdar för vissa plats system roller innan du installerar en Configuration Manager plats eller plats system Server.
 
 ### <a name="features"></a>Funktioner  
@@ -95,10 +95,10 @@ Följande Windows-roller krävs för att stödja vissa funktioner, t. ex. progra
 - **Windows Server Update Services**: den här rollen krävs för program uppdateringar.  
 
 
-##  <a name="iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a>Filtrering av IIS-begäranden för distributions platser  
+##  <a name="iis-request-filtering-for-distribution-points"></a><a name="BKMK_IISFiltering"></a> Filtrering av IIS-begäranden för distributions platser  
 Som standard använder IIS begärandefiltrering för att blockera flera filnamnstillägg och mapplatser från åtkomst via HTTP- eller HTTPS-kommunikation. På en distributions plats förhindrar detta att klienter hämtar paket som har blockerade tillägg eller mappar.  
 
-När dina paket källfiler har tillägg som blockeras i IIS av din konfiguration för begär ande filtrering, måste du konfigurera begär ande filtrering så att de tillåts. Detta gör du genom [att redigera funktionen för filtrering av begär Anden](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)) i IIS-hanteraren på dina distributions plats datorer.  
+När dina paket källfiler har tillägg som blockeras i IIS av din konfiguration för begär ande filtrering, måste du konfigurera begär ande filtrering så att de tillåts. Detta gör du genom [att redigera funktionen för filtrering av begär Anden](/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)) i IIS-hanteraren på dina distributions plats datorer.  
 
 Dessutom används följande fil namns tillägg av Configuration Manager för paket och program. Kontrol lera att konfigurationerna för begär ande filtrering inte blockerar följande fil namns tillägg:  
 
@@ -125,15 +125,15 @@ Källfiler för en program distribution kan till exempel innehålla en mapp med 
 
 ## <a name="http-verbs"></a>HTTP-verb
 **Hanterings platser:** För att säkerställa att klienter kan kommunicera med en hanterings plats på hanterings plats servern ser du till att följande HTTP-verb tillåts:  
-- HÄMTA
+- GET
 - POST
 - CCM_POST
 - HEAD
 - PROPFIND
 
 **Distributions platser:** Distributions platser kräver att följande HTTP-verb tillåts:
-- HÄMTA
+- GET
 - HEAD
 - PROPFIND
 
-Mer information finns i [Konfigurera filtrering av begär anden i IIS](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)#http-verbs). 
+Mer information finns i [Konfigurera filtrering av begär anden i IIS](/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)#http-verbs).

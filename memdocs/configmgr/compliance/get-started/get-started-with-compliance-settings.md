@@ -10,12 +10,12 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5d8ae26c5e9cbf9f3a45d3584341e79de8ab3402
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: d5e042980a1fa6fb8a92abcff6d3938874cf6b38
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240719"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694601"
 ---
 # <a name="get-started-with-compliance-settings-in-configuration-manager"></a>Kom igång med kompatibilitetsinställningar i Configuration Manager
 
@@ -68,11 +68,11 @@ När du har definierat en konfigurations bas linje distribuerar du den till anv�
 Klientenheter utvärderar sin kompatibilitet mot varje distribuerad konfigurationsbaslinje och rapporterar omedelbart resultatet till platsen med hjälp av tillstånds- och statusmeddelanden. Om en enhet för närvarande är frånkopplad från nätverket, men laddat ned konfigurations bas linjen, utvärderas fortfarande kompatibiliteten för konfigurations objekten. Den skickar kompatibilitetsinformation när den återansluter.  
 
 ### <a name="monitoring-configuration-baselines"></a>Övervaka konfigurations bas linjer
-- Övervaka resultatet av utvärderingen av kompatibiliteten i Configuration Manager-konsolen, under arbets ytan **övervakning** , i noden **distributioner** . Till exempel:
+- Övervaka resultatet av utvärderingen av kompatibiliteten i Configuration Manager-konsolen, under arbets ytan **övervakning** , i noden **distributioner** . Exempel:
   - Vanliga orsaker till inkompatibilitet
   - Fel
   - Antalet påverkade användare och enheter
-- Kör rapporter för kompatibilitetsinställningar med ytterligare information. Till exempel:
+- Kör rapporter för kompatibilitetsinställningar med ytterligare information. Exempel:
   - Vilka enheter som är kompatibla eller icke-kompatibla
   - Vilket element i konfigurations bas linjen som gör att en dator inte är kompatibel
 - Visa utvärderings resultat för kompatibilitet från Windows-datorer som kör Configuration Manager-klienten. Öppna kontroll panelen **Configuration Manager** och växla till fliken **konfigurationer** .  
@@ -105,6 +105,6 @@ Mer information finns i [uppgradera Windows-enheter med uppgraderings principen 
 
 ## <a name="microsoft-edge-legacy-browser-profiles"></a>Äldre webb läsar profiler i Microsoft Edge
 <!-- 1357310 -->
-För kunder som använder [Microsoft Edge äldre](https://docs.microsoft.com/microsoft-edge/deploy/) webbläsare på Windows 10-klienter skapar du en Configuration Manager efterlevnadsprincip för att konfigurera webb läsar inställningarna.
+För kunder som använder [Microsoft Edge äldre](/microsoft-edge/deploy/) webbläsare på Windows 10-klienter skapar du en Configuration Manager efterlevnadsprincip för att konfigurera webb läsar inställningarna.
 
 Mer information finns i [Microsoft Edge Legacy Browser-profiler](../deploy-use/browser-profiles.md).

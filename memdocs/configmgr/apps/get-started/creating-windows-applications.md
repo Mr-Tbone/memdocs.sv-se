@@ -10,12 +10,12 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ddd01055ac6edf2872854c93cc5172b396052ad2
-ms.sourcegitcommit: 1e04fcd0d6c43897cf3993f705d8947cc9be2c25
+ms.openlocfilehash: 2712613eb6d03253c05a011037ac8492992e1f03
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84270862"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695196"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Skapa Windows-program i Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "84270862"
 
 Förutom de andra Configuration Manager krav och procedurer för att [skapa ett program](../deploy-use/create-applications.md)bör du också ta hänsyn till följande när du skapar och distribuerar program för Windows-enheter.  
 
-## <a name="general-considerations"></a><a name="bkmk_general"></a>Allmänna överväganden  
+## <a name="general-considerations"></a><a name="bkmk_general"></a> Allmänna överväganden  
 
 Configuration Manager stöder distribution av Windows-appaket (. appx) och app bunt-format (. appxbundle) för Windows 8,1-och Windows 10-enheter.
 
@@ -32,7 +32,7 @@ När du skapar ett program i Configuration Manager-konsolen väljer du installat
 > [!Note]  
 > Om du vill dra nytta av nya Configuration Manager funktioner måste du först uppdatera klienter till den senaste versionen. När nya funktioner visas i Configuration Manager-konsolen när du uppdaterar platsen och konsolen, fungerar inte det fullständiga scenariot förrän klient versionen också är den senaste.<!--SCCMDocs issue 646-->  
 
-## <a name="provision-windows-app-packages-for-all-users-on-a-device"></a><a name="bkmk_provision"></a>Etablera Windows-appaket för alla användare på en enhet
+## <a name="provision-windows-app-packages-for-all-users-on-a-device"></a><a name="bkmk_provision"></a> Etablera Windows-appaket för alla användare på en enhet
 <!--1358310-->
 Etablera ett program med ett Windows app-paket för alla användare på enheten. Ett vanligt exempel på det här scenariot är etablering av en app från Microsoft Store för företag och utbildning, till exempel Minecraft: Education Edition, för alla enheter som används av studenter i en skola. Tidigare Configuration Manager endast installera programmen per användare. När du har loggat in på en ny enhet skulle en student behöva vänta på att få åtkomst till en app. Nu när appen är etablerad till enheten för alla användare kan de vara produktivare snabbare.
 
@@ -53,12 +53,12 @@ Om du vill konfigurera en distributions typ för Windows-appen för den här fun
 > [!Note]  
 > Om du behöver avinstallera ett etablerad program från enheter som användarna redan har loggat in på, måste du skapa två avinstallations distributioner. Rikta den första avinstallations distributionen till en enhets samling som innehåller enheterna. Rikta den andra avinstallations distributionen till en användar samling som innehåller de användare som redan har loggat in på enheter med det etablerade programmet. När du avinstallerar en etablerad app på en enhet avinstallerar Windows för närvarande inte appen för användare även.
 
-## <a name="support-for-msix-format"></a><a name="bkmk_msix"></a>Stöd för MSIX-format
+## <a name="support-for-msix-format"></a><a name="bkmk_msix"></a> Stöd för MSIX-format
 <!--1357427-->
 
 Configuration Manager stöder formaten Windows 10-appaket (. msix) och app-paket (. msixbundle). Windows 10 version 1809 eller senare har stöd för dessa format.
 
-- En översikt över MSIX finns i [en närmare titt på MSIX](https://docs.microsoft.com/archive/blogs/sgern/a-closer-look-at-msix).  
+- En översikt över MSIX finns i [en närmare titt på MSIX](/archive/blogs/sgern/a-closer-look-at-msix).  
 
 - Information om hur du skapar en ny MSIX-app finns [i stöd för MSIX som introducerades i Insider Build 17682](https://techcommunity.microsoft.com/t5/MSIX-Blog/MSIX-support-introduced-in-Insider-Build-17682/ba-p/202376).  
 
@@ -79,7 +79,7 @@ Konvertera befintliga Windows Installer-program (. msi) till MSIX-format.
 
   - Installera [MSIX packning Tool](https://www.microsoft.com/store/productId/9N5LW3JBCXKF) från Microsoft Store  
 
-  - Installera [MSIX packnings verktyg driv rutin](https://docs.microsoft.com/windows/msix/packaging-tool/tool-known-issues#frameworks-and-drivers)<!--SCCMDocs-pr issue #3091-->  
+  - Installera [MSIX packnings verktyg driv rutin](/windows/msix/packaging-tool/tool-known-issues#frameworks-and-drivers)<!--SCCMDocs-pr issue #3091-->  
 
 Installera inte andra appar eller tjänster på den här enheten. Det är ditt referens system.
 
@@ -104,12 +104,12 @@ Om processen Miss lyckas pekar sammanfattnings sidan på logg filen med mer info
 
 Om du vill använda den här MSIX-appen måste du först signera den så att klienterna litar på den. Mer information om den här processen finns i följande artiklar:
 
-- [MSIX – MSIX packnings verktyg – signera MSIX-paketet](https://docs.microsoft.com/archive/blogs/sgern/msix-the-msix-packaging-tool-signing-the-msix-package)
-- [Signera ett appaket med SignTool](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
+- [MSIX – MSIX packnings verktyg – signera MSIX-paketet](/archive/blogs/sgern/msix-the-msix-packaging-tool-signing-the-msix-package)
+- [Signera ett appaket med SignTool](/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
 
 När du har signerat appen skapar du en ny distributions typ i programmet i Configuration Manager. Mer information finns i [skapa distributions typer för programmet](../deploy-use/create-applications.md#bkmk_create-dt).
 
-## <a name="task-sequence-deployment-type"></a><a name="bkmk_tsdt"></a>Distributions typ för aktivitetssekvens
+## <a name="task-sequence-deployment-type"></a><a name="bkmk_tsdt"></a> Distributions typ för aktivitetssekvens
 
 <!--3555953-->
 
@@ -150,7 +150,7 @@ När du skapar ett program för att lägga till en aktivitetssekvensdistribution
 
 - Använd inte steget **installera program** i den här aktivitetssekvensen. Använd steget [installera paket](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) för att installera appar.
 
-## <a name="support-for-universal-windows-platform-uwp-apps"></a><a name="bkmk_uwp"></a>Stöd för Universell Windows-plattform-appar (UWP)  
+## <a name="support-for-universal-windows-platform-uwp-apps"></a><a name="bkmk_uwp"></a> Stöd för Universell Windows-plattform-appar (UWP)  
 
 Windows 10-enheter kräver inte en nyckel för separat inläsning för att installera branschspecifika appar. Om du vill aktivera separat inläsning i Windows måste register nyckeln `HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Appx\AllowAllTrustedApps` ha värdet **1**.  
 
@@ -163,10 +163,10 @@ Använd följande tabell för att ta reda på vilken typ av kod signerings certi
 | Paket  | Symantec  | Ej Symantec  |
 |---------|---------|---------|
 | Universella **. appx** -paket på Windows 10 Mobile-enheter | Ja | Ja |
-| **. xap** -paket | Yes | Inga |
-| **. appx** -paket som skapats för Windows Phone 8,1 för installation på Windows 10 Mobile-enheter | Yes | Inga |
+| **. xap** -paket | Ja | Nej |
+| **. appx** -paket som skapats för Windows Phone 8,1 för installation på Windows 10 Mobile-enheter | Ja | Nej |
 
-## <a name="deploy-windows-installer-apps-to-mdm-enrolled-windows-10-devices"></a><a name="bkmk_mdm-msi"></a>Distribuera Windows Installer appar till MDM-registrerade Windows 10-enheter  
+## <a name="deploy-windows-installer-apps-to-mdm-enrolled-windows-10-devices"></a><a name="bkmk_mdm-msi"></a> Distribuera Windows Installer appar till MDM-registrerade Windows 10-enheter  
 
 Med distributions typen **Windows Installer via MDM ( \* . msi)** kan du skapa och distribuera Windows Installer-baserade appar till MDM-registrerade enheter som kör Windows 10.  
 
@@ -182,4 +182,4 @@ Tänk på följande när du använder den här distributions typen:
 
 - MSI-paket per dator installeras för alla användare av enheten.  
 
-- Configuration Manager stöder uppdateringar av appar. Produkt koden för MSI för varje version måste vara densamma.  
+- Configuration Manager stöder uppdateringar av appar. Produkt koden för MSI för varje version måste vara densamma.

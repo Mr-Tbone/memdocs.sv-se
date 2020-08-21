@@ -10,12 +10,12 @@ ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
 author: mestew
 manager: dougeby
 ms.author: mstewart
-ms.openlocfilehash: f9f4e1ffe8b28efda0f59e6a252f39c95e2b7749
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 1434d7802eb1ed68cb0a575778bdae1e5e99c9ec
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240124"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694754"
 ---
 # <a name="remote-connection-profiles-in-configuration-manager"></a>Fjärr anslutnings profiler i Configuration Manager
 
@@ -31,11 +31,11 @@ Configuration Manager skapar en säkerhets grupp på klienter, **fjärran sluten
 > [!IMPORTANT]  
 > Om tillhörighets förhållandet mellan en användare och en enhet ändras i Configuration Manager inaktive ras fjärr anslutnings profilen och Windows-brandväggens inställningar för att förhindra anslutningar till datorn.
 
-## <a name="prerequisites"></a>Förhandskrav  
+## <a name="prerequisites"></a>Förutsättningar  
 
 ### <a name="external-dependencies"></a>Externa beroenden  
 
-- Om du vill att användarna ska kunna ansluta från Internet installerar och konfigurerar du en server för fjärrskrivbordsgateway. Mer information om hur du installerar och konfigurerar en server för Fjärrskrivbordsgateway finns i [Fjärrskrivbordstjänster – åtkomst från var som helst](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-plan-access-from-anywhere).
+- Om du vill att användarna ska kunna ansluta från Internet installerar och konfigurerar du en server för fjärrskrivbordsgateway. Mer information om hur du installerar och konfigurerar en server för Fjärrskrivbordsgateway finns i [Fjärrskrivbordstjänster – åtkomst från var som helst](/windows-server/remote/remote-desktop-services/rds-plan-access-from-anywhere).
 
 - Om klienter kör en värdbaserad brand vägg måste den Aktivera mstsc.exe programmet. När du konfigurerar en fjärr anslutnings profil aktiverar du inställningen för att **tillåta undantag i Windows-brandväggen för anslutningar i Windows-domäner och i privata nätverk**. Med den här inställningen kan Configuration Manager automatiskt konfigurera Windows-brandväggen.
 
@@ -83,7 +83,7 @@ När en användare ansluter till en arbets dator via fjärr anslutning, laddar d
         - Förutom punkter ( `.` ) mellan segment och ett kolon ( `:` ) före porten, är de enda specialtecknen ( `–` ) och under streck ( `_` ).
         - Configuration Manager stöder inte användning av ett internationellt domän namn för det här värdet.
 
-    - **Tillåt bara anslutningar från datorer som kör fjärr skrivbord med autentisering på nätverksnivå**: aktiverat som standard lägger den här inställningen till ytterligare en säkerhets nivå för anslutningen. Mer information finns i [bevilja åtkomst till fjärr skrivbord](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#why-allow-connections-only-with-network-level-authentication).
+    - **Tillåt bara anslutningar från datorer som kör fjärr skrivbord med autentisering på nätverksnivå**: aktiverat som standard lägger den här inställningen till ytterligare en säkerhets nivå för anslutningen. Mer information finns i [bevilja åtkomst till fjärr skrivbord](/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#why-allow-connections-only-with-network-level-authentication).
 
     - Aktivera följande anslutnings inställningar:
 
@@ -162,4 +162,4 @@ Configuration Manager innehåller inbyggda rapporter som du kan använda för at
 > [!IMPORTANT]  
 > Använd jokertecknet ( `%` ) när du använder parametrarna **enhets filter** och **användar filter** i rapporterna för kompatibilitetsinställningar.  
 
-Mer information om hur du konfigurerar rapportering i Configuration Manager finns i [Introduktion till rapportering](../../core/servers/manage/introduction-to-reporting.md).  
+Mer information om hur du konfigurerar rapportering i Configuration Manager finns i [Introduktion till rapportering](../../core/servers/manage/introduction-to-reporting.md).

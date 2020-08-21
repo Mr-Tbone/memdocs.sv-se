@@ -10,12 +10,12 @@ ms.assetid: 9875c443-19bf-43a0-9203-3a741f305096
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 23cc7d0c642637a310f53280bafed6a2a28d2834
-ms.sourcegitcommit: 4174f7e485067812c29aea01a4767989ffdbb578
+ms.openlocfilehash: ea1965d6cae90808156957be1c9634e4c1631aa8
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83406677"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694533"
 ---
 # <a name="create-a-configuration-manager-lab-in-azure"></a>Skapa ett Configuration Manager labb i Azure
 
@@ -32,7 +32,7 @@ Mer information finns i [Configuration Manager på Azure](../understand/configur
 
 
 
-## <a name="prerequisites"></a>Krav
+## <a name="prerequisites"></a>Förutsättningar
 
 Den här processen kräver en Azure-prenumeration där du kan skapa följande objekt: 
 - Två Standard_B2s virtuella datorer för domänkontrollant, hanterings plats och distributions plats.
@@ -66,7 +66,7 @@ Den här processen kräver en Azure-prenumeration där du kan skapa följande ob
 
         - **Admin-användar**namn: namnet på en användare på de virtuella datorerna med administratörs behörighet. Du använder den här användaren för att logga in på de virtuella datorerna.  
 
-        - **Administratörs lösen ord**: lösen ordet måste uppfylla Azures komplexitets krav. Mer information finns i [adminPassword](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate#osprofile).  
+        - **Administratörs lösen ord**: lösen ordet måste uppfylla Azures komplexitets krav. Mer information finns i [adminPassword](/rest/api/compute/virtualmachines/createorupdate#osprofile).  
 
     > [!Important]  
     > Följande inställningar krävs av Azure. Använd standardvärdena. Ändra inte dessa värden.  
@@ -86,7 +86,7 @@ Azure validerar inställningarna och påbörjar sedan distributionen. Kontrol le
 
 Om du vill se status för konfigurations skripten ansluter du till `<prefix>PS1` servern och visar följande fil: `%windir%\TEMP\ProvisionScript\PS1.json` . Om du ser alla steg som slutförda utförs processen.
 
-För att ansluta till de virtuella datorerna får du först från Azure Portal de offentliga IP-adresserna för varje virtuell dator. När du ansluter till den virtuella datorn är domän namnet `contoso.com` . Använd de autentiseringsuppgifter som du angav i distributions mal len. Mer information finns i [så här ansluter du och loggar in på en virtuell Azure-dator som kör Windows](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
+För att ansluta till de virtuella datorerna får du först från Azure Portal de offentliga IP-adresserna för varje virtuell dator. När du ansluter till den virtuella datorn är domän namnet `contoso.com` . Använd de autentiseringsuppgifter som du angav i distributions mal len. Mer information finns i [så här ansluter du och loggar in på en virtuell Azure-dator som kör Windows](/azure/virtual-machines/windows/connect-logon).
 
 
 

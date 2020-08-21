@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: a870d2bf18b9e7f064e914f450aee0f5e3e2e545
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 4604b6d2c0396b9192c031264cffef8b8641d557
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906706"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88696689"
 ---
 # <a name="prerequisites-for-software-updates-in-configuration-manager"></a>Krav för program uppdateringar i Configuration Manager
 
@@ -77,7 +77,7 @@ Program uppdateringar är aktiverade för klienter som standard. Det finns andra
 ### <a name="reporting-services-points"></a>Reporting Services-platser  
  Platssystemrollen Rapporteringstjänstpunkt kan visa rapporter för programuppdateringar. Den här rollen är valfri men rekommenderas. Mer information om hur du skapar en repor ting Services-plats finns i [Konfigurera rapportering](../../core/servers/manage/configuring-reporting.md).  
 
-## <a name="which-updates-are-required-on-wsus-62-and-63"></a><a name="BKMK_wsus2012"></a>Vilka uppdateringar krävs för WSUS 6,2 och 6,3?
+## <a name="which-updates-are-required-on-wsus-62-and-63"></a><a name="BKMK_wsus2012"></a> Vilka uppdateringar krävs för WSUS 6,2 och 6,3?
 
 Två uppdateringar krävs för att synkronisera **uppgraderings** klassificeringen i WSUS 6,2 och 6,3. Ibland kan du se ett fel som laddar ned eller distribuerar uppgraderingar om de är synkroniserade innan KB3095113 och KB3159706 installerades. Information om möjliga problem finns i nästa avsnitt.  
 
@@ -89,13 +89,13 @@ Två uppdateringar krävs för att synkronisera **uppgraderings** klassificering
 >[!IMPORTANT]
 > Både KB 3095113 och KB 3159706 ingår i den **samlade säkerheten för månads kvalitet** med början i juli 2017. Det innebär att du kanske inte ser KB 3095113 och KB 3159706 som installerade uppdateringar eftersom de kan ha installerats med en samlad uppdatering. Men om du behöver någon av dessa uppdateringar rekommenderar vi att du installerar en **säkerhets samlad månads kvalitet** från och med oktober 2017 eftersom de innehåller en ytterligare WSUS-uppdatering för att minska minnes användningen på WSUS-ClientWebService.
 
-## <a name="download-of-windows-10-upgrades-fails-with-error-invalid-certificate-signature-or-0xc1800118"></a><a name="BKMK_RecoverUpgrades"></a>Hämtning av Windows 10-uppgraderingar Miss lyckas med "fel: ogiltig certifikat signatur" eller 0xc1800118
+## <a name="download-of-windows-10-upgrades-fails-with-error-invalid-certificate-signature-or-0xc1800118"></a><a name="BKMK_RecoverUpgrades"></a> Hämtning av Windows 10-uppgraderingar Miss lyckas med "fel: ogiltig certifikat signatur" eller 0xc1800118
 
 Uppdateringarna och problemet som beskrivs i det här avsnittet gäller endast för WSUS som körs på Windows Server 2012-eller Windows Server 2012 R2-datorer (WSUS 6,2 och 6,3). Normalt visas bara de problem som beskrivs i det här avsnittet om du har installerat WSUS före 2017 juli och du nyligen har aktiverat klassificeringen **uppgraderingar** . Det är dock möjligt att se de här problemen i andra situationer.
 
 ### <a name="historical-information-about-kb-3095113"></a>Historisk information om KB 3095113
 
- [KB 3095113](https://support.microsoft.com/kb/3095113) [släpptes som en snabb korrigering](https://docs.microsoft.com/archive/blogs/wsus/important-update-for-wsus-4-0-kb-3095113) i oktober 2015 för att lägga till stöd för Windows 10-uppgraderingar i WSUS. Uppdateringen gör att WSUS kan synkronisera och distribuera uppdateringar i klassificeringen **uppgraderingar** för Windows 10.
+ [KB 3095113](https://support.microsoft.com/kb/3095113) [släpptes som en snabb korrigering](/archive/blogs/wsus/important-update-for-wsus-4-0-kb-3095113) i oktober 2015 för att lägga till stöd för Windows 10-uppgraderingar i WSUS. Uppdateringen gör att WSUS kan synkronisera och distribuera uppdateringar i klassificeringen **uppgraderingar** för Windows 10.
 
 Om du synkroniserar eventuella uppgraderingar utan att först ha installerat [KB 3095113](https://support.microsoft.com/kb/3095113), fyller du i WSUS-databasen (SUSDB) med oanvändbara data. Dessa data måste rensas innan uppgraderingar kan distribueras korrekt. Windows 10-uppgraderingar i det här läget kan inte hämtas med hjälp av guiden hämta program uppdateringar.
 
@@ -115,13 +115,13 @@ ERROR: DownloadContentFiles() failed with hr=0x80073633
 # This log is truncated for readability.
 ```
 
-Historiskt sett, när dessa fel uppstod, löses de genom att göra en modifierad version av [lösnings stegen för WSUS](https://docs.microsoft.com/archive/blogs/wsus/how-to-delete-upgrades-in-wsus). Eftersom de här stegen liknar lösningen för att inte utföra de manuella stegen som krävs efter installationen av KB 3159706 har vi kombinerat båda uppsättningarna med steg till en enda lösning i avsnittet nedan:
+Historiskt sett, när dessa fel uppstod, löses de genom att göra en modifierad version av [lösnings stegen för WSUS](/archive/blogs/wsus/how-to-delete-upgrades-in-wsus). Eftersom de här stegen liknar lösningen för att inte utföra de manuella stegen som krävs efter installationen av KB 3159706 har vi kombinerat båda uppsättningarna med steg till en enda lösning i avsnittet nedan:
 
 - [För att återställa från synkronisering av uppgraderingar innan du installerar kb 3095113 eller kb 3159706](#bkmk_fix-upgrades).
 
 ### <a name="historical-information-about-kb-3159706"></a>Historisk information om KB 3159706
 
-KB 3148812 släpptes ursprungligen i april 2016 för att aktivera att WSUS ska dekryptera. ESD-filer som används för att uppgradera Windows 10-paket. [Kb 3148812 orsakade problem för vissa kunder](https://docs.microsoft.com/archive/blogs/wsus/the-long-term-fix-for-kb3148812-issues) och ersattes med [KB 3159706](https://support.microsoft.com/help/3159706). KB 3159706 måste installeras på alla dina program uppdaterings platser och plats servrar innan du kan underhålla Windows 10-version 1607 och senare enheter. Problem kan dock uppstå om du inte inser att KB kräver följande manuella steg efter installationen:
+KB 3148812 släpptes ursprungligen i april 2016 för att aktivera att WSUS ska dekryptera. ESD-filer som används för att uppgradera Windows 10-paket. [Kb 3148812 orsakade problem för vissa kunder](/archive/blogs/wsus/the-long-term-fix-for-kb3148812-issues) och ersattes med [KB 3159706](https://support.microsoft.com/help/3159706). KB 3159706 måste installeras på alla dina program uppdaterings platser och plats servrar innan du kan underhålla Windows 10-version 1607 och senare enheter. Problem kan dock uppstå om du inte inser att KB kräver följande manuella steg efter installationen:
 
 1. Kör en upphöjd kommando tolk `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing` .
 1. Starta om WSUS-tjänsten på alla WSUS-servrar.
@@ -131,20 +131,20 @@ Om du inte inser att KB 3159706 hade manuella steg efter installationen, eller o
 Eftersom lösnings stegen liknar lösningen för att synkronisera uppgraderingar innan du installerar KB 3095113 har vi kombinerat båda uppsättningarna steg till en enda lösning i nästa avsnitt.
  
 
-### <a name="to-recover-from-synchronizing-the-upgrades-before-you-install-kb-3095113-or-kb-3159706"></a><a name="bkmk_fix-upgrades"></a>Återställa från att synkronisera uppgraderingar innan du installerar KB 3095113 eller KB 3159706
+### <a name="to-recover-from-synchronizing-the-upgrades-before-you-install-kb-3095113-or-kb-3159706"></a><a name="bkmk_fix-upgrades"></a> Återställa från att synkronisera uppgraderingar innan du installerar KB 3095113 eller KB 3159706
 
 Följ stegen nedan för att lösa både 0xc1800118-fel och "fel: ogiltig certifikat signatur":
 
 1. Inaktivera klassificeringen **uppgraderingar** i både WSUS och Configuration Manager. Du vill inte att synkroniseringen ska ske förrän du har dirigerat dessa instruktioner.  
    - Avmarkera klassificeringen **uppgraderingar** i egenskaperna för komponenten för program uppdaterings platsen på platsen på den översta nivån.
      - Mer information finns i [Konfigurera klassificeringar och produkter](../get-started/configure-classifications-and-products.md).
-   - Avmarkera klassificeringen **uppgraderingar** från WSUS under **produkter och klassificeringar** på [sidan **alternativ** ](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/setting-up-update-synchronizations), eller Använd PowerShell ISE som kör som administratör.
+   - Avmarkera klassificeringen **uppgraderingar** från WSUS under **produkter och klassificeringar** på [sidan **alternativ** ](/windows-server/administration/windows-server-update-services/manage/setting-up-update-synchronizations), eller Använd PowerShell ISE som kör som administratör.
       ```PowerShell
       Get-WsusClassification | Where-Object -FilterScript {$_.Classification.Title -Eq "Upgrades"} | Set-WsusClassification -Disable
       ```  
      - Om du delar WSUS-databasen mellan flera WSUS-servrar behöver du bara avmarkera **uppgraderingarna** en gång för varje databas.  
 1. Från en upphöjd kommando tolk på varje WSUS-server kör du: `"C:\Program Files\Update Services\Tools\wsusutil.exe" postinstall /servicing` . Starta sedan om WSUS-tjänsten på alla WSUS-servrar.
-   -  WSUS placerar databasen i [enanvändarläge](https://docs.microsoft.com/sql/relational-databases/databases/set-a-database-to-single-user-mode) innan den kontrollerar för att se om servicen behövs. Underhållet körs eller körs inte utifrån resultatet av kontrollen. Databasen placeras sedan i läget för flera användare. 
+   -  WSUS placerar databasen i [enanvändarläge](/sql/relational-databases/databases/set-a-database-to-single-user-mode) innan den kontrollerar för att se om servicen behövs. Underhållet körs eller körs inte utifrån resultatet av kontrollen. Databasen placeras sedan i läget för flera användare. 
    - Om du delar WSUS-databasen mellan flera WSUS-servrar behöver du bara utföra den här underhållet en gång för varje databas.
 1. Ta bort alla Windows 10-uppgraderingar från varje WSUS-databas med hjälp av PowerShell ISE som kör som administratör.
    ```PowerShell

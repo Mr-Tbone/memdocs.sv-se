@@ -10,12 +10,12 @@ ms.assetid: 634d612c-92d7-4c03-873a-b2e730c9a72d
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 159afbf2c5aae9516fc5244ee06a2aa484290c20
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 84f1ea48887f89cf06ed4b41d0de0dfc24e9d508
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721761"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697134"
 ---
 # <a name="create-certificate-profiles"></a>Skapa certifikatprofiler
 
@@ -75,11 +75,11 @@ Gå till sidan **Allmänt** i guiden Skapa certifikatprofil och ange följande:
 > - Certifikatmallens namn
 > - Certifikattyp
 > - Format för namn på certifikatmottagare
-> - Alternativt namn för certifikat mottagare
+> - Alternativt namn för certifikatmottagare
 > - Certifikatets giltighetsperiod
 > - Nyckel användning
 > - Nyckel storlek
-> - Förbättrad nyckelanvändning
+> - Förbättrad nyckel användning
 > - Rot certifikat utfärdarens certifikat
 
 1. Gå till sidan **Certifikat för betrodd certifikatutfärdare** i guiden Skapa certifikatprofil och ange följande:  
@@ -114,7 +114,7 @@ Slutför sidan **SCEP-registrering** i guiden Skapa certifikat profil.
 
   - **Installera till TPM (Trusted Platform Module), rapportera annars ett fel**: Installerar nyckeln till TPM. Om TPM-modulen inte finns går det inte att installera.  
 
-  - **Installera på Windows Hello för företag, rapportera annars**ett problem: det här alternativet är tillgängligt för Windows 10-enheter. Det gör att du kan lagra certifikatet i Windows Hello för företag-butiken som skyddas av Multi-Factor Authentication. Mer information finns i [Windows Hello för företag](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
+  - **Installera på Windows Hello för företag, rapportera annars**ett problem: det här alternativet är tillgängligt för Windows 10-enheter. Det gör att du kan lagra certifikatet i Windows Hello för företag-butiken som skyddas av Multi-Factor Authentication. Mer information finns i [Windows Hello för företag](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
     > [!NOTE]  
     > Det här alternativet stöder inte smartkortsinloggning för den förbättrade nyckel användningen på sidan certifikat egenskaper.
@@ -138,10 +138,10 @@ Gå till sidan **Certifikategenskaper** i guiden Skapa certifikatprofil och ange
 
   - Om du *skriver* in namnet på certifikat mal len kontrollerar du att namnet matchar exakt en av certifikatmallarna. Den måste matcha namnen som anges i registret på NDES-servern. Se till att du anger namnet på certifikat mal len och inte visnings namnet på certifikat mal len.  
 
-    Bläddra till följande register nyckel för att hitta namnen på certifikatmallarna: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP`. Den listar certifikatmallarna som värden för **EncryptionTemplate**, **GeneralPurposeTemplate**och **SignatureTemplate**. Värdet för alla tre certifikatmallar är som standard **IPSECIntermediateOffline**vilket mappar till mallvisningsnamnet **IPSec (Offline request)**.  
+    Bläddra till följande register nyckel för att hitta namnen på certifikatmallarna: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP` . Den listar certifikatmallarna som värden för **EncryptionTemplate**, **GeneralPurposeTemplate**och **SignatureTemplate**. Värdet för alla tre certifikatmallar är som standard **IPSECIntermediateOffline**vilket mappar till mallvisningsnamnet **IPSec (Offline request)**.  
 
     > [!WARNING]  
-    > När du skriver in namnet på certifikat mal len kan Configuration Manager inte verifiera innehållet i certifikat mal len. Du kanske kan välja alternativ som certifikat mal len inte stöder, vilket kan resultera i en misslyckad certifikatbegäran. När det här inträffar visas ett fel meddelande för W3wp. exe i filen CPR. log, att mallnamnet i certifikat signerings förfrågan (CSR) och utmaningen inte matchar.  
+    > När du skriver in namnet på certifikat mal len kan Configuration Manager inte verifiera innehållet i certifikat mal len. Du kanske kan välja alternativ som certifikat mal len inte stöder, vilket kan resultera i en misslyckad certifikatbegäran. När detta inträffar visas ett fel meddelande för w3wp.exe i filen CPR. log att mallnamnet i certifikat signerings förfrågan (CSR) och utmaningen inte matchar.  
     >
     > När du skriver namnet på den certifikatmall som har angetts för **GeneralPurposeTemplate** -värdet väljer du alternativet **nyckelchiffrering** och den **digitala signaturen** för den här certifikat profilen. Om du bara vill aktivera alternativet **nyckelchiffrering** i den här certifikat profilen, anger du namnet på certifikat mal len för **EncryptionTemplate** -nyckeln. Och om du bara vill aktivera alternativet **Digital signatur** i den här certifikatprofilen, anger du certifikatmallnamnet för nyckeln **SignatureTemplate** .  
 
@@ -157,16 +157,16 @@ Gå till sidan **Certifikategenskaper** i guiden Skapa certifikatprofil och ange
 - **Certifikatets giltighets period**: om du anger en anpassad giltighets period för den utfärdande certifikat utfärdaren anger du hur lång tid som ska gå innan certifikatet upphör att gälla.
 
     > [!TIP]
-    > Ange en anpassad giltighets period med följande kommando rad:`certutil -setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE`
+    > Ange en anpassad giltighets period med följande kommando rad: `certutil -setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE`
     > Mer information om det här kommandot finns i [certifikat infrastruktur](certificate-infrastructure.md).  
 
     Du kan ange ett värde som är lägre än giltighets perioden i den angivna certifikat mal len, men inte högre. Om certifikatets giltighets period i certifikat mal len till exempel är två år, kan du ange ett värde på ett år, men inte ett värde på fem år. Värdet måste också vara lägre än den återstående giltighetsperioden för certifikatutfärdaren.  
 
 - **Nyckelanvändning**: Ange alternativ för nyckelanvändning för certifikatet. Välj bland följande alternativ:  
 
-  - **Nyckelchiffrering**: Tillåt bara nyckel utbyte när nyckeln är krypterad.  
+  - **Nyckelchiffrering**: Tillåt nyckelutbyte endast när nyckeln är krypterad.  
 
-  - **Digital signatur**: Tillåt bara nyckel utbyte när en digital signatur skyddar nyckeln.  
+  - **Digital signatur**: Tillåt nyckelutbyte endast när en digital signatur skyddar nyckeln.  
 
   Om du har bläddrat till en certifikatmall kan du inte ändra inställningarna, såvida du inte väljer en annan certifikatmall.  
 

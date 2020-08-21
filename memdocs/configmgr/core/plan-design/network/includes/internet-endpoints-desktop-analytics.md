@@ -5,12 +5,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: include
 ms.date: 08/11/2020
-ms.openlocfilehash: ca735cde1da5d563b9a7772fdaa55834e307312e
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 2ae953f6fb01f42c8140407c551ddeb3a9f39c70
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88125972"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692695"
 ---
 ### <a name="server-connectivity-endpoints"></a>Slut punkter för Server anslutning
 
@@ -42,15 +42,15 @@ Klient enheter måste kommunicera med följande slut punkter:
 |-------|-----------|-----------|
 | 1 | `https://settings-win.data.microsoft.com` | Aktiverar kompatibilitetsrapporten för att skicka data till Microsoft. |
 | 2 | `http://adl.windows.com` | Tillåter att kompatibilitetsrapporten tar emot de senaste kompatibilitetsinställningarna från Microsoft. |
-| 3 | `https://watson.telemetry.microsoft.com` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1803 eller tidigare. |
-| 4 | `https://umwatsonc.events.data.microsoft.com` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för enhetens hälso rapporter i Windows 10, version 1809 eller senare. |
-| 5 | `https://ceuswatcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 6 | `https://ceuswatcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 7 | `https://eaus2watcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 8 | `https://eaus2watcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 9 | `https://weus2watcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 10 | `https://weus2watcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
-| 11 | `https://kmwatsonc.events.data.microsoft.com` | [Online Crash Analysis (OCA)](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Krävs för enhetens hälso rapporter i Windows 10, version 1809 eller senare. |
-| 12 | `https://oca.telemetry.microsoft.com`  | [Online Crash Analysis (OCA)](https://docs.microsoft.com/windows/win32/dxtecharts/crash-dump-analysis). Krävs för att övervaka distributions hälsan i Windows 10, version 1803 eller tidigare. |
-| 13 | `https://login.live.com` | Krävs för att ge en mer tillförlitlig enhets identitet för Skriv bords analys. <br> <br>Om du vill inaktivera slut användar Microsoft-konto åtkomst använder du princip inställningar i stället för att blockera slut punkten. Mer information finns i [Microsoft-konto i företaget](https://docs.microsoft.com/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
+| 3 | `https://watson.telemetry.microsoft.com` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1803 eller tidigare. |
+| 4 | `https://umwatsonc.events.data.microsoft.com` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för enhetens hälso rapporter i Windows 10, version 1809 eller senare. |
+| 5 | `https://ceuswatcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
+| 6 | `https://ceuswatcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
+| 7 | `https://eaus2watcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
+| 8 | `https://eaus2watcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
+| 9 | `https://weus2watcab01.blob.core.windows.net` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
+| 10 | `https://weus2watcab02.blob.core.windows.net` | [Windows Felrapportering (WER)](/windows/win32/wer/windows-error-reporting). Krävs för att övervaka distributions hälsan i Windows 10, version 1809 eller senare. |
+| 11 | `https://kmwatsonc.events.data.microsoft.com` | [Online Crash Analysis (OCA)](/windows/win32/dxtecharts/crash-dump-analysis). Krävs för enhetens hälso rapporter i Windows 10, version 1809 eller senare. |
+| 12 | `https://oca.telemetry.microsoft.com`  | [Online Crash Analysis (OCA)](/windows/win32/dxtecharts/crash-dump-analysis). Krävs för att övervaka distributions hälsan i Windows 10, version 1803 eller tidigare. |
+| 13 | `https://login.live.com` | Krävs för att ge en mer tillförlitlig enhets identitet för Skriv bords analys. <br> <br>Om du vill inaktivera slut användar Microsoft-konto åtkomst använder du princip inställningar i stället för att blockera slut punkten. Mer information finns i [Microsoft-konto i företaget](/windows/security/identity-protection/access-control/microsoft-accounts#block-all-consumer-microsoft-account-user-authentication). |
 | 14 | `https://v20.events.data.microsoft.com` | Slut punkt för anslutna användar upplevelser och diagnostisk komponent. |

@@ -10,12 +10,12 @@ ms.assetid: 27dd26d1-e99c-4431-b2f8-60406394b6db
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8e2f7bbb51c72fa3d0f2a36e8a5419552d468b4c
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 405303b3988e8c853ba30e8fb6d620d782b0474e
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81711478"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694907"
 ---
 # <a name="set-up-hybrid-azure-ad-for-co-management"></a>Konfigurera hybrid Azure AD for Co-Management
 
@@ -26,8 +26,8 @@ I följande video diskuterar Senior program hanteraren Sandeep Deo och Product M
 > [!VIDEO https://channel9.msdn.com/Series/Endpoint-Zone/Configuring-Devices-in-Azure-Active-Directory/player]
 
 Hybrid Azure AD-Join-processen registrerar automatiskt lokala domänanslutna enheter med Azure AD. Mer information om den här processen finns i följande artiklar:
-- [Introduktion till enhetshantering i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-introduction) 
-- [Planera din hybrid Azure AD-anslutning](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
+- [Introduktion till enhetshantering i Azure Active Directory](/azure/active-directory/device-management-introduction) 
+- [Planera din hybrid Azure AD-anslutning](/azure/active-directory/devices/hybrid-azuread-join-plan)
 
 Hybrid Azure AD Join är en av de viktigaste grunderna för samhantering. Den här processen kan vara utmanande för vissa kunder, till exempel:
 - Din organisation använder en identitets lösning från tredje part 
@@ -41,14 +41,14 @@ Det kan ta lite vägledning att lösa dessa utmaningar. Den här artikeln hjälp
 Enheter liknar användarna när de skapar en identitet som du vill skydda. För att skydda en enhets identitet när som helst och var som helst måste du ta med identiteten för enheten i Azure AD.
 
 Beroende på vilken typ av domän du använder finns det två huvudsakliga sätt att göra det. Konfigurera hybrid Azure AD-anslutning för någon av följande domän typer:  
-- [Federerade domäner](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-federated-domains)  
-- [Hanterade domäner](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-managed-domains)  
+- [Federerade domäner](/azure/active-directory/devices/hybrid-azuread-join-federated-domains)  
+- [Hanterade domäner](/azure/active-directory/devices/hybrid-azuread-join-managed-domains)  
 
 De två föregående metoderna ger bästa möjliga upplevelse. Mer detaljerad information, inklusive den helt manuella processen, finns i följande artiklar:
-- [Konfigurera hybrid Azure AD-anslutna enheter manuellt](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup)  
-- [AD FS-direktautentisering för Hybrid Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/ad-fs-overview), som innehåller identifiering av Azure AD  
+- [Konfigurera hybrid Azure AD-anslutna enheter manuellt](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup)  
+- [AD FS-direktautentisering för Hybrid Azure AD](/windows-server/identity/ad-fs/ad-fs-overview), som innehåller identifiering av Azure AD  
 
-Fel söknings anvisningar finns i [fel söknings guiden för Windows 10 hybrid Azure AD Join](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-hybrid-join-windows-current).
+Fel söknings anvisningar finns i [fel söknings guiden för Windows 10 hybrid Azure AD Join](/azure/active-directory/devices/troubleshoot-hybrid-join-windows-current).
 
 
 
@@ -66,5 +66,4 @@ Efter en lyckad distribution och testning i sin för produktions miljö har kund
 
 Om du behöver hjälp med att konfigurera Azure AD vid något tillfälle i processen går du till [Microsoft FastTrack](https://Microsoft.com/FastTrack/), loggar in och ber om hjälp. 
 
-Mer information finns i [få hjälp från FastTrack](quickstart-fasttrack.md). 
-
+Mer information finns i [få hjälp från FastTrack](quickstart-fasttrack.md).

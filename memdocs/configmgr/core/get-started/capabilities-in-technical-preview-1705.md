@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: d4594a50f42d6b8e6ea0b88b83920eda11615815
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: 0ddad23dfde87fa402c01d4eaa21a1b76db27d93
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591010"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692935"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-configuration-manager"></a>Funktioner i Technical Preview 1705 för Configuration Manager
 
@@ -121,12 +121,12 @@ Med den här versionen kan du nu använda asynkrona inchecknings repliker i SQL 
 
 - Den här versionen stöder inte redundans för att använda den asynkrona commit-repliken som plats databas.
   > [!CAUTION]  
-  > Eftersom Configuration Manager inte validerar statusen för den asynkrona commit-replikeringen för att bekräfta att den är aktuell, och [genom att utforma en sådan replik kan vara osynkroniserade](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2014#AvailabilityModes), använder en asynkron replik som plats databas och skyddar din webbplats och data på risk.  
+  > Eftersom Configuration Manager inte validerar statusen för den asynkrona commit-replikeringen för att bekräfta att den är aktuell, och [genom att utforma en sådan replik kan vara osynkroniserade](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-2014#AvailabilityModes), använder en asynkron replik som plats databas och skyddar din webbplats och data på risk.  
 
 - Du kan använda samma antal och typ av repliker i en tillgänglighets grupp som stöds av den version av SQL Server som du använder.   (Tidigare stöd var begränsat till två synkrona commit-repliker.)
 
 ### <a name="configure-an-asynchronous-commit-replica"></a>Konfigurera en asynkron commit-replik
-Om du vill lägga till en asynkron replik i en [tillgänglighets grupp som du använder med Configuration Manager](../servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)behöver du inte köra de konfigurations skript som krävs för att konfigurera en synkron replik. (Detta beror på att det inte finns stöd för att använda den asynkrona repliken som plats databasen.) Mer information finns i [lägga till en sekundär replik i en tillgänglighets grupp](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/add-a-secondary-replica-to-an-availability-group-sql-server?view=sql-server-2014).
+Om du vill lägga till en asynkron replik i en [tillgänglighets grupp som du använder med Configuration Manager](../servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)behöver du inte köra de konfigurations skript som krävs för att konfigurera en synkron replik. (Detta beror på att det inte finns stöd för att använda den asynkrona repliken som plats databasen.) Mer information finns i [lägga till en sekundär replik i en tillgänglighets grupp](/sql/database-engine/availability-groups/windows/add-a-secondary-replica-to-an-availability-group-sql-server?view=sql-server-2014).
 
 ### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Använd den asynkrona repliken för att återställa din webbplats
 Innan du använder en asynkron replik för att återställa plats databasen måste du stoppa den aktiva primära platsen för att förhindra ytterligare skrivningar till plats databasen. När du har stoppat platsen kan du använda en asynkron replik i stället för att använda en [manuellt återställd databas](../servers/manage/recover-sites.md#use-a-site-database-that-has-been-manually-recovered).
@@ -254,7 +254,7 @@ Följ sedan anvisningarna i [Distribuera klienter till Windows-datorer](../clien
 - **SMSMP**: namnet på din uppslags hanterings plats – detta kan finnas på intranätet.
 - **SMSSiteCode**: plats koden för din Configuration Manager webbplats.
 - **AADTENANTID**, **AADTENANTNAME**: ID och namn för den Azure AD-klient som du länkade till Configuration Manager. Du hittar detta genom att köra dsregcmd.exe/status från en kommando tolk på en Azure AD-ansluten enhet.
-- **AADCLIENTAPPID**: ID för Azure AD-klientens app. Information om hur du hittar detta finns i [använda portalen för att skapa ett Azure Active Directory program och tjänstens huvud namn som kan komma åt resurser](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
+- **AADCLIENTAPPID**: ID för Azure AD-klientens app. Information om hur du hittar detta finns i [använda portalen för att skapa ett Azure Active Directory program och tjänstens huvud namn som kan komma åt resurser](/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in).
 - **AADResourceUri**: ID-URI för den inbyggda Azure AD server-appen.
 
 ## <a name="use-azure-services-wizard-to-configure-a-connection-to-oms"></a>Använd guiden Azure-tjänster för att konfigurera en anslutning till OMS
@@ -265,7 +265,7 @@ Från och med 1705 Technical Preview-versionen använder du **guiden Azure-tjän
 -   Configuration Manager ansluter till OMS för funktioner som Log Analytics eller Uppgraderingsberedskap.
 
 ### <a name="prerequisites-for-the-oms-connector"></a>Krav för OMS-kopplingen
-Krav för att konfigurera en anslutning till OMS är oförändrad från de [som dokumenteras för Current Branch version 1702](https://docs.microsoft.com/azure/azure-monitor/platform/collect-sccm). Informationen upprepas här:  
+Krav för att konfigurera en anslutning till OMS är oförändrad från de [som dokumenteras för Current Branch version 1702](/azure/azure-monitor/platform/collect-sccm). Informationen upprepas här:  
 
 -   Ge Configuration Manager behörighet till OMS.
 

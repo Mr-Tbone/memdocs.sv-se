@@ -10,12 +10,12 @@ ms.assetid: 55ae86a7-f0ab-4c09-b4da-89cd0e7fa0e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b7ada6f54a7642817a321937a4d7128994d5538
-ms.sourcegitcommit: 2f9999994203194a8c47d8daa6406c987a002e02
+ms.openlocfilehash: e53c61052b8ee1b217a5268e8877dc4f4415f477
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83823987"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692629"
 ---
 # <a name="configure-reporting-in-configuration-manager"></a>Konfigurera rapportering i Configuration Manager
 
@@ -39,7 +39,7 @@ SQL Server Reporting Services är en serverbaserad rapport plattform som tillhan
 
 När du kör en rapport ansluter repor ting Services-komponenten till Configuration Manager plats databasen för att hämta data.  
 
-Innan du kan installera repor ting Services-platsen på en Configuration Manager plats måste du installera och konfigurera SQL Server Reporting Services på mål plats systemet. Mer information finns i [installera SQL Server Reporting Services](https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services).  
+Innan du kan installera repor ting Services-platsen på en Configuration Manager plats måste du installera och konfigurera SQL Server Reporting Services på mål plats systemet. Mer information finns i [installera SQL Server Reporting Services](/sql/reporting-services/install-windows/install-reporting-services).  
 
 ### <a name="verify-sql-server-reporting-services-installation"></a>Verifiera SQL Server Reporting Services-installationen
 
@@ -66,7 +66,7 @@ Kontrollera att SQL Server Reporting Services är installerat och körs korrekt 
 
 1. Öppna Registereditorn i Windows på den dator som kör Configuration Manager-konsolen.  
 
-2. Bläddra till `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\ConfigMgr10\AdminUI\Reporting`.
+2. Gå till `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\ConfigMgr10\AdminUI\Reporting`.
 
 3. Öppna **nyckeln ReportBuilderApplicationManifestName** -nyckeln för att redigera värde data.  
 
@@ -96,11 +96,11 @@ Innan du kan visa eller hantera rapporter i Configuration Manager-konsolen behö
 
 - Ange ett [repor ting Services-plats-konto](../../plan-design/hierarchy/accounts.md#reporting-services-point-account)när du installerar en repor ting Services-plats. För användare från en annan domän att köra en rapport skapar du ett dubbelriktat förtroende mellan domäner. Annars går det inte att köra rapporten.
 
-### <a name="install-the-reporting-services-point-on-a-site-system"></a><a name="bkmk_install" />Installera repor ting Services-platsen på ett plats system  
+### <a name="install-the-reporting-services-point-on-a-site-system"></a><a name="bkmk_install" /> Installera repor ting Services-platsen på ett plats system  
 
 Mer information om hur du konfigurerar plats system finns i [Installera plats system roller](../deploy/configure/install-site-system-roles.md).  
 
-1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **plats konfiguration**och välj noden **servrar och plats system roller** .  
+1. Gå till arbets ytan **Administration** i Configuration Manager-konsolen, expandera **plats konfiguration**och välj noden  **servrar och plats system roller** .  
 
 1. Lägg till repor ting Services-platsen på en ny eller befintlig plats system Server:  
 
@@ -144,7 +144,7 @@ När guiden har slutförts skapar Configuration Manager rapportens mappar i repo
 > [!TIP]  
 > Om du bara vill lista de plats system som är värdar för plats rollen repor ting Services-plats, högerklickar du på **servrar och plats system roller**och väljer **repor ting Services-plats**.  
 
-### <a name="languages-for-reports"></a><a name="bkmk_languages" />Språk för rapporter
+### <a name="languages-for-reports"></a><a name="bkmk_languages" /> Språk för rapporter
 
 <!-- SCCMDocs#1067 -->
 
@@ -211,7 +211,7 @@ När Configuration Manager installerar repor ting Services-platsen, läggs följ
 
 - **ConfigMgr-rapport administratörer**: användare som är tilldelade till den här säkerhets rollen kan utföra alla uppgifter som är relaterade till rapportering i Configuration Manager.  
 
-## <a name="verify-installation"></a><a name="bkmk_verify"></a>Verifiera installationen
+## <a name="verify-installation"></a><a name="bkmk_verify"></a> Verifiera installationen
 
 Verifiera installationen av repor ting Services-platsen genom att titta på vissa status meddelanden och logg fils poster. Använd följande procedur för att verifiera att Reporting Services-platsinstallationen lyckades.  
 
@@ -241,7 +241,7 @@ Stega genom den här logg filen från den tidpunkt då repor ting Services-plats
 Det finns många alternativ som du kan redigera rapporter i SQL Server Reporting Services. När du skapar eller redigerar rapporter i Configuration Manager-konsolen öppnas Configuration Manager Report Builder att använda som redigerings miljö. Oavsett hur du redigerar dina Configuration Manager rapporter behöver du ett självsignerat certifikat för serverautentisering till plats databas servern.
 
 > [!NOTE]  
-> Mer information om hur du redigerar rapporter med SQL Server Reporting Services finns i [Report Builder redigerings miljö](https://docs.microsoft.com/sql/reporting-services/tools/report-builder-authoring-environment-ssrs).  
+> Mer information om hur du redigerar rapporter med SQL Server Reporting Services finns i [Report Builder redigerings miljö](/sql/reporting-services/tools/report-builder-authoring-environment-ssrs).  
 
 Configuration Manager installerar certifikatet automatiskt på plats servern och eventuella SMS-provider-roller. Du kan skapa eller redigera rapporter från Configuration Manager-konsolen när du kör den från någon av dessa servrar.
 
@@ -264,7 +264,7 @@ När du har installerat den här rollen kan du ändra plats databas anslutningen
 
     - **Namn på plats databas server**
 
-    - **Databas namn**
+    - **Databasnamn**
 
     - **Användar konto**
 

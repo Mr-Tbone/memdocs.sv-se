@@ -10,12 +10,12 @@ ms.assetid: c4041e21-21ff-4d95-ab05-14007e0047cf
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3352f8aa719e93210124d164d89791214eb20bf5
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 15c1be9ed388356e17f8591123114dccf7bcd612
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905863"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695213"
 ---
 # <a name="management-tasks-for-configuration-manager-applications"></a>Hanterings uppgifter för Configuration Manager program
 
@@ -40,7 +40,7 @@ Information om hur du skapar program och distributions typer finns i [skapa prog
 |**Uppdatera statistik**|Uppdaterar informationen som visas i noden **Distributioner** i arbetsytan **Övervakning** om distributionerna av det här programmet.<br /><br /> Se [övervaka program från Configuration Manager-konsolen](../../apps/deploy-use/monitor-applications-from-the-console.md).|  
 |**Återinför**|Återställer ett program som har dragits tillbaka med hjälp av åtgärden för att **dra tillbaka** hantering.|  
 |**Pensionera**|När du drar tillbaka ett program är det inte längre tillgängligt för distribution, men program och distributioner av programmet tas inte bort. Befintliga kopior av programmet som är installerade på klientdatorerna tas inte bort. Alla ändringar i programmet tas bort från Configuration Manager efter 60 dagar. Men installerade kopior av programmet tas inte bort.<br /><br /> Om du vill ta bort ett program måste du först återkalla programmet, ta bort alla distributioner, ta bort referenser till programmet från andra distributioner och sedan ta bort alla programmets revisioner.<br /><br /> Se [omarbeta och ersätt program](../../apps/deploy-use/revise-and-supersede-applications.md).|  
-|**Exportera**|Öppnar **guiden Exportera program** som låter dig exportera de valda programmen till en. zip-fil som du sedan kan arkivera eller installera på en annan plats. Om du väljer att exportera program innehåll skapas en mapp som innehåller innehållet.<br /><br /> Du kan också exportera program beroenden, ersättnings förhållanden och-villkor och innehåll för programmet och dess beroenden.<br /><br /> Windows PowerShell-cmdleten **export-CMApplication**, utför samma funktion. Mer information finns i [export-CMApplication](https://docs.microsoft.com/powershell/module/configurationmanager/export-cmapplication?view=sccm-ps).|  
+|**Export**|Öppnar **guiden Exportera program** som låter dig exportera de valda programmen till en. zip-fil som du sedan kan arkivera eller installera på en annan plats. Om du väljer att exportera program innehåll skapas en mapp som innehåller innehållet.<br /><br /> Du kan också exportera program beroenden, ersättnings förhållanden och-villkor och innehåll för programmet och dess beroenden.<br /><br /> Windows PowerShell-cmdleten **export-CMApplication**, utför samma funktion. Mer information finns i [export-CMApplication](/powershell/module/configurationmanager/export-cmapplication?view=sccm-ps).|  
 |**Ta bort**|Raderar det program som valts för tillfället.<br /><br /> Du kan inte radera ett program om andra program är beroende av det, om det har en aktiv distribution eller om det har beroende aktivitetssekvenser.|  
 |**Simulera distribution**|Öppnar **Guiden simulera programdistribution** där du kan testa resultaten av programvarudistribution för datorer utan att installera eller avinstallera programmet.<br /><br /> Se [simulera program distributioner](../../apps/deploy-use/simulate-application-deployments.md).|  
 |**Distribuera**|Öppnar **Guiden Distribuera programvara** där du kan distribuera det valda programmet till datorsamlingar i din hierarki.<br /><br /> Se [distribuera program](../../apps/deploy-use/deploy-applications.md).|  
@@ -56,4 +56,4 @@ Information om hur du skapar program och distributions typer finns i [skapa prog
 |**Öka prioritet**|Ökar prioriteten hos den valda distributionstypen. Distributionstyper utvärderas i ordning. När en distributions typ uppfyller de angivna kraven körs den och inga ytterligare distributions typer på prioritets listan kommer att utvärderas.|  
 |**Minska prioritet**|Minskar prioriteten hos den valda distributionstypen.|  
 |**Ta bort**|Raderar den valda distributionstypen.<br><br>Du kan inte radera en distributionstyp om en distributionstyp i ett annat program refererar till den.<br>Om du vill ta bort en distributions typ måste du ta bort alla beroenden till distributions typen som finns i andra distributions typer.<br>Dessutom måste du också ta bort tidigare revisioner av alla program som har en distributions typ som refererar till den distributions typ som du vill ta bort.|  
-|**Uppdatera innehåll**|Uppdaterar innehållet för den valda distributionstypen.<br /><br /> När du startar den här guiden för en distributions typ som har ett virtuellt program startas **guiden Uppdatera innehåll** . Med den här guiden kan du ändra publicerings alternativ och krav regler för det valda virtuella programmet. Mer information finns i [skapa program](../../apps/deploy-use/create-applications.md).<br /><br /> När du uppdaterar innehållet för en distributionstyp skapas en ny revision av programmet. Det kan leda till att klientenheterna uppdateras med det nya programmet.|  
+|**Uppdatera innehåll**|Uppdaterar innehållet för den valda distributionstypen.<br /><br /> När du startar den här guiden för en distributions typ som har ett virtuellt program startas **guiden Uppdatera innehåll** . Med den här guiden kan du ändra publicerings alternativ och krav regler för det valda virtuella programmet. Mer information finns i [skapa program](../../apps/deploy-use/create-applications.md).<br /><br /> När du uppdaterar innehållet för en distributionstyp skapas en ny revision av programmet. Det kan leda till att klientenheterna uppdateras med det nya programmet.|

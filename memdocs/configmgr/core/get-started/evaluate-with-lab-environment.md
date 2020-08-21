@@ -10,12 +10,12 @@ ms.assetid: 01b30260-f03a-4851-a549-d1b76e8cfc69
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dd238319ba064f57911eee58e1299e17a2ce5b60
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: db59ad55c52f8d937b23704af310dc8879fe8a6d
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713844"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692884"
 ---
 # <a name="evaluate-configuration-manager-by-building-your-own-lab-environment"></a>Utvärdera Configuration Manager genom att skapa en egen labb miljö
 
@@ -47,8 +47,8 @@ Klientdatorer installeras i Hyper-V. Själva labben kan också köras som ett fu
 
  När du skapar den här labben får du en funktionell miljö att arbeta i. Den här miljön kommer dock inte att optimeras för faktorer som system prestanda, hantering av hårddisk utrymme och SQL Server lagring.  
 
-##  <a name="recommended-reading-before-you-build-the-lab"></a><a name="BKMK_EvalRec"></a>Rekommenderad läsning innan du skapar labbet  
- Det finns en mängd innehåll som finns i [dokumentationen för Configuration Manager](https://docs.microsoft.com/sccm/). Vi rekommenderar att du läser följande avsnitt från det här biblioteket innan du börjar skapa labbet:  
+##  <a name="recommended-reading-before-you-build-the-lab"></a><a name="BKMK_EvalRec"></a> Rekommenderad läsning innan du skapar labbet  
+ Det finns en mängd innehåll som finns i [dokumentationen för Configuration Manager](/sccm/). Vi rekommenderar att du läser följande avsnitt från det här biblioteket innan du börjar skapa labbet:  
 
 -   Lär dig viktiga begrepp om Configuration Manager-konsolen, slut användar portaler och exempel scenarier i [Introduktion till Configuration Manager](../../core/understand/introduction.md).  
 
@@ -60,4 +60,4 @@ Klientdatorer installeras i Hyper-V. Själva labben kan också köras som ett fu
 
 -   Lär dig mer om innehålls hantering i [koncept för innehålls hantering](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
--   Lär dig hur du kan stödja dagliga uppgifter i hela distributionen i [förstå hur klienter hittar plats resurser och tjänster för Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+-   Lär dig hur du kan stödja dagliga uppgifter i hela distributionen i [förstå hur klienter hittar plats resurser och tjänster för Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).

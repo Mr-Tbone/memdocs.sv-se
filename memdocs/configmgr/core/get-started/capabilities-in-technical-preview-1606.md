@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0513c1908b1360a50653931dda57e5d148055240
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 18ea44f662591a21750fb630425ddfb975678aa2
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905680"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695604"
 ---
 # <a name="capabilities-in-technical-preview-1606-for-configuration-manager"></a>Funktioner i Technical Preview 1606 för Configuration Manager
 
@@ -36,7 +36,7 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
 
 **Följande är nya funktioner som du kan prova med den här versionen.**  
 
-## <a name="automatically-categorize-devices-into-collections"></a><a name="dmp_category"></a>Kategorisera enheter automatiskt i samlingar
+## <a name="automatically-categorize-devices-into-collections"></a><a name="dmp_category"></a> Kategorisera enheter automatiskt i samlingar
 Du kan skapa enhets kategorier, som kan användas för att automatiskt placera enheter i enhets samlingar när du använder Configuration Manager med Microsoft Intune. Användarna måste sedan välja en enhets kategori när de registrerar en enhet i Intune. Du kan också ändra kategori för en enhet från Configuration Manager-konsolen.
 
 **Viktigt:** Den här funktionen fungerar med den **2016 juni** -versionen av Microsoft Intune. Se till att du har uppdaterat till den här versionen innan du provar de här procedurerna.
@@ -59,7 +59,7 @@ När du associerar en samling med en enhets kategori kommer alla enheter i den k
 2.  Välj en enhet i listan **enheter** och klicka sedan på **Ändra kategori**i gruppen **enhet** på fliken **Start** .
 3.  I dialog rutan **Redigera enhets kategori** väljer du den kategori som ska användas för enheten och klickar sedan på **OK**.
 
-## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a><a name="dmp_grace"></a>Tvingande respitperiod för nödvändiga program-och program uppdaterings distributioner
+## <a name="enforcement-grace-period-for-required-application-and-software-update-deployments"></a><a name="dmp_grace"></a> Tvingande respitperiod för nödvändiga program-och program uppdaterings distributioner
 
 I vissa fall kanske du vill ge användarna mer tid att installera nödvändiga program distributioner eller program uppdateringar utöver de tids gränser som du har konfigurerat. Detta kan vanligt vis krävas när en dator har inaktiverats under en längre tid och måste installera ett stort antal program-eller uppdaterings distributioner.
 Om en slutanvändare till exempel precis har returnerat från semestern kan de vänta en stund medan förfallna program distributioner installeras.
@@ -80,9 +80,9 @@ Liknande alternativ har lagts till i guiden distribution av program uppdateringa
 
 Device Guard är en funktion i Windows 10 som använder maskinvaru-och program varu funktioner för att strikt styra vad som får köras på enheten.
 
-Mer information finns i [Introduktion till Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
+Mer information finns i [Introduktion till Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
 
-I den här versionen kan Configuration Manager samverka med Device Guard och [Windows AppLocker](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd723678(v=ws.10)) så att körbara filer och DLL-filer som distribueras med Configuration Manager automatiskt är betrodda när de kommer från ett hanterat installations program, vilket innebär att de kommer att kunna köras på mål enheten och annan program vara kommer inte att kunna köras om det uttryckligen tillåts att köras av andra AppLocker-regler.  
+I den här versionen kan Configuration Manager samverka med Device Guard och [Windows AppLocker](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd723678(v=ws.10)) så att körbara filer och DLL-filer som distribueras med Configuration Manager automatiskt är betrodda när de kommer från ett hanterat installations program, vilket innebär att de kommer att kunna köras på mål enheten och annan program vara kommer inte att kunna köras om det uttryckligen tillåts att köras av andra AppLocker-regler.  
 
 Den här funktionen kan för närvarande inte konfigureras från Configuration Manager-konsolen. Om du vill konfigurera principen måste du konfigurera en register nyckel på varje klient och konfigurera Windows-tjänster på klienten.
 När detta är färdigt konfigurerar du AppLocker-principagenten. När du har konfigurerat princip filen kan du distribuera den till valfri kompatibel klient enhet.
@@ -95,11 +95,11 @@ Precis som alla AppLocker-principer kan principer med hanterade installations re
 
 Mer information finns i följande artiklar:
 
-- [Introduktion till Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
+- [Introduktion till Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 
-- [Planera och komma igång med distributions processen för Windows Defender program kontroll](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)
+- [Planera och komma igång med distributions processen för Windows Defender program kontroll](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)
 
-  ##  <a name="multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a>Flera enhets hanterings platser för lokal hantering av mobila enheter  
+  ##  <a name="multiple-device-management-points-for-on-premises-mobile-device-management"></a><a name="dmp_onprem"></a> Flera enhets hanterings platser för lokal hantering av mobila enheter  
   Med teknisk för hands version 1606, \- lokal hantering av mobila enheter (MDM) har stöd för en ny funktion i Windows 10-uppdaterings perioden som automatiskt konfigurerar en registrerad enhet att ha mer än en enhets hanterings plats tillgänglig för användning. Den här funktionen gör det möjligt för enheten att återgå till en annan enhets hanterings plats när den normala användningen inte är tillgänglig. Den här funktionen fungerar bara för datorer där uppdatering av Windows 10-årsdag är installerat.  
 
 ### <a name="try-it-out"></a>prova!  
@@ -170,8 +170,8 @@ Det enklaste sättet att exportera roten för de klient certifikat som används 
 #### <a name="upload-the-management-certificate-to-azure"></a>Ladda upp hanterings certifikatet till Azure
 
 Ett hanterings certifikat för Azure krävs för att Configuration Manager ska kunna komma åt Azure API och konfigurera Cloud proxy service. Mer information och anvisningar om hur du laddar upp ett hanterings certifikat finns i följande artiklar i Azure-dokumentationen:
-- [Certifikatöversikt för Azure Cloud Services](https://azure.microsoft.com/documentation/articles/cloud-services-certs-create/)
-- [Överför ett Azure-hanterings API Management certifikat](https://azure.microsoft.com/documentation/articles/azure-api-management-certs/).
+- [Certifikatöversikt för Azure Cloud Services](/azure/cloud-services/cloud-services-certs-create)
+- [Överför ett Azure-hanterings API Management certifikat](/previous-versions/azure/azure-api-management-certs).
 
 Se till att kopiera det prenumerations-ID som är associerat med hanterings certifikatet. Du behöver den för att konfigurera tjänsten Cloud proxy i Configuration Manager-konsolen.
 
@@ -211,7 +211,7 @@ Det sista steget i att ställa in Cloud proxy service är att konfigurera plats 
 
 #### <a name="check-status-on-a-client-on-the-internet"></a>Kontrol lera status på en klient på Internet
 
-När tjänsten och rollerna har kon figurer ATS helt får de interna klienterna platsen för tjänsten Cloud proxy på nästa plats-begäran. Klienter med uppdaterad plats information kan sedan kommunicera med Configuration Manager på Internet. Avsöknings cykeln för plats begär Anden är var 24: e timme. Om du inte vill vänta på den vanliga schemalagda plats förfrågan kan du framtvinga begäran genom att starta om värd tjänsten för SMS-agent (ccmexec. exe) på datorn.
+När tjänsten och rollerna har kon figurer ATS helt får de interna klienterna platsen för tjänsten Cloud proxy på nästa plats-begäran. Klienter med uppdaterad plats information kan sedan kommunicera med Configuration Manager på Internet. Avsöknings cykeln för plats begär Anden är var 24: e timme. Om du inte vill vänta på den vanliga schemalagda plats förfrågan kan du framtvinga begäran genom att starta om värd tjänsten för SMS-agent (ccmexec.exe) på datorn.
 
 När klienterna har den nya plats informationen för tjänsten Cloud proxy kan du prova att kontrol lera statusen för klienter som inte längre finns i det interna privata nätverket, men som har Internet åtkomst. Du kan också övervaka trafiken i Cloud proxy service genom att gå till **Administration > Cloud Services > Cloud proxy-tjänsten**, välja tjänsten i list rutan och Visa trafik informationen i informations fönstret.   
 
@@ -241,7 +241,7 @@ Med teknisk för hands version 1606 har du infört flera ändringar som gäller 
 - **Mer installations status:**
 
     När du visar uppdateringens installations status för en plats visar konsolen nu en separat information för följande åtgärder:
-    - **Hämta** (Detta gäller endast den plats på den översta nivån där tjänst anslutnings punktens plats system roll är installerad)
+    - **Hämta**  (Detta gäller endast den plats på den översta nivån där tjänst anslutnings punktens plats system roll är installerad)
     - **Replikering**
     - **Kravkontroll**
     - **Installation**

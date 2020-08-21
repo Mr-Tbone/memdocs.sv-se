@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0c2464bfba05d640868af7d5c8be7c32c0999946
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 9cd0df25c64c4ca1e0d2ce98de5d2915f7564241
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81721509"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693037"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-configuration-manager"></a>Funktioner i Technical Preview 1612 för Configuration Manager
 
@@ -52,7 +52,7 @@ Förutom att installera och konfigurera informations lager databasen installeras
 | **2** | Baserat på schema och konfiguration hämtar data lager service punkten data från plats databasen.  |  
 | **3** | Informations lager service punkten överför och lagrar en kopia av de synkroniserade data i informations lager databasen. |  
 | **A** | Med hjälp av inbyggda rapporter görs en begäran om data som skickas till repor ting Services-platsen med hjälp av SQL Server Reporting Services. |  
-| **T** | De flesta rapporter är för aktuell information och dessa begär Anden körs mot plats databasen. |  
+| **B** | De flesta rapporter är för aktuell information och dessa begär Anden körs mot plats databasen. |  
 | **C** | När en rapport begär historiska data, genom att använda en av rapporterna med en *kategori* av **informations lager**, körs begäran mot informations lager databasen.   |  
 
 ### <a name="prerequisites-for-the-data-warehouse-service-point-and-database"></a>Krav för data lager service punkten och databasen
@@ -81,12 +81,12 @@ Innan guiden visar ett alternativ för att välja och installera tjänsten för 
 
 Sidan **Allmänt** : följande allmänna information krävs:
 - **Configuration Manager databas inställningar:**   
-  - **Server namn** – Ange FQDN för den server som är värd för plats databasen. Om du inte använder en standard instans av SQL Server måste du ange instansen efter FQDN i följande format: *** &lt;Sqlserver_FQDN>\&lt; Instance_name>***
+  - **Server namn** – Ange FQDN för den server som är värd för plats databasen. Om du inte använder en standard instans av SQL Server måste du ange instansen efter FQDN i följande format: *** &lt; Sqlserver_FQDN>\& lt; Instance_name>***
   - **Databas namn** – ange namnet på plats databasen.
   - **Verifiera** – Klicka på **Verifiera** för att kontrol lera att anslutningen till plats databasen har slutförts.
 </br></br>
 - **Inställningar för informations lager databas:**
-  - **Server namn** – Ange FQDN för den server som är värd för informations lager tjänst punkten och databasen. Om du inte använder en standard instans av SQL Server måste du ange instansen efter FQDN i följande format: *** &lt;Sqlserver_FQDN>\&lt; Instance_name>***
+  - **Server namn** – Ange FQDN för den server som är värd för informations lager tjänst punkten och databasen. Om du inte använder en standard instans av SQL Server måste du ange instansen efter FQDN i följande format: *** &lt; Sqlserver_FQDN>\& lt; Instance_name>***
   - **Databas namn** – Ange FQDN för informations lager databasen.  Configuration Manager skapar databasen med det här namnet. Om du anger ett databas namn som redan finns på SQL Server-instansen kommer Configuration Manager använda databasen.
   - **Verifiera** – Klicka på **Verifiera** för att kontrol lera att anslutningen till plats databasen har slutförts.
 
@@ -104,8 +104,8 @@ När data lager rollen har installerats kontrollerar du att kontot som används 
 
 #### <a name="troubleshoot-installation-and-data-synchronization"></a>Felsöka installation och datasynkronisering
 Använd följande loggar för att undersöka problem med installationen av informations lager service punkten eller synkronisering av data:
-- **DWSSMSI. log** och **DWSSSetup. log** – Använd dessa loggar för att undersöka fel när du installerar informations lager service punkten.
-- **Microsoft. ConfigMgrDataWarehouse. log** – Använd den här loggen för att undersöka datasynkronisering mellan plats databasen och informations lager databasen.
+- **DWSSMSI. log** och **DWSSSetup. log**  – Använd dessa loggar för att undersöka fel när du installerar informations lager service punkten.
+- **Microsoft.ConfigMgrDataWarehouse. log** – Använd den här loggen för att undersöka datasynkronisering mellan plats databasen och informations lager databasen.
 
 ### <a name="reporting"></a>Rapportering
 När du har installerat en plats system roll för data lager är följande rapporter tillgängliga på repor ting Services-platsen med en *kategori* av **informations lager:**
@@ -140,16 +140,16 @@ Använd följande steg för att flytta informations lager databasen till en ny S
 5. När plats system rollen har installerats slutförs flyttningen.
 
 Du kan granska följande Configuration Manager loggar för att bekräfta att plats system rollen har installerats om:  
-- **DWSSMSI. log** och **DWSSSetup. log** – Använd dessa loggar för att undersöka fel när du installerar informations lager service punkten.
-- **Microsoft. ConfigMgrDataWarehouse. log** – Använd den här loggen för att undersöka datasynkronisering mellan plats databasen och informations lager databasen.
+- **DWSSMSI. log** och **DWSSSetup. log**  – Använd dessa loggar för att undersöka fel när du installerar informations lager service punkten.
+- **Microsoft.ConfigMgrDataWarehouse. log** – Använd den här loggen för att undersöka datasynkronisering mellan plats databasen och informations lager databasen.
 
 
 ## <a name="content-library-cleanup-tool"></a>Rensnings verktyg för innehålls bibliotek
-Från och med Technical Preview version 1612 kan du använda ett nytt kommando rads verktyg (**ContentLibraryCleanup. exe**) för att ta bort innehåll som inte längre är kopplat till något paket eller program från en distributions plats (frånkopplat innehåll). Verktyget kallas för rensnings verktyget för innehålls bibliotek.
+Från och med Technical Preview version 1612 kan du använda ett nytt kommando rads verktyg (**ContentLibraryCleanup.exe**) för att ta bort innehåll som inte längre är kopplat till något paket eller program från en distributions plats (frånkopplat innehåll). Verktyget kallas för rensnings verktyget för innehålls bibliotek.
 
 Det här verktyget påverkar endast innehållet på den distributions plats som du anger när du kör verktyget och det går inte att ta bort innehåll från innehålls biblioteket på plats servern.
 
-När du har installerat Technical Preview 1612 hittar du **ContentLibraryCleanup. exe** i mappen *% CM_Installation_Path% \ CD. latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* på den tekniska för hands versionen av plats servern.
+När du har installerat Technical Preview 1612 hittar du **ContentLibraryCleanup.exe** i mappen *% CM_Installation_Path% \ CD. latest\SMSSETUP\TOOLS\ContentLibraryCleanup \* på den tekniska för hands versions plats servern.
 
 Verktyget som lanseras med den här tekniska för hands versionen är avsett att ersätta äldre versioner av liknande verktyg som har publicerats för tidigare Configuration Manager produkter. Även om den här verktygs versionen inte längre kommer att fungera efter den 1 mars 2017 kommer nya versioner att lanseras med framtida tekniska för hands versioner tills det här verktyget släpps som en del av Current Branch eller en out-of-band-version.
 
@@ -181,11 +181,11 @@ När rensnings verktyget för innehålls bibliotek körs i båda lägena skapas 
 
 ### <a name="run-the-tool"></a>Kör verktyget
 Så här kör du verktyget:
-1. Öppna en administrativ kommando tolk till en mapp som innehåller **ContentLibraryCleanup. exe**.  
+1. Öppna en administrativ kommando tolk till en mapp som innehåller **ContentLibraryCleanup.exe**.  
 2. Ange sedan en kommando rad som innehåller de nödvändiga kommando rads växlarna och valfria växlar som du vill använda.
 
 **Känt problem** När verktyget körs kan ett fel som liknar följande returneras när ett paket eller en distribution har misslyckats eller pågår:
--  *System. InvalidOperationException: det går inte att rensa det här innehålls biblioteket just nu eftersom \<package PackageID> inte är fullständigt installerat.*
+-  *System. InvalidOperationException: det går inte att rensa det här innehålls biblioteket just nu eftersom paketet \<packageID> inte är fullständigt installerat.*
 
 **Lösning:** Ingen. Verktyget kan inte tillförlitligt identifiera överblivna filer när innehåll pågår eller inte har kunnat distribueras. Verktyget tillåter därför inte att du rensar innehåll förrän problemet har lösts.
 
@@ -194,14 +194,14 @@ Så här kör du verktyget:
 ### <a name="command-line-switches"></a>Kommando rads växlar  
 Följande kommando rads växlar kan användas i valfri ordning.   
 
-|Växel|Information|
+|Switch|Information|
 |---------|-------|
-|**/Delete**  |**Valfritt** </br> Använd den här växeln när du vill ta bort innehåll från distributions platsen. Du tillfrågas innan innehållet tas bort. </br></br> När den här växeln inte används loggar verktyget resultatet om vilket innehåll som skulle tas bort, men tar inte bort något innehåll från distributions platsen. </br></br> Exempel: ***ContentLibraryCleanup. exe/dp server1.contoso.com/Delete*** |
-| **/q**       |**Valfritt** </br> Kör verktyget i tyst läge som förhindrar alla prompter (t. ex. uppmaningar när du tar bort innehåll) och öppna inte logg filen automatiskt. </br></br> Exempel: ***ContentLibraryCleanup. exe/q/dp server1.contoso.com*** |
-| **fullständigt &lt;domän namn för/DP-distributions plats>**  | **Obligatoriskt** </br> Ange det fullständigt kvalificerade domän namnet (FQDN) för den distributions plats som du vill rensa. </br></br> Exempel: ***ContentLibraryCleanup. exe/dp server1.contoso.com***|
-| **/PS &lt;primär plats-FQDN>**       | **Valfritt** när innehåll rensas från en distributions plats på en primär plats.</br>**Krävs** när innehåll rensas från en distributions plats på en sekundär plats. </br></br> Ange det fullständiga domän namnet för den primära platsen som distributions platsen tillhör, eller för överordnad primär överordnad plats när distributions platsen finns på en sekundär plats. </br></br> Exempel: ***ContentLibraryCleanup. exe/dp server1.contoso.com/ps siteserver1.contoso.com*** |
-| **/SC &lt;Primary site Code>**  | **Valfritt** när innehåll rensas från en distributions plats på en primär plats.</br>**Krävs** när innehåll rensas från en distributions plats på en sekundär plats. </br></br> Ange plats koden för den primära plats som distributions platsen tillhör eller för den överordnade primära platsen när distributions platsen finns på en sekundär plats.</br></br> Exempel: ***ContentLibraryCleanup. exe/dp server1.contoso.com/SC ABC*** |
-| **/log \<logg fils katalog>**       |**Valfritt** </br> Ange en katalog för att placera loggfiler i. Detta kan vara en lokal enhet eller en nätverks resurs.</br></br> När den här växeln inte används placeras loggfilerna automatiskt i Temp-mappen användare.</br></br> Exempel på lokal enhet: ***ContentLibraryCleanup. exe/dp server1.contoso.com/log C:\Users\Administrator\Desktop*** </br></br>Exempel på nätverks resurs: ***ContentLibraryCleanup. exe/DP server1.contoso.com/log \\ &lt;resurs>\&lt; mapp>***|
+|**/Delete**  |**Valfritt** </br> Använd den här växeln när du vill ta bort innehåll från distributions platsen. Du tillfrågas innan innehållet tas bort. </br></br> När den här växeln inte används loggar verktyget resultatet om vilket innehåll som skulle tas bort, men tar inte bort något innehåll från distributions platsen. </br></br> Exempel: ***ContentLibraryCleanup.exe/dp server1.contoso.com/Delete*** |
+| **/q**       |**Valfritt** </br> Kör verktyget i tyst läge som förhindrar alla prompter (t. ex. uppmaningar när du tar bort innehåll) och öppna inte logg filen automatiskt. </br></br> Exempel: ***ContentLibraryCleanup.exe/q/dp server1.contoso.com*** |
+| **&lt;fullständigt domän namn för/DP-distributions plats>**  | **Obligatoriskt** </br> Ange det fullständigt kvalificerade domän namnet (FQDN) för den distributions plats som du vill rensa. </br></br> Exempel:  ***ContentLibraryCleanup.exe/dp server1.contoso.com***|
+| **/PS &lt; primär plats-FQDN>**       | **Valfritt** när innehåll rensas från en distributions plats på en primär plats.</br>**Krävs** när innehåll rensas från en distributions plats på en sekundär plats. </br></br> Ange det fullständiga domän namnet för den primära platsen som distributions platsen tillhör, eller för överordnad primär överordnad plats när distributions platsen finns på en sekundär plats. </br></br> Exempel: ***ContentLibraryCleanup.exe/dp server1.contoso.com/ps siteserver1.contoso.com*** |
+| **/SC &lt; Primary site code>**  | **Valfritt** när innehåll rensas från en distributions plats på en primär plats.</br>**Krävs** när innehåll rensas från en distributions plats på en sekundär plats. </br></br> Ange plats koden för den primära plats som distributions platsen tillhör eller för den överordnade primära platsen när distributions platsen finns på en sekundär plats.</br></br> Exempel: ***ContentLibraryCleanup.exe/dp server1.contoso.com/SC ABC*** |
+| **log \<log file directory>**       |**Valfritt** </br> Ange en katalog för att placera loggfiler i. Detta kan vara en lokal enhet eller en nätverks resurs.</br></br> När den här växeln inte används placeras loggfilerna automatiskt i Temp-mappen användare.</br></br> Exempel på lokal enhet: ***ContentLibraryCleanup.exe/dp server1.contoso.com/log C:\Users\Administrator\Desktop*** </br></br>Exempel på nätverks resurs: ***ContentLibraryCleanup.exe/dp server1.contoso.com/log \\ &lt; resurs>\& lt; mapp>***|
 
 
 ## <a name="improvements-for-in-console-search"></a>Förbättringar för i konsols ökning
@@ -218,10 +218,10 @@ Vi har lagt till följande förbättringar i sökning i konsolen, baserat på fe
 ## <a name="prevent-installation-of-an-application-if-a-specified-program-is-running"></a>Förhindra installation av ett program om ett angivet program körs.
 Nu kan du konfigurera en lista med körbara filer (med fil namns tillägget. exe) i egenskaper för distributions typ som, om den körs, blockerar installationen av ett program. När installationen har utförts visas en dialog ruta där användaren uppmanas att stänga de processer som blockerar installationen.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 Konfigurera en lista över körbara filer
 1. På sidan Egenskaper för valfri distributions typ väljer du fliken **installations hantering** .
-2. Klicka på **Lägg**till för att lägga till en eller flera körbara filer i listan (till exempel **Edge. exe**)
+2. Klicka på **Lägg**till för att lägga till en eller flera körbara filer i listan (till exempel **Edge.exe**)
 3. Klicka på **OK** för att stänga dialog rutan Egenskaper för distributions typ.
 
 När du nu distribuerar det här programmet till en användare eller en enhet och en av de körbara filer som du har lagt till körs, visas en dialog ruta i Software Center där användaren kan se att installationen misslyckades eftersom ett program körs.
@@ -252,14 +252,14 @@ Vi har lagt till stöd för Express installations filer i Configuration Manager 
 
 ### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Så här aktiverar du hämtning av Express-installationsfiler för Windows 10-uppdateringar på servern
 Om du vill starta synkroniseringen av metadata för Windows 10 Express-installationsfiler måste du aktivera den i egenskaperna för program uppdaterings platsen.
-1. I Configuration Manager-konsolen navigerar du till **Administration** > **plats konfiguration** > **platser**.
+1. I Configuration Manager-konsolen navigerar du till **Administration**  >  **plats konfiguration**  >  **platser**.
 2. Välj den centrala administrations platsen eller den fristående primära platsen.
 3. Klicka på **Konfigurera platskomponenter** i gruppen **Inställningar** på **Start**-fliken och klicka sedan på **Programuppdateringsplats**. På fliken **uppdateringsfiler** väljer du **Hämta fullständiga filer för alla godkända uppdateringar och installationsfiler för Express installation för Windows 10**.
 
 ### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Så här aktiverar du stöd för klienter för att ladda ned och installera installationsfiler för Express
 Om du vill aktivera stöd för Express-installationsfiler på-klienter måste du aktivera Express-installationsfiler på klienter i avsnittet program uppdateringar i klient inställningar. Detta skapar en ny HTTP-lyssnare som lyssnar efter begär Anden om att hämta installationsfiler för Express på den port som du anger. När du har distribuerat klient inställningar för att aktivera den här funktionen på klienten försöker den att ladda ned deltaet mellan den kumulativa Windows 10-uppdateringen och den föregående månadens uppdatering (klienter måste köra en version av Windows 10 som stöder installationsfiler).
 1. Aktivera stöd för installationsfiler för Express-installation i egenskaperna för komponenten för program uppdaterings plats (föregående procedur).
-2. I Configuration Manager-konsolen går du till **Administration** > **klient inställningar**.
+2. I Configuration Manager-konsolen går du till **Administration**  >  **klient inställningar**.
 3. Välj lämpliga klient inställningar och klicka sedan på **Egenskaper**på fliken **Start** .
 4. Välj sidan **program uppdateringar** , konfigurera **Ja** för inställningen **Aktivera installation av Express uppdateringar på klienter** och konfigurera porten som används av http-lyssnaren på klienten för den **port som används för att ladda ned innehåll för inställningen för Express uppdateringar** .
 
@@ -270,11 +270,11 @@ Om du vill aktivera stöd för Express-installationsfiler på-klienter måste du
 
 Data som för närvarande är tillgängliga i [Configuration Manager WMI-providern](../../develop/reference/configuration-manager-reference.md) är nu även tillgängliga med den nya OData RESTful-slutpunkten. Enhets uppsättningarna som exponeras av OData-slutpunkten gör det möjligt att räkna upp över samma data som du kan fråga med WMI-providern.
 
-### <a name="try-it-out"></a>Prova nu
+### <a name="try-it-out"></a>Prova
 
 Innan du kan använda OData-slutpunkten måste du aktivera den för platsen.
 
-1.  Gå till **Administration** > **plats konfiguration** > **platser**.
+1.  Gå till **Administration**  >  **plats konfiguration**  >  **platser**.
 2.  Välj den primära platsen och klicka på **Egenskaper**.
 3.  På fliken Allmänt i egenskaps sidan primär plats klickar du på **Aktivera REST-slutpunkt för alla providers på den här platsen**och klickar sedan på **OK**.
 
@@ -300,7 +300,7 @@ Utför den här uppgiften med en Azure-administratör eftersom du behöver auten
 
 #### <a name="to-create-the-connection"></a>Så här skapar du anslutningen:
 
-2. I arbets ytan **Administration** väljer du **Cloud Services** > **Azure Active Directory** > **Lägg till Azure Active Directory**.
+2. I arbets ytan **Administration** väljer du **Cloud Services**  >  **Azure Active Directory**  >  **Lägg till Azure Active Directory**.
 2. Välj **Logga** in för att skapa anslutningen till Azure AD.
 
 #### <a name="configuration-manager-client-requirements"></a>Configuration Manager klient krav
@@ -317,4 +317,4 @@ När du har gjort dessa konfigurations ändringar kan du skapa en användar prin
 
 ## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Ändra till att konfigurera Multi-Factor Authentication för enhets registrering
 
-Nu när du har konfigurerat Multi-Factor Authentication (MFA) för enhets registrering i Azure Portal, har MFA-alternativet tagits bort i Configuration Manager-konsolen. Du hittar mer information om hur du konfigurerar MFA för registrering [i det här Microsoft Intune avsnittet](/mem/intune/enrollment/multi-factor-authentication).
+Nu när du har konfigurerat Multi-Factor Authentication (MFA) för enhets registrering i Azure Portal, har MFA-alternativet tagits bort i Configuration Manager-konsolen. Du hittar mer information om hur du konfigurerar MFA för registrering [i det här Microsoft Intune avsnittet](../../../intune/enrollment/multi-factor-authentication.md).

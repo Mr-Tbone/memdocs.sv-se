@@ -9,12 +9,12 @@ ms.assetid: 6d665cef-fc67-4686-bcb3-0572c0a3760c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 01b6587d1d223675fdc240c20913e21854d55821
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 9f24768521cd179c3a6403aff057de48ae46e7e7
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81718464"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695519"
 ---
 # <a name="online-documentation-for-configuration-manager"></a>Onlinedokumentation för Configuration Manager
 
@@ -26,7 +26,7 @@ Välkommen till Configuration Manager-dokumentations biblioteket. Hitta dokument
 
 ### <a name="online-documentation"></a>Onlinedokumentation
 
-Visa onlinedokumentationen för den aktuella grenen av Configuration Manager på [docs.Microsoft.com/ConfigMgr](https://docs.microsoft.com/configmgr):  
+Visa onlinedokumentationen för den aktuella grenen av Configuration Manager på [docs.Microsoft.com/ConfigMgr](/configmgr):  
 
 - [Introduktion till Configuration Manager](../understand/introduction.md)  
 
@@ -48,7 +48,7 @@ Visa onlinedokumentationen för den aktuella grenen av Configuration Manager på
 
 - [Säkerhet och sekretess för Configuration Manager](../plan-design/security/security-and-privacy.md)  
 
-### <a name="release-notes"></a>Versionsanmärkningar
+### <a name="release-notes"></a>Viktig information
 
 Viktig information innehåller information som inte finns i produkt dokumentationen och som kan krävas för att installera och använda Configuration Manager. Mer information finns i [versions anmärkningar för Configuration Manager](../servers/deploy/install/release-notes.md)  
 
@@ -76,33 +76,33 @@ För följande versioner:
 
 Visa onlinedokumentationen på följande platser:  
 
-- [Komma i gång med System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682144\(v=technet.10\))  
+- [Komma i gång med System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682144\(v=technet.10\))  
 
-- [Webbplatsadministration för System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983\(v=technet.10\))  
+- [Webbplatsadministration för System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg681983\(v=technet.10\))  
 
-- [Migreringshierarkier för System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682006\(v=technet.10\))  
+- [Migreringshierarkier för System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682006\(v=technet.10\))  
 
-- [Distributionsklienter för System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699391\(v=technet.10\))  
+- [Distributionsklienter för System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg699391\(v=technet.10\))  
 
-- [Distributionsprogramvara och operativsystem i System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699393\(v=technet.10\))  
+- [Distributionsprogramvara och operativsystem i System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg699393\(v=technet.10\))  
 
-- [Tillgångar och efterlevnad i System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682029\(v=technet.10\))  
+- [Tillgångar och efterlevnad i System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682029\(v=technet.10\))  
 
-- [Säkerhet och sekretess i System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682033\(v=technet.10\))  
+- [Säkerhet och sekretess i System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682033\(v=technet.10\))  
 
-- [Scenarier och lösningar med hjälp av System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/jj884163\(v=technet.10\))  
+- [Scenarier och lösningar med hjälp av System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/jj884163\(v=technet.10\))  
 
 ### <a name="release-notes-and-technical-publications"></a>Viktig information och tekniska publikationer
 
 Viktig information och tekniska publikationer kompletterar Configuration Manager guider. Viktig information innehåller information som inte finns i produkt dokumentationen och som krävs för att kunna installera Configuration Manager. Tekniska publiceringar innehåller ytterligare information som stödjer Configuration Manager.  
 
-- [Viktig information för System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/jj870706\(v=technet.10\))  
+- [Viktig information för System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/jj870706\(v=technet.10\))  
 
-- [Tekniska publiceringar för System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/hh531521\(v=technet.10\))  
+- [Tekniska publiceringar för System Center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/hh531521\(v=technet.10\))  
 
 ### <a name="accessibility"></a>Tillgänglighet
 
-Mer information om de funktioner, produkter och tjänster som gör Configuration Manager mer tillgängliga för personer med funktions nedsättning finns i [hjälpmedels funktionerna i Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/jj553406\(v=technet.10\))
+Mer information om de funktioner, produkter och tjänster som gör Configuration Manager mer tillgängliga för personer med funktions nedsättning finns i [hjälpmedels funktionerna i Configuration Manager](/previous-versions/system-center/system-center-2012-R2/jj553406\(v=technet.10\))
 
 ### <a name="downloadable-documentation"></a>Nedladdnings bar dokumentation
 

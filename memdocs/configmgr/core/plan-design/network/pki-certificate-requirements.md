@@ -10,12 +10,12 @@ ms.assetid: d6a73e68-57d8-4786-842b-36669541d8ff
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: df0b632ccf7939bdc897d4a456f0e6cacc7a1760
-ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
+ms.openlocfilehash: ff364dc248519d0027ce96fe43f4f3f6cf373e68
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87525957"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692748"
 ---
 # <a name="pki-certificate-requirements-for-configuration-manager"></a>PKI-certifikatkrav för Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "87525957"
 
 De PKI-certifikat (Public Key Infrastructure) som du kan behöva för Configuration Manager visas i följande tabeller. Den här informationen förutsätter grundläggande kunskaper om PKI-certifikat. Mer information finns i [steg-för-steg-exempel distribution av PKI-certifikaten för Configuration Manager: Windows Server 2008-certifikat utfärdare](example-deployment-of-pki-certificates.md).
 
-Mer information om Active Directory Certificate Services finns i [Översikt över Active Directory Certificate Services](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).
+Mer information om Active Directory Certificate Services finns i [Översikt över Active Directory Certificate Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).
 
 Information om hur du använder Cryptography-API: CNG-certifikat (Next Generation) med Configuration Manager finns i [Översikt över CNG-certifikat](cng-certificates-overview.md).
 
@@ -59,7 +59,7 @@ När du använder Active Directory certifikat tjänster och certifikatmallar kan
 |Platssystem med en installerad distributionsplats|Klientautentisering|**Autentisering av arbetsstation**|**Värdet för förbättrad nyckelanvändning** måste innehålla **Klientautentisering (1.3.6.1.5.5.7.3.2)**.<br /><br /> Det finns inga särskilda krav på certifikatets ämne eller alternativt namn för certifikat mottagare (SAN). Du kan använda samma certifikat för flera distributions platser. Det är dock en bra idé att använda ett annat certifikat för varje distributions plats.<br /><br /> Den privata nyckeln måste kunna exporteras.<br /><br /> SHA-2-hashalgoritmen stöds.<br /><br /> Maximal nyckel längd som stöds är 2 048 bitar.|Certifikatet har två syften:<br /><br /><ul><li>Den autentiserar distributions platsen för en HTTPS-aktiverad hanterings plats innan distributions platsen skickar status meddelanden.</li><li>När distributions plats alternativet **Aktivera PXE-stöd för klienter** väljs skickas certifikatet till datorer. Om aktivitetssekvenser i operativ Systems distributions processen inkluderar klient åtgärder som klient princip hämtning eller skickar inventerings information, kan klient datorerna ansluta till en HTTPS-aktiverad hanterings plats under distributionen av operativ systemet.</li></ul> Certifikatet används enbart under tidsperioden för operativsystemets distributionsprocess och installeras inte på klienten. På grund av den här tillfälliga användningen kan samma certifikat användas för varje operativ Systems distribution om du inte vill använda flera klient certifikat.<br /><br /> Det här certifikatet måste exporteras i formatet PKCS #12 (Public Key Certificate Standard). Lösen ordet måste vara känt så att det kan importeras till distributions platsens egenskaper.<br /><br /> **Obs:** Kraven för det här certifikatet är samma som klient certifikatet för start avbildningar som distribuerar operativ system. Eftersom kraven är desamma, kan du använda samma certifikatfil.|  
 |Plats system server som kör Microsoft Intune-anslutningen|Klientautentisering|Inte tillämpligt: det här certifikatet skapas automatiskt av Intune.|Värdet för **förbättrad nyckel användning** innehåller **klientautentisering (1.3.6.1.5.5.7.3.2)**.<br /><br /> Tre anpassade tillägg identifierar kundens Intune-prenumeration unikt.<br /><br /> Nyckel storleken är 2 048 bitar och använder hash-algoritmen SHA-1.<br /><br /> **Obs:** Du kan inte ändra de här inställningarna. Den här informationen tillhandahålls endast i informations syfte.|Det här certifikatet begärs automatiskt och installeras i Configuration Manager-databasen när du prenumererar på Microsoft Intune. När du installerar Microsoft Intune-anslutningen installeras det här certifikatet på den plats system server som kör Microsoft Intune-anslutningen. Den installeras i datorns certifikat arkiv.<br /><br /> Det här certifikatet används för att autentisera Configuration Manager-hierarkin som ska Microsoft Intune med hjälp av Microsoft Intune-anslutningen. Alla data mellan dem överförs via SSL (Secure Sockets Layer).|  
 
-###  <a name="proxy-web-servers-for-internet-based-client-management"></a><a name="BKMK_PKIcertificates_for_proxyservers"></a>Proxy-webbservrar för internetbaserad klient hantering  
+###  <a name="proxy-web-servers-for-internet-based-client-management"></a><a name="BKMK_PKIcertificates_for_proxyservers"></a> Proxy-webbservrar för internetbaserad klient hantering  
  Om platsen stöder internetbaserad klient hantering och du använder en proxy-webbserver genom att använda SSL-terminering (bryggning) för inkommande Internet anslutningar, har proxy-webbservern de certifikat krav som anges i följande tabell.  
 
 > [!NOTE]  
@@ -69,7 +69,7 @@ När du använder Active Directory certifikat tjänster och certifikatmallar kan
 |--------------------------------------|-------------------------|-------------------------------------------|---------------------------------------------|----------------------------------------------------------|  
 |Proxy-webbserver som accepterar klient anslutningar via Internet|Server- och klientautentisering|1. <br />                        **Webb server**<br /><br /> 2. <br />                        **Autentisering av arbetsstation**|Internet-FQDN i fältet namn på certifikat mottagare eller i fältet Alternativt namn på certifikat mottagare. Om du använder Microsoft-certifikatmallar är alternativt mottagar namn endast tillgängligt för arbets Stations mal len.<br /><br /> SHA-2-hashalgoritmen stöds.|Det här certifikatet används för att autentisera följande servrar för Internet-klienter och för att kryptera alla data som överförs mellan klienten och den här servern med hjälp av SSL:<br /><br /><ul><li>Internetbaserad hanterings plats</li><li>Internetbaserad distributions plats</li><li>Internetbaserad program uppdaterings plats</li></ul> Klientautentisering används för att överbrygga klient anslutningar mellan Configuration Manager klienter och de Internetbaserade plats systemen.|  
 
-##  <a name="pki-certificates-for-clients"></a><a name="BKMK_PKIcertificates_for_clients"></a>PKI-certifikat för klienter  
+##  <a name="pki-certificates-for-clients"></a><a name="BKMK_PKIcertificates_for_clients"></a> PKI-certifikat för klienter  
 
 |Configuration Manager komponent|Certifikatets syfte|Microsoft-certifikatmall att använda|Särskild information i certifikatet|Hur certifikatet används i Configuration Manager|  
 |-------------------------------------|-------------------------|-------------------------------------------|---------------------------------------------|----------------------------------------------------------|  

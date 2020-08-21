@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bab2050448e1c870aac8f3237c21b19498cdb674
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 51a636ffc4adad20e6bc1c69b3194db7a0fa72fd
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88124244"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88697372"
 ---
 # <a name="task-sequence-steps"></a>Aktivitetssekvenssteg
 
@@ -47,7 +47,7 @@ I avsnitten nedan för de olika stegen i aktivitetssekvensen beskrivs andra möj
 
 
 
-## <a name="apply-data-image"></a><a name="BKMK_ApplyDataImage"></a>Använd data avbildning
+## <a name="apply-data-image"></a><a name="BKMK_ApplyDataImage"></a> Använd data avbildning
 
 Använd det här steget för att kopiera data avbildningen till den angivna partitionen.  
 
@@ -66,10 +66,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepApplyDataImage](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepApplyDataImage?view=sccm-ps)
-- [New-CMTSStepApplyDataImage](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepApplyDataImage?view=sccm-ps)
-- [Remove-CMTSStepApplyDataImage](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepApplyDataImage?view=sccm-ps)
-- [Set-CMTSStepApplyDataImage](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepApplyDataImage?view=sccm-ps)
+- [Get-CMTSStepApplyDataImage](/powershell/module/configurationmanager/Get-CMTSStepApplyDataImage?view=sccm-ps)
+- [New-CMTSStepApplyDataImage](/powershell/module/configurationmanager/New-CMTSStepApplyDataImage?view=sccm-ps)
+- [Remove-CMTSStepApplyDataImage](/powershell/module/configurationmanager/Remove-CMTSStepApplyDataImage?view=sccm-ps)
+- [Set-CMTSStepApplyDataImage](/powershell/module/configurationmanager/Set-CMTSStepApplyDataImage?view=sccm-ps)
 
 ### <a name="properties-for-apply-data-image"></a>Egenskaper för Använd data avbildning
 
@@ -100,7 +100,7 @@ Anger att aktivitetssekvensen tar bort alla filer på mål partitionen innan avb
 
 
 
-## <a name="apply-driver-package"></a><a name="BKMK_ApplyDriverPackage"></a>Använd driv Rutins paket  
+## <a name="apply-driver-package"></a><a name="BKMK_ApplyDriverPackage"></a> Använd driv Rutins paket  
 
 Använd det här steget för att ladda ned alla driv rutiner i driv rutins paketet och installera dem på Windows-operativsystem.
 
@@ -133,10 +133,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepApplyDriverPackage](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepApplyDriverPackage?view=sccm-ps)
-- [New-CMTSStepApplyDriverPackage](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepApplyDriverPackage?view=sccm-ps)
-- [Remove-CMTSStepApplyDriverPackage](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepApplyDriverPackage?view=sccm-ps)
-- [Set-CMTSStepApplyDriverPackage](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepApplyDriverPackage?view=sccm-ps)
+- [Get-CMTSStepApplyDriverPackage](/powershell/module/configurationmanager/Get-CMTSStepApplyDriverPackage?view=sccm-ps)
+- [New-CMTSStepApplyDriverPackage](/powershell/module/configurationmanager/New-CMTSStepApplyDriverPackage?view=sccm-ps)
+- [Remove-CMTSStepApplyDriverPackage](/powershell/module/configurationmanager/Remove-CMTSStepApplyDriverPackage?view=sccm-ps)
+- [Set-CMTSStepApplyDriverPackage](/powershell/module/configurationmanager/Set-CMTSStepApplyDriverPackage?view=sccm-ps)
 
 ### <a name="properties-for-apply-driver-package"></a>Egenskaper för Använd driv Rutins paket
 
@@ -150,7 +150,7 @@ Ange det driv rutins paket som innehåller de enhets driv rutiner som behövs. V
 
 Välj det här alternativet om du vill lägga till `/recurse` parametern till DISM-kommandoraden när Windows använder driv rutins paketet.
 
-När du aktiverar det här alternativet kan du även ange ytterligare kommando rads parametrar för DISM. Använd [OSDInstallDriversAdditionalOptions](task-sequence-variables.md#OSDInstallDriversAdditionalOptions) -variabeln för att ta med fler alternativ. Mer information finns i [kommando rads alternativ för Windows 10 DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/deployment-image-servicing-and-management--dism--command-line-options).<!-- SCCMDocs#2125 -->
+När du aktiverar det här alternativet kan du även ange ytterligare kommando rads parametrar för DISM. Använd [OSDInstallDriversAdditionalOptions](task-sequence-variables.md#OSDInstallDriversAdditionalOptions) -variabeln för att ta med fler alternativ. Mer information finns i [kommando rads alternativ för Windows 10 DISM](/windows-hardware/manufacture/desktop/deployment-image-servicing-and-management--dism--command-line-options).<!-- SCCMDocs#2125 -->
 
 #### <a name="select-the-mass-storage-driver-within-the-package-that-needs-to-be-installed-before-setup-on-pre-windows-vista-operating-systems"></a>Välj drivrutin för masslagringsenheter inom paketet som måste installeras före installation i Windows-versioner tidigare än Vista
 
@@ -170,7 +170,7 @@ Med det här alternativet kan Windows installera driv rutiner utan en digital si
 
 
 
-## <a name="apply-network-settings"></a><a name="BKMK_ApplyNetworkSettings"></a>Använd Nätverks inställningar  
+## <a name="apply-network-settings"></a><a name="BKMK_ApplyNetworkSettings"></a> Använd Nätverks inställningar  
 
 Använd det här steget för att ange konfigurations information för nätverks-eller arbets grupp för mål datorn. Aktivitetssekvensen lagrar dessa värden i rätt svarsfil. Installationsprogrammet för Windows använder den här svars filen under åtgärden **Konfigurera Windows och ConfigMgr** .  
 
@@ -200,10 +200,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepApplyNetworkSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepApplyNetworkSetting?view=sccm-ps)
-- [New-CMTSStepApplyNetworkSetting](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepApplyNetworkSetting?view=sccm-ps)
-- [Remove-CMTSStepApplyNetworkSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepApplyNetworkSetting?view=sccm-ps)
-- [Set-CMTSStepApplyNetworkSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepApplyNetworkSetting?view=sccm-ps)
+- [Get-CMTSStepApplyNetworkSetting](/powershell/module/configurationmanager/Get-CMTSStepApplyNetworkSetting?view=sccm-ps)
+- [New-CMTSStepApplyNetworkSetting](/powershell/module/configurationmanager/New-CMTSStepApplyNetworkSetting?view=sccm-ps)
+- [Remove-CMTSStepApplyNetworkSetting](/powershell/module/configurationmanager/Remove-CMTSStepApplyNetworkSetting?view=sccm-ps)
+- [Set-CMTSStepApplyNetworkSetting](/powershell/module/configurationmanager/Set-CMTSStepApplyNetworkSetting?view=sccm-ps)
 
 ### <a name="properties-for-apply-network-settings"></a>Egenskaper för tillämpa nätverks inställningar
 
@@ -235,7 +235,7 @@ Ange nätverkskonfigurationer för varje nätverkskort på datorn. Välj **nytt*
 
 
 
-## <a name="apply-operating-system-image"></a><a name="BKMK_ApplyOperatingSystemImage"></a>Använd operativ Systems avbildning  
+## <a name="apply-operating-system-image"></a><a name="BKMK_ApplyOperatingSystemImage"></a> Använd operativ Systems avbildning  
 
 Använd det här steget för att installera ett operativ system på mål datorn.
 
@@ -264,10 +264,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepApplyOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepApplyOperatingSystem?view=sccm-ps)
-- [New-CMTSStepApplyOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepApplyOperatingSystem?view=sccm-ps)
-- [Remove-CMTSStepApplyOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepApplyOperatingSystem?view=sccm-ps)
-- [Set-CMTSStepApplyOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepApplyOperatingSystem?view=sccm-ps)
+- [Get-CMTSStepApplyOperatingSystem](/powershell/module/configurationmanager/Get-CMTSStepApplyOperatingSystem?view=sccm-ps)
+- [New-CMTSStepApplyOperatingSystem](/powershell/module/configurationmanager/New-CMTSStepApplyOperatingSystem?view=sccm-ps)
+- [Remove-CMTSStepApplyOperatingSystem](/powershell/module/configurationmanager/Remove-CMTSStepApplyOperatingSystem?view=sccm-ps)
+- [Set-CMTSStepApplyOperatingSystem](/powershell/module/configurationmanager/Set-CMTSStepApplyOperatingSystem?view=sccm-ps)
 
 ### <a name="behaviors-for-apply-os-image"></a>Beteenden för Använd OS-avbildning
 
@@ -359,7 +359,7 @@ Konfigurera aktivitetssekvensen för att få åtkomst till operativ system avbil
 
 
 
-## <a name="apply-windows-settings"></a><a name="BKMK_ApplyWindowsSettings"></a>Använd Windows-inställningar
+## <a name="apply-windows-settings"></a><a name="BKMK_ApplyWindowsSettings"></a> Använd Windows-inställningar
 
 Använd det här steget för att konfigurera Windows-inställningar för mål datorn. Aktivitetssekvensen lagrar dessa värden i rätt svarsfil. Installationsprogrammet för Windows använder den här svars filen under steget **Installera Windows och ConfigMgr** .  
 
@@ -390,10 +390,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepApplyWindowsSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepApplyWindowsSetting?view=sccm-ps)
-- [New-CMTSStepApplyWindowsSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepApplyWindowsSetting?view=sccm-ps)
-- [Remove-CMTSStepApplyWindowsSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepApplyWindowsSetting?view=sccm-ps)
-- [Set-CMTSStepApplyWindowsSetting](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepApplyWindowsSetting?view=sccm-ps)
+- [Get-CMTSStepApplyWindowsSetting](/powershell/module/configurationmanager/Get-CMTSStepApplyWindowsSetting?view=sccm-ps)
+- [New-CMTSStepApplyWindowsSetting](/powershell/module/configurationmanager/Get-CMTSStepApplyWindowsSetting?view=sccm-ps)
+- [Remove-CMTSStepApplyWindowsSetting](/powershell/module/configurationmanager/Remove-CMTSStepApplyWindowsSetting?view=sccm-ps)
+- [Set-CMTSStepApplyWindowsSetting](/powershell/module/configurationmanager/Set-CMTSStepApplyWindowsSetting?view=sccm-ps)
 
 ### <a name="properties-for-apply-windows-settings"></a>Egenskaper för Använd Windows-inställningar
 
@@ -450,12 +450,12 @@ Konfigurera följande inställningar:
 - GRÄNSSNITTs språks reserv
 - Användar språk
 
-Mer information om de här svars fil värdena för Windows-installationen finns i [Microsoft-Windows-International-Core](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core).
+Mer information om de här svars fil värdena för Windows-installationen finns i [Microsoft-Windows-International-Core](/windows-hardware/customize/desktop/unattend/microsoft-windows-international-core).
 
 > [!NOTE]
 > Om du skapar en anpassad svarsfil för installations programmet för Windows (unattend.xml) skriver det här steget över alla befintliga värden. Om du vill automatisera en dynamisk process för de här inställningarna använder du de relaterade variablerna för aktivitetssekvens. Till exempel [OSDWindowsSettingsInputLocale](task-sequence-variables.md#OSDWindowsSettingsInputLocale). 
 
-## <a name="auto-apply-drivers"></a><a name="BKMK_AutoApplyDrivers"></a>Använd driv rutiner automatiskt
+## <a name="auto-apply-drivers"></a><a name="BKMK_AutoApplyDrivers"></a> Använd driv rutiner automatiskt
 
 Använd det här steget för att matcha och installera driv rutiner som en del av operativ Systems distributionen.  
 
@@ -502,10 +502,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepAutoApplyDriver](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepAutoApplyDriver?view=sccm-ps)
-- [New-CMTSStepAutoApplyDriver](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepAutoApplyDriver?view=sccm-ps)
-- [Remove-CMTSStepAutoApplyDriver](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepAutoApplyDriver?view=sccm-ps)
-- [Set-CMTSStepAutoApplyDriver](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepAutoApplyDriver?view=sccm-ps)
+- [Get-CMTSStepAutoApplyDriver](/powershell/module/configurationmanager/Get-CMTSStepAutoApplyDriver?view=sccm-ps)
+- [New-CMTSStepAutoApplyDriver](/powershell/module/configurationmanager/New-CMTSStepAutoApplyDriver?view=sccm-ps)
+- [Remove-CMTSStepAutoApplyDriver](/powershell/module/configurationmanager/Remove-CMTSStepAutoApplyDriver?view=sccm-ps)
+- [Set-CMTSStepAutoApplyDriver](/powershell/module/configurationmanager/Set-CMTSStepAutoApplyDriver?view=sccm-ps)
 
 ### <a name="properties-for-auto-apply-drivers"></a>Egenskaper för automatisk tillämpning av driv rutiner
 
@@ -538,7 +538,7 @@ Med det här alternativet kan Windows installera driv rutiner utan en digital si
 
 
 
-## <a name="capture-network-settings"></a><a name="BKMK_CaptureNetworkSettings"></a>Avbilda nätverks inställningar
+## <a name="capture-network-settings"></a><a name="BKMK_CaptureNetworkSettings"></a> Avbilda nätverks inställningar
 
 Använd det här steget för att avbilda Microsofts nätverks inställningar från datorn som kör aktivitetssekvensen. Aktivitetssekvensen sparar inställningarna i variabler för aktivitetssekvens. De här inställningarna åsidosätter standardinställningarna som du konfigurerar i steget **tillämpa nätverks inställningar** .  
 
@@ -557,10 +557,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepCaptureNetworkSettings](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepCaptureNetworkSettings?view=sccm-ps)
-- [New-CMTSStepCaptureNetworkSettings](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepCaptureNetworkSettings?view=sccm-ps)
-- [Remove-CMTSStepCaptureNetworkSettings](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepCaptureNetworkSettings?view=sccm-ps)
-- [Set-CMTSStepCaptureNetworkSettings](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepCaptureNetworkSettings?view=sccm-ps)
+- [Get-CMTSStepCaptureNetworkSettings](/powershell/module/configurationmanager/Get-CMTSStepCaptureNetworkSettings?view=sccm-ps)
+- [New-CMTSStepCaptureNetworkSettings](/powershell/module/configurationmanager/New-CMTSStepCaptureNetworkSettings?view=sccm-ps)
+- [Remove-CMTSStepCaptureNetworkSettings](/powershell/module/configurationmanager/Remove-CMTSStepCaptureNetworkSettings?view=sccm-ps)
+- [Set-CMTSStepCaptureNetworkSettings](/powershell/module/configurationmanager/Set-CMTSStepCaptureNetworkSettings?view=sccm-ps)
 
 ### <a name="properties-for-capture-network-settings"></a>Egenskaper för avbilda nätverks inställningar
 
@@ -580,7 +580,7 @@ Samlar in konfigurationen för nätverkskort på måldatorn. Den samlar in följ
 
 
 
-## <a name="capture-operating-system-image"></a><a name="BKMK_CaptureOperatingSystemImage"></a>Avbilda operativ Systems avbildning
+## <a name="capture-operating-system-image"></a><a name="BKMK_CaptureOperatingSystemImage"></a> Avbilda operativ Systems avbildning
 
 Det här steget samlar in en eller flera avbildningar från en referens dator. Aktivitetssekvensen skapar en Windows-avbildning (. wim) på den angivna nätverks resursen. Använd sedan guiden **Lägg till avbildnings paket för operativ system** för att importera avbildningen till Configuration Manager för avbildnings OS-distributioner.  
 
@@ -610,10 +610,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepCaptureSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepCaptureSystemImage?view=sccm-ps)
-- [New-CMTSStepCaptureSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepCaptureSystemImage?view=sccm-ps)
-- [Remove-CMTSStepCaptureSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepCaptureSystemImage?view=sccm-ps)
-- [Set-CMTSStepCaptureSystemImage](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepCaptureSystemImage?view=sccm-ps)
+- [Get-CMTSStepCaptureSystemImage](/powershell/module/configurationmanager/Get-CMTSStepCaptureSystemImage?view=sccm-ps)
+- [New-CMTSStepCaptureSystemImage](/powershell/module/configurationmanager/New-CMTSStepCaptureSystemImage?view=sccm-ps)
+- [Remove-CMTSStepCaptureSystemImage](/powershell/module/configurationmanager/Remove-CMTSStepCaptureSystemImage?view=sccm-ps)
+- [Set-CMTSStepCaptureSystemImage](/powershell/module/configurationmanager/Set-CMTSStepCaptureSystemImage?view=sccm-ps)
 
 ### <a name="properties-for-capture-os-image"></a>Egenskaper för avbildning av avbildning av operativ system
 
@@ -641,7 +641,7 @@ Ange det Windows-konto som har behörighet till den angivna nätverks resursen. 
 
 
 
-## <a name="capture-user-state"></a><a name="BKMK_CaptureUserState"></a>Avbilda användar tillstånd
+## <a name="capture-user-state"></a><a name="BKMK_CaptureUserState"></a> Avbilda användar tillstånd
 
 I det här steget används User State Migration Tool (USMT) för att avbilda användar tillstånd och inställningar från datorn som kör aktivitetssekvensen. Detta aktivitetssekvenssteg används tillsammans med aktivitetssekvenssteget **Återställ användartillstånd**. I det här steget krypteras ständigt tillstånds lager i USMT med hjälp av en krypterings nyckel som Configuration Manager genererar och hanterar.  
 
@@ -672,10 +672,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepCaptureUserState](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepCaptureUserState?view=sccm-ps)
-- [New-CMTSStepCaptureUserState](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepCaptureUserState?view=sccm-ps)
-- [Remove-CMTSStepCaptureUserState](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepCaptureUserState?view=sccm-ps)
-- [Set-CMTSStepCaptureUserState](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepCaptureUserState?view=sccm-ps)
+- [Get-CMTSStepCaptureUserState](/powershell/module/configurationmanager/Get-CMTSStepCaptureUserState?view=sccm-ps)
+- [New-CMTSStepCaptureUserState](/powershell/module/configurationmanager/New-CMTSStepCaptureUserState?view=sccm-ps)
+- [Remove-CMTSStepCaptureUserState](/powershell/module/configurationmanager/Remove-CMTSStepCaptureUserState?view=sccm-ps)
+- [Set-CMTSStepCaptureUserState](/powershell/module/configurationmanager/Set-CMTSStepCaptureUserState?view=sccm-ps)
 
 ### <a name="properties-for-capture-user-state"></a>Egenskaper för avbilda användar tillstånd
 
@@ -721,7 +721,7 @@ Aktivera det här alternativet om du vill ange någon av följande inställninga
 
 - **Avbilda lokalt genom att använda länkar i stället för att kopiera filer**: Aktivera den här inställningen om du vill använda hårda NTFS-länkar för att avbilda filer.  
 
-    Mer information om hur du migrerar data med hårda länkar finns i [migreringsarkiv för hårda](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store)länkar.  
+    Mer information om hur du migrerar data med hårda länkar finns i [migreringsarkiv för hårda](/windows/deployment/usmt/usmt-hard-link-migration-store)länkar.  
 
 - **Avbilda i offline-läge (endast Windows PE)**: Aktivera den här inställningen för att avbilda användar tillstånd i Windows PE i stället för det fullständiga operativ systemet.  
 
@@ -731,7 +731,7 @@ Med det här alternativet kan du avbilda filer även om de är låsta för redig
 
 
 
-## <a name="capture-windows-settings"></a><a name="BKMK_CaptureWindowsSettings"></a>Avbilda Windows-inställningar
+## <a name="capture-windows-settings"></a><a name="BKMK_CaptureWindowsSettings"></a> Avbilda Windows-inställningar
 
 Använd det här steget för att avbilda Windows-inställningar från datorn som kör aktivitetssekvensen. Aktivitetssekvensen sparar inställningarna i variabler för aktivitetssekvens. De här inställningarna åsidosätter standardinställningarna som du konfigurerar i steget **Använd Windows-inställningar** .  
 
@@ -754,10 +754,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepCaptureWindowsSettings](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepCaptureWindowsSettings?view=sccm-ps)
-- [New-CMTSStepCaptureWindowsSettings](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepCaptureWindowsSettings?view=sccm-ps)
-- [Remove-CMTSStepCaptureWindowsSettings](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepCaptureWindowsSettings?view=sccm-ps)
-- [Set-CMTSStepCaptureWindowsSettings](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepCaptureWindowsSettings?view=sccm-ps)
+- [Get-CMTSStepCaptureWindowsSettings](/powershell/module/configurationmanager/Get-CMTSStepCaptureWindowsSettings?view=sccm-ps)
+- [New-CMTSStepCaptureWindowsSettings](/powershell/module/configurationmanager/New-CMTSStepCaptureWindowsSettings?view=sccm-ps)
+- [Remove-CMTSStepCaptureWindowsSettings](/powershell/module/configurationmanager/Remove-CMTSStepCaptureWindowsSettings?view=sccm-ps)
+- [Set-CMTSStepCaptureWindowsSettings](/powershell/module/configurationmanager/Set-CMTSStepCaptureWindowsSettings?view=sccm-ps)
 
 ### <a name="properties-for-capture-windows-settings"></a>Egenskaper för att avbilda Windows-inställningar
 
@@ -776,7 +776,7 @@ Avbilda registrerade användar-och organisations namn från datorn.
 Avbilda tids zons inställningen på datorn.  
 
 
-## <a name="check-readiness"></a><a name="BKMK_CheckReadiness"></a>Kontrol lera beredskap
+## <a name="check-readiness"></a><a name="BKMK_CheckReadiness"></a> Kontrol lera beredskap
 
 Använd det här steget för att kontrol lera att mål datorn uppfyller de angivna kraven för distributions krav.  
 
@@ -822,10 +822,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepPrestartCheck](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepPrestartCheck?view=sccm-ps)
-- [New-CMTSStepPrestartCheck](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepPrestartCheck?view=sccm-ps)
-- [Remove-CMTSStepPrestartCheck](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepPrestartCheck?view=sccm-ps)
-- [Set-CMTSStepPrestartCheck](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepPrestartCheck?view=sccm-ps)
+- [Get-CMTSStepPrestartCheck](/powershell/module/configurationmanager/Get-CMTSStepPrestartCheck?view=sccm-ps)
+- [New-CMTSStepPrestartCheck](/powershell/module/configurationmanager/New-CMTSStepPrestartCheck?view=sccm-ps)
+- [Remove-CMTSStepPrestartCheck](/powershell/module/configurationmanager/Remove-CMTSStepPrestartCheck?view=sccm-ps)
+- [Set-CMTSStepPrestartCheck](/powershell/module/configurationmanager/Set-CMTSStepPrestartCheck?view=sccm-ps)
 
 ### <a name="properties-for-check-readiness"></a>Egenskaper för kontrol lera beredskap
 
@@ -886,7 +886,7 @@ Från och med version 2006 bestämmer du om enheten har kon figurer ATS för UEF
 
 
 
-## <a name="connect-to-network-folder"></a><a name="BKMK_ConnectToNetworkFolder"></a>Anslut till nätverksmappen
+## <a name="connect-to-network-folder"></a><a name="BKMK_ConnectToNetworkFolder"></a> Anslut till nätverksmappen
 
 Använd det här steget för att skapa en anslutning till en delad nätverksmapp.  
 
@@ -907,10 +907,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepConnectNetworkFolder](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepConnectNetworkFolder?view=sccm-ps)
-- [New-CMTSStepConnectNetworkFolder](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepConnectNetworkFolder?view=sccm-ps)
-- [Remove-CMTSStepConnectNetworkFolder](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepConnectNetworkFolder?view=sccm-ps)
-- [Set-CMTSStepConnectNetworkFolder](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepConnectNetworkFolder?view=sccm-ps)
+- [Get-CMTSStepConnectNetworkFolder](/powershell/module/configurationmanager/Get-CMTSStepConnectNetworkFolder?view=sccm-ps)
+- [New-CMTSStepConnectNetworkFolder](/powershell/module/configurationmanager/New-CMTSStepConnectNetworkFolder?view=sccm-ps)
+- [Remove-CMTSStepConnectNetworkFolder](/powershell/module/configurationmanager/Remove-CMTSStepConnectNetworkFolder?view=sccm-ps)
+- [Set-CMTSStepConnectNetworkFolder](/powershell/module/configurationmanager/Set-CMTSStepConnectNetworkFolder?view=sccm-ps)
 
 ### <a name="properties-for-connect-to-network-folder"></a>Egenskaper för Anslut till nätverksmapp
 
@@ -930,7 +930,7 @@ Välj **Ange** för att ange användar kontot med behörighet att ansluta till n
 
 
 
-## <a name="disable-bitlocker"></a><a name="BKMK_DisableBitLocker"></a>Inaktivera BitLocker
+## <a name="disable-bitlocker"></a><a name="BKMK_DisableBitLocker"></a> Inaktivera BitLocker
 
 Använd det här steget för att inaktivera BitLocker-kryptering på den aktuella operativ system enheten eller på en angiven enhet. Den här åtgärden lämnar nyckel skyddet synliga i klartext på hård disken. Innehållet i enheten krypteras inte. Den här åtgärden slutförs nästan omedelbart.  
 
@@ -954,10 +954,10 @@ Från och med version 1906 använder du följande variabler för aktivitetssekve
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepDisableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepDisableBitLocker?view=sccm-ps)
-- [New-CMTSStepDisableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepDisableBitLocker?view=sccm-ps)
-- [Remove-CMTSStepDisableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepDisableBitLocker?view=sccm-ps)
-- [Set-CMTSStepDisableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepDisableBitLocker?view=sccm-ps)
+- [Get-CMTSStepDisableBitLocker](/powershell/module/configurationmanager/Get-CMTSStepDisableBitLocker?view=sccm-ps)
+- [New-CMTSStepDisableBitLocker](/powershell/module/configurationmanager/New-CMTSStepDisableBitLocker?view=sccm-ps)
+- [Remove-CMTSStepDisableBitLocker](/powershell/module/configurationmanager/Remove-CMTSStepDisableBitLocker?view=sccm-ps)
+- [Set-CMTSStepDisableBitLocker](/powershell/module/configurationmanager/Set-CMTSStepDisableBitLocker?view=sccm-ps)
 
 ### <a name="properties-for-disable-bitlocker"></a>Egenskaper för att inaktivera BitLocker
 
@@ -979,7 +979,7 @@ Från och med version 1906 använder du det här alternativet för att ange anta
 Du kan ställa in och ändra det här beteendet med variablerna [OSDBitLockerRebootCount](task-sequence-variables.md#OSDBitLockerRebootCount) och [OSDBitLockerRebootCountOverride](task-sequence-variables.md#OSDBitLockerRebootCountOverride).
 
 
-## <a name="download-package-content"></a><a name="BKMK_DownloadPackageContent"></a>Ladda ned paket innehåll
+## <a name="download-package-content"></a><a name="BKMK_DownloadPackageContent"></a> Ladda ned paket innehåll
 
 Använd det här steget för att ladda ned någon av följande paket typer:  
 
@@ -1009,10 +1009,10 @@ Lägg till det här steget i redigeraren för aktivitetssekvens genom att välja
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepDownloadPackageContent](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepDownloadPackageContent?view=sccm-ps)
-- [New-CMTSStepDownloadPackageContent](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepDownloadPackageContent?view=sccm-ps)
-- [Remove-CMTSStepDownloadPackageContent](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepDownloadPackageContent?view=sccm-ps)
-- [Set-CMTSStepDownloadPackageContent](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepDownloadPackageContent?view=sccm-ps)
+- [Get-CMTSStepDownloadPackageContent](/powershell/module/configurationmanager/Get-CMTSStepDownloadPackageContent?view=sccm-ps)
+- [New-CMTSStepDownloadPackageContent](/powershell/module/configurationmanager/New-CMTSStepDownloadPackageContent?view=sccm-ps)
+- [Remove-CMTSStepDownloadPackageContent](/powershell/module/configurationmanager/Remove-CMTSStepDownloadPackageContent?view=sccm-ps)
+- [Set-CMTSStepDownloadPackageContent](/powershell/module/configurationmanager/Set-CMTSStepDownloadPackageContent?view=sccm-ps)
 
 ### <a name="properties-for-download-package-content"></a>Egenskaper för Ladda ned paket innehåll
 
@@ -1042,7 +1042,7 @@ Configuration Manager lägger till ett numeriskt suffix till variabel namnet. Du
 
 Om aktivitetssekvensen inte kan ladda ned ett paket börjar det att ladda ned nästa paket i listan.  
 
-### <a name="note-1-use-of-boot-images-in-the-download-package-content-step"></a><a name="bkmk_note1"></a>Anmärkning 1: användning av start avbildningar i steget Ladda ned paket innehåll
+### <a name="note-1-use-of-boot-images-in-the-download-package-content-step"></a><a name="bkmk_note1"></a> Anmärkning 1: användning av start avbildningar i steget Ladda ned paket innehåll
 
 *Gäller för version 1910 och senare*<!-- SCCMDocs-pr #4202 -->
 
@@ -1061,7 +1061,7 @@ Om du konfigurerar [Egenskaper för aktivitetssekvens](../deploy-use/manage-task
   - Har en start avbildning som refereras till i egenskaperna.
   - Det finns flera instanser av den här aktivitetssekvensen, med olika start avbildningar efter behov av arkitektur och språk
 
-## <a name="enable-bitlocker"></a><a name="BKMK_EnableBitLocker"></a>Aktivera BitLocker
+## <a name="enable-bitlocker"></a><a name="BKMK_EnableBitLocker"></a> Aktivera BitLocker
 
 BitLocker-kryptering ger den lägsta krypteringnivån av innehållet på en volym. Använd det här steget för att aktivera BitLocker-kryptering på minst två partitioner på hård disken. Den första aktiva partitionen innehåller startkoden för Windows. En annan partition innehåller operativ systemet. Startpartitionen måste vara okrypterad.  
 
@@ -1103,10 +1103,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepEnableBitLocker?view=sccm-ps)
-- [New-CMTSStepEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepEnableBitLocker?view=sccm-ps)
-- [Remove-CMTSStepEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepEnableBitLocker?view=sccm-ps)
-- [Set-CMTSStepEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepEnableBitLocker?view=sccm-ps)
+- [Get-CMTSStepEnableBitLocker](/powershell/module/configurationmanager/Get-CMTSStepEnableBitLocker?view=sccm-ps)
+- [New-CMTSStepEnableBitLocker](/powershell/module/configurationmanager/New-CMTSStepEnableBitLocker?view=sccm-ps)
+- [Remove-CMTSStepEnableBitLocker](/powershell/module/configurationmanager/Remove-CMTSStepEnableBitLocker?view=sccm-ps)
+- [Set-CMTSStepEnableBitLocker](/powershell/module/configurationmanager/Set-CMTSStepEnableBitLocker?view=sccm-ps)
 
 ### <a name="properties-for-enable-bitlocker"></a>Egenskaper för aktivera BitLocker
 
@@ -1162,7 +1162,7 @@ Krypterings processen kan ta timmar att slutföra när en stor hård disk krypte
 Från och med version 2006 väljer du det här alternativet för att hoppa över enhets kryptering på en dator som inte innehåller en eller aktiverat TPM som stöds. Använd till exempel det här alternativet när du distribuerar ett operativ system till en virtuell dator. Som standard är den här inställningen inaktive rad för steget **Aktivera BitLocker** . Om du aktiverar den här inställningen och enheten inte har en fungerande TPM, loggar aktivitetssekvensen ett fel för Smsts. log och skickar status meddelandet 11912. Aktivitetssekvensen fortsätter att passera det här steget.
 
 
-## <a name="format-and-partition-disk"></a><a name="BKMK_FormatandPartitionDisk"></a>Formatera och partitionera disk
+## <a name="format-and-partition-disk"></a><a name="BKMK_FormatandPartitionDisk"></a> Formatera och partitionera disk
 
 Använd det här steget för att formatera och partitionera en angiven disk på mål datorn.  
 
@@ -1186,10 +1186,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtssteppartitiondisk?view=sccm-ps)
-- [New-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtssteppartitiondisk?view=sccm-ps)
-- [Remove-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtssteppartitiondisk?view=sccm-ps)
-- [Set-CMTSStepPartitionDisk](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtssteppartitiondisk?view=sccm-ps)
+- [Get-CMTSStepPartitionDisk](/powershell/module/configurationmanager/get-cmtssteppartitiondisk?view=sccm-ps)
+- [New-CMTSStepPartitionDisk](/powershell/module/configurationmanager/new-cmtssteppartitiondisk?view=sccm-ps)
+- [Remove-CMTSStepPartitionDisk](/powershell/module/configurationmanager/remove-cmtssteppartitiondisk?view=sccm-ps)
+- [Set-CMTSStepPartitionDisk](/powershell/module/configurationmanager/set-cmtssteppartitiondisk?view=sccm-ps)
 
 ### <a name="properties-for-format-and-partition-disk"></a>Egenskaper för formatera och partitionera disk
 
@@ -1210,8 +1210,8 @@ Om du väljer den här egenskapen anger du ett namn på en anpassad variabel. L�
 Följande modeller steg visar ett exempel:
 
 - **Kör PowerShell-skript**: ett anpassat skript för att samla in mål diskar
-  - Uppsättningar `myOSDisk` till`1`
-  - Uppsättningar `myDataDisk` till`2`
+  - Uppsättningar `myOSDisk` till `1`
+  - Uppsättningar `myDataDisk` till `2`
 
 - **Formatera och partitionera disk** för OS-disk: anger `myOSDisk` variabel
   - Konfigurerar disk 1 som system disk
@@ -1238,19 +1238,19 @@ Typ av disk som ska formateras. Det finns två alternativ att välja i listrutan
 
 Detaljerad information om partitionen eller volymen som aktivitetssekvensen skapar, inklusive följande attribut:  
 
-- Name  
+- Namn  
 - Återstående diskutrymme  
 
 Om du vill skapa en ny partition väljer du **ny** för att öppna dialog rutan **Egenskaper för partition** . Ange partitionstyp och storlek och om det är en startpartition. Om du vill ändra en befintlig partition väljer du den partition som ska ändras och väljer sedan knappen **Egenskaper** . Mer information om hur du konfigurerar hårddiskpartitioner finns i någon av följande artiklar:  
 
-- [UEFI/GPT-baserade hårddiskpartitioner](https://docs.microsoft.com/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions)  
-- [BIOS/MBR-baserade hårddiskpartitioner](https://docs.microsoft.com/windows-hardware/manufacture/desktop/configure-biosmbr-based-hard-drive-partitions)  
+- [UEFI/GPT-baserade hårddiskpartitioner](/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions)  
+- [BIOS/MBR-baserade hårddiskpartitioner](/windows-hardware/manufacture/desktop/configure-biosmbr-based-hard-drive-partitions)  
 
 Om du vill ta bort en partition väljer du partitionen och väljer sedan **ta bort**.  
 
 
 
-## <a name="install-application"></a><a name="BKMK_InstallApplication"></a>Installera program
+## <a name="install-application"></a><a name="BKMK_InstallApplication"></a> Installera program
 
 Det här steget installerar de angivna programmen eller en uppsättning program som definieras av en dynamisk lista med variabler för aktivitetssekvens. När aktivitetssekvensen kör det här steget startar programinstallationen omedelbart utan att vänta på något avsöknings intervall för principer.  
 
@@ -1295,10 +1295,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepinstallapplication?view=sccm-ps)
-- [New-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepinstallapplication?view=sccm-ps)
-- [Remove-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallapplication?view=sccm-ps)
-- [Set-CMTSStepInstallApplication](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallapplication?view=sccm-ps)
+- [Get-CMTSStepInstallApplication](/powershell/module/configurationmanager/get-cmtsstepinstallapplication?view=sccm-ps)
+- [New-CMTSStepInstallApplication](/powershell/module/configurationmanager/new-cmtsstepinstallapplication?view=sccm-ps)
+- [Remove-CMTSStepInstallApplication](/powershell/module/configurationmanager/remove-cmtsstepinstallapplication?view=sccm-ps)
+- [Set-CMTSStepInstallApplication](/powershell/module/configurationmanager/set-cmtsstepinstallapplication?view=sccm-ps)
 
 ### <a name="properties-for-install-application"></a>Egenskaper för installera program
 
@@ -1369,7 +1369,7 @@ Om en av program installationerna startar om datorn från en oväntad omstart, g
 
 
 
-## <a name="install-package"></a><a name="BKMK_InstallPackage"></a>Installera paket
+## <a name="install-package"></a><a name="BKMK_InstallPackage"></a> Installera paket
 
 Använd det här steget för att installera ett program varu paket som en del av aktivitetssekvensen. När det här steget körs startar installationen omedelbart utan att vänta på något avsöknings intervall för principer.  
 
@@ -1408,10 +1408,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepinstallsoftware?view=sccm-ps)
-- [New-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepinstallsoftware?view=sccm-ps)
-- [Remove-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallsoftware?view=sccm-ps)
-- [Set-CMTSStepInstallSoftware](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallsoftware?view=sccm-ps)
+- [Get-CMTSStepInstallSoftware](/powershell/module/configurationmanager/get-cmtsstepinstallsoftware?view=sccm-ps)
+- [New-CMTSStepInstallSoftware](/powershell/module/configurationmanager/new-cmtsstepinstallsoftware?view=sccm-ps)
+- [Remove-CMTSStepInstallSoftware](/powershell/module/configurationmanager/remove-cmtsstepinstallsoftware?view=sccm-ps)
+- [Set-CMTSStepInstallSoftware](/powershell/module/configurationmanager/set-cmtsstepinstallsoftware?view=sccm-ps)
 
 > [!TIP]
 > Använd för cachelagring av innehåll för att ladda ned ett tillämpligt uppgraderings paket för operativ system innan en användare installerar aktivitetssekvensen. Mer information finns i [Konfigurera förinställt innehåll för cache](../deploy-use/configure-precache-content.md).
@@ -1464,7 +1464,7 @@ Den här inställningen anger att steget fortsätter om en enskild programpaketi
 
 
 
-## <a name="install-software-updates"></a><a name="BKMK_InstallSoftwareUpdates"></a>Installera program uppdateringar
+## <a name="install-software-updates"></a><a name="BKMK_InstallSoftwareUpdates"></a> Installera program uppdateringar
 
 Använd det här steget för att installera program uppdateringar på mål datorn. Mål datorn utvärderas inte för tillämpliga program uppdateringar förrän det här steget körs. Vid detta tillfälle utvärderas mål datorn för program uppdateringar som andra Configuration Manager-klienter. För det här steget för att installera program uppdateringar måste du först distribuera uppdateringarna till en samling som mål datorn är medlem i.  
 
@@ -1492,10 +1492,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepinstallupdate?view=sccm-ps)
-- [New-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepinstallupdate?view=sccm-ps)
-- [Remove-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepinstallupdate?view=sccm-ps)
-- [Set-CMTSStepInstallUpdate](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepinstallupdate?view=sccm-ps)
+- [Get-CMTSStepInstallUpdate](/powershell/module/configurationmanager/get-cmtsstepinstallupdate?view=sccm-ps)
+- [New-CMTSStepInstallUpdate](/powershell/module/configurationmanager/new-cmtsstepinstallupdate?view=sccm-ps)
+- [Remove-CMTSStepInstallUpdate](/powershell/module/configurationmanager/remove-cmtsstepinstallupdate?view=sccm-ps)
+- [Set-CMTSStepInstallUpdate](/powershell/module/configurationmanager/set-cmtsstepinstallupdate?view=sccm-ps)
 
 Mer information om rekommendationer och ett diagram diagram med tekniskt flöde för det här steget finns i [installera program uppdateringar](install-software-updates.md).
 
@@ -1534,7 +1534,7 @@ Om en av uppdateringarna startar om datorn, gör om det här steget. Steget akti
 
 
 
-## <a name="join-domain-or-workgroup"></a><a name="BKMK_JoinDomainorWorkgroup"></a>Anslut till domän eller arbets grupp
+## <a name="join-domain-or-workgroup"></a><a name="BKMK_JoinDomainorWorkgroup"></a> Anslut till domän eller arbets grupp
 
 Använd det här steget för att lägga till mål datorn i en arbets grupp eller domän.  
 
@@ -1561,10 +1561,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepJoinDomainWorkgroup](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
-- [New-CMTSStepJoinDomainWorkgroup](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
-- [Remove-CMTSStepJoinDomainWorkgroup](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
-- [Set-CMTSStepJoinDomainWorkgroup](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
+- [Get-CMTSStepJoinDomainWorkgroup](/powershell/module/configurationmanager/Get-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
+- [New-CMTSStepJoinDomainWorkgroup](/powershell/module/configurationmanager/New-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
+- [Remove-CMTSStepJoinDomainWorkgroup](/powershell/module/configurationmanager/Remove-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
+- [Set-CMTSStepJoinDomainWorkgroup](/powershell/module/configurationmanager/Set-CMTSStepJoinDomainWorkgroup?view=sccm-ps)
 
 ### <a name="properties-for-join-domain-or-workgroup"></a>Egenskaper för Anslut till domän eller arbets grupp
 
@@ -1582,11 +1582,11 @@ Du kan också ange eller bläddra efter en organisationsenhet i den angivna dom�
 
 #### <a name="enter-the-account-which-has-permission-to-join-the-domain"></a>Ange det konto som har behörighet att ansluta till domänen
 
-Välj **Ange** för att ange användar namn och lösen ord för ett konto som har behörighet att ansluta till domänen. Ange kontot i formatet: `Domain\account` . Mer information om konto för aktivitetssekvens domän anslutning finns i [konton](../../core/plan-design/hierarchy/accounts.md#task-sequence-domain-join-account).  
+Välj **Ange** för att ange användar namn och lösen ord för ett konto som har behörighet att ansluta till domänen. Ange kontot i formatet:  `Domain\account` . Mer information om konto för aktivitetssekvens domän anslutning finns i [konton](../../core/plan-design/hierarchy/accounts.md#task-sequence-domain-join-account).  
 
 
 
-## <a name="prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a>Förbered ConfigMgr-klient för avbildning
+## <a name="prepare-configmgr-client-for-capture"></a><a name="BKMK_PrepareConfigMgrClientforCapture"></a> Förbered ConfigMgr-klient för avbildning
 
 Använd det här steget för att ta bort eller konfigurera den Configuration Manager klienten på referens datorn. Den här åtgärden förbereder datorn för avbildning som en del av avbildnings processen.
 
@@ -1603,14 +1603,14 @@ Lägg till det här steget i redigeraren för aktivitetssekvens genom att välja
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepPrepareConfigMgrClient](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
-- [New-CMTSStepPrepareConfigMgrClient](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
-- [Remove-CMTSStepPrepareConfigMgrClient](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
-- [Set-CMTSStepPrepareConfigMgrClient](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
+- [Get-CMTSStepPrepareConfigMgrClient](/powershell/module/configurationmanager/Get-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
+- [New-CMTSStepPrepareConfigMgrClient](/powershell/module/configurationmanager/New-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
+- [Remove-CMTSStepPrepareConfigMgrClient](/powershell/module/configurationmanager/Remove-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
+- [Set-CMTSStepPrepareConfigMgrClient](/powershell/module/configurationmanager/Set-CMTSStepPrepareConfigMgrClient?view=sccm-ps)
 
 
 
-## <a name="prepare-windows-for-capture"></a><a name="BKMK_PrepareWindowsforCapture"></a>Förbered Windows för avbildning
+## <a name="prepare-windows-for-capture"></a><a name="BKMK_PrepareWindowsforCapture"></a> Förbered Windows för avbildning
 
 Använd det här steget för att ange Sysprep-alternativ när du fångar en OS-avbildning på referens datorn. Det här steget Kör Sysprep och startar sedan om datorn i Windows PE-startavbildningen som anges för aktivitetssekvensen. Den här åtgärden Miss lyckas om referens datorn är ansluten till en domän.  
 
@@ -1629,10 +1629,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepPrepareWindows](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepPrepareWindows?view=sccm-ps)
-- [New-CMTSStepPrepareWindows](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepPrepareWindows?view=sccm-ps)
-- [Remove-CMTSStepPrepareWindows](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepPrepareWindows?view=sccm-ps)
-- [Set-CMTSStepPrepareWindows](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepPrepareWindows?view=sccm-ps)
+- [Get-CMTSStepPrepareWindows](/powershell/module/configurationmanager/Get-CMTSStepPrepareWindows?view=sccm-ps)
+- [New-CMTSStepPrepareWindows](/powershell/module/configurationmanager/New-CMTSStepPrepareWindows?view=sccm-ps)
+- [Remove-CMTSStepPrepareWindows](/powershell/module/configurationmanager/Remove-CMTSStepPrepareWindows?view=sccm-ps)
+- [Set-CMTSStepPrepareWindows](/powershell/module/configurationmanager/Set-CMTSStepPrepareWindows?view=sccm-ps)
 
 ### <a name="properties-for-prepare-windows-for-capture"></a>Egenskaper för att förbereda Windows för avbildning
 
@@ -1659,7 +1659,7 @@ Aktivitetssekvensen [Windows autopilot för befintliga enheter](../../../autopil
 
 
 
-## <a name="pre-provision-bitlocker"></a><a name="BKMK_PreProvisionBitLocker"></a>Företablera BitLocker
+## <a name="pre-provision-bitlocker"></a><a name="BKMK_PreProvisionBitLocker"></a> Företablera BitLocker
 
 Använd det här steget för att aktivera BitLocker på en enhet i Windows PE. Som standard krypteras bara det disk utrymme som används, så krypterings tiderna är mycket snabbare. Du tillämpar alternativ för nyckel hantering genom att använda steget [Aktivera BitLocker](#BKMK_EnableBitLocker) efter att operativ systemet har installerats.
 
@@ -1674,10 +1674,10 @@ Om du vill lägga till det här steget i redigeraren för aktivitetssekvens väl
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepOfflineEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
-- [New-CMTSStepOfflineEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
-- [Remove-CMTSStepOfflineEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
-- [Set-CMTSStepOfflineEnableBitLocker](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
+- [Get-CMTSStepOfflineEnableBitLocker](/powershell/module/configurationmanager/Get-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
+- [New-CMTSStepOfflineEnableBitLocker](/powershell/module/configurationmanager/New-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
+- [Remove-CMTSStepOfflineEnableBitLocker](/powershell/module/configurationmanager/Remove-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
+- [Set-CMTSStepOfflineEnableBitLocker](/powershell/module/configurationmanager/Set-CMTSStepOfflineEnableBitLocker?view=sccm-ps)
 
 ### <a name="properties-for-pre-provision-bitlocker"></a>Egenskaper för Företablera BitLocker
 
@@ -1710,7 +1710,7 @@ Välj det här alternativet om du vill hoppa över enhets kryptering på en dato
 
 
 
-## <a name="release-state-store"></a><a name="BKMK_ReleaseStateStore"></a>Frisläpp tillstånds lager
+## <a name="release-state-store"></a><a name="BKMK_ReleaseStateStore"></a> Frisläpp tillstånds lager
 
 Använd det här steget för att meddela platsen för tillståndsmigrering att avbildningen eller återställnings åtgärden har slutförts. Använd det här steget tillsammans med **begär tillstånds lager**, **avbilda användar tillstånd**och **återställa användar tillstånds** steg. Du kan använda de här stegen för att migrera användar tillstånds data med en plats för tillståndsmigrering och User State Migration Tool (USMT).  
 
@@ -1737,10 +1737,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepReleaseStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepReleaseStateStore?view=sccm-ps)
-- [New-CMTSStepReleaseStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepReleaseStateStore?view=sccm-ps)
-- [Remove-CMTSStepReleaseStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepReleaseStateStore?view=sccm-ps)
-- [Set-CMTSStepReleaseStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepReleaseStateStore?view=sccm-ps)
+- [Get-CMTSStepReleaseStateStore](/powershell/module/configurationmanager/Get-CMTSStepReleaseStateStore?view=sccm-ps)
+- [New-CMTSStepReleaseStateStore](/powershell/module/configurationmanager/New-CMTSStepReleaseStateStore?view=sccm-ps)
+- [Remove-CMTSStepReleaseStateStore](/powershell/module/configurationmanager/Remove-CMTSStepReleaseStateStore?view=sccm-ps)
+- [Set-CMTSStepReleaseStateStore](/powershell/module/configurationmanager/Set-CMTSStepReleaseStateStore?view=sccm-ps)
 
 ### <a name="properties-for-release-state-store"></a>Egenskaper för publicerings tillstånds lager
 
@@ -1748,7 +1748,7 @@ Det här steget kräver inte några inställningar på fliken **Egenskaper** .
 
 
 
-## <a name="request-state-store"></a><a name="BKMK_RequestStateStore"></a>Begär tillstånds lager
+## <a name="request-state-store"></a><a name="BKMK_RequestStateStore"></a> Begär tillstånds lager
 
 Använd det här steget för att begära åtkomst till en plats för tillståndsmigrering när status fångas eller återställs.  
 
@@ -1776,10 +1776,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepRequestStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepRequestStateStore?view=sccm-ps)
-- [New-CMTSStepRequestStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepRequestStateStore?view=sccm-ps)
-- [Remove-CMTSStepRequestStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepRequestStateStore?view=sccm-ps)
-- [Set-CMTSStepRequestStateStore](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepRequestStateStore?view=sccm-ps)
+- [Get-CMTSStepRequestStateStore](/powershell/module/configurationmanager/Get-CMTSStepRequestStateStore?view=sccm-ps)
+- [New-CMTSStepRequestStateStore](/powershell/module/configurationmanager/New-CMTSStepRequestStateStore?view=sccm-ps)
+- [Remove-CMTSStepRequestStateStore](/powershell/module/configurationmanager/Remove-CMTSStepRequestStateStore?view=sccm-ps)
+- [Set-CMTSStepRequestStateStore](/powershell/module/configurationmanager/Set-CMTSStepRequestStateStore?view=sccm-ps)
 
 ### <a name="properties-for-request-state-store"></a>Egenskaper för lagring av begär tillstånd
 
@@ -1811,7 +1811,7 @@ Om aktivitetssekvensen inte kan komma åt platsen för tillståndsmigrering med 
 
 
 
-## <a name="restart-computer"></a><a name="BKMK_RestartComputer"></a>Starta om datorn
+## <a name="restart-computer"></a><a name="BKMK_RestartComputer"></a> Starta om datorn
 
 Använd det här steget för att starta om datorn som kör aktivitetssekvensen. Efter omstarten fortsätter datorn automatiskt med nästa steg i aktivitetssekvensen.  
 
@@ -1830,10 +1830,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepreboot?view=sccm-ps)
-- [New-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepreboot?view=sccm-ps)
-- [Remove-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepreboot?view=sccm-ps)
-- [Set-CMTSStepReboot](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepreboot?view=sccm-ps)
+- [Get-CMTSStepReboot](/powershell/module/configurationmanager/get-cmtsstepreboot?view=sccm-ps)
+- [New-CMTSStepReboot](/powershell/module/configurationmanager/new-cmtsstepreboot?view=sccm-ps)
+- [Remove-CMTSStepReboot](/powershell/module/configurationmanager/remove-cmtsstepreboot?view=sccm-ps)
+- [Set-CMTSStepReboot](/powershell/module/configurationmanager/set-cmtsstepreboot?view=sccm-ps)
 
 ### <a name="properties-for-restart-computer"></a>Egenskaper för omstart av dator
 
@@ -1861,7 +1861,7 @@ Ange hur lång tid i sekunder innan mål datorn startar om. Standardvärdet är 
 
 
 
-## <a name="restore-user-state"></a><a name="BKMK_RestoreUserState"></a>Återställ användar tillstånd
+## <a name="restore-user-state"></a><a name="BKMK_RestoreUserState"></a> Återställ användar tillstånd
 
 Använd det här steget för att starta User State Migration Tool (USMT) för att återställa användar tillstånd och inställningar till mål datorn. Du använder det här steget tillsammans med steget **avbilda användar tillstånd** .  
 
@@ -1894,10 +1894,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepRestoreUserState](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepRestoreUserState?view=sccm-ps)
-- [New-CMTSStepRestoreUserState](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepRestoreUserState?view=sccm-ps)
-- [Remove-CMTSStepRestoreUserState](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepRestoreUserState?view=sccm-ps)
-- [Set-CMTSStepRestoreUserState](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepRestoreUserState?view=sccm-ps)
+- [Get-CMTSStepRestoreUserState](/powershell/module/configurationmanager/Get-CMTSStepRestoreUserState?view=sccm-ps)
+- [New-CMTSStepRestoreUserState](/powershell/module/configurationmanager/New-CMTSStepRestoreUserState?view=sccm-ps)
+- [Remove-CMTSStepRestoreUserState](/powershell/module/configurationmanager/Remove-CMTSStepRestoreUserState?view=sccm-ps)
+- [Set-CMTSStepRestoreUserState](/powershell/module/configurationmanager/Set-CMTSStepRestoreUserState?view=sccm-ps)
 
 ### <a name="properties-for-restore-user-state"></a>Egenskaper för återställning av användar tillstånd
 
@@ -1929,7 +1929,7 @@ Aktivera det här alternativet för att skapa mer detaljerad information i loggf
 
 
 
-## <a name="run-command-line"></a><a name="BKMK_RunCommandLine"></a>Kör kommando rad
+## <a name="run-command-line"></a><a name="BKMK_RunCommandLine"></a> Kör kommando rad
 
 Använd det här steget för att köra den angivna kommando raden.  
 
@@ -1958,10 +1958,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepruncommandline?view=sccm-ps)
-- [New-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepruncommandline?view=sccm-ps)
-- [Remove-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepruncommandline?view=sccm-ps)
-- [Set-CMTSStepRunCommandLine](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepruncommandline?view=sccm-ps)
+- [Get-CMTSStepRunCommandLine](/powershell/module/configurationmanager/get-cmtsstepruncommandline?view=sccm-ps)
+- [New-CMTSStepRunCommandLine](/powershell/module/configurationmanager/new-cmtsstepruncommandline?view=sccm-ps)
+- [Remove-CMTSStepRunCommandLine](/powershell/module/configurationmanager/remove-cmtsstepruncommandline?view=sccm-ps)
+- [Set-CMTSStepRunCommandLine](/powershell/module/configurationmanager/set-cmtsstepruncommandline?view=sccm-ps)
 
 ### <a name="properties-for-run-command-line"></a>Egenskaper för körning av kommando rad
 
@@ -2043,7 +2043,7 @@ Inkludera andra slut koder från skriptet som steget ska utvärdera som lyckat.
 
 
 
-## <a name="run-powershell-script"></a><a name="BKMK_RunPowerShellScript"></a>Kör PowerShell-skript
+## <a name="run-powershell-script"></a><a name="BKMK_RunPowerShellScript"></a> Kör PowerShell-skript
 
 Använd det här steget för att köra det angivna Windows PowerShell-skriptet.  
 
@@ -2076,10 +2076,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtssteprunpowershellscript?view=sccm-ps)
-- [New-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtssteprunpowershellscript?view=sccm-ps)
-- [Remove-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtssteprunpowershellscript?view=sccm-ps)
-- [Set-CMTSStepRunPowerShellScript](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtssteprunpowershellscript?view=sccm-ps)
+- [Get-CMTSStepRunPowerShellScript](/powershell/module/configurationmanager/get-cmtssteprunpowershellscript?view=sccm-ps)
+- [New-CMTSStepRunPowerShellScript](/powershell/module/configurationmanager/new-cmtssteprunpowershellscript?view=sccm-ps)
+- [Remove-CMTSStepRunPowerShellScript](/powershell/module/configurationmanager/remove-cmtssteprunpowershellscript?view=sccm-ps)
+- [Set-CMTSStepRunPowerShellScript](/powershell/module/configurationmanager/set-cmtssteprunpowershellscript?view=sccm-ps)
 
 > [!Note]  
 > Använd signerade PowerShell-skript i Unicode-format. ANSI-format, som är standard, fungerar inte med det här steget.
@@ -2198,7 +2198,7 @@ Från och med version 1902, inkludera andra slut koder från skriptet som steget
 
 
 
-## <a name="run-task-sequence"></a><a name="child-task-sequence"></a>Kör aktivitetssekvens
+## <a name="run-task-sequence"></a><a name="child-task-sequence"></a> Kör aktivitetssekvens
 
 > [!Note]  
 > Configuration Manager aktiverar den här funktionen som standard i version 1910. I version 1906 eller tidigare aktiverar Configuration Manager inte den här valfria funktionen som standard. Aktivera den här funktionen innan du använder den. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).
@@ -2250,7 +2250,7 @@ Välj **Bläddra** för att välja den underordnade aktivitetssekvensen. Dialog 
 
 
 
-## <a name="set-dynamic-variables"></a><a name="BKMK_SetDynamicVariables"></a>Ange dynamiska variabler
+## <a name="set-dynamic-variables"></a><a name="BKMK_SetDynamicVariables"></a> Ange dynamiska variabler
 
 Använd det här steget för att utföra följande åtgärder:  
 
@@ -2320,7 +2320,7 @@ Om du använder alternativet **Visa inte det här värdet visas inte**värdet f�
 > Om du inkluderar variabler i kommando raden **Kör kommando rads** steg, visar logg filen för aktivitetssekvensen den fullständiga kommando raden inklusive variabel värden. För att förhindra att potentiellt känsliga data visas i logg filen ställer du in variabeln **OSDDoNotLogCommand** till `TRUE` .
 
 
-## <a name="set-task-sequence-variable"></a><a name="BKMK_SetTaskSequenceVariable"></a>Ange variabel för aktivitetssekvens
+## <a name="set-task-sequence-variable"></a><a name="BKMK_SetTaskSequenceVariable"></a> Ange variabel för aktivitetssekvens
 
 Använd det här steget för att ange ett värde för en variabel som används med aktivitetssekvensen.  
 
@@ -2339,10 +2339,10 @@ Aktivitetssekvensvariabler läses av aktivitetssekvensåtgärderna och bestämme
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepsetvariable?view=sccm-ps)
-- [New-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepsetvariable?view=sccm-ps)
-- [Remove-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepsetvariable?view=sccm-ps)
-- [Set-CMTSStepSetVariable](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepsetvariable?view=sccm-ps)
+- [Get-CMTSStepSetVariable](/powershell/module/configurationmanager/get-cmtsstepsetvariable?view=sccm-ps)
+- [New-CMTSStepSetVariable](/powershell/module/configurationmanager/new-cmtsstepsetvariable?view=sccm-ps)
+- [Remove-CMTSStepSetVariable](/powershell/module/configurationmanager/remove-cmtsstepsetvariable?view=sccm-ps)
+- [Set-CMTSStepSetVariable](/powershell/module/configurationmanager/set-cmtsstepsetvariable?view=sccm-ps)
 
 ### <a name="properties-for-set-task-sequence-variable"></a>Egenskaper för ange aktivitetssekvens-variabel
 
@@ -2371,7 +2371,7 @@ Aktivitetssekvensen ställer in variabeln till det här värdet. Ange den här v
 
 
 
-## <a name="setup-windows-and-configmgr"></a><a name="BKMK_SetupWindowsandConfigMgr"></a>Installera Windows och ConfigMgr
+## <a name="setup-windows-and-configmgr"></a><a name="BKMK_SetupWindowsandConfigMgr"></a> Installera Windows och ConfigMgr
 
 Använd det här steget för att utföra över gången från Windows PE till det nya operativ systemet. Det här steget i aktivitetssekvensen är en obligatorisk del av alla OS-distributioner. Den installerar Configuration Manager klienten i det nya operativ systemet och förbereder att aktivitetssekvensen ska fortsätta köras i det nya operativ systemet.  
 
@@ -2409,11 +2409,11 @@ Det här steget utför följande åtgärder:
 
     2. Starta om till det nyligen distribuerade operativ systemet.  
 
-    3. Windows Mini-installation körs med hjälp av den tidigare angivna Sysprep. inf-eller unattend.xml svarsfil som har alla inställningar för användar gränssnitt ignorerade. Om du använder steget **tillämpa nätverks inställningar** för att ansluta till en domän finns den informationen i svars filen. Windows-miniinstallationsprogrammet ansluter datorn till domänen.  
+    3. Windows Mini-installation körs med hjälp av den tidigare angivna Sysprep. inf-eller unattend.xml svarsfil som har alla inställningar för användar gränssnitt ignorerade. Om du använder steget  **tillämpa nätverks inställningar** för att ansluta till en domän finns den informationen i svars filen. Windows-miniinstallationsprogrammet ansluter datorn till domänen.  
 
 #### <a name="set-up-the-configuration-manager-client"></a>Konfigurera Configuration Manager-klienten  
 
-1. När Windows-miniinstallationen har slutförts återupptas aktivitetssekvensen med hjälp av setupcomplete.cmd. Mer information finns i [köra ett skript när installationen är klar (Setupcomplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd).  
+1. När Windows-miniinstallationen har slutförts återupptas aktivitetssekvensen med hjälp av setupcomplete.cmd. Mer information finns i [köra ett skript när installationen är klar (Setupcomplete. cmd)](/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd).  
 
 2. Aktivera eller inaktivera det lokala administratörs kontot, baserat på det alternativ som valts i steget **Använd Windows-inställningar** .  
 
@@ -2426,7 +2426,7 @@ Det här steget utför följande åtgärder:
 Aktivitetssekvensen fortsätter att köra nästa steg.  
 
 > [!Note]  
-> Grup principen i Windows bearbetar vanligt vis inte förrän aktivitetssekvensen har slutförts. Det här beteendet är konsekvent i olika versioner av Windows. Andra anpassade åtgärder under aktivitetssekvensen kan utlösa utvärdering av grup princip. Mer information om åtgärds ordningen finns i [köra ett skript när installationen är klar (Setupcomplete. cmd)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd). <!-- 2841304 -->
+> Grup principen i Windows bearbetar vanligt vis inte förrän aktivitetssekvensen har slutförts. Det här beteendet är konsekvent i olika versioner av Windows. Andra anpassade åtgärder under aktivitetssekvensen kan utlösa utvärdering av grup princip. Mer information om åtgärds ordningen finns i [köra ett skript när installationen är klar (Setupcomplete. cmd)](/windows-hardware/manufacture/desktop/add-a-custom-script-to-windows-setup#run-a-script-after-setup-is-complete-setupcompletecmd). <!-- 2841304 -->
 
 
 ### <a name="variables-for-setup-windows-and-configmgr"></a>Variabler för att installera Windows och ConfigMgr
@@ -2439,10 +2439,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
-- [New-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/new-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
-- [Remove-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/remove-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
-- [Set-CMTSStepSetupWindowsAndConfigMgr](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [Get-CMTSStepSetupWindowsAndConfigMgr](/powershell/module/configurationmanager/get-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [New-CMTSStepSetupWindowsAndConfigMgr](/powershell/module/configurationmanager/new-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [Remove-CMTSStepSetupWindowsAndConfigMgr](/powershell/module/configurationmanager/remove-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
+- [Set-CMTSStepSetupWindowsAndConfigMgr](/powershell/module/configurationmanager/set-cmtsstepsetupwindowsandconfigmgr?view=sccm-ps)
 
 ### <a name="properties-for-setup-windows-and-configmgr"></a>Egenskaper för installation av Windows och ConfigMgr
 
@@ -2471,7 +2471,7 @@ När du kör en aktivitetssekvens för operativ system distribution på en Inter
 
 
 
-## <a name="upgrade-operating-system"></a><a name="BKMK_UpgradeOS"></a>Uppgradera operativ system
+## <a name="upgrade-operating-system"></a><a name="BKMK_UpgradeOS"></a> Uppgradera operativ system
 
 Använd det här steget för att uppgradera en äldre version av Windows till en nyare version av Windows 10.  
 
@@ -2496,10 +2496,10 @@ Använd följande variabler för aktivitetssekvens i det här steget:
 
 Hantera det här steget med följande PowerShell-cmdletar:<!-- SCCMDocs #1118 -->
 
-- [Get-CMTSStepUpgradeOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Get-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
-- [New-CMTSStepUpgradeOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/New-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
-- [Remove-CMTSStepUpgradeOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Remove-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
-- [Set-CMTSStepUpgradeOperatingSystem](https://docs.microsoft.com/powershell/module/configurationmanager/Set-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
+- [Get-CMTSStepUpgradeOperatingSystem](/powershell/module/configurationmanager/Get-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
+- [New-CMTSStepUpgradeOperatingSystem](/powershell/module/configurationmanager/New-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
+- [Remove-CMTSStepUpgradeOperatingSystem](/powershell/module/configurationmanager/Remove-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
+- [Set-CMTSStepUpgradeOperatingSystem](/powershell/module/configurationmanager/Set-CMTSStepUpgradeOperatingSystem?view=sccm-ps)
 
 ### <a name="properties-for-upgrade-os"></a>Egenskaper för uppgradering av OS
 
@@ -2525,7 +2525,7 @@ Ange produkt nyckeln som ska användas för uppgraderings processen.
 
 #### <a name="provide-the-following-driver-content-to-windows-setup-during-upgrade"></a>Ange följande drivrutinsinnehåll i Windows-installationsprogrammet under uppgradering
 
-Lägg till driv rutiner på mål datorn under uppgraderings processen. Drivrutinerna måste vara kompatibla med Windows 10. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/InstallDriver` . Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#installdrivers).
+Lägg till driv rutiner på mål datorn under uppgraderings processen. Drivrutinerna måste vara kompatibla med Windows 10. Den här inställningen motsvarar kommando rads alternativet Installationsprogrammet för Windows `/InstallDriver` . Mer information finns i [installationsprogrammet för Windows kommando rads alternativ](/windows-hardware/manufacture/desktop/windows-setup-command-line-options#installdrivers).
 
 Ange ett av följande alternativ:  
 
@@ -2561,7 +2561,7 @@ Installationsprogrammet returnerar en slutkod efter kontrollen. Följande tabell
 |MOSETUP_E_COMPAT_SYSREQ_BLOCK (0xC1900200)|Inte tillämpligt för Windows 10.|  
 |MOSETUP_E_COMPAT_INSTALLDISKSPACE_BLOCK (0xC190020E)|Det finns inte tillräckligt med ledigt diskutrymme.|  
 
-Mer information om den här parametern finns i [installationsprogrammet för Windows kommando rads alternativ](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#compat).  
+Mer information om den här parametern finns i [installationsprogrammet för Windows kommando rads alternativ](/windows-hardware/manufacture/desktop/windows-setup-command-line-options#compat).  
 
 #### <a name="ignore-any-dismissible-compatibility-messages"></a>Ignorera alla kompatibilitetsmeddelanden som kan avfärdas
 

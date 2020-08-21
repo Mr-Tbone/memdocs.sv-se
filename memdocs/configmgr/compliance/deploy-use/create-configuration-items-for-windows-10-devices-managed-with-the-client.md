@@ -10,12 +10,12 @@ ms.assetid: 14226fbe-dd07-4432-910b-130790624a4e
 author: mestew
 manager: dougeby
 ms.author: mstewart
-ms.openlocfilehash: ade07cf23807d340ee5e0c7955a042a44f9031c5
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 9589b9e542c9d323ab7a23af169725c1a54bfb70
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240447"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694771"
 ---
 # <a name="create-configuration-items-for-windows-10-devices"></a>Skapa konfigurationsobjekt för Windows 10-enheter
 
@@ -72,9 +72,9 @@ Använd Configuration Manager konfigurations objekt för **Windows 10** för att
   
 ## <a name="windows-10-configuration-item-settings-reference"></a><a name="BKMK_Ref"></a> Windows 10 configuration item settings reference  
   
-### <a name="password"></a>Lösenord  
+### <a name="password"></a>lösenordsinställning  
   
-|Inställning|Information|  
+|Inställningen|Information|  
 |-------------|-------------|  
 |**Kräv lösenordsinställningar på enheter**|Kräver ett lösen ord på enheter som stöds.|  
 |**Minsta längd på lösenord (tecken)**|Den minsta längden i antal tecken för lösenordet.|  
@@ -91,7 +91,7 @@ Använd Configuration Manager konfigurations objekt för **Windows 10** för att
 |------------------|-------------|  
 |**Bluetooth**|Tillåter användningen av Bluetooth-funktioner på enheten.|  
   
-### <a name="cloud"></a>Molnet  
+### <a name="cloud"></a>Moln  
   
 |Inställningsnamn|Information|  
 |------------------|-------------|  
@@ -140,9 +140,9 @@ Configuration Manager konfigurations objekt för Windows Information Protection 
   
 Information om hur du konfigurerar Pia med Configuration Manager finns i:
 
-- [Skydda dina företags data med Windows Information Protection (Pia)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
-- [Skapa och distribuera en princip för Windows Information Protection (Pia) med Configuration Manager](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr)
-- [Begränsningar när du använder Windows-Information Protection (Pia)](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/limitations-with-wip)
+- [Skydda dina företags data med Windows Information Protection (Pia)](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [Skapa och distribuera en princip för Windows Information Protection (Pia) med Configuration Manager](/windows/security/information-protection/windows-information-protection/create-wip-policy-using-configmgr)
+- [Begränsningar när du använder Windows-Information Protection (Pia)](/windows/security/information-protection/windows-information-protection/limitations-with-wip)
 
 ## <a name="see-also"></a>Se även  
 [Konfigurations objekt för enheter som hanteras med Configuration Manager-klienten](../../compliance/deploy-use/create-configuration-items.md)

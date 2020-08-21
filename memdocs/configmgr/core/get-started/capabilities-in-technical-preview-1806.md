@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4708c0d8e9a7d2a3b87310b64311d67d8b84a16a
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 44fcea129b6f45c292bcdd6b83004131ce2d4e96
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126798"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694431"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-configuration-manager"></a>Funktioner i Technical Preview 1806 för Configuration Manager
 
@@ -39,7 +39,7 @@ Steps to workaround, if any.
 -->
 ## <a name="known-issues-in-this-technical-preview"></a>Kända problem i den här tekniska för hands versionen
 
-### <a name="site-fails-to-upgrade-with-remote-content-library"></a><a name="ki_contentlib"></a>Platsen kan inte uppgraderas med fjärrinnehålls bibliotek
+### <a name="site-fails-to-upgrade-with-remote-content-library"></a><a name="ki_contentlib"></a> Platsen kan inte uppgraderas med fjärrinnehålls bibliotek
 <!--514642-->
 Det går inte att uppgradera platsen med följande fel i **cmupdate. log**:  
 
@@ -62,7 +62,7 @@ Flytta innehålls biblioteket till en lokal enhet till plats servern. Mer inform
 
 
 
-## <a name="third-party-software-updates"></a><a name="bkmk-3pupdate"></a>Program uppdateringar från tredje part
+## <a name="third-party-software-updates"></a><a name="bkmk-3pupdate"></a> Program uppdateringar från tredje part
 <!--1352101-->
 Den här versionen itererar ytterligare om support för program uppdateringar från tredje part på grund av din [feedback från UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co). Du behöver inte längre använda System Center Updates Publisher (SCUP) för några vanliga scenarier. Den nya noden **program uppdaterings kataloger från tredje part** i Configuration Manager-konsolen gör att du kan prenumerera på kataloger från tredje part, publicera sina uppdateringar till program uppdaterings platsen och sedan distribuera dem till klienter. 
 
@@ -81,10 +81,10 @@ SCUP fortsätter att stödja andra kataloger och scenarier. Listan över katalog
 
     > [!Tip]  
     > Program uppdaterings platsen kräver HTTPS eftersom det är ett krav för de WSUS-API: er som används för att hantera signerings certifikat. Klienterna behöver inte också vara HTTPS-aktiverade. Mer information om hur du aktiverar HTTPS på WSUS finns i följande artiklar om hjälp:  
-    > - [Säker WSUS med Secure Sockets Layer Protocol](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) 
-    > - [Blogg inlägg för WSUS-support](https://docs.microsoft.com/archive/blogs/sus/how-to-create-an-internet-facing-wsus-server-that-uses-different-internal-and-external-names)
+    > - [Säker WSUS med Secure Sockets Layer Protocol](/windows-server/administration/windows-server-update-services/deploy/2-configure-wsus#25-secure-wsus-with-the-secure-sockets-layer-protocol) 
+    > - [Blogg inlägg för WSUS-support](/archive/blogs/sus/how-to-create-an-internet-facing-wsus-server-that-uses-different-internal-and-external-names)
 
-- Det finns tillräckligt med disk utrymme på program uppdaterings platsen, WSUSContent-mappen, för att lagra det binära innehållet för program uppdateringar från tredje part. Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution. Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme läser du blogg inlägget om WSUS support team [så här ändrar du den plats där WSUS lagrar uppdateringar lokalt](https://docs.microsoft.com/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally).  
+- Det finns tillräckligt med disk utrymme på program uppdaterings platsen, WSUSContent-mappen, för att lagra det binära innehållet för program uppdateringar från tredje part. Hur mycket lagrings utrymme som krävs varierar beroende på leverantör, typer av uppdateringar och vissa uppdateringar som du publicerar för distribution. Om du behöver flytta WSUSContent-mappen till en annan enhet med mer ledigt utrymme läser du blogg inlägget om WSUS support team [så här ändrar du den plats där WSUS lagrar uppdateringar lokalt](/archive/blogs/sus/wsus-how-to-change-the-location-where-wsus-stores-updates-locally).  
 
 - Aktivera och distribuera klient inställningen [Aktivera program uppdateringar från tredje part](../clients/deploy/about-client-settings.md#enable-third-party-software-updates) i **program uppdaterings** gruppen.  
 
@@ -354,4 +354,4 @@ I [Configuration Manager version 1710](../plan-design/changes/whats-new-in-versi
 
 
 ## <a name="next-steps"></a>Nästa steg
-Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).    
+Information om hur du installerar eller uppdaterar den tekniska för hands versionen finns i [teknisk för hands version för Configuration Manager](technical-preview.md).

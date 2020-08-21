@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: ace27e9035af6696e455382a32365be0e3824d65
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 8ead53c71e336001ac820a437fa67758c6375cbd
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82905202"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694380"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funktioner i Configuration Manager Technical Preview version 1807 
 
@@ -42,7 +42,7 @@ Steps to workaround, if any.
 
 ## <a name="known-issues"></a>Kända problem 
 
-### <a name="issues-with-office-365-software-updates"></a><a name="ki_o365"></a>Problem med Office 365-program uppdateringar
+### <a name="issues-with-office-365-software-updates"></a><a name="ki_o365"></a> Problem med Office 365-program uppdateringar
 <!--521365-->
 Om du hanterar Office 365-uppdateringar med teknisk för hands version 1806 och 1806,2 kan de Miss lyckas med att installera på klienter. 
 
@@ -58,7 +58,7 @@ Om du hanterar Office 365-uppdateringar med teknisk för hands version 1806 och 
 **I följande avsnitt beskrivs de nya funktionerna för att prova i den här versionen:**  
 
 
-## <a name="community-hub"></a><a name="bkmk_hub"></a>Community-hubb
+## <a name="community-hub"></a><a name="bkmk_hub"></a> Community-hubb
 <!--1357766-->
 
 Community-hubb är en central plats för att dela användbara Configuration Manager objekt med andra. Se den nya **Community** -arbetsytan i Configuration Manager-konsolen och välj **Hub** -noden. Använd Community-hubb för att ladda ned följande typer av Configuration Manager objekt: 
@@ -73,7 +73,7 @@ Om du vill se mer information om ett tillgängligt objekt klickar du på det i h
 
 **Community** -arbetsytan innehåller även följande noder:
 
-- **Dokumentation**: visar Configuration Manager [dokumentations bibliotek](https://docs.microsoft.com/sccm/)  
+- **Dokumentation**: visar Configuration Manager [dokumentations bibliotek](/sccm/)  
 
 - **Feedback**: visar Configuration Manager [UserVoice-webbplatsen](https://configurationmanager.uservoice.com/)  
 
@@ -82,7 +82,7 @@ Om du vill se mer information om ett tillgängligt objekt klickar du på det i h
 
 - Använd Configuration Manager-konsolen på ett klient-OS.  
 
-    - Alternativt men rekommenderas inte: inaktivera Internet Explorer på ett server-OS [: förbättrad säkerhets konfiguration](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd883248(v=ws.10)).
+    - Alternativt men rekommenderas inte: inaktivera Internet Explorer på ett server-OS [: förbättrad säkerhets konfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd883248(v=ws.10)).
 
 - Datorn med-konsolen kräver Internet åtkomst och anslutning till följande platser:  
     - `https://aka.ms`  
@@ -96,7 +96,7 @@ Bidrags objekt till hubben är för närvarande inte tillgängliga i den här ve
 
 
 
-## <a name="specify-the-drive-for-offline-os-image-servicing"></a><a name="bkmk_osd"></a>Ange enhet för etablering av OS-avbildning offline  
+## <a name="specify-the-drive-for-offline-os-image-servicing"></a><a name="bkmk_osd"></a> Ange enhet för etablering av OS-avbildning offline  
 <!--1358924-->
 
 Ange den enhet som Configuration Manager använder under offlineunderhåll av OS-avbildningar, baserat på din [feedback från UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/33506009-gui-option-for-offline-os-image-servicing-drive). Den här processen kan förbruka en stor mängd disk utrymme med temporära filer, så det här alternativet ger dig möjlighet att välja den enhet som ska användas. 
@@ -118,10 +118,10 @@ Granska logg filen **OfflineServicingMgr. log** .
 
 
 
-## <a name="co-managed-device-sync-activity-from-intune"></a><a name="bkmk_comgmt"></a>Synkronisera aktivitet för samhanterad enhet från Intune
+## <a name="co-managed-device-sync-activity-from-intune"></a><a name="bkmk_comgmt"></a> Synkronisera aktivitet för samhanterad enhet från Intune
 <!--1358565-->
 
-Visa i Configuration Manager-konsolen om en samhanterad enhet är aktiv med Microsoft Intune. Det här läget baseras på data från [Intunes informations lager](https://docs.microsoft.com/intune/reports-nav-create-intune-reports). Instrument panelen för **klient status** i Configuration Manager-konsolen visar **inaktiva klienter med Intune**. Den nya kategorin är för samhanterade enheter som är inaktiva med Configuration Manager, men som har synkroniserats med Intune-tjänsten den senaste veckan.
+Visa i Configuration Manager-konsolen om en samhanterad enhet är aktiv med Microsoft Intune. Det här läget baseras på data från [Intunes informations lager](/intune/reports-nav-create-intune-reports). Instrument panelen för **klient status** i Configuration Manager-konsolen visar **inaktiva klienter med Intune**. Den nya kategorin är för samhanterade enheter som är inaktiva med Configuration Manager, men som har synkroniserats med Intune-tjänsten den senaste veckan.
 
 
 ### <a name="try-it-out"></a>prova!
@@ -140,7 +140,7 @@ Mer information om hur du aktiverar samhantering finns i [Co-Management för Win
 
 
 
-## <a name="repair-applications"></a><a name="bkmk_app-repair"></a>Reparera program
+## <a name="repair-applications"></a><a name="bkmk_app-repair"></a> Reparera program
 <!--1357866-->
 
 Ange en reparations kommando rad för Windows Installer och skript installations distributions typer med hjälp av din [feedback från UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8365071-force-reinstall-of-application). 
@@ -163,7 +163,7 @@ Den nya knappen i Software Center som användare kan använda för att **Reparer
 
 
 
-## <a name="approve-application-requests-via-email"></a><a name="bkmk_email-approve"></a>Godkänn program begär Anden via e-post
+## <a name="approve-application-requests-via-email"></a><a name="bkmk_email-approve"></a> Godkänn program begär Anden via e-post
 <!--1321550-->
 
 Konfigurera e-postaviseringar för begäran om program godkännande. När en användare begär ett program får du ett e-postmeddelande. Klicka på länkar i e-postmeddelandet för att godkänna eller neka begäran, utan att behöva Configuration Manager-konsolen.
@@ -193,7 +193,7 @@ Om du inte konfigurerar de här förutsättningarna skickar-platsen e-postaviser
 
         - **Omdirigerings-URI**: `https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth` . Använd det fullständigt kvalificerade domän namnet (FQDN) för CMG-tjänsten (Cloud Management Gateway), till exempel GraniteFalls.Contoso.com.   
 
-        - **Manifest**: ange **oauth2AllowImplicitFlow** till True:`"oauth2AllowImplicitFlow": true,`  
+        - **Manifest**: ange **oauth2AllowImplicitFlow** till True: `"oauth2AllowImplicitFlow": true,`  
 
 
 ### <a name="try-it-out"></a>prova!
@@ -216,13 +216,13 @@ Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-tech
 
 
 
-## <a name="improvement-to-script-output"></a><a name="bkmk_script"></a>Förbättring av utdata från skript
+## <a name="improvement-to-script-output"></a><a name="bkmk_script"></a> Förbättring av utdata från skript
 <!--1236459-->
 
 Nu kan du Visa detaljerade skript utdata i oformaterat eller strukturerat JSON-format. Den här formateringen gör det lättare att läsa och analysera utdata. Om skriptet returnerar en giltig JSON-formaterad text, visar du de detaljerade utdata som antingen **JSON-utdata** eller **rå data**. I annat fall är det enda alternativet **skript-utdata**. 
 
 #### <a name="example-script-output-is-valid-json"></a>Exempel: skriptets utdata är giltig JSON
-Kommandoprompt`$PSVersionTable.PSVersion`  
+Kommandoprompt `$PSVersionTable.PSVersion`  
 
 ``` Output
 Major  Minor  Build  Revision
@@ -231,7 +231,7 @@ Major  Minor  Build  Revision
 ```
 
 #### <a name="example-script-output-isnt-valid-json"></a>Exempel: skriptets utdata är inte giltig JSON
-Kommandoprompt`Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
+Kommandoprompt `Write-Output (Get-WmiObject -Class Win32_OperatingSystem).Caption`  
 
 ``` Output
 Microsoft Windows 10 Enterprise
@@ -252,7 +252,7 @@ Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-tech
 
 
 
-## <a name="improvement-to-third-party-software-updates"></a><a name="bkmk_3pupdate"></a>Förbättringar av program uppdateringar från tredje part
+## <a name="improvement-to-third-party-software-updates"></a><a name="bkmk_3pupdate"></a> Förbättringar av program uppdateringar från tredje part
 <!--1358714-->
 
 Nu kan du ändra egenskaperna för anpassade kataloger.

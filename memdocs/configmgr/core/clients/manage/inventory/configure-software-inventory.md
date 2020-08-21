@@ -10,12 +10,12 @@ ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f6fcf4736c30d8743d0d26b52aac60ef12b5c9cd
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: 9663f71118836513d95ec914d0f70b09cda9954f
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906305"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88693071"
 ---
 # <a name="how-to-configure-software-inventory-in-configuration-manager"></a>Så här konfigurerar du program varu inventering i Configuration Manager
 
@@ -44,7 +44,7 @@ Den här proceduren konfigurerar standard klient inställningarna för program v
    > [!TIP]
    >   Felkod 80041006 i inventoryprovider. log innebär att WMI-providern har slut på minne. Det innebär att minnes kvot gränsen för en provider har nåtts och inventerings leverantören inte kan fortsätta.
    > I det här fallet skapar inventerings agenten en rapport med 0 poster så att inga lager artiklar rapporteras. <br/>
-   > En möjlig lösning för det här felet är att minska omfånget för program inventerings samlingen. Om felet inträffar efter att inventerings omfånget har begränsats, kan [MemoryPerHost](https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-and-handle-quotas-in-the-wmi-provider-service/ba-p/373319) -egenskapen som definieras i klassen [_ProviderHostQuotaConfiguration](https://docs.microsoft.com/windows/win32/wmisdk/--providerhostquotaconfiguration) tillhandahålla en lösning.
+   > En möjlig lösning för det här felet är att minska omfånget för program inventerings samlingen. Om felet inträffar efter att inventerings omfånget har begränsats, kan [MemoryPerHost](https://techcommunity.microsoft.com/t5/ask-the-performance-team/memory-and-handle-quotas-in-the-wmi-provider-service/ba-p/373319) -egenskapen som definieras i klassen [_ProviderHostQuotaConfiguration](/windows/win32/wmisdk/--providerhostquotaconfiguration) tillhandahålla en lösning.
 
 <!--SMS.480648 include WMI Out of memory tip -->
 

@@ -10,12 +10,12 @@ ms.assetid: 4cf640b3-610c-4c3c-b966-c62e9f5654ff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f2ada7bfcef5714d8df3c476a6bbba695dc398e0
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: f5b9addd35dd3e9252c1b988de4bb006e9a5bc0d
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127281"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694975"
 ---
 # <a name="conditional-access-with-co-management"></a>Villkorlig åtkomst med samhantering
 
@@ -108,12 +108,11 @@ Villkorlig åtkomst är enkelt att använda när du [aktiverar samhantering](how
 
 Mer information om hur du använder villkorlig åtkomst finns i följande artiklar: 
 
-- [Villkorlig åtkomst för Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)  
+- [Villkorlig åtkomst för Azure AD](/azure/active-directory/conditional-access/overview)  
 
-- [Efterlevnadsprinciper för Intune-enheter](https://docs.microsoft.com/intune/device-compliance)  
+- [Efterlevnadsprinciper för Intune-enheter](/intune/device-compliance)  
 
-- [Appbaserad villkorlig åtkomst med Intune](https://docs.microsoft.com/intune/app-based-conditional-access-intune)  
+- [Appbaserad villkorlig åtkomst med Intune](/intune/app-based-conditional-access-intune)  
 
 > [!Note]  
-> Villkorliga åtkomst funktioner blir tillgängliga omedelbart för Hybrid Azure AD-anslutna enheter. Dessa funktioner omfattar Multi-Factor Authentication och hybrid Azure AD Join Access Control. Detta beror på att de är baserade på Azure AD-egenskaper. Aktivera samhantering för att utnyttja den konfigurations utvärderingen från Intune och Configuration Manager. Med den här konfigurationen får du åtkomst kontroll direkt från Intune för kompatibla enheter. Det ger dig också Intunes utvärderings funktion för efterlevnadsprinciper.  
-
+> Villkorliga åtkomst funktioner blir tillgängliga omedelbart för Hybrid Azure AD-anslutna enheter. Dessa funktioner omfattar Multi-Factor Authentication och hybrid Azure AD Join Access Control. Detta beror på att de är baserade på Azure AD-egenskaper. Aktivera samhantering för att utnyttja den konfigurations utvärderingen från Intune och Configuration Manager. Med den här konfigurationen får du åtkomst kontroll direkt från Intune för kompatibla enheter. Det ger dig också Intunes utvärderings funktion för efterlevnadsprinciper.

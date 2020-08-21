@@ -10,12 +10,12 @@ ms.assetid: 6893fce1-7ad5-4151-9ba9-3096871e8e4a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad92e4906c45b5c720ab35efc055449a27cc0850
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: f219c6c6d4c9a5cbf04b1295c99184f345e68b83
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82906224"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88692867"
 ---
 # <a name="security-and-privacy-for-migration-to-configuration-manager-current-branch"></a>Säkerhet och sekretess för migrering till Configuration Manager aktuella grenen
 
@@ -48,9 +48,9 @@ När du migrerar data från en käll plats till en målplats förlorar du all gr
 
  Mer information om säkerhets-och sekretess information finns i något av följande avsnitt:  
 
--   Mer information om sekretess information för Configuration Manager 2007 finns i [säkerhet och sekretess för Configuration Manager 2007](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680768(v=technet.10)) i dokumentations biblioteket för Configuration Manager 2007.  
+-   Mer information om sekretess information för Configuration Manager 2007 finns i [säkerhet och sekretess för Configuration Manager 2007](/previous-versions/system-center/configuration-manager-2007/bb680768(v=technet.10)) i dokumentations biblioteket för Configuration Manager 2007.  
 
--   Mer information om sekretess information för System Center 2012 Configuration Manager finns i [säkerhet och sekretess för system center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682033(v=technet.10)) i dokumentations biblioteket för system center 2012 Configuration Manager.  
+-   Mer information om sekretess information för System Center 2012 Configuration Manager finns i  [säkerhet och sekretess för system center 2012 Configuration Manager](/previous-versions/system-center/system-center-2012-R2/gg682033(v=technet.10)) i dokumentations biblioteket för system center 2012 Configuration Manager.  
 
 -   Mer information om sekretess information för Configuration Manager finns i [säkerhet och sekretess för Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
 
@@ -58,4 +58,4 @@ Du kan migrera vissa eller alla data som stöds från en käll plats till en må
 
 Migrering är inte aktiverat som standard och kräver flera konfigurations steg. Information om migrering skickas inte till Microsoft.  
 
-Innan du migrerar data från en-källhierarki bör du tänka igenom dina sekretess krav.  
+Innan du migrerar data från en-källhierarki bör du tänka igenom dina sekretess krav.

@@ -10,12 +10,12 @@ ms.assetid: 20493c86-6454-4b35-8f22-0d049b68b8bb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f725c1b7dc380a84cd94e666b98dbd309df3744c
-ms.sourcegitcommit: 14d7dd0a99ebd526c9274d5781c298c828323ebf
+ms.openlocfilehash: 15aba2a32e680ab9499f5295307c82daafbbed71
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82802063"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88695352"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Godkänn program i Configuration Manager
 
@@ -23,11 +23,11 @@ ms.locfileid: "82802063"
 
 När du [distribuerar ett program](deploy-applications.md) i Configuration Manager kan du kräva godkännande före installationen. Användare begär programmet i Software Center och granskar sedan begäran i Configuration Manager-konsolen. Du kan godkänna eller avvisa begäran.
 
-## <a name="approval-settings"></a><a name="bkmk_approval"></a>Inställningar för godkännande
+## <a name="approval-settings"></a><a name="bkmk_approval"></a> Inställningar för godkännande
 
 Program godkännande beteendet beror på om du aktiverar den rekommenderade [upplevelsen för godkännande av valfria appar](#bkmk_opt). En av följande godkännande inställningar visas på sidan **distributions inställningar** i program distributionen:  
 
-### <a name="an-administrator-must-approve-a-request-for-this-application-on-the-device"></a><a name="bkmk_opt"></a>En administratör måste godkänna en begäran om det här programmet på enheten
+### <a name="an-administrator-must-approve-a-request-for-this-application-on-the-device"></a><a name="bkmk_opt"></a> En administratör måste godkänna en begäran om det här programmet på enheten
 
 > [!Note]  
 > Configuration Manager aktiverar inte den här funktionen som standard. Innan du använder den aktiverar du den valfria funktionen **Godkänn program begär Anden för användare per enhet**. Mer information finns i avsnittet [Enable optional features from updates](../../core/servers/manage/install-in-console-updates.md#bkmk_options).
@@ -49,11 +49,11 @@ När du har godkänt ett program för installation kan du **neka** begäran i Co
 
 Från och med version 1906, om du godkänner en app-begäran i-konsolen och sedan nekar den, kan du nu godkänna den igen. Appen installeras om på klienten när du har godkänt den.  <!-- 4224910 -->
 
-Automatisera godkännande processen med PowerShell-cmdleten [Godkänn-CMApprovalRequest](https://docs.microsoft.com/powershell/module/configurationmanager/approve-cmapprovalrequest?view=sccm-ps) . Från och med version 1902 inkluderar denna cmdlet parametern **InstallActionBehavior** . Använd den här parametern för att ange om programmet ska installeras direkt eller under icke-kontors tid.<!-- SCCMDocs-pr issue #3418 -->
+Automatisera godkännande processen med PowerShell-cmdleten [Godkänn-CMApprovalRequest](/powershell/module/configurationmanager/approve-cmapprovalrequest?view=sccm-ps) . Från och med version 1902 inkluderar denna cmdlet parametern **InstallActionBehavior** . Använd den här parametern för att ange om programmet ska installeras direkt eller under icke-kontors tid.<!-- SCCMDocs-pr issue #3418 -->
 
 Från och med 1906 kan du se vilka distributioner som kräver godkännande. Välj en app i noden **program** . I informations fönstret växlar du till fliken **distributioner** . En ny kolumn som visas som standard **kräver godkännande**.
 
-#### <a name="retry-the-install-of-pre-approved-applications"></a><a name="bkmk_retry"></a>Gör om installationen av för hands godkända program
+#### <a name="retry-the-install-of-pre-approved-applications"></a><a name="bkmk_retry"></a> Gör om installationen av för hands godkända program
 
 <!--4336307-->
 Från och med version 1906 kan du göra ett nytt försök med installationen av en app som du tidigare godkänt för en användare eller enhet. Alternativet för godkännande är endast tillgängligt för distributioner. Om användaren avinstallerar appen, eller om den inledande installationen Miss lyckas, kommer Configuration Manager inte att utvärdera om dess tillstånd och installera om den. Med den här funktionen kan en support tekniker snabbt försöka installera appen igen för en användare som anropar hjälp.
@@ -76,7 +76,7 @@ Om programmet inte installeras utan problem, eller om användaren avinstallerar 
 - [Förbättringar av program godkännande i ConfigMgr 1810](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/Application-approval-improvements-in-ConfigMgr-1810/ba-p/303534)
 - [Uppdateringar av program godkännande processen i Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/Updates-to-the-application-approval-process-in-Configuration/ba-p/275048)
 
-### <a name="require-administrator-approval-if-users-request-this-application"></a><a name="bkmk_prior"></a>Kräv administratörs godkännande om användare begär programmet
+### <a name="require-administrator-approval-if-users-request-this-application"></a><a name="bkmk_prior"></a> Kräv administratörs godkännande om användare begär programmet
 
 > [!Note]  
 > Den här funktionen gäller om du inte aktiverar den rekommenderade [upplevelsen för godkännande av valfria appar](#bkmk_opt).
@@ -87,7 +87,7 @@ Begär Anden om program godkännande visas i noden **program begär Anden** , un
 
 När du har godkänt ett program för installation kan du **neka** begäran i Configuration Manager-konsolen. Den här åtgärden gör inte att klienten avinstallerar programmet från några enheter. Användaren hindrar användare från att installera nya kopior av programmet från Software Center.  
 
-## <a name="email-notifications"></a><a name="bkmk_email-approve"></a>E-postmeddelanden
+## <a name="email-notifications"></a><a name="bkmk_email-approve"></a> E-postmeddelanden
 
 <!--1321550-->
 
@@ -146,7 +146,7 @@ Med dessa ytterligare valfria krav kan mottagarna godkänna eller neka begäran 
 
     1. I menyn **Hantera** väljer du **autentisering**.  
 
-        1. I avsnittet **omdirigerings-URI** klistrar du in följande sökväg:`https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`  
+        1. I avsnittet **omdirigerings-URI** klistrar du in följande sökväg: `https://<CMG FQDN>/CCM_Proxy_ServerAuth/ImplicitAuth`  
 
         1. Ersätt `<CMG FQDN>` med det fullständigt kvalificerade domän namnet (FQDN) för din Cloud Management Gateway-tjänst (CMG). Till exempel GraniteFalls.Contoso.com.  
 
@@ -156,7 +156,7 @@ Med dessa ytterligare valfria krav kan mottagarna godkänna eller neka begäran 
 
         1. I fönstret Redigera manifest hittar du egenskapen **oauth2AllowImplicitFlow** .  
 
-        1. Ändra värdet till **Sant**. Till exempel bör hela raden se ut som på följande rad:`"oauth2AllowImplicitFlow": true,`  
+        1. Ändra värdet till **Sant**. Till exempel bör hela raden se ut som på följande rad: `"oauth2AllowImplicitFlow": true,`  
 
         1. Välj **Spara**.  
 

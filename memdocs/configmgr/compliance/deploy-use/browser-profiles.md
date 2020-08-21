@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.openlocfilehash: 57eb9bbaed39ec463afc00d12202a9829729a086
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: deededfe18275837ae93859c4075837eac870c35
+ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240554"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88694788"
 ---
 # <a name="configure-microsoft-edge-legacy-settings-in-configuration-manager"></a>Konfigurera inställningar för Microsoft Edge äldre i Configuration Manager
 
@@ -27,11 +27,11 @@ ms.locfileid: "86240554"
 *Gäller för: Configuration Manager (aktuell gren)*
 
 <!-- 1357310 -->
-För kunder som använder [Microsoft Edge äldre](https://docs.microsoft.com/microsoft-edge/deploy/) webbläsare på Windows 10-klienter skapar du en Configuration Manager efterlevnadsprincip för att konfigurera webb läsar inställningarna.
+För kunder som använder [Microsoft Edge äldre](/microsoft-edge/deploy/) webbläsare på Windows 10-klienter skapar du en Configuration Manager efterlevnadsprincip för att konfigurera webb läsar inställningarna.
 
 Den här principen gäller bara för klienter i Windows 10, version 1703 eller senare och Microsoft Edge Legacy version 45 och tidigare. <!--511552-->
 
-Mer information om hur du hanterar Microsoft Edge version 77 eller senare med Configuration Manager finns i [distribuera Microsoft Edge, version 77 och senare](../../apps/deploy-use/deploy-edge.md). Mer information om hur du konfigurerar principer för Microsoft Edge version 77 eller senare finns i [Microsofts gräns-principer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies).
+Mer information om hur du hanterar Microsoft Edge version 77 eller senare med Configuration Manager finns i [distribuera Microsoft Edge, version 77 och senare](../../apps/deploy-use/deploy-edge.md). Mer information om hur du konfigurerar principer för Microsoft Edge version 77 eller senare finns i [Microsofts gräns-principer](/DeployEdge/microsoft-edge-policies).
 
 ## <a name="policy-settings"></a>Principinställningar
 
@@ -39,42 +39,42 @@ Den här principen innehåller för närvarande följande inställningar:
 
 - **Ange Microsoft Edge-webbläsare som standard**: konfigurerar Windows 10-standardappens inställning för webbläsare till Microsoft Edge
 
-- **Tillåt listruta för adress fält**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för AllowAddressBarDropdown-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
+- **Tillåt listruta för adress fält**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för AllowAddressBarDropdown-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-allowaddressbardropdown).
 
-- **Tillåt synkronisering av favoriter mellan Microsoft-webbläsare**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för SyncFavoritesBetweenIEAndMicrosoftEdge-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
+- **Tillåt synkronisering av favoriter mellan Microsoft-webbläsare**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för SyncFavoritesBetweenIEAndMicrosoftEdge-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-syncfavoritesbetweenieandmicrosoftedge).
 
-- **Tillåt rensning av webb data vid avslut**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för ClearBrowsingDataOnExit-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
+- **Tillåt rensning av webb data vid avslut**: kräver Windows 10, version 1703 eller senare. Mer information finns i [princip för ClearBrowsingDataOnExit-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-clearbrowsingdataonexit).
 
-- **Tillåt Not Track-huvuden**: Mer information finns i [AllowDoNotTrack Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
+- **Tillåt Not Track-huvuden**: Mer information finns i [AllowDoNotTrack Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowdonottrack).
 
-- **Tillåt Autofyll**: Mer information finns i [AllowAutofill Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
+- **Tillåt Autofyll**: Mer information finns i [AllowAutofill Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowautofill).
 
-- **Tillåt cookies**: Mer information finns i [AllowCookies Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
+- **Tillåt cookies**: Mer information finns i [AllowCookies Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowcookies).
 
-- **Tillåt blockering av popup-fönster**: Mer information finns i [AllowPopups Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
+- **Tillåt blockering av popup-fönster**: Mer information finns i [AllowPopups Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowpopups).
 
-- **Tillåt Sök förslag i adress fältet**: Mer information finns i [AllowSearchSuggestionsinAddressBar Browser policy](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
+- **Tillåt Sök förslag i adress fältet**: Mer information finns i [AllowSearchSuggestionsinAddressBar Browser policy](/windows/client-management/mdm/policy-csp-browser#browser-allowsearchsuggestionsinaddressbar).
 
-- **Tillåt sändning av intranäts trafik till Internet Explorer**: Mer information finns i [SendIntranetTraffictoInternetExplorer Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
+- **Tillåt sändning av intranäts trafik till Internet Explorer**: Mer information finns i [SendIntranetTraffictoInternetExplorer Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-sendintranettraffictointernetexplorer).
 
-- **Tillåt lösen ords hanteraren**: Mer information finns i [AllowPasswordManager Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
+- **Tillåt lösen ords hanteraren**: Mer information finns i [AllowPasswordManager Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager).
 
-- **Tillåt utvecklarverktyg**: Mer information finns i [princip för AllowDeveloperTools-webbläsare](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
+- **Tillåt utvecklarverktyg**: Mer information finns i [princip för AllowDeveloperTools-webbläsare](/windows/client-management/mdm/policy-csp-browser#browser-allowdevelopertools).
 
-- **Tillåt tillägg**: Mer information finns i [AllowExtensions Browser-princip](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
+- **Tillåt tillägg**: Mer information finns i [AllowExtensions Browser-princip](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
 
 > [!TIP]
-> Mer information om hur du använder grup principer för att konfigurera dessa och andra inställningar finns i [Microsoft Edge äldre grup principer](https://docs.microsoft.com/microsoft-edge/deploy/group-policies/).
+> Mer information om hur du använder grup principer för att konfigurera dessa och andra inställningar finns i [Microsoft Edge äldre grup principer](/microsoft-edge/deploy/group-policies/).
 
 ### <a name="configure-windows-defender-smartscreen-settings-for-microsoft-edge-legacy"></a>Konfigurera Windows Defender SmartScreen-inställningar för Microsoft Edge Legacy
 <!--1353701-->
-Den här principen lägger till tre inställningar för [Windows Defender SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview). Principen innehåller nu följande ytterligare inställningar på sidan SmartScreen- **Inställningar** :
+Den här principen lägger till tre inställningar för [Windows Defender SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview). Principen innehåller nu följande ytterligare inställningar på sidan SmartScreen- **Inställningar** :
 
-- **Tillåt SmartScreen**: anger om Windows Defender SmartScreen tillåts. Mer information finns i [AllowSmartScreen Browser-principen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
+- **Tillåt SmartScreen**: anger om Windows Defender SmartScreen tillåts. Mer information finns i [AllowSmartScreen Browser-principen](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
 
-- **Användare kan åsidosätta SmartScreen-prompten för platser**: anger om användare kan åsidosätta varningar från Windows Defender SmartScreen-filtret om potentiellt skadliga webbplatser. Mer information finns i [PreventSmartScreenPromptOverride Browser-principen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
+- **Användare kan åsidosätta SmartScreen-prompten för platser**: anger om användare kan åsidosätta varningar från Windows Defender SmartScreen-filtret om potentiellt skadliga webbplatser. Mer information finns i [PreventSmartScreenPromptOverride Browser-principen](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
 
-- **Användare kan åsidosätta SmartScreen-prompten för filer**: anger om användare kan åsidosätta varningar från Windows Defender SmartScreen-filtret om att ladda ned overifierade filer. Mer information finns i [PreventSmartScreenPromptOverrideForFiles Browser-principen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
+- **Användare kan åsidosätta SmartScreen-prompten för filer**: anger om användare kan åsidosätta varningar från Windows Defender SmartScreen-filtret om att ladda ned overifierade filer. Mer information finns i [PreventSmartScreenPromptOverrideForFiles Browser-principen](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
 
 ## <a name="create-the-browser-profile"></a>Skapa webb läsar profilen
 
