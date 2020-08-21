@@ -302,8 +302,6 @@
           href: compliance-policy-create-windows.md
         - name: Inställningar för efterlevnadsprinciper – Windows 8.1
           href: compliance-policy-create-windows-8-1.md
-        - name: Inställningar för efterlevnadsprinciper – Windows Phone 8.1
-          href: compliance-policy-create-windows-8-1.md
     - name: Säkerhetsprincipinställningar för slutpunkter
       items:
         - name: Principinställningar för Antivirus
