@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/23/2020
+ms.date: 08/14/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fedca34aaf390dfec655e3166f3a153af93a7ce0
-ms.sourcegitcommit: 7b3eed763b394075766ea080968889a8538bfe56
+ms.openlocfilehash: 69b4df0b5ceb947ab875f82a0d6f5ac59ce89eef
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506598"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252630"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Inställningar för Windows 10 (och senare) för att skydda delade enheter med Intune
 
@@ -453,13 +453,16 @@ Microsoft Edge måste vara installerat på enheten.
   
   Om Windows-kryptering aktiveras samtidigt som en annan krypteringsmetod är aktiv, kan enheten bli instabil.  
 
-- **Kryptera minneskort (endast mobil)**  
-  *Den här inställningen gäller endast mobila enheter med Windows 10.*  
-  **Standard**: Inte konfigurerat  
-  CSP:n BitLocker: [RequireStorageCardEncryption](https://go.microsoft.com/fwlink/?linkid=872524)  
+<!-- Support Deprecated for Windows 10 Mobile as of August 2020
 
-  - **Kräv** för att kryptera flyttbara minneskort som används av enheten.  
-  - **Inte konfigurerad** – kräv inte kryptering av minneskort och uppmana inte användaren att aktivera det.  
+- **Encrypt storage card (mobile only)**  
+  *This setting only applies to Windows 10 mobile.*  
+  **Default**: Not configured  
+  BitLocker CSP: [RequireStorageCardEncryption](https://go.microsoft.com/fwlink/?linkid=872524)  
+
+  - **Require** to encrypt any removable storage cards used by the device.  
+  - **Not configured** - Don't require storage card encryption, and don't prompt the user to turn it on.  
+-->
 
 ### <a name="bitlocker-base-settings"></a>Grundläggande BitLocker-inställningar  
 
@@ -642,7 +645,7 @@ Dessa inställningar gäller specifikt för operativsystemets dataenheter.
     **Standard**: Inte konfigurerat  
 
     - **Aktivera** – lagra BitLocker-återställningsinformationen i Azure Active Directory (AAD).  
-    - **Inte konfigurerat** – information om BitLocker-återställning lagras inte i AAD.  
+    - **Inte konfigurerat** – information om BitLocker-återställning lagras inte i Azure AD.  
 
   - **BitLocker-återställningsinformation lagras i Azure Active Directory**  
     **Standard**: Säkerhetskopiera återställningslösenord och nyckelpaket  
@@ -739,7 +742,7 @@ De här inställningarna gäller specifikt fasta dataenheter.
     **Standard**: Inte konfigurerat  
 
     - **Aktivera** – lagra BitLocker-återställningsinformationen i Azure Active Directory (AAD).  
-    - **Inte konfigurerat** – information om BitLocker-återställning lagras inte i AAD.
+    - **Inte konfigurerat** – information om BitLocker-återställning lagras inte i Azure AD.
 
   - **BitLocker-återställningsinformation lagras i Azure Active Directory**  
     **Standard**: Säkerhetskopiera återställningslösenord och nyckelpaket  

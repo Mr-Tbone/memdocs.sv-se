@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49d731ef6e9508367ded8ed5d711b744be7d2db1
-ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
+ms.openlocfilehash: 2eb5a5e87b54fd8a92fc40c6d1295250d90b05c4
+ms.sourcegitcommit: f6b14e6fe694a2a05c6ed92e67089e80a00a0908
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87912545"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501192"
 ---
 # <a name="manage-web-access-by-using-edge-for-ios-and-android-with-microsoft-intune"></a>Hantera webbåtkomst med Edge för iOS och Android med Microsoft Intune
 

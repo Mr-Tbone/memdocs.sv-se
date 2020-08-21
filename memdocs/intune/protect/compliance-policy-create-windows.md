@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c42ec6b7b67a1c000702e6e53747270d0eda28c
-ms.sourcegitcommit: 16bc2ed5b64eab7f5ae74391bd9d7b66c39d8ca6
+ms.openlocfilehash: 0357f8fe751738bc3f8a5198db96b2113ee16bfc
+ms.sourcegitcommit: 91519f811b58a3e9fd116a4c28e39341ad8af11a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86437352"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559502"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Inställningar för Windows 10 och senare för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -47,7 +47,9 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
    Med Windows BitLocker-diskkryptering krypteras alla data på volymen för Windows-operativsystemet. BitLocker använder Trusted Platform Module (TPM) för att skydda Windows-operativsystemet och användardata. Det kan också bekräfta att en dator inte manipuleras, även om den lämnas obevakad, tappas bort eller blir stulen. Om datorn är utrustad med en kompatibel TPM använder BitLocker TPM för att låsa krypteringsnycklarna som skyddar data. Därför är nycklarna inte tillgängliga förrän TPM verifierar datorns tillstånd.  
 
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
-  - **Kräv** – Enheten skydda data som lagras på enheten mot obehörig åtkomst när systemet är avstängt eller i viloläge.  
+  - **Kräv** – Enheten skydda data som lagras på enheten mot obehörig åtkomst när systemet är avstängt eller i viloläge.
+  
+  [Device HealthAttestation CSP – BitLockerStatus](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp)
 
 - **Kräv att säker start ska vara aktiverat på enheten**:  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
@@ -107,6 +109,9 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
 
     Du kan till exempel kräva att alla programuppdateringar installeras på enheter. Det här kravet har tillståndet ”installerad” i Configuration Manager. Om några program på enheten är i ett okänt tillstånd är enheten inte kompatibel i Intune.
 
+  > [!NOTE]
+  > Använd endast **Kräv enhetskompatibilitet från Configuration Manager** om efterlevnadsarbetsbelastningen för samhantering är inställd på *Configuration Manager*. Om du använder den här inställningen när efterlevnadsarbetsbelastningen är inställd på *Intune*, kan det påverka den övergripande efterlevnadsutvärderingen.
+
 ## <a name="system-security"></a>Systemsäkerhet
 
 ### <a name="password"></a>lösenordsinställning
@@ -163,6 +168,8 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   Den här inställningen gäller för alla enheter på en enhet.
   - **Ej konfigurerat** (*standard*)
   - **Kräv** – Använd *Kräv* när du ska kryptera datalagring på dina enheter.
+  
+   [DeviceStatus CSP – DeviceStatus/Compliance/EncryptionCompliance](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
 
   > [!NOTE]
   > Inställningen **Kryptering för lagring av data på en enhet** kontrollerar om kryptering används på enheten. Om du behöver en starkare krypteringsinställning bör du överväga att använda **Kräv BitLocker**, som använder Attestering för Windows-enhetens hälsotillstånd för att verifiera Bitlocker-status på TPM-nivå.
@@ -182,7 +189,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Inte konfigurerad** (*standard*) – Intune kontrollerar inte enheten för en TPM-kretsversion.
   - **Kräv** – Intune kontrollerar TPM-kretsens version för kompatibilitet. Enheten är kompatibel om TPM-kretsens version är större än **0** (noll). Enheten är inte kompatibel om det inte finns någon TPM-version på den.
 
-  [DeviceStatus CSP - DeviceStatus/TPM/SpecificationVersion node](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+  [DeviceStatus CSP – DeviceStatus/TPM/SpecificationVersion](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
   
 - **Antivirus**:  
   - **Ej konfigurerad** (*standard*) – Intune kontrollerar inte om några antiviruslösningar har installerats på enheten.
@@ -214,7 +221,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Inte konfigurerad** (*standard*) – Intune tvingar inga krav.
   - **Require** – Tvinga att Microsoft Defender-säkerhetsinformationen ska vara uppdaterad.
 
-  [Defender/Health/SignatureOutOfDate CSP](https://docs.microsoft.com/windows/client-management/mdm/defender-csp)
+  [Defender CSP – Defender/Health/SignatureOutOfDate CSP](https://docs.microsoft.com/windows/client-management/mdm/defender-csp)
   
   Mer information finns i [Security intelligence updates for Microsoft Defender Antivirus and other Microsoft antimalware](https://www.microsoft.com/en-us/wdsi/defenderupdates) (Uppdatering av säkerhetsinsikter för Microsoft Defender Antivirus och annan Microsoft Antimalware).
 
@@ -222,7 +229,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Inte konfigurerad** (*standard*) – Intune styr inte tjänsten eller ändrar befintliga inställningar.
   - **Kräv** – Aktivera realtidsskydd, som söker efter skadlig kod, spionprogram och annan oönskad programvara.  
 
-  [CSP för Defender/AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
+  [Policy CSP – Defender/AllowRealtimeMonitoring CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
 
 ## <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
 

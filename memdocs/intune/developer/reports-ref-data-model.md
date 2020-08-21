@@ -6,7 +6,7 @@ keywords: Intune-informationslager
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/28/2020
+ms.date: 08/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db6feb746aa7177f56ff6e87565d67e207d4d9ef
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 1fb6ec17ce058247529ab1e51d50d876e4c97408
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165455"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252681"
 ---
 # <a name="microsoft-intune-data-warehouse-data-model"></a>Datamodell för Microsoft Intune-informationslager
 
@@ -60,6 +60,9 @@ Ett stjärnschema är utformat för maximal flexibilitet och dataanalys så att 
 ## <a name="time-daily-snapshots"></a>Tid: dagliga ögonblicksbilder
 
 Lagret är nedströms från dina Intune-data. Intune tar en daglig ögonblicksbild vid midnatt UTC-tid och lagrar den i lagret. Varaktigheten för kvarhållna ögonblicksbilder varierar mellan faktatabeller. Vissa kan kvarhållas sju dagar, andra 30 dagar och vissa till och med längre.
+
+> [!NOTE]
+> Data Warehouse synkroniserar inte Jamf-enheter. Mer information om Jamf finns i [Felsöka Jamf Pro-integrering med Microsoft Intune](..\protect\troubleshoot-jamf.md) och [Data som JAMF Pro skickar till Intune](..\protect\data-jamf-sends-to-intune.md).
 
 ## <a name="next-steps"></a>Nästa steg
 

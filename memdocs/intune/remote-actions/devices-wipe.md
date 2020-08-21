@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eccb45ee4a0aade230ba8c18f68c4f0bc992e011
-ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
+ms.openlocfilehash: 50c1842357a79ce3228b7b0a5283dc9a4e98b2d6
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86491328"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252347"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten
 
@@ -132,14 +132,14 @@ Du kan endast rensa kioskenheter. Du kan inte dra tillbaka Android-kioskenheter.
 
 ### <a name="windows"></a>Windows
 
-|Datatyp|Windows 8.1 (MDM) och Windows RT 8.1|Windows RT|Windows Phone 8.1 och Windows Phone 8|Windows 10|
+|Datatyp|Windows 8.1 (MDM) och Windows RT 8.1|Windows RT|Windows 10|
 |-------------|----------------------------------------------------------------|--------------|-----------------------------------------|--------|
-|Företagsappar och associerade data som installerats av Intune|Nycklar återkallas för filer som skyddas av EFS. Användaren kan inte öppna filerna.|Företagsappar tas inte bort.|Appar som ursrpungligen installerats via företagsportalen avinstalleras. Data som hör till företagsappar tas bort.|Apparna avinstalleras. Nycklar för separat inläsning tas bort.<br>För Windows 10 version 1709 (Creator Update) och senare tas inte Microsoft 365-appar bort. Win32-appar som installerats via Intune-hanteringstillägget avinstalleras inte på oregistrerade enheter. Administratörer kan använda tilldelningsundantag för att inte erbjuda Win32-appar till BYOD-enheter.|
-|Inställningar|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|
-|Profilinställningar för Wi-Fi och VPN|Tas bort.|Tas bort.|Stöds inte.|Tas bort.|
-|Certifikatprofilinställningar|Certifikat tas bort och återkallas.|Certifikat tas bort och återkallas.|Stöds inte.|Certifikat tas bort och återkallas.|
-|E-post|Tar bort e-post som är EFS-aktiverad. Detta omfattar e-postmeddelanden och bilagor i e-postprogrammet för Windows.|Stöds inte.|E-postprofiler som tillhandahålls via Intune tas bort. Cachelagrad e-post på enheten tas bort.|Tar bort e-post som är EFS-aktiverad. Detta omfattar e-postmeddelanden och bilagor i e-postprogrammet för Windows. Tar bort e-postkonton som etablerats av Intune.|
-|Frånkoppling från Azure AD|Nej.|Nej.|Azure AD-posten tas bort.|Azure AD-posten tas bort.|
+|Företagsappar och associerade data som installerats av Intune|Nycklar återkallas för filer som skyddas av EFS. Användaren kan inte öppna filerna.|Företagsappar tas inte bort.|Apparna avinstalleras. Nycklar för separat inläsning tas bort.<br>För Windows 10 version 1709 (Creator Update) och senare tas inte Microsoft 365-appar bort. Win32-appar som installerats via Intune-hanteringstillägget avinstalleras inte på oregistrerade enheter. Administratörer kan använda tilldelningsundantag för att inte erbjuda Win32-appar till BYOD-enheter.|
+|Inställningar|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|Konfigurationer som ställts in av Intune-principer tillämpas inte längre. Användarna kan ändra inställningarna.|
+|Profilinställningar för Wi-Fi och VPN|Tas bort.|Tas bort.|Tas bort.|
+|Certifikatprofilinställningar|Certifikat tas bort och återkallas.|Certifikat tas bort och återkallas.|Certifikat tas bort och återkallas.|
+|E-post|Tar bort e-post som är EFS-aktiverad. Detta omfattar e-postmeddelanden och bilagor i e-postprogrammet för Windows.|Stöds inte.|Tar bort e-post som är EFS-aktiverad. Detta omfattar e-postmeddelanden och bilagor i e-postprogrammet för Windows. Tar bort e-postkonton som etablerats av Intune.|
+|Frånkoppling från Azure AD|Nej.|Nej.|Azure AD-posten tas bort.|
 
 > [!NOTE]
 > För Windows 10-enheter som ansluter till Azure AD under den första installationen (OOBE) tar kommandot Dra tillbaka bort alla Azure AD-konton från enheten. Följ stegen i [Starta datorn i felsäkert läge](https://support.microsoft.com/en-us/help/12376/windows-10-start-your-pc-in-safe-mode) för att logga in som lokal administratör och återfå åtkomst till användarens lokala data. 
@@ -167,7 +167,8 @@ Du kan konfigurera Intune så att enheter som är inaktiva, inaktuella eller som
 3. Ange en siffra mellan 30 och 270 i rutan **Ta bort enheter som inte har checkats in på så här många dagar**.
 4. Välj **Spara**.
 
-
+> [!NOTE]
+> Reglerna för enhetsrensning är inte tillgängliga för Android Enterprise-scenarier som [Fullständigt hanterad](https://docs.microsoft.com/mem/intune/enrollment/android-fully-managed-enroll), [Dedikerad](https://docs.microsoft.com/mem/intune/enrollment/android-kiosk-enroll) och [Företagsägd med arbetsprofil](https://docs.microsoft.com/mem/intune/enrollment/android-corporate-owned-work-profile-enroll). 
 
 ## <a name="delete-devices-from-the-azure-active-directory-portal"></a>Ta bort enheter från Azure Active Directory-portalen
 

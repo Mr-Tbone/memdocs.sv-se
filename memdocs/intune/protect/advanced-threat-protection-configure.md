@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/23/2020
+ms.date: 08/12/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e19315f07d803e2aab53b3724fde85f1975c0c5
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: ad02078d2a8b9926de463e01d3dcbc675c721e4a
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264588"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179527"
 ---
 # <a name="configure-microsoft-defender-atp-in-intune"></a>Konfigurera Microsoft Defender ATP i Intune
 
@@ -92,10 +92,10 @@ När du publicerat en enhet med konfigurationspaketet behöver du inte göra det
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Enheter** > **Konfigurationsprofiler** > **Skapa profil**.
-3. Ange ett **Namn** och en **Beskrivning**.
-4. För **Plattform** väljer du **Windows 10 och senare**
-5. För **Profiltyp** väljer du **Microsoft Defender ATP (Windows 10 Desktop)** .
-6. Konfigurera inställningarna:
+3. För **Plattform** väljer du **Windows 10 och senare**
+4. För **Profiltyp** väljer du **Microsoft Defender ATP (Windows 10 Desktop)** och väljer sedan **Skapa**.
+5. På sidan **Grundläggande inställningar** anger du ett *namn* och en *beskrivning* (valfritt) för profilen och väljer sedan **Nästa**.
+6. Konfigurera följande på sidan **Konfigurationsinställningar**:
 
    - **Pakettyp för konfiguration av Microsoft Defender ATP-klient**: Välj **Publicera** för att lägga till konfigurationspaketet i profilen. Välj **Avregistrera** för att ta bort konfigurationspaketet från profilen.
   
@@ -107,8 +107,14 @@ När du publicerat en enhet med konfigurationspaketet behöver du inte göra det
 
      [Registrera Windows 10-datorer med hjälp av Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) innehåller mer information om dessa Microsoft Defender ATP-inställningar.
 
-7. Välj **OK** och sedan **Skapa** för att spara ändringarna och skapa profilen.
-8. [Tilldela en enhetskonfigurationsprofil](../configuration/device-profile-assign.md) till enheter som du vill utvärdera med Microsoft Defender ATP.
+7. Välj **Nästa** för att öppna sidan **Omfångstaggar**. Omfångstaggar är valfria. Fortsätt genom att välja **Nästa**.
+
+8. På sidan **Tilldelningar** väljer du de grupper som profilen ska tillämpas på. Mer information om hur du tilldelar profiler finns i [Tilldela användar- och enhetsprofiler](../configuration/device-profile-assign.md).
+
+   Välj **Nästa**.
+
+9. Välj **Skapa**på sidan **Granska + skapa** när du är klar. Den nya profilen visas i listan när du väljer policytypen för den profil du har skapat.
+ Välj **OK** och sedan **Skapa** för att spara ändringarna och skapa profilen.
 
 ### <a name="onboard-android-devices"></a>Registrera Android-enheter
 

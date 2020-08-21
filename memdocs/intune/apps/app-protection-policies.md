@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/22/2020
+ms.date: 08/13/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4beb6c5a91f9f379006df482ff10066831389b6
-ms.sourcegitcommit: 79ffc8afed164c408db6994806d71f64d1fc0b8f
+ms.openlocfilehash: 1cb05cb518d4edfb443bf4f70ff1c51154e17f4c
+ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216407"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217647"
 ---
 # <a name="how-to-create-and-assign-app-protection-policies"></a>Hur du skapar och tilldelar skyddsprinciper för appar
 
@@ -103,7 +103,7 @@ När du skapar en appskyddsprincip för iOS/iPad-appar och Android-appar följer
     - **Villkorsstyrd start för Android** – mer information finns i [Inställningar för Android-appskyddsprincip – villkorsstyrd start](app-protection-policy-settings-android.md#conditional-launch).
 
 9. Klicka på **Nästa** för att visa sidan **Tilldelningar**.<br>
-   På sidan **Tilldelningar** kan du tilldela appskyddsprincipen till grupper av användare.
+   På sidan **Tilldelningar** kan du tilldela appskyddsprincipen till grupper av användare. Du måste tillämpa principen på en grupp användare för att principen ska börja gälla.
 
 10. Klicka på **Nästa: Granska och skapa** för att granska de värden och inställningar som du angav för den här appskyddsprincipen.
 
@@ -111,6 +111,9 @@ När du skapar en appskyddsprincip för iOS/iPad-appar och Android-appar följer
 
     > [!TIP]
     > Följande principinställningar används endast när du använder appar i arbetskontexten. När slutanvändarna använder appen för att utföra personliga uppgifter påverkas de inte av dessa principer. Observera att när du skapar en ny fil så betraktas den som en personlig fil.
+
+    > [!IMPORTANT]
+    > Det kan ta tid innan appskyddsprinciper tillämpas på befintliga enheter. Slutanvändarna får ett meddelande på enheten när appskyddsprincipen har tillämpats. Tillämpa dina appskyddsprinciper på enheter innan du tillämpar regler för villkorlig åtkomst.
 
 Slutanvändarna kan hämta apparna från App Store eller Google Play. Mer information finns i:
 * [Vad som händer när din Android-app hanteras av appskyddsprinciper](../fundamentals/end-user-mam-apps-android.md)

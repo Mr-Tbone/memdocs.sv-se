@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/17/2020
+ms.date: 08/13/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c6152b4380abacde6dd6e8e014ebe91aa258edb
-ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
+ms.openlocfilehash: 3dd7730e8ac25c41140f3e375383bf185eae91e6
+ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87912581"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217221"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>Så här hanterar du iOS- och MacOS-appar som har köpts via ett Apples volymköpsprogram med Microsoft Intune
 
@@ -94,24 +94,30 @@ Migrera befintligt inköpt VPP-innehåll och token till appar och böcker i Appl
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Administration av klientorganisation** > **Anslutningsappar och token** > **Apple VPP-token**.
-3. I fönstret med VPP-tokenlistan väljer du **Skapa**.
-4. I fönstret **Skapa VPP-token** anger du följande information:
-    - **VPP-tokenfil** – Om du inte redan har gjort det kan du registrera dig för Apple Business Manager eller Apple School Manager. När du har registrerat dig laddar du ned Apple VPP-token för ditt konto och väljer det här.
-    - **Apple-ID** – Ange det hanterade Apple-ID:t för det konto som är associerat med den överförda token.
-    - **Ta kontroll över token från en annan MDM** – Om du ställer in det här alternativet på **Ja** så tillåts token att återtilldelas till Intune från en annan MDM-lösning.
-    - **Tokennamn** – Ett administrativt fält för att ange tokennamn.
-    - **Land/region** – Välj VPP-landskod/-regionkod.  Intune synkroniserar VPP-appar för alla språk från det angivna VPP-landet/-regionens App Store.
+3. I fönstret med VPP-tokenlistan väljer du **Skapa**. Processen **Skapa VPP-token** visas. Fyra sidor används när en VPP-token skapas. Den första är **Grundläggande inställningar**.
+4. På sidan **Grundläggande** anger du följande information:
+   - **Tokennamn** – Ett administrativt fält för att ange tokennamn.
+   - **Apple-ID** – Ange det hanterade Apple-ID:t för det konto som är associerat med den överförda token.
+   - **VPP-tokenfil** – Om du inte redan har gjort det kan du registrera dig för Apple Business Manager eller Apple School Manager. När du har registrerat dig laddar du ned Apple VPP-token för ditt konto och väljer det här.
+5. Visa sidan **Inställningar** genom att klicka på **Nästa**.
+6. Ange följande information på sidan **Inställningar**:
+   - **Ta kontroll över token från en annan MDM** – Om du ställer in det här alternativet på **Ja** så tillåts token att återtilldelas till Intune från en annan MDM-lösning.
+   - **Land/region** – Välj VPP-landskod/-regionkod.  Intune synkroniserar VPP-appar för alla språk från det angivna VPP-landet/-regionens App Store.
+
         > [!WARNING]  
         > När du byter land/region uppdateras appmetadata och App Store-URL vid nästa synkronisering med Apple-tjänsten för appar som har skapats med denna token. Appen uppdateras inte om den inte finns i det nya landets/regionens butik.
 
-    - **Typ av VPP-konto** – Välj mellan **Företag** eller **Utbildning**.
-    - **Automatiska appuppdateringar** – Välj mellan **På** eller **Av** för att aktivera automatiska uppdateringar. När det är aktiverat identifierar Intune VPP-appuppdateringar i appbutiken och push-installerar dem automatiskt på enheten när den checkas in.
+   - **Typ av VPP-konto** – Välj mellan **Företag** eller **Utbildning**.
+   - **Automatiska appuppdateringar** – Välj mellan **På** eller **Av** för att aktivera automatiska uppdateringar. När det är aktiverat identifierar Intune VPP-appuppdateringar i appbutiken och push-installerar dem automatiskt på enheten när den checkas in.
 
         > [!NOTE]
         > Automatiska appuppdateringar för Apple VPP-appar uppdateras automatiskt för både installeringsavsikten **Obligatoriska** och **Tillgängliga**. För appar som distribueras med **tillgänglig** installeringsavsikt genererar den automatiska uppdateringen ett statusmeddelande åt IT-administratören som informerar om att en ny version av appen är tillgänglig. Det här statusmeddelandet visas när du väljer appen, väljer Installationsstatus för enhet och kontrollerar statusinformationen.  
 
     - **Ge Microsoft behörighet att skicka information om både användare och enhet till Apple.** – Du måste välja **Jag accepterar** för att kunna fortsätta. Information om vilka data som Microsoft skickar till Apple finns i [Data som Intune skickar till Apple](../protect/data-intune-sends-to-apple.md).
-5. När du är klar väljer du **Skapa**. Den token du önskar visas i fönstret med tokenlistan.
+7. Visa sidan **Omfångstaggar** genom att klicka på **Nästa**.
+8. Klicka på **Välj omfångstaggar** om du vill lägga till omfångstaggar för appen. Mer information finns i [Använda rollbaserad åtkomstkontroll (RBAC) och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).
+9. Visa sidan **Granska och skapa** genom att klicka på **Nästa**. Granska värdena och inställningarna som du har angett för VPP-token.
+10. Klicka på **Skapa** när du är klar. Den token du önskar visas i fönstret med tokenlistan.
 
 ## <a name="synchronize-a-vpp-token"></a>Synkronisera en VPP-token
 

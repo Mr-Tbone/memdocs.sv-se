@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/21/2020
+ms.date: 08/12/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7926bd972fd24f39bd4e3f520fd250526502812a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: c41f22e2aa60803067b9015f2ae3a84db43ff894
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83983934"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179544"
 ---
 # <a name="add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>Lägga till appen Företagsportal för Windows 10 med Microsoft Intune
 
@@ -71,7 +71,7 @@ Mer information om hur Intune hanterar beroenden för universella appar finns i 
 
 ## <a name="frequently-asked-questions"></a>Vanliga frågor och svar 
 ### <a name="how-do-i-update-the-company-portal-app-on-my-users-devices-if-they-have-already-installed-the-older-apps-from-the-store"></a>Hur gör jag för att uppdatera företagsportalappen på mina användares enheter om de redan har installerat de äldre apparna från butiken?
-Om användarna redan har installerat Företagsportal för Windows 8.1 eller Windows Phone 8.1 från Microsoft Store, så borde de uppdateras automatiskt till den nya versionen utan att det krävs några åtgärder från dig eller användaren. Om uppdateringen inte genomförs, så be dina användare att kontrollera att de har aktiverat automatiska uppdateringar för Store-appar på sina enheter.   
+Om användarna redan har installerat företagsportalapparna för Windows 8.1 från Microsoft Store, bör apparna uppdateras automatiskt till den senaste versionen utan att det krävs några åtgärder från dig eller användaren. Om uppdateringen inte genomförs, så be dina användare att kontrollera att de har aktiverat automatiska uppdateringar för Store-appar på sina enheter.   
 
 ### <a name="how-do-i-upgrade-my-sideloaded-windows-81-company-portal-app-to-the-windows-10-company-portal-app"></a>Hur uppgraderar jag min separat inlästa företagsportalsapp för Windows 8.1 till företagsportalsappen för Windows 10?
 Vår rekommenderade migreringssökväg är att ta bort tilldelningen för appen Företagsportal för Windows 8.1 genom att ange tilldelningsåtgärden till **Avinstallera**. När du har valt den här inställningen kan du tilldela appen Företagsportal för Windows 10 med alla de alternativ som vi nämnt tidigare.  
@@ -80,8 +80,8 @@ Om du behöver läsa in appen separat och om du tilldelade appen Företagsportal
 
 Om du behöver läsa in appen separat och du har signerat och tilldelat företagsportalappen för Windows 8.1 med Symantec-kodsigneringscertifikat följer du stegen i nästa avsnitt.
 
-### <a name="how-do-i-upgrade-my-signed-and-sideloaded-windows-phone-81-company-portal-app-or-windows-81-company-portal-app-to-the-windows-10-company-portal-app"></a>Hur uppgraderar jag min signerade och separat inlästa företagsportalsapp för Windows Phone 8.1 eller Windows 8.1 till företagsportalsappen för Windows 10?
-Vår rekommenderade migreringssökväg är att ta bort den befintliga tilldelningen av appen Företagsportal för Windows Phone 8.1 eller Windows 8.1 genom att ange tilldelningsåtgärden till **Avinstallera**. När du har valt den här inställningen kan du tilldela appen Företagsportal för Windows 10 som vanligt.  
+### <a name="how-do-i-upgrade-my-signed-and-sideloaded-windows-81-company-portal-app-to-the-windows-10-company-portal-app"></a>Hur uppgraderar jag min signerade och separat inlästa företagsportalapp för Windows 8.1 till företagsportalappen för Windows 10?
+Vår rekommenderade migreringssökväg är att ta bort den befintliga tilldelningen för Windows 8.1-företagsportalsappen genom att ange tilldelningsåtgärden till **Avinstallera**. När du har valt den här inställningen kan du tilldela appen Företagsportal för Windows 10 som vanligt.  
 
 I annat fall måste appen Företagsportal för Windows 10 uppdateras på rätt sätt och signeras så att uppgraderingsvägen följs.  
 
@@ -99,7 +99,7 @@ Så här registrerar och tilldelar du appen:
 |---|---|
 | InputWin10AppxBundle  |  Sökvägen till appxbundle-källfilen. |
 | OutputWin10AppxBundle | Sökvägen för utdata för den signerade appxbundle-filen. 
-| Win81Appx  | Sökvägen till .APPX-filen för Företagsportal för Windows 8.1 eller Windows Phone 8.1. |
+| Win81Appx  | Sökvägen till filen för Windows 8.1-företagsportalappen (.APPX). |
 | PfxFilePath  |  Sökvägen till .PFX-filen för Symantec Enterprise Mobile Code Signing Certificate.  |
 | PfxPassword  | Lösenordet för Symantec Enterprise Mobile Code Signing Certificate. |
 | PublisherId | Företagets publicerings-ID. Om detta saknas, används ämnesfältet i Symantec-certifikatet med mobil kodsignering för företag. |

@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 05/24/2019
+ms.date: 08/12/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 5e7cd5e5fa5f04e674b2fd9d37c8895b72372c4c
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 2a79b5c433a286321426f2b14f63768e575b5556
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881393"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179476"
 ---
 # <a name="windows-device-enrollment-in-intune-company-portal"></a>Windows-enhetsregistrering i Intune-företagsportalen  
 
@@ -75,10 +75,8 @@ Registreringssteg skiljer sig åt för olika versioner av Windows 10-enheter. F�
     * __1607 eller senare__: Registrera din enhet via [**Inställningar** > **Åtkomst till arbete eller skola**](enroll-windows-10-device.md#enroll-windows-10-version-1607-and-later-device).   
     * __1511 eller senare__: Registrera din enhet via [**Inställningar** > **Konton**](enroll-windows-10-device.md#enroll-windows-10-version-1511-and-earlier-device).  
 
-## <a name="enroll-non-windows-10-devices"></a>Registrera icke-Windows 10-enheter  
-Använd följande artiklar för att registrera andra Windows-enheter som stöds via företagsportalens webbplats:   
-* [Windows 8.1- eller Windows RT 8.1-enhet](enroll-your-W81-or-rt81-windows.md)  
-* [Windows Phone 8.1-enhet](enroll-your-wp81-windows.md)    
+## <a name="enroll-other-windows-devices"></a>Registrera andra Windows-enheter  
+Du kan registrera [Windows 8.1.- eller Windows RT 8.1-enheter](enroll-your-W81-or-rt81-windows.md) via företagsportalens webbplats. 
 
 ## <a name="it-administrator-support"></a>IT-administratörssupport  
 Om du är IT-administratör och stöter på problem när du registrerar enheter kan du läsa [Felsöka problem med registrering av Windows-enhet i Microsoft Intune](https://support.microsoft.com/help/4469913). Den här artikeln innehåller vanliga fel, deras orsaker och stegen för att lösa dem.  
@@ -89,6 +87,6 @@ Nu när du känner till de enheter som stöds och ditt Windows 10-versionsnummer
 Mer information om enhetshantering, företagsportalen och hur både används i skolor och på arbetet finns i följande artiklar:  
 * [Använda hanterade enheter för att få åtkomst arbets- eller skolresurs](use-managed-devices-to-get-work-done.md)  
 * [Vad händer när du registrerar din enhet i Intune](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-windows.md)  
-* [Vilken information kan min organisation se när jag registrerar min enhet?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
+* [Vilken information min organisation se när jag registrerar min enhet?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)  
 
 Behöver du hjälp? Kontakta företagssupporten. [Gå till företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980) och leta upp din organisations IT-kontaktuppgifter.  

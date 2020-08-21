@@ -1,11 +1,11 @@
 ---
 title: Använd anpassade enhetsinställningar i Microsoft Intune – Azure | Microsoft Docs
-description: Du kan lägga till eller skapa en profil om du vill använda anpassade inställningar på enheter som kör Windows Phone, Windows 8.1, Windows 10 och senare, Android-enhetsadministratör, Android Enterprise, macOS eller iOS/iPadOS med Microsoft Intune.
+description: Du kan lägga till eller skapa en profil om du vill använda anpassade inställningar på enheter som kör Windows 8.1, Windows 10 och senare, Android-enhetsadministratör, Android Enterprise, macOS eller iOS/iPadOS med Microsoft Intune.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/18/2020
+ms.date: 08/11/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ddbb82d3cd5c86ff32917013edd4f16b303678fe
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: aaa0deaf2c6332965f40ae02a47b7541cf2f9e8e
+ms.sourcegitcommit: 8999e197f10fb72d1b82f30a599d1e588db237b7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990090"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88146413"
 ---
 # <a name="create-a-profile-with-custom-settings-in-intune"></a>Skapa en profil med anpassade inställningar i Intune
 
@@ -45,7 +45,6 @@ Den här artikeln visar hur du skapar en anpassad profil för Android-enhetsadmi
         - **iOS/iPadOS**
         - **macOS**
         - **Windows 10 och senare**
-        - **Windows Phone 8.1**
 
     - **Profil**: Välj **Anpassad**.
 
@@ -65,7 +64,6 @@ Den här artikeln visar hur du skapar en anpassad profil för Android-enhetsadmi
     - [macOS](custom-settings-macos.md)
     - [Windows 10](custom-settings-windows-10.md)
     - [Windows Holographic for Business](custom-settings-windows-holographic.md)
-    - [Windows Phone 8.1](custom-settings-windows-phone-8-1.md)
 
 8. Välj **Nästa**.
 9. Under **Omfångstaggar** (valfritt), tilldelar du en tagg för att filtrera profilen till specifika IT-grupper, till exempel `US-NC IT Team` eller `JohnGlenn_ITDepartment`. Mer information om omfångstaggar finns i [Använda RBAC och omfångstaggar för distribuerad IT](../fundamentals/scope-tags.md).

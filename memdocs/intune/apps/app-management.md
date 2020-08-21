@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/31/2020
+ms.date: 08/14/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,17 +18,14 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99dc504f8fc3148463288820dc810bab892e3081
-ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
+ms.openlocfilehash: 3b4a3334649b411390088a665f9a8fe9db8b47e1
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87912403"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252313"
 ---
 # <a name="what-is-microsoft-intune-app-management"></a>Vad är apphantering i Microsoft Intune?
-
-
-[!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
 Som IT-administratör kan du använda Microsoft Intune för att hantera klientappar som ditt företags personal använder. Den här funktionen är ett tillägg till hanteringen av enheter och att skydda data. En av en administratörs prioriteringar är att säkerställa att användarna har åtkomst till appar som de behöver för att utföra sitt arbete. Detta mål kan vara en utmaning eftersom:
 - Det finns en mängd olika enhetsplattformar och apptyper.
@@ -44,29 +41,30 @@ Med [Intune mobile application management](app-lifecycle.md) avses den svit av I
 Med MAM kan du hantera och skydda din organisations data i ett program. Med **MAM utan registrering** (MAM-WE), kan en arbets- eller skolrelaterad app som innehåller känsliga data hanteras på nästan alla [enheter](app-management.md#app-management-capabilities-by-platform), inklusive personliga enheter i **BYOD-scenarier** (Bring Your Own Device). Många produktivitetsappar, till exempel Microsoft Office-apparna, kan hanteras av Intune MAM. Se listan över officiella [MicrosoftIntune-skyddade appar](apps-supported-intune-apps.md) tillgängliga för allmänt bruk.
 
 Intune MAM stöder två konfigurationer:
-- **Intune MDM + MAM**: IT-administratörer kan bara hantera appar med hjälp av MAM och appskyddsprinciper på enheter som registreras med Intune mobile device management (MDM). För att hantera appar med hjälp av MDM + MAM, ska kunder använda Intune-konsolen i Azure-portalen på https://portal.azure.com.
-- **MAM utan enhetsregistrering**: Med MAM utan enhetsregistrering, eller MAM-WE, kan IT-administratörer hantera appar med hjälp av MAM och appskyddsprinciper på enheter som inte har registrerats med Intune MDM. Detta innebär att appar kan hanteras av Intune på enheter som registrerats med tredje parts EMM-leverantörer. För att hantera appar med hjälp av MAM-WE, ska kunder använda Intune-konsolen i Azure-portalen på https://portal.azure.com. Appar kan också hanteras av Intune på enheter som har registrerats med tredje parts-leverantörer av Enterprise Mobility Management (EMM) eller inte har registrerats alls med MDM. Mer information om BYOD och Microsofts EMS finns i [Teknikval för att kunna tillämpa BYOD med Microsoft Enterprise Mobility + Security (EMS)](../fundamentals/byod-technology-decisions.md).
+
+- **Intune MDM + MAM**: IT-administratörer kan bara hantera appar med hjälp av MAM och appskyddsprinciper på enheter som registreras med Intune mobile device management (MDM). För att hantera appar med hjälp av MDM + MAM ska kunderna använda Intune i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
+- **MAM utan enhetsregistrering**: Med MAM utan enhetsregistrering, eller MAM-WE, kan IT-administratörer hantera appar med hjälp av MAM och appskyddsprinciper på enheter som inte har registrerats med Intune MDM. Detta innebär att appar kan hanteras av Intune på enheter som registrerats med tredje parts EMM-leverantörer. För att hantera appar med hjälp av MAM + WE ska kunderna använda Intune i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431). Appar kan också hanteras av Intune på enheter som har registrerats med tredje parts-leverantörer av Enterprise Mobility Management (EMM) eller inte har registrerats alls med MDM. Mer information om BYOD och Microsofts EMS finns i [Teknikval för att kunna tillämpa BYOD med Microsoft Enterprise Mobility + Security (EMS)](../fundamentals/byod-technology-decisions.md).
 
 ## <a name="app-management-capabilities-by-platform"></a>Apphanteringsfunktioner efter plattform
 
 Intune erbjuder en mängd funktioner som hjälper dig att få de appar som du behöver, på de enheter som du önskar köra dem på. Följande tabell innehåller en sammanfattning av apphanteringsfunktionerna.
 
-| Funktioner för apphantering | Android/Android Enterprise | iOS/iPadOS | macOS | Windows 10 | Windows Phone 8.1 |
-|-------------------------- | -------------------------- | ---------- | ----- | ---------- | ----------------- |
-| Lägga till och tilldela appar till enheter och användare | Ja | Ja | Ja | Ja | Ja |
-| Tilldela appar till enheter som inte registrerats i Intune | Ja | Ja | Nej | Nej | Nej |
-| Använda principer för appkonfigurering som styr apparnas startfunktion | Ja | Ja | Nej | Nej | Nej |
-| Använda principer för etablering av mobilappar för att förnya utgångna appar | Nej | Ja | Nej | Nej | Nej |
-| Skydda företagets data i appar med appskyddsprinciper | Ja | Ja | Nej | Nej <sup>1</sup> | Nej |
-| Ta bort endast företagsdata från installerade appar (selektiv rensning) | Ja | Ja | Inga | Ja | Ja |
-| Övervaka apptilldelningar | Ja | Ja | Ja | Ja | Ja |
-| Tilldela och spåra volyminköpta appar från en appbutik | Nej | Nej | Inga | Ja | Nej |
-| Obligatorisk installation av appar på enheter (obligatoriskt) <sup>2</sup> | Ja | Ja | Ja | Ja | Ja |
-| Valfri installation på enheter från Företagsportalen (tillgänglig installation) | Ja <sup>3</sup> | Ja | Ja | Ja | Ja |
-| Installera genvägar till appar på webben (webblänk) | Ja <sup>4</sup> | Ja | Ja | Ja | Ja |
-| Verksamhetsspecifika appar | Ja | Ja | Ja | Ja | Nej |
-| Appar från en butik | Ja | Ja | Inga | Ja | Ja |
-| Uppdatera appar | Ja | Ja | Inga | Ja | Ja |
+| Funktioner för apphantering | Android/Android Enterprise | iOS/iPadOS | macOS | Windows 10 |
+|-------------------------- | -------------------------- | ---------- | ----- | ---------- |
+| Lägga till och tilldela appar till enheter och användare | Ja | Ja | Ja | Ja |
+| Tilldela appar till enheter som inte registrerats i Intune | Ja | Ja | Nej | Nej |  |
+| Använda principer för appkonfigurering som styr apparnas startfunktion | Ja | Ja | Nej | Nej |
+| Använda principer för etablering av mobilappar för att förnya utgångna appar | Nej | Ja | Nej | Nej |
+| Skydda företagets data i appar med appskyddsprinciper | Ja | Ja | Nej | Nej <sup>1</sup> |
+| Ta bort endast företagsdata från installerade appar (selektiv rensning) | Ja | Ja | Nej | Ja |
+| Övervaka apptilldelningar | Ja | Ja | Ja | Ja |
+| Tilldela och spåra volyminköpta appar från en appbutik | Nej | Nej | Nej | Ja |
+| Obligatorisk installation av appar på enheter (obligatoriskt) <sup>2</sup> | Ja | Ja | Ja | Ja |
+| Valfri installation på enheter från Företagsportalen (tillgänglig installation) | Ja <sup>3</sup> | Ja | Ja | Ja |
+| Installera genvägar till appar på webben (webblänk) | Ja <sup>4</sup> | Ja | Ja | Ja |
+| Verksamhetsspecifika appar | Ja | Ja | Ja | Ja |
+| Appar från en butik | Ja | Ja | Nej | Ja |
+| Uppdatera appar | Ja | Ja | Nej | Ja |
 
 <sup>1</sup> Överväg att använda [Windows informationsskydd](../protect/windows-information-protection-configure.md) för att skydda appar på enheter som kör Windows 10.<br>
 <sup>2</sup> Gäller enheter som hanteras av Intune endast.<br>
@@ -113,13 +111,15 @@ Apparbetsbelastningen innehåller länkar till allmän information om appar och 
 ### <a name="try-the-interactive-guide"></a>Prova den interaktiva guiden
 Den interaktiva guiden [Hantera och skydda mobil- och skrivbordsprogram med Microsoft Endpoint Manager](https://mslearn.cloudguides.com/en-us/guides/Manage%20and%20protect%20mobile%20and%20desktop%20applications%20with%20Microsoft%20Endpoint%20Manager) vägleder dig steg för steg genom administrationscentret för Microsoft Endpoint Manager och visar hur du hanterar enheter som är registrerade i Intune, framtvingar efterlevnad med principer och skyddar organisationens data.</br></br>
 
-> [!VIDEO https://mslearn.cloudguides.com/en-us/guides/Manage%20and%20protect%20mobile%20and%20desktop%20applications%20with%20Microsoft%20Endpoint%20Manager]
+<div align=”center”>
+<iframe allowfullscreen width="95%" height="450" src="https://mslearn.cloudguides.com/guides/Manage%20and%20protect%20mobile%20and%20desktop%20applications%20with%20Microsoft%20Endpoint%20Manager" frameborder="0" scrolling="no"/></iframe>
+</div>
 
 ## <a name="additional-information"></a>Ytterligare information
 Följande objekt i konsolen tillhandahåller apprelaterade funktioner:
 - **Microsoft Store för företag**: Konfigurera integration till Microsoft Store för företag. När du gjort detta kan du synkronisera inköpta program till Intune, tilldela dem och spåra användningen av licenser. Mer information finns i [Volymköpta appar från Windows Store för företag](windows-store-for-business.md).
 - **Windows företagscertifikat**: Tillämpa eller visa status för ett kodsigneringscertifikat som används för att distribuera verksamhetsspecifika appar till dina hanterade Windows-enheter.
-- **Windows Symantec-certifikat**: Tillämpa eller visa status för ett Symantec-kodsigneringscertifikat som behövs för att distribuera XAP- och WP8.x appx-filer till Windows 10 Mobile-enheter.
+- **Windows Symantec-certifikat**: Använd eller visa status för ett Symantec-certifikat för kodsignering.
 - **Windows-nycklar för separat inläsning**: Lägg till en Windows-nyckel för separat inläsning som kan användas för att installera en app direkt till enheter, i stället för att appen publiceras och hämtas från Windows Store. Mer information finns i [Separat inläsning av en Windows-app](app-sideload-windows.md).
 - **Apple VPP-token**: Tillämpa och visa dina licenser för iOS/iPadOS-volymköpsprogrammet (VPP). Mer information finns i [Volyminköpta iOS/iPadOS-appar](vpp-apps-ios.md).
 - **Hanterat Google Play**: Google Play för företag är Googles appbutik för företag och den enda källan till appar för Android Enterprise. Du hittar mer information i [Lägg till hanterade Google Play-appar till Android enterprise-enheter med Intune](apps-add-android-for-work.md).

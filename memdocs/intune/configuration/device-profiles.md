@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/11/2020
+ms.date: 08/11/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5bf114edf17fa1f8959b5f26b83c771b711b83f5
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 43101602defab75c15c542ec922cba6f2bf96cf0
+ms.sourcegitcommit: 8999e197f10fb72d1b82f30a599d1e588db237b7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093171"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88146328"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler i Microsoft Intune
 
@@ -59,7 +59,6 @@ Den här funktionen stöder:
 - Android enterprise
 - iOS/iPadOS
 - macOS
-- Windows Phone 8.1
 - Windows 8,1
 - Windows 10 och senare
 
@@ -73,7 +72,6 @@ Den här funktionen stöder:
 - Android enterprise
 - iOS/iPadOS
 - macOS
-- Windows Phone 8.1
 
 ## <a name="delivery-optimization"></a>Leveransoptimering
 
@@ -155,7 +153,6 @@ Den här funktionen stöder:
 - Android-enhetsadministratör
 - Android enterprise
 - iOS/iPadOS
-- Windows Phone 8.1
 - Windows 10 och senare
 
 ## <a name="endpoint-protection"></a>Endpoint Protection
@@ -187,7 +184,7 @@ Den här funktionen stöder:
 
 ## <a name="identity-protection"></a>Identity Protection
 
-[Identity protection](../protect/identity-protection-configure.md) styr upplevelsen av Windows Hello for Business på Windows 10- och Windows 10 Mobile-enheter. Konfigurera dessa inställningar för att göra Windows Hello for Business tillgängligt för användare och enheter, samt för att ange krav på PIN-koder för enheter och gester.  
+[Identitetsskydd](../protect/identity-protection-configure.md) styr Windows Hello för företag-upplevelsen på Windows 10-enheter. Konfigurera dessa inställningar för att göra Windows Hello for Business tillgängligt för användare och enheter, samt för att ange krav på PIN-koder för enheter och gester.  
 
 Den här funktionen stöder:  
 
@@ -278,7 +275,6 @@ Den här funktionen stöder:
 - Android enterprise
 - iOS/iPadOS
 - macOS
-- Windows Phone 8.1
 - Windows 8,1
 - Windows 10 och senare
 

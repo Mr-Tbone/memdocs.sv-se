@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ee0603a96d7276e9e1ef0fb9bff60ac44a3ef84
-ms.sourcegitcommit: 64727a4b025a589e270842da39516c4c42563a34
+ms.openlocfilehash: bc307f22e3caa77357d8d3054a432c8d42c38fc4
+ms.sourcegitcommit: 8999e197f10fb72d1b82f30a599d1e588db237b7
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84301392"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88146515"
 ---
 # <a name="troubleshoot-policies-and-profiles-and-in-intune"></a>Felsökning av principer och profiler i Intune
 
@@ -144,7 +144,7 @@ Du kan, beroende på enhetsplattform, vara tvungen att återställa säkerhetspr
 
 I Windows 8.1 sveper du till exempel från höger på skrivbordet för att öppna menyraden för **Snabbknappar**. Choose **Inställningar** > **Kontrollpanelen** > **Användarkonton**. Till vänster väljer du länken **Återställ säkerhetsprinciper** och sedan **Återställ principer**.
 
-Andra plattformar, som Android, iOS/iPadOS och Windows Phone 8.1, kan behöva tas ur bruk och sedan registreras på nytt om en mindre begränsande profil ska kunna tillämpas.
+Andra plattformar, t.ex. Android och iOS/iPadOS, kan behöva tas ur bruk och sedan registreras på nytt om en mindre begränsande profil ska kunna tillämpas.
 
 [Felsöka enhetsregistrering](../enrollment/troubleshoot-device-enrollment-in-intune.md) kan vara en bra resurs.
 

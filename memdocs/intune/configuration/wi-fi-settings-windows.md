@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/10/2020
+ms.date: 08/13/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee6ccebc9610f74f9f34c08bc8204e652e0a01db
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: d47f1e121a5010a17d213d21d3208977e8f75514
+ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85092869"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88217633"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Lägga till Wi-Fi-inställningar för Windows 10-enheter och senare enheter i Microsoft Intune
 
@@ -101,12 +101,14 @@ Företagsprofiler använder EAP (Extensible Authentication Protocol) för autent
   - **Längsta tid att autentisera före timeout**: Ange det maximala antalet sekunder att vänta före autentisering till nätverket, 1–120 sekunder.
   - **Tillåt Windows att fråga användaren om ytterligare autentiseringsuppgifter**: Om du väljer **Ja** tillåts Windows-systemet att fråga användaren om ytterligare autentiseringsuppgifter om autentiseringsmetoden som kräver det. Välj **Nej** för att dölja dessa frågor.
 
-- **Aktivera cachelagring av Pairwise Master Key (PMK)** : Välj **Ja** för att cachelagra PMK:n som användes vid autentiseringen. Den här cachelagringen gör vanligtvis att autentisering till nätverket slutförs snabbare. Välj **Nej** för att framtvinga autentiseringshandskakningen vid anslutning till Wi-Fi-nätverket varje gång.
+- **Aktivera cachelagring av Pairwise Master Key (PMK)** : Välj **Ja** för att cachelagra PMK:n som användes vid autentiseringen. Den här cachelagringen gör vanligtvis att autentisering till nätverket slutförs snabbare. Välj **Nej** för att framtvinga autentiseringshandskakningen vid anslutning till Wi-Fi-nätverket varje gång. Om du vill använda inställningen **Aktivera förautentisering** väljer du **Ja**.
 
   - **Längsta tid som en PMK lagras i cacheminnet**: Ange hur många minuter som en Pairwise Master Key (PMK) lagras i cacheminnet, 5–1440 minuter.
   - **Högsta antal PMK-nycklar lagrade i cachen**: Ange antalet nycklar som lagrade i cachen, från 1–255.
 
 - **Aktivera förautentisering**: Förautentisering gör att profilen kan autentisera till alla åtkomstpunkter för nätverket i profilen före anslutning. Vid flyttning mellan åtkomstpunkter återansluter förautentisering användaren eller enheter snabbare. Välj **Ja** för att profilen ska autentisera till alla åtkomstpunkter för det här nätverket som ligger inom räckvidd. Välj **Nej** om du vill kräva att användaren eller enheten autentiserar till varje åtkomstpunkt separat.
+
+  Om du vill använda den här inställningen väljer du **Ja** för **Aktivera cachelagring av Pairwise Master Key (PMK)** .
 
   - **Högsta antal förautentiseringsförsök**: Ange antalet försök för att förautentisera, från 1–16.
 

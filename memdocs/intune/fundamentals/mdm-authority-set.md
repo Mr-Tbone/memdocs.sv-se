@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 974636ae787be0d454cc3a4fea98832aa4400c7c
-ms.sourcegitcommit: d56e1c84e687fe18810f3b81e0a0617925fe6044
+ms.openlocfilehash: 4e1ac5180a30959618f37d909511785b4de1c407
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86303495"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591255"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
@@ -48,12 +48,12 @@ För klienter med en tjänstversion tidigare än 1911 följer du stegen nedan om
 
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du den orangefärgade banderollen för att öppna inställningen **Utfärdare av Hantering av mobila enheter**. Den orangefärgade banderollen visas bara om du inte har angett MDM-utfärdaren än.
 2. Under **Utfärdare av Hantering av mobila enheter** väljer du en utfärdare bland följande alternativ:
-   - **Intune-utfärdare av mobilenhetshantering**
-   - **Inga**
+  - **Intune-utfärdare av mobilenhetshantering**
+  - **Inga**
 
-   ![Skärmbild av Intune-skärmen Ange utfärdare för hantering av mobila enheter](./media/mdm-authority-set/set-mdm-auth.png)
+  ![Skärmbild av Intune-skärmen Ange utfärdare för hantering av mobila enheter](./media/mdm-authority-set/set-mdm-auth.png)
 
-   Ett meddelande indikerar att du har angett MDM-utfärdare till Intune.
+  Ett meddelande indikerar att du har angett MDM-utfärdare till Intune.
 
 ### <a name="workflow-of-intune-administration-ui"></a>Arbetsflöde i användargränssnitt för Intune-administration
 När Android- eller Apple-enhetshantering är aktiverat skickar Intune enhets- och användarinformation för att kunna integrera med dessa tredjepartstjänster och hantera deras respektive enheter.
@@ -70,8 +70,38 @@ I båda fallen är medgivandet strikt relaterat till att köra en tjänst för h
 ## <a name="key-considerations"></a>Viktigt att tänka på
 När du har bytt till den nya MDM-utfärdaren kan det ta upp till åtta timmar innan enheten ansluter till och synkroniserar med tjänsten. Du måste konfigurera inställningar i den nya MDM-utfärdaren så att registrerade enheter fortsätter att hanteras och skyddas efter ändringen. 
 - Enheter måste ansluta till tjänsten efter ändringen så att inställningarna från den nya MDM-utfärdaren (fristående Intune) ersätter de befintliga inställningarna på enheten.
-- När du har ändrat MDM-utfärdaren finns några av de grundläggande inställningarna (t.ex. profiler) från den tidigare MDM-utfärdaren kvar på enheten i upp till sju dagar, eller tills enheten ansluter till tjänsten för första gången. Vi rekommenderar att du konfigurerar appar och inställningar (principer, profiler, appar osv.) i den nya MDM-utfärdaren så snart som möjligt och distribuerar inställningen till användargrupperna för användare som har befintliga registrerade enheter. Så fort en enhet ansluter till tjänsten efter ändringen av MDM-utfärdare tar den emot de nya inställningarna från den nya MDM-utfärdaren, vilket förhindrar avbrott i hanteringen och skyddet av enheten.
+- När du har ändrat MDM-utfärdaren finns några av de grundläggande inställningarna (t.ex. profiler) från den tidigare MDM-utfärdaren kvar på enheten i upp till sju dagar, eller tills enheten ansluter till tjänsten för första gången. Vi rekommenderar att du konfigurerar appar och inställningar (t.ex. principer, profiler och appar) i den nya MDM-utfärdaren så snart som möjligt och distribuerar inställningen till användargrupperna för användare som har befintliga registrerade enheter. Så fort en enhet ansluter till tjänsten efter ändringen av MDM-utfärdare tar den emot de nya inställningarna från den nya MDM-utfärdaren, vilket förhindrar avbrott i hanteringen och skyddet av enheten.
 - Enheter som inte har associerade användare (vanligt om du har iOS/iPadOS-programmet för enhetsregistrering eller vid massregistreringsscenarier) migreras inte till den nya MDM-utfärdaren. För dessa enheter måste du ringa supporten och få hjälp med att flytta dem till den nya MDM-utfärdaren.
+
+## <a name="coexistence"></a>Samexistens
+
+Genom att aktivera samexistens kan du använda Intune för en ny uppsättning användare och fortsätta att använda Basic Mobility and Security för de befintliga användarna. Du styr vilka enheter som hanteras av Intune via användaren. Om en användare har tilldelats en Intune-licens eller använder Intune-samhantering med Configuration Manager, kommer alla användarens registrerade enheter att hanteras av Intune. Annars hanteras användaren av Basic Mobility and Security.
+
+Tre viktiga steg krävs för att aktivera samexistens:
+1. Förberedelse
+2. Lägga till Intune-utfärdare av mobilenhetshantering
+3. Användar- och enhetsmigrering (valfritt)
+
+### <a name="preparation"></a>Förberedelse
+
+Innan du aktiverar samexistens med Basic Mobility and Security bör du tänka på följande:
+- Se till att du har tillräckligt många Intune-licenser för de användare som ska hanteras via Intune.
+- Kontrollera vilka användare som har tilldelats Intune-licenser. När du har aktiverat samexistens kommer enheter som hör till användare som redan har tilldelats en Intune-licens att gå över till Intune. För att undvika oväntade enhetsflyttningar rekommenderar vi att du väntar med att tilldela Intune-licenser tills du har aktiverat samexistens.
+- Skapa och distribuera Intune-principer för att ersätta enhetssäkerhetsprinciper som ursprungligen distribuerades via säkerhets- och efterlevnadsportalen för Office 365. Gör detta för alla användare som ska flyttas från Basic Mobility and Security till Intune. Om dessa användare inte tilldelas några Intune-principer kan deras Basic Mobility and Security-inställningar gå förlorade när du aktiverar samexistens. Om du inte ersätter principerna, t.ex. hanterade e-postprofiler, går dessa inställningar förlorade.
+
+### <a name="add-intune-mdm-authority"></a>Lägga till Intune-utfärdare av mobilenhetshantering
+
+För att kunna aktivera samexistens måste du lägga till Intune som MDM-utfärdare för din miljö:
+
+1. Logga in på endpoint.microsoft.com med behörighet som global Azure AD-administratör eller Intune-tjänstadministratör.
+2. Gå till **Enheter**.
+3. Bladet **Lägg till utfärdare av mobilenhetshantering** visas.
+4. Om du vill byta MDM-utfärdare från *Office 365* till *Intune* och aktivera samexistens väljer du **Intune-utfärdare för mobilenhetshantering** > **Lägg till**.
+  ![Skärmbild av skärmen Lägg till utfärdare av mobilenhetshantering](./media/mdm-authority-set/add-mdm-authority.png)
+
+### <a name="migrate-users-and-devices-optional"></a>Migrera användare och enheter (valfritt)
+
+När du har aktiverat Intune som MDM-utfärdare aktiveras samexistens och du kan börja hantera användare via Intune. Om du vill flytta enheter som tidigare hanterades av Basic Mobility and Security och i stället hantera dem i Intune, tilldelar du användarna en Intune-licens. Användarnas enheter kommer att flyttas till Intune vid nästa MDM-incheckning. Inställningar som tillämpas på dessa enheter via Basic Mobility and Security kommer inte längre att tillämpas och kommer att tas bort från enheterna.
 
 ## <a name="mobile-device-cleanup-after-mdm-certificate-expiration"></a>Rensa mobila enheter efter att MDM-certifikatet upphört att gälla
 
@@ -84,29 +114,29 @@ MDM-utfärdaren kan inte ändras tillbaka till Okänd. MDM-utfärdaren används 
 ## <a name="what-to-expect-after-changing-the-mdm-authority"></a>Vad som händer MDM-utfärdaren har ändrats
 
 - När Intune-tjänsten upptäcker att en klients MDM-utfärdare har ändrats, skickar den ett aviseringsmeddelande till alla registrerade enheter och uppmanar dem att ansluta till samt synkronisera med tjänsten (detta sker utanför den normala schemalagda kontrollen). När MDM-utfärdaren för klienten har ändrats från fristående Intune kommer därför alla enheter som är påslagna och online att ansluta till tjänsten, ta emot inställningarna från den nya MDM-utfärdaren och börja hanteras av den nya MDM-utfärdaren. Det sker inget avbrott i hanteringen och skyddet av dessa enheter.
-- Även för enheter som är påslagna och online under (eller strax efter) ändringen av MDM-utfärdaren uppstår det en fördröjning på upp till åtta timmar (beroende på tidpunkten för nästa schemalagda regelbundna incheckning) innan enheterna registreras med tjänsten med den nya MDM-utfärdaren.    
+- Även för enheter som är påslagna och online under (eller strax efter) ändringen av MDM-utfärdaren uppstår det en fördröjning på upp till åtta timmar (beroende på tidpunkten för nästa schemalagda regelbundna incheckning) innan enheterna registreras med tjänsten med den nya MDM-utfärdaren.  
 
-  > [!IMPORTANT]    
-  > Under perioden från det att du ändrar MDM-utfärdaren tills det förnyade APNs-certifikatet laddas upp till den nya utfärdaren kommer nya enhetsregistreringar och enhetskontroller på iOS/iPadOS-enheter att misslyckas. Därför är det viktigt att du granskar och laddar upp APNs-certifikatet till den nya utfärdaren så snart som möjligt efter ändringen av MDM-utfärdare.
+ > [!IMPORTANT]  
+ > Under perioden från det att du ändrar MDM-utfärdaren tills det förnyade APNs-certifikatet laddas upp till den nya utfärdaren kommer nya enhetsregistreringar och enhetskontroller på iOS/iPadOS-enheter att misslyckas. Därför är det viktigt att du granskar och laddar upp APNs-certifikatet till den nya utfärdaren så snart som möjligt efter ändringen av MDM-utfärdare.
 
 - Användarna kan snabbt gå över till den nya MDM-utfärdaren genom att manuellt starta en incheckning från enheten till tjänsten. Användarna kan enkelt göra denna ändring genom att initiera en enhetskompatibilitetskontroll från företagsportalappen.
 - Du kan kontrollera att allt fungerar korrekt efter det att enheterna har anslutit till och synkroniserat med tjänsten efter ändringen av MDM-utfärdare, genom att söka efter enheterna i den nya MDM-utfärdaren.
 - Det uppstår en övergångsperiod om en enhet är frånkopplad under ändringen av MDM-utfärdaren tills dess enheten ansluter till tjänsten. För att säkerställa att enheten fortfarande är skyddad och fungerar under den här övergångsperioden finns följande profiler kvar på enheten i upp till sju dagar (eller tills enheten ansluter till den nya MDM-utfärdaren och tar emot nya inställningar som skriver över de befintliga):
-  - E-postprofil
-  - VPN-profil
-  - Certifikatprofil
-  - Wi-Fi-profil
-  - Konfigurationsprofiler
+   - E-postprofil
+   - VPN-profil
+   - Certifikatprofil
+   - Wi-Fi-profil
+   - Konfigurationsprofiler
 - När du har bytt till den nya MDM-utfärdaren kan det ta upp till en vecka innan kompatibilitetsinformationen i Microsoft Intune-administrationskonsolen visar korrekta data. Kompatibilitetsstatusen i Azure Active Directory och på enheten är dock korrekt, så enheten är fortfarande skyddad.
-- Kontrollera att de nya inställningarna som ska skriva över befintliga inställningar har samma namn som de tidigare inställningarna för att säkerställa att de gamla inställningarna skrivs över. Annars är risken att de gamla profilerna och principerna ligger kvar på enheterna.    
+- Kontrollera att de nya inställningarna som ska skriva över befintliga inställningar har samma namn som de tidigare inställningarna för att säkerställa att de gamla inställningarna skrivs över. Annars är risken att de gamla profilerna och principerna ligger kvar på enheterna.  
 
-  > [!TIP]    
-  > Vi rekommenderar att du skapar alla hanteringsinställningar och konfigurationer, samt även distributionerna, så snart som möjligt efter ändringen av MDM-utfärdaren. På så sätt kan du vara säker på att enheterna skyddas och hanteras aktivt under övergångsperioden.
+ > [!TIP]  
+ > Vi rekommenderar att du skapar alla hanteringsinställningar och konfigurationer, samt även distributionerna, så snart som möjligt efter ändringen av MDM-utfärdaren. På så sätt kan du vara säker på att enheterna skyddas och hanteras aktivt under övergångsperioden.
 
-- Bekräfta att de nya enheterna registreras korrekt med den nya utfärdaren genom att utföra följande steg när du har ändrat MDM-utfärdaren:   
-  - Registrera en ny enhet.
-  - Kontrollera att den nyregistrerade enheten visas i den nya MDM-utfärdaren.
-  - Utför en åtgärd på enheten, t.ex. fjärrlåsning, från administrationskonsolen. Om åtgärden lyckas betyder det att enheten hanteras av den nya MDM-utfärdaren.
+- Bekräfta att de nya enheterna registreras korrekt med den nya utfärdaren genom att utföra följande steg när du har ändrat MDM-utfärdaren:  
+ - Registrera en ny enhet.
+ - Kontrollera att den nyregistrerade enheten visas i den nya MDM-utfärdaren.
+ - Utför en åtgärd på enheten, t.ex. fjärrlåsning, från administrationskonsolen. Om åtgärden lyckas betyder det att enheten hanteras av den nya MDM-utfärdaren.
 - Om du har problem med specifika enheter kan du avregistrera och registrera om enheterna så att de börjar använda den nya utfärdaren och hanteras så snart som möjligt.
 
 ## <a name="next-steps"></a>Nästa steg

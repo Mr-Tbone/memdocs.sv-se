@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 05/18/2020
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d60d4eba093ce9663abf2aa57c6461bef5a34ef1
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: bed118810be877bf4671571814ee6d151d6f727b
+ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988714"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88512741"
 ---
 # <a name="intune-discovered-apps"></a>Intune-identifierade appar
 
@@ -57,7 +57,6 @@ Följande lista innehåller appens plattformstyp, de appar som övervakas för p
 | Windows 10 (Win32-appar) Obs! [Intune-hanteringstillägget krävs](intune-management-extension.md) på enheten | Ej tillämpligt | MSI-installerade appar på enheten | Var 24:e timme från enhetsregistreringen |
 | Windows 10 (moderna appar) | Endast hanterade moderna appar | Alla moderna appar som är installerade på enheten | Var sjunde dag från enhetsregistreringen |
 | Windows 8,1 | Endast hanterade appar | Endast hanterade appar | Var sjunde dag från enhetsregistreringen |
-| Windows Phone 8 | Endast hanterade appar | Endast hanterade appar | Var sjunde dag från enhetsregistreringen |
 | Windows RT | Endast hanterade appar | Endast hanterade appar | Var sjunde dag från enhetsregistreringen |
 | iOS/iPadOS | Endast hanterade appar | Alla appar som är installerade på enheten | Var sjunde dag från enhetsregistreringen |
 | macOS | Endast hanterade appar | Alla appar som är installerade på enheten | Var sjunde dag från enhetsregistreringen |
@@ -65,7 +64,7 @@ Följande lista innehåller appens plattformstyp, de appar som övervakas för p
 | Android enterprise | Endast hanterade appar | Endast appar som har installerats i arbetsprofilen | Var sjunde dag från enhetsregistreringen |
 
 > [!NOTE]
-> - Windows 10 Hybrid Azure AD-anslutna enheter som visas i apphanteringsarbetsbelastningen i konfigurationshanteraren samlar för närvarande inte in appinventering via Intune-hanteringstillägget enligt schemat ovan. För att undvika det här problemet bör arbetsbelastningen för apphantering i konfigurationshanteraren växlas till Intune för att installera IME på enheten (IME krävs för Win32-inventering och PowerShell-distribution). Observera att ändringar eller uppdateringar av det här beteendet presenteras i [under utveckling](../fundamentals/in-development.md) och/eller [vad som är nytt](../fundamentals/whats-new.md).
+> - Windows 10-samhanterade enheter, som du ser i arbetsbelastningen för [klientappar](https://docs.microsoft.com/mem/configmgr/comanage/workloads#client-apps) i Configuration Manager, samlar för närvarande inte in appinventering via tillägget för Intune-hantering (IME) enligt schemat ovan. För att komma runt det här problemet bör arbetsbelastningen för [klientappar](https://docs.microsoft.com/mem/configmgr/comanage/workloads#client-apps) i Configuration Manager flyttas till Intune för installation av IME på enheten (IME krävs för Win32-inventering och PowerShell-distribution). Observera att ändringar eller uppdateringar av det här beteendet presenteras i [under utveckling](../fundamentals/in-development.md) och/eller [vad som är nytt](../fundamentals/whats-new.md).
 > - Personligt ägda macOS-enheter som registrerats före november 2019 kan fortsätta att visa alla appar som är installerade på enheten tills enheterna har registrerats igen.
 > - Fullstständigt hanterade och dedikerade Android Enterprise visar inte identifierade appar.
 

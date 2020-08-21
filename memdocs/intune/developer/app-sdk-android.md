@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99fa22d351d8d0672d2745f18bb70dfd096ac1d7
-ms.sourcegitcommit: 16bc2ed5b64eab7f5ae74391bd9d7b66c39d8ca6
+ms.openlocfilehash: d1ede68097ef3afe0358154ff7b8802a0b3a7285
+ms.sourcegitcommit: f6b14e6fe694a2a05c6ed92e67089e80a00a0908
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86437427"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501175"
 ---
 # <a name="microsoft-intune-app-sdk-for-android-developer-guide"></a>Utvecklarhandbok för Microsoft Intune App SDK för Android
 
@@ -1184,7 +1184,7 @@ När ett konto registreras första gången är det i ett `PENDING`-tillstånd, v
 | `AUTHORIZATION_NEEDED` | Resultatet visar att någon token inte angavs av appens registrerade `MAMServiceAuthenticationCallback`-instans eller att angiven token var ogiltig.  Appen ska hämta en giltig token och anropa `updateToken()` om möjligt. |
 | `NOT_LICENSED` | Användaren är inte licensierad för Intune, eller det gick inte att kontakta Intune MAM-tjänsten.  Appen ska fortsätta i ett ohanterat (normalt) tillstånd och användaren ska inte blockeras.  Registreringar görs regelbundet för att se om användaren blir licensierad i framtiden. |
 | `ENROLLMENT_SUCCEEDED` | Registreringen är klar, eller användaren är redan registrerad.  Om det registreringen lyckades skickas ett principuppdateringsmeddelande före det här meddelandet.  Åtkomst till företagets data ska tillåtas. |
-| `ENROLLMENT_FAILED` | Registreringen misslyckades.  Mer information finns i loggarna för enheten.  Appen bör inte tillåta åtkomst till företagets data i det här tillståndet, eftersom det tidigare har fastställts att användaren är licensierad för Intune.|
+| `ENROLLMENT_FAILED` | Registreringen misslyckades.  Mer information finns i loggarna för enheten.  Appen bör inte tillåta åtkomst till företagets data i det här tillståndet, eftersom det tidigare har fastställts att användaren är licensierad för Intune. Alla appar bör förhindra åtkomst till företagsdata tills ”enrollment_succeeded” erhålls av din app.|
 | `WRONG_USER` | Bara en användare per enhet kan registrera en app med MAM-tjänsten. Detta resulterar indikerar att den användare som resultatet levererades för (den andra användaren) riktas med en MAM-princip men att en annan användare redan har registrerats. Eftersom MAM-principen inte kan framtvingas för den andra användaren får din app inte tillåta åtkomst till den här användarens data (möjligen genom att användaren tas bort från din app) såvida inte/förrän registreringen för den här användaren lyckas vid ett senare tillfälle. Samtidigt som detta `WRONG_USER`-resultat levereras kommer MAM att ge en uppmaning med alternativet att ta bort det befintliga kontot. Om den mänskliga användaren svarar Ja blir det alltså möjligt att registrera den andra användaren kort därefter. Så länge den andra användaren fortfarande är registrerad kommer MAM att försöka utföra registreringen med jämna mellanrum. |
 | `UNENROLLMENT_SUCCEEDED` | Avregistreringen har slutförts.|
 | `UNENROLLMENT_FAILED` | Avregistreringen misslyckades.  Mer information finns i loggarna för enheten. I allmänhet sker detta inte så länge appen skickar en giltig (varken null eller tom) UPN. Det finns ingen direkt, tillförlitlig åtgärd som appen kan vidta. Om det här värdet tas emot vid avregistrering av ett giltigt UPN bör du rapportera det som en bugg till Intune MAM-teamet.|

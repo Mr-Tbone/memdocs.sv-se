@@ -38,11 +38,17 @@
 #### [Åtgärda vanliga problem med Samsung Knox](samsung-knox-errors-android.md)
 #### [Uppdatera din enhet för att installera Outlook](update-device-outlook-android.md)
 
-#### Loggning
-##### [Aktivera utförlig loggning](use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android.md)
-##### [Ladda upp och skicka loggar med e-post](send-logs-to-your-it-admin-by-email-android.md)
-##### [Skicka loggar via USB-kabel](send-logs-to-your-it-admin-using-cable-android.md)
-##### [Skicka fel till Microsoft](send-logs-to-microsoft-android.md)
+### Loggning
+#### [Aktivera utförlig loggning](use-verbose-logging-to-help-your-it-administrator-fix-device-issues-android.md)
+#### [Ladda upp och skicka loggar med e-post](send-logs-to-your-it-admin-by-email-android.md)
+#### [Skicka loggar via USB-kabel](send-logs-to-your-it-admin-using-cable-android.md)
+#### [Skicka fel till Microsoft](send-logs-to-microsoft-android.md)
+
+### Lösa ett hot i MTD-appen  
+#### [Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-android.md)  
+#### [Symantec Endpoint Protection Mobile](you-need-to-resolve-a-threat-found-by-skycure-android.md)
+#### [SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-android.md)    
+#### [Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-android.md)
 
 ### Frågor om operativsystem
 #### [Uppdatera enheten](you-need-to-update-your-android-device.md)
@@ -55,16 +61,6 @@
 #### [Säkerhetskorrigeringen stöds inte](you-need-to-update-your-device-OS-security-patch-android.md)
 #### [Enheter med krypteringsfel](your-device-appears-encrypted-but-cp-says-otherwise-android.md)
 
-### Mobile Threat Defense-appar 
-#### [Installera Lookout for Work](you-are-prompted-to-install-lookout-for-work-android.md)
-#### [Installera Symantec Endpoint Protection Mobile](you-are-prompted-to-install-skycure-android.md)
-#### [Installera SandBlast Mobile Protect](you-are-prompted-to-install-sandblast-android.md)
-#### [Installera Zimperium zIPS](you-are-prompted-to-install-zips-android.md)
-#### [Lösa ett hot](you-need-to-resolve-a-threat-found-by-mtd-android.md)
-##### [Använd Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-android.md)
-##### [Använd Symantec Endpoint Protection Mobile](you-need-to-resolve-a-threat-found-by-skycure-android.md)
-##### [Använd SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-android.md)
-##### [Använd Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-android.md)
 
 ## [Använda en iOS-enhet](using-your-iOS-device-with-intune.md)
 ### [Effekter av att återställa en iOS-enhet](effects-of-device-reset-company-portal-ios.md)
@@ -99,16 +95,12 @@
 #### [Uppdatera din enhet för att installera Outlook](update-device-outlook-ios.md)
 #### [Min iOS-version stöds inte ännu](your-ios-version-isnt-yet-supported.md)
 
-### Mobile Threat Defense-appar
-#### [Installera Lookout for Work](you-are-prompted-to-install-lookout-for-work-ios.md)
-#### [Installera Symantec Endpoint Protection Mobile](you-are-prompted-to-install-skycure-ios.md)
-#### [Installera SandBlast Mobile Protect](you-are-prompted-to-install-sandblast-ios.md)
-#### [Installera Zimperium zIPS](you-are-prompted-to-install-zips-ios.md)
-#### [Lösa ett hot](you-need-to-resolve-a-threat-found-by-mtd-ios.md)
-##### [Använd Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-ios.md)
-##### [Använd Symantec Endpoint Protection Mobile](you-need-to-resolve-a-threat-found-by-skycure-ios.md)
-##### [Använd SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-ios.md)
-##### [Använd Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-ios.md)
+### Lösa ett hot i MTD-appen  
+#### [Lookout for Work](you-need-to-resolve-a-threat-found-by-lookout-for-work-ios.md)  
+#### [Symantec Endpoint Protection Mobile](you-need-to-resolve-a-threat-found-by-skycure-ios.md)    
+#### [SandBlast Mobile Protect](you-need-to-resolve-a-threat-found-by-checkpoint-ios.md)    
+#### [Zimperium zIPS](you-need-to-resolve-a-threat-found-by-zips-ios.md)
+
 
 ## Använda macOS-enheten
 ### [Vad händer när du registrerar en macOS-enhet?](what-happens-if-you-install-the-company-portal-app-and-enroll-your-device-in-intune-macos.md)

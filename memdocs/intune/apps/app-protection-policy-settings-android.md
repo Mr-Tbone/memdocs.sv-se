@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 06/16/2020
+ms.date: 08/14/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96f5b4c8400e993de4ecde0aa3d7c30f82a20e6b
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: d8fd15b7bdc52d3cd8dc00f77dced42e9bb6bd66
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262718"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252160"
 ---
 # <a name="android-app-protection-policy-settings-in-microsoft-intune"></a>Inställningar för Android-appskyddsprinciper i Microsoft Intune
 I den här artikeln beskrivs inställningarna för appskyddsprinciper för Android-enheter. Principinställningarna som beskrivs kan [konfigureras](app-protection-policies.md) för en appskyddsprincip i fönstret **Inställningar** i Microsoft Azure-portalen.
@@ -127,9 +127,9 @@ Mer information finns i [Undantag för dataöverföringsprinciper i appar](app-p
 
 
 ## <a name="conditional-launch"></a>Villkorlig start
-Konfigurera inställningar för villkorlig start för att definiera krav på inloggningssäkerhet för din åtkomstskyddsprincip. 
+Konfigurera inställningar för villkorlig start för att definiera krav på inloggningssäkerhet för din appskyddsprincip. 
 
-Som standard finns flera inställningar med förkonfigurerade värden och åtgärder. Du kan ta bort några av inställningarna, som *Lägsta operativsystemversion*. Du kan också välja ytterligare inställningar från listrutan **Välj en**. 
+Som standard finns flera inställningar med förkonfigurerade värden och åtgärder. Du kan ta bort några inställningar, t.ex. *Lägsta operativsystemversion*. Du kan också välja ytterligare inställningar från listrutan **Välj en**. 
 
 | Inställningen | Använd så här |  
 |---------|------------| 

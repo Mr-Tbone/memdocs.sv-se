@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 03/31/2020
+ms.date: 08/18/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 673adad15e92fb06cf5cf7c3589b06ab8b1b337a
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 407189163107da24e19b84c2011fa47f6a796475
+ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990649"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88591701"
 ---
 # <a name="how-to-add-macos-line-of-business-lob-apps-to-microsoft-intune"></a>Lägga till verksamhetsspecifika appar för macOS i Microsoft Intune
 
@@ -42,8 +42,7 @@ Informationen i den här artikeln visar hur du lägger till verksamhetsspecifika
 Du måste hämta ett externt verktyg, markera det hämtade verktyget som en körbar fil och förbearbeta dina *.pkg*-filer med verktyget innan du kan ladda upp din verksamhetsspecifika fil till Microsoft Intune. Förbearbetningen av dina *.pkg*-filer måste ske på en macOS-enhet. Använd Intune App Wrapping-verktyget för Mac för att aktivera Mac-appar som ska hanteras av Microsoft Intune.
 
 > [!IMPORTANT]
-> *.pkg*-filen måste signeras med hjälp av certifikatet "Developer ID Installer" och hämtas från ett Apple Developer-konto. Endast *.pkg*-filer kan användas för att överföra verksamhetsspecifika macOS-appar till Microsoft Intune. Konvertering av andra format, till exempel *.dmg* till *.pkg* stöds inte.
->
+> *.pkg*-filen måste signeras med hjälp av certifikatet "Developer ID Installer" och hämtas från ett Apple Developer-konto. Endast *.pkg*-filer kan användas för att överföra verksamhetsspecifika macOS-appar till Microsoft Intune. Konvertering av andra format, t.ex. *.dmg* till *.pkg*, stöds. Mer information om hur du konverterar andra programtyper än .pkg finns i [Distribuera appar i DMG- eller APP-format till Intune-hanterade Mac-datorer](https://techcommunity.microsoft.com/t5/intune-customer-success/how-to-deploy-dmg-or-app-format-apps-to-intune-managed-macs/ba-p/1503416).
 
 1. Hämta [Intunes programhanteringsverktyg för Mac](https://github.com/msintuneappsdk/intune-app-wrapping-tool-mac).
 
@@ -84,7 +83,7 @@ Du måste hämta ett externt verktyg, markera det hämtade verktyget som en kör
 
 1. I fönstret **Lägg till app** klickar du på **Välj appaketfil**. 
 2. I fönstret **Appaketsfil** klickar du på bläddringsknappen. Välj en macOS-installationsfil med tillägget *.intunemac*.
-   Appens information visas.
+   Appinformationen visas.
 3. När du är klar väljer du **OK** i fönstret **Appaketfil** för att lägga till appen.
 
 ### <a name="set-app-information"></a>Konfigurera appinformation

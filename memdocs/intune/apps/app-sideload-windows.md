@@ -1,12 +1,12 @@
 ---
-title: Separat inläsning av appar för Windows och Windows Phone
+title: Läsa in Windows-program separat
 titleSuffix: Microsoft Intune
 description: Lär dig hur du signerar verksamhetsspecifika appar, så att du kan använda Intune för att distribuera dem.
 keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 04/07/2020
+ms.date: 08/12/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -16,12 +16,12 @@ ms.assetid: e44f1756-52e1-4ed5-bf7d-0e80363a8674
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8194c3fcc90942b791d5300a37b3c093a5229cc9
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: da43cab373021107a940ce0bd71c0f4986d5e907
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989584"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179629"
 ---
 # <a name="sign-line-of-business-apps-so-they-can-be-deployed-to-windows-devices-with-intune"></a>Signera verksamhetsspecifika appar så att de kan distribueras till Windows-enheter med Intune
 
@@ -64,13 +64,13 @@ Intune distribuerar bara den senaste .cer-filen som har laddats upp. Om du flera
 
 ## <a name="how-to-renew-the-symantec-enterprise-code-signing-certificate"></a>Så här förnyar du Symantec-företagscertifikatet för kodsignering
 
-Certifikatet som används till att distribuera Windows Phone 8.1-mobilappar upphörde den 28 februari 2019 och är inte längre tillgänglig för förnyelse från Symantec. Om du distribuerar till WIndows 10 Mobile kan du fortsätta använda Symantec Desktop Enterprise-kodsigneringscertifikat genom att följa [Windows 10-instruktionerna för separat inläsning](app-sideload-windows.md#windows-10-sideloading).
+Certifikatet som används till att distribuera Windows Phone 8.1-mobilappar upphörde den 28 februari 2019 och är inte längre tillgänglig för förnyelse från Symantec. Dessutom upphörde Intune-supporten för Windows 10 Mobile den 10 augusti 2020.
 
 ## <a name="how-to-install-the-updated-certificate-for-line-of-business-lob-apps"></a>Hur du installerar det uppdaterade certifikatet för verksamhetsspecifika (LOB) appar
 
 Windows Phone 8.1
 
-Intune-tjänsten kan inte längre distribuera LOB-appar för den här plattformen när det befintliga Symantec Mobile Enterprise-kodsigneringscertifikatet upphör. Det går fortfarande att använda separat inläsning för osignerade XAP-/APPX-filer genom att använda ett SD-kort eller genom att ladda ned filen till enheten. Mer information finns i inlägget om [hur du installerar XAP-filer på Windows Phone](https://answers.microsoft.com/en-us/mobiledevices/forum/mdlumia-mdapps/how-to-install-xap-file-in-windows-phone-8/da09ee72-51ae-407c-9b85-bc148df89280).
+Intune-tjänsten kan inte längre distribuera LOB-appar för den här plattformen när det befintliga Symantec Mobile Enterprise-kodsigneringscertifikatet upphör.
 
 Windows 8.1 Desktop/Windows 10 Desktop och Mobile
 
@@ -102,7 +102,7 @@ Mer information om hur Intune hanterar beroenden för universella appar finns i 
 
 ### <a name="how-do-i-update-the-company-portal-on-my-users-devices-if-they-have-already-installed-the-older-apps-from-the-store"></a>Hur uppdaterar jag företagsportalen på mina användares enheter om de redan har installerat de äldre apparna?
 
-Om användarna redan har installerat företagsportalsapparna för Windows 8.1 eller Windows Phone 8.1 från Store, så borde de sedan uppdateras automatiskt till den nya versionen, utan att det krävs några åtgärder från dig eller användaren. Om uppdateringen inte genomförs, så be dina användare att kontrollera om de har aktiverat automatiska uppdateringar för Store-appar på sina enheter.
+Om användarna redan har installerat företagsportalapparna för Windows 8.1 från Store, bör de uppdateras automatiskt till den nya versionen, utan att det krävs några åtgärder från dig eller användaren. Om uppdateringen inte genomförs, så be dina användare att kontrollera om de har aktiverat automatiska uppdateringar för Store-appar på sina enheter.
 
 ### <a name="how-do-i-upgrade-my-sideloaded-windows-81-company-portal-app-to-the-windows-10-company-portal-app"></a>Hur uppgraderar jag min separat inlästa företagsportalsapp för Windows 8.1 till företagsportalsappen för Windows 10?
 
@@ -112,9 +112,9 @@ Om du behöver läsa in appen separat och distribuera Windows 8.1-företagsporta
 
 Om du behöver läsa in appen separat och du har signerat och distribuerat företagsportalen för Windows 8.1 med Symantec-kodsigneringscertifikat, så följ stegen i avsnittet nedan.  
 
-### <a name="how-do-i-upgrade-my-signed-and-sideloaded-windows-phone-81-company-portal-app-or-windows-81-company-portal-app-to-the-windows-10-company-portal-app"></a>Hur uppgraderar jag min signerade och separat inlästa företagsportalsapp för Windows Phone 8.1 eller Windows 8.1 till företagsportalsappen för Windows 10?
+### <a name="how-do-i-upgrade-my-signed-and-sideloaded-windows-81-company-portal-app-to-the-windows-10-company-portal-app"></a>Hur uppgraderar jag min signerade och separat inlästa företagsportalapp för Windows 8.1 till företagsportalappen för Windows 10?
 
-Våra rekommenderade migreringssökväg är att ta bort den befintliga distributionen av företagsportalsappen för Windows 8.1 Phone eller Windows 8.1 genom att ange distributionsåtgärden till Avinstallera. När detta är gjort kan du distribuera företagsportalappen för Windows 10 distribueras normalt.  
+Vår rekommenderade migreringsväg är att ta bort den befintliga distributionen för Windows 8.1-företagsportalappen genom att ange distributionsåtgärden till Avinstallera. När detta är gjort kan du distribuera företagsportalappen för Windows 10 distribueras normalt.  
 
 I annat fall måste företagsportalappen för Windows 10 uppdateras på rätt sätt och signeras så att uppgraderingsvägen följs.  
 
@@ -130,7 +130,7 @@ Så här registrerar och distribuerar du appen:
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | InputWin10AppxBundle  |                                             Sökvägen till platsen där appxbundle-källfilen finns.                                              |
 | OutputWin10AppxBundle |                                                  Sökvägen för utdata för den signerade appxbundle-filen.                                                  |
-|       Win81Appx       |                          Sökvägen till den plats där företagsportalsappen för Windows 8.1 eller Windows Phone 8.1 (. APPX) finns.                           |
+|       Win81Appx       |                          Sökvägen till filen för Windows 8.1-företagsportalappen (.APPX).                           |
 |      PfxFilePath      |                                   Sökvägen till filen för Symantec Enterprise Mobile Code Signing Certificate (.PFX).                                    |
 |      PfxPassword      |                                     Lösenordet för Symantec Enterprise Mobile Code Signing Certificate.                                      |
 |      PublisherId      |      Företagets publicerings-ID. Om det ej finns, används ämnes-fältet i Symantec-certifikatet med mobil kodsignering för företag.       |

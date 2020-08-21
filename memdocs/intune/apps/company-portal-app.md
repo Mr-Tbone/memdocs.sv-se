@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/04/2020
+ms.date: 08/12/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33977676b4c144573965477154a7939f6061280a
-ms.sourcegitcommit: 41b2b50d5870dc127a8848a6657d56112f92515a
+ms.openlocfilehash: a82fbfa9e494828450729e29467580c29a590282
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758354"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179561"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -232,18 +232,16 @@ Om du vill anpassa vilka självbetjäningsåtgärder som är tillgängliga för 
 
 Vissa plattformar och konfigurationer tillåter inte självbetjäning av enhetsåtgärder. I tabellen nedan finns mer information om självbetjäningsåtgärder:
 
-| Action | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | MacOS<sup>(3)</sup> | Android<sup>(3)</sup> |
+| Action | Windows 10<sup>(3)</sup> | iOS/iPadOS<sup>(3)</sup> | macOS<sup>(3)</sup> | Android<sup>(3)</sup> |
 |----------------------|--------------------------|-------------------|-----------------------------------|-------------------------|
 | Pensionera | Tillgängligt<sup>(1)</sup> | Tillgänglig<sup>(9)</sup> | Tillgänglig | Tillgängligt<sup>(7)</sup> |
 | Rensning | Tillgänglig | Tillgänglig<sup>(5)</sup><sup>(9)</sup> | NA | Tillgängligt<sup>(7)</sup> |
 | Byt namn <sup>(4)</sup> | Tillgänglig | Tillgänglig | Tillgänglig | Tillgänglig |
 | Synkronisera | Tillgänglig | Tillgänglig | Tillgänglig | Tillgänglig |
-| Fjärrlåsning | Endast på Windows Phone | Tillgänglig | Tillgänglig | Tillgänglig |
-| Återställ lösenord | Endast på Windows Phone | Tillgängligt<sup>(8)</sup> | NA | Tillgängligt<sup>(6)</sup> |
 | Nyckelåterställning | NA | NA | Tillgängligt<sup>(2)</sup> | NA |
 
 <sup>(1) </sup> **Dra tillbaka** är alltid blockerat på Azure AD-anslutna Windows-enheter.<br>
-<sup>(2) </sup> **Nyckelåterställning** för MacOS är endast tillgängligt via webbportalen.<br>
+<sup>(2) </sup> **Nyckelåterställning** för macOS är endast tillgängligt via webbportalen.<br>
 <sup>(3) </sup> Alla fjärråtgärder inaktiveras om du registrerar med en enhetsregistreringshanterare.<br>
 <sup>(4)</sup> **Byt namn** ändrar endast enhetsnamnet i företagsportalappen eller i webbportalen, inte på enheten.<br>
 <sup>(5)</sup> **Rensa** är inte tillgängligt på användarregistrerade iOS/iPadOS-enheter.<br>

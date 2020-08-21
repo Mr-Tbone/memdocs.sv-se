@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/17/2020
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b0a22d24a67364df3d3aa064489db67e2c97e98
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: cb70d5842ce13b5baa9dc60ec2ed9cd698bad75c
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86462243"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252766"
 ---
 # <a name="configure-exchange-on-premises-access-for-intune"></a>Konfigurera lokal Exchange-åtkomst för Intune
 
@@ -69,14 +69,13 @@ Innan du kan konfigurera villkorlig åtkomst måste du kontrollera att följande
 
 ### <a name="support-for-mobile-devices"></a>Stöd för mobila enheter
 
-- **Windows Phone 8.1 och senare** – om du vill skapa princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
+- **Windows Phone** – Om du vill skapa en princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
 - **Intern e-postapp för iOS/iPadOS** – om du vill skapa princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
 - **EAS-e-postklienter såsom Gmail på Android 4 eller senare** – om du vill skapa princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
 
 - **EAS-e-postklienter som Android-enhetsadministratör** – om du vill skapa en policy för villkorsstyrd åtkomst läser du [Skapa policyer för villkorsstyrd åtkomst](../protect/create-conditional-access-intune.md)
 
 - **EAS-e-postklienter och Android-arbetsprofilenheter** – endast *Gmail* och *Nine Work for Android Enterprise* stöds på Android-arbetsprofilenheter. För villkorsstyrd åtkomst till arbete med Android-arbetsprofiler måste du distribuera en e-postprofil för *Gmail* eller *Nine Work for Android Enterprise*-appen och distribuera de apparna som en nödvändig installation. När du har distribuerat appen kan du konfigurera enhetsbaserad villkorsstyrd åtkomst.
-
 
 #### <a name="to-set-up-conditional-access-for-android-work-profile-devices"></a>Konfigurera villkorsstyrd åtkomst för Android-arbetsprofilenheter
 

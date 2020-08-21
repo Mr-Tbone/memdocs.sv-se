@@ -6,7 +6,7 @@ keywords: ''
 author: dougeby
 ms.author: dougeby
 manager: dougeby
-ms.date: 3/22/2019
+ms.date: 08/12/2020
 ms.topic: conceptual
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d29294f1d9556f195fe70f0e2cb36cc8c9ddcfba
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 37ea8cf3f8615630ccc5b1f5fcc72f69c66db3ef
+ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79357733"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179578"
 ---
 # <a name="create-a-design"></a>Skapa en design
 
@@ -311,7 +311,7 @@ Nedan visas ett exempel på en utformning för en Wi-Fi-profil:
 | **Typ** | **Profilnamn** | **Enhetsplattform** | **Användningsfall** |
 |:---:|:---:|:---:|:---:|
 | Wi-Fi | Wi-Fi-profil | Android | Företag, BYOD regionen Asien|
-| Wi-Fi | Nordamerika Wi-Fi-profil | Android, iOS/iPadOS, Windows 10 Mobile | Företag, BYOD regionen Nordamerika |
+| Wi-Fi | Nordamerika Wi-Fi-profil | Android, iOS/iPadOS | Företag, BYOD regionen Nordamerika |
 
 Du kan [ladda ned en mall med tabellen ovan](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) för att identifiera behoven för Wi-Fi-profilen.
 
@@ -323,7 +323,7 @@ Nedan visas ett exempel på dokumentering av utformningen av en VPN-profil.
 
 | **Typ** | **Profilnamn** | **Enhetsplattform** | **Användningsfall** |
 |:---:|:---:|:---:|:---:|
-| VPN | VPN Cisco, valfri anslutningsprofil | Android, iOS/iPadOS, Windows 10 Mobile | Företag, BYOD Nordamerika och Tyskland|
+| VPN | VPN Cisco, valfri anslutningsprofil | Android, iOS/iPadOS | Företag, BYOD Nordamerika och Tyskland|
 | VPN | Pulse Secure | Android | Företag, BYOD regionen Asien |
 
 Du kan [ladda ned en mall med tabellen ovan](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) för att identifiera behoven för VPN-profilen.
@@ -374,7 +374,7 @@ Appskyddsprinciper minimerar dataförlust genom att definiera hur programmet han
 | **Program** | **Syfte** | **Plattformar** | **Användningsfall** | **Appskyddsprincip** |
 |:---:|:---:|:---:|:---:|:---:|
 | Outlook Mobile  | Tillgänglig | iOS | Företag – chefer | Får inte vara be jailbrokad, kryptera filer |                                                         
-| Word | Tillgänglig | iOS/iPadOS, Android – Samsung Knox, inte Knox, Windows 10 Mobile | Företag, BYOD | Får inte vara be jailbrokad, kryptera filer |                                                         
+| Word | Tillgänglig | iOS/iPadOS, Android – Samsung Knox, ej Knox | Företag, BYOD | Får inte vara be jailbrokad, kryptera filer |                                                         
 
 
 Du kan [ladda ned en mall med tabellen ovan](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) för att identifiera behoven för appskyddsprincipen.
@@ -388,7 +388,7 @@ Nedan visas ett exempel på hur du utformar en efterlevnadsprincip:
 
 | **Principnamn** | **Enhetsplattform** | **Inställningar** | **Målgrupp** |
 |:---:|:---:|:---:|:---:|
-| Policy för efterlevnad | iOS/iPadOS, Android – Samsung Knox, inte Knox, Windows 10 Mobile | PIN-kod – krävs, får inte vara jailbrokad | Företag, BYOD |
+| Policy för efterlevnad | iOS/iPadOS, Android – Samsung Knox, ej Knox | PIN-kod – krävs, får inte vara jailbrokad | Företag, BYOD |
 
 
 Du kan [ladda ned en mall med tabellen ovan](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) för att identifiera behoven för efterlevnadsprincipen.

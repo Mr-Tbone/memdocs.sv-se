@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 02/26/2020
+ms.date: 08/13/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ed7852a5aaf09a99823035d12bf2aa9139c1c02
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 5be1c4fd42d27386b4fdc51cac6167625432491f
+ms.sourcegitcommit: 91519f811b58a3e9fd116a4c28e39341ad8af11a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990228"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559573"
 ---
 # <a name="how-to-manage-volume-purchased-apps-from-the-microsoft-store-for-business-with-microsoft-intune"></a>Så här hanterar du volymköpta appar från Microsoft Store för företag med Microsoft Intune
 
@@ -53,7 +53,7 @@ Granska följande information innan du börjar synkronisera och tilldela appar f
 - Registrerade enheter måste använda 1511-versionen av Windows 10 eller senare.
 
 > [!NOTE]
-> Om du inaktiverar butiken på hanterade enheter (antingen manuellt eller via princip eller grupprincip) kommer onlinelicensierade appar inte att installeras.
+> Om du inaktiverar åtkomst till butiken på hanterade enheter (antingen manuellt eller via en princip eller grupprincip) kommer onlinelicensierade appar inte att installeras.
 
 ## <a name="associate-your-microsoft-store-for-business-account-with-intune"></a>Koppla ditt konto för Microsoft Store för företag till Intune
 
@@ -78,6 +78,7 @@ Du kan nu fortsätta och konfigurera synkronisering i Intune-konsolen.
 6. Klicka på **Synkronisera** för att hämta appar som du har köpt från Microsoft Store i Intune.
 
 ## <a name="synchronize-apps"></a>Synkronisera appar
+Om du redan har associerat ditt Microsoft Store för företag-konto med dina administratörsautentiseringsuppgifter för Intune kan du synkronisera dina Microsoft Store för företag-appar manuellt med Intune genom att följa stegen nedan.
 
 1. Välj **Administration av klientorganisation** > **Anslutningsappar och token** > **Microsoft Store för företag**.
 2. Klicka på **Synkronisera** för att hämta appar som du har köpt från Microsoft Store i Intune.

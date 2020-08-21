@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 08/10/2020
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77a69af395aee293f927682f9d1a095c11a1d8a5
-ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
+ms.openlocfilehash: f0119ace5e1ec511ec0e8235a1dcea4b7199c058
+ms.sourcegitcommit: 91519f811b58a3e9fd116a4c28e39341ad8af11a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88048097"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559546"
 ---
 # <a name="create-and-assign-scep-certificate-profiles-in-intune"></a>Skapa och tilldela SCEP-certifikatprofiler i Intune
 
@@ -211,13 +211,15 @@ När du har [konfigurerat din infrastruktur](certificates-scep-configure.md) fö
 
    - **Hash-algoritm**:
 
-     *(Gäller för Android, Android Enterprise, Windows Phone 8.1, Windows 8.1 och senare samt Windows 10 och senare)*
+     *(Gäller för Android, Android Enterprise, Windows 8.1 och senare, Windows 10 och senare)*
 
      Välj en av de tillgängliga typerna av hash-algoritmer som ska användas med det här certifikatet. Välj den högsta säkerhetsnivå som de anslutande enheterna har stöd för.
 
    - **Rotcertifikat**:
 
      Välj den *betrodda certifikatprofil* som du tidigare konfigurerade och tilldelade till aktuella användare och enheter för den här SCEP-certifikatprofilen. Den betrodda certifikatprofilen används för att etablera användare och enheter med betrott rotcertifikatutfärdarcertifikat. Information om den betrodda certifikatprofilen finns i [Exportera det betrodda rotcertifikatutfärdarcertifikatet](certificates-configure.md#export-the-trusted-root-ca-certificate) och [Skapa betrodda certifikatprofiler](certificates-configure.md#create-trusted-certificate-profiles) i *Använda certifikat för autentisering i Intune*. Om du har en rotcertifikatutfärdare och en utfärdande certifikatutfärdare väljer du den profil för betrott rotcertifikat som validerar den utfärdande certifikatutfärdaren.
+     > [!NOTE]
+     > Om du har iOS-/iPadOS-enheter och du har en rotcertifikatutfärdare och en utfärdande certifikatutfärdare, väljer du den profil för betrodda rotcertifikat som validerar rotcertifikatutfärdaren. 
 
    - **Förbättrad nyckelanvändning**:
 

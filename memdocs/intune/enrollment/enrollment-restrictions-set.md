@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5ed799d01ea4fdae1f9ecb013b4cf73deb0e6f0
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: b056eb0bab2416a87f443c025a76c22b580ed3c9
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051663"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252462"
 ---
 # <a name="set-enrollment-restrictions"></a>Ange registreringsbegränsningar
 
@@ -47,11 +47,10 @@ Bland de specifika registreringsbegränsningarna som du kan skapa finns:
   - iOS/iPadOS
   - macOS
   - Windows
-  - Windows Mobile
-- Version av plattformsoperativsystem för iOS/iPadOS, Android-enhetsadministratör, Android Enterprise-arbetsprofil, Windows och Windows Mobile. (Endast Windows 10-versioner kan användas. Lämna tomt om Windows 8.1 tillåts.)
+- Version av plattformsoperativsystem för iOS/iPadOS, Android-enhetsadministratör, Android Enterprise-arbetsprofil och Windows.
   - Lägsta version.
   - Högsta version.
-- Begränsa [personligt ägda enheter](device-enrollment.md#bring-your-own-device) (endast för iOS, Android-enhetsadministratör, Android Enterprise-arbetsprofil, macOS, Windows och Windows Mobile).
+- Begränsa [personligt ägda enheter](device-enrollment.md#bring-your-own-device) (endast för iOS, Android-enhetsadministratör, Android Enterprise-arbetsprofil, macOS och Windows).
 
 ## <a name="default-restrictions"></a>Standardbegränsningar
 

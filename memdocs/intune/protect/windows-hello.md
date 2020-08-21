@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/27/2020
+ms.date: 08/14/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -17,12 +17,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: d120ee0f55651ab1661e426e5889aaf8a4c7e670
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: 7088bfd5b27d986e12a175de1bdea0bf060c3ad3
+ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262871"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88252528"
 ---
 # <a name="integrate-windows-hello-for-business-with-microsoft-intune"></a>Integrera Windows Hello för företag med Microsoft Intune  
 
@@ -45,17 +45,15 @@ Dessutom stöder Intune följande typer av principer för att hantera vissa inst
 Återstoden av den här artikeln fokuserar på hur man skapar en standardprincip för Windows Hello för företag som riktar in sig på hela organisationen.
 
 > [!IMPORTANT]
-> Du kunde ange två olika PIN-koder för att autentisera åtkomst till resurser i Windows 10 Desktop- och Mobile-versionerna före Anniversary Update:
+> Innan Anniversary Update kan du ange två olika PIN-koder som kan användas för autentisering mot resurser:
 >
 > - **PIN-koden för enheten** kunde användas för att låsa upp enheten och ansluta till molnresurser.
 > - **PIN-koden för arbetsplatsen** användes för att komma åt resurser i Azure AD på användarnas personliga enheter (BYOD).
-> 
+>
 > I och med Anniversary Update sammanfogades dessa två PIN-koder till en enda PIN-kod för enheten.
 > Alla principer för konfiguration i Intune som du anger för att styra PIN-koden för enheten och alla principer för Windows Hello för företag du konfigurerat ställer nu båda in det nya PIN-värdet.
-> Om båda principer har ställts in för att styra PIN-koden kommer principen för Windows Hello för företag att tillämpas på både enheter som använder Windows 10 Desktop och enheter som använder Windows 10 Mobile.
+> Om du har angett båda principtyperna för att kontrollera PIN-koden tillämpas Windows Hello för företag-principen.
 > Uppdatera din princip för Windows Hello för företag så att den matchar inställningarna i konfigurationsprincipen och be dina användare att synkronisera sina enheter i företagsportalappen för att säkerställa att principkonflikter inte uppstår och att PIN-principen tillämpas korrekt.
-
-
 
 ## <a name="create-a-windows-hello-for-business-policy"></a>Skapa en princip för Windows Hello för företag
 
@@ -65,13 +63,13 @@ Dessutom stöder Intune följande typer av principer för att hantera vissa inst
 
 3. Välj bland följande alternativ för **Konfigurera Windows Hello för företag**:
 
-     - **Aktiverad**. Välj den här inställningen om du vill konfigurera inställningarna för Windows Hello för företag.  När du väljer *Aktiverad* blir ytterligare inställningar för Windows Hello synliga och du kan konfigurera dem för dina enheter.
+   - **Aktiverad**. Välj den här inställningen om du vill konfigurera inställningarna för Windows Hello för företag.  När du väljer *Aktiverad* blir ytterligare inställningar för Windows Hello synliga och du kan konfigurera dem för dina enheter.
 
-    - **Inaktiverad**. Om du inte vill aktivera Windows Hello för företag under enhetsregistreringen väljer du det här alternativet. När det är inaktivt kan inte användarna etablera Windows Hello för företag utom på mobiltelefoner som är kopplade till Azure Active Directory där etablering kan krävas. Om du anger *Inaktiverad* kan du fortfarande konfigurera de efterföljande inställningarna för Windows Hello för företag, även om den här policyn inte aktiverar Windows Hello för företag.
+   - **Inaktiverad**. Om du inte vill aktivera Windows Hello för företag under enhetsregistreringen väljer du det här alternativet. När den är inaktiverad kan användarna inte etablera Windows Hello för företag. Om du anger *Inaktiverad* kan du fortfarande konfigurera de efterföljande inställningarna för Windows Hello för företag, även om den här policyn inte aktiverar Windows Hello för företag.
 
-    - **Inte konfigurerat**. Välj den här inställningen om du inte vill konfigurera inställningarna för Windows Hello för företag. Eventuella befintliga inställningar för Windows Hello för företag på Windows 10-enheter ändras inte. Alla andra inställningar i fönstret inaktiveras.
+   - **Inte konfigurerat**. Välj den här inställningen om du inte vill konfigurera inställningarna för Windows Hello för företag. Eventuella befintliga inställningar för Windows Hello för företag på Windows 10-enheter ändras inte. Alla andra inställningar i fönstret inaktiveras.
 
-4. Om du har valt **Aktiverad** i föregående steg, konfigurerar du de obligatoriska inställningar som kommer att gälla på alla registrerade Windows 10- och Windows 10 Mobile-enheter. Välj **Spara** när du har konfigurerat inställningarna.
+4. Om du valde **Aktiverad** i föregående steg, konfigurerar du de obligatoriska inställningar som kommer att användas på alla registrerade Windows 10-enheter. Välj **Spara** när du har konfigurerat inställningarna.
 
    - **Använd TPM (Trusted Platform Module)** :
 
