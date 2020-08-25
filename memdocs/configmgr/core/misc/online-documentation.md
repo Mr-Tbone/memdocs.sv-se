@@ -9,12 +9,12 @@ ms.assetid: 6d665cef-fc67-4686-bcb3-0572c0a3760c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f24768521cd179c3a6403aff057de48ae46e7e7
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 3b598cfad1d3a73f77e91bf3b41baab60c6c3616
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88695519"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819702"
 ---
 # <a name="online-documentation-for-configuration-manager"></a>Onlinedokumentation för Configuration Manager
 
@@ -106,4 +106,4 @@ Mer information om de funktioner, produkter och tjänster som gör Configuration
 
 ### <a name="downloadable-documentation"></a>Nedladdnings bar dokumentation
 
-Ladda ned en kopia av System Center 2012 R2 Configuration Manager teknisk dokumentation från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=29901).
+Ladda ned en kopia av System Center 2012 R2 Configuration Manager teknisk dokumentation från [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=29256).

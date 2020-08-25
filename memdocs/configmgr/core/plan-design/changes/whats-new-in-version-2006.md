@@ -10,12 +10,12 @@ ms.assetid: 4b071746-61e1-404b-8053-60978de028a7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: bdfb122173c913274373f41c3932f1ac094ec953
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: fc12c81a1ec58d17580b91e21a1ba7d2e0cb0cbc
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88700290"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819685"
 ---
 # <a name="whats-new-in-version-2006-of-configuration-manager-current-branch"></a>Vad är nytt i version 2006 av Configuration Manager aktuella grenen
 
@@ -31,6 +31,13 @@ För att dra full nytta av nya Configuration Manager funktioner kan du även upp
 > Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+2006+-+Configuration+Manager%22&locale=en-us`
 
 ## <a name="microsoft-endpoint-manager-tenant-attach"></a><a name="bkmk_tenant"></a> Microsoft Endpoint Manager-klient anslutning
+
+### <a name="tenant-attach-microsoft-defender-antivirus-policies-in-the-microsoft-endpoint-manager-admin-center"></a><a name="bkmk_atp"></a> Klient anslutning: Microsoft Defender Antivirus principer i administrations Center för Microsoft Endpoint Manager
+<!--4812909-->
+Nu kan du skapa Microsoft Defender Antivirus-principer i Microsoft Endpoint Manager-konsolen och distribuera dem till Configuration Manager samlingar. Mer information, inklusive detaljerade instruktioner och tillgängliga inställningar finns i följande artiklar:
+- [Klient anslutning: publicera Configuration Manager klienter till Microsoft Defender ATP från administrations centret (för hands version)](../../../tenant-attach/atp-onboard.md)
+- [Klient anslutning: Distribuera slut punkts säkerhets Antivirus princip från administrations Center (för hands version)](../../../tenant-attach/deploy-antivirus-policy.md)
+- [Inställningar för Microsoft Defender Antivirus policy för klient anslutna enheter i Microsoft Intune](../../../../intune/protect/antivirus-microsoft-defender-settings-windows-tenant-attach.md?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json). 
 
 ### <a name="install-applications-from-the-admin-center"></a>Installera program från administrations centret
 <!--7518897, 6024389-->
@@ -89,7 +96,7 @@ Intranät klienter kan nu komma åt en CMG program uppdaterings plats när den t
 
 ## <a name="cloud-attached-management"></a><a name="bkmk_cloud"></a> Molnbaserad hantering
 
-### <a name="use-the-company-portal-app-on-co-managed-devices"></a>Använd Företagsportal-appen på samhanterade enheter
+### <a name="use-the-company-portal-app-on-co-managed-devices"></a>Använd Företagsportalappen på samhanterade enheter
 
 <!--CMADO-3601237,INADO-4297660-->
 
@@ -124,9 +131,9 @@ För att bättre justera med kraven för Skriv bords analys för Windows-diagnos
 
 | Version 2006 och senare | Version 2002 och tidigare |
 |---------|---------|
-| Obligatorisk | Basic |
+| Obligatorisk | Grundläggande |
 | Valfritt (begränsat) | Utökad (begränsad) |
-| Ej tillämpligt | Optimerad |
+| Saknas | Optimerad |
 | Valfritt | Fullständig |
 
 Om du tidigare har konfigurerat några enheter på den **förbättrade** nivån, kommer de att återgå till **valfria (begränsat)** när du uppgraderar till version 2006. De skickar då mindre data till Microsoft. Den här ändringen påverkar inte vad du ser i Skriv bords analys.

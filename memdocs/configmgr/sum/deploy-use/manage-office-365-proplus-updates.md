@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: 907c8d63d68ee4f34b9d22be24f32ffb1878b715
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: e0ef22ec7bc5eb3d6b9ac3800b3e97374421944c
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88696182"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819804"
 ---
 # <a name="manage-microsoft-365-apps-with-configuration-manager"></a>Hantera Microsoft 365 appar med Configuration Manager
 
@@ -238,7 +238,7 @@ För uppdaterings paket som släpps den 9 juni kommer rubriken att börja med "M
 |--|--|
 |Halvårs årlig företags kanal|Halvårskanal|
 |Halvårs visare för företags kanal (för hands version)|Halvårskanal (riktad)|
-|Månatlig företags kanal|Ej tillämpligt|
+|Månatlig företags kanal|NA|
 |Aktuell kanal|Månads kanal|
 |Aktuell kanal (förhands granskning)|Månads kanal (riktad)|
 |Beta kanal|Insider|
@@ -248,8 +248,7 @@ Mer information om hur du ändrar din automatisk distribution finns i [distribue
 
 ## <a name="change-the-update-channel-after-you-enable-microsoft-365-apps-clients-to-receive-updates-from-configuration-manager"></a>Ändra uppdaterings kanalen när du har aktiverat Microsoft 365 Apps-klienter för att ta emot uppdateringar från Configuration Manager
 
-När du har distribuerat Microsoft 365 appar kan du ändra uppdaterings kanalen med grupprincip eller Office Deployment Tool (ODT). Du kan till exempel flytta en enhet från halvårs kanal till halvårs kanal (riktad). När du byter kanal uppdateras Office automatiskt utan att du behöver installera om eller ladda ned den fullständiga versionen. Mer information finns i [ändra Microsoft 365 Apps uppdaterings kanal för enheter i din organisation](//deployoffice/change-update-channels).
-
+När du har distribuerat Microsoft 365 appar kan du ändra uppdaterings kanalen med grupprincip eller Office Deployment Tool (ODT). Du kan till exempel flytta en enhet från halvårs kanal till halvårs kanal (riktad). När du byter kanal uppdateras Office automatiskt utan att du behöver installera om eller ladda ned den fullständiga versionen. Mer information finns i [ändra Microsoft 365 Apps uppdaterings kanal för enheter i din organisation](https://docs.microsoft.com/deployoffice/change-update-channels).
 
 ## <a name="next-steps"></a>Nästa steg
 

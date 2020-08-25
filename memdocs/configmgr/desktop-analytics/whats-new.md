@@ -2,7 +2,7 @@
 title: Nyheter i Desktop Analytics
 titleSuffix: Configuration Manager
 description: En sammanfattning av de nya funktionerna i den senaste månads versionen av moln tjänsten för Skriv bords analys.
-ms.date: 08/19/2020
+ms.date: 08/21/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-analytics
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: c41c6333cfee1b6a24bb84c0f020c14c303fd904
-ms.sourcegitcommit: 62b451396eae660f2d5289ae3666b19ed1cc666d
+ms.openlocfilehash: ce5043f090dd9c08a7a1e9ada5cb2020aabda11f
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614749"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819736"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Nyheter i Desktop Analytics
 
@@ -39,6 +39,12 @@ Om du vill få ett meddelande när den här sidan uppdateras kopierar du och kli
 Nu för alla appar som du distribuerar med Configuration Manager konfigureras Skriv bords analys automatiskt som standard. Med det här beteendet kan du konfigurera apparna i din miljö snabbare, så att de fortskrider snabbare med en produktions distribution.
 
 Mer information finns i [Asset-Apps](about-assets.md#apps).
+
+<!-- 6049643 -->
+
+### <a name="improved-processing-of-diagnostic-data-during-snapshot-generation"></a>Förbättrad bearbetning av diagnostikdata under skapandet av ögonblicks bilder
+
+Microsoft har förbättrat hur de samlar in och bearbetar Windows-diagnostikdata från enheter som registrerats i Skriv bords analys. Dessa förbättringar ökar tillförlitligheten för den dagliga ögonblicks bilds genereringen och förbereder för nya funktioner i utvecklingen. Som ett resultat av detta arbete inaktiverade Microsoft tillfälligt antalet **enheter som startade den här appen under de senaste 30 dagarna** i distributions planer. Mer information finns i [Asset-Apps](about-assets.md#usage).
 
 ## <a name="july-2020"></a>Juli 2020
 

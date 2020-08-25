@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: c9268514b43f4f728d3fff4715d4d71308a712f3
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: dbe827371f84bb90e2a7f2468aa139cba073fe49
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88699083"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819753"
 ---
 # <a name="compatibility-assessment-in-desktop-analytics"></a>Kompatibilitetskontroll i Desktop Analytics
 
@@ -245,4 +245,4 @@ Du hittar utvärderingen av driv rutinen i Skriv bords analys. I listan över dr
 
 ## <a name="see-also"></a>Se även
 
-FastTrack Center-förmånen för Windows 10 ger åtkomst till **Desktop-appen**. Den här förmånen är en ny tjänst som är utformad för att åtgärda problem med Windows 10 och Microsoft 365 appar för företags kompatibilitet. Mer information finns i [Desktop app garanterar](/fasttrack/win-10-desktop-app-assure).
+FastTrack Center-förmånen för Windows 10 ger åtkomst till **Desktop-appen**. Den här förmånen är en ny tjänst som är utformad för att åtgärda problem med Windows 10 och Microsoft 365 appar för företags kompatibilitet. Mer information finns i [Desktop app garanterar](/fasttrack/win-10-app-assure).

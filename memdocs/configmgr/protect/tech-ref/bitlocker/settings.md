@@ -2,7 +2,7 @@
 title: Referens för BitLocker-inställningar
 titleSuffix: Configuration Manager
 description: Alla inställningar för BitLocker-hantering som är tillgängliga i Configuration Manager
-ms.date: 04/01/2020
+ms.date: 08/21/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: reference
@@ -10,12 +10,12 @@ ms.assetid: f7ade768-2b2b-4aab-8ee1-73624d03a9c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: be9db7d0ee68f22073a3537e53fc93bf8faff9e0
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: b52fe5a60899d7e871381d1a34a2360bbe68a36c
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88693530"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820484"
 ---
 # <a name="bitlocker-settings-reference"></a>Referens för BitLocker-inställningar
 
@@ -56,6 +56,8 @@ För Windows 8,1-enheter aktiverar du alternativet för **enhets krypterings met
 - AES 128-bit (standard)
 - AES 256-bit
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMBLEncryptionMethodPolicy](/powershell/module/configurationmanager/new-cmblencryptionmethodpolicy?view=sccm-ps).
+
 #### <a name="windows-10-devices"></a>Windows 10-enheter
 
 För Windows 10-enheter aktiverar du alternativet för **enhets krypterings metod och krypterings styrka (Windows 10)**. Välj individuellt en av följande krypterings metoder för OS-enheter, fasta data enheter och flyttbara data enheter:
@@ -69,6 +71,8 @@ För Windows 10-enheter aktiverar du alternativet för **enhets krypterings meto
 > BitLocker använder avancerad krypteringsstandard (AES) som krypteringsalgoritm med konfigurerbar nyckllängd på 128 eller 256 bitar. På Windows 10-enheter stöder AES-krypteringen CBC (cipher block chainion) eller chiffertexten stjäla (XTS).
 >
 > Om du behöver använda en flyttbar enhet på enheter som inte kör Windows 10 använder du AES-CBC.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMBLEncryptionMethodWithXts](/powershell/module/configurationmanager/new-cmblencryptionmethodwithxts?view=sccm-ps).
 
 #### <a name="general-usage-notes-for-drive-encryption-and-cipher-strength"></a>Allmän användnings information för enhets kryptering och krypterings grad
 
@@ -88,6 +92,8 @@ Konfigurera den här principen för att förbättra start prestanda utan att skr
 
 När du inte konfigurerar den här principen, tar BitLocker bort dess hemligheter från minnet när datorn startas om.
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMNoOverwritePolicy](/powershell/module/configurationmanager/new-cmnooverwritepolicy?view=sccm-ps).
+
 ### <a name="validate-smart-card-certificate-usage-rule-compliance"></a>Verifiera efterlevnad av certifikat användnings regel för smartkort
 
 *Föreslagen konfiguration*: **inte konfigurerad**
@@ -95,6 +101,8 @@ När du inte konfigurerar den här principen, tar BitLocker bort dess hemlighete
 Konfigurera den här principen för att använda smartkortscertifikat-baserat BitLocker-skydd. Ange sedan certifikat **objekts identifieraren**.
 
 När du inte konfigurerar den här principen använder BitLocker standard objekt identifieraren `1.3.6.1.4.1.311.67.1.1` för att ange ett certifikat.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMScCompliancePolicy](/powershell/module/configurationmanager/new-cmsccompliancepolicy?view=sccm-ps).
 
 ### <a name="organization-unique-identifiers"></a>Organisationens unika identifierare
 
@@ -105,6 +113,8 @@ Konfigurera den här principen så att den använder en certifikatbaserad data �
 När du inte konfigurerar den här principen används inte **identifierings** fältet i BitLocker.
 
 Om din organisation kräver högre säkerhets mått konfigurerar du fältet **identifiering** . Ange det här fältet på alla mål-USB-enheter och justera det med den här inställningen.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMUidPolicy](/powershell/module/configurationmanager/new-cmuidpolicy?view=sccm-ps).
 
 ## <a name="os-drive"></a>OS-enhet
 
@@ -134,6 +144,8 @@ På enheter med en kompatibel TPM kan två typer av autentiseringsmetoder använ
 >
 > - Tillåt vänte lägen (S1-S3) vid ström spar läge (batteri drift)
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMBMSOSDEncryptionPolicy](/powershell/module/configurationmanager/new-cmbmsosdencryptionpolicy?view=sccm-ps).
+
 ### <a name="allow-enhanced-pins-for-startup"></a>Tillåt utökade PIN-instruktioner för start
 
 *Föreslagen konfiguration*: **inte konfigurerad**
@@ -149,6 +161,8 @@ Om du aktiverar den här inställningen tillåter alla nya start-pinn av BitLock
 
 Om du inaktiverar eller inte konfigurerar den här policy inställningen använder BitLocker inte utökade PIN-regler.
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMEnhancedPIN](/powershell/module/configurationmanager/new-cmenhancedpin?view=sccm-ps).
+
 ### <a name="operating-system-drive-password-policy"></a>Lösen ords princip för operativ Systems enhet
 
 *Föreslagen konfiguration*: **inte konfigurerad**
@@ -162,6 +176,8 @@ Använd de här inställningarna för att ange begränsningar för lösen ord f�
 - **Kräv endast ASCII-lösenord för flyttbara OS-enheter**
 
 Om du aktiverar den här inställningen kan användarna konfigurera ett lösen ord som uppfyller de krav som du definierar.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMOSPassphrase](/powershell/module/configurationmanager/new-cmospassphrase?view=sccm-ps).
 
 #### <a name="general-usage-notes-for-os-drive-password-policy"></a>Allmän användnings information för lösen ords princip för operativ system enhet
 
@@ -180,6 +196,8 @@ Kontrol lera om Windows uppdaterar plattforms verifierings data när den startas
 Om du aktiverar eller inte konfigurerar den här inställningen uppdaterar Windows plattforms verifierings data i den här situationen.
 
 Om du inaktiverar den här inställningen uppdaterar Windows inte plattforms validerings data i den här situationen.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMTpmAutoResealPolicy](/powershell/module/configurationmanager/new-cmtpmautoresealpolicy?view=sccm-ps).
 
 ### <a name="pre-boot-recovery-message-and-url"></a>Återställningsmeddelande och webbadress i förstartsmiljö
 
@@ -202,6 +220,8 @@ När du aktiverar den här inställningen väljer du något av följande alterna
 > [!NOTE]
 > Det finns inte stöd för alla tecken och språk i för start. Testa det anpassade meddelandet eller URL: en för att kontrol lera att det visas korrekt på skärmen för BitLocker-återställning före start.
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMPrebootRecoveryInfo](/powershell/module/configurationmanager/new-cmprebootrecoveryinfo?view=sccm-ps).
+
 ### <a name="encryption-policy-enforcement-settings-os-drive"></a>Tvingande inställningar för krypterings princip (OS-enhet)
 
 *Föreslagen konfiguration*: **aktive rad**
@@ -215,6 +235,8 @@ Om BitLocker inte kräver användar interaktion för att lägga till en skydds t
 Om du inaktiverar eller inte konfigurerar den här inställningen kräver Configuration Manager inte att användare följer BitLocker-principer.
 
 Om du vill genomdriva principen omedelbart ställer du in en respitperiod på `0` .
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMUseOsEnforcePolicy](/powershell/module/configurationmanager/new-cmuseosenforcepolicy?view=sccm-ps).
 
 ## <a name="fixed-drive"></a>Fast enhet
 
@@ -234,6 +256,8 @@ Om du inte konfigurerar den här inställningen kräver inte BitLocker användar
 
 Om du inaktiverar den här inställningen kan användarna inte sätta sina fasta data enheter under BitLocker-skydd. Om du inaktiverar den här principen när BitLocker krypterar fasta data enheter dekrypterar BitLocker de fasta data enheterna.
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMBMSFDVEncryptionPolicy](/powershell/module/configurationmanager/new-cmbmsfdvencryptionpolicy?view=sccm-ps).
+
 ### <a name="deny-write-access-to-fixed-drives-not-protected-by-bitlocker"></a>Neka skriv åtkomst till fasta enheter som inte skyddas av BitLocker
 
 *Föreslagen konfiguration*: **inte konfigurerad**
@@ -248,7 +272,7 @@ När du aktiverar den här inställningen:
 
 När du inte konfigurerar den här inställningen monterar Windows alla fasta data enheter med Läs-och skriv åtkomst.
 
-<!-- ### Allow access to BitLocker-protected fixed drives from earlier versions of Windows -->
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMFDVDenyWriteAccessPolicy](/powershell/module/configurationmanager/new-cmfdvdenywriteaccesspolicy?view=sccm-ps).
 
 ### <a name="fixed-data-drive-password-policy"></a>Lösen ords princip för fast data enhet
 
@@ -269,6 +293,8 @@ För högre säkerhet aktiverar du den här inställningen och konfigurerar seda
 Om du inaktiverar den här inställningen kan användarna inte konfigurera ett lösen ord.
 
 När principen inte har kon figurer ATS stöder BitLocker lösen ord med standardinställningarna. Standardinställningarna omfattar inte komplexitets kraven för lösen ord och kräver bara åtta tecken.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMFDVPassPhrasePolicy](/powershell/module/configurationmanager/new-cmfdvpassphrasepolicy?view=sccm-ps).
 
 #### <a name="general-usage-notes-for-fixed-data-drive-password-policy"></a>Allmän användnings information för lösen ords princip för fast data enhet
 
@@ -291,6 +317,8 @@ Om BitLocker inte kräver användar interaktion för att lägga till en skydds t
 Om du inaktiverar eller inte konfigurerar den här inställningen kräver Configuration Manager inte att användare följer BitLocker-principer.
 
 Om du vill genomdriva principen omedelbart ställer du in en respitperiod på `0` .
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMUseFddEnforcePolicy](/powershell/module/configurationmanager/new-cmusefddenforcepolicy?view=sccm-ps).
 
 ## <a name="removable-drive"></a>Flyttbar enhet
 
@@ -320,6 +348,8 @@ När du aktiverar den här inställningen:
 
 Om du inaktiverar den här inställningen kan användarna inte använda BitLocker på flyttbara enheter.
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMRDVConfigureBDEPolicy](/powershell/module/configurationmanager/new-cmrdvconfigurebdepolicy?view=sccm-ps).
+
 ### <a name="deny-write-access-to-removable-drives-not-protected-by-bitlocker"></a>Neka skriv åtkomst till flyttbara enheter som inte skyddas av BitLocker
 
 *Föreslagen konfiguration*: **inte konfigurerad**
@@ -339,7 +369,7 @@ När du inaktiverar eller inte konfigurerar den här inställningen monterar Win
 > [!NOTE]
 > Du kan åsidosätta den här inställningen med grup princip inställningar i **systemets**  >  **flyttbara lagrings åtkomst**. Om du aktiverar grup princip inställningen **flyttbara diskar: neka skriv åtkomst**ignorerar BitLocker den här Configuration Manager inställningen.
 
-<!-- ### Allow access to BitLocker-protected removable data drives from earlier versions of Windows -->
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMRDVDenyWriteAccessPolicy](/powershell/module/configurationmanager/new-cmrdvdenywriteaccesspolicy?view=sccm-ps).
 
 ### <a name="removable-data-drive-password-policy"></a>Lösen ords princip för flyttbara data enheter
 
@@ -360,6 +390,8 @@ För högre säkerhet aktiverar du den här inställningen och konfigurerar seda
 Om du inaktiverar den här inställningen kan användarna inte konfigurera ett lösen ord.
 
 När principen inte har kon figurer ATS stöder BitLocker lösen ord med standardinställningarna. Standardinställningarna omfattar inte komplexitets kraven för lösen ord och kräver bara åtta tecken.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMRDVPassPhrasePolicy](/powershell/module/configurationmanager/new-cmrdvpassphrasepolicy?view=sccm-ps).
 
 #### <a name="general-usage-notes-for-removable-data-drive-password-policy"></a>Allmän användnings information för lösen ords princip för flyttbara data enheter
 
@@ -384,6 +416,11 @@ När du aktiverar den här inställningen Configuration Manager automatisk och t
 - **Tillåt att återställnings information lagras i oformaterad text**: utan ett BitLocker-Management-signeringscertifikat för SQL Server Configuration Manager lagrar nyckel återställnings informationen i klartext. Mer information finns i [kryptera återställnings data](../../deploy-use/bitlocker/encrypt-recovery-data.md).
 
 - **Status frekvens för klient kontroll (minuter)**: vid den konfigurerade frekvensen kontrollerar klienten BitLocker-skyddets principer och status på datorn och säkerhetskopierar även klient återställnings nyckeln. Som standard uppdaterar den Configuration Manager klienten sin BitLocker-återställningsinformation var 90: e minut.
+
+Mer information om hur du skapar dessa principer med Windows PowerShell finns i:
+
+- [Set-CMBlmPlaintextStorage](/powershell/module/configurationmanager/set-cmblmplaintextstorage?view=sccm-ps)
+- [New-CMBMSClientConfigureCheckIntervalPolicy](/powershell/module/configurationmanager/new-cmbmsclientconfigurecheckintervalpolicy?view=sccm-ps)
 
 ### <a name="user-exemption-policy"></a>Princip för användar undantag
 
@@ -410,6 +447,8 @@ Om du inaktiverar eller inte konfigurerar den här inställningen visas inte ins
 > [!NOTE]
 > BitLocker hanterar undantag per användare, inte per dator. Om flera användare loggar in på samma dator och en användare inte är undantagen krypteras datorn av BitLocker.
 
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMBMSUserExemptionPolicy](/powershell/module/configurationmanager/new-cmbmsuserexemptionpolicy?view=sccm-ps).
+
 ### <a name="url-for-the-security-policy-link"></a>URL för säkerhets princip länken
 
 *Föreslagen konfiguration*: **aktive rad**
@@ -419,3 +458,9 @@ Ange en URL som ska visas för användarna som **företagets säkerhets princip*
 Om du aktiverar den här inställningen konfigurerar du **URL för säkerhets princip länken**.
 
 Om du inaktiverar eller inte konfigurerar den här inställningen visas inte länken säkerhets princip i BitLocker.
+
+Mer information om hur du skapar den här principen med Windows PowerShell finns i [New-CMMoreInfoUrlPolicy](/powershell/module/configurationmanager/new-cmmoreinfourlpolicy?view=sccm-ps).
+
+## <a name="next-steps"></a>Nästa steg
+
+Om du använder Windows PowerShell för att skapa dessa princip objekt använder du cmdleten [New-CMBlmSetting](/powershell/module/configurationmanager/new-cmblmsetting?view=sccm-ps) . Den här cmdleten skapar ett objekt för hanterings princip inställningar för BitLocker som innehåller alla angivna principer. Om du vill distribuera princip inställningarna till en samling använder du cmdleten [New-CMSettingDeployment](/powershell/module/configurationmanager/new-cmsettingdeployment?view=sccm-ps) .

@@ -2,7 +2,7 @@
 title: Distribuera BitLocker-hantering
 titleSuffix: Configuration Manager
 description: Distribuera hanterings agenten för BitLocker till Configuration Manager klienter och återställnings tjänsten till hanterings platser
-ms.date: 07/27/2020
+ms.date: 08/21/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: how-to
@@ -10,12 +10,12 @@ ms.assetid: 39aa0558-742c-4171-81bc-9b1e6707f4ea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a7eca5c2f5c00ae559a8567d5fce1e4e36df19c0
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 67130932ee20849530c6e865971c7776c3e6b6b1
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129281"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819940"
 ---
 # <a name="deploy-bitlocker-management"></a>Distribuera BitLocker-hantering
 
@@ -35,7 +35,7 @@ Innan du skapar och distribuerar principer för hantering av BitLocker:
 
 - Om det behövs [krypterar du återställnings nycklar](encrypt-recovery-data.md) i plats databasen
 
-## <a name="create-a-policy"></a>Skapa en princip
+## <a name="create-a-policy"></a>Skapa en policy
 
 När du skapar och distribuerar den här principen aktiverar Configuration Manager klienten BitLocker-hanteringsservern på enheten.
 
@@ -118,6 +118,8 @@ Om du vill ändra inställningarna för en befintlig princip väljer du den i li
 
 När du skapar fler än en princip kan du konfigurera deras relativa prioritet. Om du distribuerar flera principer till en klient använder den prioritet svärdet för att fastställa dess inställningar.
 
+Från och med version 2006 kan du använda Windows PowerShell-cmdletar för den här aktiviteten. Mer information finns i [New-CMBlmSetting](/powershell/module/configurationmanager/new-cmblmsetting?view=sccm-ps).
+
 ## <a name="deploy-a-policy"></a>Distribuera en princip
 
 1. Välj en befintlig princip i noden **BitLocker-hantering** . I menyfliksområdet väljer du **distribuera**.
@@ -135,8 +137,9 @@ Du kan skapa flera distributioner av samma princip. Om du vill visa mer informat
 > [!IMPORTANT]
 > MBAM-klienten startar inte BitLocker-diskkryptering åtgärder om en anslutning till fjärr skrivbords protokoll är aktiv. Alla anslutningar till fjärr konsolen måste vara stängda och en användare måste vara inloggad på en fysisk konsolsession innan BitLocker-diskkryptering börjar.
 
+Från och med version 2006 kan du använda Windows PowerShell-cmdletar för den här aktiviteten. Mer information finns i [New-CMSettingDeployment](/powershell/module/configurationmanager/new-cmsettingdeployment?view=sccm-ps).
 
-## <a name="monitor"></a>Övervaka
+## <a name="monitor"></a>Monitor
 
 Visa grundläggande Kompatibilitetsrapport om princip distributionen i informations fönstret för noden **BitLocker-hantering** :
 
@@ -162,7 +165,7 @@ Använd följande loggar för att övervaka och felsöka:
 
 - Händelse logg för återställnings tjänst: i Windows Loggboken bläddrar du till program och tjänster > Microsoft > Windows > MBAM-Web. Mer information finns i [om händelse](../../tech-ref/bitlocker/about-event-logs.md) loggar för BitLocker och [Server händelse loggar](../../tech-ref/bitlocker/server-event-logs.md).
 
-- Spårnings loggar för återställnings tjänsten:`<Default IIS Web Root>\Microsoft BitLocker Management Solution\Logs\Recovery And Hardware Service\trace*.etl`
+- Spårnings loggar för återställnings tjänsten: `<Default IIS Web Root>\Microsoft BitLocker Management Solution\Logs\Recovery And Hardware Service\trace*.etl`
 
 ## <a name="recovery-service"></a>Återställnings tjänst
 
