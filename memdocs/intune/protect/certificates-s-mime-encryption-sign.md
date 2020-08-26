@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fedb6c6f7cd9e396d990b4129f81fab4d812ec9c
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 3d935e79dfe2fd0d786dae596cafe173b66018c9
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988641"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663302"
 ---
 # <a name="smime-overview-to-sign-and-encrypt-email-in-intune"></a>S/MIME-översikt för att signera och kryptera e-post i Intune
 
@@ -30,7 +30,6 @@ E-postcertifikat, som även kallas S/MIME-certifikat, ger extra säkerhet för d
 - iOS/iPadOS
 - macOS
 - Windows 10 och senare
-- Windows Phone
 
 På iOS/iPadOS-enheter kan du skapa en Intune-hanterad e-postprofil som använder S/MIME och certifikat för att signera och kryptera inkommande och utgående e-post. Andra plattformar har kanske men inte nödvändigtvis stöd för S/MIME. Om det stöds installerar du certifikat som använder S/MIME-signering och -kryptering. En slutanvändare aktiverar sedan S/MIME i sitt e-postprogram.
 

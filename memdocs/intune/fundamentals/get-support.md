@@ -6,7 +6,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 06/19/2020
+ms.date: 08/25/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fef418394a37f0074ddb17cc170a61603b1d7f8
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: f71a74c69235e8e079f2cd325582dbbe9bb4a3f1
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093134"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820671"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Ta reda på hur du kan få support för Microsoft Intune
 
@@ -83,8 +83,6 @@ Det här problemet uppstår när du inte har autentiserat ditt nya klientkonto v
 
     > [!div class="mx-imgBorder"]
     > ![Bekräfta din hanteringstyp](./media/get-support/confirm-management-selection.png)
-
-  - Om du öppnar Hjälp och support från **Felsökning + support** > **Hjälp och support**, ser du inte den hanteringstyp som du valde i listan under *Hjälp och support*.
 
   - Om du ökar detaljnivån i en annan nod som *Enheter*, *Appar*eller *Användare* och sedan väljer *Hjälp och support*, kan du inte välja en hanteringstyp och typen visas inte neller under *Hjälp och support*. I detta fall antas *Intune*. Om du inte vill att kontexten ska vara Intune, använder du **?** så att du kan välja en annan hanteringstyp.
 

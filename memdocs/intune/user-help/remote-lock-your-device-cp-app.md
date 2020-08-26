@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 10/07/2018
+ms.date: 08/20/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -18,12 +18,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 1616fe4104707668463843dfb890c2f8e0b0c4a8
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 84bf5d6be2761d368e514be31c6fd426b6c508f0
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83880950"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820620"
 ---
 # <a name="lock-your-device-from-the-company-portal-app-for-windows-10"></a>Låsa enheten från företagsportalappen för Windows 10
 
@@ -35,9 +35,7 @@ Fjärrlås stöds på enheter som kör:
 
 * Android
 * iOS
-* macOS
-* Windows 10 Mobile (om enheten redan har ett angivet lösenord)
-* Windows Phone 8.1 (om enheten redan har ett angivet lösenord) 
+* macOS  
   
 ## <a name="remote-lock-device"></a>Fjärrlåsa en enhet
 Följ stegen nedan om du vill låsa enheten från företagsappen.  
@@ -55,5 +53,7 @@ Följ stegen nedan om du vill låsa enheten från företagsappen.
    ![Skärmbild av företagsportalappen, sidan Enhetsinformation, bekräftelse av fjärrlåsning.](./media/1804_remote_lock_Windows_CPapp_06.png)  
 
 4. Om du hittar din enhet anger du ditt lösenord för att låsa upp den.  
+
+## <a name="next-steps"></a>Nästa steg
 
 Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

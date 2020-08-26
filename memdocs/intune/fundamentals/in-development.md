@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b7f1a4280b409ec4a12c6371fd2e6cba8a571ca
-ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
+ms.openlocfilehash: 0d443cb784c19956f52347a10f4123c622ab82a8
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88048029"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820077"
 ---
 # <a name="in-development-for-microsoft-intune"></a>Under utveckling för Microsoft Intune
 
@@ -72,9 +72,6 @@ Windows Företagsportalen har nu stöd för Configuration Manager-appar. Med den
 <!-- ***********************************************-->
 ## <a name="device-configuration"></a>Enhetskonfiguration
 
-### <a name="set-device-compliance-state-from-third-party-mdm-partners---6361689-----"></a>Ställ in enhetsefterlevnadstillståndet från MDM-tredjepartspartners<!-- 6361689   -->
-Microsoft 365-kunder som äger MDM-lösningar från tredje part kommer att kunna tillämpa principer för villkorsstyrd åtkomst för Microsoft 365-appar i iOS och Android via integrering med Microsoft Intune-tjänsten för enhetsefterlevnad. Tredjepartsleverantörerna använder Intune-tjänsten för enhetsefterlevnad till att skicka efterlevnadsdata om enheter till Intune. Intune utvärderar sedan dessa data, avgör om enheten är betrodd och ställer in attribut för villkorsstyrd åtkomst i Azure AD.  Kunder måste ange principer för villkorsstyrd åtkomst i Azure AD antingen från administrationscentret för Microsoft Endpoint Manager eller i Azure AD-portalen.
-
 ### <a name="create-pkcs-certificate-profiles-for-android-enterprise-fully-managed-devices-cobo---4839686---"></a>Skapa PKCS-certifikatsprofiler för fullständigt hanterade Android Enterprise-enheter (COBO)<!-- 4839686 -->
 Du kan skapa PKCS-certifikatsprofiler när du ska distribuera certifikat till Android Enterprise-enhetsägaren och arbetsprofilsenheter (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Android Enterprise > Enbart enhetens ägare**, eller **Android Enterprise > Enbart arbetsprofil** för plattform > **PKCS** för profil).
 
@@ -84,47 +81,6 @@ Mer information om PKCS-certifikat finns i [Konfigurera och använda PKCS-certif
 
 Gäller för:
 - Fullständigt hanterat Android Enterprise (COBO)
-
-### <a name="use-netmotion-as-a-vpn-connection-type-for-iosipados-and-macos-devices---1333631---"></a>Använd NetMotion som VPN-anslutningstyp för iOS/iPad- och macOS-enheter<!-- 1333631 -->
-När du skapar en VPN-profil är NetMotion tillgängligt som en VPN-anslutningstyp (**Enheter** > **Enhetskonfiguration** > **Skapa profil** > **iOS/iPad** eller **macOS** för plattform > **VPN-** för profil > **NetMotion** för anslutningstyp).
-
-Mer information om VPN-profiler i Intune finns i [Skapa VPN-profiler för att ansluta till VPN-servrar](../configuration/vpn-settings-configure.md).
-
-Gäller för:
-- iOS/iPadOS
-- macOS
-
-### <a name="more-protected-extensible-authentication-protocol-peap-options-for-windows-10-wi-fi-profiles---3805024---"></a>Fler PEAP-alternativ (Protected Extensible Authentication Protocol) för Windows 10 Wi-Fi-profiler<!-- 3805024 -->
-På Windows 10-enheter kan du skapa Wi-Fi-profiler med EAP (Extensible Authentication Protocol) för att autentisera Wi-Fi-anslutningar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Windows 10 och senare** som plattform > **Wi-Fi** som profil > **Företag**). När du väljer skyddad EAP (PEAP) finns det nya tillgängliga inställningar:
-
-- **Utför serververifiering i PEAP fas 1**: I PEAP-förhandlingsfas 1 validerar enheterna certifikatet och verifierar servern.
-  - **Inaktivera användaruppmaningar om att verifiera servern i PEAP fas 1**: I PEAP-förhandlingsfas 1 visas inte uppmaningar som ber användare att auktorisera nya PEAP-servrar för betrodda certifikatutfärdare.
-- **Kräv kryptografisk bindning**: Förhindrar anslutningar till PEAP-servrar som inte använder krypteringsbindning under PEAP-förhandlingen.
-
-Om du vill se de inställningar som du kan konfigurera för tillfället, så gå till [Lägga till Wi-Fi-inställningar för enheter med Windows 10 och senare](../configuration/wi-fi-settings-windows.md).
-
-Gäller för: 
-- Windows 10 och senare
-
-### <a name="configure-the-macos-microsoft-enterprise-sso-plug-in---5627576---"></a>Konfigurera macOS Microsoft Enterprise SSO-plugin-programmet<!-- 5627576 -->
-Microsoft Azure AD-teamet skapade en app för omdirigering med enkel inloggning som gör att användare med macOS 10.15+ kan få åtkomst till Microsoft-appar, organisationsappar och webbplatser som stöder Apples SSO-funktion och autentisera med Azure AD. Med Microsoft Enterprises SSO-tillägget kan du konfigurera SSO-tillägget med den nya typen av Microsoft Azure AD-apptillägg (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **macOS** för plattform > **Enhetsfunktioner** > för profil > **Apptillägg för enkel inloggning** > Typ av SSO-apptillägg > **Microsoft Azure AD**).
-
-För att få enkel inloggning med Microsoft Azure AD SSO-apptilläggstypen måste användarna installera och logga in på företagsportalsappen på sina macOS-enheter. 
-
-Mer information om macOS-apptillägg för enkel inloggning finns i [Apptillägg för enkel inloggning](../configuration/device-features-configure.md#single-sign-on-app-extension).
-
-Gäller för:
-- macOS 10.15 och senare
-
-### <a name="use-sso-app-extensions-on-more-iosipados-apps-with-the-microsoft-enterprise-sso-plug-in---7369991---"></a>Använd SSO-apptillägg på fler iOS/iPad-appar med Microsoft Enterprise SSO-plugin-programmet<!-- 7369991 -->
-[Microsoft Enterprise SSO-plugin-programmet för Apple-enheter](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin) kan användas med alla appar som stöder SSO-apptillägg. I Intune innebär den här funktionen att plugin-programmet fungerar med mobila iOS/iPad-appar som inte använder Microsoft Authentication Library (MSAL) för Apple-enheter. Apparna behöver inte använda MSAL, men de måste autentiseras med Azure AD-slutpunkter.
-
-Konfigurera dina iOS/iPad-appar så att de kan använda SSO med plugin-programmet genom att lägga till appaketidentifierarna i en iOS/iPad-konfigurationsprofil (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPad** för plattform > **Enhetsfunktioner** för profil > **Apptillägg för enkel inloggning** > **Microsoft Azure AD** för SSO-apptilläggstyp > **Appakets-ID:n**).
-
-Om du vill se de aktuella inställningarna för SSO-tillägg som du kan konfigurera, så gå till [Enkel inloggning för apptillägg](../configuration/ios-device-features-settings.md#single-sign-on-app-extension).
-
-Gäller för:
-- iOS/iPadOS
 
 <!-- ***********************************************-->
 <!-- ## Device enrollment-->
@@ -155,9 +111,6 @@ Du har möjlighet att utnyttja kraften i Configuration Managers lokala [Run Scri
 
 ### <a name="deploy-software-updates-to-macos-devices----3194876---"></a>Distribuera programuppdateringar till macOS-enheter <!-- 3194876 -->
 Du kommer att kunna distribuera programuppdateringar till grupper med macOS-enheter. Den här funktionen inkluderar kritisk, inbyggd programvara, konfigurationsfil och andra uppdateringar. Du kommer att kunna skicka uppdateringar nästa gång enheten checkar in eller välja ett veckoschema för att distribuera uppdateringar inom eller utanför tidsfönster som du anger. Detta hjälper dig när du vill uppdatera enheter utanför standard arbetstid eller när din help desk är fullständigt bemannad. Du får också en detaljerad rapport om alla macOS-enheter med distribuerade uppdateringar. Du kan gå in på detaljnivå i rapporten på enhetsbas för att se status för särskilda uppdateringar.
-
-### <a name="associated-licenses-revoked-before-deletion-of-apple-vpp-token--6195322---"></a>Tillhörande licenser återkallades innan en Apple VPP-token togs bort<!--6195322 -->
-När du tar bort en Apple VPP-token i Microsoft Endpoint Manager i en framtida uppdatering, så återkallas alla Intune-tilldelade licenser som är kopplade till denna token automatiskt innan token tas bort.
 
 <!-- ***********************************************-->
 <!--## Intune apps-->
@@ -192,13 +145,6 @@ Hot- och säkerhetsriskshantering (TVM) i Microsoft Defender ATP identifierar fe
 Snart kan Microsoft Defender ATP skapa en Endpoint Manager-säkerhetsuppgift (**Endpoint Manager** > **Slutpunktssäkerhet** > **Säkerhetsuppgifter**) med information om säkerhetsrisken och vilke enheter som berörs. IT-administratörer kan acceptera säkerhetsrisksuppgiften och distribuera den nödvändiga konfigurationen. 
 
 Mer information om säkerhetsuppgifter finns i [Använda Intune till att åtgärda säkerhetsrisker som identifierats av Microsoft Defender ATP](../protect/atp-manage-vulnerabilities.md).
-
-### <a name="changes-for-endpoint-security-antivirus-policy-exclusions--5583940-6018119----"></a>Ändringar av undantag för antiviruspolicyn för slutpunktssäkerhet<!--5583940, 6018119  -->
-Vi presenterar två ändringar för att hantera listorna för Microsoft Defender Antivirus-undantag som du kan konfigurera som en del av en Endpoint Security-princip för antivirus. (**Slutpunktssäkerhet** > **Antivirus** > **Skapa princip** > **Windows 10 och senare** för plattform). Dessa två ändringar bidrar till att förhindra konflikter mellan principer, och befintliga principer som stod i konflikt kommer inte längre att stå i konflikt med listan över undantag:
-
-- Först lägger vi till en ny profiltyp för Windows 10 och senare. **Microsoft Defender Antivirus-undantag**.  Den här nya profiltypen inkluderar bara inställningarna för att ange en lista över Defender-*processer*, *filnamnstillägg* och *filer* och *mappar* som du inte vill att Microsoft Defender ska genomsöka. Detta kan hjälpa dig att förenkla hanteringen av dina undantagslistor genom att de skiljs från andra principkonfigurationer.
-- Den andra ändringen innebär att listan över undantag som du definierar i olika profiler sammanfogas till en enda lista över undantag för varje enhet eller användare, baserat på de enskilda principer som gäller för en viss användare eller enhet. När du exempelvis fokuserar på en användare med tre separata principer, så slås undantagslistorna från dessa tre principer samman till en enda stor uppsättning av Microsoft Defender Antivirus-undantag, som sedan tillämpas på användaren. Den här sammanslagningen innehåller undantagslistorna från den nya profiltypen som har lagts till, samt från befintliga principer som har konfigurerats i en *Microsoft Defender Antivirus*-profil.
-
 
 
 <!-- ***********************************************-->

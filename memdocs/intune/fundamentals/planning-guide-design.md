@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37ea8cf3f8615630ccc5b1f5fcc72f69c66db3ef
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: 6412b0d23edb9f93becb3973cc1ae02c0a068dea
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179578"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663250"
 ---
 # <a name="create-a-design"></a>Skapa en design
 
@@ -296,8 +296,8 @@ Följande är ett exempel på hur du kan dokumentera certifikaten under utformni
 
 | **Typ** | **Profilnamn** | **Enhetsplattform** | **Användningsfall** |   
 |:---:|:---:|:---:|:---:|
-| Rotcertifikatutfärdare | Företagets rotcertifikatutfärdare | Android, iOS/iPadOS, Windows Mobile | Företag, BYOD  |                                                           
-| SCEP | Användarcertifikat | Android, iOS/iPadOS, Windows Mobile | Företag, BYOD |                                                           
+| Rotcertifikatutfärdare | Företagets rotcertifikatutfärdare | Android, iOS/iPadOS | Företag, BYOD  |                                                           
+| SCEP | Användarcertifikat | Android, iOS/iPadOS | Företag, BYOD |                                                           
 
 
 Du kan [ladda ned en mall med tabellen ovan](https://gallery.technet.microsoft.com/Intune-deployment-planning-fae156c2?redir=0) för att identifiera behoven för certifikatprofilen.
