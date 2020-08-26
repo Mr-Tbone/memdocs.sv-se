@@ -51,7 +51,7 @@
           displayName: 'psk, oma-uri, eap'
         - name: Felsöka Wi-Fi
           href: troubleshoot-wi-fi-profiles.md
-    - name: Administrativa mallar i Windows
+    - name: Administrativa mallar
       displayName: 'admx, gpo, group policy'
       items:
         - name: Skapa administrativa mallar
