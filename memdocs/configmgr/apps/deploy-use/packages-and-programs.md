@@ -10,12 +10,12 @@ ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 2c125212a13790e196d001f53411633d1e42d4f8
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: c87ae35fa3e5a76c57342a0d1cad4167b0f14685
+ms.sourcegitcommit: e43e6e83e3b38137ceebc6d299eacd94a925db85
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81710113"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88895954"
 ---
 # <a name="packages-and-programs-in-configuration-manager"></a>Paket och program i Configuration Manager
 
@@ -67,7 +67,9 @@ Paket kan använda vissa nya funktioner i Configuration Manager, inklusive distr
     - **Källmapp**: om paketet innehåller källfiler väljer du **Bläddra** för att öppna dialog rutan **Ange källmapp** och anger platsen för paketets källfiler.  
 
         > [!NOTE]  
-        > Datorkontot på platsservern måste ha läsbehörighet för den källmapp du anger.  
+        > Datorkontot på platsservern måste ha läsbehörighet för den källmapp du anger.
+        >
+        > Windows begränsar käll Sök vägen till 256 tecken eller mindre. Den här gränsen gäller för paket källa och program. Mer information finns i [Namnge filer, sökvägar och namn områden](/windows/win32/fileio/naming-a-file).
 
     - Från och med version 1906, om du vill förcachelagra innehåll på en klient, anger du paketets **arkitektur** och **språk** . Mer information finns i [Konfigurera förinställt innehåll för cache](../../osd/deploy-use/configure-precache-content.md).<!--4224642-->  
 
@@ -120,7 +122,7 @@ Paket kan använda vissa nya funktioner i Configuration Manager, inklusive distr
         - Inställningen **program kan** bara köras **när ingen användare är inloggad** eller **om en användare är inloggad**
         - Inställningen **körnings läge** är att **köra med administratörs behörighet**  
 
-    - **Enhets läge**: Ange information om hur programmet körs i nätverket. Välj ett av följande alternativ:  
+    - **Enhets läge**: Ange information om hur programmet körs i nätverket. Välj något av följande alternativ:  
 
         - **Körs med UNC-namn**: ange att programmet körs med ett Universal Naming Convention namn (UNC). Den här inställningen är standardinställningen.  
 

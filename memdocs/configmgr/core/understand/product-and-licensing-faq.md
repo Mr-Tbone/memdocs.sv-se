@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bf69dfd73472cb252d2d821dd8e5fb5eb5a6302f
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 0f249c4ad981c289be33d364dcb4f5b8635faecb
+ms.sourcegitcommit: e43e6e83e3b38137ceebc6d299eacd94a925db85
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88695774"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88895888"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Vanliga frågor och svar om Configuration Manager grenar och licenser
 
@@ -94,14 +94,15 @@ Med licens för samtidig hantering kan Configuration Manager kunder med Software
 |Funktion | Licens för samtidig hantering | Fullständig Intune-licens |
 |---------|---------|---------|
 |Registrering av Windows 10|Ja (endast för befintliga ConfigMgr-hanterade enheter)|Ja|
-|iOS, Android, macOS-registrering|Nej|Ja|
-|Autopilot|Nej|Ja|
-|Hantering av mobil program (MAM)|Nej|Ja|
-|Villkorlig åtkomst<br>(ytterligare AADP1 krävs)|Ja|Ja|
+|iOS, Android, macOS-registrering|Inga|Ja|
+|Autopilot|Inga|Ja|
+|Hantering av mobil program (MAM)|Inga|Ja|
+|Villkorsstyrd åtkomst<br>(ytterligare AADP1 krävs)|Ja|Ja|
 |Enhetsprofiler|Ja|Ja|
 |Programuppdateringshanteraren|Ja|Ja|
 |Inventering|Ja|Ja|
 |Apphantering|Ja|Ja|
+|Fullständig/selektiv rensning av fjärr anslutning|Ja|Ja|
 |Fjärrhjälp<br>(TeamViewer-licens krävs)|Ja|Ja|
 |Skriv bords analys<br>(Licenser för Windows-prenumeration krävs|Ja|Ej tillämpligt|
 |Klientkoppling|Ja|Ej tillämpligt|
