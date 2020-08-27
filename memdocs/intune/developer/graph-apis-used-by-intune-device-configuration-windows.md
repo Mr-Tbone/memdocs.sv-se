@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 737301d8171cd123224017a32c03db8365f4a90c
-ms.sourcegitcommit: 3d895be2844bda2177c2c85dc2f09612a1be5490
+ms.openlocfilehash: eb30db6043a1b2f02db8baa93f324fa38449769c
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79364756"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915661"
 ---
 # <a name="graph-apis-and-matching-windows-10-csps-used-in-intune"></a>Graph API: er och matchande Windows 10-CSP: er som används i Intune
 
-Microsoft Intune använder [Graph API entiteter](https://docs.microsoft.com/graph/api/resources/intune-graph-overview) (öppnar en annan webbplats för dokument) för att konfigurera enheter (**intunes** > **enhets konfiguration**) som kör Windows 10 och senare. Graph API använder kryptografiproviders för att läsa, ställa in, ändra och/eller ta bort konfigurations inställningar på enheter.
+Microsoft Intune använder [Graph API entiteter](/graph/api/resources/intune-graph-overview) (öppnar en annan dokument webbplats) för att konfigurera enheter (**Intune**  >  -**enhets konfiguration**) som kör Windows 10 och senare. Graph API använder kryptografiproviders för att läsa, ställa in, ändra och/eller ta bort konfigurations inställningar på enheter.
 
 Den här listan gäller för:
 
@@ -35,25 +35,25 @@ Den här artikeln innehåller diagram enheter och deras matchande Windows 10-CSP
 
 Den här informationen är användbar för olika scenarier. Se till exempel vad som används av Intune, se inställningar som ska inkluderas i anpassade OMA-URI-konfigurationer och så vidare. 
 
-## <a name="windows-10-csps"></a>Windows 10 CSPs
+## <a name="windows-10-csps"></a>Windows 10-CSP
 
-Mer information om Windows 10-providers för konfigurations tjänster finns i [referens för Configuration Service Provider](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference) (öppnar en annan webbplats för dokument).
+Mer information om Windows 10-providers för konfigurations tjänster finns i [referens för Configuration Service Provider](/windows/client-management/mdm/configuration-service-provider-reference) (öppnar en annan webbplats för dokument).
 
 ## <a name="graph-api-properties-to-csp-mapping"></a>Graph API egenskaper för CSP-mappning
 
 I följande lista visas majoriteten av Graph API entiteter som används av Microsoft Intune för enhets konfiguration i Windows 10. Den visar också motsvarande Windows 10 CSP och förskjutnings-URI.
 
-Om du vill se de Windows 10-versioner som följande API: er använder använder du Windows 10- [providerns referens för konfigurations tjänsten](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference) (öppnar en annan webbplats för dokument).
+Om du vill se de Windows 10-versioner som följande API: er använder använder du Windows 10- [providerns referens för konfigurations tjänsten](/windows/client-management/mdm/configuration-service-provider-reference) (öppnar en annan webbplats för dokument).
 
-### <a name="editionupgradeconfigurationlicense"></a>EditionUpgradeConfiguration.License 
+### <a name="editionupgradeconfigurationlicense"></a>EditionUpgradeConfiguration. licens 
 **CSP**:./Device/Vendor/MSFT/WindowsLicensing  
 **Offset-URI**:/UpgradeEditionWithLicense
 
-### <a name="editionupgradeconfigurationlicensetype"></a>EditionUpgradeConfiguration.LicenseType 
+### <a name="editionupgradeconfigurationlicensetype"></a>EditionUpgradeConfiguration. LicenseType 
 **CSP**:./Device/Vendor/MSFT/WindowsLicensing  
 **Offset-URI**:/LicenseKeyType
 
-### <a name="editionupgradeconfigurationproductkey"></a>EditionUpgradeConfiguration.ProductKey 
+### <a name="editionupgradeconfigurationproductkey"></a>EditionUpgradeConfiguration. ProductKey 
 **CSP**:./Device/Vendor/MSFT/WindowsLicensing  
 **Offset-URI**:/UpgradeEditionWithProductKey
 
@@ -258,7 +258,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderemailcontentexecutiontype"></a>Windows10EndpointProtectionConfiguration.DefenderEmailContentExecutionType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderexploitprotectionxml"></a>Windows10EndpointProtectionConfiguration.DefenderExploitProtectionXml 
 **CSP**:./Device/Vendor/MSFT/policy **offset-URI**:/config/ExploitGuard/ExploitProtectionSettings
@@ -283,7 +283,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappsexecutablecontentcreationorlaunchtype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsExecutableContentCreationOrLaunchType
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappslaunchchildprocess"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsLaunchChildProcess 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -291,7 +291,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappslaunchchildprocesstype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsLaunchChildProcessType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappsotherprocessinjection"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsOtherProcessInjection 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -299,7 +299,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficeappsotherprocessinjectiontype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeAppsOtherProcessInjectionType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType 
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficemacrocodeallowwin32imports"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeMacroCodeAllowWin32Imports 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -307,11 +307,11 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderofficemacrocodeallowwin32importstype"></a>Windows10EndpointProtectionConfiguration.DefenderOfficeMacroCodeAllowWin32ImportsType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderpreventcredentialstealingtype"></a>Windows10EndpointProtectionConfiguration.DefenderPreventCredentialStealingType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderprocesscreation"></a>Windows10EndpointProtectionConfiguration.DefenderProcessCreation 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -331,7 +331,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderscriptdownloadedpayloadexecutiontype"></a>Windows10EndpointProtectionConfiguration.DefenderScriptDownloadedPayloadExecutionType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefenderscriptobfuscatedmacrocode"></a>Windows10EndpointProtectionConfiguration.DefenderScriptObfuscatedMacroCode 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -339,7 +339,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderscriptobfuscatedmacrocodetype"></a>Windows10EndpointProtectionConfiguration.DefenderScriptObfuscatedMacroCodeType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdefendersecuritycenterblockexploitprotectionoverride"></a>Windows10EndpointProtectionConfiguration.DefenderSecurityCenterBlockExploitProtectionOverride 
 **CSP**:./Device/Vendor/MSFT/policy **offset-URI**:/config/WindowsDefenderSecurityCenter/DisallowExploitProtectionOverride
@@ -414,7 +414,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationdefenderuntrustedusbprocesstype"></a>Windows10EndpointProtectionConfiguration.DefenderUntrustedUSBProcessType 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver diagram egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, windows10endpointprotection/ Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, windows10endpointprotection/Configuration. defenderEmailContentExecutionType, windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, windows10endpointprotection/ Konfiguration. defenderUntrustedUSBProcessType
+**Offset-URI**:/config/Defender/ATTACKSURFACEREDUCTIONRULES (CSP/konfiguration kräver graf-egenskaper: Windows10endpointprotection/Configuration. defenderOfficeAppsOtherProcessInjectionType, Windows10endpointprotection/Configuration. defenderOfficeAppsExecutableContentCreationOrLaunchType, Windows10endpointprotection/Configuration. defenderOfficeAppsLaunchChildProcessType, Windows10endpointprotection/Configuration. defenderOfficeMacroCodeAllowWin32ImportsType, Windows10endpointprotection/Configuration. defenderScriptObfuscatedMacroCodeType, Windows10endpointprotection/Configuration. defenderScriptDownloadedPayloadExecutionType, Windows10endpointprotection/Configuration. defenderEmailContentExecutionType, Windows10endpointprotection/Configuration. defenderPreventCredentialStealingType, Windows10endpointprotection/Configuration. defenderUntrustedUSBProcessType
 
 ### <a name="windows10endpointprotectionconfigurationdeviceguardenablesecurebootwithdma"></a>Windows10EndpointProtectionConfiguration.DeviceGuardEnableSecureBootWithDMA 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -565,7 +565,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationlanmanagerauthenticationlevel"></a>Windows10EndpointProtectionConfiguration.LanManagerAuthenticationLevel 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_LANManagerAuthenticationLevel
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity \_ LANManagerAuthenticationLevel
 
 ### <a name="windows10endpointprotectionconfigurationlanmanagerworkstationdisableinsecureguestlogons"></a>Windows10EndpointProtectionConfiguration.LanManagerWorkstationDisableInsecureGuestLogons 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -577,195 +577,195 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsadministratoraccountname"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAdministratorAccountName 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_RenameAdministratorAccount
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ RenameAdministratorAccount
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsadministratorelevationpromptbehavior"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAdministratorElevationPromptBehavior
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_BehaviorOfTheElevationPromptForAdministrators
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ BehaviorOfTheElevationPromptForAdministrators
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowanonymousenumerationofsamaccountsandshares"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_DoNotAllowAnonymousEnumerationOfSamAccountsAndShares
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess \_ DoNotAllowAnonymousEnumerationOfSamAccountsAndShares
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowpku2uauthenticationrequests"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowPKU2UAuthenticationRequests 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_AllowPKU2UAuthenticationRequests
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity \_ AllowPKU2UAuthenticationRequests
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowremotecallstosecurityaccountsmanager"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_RestrictClientsAllowedToMakeRemoteCallsToSAM
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess \_ RestrictClientsAllowedToMakeRemoteCallsToSAM
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowremotecallstosecurityaccountsmanagerhelperbool"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_RestrictClientsAllowedToMakeRemoteCallsToSAM
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess \_ RestrictClientsAllowedToMakeRemoteCallsToSAM
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowsystemtobeshutdownwithouthavingtologon"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowSystemToBeShutDownWithoutHavingToLogOn 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/shutdown\_AllowSystemToBeShutDownWithoutHavingToLogOn
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/shutdown \_ AllowSystemToBeShutDownWithoutHavingToLogOn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowuiaccessapplicationelevation"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowUIAccessApplicationElevation 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_AllowUIAccessApplicationsToPromptForElevation
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ AllowUIAccessApplicationsToPromptForElevation
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowuiaccessapplicationsforsecurelocations"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowUIAccessApplicationsForSecureLocations 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ OnlyElevateUIAccessApplicationsThatAreInstalledInSecureLocations
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsallowundockwithouthavingtologon"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsAllowUndockWithoutHavingToLogon 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices\_AllowUndockWithoutHavingToLogon
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices \_ AllowUndockWithoutHavingToLogon
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockmicrosoftaccounts"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockMicrosoftAccounts 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_BlockMicrosoftAccounts
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ BlockMicrosoftAccounts
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockremotelogonwithblankpassword"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockRemoteLogonWithBlankPassword 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ LimitLocalAccountUseOfBlankPasswordsToConsoleLogonOnly
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockremoteopticaldriveaccess"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockRemoteOpticalDriveAccess 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices\_RestrictCDROMAccessToLocallyLoggedOnUserOnly
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices \_ RestrictCDROMAccessToLocallyLoggedOnUserOnly
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsblockusersinstallingprinterdrivers"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsBlockUsersInstallingPrinterDrivers 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices\_PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices \_ PreventUsersFromInstallingPrinterDriversWhenConnectingToSharedPrinters
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsclearvirtualmemorypagefile"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsClearVirtualMemoryPageFile 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/shutdown\_ClearVirtualMemoryPageFile
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/shutdown \_ ClearVirtualMemoryPageFile
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsclientdigitallysigncommunicationsalways"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsClientDigitallySignCommunicationsAlways 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient\_DigitallySignCommunicationsAlways
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient \_ DigitallySignCommunicationsAlways
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsclientsendunencryptedpasswordtothirdpartysmbservers"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsClientSendUnencryptedPasswordToThirdPartySMBServers 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient\_SendUnencryptedPasswordToThirdPartySMBServers
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient \_ SendUnencryptedPasswordToThirdPartySMBServers
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdetectapplicationinstallationsandpromptforelevation"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDetectApplicationInstallationsAndPromptForElevation 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_DetectApplicationInstallationsAndPromptForElevation
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ DetectApplicationInstallationsAndPromptForElevation
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableadministratoraccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableAdministratorAccount 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_EnableAdministratorAccountStatus
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ EnableAdministratorAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableclientdigitallysigncommunicationsifserveragrees"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableClientDigitallySignCommunicationsIfServerAgrees 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient\_DigitallySignCommunicationsIfServerAgrees
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkClient \_ DigitallySignCommunicationsIfServerAgrees
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableguestaccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableGuestAccount 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_EnableGuestAccountStatus
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ EnableGuestAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableserverdigitallysigncommunicationsalways"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableServerDigitallySignCommunicationsAlways 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer\_DigitallySignCommunicationsAlways
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer \_ DigitallySignCommunicationsAlways
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdisableserverdigitallysigncommunicationsifclientagrees"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDisableServerDigitallySignCommunicationsIfClientAgrees 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer\_DigitallySignCommunicationsIfClientAgrees
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/MicrosoftNetworkServer \_ DigitallySignCommunicationsIfClientAgrees
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdonotallowanonymousenumerationofsamaccounts"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDoNotAllowAnonymousEnumerationOfSAMAccounts 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_DoNotAllowAnonymousEnumerationOfSAMAccounts
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess \_ DoNotAllowAnonymousEnumerationOfSAMAccounts
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdonotrequirectrlaltdel"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDoNotRequireCtrlAltDel 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DoNotRequireCTRLALTDEL
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ DoNotRequireCTRLALTDEL
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsdonotstorelanmanagerhashvalueonnextpasswordchange"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_DoNotStoreLANManagerHashValueOnNextPasswordChange
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity \_ DoNotStoreLANManagerHashValueOnNextPasswordChange
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsenableadministratoraccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsEnableAdministratorAccount 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_EnableAdministratorAccountStatus
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ EnableAdministratorAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsenableguestaccount"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsEnableGuestAccount 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_EnableGuestAccountStatus
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ EnableGuestAccountStatus
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsformatandejectofremovablemediaalloweduser"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices\_AllowedToFormatAndEjectRemovableMedia
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Devices \_ AllowedToFormatAndEjectRemovableMedia
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsguestaccountname"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsGuestAccountName 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts\_RenameGuestAccount
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/Accounts \_ RenameGuestAccount
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionshidelastsignedinuser"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsHideLastSignedInUser 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DoNotDisplayLastSignedIn
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ DoNotDisplayLastSignedIn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionshideusernameatsignin"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsHideUsernameAtSignIn 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DoNotDisplayUsernameAtSignIn
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ DoNotDisplayUsernameAtSignIn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsinformationdisplayedonlockscreen"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsInformationDisplayedOnLockScreen 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DisplayUserInformationWhenTheSessionIsLocked
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ DisplayUserInformationWhenTheSessionIsLocked
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsinformationshownonlockscreen"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsInformationShownOnLockScreen 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_DisplayUserInformationWhenTheSessionIsLocked
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ DisplayUserInformationWhenTheSessionIsLocked
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionslogonmessagetext"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsLogOnMessageText 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MessageTextForUsersAttemptingToLogOn
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ MessageTextForUsersAttemptingToLogOn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionslogonmessagetitle"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsLogOnMessageTitle 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MessageTitleForUsersAttemptingToLogOn
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ MessageTitleForUsersAttemptingToLogOn
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsmachineinactivitylimit"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMachineInactivityLimit 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MachineInactivityLimit
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ MachineInactivityLimit
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsmachineinactivitylimitinminutes"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMachineInactivityLimitInMinutes 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_MachineInactivityLimit
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ MachineInactivityLimit
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsminimumsessionsecurityforntlmsspbasedclients"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_MinimumSessionSecurityForNTLMSSPBasedClients
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity \_ MinimumSessionSecurityForNTLMSSPBasedClients
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsminimumsessionsecurityforntlmsspbasedservers"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity\_MinimumSessionSecurityForNTLMSSPBasedServers
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkSecurity \_ MinimumSessionSecurityForNTLMSSPBasedServers
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsonlyelevatesignedexecutables"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsOnlyElevateSignedExecutables 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_OnlyElevateExecutableFilesThatAreSignedAndValidated
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ OnlyElevateExecutableFilesThatAreSignedAndValidated
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsrestrictanonymousaccesstonamedpipesandshares"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess\_RestrictAnonymousAccessToNamedPipesAndShares
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/NetworkAccess \_ RestrictAnonymousAccessToNamedPipesAndShares
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionssmartcardremovalbehavior"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsSmartCardRemovalBehavior 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon\_SmartCardRemovalBehavior
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/InteractiveLogon \_ SmartCardRemovalBehavior
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsstandarduserelevationpromptbehavior"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsStandardUserElevationPromptBehavior 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_BehaviorOfTheElevationPromptForStandardUsers
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ BehaviorOfTheElevationPromptForStandardUsers
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsswitchtosecuredesktopwhenpromptingforelevation"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_SwitchToTheSecureDesktopWhenPromptingForElevation
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ SwitchToTheSecureDesktopWhenPromptingForElevation
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsuseadminapprovalmode"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsUseAdminApprovalMode 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_UseAdminApprovalMode
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ UseAdminApprovalMode
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsuseadminapprovalmodeforadministrators"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsUseAdminApprovalModeForAdministrators 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_RunAllAdministratorsInAdminApprovalMode
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ RunAllAdministratorsInAdminApprovalMode
 
 ### <a name="windows10endpointprotectionconfigurationlocalsecurityoptionsvirtualizefileandregistrywritefailurestoperuserlocations"></a>Windows10EndpointProtectionConfiguration.LocalSecurityOptionsVirtualizeFileAndRegistryWriteFailuresToPerUserLocations 
 **CSP**:./Vendor/MSFT/policy  
-**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl\_VirtualizeFileAndRegistryWriteFailuresToPerUserLocations
+**Offset-URI**:/config/LocalPoliciesSecurityOptions/UserAccountControl \_ VirtualizeFileAndRegistryWriteFailuresToPerUserLocations
 
 ### <a name="windows10endpointprotectionconfigurationnetworkicmpredirectsoverrideospfgeneratedroutes"></a>Windows10EndpointProtectionConfiguration.NetworkIcmpRedirectsOverrideOspfGeneratedRoutes 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -821,7 +821,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementclientbasicauthentication"></a>Windows10EndpointProtectionConfiguration.RemoteManagementClientBasicAuthentication 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/RemoteManagement/AllowBasicAuthentication\_-klient
+**Offset-URI**:/config/RemoteManagement/AllowBasicAuthentication- \_ klient
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementclientdigestauthentication"></a>Windows10EndpointProtectionConfiguration.RemoteManagementClientDigestAuthentication 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -829,11 +829,11 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementclientunencryptedtraffic"></a>Windows10EndpointProtectionConfiguration.RemoteManagementClientUnencryptedTraffic 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/RemoteManagement/AllowUnencryptedTraffic\_-klient
+**Offset-URI**:/config/RemoteManagement/AllowUnencryptedTraffic- \_ klient
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementservicebasicauthentication"></a>Windows10EndpointProtectionConfiguration.RemoteManagementServiceBasicAuthentication 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/RemoteManagement/AllowBasicAuthentication\_-tjänst
+**Offset-URI**:/config/RemoteManagement/AllowBasicAuthentication \_ -tjänst
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementservicestoringrunascredentials"></a>Windows10EndpointProtectionConfiguration.RemoteManagementServiceStoringRunAsCredentials 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -841,7 +841,7 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ### <a name="windows10endpointprotectionconfigurationremotemanagementserviceunencryptedtraffic"></a>Windows10EndpointProtectionConfiguration.RemoteManagementServiceUnencryptedTraffic 
 **CSP**:./Device/Vendor/MSFT/policy  
-**Offset-URI**:/config/RemoteManagement/AllowUnencryptedTraffic\_-tjänst
+**Offset-URI**:/config/RemoteManagement/AllowUnencryptedTraffic \_ -tjänst
 
 ### <a name="windows10endpointprotectionconfigurationrpcunauthenticatedclientoptions"></a>Windows10EndpointProtectionConfiguration.RpcUnauthenticatedClientOptions 
 **CSP**:./Device/Vendor/MSFT/policy  
@@ -2986,5 +2986,5 @@ Om du vill se de Windows 10-versioner som följande API: er använder använder 
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Översikt över enhets konfiguration](../configuration/device-profiles.md)
-- [Configuration Service Provider-referens](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference) (öppnar en annan webbplats för dokument)
+- [Översikt över enhetskonfiguration](../configuration/device-profiles.md)
+- [Configuration Service Provider-referens](/windows/client-management/mdm/configuration-service-provider-reference) (öppnar en annan webbplats för dokument)
