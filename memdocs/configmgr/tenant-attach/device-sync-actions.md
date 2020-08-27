@@ -10,12 +10,12 @@ ms.assetid: 7a597d9e-a878-48d0-a7ce-56a1dbfd0e5c
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: 4bdfbabf27906eb8a79ec8ba24f51c3e176dc028
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: bac86ca5a74d35b64e211936806ef1735f4e0eea
+ms.sourcegitcommit: 231e2c3913a1d585310dfab7ffcd5c78c6bc5703
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88700413"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970472"
 ---
 # <a name="microsoft-endpoint-manager-tenant-attach-device-sync-and-device-actions"></a><a name="bkmk_attach"></a> Microsoft Endpoint Manager-klient ansluter: synkronisering av enhet och enhets åtgärder
 <!--3555758 live 3/4/2020-->
@@ -40,6 +40,8 @@ Från och med Configuration Manager version 2002 kan du ladda upp dina Configura
 
 [!INCLUDE [Internet endpoints for tenant attach](../core/plan-design/network/includes/internet-endpoints-tenant-attach.md)]
 
+Tjänst anslutnings punkten gör en lång, utgående anslutning till dessa slut punkter. Kontrol lera att proxyn som används för tjänst anslutnings punkten inte har nått tids gränsen för utgående anslutningar för snabbt. Vi rekommenderar 3 minuter för utgående anslutningar till dessa Internet slut punkter. <!--7820969-->
+
 ## <a name="enable-device-upload-when-co-management-is-already-enabled"></a><a name="bkmk_edit"></a> Aktivera enhets uppladdning när samtidig hantering redan har Aktiver ATS
 
 Om du har aktiverat samhantering för närvarande använder du egenskaper för samhantering för att aktivera enhets uppladdning. När samhantering inte redan har Aktiver ATS [använder du guiden **Konfigurera samhantering** ](#bkmk_config) för att aktivera enhets uppladdning i stället.
@@ -48,7 +50,7 @@ När samhantering redan har Aktiver ATS redigerar du egenskaperna för samhanter
 
 1. Gå till **Administration** > **Översikt** > **Molntjänster** > **Samhantering** i administrationskonsolen för Configuration Manager.
 1. I menyfliksområdet väljer du **Egenskaper** för produktions principen för samhantering.
-1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Välj **Tillämpa**.
+1. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Välj **Använd**.
    - Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Om det behövs kan du begränsa överföringen till en enda enhets samling.
 1. Markera alternativet om du vill **Aktivera slut punkts analys för enheter som laddats upp till Microsoft Endpoint Manager** om du också vill få insikter för att optimera slut användar upplevelsen i [slut punkts analys](../../analytics/overview.md).
 
