@@ -14,6 +14,14 @@
       href: cmpivot-overview-attached.md
     - name: CMPivot-exempelskript
       href: cmpivot-samples-attached.md
+- name: Slutpunktssäkerhet för enheter anslutna till klientorganisation (förhandsversion)
+  items:
+    - name: Aktivera slutpunktsskydd
+      href: atp-onboard.md
+    - name: Skapa och distribuera antiviruspolicy för slutpunktssäkerhet
+      href: deploy-antivirus-policy.md
+    - name: Inställningar för Microsoft Defenders antiviruspolicy
+      href: ../../intune/protect/antivirus-microsoft-defender-settings-windows-tenant-attach.md?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json
 - name: Felsöka
   items:
     - name: Anslutnings- och enhetsåtgärder för klientorganisation

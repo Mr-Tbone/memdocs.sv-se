@@ -103,6 +103,8 @@
               href: advanced-threat-protection-monitor.md
         - name: Migrering av brandväggsregel
           href: endpoint-security-firewall-rule-tool.md
+        - name: Klientkoppling
+          href: tenant-attach-intune.md
         - name: Kryptera diskar
           items:
             - name: Hantera BitLocker-princip
@@ -308,8 +310,10 @@
           items:
             - name: Inställningar för macOS Defender Antivirus
               href: antivirus-microsoft-defender-settings-macos.md
-            - name: Inställningar för Windows 10 Microsoft Defender Antivirus
+            - name: Inställningar för Defender Antivirus på Windows 10
               href: antivirus-microsoft-defender-settings-windows.md
+            - name: Inställningar för klientorganisationsansluten Defender Antivirus
+              href: antivirus-microsoft-defender-settings-windows-tenant-attach.md
             - name: Inställningar för Windows-säkerhetsfunktioner
               href: antivirus-security-experience-windows-settings.md
         - name: Profilinställningar för diskkryptering
