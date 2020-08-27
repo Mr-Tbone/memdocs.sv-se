@@ -2,7 +2,7 @@
 title: Konfigurera Wake on LAN
 titleSuffix: Configuration Manager
 description: Välj Wake On LAN inställningar i Configuration Manager.
-ms.date: 08/11/2020
+ms.date: 08/26/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b475a0c8-85d6-4cc4-b11f-32c0cc98239e
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: dcf6005d0364106df8717a1151dbad617e455ff9
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 33283b13bc28c7d102f014ac3cb4048681343ac2
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88127043"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907855"
 ---
 # <a name="how-to-configure-wake-on-lan-in-configuration-manager"></a>Så här konfigurerar du Wake on LAN i Configuration Manager
 
@@ -23,11 +23,11 @@ ms.locfileid: "88127043"
 
 Ange inställningar för Wake-on-LAN för Configuration Manager när du vill ta bort datorer från vilo läge.
 
-## <a name="wake-on-lan-starting-in-version-1810"></a><a name="bkmk_wol-1810"></a>Wake on LAN som börjar i version 1810
+## <a name="wake-on-lan-starting-in-version-1810"></a><a name="bkmk_wol-1810"></a> Wake on LAN som börjar i version 1810
 <!--3607710-->
 Från och med Configuration Manager 1810 är det ett nytt sätt att aktivera datorer i vilo läge. Du kan aktivera klienter från Configuration Manager-konsolen även om klienten inte finns i samma undernät som plats servern. Om du behöver utföra underhåll eller fråga enheter är du inte begränsad av fjärranslutna klienter som är i ström spar läge. Plats servern använder klient aviserings kanalen för att identifiera andra klienter som är aktiva på samma fjärrundernät och använder sedan dessa klienter för att skicka en Wake-on-LAN-begäran (Magic Packet). Genom att använda klienten meddelande kanal kan du undvika MAC-klaffar som kan orsaka att porten stängs av av routern. Den nya versionen av Wake on LAN kan aktive ras samtidigt som den [äldre versionen](#bkmk_wol-previous).
 
-### <a name="limitations"></a>Begränsningar
+### <a name="prerequisites-and-limitations"></a>Krav och begränsningar
 <!--7323898, 7363492-->
 - Minst en klient i mål under nätet måste vara aktiv.
 - Den här funktionen har inte stöd för följande nät verks tekniker:
@@ -38,6 +38,8 @@ Från och med Configuration Manager 1810 är det ett nytt sätt att aktivera dat
 - Datorer som bara aktive ras när du meddelar dem genom **aktivering** av klient meddelanden.
     - För aktivering när ett tids gräns inträffar används den äldre versionen av Wake on LAN.
     -  Om den äldre versionen inte är aktive rad sker inte klient aktivering för distributioner som skapats med inställningarna **Använd Wake-on-LAN för att väcka klienter för nödvändiga distributioner** eller **Skicka väcknings paket**.  
+- Varaktigheten för DHCP-lån får inte vara oändligt. <!--8018584-->
+   - Du kan se att SleepAgent_ &lt; *domain* \> @SYSTEM_0.log -domänen blir mycket stor och eventuellt en sändning storm i miljöer där DHCP-lån är inställda på oändligt.  
 
 ### <a name="security-role-permissions"></a>Säkerhets roll behörigheter
 
@@ -82,7 +84,7 @@ Om båda versionerna av Wake on LAN är aktiverade kan du använda meddelande om
 Från och med version 1902, meddelas den befintliga inställningen för **Wake on LAN port number (UDP)** i **aktiverings** klienten.
 
 
-## <a name="wake-on-lan-for-version-1806-and-earlier"></a><a name="bkmk_wol-previous"></a>Wake on LAN för version 1806 och tidigare
+## <a name="wake-on-lan-for-version-1806-and-earlier"></a><a name="bkmk_wol-previous"></a>  Wake on LAN för version 1806 och tidigare
 
 Ange inställningar för Wake-on-LAN för Configuration Manager när du vill att datorer ska vara i vilo läge för att installera nödvändig program vara, t. ex. program varu uppdateringar, program, aktivitetssekvenser och program.
 
