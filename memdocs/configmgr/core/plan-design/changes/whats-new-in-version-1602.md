@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9a54ee5fb427f276ec755e748513b178d0c026ab
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 334397cfa52c90694823107c2144bfbbcbd509ac
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88698579"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993632"
 ---
 # <a name="what39s-new-in-version-1602-of-configuration-manager"></a>Vad&#39;s nya i version 1602 av Configuration Manager
 
@@ -98,8 +98,8 @@ De här apparna finns i noden **program** i Configuration Manager-konsolen.
 
 ## <a name="software-updates"></a>Programuppdateringar  
 
-### <a name="manage-office-365-client-updates"></a>Hantera Office 365-klient uppdateringar  
- Configuration Manager kan hantera Office 365-klient uppdateringar med hjälp av arbets flödet för program uppdaterings hantering. Mer information finns i [Hantera Office 365 ProPlus-uppdateringar med Configuration Manager](../../../sum/deploy-use/manage-office-365-proplus-updates.md).  
+### <a name="manage-microsoft-365-client-updates"></a>Hantera Microsoft 365 klient uppdateringar  
+ Configuration Manager kan hantera Microsoft 365 klient uppdateringar med hjälp av arbets flödet för program uppdaterings hantering. Mer information finns i [Hantera uppdateringar för Office 365-appar med Configuration Manager](../../../sum/deploy-use/manage-office-365-proplus-updates.md).  
 
 ## <a name="compliance-settings"></a>Kompatibilitetsinställningar  
 
@@ -112,14 +112,14 @@ De här apparna finns i noden **program** i Configuration Manager-konsolen.
  Med hel skärms läget kan du låsa en enhet så att bara vissa funktioner fungerar. Du kan t.ex. tillåta att enheten ska kunna köra endast en hanterad app som du anger, eller så kan du inaktivera volymknapparna på en enhet. De här inställningarna kan användas på en demonstrationsmodell av en enhet, eller en enhet som bara används för att utföra en enda funktion, till exempel i en butikskassa. I Configuration Manager kan du nu ange inställningar för hel skärms läge för Samsung KNOX Standard-enheter.  
 
 
-## <a name="conditional-access"></a>Villkorlig åtkomst  
+## <a name="conditional-access"></a>Villkorsstyrd åtkomst  
 
 ### <a name="conditional-access-for-pcs-managed-by-configuration-manager"></a>Villkorlig åtkomst för datorer som hanteras av Configuration Manager  
  Före den här versionen, för att konfigurera villkorlig åtkomst för en dator, måste datorn antingen vara registrerad i Intune eller vara en domänansluten dator. Från och med 1602-uppdateringen stöds villkorlig åtkomst för datorer som hanteras av Configuration Manager. För datorer som hanteras av Configuration Manager kan du begränsa åtkomsten till Exchange Online och SharePoint Online enbart till enheter som är kompatibla med de efterlevnadsprinciper som du har angett.  
 
 
 ### <a name="restricting-access-based-on-the-health-of-devices"></a>Begränsa åtkomst baserat på enheternas hälsa  
- Du kan nu begränsa åtkomsten till e-post och Office 365-tjänster baserat på enhetens hälso tillstånd, enligt rapporter från tjänsten hälsoattestering. Enheter som hanteras av Intune ingår dessutom i enhetens hälso rapporter.  
+ Du kan nu begränsa åtkomsten till e-post och Microsoft 365 tjänster baserat på enhetens hälso tillstånd, enligt rapporter från tjänsten hälsoattestering. Enheter som hanteras av Intune ingår dessutom i enhetens hälso rapporter.  
 
  Configuration Manager-konsolen innehåller en ny efterlevnadsprincip som gör att du kan ange om enheterna ska tillåtas eller blockeras för att få åtkomst baserat på deras hälso status. Information om tjänsten hälsoattestering och hur hälsan för enheter rapporteras i Intune finns i [hälsoattestering för Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 

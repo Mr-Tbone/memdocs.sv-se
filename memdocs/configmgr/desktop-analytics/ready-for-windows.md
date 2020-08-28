@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
 ROBOTS: NOINDEX
-ms.openlocfilehash: 63aba639eea221c3a13f7ebeabaa1b96a8439a72
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 484b1d808484984b4beaf434c0c27f2f1bec4e10
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88700777"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995202"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Klar för vanliga frågor och svar om moderna skriv bord
 
@@ -45,11 +45,11 @@ Möjliga kategorier är:
 
 ### <a name="what-happened-to-the-ready-for-windows-website"></a>Vad hände med webbplatsen för redo för Windows?
 
-Många kunder har utmaningar med att hämta och hålla dig uppdaterad med Windows 10 och Office 365 ProPlus. Den primära utmaningen är att testa program, eftersom den här processen vanligt vis är manuell. Det är tids krävande för IT-administratörer och program ägare att kontinuerligt analysera befintliga program och sedan åtgärda eventuella problem som uppstår.
+Många kunder har utmaningar med att hämta och hålla dig uppdaterad med Windows 10 och Microsoft 365 appar för företag. Den primära utmaningen är att testa program, eftersom den här processen vanligt vis är manuell. Det är tids krävande för IT-administratörer och program ägare att kontinuerligt analysera befintliga program och sedan åtgärda eventuella problem som uppstår.
 
-Det *färdiga för modern Skriv bords* katalog som listas program varu lösningar som stöds och används på kommersiella enheter som kör Windows 10 och Office 365 ProPlus. Katalogen hjälper IT-chefer som överväger de senaste versionerna av Windows 10 och Office 365 för sina distributioner.
+Det *färdiga för modern Skriv bords* katalog som listas program varu lösningar som stöds och används på kommersiella enheter som kör Windows 10 och Microsoft 365 appar för företag. Katalogen hjälper IT-chefer som överväger de senaste versionerna av Windows 10 och Microsoft 365 för deras distributioner.
 
-Feedback från IT-chefer är att de vill att dessa insikter integreras med de verktyg som redan används för att planera sina distributions planer. Använd funktionerna [Desktop Analytics](https://aka.ms/dadocs) och [Office 365 ProPlus readiness](/deployoffice/readiness-tools#office-365-proplus-readiness-features-in-configuration-manager-current-branch) i Configuration Manager för att planera och hantera dina Windows 10-och Office 365 ProPlus-uppgraderings projekt. 
+Feedback från IT-chefer är att de vill att dessa insikter integreras med de verktyg som redan används för att planera sina distributions planer. Använd funktionerna för [stationär analys](https://aka.ms/dadocs) och [Microsoft 365 Apps-beredskap](https://docs.microsoft.com/deployoffice/readiness-tools#office-365-proplus-readiness-features-in-configuration-manager-current-branch) i Configuration Manager för att planera och hantera dina Windows 10-och Microsoft 365-appar för Enterprise Upgrade-projekt. 
 
 > [!Note]
 > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
@@ -100,11 +100,11 @@ Desktop Analytics tillhandahåller en inventering av [enheterna och deras instal
 
 ### <a name="can-i-still-list-my-software-solution-in-desktop-analytics"></a>Kan jag fortfarande visa en program varu lösning i Desktop Analytics?
 
-Publicera en support instruktion som produkten fungerar med 32-bitars eller 64-bitars Windows 10 eller Office 365 ProPlus. Prata med din Microsoft-kontakt för att demonstrera dina lösningar i Desktop Analytics.
+Publicera en support instruktion som produkten fungerar med 32-bitars eller 64-bitars Windows 10-eller Microsoft 365-appar för företag. Prata med din Microsoft-kontakt för att demonstrera dina lösningar i Desktop Analytics.
 
 ### <a name="how-can-listing-my-solutions-benefit-me"></a>Hur kan jag få en lista över mina lösningar?
 
-Tusentals IT-administratörer hanterar miljon tals enheter med Configuration Manager-och skriv bords analys. De använder dessa verktyg för att på ett säkert sätt planera och uppgradera sina organisationer till den senaste versionen av Windows 10 och Office 365 ProPlus. De kan också använda dem för att fatta köp beslut för program varu lösningar.
+Tusentals IT-administratörer hanterar miljon tals enheter med Configuration Manager-och skriv bords analys. De använder dessa verktyg för att på ett säkert sätt planera och uppgradera sina organisationer till den senaste versionen av Windows 10 och Microsoft 365 appar för företag. De kan också använda dem för att fatta köp beslut för program varu lösningar.
 
 Microsoft integrerar support satser från program varu leverantörer med den information som de får från kommersiella enheter. Organisationer runtom i världen och sedan använda dessa data i verktyg för Skriv bords analys och Office-beredskap. 
 
@@ -118,8 +118,8 @@ Utvärdera prestanda för dina lösningar med hälso-och mått rapporter via Dev
 - [Skrivbord](/windows/desktop/appxpkg/windows-desktop-application-program)
 - [Office Add-ins](/office/dev/store/update-unpublish-and-view-metrics) 
 
-### <a name="how-can-i-develop-compatible-assets-for-windows-10-and-office-365-proplus"></a>Hur kan jag utveckla kompatibla till gångar för Windows 10 och Office 365 ProPlus?
+### <a name="how-can-i-develop-compatible-assets-for-windows-10-and-microsoft-365-apps-for-enterprise"></a>Hur kan jag utveckla kompatibla till gångar för Windows 10 och Microsoft 365 appar för företag?
 
 Kontrol lera att dina Skriv bords program är kompatibla nu och håll dem kompatibla med Windows 10 i framtiden. Mer information finns i [programkompatibilitet för utvecklare](https://developer.microsoft.com/windows/desktop/app-compatibility).
 
-Om du utvecklar lösningar för Office 365 ProPlus, se [metod tips för utveckling för com, VSTO och VBA-tillägg i Office](/visualstudio/vsto/development-best-practices-for-com-vsto-and-vba-add-ins-in-office).
+Om du utvecklar lösningar för Microsoft 365 appar för företag, se [metod tips för utveckling för com, VSTO och VBA-tillägg i Office](https://docs.microsoft.com/visualstudio/vsto/development-best-practices-for-com-vsto-and-vba-add-ins-in-office).

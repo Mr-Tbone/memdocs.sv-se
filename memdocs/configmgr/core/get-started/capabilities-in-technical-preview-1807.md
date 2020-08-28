@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8ead53c71e336001ac820a437fa67758c6375cbd
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: bc848cd1f6365b5a94c915a00517ca0a4abb8e4a
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88694380"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995321"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funktioner i Configuration Manager Technical Preview version 1807 
 
@@ -42,14 +42,14 @@ Steps to workaround, if any.
 
 ## <a name="known-issues"></a>Kända problem 
 
-### <a name="issues-with-office-365-software-updates"></a><a name="ki_o365"></a> Problem med Office 365-program uppdateringar
+### <a name="issues-with-microsoft-365-software-updates"></a><a name="ki_o365"></a> Problem med Microsoft 365 program uppdateringar
 <!--521365-->
-Om du hanterar Office 365-uppdateringar med teknisk för hands version 1806 och 1806,2 kan de Miss lyckas med att installera på klienter. 
+Om du hanterar Microsoft 365 uppdateringar med hjälp av Technical Preview-underavdelnings versionerna 1806 och 1806,2 kan de Miss lyckas med att installera på klienter. 
 
 #### <a name="workaround"></a>Lösning
-- Ta bort befintliga distributions paket och program uppdaterings grupper för Office 365.  
+- Ta bort befintliga distributions paket och program uppdaterings grupper för Microsoft 365.  
 
-- Från den 31 juli 2018 synkroniserar du Office 365-program uppdateringar och distribuerar bara de senaste uppdateringarna.  
+- Från och med den 31 juli 2018 ska du synkronisera Microsoft 365 program uppdateringar och endast distribuera de senaste uppdateringarna.  
 
 
 

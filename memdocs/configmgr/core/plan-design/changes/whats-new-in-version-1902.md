@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: f758456ad75c4acde1b050be75d653cc0e1dcfa1
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 54794a575cda4197bc11160d1c5e374d06c143c6
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88700375"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995253"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Vad är nytt i version 1902 av Configuration Manager aktuella grenen
 
@@ -351,27 +351,27 @@ Använd Configuration Manager för att flytta Windows-kända mappar till OneDriv
 
 Mer information om den här funktionen i OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](/onedrive/redirect-known-folders).
 
-Börja [med att hitta ditt Office 365-klient-ID](/onedrive/find-your-office-365-tenant-id). Distribuera sedan 18.111.0603.0004 för OneDrive-synkronisering eller senare. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](/onedrive/deploy-on-windows).  
+Börja [med att hitta Microsoft 365 klient-ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id). Distribuera sedan 18.111.0603.0004 för OneDrive-synkronisering eller senare. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
 
 Om du vill skapa och distribuera en OneDrive för företag-profil går du till arbets ytan **till gångar och efterlevnad** i Configuration Manager-konsolen. Expandera **kompatibilitetsinställningar och välj**noden **OneDrive för företag-profiler** .  
 
 Mer information finns i avsnittet omdirigera Windows kända mappar till OneDrive i artikeln om [OneDrive för företag-profiler](../../../compliance/deploy-use/onedrive-profile.md) .
 
-### <a name="integration-for-office-365-proplus-readiness"></a>Integrering för Office 365 ProPlus-beredskap
+### <a name="integration-for-microsoft-365-apps-for-enterprise-readiness"></a>Integrering för Microsoft 365-appar för företags beredskap
 
 <!--3735402-->
-Använd Configuration Manager för att identifiera enheter med hög tillförlitlighet som är klara att uppgradera till Office 365 ProPlus. Integrationen ger insikter om eventuella kompatibilitetsproblem med Office-tillägg och makron som används i din miljö. Använd sedan Configuration Manager för att distribuera Office till färdiga enheter.
+Använd Configuration Manager för att identifiera enheter med hög exakthet som är klara att uppgraderas till Microsoft 365 appar för företag. Integrationen ger insikter om eventuella kompatibilitetsproblem med Office-tillägg och makron som används i din miljö. Använd sedan Configuration Manager för att distribuera Office till färdiga enheter.
 
-Den befintliga instrument panelen för Office 365-klient hantering innehåller nu en ny panel, **Office 365 ProPlus uppgraderingsberedskap**.
+Den befintliga Microsoft 365-instrument panelen för klient hantering innehåller nu en ny panel, **Office 365 ProPlus uppgraderingsberedskap**.
 
-Mer information finns i [instrument panelen för Office 365-klient hantering](../../../sum/deploy-use/office-365-dashboard.md#bkmk_o365_readiness)
+Mer information finns i [Microsoft 365 instrument panel för klient hantering](../../../sum/deploy-use/office-365-dashboard.md#bkmk_o365_readiness)
 
-### <a name="additional-languages-for-office-365-updates"></a>Ytterligare språk för Office 365-uppdateringar
+### <a name="additional-languages-for-microsoft-365-updates"></a>Ytterligare språk för Microsoft 365 uppdateringar
 
 <!--3555955-->
-Configuration Manager stöder nu alla språk som stöds för Office 365-klient uppdateringar. Uppdaterings arbets flödet delar nu upp 38-språken för **Windows Update** från de många språken för **klient uppdatering av Office 365**.
+Configuration Manager stöder nu alla språk som stöds för Microsoft 365 klient uppdateringar. Uppdaterings arbets flödet delar nu upp 38-språken för **Windows Update** från de många språken för **klient uppdatering av Office 365**.
 
-Mer information finns i [Hantera Office 365-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#bkmk_o365_lang)
+Mer information finns i [hantera Microsoft 365 uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#bkmk_o365_lang)
 
 ### <a name="office-products-on-lifecycle-dashboard"></a>Instrument panel för Office-produkter på livs cykel
 

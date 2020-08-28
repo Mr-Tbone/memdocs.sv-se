@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 18ea44f662591a21750fb630425ddfb975678aa2
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 9278e6cb148768e993706fe112bbfd70121cc6b9
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88695604"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995474"
 ---
 # <a name="capabilities-in-technical-preview-1606-for-configuration-manager"></a>Funktioner i Technical Preview 1606 för Configuration Manager
 
@@ -215,11 +215,11 @@ När tjänsten och rollerna har kon figurer ATS helt får de interna klienterna 
 
 När klienterna har den nya plats informationen för tjänsten Cloud proxy kan du prova att kontrol lera statusen för klienter som inte längre finns i det interna privata nätverket, men som har Internet åtkomst. Du kan också övervaka trafiken i Cloud proxy service genom att gå till **Administration > Cloud Services > Cloud proxy-tjänsten**, välja tjänsten i list rutan och Visa trafik informationen i informations fönstret.   
 
-## <a name="manage-the-office-365-client-agent-in-configuration-manager"></a><a name="manage_o365"></a>Hantera Office 365-klientagenten i Configuration Manager  
+## <a name="manage-the-microsoft-365-client-agent-in-configuration-manager"></a><a name="manage_o365"></a>Hantera Microsoft 365 klient agenten i Configuration Manager  
 
-Från och med den tekniska för hands versionen 1606 kan du använda en Configuration Manager klient agent inställning, i stället för grup princip, för att låta Office 365-klienter ta emot uppdateringar från Configuration Manager. När du har konfigurerat den här inställningen och distribuerat Office 365-uppdateringar kommunicerar Configuration Manager klient agenten med Office 365-klient agenten att hämta Office 365-uppdateringar från en distributions plats och installera dem. Configuration Manager också ta inventering av klient agent inställningen.
+Från och med den tekniska för hands versionen 1606 kan du använda en Configuration Manager klient agent inställning, i stället för grup princip, för att aktivera Microsoft 365 klienter för att ta emot uppdateringar från Configuration Manager. När du har konfigurerat den här inställningen och distribuerat Microsoft 365 uppdateringar kommunicerar Configuration Manager klient agenten med Microsoft 365 klient agenten för att hämta Microsoft 365 uppdateringar från en distributions plats och installera dem. Configuration Manager också ta inventering av klient agent inställningen.
 
-Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](../../sum/deploy-use/manage-office-365-proplus-updates.md).
+Mer information finns i [hantera Microsoft 365 appar för företags uppdateringar](../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 ### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Ange Configuration Manager klient inställningen för att hantera Office 365-klient agenten
 1.  I Configuration Manager-konsolen klickar du på **Administration**  >  **Översikt**  >  **klient inställningar**.

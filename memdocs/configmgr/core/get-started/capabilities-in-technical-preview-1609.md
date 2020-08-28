@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9d58ffee30986efeda1716358ab7aa6c1d36cbf5
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 05ed0daf56275b2e0ed46b2f9dd93fd66eb360be
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88695689"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995542"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-configuration-manager"></a>Funktioner i Technical Preview 1609 för Configuration Manager
 
@@ -347,36 +347,36 @@ På instrument panelen visas diagram med följande:
 - Office 365-klient versioner
 - Office 365-klient språk
 - Office 365-klient kanaler     
-Mer information finns i [Översikt över uppdateringskanaler för Office 365 ProPlus](/deployoffice/overview-update-channels).
+Mer information finns i [Översikt över uppdateringskanaler för Microsoft 365-appar](https://docs.microsoft.com/deployoffice/overview-update-channels).
 - Regler för automatisk distribution som har Office 365-klienten valt i uppsättningen tillgängliga produkter.
 
 Du kan vidta följande åtgärder på instrument panelen:
 - Överst på instrument panelen använder du List rutan **samling** för att filtrera instrument panels data efter medlemmar i en angiven samling.
-- Klicka på **office 365 installations program** på den övre högra sidan av instrument panelen för att starta installations guiden för Office 365-klienten för att distribuera Office 365-appar till klienter. Mer information finns i [distribuera Office 365-appar till klienter](#deploy-office-365-apps-to-clients).
-- Klicka på **skapa en ADR** i den mittersta högra sidan av instrument panelen för att öppna guiden automatisk distributions regel för att skapa en ny regel för automatisk distribution (ADR). Om du vill skapa en ADR för Office 365-appar väljer du **office 365-klienten** när du väljer produkten. Mer information finns i [distribuera program uppdateringar automatiskt](../../sum/deploy-use/automatically-deploy-software-updates.md).
+- Klicka på **office 365 installations program** på den övre högra sidan av instrument panelen för att starta installations guiden för Office 365-klienten för att distribuera Microsoft 365 appar till klienter. Mer information finns i [distribuera Microsoft 365 appar till klienter](#deploy-microsoft-365-apps-to-clients).
+- Klicka på **skapa en ADR** i den mittersta högra sidan av instrument panelen för att öppna guiden automatisk distributions regel för att skapa en ny regel för automatisk distribution (ADR). Om du vill skapa en ADR för Microsoft 365 appar väljer du **Office 365-klient** när du väljer produkten. Mer information finns i [distribuera program uppdateringar automatiskt](../../sum/deploy-use/automatically-deploy-software-updates.md).
 - Klicka på **skapa klient agent inställningar** på den nedre högra sidan av instrument panelen för att öppna inställningarna för klient agenten. Mer information finns i [om klient inställningar](../clients/deploy/about-client-settings.md).
 
 
 
-Mer information om uppdateringar för Office 365 ProPlus-uppdateringar finns i [Hantera Office 365 ProPlus updates med Configuration Manager](../../sum/deploy-use/manage-office-365-proplus-updates.md).
+Mer information om Microsoft 365 appar för företags uppdateringar finns i [Hantera uppdateringar av Microsoft 365 appar med Configuration Manager](../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
-## <a name="deploy-office-365-apps-to-clients"></a>Distribuera Office 365-appar till klienter
-I den här versionen kan du från instrument panelen för Office 365-klient hantering starta installations programmet för Office 365 som gör att du kan konfigurera installations inställningar för Office 365, hämta filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager.
+## <a name="deploy-microsoft-365-apps-to-clients"></a>Distribuera Microsoft 365 appar till klienter
+I den här versionen kan du från instrument panelen för Office 365-klient hantering starta Office 365-installationsprogrammet som låter dig konfigurera Microsoft 365 installations inställningar, ladda ned filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager.
 
-### <a name="limitations-of-office-365-deployment"></a>Begränsningar för Office 365-distribution
+### <a name="limitations-of-microsoft-365-deployment"></a>Begränsningar för Microsoft 365 distribution
 - Du kan ha problem när du försöker importera befintliga klient inställningar (XML) i installations guiden för Office 365-appen. Du kan konfigurera klient inställningarna manuellt utan problem.
 
-#### <a name="to-deploy-office-365-apps-to-clients"></a>Distribuera Office 365-appar till klienter
+#### <a name="to-deploy-microsoft-365-apps-to-clients"></a>Distribuera Microsoft 365-appar till klienter
 1. I Configuration Manager-konsolen navigerar du till översikt över **program varu bibliotek**  >  **Overview**  >  **kontor 365-klient hantering**.
 2. Klicka på **Office 365 installations program** i det övre högra fönstret. Installations guiden för Office 365-klienten öppnas.
 3. På sidan **program inställningar** anger du ett namn och en beskrivning för appen, anger nedladdnings platsen för filerna och klickar sedan på **Nästa**. Observera att platsen måste anges i formatet &#92;&#92;*server*&#92;*resurs*.
-4. På sidan **Importera klient inställningar** väljer du om du vill importera klient inställningarna för Office 365 från en befintlig XML-konfigurationsfil eller ange inställningarna manuellt och klicka sedan på **Nästa**.
+4. På sidan **Importera klient inställningar** väljer du om du vill importera Microsoft 365 klient inställningar från en befintlig XML-konfigurationsfil eller ange inställningarna manuellt och klicka sedan på **Nästa**.
 När du har en befintlig konfigurations fil anger du platsen för filen och hoppar till steg 7. Observera att platsen måste anges i formatet &#92;&#92;*server*&#92;*dela*&#92;*fil namn*. Fil.
 
     > [!IMPORTANT]
     >Du kan ha problem när du försöker importera befintliga klient inställningar (XML) i den här tekniska för hands versionen.
 
-5. På sidan **klient produkter** väljer du den Office 365-svit som du använder, väljer de program som du vill inkludera, väljer eventuella ytterligare Office-produkter som ska inkluderas och klickar sedan på **Nästa**.
+5. På sidan **klient produkter** väljer du den Microsoft 365-svit som du använder, väljer de program som du vill inkludera, väljer eventuella ytterligare Office-produkter som ska inkluderas och klickar sedan på **Nästa**.
 6. På sidan **klient inställningar** väljer du de inställningar som ska inkluderas och klickar sedan på **Nästa**.
 7. På sidan **distribution** väljer du om du vill distribuera programmet och klickar sedan på **Nästa**.
 Om du väljer att inte distribuera paketet i guiden går du vidare till steg 9.
@@ -385,7 +385,7 @@ Om du väljer att inte distribuera paketet i guiden går du vidare till steg 9.
 10. Du kan distribuera eller redigera programmet precis som med andra program i Configuration Manager från program **bibliotek**  >  **Översikt**  >  **program hanterings**  >  **program**.
 
 >[!NOTE]
->När du har distribuerat Office 365-appar kan du skapa automatiska distributions regler för att underhålla apparna. Skapa en ADR för Office 365-appar genom att klicka på **skapa en ADR**och välja **Office 365-klient** när du väljer produkten. Mer information finns i [distribuera program uppdateringar automatiskt](../../sum/deploy-use/automatically-deploy-software-updates.md).
+>När du har distribuerat Microsoft 365 appar kan du skapa automatiska distributions regler för att underhålla apparna. Om du vill skapa en ADR för Microsoft 365 appar, klickar du på **skapa en ADR**och väljer **Office 365-klient** när du väljer produkten. Mer information finns i [distribuera program uppdateringar automatiskt](../../sum/deploy-use/automatically-deploy-software-updates.md).
 
 ## <a name="improvements-for-bios-to-uefi-conversion"></a><a name="BKMK_UEFIConversion"></a>Förbättringar av BIOS till UEFI-konvertering
 Nu kan du anpassa en aktivitetssekvens för operativ Systems distribution med en ny variabel, TSUEFIDrive, så att steget starta om datorn ska förbereda en FAT32-partition på hård disken för över gång till UEFI. Följande procedur visar ett exempel på hur du kan skapa steg i aktivitetssekvensen för att förbereda hård disken för BIOS till UEFI-konvertering.

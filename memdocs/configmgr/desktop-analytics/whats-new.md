@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
-ms.openlocfilehash: ce5043f090dd9c08a7a1e9ada5cb2020aabda11f
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: dd188b80375861cd08784d0574e737bfce7f2d92
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88819736"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993154"
 ---
 # <a name="whats-new-in-desktop-analytics"></a>Nyheter i Desktop Analytics
 
@@ -72,7 +72,7 @@ Skriv bords analys portalen kan nu Visa meddelande banderoller. Dessa aviseringa
 
 ### <a name="improvement-to-prerequisites"></a>Förbättringar av krav
 
-Skriv bords analys kräver inte längre att du distribuerar en Office 365-tjänst i din Azure Active Directory (Azure AD)-klient. **Office 365-klient admin** -appen i Azure AD är nu appen för **Skriv bords analys** , för att aktivera Configuration Manager hämtning av information och status från tjänsten.
+Skriv bords analys kräver inte längre att du distribuerar en Microsoft 365 tjänst i din Azure Active Directory (Azure AD)-klient. **Office 365-klient admin** -appen i Azure AD är nu appen för **Skriv bords analys** , för att aktivera Configuration Manager hämtning av information och status från tjänsten.
 
 ## <a name="may-2020"></a>Maj 2020
 

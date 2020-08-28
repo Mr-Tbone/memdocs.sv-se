@@ -10,12 +10,12 @@ ms.assetid: bce9e299-7b3a-4f51-8863-a322877daa2c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7c66200041bcc643dc7306b76c540daf2b0b1058
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: bfd7818622ca536fd3a7a00de95bd5400b060fd5
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128630"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994624"
 ---
 # <a name="diagnostic-and-usage-data-for-version-1902"></a>Diagnostik-och användnings data för version 1902
 
@@ -154,7 +154,7 @@ För Configuration Manager version 1902 omfattar den här nivån följande data:
 
 - Antal olika anpassningar för program katalogen  
 
-- Antal Office 365-program som skapats med instrument panelen  
+- Antal Microsoft 365 program som skapats med instrument panelen  
 
 - Antal paket efter typ  
 
@@ -203,7 +203,7 @@ För Configuration Manager version 1902 omfattar den här nivån följande data:
 - ***[Ny]*** Antal enheter efter status för Office ProPlus beredskap
 
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version  
 
@@ -441,7 +441,7 @@ För Configuration Manager version 1902 omfattar den här nivån följande data:
 
 - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-- Antal distribuerade Office 365-uppdateringar  
+- Antal distribuerade Microsoft 365 uppdateringar  
 
 - Antal synkroniserade Microsoft-ytaktiva driv rutiner  
 

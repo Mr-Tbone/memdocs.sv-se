@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e1f10f291619ecf6ff3d5b997046f035c02bf7e7
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 66fc996fe78f0b8171eec61fba277f9d51b0389f
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128669"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994658"
 ---
 # <a name="diagnostic-and-usage-data-for-1806"></a>Diagnostik-och användnings data för 1806
 
@@ -146,7 +146,7 @@ För Configuration Manager version 1806 omfattar den här nivån följande data:
 
 - Antal olika anpassningar för program katalogen
 
-- Antal Office 365-program som skapats med instrument panelen
+- Antal Microsoft 365 program som skapats med instrument panelen
 
 - Antal paket efter typ  
 
@@ -190,7 +190,7 @@ För Configuration Manager version 1806 omfattar den här nivån följande data:
 
 
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version
 
@@ -412,7 +412,7 @@ För Configuration Manager version 1806 omfattar den här nivån följande data:
 
 - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-- Antal distribuerade Office 365-uppdateringar  
+- Antal distribuerade Microsoft 365 uppdateringar  
 
 - Antal synkroniserade Microsoft-ytaktiva driv rutiner
 

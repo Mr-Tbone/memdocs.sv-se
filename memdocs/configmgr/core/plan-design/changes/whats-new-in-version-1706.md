@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: e0f2801a9bf3d587d0117a720f4151f431441291
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 2e823aad8fcf69861d21a99f0e65dcf8aaa40dcd
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88692833"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993394"
 ---
 # <a name="what39s-new-in-version-1706-of-configuration-manager"></a>Vad&#39;s nya i version 1706 av Configuration Manager
 
@@ -44,9 +44,9 @@ Version 1706 drops support for the following products:
 
 ## <a name="site-infrastructure"></a>Plats infrastruktur
 
-### <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365"></a>Stöd för klient-peer-cache för Express-installationsfiler för Windows 10 och Office 365  
+### <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-microsoft-365"></a>Stöd för klient-peer-cache för Express-installationsfiler för Windows 10 och Microsoft 365  
 <!-- 1352486 -->
-Från och med den här versionen stöder peer-cache distribution av installationsfiler för innehålls Express för Windows 10 och uppdaterings filer för Office 365. Det krävs inga ytterligare konfigurationer för att stödja den här ändringen.
+Från och med den här versionen stöder peer-cache distribution av installationsfiler för innehålls Express för Windows 10 och uppdaterings filer för Microsoft 365. Det krävs inga ytterligare konfigurationer för att stödja den här ändringen.
 
 ### <a name="updates-for-the-data-warehouse"></a>Uppdateringar för data lagret
 <!-- 1277922 -->
@@ -227,8 +227,8 @@ Nu kan du konfigurera regler för avstängning för Windows 10-funktions uppdate
 
 Mer information finns i [integration med Windows Update för företag i Windows 10](../../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md#configure-windows-update-for-business-deferral-policies).
 
-### <a name="improved-user-notifications-for-office-365-updates"></a>Förbättrade användar meddelanden för Office 365-uppdateringar
-Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Office 365-uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Mer information finns i [starta om beteende och klient meddelanden för Office 365-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md)
+### <a name="improved-user-notifications-for-microsoft-365-updates"></a>Förbättrade användar meddelanden för Microsoft 365 uppdateringar
+Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Microsoft 365 uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Mer information finns i [omstarts beteende och klient meddelanden för Microsoft 365 uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md)
 
 ## <a name="reporting"></a>Rapportering
 

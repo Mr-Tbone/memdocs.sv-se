@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 0ddad23dfde87fa402c01d4eaa21a1b76db27d93
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 06119bfc096564f70922249121f63c3d2039efe8
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88692935"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995457"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-configuration-manager"></a>Funktioner i Technical Preview 1705 för Configuration Manager
 
@@ -136,20 +136,20 @@ För att stoppa-platsen kan du använda [verktyget underhåll av hierarki](../se
 Att stoppa-platsen är detsamma som att stoppa Platskomponenthanteraren tjänsten (sitecomp) följt av SMS_Executive-tjänsten på plats servern.
 
 
-## <a name="improved-user-notifications-for-office-365-updates"></a>Förbättrade användar meddelanden för Office 365-uppdateringar
-Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Office 365-uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Före den här versionen stängdes Office-program som var öppna automatiskt utan varning när en Office 365-uppdatering skickades till en klient. Efter den här uppdateringen kommer Office-program inte längre att avslutas utan förvarning.
+## <a name="improved-user-notifications-for-microsoft-365-updates"></a>Förbättrade användar meddelanden för Microsoft 365 uppdateringar
+Förbättringar har gjorts för att använda Office Klicka-och-kör-funktionen när en klient installerar en Microsoft 365 uppdatering. Detta inkluderar popup-meddelanden och meddelanden i appen och en nedräknings upplevelse. Före den här versionen stängdes Office-program som var öppna automatiskt utan varning när en Microsoft 365 uppdatering skickades till en klient. Efter den här uppdateringen kommer Office-program inte längre att avslutas utan förvarning.
 
 ### <a name="prerequisites"></a>Förutsättningar
-Den här uppdateringen gäller för Office 365 ProPlus-klienter.
+Den här uppdateringen gäller för Microsoft 365 appar för företags klienter.
 
 ### <a name="known-issues"></a>Kända problem
-När en klient utvärderar en uppdaterings tilldelning för Office 365 för första gången och uppdateringen har en tids gräns som har schemalagts tidigare, schemalagts omedelbart eller schemalagt inom 30 minuter, kan Office 365-användar upplevelsen vara inkonsekvent. Klienten kan till exempel få en uppräknings dialog ruta för 30 minuter för uppdateringen, men den faktiska tvångs inläsningen kan starta innan nedräkningen slutfördes. Undvik det här problemet genom att tänka på följande:
-- Distribuera Office 365-uppdateringen med en tids gräns som har schemalagts för mer än 60 minuter före den aktuella tiden.
+När en klient utvärderar en Microsoft 365 uppdaterings tilldelning för första gången och uppdateringen har en schemalagd tids gräns som tidigare har schemalagts, schemalagts omedelbart eller schemalagts inom 30 minuter, kan Microsoft 365 användar upplevelsen vara inkonsekvent. Klienten kan till exempel få en uppräknings dialog ruta för 30 minuter för uppdateringen, men den faktiska tvångs inläsningen kan starta innan nedräkningen slutfördes. Undvik det här problemet genom att tänka på följande:
+- Distribuera Microsoft 365 uppdateringen med en tids gräns som är schemalagd i mer än 60 minuter före den aktuella tiden.
 - Konfigurera en underhålls period under icke-kontors tid för samlingen eller konfigurera en tvingande respitperiod för distributionen.
 
 ### <a name="try-it-out"></a>prova!
 Försök att utföra följande uppgifter och skicka sedan oss **feedback** från fliken **Start** i menyfliksområdet så att vi kan se hur det fungerade:
-- Distribuera till en klient en Office 365-uppdatering med en tids gräns angiven till en tid minst 60 minuter före den aktuella tiden. Observera det nya beteendet på klienten.
+- Distribuera till en klient en Microsoft 365 uppdatering med en tids gräns angiven till en tid minst 60 minuter före den aktuella tiden. Observera det nya beteendet på klienten.
 
 
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Konfigurera och distribuera Windows Defender Application Guard-principer

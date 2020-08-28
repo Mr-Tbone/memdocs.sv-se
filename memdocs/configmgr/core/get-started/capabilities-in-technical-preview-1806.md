@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 44fcea129b6f45c292bcdd6b83004131ce2d4e96
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 01c482700b56a1835e46cf5d48da75710f380496
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88694431"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995406"
 ---
 # <a name="capabilities-in-technical-preview-1806-for-configuration-manager"></a>Funktioner i Technical Preview 1806 för Configuration Manager
 
@@ -176,14 +176,15 @@ Från och med den här versionen när du [växlar en samhanterings arbets belast
 
 
 
-## <a name="transition-office-365-workload-to-intune-using-co-management"></a>Över gång till Office 365-arbetsbelastning i Intune med samhantering
+## <a name="transition-microsoft-365-workload-to-intune-using-co-management"></a>Över gång Microsoft 365 arbets belastning till Intune med hjälp av samhantering
 <!--1357841-->
-Du kan nu gå över arbets belastningen för Office 365 från Configuration Manager till Microsoft Intune när du har aktiverat samhantering. Om du vill gå över den här arbets belastningen går du till sidan Egenskaper för samhantering och flyttar skjutreglaget från Configuration Manager till pilot eller alla. Mer information finns i [Co-Management för Windows 10-enheter](../../comanage/overview.md).
+Nu kan du överföra Microsoft 365 arbets belastningen från Configuration Manager till Microsoft Intune efter att du aktiverat samhantering. Om du vill gå över den här arbets belastningen går du till sidan Egenskaper för samhantering och flyttar skjutreglaget från Configuration Manager till pilot eller alla. Mer information finns i [Co-Management för Windows 10-enheter](../../comanage/overview.md).
 
-Det finns också ett nytt globalt villkor, **Office 365-program som hanteras av Intune på enheten**. Det här villkoret läggs till som standard som ett krav på nya Office 365-program. När du översätter den här arbets belastningen uppfyller inte samhanterade klienter kraven på programmet. Installera därför inte Office 365 som distribuerats via Configuration Manager.
+Det finns också ett nytt globalt villkor, **Office 365-program som hanteras av Intune på enheten**. Det här villkoret läggs till som standard som ett krav på nya Microsoft 365-program. När du översätter den här arbets belastningen uppfyller inte samhanterade klienter kraven på programmet, så installera inte Microsoft 365 som distribueras via Configuration Manager.
 
 ### <a name="known-issue"></a>Kända problem
-- Den här arbets belastnings över gången gäller för närvarande endast för Office 365-distributioner. Configuration Manager fortsätter att hantera Office 365-uppdateringar.<!--510876--> Mer information, inklusive en möjlig lösning, finns i Configuration Manager version 1802 versions meddelande om att [Ändra Office 365-klient inställningen gäller inte](../servers/deploy/install/release-notes.md).
+
+- Den här arbets belastnings över gången gäller för närvarande endast för Microsoft 365-distributioner. Configuration Manager fortsätter att hantera Microsoft 365 uppdateringar.<!--510876--> Mer information, inklusive en möjlig lösning, finns i Configuration Manager version 1802-versionen för att [ändra Microsoft 365 klient inställningen gäller inte](../servers/deploy/install/release-notes.md).
 
 
 
@@ -240,7 +241,7 @@ Office-verktyget för anpassning är nu integrerat med Office 365-installations 
  Försök att slutföra uppgifterna. Skicka sedan [feedback](capabilities-in-technical-preview-1804.md#bkmk_feedback) för att berätta hur det fungerade.
 
 1. I Configuration Manager-konsolen går du till arbets ytan **program varu bibliotek** och väljer noden **Office 365 klient hantering** .
-2. Klicka på installations panelen för **office 365** i instrument panelen för att starta installations guiden för Office 365-klienten. Mer information finns i [distribuera Office 365-appar](../../sum/deploy-use/manage-office-365-proplus-updates.md).
+2. Klicka på installations panelen för **office 365** i instrument panelen för att starta installations guiden för Office 365-klienten. Mer information finns i [distribuera Microsoft 365 appar](../../sum/deploy-use/manage-office-365-proplus-updates.md).
 3. På sidan **Office-inställning** klickar **du på gå till Office-webb sida**. Använd verktyget för anpassning av Office Online för att ange inställningar för den här distributionen. 
 4. Klicka på **Skicka** i det övre högra hörnet när du är klar. Slutför installations guiden för Office 365-klienten.
 

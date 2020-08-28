@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 925595b0e810f89bed6d79de1e0cd89450e45e9a
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 007897778f49bd3bbc62c9ba31f0b58c90dfd1f3
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128754"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994743"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1710-of-configuration-manager"></a>Nivåer av diagnostik användnings data insamling för version 1710 av Configuration Manager
 
@@ -137,7 +137,7 @@ För Configuration Manager version 1710 omfattar den här nivån följande:
 
    - Antal olika anpassningar för program katalogen
 
-   - Antal Office 365-program som skapats med instrument panelen
+   - Antal Microsoft 365 program som skapats med instrument panelen
 
    - Antal paket efter typ  
 
@@ -383,7 +383,7 @@ För Configuration Manager version 1710 omfattar den här nivån följande:
 
     - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-    - Antal distribuerade Office 365-uppdateringar  
+    - Antal distribuerade Microsoft 365 uppdateringar  
 
     - Antal synkroniserade Microsoft-ytaktiva driv rutiner
 

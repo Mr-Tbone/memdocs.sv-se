@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3b153dad513107b118d11fa95e3feaa035a1bc90
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 3fc0344d7cf4a15925b314e38fd2d6b2ceee9762
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88692646"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995015"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Vad är nytt i version 1806 av Configuration Manager aktuella grenen
 
@@ -235,7 +235,7 @@ Följande arbets belastningar kan nu övergå från Configuration Manager till I
 
 - **Enhetskonfiguration**<!--1357903-->: Med den här arbets belastningen kan du använda Intune för att distribuera MDM-principer och fortsätta att använda Configuration Manager för att distribuera program.  
 
-- **Office 365**<!--1357841-->: Enheter installerar inte Office 365-distributioner från Configuration Manager.  
+- **Office 365**<!--1357841-->: Enheter installerar inte Microsoft 365 distributioner från Configuration Manager.  
 
 - **Mobilappar**<!--1357892-->: Alla tillgängliga appar som distribueras från Intune finns tillgängliga i Företagsportal. Appar som du distribuerar från Configuration Manager är tillgängliga i Software Center. Den här funktionen är en [för hands versions funktion](../../servers/manage/pre-release-features.md).  
 
@@ -294,9 +294,9 @@ Mer information finns i [skapa Windows-program](../../../apps/get-started/creati
 
 ### <a name="office-customization-tool-integration-with-the-office-365-installer"></a>Office Customization Tool-integrering med Office 365-installations programmet
 <!--1358149-->
-Office-verktyget för anpassning är nu integrerat med Office 365-installations programmet i Configuration Manager-konsolen. När du skapar en distribution för Office 365 konfigurerar du de senaste Office-hanterbarhets inställningarna dynamiskt. Microsoft uppdaterar Office-anpassnings verktyget när nya versioner av Office 365 lanseras. Med den här integreringen kan du dra nytta av nya inställningar för hantering i Office 365 så snart de är tillgängliga. 
+Office-verktyget för anpassning är nu integrerat med Office 365-installations programmet i Configuration Manager-konsolen. När du skapar en distribution för Microsoft 365 konfigurerar du de senaste Office-hanterbarhets inställningarna dynamiskt. Microsoft uppdaterar Office-anpassnings verktyget när nya versioner av Microsoft 365 lanseras. Med den här integreringen kan du dra nytta av de nya hanterings inställningarna i Microsoft 365 så snart de är tillgängliga. 
 
-Mer information finns i [distribuera Office 365-appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
+Mer information finns i [distribuera Microsoft 365 appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 
 ### <a name="support-for-new-windows-app-package-formats"></a>Stöd för nya paket format för Windows-appar
@@ -593,7 +593,7 @@ Följande samlade uppdateringar (4462978) är tillgängliga i-konsolen från och
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Title | Datum | I-konsolen |
+| ID | Rubrik | Date | I-konsolen |
 |---------|---------|---------|---------|
 | [4346645](https://support.microsoft.com/help/4346645) | Uppdatering för Configuration Manager version 1806, första vågen | 31 augusti 2018 | Ja |
 | [4465865](https://support.microsoft.com/help/4465865) | Program uppdateringar laddas inte ned i Configuration Managers miljö om WSUS är frånkopplat<br><br>Den här uppdateringen ingår också i den samlade uppdateringen (4462978) | 01 oktober 2018 | Ja |

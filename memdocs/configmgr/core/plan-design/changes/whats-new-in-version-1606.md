@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2fa46770adfbf3e688bbdc561d8193967f3913cd
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 3817551c75557a275c98e8c62faef46185438a25
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88698596"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993615"
 ---
 # <a name="what39s-new-in-version-1606-of-configuration-manager"></a>Vad&#39;s nya i version 1606 av Configuration Manager
 
@@ -126,10 +126,10 @@ I egenskaperna för ett program eller paket finns nu en länk som leder till sta
 
 ## <a name="software-updates"></a>Programuppdateringar
 
-### <a name="client-setting-to-manage-the-office-365-client-agent"></a>Klient inställning för att hantera Office 365-klient agenten
-Nu kan du använda en Configuration Manager-klient inställning för att hantera Office 365-klient agenten. När du har konfigurerat och distribuerat Office 365-uppdateringar fungerar Configuration Manager klient agenten med Office 365-klient agenten för att hämta och installera Office 365-uppdateringar från en distributions plats.
+### <a name="client-setting-to-manage-the-microsoft-365-client-agent"></a>Klient inställning för att hantera Microsoft 365 klient agenten
+Nu kan du använda en Configuration Manager klient inställning för att hantera Microsoft 365 klient agenten. När du har konfigurerat och distribuerat Microsoft 365 uppdateringar fungerar Configuration Manager klient agenten med Microsoft 365 klient agenten för att hämta och installera Microsoft 365 uppdateringar från en distributions plats.
 
-Mer information finns i [Hantera Office 365 ProPlus-uppdateringar med Configuration Manager](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
+Mer information finns i [Hantera uppdateringar av Microsoft 365 appar med Configuration Manager](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 ### <a name="manually-switch-clients-to-a-new-software-update-point"></a>Växla klienter manuellt till en ny program uppdaterings plats
 Nu kan du aktivera ett alternativ som låter Configuration Manager klienter växla till en ny program uppdaterings plats när det finns problem med den aktiva program uppdaterings platsen. När det är aktiverat kommer klienterna söka efter en annan programuppdateringsplats vid nästa sökning.

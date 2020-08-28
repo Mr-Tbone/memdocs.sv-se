@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.assetid: 4c90befe-9c4e-4c27-a947-625887e15052
-ms.openlocfilehash: e44576401d601c8c510aaf50b28e5924f5c4d6db
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 0425b937062acd96b8df66df38ec53a04e91b4de
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88694873"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995236"
 ---
 # <a name="co-management-workloads"></a>Arbets belastningar för samhantering
 
@@ -110,9 +110,9 @@ Den här arbets belastningen hanterar Microsoft 365 appar på samhanterade enhet
 
 - Office-uppdateringar kan ta cirka 24 timmar innan de visas på klienten om inte enheterna startas om  
 
-- Det finns ett nytt globalt villkor, **Office 365-program som hanteras av Intune på enheten**. Det här villkoret läggs till som standard som ett krav på nya Office 365-program. När du flyttar den här arbets belastningen uppfyller inte samhanterade klienter kraven på programmet. Sedan installerar de inte Office 365 som distribueras via Configuration Manager.  
+- Det finns ett nytt globalt villkor, **Office 365-program som hanteras av Intune på enheten**. Det här villkoret läggs till som standard som ett krav på nya Microsoft 365-program. När du flyttar den här arbets belastningen uppfyller inte samhanterade klienter kraven på programmet. Sedan installerar de inte Microsoft 365 som distribueras via Configuration Manager.  
 
-Mer information om Intune-funktionen finns i [tilldela Office 365-appar till Windows 10-enheter med Microsoft Intune](/intune/apps-add-office365).
+Mer information om Intune-funktionen finns i [tilldela Microsoft 365 appar till Windows 10-enheter med Microsoft Intune](https://docs.microsoft.com/intune/apps-add-office365).
 
 ## <a name="client-apps"></a>Klientappar
 

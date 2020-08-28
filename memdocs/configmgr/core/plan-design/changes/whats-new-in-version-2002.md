@@ -10,12 +10,12 @@ ms.assetid: de718cdc-d0a9-47e2-9c99-8fa2cb25b5f8
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: d54354c82a6487690aa571eb72554f4eee45747b
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 38ea77e44b1d1754d80d0ec902929f5de620c063
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88700573"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993343"
 ---
 # <a name="whats-new-in-version-2002-of-configuration-manager-current-branch"></a>Vad är nytt i version 2002 av Configuration Manager aktuella grenen
 
@@ -312,13 +312,13 @@ Configuration Manager upptäcker nu om en uppdatering av underhålls stacken (SJ
 
 Mer information finns i [Planera för program uppdateringar](../../../sum/plan-design/plan-for-software-updates.md#bkmk_ssu).
 
-### <a name="office-365-updates-for-disconnected-software-update-points"></a>Office 365-uppdateringar för frånkopplade program uppdaterings platser
+### <a name="microsoft-365-updates-for-disconnected-software-update-points"></a>Microsoft 365 uppdateringar för frånkopplade program uppdaterings platser
 
 <!-- 4065163 -->
 
-Du kan använda ett nytt verktyg för att importera Office 365-uppdateringar från en Internet-ansluten WSUS-server till en frånkopplad Configuration Managers miljö. Tidigare när du exporterade och importerade metadata för program som har uppdaterats i frånkopplade miljöer kunde du inte distribuera Office 365-uppdateringar. Office 365-uppdateringar kräver ytterligare metadata som hämtats från ett Office API och Office CDN, vilket inte är möjligt för frånkopplade miljöer.
+Du kan använda ett nytt verktyg för att importera Microsoft 365 uppdateringar från en Internet-ansluten WSUS-server till en frånkopplad Configuration Manager-miljö. Tidigare när du exporterade och importerade metadata för program som har uppdaterats i frånkopplade miljöer kunde du inte distribuera Microsoft 365 uppdateringar. Microsoft 365 uppdateringar kräver ytterligare metadata som hämtats från ett Office API och Office CDN, vilket inte är möjligt för frånkopplade miljöer.
 
-Mer information finns i [synkronisera Office 365-uppdateringar från en frånkopplad program uppdaterings plats](../../../sum/get-started/synchronize-office-updates-disconnected.md).
+Mer information finns i avsnittet om att [synkronisera Microsoft 365 uppdateringar från en frånkopplad program uppdaterings plats](../../../sum/get-started/synchronize-office-updates-disconnected.md).
 
 <!-- ## <a name="bkmk_o365"></a> Office management -->
 
@@ -438,7 +438,7 @@ Följande samlade uppdateringar (4560496) är tillgängliga i-konsolen från den
 
 Följande ytterligare snabb korrigeringar är tillgängliga för att åtgärda specifika problem:
 
-| ID | Title | Datum | I-konsolen |
+| ID | Rubrik | Date | I-konsolen |
 |---------|---------|---------|---------|
 | [4575339](https://support.microsoft.com/help/4575339) | Enheter visas två gånger i Microsoft Endpoint Configuration Manager administrations Center | 23 juli 2020 | Nej |
 | [4575774](https://support.microsoft.com/help/4575774) | Cmdleten New-CMTSStepPrestartCheck Miss lyckas i Configuration Manager version 2002 | 24 juli 2020 | Nej |

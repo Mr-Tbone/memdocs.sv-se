@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 94166557b07050706401c122b835579762bfa982
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 66be927a75da3027b6ecc5e3873fe8f8e13a9cd6
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128839"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994930"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-configuration-manager"></a>Nivåer av diagnostik användnings data insamling för version 1511 av Configuration Manager
 
@@ -221,7 +221,7 @@ Från och med Configuration Manager version 1511 omfattar den här nivån följa
 
     -   Klusterkorrigeringsstatistik  
 
-    -   Antal distribuerade Office 365-uppdateringar  
+    -   Antal distribuerade Microsoft 365 uppdateringar  
 
 -   **SQL-/prestandadata:**  
 

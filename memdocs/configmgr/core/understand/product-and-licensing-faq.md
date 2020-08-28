@@ -10,12 +10,12 @@ ms.assetid: ee8d611f-aa0c-4efd-b0ad-dbd14d0a0623
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0f249c4ad981c289be33d364dcb4f5b8635faecb
-ms.sourcegitcommit: e43e6e83e3b38137ceebc6d299eacd94a925db85
+ms.openlocfilehash: faf8401e6aa89a60f2acbea8e0d97f9efaf09a84
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88895888"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994471"
 ---
 # <a name="frequently-asked-questions-for-configuration-manager-branches-and-licensing"></a>Vanliga frågor och svar om Configuration Manager grenar och licenser
 
@@ -66,7 +66,7 @@ https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-pla
 -->
 
 > [!IMPORTANT]
-> Configuration Manager ingår inte i [Microsoft 365 businesss](https://www.microsoft.com/microsoft-365/business) planen.
+> Configuration Manager ingår inte i [Microsoft 365 Business Premium](https://www.microsoft.com/microsoft-365/business) -planen.
 
 ### <a name="what-changes-with-licensing-for-co-management-in-microsoft-endpoint-manager"></a><a name="bkmk_mem"></a> Vad är ändringar med licensiering för samhantering i Microsoft Endpoint Manager?
 
@@ -94,9 +94,9 @@ Med licens för samtidig hantering kan Configuration Manager kunder med Software
 |Funktion | Licens för samtidig hantering | Fullständig Intune-licens |
 |---------|---------|---------|
 |Registrering av Windows 10|Ja (endast för befintliga ConfigMgr-hanterade enheter)|Ja|
-|iOS, Android, macOS-registrering|Inga|Ja|
-|Autopilot|Inga|Ja|
-|Hantering av mobil program (MAM)|Inga|Ja|
+|iOS, Android, macOS-registrering|Nej|Ja|
+|Autopilot|Nej|Ja|
+|Hantering av mobil program (MAM)|Nej|Ja|
 |Villkorsstyrd åtkomst<br>(ytterligare AADP1 krävs)|Ja|Ja|
 |Enhetsprofiler|Ja|Ja|
 |Programuppdateringshanteraren|Ja|Ja|

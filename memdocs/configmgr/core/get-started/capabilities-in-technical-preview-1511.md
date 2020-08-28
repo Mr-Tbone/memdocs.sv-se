@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 59d343d09f827edec5db0dd5302c75c00a0c8455
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 7f6cc0caf4df54196dbdb1859a69f19b3bbcacaa
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88694516"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995491"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-configuration-manager"></a>Funktioner i Technical Preview 1511 för Configuration Manager
 
@@ -50,24 +50,24 @@ För datorer som är anslutna via WUfB kommer Configuration Manager inte att kun
 
 5.  De datorer som hanteras via WUfB visas som **okända** i kompatibilitetsstatus och räknas inte som en del av den övergripande kompatibiliteten i procent.  
 
-##  <a name="managing-office-365-proplus-client-update-through-configuration-manager"></a><a name="BKMK_Office365ProPlus"></a> Hantera Office 365 ProPlus-klient uppdatering via Configuration Manager  
- Configuration Manager har nu möjlighet att hantera uppdateringar för Office 365 Desktop-klienter med hjälp av Configuration Manager hantering av programuppdateringar-arbetsflöde.    
-När Microsoft publicerar en ny uppdatering för Office 365-skrivbordet till WSUS (Windows Server Update Services), kommer Configuration Manager att kunna synkronisera uppdateringen till sin katalog om Office 365-uppdateringen har kon figurer ATS att ingå i katalog synkroniseringen.  Plats servern för Configuration Manager hämtar Office 365-klient uppdateringarna och distribuerar paketet till Configuration Manager distributions platser.  Den Configuration Manager klienten informerar sedan Office 365 Desktop-klienter där uppdateringarna ska hämtas och när installations processen för uppdateringen startas.  
+##  <a name="managing-microsoft-365-apps-for-enterprise-client-update-through-configuration-manager"></a><a name="BKMK_Office365ProPlus"></a> Hantera Microsoft 365 appar för företags klient uppdatering via Configuration Manager  
+Configuration Manager har nu möjlighet att hantera Microsoft 365 Station ära klient uppdateringar med hjälp av Configuration Manager hantering av programuppdateringar arbets flöde.
+När Microsoft publicerar en ny Microsoft 365 Skriv bords klient uppdatering till Windows Server Update Services (WSUS) kommer Configuration Manager att kunna synkronisera uppdateringen till katalogen om Microsoft 365 uppdateringen är konfigurerad att ingå i katalog synkroniseringen.  Configuration Manager plats servern laddar ned Microsoft 365 klient uppdateringar och distribuerar paketet till Configuration Manager distributions platser.  Configuration Manager klienten informerar sedan Microsoft 365 Desktop-klienter där uppdateringarna ska hämtas och när installationen ska startas.  
 
 **Krav för det här scenariot:**  
 
 ### <a name="try-it-out"></a>prova!  
  Försök att utföra följande uppgift och Använd sedan feedback-informationen nära överst i det här avsnittet för att berätta för oss hur det fungerade:  
 
-1. Du kan synkronisera Office 365-uppdateringar till Configuration Manager plats Server och visa dem från Configuration Manager-konsolen.  
+1. Du kan synkronisera Microsoft 365 uppdateringar till Configuration Manager plats servern och visa dem från Configuration Manager-konsolen.  
 
-2. Du kan godkänna och distribuera Office 365-uppdateringar.  
+2. Du kan godkänna och distribuera Microsoft 365 uppdateringar.  
 
-3. Du kan hämta och installera Office 365-uppdateringar till klienter.  
+3. Du kan ladda ned och Microsoft 365 uppdateringar till klienter.  
 
-4. Du kan kontrol lera efterlevnaden för Office 365-uppdateringar med hjälp av övervakning eller rapporter i konsolen.  
+4. Du kan kontrol lera efterlevnaden för Microsoft 365 uppdateringar med hjälp av övervakning eller rapporter i konsolen.  
 
-   Detaljerade anvisningar finns i [Hantera Office 365-klient uppdateringar med Configuration Manager Technical Preview](/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
+   Detaljerade anvisningar finns i [hantera Microsoft 365 klient uppdateringar med Configuration Manager Technical Preview](https://docs.microsoft.com/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
 
 ##  <a name="support-for-sql-server-alwayson-for-highly-available-databases"></a><a name="BKMK_AlwasyOn"></a> Stöd för SQL Server AlwaysOn för databaser med hög tillgänglighet  
  Configuration Manager har nu stöd för att använda en SQL Server AlwaysOn-tillgänglighetsgrupper som värd för plats databasen.  När du installerar en ny plats kan du direkt konfigurera installationen att använda tillgänglighets gruppen i stället för en normal instans av SQL Server.  

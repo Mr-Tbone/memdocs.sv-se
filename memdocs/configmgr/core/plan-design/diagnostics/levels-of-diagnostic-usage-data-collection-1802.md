@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: bae73e89852efbc8e85ba4df7e98eb0452d6b754
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: d9fb986285186ce531a43283b002eb88eb9595a1
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128737"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994726"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-configuration-manager"></a>Nivåer av diagnostik användnings data insamling för version 1802 av Configuration Manager
 
@@ -144,7 +144,7 @@ För Configuration Manager version 1802 omfattar den här nivån följande data:
 
 - Antal olika anpassningar för program katalogen
 
-- Antal Office 365-program som skapats med instrument panelen
+- Antal Microsoft 365 program som skapats med instrument panelen
 
 - Antal paket efter typ  
 
@@ -173,7 +173,7 @@ För Configuration Manager version 1802 omfattar den här nivån följande data:
 - ***[Ny]*** Högsta och genomsnittliga primära användare per enhet
 
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version
 
@@ -387,7 +387,7 @@ För Configuration Manager version 1802 omfattar den här nivån följande data:
 
 - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-- Antal distribuerade Office 365-uppdateringar  
+- Antal distribuerade Microsoft 365 uppdateringar  
 
 - Antal synkroniserade Microsoft-ytaktiva driv rutiner
 

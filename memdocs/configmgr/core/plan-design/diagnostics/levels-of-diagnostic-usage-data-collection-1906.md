@@ -10,12 +10,12 @@ ms.assetid: 370fc61f-2d8a-45b4-adc7-7b5d5ede2bf4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9c4b82bba24eccf9be5f410b5d2854d782230a72
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: 41465fe916ef985ec0e33596be23f16910149a7a
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126655"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994607"
 ---
 # <a name="diagnostic-and-usage-data-for-version-1906"></a>Diagnostik-och användnings data för version 1906
 
@@ -156,7 +156,7 @@ För Configuration Manager version 1906 omfattar den här nivån följande data:
 
 - Antal olika anpassningar för program katalogen  
 
-- Antal Office 365-program som skapats med instrument panelen  
+- Antal Microsoft 365 program som skapats med instrument panelen  
 
 - Antal paket efter typ  
 
@@ -206,9 +206,9 @@ För Configuration Manager version 1906 omfattar den här nivån följande data:
 
 - ***[Ny]*** Sammanställd statistik för användning av program grupper
 
-- ***[Ny]*** Sammanställd statistik för Office-tillägg, användning av Office readiness Toolkit och antalet klienter med Office 365 ProPlus
+- ***[Ny]*** Sammanställd statistik för Office-tillägg, användning av Office readiness Toolkit och antalet klienter med Microsoft 365 appar för företag
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version  
 
@@ -440,7 +440,7 @@ För Configuration Manager version 1906 omfattar den här nivån följande data:
 
 - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-- Antal distribuerade Office 365-uppdateringar  
+- Antal distribuerade Microsoft 365 uppdateringar  
 
 - Antal synkroniserade Microsoft-ytaktiva driv rutiner  
 

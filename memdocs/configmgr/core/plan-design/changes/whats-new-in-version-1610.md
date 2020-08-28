@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: b3e1a2feaddb7384d76790249152c89dfa8ee2d3
-ms.sourcegitcommit: 214fb11771b61008271c6f21e17ef4d45353788f
+ms.openlocfilehash: d23880def99fd12bffe83efffe9768f94481d07e
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82904806"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993564"
 ---
 # <a name="what39s-new-in-version-1610-of-configuration-manager"></a>Vad&#39;s nya i version 1610 av Configuration Manager
 
@@ -183,12 +183,12 @@ På instrument panelen visas diagram med följande:
 - Antal Office 365-klienter
 - Office 365-klient versioner
 - Office 365-klient språk
-- Office 365-klient kanaler     
+- Office 365-klient kanaler
 
-Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
+Mer information finns i [Hantera uppdateringar av Microsoft 365-appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 ## <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Aktivitetssekvenssteg för att hantera konvertering av BIOS till UEFI
-Nu kan du anpassa en aktivitetssekvens för operativ Systems distribution med en ny variabel, TSUEFIDrive, så att steget **starta om datorn** ska förbereda en FAT32-partition på hård disken för över gång till UEFI. Följande procedur visar ett exempel på hur du kan skapa steg i aktivitetssekvensen för att förbereda hård disken för BIOS till UEFI-konvertering. Mer information finns i avsnittet [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../../../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md).
+Nu kan du anpassa en aktivitetssekvens för operativ Systems distribution med en ny variabel, TSUEFIDrive, så att steget **starta om datorn** ska förbereda en FAT32-partition på hård disken för över gång till UEFI. Följande procedur visar ett exempel på hur du kan skapa steg i aktivitetssekvensen för att förbereda hård disken för BIOS till UEFI-konvertering. Mer information finns i avsnittet  [om aktivitetssekvenser för att hantera BIOS till UEFI-konvertering](../../../osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md).
 
 ##  <a name="improvements-to-the-task-sequence-step-prepare-configmgr-client-for-capture"></a>Förbättringar i aktivitetssekvensen steg: förbereda ConfigMgr-klienten för avbildning  
 Steget Förbered ConfigMgr-klient tar nu bort Configuration Manager-klienten fullständigt, i stället för att bara ta bort viktig information. När aktivitetssekvensen distribuerar operativ Systems avbildningen installeras en ny Configuration Manager-klient varje gång. Mer information finns i [stegen i aktivitetssekvensen](../../../osd/understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture).

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6ff280a01b7388f3e4d296625a94c0184a0e6b09
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 9ea860568d7f094588e628955f128e5b8a3aa154
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88692986"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995423"
 ---
 # <a name="capabilities-in-technical-preview-1707-for-configuration-manager"></a>Funktioner i Technical Preview 1707 för Configuration Manager
 
@@ -54,9 +54,9 @@ Den här artikeln beskriver de funktioner som är tillgängliga i den tekniska f
  -  Task 2              
 -->
 
-## <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365"></a>Stöd för klient-peer-cache för Express-installationsfiler för Windows 10 och Office 365
+## <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-microsoft-365"></a>Stöd för klient-peer-cache för Express-installationsfiler för Windows 10 och Microsoft 365
 <!-- 1352486 -->
-Från och med den här versionen stöder peer-cache distribution av installationsfiler för innehålls Express för Windows 10 och uppdaterings filer för Office 365. Inga ytterligare konfigurationer krävs.
+Från och med den här versionen stöder peer-cache distribution av installationsfiler för innehålls Express för Windows 10 och uppdaterings filer för Microsoft 365. Inga ytterligare konfigurationer krävs.
 
 ## <a name="surface-device-dashboard"></a>Instrument panel för Surface-enheter
 <!--1355788-->
@@ -70,7 +70,7 @@ Klicka på en del av diagrammet **ytdiagram** för att visa en fullständig list
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Konfigurera och distribuera Windows Defender Application Guard-principer
 <!-- 1351960 -->
 
-[Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) är en ny Windows-funktion som hjälper dig att skydda dina användare genom att öppna obetrodda webbplatser i en säker isolerad behållare som inte är tillgänglig för andra delar av operativ systemet. I den här tekniska för hands versionen har vi lagt till stöd för att konfigurera den här funktionen med Configuration Manager kompatibilitetsinställningar som du konfigurerar och sedan distribuera till en samling. Den här funktionen kommer att publiceras i för hands versionen för 64-bitars versionen av Windows 10 hösten Creators Update (kod objekt: RS3). Om du vill testa den här funktionen nu måste du använda en för hands version av den här uppdateringen.
+[Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) är en ny Windows-funktion som hjälper dig att skydda dina användare genom att öppna obetrodda webbplatser i en säker isolerad behållare som inte är tillgänglig för andra delar av operativ systemet. I den här tekniska för hands versionen har vi lagt till stöd för att konfigurera den här funktionen med Configuration Manager kompatibilitetsinställningar som du konfigurerar och sedan distribuera till en samling. Den här funktionen kommer att publiceras i för hands versionen för 64-bitars versionen av Windows 10s uppdaterings uppdatering (kod namn: RS3). Om du vill testa den här funktionen nu måste du använda en för hands version av den här uppdateringen.
 
 ### <a name="before-you-start"></a>Innan du börjar
 

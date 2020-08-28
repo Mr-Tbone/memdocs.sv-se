@@ -10,12 +10,12 @@ ms.assetid: 264ea96f-f26a-4fb7-a23f-ecf36054e54b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7db3c587d592f7ef972e53a8bbdc2b27da1abbf4
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: ed0cb60e07482ec3a9088eaa468bce9e5e9c9408
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88126553"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994539"
 ---
 # <a name="diagnostic-and-usage-data-for-version-2002"></a>Diagnostik-och användnings data för version 2002
 
@@ -176,7 +176,7 @@ För Configuration Manager version 2002 omfattar den här nivån följande data:
 
 - Antal olika anpassningar för program katalogen  
 
-- Antal Office 365-program som skapats med instrument panelen  
+- Antal Microsoft 365 program som skapats med instrument panelen  
 
 - Antal paket efter typ  
 
@@ -226,7 +226,7 @@ För Configuration Manager version 2002 omfattar den här nivån följande data:
 
 - Sammanställd statistik för användning av program grupper
 
-- Sammanställd statistik för Office-tillägg, användning av Office readiness Toolkit och antalet klienter med Office 365 ProPlus
+- Sammanställd statistik för Office-tillägg, användning av Office readiness Toolkit och antalet klienter med Microsoft 365 appar för företag
 
 - Sammanställd statistik för hälso tillstånd för Office-tillägg
 
@@ -234,7 +234,7 @@ För Configuration Manager version 2002 omfattar den här nivån följande data:
 
 - ***[Ny]*** Antal Office Pro plus-enheter som skickar hälso data för Office
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version  
 
@@ -480,7 +480,7 @@ För Configuration Manager version 2002 omfattar den här nivån följande data:
 
 - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-- Antal distribuerade Office 365-uppdateringar  
+- Antal distribuerade Microsoft 365 uppdateringar  
 
 - Antal synkroniserade Microsoft-ytaktiva driv rutiner  
 

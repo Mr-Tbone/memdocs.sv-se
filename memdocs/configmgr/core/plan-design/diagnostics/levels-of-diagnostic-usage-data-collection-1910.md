@@ -10,12 +10,12 @@ ms.assetid: b3ce6b9a-7d54-4374-9b7a-f017f872bd6f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 316cd4b532c248027def1f1cac4dfbe71476b0a4
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: e1bd8667a1b6a808b0e0cdd645562fafdd24ad95
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88128611"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994522"
 ---
 # <a name="diagnostic-and-usage-data-for-version-1910"></a>Diagnostik-och användnings data för version 1910
 
@@ -158,7 +158,7 @@ För Configuration Manager version 1910 omfattar den här nivån följande data:
 
 - Antal olika anpassningar för program katalogen  
 
-- Antal Office 365-program som skapats med instrument panelen  
+- Antal Microsoft 365 program som skapats med instrument panelen  
 
 - Antal paket efter typ  
 
@@ -208,13 +208,13 @@ För Configuration Manager version 1910 omfattar den här nivån följande data:
 
 - Sammanställd statistik för användning av program grupper
 
-- Sammanställd statistik för Office-tillägg, användning av Office readiness Toolkit och antalet klienter med Office 365 ProPlus
+- Sammanställd statistik för Office-tillägg, användning av Office readiness Toolkit och antalet klienter med Microsoft 365 appar för företag
 
 - ***[Ny]*** Sammanställd statistik för hälso tillstånd för Office-tillägg
 
 - ***[Ny]*** Antal och storlek på Office Pro plus pilot samlingar
 
-### <a name="client"></a>Klient  
+### <a name="client"></a>Client  
 
 - Active Management Technology (AMT) klient version  
 
@@ -446,7 +446,7 @@ För Configuration Manager version 1910 omfattar den här nivån följande data:
 
 - Konfigurationer som används för aktiva Service planer för Windows 10  
 
-- Antal distribuerade Office 365-uppdateringar  
+- Antal distribuerade Microsoft 365 uppdateringar  
 
 - Antal synkroniserade Microsoft-ytaktiva driv rutiner  
 

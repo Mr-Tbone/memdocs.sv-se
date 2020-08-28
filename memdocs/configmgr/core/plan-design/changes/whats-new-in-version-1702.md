@@ -11,12 +11,12 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: a947b332addbc3404617abdbbe199ede4e74dc63
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 5c125bc92c8949384486c7efc03cea122258092e
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88692799"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993513"
 ---
 # <a name="what39s-new-in-version-1702-of-configuration-manager"></a>Vad&#39;s nya i version 1702 av Configuration Manager
 
@@ -220,11 +220,11 @@ Från och med den här versionen, när du uppgraderar Windows ADK-versionen och 
 
 ## <a name="software-updates"></a>Programuppdateringar
 
-### <a name="deploy-office-365-apps-to-clients"></a>Distribuera Office 365-appar till klienter
-Från och med version 1702 kan du från instrument panelen för Office 365-klient hantering starta Office 365-installations programmet där du kan konfigurera installations inställningar för Office 365, ladda ned filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#bkmk_deploy).
+### <a name="deploy-microsoft-365-apps-to-clients"></a>Distribuera Microsoft 365 appar till klienter
+Från och med version 1702 kan du från instrument panelen för Office 365-klient hantering starta Office 365-installations programmet som låter dig konfigurera installations inställningar, ladda ned filer från Office Content Delivery Networks (CDN) och distribuera filerna som ett program i Configuration Manager. Mer information finns i [Hantera uppdateringar av Microsoft 365-appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md#bkmk_deploy).
 
 > [!IMPORTANT]
-> Office 365-appen som du skapar och distribuerar med hjälp av guiden Office 365-program i Configuration Manager hanteras inte automatiskt av Configuration Manager förrän du aktiverar inställningen **aktivera hantering av klient agenten för office 365-klienten igen** . Mer information finns i [om klient inställningar](../../clients/deploy/about-client-settings.md).
+> Microsoft 365-appen som du skapar och distribuerar med hjälp av program guiden för Office 365 i Configuration Manager hanteras inte automatiskt av Configuration Manager förrän du aktiverar inställningen **aktivera hantering av klient agenten för Office 365 på nytt** program uppdateringar. Mer information finns i [om klient inställningar](../../clients/deploy/about-client-settings.md).
 
 ### <a name="manage-express-installation-files-for-windows-10-updates"></a>Hantera filer för snabbinstallation för Windows 10-uppdateringar
 Från och med version 1702 stöder Configuration Manager Express-installationsfiler för Windows 10-uppdateringar. När du använder en version av Windows 10 som stöds kan du använda Configuration Manager inställningar för att bara hämta ändringarna mellan den kumulativa Windows 10-uppdateringen och föregående månads uppdatering. Utan Express-installationsfiler Configuration Manager laddar ned den fullständiga kumulativa Windows 10-uppdateringen (inklusive alla uppdateringar från föregående månader) varje månad. Med hjälp av Express-installationsfiler kan du få mindre hämtningar och snabbare installations tider på klienter. Mer information finns i [Hantera Express-installationsfiler för Windows 10-uppdateringar](../../../sum/deploy-use/manage-express-installation-files-for-windows-10-updates.md).

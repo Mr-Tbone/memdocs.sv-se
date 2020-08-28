@@ -10,12 +10,12 @@ ms.assetid: 97e23075-549c-4e45-ab1e-0671027edacf
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 0401207ec98331c33e87a0ac03b5cd7f750c17e7
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 3736e5343e10bdfc8d5be8abf79ee27e46749834
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88698722"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88995117"
 ---
 # <a name="whats-new-in-version-1906-of-configuration-manager-current-branch"></a>Vad är nytt i version 1906 av Configuration Manager aktuella grenen
 
@@ -505,7 +505,7 @@ Hyperlänken för **obligatorisk vy** är tillgänglig på följande platser:
    - **Program varu bibliotek**  >  **Windows 10-Underhåll**  >  **Alla Windows 10-uppdateringar**
    - **Program varu bibliotek**  >  **Office 365-klient hantering**  >  **Office 365-uppdateringar**
 
-Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md#drill-through-required-updates), [hantera Windows som en tjänst](../../../osd/deploy-use/manage-windows-as-a-service.md#drill-through-required-updates)och [Hantera Office 365 ProPlus-uppdateringar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
+Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md#drill-through-required-updates), [hantera Windows som en tjänst](../../../osd/deploy-use/manage-windows-as-a-service.md#drill-through-required-updates)och [Hantera uppdateringar av Microsoft 365 appar](../../../sum/deploy-use/manage-office-365-proplus-updates.md).
 
 
 ## <a name="office-management"></a><a name="bkmk_o365"></a> Office-hantering
@@ -514,7 +514,7 @@ Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-us
 
 <!--4021125-->
 
-För att hjälpa dig att avgöra vilka enheter som är klara att uppgradera till Office 365 ProPlus, finns det en ny instrument panel för beredskap. Den innehåller panelen **Office 365 ProPlus Upgrade readiness** som släpptes i Configuration Manager aktuella gren versionen 1902. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **klient hantering för Office 365**och välj noden **Office 365 ProPlus uppgraderingsberedskap** .
+För att hjälpa dig att avgöra vilka enheter som är klara att uppgradera till Microsoft 365 appar för företag, finns det en ny instrument panel för beredskap. Den innehåller panelen **Office 365 ProPlus Upgrade readiness** som släpptes i Configuration Manager aktuella gren versionen 1902. Gå till arbets ytan **program bibliotek** i Configuration Manager-konsolen, expandera **klient hantering för Office 365**och välj noden **Office 365 ProPlus uppgraderingsberedskap** .
 
 Mer information om instrument panelen, krav och hur du använder dessa data finns i [integrering för Office 365 ProPlus readiness](../../../sum/deploy-use/office-365-dashboard.md#bkmk_readiness-dash).
 
