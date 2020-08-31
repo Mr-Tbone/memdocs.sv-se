@@ -10,12 +10,12 @@ ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 57b353dd9dd9fcf7f97d10480f4067bd65a1f483
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 1c8710c50dc2feabebd7e8f0f84ac49b3b0dd35c
+ms.sourcegitcommit: 42882de75c8a984ba35951b1165c424a7e0ba42e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88697984"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068029"
 ---
 # <a name="create-stand-alone-media"></a>Skapa fristående media
 
@@ -39,7 +39,7 @@ Fristående media innehåller den aktivitetssekvens som automatiserar stegen fö
 När du skapar fristående media på en central administrations plats hämtar klienten den tilldelade plats koden från Active Directory. Fristående media som skapas på underordnade platser tilldelas automatiskt till klienten plats koden för platsen.  
 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Innan du skapar fristående media med hjälp av guiden skapa aktivitetssekvens måste du se till att alla dessa villkor är uppfyllda.
 
@@ -78,7 +78,7 @@ Följande åtgärder stöds inte för fristående media:
 >
 > Du kan också använda ett anpassat steg för [körnings kommando raden](../understand/task-sequence-steps.md#BKMK_RunCommandLine) . Lägg till den efter steget installera [Windows och ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) och före det första **installera paket** -steget. Steget **Kör kommando rad** kör följande WMIC-kommando för att aktivera program distributions agenten före det första installera paket-steget:  
 >
-> `WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE`
+> `WMIC /namespace:\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE`
 
 ### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuera allt innehåll som är kopplat till aktivitetssekvensen
 
@@ -121,7 +121,7 @@ Innan du kör guiden skapa en aktivitetssekvens för att skapa media för en CD-
 
         - **Formatera en flyttbar USB-enhet (FAT32) och gör startbara**: som standard låter Configuration Manager förbereda USB-enheten. Många nyare UEFI-enheter kräver en startbar FAT32-partition. Detta format begränsar dock också storleken på filer och den övergripande kapaciteten för enheten. Inaktivera det här alternativet om du redan har formaterat och konfigurerat den flyttbara enheten.
 
-    - Om du väljer **CD/DVD-uppsättning**anger du mediets kapacitet (**medie storlek**) och namn och sökväg för utdatafilen (**medie fil**). Guiden skriver utdatafilerna till den här platsen. Exempel: `\\servername\folder\outputfile.iso`  
+    - Om du väljer **CD/DVD-uppsättning**anger du mediets kapacitet (**medie storlek**) och namn och sökväg för utdatafilen (**medie fil**). Guiden skriver utdatafilerna till den här platsen. Exempelvis: `\\servername\folder\outputfile.iso`  
 
         Om mediets kapacitet är för liten för att lagra hela innehållet skapas flera filer. Sedan måste du lagra innehållet på flera CD-eller DVD-skivor. När det krävs flera mediafiler Configuration Manager lägger till ett sekvensnummer till namnet på alla utdatafiler som skapas.  
 

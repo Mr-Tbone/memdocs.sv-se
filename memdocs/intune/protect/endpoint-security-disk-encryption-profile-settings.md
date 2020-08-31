@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 3760aa9820495db6c2460bf2e6d2e9a08d705a10
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 37e9f68951c3576393e6ed3eb3346847029736c4
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86462039"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663216"
 ---
 # <a name="disk-encryption-policy-settings-for-endpoint-security-in-intune"></a>Policyinställningar för diskkryptering i Intunes slutpunktssäkerhet
 
@@ -92,6 +92,9 @@ Plattformar och profiler som stöds:
   Den här inställningen gäller endast för Windows Mobile- och Mobile Enterprise SKU-enheter.
   - **Inte konfigurerat** (*standard*) – inställningen återgår till operativsystemets standardinställning som är att inte kräva kryptering på lagringskort.
   - **Ja** – kryptering på minneskort krävs för mobila enheter.
+
+  > [!NOTE]
+  > Stöd för [Windows 10 Mobile](https://support.microsoft.com/help/4485197/windows-10-mobile-end-of-support-faq) och [Windows Phone 8.1](https://support.microsoft.com/help/4036480/windows-phone-8-1-end-of-support-faq) upphörde i augusti 2020.
 
 - **Dölj uppmaning om tredjepartskryptering**  
   CSP: [AllowWarningForOtherDiskEncryption](https://go.microsoft.com/fwlink/?linkid=872525)

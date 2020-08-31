@@ -15,12 +15,12 @@ ms.reviewer: aiwang
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6cb913d0f3d3f806a8a9a2592624b2bcf376f40
-ms.sourcegitcommit: 5d32dd481e2a944465755ce74e14c835cce2cd1c
+ms.openlocfilehash: ba826620d1589d081f683e3b4c807115c4a137ae
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551918"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819719"
 ---
 # <a name="windows-update-settings-for-intune"></a>Windows Update-inställningar för Intune  
 
@@ -179,12 +179,12 @@ Inställningarna för användargränssnittet styr slutanvändarens upplevelse vi
   - **Tillåt** – Tillåt att enhetsanvändare använder Windows Update-sökning för att hitta och hämta uppdateringar och installera funktioner.
   - **Blockera** – förhindra att enhetsanvändare får åtkomst till Windows Update-sökning, ladda ner uppdateringar och installera funktioner.  
 
-- **Kräv användarens godkännande för att starta om utanför arbetstid**  
+- **Kräv användargodkännande för att ignorera omstartsmeddelande**  
   **Standard**: Inte konfigurerat  
   Windows Update CSP: [Update/AutoRestartRequiredNotificationDismissal](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-autorestartrequirednotificationdismissal)
   
-  - **Inte konfigurerat**  
-  - **Obligatoriskt** – Kräv att användaren godkänner en omstart av enheten utanför arbetstid.  
+  - **Ingen** – automatisk avstängning efter 25 sekunder.
+  - **Ja** – kräver att användaren stängs av.
    
 - **Påminn användaren innan automatisk omstart krävs med ignorerbar påminnelse (timmar)**  
   **Standard**: 4  
@@ -239,7 +239,7 @@ Inställningarna för användargränssnittet styr slutanvändarens upplevelse vi
   - **Respitperiod**  
     **Standard**: *Inte konfigurerad* Windows Update CSP: [Update/ConfigureDeadlineGracePeriod]( https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinegraceperiod)
 
-    Anger ett minsta antal dagar efter tidsgränsen tills omstarter sker automatiskt (2–7).
+    Anger ett minsta antal dagar efter tidsgränsen tills omstarter sker automatiskt (0–7).
 
   - **Automatisk omstart före tidsgräns**  
     **Standard**:  Ja, Windows Update CSP: [Update/ConfigureDeadlineNoAutoReboot](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-update#update-configuredeadlinenoautoreboot)

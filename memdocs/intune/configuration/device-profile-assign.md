@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 07/20/2020
+ms.date: 08/24/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -15,18 +15,18 @@ ms.assetid: f6f5414d-0e41-42fc-b6cf-e7ad76e1e06d
 ms.reviewer: altsou
 ms.suite: ems
 search.appverid: MET150
-ms.custom: intune-azure
+ms.custom: intune-azure, contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5259fe84b11ce5d1ec4a3110dcbc188afb2e6d3e
-ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
+ms.openlocfilehash: 000ee384ff289b9511b2dde3b1468525ffed63d4
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86565690"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820008"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Tilldela användar- och enhetsprofiler i Microsoft Intune
 
-Du skapar en profil som innehåller alla inställningar som du har angett. Nästa steg är att distribuera eller ”tilldela” profilen till din användare eller dina enhetsgrupper i Azure Active Directory (Azure AD). När den är tilldelad får användarna och enheterna din profil och de inställningar som du har angett tillämpas.
+Du skapar en profil som innehåller alla inställningar som du har angett. Nästa steg är att distribuera eller ”tilldela” profilen till din användare eller dina enhetsgrupper. När den är tilldelad får användarna och enheterna din profil och de inställningar som du har angett tillämpas.
 
 Den här artikeln visar hur du tilldelar en profil, samt innehåller information om hur du använder omfångstaggar på dina profiler.
 
@@ -45,21 +45,16 @@ Se till att du har rätt roll för att tilldela principer. Mer information finns
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Välj **Enheter** > **Konfigurationsprofiler**. Alla profilerna visas i listan.
-3. Välj den profil som du vill tilldela > **Tilldelningar**.
-4. Välj om du vill **inkludera** eller **exkludera** grupper och välj sedan grupperna. När du väljer dina grupper väljer du en Azure AD-grupp. Håll ned **Ctrl**-tangenten om du vill markera flera grupper.
+3. Välj den profil som du vill tilldela > **Egenskaper** > **Tilldelningar** > **Redigera**:
 
-    :::image type="content" source="./media/device-profile-assign/group-include-exclude.png" alt-text="Skärmbild med alternativ för att inkludera eller exkludera grupper från en profiltilldelning i Microsoft Intune":::
+    :::image type="content" source="./media/device-profile-assign/properties-select-assignments.png" alt-text="Välj tilldelningar för att distribuera profilen till användare och grupper i Microsoft Intune och Endpoint Manager":::
 
-5. **Spara** ändringarna.
+4. Välj **Inkluderade grupper** eller **Undantagna grupper** och sedan **Välj de grupper som ska ingå**. När du väljer dina grupper väljer du en Azure AD-grupp. Håll ned **Ctrl**-tangenten om du vill markera flera grupper.
 
-### <a name="evaluate-how-many-users-are-targeted"></a>Utvärdera hur många användare som omfattas
+    :::image type="content" source="./media/device-profile-assign/select-included-excluded-groups-profile-assignment.png" alt-text="Ta med eller undanta användare och grupper när du tilldelar eller distribuerar en profil i Microsoft Intune och Endpoint Manager.":::
 
-När du tilldelar profilen kan du också **utvärdera** hur många användare som påverkas. Den här funktionen beräknar användare, den beräknar inte enheter.
-
-1. I administrationscentret väljer du **Enheter** > **Konfigurationsprofiler**.
-2. Välj en profil > **Tilldelningar** > **Utvärdera**. Ett meddelande visas med hur många användare som omfattas av profilen.
-
-Om knappen **Utvärdera** är nedtonad, kontrollerar du att profilen har tilldelats till en eller flera grupper.
+5. Välj **Granska och spara**. Det här steget tilldelar inte din profil.
+6. Välj **Spara**. När du sparar tilldelas din profil. Dina grupper får profilinställningarna när enheterna stämmer av med Intune-tjänsten.
 
 ## <a name="use-scope-tags-or-applicability-rules"></a>Använd omfångstaggar eller tillämpbarhetsregler
 

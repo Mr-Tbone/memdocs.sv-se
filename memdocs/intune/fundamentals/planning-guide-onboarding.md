@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8396a9713e5ce4b6001aefb55485a908f0e605dd
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 19de56bfab6e4f4cf2f1243c6cbaf98053e6ba5e
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79357668"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663267"
 ---
 # <a name="implement-your-microsoft-intune-plan"></a>Implementera din Microsoft Intune-plan
 
@@ -130,7 +130,7 @@ Intune stöder villkorlig åtkomst för Exchange Online, Exchange On-Premises, S
 
 ### <a name="task-13-enroll-devices"></a>Uppgift 13: Registrera enheter
 
-Intune stöder enhetsplattformarna iOS/iPadOS, Mac OS, Android, Windows och Windows Mobile. Registrera mobila enhetsplattformar efter behov baserat på användningsfall och krav för Intune-distributionen.
+Intune stöder enhetsplattformarna iOS/iPadOS, Mac OS, Android och Windows. Registrera mobila enhetsplattformar efter behov baserat på användningsfall och krav för Intune-distributionen.
 
 - Läs mer om att [registrera enheter](../enrollment/device-enrollment.md).
 

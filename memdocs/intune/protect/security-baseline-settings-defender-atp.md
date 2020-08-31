@@ -18,12 +18,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 zone_pivot_groups: atp-baseline-versions
-ms.openlocfilehash: 8046318c55e2a9791f01fca4a5a54de3f1487782
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: d29240dcbcbbcd5a4399dbfb3648c2a6df47764c
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022201"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663437"
 ---
 <!-- Pivots in use: 
 ::: zone pivot="atp-april-2020"
@@ -110,6 +110,9 @@ Mer information finns i [BitLocker-grupprincipinställningar](https://docs.micro
   Den här inställningen gäller endast för Windows Mobile- och Mobile Enterprise SKU-enheter.
   - **Ja** (*standard*) – Kryptering på minneskort krävs för mobila enheter.
   - **Inte konfigurerat** – Inställningen återgår till operativsystemstandard, vilket är att inte kräva kryptering på lagringskort.
+
+  > [!NOTE]
+  > Stöd för [Windows 10 Mobile](https://support.microsoft.com/help/4485197/windows-10-mobile-end-of-support-faq) och [Windows Phone 8.1](https://support.microsoft.com/help/4036480/windows-phone-8-1-end-of-support-faq) upphörde i augusti 2020.
 
 - **Aktivera fullständig diskkryptering för operativsystem och fasta dataenheter**  
   CSP: [RequireDeviceEncryption](https://go.microsoft.com/fwlink/?linkid=872523)

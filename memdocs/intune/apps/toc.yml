@@ -53,11 +53,11 @@
               href: windows-store-for-business.md
             - name: Google Play-appar som hanteras
               href: apps-add-android-for-work.md
-        - name: Office 365-programsvit
+        - name: Microsoft 365 Suite
           items:
-            - name: Office 365-appar för Windows 10
+            - name: Microsoft 365-appar för Windows 10
               href: apps-add-office365.md
-            - name: Office 365-appar för macOS
+            - name: Microsoft 365-appar för macOS
               href: apps-add-office365-macos.md
         - name: Android Enterprise-systemprogram
           href: apps-ae-system.md

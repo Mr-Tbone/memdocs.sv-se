@@ -10,12 +10,12 @@ ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f6d3f6dbbbb407ee63eb8253cbf3ca740a10479c
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: b419f313b9d4d300d286cf32605ebfe7e0e1573c
+ms.sourcegitcommit: 42882de75c8a984ba35951b1165c424a7e0ba42e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88699797"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068063"
 ---
 # <a name="additional-information-about-privacy-for-configuration-manager"></a>Ytterligare information om sekretess för Configuration Manager
 
@@ -88,6 +88,9 @@ Mer information finns i [Endpoint Protection](../../../protect/deploy-use/endpoi
 
 
 ## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Webbplatshierarki – geografisk vy med Bing Maps
+
+> [!IMPORTANT]
+> Den här funktionen är föråldrad från och med 2020 augusti. Använd det **hierarkiska diagram** alternativet.<!--8116777-->
 
 I Configuration Manager-konsolen går du till arbets ytan **övervakning** , väljer noden **platshierarki** och växlar till den **geografiska vyn**. I den här vyn kan du använda kartor som Microsoft Bing Maps tillhandahåller för att visa din Configuration Manager fysiska servertopologi. Den plats information som du anger skickas från servern till Bing Maps-webbtjänsten för att aktivera den här funktionen.
 

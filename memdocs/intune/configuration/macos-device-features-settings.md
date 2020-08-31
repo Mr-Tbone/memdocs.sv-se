@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/15/2020
+ms.date: 08/20/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91bf09a122031b7186840bc17cd44cc5738b2ffe
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 79c389767ad3cb796e2cc7b4cd9a35015e17a837
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093547"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819668"
 ---
 # <a name="macos-device-feature-settings-in-intune"></a>Funktionsinställningar för macOS-enheter i Intune
 
@@ -267,6 +267,15 @@ Den här funktionen gäller för:
 - **Typ av SSO-apptillägg**: Välj typ av SSO-apptillägg. Alternativen är:
 
   - **Inte konfigurerad**: Apptilläggen används inte. Om du vill inaktivera ett apptillägg, så ändra SSO-apptilläggstypen till **Inte konfigurerad**.
+  - **Microsoft Azure AD**: Använder Microsoft Enterprise SSO-plugin-programmet, som är ett SSO-apptillägg av omdirigeringstyp. Det här plugin-programmet ger enkel inloggning för Active Directory-konton i alla macOS-program som har stöd för [Apples Enterprise-funktion för enkel inloggning](https://developer.apple.com/documentation/authenticationservices). Använd denna typ av SSO-apptillägg för att aktivera SSO på Microsoft-appar, organisationsappar och webbplatser som autentiseras med hjälp av Azure AD.
+
+    Plugin-programmet för enkel inloggning fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse.
+
+    > [!IMPORTANT]
+    > Om du vill uppnå enkel inloggning med tilläggstypen för Microsoft Azure AD SSO-appen, måste du installera macOS-företagsportalappen på enheterna. Företagsportalappen levererar Microsoft Enterprise SSO-tilläggsprogrammet till enheterna. Inställningarna för MDM-tillägget för MDM aktiverar tilläggsprogrammet. Företagsportalappen och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session på sina enheter. Den här sessionen används av olika program utan att användarna behöver autentisera sig igen.
+    >
+    > Mer information om företagsportalappen finns i [Vad händer när jag installerar företagsportalappen och registrerar macOS-enheten i Intune](../user-help/what-happens-if-you-install-the-Company-Portal-app-and-enroll-your-device-in-intune-macos.md). [Ladda ned](https://go.microsoft.com/fwlink/?linkid=853070) företagsportalappen.
+
   - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Försäkra dig om att du känner till tillägget och grupp-ID:t för din organisations apptillägg.
   - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill använda SSO med autentiseringsflöden med anrop och svar. Försäkra dig om att du känner till tilläggs-ID och grupp-ID för din organisations SSO-apptillägg.  
   - **Kerberos**: Använd Apples inbyggda Kerberos-tillägg, som ingår i macOS Catalina 10.15 och senare. Det här alternativet är en Kerberos-specifik version av apptillägget **Autentiseringsuppgifter**.
@@ -274,14 +283,14 @@ Den här funktionen gäller för:
   > [!TIP]
   > Gå igenom tillägget genom att lägga till dina egna konfigurationsvärden med hjälp av typerna **Omdirigering** och **Autentiseringsuppgifter**. Om du använder **autentiseringsuppgifter**bör du överväga att använda inbyggda konfigurationsinställningar från Apple i **Kerberos**-typen.
 
-- **Tilläggs-ID** (omdirigering och autentiseringsuppgift): Ange det paket-ID som identifierar ditt SSO-apptillägg, exempelvis `com.apple.ssoexample`.
-- **Team-ID** (omdirigering och autentiseringsuppgift): Ange SSO-apptilläggets team-ID. Ett team-ID är en sträng med 10 tecken (siffror och bokstäver) som genereras av Apple, t. ex. `ABCDE12345`. 
+- **Tilläggs-ID** (omdirigering, autentiseringsuppgift): Ange det paket-ID som identifierar ditt SSO-apptillägg, exempelvis `com.apple.ssoexample`.
+- **Team-ID** (omdirigering, autentiseringsuppgift): Ange SSO-apptilläggets team-ID. Ett team-ID är en sträng med 10 tecken (siffror och bokstäver) som genereras av Apple, t. ex. `ABCDE12345`. 
 
   [Leta upp ditt team-ID](https://help.apple.com/developer-account/#/dev55c3c710c) (öppna Apples webbplats) om du vill ha mer information.
 
-- **Sfär** (autentiseringsuppgift och Kerberos): Ange namnet på din autentiseringssfär. Sfärnamnet måste skrivas med versaler, t. ex. `CONTOSO.COM`. Vanligtvis är sfärnamnet detsamma som ditt DNS-domännamn, men skrivet enbart med versaler.
+- **Sfär** (autentiseringsuppgift, Kerberos): Ange namnet på din autentiseringssfär. Sfärnamnet måste skrivas med versaler, t. ex. `CONTOSO.COM`. Vanligtvis är sfärnamnet detsamma som ditt DNS-domännamn, men skrivet enbart med versaler.
 
-- **Domäner** (autentiseringsuppgift och Kerberos): Ange domän- eller värdnamnen för de webbplatser som kan autentiseras via SSO. Om din webbplats exempelvis är `mysite.contoso.com`, så är `mysite` värdnamnet och `contoso.com` domännamnet. När användarna ansluter till någon av dessa platser så hanterar apptillägget autentiseringsutmaningen. Med den här autentiseringen kan användarna logga in med hjälp av Ansiktsigenkänning-ID, Touch ID eller PIN-kod/lösenord för Apple.
+- **Domäner** (autentiseringsuppgift, Kerberos): Ange domän- eller värdnamnen för de webbplatser som kan autentiseras via SSO. Om din webbplats exempelvis är `mysite.contoso.com`, så är `mysite` värdnamnet och `contoso.com` domännamnet. När användarna ansluter till någon av dessa platser så hanterar apptillägget autentiseringsutmaningen. Med den här autentiseringen kan användarna logga in med hjälp av Ansiktsigenkänning-ID, Touch ID eller PIN-kod/lösenord för Apple.
 
   - Alla domäner i Intune-profiltilläggen för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken apptilläggsprofil för enkel inloggning som helst, även om du använder olika typer av SSO-apptillägg.
   - Dessa domäner är inte skiftlägeskänsliga.
@@ -291,7 +300,7 @@ Den här funktionen gäller för:
   - Alla URL:er i Intune-apptilläggsprofilerna för enkel inloggning måste vara unika. Du kan inte upprepa en domän i vilken SSO-apptilläggsprofil som helst, även om du använder olika typer av SSO-tillägg.
   - URL:erna måste inledas med `http://` eller `https://`.
 
-- **Ytterligare konfiguration** (omdirigering och autentiseringsuppgift): Ange ytterligare tilläggsspecifika data som ska skickas till SSO-apptillägget:
+- **Ytterligare konfiguration** (Microsoft Azure AD, omdirigering, autentiseringsuppgift): Ange ytterligare tilläggsspecifika data som ska skickas till SSO-apptillägget:
   - **Nyckel**: Ange namnet på det objekt som du vill lägga till, t.ex. `user name`.
   - **Typ**: Ange datatyp. Alternativen är:
 
@@ -331,7 +340,13 @@ Den här funktionen gäller för:
 - **Active Directory-platskod** (endast Kerberos): Ange namnet på den Active Directory-plats som Kerberos-tillägget ska använda. Du kanske inte behöver ändra det här värdet eftersom Kerberos-tillägget kan hitta Active Directory-platskoden automatiskt.
 - **Cachenamn** (endast Kerberos): Ange GSS-namnet (Generic Security Services) för Kerberos-cachen. Du behöver förmodligen inte ange det här värdet.  
 - **Meddelande om lösenordskrav** (endast Kerberos): Ange en textversion av organisationens lösenordskrav som ska visas för användarna. Meddelandet visas om du inte har några krav på Active Directory-lösenordens komplexitet eller på minsta längd för lösenord.  
-- **Programpakets-ID:n** (endast Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. Dessa appar beviljas åtkomst till den biljettbeviljande biljetten för Kerberos och autentiseringsbiljetten. Apparna autentiserar även användare för tjänster som de har behörighet till.
+- **Aktivera läget Delad enhet** (endast Microsoft Azure AD): Välj **Ja** om du ska distribuera Microsoft Enterprise SSO-plugin-programmet till macOS-enheter som konfigurerats för Azure AD:s funktion för läget Delad enhet. Enheter i delat läge gör det möjligt för många användare att logga in och ut globalt på program som stöder läget Delad enhet. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. 
+
+  När du har valt **Ja** rensas alla befintliga användarkonton från enheterna. Om du vill undvika dataförlust eller förhindra en fabriksåterställning måste du förstå hur den här inställningen påverkar dina enheter.
+
+  Mer information om läget delad enhet finns i [Översikt över läget delad enhet](https://docs.microsoft.com/azure/active-directory/develop/msal-shared-devices).
+
+- **Programpaket-ID** (Microsoft Azure AD, Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. Dessa appar beviljas åtkomst till den biljettbeviljande biljetten för Kerberos och autentiseringsbiljetten. Apparna autentiserar även användare för tjänster som de har behörighet till.
 - **Domänsfärsmappning** (endast Kerberos): **Lägg till** DNS-suffixen för den domän som ska mappas till din sfär. Använd den här inställningen när värdarnas DNS-namn inte matchar sfärnamnet. Du behöver förmodligen inte skapa den här anpassade domän-till-sfär-mappningen.
 - **PKINIT-certifikat** (endast Kerberos): **Välj** den kryptering för offentlig nyckel för inledande autentisering (PKINIT) som kan användas för Kerberos-autentisering. Du kan välja mellan [PKCS](../protect/certficates-pfx-configure.md)- eller [SCEP](../protect/certificates-scep-configure.md) -certifikat som du har lagt till i Intune. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
 

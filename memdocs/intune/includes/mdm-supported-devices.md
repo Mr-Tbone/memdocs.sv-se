@@ -27,7 +27,7 @@
 - Windows 10 Teams (Surface Hub)
 
    Mer information om hantering av mobilenheter som kör Windows 10 Teams finns i [Manage Surface Hub with MDM](https://docs.microsoft.com/surface-hub/manage-settings-with-mdm-for-surface-hub) (Hantera Surface Hub med MDM)
-- Windows 10 1709 (RS3) och senare, Windows Phone 8.1, Windows 8.1 RT och datorer som kör Windows 8.1 (hanteringsläge)
+- Windows 10 1709 (RS3) och senare, Windows 8.1 RT och datorer som kör Windows 8.1 (hanteringsläge)
 
 > [!NOTE]
 > Det är inte alla Windows-versioner som stöder alla tillgängliga operativsystemfunktioner som konfigureras via MDM. Se [referensdokumenten för Windows Configuration Service Provider](https://docs.microsoft.com/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers). Varje CSP markerar vilka Windows-versioner som stöds.

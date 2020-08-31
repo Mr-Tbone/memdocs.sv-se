@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 04/20/2020
+ms.date: 08/20/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5939d12003df78b459ebc12c294434826194b931
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 2e4f98f0f1e60ff08e86dedb2dd34ac9f55157ac
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166135"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820399"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Konfigurera infrastrukturen för att stödja SCEP med Intune
 
@@ -127,7 +127,7 @@ Följande avsnitt kräver kunskaper om Windows Server 2012 R2 eller senare samt 
 1. Skapa en v2-certifikatmall (med Windows 2003-kompatibilitet) för användning som SCEP-certifikatmall. Du kan:
 
    - Använda snapin-modulen *Certifikatmallar* för att skapa en ny anpassad mall.
-   - Kopiera en befintlig mall (till exempel mallen Användare) och sedan uppdatera kopian för användning som NDES-mall.
+   - Kopiera en befintlig mall (till exempel mallen Webbserver) och sedan uppdatera kopian för användning som NDES-mall.
 
 2. Konfigurera följande inställningar på de angivna flikarna i mallen:
 
@@ -215,7 +215,7 @@ Det är valfritt att ändra giltighetsperioden för certifikatmallen.
 
 När du har [skapat SCEP-certifikatmallen](#create-the-scep-certificate-template) kan du redigera mallen för att granska **giltighetsperioden** på fliken **Allmänt**.
 
-Som standard använder Intune värdet som konfigurerats i mallen. Du kan dock konfigurera certifikatutfärdaren så att den tillåter att beställaren anger ett annat värde, och det värdet kan anges från Intune-konsolen.
+Som standard använder Intune värdet som konfigurats i mallen men du kan dock konfigurera certifikatutfärdaren så att den tillåter att beställaren anger ett annat värde, och det värdet kan anges från Intune-konsolen.
 
 > [!IMPORTANT]
 > För iOS/iPadOS och macOS ska du alltid använda ett värde som anges i mallen.
@@ -327,32 +327,51 @@ Följande procedurer kan hjälpa dig att konfigurera registreringstjänsten för
   
 ### <a name="install-and-bind-certificates-on-the-server-that-hosts-ndes"></a>Installera och binda certifikat på den server som är värd för NDES
 
+Det finns två certifikat i NDES-servern som krävs av konfigurationen.
+Dessa certifikat är **Certifikat för klientautentisering** och **Certifikat för serverautentisering** som anges i avsnittet [Certifikat och mallar](#certificates-and-templates) .
+
 > [!TIP]
-> I följande procedur kan du använda ett enda certifikat för både *serverautentisering* och *klientautentisering* när certifikatet konfigureras för att uppfylla kriterierna för båda användningarna. Kriterierna för varje användning beskrivs i steg 1 och 3 i följande procedur.
+> I följande procedur kan du använda ett enda certifikat för både *serverautentisering* och *klientautentisering* när certifikatet konfigureras för att uppfylla kriterierna för båda användningarna.
+> För ämnesnamnet måste det uppfylla certifikatkraven för *Klientautentisering*.
 
-1. Begär ett certifikat för **serverautentisering** från din interna certifikatutfärdare eller offentliga certifikatutfärdare, och installera därefter certifikatet på servern.
+- **Certifikat för klientautentisering** 
 
-   Om servern använder ett externt och internt namn för en enda nätverksadress måste certifikatet för serverautentisering ha:
+   Det här certifikatet används vid installation av Intune Certificate Connector.
 
-   - Ett **Ämnesnamn** med ett externt offentligt servernamn.
-   - Ett **Alternativt ämnesnamn** som innehåller det interna servernamnet.
-
-2. Binda serverautentiseringscertifikatet i IIS:
-
-   1. När du har installerat certifikatet för serverautentisering öppnar du **IIS-hanteraren** och väljer **standardwebbplatsen**. I fönstret **Åtgärder** väljer du **Bindningar**.
-
-   1. Välj **Lägg till**, ställ in **Typ** till **https**och kontrollera att porten är **443**.
+   Begär och installera ett certifikat för **klientautentisering** från den interna certifikatutfärdaren eller en offentlig certifikatutfärdare.
    
-   1. För **SSL-certifikat**anger du certifikatet för serverautentiserning.
-
-3. På NDES-servern: begär och installera ett certifikat för **klientautentisering** från den interna certifikatutfärdaren eller en offentlig certifikatutfärdare.
-
-   Certifikatet för klientautentisering måste ha följande egenskaper:
+   Certifikatet måste uppfylla följande krav:
 
    - **Förbättrad nyckelanvändning**: Värdet måste innehålla **Klientautentisering**.
-   - **Ämnesnamn**: Värdet måste vara samma som DNS-namnet på servern där du installerar certifikatet (NDES-servern).
+   - **Ämnesnamn**: Ställ in ett CN (eget namn) vars värde måste vara samma som FQDN på servern där du installerar certifikatet (NDES-servern).
 
-4. Den server som är värd för NDES-tjänsten är nu redo att stödja Intune Certificate Connector.
+- **Certifikat för serverautentisering**
+
+   Det här certifikatet används i IIS. Det är ett enkelt webbservercertifikat som gör att klienten kan lita på NDES URL.
+   
+   1. Begär ett certifikat för **serverautentisering** från din interna certifikatutfärdare eller offentliga certifikatutfärdare, och installera därefter certifikatet på servern.
+      
+      Beroende på hur du exponerar din NDES för Internet finns det olika krav. 
+      
+      En lämplig konfiguration är:
+   
+      - Ett **Ämnesnamn**: Ställ in ett CN (eget namn) vars värde måste vara samma som FQDN på servern där du installerar certifikatet (NDES-servern).
+      - **Alternativt namn för certifikatmottagare**: Ange DNS-poster för varje URL som din NDES svarar på, till exempel internt FQDN och externa URL:er.
+   
+      > [!NOTE]
+      > Om du använder Azure AD App Proxy kommer AAD App Proxy-anslutingsprogrammet att översätta förfrågningarna från den externa URL:en till den interna URL:en.
+      > Därför svarar NDES endast på begäranden riktade till den interna URL:en, vanligtvis FQDN-serverns fullständiga domännamn.
+      >
+      > I den här situationen krävs inte den externa URL: en.
+   
+   2. Binda serverautentiseringscertifikatet i IIS:
+
+      1. När du har installerat certifikatet för serverautentisering öppnar du **IIS-hanteraren** och väljer **standardwebbplatsen**. I fönstret **Åtgärder** väljer du **Bindningar**.
+
+      1. Välj **Lägg till**, ställ in **Typ** till **https**och kontrollera att porten är **443**.
+   
+      1. För **SSL-certifikat**anger du certifikatet för serverautentiserning.
+
 
 ## <a name="install-the-intune-certificate-connector"></a>Installera Intune Certificate Connector
 
@@ -372,7 +391,7 @@ Microsoft Intune Certificate Connector installeras på den server som kör din N
 
    1. Kontrollera att .NET 4.5 Framework är installerat, eftersom det krävs av Intune Certificate Connector. .NET 4.5 Framework ingår automatiskt i Windows Server 2012 R2 och senare versioner.
 
-   2. Kör installationsprogrammet (**NDESConnectorSetup.exe**). Installationsprogrammet installerar även policymodulen för NDES och IIS-certifikatregistreringsplatsens (CRP) webbtjänst. CRP-webbtjänsten, *CertificateRegistrationSvc*, körs som ett program i IIS.
+   2. Använd ett konto med administratörsbehörighet till servern för att köra installationsprogrammet (**NDESConnectorSetup.exe**). Installationsprogrammet installerar även policymodulen för NDES och IIS-certifikatregistreringsplatsens (CRP) webbtjänst. CRP-webbtjänsten, *CertificateRegistrationSvc*, körs som ett program i IIS.
 
       När du installerar NDES för fristående Intune installeras CRP-tjänsten automatiskt med certifikatanslutningsappen.
 

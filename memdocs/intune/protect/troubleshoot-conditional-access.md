@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 233bc5bbdf983069ed60c8a9afbe165fb2e6b9b1
-ms.sourcegitcommit: 764142960005ea0cb5afa00757f2b403ce5032c6
+ms.openlocfilehash: 088c3d6a281efcb1877d80d68382b1dc848ae321
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405825"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663386"
 ---
 # <a name="troubleshoot-conditional-access"></a>Felsöka villkorlig åtkomst
 Den här artikeln beskriver vad du gör om dina användare inte kan komma åt resurser som skyddas med Villkorsstyd åtkomst, eller om användare kan komma åt skyddade resurser men ska blockeras.
@@ -45,7 +45,7 @@ Följande krav måste uppfyllas för att Villkorsstyrd åtkomst ska fungera:
 
 - Användaren måste som standard tilldelas en enhetsefterlevnadsprincip. Detta kan bero på konfigurationen av inställningen **Markera enheter som saknar efterlevnadsprincip som** , vilket finns under **Enhetsefterlevnad** > **Inställningar för efterlevnadsprinciper** i Intune-administrationsportalen.
 
-- Exchange ActiveSync måste vara aktiverat på enheten om användaren använder enhetens inbyggda e-postklient i stället för Outlook. Detta sker automatiskt för enheter med iOS/iPadOS, Windows Phone eller Android Knox.
+- Exchange ActiveSync måste vara aktiverat på enheten om användaren använder enhetens inbyggda e-postklient i stället för Outlook. Detta sker automatiskt för enheter med iOS/iPadOS eller Android Knox.
 
 - För lokal Exchange måste din Intune Exchange Connector vara korrekt konfigurerad. Mer information finns i [Felsöka Exchange Connector i Microsoft Intune](troubleshoot-exchange-connector.md).
 
@@ -94,7 +94,7 @@ Du kan se dessa villkor för varje enhet i Azure-portalen och i inventeringsrapp
 
 ## <a name="devices-are-noncompliant-but-users-are-not-blocked"></a>Enheter är inkompatibla men användarna blockeras inte
 
-- För Windows-datorer blockerar Villkorsstyrd åtkomst endast den inbyggda e-postappen, Office 2013 med modern autentisering, eller Office 2016. För att blockera tidigare versioner av Outlook eller alla e-postappar på Windows-datorer krävs konfiguration av Enhetsregistrering i AAD och Active Directory Federation Services (AD FS), som beskrivs i [Konfigurera SharePoint Online och Exchange Online för Villkorsstyrd åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
+- För Windows-datorer blockerar Villkorsstyrd åtkomst endast den inbyggda e-postappen, Office 2013 med modern autentisering, eller Office 2016. För att blockera tidigare versioner av Outlook eller alla e-postappar på Windows-datorer krävs konfiguration av Enhetsregistrering i Azure AD och Active Directory Federation Services (AD FS), som beskrivs i [Konfigurera SharePoint Online och Exchange Online för Villkorsstyrd åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-no-modern-authentication).
 
 - Om enheten rensas selektivt eller dras tillbaka från Intune kan den fortfarande ha åtkomst flera timmar efter att den dragits tillbaka. Det beror på att Exchange cachelagrar åtkomsträttigheter i sex timmar. Överväg andra sätt att skydda data på pensionerade enheter i det här scenariot.
 

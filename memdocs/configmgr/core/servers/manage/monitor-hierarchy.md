@@ -10,12 +10,12 @@ ms.assetid: 007dbb73-18a7-48a3-a489-97cf9fc4f140
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 66fc6744ef7d1aaf90a5e7339cc9a5174c0d33f6
-ms.sourcegitcommit: bbf820c35414bf2cba356f30fe047c1a34c5384d
+ms.openlocfilehash: 504943df58c0471a0ef821a269cc22b2d12d76d8
+ms.sourcegitcommit: 42882de75c8a984ba35951b1165c424a7e0ba42e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81713704"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068046"
 ---
 # <a name="monitor-the-hierarchy"></a>Övervaka hierarkin
 
@@ -31,7 +31,7 @@ Med hjälp av Configuration Manager-konsolen för övervakning, använder du fö
 - [Introduktion till rapportering](introduction-to-reporting.md)
 - [Loggfiler](../../plan-design/hierarchy/log-files.md).  
 
-När du övervakar platser ska du leta efter tecken på problem som du behöver åtgärda. Ett exempel:  
+När du övervakar platser ska du leta efter tecken på problem som du behöver åtgärda. Exempel:  
 
 - Eftersläpande filer på platsservrar och platssystem.  
 
@@ -52,7 +52,7 @@ När du övervakar platser ska du leta efter tecken på problem som du behöver 
 Om övervaknings aktiviteter avslöjar några tecken på problem kan du undersöka orsaken till problemet. Sedan kan du snabbt reparera den för att minimera risken för att en plats kraschar.  
 
 
-## <a name="monitor-common-management-tasks"></a><a name="BKMK_MonintorMgmtTasks"></a>Övervaka vanliga hanterings uppgifter
+## <a name="monitor-common-management-tasks"></a><a name="BKMK_MonintorMgmtTasks"></a> Övervaka vanliga hanterings uppgifter
 
 Configuration Manager tillhandahåller inbyggd övervakning i Configuration Manager-konsolen.
 
@@ -99,13 +99,9 @@ Mer information finns i [övervaka app-användning med avläsning av program var
 Mer information finns i [övervaka program uppdateringar](../../../sum/deploy-use/monitor-software-updates.md).  
 
 
-## <a name="monitor-the-site-hierarchy"></a><a name="BKMK_SH_Node"></a>Övervaka platshierarki
+## <a name="monitor-the-site-hierarchy"></a><a name="BKMK_SH_Node"></a> Övervaka platshierarki
 
-Noden **platshierarki på arbets** ytan **övervakning** ger en översikt över din Configuration Manager-hierarki och länkar mellan platser. Du kan använda två vyer:  
-
-- **Hierarkidiagram**: visar hierarkin som en förenklad topologi som bara visar viktig information. Mer information finns i [Hierarkidiagram](#hierarchy-diagram).  
-
-- **Geografisk vy**: visar dina platser på en geografisk karta som visar de plats platser som du konfigurerar. Mer information finns i [geografisk vy](#geographical-view).  
+Noden **platshierarki på arbets** ytan **övervakning** ger en översikt över din Configuration Manager-hierarki och länkar mellan platser. 
 
 Använd noden **platshierarki om du vill** övervaka hälso tillståndet för varje plats. Övervaka även länkar mellan platser och deras relation till externa faktorer, t. ex. en geografisk plats.  
 
@@ -123,13 +119,16 @@ Följande alternativ ändrar hierarkidiagrammet:
 
 #### <a name="groups"></a>Grupper
 
-Konfigurera antalet primära platser och sekundära platser som utlöser en ändring i hierarki diagrammet. Den här ändringen i visningen kombinerar platserna till ett enda objekt. Sedan visas det totala antalet platser och en övergripande sammanställning av status meddelanden och plats status. Gruppkonfigurationer påverkar inte den geografiska vyn.  
+Konfigurera antalet primära platser och sekundära platser som utlöser en ändring i hierarki diagrammet. Den här ändringen i visningen kombinerar platserna till ett enda objekt. Sedan visas det totala antalet platser och en övergripande sammanställning av status meddelanden och plats status.
 
 #### <a name="favorite-sites"></a>Favorit platser
 
 Ange att enskilda platser ska vara en favorit webbplats. En favoritplats markeras med en stjärnikon i hierarkidiagrammet. Favorit platser kombineras inte med andra platser när du använder grupper. De visas alltid individuellt.  
 
 ### <a name="geographical-view"></a>Geografisk vy
+
+> [!IMPORTANT]
+> Den här funktionen är föråldrad från och med 2020 augusti. Använd det **hierarkiska diagram** alternativet.<!--8116777-->
 
 I den geografiska vyn visas varje plats på en geografisk karta. Den visar bara platser som du konfigurerar med en plats. När du väljer en plats i den här vyn visas länkar till överordnade eller underordnade platser. Till skillnad från vyn hierarki diagram kan du inte Visa information om plats status meddelande eller replikeringslänk i den här vyn.  
 

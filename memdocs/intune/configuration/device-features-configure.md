@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 05/06/2020
+ms.date: 08/17/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 349fdc7b0f13f0999b8c9993bcaba1d458ebac59
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 28bf8edb1b7c80e2362e9b145f38bd383dffa625
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989202"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820586"
 ---
 # <a name="add-ios-ipados-or-macos-device-feature-settings-in-intune"></a>Lägga till funktionsinställningar för iOS-, iPadOS- eller macOS-enheter i Intune
 
@@ -133,7 +133,7 @@ Gäller för:
 
 De flesta verksamhetsspecifika appar kräver av säkerhetsskäl någon nivå av användarautentisering. I många fall kräver autentiseringen att användaren anger samma autentiseringsuppgifter upprepade gånger. För att förbättra användarupplevelsen kan utvecklare skapa appar som använder enkel inloggning (SSO). Med enkel inloggning minskar antalet gånger som en användare måste ange autentiseringsuppgifter.
 
-Profilen för enkel inloggning baseras på Kerberos. Kerberos är ett protokoll för nätverksautentisering som använder kryptering med hemliga nycklar för att autentisera klient-serverprogram. Intune-inställningarna definierar Kerberos-kontoinformation vid åtkomst till servrar eller angivna appar och hanterar Kerberos-utmaningar för webbplatser och interna appar. Apple rekommenderar att du använder inställningarna för [tillägget för enkel inloggning för Kerberos](#single-sign-on-app-extension) (i den här artikeln) i stället för inställningarna för enkel inloggning.  
+Profilen för enkel inloggning baseras på Kerberos. Kerberos is a network authentication protocol that uses secret key cryptography to authenticate client-server applications. Intune-inställningarna definierar Kerberos-kontoinformation vid åtkomst till servrar eller angivna appar och hanterar Kerberos-utmaningar för webbplatser och interna appar. Apple rekommenderar att du använder inställningarna för [tillägget för enkel inloggning för Kerberos](#single-sign-on-app-extension) (i den här artikeln) i stället för inställningarna för enkel inloggning.  
 
 Om du vill använda enkel inloggning, måste du ha:
 
@@ -153,7 +153,7 @@ De här inställningarna konfigurerar ett apptillägg som möjliggör enkel inlo
 
 Använd de här inställningarna i Intune för att konfigurera ett apptillägg för enkel inloggning som har skapats av din organisation, identitetsprovider, Microsoft eller Apple. Tillägget för SSO-appen hanterar autentisering för dina användare. De här inställningarna konfigurerar apptillägg för enkel inloggning av omdirigerings- och inloggningsinformationstyp.
 
-- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OpenID Connect, OAuth och SAML2. Du kan använda ett allmänt omdirigeringstillägg på macOS-enheter. För iOS/iPad-enheter kan du välja mellan Microsoft Azure AD-tillägget för enkel inloggning ([Microsoft Enterprise-plugin-programmet för enkel inloggning](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin)) och ett allmänt omdirigeringstillägg.
+- Omdirigeringstypen är utformad för moderna autentiseringsprotokoll som OpenID Connect, OAuth och SAML2. Du kan välja mellan Microsoft Azure AD-tillägget för enkel inloggning ([Microsoft Enterprise-plugin-programmet för enkel inloggning](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin)) och ett allmänt omdirigeringstillägg.
 - Inloggningsinformationstypen är utformad för autentiseringsflöden med anrop och svar. Du kan välja mellan ett Kerberos-specifikt tillägg för autentiseringsuppgifter från Apple och ett generiskt för autentiseringsuppgifter.
 
 En lista över de inställningar som du kan konfigurera i Intune finns i [iOS/iPadOS SSO-apptillägg](ios-device-features-settings.md#single-sign-on-app-extension) och [macOS SSO-apptillägg](macos-device-features-settings.md#single-sign-on-app-extension).

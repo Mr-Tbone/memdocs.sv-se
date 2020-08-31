@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 08/10/2020
 ms.author: erikje
 ms.custom: include file
-ms.openlocfilehash: af506f9eee80d167b42827f93958fc2a3a5741a4
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: 7027eac119ef36adfdb9a0057a74d276696620b3
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051644"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820076"
 ---
 Dessa meddelanden innehåller viktig information som kan hjälpa dig att förbereda dig för framtida ändringar och funktioner i Intune.
 
@@ -37,10 +37,10 @@ I MC208118 som lanserades förra mars introducerade vi en ny enkel webbadress f�
 Funktionen Android-enhetsadministratör lanserades i Android 2.2 som ett sätt att hantera Android-enheter. Från Android 5 lanserades det mer moderna hanteringsramverket [Android Enterprise](../enrollment/connect-intune-android-enterprise.md) (för enheter som kan ansluta till Google Mobile Services). Google uppmuntrar till att användare byter från funktionen enhetsadministratör genom att minska hanteringsstödet i nya Android-versioner.
 
 #### <a name="how-does-this-affect-me"></a>Hur påverkar det här mig?
-Eftersom Google gör de här ändringarna kommer du inte längre att ha tillgång till lika många hanteringsfunktioner på berörda enheter med funktionen enhetsadministratör från det fjärde kvartalet 2020. 
+Eftersom Google gör de här ändringarna kommer du inte längre att ha tillgång till lika många hanteringsfunktioner på berörda enheter med funktionen enhetsadministratör från oktober 2020. 
 
 > [!NOTE]
-> Det här datumet angavs tidigare som tredje kvartalet 2020, men det har flyttats fram baserat på [den senaste informationen från Google](https://www.blog.google/products/android-enterprise/da-migration/).
+> Det här datumet angavs tidigare som fjärde kvartalet 2020, men det har flyttats fram baserat på [den senaste informationen från Google](https://www.blog.google/products/android-enterprise/da-migration/).
 
 ##### <a name="device-types-that-will-be-impacted"></a>Enhetstyper som påverkas
 De enheter som påverkas av det minskade stödet för funktionen enhetsadministratör är de som alla tre villkoren nedan gäller för:
@@ -96,14 +96,14 @@ Efterlevnadsinställningar som påverkas:
 - För nyregistrerade enheter, nyligen tilldelade inställningar och uppdaterade inställningar visas de efterlevnadsinställningar som påverkas fortfarande som orsaker till inkompatibilitet på sidan ”Uppdatera enhetsinställningar” och enheten uppfyller inte efterlevnadskraven, men striktare lösenordskrav tillämpas inte i appen Inställningar.
 
 #### <a name="cause-of-impact"></a>Orsak till påverkan 
-Enheterna börjar påverkas under det fjärde kvartalet 2020. Då släpper vi även en uppdatering till appen Företagsportal som utökar API-inriktningen för Företagsportal från nivå 28 till nivå 29 ([enligt krav från Google](https://www.blog.google/products/android-enterprise/da-migration/)). 
+Enheterna börjar påverkas under i oktober 2020. Då släpper vi även en uppdatering till appen Företagsportal som utökar API-inriktningen för Företagsportal från nivå 28 till nivå 29 ([enligt krav från Google](https://www.blog.google/products/android-enterprise/da-migration/)). 
 
 Enhetsadministratörshanterade enheter från andra tillverkare än Samsung påverkas då såvida inte användaren utför båda de här åtgärderna:
 - Uppdaterar till Android 10 eller senare.
 - Uppdaterar appen Företagsportal till den version som är inriktad på API-nivå 29.
 
 #### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Vad kan jag göra för att förbereda mig för den här ändringen?
-För att undvika de kommande funktionsbegränsningarna under fjärde kvartalet 2020 rekommenderar vi följande:
+För att undvika den minskade funktionalitet som sker i oktober 2020 rekommenderar vi följande:
 - **Nya registreringar**: Använd [Android Enterprise](../enrollment/connect-intune-android-enterprise.md)-hantering för nya enheter (där det är tillgängligt) och/eller [appskyddspolicyer](../apps/app-protection-policies.md). Undvik att använda enhetsadministratörshantering för nya enheter. 
 - **Tidigare registrerade enheter**: Om en enhetsadministratörshanterad enhet kör Android 10 eller senare, eller om den uppdateras till Android 10 eller senare (särskilt om den inte är en Samsung-enhet), så kan du flytta den från enhetsadministratörshantering till [Android Enterprise](../enrollment/connect-intune-android-enterprise.md)-hantering och/eller [appskyddspolicyer](../apps/app-protection-policies.md). Du kan använda det smidiga flödet för att [flytta Android-enheter från enhetsadministratör till arbetsprofilhantering](../enrollment/android-move-device-admin-work-profile.md).
 

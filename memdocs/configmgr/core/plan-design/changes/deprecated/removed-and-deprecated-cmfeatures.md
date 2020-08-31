@@ -2,7 +2,7 @@
 title: Föråldrade funktioner
 titleSuffix: Configuration Manager
 description: Lär dig mer om de funktioner som Configuration Manager inte längre stöder.
-ms.date: 08/11/2020
+ms.date: 08/28/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 29b5dd8fdceb803de77aff9adbd0614d1e201b18
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: aca9dc5c2ff2d88155ab19656f391cf87a4e977f
+ms.sourcegitcommit: 42882de75c8a984ba35951b1165c424a7e0ba42e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88694268"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068097"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Borttagna och föråldrade funktioner för Configuration Manager
 
@@ -31,6 +31,7 @@ Följande funktioner är föråldrade. Du kan fortfarande använda dem nu, men M
 
 |Funktion|Första meddelande om utfasning|Stöd har &nbsp; tagits bort|
 |-----------|---|--------------|
+|Den geografiska vyn i noden **platshierarki** i arbets ytan **övervakning** i Configuration Manager-konsolen.<!--8116777-->|Augusti 2020|TBD|
 |Implementeringen av delning av innehåll från Azure har ändrats. Använd en Content-aktiverad Cloud Management Gateway. Du kommer inte att kunna skapa en traditionell moln distributions plats i framtiden.|Februari 2019|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 |Klassisk tjänst distribution till Azure för Cloud Management Gateway och en moln distributions plats. Mer information finns i [plan for CMG](../../../clients/manage/cmg/plan-cloud-management-gateway.md#azure-resource-manager).|November 2018|TBD<sup>[Anmärkning 1](#bkmk_note1)</sup>|
 

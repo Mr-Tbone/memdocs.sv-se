@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 06/08/2020
+ms.date: 08/20/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32d46374186596e8c8721b77510738caadcf78b8
-ms.sourcegitcommit: 02635469d684d233fef795d2a15615658e62db10
+ms.openlocfilehash: 09ccfe079511c90f2ce7ecf6c27d4dfcf1c85327
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84814949"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820195"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -304,7 +304,7 @@ Den här funktionen gäller för:
   - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard använder operativsystemet inte apptillägg. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
   - **Microsoft Azure AD**: Använder Microsoft Enterprise SSO-plugin-programmet, som är ett SSO-apptillägg av omdirigeringstyp. Det här plugin-programmet ger enkel inloggning för Active Directory-konton i alla program som har stöd för [Apples Enterprise-funktion för enkel inloggning](https://developer.apple.com/documentation/authenticationservices). Använd denna typ av SSO-apptillägg för att aktivera SSO på Microsoft-appar, organisationsappar och webbplatser som autentiseras med hjälp av Azure AD.
 
-    Plugin-programmet för enkel inloggning fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som tidigare hade en asynkron autentisering med Microsoft Authenticator-appen fortsätter att få SSO med [Microsoft Enterprise SSO-plugin-programmet för Apple-enheter](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin).
+    Plugin-programmet för enkel inloggning fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som använder Microsoft Authenticator-appen för autentisering fortsätter att få SSO med [Microsoft Enterprise SSO-tillägg för Apple-enheter](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin).
 
     > [!IMPORTANT]
     > Om du vill uppnå enkel inloggning med tilläggstypen för Microsoft Azure AD SSO-appen, måste du först installera Microsoft Authenticator-appen för iOS/iPad på enheterna. Authenticator-appen levererar Microsoft Enterprise SSO-plugin-programmet till enheter, och tilläggsinställningarna för MDM SSO-appen aktiverar plugin-programmet. När Authenticator och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session på sina enheter. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen. Mer information om Authenticator finns i [What is the Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-overview) (vad är Microsoft Authenticator-appen).
@@ -371,7 +371,12 @@ Den här funktionen gäller för:
 
 - **Active Directory-platskod** (endast Kerberos): Ange namnet på den Active Directory-plats som Kerberos-tillägget ska använda. Du kanske inte behöver ändra det här värdet eftersom Kerberos-tillägget kan hitta Active Directory-platskoden automatiskt.
 - **Cachenamn** (endast Kerberos): Ange GSS-namnet (Generic Security Services) för Kerberos-cachen. Du behöver förmodligen inte ange det här värdet.
-- **Programpakets-ID:n** (endast Kerberos): **Lägg till** de programpakets-ID:n som ska använda enkel inloggning på dina enheter. De här apparna beviljas åtkomst till en Kerberos Ticket Granting-biljett, autentiseringsbiljetten och autentiserar användarna till de tjänster för vilka de har åtkomstbehörighet.
+- **Programpaket-ID** (Microsoft Azure AD, Kerberos): Ange paket-ID för de ytterligare appar som ska få enkel inloggning via ett tillägg på dina enheter.
+
+  Om du använder apptilläggstypen Microsoft Azure AD SSO använder de här apparna Microsoft Enterprise SSO-tillägget för att autentisera användaren utan att behöva logga in. De programpaket-ID:n som du anger har behörighet att använda apptillägget Microsoft Azure AD SSO om de inte använder några Microsoft-bibliotek, till exempel Microsoft Authentication Library (MSAL). Upplevelsen för dessa appar kanske inte är lika sömlös som Microsoft-biblioteken. Äldre appar som använder MSAL-autentisering eller appar som inte använder de senaste Microsoft-biblioteken måste läggas till i den här listan för att fungera korrekt med apptillägget Microsoft Azure SSO.  
+
+  Om du använder apptilläggstypen Kerberos SSO har dessa appar åtkomst till en Kerberos Ticket Granting-biljett, autentiseringsbiljetten och autentiserar användarna till de tjänster för vilka de har åtkomstbehörighet.
+
 - **Domänsfärsmappning** (endast Kerberos): **Lägg till** DNS-suffixen för den domän som ska mappas till din sfär. Använd den här inställningen när värdarnas DNS-namn inte matchar sfärnamnet. Du behöver förmodligen inte skapa den här anpassade domän-till-sfär-mappningen.
 - **PKINIT-certifikat** (endast Kerberos): **Välj** den kryptering för offentlig nyckel för inledande autentisering (PKINIT) som kan användas för Kerberos-autentisering. Du kan välja mellan [PKCS](../protect/certficates-pfx-configure.md)- eller [SCEP](../protect/certificates-scep-configure.md) -certifikat som du har lagt till i Intune. Mer information om certifikat finns i [Använda certifikat för autentisering i Microsoft Intune](../protect/certificates-configure.md).
 

@@ -10,14 +10,14 @@ ms.assetid: 26456bb7-f46b-4d8d-bb0b-e3fd9a52fe14
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 535b91b82e024431e4221824b4623b6ffc17b286
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 28d1a820642c7400ad60b1571851f18a3eb9124c
+ms.sourcegitcommit: 42882de75c8a984ba35951b1165c424a7e0ba42e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88700915"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89068114"
 ---
-# <a name="use-the-company-portal-app-on-co-managed-devices"></a>Använd Företagsportal-appen på samhanterade enheter
+# <a name="use-the-company-portal-app-on-co-managed-devices"></a>Använd Företagsportalappen på samhanterade enheter
 
 *Gäller för: Configuration Manager (aktuell gren)*
 
@@ -48,9 +48,11 @@ Mer information finns i följande artiklar:
 
 - [Så här växlar du Configuration Manager-arbetsbelastningar till Intune](how-to-switch-workloads.md)
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Configuration Manager aktuell gren version 2006 eller senare
+
+- Företagsportal app version 11.0.8980.0 eller senare
 
 - Windows 10, version 1803 eller senare:
 

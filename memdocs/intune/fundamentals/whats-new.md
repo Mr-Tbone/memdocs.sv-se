@@ -6,7 +6,7 @@ keywords: ''
 author: ErikjeMS
 ms.author: erikje
 manager: dougeby
-ms.date: 07/30/2020
+ms.date: 08/24/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: fundamentals
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 894ef12107b8e8b520ca69a463be47ef339bd9b4
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: aa6839cef79623b456cd31eec6b894eae7687de3
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051645"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820280"
 ---
 # <a name="whats-new-in-microsoft-intune"></a>Nyheter i Microsoft Intune
 
@@ -53,6 +53,127 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 ### Monitor and troubleshoot
 ### Role-based access control
 ### Scripts
+
+<!-- ########################## -->
+## <a name="week-of-august-24-2020-2008-service-release"></a>Veckan den 24 augusti 2020 (2008 Service Release)
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Apphantering
+
+#### <a name="associated-licenses-revoked-before-deletion-of-apple-vpp-token--6195322----"></a>Tillhörande licenser återkallades innan en Apple VPP-token togs bort<!--6195322  -->
+När du tar bort en Apple VPP-token i Microsoft Endpoint Manager så återkallas alla Intune-tilldelade licenser som är kopplade till denna token automatiskt innan token tas bort.
+
+#### <a name="improvement-to-update-device-settings-page-in-company-portal-app-for-android-to-shows-descriptions----7414768-wnstaged---"></a>Förbättring av visning av beskrivningar på sidan Uppdatera enhetsinställningar i företagsportalappen för Android <!-- 7414768 wnstaged -->
+I företagsportalappen på Android-enheter visar sidan **Uppdatera enhetsinställningar** de inställningar som behöver uppdateras för efterlevnad. Användare expanderar problemet för att visa mer information och ser då knappen **Lös**.
+
+Den här användarupplevelsen har förbättrats. De visade inställningarna utökas som standard så att beskrivningen och knappen **Lös** visas om så är tillämpligt. Tidigare minimerades problemen som standard. Det nya standardbeteendet minskar antalet klick, så att användarna kan lösa problem snabbare.
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-configuration"></a>Enhetskonfiguration
+
+#### <a name="use-netmotion-as-a-vpn-connection-type-for-iosipados-and-macos-devices---1333631-----"></a>Använd NetMotion som VPN-anslutningstyp för iOS/iPad- och macOS-enheter<!-- 1333631   -->
+När du skapar en VPN-profil är NetMotion tillgängligt som en VPN-anslutningstyp (**Enheter** > **Enhetskonfiguration** > **Skapa profil** > **iOS/iPad** eller **macOS** för plattform > **VPN-** för profil > **NetMotion** för anslutningstyp).
+
+Mer information om VPN-profiler i Intune finns i [Skapa VPN-profiler för att ansluta till VPN-servrar](../configuration/vpn-settings-configure.md).
+
+Gäller för:
+- iOS/iPadOS
+- macOS
+
+#### <a name="more-protected-extensible-authentication-protocol-peap-options-for-windows-10-wi-fi-profiles---3805024----"></a>Fler PEAP-alternativ (Protected Extensible Authentication Protocol) för Windows 10 Wi-Fi-profiler<!-- 3805024  -->
+På Windows 10-enheter kan du skapa Wi-Fi-profiler med EAP (Extensible Authentication Protocol) för att autentisera Wi-Fi-anslutningar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Windows 10 och senare** som plattform > **Wi-Fi** som profil > **Företag**).
+
+När du väljer skyddad EAP (PEAP) finns det nya tillgängliga inställningar:
+- **Utför serververifiering i PEAP fas 1**: I fas 1 av PEAP-förhandlingen verifieras servern av certifikatvalideringen.
+  - **Inaktivera användaruppmaningar om att verifiera servern i PEAP fas 1**: I PEAP-förhandlingsfas 1 visas inte uppmaningar som ber användare att auktorisera nya PEAP-servrar för betrodda certifikatutfärdare.
+- **Kräv kryptografisk bindning**: Förhindrar anslutningar till PEAP-servrar som inte använder krypteringsbindning under PEAP-förhandlingen.
+
+Om du vill se de inställningar som du kan konfigurera går du tilll [Lägga till Wi-Fi-inställningar för enheter med Windows 10 och senare](../configuration/wi-fi-settings-windows.md).
+
+Gäller för: 
+- Windows 10 och senare
+
+#### <a name="configure-the-macos-microsoft-enterprise-sso-plug-in---5627576--idstaged---"></a>Konfigurera macOS Microsoft Enterprise SSO-plugin-programmet<!-- 5627576  idstaged -->
+Microsoft Azure AD-teamet skapade en app för omdirigering med enkel inloggning som gör att användare med macOS 10.15+ kan få åtkomst till Microsoft-appar, organisationsappar och webbplatser som stöder Apples SSO-funktion och autentisera med Azure AD. Med Microsoft Enterprises SSO-tillägget kan du konfigurera SSO-tillägget med den nya typen av Microsoft Azure AD-apptillägg (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **macOS** för plattform > **Enhetsfunktioner** > för profil > **Apptillägg för enkel inloggning** > Typ av SSO-apptillägg > **Microsoft Azure AD**).
+
+För att få enkel inloggning med Microsoft Azure AD SSO-apptilläggstypen måste användarna installera och logga in på företagsportalsappen på sina macOS-enheter. 
+
+Mer information om macOS-apptillägg för enkel inloggning finns i [Apptillägg för enkel inloggning](../configuration/device-features-configure.md#single-sign-on-app-extension).
+
+Gäller för:
+- macOS 10.15 och senare
+
+#### <a name="prevent-users-from-unlocking-android-enterprise-work-profile-devices-using-face-and-iris-scanning--6069759-idmiss---"></a>Förhindra att användare låser upp Android Enterprise-enheter med arbetsprofil med ansikts-och irisigenkänning<!--6069759 idmiss -->
+Du kan nu förhindra användare från att använda ansikts- eller irisigenkänning för att låsa upp sina enheter som hanteras med arbetsprofil, antingen på enhetsnivå eller på arbetsprofilnivå. Detta kan anges i **Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Android Enterprise** för plattform > **Arbetsprofil > Enhetsbegränsningar** för profil > avsnitten **Arbetsprofilinställningar** och **Lösenord**.
+
+Mer information finns i [Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune](../configuration/device-restrictions-android-for-work.md#work-profile-only).
+
+Gäller för: 
+- Android Enterprise-arbetsprofil
+
+#### <a name="use-sso-app-extensions-on-more-iosipados-apps-with-the-microsoft-enterprise-sso-plug-in---7369991----"></a>Använd SSO-apptillägg på fler iOS/iPad-appar med Microsoft Enterprise SSO-plugin-programmet<!-- 7369991  -->
+[Microsoft Enterprise SSO-plugin-programmet för Apple-enheter](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin) kan användas med alla appar som stöder SSO-apptillägg. I Intune innebär den här funktionen att plugin-programmet fungerar med mobila iOS/iPad-appar som inte använder Microsoft Authentication Library (MSAL) för Apple-enheter. Apparna behöver inte använda MSAL, men de måste autentiseras med Azure AD-slutpunkter.
+
+Konfigurera dina iOS/iPad-appar så att de kan använda SSO med plugin-programmet genom att lägga till appaketidentifierarna i en iOS/iPad-konfigurationsprofil (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **iOS/iPad** för plattform > **Enhetsfunktioner** för profil > **Apptillägg för enkel inloggning** > **Microsoft Azure AD** för SSO-apptilläggstyp > **Appakets-ID:n**).
+
+Om du vill se de aktuella inställningarna för SSO-tillägg som du kan konfigurera, så gå till [Enkel inloggning för apptillägg](../configuration/ios-device-features-settings.md#single-sign-on-app-extension).
+
+Gäller för:
+- iOS/iPadOS
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="device-security"></a>Enhetssäkerhet
+
+#### <a name="deploy-endpoint-security-antivirus-policy-to-tenant-attached-devices-preview---5475441----"></a>Distribuera antivirusprincipen för slutpunktssäkerhet till klientanslutna enheter (förhandsvisning)<!-- 5475441  -->
+Som förhandsversion kan du distribuera [principer för antivirus](../protect/endpoint-security-antivirus-policy.md) för slutpunktssäkerhet till enheter som du hanterar med Configuration Manager. I det här scenariot måste du konfigurera en klientanslutning mellan en version av Configuration Manager som stöds och din Intune-prenumeration. Följande versioner av Configuration Manager stöds:
+
+- Aktuell gren för Configuration Manager 2006
+
+Mer information finns i [Krav för Intune-slutpunktens säkerhetsprinciper](../protect/tenant-attach-intune.md#specific-requirements-for-intune-endpoint-security-policies) som stöd för klientanslutning.
+
+#### <a name="changes-for-endpoint-security-antivirus-policy-exclusions--5583940-6018119------"></a>Ändringar av undantag för antiviruspolicyn för slutpunktssäkerhet<!--5583940, 6018119    -->
+Vi har presenterat två ändringar för att hantera listorna för Microsoft Defender Antivirus-undantag som du kan konfigurera som en del av en [Endpoint Security-princip för antivirus](../protect/endpoint-security-antivirus-policy.md). Ändringarna hjälper dig att förhindra konflikter mellan olika principer och lösa konflikter i undantagslistorna som kan förekomma i dina tidigare distribuerade principer.
+
+Båda ändringarna tillämpas på principinställningar för följande [Microsoft Defender Antivirus Configuration Service Providers](../protect/antivirus-microsoft-defender-settings-windows.md#microsoft-defender-antivirus-exclusions) (CSP:er):
+
+- Defender/ExcludedPaths
+- Defender/ExcludedExtensions
+- Defender/ExcludedProcesses
+
+Ändringarna är:
+
+- Ny profiltyp: **Microsoft Defender Antivirus-undantag** – Använd den här nya profiltypen för Windows 10 och senare för att definiera en princip som bara fokuserar på antivirusundantag. Den här profilen kan hjälpa dig att förenkla hanteringen av dina undantagslistor genom att de skiljs från andra principkonfigurationer.
+
+  Undantagen som du kan konfigurera omfattar Defender-*processer*, *filnamnstillägg* och *filer* och *mappar* som du inte vill att Microsoft Defender ska genomsöka.
+
+- **Principsammanslagning** – Intune sammanfogar nu listan över undantag som du har definierat i separata profiler till en enda lista över undantag som ska gälla för varje enhet eller användare. När du exempelvis fokuserar på en användare med tre separata principer, så slås undantagslistorna från dessa tre principer samman till en enda stor uppsättning av *Microsoft Defender Antivirus-undantag* som sedan tillämpas på användaren.
+
+
+<!-- ########################## -->
+## <a name="week-of-august-17-2020"></a>Den vecka som börjar 17 augusti 2020
+
+### <a name="intune-apps"></a>Intune-appar
+
+#### <a name="custom-brand-image-now-displayed-in-the-windows-company-portal-profile-page---4280187---"></a>Anpassad varumärkesavbildning visas nu på Windows Företagsportal-profilsidan<!-- 4280187 -->
+Som Microsoft Intune-administratör kan du ladda upp en anpassad varumärkesbild som visas som bakgrundsbild på användarens profilsida i Windows-företagsportalappen. Mer information finns i [Anpassa Intune Företagsportal-appar, företagsportalens webbplats och Intune-appen](../apps/company-portal-app.md#branding).
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name="app-management"></a>Apphantering
+
+#### <a name="the-company-portal-adds-configuration-manager-application-support---4297660---"></a>Företagsportalen lägger till stöd för Konfigurationshanterarprogram<!-- 4297660 -->
+Företagsportalen stöder nu Konfigurationshanterarprogram. Med den här funktionen kan slutanvändare se både program från Konfigurationshanteraren och sådana som distribuerats av Intune i Företagsportalen för samhanterade kunder. Det här stödet hjälper administratörer att konsolidera sina olika portalmiljöer för slutanvändare. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](/mem/configmgr/comanage/company-portal). 
+
+### <a name="device-security"></a>Enhetssäkerhet
+
+#### <a name="set-device-compliance-state-from-third-party-mdm-providers---6361689---"></a>Ställ in enhetsefterlevnadstillståndet från MDM-tredjepartsleverantörer<!-- 6361689 -->
+
+Intune stöder nu [MDM-lösningar från tredje part som källa för information om enhetsefterlevnad](../protect/device-compliance-partners.md). Efterlevnadsdata från tredje part kan användas för att genomdriva principer för villkorlig åtkomst för Microsoft 365 appar på iOS och Android genom integrering med Microsoft Intune.  Intune utvärderar kompatibilitetsinformation från tredjepartsleverantören för att avgöra om en enhet är betrodd och anger sedan attributen för villkorlig åtkomst i Azure AD.  Du fortsätter att skapa principer för villkorsstyrd åtkomst i Azure AD antingen från administrationscentret för Microsoft Endpoint Manager eller i Azure AD-portalen.
+
+Följande MDM-leverantörer från tredje part stöds i den här versionen, som en offentlig förhandsversion:
+
+- VMware WorkspaceONE UEM (tidigare känt som AirWatch)
+
+*Den här uppdateringen distribueras till kunder globalt. Du bör se den här funktionen inom nästa vecka.*
 
 <!-- ########################## -->
 ## <a name="week-of-august-10-2020"></a>Den vecka som börjar 10 augusti 2020
@@ -231,7 +352,7 @@ Intunes DeviceComplianceOrg-loggar hade tidigare bara uppräkningar för Complia
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="role-based-access-control"></a>Rollbaserad åtkomstkontroll
 
-#### <a name="assign-profile-and-update-profile-permission-changes--7177586-idready-wnready-wnstaged--"></a>Behörighetsändringar för Tilldela profil och Uppdatera profil<!--7177586 idready wnready wnstaged-->
+#### <a name="assign-profile-and-update-profile-permission-changes--7177586-----"></a>Behörighetsändringar för Tilldela profil och Uppdatera profil<!--7177586   -->
 Behörigheterna för rollbaserad åtkomstkontroll har ändrats för Tilldela profil och Uppdatera profil i flödet för automatisk enhetsregistrering:
 
 Tilldela profil: Administratörer med den här behörigheten kan också tilldela profiler till tokens och tilldela en standardprofil till en token för ADE.
@@ -243,7 +364,7 @@ Om du vill se de här rollerna går du till [administrationscentret för Microso
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
 ### <a name="scripting"></a>Använda skript
 
-#### <a name="additional-data-warehouse-v10-properties---6125732-wnready---"></a>Ytterligare egenskaper för Data Warehouse v 1.0<!-- 6125732 wnready -->
+#### <a name="additional-data-warehouse-v10-properties---6125732----"></a>Ytterligare egenskaper för Data Warehouse v 1.0<!-- 6125732  -->
 Ytterligare egenskaper finns tillgängliga med Intune Data Warehouse v 1.0. Följande egenskaper exponeras nu via [enheter](../developer/reports-ref-devices.md#devices)-entiteten:
 - `ethernetMacAddress` – den unika nätverksidentifieraren för den här enheten.
 - `office365Version` – den version av Office 365 som är installerad på enheten.
@@ -368,7 +489,7 @@ Gäller för:
 - Windows 10 och senare
 
 #### <a name="wired-network-device-configuration-profiles-for-macos-devices---3508686----"></a>Enhetskonfigurationsprofiler för fast nätverk för macOS-enheter<!-- 3508686  -->
-Det finns en ny konfigurationsprofil för macOS-enheter tillgänglig som konfigurerar kabelanslutna nätverk (**Enheter** > **Konfigurationsprofiler > **Skapa profil** > **macOS** som plattform > **Kabelanslutet nätverk** som profil). Använd den här funktionen för att skapa 802.1 x-profiler för att hantera kabelanslutna nätverk och distribuera dessa kabelanslutna nätverk till dina macOS-enheter.
+Det finns en ny konfigurationsprofil för macOS-enheter tillgänglig som konfigurerar kabelanslutna nätverk (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **macOS** som plattform > **Kabelanslutet nätverk** som profil). Använd den här funktionen för att skapa 802.1 x-profiler för att hantera kabelanslutna nätverk och distribuera dessa kabelanslutna nätverk till dina macOS-enheter.
 
 Mer information om den här funktionen finns i [Kabelanslutna nätverk på macOS-enheter](../configuration/wired-networks-configure.md).
 
@@ -446,7 +567,7 @@ Nya fel rapporteras för iOS/iPad- och macOS-enheter, inklusive
 #### <a name="shared-ipads-for-business--6367326-----"></a>Delat iPad for Business<!--6367326   -->
 Du kan använda Intune och Apple Business Manager till att enkelt och säkert konfigurera delade iPad-enheter så att flera medarbetare kan dela enheter. Apples [Delad iPad](https://developer.apple.com/education/shared-ipad/) får en ny anpassad upplevelse för flera användare samtidigt som användardata bevaras. Med ett hanterat Apple-ID kan användare komma åt sina appar, data och inställningar efter att ha loggat in på en delad iPad i organisationen. Delad iPad fungerar med federerade identiteter.
 
-Du ser den här funktionen genom att gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramtoken** > välj en token** > **Profiler** > **Skapa profil** > **iOS**. På sidan **Hanteringsinställningar** väljer du **Registrera utan användartillhörighet** så visas alternativet **Delad iPad**.
+Du ser den här funktionen genom att gå till [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) > **Enheter** > **iOS** > **iOS-registrering** > **Registreringsprogramtoken** > **välj en token** > **Profiler** > **Skapa profil** > **iOS**. På sidan **Hanteringsinställningar** väljer du **Registrera utan användartillhörighet** så visas alternativet **Delad iPad**.
 
 Kräver: iPad iPadOS 13.4 eller senare. Den här versionen innehåller stöd för tillfälliga sessioner med delad iPad så att användarna kan komma åt en enhet utan ett hanterat Apple-ID. Vid utloggning raderar enheten all användarinformation så att enheten omedelbart kan användas, vilket eliminerar behovet av enhetsrensning. 
 
@@ -548,7 +669,7 @@ Vi har uppdaterat ikonerna i Företagsportalen för att skapa ett modernt utseen
 
 Använd Endpoint Security-policyn [Slutpunktsidentifiering och svar](../protect/endpoint-security-edr-policy.md) (EDR) till att registrera och konfigurera enheter i distributionen av Microsoft Defender Advanced Threat Protection (Defender ATP). EDR har stöd för policyer för Windows-enheter som hanteras via Intune (MDM) och en separat policy för Windows-enheter som hanteras via Configuration Manager. 
 
-Om du vill använda policyn för Configuration Manager-enheter måste du [konfigurera Configuration Manager med stödet för EDR-policyn](../protect/endpoint-security-edr-policy.md#set-up-configuration-manager-to-support-edr-policy). I konfigurationen måste du bland annat:
+Om du vill använda policyn för Configuration Manager-enheter måste du [konfigurera Configuration Manager med stödet för EDR-policyn](../protect/tenant-attach-intune.md). I konfigurationen måste du bland annat:
 
 - Konfigurera Configuration Manager for *anslutning av klientorganisationen*.
 - Installera en konsoluppdatering för Configuration Manager som aktiverar stödet för EDR-policyer. Den här uppdateringen gäller endast för hierarkier som har aktiverat *anslutning av klientorganisationer*.
@@ -752,7 +873,7 @@ Microsoft Office 365 ProPlus har bytt namn till **Microsoft 365 Apps for enterpr
 Du kan använda appkonfigurationsprinciper för att hantera S/MIME-inställningen för Outlook på enheter som kör Android Enterprise. Du kan också välja om enhetsanvändare ska kunna aktivera eller inaktivera S/MIME i Outlook-inställningarna eller inte. Om du vill använda appkonfigurationsprinciper för Android går du till [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) och väljer **Appar** > **Appkonfigurationsprinciper** > **Lägg till** > **Hanterade enheter**. Mer information om hur du konfigurerar inställningar för Outlook finns i [konfigurationsinställningar för Microsoft Outlook](../apps/app-configuration-policies-outlook.md).
 
 #### <a name="pre-release-testing-for-managed-google-play-apps---2681933----"></a>Förhandstestning för hanterade Google Play-appar<!-- 2681933  -->
-Organisationer som använder [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213) kan hantera dessa kanaler med Intune. Du kan selektivt tilldela appar (som publiceras på Google Plays förproduktionskanaler) till pilotgrupper för testning. I Intune kan du se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med AAD-användare eller -enheter. Den här funktionen är tillgänglig för alla våra aktuella Android Enterprise-scenarier (arbetsprofil, fullständigt hanterad, särskilt avsedd). I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du lägga till en hanterad Google Play-app genom att välja **Appar** > **Android** > **Lägg till**. Mer information finns i [Working with Managed Google Play Closed Testing Tracks](../apps/apps-add-android-for-work.md#working-with-managed-google-play-closed-testing-tracks) (arbeta med testspår på Hanterat Google Play-konto).
+Organisationer som använder [Google Plays slutna testkanaler för förhandstestning av appar](https://support.google.com/googleplay/android-developer/answer/3131213) kan hantera dessa kanaler med Intune. Du kan selektivt tilldela appar (som publiceras på Google Plays förproduktionskanaler) till pilotgrupper för testning. I Intune kan du se om en app har en testkanal med en publicerad förproduktionsversion, och du kommer att kunna tilldela den kanalen till grupper med Azure AD-användare eller -enheter. Den här funktionen är tillgänglig för alla våra aktuella Android Enterprise-scenarier (arbetsprofil, fullständigt hanterad, särskilt avsedd). I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du lägga till en hanterad Google Play-app genom att välja **Appar** > **Android** > **Lägg till**. Mer information finns i [Working with Managed Google Play Closed Testing Tracks](../apps/apps-add-android-for-work.md#working-with-managed-google-play-closed-testing-tracks) (arbeta med testspår på Hanterat Google Play-konto).
 
 #### <a name="microsoft-teams-is-now-included-in-the-office-365-suite-for-macos---5903936----"></a>Microsoft Teams ingår nu i Office 365-paketet för macOS<!-- 5903936  -->
 Användare som tilldelas Microsoft Office för macOS i Microsoft Endpoint Manager får förutom de vanliga Microsoft Office-apparna (Word, Excel, PowerPoint, Outlook och OneNote) nu även Microsoft Teams. Intune identifierar befintliga Mac-enheter som har andra Office för macOS-appar installerade och kommer att försöka installera Microsoft Teams nästa gång enheten checkar in med Intune. I [Microsoft Endpoint Manager admin center](https://go.microsoft.com/fwlink/?linkid=2109431) kan du hitta **Office 365-paketet** för macOS genom att välja **Appar** > **macOS** > **Lägg till**. Mer information finns i [Tilldela Office 365 till macOS-enheter med Microsoft Intune](../apps/apps-add-office365-macos.md).

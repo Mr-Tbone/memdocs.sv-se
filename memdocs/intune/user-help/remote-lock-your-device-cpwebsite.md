@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 08/28/2018
+ms.date: 08/20/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 9d932fffa7381cca26699bb37e10783bcd7803dd
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 57d4cc3889c60f9b62d0bb0617731b9ab0058f4c
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83880925"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820654"
 ---
 # <a name="remotely-lock-your-device-from-the-company-portal-website"></a>Fjärrlås din enhet från företagsportalens webbplats
 
@@ -35,9 +35,7 @@ Inställningen Fjärrlås fungerar med:
 * Android
 * iOS
 * macOS
-* Windows 10
-* Windows 10 Mobile (om enheten redan har ett angivet lösenord)
-* Windows Phone 8.1 (om enheten redan har ett angivet lösenord)  
+* Windows 10  
 
 1. På [webbplatsen för företagsportalen](https://portal.manage.microsoft.com) väljer du knappen __Meny__ > __Enheter__.  
 
@@ -53,6 +51,8 @@ Inställningen Fjärrlås fungerar med:
 
 4. Det visas ett meddelande som varnar om att du kommer låsa enheten. Tryck på **Fjärrlås** för att bekräfta.
 
+## <a name="check-the-status-of-remote-lock"></a>Kontrollera fjärrlåsningens status
+
 Efter bekräftelsen försöker företagsportalen låsa enheten. Meddelandet ”Fjärrlås väntar” visas under tiden. När enheten är låst visas statusen ”Enheten har fjärrlåsts”.  
 
 Fjärrlåsningens status visas på tre platser:
@@ -66,4 +66,6 @@ Fjärrlåsningens status visas på tre platser:
 
 Om du hittar din enhet och vill låsa upp den efter att du har använt Fjärrlås anger du bara ditt lösenord.  
 
-Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).
+## <a name="next-steps"></a>Nästa steg
+
+Har du några frågor eller behöver du hjälp? Kontakta IT-supporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  

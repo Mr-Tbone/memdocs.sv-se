@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 08/12/2020
+ms.date: 08/21/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a82fbfa9e494828450729e29467580c29a590282
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: 3a23db0f04895bda6f187e466965a959c891f1ad
+ms.sourcegitcommit: 19ef60175cbfd5c5d1e213a6d64eded34ee42041
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179561"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725442"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -45,7 +45,7 @@ I följande tabell visas anpassningsinformation för slutanvändarupplevelsen:
 | **Visa i sidhuvud** | Ange om slutanvändarupplevelsens sidhuvud ska visa **Organisationens logotyp och namn**, **Endast organisationens logotyp** eller **Endast organisationens namn**. I förhandsgranskningsrutorna nedan visas endast logotypen, inte namnet.  |
 | **Ladda upp logotypen för temafärgsbakgrund** | Ladda upp den logotyp som du vill visa ovanpå den valda temafärgen. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek:   750 KB<br>Filtyp: PNG, JPG eller JPEG |
 | **Ladda upp logotyp för vit eller ljus bakgrund** | Ladda upp logotypen som du vill visa ovanpå vita eller ljusa bakgrunder. För bäst resultat rekommenderar vi att du laddar upp en logotyp med genomskinlig bakgrund. Du kan se hur detta kommer att se ut mot en vit bakgrund i förhandsgranskningsrutan under inställningen.<p>Maximal bildstorlek: 400 x 400 px<br>Maximal filstorlek: 750 KB<br>Filtyp: PNG, JPG eller JPEG |
-| **Ladda upp varumärkesbild** | Ladda upp en bild som återspeglar organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
+| **Ladda upp varumärkesbild** | Ladda upp en bild som återspeglar organisationens varumärke.<p><ul><li>Rekommenderad bildbredd: Större än 1125 px (måste vara minst 650 px)</li><li>Maximal bildstorlek: 1,3 MB</li><li>Filtyp: PNG, JPG eller JPEG</li><li>Den visas på följande platser:</li><ul><li>iOS/iPadOS-företagsportalen: Bakgrundsbild på användarens profilsida.</li><li>Windows företagsportal: Bakgrundsbild på användarens profilsida.</li><li>Företagsportalens webbplats:   Bakgrundsbild på användarens profilsida.</li><li>Android Intune-app: I lådan och som bakgrundsbild på användarens profilsida.</li></ul></ul> |
 
 > [!NOTE]
 > När en användare installerar ett iOS/iPadOS-program från företagsportalen får de ett meddelande. Detta inträffar när iOS/iPadOS-appen är länkad till App Store, ett volymköpt program (VPP) eller en verksamhetsspecifik app (LOB). Användaren kan acceptera åtgärden eller tillåta hantering av appen. Meddelandet visar företagets namn. Om företagets namn inte är tillgängligt visas **företagsportalen**.
@@ -112,7 +112,7 @@ I den här tabellen visas registreringsspecifik konfigurationsinformation:
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------|-------------------------|--------------------|-----------------------------|--------------------------------------------------------------------|
 |    Tillgänglig, med prompter    |    Standardupplevelsen med prompter för registrering på valfria platser.    |    Ja    |    Ja    |    Ja    |    Ja    |
 |    Tillgängligt, inga prompter    |    Användaren kan registrera sig via statusen i enhetsinformationen för den aktuella enheten eller från appar som kräver registrering.    |    Inga    |    Inga    |    Ja    |    Ja    |
-|    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Nej    |    Inga    |    Inga    |
+|    Ej tillgänglig    |    Det finns inget sätt för användarna att registrera sig.    |    Nej    |    Inga    |    Inga    |    Inga    |
 
 ### <a name="privacy"></a>Sekretess
 
@@ -133,7 +133,12 @@ I den här tabellen visas meddelandespecifik konfigurationsinformation:
 
 ### <a name="app-sources"></a>Appkällor
 
-Du kan välja vilka ytterligare appkällor som ska visas i Företagsportal. I den här tabellen visas konfigurationsinformation specifik för appkällor:
+Du kan välja vilka ytterligare appkällor som ska visas i Företagsportal.
+
+> [!NOTE]
+> Företagsportalen stöder Konfigurationshanterarprogram. Med den här funktionen kan slutanvändare se både program från Konfigurationshanteraren och sådana som distribuerats av Intune i Företagsportalen för samhanterade kunder. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](/mem/configmgr/comanage/company-portal).
+
+I den här tabellen visas konfigurationsinformation specifik för appkällor:
 
 | Fältnamn | Maximal längd | Mer information |
 |------------------------------------------------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -149,7 +154,7 @@ Du kan dölja eller visa **Azure AD Enterprise-program** och **Office Online-pro
 
 ### <a name="customizing-user-self-service-actions-for-the-company-portal"></a>Anpassa självbetjäningsåtgärder för användare i Företagsportal
 
-Du kan anpassa vilka självbetjäningsåtgärder som visas för slutanvändare i appen Företagsportal och på webbplatsen. För att förhindra oavsiktliga enhetsåtgärder kan du konfigurera inställningarna för appen Företagsportal genom att välja **Administration av klientorganisation** > **Anpassning**. 
+Du kan anpassa vilka självbetjäningsåtgärder som visas för slutanvändare i appen Företagsportal och på webbplatsen. För att förhindra oavsiktliga enhetsåtgärder kan du konfigurera inställningarna för appen Företagsportal genom att välja **Administration av klientorganisation** > **Anpassning**.
 
 Följande alternativ är tillgängliga:
 - Dölj knappen **Ta bort** på Windows-företagsenheter.
@@ -158,7 +163,7 @@ Följande alternativ är tillgängliga:
 - Dölj knappen **Återställ** på iOS/iPadOS-företagsenheter.
 
 > [!NOTE]
-> De här åtgärderna kan användas till att begränsa enhetsåtgärder i appen Företagsportal och på webbplatsen, och implementerar inte några policyer för enhetsbegränsning. Om du vill förhindra att användare fabriksåterställer eller tar bort MDM från inställningarna måste du konfigurera policyer för enhetsbegränsning. 
+> De här åtgärderna kan användas till att begränsa enhetsåtgärder i appen Företagsportal och på webbplatsen, och implementerar inte några policyer för enhetsbegränsning. Om du vill förhindra att användare fabriksåterställer eller tar bort MDM från inställningarna måste du konfigurera policyer för enhetsbegränsning.
 
 ## <a name="opening-web-company-portal-applications"></a>Öppna appar i Företagsportal på webben
 Om slutanvändaren har appen Företagsportal installerad visas en dialogruta för appar i Företagsportal på webben där användaren kan välja att öppna appen utanför webbläsaren. Om appen inte finns med i sökvägen för appen Företagsportal öppnar Företagsportal startsidan. Om appen finns med i sökvägen öppnar Företagsportal den aktuella appen. 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb70d5842ce13b5baa9dc60ec2ed9cd698bad75c
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 19a2d82f23abef49f193859c46a17cbb44a61f49
+ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252766"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88663352"
 ---
 # <a name="configure-exchange-on-premises-access-for-intune"></a>Konfigurera lokal Exchange-åtkomst för Intune
 
@@ -59,7 +59,7 @@ Innan du kan konfigurera villkorlig åtkomst måste du kontrollera att följande
   - Vara antingen **registrerad** med Intune eller en domänansluten dator.
   - **Registreras i Azure Active Directory**. Dessutom måste klientens Exchange ActiveSync-ID registreras med Azure Active Directory.
 
-- Azure AD DRS (Device Registration Service) aktiveras automatiskt för Intune- och Office 365-kunder. Kunder som redan har distribuerat ADFS Device Registration Service ser inte registrerade enheter i sin lokala Active Directory. **Detta gäller inte för Windows-datorer och Windows Phone-enheter**.
+- Azure AD DRS (Device Registration Service) aktiveras automatiskt för Intune- och Office 365-kunder. Kunder som redan har distribuerat ADFS Device Registration Service ser inte registrerade enheter i sin lokala Active Directory. **Detta gäller inte för Windows-datorer och -enheter**.
 
 - **Kompatibel** med de efterlevnadsprinciper som distribueras till enheten.
 
@@ -69,7 +69,6 @@ Innan du kan konfigurera villkorlig åtkomst måste du kontrollera att följande
 
 ### <a name="support-for-mobile-devices"></a>Stöd för mobila enheter
 
-- **Windows Phone** – Om du vill skapa en princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
 - **Intern e-postapp för iOS/iPadOS** – om du vill skapa princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
 - **EAS-e-postklienter såsom Gmail på Android 4 eller senare** – om du vill skapa princip för villkorsstyrd åtkomst läser du [Skapa principer för villkorlig åtkomst](../protect/create-conditional-access-intune.md)
 

@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/17/2020
+ms.date: 08/24/2020
 ms.topic: how-to
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: b1711dad8163409d05c5299e8d3b54ad619b48ec
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: cba7b357dfae0c9dae06e8a21ddd0583fd96bcae
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86462073"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820535"
 ---
 # <a name="endpoint-detection-and-response-policy-for-endpoint-security-in-intune"></a>Endpoint Security-policyn Slutpunktsidentifiering och svar i Intune
 
@@ -43,24 +43,11 @@ Visa [inställningar för Slutpunktsidentifiering och svar](endpoint-security-ed
 
 - **Klientorganisation för Microsoft Defender Advanced Threat Protection** – din Microsoft Defender ATP-klientorganisation måste vara integrerad med Microsoft Endpoint Manager-klientorganisationen (Intune-prenumerationen) innan du kan skapa EDR-principer. Läs mer i [Använda Microsoft Defender ATP](advanced-threat-protection.md) i Intune-dokumentationen.
 
-**Så här använder du enheter från Configuration Manager**:
+**Stöd för Configuration Manager-klienter**:
 
-Om du vill använda EDR-policyer med Configuration Manager-enheter måste du utföra följande konfigurationer i Configuration Manager-miljön. Det finns en [konfigurationsguide](#set-up-configuration-manager-to-support-edr-policy) i den här artikeln:
+- **Konfigurera klientanslutning för Configuration Manager-enheter** – för att stödja distribution av EDR-principer till enheter som hanteras av Configuration Manager, konfigurera *klientanslutning*. Detta omfattar konfiguration av Configuration Manager-enhetssamlingar som stöder slutpunktssäkerhetsprinciper från Intune.
 
-- **Configuration Manager med version 2002 eller senare** – webbplatsen måste köra Configuration Manager 2002 eller senare.
-
-- **Installera Configuration Manager-uppdateringen** – om du vill aktivera stödet i Configuration Manager 2002 för användning av EDR-policyer du skapar i administrationscentret för Microsoft Endpoint Manager installerar du följande uppdatering från Configuration Manager-konsolen:
-  - **Configuration Manager 2002 Hotfix (KB4563473)**
-
-- **Konfigurera anslutning av klientorganisationen** – med anslutning av klientorganisationen kan du synkronisera samlingar av enheter från Configuration Manager till administrationscentret för Microsoft Endpoint Manager. Sedan kan du använda administrationscentret till att distribuera EDR-policyer till samlingarna.
-
-  Anslutning av klientorganisationen konfigureras ofta med samhantering, men du kan konfigurera anslutningen av klientorganisationen separat.
-
-- **Synkronisera Configuration Manager-samlingar** – när du konfigurerar anslutning av klientorganisationen kan du välja de Configuration Manager-enhetssamlingar som ska synkroniseras med administrationscentret för Microsoft Endpoint Manager. Du kan också återgå senare och ändra de enhetssamlingar du synkroniserar. EDR-policyer för Configuration Manager-enheter kan bara tilldelas till samlingar du har synkroniserat.
-
-  När du har valt samlingar att synkronisera måste du aktivera dem för användning med Microsoft Defender ATP.
-
-- **Behörigheter till Azure AD** – när du ska slutföra anslutningen av klientorganisationen och konfigurera vilka Configuration Manager-samlingar som ska synkroniseras med administrationscenter för Microsoft Endpoint Manager behöver du ett konto med behörighet som global administratör för din Azure-prenumeration.
+  Om du vill konfigurera klientkoppling, inklusive synkronisering av Configuration Manager-samlingar till administrationscenter för Microsoft Endpoint Manager och göra det möjligt att arbeta med slutpunktssäkerhetsprinciper, se [konfigurera klientanslutning som stöder Endpoint Protection-principer](../protect/tenant-attach-intune.md).
 
 ## <a name="edr-profiles"></a>EDR-profiler
 
@@ -73,7 +60,7 @@ Om du vill använda EDR-policyer med Configuration Manager-enheter måste du utf
 
 **Configuration Manager** – följande stöds för enheter du hanterar med Configuration Manager:
 
-- Plattform: **Windows 10 och Windows Server** – Configuration Manager distribuerar policyn till enheter i dina Configuration Manager-samlingar.
+- Plattform: **Windows 10 och Windows Server (ConfigMgr)** – Configuration Manager distribuerar policyn till enheter i dina Configuration Manager-samlingar.
 - Profil: **Slutpunktsidentifiering och svar (ConfigMgr)**
 
 ## <a name="set-up-configuration-manager-to-support-edr-policy"></a>Konfigurera Configuration Manager med stöd för EDR-policyer
@@ -86,8 +73,6 @@ Följande avsnitt beskriver de uppgifter du måste utföra:
 
 1. [Installera uppdateringen för Configuration Manager](#task-1-install-the-update-for-configuration-manager)
 2. [Aktivera anslutning av klientorganisationen](#task-2-configure-tenant-attach-and-synchronize-collections)  
-3. [Välja vilka samlingar som ska synkroniseras](#task-3-select-collections-to-synchronize)
-4. [Aktivera samlingar för Microsoft Defender ATP](#task-4-enable-collections-for-microsoft-defender-atp)
 
 > [!TIP]
 > Mer information om hur du använder Microsoft Defender ATP med Configuration Manager finns i följande artiklar i Configuration Manager-innehållet:
@@ -111,8 +96,6 @@ När du har installerat uppdateringen går du tillbaka hit och fortsätter konfi
 
 ### <a name="task-2-configure-tenant-attach-and-synchronize-collections"></a>Uppgift 2: Konfigurera anslutning av klientorganisationen och synkronisera samlingar
 
-Om du har aktiverat samhantering tidigare är anslutningen av klientorganisationen redan utförd, och då kan du gå vidare till [uppgift 3](#task-3-select-collections-to-synchronize).
-
 Med anslutning av klientorganisationen anger du samlingar av enheter från Configuration Manager-distributionen som ska synkroniseras med administrationscentret för Microsoft Endpoint Manager. När samlingarna synkroniseras kan du använda administrationscentret till att visa information om enheterna och distribuera EDR-policyer från Intune till dem.  
 
 Mer information om anslutning av klientorganisationen finns i [Aktivera anslutning av klientorganisation](../../configmgr/tenant-attach/device-sync-actions.md) i Configuration Manager-dokumentationen.
@@ -129,82 +112,26 @@ Om du planerar att aktivera samhantering bör du vara bekant med fenomenet samha
 3. På sidan **Registrering av klientorganisation** väljer du **AzurePublicCloud** som miljö. Du kan inte använda molnet Azure Government.
    1. Klicka på **Logga in**. Logga in med ditt *globala administratörskonto*.
 
-   2. Se till att alternativet **Ladda upp till administrationscentret för Microsoft Endpoint Manager** är valt på sidan **Registrering av klientorganisation**.
+Följande stöds för enheter du hanterar med Intune:
 
-   3. Ta bort bockmarkeringen från **Aktivera automatisk klientregistrering för samhantering**.
+- Plattform: **Windows 10 och senare** – Intune distribuerar policyn till enheter i dina Azure AD-grupper.
+  - Profil: **Slutpunktsidentifiering och svar (MDM)**
 
-      När det här alternativet är valt visar guiden ytterligare sidor för att slutföra konfigurationen av samhanteringen. Mer information finns i [Aktivera samhantering](../../configmgr/comanage/how-to-enable.md) i Configuration Manager-dokumentationen.
+### <a name="devices-managed-by-configuration-manager-in-preview"></a>Enheter som hanteras av Configuration Manager *(förhandsversion)*
 
-     ![Konfigurera anslutning av klientorganisationen](media/endpoint-security-edr-policy/tenant-onboarding.png)
+Följande profiler stöds för enheter som du hanterar med Configuration Manager genom *klientorganisationsanslutning*:
 
-4. Klicka på **Nästa** och sedan **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen av samlingar till administrationscentret för Microsoft Endpoint Manager.
-
-5. På sidan **Konfigurera uppladdning** konfigurerar du vilka samlingar du vill synkronisera. Du kan begränsa konfigurationen till en eller flera enhetssamlingar eller använda den rekommenderade inställningen **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**.
-
-6. Klicka på **Sammanfattning** för att granska dina val och klicka sedan på **Nästa**.
-
-7. När guiden är slutförd klickar du på **Stäng**.
-
-   Nu är anslutningen till klientorganisationen konfigurerad och du har valt samlingar att synkronisera till administrationscentret för Microsoft Endpoint Manager.
-
-#### <a name="enable-tenant-attach-when-you-use-co-management"></a>Aktivera anslutning av klientorganisationen när du använder samhantering
-
-1. Gå till **Administration** > **Översikt** > **Molntjänster** > **Samhantering** i administrationskonsolen för Configuration Manager.
-
-2. Högerklicka på inställningarna för samhantering och välj **Egenskaper**.
-
-3. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Klicka på **Använd**.
-   - Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Du kan också välja att begränsa konfigurationen till en eller flera enhetssamlingar.
-
-     ![Visa fliken Egenskaper för samhantering](media/endpoint-security-edr-policy/configure-upload.png)
-
-4. Logga in med ditt *globala administratörskonto* när du uppmanas till det.
-
-5. Klicka på **Ja** för att godkänna meddelandet **Skapa AAD-program**. Den här åtgärden etablerar ett huvudnamn för tjänsten och skapar en Azure AD-programregistrering för att underlätta synkroniseringen.
-
-6. Klicka på **OK** för att stänga egenskaperna för samhantering när du har gjort dina ändringar.
-
-   Nu är anslutningen till klientorganisationen konfigurerad och du har valt samlingar att synkronisera till administrationscentret för Microsoft Endpoint Manager.
-
-### <a name="task-3-select-collections-to-synchronize"></a>Uppgift 3: Välja vilka samlingar som ska synkroniseras
-
-När du har konfigurerat anslutningen av klientorganisationen kan du välja vilka samlingar som ska synkroniseras. Om du inte redan har synkroniserat samlingar eller om du behöver konfigurera om vilka du ska synkronisera kan du redigera egenskaperna för samhantering i Configuration Manager-konsolen.
-
-#### <a name="select-collections"></a>Välja samlingar
-
-1. Gå till **Administration** > **Översikt** > **Molntjänster** > **Samhantering** i administrationskonsolen för Configuration Manager.
-
-2. Högerklicka på inställningarna för samhantering och välj **Egenskaper**.
-
-3. På fliken **Konfigurera uppladdning** väljer du **Ladda upp till administrationscentret för Microsoft Endpoint Manager**. Klicka på **Använd**.
-
-   Standardinställningen för uppladdning av enheter är **Alla mina enheter som hanteras av Microsoft Endpoint Configuration Manager**. Du kan också välja att begränsa konfigurationen till en eller flera enhetssamlingar.
-
-### <a name="task-4-enable-collections-for-microsoft-defender-atp"></a>Uppgift 4: Aktivera samlingar för Microsoft Defender ATP
-
-När du har konfigurerat vilka samlingar som ska synkroniseras till administrationscentret för Microsoft Endpoint Manager måste du ändå aktivera samlingarna så att de är godkända för registrering och kan hantera Microsoft Defender ATP-policyer.  Det gör du genom att redigera egenskaperna för varje samling i Configuration Manager-konsolen.
-
-#### <a name="enable-collections-for-use-with-advanced-threat-protection"></a>Aktivera samlingar för användning med Advanced Threat Protection
-
-1. Använd en Configuration Manager-konsol som är ansluten till webbplatsen på den högsta nivån, högerklicka du på en enhetssamling du synkroniserar med administrationscentret för Microsoft Endpoint Manager och välj **Egenskaper**.
-
-2. På fliken **Molnsynkronisering** aktiverar du alternativet **Gör den här samlingen tillgänglig för tilldelning av Microsoft Defender ATP-policyer i Intune**.
-
-   - Du kan inte välja det här alternativet om Configuration Manager-hierarkin inte är ansluten till klientorganisationen.
-  
-   ![Konfigurera molnsynkronisering](media/endpoint-security-edr-policy/cloud-sync.png)
-
-3. Välj **OK** för att spara konfigurationen.
-
-   Enheter i den här samlingen kan nu ta emot Microsoft Defender ATP-policyer.
+- Plattform: **Windows 10 och Windows Server (ConfigMgr)** – Configuration Manager distribuerar policyn till enheter i dina Configuration Manager-samlingar.
+  - Profil: **Slutpunktsidentifiering och svar (ConfigMgr) (förhandsversion)**
 
 ## <a name="create-and-deploy-edr-policies"></a>Skapa och distribuera EDR-policyer
 
 När din Microsoft Defender ATP-prenumeration är integrerad med Intune kan du skapa och distribuera EDR-policyer. Det finns två olika typer av EDR-policyer du kan skapa. En policytyp för enheter du hanterar med Intune via MDM. En annan policytyp för enheter du hanterar med Configuration Manager.
 
-Du väljer vilken typ av policy du skapar när du skapar en ny EDR-policy och väljer plattform för policyn.
+Du väljer vilken typ av princip som ska skapas när du konfigurerar en ny EDR-princip genom att välja en plattform för principen.
 
-Innan du kan distribuera policyer till enheter som hanteras av Configuration Manager ska du [konfigurera Configuration Manager med stöd för EDR-policyer](#set-up-configuration-manager-to-support-edr-policy) från administrationscentret för Microsoft Endpoint Manager.
+Innan du kan distribuera policyer till enheter som hanteras av Configuration Manager ska du konfigurera Configuration Manager med stöd för EDR-policyer från administrationscentret för Microsoft Endpoint Manager. Se [Konfigurera klientanslutning för att stödja Endpoint Protection-principer](../protect/tenant-attach-intune.md).
+
 
 ### <a name="create-edr-policies"></a>Skapa EDR-policyer
 
@@ -219,7 +146,7 @@ Innan du kan distribuera policyer till enheter som hanteras av Configuration Man
      - Profil: **Slutpunktsidentifiering och svar (MDM)**
 
    - Configuration Manager – Configuration Manager distribuerar policyn till enheter i dina Configuration Manager-samlingar. När du skapar policyn väljer du:
-     - Plattform: **Windows 10 och Windows Server**
+     - Plattform: **Windows 10 och Windows Server (ConfigMgr)**
      - Profil: **Slutpunktsidentifiering och svar (ConfigMgr)**
 
 4. Välj **Skapa**.
@@ -257,8 +184,7 @@ Du kan visa information om de EDR-policyer du distribuerar i administrationscent
 
   I diagrammet **Enheter med ATP-sensor** visas endast enheter som registrerats i Microsoft Defender ATP med profilen **Windows 10 och senare**. För att se till att du har full representation av dina enheter i det här diagrammet distribuerar du registreringsprofilen till alla dina enheter. Enheter som registreras i Microsoft Defender ATP med externa metoder som grupprincip eller PowerShell, räknas som **Enheter utan ATP-sensorn**.
 
-- För policyer som riktar sig mot plattformen **Windows 10 och Windows Server** (Configuration Manager) ser du en översikt över efterlevnaden av policyn, men du kan inte visa mer detaljerad information. Vyn är begränsad eftersom administrationscentret tar emot begränsad statusinformation från Configuration Manager, som hanterar distributionen av policyn till Configuration Manager-enheterna.
-
+- För policyer som riktar sig mot plattformen **Windows 10 och Windows Server (ConfigMgr)** (Configuration Manager) ser du en översikt över efterlevnaden av policyn, men du kan inte visa mer detaljerad information. Vyn är begränsad eftersom administrationscentret tar emot begränsad statusinformation från Configuration Manager, som hanterar distributionen av policyn till Configuration Manager-enheterna.
 
 [Visa inställningarna](endpoint-security-edr-profile-settings.md) du kan konfigurera för både plattformar och profiler.
 

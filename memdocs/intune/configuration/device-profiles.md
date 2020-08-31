@@ -1,11 +1,11 @@
 ---
 title: Funktioner och inställningar för enheter i Microsoft Intune – Azure | Microsoft Docs
-description: Översikt över de olika enhetsprofilerna i Microsoft Intune. Få information om funktioner, begränsningar, e-post, Wi-Fi, VPN, utbildning, certifikat, uppgradering av Windows 10, BitLocker och Microsoft Defender, Windows Information Protection, administrativa mallar och anpassade inställningar för enhetskonfiguration i administrationscentret för Microsoft Endpoint Manager. Använd dessa profiler för att hantera och skydda data och enheter i företaget.
+description: Översikt över de olika enhetsprofilerna i Microsoft Intune. Få information om GPO, funktioner, begränsningar, e-post, Wi-Fi, VPN, utbildning, certifikat, uppgradering av Windows 10, BitLocker och Microsoft Defender, Windows Information Protection, administrativa mallar och anpassade inställningar för enhetskonfiguration i administrationscentret för Microsoft Endpoint Manager. Använd dessa profiler för att hantera och skydda data och enheter i företaget.
 keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.topic: overview
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43101602defab75c15c542ec922cba6f2bf96cf0
-ms.sourcegitcommit: 8999e197f10fb72d1b82f30a599d1e588db237b7
+ms.openlocfilehash: 61053fff9d28193c8f4fc1731f72fe0052aba154
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88146328"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820501"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler i Microsoft Intune
 
@@ -41,9 +41,7 @@ I den här artikeln ges en översikt över de olika profiltyper som du kan skapa
 
 ## <a name="administrative-templates"></a>Administrativa mallar
 
-[Administrativa mallar](administrative-templates-windows.md) innehåller hundratals inställningar som du kan konfigurera för Internet Explorer, Microsoft Edge, OneDrive, fjärrskrivbord, Word, Excel och andra Office-program.
-
-Dessa mallar ger administratörer en förenklad vy över inställningar som liknar grupprinciper, men de är helt molnbaserade.
+[Administrativa mallar](administrative-templates-windows.md) innehåller hundratals inställningar som du kan konfigurera för Internet Explorer, Microsoft Edge, OneDrive, fjärrskrivbord, Word, Excel och andra Office-program. Dessa mallar ger administratörer en förenklad vy över inställningar som liknar grupprinciper, men de är helt molnbaserade.
 
 Den här funktionen stöder:
 

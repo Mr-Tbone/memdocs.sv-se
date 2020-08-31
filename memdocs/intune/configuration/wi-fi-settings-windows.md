@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 08/13/2020
+ms.date: 08/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d47f1e121a5010a17d213d21d3208977e8f75514
-ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
+ms.openlocfilehash: 6bfa28a6b4df30c6303f75d4a5cf91c20ce4e827
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217633"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820637"
 ---
 # <a name="add-wi-fi-settings-for-windows-10-and-later-devices-in-intune"></a>Lägga till Wi-Fi-inställningar för Windows 10-enheter och senare enheter i Microsoft Intune
 
-Du kan skapa en profil med specifika Wi-Fi-inställningar och sedan distribuera profilen till dina enheter med Windows 10 eller senare. Microsoft Intune innehåller många funktioner, inklusive autentisering till ditt nätverk med en i förväg delad nyckel och mycket mer.
+Du kan skapa en profil med specifika inställningar för WiFi. Distribuera sedan profilen till dina enheter med Windows 10 och senare. Microsoft Intune innehåller många funktioner, inklusive autentisering till ditt nätverk med en i förväg delad nyckel och mycket mer.
 
 Den här artikeln beskriver dessa inställningar.
 
@@ -86,7 +86,7 @@ Företagsprofiler använder EAP (Extensible Authentication Protocol) för autent
 
     Exempelvis kan du skapa ett Wi-Fi-nätverk med namnet **ContosoCorp** och använda **ContosoCorp** i konfigurationsprofilen. Du har även ett **ContosoGuest**-Wi-Fi-nätverk inom räckvidd. När företagets enheter är inom räckvidd vill du att de automatiskt ska anslutas till **ContosoCorp**. I det här scenariot ställer du in egenskapen **Connect to more preferred network if available** (Anslut till ett mer prioriterat nätverk om det är tillgängligt) till **No** (Nej).
 
-  - **Anslut till det här nätverket även om det inte sänder sitt SSID**: Välj **Ja** för att konfigurationsprofilen automatiskt ska ansluta till nätverket, även om nätverket är dolt (det vill säga att dess SSID inte sänds offentligt). Välj **No** (Nej) om du inte vill att den här konfigurationsprofilen ska ansluta till ditt dolda nätverk.
+- **Anslut till det här nätverket även om det inte sänder sitt SSID**: Välj **Ja** för att konfigurationsprofilen automatiskt ska ansluta till nätverket, även om nätverket är dolt (det vill säga att dess SSID inte sänds offentligt). Välj **No** (Nej) om du inte vill att den här konfigurationsprofilen ska ansluta till ditt dolda nätverk.
 
 - **Gräns för anslutningar med datapriser**: En administratör kan välja hur nätverkstrafiken mäts. Program kan sedan justera sitt nätverkstrafiksbeteende baserat på den här inställningen. Alternativen är:
 
@@ -124,19 +124,27 @@ Företagsprofiler använder EAP (Extensible Authentication Protocol) för autent
     > [!NOTE]
     > Certifikatprofilerna SCEP och PKCS stöds när du använder en EAP-typ.
 
-    - **Serverförtroende**  
+    **SERVERFÖRTROENDE**  
 
-      **Certifikatservernamn**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Ange ett eller flera gemensamma namn som används i de certifikat som utfärdats av en betrodd certifikatutfärdare (CA). Om du anger den här informationen kan du hoppa över dialogrutan för dynamiskt förtroende som visas på användarenheter när de ansluter till Wi-Fi-nätverket.  
+    - **Certifikatservernamn**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Ange ett eller flera gemensamma namn som används i de certifikat som utfärdats av en betrodd certifikatutfärdare (CA). Om du anger den här informationen kan du hoppa över dialogrutan för dynamiskt förtroende som visas på användarenheter när de ansluter till Wi-Fi-nätverket.  
 
-      **Rotcertifikat för serververifiering**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Välj den betrodda rotcertifikatsprofil som ska användas för att autentisera anslutningen.  
+    - **Rotcertifikat för serververifiering**: Använd med EAP-typerna **EAP-TLS**, **EAP-TTLS** eller **PEAP**. Välj den betrodda rotcertifikatsprofil som ska användas för att autentisera anslutningen.  
 
-      **Identitetssekretess (yttre identitet)** : Använd med EAP-typen **PEAP**. Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.  
+    - **Identitetssekretess (yttre identitet)** : Använd med EAP-typen **PEAP**. Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.  
 
-    - **Klientautentisering**
+    - **Utför serververifiering i PEAP fas 1**: När värdet är **Ja** i PEAP-förhandlingsfas 1 validerar enheterna certifikatet och verifierar servern. Välj **Nej** för att blockera eller förhindra den här verifieringen. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
 
-      **Klientcertifikat för klientautentisering (identitetscertifikat)** : Använd med EAP-typen **EAP-TLS**. Välj den certifikatprofil som ska användas för att autentisera anslutningen.
+      Om du väljer **Ja** konfigurerar du även:
 
-      **Autentiseringsmetod**: Använd med EAP-typen **EAP-TTLS**. Välj autentiseringsmetod för anslutningen:  
+      **Inaktivera användaruppmaningar om att verifiera servern i PEAP fas 1**: När detta är **Ja** i PEAP-förhandlingsfas 1 visas inte uppmaningar som ber användare att auktorisera nya PEAP-servrar för betrodda certifikatutfärdare. Välj **Nej** för att visa uppmaningarna. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+    - **Kräv kryptografisk bindning**: **Ja** förhindrar anslutningar till PEAP-servrar som inte använder krypteringsbindning under PEAP-förhandlingen. **Nej** kräver inte kryptografibindning. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen.
+
+    **KLIENTAUTENTISERING**
+
+    - **Klientcertifikat för klientautentisering (identitetscertifikat)** : Använd med EAP-typen **EAP-TLS**. Välj den certifikatprofil som ska användas för att autentisera anslutningen.
+
+    - **Autentiseringsmetod**: Använd med EAP-typen **EAP-TTLS**. Välj autentiseringsmetod för anslutningen:  
 
       - **Certifikat**: Välj det klientcertifikat som är det identitetscertifikat som presenteras för servern.
       - **Användarnamn och lösenord**: Ange en **Annan metod än EAP (inre identitet)** för autentisering. Alternativen är:
@@ -146,7 +154,7 @@ Företagsprofiler använder EAP (Extensible Authentication Protocol) för autent
         - **Microsoft CHAP (MS-CHAP)**
         - **Microsoft CHAP Version 2 (MS-CHAP v2)**
 
-      **Identitetssekretess (yttre identitet)** : Använd med EAP-typen **EAP-TTLS**. Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
+    - **Identitetssekretess (yttre identitet)** : Använd med EAP-typen **EAP-TTLS**. Ange den text som ska skickas som svar på en begäran om EAP-identitet. Den här texten kan ha vilket värde som helst. Vid autentisering skickas den här anonyma identiteten från början och sedan följs den av den verkliga identifieringen som skickas i en säker tunnel.
 
 - **Företagets proxyinställningar**: Välj att använda proxyinställningarna i din organisation. Alternativen är:
   - **Inga**: Inga proxyinställningar konfigureras.
@@ -161,9 +169,9 @@ För alla inställningar som inte är tillgängliga i Intune kan du exportera Wi
 
 ## <a name="next-steps"></a>Nästa steg
 
-Profilen har skapats, men den gör inte något än. Nu ska vi [tilldela den här profilen](device-profile-assign.md).
+Profilen skapas, men den kanske inte gör någonting. Kom ihåg att [tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
 ## <a name="more-resources"></a>Fler resurser
 
-- Se inställningarna som är tillgängliga för [Windows 8.1](wi-fi-settings-import-windows-8-1.md).
-- [Översikt över Wi-Fi-inställningar](wi-fi-settings-configure.md), inklusive andra plattformar.
+- [Windows 8.1 Wi-Fi-inställningar](wi-fi-settings-import-windows-8-1.md)
+- [Översikt över Wi-Fi-inställningar](wi-fi-settings-configure.md), inklusive andra plattformar

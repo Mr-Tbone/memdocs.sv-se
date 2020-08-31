@@ -5,7 +5,7 @@ keywords: ''
 author: MandiOhlinger
 ms.author: mandia
 manager: dougeby
-ms.date: 07/16/2020
+ms.date: 08/17/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c23044b912b7f0edf2852477aad80dd9be66cf54
-ms.sourcegitcommit: 7e34b561d43aa086fc07ab4edf2230d09c04f05b
+ms.openlocfilehash: 8b08d5f1395c30b646885470c95fed2c7a96d3f9
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87526074"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88819617"
 ---
 # <a name="android-enterprise-device-settings-to-allow-or-restrict-features-using-intune"></a>Enhetsinställningarna för Android Enterprise tillåter eller begränsar funktioner med hjälp av Intune
 
@@ -435,29 +435,33 @@ Dessa inställningar gäller för Android Enterprise-registreringstyper där Int
 
   - Android 7.0 och senare med arbetsprofilen aktiverad
 
-- **Minsta lösenordslängd**: Ange den minsta längd som lösenordet måste ha (mellan 4 och 16 tecken).
-- **Maximalt antal minuter av inaktivitet innan arbetsprofilen låses**: Ange hur lång tid enheterna måste vara inaktiva innan skärmen låses automatiskt. Därefter måste användaren ange sina autentiseringsuppgifter för att få åtkomst igen. Ange till exempel `5` om du vill låsa enheten efter 5 minuters inaktivitet. Om värdet är tomt eller inställt på **Inte konfigurerad**, ändrar eller uppdaterar Intune inte inställningen.
+  Konfigurera också:
 
-  Användare kan inte ange ett tidsvärde på enheten som är större än den konfigurerade tiden i profilen. Användarna kan dock ange ett lägre tidsvärde. Om profilen t.ex. är inställd på `15` minuter, kan användare ange värdet till 5 minuter. Användarna kan inte ange värdet till 30 minuter.
+  - **Minsta lösenordslängd**: Ange den minsta längd som lösenordet måste ha (mellan 4 och 16 tecken).
+  - **Maximalt antal minuter av inaktivitet innan arbetsprofilen låses**: Ange hur lång tid enheterna måste vara inaktiva innan skärmen låses automatiskt. Därefter måste användaren ange sina autentiseringsuppgifter för att få åtkomst igen. Ange till exempel `5` om du vill låsa enheten efter 5 minuters inaktivitet. Om värdet är tomt eller inställt på **Inte konfigurerad**, ändrar eller uppdaterar Intune inte inställningen.
 
-- **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan arbetsprofilen på enheten rensas, från 4 till 11. `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
+    Användare kan inte ange ett tidsvärde på enheten som är större än den konfigurerade tiden i profilen. Användarna kan dock ange ett lägre tidsvärde. Om profilen t.ex. är inställd på `15` minuter, kan användare ange värdet till 5 minuter. Användarna kan inte ange värdet till 30 minuter.
 
-- **Lösenordets giltighetstid (dagar)** : Ange antalet dagar innan användarlösenordet måste ändras (från **1**-**365**).
-- **Lösenordstyp som krävs**: Anger den komplexitetsnivå som krävs för lösenordet och om biometriska enheter kan användas. Alternativen är:
-  - **Standard för enheten**
-  - **Låg säkerhetsbiometri**: [Stark eller svag biometri](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (öppnar Androids webbplats)
-  - **Obligatoriskt**
-  - **Minst numeriskt**: Innehåller numeriska tecken, till exempel `123456789`.
-  - **Numeriskt avancerat**: Upprepade eller efterföljande siffror, till exempel `1111` eller `1234`, tillåts inte.
-  - **Minst alfabetiskt**: Innehåller bokstäver i alfabetet. Siffror och symboler krävs inte.
-  - **Minst alfanumeriskt**: Innehåller versaler, gemener och numeriska tecken.
-  - **Minst alfanumeriskt med symboler**: Innehåller versaler, gemener, numeriska tecken, skiljetecken och symboler.
+  - **Antal felaktiga inloggningar innan enheten rensas**: Ange antal tillåtna felaktiga lösenord innan arbetsprofilen på enheten rensas, från 4 till 11. `0` (noll) kan inaktivera funktionen för rensning av enheten. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 
-- **Förhindra återanvändning av tidigare lösenord**: Använd den här inställningen för att förhindra att användare återanvänder tidigare använda lösenord. Ange antal tidigare använda lösenord som inte får återanvändas, från 1–24. Ange till exempel `5` om användare inte ska kunna ange ett nytt lösenord till sina nuvarande lösenord eller något av de föregående fyra lösenorden. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
-- **Upplåsning med fingeravtryck**: **Blockera** förhindrar att användarna använder enhetens fingeravtrycksläsare till att låsa upp den. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av fingeravtryck.
-- **Smart Lock och andra betrodda agenter**: **Blockera** förhindrar Smart Lock och andra betrodda agenter från att ändra låsskärmsinställningar på kompatibla enheter. Med den här funktionen, även kallad förtroendeagent, kan du inaktivera eller kringgå lösenordet för enhetens låsskärm om enheten finns på en betrodd plats. Du kan exempelvis kringgå lösenordet för arbetsprofilen när enheten är ansluten till en specifik Bluetooth-enhet eller när den är nära en NFC-tagg. Använd den här inställningen för att förhindra att användare konfigurerar Smart Lock.
+  - **Lösenordets giltighetstid (dagar)** : Ange antalet dagar innan användarlösenordet måste ändras (från **1**-**365**).
+  - **Lösenordstyp som krävs**: Anger den komplexitetsnivå som krävs för lösenordet och om biometriska enheter kan användas. Alternativen är:
+    - **Standard för enheten**
+    - **Låg säkerhetsbiometri**: [Stark eller svag biometri](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (öppnar Androids webbplats)
+    - **Obligatoriskt**
+    - **Minst numeriskt**: Innehåller numeriska tecken, till exempel `123456789`.
+    - **Numeriskt avancerat**: Upprepade eller efterföljande siffror, till exempel `1111` eller `1234`, tillåts inte.
+    - **Minst alfabetiskt**: Innehåller bokstäver i alfabetet. Siffror och symboler krävs inte.
+    - **Minst alfanumeriskt**: Innehåller versaler, gemener och numeriska tecken.
+    - **Minst alfanumeriskt med symboler**: Innehåller versaler, gemener, numeriska tecken, skiljetecken och symboler.
 
-  När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+  - **Förhindra återanvändning av tidigare lösenord**: Använd den här inställningen för att förhindra att användare återanvänder tidigare använda lösenord. Ange antal tidigare använda lösenord som inte får återanvändas, från 1–24. Ange till exempel `5` om användare inte ska kunna ange ett nytt lösenord till sina nuvarande lösenord eller något av de föregående fyra lösenorden. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
+  - **Ansiktsupplåsning**: **Blockera** förhindrar att användare använder enhetens ansiktsigenkänning för att låsa upp arbetsprofilen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av ansiktsigenkänning.
+  - **Upplåsning med fingeravtryck**: **Blockera** förhindrar att användarna använder enhetens till att låsa upp arbetsprofilen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av fingeravtryck.
+  - **Irisupplåsning**: **Blockera** förhindrar att användare använder enhetens irisscanner för att låsa upp arbetsprofilen. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av irisscannern.
+  - **Smart Lock och andra betrodda agenter**: **Blockera** förhindrar Smart Lock och andra betrodda agenter från att ändra låsskärmsinställningar på kompatibla enheter. Med den här funktionen, även kallad förtroendeagent, kan du inaktivera eller kringgå lösenordet för enhetens låsskärm om enheten finns på en betrodd plats. Du kan exempelvis kringgå lösenordet för arbetsprofilen när enheten är ansluten till en specifik Bluetooth-enhet eller när den är nära en NFC-tagg. Använd den här inställningen för att förhindra att användare konfigurerar Smart Lock.
+
+    När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
 ### <a name="password"></a>lösenordsinställning
 
@@ -482,6 +486,8 @@ Lösenordsinställningarna gäller för personliga profiler på enheter som anv�
 
 - **Förhindra återanvändning av tidigare lösenord**: Använd den här inställningen för att förhindra att användare återanvänder tidigare använda lösenord. Ange antal tidigare använda lösenord som inte får återanvändas, från 1–24. Ange till exempel `5` om användare inte ska kunna ange ett nytt lösenord till sina nuvarande lösenord eller något av de föregående fyra lösenorden. Intune varken ändrar eller uppdaterar den här inställningen om värdet lämnas tomt.
 - **Upplåsning med fingeravtryck**: **Blockera** förhindrar att användarna använder enhetens fingeravtrycksläsare till att låsa upp den. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av fingeravtryck.
+- **Ansiktsupplåsning**: **Blockera** förhindrar att användare använder enhetens ansiktsigenkänning för att låsa upp enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av ansiktsigenkänning.
+- **Irisupplåsning**: **Blockera** förhindrar att användare använder enhetens irisscanner för att låsa upp enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta användarna att låsa upp enheten med hjälp av irisscannern.
 - **Smart Lock och andra betrodda agenter**: **Blockera** förhindrar Smart Lock och andra betrodda agenter från att ändra låsskärmsinställningar på kompatibla enheter. Med den här funktionen, även kallad förtroendeagent, kan du inaktivera eller kringgå lösenordet för enhetens låsskärm om enheten finns på en betrodd plats. Du kan exempelvis kringgå lösenordet för arbetsprofilen när enheten är ansluten till en specifik Bluetooth-enhet eller när den är nära en NFC-tagg. Använd den här inställningen för att förhindra att användare konfigurerar Smart Lock.
 
   När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.

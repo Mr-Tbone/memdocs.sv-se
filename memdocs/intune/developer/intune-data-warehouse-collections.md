@@ -6,7 +6,7 @@ keywords: ''
 author: Erikre
 ms.author: erikre
 manager: dougeby
-ms.date: 07/09/2020
+ms.date: 08/24/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: developer
@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2718c73cb34e01c84ef07d5085c698028ca285c
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: b6d3f3ea7423cf87d2644611bcbd6e298ac60699
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86462005"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820331"
 ---
 # <a name="intune-data-warehouse-collections"></a>Intune-informationslagersamlingar
 
@@ -253,8 +253,9 @@ Entiteten **enhet** innehåller en lista över alla registrerade enheter som han
 | SubscriberCarrier          | Abonnentens operatör på enheten                                                                                                                                                       |
 | PhoneNumber                | Enhetens telefonnummer                                                                                                                                                             |
 | IMEI                       | IMEI                                                                                                                                                                                   |
-| CellularTechnology         | Enhetens mobilteknik                                                                                                                                                    |
-| WiFiMacAddress             | Wi-Fi MAC                                                                                                                                                                              |
+| CellularTechnology         | Enhetens mobilteknik.                                                                                                                                                    |
+| WiFiMacAddress             | MAC för Wi-Fi.                                                                                                                                                                              |
+| windowsOsEdition             | Windows-operativsystemversion.                                                                                                                                                                              |
 
 
 ## <a name="devicetypes"></a>deviceTypes

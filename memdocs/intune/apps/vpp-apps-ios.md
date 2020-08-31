@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dd7730e8ac25c41140f3e375383bf185eae91e6
-ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
+ms.openlocfilehash: 21bc1b47f64318579da439e37f8dcf66d5a0a6ce
+ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217221"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88820518"
 ---
 # <a name="how-to-manage-ios-and-macos-apps-purchased-through-apple-volume-purchase-program-with-microsoft-intune"></a>Så här hanterar du iOS- och MacOS-appar som har köpts via ett Apples volymköpsprogram med Microsoft Intune
 
@@ -175,7 +175,7 @@ Du kan återkalla alla associerade iOS/iPadOS eller macOS VPP-applicenser (volym
 
 ## <a name="deleting-vpp-tokens"></a>Ta bort VPP-token
 <!-- 820879 -->  
-Du kan ta bort en Apple-token för volyminköpsprogrammet (VPP) med hjälp av konsolen. Detta kan vara nödvändigt när du har dubblettinstanser av en VPP-token. Om du tar bort en token tas även alla associerade appar och tilldelningar bort. Men att ta bort en token innebär inte att applicenser frigörs eller att appar avinstalleras. 
+Du kan ta bort en Apple-token för volyminköpsprogrammet (VPP) med hjälp av konsolen. Detta kan vara nödvändigt när du har dubblettinstanser av en VPP-token. Om du tar bort en token tas även alla associerade appar och tilldelningar bort. När du tar bort en token återkallas associerade applicenser men apparna avinstalleras inte.  
 
 >[!NOTE]
 >Intune kan inte återkalla licenser för appar när en token har tagits bort. 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e1ac5180a30959618f37d909511785b4de1c407
-ms.sourcegitcommit: 8fc7f2864c5e3f177e6657b684c5f208d6c2a1b4
+ms.openlocfilehash: 380e39406dcc0b5bd286605804e3aa3c52750dd1
+ms.sourcegitcommit: 62b451396eae660f2d5289ae3666b19ed1cc666d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 08/19/2020
-ms.locfileid: "88591255"
+ms.locfileid: "88614729"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
@@ -38,7 +38,7 @@ Möjliga konfigurationerna är:
 
 - **Basic Mobility and Security for Office 365** – Om du har aktiverat den här konfigurationen visas MDM-utfärdaren som ”Office 365”. Om du vill börja använda Intune så måste du köpa Intune-licenser.
 
-- **Basic Mobility and Security for Office 365-samexistens** – Du kan lägga till Intune i din klientorganisation om du redan använder Basic Mobility and Security for Office 365 och konfigurera hanteringsbehörigheten till antingen Intune eller Basic Mobility and Security for Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av Basic Mobility and Security for Office 365. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av Basic Mobility and Security for Office 365, växlar hanteringen av enheterna till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter Basic Mobility and Security for Office 365 innan användarna byts till Intune, annars förlorar enheterna Basic Mobility and Security for Office 365-konfigurationen och får ingen annan konfiguration från Intune.
+- **Basic Mobility and Security for Office 365-[samexistens](#coexistence)** – Du kan lägga till Intune i din klientorganisation om du redan använder Basic Mobility and Security for Office 365 och konfigurera hanteringsbehörigheten till antingen Intune eller Basic Mobility and Security for Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av Basic Mobility and Security for Office 365. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av Basic Mobility and Security for Office 365, växlar hanteringen av enheterna till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter Basic Mobility and Security for Office 365 innan användarna byts till Intune, annars förlorar enheterna Basic Mobility and Security for Office 365-konfigurationen och får ingen annan konfiguration från Intune.
 
 ## <a name="set-mdm-authority-to-intune"></a>Ange Intune som utfärdare för hantering av mobila enheter
 
@@ -85,9 +85,9 @@ Tre viktiga steg krävs för att aktivera samexistens:
 ### <a name="preparation"></a>Förberedelse
 
 Innan du aktiverar samexistens med Basic Mobility and Security bör du tänka på följande:
-- Se till att du har tillräckligt många Intune-licenser för de användare som ska hanteras via Intune.
+- Se till att du har tillräckligt många [Intune-licenser](licenses.md) för de användare som ska hanteras via Intune.
 - Kontrollera vilka användare som har tilldelats Intune-licenser. När du har aktiverat samexistens kommer enheter som hör till användare som redan har tilldelats en Intune-licens att gå över till Intune. För att undvika oväntade enhetsflyttningar rekommenderar vi att du väntar med att tilldela Intune-licenser tills du har aktiverat samexistens.
-- Skapa och distribuera Intune-principer för att ersätta enhetssäkerhetsprinciper som ursprungligen distribuerades via säkerhets- och efterlevnadsportalen för Office 365. Gör detta för alla användare som ska flyttas från Basic Mobility and Security till Intune. Om dessa användare inte tilldelas några Intune-principer kan deras Basic Mobility and Security-inställningar gå förlorade när du aktiverar samexistens. Om du inte ersätter principerna, t.ex. hanterade e-postprofiler, går dessa inställningar förlorade.
+- Skapa och distribuera Intune-principer för att ersätta enhetssäkerhetsprinciper som ursprungligen distribuerades via säkerhets- och efterlevnadsportalen för Office 365. Gör detta för alla användare som ska flyttas från Basic Mobility and Security till Intune. Om dessa användare inte tilldelas några Intune-principer kan deras Basic Mobility and Security-inställningar gå förlorade när du aktiverar samexistens. Om du inte ersätter principerna, t.ex. hanterade e-postprofiler, går dessa inställningar förlorade. Även när du ersätter enhetssäkerhetsprinciper med Intune-principer kan användare uppmanas att autentisera sina e-postprofiler igen när enheten har flyttats till Intune-hantering.
 
 ### <a name="add-intune-mdm-authority"></a>Lägga till Intune-utfärdare av mobilenhetshantering
 
@@ -101,7 +101,7 @@ För att kunna aktivera samexistens måste du lägga till Intune som MDM-utfärd
 
 ### <a name="migrate-users-and-devices-optional"></a>Migrera användare och enheter (valfritt)
 
-När du har aktiverat Intune som MDM-utfärdare aktiveras samexistens och du kan börja hantera användare via Intune. Om du vill flytta enheter som tidigare hanterades av Basic Mobility and Security och i stället hantera dem i Intune, tilldelar du användarna en Intune-licens. Användarnas enheter kommer att flyttas till Intune vid nästa MDM-incheckning. Inställningar som tillämpas på dessa enheter via Basic Mobility and Security kommer inte längre att tillämpas och kommer att tas bort från enheterna.
+När du har aktiverat Intune som MDM-utfärdare aktiveras samexistens och du kan börja hantera användare via Intune. Optionally, if you want to move devices previously managed by Basic Mobility and Security to be managed by Intune, assign those users an Intune license. Användarnas enheter kommer att flyttas till Intune vid nästa MDM-incheckning. Inställningar som tillämpas på dessa enheter via Basic Mobility and Security kommer inte längre att tillämpas och kommer att tas bort från enheterna.
 
 ## <a name="mobile-device-cleanup-after-mdm-certificate-expiration"></a>Rensa mobila enheter efter att MDM-certifikatet upphört att gälla
 
