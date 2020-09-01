@@ -2,11 +2,11 @@
 
 ## [Vad är enhetsregistrering](use-managed-devices-to-get-work-done.md)
 
-## [Vilken information kan mitt företag se med Intune?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)
+## [Vilken information kan min organisation se?](what-info-can-your-company-see-when-you-enroll-your-device-in-intune.md)
 
 ## [Krav på enhetslösenord](password-does-not-meet-it-administrator-requirements.md)
 
-## [Logga in på företagsportalen](sign-in-to-the-company-portal.md)  
+## [Så här får du åtkomst till företagsportalen](sign-in-to-the-company-portal.md)  
 
 ## [Installera app med skydd mot mobilhot](set-up-mobile-threat-defense.md)  
 
@@ -20,7 +20,7 @@
 #### Registrera med härledda autentiseringsuppgifter
 ##### [Registrera med Entrust Datacard](enroll-android-device-entrust-datacard.md)
 ##### [Registrera med Intercede](enroll-android-device-intercede.md)
-##### [Registrera med Disa Purebred](enroll-android-device-disa-purebred.md)
+##### [Registrera med DISA Purebred](enroll-android-device-disa-purebred.md)
 ### [Flytta till installation av ny enhetshantering](move-to-new-device-management-setup.md)
 ### [Använda hanterade appar på enheten](use-managed-apps-on-your-device-android.md)
 ### [Kryptera din enhet](encrypt-your-device-android.md)
@@ -64,7 +64,6 @@
 
 ## [Använda en iOS-enhet](using-your-iOS-device-with-intune.md)
 ### [Effekter av att återställa en iOS-enhet](effects-of-device-reset-company-portal-ios.md)
-### [Installera och logga in i företagsportalen](install-and-sign-in-to-the-intune-company-portal-app-ios.md)
 ### Registrera enheten
 #### [Registrera din iOS-enhet](enroll-your-device-in-intune-ios.md)
 #### [Registrera iOS-enhet som tillhandahålls av organisationen](enroll-your-device-dep-ios.md)
@@ -143,7 +142,7 @@
 #### [Skicka loggar från företagsportalappen](send-logs-to-your-it-admin-cp-windows.md)
 #### [Skicka loggar från inställningsappen för enheter](send-logs-to-your-it-admin-settings-windows.md)
 #### [Min Windows-version stöds inte](your-windows-version-isnt-yet-supported.md)
-#### [Installera Office 365 på en Windows 10-enhet](install-office-windows.md)
+#### [Installera Office på en Windows 10-enhet](install-office-windows.md)
 #### [Min enhet måste krypteras](you-need-to-enable-windows-encryption.md)
 #### [Enheten behöver program mot skadlig kod](your-device-needs-antimalware-software.md)
 #### [Aktivera Säker Start](you-need-to-enable-secure-boot-windows.md)
