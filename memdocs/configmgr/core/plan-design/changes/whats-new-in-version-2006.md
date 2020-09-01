@@ -2,7 +2,7 @@
 title: Nyheter i version 2006
 titleSuffix: Configuration Manager
 description: Få information om ändringar och nya funktioner som introducerats i version 2006 av Configuration Manager aktuella grenen.
-ms.date: 08/20/2020
+ms.date: 08/31/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4b071746-61e1-404b-8053-60978de028a7
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: fc12c81a1ec58d17580b91e21a1ba7d2e0cb0cbc
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: c507879a77e57a0a06fe9528417394bcbf643608
+ms.sourcegitcommit: 68631e0f7d5bd09ae0ee9dc301a561ee9df10931
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88819685"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89245015"
 ---
 # <a name="whats-new-in-version-2006-of-configuration-manager-current-branch"></a>Vad är nytt i version 2006 av Configuration Manager aktuella grenen
 
@@ -133,7 +133,7 @@ För att bättre justera med kraven för Skriv bords analys för Windows-diagnos
 |---------|---------|
 | Obligatorisk | Grundläggande |
 | Valfritt (begränsat) | Utökad (begränsad) |
-| Saknas | Optimerad |
+| E.t. | Optimerad |
 | Valfritt | Fullständig |
 
 Om du tidigare har konfigurerat några enheter på den **förbättrade** nivån, kommer de att återgå till **valfria (begränsat)** när du uppgraderar till version 2006. De skickar då mindre data till Microsoft. Den här ändringen påverkar inte vad du ser i Skriv bords analys.
@@ -363,9 +363,9 @@ The following additional hotfixes are available to address specific issues:
 
 ## <a name="next-steps"></a>Nästa steg
 
-För tillfället släpps version 2006 för tidig uppdatering av ringen. Om du vill installera den här uppdateringen måste du välja. Mer information finns i [tidig uppdaterings ring](../../servers/manage/checklist-for-installing-update-2006.md#early-update-ring).
+<!-- At this time, version 2006 is released for the early update ring. To install this update, you need to opt in. For more information, see [Early update ring](../../servers/manage/checklist-for-installing-update-2006.md#early-update-ring). -->
 
-<!-- As of May 11, 2020, version 2006 is globally available for all customers to install. -->
+Från och med den 31 augusti 2020 är version 2006 globalt tillgängligt för alla kunder att installera.
 
 När du är redo att installera den här versionen, se [Installera uppdateringar för Configuration Manager](../../servers/manage/updates.md) och [Check lista för att installera uppdatering 2006](../../servers/manage/checklist-for-installing-update-2006.md).
 

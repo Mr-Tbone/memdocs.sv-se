@@ -2,7 +2,7 @@
 title: Check lista för 2006
 titleSuffix: Configuration Manager
 description: Lär dig mer om åtgärder som ska vidtas innan du uppdaterar till Configuration Manager version 2006.
-ms.date: 08/17/2020
+ms.date: 08/31/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-core
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6d359306-69ae-4873-ba90-964b6ae51d79
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 05264780ef3971a7aa8b2d1778f0fe27c90b0b71
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: 842264dcbbf93be623f68854b158d33c2f505928
+ms.sourcegitcommit: 68631e0f7d5bd09ae0ee9dc301a561ee9df10931
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88696471"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89245016"
 ---
 # <a name="checklist-for-installing-update-2006-for-configuration-manager"></a>Check lista för att installera uppdatering 2006 för Configuration Manager
 
@@ -68,36 +68,38 @@ Första gången du använder en Configuration Manager-konsol när uppdateringen 
 
 <!-- SCCMDocs#1397 -->
 
-<!-- As of May 11, 2020, version 2006 is globally available for all customers to install. If you previously opted in to the early update ring, watch for an update to this current branch version. -->
+Från och med den 31 augusti 2020 är version 2006 globalt tillgängligt för alla kunder att installera. Om du tidigare har valt att logga in med tidig uppdatering kan du titta på en uppdatering av den aktuella gren versionen.
 
-För tillfället släpps version 2006 för tidig uppdatering av ringen. Om du vill installera den här uppdateringen måste du välja. Följande PowerShell-skript lägger till din hierarki eller fristående primär plats till tidig uppdaterings ringen för version 2006:
+<!--
+At this time, version 2006 is released for the early update ring. To install this update, you need to opt-in. The following PowerShell script adds your hierarchy or standalone primary site to the early update ring for version 2006:
 
-[Skript för att välja version 2006](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
+[Version 2006 opt-in script](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target --
 
-Microsoft signerar skriptet digitalt och paketerar det i en signerad självextraherande körbar fil.
+Microsoft digitally signs the script, and bundles it inside a signed self-extracting executable.
 
 > [!NOTE]
-> Version 2006-uppdateringen gäller endast platser som kör version 1810 eller senare.
+> The version 2006 update is only applicable to sites running version 1810 or later.
 
-Så här anmäler du dig till tidig uppdaterings ringen:
+To opt-in to the early update ring:
 
-1. Öppna en Windows PowerShell version 5-session **som administratör**
+1. Open a Windows PowerShell version 5 session **as administrator**
 
     > [!IMPORTANT]
-    > Configuration Manager aktuella grenen har för närvarande inte stöd för PowerShell version 7. Om du redan har installerat PowerShell version 7 kan du fortfarande använda PowerShell version 5. Mer information finns i [använda PowerShell 7 sida-vid-sida med Windows PowerShell 5,1](/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7#using-powershell-7-side-by-side-with-windows-powershell-51).
+    > Configuration Manager current branch doesn't currently support PowerShell version 7. If you've already installed PowerShell version 7, you can still use PowerShell version 5. For more information, see [Using PowerShell 7 side-by-side with Windows PowerShell 5.1](/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7#using-powershell-7-side-by-side-with-windows-powershell-51).
 
-1. Kör **EnableEarlyUpdateRing2006.ps1** -skriptet med följande syntax:
+1. Run the **EnableEarlyUpdateRing2006.ps1** script, using the following syntax:
 
     `EnableEarlyUpdateRing2006.ps1 <SiteServer_Name> | SiteServer_IP>`
 
-    Där `SiteServer` refererar till den centrala administrations platsen eller den fristående primära plats servern. Till exempel `EnableEarlyUpdateRing2006.ps1 cmprimary01`
+    Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing2006.ps1 cmprimary01`
 
-1. Söka efter uppdateringar. Mer information finns i [Hämta tillgängliga uppdateringar](install-in-console-updates.md#get-available-updates).
+1. Check for updates. For more information, see [Get available updates](install-in-console-updates.md#get-available-updates).
 
-Version 2006-uppdateringen bör nu vara tillgänglig i-konsolen.
+The version 2006 update should now be available in the console.
 
 > [!IMPORTANT]
-> Det här skriptet lägger bara till din webbplats till den tidigaste uppdaterings ringen för version 2006. Det är inte en permanent ändring.
+> This script only adds your site to the early update ring for version 2006. It's not a permanent change.
+-->
 
 ## <a name="checklist"></a>Checklista
 
