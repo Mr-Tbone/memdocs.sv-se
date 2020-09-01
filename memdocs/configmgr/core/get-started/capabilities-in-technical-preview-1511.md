@@ -11,12 +11,12 @@ author: aczechowski
 ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 7f6cc0caf4df54196dbdb1859a69f19b3bbcacaa
-ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
+ms.openlocfilehash: a7b61e1a609e0693ffcd30f3f7dc931f4cb38eef
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88995491"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193646"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-configuration-manager"></a>Funktioner i Technical Preview 1511 för Configuration Manager
 
@@ -67,7 +67,7 @@ När Microsoft publicerar en ny Microsoft 365 Skriv bords klient uppdatering til
 
 4. Du kan kontrol lera efterlevnaden för Microsoft 365 uppdateringar med hjälp av övervakning eller rapporter i konsolen.  
 
-   Detaljerade anvisningar finns i [hantera Microsoft 365 klient uppdateringar med Configuration Manager Technical Preview](https://docs.microsoft.com/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
+   Detaljerade anvisningar finns i [hantera Microsoft 365 klient uppdateringar med Configuration Manager Technical Preview](/deployoffice/manage-microsoft-365-apps-updates-configuration-manager).  
 
 ##  <a name="support-for-sql-server-alwayson-for-highly-available-databases"></a><a name="BKMK_AlwasyOn"></a> Stöd för SQL Server AlwaysOn för databaser med hög tillgänglighet  
  Configuration Manager har nu stöd för att använda en SQL Server AlwaysOn-tillgänglighetsgrupper som värd för plats databasen.  När du installerar en ny plats kan du direkt konfigurera installationen att använda tillgänglighets gruppen i stället för en normal instans av SQL Server.  

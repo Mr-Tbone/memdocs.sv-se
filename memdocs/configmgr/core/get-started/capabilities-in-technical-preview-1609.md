@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ROBOTS: NOINDEX
-ms.openlocfilehash: 05ed0daf56275b2e0ed46b2f9dd93fd66eb360be
-ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
+ms.openlocfilehash: 2ab05abee2889259cc6c92e9081e4d10e2123923
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88995542"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193757"
 ---
 # <a name="capabilities-in-technical-preview-1609-for-configuration-manager"></a>Funktioner i Technical Preview 1609 för Configuration Manager
 
@@ -347,7 +347,7 @@ På instrument panelen visas diagram med följande:
 - Office 365-klient versioner
 - Office 365-klient språk
 - Office 365-klient kanaler     
-Mer information finns i [Översikt över uppdateringskanaler för Microsoft 365-appar](https://docs.microsoft.com/deployoffice/overview-update-channels).
+Mer information finns i [Översikt över uppdateringskanaler för Microsoft 365-appar](/deployoffice/overview-update-channels).
 - Regler för automatisk distribution som har Office 365-klienten valt i uppsättningen tillgängliga produkter.
 
 Du kan vidta följande åtgärder på instrument panelen:

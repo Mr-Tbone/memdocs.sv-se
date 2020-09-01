@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 54794a575cda4197bc11160d1c5e374d06c143c6
-ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
+ms.openlocfilehash: 78150c497757c1a3f0b65a870c35516983711d9a
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88995253"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193835"
 ---
 # <a name="whats-new-in-version-1902-of-configuration-manager-current-branch"></a>Vad är nytt i version 1902 av Configuration Manager aktuella grenen
 
@@ -351,7 +351,7 @@ Använd Configuration Manager för att flytta Windows-kända mappar till OneDriv
 
 Mer information om den här funktionen i OneDrive för företag finns i [omdirigera och flytta Windows-kända mappar till OneDrive](/onedrive/redirect-known-folders).
 
-Börja [med att hitta Microsoft 365 klient-ID](https://docs.microsoft.com/onedrive/find-your-office-365-tenant-id). Distribuera sedan 18.111.0603.0004 för OneDrive-synkronisering eller senare. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](https://docs.microsoft.com/onedrive/deploy-on-windows).  
+Börja [med att hitta Microsoft 365 klient-ID](/onedrive/find-your-office-365-tenant-id). Distribuera sedan 18.111.0603.0004 för OneDrive-synkronisering eller senare. Mer information finns i [distribuera OneDrive-appar med hjälp av Configuration Manager](/onedrive/deploy-on-windows).  
 
 Om du vill skapa och distribuera en OneDrive för företag-profil går du till arbets ytan **till gångar och efterlevnad** i Configuration Manager-konsolen. Expandera **kompatibilitetsinställningar och välj**noden **OneDrive för företag-profiler** .  
 

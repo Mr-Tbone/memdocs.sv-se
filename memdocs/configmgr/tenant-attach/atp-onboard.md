@@ -10,12 +10,12 @@ ms.assetid: 50f8e206-a2af-469a-9f1b-0f7a87166f48
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: a17d6fb437f83ae14895e8dd6d081ee4b6bd80fb
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: a2862812145e33a992ceaa346e138606eee5fad0
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827038"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89194220"
 ---
 # <a name="tenant-attach-onboard-configuration-manager-clients-to-microsoft-defender-atp-from-the-admin-center-preview"></a><a name="bkmk_atp"></a> Klient anslutning: publicera Configuration Manager klienter till Microsoft Defender ATP från administrations centret (för hands version)
 <!--5691658-->
@@ -26,17 +26,17 @@ ms.locfileid: "88827038"
 
 Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina enheter. Microsoft sammanför Configuration Manager och Intune i en enda konsol som kallas **administrations Center för Microsoft Endpoint Manager**. Du kan distribuera EDR-principer för hantering av Microsoft Defender ATP-identifiering och-svar () för att Configuration Manager hanterade klienter. Dessa klienter kräver inte Azure AD eller MDM-registrering och principen riktas mot ConfigMgr-samlingar i stället för Azure AD-grupper.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Åtkomst till [administrations centret för Microsoft Endpoint Manager](https://endpoint.microsoft.com/).
-- En E5-licens för [Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/minimum-requirements#licensing-requirements).
+- En E5-licens för [Microsoft Defender ATP](/windows/security/threat-protection/microsoft-defender-atp/minimum-requirements#licensing-requirements).
 - En miljö som är [ansluten till uppladdade enheter](device-sync-actions.md).
 - Minst Configuration Manager version 2006 och motsvarande version av konsolen installerad.
    - Uppgradera mål enheterna till den senaste versionen av Configuration Manager-klienten.
 
 ## <a name="make-configuration-manager-collections-available-to-assign-endpoint-security-policies"></a><a name="bkmk_collections"></a> Gör Configuration Manager samlingar tillgängliga för att tilldela principer för slut punkts säkerhet
 
-När du aktiverar samlingar av enheter för att arbeta med säkerhets principer för slut punkter från Intune, konfigurerar du enheter i dessa samlingar för att publicera med Microsoft Defender ATP.
+När du aktiverar samlingar av enheter för att arbeta med säkerhetsprinciper för slutpunkter från Intune, konfigurerar du de enheter i dessa samlingar som ska publiceras med Microsoft Defender ATP.
 
 [!INCLUDE [Enable endpoint security policies for a Configuration Manager collection](../../intune/protect/includes/make-configmgr-collection-available-edr.md)]
 

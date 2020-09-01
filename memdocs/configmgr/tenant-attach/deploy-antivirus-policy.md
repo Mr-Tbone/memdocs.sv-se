@@ -10,12 +10,12 @@ ms.assetid: 07379821-02b3-4c61-af03-329c782e10d6
 manager: dougeby
 author: mestew
 ms.author: mstewart
-ms.openlocfilehash: d09b519bfc116afd397d455c6a03a8748f9303cd
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 214a1ebc6b943edac194f27ee4aa539001026aaf
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88827032"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89194213"
 ---
 # <a name="tenant-attach-create-and-deploy-endpoint-security-antivirus-policy-from-the-admin-center-preview"></a><a name="bkmk_atp"></a> Klient anslutning: skapa och distribuera slut punkts säkerhets Antivirus princip från administrations Center (för hands version)
 <!--5691658-->
@@ -27,10 +27,10 @@ ms.locfileid: "88827032"
 Microsoft Endpoint Manager är en integrerad lösning för att hantera alla dina enheter. Microsoft sammanför Configuration Manager och Intune i en enda konsol som kallas **administrations Center för Microsoft Endpoint Manager**. Skapa Microsoft Defender Antivirus-principer i Microsoft Endpoint Manager-konsolen och distribuera dem till Configuration Manager samlingar.
 
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Åtkomst till [administrations centret för Microsoft Endpoint Manager](https://endpoint.microsoft.com/).
-- En E5-licens för [Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/minimum-requirements#licensing-requirements).
+- En E5-licens för [Microsoft Defender ATP](/windows/security/threat-protection/microsoft-defender-atp/minimum-requirements#licensing-requirements).
 - En miljö som är [ansluten till uppladdade enheter](device-sync-actions.md).
 - Minst Configuration Manager version 2006 och motsvarande version av konsolen installerad.
    - Uppgradera mål enheterna till den senaste versionen av Configuration Manager-klienten.

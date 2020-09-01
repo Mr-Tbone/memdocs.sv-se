@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ms.reviewer: acabello
 ROBOTS: NOINDEX
-ms.openlocfilehash: 484b1d808484984b4beaf434c0c27f2f1bec4e10
-ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
+ms.openlocfilehash: 2d431f744ab09aeb938a7961ebf713f71c0f8015
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88995202"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193690"
 ---
 # <a name="ready-for-modern-desktop-retirement-faq"></a>Klar för vanliga frågor och svar om moderna skriv bord
 
@@ -49,7 +49,7 @@ Många kunder har utmaningar med att hämta och hålla dig uppdaterad med Window
 
 Det *färdiga för modern Skriv bords* katalog som listas program varu lösningar som stöds och används på kommersiella enheter som kör Windows 10 och Microsoft 365 appar för företag. Katalogen hjälper IT-chefer som överväger de senaste versionerna av Windows 10 och Microsoft 365 för deras distributioner.
 
-Feedback från IT-chefer är att de vill att dessa insikter integreras med de verktyg som redan används för att planera sina distributions planer. Använd funktionerna för [stationär analys](https://aka.ms/dadocs) och [Microsoft 365 Apps-beredskap](https://docs.microsoft.com/deployoffice/readiness-tools#office-365-proplus-readiness-features-in-configuration-manager-current-branch) i Configuration Manager för att planera och hantera dina Windows 10-och Microsoft 365-appar för Enterprise Upgrade-projekt. 
+Feedback från IT-chefer är att de vill att dessa insikter integreras med de verktyg som redan används för att planera sina distributions planer. Använd funktionerna för [stationär analys](https://aka.ms/dadocs) och [Microsoft 365 Apps-beredskap](/deployoffice/readiness-tools#office-365-proplus-readiness-features-in-configuration-manager-current-branch) i Configuration Manager för att planera och hantera dina Windows 10-och Microsoft 365-appar för Enterprise Upgrade-projekt. 
 
 > [!Note]
 > Från och med den 21 april 2020 kommer Office 365 ProPlus att byta namn till **Microsoft 365 appar för företag**. Mer information finns i [namn ändring för Office 365 ProPlus](/deployoffice/name-change). Du kan fortfarande se referenser till det gamla namnet i Configuration Manager-konsolen och stöd dokumentationen medan-konsolen uppdateras.
@@ -122,4 +122,4 @@ Utvärdera prestanda för dina lösningar med hälso-och mått rapporter via Dev
 
 Kontrol lera att dina Skriv bords program är kompatibla nu och håll dem kompatibla med Windows 10 i framtiden. Mer information finns i [programkompatibilitet för utvecklare](https://developer.microsoft.com/windows/desktop/app-compatibility).
 
-Om du utvecklar lösningar för Microsoft 365 appar för företag, se [metod tips för utveckling för com, VSTO och VBA-tillägg i Office](https://docs.microsoft.com/visualstudio/vsto/development-best-practices-for-com-vsto-and-vba-add-ins-in-office).
+Om du utvecklar lösningar för Microsoft 365 appar för företag, se [metod tips för utveckling för com, VSTO och VBA-tillägg i Office](/visualstudio/vsto/development-best-practices-for-com-vsto-and-vba-add-ins-in-office).
