@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7163a8a615edd8f1b813801aab1e499ab30e0c20
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 4ce8f787c8ba2b08cc47d8f1431ea7d4bdce5e58
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83991019"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914743"
 ---
 # <a name="overview-for-troubleshooting-scep-certificate-profiles-with-microsoft-intune"></a>Översikt för felsökning av SCEP-certifikatprofiler i Microsoft Intune
 
@@ -80,7 +80,7 @@ Följande lista innehåller loggar eller konsoler som refereras till i följande
 
 - **NDESConnector_date_time.svclog**:
 
-  Den här loggen visar kommunikation från Microsoft Intune Certificate Connector till Intune-molnet. Du kan använda [visningsverktyget för tjänstspårning](https://docs.microsoft.com/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
+  Den här loggen visar kommunikation från Microsoft Intune Certificate Connector till Intune-molnet. Du kan använda [visningsverktyget för tjänstspårning](/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
 
   Relaterad registernyckel: *HKLM\SW\Microsoft\MicrosoftIntune\NDESConnector\ConnectionStatus*
 
@@ -88,7 +88,7 @@ Följande lista innehåller loggar eller konsoler som refereras till i följande
 
 - **CertificateRegistrationPoint_date_time.svclog**:
 
-  I den här loggen visas NDES-principmodulen som tar emot och verifierar certifikatbegäranden. Du kan använda [visningsverktyget för tjänstspårning](https://docs.microsoft.com/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
+  I den här loggen visas NDES-principmodulen som tar emot och verifierar certifikatbegäranden. Du kan använda [visningsverktyget för tjänstspårning](/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
 
   Plats: På servern som är värd för NDES på *%program_files%\Microsoft intune\ndesconnectorsvc\logs\logs*
 
@@ -148,4 +148,4 @@ För enheter som kör Windows använder du händelseloggarna i Windows för att 
 
 ## <a name="next-steps"></a>Nästa steg
 
-Granska [distribution av SCEP-certifikatprofiler](troubleshoot-scep-certificate-profile-deployment.md) 
+Granska [distribution av SCEP-certifikatprofiler](troubleshoot-scep-certificate-profile-deployment.md)

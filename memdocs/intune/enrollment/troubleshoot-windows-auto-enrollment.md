@@ -18,16 +18,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 968aa9b2f7127e9b7f092f36a99b491a75f0b78c
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ms.openlocfilehash: 6aff5dfe62c1c44ec22f56c287220b59b98a7536
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546874"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915491"
 ---
 # <a name="troubleshoot-windows-10-group-policy-based-auto-enrollment-in-intune"></a>Felsöka automatisk registrering baserad på grupprinciper av Windows 10-enheter i Intune
 
-Du kan använda en grupprincip till att utlösa automatisk registrering till MDM för enheter kopplade till en AD-domän (Active Directory). Mer information om den här funktionen finns i [Registrera en Windows 10-enhet automatiskt med hjälp av en grupprincip](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy).
+Du kan använda en grupprincip till att utlösa automatisk registrering till MDM för enheter kopplade till en AD-domän (Active Directory). Mer information om den här funktionen finns i [Registrera en Windows 10-enhet automatiskt med hjälp av en grupprincip](/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy).
 
 ## <a name="verify-the-configuration"></a>Verifiera konfigurationen
 
@@ -37,7 +37,7 @@ Innan du börjar felsöka bör du kontrollera att allt är konfigurerat på rät
 
    ![Kontrollera Intune-licensen](./media/troubleshoot-windows-auto-enrollment/intune-license.png)
 
-- Kontrollera att automatisk registrering är aktiverad för alla användare som ska registrera enheter i Intune. Mer information finns i [Azure AD och Microsoft Intune: Automatisk MDM-registrering i den nya portalen](https://docs.microsoft.com/windows/client-management/mdm/azure-ad-and-microsoft-intune-automatic-mdm-enrollment-in-the-new-portal).
+- Kontrollera att automatisk registrering är aktiverad för alla användare som ska registrera enheter i Intune. Mer information finns i [Azure AD och Microsoft Intune: Automatisk MDM-registrering i den nya portalen](/windows/client-management/mdm/azure-ad-and-microsoft-intune-automatic-mdm-enrollment-in-the-new-portal).
 
    ![Kontrollera automatisk registrering](./media/troubleshoot-windows-auto-enrollment/verify-auto-enrollment.png)
 
@@ -106,7 +106,7 @@ Händelse-ID 75 loggas inte i följande situationer:
 
   Du kan kontrollera det här felet genom att leta efter Event ID 76 (meddelande: Automatisk MDM-registrering: Misslyckades (okänd Win32-felkod: 0x8018002b)). Den här händelsen indikerar en misslyckad automatisk registrering.
 
-  Du kan läsa om en möjlig lösning på problemet i [Felsöka problem med registrering av Windows-enheter i Microsoft Intune](https://docs.microsoft.com/intune/troubleshoot-windows-enrollment-errors).
+  Du kan läsa om en möjlig lösning på problemet i [Felsöka problem med registrering av Windows-enheter i Microsoft Intune](/intune/troubleshoot-windows-enrollment-errors).
 
 - Registreringen utlöstes inte alls. I det här fallet loggas inte händelse-ID 75 eller 76.
   

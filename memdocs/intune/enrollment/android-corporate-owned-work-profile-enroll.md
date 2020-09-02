@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4934115915c41d696258aa54ee8f4b7c84d1809c
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 9a19a78002d0655cf63a8b757ea252fb8992603f
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86465027"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915270"
 ---
 # <a name="set-up-intune-enrollment-of-android-enterprise-corporate-owned-devices-with-work-profile"></a>Konfigurera Intune-registrering av företagsägda Android Enterprise-enheter med arbetsprofil
 
@@ -83,7 +83,7 @@ Du kan rikta appar och principer till tilldelade eller dynamiska enhetsgrupper. 
     - **Lägg till enheter där**: enrollmentProfileName
     - Välj **Lika med** i mittenrutan.
     - I det sista fältet anger du registreringsprofilnamnet som du har skapat tidigare.
-    Mer information om regler för dynamiskt medlemskap finns i [Regler för dynamiskt medlemskap för grupper i AAD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership). 
+    Mer information om regler för dynamiskt medlemskap finns i [Regler för dynamiskt medlemskap för grupper i AAD](/azure/active-directory/users-groups-roles/groups-dynamic-membership). 
 5. Välj **Lägg till fråga** > **Skapa**.
 
 ### <a name="revoke-tokens"></a>Återkalla token

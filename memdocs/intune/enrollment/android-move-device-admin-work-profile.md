@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 685f2a51c7a2bfacbc95fb2a7615f0e459b97245
-ms.sourcegitcommit: b0ae4a9972bac3518d0d4f33e033ac492eefe3c1
+ms.openlocfilehash: fb62a7b592b492d4092b7af7ee29b2bfd50c66e8
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84126523"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915185"
 ---
 # <a name="move-android-devices-from-device-administrator-to-work-profile-management"></a>Flytta Android-enheter från enhetsadministratör till arbetsprofilhantering
 
@@ -40,7 +40,7 @@ När användarna ser att de inte uppfyller kraven av det här skälet, kan de tr
 - Du konfigurerar Android-arbetsprofilhantering genom [att ansluta ditt Intune-klientkonto till ditt Android Enterprise-konto](connect-intune-android-enterprise.md).
 - [Ställ in Android Enterprise-arbetsprofilregistrering](android-work-profile-enroll.md) för den grupp användare som flyttar till Android-arbetsprofilen.
 - Överväg att öka användarenhetsgränserna. När du avregistrerar enheter från enhetsadministratörshantering, kan det hända att enhetsposter inte tas bort omedelbart. Om du vill tillhandahålla en buffert under den här perioden, kan du behöva öka enhetsgränskapaciteten så att användarna kan registrera sig för arbetsprofilhantering.
-  - [Konfigurera Azure Active Directory-enhet inställningarna](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#configure-device-settings) för maximalt antal enheter per användare.
+  - [Konfigurera Azure Active Directory-enhet inställningarna](/azure/active-directory/devices/device-management-azure-portal#configure-device-settings) för maximalt antal enheter per användare.
   - Justera [Intune-enhetens gränsbegränsningar](enrollment-restrictions-set.md#create-a-device-limit-restriction) genom att ange enhetsgränsen. 
 
 ## <a name="create-device-compliance-policy"></a>Skapa en efterlevnadsprincip för enheter

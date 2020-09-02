@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7858253772b554858209f3524f20bccf08839bd
-ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
+ms.openlocfilehash: bd15cc44ac3e6d17c36e3b623135b94ddcfcdbc3
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217464"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88912975"
 ---
 # <a name="troubleshoot-mobile-application-management"></a>Felsök hantering av mobilprogram
 
@@ -59,7 +59,7 @@ Vanliga problem för slutanvändare är uppdelade i följande kategorier:
 Plattform | Scenario | Förklaring |
 ---| --- | --- |
 iOS | Slutanvändaren kan använda iOS/iPadOS resurstillägg för att öppna arbets- eller skoldata i ohanterade appar, även om dataöverföringsprincipen är inställd på **Endast hanterade appar** eller **Inga appar.** Kan inte detta läcka data? | Intunes appskyddsprincip kan inte styra iOS/iPadOS-resurstillägget utan att hantera enheten. Därför **krypterar Intune "företagets" data innan den delas utanför appen**. Du kan verifiera detta genom att försöka öppna en "företags"-fil utanför den hanterade appen. Filen ska vara krypterad och inte kunna öppnas utanför den hanterade appen.
-iOS | Varför uppmanas slutanvändaren **att installera Microsoft Authenticator-appen** | Detta krävs när appbaserad villkorsstyrd åtkomststyrd används. Mer information finns i [Kräv godkänd klientapp](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
+iOS | Varför uppmanas slutanvändaren **att installera Microsoft Authenticator-appen** | Detta krävs när appbaserad villkorsstyrd åtkomststyrd används. Mer information finns i [Kräv godkänd klientapp](/azure/active-directory/conditional-access/app-based-conditional-access).
 Android | Varför **måste slutanvändaren installera företagsportalappen** även om jag använder MAM-appskydd utan att registrera enheter?  | På Android är mycket av appskyddsfunktionaliteten inbyggd i företagsportalappen. **Enhetsregistrering krävs inte, även om företagsportalappen alltid krävs**. För appskydd utan registrering behöver slutanvändaren bara ha företagsportalappen installerad på enheten.
 iOS/Android | Appskyddsprincipen tillämpas inte på e-postutkast i Outlook-appen | Eftersom Outlook stöder både företagskontext och personlig kontext, så tillämpas inte MAM på e-postutkast.
 iOS/Android | Appskyddsprincipen tillämpas inte på nya dokument i WXP (Word, Excel, PowerPoint) | Eftersom WXP stöder både företagskontext och personlig kontext, så påtvingas inte MAM på nya dokument förrän de har sparats på en identifierad företagsplats som OneDrive.

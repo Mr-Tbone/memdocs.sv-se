@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 444fb116150cf3d7a3ab4dcfe4eb450b20119df0
-ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
+ms.openlocfilehash: 0803563dc525b0835602d54d4bde3de1345aeb33
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410937"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913383"
 ---
 # <a name="data-protection-framework-using-app-protection-policies"></a>Dataskyddsramverk med appskyddsprinciper 
 
@@ -64,7 +64,7 @@ Följande inställningar för appskyddsprincip bör aktiveras för tillämpliga 
 Microsoft rekommenderar att du granskar och kategoriserar användningsscenarier och sedan konfigurerar användare med hjälp av de normativa riktlinjerna för den nivån. Precis som med alla ramverk kan inställningar inom en motsvarande nivå behöva justeras baserat på organisationens behov, eftersom dataskydd måste utvärdera hotmiljön, riskbenägenheten och påverkan på användbarheten.  
 
 ### <a name="conditional-access-policies"></a>Villkorliga åtkomstprinciper
-För att säkerställa att endast appar som har stöd för appskyddsprinciper får åtkomst till arbets- eller skolkontodata, krävs principer för villkorsstyrd åtkomst för Azure Active Directory. Se **Scenario 1: Office 365-appar kräver godkända appar med appskyddsprinciper** i [Kräva appskyddsprincip för molnappsåtkomst med villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/app-protection-based-conditional-access) för stegen för att implementera de specifika principerna.
+För att säkerställa att endast appar som har stöd för appskyddsprinciper får åtkomst till arbets- eller skolkontodata, krävs principer för villkorsstyrd åtkomst för Azure Active Directory. Se **Scenario 1: Office 365-appar kräver godkända appar med appskyddsprinciper** i [Kräva appskyddsprincip för molnappsåtkomst med villkorsstyrd åtkomst](/azure/active-directory/conditional-access/app-protection-based-conditional-access) för stegen för att implementera de specifika principerna.
 
 ### <a name="apps-to-include-in-the-app-protection-policies"></a>Appar som ska ingå i appskyddsprinciperna  
 

@@ -19,12 +19,12 @@ ms.reviewer: arnab
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: a7ce95d5c28b1b85f27fdd0aee74e3148abfb554
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: a6984f4e6eafee1f81340f483dc557fdb6091ec9
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882260"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910765"
 ---
 # <a name="device-encrypted-but-apps-say-otherwise"></a>Enheten är krypterad men appar känner inte igen det
 
@@ -51,7 +51,7 @@ Det här avsnittet gäller endast företagsportalappen. Om enheten ger dig alter
 
 På vissa Android-enheter med version 7.0 och senare krypteras data på ett sätt som strider mot vissa standarder för Android-plattformen. Dessa krypteringsmetoder utsätter enhetsinformation för risker. Därför stöds inte dessa enheter.
 
-En ofullständig lista över Android-enheter som stöds finns i artikeln [Operativsystem och webbläsare som stöds i Intune](https://docs.microsoft.com/intune/fundamentals/supported-devices-browsers#supported-samsung-knox-standard-devices). Om din enhet inte finns med i listan hör du med enhetstillverkaren eller kontaktar en supporttekniker.
+En ofullständig lista över Android-enheter som stöds finns i artikeln [Operativsystem och webbläsare som stöds i Intune](/intune/fundamentals/supported-devices-browsers#supported-samsung-knox-standard-devices). Om din enhet inte finns med i listan hör du med enhetstillverkaren eller kontaktar en supporttekniker.
 
 > [!Note]
 > Microsoft arbetar med tillverkare för att åtgärda eventuella problem som vi påträffar under testning eller som användarna rapporterar till oss. Vi uppdaterar den här artikeln när ny information är tillgänglig.
@@ -62,4 +62,4 @@ Om du inte har uppdaterat enheten till den senaste versionen av Android går du 
 
 ## <a name="next-steps"></a>Nästa steg
 
-Behöver du fortfarande hjälp? Kontakta företagets support (du hittar kontaktinformation på [företagsportalwebbplatsen](https://go.microsoft.com/fwlink/?linkid=2010980)) eller skriv till <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with enrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-teamet</a>.  
+Behöver du fortfarande hjälp? Kontakta företagets support (du hittar kontaktinformation på [företagsportalwebbplatsen](https://go.microsoft.com/fwlink/?linkid=2010980)) eller skriv till <a href="mailto:wintunedroidfbk@microsoft.com?subject=I'm having trouble with enrolling my Android device&body=Describe the issue you're experiencing here.">Microsoft Android-teamet</a>.

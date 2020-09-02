@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b3052d8d213ce3190ed29b43f580a8de9c840b7
-ms.sourcegitcommit: 0f02742301e42daaa30e1bde8694653e1b9e5d2a
+ms.openlocfilehash: c99300e1c29aa7d3ec7519727dd6d12527626bfa
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82943849"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911496"
 ---
 # <a name="intune-network-configuration-requirements-and-bandwidth"></a>Krav för Intune-nätverkskonfiguration och bandbredd
 
@@ -79,7 +79,7 @@ Information om hur du använder en proxyserver till att cachelagra innehåll fin
 
 Med Leveransoptimering kan du använda Intune för att minska bandbreddsförbrukningen när dina Windows 10-enheter laddar ned program och uppdateringar. Genom att använda en självorganiserande distribuerad cache kan nedladdningar hämtas från traditionella servrar och alternativa källor (som nätverks-peer).
 
-Hela listan med Windows 10-versioner och innehållstyper som stöds av Leveransoptimering finns i [artikeln om Leveransoptimering för Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization#requirements).
+Hela listan med Windows 10-versioner och innehållstyper som stöds av Leveransoptimering finns i [artikeln om Leveransoptimering för Windows 10](/windows/deployment/update/waas-delivery-optimization#requirements).
 
 Du kan [konfigurera Leveransoptimering](../configuration/delivery-optimization-settings.md) som en del av dina enhetskonfigurationsprofiler.
 
@@ -95,7 +95,7 @@ Under den tid då du konfigurerar kan du använda BITS på en Windows-dator för
 > [!NOTE]
 > Vid MDM-hantering i Windows använder bara operativsystemets hanteringsgränssnitt för apptypen MobileMSI BITS för nedladdning. AppX/MsiX använder sin egen nedladdningsstack utan BITS och Win32-appar via Intune-agenten använder leveransoptimering i stället för BITS.
 
-Läs mer om BITS och Windows-datorer i [Background Intelligent Transfer Service](https://technet.microsoft.com/library/bb968799.aspx) i TechNet-biblioteket.
+Läs mer om BITS och Windows-datorer i [Background Intelligent Transfer Service](/windows/win32/bits/background-intelligent-transfer-service-portal) i TechNet-biblioteket.
 
 
 #### <a name="use-branchcache-on-computers-requires-intune-software-client"></a>Använda BranchCache på datorer (kräver Intune-klientprogrammet)
@@ -111,7 +111,7 @@ Om du vill använda BranchCache måste klientdatorn ha BranchCache aktiverat och
 
 Som standard aktiveras BranchCache och distribuerat cacheläge på en dator när Intune-klienten installeras. Men om en grupprincip har inaktiverat BranchCache, åsidosätter Intune inte den principen. Det innebär att BranchCache förblir inaktiverad.
 
-Om du använder BranchCache bör du arbeta med andra administratörer i din organisation som hanterar grupprincip och Intune-brandväggsprincip. Kontrollera att de inte distribuerar en princip som inaktiverar BranchCache eller brandväggsundantag. Mer information om BranchCache finns i [BranchCache-översikt](https://technet.microsoft.com/library/hh831696.aspx).
+Om du använder BranchCache bör du arbeta med andra administratörer i din organisation som hanterar grupprincip och Intune-brandväggsprincip. Kontrollera att de inte distribuerar en princip som inaktiverar BranchCache eller brandväggsundantag. Mer information om BranchCache finns i [BranchCache-översikt](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11)).
 
 
 ## <a name="next-steps"></a>Nästa steg

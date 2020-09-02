@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48560af1ff31d5660f00e775a2f510b88c08fd9c
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: cf74b7b96f51658f50ae8654b0c3a7e364cac63d
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820603"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911817"
 ---
 # <a name="set-up-enrollment-for-windows-devices"></a>Konfigurera registrering av Windows-enheter
 
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
 
-Den här artikeln hjälper IT-administratörer att förenkla Windows-registrering för sina användare. När du har [konfigurerat Intune](../fundamentals/setup-steps.md) kan användarna registrera Windows-enheter genom att [logga in](https://docs.microsoft.com/mem/intune/user-help/windows-enrollment-company-portal) med sina arbets- eller skolkonton.  
+Den här artikeln hjälper IT-administratörer att förenkla Windows-registrering för sina användare. När du har [konfigurerat Intune](../fundamentals/setup-steps.md) kan användarna registrera Windows-enheter genom att [logga in](../user-help/windows-enrollment-company-portal.md) med sina arbets- eller skolkonton.  
 
 I egenskap av Intune-administratör kan du förenkla registreringen på följande sätt:
 
@@ -39,7 +39,7 @@ I egenskap av Intune-administratör kan du förenkla registreringen på följand
 
 Två saker som innebär att du kan förenkla Windows-enhetsregistreringen:
 
-- **Använder du Azure Active Directory Premium?** <br>[Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) ingår i Enterprise Mobility + Security och andra licensieringsplaner.
+- **Använder du Azure Active Directory Premium?** <br>[Azure AD Premium](/azure/active-directory/active-directory-get-started-premium) ingår i Enterprise Mobility + Security och andra licensieringsplaner.
 - **Vilka versioner av Windows-klienterna kommer användarna att registrera?** <br>Windows 10-enheter kan registreras automatiskt genom att lägga till ett arbets- eller skolkonto. Tidigare versioner måste registreras via företagsportalappen.
 
 ||**Azure AD Premium**|**Övriga AD**|
@@ -125,7 +125,7 @@ Azure Active Directory har ett annat CNAME som används för enhetsregistrering 
 | --- | --- | --- | --- |
 | CNAME | EnterpriseRegistration. company_domain.com | EnterpriseRegistration.windows.net | 1 timme|
 
-Mer information om enhetsregistrering finns i [Hantera enhetsidentiteter med hjälp av Azure Portal](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal)
+Mer information om enhetsregistrering finns i [Hantera enhetsidentiteter med hjälp av Azure Portal](/azure/active-directory/devices/device-management-azure-portal)
 
 ## <a name="windows-10-auto-enrollment-and-device-registration"></a>Automatisk registrering av Windows 10 och enhetsregistrering
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ff2898f97bbef4cba0d14d4810a503d613cff18
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: f94fdd6dcad0b1d1e05caa38dbdfd63dd8746013
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82077928"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915236"
 ---
 # <a name="where-did-my-intune-feature-go-in-azure"></a>Var är Intune-funktionen i Azure?
 Vi passade på att ordna några uppgifter på ett mer logiskt sätt när vi flyttade Intune till Azure-portalen. Men alla förbättringar innebär att man måste lära sig den nya ordningen. Den här referensguiden är till för dem som är bekanta med Intune i den klassiska portalen och undrar hur de ska arbeta med Intune i Azure-portalen. Om du letar efter en funktion som inte tas upp i den här artikeln kan du lämna en kommentar vid artikelns slut så kan vi uppdatera den.
@@ -45,7 +45,7 @@ Inställningar för företagsportalen|Administratör > Företagsportalen|**Hante
 
 
 ## <a name="where-do-i-manage-groups"></a>Var hanterar jag grupper?
-Intune i Azure-portalen använder [Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal) till att hantera grupper.
+Intune i Azure-portalen använder [Azure Active Directory (AD)](/azure/active-directory/active-directory-groups-create-azure-portal) till att hantera grupper.
 
 ## <a name="where-did-enrollment-rules-go"></a>Var finns registreringsreglerna?
 I den klassiska portalen gick det att ange regler för att styra MDM-registreringen av mobila och moderna Windows- och macOS-enheter.
@@ -73,7 +73,7 @@ De nya begränsningsfunktionerna läggs endast till i Azure-portalen.
 ## <a name="where-did-my-conditional-access-policies-go"></a>Vart tog mina principer för Villkorsstyrd åtkomst vägen?
 När din klientorganisation har migrerats till Azure-portalen fortsätter klientorganisationens principer för Villkorsstyrd åtkomst att tillämpas. Dock kan du inte visa eller ändra dem från Intune i Azure-portalen.
 
-Om du vill visa och göra ändringar i principer för Villkorsstyrd åtkomst från Azure-portalen måste du ta bort de gamla principerna från den klassiska portalen. Återskapa dem sedan i Azure-portalen. Mer information om hur du migrerar principer för Villkorsstyrd åtkomst finns i [Migrera klassiska principer i Azure-portal](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-migration). 
+Om du vill visa och göra ändringar i principer för Villkorsstyrd åtkomst från Azure-portalen måste du ta bort de gamla principerna från den klassiska portalen. Återskapa dem sedan i Azure-portalen. Mer information om hur du migrerar principer för Villkorsstyrd åtkomst finns i [Migrera klassiska principer i Azure-portal](/azure/active-directory/active-directory-conditional-access-migration). 
 
 ## <a name="where-did-my-compliance-policies-go"></a>Vart tog mina efterlevnadsprinciper vägen?
 När din klientorganisation har migrerats till Azure-portalen fortsätter klientorganisationens efterlevnadsprinciper att tillämpas. Dock kan du inte visa eller ändra dem från Intune i Azure-portalen.

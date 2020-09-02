@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66ea84d8defa1d1d5b79f686537b391452cf3c30
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 88eabe07cadf45644f3e10be338a23454c5d1711
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83990278"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911990"
 ---
 # <a name="create-and-deploy-windows-information-protection-wip-policy-with-intune"></a>Skapa och distribuera en WIP-princip (Windows Information Protection) med Intune
 
@@ -52,11 +52,11 @@ Du måste känna till några grundläggande begrepp när du lägger till en WIP-
 Du måste konfigurera MAM-providern innan du kan skapa en WIP-princip. Läs mer i [Konfigurera din MAM-provider med Intune](app-protection-policies-configure-windows-10.md).  
 
 > [!IMPORTANT]
-> RIA stöder inte multi-identitet. Det kan bara finnas en hanterad identitet åt gången. Mer information om funktioner och begränsningar i WIP finns i [Skydda företagsdata med Windows informationsskydd](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
+> RIA stöder inte multi-identitet. Det kan bara finnas en hanterad identitet åt gången. Mer information om funktioner och begränsningar i WIP finns i [Skydda företagsdata med Windows informationsskydd](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
 
 Du måste dessutom ha följande licens och uppdatering:
 
-- [Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium)-licens
+- [Azure AD Premium](/azure/active-directory/active-directory-get-started-premium)-licens
 - [Windows Creators-uppdatering](https://blogs.windows.com/windowsexperience/2017/04/11/how-to-get-the-windows-10-creators-update/#o61bC2PdrHslHG5J.97)
 
 
@@ -68,7 +68,7 @@ Du måste dessutom ha följande licens och uppdatering:
 När du konfigurerar Intune i din organisation kan du skapa en WIP-specifik princip.
 
 > [!TIP]  
-> Mer information om hur du skapar WIP-principer för Intune, inklusive tillgängliga inställningar och hur du konfigurerar dem, finns i [Skapa en princip för Windows Information Protection (WIP) med MAM med hjälp av Azure-portalen för Microsoft Intune](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/create-wip-policy-using-mam-intune-azure) i dokumentationsbiblioteket för Windows-säkerhet. 
+> Mer information om hur du skapar WIP-principer för Intune, inklusive tillgängliga inställningar och hur du konfigurerar dem, finns i [Skapa en princip för Windows Information Protection (WIP) med MAM med hjälp av Azure-portalen för Microsoft Intune](/windows/security/information-protection/windows-information-protection/create-wip-policy-using-mam-intune-azure) i dokumentationsbiblioteket för Windows-säkerhet. 
 
 
 1. Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
@@ -194,4 +194,4 @@ När du har skapat din WIP-appskyddsprincip måste du distribuera den till din o
 
 ## <a name="next-steps"></a>Nästa steg
 
-Mer information om Windows informationsskydd finns i [Skydda företagsdata med Windows informationsskydd](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
+Mer information om Windows informationsskydd finns i [Skydda företagsdata med Windows informationsskydd](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).

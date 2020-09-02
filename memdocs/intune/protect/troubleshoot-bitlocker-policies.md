@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92d1e1c5d1e2a66ed036d0ed7a5a75d40c737bf3
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 771c1133d10c256d29755ebc146197a6cb35ceee
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428981"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914913"
 ---
 # <a name="troubleshoot-bitlocker-policies-in-microsoft-intune"></a>Felsöka BitLocker-principer i Microsoft Intune
 
@@ -35,7 +35,7 @@ Med Microsoft Intune har du följande metoder för att hantera BitLocker på Win
 
 - **Principer för enhetskonfiguration** – Vissa inbyggda principalternativ är tillgängliga i Intune när du skapar en enhetskonfigurationsprofil för att hantera slutpunktsskydd. Du hittar dessa alternativ genom att [skapa en enhetsprofil för slutpunktsskydd](endpoint-protection-configure.md#create-a-device-profile-containing-endpoint-protection-settings), välja **Windows 10 och senare** för *Plattform* och sedan välja kategorin **Windows-kryptering** vid *Inställningar*. 
 
-   Du kan läsa om de tillgängliga alternativen och funktionerna här: [Windows-kryptering](https://docs.microsoft.com/intune/endpoint-protection-windows-10#windows-encryption).
+   Du kan läsa om de tillgängliga alternativen och funktionerna här: [Windows-kryptering](/intune/endpoint-protection-windows-10#windows-encryption).
 
 - **Säkerhetsbaslinjer** - [Säkerhetsbaslinjer](security-baselines.md) är kända grupper av inställningar och standardvärden som rekommenderas av relevanta säkerhetsteam som hjälp att skydda Windows-enheter. Olika baslinjekällor, som *MDM-säkerhetsbaslinje* eller *Microsoft Defender Avancerat skydd-baslinje* kan hantera samma inställningar samt olika inställningar för var och en. De kan också hantera samma inställningar som du hanterar med enhetskonfigurationsprinciper. 
 
@@ -43,12 +43,12 @@ Förutom Intune, för maskinvara som är kompatibel med modernt vänteläge och 
 
 Det är också möjligt att BitLocker-inställningar hanteras på andra sätt, som grupprincip, eller anges manuellt av en enhetsanvändare.
 
-Oavsett hur inställningarna tillämpas på en enhet kan BitLocker-principer använda [BitLocker CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp) för att konfigurera kryptering på enheten. BitLocker CSP är inbyggt i Windows och när Intune distribuerar en BitLocker-princip till en tilldelad enhet är det BitLocker CSP på enheten som skriver lämpliga värden till Windows-registret så att inställningarna från principen träder i kraft.
+Oavsett hur inställningarna tillämpas på en enhet kan BitLocker-principer använda [BitLocker CSP](/windows/client-management/mdm/bitlocker-csp) för att konfigurera kryptering på enheten. BitLocker CSP är inbyggt i Windows och när Intune distribuerar en BitLocker-princip till en tilldelad enhet är det BitLocker CSP på enheten som skriver lämpliga värden till Windows-registret så att inställningarna från principen träder i kraft.
 
 Om du vill veta mer om BitLocker finns följande resurser:
 
-- [BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview)
-- [Vanliga frågor och svar om BitLocker – översikt och krav](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview-and-requirements-faq)
+- [BitLocker](/windows/security/information-protection/bitlocker/bitlocker-overview)
+- [Vanliga frågor och svar om BitLocker – översikt och krav](/windows/security/information-protection/bitlocker/bitlocker-overview-and-requirements-faq)
 
 Nu när du har en allmän förståelse för vad dessa principer gör och hur de fungerar, kan du titta på hur du kan kontrollera om BitLocker-inställningarna har tillämpats på en Windows-klient.
 
@@ -109,7 +109,7 @@ När BitLocker-principen har distribuerats till en enhet kan du visa följande r
 
 ![BitLocker-registernyckel](./media/troubleshooting-bitlocker-policies/registry.png)
 
-Dessa värden konfigureras av BitLocker CSP. Kontrollera att värdena för nycklarna matchar de inställningar som angetts i källan för din Intune-princip för Windows-kryptering. Mer information om var och en av dessa inställningar finns i [BitLocker CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp).
+Dessa värden konfigureras av BitLocker CSP. Kontrollera att värdena för nycklarna matchar de inställningar som angetts i källan för din Intune-princip för Windows-kryptering. Mer information om var och en av dessa inställningar finns i [BitLocker CSP](/windows/client-management/mdm/bitlocker-csp).
 
 > [!NOTE]
 > Windows Loggboken innehåller också diverse information som rör BitLocker. Det finns för mycket för att ta upp allt här, men om du söker efter **BitLocker API** hittar du mycket värdefull information.
@@ -136,7 +136,7 @@ EncryptionMethodWithXtsFdvDropDown: 6 (The value 6 refers to the 128 bit encrypt
 EncryptionMethodWithXtsRdvDropDown: 6 (The value 6 refers to the 128 bit encryption)
 ```
 
-Du kan läsa i [dokumentationen för BitLocker CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp) för att förstå vad varje värde innebär. I det här exemplet delas ett avsnitt i följande bild.
+Du kan läsa i [dokumentationen för BitLocker CSP](/windows/client-management/mdm/bitlocker-csp) för att förstå vad varje värde innebär. I det här exemplet delas ett avsnitt i följande bild.
 
 ![Syften för värdena](./media/troubleshooting-bitlocker-policies/shared-example.png)
 
@@ -162,10 +162,10 @@ Du bör nu ha en god förståelse för hur du kontrollerar att BitLocker-princip
 - **Misslyckas distributionen av hela principen eller är det bara vissa inställningar som inte tillämpas?** Om du har ett scenario där det bara är vissa principinställningar som inte tillämpas kontrollerar du följande:
 
   1. **Alla BitLocker-inställningar stöds inte i alla Windows-versioner**.
-     Principen kommer till en enhet som en enda enhet, så om vissa inställningar tillämpas och andra inte kan du vara säker på att själva principen tagits emot. I det här scenariot är det möjligt att Windows-versionen på enheten inte stöder de problematiska inställningarna. Se [BitLocker CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp) i Windows-dokumentationen för information om versionskrav för varje inställning.
+     Principen kommer till en enhet som en enda enhet, så om vissa inställningar tillämpas och andra inte kan du vara säker på att själva principen tagits emot. I det här scenariot är det möjligt att Windows-versionen på enheten inte stöder de problematiska inställningarna. Se [BitLocker CSP](/windows/client-management/mdm/bitlocker-csp) i Windows-dokumentationen för information om versionskrav för varje inställning.
 
   2. **BitLocker stöds inte på all maskinvara**.
-     Även om du har rätt version av Windows är det möjligt att den underliggande enhetsmaskinvaran inte uppfyller kraven för BitLocker-kryptering. Du hittar [systemkraven för BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview#system-requirements) i Windows-dokumentationen, men det viktigaste du ska kontrollera är att enheten har ett kompatibelt TPM-chip (1.2 eller senare) och en TCG-kompatibel (Trusted Computing Group) BIOS- eller UEFI-programvara.
+     Även om du har rätt version av Windows är det möjligt att den underliggande enhetsmaskinvaran inte uppfyller kraven för BitLocker-kryptering. Du hittar [systemkraven för BitLocker](/windows/security/information-protection/bitlocker/bitlocker-overview#system-requirements) i Windows-dokumentationen, men det viktigaste du ska kontrollera är att enheten har ett kompatibelt TPM-chip (1.2 eller senare) och en TCG-kompatibel (Trusted Computing Group) BIOS- eller UEFI-programvara.
      
 **BitLocker-kryptering utförs inte tyst** – du har konfigurerat en princip för Endpoint Protection med inställningen "Varning för annan diskkryptering" inställd på blockera och krypteringsguiden visas fortfarande:
 
@@ -209,11 +209,11 @@ När du felsöker problem med BitLocker-principer med Intune och kan bekräfta a
 
 Följande är fler resurser som kan vara till hjälp när du arbetar med BitLocker:
 
-- [Produktdokumentation för BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview)
-- [Systemkrav för BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview#system-requirements)
-- [Vanliga och frågor svar om BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-frequently-asked-questions)
-- [Dokumentation för BitLocker CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp)
-- [Principinställningar för Windows-kryptering i Intune](https://docs.microsoft.com/intune/endpoint-protection-windows-10#windows-encryption)
-- [Maskinvaruoberoende automatisk BitLocker-kryptering med AAD/MDM](https://blogs.technet.microsoft.com/home_is_where_i_lay_my_head/2017/06/07/hardware-independent-automatic-bitlocker-encryption-using-aadmdm/)
+- [Produktdokumentation för BitLocker](/windows/security/information-protection/bitlocker/bitlocker-overview)
+- [Systemkrav för BitLocker](/windows/security/information-protection/bitlocker/bitlocker-overview#system-requirements)
+- [Vanliga och frågor svar om BitLocker](/windows/security/information-protection/bitlocker/bitlocker-frequently-asked-questions)
+- [Dokumentation för BitLocker CSP](/windows/client-management/mdm/bitlocker-csp)
+- [Principinställningar för Windows-kryptering i Intune](/intune/endpoint-protection-windows-10#windows-encryption)
+- [Maskinvaruoberoende automatisk BitLocker-kryptering med AAD/MDM](/archive/blogs/home_is_where_i_lay_my_head/hardware-independent-automatic-bitlocker-encryption-using-aadmdm)
 - [CSP-princip för BitLocker-kryptering på AutoPilot-enheter](https://techcommunity.microsoft.com/t5/Windows-10-security/CSP-policy-for-bitLocker-encryption-on-autopilot-devices/m-p/284537)
-- [Genomgång för att skapa och distribuera en BitLocker-princip med Intune](https://blogs.technet.microsoft.com/cbernier/2017/07/11/windows-10-intune-windows-bitlocker-management-yes/)
+- [Genomgång för att skapa och distribuera en BitLocker-princip med Intune](/archive/blogs/cbernier/windows-10-intune-windows-bitlocker-management-yes)

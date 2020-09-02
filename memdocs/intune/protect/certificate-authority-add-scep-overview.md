@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c757688dec9d7c484ec2c71f86177ffbdf3a92d3
-ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
+ms.openlocfilehash: 8cb847410bf04b4d7d8132e2069b6ced1751b921
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86872009"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913587"
 ---
 # <a name="add-partner-certification-authority-in-intune-using-scep"></a>Lägg till certifikatutfärdarpartner i Intune med hjälp av SCEP
 
@@ -70,7 +70,7 @@ Innan du integrerar tredjeparts certifikatutfärdare med Intune bekräftar du at
 
 För att en tredjeparts SCEP-server ska kunna köra anpassad utmaningsverifiering med Intune måste du skapa en app i Azure AD. Den här appen ger delegerade behörigheter till Intune att verifiera SCEP-förfrågningar.
 
-Se till att du har behörighet att registrera en Azure AD-app. Se [Nödvändiga behörigheter](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) i Azure AD-dokumentationen.
+Se till att du har behörighet att registrera en Azure AD-app. Se [Nödvändiga behörigheter](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) i Azure AD-dokumentationen.
 
 #### <a name="create-an-application-in-azure-active-directory"></a>Skapa ett program i Azure Active Directory  
 

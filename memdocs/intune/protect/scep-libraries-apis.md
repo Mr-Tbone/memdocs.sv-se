@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16b212bde0f46861b8acb1470588b784c6f2a7fb
-ms.sourcegitcommit: d3992eda0b89bf239cea4ec699ed4711c1fb9e15
+ms.openlocfilehash: 03c43adb14c854b89ef914f0b9b30ea2be690a92
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86565673"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906794"
 ---
 # <a name="use-apis-to-add-third-party-cas-for-scep-to-intune"></a>Använda API:er för att lägga till tredjeparts certifikatutfärdare för SCEP i Intune
 
@@ -96,7 +96,7 @@ För att autentisera till Intune kräver SCEP-servern ett Azure Application-ID, 
 
 För att hämta dessa data loggar SCEP-serveradministratören in på Azure-portalen, registrerar programmet, ger programmet behörighet för **Microsoft Intune API\SCEP-utmaningsverifiering**, skapar en nyckel för programmet och laddar sedan ned program-ID, dess nyckel och klientorganisations-ID.
 
-Anvisningar för att registrera ett program och hämta ID:n och nycklar finns på sidan om att [använda portalen för att skapa ett AAD-program och tjänstens huvudnamn för resursåtkomst](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal).
+Anvisningar för att registrera ett program och hämta ID:n och nycklar finns på sidan om att [använda portalen för att skapa ett AAD-program och tjänstens huvudnamn för resursåtkomst](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
 ### <a name="java-library-api"></a>API för Java-bibliotek
 
@@ -241,7 +241,7 @@ Meddelar Intune om att ett fel uppstod när en SCEP-begäran bearbetades. Den h�
 
 - **transactionId** – SCEP-transaktionens ID
 - **certificateRequest** – DER-kodad PKCS #10-certifikatbegäran Base64-kodad som en sträng
-- **hResult** – Den Win32-felkod som bäst beskriver det fel som inträffade. Se [Win32-felkoder](https://msdn.microsoft.com/library/cc231199.aspx)
+- **hResult** – Den Win32-felkod som bäst beskriver det fel som inträffade. Se [Win32-felkoder](/openspecs/windows_protocols/ms-erref/18d8fbe8-a967-4f1c-ae50-99ca8e491d2d)
 - **errorDescription** – Beskrivning av det fel som inträffade
 
 **Genererar**:

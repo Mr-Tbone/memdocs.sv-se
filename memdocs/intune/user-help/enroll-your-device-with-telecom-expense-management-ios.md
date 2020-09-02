@@ -19,12 +19,12 @@ ms.reviewer: sumitp
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: aeb1f6ae1ca666a96eca583d2e3be9c565013e7c
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 1c43d2c4ae7ccda2cd0cf9283586a980eb166d22
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881321"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88912091"
 ---
 # <a name="enroll-your-ios-device-in-telecom-expense-management"></a>Registrera iOS-enheten i kostnadshanteringsprogrammet för telekomtjänster
 
@@ -39,7 +39,7 @@ Välj ett lämpligt alternativ och du får en avisering om att installera progra
 ## <a name="enroll-into-datalert-using-your-microsoft-work-or-school-account"></a>Registrera till Datalert med ditt arbets- eller skolkonto hos Microsoft
 
 > [!NOTE]
-> Du måste ha appen [Microsoft Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) installerad och aktiv på din telefon för att kunna registrera på det här sättet.
+> Du måste ha appen [Microsoft Authenticator](/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) installerad och aktiv på din telefon för att kunna registrera på det här sättet.
 
 1. Välj __Registrera med Microsoft-konto__.
 

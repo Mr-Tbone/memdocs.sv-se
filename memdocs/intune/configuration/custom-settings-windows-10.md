@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96074f4bea22b7468b1f210d631f0912eeafe7b5
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 28a867c735a05cfa4a4765534d200b806711f9b5
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83428994"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913026"
 ---
 # <a name="use-custom-settings-for-windows-10-devices-in-intune"></a>Använda anpassade inställningar för Windows 10-enheter i Intune
 
@@ -36,7 +36,7 @@ Den här funktionen gäller för:
 
 Anpassade profiler i Windows 10 använder OMA-URI-inställningar (Open Mobile Alliance Uniform Resource Identifier) för att konfigurera olika funktioner. De här inställningarna används vanligtvis av tillverkare av mobila enheter till att styra funktioner på enheten.
 
-I Windows 10 finns flera CSP-inställningar (Configuration Service Provider), t.ex. [Princip-CSP (Policy Configuration Service Provider)](https://technet.microsoft.com/itpro/windows/manage/how-it-pros-can-use-configuration-service-providers).
+I Windows 10 finns flera CSP-inställningar (Configuration Service Provider), t.ex. [Princip-CSP (Policy Configuration Service Provider)](/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers).
 
 Glöm inte att [enhetsbegränsningsprofilen i Windows 10](device-restrictions-windows-10.md) innehåller många inbyggda inställningar som du kan använda. Det betyder att du kanske inte behöver ange anpassade värden.
 
@@ -67,11 +67,11 @@ När du har lagt till några inställningar kan du välja **Exportera**. **Expor
 
 ## <a name="find-the-policies-you-can-configure"></a>Hitta principer som du kan konfigurera
 
-Du hittar en lista med alla konfigurationstjänstleverantörer (CSP) som Windows 10 har stöd för i [referensen till konfigurationstjänstleverantörer](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference).
+Du hittar en lista med alla konfigurationstjänstleverantörer (CSP) som Windows 10 har stöd för i [referensen till konfigurationstjänstleverantörer](/windows/client-management/mdm/configuration-service-provider-reference).
 
-Alla inställningar är inte kompatibla med alla versioner av Windows 10. I [referensen till konfigurationstjänstleverantörer](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference) står det vilka versioner som stöds för varje CSP.
+Alla inställningar är inte kompatibla med alla versioner av Windows 10. I [referensen till konfigurationstjänstleverantörer](/windows/client-management/mdm/configuration-service-provider-reference) står det vilka versioner som stöds för varje CSP.
 
-Observera att Intune inte stöder alla inställningar i [referensen för konfigurationstjänstleverantörer](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference). Om du vill veta om Intune har stöd för den inställning som du vill använda, kan du öppna artikeln för den inställningen. Varje inställningssida visar den åtgärd som stöds. Om du vill arbeta med Intune måste inställningen ha stöd för åtgärderna **Add** (Lägg till), **Replace** (Ersätt) och **Get** (Hämta). Om det värde som returneras av åtgärden **Get** (Hämta) inte matchar det värde som anges av åtgärderna **Add** (Lägg till) eller **Replace** (Ersätt) rapporterar Intune ett efterlevnadsfel.
+Observera att Intune inte stöder alla inställningar i [referensen för konfigurationstjänstleverantörer](/windows/client-management/mdm/configuration-service-provider-reference). Om du vill veta om Intune har stöd för den inställning som du vill använda, kan du öppna artikeln för den inställningen. Varje inställningssida visar den åtgärd som stöds. Om du vill arbeta med Intune måste inställningen ha stöd för åtgärderna **Add** (Lägg till), **Replace** (Ersätt) och **Get** (Hämta). Om det värde som returneras av åtgärden **Get** (Hämta) inte matchar det värde som anges av åtgärderna **Add** (Lägg till) eller **Replace** (Ersätt) rapporterar Intune ett efterlevnadsfel.
 
 ## <a name="next-steps"></a>Nästa steg
 

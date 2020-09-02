@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d07b87bca934dac924f2d2c281ecb7b2a2e8a2c
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: a61e92265447f8ceced83d493b9397713b67dca6
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989790"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909439"
 ---
 # <a name="set-up-app-based-conditional-access-policies-with-intune"></a>Konfigurera appbaserade villkorliga åtkomstprinciper med Intune
 
@@ -32,7 +32,7 @@ Konfigurera appbaserade principer för villkorlig åtkomst för appar som finns 
 [Intune-appskyddsprinciper](../apps/app-protection-policies.md) måste tillämpas på apparna innan du använder appbaserade principer för villkorlig åtkomst.
 
 > [!IMPORTANT]
-> Den här artikeln innehåller stegvisa anvisningar som beskriver hur du lägger till en enkel princip för appbaserad villkorsstyrd åtkomst. Du kan använda samma steg för andra molnappar. Se [Planera distribution av villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) för mer information.
+> Den här artikeln innehåller stegvisa anvisningar som beskriver hur du lägger till en enkel princip för appbaserad villkorsstyrd åtkomst. Du kan använda samma steg för andra molnappar. Se [Planera distribution av villkorsstyrd åtkomst](/azure/active-directory/conditional-access/plan-conditional-access) för mer information.
 
 ## <a name="create-app-based-conditional-access-policies"></a>Skapa principer för appbaserad villkorsstyrd åtkomst
 
@@ -72,4 +72,4 @@ Innan du kan skapa principer för villkorsstyrd åtkomst från administrationsce
 ## <a name="see-also"></a>Se även
 
 [Skydda appdata med appskyddsprinciper](../apps/app-protection-policies.md)
-[Villkorlig åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+[Villkorlig åtkomst i Azure Active Directory](/azure/active-directory/active-directory-conditional-access)

@@ -19,12 +19,12 @@ ms.reviewer: jieyang
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 9e9101a46cac488ef8a80858377cbabac8dc7936
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: d6cb9693f0bafcff22f3fce9d3f972e9eac41b22
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881591"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909099"
 ---
 # <a name="remove-your-windows-device-from-management"></a>Ta bort din Windows-enhet från hanteringen
 
@@ -57,7 +57,7 @@ Utför följande steg om du vill ta bort en Windows 10-enhet från hanteringen.
 
     ![Exempel på skärmbild av startsidan i företagsportalappen för Windows, med fokus på avsnittet Mina enheter.](./media/1809_CheckAccess_Context_Select_Device.png)
 
-2. Högerklicka på eller tryck på och håll ned en enhet för att öppna enhetens [snabbmeny](https://docs.microsoft.com//windows/uwp/design/controls-and-patterns/menus).  
+2. Högerklicka på eller tryck på och håll ned en enhet för att öppna enhetens [snabbmeny](//windows/uwp/design/controls-and-patterns/menus).  
 
 3. Välj **Ta bort**.  
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57f8b8193fd2f4e871f744743b768ec6248ae0b9
-ms.sourcegitcommit: 7de54acc80a2092b17fca407903281435792a77e
+ms.openlocfilehash: b1ed3cd24c05586bd5dc9d9a2443a33ffcdc2a48
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85972138"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914811"
 ---
 # <a name="resolve-common-problems-with-the-intune-exchange-connector"></a>Lös vanliga problem med Intune Exchange Connector
  
@@ -56,7 +56,7 @@ Läs följande avsnitt för att felsöka problem med e-postavisering.
 
 ### <a name="check-the-notification-account-that-retrieves-autodiscover-settings"></a>Kontrollera aviseringskontot som hämtar inställningar för automatisk identifiering
 
-1. Kontrollera att tjänsten för automatisk upptäckt och EWS har konfigurerats på Exchange-klientåtkomstservern. Mer information finns i [Client Access Services](https://docs.microsoft.com/Exchange/architecture/client-access/client-access) (Klientåtkomsttjänster) och [Tjänsten för automatisk upptäckt i Exchange Server](https://docs.microsoft.com/Exchange/architecture/client-access/autodiscover?view=exchserver-2019).
+1. Kontrollera att tjänsten för automatisk upptäckt och EWS har konfigurerats på Exchange-klientåtkomstservern. Mer information finns i [Client Access Services](/Exchange/architecture/client-access/client-access) (Klientåtkomsttjänster) och [Tjänsten för automatisk upptäckt i Exchange Server](/Exchange/architecture/client-access/autodiscover?view=exchserver-2019).
 
 2. Kontrollera att ditt aviseringskonto uppfyller följande krav:
 
@@ -71,14 +71,14 @@ Läs följande avsnitt för att felsöka problem med e-postavisering.
    2. Ange *Autodiscover.SMTPdomain.com*. Utdatan ska likna följande avbildning: ![Nslookup-resultat](./media/troubleshoot-exchange-connector-common-problems/nslookup-results.png
       )
 
-   Du kan också testa tjänsten för automatisk identifiering från Internet på https://testconnectivity.microsoft.com. Eller testa den från en lokal domän med hjälp av Microsoft Connectivity Analyzer-verktyget. Mer information finns i [Microsoft Connectivity Analyzer-verktyget](https://docs.microsoft.com/previous-versions/office/exchange-remote-connectivity/jj851141(v=exchg.80)).
+   Du kan också testa tjänsten för automatisk identifiering från Internet på https://testconnectivity.microsoft.com. Eller testa den från en lokal domän med hjälp av Microsoft Connectivity Analyzer-verktyget. Mer information finns i [Microsoft Connectivity Analyzer-verktyget](/previous-versions/office/exchange-remote-connectivity/jj851141(v=exchg.80)).
 
 
 ### <a name="check-autodiscover"></a>Kontrollera automatisk identifiering
 
 Om automatisk identifiering misslyckas kan du prova följande steg:
 
-1. [Konfigurera en giltig DNS-post för automatisk identifiering](https://docs.microsoft.com/previous-versions/exchange-server/exchange-150/mt473798(v=exchg.150)).
+1. [Konfigurera en giltig DNS-post för automatisk identifiering](/previous-versions/exchange-server/exchange-150/mt473798(v=exchg.150)).
 
 2. Hårdkoda webbadressen i konfigurationsfilen för Intune Exchange Connector:
 

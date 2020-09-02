@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 619974819575936912b6a5c386116bdf26448252
-ms.sourcegitcommit: e2cf3b80d1a4523d98542ccd7bba2439046c3830
+ms.openlocfilehash: 45ec9e0353feffdc6beb068d5b99426a734d7096
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87546851"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915440"
 ---
 # <a name="tutorial-use-autopilot-to-enroll-windows-devices-in-intune"></a>Självstudie: Använda Autopilot till att registrera Windows-enheter i Intune
 
@@ -40,12 +40,12 @@ I den här självstudien får du lära dig att:
 
 Om du inte har en Intune-prenumeration [kan du registrera dig för ett kostnadsfritt utvärderingskonto](../fundamentals/free-trial-sign-up.md).
 
-I [översikten över Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot) visas fördelar, scenarier och förutsättningar.
+I [översikten över Windows Autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot) visas fördelar, scenarier och förutsättningar.
 
 
 ## <a name="prerequisites"></a>Krav
 - [Konfigurera automatisk registrering i Windows](quickstart-setup-auto-enrollment.md)
-- [Azure Active Directory Premium-prenumeration](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](https://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
+- [Azure Active Directory Premium-prenumeration](/azure/active-directory/active-directory-get-started-premium) <!--&#40;[trial subscription](https://go.microsoft.com/fwlink/?LinkID=816845)&#41;-->
 
 
 ## <a name="add-devices"></a>Lägg till enheter
@@ -128,5 +128,3 @@ Det finns mer information om andra alternativ som är tillgängliga för Windows
 
 > [!div class="nextstepaction"]
 > [Fördjupande artikel om Autopilot-registrering](../../autopilot/enrollment-autopilot.md)
-
-

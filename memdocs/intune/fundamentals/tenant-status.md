@@ -16,19 +16,19 @@ ms.reviewer: crisk
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4d747a38dd8e2f95cafb25ec5705f83199f4c54
-ms.sourcegitcommit: 5dc3545d7f76ce81598f6b1c9734b0ac0a3e9722
+ms.openlocfilehash: cd4c64e08177387561323b1e59bef3b976bf0bf3
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690688"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911190"
 ---
 # <a name="use-the-intune-tenant-status-page"></a>Använd sidan Klientorganisationsstatus i Intune
 
 Microsoft Intune-sidan Klientorganisationsstatus är en centraliserad hubb där du kan se aktuell och viktig information om din klientorganisation. Informationen omfattar tillgänglighet för och användning av licenser, anslutningsstatus och viktiga meddelanden om Intune-tjänsten.
 
 > [!TIP]
-> En klientorganisation är en instans av Azure Active Directory (Azure AD). Det är en Azure AD-klientorganisation som är värd för din prenumeration på Intune. Mer information finns i [Konfigurera en klientorganisation](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) i Azure AD-dokumentationen.
+> En klientorganisation är en instans av Azure Active Directory (Azure AD). Det är en Azure AD-klientorganisation som är värd för din prenumeration på Intune. Mer information finns i [Konfigurera en klientorganisation](/azure/active-directory/develop/quickstart-create-new-tenant) i Azure AD-dokumentationen.
 
 Om du vill visa instrumentpanelen loggar du in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), går till **Administration av klientorganisation** och väljer **Klientorganisationsstatus**.
 

@@ -13,12 +13,12 @@ ms.localizationpriority: high
 ms.technology: ''
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d1aefab1e222ddb20b1c033c787ba7d323f59e5
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 0a81e0e59eca03c9c15d7553376ea0c524251a18
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988301"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914862"
 ---
 # <a name="add-iosipados-software-update-policies-in-intune"></a>Lägga till principer för iOS/iPadOS-programuppdatering i Intune
 
@@ -35,7 +35,7 @@ Den här funktionen gäller för:
 Som standard checkas enheter in på Intune var 8:e timme. Om en uppdatering är tillgänglig via en uppdateringsprincip laddas uppdateringen ned till enheten. Enheten installerar sedan uppdateringen vid nästa incheckning inom det angivna schemat. Normalt krävs ingen användarinteraktion under uppdateringsprocessen, men om enheten har ett lösenord måste användaren ange detta för att starta en programuppdatering. Profiler hindrar inte användare från att uppdatera operativsystemet manuellt. Användare kan hindras från att uppdatera operativsystemet manuellt med en princip för enhetskonfiguration som begränsar visningen av programuppdateringar.
 
 > [!NOTE]
-> Om du använder [Autonomt enkelt appläge (ASAM)](https://docs.microsoft.com/mem/intune/configuration/device-restrictions-ios#autonomous-single-app-mode-asam) bör effekten av OS-uppdateringar betraktas som att det resulterande beteendet kan vara oönskat.
+> Om du använder [Autonomt enkelt appläge (ASAM)](../configuration/device-restrictions-ios.md#autonomous-single-app-mode-asam) bör effekten av OS-uppdateringar betraktas som att det resulterande beteendet kan vara oönskat.
 Överväg att testa effekten av OS-uppdateringar i appen som du kör i ASAM.
 
 ## <a name="configure-the-policy"></a>Konfigurera principen

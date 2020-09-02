@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cbb66833397d16ec18ce015d26a19bd28a1113c4
-ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
+ms.openlocfilehash: 42bcbcdbc6cc6f3256ece2f24114f2d2a52083ce
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88048165"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915015"
 ---
 # <a name="ui-updates-for-intune-end-user-apps"></a>Uppdateringar i användargränssnittet för Intunes slutanvändarappar
 
@@ -32,7 +32,7 @@ Läs mer om de senaste uppdateringarna för Microsoft Intune-apparna. Vi lägger
 * Meddela studenter och anställda om förändringar i appen och registreringen.
 * Uppdatera organisationens dokumentation eller supportavdelningens procedurer.  
 
-Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](https://docs.microsoft.com/mem/intune/user-help/use-managed-devices-to-get-work-done).  
+Om du är anställd eller student bör du titta på skärmbilderna och länkarna till hjälpdokumentation om företagsportalen. Mer information om hur du använder företagsportalappen finns i [hjälpdokumentationen för användare av företagsportalen](../user-help/use-managed-devices-to-get-work-done.md).  
 
 ## <a name="week-of-august-10-2020"></a>Den vecka som börjar 10 augusti 2020
 
@@ -193,7 +193,7 @@ Registreringsskärmarna och stegen för företagsportalen för iOS har uppdatera
 * Öppna inställningsappen för att installera hanteringsprofilen på enheten.  
 * Gå tillbaka till företagsportalappen för att slutföra registreringen.  
 
-Uppdaterade steg och skärmar för registrering finns i avsnittet om att [registrera iOS-enhet i Intune](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-ios).  
+Uppdaterade steg och skärmar för registrering finns i avsnittet om att [registrera iOS-enhet i Intune](../user-help/enroll-your-device-in-intune-ios.md).  
 
 ### <a name="user-experience-update-for-the-company-portal-app-for-ios----2536024---"></a>Uppdatering av användarupplevelsen för företagsportalappen för iOS <!-- 2536024 -->
 Startsidan för företagsportalappen för iOS-enheter har fått en ny design. Med den här ändringen följer startsidan mönstren för iOS-användargränssnitt på ett bättre sätt och gör dessutom appar och e-böcker mer lätthittade.  
@@ -217,7 +217,7 @@ Som Microsoft Intune-administratör kan du ladda upp en anpassad varumärkesbild
 ## <a name="week-of-august-27-2018"></a>Veckan 27 augusti 2018  
 
 ### <a name="new-user-experience-update-for-the-company-portal-website---2000968---"></a>Ny uppdatering av användarupplevelse för företagsportalens webbplats <!--2000968 -->  
-Vi har lagt till nya funktioner på webbplatsen för Företagsportal baserat på våra kunders synpunkter. Du kommer att se tydliga förbättringar av befintliga funktioner och användbarheten för dina enheter. Specifika områden på webbplatsen, till exempel enhetsinformation, feedback och support samt enhetsöversikten, har nu en ny design som är modern och responsiv. [Dokumentationen till Intune-företagsportalens webbplats](https://docs.microsoft.com/mem/intune/user-help/using-the-intune-company-portal-website) har uppdaterats för att återspegla dessa ändringar.   
+Vi har lagt till nya funktioner på webbplatsen för Företagsportal baserat på våra kunders synpunkter. Du kommer att se tydliga förbättringar av befintliga funktioner och användbarheten för dina enheter. Specifika områden på webbplatsen, till exempel enhetsinformation, feedback och support samt enhetsöversikten, har nu en ny design som är modern och responsiv. [Dokumentationen till Intune-företagsportalens webbplats](../user-help/using-the-intune-company-portal-website.md) har uppdaterats för att återspegla dessa ändringar.   
 
 Uppdateringar som du kan se är bland annat:  
 
@@ -257,7 +257,7 @@ Exempelskärmbild som visar vyn Information:
 
 ## <a name="week-of-april-23-2018"></a>Veckan 23 april 2018
 ### <a name="updated-navigation-view-in-the-company-portal-app-for-windows-10----1195010---"></a>Uppdaterad navigeringsvy i företagsportalappen för Windows 10 <!-- 1195010 -->
-Intunes företagsportalapp för Windows 10 har uppdaterats med [Fluent Design-systemets navigeringsvy](https://docs.microsoft.com/windows/uwp/design/basics/navigation-basics). Längs appen ser du en statisk, lodrät lista över alla sidor på översta nivån. Klicka på en länk för att snabbt visa och växla mellan sidor. Det här är den första av flera uppdateringar som visas som en del av vårt pågående arbete för att skapa en mer anpassningsbar, empatisk och bekant upplevelse i Intune. 
+Intunes företagsportalapp för Windows 10 har uppdaterats med [Fluent Design-systemets navigeringsvy](/windows/uwp/design/basics/navigation-basics). Längs appen ser du en statisk, lodrät lista över alla sidor på översta nivån. Klicka på en länk för att snabbt visa och växla mellan sidor. Det här är den första av flera uppdateringar som visas som en del av vårt pågående arbete för att skapa en mer anpassningsbar, empatisk och bekant upplevelse i Intune. 
 
 ![Skärmbild av företagsportal-appens instrumentpanel som visar Fluent Designs navigeringsvy](./media/whats-new-app-ui/1804_WindowsCP_Fluent_01.png)
 

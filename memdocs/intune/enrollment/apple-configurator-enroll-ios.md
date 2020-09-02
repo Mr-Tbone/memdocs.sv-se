@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7101ad9bffcd80bd608690f22db37abbbc7a7895
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 00d515743f2391d9c232b9ae5d97062a01302c48
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093801"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908827"
 ---
 # <a name="set-up-iosipados-device-enrollment-with-apple-configurator"></a>Konfigurera registrering av iOS/iPadOS-enheter med Apple Configurator
 
@@ -60,7 +60,7 @@ En enhetsregistreringsprofil definierar inställningarna som tillämpas under re
 
 4. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
 
-    - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda företagsportalen för tjänster som installation av appar. Enheten måste vara kopplad till en användare med Installationsassistenten och kan sedan komma åt företagsdata och e-post. Stöds endast för registrering med installationsassistenten. Mappning mellan användare kräver [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
+    - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda företagsportalen för tjänster som installation av appar. Enheten måste vara kopplad till en användare med Installationsassistenten och kan sedan komma åt företagsdata och e-post. Stöds endast för registrering med installationsassistenten. Mappning mellan användare kräver [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff608241(v=ws.10)). [Läs mer](/powershell/module/adfs/get-adfsendpoint?view=win10-ps).
 
     - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare. Använd det här för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som kräver användartillhörighet (inklusive företagsportalappen som används för installation av verksamhetsspecifika appar) fungerar inte. Krävs för direktregistrering.
 
@@ -171,8 +171,3 @@ Appar som kräver användartillhörighet, inklusive företagsportalappen som anv
 6. Öppna **Inställningar** på iOS/iPadOS-enheten och gå till **Allmänt** > **Enhetshantering** > **Hanteringsprofil**. Bekräfta att profilinstallationen visas och kontrollera iOS/iPadOS-principbegränsningarna och de installerade apparna. Det kan ta upp till tio minuter innan principbegränsningar och appar visas på enheten.
 
 7. Distribuera enheter. Nu har iOS/iPadOS-enheten registrerats i Intune och hanteras.
-
-
-
-
-

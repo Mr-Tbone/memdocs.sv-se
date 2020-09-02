@@ -19,12 +19,12 @@ ms.reviewer: annochiva
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 826515026e578cb993bb706fc61dedb4a80fb3e6
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: f0a674753ff23fca509bd21e6b52101104a6803f
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86465044"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910799"
 ---
 # <a name="store-your-personal-filevault-key"></a>Lagra din personliga FileVault-nyckel 
 
@@ -81,7 +81,7 @@ Mer information om de meddelanden du kan se under processen finns i [Meddelanden
 
 ## <a name="it-pro-support"></a>IT-supportpersonal
 
-Om du är IT-supporttekniker och vill konfigurera och hantera FileVault-kryptering för macOS-enheter i organisationen läser du [Använda FileVault-diskkryptering för macOS med Intune](https://docs.microsoft.com/mem/intune/protect/encrypt-devices-filevault).  
+Om du är IT-supporttekniker och vill konfigurera och hantera FileVault-kryptering för macOS-enheter i organisationen läser du [Använda FileVault-diskkryptering för macOS med Intune](../protect/encrypt-devices-filevault.md).  
 
 ## <a name="next-steps"></a>Nästa steg
 
@@ -89,4 +89,4 @@ Du kan alltid hämta din nyckel från Företagsportal-webbplatsen, Intune-appen 
 
 Ta reda på vad du mer kan göra på Företagsportal-webbplatsen. Du hittar en lista med åtgärder i [Använda Intune Företagsportal-webbplatsen](using-the-intune-company-portal-website.md).  
 
-Behöver du fortfarande hjälp? Kontakta IT-supporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
+Behöver du fortfarande hjälp? Kontakta IT-supporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

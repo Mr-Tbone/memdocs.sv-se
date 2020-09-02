@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3c1b074e2fa35fa36bfb4f759ef348020c0dbed
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 0814fd11b2597c2a78dda70ba560e17fe2b742a1
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83983232"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914386"
 ---
 # <a name="what-is-microsoft-intune-device-management"></a>Vad är enhetshantering i Microsoft Intune?
 
@@ -43,7 +43,7 @@ Arbetsbelastningen **Enheter** ger dig insikter om de enheter du hanterar och g�
 
      Välj valfri enhet för att [visa ytterligare information om enheten](device-inventory.md), till exempel maskinvaruinformation, installerade appar, principer och mer.
 
-   - **Azure AD-enheter** visar en lista över de enheter som registrerats för eller anslutits till Azure Active Directory (Azure AD). Läs mer om [Azure AD-enhetshantering](https://docs.microsoft.com/azure/active-directory/device-management-introduction).
+   - **Azure AD-enheter** visar en lista över de enheter som registrerats för eller anslutits till Azure Active Directory (Azure AD). Läs mer om [Azure AD-enhetshantering](/azure/active-directory/device-management-introduction).
    - **Enhetsåtgärder** omfattar en historik över de fjärråtgärder som körts på olika enheter, däribland åtgärden, dess status, vem som startade åtgärden och när den utfördes.
 
      ![Skärmbild som visar när enhetsåtgärder övervakas](./media/device-management/monitor-device-actions.png)
@@ -57,7 +57,7 @@ Vilka åtgärder som är tillgängliga beror på enhetsplattformen och enhetens 
 
 - [Visa enhetsinventeringen](device-inventory.md)
 - Kör åtgärder för fjärransluten enhet:
-  - [Autopilot-återställning](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset)
+  - [Autopilot-återställning](/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset)
   - [BitLocker Key-rotation](../protect/encrypt-devices.md#rotate-bitlocker-recovery-keys) (endast Windows)
   - [Ta bort](devices-wipe.md#delete-devices-from-the-intune-portal)
   - [Inaktivera aktiveringslås](device-activation-lock-disable.md) (Endast iOS)
@@ -72,7 +72,7 @@ Vilka åtgärder som är tillgängliga beror på enhetsplattformen och enhetens 
   - [Återställ lösenord](device-passcode-reset.md)
   - [Starta om](device-restart.md) (Endast Windows)
   - [Pensionera](devices-wipe.md#retire)
-  - [Uppdatera Windows Defender-säkerhetsinformation](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/manage-protection-updates-windows-defender-antivirus)
+  - [Uppdatera Windows Defender-säkerhetsinformation](/windows/security/threat-protection/windows-defender-antivirus/manage-protection-updates-windows-defender-antivirus)
   - [PIN-återställning av Windows 10](device-windows-pin-reset.md)
   - [Rensning](devices-wipe.md#wipe)
   - [Skicka anpassade meddelanden](custom-notifications.md#send-a-custom-notification-to-a-single-device) (Android, iOS/iPadOS)

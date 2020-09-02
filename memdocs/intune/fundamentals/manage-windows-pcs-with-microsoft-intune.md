@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic-keep
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4e917ca63bb671e8dfa46b280a4130051e75ef0
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: dae87983f442661046fa48c63b5691f1bef48240
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79342913"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915899"
 ---
 # <a name="manage-windows-pcs-as-computers-via-intune-software-client"></a>Hantera Windows-datorer som datorer via Intune-programvaruklienten
 
@@ -90,7 +90,7 @@ I de flesta fall registrerar du dina enheter i Microsoft Intune, vilket ger till
 
 När du använder Intune-klientprogrammet för att hantera Windows-datorer kan du använda de principer som visas i avsnittet **Datorhantering**.
 
-Intune hanterar Windows-datorer med hjälp av principer på liknande sätt som AD DS-grupprincipobjekt (Active Directory Domain Services) för Windows Server gör. Om du hanterar domänanslutna Active Directory-datorer med Intune ska du [försäkra dig om att Intune-principerna inte står i konflikt med andra grupprincipobjekt](resolve-gpo-and-microsoft-intune-policy-conflicts.md) som används i din organisation. Läs mer i avsnittet [Grupprincip för nybörjare](https://technet.microsoft.com/library/hh147307.aspx).
+Intune hanterar Windows-datorer med hjälp av principer på liknande sätt som AD DS-grupprincipobjekt (Active Directory Domain Services) för Windows Server gör. Om du hanterar domänanslutna Active Directory-datorer med Intune ska du [försäkra dig om att Intune-principerna inte står i konflikt med andra grupprincipobjekt](resolve-gpo-and-microsoft-intune-policy-conflicts.md) som används i din organisation. Läs mer i avsnittet [Grupprincip för nybörjare](/previous-versions/windows/it-pro/windows-7/hh147307(v=ws.10)).
 
   ![Välj mall för ny Windows-datorprincip](./media/manage-windows-pcs-with-microsoft-intune/select-template-for-pc-policy.png)
 

@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d935e79dfe2fd0d786dae596cafe173b66018c9
-ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
+ms.openlocfilehash: c27a78d78678234b30ea80cfc192cb4250eca2e1
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88663302"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915576"
 ---
 # <a name="smime-overview-to-sign-and-encrypt-email-in-intune"></a>S/MIME-översikt för att signera och kryptera e-post i Intune
 
@@ -33,7 +33,7 @@ E-postcertifikat, som även kallas S/MIME-certifikat, ger extra säkerhet för d
 
 På iOS/iPadOS-enheter kan du skapa en Intune-hanterad e-postprofil som använder S/MIME och certifikat för att signera och kryptera inkommande och utgående e-post. Andra plattformar har kanske men inte nödvändigtvis stöd för S/MIME. Om det stöds installerar du certifikat som använder S/MIME-signering och -kryptering. En slutanvändare aktiverar sedan S/MIME i sitt e-postprogram.
 
-Mer information om S/MIME-signering och -kryptering för e-post med Exchange finns på sidan om [S/MIME för signering och kryptering av meddelanden](https://docs.microsoft.com/Exchange/policy-and-compliance/smime).
+Mer information om S/MIME-signering och -kryptering för e-post med Exchange finns på sidan om [S/MIME för signering och kryptering av meddelanden](/Exchange/policy-and-compliance/smime).
 
 Den här artikeln ger en översikt över hur du använder S/MIME-certifikat för att signera och kryptera e-postmeddelanden på dina enheter.
 
@@ -41,7 +41,7 @@ Den här artikeln ger en översikt över hur du använder S/MIME-certifikat för
 
 Certifikat som används för signering gör att klientens e postapp kan kommunicera säkert med e-postservern.
 
-För att använda signeringscertifikat skapar du en mall på din certifikatutfärdare (CA) som fokuserar på signering. På Microsoft Active Directory-certifikatutfärdare visar sidan om att [konfigurera certifikatmall för server](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/configure-the-server-certificate-template) hur du skapar certifikatmallar.
+För att använda signeringscertifikat skapar du en mall på din certifikatutfärdare (CA) som fokuserar på signering. På Microsoft Active Directory-certifikatutfärdare visar sidan om att [konfigurera certifikatmall för server](/windows-server/networking/core-network-guide/cncg/server-certs/configure-the-server-certificate-template) hur du skapar certifikatmallar.
 
 Signeringscertifikat i Intune använder PKCS-certifikat. [Konfigurera och använda PKCS-certifikat](certficates-pfx-configure.md) beskriver hur du distribuerar och använder PKCS-certifikat i din Intune-miljö. Dessa steg omfattar:
 

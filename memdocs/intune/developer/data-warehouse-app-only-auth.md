@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: daa4d079d60dc7474e5ba6a140e07a77e25b347d
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 28b213ff690dcc745f023f8deb225b0bd6ef9bc1
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165982"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908810"
 ---
 # <a name="intune-data-warehouse-application-only-authentication"></a>Autentisering för enbart Intune-informationslagerprogram
 
@@ -31,7 +31,7 @@ Du kan konfigurera ett program med Azure Active Directory (Azure AD) och autenti
 
 ## <a name="authorization"></a>Auktorisering
 
-I Azure Active Directory (Azure AD) används OAuth 2.0 för att du ska kunna bevilja åtkomst till webbprogram och webb-API:er i din klientorganisation. Den här guiden visar hur du autentiserar ditt program med C#. OAuth 2.0-auktoriseringskodflödet beskrivs i avsnitt 4.1 i OAuth 2.0-specifikationen. Mer information finns i [Bevilja åtkomst till webbprogram med hjälp av OAuth 2.0 och Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code).
+I Azure Active Directory (Azure AD) används OAuth 2.0 för att du ska kunna bevilja åtkomst till webbprogram och webb-API:er i din klientorganisation. Den här guiden visar hur du autentiserar ditt program med C#. OAuth 2.0-auktoriseringskodflödet beskrivs i avsnitt 4.1 i OAuth 2.0-specifikationen. Mer information finns i [Bevilja åtkomst till webbprogram med hjälp av OAuth 2.0 och Azure Active Directory](/azure/active-directory/develop/active-directory-protocols-oauth-code).
 
 
 ## <a name="azure-keyvault"></a>Azure KeyVault
@@ -51,7 +51,7 @@ I det här avsnittet anger du information om det webbprogram som du vill peka p�
 
     - Ett appnamn som *Intune App-enbart auktorisering*.
     - **Programtypen**. Välj **Webbprogram / API** för att lägga till en app som representerar ett webbprogram, en web-API eller båda.
-    - **Inloggnings-URL** för programmet. Detta är den plats som användarna automatiskt går till vid autentiseringsprocessen. De måste bevisa att de är den de säger att de är. Mer information finns i [Vad är programåtkomst och enkel inloggning med Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+    - **Inloggnings-URL** för programmet. Detta är den plats som användarna automatiskt går till vid autentiseringsprocessen. De måste bevisa att de är den de säger att de är. Mer information finns i [Vad är programåtkomst och enkel inloggning med Azure Active Directory?](/azure/active-directory/active-directory-appssoaccess-whatis)
 
 7. Klicka på **Skapa** längst ned i **Skapa**-bladet.
 
@@ -164,5 +164,4 @@ Med Visual Studio, skapar du ett konsolprogram (.NET Framework)-projekt som har 
     > Ytterligare implementeringskod finns i [Kodexempel för Intune informationslager](https://github.com/Microsoft/Intune-Data-Warehouse/tree/master/Samples/CSharp ).
 
 ## <a name="next-steps"></a>Nästa steg
-Läs mer om Azure Key Vault genom att granska [Vad är Azure Key Vault?](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)
-
+Läs mer om Azure Key Vault genom att granska [Vad är Azure Key Vault?](/azure/key-vault/key-vault-whatis)

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69b4df0b5ceb947ab875f82a0d6f5ac59ce89eef
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: e2a00ef50676ee24de30f93ad5b5ddd88192b6db
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252630"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915083"
 ---
 # <a name="windows-10-and-later-settings-to-protect-devices-using-intune"></a>Inställningar för Windows 10 (och senare) för att skydda delade enheter med Intune
 
@@ -34,7 +34,7 @@ Information om att konfigurera Microsoft Defender Antivirus finns i [Enhetsbegr�
 
 [Skapa en enhetskonfigurationsprofil för slutpunktsskydd](endpoint-protection-configure.md).  
 
-Mer information om konfigurationstjänstproviders (CSP:er) finns i [Referens för konfigurationstjänstproviders](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).  
+Mer information om konfigurationstjänstproviders (CSP:er) finns i [Referens för konfigurationstjänstproviders](/windows/client-management/mdm/configuration-service-provider-reference).  
 
 ## <a name="microsoft-defender-application-guard"></a>Microsoft Defender Application Guard  
 
@@ -44,7 +44,7 @@ Application Guard är endast tillgängligt för Windows 10-enheter (64-bitars). 
 
 - **Application Guard**  
   **Standard**: Inte konfigurerat  
-   CSP:n Application Guard: [Settings/AllowWindowsDefenderApplicationGuard](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp#allowwindowsdefenderapplicationguard)  
+   CSP:n Application Guard: [Settings/AllowWindowsDefenderApplicationGuard](/windows/client-management/mdm/windowsdefenderapplicationguard-csp#allowwindowsdefenderapplicationguard)  
 
   - **Aktivera för Edge** – aktiverar den här funktionen, som öppnar ej betrodda webbplatser i en virtualiserad Hyper-V-webbläsarcontainer.  
   - **Inte konfigurerat** – alla webbplatser (betrodda och ej betrodda) kan öppnas på enheten.  
@@ -63,7 +63,7 @@ Application Guard är endast tillgängligt för Windows 10-enheter (64-bitars). 
 - **Innehåll i Urklipp**  
   Den här inställningen är bara tillgänglig när *Funktionssätt för Urklipp* har någon av de *tillåtande* inställningarna.  
   **Standard**: Inte konfigurerat  
-  CSP:n Application Guard: [Settings/ClipboardFileType](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp#clipboardfiletype)  
+  CSP:n Application Guard: [Settings/ClipboardFileType](/windows/client-management/mdm/windowsdefenderapplicationguard-csp#clipboardfiletype)  
 
   Välj det urklippsinnehåll som ska tillåtas.  
   - **Inte konfigurerat**  
@@ -315,19 +315,19 @@ För anpassade brandväggsregler finns följande alternativ:
 
 - **Riktning**   
   **Standard**: Inte konfigurerat  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Direction](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#direction)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Direction](/windows/client-management/mdm/firewall-csp#direction)  
   
   Ange om regeln ska gälla **Inkommande** eller **Utgående** trafik. När inställningen är **Inte konfigurerat** gäller regeln automatiskt för utgående trafik.  
 
 - **Åtgärd**  
   **Standard**: Inte konfigurerat  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Action](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#action) och [FirewallRules/*FirewallRuleName*/Action/Type](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#type)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Action](/windows/client-management/mdm/firewall-csp#action) och [FirewallRules/*FirewallRuleName*/Action/Type](/windows/client-management/mdm/firewall-csp#type)  
 
   Välj mellan **Tillåt** och **Blockera**. När inställningen är **Inte konfigurerat** är standardregeln att tillåta trafik.  
 
 - **Nätverkstyp**  
   **Standard**: 0 valda  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Profiles](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#profiles)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Profiles](/windows/client-management/mdm/firewall-csp#profiles)  
 
   Välj upp till tre nätverkstyper som regeln ska tillhöra. Alternativen är **Domän**, **Privat** och **Offentligt**.  Om du inte väljer några nätverkstyper gäller regeln för alla tre nätverkstyper.  
 
@@ -338,13 +338,13 @@ För anpassade brandväggsregler finns följande alternativ:
 
   Kontrollera anslutningar för en app eller ett program. Välj ett av följande alternativ och slutför sedan resten av konfigurationen:  
   - **Namn på paketfamilj** – ange namnet på en paketfamilj. Om du vill hitta namnet på paketfamiljen använder du PowerShell-kommandot **Get-AppxPackage**.   
-    CSP:n Firewall: [FirewallRules/*FirewallRuleName*/App/PackageFamilyName](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#packagefamilyname)  
+    CSP:n Firewall: [FirewallRules/*FirewallRuleName*/App/PackageFamilyName](/windows/client-management/mdm/firewall-csp#packagefamilyname)  
  
   - **Filsökväg** – du måste ange en filsökväg till en app på klientenheten. Det här kan vara en absolut eller relativ sökväg. Exempel:  C:\Windows\System\Notepad.exe eller %WINDIR%\Notepad.exe.  
-    CSP:n Firewall: [FirewallRules/*FirewallRuleName*/App/FilePath](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#filepath)  
+    CSP:n Firewall: [FirewallRules/*FirewallRuleName*/App/FilePath](/windows/client-management/mdm/firewall-csp#filepath)  
 
   - **Windows-tjänst** – ange kortnamnet för Windows-tjänsten om det är en tjänst och inte ett program som skickar eller tar emot trafik. Om du vill hitta tjänstens kortnamn använder du PowerShell-kommandot **Get-Service**.  
-    CSP:n Firewall: [FirewallRules/*FirewallRuleName*/App/ServiceName](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#servicename)  
+    CSP:n Firewall: [FirewallRules/*FirewallRuleName*/App/ServiceName](/windows/client-management/mdm/firewall-csp#servicename)  
 
   - **Alla** – *ingen ytterligare konfiguration är tillgänglig*.  
 
@@ -354,7 +354,7 @@ Ange de lokala adresser och fjärradresser som regeln ska gälla.
 
 - **Lokala adresser**    
   **Standard**: Valfri adress  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/LocalPortRanges](/windows/client-management/mdm/firewall-csp#localportranges)  
 
   Välj **Valfri adress** eller **Angiven adress**.  
 
@@ -367,7 +367,7 @@ Ange de lokala adresser och fjärradresser som regeln ska gälla.
 
 - **Fjärradresser**  
   **Standard**: Valfri adress  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/RemoteAddressRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#remoteaddressranges)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/RemoteAddressRanges](/windows/client-management/mdm/firewall-csp#remoteaddressranges)  
  
   Välj **Valfri adress** eller **Angiven adress**.  
 
@@ -392,21 +392,21 @@ Ange de lokala portar och fjärrportar som regeln ska gälla.
 
 - **Protokoll**  
   **Standard**: Alla  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Protocol](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#protocol)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/Protocol](/windows/client-management/mdm/firewall-csp#protocol)  
   Välj bland följande och fyll i de konfigurationer som krävs:  
   - **Alla** – ingen ytterligare konfiguration är tillgänglig.  
   - **TCP** – konfigurera lokala portar och fjärrportar. För båda alternativen kan du välja Alla portar eller Angivna portar. Ange de angivna portarna i en kommaavgränsad lista.  
-    - **Lokala portar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
-    - **Fjärrportar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/RemotePortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#remoteportranges)  
+    - **Lokala portar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/LocalPortRanges](/windows/client-management/mdm/firewall-csp#localportranges)  
+    - **Fjärrportar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/RemotePortRanges](/windows/client-management/mdm/firewall-csp#remoteportranges)  
   - **UDP** – konfigurera lokala portar och fjärrportar. För båda alternativen kan du välja Alla portar eller Angivna portar. Ange de angivna portarna i en kommaavgränsad lista.  
-    - **Lokala portar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/LocalPortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#localportranges)  
-    - **Fjärrportar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/RemotePortRanges](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#remoteportranges)  
+    - **Lokala portar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/LocalPortRanges](/windows/client-management/mdm/firewall-csp#localportranges)  
+    - **Fjärrportar** – CSP:n Firewall: [FirewallRules/*FirewallRuleName*/RemotePortRanges](/windows/client-management/mdm/firewall-csp#remoteportranges)  
   - **Anpassat** – ange ett eget **protokollnummer** från 0 till 255.  
 
 #### <a name="advanced-configuration"></a>Avancerad konfiguration  
 - **Gränssnittstyper**  
   **Standard**: 0 valda  
-  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/InterfaceTypes](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp#interfacetypes)  
+  CSP:n Firewall: [FirewallRules/*FirewallRuleName*/InterfaceTypes](/windows/client-management/mdm/firewall-csp#interfacetypes)  
 
   Välj bland följande alternativ:  
   - **Fjärråtkomst**  
@@ -483,7 +483,7 @@ Grundläggande inställningar är universella BitLocker-inställningar för alla
   - **Låt standardanvändare aktivera kryptering under Azure AD-anslutning**  
     *Den här inställningen gäller bara för enheter anslutna till Azure Active Directory, `Warning for other disk encryption`.*  
     **Standard**: Inte konfigurerat  
-    CSP:n BitLocker: [AllowStandardUserEncryption](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp#allowstandarduserencryption)
+    CSP:n BitLocker: [AllowStandardUserEncryption](/windows/client-management/mdm/bitlocker-csp#allowstandarduserencryption)
 
      - **Tillåt** – standardanvändare (inte administratörer) kan aktivera BitLocker-kryptering när de är inloggade.  
      - **Inte konfigurerad** – endast att administratörer får aktivera BitLocker-kryptering på enheten.  
@@ -656,7 +656,7 @@ Dessa inställningar gäller specifikt för operativsystemets dataenheter.
 
   - **Klientbaserad rotering av återställningslösenord**  
     **Standard**: Nyckelrotering har aktiverats för Azure AD-anslutna enheter  
-    CSP:n BitLocker: [ConfigureRecoveryPasswordRotation](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp)  
+    CSP:n BitLocker: [ConfigureRecoveryPasswordRotation](/windows/client-management/mdm/bitlocker-csp)  
     
     Med den här inställningen påbörjas en klientbaserad rotering av återställningslösenord efter en återställning av operativsystemenhet (antingen med bootmgr eller WinRE).  
 
@@ -780,7 +780,7 @@ De här inställningarna gäller specifikt flyttbara dataenheter.
  
 ## <a name="microsoft-defender-exploit-guard"></a>Microsoft Defender Exploit Guard  
 
-Använd [exploateringsskydd](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/exploit-protection) till att hantera och minska attackytan för appar som medarbetarna använder.  
+Använd [exploateringsskydd](/windows/security/threat-protection/microsoft-defender-atp/exploit-protection) till att hantera och minska attackytan för appar som medarbetarna använder.  
 
 ### <a name="attack-surface-reduction"></a>Minska attackytan  
 
@@ -790,7 +790,7 @@ Reglerna för minskning av attackytan förhindrar beteenden som ofta används ti
 
 - **Flagga stöld av inloggningsuppgifter från Windows Local Security Authority Subsystem**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera stöld av autentiseringsuppgifter från det lokala säkerhetsundersystemet i Windows (lsass.exe)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-credential-stealing-from-the-windows-local-security-authority-subsystem)
+  Regel: [Blockera stöld av autentiseringsuppgifter från det lokala säkerhetsundersystemet i Windows (lsass.exe)](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-credential-stealing-from-the-windows-local-security-authority-subsystem)
 
   Hjälp till att förhindra åtgärder och appar som normalt används av skadlig kod som söker sårbarheter för att angripa datorer.  
 
@@ -800,7 +800,7 @@ Reglerna för minskning av attackytan förhindrar beteenden som ofta används ti
 
 - **Skapande av process från Adobe Reader (beta)**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera Adobe Reader från att skapa underordnade processer](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-adobe-reader-from-creating-child-processes)  
+  Regel: [Blockera Adobe Reader från att skapa underordnade processer](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-adobe-reader-from-creating-child-processes)  
 
   - **Inte konfigurerat**  
   - **Aktivera** – blockera underordnade processer som skapas från Adobe Reader.  
@@ -812,7 +812,7 @@ Blockera Office-appar från att vidta följande åtgärder:
 
 - **Office-appar som infogar i andra processer (inga undantag)**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera Office-program från att infoga kod i andra processer](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-applications-from-injecting-code-into-other-processes)  
+  Regel: [Blockera Office-program från att infoga kod i andra processer](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-applications-from-injecting-code-into-other-processes)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera Office-appar från att infoga kod i andra processer.  
@@ -820,7 +820,7 @@ Blockera Office-appar från att vidta följande åtgärder:
 
 - **Office-appar/-makron som skapar körbart innehåll**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera Office-program från att skapa körbart innehåll](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-applications-from-creating-executable-content)  
+  Regel: [Blockera Office-program från att skapa körbart innehåll](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-applications-from-creating-executable-content)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera Office-appar och makron från att skapa körbart innehåll.  
@@ -828,7 +828,7 @@ Blockera Office-appar från att vidta följande åtgärder:
 
 - **Office-appar som startar underordnade processer**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera Office-program från att skapa underordnade processer](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-all-office-applications-from-creating-child-processes)  
+  Regel: [Blockera Office-program från att skapa underordnade processer](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-all-office-applications-from-creating-child-processes)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera Office-appar från att starta underordnade processer.  
@@ -836,7 +836,7 @@ Blockera Office-appar från att vidta följande åtgärder:
   
 - **Win32-importer från Office-makrokod**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera Win32-API-anrop från Office-makron](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-win32-api-calls-from-office-macros)  
+  Regel: [Blockera Win32-API-anrop från Office-makron](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-win32-api-calls-from-office-macros)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera Win32-importer från makrokod i Office.  
@@ -844,7 +844,7 @@ Blockera Office-appar från att vidta följande åtgärder:
   
 - **Skapande av processer från Office-kommunikationsprodukter**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera Office-kommunikationsprogram från att skapa underordnade processer](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-communication-application-from-creating-child-processes)  
+  Regel: [Blockera Office-kommunikationsprogram från att skapa underordnade processer](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-office-communication-application-from-creating-child-processes)  
 
   - **Inte konfigurerat**  
   - **Aktivera** – blockera skapande av underordnade processer från Office-kommunikationsappar.  
@@ -856,7 +856,7 @@ Blockera följande för att hjälpa till att förhindra skripthot:
 
 - **Dold js/vbs/ps/makrokod**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera körning av potentiellt dolda skript](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-execution-of-potentially-obfuscated-scripts)    
+  Regel: [Blockera körning av potentiellt dolda skript](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-execution-of-potentially-obfuscated-scripts)    
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera all dold js/vbs/ps/makrokod.  
@@ -864,7 +864,7 @@ Blockera följande för att hjälpa till att förhindra skripthot:
 
 - **js/vbs kör nyttolaster som laddats ned från Internet (inga undantag)**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera JavaScript eller VBScript från att starta nedladdat körbart innehåll](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-javascript-or-vbscript-from-launching-downloaded-executable-content)  
+  Regel: [Blockera JavaScript eller VBScript från att starta nedladdat körbart innehåll](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-javascript-or-vbscript-from-launching-downloaded-executable-content)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera js/vbs från att köra nyttolaster som laddats ned från internet.  
@@ -872,7 +872,7 @@ Blockera följande för att hjälpa till att förhindra skripthot:
 
 - **Skapa process från PSExec- och WMI-kommandon**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera skapande av processer från PSExec- och WMI-kommandon](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-process-creations-originating-from-psexec-and-wmi-commands)  
+  Regel: [Blockera skapande av processer från PSExec- och WMI-kommandon](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-process-creations-originating-from-psexec-and-wmi-commands)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera skapande av processer från PSExec- och WMI-kommandon.  
@@ -881,7 +881,7 @@ Blockera följande för att hjälpa till att förhindra skripthot:
 
 - **Ej betrodda och osignerade processer som körs via USB**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera obetrodda och osignerade processer som körs via USB](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-untrusted-and-unsigned-processes-that-run-from-usb)    
+  Regel: [Blockera obetrodda och osignerade processer som körs via USB](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-untrusted-and-unsigned-processes-that-run-from-usb)    
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera obetrodda och osignerade processer som körs via USB.  
@@ -889,7 +889,7 @@ Blockera följande för att hjälpa till att förhindra skripthot:
   
 - **Körbara filer som inte uppfyller ett villkor för användningsmönster, ålder eller betrodd lista**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera körbara filer från att köras om de inte uppfyller ett villkor för användningsmönster, ålder eller betrodd lista](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-executable-files-from-running-unless-they-meet-a-prevalence-age-or-trusted-list-criterion)    
+  Regel: [Blockera körbara filer från att köras om de inte uppfyller ett villkor för användningsmönster, ålder eller betrodd lista](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-executable-files-from-running-unless-they-meet-a-prevalence-age-or-trusted-list-criterion)    
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera körbara filer från att köras om de inte uppfyller ett villkor för användningsmönster, ålder eller betrodd lista.  
@@ -901,7 +901,7 @@ Blockera följande för att hjälpa till att förhindra e-posthot:
 
 - **Körning av körbart innehåll (exe, dll, ps, js, vbs, osv.) som har tagits bort från e-post (webbaserad e-post/e-postklient) (inga undantag)**  
   **Standard**: Inte konfigurerat  
-  Regel: [Blockera körbart innehåll från e-postklient och webbaserad e-post](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-executable-content-from-email-client-and-webmail)  
+  Regel: [Blockera körbart innehåll från e-postklient och webbaserad e-post](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#block-executable-content-from-email-client-and-webmail)  
 
   - **Inte konfigurerat**  
   - **Blockera** – blockera körning av körbart innehåll (exe, dll, ps, js, vbs, osv.) som har tagits bort från e-post (webbaserad e-post/e-postklient).  
@@ -911,7 +911,7 @@ Blockera följande för att hjälpa till att förhindra e-posthot:
 
 - **Avancerat skydd mot utpressningstrojaner**  
   Standard:  Inte konfigurerat  
-  Regel: [Använd avancerat skydd mot utpressningstrojaner](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#use-advanced-protection-against-ransomware)  
+  Regel: [Använd avancerat skydd mot utpressningstrojaner](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction#use-advanced-protection-against-ransomware)  
 
   - **Inte konfigurerat**  
   - **Aktivera** – använd aggressivt skydd mot utpressningstrojan.  
@@ -940,7 +940,7 @@ Blockera följande för att hjälpa till att förhindra e-posthot:
 
 ### <a name="controlled-folder-access"></a>Reglerad mappåtkomst  
 
-Hjälp till att [skydda värdefulla data](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/controlled-folders) från skadliga appar och hot, till exempel utpressningstrojaner.  
+Hjälp till att [skydda värdefulla data](/windows/security/threat-protection/microsoft-defender-atp/controlled-folders) från skadliga appar och hot, till exempel utpressningstrojaner.  
 
 - **Mappskydd**  
   **Standard**: Inte konfigurerat  
@@ -986,7 +986,7 @@ Blockera utgående anslutningar från alla appar till IP-adresser eller domäner
 - **Ladda upp XML**  
   **Standard**: *Inte konfigurerat*  
 
-  Om du vill använda [skydd mot sårbarheter](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) skapar du en XML-fil som innehåller de inställningar för system- och programminskning du vill använda. Det finns två metoder för att skapa XML-filen:  
+  Om du vill använda [skydd mot sårbarheter](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) skapar du en XML-fil som innehåller de inställningar för system- och programminskning du vill använda. Det finns två metoder för att skapa XML-filen:  
 
   - *PowerShell* – använd en eller flera av *Get-ProcessMitigation-* , *Set-ProcessMitigation-* och *ConvertTo-ProcessMitigationPolicy* PowerShell-cmdlets. Cmdlets konfigurerar åtgärdsinställningar och exporterar en XML-representation av dem.  
 
@@ -1043,7 +1043,7 @@ Microsoft Defender Credential Guard skyddar mot attacker för stöld av autentis
 
 ## <a name="microsoft-defender-security-center"></a>Microsoft Defender Security Center  
 
-Microsoft Defender Security Center fungerar som en separat app eller process från var och en av de enskilda funktionerna. Den visar aviseringar via Action Center. Den fungerar som en insamlare eller enskild plats för att visa status och köra konfiguration för var och en av funktionerna. Läs mer i dokumentationen till [Microsoft Defender](https://docs.microsoft.com/windows/threat-protection/windows-defender-security-center/windows-defender-security-center).  
+Microsoft Defender Security Center fungerar som en separat app eller process från var och en av de enskilda funktionerna. Den visar aviseringar via Action Center. Den fungerar som en insamlare eller enskild plats för att visa status och köra konfiguration för var och en av funktionerna. Läs mer i dokumentationen till [Microsoft Defender](/windows/threat-protection/windows-defender-security-center/windows-defender-security-center).  
 
 ### <a name="microsoft-defender-security-center-app-and-notifications"></a>Appen Microsoft Defender Säkerhetscenter och meddelanden  
 
@@ -1257,7 +1257,7 @@ Använd dessa alternativ för att konfigurera de lokala säkerhetsinställningar
 
 - **Koppla bort enhet från dockningsstation utan inloggning**  
   **Standard**: Inte konfigurerat  
-  CSP:n LocalPoliciesSecurityOptions: [Devices_AllowUndockWithoutHavingToLogon](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-devices-allowundockwithouthavingtologon)  
+  CSP:n LocalPoliciesSecurityOptions: [Devices_AllowUndockWithoutHavingToLogon](/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-devices-allowundockwithouthavingtologon)  
 
   - **Blockera** – användare måste logga in på enheten och få behörighet att koppla bort enheten från dockningsstation.
   - **Inte konfigurerat** – användare kan trycka på den fysiska utmatningsknappen på en dockad bärbar enhet för att på ett säkert sätt koppla bort enheten.
@@ -1321,7 +1321,7 @@ Använd dessa alternativ för att konfigurera de lokala säkerhetsinställningar
 
 - **Användarinformation på låsskärmen**  
   **Standard**: Inte konfigurerat  
-  CSP:n LocalPoliciesSecurityOptions: [InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-interactivelogon-displayuserinformationwhenthesessionislocked)  
+  CSP:n LocalPoliciesSecurityOptions: [InteractiveLogon_DisplayUserInformationWhenTheSessionIsLocked](/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions#localpoliciessecurityoptions-interactivelogon-displayuserinformationwhenthesessionislocked)  
 
   Konfigurera användarinformation som visas när sessionen är låst. Om inställningen inte konfigureras visas användarens visningsnamn, domän och användarnamn.  
 
@@ -1648,4 +1648,4 @@ Använd dessa alternativ för att konfigurera de lokala säkerhetsinställningar
 
 Profilen har skapats, men den gör inte något än. [Tilldela profilen](../configuration/device-profile-assign.md) och [övervaka dess status](../configuration/device-profile-monitor.md).  
 
-Konfigurera inställningar för slutpunktsskydd på [macOS](endpoint-protection-macos.md)-enheter.  
+Konfigurera inställningar för slutpunktsskydd på [macOS](endpoint-protection-macos.md)-enheter.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cc226279ea72a804a0d6ac0fa63f0b9bb90fe7a
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: 17f039bede5b179b85abd66cc4c1f3b7aaefcb3a
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531561"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914182"
 ---
 # <a name="add-microsoft-defender-atp-to-macos-devices-using-microsoft-intune"></a>Lägga till Microsoft Defender Avancerat skydd på macOS-enheter med Microsoft Intune
 
@@ -35,7 +35,7 @@ Innan du kan distribuera, konfigurera, övervaka eller skydda appar måste du l�
 - Distribuera kerneltillägg i Intune. Mer information finns i [Lägg till macOS kernel-tillägg i Intune](../configuration/kernel-extensions-overview-macos.md).
 
 > [!IMPORTANT]
-> Kerneltillägget kan bara godkännas automatiskt om det finns på enheten innan appen Microsoft Defender ATP installeras. Annars visas ett meddelande om att "systemtillägg blockeras" på Mac-datorn och användarna måste godkänna tillägget genom att gå till **Säkerhetsinställningar** eller **Systeminställningar** > **Säkerhet och integritet** och sedan välja **Tillåt**. Mer information finns i [Felsöka problem med kerneltillägg i Microsoft Defender ATP för Mac](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/mac-support-kext).
+> Kerneltillägget kan bara godkännas automatiskt om det finns på enheten innan appen Microsoft Defender ATP installeras. Annars visas ett meddelande om att "systemtillägg blockeras" på Mac-datorn och användarna måste godkänna tillägget genom att gå till **Säkerhetsinställningar** eller **Systeminställningar** > **Säkerhet och integritet** och sedan välja **Tillåt**. Mer information finns i [Felsöka problem med kerneltillägg i Microsoft Defender ATP för Mac](/windows/security/threat-protection/microsoft-defender-atp/mac-support-kext).
 
 ## <a name="add-microsoft-defender-atp-to-intune"></a>Lägga till Microsoft Defender ATP i Intune
 Du kan lägga till Microsoft Defender ATP och senare i Intune med hjälp av följande steg:
@@ -80,4 +80,3 @@ Appen som du har skapat visas i applistan där du kan tilldela den till de grupp
 - Information om att tillämpa en antiviruspolicy för Endpoint Security i Intune finns i [Endpoint Security-policyn Antivirus i Intune](../protect/endpoint-security-antivirus-policy.md) 
 - Om du vill veta mer om att inkludera och exkludera apptilldelningar från grupper med användare kan du läsa [Inkludera och exkludera apptilldelningar](apps-inc-exl-assignments.md).
 - Information om att tilldela appar till grupper i Intune finns i [Tilldela appar till grupper](apps-deploy.md).
-

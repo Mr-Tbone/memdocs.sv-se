@@ -15,12 +15,12 @@ ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: kerimh
-ms.openlocfilehash: e42d7f303d3d79e2683845b50c7d3dceb11f1686
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 3ffef32f4f33e79b25145dd4c0257b8a5bcfd32a
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820450"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913774"
 ---
 # <a name="delivery-optimization-settings-in-microsoft-intune"></a>Inställningar för leveransoptimering i Microsoft Intune
 
@@ -30,7 +30,7 @@ I den här artikeln beskrivs hur du konfigurerar inställningar för leveransopt
 
 Du kan se en lista med de inställningar för leveransoptimering som Intune ha stöd för i [Inställningar för leveransoptimering för Intune](delivery-optimization-settings.md).  
 
-Information om leveransoptimering i Windows 10 finns i [Uppdateringar av leveransoptimering](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) i Windows-dokumentationen.  
+Information om leveransoptimering i Windows 10 finns i [Uppdateringar av leveransoptimering](/windows/deployment/update/waas-delivery-optimization) i Windows-dokumentationen.  
 
 ## <a name="create-the-profile"></a>Skapa profilen
 

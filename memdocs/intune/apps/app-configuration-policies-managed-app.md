@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42547885c5f791749517415b325c8c785ec52c13
-ms.sourcegitcommit: 47ed9af2652495adb539638afe4e0bb0be267b9e
+ms.openlocfilehash: 20b5b3de16023ac475cc41a633e5d3ab915a1bd0
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051411"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910731"
 ---
 # <a name="add-app-configuration-policies-for-managed-apps-without-device-enrollment"></a>Lägg till appkonfigurationsprinciper för hanterade appar utan enhetsregistrering
 
@@ -45,13 +45,13 @@ Du kan använda appkonfigurationsprinciper med hanterade appar som har stöd fö
  
         Intune App SDK-aktiverade appar har stöd för konfigurationer i nyckel/värde-par. Läs dokumentationen för varje app om du vill lära dig mer om vilka nyckel/värde-konfigurationer som stöds. Observera att du kan använda token som fylls i dynamiskt med data som skapas av programmet. Välj ellipsen ( **...** ) och sedan **Ta bort** om du vill ta bort en allmän konfigurationsinställning. Mer information finns i [Konfigurationsvärden för att använda token](app-configuration-policies-managed-app.md#configuration-values-for-using-tokens). 
 
-    - **Konfigurationsinställningar för Outlook** – I Outlook för iOS och Android kan administratörer anpassa standardkonfigurationen för flera inställningar i appen. Mer information finns i [Outlook för iOS och Android – Allmänna scenarier för appkonfiguration](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#general-app-configuration-scenarios).
+    - **Konfigurationsinställningar för Outlook** – I Outlook för iOS och Android kan administratörer anpassa standardkonfigurationen för flera inställningar i appen. Mer information finns i [Outlook för iOS och Android – Allmänna scenarier för appkonfiguration](/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune#general-app-configuration-scenarios).
    
     - **S/MIME** – S/MIME (Secure Multipurpose Internet Mail Extensions) är en specifikation som gör att användarna kan skicka och ta emot digitalt signerad och krypterad e-post.
         - **Aktivera S/MIME** – Ange om S/MIME-kontroller ska aktiveras när du skriver e-post. Standardvärde: **Inte konfigurerat**.
         - **Tillåt att användaren ändrar inställningen** – Ange om användaren får ändra inställningen. S/MIME måste vara aktiverat. Standardvärde: **Ja**.
         
-    Mer information om Outlook-policyinställningar för appkonfiguration finns i [Distriburera appkonfigurationsinställningar för Outlook för iOS och Android](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+    Mer information om Outlook-policyinställningar för appkonfiguration finns i [Distriburera appkonfigurationsinställningar för Outlook för iOS och Android](/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 7. Klicka på **Nästa** för att visa sidan **Tilldelningar**.
 8. Klicka på **Välj de grupper som ska inkluderas**.

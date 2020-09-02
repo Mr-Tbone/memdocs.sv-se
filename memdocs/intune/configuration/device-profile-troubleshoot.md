@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6004526d8c9340e70e5149f2261eea07a916ed7
-ms.sourcegitcommit: 2e0bc4859f7e27dea20c6cc59d537a31f086c019
+ms.openlocfilehash: 849be91ccedab1f97b68b14e5bc2a51bc5a62f19
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871991"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915304"
 ---
 # <a name="common-questions-and-answers-with-device-policies-and-profiles-in-microsoft-intune"></a>Vanliga frågor och svar kring enhetsprinciper och profiler i Microsoft Intune
 
@@ -149,7 +149,7 @@ Vissa inställningar på Windows 10-enheter kan visas som ”ej tillämpligt”.
 - Inställningen är bara tillgänglig för nyare versioner av Windows och inte den aktuella versionen av operativsystem (OS) på enheten.
 - Inställningen är bara tillgänglig för vissa Windows-utgåvor eller vissa SKU:er, som Home, Professional, Enterprise och Education.
 
-Mer information om versions- och SKU-krav för olika inställningar finns i [referensartikeln för konfigurationsprovider (CSP)](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).
+Mer information om versions- och SKU-krav för olika inställningar finns i [referensartikeln för konfigurationsprovider (CSP)](/windows/client-management/mdm/configuration-service-provider-reference).
 
 ## <a name="next-steps"></a>Nästa steg
 

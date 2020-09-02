@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 92fa75794022123fd9456c40a50780a50f604662
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: ff5c8208cb1ee9357c501a3c457bc346879b241d
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88819787"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906709"
 ---
 # <a name="settings-for-windows-10-microsoft-defender-antivirus-policy-in-microsoft-intune"></a>Inställningar för Windows 10 Microsoft Defender antivirusprinciper i Microsoft Intune
 
@@ -36,7 +36,7 @@ Följande inställningar är tillgängliga för följande profiler:
 **Inställningar**:
 
 - **Aktivera molnlevererat skydd**  
-  CSP: [AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
+  CSP: [AllowCloudProtection](/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
 
   Som standard skickar Defender på Windows 10 Desktop-enheter information till Microsoft om eventuella problem som identifieras. Microsoft analyserar informationen för att lära sig mer om problem som påverkar dig och andra kunder och erbjuda bättre lösningar.
 
@@ -45,7 +45,7 @@ Följande inställningar är tillgängliga för följande profiler:
   - **Ja** – Molnlevererat skydd är aktiverat.  Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Nivå för molnlevererat skydd**  
-  CSP: [CloudBlockLevel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel)
+  CSP: [CloudBlockLevel](/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel)
 
   Konfigurera hur aggressivt Defender Antivirus ska blockera och genomsöka misstänkta filer.
   - **Inte konfigurerad** (*standard*) – Standardnivå för blockering i Defender.
@@ -54,7 +54,7 @@ Följande inställningar är tillgängliga för följande profiler:
   - **Nolltolerans** – Blockerar alla okända körbara filer.
 
 - **Defender: utökad tidsgräns för moln i sekunder**  
-  CSP: [CloudExtendedTimeout](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout)
+  CSP: [CloudExtendedTimeout](/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout)
 
   Defender Antivirus blockerar automatiskt misstänkta filer i 10 sekunder så att det kan genomsöka filerna i molnet för att kontrollera att de är säkra. Du kan lägga till upp till 50 ytterligare sekunder till tidsgränsen.
 
@@ -70,17 +70,17 @@ Följande inställningar är tillgängliga för följande profiler:
 För varje inställning i den här gruppen kan du expandera inställningen, välja **Lägg till**och sedan ange ett värde för undantaget.
 
 - **Defender-processer som ska uteslutas**  
-  CSP: [ExcludedProcesses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
+  CSP: [ExcludedProcesses](/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
 
   Ange en lista över filer som har öppnats av processer som ska ignoreras vid en genomsökning. Själva processen undantas inte från sökningen.
 
 - **Filnamnstillägg som ska undantas från genomsökningar och realtidsskydd**  
-  CSP: [ExcludedExtensions](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
+  CSP: [ExcludedExtensions](/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
 
   Ange en lista över filnamnstillägg som ska ignoreras vid en genomsökning.
 
 - **Defender-filer och mappar som ska uteslutas**  
-  CSP: [ExcludedPaths](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
+  CSP: [ExcludedPaths](/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
 
   Ange en lista över filer och katalogvägar som ska ignoreras vid en genomsökning.
 
@@ -93,7 +93,7 @@ Följande inställningar är tillgängliga för följande profiler:
 **Inställningar**:
 
 - **Starta realtidsskydd**  
-  CSP: [AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
+  CSP: [AllowRealtimeMonitoring](/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
 
   Kräv att Defender på Windows 10 Desktop-enheter ska använda funktionen för övervakning i realtid.
   - **Inte konfigurerad** (*standard*) – Inställningen återställs till systemets standard
@@ -127,7 +127,7 @@ Följande inställningar är tillgängliga för följande profiler:
   - **Ja** – Framtvinga användning av beteendeövervakning i realtid. Enhetsanvändare kan inte ändra den här inställningen.
 
 - **Aktivera nätverksskydd**  
-  CSP: [EnableNetworkProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection)
+  CSP: [EnableNetworkProtection](/windows/client-management/mdm/policy-csp-defender#defender-enablenetworkprotection)
 
   Skydda enhetsanvändare som använder appar mot nätfiske, trojaner och skadligt innehåll från internet. Skyddet omfattar att webbläsare från tredje part hindras från att ansluta till farliga platser.
 
@@ -321,14 +321,14 @@ Följande inställningar är tillgängliga för följande profiler:
   Ange intervallet från noll till 24 (i timmar) som ska användas för att söka efter signaturer. Värdet noll resulterar innebär ingen kontroll för nya signaturer. Värdet 2 kommer att kontrollera varannan timme och så vidare.
 
 - **Ange filresurser för nedladdning av definitionsuppdateringar**  
-  CSP: [SignatureUpdateFallbackOrder](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-signatureupdatefallbackorder)
+  CSP: [SignatureUpdateFallbackOrder](/windows/client-management/mdm/policy-csp-defender#defender-signatureupdatefallbackorder)
 
   Hantera platser, t. ex. en UNC-filresurs, som en plats för källplatsen för nedladdningen för att hämta definitionsuppdateringar. När definitionsuppdateringarna har laddats ned från en angiven källa kommer de återstående källorna i listan inte att kontaktas.
 
   Du kan **lägga till** enskilda platser eller **importera** en lista över platser som en .csv-fil.
 
 - **Ange källordning för nedladdning av definitionsuppdateringar**  
-  CSP: [SignatureUpdateFileSharesSources](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-signatureupdatefilesharessources)
+  CSP: [SignatureUpdateFileSharesSources](/windows/client-management/mdm/policy-csp-defender#defender-signatureupdatefilesharessources)
 
   Ange i vilken ordning du vill kontakta källplatser som du har angett för att hämta definitionsuppdateringar. När definitionsuppdateringarna har laddats ned från en angiven källa kommer de återstående källorna i listan inte att kontaktas.
 
@@ -346,4 +346,3 @@ Följande inställningar är tillgängliga för följande profiler:
   - **Inte konfigurerad** (*standard*) – Inställningen återgår till klientens standardvärde där gränssnitt och aviseringar tillåts.
   - **Nej** – Användargränssnittet för Defender är inte tillgängligt och aviseringar visas inte.
   - **Ja**
-

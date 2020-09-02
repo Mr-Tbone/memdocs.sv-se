@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf4fc3017ccf3efcf93986544c8a60b60acbf3c8
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 220a57b3e668d47d3f6fd12dde8fd54e240dd0da
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82076126"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911581"
 ---
 # <a name="how-to-configure-intune-settings-for-the-iosipados-classroom-app"></a>Så här konfigurerar du inställningar för iOS-/iPadOS-appen Classroom för Intune
 
@@ -68,9 +68,9 @@ Du kan importera information till SDS på något av följande sätt:
 
 ### <a name="find-out-more"></a>Läs mer
 
-- [Läs mer om hur du kan synkronisera lokal skolinformation till Azure AD](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect)
+- [Läs mer om hur du kan synkronisera lokal skolinformation till Azure AD](/azure/active-directory/connect/active-directory-aadconnect)
 - [Läs mer om Microsofts synkronisering av skolinformation](https://sds.microsoft.com/)
-- [Läs mer om licensiering i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-licensing-whatis-azure-portal)
+- [Läs mer om licensiering i Azure Active Directory](/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
 ## <a name="step-2---create-and-assign-an-iosipados-education-profile-in-intune"></a>Steg 2 – Skapa och tilldela en iOS-/iPadOS-utbildningsprofil i Intune
 

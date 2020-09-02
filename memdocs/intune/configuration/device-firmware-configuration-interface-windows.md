@@ -16,18 +16,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb45550f8c38237bebcc54db5531ab244ab10d84
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: 6f30b2a3ecac3767da71c999b8920930532b8279
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531527"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915780"
 ---
 # <a name="use-device-firmware-configuration-interface-profiles-on-windows-devices-in-microsoft-intune-public-preview"></a>Använda DFCI-profiler på Windows-enheter i Microsoft Intune (allmänt tillgänglig förhandsversion)
 
 När du använder Intune för att hantera Autopilot-enheter kan du hantera UEFI-inställningar (BIOS) när enheterna har registrerats med hjälp av DFCI (Device Firmware Configuration Interface). En översikt av fördelar, scenarier och förutsättningar finns i [översikten över DFCI](https://microsoft.github.io/mu/dyn/mu_plus/DfciPkg/Docs/Dfci_Feature/).
 
-Med DFCI [kan Windows](https://docs.microsoft.com/windows/client-management/mdm/uefi-csp) skicka hanteringskommandon från Intune till UEFI (Unified Extensible Firmware Interface).
+Med DFCI [kan Windows](/windows/client-management/mdm/uefi-csp) skicka hanteringskommandon från Intune till UEFI (Unified Extensible Firmware Interface).
 
 I Intune använder du den här funktionen för att kontrollera BIOS-inställningar. Vanligtvis är inbyggd programvara mer motståndskraftig mot skadliga attacker. Den begränsar slutanvändarnas kontroll över BIOS, vilket är lämpligt i en komprometterad situation.
 
@@ -45,11 +45,11 @@ Den här funktionen gäller för:
 
 - Enheten måste registreras för Windows Autopilot av en [Microsoft Cloud Solution Provider-partner (CSP)](https://partner.microsoft.com/cloud-solution-provider) eller registreras direkt av OEM-tillverkaren. 
 
-  Enheter som registreras manuellt för Autopilot, till exempel sådana som [importeras från en CSV-fil](../enrollment/enrollment-autopilot.md#add-devices), tillåts inte att använda DFCI. Det är avsiktligt att DFCI-hanteringen kräver extern attestering av enhetens kommersiella förvärv via en OEM-tillverkare eller en Microsoft CSP-partnerregistrering i Windows Autopilot.
+  Enheter som registreras manuellt för Autopilot, till exempel sådana som [importeras från en CSV-fil](../../autopilot/enrollment-autopilot.md#add-devices), tillåts inte att använda DFCI. Det är avsiktligt att DFCI-hanteringen kräver extern attestering av enhetens kommersiella förvärv via en OEM-tillverkare eller en Microsoft CSP-partnerregistrering i Windows Autopilot.
 
   När enheten har registrerats visas dess serienummer i listan över Windows Autopilot-enheter.
 
-  Mer information om Autopilot samt eventuella krav finns i [Registrera Windows-enheter i Intune med hjälp av Windows Autopilot](../enrollment/enrollment-autopilot.md).
+  Mer information om Autopilot samt eventuella krav finns i [Registrera Windows-enheter i Intune med hjälp av Windows Autopilot](../../autopilot/enrollment-autopilot.md).
 
 ## <a name="create-your-azure-ad-security-groups"></a>Skapa dina Azure AD-säkerhetsgrupper
 
@@ -66,7 +66,7 @@ För att använda DFCI skapar du följande profiler och tilldelar dem till din g
 
 ### <a name="create-an-autopilot-deployment-profile"></a>Skapa en Autopilot-distributionsprofil
 
-Den här profilen upprättar och förkonfigurerar nya enheter. [Autopilot-distributionsprofil](../enrollment/enrollment-autopilot.md#create-an-autopilot-deployment-profile) visar stegen för att skapa profilen.
+Den här profilen upprättar och förkonfigurerar nya enheter. [Autopilot-distributionsprofil](../../autopilot/enrollment-autopilot.md#create-an-autopilot-deployment-profile) visar stegen för att skapa profilen.
 
 ### <a name="create-an-enrollment-state-page-profile"></a>Skapa en profil för registreringsstatussida
 

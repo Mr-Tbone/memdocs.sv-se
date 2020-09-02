@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 6fb5702b7c809c7810004a53d084f19fa94dea9e
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: f08282fe6bd8675474415290d50c0b07b4e1fc25
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431858"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915066"
 ---
 # <a name="account-protection-policy-for-endpoint-security-in-intune"></a>Endpoint Security-policyn Kontoskydd i Intune
 
@@ -30,7 +30,7 @@ Använd Endpoint Security-policyer i Intune som Kontoskydd till att skydda anvä
 - *Windows Hello for Business* ersätter lösenord med stark tvåfaktorsautentisering på datorer och mobila enheter.
 - *Credential Guard* skyddar autentiseringsuppgifter och hemligheter som du använder med dina enheter.
 
-Läs mer i [Identity and access management](https://docs.microsoft.com/windows/security/identity-protection/), dokumentationen om Windows hantering av identiteter och åtkomst.
+Läs mer i [Identity and access management](/windows/security/identity-protection/), dokumentationen om Windows hantering av identiteter och åtkomst.
 
 Du hittar Endpoint Security-policyn Kontoskydd under *Hantera* i noden **Endpoint Security** i [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431).
 

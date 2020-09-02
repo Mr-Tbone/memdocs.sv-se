@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0357f8fe751738bc3f8a5198db96b2113ee16bfc
-ms.sourcegitcommit: 91519f811b58a3e9fd116a4c28e39341ad8af11a
+ms.openlocfilehash: 20d3f3967fa77ab90229915afc8b05043004b125
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559502"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909354"
 ---
 # <a name="windows-10-and-later-settings-to-mark-devices-as-compliant-or-not-compliant-using-intune"></a>Inställningar för Windows 10 och senare för att markera enheter som kompatibla eller inkompatibla med hjälp av Intune
 
@@ -49,14 +49,14 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Enheten skydda data som lagras på enheten mot obehörig åtkomst när systemet är avstängt eller i viloläge.
   
-  [Device HealthAttestation CSP – BitLockerStatus](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp)
+  [Device HealthAttestation CSP – BitLockerStatus](/windows/client-management/mdm/healthattestation-csp)
 
 - **Kräv att säker start ska vara aktiverat på enheten**:  
   - **Ej konfigurerad** (*standard*) – Ingen kompatibilitetskontroll görs för den här inställningen.
   - **Kräv** – Systemet tvingas att starta med tillförlitliga fabriksinställningar. Huvudkomponenterna som används för att starta datorn dessutom ha rätt kryptografiska signaturer som är betrodda av den organisation som tillverkade enheten. UEFI-baserad inbyggd programvara kontrollerar signaturen innan den låter datorn starta. Om filer har manipulerats, vilket delar deras signatur, kan systemet inte starta om.
 
   > [!NOTE]
-  > Inställningen **Kräv att säker start är aktiverat på enheten** stöds på vissa TPM 1.2- och 2.0-enheter. För enheter som inte stöder TPM 2.0 eller senare, visas principstatusen i Intune som **Ej ompatibel**. Mer information om vilka versioner som stöds finns i [Hälsoattestering för enhet](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-overview#device-health-attestation).
+  > Inställningen **Kräv att säker start är aktiverat på enheten** stöds på vissa TPM 1.2- och 2.0-enheter. För enheter som inte stöder TPM 2.0 eller senare, visas principstatusen i Intune som **Ej ompatibel**. Mer information om vilka versioner som stöds finns i [Hälsoattestering för enhet](/windows/security/information-protection/tpm/trusted-platform-module-overview#device-health-attestation).
 
 - **Kräv kodintegritet**:  
   Kodintegritet är en funktion som kontrollerar integriteten för en drivrutin eller systemfil varje gång de läses in i minnet.
@@ -65,7 +65,7 @@ Som Intune-administratör kan du använda dessa kompatibilitetsinställningar f�
 
 Fler resurser:
 
-- Mer information om hur hälsoattesteringstjänsten fungerar finns i [CSP för hälsoattestering](https://docs.microsoft.com/windows/client-management/mdm/healthattestation-csp).
+- Mer information om hur hälsoattesteringstjänsten fungerar finns i [CSP för hälsoattestering](/windows/client-management/mdm/healthattestation-csp).
 - [Tips för support: Använda Hälsoattestering för enhet som en del av din Intune-kompatibilitetsprincip](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Support-Tip-Using-Device-Health-Attestation-Settings-as-Part-of/ba-p/282643).
 
 ## <a name="device-properties"></a>Egenskaper för enhet
@@ -140,8 +140,8 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
     > [!TIP]
     > De alfanumeriska lösenordsprinciperna kan vara komplexa. Vi uppmuntrar administratörer att läsa CSP:er för mer information:
     >
-    > - [DeviceLock/AlphanumericDevicePasswordRequired CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-alphanumericdevicepasswordrequired)
-    > - [DeviceLock/MinDevicePasswordComplexCharacters CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock#devicelock-mindevicepasswordcomplexcharacters)
+    > - [DeviceLock/AlphanumericDevicePasswordRequired CSP](/windows/client-management/mdm/policy-csp-devicelock#devicelock-alphanumericdevicepasswordrequired)
+    > - [DeviceLock/MinDevicePasswordComplexCharacters CSP](/windows/client-management/mdm/policy-csp-devicelock#devicelock-mindevicepasswordcomplexcharacters)
 
 - **Minsta lösenordslängd**:  
   Ange det minsta antal siffror eller tecken som lösenordet måste innehålla.
@@ -169,7 +169,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Ej konfigurerat** (*standard*)
   - **Kräv** – Använd *Kräv* när du ska kryptera datalagring på dina enheter.
   
-   [DeviceStatus CSP – DeviceStatus/Compliance/EncryptionCompliance](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+   [DeviceStatus CSP – DeviceStatus/Compliance/EncryptionCompliance](/windows/client-management/mdm/devicestatus-csp)
 
   > [!NOTE]
   > Inställningen **Kryptering för lagring av data på en enhet** kontrollerar om kryptering används på enheten. Om du behöver en starkare krypteringsinställning bör du överväga att använda **Kräv BitLocker**, som använder Attestering för Windows-enhetens hälsotillstånd för att verifiera Bitlocker-status på TPM-nivå.
@@ -180,28 +180,28 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Inte konfigurerad** (*standard*) – Intune styr inte Microsoft Defender-brandväggen eller ändrar befintliga inställningar.
   - **Kräv** – Aktivera Microsoft Defender-brandväggen och hindra användarna från att inaktivera funktionen.
 
-  [CSP:n Firewall](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp)
+  [CSP:n Firewall](/windows/client-management/mdm/firewall-csp)
 
   > [!NOTE]
-  > Om enheten omedelbart synkroniseras efter en omstart, eller om synkroniseringen omedelbart aktiveras från viloläge, kan den här inställningen rapporteras som en **fel**. Det här scenariot kanske inte påverkar den övergripande statusen för enhetens efterlevnad. För att utvärdera kompatibilitetsstatus igen [synkroniserar du enheten](https://docs.microsoft.com/mem/intune/user-help/sync-your-device-manually-windows) manuellt.
+  > Om enheten omedelbart synkroniseras efter en omstart, eller om synkroniseringen omedelbart aktiveras från viloläge, kan den här inställningen rapporteras som en **fel**. Det här scenariot kanske inte påverkar den övergripande statusen för enhetens efterlevnad. För att utvärdera kompatibilitetsstatus igen [synkroniserar du enheten](../user-help/sync-your-device-manually-windows.md) manuellt.
 
 - **Trusted Platform Module (TPM)** :  
   - **Inte konfigurerad** (*standard*) – Intune kontrollerar inte enheten för en TPM-kretsversion.
   - **Kräv** – Intune kontrollerar TPM-kretsens version för kompatibilitet. Enheten är kompatibel om TPM-kretsens version är större än **0** (noll). Enheten är inte kompatibel om det inte finns någon TPM-version på den.
 
-  [DeviceStatus CSP – DeviceStatus/TPM/SpecificationVersion](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+  [DeviceStatus CSP – DeviceStatus/TPM/SpecificationVersion](/windows/client-management/mdm/devicestatus-csp)
   
 - **Antivirus**:  
   - **Ej konfigurerad** (*standard*) – Intune kontrollerar inte om några antiviruslösningar har installerats på enheten.
   - **Kräv** – Kontrollera efterlevnaden med hjälp av antiviruslösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.
 
-  [DeviceStatus CSP – DeviceStatus/Antivirus/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+  [DeviceStatus CSP – DeviceStatus/Antivirus/Status](/windows/client-management/mdm/devicestatus-csp)
 
 - **Antispionprogram**:  
   - **Ej konfigurerat** (*standard*) – Intune kontrollerar inte om några antspionslösningar har installerats på enheten.
   - **Kräv** – Kontrollera efterlevnaden med hjälp av antispionlösningar som har registrerats i [Windows Security Center](https://blogs.windows.com/windowsexperience/2017/01/23/introducing-windows-defender-security-center/), exempelvis Symantec och Microsoft Defender.
 
-  [DeviceStatus CSP – DeviceStatus/Antispionprogram/Status](https://docs.microsoft.com/windows/client-management/mdm/devicestatus-csp)
+  [DeviceStatus CSP – DeviceStatus/Antispionprogram/Status](/windows/client-management/mdm/devicestatus-csp)
 
 ### <a name="defender"></a>Defender
 
@@ -221,7 +221,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Inte konfigurerad** (*standard*) – Intune tvingar inga krav.
   - **Require** – Tvinga att Microsoft Defender-säkerhetsinformationen ska vara uppdaterad.
 
-  [Defender CSP – Defender/Health/SignatureOutOfDate CSP](https://docs.microsoft.com/windows/client-management/mdm/defender-csp)
+  [Defender CSP – Defender/Health/SignatureOutOfDate CSP](/windows/client-management/mdm/defender-csp)
   
   Mer information finns i [Security intelligence updates for Microsoft Defender Antivirus and other Microsoft antimalware](https://www.microsoft.com/en-us/wdsi/defenderupdates) (Uppdatering av säkerhetsinsikter för Microsoft Defender Antivirus och annan Microsoft Antimalware).
 
@@ -229,7 +229,7 @@ Gäller enbart för samhanterade enheter som kör Windows 10 och senare. Enheter
   - **Inte konfigurerad** (*standard*) – Intune styr inte tjänsten eller ändrar befintliga inställningar.
   - **Kräv** – Aktivera realtidsskydd, som söker efter skadlig kod, spionprogram och annan oönskad programvara.  
 
-  [Policy CSP – Defender/AllowRealtimeMonitoring CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
+  [Policy CSP – Defender/AllowRealtimeMonitoring CSP](/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
 
 ## <a name="microsoft-defender-atp"></a>Microsoft Defender ATP
 
@@ -251,7 +251,7 @@ Windows Holographic för företag använder plattformen **Windows 10 och senare*
 
 - **Systemsäkerhet** > **Kryptering** > **Kryptering av lagring av data på enheten**.
 
-Om du vill verifiera enhetskryptering på Microsoft HoloLens kan du läsa avsnittet [Verifiera enhetskryptering](https://docs.microsoft.com/hololens/security-encryption-data-protection).
+Om du vill verifiera enhetskryptering på Microsoft HoloLens kan du läsa avsnittet [Verifiera enhetskryptering](/hololens/security-encryption-data-protection).
 
 ## <a name="surface-hub"></a>Surface Hub
 

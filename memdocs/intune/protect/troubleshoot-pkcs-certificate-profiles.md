@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c6f2eb7d6174c706cdd8a3910df1d0ddc2e6ef0
-ms.sourcegitcommit: 532a06163f462527254d23e7dc505b18c0c4f938
+ms.openlocfilehash: acc61df344cb4134a863d75fff517047e78d067d
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88110689"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914794"
 ---
 # <a name="troubleshoot-pkcs-certificate-deployment-in-microsoft-intune"></a>Felsök PKCS-certifikatdistribution i Microsoft Intune
 
@@ -39,7 +39,7 @@ Den vanligaste problemkällan med PKCS-certifikatprofiler har varit konfiguratio
 - **Certifikatutfärdare**: Det interna FQDN för certifikatutfärdarens dator. Till exempel server1.domain.local.
 - **Namn på certifikatutfärdare**: Certifikatutfärdarens namn som det visas i certifikatutfärdarens MMC. Leta under **Certifikatutfärdare (Lokal)**
 
-Du kan använda [kommandoradsprogrammet certutil](https://docs.microsoft.com/windows-server/administration/windows-commands/certutil) på CA:n för att bekräfta rätt namn för certifikatutfärdaren och certifikatutfärdarnamn.
+Du kan använda [kommandoradsprogrammet certutil](/windows-server/administration/windows-commands/certutil) på CA:n för att bekräfta rätt namn för certifikatutfärdaren och certifikatutfärdarnamn.
 
 ## <a name="pkcs-communication-overview"></a>PKCS-kommunikationsöversikt
 
@@ -76,7 +76,7 @@ Loggfilerna för dessa roller omfattar Windows-loggboken, certifikatkonsoler och
 
 - **NDESConnector_date_time.svclog**:
 
-  Den här loggen visar kommunikation från Microsoft Intune Certificate Connector till Intune-molnet. Du kan använda [visningsverktyget för tjänstspårning](https://docs.microsoft.com/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
+  Den här loggen visar kommunikation från Microsoft Intune Certificate Connector till Intune-molnet. Du kan använda [visningsverktyget för tjänstspårning](/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
 
   Relaterad registernyckel: *HKLM\SW\Microsoft\MicrosoftIntune\NDESConnector\ConnectionStatus*
 
@@ -84,7 +84,7 @@ Loggfilerna för dessa roller omfattar Windows-loggboken, certifikatkonsoler och
 
 - **CertificateRegistrationPoint_date_time.svclog**:
 
-  I den här loggen visas NDES-principmodulen som tar emot och verifierar certifikatbegäranden. Du kan använda [visningsverktyget för tjänstspårning](https://docs.microsoft.com/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
+  I den här loggen visas NDES-principmodulen som tar emot och verifierar certifikatbegäranden. Du kan använda [visningsverktyget för tjänstspårning](/dotnet/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe) för att visa den här loggfilen.
 
   Plats: På servern som är värd för NDES på *%program_files%\Microsoft intune\ndesconnectorsvc\logs\logs*
 
@@ -217,7 +217,7 @@ Det här problemet uppstår om den dator som är värd för Intune NDES-koppling
 
 **Lösning**:
 
-Konfigurera namnet på principservern för registrering av certifikat manuellt på den dator som är värd för NDES-kopplingen. Om du vill konfigurera namnet använder du PowerShell-cmdleten [Add-CertificateEnrollmentPolicyServer](https://docs.microsoft.com/powershell/module/pkiclient/add-certificateenrollmentpolicyserver?view=win10-ps).
+Konfigurera namnet på principservern för registrering av certifikat manuellt på den dator som är värd för NDES-kopplingen. Om du vill konfigurera namnet använder du PowerShell-cmdleten [Add-CertificateEnrollmentPolicyServer](/powershell/module/pkiclient/add-certificateenrollmentpolicyserver?view=win10-ps).
 
 ### <a name="the-submission-is-pending"></a>Sändningen väntar
 

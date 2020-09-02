@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e7f9c984b81bbe98269b0123371d8097d960ffb
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 57a7b232b7391d6b8716d4c2a56d69b44f6c07ee
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86462141"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914760"
 ---
 # <a name="troubleshoot-the-intune-exchange-connector"></a>Felsöka Intune Exchange Connector
 
@@ -31,7 +31,7 @@ I den här artikeln beskrivs hur du felsöker problem med Intune Exchange Connec
 
 > [!IMPORTANT]
 >
-> Från och med juli 2020 är stödet för Exchange Connector inaktuellt och ersätts med [modern hybridautentisering](https://docs.microsoft.com/office365/enterprise/hybrid-modern-auth-overview) (HMA) för Exchange, och du kan inte längre lägga till en Exchange Connector i Intune.
+> Från och med juli 2020 är stödet för Exchange Connector inaktuellt och ersätts med [modern hybridautentisering](/office365/enterprise/hybrid-modern-auth-overview) (HMA) för Exchange, och du kan inte längre lägga till en Exchange Connector i Intune.
 >
 > Kunder som tidigare har konfigurerat och använder Exchange Connector kan fortsätta att göra det.
 
@@ -66,7 +66,7 @@ Granska [de lokala kraven för Exchange-anslutningsprogram](exchange-connector-i
 
 - Datorn som är värd för Intune Exchange Connector och Exchange-klientens åtkomstserve måste vara domänansluten och i samma LAN. Kontrollera att de nödvändiga behörigheterna har lagts till för kontot som används av Intune Exchange Connector.
 
-- Aviseringskontot används till att hämta inställningar för *automatisk upptäckt*. Mer information om automatisk upptäckt i Exchange finns i [Tjänsten för automatisk upptäckt i Exchange Server](https://docs.microsoft.com/exchange/architecture/client-access/autodiscover?view=exchserver-2016).
+- Aviseringskontot används till att hämta inställningar för *automatisk upptäckt*. Mer information om automatisk upptäckt i Exchange finns i [Tjänsten för automatisk upptäckt i Exchange Server](/exchange/architecture/client-access/autodiscover?view=exchserver-2016).
 
 - Intune Exchange Connector skickar en begäran till EWS-URL:en med hjälp av autentiseringsuppgifterna för aviseringskontot, för att skicka aviseringar via e-post tillsammans med länken *Kom igång* (för att registrera i Intune). Användning av *Kom igång*-länken för registrering är ett krav för Android-enheter som inte har Knox. Annars kommer dessa enheter att blockeras av den villkorsstyrda åtkomsten.
 
@@ -86,4 +86,4 @@ Följande artiklar kan hjälpa till att lösa vanliga problem och specifika fel:
 Sök hjälp från supporten eller Intune-communityn:
 
 - Se [Få support](../fundamentals/get-support.md) om att använda Intune-konsolen till att felsöka problemet, eller för att öppna ett supportärende hos Microsoft. 
-- Publicera ditt problem i [Microsoft Intunes forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=microsoftintuneprod).  
+- Publicera ditt problem i [Microsoft Intunes forum](/answers/products/mem).  

@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bb3397432f1c171418ea99510cb04f1bdefc639
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 0ae39f91c4daa67c40c42022f63137f0b23daf80
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252800"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911071"
 ---
 # <a name="use-compliance-policies-to-set-rules-for-devices-you-manage-with-intune"></a>Använd efterlevnadsprinciper för att ange regler för enheter som du hanterar med Intune
 
@@ -143,8 +143,8 @@ Mer information om hur du använder villkorsstyrd åtkomst med dina efterlevnads
 
 Läs mer om villkorsstyrd åtkomst i Azure AD-dokumentationen:
 
-- [Vad är villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-- [Vad är en enhetsidentitet](https://docs.microsoft.com/azure/active-directory/device-management-introduction)
+- [Vad är villkorsstyrd åtkomst](/azure/active-directory/conditional-access/overview)
+- [Vad är en enhetsidentitet](/azure/active-directory/device-management-introduction)
 
 ### <a name="reference-for-non-compliance-and-conditional-access-on-the-different-platforms"></a>Referens för inkompatibilitet och villkorsstyrd åtkomst på olika plattformar
 

@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61053fff9d28193c8f4fc1731f72fe0052aba154
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: c7e2964281e26e695dcd58629601a34043ab0e55
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820501"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913791"
 ---
 # <a name="apply-features-and-settings-on-your-devices-using-device-profiles-in-microsoft-intune"></a>Tillämpa funktioner och inställningar på dina enheter med enhetsprofiler i Microsoft Intune
 
@@ -138,7 +138,7 @@ Den här funktionen stöder:
 
 ## <a name="education"></a>Utbildning
 
-Konfigurationsalternativen [Utbildningsinställningar – Windows 10](education-settings-configure.md) för [appen Windows Take a Test](https://docs.microsoft.com/education/windows/take-tests-in-windows-10). När du konfigurerar dessa alternativ kan inga andra appar köras på enheten förrän provet har slutförts.
+Konfigurationsalternativen [Utbildningsinställningar – Windows 10](education-settings-configure.md) för [appen Windows Take a Test](/education/windows/take-tests-in-windows-10). När du konfigurerar dessa alternativ kan inga andra appar köras på enheten förrän provet har slutförts.
 
 I [Utbildningsinställningar – iOS/iPadOS](../fundamentals/education-settings-configure-ios-shared.md) används iOS/iPadOS-appen Classroom som hjälp för och stöd till elevernas enheter i klassrummet. Du kan konfigurera iPad-enheter så att många elever kan dela en enda enhet.
 
@@ -157,7 +157,7 @@ Den här funktionen stöder:
 
 Med [slutpunktsskydd](../protect/endpoint-protection-configure.md) kan du konfigurera BitLocker- och Microsoft Defender-inställningar för Windows 10-enheter. Du kan även konfigurera brandvägg, gateway och andra resurser på macOS-enheter.
 
-Om du vill publicera Microsoft Defender Avancerat skydd (WDATP) med Microsoft Intune kan du läsa informationen om att [konfigurera slutpunkter med verktyg för hantering av mobilenheter (MDM)](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-mdm).
+Om du vill publicera Microsoft Defender Avancerat skydd (WDATP) med Microsoft Intune kan du läsa informationen om att [konfigurera slutpunkter med verktyg för hantering av mobilenheter (MDM)](/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-mdm).
 
 Den här funktionen stöder:
 

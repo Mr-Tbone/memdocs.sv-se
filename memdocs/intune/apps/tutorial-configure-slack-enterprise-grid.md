@@ -18,12 +18,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98ab8fd069b0542a29f61d9b0f5b69d7b82a8a1c
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 5daf488d878881c35db689fae0279c0312eb4c6a
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82074783"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915797"
 ---
 # <a name="tutorial-configure-slack-to-use-intune-for-emm-and-app-configuration"></a>Självstudie: Konfigurera Slack till att använda Intune för EMM och appkonfiguration
 
@@ -45,7 +45,7 @@ Du behöver en testklient med följande prenumerationer för den här självstud
 Du måste också en [Slack Enterprise Grid](https://get.slack.help/hc/articles/360004150931-What-is-Slack-Enterprise-Grid-)-plan.
 
 ## <a name="configure-your-slack-enterprise-grid-plan"></a>Konfigurera din Slack Enterprise Grid-plan
-Du aktiverar EMM för din Slack Enterprise Grid-plan genom att följa [Slacks instruktioner](https://get.slack.help/hc/articles/115002579426-Enable-Enterprise-Mobility-Management-for-your-org#step-2:-turn-on-emm) och [ansluta Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/slack-tutorial) som Grid-planens identitetsprovider (IDP).
+Du aktiverar EMM för din Slack Enterprise Grid-plan genom att följa [Slacks instruktioner](https://get.slack.help/hc/articles/115002579426-Enable-Enterprise-Mobility-Management-for-your-org#step-2:-turn-on-emm) och [ansluta Azure Active Directory](/azure/active-directory/saas-apps/slack-tutorial) som Grid-planens identitetsprovider (IDP).
 
 ## <a name="sign-in-to-intune"></a>Logga in i Intune
 Logga in till [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) som global administratör eller Intune-tjänstadministratör. Om du har skapat en prenumeration för en Intune-utvärdering, är det konto som du skapade prenumerationen med den globala administratören.

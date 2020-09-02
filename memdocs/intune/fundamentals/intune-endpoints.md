@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c9586b27ce5040eb683fa22510c7c9a51aeee1d
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: 0206af58be08130e67907bad18d7afa10e236d44
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87262548"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88912414"
 ---
 # <a name="network-endpoints-for-microsoft-intune"></a>Nätverksslutpunkter för Microsoft Intune  
 
@@ -91,7 +91,7 @@ Om du använder Intune för att distribuera PowerShell-skript eller Win32-appar 
 
 ## <a name="windows-push-notification-services-wns"></a>Windows Push Notification Services (WNS)  
 
-Kräv användning av Windows Push Notification Services (WNS) för Intune-hanterade Windows-enheter som hanteras med hjälp av hantering av mobilenheter (MDM), enhetsåtgärder och andra omedelbara aktiviteter. Mer information finns i [Allowing Windows Notification traffic through enterprise firewalls](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config) (Tillåta Windows-meddelandetrafik via företagets brandväggar).  
+Kräv användning av Windows Push Notification Services (WNS) för Intune-hanterade Windows-enheter som hanteras med hjälp av hantering av mobilenheter (MDM), enhetsåtgärder och andra omedelbara aktiviteter. Mer information finns i [Allowing Windows Notification traffic through enterprise firewalls](/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config) (Tillåta Windows-meddelandetrafik via företagets brandväggar).  
 
 ## <a name="delivery-optimization-port-requirements"></a>Portkrav för Leveransoptimering  
 
@@ -101,7 +101,7 @@ För peer-till-peer-trafik använder Leveransoptimering 7680 för TCP/IP eller 3
 
 ### <a name="proxy-requirements"></a>Proxykrav  
 
-Om du vill använda Leveransoptimering måste du tillåta byteintervallbegäran. Mer information finns i [Proxy requirements for Windows Update](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting) (Proxykrav för Windows Update).
+Om du vill använda Leveransoptimering måste du tillåta byteintervallbegäran. Mer information finns i [Proxy requirements for Windows Update](/windows/deployment/update/windows-update-troubleshooting) (Proxykrav för Windows Update).
 
 ### <a name="firewall-requirements"></a>Brandväggsförutsättningar  
 
@@ -125,10 +125,10 @@ Mer information finns i Apples [TCP- och UDP-portar som används av Apples progr
 
 ## <a name="android-port-information"></a>Portinformation för Android
 
-Beroende på hur du väljer att hantera Android-enheter kan du behöva öppna Google Android Enterprise-portar och push-meddelanden i Android. Mer information om vilka Android-hanteringsmetoder som stöds finns i [dokumentationen om Android-registrering](https://docs.microsoft.com/mem/intune/enrollment/android-enroll). 
+Beroende på hur du väljer att hantera Android-enheter kan du behöva öppna Google Android Enterprise-portar och push-meddelanden i Android. Mer information om vilka Android-hanteringsmetoder som stöds finns i [dokumentationen om Android-registrering](../enrollment/android-enroll.md). 
 
 > [!NOTE]
-> Eftersom Google Mobile Services inte är tillgängligt i Kina så kan inte enheter i Kina som hanteras med Intune använda funktioner som kräver Google Mobile Services. Funktionerna är: Google Play Protect-funktioner som enhetsattestering med SafetyNet, hantering av appar från Google Play Butik och Android Enterprise-funktioner (läs mer i den här [Google-dokumentationen](https://support.google.com/work/android/answer/6270910)). Appen Intune Företagsportal för Android använder dessutom Google Mobile Services till att kommunicera med Microsoft Intune-tjänsten. Eftersom Google Play-tjänsterna inte är tillgängliga i Kina, kan vissa uppgifter kräva upp till åtta timmar att slutföra. Mer information finns i den här [artikeln](https://docs.microsoft.com/mem/intune/apps/manage-without-gms#limitations-of-intune-device-administrator-management-when-gms-is-unavailable).
+> Eftersom Google Mobile Services inte är tillgängligt i Kina så kan inte enheter i Kina som hanteras med Intune använda funktioner som kräver Google Mobile Services. Funktionerna är: Google Play Protect-funktioner som enhetsattestering med SafetyNet, hantering av appar från Google Play Butik och Android Enterprise-funktioner (läs mer i den här [Google-dokumentationen](https://support.google.com/work/android/answer/6270910)). Appen Intune Företagsportal för Android använder dessutom Google Mobile Services till att kommunicera med Microsoft Intune-tjänsten. Eftersom Google Play-tjänsterna inte är tillgängliga i Kina, kan vissa uppgifter kräva upp till åtta timmar att slutföra. Mer information finns i den här [artikeln](../apps/manage-without-gms.md#limitations-of-intune-device-administrator-management-when-gms-is-unavailable).
 
 ### <a name="google-android-enterprise"></a>Google Android Enterprise 
 
@@ -140,4 +140,4 @@ Intune använder Google Firebase Cloud Messaging (FCM) för push-meddelanden om 
 
 ## <a name="endpoint-analytics"></a>Slutpunktsanalys
 
-Mer information om vilka slutpunkter som krävs för slutpunktsanalys finns i [Proxykonfiguration för slutpunktsanalys](https://docs.microsoft.com/mem/analytics/troubleshoot#bkmk_endpoints).
+Mer information om vilka slutpunkter som krävs för slutpunktsanalys finns i [Proxykonfiguration för slutpunktsanalys](../../analytics/troubleshoot.md#bkmk_endpoints).

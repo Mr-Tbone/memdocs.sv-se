@@ -15,12 +15,12 @@ ms.reviewer: pfetty
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a264b9a3b8f0ba15debe7e7323c106f09fa12c6
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: b4523db7f2c7bb27542e7cb3e909ece7c93a996f
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455250"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915423"
 ---
 # <a name="technology-decisions-for-enabling-byod-with-microsoft-enterprise-mobility--security-ems"></a>Teknikval för att kunna tillämpa BYOD med Microsoft Enterprise Mobility + Security (EMS)
 
@@ -33,7 +33,7 @@ I det här avsnittet går vi igenom ett enkelt exempel med hur du ger BYOD-åtko
 * Dina e-postkonton finns i Exchange Online
 
 ## <a name="common-reasons-to-manage-the-device-mdm"></a>Vanliga anledningar till att hantera enheten (MDM)
-Du kan enkelt få användarna att registrera sina enheter i enhetshanteringen genom att distribuera en princip för [villkorlig åtkomst](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Exchange Online. Anledningar till varför du kanske vill hantera personliga enheter:
+Du kan enkelt få användarna att registrera sina enheter i enhetshanteringen genom att distribuera en princip för [villkorlig åtkomst](/azure/active-directory/active-directory-conditional-access-azure-portal) i Exchange Online. Anledningar till varför du kanske vill hantera personliga enheter:
 
 **WiFi/VPN** – Om användarna behöver en företagsanslutningsprofil för att arbeta effektivt är det enkelt att konfigurera detta.
 

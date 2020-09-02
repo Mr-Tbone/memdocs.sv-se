@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4782c2a8f2c8791929ca4e585dab96031bf550fa
-ms.sourcegitcommit: f999131e513d50967f88795e400d5b089ebc5878
+ms.openlocfilehash: b487b9f921e40df8730fab235a2ec2c0d3f0f788
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85914621"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910867"
 ---
 # <a name="add-and-assign-mobile-threat-defense-mtd-apps-with-intune"></a>Lägg till och tilldela MTD-appar med Intune
 
@@ -45,7 +45,7 @@ Utför följande steg i Intune. Kontrollera att du vet hur man gör för att:
 
 ## <a name="configure-microsoft-authenticator-for-ios"></a>Konfigurera Microsoft Authenticator för iOS
 
-För iOS-enheter krävs [Microsoft Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) så att användarnas identiteter kan kontrolleras av Azure AD. Dessutom behövs en konfigurationsprincip för iOS-appar som konfigurerar MTD iOS-appen för användning med Intune.
+För iOS-enheter krävs [Microsoft Authenticator](/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) så att användarnas identiteter kan kontrolleras av Azure AD. Dessutom behövs en konfigurationsprincip för iOS-appar som konfigurerar MTD iOS-appen för användning med Intune.
 
 Läs anvisningarna för att [lägga till iOS Store-appar i Microsoft Intune](../apps/store-apps-ios.md). Använd [webbadressen till Microsoft Authenticator-apparna](https://itunes.apple.com/us/app/microsoft-authenticator/id983156458?mt=8) när du konfigurerar **appinformation**.
 
@@ -197,7 +197,7 @@ Välj det avsnitt som motsvarar din MTD-provider:
     5. Lägg till **Delegerad behörighet** till din app.
 
     > [!NOTE]
-    > Mer information finns i [configure a native client application with Azure AD](https://azure.microsoft.com/documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/#optional-configure-a-native-client-application) (konfigurera ett Native Client-program med Azure AD).
+    > Mer information finns i [configure a native client application with Azure AD](/azure/app-service/configure-authentication-provider-aad#optional-configure-a-native-client-application) (konfigurera ett Native Client-program med Azure AD).
 
   - **Lägg till IPA-filen för Lookout for Work.**
 

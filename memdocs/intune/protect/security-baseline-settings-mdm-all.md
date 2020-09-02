@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bfbb73772124ded12d520c6c5742d1576f50f82
-ms.sourcegitcommit: cb9b452f8e566fe026717b59c142b65f426e5033
+ms.openlocfilehash: 01df8f50da5b0665c1c29949c1ee2c954e47cc9f
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86491311"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914896"
 ---
 # <a name="windows-mdm-security-baseline-settings-for-intune"></a>Inställningar för Windows MDM-säkerhetsbaslinjer för Intune
 
@@ -57,7 +57,7 @@ Information om vad som har ändrats i den här versionen av baslinjen jämfört 
 
 ## <a name="above-lock"></a>På låsskärmen
 
-Mer information finns i [CSP-princip – AboveLock](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-abovelock) i Windows-dokumentationen.  
+Mer information finns i [CSP-princip – AboveLock](/windows/client-management/mdm/policy-csp-abovelock) i Windows-dokumentationen.  
 
 - **Blockera visning av popupmeddelanden**:  
   Med den här principinställningen kan du förhindra att appmeddelanden visas på låsskärmen. Om du aktiverar den här principinställningen visas inga appmeddelanden på låsskärmen. Om du inaktiverar eller inte konfigurerar den här principinställningen kan användarna välja vilka appar som ska visa aviseringar på låsskärmen.  
@@ -76,7 +76,7 @@ Mer information finns i [CSP-princip – AboveLock](https://docs.microsoft.com/w
 
 ## <a name="app-runtime"></a>Appkörning
 
-Mer information finns i [CSP – AppRuntime](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-appruntime) i Windows-dokumentationen.
+Mer information finns i [CSP – AppRuntime](/windows/client-management/mdm/policy-csp-appruntime) i Windows-dokumentationen.
 
 - **Microsoft-konton är valfria för Windows Store-appar**:  
   Med den här principinställningen kan du ange om Microsoft-konton är valfria för Windows Store-appar som kräver ett konto för inloggning. Den här principen påverkar bara Windows Store-appar som stöder den. Om du aktiverar den här principinställningen tillåter Windows Store-appar som vanligtvis kräver ett Microsoft-konto för inloggning att användarna loggar in med ett företagskonto i stället. Om du inaktiverar eller inte konfigurerar den här principinställningen måste användarna logga in med ett Microsoft-konto.  
@@ -86,7 +86,7 @@ Mer information finns i [CSP – AppRuntime](https://docs.microsoft.com/windows/
 
 ## <a name="application-management"></a>Programhantering
 
-Mer information finns i [CSP – ApplicationManagement](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement) i Windows-dokumentationen.
+Mer information finns i [CSP – ApplicationManagement](/windows/client-management/mdm/policy-csp-applicationmanagement) i Windows-dokumentationen.
 
 ::: zone-end
 ::: zone pivot="mdm-may-2019"
@@ -118,7 +118,7 @@ Mer information finns i [CSP – ApplicationManagement](https://docs.microsoft.c
 
 ## <a name="auto-play"></a>Spela upp automatiskt
 
-Mer information finns i [CSP-princip – Autoplay](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-autoplay) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Autoplay](/windows/client-management/mdm/policy-csp-autoplay) i Windows-dokumentationen.
 
 - **Spela upp automatiskt – standardbeteende för autorun**:  
   Den här inställningen påverkar standardbeteendet för Autorun-kommandon. Autorun-kommandon lagras i autorun.inf-filer och kan starta installationsprogram eller andra rutiner. När den här inställningen är *aktiverad* kan administratörer ändra standardbeteendet för automatisk körning på en enhet som kör Windows Vista eller senare. Beteendet kan anges till: a) inaktivera autorun-kommandon helt och hållet eller b) återgå till beteendet i äldre operativsystem än Windows Vista och kör autorun-kommandot automatiskt. När den här inställningen är *inaktiverad* eller om den *inte har konfigurerats* frågar enheter som kör Windows Vista eller senare användaren om ett autorun-kommando ska köras.  
@@ -140,7 +140,7 @@ Mer information finns i [CSP-princip – Autoplay](https://docs.microsoft.com/wi
 
 ## <a name="bitlocker"></a>BitLocker
 
-Mer information finns i [CSP-princip – Bitlocker](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-bitlocker) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Bitlocker](/windows/client-management/mdm/policy-csp-bitlocker) i Windows-dokumentationen.
 
 - **Princip för BitLocker på flyttbara enheter**:  
   Den här inställningen används för att styra krypteringsmetoden och krypteringsstyrkan. Värdena för den här principen avgör krypteringsstyrkan som BitLocker använder för kryptering. Företag kanske vill styra krypteringsnivån för ökad säkerhet (AES-256 är starkare än AES-128). Om du aktiverar den här inställningen kan du konfigurera en krypteringsalgoritm och krypteringsstyrkan för nycklar för fasta dataenheter, operativsystemenheter och flyttbara dataenheter separat. För fasta enheter och operativsystemenheter rekommenderar vi att du använder XTS-AES-algoritmen. För flyttbara dataenheter bör du använda AES-CBC 128-bitars eller AES-CBC 256-bitars om dataenheten används i andra enheter som inte kör Windows 10 version 1511 eller senare. Ändringar av krypteringsmetoden har ingen effekt om enheten redan har krypterats eller om kryptering pågår. I dessa fall ignoreras den här principinställningen.  
@@ -193,7 +193,7 @@ Mer information finns i [CSP-princip – Bitlocker](https://docs.microsoft.com/w
 
 ## <a name="browser"></a>Webbläsare
 
-Mer information finns i [CSP-princip – Browser](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-browser) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Browser](/windows/client-management/mdm/policy-csp-browser) i Windows-dokumentationen.
 
 - **Kräv SmartScreen för Microsoft Edge**:  
   Microsoft Edge använder som standard Microsoft Defender SmartScreen (aktiverat) för att skydda användarna mot potentiella nätfiskeförsök och skadlig programvara. Som standard kan användarna inte heller inaktivera (stänga av) Microsoft Defender SmartScreen. Om den här principen aktiveras inaktiveras Microsoft Defender SmartScreen och användarna kan inte aktivera funktionen. Konfigurera inte den här principen om du vill att användarna ska kunna aktivera och inaktivera Microsoft Defender SmartScreen.  
@@ -227,7 +227,7 @@ Mer information finns i [CSP-princip – Browser](https://docs.microsoft.com/win
 
 ## <a name="connectivity"></a>Anslutningar
 
-Mer information finns i avsnittet [CSP-princip – Connectivity](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-connectivity) i Windows-dokumentationen.
+Mer information finns i avsnittet [CSP-princip – Connectivity](/windows/client-management/mdm/policy-csp-connectivity) i Windows-dokumentationen.
 
 - **Blockera nedladdning från Internet för webbpublicerings- och onlinebeställningsguider**:  
   Den här principinställningen anger om Windows ska ladda ned en lista över leverantörer för webbpublicerings- och onlinebeställningsguider. Dessa guider låter användarna välja från en lista över företag som tillhandahåller tjänster, till exempel onlinelagring eller fotoutskrifter. Som standard visar Windows leverantörer som hämtats från en Windows-webbplats och leverantörer som angetts i registret. Om du aktiverar den här principinställningen laddar Windows inte ned leverantörer, och endast de tjänstleverantörer som cachelagras i det lokala registret visas. Om du inaktiverar eller inte konfigurerar den här principinställningen laddas en lista över leverantörer ned när användaren använder webbpublicerings- eller onlinebeställningsguider. Mer information med detaljer om hur du anger leverantörer i registret finns i dokumentationen för webbpublicerings- och onlinebeställningsguiderna.  
@@ -260,7 +260,7 @@ Mer information finns i avsnittet [CSP-princip – Connectivity](https://docs.mi
 
 ## <a name="credentials-delegation"></a>Delegering av autentiseringsuppgifter
 
-Mer information finns i [CSP-princip – CredentialsDelegation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-credentialsdelegation) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – CredentialsDelegation](/windows/client-management/mdm/policy-csp-credentialsdelegation) i Windows-dokumentationen.
 
 - **Delegering via fjärrvärd av icke exporterbara autentiseringsuppgifter**:  
   Fjärrvärden tillåter delegering av autentiseringsuppgifter som inte kan exporteras. När du använder delegering av autentiseringsuppgifter, ger enheter en exporteringsbar version av autentiseringsuppgifter till fjärrvärden vilket exponerar användare för risk för stöld av autentiseringsuppgifter från angripare på fjärrdatorn. Om du aktiverar den här principinställningen kan värden använda läget Restricted Admin (Begränsad administration) eller Remote Credential Guard (Fjärrskydd av autentiseringsuppgifter). Om du inaktiverar eller inte konfigurerar den här principinställningen stöds inte läget Restricted Admin (Begränsad administration) eller Remote Credential Guard (Fjärrskydd av autentiseringsuppgifter). Användaren måste alltid skicka sina autentiseringsuppgifter till värden.  
@@ -270,7 +270,7 @@ Mer information finns i [CSP-princip – CredentialsDelegation](https://docs.mic
 
 ## <a name="credentials-ui"></a>Användargränssnitt för autentiseringsuppgifter
 
-Mer information finns i [CSP-princip – CredentialsUI](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-credentialsui) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – CredentialsUI](/windows/client-management/mdm/policy-csp-credentialsui) i Windows-dokumentationen.
 
 - **Räkna upp administratörer**:  
   Den här principinställningen styr om administratörskonton visas när en användare försöker upphöja ett program som körs. Som standard visas inte administratörskonton när användaren försöker upphöja ett program som körs. Om du aktiverar den här principinställningen visas alla lokala administratörskonton på datorn så att användaren kan välja ett och ange rätt lösenord. Om du inaktiverar den här principinställningen måste användaren alltid ange ett användarnamn och lösenord för att upphöja ett program som körs.  
@@ -280,7 +280,7 @@ Mer information finns i [CSP-princip – CredentialsUI](https://docs.microsoft.c
 
 ## <a name="data-protection"></a>Dataskydd
 
-Mer information finns i [CSP-princip – DataProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dataprotection) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – DataProtection](/windows/client-management/mdm/policy-csp-dataprotection) i Windows-dokumentationen.
 
 - **Blockera direkt minnesåtkomst**:  
   Med den här principinställningen kan du blockera direkt minnesåtkomst (DMA) för alla underordnade PCI-portar med hot plug-stöd tills en användare loggar in i Windows. När en användare loggar in räknar Windows upp PCI-enheterna som är anslutna till PCI-portarna med hot plug-stöd. Varje gång användaren låser datorn blockeras DMA på PCI-portarna med hot plug-stöd utan underordnade enheter tills användaren loggar in igen. Enheter som räknades upp när datorn var upplåst fortsätter att fungera tills de kopplas från. Den här principinställningen tillämpas endast när BitLocker- eller enhetskryptering är aktiverat.  
@@ -290,7 +290,7 @@ Mer information finns i [CSP-princip – DataProtection](https://docs.microsoft.
 
 ## <a name="device-guard"></a>Device Guard
 
-Mer information finns i [CSP-princip – DeviceGuard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceguard) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – DeviceGuard](/windows/client-management/mdm/policy-csp-deviceguard) i Windows-dokumentationen.
 
 - **Aktivera Credential Guard**:  
   Den här principinställningen tillåter att användarna aktiverar Credential Guard (Autentiseringsskydd) med virtualiseringsbaserad säkerhet för att skydda autentiseringsuppgifterna vid nästa omstart.  
@@ -318,11 +318,11 @@ Mer information finns i [CSP-princip – DeviceGuard](https://docs.microsoft.com
 
 ## <a name="device-installation"></a>Enhetsinstallation
 
-Mer information finns i [CSP-princip – DeviceInstallation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – DeviceInstallation](/windows/client-management/mdm/policy-csp-deviceinstallation) i Windows-dokumentationen.
 
 - **Installation av maskinvaruenheter efter enhets-ID**:  
   Med den här principinställningen kan du ange en lista med ID:n för Plug and Play-maskinvara och kompatibla ID:n för enheter som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen kan Windows inte installera en enhet vars maskinvaru-ID eller kompatibla ID visas i listan som du skapar. Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern. Om du inaktiverar eller inte konfigurerar den här principinställningen kan enheter installera och uppdatera beroende på om de tillåts eller förhindras av andra principinställningar.  
-  [Läs mer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids)
+  [Läs mer](/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdeviceids)
 
   **Standard**: Blockera installation av maskinvaruenheter
 
@@ -340,7 +340,7 @@ Mer information finns i [CSP-princip – DeviceInstallation](https://docs.micros
 
 - **Installation av maskinvaruenheter efter installationsklass**:  
   Med den här principinställningen kan du ange en lista med klass-GUID för enhetsinstallation för enhetsdrivrutiner som Windows hindrar från att installeras. Den här inställningen har företräde framför alla andra principinställningar som tillåter att Windows installerar en enhet. Om du aktiverar den här principinställningen kan inte Windows installera eller uppdatera enhetsdrivrutiner vars klass-GUID för enhetsinstallation visas i listan du skapar. Om du aktiverar den här principinställningen på en fjärrskrivbordsserver påverkar principinställningen omdirigeringen av de angivna enheterna från en fjärrskrivbordsklient till fjärrskrivbordsservern. Om du inaktiverar eller inte konfigurerar den här principinställningen kan Windows installera och uppdatera enheter beroende på om de tillåts eller förhindras av andra principinställningar.  
-  [Läs mer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdevicesetupclasses)
+  [Läs mer](/windows/client-management/mdm/policy-csp-deviceinstallation#deviceinstallation-preventinstallationofmatchingdevicesetupclasses)
 
   **Standard**: Blockera installation av maskinvaruenheter
 
@@ -358,7 +358,7 @@ Mer information finns i [CSP-princip – DeviceInstallation](https://docs.micros
 
 ## <a name="device-lock"></a>Enhetslås
 
-Mer information finns i [CSP-princip – DeviceLock](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-devicelock) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – DeviceLock](/windows/client-management/mdm/policy-csp-devicelock) i Windows-dokumentationen.
 
 - **Förhindra användning av kamera**:  
   Inaktiverar kameraväxlingsreglaget på låsskärmen i Datorinställningar och förhindrar att en kamera anropas på låsskärmen. Som standard kan användare aktivera anrop av en tillgänglig kameran på låsskärmen. Om du aktiverar den här inställningen kan användarna inte längre aktivera eller inaktivera kameraåtkomst på låsskärmen i Datorinställningar, och kameran kan inte anropas på låsskärmen.  
@@ -436,11 +436,11 @@ Mer information finns i [CSP-princip – DeviceLock](https://docs.microsoft.com/
 
 ## <a name="dma-guard"></a>DMA Guard
 
-Mer information finns i [CSP-princip – DmaGuard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – DmaGuard](/windows/client-management/mdm/policy-csp-dmaguard) i Windows-dokumentationen.
 
 - **Uppräkning av externa enheter som är inkompatibla med Kernel DMA-skydd**:  
   Den här principen är avsedd att ge ytterligare skydd mot externa DMA-kompatibla enheter. Det möjliggör större kontroll över uppräkning av externa DMA-kompatibla enheter som inte är kompatibla med minnesisolering och sandbox-miljö för DMA-mappning/-enhet. Den här principen börjar bara gälla när Kernel DMA-skydd stöds och aktiveras av datorns inbyggda programvara. Kernel DMA-skydd är en plattformsfunktion som inte kan styras via en princip eller av slutanvändaren. Den måste stödjas av systemet vid tidpunkten för tillverkning. Om du vill kontrollera om systemet har stöd för kernel DMA-skydd kontrollerar du fältet Kernel DMA-skydd på sammanfattningssidan i MSINFO32.exe.  
-  [Läs mer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
+  [Läs mer](/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
 
   **Standard**: Blockera alla
 
@@ -449,7 +449,7 @@ Mer information finns i [CSP-princip – DmaGuard](https://docs.microsoft.com/wi
 
 ## <a name="event-log-service"></a>Händelseloggtjänsten
 
-Mer information finns i [CSP-princip – EventLogService](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-eventlogservice) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – EventLogService](/windows/client-management/mdm/policy-csp-eventlogservice) i Windows-dokumentationen.
 
 - **Största filstorlek i kB för säkerhetslogg**:  
   Den här principinställningen anger den högsta storleken för loggfilen i kilobyte. Om du aktiverar den här principinställningen kan du konfigurera den största storleken för loggfilen till mellan 1 megabyte (1 024 kB) och 2 terabyte (2 147 483 647 kilobyte) i steg om en kilobyte. Om du inaktiverar eller inte konfigurerar den här principinställningen används det lokalt konfigurerade värdet som den maximala storleken för loggfilen. Det här värdet kan ändras av den lokala administratören med hjälp av dialogrutan Egenskaper för logg och har som standard värdet 20 MB.  
@@ -471,7 +471,7 @@ Mer information finns i [CSP-princip – EventLogService](https://docs.microsoft
 
 ## <a name="experience"></a>Erfarenhet
 
-Mer information finns i [CSP-princip – Experience](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-experience) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Experience](/windows/client-management/mdm/policy-csp-experience) i Windows-dokumentationen.
 
 - **Blockera Windows Spotlight**:  
   Gör det möjligt för IT-administratörer att stänga av (blockera) alla Windows Spotlight-funktioner. Det omfattar Windows Spotlight på låsskärmen, Windows-tips, Microsoft-konsumentfunktioner och liknande funktioner.  
@@ -495,7 +495,7 @@ Mer information finns i [CSP-princip – Experience](https://docs.microsoft.com/
 
 ## <a name="exploit-guard"></a>Sårbarhetsskydd
 
-Mer information finns i [CSP-princip – ExploitGuard](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-exploitguard) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – ExploitGuard](/windows/client-management/mdm/policy-csp-exploitguard) i Windows-dokumentationen.
 
 - **Ladda upp XML**:  
   Gör det möjligt för IT-administratören att distribuera en konfiguration som representerar önskade system- och programskyddsalternativ till alla enheter i organisationen. Konfigurationen representeras av en XML-sträng. Sårbarhetsskydd hjälper dig att skydda enheter mot skadlig kod som utnyttjar kryphål för att spridas och infektera. Du kan använda Windows Security-appen eller PowerShell för att skapa en uppsättning skyddsåtgärder (kallas en konfiguration). Du kan exportera den här konfigurationen som en XML-fil och dela den med flera datorer i nätverket så att alla har samma uppsättning skyddsåtgärder. Du kan också konvertera och importera en befintlig EMET XML-konfigurationsfil till en XML-konfigurationsfil för sårbarhetsskydd.  
@@ -505,7 +505,7 @@ Mer information finns i [CSP-princip – ExploitGuard](https://docs.microsoft.co
 
 ## <a name="file-explorer"></a>Utforskaren
 
-Mer information finns i [CSP-princip – FileExplorer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-fileexplorer) i Windows-dokumentationen.  
+Mer information finns i [CSP-princip – FileExplorer](/windows/client-management/mdm/policy-csp-fileexplorer) i Windows-dokumentationen.  
 
 - **Blockera dataexekveringsskydd**:  
   Om dataexekveringsskydd inaktiveras kan vissa äldre plugin-program fungera utan att Explorer avslutas.  
@@ -521,7 +521,7 @@ Mer information finns i [CSP-princip – FileExplorer](https://docs.microsoft.co
 
 ## <a name="firewall"></a>Brandvägg
 
-Mer information finns i [2.2.2 FW_PROFILE_TYPE]( https://docs.microsoft.com/openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) i dokumentationen för Windows-protokoll.
+Mer information finns i [2.2.2 FW_PROFILE_TYPE]( /openspecs/windows_protocols/ms-fasp/7704e238-174d-4a5e-b809-5f3787dd8acc) i dokumentationen för Windows-protokoll.
 
 - **Domän för brandväggsprofil**:  
   Anger de profiler som regeln tillhör: Domän, Privat eller Allmän. Det här värdet representerar profilen för nätverk som är anslutna till domäner.  
@@ -579,7 +579,7 @@ Mer information finns i [2.2.2 FW_PROFILE_TYPE]( https://docs.microsoft.com/open
 
 ## <a name="internet-explorer"></a>Internet Explorer
 
-Mer information finns i [CSP-princip – InternetExplorer](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-internetexplorer) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – InternetExplorer](/windows/client-management/mdm/policy-csp-internetexplorer) i Windows-dokumentationen.
 
 - **Internet Explorer: uppdateringar av statusfältet via skript i zonen Begränsad**:  
   Med den här principinställningen kan du bestämma om skript ska tillåtas att uppdatera statusfältet i zonen.
@@ -1340,7 +1340,7 @@ Mer information finns i [CSP-princip – InternetExplorer](https://docs.microsof
 
 ## <a name="local-policies-security-options"></a>Säkerhetsalternativ för lokala principer
 
-Mer information finns i [CSP-princip – LocalPoliciesSecurityOptions](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – LocalPoliciesSecurityOptions](/windows/client-management/mdm/policy-csp-localpoliciessecurityoptions) i Windows-dokumentationen.
 
 - **Begränsa anonym åtkomst till namngivna pipes och resurser**:  
   När den här säkerhetsinställningen är aktiverad begränsar den anonym åtkomst för resurser och pipes till inställningar för: (1) Namngivna pipes som kan nås anonymt (2) Resurser som kan nås anonymt.  
@@ -1548,14 +1548,14 @@ Mer information finns i [CSP-princip – LocalPoliciesSecurityOptions](https://d
 
 ## <a name="microsoft-defender"></a>Microsoft Defender
 
-Mer information finns i [CSP-princip – Defender](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Defender](/windows/client-management/mdm/policy-csp-defender) i Windows-dokumentationen.
 
 ::: zone-end
 ::: zone pivot="mdm-may-2019"
 
 - **Blockera Adobe Reader från att skapa underordnade processer**:  
 Den här regeln förhindrar attacker genom att blockera Adobe Reader från att skapa ytterligare processer. Via sociala tekniker eller kryphål kan skadlig kod ladda ned och starta ytterligare nyttolaster och bryta ut från Adobe Reader. Om du blockerar underordnade processer från att genereras av Adobe Reader förhindras skadlig kod, som försöker att använda den som en vektor, från att spridas.
-[Läs mer](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction)
+[Läs mer](/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction)
 
   **Standard**: Aktivera
 
@@ -1670,7 +1670,7 @@ Den här regeln förhindrar attacker genom att blockera Adobe Reader från att s
   **Standard**: Aktivera
 
 - **Potentiellt oönskad appåtgärd i Defender**:  
-  CSP: [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)+
+  CSP: [Defender/PUAProtection](/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)+
 
   Funktionen för skydd mot potentiellt oönskade program (PUA, Potentially Unwanted Application) i Microsoft Defender Antivirus kan identifiera och hindra potentiellt oönskade program från att hämtas och installeras på slutpunkter i ditt nätverk. Dessa program betraktas inte som virus, skadlig kod eller andra typer av hot, men kan utföra åtgärder på slutpunkter som negativt påverkar deras prestanda eller användning. Potentiellt oönskade program syftar även på program med dåligt rykte. Exempel på potentiellt oönskade program är: Olika typer av programvarupaket, AD-inmatning i webbläsare, drivrutins- och registeroptimerare som identifierar problem och begär betalning för att åtgärda felen, men som finns kvar på slutpunkten utan att göra några ändringar eller optimeringar (även kallade ”falska” antivirusprogram). Dessa program kan öka risken för att nätverket infekteras av skadlig kod, orsaka att infektioner av skadlig kod är vara svårare att identifiera och slösa på IT-resurser vid rensning av program.
 
@@ -1715,7 +1715,7 @@ Den här regeln förhindrar attacker genom att blockera Adobe Reader från att s
 
 ## <a name="ms-security-guide"></a>MS-Säkerhetsguide
 
-Mer information finns i [CSP-princip – MSSecurityGuide](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-mssecurityguide) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – MSSecurityGuide](/windows/client-management/mdm/policy-csp-mssecurityguide) i Windows-dokumentationen.
 
 - **Använd UAC-begränsningar för lokala konton vid nätverksinloggning**:  
   [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067188)
@@ -1744,7 +1744,7 @@ Mer information finns i [CSP-princip – MSSecurityGuide](https://docs.microsoft
 
 ## <a name="mss-legacy"></a>MSS Legacy
 
-Mer information finns i [CSP-princip – MSSLegacy](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-msslegacy) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – MSSLegacy](/windows/client-management/mdm/policy-csp-msslegacy) i Windows-dokumentationen.
 
 - **Skyddsnivå för routning för IP-nätverkskälla**:  
   [Läs mer](https://go.microsoft.com/fwlink/?linkid=2067220)
@@ -1768,7 +1768,7 @@ Mer information finns i [CSP-princip – MSSLegacy](https://docs.microsoft.com/w
 
 ## <a name="power"></a>Ström
 
-Mer information finns i [CSP-princip – Power](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-power) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Power](/windows/client-management/mdm/policy-csp-power) i Windows-dokumentationen.
 
 - **Kräv lösenord när datorn aktiveras och är ansluten**:  
   Den här principinställningen anger huruvida användaren uppmanas att ange ett lösenord när datorn återgår från strömsparläge. Om du aktiverar eller inte konfigurerar den här principinställningen uppmanas användaren att ange ett lösenord när datorn återgår från strömsparläge. Om du inaktiverar den här principinställningen uppmanas inte användaren att ange ett lösenord när datorn återgår från strömsparläge.  
@@ -1799,7 +1799,7 @@ Mer information finns i [CSP-princip – Power](https://docs.microsoft.com/windo
 
 ## <a name="remote-assistance"></a>Fjärrhjälp
 
-Mer information finns i [CSP-princip – RemoteAssistance](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-remoteassistance#remoteassistance-solicitedremoteassistance) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – RemoteAssistance](/windows/client-management/mdm/policy-csp-remoteassistance#remoteassistance-solicitedremoteassistance) i Windows-dokumentationen.
 
 - **Begärd fjärrhjälp**:  
   Med den här principinställningen kan du aktivera eller inaktivera funktionen Begärd fjärrhjälp på den här datorn.
@@ -1836,7 +1836,7 @@ Mer information finns i [CSP-princip – RemoteAssistance](https://docs.microsof
 
 ## <a name="remote-desktop-services"></a>Fjärrskrivbordstjänster
 
-Mer information finns i [CSP-princip – RemoteDesktopServices](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-remotedesktopservices) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – RemoteDesktopServices](/windows/client-management/mdm/policy-csp-remotedesktopservices) i Windows-dokumentationen.
 
 - **Tillåt inte att lösenord sparas**:  
   Styr om lösenord kan sparas på den här datorn från Anslutning till fjärrskrivbord. Om du aktiverar den här inställningen inaktiveras kryssrutan om att spara lösenord i Anslutning till fjärrskrivbord, och användarna kan inte längre spara lösenord. När en användare öppnar en RDP-fil med hjälp av Anslutning till fjärrskrivbord och sparar sina inställningar tas eventuella lösenord som tidigare fanns i RDP-filen bort. Om du inaktiverar den här inställningen eller inte konfigurerar den kan användaren spara lösenord med hjälp av Anslutning till fjärrskrivbord.  
@@ -1878,7 +1878,7 @@ Mer information finns i [CSP-princip – RemoteDesktopServices](https://docs.mic
 
 ## <a name="remote-management"></a>Fjärrhantering
 
-Mer information finns i [CSP-princip – RemoteManagement](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-remotemanagement) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – RemoteManagement](/windows/client-management/mdm/policy-csp-remotemanagement) i Windows-dokumentationen.
 
 - **Blockera lagring av körning som autentiseringsuppgifter**:  
   Grundläggande klientautentisering.  
@@ -1918,7 +1918,7 @@ Mer information finns i [CSP-princip – RemoteManagement](https://docs.microsof
 
 ## <a name="remote-procedure-call"></a>RPC (Remote Procedure Call)
 
-Mer information finns i [CSP-princip – RemoteProcedureCall](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-remoteprocedurecall) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – RemoteProcedureCall](/windows/client-management/mdm/policy-csp-remoteprocedurecall) i Windows-dokumentationen.
 
 - **Alternativ för oautentiserad klient med RPC**:  
   Den här principinställningen styr hur RPC-serverkörningar hanterar oautentiserade RPC-klienter som ansluter till RPC-servrar. Den här principinställningen påverkar alla RPC-program. I en domänmiljö ska den här principinställningen används med försiktighet eftersom den kan påverka en mängd olika funktioner, inklusive själva bearbetningen av grupprinciper. Återställning av ändringar i den här principinställningen kan kräva manuella åtgärder på varje dator som påverkas. Tillämpa inte den här principinställningen på en domänkontrollant. Om du inaktiverar den här inställningen använder RPC-serverkörningen värdet ”Autentiserad” på Windows-klienten och värdet ”Ingen” i Windows Server-versioner som stöder den här principinställningen. Om du inte konfigurerar den här principinställningen förblir den inaktiverad. RPC-serverkörningen beter sig som om den vore aktiverad med värdet ”Autentiserad” för Windows-klienter och värdet ”Ingen” för Server-SKU:er som har stöd för den här principinställningen. Om du aktiverar den här principinställningen beordras RPC-serverkörningen att begränsa oautentiserade RPC-klienter som ansluter till RPC-servrar på en dator. En klient betraktas som en autentiserad klient om den använder en namngiven pipe för att kommunicera med servern eller om den använder RPC-säkerhet. RPC-gränssnitt som uttryckligen har begärt att vara tillgängliga för oautentiserade klienter kan undantas från den här begränsningen, beroende på det valda värdet för den här principinställningen.
@@ -1935,7 +1935,7 @@ Mer information finns i [CSP-princip – RemoteProcedureCall](https://docs.micro
 
 ## <a name="search"></a>Sök
 
-Mer information finns i [CSP-princip – Search](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-search) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Search](/windows/client-management/mdm/policy-csp-search) i Windows-dokumentationen.
 
 - **Inaktivera indexering av krypterade objekt**:  
   Tillåter eller nekar indexering av objekt. Den här växeln används för Windows Search-indexeraren och styr om objekt som är krypterade indexeras, till exempel WIP-skyddade filer (Windows Information Protection). När principen är aktiverad indexeras Windows informationsskyddade objekt och deras metadata lagras på en okrypterad plats. Dessa metadata innehåller exempelvis ändrade sökvägar och datum. När principen är inaktiverad indexeras inte WIP-skyddade objekt, och resultaten visas inte i Cortana eller Utforskaren. Det kan också förekomma en prestandapåverkan på foton och Groove-appar om det finns många Windows informationsskyddade mediefiler på enheten.  
@@ -1945,7 +1945,7 @@ Mer information finns i [CSP-princip – Search](https://docs.microsoft.com/wind
 
 ## <a name="smart-screen"></a>Smart skärm
 
-Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-smartscreen) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – SmartScreen](/windows/client-management/mdm/policy-csp-smartscreen) i Windows-dokumentationen.
 
 ::: zone-end
 ::: zone pivot="mdm-preview"
@@ -1991,7 +1991,7 @@ Mer information finns i [CSP-princip – SmartScreen](https://docs.microsoft.com
 
 ## <a name="system"></a>System
 
-Mer information finns i [CSP-princip – System](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-system) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – System](/windows/client-management/mdm/policy-csp-system) i Windows-dokumentationen.
 
 - **Initiering av startdrivrutiner för systemstart**:  
   Med den här principinställningen kan du ange vilka startdrivrutiner för systemstart som ska initieras baserat på en klassificering som bestäms av en ELAM-startdrivrutin (Early Launch Antimalware). ELAM-startdrivrutinen (Early Launch Antimalware) kan returnera följande klassificeringar för varje startdrivrutin:
@@ -2011,7 +2011,7 @@ Mer information finns i [CSP-princip – System](https://docs.microsoft.com/wind
 
 ## <a name="wi-fi"></a>Wi-Fi
 
-Mer information finns i [CSP-princip – Wifi](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-wifi) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – Wifi](/windows/client-management/mdm/policy-csp-wifi) i Windows-dokumentationen.
 
 - **Blockera Internetdelning**:  
   Anger om Internetdelning är möjligt på enheten.  
@@ -2027,7 +2027,7 @@ Mer information finns i [CSP-princip – Wifi](https://docs.microsoft.com/window
 
 ## <a name="windows-connection-manager"></a>Windows Connection Manager
 
-Mer information finns i [CSP-princip – WindowsConnectionManager](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsconnectionmanager) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – WindowsConnectionManager](/windows/client-management/mdm/policy-csp-windowsconnectionmanager) i Windows-dokumentationen.
 
 - **Blockera anslutning till icke-domänbaserade nätverk**:  
   Den här principinställningen förhindrar att datorer ansluter till både ett domänbaserat nätverk och ett icke-domänbaserat nätverk på samma gång. Om den här principinställningen är aktiverad svarar datorn på automatiska och manuella anslutningsförsök baserat på följande villkor:
@@ -2086,7 +2086,7 @@ Mer information finns i [CSP-princip – WindowsConnectionManager](https://docs.
 
 ## <a name="windows-ink-workspace"></a>Windows Ink-arbetsytan
 
-Mer information finns i [CSP-princip – WindowsInkWorkspace](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowsinkworkspace) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – WindowsInkWorkspace](/windows/client-management/mdm/policy-csp-windowsinkworkspace) i Windows-dokumentationen.
 
 - **Ink-arbetsytan**:  
   Anger huruvida användaren ska få åtkomst till Ink-arbetsytan.
@@ -2103,7 +2103,7 @@ Mer information finns i [CSP-princip – WindowsInkWorkspace](https://docs.micro
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 
-Mer information finns i [CSP-princip – WindowsPowerShell](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-windowspowershell) i Windows-dokumentationen.
+Mer information finns i [CSP-princip – WindowsPowerShell](/windows/client-management/mdm/policy-csp-windowspowershell) i Windows-dokumentationen.
 
 - **Loggning av PowerShell-skriptblock**:  
   Den här inställningen aktiverar loggning av alla PowerShell-skriptindata i Microsoft-Windows-PowerShell/Operational-händelseloggen. Om du aktiverar den här principinställningen loggar Windows PowerShell bearbetningen av kommandon, skriptblock, funktioner och skript – oavsett om de anropas interaktivt eller via automatisering. Om du inaktiverar den här principinställningen inaktiveras loggning av PowerShell-skriptindata. Om du aktiverar loggning av indata av skriptblock loggar PowerShell även händelser om anrop av ett kommando, skriptblock, funktion eller skript startar eller stoppar. Om du aktiverar loggning av anrop genereras ett stort antal händelseloggar. Obs! Den här principinställningen finns under både Datorkonfiguration och Användarkonfiguration i redigeraren för grupprinciper. Principinställningen Datorkonfiguration ges företräde framför principinställningen Användarkonfiguration.  

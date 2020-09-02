@@ -19,12 +19,12 @@ ms.reviewer: coferro
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 77643d689a2a5693b71f85a7e82b98bddec9a646
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: b61265a1c278b83a91ac1e353794a358dcc5fdb3
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881468"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915525"
 ---
 # <a name="reset-device-from-company-portal-website"></a>Återställa enhet från webbplatsen Företagsportal
 
@@ -32,7 +32,7 @@ ms.locfileid: "83881468"
 
 När du har återställt en enhet visas den inte längre i företagsportalen. Tidigare befintliga appar och filer tas bort, och enheten återställs till fabriksinställningarna. 
 
-Återställning av enhet är i Företagsportalen är inte tillgängligt för alla iOS-enheter. Om du arbetar med IT-support och vill veta mer om återställning av enheter och dess begränsningar kan du läsa [Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten](https://docs.microsoft.com/intune/devices-wipe).  
+Återställning av enhet är i Företagsportalen är inte tillgängligt för alla iOS-enheter. Om du arbetar med IT-support och vill veta mer om återställning av enheter och dess begränsningar kan du läsa [Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten](/intune/devices-wipe).  
 
 > [!Note]
 > Du kan även utföra följande steg från en annan enhet som du har registrerat. Öppna företagsportalappen och gå igenom stegen för en liknande återställning. 

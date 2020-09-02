@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d02329f65d7b7ecec1dbfeaf84ecbe5c8fb53013
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: e986021bb4d575ec3269e97b228cc381e1f2cf72
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079492"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910901"
 ---
 # <a name="quickstart-send-notifications-to-noncompliant-devices"></a>Snabbstart: Skicka meddelanden till icke-kompatibla enheter
 
 I den här snabbstarten kommer du att använda Microsoft Intune för att skicka ett e-postmeddelande till de användare i personalen som har icke-kompatibla enheter.
 
-När Intune identifierar en enhet som inte är kompatibel, markerar Intune omedelbart enheten som inkompatibel som standard. Den [villkorliga åtkomsten](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (Azure AD) blockerar sedan enheten. När en enhet inte är kompatibel gör Intune att du kan lägga till åtgärder för icke-kompatibilitet, vilket ger mer flexibilitet när du ska bestämma dig för vad du bör göra. Du kan till exempel ge användarna en respitperiod för att uppnå kompatibilitet innan icke-kompatibla enheter blockeras.
+När Intune identifierar en enhet som inte är kompatibel, markerar Intune omedelbart enheten som inkompatibel som standard. Den [villkorliga åtkomsten](/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (Azure AD) blockerar sedan enheten. När en enhet inte är kompatibel gör Intune att du kan lägga till åtgärder för icke-kompatibilitet, vilket ger mer flexibilitet när du ska bestämma dig för vad du bör göra. Du kan till exempel ge användarna en respitperiod för att uppnå kompatibilitet innan icke-kompatibla enheter blockeras.
 
 En åtgärd som ska vidtas när en enhet inte är kompatibel är att skicka e-postmeddelande till enhetsanvändaren. Du kan även anpassa ett e-postmeddelande innan det skickas. Specifikt kan du anpassa mottagare, ämne, brödtext, företagslogotyp och kontaktinformation. Intune inkluderar även information om den icke-kompatibla enheten i e-postmeddelandet.
 
@@ -37,7 +37,7 @@ Om du inte har en Intune-prenumeration [kan du registrera dig för ett kostnadsf
 
 ## <a name="prerequisites"></a>Krav
 
-Du måste ha konfigurerat villkorlig Azure AD-åtkomst när du använder principer för enhetsefterlevnad till att blockera enheter från företagets resurser. Om du har slutfört snabbstarten [Skapa en enhetsefterlevnadsprincip](quickstart-set-password-length-android.md) använder du Azure Active Directory. Mer information om Azure Active Directory finns i [Villkorlig åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) och [Vanliga sätt att använda villkorlig åtkomst med Intune](../protect/conditional-access-intune-common-ways-use.md).
+Du måste ha konfigurerat villkorlig Azure AD-åtkomst när du använder principer för enhetsefterlevnad till att blockera enheter från företagets resurser. Om du har slutfört snabbstarten [Skapa en enhetsefterlevnadsprincip](quickstart-set-password-length-android.md) använder du Azure Active Directory. Mer information om Azure Active Directory finns i [Villkorlig åtkomst i Azure Active Directory](/azure/active-directory/active-directory-conditional-access-azure-portal) och [Vanliga sätt att använda villkorlig åtkomst med Intune](../protect/conditional-access-intune-common-ways-use.md).
 
 ## <a name="sign-in-to-intune"></a>Logga in i Intune
 

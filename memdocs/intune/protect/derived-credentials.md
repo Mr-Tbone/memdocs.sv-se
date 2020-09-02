@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25d3813d79ec20cc396c3127be6be5371c20247f
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: a83d6301ffe5663abd6025c8f52b2e7a7e0b7982
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461192"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911122"
 ---
 # <a name="use-derived-credentials-in-microsoft-intune"></a>Använda härledda autentiseringsuppgifter i Microsoft Intune
 
@@ -119,8 +119,8 @@ Nedan visas viktiga överväganden för varje partner som stöds.  Bekanta dig m
 
 Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
 
-- [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-disa-purebred)
-- [Fullständigt hanterade Android Enterprise-enheter](https://docs.microsoft.com/mem/intune/user-help/enroll-android-device-disa-purebred)
+- [iOS- och iPadOS](/intune-user-help/enroll-ios-device-disa-purebred)
+- [Fullständigt hanterade Android Enterprise-enheter](../user-help/enroll-android-device-disa-purebred.md)
 
 **Viktiga krav är**:
 
@@ -138,7 +138,7 @@ Information om hur du hämtar och konfigurerar DISA Purebred-appen finns i [Dist
 
 Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
 
-- [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-entrust-datacard)
+- [iOS- och iPadOS](/intune-user-help/enroll-ios-device-entrust-datacard)
 - [Fullständigt hanterade Android Enterprise-enheter](../user-help/enroll-android-device-entrust-datacard.md)
 
 **Viktiga krav är**:
@@ -156,7 +156,7 @@ Granska det plattformsspecifika användararbetsflödet för de enheter som du sk
 
 Granska det plattformsspecifika användararbetsflödet för de enheter som du ska använda med härledda autentiseringsuppgifter.
 
-- [iOS- och iPadOS](https://docs.microsoft.com/intune-user-help/enroll-ios-device-intercede)
+- [iOS- och iPadOS](/intune-user-help/enroll-ios-device-intercede)
 - [Fullständigt hanterade Android Enterprise-enheter](../user-help/enroll-android-device-intercede.md)
 
 **Viktiga krav är**:

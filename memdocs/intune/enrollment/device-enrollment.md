@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5d673c5688c4ab4f3219256412a098855af63ec
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: a82eb416021e86347818c333e74f31318b0661ce
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461887"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908674"
 ---
 # <a name="what-is-device-enrollment-in-intune"></a>Vad är enhetsregistrering i Intune?
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -59,16 +59,16 @@ Som standard Som standard tillåts enheter för alla plattformar registreras i I
 |**[BYOD](#bring-your-own-device)** | Nej | Ja | Nej | [Mer information](windows-enroll.md)|
 |**[DEM](#device-enrollment-manager)**| Nej |Nej |Nej |[Mer information](device-enrollment-manager-enroll.md)|
 |**Registrera automatiskt** | Nej |Ja |Nej | [Mer information](windows-enroll.md#enable-windows-10-automatic-enrollment)|
-|**Autopilot** |Ja |Ja |Nej | [Mer information](enrollment-autopilot.md)
+|**Autopilot** |Ja |Ja |Nej | [Mer information](../../autopilot/enrollment-autopilot.md)
 |**Massregistrering** |Nej |Nej |Nej | [Mer information](windows-bulk-enroll.md) |
-|**Samhantering** |Nej |Ja |Nej | [Mer information](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview)
-|**GPO** |Nej |Ja |Nej | [Mer information](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)
+|**Samhantering** |Nej |Ja |Nej | [Mer information](/configmgr/core/clients/manage/co-management-overview)
+|**GPO** |Nej |Ja |Nej | [Mer information](/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)
 
 ## <a name="android-enrollment-methods"></a>Metoder för Android-registrering
 
 | **Personligt** | **Registreringsmetoder** | **Återställning krävs** | **Användartillhörighet** | **Låst** | **Information**|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|**Administratör för Android-enhet**|**Användarinitierat via företagsportalen** | Nej | Ja | Nej | [Mer information](https://docs.microsoft.com/mem/intune/user-help/enroll-device-android-company-portal)|
+|**Administratör för Android-enhet**|**Användarinitierat via företagsportalen** | Nej | Ja | Nej | [Mer information](../user-help/enroll-device-android-company-portal.md)|
 |**Android Enterprise-arbetsprofil**|**Användarinitierat via företagsportalen**| Nej | Ja | Nej | [Mer information](android-work-profile-enroll.md)|
 
 

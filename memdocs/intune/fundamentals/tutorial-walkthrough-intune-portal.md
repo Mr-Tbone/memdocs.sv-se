@@ -18,16 +18,16 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22910604d19aecb37adef2452d01d46c1435f7ef
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 544257bfb0fc844560cdbb1522345f4f8be63555
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79355263"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907015"
 ---
 # <a name="tutorial-walkthrough-of-microsoft-intune-in-the-azure-portal"></a>Självstudie: Genomgång av Microsoft Intune i Azure Portal
 
-[Azure](https://docs.microsoft.com/learn/modules/welcome-to-azure) innehåller över 100 tjänster som hjälper dig med olika scenarier och möjligheter i molnet. Microsoft Intune är en av flera tjänster som finns i Azure. Med Intune kan du se till att företagets enheter, appar och data uppfyller företagets säkerhetskrav. Du har kontrollen och kan ange vilka krav som måste kontrolleras och vad som händer när de kraven inte uppfylls. Du hittar Microsoft Intune-tjänsten på [Azure Portal](https://portal.azure.com). Att förstå funktionerna som finns i Intune hjälper dig att utföra uppgifter för hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM).
+[Azure](/learn/modules/welcome-to-azure) innehåller över 100 tjänster som hjälper dig med olika scenarier och möjligheter i molnet. Microsoft Intune är en av flera tjänster som finns i Azure. Med Intune kan du se till att företagets enheter, appar och data uppfyller företagets säkerhetskrav. Du har kontrollen och kan ange vilka krav som måste kontrolleras och vad som händer när de kraven inte uppfylls. Du hittar Microsoft Intune-tjänsten på [Azure Portal](https://portal.azure.com). Att förstå funktionerna som finns i Intune hjälper dig att utföra uppgifter för hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM).
 
 I de här självstudierna får du:
 > [!div class="checklist"]

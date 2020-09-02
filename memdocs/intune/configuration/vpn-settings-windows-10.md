@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: tycast
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25950311b5a6936340dbdba01961a5dab6f6ff91
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 25bb413aefa7d91ea825bbe96e057994b1375413
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461360"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915508"
 ---
 # <a name="windows-10-and-windows-holographic-device-settings-to-add-vpn-connections-using-intune"></a>Inställningar för Windows 10- och Windows Holographic-enheter för att lägga till VPN-anslutningar med Intune
 
@@ -82,14 +82,14 @@ Beroende på vilka inställningar du väljer, kanske inte alla värden är konfi
 
     - **Datorcertifikat** (endast IKEv2): Välj en befintlig enhetsprofil för klientcertifikat för att autentisera enheten.
 
-      Om du använder [enhetstunnelanslutningar](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config) måste du välja det här alternativet.
+      Om du använder [enhetstunnelanslutningar](/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config) måste du välja det här alternativet.
 
       Läs mer om att skapa certifikatprofiler i Intune i [Använda certifikat för autentisering](../protect/certificates-configure.md).
 
     - **EAP** (endast IKEv2): Välj en befintlig EAP-profil (Extensible Authentication Protocol) för klientcertifikat för autentisering. Ange autentiseringsparametrarna i inställningen **EAP XML**.
   - **Kom ihåg autentiseringsuppgifter vid varje inloggning**: Välj att cachelagra autentiseringsuppgifterna.
   - **Anpassad XML**: Ange anpassade XML-kommandon som konfigurerar VPN-anslutningen.
-  - **EAP XML**: Ange eventuella EAP XML-kommandon som konfigurerar VPN-anslutningen. Mer information finns i [EAP-konfiguration](https://docs.microsoft.com/windows/client-management/mdm/eap-configuration).
+  - **EAP XML**: Ange eventuella EAP XML-kommandon som konfigurerar VPN-anslutningen. Mer information finns i [EAP-konfiguration](/windows/client-management/mdm/eap-configuration).
 
   - **Enhetstunnel** (endast IKEv2): **Aktivera** ansluter enheten till VPN-nätverket automatiskt utan att användaren behöver göra någonting eller logga in. Den här inställningen gäller för datorer som är anslutna till Azure Active Directory (AD).
 
@@ -159,7 +159,7 @@ Exempel:
 ### <a name="writing-custom-xml"></a>Skriva anpassad XML
 Mer information om hur du skriver anpassade XML-kommandon finns i varje tillverkares VPN-dokumentation.
 
-Läs mer om att skapa anpassade EAP XML-filer i informationen om [EAP-konfiguration](https://docs.microsoft.com/windows/client-management/mdm/eap-configuration).
+Läs mer om att skapa anpassade EAP XML-filer i informationen om [EAP-konfiguration](/windows/client-management/mdm/eap-configuration).
 
 ## <a name="apps-and-traffic-rules"></a>Regler för appar och trafik
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8610b619a4ac05f37b893060b3b3a2bcb1dae528
-ms.sourcegitcommit: 97fbb7db14b0c4049c0fe3a36ee16a5c0cf3407a
+ms.openlocfilehash: 63c9d9e4752e4b0d317667162255e368fc5a099c
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83864862"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908562"
 ---
 # <a name="understand-intune-and-azure-ads-device-limit-restrictions"></a>Förstå skillnaderna mellan enhetsbegränsningar i Intune och Azure AD
 
@@ -39,7 +39,7 @@ Enhetsbegränsningarna i Intune anger hur många enheter en användare kan kontr
 
 ## <a name="azure-device-limit-restriction"></a>Enhetsbegränsningar i Azure
 
-Enhetsbegränsningar i Azure anger hur många enheter Azure AD kan ansluta eller registrera. Om du vill ställa in **Maximalt antal enheter per användare** går du till Azure-portalen > **Azure Active Directory** > **Enheter**. Mer information finns i [Konfigurera enhetsinställningar](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal)
+Enhetsbegränsningar i Azure anger hur många enheter Azure AD kan ansluta eller registrera. Om du vill ställa in **Maximalt antal enheter per användare** går du till Azure-portalen > **Azure Active Directory** > **Enheter**. Mer information finns i [Konfigurera enhetsinställningar](/azure/active-directory/devices/device-management-azure-portal)
 
 ## <a name="settings-applied-based-on-user-affinity"></a>Inställningarna tillämpas utifrån användarnas tillhörighet
 
@@ -114,6 +114,6 @@ För enhetsbegränsning i Azure gäller inställningen **Maximalt antal enheter 
 
 ## <a name="next-steps"></a>Nästa steg
 
-- [Skapa en enhetsgränsbegränsning i Azure.](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#configure-device-settings)
+- [Skapa en enhetsgränsbegränsning i Azure.](/azure/active-directory/devices/device-management-azure-portal#configure-device-settings)
 - [Konfigurera enhetsinställningar i Azure.](enrollment-restrictions-set.md#create-a-device-limit-restriction)
-- [Läs mer om registrering och domänanslutning.](https://docs.microsoft.com/azure/active-directory/devices/overview#getting-devices-in-azure-ad)
+- [Läs mer om registrering och domänanslutning.](/azure/active-directory/devices/overview#getting-devices-in-azure-ad)

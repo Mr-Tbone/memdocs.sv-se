@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc3ef945351529ce0db3e40108fef135414c4fab
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 6a37b94ee0e474e9e3da6aae359ba1b315212910
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093625"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911938"
 ---
 # <a name="windows-10-and-later-device-settings-to-run-as-a-kiosk-in-intune"></a>Inställningar för enheter med Windows 10 (och senare) som ska köras med helskärmsläge i Intune
 
@@ -41,7 +41,7 @@ Mer information om Windows helskärmsfunktion i Intune finns i [Konfigurera inst
   1. Skapa den här helskärmsprofilen för att köra enheten i helskärmsläge.
   2. Skapa [profilen för enhetsbegränsningar](device-restrictions-windows-10.md#microsoft-edge-browser) och konfigurera specifika funktioner och inställningar som tillåts i Microsoft Edge.
 
-- Se till att alla filer, skript och genvägar finns på det lokala systemet. Mer information, inklusive andra Windows-krav, finns i [Anpassa och exportera Start-layout](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout).
+- Se till att alla filer, skript och genvägar finns på det lokala systemet. Mer information, inklusive andra Windows-krav, finns i [Anpassa och exportera Start-layout](/windows/configuration/customize-and-export-start-layout).
 
 > [!IMPORTANT]
 > Var noga med att tilldela den här helskärmsprofilen till samma enheter som din [Microsoft Edge-profil](device-restrictions-windows-10.md#microsoft-edge-browser).
@@ -54,17 +54,17 @@ Kör endast en app på enheten.
 
 - **Typ av användarinloggning**: Välj den kontotyp som kör appen. Alternativen är:
 
-  - **Automatisk inloggning (Windows 10 version 1803 och senare)** : Använd på kioskenheter i offentliga miljöer som inte kräver att användaren loggar in, ungefär som ett gästkonto. Den här inställningen använder [AssignedAccess CSP](https://docs.microsoft.com/windows/client-management/mdm/assignedaccess-csp).
+  - **Automatisk inloggning (Windows 10 version 1803 och senare)** : Använd på kioskenheter i offentliga miljöer som inte kräver att användaren loggar in, ungefär som ett gästkonto. Den här inställningen använder [AssignedAccess CSP](/windows/client-management/mdm/assignedaccess-csp).
   - **Lokalt användarkonto**: Ange det lokala användarkontot (för enheten). Det konto som du anger loggar in i helskärmsläget.
 
 - **Programtyp**: Välj programtypen. Alternativen är:
 
   - **Lägg till Microsoft Edge-webbläsare**: Välj **Microsoft Edge-webbläsare** och välj **helskärmslägestyp för Microsoft Edge**:
 
-    - **Digital/interaktiv signering**: Öppnar en URL i helskärmsläge och visar endast innehållet på den webbplatsen. Mer information om den här funktionen finns i [Konfigurera digital signering](https://docs.microsoft.com/windows/configuration/setup-digital-signage).
+    - **Digital/interaktiv signering**: Öppnar en URL i helskärmsläge och visar endast innehållet på den webbplatsen. Mer information om den här funktionen finns i [Konfigurera digital signering](/windows/configuration/setup-digital-signage).
     - **Offentlig surfning (InPrivate)** : Kör en begränsad version av Microsoft Edge med flera flikar. Användare kan surfa offentligt eller avsluta sin webbläsarsession.
 
-    Mer information om dessa alternativ finns i [Distribuera Microsoft Edge-helskärmsläge](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
+    Mer information om dessa alternativ finns i [Distribuera Microsoft Edge-helskärmsläge](/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
     > [!NOTE]
     > Den här inställningen aktiverar Microsoft Edge-webbläsaren på enheten. För att konfigurera Microsoft Edge-specifika inställningar skapar du en profil för enhetsbegränsningar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Windows 10** som plattform > **Enhetsbegränsningar** > **Microsoft Edge-webbläsare**). [Microsoft Edge-webbläsare](device-restrictions-windows-10.md#microsoft-edge-browser) visar och beskriver de tillgängliga inställningarna.
@@ -96,7 +96,7 @@ Kör endast en app på enheten.
       `office.com`
 
     > [!NOTE]
-    > Helskärmsenheter med Windows 10 som har automatisk inloggning aktiverad och använder Microsoft Kiosk Browser måste använda en offline-licens från Microsoft Store för företag. Detta krav beror på att automatisk inloggning använder ett lokalt användarkonto utan autentiseringsuppgifter för Azure Active Directory. Det går därför inte att utvärdera onlinelicenser. Mer information finns i [Distribuera offlineappar](https://docs.microsoft.com/microsoft-store/distribute-offline-apps).
+    > Helskärmsenheter med Windows 10 som har automatisk inloggning aktiverad och använder Microsoft Kiosk Browser måste använda en offline-licens från Microsoft Store för företag. Detta krav beror på att automatisk inloggning använder ett lokalt användarkonto utan autentiseringsuppgifter för Azure Active Directory. Det går därför inte att utvärdera onlinelicenser. Mer information finns i [Distribuera offlineappar](/microsoft-store/distribute-offline-apps).
 
   - **Lägg till Store-app**: Välj **Lägg till en Store-app** och välj en app i listan.
 
@@ -112,7 +112,7 @@ Kör endast en app på enheten.
 
   När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
-  [ApplicationManagement/ScheduleForceRestartForUpdateFailures CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-scheduleforcerestartforupdatefailures)
+  [ApplicationManagement/ScheduleForceRestartForUpdateFailures CSP](/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-scheduleforcerestartforupdatefailures)
 
 ## <a name="multi-app-kiosk"></a>Helskärmsläge för flera appar
 
@@ -126,10 +126,10 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
 
 - **Typ av användarinloggning**: Välj den kontotyp som kör dina appar. Alternativen är:
 
-  - **Automatisk inloggning (Windows 10 version 1803 och senare)** : Använd på kioskenheter i offentliga miljöer som inte kräver att användaren loggar in, ungefär som ett gästkonto. Den här inställningen använder [AssignedAccess CSP](https://docs.microsoft.com/windows/client-management/mdm/assignedaccess-csp).
+  - **Automatisk inloggning (Windows 10 version 1803 och senare)** : Använd på kioskenheter i offentliga miljöer som inte kräver att användaren loggar in, ungefär som ett gästkonto. Den här inställningen använder [AssignedAccess CSP](/windows/client-management/mdm/assignedaccess-csp).
   - **Lokalt användarkonto**: **Lägg till** det lokala användarkontot (för enheten). Det konto som du anger loggar in i helskärmsläget.
   - **Azure AD-användare eller -grupp (Windows 10 version 1803 och senare)** : Välj **Lägg till** och välj Azure AD-användare eller -grupper i listan. Du kan välja flera användare och grupper. Välj **OK** för att spara ändringarna.
-  - **HoloLens-besökare**: Besökarkontot är ett gästkonto som inte kräver autentiseringsuppgifter eller autentisering, enligt beskrivningen i [begrepp om delat PC-läge](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc#shared-pc-mode-concepts).
+  - **HoloLens-besökare**: Besökarkontot är ett gästkonto som inte kräver autentiseringsuppgifter eller autentisering, enligt beskrivningen i [begrepp om delat PC-läge](/windows/configuration/set-up-shared-or-guest-pc#shared-pc-mode-concepts).
 
 - **Webbläsare och program**: Lägg till appar som ska köras på kioskenheten. Kom ihåg att du kan lägga till flera appar.
 
@@ -142,7 +142,7 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
       - **Normalt läge (fullständig version av Microsoft Edge)** : Kör en fullständig version av Microsoft Edge med alla webbläsarens funktioner. Användardata och tillstånd sparas mellan sessioner.
       - **Offentlig surfning (InPrivate)** : Kör en version av Microsoft Edge InPrivate med flera flikar och en anpassad upplevelse för helskärmsenheter som körs i helskärmsläge.
 
-      Mer information om dessa alternativ finns i [Distribuera Microsoft Edge-helskärmsläge](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
+      Mer information om dessa alternativ finns i [Distribuera Microsoft Edge-helskärmsläge](/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
       > [!NOTE]
       > Den här inställningen aktiverar Microsoft Edge-webbläsaren på enheten. För att konfigurera Microsoft Edge-specifika inställningar skapar du en profil för enhetsbegränsningar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > >**Windows 10** som plattform > **Enhetsbegränsningar** >  **Microsoft Edge-webbläsare**). [Microsoft Edge-webbläsare](device-restrictions-windows-10.md#microsoft-edge-browser) visar och beskriver de tillgängliga inställningarna.
@@ -166,7 +166,7 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
         Ladda upp en .csv-fil som innehåller en lista med tillåtna webbplatser om du vill tillåta specifika webbplatser. Om du inte lägger till någon .csv-fil tillåts alla webbplatser.
 
       > [!NOTE]
-      > Helskärmsenheter med Windows 10 som har automatisk inloggning aktiverad och använder Microsoft Kiosk Browser måste använda en offline-licens från Microsoft Store för företag. Detta krav beror på att automatisk inloggning använder ett lokalt användarkonto utan autentiseringsuppgifter för Azure Active Directory. Det går därför inte att utvärdera onlinelicenser. Mer information finns i [Distribuera offlineappar](https://docs.microsoft.com/microsoft-store/distribute-offline-apps).
+      > Helskärmsenheter med Windows 10 som har automatisk inloggning aktiverad och använder Microsoft Kiosk Browser måste använda en offline-licens från Microsoft Store för företag. Detta krav beror på att automatisk inloggning använder ett lokalt användarkonto utan autentiseringsuppgifter för Azure Active Directory. Det går därför inte att utvärdera onlinelicenser. Mer information finns i [Distribuera offlineappar](/microsoft-store/distribute-offline-apps).
 
   - **Program**
 
@@ -176,12 +176,12 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
 
       - **Programnamn**: Obligatoriskt. Ange ett namn på programmet.
       - **Lokal sökväg till körbar app-fil**: Obligatoriskt. Ange sökvägen till den körbara filen, till exempel `C:\Program Files (x86)\Microsoft VS Code\Code.exe` eller `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`.
-      - **Win32-appens ID för programanvändarmodellen (AUMID)** : Ange ID för programanvändarmodellen (AUMID) för Win32-appen. Den här inställningen avgör panelens startlayout på skrivbordet. Se [Get-StartApps](https://docs.microsoft.com/powershell/module/startlayout/get-startapps?view=win10-ps) för hur du hämtar detta ID.
+      - **Win32-appens ID för programanvändarmodellen (AUMID)** : Ange ID för programanvändarmodellen (AUMID) för Win32-appen. Den här inställningen avgör panelens startlayout på skrivbordet. Se [Get-StartApps](/powershell/module/startlayout/get-startapps?view=win10-ps) för hur du hämtar detta ID.
 
     - **Lägg till via AUMID**: Använd det här alternativet för att lägga till inkorgens Windows-appar, till exempel Anteckningar eller Kalkylatorn. Ange följande egenskaper:
 
       - **Programnamn**: Obligatoriskt. Ange ett namn på programmet.
-      - **ID för programanvändarmodell (AUMID)** : Obligatoriskt. Ange appens programanvändarmodell-ID (AUMID) för Windows-appen. Information om hur du hittar detta ID finns i [Hitta programanvändarmodell-ID för en installerad app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app).
+      - **ID för programanvändarmodell (AUMID)** : Obligatoriskt. Ange appens programanvändarmodell-ID (AUMID) för Windows-appen. Information om hur du hittar detta ID finns i [Hitta programanvändarmodell-ID för en installerad app](/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app).
 
     - **Autostart**: Valfritt. När du har lagt till appar och webbläsare väljer du en app eller webbläsare som ska öppnas automatiskt när användaren loggar in. Du kan bara starta en app eller webbläsare automatiskt.
     - **Panelstorlek**: Obligatoriskt. När du har lagt till dina appar väljer du en liten, medelstor, bred eller stor storlek för appanelen.
@@ -191,7 +191,7 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
   > [!TIP]
   > När du har lagt till alla appar kan du ändra visningsordning genom att klicka och dra apparna i listan.  
 
-- **Använd alternativ startlayout**: Välj **Ja** för att ange en XML-fil som beskriver hur apparna ska visas på Start-menyn, inklusive apparnas inbördes ordning. Använd det här alternativet om du behöver anpassa mer på startmenyn. [Anpassa och exportera Start-layout](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout) innehåller en del vägledning och XML-exempel.
+- **Använd alternativ startlayout**: Välj **Ja** för att ange en XML-fil som beskriver hur apparna ska visas på Start-menyn, inklusive apparnas inbördes ordning. Använd det här alternativet om du behöver anpassa mer på startmenyn. [Anpassa och exportera Start-layout](/windows/configuration/customize-and-export-start-layout) innehåller en del vägledning och XML-exempel.
 
 - **Aktivitetsfältet**: Välj om du vill **visa** eller **dölja** aktivitetsfältet. Standardinställningen är att aktivitetsfältet inte visas. Ikoner som exempelvis Wi-Fi-ikonen visas, men inställningarna kan inte ändras av slutanvändarna.
 
@@ -207,7 +207,7 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
 
   När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
-  [ApplicationManagement/ScheduleForceRestartForUpdateFailures CSP](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-scheduleforcerestartforupdatefailures)
+  [ApplicationManagement/ScheduleForceRestartForUpdateFailures CSP](/windows/client-management/mdm/policy-csp-applicationmanagement#applicationmanagement-scheduleforcerestartforupdatefailures)
 
 ## <a name="next-steps"></a>Nästa steg
 
@@ -215,4 +215,4 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
 
 Du kan också skapa helskärmsprofiler för [Android](device-restrictions-android.md#kiosk)-, [Android Enterprise](device-restrictions-android-for-work.md#device-experience)- och [Windows Holographic for Business](kiosk-settings-holographic.md)-enheter.
 
-Det finns även information om hur man kan [konfigurera helskärmsläge för enskild app](https://docs.microsoft.com/windows/configuration/kiosk-single-app) eller [konfigurera helskärmsläge för flera appar](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) i Windows-vägledningen.
+Det finns även information om hur man kan [konfigurera helskärmsläge för enskild app](/windows/configuration/kiosk-single-app) eller [konfigurera helskärmsläge för flera appar](/windows/configuration/lock-down-windows-10-to-specific-apps) i Windows-vägledningen.

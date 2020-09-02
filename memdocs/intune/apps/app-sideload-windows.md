@@ -16,19 +16,19 @@ ms.assetid: e44f1756-52e1-4ed5-bf7d-0e80363a8674
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da43cab373021107a940ce0bd71c0f4986d5e907
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: fb981563c2d98389f6d1dda4d050e391e9ad5637
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179629"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910476"
 ---
 # <a name="sign-line-of-business-apps-so-they-can-be-deployed-to-windows-devices-with-intune"></a>Signera verksamhetsspecifika appar så att de kan distribueras till Windows-enheter med Intune
 
 Som Intune-administratör kan du distribuera verksamhetsspecifika (LOB) universella appar till Windows 8.1 Desktop- eller Windows 10 Desktop- och Mobile-enheter, inklusive appen Företagsportal. Om du vill distribuera *.appx*-appar till Windows 8.1 Desktop- eller Windows 10 Desktop- och Mobile-enheter kan du använda kodsigneringscertifikat från en offentlig certifikatutfärdare som redan är betrodd av dina Windows-enheter, eller så kan du använda din egen certifikatutfärdare.
 
  > [!NOTE]
- > Windows 8.1 Desktop kräver en företagsprincip för att möjliggöra separat inläsning eller användningen av nycklar för separat inläsning (automatiskt aktiverade för domänanslutna enheter). Mer information finns i inlägget om [separat inläsning i Windows 8.1](https://blogs.technet.microsoft.com/scd-odtsp/2012/09/27/windows-8-sideloading-requirements-from-technet/).
+ > Windows 8.1 Desktop kräver en företagsprincip för att möjliggöra separat inläsning eller användningen av nycklar för separat inläsning (automatiskt aktiverade för domänanslutna enheter). Mer information finns i inlägget om [separat inläsning i Windows 8.1](/archive/blogs/scd-odtsp/windows-8-sideloading-requirements-from-technet).
 
 ## <a name="windows-10-sideloading"></a>Separat Windows 10-inläsning
 
@@ -36,11 +36,11 @@ I Windows 10 fungerar separat inläsning annorlunda än i tidigare versioner av 
 
 - Du kan låsa upp en enhet för separat inläsning med hjälp av en företagsprincip. Intune tillhandahåller en enhetskonfigurationsprincip som kallas "Installation av betrodd app". Inställningen <allow> är allt som krävs för enheter som redan litar på certifikatet som används för att signera appx-appen.
 
-- Symantec Phone-certifikat och licensnycklar för separat inläsning krävs inte. Men om en lokal certifikatutfärdare inte är tillgänglig kan du behöva hämta ett kodsigneringscertifikat från en offentlig certifikatutfärdare. Mer information finns i [Introduktion till kodsignering](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools#introduction-to-code-signing).
+- Symantec Phone-certifikat och licensnycklar för separat inläsning krävs inte. Men om en lokal certifikatutfärdare inte är tillgänglig kan du behöva hämta ett kodsigneringscertifikat från en offentlig certifikatutfärdare. Mer information finns i [Introduktion till kodsignering](/windows/desktop/SecCrypto/cryptography-tools#introduction-to-code-signing).
 
 ### <a name="code-sign-your-app"></a>Kodsignera appen
 
-Det första steget är att kodsignera ditt appx-paket. Mer information finns i [Signera appaket med SignTool](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool).
+Det första steget är att kodsignera ditt appx-paket. Mer information finns i [Signera appaket med SignTool](/windows/uwp/packaging/sign-app-package-using-signtool).
 
 ### <a name="upload-your-app"></a>Ladda upp appen
 
@@ -98,7 +98,7 @@ Om du inte vill ge åtkomst till Microsoft Store kan du distribuera Windows 10 f
       <img alt="Error message - The Windows app dependency must be provided." src="./media/app-sideload-windows/Win10CP-error-message.png" width="200">
 6. Gå tillbaka till Intune och överför företagsportalsappen som en ny app. Distribuera den som en obligatorisk app för den önskade uppsättningen målanvändare.  
 
-Mer information om hur Intune hanterar beroenden för universella appar finns i [Distribuera ett appxbundle med beroenden via Microsoft Intune MDM](https://blogs.technet.microsoft.com/configmgrdogs/2016/11/30/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm/).  
+Mer information om hur Intune hanterar beroenden för universella appar finns i [Distribuera ett appxbundle med beroenden via Microsoft Intune MDM](/archive/blogs/configmgrdogs/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm).  
 
 ### <a name="how-do-i-update-the-company-portal-on-my-users-devices-if-they-have-already-installed-the-older-apps-from-the-store"></a>Hur uppdaterar jag företagsportalen på mina användares enheter om de redan har installerat de äldre apparna?
 
@@ -136,4 +136,4 @@ Så här registrerar och distribuerar du appen:
 |      PublisherId      |      Företagets publicerings-ID. Om det ej finns, används ämnes-fältet i Symantec-certifikatet med mobil kodsignering för företag.       |
 |        SdkPath        | Sökvägen till rotkatalogen på Windows SDK för Windows 10. Det här argumentet är valfritt och är som standard ${env:ProgramFiles(x86)}\Windows Kits\10 |
 
-Skriptets utdata är den signerade versioneb av företagsportalsappen för Windows 10. Du kan sedan distribuera den signerade versionen av appen som en LOB-app via Intune, som kommer att uppgraderas till de för tillfället distribuerade versionerna av den nya appen.  
+Skriptets utdata är den signerade versioneb av företagsportalsappen för Windows 10. Du kan sedan distribuera den signerade versionen av appen som en LOB-app via Intune, som kommer att uppgraderas till de för tillfället distribuerade versionerna av den nya appen.

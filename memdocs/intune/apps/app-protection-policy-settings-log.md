@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43ebd7a242fbc0b859c7b947b02b330498649296
-ms.sourcegitcommit: 86c2c438fd2d87f775f23a7302794565f6800cdb
+ms.openlocfilehash: 895db60bcd4d484a218289978c2da2d2688b8887
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410885"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910578"
 ---
 # <a name="review-client-app-protection-logs"></a>Granska loggarna för klientappskydd
 
@@ -31,7 +31,7 @@ Läs om vilka inställningar du kan granska i appskyddsloggarna. Få åtkomst ti
 
 Processen för att aktivera och samla in loggar varierar efter plattform:
 - **iOS/iPadOS-enheter** – Använd Microsoft Edge för iOS/iPadOS för att samla in loggar. Mer information finns i [Använda Microsoft Edge för iOS och Android till att komma åt hanterade apploggar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
-- **Windows 10-enheter** – Använd *MDMDiag* och händelseloggar. Se [Diagnostisera MDM-fel i Windows 10](https://docs.microsoft.com/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) i Windows-klientens hanteringsinnehåll och bloggen [Felsökning av Windows 10 vid Intune-principfel](https://blogs.technet.microsoft.com/configmgrdogs/2018/08/09/troubleshooting-windows-10-intune-policy-failures/).
+- **Windows 10-enheter** – Använd *MDMDiag* och händelseloggar. Se [Diagnostisera MDM-fel i Windows 10](/windows/client-management/mdm/diagnose-mdm-failures-in-windows-10) i Windows-klientens hanteringsinnehåll och bloggen [Felsökning av Windows 10 vid Intune-principfel](/archive/blogs/configmgrdogs/troubleshooting-windows-10-intune-policy-failures).
 - **Android-enheter** – Använd Microsoft Edge för Android för att samla in loggar. Mer information finns i [Använda Microsoft Edge för iOS och Android till att komma åt hanterade apploggar](manage-microsoft-edge.md#use-edge-for-ios-and-android-to-access-managed-app-logs).
 
   > [!NOTE]

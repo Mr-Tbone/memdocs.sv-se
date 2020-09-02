@@ -15,12 +15,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d18ea0a12f0525b71fbcb8660187af36f1148bee
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 8127281069ce4209adfc2aec82a93f5a60669307
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093158"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911870"
 ---
 # <a name="windows-holographic-for-business-device-settings-to-run-as-a-kiosk-in-intune"></a>Enhetsinställningar i Windows Holographic for Business för att köra helskärmsläge i Intune
 
@@ -74,7 +74,7 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
   - **Automatisk inloggning (Windows 10 version 1803 och senare)** : Stöds inte i Windows Holographic for Business.
   - **Lokala användarkonton**: **Lägg till** det lokala användarkontot (för enheten). Det konto som du anger loggar in i helskärmsläget.
   - **Azure AD-användare eller -grupp (Windows 10, version 1803 och senare)** : Kräver autentiseringsuppgifter för inloggning på enheten. Välj **Lägg till** för att välja Azure AD-användare eller grupper i listan. Du kan välja flera användare och grupper. Välj **OK** för att spara ändringarna.
-  - **HoloLens-besökare**: Besökarkontot är ett gästkonto som inte kräver autentiseringsuppgifter eller autentisering, enligt beskrivningen i [begrepp om delat PC-läge](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc#shared-pc-mode-concepts).
+  - **HoloLens-besökare**: Besökarkontot är ett gästkonto som inte kräver autentiseringsuppgifter eller autentisering, enligt beskrivningen i [begrepp om delat PC-läge](/windows/configuration/set-up-shared-or-guest-pc#shared-pc-mode-concepts).
 
 - **Webbläsare och program**: Lägg till appar som ska köras på kioskenheten. Kom ihåg att du kan lägga till flera appar.
 
@@ -84,7 +84,7 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
       - **Normalt läge (fullständig version av Microsoft Edge)** : Kör en fullständig version av Microsoft Edge med alla webbläsarens funktioner. Användardata och tillstånd sparas mellan sessioner.
       - **Offentlig surfning (InPrivate)** : Kör en version av Microsoft Edge InPrivate med flera flikar och en anpassad upplevelse för helskärmsenheter som körs i helskärmsläge.
 
-      Mer information om dessa alternativ finns i [Distribuera Microsoft Edge-helskärmsläge](https://docs.microsoft.com/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
+      Mer information om dessa alternativ finns i [Distribuera Microsoft Edge-helskärmsläge](/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
 
       > [!NOTE]
       > Den här inställningen aktiverar Microsoft Edge-webbläsaren på enheten. För att konfigurera Microsoft Edge-specifika inställningar skapar du en profil för enhetsbegränsningar (**Enheter** > **Konfigurationsprofiler** > **Skapa profil** > **Windows 10** som plattform > **Enhetsbegränsningar** > **Microsoft Edge-webbläsare**). [Microsoft Edge-webbläsare](device-restrictions-windows-holographic.md#microsoft-edge-browser) visar och beskriver de tillgängliga inställningarna för Holographic for Business.
@@ -97,12 +97,12 @@ Appar i det här läget är tillgängliga på startmenyn. De här apparna är de
     - **Lägg till via AUMID**: Använd det här alternativet för att lägga till inkorgens Windows-appar, till exempel Anteckningar eller Kalkylatorn. Ange följande egenskaper:
 
       - **Programnamn**: Obligatoriskt. Ange ett namn på programmet.
-      - **ID för programanvändarmodell (AUMID)** : Obligatoriskt. Ange appens programanvändarmodell-ID (AUMID) för Windows-appen. Information om hur du hittar detta ID finns i [Hitta programanvändarmodell-ID för en installerad app](https://docs.microsoft.com/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app).
+      - **ID för programanvändarmodell (AUMID)** : Obligatoriskt. Ange appens programanvändarmodell-ID (AUMID) för Windows-appen. Information om hur du hittar detta ID finns i [Hitta programanvändarmodell-ID för en installerad app](/windows-hardware/customize/enterprise/find-the-application-user-model-id-of-an-installed-app).
 
     - **Autostart**: Valfritt. När du har lagt till appar och webbläsare väljer du en app eller webbläsare som ska öppnas automatiskt när användaren loggar in. Du kan bara starta en app eller webbläsare automatiskt.
     - **Panelstorlek**: Obligatoriskt. När du har lagt till dina appar väljer du en liten, medelstor, bred eller stor storlek för appanelen.
 
-- **Använd alternativ startlayout**: Välj **Ja** för att ange en XML-fil som beskriver hur apparna ska visas på Start-menyn, inklusive apparnas inbördes ordning. Använd det här alternativet om du behöver anpassa mer på startmenyn. [Anpassa och exportera Start-layout](https://docs.microsoft.com/hololens/hololens-kiosk#start-layout-for-hololens) ger viss vägledning och innehåller en specifik XML-fil för Windows Holographic for Business-enheter.
+- **Använd alternativ startlayout**: Välj **Ja** för att ange en XML-fil som beskriver hur apparna ska visas på Start-menyn, inklusive apparnas inbördes ordning. Använd det här alternativet om du behöver anpassa mer på startmenyn. [Anpassa och exportera Start-layout](/hololens/hololens-kiosk#start-layout-for-hololens) ger viss vägledning och innehåller en specifik XML-fil för Windows Holographic for Business-enheter.
 
 - **Aktivitetsfältet**: Stöds inte i Windows Holographic for Business.
 - **Tillåt åtkomst till mappen Hämtade filer**: Stöds inte i Windows Holographic for Business.

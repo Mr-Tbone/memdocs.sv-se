@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf5c76e276722fb9bab2b5d6fac511f0b22ae1f2
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 6def2806bc35acf8becbbedfb031af99378711ee
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79356719"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913842"
 ---
 # <a name="quickstart-create-a-user-in-intune-and-assign-the-user-a-license"></a>Snabbstart: Skapa en användare i Intune och tilldela hen en licens
 
@@ -59,7 +59,7 @@ Så här tilldelar du en Intune-licens till en användare:
 2. Välj **Användare** > **Aktiva användare** och välj sedan den användare du just har skapat.
 3. Välj fliken **Licenser och appar**.
 4. Välj en plats för användaren under **Välj plats**, såvida den inte redan har angetts.
-2. Markera kryssrutan **Intune** i avsnittet **Licenser**. Om en annan licens inkluderar Intune, så kan du välja den licensen. [Produktnamnet](https://docs.microsoft.com/azure/active-directory/users-groups-roles/licensing-service-plan-reference) som visas används som tjänstplan i Azure-hanteringen.
+2. Markera kryssrutan **Intune** i avsnittet **Licenser**. Om en annan licens inkluderar Intune, så kan du välja den licensen. [Produktnamnet](/azure/active-directory/users-groups-roles/licensing-service-plan-reference) som visas används som tjänstplan i Azure-hanteringen.
 
     ![Välj plats och Intune-licens](./media/quickstart-create-user/create-user-03.png)
 

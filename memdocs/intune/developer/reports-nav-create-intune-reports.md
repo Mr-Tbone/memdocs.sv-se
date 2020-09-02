@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e3c6440b800b3bf652cb9adc8c565efcb48ef334
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 84fe1afcf04c6b3771d1541ad0488a95b9313dca
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165965"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908844"
 ---
 # <a name="use-the-microsoft-intune-data-warehouse"></a>Använda Microsoft Intune-informationslager
 
@@ -43,7 +43,7 @@ Informationslagret ger dig tillgång till mer information om din mobila miljö �
 - En datamodell som använder OData-standarden
 
 > [!Note]
-> Om du använder samhanterad hantering av mobilenheter (MDM) med Microsoft Endpoint Configuration Manager och Microsoft Intune behöver du hämta data från Configuration Manager. Intune-informationslagret innehåller endast Intune-data. Du kan använda en Power BI-instrumentpanel med Configuration Manager för anpassade rapporter. Mer information finns i ”[Meddelande om Power BI-lösningsmallen för Configuration Manager](https://powerbi.microsoft.com/blog/sccm-solution-template)” och ”[Power BI-innehåll för Dynamics 365](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/analytics/power-bi-home-page)”.
+> Om du använder samhanterad hantering av mobilenheter (MDM) med Microsoft Endpoint Configuration Manager och Microsoft Intune behöver du hämta data från Configuration Manager. Intune-informationslagret innehåller endast Intune-data. Du kan använda en Power BI-instrumentpanel med Configuration Manager för anpassade rapporter. Mer information finns i ”[Meddelande om Power BI-lösningsmallen för Configuration Manager](https://powerbi.microsoft.com/blog/sccm-solution-template)” och ”[Power BI-innehåll för Dynamics 365](/dynamics365/unified-operations/dev-itpro/analytics/power-bi-home-page)”.
 
 > [!Important]  
 > Det går nu att använda v1.0-versionen av Intune-informationslagret genom att ange frågeparametern `api-version=v1.0`. Uppdateringar av samlingar i datalagret är additiva och avbryter inte befintliga scenarier.<br><br>

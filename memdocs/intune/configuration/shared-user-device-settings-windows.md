@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f013074ac67b7622b509d8b9781de3ab5f4041e0
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: d3a1a66988f922a293187f3ed30e3659dee567b1
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429496"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915712"
 ---
 # <a name="windows-10-and-later-settings-to-manage-shared-devices-using-intune"></a>Inställningar för Windows 10 och senare för att hantera delade enheter med Intune
 
@@ -32,7 +32,7 @@ Med Microsoft Intune kan slutanvändare logga in på dessa delade enheter med et
 
 Den här artikeln listar och beskriver de inställningar du använder i en enhetskonfigurationsprofil för Windows 10 (och senare). När profilen har skapats i Intune distribuerar och tilldelar du profilen till enhetsgrupper i organisationen. Du kan även tilldela profilen till en enhetsgrupp med blandade enhetstyper och OS-versioner.
 
-Mer information om den här funktionen i Intune finns i [Styra åtkomst, konton och energifunktioner på delade datorer eller enheter med flera användare](shared-user-device-settings.md). Mer information om Windows CSP finns i [SharedPC CSP](https://docs.microsoft.com/windows/client-management/mdm/sharedpc-csp).
+Mer information om den här funktionen i Intune finns i [Styra åtkomst, konton och energifunktioner på delade datorer eller enheter med flera användare](shared-user-device-settings.md). Mer information om Windows CSP finns i [SharedPC CSP](/windows/client-management/mdm/sharedpc-csp).
 
 ## <a name="before-your-begin"></a>Innan du börjar
 
@@ -40,7 +40,7 @@ Mer information om den här funktionen i Intune finns i [Styra åtkomst, konton 
 
 ## <a name="shared-multi-user-device-settings"></a>Inställningar för delade enheter med flera användare
 
-Dessa inställningar använder [SharedPC CSP](https://docs.microsoft.com/windows/client-management/mdm/sharedpc-csp).
+Dessa inställningar använder [SharedPC CSP](/windows/client-management/mdm/sharedpc-csp).
 
 - **Läget för delad dator**: **Aktivera** aktiverar läget för datordelning. I det här läget loggar bara en användare i taget in på enheten. En annan användare kan inte logga in förrän den första loggar ut. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Gästkonto**: Välj alternativet om du vill skapa ett gästalternativ på inloggningssidan. Gästkonton kräver inte några användarautentiseringsuppgifter eller någon autentisering. Den här inställningen skapar ett nytt lokalt konto varje gång den används. Alternativen är:
@@ -92,10 +92,10 @@ Dessa inställningar använder [SharedPC CSP](https://docs.microsoft.com/windows
   - **Aktiverad**: De rekommenderade inställningarna för enheter som används i skoloranvänds, som är mer restriktiva.
   - **Inaktiverad**: Standardinställningar och rekommenderade utbildningspolicyer används inte.
 
-  Mer information om vad utbildningsprinciper gör finns i [Rekommendationer för Windows 10-konfiguration för utbildningskunder](https://docs.microsoft.com/education/windows/configure-windows-for-education).
+  Mer information om vad utbildningsprinciper gör finns i [Rekommendationer för Windows 10-konfiguration för utbildningskunder](/education/windows/configure-windows-for-education).
 
 > [!TIP]
-> [Konfigurera en delad dator eller en gästdator](https://docs.microsoft.com/windows/configuration/set-up-shared-or-guest-pc) (en annan dokumentwebbplats öppnas) är en bra resurs om den här Windows 10-funktionen, som beskriver begrepp och grupprinciper som kan ställas in i delat läge.
+> [Konfigurera en delad dator eller en gästdator](/windows/configuration/set-up-shared-or-guest-pc) (en annan dokumentwebbplats öppnas) är en bra resurs om den här Windows 10-funktionen, som beskriver begrepp och grupprinciper som kan ställas in i delat läge.
 
 ## <a name="next-steps"></a>Nästa steg
 

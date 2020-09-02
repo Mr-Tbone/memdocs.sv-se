@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c0973805a0646ec7df87f36eea183a9456f7e39
-ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
+ms.openlocfilehash: 7f2b2826e8eaf1cf1c1c8680743b582203199aed
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865514"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906845"
 ---
 # <a name="set-up-enrollment-for-macos-devices-in-intune"></a>Konfigurera registrering för macOS-enheter i Intune
 
@@ -51,7 +51,7 @@ Du kan låta användarna registrera sina egna personliga enheter i Intune-hanter
 - gå till [webbplatsen för företagsportalen](https://portal.manage.microsoft.com) eller
 - ladda ned företagsportalappen för Mac från [aka.ms/EnrollMyMac](https://aka.ms/EnrollMyMac).
 
-Du kan även skicka dem en länk med anvisningar för registrering online: [Registrera din macOS-enhet i Intune](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
+Du kan även skicka dem en länk med anvisningar för registrering online: [Registrera din macOS-enhet i Intune](../user-help/enroll-your-device-in-intune-macos-cp.md).
 
 Information om andra slutanvändaraktiviteter finns i de här artiklarna:
 
@@ -82,7 +82,7 @@ För VMware Fusion behöver du [redigera .vmx-filen](https://kb.vmware.com/s/art
 
 MDM-registrering av användargodkänd är en typ av macOS-registrering som du kan använda för att hantera vissa känsliga inställningar. Mer information finns i [Apples supportdokumentation](https://support.apple.com/HT208019).  
  
-Från och med juni 2020 betraktas alla nya macOS MDM-registreringar i Intune, inklusive de som inte görs via automatisk enhetsregistrering (ADE), som godkända av användaren. Slutanvändaren måste installera hanteringsprofilen manuellt i **Systeminställningar** > **Profiler** och därmed godkänna hanteringsprofilen. Systeminställningar startas automatiskt från Företagsportal-appen för användare med egna macOS-enheter. [Instruktioner för att installera hanteringsprofilen](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-macos-cp) finns i företagsportalappen.     
+Från och med juni 2020 betraktas alla nya macOS MDM-registreringar i Intune, inklusive de som inte görs via automatisk enhetsregistrering (ADE), som godkända av användaren. Slutanvändaren måste installera hanteringsprofilen manuellt i **Systeminställningar** > **Profiler** och därmed godkänna hanteringsprofilen. Systeminställningar startas automatiskt från Företagsportal-appen för användare med egna macOS-enheter. [Instruktioner för att installera hanteringsprofilen](../user-help/enroll-your-device-in-intune-macos-cp.md) finns i företagsportalappen.     
 
 MDM-registreringar för egna macOS-enheter innan juni 2020 kanske inte betraktas som godkända av användaren om inte slutanvändaren har godkänt hanteringsprofilen manuellt i **Systeminställningar** > **Profiler**. För registreringar av egna enheter efter juni 2020 startar företagsportalappen **Systeminställningar** åt användaren och användaren måste välja Installera. Om användaren inte godkänner hanteringsprofilen under registreringen kan användaren gå till **Systeminställningar** > **Profiler**, välja hanteringsprofilen och välja **Godkänn** för att godkänna profilen senare.
 

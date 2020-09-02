@@ -18,12 +18,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 zone_pivot_groups: atp-baseline-versions
-ms.openlocfilehash: d29240dcbcbbcd5a4399dbfb3648c2a6df47764c
-ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
+ms.openlocfilehash: 322e3be8e7421b0c622a8e656a3312791ed7feac
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88663437"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913451"
 ---
 <!-- Pivots in use: 
 ::: zone pivot="atp-april-2020"
@@ -55,12 +55,12 @@ Informationen i den här artikeln gäller version 3 av Microsoft Defender Avance
 
 Baslinjen för Microsoft Defender Advanced Threat Protection är tillgänglig när din miljö uppfyller förhandskraven för att använda [Microsoft Defender Advanced Threat Protection](advanced-threat-protection.md#prerequisites).
 
-Baslinjen är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer. Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
+Baslinjen är optimerad för fysiska enheter och rekommenderas inte för användning på virtuella datorer (VM) eller VDI-slutpunkter. Vissa baslinjeinställningar kan påverka fjärranslutna interaktiva sessioner i virtualiserade miljöer. Mer information finns i [Öka efterlevnaden med säkerhetsbaslinjen i Microsoft Defender ATP](/windows/security/threat-protection/microsoft-defender-atp/configure-machines-security-baseline) i Windows-dokumentationen.
 
 
 ## <a name="application-guard"></a>Application Guard
 
-Mer information finns i [WindowsDefenderApplicationGuard CSP](https://docs.microsoft.com/windows/client-management/mdm/windowsdefenderapplicationguard-csp) i Windows-dokumentationen.  
+Mer information finns i [WindowsDefenderApplicationGuard CSP](/windows/client-management/mdm/windowsdefenderapplicationguard-csp) i Windows-dokumentationen.  
 
 När du använder Microsoft Edge Microsoft Defender Application Guard skyddas din miljö från webbplatser som inte är betrodda av din organisation. När användare besöker webbplatser som inte listas i din isolerade nätverksgräns, öppnas webbplatserna i en virtuell webbläsarsession i Hyper-V. Betrodda webbplatser definieras av en nätverksgräns.  
 
@@ -89,7 +89,7 @@ När du använder Microsoft Edge Microsoft Defender Application Guard skyddas di
     - **Tillåt kopiera och klistra in mellan dator och webbläsare** – Ingen blockering för innehåll finns.
 
 - **Princip för nätverksisolering i Windows**  
-  CSP: [Policy CSP – NetworkIsolation](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-networkisolation)
+  CSP: [Policy CSP – NetworkIsolation](/windows/client-management/mdm/policy-csp-networkisolation)
 
   Ange en lista över *Nätverksdomäner*, som är Enterprise-resurser som finns i molnet och som Application Guard behandlar som företagswebbplatser
   - **Konfigurera** (*standard*)
@@ -102,7 +102,7 @@ När du använder Microsoft Edge Microsoft Defender Application Guard skyddas di
 
 ## <a name="bitlocker"></a>BitLocker
 
-Mer information finns i [BitLocker-grupprincipinställningar](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings) i Windows-dokumentationen.
+Mer information finns i [BitLocker-grupprincipinställningar](/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings) i Windows-dokumentationen.
 
 - **Kräv att lagringskort ska krypteras (endast mobil)**  
   CSP: [RequireStorageCardEncryption](https://go.microsoft.com/fwlink/?linkid=872524)
@@ -290,7 +290,7 @@ Mer information finns i [BitLocker-grupprincipinställningar](https://docs.micro
 ## <a name="dma-guard"></a>DMA Guard
 
 - **Uppräkning av externa enheter som är inkompatibla med Kernel DMA-skydd**  
-  CSP: [DmaGuard/DeviceEnumerationPolicy](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
+  CSP: [DmaGuard/DeviceEnumerationPolicy](/windows/client-management/mdm/policy-csp-dmaguard#dmaguard-deviceenumerationpolicy)
 
   Den här principen kan ge ökad säkerhet mot externa DMA-kompatibla enheter. Det möjliggör större kontroll över uppräkning av externa DMA-kompatibla enheter som inte är kompatibla med minnesisolering och sandbox-miljö för DMA-mappning/-enhet.
   
@@ -302,10 +302,10 @@ Mer information finns i [BitLocker-grupprincipinställningar](https://docs.micro
 
 ## <a name="endpoint-detection-and-response"></a>Slutpunktsidentifiering och svar
 
-Mer information om följande inställningar finns i [WindowsAdvancedThreatProtection](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp) CSP i Windows-dokumentationen.
+Mer information om följande inställningar finns i [WindowsAdvancedThreatProtection](/windows/client-management/mdm/windowsadvancedthreatprotection-csp) CSP i Windows-dokumentationen.
 
 - **Exempeldelning för alla filer**  
-  CSP: [Configuration/SampleSharing](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp)
+  CSP: [Configuration/SampleSharing](/windows/client-management/mdm/windowsadvancedthreatprotection-csp)
 
   Returnerar eller anger konfigurationsparametern för exempeldelning i Microsoft Defender Avancerat skydd.  
   
@@ -313,7 +313,7 @@ Mer information om följande inställningar finns i [WindowsAdvancedThreatProtec
   - **Inte konfigurerat**
 
 - **Skicka frekvensvärde för telemetrirapportering**  
-  CSP: [Configuration/TelemetryReportingFrequency](https://docs.microsoft.com/windows/client-management/mdm/windowsadvancedthreatprotection-csp)
+  CSP: [Configuration/TelemetryReportingFrequency](/windows/client-management/mdm/windowsadvancedthreatprotection-csp)
 
   Skicka frekvensvärde för telemetrirapportering för Microsoft Defender Avancerat skydd.  
 
@@ -322,7 +322,7 @@ Mer information om följande inställningar finns i [WindowsAdvancedThreatProtec
 
 ## <a name="firewall"></a>Brandvägg
 
-Mer information finns i [CSP-brandvägg](https://docs.microsoft.com/windows/client-management/mdm/firewall-csp) i Windows-dokumentationen.
+Mer information finns i [CSP-brandvägg](/windows/client-management/mdm/firewall-csp) i Windows-dokumentationen.
 
 - **Inaktivera tillståndskänsligt filöverföringsprotokoll (FTP)**  
   CSP: [MdmStore/Global/DisableStatefulFtp](https://go.microsoft.com/fwlink/?linkid=872536)  
@@ -590,7 +590,7 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
   Som standard är det här värdet inställt på **02:00**.
 
 - **Konfigurera låg CPU-prioritet för schemalagda genomsökningar**  
-  CSP: [Defender/EnableLowCPUPriority](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-enablelowcpupriority)  
+  CSP: [Defender/EnableLowCPUPriority](/windows/client-management/mdm/policy-csp-defender#defender-enablelowcpupriority)  
 
   -**Ja** (*standard*)
   - **Inte konfigurerat**
@@ -630,7 +630,7 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
   Konfigurera antalet dagar som objekt ska behållas i mappen karantän innan de tas bort. Standardvärdet är noll (**0**), vilket resulterar i att filer i karantän aldrig tas bort.
 
 - **Genomsökningsschema för Defender-system**  
-  CSP: [Defender/ScheduleScanDay](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-schedulescanday)
+  CSP: [Defender/ScheduleScanDay](/windows/client-management/mdm/policy-csp-defender#defender-schedulescanday)
 
   Schemalägg vilken dag Defender ska söka igenom enheter. Som standard är genomsökningen **användardefinierad**, men kan ställas in på *Varje dag*, valfri veckodag eller *Ingen schemalagd genomsökning*.
 
@@ -754,7 +754,7 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
   - **Inte konfigurerat** – Klienten återgår till standardvärdet, vilket inaktiverar genomsökning av nätverksfiler.
   
 - **Defender potentially unwanted app action** (Potentiellt oönskad appåtgärd i Defender)  
-  CSP: [Defender/PUAProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
+  CSP: [Defender/PUAProtection](/windows/client-management/mdm/policy-csp-defender#defender-puaprotection)
 
   Ange identifieringsnivå för potentiellt oönskade appar (PUA). Defender varnar användare när potentiellt oönskad programvara laddas ned eller försöker installeras på en enhet.
   - **Standard för enheten**
@@ -762,7 +762,7 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
   - **Granska** – Defender identifierar potentiellt oönskade program men vidtar inga åtgärder. Du kan läsa information om vilka program som Windows Defender skulle ha vidtagit åtgärder mot genom att söka efter händelser som har skapats av Defender i Loggboken.
 
 - **Aktivera molnlevererat skydd**  
-  CSP: [AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
+  CSP: [AllowCloudProtection](/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
 
   Som standard skickar Defender på Windows 10 Desktop-enheter information till Microsoft om eventuella problem som identifieras. Microsoft analyserar informationen för att lära sig mer om problem som påverkar dig och andra kunder och erbjuda bättre lösningar.
 
@@ -879,7 +879,7 @@ CSP: [MdmStore/Global/SaIdleTime](https://go.microsoft.com/fwlink/?linkid=872539
 
 ## <a name="windows-hello-for-business"></a>Windows Hello för företag
 
-Mer information finns i [PassportForWork CSP](https://docs.microsoft.com/windows/client-management/mdm/passportforwork-csp) i Windows-dokumentationen.
+Mer information finns i [PassportForWork CSP](/windows/client-management/mdm/passportforwork-csp) i Windows-dokumentationen.
 
 - **Blockera Windows Hello för företag**  
 

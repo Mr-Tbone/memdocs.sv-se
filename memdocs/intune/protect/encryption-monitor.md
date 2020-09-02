@@ -17,12 +17,12 @@ ms.reviewer: shpate
 ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
-ms.openlocfilehash: c20d2ef806df46036d3a785bb5f8603d485d3880
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: d14ee52decf1b6ef9b2566b3233a385c1331bcc5
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86460475"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910986"
 ---
 # <a name="monitor-device-encryption-with-intune"></a>Övervaka enhetskryptering med Intune
 
@@ -59,7 +59,7 @@ Fönstret Krypteringsrapport innehåller en lista över de enheter som du hanter
     - Version 1709 eller senare av *Business*, *Enterprise* eller *Education*, eller version 1809 eller senare av *Pro*
     - Enheten måste ha en TPM-krets
 
-    Mer information finns i [BitLocker-CSP](https://docs.microsoft.com/windows/client-management/mdm/bitlocker-csp) i Windows-dokumentationen.
+    Mer information finns i [BitLocker-CSP](/windows/client-management/mdm/bitlocker-csp) i Windows-dokumentationen.
 
   - **Ej redo**: Enheten har inte fullständiga krypteringsfunktioner, men har fortfarande stöd för kryptering. Exempelvis kan en Windows-enhet krypteras manuellt av en användare, eller via en grupprincip som kan konfigureras att tillåta kryptering utan en TPM.
   - **Ej tillämpligt**: Det finns inte tillräckligt med information för att klassificera den här enheten.

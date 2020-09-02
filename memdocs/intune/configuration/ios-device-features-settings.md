@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09ccfe079511c90f2ce7ecf6c27d4dfcf1c85327
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: ad78240aa9f2a1ef515be2635cfad0ce68e8ecc8
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820195"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909015"
 ---
 # <a name="ios-and-ipados-device-settings-to-use-common-iosipados-features-in-intune"></a>iOS- och iPadOS-enhetsinställningar som används; vanliga iOS- och iPadOS-funktioner i Intune
 
@@ -304,10 +304,10 @@ Den här funktionen gäller för:
   - **Inte konfigurerad**: Intune varken ändrar eller uppdaterar den här inställningen. Som standard använder operativsystemet inte apptillägg. Om du vill inaktivera ett apptillägg kan du byta typ av SSO-tillägg till **Inte konfigurerad**.
   - **Microsoft Azure AD**: Använder Microsoft Enterprise SSO-plugin-programmet, som är ett SSO-apptillägg av omdirigeringstyp. Det här plugin-programmet ger enkel inloggning för Active Directory-konton i alla program som har stöd för [Apples Enterprise-funktion för enkel inloggning](https://developer.apple.com/documentation/authenticationservices). Använd denna typ av SSO-apptillägg för att aktivera SSO på Microsoft-appar, organisationsappar och webbplatser som autentiseras med hjälp av Azure AD.
 
-    Plugin-programmet för enkel inloggning fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som använder Microsoft Authenticator-appen för autentisering fortsätter att få SSO med [Microsoft Enterprise SSO-tillägg för Apple-enheter](https://docs.microsoft.com/azure/active-directory/develop/apple-sso-plugin).
+    Plugin-programmet för enkel inloggning fungerar som en avancerad autentiseringsprovider som tillhandahåller förbättringar vad gäller säkerhet och användarupplevelse. Alla appar som använder Microsoft Authenticator-appen för autentisering fortsätter att få SSO med [Microsoft Enterprise SSO-tillägg för Apple-enheter](/azure/active-directory/develop/apple-sso-plugin).
 
     > [!IMPORTANT]
-    > Om du vill uppnå enkel inloggning med tilläggstypen för Microsoft Azure AD SSO-appen, måste du först installera Microsoft Authenticator-appen för iOS/iPad på enheterna. Authenticator-appen levererar Microsoft Enterprise SSO-plugin-programmet till enheter, och tilläggsinställningarna för MDM SSO-appen aktiverar plugin-programmet. När Authenticator och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session på sina enheter. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen. Mer information om Authenticator finns i [What is the Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-overview) (vad är Microsoft Authenticator-appen).
+    > Om du vill uppnå enkel inloggning med tilläggstypen för Microsoft Azure AD SSO-appen, måste du först installera Microsoft Authenticator-appen för iOS/iPad på enheterna. Authenticator-appen levererar Microsoft Enterprise SSO-plugin-programmet till enheter, och tilläggsinställningarna för MDM SSO-appen aktiverar plugin-programmet. När Authenticator och SSO-apptilläggsprofilen har installerats på enheterna, måste användarna ange sina autentiseringsuppgifter för att kunna logga in och upprätta en session på sina enheter. Den här sessionen används sedan av olika program utan att användarna behöver autentisera sig igen. Mer information om Authenticator finns i [What is the Microsoft Authenticator](/azure/active-directory/user-help/user-help-auth-app-overview) (vad är Microsoft Authenticator-appen).
 
   - **Omdirigera**: Använd ett allmänt, anpassningsbart omdirigeringsapptillägg om du vill använda SSO med moderna autentiseringsflöden. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
   - **Autentiseringsuppgift**: Använd ett generiskt, anpassningsbart apptillägg för autentiseringsuppgifter om du vill använda SSO med autentiseringsflöden med anrop och svar. Se till att du känner till tilläggs-ID:t för din organisations apptillägg.
@@ -318,7 +318,7 @@ Den här funktionen gäller för:
 
 - **Läget Delad enhet** (endast Microsoft Azure AD): Välj **Aktivera** om du ska distribuera Microsoft Enterprise SSO-plugin-programmet till iOS/iPad-enheter som konfigurerats för Azure AD:s funktion för läget Delad enhet. Enheter i delat läge gör det möjligt för många användare att logga in och ut globalt på program som stöder läget Delad enhet. När detta anges till **Inte konfigurerad** ändrar eller uppdaterar Intune inte den här inställningen. Som standard är iOS/iPad-enheter inte avsedda att delas mellan flera användare.
 
-  Mer information om läget Delad enhet och hur du aktiverar det finns i [Overview of shared device mode](https://docs.microsoft.com/azure/active-directory/develop/msal-shared-devices) (översikt över läget Delad enhet) och [Shared device mode for iOS devices](https://docs.microsoft.com/azure/active-directory/develop/msal-ios-shared-devices) (läget Delad enhet för iOS-enheter).  
+  Mer information om läget Delad enhet och hur du aktiverar det finns i [Overview of shared device mode](/azure/active-directory/develop/msal-shared-devices) (översikt över läget Delad enhet) och [Shared device mode for iOS devices](/azure/active-directory/develop/msal-ios-shared-devices) (läget Delad enhet för iOS-enheter).  
 
   Den här funktionen gäller för:
   

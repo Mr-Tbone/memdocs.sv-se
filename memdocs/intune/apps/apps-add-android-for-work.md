@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8ce02a86236e390983b4e1ecca8d48d4767e49e
-ms.sourcegitcommit: 9eebe77af18045fceb3d41b43d76b370fe92b30e
+ms.openlocfilehash: 0f6c70bcfa1bf9d23ff3555498cb199ff032bb34
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87821639"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910544"
 ---
 # <a name="add-managed-google-play-apps-to-android-enterprise-devices-with-intune"></a>Lägg till Google Play för företag-appar till Android enterprise-enheter med Intune
 
@@ -183,7 +183,7 @@ Om du har godkänt en app från butiken men inte ser den i arbetsbelastningen **
 
 ## <a name="assigning-a-managed-google-play-app-to-android-enterprise-work-profile-and-corporate-owned-work-profile-devices"></a>Tilldela en hanterad Google Play-app för Android Enterprise-enheter med arbetsprofil och företagsägd arbetsprofil
 
-När appen visas i noden **Applicenser** i arbetsbelastningsfönstret **Appar** kan du [tilldela den på samma sätt som du gör med andra appar](/mem/intune/apps/apps-deploy) genom att tilldela användargrupper appen.
+När appen visas i noden **Applicenser** i arbetsbelastningsfönstret **Appar** kan du [tilldela den på samma sätt som du gör med andra appar](./apps-deploy.md) genom att tilldela användargrupper appen.
 
 När du har tilldelat appen installeras den (eller görs tillgänglig för installation) på de enheter vars användare du har som mål. Användaren av enheten behöver inte godkänna installationen. Mer information om Android Enterprise-arbetsprofilenheter finns i [Konfigurera registrering av Android Enterprise-arbetsprofilenheter](../enrollment/android-work-profile-enroll.md). 
 

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baaec1e48579313085c039872cc931891c367132
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: abf2ad4a1b0857f1a839de49bb709fc4ff27f369
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531544"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913961"
 ---
 # <a name="add-microsoft-edge-for-windows-10-to-microsoft-intune"></a>Lägga till Microsoft Edge för Windows 10 till Microsoft Intune
 
@@ -121,7 +121,7 @@ Använd följande steg när du behöver avinstallera Microsoft Edge från använ
 
 ## <a name="troubleshooting"></a>Felsökning
 **Microsoft Edge version 77 och senare för Windows 10:**<br>
-Intune använder Intune-hanteringstillägget för att ladda ned och distribuera Microsoft Edge-installationsprogrammet till tilldelade Windows 10-enheter. Därefter kommunicerar det distributionsinställningarna till Microsoft Edge-installationsprogrammet, som laddar ned och installerar webbläsaren Microsoft Edge direkt från CDN. Läs [kraven för Intune-hanteringstillägget](intune-management-extension.md#prerequisites) och den bästa praxis som beskrivs i åtkomsten till Azure Update Service och CDN för att säkerställa att din nätverkskonfiguration tillåter att Windows 10-enheter kommer åt dessa platser. För att kunna ge åtkomst till installationsfiler från ett CDN för att installera webbläsaren, måste du dessutom tillåta åtkomst till Windows Updates slutpunkter. Mer information finns i [Hantera anslutningsslutpunkter för Windows 10, version 1809 – Windows Update](https://docs.microsoft.com/windows/privacy/manage-windows-1809-endpoints#windows-update) och [Nätverksslutpunkter för Microsoft Intune](../fundamentals/intune-endpoints.md).
+Intune använder Intune-hanteringstillägget för att ladda ned och distribuera Microsoft Edge-installationsprogrammet till tilldelade Windows 10-enheter. Därefter kommunicerar det distributionsinställningarna till Microsoft Edge-installationsprogrammet, som laddar ned och installerar webbläsaren Microsoft Edge direkt från CDN. Läs [kraven för Intune-hanteringstillägget](intune-management-extension.md#prerequisites) och den bästa praxis som beskrivs i åtkomsten till Azure Update Service och CDN för att säkerställa att din nätverkskonfiguration tillåter att Windows 10-enheter kommer åt dessa platser. För att kunna ge åtkomst till installationsfiler från ett CDN för att installera webbläsaren, måste du dessutom tillåta åtkomst till Windows Updates slutpunkter. Mer information finns i [Hantera anslutningsslutpunkter för Windows 10, version 1809 – Windows Update](/windows/privacy/manage-windows-1809-endpoints#windows-update) och [Nätverksslutpunkter för Microsoft Intune](../fundamentals/intune-endpoints.md).
 
 ## <a name="next-steps"></a>Nästa steg
 - [Tilldela appar till grupper](apps-deploy.md)

@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 1acbb00e5da0766685233cf7136caf8320564200
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 199bd8f267cc84492b21af83bf0761474080f11b
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83878092"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913417"
 ---
 # <a name="effects-of-company-portal-ios-device-reset"></a>Effekter vid företagsportalens iOS-enhetsåterställning 
 
@@ -42,6 +42,6 @@ Om enheten bara har konfigurerats för åtkomst till e-postmeddelanden på arbet
 
 - Ditt arbets- eller skolkonto kommer att tas bort. E-postmeddelanden som inte har sparats kommer att tas bort.   
 
-Återställning av enheter är inte tillgängligt för alla iOS-enheter. Om du arbetar med IT-support och vill veta mer om dessa begränsningar, kan du läsa [Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten](https://docs.microsoft.com/intune/devices-wipe).  
+Återställning av enheter är inte tillgängligt för alla iOS-enheter. Om du arbetar med IT-support och vill veta mer om dessa begränsningar, kan du läsa [Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten](/intune/devices-wipe).  
 
 Kontakta IT-supporten om du har frågor. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

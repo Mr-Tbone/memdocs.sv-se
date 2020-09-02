@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55e38ac8b5503e98df4878529ac892b55a52be47
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: 2c6648f66c585dac5b8913fdb13adfcb98cbf927
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429612"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88912703"
 ---
 # <a name="configure-the-take-a-test-app-on-windows-10-devices-using-intune"></a>Konfigurera appen Gör ett prov på Windows 10-enheter med Intune
 
@@ -49,7 +49,7 @@ När du har konfigurerat profilen tilldelar och distribuerar du den till dina el
   - `user@contoso.com`
   - `computerName\username`
 - **Kontonamn**: Om du ska konfigurera ett lokalt gästkonto anger du namnet på kontot som används med appen Gör ett prov. Kontonamnet visas som en ikon på inloggningsskärmen. Eleverna klickar på ikonen för att starta testet.  
-- **Webbadress till begränsad provmiljö**: Ange webbadressen till det prov som du vill att användarna ska göra. Mer information om hur du hämtar webbadressen finns i [dokumentationen för Gör ett prov](https://docs.microsoft.com/education/windows/take-tests-in-windows-10).
+- **Webbadress till begränsad provmiljö**: Ange webbadressen till det prov som du vill att användarna ska göra. Mer information om hur du hämtar webbadressen finns i [dokumentationen för Gör ett prov](/education/windows/take-tests-in-windows-10).
 - **Skrivaranslutning**: **Krävs** tillåter enbart åtkomst till appen Gör ett prov från enheter som är anslutna till en skrivare. Den här inställningen innebär att appens utskriftsknapp blir tillgänglig för de som ska göra provet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard tillåta elever att komma åt appen från enheter som inte är anslutna till en skrivare.  
 - **Skärmövervakning**: **Tillåt** övervakar skärmaktiviteten medan användarna gör provet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard hindra dig från att övervaka skärmen under provet.
 - **Textförslag**: Välj **Tillåt** så kan provdeltagarna se textförslag. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen. Operativsystemet kan som standard blockera textförslag medan användarna gör ett prov.

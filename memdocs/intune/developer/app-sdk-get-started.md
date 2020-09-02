@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42362d2c4ccc83718721f5ca314b232274ade46a
-ms.sourcegitcommit: e2ef7231d3abaf3c925b0e5ee9f66156260e3c71
+ms.openlocfilehash: 52dd81efb13bcfcda02c8574e065814f49b5564c
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85383231"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911853"
 ---
 # <a name="get-started-with-the-microsoft-intune-app-sdk"></a>Kom igång med Microsoft Intune App SDK
 
@@ -94,9 +94,9 @@ Du behöver en av följande utvecklarguider för att hjälpa dig att integrera I
 
 Förutom att aktivera din app för appskyddsprincip, krävs följande för att din app ska fungera korrekt med Azure Active Directory (AAD) appbaserad Villkorsstyrd åtkomst:
 
-* Appen har byggts med [Autentiseringsbibliotek för Azure ActiveDirectory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) och aktiverats för AAD broker-autentisering.
+* Appen har byggts med [Autentiseringsbibliotek för Azure ActiveDirectory](/azure/active-directory/develop/active-directory-authentication-libraries) och aktiverats för AAD broker-autentisering.
 
-* [Klient-ID för AAD](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication#configure-a-native-client-application) för din app måste vara unikt i iOS- och Android-plattformar.
+* [Klient-ID för AAD](/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication#configure-a-native-client-application) för din app måste vara unikt i iOS- och Android-plattformar.
 
 ## <a name="configure-telemetry-for-your-app"></a>Konfigurera telemetri för din app
 
@@ -108,7 +108,7 @@ Microsoft Intune samlar in data för användningsstatistik för din app.
 
 * **Intune App SDK för Android**: Intune App SDK för Android styr inte insamling av data från din app. Företagsportalprogrammet loggar telemetridata som standard. Dessa data skickas till Microsoft Intune. Enligt Microsofts policy samlar vi inte in någon personligt identifierbar information (PII). 
 
-  * Om användare väljer att inte skicka dessa data så måste de inaktivera telemetri under inställningarna i företagsportalappen. Du kan läsa mer i [Inaktivera Microsofts insamling av användningsdata](https://docs.microsoft.com/mem/intune/user-help/turn-off-microsoft-usage-data-collection-android). 
+  * Om användare väljer att inte skicka dessa data så måste de inaktivera telemetri under inställningarna i företagsportalappen. Du kan läsa mer i [Inaktivera Microsofts insamling av användningsdata](../user-help/turn-off-microsoft-usage-data-collection-android.md). 
 
 ## <a name="line-of-business-app-version-numbers"></a>Versionsnummer för verksamhetsspecifika appar
 

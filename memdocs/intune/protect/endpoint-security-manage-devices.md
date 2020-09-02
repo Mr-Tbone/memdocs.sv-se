@@ -5,7 +5,7 @@ keywords: ''
 author: brenduns
 ms.author: brenduns
 manager: dougeby
-ms.date: 07/15/2020
+ms.date: 05/15/2020
 ms.topic: reference
 ms.service: microsoft-intune
 ms.subservice: protect
@@ -16,16 +16,16 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 55a73806e343ac23525dbd2a28950d46285bf9a3
-ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.openlocfilehash: 98b1380254a784dfe8939c607ab574f7bdaa8752
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86088538"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914998"
 ---
 # <a name="manage-devices-with-endpoint-security-in-microsoft-intune"></a>Hantera enheter med slutpunktssäkerhet i Microsoft Intune
 
-Som säkerhetsadministratör använder du vyn *Alla enheter* i administrationscentret för Microsoft Endpoint Manager till att granska och hantera dina enheter. I vyn ser du en lista med alla dina enheter från Azure Active Directory (Azure AD). Här ingår enheter som hanteras av Intune, Configuration Manager och via [samhantering](https://docs.microsoft.com/configmgr/comanage/overview) av både Intune och Configuration Manager. Enheterna kan finnas i molnet eller i din lokala infrastruktur när den är integrerad med Azure AD.
+Som säkerhetsadministratör använder du vyn *Alla enheter* i administrationscentret för Microsoft Endpoint Manager till att granska och hantera dina enheter. I vyn ser du en lista med alla dina enheter från Azure Active Directory (Azure AD). Här ingår enheter som hanteras av Intune, Configuration Manager och via [samhantering](/configmgr/comanage/overview) av både Intune och Configuration Manager. Enheterna kan finnas i molnet eller i din lokala infrastruktur när den är integrerad med Azure AD.
 
  Du hittar vyn genom att öppna [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) och välja **Slutpunktssäkerhet** > **Alla enheter**.
 
@@ -59,15 +59,13 @@ Titta på följande fält:
 
     Efterlevnadsstatusen för enheter som hanteras av Configuration Manager visas inte i administrationscentret för Microsoft Endpoint Manager.
 
-    Mer information finns i [Aktivera koppling av klientorganisation](https://docs.microsoft.com/configmgr/tenant-attach/device-sync-actions) i Configuration Manager-dokumentationen.
+    Mer information finns i [Aktivera koppling av klientorganisation](/configmgr/tenant-attach/device-sync-actions) i Configuration Manager-dokumentationen.
 
   - **MDM/ConfigMgr-agent** – De här enheterna samhanteras mellan Intune och Configuration Manager.
 
-    Med samhantering kan du [välja olika arbetsbelastningar i samhanteringen](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) för att avgöra vilka aspekter som ska hanteras av Configuration Manager och av Intune. De här valen påverkar vilka policyer som används för enheten och hur efterlevnadsdata rapporteras till administrationscentret.
+    Med samhantering kan du [välja olika arbetsbelastningar i samhanteringen](/configmgr/comanage/how-to-switch-workloads) för att avgöra vilka aspekter som ska hanteras av Configuration Manager och av Intune. De här valen påverkar vilka policyer som används för enheten och hur efterlevnadsdata rapporteras till administrationscentret.
 
     Du kan till exempel använda Intune till att konfigurera policyer för antivirusprogram, brandväggar och kryptering. De här policyerna betraktas som policyer för *Endpoint Protection*. Om du vill att en samhanterad enhet ska använda Intune-policyer och inte Configuration Manager-policyer ställer du in samhanteringsreglaget för Endpoint Protection till antingen *Intune* eller *Pilot Intune*. Om reglaget är inställt på Configuration Manager använder enheten policyer och inställningar från Configuration Manager i stället.
-
-  - **Workspace ONE** – Dessa enheter hanteras av tredjepartspartnern för enhetsefterlevnad, Workspace ONE. Mer information finns i [Enhetsefterlevnadspartner](../protect/device-compliance-partners.md).
 
 - **Efterlevnad**: Efterlevnaden utvärderas enligt de efterlevnadspolicyer som har tilldelats till enheten. Källan till de här policyerna och vilken information som visas i konsolen beror på hur enheten hanteras: Intune, Configuration Manager eller samhantering. Om du vill att samhanterade enheter ska rapportera efterlevnad ställer du in samhanteringsreglaget för enhetens efterlevnad på antingen Intune eller Pilot Intune.  
 

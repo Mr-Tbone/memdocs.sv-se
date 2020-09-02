@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e98171955ed4f026da4c983e6ca8959cfe2606a
-ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
+ms.openlocfilehash: 9fb3556d363d2e831861a15aeadfb78bc2fa7dbb
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217239"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914114"
 ---
 # <a name="deploying-apps-using-intune-on-the-gcc-high-and-dod-environments"></a>Distribution av appar med hjälp av Intune i GCC High- och DoD-miljöer 
 
@@ -38,7 +38,7 @@ För att lägga till en verksamhetsspecifik app som avses för en GCC High- elle
 
 ## <a name="distribute-offline-apps-from-the-store-for-business-using-intune"></a>Distribuera offline-appar från Store för företag med hjälp av Intune  
 
-Om du behöver [ladda ned en offline-licensierad app](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app) från Microsoft Store för företag följer du stegen nedan för att ladda ned programmet: 
+Om du behöver [ladda ned en offline-licensierad app](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app) från Microsoft Store för företag följer du stegen nedan för att ladda ned programmet: 
 
 1. Logga in på [Store för företag](https://businessstore.microsoft.com/).
 2. Välj **Hantera** > **Inställningar**.
@@ -48,7 +48,7 @@ När du köper appar kan du välja att ändra licenstypen till offline om det fi
 
 ## <a name="syncing-intune-to-the-store-for-business"></a>Synkronisera Intune till Store för företag 
 
-I en kommersiell miljö (inte för myndigheter) kan en administratör synkronisera Intune till Microsoft Store för företag. Den här funktionen är inte tillgänglig i myndighetsmiljöer. Mer information om skillnaderna mellan Intune i kommersiella miljöer och Intune för myndighetsmiljöer finns i [beskrivningen av tjänsten Enterprise Mobility + Security för amerikanska myndigheter](https://docs.microsoft.com/enterprise-mobility-security/solutions/ems-govt-service-description).  
+I en kommersiell miljö (inte för myndigheter) kan en administratör synkronisera Intune till Microsoft Store för företag. Den här funktionen är inte tillgänglig i myndighetsmiljöer. Mer information om skillnaderna mellan Intune i kommersiella miljöer och Intune för myndighetsmiljöer finns i [beskrivningen av tjänsten Enterprise Mobility + Security för amerikanska myndigheter](/enterprise-mobility-security/solutions/ems-govt-service-description).  
 
 Information om hur du synkroniserar ditt Store för företag-konto finns i [Så hanterar du appar som du har köpt från Microsoft Store för företag med Microsoft Intune](windows-store-for-business.md).  
 
@@ -60,4 +60,3 @@ Granska sekretess- och efterlevnadspolicyerna för appar och jämför dem med di
 
 Mer information om distribution och tilldelning av appar finns i [Tilldela appar till grupper med Microsoft Intune](apps-deploy.md).
 
- 

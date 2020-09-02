@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f71bbc2022068616b90f37c209d41d28ea5970d0
-ms.sourcegitcommit: 4f10625e8d12aec294067a1d9138cbce19707560
+ms.openlocfilehash: c93f50f7c4b2537ab4dbd1d9462f13434e9c158e
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87912536"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88911530"
 ---
 # <a name="send-log-data-to-storage-event-hubs-or-log-analytics-in-intune-preview"></a>Skicka data till lagring, händelsehubbar eller logganalys i Intune (förhandsversion)
 
@@ -53,9 +53,9 @@ För att använda funktionen behöver du:
 
 Beroende på var du vill dirigera granskningsloggdata, behöver du någon av följande tjänster:
 
-* Ett [Azure storage-konto](https://docs.microsoft.com/azure/storage/common/storage-account-overview) med behörigheter för *Listnycklar*. Vi rekommenderar att du använder ett allmänt lagringskonto och inte ett blob-lagringskonto. Information om lagringspriser hittar du i [Priskalkylatorn för Azure Storage](https://azure.microsoft.com/pricing/calculator/?service=storage). 
-* En [namnrymd för Azure-händelshubbar](https://docs.microsoft.com/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för att integrera med lösningar från tredje part.
-* En [arbetsyta för Azure-logganalyser](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) för att skicka loggar till Log Analytics.
+* Ett [Azure storage-konto](/azure/storage/common/storage-account-overview) med behörigheter för *Listnycklar*. Vi rekommenderar att du använder ett allmänt lagringskonto och inte ett blob-lagringskonto. Information om lagringspriser hittar du i [Priskalkylatorn för Azure Storage](https://azure.microsoft.com/pricing/calculator/?service=storage). 
+* En [namnrymd för Azure-händelshubbar](/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) för att integrera med lösningar från tredje part.
+* En [arbetsyta för Azure-logganalyser](/azure/azure-monitor/learn/quick-create-workspace) för att skicka loggar till Log Analytics.
 
 ## <a name="send-logs-to-azure-monitor"></a>Skicka loggar till Azure Monitor
 
@@ -83,7 +83,7 @@ Beroende på var du vill dirigera granskningsloggdata, behöver du någon av fö
         1. Välj det här alternativet > **Konfigurera**. 
         2. Skapa en ny arbetsyta och ange arbetsytans information. Eller välj en befintlig arbetsyta i listan > **OK**.
 
-            [Azure-logganalysarbetsytan](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) innehåller mer information om de här inställningarna.
+            [Azure-logganalysarbetsytan](/azure/azure-monitor/learn/quick-create-workspace) innehåller mer information om de här inställningarna.
 
     - **LOG** > **AuditLogs**: Välj det här alternativet för att skicka [Intune-granskningsloggarna](monitor-audit-logs.md) till ditt lagringskonto, händelsehubb eller logganalys. Granskningsloggarna visar historiken för varje aktivitet som genererar en ändring i Intune, inklusive vem som gjorde den och när.
 
@@ -178,7 +178,7 @@ Följande tabell innehåller uppskattad kostnad per månad för en grundläggand
 
 | Kategori | Värde |
 | -------- | ----- |
-|Händelser per sekund|0.1 |
+|Händelser per sekund|0,1 |
 |Händelser per femminutsintervall| 52|
 |Volym per intervall|104 KB |
 |Meddelanden per intervall|1 |
@@ -187,7 +187,7 @@ Följande tabell innehåller uppskattad kostnad per månad för en grundläggand
 
 ### <a name="log-analytics-cost-considerations"></a>Kostnadsöverväganden för Log Analytics
 
-Du kan granska kostnaderna för att hantera Log Analytics-arbetsytan i [Hantera kostnader genom att kontrollera datavolymer och kvarhållning i Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-manage-cost-storage).
+Du kan granska kostnaderna för att hantera Log Analytics-arbetsytan i [Hantera kostnader genom att kontrollera datavolymer och kvarhållning i Log Analytics](/azure/log-analytics/log-analytics-manage-cost-storage).
 
 ## <a name="frequently-asked-questions"></a>Vanliga frågor och svar
 
@@ -199,7 +199,7 @@ Granskningsloggar och operativa (förhandsversion) loggar är båda tillgänglig
 
 ### <a name="after-an-action-when-do-the-corresponding-logs-show-up-in-the-event-hub"></a>När visas motsvarande loggarna i händelsehubben efter en åtgärd?
 
-Loggarna visas vanligtvis i din händelsehubb inom några minuter efter att åtgärden utförts. I [Vad är Azure Event Hubs? ](https://docs.microsoft.com/azure/event-hubs/) hittar du mer information.
+Loggarna visas vanligtvis i din händelsehubb inom några minuter efter att åtgärden utförts. I [Vad är Azure Event Hubs? ](/azure/event-hubs/) hittar du mer information.
 
 ### <a name="after-an-action-when-do-the-corresponding-logs-show-up-in-the-storage-account"></a>När visas motsvarande loggarna i lagringskontot efter en åtgärd ?
 
@@ -219,22 +219,22 @@ Strömningskostnaderna beror på hur många meddelanden du får per minut. Mer i
 
 ### <a name="how-do-i-integrate-intune-audit-logs-with-my-siem-system"></a>Hur gör jag för att integrera granskningsloggar för Intune med mitt SIEM-system?
 
-Använd Azure Monitor med Event Hubs för att streama loggar till ditt SIEM-system. Först [strömma loggarna till en händelsehubb](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub). Sedan [konfigurera SIEM-verktyget](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) med den konfigurerade händelsehubben. 
+Använd Azure Monitor med Event Hubs för att streama loggar till ditt SIEM-system. Först [strömma loggarna till en händelsehubb](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub). Sedan [konfigurera SIEM-verktyget](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) med den konfigurerade händelsehubben. 
 
 ### <a name="what-siem-tools-are-currently-supported"></a>Vilka SIEM-verktyg stöds för närvarande?
 
-Azure Monitor stöds för närvarande av [Splunk](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), QRadar och [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) (öppnar en ny webbplats). Mer information om hur anslutningsapparna fungerar finns på sidan om att [strömma Azure-övervakningsdata till en händelsehubb för användning av ett externt verktyg](https://docs.microsoft.com/azure/azure-monitor/platform/stream-monitoring-data-event-hubs).
+Azure Monitor stöds för närvarande av [Splunk](/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), QRadar och [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory) (öppnar en ny webbplats). Mer information om hur anslutningsapparna fungerar finns på sidan om att [strömma Azure-övervakningsdata till en händelsehubb för användning av ett externt verktyg](/azure/azure-monitor/platform/stream-monitoring-data-event-hubs).
 
 ### <a name="can-i-access-the-data-from-an-event-hub-without-using-an-external-siem-tool"></a>Kan jag komma åt data från en händelsehubb utan att använda något externt SIEM-verktyg?
 
-Ja. Om du vill komma åt loggarna från ditt anpassade program kan du använda [Event Hub API](https://docs.microsoft.com/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
+Ja. Om du vill komma åt loggarna från ditt anpassade program kan du använda [Event Hub API](/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
 
 ### <a name="what-data-is-stored"></a>Vilka data lagras?
 
-Intune lagrar inte alla data som skickas via pipelinen. Intune dirigerar data till Azure Monitor-pipelinen vid klientens medgivande. Mer information finns i [Översikt av Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview).
+Intune lagrar inte alla data som skickas via pipelinen. Intune dirigerar data till Azure Monitor-pipelinen vid klientens medgivande. Mer information finns i [Översikt av Azure Monitor](/azure/azure-monitor/overview).
 
 ## <a name="next-steps"></a>Nästa steg
 
-* [Arkivera aktivitetsloggar till ett lagringskonto](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
-* [Dirigera aktivitetsloggar till en händelsehubb](https://docs.microsoft.com/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
-* [Integrera aktivitetsloggar med Log Analytics](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Arkivera aktivitetsloggar till ett lagringskonto](/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
+* [Dirigera aktivitetsloggar till en händelsehubb](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+* [Integrera aktivitetsloggar med Log Analytics](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)

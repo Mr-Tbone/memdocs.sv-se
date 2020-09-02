@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50c1842357a79ce3228b7b0a5283dc9a4e98b2d6
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 19c5c1f8e7a68a31150baa079ce9b766b6df72df
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252347"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906760"
 ---
 # <a name="remove-devices-by-using-wipe-retire-or-manually-unenrolling-the-device"></a>Ta bort enheter genom att rensa, dra tillbaka eller manuellt avregistrera enheten
 
@@ -168,7 +168,7 @@ Du kan konfigurera Intune så att enheter som är inaktiva, inaktuella eller som
 4. Välj **Spara**.
 
 > [!NOTE]
-> Reglerna för enhetsrensning är inte tillgängliga för Android Enterprise-scenarier som [Fullständigt hanterad](https://docs.microsoft.com/mem/intune/enrollment/android-fully-managed-enroll), [Dedikerad](https://docs.microsoft.com/mem/intune/enrollment/android-kiosk-enroll) och [Företagsägd med arbetsprofil](https://docs.microsoft.com/mem/intune/enrollment/android-corporate-owned-work-profile-enroll). 
+> Reglerna för enhetsrensning är inte tillgängliga för Android Enterprise-scenarier som [Fullständigt hanterad](../enrollment/android-fully-managed-enroll.md), [Dedikerad](../enrollment/android-kiosk-enroll.md) och [Företagsägd med arbetsprofil](../enrollment/android-corporate-owned-work-profile-enroll.md). 
 
 ## <a name="delete-devices-from-the-azure-active-directory-portal"></a>Ta bort enheter från Azure Active Directory-portalen
 
@@ -206,4 +206,3 @@ Gäller för Windows 10-enheter. Läs mer om [Börja om på nytt](device-fresh-s
 ## <a name="next-steps"></a>Nästa steg
 
 Läs [registreringsalternativen](../enrollment/enrollment-options.md) för information om hur du registrerar om en borttagen enhet.
-

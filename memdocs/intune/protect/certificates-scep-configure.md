@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e4f98f0f1e60ff08e86dedb2dd34ac9f55157ac
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: b3d422978fe6e2cbb123b87311e5c175483b9f66
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820399"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88916001"
 ---
 # <a name="configure-infrastructure-to-support-scep-with-intune"></a>Konfigurera infrastrukturen för att stödja SCEP med Intune
 
@@ -40,7 +40,7 @@ Innan du fortsätter ska du ha [skapat och distribuerat en *betrodd certifikatpr
 
 Följande lokala infrastruktur måste köras på servrar som är domänanslutna till din Active Directory, med undantag för webbprogramproxyservern.
 
-- **Certifikatutfärdare** – använd en Microsoft Active Directory Certificate Services-certifikatutfärdare (CA) som körs på en Enterprise-version av Windows Server 2008 R2 med service pack 1 eller senare. Den version av Windows Server som du använder måste ha fortsatt support från Microsoft. En fristående certifikatutfärdare stöds inte. Mer information finns i [Installera certifikatutfärdaren](https://technet.microsoft.com/library/jj125375.aspx). Om din certifikatutfärdare kör Windows Server 2008 R2 SP1 måste du [installera snabbkorrigeringen från KB2483564](https://support.microsoft.com/kb/2483564/).
+- **Certifikatutfärdare** – använd en Microsoft Active Directory Certificate Services-certifikatutfärdare (CA) som körs på en Enterprise-version av Windows Server 2008 R2 med service pack 1 eller senare. Den version av Windows Server som du använder måste ha fortsatt support från Microsoft. En fristående certifikatutfärdare stöds inte. Mer information finns i [Installera certifikatutfärdaren](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj125375(v=ws.11)). Om din certifikatutfärdare kör Windows Server 2008 R2 SP1 måste du [installera snabbkorrigeringen från KB2483564](https://support.microsoft.com/kb/2483564/).
 
 - **NDES-serverroll** – du måste konfigurera en NDES-serverroll (registreringstjänst för nätverksenheter) på Windows Server 2012 R2 eller senare. I ett senare avsnitt av den här artikeln vägleder vi dig genom [installationen av NDES](#set-up-ndes).
 
@@ -48,7 +48,7 @@ Följande lokala infrastruktur måste köras på servrar som är domänanslutna 
   - Du kan inte använda NDES som är installerad på den server som är värd för företagscertifikatutfärdaren.
   - Du installerar Microsoft Intune Certificate Connector på samma server som NDES.
 
-  Mer information om NDES finns i [vägledningen för registreringstjänsten för nätverksenheter](https://technet.microsoft.com/library/hh831498.aspx) i Windows Server-dokumentationen samt [Använda en principmodul med registreringstjänsten för nätverksenheter](https://technet.microsoft.com/library/dn473016.aspx).
+  Mer information om NDES finns i [vägledningen för registreringstjänsten för nätverksenheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v=ws.11)) i Windows Server-dokumentationen samt [Använda en principmodul med registreringstjänsten för nätverksenheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn473016(v=ws.11)).
 
 - **Microsoft Intune Certificate Connector** – Microsoft Intune Certificate Connector krävs för användning av SCEP-certifikatprofiler med Intune. Den här artikeln vägleder dig genom [installationen av det här anslutningsprogrammet](#install-the-intune-certificate-connector).
 
@@ -56,21 +56,21 @@ Följande lokala infrastruktur måste köras på servrar som är domänanslutna 
   - Anslutningsprogrammet har samma nätverkskrav som [hanterade enheter](../fundamentals/intune-endpoints.md#access-for-managed-devices).
   - Anslutningsprogrammet måste köras på samma server som NDES-serverrollen, en server som kör Windows Server 2012 R2 eller senare.
   - .NET 4.5 Framework krävs av anslutningsprogrammet och ingår automatiskt i Windows Server 2012 R2.
-  - Internet Explorer Enhanced Security Configuration [måste vara inaktiverat på den server som är värd för NDES](https://technet.microsoft.com/library/cc775800(v=WS.10).aspx) samt Microsoft Intune Certificate Connector.
+  - Internet Explorer Enhanced Security Configuration [måste vara inaktiverat på den server som är värd för NDES](/previous-versions/windows/it-pro/windows-server-2003/cc775800(v=ws.10)) samt Microsoft Intune Certificate Connector.
 
 Följande lokala infrastruktur är valfri:
 
 Om du vill tillåta enheter på Internet att hämta certifikat behöver du publicera din NDES-URL externt till ditt företagsnätverk. Du kan använda antingen Azure-AD-programproxy, webbprogramproxyservern eller en annan omvänd proxy.
 
-- **Azure Active Directory-programproxy** (valfritt) – du kan använda Azure AD-programproxy i stället för en dedikerad webbprogramproxy (WAP)-server för att publicera NDES-URL:en till Internet. Detta gör att både intranät- och Internetriktade enheter kan hämta certifikat. Mer information finns i [Så här tillhandahåller du säker fjärråtkomst till lokala program](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy).
+- **Azure Active Directory-programproxy** (valfritt) – du kan använda Azure AD-programproxy i stället för en dedikerad webbprogramproxy (WAP)-server för att publicera NDES-URL:en till Internet. Detta gör att både intranät- och Internetriktade enheter kan hämta certifikat. Mer information finns i [Så här tillhandahåller du säker fjärråtkomst till lokala program](/azure/active-directory/manage-apps/application-proxy).
 
 - **Web Application Proxy-server** (valfritt) – använd en server som kör Windows Server 2012 R2 eller senare som en webbprogramproxyserver (WAP) för att publicera NDES-URL:en till Internet.  Detta gör att både intranät- och Internetriktade enheter kan hämta certifikat.
 
-  Servern som är värd för WAP [måste installera en uppdatering](https://blogs.technet.com/b/ems/archive/2014/12/11/hotfix-large-uri-request-in-web-application-proxy-on-windows-server-2012-r2.aspx) som aktiverar stöd för de långa URL:er som används av registreringstjänsten för nätverksenheter. Uppdateringen finns med i [samlad uppdatering för december 2014](https://support.microsoft.com/kb/3013769), eller individuellt från [KB3011135](https://support.microsoft.com/kb/3011135).
+  Servern som är värd för WAP [måste installera en uppdatering](/archive/blogs/ems/hotfix-large-uri-request-in-web-application-proxy-on-windows-server-2012-r2) som aktiverar stöd för de långa URL:er som används av registreringstjänsten för nätverksenheter. Uppdateringen finns med i [samlad uppdatering för december 2014](https://support.microsoft.com/kb/3013769), eller individuellt från [KB3011135](https://support.microsoft.com/kb/3011135).
 
   WAP-servern måste ha ett SSL-certifikat som överensstämmer med det namn som publiceras på externa klienter och lita på det SSL-certifikat som används på den dator som är värd för NDES-tjänsten. De här certifikaten gör det möjligt för WAP-servern att avbryta SSL-anslutningen från klienter och skapa en ny SSL-anslutning till NDES-tjänsten.
 
-  Mer information finns i [Planera certifikat för WAP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11)#plan-certificates) och [allmän information om WAP-servrar](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn584113(v=ws.11)).
+  Mer information finns i [Planera certifikat för WAP](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11)#plan-certificates) och [allmän information om WAP-servrar](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn584113(v=ws.11)).
 
 ### <a name="accounts"></a>Konton
 
@@ -82,7 +82,7 @@ Om du vill tillåta enheter på Internet att hämta certifikat behöver du publi
   - **Logga in som en tjänst**
   - **Logga in som ett batchjobb**
 
-  Mer information finns i [Skapa ett domänanvändarkonto för att fungera som NDES-tjänstkonto](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v=ws.11)#to-create-a-domain-user-account-to-act-as-the-ndes-service-account).
+  Mer information finns i [Skapa ett domänanvändarkonto för att fungera som NDES-tjänstkonto](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v=ws.11)#to-create-a-domain-user-account-to-act-as-the-ndes-service-account).
 
 - **Åtkomst till den dator som är värd för NDES-tjänsten** – du behöver ett domänanvändarkonto med behörighet att installera och konfigurera Windows-serverroller på den server där du installerar NDES.
 
@@ -90,7 +90,7 @@ Om du vill tillåta enheter på Internet att hämta certifikat behöver du publi
 
 ### <a name="network-requirements"></a>Nätverkskrav
 
-Vi rekommenderar att du publicerar NDES-tjänsten via en omvänd proxy, till exempel [Azure AD-programproxy, webbåtkomstproxy](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-publish/) eller en proxy från tredje part. Om du inte använder en omvänd proxy ska du tillåta TCP-trafik på port 443 från alla värdar och IP-adresser på Internet till NDES-tjänsten.
+Vi rekommenderar att du publicerar NDES-tjänsten via en omvänd proxy, till exempel [Azure AD-programproxy, webbåtkomstproxy](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application) eller en proxy från tredje part. Om du inte använder en omvänd proxy ska du tillåta TCP-trafik på port 443 från alla värdar och IP-adresser på Internet till NDES-tjänsten.
 
 Tillåt alla portar och protokoll som behövs för kommunikation mellan NDES-tjänsten och alla stödinfrastruktur i din miljö. Till exempel behöver den dator som är värd för NDES-tjänsten kommunicera med certifikatutfärdaren, DNS-servrar, domänkontrollanter och eventuellt andra tjänster eller servrar i din miljö, till exempel Configuration Manager.
 
@@ -234,11 +234,11 @@ Som standard använder Intune värdet som konfigurats i mallen men du kan dock k
 
 ## <a name="set-up-ndes"></a>Konfigurera NDES
 
-Följande procedurer kan hjälpa dig att konfigurera registreringstjänsten för nätverksenheter (NDES) för användning med Intune. Mer information om NDES finns i [vägledningen för registreringstjänsten för nätverksenheter](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v%3dws.11)).
+Följande procedurer kan hjälpa dig att konfigurera registreringstjänsten för nätverksenheter (NDES) för användning med Intune. Mer information om NDES finns i [vägledningen för registreringstjänsten för nätverksenheter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831498(v=ws.11)).
 
 ### <a name="install-the-ndes-service"></a>Installera NDES-tjänsten
 
-1. På den server som kommer att vara värd för din NDES-tjänst loggar du in som **företagsadministratör** och använder sedan [guiden Lägg till roller och funktioner](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)) för att installera NDES:
+1. På den server som kommer att vara värd för din NDES-tjänst loggar du in som **företagsadministratör** och använder sedan [guiden Lägg till roller och funktioner](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)) för att installera NDES:
 
    1. I guiden väljer du **Active Directory-certifikattjänster** för att få tillgång till AD CS-rolltjänsterna. Välj **Registreringstjänsten för nätverksenheter**, avmarkera **Certifikatutfärdare**och slutför sedan guiden.
 

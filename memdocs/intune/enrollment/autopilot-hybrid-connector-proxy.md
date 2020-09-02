@@ -17,20 +17,20 @@ ms.suite: ems
 search.appverid: ''
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b26bf4910e6745a60634a2b313a37beeb33192d3
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 9c7300c03ce0ba703f423aa420e9e47534ef2968
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83986896"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908691"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Arbeta med befintliga lokala proxyservrar
 
 Den här artikeln förklarar hur du konfigurerar Intune-anslutningsappen för Active Directory till att fungera med utgående proxyservrar. Den är avsedd för kunder med nätverksmiljöer som har befintliga proxyservrar.
 
-Som standard försöker Intune Connector för Active Directory automatiskt hitta en proxyserver i nätverket med WPAD (Web Proxy Auto-Discovery). Om detta har konfigurerats i ditt nätverk kanske ytterligare konfiguration inte krävs.  Om ändringar krävs kan du använda följande avsnitt för att åsidosätta standardinställningarna, och samtidigt använda [standardfunktionerna för .NET Framework för att konfigurera proxyinställningar](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).  Ytterligare alternativ beskrivs i dokumentationen.
+Som standard försöker Intune Connector för Active Directory automatiskt hitta en proxyserver i nätverket med WPAD (Web Proxy Auto-Discovery). Om detta har konfigurerats i ditt nätverk kanske ytterligare konfiguration inte krävs.  Om ändringar krävs kan du använda följande avsnitt för att åsidosätta standardinställningarna, och samtidigt använda [standardfunktionerna för .NET Framework för att konfigurera proxyinställningar](/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).  Ytterligare alternativ beskrivs i dokumentationen.
 
-Mer information om hur anslutningsappar fungerar finns i avsnittet om att [förstå anslutningsappar för Azure AD-programproxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors).
+Mer information om hur anslutningsappar fungerar finns i avsnittet om att [förstå anslutningsappar för Azure AD-programproxy](/azure/active-directory/manage-apps/application-proxy-connectors).
 
 ## <a name="completely-bypass-outbound-proxies"></a>Kringgå helt utgående proxyservrar
 

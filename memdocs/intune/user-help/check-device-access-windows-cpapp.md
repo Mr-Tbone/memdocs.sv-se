@@ -18,12 +18,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 24d83e5ada6109caec2f6238df44559909580931
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: af883fc950a878a70bac2f9121967254583a90d7
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83878434"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914454"
 ---
 # <a name="check-access-from-company-portal-app-for-windows"></a>Kontrollera åtkomst från företagsportalappen för Windows
 
@@ -68,7 +68,7 @@ Följ stegen i den här artikeln om du vill kontrollera åtkomsten från företa
 
     ![Exempel på skärmbild av startsidan i företagsportalappen för Windows, med fokus på avsnittet Mina enheter.](./media/1809_CheckAccess_Context_Select_Device.png)  
 
-2. Högerklicka på eller tryck på och håll ned en enhet för att öppna enhetens [snabbmeny](https://docs.microsoft.com//windows/uwp/design/controls-and-patterns/menus).  
+2. Högerklicka på eller tryck på och håll ned en enhet för att öppna enhetens [snabbmeny](//windows/uwp/design/controls-and-patterns/menus).  
 
     ![Exempel på skärmbild av startsidan i företagsportalappen för Windows. Snabbmenyn för enheten visas i avsnittet **Mina enheter** på sidan och visar åtgärderna ”Byt namn”, ”Ta bort” och ”Kontrollera åtkomst”.](./media/1809_DeviceContextMenu_Windows_CP.png)  
 3. Välj **Kontrollera åtkomst**. Appen synkroniserar enheten med din organisations krav och kontrollerar att enheten uppfyller dem. Den här kontrollen kan ta några minuter.  

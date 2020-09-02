@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 541c607bebb57b1ee23df1af3ab80d29cdd0c6fc
-ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
+ms.openlocfilehash: 720328ebe260c967bef4a879bd0ee33ae2f332a0
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866136"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915695"
 ---
 # <a name="how-to-use-azure-ad-to-access-the-intune-apis-in-microsoft-graph"></a>Använda Azure AD för att få åtkomst till Intune API:er i Microsoft Graph
 
@@ -53,9 +53,9 @@ Den här artikeln:
 
 Mer information finns i:
 
-- [Bevilja åtkomst till webbprogram med hjälp av OAuth 2.0 och Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code)
+- [Bevilja åtkomst till webbprogram med hjälp av OAuth 2.0 och Azure Active Directory](/azure/active-directory/develop/active-directory-protocols-oauth-code)
 - [Komma igång med Azure AD-autentisering](https://www.visualstudio.com/docs/integrate/get-started/auth/oauth)
-- [Integrera program med Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)
+- [Integrera program med Azure Active Directory](/azure/active-directory/develop/active-directory-integrating-applications)
 - [Förstå OAuth 2.0](https://oauth.net/2/)
 
 ## <a name="register-apps-to-use-the-microsoft-graph-api"></a>Registrera appar för att använda Microsoft Graph API
@@ -80,7 +80,7 @@ Registrera en app för att använda Microsoft Graph API:
 
     2. Värden för **Programtyp** och **Omdirigerings-URI**.
 
-        Dessa varierar beroende på dina krav. Om du till exempel använder ett Azure AD-[autentiseringsbibliotek](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) (ADAL), anger du **Programtyp** till `Native` och **Omdirigerings-URI** till `urn:ietf:wg:oauth:2.0:oob`.
+        Dessa varierar beroende på dina krav. Om du till exempel använder ett Azure AD-[autentiseringsbibliotek](/azure/active-directory/develop/active-directory-authentication-libraries) (ADAL), anger du **Programtyp** till `Native` och **Omdirigerings-URI** till `urn:ietf:wg:oauth:2.0:oob`.
 
         > [!NOTE]
         > Azure Active Directory-autentiseringsbibliotek (ADAL) och Azure AD Graph API kommer att bli inaktuella. Mer information finns i [Uppdatera dina program för användning med Microsoft Authentication Library (MSAL) och Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
@@ -88,7 +88,7 @@ Registrera en app för att använda Microsoft Graph API:
 
         <img src="../media/azure-ad-app-new.png" width="209" height="140" alt="New app properties and values" />
 
-        Läs mer i [Autentiseringsscenarier för Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-scenarios).
+        Läs mer i [Autentiseringsscenarier för Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios).
 
 5. I programbladet:
 
@@ -106,7 +106,7 @@ Registrera en app för att använda Microsoft Graph API:
 
     <img src="../media/azure-ad-perm-scopes.png" width="489" height="248" alt="Intune Graph API permission scopes" />
 
-    Välj de roller som krävs för din app genom att göra en bockmarkering till vänster om namnen.  Mer information om specifika behörighetsomfattningar för Intune finns i [Intunes behörighetsomfattningar](#intune-permission-scopes).  Mer information om andra behörighetsomfattningar för Graph API finns i [Behörighetsreferens för Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
+    Välj de roller som krävs för din app genom att göra en bockmarkering till vänster om namnen.  Mer information om specifika behörighetsomfattningar för Intune finns i [Intunes behörighetsomfattningar](#intune-permission-scopes).  Mer information om andra behörighetsomfattningar för Graph API finns i [Behörighetsreferens för Microsoft Graph](/graph/permissions-reference).
 
     För att få bäst resultat väljer du det minsta antal roller som krävs för att implementera ditt program.
 
@@ -141,8 +141,8 @@ Azure AD och Microsoft Graph använder behörighetsomfattningar för att styra �
 Behörighetsomfattningen (kallas även _OAuth-omfattningar_) styr åtkomsten till specifika Intune-entiteter och deras egenskaper. Det här avsnittet sammanfattar behörighetsomfattningarna för Intune API-funktionerna.
 
 Mer information:
-- [Azure AD-autentisering](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication)
-- [Behörighetsomfattningar för program](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)
+- [Azure AD-autentisering](/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication)
+- [Behörighetsomfattningar för program](/azure/active-directory/develop/active-directory-v2-scopes)
 
 När du beviljar behörighet för Microsoft Graph kan du ange följande omfattningar för att styra åtkomsten till Intune-funktioner: I följande tabell sammanfattas behörighetsomfattningarna för Intune API.  Den första kolumnen visar namnet på den funktion som visas i Azure-portalen och den andra kolumnen innehåller namnet på behörighetsomfattningen.
 

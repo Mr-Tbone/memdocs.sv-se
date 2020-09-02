@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49d1b8f407814fd368a7ff45bb94bc4c5ef7fd9d
-ms.sourcegitcommit: 169e279ba686c28d9a23bc0a54f0a2a0d20bdee4
+ms.openlocfilehash: 88b7f41b873697a7ec34bd1fc2f1098384ab1c18
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83556293"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915729"
 ---
 # <a name="windows-holographic-for-business-settings-to-manage-shared-devices-using-intune"></a>Windows Holographic for Business-inställningar för hantering av delade enheter med Intune
 
@@ -32,7 +32,7 @@ Med Microsoft Intune kan användare logga in på dessa delade enheter med ett g�
 
 Den här artikeln listar och beskriver de inställningar du använder i en Windows Holographic for Business-enhetskonfigurationsprofil. När profilen har skapats i Intune distribuerar och tilldelar du sedan profilen till enhetsgrupper i organisationen. Du kan även tilldela profilen till en enhetsgrupp med blandade enhetstyper och OS-versioner.
 
-Mer information om den här funktionen i Intune finns i [Styra åtkomst, konton och energifunktioner på delade datorer eller enheter med flera användare](shared-user-device-settings.md). Mer information om Windows CSP finns i [AccountManagement CSP](https://docs.microsoft.com/windows/client-management/mdm/accountmanagement-csp).
+Mer information om den här funktionen i Intune finns i [Styra åtkomst, konton och energifunktioner på delade datorer eller enheter med flera användare](shared-user-device-settings.md). Mer information om Windows CSP finns i [AccountManagement CSP](/windows/client-management/mdm/accountmanagement-csp).
 
 ## <a name="before-your-begin"></a>Innan du börjar
 

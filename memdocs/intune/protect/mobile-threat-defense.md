@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7bc7f526db4cb9fd269d2d48845cc5dc4096b5df
-ms.sourcegitcommit: 0c5d09bfefbedeb561658cf7274483896e84e5d3
+ms.openlocfilehash: 80b725393323484ecb33aad947a95894604c4d5a
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87412349"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906896"
 ---
 # <a name="mobile-threat-defense-integration-with-intune"></a>Mobile Threat Defense-integrering med Intune
 
@@ -35,7 +35,7 @@ Intune kan integrera data från en Mobile Threat Defense-leverantör som informa
 Intune kan använda samma data som källa för oregistrerade enheter som använder Intune-appskyddsprinciper. Administratörer kan därför använda den här informationen för att skydda företagsdata i en [Microsoft Intune-skyddad app](../apps/apps-supported-intune-apps.md) och utfärda en blockering eller en selektiv rensning.
 
 > [!NOTE]
-> Integrering av skydd mot mobilhot med Intune-erbjudandet GCC High och DoD stöds för närvarande *inte*. Läs mer om [Microsoft Intune-stöd för US Government GCC High](https://docs.microsoft.com/enterprise-mobility-security/solutions/ems-intune-govt-service-description).
+> Integrering av skydd mot mobilhot med Intune-erbjudandet GCC High och DoD stöds för närvarande *inte*. Läs mer om [Microsoft Intune-stöd för US Government GCC High](/enterprise-mobility-security/solutions/ems-intune-govt-service-description).
 
 ## <a name="protect-corporate-resources"></a>Skydda företagets resurser
 

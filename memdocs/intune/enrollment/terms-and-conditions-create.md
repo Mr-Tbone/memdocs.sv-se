@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66bc3db54ebefe814a14f564abbad42dc226aefe
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: b3d0ae7f0ec42cef3ba792b5c0bf3c913bb9e63e
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988986"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906862"
 ---
 # <a name="terms-and-conditions-for-user-access"></a>Allmänna villkor för användaråtkomst
 
@@ -39,7 +39,7 @@ Du kan skapa flera uppsättningar med villkor och tilldela dem till olika använ
 
 Du kan skapa företagets allmänna villkor på två sätt:
 - med hjälp av Intune, genom att följa anvisningarna i den här artikeln.
-- med hjälp av [funktionen Azure Active Directory-användningsvillkor](https://docs.microsoft.com/azure/active-directory/governance/active-directory-tou)
+- med hjälp av [funktionen Azure Active Directory-användningsvillkor](/azure/active-directory/governance/active-directory-tou)
 
 Om du inte vet vilken metod som passar bäst för dig rekommenderar vi att du läser blogginlägget [Choosing the right Terms solution for your organization](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409) (Välja rätt lösning för användningsvillkor för din organisation). 
 

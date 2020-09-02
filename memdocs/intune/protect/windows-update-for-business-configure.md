@@ -15,12 +15,12 @@ ms.reviewer: mghadial
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4425178dde820bc1f9b0503d50406c007d090ca
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: b8d6bb9e69831d2804d93d3694671f8dd27da305
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252579"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915984"
 ---
 # <a name="manage-windows-10-software-updates-in-intune"></a>Hantera Windows 10-programuppdateringar i Intune
 
@@ -38,7 +38,7 @@ Intune tillhandahåller följande principtyper för hanteringen av uppdateringar
 
 Du tilldelar principer för Windows 10-uppdateringsringar och Windows 10-funktionsuppdateringar till enhetsgrupper. Du kan använda båda principtyperna i samma Intune-miljö för att hantera programuppdateringar för dina Windows 10-enheter samt för att skapa en uppdateringsstrategi som återspeglar just ditt företags behov.
 
-Mer information finns i [Hantera uppdateringar med hjälp av Windows Update för företag](https://technet.microsoft.com/itpro/windows/manage/waas-manage-updates-wufb).
+Mer information finns i [Hantera uppdateringar med hjälp av Windows Update för företag](/windows/deployment/update/waas-manage-updates-wufb).
 
 ## <a name="prerequisites"></a>Krav
 
@@ -182,7 +182,7 @@ Tänk på följande när du ska använda Avinstallera:
 
   Anta exempelvis att en uppdateringsring har en funktionsuppdatering med en avinstallationsperiod på 20 dagar. Efter 25 dagar vill du återställa till den senaste funktionsuppdateringen och du använder alternativet Avinstallera.  Enheter som installerade funktionsuppdateringen för mer än 20 dagar sedan kan inte avinstallera den, eftersom de bitar som krävs har tagits bort vid underhållet. Men enheter som installerade funktionsuppdateringen för upp till 19 dagar sedan kan avinstallera uppdateringen, om de checkar in för att få avinstallationskommandot innan avinstallationsperioden på 20 dagar har löpt ut.
 
-Mer information om Windows Update-principer finns i [Uppdatera CSP](https://docs.microsoft.com/windows/client-management/mdm/update-csp) i dokumentationen för Windows-klienthantering.
+Mer information om Windows Update-principer finns i [Uppdatera CSP](/windows/client-management/mdm/update-csp) i dokumentationen för Windows-klienthantering.
 
 ##### <a name="to-uninstall-the-latest-windows-10-update"></a>Avinstallera den senaste uppdateringen av Windows 10
 
@@ -247,7 +247,7 @@ I det här fönstret kan du göra följande:
 
 ## <a name="validation-and-reporting-for-windows-10-updates"></a>Validering och rapportering för Windows 10-uppdateringar
 
-För både Windows 10-uppdateringsringar och funktionsuppdateringar i Windows 10 använder du [Intune-efterlevnadsrapporter för uppdateringar](windows-update-compliance-reports.md) när du ska övervaka enheternas uppdateringsstatus. Den här lösningen använder [Uppdateringsefterlevnad](https://docs.microsoft.com/windows/deployment/update/update-compliance-monitor) med din Azure-prenumeration.
+För både Windows 10-uppdateringsringar och funktionsuppdateringar i Windows 10 använder du [Intune-efterlevnadsrapporter för uppdateringar](windows-update-compliance-reports.md) när du ska övervaka enheternas uppdateringsstatus. Den här lösningen använder [Uppdateringsefterlevnad](/windows/deployment/update/update-compliance-monitor) med din Azure-prenumeration.
 
 ## <a name="next-steps"></a>Nästa steg
 

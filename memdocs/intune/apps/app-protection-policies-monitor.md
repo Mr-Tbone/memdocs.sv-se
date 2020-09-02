@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10c715bcff63e6ec5a9ec9002926f6ee6608360e
-ms.sourcegitcommit: 0b30c8eb2f5ec2d60661a5e6055fdca8705b4e36
+ms.openlocfilehash: 3a64d3f58541194ed4c1a63ac57cddec70ff6873
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84455080"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913485"
 ---
 # <a name="how-to-monitor-app-protection-policies"></a>Så här övervakar du appskyddsprinciper
 [!INCLUDE [azure_portal](../includes/azure_portal.md)]
@@ -92,7 +92,7 @@ Du kan söka efter en enskild användare och kontrollera efterlevnadsstatusen f�
 - **Senaste synkronisering**: När appen senast synkroniserades med Intune.
 
 >[!NOTE]
-> Kolumnen **Senaste synkronisering** visar samma värde i både konsolens användarstatusrapport och appskyddsprincipens [exporteringsbara .csv-rapport](https://docs.microsoft.com/intune/app-protection-policies-monitor#export-app-protection-activities). Skillnaden är en liten fördröjning i synkroniseringen mellan värdet i de två rapporterna.
+> Kolumnen **Senaste synkronisering** visar samma värde i både konsolens användarstatusrapport och appskyddsprincipens [exporteringsbara .csv-rapport](/intune/app-protection-policies-monitor#export-app-protection-activities). Skillnaden är en liten fördröjning i synkroniseringen mellan värdet i de två rapporterna.
 >
 > Tiden som anges i Senaste synkronisering är när Intune senast såg appinstansen. När en användare startar en app kan den meddela starttiden till Intunes appskyddstjänst, beroende på när den senast checkades in. Se [återförsöksintervallets tider för incheckning till appskyddsprincipen](app-protection-policy-delivery.md). Om en användare inte har använt den specifika appen under det senaste incheckningsintervallet (som vanligtvis är 30 minuter vid aktiv användning) och de startar appen, händer följande:
 >

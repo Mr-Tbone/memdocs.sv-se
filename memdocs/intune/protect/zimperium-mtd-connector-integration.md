@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4666c8c765f15ddd103727ccf2a7d840cb69bd20
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 889706a0fcf0d84abcbdb70b429e507233159254
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83989357"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915950"
 ---
 # <a name="integrate-zimperium-with-intune"></a>Integrera Zimperium med Intune
 
@@ -61,7 +61,7 @@ Processen för Zimperium-appauktorisering består av följande:
 
 - Tillåt att Zimperium-appen loggar in med enkel inloggning för Azure AD.
 
-Mer information om medgivande och Azure Active Directory-program finns i [Begär behörighet från en katalogadministratör](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#request-the-permissions-from-a-directory-admin) i Azure Active Directory-artikeln *Behörighet och medgivande i Azure Active Directory v2.0-slutpunkten*.
+Mer information om medgivande och Azure Active Directory-program finns i [Begär behörighet från en katalogadministratör](/azure/active-directory/develop/v2-permissions-and-consent#request-the-permissions-from-a-directory-admin) i Azure Active Directory-artikeln *Behörighet och medgivande i Azure Active Directory v2.0-slutpunkten*.
 
 
 ## <a name="to-set-up-zimperium-integration"></a>Konfigurera Zimperium-integration

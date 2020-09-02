@@ -17,12 +17,12 @@ ms.reviewer: spshumwa
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d50d7f8e4edeaf6d88875fafef977936909d71f
-ms.sourcegitcommit: 532a06163f462527254d23e7dc505b18c0c4f938
+ms.openlocfilehash: 5c7a83f07ce9c3da2fa953a3ea0d97e05b928a6a
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88110740"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915474"
 ---
 # <a name="bulk-enrollment-for-windows-devices"></a>Massregistrering för Windows-enheter
 
@@ -78,7 +78,7 @@ Azure AD-användare är standardanvändare på enheterna och kan ta emot de till
    - Placera konfigurationspaketet på en USB-enhet, sätt i USB-enheten i den enhet som du vill massregistrera och tillämpa den under den första installationen
    - Placera konfigurationspaketet i en nätverksmapp och infoga den efter den första installationen
 
-   Stegvisa anvisningar för att använda ett konfigurationspaket finns i [Tillämpa ett konfigurationspaket](https://technet.microsoft.com/itpro/windows/configure/provisioning-apply-package).
+   Stegvisa anvisningar för att använda ett konfigurationspaket finns i [Tillämpa ett konfigurationspaket](/windows/configuration/provisioning-packages/provisioning-apply-package).
 
 3. När du har tillämpat paketet startas enheten automatiskt om efter en minut.
    ![Skärmbild över att ange namn, projektmapp och beskrivning i Windows Configuration Designer-appen](./media/windows-bulk-enroll/bulk-enroll-add.png)

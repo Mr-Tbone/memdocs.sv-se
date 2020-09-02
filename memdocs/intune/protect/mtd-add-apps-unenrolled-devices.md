@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f667b6ad9ba9f7c353d89b4d3fc4ff749499bfaf
-ms.sourcegitcommit: 7de54acc80a2092b17fca407903281435792a77e
+ms.openlocfilehash: ee05e72a4837ea894c7163551d0ce79a40ed1d82
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85972052"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88912159"
 ---
 # <a name="add-mobile-threat-defense-apps-to-unenrolled-devices"></a>Lägga till Mobile Threat Defense-appar till oregistrerade enheter
 
@@ -50,7 +50,7 @@ Vid användning av Intune-appskyddsprinciper med Mobile Threat Defense vägleder
 Om du dock vill göra appen tillgänglig för slutanvändare via Intune-företagsportalen kan du läsa anvisningarna för att [lägga till iOS-butiksappar till Microsoft Intune](../apps/store-apps-ios.md). Använd denna [Microsoft Authenticator – iOS App Store-URL](https://itunes.apple.com/us/app/microsoft-authenticator/id983156458?mt=8) när du slutför avsnittet **Konfigurera appinformation**. Glöm inte att [tilldela appar till grupper med Intune](../apps/apps-deploy.md) som sista steg.
 
 > [!NOTE]
-> För iOS-enheter krävs [Microsoft Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) så att användarnas identiteter kan kontrolleras av Azure AD. Intune-företagsportalen fungerar som broker på Android-enheter så att användare kan få sina identiteter kontrollerade av Azure AD.
+> För iOS-enheter krävs [Microsoft Authenticator](/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to) så att användarnas identiteter kan kontrolleras av Azure AD. Intune-företagsportalen fungerar som broker på Android-enheter så att användare kan få sina identiteter kontrollerade av Azure AD.
 
 ## <a name="making-mobile-threat-defense-apps-available-via-intune-optional"></a>Göra Mobile Threat Defense-appar tillgängliga via Intune (valfritt)
 

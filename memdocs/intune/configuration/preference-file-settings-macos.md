@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebf65ecc6dbe5059adbd6fec70833bf2fcab9de7
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 478cce186d5f2943aeb5730acf90c3e875c8b687
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83988666"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915321"
 ---
 # <a name="add-a-property-list-file-to-macos-devices-using-microsoft-intune"></a>Lägg till en fil med egenskapslista på macOS-enheter med Microsoft Intune
 
@@ -66,7 +66,7 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
     - **Önskat domännamn**: Ange samlings-ID:t, t.ex. `com.company.application`. Ange till exempel `com.Contoso.applicationName`, `com.Microsoft.Edge` eller `com.microsoft.wdav`.
 
-      Filer med egenskapslistor används vanligtvis för webbläsare (Microsoft Edge), [Microsoft Defender Avancerat skydd](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) och anpassade appar. När du skapar en inställningsdomän skapas även ett samlings-ID.
+      Filer med egenskapslistor används vanligtvis för webbläsare (Microsoft Edge), [Microsoft Defender Avancerat skydd](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) och anpassade appar. När du skapar en inställningsdomän skapas även ett samlings-ID.
 
     - **Fil med egenskapslista**: Välj filen med egenskapslistan som är kopplad till din app. Se till att det är en `.plist`- eller `.xml`-fil. Du kan till exempel ladda upp filen `YourApp-Manifest.plist` eller `YourApp-Manifest.xml`.
 
@@ -97,4 +97,4 @@ Dessa inställningar läggs till en profil för enhetskonfiguration i Intune som
 
 [Tilldela profilen](device-profile-assign.md) och [övervaka dess status](device-profile-monitor.md).
 
-Ytterligare information om inställningsfiler för Microsoft Edge finns i [Konfigurera Microsoft Edge-principinställningar på macOS](https://docs.microsoft.com/deployedge/configure-microsoft-edge-on-mac).
+Ytterligare information om inställningsfiler för Microsoft Edge finns i [Konfigurera Microsoft Edge-principinställningar på macOS](/deployedge/configure-microsoft-edge-on-mac).

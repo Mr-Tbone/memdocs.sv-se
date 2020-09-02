@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9dca2303d960937a529a902391d6c05539fc9d4
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 701794ba476f87aaf079e39c834f3e8e3f2c280d
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79359319"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88913893"
 ---
 # <a name="intune-enrollment-method-capabilities-for-windows-devices"></a>Funktioner i Intune-registreringsmetoden för Windows-enheter
 [!INCLUDE[azure_portal](../includes/azure_portal.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "79359319"
 Det finns flera olika metoder för att registrera personalens enheter i Intune. Olika metoder har olika metodtips och funktioner, som du ser i tabellerna nedan.
 
 ## <a name="best-practices-by-enrollment-method"></a>Metodtips efter registreringsmetod
-| **Metodtips** | **[Azure AD-ansluten](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-ansluten med Autopilot (användarläge)](enrollment-autopilot.md)** |**[Azure AD-ansluten med Autopilot (självdistribuerande läge)](enrollment-autopilot.md)** |**[Massregistrering](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[GPO](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Samhantering](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview)** |
+| **Metodtips** | **[Azure AD-ansluten](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-ansluten med Autopilot (användarläge)](../../autopilot/enrollment-autopilot.md)** |**[Azure AD-ansluten med Autopilot (självdistribuerande läge)](../../autopilot/enrollment-autopilot.md)** |**[Massregistrering](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[GPO](/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Samhantering](/configmgr/core/clients/manage/co-management-overview)** |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Vanliga i EDU|![X](./media/enrollment-method-capab/xmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|
 |Enheter kan användas som delade enheter|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|
@@ -39,7 +39,7 @@ Det finns flera olika metoder för att registrera personalens enheter i Intune. 
 
 ## <a name="capabilities-by-enrollment-method"></a>Funktioner efter registreringsmetod
 
-| **Funktioner** | **[Azure AD-ansluten](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-ansluten med Autopilot (användarläge)](enrollment-autopilot.md)** |**[Azure AD-ansluten med Autopilot (självdistribuerande läge)](enrollment-autopilot.md)** |**[Massregistrering](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[GPO](https://docs.microsoft.com/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Samhantering](https://docs.microsoft.com/configmgr/core/clients/manage/co-management-overview)** |
+| **Funktioner** | **[Azure AD-ansluten](windows-enroll.md#enable-windows-10-automatic-enrollment)**|**[Azure AD-ansluten med Autopilot (användarläge)](../../autopilot/enrollment-autopilot.md)** |**[Azure AD-ansluten med Autopilot (självdistribuerande läge)](../../autopilot/enrollment-autopilot.md)** |**[Massregistrering](windows-bulk-enroll.md)**|**[DEM](device-enrollment-manager-enroll.md)** | **[BYOD](device-enrollment.md#bring-your-own-device)** | **[GPO](/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy)** | **[Samhantering](/configmgr/core/clients/manage/co-management-overview)** |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Villkorlig åtkomst                                      |![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)\*\*|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|
 |Användaren associeras med enheten                    |![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![X](./media/enrollment-method-capab/xmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|![Markering](./media/enrollment-method-capab/checkmark.png)|
@@ -60,4 +60,3 @@ Det finns flera olika metoder för att registrera personalens enheter i Intune. 
 ## <a name="next-steps"></a>Nästa steg
 
 [Konfigurera registrering för Windows](windows-enroll.md)
-

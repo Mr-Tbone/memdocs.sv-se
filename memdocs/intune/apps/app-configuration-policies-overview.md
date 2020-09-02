@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eeab1155a7a0035c5e0db15c3a5402d3636edaca
-ms.sourcegitcommit: eccf83dc41f2764675d4fd6b6e9f02e6631792d2
+ms.openlocfilehash: 7981f661dd345ea80f9ab92debc9657072de1f4e
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86461665"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907281"
 ---
 # <a name="app-configuration-policies-for-microsoft-intune"></a>Appkonfigurationsprinciper för Microsoft Intune
 
@@ -71,7 +71,7 @@ Val av **Hanterade appar** som **Enhetsregistreringstyp** syftar specifikt på a
 ![Enhetsregistreringstyp](./media/app-configuration-policies-overview/device-enrollment-type.png)
 
 > [!NOTE]
-> För appar med flera identiteter, till exempel Microsoft Outlook, kan användarinställningar beaktas. Prioriterad inkorg, till exempel, respekterar användarinställningen och ändrar inte konfigurationen. Andra parametrar gör det möjligt att kontrollera huruvida en användare kan ändra inställningen. Mer information finns i [Distribuera appkonfigurationsinställningar för Outlook för iOS/iPadOS och Android](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+> För appar med flera identiteter, till exempel Microsoft Outlook, kan användarinställningar beaktas. Prioriterad inkorg, till exempel, respekterar användarinställningen och ändrar inte konfigurationen. Andra parametrar gör det möjligt att kontrollera huruvida en användare kan ändra inställningen. Mer information finns i [Distribuera appkonfigurationsinställningar för Outlook för iOS/iPadOS och Android](/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 ## <a name="android-app-configuration-policies"></a>Konfigurationsprinciper för Android-appar
 
@@ -176,7 +176,7 @@ Om du vill samla in loggar från en Android-enhet måste du eller slutanvändare
     
 ## <a name="graph-api-support-for-app-configuration"></a>Graph API har stöd för appkonfiguration
 
-Du kan använda Graph API för att utföra de här appkonfigurationsuppgifterna. Mer information finns i [Graph API-referens för MAM-riktad konfiguration](https://docs.microsoft.com/graph/api/resources/intune-shared-targetedmanagedappconfiguration?view=graph-rest-beta). Mer information om Intune och Graph finns i [Arbeta med Intune i Microsoft Graph](https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-beta).
+Du kan använda Graph API för att utföra de här appkonfigurationsuppgifterna. Mer information finns i [Graph API-referens för MAM-riktad konfiguration](/graph/api/resources/intune-shared-targetedmanagedappconfiguration?view=graph-rest-beta). Mer information om Intune och Graph finns i [Arbeta med Intune i Microsoft Graph](/graph/api/resources/intune-graph-overview?view=graph-rest-beta).
 
 ## <a name="troubleshooting"></a>Felsökning
 

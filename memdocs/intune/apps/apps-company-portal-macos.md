@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a58e22af70a3cf119cb044a15b40ba581fe6452c
-ms.sourcegitcommit: 5c15b59cde085787b85f032f88add70a11d8e9a2
+ms.openlocfilehash: 1eb64f8ed2bc67b4800a4583010dea150ade421d
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86452858"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88914165"
 ---
 # <a name="add-the-macos-company-portal-app"></a>Lägg till företagsportalsappen för macOS
 
@@ -40,7 +40,7 @@ För att apparna ska vara skyddade och uppdaterade när de har installerats, lev
 > Företagsportalsappen kan bara installeras automatiskt på enheter som använder Intune och som redan har registrerats med hjälp av direktregistrering eller automatisk enhetsregistrering. För personliga enheter eller vid manuell registrering måste företagsportalsappen laddas ned och installeras för att initiera registreringen. Se [Be användarna ladda ned och installera företagsportalen](#instruct-users-to-download-and-install-company-portal).
 ## <a name="instruct-users-to-download-and-install-company-portal"></a>Be användarna ladda ned och installera företagsportalen
 
-Du kan be användarna ladda ned, installera och logga in på företagsportalen för macOS. Anvisningar om att ladda ned, installera och logga in på företagsportalen finns i [Registrera din macOS-enhet med företagsportalappen](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
+Du kan be användarna ladda ned, installera och logga in på företagsportalen för macOS. Anvisningar om att ladda ned, installera och logga in på företagsportalen finns i [Registrera din macOS-enhet med företagsportalappen](../user-help/enroll-your-device-in-intune-macos-cp.md).
 
 ##  <a name="install-company-portal-for-macos-as-a-macos-lob-app"></a>Installera företagsportalen för macOS som en verksamhetsspecifik macOS-app
 
@@ -66,5 +66,5 @@ Företagsportalen för macOS kan laddas ned och installeras med hjälp av funkti
 > Skriptet kräver Internetåtkomst när det körs, för kunna ladda ned den aktuella versionen av företagsportalen för macOS. 
 ## <a name="next-steps"></a>Nästa steg
 - Mer information om hur du tilldelar appar finns i [Tilldela appar till grupper](apps-deploy.md).
-- Mer information om att konfigurera automatisk enhetsregistrering finns i [Programmet för enhetsregistrering – Registrera macOS](https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-program-enroll-macos).
-- Mer information om att konfigurera inställningar för Microsoft AutoUpdate på macOS finns i [Mac-uppdateringar](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/mac-updates).
+- Mer information om att konfigurera automatisk enhetsregistrering finns i [Programmet för enhetsregistrering – Registrera macOS](../enrollment/device-enrollment-program-enroll-macos.md).
+- Mer information om att konfigurera inställningar för Microsoft AutoUpdate på macOS finns i [Mac-uppdateringar](/windows/security/threat-protection/microsoft-defender-atp/mac-updates).

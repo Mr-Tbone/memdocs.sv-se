@@ -16,18 +16,18 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: shpate
-ms.openlocfilehash: b4581ba6bdc8b5be41d5cf567c631ffaad40d418
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: ce4795dd060d29b62887fbf5496b2f2706ba954f
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79351974"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909116"
 ---
 # <a name="windows-10-device-settings-to-enable-windows-hello-for-business-in-intune"></a>Inställningar i enheter som kör Windows 10 för att aktivera Windows Hello för företag i Intune
 
 Den här artikeln visar och beskriver inställningarna i Windows Hello för företag som du kan styra på Windows 10-enheter i Intune. Som Intune-administratör kan du konfigurera och tilldela dessa inställningar till Windows 10-enheter som en del av din MDM-lösning (hantering av mobilenheter). 
 
-Du hittar mer information om de här inställningarna i [Konfigurera Windows Hello för företagsprincipinställningar](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-cert-trust-policy-settings) i Windows Hello-dokumentationen.
+Du hittar mer information om de här inställningarna i [Konfigurera Windows Hello för företagsprincipinställningar](/windows/security/identity-protection/hello-for-business/hello-cert-trust-policy-settings) i Windows Hello-dokumentationen.
 
 
 Mer information om Windows Hello för företag-profiler i Intune finns i [Konfigurera identitetsskydd](identity-protection-configure.md).
@@ -125,7 +125,7 @@ Mer information om Windows Hello för företag-profiler i Intune finns i [Konfig
   - **Certifikat för lokala resurser**  
 
     - **Aktivera** – Tillåter att Windows Hello för företag använder certifikat för att autentisera mot resurser lokalt.
-    - **Inte konfigurerad** – Förhindrar att Windows Hello för företag använder certifikat för att autentisera mot resurser lokalt. I stället använder enheter standardbeteendet för *lokal nyckelförtroendeautentisering*. Mer information finns i [Användarcertifikat för lokal autentisering](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-cert-trust-policy-settings#use-certificate-for-on-premises-authentication) i Windows Hello-dokumentationen.  
+    - **Inte konfigurerad** – Förhindrar att Windows Hello för företag använder certifikat för att autentisera mot resurser lokalt. I stället använder enheter standardbeteendet för *lokal nyckelförtroendeautentisering*. Mer information finns i [Användarcertifikat för lokal autentisering](/windows/security/identity-protection/hello-for-business/hello-cert-trust-policy-settings#use-certificate-for-on-premises-authentication) i Windows Hello-dokumentationen.  
 
   **Standard**: Inte konfigurerat
 

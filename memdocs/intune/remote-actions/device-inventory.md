@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27d31e64e99e8dc796b0436052f7220260ab1029
-ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
+ms.openlocfilehash: e6aa3c887a22c468d8d482ce2d4ba0da8202fceb
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795677"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88906828"
 ---
 # <a name="see-device-details-in-intune"></a>Visa enhetsinformation i Intune
 
@@ -48,10 +48,10 @@ Den här artikeln beskriver hur du visar alla dina enheter och deras egenskaper 
       - [Autopilot-återställning](/windows/deployment/windows-autopilot/windows-autopilot-reset#reset-devices-with-remote-windows-autopilot-reset) (endast Windows)
       - [Snabbsökning](../configuration/device-restrictions-windows-10.md) (endast Windows 10)
       - [Fullständig genomsökning](../configuration/device-restrictions-windows-10.md) (endast Windows 10)
-      - [Uppdatera Windows Defender-säkerhetsinformation](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-antivirus/manage-protection-updates-microsoft-defender-antivirus)
-      - [BitLocker-nyckelrotering](https://docs.microsoft.com/mem/intune/protect/encrypt-devices#to-rotate-the-bitlocker-recovery-key)
+      - [Uppdatera Windows Defender-säkerhetsinformation](/windows/security/threat-protection/microsoft-defender-antivirus/manage-protection-updates-microsoft-defender-antivirus)
+      - [BitLocker-nyckelrotering](../protect/encrypt-devices.md#to-rotate-the-bitlocker-recovery-key)
       - [Byta namn på en enhet](device-rename.md)
-      - [Ny fjärrhjälpsession](https://docs.microsoft.com/mem/intune/remote-actions/teamviewer-support)
+      - [Ny fjärrhjälpsession](./teamviewer-support.md)
    - Använd **Egenskaper** för att tilldela en [enhetskategori som du skapar](../enrollment/device-group-mapping.md), samt för att ändra ägarskap för enheten till en personlig enhet eller företagets enhet.
    - **Maskinvara** innehåller mycket information om enheten, till exempel enhets-ID, operativsystem och version, lagringsutrymme och mer information.
    - **Identifierade appar** visar alla installerade appar på enheten som Intune hittat och deras versioner. Mer information finns i [Appar som identifieras i Intune](../apps/app-discovered-apps.md).

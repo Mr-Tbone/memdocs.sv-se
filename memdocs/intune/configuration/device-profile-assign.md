@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 000ee384ff289b9511b2dde3b1468525ffed63d4
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 55835d5ee8527f54e530da5113f841ed108fa6f5
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820008"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88915814"
 ---
 # <a name="assign-user-and-device-profiles-in-microsoft-intune"></a>Tilldela användar- och enhetsprofiler i Microsoft Intune
 
@@ -31,7 +31,7 @@ Du skapar en profil som innehåller alla inställningar som du har angett. Näst
 Den här artikeln visar hur du tilldelar en profil, samt innehåller information om hur du använder omfångstaggar på dina profiler.
 
 > [!NOTE]  
-> När en profil tas bort eller inte längre är tilldelad till en enhet kan olika saker hända, beroende på inställningarna i profilen. Inställningarna baseras på konfigurationstjänstprovider och varje konfigurationstjänstprovider kan hantera borttagningen av profilen på olika sätt. En inställning kan till exempel behålla det befintliga värdet och inte återgå till ett standardvärde. Beteendet styrs av varje konfigurationstjänstprovider i operativsystemet. En lista över Windows-konfigurationstjänstprovider finns i [referensen för konfigurationstjänstprovider](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).
+> När en profil tas bort eller inte längre är tilldelad till en enhet kan olika saker hända, beroende på inställningarna i profilen. Inställningarna baseras på konfigurationstjänstprovider och varje konfigurationstjänstprovider kan hantera borttagningen av profilen på olika sätt. En inställning kan till exempel behålla det befintliga värdet och inte återgå till ett standardvärde. Beteendet styrs av varje konfigurationstjänstprovider i operativsystemet. En lista över Windows-konfigurationstjänstprovider finns i [referensen för konfigurationstjänstprovider](/windows/client-management/mdm/configuration-service-provider-reference).
 >
 > Om du vill ändra en inställning till ett annat värde skapar du en ny profil, konfigurerar inställningen som **Inte konfigurerad** och tilldelar profilen. När inställningen har tillämpats bör användarna ha kontroll över att ändra den till deras önskade värde.
 >
