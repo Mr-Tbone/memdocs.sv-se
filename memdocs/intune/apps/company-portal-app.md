@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a23db0f04895bda6f187e466965a959c891f1ad
-ms.sourcegitcommit: 19ef60175cbfd5c5d1e213a6d64eded34ee42041
+ms.openlocfilehash: ec355eb1b388e384b5250e9c17f739cd05941ee7
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725442"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89194237"
 ---
 # <a name="how-to-customize-the-intune-company-portal-apps-company-portal-website-and-intune-app"></a>Anpassa Intune-företagsportalens appar, Företagsportal-webbplatsen och Intune-appen
 
@@ -136,7 +136,7 @@ I den här tabellen visas meddelandespecifik konfigurationsinformation:
 Du kan välja vilka ytterligare appkällor som ska visas i Företagsportal.
 
 > [!NOTE]
-> Företagsportalen stöder Konfigurationshanterarprogram. Med den här funktionen kan slutanvändare se både program från Konfigurationshanteraren och sådana som distribuerats av Intune i Företagsportalen för samhanterade kunder. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](/mem/configmgr/comanage/company-portal).
+> Företagsportalen stöder Konfigurationshanterarprogram. Med den här funktionen kan slutanvändare se både program från Konfigurationshanteraren och sådana som distribuerats av Intune i Företagsportalen för samhanterade kunder. Mer information finns i [Använd Företagsportalappen på samhanterade enheter](../../configmgr/comanage/company-portal.md).
 
 I den här tabellen visas konfigurationsinformation specifik för appkällor:
 

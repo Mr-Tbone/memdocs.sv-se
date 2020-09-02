@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 63400c81ee678a98a83ed17cf192335acf9c047b
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 2460a132711fb19d12f33bbada23756fc2344cca
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820312"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89194254"
 ---
 # <a name="antivirus-policy-for-endpoint-security-in-intune"></a>Antivirusprincip för slutpunktssäkerhet i Intune
 
@@ -39,7 +39,7 @@ I antivirusprinciperna finns samma inställningar som i *Endpoint Protection* el
 
 - **macOS**
   - En version av macOS som stöds
-  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Microsoft Defender ATP på enheten. Se. [Microsoft Defender ATP för macOS](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) (i dokumentationen för Microsoft Defender ATP)
+  - För att Intune ska kunna hantera antivirusinställningar på en enhet måste du installera Microsoft Defender ATP på enheten. Se. [Microsoft Defender ATP för macOS](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) (i dokumentationen för Microsoft Defender ATP)
 
 - **Windows 10 och senare**
   - Inga ytterligare krav finns.
@@ -65,7 +65,7 @@ Följande profiler stöds för enheter du hanterar med Intune:
 
   - Profil: **Antivirus** – Hantera [Principinställningar för antivirus](../protect/antivirus-microsoft-defender-settings-macos.md) för macOS.
 
-    När du använder [Microsoft Defender ATP för Mac](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) kan du konfigurera och distribuera antivirusinställningar till dina hanterade macOS-enheter via Intune i stället för att konfigurera inställningarna med `.plist`-filer.
+    När du använder [Microsoft Defender ATP för Mac](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-mac) kan du konfigurera och distribuera antivirusinställningar till dina hanterade macOS-enheter via Intune i stället för att konfigurera inställningarna med `.plist`-filer.
 
 **Windows 10**:
 
@@ -77,7 +77,7 @@ Följande profiler stöds för enheter du hanterar med Intune:
 
     *Microsoft Defender Antivirus*-profilen är en separat instans av antivirusinställningarna som finns i *profilen för enhetsbegränsning* för enhetskonfigurationsprincipen.
   
-    Till skillnad från antivirusinställningarna i en *profil för enhetsbegränsning* kan du använda de här inställningarna för att hantera enheter som är samhanterade. För att du ska kunna använda de här inställningarna måste [skjutreglaget för arbetsbelastning för samhantering av](https://docs.microsoft.com/configmgr/comanage/how-to-switch-workloads) Endpoint Protection vara inställt på Intune.
+    Till skillnad från antivirusinställningarna i en *profil för enhetsbegränsning* kan du använda de här inställningarna för att hantera enheter som är samhanterade. För att du ska kunna använda de här inställningarna måste [skjutreglaget för arbetsbelastning för samhantering av](/configmgr/comanage/how-to-switch-workloads) Endpoint Protection vara inställt på Intune.
 
   - Profil: **Microsoft Defender Antivirus-undantag** – Hantera principinställningar som endast gäller [Antivirus-undantag](../protect/antivirus-microsoft-defender-settings-windows.md#microsoft-defender-antivirus-exclusions).
   
@@ -117,9 +117,9 @@ Följande inställningar stöder principsammanslagning:
 
 [Microsoft Defender Antivirus-principer](../protect/antivirus-microsoft-defender-settings-windows.md)
 
-- **Defender-processer som ska uteslutas** – CSP: [Defender/ExcludedProcesses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
-- **Filnamnstillägg som ska undantas från genomsökningar och realtidsskydd** – CSP: [Defender/ExcludedExtensions](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
-- **Defender-filer och -mappar som ska uteslutas** – CSP: [Defender/ExcludedPaths](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
+- **Defender-processer som ska uteslutas** – CSP: [Defender/ExcludedProcesses](/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
+- **Filnamnstillägg som ska undantas från genomsökningar och realtidsskydd** – CSP: [Defender/ExcludedExtensions](/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
+- **Defender-filer och -mappar som ska uteslutas** – CSP: [Defender/ExcludedPaths](/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
 
 ## <a name="antivirus-policy-reports"></a>Rapporter om antivirusprinciper
 

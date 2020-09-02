@@ -19,12 +19,12 @@ ms.reviewer: priyar
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 481113dc64418b1579dbf9b478cd3ebd85b6cb72
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: cbf23dc82f5524bcd8c778c41e964c7a9e46c21e
+ms.sourcegitcommit: 41e6e6b7f5c2a87aaf7f23d90d0f175dd63c0579
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179332"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057278"
 ---
 # <a name="using-your-windows-device-with-intune-company-portal"></a>Använda din Windows-enhet med Intune-företagsportalen
 
@@ -33,7 +33,7 @@ Det här avsnittet beskriver de uppgifter och den information som är specifik f
 ## <a name="how-to-get-company-portal"></a>Så här hämtar du företagsportalen
 Företagsportalen är tillgänglig i webbplatsversionen och som en appnedladdning. Logga in med dina autentiseringsuppgifter för arbetet eller skolan för att [komma åt webbplatsen för företagsportalen](https://go.microsoft.com/fwlink/?linkid=2010980).  
 
-Detaljerade steg och skärmbilder finns i [Logga in på företagsportalen](https://docs.microsoft.com/mem/intune/user-help/sign-in-to-the-company-portal).
+Detaljerade steg och skärmbilder finns i [Logga in på företagsportalen](./sign-in-to-the-company-portal.md).
 
 ## <a name="supported-versions"></a>Versioner som stöds
 
@@ -67,7 +67,7 @@ Andra versioner av Windows, till exempel [Windows 10 Holographic](https://www.mi
 * [Uppdatera min Windows-enhet](you-need-to-update-your-windows-device.md)
 * [Skicka loggar från företagsportalappen](send-logs-to-your-it-admin-cp-windows.md)
 * [Skicka loggar från inställningsappen för enheter](send-logs-to-your-it-admin-settings-windows.md)
-* [Installera Office 365 på en Windows 10-enhet](install-office-windows.md)
+* [Installera Office på en Windows 10-enhet](install-office-windows.md)
 * [Min enhet måste krypteras](you-need-to-enable-windows-encryption.md)
 * [Hämta program mot skadlig kod](your-device-needs-antimalware-software.md)
 * [Aktivera Säker Start](you-need-to-enable-secure-boot-windows.md)

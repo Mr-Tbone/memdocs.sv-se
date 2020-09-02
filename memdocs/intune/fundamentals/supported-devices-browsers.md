@@ -18,20 +18,20 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic; get-started; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9622a89b8b689dab7ea2d6d332d1d29c38f5668
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: a8bfddd247f2f86d8fc5a9162a5c68efd5e7ffb5
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80085743"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996290"
 ---
 # <a name="supported-operating-systems-and-browsers-in-intune"></a>Operativsystem och webbläsare som stöds i Intune
 
 Granska de operativsystem och webbläsare som stöds innan du installerar Microsoft Intune.
 
-Hjälp med att installera Intune på din enhet finns i [Användning av hanterade enheter för att få jobbet gjort](https://docs.microsoft.com/mem/intune/user-help/use-managed-devices-to-get-work-done) och [Bandbreddsanvändning i Intune-nätverk](network-bandwidth-use.md).
+Hjälp med att installera Intune på din enhet finns i [Användning av hanterade enheter för att få jobbet gjort](../user-help/use-managed-devices-to-get-work-done.md) och [Bandbreddsanvändning i Intune-nätverk](network-bandwidth-use.md).
 
-Mer information om stöd för tjänstens konfigurationsprovider finns i [Referens för CSP (Configuration Service Provider)](https://docs.microsoft.com/windows/client-management/mdm/configuration-service-provider-reference).
+Mer information om stöd för tjänstens konfigurationsprovider finns i [Referens för CSP (Configuration Service Provider)](/windows/client-management/mdm/configuration-service-provider-reference).
 
 > [!NOTE]
 > Intune kräver nu Android 5.x (Lollipop) eller högre för att program och enheter ska få åtkomst till företagsresurser via företagsportalappen för Android och Intune App SDK för Android. Detta krav gäller INTE för Polycom Android-baserade Teams-enheter som kör version 4.4. Dessa enheter kommer att fortsätta stödjas. 
@@ -103,7 +103,7 @@ En [Intune-programvaruklient](manage-windows-pcs-with-microsoft-intune.md) kan d
 
 <!--  ### Exchange ActiveSync management
 
-You can manage [Exchange ActiveSync devices](../enrollment/device-enrollment.md#mobile-device-management-with-exchange-activesync-and-intune) from the Intune console. This option provides a limited set of management capabilities when compared to the other methods. See [Capabilities of built-in Mobile Device Management in Office 365](https://support.office.com/article/Capabilities-of-built-in-Mobile-Device-Management-for-Office-365-a1da44e5-7475-4992-be91-9ccec25905b0) for a list of supported devices.  -->
+You can manage [Exchange ActiveSync devices](../enrollment/device-enrollment.md#mobile-device-management-with-exchange-activesync-and-intune) from the Intune console. This option provides a limited set of management capabilities when compared to the other methods. See [Capabilities of built-in Mobile Device Management in Microsoft 365](https://support.office.com/article/Capabilities-of-built-in-Mobile-Device-Management-for-Office-365-a1da44e5-7475-4992-be91-9ccec25905b0) for a list of supported devices.  -->
 
 ## <a name="intune-supported-web-browsers"></a>Webbläsare som stöds av Intune
 
@@ -131,6 +131,6 @@ Följande Silverlight-webbläsare har stöd för Intune-konsolen:
 - Mozilla Firefox med Silverlight aktiverat (tidigare versioner än version 56)
 
 > [!Note]
-> Den klassiska Intune-portalen stöder inte Microsoft Edge och mobila webbläsare eftersom de inte stöder [Microsoft Silverlight](https://msdn.microsoft.com/library/cc838158(v=vs.95).aspx).
+> Den klassiska Intune-portalen stöder inte Microsoft Edge och mobila webbläsare eftersom de inte stöder [Microsoft Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838158(v=vs.95)).
 
 Endast användare med behörighet som tjänsteadministratör eller innehavaradministratören med den globala administratörsrollen kan logga in på den här portalen. Om du vill få åtkomst till administrationskonsolen måste kontot ha en licens för att använda Intune och inloggningsstatusen **Tillåten**.

@@ -17,12 +17,12 @@ searchScope:
 ROBOTS: ''
 ms.custom: intune-enduser, contperfq1
 ms.collection: ''
-ms.openlocfilehash: 23d449b6b5edf43ea709f8fce194ac5a8afe8eb4
-ms.sourcegitcommit: 19ef60175cbfd5c5d1e213a6d64eded34ee42041
+ms.openlocfilehash: 37b7006ef912d87276c11e09cb6db0c0f14059c4
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725357"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193920"
 ---
 # <a name="install-mobile-threat-defense-app"></a>Installera app med skydd mot mobilhot  
 
@@ -71,7 +71,7 @@ Om du uppmanas att installera en MTD-app men inte är säker på vilken av dem s
 ### <a name="device-registration"></a>Enhetsregistrering  
 Registreringen är nödvändig för att bekräfta din identitet och ansluta ditt skol- eller arbetskonto till enheten. Om enheten inte är registrerad guidas du automatiskt genom de stegen innan du installerar MTD-appen.   
 
-Mer information om enhetsregistrering finns i [Registrera din personliga enhet i organisationens nätverk](https://docs.microsoft.com/azure/active-directory/user-help/user-help-register-device-on-network).  
+Mer information om enhetsregistrering finns i [Registrera din personliga enhet i organisationens nätverk](/azure/active-directory/user-help/user-help-register-device-on-network).  
 
 ### <a name="ios-setup"></a>iOS-installation  
 De här stegen börjar på skärmen **Få åtkomst** som visas när du har loggat in på en skyddad app.  
@@ -124,9 +124,9 @@ Gå till [Företagsportal-webbplatsen](https://go.microsoft.com/fwlink/?linkid=2
 
 ### <a name="share-app-logs-with-it-support"></a>Dela apploggar med IT-supporten  
 Du kan också skicka dina apploggar till IT-supporten för att ge dem mer sammanhang om en misslyckad installation.  
-* Android-användare: [Ladda upp och skicka dina loggar via e-post](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-by-email-android) från företagsportalen.   
+* Android-användare: [Ladda upp och skicka dina loggar via e-post](./send-logs-to-your-it-admin-by-email-android.md) från företagsportalen.   
 
-* iOS-enhetsanvändare: [Hämta och skicka dina loggar](https://docs.microsoft.com/intune/apps/manage-microsoft-edge#use-microsoft-edge-to-access-managed-app-logs) från Microsoft Edge för iOS.  
+* iOS-enhetsanvändare: [Hämta och skicka dina loggar](/intune/apps/manage-microsoft-edge#use-microsoft-edge-to-access-managed-app-logs) från Microsoft Edge för iOS.  
 
 
 ## <a name="next-steps"></a>Nästa steg  
@@ -137,4 +137,3 @@ Se följande artiklar för att lära dig mer om hur hanterade appar fungerar, hu
 * [Använda hanterade appar på iOS-enheten](use-managed-apps-on-your-device-ios.md)  
 
 Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).
-

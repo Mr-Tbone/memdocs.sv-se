@@ -16,16 +16,16 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a463742a9511f21a98c277394f8c0d29084d379
-ms.sourcegitcommit: fb77170957f50aa386ff825fb4183b4fd9e3e488
+ms.openlocfilehash: b7486fa6770db03bb47ccf3e069499c02c6d598c
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791748"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88916052"
 ---
 # <a name="manage-and-use-different-device-management-features-on-windows-holographic-and-hololens-devices-with-intune"></a>Hantera och använda olika enhetshanteringsfunktioner på Windows Holographic- och HoloLens-enheter med Intune
 
-Microsoft Intune innehåller många funktioner för att hantera enheter som kör Windows Holographic for Business, såsom [Microsoft HoloLens](https://docs.microsoft.com/hololens/). Du kan använda Intune för att bekräfta att enheterna är kompatibla med regler för din organisation och du kan anpassa enheten genom att lägga till en VPN- eller Wi-Fi-profil. En annan viktig funktion är att använda enheten som en Kiosk och köra en viss app eller en specifik uppsättning av appar.
+Microsoft Intune innehåller många funktioner för att hantera enheter som kör Windows Holographic for Business, såsom [Microsoft HoloLens](/hololens/). Du kan använda Intune för att bekräfta att enheterna är kompatibla med regler för din organisation och du kan anpassa enheten genom att lägga till en VPN- eller Wi-Fi-profil. En annan viktig funktion är att använda enheten som en Kiosk och köra en viss app eller en specifik uppsättning av appar.
 
 Aktiviteterna i den här artikeln hjälper dig att hantera, anpassa och skydda dina enheter som kör Windows Holographic for Business, inklusive programuppdateringar och använda Windows Hello för företag.
 
@@ -35,9 +35,9 @@ Om du vill använda Windows Holographic-enheter med Intune måste du skapa en pr
 
 Azure Active Directory (AD) är en utmärkt resurs för att hantera och kontrollera dina enheter som kör Windows Holographic for Business. Med Intune och Azure AD kan du göra följande: 
 
-- **[Anslut enheter till Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/azureadjoin-plan)** : I Azure Active Directory (AD) kan du lägga till organisationens Windows 10-enheter, inklusive enheter som kör Windows Holographic for Business. Den här funktionen gör att Azure AD kan styra enheten. Det hjälper till att bekräfta att användarna kommer åt företagets resurser från enheter som uppfyller dina säkerhets- och efterlevnadskrav.
+- **[Anslut enheter till Azure Active Directory](/azure/active-directory/devices/azureadjoin-plan)** : I Azure Active Directory (AD) kan du lägga till organisationens Windows 10-enheter, inklusive enheter som kör Windows Holographic for Business. Den här funktionen gör att Azure AD kan styra enheten. Det hjälper till att bekräfta att användarna kommer åt företagets resurser från enheter som uppfyller dina säkerhets- och efterlevnadskrav.
 
-  I [Enhetshantering i Azure AD](https://docs.microsoft.com/azure/active-directory/devices/overview) finns mer information.
+  I [Enhetshantering i Azure AD](/azure/active-directory/devices/overview) finns mer information.
 
 - **[Massregistrering för Windows-enheter](../enrollment/windows-bulk-enroll.md)** : Du kan ansluta ett stort antal nya Windows-enheter till Azure Active Directory (AD) och Intune. Den här funktionen kallas massregistrering och använder konfigurationspaket. Med dessa paket ansluts enheter som kör Windows Holographic for Business till Azure AD-klienten och registrerar dem i Intune.
 
@@ -117,7 +117,7 @@ Du kan använda OMA-URI i dina profiler för att anpassa vissa inställningar, s
 
 Om du vill konfigurera inställningar för OMA-URI (Open Mobile Alliance Uniform Resource Identifier) kan du skapa en anpassad profil i Intune. Du kan använda OMA-URI-inställningar för att styra olika funktioner på dina Windows Holographic for Business-enheter, till exempel aktivera VPN eller söka efter uppdateringar på Microsoft Update.
 
-Se ett [exempel](../configuration/custom-profile-hololens.md) som använder [CSP:n Windows Defender Application Control (WDAC)](https://docs.microsoft.com/windows/client-management/mdm/applicationcontrol-csp) för att tillåta eller blockera appar från att öppnas på HoloLens 2-enheter.
+Se ett [exempel](../configuration/custom-profile-hololens.md) som använder [CSP:n Windows Defender Application Control (WDAC)](/windows/client-management/mdm/applicationcontrol-csp) för att tillåta eller blockera appar från att öppnas på HoloLens 2-enheter.
 
 ### <a name="configure-kiosk-mode"></a>[Konfigurera kioskläge](../configuration/kiosk-settings-holographic.md)
 

@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: 966c3f21505cbbe1573abd47fb7081c5e97cc3c1
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 3bb1d4806271ab40c60f0ad419e4e708d36bbc97
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88823558"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89194131"
 ---
 # <a name="settings-for-microsoft-defender-antivirus-policy-for-tenant-attached-devices-in-microsoft-intune"></a>Inställningar för Microsoft Defender Antivirus för Intune för klientanslutna enheter i Microsoft Intune
 
@@ -30,7 +30,7 @@ Visa inställningarna för Microsoft Defender Antivirus som du kan hantera med p
 ## <a name="cloud-protection"></a>Molnskydd
 
 - **Aktivera molnlevererat skydd**  
-  CSP: [AllowCloudProtection](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
+  CSP: [AllowCloudProtection](/windows/client-management/mdm/policy-csp-defender#defender-allowcloudprotection)
 
   Som standard skickar Defender på Windows 10 Desktop-enheter information till Microsoft om eventuella problem som identifieras. Microsoft analyserar informationen för att lära sig mer om problem som påverkar dig och andra kunder och erbjuda bättre lösningar.
 
@@ -39,7 +39,7 @@ Visa inställningarna för Microsoft Defender Antivirus som du kan hantera med p
   - **Tillåts.**  Inaktiverar Microsoft Active Protection Service.
 
 - **Nivå för molnlevererat skydd**  
-  CSP: [CloudBlockLevel](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel)
+  CSP: [CloudBlockLevel](/windows/client-management/mdm/policy-csp-defender#defender-cloudblocklevel)
 
   Konfigurera hur aggressivt Defender Antivirus ska blockera och genomsöka misstänkta filer.
   - **Inte konfigurerad** (*standard*) – Standardnivå för blockering i Defender.
@@ -48,7 +48,7 @@ Visa inställningarna för Microsoft Defender Antivirus som du kan hantera med p
   - **Nolltolerans** – Blockerar alla okända körbara filer.
 
 - **Defender: utökad tidsgräns för moln i sekunder**  
-  CSP: [CloudExtendedTimeout](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout)
+  CSP: [CloudExtendedTimeout](/windows/client-management/mdm/policy-csp-defender#defender-cloudextendedtimeout)
 
   Defender Antivirus blockerar automatiskt misstänkta filer i 10 sekunder så att det kan genomsöka filerna i molnet för att kontrollera att de är säkra. Med den här inställningen kan du lägga till upp till 50 ytterligare sekunder till tidsgränsen.
 
@@ -57,24 +57,24 @@ Visa inställningarna för Microsoft Defender Antivirus som du kan hantera med p
 För varje inställning i den här gruppen kan du expandera inställningen, välja **Lägg till**och sedan ange ett värde för undantaget.
 
 - **Defender-processer som ska uteslutas**  
-  CSP: [ExcludedProcesses](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
+  CSP: [ExcludedProcesses](/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
 
   Ange en lista över filer som har öppnats av processer som ska ignoreras vid en genomsökning. Själva processen undantas inte från sökningen.
 
 - **Filnamnstillägg som ska undantas från genomsökningar och realtidsskydd**  
-  CSP: [ExcludedExtensions](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
+  CSP: [ExcludedExtensions](/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
 
   Ange en lista över filnamnstillägg som ska ignoreras vid en genomsökning.
 
 - **Defender-filer och mappar som ska uteslutas**  
-  CSP: [ExcludedPaths](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
+  CSP: [ExcludedPaths](/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
 
   Ange en lista över filer och katalogvägar som ska ignoreras vid en genomsökning.
 
 ## <a name="real-time-protection"></a>Realtidsskydd
 
 - **Starta realtidsskydd**  
-  CSP: [AllowRealtimeMonitoring](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
+  CSP: [AllowRealtimeMonitoring](/windows/client-management/mdm/policy-csp-defender#defender-allowrealtimemonitoring)
 
   Kräv att Defender på Windows 10 Desktop-enheter ska använda funktionen för övervakning i realtid.
   - **Inte konfigurerad** (*standard*) – Inställningen återställs till systemets standard

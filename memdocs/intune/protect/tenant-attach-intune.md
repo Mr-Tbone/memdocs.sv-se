@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
 ms.reviewer: mattsha
-ms.openlocfilehash: d56b06b49846201d6198c1abc81185bf74765ae3
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 5c3d5bd14efddc74e1898f374bbaac2aa962ebf7
+ms.sourcegitcommit: 94e86320b9340507becc9e6ce4b6eb744f09fcd8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88823529"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89193673"
 ---
 # <a name="configure-tenant-attach-to-support-endpoint-security-policies-from-intune"></a>Konfigurera klientanslutning för att stödja Endpoint Security-principer från Intune
 
@@ -187,4 +187,4 @@ När du har konfigurerat samlingarna för synkronisering till Microsoft Endpoint
 
 - [Konfigurera slutpunktssäkerhetsprinciper](endpoint-security-policy.md#create-an-endpoint-security-policy) för *Antivirus* och *Slutpunktsidentifiering och svar*.
 
-- Läs mer om [Slutpunktsidentifiering och svar](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response) i dokumentationen för Microsoft Defender ATP.
+- Läs mer om [Slutpunktsidentifiering och svar](/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response) i dokumentationen för Microsoft Defender ATP.
