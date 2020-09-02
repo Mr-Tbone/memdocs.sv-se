@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 682934276a080323976e7045a14450dc382f4574
-ms.sourcegitcommit: 4174f7e485067812c29aea01a4767989ffdbb578
+ms.openlocfilehash: da725c63c340a3ff64e1f69f96f59bd5dea30eb3
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83406573"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907902"
 ---
 # <a name="tutorial-use-the-cloud-to-configure-group-policy-on-windows-10-devices-with-admx-templates-and-microsoft-intune"></a>Självstudie: Använd molnet för att konfigurera grupprinciper på Windows 10-enheter med ADMX-mallar och Microsoft Intune
 
@@ -37,7 +37,7 @@ ADMX-mallar är tillgängliga för följande tjänster:
 - **Office**: Ladda ned på [Microsoft 365-appar, Office 2019 och Office 2016](https://www.microsoft.com/download/details.aspx?id=49030).
 - **Windows**: Inbyggt i operativsystemet Windows 10.
 
-Mer information om ADMX-principer finns i [Förstå ADMX-stödda principer](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies).
+Mer information om ADMX-principer finns i [Förstå ADMX-stödda principer](/windows/client-management/mdm/understanding-admx-backed-policies).
 
 Dessa mallar är inbyggda i Microsoft Intune och är tillgängliga som profiler med **administrativa mallar**. I den här profilen konfigurerar du de inställningar som du vill inkludera och ”tilldelar” sedan den här profilen till dina enheter.
 
@@ -57,7 +57,7 @@ Den här funktionen gäller för:
 
 ## <a name="prerequisites"></a>Krav
 
-- En Microsoft 365 E3- eller E5-prenumeration, som innefattar Intune och Azure Active Directory (AD) Premium. Om du inte har en E3- eller E5-prenumeration kan du [prova utan kostnad](https://docs.microsoft.com/office365/admin/try-or-buy-microsoft-365?view=o365-worldwide).
+- En Microsoft 365 E3- eller E5-prenumeration, som innefattar Intune och Azure Active Directory (AD) Premium. Om du inte har en E3- eller E5-prenumeration kan du [prova utan kostnad](/office365/admin/try-or-buy-microsoft-365?view=o365-worldwide).
 
   Mer information om vad du får med de olika Microsoft 365-licenserna finns i [Omvandla företaget med Microsoft 365](https://www.microsoft.com/microsoft-365/compare-all-microsoft-365-plans).
 
@@ -190,10 +190,10 @@ I följande steg kommer du att skapa säkerhetsgrupper och lägga till användar
 
 - Dynamiska grupper är en funktion i Azure AD Premium. Om du inte har Azure AD Premium är du endast licensierad för att skapa tilldelade grupper. Mer information om dynamiska grupper finns i:
 
-  - [Dynamic Group Membership in Azure Active Directory (Part 1)](https://blogs.technet.microsoft.com/pauljones/2017/08/28/dynamic-group-membership-in-azure-active-directory-part-1/) (Dynamiska gruppmedlemskap i Azure Active Directory (del 1)
-  - [Dynamic Group Membership in Azure Active Directory (Part 2)](https://blogs.technet.microsoft.com/pauljones/2017/08/29/dynamic-group-membership-in-azure-active-directory-part-2/) (Dynamiska gruppmedlemskap i Azure Active Directory (del 2)
+  - [Dynamic Group Membership in Azure Active Directory (Part 1)](/archive/blogs/pauljones/dynamic-group-membership-in-azure-active-directory-part-1) (Dynamiska gruppmedlemskap i Azure Active Directory (del 1)
+  - [Dynamic Group Membership in Azure Active Directory (Part 2)](/archive/blogs/pauljones/dynamic-group-membership-in-azure-active-directory-part-2) (Dynamiska gruppmedlemskap i Azure Active Directory (del 2)
 
-- Azure AD Premium omfattar andra tjänster som ofta används vid hantering av appar och enheter, däribland [multifaktorautentisering (MFA)](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks) och [villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/conditional-access/overview).
+- Azure AD Premium omfattar andra tjänster som ofta används vid hantering av appar och enheter, däribland [multifaktorautentisering (MFA)](/azure/active-directory/authentication/concept-mfa-howitworks) och [villkorsstyrd åtkomst](/azure/active-directory/conditional-access/overview).
 
 - Många administratörer undrar när de ska använda användargrupper och när de ska använda enhetsgrupper. Viss vägledning finns i [Användargrupper jämfört med enhetsgrupper](device-profile-assign.md#user-groups-vs-device-groups).
 
@@ -420,7 +420,7 @@ Inställningarna ser ut ungefär som följande inställningar:
 > [!div class="mx-imgBorder"]
 > ![Skapa en administrativ mall för OneDrive i Microsoft Intune](./media/tutorial-walkthrough-administrative-templates/one-drive-administrative-template.png)
 
-Mer information om OneDrive-klientinställningar finns i [Använda grupprincip för att kontrollera inställningarna för OneDrive-synkroniseringsklient](https://docs.microsoft.com/onedrive/use-group-policy).
+Mer information om OneDrive-klientinställningar finns i [Använda grupprincip för att kontrollera inställningarna för OneDrive-synkroniseringsklient](/onedrive/use-group-policy).
 
 ### <a name="assign-your-template"></a>Tilldela din mall
 
@@ -438,7 +438,7 @@ Nu har du skapat några administrativa mallar och tilldelat dem till grupper som
 I det här avsnittet används följande resurser. Vi kommer att installera dessa resurser i det här avsnittet.
 
 - [Intune PowerShell SDK](https://github.com/microsoft/Intune-PowerShell-SDK)
-- [Microsoft Graph API för Intune](https://docs.microsoft.com/graph/api/resources/intune-graph-overview?view=graph-rest-1.0)
+- [Microsoft Graph API för Intune](/graph/api/resources/intune-graph-overview?view=graph-rest-1.0)
 
 1. På **Admindator** öppnar du **Windows PowerShell** som administratör:
 
@@ -458,7 +458,7 @@ I det här avsnittet används följande resurser. Vi kommer att installera dessa
 
     3. Ange `Y` för att ändra det.
 
-    PowerShell-körningsprincipen förhindrar körning av skadliga skript. Mer information finns i [Om körningsprinciper](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+    PowerShell-körningsprincipen förhindrar körning av skadliga skript. Mer information finns i [Om körningsprinciper](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
 3. Ange: `Install-Module -Name Microsoft.Graph.Intune`
 
@@ -581,7 +581,7 @@ När resurser inte längre behövs kan du:
 
 ## <a name="next-steps"></a>Nästa steg
 
-I den här självstudien har du lärt dig mer om [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), använt frågebyggaren för att skapa dynamiska grupper samt skapat administrativa mallar i Intune för att konfigurera [ADMX-inställningar](https://docs.microsoft.com/windows/client-management/mdm/understanding-admx-backed-policies). Du jämförde även användning av ADMX-mallar lokalt och i molnet med Intune. Dessutom använde du PowerShell-cmdletar för att skapa en administrativ mall.
+I den här självstudien har du lärt dig mer om [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431), använt frågebyggaren för att skapa dynamiska grupper samt skapat administrativa mallar i Intune för att konfigurera [ADMX-inställningar](/windows/client-management/mdm/understanding-admx-backed-policies). Du jämförde även användning av ADMX-mallar lokalt och i molnet med Intune. Dessutom använde du PowerShell-cmdletar för att skapa en administrativ mall.
 
 Mer information om administrativa mallar i Intune finns här:
 

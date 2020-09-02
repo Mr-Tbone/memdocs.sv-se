@@ -16,12 +16,12 @@ ms.assetid: 323f384d-8a76-4adc-999b-e508d641bfa1
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e8fdd0de8b276017a51c2fd464eef4b1d8505bc
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 82834dc3a7fc60292228acbd62c7c6a8b8a94ee3
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82075395"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909796"
 ---
 # <a name="microsoft-intune-classic-groups-in-the-azure-portal"></a>Klassiska Microsoft Intune-grupper i Azure-portalen
 
@@ -47,9 +47,9 @@ Vissa av de funktioner för Intune-grupper som du tidigare kan ha använt är in
 ## <a name="how-to-get-started"></a>Hur kommer man igång?
 
 - Läs följande avsnitt för mer information om Azure AD-säkerhetsgrupper och hur de fungerar:
-  - [Hantera åtkomst till resurser med Azure Active Directory-grupper](https://azure.microsoft.com/documentation/articles/active-directory-manage-groups/).
-  - [Hantera grupper i Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-manage-groups/).
-  - [Använda attribut för att skapa avancerade regler](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules/).
+  - [Hantera åtkomst till resurser med Azure Active Directory-grupper](/azure/active-directory/fundamentals/active-directory-manage-groups).
+  - [Hantera grupper i Azure Active Directory](/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
+  - [Använda attribut för att skapa avancerade regler](/azure/active-directory/users-groups-roles/groups-dynamic-membership).
 - Kontrollera att administratörer som behöver skapa grupper läggs till i Azure AD-rollen **Administratör för Intune-tjänsten**. Azure AD-rollen Tjänstadministratör inte har behörighet att **hantera grupper**.
 - Om dina Intune-grupper använder alternativet **Exkludera särskilda medlemmar** så måste du bestämma om du ska göra om dessa grupper utan att använda undantag, eller om du behöver avancerade regler för att uppfylla affärsbehoven.
 

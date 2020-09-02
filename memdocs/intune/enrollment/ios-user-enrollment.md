@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73a222ee8f847071174ea7dee1c438b69a1bd0ae
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 72bbc3d720f7abb22296d21bfe4869240200c912
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85093771"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907743"
 ---
 # <a name="set-up-iosipados-and-ipados-user-enrollment-preview"></a>Konfigurera användarregistrering för iOS/iPadOS och iPadOS (förhandsversion)
 
@@ -46,7 +46,7 @@ En registreringsprofil definierar inställningarna som tillämpas på en grupp e
 
     ![Skapa en Apple-registreringsprofil](./media/ios-user-enrollment/create-profile.png)
 
-2. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
+2. På sidan **Grundinställningar**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
 
     ![Sidan Grundinställningar](./media/ios-user-enrollment/basics-page.png)
 
@@ -58,7 +58,7 @@ En registreringsprofil definierar inställningarna som tillämpas på en grupp e
 
     - **Enhetsregistrering**: Alla användare i den här profilen kommer att använda enhetsregistrering.
     - **Användarregistrering**: Alla användare i den här profilen kommer att använda användarregistrering.
-    - **Bestäm baserat på användarens val**: Alla användare i den här gruppen får välja vilken typ av registrering som ska användas. När användarna registrerar sina enheter kan de välja mellan **Jag äger den här enheten** och **(Företaget) äger den här enheten**. Om de väljer det andra alternativet registreras enheten via Enhetsregistrering. Om användaren väljer **Jag äger den här enheten** måste han eller hon välja om hela enheten ska skyddas eller endast arbetsrelaterade appar och data. Vilket alternativ slutanvändaren väljer vad gäller ägarskap av enheten avgör endast vilken typ av registrering som implementeras på deras enheter. Det här användarvalet visas inte i attributet Ägarskap för enhet i Intune. Mer information om användarupplevelsen finns i [Konfigurera iOS/iPadOS-enhetsåtkomst till företagsresurser](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
+    - **Bestäm baserat på användarens val**: Alla användare i den här gruppen får välja vilken typ av registrering som ska användas. När användarna registrerar sina enheter kan de välja mellan **Jag äger den här enheten** och **(Företaget) äger den här enheten**. Om de väljer det andra alternativet registreras enheten via Enhetsregistrering. Om användaren väljer **Jag äger den här enheten** måste han eller hon välja om hela enheten ska skyddas eller endast arbetsrelaterade appar och data. Vilket alternativ slutanvändaren väljer vad gäller ägarskap av enheten avgör endast vilken typ av registrering som implementeras på deras enheter. Det här användarvalet visas inte i attributet Ägarskap för enhet i Intune. Mer information om användarupplevelsen finns i [Konfigurera iOS/iPadOS-enhetsåtkomst till företagsresurser](../user-help/enroll-your-device-in-intune-macos-cp.md).
     
 5. Välj **Nästa**.
 
@@ -81,5 +81,3 @@ När du har skapat mer än en profil för registreringstyper kan du ändra profi
 2. Dra och släpp profilerna i listan i den ordning som de ska tillämpas.
 
 Om det uppstår konflikter mellan profiler för en användare används profilen med högre prioritet för användaren.
-
-

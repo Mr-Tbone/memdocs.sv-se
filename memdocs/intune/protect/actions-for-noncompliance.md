@@ -16,12 +16,12 @@ search.appverid: MET150
 ms.reviewer: samyada
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d262041c982d3d9a629ccb550a1376e5e479a759
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: fa533ea8a34fae0c3460d207bb88e6b64b0957eb
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252783"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909660"
 ---
 # <a name="configure-actions-for-noncompliant-devices-in-intune"></a>Konfigurera åtgärder för icke-inkompatibla enheter i Intune
 
@@ -29,7 +29,7 @@ För enheter som inte uppfyller dina principer eller regler för efterlevnad kan
 
 ## <a name="overview"></a>Översikt
 
-Som standard innehåller varje efterlevnadsprincip åtgärden för inkompatibilitet, **Markera enheten som inkompatibel**, med ett schema på noll dagar (**0**). När Intune identifierar en enhet som inte är kompatibel gör standardinställningen att Intune omedelbart markerar enheten som inkompatibel. När en enhet märkts som inkompatibel kan den blockeras med [villkorsstyrd åtkomst](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (AD).
+Som standard innehåller varje efterlevnadsprincip åtgärden för inkompatibilitet, **Markera enheten som inkompatibel**, med ett schema på noll dagar (**0**). När Intune identifierar en enhet som inte är kompatibel gör standardinställningen att Intune omedelbart markerar enheten som inkompatibel. När en enhet märkts som inkompatibel kan den blockeras med [villkorsstyrd åtkomst](/azure/active-directory/active-directory-conditional-access-azure-portal) i Azure Active Directory (AD).
 
 Genom att konfigurera **Åtgärder för inkompatibilitet** får du flexibiliteten att bestämma vad du ska göra med inkompatibla enheter, och när du ska göra det. Du kan t.ex. bestämma dig för att inte blockera enheten omedelbart, och sedan ge användaren en respitperiod att åtgärda problemet.
 
@@ -107,7 +107,7 @@ När e-postmeddelandet skickas lägger Intune till information om den inkompatib
 
 Du kan [lägga till åtgärder för inkompatibilitet](#add-actions-for-noncompliance) när du konfigurerar efterlevnadsprinciper för enheter, eller senare genom att redigera principen. Du kan lägga till ytterligare åtgärder till varje princip för att uppfylla dina behov. Tänk på att varje efterlevnadsprincip automatiskt inkluderar standardåtgärden vid inkompatibilitet som markerar enheter som inkompatibla, med ett schema inställt på noll dagar.
 
-Du måste ha konfigurerat villkorlig Azure AD-åtkomst för att kunna använda principer för enhetsefterlevnad till att blockera enheter från företagets resurser. Mer information finns i [Villkorlig åtkomst i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal) eller [Vanliga sätt att använda villkorlig åtkomst med Intune](conditional-access-intune-common-ways-use.md).
+Du måste ha konfigurerat villkorlig Azure AD-åtkomst för att kunna använda principer för enhetsefterlevnad till att blockera enheter från företagets resurser. Mer information finns i [Villkorlig åtkomst i Azure Active Directory](/azure/active-directory/active-directory-conditional-access-azure-portal) eller [Vanliga sätt att använda villkorlig åtkomst med Intune](conditional-access-intune-common-ways-use.md).
 
 Se följande plattformsspecifika vägledning när du ska skapa en efterlevnadsprincip för enheter:
 

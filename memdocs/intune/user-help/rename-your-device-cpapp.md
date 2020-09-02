@@ -19,12 +19,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 8c71ef5e1abfcccfdeec6c01551a23bf1d1750bd
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 2fcb7be9d5a75f17e2b9c347be9cd5d4eedd925d
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881149"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907658"
 ---
 # <a name="rename-device-from-the-company-portal-app-for-windows"></a>Byt namn på enheten från företagsportalappen för Windows
 Byt namn på en enhet så att den blir lättare att känna igen från andra enheter. Med företagsportalappen för Windows kan du byta namn på följande typer av anslutna enheter:  
@@ -47,7 +47,7 @@ Följ stegen nedan om du vill ta bort en enhet från sidan **Enhetsinformation**
      ![Exempelskärmbild av sidan Enhetsinformation i företagsportalappen, med fokus på popup-fältet Byt namn.](./media/1808_RenameApp_Popup.png)  
 
 ## <a name="rename-device-from-device-context-menu"></a>Byta namn på enheten från enhetens snabbmeny  
-Följ stegen nedan om du vill ta bort en enhet via åtgärderna på [snabbmenyn](https://docs.microsoft.com//windows/uwp/design/controls-and-patterns/menus).  
+Följ stegen nedan om du vill ta bort en enhet via åtgärderna på [snabbmenyn](//windows/uwp/design/controls-and-patterns/menus).  
 
 1. Gå till sidan **Mina enheter** från **startsidan** i företagsportalappen.
 
@@ -61,4 +61,3 @@ Följ stegen nedan om du vill ta bort en enhet via åtgärderna på [snabbmenyn]
      ![Exempel på skärmbild av startsidan i företagsportalappen för Windows. Popup-fältet Byt namn visas över enheten där användaren kan ange ett nytt namn och klicka på Byt namn eller Avbryt.](./media/1808_RenameApp_Popup.png)  
 
 Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).
-

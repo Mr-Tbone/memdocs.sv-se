@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3a20477b643da961f5c7281d92f3d24a4e7313d
-ms.sourcegitcommit: 45657123a5db50aaecdb96d068712623d775f31c
+ms.openlocfilehash: 2e61e7e8bae436e567bceec5f098170cfb7b7c6a
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87443853"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907760"
 ---
 # <a name="connect-to-the-data-warehouse-with-power-bi"></a>Ansluta till informationslagret med Power BI
 
@@ -42,7 +42,7 @@ Du kan använda Compliance-appen i Power BI för att läsa in interaktiva, dynam
 Här markeras också trenderna för registrering, regelefterlevnad, enhetens konfigurationsprofil och programuppdateringar. För exempeldiagram och rapporter tillämpas användarvänliga filter på arbetsytan. Om du vill använda avancerade filter kan du gå till rutan **Filter** i Power BI Desktop.
 
 > [!NOTE]
-> Med Power BI-mallar kan Power BI-partner skapa Power BI-appar med lite eller ingen kodning och distribuera dem till olika Power BI-kunder. Du kan till exempel använda mallen för Power BI-efterlevnadsrapporter i V2.0. V2.0 har en ny och bättre design samt ändringar av de beräkningar och data som visas i mallen. Mer information finns i [Uppdatera en mallapp](https://docs.microsoft.com/power-bi/service-template-apps-install-distribute#update-a-template-app), [Intune Compliance-app (Data Warehouse)](https://appsource.microsoft.com/product/power-bi/pbi_intune.intune_compliance_dw_app-preview?flightCodes=65ede247-5273-43b8-8a25-b89c7d211fbd)och [Vad är Power BI-mallappar?](https://docs.microsoft.com/power-bi/service-template-apps-overview)
+> Med Power BI-mallar kan Power BI-partner skapa Power BI-appar med lite eller ingen kodning och distribuera dem till olika Power BI-kunder. Du kan till exempel använda mallen för Power BI-efterlevnadsrapporter i V2.0. V2.0 har en ny och bättre design samt ändringar av de beräkningar och data som visas i mallen. Mer information finns i [Uppdatera en mallapp](/power-bi/service-template-apps-install-distribute#update-a-template-app), [Intune Compliance-app (Data Warehouse)](https://appsource.microsoft.com/product/power-bi/pbi_intune.intune_compliance_dw_app-preview?flightCodes=65ede247-5273-43b8-8a25-b89c7d211fbd)och [Vad är Power BI-mallappar?](/power-bi/service-template-apps-overview)
 
 I följande anvisningar visas hur du laddar ned Power BI-filen och använder OData-länken med Power BI.
 

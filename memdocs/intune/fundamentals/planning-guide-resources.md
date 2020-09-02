@@ -17,12 +17,12 @@ ms.reviewer: jeffbu, cgerth
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e50d518c3709d71085a57ad9a430444564c24cb9
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: a385b990dfb3c81ea10454b2134f92dec5a2f073
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79357564"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907675"
 ---
 # <a name="additional-resources-for-planning-your-intune-deployment"></a>Fler resurser för planeringen av din Intune-distribution
 
@@ -50,7 +50,7 @@ Här följer en lista över mallarna för respektive avsnitt.
 
 Ta en titt på dessa resurser om du vill ha ytterligare information som kan vara till hjälp när du planerar, utformar och implementerar Intune-distributionen.
 
-- [Microsoft Intune-dokumentation](https://docs.microsoft.com/intune/) – Den kompletta uppsättningen Intune-dokumentation.
+- [Microsoft Intune-dokumentation](/intune/) – Den kompletta uppsättningen Intune-dokumentation.
 
 - [Microsoft Trust Center](https://www.microsoft.com/TrustCenter) – Lär dig mer om Microsofts strategi för säkerhet, sekretess, efterlevnad och insyn i Microsofts alla produkter och tjänster i molnet.
 

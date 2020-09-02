@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c41f22e2aa60803067b9015f2ae3a84db43ff894
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: 2e359a87cb9e62b6d7542d82d9819b5c132a8bc2
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179544"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910272"
 ---
 # <a name="add-the-windows-10-company-portal-app-by-using-microsoft-intune"></a>Lägga till appen Företagsportal för Windows 10 med Microsoft Intune
 
@@ -67,7 +67,7 @@ Användarna kan själva installera appen Företagsportal från Microsoft Store f
 
 11. Tilldela företagsportalen som en obligatorisk app till dina valda användargrupper eller enhetsgrupper.  
 
-Mer information om hur Intune hanterar beroenden för universella appar finns i [Distribuera ett appxbundle med beroenden via Microsoft Intune MDM](https://blogs.technet.microsoft.com/configmgrdogs/2016/11/30/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm/).  
+Mer information om hur Intune hanterar beroenden för universella appar finns i [Distribuera ett appxbundle med beroenden via Microsoft Intune MDM](/archive/blogs/configmgrdogs/deploying-an-appxbundle-with-dependencies-via-microsoft-intune-mdm).  
 
 ## <a name="frequently-asked-questions"></a>Vanliga frågor och svar 
 ### <a name="how-do-i-update-the-company-portal-app-on-my-users-devices-if-they-have-already-installed-the-older-apps-from-the-store"></a>Hur gör jag för att uppdatera företagsportalappen på mina användares enheter om de redan har installerat de äldre apparna från butiken?
@@ -110,4 +110,3 @@ När skriptet har körts skapas den signerade versionen av appen Företagsportal
 ## <a name="next-steps"></a>Nästa steg
 
 - [Tilldela appar till grupper](apps-deploy.md)
-

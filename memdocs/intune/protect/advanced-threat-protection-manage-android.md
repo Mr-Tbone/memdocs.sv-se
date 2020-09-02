@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e3b12251117e689f3b4a5456cf20bae3797083a
-ms.sourcegitcommit: a882035696a8cc95c3ef4efdb9f7d0cc7e183a1a
+ms.openlocfilehash: 49423d1d1b887aaf3ed3323ff36678bb7319b1ad
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87264568"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909473"
 ---
 # <a name="configure-microsoft-defender-atp-on-android-devices-you-manage-with-intune"></a>Konfigurera Microsoft Defender ATP på Android-enheter som du hanterar med Intune
 
@@ -31,7 +31,7 @@ Innan du fortsätter måste du [konfigurera Microsoft Defender ATP i Intune](../
 
 ## <a name="configure-web-protection-on-devices-that-run-android"></a>Konfigurera webbskydd på enheter som kör Android
 
-Som standard aktiverar Microsoft Defender ATP för Android webbskyddsfunktionen. [Webbskydd](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/web-protection-overview) hjälper dig att skydda enheter mot olika webbhot och nätfiskeattacker.
+Som standard aktiverar Microsoft Defender ATP för Android webbskyddsfunktionen. [Webbskydd](/windows/security/threat-protection/microsoft-defender-atp/web-protection-overview) hjälper dig att skydda enheter mot olika webbhot och nätfiskeattacker.
 
 Även om funktionen är aktiverad som standard finns det skäl att inaktivera det här skyddet på vissa Android-enheter. Du kan till exempel välja att endast använda appavsökningsfunktionen i Microsoft Defender ATP eller förhindra att webbskyddsfunktionen använder ditt VPN under sökningen efter skadliga webbadresser.
 
@@ -127,5 +127,5 @@ Om du vill konfigurera webbskydd på enheter använder du följande procedurer t
 
 Läs mer i Microsoft Defender ATP-dokumentationen:
 
-- [Villkorlig åtkomst för Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/conditional-access)
-- [Instrumentpanel för Microsoft Defender ATP-risk](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/security-operations-dashboard)
+- [Villkorlig åtkomst för Microsoft Defender ATP](/windows/security/threat-protection/microsoft-defender-atp/conditional-access)
+- [Instrumentpanel för Microsoft Defender ATP-risk](/windows/security/threat-protection/microsoft-defender-atp/security-operations-dashboard)

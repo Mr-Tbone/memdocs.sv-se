@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bed118810be877bf4671571814ee6d151d6f727b
-ms.sourcegitcommit: da5bfbe16856fdbfadc40b3797840e0b5110d97d
+ms.openlocfilehash: 358d01a968c98262980f8e121d8e7e92e2880c6c
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512741"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907827"
 ---
 # <a name="intune-discovered-apps"></a>Intune-identifierade appar
 
@@ -64,7 +64,7 @@ Följande lista innehåller appens plattformstyp, de appar som övervakas för p
 | Android enterprise | Endast hanterade appar | Endast appar som har installerats i arbetsprofilen | Var sjunde dag från enhetsregistreringen |
 
 > [!NOTE]
-> - Windows 10-samhanterade enheter, som du ser i arbetsbelastningen för [klientappar](https://docs.microsoft.com/mem/configmgr/comanage/workloads#client-apps) i Configuration Manager, samlar för närvarande inte in appinventering via tillägget för Intune-hantering (IME) enligt schemat ovan. För att komma runt det här problemet bör arbetsbelastningen för [klientappar](https://docs.microsoft.com/mem/configmgr/comanage/workloads#client-apps) i Configuration Manager flyttas till Intune för installation av IME på enheten (IME krävs för Win32-inventering och PowerShell-distribution). Observera att ändringar eller uppdateringar av det här beteendet presenteras i [under utveckling](../fundamentals/in-development.md) och/eller [vad som är nytt](../fundamentals/whats-new.md).
+> - Windows 10-samhanterade enheter, som du ser i arbetsbelastningen för [klientappar](../../configmgr/comanage/workloads.md#client-apps) i Configuration Manager, samlar för närvarande inte in appinventering via tillägget för Intune-hantering (IME) enligt schemat ovan. För att komma runt det här problemet bör arbetsbelastningen för [klientappar](../../configmgr/comanage/workloads.md#client-apps) i Configuration Manager flyttas till Intune för installation av IME på enheten (IME krävs för Win32-inventering och PowerShell-distribution). Observera att ändringar eller uppdateringar av det här beteendet presenteras i [under utveckling](../fundamentals/in-development.md) och/eller [vad som är nytt](../fundamentals/whats-new.md).
 > - Personligt ägda macOS-enheter som registrerats före november 2019 kan fortsätta att visa alla appar som är installerade på enheten tills enheterna har registrerats igen.
 > - Fullstständigt hanterade och dedikerade Android Enterprise visar inte identifierade appar.
 

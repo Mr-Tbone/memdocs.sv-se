@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 607e2303cbec9ec7fc069db602d51684b71e6575
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: c8cc44cb614154df1a128ee1f1708a3259f88169
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80083834"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910051"
 ---
 # <a name="troubleshoot-and-see-potential-issues-on-android-zebra-devices-in-microsoft-intune"></a>Felsök och se potentiella problem på Android Zebra-enheter i Microsoft Intune
 
@@ -57,7 +57,7 @@ Om du vill hämta loggar när profilen redan har distribuerats med Intune anslut
 På enheten sparas loggar i `/sdcard/Android/data/com.microsoft.windowsintune.companyportal/files`
 
 ### <a name="get-logs-from-email"></a>Hämta loggar från e-post
-För att hämta loggar efter att profilen redan har distribuerats med Intune kan slutanvändare skicka loggarna till dig via e-post med hjälp av en e-postapp på enheten. På Zebra-enheten öppnar du företagsportalappen och [skickar loggarna](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-by-email-android). När du använder funktionen för att skicka loggar skapas även ett PowerLift-incident-ID som du kan hänvisa till om du kontaktar Microsoft-supporten.
+För att hämta loggar efter att profilen redan har distribuerats med Intune kan slutanvändare skicka loggarna till dig via e-post med hjälp av en e-postapp på enheten. På Zebra-enheten öppnar du företagsportalappen och [skickar loggarna](../user-help/send-logs-to-your-it-admin-by-email-android.md). När du använder funktionen för att skicka loggar skapas även ett PowerLift-incident-ID som du kan hänvisa till om du kontaktar Microsoft-supporten.
 
 ## <a name="read-the-logs"></a>Läsa loggarna
 

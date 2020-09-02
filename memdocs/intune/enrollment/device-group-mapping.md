@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure;seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 761e668ae2c774bb52dbe6971d343d60b3e95516
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: e6dae19e466d3d0e88ae07d1c82a63b098439632
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83986098"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88908623"
 ---
 # <a name="categorize-devices-into-groups"></a>Kategorisera enheter i grupper
 
@@ -55,7 +55,7 @@ Du kommer att använda enhetskategorinamnet när du skapar Azure Active Director
 ### <a name="step-2-create-azure-active-directory-security-groups"></a>Steg 2: Skapa Azure Active Directory-säkerhetsgrupper
 I det här steget kommer du att skapa dynamiska grupper i Azure Portal baserat på enhetskategori och enhetskategorinamn.
 
-Se [Using attributes to create advanced rules](https://azure.microsoft.com/documentation/articles/active-directory-accessmanagement-groups-with-advanced-rules/#using-attributes-to-create-rules-for-device-objects) (Använda attribut för att skapa avancerade regler) i Azure AD-dokumentationen för att fortsätta.
+Se [Using attributes to create advanced rules](/azure/active-directory/users-groups-roles/groups-dynamic-membership#using-attributes-to-create-rules-for-device-objects) (Använda attribut för att skapa avancerade regler) i Azure AD-dokumentationen för att fortsätta.
 
 Använd informationen i det här avsnittet för att skapa en enhetsgrupp med en avancerad regel med hjälp av **deviceCategory**-attributet. Till exempel: **device.deviceCategory - eq** ”*enhetskategorinamnet som du fick från Azure Portal*”.
 

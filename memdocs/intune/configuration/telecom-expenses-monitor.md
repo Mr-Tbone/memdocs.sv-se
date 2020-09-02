@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3267bf4e59d6745e480a81f8bdc39cfa2827ea4
-ms.sourcegitcommit: 7f542c97ac55bbd329f5befda97d671213c24e9a
+ms.openlocfilehash: 3cabf3bad447ef3db8250d14fcb376cb86aefad3
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84506340"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907557"
 ---
 # <a name="set-up-a-telecom-expense-management-service-in-intune"></a>Konfigurera tjänsten för kostnadsuppföljning av telekommunikation i Intune
 
@@ -184,8 +184,8 @@ Tjänsten Datalert är nu aktiv. Den börjar övervaka dataanvändningen och ina
 
 För slutanvändarupplevelsen kan följande artiklar vara användbara:
 
-- [Registrera iOS/iPadOS-enheten i kostnadshanteringsprogrammet för telekomtjänster](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-with-telecom-expense-management-ios)
-- [Registrera Android-enheten i kostnadsuppföljningen av telekommunikation](https://docs.microsoft.com/mem/intune/user-help/enroll-your-device-with-telecom-expense-management-android)
+- [Registrera iOS/iPadOS-enheten i kostnadshanteringsprogrammet för telekomtjänster](../user-help/enroll-your-device-with-telecom-expense-management-ios.md)
+- [Registrera Android-enheten i kostnadsuppföljningen av telekommunikation](../user-help/enroll-your-device-with-telecom-expense-management-android.md)
 
 ## <a name="turn-off-the-datalert-service"></a>Stänga av tjänsten Datalert
 

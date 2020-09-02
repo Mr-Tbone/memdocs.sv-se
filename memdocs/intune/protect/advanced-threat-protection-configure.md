@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad02078d2a8b9926de463e01d3dcbc675c721e4a
-ms.sourcegitcommit: d1bfd5b8481439babc7eae43493f28edaebe647a
+ms.openlocfilehash: a9c3e456722d0b747a07c3f7040edc2cdf28f264
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179527"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909592"
 ---
 # <a name="configure-microsoft-defender-atp-in-intune"></a>Konfigurera Microsoft Defender ATP i Intune
 
@@ -84,9 +84,9 @@ När du aktiverade stöd för Microsoft Defender ATP i Intune upprättade du en 
 
 När du upprättade anslutningen mellan Intune och Microsoft Defender ATP fick Intune ett konfigurationspaket för Microsoft Defender ATP-registrering från Microsoft Defender ATP. Du distribuerar det här konfigurationspaketet till dina Windows-enheter med en enhetskonfigurationsprofil för Microsoft Defender ATP.
 
-Konfigurationspaketet konfigurerar enheter så att de kan kommunicera med [Microsoft Defender ATP-tjänster](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) för att söka igenom filer och identifiera hot. Enheten har också konfigurerats så att den rapporterar enhetsrisknivån till Microsoft Defender ATP baserat på de efterlevnadsprinciper som du skapar.
+Konfigurationspaketet konfigurerar enheter så att de kan kommunicera med [Microsoft Defender ATP-tjänster](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) för att söka igenom filer och identifiera hot. Enheten har också konfigurerats så att den rapporterar enhetsrisknivån till Microsoft Defender ATP baserat på de efterlevnadsprinciper som du skapar.
 
-När du publicerat en enhet med konfigurationspaketet behöver du inte göra det igen. Du kan också publicera enheter med hjälp av en [grupprincip eller Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints).
+När du publicerat en enhet med konfigurationspaketet behöver du inte göra det igen. Du kan också publicera enheter med hjälp av en [grupprincip eller Microsoft Endpoint Configuration Manager](/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints).
 
 ### <a name="create-the-device-configuration-profile-to-onboard-windows-devices"></a>Skapa enhetskonfigurationsprofilen så att du kan publicera Windows-enheter
 
@@ -105,7 +105,7 @@ När du publicerat en enhet med konfigurationspaketet behöver du inte göra det
    - **Exempeldelning för alla filer**: **Aktivera** tillåter att exempel samlas in och delas med Microsoft Defender ATP. Till exempel om du ser en misstänkt fil kan du skicka den till Microsoft Defender ATP för djupgående analys. **Inte konfigurerad** delar inte några exempel med Microsoft Defender ATP.
    - **Skicka frekvensvärde för telemetrirapportering**: För enheter med hög risk kan du **Aktivera** den här inställningen så att den rapporterar telemetri till tjänsten Microsoft Defender ATP oftare.
 
-     [Registrera Windows 10-datorer med hjälp av Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) innehåller mer information om dessa Microsoft Defender ATP-inställningar.
+     [Registrera Windows 10-datorer med hjälp av Microsoft Endpoint Configuration Manager](/windows/security/threat-protection/microsoft-defender-atp/configure-endpoints-sccm) innehåller mer information om dessa Microsoft Defender ATP-inställningar.
 
 7. Välj **Nästa** för att öppna sidan **Omfångstaggar**. Omfångstaggar är valfria. Fortsätt genom att välja **Nästa**.
 
@@ -120,7 +120,7 @@ När du publicerat en enhet med konfigurationspaketet behöver du inte göra det
 
 När du har upprättat en tjänst-till-tjänst-anslutning mellan Intune och Microsoft Defender ATP kan du registrera Android-enheter i Microsoft Defender ATP. Vid registreringen konfigureras enheterna så att de kan kommunicera med Defender ATP, som sedan samlar in data om enheternas risknivå.
 
-Till skillnad från Windows-enheter finns det inget konfigurationspaket för enheter som kör Android. Information om krav och registreringsanvisningar för Android finns i [Översikt över Microsoft Defender ATP för Android](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-android) i Microsoft Defender ATP-dokumentationen.
+Till skillnad från Windows-enheter finns det inget konfigurationspaket för enheter som kör Android. Information om krav och registreringsanvisningar för Android finns i [Översikt över Microsoft Defender ATP för Android](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-atp-android) i Microsoft Defender ATP-dokumentationen.
 
 För enheter som kör Android kan du även använda Intune-principer när du ska ändra Microsoft Defender ATP på Android. Mer information finns i [Microsoft Defender ATP-webbskydd](../protect/advanced-threat-protection-manage-android.md).
 
@@ -145,7 +145,7 @@ Om du inte vet hur du skapar en efterlevnadspolicy kan du läsa om proceduren [S
   
 5. På fliken **Efterlevnadsinställningar** utökar du gruppen **Microsoft Defender ATP** och ställer in önskad nivå för alternativet **Kräv att enheten ska hållas vid eller under riskpoängen**.
 
-   Klassificeringar för hotnivå [bestäms av Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/alerts-queue).
+   Klassificeringar för hotnivå [bestäms av Microsoft Defender ATP](/windows/security/threat-protection/microsoft-defender-atp/alerts-queue).
 
    - **Rensa**: Den här nivån är säkrast. Enheten får inte ha några existerande hot och ska ha tillgång till företagsresurser. Om något hot identifieras på enheten kommer den att utvärderas som icke-kompatibel. (Microsoft Defender ATP använder värdet *Säkert*.)
    - **Låg**: Enheten följer standard om det enbart finns hot på låg nivå på enheten. Enheter med medel- eller hög risk är inte kompatibla.
@@ -194,5 +194,5 @@ Läs mer i Intune-dokumentationen:
 
 Läs mer i Microsoft Defender ATP-dokumentationen:
 
-- [Villkorlig åtkomst för Microsoft Defender ATP](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/conditional-access)
-- [Instrumentpanel för Microsoft Defender ATP-risk](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/security-operations-dashboard)
+- [Villkorlig åtkomst för Microsoft Defender ATP](/windows/security/threat-protection/microsoft-defender-atp/conditional-access)
+- [Instrumentpanel för Microsoft Defender ATP-risk](/windows/security/threat-protection/microsoft-defender-atp/security-operations-dashboard)

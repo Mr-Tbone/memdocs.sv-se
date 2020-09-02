@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 106c08b6e988c104858a06ef9843ebcb2e3ae93a
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: b8ef2832d853ae98da99cfd505adc7799c115a7b
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079781"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907726"
 ---
 # <a name="data-apple-sends-to-intune"></a>Data Apple skickar till Intune
 
@@ -33,7 +33,7 @@ Om någon av följande Appletjänster är aktiverade på en enhet, upprättar Mi
 
 - [Apples program för enhetsregistrering (DEP)](../enrollment/device-enrollment-program-enroll-ios.md)
 - [Apple MDM-pushcertifikat (APNs)](../enrollment/apple-mdm-push-certificate-get.md)
-- [Apple School Manager (ASM)](https://docs.microsoft.com/schooldatasync/apple-school-manager-integration-with-intune-for-education-and-school-data-sync)
+- [Apple School Manager (ASM)](/schooldatasync/apple-school-manager-integration-with-intune-for-education-and-school-data-sync)
 - [Apples volymköpsprogram (VPP](../apps/vpp-apps-ios.md)
 
 Innan Microsoft Intune kan upprätta en anslutning, måste du skapa ett Apple-konto för varje Apple-tjänst.
@@ -108,5 +108,3 @@ I följande tabell visas de data som en Apple-enhet skickar till Intune. [Intune
 
 
 Om du vill sluta använda Apple-tjänster med Microsoft Intune och ta bort data, måste du både inaktivera din Microsoft Intune Apple-token och även ta bort ditt Apple-konto. Läs mer i Apple-kontot om hur du utför kontohanteringen.
-
-

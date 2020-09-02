@@ -18,16 +18,16 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81ea88bc72e6bcd52dbfe51cb4fa12803605de18
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 650188df0c5e19b3eeb9bfa06197b77414cecb20
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79355549"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88910187"
 ---
 # <a name="tutorial-walkthrough-intune-in-microsoft-endpoint-manager"></a>Självstudie: Genomgång av Intune i Microsoft Endpoint Manager
 
-[Azure](https://docs.microsoft.com/learn/modules/welcome-to-azure) innehåller över 100 tjänster som hjälper dig med olika scenarier och möjligheter i molnet. Microsoft Intune är en av flera tjänster som finns i Azure. Med Intune kan du se till att företagets enheter, appar och data uppfyller företagets säkerhetskrav. Du har kontrollen och kan ange vilka krav som måste kontrolleras och vad som händer när de kraven inte uppfylls. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) hittar du Microsoft Intune-tjänsten, samt andra inställningar för enhetshantering. Att förstå funktionerna som finns i Intune hjälper dig att utföra uppgifter för hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM).
+[Azure](/learn/modules/welcome-to-azure) innehåller över 100 tjänster som hjälper dig med olika scenarier och möjligheter i molnet. Microsoft Intune är en av flera tjänster som finns i Azure. Med Intune kan du se till att företagets enheter, appar och data uppfyller företagets säkerhetskrav. Du har kontrollen och kan ange vilka krav som måste kontrolleras och vad som händer när de kraven inte uppfylls. I [Administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) hittar du Microsoft Intune-tjänsten, samt andra inställningar för enhetshantering. Att förstå funktionerna som finns i Intune hjälper dig att utföra uppgifter för hantering av mobilenheter (MDM) och hantering av mobilprogram (MAM).
 
 > [!NOTE]
 > Microsoft Endpoint Manager är en enkel, integrerad plattform för slutpunktshantering som hanterar alla dina slutpunkter. I det här administrationscentret för Microsoft Endpoint Manager integreras ConfigMgr och Microsoft Intune.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 752e2b1948c1c56c77866b69365d0da2859dd279
-ms.sourcegitcommit: 48ec5cdc5898625319aed2893a5aafa402d297fc
+ms.openlocfilehash: 09da822557e27eca29da2afc342c93a76d698d6c
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84531648"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88909932"
 ---
 # <a name="use-policy-sets-to-group-collections-of-management-objects"></a>Använda principuppsättningar för att gruppera samlingar av hanteringsobjekt
 
@@ -71,7 +71,7 @@ När du skapar en principuppsättning skapar du en enskild tilldelningsenhet och
 5. Klicka på **Nästa: Enhetshantering**.<br>
    På sidan **Enhetshantering** kan du lägga till enhetshanteringsobjekt i principuppsättningen, till exempel [enhetskonfigurationsprofiler](../configuration/device-profiles.md) och [principer för enhetsefterlevnad](../protect/device-compliance-get-started.md). Se till att inkludera alla associerade objekt, till exempel andra principer, certifikat och profiler för säkerhetsbaslinje.
 6. Klicka på **Nästa: Enhetsregistrering**.<br>
-   På sidan **Enhetsregistrering** kan du lägga till enhetsregistreringsobjekt i principuppsättningen, till exempel [begränsningar för enhetstyp](../enrollment/enrollment-restrictions-set.md), [Windows Autopilot-distributionsprofiler](../enrollment/enrollment-autopilot.md) och [profiler för registreringsstatussida](../enrollment/windows-enrollment-status.md).
+   På sidan **Enhetsregistrering** kan du lägga till enhetsregistreringsobjekt i principuppsättningen, till exempel [begränsningar för enhetstyp](../enrollment/enrollment-restrictions-set.md), [Windows Autopilot-distributionsprofiler](../../autopilot/enrollment-autopilot.md) och [profiler för registreringsstatussida](../enrollment/windows-enrollment-status.md).
 7. Klicka på **Nästa: Tilldelningar**.<br>
    På sidan **Tilldelningar** kan du tilldela principuppsättningen till användare och enheter. Lägg märke till att du kan tilldela en principuppsättning till en enhet oavsett om enheten hanteras av Intune eller inte.
 8. Klicka på **Nästa: Granska och skapa** för att granska de värden som du har angett för profilen.

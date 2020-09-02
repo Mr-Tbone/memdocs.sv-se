@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ed491fd379879369ead35ceb2c618def91d3e53
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: 170a5b22362ee3bd9e347af2addc03ef3b542de2
+ms.sourcegitcommit: 0c7e6b9b47788930dca543d86a95348da4b0d902
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83985936"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88907819"
 ---
 # <a name="windows-10-app-deployment-by-using-microsoft-intune"></a>Windows 10-appdistribution med hjälp av Microsoft Intune 
 
@@ -69,7 +69,7 @@ Du kan signera och ladda upp verksamhetsspecifika appar i Windows 10 till Intune
 
 ## <a name="microsoft-store-for-business-apps"></a>Microsoft Store för företag-appar
 
-Appar i Microsoft Store för företag är moderna appar som har köpts från Microsoft Store för företags administratörsportal. De synkroniseras sedan med Microsoft Intune för hantering. Apparna kan antingen vara onlinelicensierade eller offlinelicensierade. Microsoft Store hanterar uppdateringar direkt, utan att ytterligare åtgärder krävs av administratören. Du kan även förhindra uppdateringar till specifika appar med hjälp av en anpassad URI (Uniform Resource Identifier). Mer information finns på sidan om [Enterprise-apphantering – förhindra automatiska uppdateringar för appen](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management#prevent-app-from-automatic-updates). Användaren kan även inaktivera uppdateringar för alla appar från Microsoft Store för företag på enheten. 
+Appar i Microsoft Store för företag är moderna appar som har köpts från Microsoft Store för företags administratörsportal. De synkroniseras sedan med Microsoft Intune för hantering. Apparna kan antingen vara onlinelicensierade eller offlinelicensierade. Microsoft Store hanterar uppdateringar direkt, utan att ytterligare åtgärder krävs av administratören. Du kan även förhindra uppdateringar till specifika appar med hjälp av en anpassad URI (Uniform Resource Identifier). Mer information finns på sidan om [Enterprise-apphantering – förhindra automatiska uppdateringar för appen](/windows/client-management/mdm/enterprise-app-management#prevent-app-from-automatic-updates). Användaren kan även inaktivera uppdateringar för alla appar från Microsoft Store för företag på enheten. 
 
 ### <a name="categorize-microsoft-store-for-business-apps"></a>Kategorisera appar i Microsoft Store för företag 
 Så här kategoriserar du appar i Microsoft Store för företag: 
@@ -106,7 +106,7 @@ Verksamhetsspecifika Windows-appar (i synnerhet APPX och MSIX) och Microsoft Sto
   - Fel: Det går inte att rikta sig mot en användare med en installation för enhetskontext.
 
 > [!IMPORTANT]
-> När det används tillsammans med ett assisterat etableringsscenario för Autopilot, så finns det inga krav på att verksamhetsspecifika appar eller Microsoft Store för företag-appar som distribuerats i enhetskontexten ska vara inriktade på någon enhetsgrupp. Mer information finns i [Assisterad distribution av Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/white-glove).
+> När det används tillsammans med ett assisterat etableringsscenario för Autopilot, så finns det inga krav på att verksamhetsspecifika appar eller Microsoft Store för företag-appar som distribuerats i enhetskontexten ska vara inriktade på någon enhetsgrupp. Mer information finns i [Assisterad distribution av Windows Autopilot](/windows/deployment/windows-autopilot/white-glove).
 
 > [!Note]
 > När en apptilldelning har sparats med en specifik distribution går det inte att ändra kontexten för tilldelningen, förutom för moderna appar. För moderna appar kan du ändra kontexten från användarkontext till enhetskontext. 
