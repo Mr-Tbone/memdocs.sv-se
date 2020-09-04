@@ -2,7 +2,7 @@
 title: Appar i Företagsportal
 titleSuffix: Configuration Manager
 description: Använd Företagsportal-appen för att ge en konsekvent användar upplevelse för samhanterade enheter.
-ms.date: 08/20/2020
+ms.date: 09/03/2020
 ms.prod: configuration-manager
 ms.technology: configmgr-comanage
 ms.topic: how-to
@@ -10,12 +10,12 @@ ms.assetid: 26456bb7-f46b-4d8d-bb0b-e3fd9a52fe14
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 28d1a820642c7400ad60b1571851f18a3eb9124c
-ms.sourcegitcommit: 42882de75c8a984ba35951b1165c424a7e0ba42e
+ms.openlocfilehash: cd49546e49d6964cfe37b0b13e1abe9175f4aa0e
+ms.sourcegitcommit: 7b656712cc9340d18211c7754cb99bcaae91b0ca
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89068114"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89432565"
 ---
 # <a name="use-the-company-portal-app-on-co-managed-devices"></a>Använd Företagsportalappen på samhanterade enheter
 
@@ -50,7 +50,7 @@ Mer information finns i följande artiklar:
 
 ## <a name="prerequisites"></a>Krav
 
-- Configuration Manager aktuell gren version 2006 eller senare
+- Configuration Manager aktuell gren version 2006 eller senare <sup>([Se vanliga frågor och svar](#bkmk_ver-prereq))</sup>
 
 - Företagsportal app version 11.0.8980.0 eller senare
 
@@ -118,6 +118,10 @@ Om du ändrar klient inställningen för Företagsportal när en användare väl
 Information om hur du felsöker problem med installation av Configuration Manager-appar finns i avsnittet **hjälp & support** i företagsportal. När du använder alternativet **Hämta hjälp** kan du skicka Configuration Manager loggfiler som en del av begäran.
 
 ## <a name="frequently-asked-questions-faq"></a>Vanliga frågor och svar (FAQ)
+
+### <a name="im-using-configuration-manager-version-2002-why-is-the-new-company-portal-showing-configuration-manager-apps"></a><a name="bkmk_ver-prereq"></a> Jag använder Configuration Manager version 2002, varför är den nya Företagsportal som visar Configuration Manager appar?
+
+Företagsportal version 11.0.8980.0 eller senare visar Configuration Manager-distribuerade program för alla samhanterade klienter som använder den. Configuration Manager version 2006 är förutsättningen eftersom den lägger till klient inställningen för att kontrol lera meddelanden. Om du installerar Företagsportal på en samhanterad enhet i en tidigare version eller inte konfigurerar klient inställningen kommer användarna att se meddelanden från båda portalerna. Den här upplevelsen kan vara förvirrande för användare.
 
 ### <a name="does-company-portal-support-applications-deployed-as-software-updates-from-configuration-manager"></a>Har Företagsportal program som distribuerats som program uppdateringar från Configuration Manager?
 

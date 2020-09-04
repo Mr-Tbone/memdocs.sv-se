@@ -10,12 +10,12 @@ ms.assetid: 315e2613-dc71-46b1-80cb-26161d08103a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eaceea5f83bd93fee8261a94147383cde001f90b
-ms.sourcegitcommit: 99084d70c032c4db109328a4ca100cd3f5759433
+ms.openlocfilehash: dc8aa57bda5f5a29d72af854be9a18e4f32760f8
+ms.sourcegitcommit: 7b656712cc9340d18211c7754cb99bcaae91b0ca
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88699593"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89432548"
 ---
 # <a name="integrate-with-power-bi-report-server"></a>Integrera med Power BI-rapportserver
 
@@ -27,7 +27,7 @@ Från och med version 2002 kan du integrera [Power BI-rapportserver](/power-bi/r
 
 Spara Power BI Desktop rapportmallar (. PBIX) och distribuera dem till Power BI-rapportserver. Den här processen liknar SQL Server Reporting Services rapport-filer (. RDL). Du kan också starta rapporterna i webbläsaren direkt från Configuration Manager-konsolen.
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 - Power BI-rapportserver licens. Mer information finns i [licens Power BI-rapportserver](/power-bi/report-server/get-started#licensing-power-bi-report-server).
 
@@ -103,9 +103,15 @@ Använd bara den här processen om du inte redan har en repor ting Services-plat
 
 1. När rapporten är klar att spara går du till **Arkiv** -menyn, väljer **Spara som**och väljer **Power BI-rapportserver**.
 
-1. I fönstret **Power BI-rapportserver val** anger du URL: en för repor ting Services-platsen som den **nya rapport Server adressen**. Till exempel `https://rsp.contoso.com/Reports`.
+1. I fönstret **Power BI-rapportserver val** anger du URL: en för repor ting Services-platsen som den **nya rapport Server adressen**. Till exempel `https://rsp.contoso.com/Reports`. Välj **OK**.
 
-I Configuration Manager-konsolen visas den nya rapporten i listan över Power BI rapporter.
+1. I fönstret **Spara rapport** dubbelklickar du på `ConfigMgr_<SiteCode>` mappen. Till exempel `ConfigMgr_PS1` , där `PS1` är plats koden för ConfigMgr. Alternativt kan du välja eller skapa (från rapport servern) en undermapp för att lagra den i.
+    > [!TIP]
+    > Rapporter och rapport-mappar med Power BI rapporter måste finnas i `ConfigMgr_<SiteCode>` mappen på rapport servern eller visas inte i Configuration Manager-konsolen.
+
+1. I **fil namn**anger du ett namn för rapporten.
+
+I Configuration Manager-konsolen visas den nya rapporten i listan över Power BI rapporter. Om du inte ser dina rapporter kontrollerar du att du har sparat rapporterna i `ConfigMgr_<SiteCode>` mappen.
 
 ## <a name="next-steps"></a>Nästa steg
 

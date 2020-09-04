@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 76d1edf8598e1abd71b6fd1db7faffa1750110d4
-ms.sourcegitcommit: d225ccaa67ebee444002571dc8f289624db80d10
+ms.openlocfilehash: eff1ec6a8346132853285195d8e96aa6b8d3a8fa
+ms.sourcegitcommit: 7b656712cc9340d18211c7754cb99bcaae91b0ca
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129128"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89432582"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Teknisk för hands version för Configuration Manager
 
@@ -30,9 +30,9 @@ Den här informationen gäller för alla versioner av Configuration Manager Tech
 Information om vad som är nytt i den *aktuella grenen* av Configuration Manager finns i [Nyheter i Configuration Manager stegvisa versioner](../plan-design/changes/whats-new-incremental-versions.md).
 
 > [!Tip]
-> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare:`https://docs.microsoft.com/api/search/rss?search=%22technical+preview+releases+-+Configuration+Manager%22&locale=en-us`
+> Om du vill få ett meddelande när den här sidan uppdateras kopierar du och klistrar in följande URL i din RSS-feed läsare: `https://docs.microsoft.com/api/search/rss?search=%22technical+preview+releases+-+Configuration+Manager%22&locale=en-us`
 
-## <a name="requirements-and-limitations"></a><a name="bkmk_reqs"></a>Krav och begränsningar
+## <a name="requirements-and-limitations"></a><a name="bkmk_reqs"></a> Krav och begränsningar
 
 > [!IMPORTANT]
 > Den tekniska för hands versionen är endast licensierad för användning i en labb miljö. Microsoft erbjuder kanske inte support tjänster och vissa funktioner kanske inte är tillgängliga i tekniska för hands versionerna. Dessutom kan tekniska för hands versions program ha minskat eller andra säkerhets-, sekretess-, tillgänglighets-, tillgänglighets-och Tillförlitlighets standarder i förhållande till kommersiellt tillhandahållen program vara.
@@ -76,7 +76,7 @@ Den tekniska för hands versionen av Configuration Manager stöder följande pro
 > [!Note]
 > Inkludering av dessa produkter i det här innehållet innebär inte en förlängning av stöd för en version som ligger utanför support livs cykeln. Configuration Manager stöder inte produkter som ligger utanför support livs cykeln. Mer information finns i [Microsofts livs cykel princip](https://support.microsoft.com/lifecycle).
 
-## <a name="install-and-update"></a><a name="bkmk_install"></a>Installera och uppdatera
+## <a name="install-and-update"></a><a name="bkmk_install"></a> Installera och uppdatera
 
 Configuration Manager Technical Preview-grenen för labb användning skiljer sig från den Configuration Manager aktuella grenen för produktions användning.
 
@@ -97,7 +97,7 @@ Installera en bas linje version i upp till ett år efter lanseringen. Använd de
 
 Hämta en bas linje version från [utvärderings centret](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
-## <a name="providing-feedback"></a><a name="BKMK_TPFeedback"></a>Lämna feedback
+## <a name="providing-feedback"></a><a name="BKMK_TPFeedback"></a> Lämna feedback
 
 Vi älskar att höra dina synpunkter om de nya funktionerna i den tekniska för hands versionen. Mer information finns i [produkt feedback](../understand/find-help.md#product-feedback).
 
@@ -110,7 +110,7 @@ Om du har idéer om nya funktioner som du vill se kan du berätta för oss! Skic
 Enable this section if needed to include any broad change to the tech preview branch
 -->
 
-## <a name="features-in-the-most-recent-version"></a><a name="bkmk_tpCaps"></a>Funktioner i den senaste versionen
+## <a name="features-in-the-most-recent-version"></a><a name="bkmk_tpCaps"></a> Funktioner i den senaste versionen
 
 <!-- (explanatory comment)
 This is the full list of new features in the latest TP release
@@ -166,11 +166,8 @@ Följande funktioner släpptes med tidigare versioner av Configuration Manager T
 
 | Funktion        | Teknisk för hands version |
 |----------------|---------------------------|
-| Använd Företagsportal-appen på samhanterade enheter <!--3601237--> | [Teknisk för hands version 2006](2020/technical-preview-2006.md#bkmk_portal) |
 | Förbättringar av tillgängliga appar via CMG <!--7033501--> | [Teknisk för hands version 2006](2020/technical-preview-2006.md#bkmk_availapp) |
-| Klient koppling: förbättringar av Configuration Manager åtgärder i administrations Center för Microsoft Endpoint Manager <!--7518897--> | [Teknisk för hands version 2006](2020/technical-preview-2006.md#bkmk_apps) |
 | Klientkoppling: Enhetstidslinje i administrationscentret <!--7141381--> | [Teknisk för hands version 2005](2020/technical-preview-2005.md#bkmk_timeline) |
-| Klientkoppling: Installera ett program från administrationscentret <!--6024389--> | [Teknisk för hands version 2005](2020/technical-preview-2005.md#bkmk_apps) |
 | Klientkoppling: CMPivot från administrationscentret <!--6024392--> | [Teknisk för hands version 2005](2020/technical-preview-2005.md#bkmk_cmpivot) |
 | Klientkoppling: Kör skript från administrationscentret <!--6234688--> | [Teknisk för hands version 2005](2020/technical-preview-2005.md#bkmk_scripts) |
 | Förbättringar av Cloud Management Gateway-cmdletar <!--6978300--> | [Teknisk för hands version 2005](2020/technical-preview-2005.md#bkmk_pwshcmg) |
