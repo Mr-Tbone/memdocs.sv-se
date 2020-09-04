@@ -10,12 +10,12 @@ ms.assetid: 309b9a09-a611-4ba2-90ab-dde51582cf87
 author: mestew
 manager: dougeby
 ms.author: mstewart
-ms.openlocfilehash: 3c31f97e2a494fa4b0d3e9e825a81b562859e5dd
-ms.sourcegitcommit: 9ec77929df571a6399f4e06f07be852314a3c5a4
+ms.openlocfilehash: 7d9760a49815b9eb33c7886f4d9a8f9637dedd21
+ms.sourcegitcommit: 9f072da27aa64f46a9409470b5dac5bfac3a0fe5
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86240362"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89468319"
 ---
 # <a name="import-configuration-data-with-configuration-manager"></a>Importera konfigurations data med Configuration Manager
 
@@ -28,8 +28,6 @@ Förutom att skapa konfigurations bas linjer och konfigurations objekt i Configu
 - Konfigurations data som har exporter ATS från System Center 2012 Configuration Manager och senare.  
 
 - Konfigurations data som har skapats externt och som följer SML-schemat.  
-
-  Ett exempel på ett konfigurationspaket som hjälper dig att hantera kompatibiliteten för platsserverroller i System Center 2012 Configuration Manager finns i [System Center 2012 Configuration Manager Configuration Pack](https://www.microsoft.com/download/details.aspx?id=30710&WT.mc_id=rss_alldownloads_all).  
 
 När du importerar en konfigurationsbaslinje kan vissa eller alla konfigurationsobjekt som konfigurationsbaslinjen refererar till även ingå i kabinettfilen. Under importen verifierar Configuration Manager att alla konfigurations objekt som refereras i konfigurations bas linjen också ingår i CAB-filen eller redan finns på den Configuration Manager webbplatsen. Import processen Miss lyckas om du försöker importera en konfigurations bas linje som refererar till konfigurations data som Configuration Manager inte kan hitta.  
 
