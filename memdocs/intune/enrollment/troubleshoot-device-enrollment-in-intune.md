@@ -19,12 +19,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic;seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87f81c9f33fd267bcd57a14b59c88d36a937fecd
-ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
+ms.openlocfilehash: 5c0aadb15587822ca2500ec477b6264ce4e96ed2
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865830"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993530"
 ---
 # <a name="troubleshoot-device-enrollment-in-microsoft-intune"></a>Felsöka enhetsregistrering i Microsoft Intune
 
@@ -47,8 +47,8 @@ Du kan också kontrollera att tid och datum på användarens enhet är inställt
 
 Användare av hanterade enheter kan samla in registrerings- och diagnostikloggar som du kan granska. Anvisningar för hur användare samlar in loggar finns i:
 
-- [Skicka Android-registreringsfel till IT-administratören](https://docs.microsoft.com/mem/intune/user-help/send-logs-to-your-it-admin-using-cable-android)
-- [Skicka iOS/iPadOS-fel till IT-administratören](https://docs.microsoft.com/mem/intune/user-help/send-errors-to-your-it-admin-ios)
+- [Skicka Android-registreringsfel till IT-administratören](../user-help/send-logs-to-your-it-admin-using-cable-android.md)
+- [Skicka iOS/iPadOS-fel till IT-administratören](../user-help/send-errors-to-your-it-admin-ios.md)
 
 
 ## <a name="general-enrollment-issues"></a>Allmänna registreringsproblem
@@ -121,12 +121,12 @@ För att undvika att nå enhetsgränser kan du vara noga med att ta bort inaktue
 **Problem:** Detta problem kan uppstå när du lägger till ytterligare en verifierad domän i ditt ADFS. Användare med UPN-suffixet (användarens huvudnamn) för den andra domänen kanske inte kan logga in på portalerna eller registrera enheter.
 
 
-<strong>Lösning:</strong> Microsoft Office 365-kunder måste distribuera en separat instans av AD FS 2.0 Federation Service för varje suffix om de:
+<strong>Lösning:</strong> Microsoft 365-kunder måste distribuera en separat instans av AD FS 2.0 Federation Service för varje suffix om de:
 - använder enkel inloggning (SSO) via AD FS 2.0 och
 - har flera toppnivådomäner för användarnas UPN-suffix i sin organisation (till exempel @contoso.com eller @fabrikam.com).
 
 
-En [sammanslagning för AD FS 2.0](https://support.microsoft.com/kb/2607496) fungerar tillsammans med växeln <strong>SupportMultipleDomain</strong> och gör att AD FS-servern stöder det här scenariot utan att ytterligare AD FS 2.0-servrar krävs. Mer information finns i [det här blogginlägget](https://blogs.technet.microsoft.com/abizerh/2013/02/05/supportmultipledomain-switch-when-managing-sso-to-office-365/).
+En [sammanslagning för AD FS 2.0](https://support.microsoft.com/kb/2607496) fungerar tillsammans med växeln <strong>SupportMultipleDomain</strong> och gör att AD FS-servern stöder det här scenariot utan att ytterligare AD FS 2.0-servrar krävs. Mer information finns i [det här blogginlägget](/archive/blogs/abizerh/supportmultipledomain-switch-when-managing-sso-to-office-365).
 
 
 ## <a name="android-issues"></a>Android-problem
@@ -215,7 +215,7 @@ Användaren kanske kan hämta certifikatet som saknas genom att följa instrukti
 
 När de angett sina företagsuppgifter och omdirigerats för federerad inloggning, kan användare fortfarande se ett saknat certifikatfel. I det här fallet kan felet innebära att ett mellanliggande certifikat saknas från din Active Directory Federation Services (AD FS)-server
 
-Certifikatfel uppstår eftersom Android-enheter kräver att mellanliggande certifikat ingår i en [SSL-servers hälsning](https://technet.microsoft.com/library/cc783349.aspx). För närvarande skickar en AD FS-standardserver eller WAP - AD FS Proxy-serverinstallation bara AD FS-tjänstens SSL-certifikat i SSL-serverns hälsningssvar till en SSL-klients hälsning.
+Certifikatfel uppstår eftersom Android-enheter kräver att mellanliggande certifikat ingår i en [SSL-servers hälsning](/previous-versions/windows/it-pro/windows-server-2003/cc783349(v=ws.10)). För närvarande skickar en AD FS-standardserver eller WAP - AD FS Proxy-serverinstallation bara AD FS-tjänstens SSL-certifikat i SSL-serverns hälsningssvar till en SSL-klients hälsning.
 
 Om du vill åtgärda problemet importerar du certifikaten till datorns personliga certifikat på AD FS-servern eller proxyservrar enligt följande:
 
@@ -294,9 +294,9 @@ Registrering av ADE-enheter med användartillhörighet kräver att WS-Trust 1.3 
 Get-AdfsEndpoint -AddressPath "/adfs/services/trust/13/UsernameMixed"
 ```
 
-Mer information finns i [dokumentationen för Get-AdfsEndpoint](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
+Mer information finns i [dokumentationen för Get-AdfsEndpoint](/powershell/module/adfs/get-adfsendpoint?view=win10-ps).
 
-Mer information finns i [Metodtips för att skydda Active Directory Federation Services](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/best-practices-securing-ad-fs). Om du behöver hjälp att avgöra om WS-Trust 1.3 användarnamn/kombinerad är aktiverad i din identitetsfederationsprovider:
+Mer information finns i [Metodtips för att skydda Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/Best-Practices-Securing-AD-FS). Om du behöver hjälp att avgöra om WS-Trust 1.3 användarnamn/kombinerad är aktiverad i din identitetsfederationsprovider:
 - kontakta Microsoft Support om du använder ADFS
 - kontakta din tredjeparts identitetsleverantör.
 

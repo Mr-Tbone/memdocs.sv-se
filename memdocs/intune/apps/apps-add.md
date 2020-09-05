@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccbd923ba1110f99c57b499115a41a03ec3317c1
-ms.sourcegitcommit: cb12dd341792c0379bebe9fd5f844600638c668a
+ms.openlocfilehash: 394ffa75b6f272024d440fad56d68727c27531da
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88252817"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996460"
 ---
 # <a name="add-apps-to-microsoft-intune"></a>Lägg till appar i Microsoft Intune 
 
@@ -56,8 +56,8 @@ I följande tabell visas de specifika apptyperna och hur du kan lägga till dem 
 | Store-appar för iOS/iPadOS  | Store-app  | Välj **iOS** som **apptyp**, sök efter appen och välj appen i Intune. |
 | Microsoft Store-appar  | Store-app  | Välj **Windows** som **apptyp** och ange appens webbadress på Microsoft Store. |
 | Google Play-appar som hanteras | Store-app  | Välj **Hanterad Google Play** som **apptyp**, sök efter appen och välj appen i Intune. |
-| Office 365-appar för Windows 10  | Store-app (Office 365) | Välj **Windows 10** under **Microsoft 365 Apps** som **apptyp** och välj sedan den Office 365-app du vill installera.  |
-| Office 365-appar för macOS | Store-app (Office 365) | Välj **macOS** under **Microsoft 365 Apps** som **apptyp** och välj sedan Office 365-serien. |
+| Microsoft 365-appar för Windows 10  | Store-app (Microsoft 365) | Välj **Windows 10** under **Microsoft 365 Apps** som **apptyp** och välj sedan den Microsoft 365-app du vill installera.  |
+| Microsoft 365-appar för macOS | Store-app (Microsoft 365) | Välj **macOS** under **Microsoft 365 Apps** som **apptyp** och välj sedan Microsoft 365-serien. |
 | Microsoft Edge version 77 och senare för Windows 10 | Store-app | Välj **Windows 10** under **Microsoft Edge, version 77 och senare** som **apptyp**. |
 | Microsoft Edge version 77 och senare för Windows 10 | Store-app | Välj **macOS** under **Microsoft Edge, version 77 och senare** som **apptyp**. |
 | Verksamhetsspecifika appar för Android | Verksamhetsspecifik app | Välj **Branschspecifik app** som **apptyp**, välj **Appaketfil** och ange sedan en Android-installationsfil med tillägget **.apk**.  |
@@ -221,8 +221,8 @@ Information om hur du lägger till appar för varje plattform till Intune finns 
 - [Webbappar (för alla plattformar)](web-app.md)
 - [Microsoft Store-appar](store-apps-windows.md)
 - [Windows LOB-appar](lob-apps-windows.md)
-- [Office 365-appar för Windows 10](apps-add-office365.md)
-- [Office 365-appar för macOS](apps-add-office365-macos.md)
+- [Microsoft 365-appar för Windows 10](apps-add-office365.md)
+- [Microsoft 365-appar för macOS](apps-add-office365-macos.md)
 - [Google Play-appar som hanteras](apps-add-android-for-work.md)
 - [Microsoft Edge för Windows 10](apps-windows-edge.md)
 - [Microsoft Edge för macOS](apps-edge-macos.md)

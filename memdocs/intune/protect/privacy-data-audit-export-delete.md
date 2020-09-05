@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aa9195e8d0559a106be323108487579eb068b91
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: 2bdf057893ff24cd4bc5b671d53fbb5c75f597f5
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "80084816"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996001"
 ---
 # <a name="audit-export-or-delete-personal-data-in-intune"></a>Granska, exportera eller ta bort personliga data i Intune
 
@@ -60,20 +60,20 @@ Det finns tre sätt att ta bort personliga data från Intune-hantering:
 
 ### <a name="delete-a-user-from-intune"></a>Ta bort en användare från Intune
 
-För att en användares personliga data ska kunna tas bort från Intune måste en administratör [ta bort användaren från Azure Active Directory (AAD)](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory#delete-a-user). När användaren tas bort från AAD (permanent borttagning) tar Intune emot borttagningssignalen från AAD och börjar sedan automatiskt att rensa alla användarens personliga data från Intune-tjänsten. Användarens information tas bort från Intune-tjänsten inom 30 dagar från borttagningsåtgärden.
+För att en användares personliga data ska kunna tas bort från Intune måste en administratör [ta bort användaren från Azure Active Directory (AAD)](/azure/active-directory/fundamentals/add-users-azure-active-directory#delete-a-user). När användaren tas bort från AAD (permanent borttagning) tar Intune emot borttagningssignalen från AAD och börjar sedan automatiskt att rensa alla användarens personliga data från Intune-tjänsten. Användarens information tas bort från Intune-tjänsten inom 30 dagar från borttagningsåtgärden.
 
 ### <a name="reset-device-to-factory-settings"></a>Återställa enhet till fabriksinställningarna
 Återställning till fabriksinställningarna återställer alla företagsdata, personliga data och inställningar till de ursprungliga fabriksinställningarna. Det är användbart för att ge en enhet till en ny medarbetare. Användarfiler, användarinstallerade program och andra inställningar än standardinställningarna tas bort, och dessa data tas bort från Intune-tjänsten inom 30 dagar från borttagningsåtgärden.
 
 ### <a name="user-self-removal-from-intune-management"></a>Självborttagning av användare från Intune-hantering
-Användare kan ta bort sin personliga [Android-, Apple- eller Windows-enhet](https://docs.microsoft.com/mem/intune/user-help/unenroll-your-device-from-intune-android) från Intune-hantering utan hjälp från administratör.   
+Användare kan ta bort sin personliga [Android-, Apple- eller Windows-enhet](../user-help/unenroll-your-device-from-intune-android.md) från Intune-hantering utan hjälp från administratör.   
 
 ### <a name="retire"></a>Pensionera
 Åtgärden **Dra tillbaka** tar bort Intune-etablerade data, till exempel företagsprogram, data om appar som Intune hanterar, principinställningar och e-postprofiler som etablerats via Intune. Med den här åtgärden lämnas användarens personliga data kvar på enheten.
 
 ### <a name="delete-a-tenant-from-microsoft-intune"></a>Ta bort en klientorganisation från Microsoft Intune
 
-Om en Intune-klientorganisationskund avbryter sitt Intune-konto tas alla klientorganisationsdata bort inom 180 dagar efter att kunden har stängt Intune-kontot. Om AAD-klientorganisationen är associerad med andra Microsoft-företagsprenumerationer (Azure, Office 365) tas endast Intune-kunddata bort. AAD-klientorganisationsresursen underhålls för användning av de andra prenumerationerna. Om Intune-kontot är den enda prenumeration som associeras med AAD-klientorganisationen tas klientorganisationen bort, och alla resurser och kunddata tas också bort.
+Om en Intune-klientorganisationskund avbryter sitt Intune-konto tas alla klientorganisationsdata bort inom 180 dagar efter att kunden har stängt Intune-kontot. Om Azure AD-klientorganisationen är associerad med andra Microsoft-företagsprenumerationer (Azure, Microsoft 365) tas endast Intune-kunddata bort. Azure AD-klientorganisationsresursen underhålls för användning av de andra prenumerationerna. Om Intune-kontot är den enda prenumeration som associeras med Azure AD-klientorganisationen tas klientorganisationen bort, och alla resurser och kunddata tas också bort.
 
 ## <a name="next-steps"></a>Nästa steg
 

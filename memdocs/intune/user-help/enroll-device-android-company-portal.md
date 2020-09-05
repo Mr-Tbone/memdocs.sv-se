@@ -5,7 +5,7 @@ keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 04/01/2020
+ms.date: 08/27/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,12 +19,12 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 2ef0cf3909442cec818fd775bef4f848d6be5a83
-ms.sourcegitcommit: b90d51f7ce09750e024b97baf6950a87902a727c
+ms.openlocfilehash: ef1b6c82cae82763dc327f16e35d0e3bc522c3c7
+ms.sourcegitcommit: 41e6e6b7f5c2a87aaf7f23d90d0f175dd63c0579
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86022321"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057478"
 ---
 # <a name="enroll-your-device-with-company-portal"></a>Registrera din enhet med företagsportalen  
 Registrera din personliga eller företagsägda Android-enhet för att få säker åtkomst till företagets e-post, appar och data. Företagsportalen har stöd för Android-enheter, däribland Samsung Knox, som kör Android 4.4 och senare.  
@@ -32,11 +32,24 @@ Registrera din personliga eller företagsägda Android-enhet för att få säker
 > [!VIDEO https://www.youtube.com/embed/k0Q_sGLSx6o?rel=0]
 
 > [!NOTE]
-> Samsung Knox är en typ av säkerhet som vissa Samsung-enheter använder för ytterligare skydd utöver vad den interna säkerheten i Android ger. Du kan kontrollera om du har en Samsung Knox-enhet genom att gå till **Inställningar** > **Om enheten**. Om du inte ser **Knox version** där har du en ursprunglig Android-enhet.
+> Samsung Knox är en typ av säkerhet som vissa Samsung-enheter använder för ytterligare skydd utöver vad den interna säkerheten i Android ger. Du kan kontrollera om du har en Samsung Knox-enhet genom att gå till **Inställningar** > **Om enheten**. Om du inte ser **Knox version** där har du en ursprunglig Android-enhet.  
+
+## <a name="install-company-portal-app"></a>Installera företagsportalappen  
+Installera Intune-företagsportalsappen [från Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). Se [Installera företagsportalsappen i Folkrepubliken Kina](install-company-portal-android-china.md) för en lista över butiker som erbjuder appen i Folkrepubliken Kina.
+
+1. Tryck på **Start** > **Play Store**.
+
+2. Sök efter **Intune-företagsportal**. Tryck sedan på appen för att öppna den. 
+
+    ![android-search-company-portal](./media/and-cpinstall-1-search-cp.png)
+
+4. Tryck på **INSTALLERA**.
+
+5. När du tillfrågas om appbehörigheter trycker du på **GODKÄNN**.  
+
+    ![android-accept-company-portal-terms](./media/and-cpinstall-3-cp-accept.png)
 
 ## <a name="enroll-device"></a>Registrera enhet  
-Se till att [installera Intune-företagsportalsappen från Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). Se [Installera företagsportalsappen i Folkrepubliken Kina](install-company-portal-android-china.md) för en lista över butiker som erbjuder appen i Folkrepubliken Kina.
-
 Under registreringen kan du bli ombedd att välja en kategori som bäst beskriver hur du använder enheten. Företagets support använder ditt svar för att se vilka appar du har åtkomst till.  
 
 1. Öppna företagsportalappen och logga in med ditt arbets- eller skolkonto.  

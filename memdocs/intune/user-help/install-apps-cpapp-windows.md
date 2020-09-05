@@ -19,12 +19,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: de3d4eb47a6a08c0ba2bdddb20312f7e95eb8c84
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 3975e2fcf7e43e4b7468664f9ccc27b692c40d85
+ms.sourcegitcommit: 41e6e6b7f5c2a87aaf7f23d90d0f175dd63c0579
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83882204"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057322"
 ---
 # <a name="install-and-share-apps-on-your-device"></a>Installera och dela appar på din enhet
 
@@ -53,12 +53,12 @@ Installera appar på enheten från företagsportalappen för Windows.
 > [!IMPORTANT]
 > Om en nödvändig app inte kan installeras och din organisation gör den tillgänglig så att du kan installera den manuellt, väljer du **Försök igen**. Det kan ta upp till tio minuter innan du ser uppdateringsstatusen. Om du väljer **Försök igen** en gång till under den tiden och får ett felmeddelande gör det ingenting. Fortsätt bara att vänta på uppdaterad status i tio minuter.   
 
-Beroende på hur stort ditt företag är kan det finnas flera versioner av Office tillgängliga för hämtning från företagsportalen. Mer information om Office-paketet för Windows-enheter finns i [Installera Office 365 på din Windows-enhet](./install-office-windows.md).
+Beroende på hur stort ditt företag är kan det finnas flera versioner av Office tillgängliga för hämtning från företagsportalen. Mer information om Office-paketet för Windows-enheter finns i [Installera Microsoft 365 på din Windows-enhet](./install-office-windows.md).
 
 ## <a name="share-apps"></a>Dela appar  
 Dela och rekommendera appar till dina arbets- och skolkontakter. Följande steg beskriver hur du delar en länk direkt från Företagsportalen.
 
-1. I Företagsportalen, högerklickar du eller trycker och håller ner på valfri app för att öppna dess [snabbmeny](https://docs.microsoft.com//windows/uwp/design/controls-and-patterns/menus).  
+1. I Företagsportalen, högerklickar du eller trycker och håller ner på valfri app för att öppna dess [snabbmeny](//windows/uwp/design/controls-and-patterns/menus).  
 
     ![Företagsportalappen för Windows 10, framsidan, som visar en lista över appar och enheter. Den klickbara snabbmenyn för Dela är synlig ovanpå exempelappens ikon. ](./media/1808_ShareContext_CP_Windows.png)  
 
@@ -97,4 +97,4 @@ För att komma till den här sidan går du till navigeringsmenyn och väljer **I
 
 Använd **Sortera efter** om du vill ordna om apptilldelningstyp, utgivare, alfabetiskt efter namn eller kronologiskt efter publiceringsdatum. Använd **Filtrera efter** om du vill begränsa vilka appar som ska visas efter installationsstatus.  Om inga appar är tillgängliga visas ett meddelande om att inga företagsappar har installerats.  
 
-Behöver du mer hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
+Behöver du mer hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).

@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5d296137f71b89abf65f20493fbc1151ffebf28
-ms.sourcegitcommit: c333fc6627f5577cde9d2fa8f59e642202a7027b
+ms.openlocfilehash: 5f72acb12f6e17b3634c0b87b8ad298a410fb83f
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795592"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994233"
 ---
 # <a name="troubleshoot-windows-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av Windows-enheter i Microsoft Intune
 
@@ -133,7 +133,7 @@ Tilldela användaren en giltig Intune-licens och registrera sedan enheten.
 ### <a name="looks-like-the-mdm-terms-of-use-endpoint-is-not-correctly-configured"></a>Det verkar som om slutpunkten för MDM-användningsvillkoren inte har konfigurerats korrekt.
 
 **Orsak:** Ett av följande villkor är sant: 
- - Du använder både hantering av mobila enheter (MDM) för Office 365 och Intune på klienten och den användare som försöker registrera enheten har ingen giltig Intune-licens eller licens för Office 365.     
+ - Du använder både hantering av mobila enheter (MDM) för Microsoft 365 och Intune på klienten och den användare som försöker registrera enheten har ingen giltig Intune-licens eller licens för Office 365.     
 - MDM-villkoren i Azure AD är tomma eller innehåller inte rätt URL.    
 
 #### <a name="resolution"></a>Lösning
@@ -141,7 +141,7 @@ Tilldela användaren en giltig Intune-licens och registrera sedan enheten.
 Använd någon av följande metoder för att åtgärda problemet: 
  
 ##### <a name="assign-a-valid-license-to-the-user"></a>Tilldela användaren en giltig licens
-Gå till [Administrationscentret för Microsoft 365](https://admin.microsoft.com) och tilldela sedan antingen en Intune- eller Office 365-licens till användaren.
+Gå till [Administrationscentret för Microsoft 365](https://admin.microsoft.com) och tilldela sedan antingen en Intune- eller Microsoft 365-licens till användaren.
 
 ##### <a name="correct-the-mdm-terms-of-use-url"></a>Korrigera MDM-villkor för användning för MDM
   1. Logga in på [Azure-portalen](https://portal.azure.com/) och välj sedan **Azure Active Directory**.    
@@ -216,9 +216,9 @@ Följ dessa steg om du vill åtgärda det här problemet i en fristående Intune
 
    Om du väljer **Markerad** klickar du på **Markerad** och klickar sedan på **Lägg till medlemmar** för att lägga till alla användare som kan ansluta sina enheter till Azure AD. Se till att alla Azure AD-konton för etableringspaketet har lagts till.
  
-Mer information om hur du skapar ett konfigurationspaket för Windows Configuration Designer finns i [Skapa ett konfigurations paket för Windows 10](https://docs.microsoft.com/windows/configuration/provisioning-packages/provisioning-create-package).
+Mer information om hur du skapar ett konfigurationspaket för Windows Configuration Designer finns i [Skapa ett konfigurations paket för Windows 10](/windows/configuration/provisioning-packages/provisioning-create-package).
 
-Mer information om appen för att konfigurera skoldatorer finns i [Använda appen för att konfigurera skoldatorer](https://docs.microsoft.com/education/windows/use-set-up-school-pcs-app).
+Mer information om appen för att konfigurera skoldatorer finns i [Använda appen för att konfigurera skoldatorer](/education/windows/use-set-up-school-pcs-app).
 
 
 ### <a name="auto-mdm-enroll-failed"></a>Automatisk MDM-registrering: Misslyckades 
@@ -276,7 +276,7 @@ Kontrollera att namngivningsformatet uppfyller följande krav:
 **Orsak:** Det här problemet uppstår om det finns en proxy, brandvägg eller annan nätverksenhet som blockerar åtkomsten till identitetsleverantören (IdP).
 
 #### <a name="resolution"></a>Lösning
-Se till att den begärda åtkomsten till internetbaserade tjänster för autopilot inte är blockerad. Mer information finns i [Nätverkskrav för Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot-requirements-network).
+Se till att den begärda åtkomsten till internetbaserade tjänster för autopilot inte är blockerad. Mer information finns i [Nätverkskrav för Windows Autopilot](/windows/deployment/windows-autopilot/windows-autopilot-requirements-network).
 
 ### <a name="autopilot-device-enrollment-failed-with-error-hresult--0x80180022"></a>Registrering av Autopilot-enhet misslyckades med felet HRESULT = 0x80180022
 
@@ -294,7 +294,7 @@ Uppgradera TPM-kretsen till version 2.0.
 
 Om problemet kvarstår kontrollerar du om samma enhet finns i två tilldelade grupper, där varje grupp tilldelas en annan Autopilotprofil. Om det finns två grupper bestämmer du vilken Autopilotprofil som ska användas på enheten och tar sedan bort den andra profiltilldelningen.
 
-Mer information om hur du distribuerar en Windows-enhet i helskärmsläge med Autopilot finns i [Distribuera helskärmsläge med Windows Autopilot](https://blogs.technet.microsoft.com/mniehaus/2018/06/07/deploying-a-kiosk-using-windows-autopilot/).
+Mer information om hur du distribuerar en Windows-enhet i helskärmsläge med Autopilot finns i [Distribuera helskärmsläge med Windows Autopilot](/archive/blogs/mniehaus/deploying-a-kiosk-using-windows-autopilot).
 
 
 ### <a name="securing-your-hardware-failed-0x800705b4"></a>Skydda maskinvaran (misslyckades: 0x800705b4).
@@ -317,7 +317,7 @@ Registering your device for mobile management (Previous step failed)
 #### <a name="resolution"></a>Lösning
 Kontrollera att målenheten uppfyller båda kraven som beskrivs i avsnittet **Orsak**.
 
-Mer information om hur du distribuerar en Windows-enhet i helskärmsläge med Autopilot finns i [Distribuera helskärmsläge med Windows Autopilot](https://blogs.technet.microsoft.com/mniehaus/2018/06/07/deploying-a-kiosk-using-windows-autopilot/).
+Mer information om hur du distribuerar en Windows-enhet i helskärmsläge med Autopilot finns i [Distribuera helskärmsläge med Windows Autopilot](/archive/blogs/mniehaus/deploying-a-kiosk-using-windows-autopilot).
 
 
 ### <a name="something-went-wrong-error-code-80070774"></a>Något gick fel. Felkod 80070774.
@@ -365,7 +365,7 @@ Description:
 }
 ```
 
-Det här problemet beror vanligtvis på felaktigt delegerade behörigheter till organisationsenheten där Windows Autopilot-enheter skapas. Mer information finns i [Öka datorkontogränsen i organisationsenheten](windows-autopilot-hybrid.md#increase-the-computer-account-limit-in-the-organizational-unit).
+Det här problemet beror vanligtvis på felaktigt delegerade behörigheter till organisationsenheten där Windows Autopilot-enheter skapas. Mer information finns i [Öka datorkontogränsen i organisationsenheten](../../autopilot/windows-autopilot-hybrid.md#increase-the-computer-account-limit-in-the-organizational-unit).
 
 1. Öppna **Active Directory – användare och datorer (DSA.msc)** .
 2. Högerklicka på den organisationsenhet som ska användas för att skapa Azure AD-anslutna hybriddatorer > **Delegera kontroll**.
@@ -398,4 +398,4 @@ Prova något av följande:
 - [Läs Microsoft Intune-supportteamets blogg](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/bg-p/IntuneCustomerSuccess)
 - [Läs bloggen om Enterprise Mobility and Security](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Announcing-the-public-preview-of-Azure-AD-group-based-license/ba-p/245210)
 - [Få support för Microsoft Intune](../fundamentals/get-support.md)
-- [Hitta registreringsfel för samhantering](https://docs.microsoft.com/configmgr/comanage/how-to-monitor#enrollment-errors)
+- [Hitta registreringsfel för samhantering](/configmgr/comanage/how-to-monitor#enrollment-errors)

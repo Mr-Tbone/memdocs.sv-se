@@ -18,18 +18,18 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f71a74c69235e8e079f2cd325582dbbe9bb4a3f1
-ms.sourcegitcommit: 9408d103e7dff433bd0ace5a9ab8b7bdcf2a9ca2
+ms.openlocfilehash: 2a476be4fb8c9d40150648e72d3203df564893dd
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88820671"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994352"
 ---
 # <a name="how-to-get-support-for-microsoft-intune"></a>Ta reda på hur du kan få support för Microsoft Intune
 
 Microsoft tillhandahåller global teknisk, förförsäljnings-, fakturerings- och prenumerationssupport för Microsoft Intune. Support är tillgängligt både online och per telefon för såväl betal- som utvärderingsprenumerationer. Teknisk support online finns på engelska och japanska. Telefonsupport och faktureringssupport online är tillgänglig på fler språk.
 
-Som Intune-administratör kan du använda alternativet **Hjälp och support** för att skicka en supportbegäran online för Intune via Azure-portalen. Om du vill skapa och hantera ett supportärende måste ditt konto ha en roll i Azure Active Directory (Azure AD) som innehåller *åtgärden* **microsoft.office365.supportTickets**. Mer information om de Azure AD-roller och behörigheter som krävs för att skapa ett supportärende finns i avsnittet om [administratörsroller i Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
+Som Intune-administratör kan du använda alternativet **Hjälp och support** för att skicka en supportbegäran online för Intune via Azure-portalen. Om du vill skapa och hantera ett supportärende måste ditt konto ha en roll i Azure Active Directory (Azure AD) som innehåller *åtgärden* **microsoft.office365.supportTickets**. Mer information om de Azure AD-roller och behörigheter som krävs för att skapa ett supportärende finns i avsnittet om [administratörsroller i Azure Active Directory](/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
 
 >[!IMPORTANT]
 > Om du behöver teknisk support för produkter från tredje part som används med Intune (till exempel Saaswedo, Cisco eller Lookout) ska du först kontakta leverantören av produkten. Kontrollera att du har konfigurerat den andra produkten korrekt innan du öppnar ett ärende hos Intune-supporten.
@@ -50,7 +50,7 @@ När du använder en nyligen skapad klient för Intune kan det hända att *Hjäl
 
 Felinformationen innehåller ett *sessions-ID*, information om *tillägg* med mera.
 
-Det här problemet uppstår när du inte har autentiserat ditt nya klientkonto via antingen **administrationscentret för M365** på https://admin.microsoft.com eller **Office 365-portalen** på https://portal.office.com. Lös problemet genom att välja länken för *administrationscentret för M365* i meddelandet eller gå till https://portal.office.com och logga in. Efter autentisering på någon av platserna blir *Hjälp och support* för Intune tillgängligt.
+Det här problemet uppstår när du inte har autentiserat ditt nya klientkonto via antingen **administrationscentret för Microsoft 365** på https://admin.microsoft.com eller **Office 365-portalen** på https://portal.office.com. Lös problemet genom att välja länken för *administrationscentret för Microsoft 365* i meddelandet eller gå till https://portal.office.com och logga in. Efter autentisering på någon av platserna blir *Hjälp och support* för Intune tillgängligt.
 
 **Åtkomst till Hjälp och support**:
 

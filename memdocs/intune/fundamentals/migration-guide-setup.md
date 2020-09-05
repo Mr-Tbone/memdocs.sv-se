@@ -16,12 +16,12 @@ ms.reviewer: dagerrit
 ms.suite: ems
 search.appverid: MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b7784d4ad86e3418259f85ca1c4577d2289dc86
-ms.sourcegitcommit: 7f17d6eb9dd41b031a6af4148863d2ffc4f49551
+ms.openlocfilehash: c39174dded9fae0055786b6132b3f964f187b1b1
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79358162"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992716"
 ---
 # <a name="basic-setup"></a>Grundläggande konfiguration
 
@@ -31,19 +31,19 @@ När du har utvärderat din miljö är det dags att konfigurera Microsoft Intune
 
 ### <a name="identity"></a>Identitet
 
-Intune kräver Azure Active Directory (AAD) som leverantör av identitet och användargruppering. Läs mer om:
+Intune kräver Azure Active Directory (Azure AD) som leverantör av identitet och användargruppering. Läs mer om:
 
-- [Identitetskrav](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview#design-considerations-overview)
+- [Identitetskrav](/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview#design-considerations-overview)
 
-- [Katalogsynkroniseringskrav](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-directory-sync-requirements)
+- [Katalogsynkroniseringskrav](/azure/active-directory/active-directory-hybrid-identity-design-considerations-directory-sync-requirements)
 
-- [Multifaktorautentisering (MFA)](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks)
+- [Multifaktorautentisering (MFA)](/azure/active-directory/authentication/concept-mfa-howitworks)
 
 - [Planera dina användar- och enhetsgrupper](users-add.md)
 
 - [Skapa användar- och enhetsgrupper](groups-get-started.md)
 
-Om din organisation redan använder Office 365 måste Intune använda samma Azure Active Directory-miljö.
+Om din organisation redan använder Microsoft 365 måste Intune använda samma Azure Active Directory-miljö.
 
 ### <a name="pki-optional"></a>PKI (valfritt)
 
@@ -63,7 +63,7 @@ Innan du kan migrera till Intune måste du ha en [Intune-prenumeration](account-
 
 - Lär dig [hur man tilldelar Intune-användarlicenser](licenses-assign.md).
 
-- Om du har skapat en ny Azure Active Directory-klient kan du läsa om [hur du kan skapa nya användare eller synkronisera användare från din lokala Active Directory (AD).](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect)
+- Om du har skapat en ny Azure Active Directory-klient kan du läsa om [hur du kan skapa nya användare eller synkronisera användare från din lokala Active Directory (AD).](/azure/active-directory/connect/active-directory-aadconnect)
 
 ### <a name="task-3-set-your-mdm-authority-to-intune"></a>Uppgift 3: Konfigurera Intune som utfärdare för hantering av mobilenheter
 

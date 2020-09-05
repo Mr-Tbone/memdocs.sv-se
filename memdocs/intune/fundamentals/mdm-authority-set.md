@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 380e39406dcc0b5bd286605804e3aa3c52750dd1
-ms.sourcegitcommit: 62b451396eae660f2d5289ae3666b19ed1cc666d
+ms.openlocfilehash: 676e7a4db54558eaea87ad2fa8efbe8af546f035
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614729"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996579"
 ---
 # <a name="set-the-mobile-device-management-authority"></a>Konfigurera utfärdare för hantering av mobila enheter
 
@@ -34,11 +34,11 @@ Möjliga konfigurationerna är:
 
 - **Fristående Intune** – Endast molnbaserad hantering, som du konfigurerar med hjälp av Azure-portalen. Innehåller den fullständiga uppsättning funktioner som Intune erbjuder. [Ange utfärdare för hantering av mobila enheter i Intune-konsolen](#set-mdm-authority-to-intune).
 
-- **Intune-samhantering** – Integration av Intunes molnlösning med Configuration Manager för Windows 10-enheter. Du kan konfigurera Intune med hjälp av Configuration Manager-konsolen. [Konfigurera automatisk registrering av enheter i Intune](https://docs.microsoft.com/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
+- **Intune-samhantering** – Integration av Intunes molnlösning med Configuration Manager för Windows 10-enheter. Du kan konfigurera Intune med hjälp av Configuration Manager-konsolen. [Konfigurera automatisk registrering av enheter i Intune](/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune). 
 
-- **Basic Mobility and Security for Office 365** – Om du har aktiverat den här konfigurationen visas MDM-utfärdaren som ”Office 365”. Om du vill börja använda Intune så måste du köpa Intune-licenser.
+- **Basic Mobility and Security for Microsoft 365** – Om du har aktiverat den här konfigurationen visas MDM-utfärdaren som ”Office 365”. Om du vill börja använda Intune så måste du köpa Intune-licenser.
 
-- **Basic Mobility and Security for Office 365-[samexistens](#coexistence)** – Du kan lägga till Intune i din klientorganisation om du redan använder Basic Mobility and Security for Office 365 och konfigurera hanteringsbehörigheten till antingen Intune eller Basic Mobility and Security for Office 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av Basic Mobility and Security for Office 365. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av Basic Mobility and Security for Office 365, växlar hanteringen av enheterna till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter Basic Mobility and Security for Office 365 innan användarna byts till Intune, annars förlorar enheterna Basic Mobility and Security for Office 365-konfigurationen och får ingen annan konfiguration från Intune.
+- **Basic Mobility and Security for Microsoft 365-[samexistens](#coexistence)** – Du kan lägga till Intune i din klientorganisation om du redan använder Basic Mobility and Security for Microsoft 365 och konfigurerar hanteringsbehörigheten till antingen Intune eller Basic Mobility and Security for Microsoft 365 så att varje användare får bestämma vilken tjänst som ska användas för att hantera deras MDM-registrerade enheter. Varje användares hanteringsbehörighet definieras utifrån den licens som tilldelats till användaren: Om användaren bara har licens för Microsoft 365 Basic eller Standard hanteras användarens enheter av Basic Mobility and Security for Microsoft 365. Om användaren har en licens som berättigar till Intune hanteras enheterna av Intune. Om du lägger till en licens som berättigar till Intune för en användare som tidigare hanterades av Basic Mobility and Security for Microsoft 365, växlar hanteringen av enheterna till Intune. Se till att Intune-konfigurationer som tilldelats till användare ersätter Basic Mobility and Security for Microsoft 365 innan användarna byts till Intune, annars förlorar enheterna Basic Mobility and Security for Microsoft 365-konfigurationen och får ingen annan konfiguration från Intune.
 
 ## <a name="set-mdm-authority-to-intune"></a>Ange Intune som utfärdare för hantering av mobila enheter
 
@@ -109,7 +109,7 @@ MDM-certifikatet förnyas automatiskt när mobila enheter kommunicerar med Intun
 
 ## <a name="remove-mdm-authority"></a>Ta bort MDM-utfärdare
 
-MDM-utfärdaren kan inte ändras tillbaka till Okänd. MDM-utfärdaren används av tjänsten för att avgöra vilken portal som registrerade enheter rapporterar till (Microsoft Intune eller Basic Mobility and Security for Office 365).
+MDM-utfärdaren kan inte ändras tillbaka till Okänd. MDM-utfärdaren används av tjänsten för att avgöra vilken portal som registrerade enheter rapporterar till (Microsoft Intune eller Basic Mobility and Security for Microsoft 365).
 
 ## <a name="what-to-expect-after-changing-the-mdm-authority"></a>Vad som händer MDM-utfärdaren har ändrats
 

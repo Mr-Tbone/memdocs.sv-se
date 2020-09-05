@@ -18,21 +18,21 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37bf4cf8d6381ab076f7c0cd0eb879ddf43d571c
-ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
+ms.openlocfilehash: 9c4cc5fc662e27badcb0c1c1ae478ab700fce70e
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217105"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996477"
 ---
 # <a name="add-built-in-apps-to-microsoft-intune"></a>Lägg till inbyggda appar i Microsoft Intune
 
-Den *inbyggda* apptypen gör det enkelt att tilldela granskade och hanterade appar som till exempel Office 365-appar till iOS/iPadOS- och Android-enheter. Du kan tilldela specifika appar för den här apptypen, till exempel Excel, OneDrive, Outlook, Skype med mera. När du lagt till en app visas apptypen antingen som *Inbyggd iOS-app* eller *Inbyggd Android-app*. Du kan välja vilken av dessa appar du vill publicera till enhetsanvändare genom att använda den inbyggda apptypen.
+Den *inbyggda* apptypen gör det enkelt att tilldela granskade och hanterade appar som till exempel Microsoft 365-appar till iOS-/iPadOS- och Android-enheter. Du kan tilldela specifika appar för den här apptypen, till exempel Excel, OneDrive, Outlook, Skype med mera. När du lagt till en app visas apptypen antingen som *Inbyggd iOS-app* eller *Inbyggd Android-app*. Du kan välja vilken av dessa appar du vill publicera till enhetsanvändare genom att använda den inbyggda apptypen.
 
-I tidigare versioner av Intune-konsolen tillhandahöll Intune flera hanterade Office 365-appar som standard, till exempel Outlook och OneDrive. Apptyperna för dessa hanterade appar har taggats som *Hanterad iOS Store-app* eller *Hanterad Android-app*. Istället för att använda dessa apptyper, rekommenderar vi att du använder den inbyggda apptypen. Genom att använda den inbyggda apptypen får du extra flexibilitet för att redigera och ta bort Office 365-appar.
+I tidigare versioner av Intune-konsolen tillhandahöll Intune flera hanterade Microsoft 365-appar som standard, till exempel Outlook och OneDrive. Apptyperna för dessa hanterade appar har taggats som *Hanterad iOS Store-app* eller *Hanterad Android-app*. Istället för att använda dessa apptyper, rekommenderar vi att du använder den inbyggda apptypen. Genom att använda den inbyggda apptypen får du extra flexibilitet för att redigera och ta bort Microsoft 365-appar.
 
 >[!NOTE]
->Standard-Office 365-appar som taggats som *Hanterad iOS Store* och *Hanterad Android-app* tas bort från listan över appar när alla tilldelningar har tagits bort.
+>Standard-Microsoft 365-appar som taggats som *Hanterad iOS Store* och *Hanterad Android-app* tas bort från listan över appar när alla tilldelningar har tagits bort.
 
 ## <a name="add-a-built-in-app"></a>Lägg till en inbyggd app
 

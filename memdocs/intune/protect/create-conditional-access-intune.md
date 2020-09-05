@@ -17,12 +17,12 @@ ms.reviewer: ''
 ms.suite: ems
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e40f9bc84e4969e963629479f22a6f988e025c4e
-ms.sourcegitcommit: 302556d3b03f1a4eb9a5a9ce6138b8119d901575
+ms.openlocfilehash: ed80cd89728a1ce58d37be8c16b8e61dcfbb5566
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83985044"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992682"
 ---
 # <a name="create-a-device-based-conditional-access-policy"></a>Skapa en princip för enhetsbaserad villkorlig åtkomst
 
@@ -89,7 +89,7 @@ En princip för villkorlig åtkomst anger de appar eller tjänster som du vill s
    - **Enhetstillstånd**: Principen för villkorlig åtkomst gäller alla enhetstillstånd, förutsatt att du väljer Ja och uttryckligen utelämnar de tillstånd som anger Hybrid Azure AD-ansluten enhet eller Enheten är markerad som kompatibel (eller båda).
 
      > [!TIP]
-     > Om du vill skydda både **Modern autentisering**-klienter och **Exchange ActiveSync-klienter**, skapar du två separata principer för villkorlig åtkomst, en för varje klienttyp. Även om Exchange ActiveSync stöder modern autentisering, är det bara plattformar som stöds av Exchange ActiveSync. Andra villkor, inklusive multifaktorautentisering, stöds inte. Om du effektivt vill skydda åtkomsten till Exchange Online från Exchange ActiveSync, skapar du en princip för villkorlig åtkomst som anger molnappen Office 365 Exchange Online och klientappen Exchange ActiveSync där Tillämpa bara principen på plattformar som stöds är valt.
+     > Om du vill skydda både **Modern autentisering**-klienter och **Exchange ActiveSync-klienter**, skapar du två separata principer för villkorlig åtkomst, en för varje klienttyp. Även om Exchange ActiveSync stöder modern autentisering, är det bara plattformar som stöds av Exchange ActiveSync. Andra villkor, inklusive multifaktorautentisering, stöds inte. Om du effektivt vill skydda åtkomsten till Exchange Online från Exchange ActiveSync, skapar du en princip för villkorsstyrd åtkomst som anger molnappen Microsoft 365 Exchange Online och klientappen Exchange ActiveSync där Tillämpa bara principen på plattformar som stöds är valt.
 
 9. Välj **Klar**.
 

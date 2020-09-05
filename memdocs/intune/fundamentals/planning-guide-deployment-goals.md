@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74fbf1af85fdaef7cebde5c58f7892015b433ff6
-ms.sourcegitcommit: 1442a4717ca362d38101785851cd45b2687b64e5
+ms.openlocfilehash: 63ef6acb54f079f2a47800ae84cbe49cd4fabed3
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82079237"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992649"
 ---
 # <a name="determine-deployment-goals-objectives-and-challenges"></a>Fastställa distributionsmål, delmål och utmaningar
 
@@ -33,9 +33,9 @@ När man vill skapa en bra distributionsplan måste man börja med att identifie
 
 Distributionsmål är långsiktiga prestationer som du vill uppnå genom att distribuera Intune i din organisation. Nedan följer några exempel på sådana mål tillsammans med beskrivningar och affärsvärde för respektive mål.
 
-- **Integrera med Office 365 och stöd användning av mobila Office-appar**
+- **Integrera med Microsoft 365 och stöd användning av mobila Office-appar**
 
-  - **Beskrivning:** Ger nära integrering med Office 365 och användningen av Office-mobilappar med appskydd.
+  - **Beskrivning:** Ger nära integrering med Microsoft 365 och användningen av Office-mobilappar med appskydd.
 
   - **Affärsvärde:** Säker och förbättrad användarupplevelse genom att tillåta användarna att använda appar som de känner till och föredrar.
 

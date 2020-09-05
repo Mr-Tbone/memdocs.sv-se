@@ -17,12 +17,12 @@ ms.reviewer: mghadial
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37724c4d9acdfcdb9e371a21a7b15c509de78c60
-ms.sourcegitcommit: 2ee50bfc416182362ae0b8070b096e1cc792bf68
+ms.openlocfilehash: c81216ae7350beafcf1e090b278d5975d6fea086
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87865480"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993299"
 ---
 # <a name="troubleshoot-iosipados-device-enrollment-problems-in-microsoft-intune"></a>Felsöka problem med registrering av iOS/iPadOS-enhet i Microsoft Intune
 
@@ -87,7 +87,7 @@ Samla in följande information om problemet:
 **Orsak:** Den användare som försöker registrera enheten har ingen Microsoft Intune-licens.
 
 #### <a name="resolution"></a>Lösning
-1. Gå till [Administrationscentret för Office 365](https://admin.microsoft.com) och välj **Användare > Aktiva användare**.
+1. Gå till [administrationscentret för Microsoft 365](https://admin.microsoft.com) och välj sedan **Användare > Aktiva användare**.
 2. Markera det användarkonto som du vill tilldela en Intune-användarlicens och välj sedan **Produktlicenser > Redigera**.
 3. Växla till **På** för den licens som du vill tilldela till den här användaren och välj sedan **Spara**.
 4. Omregistrera enheten.
@@ -181,7 +181,7 @@ Förnya APNs-certifikatet och registrera sedan enheten på nytt.
 > Se till att du förnyar APNs-certifikatet. Ersätt inte APNs-certifikatet. Om du ersätter certifikatet måste du omregistrera alla iOS/iPad-enheter i Intune. 
 
 - Information om hur du förnyar APNs-certifikatet i fristående Intune finns i [Förnya Apple MDM-pushcertifikat](apple-mdm-push-certificate-get.md#renew-apple-mdm-push-certificate).
-- Om du vill förnya APNs-certifikatet i Office 365, se [Skapa ett APNs-certifikat för iOS/iPad-enheter](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7).
+- Om du vill förnya APNs-certifikatet i Microsoft 365 går du till [Skapa ett APNs-certifikat för iOS-/iPadOS-enheter](https://support.office.com/article/Create-an-APNs-Certificate-for-iOS-devices-522b43f4-a2ff-46f6-962a-dd4f47e546a7).
 
 ### <a name="xpc_type_error-connection-invalid"></a>XPC_TYPE_ERROR Anslutningen är ogiltig
 

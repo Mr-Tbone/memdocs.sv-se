@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc01428430eb665dc609cff84ee322f28e3b7d79
-ms.sourcegitcommit: 118587ddb31ce26b27801839db9b3b59f1177f0f
+ms.openlocfilehash: 852d119d7b80df28436f5a8e25fe39782e1e5cc0
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84165438"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996392"
 ---
 # <a name="reference-for-devices-entities"></a>Referens för enhetsentiteter
 
@@ -65,7 +65,7 @@ Entiteten **deviceTypes** representerar den enhetstyp som andra informationslage
 | 10 |iPod |iPod-enhet |
 | 11 |Android |Android-enhet som hanteras via enhetsadministratören |
 | 12 |ISocConsumer |iSoc Consumer-enhet |
-| 14 |MacMDM |Mac OS X-enhet som hanteras med den inbyggda MDM-agenten |
+| 14 |MacMDM |OS X-enhet som hanteras med den inbyggda MDM-agenten |
 | 15 |HoloLens |HoloLens-enhet |
 | 16 |SurfaceHub |Surface Hub-enhet |
 | 17 |AndroidForWork |Android-enhet som hanteras med hjälp av Android-profilens ägare |
@@ -170,7 +170,7 @@ Entiteten **enrollmentTypes** visar om en enhet är företagsägd, privat ägd e
 | ownerTypeName |Representerar enheternas ägartyp:  <br>Företag – enheten är företagsägd. <br>Privat – enheten är privatägd (BYOD).  <br>Okänd – det finns ingen information om enheten. |Företag Privat Okänd |
 
 > [!Note]  
-> För `ownerTypeName` i AzureAD måste du ange filtervärdet `deviceOwnership` som `Company` när du skapar dynamiska grupper för enheter. Mer information finns i [Regler för enheters](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 
+> För `ownerTypeName` i AzureAD måste du ange filtervärdet `deviceOwnership` som `Company` när du skapar dynamiska grupper för enheter. Mer information finns i [Regler för enheters](/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices). 
 
 ## <a name="managementstates"></a>managementStates
 
@@ -266,7 +266,7 @@ Entiteten **enheter** innehåller en lista över registrerade hanterade enheter 
 | windowsOsEdition           | Windows-operativsystemversion.                                                                                                                             |
 | ethernetMacAddress           | Den unika nätverksidentifieraren för den här enheten.                                                                                                                                        |
 | modell                      | Enhetsmodellen.                                                                                                                                                                      |
-| Office365Version           | Den version av Office 365 som är installerad på enheten.                                                                                                                             |
+| Office365Version           | Den version av Microsoft 365 som är installerad på enheten.                                                                                                                             |
 
 
 ## <a name="devicepropertyhistories"></a>devicePropertyHistories
@@ -288,4 +288,3 @@ Entiteten **devicePropertyHistory** innehåller samma egenskaper som enhetstabel
 | deviceCategoryKey          | Nyckeln för attributet enhetskategori för den här enheten. 
 | physicalMemoryInBytes      | Fysiskt minne i bytes.                                                                                                                                                          |
 | totalStorageSpaceInBytes   | Total lagringskapacitet i bytes.                                                                                                                                                                |
-

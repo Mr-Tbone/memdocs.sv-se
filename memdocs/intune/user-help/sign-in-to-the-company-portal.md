@@ -1,11 +1,11 @@
 ---
 title: Så här loggar du in i företagsportalappen | Microsoft Docs
-description: Lär dig hur du loggar in på företagsportalappen på flera plattformar.
+description: Lär dig mer om var du kan hämta Företagsportalappen och de tre olika sätten att logga in.
 keywords: ''
 author: lenewsad
 ms.author: lanewsad
 manager: dougeby
-ms.date: 12/31/2019
+ms.date: 08/27/2020
 ms.topic: end-user-help
 ms.prod: ''
 ms.service: microsoft-intune
@@ -19,81 +19,78 @@ ms.reviewer: esmich
 ms.suite: ems
 ms.custom: intune-enduser
 ms.collection: ''
-ms.openlocfilehash: 59555c8bb9a35d5b70b46836f2298bf3ed342b2d
-ms.sourcegitcommit: a77ba49424803fddcaf23326f1befbc004e48ac9
+ms.openlocfilehash: 28400d1aff176f83fd98b8ef1a825f468cd8847f
+ms.sourcegitcommit: 41e6e6b7f5c2a87aaf7f23d90d0f175dd63c0579
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83881822"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057444"
 ---
-# <a name="sign-in-to-company-portal"></a>Logga in på Företagsportal  
+# <a name="how-to-sign-in-to-company-portal"></a>Så här loggar du in på företagsportalen  
 
-Det finns tre sätt att logga in i appen Företagsportal:
+Företagsportalen är tillgänglig för Windows 10-, Android-, iOS- och macOS-enheter från följande respektive platser: 
 
-* Logga in med din e-postadress för arbetet och ditt lösenord.  
+* [Microsoft Store](https://go.microsoft.com/fwlink/?linkid=2141417)  
+* [Google Play](https://go.microsoft.com/fwlink/?linkid=2141416)  
+* [Apple App Store](https://go.microsoft.com/fwlink/?linkid=2141414)  
+* [Registrera min Mac](https://go.microsoft.com/fwlink/?linkid=853070): Om du väljer den här länken laddas installationspaketet för Företagsportalen omedelbart ned på enheten.  
+
+Det finns tre sätt att logga in i appen Företagsportal.
+
+* Logga in med e-postadressen och lösenordet för skolan eller arbetet.  
 * Logga in med certifikatbaserad autentisering.  
-* Logga in från en annan enhet.    
+* Logga in från en annan enhet.   
+
+I den här artikeln beskrivs hur du loggar in med var och en av dessa metoder. Använd den metod som din organisation rekommenderar eller kräver för bästa möjliga upplevelse. 
 
 
-## <a name="sign-in-with-your-email-address-and-password"></a>Logga in med din e-postadress och ditt lösenord
-Följande steg visar skärmbilder från Företagsportal för iOS.  
+## <a name="sign-in-with-school-or-work-account"></a>Logga in med ditt skol- eller arbetskonto    
+Slutför följande steg för att logga in på Företagsportal med ditt skol- eller arbetskonto. 
 
-1. Öppna appen på enheten och tryck på **Logga in**.  
+1. Öppna appen och tryck på **Logga in**.  
 
-   ![Exempel på skärmbild av inloggningssidan för Företagsportal.](./media/intune-ios-cp-signin-1908.png)
-
-
-2. Ange ditt **Arbets- eller skolkonto** och tryck på **Nästa**.
-
-   ![Användaren ombeds endast att ange sin e-postadress, i stället för sin e-post och lösenord på samma skärm.](./media/cp_ios_aad_signin_after_1804_002.png)
+2. Ange den e-postadress som är kopplad till ditt skol- eller arbetskonto och tryck sedan på **Nästa**.
 
 3. Ange ditt lösenord och tryck på **Logga in**.
 
-   ![Användaren uppmanas att ange lösenordet när e-postadressen har accepterats.](./media/cp_ios_aad_signin_after_1804_003.png)
 
-4. Appen verifierar dina autentiseringsuppgifter. När du är klar har du tillgång till organisationens resurser och kan installera tillgängliga appar.  
+4. Vänta medan appen verifierar dina autentiseringsuppgifter. När du är klar har du tillgång till funktionerna i appen och organisationens resurser.  
 
-   ![När autentiseringsprocessen är klar loggar företagsportalsappen in och en förloppsindikator visas.](./media/cp_ios_aad_signin_after_1804_004.png)
-
-## <a name="sign-in-with-certificate-based-authentication"></a>Logga in med certifikatbaserad autentisering
+## <a name="sign-in-with-certificate"></a>Logga in med certifikat  
 Det här inloggningsalternativet visas bara om din organisation tillåter certifikatbaserad autentisering och du har ett certifikat som är tillgängligt för användning.  
 
 1. Öppna företagsportalappen på din enhet.  
 
-2. Ange ditt **arbets- eller skolkonto**.  
+2. Ange den e-postadress som är kopplad till ditt skol- eller arbetskonto och tryck sedan på **Nästa**.   
 
-3. Tryck på länken **Logga in med ett certifikat**.  
+3. Tryck på **Logga in med ett certifikat**.  
 
 4. Tryck på **Fortsätt** för att använda certifikatet.  
+5. Vänta medan appen verifierar ditt certifikat. När du är klar har du tillgång till funktionerna i appen och organisationens resurser.  
 
-## <a name="sign-in-from-another-device"></a>Logga in från en annan enhet
+## <a name="sign-in-via-another-device"></a>Logga in via en annan enhet    
 
-Om företaget använder smartkort för att få åtkomst till datorerna behöver du troligen logga in med en annan enhet.  
+Om du normalt använder ett smartkort för att komma åt arbetsresurser följer du stegen i det här avsnittet för att logga in på Företagsportal.  
 
-1. Öppna företagsportalappen på din enhet. Se till att det är den enhet som du kommer att använda för att få åtkomst till dina arbetsresurser.       
+1. Öppna Företagsportal på den enhet som du kommer att använda för att få åtkomst till dina arbetsresurser.  
 
-1. Välj **Logga in från en annan enhet**.  
+2. Välj **Logga in från en annan enhet**.  
 
-   ![På företagsportalens inloggningssida uppmanas användaren att ange en e-postadress.  Visar knappen ”Nästa” och en länk till ”Logga in från en annan enhet”. Det finns också en länk till ”Kan du inte öppna ditt konto?” En länk längst ner leder till Microsofts information om sekretess och cookies.](./media/cp_ios_aad_signin_after_1804_005.png)
-
-2. Du får en unik engångskod som du kan använda för att logga in på företagsportalen. Kopiera koden.
+3. Skriv ned engångskoden för inloggning som visas på skärmen (eller behåll den här skärmen inför kommande steg). 
 
    ![Instruktioner för att gå till sidan https://microsoft.com/devicelogin visas, med ett unikt lösenord från din arbetsdator. Därefter använder du koden för att logga in.](./media/cp_ios_aad_signin_after_1804_006.png)
 
-3. Öppna webbläsaren på din andra enhet (den som du använder för att autentisera) och gå till [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). Ange eller klistra in koden.  
+3. Växla till din andra enhet (den som du använder för att autentisera) och gå till [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin).  
+
+4. När du uppmanas till det anger du koden.  
 
    ![En bild av användarens webbläsare på arbetsdatorn, i stället för företagsportalappen. Sidan ”Inloggning på enhet” visas och uppmanar användarna ange koden de fick i företagsportalsappen.](../fundamentals/media/whats-new-app-ui/cp_ios_aad_signin_from_another_device_after_1704_004.png)
 
 4. Välj __Fortsätt__ för att tillåta Företagsportal att logga in på din arbetsenhet.   
 
-   ![Användaren har matat in sin unika kod i fältet och webbplatsen ”Inloggning på enhet” har begärt en bekräftelse på att Intunes företagsportal är rätt app för att få behörighet att logga in.](../fundamentals/media/whats-new-app-ui/cp_ios_aad_signin_from_another_device_after_1704_005.png) 
+5. När skärmen visar att du är inloggad på Företagsportal kan du stänga webbläsaren och byta till din arbetsenhet.  
 
-5. Du kan stänga fönstret när koden har verifierats.  
 
-   ![En bekräftelsesida som anger att användaren har loggat in i företagsportalsappen på sin enhet visas nu, och den här sidan kan stängas.](../fundamentals/media/whats-new-app-ui/cp_ios_aad_signin_from_another_device_after_1704_006.png)
+## <a name="next-steps"></a>Nästa steg  
 
-6. Företagsportal-appen loggar in dig på din arbetsenhet.  
-
-   ![Efter att ha genomgått autentiseringsprocessen loggas företagsportalappen in, vilket visas med en förloppsindikator.](./media/cp_ios_aad_signin_after_1804_007.png)
-
-Behöver du fortfarande hjälp? Kontakta företagssupporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  
+Har du fastnat eller behöver hjälp? Kontakta IT-supporten. Titta efter IT-administratörens kontaktuppgifter på [företagsportalens webbplats](https://go.microsoft.com/fwlink/?linkid=2010980).  

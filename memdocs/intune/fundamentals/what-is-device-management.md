@@ -16,11 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: microsoft-intune
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dedb4746c40ff1cc2f5a2f166b1e0277997cb88
-ms.sourcegitcommit: 22e1095a41213372c52d85c58b18cbabaf2300ac
+ms.openlocfilehash: c7d5583addc4e76f5af0ea0b9780f20d8fa78a2c
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
+ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353623"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996205"
 ---
 # <a name="device-management-overview"></a>Översikt över enhetshantering
 
@@ -51,20 +52,20 @@ Med Intune kan du hantera flera enheter per person och de olika plattformar som 
 **[Vanliga scenarier](common-scenarios.md)** är en fantastisk resurs med vilken du kan se hur Intune ger svar på vanliga frågor när du arbetar med mobila enheter. Du hittar scenarier om:  
 
 - Skydda e-postmeddelanden i Exchange lokalt
-- Få åtkomst till Office 365 på ett säkert och skyddat sätt
+- Få åtkomst till Microsoft 365 på ett säkert och skyddat sätt
 - Använda personliga enheter för att få åtkomst till företagsresurser
 
 Mer information om Intune finns i [Vad är Intune](what-is-intune.md).
 
 ## <a name="co-management"></a>Samhantering
 
-Många organisationer använder lokala Configuration Manager för att hantera enheter, inklusive stationära datorer och servrar. Du kan molnansluta din lokala Configuration Manager till Microsoft Intune. När du molnansluter får du fördelarna med Intune och molnet, inklusive [villkorsstyrd åtkomst](https://docs.microsoft.com/mem/configmgr/comanage/quickstart-conditional-access), [körning av fjärråtgärder](https://docs.microsoft.com/mem/configmgr/comanage/quickstart-remote-actions), [användning av Windows Autopilot](https://docs.microsoft.com/mem/configmgr/comanage/quickstart-autopilot) med mera.
+Många organisationer använder lokala Configuration Manager för att hantera enheter, inklusive stationära datorer och servrar. Du kan molnansluta din lokala Configuration Manager till Microsoft Intune. När du molnansluter får du fördelarna med Intune och molnet, inklusive [villkorsstyrd åtkomst](../../configmgr/comanage/quickstart-conditional-access.md), [körning av fjärråtgärder](../../configmgr/comanage/quickstart-remote-actions.md), [användning av Windows Autopilot](../../configmgr/comanage/quickstart-autopilot.md) med mera.
 
-[Microsoft Endpoint Manager](https://docs.microsoft.com/mem/endpoint-manager-overview) är en lösningsplattform som kombinerar flera tjänster. Den innehåller [Microsoft Intune](what-is-intune.md) för molnbaserad enhetshantering och [Configuration Manager + Intune](https://docs.microsoft.com/mem/configmgr/comanage/overview) för molnansluten enhetshantering.
+[Microsoft Endpoint Manager](../../endpoint-manager-overview.md) är en lösningsplattform som kombinerar flera tjänster. Den innehåller [Microsoft Intune](what-is-intune.md) för molnbaserad enhetshantering och [Configuration Manager + Intune](../../configmgr/comanage/overview.md) för molnansluten enhetshantering.
 
 Om du använder Configuration Manager och är redo att flytta några uppgifter till molnet, så är samhantering svaret.
 
-Mer information om hur du molnansluter Configuration Manager finns i [Vad är samhantering](https://docs.microsoft.com/mem/configmgr/comanage/overview).
+Mer information om hur du molnansluter Configuration Manager finns i [Vad är samhantering](../../configmgr/comanage/overview.md).
 
 ## <a name="integration-with-secure-and-protect-services"></a>Integrering med tjänster för att säkra och skydda
 
@@ -107,11 +108,11 @@ I administrationscentret för enhetshantering kan du:
 - Hantera programuppdateringar
   - [Hantera Windows 10-uppdateringar](../protect/windows-update-for-business-configure.md)  
   - [Hantera iOS-/iPadOS-uppdateringar](../protect/software-updates-ios.md)  
-- [Azure Active Directory](https://docs.microsoft.com/azure/active-directory)  
-- [Hantera användare](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
-- [Hantera grupper och medlemmar](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups)
+- [Azure Active Directory](/azure/active-directory)  
+- [Hantera användare](/azure/active-directory/fundamentals/add-users-azure-active-directory)
+- [Hantera grupper och medlemmar](/azure/active-directory/fundamentals/active-directory-manage-groups)
 - [Felsöka](help-desk-operators.md)
 
 ## <a name="next-steps"></a>Nästa steg
 
-När du är redo att sätta igång med en MDM- eller MAM-lösning går du igenom de olika stegen för att konfigurera Intune, registrera enheter och skapa principer. [Hantering av mobilenheter för Microsoft 365](https://docs.microsoft.com/microsoft-365/enterprise/mobility-infrastructure) är också en bra resurs.
+När du är redo att sätta igång med en MDM- eller MAM-lösning går du igenom de olika stegen för att konfigurera Intune, registrera enheter och skapa principer. [Hantering av mobilenheter för Microsoft 365](/microsoft-365/enterprise/mobility-infrastructure) är också en bra resurs.

@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 778937ed360a2271c342c55bdd03e33ddb5bdb25
-ms.sourcegitcommit: 1aeb4a11e89f68e8081d76ab013aef6b291c73c1
+ms.openlocfilehash: f6ce7aeb5d7a64d98ec27fe3882c256120358d3c
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217566"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88994165"
 ---
 # <a name="quickstart-try-microsoft-intune-for-free"></a>Snabbstart: Prova Microsoft Intune utan kostnad
 
@@ -121,7 +121,7 @@ Om ditt företag har sin egen anpassade domän som du vill använda utan **.onmi
    ![Skärmbild av administrationscentret för Microsoft 365 – Verifiera domän](./media/free-trial-sign-up/domain-custom-verify.png)
 
    > [!NOTE]
-   > TXT-postverifieringsinformation finns i [Skapa DNS-poster för alla DNS-värdtjänster för Office 365](https://support.office.com/article/Create-DNS-records-at-any-DNS-hosting-provider-for-Office-365-7B7B075D-79F9-4E37-8A9E-FB60C1D95166).
+   > TXT-postverifieringsinformation finns i [Skapa DNS-poster för alla DNS-värdtjänster för Microsoft 365](https://support.office.com/article/Create-DNS-records-at-any-DNS-hosting-provider-for-Office-365-7B7B075D-79F9-4E37-8A9E-FB60C1D95166).
 
 ## <a name="admin-experiences"></a>Administratörsupplevelser
 

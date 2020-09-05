@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-classic
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19de56bfab6e4f4cf2f1243c6cbaf98053e6ba5e
-ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
+ms.openlocfilehash: 0b479f770053051e580a68aa810a60c35d745ac5
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88663267"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996358"
 ---
 # <a name="implement-your-microsoft-intune-plan"></a>Implementera din Microsoft Intune-plan
 
@@ -37,7 +37,7 @@ De huvudsakliga kraven för ett fristående Intune är:
 
 - Enterprise Mobility + Security (EMS)/Intune-prenumeration
 
-- Office 365-prenumeration (för Office-appar och appar som hanteras av en appskyddsprincip)
+- Microsoft 365-prenumeration (för Office-appar och appar som hanteras av en appskyddsprincip)
 
 - Apple APNs-certifikat (för att aktivera hantering av iOS/iPadOS-enhetsplattform)
 
@@ -60,11 +60,11 @@ Som vi redan nämnt i avsnittet för Intune-krav ovan behöver du en EMS- eller 
 
 - Läs mer om att [köpa Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune-pricing).
 
-### <a name="task-2-add-office-365-subscription"></a>Uppgift 2: Lägga till Office 365-prenumeration
+### <a name="task-2-add-microsoft-365-subscription"></a>Uppgift 2: Lägga till Microsoft 365-prenumeration
 
-Det här är valfritt. Du behöver en Office 365-prenumeration om du ska använda Exchange Online och hantera Office-mobilappar med appskyddsprinciper. Om din organisation inte har någon Office 365-prenumeration kontaktar du Microsoft eller ditt Microsoft-kontoteam för information om hur du köper Office 365.
+Det här är valfritt. Du behöver en Microsoft 365-prenumeration om du ska använda Exchange Online och hantera Office-mobilappar med appskyddsprinciper. Om din organisation inte har någon Microsoft 365-prenumeration kontaktar du Microsoft eller ditt Microsoft-kontoteam för information om hur du köper Microsoft 365.
 
-- Läs mer om att [köpa Office 365](https://products.office.com/business/compare-office-365-for-business-plans).
+- Mer information om att [köpa Microsoft 365](https://products.office.com/business/compare-office-365-for-business-plans).
 
 ### <a name="task-3-add-users-groups-in-azure-ad"></a>Uppgift 3: Lägga till användargrupper i Azure AD
 
@@ -74,9 +74,9 @@ Du kan behöva lägga till användare eller säkerhetsgrupper i Active Directory
 <!---why not send them to the AAD connect topic? Question out to Andre: https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect--->
 
 
-### <a name="task-4-assign-intune-and-office-365-user-licenses"></a>Uppgift 4: Tilldela Intune- och Office 365-användarlicenser
+### <a name="task-4-assign-intune-and-microsoft-365-user-licenses"></a>Uppgift 4: Tilldela Intune- och Microsoft 365-användarlicenser
 
-Alla användare som EMS/Intune- och Office 365-distributionen ska omfatta måste ha en tilldelad licens. Du kan tilldela EMS/Intune- och Office 365-licenser i Microsoft 365-administrationscentret.
+Alla användare som EMS/Intune- och Microsoft 365-distributionen ska omfatta måste ha en tilldelad licens. Du kan tilldela EMS/Intune- och Microsoft 365-licenser i Microsoft 365-administrationscentret.
 
 - Läs mer om att [tilldela Intune-licenser](licenses-assign.md).
 
@@ -130,7 +130,7 @@ Intune stöder villkorlig åtkomst för Exchange Online, Exchange On-Premises, S
 
 ### <a name="task-13-enroll-devices"></a>Uppgift 13: Registrera enheter
 
-Intune stöder enhetsplattformarna iOS/iPadOS, Mac OS, Android och Windows. Registrera mobila enhetsplattformar efter behov baserat på användningsfall och krav för Intune-distributionen.
+Intune stöder enhetsplattformarna iOS/iPadOS, macOS, Android och Windows. Registrera mobila enhetsplattformar efter behov baserat på användningsfall och krav för Intune-distributionen.
 
 - Läs mer om att [registrera enheter](../enrollment/device-enrollment.md).
 

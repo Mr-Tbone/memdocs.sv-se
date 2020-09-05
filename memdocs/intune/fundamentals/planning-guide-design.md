@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6412b0d23edb9f93becb3973cc1ae02c0a068dea
-ms.sourcegitcommit: 46d4bc4fa73b22ae2a6a17a2d1cc6ec933a50e89
+ms.openlocfilehash: 6a1f3f4dc6187616d007c0ab9c97072bc3970c0a
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88663250"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996375"
 ---
 # <a name="create-a-design"></a>Skapa en design
 
@@ -134,15 +134,15 @@ Nedan utforskar vi de här vanliga externa beroendena närmare.
 
 ### <a name="identity"></a>Identitet
 
-Identiteten är det som används för att identifiera användarna som tillhör din organisation och som registrerar en enhet. Intune kräver Azure AD (Active Directory Azure) som leverantör av användaridentitet. Om du redan använder den här tjänsten kan du använda din befintliga identitet som redan finns i molnet. Dessutom är Azure AD Connect det verktyg som rekommenderas för att synkronisera lokala användaridentiteter med Microsofts molntjänster. Om företaget redan använder Office 365 är det viktigt att Intune använder samma Azure AD-miljö.
+Identiteten är det som används för att identifiera användarna som tillhör din organisation och som registrerar en enhet. Intune kräver Azure AD (Active Directory Azure) som leverantör av användaridentitet. Om du redan använder den här tjänsten kan du använda din befintliga identitet som redan finns i molnet. Dessutom är Azure AD Connect det verktyg som rekommenderas för att synkronisera lokala användaridentiteter med Microsofts molntjänster. Om företaget redan använder Microsoft 365 är det viktigt att Intune använder samma Azure AD-miljö.
 
 Läs mer om följande identitetskrav för Intune:
 
-- [Identitetskrav](https://docs.microsoft.com/azure/active-directory/understand-azure-identity-solutions).
+- [Identitetskrav](/azure/active-directory/understand-azure-identity-solutions).
 
-- [Katalogsynkroniseringskrav](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
+- [Katalogsynkroniseringskrav](/azure/active-directory/connect/active-directory-aadconnect).
 
-- [Multifaktorautentiseringskrav](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
+- [Multifaktorautentiseringskrav](/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
 
 ### <a name="user-and-device-groups"></a>Användar- och enhetsgrupper
 

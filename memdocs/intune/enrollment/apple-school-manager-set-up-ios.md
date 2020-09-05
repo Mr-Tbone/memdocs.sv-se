@@ -18,12 +18,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e919ac336532e8b641908b02c0e282ae9e1711e7
-ms.sourcegitcommit: 387706b2304451e548d6d9c68f18e4764a466a2b
+ms.openlocfilehash: 431dc3fec49609c4f163c9d7f471b60565611bc3
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85094014"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992845"
 ---
 # <a name="set-up-iosipados-device-enrollment-with-apple-school-manager"></a>Konfigurera registrering av iOS/iPadOS-enheter med Apple School Manager
 
@@ -38,7 +38,7 @@ Apple School Manager-registrering kan inte användas med [automatisk enhetsregis
 **Förutsättningar**
 - [Push-certifikat för hantering av mobila enheter (MDM)](apple-mdm-push-certificate-get.md)
 - [MDM-utfärdare](../fundamentals/mdm-authority-set.md)
-- Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).
+- Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff608241(v=ws.10)). [Läs mer](/powershell/module/adfs/get-adfsendpoint?view=win10-ps).
 - Enheter som köpts från programmet [Apple School Management](http://school.apple.com)
 
 ## <a name="get-an-apple-token-and-assign-devices"></a>Skaffa en Apple-token och tilldela enheter
@@ -83,12 +83,12 @@ Nu när du har installerat din token, kan du skapa en registreringsprofil för A
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram**.
 2. Välj en token, välj **Profiler** och välj sedan **Skapa profil**.
 
-3. Under **Skapa profil**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
+3. Under **Skapa profil**, anger du ett **Namn** och **Beskrivning** för profilen för administrationssyfte. Användarna kan inte se den här informationen. Du kan använda fältet **Namn** för att skapa en dynamisk grupp i Azure Active Directory. Använd profilnamnet för att definiera parametern enrollmentProfileName för att tilldela registreringsprofilen till enheter. Läs mer om [dynamiska Azure Active Directory-grupper](/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal#rules-for-devices).
 
     ![Profilnamn och beskrivning.](./media/apple-school-manager-set-up-ios/image05.png)
 
 4. Ange om enheter med den här profilen måste registreras med eller utan en tilldelad användare under **Användartillhörighet**.
-    - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda företagsportalen för tjänster som installation av appar. Det här alternativet låter också användare autentisera sina enheter med företagsportalen. Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](https://technet.microsoft.com/library/adfs2-help-endpoints). [Läs mer](https://technet.microsoft.com/itpro/powershell/windows/adfs/get-adfsendpoint).   Det delade iPad-läget i Apple School Manager innebär att användarna måste registrera sig utan användartillhörighet.
+    - **Registrera med användartillhörighet** – välj det här alternativet för enheter som tillhör användare och som vill använda företagsportalen för tjänster som installation av appar. Det här alternativet låter också användare autentisera sina enheter med företagsportalen. Om du använder ADFS kräver användartillhörighet [WS-Trust 1.3 användarnamn/kombinerad slutpunkt](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff608241(v=ws.10)). [Läs mer](/powershell/module/adfs/get-adfsendpoint?view=win10-ps).   Det delade iPad-läget i Apple School Manager innebär att användarna måste registrera sig utan användartillhörighet.
 
     - **Registrera utan användartillhörighet** – välj det här alternativet för enheter som inte är kopplade till en enda användare, till exempel en delad enhet. Använd det här alternativet för enheter som utför uppgifter utan att komma åt lokala användardata. Appar som Företagsportal fungerar inte.
 
@@ -156,7 +156,7 @@ Nu när du har installerat din token, kan du skapa en registreringsprofil för A
 
 1. I [administrationscentret för Microsoft Endpoint Manager](https://go.microsoft.com/fwlink/?linkid=2109431) väljer du **Enheter** > **iOS/iPadOS** > **iOS/iPadOS-registrering** > **Token för registreringsprogram**.
 2. Välj en Apple School Manager-token och välj sedan **School Data Sync**.
-3. Under **School Data Sync**, väljer du **Tillåt**. Den här inställningen innebär att Intune kan ansluta till SDS i Office 365.
+3. Under **School Data Sync**, väljer du **Tillåt**. Den här inställningen innebär att Intune kan ansluta med SDS i Microsoft 365.
 4. För att aktivera en anslutning mellan Apple School Manager och Azure AD väljer du **Ställ in Microsoft School Data Sync**. Lär dig mer om [hur du ställer in School Data Sync](https://support.office.com/article/Install-the-School-Data-Sync-Toolkit-8e27426c-8c46-416e-b0df-c29b5f3f62e1).
 5. Klicka på **Spara** > **OK**.
 

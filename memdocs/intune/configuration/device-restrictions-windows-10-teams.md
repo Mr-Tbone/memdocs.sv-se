@@ -16,12 +16,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b57bc0b7c76a6b67a26c7b1fdacb7880173a055c
-ms.sourcegitcommit: 48005a260bcb2b97d7fe75809c4bf1552318f50a
+ms.openlocfilehash: fdb3a3defbaab5f952a2a5636a30f9734418f841
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83429693"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88993326"
 ---
 # <a name="windows-10-team-settings-to-allow-or-restrict-features-on-surface-hub-devices-using-intune"></a>Windows 10 Team-inställningar för att tillåta eller begränsa funktioner på Surface Hub-enheter med hjälp av Intune
 
@@ -33,7 +33,7 @@ I den här artikeln går vi igenom de enhetsbegränsningar i Microsoft Intune du
 
 ## <a name="apps-and-experience"></a>Appar och upplevelse
 
-De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+De här inställningarna använder [CSP:n SurfaceHub](/windows/client-management/mdm/surfacehub-csp).
 
 - **Aktivera skärmen när någon är i rummet**: **Blockera** förhindrar att skärmen aktiveras automatiskt när sensorn känner av att någon är i rummet. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Mötesinformation som visas på välkomstskärmen**: Välj vilken information som ska visas på panelen Möten på välkomstskärmen. Alternativen är:
@@ -43,7 +43,7 @@ De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com
 - **Webbadress till bakgrundsbild för välkomstskärm**: Ange webbadressen till en .png-bild du vill använda som anpassad bakgrund på **välkomstskärmen** på Windows 10 Team-enheter. Bilden måste vara i PNG-format och webbadressen måste börja med `https://`.
 - **Starta appen Anslut automatiskt**: **Blockera** förhindrar att Connect-appen öppnas automatiskt när en projektion startas. Om funktionen blockeras kan användarna starta Connect-appen manuellt från hubbens inställningar. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Inloggningsförslag**: **Blockera** inaktiverar automatisk ifyllning av inloggningsrutan med inbjudna från schemalagda möten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
-- **Mina möten och filer**: **Blockera** inaktiverar funktionen **Mina möten och filer** på Start-menyn. Den här funktionen visar den inloggade användarens möten och filer från Office 365. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
+- **Mina möten och filer**: **Blockera** inaktiverar funktionen **Mina möten och filer** på Start-menyn. Den här funktionen visar den inloggade användarens möten och filer från Microsoft 365. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 
 ## <a name="azure-operational-insights"></a>Azure Operational Insights
 
@@ -53,7 +53,7 @@ De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com
 
 ## <a name="maintenance"></a>Underhåll
 
-De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+De här inställningarna använder [CSP:n SurfaceHub](/windows/client-management/mdm/surfacehub-csp).
 
 - **Underhållsperiod för uppdateringar**: **Aktivera** skapar en underhållsperiod när uppdateringar kan installeras. Ange underhållsperiodens **Starttid** och **Varaktighet i timmar**, mellan 1–5 timmar.
 
@@ -61,7 +61,7 @@ De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com
 
 ## <a name="session"></a>Session
 
-De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+De här inställningarna använder [CSP:n SurfaceHub](/windows/client-management/mdm/surfacehub-csp).
 
 - **Volym**: Ange standardvolymvärdet för en ny session, mellan 0–100. När värdet är tomt varken ändrar eller uppdaterar Intune den här inställningen. Operativsystemet kan som standard ange volymen som 45.
 - **Skärmtidsgräns**: Ange antalet minuter innan hubbskärmen stängs av.
@@ -71,7 +71,7 @@ De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com
 
 ## <a name="wireless-projection"></a>Trådlös projektion
 
-De här inställningarna använder [CSP:n SurfaceHub](https://docs.microsoft.com/windows/client-management/mdm/surfacehub-csp).
+De här inställningarna använder [CSP:n SurfaceHub](/windows/client-management/mdm/surfacehub-csp).
 
 - **PIN-kod för trådlös projektion**: **Kräv** tvingar användarna att ange en PIN-kod innan de använder funktionerna för trådlös projektion på enheten. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.
 - **Trådlös Miracast-projektion**: **Blockera** förhindrar att Miracast-aktiverade enheter används för projektion. När detta anges till **Inte konfigurerad** (standard) ändrar eller uppdaterar Intune inte den här inställningen.

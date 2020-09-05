@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d71326dc46d404925bdd94bd5d1140f23151748c
-ms.sourcegitcommit: 24fcf19054dcd62429f6181cdc568d894e01b99a
+ms.openlocfilehash: b0f360509f456489a321e072c2acfbf26c14bf98
+ms.sourcegitcommit: 231e2c3913a1d585310dfab7ffcd5c78c6bc5703
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946651"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970506"
 ---
 # <a name="configure-and-use-pkcs-certificates-with-intune"></a>Konfigurera och använda PKCS-certifikat med Intune
 
@@ -40,12 +40,12 @@ Om du vill använda PKCS-certifikat med Intune behöver du följande infrastrukt
 - **Active Directory-domän**:  
   Alla servrar i det här avsnittet måste vara anslutna till Active Directory-domänen.
 
-  Mer information om att installera och konfigurera Active Directory Domain Services (AD DS) finns i [Design och planering för AD DS](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning).
+  Mer information om att installera och konfigurera Active Directory Domain Services (AD DS) finns i [Design och planering för AD DS](/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning).
 
 - **Certifikatutfärdare**:  
    En utfärdare av företagscertifikat (CA).
 
-  Information om hur du installerar och konfigurerar Active Directory Certificate Services (AD CS) finns i [den stegvisa guiden för Active Directory Certificate Services](https://technet.microsoft.com/library/cc772393).
+  Information om hur du installerar och konfigurerar Active Directory Certificate Services (AD CS) finns i [den stegvisa guiden för Active Directory Certificate Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772393(v=ws.10)).
 
   > [!WARNING]  
   > Intune kräver att du kör AD CS med en Enterprise-certifikatutfärdare (CA), inte en fristående CA.
@@ -82,7 +82,7 @@ Om du vill använda PKCS-certifikat med Intune behöver du följande infrastrukt
   - Microsoft Intune-certifikatanslutningsapp – för scenarier med autentisering och S/MIME-signering av e-post
   - PFX-certifikatanslutningsapp för Microsoft Intune – för scenarier med S/MIME-kryptering av e-post.
 
-  Anslutningsappar måste ha åtkomst till samma portar som för hanterade enheter. Dessa beskrivs i vår [information om slutpunkter för enheter](https://docs.microsoft.com/intune/fundamentals/intune-endpoints#access-for-managed-devices).
+  Anslutningsappar måste ha åtkomst till samma portar som för hanterade enheter. Dessa beskrivs i vår [information om slutpunkter för enheter](/intune/fundamentals/intune-endpoints#access-for-managed-devices).
 
   Intune stöder installation av *PFX-certifikatanslutningsappen* på samma server som *Microsoft Intune Certificate Connector*.
   
@@ -119,6 +119,12 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
     > **Mallnamnet** är som standard samma som **mallens visningsnamn** med *inga blanksteg*. Anteckna mallens namn. Du behöver det senare.
 
 6. I **Hantering av begäranden** väljer du **Tillåt att den privata nyckeln exporteras**.
+    
+    > [!NOTE]
+    > I motsats till SCEP genereras den privata certifikatnyckeln med PKCS på den server där anslutningsprogrammet är installerat och inte på enheten. Det krävs att certifikatmallen tillåter att den privata nyckeln exporteras, så att certifikatanslutningsprogrammet kan exportera PFX-certifikatet och skicka det till enheten. 
+    >
+    > Observera dock att certifikaten installeras på själva enheten med den privata nyckeln markerad som ej exporterbar.
+    
 7. I **kryptografi** bekräftar du att den **minsta nyckelstorleken** är inställd på 2048.
 8. I **Ämnesnamn** väljer du **Anges i begäran**.
 9. I **Tillägg**, bekräftar du att du ser krypterar filsystem, säker e-post och klientautentisering under **användningsprinciper**.
@@ -160,7 +166,7 @@ För en enhet ska autentiseras med VPN, Wi-Fi eller andra resurser behöver enhe
 6. Vi rekommenderar att du på fliken **Avancerat** låter **Använd den här datorns systemkonto (standard)** vara markerat.
 7. **Tillämpa** > **Stäng**
 8. Gå tillbaka till Intune-portalen (**Intune** > **Enhetskonfiguration** > **Certifikatanslutningsappar**). Efter en stund visas en grön bockmarkering och **Anslutningsstatus** är **Aktiv**. Anslutningsservern kan nu kommunicera med Intune.
-9. Om du har en webbproxy i nätverksmiljön kan du behöva ytterligare konfigurationer för att anslutningsappen ska fungera. Mer information finns i [Arbeta med befintliga lokala proxyservrar](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) i Azure Active Directory-dokumentationen.
+9. Om du har en webbproxy i nätverksmiljön kan du behöva ytterligare konfigurationer för att anslutningsappen ska fungera. Mer information finns i [Arbeta med befintliga lokala proxyservrar](/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) i Azure Active Directory-dokumentationen.
     - Android Enterprise (*Arbetsprofil*)
     - iOS
     - macOS
@@ -292,16 +298,16 @@ Plattformar:
   - **CN={{IMEINumber}}** : Det unika IMEI-nummer (International Mobile Equipment Identity) som används för att identifiera en mobiltelefon.
   - **CN={{OnPrem_Distinguished_Name}}** : En sekvens med relativa unika namn avgränsade med kommatecken, till exempel *CN=Jane Doe,OU=UserAccounts,DC=corp,DC=contoso,DC=com*.
 
-    Om du vill använda variabeln *{{OnPrem_Distinguished_Name}}* ska du synkronisera användarattributet *onpremisesdistinguishedname* med hjälp av [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) till din Azure AD.
+    Om du vill använda variabeln *{{OnPrem_Distinguished_Name}}* ska du synkronisera användarattributet *onpremisesdistinguishedname* med hjälp av [Azure AD Connect](/azure/active-directory/connect/active-directory-aadconnect) till din Azure AD.
 
   - **CN={{onPremisesSamAccountName}}** : Administratörer kan synkronisera attributet samAccountName från Active Directory till Azure AD med hjälp av Azure AD Connect till ett attribut som heter *onPremisesSamAccountName*. Intune kan ersätta denna variabel som en del av en begäran om certifikatutfärdande i ämnet på ett certifikat. Attributet samAccountName är användarens inloggningsnamn som används för att stödja klienter och servrar från en tidigare version av Windows (före Windows 2000). Formatet på användarens inloggningsnamn är: *Domännamn\testUser* eller bara *testUser*.
 
-    Om du vill använda variabeln *{{onPremisesSamAccountName}}* ska du synkronisera användarattributet *onPremisesSamAccountName* med hjälp av [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) till din Azure AD.
+    Om du vill använda variabeln *{{onPremisesSamAccountName}}* ska du synkronisera användarattributet *onPremisesSamAccountName* med hjälp av [Azure AD Connect](/azure/active-directory/connect/active-directory-aadconnect) till din Azure AD.
 
   Genom att kombinera en eller flera av dessa variabler och statiska strängar kan du skapa ett anpassat format för ämnesnamnet, till exempel:  
   - **CN={{UserName}},E={{EmailAddress}},OU=Mobile,O=Finance Group,L=Redmond,ST=Washington,C=US**
   
-  Det exemplet omfattar ett format för ämnesnamnet som använder variablerna CN och E samt strängar för värdena för organisationsenhet, organisation, plats, tillstånd och land/region. [CertStrToName-funktionen](https://msdn.microsoft.com/library/windows/desktop/aa377160.aspx) beskriver den här funktionen och dess strängar som stöds.
+  Det exemplet omfattar ett format för ämnesnamnet som använder variablerna CN och E samt strängar för värdena för organisationsenhet, organisation, plats, tillstånd och land/region. [CertStrToName-funktionen](/windows/win32/api/wincrypt/nf-wincrypt-certstrtonamea) beskriver den här funktionen och dess strängar som stöds.
 
 - **Certifikattypen Enhet**  
   Formatalternativ för Format för namn på certifikatmottagare omfattar följande variabler: 
