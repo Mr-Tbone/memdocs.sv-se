@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c302e839c2a41ba27d160db24928f7e202de78dc
-ms.sourcegitcommit: 2cafbba6073edca555594deb99ae29e79cd0bc79
+ms.openlocfilehash: 4d0bd136278053ded38d0d6ed4cfe4059ffe3037
+ms.sourcegitcommit: 0ec6d8dabb14f20b1d84f7b503f1b03aac2a30d4
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82110193"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89479322"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer-cache för Configuration Manager klienter
 
@@ -50,11 +50,11 @@ Peer-cache ersätter inte användningen av andra lösningar som Windows BranchCa
 
 
 
-## <a name="operations"></a>Åtgärder
+## <a name="operations"></a>Operations
 
 Om du vill aktivera peer-cache distribuerar du [klient inställningarna](#bkmk_settings) till en samling. Medlemmar i den samlingen fungerar sedan som en peer-cache-källa för andra klienter i samma avgränsnings grupp.  
 
-- En klient som fungerar som en peer-innehålls källa skickar en lista över tillgängligt cachelagrat innehåll till hanterings platsen med tillstånds meddelanden.
+- En klient som fungerar som en peer-innehålls källa skickar en lista över tillgängligt cachelagrat innehåll till hanterings platsen med tillstånds meddelanden. En klient för peer-innehålls källa skickar också ett tillstånds meddelande till hanterings platsen när innehållet tas bort från det lokala cacheminnet.
 
    > [!NOTE]
    > Se [tillstånds meddelanden i Configuration Manager](state-messaging-system-center-configuration-manager.md#7200-state_topictype_super_peer_update_cache_map) för listan över tillämpliga peer-innehålls tillstånds meddelanden specifcally de med status meddelande-ID: n 7200, 7201, 7202 och 7203.
@@ -116,7 +116,7 @@ När peer-cachens källa avvisar en begäran om innehållet fortsätter peer-cac
 
 
 
-## <a name="peer-cache-client-settings"></a><a name="bkmk_settings"></a>Klient inställningar för peer-cache
+## <a name="peer-cache-client-settings"></a><a name="bkmk_settings"></a> Klient inställningar för peer-cache
 
 Mer information om klient inställningarna för peer-cache finns i [Inställningar för klient-cache](../../clients/deploy/about-client-settings.md#client-cache-settings). 
 
@@ -126,7 +126,7 @@ På peer-cache-aktiverade klienter som använder Windows-brandväggen konfigurer
 
 
 
-## <a name="partial-download-support"></a><a name="bkmk_parts"></a>Stöd för delvis hämtning
+## <a name="partial-download-support"></a><a name="bkmk_parts"></a> Stöd för delvis hämtning
 <!--1357346-->
 Från och med version 1806 kan klient-peer cache-källor nu dela upp innehåll i delar. Dessa delar minimerar nätverks överföringen för att minska WAN-användningen. Hanterings platsen ger en mer detaljerad spårning av innehålls delarna. Det försöker eliminera mer än en hämtning av samma innehåll per gränser grupp. 
 
