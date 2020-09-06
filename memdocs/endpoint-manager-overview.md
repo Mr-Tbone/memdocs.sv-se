@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: get-started
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2095fdd349437e03c673fb9f7906511c5e3af388
-ms.sourcegitcommit: e713f8f4ba2ff453031c9dfc5bfd105ab5d00cd9
+ms.openlocfilehash: 0d638cb382aa7abe8859648192837601c86f22ce
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86088385"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88996562"
 ---
 # <a name="microsoft-endpoint-manager-overview"></a>Översikt av Microsoft Endpoint Manager
 
@@ -42,40 +42,40 @@ Slutpunktshanteraren innehåller följande tjänster:
 
   Om du har en lokal infrastruktur, till exempel Exchange eller en Active Directory, är anslutningsprogram för Intune också tillgängliga:
 
-  - **Intune Connector för Active Directory** lägger till poster i din lokala Active Directory-domän för datorer som registrerar sig med Windows Autopilot. Mer information finns i [Distribuera Azure AD-anslutna hybridenheter](/mem/intune/enrollment/windows-autopilot-hybrid).
-  - **Intune Certificate Connector** bearbetar certifikatförfrågningar från enheter som använder certifikat för autentisering och S/MIME-e-postkryptering. Mer information finns i [Använd certifikat för autentisering](/mem/intune/protect/certificates-configure).
+  - **Intune Connector för Active Directory** lägger till poster i din lokala Active Directory-domän för datorer som registrerar sig med Windows Autopilot. Mer information finns i [Distribuera Azure AD-anslutna hybridenheter](./autopilot/windows-autopilot-hybrid.md).
+  - **Intune Certificate Connector** bearbetar certifikatförfrågningar från enheter som använder certifikat för autentisering och S/MIME-e-postkryptering. Mer information finns i [Använd certifikat för autentisering](./intune/protect/certificates-configure.md).
 
   Som en del av slutpunktshanteraren kan du använda Intune för att skapa och kontrollera efterlevnad och distribuera appar, funktioner och inställningar till dina enheter med hjälp av molnet.
 
-  Mer information finns i [Vad är Microsoft Intune](https://docs.microsoft.com/intune/fundamentals/what-is-intune).
+  Mer information finns i [Vad är Microsoft Intune](/intune/fundamentals/what-is-intune).
 
 - **Configuration Manager**: Configuration Manager är en lokal hanteringslösning för hantering av stationära datorer, servrar och bärbara datorer som finns i ditt nätverk eller är Internet-baserade. Du kan molnaktivera lösningen för att integrera den med Intune, Azure Active Directory (AD), Microsoft Defender ATP och andra molntjänster. Använd Configuration Manager för att distribuera appar, programuppdateringar och operativsystem. Du kan också övervaka efterlevnad, fråga och agera för klienter i realtid och mycket mer.
 
-  Som en del av slutpunktshanteraren kan du fortsätta att använda Configuration Manager som du alltid har gjort. Om du är redo att flytta några uppgifter till molnet kan du överväga [samhantering](https://docs.microsoft.com/configmgr/comanage/).
+  Som en del av slutpunktshanteraren kan du fortsätta att använda Configuration Manager som du alltid har gjort. Om du är redo att flytta några uppgifter till molnet kan du överväga [samhantering](/configmgr/comanage/).
 
-  Mer information finns i [Vad är Configuration Manager](https://docs.microsoft.com/configmgr/core/understand/introduction).
+  Mer information finns i [Vad är Configuration Manager](/configmgr/core/understand/introduction).
 
 - **Samhantering**: Samhantering kombinerar din befintliga lokala Configuration Manager-investering med molnet med hjälp av Intune och andra Microsoft 365-molntjänster. Du väljer om Configuration Manager eller Intune är hanteringsutfärdaren för sju olika arbetsbelastningsgrupper.
 
   Som en del av slutpunktshanteraren använder samhantering molnfunktioner, inklusive villkorlig åtkomst. Du behåller vissa uppgifter lokalt samtidigt som du kör andra uppgifter i molnet med Intune.
 
-  Mer information finns i [Vad är samhantering?](https://docs.microsoft.com/configmgr/comanage/overview).
+  Mer information finns i [Vad är samhantering?](/configmgr/comanage/overview).
 
 - **Desktop Analytics**: Desktop Analytics är en molnbaserad tjänst som integrerar med Configuration Manager. Den ger kunskap och information för att kunna fatta välgrundade beslut om uppdateringsberedskapen för Windows-klienter. Tjänsten kombinerar data från din organisation med data som sammanställs från miljontals enheter som är anslutna till Microsoft-molnet. Den innehåller information om säkerhetsuppdateringar, appar och enheter i din organisation och identifierar kompatibilitetsproblem med appar och drivrutiner. Skapa en pilot för enheter som troligen ger bästa möjliga insikter för tillgångar i organisationen.
 
   Som en del av slutpunktshanteraren använder du molnbaserade insikter om Desktop Analytics för att hålla Windows 10-enheterna aktuella.
 
-  Mer information finns i [Vad är Desktop Analytics?](https://docs.microsoft.com/configmgr/desktop-analytics/overview).
+  Mer information finns i [Vad är Desktop Analytics?](/configmgr/desktop-analytics/overview).
 
 - **Windows Autopilot**: Windows Autopilot konfigurerar och förkonfigurerar nya enheter, så att de är redo att användas. Den är utformad för att förenkla livscykeln för Windows-enheter, både för IT och slutanvändare, från den första distributionen till slutet av livscykeln.
 
   Som en del av slutpunktshanteraren använder du Autopilot för att förkonfigurera enheter och automatiskt registrera enheter i Intune. Du kan också integrera Autopilot med Configuration Manager och samhantering för mer komplexa enhetskonfigurationer (i förhandsversion).
 
-  Du hittar mer information i [Översikt av Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot) och [Registrera Windows-enheter i Intune](/mem/intune/enrollment/enrollment-autopilot).
+  Du hittar mer information i [Översikt av Windows Autopilot](/windows/deployment/windows-autopilot/windows-autopilot) och [Registrera Windows-enheter i Intune](./autopilot/enrollment-autopilot.md).
 
 - **Azure Active Directory (AD)** : Endpoint Manager använder Azure AD till att identifiera enheter, användare, grupper och multifaktorautentisering (MFA). **Azure AD Premium**, som kan medföra ytterligare kostnader, har [fler funktioner](https://azure.microsoft.com/pricing/details/active-directory/) som hjälper dig att skydda appar och data som dynamiska grupper, automatisk registrering och villkorsstyrd åtkomst.
 
-  Mer information finns i [Lägg till användare](/mem/intune/fundamentals/users-add), [Konfigurera automatisk registrering](/mem/intune/enrollment/windows-enroll) och [om villkorsstyrd åtkomst](/mem/intune/protect/conditional-access).
+  Mer information finns i [Lägg till användare](./intune/fundamentals/users-add.md), [Konfigurera automatisk registrering](./intune/enrollment/windows-enroll.md) och [om villkorsstyrd åtkomst](./intune/protect/conditional-access.md).
 
 - **Administrationscentret för Endpoint Manager**: [Administrationscentret](https://go.microsoft.com/fwlink/?linkid=2109431) är en webbplats för att skapa principer och hantera dina enheter. Den ansluter till andra viktiga enhetshanteringstjänster, inklusive grupper, säkerhet, villkorlig åtkomst och rapportering. I det här administrationscentret visas även enheter som hanteras av Configuration Manager och Intune (i förhandsversion).
 
@@ -105,7 +105,7 @@ Microsoft Endpoint Manager är en lösningsplattform som kombinerar flera teknik
 
 Om du för närvarande använder Configuration Manager får du även Microsoft Intune för att hantera dina Windows-enheter. För andra plattformar, som iOS/iPad och Android, behöver du en separat Intune-licens.
 
-I de flesta fall kan Microsoft 365 vara det bästa alternativet, eftersom du får slutpunktshanteraren och Office 365. Mer information finns i [Microsoft 365](https://www.microsoft.com/licensing/product-licensing/microsoft-365-enterprise).
+I de flesta fall kan Microsoft 365 vara det bästa alternativet, eftersom du får Endpoint Manager och Office. Mer information finns i [Microsoft 365](https://www.microsoft.com/licensing/product-licensing/microsoft-365-enterprise).
 
 ## <a name="next-steps"></a>Nästa steg
 
@@ -115,4 +115,4 @@ I de flesta fall kan Microsoft 365 vara det bästa alternativet, eftersom du få
 
 [Självstudie: Genomgång av Intune i Microsoft Endpoint Manager](/intune/fundamentals/tutorial-walkthrough-endpoint-manager)
 
-[Vad är Microsoft 365? Utbildningsmodul](https://docs.microsoft.com/learn/modules/what-is-m365/index)
+[Vad är Microsoft 365? Utbildningsmodul](/learn/modules/what-is-m365/index)
