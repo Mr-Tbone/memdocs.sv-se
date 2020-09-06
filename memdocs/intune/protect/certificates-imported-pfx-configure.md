@@ -17,12 +17,12 @@ ms.suite: ems
 search.appverid: MET150
 ms.custom: intune-azure; seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 630d270202f1064c9e80e7cb87df3929138ee54a
-ms.sourcegitcommit: 56a894edd291034510c144c31770cf09e20b2d6c
+ms.openlocfilehash: 048e1d3efcb96d18453bfd7b3dbf332dc83b7a1f
+ms.sourcegitcommit: fde92731a7e27c892d32c63f515cf19545e02ceb
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88048114"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992580"
 ---
 # <a name="configure-and-use-imported-pkcs-certificates-with-intune"></a>Konfigurera och använda importerade PKCS-certifikat med Intune
 
@@ -69,7 +69,7 @@ Om du vill använda importerade PKCS-certifikat med Intune behöver du följande
 
   Du använder Windows Server som värd för PFX-certifikatanslutningsappen för Microsoft Intune.  Anslutningsappen används för att bearbeta begäranden för certifikat som importerats till Intune.
   
-  Anslutningsappen måste ha åtkomst till samma portar som för hanterade enheter. Dessa beskrivs i vår [information om slutpunkter för enheter](https://docs.microsoft.com/intune/fundamentals/intune-endpoints#access-for-managed-devices).
+  Anslutningsappen måste ha åtkomst till samma portar som för hanterade enheter. Dessa beskrivs i vår [information om slutpunkter för enheter](/intune/fundamentals/intune-endpoints#access-for-managed-devices).
 
   Intune stöder installation av *Microsoft Intune Certificate Connector* på samma server som *PFX-certifikatanslutningsappen för Microsoft Intune*.
 
@@ -104,7 +104,7 @@ När du använder Intune för att distribuera ett **importerat PFX-certifikat** 
 5. PFX-certifikatanslutningsappen för Microsoft Intune öppnar fliken **Registrering** efter installationen. Om du vill aktivera anslutningen till Intune **loggar du in** och anger ett konto med behörigheter för global Azure-administratör eller Intune-administratör.
 
    > [!WARNING]
-   > Som standard är **Förbättrad säkerhetskonfiguration i IE** i Windows Server inställt på **På** som kan orsaka problem med inloggningen till Office 365.
+   > Som standard är **Förbättrad säkerhetskonfiguration i IE** i Windows Server inställt på **På**, vilket kan orsaka problem med inloggningen till Microsoft 365.
 
 6. Stäng fönstret.
 
@@ -112,9 +112,9 @@ När du använder Intune för att distribuera ett **importerat PFX-certifikat** 
 
 ## <a name="import-pfx-certificates-to-intune"></a>Importera PFX-certifikat till Intune
 
-Du använder [Microsoft Graph](https://docs.microsoft.com/graph) för att importera dina användares PFX-certifikat till Intune. Hjälpkomponenten [PFXImport PowerShell Project på GitHub](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell) ger dig cmdletar för att utföra åtgärderna enkelt.
+Du använder [Microsoft Graph](/graph) för att importera dina användares PFX-certifikat till Intune. Hjälpkomponenten [PFXImport PowerShell Project på GitHub](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell) ger dig cmdletar för att utföra åtgärderna enkelt.
 
-Om du föredrar att använda en egen anpassad lösning med hjälp av Graph använder du [resurstypen userPFXCertificate](https://docs.microsoft.com/graph/api/resources/intune-raimportcerts-userpfxcertificate?view=graph-rest-beta).
+Om du föredrar att använda en egen anpassad lösning med hjälp av Graph använder du [resurstypen userPFXCertificate](/graph/api/resources/intune-raimportcerts-userpfxcertificate?view=graph-rest-beta).
 
 ### <a name="build-pfximport-powershell-project-cmdlets"></a>Bygg PFXImport PowerShell Project-cmdletar
 
@@ -210,7 +210,7 @@ Välj den nyckellagrinsprovider som matchar providern du använde för att skapa
 
 8. Validera certifikatet som har importerats genom att köra `Get-IntuneUserPfxCertificate -UserList "<UserUPN>"`
 
-9.  Vi rekommenderar att du rensar AAD-tokencachen utan att vänta på att den ska upphöra av sig själv, genom att köra `Remove-IntuneAuthenticationToken`
+9.  Vi rekommenderar att du rensar Azure AD-tokencachen utan att vänta på att den ska upphöra av sig själv, genom att köra `Remove-IntuneAuthenticationToken`
 
 Mer information om andra tillgängliga kommandon finns i readme-filen i [PFXImport PowerShell Project på GitHub](https://github.com/microsoft/Intune-Resource-Access/tree/develop/src/PFXImportPowershell).
 
