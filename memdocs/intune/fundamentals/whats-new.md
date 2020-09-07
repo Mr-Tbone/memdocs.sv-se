@@ -55,6 +55,26 @@ Lär dig mer om nyheter i Microsoft Intune varje vecka i [administrationscentret
 ### Scripts
 
 <!-- ########################## -->
+## <a name="Week-of-August-31-2020"></a>Veckan den 31 Augusti 2020
+
+<!-- vvvvvvvvvvvvvvvvvvvvvv -->
+### <a name=" Device-configuration"></a>Enhetskonfiguration
+
+#### <a name="New-version-of-the-PFX-Certificate-Connector-and-changes-for-PKCS-certificate-profile-support--4839686----"></a>En ny version av PFX Certificat Connector och ändringar för PKCS certificat profil support <!--4839686-->
+
+- Vi har släppt en ny version av PFX Certificat Connectorn, version 6.2008.60.607. I denna nya version:
+
+- Support för PKCS certificat profiler på alla supportade plattformar förutom Windows 8.1
+
+Vi har konsoliderat all PCKS support i PFX Certificat Connectorn. Detta betyder att, om du inte använder SCEP i din miljö, och du inte använder NDES för andra syften, kan du ta bort Microsoft Certificat Connector och avinstallera NDES i din miljö.
+
+- Microsoft Certificat Connectors funktionallitet har inte tagits bort, du kan fortsätta använda den för support av PKCS certificat profiler.
+- Support för certificat revokering i Outlook S/MIME
+- Kräver .NET Framework 4.7.2
+
+För mer information om certifikat connectorn, samt en versions historik för båda certificat connectorerna, se [Certificate connectors](../protect/certificate-connectors.md)
+
+<!-- ########################## -->
 ## <a name="week-of-august-24-2020-2008-service-release"></a>Veckan den 24 augusti 2020 (2008 Service Release)
 
 <!-- vvvvvvvvvvvvvvvvvvvvvv -->
